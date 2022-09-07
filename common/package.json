@@ -1,0 +1,15 @@
+{
+  "name": "@shadowrun/common",
+  "private": true,
+  "main": "build/index.js",
+  "type": "module",
+  "scripts": {
+    "compile": "tsc -b"
+  },
+  "dependencies": {
+    "zod": "^3.19.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.8.2"
+  }
+}
