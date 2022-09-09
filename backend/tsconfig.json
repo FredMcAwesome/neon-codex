@@ -1,6 +1,8 @@
 {
   "extends": "../tsconfig.base.json",
   "compilerOptions": {
+    // allow top level await for models
+    "target": "es2017",
     "rootDir": "./src",
     "outDir": "./build",
     "module": "NodeNext"
