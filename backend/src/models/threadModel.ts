@@ -1,35 +1,24 @@
 import {
-  Model,
-  DataTypes,
-  CreationOptional,
-  InferAttributes,
-  InferCreationAttributes,
-  ForeignKey,
-} from "sequelize";
-import { sequelize } from "../utils/db.js";
+  Entity,
+  PrimaryKey,
+  Property,
+  ManyToOne,
+  OneToMany,
+  Collection,
+} from "@mikro-orm/core";
+import { Users, Comments } from "./models.js";
 
-class ThreadModel extends Model<
-  InferAttributes<ThreadModel>,
-  InferCreationAttributes<ThreadModel>
-> {
-  declare id: CreationOptional<number>;
-  declare title: string;
-  declare userId: ForeignKey<number>;
+@Entity()
+export default class Threads {
+  @PrimaryKey()
+  id!: number;
+
+  @Property({ length: 1000 })
+  title!: string;
+
+  @ManyToOne(() => Users)
+  user!: Users;
+
+  @OneToMany(() => Comments, (comment) => comment.thread)
+  comments = new Collection<Comments>(this);
 }
-
-ThreadModel.init(
-  {
-    id: {
-      type: DataTypes.BIGINT,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    title: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-  },
-  { sequelize, underscored: true, timestamps: false, modelName: "thread" }
-);
-
-export default ThreadModel;

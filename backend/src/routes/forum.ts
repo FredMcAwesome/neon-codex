@@ -1,23 +1,30 @@
 import express from "express";
 import "dotenv/config";
-import { Thread } from "../models/models.js";
+import { Database } from "../utils/db.js";
 import * as logger from "../utils/logger.js";
+import type { ThreadListType } from "@shadowrun/common/src/types.js";
 
 const router = express.Router();
 
-router.get("/", async function (_req, res) {
+router.get("/thread", async function (_req, res) {
   try {
-    const threads = await Thread.findAll();
-    logger.log(JSON.stringify(threads, null, 2));
-    res.json(threads);
+    const threads = await Database.threadRepository.findAll({
+      populate: ["user"],
+    });
+    const threadsResponse: ThreadListType = threads.map((thread) => {
+      return { title: thread.title, user: thread.user.username, id: thread.id };
+    });
+    logger.log(JSON.stringify(threadsResponse, null, 2));
+    res.json(threadsResponse);
   } catch (error) {
     logger.error("Unable to connect to the database:", error);
+    res.sendStatus(500);
   }
 });
 
-router.post("/", async (req, res) => {
+router.post("/thread", async (req, res) => {
   logger.log(req.body);
-  const note = await Thread.create(req.body);
+  const note = await Database.threadRepository.create(req.body);
   res.json(note);
 });
 

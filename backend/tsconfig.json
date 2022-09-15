@@ -5,7 +5,9 @@
     "target": "es2017",
     "rootDir": "./src",
     "outDir": "./build",
-    "module": "NodeNext"
+    "module": "NodeNext",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   },
   "include": ["src/**/*"],
   "references": [

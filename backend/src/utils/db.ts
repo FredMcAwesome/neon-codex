@@ -1,21 +1,27 @@
 import "dotenv/config";
-import { Sequelize } from "sequelize";
-import * as logger from "./logger.js";
-import { DATABASE_URL } from "./config.js";
+// import * as logger from "./logger.js";
+// import { DATABASE_URL } from "./config.js";
+import MikroORMConfig from "../mikro-orm.config.js";
+import { EntityManager, EntityRepository, MikroORM } from "@mikro-orm/core";
+import { Users, Threads, Comments } from "../models/models.js";
+import { PostgreSqlDriver } from "@mikro-orm/postgresql";
 
-const sequelize = new Sequelize(DATABASE_URL);
+interface IDatabase {
+  orm: MikroORM;
+  em: EntityManager;
+  userRepository: EntityRepository<Users>;
+  threadRepository: EntityRepository<Threads>;
+  commentRespository: EntityRepository<Comments>;
+}
 
-const connectToDatabase = async () => {
-  try {
-    await sequelize.authenticate();
-    logger.log("connected to the database");
-  } catch (err) {
-    logger.error("failed to connect to the database");
-    logger.error(err);
-    return process.exit(1);
-  }
+export const Database = {} as IDatabase;
 
-  return null;
+export const init = async () => {
+  const orm = await MikroORM.init<PostgreSqlDriver>(MikroORMConfig);
+  const em = orm.em;
+  Database.orm = orm;
+  Database.em = em;
+  Database.userRepository = em.getRepository(Users);
+  Database.threadRepository = em.getRepository(Threads);
+  Database.commentRespository = em.getRepository(Comments);
 };
-
-export { connectToDatabase, sequelize };

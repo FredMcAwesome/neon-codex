@@ -1,38 +1,26 @@
 import {
-  Model,
-  DataTypes,
-  InferAttributes,
-  InferCreationAttributes,
-  CreationOptional,
-} from "sequelize";
-import { sequelize } from "../utils/db.js";
+  Collection,
+  Entity,
+  OneToMany,
+  PrimaryKey,
+  Property,
+} from "@mikro-orm/core";
+import { Threads, Comments } from "./models.js";
 
-class UserModel extends Model<
-  InferAttributes<UserModel>,
-  InferCreationAttributes<UserModel>
-> {
-  declare id: CreationOptional<number>;
-  declare username: string;
-  declare password: string;
+@Entity()
+export default class Users {
+  @PrimaryKey()
+  id!: number;
+
+  @Property({ length: 255 })
+  username!: string;
+
+  @Property({ length: 3000 })
+  password!: string;
+
+  @OneToMany(() => Threads, (thread) => thread.user)
+  threads = new Collection<Threads>(this);
+
+  @OneToMany(() => Comments, (comment) => comment.user)
+  comments = new Collection<Comments>(this);
 }
-
-UserModel.init(
-  {
-    id: {
-      type: DataTypes.BIGINT,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    username: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    password: {
-      type: DataTypes.STRING(3000),
-      allowNull: false,
-    },
-  },
-  { sequelize, underscored: true, timestamps: false, modelName: "user" }
-);
-
-export default UserModel;

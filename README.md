@@ -15,12 +15,24 @@ The forum will be used for finding extra missions, buying rarer/limited gear, po
 # Developer information
 There is a backend and a frontend section of this repo. The frontend is a react application, the backend is an express application with both applications being written in typescript with a REST api between client and server. The database is PostGreSql.
 
+All code is written in typescript and compiled (via webpack for frontend, tsc for backend) to javascript. We aren't using ts-node because it currently doesn't support references properly which we need for the monorepo. We use a monorepo to share code between the front and the backend, especially the data types sent between the two on the REST interface.
+
+We don't use CommonJS because [webpack tree shaking doesn't work well with it](https://webpack.js.org/guides/tree-shaking/#conclusion) and now that node supports ECMAScript we can have everything output to that module type.
+
 ## Development Setup
 Assuming vscode for editor:
 Install [prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 Install [eslint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 Run `npm install` at root of repo.
 Run `npm run start-prod` to start locally - note will still need a local db.
+### DB Setup
+Run the following commands to create a database and fill it with some dummy data for development
+`npm run build` at least once
+`npx tsc --target es2015 --module es2015 --moduleResolution node --outdir ./db_setup/build/seeders ./db_setup/src/**/*.ts`
+`npx tsc --target es2015 --module es2015 --moduleResolution node --outdir ./db_setup/build/ ./db_setup/src/**.ts`
+`node ./db_setup/build/create-schema.js`
+`export MIKRO_ORM_CLI='./db_setup/build/mikro-orm.config.js' && export MIKRO_ORM_SEEDER_PATH='./db_setup/build/seeders/' && npx mikro-orm seeder:run`
+`unset MIKRO_ORM_CLI`
 
 ### Hot reload
 To run server with hot reload `npm start` from root. (Builds client then enters watch mode for server.)

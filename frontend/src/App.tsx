@@ -1,6 +1,7 @@
-import { test } from "@shadowrun/common/";
+import { test } from "@shadowrun/common/build/index.js";
 import { ExampleSchema } from "@shadowrun/common/build/types.js";
 import type { Example } from "@shadowrun/common/build/types.js";
+import Forum from "./components/Forum.js";
 console.log(test);
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
       console.log(error);
     });
 
-  return <p>App.tsx</p>;
+  return <Forum />;
 }
 
 export default App;

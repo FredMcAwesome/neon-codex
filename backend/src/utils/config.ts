@@ -1,11 +1,9 @@
 import "dotenv/config";
 const DB_NAME = process.env.DB || "shadowrun";
-const USERNAME = process.env.username || "postgres";
 const PASSWORD = process.env.password || "postgres";
 const HOST = process.env.HOST || "localhost";
+const PORT = parseInt(process.env.PORT || "3000");
 
-const DATABASE_URL =
-  "postgres://" + USERNAME + ":" + PASSWORD + "@" + HOST + "/" + DB_NAME;
-const PORT = process.env.PORT || 3000;
+const DATABASE_PORT = parseInt(process.env.PORT || "5432");
 
-export { DATABASE_URL, HOST, PORT };
+export { DB_NAME, HOST, PORT, DATABASE_PORT, PASSWORD };

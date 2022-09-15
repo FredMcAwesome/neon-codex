@@ -8,7 +8,10 @@ import * as logger from "./utils/logger.js";
 import { HOST, PORT } from "./utils/config.js";
 import * as middleware from "./utils/middleware.js";
 import forumRouter from "./routes/forum.js";
+import { init, Database } from "./utils/db.js";
+import { RequestContext } from "@mikro-orm/core";
 
+init();
 logger.log(test);
 
 const app = express();
@@ -20,6 +23,10 @@ const options: cors.CorsOptions = {
 app.use(cors(options));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use((_req, _res, next) => {
+  // console.log(Database);
+  RequestContext.create(Database.em, next);
+});
 
 app.use(middleware.requestLogger);
 

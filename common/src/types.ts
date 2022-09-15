@@ -6,5 +6,15 @@ const ExampleSchema = zod.object({
 
 type Example = zod.infer<typeof ExampleSchema>;
 
-export type { Example };
-export { ExampleSchema };
+const ThreadSummarySchema = zod.object({
+  title: zod.string(),
+  user: zod.string(),
+  id: zod.number(),
+});
+
+const ThreadListSchema = zod.array(ThreadSummarySchema);
+
+type ThreadListType = zod.infer<typeof ThreadListSchema>;
+
+export type { Example, ThreadListType };
+export { ExampleSchema, ThreadListSchema };
