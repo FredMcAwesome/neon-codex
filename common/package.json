@@ -4,7 +4,8 @@
   "main": "build/index.js",
   "type": "module",
   "scripts": {
-    "compile": "tsc -b"
+    "compile": "tsc -b",
+    "clean": "tsc --build --clean"
   },
   "dependencies": {
     "zod": "^3.19.0"

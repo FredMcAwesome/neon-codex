@@ -13,7 +13,8 @@
     "watch-frontend": "npm start -w frontend",
     "prestart": "npm run build-dev -w frontend",
     "start": "npm run dev -w backend",
-    "start-prod": "npm run build -w frontend && npm start -w backend"
+    "start-prod": "npm run build -w frontend && npm start -w backend",
+    "clean": "npm run clean -w frontend -w common -w backend"
   },
   "private": true,
   "devDependencies": {

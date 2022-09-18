@@ -1,8 +1,6 @@
-import { test } from "@shadowrun/common/build/index.js";
-import { ExampleSchema } from "@shadowrun/common/build/types.js";
-import type { Example } from "@shadowrun/common/build/types.js";
-import Forum from "./components/Forum.js";
-console.log(test);
+import { ExampleSchema } from "@shadowrun/common/src/index.js";
+import type { Example } from "@shadowrun/common/src/index.js";
+import Forum from "./components/forum/Forum.js";
 
 function App() {
   fetch("/api/example")

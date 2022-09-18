@@ -5,6 +5,10 @@ We also avoid [issues](https://stackoverflow.com/questions/65893787/create-react
 ## JS
 The frontend uses react with react query for all communication to the server.
 
+## Testing
+To run tests use `npm test`.
+We use jest for tests, [it has limited esm support atm](https://jestjs.io/docs/ecmascript-modules) but most of this is handled by using ts-jest which transpiles it the same way the rest of the code is. [The same goes for msw](https://github.com/mswjs/msw/issues/1384) so we use require for server.ts imports to avoid esm issues. For jest we need to add cross-fetch to polyfill the fetch command (as jest is run in node which doesn't have a native fetch).
+
 ## CSS
 The site is designed as mobile first. This was decided for the normal reasons
 i.e. mobile will be used most, easier to adjust up than down in size with css-queries

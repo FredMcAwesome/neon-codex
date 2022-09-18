@@ -24,14 +24,22 @@ Assuming vscode for editor:
 Install [prettier extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 Install [eslint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 Run `npm install` at root of repo.
-Run `npm run start-prod` to start locally - note will still need a local db.
+Run `npm start` to start locally - note will still need a local db.
 ### DB Setup
+Install postgresSQL and setup a default user with some credentials (postgres for username and password is the default used.)
 Run the following commands to create a database and fill it with some dummy data for development
 `npm run build` at least once
+Create .env_development, .env_production, and .env_test and set the DB_NAME to whatever you want each name to be. Can also set all other credentials used in backend/config.ts.
 `npx tsc --target es2015 --module es2015 --moduleResolution node --outdir ./db_setup/build/seeders ./db_setup/src/**/*.ts`
 `npx tsc --target es2015 --module es2015 --moduleResolution node --outdir ./db_setup/build/ ./db_setup/src/**.ts`
-`node ./db_setup/build/create-schema.js`
-`export MIKRO_ORM_CLI='./db_setup/build/mikro-orm.config.js' && export MIKRO_ORM_SEEDER_PATH='./db_setup/build/seeders/' && npx mikro-orm seeder:run`
+`NODE_ENV=test node ./db_setup/build/create-schema.js`
+`NODE_ENV=development node ./db_setup/build/create-schema.js`
+`export MIKRO_ORM_CLI='./db_setup/build/mikro-orm.config.js' && export MIKRO_ORM_SEEDER_PATH='./db_setup/build/seeders/'`
+`export NODE_ENV=test`
+`npx mikro-orm seeder:run`
+`export NODE_ENV=dev`
+`npx mikro-orm seeder:run`
+`unset NODE_ENV`
 `unset MIKRO_ORM_CLI`
 
 ### Hot reload
