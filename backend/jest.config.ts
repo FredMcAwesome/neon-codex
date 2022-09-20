@@ -15,10 +15,14 @@ const config: Config.InitialOptions = {
     ],
   },
   transformIgnorePatterns: [
-    "node_modules/(?!@shadowrun/common).+(js|jsx|mjs|ts)$",
+    "node_modules/(?!@shadowrun/common/build/).+(js|jsx|mjs|ts)$",
   ],
   testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.(js?|ts?)$",
   moduleFileExtensions: ["ts", "js", "json", "node"],
   extensionsToTreatAsEsm: [".ts"],
+  moduleNameMapper: {
+    "@shadowrun/common":
+      "<rootDir>/../node_modules/@shadowrun/common/src/index.js",
+  },
 };
 export default config;

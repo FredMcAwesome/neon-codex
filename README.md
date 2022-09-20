@@ -29,17 +29,19 @@ Run `npm start` to start locally - note will still need a local db.
 Install postgresSQL and setup a default user with some credentials (postgres for username and password is the default used.)
 Run the following commands to create a database and fill it with some dummy data for development
 `npm run build` at least once
-Create .env_development, .env_production, and .env_test and set the DB_NAME to whatever you want each name to be. Can also set all other credentials used in backend/config.ts.
-`npx tsc --target es2015 --module es2015 --moduleResolution node --outdir ./db_setup/build/seeders ./db_setup/src/**/*.ts`
-`npx tsc --target es2015 --module es2015 --moduleResolution node --outdir ./db_setup/build/ ./db_setup/src/**.ts`
-`NODE_ENV=test node ./db_setup/build/create-schema.js`
-`NODE_ENV=development node ./db_setup/build/create-schema.js`
-`export MIKRO_ORM_CLI='./db_setup/build/mikro-orm.config.js' && export MIKRO_ORM_SEEDER_PATH='./db_setup/build/seeders/'`
+Create .env_development, .env_production, and .env_test in backend/ and set the DB_NAME to whatever you want each name to be. Can also set all other credentials used in backend/config.ts.
+Create Tables:
+`NODE_ENV=test npx ts-node-esm ./db_setup/src/create-schema.ts`
+`NODE_ENV=development npx ts-node-esm ./db_setup/src/create-schema.ts`
+Fill tables with sample data:
+`export MIKRO_ORM_CLI='./db_setup/src/mikro-orm.config.ts' && export MIKRO_ORM_SEEDER_PATH='./db_setup/src/seeders/'`
+`export NODE_OPTIONS="--loader ts-node/esm"`
 `export NODE_ENV=test`
 `npx mikro-orm seeder:run`
 `export NODE_ENV=dev`
 `npx mikro-orm seeder:run`
 `unset NODE_ENV`
+`unset NODE_OPTIONS`
 `unset MIKRO_ORM_CLI`
 
 ### Hot reload

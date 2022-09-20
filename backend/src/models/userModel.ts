@@ -18,9 +18,18 @@ export default class Users {
   @Property({ length: 3000 })
   password!: string;
 
+  @Property()
+  admin!: boolean;
+
   @OneToMany(() => Threads, (thread) => thread.user)
   threads = new Collection<Threads>(this);
 
   @OneToMany(() => Comments, (comment) => comment.user)
   comments = new Collection<Comments>(this);
+
+  constructor(username: string, password: string, admin: boolean) {
+    this.username = username;
+    this.password = password;
+    this.admin = admin;
+  }
 }

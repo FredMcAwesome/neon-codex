@@ -1,20 +1,23 @@
-import { MikroORM } from "@mikro-orm/core";
 import { EntityManager } from "@mikro-orm/core";
 import { Seeder } from "@mikro-orm/seeder";
-import MikroORMConfig from "../../../build/mikro-orm.config.js";
-import { PostgreSqlDriver } from "@mikro-orm/postgresql";
-import { Users, Threads, Comments } from "../../../build/models/models.js";
+import { Users, Threads, Comments } from "../../../src/models/models.js";
+import bcrypt from "bcrypt";
 
 export class DatabaseSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
+    const saltRounds = 10;
+    const hash1 = await bcrypt.hash("pw1", saltRounds);
+    const hash2 = await bcrypt.hash("pw2", saltRounds);
     // will get persisted automatically
     const user1 = em.create(Users, {
-      username: "User 1",
-      password: "Hash 1",
+      username: "User1",
+      password: hash1,
+      admin: true,
     });
     const user2 = em.create(Users, {
-      username: "User 2",
-      password: "Hash 2",
+      username: "User2",
+      password: hash2,
+      admin: false,
     });
 
     const thread1 = em.create(Threads, {

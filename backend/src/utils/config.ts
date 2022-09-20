@@ -8,7 +8,8 @@ const DB_NAME = process.env.DB_NAME || "shadowrun";
 const PASSWORD = process.env.PASSWORD || "postgres";
 const HOST = process.env.HOST || "localhost";
 const PORT = parseInt(process.env.PORT || "3000");
+const TOKEN_SECRET = process.env.TOKEN_SECRET || "secret";
 
 const DATABASE_PORT = parseInt(process.env.PORT || "5432");
 
-export { DB_NAME, HOST, PORT, DATABASE_PORT, PASSWORD };
+export { DB_NAME, HOST, PORT, DATABASE_PORT, PASSWORD, TOKEN_SECRET };

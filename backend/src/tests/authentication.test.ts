@@ -7,14 +7,14 @@ import Comments from "../models/commentModel.js";
 import Threads from "../models/threadModel.js";
 import Users from "../models/userModel.js";
 import bcrypt from "bcrypt";
-import { getLoginStatusAPI, getThreadListAPI } from "@shadowrun/common/";
+import { postLoginAPI } from "@shadowrun/common";
 
 const api = supertest(app);
 class DatabaseSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
     const saltRounds = 10;
-    let hash1 = await bcrypt.hash("password1", saltRounds);
-    let hash2 = await bcrypt.hash("password2", saltRounds);
+    const hash1 = await bcrypt.hash("password1", saltRounds);
+    const hash2 = await bcrypt.hash("password2", saltRounds);
     // will get persisted automatically
     const user1 = em.create(Users, {
       username: "User 1",
@@ -75,45 +75,32 @@ class DatabaseSeeder extends Seeder {
   }
 }
 
-let token: string;
-
 beforeAll(async () => {
   await dbInitialised;
   await Database.orm.getSchemaGenerator().refreshDatabase();
   const seeder = Database.orm.getSeeder();
   await seeder.seed(DatabaseSeeder);
-  const response = await api.post("/api/authentication/login").send({
-    username: "User 1",
-    password: "password1",
-  });
-  token = response.body.token;
-  console.log(token);
 });
 
-test("threads are returned when authenticated", async () => {
+test("correct login returns jwt token", async () => {
   await api
-    .get(getThreadListAPI)
-    .set("Authorization", `Bearer ${token}`)
+    .post(postLoginAPI)
+    .send({
+      username: "User 1",
+      password: "password1",
+    })
     .expect(200)
     .expect("Content-Type", /application\/json/);
 });
 
-test("no threads are returned without authentication", async () => {
-  await api.get(getThreadListAPI).expect(400);
-});
-
-test("verify user jwt with correct jwt", async () => {
+test("incorrect login returns unauthorised", async () => {
   await api
-    .get(getLoginStatusAPI)
-    .set("Authorization", `Bearer ${token}`)
-    .expect(200);
-});
-
-test("invalidate user jwt with incorrect jwt", async () => {
-  await api
-    .get(getLoginStatusAPI)
-    .set("Authorization", "Bearer BadToken")
-    .expect(500);
+    .post(postLoginAPI)
+    .send({
+      username: "User 1",
+      password: "badPassword",
+    })
+    .expect(401);
 });
 
 afterAll(async () => {

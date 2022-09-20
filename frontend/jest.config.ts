@@ -19,5 +19,9 @@ const config: Config.InitialOptions = {
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
   extensionsToTreatAsEsm: [".ts", ".tsx"],
   setupFilesAfterEnv: ["<rootDir>/src/setupTests.ts"],
+  moduleNameMapper: {
+    "@shadowrun/common":
+      "<rootDir>/../node_modules/@shadowrun/common/src/index.js",
+  },
 };
 export default config;

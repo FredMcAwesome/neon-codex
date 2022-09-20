@@ -1,11 +1,12 @@
 import express from "express";
 import cors from "cors";
 import path from "path";
-import type { Example } from "@shadowrun/common/src/index.js";
+import type { Example } from "@shadowrun/common";
 import * as logger from "./utils/logger.js";
 import { HOST, PORT } from "./utils/config.js";
 import * as middleware from "./utils/middleware.js";
 import forumRouter from "./routes/forum.js";
+import authenticationRouter from "./routes/authentication.js";
 import { init, Database } from "./utils/db.js";
 import { RequestContext } from "@mikro-orm/core";
 
@@ -40,5 +41,6 @@ app.get("/api/example", (_req, res) => {
 });
 
 app.use("/api/forum", forumRouter);
+app.use("/api/authentication", authenticationRouter);
 
 export default app;

@@ -6,11 +6,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "NODE_ENV=development webpack --watch",
+    "start": "cross-env NODE_ENV=development webpack --watch",
     "serve": "webpack serve --port 3001",
-    "build": "NODE_ENV=production webpack",
-    "build-dev": "NODE_ENV=development webpack",
-    "test": "jest",
+    "build": "cross-env NODE_ENV=production webpack",
+    "build-dev": "cross-env NODE_ENV=development webpack",
+    "test": "jest --silent",
     "clean": "rm -rf ./build"
   },
   "keywords": [],
@@ -19,14 +19,17 @@
   "dependencies": {
     "@tanstack/react-query": "^4.2.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.4.3",
     "@types/jest": "^29.0.1",
     "@types/react": "^18.0.18",
     "@types/react-dom": "^18.0.6",
+    "cross-env": "^7.0.3",
     "cross-fetch": "^3.1.5",
     "css-loader": "^6.7.1",
     "html-webpack-plugin": "^5.5.0",

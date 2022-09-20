@@ -1,13 +1,15 @@
-import type { ThreadListType } from "@shadowrun/common/src/index.js";
-import { ThreadListSchema } from "@shadowrun/common/src/index.js";
+import type { ThreadListType } from "@shadowrun/common";
+import { ThreadListSchema } from "@shadowrun/common";
 import { useQuery } from "@tanstack/react-query";
-import { SERVER } from "../../utils/config.js";
+import { getThreadList } from "../../utils/api.js";
+import { useFetchWrapper } from "../../utils/authFetch.js";
+
+const forumPath = "/forum";
+const fetchWrapper = useFetchWrapper();
 
 async function fetchThreads() {
   console.log("fetch Threads");
-  const response: Response = await fetch(SERVER + "/api/forum/thread", {
-    mode: "cors",
-  });
+  const response: Response = await fetchWrapper.get(getThreadList);
   // https://tanstack.com/query/v4/docs/guides/query-functions#usage-with-fetch-and-other-clients-that-do-not-throw-by-default
   if (!response.ok) {
     throw new Error(response.statusText);
@@ -56,4 +58,5 @@ const Forum = function () {
   );
 };
 
+export { forumPath };
 export default Forum;
