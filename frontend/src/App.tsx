@@ -1,8 +1,7 @@
 import Forum, { forumPath } from "./components/forum/Forum.js";
-import Login from "./components/login/Login.js";
 import Dashboard, { dashboardPath } from "./components/dashboard/Dashboard.js";
 import { Routes, Route } from "react-router-dom";
-import PrivateRoute from "./utils/PrivateRoute.js";
+import { PrivateRoute, LoginRoute } from "./utils/PrivateRoute.js";
 import { loginPath } from "./components/login/Login.js";
 import { useQuery } from "@tanstack/react-query";
 import { isAuthenticated } from "./components/login/loginHelper.js";
@@ -28,7 +27,7 @@ function App() {
         />
         <Route path={forumPath} element={<PrivateRoute outlet={<Forum />} />} />
 
-        <Route path={loginPath} element={<Login />} />
+        <Route path={loginPath} element={<LoginRoute />} />
       </Routes>
     );
   }

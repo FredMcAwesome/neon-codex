@@ -30,11 +30,6 @@ app.use((_req, _res, next) => {
 
 app.use(middleware.requestLogger);
 
-// Have Node serve the files for built React app
-const frontendPath = path.resolve("..", "frontend/build");
-logger.log("Loading react frontend from: " + frontendPath);
-app.use(express.static(frontendPath));
-
 app.get("/api/example", (_req, res) => {
   const data: Example = { example: "ster" };
   res.json(data);
@@ -42,5 +37,15 @@ app.get("/api/example", (_req, res) => {
 
 app.use("/api/forum", forumRouter);
 app.use("/api/authentication", authenticationRouter);
+
+// Have Node serve the files for built React app
+const frontendPath = path.resolve("..", "frontend/build");
+logger.log("Loading react frontend from: " + frontendPath);
+app.use(express.static(frontendPath));
+app.get("*", function (_req, res) {
+  res.sendFile("index.html", {
+    root: frontendPath,
+  });
+});
 
 export default app;

@@ -11,7 +11,7 @@
     "build": "tsc --build",
     "prestart": "npm run build",
     "dev": "tsc-watch -b --onSuccess 'cross-env NODE_ENV=development node .'",
-    "test": "cross-env NODE_ENV=test jest --silent",
+    "test": "cross-env NODE_ENV=test jest --runInBand --silent",
     "test-debug": "cross-env NODE_ENV=test jest --runInBand --detectOpenHandles"
   },
   "keywords": [],

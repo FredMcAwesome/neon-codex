@@ -18,7 +18,7 @@ const config: Config.InitialOptions = {
   testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
   extensionsToTreatAsEsm: [".ts", ".tsx"],
-  setupFilesAfterEnv: ["<rootDir>/src/setupTests.ts"],
+  setupFilesAfterEnv: ["<rootDir>/src/tests/setupTests.ts"],
   moduleNameMapper: {
     "@shadowrun/common":
       "<rootDir>/../node_modules/@shadowrun/common/src/index.js",
