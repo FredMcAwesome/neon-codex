@@ -3,17 +3,17 @@ import {
   screen,
   waitForElementToBeRemoved,
 } from "@testing-library/react";
+import { rest } from "msw";
+import { MemoryRouter } from "react-router-dom";
+import { JwtTokenType } from "@shadowrun/common";
 import App from "../App.js";
 import { rootRender } from "../utils/TestingUtils.js";
+import { getLoginStatus, postLogin } from "../utils/api.js";
 import {
   clearUserSession,
   saveUserSession,
 } from "../components/login/loginHelper.js";
 import { server } from "./mocks/server.js";
-import { rest } from "msw";
-import { MemoryRouter } from "react-router-dom";
-import { getLoginStatus, postLogin } from "../utils/api.js";
-import { JwtTokenType } from "@shadowrun/common";
 
 const token: JwtTokenType = {
   token: "tokenValue",

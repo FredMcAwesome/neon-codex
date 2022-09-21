@@ -1,9 +1,9 @@
-import { SERVER } from "./config.js";
 import {
   getThreadListAPI,
   postLoginAPI,
   getLoginStatusAPI,
 } from "@shadowrun/common";
+import { SERVER } from "./config.js";
 
 const getThreadList = SERVER + getThreadListAPI;
 const postLogin = SERVER + postLoginAPI;

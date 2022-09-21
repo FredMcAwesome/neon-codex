@@ -1,7 +1,7 @@
 import express from "express";
+import type { ThreadListType } from "@shadowrun/common";
 import { Database } from "../utils/db.js";
 import * as logger from "../utils/logger.js";
-import type { ThreadListType } from "@shadowrun/common";
 import { IAuthRequest, isLoggedIn } from "./authentication.js";
 
 const router = express.Router();

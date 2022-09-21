@@ -1,10 +1,10 @@
 import { rest } from "msw";
 import { fireEvent, screen, waitFor } from "@testing-library/react";
-import { server } from "../mocks/server.js";
-import Login from "../../components/login/Login.js";
-import { renderWithProviders } from "../../utils/TestingUtils.js";
 import { JwtTokenType } from "@shadowrun/common";
+import { server } from "../mocks/server.js";
+import { renderWithProviders } from "../../utils/TestingUtils.js";
 import { postLogin } from "../../utils/api.js";
+import Login from "../../components/login/Login.js";
 import { clearUserSession } from "../../components/login/loginHelper.js";
 
 const token: JwtTokenType = {

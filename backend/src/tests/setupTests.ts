@@ -1,12 +1,12 @@
 import { EntityManager } from "@mikro-orm/core";
+import { Seeder } from "@mikro-orm/seeder";
+import bcrypt from "bcrypt";
 import "@testing-library/jest-dom";
+import { Database } from "../utils/db.js";
 import { dbInitialised } from "../app.js";
 import Comments from "../models/commentModel.js";
 import Threads from "../models/threadModel.js";
 import Users from "../models/userModel.js";
-import { Database } from "../utils/db.js";
-import { Seeder } from "@mikro-orm/seeder";
-import bcrypt from "bcrypt";
 
 class DatabaseSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {

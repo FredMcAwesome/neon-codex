@@ -1,6 +1,6 @@
 import supertest from "supertest";
-import app from "../app.js";
 import { postLoginAPI } from "@shadowrun/common";
+import app from "../app.js";
 
 const api = supertest(app);
 

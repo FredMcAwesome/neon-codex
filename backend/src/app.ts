@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import path from "path";
+import { RequestContext } from "@mikro-orm/core";
 import type { Example } from "@shadowrun/common";
 import * as logger from "./utils/logger.js";
 import { HOST, PORT } from "./utils/config.js";
@@ -8,7 +9,6 @@ import * as middleware from "./utils/middleware.js";
 import forumRouter from "./routes/forum.js";
 import authenticationRouter from "./routes/authentication.js";
 import { init, Database } from "./utils/db.js";
-import { RequestContext } from "@mikro-orm/core";
 
 // dodgy way to allow jest testing to know we are initialise
 // when jest esm support is better change this to a top level await

@@ -11,6 +11,7 @@ const config: Config.InitialOptions = {
       "ts-jest",
       {
         useESM: true,
+        tsConfig: "./tests/tsconfig.json",
       },
     ],
   },

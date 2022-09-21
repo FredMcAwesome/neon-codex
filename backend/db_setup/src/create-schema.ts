@@ -1,6 +1,6 @@
 import { MikroORM } from "@mikro-orm/core";
-import MikroORMConfig from "../../build/mikro-orm.config.js";
 import { PostgreSqlDriver } from "@mikro-orm/postgresql";
+import MikroORMConfig from "../../build/mikro-orm.config.js";
 
 (async () => {
   const orm = await MikroORM.init<PostgreSqlDriver>(MikroORMConfig);

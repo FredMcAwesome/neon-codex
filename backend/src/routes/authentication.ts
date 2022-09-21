@@ -1,14 +1,14 @@
 import express from "express";
-import bcrypt from "bcrypt";
-import { Database } from "../utils/db.js";
-import * as logger from "../utils/logger.js";
-import { Users } from "../models/models.js";
 import { body, validationResult } from "express-validator";
+import { Loaded } from "@mikro-orm/core";
+import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { TOKEN_SECRET } from "../utils/config.js";
 import { LoginSchema } from "@shadowrun/common";
 import type { LoginType, JwtTokenType } from "@shadowrun/common";
-import { Loaded } from "@mikro-orm/core";
+import { Users } from "../models/models.js";
+import { Database } from "../utils/db.js";
+import * as logger from "../utils/logger.js";
+import { TOKEN_SECRET } from "../utils/config.js";
 const router = express.Router();
 
 const isLoggedIn = [verifyToken, getUsername];

@@ -3,8 +3,8 @@ import "dotenv/config";
 // import { DATABASE_URL } from "./config.js";
 import MikroORMConfig from "../mikro-orm.config.js";
 import { EntityManager, EntityRepository, MikroORM } from "@mikro-orm/core";
-import { Users, Threads, Comments } from "../models/models.js";
 import { PostgreSqlDriver } from "@mikro-orm/postgresql";
+import { Users, Threads, Comments } from "../models/models.js";
 
 interface IDatabase {
   orm: MikroORM;

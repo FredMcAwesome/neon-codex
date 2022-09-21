@@ -1,9 +1,9 @@
+import { Routes, Route } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import { PrivateRoute, LoginRoute } from "./utils/PrivateRoute.js";
 import Forum, { forumPath } from "./components/forum/Forum.js";
 import Dashboard, { dashboardPath } from "./components/dashboard/Dashboard.js";
-import { Routes, Route } from "react-router-dom";
-import { PrivateRoute, LoginRoute } from "./utils/PrivateRoute.js";
 import { loginPath } from "./components/login/Login.js";
-import { useQuery } from "@tanstack/react-query";
 import { isAuthenticated } from "./components/login/loginHelper.js";
 
 function App() {

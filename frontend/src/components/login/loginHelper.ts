@@ -1,6 +1,6 @@
 // Session details are only read and written on app startup and login/logout
 
-import { JwtTokenSchema } from "@shadowrun/common/build/index.js";
+import { JwtTokenSchema } from "@shadowrun/common/";
 import type { JwtTokenType, LoginType } from "@shadowrun/common";
 import { getLoginStatus, postLogin } from "../../utils/api.js";
 
