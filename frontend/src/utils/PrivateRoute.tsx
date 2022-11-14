@@ -5,14 +5,14 @@
 // If not: they are redirected to the login page.
 import { Navigate } from "react-router-dom";
 import { dashboardPath } from "../components/dashboard/Dashboard.js";
-import Login, { loginPath } from "../components/login/Login.js";
+import LoginRoute, { loginPath } from "../components/login/Login.js";
 import { getUserSession } from "../components/login/loginHelper.js";
 
 export type ProtectedRouteProps = {
   outlet: JSX.Element;
 };
 
-const PrivateRoute = ({ outlet }: ProtectedRouteProps) => {
+const PrivateRoute = function ({ outlet }: ProtectedRouteProps) {
   const { token } = getUserSession();
   // assume userSession is up to date later redirect to login page
   // if server responds with authentication failed for any request
@@ -24,7 +24,7 @@ const PrivateRoute = ({ outlet }: ProtectedRouteProps) => {
   }
 };
 
-const LoginRoute = () => {
+const Login = function () {
   const { token } = getUserSession();
 
   /* Direct any login requests to dashboard if already logged in */
@@ -32,8 +32,8 @@ const LoginRoute = () => {
     console.log("already logged in");
     return <Navigate to={{ pathname: dashboardPath }} />;
   } else {
-    return <Login />;
+    return <LoginRoute />;
   }
 };
 
-export { PrivateRoute, LoginRoute };
+export { PrivateRoute, Login };

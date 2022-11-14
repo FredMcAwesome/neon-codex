@@ -1,0 +1,9 @@
+header {
+  background-color: rgb(152, 83, 83);
+  min-height: 30px;
+}
+
+header > a {
+  margin: auto auto auto 50px;
+  color: antiquewhite;
+}

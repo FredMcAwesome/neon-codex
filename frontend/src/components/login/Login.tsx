@@ -6,7 +6,7 @@ import { attemptLogin } from "./loginHelper.js";
 
 const loginPath = "/login";
 
-const Login = function () {
+const LoginRoute = function () {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const { mutateAsync, isLoading, data, isError, error } =
@@ -59,4 +59,4 @@ const Login = function () {
 };
 
 export { loginPath };
-export default Login;
+export default LoginRoute;

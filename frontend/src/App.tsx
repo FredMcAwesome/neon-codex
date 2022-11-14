@@ -1,10 +1,14 @@
 import { Routes, Route } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
-import { PrivateRoute, LoginRoute } from "./utils/PrivateRoute.js";
+import { PrivateRoute, Login } from "./utils/PrivateRoute.js";
 import Forum, { forumPath } from "./components/forum/Forum.js";
 import Dashboard, { dashboardPath } from "./components/dashboard/Dashboard.js";
 import { loginPath } from "./components/login/Login.js";
 import { isAuthenticated } from "./components/login/loginHelper.js";
+import NavigationBar from "./components/navigation/NavigationBar.js";
+import CharacterCreator, {
+  characterCreatorPath,
+} from "./components/character/CharacterCreator.js";
 
 function App() {
   const { isLoading } = useQuery(["authenticationStatus"], isAuthenticated);
@@ -18,17 +22,24 @@ function App() {
     );
   } else {
     return (
-      <Routes>
-        {/* Children of Routes need to be Route component so need to have 
-              this cumbersome format for routes to allow redirect */}
-        <Route
-          path={dashboardPath}
-          element={<PrivateRoute outlet={<Dashboard />} />}
-        />
-        <Route path={forumPath} element={<PrivateRoute outlet={<Forum />} />} />
+      <>
+        <NavigationBar />
+        <Routes>
+          {/* Children of Routes need to be Route component so need to have
+          this cumbersome format for routes to allow redirect */}
+          <Route
+            path={dashboardPath}
+            element={<PrivateRoute outlet={<Dashboard />} />}
+          />
+          <Route
+            path={forumPath}
+            element={<PrivateRoute outlet={<Forum />} />}
+          />
 
-        <Route path={loginPath} element={<LoginRoute />} />
-      </Routes>
+          <Route path={loginPath} element={<Login />} />
+          <Route path={characterCreatorPath} element={<CharacterCreator />} />
+        </Routes>
+      </>
     );
   }
 }

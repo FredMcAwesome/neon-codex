@@ -6,9 +6,15 @@ import { Users, Threads, Comments } from "../../../src/models/models.js";
 export class DatabaseSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
     const saltRounds = 10;
+    const hash0 = await bcrypt.hash("admin", saltRounds);
     const hash1 = await bcrypt.hash("pw1", saltRounds);
     const hash2 = await bcrypt.hash("pw2", saltRounds);
     // will get persisted automatically
+    em.create(Users, {
+      username: "admin",
+      password: hash0,
+      admin: true,
+    });
     const user1 = em.create(Users, {
       username: "User1",
       password: hash1,
