@@ -17,10 +17,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@tanstack/react-query": "^4.2.3",
+    "@tanstack/react-query": "^4.19.0",
+    "@tanstack/react-table": "^8.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.0"
+    "react-router-dom": "^6.4.4"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",

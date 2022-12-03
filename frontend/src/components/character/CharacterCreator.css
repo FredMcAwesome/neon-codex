@@ -1,0 +1,10 @@
+#priority_table {
+  display: grid;
+  grid-template-columns: 120px 120px 120px 600px 120px 120px;
+  width: 1200px;
+  background-color: bisque;
+}
+
+#priority_table > * {
+  border: 1px solid black;
+}
