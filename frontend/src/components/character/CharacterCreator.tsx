@@ -6,6 +6,7 @@ import {
   PriorityLevelEnum,
   MetatypeEnum,
   MagicTypeEnum,
+  priorityOptions,
 } from "./PriorityImports.js";
 import type { IPriorities } from "./PriorityImports.js";
 import "./CharacterCreator.css";
@@ -52,6 +53,9 @@ const CharacterCreator = function () {
           priorityInfo={priorityInfo}
           attributeInfo={attributeInfo}
           setAttributeInfo={setAttributeInfo}
+          maxAttributePoints={
+            priorityOptions[priorityInfo.AttributesPriority].attributes
+          }
         />
       );
       break;
