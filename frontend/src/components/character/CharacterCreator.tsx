@@ -1,12 +1,13 @@
 import { useState } from "react";
-import Attributes from "./Attributes.js";
+import AttributesSelect from "./AttributesSelect.js";
+import type { IAttributes } from "./AttributesSelect.js";
 import PrioritySelect from "./PrioritySelect.js";
 import {
   PriorityLevelEnum,
   MetatypeEnum,
   MagicTypeEnum,
-  IPriorities,
-} from "./PrioritySelect.js";
+} from "./PriorityImports.js";
+import type { IPriorities } from "./PriorityImports.js";
 import "./CharacterCreator.css";
 import React from "react";
 
@@ -20,6 +21,17 @@ const CharacterCreator = function () {
     MagicSubselection: MagicTypeEnum.Magician,
     SkillsPriority: PriorityLevelEnum.D,
     ResourcesPriority: PriorityLevelEnum.E,
+  });
+  const [attributeInfo, setAttributeInfo] = useState<IAttributes>({
+    body: 1,
+    agility: 1,
+    reaction: 1,
+    strength: 1,
+    willpower: 1,
+    logic: 1,
+    intuition: 1,
+    charisma: 1,
+    edge: 0,
   });
   const [page, setPage] = useState(0);
   const firstPage = 0;
@@ -35,7 +47,13 @@ const CharacterCreator = function () {
       );
       break;
     case 1:
-      currentStage = <Attributes priorityInfo={priorityInfo} />;
+      currentStage = (
+        <AttributesSelect
+          priorityInfo={priorityInfo}
+          attributeInfo={attributeInfo}
+          setAttributeInfo={setAttributeInfo}
+        />
+      );
       break;
     default:
       currentStage = (
