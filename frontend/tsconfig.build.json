@@ -2,11 +2,12 @@
   "extends": "../tsconfig.base.json",
   "compilerOptions": {
     "rootDir": "./src",
+    "outDir": "./build",
     "jsx": "react-jsx",
     "module": "ES6"
   },
   "include": ["src"],
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "src/tests"],
   "references": [
     {
       "path": "../common"

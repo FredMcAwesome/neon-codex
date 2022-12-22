@@ -16,6 +16,7 @@ module.exports = {
           loader: "ts-loader",
           options: {
             projectReferences: true,
+            configFile: "tsconfig.build.json",
           },
         },
         exclude: /node_modules/,

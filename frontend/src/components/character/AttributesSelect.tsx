@@ -358,17 +358,6 @@ const AttributesSelect = function (props: IProps) {
         tempAttributePoints = 0;
       }
     }
-    props.setAttributeInfo({
-      body: attributeArray[AttributesEnum.Body],
-      agility: attributeArray[AttributesEnum.Agility],
-      reaction: attributeArray[AttributesEnum.Reaction],
-      strength: attributeArray[AttributesEnum.Strength],
-      willpower: attributeArray[AttributesEnum.Willpower],
-      logic: attributeArray[AttributesEnum.Logic],
-      intuition: attributeArray[AttributesEnum.Intuition],
-      charisma: attributeArray[AttributesEnum.Charisma],
-      edge: attributeArray[AttributesEnum.Edge],
-    });
     setAttributePoints(tempAttributePoints);
     return attributeArray;
   });
@@ -460,21 +449,42 @@ const AttributesSelect = function (props: IProps) {
   }
 
   useEffect(() => {
+    props.setAttributeInfo({
+      body: attributes[AttributesEnum.Body],
+      agility: attributes[AttributesEnum.Agility],
+      reaction: attributes[AttributesEnum.Reaction],
+      strength: attributes[AttributesEnum.Strength],
+      willpower: attributes[AttributesEnum.Willpower],
+      logic: attributes[AttributesEnum.Logic],
+      intuition: attributes[AttributesEnum.Intuition],
+      charisma: attributes[AttributesEnum.Charisma],
+      edge: attributes[AttributesEnum.Edge],
+    });
+  }, []);
+
+  useEffect(() => {
     setAttributeOptions(getAttributeOptions());
   }, [attributes]);
 
   return (
     <div>
       <div>
-        <p>Race: {MetatypeEnum[metatype]}</p>
-        <p>Attribute Points Remaining: {attributePoints}</p>
+        <p>
+          Race: <span id="race">{MetatypeEnum[metatype]}</span>
+        </p>
+        <p>
+          Attribute Points Remaining:{" "}
+          <span id="attribute_points">{attributePoints}</span>
+        </p>
       </div>
       <div>
-        <p>Body - Resisting physical damage</p>
-        {"Min/Max: " +
-          baseAttributes[AttributesEnum.Body].minimum +
-          "/" +
-          baseAttributes[AttributesEnum.Body].maximum}
+        <label htmlFor="body">Body - Resisting physical damage</label>
+        <div>
+          {"Min/Max: " +
+            baseAttributes[AttributesEnum.Body].minimum +
+            "/" +
+            baseAttributes[AttributesEnum.Body].maximum}
+        </div>
         <Dropdown
           options={attributeOptions[AttributesEnum.Body]}
           value={attributes[AttributesEnum.Body].toString()}
@@ -482,14 +492,17 @@ const AttributesSelect = function (props: IProps) {
             changeAttribute(AttributesEnum.Body, event.value);
           }}
           placeholder={"Select an option"}
+          className="body"
         />
       </div>
       <div>
-        <p>Agility - Attack accuracy</p>
-        {"Min/Max: " +
-          baseAttributes[AttributesEnum.Agility].minimum +
-          "/" +
-          baseAttributes[AttributesEnum.Agility].maximum}
+        <label htmlFor="agility">Agility - Attack accuracy</label>
+        <div>
+          {"Min/Max: " +
+            baseAttributes[AttributesEnum.Agility].minimum +
+            "/" +
+            baseAttributes[AttributesEnum.Agility].maximum}
+        </div>
         <Dropdown
           options={attributeOptions[AttributesEnum.Agility]}
           value={attributes[AttributesEnum.Agility].toString()}
@@ -497,14 +510,17 @@ const AttributesSelect = function (props: IProps) {
             changeAttribute(AttributesEnum.Agility, event.value);
           }}
           placeholder={"Select an option"}
+          className="agility"
         />
       </div>
       <div>
-        <p>Reaction - Initiative, Dodging</p>
-        {"Min/Max: " +
-          baseAttributes[AttributesEnum.Reaction].minimum +
-          "/" +
-          baseAttributes[AttributesEnum.Reaction].maximum}
+        <label htmlFor="reaction">Reaction - Initiative, Dodging</label>
+        <div>
+          {"Min/Max: " +
+            baseAttributes[AttributesEnum.Reaction].minimum +
+            "/" +
+            baseAttributes[AttributesEnum.Reaction].maximum}
+        </div>
         <Dropdown
           options={attributeOptions[AttributesEnum.Reaction]}
           value={attributes[AttributesEnum.Reaction].toString()}
@@ -512,14 +528,17 @@ const AttributesSelect = function (props: IProps) {
             changeAttribute(AttributesEnum.Reaction, event.value);
           }}
           placeholder={"Select an option"}
+          className="reaction"
         />
       </div>
       <div>
-        <p>Strength - Melee damage</p>
-        {"Min/Max: " +
-          baseAttributes[AttributesEnum.Strength].minimum +
-          "/" +
-          baseAttributes[AttributesEnum.Strength].maximum}
+        <label htmlFor="strength">Strength - Melee damage</label>
+        <div>
+          {"Min/Max: " +
+            baseAttributes[AttributesEnum.Strength].minimum +
+            "/" +
+            baseAttributes[AttributesEnum.Strength].maximum}
+        </div>
         <Dropdown
           options={attributeOptions[AttributesEnum.Strength]}
           value={attributes[AttributesEnum.Strength].toString()}
@@ -527,14 +546,19 @@ const AttributesSelect = function (props: IProps) {
             changeAttribute(AttributesEnum.Strength, event.value);
           }}
           placeholder={"Select an option"}
+          className="strength"
         />
       </div>
       <div>
-        <p>Willpower - Spell drain, Avoiding stun</p>
-        {"Min/Max: " +
-          baseAttributes[AttributesEnum.Willpower].minimum +
-          "/" +
-          baseAttributes[AttributesEnum.Willpower].maximum}
+        <label htmlFor="willpower">
+          Willpower - Spell drain, Avoiding stun
+        </label>
+        <div>
+          {"Min/Max: " +
+            baseAttributes[AttributesEnum.Willpower].minimum +
+            "/" +
+            baseAttributes[AttributesEnum.Willpower].maximum}
+        </div>
         <Dropdown
           options={attributeOptions[AttributesEnum.Willpower]}
           value={attributes[AttributesEnum.Willpower].toString()}
@@ -542,14 +566,17 @@ const AttributesSelect = function (props: IProps) {
             changeAttribute(AttributesEnum.Willpower, event.value);
           }}
           placeholder={"Select an option"}
+          className="willpower"
         />
       </div>
       <div>
-        <p>Logic - Hermetic spell drain</p>
-        {"Min/Max: " +
-          baseAttributes[AttributesEnum.Logic].minimum +
-          "/" +
-          baseAttributes[AttributesEnum.Logic].maximum}
+        <label htmlFor="logic">Logic - Hermetic spell drain</label>
+        <div>
+          {"Min/Max: " +
+            baseAttributes[AttributesEnum.Logic].minimum +
+            "/" +
+            baseAttributes[AttributesEnum.Logic].maximum}
+        </div>
         <Dropdown
           options={attributeOptions[AttributesEnum.Logic]}
           value={attributes[AttributesEnum.Logic].toString()}
@@ -557,14 +584,17 @@ const AttributesSelect = function (props: IProps) {
             changeAttribute(AttributesEnum.Logic, event.value);
           }}
           placeholder={"Select an option"}
+          className="logic"
         />
       </div>
       <div>
-        <p>Intuition - Initiative, Dodging</p>
-        {"Min/Max: " +
-          baseAttributes[AttributesEnum.Intuition].minimum +
-          "/" +
-          baseAttributes[AttributesEnum.Intuition].maximum}
+        <label htmlFor="intuition">Intuition - Initiative, Dodging</label>
+        <div>
+          {"Min/Max: " +
+            baseAttributes[AttributesEnum.Intuition].minimum +
+            "/" +
+            baseAttributes[AttributesEnum.Intuition].maximum}
+        </div>
         <Dropdown
           options={attributeOptions[AttributesEnum.Intuition]}
           value={attributes[AttributesEnum.Intuition].toString()}
@@ -572,13 +602,16 @@ const AttributesSelect = function (props: IProps) {
             changeAttribute(AttributesEnum.Intuition, event.value);
           }}
           placeholder={"Select an option"}
+          className="intuition"
         />
         <div></div>
-        <p>Charisma - Shaman spell drain</p>
-        {"Min/Max: " +
-          baseAttributes[AttributesEnum.Charisma].minimum +
-          "/" +
-          baseAttributes[AttributesEnum.Charisma].maximum}
+        <label htmlFor="charisma">Charisma - Shaman spell drain</label>
+        <div>
+          {"Min/Max: " +
+            baseAttributes[AttributesEnum.Charisma].minimum +
+            "/" +
+            baseAttributes[AttributesEnum.Charisma].maximum}
+        </div>
         <Dropdown
           options={attributeOptions[AttributesEnum.Charisma]}
           value={attributes[AttributesEnum.Charisma].toString()}
@@ -586,14 +619,17 @@ const AttributesSelect = function (props: IProps) {
             changeAttribute(AttributesEnum.Charisma, event.value);
           }}
           placeholder={"Select an option"}
+          className="charisma"
         />
       </div>
       <div>
-        <p>Edge - Luck</p>
-        {"Min/Max: " +
-          baseAttributes[AttributesEnum.Edge].minimum +
-          "/" +
-          baseAttributes[AttributesEnum.Edge].maximum}
+        <label htmlFor="edge">Edge - Luck</label>
+        <div>
+          {"Min/Max: " +
+            baseAttributes[AttributesEnum.Edge].minimum +
+            "/" +
+            baseAttributes[AttributesEnum.Edge].maximum}
+        </div>
         <Dropdown
           options={attributeOptions[AttributesEnum.Edge]}
           value={attributes[AttributesEnum.Edge].toString()}
@@ -601,9 +637,10 @@ const AttributesSelect = function (props: IProps) {
             changeAttribute(AttributesEnum.Edge, event.value);
           }}
           placeholder={"Select an option"}
+          className="edge"
         />
-        <p>Initiative - (Reaction + Intuition)</p>
-        <p>
+        <label htmlFor="initiative">Initiative - (Reaction + Intuition)</label>
+        <p id="initiative">
           {attributes[AttributesEnum.Reaction] +
             attributes[AttributesEnum.Intuition]}
         </p>

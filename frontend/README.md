@@ -7,7 +7,8 @@ The frontend uses react with react query for all communication to the server.
 
 ## Testing
 To run tests use `npm test`.
-We use jest for tests, [it has limited esm support atm](https://jestjs.io/docs/ecmascript-modules) but most of this is handled by using ts-jest which transpiles it the same way the rest of the code is. [The same goes for msw](https://github.com/mswjs/msw/issues/1384) so we use require for server.ts imports to avoid esm issues. For jest we need to add cross-fetch to polyfill the fetch command (as jest is run in node which doesn't have a native fetch).
+We use jest for tests, [it has limited esm support atm](https://jestjs.io/docs/ecmascript-modules) but most of this is handled by using ts-jest which transpiles it the same way the rest of the code is. For jest we need to add cross-fetch to polyfill the fetch command (as jest is run in node which doesn't have a native fetch).
+We have a tsconfig.build.json as we don't want to transpile the test files but we also want the vs-code ts language service to be aware of jsx. We set the default tsconfig.json to be for the ide, and the tsconfig.build.json is the file actually used to transpile everything.
 
 ## CSS
 The site is designed as mobile first. This was decided for the normal reasons

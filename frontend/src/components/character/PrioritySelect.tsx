@@ -259,6 +259,7 @@ const PrioritySelect = function (props: IProps) {
               )
             }
             placeholder={"Select an option"}
+            className="metatype"
           />
 
           <Dropdown
@@ -274,6 +275,7 @@ const PrioritySelect = function (props: IProps) {
               props.setPriorityInfo(priority);
             }}
             placeholder={"Select an option"}
+            className="metatypeOptions"
           />
         </div>
         <div>
@@ -288,6 +290,7 @@ const PrioritySelect = function (props: IProps) {
               )
             }
             placeholder={"Select an option"}
+            className="attributes"
           />
         </div>
         <div>
@@ -299,6 +302,7 @@ const PrioritySelect = function (props: IProps) {
               changePriorities(PrioritiesEnum.Magic, arg.value.substring(0, 1))
             }
             placeholder={"Select an option"}
+            className="magic"
           />
 
           <Dropdown
@@ -312,6 +316,7 @@ const PrioritySelect = function (props: IProps) {
               props.setPriorityInfo(priority);
             }}
             placeholder={"Select an option"}
+            className="magicOptions"
           />
         </div>
         <div>
@@ -323,6 +328,7 @@ const PrioritySelect = function (props: IProps) {
               changePriorities(PrioritiesEnum.Skills, arg.value.substring(0, 1))
             }
             placeholder={"Select an option"}
+            className="skills"
           />
         </div>
         <div>
@@ -337,6 +343,7 @@ const PrioritySelect = function (props: IProps) {
               )
             }
             placeholder={"Select an option"}
+            className="resources"
           />
         </div>
       </div>

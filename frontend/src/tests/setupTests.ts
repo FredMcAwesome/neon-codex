@@ -1,5 +1,6 @@
 import "@testing-library/jest-dom";
 import { server } from "./mocks/server.js";
+import "./mocks/LibraryMocks.js";
 
 // Enable API mocking before tests.
 beforeAll(() => {
