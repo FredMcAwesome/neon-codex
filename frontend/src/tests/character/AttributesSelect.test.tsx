@@ -6,7 +6,12 @@ import {
   MagicTypeEnum,
   priorityOptions,
 } from "../../components/character/PriorityImports.js";
+import type { IMagicInfo } from "../../components/character/PriorityImports.js";
 import AttributesSelect from "../../components/character/AttributesSelect.js";
+import type {
+  IAttributes,
+  ISpecialAttributes,
+} from "../../components/character/AttributesSelect.js";
 
 const priorityInfo = {
   MetatypePriority: PriorityLevelEnum.A,
@@ -18,15 +23,24 @@ const priorityInfo = {
   ResourcesPriority: PriorityLevelEnum.E,
 };
 let attributePointsMax = 0;
+let specialAttributePointsMax = 0;
+let magicInfo: IMagicInfo;
 
-beforeAll(
-  () =>
-    (attributePointsMax =
-      priorityOptions[priorityInfo.AttributesPriority].attributes)
-);
+beforeAll(() => {
+  attributePointsMax =
+    priorityOptions[priorityInfo.AttributesPriority].attributes;
+  specialAttributePointsMax =
+    priorityOptions[priorityInfo.MetatypePriority].metatypeInfo[
+      priorityInfo.MetatypeSubselection
+    ].specialAttributes;
+  magicInfo =
+    priorityOptions[priorityInfo.MagicPriority].magicInfo[
+      priorityInfo.MagicSubselection
+    ];
+});
 
 function defaultPageRender() {
-  const attributeInfo = {
+  const attributeInfo: IAttributes = {
     body: 1,
     agility: 1,
     reaction: 1,
@@ -35,14 +49,21 @@ function defaultPageRender() {
     logic: 1,
     intuition: 1,
     charisma: 1,
+  };
+  const specialAttributeInfo: ISpecialAttributes = {
     edge: 0,
+    magic: 0,
   };
   const { container } = renderWithProviders(
     <AttributesSelect
       priorityInfo={priorityInfo}
       attributeInfo={attributeInfo}
       setAttributeInfo={jest.fn()}
+      specialAttributeInfo={specialAttributeInfo}
+      setSpecialAttributeInfo={jest.fn()}
       maxAttributePoints={attributePointsMax}
+      maxSpecialAttributePoints={specialAttributePointsMax}
+      magicInfo={magicInfo}
     />
   );
   return container;
@@ -194,7 +215,12 @@ test("Attributes Select change charisma", () => {
 
 test("Attributes Select change edge", () => {
   defaultPageRender();
-  const attributePoints: HTMLSpanElement = screen.getByText(attributePointsMax);
+  const attributesLine: HTMLSpanElement = screen.getByText(
+    /special attribute points remaining:/i
+  );
+  const attributePoints = within(attributesLine).getByText(
+    specialAttributePointsMax
+  );
   const startPoints = parseInt(attributePoints.innerHTML);
   const edgeSelect: HTMLSelectElement = screen.getByTestId("edge");
   expect(edgeSelect.value).toBe("2");
@@ -208,6 +234,29 @@ test("Attributes Select change edge", () => {
   expect(edgeSelect.value).not.toBe("2");
   expect(edgeSelect.value).toBe("6");
   expect(parseInt(attributePoints.innerHTML)).toBe(startPoints - 4);
+});
+
+test("Attributes Select change magic", () => {
+  defaultPageRender();
+  const attributesLine: HTMLSpanElement = screen.getByText(
+    /special attribute points remaining:/i
+  );
+  const attributePoints = within(attributesLine).getByText(
+    specialAttributePointsMax
+  );
+  const startPoints = parseInt(attributePoints.innerHTML);
+  const magicSelect: HTMLSelectElement = screen.getByTestId("magic");
+  expect(magicSelect.value).toBe("3");
+
+  fireEvent.change(magicSelect, {
+    target: {
+      value: "6",
+    },
+  });
+
+  expect(magicSelect.value).not.toBe("3");
+  expect(magicSelect.value).toBe("6");
+  expect(parseInt(attributePoints.innerHTML)).toBe(startPoints - 3);
 });
 
 test("Attributes Select change initiative", () => {

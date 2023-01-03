@@ -181,26 +181,25 @@ const PrioritySelect = function (props: IProps) {
         break;
       }
     }
-    const priority = props.priorityInfo;
-    priority.MetatypePriority = newPriorities[PrioritiesEnum.Metatype];
-    priority.AttributesPriority = newPriorities[PrioritiesEnum.Attributes];
-    priority.MagicPriority = newPriorities[PrioritiesEnum.Magic];
-    priority.SkillsPriority = newPriorities[PrioritiesEnum.Skills];
-    priority.ResourcesPriority = newPriorities[PrioritiesEnum.Resources];
-    props.setPriorityInfo(priority);
-    setPriorities(newPriorities);
-  }
 
-  useEffect(() => {
     const metatypeRow = priorityOptions.find(
       (row) => row.priority === priorities[PrioritiesEnum.Metatype]
     );
-    setMetatypeOptions(
-      metatypeRow?.metatypeInfo.map(
-        (metaOption) =>
-          metaOption.metatype + " (" + metaOption.specialAttributes + ")"
-      ) || ["Error"]
-    );
+
+    const priority = props.priorityInfo;
+    if (
+      priorities[PrioritiesEnum.Metatype] !==
+      newPriorities[PrioritiesEnum.Metatype]
+    ) {
+      setMetatypeOptions(
+        metatypeRow?.metatypeInfo.map(
+          (metaOption) =>
+            metaOption.metatype + " (" + metaOption.specialAttributes + ")"
+        ) || ["Error"]
+      );
+      setMetatypeSelection(MetatypeEnum.Human);
+      priority.MetatypeSubselection = MetatypeEnum.Human;
+    }
     const magicRow = priorityOptions.find(
       (row) => row.priority === priorities[PrioritiesEnum.Magic]
     );
@@ -212,9 +211,22 @@ const PrioritySelect = function (props: IProps) {
         return formatMagic(line);
       });
     }
+    if (
+      priorities[PrioritiesEnum.Magic] !== newPriorities[PrioritiesEnum.Magic]
+    ) {
+      setMagicOptions(magicArray);
+      setMagicSelection(0);
+      priority.MagicSubselection = 0;
+    }
 
-    setMagicOptions(magicArray);
-  }, [priorities]);
+    priority.MetatypePriority = newPriorities[PrioritiesEnum.Metatype];
+    priority.AttributesPriority = newPriorities[PrioritiesEnum.Attributes];
+    priority.MagicPriority = newPriorities[PrioritiesEnum.Magic];
+    priority.SkillsPriority = newPriorities[PrioritiesEnum.Skills];
+    priority.ResourcesPriority = newPriorities[PrioritiesEnum.Resources];
+    props.setPriorityInfo(priority);
+    setPriorities(newPriorities);
+  }
 
   const [metatypeOptions, setMetatypeOptions] = useState(() => {
     const row = priorityOptions.find(

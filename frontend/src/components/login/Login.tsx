@@ -13,9 +13,15 @@ const LoginRoute = function () {
     useMutation(attemptLogin);
   const navigate = useNavigate();
 
-  const handleSubmit = function (event: React.FormEvent<HTMLFormElement>) {
+  const handleSubmit = async function (
+    event: React.FormEvent<HTMLFormElement>
+  ) {
     event.preventDefault();
-    mutateAsync({ username, password });
+    try {
+      await mutateAsync({ username, password });
+    } catch (err) {
+      //catch pointless error
+    }
   };
 
   useEffect(() => {

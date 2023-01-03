@@ -56,9 +56,6 @@ test("login page with incorrect credentials", async () => {
     }),
   ];
   server.use(...handlers);
-  jest.mock("@tanstack/react-query", () => ({
-    useQuery: jest.fn().mockReturnValue({ error: "failed", isError: true }),
-  }));
 
   renderWithProviders(<Login />);
   const usernameInput: HTMLInputElement = screen.getByLabelText(/Username/i);

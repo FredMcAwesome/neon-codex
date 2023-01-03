@@ -1,6 +1,6 @@
 import { useState } from "react";
 import AttributesSelect from "./AttributesSelect.js";
-import type { IAttributes } from "./AttributesSelect.js";
+import type { IAttributes, ISpecialAttributes } from "./AttributesSelect.js";
 import PrioritySelect from "./PrioritySelect.js";
 import {
   PriorityLevelEnum,
@@ -32,8 +32,12 @@ const CharacterCreator = function () {
     logic: 1,
     intuition: 1,
     charisma: 1,
-    edge: 0,
   });
+  const [specialAttributeInfo, setSpecialAttributeInfo] =
+    useState<ISpecialAttributes>({
+      edge: 0,
+      magic: 0,
+    });
   const [page, setPage] = useState(0);
   const firstPage = 0;
   const lastPage = 1;
@@ -53,8 +57,20 @@ const CharacterCreator = function () {
           priorityInfo={priorityInfo}
           attributeInfo={attributeInfo}
           setAttributeInfo={setAttributeInfo}
+          specialAttributeInfo={specialAttributeInfo}
+          setSpecialAttributeInfo={setSpecialAttributeInfo}
           maxAttributePoints={
             priorityOptions[priorityInfo.AttributesPriority].attributes
+          }
+          maxSpecialAttributePoints={
+            priorityOptions[priorityInfo.MetatypePriority].metatypeInfo[
+              priorityInfo.MetatypeSubselection
+            ].specialAttributes
+          }
+          magicInfo={
+            priorityOptions[priorityInfo.MagicPriority].magicInfo[
+              priorityInfo.MagicSubselection
+            ]
           }
         />
       );
