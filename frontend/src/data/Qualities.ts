@@ -60,7 +60,43 @@ export enum QualityEnum {
   WeakImmuneSystem,
 }
 
-type CostRange = Array<number>;
+export enum QualitySubqualityEnum {
+  HomeGround_AstralAcclimation,
+  HomeGround_YouKnowAGuy,
+  HomeGround_DigitalTurf,
+  HomeGround_TheTransporter,
+  HomeGround_OnTheLam,
+  HomeGround_StreetPolitics,
+  Addition_Mild,
+  Addition_Moderate,
+  Addition_Severe,
+  Addition_Burnout,
+  Alergy_Uncommon_Mild,
+  Alergy_Uncommon_Moderate,
+  Alergy_Uncommon_Severe,
+  Alergy_Uncommon_Extreme,
+  Alergy_Common_Mild,
+  Alergy_Common_Moderate,
+  Alergy_Common_Severe,
+  Alergy_Common_Extreme,
+  Prejudiced_CommonGroup_Biased,
+  Prejudiced_CommonGroup_Outspoken,
+  Prejudiced_CommonGroup_Radical,
+  Prejudiced_SpecificGroup_Biased,
+  Prejudiced_SpecificGroup_Outspoken,
+  Prejudiced_SpecificGroup_Radical,
+  Scorched_MemoryLossShort,
+  Scorched_MemoryLossLong,
+  Scorched_Blackout,
+  Scorched_Migraines,
+  Scorched_ParanoiaAnxiety,
+  SINnerLayered_NationalSIN,
+  SINnerLayered_CriminalSIN,
+  SINnerLayered_CorporateLimitedSIN,
+  SINnerLayered_CorporateSIN,
+}
+
+export type CostRange = Array<number>;
 
 export interface IQuality {
   name: string;
@@ -69,10 +105,16 @@ export interface IQuality {
   cost: number | CostRange;
   maxRating?: number;
   description: string;
-  subchoices?: Array<string>;
+  subqualities?: Array<ISubquality>;
+}
+export interface ISubquality {
+  name: string;
+  id: QualitySubqualityEnum;
+  description: string;
+  cost?: number;
 }
 
-export const Qualities: Array<IQuality> = [
+const unfrozenQualities: Array<IQuality> = [
   {
     name: "Ambidextrous",
     id: QualityEnum.Ambidextrous,
@@ -186,7 +228,38 @@ export const Qualities: Array<IQuality> = [
     positive: true,
     cost: 10,
     description: "",
-    subchoices: ["", "", "", "", "", ""],
+    subqualities: [
+      {
+        name: "Astral Acclimation",
+        id: QualitySubqualityEnum.HomeGround_AstralAcclimation,
+        description: "",
+      },
+      {
+        name: "You Know a Guy",
+        id: QualitySubqualityEnum.HomeGround_YouKnowAGuy,
+        description: "",
+      },
+      {
+        name: "Digital Turf",
+        id: QualitySubqualityEnum.HomeGround_DigitalTurf,
+        description: "",
+      },
+      {
+        name: "The Transporter",
+        id: QualitySubqualityEnum.HomeGround_TheTransporter,
+        description: "",
+      },
+      {
+        name: "On the Lam",
+        id: QualitySubqualityEnum.HomeGround_OnTheLam,
+        description: "",
+      },
+      {
+        name: "Street Politics",
+        id: QualitySubqualityEnum.HomeGround_StreetPolitics,
+        description: "",
+      },
+    ],
   },
   {
     name: "Human-Looking",
@@ -302,7 +375,32 @@ export const Qualities: Array<IQuality> = [
     positive: false,
     cost: [4, 9, 20, 25],
     description: "",
-    subchoices: ["", "", "", ""],
+    subqualities: [
+      {
+        name: "Mild",
+        id: QualitySubqualityEnum.Addition_Mild,
+        description: "",
+        cost: 4,
+      },
+      {
+        name: "Moderate",
+        id: QualitySubqualityEnum.Addition_Moderate,
+        description: "",
+        cost: 9,
+      },
+      {
+        name: "Severe",
+        id: QualitySubqualityEnum.Addition_Severe,
+        description: "",
+        cost: 20,
+      },
+      {
+        name: "Burnout",
+        id: QualitySubqualityEnum.Addition_Burnout,
+        description: "",
+        cost: 25,
+      },
+    ],
   },
   {
     name: "Allergy",
@@ -310,7 +408,56 @@ export const Qualities: Array<IQuality> = [
     positive: false,
     cost: [5, 10, 15, 20, 10, 15, 20, 25],
     description: "",
-    subchoices: ["", "", "", "", "", "", "", ""],
+    subqualities: [
+      {
+        name: "Uncommon, Mild",
+        id: QualitySubqualityEnum.Alergy_Uncommon_Mild,
+        description: "",
+        cost: 5,
+      },
+      {
+        name: "Uncommon, Moderate",
+        id: QualitySubqualityEnum.Alergy_Uncommon_Moderate,
+        description: "",
+        cost: 10,
+      },
+      {
+        name: "Uncommon, Severe",
+        id: QualitySubqualityEnum.Alergy_Uncommon_Severe,
+        description: "",
+        cost: 15,
+      },
+      {
+        name: "Uncommon, Extreme",
+        id: QualitySubqualityEnum.Alergy_Uncommon_Extreme,
+        description: "",
+        cost: 20,
+      },
+      {
+        name: "Common, Mild",
+        id: QualitySubqualityEnum.Alergy_Common_Mild,
+        description: "",
+        cost: 10,
+      },
+      {
+        name: "Common, Moderate",
+        id: QualitySubqualityEnum.Alergy_Common_Moderate,
+        description: "",
+        cost: 15,
+      },
+      {
+        name: "Common, Severe",
+        id: QualitySubqualityEnum.Alergy_Common_Severe,
+        description: "",
+        cost: 20,
+      },
+      {
+        name: "Common, Extreme",
+        id: QualitySubqualityEnum.Alergy_Common_Extreme,
+        description: "",
+        cost: 25,
+      },
+    ],
   },
   {
     name: "Astral Beacon",
@@ -424,7 +571,44 @@ export const Qualities: Array<IQuality> = [
     positive: false,
     cost: [5, 7, 10, 3, 5, 8],
     description: "",
-    subchoices: ["", "", "", "", "", ""],
+    subqualities: [
+      {
+        name: "Common group, Biased",
+        id: QualitySubqualityEnum.Prejudiced_CommonGroup_Biased,
+        description: "",
+        cost: 5,
+      },
+      {
+        name: "Common group, Outspoken",
+        id: QualitySubqualityEnum.Prejudiced_CommonGroup_Outspoken,
+        description: "",
+        cost: 7,
+      },
+      {
+        name: "Common group, Radical",
+        id: QualitySubqualityEnum.Prejudiced_CommonGroup_Radical,
+        description: "",
+        cost: 10,
+      },
+      {
+        name: "Specific group, Biased",
+        id: QualitySubqualityEnum.Prejudiced_SpecificGroup_Biased,
+        description: "",
+        cost: 3,
+      },
+      {
+        name: "Specific group, Outspoken",
+        id: QualitySubqualityEnum.Prejudiced_SpecificGroup_Outspoken,
+        description: "",
+        cost: 5,
+      },
+      {
+        name: "Specific group, Radical",
+        id: QualitySubqualityEnum.Prejudiced_SpecificGroup_Radical,
+        description: "",
+        cost: 8,
+      },
+    ],
   },
   {
     name: "Scorched",
@@ -432,7 +616,33 @@ export const Qualities: Array<IQuality> = [
     positive: false,
     cost: 10,
     description: "",
-    subchoices: ["", "", "", "", ""],
+    subqualities: [
+      {
+        name: "Memory Loss: (short term)",
+        id: QualitySubqualityEnum.Scorched_MemoryLossShort,
+        description: "",
+      },
+      {
+        name: "Memory Loss: (long term)",
+        id: QualitySubqualityEnum.Scorched_MemoryLossLong,
+        description: "",
+      },
+      {
+        name: "Blackout",
+        id: QualitySubqualityEnum.Scorched_Blackout,
+        description: "",
+      },
+      {
+        name: "Migraines",
+        id: QualitySubqualityEnum.Scorched_Migraines,
+        description: "",
+      },
+      {
+        name: "Paranoia/Anxiety",
+        id: QualitySubqualityEnum.Scorched_ParanoiaAnxiety,
+        description: "",
+      },
+    ],
   },
   {
     name: "Senstive System",
@@ -454,7 +664,32 @@ export const Qualities: Array<IQuality> = [
     positive: false,
     cost: [5, 10, 15, 25],
     description: "",
-    subchoices: ["", "", ""],
+    subqualities: [
+      {
+        name: "NATIONAL SIN",
+        id: QualitySubqualityEnum.SINnerLayered_NationalSIN,
+        description: "",
+        cost: 5,
+      },
+      {
+        name: "CRIMINAL SIN",
+        id: QualitySubqualityEnum.SINnerLayered_CriminalSIN,
+        description: "",
+        cost: 10,
+      },
+      {
+        name: "CORPORATE LIMITED SIN",
+        id: QualitySubqualityEnum.SINnerLayered_CorporateLimitedSIN,
+        description: "",
+        cost: 15,
+      },
+      {
+        name: "CORPORATE SIN",
+        id: QualitySubqualityEnum.SINnerLayered_CorporateSIN,
+        description: "",
+        cost: 25,
+      },
+    ],
   },
   {
     name: "Social Stress",
@@ -499,3 +734,11 @@ export const Qualities: Array<IQuality> = [
     description: "",
   },
 ];
+
+// sanity check here to catch bugs, previously I was doing a .find() on this array and was modifying the result
+// now that it is frozen the elements of this array can't be modified
+for (const quality of unfrozenQualities) {
+  Object.freeze(quality);
+}
+
+export const Qualities = unfrozenQualities;
