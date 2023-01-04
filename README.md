@@ -31,6 +31,7 @@ Run the following commands to create a database and fill it with some dummy data
 `npm run build` at least once
 Create .env_development, .env_production, and .env_test in backend/ and set the DB_NAME to whatever you want each name to be. Can also set all other credentials used in backend/config.ts.
 Create Tables:
+`cd backend`
 `NODE_ENV=test npx ts-node-esm ./db_setup/src/create-schema.ts`
 `NODE_ENV=development npx ts-node-esm ./db_setup/src/create-schema.ts`
 Fill tables with sample data:
@@ -38,7 +39,7 @@ Fill tables with sample data:
 `export NODE_OPTIONS="--loader ts-node/esm"`
 `export NODE_ENV=test`
 `npx mikro-orm seeder:run`
-`export NODE_ENV=dev`
+`export NODE_ENV=development`
 `npx mikro-orm seeder:run`
 `unset NODE_ENV`
 `unset NODE_OPTIONS`

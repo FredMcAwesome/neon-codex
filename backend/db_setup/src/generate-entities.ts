@@ -1,4 +1,5 @@
 import { MikroORM } from "@mikro-orm/core";
+import { DB_NAME } from "../../src/utils/config.js";
 
 (async () => {
   const orm = await MikroORM.init({
@@ -10,7 +11,7 @@ import { MikroORM } from "@mikro-orm/core";
     type: "postgresql",
     host: "localhost",
     port: 5432,
-    dbName: "shadowrun",
+    dbName: DB_NAME,
     password: "postgres",
   });
   const generator = orm.getEntityGenerator();
