@@ -30,7 +30,7 @@ export enum QualityEnum {
   SpiritAffinity,
   Toughness,
   WillToLive,
-  Addition,
+  Addiction,
   Allergy,
   AstralBeacon,
   BadLuck,
@@ -370,8 +370,8 @@ const unfrozenQualities: Array<IQuality> = [
     description: "",
   },
   {
-    name: "Addition",
-    id: QualityEnum.Addition,
+    name: "Addiction",
+    id: QualityEnum.Addiction,
     positive: false,
     cost: [4, 9, 20, 25],
     description: "",
@@ -734,6 +734,8 @@ const unfrozenQualities: Array<IQuality> = [
     description: "",
   },
 ];
+
+export const firstNegativeQualityIndex = QualityEnum.Addiction;
 
 // sanity check here to catch bugs, previously I was doing a .find() on this array and was modifying the result
 // now that it is frozen the elements of this array can't be modified
