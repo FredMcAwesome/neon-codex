@@ -14,10 +14,12 @@ import React from "react";
 import { QualitiesSelect } from "./QualitiesSelect.js";
 import type { ISelectedQuality } from "./QualitiesSelect.js";
 import { SkillsSelect } from "./SkillsSelect.js";
-import { IActiveSkill } from "../../data/Skills.js";
+import { skillList } from "../../data/Skills.js";
+import type { IActiveSkillSelection } from "../../data/Skills.js";
 
 const characterCreatorPath = "/character_creator";
 const CharacterCreator = function () {
+  // Character creator holds values of all sub components
   const [priorityInfo, setPriorityInfo] = useState<IPriorities>({
     MetatypePriority: PriorityLevelEnum.A,
     MetatypeSubselection: MetatypeEnum.Human,
@@ -52,8 +54,13 @@ const CharacterCreator = function () {
   const [skillPoints, setSkillPoints] = useState<ISkillPoints>(
     priorityOptions[priorityInfo.SkillsPriority].skills
   );
-  const [skillSelections, setSkillSelections] = useState<Array<IActiveSkill>>(
-    []
+  const [skillSelections, setSkillSelections] = useState<
+    Array<IActiveSkillSelection>
+  >(
+    skillList.map((skill) => ({
+      ...skill,
+      pointsInvested: 0,
+    }))
   );
 
   const onPriorityInfoChange = function (loadingPriorities: IPriorities) {
@@ -83,6 +90,11 @@ const CharacterCreator = function () {
   };
   const onSkillPointChange = function (loadingSkillPoints: ISkillPoints) {
     setSkillPoints(loadingSkillPoints);
+  };
+  const onSkillSelections = function (
+    loadingSkillSelection: Array<IActiveSkillSelection>
+  ) {
+    setSkillSelections(loadingSkillSelection);
   };
 
   const [page, setPage] = useState(0);
@@ -138,7 +150,9 @@ const CharacterCreator = function () {
       currentStage = (
         <SkillsSelect
           skillPoints={skillPoints}
+          setSkillPoints={onSkillPointChange}
           skillSelections={skillSelections}
+          setSkillSelections={onSkillSelections}
         />
       );
       break;

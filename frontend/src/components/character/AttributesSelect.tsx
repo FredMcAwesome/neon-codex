@@ -376,6 +376,7 @@ const AttributesSelect = function (props: IProps) {
     props.maxSpecialAttributePoints
   );
   const [attributes, setAttributes] = useState<Array<number>>(() => {
+    // convert attributes into array for easier iterating
     let attributeArray = [
       props.attributeInfo.body,
       props.attributeInfo.agility,
@@ -387,6 +388,8 @@ const AttributesSelect = function (props: IProps) {
       props.attributeInfo.charisma,
     ];
     let tempAttributePoints = attributePoints;
+    // check attribute values in case new changes have been made
+    // restrict to min/max values and set attribute points if different
     for (
       let attribute = 0;
       attribute < AttributesEnum.AttributesEnumMax;

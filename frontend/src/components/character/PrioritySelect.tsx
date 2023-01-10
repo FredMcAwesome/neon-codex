@@ -169,6 +169,32 @@ const PrioritySelect = function (props: IProps) {
     props.priorityInfo.ResourcesPriority,
   ];
   const [priorities, setPriorities] = useState(priorityLevels);
+  const [metatypeOptions, setMetatypeOptions] = useState(() => {
+    const row = priorityOptions.find(
+      (row) => row.priority === priorities[PrioritiesEnum.Metatype]
+    );
+    return (
+      row?.metatypeInfo.map(
+        (metaOption) =>
+          metaOption.metatype + " (" + metaOption.specialAttributes + ")"
+      ) || ["Error"]
+    );
+  });
+  const [metatypeSelection, setMetatypeSelection] = useState<MetatypeEnum>(
+    props.priorityInfo.MetatypeSubselection
+  );
+  const [magicOptions, setMagicOptions] = useState(() => {
+    const row = priorityOptions.find(
+      (row) => row.priority === priorities[PrioritiesEnum.Magic]
+    );
+    if (!row) return ["Error"];
+    return row.magicInfo.map((line) => {
+      return formatMagic(line);
+    });
+  });
+  const [magicSelection, setMagicSelection] = useState<MagicTypeEnum>(
+    props.priorityInfo.MagicSubselection
+  );
   // Todo: add css effect when another option changes so it is obvious which other column was affected
   function changePriorities(column: PrioritiesEnum, newPriorityString: string) {
     const newPriority =
@@ -227,33 +253,6 @@ const PrioritySelect = function (props: IProps) {
     props.setPriorityInfo(priority);
     setPriorities(newPriorities);
   }
-
-  const [metatypeOptions, setMetatypeOptions] = useState(() => {
-    const row = priorityOptions.find(
-      (row) => row.priority === priorities[PrioritiesEnum.Metatype]
-    );
-    return (
-      row?.metatypeInfo.map(
-        (metaOption) =>
-          metaOption.metatype + " (" + metaOption.specialAttributes + ")"
-      ) || ["Error"]
-    );
-  });
-  const [metatypeSelection, setMetatypeSelection] = useState<MetatypeEnum>(
-    props.priorityInfo.MetatypeSubselection
-  );
-  const [magicOptions, setMagicOptions] = useState(() => {
-    const row = priorityOptions.find(
-      (row) => row.priority === priorities[PrioritiesEnum.Magic]
-    );
-    if (!row) return ["Error"];
-    return row.magicInfo.map((line) => {
-      return formatMagic(line);
-    });
-  });
-  const [magicSelection, setMagicSelection] = useState<MagicTypeEnum>(
-    props.priorityInfo.MagicSubselection
-  );
 
   return (
     <React.Fragment>
