@@ -39,8 +39,10 @@ Fill tables with sample data:
 `export NODE_OPTIONS="--loader ts-node/esm"`
 `export NODE_ENV=test`
 `npx mikro-orm seeder:run`
+`npx mikro-orm seeder:run --class=GearSeeder`
 `export NODE_ENV=development`
 `npx mikro-orm seeder:run`
+`npx mikro-orm seeder:run --class=GearSeeder`
 `unset NODE_ENV`
 `unset NODE_OPTIONS`
 `unset MIKRO_ORM_CLI`

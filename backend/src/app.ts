@@ -8,6 +8,7 @@ import { HOST, PORT } from "./utils/config.js";
 import * as middleware from "./utils/middleware.js";
 import forumRouter from "./routes/forum.js";
 import authenticationRouter from "./routes/authentication.js";
+import characterRouter from "./routes/character.js";
 import { init, Database } from "./utils/db.js";
 
 // dodgy way to allow jest testing to know we are initialise
@@ -37,6 +38,7 @@ app.get("/api/example", (_req, res) => {
 
 app.use("/api/forum", forumRouter);
 app.use("/api/authentication", authenticationRouter);
+app.use("/api/character", characterRouter);
 
 // Have Node serve the files for built React app
 const frontendPath = path.resolve("..", "frontend/build");

@@ -9,7 +9,10 @@
       "request": "launch",
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}/src/server.ts"
+      "program": "${workspaceFolder}/src/server.ts",
+      "env": {
+        "NODE_ENV": "test"
+      }
     }
   ]
 }

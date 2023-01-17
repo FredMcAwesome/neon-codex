@@ -640,6 +640,7 @@ const AttributesSelect = function (props: IProps) {
 
   return (
     <div>
+      <h1>Attribute Selection</h1>
       <div>
         <p>
           Race: <span id="race">{MetatypeEnum[metatype]}</span>

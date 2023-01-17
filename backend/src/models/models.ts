@@ -1,5 +1,6 @@
 import Users from "./userModel.js";
 import Threads from "./threadModel.js";
 import Comments from "./commentModel.js";
+import { Weapons } from "./gear/weaponModel.js";
 
-export { Users, Threads, Comments };
+export { Users, Threads, Comments, Weapons };

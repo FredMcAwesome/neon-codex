@@ -1,4 +1,5 @@
 import { z as zod } from "zod";
+import { WeaponSummarySchema } from "./schemas/weaponSchemas.js";
 
 const ThreadSummarySchema = zod.object({
   title: zod.string(),
@@ -13,5 +14,8 @@ const JwtTokenSchema = zod.object({
 });
 type JwtTokenType = zod.infer<typeof JwtTokenSchema>;
 
-export type { ThreadListType, JwtTokenType };
-export { ThreadListSchema, JwtTokenSchema };
+const WeaponListSchema = zod.array(WeaponSummarySchema);
+type WeaponListType = zod.infer<typeof WeaponListSchema>;
+
+export type { ThreadListType, JwtTokenType, WeaponListType };
+export { ThreadListSchema, JwtTokenSchema, WeaponListSchema };

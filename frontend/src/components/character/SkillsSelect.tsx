@@ -46,12 +46,13 @@ export const SkillsSelect = function (props: IProps) {
 
   return (
     <React.Fragment>
+      <h1>Skills Selection</h1>
       <p>
         Skill Points Remaining:{" "}
         <span id="skillPoints">{props.skillPoints.skillPoints}</span>
       </p>
       <div>
-        <h1>Combat Skills</h1>
+        <h2>Combat Skills</h2>
         <SkillList
           skillSelections={props.skillSelections}
           setSkill={setSkill}
@@ -60,7 +61,7 @@ export const SkillsSelect = function (props: IProps) {
         />
       </div>
       <div>
-        <h1>Physical Skills</h1>
+        <h2>Physical Skills</h2>
         <SkillList
           skillSelections={props.skillSelections}
           setSkill={setSkill}
@@ -69,7 +70,7 @@ export const SkillsSelect = function (props: IProps) {
         />
       </div>
       <div>
-        <h1>Social Skills</h1>
+        <h2>Social Skills</h2>
         <SkillList
           skillSelections={props.skillSelections}
           setSkill={setSkill}
@@ -78,7 +79,7 @@ export const SkillsSelect = function (props: IProps) {
         />
       </div>
       <div>
-        <h1>Magical Skills</h1>
+        <h2>Magical Skills</h2>
         <SkillList
           skillSelections={props.skillSelections}
           setSkill={setSkill}
@@ -87,7 +88,7 @@ export const SkillsSelect = function (props: IProps) {
         />
       </div>
       <div>
-        <h1>Resonance Skills</h1>
+        <h2>Resonance Skills</h2>
         <SkillList
           skillSelections={props.skillSelections}
           setSkill={setSkill}
@@ -96,7 +97,7 @@ export const SkillsSelect = function (props: IProps) {
         />
       </div>
       <div>
-        <h1>Technical Skills</h1>
+        <h2>Technical Skills</h2>
         <SkillList
           skillSelections={props.skillSelections}
           setSkill={setSkill}
@@ -105,7 +106,7 @@ export const SkillsSelect = function (props: IProps) {
         />
       </div>
       <div>
-        <h1>Vehicle Skills</h1>
+        <h2>Vehicle Skills</h2>
         <SkillList
           skillSelections={props.skillSelections}
           setSkill={setSkill}

@@ -1,6 +1,6 @@
 import { MikroORM } from "@mikro-orm/core";
 import { PostgreSqlDriver } from "@mikro-orm/postgresql";
-import MikroORMConfig from "../../build/mikro-orm.config.js";
+import MikroORMConfig from "../../src/mikro-orm.config.js";
 
 (async () => {
   const orm = await MikroORM.init<PostgreSqlDriver>(MikroORMConfig);
@@ -14,8 +14,8 @@ import MikroORMConfig from "../../build/mikro-orm.config.js";
 
   // run queries directly, but be sure to check the above first to ensure format is correct
   // await generator.dropSchema();
-  await generator.createSchema();
-  // await generator.updateSchema();
+  // await generator.createSchema();
+  await generator.updateSchema();
 
   await orm.close(true);
 })();

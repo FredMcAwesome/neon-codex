@@ -43,13 +43,14 @@ export const QualitiesSelect = function (props: IProps) {
 
   return (
     <React.Fragment>
+      <h1>Qualities Selection</h1>
       <div>
         <p>
           Karma Remaining: <span id="karma_points">{props.karmaPoints}</span>
         </p>
       </div>
       <div>
-        <h1>Positive Qualities</h1>
+        <h2>Positive Qualities</h2>
         <QualitySelectionComponent
           positive={true}
           qualitiesList={props.positiveQualitiesSelected}
@@ -59,7 +60,7 @@ export const QualitiesSelect = function (props: IProps) {
         />
       </div>
       <div>
-        <h1>Negative Qualities</h1>
+        <h2>Negative Qualities</h2>
         <QualitySelectionComponent
           positive={false}
           qualitiesList={props.negativeQualitiesSelected}

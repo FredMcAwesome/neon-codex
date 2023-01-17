@@ -16,6 +16,7 @@ import type { ISelectedQuality } from "./QualitiesSelect.js";
 import { SkillsSelect } from "./SkillsSelect.js";
 import { skillList } from "../../data/Skills.js";
 import type { IActiveSkillSelection } from "../../data/Skills.js";
+import { GearSelect } from "./GearSelect.js";
 
 const characterCreatorPath = "/character_creator";
 const CharacterCreator = function () {
@@ -99,7 +100,7 @@ const CharacterCreator = function () {
 
   const [page, setPage] = useState(0);
   const firstPage = 0;
-  const lastPage = 3;
+  const lastPage = 4;
   let currentStage;
   switch (page) {
     case firstPage:
@@ -146,7 +147,7 @@ const CharacterCreator = function () {
         />
       );
       break;
-    case lastPage:
+    case 3:
       currentStage = (
         <SkillsSelect
           skillPoints={skillPoints}
@@ -155,6 +156,9 @@ const CharacterCreator = function () {
           setSkillSelections={onSkillSelections}
         />
       );
+      break;
+    case lastPage:
+      currentStage = <GearSelect />;
       break;
     default:
       currentStage = (

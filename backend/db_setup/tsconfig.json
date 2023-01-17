@@ -4,5 +4,10 @@
   "compilerOptions": {
     "rootDir": "../",
     "outDir": "./build"
-  }
+  },
+  "references": [
+    {
+      "path": "../../common"
+    }
+  ]
 }
