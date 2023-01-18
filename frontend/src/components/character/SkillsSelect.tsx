@@ -1,11 +1,8 @@
 import React from "react";
-import {
-  IActiveSkillSelection,
-  skillsEnum,
-  skillTypesEnum,
-} from "../../data/Skills.js";
+import { IActiveSkillSelection, skillTypesEnum } from "../../data/Skills.js";
 import Dropdown from "react-dropdown";
 import { ISkillPoints } from "./PriorityImports.js";
+import { skillsEnum } from "@shadowrun/common";
 
 // first rating empty for no points in skill
 const skillRating = [

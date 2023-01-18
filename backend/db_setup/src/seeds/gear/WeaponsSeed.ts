@@ -3,8 +3,10 @@ import {
   MeleeWeapons,
   ProjectileWeapons,
   FirearmWeapons,
+  Explosives,
 } from "../../../../src/models/gear/weaponModel.js";
 import {
+  skillsEnum,
   weaponTypeEnum,
   meleeWeaponTypeEnum,
   damageCalculationMethodEnum,
@@ -15,6 +17,8 @@ import {
   firearmModeEnum,
   firearmWeaponTypeEnum,
   reloadMethodEnum,
+  mathOperatorEnum,
+  explosiveTypeEnum,
 } from "@shadowrun/common";
 
 export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
@@ -35,6 +39,8 @@ export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
     armourPenetration: { base: -4 },
     availability: { rating: 12, restriction: restrictionEnum.Restricted },
     cost: { base: 4000 },
+    description: "",
+    relatedSkill: skillsEnum.Blades,
     type: weaponTypeEnum.Melee,
   },
   {
@@ -53,6 +59,8 @@ export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
     armourPenetration: { base: -3 },
     availability: { rating: 4, restriction: restrictionEnum.Legal },
     cost: { base: 300 },
+    description: "",
+    relatedSkill: skillsEnum.Blades,
     type: weaponTypeEnum.Melee,
   },
   {
@@ -71,6 +79,9 @@ export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
     armourPenetration: { base: -2 },
     availability: { rating: 7, restriction: restrictionEnum.Restricted },
     cost: { base: 200 },
+    description: "",
+    wireless: "",
+    relatedSkill: skillsEnum.Blades,
     type: weaponTypeEnum.Melee,
   },
   {
@@ -90,6 +101,8 @@ export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
     armourPenetration: { base: -3 },
     availability: { rating: 9, restriction: restrictionEnum.Restricted },
     cost: { base: 1000 },
+    description: "",
+    relatedSkill: skillsEnum.Blades,
     type: weaponTypeEnum.Melee,
   },
   {
@@ -108,6 +121,8 @@ export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
     armourPenetration: { base: -1 },
     availability: { rating: 0, restriction: restrictionEnum.Legal },
     cost: { base: 10 },
+    description: "",
+    relatedSkill: skillsEnum.Blades,
     type: weaponTypeEnum.Melee,
   },
   {
@@ -127,6 +142,8 @@ export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
     armourPenetration: { base: -2 },
     availability: { rating: 6, restriction: restrictionEnum.Restricted },
     cost: { base: 1000 },
+    description: "",
+    relatedSkill: skillsEnum.Blades,
     type: weaponTypeEnum.Melee,
   },
   {
@@ -145,6 +162,9 @@ export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
     armourPenetration: { base: -1 },
     availability: { rating: 0, restriction: restrictionEnum.Legal },
     cost: { base: 100 },
+    description: "",
+    wireless: "",
+    relatedSkill: skillsEnum.Blades,
     type: weaponTypeEnum.Melee,
   },
   {
@@ -164,6 +184,8 @@ export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
     armourPenetration: { base: -2 },
     availability: { rating: 5, restriction: restrictionEnum.Restricted },
     cost: { base: 500 },
+    description: "",
+    relatedSkill: skillsEnum.Blades,
     type: weaponTypeEnum.Melee,
   },
   {
@@ -183,6 +205,8 @@ export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
     armourPenetration: { base: 0 },
     availability: { rating: 0, restriction: restrictionEnum.Legal },
     cost: { base: 30 },
+    description: "",
+    relatedSkill: skillsEnum.Clubs,
     type: weaponTypeEnum.Melee,
   },
   {
@@ -202,6 +226,9 @@ export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
     armourPenetration: { base: 0 },
     availability: { rating: 4, restriction: restrictionEnum.Legal },
     cost: { base: 100 },
+    description: "",
+    wireless: "",
+    relatedSkill: skillsEnum.Clubs,
     type: weaponTypeEnum.Melee,
   },
   {
@@ -220,6 +247,8 @@ export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
     armourPenetration: { base: 0 },
     availability: { rating: 2, restriction: restrictionEnum.Legal },
     cost: { base: 30 },
+    description: "",
+    relatedSkill: skillsEnum.Clubs,
     type: weaponTypeEnum.Melee,
   },
   {
@@ -239,6 +268,8 @@ export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
     armourPenetration: { base: 0 },
     availability: { rating: 3, restriction: restrictionEnum.Legal },
     cost: { base: 100 },
+    description: "",
+    relatedSkill: skillsEnum.Clubs,
     type: weaponTypeEnum.Melee,
   },
   {
@@ -259,6 +290,9 @@ export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
     armourPenetration: { base: -5 },
     availability: { rating: 6, restriction: restrictionEnum.Restricted },
     cost: { base: 750 },
+    description: "",
+    wireless: "",
+    relatedSkill: skillsEnum.Clubs,
     type: weaponTypeEnum.Melee,
   },
   {
@@ -278,6 +312,9 @@ export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
     armourPenetration: { base: 0 },
     availability: { rating: 4, restriction: restrictionEnum.Legal },
     cost: { base: 350 },
+    description: "",
+    wireless: "",
+    relatedSkill: skillsEnum.Clubs,
     type: weaponTypeEnum.Melee,
   },
   {
@@ -296,6 +333,8 @@ export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
     armourPenetration: { base: 0 },
     availability: { rating: 2, restriction: restrictionEnum.Restricted },
     cost: { base: 100 },
+    description: "",
+    relatedSkill: skillsEnum.UnarmedCombat,
     type: weaponTypeEnum.Melee,
   },
   {
@@ -316,6 +355,9 @@ export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
     armourPenetration: { base: -8 },
     availability: { rating: 12, restriction: restrictionEnum.Forbidden },
     cost: { base: 10000 },
+    description: "",
+    wireless: "",
+    relatedSkill: skillsEnum.ExoticMeleeWeapon,
     type: weaponTypeEnum.Melee,
   },
   {
@@ -335,6 +377,51 @@ export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
     armourPenetration: { base: -5 },
     availability: { rating: 6, restriction: restrictionEnum.Restricted },
     cost: { base: 550 },
+    description: "",
+    wireless: "",
+    relatedSkill: skillsEnum.UnarmedCombat,
+    type: weaponTypeEnum.Melee,
+  },
+  {
+    name: "Ballistic shield",
+    subtype: meleeWeaponTypeEnum.Other,
+    accuracy: {
+      base: 4,
+    },
+    damage: {
+      damageAmount: {
+        calculationType: damageCalculationMethodEnum.Strength,
+        base: 2,
+      },
+      type: damageTypeEnum.Stun,
+    },
+    armourPenetration: { base: 0 },
+    availability: { rating: 12, restriction: restrictionEnum.Restricted },
+    cost: { base: 1200 },
+    description: "",
+    relatedSkill: skillsEnum.ExoticMeleeWeapon,
+    type: weaponTypeEnum.Melee,
+  },
+  {
+    name: "Riot shield",
+    subtype: meleeWeaponTypeEnum.Other,
+    accuracy: {
+      base: 4,
+    },
+    damage: {
+      damageAmount: {
+        calculationType: damageCalculationMethodEnum.Normal,
+        base: 9,
+      },
+      type: damageTypeEnum.Stun,
+      annotation: damageAnnoationEnum.Electrical,
+    },
+    armourPenetration: { base: -5 },
+    availability: { rating: 10, restriction: restrictionEnum.Restricted },
+    cost: { base: 1500 },
+    description: "",
+    wireless: "",
+    relatedSkill: skillsEnum.ExoticMeleeWeapon,
     type: weaponTypeEnum.Melee,
   },
 ];
@@ -355,9 +442,30 @@ export const projectileWeaponsList: Array<
       },
       type: damageTypeEnum.Physical,
     },
-    armourPenetration: { base: 0, special: "Rating" },
-    availability: { rating: "Rating", restriction: restrictionEnum.Legal },
-    cost: { base: 550 },
+    armourPenetration: {
+      base: "Calculation",
+      specialCalculation: [
+        -1,
+        mathOperatorEnum.Multiply,
+        "Rating",
+        mathOperatorEnum.Divide,
+        4,
+      ],
+    },
+    availability: {
+      rating: "Calculation",
+      specialCalculation: ["Rating"],
+      restriction: restrictionEnum.Legal,
+    },
+    rating: {
+      maximum: 10,
+    },
+    cost: {
+      base: "Calculation",
+      specialCalculation: ["Rating", mathOperatorEnum.Multiply, 100],
+    },
+    description: "",
+    relatedSkill: skillsEnum.Archery,
     type: weaponTypeEnum.Projectile,
   },
   {
@@ -376,6 +484,8 @@ export const projectileWeaponsList: Array<
     armourPenetration: { base: -1 },
     availability: { rating: 2, restriction: restrictionEnum.Legal },
     cost: { base: 300 },
+    description: "",
+    relatedSkill: skillsEnum.Archery,
     type: weaponTypeEnum.Projectile,
   },
   {
@@ -394,6 +504,8 @@ export const projectileWeaponsList: Array<
     armourPenetration: { base: -2 },
     availability: { rating: 4, restriction: restrictionEnum.Restricted },
     cost: { base: 500 },
+    description: "",
+    relatedSkill: skillsEnum.Archery,
     type: weaponTypeEnum.Projectile,
   },
   {
@@ -412,10 +524,12 @@ export const projectileWeaponsList: Array<
     armourPenetration: { base: -3 },
     availability: { rating: 8, restriction: restrictionEnum.Restricted },
     cost: { base: 1000 },
+    description: "",
+    relatedSkill: skillsEnum.Archery,
     type: weaponTypeEnum.Projectile,
   },
   {
-    name: "Throwing knife",
+    name: "Throwing knifes/shuriken",
     subtype: projectileWeaponTypeEnum.ThrowingWeapons,
     accuracy: {
       base: "Inherent",
@@ -430,24 +544,9 @@ export const projectileWeaponsList: Array<
     armourPenetration: { base: -1 },
     availability: { rating: 4, restriction: restrictionEnum.Restricted },
     cost: { base: 25 },
-    type: weaponTypeEnum.Projectile,
-  },
-  {
-    name: "Shuriken",
-    subtype: projectileWeaponTypeEnum.ThrowingWeapons,
-    accuracy: {
-      base: "Inherent",
-    },
-    damage: {
-      damageAmount: {
-        calculationType: damageCalculationMethodEnum.Strength,
-        base: 1,
-      },
-      type: damageTypeEnum.Physical,
-    },
-    armourPenetration: { base: -1 },
-    availability: { rating: 4, restriction: restrictionEnum.Restricted },
-    cost: { base: 25 },
+    description: "",
+    wireless: "",
+    relatedSkill: skillsEnum.ThrowingWeapons,
     type: weaponTypeEnum.Projectile,
   },
 ];
@@ -478,6 +577,39 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 0, restriction: restrictionEnum.Legal },
     cost: { base: 250 },
+    description: "",
+    wireless: "",
+    relatedSkill: skillsEnum.Pistols,
+    type: weaponTypeEnum.Firearm,
+  },
+  {
+    subtype: firearmWeaponTypeEnum.Tasers,
+    name: "Defiance EX Shocker",
+    accuracy: {
+      base: 3,
+    },
+    damage: {
+      damageAmount: {
+        base: 8,
+        calculationType: damageCalculationMethodEnum.Normal,
+      },
+      type: damageTypeEnum.Stun,
+      annotation: damageAnnoationEnum.Electrical,
+    },
+    armourPenetration: { base: -5 },
+    mode: [firearmModeEnum.SingleShot],
+    recoilCompensation: { base: 0 },
+    ammo: [
+      {
+        amount: 4,
+        reloadMethod: reloadMethodEnum.InternalMagazine,
+      },
+    ],
+    availability: { rating: 0, restriction: restrictionEnum.Legal },
+    cost: { base: 250 },
+    description: "",
+    wireless: "",
+    relatedSkill: skillsEnum.Clubs,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -505,6 +637,9 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 0, restriction: restrictionEnum.Legal },
     cost: { base: 180 },
+    description: "",
+    wireless: "",
+    relatedSkill: skillsEnum.Pistols,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -532,6 +667,9 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 5, restriction: restrictionEnum.Restricted },
     cost: { base: 1000 },
+    description: "",
+    wireless: "",
+    relatedSkill: skillsEnum.Pistols,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -558,6 +696,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 4, restriction: restrictionEnum.Restricted },
     cost: { base: 120 },
+    description: "",
+    relatedSkill: skillsEnum.Pistols,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -584,6 +724,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 4, restriction: restrictionEnum.Restricted },
     cost: { base: 180 },
+    description: "",
+    relatedSkill: skillsEnum.Pistols,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -611,6 +753,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 6, restriction: restrictionEnum.Forbidden },
     cost: { base: 1250 },
+    description: "",
+    relatedSkill: skillsEnum.Pistols,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -637,6 +781,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 3, restriction: restrictionEnum.Restricted },
     cost: { base: 200 },
+    description: "",
+    relatedSkill: skillsEnum.Pistols,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -663,6 +809,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 7, restriction: restrictionEnum.Restricted },
     cost: { base: 210 },
+    description: "",
+    relatedSkill: skillsEnum.Pistols,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -689,6 +837,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 4, restriction: restrictionEnum.Restricted },
     cost: { base: 320 },
+    description: "",
+    relatedSkill: skillsEnum.Pistols,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -716,6 +866,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 6, restriction: restrictionEnum.Restricted },
     cost: { base: 350 },
+    description: "",
+    relatedSkill: skillsEnum.Pistols,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -742,6 +894,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 3, restriction: restrictionEnum.Restricted },
     cost: { base: 300 },
+    description: "",
+    relatedSkill: skillsEnum.Pistols,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -768,6 +922,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 3, restriction: restrictionEnum.Restricted },
     cost: { base: 300 },
+    description: "",
+    relatedSkill: skillsEnum.Pistols,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -795,6 +951,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 5, restriction: restrictionEnum.Restricted },
     cost: { base: 725 },
+    description: "",
+    relatedSkill: skillsEnum.Pistols,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -822,6 +980,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 8, restriction: restrictionEnum.Forbidden },
     cost: { base: 380 },
+    description: "",
+    relatedSkill: skillsEnum.Pistols,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -849,6 +1009,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 4, restriction: restrictionEnum.Restricted },
     cost: { base: 640 },
+    description: "",
+    relatedSkill: skillsEnum.Pistols,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -875,6 +1037,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 7, restriction: restrictionEnum.Restricted },
     cost: { base: 425 },
+    description: "",
+    relatedSkill: skillsEnum.Pistols,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -901,6 +1065,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 6, restriction: restrictionEnum.Restricted },
     cost: { base: 250 },
+    description: "",
+    relatedSkill: skillsEnum.Pistols,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -928,6 +1094,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 6, restriction: restrictionEnum.Restricted },
     cost: { base: 250 },
+    description: "",
+    relatedSkill: skillsEnum.Pistols,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -954,6 +1122,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 4, restriction: restrictionEnum.Restricted },
     cost: { base: 400 },
+    description: "",
+    relatedSkill: skillsEnum.Pistols,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -981,6 +1151,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 9, restriction: restrictionEnum.Restricted },
     cost: { base: 830 },
+    description: "",
+    relatedSkill: skillsEnum.Automatics,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1007,6 +1179,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 6, restriction: restrictionEnum.Restricted },
     cost: { base: 270 },
+    description: "",
+    relatedSkill: skillsEnum.Automatics,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1037,6 +1211,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 8, restriction: restrictionEnum.Restricted },
     cost: { base: 350 },
+    description: "",
+    relatedSkill: skillsEnum.Automatics,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1068,6 +1244,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 5, restriction: restrictionEnum.Restricted },
     cost: { base: 660 },
+    description: "",
+    relatedSkill: skillsEnum.Automatics,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1098,6 +1276,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 11, restriction: restrictionEnum.Forbidden },
     cost: { base: 900 },
+    description: "",
+    relatedSkill: skillsEnum.Automatics,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1129,6 +1309,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 8, restriction: restrictionEnum.Restricted },
     cost: { base: 730 },
+    description: "",
+    relatedSkill: skillsEnum.Automatics,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1156,6 +1338,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 6, restriction: restrictionEnum.Restricted },
     cost: { base: 800 },
+    description: "",
+    relatedSkill: skillsEnum.Automatics,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1183,6 +1367,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 6, restriction: restrictionEnum.Restricted },
     cost: { base: 8875 },
+    description: "",
+    relatedSkill: skillsEnum.Automatics,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1210,6 +1396,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 4, restriction: restrictionEnum.Restricted },
     cost: { base: 450 },
+    description: "",
+    relatedSkill: skillsEnum.Automatics,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1240,6 +1428,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 4, restriction: restrictionEnum.Restricted },
     cost: { base: 950 },
+    description: "",
+    relatedSkill: skillsEnum.Automatics,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1271,6 +1461,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 11, restriction: restrictionEnum.Forbidden },
     cost: { base: 2650 },
+    description: "",
+    relatedSkill: skillsEnum.Automatics,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1298,6 +1490,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 11, restriction: restrictionEnum.Forbidden },
     cost: { base: 2650 },
+    description: "",
+    relatedSkill: skillsEnum.HeavyWeapons,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1328,6 +1522,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 4, restriction: restrictionEnum.Restricted },
     cost: { base: 550 },
+    description: "",
+    relatedSkill: skillsEnum.Automatics,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1359,6 +1555,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 8, restriction: restrictionEnum.Restricted },
     cost: { base: 1500 },
+    description: "",
+    relatedSkill: skillsEnum.Automatics,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1386,6 +1584,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 14, restriction: restrictionEnum.Forbidden },
     cost: { base: 2600 },
+    description: "",
+    relatedSkill: skillsEnum.Automatics,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1412,6 +1612,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 10, restriction: restrictionEnum.Forbidden },
     cost: { base: 17500 },
+    description: "",
+    relatedSkill: skillsEnum.Longarms,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1438,6 +1640,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 12, restriction: restrictionEnum.Forbidden },
     cost: { base: 10300 },
+    description: "",
+    relatedSkill: skillsEnum.Longarms,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1464,6 +1668,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 16, restriction: restrictionEnum.Forbidden },
     cost: { base: 28000 },
+    description: "",
+    relatedSkill: skillsEnum.Longarms,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1490,6 +1696,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 4, restriction: restrictionEnum.Restricted },
     cost: { base: 2100 },
+    description: "",
+    relatedSkill: skillsEnum.Longarms,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1516,6 +1724,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 4, restriction: restrictionEnum.Restricted },
     cost: { base: 1300 },
+    description: "",
+    relatedSkill: skillsEnum.Longarms,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1542,6 +1752,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 4, restriction: restrictionEnum.Restricted },
     cost: { base: 450 },
+    description: "",
+    relatedSkill: skillsEnum.Longarms,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1570,6 +1782,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 12, restriction: restrictionEnum.Forbidden },
     cost: { base: 1100 },
+    description: "",
+    relatedSkill: skillsEnum.Longarms,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1596,6 +1810,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 9, restriction: restrictionEnum.Restricted },
     cost: { base: 1000 },
+    description: "",
+    relatedSkill: skillsEnum.Longarms,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1622,6 +1838,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 7, restriction: restrictionEnum.Restricted },
     cost: { base: 950 },
+    description: "",
+    relatedSkill: skillsEnum.ExoticRangedWeapon,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1648,6 +1866,9 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 11, restriction: restrictionEnum.Restricted },
     cost: { base: 5000 },
+    description: "",
+    wireless: "",
+    relatedSkill: skillsEnum.ExoticRangedWeapon,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1674,6 +1895,9 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 4, restriction: restrictionEnum.Restricted },
     cost: { base: 600 },
+    description: "",
+    wireless: "",
+    relatedSkill: skillsEnum.ExoticRangedWeapon,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1700,6 +1924,9 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 6, restriction: restrictionEnum.Restricted },
     cost: { base: 1200 },
+    description: "",
+    wireless: "",
+    relatedSkill: skillsEnum.ExoticRangedWeapon,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1731,6 +1958,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 12, restriction: restrictionEnum.Forbidden },
     cost: { base: 5800 },
+    description: "",
+    relatedSkill: skillsEnum.HeavyWeapons,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1761,6 +1990,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 12, restriction: restrictionEnum.Forbidden },
     cost: { base: 7000 },
+    description: "",
+    relatedSkill: skillsEnum.HeavyWeapons,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1791,6 +2022,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 16, restriction: restrictionEnum.Forbidden },
     cost: { base: 16300 },
+    description: "",
+    relatedSkill: skillsEnum.HeavyWeapons,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1818,6 +2051,9 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 8, restriction: restrictionEnum.Forbidden },
     cost: { base: 3200 },
+    description: "",
+    wireless: "",
+    relatedSkill: skillsEnum.HeavyWeapons,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1844,6 +2080,9 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 10, restriction: restrictionEnum.Forbidden },
     cost: { base: 5000 },
+    description: "",
+    wireless: "",
+    relatedSkill: skillsEnum.HeavyWeapons,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1870,6 +2109,9 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 10, restriction: restrictionEnum.Forbidden },
     cost: { base: 1200 },
+    description: "",
+    wireless: "",
+    relatedSkill: skillsEnum.HeavyWeapons,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1896,6 +2138,8 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 20, restriction: restrictionEnum.Forbidden },
     cost: { base: 21000 },
+    description: "",
+    relatedSkill: skillsEnum.HeavyWeapons,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1923,6 +2167,9 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 18, restriction: restrictionEnum.Forbidden },
     cost: { base: 14000 },
+    description: "",
+    wireless: "",
+    relatedSkill: skillsEnum.HeavyWeapons,
     type: weaponTypeEnum.Firearm,
   },
   {
@@ -1950,6 +2197,89 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 20, restriction: restrictionEnum.Forbidden },
     cost: { base: 43000 },
+    description: "",
+    relatedSkill: skillsEnum.HeavyWeapons,
     type: weaponTypeEnum.Firearm,
+  },
+];
+
+export const explosivesList: Array<RequiredEntityData<Explosives>> = [
+  {
+    subtype: explosiveTypeEnum.Standard,
+    name: "Commercial explosives",
+    accuracy: {
+      base: 0,
+    },
+    damage: {
+      damageAmount: {
+        base: 0,
+        calculationType: damageCalculationMethodEnum.Explosive,
+      },
+      type: damageTypeEnum.Physical,
+    },
+    armourPenetration: { base: 0 },
+    availability: { rating: 8, restriction: restrictionEnum.Restricted },
+    rating: {
+      minimum: 5,
+      maximum: 5,
+    },
+    cost: { base: 100 },
+    description: "",
+    relatedSkill: skillsEnum.Demolitions,
+    type: weaponTypeEnum.Explosive,
+  },
+  {
+    subtype: explosiveTypeEnum.Standard,
+    name: "Explosive Foam",
+    accuracy: {
+      base: 0,
+    },
+    damage: {
+      damageAmount: {
+        base: 0,
+        calculationType: damageCalculationMethodEnum.Explosive,
+      },
+      type: damageTypeEnum.Physical,
+    },
+    armourPenetration: { base: 0 },
+    availability: { rating: 12, restriction: restrictionEnum.Forbidden },
+    rating: {
+      minimum: 6,
+      maximum: 25,
+    },
+    cost: {
+      base: "Calculation",
+      specialCalculation: ["Rating", mathOperatorEnum.Multiply, 100],
+    },
+    description: "",
+    relatedSkill: skillsEnum.Demolitions,
+    type: weaponTypeEnum.Explosive,
+  },
+  {
+    subtype: explosiveTypeEnum.Standard,
+    name: "Plastic explosives",
+    accuracy: {
+      base: 0,
+    },
+    damage: {
+      damageAmount: {
+        base: 0,
+        calculationType: damageCalculationMethodEnum.Explosive,
+      },
+      type: damageTypeEnum.Physical,
+    },
+    armourPenetration: { base: 0 },
+    availability: { rating: 16, restriction: restrictionEnum.Forbidden },
+    rating: {
+      minimum: 6,
+      maximum: 25,
+    },
+    cost: {
+      base: "Calculation",
+      specialCalculation: ["Rating", mathOperatorEnum.Multiply, 100],
+    },
+    description: "",
+    relatedSkill: skillsEnum.Demolitions,
+    type: weaponTypeEnum.Explosive,
   },
 ];

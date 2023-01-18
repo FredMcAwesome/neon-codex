@@ -1,7 +1,93 @@
+export enum skillsEnum {
+  // Active Combat Skills
+  Archery,
+  Automatics,
+  Blades,
+  Clubs,
+  ExoticMeleeWeapon,
+  ExoticRangedWeapon,
+  HeavyWeapons,
+  Longarms,
+  Pistols,
+  ThrowingWeapons,
+  UnarmedCombat,
+  // Active Physical Skills
+  Disguise,
+  Diving,
+  EscapeArtist,
+  FreeFall,
+  Gymnastics,
+  Palming,
+  Perception,
+  Running,
+  Sneaking,
+  Survival,
+  Swimming,
+  Tracking,
+  // Social Skills
+  Con,
+  Etiquette,
+  Impersonation,
+  Instruction,
+  Intimidation,
+  Leadership,
+  Negotiation,
+  Performance,
+  // Magical Skills
+  Alchemy,
+  Arcana,
+  Artificing,
+  Assensing,
+  AstralCombat,
+  Banishing,
+  Binding,
+  Counterspelling,
+  Disenchanting,
+  RitualSpellcasting,
+  Spellcasting,
+  Summoning,
+  // Resonance Skills
+  Compiling,
+  Decompiling,
+  Registering,
+  // Technical Skills
+  AeronauticsMechanic,
+  AnimalHandling,
+  Armourer,
+  Artisan,
+  AutomotiveMechanic,
+  Biotechnology,
+  Chemistry,
+  Computer,
+  Cybercombat,
+  Cybertechnology,
+  Demolitions,
+  ElectronicWarfare,
+  FirstAid,
+  Forgery,
+  Hacking,
+  Hardware,
+  IndustrialMechanic,
+  Locksmith,
+  Medicine,
+  NauticalMechanic,
+  Navigation,
+  Software,
+  // Vehicle Skills
+  Gunnery,
+  PilotAerospace,
+  PilotAircraft,
+  PilotWalker,
+  PilotExoticVehicle,
+  PilotGroundCraft,
+  PilotWatercraft,
+}
+
 export enum weaponTypeEnum {
   Melee,
   Projectile,
   Firearm,
+  Explosive,
 }
 
 export enum meleeWeaponTypeEnum {
@@ -42,9 +128,15 @@ export enum firearmWeaponTypeEnum {
   Special,
 }
 
+export enum explosiveTypeEnum {
+  Standard,
+}
+
 export enum damageTypeEnum {
   Physical,
   Stun,
+  Special,
+  Chemical,
 }
 
 export enum damageAnnoationEnum {
@@ -61,6 +153,7 @@ export enum damageCalculationMethodEnum {
   DrugToxin,
   Grenade,
   Missile,
+  Explosive,
 }
 
 export enum restrictionEnum {
@@ -85,4 +178,42 @@ export enum reloadMethodEnum {
   Cylinder,
   BeltFed,
   Special,
+}
+
+export enum firearmAccessoryMountLocationEnum {
+  Underbarrel,
+  Barrel,
+  Top,
+  None,
+}
+
+export enum ammunitionTypeEnum {
+  Ammo,
+  Grenades,
+  RocketsMissiles,
+  ProjectileAmmo,
+}
+
+export enum blastTypeEnum {
+  Radius,
+  Reducing,
+  Special,
+}
+
+export enum mathOperatorEnum {
+  Add,
+  Subtract,
+  Divide,
+  Multiply,
+  RangeTo,
+}
+
+export enum weaponAccessoryTypeEnum {
+  Standard,
+  Firearm,
+}
+
+export enum armourAccessoryTypeEnum {
+  Standard,
+  Modification,
 }

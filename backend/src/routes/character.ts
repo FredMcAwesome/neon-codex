@@ -26,6 +26,7 @@ router.get(
           damage: weapon.damage,
           armourPenetration: weapon.armourPenetration,
           availability: weapon.availability,
+          rating: weapon.rating,
           cost: weapon.cost,
           meleeOptions: isMeleeWeapon
             ? {
@@ -39,6 +40,9 @@ router.get(
                 ammo: firearmWeapon.ammo,
               }
             : undefined,
+          description: weapon.description,
+          wireless: weapon.wireless,
+          relatedSkill: weapon.relatedSkill,
         };
       });
       logger.log(JSON.stringify(weaponsResponse, null, 2));

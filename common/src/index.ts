@@ -25,6 +25,7 @@ export {
 } from "./api.js";
 
 export {
+  skillsEnum,
   weaponTypeEnum,
   meleeWeaponTypeEnum,
   projectileWeaponTypeEnum,
@@ -35,6 +36,13 @@ export {
   restrictionEnum,
   damageAnnoationEnum,
   reloadMethodEnum,
+  firearmAccessoryMountLocationEnum,
+  ammunitionTypeEnum,
+  mathOperatorEnum,
+  blastTypeEnum,
+  explosiveTypeEnum,
+  weaponAccessoryTypeEnum,
+  armourAccessoryTypeEnum,
 } from "./enums.js";
 
 export {
@@ -42,6 +50,7 @@ export {
   AvailabilitySchema,
   DamageSchema,
   FirearmAmmoSchema,
+  BlastSchema,
 } from "./schemas/weaponSchemas.js";
 export type {
   AccuracyType,
@@ -51,4 +60,6 @@ export type {
   DamageType,
   FirearmAmmoType,
   RecoilCompensationType,
+  BlastType,
+  RatingType,
 } from "./schemas/weaponSchemas.js";

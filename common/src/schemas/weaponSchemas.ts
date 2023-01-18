@@ -9,14 +9,37 @@ import {
   projectileWeaponTypeEnum,
   reloadMethodEnum,
   restrictionEnum,
+  skillsEnum,
   weaponTypeEnum,
+  mathOperatorEnum,
+  blastTypeEnum,
+  explosiveTypeEnum,
 } from "../enums.js";
 
+const GearCalculation = zod.optional(
+  zod.array(
+    zod.union([
+      zod.number(),
+      zod.enum(["Rating", "Weapon", "Chemical", "Sensor"]),
+      zod.nativeEnum(mathOperatorEnum),
+    ])
+  )
+);
+
+const BaseOrSpecial = zod.union([zod.number(), zod.enum(["Calculation"])]);
+
 export const AvailabilitySchema = zod.object({
-  rating: zod.union([zod.number(), zod.enum(["Rating"])]),
+  rating: BaseOrSpecial,
+  specialCalculation: GearCalculation,
   restriction: zod.nativeEnum(restrictionEnum),
 });
 export type AvailabilityType = zod.infer<typeof AvailabilitySchema>;
+
+export const RatingSchema = zod.object({
+  minimum: zod.number(),
+  maximum: zod.number(),
+});
+export type RatingType = zod.infer<typeof RatingSchema>;
 
 export const AccuracySchema = zod.object({
   base: zod.union([zod.number(), zod.enum(["Inherent"])]),
@@ -56,14 +79,14 @@ export const FirearmOptionsSchema = zod.object({
 });
 
 export const ArmourPenetrationSchema = zod.object({
-  base: zod.number(),
-  special: zod.optional(zod.enum(["Rating"])),
+  base: BaseOrSpecial,
+  specialCalculation: GearCalculation,
 });
 export type ArmourPenetrationType = zod.infer<typeof ArmourPenetrationSchema>;
 
 export const CostSchema = zod.object({
-  base: zod.number(),
-  modifier: zod.optional(zod.enum(["Rating"])),
+  base: BaseOrSpecial,
+  specialCalculation: GearCalculation,
 });
 export type CostType = zod.infer<typeof CostSchema>;
 
@@ -73,13 +96,24 @@ export const WeaponSummarySchema = zod.object({
     zod.nativeEnum(meleeWeaponTypeEnum),
     zod.nativeEnum(projectileWeaponTypeEnum),
     zod.nativeEnum(firearmWeaponTypeEnum),
+    zod.nativeEnum(explosiveTypeEnum),
   ]),
   name: zod.string(),
   accuracy: AccuracySchema,
   damage: DamageSchema,
   armourPenetration: ArmourPenetrationSchema,
   availability: AvailabilitySchema,
+  rating: zod.optional(RatingSchema),
   cost: CostSchema,
   meleeOptions: zod.optional(MeleeOptionsSchema),
   firearmOptions: zod.optional(FirearmOptionsSchema),
+  description: zod.string(),
+  wireless: zod.optional(zod.string()),
+  relatedSkill: zod.nativeEnum(skillsEnum),
 });
+
+export const BlastSchema = zod.object({
+  type: zod.nativeEnum(blastTypeEnum),
+  value: zod.number(),
+});
+export type BlastType = zod.infer<typeof BlastSchema>;

@@ -1,10 +1,12 @@
 import { Entity, Enum, PrimaryKey, Property } from "@mikro-orm/core";
 import {
+  skillsEnum,
   weaponTypeEnum,
   meleeWeaponTypeEnum,
   firearmWeaponTypeEnum,
   firearmModeEnum,
   projectileWeaponTypeEnum,
+  explosiveTypeEnum,
 } from "@shadowrun/common";
 import type {
   AccuracyType,
@@ -14,6 +16,7 @@ import type {
   DamageType,
   FirearmAmmoType,
   RecoilCompensationType,
+  RatingType,
 } from "@shadowrun/common";
 
 @Entity({
@@ -29,14 +32,18 @@ export abstract class Weapons {
 
   @Enum(
     () =>
-      meleeWeaponTypeEnum || projectileWeaponTypeEnum || firearmWeaponTypeEnum
+      meleeWeaponTypeEnum ||
+      projectileWeaponTypeEnum ||
+      firearmWeaponTypeEnum ||
+      explosiveTypeEnum
   )
   subtype!:
     | meleeWeaponTypeEnum
     | projectileWeaponTypeEnum
-    | firearmWeaponTypeEnum;
+    | firearmWeaponTypeEnum
+    | explosiveTypeEnum;
 
-  @Property()
+  @Property({ length: 255 })
   name!: string;
 
   @Property()
@@ -51,8 +58,20 @@ export abstract class Weapons {
   @Property()
   availability!: AvailabilityType;
 
+  @Property({ nullable: true })
+  rating?: RatingType;
+
   @Property()
   cost!: CostType;
+
+  @Property({ length: 5000 })
+  description!: string;
+
+  @Property({ length: 5000, nullable: true })
+  wireless?: string;
+
+  @Enum()
+  relatedSkill!: skillsEnum;
 }
 
 @Entity({ discriminatorValue: weaponTypeEnum.Melee })
@@ -75,3 +94,6 @@ export class FirearmWeapons extends Weapons {
   @Property({ type: "json" })
   ammo!: FirearmAmmoType[];
 }
+
+@Entity({ discriminatorValue: weaponTypeEnum.Explosive })
+export class Explosives extends Weapons {}
