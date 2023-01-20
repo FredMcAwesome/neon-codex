@@ -4,7 +4,7 @@ import {
   ProjectileWeapons,
   FirearmWeapons,
   Explosives,
-} from "../../../../src/models/gear/weaponModel.js";
+} from "../../../../../src/models/gear/combatGear/weaponModel.js";
 import {
   skillsEnum,
   weaponTypeEnum,

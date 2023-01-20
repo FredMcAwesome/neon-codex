@@ -2,7 +2,7 @@ import { RequiredEntityData } from "@mikro-orm/core";
 import {
   FirearmAccessories,
   WeaponAccessories,
-} from "../../../../src/models/gear/weaponAccessoryModel.js";
+} from "../../../../../src/models/gear/combatGear/weaponAccessoryModel.js";
 import {
   firearmAccessoryMountLocationEnum,
   mathOperatorEnum,

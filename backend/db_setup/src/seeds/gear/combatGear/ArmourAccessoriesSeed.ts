@@ -3,7 +3,7 @@ import { mathOperatorEnum, restrictionEnum } from "@shadowrun/common";
 import {
   ArmourAccessories,
   ArmourModifications,
-} from "../../../../src/models/gear/armourAccessoryModel.js";
+} from "../../../../../src/models/gear/combatGear/armourAccessoryModel.js";
 
 export const armourAccessoriesList: Array<
   RequiredEntityData<ArmourAccessories>

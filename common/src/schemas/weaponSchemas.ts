@@ -20,7 +20,7 @@ const GearCalculation = zod.optional(
   zod.array(
     zod.union([
       zod.number(),
-      zod.enum(["Rating", "Weapon", "Chemical", "Sensor"]),
+      zod.enum(["Rating", "Weapon", "Chemical", "Sensor", "Capacity"]),
       zod.nativeEnum(mathOperatorEnum),
     ])
   )
@@ -35,10 +35,17 @@ export const AvailabilitySchema = zod.object({
 });
 export type AvailabilityType = zod.infer<typeof AvailabilitySchema>;
 
-export const RatingSchema = zod.object({
-  minimum: zod.number(),
-  maximum: zod.number(),
-});
+export const ValueRangeSchema = zod.union([
+  zod.object({
+    minimum: zod.number(),
+    maximum: zod.number(),
+  }),
+  zod.object({
+    base: BaseOrSpecial,
+    specialCalculation: GearCalculation,
+  }),
+]);
+export const RatingSchema = ValueRangeSchema;
 export type RatingType = zod.infer<typeof RatingSchema>;
 
 export const AccuracySchema = zod.object({

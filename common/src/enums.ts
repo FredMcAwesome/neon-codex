@@ -217,3 +217,25 @@ export enum armourAccessoryTypeEnum {
   Standard,
   Modification,
 }
+
+export enum matrixWareTypeEnum {
+  Commlink,
+  Cyberdeck,
+  RFIDTag,
+  CommunicationCountermeasure,
+  Software,
+  Skillsoft,
+}
+
+export enum matrixWareAccessoryTypeEnum {
+  CredStick,
+  Identification,
+  Tool,
+  OpticalDevice,
+  VisionEnhancement,
+  AudioDevice,
+  AudioEnhancement,
+  Sensor,
+  SecurityDevice,
+  BreakingAndEnteringDevice,
+}

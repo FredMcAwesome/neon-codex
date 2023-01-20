@@ -43,6 +43,8 @@ export {
   explosiveTypeEnum,
   weaponAccessoryTypeEnum,
   armourAccessoryTypeEnum,
+  matrixWareTypeEnum,
+  matrixWareAccessoryTypeEnum,
 } from "./enums.js";
 
 export {
@@ -63,3 +65,8 @@ export type {
   BlastType,
   RatingType,
 } from "./schemas/weaponSchemas.js";
+
+export type {
+  CyberdeckAttributeArrayType,
+  CapacityType,
+} from "./schemas/electronicSchemas.js";

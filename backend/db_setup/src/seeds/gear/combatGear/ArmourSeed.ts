@@ -1,6 +1,6 @@
 import { RequiredEntityData } from "@mikro-orm/core";
 import { mathOperatorEnum, restrictionEnum } from "@shadowrun/common";
-import { Armours } from "../../../../src/models/gear/armourModel.js";
+import { Armours } from "../../../../../src/models/gear/combatGear/armourModel.js";
 
 export const armoursList: Array<RequiredEntityData<Armours>> = [
   {

@@ -13,7 +13,7 @@ import {
   Grenades,
   ProjectilesAmmos,
   RocketsMissiles,
-} from "../../../../src/models/gear/ammunitionModel.js";
+} from "../../../../../src/models/gear/combatGear/ammunitionModel.js";
 
 export const ammosList: Array<RequiredEntityData<Ammos>> = [
   {

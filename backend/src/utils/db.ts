@@ -5,7 +5,7 @@ import MikroORMConfig from "../mikro-orm.config.js";
 import { EntityManager, EntityRepository, MikroORM } from "@mikro-orm/core";
 import { PostgreSqlDriver } from "@mikro-orm/postgresql";
 import { Users, Threads, Comments } from "../models/models.js";
-import { Weapons } from "../models/gear/weaponModel.js";
+import { Weapons } from "../models/gear/combatGear/weaponModel.js";
 
 interface IDatabase {
   orm: MikroORM;

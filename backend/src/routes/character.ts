@@ -3,7 +3,10 @@ import { WeaponListType, weaponTypeEnum } from "@shadowrun/common";
 import { Database } from "../utils/db.js";
 import * as logger from "../utils/logger.js";
 import { IAuthRequest, isLoggedIn } from "./authentication.js";
-import { FirearmWeapons, MeleeWeapons } from "../models/gear/weaponModel.js";
+import {
+  FirearmWeapons,
+  MeleeWeapons,
+} from "../models/gear/combatGear/weaponModel.js";
 
 const router = express.Router();
 

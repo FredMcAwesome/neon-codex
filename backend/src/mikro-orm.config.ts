@@ -7,23 +7,45 @@ import {
   ProjectileWeapons,
   FirearmWeapons,
   Explosives,
-} from "./models/gear/weaponModel.js";
+} from "./models/gear/combatGear/weaponModel.js";
 import {
   FirearmAccessories,
   WeaponAccessories,
-} from "./models/gear/weaponAccessoryModel.js";
+} from "./models/gear/combatGear/weaponAccessoryModel.js";
 import {
   Ammunitions,
   Ammos,
   Grenades,
   RocketsMissiles,
   ProjectilesAmmos,
-} from "./models/gear/ammunitionModel.js";
-import { Armours } from "./models/gear/armourModel.js";
+} from "./models/gear/combatGear/ammunitionModel.js";
+import { Armours } from "./models/gear/combatGear/armourModel.js";
 import {
   ArmourAccessories,
   ArmourModifications,
-} from "./models/gear/armourAccessoryModel.js";
+} from "./models/gear/combatGear/armourAccessoryModel.js";
+import {
+  Commlinks,
+  CommunicationCountermeasures,
+  Cyberdecks,
+  MatrixWares,
+  RFIDTags,
+  Skillsofts,
+  Softwares,
+} from "./models/gear/electronicsGear/matrixWareModel.js";
+import {
+  AudioDevices,
+  AudioEnhancements,
+  BreakingAndEnteringDevices,
+  CredSticks,
+  Identifications,
+  MatrixWareAccessories,
+  OpticalDevices,
+  SecurityDevices,
+  Sensors,
+  Tools,
+  VisionEnhancements,
+} from "./models/gear/electronicsGear/matrixWareAccessoryModel.js";
 
 const dbOptions: Options<PostgreSqlDriver> = {
   entities: [
@@ -34,17 +56,35 @@ const dbOptions: Options<PostgreSqlDriver> = {
     MeleeWeapons,
     ProjectileWeapons,
     FirearmWeapons,
+    Explosives,
     WeaponAccessories,
     FirearmAccessories,
     Ammunitions,
     Ammos,
+    ProjectilesAmmos,
     Grenades,
     RocketsMissiles,
-    ProjectilesAmmos,
-    Explosives,
     Armours,
     ArmourAccessories,
     ArmourModifications,
+    MatrixWares,
+    Commlinks,
+    Cyberdecks,
+    RFIDTags,
+    CommunicationCountermeasures,
+    Softwares,
+    Skillsofts,
+    MatrixWareAccessories,
+    CredSticks,
+    Identifications,
+    Tools,
+    OpticalDevices,
+    VisionEnhancements,
+    AudioDevices,
+    AudioEnhancements,
+    Sensors,
+    SecurityDevices,
+    BreakingAndEnteringDevices,
   ],
   type: "postgresql",
   host: HOST,
