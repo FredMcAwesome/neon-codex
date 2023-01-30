@@ -1,5 +1,17 @@
 import { z as zod } from "zod";
-import { WeaponSummarySchema } from "./schemas/weaponSchemas.js";
+import type {
+  GearListType,
+  WeaponListType,
+  MatrixListType,
+  OtherGearListType,
+  AugmentationListType,
+} from "./schemas/gearSchemas.js";
+import {
+  WeaponListSchema,
+  MatrixListSchema,
+  AugmentationListSchema,
+} from "./schemas/gearSchemas.js";
+import { GearListSchema } from "./schemas/gearSchemas.js";
 
 const ThreadSummarySchema = zod.object({
   title: zod.string(),
@@ -14,8 +26,20 @@ const JwtTokenSchema = zod.object({
 });
 type JwtTokenType = zod.infer<typeof JwtTokenSchema>;
 
-const WeaponListSchema = zod.array(WeaponSummarySchema);
-type WeaponListType = zod.infer<typeof WeaponListSchema>;
-
-export type { ThreadListType, JwtTokenType, WeaponListType };
-export { ThreadListSchema, JwtTokenSchema, WeaponListSchema };
+export type {
+  ThreadListType,
+  JwtTokenType,
+  WeaponListType,
+  MatrixListType,
+  OtherGearListType,
+  AugmentationListType,
+  GearListType,
+};
+export {
+  ThreadListSchema,
+  JwtTokenSchema,
+  WeaponListSchema,
+  MatrixListSchema,
+  AugmentationListSchema,
+  GearListSchema,
+};

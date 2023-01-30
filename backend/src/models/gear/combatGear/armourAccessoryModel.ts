@@ -13,13 +13,13 @@ export class ArmourAccessories {
   @Property({ length: 255 })
   name!: string;
 
-  @Property()
+  @Property({ type: "json" })
   availability!: AvailabilityType;
 
   @Property()
   armourRating!: number;
 
-  @Property()
+  @Property({ type: "json" })
   cost!: CostType;
 
   @Property({ length: 5000 })
@@ -31,6 +31,6 @@ export class ArmourAccessories {
 
 @Entity({ discriminatorValue: armourAccessoryTypeEnum.Modification })
 export class ArmourModifications extends ArmourAccessories {
-  @Property()
+  @Property({ type: "json" })
   capacityCost!: CostType;
 }

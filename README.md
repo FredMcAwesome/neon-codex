@@ -31,21 +31,26 @@ Run the following commands to create a database and fill it with some dummy data
 `npm run build` at least once
 Create .env_development, .env_production, and .env_test in backend/ and set the DB_NAME to whatever you want each name to be. Can also set all other credentials used in backend/config.ts.
 Create Tables:
-`cd backend`
-`NODE_ENV=test npx ts-node-esm ./db_setup/src/create-schema.ts`
-`NODE_ENV=development npx ts-node-esm ./db_setup/src/create-schema.ts`
+```shell
+cd backend &&
+NODE_ENV=test npx ts-node-esm ./db_setup/src/create-schema.ts &&
+NODE_ENV=development npx ts-node-esm ./db_setup/src/create-schema.ts
+```
 Fill tables with sample data:
-`export MIKRO_ORM_CLI='./db_setup/src/mikro-orm.config.ts' && export MIKRO_ORM_SEEDER_PATH='./db_setup/src/seeders/'`
-`export NODE_OPTIONS="--loader ts-node/esm"`
-`export NODE_ENV=test`
-`npx mikro-orm seeder:run`
-`npx mikro-orm seeder:run --class=GearSeeder`
-`export NODE_ENV=development`
-`npx mikro-orm seeder:run`
-`npx mikro-orm seeder:run --class=GearSeeder`
-`unset NODE_ENV`
-`unset NODE_OPTIONS`
-`unset MIKRO_ORM_CLI`
+```shell
+export MIKRO_ORM_CLI='./db_setup/src/mikro-orm.config.ts' && 
+export MIKRO_ORM_SEEDER_PATH='./db_setup/src/seeders/' &&
+export NODE_OPTIONS="--loader ts-node/esm" &&
+export NODE_ENV=test &&
+npx mikro-orm seeder:run &&
+npx mikro-orm seeder:run --class=GearSeeder &&
+export NODE_ENV=development &&
+npx mikro-orm seeder:run &&
+npx mikro-orm seeder:run --class=GearSeeder &&
+unset NODE_ENV &&
+unset NODE_OPTIONS &&
+unset MIKRO_ORM_CLI
+```
 
 ### Hot reload
 To run server with hot reload `npm start` from root. (Builds client then enters watch mode for server.)

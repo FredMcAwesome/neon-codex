@@ -9,13 +9,13 @@ export class Armours {
   @Property({ length: 255 })
   name!: string;
 
-  @Property()
+  @Property({ type: "json" })
   availability!: AvailabilityType;
 
   @Property()
   armourRating!: number;
 
-  @Property()
+  @Property({ type: "json" })
   cost!: CostType;
 
   @Property({ length: 5000 })

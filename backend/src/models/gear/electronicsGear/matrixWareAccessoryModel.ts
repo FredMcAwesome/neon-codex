@@ -21,13 +21,13 @@ export abstract class MatrixWareAccessories {
   @Property({ length: 255 })
   name!: string;
 
-  @Property({ nullable: true })
+  @Property({ type: "json", nullable: true })
   rating?: RatingType;
 
-  @Property()
+  @Property({ type: "json" })
   availability!: AvailabilityType;
 
-  @Property()
+  @Property({ type: "json" })
   cost!: CostType;
 }
 
@@ -57,7 +57,7 @@ export class Tools extends MatrixWareAccessories {
 
 @Entity({ discriminatorValue: matrixWareAccessoryTypeEnum.OpticalDevice })
 export class OpticalDevices extends MatrixWareAccessories {
-  @Property()
+  @Property({ type: "json" })
   capacity!: CapacityType;
 
   @Property({ length: 5000 })
@@ -69,8 +69,9 @@ export class OpticalDevices extends MatrixWareAccessories {
 
 @Entity({ discriminatorValue: matrixWareAccessoryTypeEnum.VisionEnhancement })
 export class VisionEnhancements extends MatrixWareAccessories {
-  @Property()
+  @Property({ type: "json" })
   capacity!: CapacityType;
+
   @Property({ length: 5000 })
   description!: string;
 
@@ -80,7 +81,7 @@ export class VisionEnhancements extends MatrixWareAccessories {
 
 @Entity({ discriminatorValue: matrixWareAccessoryTypeEnum.AudioDevice })
 export class AudioDevices extends MatrixWareAccessories {
-  @Property()
+  @Property({ type: "json" })
   capacity!: CapacityType;
 
   @Property({ length: 5000 })
@@ -92,7 +93,7 @@ export class AudioDevices extends MatrixWareAccessories {
 
 @Entity({ discriminatorValue: matrixWareAccessoryTypeEnum.AudioEnhancement })
 export class AudioEnhancements extends MatrixWareAccessories {
-  @Property()
+  @Property({ type: "json" })
   capacityCost!: CostType;
 
   @Property({ length: 5000 })
@@ -104,7 +105,7 @@ export class AudioEnhancements extends MatrixWareAccessories {
 
 @Entity({ discriminatorValue: matrixWareAccessoryTypeEnum.Sensor })
 export class Sensors extends MatrixWareAccessories {
-  @Property()
+  @Property({ type: "json" })
   capacity!: CapacityType;
 }
 

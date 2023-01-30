@@ -7,11 +7,16 @@ export {
   ThreadListSchema,
   JwtTokenSchema,
   WeaponListSchema,
+  AugmentationListSchema,
+  GearListSchema,
 } from "./serverResponse.js";
 export type {
   ThreadListType,
   JwtTokenType,
   WeaponListType,
+  OtherGearListType,
+  AugmentationListType,
+  GearListType,
 } from "./serverResponse.js";
 
 export { LoginSchema } from "./clientRequest.js";
@@ -22,6 +27,7 @@ export {
   postLoginAPI,
   getLoginStatusAPI,
   getWeaponListAPI,
+  getGearListAPI,
 } from "./api.js";
 
 export {
@@ -45,11 +51,30 @@ export {
   armourAccessoryTypeEnum,
   matrixWareTypeEnum,
   matrixWareAccessoryTypeEnum,
+  otherWareTypeEnum,
+  augmentationTypeEnum,
+  augmentationAccessoryTypeEnum,
+  magicalGearTypeEnum,
+  focusTypeEnum,
+  spellCategoryEnum,
+  formulaTypeEnum,
+  vehicleDroneTypeEnum,
+  groundcraftSubtypeEnum,
+  watercraftSubtypeEnum,
+  aircraftSubtypeEnum,
+  droneSubtypeEnum,
 } from "./enums.js";
+
+export type {
+  RatingType,
+  AvailabilityType,
+  CostType,
+  CapacityType,
+} from "./schemas/commonSchema.js";
+export { AvailabilitySchema } from "./schemas/commonSchema.js";
 
 export {
   AccuracySchema,
-  AvailabilitySchema,
   DamageSchema,
   FirearmAmmoSchema,
   BlastSchema,
@@ -57,16 +82,16 @@ export {
 export type {
   AccuracyType,
   ArmourPenetrationType,
-  AvailabilityType,
-  CostType,
   DamageType,
   FirearmAmmoType,
   RecoilCompensationType,
+  WeaponSummaryType,
   BlastType,
-  RatingType,
 } from "./schemas/weaponSchemas.js";
 
 export type {
   CyberdeckAttributeArrayType,
-  CapacityType,
+  MatrixType,
 } from "./schemas/electronicSchemas.js";
+
+export type { EssenceType } from "./schemas/augmentationSchemas.js";

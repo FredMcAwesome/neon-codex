@@ -1,6 +1,18 @@
 import { EntityManager } from "@mikro-orm/core";
 import { Seeder } from "@mikro-orm/seeder";
 import {
+  CyberlimbAccessories,
+  ImplantWeapons,
+} from "../../../src/models/gear/augmentationGear/augmentationAccessoryModel.js";
+import {
+  Biowares,
+  Bodywares,
+  Cyberlimbs,
+  Earwares,
+  Eyewares,
+  Headwares,
+} from "../../../src/models/gear/augmentationGear/augmentationModel.js";
+import {
   Ammos,
   Grenades,
   ProjectilesAmmos,
@@ -42,6 +54,37 @@ import {
   Softwares,
 } from "../../../src/models/gear/electronicsGear/matrixWareModel.js";
 import {
+  Foci,
+  Formulae,
+  MagicalSupplies,
+} from "../../../src/models/gear/magicGear/magicalGearEquipment.js";
+import {
+  Biotech,
+  DocWagonContract,
+  GrappleGun,
+  IndustrialChemicals,
+  SlapPatches,
+  SurvivalGear,
+} from "../../../src/models/gear/otherGear/otherWareModel.js";
+import {
+  Aircrafts,
+  Drones,
+  Groundcrafts,
+  Watercrafts,
+} from "../../../src/models/gear/riggerGear/vehicleAndDroneModel.js";
+import {
+  cyberlimbAccessoriesList,
+  implantWeaponsList,
+} from "../seeds/gear/augmentationGear/AugmentationAccessoriesSeed.js";
+import {
+  biowaresList,
+  bodywareList,
+  cyberlimbsList,
+  earwaresList,
+  eyewaresList,
+  headwaresList,
+} from "../seeds/gear/augmentationGear/AugmentationsSeed.js";
+import {
   ammosList,
   grenadesList,
   projectileAmmosList,
@@ -51,7 +94,7 @@ import {
   armourAccessoriesList,
   armourModificationsList,
 } from "../seeds/gear/combatGear/ArmourAccessoriesSeed.js";
-import { armoursList } from "../seeds/gear/combatGear/ArmourSeed.js";
+import { armoursList } from "../seeds/gear/combatGear/ArmoursSeed.js";
 import {
   firearmAccessoriesList,
   weaponAccessoriesList,
@@ -73,7 +116,7 @@ import {
   sensorsList,
   securityDevicesList,
   breakingAndEnteringDevicesList,
-} from "../seeds/gear/electronicsGear/matrixWareAccessoriesSeed.js";
+} from "../seeds/gear/electronicsGear/MatrixWareAccessoriesSeed.js";
 import {
   commlinksList,
   communicationCountermeasuresList,
@@ -81,7 +124,24 @@ import {
   RFIDTagsList,
   skillsoftList,
   softwaresList,
-} from "../seeds/gear/electronicsGear/matrixWaresSeed.js";
+} from "../seeds/gear/electronicsGear/MatrixWaresSeed.js";
+import { fociList } from "../seeds/gear/magicGear/FociSeed.js";
+import { formulaeList } from "../seeds/gear/magicGear/FormulaeSeed.js";
+import { magicalSuppliesList } from "../seeds/gear/magicGear/MagicalSuppliesSeed.js";
+import {
+  biotechList,
+  docWagonContractList,
+  grappleGunList,
+  industrialChemicalsList,
+  slapPatchesList,
+  survivalGearList,
+} from "../seeds/gear/otherGear/OtherGear.js";
+import {
+  aircraftsList,
+  dronesList,
+  groundcraftsList,
+  watercraftsList,
+} from "../seeds/gear/riggerGear/vehicleAndDroneSeed.js";
 
 export class GearSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
@@ -175,6 +235,74 @@ export class GearSeeder extends Seeder {
     });
     breakingAndEnteringDevicesList.forEach((skillsoft) => {
       em.create(BreakingAndEnteringDevices, skillsoft);
+    });
+    // other (miscellaneous) stuff
+    industrialChemicalsList.forEach((industrialChemical) => {
+      em.create(IndustrialChemicals, industrialChemical);
+    });
+    survivalGearList.forEach((survivalItem) => {
+      em.create(SurvivalGear, survivalItem);
+    });
+    grappleGunList.forEach((grappleItem) => {
+      em.create(GrappleGun, grappleItem);
+    });
+    biotechList.forEach((biotechItem) => {
+      em.create(Biotech, biotechItem);
+    });
+    docWagonContractList.forEach((docWagonContract) => {
+      em.create(DocWagonContract, docWagonContract);
+    });
+    slapPatchesList.forEach((slapPatch) => {
+      em.create(SlapPatches, slapPatch);
+    });
+    // augmentations
+    headwaresList.forEach((headware) => {
+      em.create(Headwares, headware);
+    });
+    eyewaresList.forEach((eyewear) => {
+      em.create(Eyewares, eyewear);
+    });
+    earwaresList.forEach((earware) => {
+      em.create(Earwares, earware);
+    });
+    bodywareList.forEach((bodyware) => {
+      em.create(Bodywares, bodyware);
+    });
+    cyberlimbsList.forEach((cyberlimb) => {
+      em.create(Cyberlimbs, cyberlimb);
+    });
+    biowaresList.forEach((bioware) => {
+      em.create(Biowares, bioware);
+    });
+    // augmentation accessories
+    cyberlimbAccessoriesList.forEach((cyberlimbAccessory) => {
+      em.create(CyberlimbAccessories, cyberlimbAccessory);
+    });
+    implantWeaponsList.forEach((implantWeapon) => {
+      em.create(ImplantWeapons, implantWeapon);
+    });
+    // magical equipment
+    fociList.forEach((focus) => {
+      em.create(Foci, focus);
+    });
+    formulaeList.forEach((formula) => {
+      em.create(Formulae, formula);
+    });
+    magicalSuppliesList.forEach((magicalSupply) => {
+      em.create(MagicalSupplies, magicalSupply);
+    });
+    //vehicles
+    groundcraftsList.forEach((groundcraft) => {
+      em.create(Groundcrafts, groundcraft);
+    });
+    watercraftsList.forEach((watercraft) => {
+      em.create(Watercrafts, watercraft);
+    });
+    aircraftsList.forEach((aircraft) => {
+      em.create(Aircrafts, aircraft);
+    });
+    dronesList.forEach((drone) => {
+      em.create(Drones, drone);
     });
   }
 }

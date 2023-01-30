@@ -13,9 +13,9 @@ import MikroORMConfig from "../../src/mikro-orm.config.js";
   // console.log(updateDump);
 
   // run queries directly, but be sure to check the above first to ensure format is correct
-  // await generator.dropSchema();
-  // await generator.createSchema();
-  await generator.updateSchema();
+  await generator.dropSchema();
+  await generator.createSchema();
+  // await generator.updateSchema();
 
   await orm.close(true);
 })();

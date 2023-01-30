@@ -94,6 +94,7 @@ export enum meleeWeaponTypeEnum {
   Blades,
   Clubs,
   Other,
+  Cyber,
 }
 
 export enum projectileWeaponTypeEnum {
@@ -126,6 +127,7 @@ export enum firearmWeaponTypeEnum {
   StandardGrenade,
   AerodynamicGrenade,
   Special,
+  Cybergun,
 }
 
 export enum explosiveTypeEnum {
@@ -154,6 +156,7 @@ export enum damageCalculationMethodEnum {
   Grenade,
   Missile,
   Explosive,
+  Fire,
 }
 
 export enum restrictionEnum {
@@ -238,4 +241,89 @@ export enum matrixWareAccessoryTypeEnum {
   Sensor,
   SecurityDevice,
   BreakingAndEnteringDevice,
+}
+
+export enum otherWareTypeEnum {
+  IndustrialChemicals,
+  SurvivalGear,
+  GrappleGun,
+  Biotech,
+  DocWagonContract,
+  SlapPatches,
+}
+
+export enum augmentationTypeEnum {
+  Headware,
+  Eyeware,
+  Earware,
+  Bodyware,
+  Cyberlimbs,
+  Bioware,
+  CulturedBioware,
+}
+
+export enum augmentationAccessoryTypeEnum {
+  CyberlimbAccessories,
+  ImplantWeapons,
+}
+
+export enum magicalGearTypeEnum {
+  Focus,
+  Formula,
+  Supply,
+}
+
+export enum focusTypeEnum {
+  Enchanting,
+  Metamagic,
+  Power,
+  Qi,
+  Spell,
+  Spirit,
+  Weapon,
+}
+
+export enum spellCategoryEnum {
+  Combat,
+  Detection,
+  Illusion,
+  Healing,
+  Manipulation,
+}
+
+export enum formulaTypeEnum {
+  Focus,
+  Spell,
+}
+
+export enum vehicleDroneTypeEnum {
+  Groundcrafts,
+  Watercrafts,
+  Aircrafts,
+  Drones,
+}
+
+export enum groundcraftSubtypeEnum {
+  Bikes,
+  Cars,
+  TrucksAndVans,
+}
+
+export enum watercraftSubtypeEnum {
+  Boats,
+  Submarines,
+}
+
+export enum aircraftSubtypeEnum {
+  FixedWingAircrafts,
+  Rotorcrafts,
+  VTOL_VSTOLs,
+}
+
+export enum droneSubtypeEnum {
+  Microdrones,
+  Minidrones,
+  SmallDrones,
+  MediumDrones,
+  LargeDrones,
 }

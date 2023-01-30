@@ -21,13 +21,13 @@ export abstract class MatrixWares {
   @Property({ length: 255 })
   name!: string;
 
-  @Property({ nullable: true })
+  @Property({ type: "json", nullable: true })
   rating?: RatingType;
 
-  @Property()
+  @Property({ type: "json" })
   availability!: AvailabilityType;
 
-  @Property()
+  @Property({ type: "json" })
   cost!: CostType;
 }
 
@@ -36,7 +36,7 @@ export class Commlinks extends MatrixWares {}
 
 @Entity({ discriminatorValue: matrixWareTypeEnum.Cyberdeck })
 export class Cyberdecks extends MatrixWares {
-  @Property({ type: "array" })
+  @Property({ type: "number[]" })
   attributeArray!: CyberdeckAttributeArrayType;
 
   @Property()

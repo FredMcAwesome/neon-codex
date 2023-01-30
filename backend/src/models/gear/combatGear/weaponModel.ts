@@ -46,22 +46,22 @@ export abstract class Weapons {
   @Property({ length: 255 })
   name!: string;
 
-  @Property()
+  @Property({ type: "json" })
   accuracy!: AccuracyType;
 
-  @Property()
+  @Property({ type: "json" })
   damage!: DamageType;
 
-  @Property()
+  @Property({ type: "json" })
   armourPenetration!: ArmourPenetrationType;
 
-  @Property()
+  @Property({ type: "json" })
   availability!: AvailabilityType;
 
-  @Property({ nullable: true })
+  @Property({ type: "json", nullable: true })
   rating?: RatingType;
 
-  @Property()
+  @Property({ type: "json" })
   cost!: CostType;
 
   @Property({ length: 5000 })
@@ -69,6 +69,9 @@ export abstract class Weapons {
 
   @Property({ length: 5000, nullable: true })
   wireless?: string;
+
+  @Property({ nullable: true })
+  implantWeapon?: boolean;
 
   @Enum()
   relatedSkill!: skillsEnum;
@@ -88,7 +91,7 @@ export class FirearmWeapons extends Weapons {
   @Enum({ items: () => firearmModeEnum, array: true })
   mode!: firearmModeEnum[];
 
-  @Property()
+  @Property({ type: "json" })
   recoilCompensation!: RecoilCompensationType;
 
   @Property({ type: "json" })

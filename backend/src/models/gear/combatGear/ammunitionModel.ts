@@ -12,7 +12,7 @@ import { ammunitionTypeEnum } from "@shadowrun/common";
   discriminatorColumn: "type",
   abstract: true,
 })
-export class Ammunitions {
+export abstract class Ammunitions {
   @PrimaryKey()
   id!: number;
 
@@ -22,16 +22,16 @@ export class Ammunitions {
   @Property({ length: 255 })
   name!: string;
 
-  @Property()
+  @Property({ type: "json" })
   damageModifier!: DamageType;
 
-  @Property()
+  @Property({ type: "json" })
   armourPenetrationModifier!: ArmourPenetrationType;
 
-  @Property()
+  @Property({ type: "json" })
   availability!: AvailabilityType;
 
-  @Property()
+  @Property({ type: "json" })
   cost!: CostType;
 
   @Property({ length: 5000 })
@@ -46,13 +46,13 @@ export class Ammos extends Ammunitions {}
 
 @Entity({ discriminatorValue: ammunitionTypeEnum.Grenades })
 export class Grenades extends Ammunitions {
-  @Property()
+  @Property({ type: "json" })
   blast!: BlastType;
 }
 
 @Entity({ discriminatorValue: ammunitionTypeEnum.RocketsMissiles })
 export class RocketsMissiles extends Ammunitions {
-  @Property()
+  @Property({ type: "json" })
   blast!: BlastType;
 }
 

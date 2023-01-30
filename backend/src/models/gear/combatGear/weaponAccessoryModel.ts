@@ -16,13 +16,13 @@ export class WeaponAccessories {
   @Property({ length: 255 })
   name!: string;
 
-  @Property()
+  @Property({ type: "json" })
   availability!: AvailabilityType;
 
-  @Property({ nullable: true })
+  @Property({ type: "json", nullable: true })
   rating?: RatingType;
 
-  @Property()
+  @Property({ type: "json" })
   cost!: CostType;
 
   @Property({ length: 5000 })
@@ -30,6 +30,9 @@ export class WeaponAccessories {
 
   @Property({ length: 5000, nullable: true })
   wireless?: string;
+
+  @Property({ nullable: true })
+  implantAccessory?: boolean;
 }
 
 @Entity({ discriminatorValue: weaponAccessoryTypeEnum.Firearm })

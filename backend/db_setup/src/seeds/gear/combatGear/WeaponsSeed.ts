@@ -424,6 +424,93 @@ export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
     relatedSkill: skillsEnum.ExoticMeleeWeapon,
     type: weaponTypeEnum.Melee,
   },
+  {
+    name: "Hand blade (retractable)",
+    subtype: meleeWeaponTypeEnum.Cyber,
+    accuracy: {
+      base: "Inherent",
+    },
+    damage: {
+      damageAmount: {
+        calculationType: damageCalculationMethodEnum.Strength,
+        base: 2,
+      },
+      type: damageTypeEnum.Physical,
+    },
+    armourPenetration: { base: -2 },
+    availability: { rating: 10, restriction: restrictionEnum.Forbidden },
+    cost: { base: 2500 },
+    description: "",
+    relatedSkill: skillsEnum.UnarmedCombat,
+    type: weaponTypeEnum.Melee,
+  },
+  {
+    name: "Hand razors (retractable)",
+    subtype: meleeWeaponTypeEnum.Cyber,
+    accuracy: {
+      base: "Inherent",
+    },
+    damage: {
+      damageAmount: {
+        calculationType: damageCalculationMethodEnum.Strength,
+        base: 1,
+      },
+      type: damageTypeEnum.Physical,
+    },
+    armourPenetration: { base: -3 },
+    availability: {
+      rating: 8,
+      restriction: restrictionEnum.Forbidden,
+    },
+    cost: { base: 1250 },
+    description: "",
+    relatedSkill: skillsEnum.UnarmedCombat,
+    type: weaponTypeEnum.Melee,
+  },
+  {
+    name: "Spurs (retractable)",
+    subtype: meleeWeaponTypeEnum.Cyber,
+    accuracy: {
+      base: "Inherent",
+    },
+    damage: {
+      damageAmount: {
+        calculationType: damageCalculationMethodEnum.Strength,
+        base: 3,
+      },
+      type: damageTypeEnum.Physical,
+    },
+    armourPenetration: { base: -2 },
+    availability: {
+      rating: 12,
+      restriction: restrictionEnum.Forbidden,
+    },
+    cost: { base: 5000 },
+    description: "",
+    relatedSkill: skillsEnum.UnarmedCombat,
+    type: weaponTypeEnum.Melee,
+  },
+  {
+    name: "Shock hand",
+    subtype: meleeWeaponTypeEnum.Cyber,
+    accuracy: {
+      base: "Inherent",
+    },
+    damage: {
+      damageAmount: {
+        calculationType: damageCalculationMethodEnum.Normal,
+        base: 9,
+      },
+      type: damageTypeEnum.Stun,
+      annotation: damageAnnoationEnum.Electrical,
+    },
+    armourPenetration: { base: -5 },
+    availability: { rating: 8, restriction: restrictionEnum.Restricted },
+    cost: { base: 5000 },
+    description: "",
+    relatedSkill: skillsEnum.UnarmedCombat,
+    type: weaponTypeEnum.Melee,
+  },
 ];
 
 export const projectileWeaponsList: Array<
@@ -584,7 +671,7 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
   },
   {
     subtype: firearmWeaponTypeEnum.Tasers,
-    name: "Defiance EX Shocker",
+    name: "Defiance EX Shocker (Melee)",
     accuracy: {
       base: 3,
     },
@@ -1930,6 +2017,62 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     type: weaponTypeEnum.Firearm,
   },
   {
+    subtype: firearmWeaponTypeEnum.Special,
+    name: "Micro flare launcher",
+    accuracy: {
+      base: 3,
+    },
+    damage: {
+      damageAmount: {
+        base: 5,
+        calculationType: damageCalculationMethodEnum.Fire,
+      },
+      type: damageTypeEnum.Physical,
+    },
+    armourPenetration: { base: -5 },
+    mode: [firearmModeEnum.SingleShot],
+    recoilCompensation: { base: 0 },
+    ammo: [
+      {
+        amount: 1,
+        reloadMethod: reloadMethodEnum.MuzzleLoader,
+      },
+    ],
+    availability: { rating: 0, restriction: restrictionEnum.Legal },
+    cost: { base: 175 },
+    description: "",
+    relatedSkill: skillsEnum.ExoticRangedWeapon,
+    type: weaponTypeEnum.Firearm,
+  },
+  {
+    subtype: firearmWeaponTypeEnum.Special,
+    name: "Grapple gun",
+    accuracy: {
+      base: 3,
+    },
+    damage: {
+      damageAmount: {
+        base: 7,
+        calculationType: damageCalculationMethodEnum.Normal,
+      },
+      type: damageTypeEnum.Stun,
+    },
+    armourPenetration: { base: -2 },
+    mode: [firearmModeEnum.SingleShot],
+    recoilCompensation: { base: 0 },
+    ammo: [
+      {
+        amount: 1,
+        reloadMethod: reloadMethodEnum.MuzzleLoader,
+      },
+    ],
+    availability: { rating: 8, restriction: restrictionEnum.Restricted },
+    cost: { base: 500 },
+    description: "",
+    relatedSkill: skillsEnum.ExoticRangedWeapon,
+    type: weaponTypeEnum.Firearm,
+  },
+  {
     subtype: firearmWeaponTypeEnum.LightMachinegun,
     name: "Ingram Valiant",
     accuracy: {
@@ -2197,6 +2340,258 @@ export const firearmWeaponsList: Array<RequiredEntityData<FirearmWeapons>> = [
     ],
     availability: { rating: 20, restriction: restrictionEnum.Forbidden },
     cost: { base: 43000 },
+    description: "",
+    relatedSkill: skillsEnum.HeavyWeapons,
+    type: weaponTypeEnum.Firearm,
+  },
+  {
+    subtype: firearmWeaponTypeEnum.HoldOuts,
+    name: "Cyber Hold-out pistol",
+    accuracy: {
+      base: 4,
+      equipment: 6,
+    },
+    damage: {
+      damageAmount: {
+        base: 6,
+        calculationType: damageCalculationMethodEnum.Normal,
+      },
+      type: damageTypeEnum.Physical,
+    },
+    armourPenetration: { base: 0 },
+    mode: [firearmModeEnum.SemiAutomatic],
+    recoilCompensation: { base: 0 },
+    ammo: [
+      {
+        amount: 2,
+        reloadMethod: reloadMethodEnum.InternalMagazine,
+      },
+      {
+        amount: 6,
+        reloadMethod: reloadMethodEnum.Clip,
+      },
+    ],
+    availability: {
+      rating: 8,
+      restriction: restrictionEnum.Restricted,
+    },
+    cost: { base: 2000 },
+    description: "",
+    relatedSkill: skillsEnum.Pistols,
+    type: weaponTypeEnum.Firearm,
+  },
+  {
+    subtype: firearmWeaponTypeEnum.LightPistol,
+    name: "Cyber light pistol",
+    accuracy: {
+      base: 6,
+      equipment: 8,
+    },
+    damage: {
+      damageAmount: {
+        base: 7,
+        calculationType: damageCalculationMethodEnum.Normal,
+      },
+      type: damageTypeEnum.Physical,
+    },
+    armourPenetration: { base: 0 },
+    mode: [firearmModeEnum.SemiAutomatic],
+    recoilCompensation: { base: 0 },
+    ammo: [
+      {
+        amount: 10,
+        reloadMethod: reloadMethodEnum.InternalMagazine,
+      },
+      {
+        amount: 15,
+        reloadMethod: reloadMethodEnum.Clip,
+      },
+    ],
+    availability: {
+      rating: 10,
+      restriction: restrictionEnum.Restricted,
+    },
+    cost: { base: 3900 },
+    description: "",
+    relatedSkill: skillsEnum.Pistols,
+    type: weaponTypeEnum.Firearm,
+  },
+  {
+    subtype: firearmWeaponTypeEnum.LightPistol,
+    name: "Cyber machine pistol",
+    accuracy: {
+      base: 4,
+      equipment: 6,
+    },
+    damage: {
+      damageAmount: {
+        base: 6,
+        calculationType: damageCalculationMethodEnum.Normal,
+      },
+      type: damageTypeEnum.Physical,
+    },
+    armourPenetration: { base: 0 },
+    mode: [firearmModeEnum.SemiAutomatic, firearmModeEnum.BurstFire],
+    recoilCompensation: { base: 1 },
+    ammo: [
+      {
+        amount: 18,
+        reloadMethod: reloadMethodEnum.InternalMagazine,
+      },
+      {
+        amount: 32,
+        reloadMethod: reloadMethodEnum.Clip,
+      },
+    ],
+    availability: {
+      rating: 12,
+      restriction: restrictionEnum.Restricted,
+    },
+    cost: { base: 3500 },
+    description: "",
+    relatedSkill: skillsEnum.Pistols,
+    type: weaponTypeEnum.Firearm,
+  },
+  {
+    subtype: firearmWeaponTypeEnum.HeavyPistol,
+    name: "Cyber heavy pistol",
+    accuracy: {
+      base: 4,
+      equipment: 6,
+    },
+    damage: {
+      damageAmount: {
+        base: 7,
+        calculationType: damageCalculationMethodEnum.Normal,
+      },
+      type: damageTypeEnum.Physical,
+    },
+    armourPenetration: { base: -1 },
+    mode: [firearmModeEnum.SemiAutomatic],
+    recoilCompensation: { base: 0 },
+    ammo: [
+      {
+        amount: 4,
+        reloadMethod: reloadMethodEnum.InternalMagazine,
+      },
+      {
+        amount: 10,
+        reloadMethod: reloadMethodEnum.Clip,
+      },
+    ],
+    availability: {
+      rating: 12,
+      restriction: restrictionEnum.Restricted,
+    },
+    cost: { base: 4300 },
+    description: "",
+    relatedSkill: skillsEnum.Pistols,
+    type: weaponTypeEnum.Firearm,
+  },
+  {
+    subtype: firearmWeaponTypeEnum.SubmachineGun,
+    name: "Cyber submachine gun",
+    accuracy: {
+      base: 4,
+      equipment: 6,
+    },
+    damage: {
+      damageAmount: {
+        base: 7,
+        calculationType: damageCalculationMethodEnum.Normal,
+      },
+      type: damageTypeEnum.Physical,
+    },
+    armourPenetration: { base: 0 },
+    mode: [firearmModeEnum.SemiAutomatic, firearmModeEnum.BurstFire],
+    recoilCompensation: { base: 2 },
+    ammo: [
+      {
+        amount: 18,
+        reloadMethod: reloadMethodEnum.InternalMagazine,
+      },
+      {
+        amount: 32,
+        reloadMethod: reloadMethodEnum.Clip,
+      },
+    ],
+    availability: {
+      rating: 12,
+      restriction: restrictionEnum.Restricted,
+    },
+    cost: { base: 4800 },
+    description: "",
+    relatedSkill: skillsEnum.Automatics,
+    type: weaponTypeEnum.Firearm,
+  },
+  {
+    subtype: firearmWeaponTypeEnum.Shotgun,
+    name: "Cyber shotgun",
+    accuracy: {
+      base: 4,
+      equipment: 6,
+    },
+    damage: {
+      damageAmount: {
+        base: 10,
+        calculationType: damageCalculationMethodEnum.Normal,
+      },
+      type: damageTypeEnum.Physical,
+    },
+    armourPenetration: { base: -1 },
+    mode: [firearmModeEnum.SingleShot],
+    recoilCompensation: { base: 0 },
+    ammo: [
+      {
+        amount: 4,
+        reloadMethod: reloadMethodEnum.InternalMagazine,
+      },
+      {
+        amount: 10,
+        reloadMethod: reloadMethodEnum.Clip,
+      },
+    ],
+    availability: {
+      rating: 12,
+      restriction: restrictionEnum.Restricted,
+    },
+    cost: { base: 8500 },
+    description: "",
+    relatedSkill: skillsEnum.Longarms,
+    type: weaponTypeEnum.Firearm,
+  },
+  {
+    subtype: firearmWeaponTypeEnum.AssaultCannon,
+    name: "Cyber microgrenade launcher",
+    accuracy: {
+      base: 4,
+      equipment: 6,
+    },
+    damage: {
+      damageAmount: {
+        base: 0,
+        calculationType: damageCalculationMethodEnum.Grenade,
+      },
+      type: damageTypeEnum.Physical,
+    },
+    armourPenetration: { base: 0 },
+    mode: [firearmModeEnum.SingleShot],
+    recoilCompensation: { base: 0 },
+    ammo: [
+      {
+        amount: 2,
+        reloadMethod: reloadMethodEnum.InternalMagazine,
+      },
+      {
+        amount: 6,
+        reloadMethod: reloadMethodEnum.Clip,
+      },
+    ],
+    availability: {
+      rating: 20,
+      restriction: restrictionEnum.Restricted,
+    },
+    cost: { base: 30000 },
     description: "",
     relatedSkill: skillsEnum.HeavyWeapons,
     type: weaponTypeEnum.Firearm,

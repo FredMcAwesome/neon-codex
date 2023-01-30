@@ -185,6 +185,7 @@ const SkillList = function ({
               skill={skill}
               onChange={setSkill}
               skillOptions={skillOptions}
+              key={skill.skillType + skill.name}
             />
           );
         })}
