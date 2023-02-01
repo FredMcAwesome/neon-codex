@@ -7,7 +7,7 @@ import {
 } from "./commonSchema.js";
 const typeInformation = zod.discriminatedUnion("type", [
   zod.object({
-    type: zod.literal(otherWareTypeEnum.IndustrialChemicals),
+    type: zod.literal(otherWareTypeEnum.IndustrialChemical),
   }),
   zod.object({ type: zod.literal(otherWareTypeEnum.SurvivalGear) }),
   zod.object({
@@ -17,7 +17,7 @@ const typeInformation = zod.discriminatedUnion("type", [
   }),
   zod.object({ type: zod.literal(otherWareTypeEnum.Biotech) }),
   zod.object({ type: zod.literal(otherWareTypeEnum.DocWagonContract) }),
-  zod.object({ type: zod.literal(otherWareTypeEnum.SlapPatches) }),
+  zod.object({ type: zod.literal(otherWareTypeEnum.SlapPatch) }),
 ]);
 
 export const otherGearSchema = zod.object({

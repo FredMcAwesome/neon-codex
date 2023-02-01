@@ -1,7 +1,6 @@
 import express from "express";
 import {
   augmentationTypeEnum,
-  magicalGearTypeEnum,
   MatrixType,
   matrixWareAccessoryTypeEnum,
   matrixWareTypeEnum,
@@ -50,10 +49,6 @@ import {
   Tools,
   VisionEnhancements,
 } from "../models/gear/electronicsGear/matrixWareAccessoryModel.js";
-import {
-  Foci,
-  Formulae,
-} from "../models/gear/magicGear/magicalGearEquipment.js";
 import { VehiclesAndDronesType } from "@shadowrun/common/src/schemas/riggerSchema.js";
 
 const router = express.Router();
@@ -437,10 +432,10 @@ async function getOtherGear() {
   const otherGearResponse: OtherGearListType = otherWares.map((otherWare) => {
     const grappleGun = otherWare as GrappleGun;
     return {
-      ...(otherWare.type === otherWareTypeEnum.IndustrialChemicals
+      ...(otherWare.type === otherWareTypeEnum.IndustrialChemical
         ? {
             typeInformation: {
-              type: otherWareTypeEnum.IndustrialChemicals,
+              type: otherWareTypeEnum.IndustrialChemical,
             },
           }
         : otherWare.type === otherWareTypeEnum.SurvivalGear
@@ -471,7 +466,7 @@ async function getOtherGear() {
           }
         : {
             typeInformation: {
-              type: otherWareTypeEnum.SlapPatches,
+              type: otherWareTypeEnum.SlapPatch,
             },
           }),
       name: otherWare.name,
@@ -489,28 +484,9 @@ async function getMagicalEquipment() {
   const magicalEqipment = await Database.magicalEqipmentRespository.findAll();
   const MagicalEquipmentResponse: MagicGearListType = magicalEqipment.map(
     (magicalItem) => {
-      const focus = magicalItem as Foci;
-      const formula = magicalItem as Formulae;
       return {
-        ...(magicalItem.type === magicalGearTypeEnum.Focus
-          ? {
-              typeInformation: {
-                type: magicalGearTypeEnum.Focus,
-                subtype: focus.subtype,
-              },
-            }
-          : magicalItem.type === magicalGearTypeEnum.Formula
-          ? {
-              typeInformation: {
-                type: magicalGearTypeEnum.Formula,
-                subtype: formula.subtype,
-              },
-            }
-          : {
-              typeInformation: {
-                type: magicalGearTypeEnum.Supply,
-              },
-            }),
+        type: magicalItem.type,
+        subtype: magicalItem.subtype || undefined,
         name: magicalItem.name,
         availability: magicalItem.availability,
         cost: magicalItem.cost,

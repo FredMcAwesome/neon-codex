@@ -79,9 +79,9 @@ const columns = [
   }),
 ];
 
+// useReactTable can't use defaultData directly because it is imported...
+const data = [...priorityOptions];
 const PrioritiesTable = function () {
-  // useReactTable can't use defaultData directly for some reason...
-  const data = [...priorityOptions];
   const table = useReactTable({
     data,
     columns,
@@ -106,7 +106,7 @@ const PrioritiesTable = function () {
         ))}
       </thead>
       {/* https://github.com/TanStack/table/issues/4580 */}
-      {/* <tbody>
+      <tbody>
         {table.getRowModel().rows.map((row) => (
           <tr key={row.id}>
             {row.getVisibleCells().map((cell) => (
@@ -116,7 +116,7 @@ const PrioritiesTable = function () {
             ))}
           </tr>
         ))}
-      </tbody> */}
+      </tbody>
     </table>
   );
 };
@@ -155,13 +155,21 @@ const resourcesSummaries = priorityOptions.map((priorityList) => {
   );
 });
 
+type PrioritiesListType = [
+  PriorityLevelEnum,
+  PriorityLevelEnum,
+  PriorityLevelEnum,
+  PriorityLevelEnum,
+  PriorityLevelEnum
+];
+
 interface IProps {
   priorityInfo: IPriorities;
   setPriorityInfo: (loadingPriorities: IPriorities) => void;
 }
 
 const PrioritySelect = function (props: IProps) {
-  const priorityLevels: Array<PriorityLevelEnum> = [
+  const priorityLevels: PrioritiesListType = [
     props.priorityInfo.MetatypePriority,
     props.priorityInfo.AttributesPriority,
     props.priorityInfo.MagicPriority,
@@ -199,7 +207,7 @@ const PrioritySelect = function (props: IProps) {
   function changePriorities(column: PrioritiesEnum, newPriorityString: string) {
     const newPriority =
       PriorityLevelEnum[newPriorityString as PriorityLevelKey];
-    const newPriorities = [...priorities];
+    const newPriorities: PrioritiesListType = [...priorities];
     for (let i = 0; i < priorities.length; i++) {
       if (priorities[i] === newPriority) {
         newPriorities[i] = newPriorities[column];

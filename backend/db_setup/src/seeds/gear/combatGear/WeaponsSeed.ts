@@ -24,7 +24,7 @@ import {
 export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
   {
     name: "Combat Axe",
-    subtype: meleeWeaponTypeEnum.Blades,
+    subtype: meleeWeaponTypeEnum.Blade,
     accuracy: {
       base: 4,
     },
@@ -45,7 +45,7 @@ export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
   },
   {
     name: "Combat Knife",
-    subtype: meleeWeaponTypeEnum.Blades,
+    subtype: meleeWeaponTypeEnum.Blade,
     accuracy: {
       base: 6,
     },
@@ -65,7 +65,7 @@ export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
   },
   {
     name: "Forearm Snap-Blades",
-    subtype: meleeWeaponTypeEnum.Blades,
+    subtype: meleeWeaponTypeEnum.Blade,
     accuracy: {
       base: 4,
     },
@@ -86,7 +86,7 @@ export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
   },
   {
     name: "Katana",
-    subtype: meleeWeaponTypeEnum.Blades,
+    subtype: meleeWeaponTypeEnum.Blade,
     accuracy: {
       base: 7,
     },
@@ -107,7 +107,7 @@ export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
   },
   {
     name: "Knife",
-    subtype: meleeWeaponTypeEnum.Blades,
+    subtype: meleeWeaponTypeEnum.Blade,
     accuracy: {
       base: 5,
     },
@@ -127,7 +127,7 @@ export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
   },
   {
     name: "Pole Arm",
-    subtype: meleeWeaponTypeEnum.Blades,
+    subtype: meleeWeaponTypeEnum.Blade,
     accuracy: {
       base: 5,
     },
@@ -148,7 +148,7 @@ export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
   },
   {
     name: "Survival Knife",
-    subtype: meleeWeaponTypeEnum.Blades,
+    subtype: meleeWeaponTypeEnum.Blade,
     accuracy: {
       base: 5,
     },
@@ -169,7 +169,7 @@ export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
   },
   {
     name: "Sword",
-    subtype: meleeWeaponTypeEnum.Blades,
+    subtype: meleeWeaponTypeEnum.Blade,
     accuracy: {
       base: 6,
     },
@@ -190,7 +190,7 @@ export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
   },
   {
     name: "Club",
-    subtype: meleeWeaponTypeEnum.Clubs,
+    subtype: meleeWeaponTypeEnum.Club,
     accuracy: {
       base: 4,
     },
@@ -211,7 +211,7 @@ export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
   },
   {
     name: "Extendable Baton",
-    subtype: meleeWeaponTypeEnum.Clubs,
+    subtype: meleeWeaponTypeEnum.Club,
     accuracy: {
       base: 5,
     },
@@ -233,7 +233,7 @@ export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
   },
   {
     name: "Sap",
-    subtype: meleeWeaponTypeEnum.Clubs,
+    subtype: meleeWeaponTypeEnum.Club,
     accuracy: {
       base: 5,
     },
@@ -253,7 +253,7 @@ export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
   },
   {
     name: "Staff",
-    subtype: meleeWeaponTypeEnum.Clubs,
+    subtype: meleeWeaponTypeEnum.Club,
     accuracy: {
       base: 6,
     },
@@ -274,7 +274,7 @@ export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
   },
   {
     name: "Stun Baton",
-    subtype: meleeWeaponTypeEnum.Clubs,
+    subtype: meleeWeaponTypeEnum.Club,
     accuracy: {
       base: 4,
     },
@@ -297,7 +297,7 @@ export const meleeWeaponsList: Array<RequiredEntityData<MeleeWeapons>> = [
   },
   {
     name: "Telescoping Staff",
-    subtype: meleeWeaponTypeEnum.Clubs,
+    subtype: meleeWeaponTypeEnum.Club,
     accuracy: {
       base: 4,
     },

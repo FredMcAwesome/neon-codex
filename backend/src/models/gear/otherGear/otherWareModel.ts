@@ -32,7 +32,7 @@ export abstract class OtherWares {
   wireless?: string;
 }
 
-@Entity({ discriminatorValue: otherWareTypeEnum.IndustrialChemicals })
+@Entity({ discriminatorValue: otherWareTypeEnum.IndustrialChemical })
 export class IndustrialChemicals extends OtherWares {}
 
 @Entity({ discriminatorValue: otherWareTypeEnum.SurvivalGear })
@@ -53,5 +53,5 @@ export class Biotech extends OtherWares {}
 @Entity({ discriminatorValue: otherWareTypeEnum.DocWagonContract })
 export class DocWagonContract extends OtherWares {}
 
-@Entity({ discriminatorValue: otherWareTypeEnum.SlapPatches })
+@Entity({ discriminatorValue: otherWareTypeEnum.SlapPatch })
 export class SlapPatches extends OtherWares {}

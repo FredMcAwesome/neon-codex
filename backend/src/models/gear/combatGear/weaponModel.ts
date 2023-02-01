@@ -30,13 +30,14 @@ export abstract class Weapons {
   @Enum(() => weaponTypeEnum)
   type!: weaponTypeEnum;
 
-  @Enum(
-    () =>
-      meleeWeaponTypeEnum ||
-      projectileWeaponTypeEnum ||
-      firearmWeaponTypeEnum ||
-      explosiveTypeEnum
-  )
+  @Enum({
+    items: [
+      ...Object.values(meleeWeaponTypeEnum),
+      ...Object.values(projectileWeaponTypeEnum),
+      ...Object.values(firearmWeaponTypeEnum),
+      ...Object.values(explosiveTypeEnum),
+    ],
+  })
   subtype!:
     | meleeWeaponTypeEnum
     | projectileWeaponTypeEnum

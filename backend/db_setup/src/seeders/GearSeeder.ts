@@ -135,7 +135,7 @@ import {
   industrialChemicalsList,
   slapPatchesList,
   survivalGearList,
-} from "../seeds/gear/otherGear/OtherGear.js";
+} from "../seeds/gear/otherGear/OtherGearSeed.js";
 import {
   aircraftsList,
   dronesList,

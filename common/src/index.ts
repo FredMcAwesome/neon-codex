@@ -32,6 +32,7 @@ export {
 
 export {
   skillsEnum,
+  gearTypeEnum,
   weaponTypeEnum,
   meleeWeaponTypeEnum,
   projectileWeaponTypeEnum,

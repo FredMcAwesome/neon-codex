@@ -19,13 +19,14 @@ export abstract class VehiclesAndDrones {
   @Enum(() => vehicleDroneTypeEnum)
   type!: vehicleDroneTypeEnum;
 
-  @Enum(
-    () =>
-      groundcraftSubtypeEnum ||
-      watercraftSubtypeEnum ||
-      aircraftSubtypeEnum ||
-      droneSubtypeEnum
-  )
+  @Enum({
+    items: [
+      ...Object.values(groundcraftSubtypeEnum),
+      ...Object.values(watercraftSubtypeEnum),
+      ...Object.values(aircraftSubtypeEnum),
+      ...Object.values(droneSubtypeEnum),
+    ],
+  })
   subtype!:
     | groundcraftSubtypeEnum
     | watercraftSubtypeEnum

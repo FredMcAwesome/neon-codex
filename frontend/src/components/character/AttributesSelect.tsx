@@ -7,9 +7,23 @@ interface IAttributeRange {
   maximum: number;
 }
 
-type IMetatypeAttributes = Array<Array<IAttributeRange>>;
+type MetaypeBaseAttributesType = [
+  IAttributeRange,
+  IAttributeRange,
+  IAttributeRange,
+  IAttributeRange,
+  IAttributeRange,
+  IAttributeRange,
+  IAttributeRange,
+  IAttributeRange,
+  IAttributeRange
+];
 
-const metatypeBaseAttributes: IMetatypeAttributes = [
+type MetaypeSpecialAttributesType = [IAttributeRange, IAttributeRange];
+
+type MetatypesAttributesListType = Array<MetaypeBaseAttributesType>;
+
+const metatypeBaseAttributes: MetatypesAttributesListType = [
   [
     // race: MetatypeEnum.Human,
     // body:
@@ -360,9 +374,9 @@ interface IProps {
 
 const AttributesSelect = function (props: IProps) {
   const metatype = props.priorityInfo.MetatypeSubselection;
-  const baseAttributes: Array<IAttributeRange> =
+  const baseAttributes: MetaypeBaseAttributesType =
     metatypeBaseAttributes[metatype];
-  const baseSpecialAttributes: Array<IAttributeRange> = [
+  const baseSpecialAttributes: MetaypeSpecialAttributesType = [
     metatypeBaseAttributes[metatype][EdgeBaseAttributeIndex],
     {
       minimum: props.magicInfo.magicRating,

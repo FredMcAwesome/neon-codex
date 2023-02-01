@@ -2,16 +2,37 @@ import {
   augmentationTypeEnum,
   GearListSchema,
   magicalGearTypeEnum,
+  MatrixType,
   matrixWareAccessoryTypeEnum,
   matrixWareTypeEnum,
   otherWareTypeEnum,
   vehicleDroneTypeEnum,
+  WeaponListType,
   weaponTypeEnum,
 } from "@shadowrun/common";
 import type { GearListType } from "@shadowrun/common";
 import { useQuery } from "@tanstack/react-query";
 import { getGearList } from "../../utils/api.js";
 import { useFetchWrapper } from "../../utils/authFetch.js";
+import { MatrixListType } from "@shadowrun/common/src/serverResponse.js";
+import {
+  AugmentationListType,
+  MagicGearListType,
+  MatrixAccessoriesListType,
+  OtherGearListType,
+  VehiclesAndDronesListType,
+} from "@shadowrun/common/src/schemas/gearSchemas.js";
+import { CollapsibleDiv } from "../../utils/CollapsibleDiv.js";
+import {
+  AudioDeviceTypeInformationSchema,
+  AudioEnhancementTypeInformationSchema,
+  IdentificationTypeInformationSchema,
+  OpticalDeviceTypeInformationSchema,
+  RFIDTypeInformationSchema,
+  SecurityDeviceTypeInformationSchema,
+  ToolTypeInformationSchema,
+  VisionEnhancementTypeInformationSchema,
+} from "@shadowrun/common/src/schemas/electronicSchemas.js";
 
 const fetchWrapper = useFetchWrapper();
 
@@ -33,7 +54,6 @@ async function fetchGear() {
 
 export const GearSelect = function () {
   const { data, error, isError, isLoading } = useQuery(["gear"], fetchGear);
-
   if (isLoading) {
     return <div>Loading gear...</div>;
   }
@@ -50,656 +70,536 @@ export const GearSelect = function () {
   return (
     <div>
       <h1>Gear Selection</h1>
-      <h2>Weapons</h2>
-      <div id="Weapons_Div">
-        <h3>Melee Weapons</h3>
-        <ul>
-          {data.weapons
-            .filter(
-              (gear) => gear.typeInformation.type === weaponTypeEnum.Melee
-            )
-            .map((weapon) => {
-              return (
-                <li key={"weaponTypeEnum.Melee" + weapon.name}>
-                  {weapon.name}
-                </li>
-              );
-            })}
-        </ul>
-        <h3>Projectile Weapons</h3>
-        <ul>
-          {data.weapons
-            .filter(
-              (gear) => gear.typeInformation.type === weaponTypeEnum.Projectile
-            )
-            .map((weapon) => {
-              return (
-                <li key={"weaponTypeEnum.Projectile" + weapon.name}>
-                  {weapon.name}
-                </li>
-              );
-            })}
-        </ul>
-        <h3>Firearms</h3>
-        <ul>
-          {data.weapons
-            .filter(
-              (gear) => gear.typeInformation.type === weaponTypeEnum.Firearm
-            )
-            .map((weapon) => {
-              return (
-                <li key={"weaponTypeEnum.Firearm" + weapon.name}>
-                  {weapon.name}
-                </li>
-              );
-            })}
-        </ul>
-        <h3>Explosives</h3>
-        <ul>
-          {data.weapons
-            .filter(
-              (gear) => gear.typeInformation.type === weaponTypeEnum.Explosive
-            )
-            .map((weapon) => {
-              return (
-                <li key={"weaponTypeEnum.Explosive" + weapon.name}>
-                  {weapon.name}
-                </li>
-              );
-            })}
-        </ul>
-      </div>
-      <h2>Electronics</h2>
-      <div id="Matrix_Div">
-        <h3>Commlinks</h3>
-        <ul>
-          {data.electronics
-            .filter(
-              (gear) =>
-                gear.typeInformation.type === matrixWareTypeEnum.Commlink
-            )
-            .map((electronic) => {
-              return (
-                <li key={"matrixWareTypeEnum.Commlink" + electronic.name}>
-                  {electronic.name}
-                </li>
-              );
-            })}
-        </ul>
-        <h3>Cyberdecks</h3>
-        <ul>
-          {data.electronics
-            .filter(
-              (gear) =>
-                gear.typeInformation.type === matrixWareTypeEnum.Cyberdeck
-            )
-            .map((electronic) => {
-              return (
-                <li key={"matrixWareTypeEnum.Cyberdeck" + electronic.name}>
-                  {electronic.name}
-                </li>
-              );
-            })}
-        </ul>
-        <h3>RFID Tags</h3>
-        <ul>
-          {data.electronics
-            .filter(
-              (gear) => gear.typeInformation.type === matrixWareTypeEnum.RFIDTag
-            )
-            .map((electronic) => {
-              return (
-                <li key={"matrixWareTypeEnum.RFIDTag" + electronic.name}>
-                  {electronic.name}
-                </li>
-              );
-            })}
-        </ul>
-        <h3>Communication and Countermeasures</h3>
-        <ul>
-          {data.electronics
-            .filter(
-              (gear) =>
-                gear.typeInformation.type ===
-                matrixWareTypeEnum.CommunicationCountermeasure
-            )
-            .map((electronic) => {
-              return (
-                <li
-                  key={
-                    "matrixWareTypeEnum.CommunicationCountermeasure" +
-                    electronic.name
-                  }
-                >
-                  {electronic.name}
-                </li>
-              );
-            })}
-        </ul>
-        <h3>Software</h3>
-        <ul>
-          {data.electronics
-            .filter(
-              (gear) =>
-                gear.typeInformation.type === matrixWareTypeEnum.Software
-            )
-            .map((electronic) => {
-              return (
-                <li key={"matrixWareTypeEnum.Software" + electronic.name}>
-                  {electronic.name}
-                </li>
-              );
-            })}
-        </ul>
-        <h3>Skillsofts</h3>
-        <ul>
-          {data.electronics
-            .filter(
-              (gear) =>
-                gear.typeInformation.type === matrixWareTypeEnum.Skillsoft
-            )
-            .map((electronic) => {
-              return (
-                <li key={"matrixWareTypeEnum.Skillsoft" + electronic.name}>
-                  {electronic.name}
-                </li>
-              );
-            })}
-        </ul>
-      </div>
-      <div id="Matrix_Accessories_Div">
-        <h3>Cred Sticks</h3>
-        <ul>
-          {data.electronicAccessories
-            .filter(
-              (gear) =>
-                gear.typeInformation.type ===
-                matrixWareAccessoryTypeEnum.CredStick
-            )
-            .map((weapon) => {
-              return (
-                <li key={"matrixWareAccessoryTypeEnum.CredStick" + weapon.name}>
-                  {weapon.name}
-                </li>
-              );
-            })}
-        </ul>
-        <h3>Identification</h3>
-        <ul>
-          {data.electronicAccessories
-            .filter(
-              (gear) =>
-                gear.typeInformation.type ===
-                matrixWareAccessoryTypeEnum.Identification
-            )
-            .map((weapon) => {
-              return (
-                <li
-                  key={
-                    "matrixWareAccessoryTypeEnum.Identification" + weapon.name
-                  }
-                >
-                  {weapon.name}
-                </li>
-              );
-            })}
-        </ul>
-        <h3>Tools</h3>
-        <ul>
-          {data.electronicAccessories
-            .filter(
-              (gear) =>
-                gear.typeInformation.type === matrixWareAccessoryTypeEnum.Tool
-            )
-            .map((weapon) => {
-              return (
-                <li key={"matrixWareAccessoryTypeEnum.Tool" + weapon.name}>
-                  {weapon.name}
-                </li>
-              );
-            })}
-        </ul>
-        <h3>Optical and Imaging Devices</h3>
-        <ul>
-          {data.electronicAccessories
-            .filter(
-              (gear) =>
-                gear.typeInformation.type ===
-                matrixWareAccessoryTypeEnum.OpticalDevice
-            )
-            .map((weapon) => {
-              return (
-                <li
-                  key={
-                    "matrixWareAccessoryTypeEnum.OpticalDevice" + weapon.name
-                  }
-                >
-                  {weapon.name}
-                </li>
-              );
-            })}
-        </ul>
-        <h3>Vision Enhancements</h3>
-        <ul>
-          {data.electronicAccessories
-            .filter(
-              (gear) =>
-                gear.typeInformation.type ===
-                matrixWareAccessoryTypeEnum.VisionEnhancement
-            )
-            .map((weapon) => {
-              return (
-                <li
-                  key={
-                    "matrixWareAccessoryTypeEnum.VisionEnhancement" +
-                    weapon.name
-                  }
-                >
-                  {weapon.name}
-                </li>
-              );
-            })}
-        </ul>
-        <h3>Audio Devices</h3>
-        <ul>
-          {data.electronicAccessories
-            .filter(
-              (gear) =>
-                gear.typeInformation.type ===
-                matrixWareAccessoryTypeEnum.AudioDevice
-            )
-            .map((weapon) => {
-              return (
-                <li
-                  key={"matrixWareAccessoryTypeEnum.AudioDevice" + weapon.name}
-                >
-                  {weapon.name}
-                </li>
-              );
-            })}
-        </ul>
-        <h3>Audio Enhancements</h3>
-        <ul>
-          {data.electronicAccessories
-            .filter(
-              (gear) =>
-                gear.typeInformation.type ===
-                matrixWareAccessoryTypeEnum.AudioEnhancement
-            )
-            .map((weapon) => {
-              return (
-                <li
-                  key={
-                    "matrixWareAccessoryTypeEnum.AudioEnhancement" + weapon.name
-                  }
-                >
-                  {weapon.name}
-                </li>
-              );
-            })}
-        </ul>
-        <h3>Sensors</h3>
-        <ul>
-          {data.electronicAccessories
-            .filter(
-              (gear) =>
-                gear.typeInformation.type === matrixWareAccessoryTypeEnum.Sensor
-            )
-            .map((weapon) => {
-              return (
-                <li key={"matrixWareAccessoryTypeEnum.Sensor" + weapon.name}>
-                  {weapon.name}
-                </li>
-              );
-            })}
-        </ul>
-        <h3>Security Devices</h3>
-        <ul>
-          {data.electronicAccessories
-            .filter(
-              (gear) =>
-                gear.typeInformation.type ===
-                matrixWareAccessoryTypeEnum.SecurityDevice
-            )
-            .map((weapon) => {
-              return (
-                <li
-                  key={
-                    "matrixWareAccessoryTypeEnum.SecurityDevice" + weapon.name
-                  }
-                >
-                  {weapon.name}
-                </li>
-              );
-            })}
-        </ul>
-        <h3>Breaking and Entering</h3>
-        <ul>
-          {data.electronicAccessories
-            .filter(
-              (gear) =>
-                gear.typeInformation.type ===
-                matrixWareAccessoryTypeEnum.BreakingAndEnteringDevice
-            )
-            .map((weapon) => {
-              return (
-                <li
-                  key={
-                    "matrixWareAccessoryTypeEnum.BreakingAndEnteringDevice" +
-                    weapon.name
-                  }
-                >
-                  {weapon.name}
-                </li>
-              );
-            })}
-        </ul>
-      </div>
-      <h2>Industrial Chemicals</h2>
+      <CollapsibleDiv title="Weapons">
+        <div id="Weapons_Div">
+          <WeaponDiv
+            title={"Melee Weapons"}
+            data={data.weapons}
+            weaponType={weaponTypeEnum.Melee}
+          />
+          <WeaponDiv
+            title={"Projectile Weapons"}
+            data={data.weapons}
+            weaponType={weaponTypeEnum.Projectile}
+          />
+          <WeaponDiv
+            title={"Firearms"}
+            data={data.weapons}
+            weaponType={weaponTypeEnum.Firearm}
+          />
+          <WeaponDiv
+            title={"Explosives"}
+            data={data.weapons}
+            weaponType={weaponTypeEnum.Explosive}
+          />
+        </div>
+      </CollapsibleDiv>
+      <CollapsibleDiv title="Electronics">
+        <div id="Matrix_Div">
+          <MatrixDiv
+            title={"Commlinks"}
+            data={data.electronics}
+            matrixWareType={matrixWareTypeEnum.Commlink}
+          />
+          <MatrixDiv
+            title={"Cyberdecks"}
+            data={data.electronics}
+            matrixWareType={matrixWareTypeEnum.Cyberdeck}
+          />
+          <MatrixDiv
+            title={"RFID Tags"}
+            data={data.electronics}
+            matrixWareType={matrixWareTypeEnum.RFIDTag}
+          />
+          <MatrixDiv
+            title={"Communication and Countermeasures"}
+            data={data.electronics}
+            matrixWareType={matrixWareTypeEnum.CommunicationCountermeasure}
+          />
+          <MatrixDiv
+            title={"Software"}
+            data={data.electronics}
+            matrixWareType={matrixWareTypeEnum.Software}
+          />
+          <MatrixDiv
+            title={"Skillsofts"}
+            data={data.electronics}
+            matrixWareType={matrixWareTypeEnum.Skillsoft}
+          />
+        </div>
+      </CollapsibleDiv>
+      <CollapsibleDiv title="Electronic Accessories">
+        <div id="Matrix_Accessories_Div">
+          <MatrixAccessoriesDiv
+            title={"Cred Sticks"}
+            data={data.electronicAccessories}
+            matrixWareAccessoryType={matrixWareAccessoryTypeEnum.CredStick}
+          />
+          <MatrixAccessoriesDiv
+            title={"Identification"}
+            data={data.electronicAccessories}
+            matrixWareAccessoryType={matrixWareAccessoryTypeEnum.Identification}
+          />
+          <MatrixAccessoriesDiv
+            title={"Tools"}
+            data={data.electronicAccessories}
+            matrixWareAccessoryType={matrixWareAccessoryTypeEnum.Tool}
+          />
+          <MatrixAccessoriesDiv
+            title={"Optical and Imaging Devices"}
+            data={data.electronicAccessories}
+            matrixWareAccessoryType={matrixWareAccessoryTypeEnum.OpticalDevice}
+          />
+          <MatrixAccessoriesDiv
+            title={"Vision Enhancements"}
+            data={data.electronicAccessories}
+            matrixWareAccessoryType={
+              matrixWareAccessoryTypeEnum.VisionEnhancement
+            }
+          />
+          <MatrixAccessoriesDiv
+            title={"Audio Devices"}
+            data={data.electronicAccessories}
+            matrixWareAccessoryType={matrixWareAccessoryTypeEnum.AudioDevice}
+          />
+          <MatrixAccessoriesDiv
+            title={"Audio Enhancements"}
+            data={data.electronicAccessories}
+            matrixWareAccessoryType={
+              matrixWareAccessoryTypeEnum.AudioEnhancement
+            }
+          />
+          <MatrixAccessoriesDiv
+            title={"Sensors"}
+            data={data.electronicAccessories}
+            matrixWareAccessoryType={matrixWareAccessoryTypeEnum.Sensor}
+          />
+          <MatrixAccessoriesDiv
+            title={"Security Devices"}
+            data={data.electronicAccessories}
+            matrixWareAccessoryType={matrixWareAccessoryTypeEnum.SecurityDevice}
+          />
+          <MatrixAccessoriesDiv
+            title={"Breaking and Entering"}
+            data={data.electronicAccessories}
+            matrixWareAccessoryType={
+              matrixWareAccessoryTypeEnum.BreakingAndEnteringDevice
+            }
+          />
+        </div>
+      </CollapsibleDiv>
+      <CollapsibleDiv title="Other Gear">
+        <div id="OtherGear_Div">
+          <OtherGearDiv
+            title={"Industrial Chemicals"}
+            data={data.otherGear}
+            otherWareType={otherWareTypeEnum.IndustrialChemical}
+          />
+          <OtherGearDiv
+            title={"Survival Gear"}
+            data={data.otherGear}
+            otherWareType={otherWareTypeEnum.SurvivalGear}
+          />
+          <OtherGearDiv
+            title={"Grapple Gun"}
+            data={data.otherGear}
+            otherWareType={otherWareTypeEnum.GrappleGun}
+          />
+          <OtherGearDiv
+            title={"Biotech"}
+            data={data.otherGear}
+            otherWareType={otherWareTypeEnum.Biotech}
+          />
+          <OtherGearDiv
+            title={"DocWagon Contract"}
+            data={data.otherGear}
+            otherWareType={otherWareTypeEnum.DocWagonContract}
+          />
+          <OtherGearDiv
+            title={"Slap Patches"}
+            data={data.otherGear}
+            otherWareType={otherWareTypeEnum.SlapPatch}
+          />
+        </div>
+      </CollapsibleDiv>
+      <CollapsibleDiv title="Augmentations">
+        <div id="Augmentations_Div">
+          <AugmentationsDiv
+            title={"Headware"}
+            data={data.augmentations}
+            augmentationType={augmentationTypeEnum.Headware}
+          />
+          <AugmentationsDiv
+            title={"Eyeware"}
+            data={data.augmentations}
+            augmentationType={augmentationTypeEnum.Eyeware}
+          />
+          <AugmentationsDiv
+            title={"Earware"}
+            data={data.augmentations}
+            augmentationType={augmentationTypeEnum.Earware}
+          />
+          <AugmentationsDiv
+            title={"Bodyware"}
+            data={data.augmentations}
+            augmentationType={augmentationTypeEnum.Bodyware}
+          />
+          <AugmentationsDiv
+            title={"Cyberlimbs"}
+            data={data.augmentations}
+            augmentationType={augmentationTypeEnum.Cyberlimbs}
+          />
+          <AugmentationsDiv
+            title={"Bioware"}
+            data={data.augmentations}
+            augmentationType={augmentationTypeEnum.Bioware}
+          />
+          <AugmentationsDiv
+            title={"Cultured Bioware"}
+            data={data.augmentations}
+            augmentationType={augmentationTypeEnum.CulturedBioware}
+          />
+        </div>
+      </CollapsibleDiv>
+      <CollapsibleDiv title="Magical Equipment">
+        <div id="Magical_Equipment_Div">
+          <MagicalEquipmentDiv
+            title={"Foci"}
+            data={data.magicalEquipment}
+            magicalGearType={magicalGearTypeEnum.Focus}
+          />
+          <MagicalEquipmentDiv
+            title={"Formulae"}
+            data={data.magicalEquipment}
+            magicalGearType={magicalGearTypeEnum.Formula}
+          />
+          <MagicalEquipmentDiv
+            title={"Magical Supply"}
+            data={data.magicalEquipment}
+            magicalGearType={magicalGearTypeEnum.Supply}
+          />
+        </div>
+      </CollapsibleDiv>
+      <CollapsibleDiv title="Vehicles and Drones">
+        <div id="Vehicles_and_Drones">
+          <VehiclesAndDronesDiv
+            title={"Groundcraft"}
+            data={data.vehiclesAndDrones}
+            vehicleAndDroneType={vehicleDroneTypeEnum.Groundcrafts}
+          />
+          <VehiclesAndDronesDiv
+            title={"Watercraft"}
+            data={data.vehiclesAndDrones}
+            vehicleAndDroneType={vehicleDroneTypeEnum.Watercrafts}
+          />
+          <VehiclesAndDronesDiv
+            title={"Aircraft"}
+            data={data.vehiclesAndDrones}
+            vehicleAndDroneType={vehicleDroneTypeEnum.Aircrafts}
+          />
+          <VehiclesAndDronesDiv
+            title={"Drones"}
+            data={data.vehiclesAndDrones}
+            vehicleAndDroneType={vehicleDroneTypeEnum.Drones}
+          />
+        </div>
+      </CollapsibleDiv>
+    </div>
+  );
+};
+
+interface IWeaponDivProps {
+  title: string;
+  data: WeaponListType;
+  weaponType: weaponTypeEnum;
+}
+
+const WeaponDiv = function ({ data, weaponType, title }: IWeaponDivProps) {
+  return (
+    <CollapsibleDiv title={title}>
       <ul>
-        {data.otherGear
+        {data
+          .filter((gear) => gear.typeInformation.type === weaponType)
+          .map((weapon) => {
+            return (
+              <li key={weaponType + weapon.name}>
+                <CollapsibleDiv title={weapon.name}>
+                  <div>{weapon.description}</div>
+                </CollapsibleDiv>
+                <div>{weapon.subtype}</div>
+              </li>
+            );
+          })}
+      </ul>
+    </CollapsibleDiv>
+  );
+};
+
+interface IMatrixDivProps {
+  title: string;
+  data: MatrixListType;
+  matrixWareType: matrixWareTypeEnum;
+}
+
+const MatrixDiv = function ({ data, matrixWareType, title }: IMatrixDivProps) {
+  return (
+    <CollapsibleDiv title={title}>
+      <ul>
+        {data
+          .filter((gear) => gear.typeInformation.type === matrixWareType)
+          .map((electronic: MatrixType) => {
+            let description = undefined;
+            if (
+              electronic.typeInformation.type ===
+              matrixWareTypeEnum.CommunicationCountermeasure
+            ) {
+              const DescriptionInformationParsed =
+                RFIDTypeInformationSchema.safeParse(electronic.typeInformation);
+              if (DescriptionInformationParsed.success)
+                description = DescriptionInformationParsed.data.description;
+            }
+            return (
+              <li key={matrixWareType + electronic.name}>
+                <div>{electronic.name}</div>
+                <CollapsibleDiv title={electronic.name}>
+                  {description && <div>{description}</div>}
+                </CollapsibleDiv>
+              </li>
+            );
+          })}
+      </ul>
+    </CollapsibleDiv>
+  );
+};
+
+interface IMatrixAccessoriesDivProps {
+  title: string;
+  data: MatrixAccessoriesListType;
+  matrixWareAccessoryType: matrixWareAccessoryTypeEnum;
+}
+
+const MatrixAccessoriesDiv = function ({
+  data,
+  matrixWareAccessoryType,
+  title,
+}: IMatrixAccessoriesDivProps) {
+  return (
+    <CollapsibleDiv title={title}>
+      <ul>
+        {data
           .filter(
-            (gear) =>
-              gear.typeInformation.type ===
-              otherWareTypeEnum.IndustrialChemicals
+            (gear) => gear.typeInformation.type === matrixWareAccessoryType
           )
+          .map((electronicAccessory) => {
+            let description = undefined;
+
+            if (
+              electronicAccessory.typeInformation.type ===
+              matrixWareAccessoryTypeEnum.Identification
+            ) {
+              const DescriptionInformationParsed =
+                IdentificationTypeInformationSchema.safeParse(
+                  electronicAccessory.typeInformation
+                );
+              if (DescriptionInformationParsed.success)
+                description = DescriptionInformationParsed.data.description;
+            } else if (
+              electronicAccessory.typeInformation.type ===
+              matrixWareAccessoryTypeEnum.Tool
+            ) {
+              const DescriptionInformationParsed =
+                ToolTypeInformationSchema.safeParse(
+                  electronicAccessory.typeInformation
+                );
+              if (DescriptionInformationParsed.success)
+                description = DescriptionInformationParsed.data.description;
+            } else if (
+              electronicAccessory.typeInformation.type ===
+              matrixWareAccessoryTypeEnum.SecurityDevice
+            ) {
+              const DescriptionInformationParsed =
+                SecurityDeviceTypeInformationSchema.safeParse(
+                  electronicAccessory.typeInformation
+                );
+              if (DescriptionInformationParsed.success)
+                description = DescriptionInformationParsed.data.description;
+            } else if (
+              electronicAccessory.typeInformation.type ===
+              matrixWareAccessoryTypeEnum.OpticalDevice
+            ) {
+              const DescriptionInformationParsed =
+                OpticalDeviceTypeInformationSchema.safeParse(
+                  electronicAccessory.typeInformation
+                );
+              if (DescriptionInformationParsed.success)
+                description = DescriptionInformationParsed.data.description;
+            } else if (
+              electronicAccessory.typeInformation.type ===
+              matrixWareAccessoryTypeEnum.VisionEnhancement
+            ) {
+              const DescriptionInformationParsed =
+                VisionEnhancementTypeInformationSchema.safeParse(
+                  electronicAccessory.typeInformation
+                );
+              if (DescriptionInformationParsed.success)
+                description = DescriptionInformationParsed.data.description;
+            } else if (
+              electronicAccessory.typeInformation.type ===
+              matrixWareAccessoryTypeEnum.AudioDevice
+            ) {
+              const DescriptionInformationParsed =
+                AudioDeviceTypeInformationSchema.safeParse(
+                  electronicAccessory.typeInformation
+                );
+              if (DescriptionInformationParsed.success)
+                description = DescriptionInformationParsed.data.description;
+            } else if (
+              electronicAccessory.typeInformation.type ===
+              matrixWareAccessoryTypeEnum.AudioEnhancement
+            ) {
+              const DescriptionInformationParsed =
+                AudioEnhancementTypeInformationSchema.safeParse(
+                  electronicAccessory.typeInformation
+                );
+              if (DescriptionInformationParsed.success)
+                description = DescriptionInformationParsed.data.description;
+            }
+            return (
+              <li key={matrixWareAccessoryType + electronicAccessory.name}>
+                <CollapsibleDiv title={electronicAccessory.name}>
+                  {description && <div>{description}</div>}
+                </CollapsibleDiv>
+              </li>
+            );
+          })}
+      </ul>
+    </CollapsibleDiv>
+  );
+};
+
+interface IOtherGearDivProps {
+  title: string;
+  data: OtherGearListType;
+  otherWareType: otherWareTypeEnum;
+}
+
+const OtherGearDiv = function ({
+  data,
+  otherWareType,
+  title,
+}: IOtherGearDivProps) {
+  return (
+    <CollapsibleDiv title={title}>
+      <ul>
+        {data
+          .filter((gear) => gear.typeInformation.type === otherWareType)
+          .map((otherWare) => {
+            return (
+              <li key={otherWareType + otherWare.name}>
+                <CollapsibleDiv title={otherWare.name}>
+                  <div>{otherWare.description}</div>
+                </CollapsibleDiv>
+              </li>
+            );
+          })}
+      </ul>
+    </CollapsibleDiv>
+  );
+};
+
+interface IAugmentationsDivProps {
+  title: string;
+  data: AugmentationListType;
+  augmentationType: augmentationTypeEnum;
+}
+
+const AugmentationsDiv = function ({
+  data,
+  augmentationType,
+  title,
+}: IAugmentationsDivProps) {
+  return (
+    <CollapsibleDiv title={title}>
+      <ul>
+        {data
+          .filter((gear) => gear.typeInformation.type === augmentationType)
           .map((augmentation) => {
+            return (
+              <li key={augmentationType + augmentation.name}>
+                <CollapsibleDiv title={augmentation.name}>
+                  <div>{augmentation.description}</div>
+                </CollapsibleDiv>
+              </li>
+            );
+          })}
+      </ul>
+    </CollapsibleDiv>
+  );
+};
+
+interface IMagicalEquipmentDivProps {
+  title: string;
+  data: MagicGearListType;
+  magicalGearType: magicalGearTypeEnum;
+}
+
+const MagicalEquipmentDiv = function ({
+  data,
+  magicalGearType,
+  title,
+}: IMagicalEquipmentDivProps) {
+  return (
+    <CollapsibleDiv title={title}>
+      <ul>
+        {data
+          .filter((gear) => gear.type === magicalGearType)
+          .map((magicalItem) => {
+            return (
+              <li key={magicalGearTypeEnum[magicalGearType] + magicalItem.name}>
+                <CollapsibleDiv title={magicalItem.name}>
+                  <div>{magicalItem.description}</div>
+                </CollapsibleDiv>
+                {magicalItem.subtype && <div>{magicalItem.subtype}</div>}
+              </li>
+            );
+          })}
+      </ul>
+    </CollapsibleDiv>
+  );
+};
+
+interface IVehiclesAndDronesDivProps {
+  title: string;
+  data: VehiclesAndDronesListType;
+  vehicleAndDroneType: vehicleDroneTypeEnum;
+}
+
+const VehiclesAndDronesDiv = function ({
+  data,
+  vehicleAndDroneType,
+  title,
+}: IVehiclesAndDronesDivProps) {
+  return (
+    <CollapsibleDiv title={title}>
+      <ul>
+        {data
+          .filter((gear) => gear.type === vehicleAndDroneType)
+          .map((vehiclesOrDrone) => {
             return (
               <li
                 key={
-                  "otherWareTypeEnum.IndustrialChemicals" + augmentation.name
+                  vehicleDroneTypeEnum[vehicleAndDroneType] +
+                  vehiclesOrDrone.name
                 }
               >
-                {augmentation.name}
+                <CollapsibleDiv title={vehiclesOrDrone.name}>
+                  <div>{vehiclesOrDrone.description}</div>
+                </CollapsibleDiv>
+                <div>{vehiclesOrDrone.subtype}</div>
               </li>
             );
           })}
       </ul>
-      <h2>Survival Gear</h2>
-      <ul>
-        {data.otherGear
-          .filter(
-            (gear) =>
-              gear.typeInformation.type === otherWareTypeEnum.SurvivalGear
-          )
-          .map((augmentation) => {
-            return (
-              <li key={"otherWareTypeEnum.SurvivalGear" + augmentation.name}>
-                {augmentation.name}
-              </li>
-            );
-          })}
-      </ul>
-      <h2>Grapple Gun</h2>
-      <ul>
-        {data.otherGear
-          .filter(
-            (gear) => gear.typeInformation.type === otherWareTypeEnum.GrappleGun
-          )
-          .map((augmentation) => {
-            return (
-              <li key={"otherWareTypeEnum.GrappleGun" + augmentation.name}>
-                {augmentation.name}
-              </li>
-            );
-          })}
-      </ul>
-      <h2>Biotech</h2>
-      <ul>
-        {data.otherGear
-          .filter(
-            (gear) => gear.typeInformation.type === otherWareTypeEnum.Biotech
-          )
-          .map((augmentation) => {
-            return (
-              <li key={"otherWareTypeEnum.Biotech" + augmentation.name}>
-                {augmentation.name}
-              </li>
-            );
-          })}
-      </ul>
-      <h2>DocWagon Contract</h2>
-      <ul>
-        {data.otherGear
-          .filter(
-            (gear) =>
-              gear.typeInformation.type === otherWareTypeEnum.DocWagonContract
-          )
-          .map((augmentation) => {
-            return (
-              <li
-                key={"otherWareTypeEnum.DocWagonContract" + augmentation.name}
-              >
-                {augmentation.name}
-              </li>
-            );
-          })}
-      </ul>
-      <h2>Slap Patches</h2>
-      <ul>
-        {data.otherGear
-          .filter(
-            (gear) =>
-              gear.typeInformation.type === otherWareTypeEnum.SlapPatches
-          )
-          .map((augmentation) => {
-            return (
-              <li key={"otherWareTypeEnum.SlapPatches" + augmentation.name}>
-                {augmentation.name}
-              </li>
-            );
-          })}
-      </ul>
-      <h2>Augmentations</h2>
-      <div id="Augmentations_Div">
-        <h3>Headware</h3>
-        <ul>
-          {data.augmentations
-            .filter(
-              (gear) =>
-                gear.typeInformation.type === augmentationTypeEnum.Headware
-            )
-            .map((augmentation) => {
-              return (
-                <li key={"augmentationTypeEnum.Headware" + augmentation.name}>
-                  {augmentation.name}
-                </li>
-              );
-            })}
-        </ul>
-        <h3>Eyeware</h3>
-        <ul>
-          {data.augmentations
-            .filter(
-              (gear) =>
-                gear.typeInformation.type === augmentationTypeEnum.Eyeware
-            )
-            .map((augmentation) => {
-              return (
-                <li key={"augmentationTypeEnum.Eyeware" + augmentation.name}>
-                  {augmentation.name}
-                </li>
-              );
-            })}
-        </ul>
-        <h3>Earware</h3>
-        <ul>
-          {data.augmentations
-            .filter(
-              (gear) =>
-                gear.typeInformation.type === augmentationTypeEnum.Earware
-            )
-            .map((augmentation) => {
-              return (
-                <li key={"augmentationTypeEnum.Earware" + augmentation.name}>
-                  {augmentation.name}
-                </li>
-              );
-            })}
-        </ul>
-        <h3>Bodyware</h3>
-        <ul>
-          {data.augmentations
-            .filter(
-              (gear) =>
-                gear.typeInformation.type === augmentationTypeEnum.Bodyware
-            )
-            .map((augmentation) => {
-              return (
-                <li key={"augmentationTypeEnum.Bodyware" + augmentation.name}>
-                  {augmentation.name}
-                </li>
-              );
-            })}
-        </ul>
-        <h3>Cyberlimbs</h3>
-        <ul>
-          {data.augmentations
-            .filter(
-              (gear) =>
-                gear.typeInformation.type === augmentationTypeEnum.Cyberlimbs
-            )
-            .map((augmentation) => {
-              return (
-                <li key={"augmentationTypeEnum.Cyberlimbs" + augmentation.name}>
-                  {augmentation.name}
-                </li>
-              );
-            })}
-        </ul>
-        <h3>Bioware</h3>
-        <ul>
-          {data.augmentations
-            .filter(
-              (gear) =>
-                gear.typeInformation.type === augmentationTypeEnum.Bioware
-            )
-            .map((augmentation) => {
-              return (
-                <li key={"augmentationTypeEnum.Bioware" + augmentation.name}>
-                  {augmentation.name}
-                </li>
-              );
-            })}
-        </ul>
-        <h3>Cultured Bioware</h3>
-        <ul>
-          {data.augmentations
-            .filter(
-              (gear) =>
-                gear.typeInformation.type ===
-                augmentationTypeEnum.CulturedBioware
-            )
-            .map((augmentation) => {
-              return (
-                <li
-                  key={
-                    "augmentationTypeEnum.CulturedBioware" + augmentation.name
-                  }
-                >
-                  {augmentation.name}
-                </li>
-              );
-            })}
-        </ul>
-      </div>
-      <h2>Magical Equipment</h2>
-      <div>
-        <h3>Foci</h3>
-        <ul>
-          {data.magicalEquipment
-            .filter(
-              (gear) => gear.typeInformation.type === magicalGearTypeEnum.Focus
-            )
-            .map((magicalItem) => {
-              return (
-                <li key={"magicalGearTypeEnum.Focus" + magicalItem.name}>
-                  {magicalItem.name}
-                </li>
-              );
-            })}
-        </ul>
-        <h3>Formulae</h3>
-        <ul>
-          {data.magicalEquipment
-            .filter(
-              (gear) =>
-                gear.typeInformation.type === magicalGearTypeEnum.Formula
-            )
-            .map((magicalItem) => {
-              return (
-                <li key={"magicalGearTypeEnum.Formula" + magicalItem.name}>
-                  {magicalItem.name}
-                </li>
-              );
-            })}
-        </ul>
-        <h3>Magical Supply</h3>
-        <ul>
-          {data.magicalEquipment
-            .filter(
-              (gear) => gear.typeInformation.type === magicalGearTypeEnum.Supply
-            )
-            .map((magicalItem) => {
-              return (
-                <li key={"magicalGearTypeEnum.Supply" + magicalItem.name}>
-                  {magicalItem.name}
-                </li>
-              );
-            })}
-        </ul>
-      </div>
-      <h2>Vehicles and Drones</h2>
-      <div>
-        <h3>Groundcraft</h3>
-        <ul>
-          {data.vehiclesAndDrones
-            .filter((gear) => gear.type === vehicleDroneTypeEnum.Groundcrafts)
-            .map((vehicle) => {
-              return (
-                <li key={"vehicleDroneTypeEnum.Groundcrafts" + vehicle.name}>
-                  {vehicle.name}
-                </li>
-              );
-            })}
-        </ul>
-        <h3>Watercraft</h3>
-        <ul>
-          {data.vehiclesAndDrones
-            .filter((gear) => gear.type === vehicleDroneTypeEnum.Watercrafts)
-            .map((vehicle) => {
-              return (
-                <li key={"vehicleDroneTypeEnum.Watercrafts" + vehicle.name}>
-                  {vehicle.name}
-                </li>
-              );
-            })}
-        </ul>
-        <h3>Aircraft</h3>
-        <ul>
-          {data.vehiclesAndDrones
-            .filter((gear) => gear.type === vehicleDroneTypeEnum.Aircrafts)
-            .map((vehicle) => {
-              return (
-                <li key={"vehicleDroneTypeEnum.Aircrafts" + vehicle.name}>
-                  {vehicle.name}
-                </li>
-              );
-            })}
-        </ul>
-        <h3>Drones</h3>
-        <ul>
-          {data.vehiclesAndDrones
-            .filter((gear) => gear.type === vehicleDroneTypeEnum.Drones)
-            .map((drone) => {
-              return (
-                <li key={"vehicleDroneTypeEnum.Drones" + drone.name}>
-                  {drone.name}
-                </li>
-              );
-            })}
-        </ul>
-      </div>
-    </div>
+    </CollapsibleDiv>
   );
 };

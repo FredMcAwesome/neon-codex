@@ -3,6 +3,7 @@ import { IActiveSkillSelection, skillTypesEnum } from "../../data/Skills.js";
 import Dropdown from "react-dropdown";
 import { ISkillPoints } from "./PriorityImports.js";
 import { skillsEnum } from "@shadowrun/common";
+import { CollapsibleDiv } from "../../utils/CollapsibleDiv.js";
 
 // first rating empty for no points in skill
 const skillRating = [
@@ -48,69 +49,62 @@ export const SkillsSelect = function (props: IProps) {
         Skill Points Remaining:{" "}
         <span id="skillPoints">{props.skillPoints.skillPoints}</span>
       </p>
-      <div>
-        <h2>Combat Skills</h2>
+      <CollapsibleDiv title="Combat Skills">
         <SkillList
           skillSelections={props.skillSelections}
           setSkill={setSkill}
           skillType={skillTypesEnum.Combat}
           skillPoints={props.skillPoints.skillPoints}
         />
-      </div>
-      <div>
-        <h2>Physical Skills</h2>
+      </CollapsibleDiv>
+      <CollapsibleDiv title="Physical Skills">
         <SkillList
           skillSelections={props.skillSelections}
           setSkill={setSkill}
           skillType={skillTypesEnum.Physical}
           skillPoints={props.skillPoints.skillPoints}
         />
-      </div>
-      <div>
-        <h2>Social Skills</h2>
+      </CollapsibleDiv>
+      <CollapsibleDiv title="Social Skills">
         <SkillList
           skillSelections={props.skillSelections}
           setSkill={setSkill}
           skillType={skillTypesEnum.Social}
           skillPoints={props.skillPoints.skillPoints}
         />
-      </div>
-      <div>
-        <h2>Magical Skills</h2>
+      </CollapsibleDiv>
+      <CollapsibleDiv title="Magical Skills">
         <SkillList
           skillSelections={props.skillSelections}
           setSkill={setSkill}
           skillType={skillTypesEnum.Magical}
           skillPoints={props.skillPoints.skillPoints}
         />
-      </div>
-      <div>
-        <h2>Resonance Skills</h2>
+      </CollapsibleDiv>
+      <CollapsibleDiv title="Resonance Skills">
         <SkillList
           skillSelections={props.skillSelections}
           setSkill={setSkill}
           skillType={skillTypesEnum.Resonance}
           skillPoints={props.skillPoints.skillPoints}
         />
-      </div>
-      <div>
-        <h2>Technical Skills</h2>
+      </CollapsibleDiv>
+      <CollapsibleDiv title="Technical Skills">
         <SkillList
           skillSelections={props.skillSelections}
           setSkill={setSkill}
           skillType={skillTypesEnum.Technical}
           skillPoints={props.skillPoints.skillPoints}
         />
-      </div>
-      <div>
-        <h2>Vehicle Skills</h2>
+      </CollapsibleDiv>
+      <CollapsibleDiv title="Vehicle/Drone Skills">
         <SkillList
           skillSelections={props.skillSelections}
           setSkill={setSkill}
           skillType={skillTypesEnum.Vehicle}
           skillPoints={props.skillPoints.skillPoints}
         />
-      </div>
+      </CollapsibleDiv>
     </React.Fragment>
   );
 };

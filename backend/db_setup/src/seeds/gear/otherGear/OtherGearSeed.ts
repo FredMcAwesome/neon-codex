@@ -17,7 +17,7 @@ export const industrialChemicalsList: Array<
   RequiredEntityData<IndustrialChemicals>
 > = [
   {
-    type: otherWareTypeEnum.IndustrialChemicals,
+    type: otherWareTypeEnum.IndustrialChemical,
     name: "Glue solvent",
     availability: {
       rating: 2,
@@ -27,7 +27,7 @@ export const industrialChemicalsList: Array<
     description: "",
   },
   {
-    type: otherWareTypeEnum.IndustrialChemicals,
+    type: otherWareTypeEnum.IndustrialChemical,
     name: "Glue sprayer",
     availability: {
       rating: 2,
@@ -37,7 +37,7 @@ export const industrialChemicalsList: Array<
     description: "",
   },
   {
-    type: otherWareTypeEnum.IndustrialChemicals,
+    type: otherWareTypeEnum.IndustrialChemical,
     name: "Thermite burning bar",
     availability: {
       rating: 2,
@@ -382,7 +382,7 @@ export const docWagonContractList: Array<RequiredEntityData<DocWagonContract>> =
 
 export const slapPatchesList: Array<RequiredEntityData<SlapPatches>> = [
   {
-    type: otherWareTypeEnum.SlapPatches,
+    type: otherWareTypeEnum.SlapPatch,
     name: "Antidote patch",
     rating: {
       minimum: 1,
@@ -400,7 +400,7 @@ export const slapPatchesList: Array<RequiredEntityData<SlapPatches>> = [
     description: "",
   },
   {
-    type: otherWareTypeEnum.SlapPatches,
+    type: otherWareTypeEnum.SlapPatch,
     name: "Chem patch",
     availability: {
       rating: 6,
@@ -412,7 +412,7 @@ export const slapPatchesList: Array<RequiredEntityData<SlapPatches>> = [
     description: "",
   },
   {
-    type: otherWareTypeEnum.SlapPatches,
+    type: otherWareTypeEnum.SlapPatch,
     name: "Stim patch",
     rating: {
       minimum: 1,
@@ -430,7 +430,7 @@ export const slapPatchesList: Array<RequiredEntityData<SlapPatches>> = [
     description: "",
   },
   {
-    type: otherWareTypeEnum.SlapPatches,
+    type: otherWareTypeEnum.SlapPatch,
     name: "Tranq patch",
     rating: {
       minimum: 1,
@@ -448,7 +448,7 @@ export const slapPatchesList: Array<RequiredEntityData<SlapPatches>> = [
     description: "",
   },
   {
-    type: otherWareTypeEnum.SlapPatches,
+    type: otherWareTypeEnum.SlapPatch,
     name: "Trauma patch",
     availability: {
       rating: 6,

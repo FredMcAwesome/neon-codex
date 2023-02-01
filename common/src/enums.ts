@@ -83,55 +83,65 @@ export enum skillsEnum {
   PilotWatercraft,
 }
 
+export enum gearTypeEnum {
+  Weapons = "Weapons",
+  Electronics = "Electronics",
+  ElectronicAccessories = "Electronic Accessories",
+  OtherGear = "Other Gear",
+  Augmentations = "Augmentations",
+  MagicalEquipment = "Magical Equipment",
+  VehiclesAndDrones = "Vehicles and Drones",
+}
+
 export enum weaponTypeEnum {
-  Melee,
-  Projectile,
-  Firearm,
-  Explosive,
+  Melee = "Melee",
+  Projectile = "Projectile",
+  Firearm = "Firearm",
+  Explosive = "Explosive",
 }
 
 export enum meleeWeaponTypeEnum {
-  Blades,
-  Clubs,
-  Other,
-  Cyber,
+  Blade = "Blade",
+  Club = "Club",
+  Other = "Other",
+  Cyber = "Cyber",
 }
 
 export enum projectileWeaponTypeEnum {
-  Bows,
-  Crossbows,
-  ThrowingWeapons,
+  Bows = "Bows",
+  Crossbows = "Crossbows",
+  ThrowingWeapons = "Throwing Weapons",
 }
 
 export enum firearmWeaponTypeEnum {
-  Tasers,
-  HoldOuts,
-  LightPistol,
-  HeavyPistol,
-  MachinePistol,
-  SubmachineGun,
-  AssaultRifle,
-  Shotgun,
-  SniperRifle,
-  LightMachinegun,
-  MediumHeavyMachinegun,
-  AssaultCannon,
-  GrenadeLauncher,
-  MissileLauncher,
-  Bow,
-  LightCrossbow,
-  MediumCrossbow,
-  HeavyCrossbow,
-  ThrownKnife,
-  Shuriken,
-  StandardGrenade,
-  AerodynamicGrenade,
-  Special,
-  Cybergun,
+  Tasers = "Tasers",
+  HoldOuts = "Hold Outs",
+  LightPistol = "Light Pistol",
+  HeavyPistol = "Heavy Pistol",
+  MachinePistol = "Machine Pistol",
+  SubmachineGun = "Submachine Gun",
+  AssaultRifle = "Assault Rifle",
+  Shotgun = "Shotgun",
+  SniperRifle = "Sniper Rifle",
+  LightMachinegun = "Light Machinegun",
+  MediumHeavyMachinegun = "Medium Heavy Machinegun",
+  AssaultCannon = "Assault Cannon",
+  GrenadeLauncher = "Grenade Launcher",
+  MissileLauncher = "Missile Launcher",
+  Bow = "Bow",
+  LightCrossbow = "Light Crossbow",
+  MediumCrossbow = "Medium Crossbow",
+  HeavyCrossbow = "Heavy Crossbow",
+  ThrownKnife = "Thrown Knife",
+  Shuriken = "Shuriken",
+  StandardGrenade = "Standard Grenade",
+  AerodynamicGrenade = "Aerodynamic Grenade",
+  Special = "Special",
+  Cybergun = "Cybergun",
 }
 
 export enum explosiveTypeEnum {
-  Standard,
+  Standard = "Standard",
 }
 
 export enum damageTypeEnum {
@@ -212,118 +222,118 @@ export enum mathOperatorEnum {
 }
 
 export enum weaponAccessoryTypeEnum {
-  Standard,
-  Firearm,
+  Standard = "Standard",
+  Firearm = "Firearm",
 }
 
 export enum armourAccessoryTypeEnum {
-  Standard,
-  Modification,
+  Standard = "Standard",
+  Modification = "Modification",
 }
 
 export enum matrixWareTypeEnum {
-  Commlink,
-  Cyberdeck,
-  RFIDTag,
-  CommunicationCountermeasure,
-  Software,
-  Skillsoft,
+  Commlink = "Commlink",
+  Cyberdeck = "Cyberdeck",
+  RFIDTag = "RFIDTag",
+  CommunicationCountermeasure = "Communication and Countermeasures",
+  Software = "Software",
+  Skillsoft = "Skillsoft",
 }
 
 export enum matrixWareAccessoryTypeEnum {
-  CredStick,
-  Identification,
-  Tool,
-  OpticalDevice,
-  VisionEnhancement,
-  AudioDevice,
-  AudioEnhancement,
-  Sensor,
-  SecurityDevice,
-  BreakingAndEnteringDevice,
+  CredStick = "CredStick",
+  Identification = "Identification",
+  Tool = "Tool",
+  OpticalDevice = "Optical Device",
+  VisionEnhancement = "Vision Enhancement",
+  AudioDevice = "Audio Device",
+  AudioEnhancement = "Audio Enhancement",
+  Sensor = "Sensor",
+  SecurityDevice = "Security Device",
+  BreakingAndEnteringDevice = "Breaking And Entering Device",
 }
 
 export enum otherWareTypeEnum {
-  IndustrialChemicals,
-  SurvivalGear,
-  GrappleGun,
-  Biotech,
-  DocWagonContract,
-  SlapPatches,
+  IndustrialChemical = "Industrial Chemical",
+  SurvivalGear = "Survival Gear",
+  GrappleGun = "Grapple Gun",
+  Biotech = "Biotech",
+  DocWagonContract = "DocWagon Contract",
+  SlapPatch = "Slap Patch",
 }
 
 export enum augmentationTypeEnum {
-  Headware,
-  Eyeware,
-  Earware,
-  Bodyware,
-  Cyberlimbs,
-  Bioware,
-  CulturedBioware,
+  Headware = "Headware",
+  Eyeware = "Eyeware",
+  Earware = "Earware",
+  Bodyware = "Bodyware",
+  Cyberlimbs = "Cyberlimbs",
+  Bioware = "Bioware",
+  CulturedBioware = "Cultured Bioware",
 }
 
 export enum augmentationAccessoryTypeEnum {
-  CyberlimbAccessories,
-  ImplantWeapons,
+  CyberlimbAccessories = "Cyberlimb Accessories",
+  ImplantWeapons = "Implant Weapons",
 }
 
 export enum magicalGearTypeEnum {
-  Focus,
-  Formula,
-  Supply,
+  Focus = "Focus",
+  Formula = "Formula",
+  Supply = "Supply",
 }
 
 export enum focusTypeEnum {
-  Enchanting,
-  Metamagic,
-  Power,
-  Qi,
-  Spell,
-  Spirit,
-  Weapon,
+  Enchanting = "Enchanting",
+  Metamagic = "Metamagic",
+  Power = "Power",
+  Qi = "Qi",
+  Spell = "Spell",
+  Spirit = "Spirit",
+  Weapon = "Weapon",
 }
 
 export enum spellCategoryEnum {
-  Combat,
-  Detection,
-  Illusion,
-  Healing,
-  Manipulation,
+  Combat = "Combat",
+  Detection = "Detection",
+  Illusion = "Illusion",
+  Healing = "Healing",
+  Manipulation = "Manipulation",
 }
 
 export enum formulaTypeEnum {
-  Focus,
-  Spell,
+  Focus = "Focus",
+  Spell = "Spell",
 }
 
 export enum vehicleDroneTypeEnum {
-  Groundcrafts,
-  Watercrafts,
-  Aircrafts,
-  Drones,
+  Groundcrafts = "Groundcrafts",
+  Watercrafts = "Watercrafts",
+  Aircrafts = "Aircrafts",
+  Drones = "Drones",
 }
 
 export enum groundcraftSubtypeEnum {
-  Bikes,
-  Cars,
-  TrucksAndVans,
+  Bikes = "Bikes",
+  Cars = "Cars",
+  TrucksAndVans = "Trucks And Vans",
 }
 
 export enum watercraftSubtypeEnum {
-  Boats,
-  Submarines,
+  Boats = "Boats",
+  Submarines = "Submarines",
 }
 
 export enum aircraftSubtypeEnum {
-  FixedWingAircrafts,
-  Rotorcrafts,
-  VTOL_VSTOLs,
+  FixedWingAircrafts = "Fixed-Wing Aircrafts",
+  Rotorcrafts = "Rotorcrafts",
+  VTOL_VSTOLs = "VTOL/VSTOLs",
 }
 
 export enum droneSubtypeEnum {
-  Microdrones,
-  Minidrones,
-  SmallDrones,
-  MediumDrones,
-  LargeDrones,
+  Microdrones = "Microdrones",
+  Minidrones = "Mini drones",
+  SmallDrones = "Small Drones",
+  MediumDrones = "Medium Drones",
+  LargeDrones = "Large Drones",
 }

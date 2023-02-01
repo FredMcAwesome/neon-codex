@@ -17,6 +17,12 @@ export abstract class MagicalEquipment {
   @Enum(() => magicalGearTypeEnum)
   type!: magicalGearTypeEnum;
 
+  @Enum({
+    items: [...Object.values(focusTypeEnum), ...Object.values(formulaTypeEnum)],
+    nullable: true,
+  })
+  subtype?: focusTypeEnum | formulaTypeEnum;
+
   @Property({ length: 255 })
   name!: string;
 
@@ -31,16 +37,10 @@ export abstract class MagicalEquipment {
 }
 
 @Entity({ discriminatorValue: magicalGearTypeEnum.Focus })
-export class Foci extends MagicalEquipment {
-  @Enum(() => focusTypeEnum)
-  subtype!: focusTypeEnum;
-}
+export class Foci extends MagicalEquipment {}
 
 @Entity({ discriminatorValue: magicalGearTypeEnum.Formula })
-export class Formulae extends MagicalEquipment {
-  @Enum(() => formulaTypeEnum)
-  subtype!: formulaTypeEnum;
-}
+export class Formulae extends MagicalEquipment {}
 
 @Entity({ discriminatorValue: magicalGearTypeEnum.Supply })
 export class MagicalSupplies extends MagicalEquipment {}
