@@ -93,6 +93,10 @@ export type {
 export type {
   CyberdeckAttributeArrayType,
   MatrixType,
+  MatrixAccessoryType,
 } from "./schemas/electronicSchemas.js";
 
-export type { EssenceType } from "./schemas/augmentationSchemas.js";
+export type {
+  AugmentationType,
+  EssenceType,
+} from "./schemas/augmentationSchemas.js";

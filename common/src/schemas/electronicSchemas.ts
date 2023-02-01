@@ -55,7 +55,7 @@ export type SkillsoftTypeInformationType = zod.infer<
   typeof SkillsoftTypeInformationSchema
 >;
 
-const electronicTypeInformation = zod
+export const electronicTypeInformationSchema = zod
   .discriminatedUnion("type", [
     CommlinkTypeInformationSchema,
     CyberdeckTypeInformationSchema,
@@ -78,8 +78,11 @@ const electronicTypeInformation = zod
     }
   );
 
+export type electronicTypeInformationType = zod.infer<
+  typeof electronicTypeInformationSchema
+>;
 export const MatrixSchema = zod.object({
-  typeInformation: electronicTypeInformation,
+  typeInformation: electronicTypeInformationSchema,
   name: zod.string(),
   rating: zod.optional(RatingSchema),
   availability: AvailabilitySchema,
@@ -172,7 +175,7 @@ export type SensorSchemaTypeInformationType = zod.infer<
   typeof SensorSchemaTypeInformationSchema
 >;
 
-const electronicAccessoryTypeInformation = zod
+export const electronicAccessoryTypeInformation = zod
   .discriminatedUnion("type", [
     CredStickTypeInformationSchema,
     IdentificationTypeInformationSchema,
@@ -202,6 +205,9 @@ const electronicAccessoryTypeInformation = zod
       return input;
     }
   );
+export type electronicAccessoryTypeInformationType = zod.infer<
+  typeof electronicAccessoryTypeInformation
+>;
 
 export const MatrixAccessorySchema = zod.object({
   typeInformation: electronicAccessoryTypeInformation,

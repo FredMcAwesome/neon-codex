@@ -59,3 +59,4 @@ export const AugmentationSchema = zod.object({
   description: zod.string(),
   wireless: zod.optional(zod.string()),
 });
+export type AugmentationType = zod.infer<typeof AugmentationSchema>;

@@ -17,6 +17,7 @@ import { SkillsSelect } from "./SkillsSelect.js";
 import { skillList } from "../../data/Skills.js";
 import type { IActiveSkillSelection } from "../../data/Skills.js";
 import { GearSelect } from "./GearSelect.js";
+import { GearListType } from "@shadowrun/common";
 
 const characterCreatorPath = "/character_creator";
 const CharacterCreator = function () {
@@ -63,39 +64,51 @@ const CharacterCreator = function () {
       pointsInvested: 0,
     }))
   );
+  const [gearSelected, setGearSelected] = useState<GearListType>({
+    weapons: [],
+    electronics: [],
+    electronicAccessories: [],
+    otherGear: [],
+    augmentations: [],
+    magicalEquipment: [],
+    vehiclesAndDrones: [],
+  });
 
-  const onPriorityInfoChange = function (loadingPriorities: IPriorities) {
+  const onPriorityInfoChanged = function (loadingPriorities: IPriorities) {
     setPriorityInfo(loadingPriorities);
     setSkillPoints(priorityOptions[loadingPriorities.SkillsPriority].skills);
   };
-  const onAttributeInfoChange = function (loadingAttributes: IAttributes) {
+  const onAttributeInfoChanged = function (loadingAttributes: IAttributes) {
     setAttributeInfo(loadingAttributes);
   };
-  const onSpecialAttributeInfoChange = function (
+  const onSpecialAttributeInfoChanged = function (
     loadingSpecialAttributes: ISpecialAttributes
   ) {
     setSpecialAttributeInfo(loadingSpecialAttributes);
   };
-  const onKarmaPointsChange = function (loadingKarma: number) {
+  const onKarmaPointsChanged = function (loadingKarma: number) {
     setKarmaPoints(loadingKarma);
   };
-  const onPositiveQualitiesSelectedChanges = function (
+  const onPositiveQualitiesSelectedChanged = function (
     loadingPositiveQualities: Array<ISelectedQuality>
   ) {
     setPositiveQualitiesSelected(loadingPositiveQualities);
   };
-  const onNegativeQualitiesSelectedChanges = function (
+  const onNegativeQualitiesSelectedChanged = function (
     loadingNegativeQualities: Array<ISelectedQuality>
   ) {
     setNegativeQualitiesSelected(loadingNegativeQualities);
   };
-  const onSkillPointChange = function (loadingSkillPoints: ISkillPoints) {
+  const onSkillPointChanged = function (loadingSkillPoints: ISkillPoints) {
     setSkillPoints(loadingSkillPoints);
   };
-  const onSkillSelections = function (
+  const onSkillSelectionsChanged = function (
     loadingSkillSelection: Array<IActiveSkillSelection>
   ) {
     setSkillSelections(loadingSkillSelection);
+  };
+  const onGearSelectedChanged = function (gearSelected: GearListType) {
+    setGearSelected(gearSelected);
   };
 
   const [page, setPage] = useState(0);
@@ -107,7 +120,7 @@ const CharacterCreator = function () {
       currentStage = (
         <PrioritySelect
           priorityInfo={priorityInfo}
-          setPriorityInfo={onPriorityInfoChange}
+          setPriorityInfo={onPriorityInfoChanged}
         />
       );
       break;
@@ -116,9 +129,9 @@ const CharacterCreator = function () {
         <AttributesSelect
           priorityInfo={priorityInfo}
           attributeInfo={attributeInfo}
-          setAttributeInfo={onAttributeInfoChange}
+          setAttributeInfo={onAttributeInfoChanged}
           specialAttributeInfo={specialAttributeInfo}
-          setSpecialAttributeInfo={onSpecialAttributeInfoChange}
+          setSpecialAttributeInfo={onSpecialAttributeInfoChanged}
           maxAttributePoints={
             priorityOptions[priorityInfo.AttributesPriority].attributes
           }
@@ -139,11 +152,11 @@ const CharacterCreator = function () {
       currentStage = (
         <QualitiesSelect
           karmaPoints={karmaPoints}
-          setKarmaPoints={onKarmaPointsChange}
+          setKarmaPoints={onKarmaPointsChanged}
           positiveQualitiesSelected={positiveQualitiesSelected}
-          setPositiveQualitiesSelected={onPositiveQualitiesSelectedChanges}
+          setPositiveQualitiesSelected={onPositiveQualitiesSelectedChanged}
           negativeQualitiesSelected={negativeQualitiesSelected}
-          setNegativeQualitiesSelected={onNegativeQualitiesSelectedChanges}
+          setNegativeQualitiesSelected={onNegativeQualitiesSelectedChanged}
         />
       );
       break;
@@ -151,20 +164,25 @@ const CharacterCreator = function () {
       currentStage = (
         <SkillsSelect
           skillPoints={skillPoints}
-          setSkillPoints={onSkillPointChange}
+          setSkillPoints={onSkillPointChanged}
           skillSelections={skillSelections}
-          setSkillSelections={onSkillSelections}
+          setSkillSelections={onSkillSelectionsChanged}
         />
       );
       break;
     case lastPage:
-      currentStage = <GearSelect />;
+      currentStage = (
+        <GearSelect
+          gearSelected={gearSelected}
+          setGearSelected={onGearSelectedChanged}
+        />
+      );
       break;
     default:
       currentStage = (
         <PrioritySelect
           priorityInfo={priorityInfo}
-          setPriorityInfo={onPriorityInfoChange}
+          setPriorityInfo={onPriorityInfoChanged}
         />
       );
   }
