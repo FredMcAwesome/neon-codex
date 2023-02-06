@@ -44,6 +44,7 @@ import { OtherGearType } from "@shadowrun/common/src/schemas/otherGearSchema.js"
 import { MagicGearType } from "@shadowrun/common/src/schemas/magicalSchemas.js";
 import { VehiclesAndDronesType } from "@shadowrun/common/src/schemas/riggerSchema.js";
 import { CollapsibleGearDiv } from "./GearHelper.js";
+import { costCalculation } from "../../utils/calculations.js";
 
 const fetchWrapper = useFetchWrapper();
 
@@ -66,6 +67,8 @@ async function fetchGear() {
 interface IProps {
   gearSelected: GearListType;
   setGearSelected: (loadingGearSelected: GearListType) => void;
+  nuyen: number;
+  setNuyen: (nuyen: number) => void;
 }
 
 export const GearSelect = function (props: IProps) {
@@ -89,12 +92,14 @@ export const GearSelect = function (props: IProps) {
     const gear = Object.assign({}, gearSelected);
     gear.weapons.push(weapon);
     props.setGearSelected(gear);
+    props.setNuyen(props.nuyen - costCalculation(weapon.cost));
   };
   const removeWeapon = function (weapon: WeaponSummaryType, index: number) {
     const gear = Object.assign({}, gearSelected);
     if (gear.weapons[index] === weapon) {
       gear.weapons.splice(index, 1);
       props.setGearSelected(gear);
+      props.setNuyen(props.nuyen + costCalculation(weapon.cost));
     } else {
       console.error("No weapon at index: " + index);
     }
@@ -103,12 +108,14 @@ export const GearSelect = function (props: IProps) {
     const gear = Object.assign({}, gearSelected);
     gear.electronics.push(electronic);
     props.setGearSelected(gear);
+    props.setNuyen(props.nuyen - costCalculation(electronic.cost));
   };
   const removeElectronics = function (electronic: MatrixType, index: number) {
     const gear = Object.assign({}, gearSelected);
     if (gear.electronics[index] === electronic) {
       gear.electronics.splice(index, 1);
       props.setGearSelected(gear);
+      props.setNuyen(props.nuyen + costCalculation(electronic.cost));
     } else {
       console.error("No electronic at index: " + index);
     }
@@ -119,6 +126,7 @@ export const GearSelect = function (props: IProps) {
     const gear = Object.assign({}, gearSelected);
     gear.electronicAccessories.push(electronicAccessory);
     props.setGearSelected(gear);
+    props.setNuyen(props.nuyen - costCalculation(electronicAccessory.cost));
   };
   const removeElectronicAccessories = function (
     electronicAccessory: MatrixAccessoryType,
@@ -128,6 +136,7 @@ export const GearSelect = function (props: IProps) {
     if (gear.electronicAccessories[index] === electronicAccessory) {
       gear.electronicAccessories.splice(index, 1);
       props.setGearSelected(gear);
+      props.setNuyen(props.nuyen + costCalculation(electronicAccessory.cost));
     } else {
       console.error("No electronic accessory at index: " + index);
     }
@@ -136,12 +145,14 @@ export const GearSelect = function (props: IProps) {
     const gear = Object.assign({}, gearSelected);
     gear.otherGear.push(other);
     props.setGearSelected(gear);
+    props.setNuyen(props.nuyen - costCalculation(other.cost));
   };
   const removeOtherGear = function (other: OtherGearType, index: number) {
     const gear = Object.assign({}, gearSelected);
     if (gear.otherGear[index] === other) {
       gear.otherGear.splice(index, 1);
       props.setGearSelected(gear);
+      props.setNuyen(props.nuyen + costCalculation(other.cost));
     } else {
       console.error("No other gear at index: " + index);
     }
@@ -150,6 +161,7 @@ export const GearSelect = function (props: IProps) {
     const gear = Object.assign({}, gearSelected);
     gear.augmentations.push(augmentation);
     props.setGearSelected(gear);
+    props.setNuyen(props.nuyen - costCalculation(augmentation.cost));
   };
   const removeAugmentations = function (
     augmentation: AugmentationType,
@@ -159,6 +171,7 @@ export const GearSelect = function (props: IProps) {
     if (gear.augmentations[index] === augmentation) {
       gear.augmentations.splice(index, 1);
       props.setGearSelected(gear);
+      props.setNuyen(props.nuyen + costCalculation(augmentation.cost));
     } else {
       console.error("No augmentation at index: " + index);
     }
@@ -167,6 +180,7 @@ export const GearSelect = function (props: IProps) {
     const gear = Object.assign({}, gearSelected);
     gear.magicalEquipment.push(magicalItem);
     props.setGearSelected(gear);
+    props.setNuyen(props.nuyen - costCalculation(magicalItem.cost));
   };
   const removeMagicalEquipment = function (
     magicalItem: MagicGearType,
@@ -176,6 +190,7 @@ export const GearSelect = function (props: IProps) {
     if (gear.magicalEquipment[index] === magicalItem) {
       gear.magicalEquipment.splice(index, 1);
       props.setGearSelected(gear);
+      props.setNuyen(props.nuyen + costCalculation(magicalItem.cost));
     } else {
       console.error("No magical equipment at index: " + index);
     }
@@ -186,6 +201,7 @@ export const GearSelect = function (props: IProps) {
     const gear = Object.assign({}, gearSelected);
     gear.vehiclesAndDrones.push(vehicleOrDrone);
     props.setGearSelected(gear);
+    props.setNuyen(props.nuyen - costCalculation(vehicleOrDrone.cost));
   };
   const removeVehiclesAndDrones = function (
     vehicleOrDrone: VehiclesAndDronesType,
@@ -195,6 +211,7 @@ export const GearSelect = function (props: IProps) {
     if (gear.vehiclesAndDrones[index] === vehicleOrDrone) {
       gear.vehiclesAndDrones.splice(index, 1);
       props.setGearSelected(gear);
+      props.setNuyen(props.nuyen + costCalculation(vehicleOrDrone.cost));
     } else {
       console.error("No vehicle/drone at index: " + index);
     }
@@ -478,6 +495,9 @@ export const GearSelect = function (props: IProps) {
         </div>
       </CollapsibleDiv>
       <h2>Gear Selected</h2>
+      <h3>
+        Nuyen Remaining: <span>{props.nuyen}</span>
+      </h3>
       <div>
         <h3>Weapons</h3>
         <div>

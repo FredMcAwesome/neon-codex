@@ -73,10 +73,14 @@ const CharacterCreator = function () {
     magicalEquipment: [],
     vehiclesAndDrones: [],
   });
+  const [nuyen, setNuyen] = useState(
+    priorityOptions[priorityInfo.ResourcesPriority].resources
+  );
 
   const onPriorityInfoChanged = function (loadingPriorities: IPriorities) {
     setPriorityInfo(loadingPriorities);
     setSkillPoints(priorityOptions[loadingPriorities.SkillsPriority].skills);
+    setNuyen(priorityOptions[loadingPriorities.ResourcesPriority].resources);
   };
   const onAttributeInfoChanged = function (loadingAttributes: IAttributes) {
     setAttributeInfo(loadingAttributes);
@@ -109,6 +113,9 @@ const CharacterCreator = function () {
   };
   const onGearSelectedChanged = function (gearSelected: GearListType) {
     setGearSelected(gearSelected);
+  };
+  const onNuyenChanged = function (nuyen: number) {
+    setNuyen(nuyen);
   };
 
   const [page, setPage] = useState(0);
@@ -175,6 +182,8 @@ const CharacterCreator = function () {
         <GearSelect
           gearSelected={gearSelected}
           setGearSelected={onGearSelectedChanged}
+          nuyen={nuyen}
+          setNuyen={onNuyenChanged}
         />
       );
       break;

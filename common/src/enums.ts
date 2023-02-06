@@ -101,10 +101,12 @@ export enum weaponTypeEnum {
 }
 
 export enum meleeWeaponTypeEnum {
-  Blade = "Blade",
-  Club = "Club",
-  Other = "Other",
-  Cyber = "Cyber",
+  Blades = "Blades",
+  Clubs = "Clubs",
+  Improvised = "Improvised",
+  Exotic = "Exotic",
+  Unarmed = "Unarmed",
+  MetagenicQuality = "Mutagenic Quality",
 }
 
 export enum projectileWeaponTypeEnum {
@@ -116,57 +118,61 @@ export enum projectileWeaponTypeEnum {
 export enum firearmWeaponTypeEnum {
   Tasers = "Tasers",
   HoldOuts = "Hold Outs",
-  LightPistol = "Light Pistol",
-  HeavyPistol = "Heavy Pistol",
-  MachinePistol = "Machine Pistol",
-  SubmachineGun = "Submachine Gun",
-  AssaultRifle = "Assault Rifle",
-  Shotgun = "Shotgun",
-  SniperRifle = "Sniper Rifle",
-  LightMachinegun = "Light Machinegun",
-  MediumHeavyMachinegun = "Medium Heavy Machinegun",
-  AssaultCannon = "Assault Cannon",
-  GrenadeLauncher = "Grenade Launcher",
-  MissileLauncher = "Missile Launcher",
-  Bow = "Bow",
-  LightCrossbow = "Light Crossbow",
-  MediumCrossbow = "Medium Crossbow",
-  HeavyCrossbow = "Heavy Crossbow",
-  ThrownKnife = "Thrown Knife",
-  Shuriken = "Shuriken",
-  StandardGrenade = "Standard Grenade",
-  AerodynamicGrenade = "Aerodynamic Grenade",
-  Special = "Special",
-  Cybergun = "Cybergun",
+  LightPistols = "Light Pistols",
+  HeavyPistols = "Heavy Pistols",
+  MachinePistols = "Machine Pistols",
+  SubmachineGuns = "Submachine Guns",
+  AssaultRifles = "Assault Rifles",
+  Shotguns = "Shotguns",
+  SniperRifles = "Sniper Rifles",
+  LightMachineguns = "Light Machineguns",
+  MediumHeavyMachineguns = "Medium Heavy Machineguns",
+  AssaultCannons = "Assault Cannons",
+  GrenadeLaunchers = "Grenade Launchers",
+  MissileLaunchers = "Missile Launchers",
+  LightCrossbows = "Light Crossbows",
+  MediumCrossbows = "Medium Crossbows",
+  HeavyCrossbows = "Heavy Crossbows",
+  Exotic = "Exotic",
+  Cyberguns = "Cyberguns",
+  Flamethrowers = "Flamethrowers",
+  Laser = "Laser",
+  SportingRifles = "Sporting Rifles",
+  WeaponAttachment = "Weapon Attachment",
+  BioWeapon = "Bio-Weapon",
+  Carbines = "Carbines",
 }
 
 export enum explosiveTypeEnum {
+  Grenade = "Grenade",
   Standard = "Standard",
+}
+
+export enum accuracyTypeEnum {
+  Physical = "Physical",
+  Missile = "Missile",
 }
 
 export enum damageTypeEnum {
   Physical,
   Stun,
-  Special,
   Chemical,
+  None,
 }
 
-export enum damageAnnoationEnum {
+export enum damageAnnotationEnum {
   Flechette,
   Electrical,
+  Fire,
 }
 
-export enum damageCalculationMethodEnum {
-  Normal,
-  Strength,
-  Rating,
-  Chemical,
-  Special,
-  DrugToxin,
-  Grenade,
-  Missile,
-  Explosive,
-  Fire,
+export enum damageCalculationOptionEnum {
+  Strength = "Strength",
+  DrugToxin = "Drug/Toxin",
+  Grenade = "Grenade",
+  Missile = "Missile",
+  PepperPunch = "Pepper Punch",
+  Magic = "Magic",
 }
 
 export enum restrictionEnum {
@@ -194,10 +200,12 @@ export enum reloadMethodEnum {
 }
 
 export enum firearmAccessoryMountLocationEnum {
-  Underbarrel,
-  Barrel,
-  Top,
-  None,
+  Underbarrel = "Under",
+  Barrel = "Barrel",
+  Top = "Top",
+  Side = "Side",
+  Stock = "Stock",
+  None = "None",
 }
 
 export enum ammunitionTypeEnum {
@@ -214,11 +222,11 @@ export enum blastTypeEnum {
 }
 
 export enum mathOperatorEnum {
-  Add,
-  Subtract,
-  Divide,
-  Multiply,
-  RangeTo,
+  Add = "+",
+  Subtract = "-",
+  Divide = "/",
+  Multiply = "*",
+  GreaterThan = ">=",
 }
 
 export enum weaponAccessoryTypeEnum {
@@ -268,6 +276,12 @@ export enum augmentationTypeEnum {
   Earware = "Earware",
   Bodyware = "Bodyware",
   Cyberlimbs = "Cyberlimbs",
+  Bioware = "Bioware",
+  CulturedBioware = "Cultured Bioware",
+}
+export enum augmentationClassificationEnum {
+  None = "N/A",
+  Cyberware = "Cyberware",
   Bioware = "Bioware",
   CulturedBioware = "Cultured Bioware",
 }

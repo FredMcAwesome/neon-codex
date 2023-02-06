@@ -198,7 +198,6 @@ router.get(
       res.json(vehiclesAndDronesResponse);
     } catch (error) {
       logger.error("Unable to connect to the database:", error);
-
       res.status(500).send("Database error");
     }
   }

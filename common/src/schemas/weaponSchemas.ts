@@ -1,7 +1,6 @@
 import { z as zod } from "zod";
 import {
-  damageAnnoationEnum,
-  damageCalculationMethodEnum,
+  damageAnnotationEnum,
   damageTypeEnum,
   firearmModeEnum,
   firearmWeaponTypeEnum,
@@ -12,6 +11,9 @@ import {
   weaponTypeEnum,
   blastTypeEnum,
   explosiveTypeEnum,
+  accuracyTypeEnum,
+  mathOperatorEnum,
+  damageCalculationOptionEnum,
 } from "../enums.js";
 import {
   AvailabilitySchema,
@@ -21,21 +23,44 @@ import {
   RatingSchema,
 } from "./commonSchema.js";
 
-export const AccuracySchema = zod.object({
-  base: zod.union([zod.number(), zod.enum(["Inherent"])]),
-  equipment: zod.optional(zod.number()),
-});
+export const AccuracySchema = zod.array(
+  zod.union([
+    zod.number(),
+    zod.object({ option: zod.nativeEnum(accuracyTypeEnum) }),
+    zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }),
+  ])
+);
 export type AccuracyType = zod.infer<typeof AccuracySchema>;
 
-const DamageCalculationSchema = zod.object({
-  calculationType: zod.nativeEnum(damageCalculationMethodEnum),
-  base: zod.number(),
+export const BlastSchema = zod.object({
+  type: zod.nativeEnum(blastTypeEnum),
+  value: zod.number(),
 });
+export type BlastType = zod.infer<typeof BlastSchema>;
 
+export const DamageSubnumberSchema = zod.array(
+  zod.union([
+    zod.number(),
+    zod.object({ option: zod.nativeEnum(damageCalculationOptionEnum) }),
+    zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }),
+  ])
+);
+export type DamageSubtypeType = zod.infer<typeof DamageSubnumberSchema>;
+
+export const DamageAmountSchema = zod.array(
+  zod.union([
+    zod.number(),
+    zod.object({ option: zod.nativeEnum(damageCalculationOptionEnum) }),
+    zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }),
+    DamageSubnumberSchema,
+  ])
+);
+export type DamageAmountType = zod.infer<typeof DamageAmountSchema>;
 export const DamageSchema = zod.object({
-  damageAmount: DamageCalculationSchema,
+  damageAmount: DamageAmountSchema,
   type: zod.nativeEnum(damageTypeEnum),
-  annotation: zod.optional(zod.nativeEnum(damageAnnoationEnum)),
+  annotation: zod.optional(zod.nativeEnum(damageAnnotationEnum)),
+  blast: zod.optional(BlastSchema),
 });
 export type DamageType = zod.infer<typeof DamageSchema>;
 
@@ -99,9 +124,3 @@ export const WeaponSummarySchema = zod.object({
   relatedSkill: zod.nativeEnum(skillsEnum),
 });
 export type WeaponSummaryType = zod.infer<typeof WeaponSummarySchema>;
-
-export const BlastSchema = zod.object({
-  type: zod.nativeEnum(blastTypeEnum),
-  value: zod.number(),
-});
-export type BlastType = zod.infer<typeof BlastSchema>;

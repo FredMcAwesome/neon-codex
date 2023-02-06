@@ -1,10 +1,18 @@
 {
   "root": true,
-  "extends": ["../.eslintrc.base.json"],
+  "extends": [
+    "../.eslintrc.base.json",
+    "plugin:react/recommended",
+    "plugin:jest/recommended"
+  ],
   "env": {
     "node": true
   },
   "parserOptions": {
     "project": "./**/tsconfig.json"
+  },
+  "rules": {
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off"
   }
 }

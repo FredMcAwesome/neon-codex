@@ -4,8 +4,6 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:jest/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "prettier"
@@ -18,5 +16,7 @@
     "sourceType": "module"
   },
   "plugins": ["react", "@typescript-eslint"],
-  "rules": { "react/jsx-uses-react": "off", "react/react-in-jsx-scope": "off" }
+  "rules": {
+    "@typescript-eslint/switch-exhaustiveness-check": "error"
+  }
 }
