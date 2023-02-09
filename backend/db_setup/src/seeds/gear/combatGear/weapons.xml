@@ -14972,6 +14972,8 @@
       <accessories>
         <accessory>
           <name>Smartgun System, Internal</name>
+        </accessory>
+        <accessory>
           <name>Trigger Removal</name>
         </accessory>
       </accessories>
@@ -15015,11 +15017,14 @@
       <type>Ranged</type>
       <conceal>6</conceal>
       <accuracy>6</accuracy>
+      <reach>0</reach>
       <damage>Special</damage>
+      <ap>0</ap>
       <mode>SA</mode>
+      <rc>0</rc>
       <ammo>10(m)</ammo>
       <avail>0</avail>
-	  <range>Shuriken</range>
+	    <range>Shuriken</range>
       <cost>150</cost>
       <source>SOTG</source>
       <page>13</page>
@@ -15193,7 +15198,6 @@
       <cost>{Rating}*50</cost>
       <source>KC</source>
       <page>55</page>
-      <maxrating>100000</maxrating>
       <range>Standard Grenade</range>
       <spec>Non-Aerodynamic</spec>
       <useskill>Throwing Weapons</useskill>
@@ -15215,7 +15219,6 @@
       <cost>{Rating}*50</cost>
       <source>KC</source>
       <page>56</page>
-      <maxrating>100000</maxrating>
       <range>Standard Grenade</range>
       <spec>Non-Aerodynamic</spec>
       <useskill>Throwing Weapons</useskill>
@@ -18970,7 +18973,6 @@
       <rc>6</rc>
       <rcdeployable>True</rcdeployable>
       <rcgroup>1</rcgroup>
-      <rating>0</rating>
     </accessory>
     <accessory>
       <id>9b09fc1e-cb5b-473f-83a5-6f23a7524012</id>
