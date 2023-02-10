@@ -11,10 +11,15 @@ import {
 } from "@shadowrun/common";
 import {
   accuracyTypeEnum,
+  armourPenetrationEnum,
+  availabilityTypeEnum,
   blastTypeEnum,
   damageAnnotationEnum,
   damageCalculationOptionEnum,
   damageTypeEnum,
+  firearmModeEnum,
+  reloadMethodEnum,
+  restrictionEnum,
 } from "@shadowrun/common/src/enums.js";
 import assert from "assert";
 import {
@@ -33,6 +38,7 @@ export const convertAccuracy = function (
   accuracy: AccuracyXmlType,
   name: string
 ): AccuracyType {
+  console.log("Accuracy: " + accuracy.toString());
   let accuracyFinalArray: Array<
     { operator: mathOperatorEnum } | number | { option: accuracyTypeEnum }
   > = [];
@@ -46,7 +52,7 @@ export const convertAccuracy = function (
         { operator: mathOperatorEnum } | number | string
       > = [];
       Array.from(accuracy.substring(8)).forEach((character) => {
-        accuracyArray = convertCharacter(character, accuracyArray);
+        accuracyArray = parseCharacter(character, accuracyArray, false);
       });
       accuracyFinalArray = [
         { option: accuracyTypeEnum.Physical },
@@ -63,7 +69,7 @@ export const convertAccuracy = function (
         { operator: mathOperatorEnum } | number | string
       > = [];
       Array.from(accuracy.substring(7)).forEach((character) => {
-        accuracyArray = convertCharacter(character, accuracyArray);
+        accuracyArray = parseCharacter(character, accuracyArray, false);
       });
       return [
         { option: accuracyTypeEnum.Missile },
@@ -102,118 +108,53 @@ export const convertDamage = function (
   damage: DamageXmlType,
   name: string
 ): DamageType {
+  console.log("Damage: " + damage.toString());
   if (typeof damage === "number") {
-    return {
-      damageAmount: [damage],
-      type: damageTypeEnum.None,
-      annotation: undefined,
-      blast: undefined,
-    };
+    return [
+      {
+        damageAmount: [damage],
+        type: damageTypeEnum.None,
+        annotation: undefined,
+        blast: undefined,
+      },
+    ];
   } else {
-    let damageType: damageTypeEnum = damageTypeEnum.None;
-    let damageAnnotation: damageAnnotationEnum | undefined;
-    let damageList: Array<
+    let damageSpecialList: Array<
       | { operator: mathOperatorEnum }
       | string
       | number
       | { option: damageCalculationOptionEnum }
       | DamageSubtypeType
     > = [];
+    let genericList: Array<{ operator: mathOperatorEnum } | string | number> =
+      [];
     Array.from(damage).forEach((character) => {
-      damageList = convertCharacter(
-        character,
-        damageList as Array<{ operator: mathOperatorEnum } | number>
-      );
+      genericList = parseCharacter(character, genericList, false);
     });
-    damageList = convertSpecial(damageList, "Grenade");
-    damageList = convertSpecial(damageList, "As Drug/Toxin");
-    damageList = convertSpecial(damageList, "Missile");
-    damageList = convertSpecial(damageList, "As Pepper Punch");
-    damageList = convertSpecial(damageList, "{STR}");
-    damageList = convertSpecial(damageList, "MAG");
-    // get damage type
-    let typeTemp = getDamageType(damageList, damageType, "Special");
-    typeTemp = getDamageType(typeTemp.damageList, typeTemp.damageType, "S");
-    typeTemp = getDamageType(typeTemp.damageList, typeTemp.damageType, "P");
-    damageType = typeTemp.damageType;
-    damageList = typeTemp.damageList;
-    // get damage annotation
-    let annotTemp = getDamageAnnotation(damageList, damageAnnotation, "(fire)");
-    annotTemp = getDamageAnnotation(damageList, damageAnnotation, "(f)");
-    annotTemp = getDamageAnnotation(
-      annotTemp.damageList,
-      annotTemp.damageAnnotation,
-      "(e)"
+
+    let conversionInfo = convertSpecial(genericList, "Grenade");
+    conversionInfo = convertSpecial(
+      conversionInfo.propertyList,
+      "As Drug/Toxin"
     );
-    if (annotTemp.damageAnnotation)
-      damageAnnotation = annotTemp.damageAnnotation;
-    damageList = annotTemp.damageList;
-    // get damage annotation
-    const blastTemp = getDamageBlast(damageList);
-    damageList = blastTemp.damageList;
-    const blast = blastTemp.blast;
-    // get subnumber calculations
-    damageList = getSubnumbers(damageList);
-    // remove unneeded
-    damageList = removeUnneededCharacters(damageList);
-    // confirm we converted all strings into valid types
-    damageList.forEach((damageItem, index) => {
-      let check = false;
-      if (typeof damageItem === "number") {
-        check = true;
-      } else {
-        Object.values(damageCalculationOptionEnum).forEach((option) => {
-          if (equal(damageItem, { option: option })) check = true;
-        });
-        Object.values(mathOperatorEnum).forEach((operator) => {
-          if (equal(damageItem, { operator: operator })) check = true;
-        });
-      }
-      // console.log(damageList)
-      assert(
-        check,
-        `Weapon name: ${name}, list length: ${damageList.length}, failed item: ${damageItem} at index: ${index}`
-      );
-    });
-    return {
-      damageAmount: damageList as DamageAmountType,
-      type: damageType,
-      annotation: damageAnnotation,
-      blast: blast,
-    };
-  }
-};
-
-export const convertArmourPenetration = function () {
-  return 0;
-};
-
-export const convertSpecial = function (
-  damageList: Array<
-    | string
-    | number
-    | { option: damageCalculationOptionEnum }
-    | { operator: mathOperatorEnum }
-    | DamageSubtypeType
-  >,
-  replaceString: string
-) {
-  for (let i = 0; i < damageList.length; i++) {
-    const damageSplit = damageList[i];
-    if (
-      typeof damageSplit === "string" &&
-      damageSplit.indexOf(replaceString) !== -1
-    ) {
-      const index = damageSplit.indexOf(replaceString);
-      const length = replaceString.length;
-      let insertLocation = i;
-      // TODO: is this right?
-      if (index > 0) {
-        damageList[i] = damageSplit.slice(0, index);
-        insertLocation = i + 1;
-      } else {
-        damageList.splice(i, 1);
-      }
+    conversionInfo = convertSpecial(conversionInfo.propertyList, "Missile");
+    conversionInfo = convertSpecial(
+      conversionInfo.propertyList,
+      "As Pepper Punch"
+    );
+    conversionInfo = convertSpecial(conversionInfo.propertyList, "{STR}");
+    conversionInfo = convertSpecial(conversionInfo.propertyList, "MAG");
+    conversionInfo = convertSpecial(conversionInfo.propertyList, "Chemical");
+    conversionInfo = convertSpecial(conversionInfo.propertyList, "Rating");
+    conversionInfo = convertSpecial(conversionInfo.propertyList, "Torpedo");
+    conversionInfo = convertSpecial(
+      conversionInfo.propertyList,
+      "as Narcoject"
+    );
+    damageSpecialList = conversionInfo.propertyList;
+    let locationCounter = 0;
+    conversionInfo.insertLocationList.forEach((insertLocation) => {
+      const replaceString = insertLocation.value;
       let option: damageCalculationOptionEnum =
         damageCalculationOptionEnum.Strength;
       if (replaceString === "Grenade") {
@@ -228,28 +169,470 @@ export const convertSpecial = function (
         option = damageCalculationOptionEnum.Strength;
       } else if (replaceString === "MAG") {
         option = damageCalculationOptionEnum.Magic;
+      } else if (replaceString === "Chemical") {
+        option = damageCalculationOptionEnum.Chemical;
+      } else if (replaceString === "Rating") {
+        option = damageCalculationOptionEnum.Rating;
+      } else if (replaceString === "Torpedo") {
+        option = damageCalculationOptionEnum.Torpedo;
+      } else if (replaceString === "as Narcoject") {
+        option = damageCalculationOptionEnum.Narcoject;
       } else {
         assert("Special string not replaced!");
       }
-      if (damageList.length > 1) {
-        damageList.splice(insertLocation, 0, {
+      if (damageSpecialList.length > 1) {
+        damageSpecialList.splice(insertLocation.location + locationCounter, 0, {
           option: option,
         });
       } else {
-        damageList[0] = {
+        damageSpecialList[0] = {
           option: option,
         };
       }
-      if (index + length < damageSplit.length) {
-        damageList.splice(
-          insertLocation + 1,
+      locationCounter++;
+    });
+
+    // alternative damage types
+    const tempList = getSplit(damageSpecialList, "/");
+    assert(
+      tempList.splitList.length < 2,
+      "Need to add processing more than 1 split"
+    );
+    let damageList = [];
+    const damageFinalList: DamageType = [];
+    if (tempList.splitList.length > 0) {
+      const firstList = damageSpecialList.splice(0, tempList.splitList[0]);
+      damageList = [firstList, damageSpecialList];
+    } else {
+      damageList = [damageSpecialList];
+    }
+
+    damageList.forEach((damageSublist) => {
+      let damageType: damageTypeEnum = damageTypeEnum.None;
+      let damageAnnotation: damageAnnotationEnum | undefined;
+      // get damage type
+      let typeTemp = getDamageType(damageSublist, damageType, "Special");
+      typeTemp = getDamageType(typeTemp.damageList, typeTemp.damageType, "S");
+      typeTemp = getDamageType(typeTemp.damageList, typeTemp.damageType, "P");
+      damageType = typeTemp.damageType;
+      damageSublist = typeTemp.damageList;
+      // get damage annotation
+      let annotTemp = getDamageAnnotation(
+        damageSublist,
+        damageAnnotation,
+        "(fire)"
+      );
+      annotTemp = getDamageAnnotation(damageSublist, damageAnnotation, "(f)");
+      annotTemp = getDamageAnnotation(
+        annotTemp.damageList,
+        annotTemp.damageAnnotation,
+        "(e)"
+      );
+      if (annotTemp.damageAnnotation)
+        damageAnnotation = annotTemp.damageAnnotation;
+      damageSublist = annotTemp.damageList;
+      // get damage annotation
+      const blastTemp = getDamageBlast(damageSublist);
+      damageSublist = blastTemp.damageList;
+      const blast = blastTemp.blast;
+      damageSublist = getSubnumbers(damageSublist);
+      damageSublist = removeUnneededCharacters(damageSublist);
+
+      // confirm we converted all strings into valid types
+      damageSublist.forEach((damageItem, index) => {
+        let check = false;
+        if (typeof damageItem === "number") {
+          check = true;
+        } else {
+          Object.values(damageCalculationOptionEnum).forEach((option) => {
+            if (equal(damageItem, { option: option })) check = true;
+          });
+          Object.values(mathOperatorEnum).forEach((operator) => {
+            if (equal(damageItem, { operator: operator })) check = true;
+          });
+        }
+        // console.log(damageSublist);
+        assert(
+          check,
+          `Weapon name: ${name}, list length: ${damageSublist.length}, failed item: ${damageItem} at index: ${index}`
+        );
+      });
+      damageFinalList.push({
+        damageAmount: damageSpecialList as DamageAmountType,
+        type: damageType,
+        annotation: damageAnnotation,
+        blast: blast,
+      });
+    });
+    return damageFinalList;
+  }
+};
+
+export const convertArmourPenetration = function (
+  armourPenetration: number | string,
+  name: string
+) {
+  console.log("Armour Penetration: " + armourPenetration.toString());
+  if (typeof armourPenetration === "number") {
+    return [armourPenetration];
+  } else {
+    let armourPenetrationList: Array<
+      | { operator: mathOperatorEnum }
+      | string
+      | number
+      | { option: armourPenetrationEnum }
+    > = [];
+    let genericList: Array<{ operator: mathOperatorEnum } | string | number> =
+      [];
+    Array.from(armourPenetration).forEach((character) => {
+      genericList = parseCharacter(character, genericList, true);
+    });
+
+    let conversionInfo = convertSpecial(genericList, "Rating");
+    conversionInfo = convertSpecial(conversionInfo.propertyList, "Grenade");
+    conversionInfo = convertSpecial(conversionInfo.propertyList, "Missile");
+    conversionInfo = convertSpecial(conversionInfo.propertyList, "Special");
+    conversionInfo = convertSpecial(conversionInfo.propertyList, "{MAG}");
+    armourPenetrationList = conversionInfo.propertyList;
+    let locationCounter = 0;
+    conversionInfo.insertLocationList.forEach((insertLocation) => {
+      const replaceString = insertLocation.value;
+      let option: armourPenetrationEnum = armourPenetrationEnum.Grenade;
+      if (replaceString === "Grenade") {
+        option = armourPenetrationEnum.Grenade;
+      } else if (replaceString === "Rating") {
+        option = armourPenetrationEnum.Rating;
+      } else if (replaceString === "Missile") {
+        option = armourPenetrationEnum.Missile;
+      } else if (replaceString === "Special") {
+        option = armourPenetrationEnum.Special;
+      } else if (replaceString === "{MAG}}") {
+        option = armourPenetrationEnum.Magic;
+      } else if (replaceString === "As Drug/Toxin") {
+        option = armourPenetrationEnum.DrugToxin;
+      } else {
+        assert("Special string not replaced!");
+      }
+      if (armourPenetrationList.length > 1) {
+        armourPenetrationList.splice(
+          insertLocation.location + locationCounter,
           0,
-          damageSplit.slice(index + length)
+          {
+            option: option,
+          }
+        );
+      } else {
+        armourPenetrationList[0] = {
+          option: option,
+        };
+      }
+      locationCounter++;
+    });
+    armourPenetrationList = removeUnneededCharacters(armourPenetrationList);
+    armourPenetrationList.forEach((armourPentrationItem, index) => {
+      let check = false;
+      if (typeof armourPentrationItem === "number") {
+        check = true;
+      } else {
+        Object.values(armourPenetrationEnum).forEach((option) => {
+          if (equal(armourPentrationItem, { option: option })) check = true;
+        });
+        Object.values(mathOperatorEnum).forEach((operator) => {
+          if (equal(armourPentrationItem, { operator: operator })) check = true;
+        });
+      }
+      // console.log(armourPenetrationList);
+      assert(
+        check,
+        `Weapon name: ${name}, list length: ${armourPenetrationList.length}, failed item: ${armourPentrationItem} at index: ${index}`
+      );
+    });
+    return armourPenetrationList;
+  }
+};
+
+export const convertMode = function (mode: number | string, name: string) {
+  console.log("Mode: " + mode.toString());
+  if (typeof mode === "number" || mode === "-") {
+    return undefined;
+  } else {
+    let modeList: Array<
+      | { operator: mathOperatorEnum }
+      | string
+      | number
+      | { option: firearmModeEnum }
+    > = [];
+    const genericList: Array<string> = mode.split("/");
+
+    let conversionInfo = convertSpecial(genericList, "SA");
+    conversionInfo = convertSpecial(conversionInfo.propertyList, "BF");
+    conversionInfo = convertSpecial(conversionInfo.propertyList, "FA");
+    conversionInfo = convertSpecial(conversionInfo.propertyList, "SS");
+    modeList = conversionInfo.propertyList;
+    let locationCounter = 0;
+    conversionInfo.insertLocationList.forEach((insertLocation) => {
+      const replaceString = insertLocation.value;
+      let option: firearmModeEnum = firearmModeEnum.BurstFire;
+      if (replaceString === "SA") {
+        option = firearmModeEnum.SemiAutomatic;
+      } else if (replaceString === "BF") {
+        option = firearmModeEnum.BurstFire;
+      } else if (replaceString === "FA") {
+        option = firearmModeEnum.FullAutomatic;
+      } else if (replaceString === "SS") {
+        option = firearmModeEnum.SingleShot;
+      } else {
+        assert("Special string not replaced!");
+      }
+      if (modeList.length > 1) {
+        modeList.splice(insertLocation.location + locationCounter, 0, {
+          option: option,
+        });
+      } else {
+        modeList[0] = {
+          option: option,
+        };
+      }
+      locationCounter++;
+    });
+    modeList.forEach((modeItem, index) => {
+      let check = false;
+      if (typeof modeItem === "number") {
+        check = true;
+      } else {
+        Object.values(firearmModeEnum).forEach((option) => {
+          if (equal(modeItem, { option: option })) check = true;
+        });
+        Object.values(mathOperatorEnum).forEach((operator) => {
+          if (equal(modeItem, { operator: operator })) check = true;
+        });
+      }
+      // console.log(modeItem);
+      assert(
+        check,
+        `Weapon name: ${name}, list length: ${modeList.length}, failed item: ${modeItem} at index: ${index}`
+      );
+    });
+    return modeList;
+  }
+};
+
+export const convertRecoilCompensation = function (
+  recoilCompensation: number | string
+) {
+  console.log("Recoil Compensation: " + recoilCompensation.toString());
+  if (recoilCompensation === "-") {
+    return 0;
+  } else {
+    return recoilCompensation;
+  }
+};
+
+export const convertAmmo = function (ammo: number | string, name: string) {
+  console.log("Ammo: " + ammo.toString());
+  if (ammo === 0) {
+    return undefined;
+  } else if (typeof ammo === "number") {
+    return [
+      [
+        {
+          capacity: ammo,
+          numberOfAmmunitionHolders: undefined,
+          reloadMethod: reloadMethodEnum.None,
+        },
+      ],
+    ];
+  } else {
+    // options split with '/' or 'or'
+    const overallList: Array<string> = ammo.split(/\/|or/);
+    const ammoList: Array<{
+      capacity: number | undefined;
+      numberOfAmmunitionHolders: number | undefined;
+      reloadMethod: reloadMethodEnum;
+    }> = [];
+    overallList.forEach((ammoItem) => {
+      let genericList: Array<string | number> = [];
+      Array.from(ammoItem).forEach((character) => {
+        genericList = parseNumber(character, genericList).digitArray;
+      });
+      const ammoParsingList = getAmmoType(genericList);
+      ammoList.push(
+        getNumberOfAmmunitionHolders(
+          ammoParsingList.ammunition,
+          ammoParsingList.reloadAtEndOfString
+        )
+      );
+    });
+    ammoList.forEach((ammoItem, index) => {
+      let check = false;
+      Object.values(reloadMethodEnum).forEach((option) => {
+        if (equal(ammoItem.reloadMethod, option)) check = true;
+      });
+      // console.log(ammoItem);
+      assert(
+        check,
+        `Weapon name: ${name}, list length: ${ammoList.length}, failed item: ${ammoItem} at index: ${index}`
+      );
+    });
+    return ammoList;
+  }
+};
+
+export const convertAvailability = function (
+  availability: number | string,
+  name: string
+) {
+  if (typeof availability === "number") {
+    return { rating: [availability], restriction: restrictionEnum.Legal };
+  } else {
+    let availabilitySpecialList: Array<
+      | { operator: mathOperatorEnum }
+      | string
+      | number
+      | { option: availabilityTypeEnum }
+    > = [];
+    let restriction = restrictionEnum.Legal;
+    let genericList: Array<{ operator: mathOperatorEnum } | string | number> =
+      [];
+    Array.from(availability).forEach((character) => {
+      genericList = parseCharacter(character, genericList, false);
+    });
+
+    const conversionInfo = convertSpecial(genericList, "{Rating}");
+    availabilitySpecialList = conversionInfo.propertyList;
+    let locationCounter = 0;
+    conversionInfo.insertLocationList.forEach((insertLocation) => {
+      const replaceString = insertLocation.value;
+      let option: availabilityTypeEnum = availabilityTypeEnum.Rating;
+      if (replaceString === "{Rating}") {
+        option = availabilityTypeEnum.Rating;
+      } else {
+        assert("Special string not replaced!");
+      }
+      if (availabilitySpecialList.length > 1) {
+        availabilitySpecialList.splice(
+          insertLocation.location + locationCounter,
+          0,
+          {
+            option: option,
+          }
+        );
+      } else {
+        availabilitySpecialList[0] = {
+          option: option,
+        };
+      }
+      locationCounter++;
+    });
+    // get restriction
+    let typeTemp = getAvailabilityRestriction(
+      availabilitySpecialList,
+      restriction,
+      "R"
+    );
+    typeTemp = getAvailabilityRestriction(
+      typeTemp.availabilityList,
+      typeTemp.restrictionType,
+      "F"
+    );
+    restriction = typeTemp.restrictionType;
+    availabilitySpecialList = typeTemp.availabilityList;
+
+    availabilitySpecialList = removeUnneededCharacters(availabilitySpecialList);
+
+    // confirm we converted all strings into valid types
+    availabilitySpecialList.forEach((availabilityItem, index) => {
+      let check = false;
+      if (typeof availabilityItem === "number") {
+        check = true;
+      } else {
+        Object.values(availabilityTypeEnum).forEach((option) => {
+          if (equal(availabilityItem, { option: option })) check = true;
+        });
+        Object.values(mathOperatorEnum).forEach((operator) => {
+          if (equal(availabilityItem, { operator: operator })) check = true;
+        });
+      }
+      console.log(availabilitySpecialList);
+      assert(
+        check,
+        `Weapon name: ${name}, list length: ${availabilitySpecialList.length}, failed item: ${availabilityItem} at index: ${index}`
+      );
+    });
+    return { rating: availabilitySpecialList, restriction: restriction };
+  }
+};
+
+export const convertSpecial = function <Type>(
+  propertyList: Array<Type | string | number>,
+  replaceString: string
+) {
+  const insertLocationList: Array<{ value: string; location: number }> = [];
+  for (let i = 0; i < propertyList.length; i++) {
+    const stringSplit = propertyList[i];
+    if (
+      typeof stringSplit === "string" &&
+      stringSplit.indexOf(replaceString) !== -1
+    ) {
+      const index = stringSplit.indexOf(replaceString);
+      const length = replaceString.length;
+      let insertLocation = i;
+      if (index > 0) {
+        propertyList[i] = stringSplit.slice(0, index);
+        insertLocation++;
+      } else {
+        propertyList.splice(i, 1);
+      }
+      if (index + length < stringSplit.length) {
+        propertyList.splice(
+          insertLocation,
+          0,
+          stringSplit.slice(index + length)
         );
       }
+      insertLocationList.push({
+        value: replaceString,
+        location: insertLocation,
+      });
     }
   }
-  return damageList;
+  return { propertyList: propertyList, insertLocationList: insertLocationList };
+};
+
+export const getSplit = function <Type>(
+  propertyList: Array<Type | string | number>,
+  replaceString: string
+) {
+  const splitList: Array<number> = [];
+  for (let i = 0; i < propertyList.length; i++) {
+    const stringSplit = propertyList[i];
+    if (
+      typeof stringSplit === "string" &&
+      stringSplit.indexOf(replaceString) !== -1
+    ) {
+      const index = stringSplit.indexOf(replaceString);
+      // avoid /m as used in blast calculation
+      if (propertyList.length > i) {
+        const nextItem = propertyList[i + 1];
+        if (typeof nextItem === "string" && nextItem.indexOf("m") >= 0)
+          continue;
+      }
+      if (stringSplit.substring(index + 1, index + 2) === "m") continue;
+      const length = replaceString.length;
+      let splitIndex = i;
+      if (index > 0) {
+        propertyList[i] = stringSplit.slice(0, index);
+        splitIndex++;
+      } else {
+        propertyList.splice(i, 1);
+      }
+      if (index + length < stringSplit.length) {
+        propertyList.splice(splitIndex, 0, stringSplit.slice(index + length));
+      }
+      splitList.push(splitIndex);
+    }
+  }
+  return { propertyList: propertyList, splitList: splitList };
 };
 
 const getDamageType = function (
@@ -348,28 +731,192 @@ const getDamageBlast = function (
       continue;
     }
     let blastType: BlastType | undefined;
-    const regexRadius = new RegExp("(.*m Radius)");
-    const regexReducing = new RegExp("(-./m)");
-    if (damageItem.search(regexRadius) > 0) {
-      const radius = damageItem.split(regexRadius)[1];
-      const radiusValue = parseInt(radius.split(/(\d)/)[1]);
-      damageList[i] = damageItem.replace(regexRadius, "");
+    if (damageItem.indexOf("m Radius") !== -1) {
+      const blastValue = damageList[i - 1];
+      assert(typeof blastValue === "number");
+      damageList.splice(i - 1, 3);
       blastType = {
         type: blastTypeEnum.Radius,
-        value: radiusValue,
+        value: blastValue,
       };
-    } else if (damageItem.search(regexReducing) > 0) {
-      const reducing = damageItem.split(regexReducing)[1];
-      const reducingValue = parseInt(reducing.split(/(\d)/)[1]);
-      damageList[i] = damageItem.replace(regexReducing, "");
+    } else if (damageItem.indexOf("m") !== -1) {
+      const blastValue = damageList[i - 2];
+      if (damageList[i - 1] !== "/") {
+        break;
+      }
+      assert(typeof blastValue === "number");
+      damageList.splice(i - 1, 2);
       blastType = {
         type: blastTypeEnum.Reducing,
-        value: reducingValue,
+        value: blastValue,
       };
+    } else {
+      continue;
     }
     return { damageList: damageList, blastType: blastType };
   }
   return { damageList: damageList, blast: undefined };
+};
+
+const getAmmoType = function (capacityList: Array<string | number>): {
+  ammunition: {
+    capacity: Array<number | string>;
+    numberOfAmmunitionHolders: number | undefined;
+    reloadMethod: reloadMethodEnum;
+  };
+  reloadAtEndOfString: boolean;
+} {
+  const xmlReloadList = [
+    "(b)",
+    "(c)",
+    "(d)",
+    "(ml)",
+    "(m)",
+    "(cy)",
+    "(belt)",
+    "(tank)",
+    "External Source",
+  ];
+  let reloadMethod: reloadMethodEnum = reloadMethodEnum.None;
+  let reloadAtEndOfString: boolean = false;
+  for (const replaceString of xmlReloadList) {
+    for (let i = 0; i < capacityList.length; i++) {
+      const ammoItem = capacityList[i];
+      if (typeof ammoItem === "number" || typeof ammoItem === "object") {
+        continue;
+      }
+      if (ammoItem.indexOf(replaceString) !== -1) {
+        reloadAtEndOfString =
+          ammoItem.indexOf(replaceString) === ammoItem.length - 1;
+        capacityList = removeStringFromArray(
+          ammoItem,
+          replaceString,
+          capacityList,
+          i
+        );
+        if (replaceString === "(b)")
+          reloadMethod = reloadMethodEnum.BreakAction;
+        else if (replaceString === "(c)") reloadMethod = reloadMethodEnum.Clip;
+        else if (replaceString === "(d)") reloadMethod = reloadMethodEnum.Drum;
+        else if (replaceString === "(ml)")
+          reloadMethod = reloadMethodEnum.MuzzleLoader;
+        else if (replaceString === "(m)")
+          reloadMethod = reloadMethodEnum.InternalMagazine;
+        else if (replaceString === "(cy)")
+          reloadMethod = reloadMethodEnum.Cylinder;
+        else if (replaceString === "(belt)")
+          reloadMethod = reloadMethodEnum.BeltFed;
+        else if (replaceString === "(tank)")
+          reloadMethod = reloadMethodEnum.Tank;
+        else if (replaceString === "External Source")
+          reloadMethod = reloadMethodEnum.External;
+      }
+    }
+  }
+
+  return {
+    ammunition: {
+      capacity: capacityList,
+      numberOfAmmunitionHolders: undefined,
+      reloadMethod: reloadMethod,
+    },
+    reloadAtEndOfString: reloadAtEndOfString,
+  };
+};
+
+const getNumberOfAmmunitionHolders = function (
+  capacityList: {
+    capacity: Array<number | string>;
+    numberOfAmmunitionHolders: number | undefined;
+    reloadMethod: reloadMethodEnum;
+  },
+  reloadAtEndOfString: boolean
+) {
+  const conversionInfo = convertSpecial(capacityList.capacity, "x");
+  const numberList = conversionInfo.propertyList.map((item) => {
+    assert(typeof item === "number");
+    return item;
+  });
+  let ammunition: {
+    capacity: number | undefined;
+    numberOfAmmunitionHolders: number | undefined;
+    reloadMethod: reloadMethodEnum;
+  };
+  // check if there are 2 ammunition holders
+  if (conversionInfo.insertLocationList.length > 0) {
+    assert(conversionInfo.insertLocationList.length == 1);
+    assert(numberList.length == 2);
+    const capacity = reloadAtEndOfString ? numberList[-1] : numberList[0];
+    ammunition = {
+      capacity: capacity,
+      numberOfAmmunitionHolders: 2,
+      reloadMethod: capacityList.reloadMethod,
+    };
+  } else {
+    assert(numberList.length <= 1);
+    if (numberList.length == 1) {
+      ammunition = {
+        capacity: numberList[0],
+        numberOfAmmunitionHolders: 1,
+        reloadMethod: capacityList.reloadMethod,
+      };
+    } else {
+      ammunition = {
+        capacity: undefined,
+        numberOfAmmunitionHolders: undefined,
+        reloadMethod: capacityList.reloadMethod,
+      };
+    }
+  }
+  return ammunition;
+};
+
+const getAvailabilityRestriction = function (
+  availabilityList: Array<
+    | string
+    | number
+    | { option: availabilityTypeEnum }
+    | { operator: mathOperatorEnum }
+  >,
+  restrictionType: restrictionEnum,
+  replaceString: string
+) {
+  if (restrictionType !== restrictionEnum.Legal)
+    return {
+      availabilityList: availabilityList,
+      restrictionType: restrictionType,
+    };
+  for (let i = 0; i < availabilityList.length; i++) {
+    const availabilityItem = availabilityList[i];
+    if (
+      typeof availabilityItem === "number" ||
+      typeof availabilityItem === "object"
+    ) {
+      continue;
+    }
+    if (availabilityItem.indexOf(replaceString) !== -1) {
+      availabilityList = removeStringFromArray(
+        availabilityItem,
+        replaceString,
+        availabilityList,
+        i
+      );
+      if (replaceString === "R")
+        return {
+          availabilityList: availabilityList,
+          restrictionType: restrictionEnum.Restricted,
+        };
+      else if (replaceString === "F")
+        return {
+          availabilityList: availabilityList,
+          restrictionType: restrictionEnum.Forbidden,
+        };
+    }
+  }
+  return {
+    availabilityList: availabilityList,
+    restrictionType: restrictionEnum.Legal,
+  };
 };
 
 const getSubnumbers = function (
@@ -428,29 +975,23 @@ const getSubnumbers = function (
   return damageList;
 };
 
-const removeUnneededCharacters = function (
-  damageList: Array<
-    | string
-    | number
-    | { option: damageCalculationOptionEnum }
-    | { operator: mathOperatorEnum }
-    | DamageSubtypeType
-  >
+const removeUnneededCharacters = function <Type>(
+  propertyList: Array<string | Type>
 ) {
-  for (let i = 0; i < damageList.length; i++) {
-    const damageItem = damageList[i];
+  for (let i = 0; i < propertyList.length; i++) {
+    const damageItem = propertyList[i];
     if (typeof damageItem === "string") {
       if (damageItem.indexOf("(") !== -1) {
-        damageList = removeStringFromArray(damageItem, "(", damageList, i);
+        propertyList = removeStringFromArray(damageItem, "(", propertyList, i);
         i--;
       } else if (damageItem.indexOf(")") !== -1) {
-        damageList = removeStringFromArray(damageItem, ")", damageList, i);
+        propertyList = removeStringFromArray(damageItem, ")", propertyList, i);
         i--;
       }
     }
   }
   // remove whitespace
-  return damageList.filter((damageItem) => {
+  return propertyList.filter((damageItem) => {
     if (typeof damageItem !== "string") return true;
     return damageItem.trim() != "";
   });
@@ -612,21 +1153,25 @@ export const getWeaponTypeInformation = function (weapon: WeaponXmlType) {
   return { weaponType, weaponSubtype };
 };
 
-const convertCharacter = function (
+const parseCharacter = function (
   character: string,
-  digitArray: Array<{ operator: mathOperatorEnum } | number | string>
+  digitArray: Array<{ operator: mathOperatorEnum } | number | string>,
+  simpleDivide: boolean
 ) {
-  const lastIndex = digitArray.length - 1;
-  if (!isNaN(parseInt(character))) {
-    // if last character was also a number concat the 2 numbers
-    if (typeof digitArray[lastIndex] === "number") {
-      digitArray[lastIndex] = parseInt(
-        `${digitArray[lastIndex] as number}${character}`
-      );
-    } else {
-      digitArray.push(parseInt(character));
+  const parsedNumber = parseNumber(character, digitArray);
+  digitArray = parsedNumber.digitArray;
+  let lastIndex = digitArray.length - 1;
+  if (digitArray[lastIndex] === "/" && character !== "/") {
+    // restore / if not a divide
+    if (typeof digitArray[lastIndex - 1] !== "number") {
+      digitArray[lastIndex - 1] = `${digitArray[lastIndex - 1] as string}${
+        digitArray[lastIndex] as string
+      }`;
+      digitArray.splice(lastIndex, 1);
+      lastIndex = digitArray.length - 1;
     }
-  } else {
+  }
+  if (!parsedNumber.numberFound) {
     if (
       charcterIsOperator(character) &&
       charcterIsOperator(digitArray[lastIndex])
@@ -639,16 +1184,19 @@ const convertCharacter = function (
       digitArray.push({ operator: mathOperatorEnum.Subtract });
     } else if (character === mathOperatorEnum.Multiply) {
       digitArray.push({ operator: mathOperatorEnum.Multiply });
-    } else if (character === ">") {
-      digitArray.push(">");
+    } else if (`${digitArray[lastIndex] as string}${character}` === "//") {
+      digitArray[lastIndex] = { operator: mathOperatorEnum.Divide };
+    } else if (character === "/") {
+      if (simpleDivide) digitArray.push({ operator: mathOperatorEnum.Divide });
+      else digitArray.push("/");
     } else if (
       `${digitArray[lastIndex] as string}${character}` ===
       mathOperatorEnum.GreaterThan
     ) {
       digitArray[lastIndex] = { operator: mathOperatorEnum.GreaterThan };
-    }
-    // no divide in weapons
-    else {
+    } else if (character === ">") {
+      digitArray.push(">");
+    } else {
       if (
         charcterIsOperator(
           digitArray[lastIndex] as
@@ -660,15 +1208,54 @@ const convertCharacter = function (
       ) {
         digitArray.push(character);
       } else {
-        if (lastIndex >= 0)
+        if (lastIndex >= 0) {
           digitArray[lastIndex] = `${
             digitArray[lastIndex] as string
           }${character}`;
-        else digitArray.push(character);
+        } else {
+          digitArray.push(character);
+        }
       }
     }
   }
   return digitArray;
+};
+
+const parseNumber = function <Type>(
+  character: string,
+  digitArray: Array<Type | number | string>
+) {
+  let numberFound = true;
+  const lastIndex = digitArray.length - 1;
+  if (!isNaN(parseInt(character))) {
+    // if last character was also a number concat the 2 numbers
+    if (typeof digitArray[lastIndex] === "number") {
+      digitArray[lastIndex] = parseFloat(
+        `${digitArray[lastIndex] as number}${character}`
+      );
+    } else if (digitArray[lastIndex] === ".") {
+      digitArray[lastIndex - 1] = parseFloat(
+        `${digitArray[lastIndex - 1] as number}.${character}`
+      );
+      digitArray.splice(lastIndex, 1);
+    } else {
+      digitArray.push(parseInt(character));
+    }
+  } else if (character === ".") {
+    assert(
+      typeof digitArray[lastIndex] === "number",
+      "Last character was not a number, cannot be float."
+    );
+    digitArray.push(".");
+  } else if (digitArray[lastIndex] === ".") {
+    assert(
+      false,
+      "Last character was not a decimal point, this is not a character."
+    );
+  } else {
+    numberFound = false;
+  }
+  return { digitArray, numberFound };
 };
 
 const charcterIsOperator = function (
@@ -689,31 +1276,25 @@ const charcterIsOperator = function (
   }
 };
 
-const removeStringFromArray = function (
-  damageItem: string,
-  replaceString: string,
-  damageList: (
-    | string
-    | number
-    | { option: damageCalculationOptionEnum }
-    | { operator: mathOperatorEnum }
-    | DamageSubtypeType
-  )[],
+const removeStringFromArray = function <Type>(
+  currentItem: string,
+  removeString: string,
+  itemList: Array<Type | string>,
   i: number
-) {
-  damageItem = damageItem.trim();
-  const index = damageItem.indexOf(replaceString);
-  const length = replaceString.length;
-  if (damageItem.length > 1) {
+): Array<Type | string> {
+  currentItem = currentItem.trim();
+  const index = currentItem.indexOf(removeString);
+  const length = removeString.length;
+  if (currentItem.length > 1) {
     if (index > 0) {
-      damageList[i] = damageItem.slice(0, index);
+      itemList[i] = currentItem.slice(0, index);
     } else {
-      damageList.splice(i, 1);
+      itemList.splice(i, 1);
     }
   } else {
-    damageList.splice(i, 1);
+    itemList.splice(i, 1);
   }
-  if (damageItem.slice(index + length).length > 0)
-    damageList.push(damageItem.slice(index + length));
-  return damageList;
+  if (currentItem.slice(index + length).length > 0)
+    itemList.push(currentItem.slice(index + length));
+  return itemList;
 };

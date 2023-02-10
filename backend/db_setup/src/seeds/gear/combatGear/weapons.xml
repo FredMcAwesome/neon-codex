@@ -15941,55 +15941,6 @@
       <useskill>Gunnery</useskill>
     </weapon>
     <weapon>
-      <id>7fffffff-a7c4-4acf-9193-7fffffff0537</id>
-      <name>Krime Ripper</name>
-      <category>Light Machine Guns</category>
-      <type>Ranged</type>
-      <conceal>10</conceal>
-      <accuracy>5</accuracy>
-      <reach>0</reach>
-      <damage>10Px2</damage>
-      <ap>-2</ap>
-      <mode>FA</mode>
-      <rc>-5</rc>
-      <ammo>100(belt)x2</ammo>
-      <avail>20F</avail>
-      <cost>10000</cost>
-      <source>KK</source>
-      <page>20</page>
-      <accessories>
-        <accessory>
-          <name>Smart Firing Platform</name>
-          <gears>
-            <usegear>
-              <name>Clearsight Autosoft</name>
-              <category>Autosofts</category>
-              <rating>1</rating>
-            </usegear>
-            <usegear>
-              <name select="Krime Ripper">[Weapon] Targeting Autosoft</name>
-              <category>Autosofts</category>
-              <rating>2</rating>
-            </usegear>
-            <usegear>
-              <name>Krime Ripper Sensor Array</name>
-              <category>Sensors</category>
-              <rating>3</rating>
-            </usegear>
-          </gears>
-        </accessory>
-      </accessories>
-      <accessorymounts>
-        <mount>Stock</mount>
-        <mount>Side</mount>
-        <mount>Barrel</mount>
-        <mount>Top</mount>
-        <mount>Under</mount>
-      </accessorymounts>
-      <range>Light Machine Guns</range>
-      <spec>Machine Guns</spec>
-    </weapon>
-    <weapon>
       <id>7fffffff-a8d1-4932-92db-7fffffff48e6</id>
       <name>Krime Carpet</name>
       <category>Grenade Launchers</category>

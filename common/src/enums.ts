@@ -161,9 +161,9 @@ export enum damageTypeEnum {
 }
 
 export enum damageAnnotationEnum {
-  Flechette,
-  Electrical,
-  Fire,
+  Flechette = "Flechette",
+  Electrical = "Electrical",
+  Fire = "Fire",
 }
 
 export enum damageCalculationOptionEnum {
@@ -173,30 +173,46 @@ export enum damageCalculationOptionEnum {
   Missile = "Missile",
   PepperPunch = "Pepper Punch",
   Magic = "Magic",
+  Chemical = "Chemical",
+  Rating = "Rating",
+  Torpedo = "Torpedo",
+  Narcoject = "Narcoject",
+}
+
+export enum armourPenetrationEnum {
+  Rating = "Rating",
+  Grenade = "Grenade",
+  DrugToxin = "Drug/Toxin",
+  Missile = "Missile",
+  Special = "Special",
+  Magic = "Magic",
 }
 
 export enum restrictionEnum {
-  Legal,
-  Restricted,
-  Forbidden,
+  Legal = "Legal",
+  Restricted = "Restricted",
+  Forbidden = "Forbidden",
 }
 
 export enum firearmModeEnum {
-  SingleShot,
-  SemiAutomatic,
-  BurstFire,
-  FullAutomatic,
+  SingleShot = "Single Shot",
+  SemiAutomatic = "Semi Automatic",
+  BurstFire = "Burst Fire",
+  FullAutomatic = "Full Automatic",
 }
 
 export enum reloadMethodEnum {
-  BreakAction,
-  Clip,
-  Drum,
-  MuzzleLoader,
-  InternalMagazine,
-  Cylinder,
-  BeltFed,
-  Special,
+  BreakAction = "Break Action",
+  Clip = "Clip",
+  Drum = "Drum",
+  MuzzleLoader = "Muzzle Loader",
+  InternalMagazine = "Internal Magazine",
+  Cylinder = "Cylinder",
+  BeltFed = "Belt Fed",
+  Tank = "Tank",
+  External = "External",
+  Special = "Special",
+  None = "N/A",
 }
 
 export enum firearmAccessoryMountLocationEnum {
@@ -213,6 +229,10 @@ export enum ammunitionTypeEnum {
   Grenades,
   RocketsMissiles,
   ProjectileAmmo,
+}
+
+export enum availabilityTypeEnum {
+  Rating = "Rating",
 }
 
 export enum blastTypeEnum {

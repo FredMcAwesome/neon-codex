@@ -1,7 +1,4 @@
-import {
-  augmentationClassificationEnum,
-  weaponTypeEnum,
-} from "@shadowrun/common/src/enums.js";
+import { augmentationClassificationEnum } from "@shadowrun/common/src/enums.js";
 import { XMLParser } from "fast-xml-parser";
 import fs from "fs";
 import path from "path";
@@ -10,6 +7,11 @@ import {
   getWeaponTypeInformation,
   convertAccuracy,
   convertDamage,
+  convertArmourPenetration,
+  convertMode,
+  convertRecoilCompensation,
+  convertAmmo,
+  convertAvailability,
 } from "./ParserHelper.js";
 import {
   WeaponXmlType,
@@ -40,6 +42,9 @@ else {
 
 if (weaponListParsed.success) {
   const weaponList = weaponListParsed.data;
+  // .filter((weapon) => {
+  //   return weapon.type === weaponTypeEnum.Melee;
+  // })
   const englishWeaponList: WeaponListXmlType = weaponList.filter((weapon) => {
     let found = false;
     switch (weapon.source) {
@@ -113,13 +118,9 @@ if (weaponListParsed.success) {
     );
   });
   // const weaponListConverted: Array<RequiredEntityData<MeleeWeapons>> =
-  const weaponListConverted = weaponListNoAmmo
-    .filter((weapon) => {
-      return weapon.type === weaponTypeEnum.Melee;
-    })
-    .map((weapon: WeaponXmlType) => {
-      return convertWeapon(weapon);
-    });
+  const weaponListConverted = weaponListNoAmmo.map((weapon: WeaponXmlType) => {
+    return convertWeapon(weapon);
+  });
   console.log(weaponListConverted);
 }
 
@@ -143,15 +144,25 @@ function convertWeapon(weapon: WeaponXmlType) {
       : [weapon.accessories.accessory];
   }
 
+  console.log(weapon.name);
   const accuracy = convertAccuracy(weapon.accuracy, weapon.name);
   const damage = convertDamage(weapon.damage, weapon.name);
-  // const armourPenetration = convertArmourPenetration();
+  const armourPenetration = convertArmourPenetration(weapon.ap, weapon.name);
+  const mode = convertMode(weapon.mode, weapon.name);
+  const recoilCompensation = convertRecoilCompensation(weapon.rc);
+  const ammo = convertAmmo(weapon.ammo, weapon.name);
+  const availability = convertAvailability(weapon.avail, weapon.name);
   return {
     name: weapon.name,
     type: weaponType,
     subtype: weaponSubtype,
     concealability: weapon.conceal,
     accuracy: accuracy,
+    armourPenetration: armourPenetration,
+    mode: mode,
+    recoilCompensation: recoilCompensation,
+    ammunition: ammo,
+    availability: availability,
     reach: weapon.reach,
     damage: damage,
     relatedSkill: weapon.useskill,

@@ -14,12 +14,11 @@ import {
   accuracyTypeEnum,
   mathOperatorEnum,
   damageCalculationOptionEnum,
+  armourPenetrationEnum,
 } from "../enums.js";
 import {
   AvailabilitySchema,
-  BaseOrSpecial,
   CostSchema,
-  GearCalculation,
   RatingSchema,
 } from "./commonSchema.js";
 
@@ -56,12 +55,14 @@ export const DamageAmountSchema = zod.array(
   ])
 );
 export type DamageAmountType = zod.infer<typeof DamageAmountSchema>;
-export const DamageSchema = zod.object({
-  damageAmount: DamageAmountSchema,
-  type: zod.nativeEnum(damageTypeEnum),
-  annotation: zod.optional(zod.nativeEnum(damageAnnotationEnum)),
-  blast: zod.optional(BlastSchema),
-});
+export const DamageSchema = zod.array(
+  zod.object({
+    damageAmount: DamageAmountSchema,
+    type: zod.nativeEnum(damageTypeEnum),
+    annotation: zod.optional(zod.nativeEnum(damageAnnotationEnum)),
+    blast: zod.optional(BlastSchema),
+  })
+);
 export type DamageType = zod.infer<typeof DamageSchema>;
 
 export const RecoilCompensationSchema = zod.object({
@@ -85,10 +86,9 @@ export const FirearmOptionsSchema = zod.object({
   ammo: zod.array(FirearmAmmoSchema),
 });
 
-export const ArmourPenetrationSchema = zod.object({
-  base: BaseOrSpecial,
-  specialCalculation: GearCalculation,
-});
+export const ArmourPenetrationSchema = zod.array(
+  zod.object({ option: zod.nativeEnum(armourPenetrationEnum) })
+);
 export type ArmourPenetrationType = zod.infer<typeof ArmourPenetrationSchema>;
 
 const typeInformation = zod.discriminatedUnion("type", [
