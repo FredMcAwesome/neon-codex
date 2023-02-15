@@ -14,20 +14,25 @@ import {
   armourPenetrationEnum,
   availabilityTypeEnum,
   blastTypeEnum,
+  costTypeEnum,
   damageAnnotationEnum,
   damageCalculationOptionEnum,
   damageTypeEnum,
   firearmModeEnum,
+  gearXmlCategoryEnum,
   reloadMethodEnum,
   restrictionEnum,
 } from "@shadowrun/common/src/enums.js";
 import assert from "assert";
 import {
+  MountXmlType,
+  AccessoryType,
+  AccessoryXmlType,
   AccuracyXmlType,
   DamageXmlType,
   weaponSubtypeXmlEnum,
   WeaponXmlType,
-} from "./ParserSchema.js";
+} from "./WeaponParserSchema.js";
 import {
   DamageAmountType,
   DamageSubtypeType,
@@ -563,6 +568,301 @@ export const convertAvailability = function (
   }
 };
 
+export const convertCost = function (cost: number | string, name: string) {
+  if (typeof cost === "number") {
+    return [cost];
+  } else {
+    let costList: Array<
+      | { operator: mathOperatorEnum }
+      | string
+      | number
+      | { option: costTypeEnum }
+    > = [];
+    let genericList: Array<{ operator: mathOperatorEnum } | string | number> =
+      [];
+    Array.from(cost).forEach((character) => {
+      genericList = parseCharacter(character, genericList, false);
+    });
+
+    const conversionInfo = convertSpecial(genericList, "{Rating}");
+    costList = conversionInfo.propertyList;
+    let locationCounter = 0;
+    conversionInfo.insertLocationList.forEach((insertLocation) => {
+      const replaceString = insertLocation.value;
+      let option: costTypeEnum = costTypeEnum.Rating;
+      if (replaceString === "{Rating}") {
+        option = costTypeEnum.Rating;
+      } else {
+        assert("Special string not replaced!");
+      }
+      if (costList.length > 1) {
+        costList.splice(insertLocation.location + locationCounter, 0, {
+          option: option,
+        });
+      } else {
+        costList[0] = {
+          option: option,
+        };
+      }
+      locationCounter++;
+    });
+
+    costList = removeUnneededCharacters(costList);
+
+    // confirm we converted all strings into valid types
+    costList.forEach((costItem, index) => {
+      let check = false;
+      if (typeof costItem === "number") {
+        check = true;
+      } else {
+        Object.values(costTypeEnum).forEach((option) => {
+          if (equal(costItem, { option: option })) check = true;
+        });
+        Object.values(mathOperatorEnum).forEach((operator) => {
+          if (equal(costItem, { operator: operator })) check = true;
+        });
+      }
+      console.log(costList);
+      assert(
+        check,
+        `Weapon name: ${name}, list length: ${costList.length}, failed item: ${costItem} at index: ${index}`
+      );
+    });
+    return costList;
+  }
+};
+
+export const convertAccessories = function (
+  xmlAccessoriesUndefined:
+    | { accessory: Array<AccessoryXmlType> | AccessoryXmlType }
+    | undefined,
+  name: string
+) {
+  if (!xmlAccessoriesUndefined) {
+    return undefined;
+  }
+
+  const xmlAccessories: Array<AccessoryXmlType> = Array.isArray(
+    xmlAccessoriesUndefined.accessory
+  )
+    ? xmlAccessoriesUndefined.accessory
+    : [xmlAccessoriesUndefined.accessory];
+
+  return xmlAccessories.map((xmlAccessory) => {
+    let mount;
+    if (xmlAccessory.mount)
+      mount = Array.isArray(xmlAccessory.mount)
+        ? xmlAccessory.mount
+        : [xmlAccessory.mount];
+    const accessory: AccessoryType = {
+      name: xmlAccessory.name,
+      mount: mount,
+      rating: xmlAccessory.rating,
+      gears: undefined,
+    };
+    if (xmlAccessory.gears) {
+      const xmlUseGear = Array.isArray(xmlAccessory.gears.usegear)
+        ? xmlAccessory.gears.usegear
+        : [xmlAccessory.gears.usegear];
+      accessory.gears = xmlUseGear.map((useGear) => {
+        let category;
+        if (useGear.category) {
+          category = convertGearCategory(
+            useGear.category,
+            `weapon.name = ${name}`
+          );
+        }
+        return {
+          name: useGear.name,
+          rating: useGear.rating,
+          category: category,
+        };
+      });
+    }
+    return accessory;
+  });
+};
+
+export const convertAccessoryMounts = function (
+  xmlAccessoryMountUndefined:
+    | { mount: Array<MountXmlType> | MountXmlType }
+    | undefined
+) {
+  if (!xmlAccessoryMountUndefined) {
+    return undefined;
+  }
+
+  return Array.isArray(xmlAccessoryMountUndefined.mount)
+    ? xmlAccessoryMountUndefined.mount
+    : [xmlAccessoryMountUndefined.mount];
+};
+
+export const convertAllowGear = function (
+  xmlAllowGear: { gearcategory: string | Array<string> } | undefined,
+  name: string
+) {
+  if (!xmlAllowGear) {
+    return undefined;
+  }
+  const gearCategories = Array.isArray(xmlAllowGear.gearcategory)
+    ? xmlAllowGear.gearcategory
+    : [xmlAllowGear.gearcategory];
+  return gearCategories.map((gearCategory) =>
+    convertGearCategory(gearCategory, `weapon.name: ${name}`)
+  );
+};
+
+export const convertGearCategory = function (
+  category: string,
+  otherMessage: string
+) {
+  switch (category) {
+    case "Alchemical Tools":
+      return { option: gearXmlCategoryEnum.AlchemicalTools };
+    case "Ammunition":
+      return { option: gearXmlCategoryEnum.Ammunition };
+    case "Armor Enhancements":
+      return { option: gearXmlCategoryEnum.ArmorEnhancements };
+    case "Audio Devices":
+      return { option: gearXmlCategoryEnum.AudioDevices };
+    case "Audio Enhancements":
+      return { option: gearXmlCategoryEnum.AudioEnhancements };
+    case "Autosofts":
+      return { option: gearXmlCategoryEnum.Autosofts };
+    case "Biotech":
+      return { option: gearXmlCategoryEnum.Biotech };
+    case "Breaking and Entering Gear":
+      return { option: gearXmlCategoryEnum.BreakingAndEnteringGear };
+    case "BTLs":
+      return { option: gearXmlCategoryEnum.BTLs };
+    case "Chemicals":
+      return { option: gearXmlCategoryEnum.Chemicals };
+    case "Commlinks":
+      return { option: gearXmlCategoryEnum.Commlinks };
+    case "Commlink/Cyberdeck Form Factors":
+      return { option: gearXmlCategoryEnum.Commlink_CyberdeckFormFactors };
+    case "Commlink Accessories":
+      return { option: gearXmlCategoryEnum.CommlinkAccessories };
+    case "Commlink Apps":
+      return { option: gearXmlCategoryEnum.CommlinkApps };
+    case "Common Programs":
+      return { option: gearXmlCategoryEnum.CommonPrograms };
+    case "Communications and Countermeasures":
+      return { option: gearXmlCategoryEnum.CommunicationsAndCountermeasures };
+    case "Contracts/Upkeep":
+      return { option: gearXmlCategoryEnum.Contracts_Upkeep };
+    case "Critter Gear":
+      return { option: gearXmlCategoryEnum.CritterGear };
+    case "Currency":
+      return { option: gearXmlCategoryEnum.Currency };
+    case "Custom":
+      return { option: gearXmlCategoryEnum.Custom };
+    case "Custom Cyberdeck Attributes":
+      return { option: gearXmlCategoryEnum.CustomCyberdeckAttributes };
+    case "Custom Drug":
+      return { option: gearXmlCategoryEnum.CustomDrug };
+    case "Cyberdeck Modules":
+      return { option: gearXmlCategoryEnum.CyberdeckModules };
+    case "Cyberdecks":
+      return { option: gearXmlCategoryEnum.Cyberdecks };
+    case "Cyberterminals":
+      return { option: gearXmlCategoryEnum.Cyberterminals };
+    case "Disguises":
+      return { option: gearXmlCategoryEnum.Disguises };
+    case "Drugs":
+      return { option: gearXmlCategoryEnum.Drugs };
+    case "Electronics Accessories":
+      return { option: gearXmlCategoryEnum.ElectronicsAccessories };
+    case "Electronic Modification":
+      return { option: gearXmlCategoryEnum.ElectronicModification };
+    case "Electronic Parts":
+      return { option: gearXmlCategoryEnum.ElectronicParts };
+    case "Entertainment":
+      return { option: gearXmlCategoryEnum.Entertainment };
+    case "Explosives":
+      return { option: gearXmlCategoryEnum.Explosives };
+    case "Extraction Devices":
+      return { option: gearXmlCategoryEnum.ExtractionDevices };
+    case "Foci":
+      return { option: gearXmlCategoryEnum.Foci };
+    case "Food":
+      return { option: gearXmlCategoryEnum.Food };
+    case "Formulae":
+      return { option: gearXmlCategoryEnum.Formulae };
+    case "Grapple Gun":
+      return { option: gearXmlCategoryEnum.GrappleGun };
+    case "Hacking Programs":
+      return { option: gearXmlCategoryEnum.HackingPrograms };
+    case "Housewares":
+      return { option: gearXmlCategoryEnum.Housewares };
+    case "ID/Credsticks":
+      return { option: gearXmlCategoryEnum.ID_Credsticks };
+    case "Magical Compounds":
+      return { option: gearXmlCategoryEnum.MagicalCompounds };
+    case "Magical Supplies":
+      return { option: gearXmlCategoryEnum.MagicalSupplies };
+    case "Metatype-Specific":
+      return { option: gearXmlCategoryEnum.MetatypeSpecific };
+    case "Miscellany":
+      return { option: gearXmlCategoryEnum.Miscellany };
+    case "Musical Instruments":
+      return { option: gearXmlCategoryEnum.MusicalInstruments };
+    case "Nanogear":
+      return { option: gearXmlCategoryEnum.Nanogear };
+    case "Paydata":
+      return { option: gearXmlCategoryEnum.Paydata };
+    case "PI-Tac":
+      return { option: gearXmlCategoryEnum.PiTac };
+    case "Printing":
+      return { option: gearXmlCategoryEnum.Printing };
+    case "Reporter Gear":
+      return { option: gearXmlCategoryEnum.ReporterGear };
+    case "RFID Tags":
+      return { option: gearXmlCategoryEnum.RFIDTags };
+    case "Rigger Command Consoles":
+      return { option: gearXmlCategoryEnum.RiggerCommandConsoles };
+    case "Security Devices":
+      return { option: gearXmlCategoryEnum.SecurityDevices };
+    case "Sensors":
+      return { option: gearXmlCategoryEnum.Sensors };
+    case "Sensor Functions":
+      return { option: gearXmlCategoryEnum.SensorFunctions };
+    case "Sensor Housings":
+      return { option: gearXmlCategoryEnum.SensorHousings };
+    case "Services":
+      return { option: gearXmlCategoryEnum.Services };
+    case "Skillsofts":
+      return { option: gearXmlCategoryEnum.Skillsofts };
+    case "Software":
+      return { option: gearXmlCategoryEnum.Software };
+    case "Software Tweaks":
+      return { option: gearXmlCategoryEnum.SoftwareTweaks };
+    case "Survival Gear":
+      return { option: gearXmlCategoryEnum.SurvivalGear };
+    case "Tailored Perfume/Cologne":
+      return { option: gearXmlCategoryEnum.TailoredPerfume_Cologne };
+    case "Tools":
+      return { option: gearXmlCategoryEnum.Tools };
+    case "Tools of the Trade":
+      return { option: gearXmlCategoryEnum.ToolsOfTheTrade };
+    case "Toxins":
+      return { option: gearXmlCategoryEnum.Toxins };
+    case "Vision Devices":
+      return { option: gearXmlCategoryEnum.VisionDevices };
+    case "Vision Enhancements":
+      return { option: gearXmlCategoryEnum.VisionEnhancements };
+    case "Matrix Accessories":
+      return { option: gearXmlCategoryEnum.MatrixAccessories };
+    case "Booster Chips":
+      return { option: gearXmlCategoryEnum.BoosterChips };
+    case "Appearance Modification":
+      return { option: gearXmlCategoryEnum.AppearanceModification };
+    case "Drug Grades":
+      return { option: gearXmlCategoryEnum.DrugGrades };
+  }
+  assert(false, `Category not found ${category}, ${otherMessage}`);
+};
+
 export const convertSpecial = function <Type>(
   propertyList: Array<Type | string | number>,
   replaceString: string
@@ -1069,7 +1369,7 @@ export const getWeaponTypeInformation = function (weapon: WeaponXmlType) {
       break;
     case weaponSubtypeXmlEnum.LaserWeapons:
       weaponType = weaponTypeEnum.Firearm;
-      weaponSubtype = firearmWeaponTypeEnum.Laser;
+      weaponSubtype = firearmWeaponTypeEnum.Lasers;
       break;
     case weaponSubtypeXmlEnum.LightPistols:
       weaponType = weaponTypeEnum.Firearm;
@@ -1105,7 +1405,7 @@ export const getWeaponTypeInformation = function (weapon: WeaponXmlType) {
       break;
     case weaponSubtypeXmlEnum.UnderbarrelWeapons:
       weaponType = weaponTypeEnum.Firearm;
-      weaponSubtype = firearmWeaponTypeEnum.WeaponAttachment;
+      weaponSubtype = firearmWeaponTypeEnum.WeaponAttachments;
       break;
     case weaponSubtypeXmlEnum.Cyberweapon:
       if (weapon.type === "Melee") {
@@ -1118,7 +1418,7 @@ export const getWeaponTypeInformation = function (weapon: WeaponXmlType) {
       break;
     case weaponSubtypeXmlEnum.BioWeapon:
       weaponType = weaponTypeEnum.Firearm;
-      weaponSubtype = firearmWeaponTypeEnum.BioWeapon;
+      weaponSubtype = firearmWeaponTypeEnum.BioWeapons;
       break;
     case weaponSubtypeXmlEnum.Carbines:
       weaponType = weaponTypeEnum.Firearm;

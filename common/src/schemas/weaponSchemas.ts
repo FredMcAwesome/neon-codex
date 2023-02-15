@@ -15,12 +15,22 @@ import {
   mathOperatorEnum,
   damageCalculationOptionEnum,
   armourPenetrationEnum,
+  genericCalculationEnum,
 } from "../enums.js";
 import {
   AvailabilitySchema,
   CostSchema,
   RatingSchema,
 } from "./commonSchema.js";
+
+export const GenericCalculationSchema = zod.array(
+  zod.union([
+    zod.number(),
+    zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }),
+    zod.object({ option: zod.nativeEnum(genericCalculationEnum) }),
+  ])
+);
+export type GenericCalculationType = zod.infer<typeof GenericCalculationSchema>;
 
 export const AccuracySchema = zod.array(
   zod.union([

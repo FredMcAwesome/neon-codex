@@ -12,19 +12,22 @@ import {
   convertRecoilCompensation,
   convertAmmo,
   convertAvailability,
-} from "./ParserHelper.js";
+  convertCost,
+  convertAccessories,
+  convertAccessoryMounts,
+  convertAllowGear,
+} from "./WeaponParserHelper.js";
 import {
   WeaponXmlType,
-  AccessoryXmlType,
   WeaponListXmlSchema,
   WeaponListXmlType,
   sourceBookXmlEnum,
   weaponSubtypeXmlEnum,
-} from "./ParserSchema.js";
+} from "./WeaponParserSchema.js";
 
 const currentPath = import.meta.url;
 const xml_string = fs.readFileSync(
-  fileURLToPath(path.dirname(currentPath) + "/weapons.xml"),
+  fileURLToPath(path.dirname(currentPath) + "../../xmls/weapons.xml"),
   "utf8"
 );
 const parser = new XMLParser();
@@ -75,9 +78,13 @@ if (weaponListParsed.success) {
       case sourceBookXmlEnum.StateOfTheArtADL:
       case sourceBookXmlEnum.Schattenhandbuch:
       case sourceBookXmlEnum.Schattenhandbuch2:
+      case sourceBookXmlEnum.Schattenhandbuch3:
       case sourceBookXmlEnum.Hamburg:
       case sourceBookXmlEnum.DatapulsSOTA2080:
       case sourceBookXmlEnum.DatapulsVerschlusssache:
+      case sourceBookXmlEnum.Shadowrun2050:
+      case 2050:
+      case sourceBookXmlEnum.GrimmesErwachen:
         break;
       // Not containing Weapons
       case sourceBookXmlEnum.StreetGrimoireErrata:
@@ -86,15 +93,12 @@ if (weaponListParsed.success) {
       case sourceBookXmlEnum.NothingPersonal:
       case sourceBookXmlEnum.BloodyBusiness:
       case sourceBookXmlEnum.DataTrailsDissonantEchoes:
-      case sourceBookXmlEnum.Schattenhandbuch3:
       case sourceBookXmlEnum.HowlingShadows:
       case sourceBookXmlEnum.TheVladivostokGauntlet:
       case sourceBookXmlEnum.SplinteredState:
       case sourceBookXmlEnum.ShadowsInFocus_Butte:
       case sourceBookXmlEnum.HongKongSourcebook:
       case sourceBookXmlEnum.ShadowsInFocus_Metropole:
-      case sourceBookXmlEnum.Shadowrun2050:
-      case 2050:
       case sourceBookXmlEnum.BookOfTheLost:
       case sourceBookXmlEnum.ForbiddenArcana:
       case sourceBookXmlEnum.ShadowsInFocus_SiouxNation_CountingCoup:
@@ -104,7 +108,6 @@ if (weaponListParsed.success) {
       case sourceBookXmlEnum.ShadowrunMissions0803_10BlockTango:
       case sourceBookXmlEnum.ShadowrunMissions0804_DirtyLaundry:
       case sourceBookXmlEnum.ShadowrunQuickStartRules:
-      case sourceBookXmlEnum.GrimmesErwachen:
       case sourceBookXmlEnum.SprawlWilds:
         break;
     }
@@ -112,9 +115,12 @@ if (weaponListParsed.success) {
   });
   const weaponListNoAmmo = englishWeaponList.filter((weapon) => {
     return (
-      (!weapon.name.toLowerCase().includes("missile") &&
-        !weapon.name.toLowerCase().includes("rocket")) ||
-      weapon.name.toLowerCase().includes("launcher")
+      // don't include grenades, torpedos, missiles, or rockets. These are ammo
+      weapon.category !== weaponSubtypeXmlEnum.Gear ||
+      (!weapon.name.toLowerCase().includes("minigrenade") &&
+        !weapon.name.toLowerCase().includes("torpedo") &&
+        !weapon.name.toLowerCase().includes("missile") &&
+        !weapon.name.toLowerCase().includes("rocket"))
     );
   });
   // const weaponListConverted: Array<RequiredEntityData<MeleeWeapons>> =
@@ -137,12 +143,6 @@ function convertWeapon(weapon: WeaponXmlType) {
 
   const source =
     weapon.source === 2050 ? sourceBookXmlEnum.Shadowrun2050 : weapon.source;
-  let accessories: AccessoryXmlType[] = [];
-  if (weapon.accessories) {
-    accessories = Array.isArray(weapon.accessories.accessory)
-      ? weapon.accessories.accessory
-      : [weapon.accessories.accessory];
-  }
 
   console.log(weapon.name);
   const accuracy = convertAccuracy(weapon.accuracy, weapon.name);
@@ -152,7 +152,34 @@ function convertWeapon(weapon: WeaponXmlType) {
   const recoilCompensation = convertRecoilCompensation(weapon.rc);
   const ammo = convertAmmo(weapon.ammo, weapon.name);
   const availability = convertAvailability(weapon.avail, weapon.name);
+  const cost = convertCost(weapon.cost, weapon.name);
+  const accessories = convertAccessories(weapon.accessories, weapon.name);
+  const accessoryMounts = convertAccessoryMounts(weapon.accessorymounts);
+  const addWeapons = weapon.addweapon
+    ? Array.isArray(weapon.addweapon)
+      ? weapon.addweapon
+      : [weapon.addweapon]
+    : undefined;
+  const allowGear = convertAllowGear(weapon.allowgear, weapon.name);
+  const doubleCostAccessoryMounts = convertAccessoryMounts(
+    weapon.doubledcostaccessorymounts
+  );
+  const mountLocationsOnHostWeapon = weapon.mount
+    ? weapon.extramount
+      ? [weapon.mount, weapon.extramount]
+      : [weapon.mount]
+    : weapon.extramount
+    ? [weapon.extramount]
+    : undefined;
+  const range = weapon.range
+    ? weapon.alternaterange
+      ? [weapon.range, weapon.alternaterange]
+      : [weapon.range]
+    : weapon.alternaterange
+    ? [weapon.alternaterange]
+    : undefined;
   return {
+    id: weapon.id,
     name: weapon.name,
     type: weaponType,
     subtype: weaponSubtype,
@@ -163,10 +190,22 @@ function convertWeapon(weapon: WeaponXmlType) {
     recoilCompensation: recoilCompensation,
     ammunition: ammo,
     availability: availability,
+    cost: cost,
     reach: weapon.reach,
     damage: damage,
     relatedSkill: weapon.useskill,
     accessories: accessories,
+    accessoryMounts: accessoryMounts,
+    doubleCostAccessoryMounts: doubleCostAccessoryMounts,
+    hostWeaponMountsRequired: mountLocationsOnHostWeapon,
+    addWeapons: addWeapons,
+    allowAccessory: weapon.allowaccessory === "True",
+    allowGear: allowGear,
+    ammoCategory: weapon.ammocategory,
+    ammoSlots: weapon.ammoslots,
+    cyberware: weapon.cyberware === "True",
+    hide: weapon.hide === "",
+    range: range,
     source: source,
     page: weapon.page,
     augmentationType: augmentationType,

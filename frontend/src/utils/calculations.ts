@@ -1,6 +1,6 @@
-import { CostType, RatingType } from "@shadowrun/common";
+import { CostType } from "@shadowrun/common";
 
-export const costCalculation = function (cost: CostType, rating?: RatingType) {
+export const costCalculation = function (cost: CostType) {
   if (typeof cost.base === "number") return cost.base;
   else if (cost.specialCalculation) {
     cost.specialCalculation.forEach((element) => {

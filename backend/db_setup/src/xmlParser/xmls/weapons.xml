@@ -12685,8 +12685,9 @@
         <mount>Stock</mount>
         <mount>Top</mount>
         <mount>Under</mount>
+        
       </accessorymounts>
-      <range>Medium Crossbow</range>
+      <range>Medium Crossbows</range>
       <spec>Crossbow</spec>
     </weapon>
     <weapon>

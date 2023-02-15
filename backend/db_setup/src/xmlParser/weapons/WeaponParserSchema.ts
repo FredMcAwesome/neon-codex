@@ -1,11 +1,13 @@
-import { firearmAccessoryMountLocationEnum } from "@shadowrun/common/src/enums.js";
+import {
+  firearmAccessoryMountLocationEnum,
+  gearXmlCategoryEnum,
+} from "@shadowrun/common/src/enums.js";
 import { z as zod } from "zod";
-const AccessoryMountXmlSchema = zod.nativeEnum(
-  firearmAccessoryMountLocationEnum
-);
+const MountXmlSchema = zod.nativeEnum(firearmAccessoryMountLocationEnum);
+export type MountXmlType = zod.infer<typeof MountXmlSchema>;
 const UseGearXmlSchema = zod.object({
   name: zod.string(),
-  category: zod.optional(zod.string()),
+  category: zod.optional(zod.nativeEnum(gearXmlCategoryEnum)),
   rating: zod.optional(zod.number()),
 });
 const GearXmlSchema = zod.object({
@@ -13,14 +15,27 @@ const GearXmlSchema = zod.object({
 });
 const AccessoryXmlSchema = zod.object({
   name: zod.string(),
-  mount: zod.optional(
-    zod.union([zod.array(AccessoryMountXmlSchema), AccessoryMountXmlSchema])
-  ),
+  mount: zod.optional(zod.union([zod.array(MountXmlSchema), MountXmlSchema])),
   rating: zod.optional(zod.number()),
   gears: zod.optional(GearXmlSchema),
 });
-
 export type AccessoryXmlType = zod.infer<typeof AccessoryXmlSchema>;
+
+const UseGearSchema = zod.object({
+  name: zod.string(),
+  category: zod.optional(
+    zod.object({ option: zod.nativeEnum(gearXmlCategoryEnum) })
+  ),
+  rating: zod.optional(zod.number()),
+});
+const AccessorySchema = zod.object({
+  name: zod.string(),
+  mount: zod.optional(zod.array(MountXmlSchema)),
+  rating: zod.optional(zod.number()),
+  gears: zod.optional(zod.array(UseGearSchema)),
+});
+
+export type AccessoryType = zod.infer<typeof AccessorySchema>;
 
 const UnderbarrelXmlSchema = zod.object({
   underbarrel: zod.union([zod.array(zod.string()), zod.string()]),
@@ -141,11 +156,49 @@ export enum weaponSubtypeXmlEnum {
 
 const WeaponSubtypeXmlSchema = zod.nativeEnum(weaponSubtypeXmlEnum);
 
+export enum weaponRangeXmlEnum {
+  Flamethrowers = "Flamethrowers",
+  LightCrossbows = "Light Crossbows",
+  MediumCrossbows = "Medium Crossbows",
+  HeavyCrossbows = "Heavy Crossbows",
+  Tasers = "Tasers",
+  Holduts = "Holdouts",
+  LightPistols = "Light Pistols",
+  HeavyPistols = "Heavy Pistols",
+  MachinePistols = "Machine Pistols",
+  SubmachineGuns = "Submachine Guns",
+  AssaultRifles = "Assault Rifles",
+  SportingRifles = "Sporting Rifles",
+  Shotguns = "Shotguns",
+  ShotgunsFlechette = "Shotguns (flechette)",
+  ShotgunsSlug = "Shotguns (slug)",
+  SniperRifles = "Sniper Rifles",
+  LightMachineguns = "Light Machine Guns",
+  Medium_HeavyMachinegun = "Medium/Heavy Machinegun",
+  GrenadeLaunchers = "Grenade Launchers",
+  MissileLaunchers = "Missile Launchers",
+  UnderbarrelWeapons = "Underbarrel Weapons",
+  StandardGrenade = "Standard Grenade",
+  AerodynamicGrenade = "Aerodynamic Grenade",
+  HarpoonGun = "Harpoon Gun",
+  HarpoonGun_Underwater = "Harpoon Gun (Underwater)",
+  Shuriken = "Shuriken",
+  ThrownKnife = "Thrown Knife",
+}
+
+const WeaponRangeXmlSchema = zod.nativeEnum(weaponRangeXmlEnum);
+
 const AccuracyXmlSchema = zod.union([zod.number(), zod.string()]);
 export type AccuracyXmlType = zod.infer<typeof AccuracyXmlSchema>;
 
 const DamageXmlSchema = zod.union([zod.string(), zod.literal(0)]);
 export type DamageXmlType = zod.infer<typeof DamageXmlSchema>;
+
+const AccessoriesXmlSchema = zod.union([
+  zod.array(AccessoryXmlSchema),
+  AccessoryXmlSchema,
+]);
+export type AccessoriesXmlType = zod.infer<typeof AccessoriesXmlSchema>;
 
 const WeaponXmlSchema = zod
   .object({
@@ -167,60 +220,48 @@ const WeaponXmlSchema = zod
     page: zod.number(),
     accessories: zod.optional(
       zod.object({
-        accessory: zod.union([
-          zod.array(AccessoryXmlSchema),
-          AccessoryXmlSchema,
-        ]),
+        accessory: AccessoriesXmlSchema,
       })
     ),
     accessorymounts: zod.optional(
       zod.object({
-        mount: zod.union([
-          zod.array(AccessoryMountXmlSchema),
-          AccessoryMountXmlSchema,
-        ]),
+        mount: zod.union([zod.array(MountXmlSchema), MountXmlSchema]),
       })
     ),
     addweapon: zod.optional(zod.union([zod.array(zod.string()), zod.string()])),
-    allowaccessory: zod.optional(zod.string()),
+    allowaccessory: zod.optional(
+      zod.union([zod.literal("True"), zod.literal("False")])
+    ),
     allowgear: zod.optional(
       zod.object({
-        gearcategory: zod.union([zod.array(zod.string()), zod.string()]),
+        gearcategory: zod.union([
+          zod.array(zod.nativeEnum(gearXmlCategoryEnum)),
+          zod.nativeEnum(gearXmlCategoryEnum),
+        ]),
       })
     ),
-    allowmod: zod.optional(zod.string()),
-    allowfullburst: zod.optional(zod.string()),
-    allowlongburst: zod.optional(zod.string()),
-    allowshortburst: zod.optional(zod.string()),
-    allowsingleshot: zod.optional(zod.string()),
-    allowsuppressive: zod.optional(zod.string()),
-    alternaterange: zod.optional(zod.string()),
-    ammocategory: zod.optional(zod.string()),
+    alternaterange: zod.optional(zod.nativeEnum(weaponRangeXmlEnum)),
+    ammocategory: zod.optional(zod.nativeEnum(weaponSubtypeXmlEnum)),
     ammoslots: zod.optional(zod.number()),
     cyberware: zod.optional(zod.literal("True")),
     doubledcostaccessorymounts: zod.optional(
       zod.object({
-        mount: zod.union([
-          zod.array(AccessoryMountXmlSchema),
-          AccessoryMountXmlSchema,
-        ]),
+        mount: zod.union([zod.array(MountXmlSchema), MountXmlSchema]),
       })
     ),
-    extramount: zod.optional(zod.string()),
-    fullburst: zod.optional(zod.number()),
-    hide: zod.optional(zod.string()),
-    longburst: zod.optional(zod.number()),
-    mods: zod.optional(zod.string()),
-    mount: zod.optional(zod.string()),
-    range: zod.optional(zod.string()),
+    extramount: zod.optional(MountXmlSchema),
+    hide: zod.optional(zod.literal("")),
+    mount: zod.optional(MountXmlSchema),
+    range: zod.optional(WeaponRangeXmlSchema),
     required: zod.optional(RequiredXmlSchema),
-    requireammo: zod.optional(zod.string()),
-    singleshot: zod.optional(zod.number()),
+    requireammo: zod.optional(
+      zod.union([zod.literal("False"), zod.literal("microtorpedo")])
+    ),
+    singleshot: zod.optional(zod.literal(2)),
     sizecategory: zod.optional(zod.string()),
-    shortburst: zod.optional(zod.number()),
+    shortburst: zod.optional(zod.literal(6)),
     spec: zod.optional(zod.string()),
     spec2: zod.optional(zod.string()),
-    suppressive: zod.optional(zod.string()),
     underbarrels: zod.optional(
       zod.union([zod.array(UnderbarrelXmlSchema), UnderbarrelXmlSchema])
     ),
