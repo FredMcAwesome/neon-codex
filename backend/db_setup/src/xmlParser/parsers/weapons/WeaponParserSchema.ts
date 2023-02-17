@@ -1,13 +1,13 @@
-import {
-  firearmAccessoryMountLocationEnum,
-  gearXmlCategoryEnum,
-} from "@shadowrun/common/src/enums.js";
+import { gearCategoryEnum } from "@shadowrun/common/src/enums.js";
+import { MountSchema } from "@shadowrun/common/src/schemas/weaponSchemas.js";
 import { z as zod } from "zod";
-const MountXmlSchema = zod.nativeEnum(firearmAccessoryMountLocationEnum);
-export type MountXmlType = zod.infer<typeof MountXmlSchema>;
+
 const UseGearXmlSchema = zod.object({
-  name: zod.string(),
-  category: zod.optional(zod.nativeEnum(gearXmlCategoryEnum)),
+  name: zod.union([
+    zod.string(),
+    zod.object({ xmltext: zod.string(), _select: zod.string() }),
+  ]),
+  category: zod.optional(zod.nativeEnum(gearCategoryEnum)),
   rating: zod.optional(zod.number()),
 });
 const GearXmlSchema = zod.object({
@@ -15,53 +15,17 @@ const GearXmlSchema = zod.object({
 });
 const AccessoryXmlSchema = zod.object({
   name: zod.string(),
-  mount: zod.optional(zod.union([zod.array(MountXmlSchema), MountXmlSchema])),
+  mount: zod.optional(zod.union([zod.array(MountSchema), MountSchema])),
   rating: zod.optional(zod.number()),
   gears: zod.optional(GearXmlSchema),
 });
 export type AccessoryXmlType = zod.infer<typeof AccessoryXmlSchema>;
 
-const UseGearSchema = zod.object({
-  name: zod.string(),
-  category: zod.optional(
-    zod.object({ option: zod.nativeEnum(gearXmlCategoryEnum) })
-  ),
-  rating: zod.optional(zod.number()),
-});
-const AccessorySchema = zod.object({
-  name: zod.string(),
-  mount: zod.optional(zod.array(MountXmlSchema)),
-  rating: zod.optional(zod.number()),
-  gears: zod.optional(zod.array(UseGearSchema)),
-});
-
-export type AccessoryType = zod.infer<typeof AccessorySchema>;
-
 const UnderbarrelXmlSchema = zod.object({
   underbarrel: zod.union([zod.array(zod.string()), zod.string()]),
 });
 
-const WeaponDetailsOrXmlSchema = zod.object({
-  category: zod.union([zod.array(zod.string()), zod.string()]),
-  useskill: zod.union([zod.array(zod.string()), zod.string()]),
-  AND: zod.object({
-    OR: zod.object({
-      category: zod.union([zod.array(zod.string()), zod.string()]),
-    }),
-  }),
-});
-
-const RequiredXmlSchema = zod.union([
-  zod.object({
-    weapondetails: zod.object({
-      name: zod.optional(zod.string()),
-      conceal: zod.optional(zod.number()),
-    }),
-  }),
-  zod.object({
-    OR: WeaponDetailsOrXmlSchema,
-  }),
-]);
+export type RequiredXmlType = zod.infer<typeof RequiredXmlSchema>;
 
 export enum sourceBookXmlEnum {
   AssassinPrimer = "AP",
@@ -155,38 +119,7 @@ export enum weaponSubtypeXmlEnum {
 }
 
 const WeaponSubtypeXmlSchema = zod.nativeEnum(weaponSubtypeXmlEnum);
-
-export enum weaponRangeXmlEnum {
-  Flamethrowers = "Flamethrowers",
-  LightCrossbows = "Light Crossbows",
-  MediumCrossbows = "Medium Crossbows",
-  HeavyCrossbows = "Heavy Crossbows",
-  Tasers = "Tasers",
-  Holduts = "Holdouts",
-  LightPistols = "Light Pistols",
-  HeavyPistols = "Heavy Pistols",
-  MachinePistols = "Machine Pistols",
-  SubmachineGuns = "Submachine Guns",
-  AssaultRifles = "Assault Rifles",
-  SportingRifles = "Sporting Rifles",
-  Shotguns = "Shotguns",
-  ShotgunsFlechette = "Shotguns (flechette)",
-  ShotgunsSlug = "Shotguns (slug)",
-  SniperRifles = "Sniper Rifles",
-  LightMachineguns = "Light Machine Guns",
-  Medium_HeavyMachinegun = "Medium/Heavy Machinegun",
-  GrenadeLaunchers = "Grenade Launchers",
-  MissileLaunchers = "Missile Launchers",
-  UnderbarrelWeapons = "Underbarrel Weapons",
-  StandardGrenade = "Standard Grenade",
-  AerodynamicGrenade = "Aerodynamic Grenade",
-  HarpoonGun = "Harpoon Gun",
-  HarpoonGun_Underwater = "Harpoon Gun (Underwater)",
-  Shuriken = "Shuriken",
-  ThrownKnife = "Thrown Knife",
-}
-
-const WeaponRangeXmlSchema = zod.nativeEnum(weaponRangeXmlEnum);
+export type WeaponSubtypeXmlType = zod.infer<typeof WeaponSubtypeXmlSchema>;
 
 const AccuracyXmlSchema = zod.union([zod.number(), zod.string()]);
 export type AccuracyXmlType = zod.infer<typeof AccuracyXmlSchema>;
@@ -200,12 +133,45 @@ const AccessoriesXmlSchema = zod.union([
 ]);
 export type AccessoriesXmlType = zod.infer<typeof AccessoriesXmlSchema>;
 
+const WeaponDetailsOrXmlSchema = zod.object({
+  category: zod.union([
+    zod.array(zod.nativeEnum(weaponSubtypeXmlEnum)),
+    zod.nativeEnum(weaponSubtypeXmlEnum),
+  ]),
+  useskill: zod.union([zod.array(zod.string()), zod.string()]),
+  AND: zod.object({
+    OR: zod.object({
+      category: zod.union([zod.array(zod.string()), zod.string()]),
+    }),
+  }),
+});
+
+const RequiredXmlSchema = zod.union([
+  zod.object({
+    weapondetails: zod.object({
+      name: zod.optional(zod.string()),
+      conceal: zod.optional(
+        zod.object({
+          xmltext: zod.number(),
+          _operation: zod.union([
+            zod.literal("lessthanequals"),
+            zod.literal("greaterthan"),
+          ]),
+        })
+      ),
+    }),
+  }),
+  zod.object({
+    OR: WeaponDetailsOrXmlSchema,
+  }),
+]);
+
 const WeaponXmlSchema = zod
   .object({
     id: zod.string(),
     name: zod.string(),
-    category: WeaponSubtypeXmlSchema,
     type: zod.union([zod.literal("Ranged"), zod.literal("Melee")]),
+    category: WeaponSubtypeXmlSchema,
     conceal: zod.number(),
     accuracy: AccuracyXmlSchema,
     reach: zod.number(),
@@ -225,7 +191,7 @@ const WeaponXmlSchema = zod
     ),
     accessorymounts: zod.optional(
       zod.object({
-        mount: zod.union([zod.array(MountXmlSchema), MountXmlSchema]),
+        mount: zod.union([zod.array(MountSchema), MountSchema]),
       })
     ),
     addweapon: zod.optional(zod.union([zod.array(zod.string()), zod.string()])),
@@ -235,24 +201,24 @@ const WeaponXmlSchema = zod
     allowgear: zod.optional(
       zod.object({
         gearcategory: zod.union([
-          zod.array(zod.nativeEnum(gearXmlCategoryEnum)),
-          zod.nativeEnum(gearXmlCategoryEnum),
+          zod.array(zod.nativeEnum(gearCategoryEnum)),
+          zod.nativeEnum(gearCategoryEnum),
         ]),
       })
     ),
-    alternaterange: zod.optional(zod.nativeEnum(weaponRangeXmlEnum)),
+    alternaterange: zod.optional(zod.string()),
     ammocategory: zod.optional(zod.nativeEnum(weaponSubtypeXmlEnum)),
     ammoslots: zod.optional(zod.number()),
     cyberware: zod.optional(zod.literal("True")),
     doubledcostaccessorymounts: zod.optional(
       zod.object({
-        mount: zod.union([zod.array(MountXmlSchema), MountXmlSchema]),
+        mount: zod.union([zod.array(MountSchema), MountSchema]),
       })
     ),
-    extramount: zod.optional(MountXmlSchema),
+    extramount: zod.optional(MountSchema),
     hide: zod.optional(zod.literal("")),
-    mount: zod.optional(MountXmlSchema),
-    range: zod.optional(WeaponRangeXmlSchema),
+    mount: zod.optional(MountSchema),
+    range: zod.optional(zod.string()),
     required: zod.optional(RequiredXmlSchema),
     requireammo: zod.optional(
       zod.union([zod.literal("False"), zod.literal("microtorpedo")])

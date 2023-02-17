@@ -248,10 +248,8 @@ async function getWeapons() {
       damage: weapon.damage,
       armourPenetration: weapon.armourPenetration,
       availability: weapon.availability,
-      rating: weapon.rating || undefined,
       cost: weapon.cost,
       description: weapon.description,
-      wireless: weapon.wireless || undefined,
       relatedSkill: weapon.relatedSkill,
     };
     return weaponFormatted;

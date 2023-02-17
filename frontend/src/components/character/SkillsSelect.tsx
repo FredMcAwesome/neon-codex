@@ -1,5 +1,8 @@
 import React from "react";
-import { IActiveSkillSelection, skillTypesEnum } from "../../data/Skills.js";
+import {
+  IActiveSkillSelection,
+  skillTypesEnum,
+} from "@shadowrun/common/src/Skills.js";
 import Dropdown from "react-dropdown";
 import { ISkillPoints } from "./PriorityImports.js";
 import { skillsEnum } from "@shadowrun/common";

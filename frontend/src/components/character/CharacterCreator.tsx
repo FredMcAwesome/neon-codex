@@ -14,8 +14,8 @@ import React from "react";
 import { QualitiesSelect } from "./QualitiesSelect.js";
 import type { ISelectedQuality } from "./QualitiesSelect.js";
 import { SkillsSelect } from "./SkillsSelect.js";
-import { skillList } from "../../data/Skills.js";
-import type { IActiveSkillSelection } from "../../data/Skills.js";
+import { skillList } from "@shadowrun/common/src/Skills.js";
+import type { IActiveSkillSelection } from "@shadowrun/common/src/Skills.js";
 import { GearSelect } from "./GearSelect.js";
 import { GearListType } from "@shadowrun/common";
 

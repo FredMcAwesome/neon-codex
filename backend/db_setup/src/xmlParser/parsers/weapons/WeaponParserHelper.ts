@@ -8,6 +8,7 @@ import {
   firearmWeaponTypeEnum,
   explosiveTypeEnum,
   BlastType,
+  AvailabilityType,
 } from "@shadowrun/common";
 import {
   accuracyTypeEnum,
@@ -19,31 +20,43 @@ import {
   damageCalculationOptionEnum,
   damageTypeEnum,
   firearmModeEnum,
-  gearXmlCategoryEnum,
+  gearCategoryEnum,
   reloadMethodEnum,
   restrictionEnum,
 } from "@shadowrun/common/src/enums.js";
 import assert from "assert";
 import {
-  MountXmlType,
-  AccessoryType,
   AccessoryXmlType,
   AccuracyXmlType,
   DamageXmlType,
   weaponSubtypeXmlEnum,
   WeaponXmlType,
+  RequiredXmlType,
+  WeaponSubtypeXmlType,
 } from "./WeaponParserSchema.js";
 import {
+  AccessoryType,
+  AmmunitionType,
+  ArmourPenetrationType,
   DamageAmountType,
   DamageSubtypeType,
   DamageType,
+  MountType,
 } from "@shadowrun/common/src/schemas/weaponSchemas.js";
+import {
+  convertSpecial,
+  getSplit,
+  parseCharacter,
+  parseNumber,
+  removeStringFromArray,
+} from "../ParserHelper.js";
+import { GearCalculationType } from "@shadowrun/common/src/schemas/commonSchema.js";
 
 export const convertAccuracy = function (
   accuracy: AccuracyXmlType,
   name: string
 ): AccuracyType {
-  console.log("Accuracy: " + accuracy.toString());
+  // console.log("Accuracy: " + accuracy.toString());
   let accuracyFinalArray: Array<
     { operator: mathOperatorEnum } | number | { option: accuracyTypeEnum }
   > = [];
@@ -84,8 +97,7 @@ export const convertAccuracy = function (
       ];
     }
   } else {
-    assert("Invalid Accuracy String");
-    return [];
+    assert(false, "Invalid Accuracy String");
   }
   // confirm we converted all strings into valid types
   accuracyFinalArray.forEach((accuracyItem, index) => {
@@ -113,14 +125,12 @@ export const convertDamage = function (
   damage: DamageXmlType,
   name: string
 ): DamageType {
-  console.log("Damage: " + damage.toString());
+  // console.log("Damage: " + damage.toString());
   if (typeof damage === "number") {
     return [
       {
         damageAmount: [damage],
         type: damageTypeEnum.None,
-        annotation: undefined,
-        blast: undefined,
       },
     ];
   } else {
@@ -137,25 +147,19 @@ export const convertDamage = function (
       genericList = parseCharacter(character, genericList, false);
     });
 
-    let conversionInfo = convertSpecial(genericList, "Grenade");
-    conversionInfo = convertSpecial(
-      conversionInfo.propertyList,
-      "As Drug/Toxin"
+    let conversionInfo = convertSpecial(
+      { propertyList: genericList, insertLocationList: [] },
+      "Grenade"
     );
-    conversionInfo = convertSpecial(conversionInfo.propertyList, "Missile");
-    conversionInfo = convertSpecial(
-      conversionInfo.propertyList,
-      "As Pepper Punch"
-    );
-    conversionInfo = convertSpecial(conversionInfo.propertyList, "{STR}");
-    conversionInfo = convertSpecial(conversionInfo.propertyList, "MAG");
-    conversionInfo = convertSpecial(conversionInfo.propertyList, "Chemical");
-    conversionInfo = convertSpecial(conversionInfo.propertyList, "Rating");
-    conversionInfo = convertSpecial(conversionInfo.propertyList, "Torpedo");
-    conversionInfo = convertSpecial(
-      conversionInfo.propertyList,
-      "as Narcoject"
-    );
+    conversionInfo = convertSpecial(conversionInfo, "As Drug/Toxin");
+    conversionInfo = convertSpecial(conversionInfo, "Missile");
+    conversionInfo = convertSpecial(conversionInfo, "As Pepper Punch");
+    conversionInfo = convertSpecial(conversionInfo, "{STR}");
+    conversionInfo = convertSpecial(conversionInfo, "MAG");
+    conversionInfo = convertSpecial(conversionInfo, "Chemical");
+    conversionInfo = convertSpecial(conversionInfo, "Rating");
+    conversionInfo = convertSpecial(conversionInfo, "Torpedo");
+    conversionInfo = convertSpecial(conversionInfo, "as Narcoject");
     damageSpecialList = conversionInfo.propertyList;
     let locationCounter = 0;
     conversionInfo.insertLocationList.forEach((insertLocation) => {
@@ -183,7 +187,7 @@ export const convertDamage = function (
       } else if (replaceString === "as Narcoject") {
         option = damageCalculationOptionEnum.Narcoject;
       } else {
-        assert("Special string not replaced!");
+        assert(false, "Special string not replaced!");
       }
       if (damageSpecialList.length > 1) {
         damageSpecialList.splice(insertLocation.location + locationCounter, 0, {
@@ -239,7 +243,7 @@ export const convertDamage = function (
       // get damage annotation
       const blastTemp = getDamageBlast(damageSublist);
       damageSublist = blastTemp.damageList;
-      const blast = blastTemp.blast;
+      const blast = blastTemp.blastType;
       damageSublist = getSubnumbers(damageSublist);
       damageSublist = removeUnneededCharacters(damageSublist);
 
@@ -265,8 +269,8 @@ export const convertDamage = function (
       damageFinalList.push({
         damageAmount: damageSpecialList as DamageAmountType,
         type: damageType,
-        annotation: damageAnnotation,
-        blast: blast,
+        ...(damageAnnotation && { annotation: damageAnnotation }),
+        ...(blast && { blast: blast }),
       });
     });
     return damageFinalList;
@@ -277,7 +281,7 @@ export const convertArmourPenetration = function (
   armourPenetration: number | string,
   name: string
 ) {
-  console.log("Armour Penetration: " + armourPenetration.toString());
+  // console.log("Armour Penetration: " + armourPenetration.toString());
   if (typeof armourPenetration === "number") {
     return [armourPenetration];
   } else {
@@ -293,11 +297,14 @@ export const convertArmourPenetration = function (
       genericList = parseCharacter(character, genericList, true);
     });
 
-    let conversionInfo = convertSpecial(genericList, "Rating");
-    conversionInfo = convertSpecial(conversionInfo.propertyList, "Grenade");
-    conversionInfo = convertSpecial(conversionInfo.propertyList, "Missile");
-    conversionInfo = convertSpecial(conversionInfo.propertyList, "Special");
-    conversionInfo = convertSpecial(conversionInfo.propertyList, "{MAG}");
+    let conversionInfo = convertSpecial(
+      { propertyList: genericList, insertLocationList: [] },
+      "Rating"
+    );
+    conversionInfo = convertSpecial(conversionInfo, "Grenade");
+    conversionInfo = convertSpecial(conversionInfo, "Missile");
+    conversionInfo = convertSpecial(conversionInfo, "Special");
+    conversionInfo = convertSpecial(conversionInfo, "{MAG}");
     armourPenetrationList = conversionInfo.propertyList;
     let locationCounter = 0;
     conversionInfo.insertLocationList.forEach((insertLocation) => {
@@ -311,12 +318,12 @@ export const convertArmourPenetration = function (
         option = armourPenetrationEnum.Missile;
       } else if (replaceString === "Special") {
         option = armourPenetrationEnum.Special;
-      } else if (replaceString === "{MAG}}") {
+      } else if (replaceString === "{MAG}") {
         option = armourPenetrationEnum.Magic;
       } else if (replaceString === "As Drug/Toxin") {
         option = armourPenetrationEnum.DrugToxin;
       } else {
-        assert("Special string not replaced!");
+        assert(false, "Special string not replaced!");
       }
       if (armourPenetrationList.length > 1) {
         armourPenetrationList.splice(
@@ -352,12 +359,12 @@ export const convertArmourPenetration = function (
         `Weapon name: ${name}, list length: ${armourPenetrationList.length}, failed item: ${armourPentrationItem} at index: ${index}`
       );
     });
-    return armourPenetrationList;
+    return armourPenetrationList as ArmourPenetrationType;
   }
 };
 
 export const convertMode = function (mode: number | string, name: string) {
-  console.log("Mode: " + mode.toString());
+  // console.log("Mode: " + mode.toString());
   if (typeof mode === "number" || mode === "-") {
     return undefined;
   } else {
@@ -369,10 +376,13 @@ export const convertMode = function (mode: number | string, name: string) {
     > = [];
     const genericList: Array<string> = mode.split("/");
 
-    let conversionInfo = convertSpecial(genericList, "SA");
-    conversionInfo = convertSpecial(conversionInfo.propertyList, "BF");
-    conversionInfo = convertSpecial(conversionInfo.propertyList, "FA");
-    conversionInfo = convertSpecial(conversionInfo.propertyList, "SS");
+    let conversionInfo = convertSpecial(
+      { propertyList: genericList, insertLocationList: [] },
+      "SA"
+    );
+    conversionInfo = convertSpecial(conversionInfo, "BF");
+    conversionInfo = convertSpecial(conversionInfo, "FA");
+    conversionInfo = convertSpecial(conversionInfo, "SS");
     modeList = conversionInfo.propertyList;
     let locationCounter = 0;
     conversionInfo.insertLocationList.forEach((insertLocation) => {
@@ -387,7 +397,7 @@ export const convertMode = function (mode: number | string, name: string) {
       } else if (replaceString === "SS") {
         option = firearmModeEnum.SingleShot;
       } else {
-        assert("Special string not replaced!");
+        assert(false, "Special string not replaced!");
       }
       if (modeList.length > 1) {
         modeList.splice(insertLocation.location + locationCounter, 0, {
@@ -425,8 +435,8 @@ export const convertMode = function (mode: number | string, name: string) {
 export const convertRecoilCompensation = function (
   recoilCompensation: number | string
 ) {
-  console.log("Recoil Compensation: " + recoilCompensation.toString());
-  if (recoilCompensation === "-") {
+  // console.log("Recoil Compensation: " + recoilCompensation.toString());
+  if (typeof recoilCompensation === "string") {
     return 0;
   } else {
     return recoilCompensation;
@@ -434,7 +444,7 @@ export const convertRecoilCompensation = function (
 };
 
 export const convertAmmo = function (ammo: number | string, name: string) {
-  console.log("Ammo: " + ammo.toString());
+  // console.log("Ammo: " + ammo.toString());
   if (ammo === 0) {
     return undefined;
   } else if (typeof ammo === "number") {
@@ -450,11 +460,7 @@ export const convertAmmo = function (ammo: number | string, name: string) {
   } else {
     // options split with '/' or 'or'
     const overallList: Array<string> = ammo.split(/\/|or/);
-    const ammoList: Array<{
-      capacity: number | undefined;
-      numberOfAmmunitionHolders: number | undefined;
-      reloadMethod: reloadMethodEnum;
-    }> = [];
+    const ammoList: AmmunitionType = [];
     overallList.forEach((ammoItem) => {
       let genericList: Array<string | number> = [];
       Array.from(ammoItem).forEach((character) => {
@@ -486,7 +492,8 @@ export const convertAmmo = function (ammo: number | string, name: string) {
 export const convertAvailability = function (
   availability: number | string,
   name: string
-) {
+): AvailabilityType {
+  // console.log("Availability: " + availability.toString());
   if (typeof availability === "number") {
     return { rating: [availability], restriction: restrictionEnum.Legal };
   } else {
@@ -503,7 +510,10 @@ export const convertAvailability = function (
       genericList = parseCharacter(character, genericList, false);
     });
 
-    const conversionInfo = convertSpecial(genericList, "{Rating}");
+    const conversionInfo = convertSpecial(
+      { propertyList: genericList, insertLocationList: [] },
+      "{Rating}"
+    );
     availabilitySpecialList = conversionInfo.propertyList;
     let locationCounter = 0;
     conversionInfo.insertLocationList.forEach((insertLocation) => {
@@ -512,7 +522,7 @@ export const convertAvailability = function (
       if (replaceString === "{Rating}") {
         option = availabilityTypeEnum.Rating;
       } else {
-        assert("Special string not replaced!");
+        assert(false, "Special string not replaced!");
       }
       if (availabilitySpecialList.length > 1) {
         availabilitySpecialList.splice(
@@ -558,17 +568,21 @@ export const convertAvailability = function (
           if (equal(availabilityItem, { operator: operator })) check = true;
         });
       }
-      console.log(availabilitySpecialList);
+      // console.log(availabilitySpecialList);
       assert(
         check,
         `Weapon name: ${name}, list length: ${availabilitySpecialList.length}, failed item: ${availabilityItem} at index: ${index}`
       );
     });
-    return { rating: availabilitySpecialList, restriction: restriction };
+    return {
+      rating: availabilitySpecialList as GearCalculationType,
+      restriction: restriction,
+    };
   }
 };
 
 export const convertCost = function (cost: number | string, name: string) {
+  // console.log("Cost: " + cost.toString());
   if (typeof cost === "number") {
     return [cost];
   } else {
@@ -584,7 +598,10 @@ export const convertCost = function (cost: number | string, name: string) {
       genericList = parseCharacter(character, genericList, false);
     });
 
-    const conversionInfo = convertSpecial(genericList, "{Rating}");
+    const conversionInfo = convertSpecial(
+      { propertyList: genericList, insertLocationList: [] },
+      "{Rating}"
+    );
     costList = conversionInfo.propertyList;
     let locationCounter = 0;
     conversionInfo.insertLocationList.forEach((insertLocation) => {
@@ -593,7 +610,7 @@ export const convertCost = function (cost: number | string, name: string) {
       if (replaceString === "{Rating}") {
         option = costTypeEnum.Rating;
       } else {
-        assert("Special string not replaced!");
+        assert(false, "Special string not replaced!");
       }
       if (costList.length > 1) {
         costList.splice(insertLocation.location + locationCounter, 0, {
@@ -622,7 +639,7 @@ export const convertCost = function (cost: number | string, name: string) {
           if (equal(costItem, { operator: operator })) check = true;
         });
       }
-      console.log(costList);
+      // console.log(costList);
       assert(
         check,
         `Weapon name: ${name}, list length: ${costList.length}, failed item: ${costItem} at index: ${index}`
@@ -641,6 +658,7 @@ export const convertAccessories = function (
   if (!xmlAccessoriesUndefined) {
     return undefined;
   }
+  // console.log("Accessories: " + xmlAccessoriesUndefined.toString());
 
   const xmlAccessories: Array<AccessoryXmlType> = Array.isArray(
     xmlAccessoriesUndefined.accessory
@@ -672,6 +690,9 @@ export const convertAccessories = function (
             `weapon.name = ${name}`
           );
         }
+        if (typeof useGear.name !== "string") {
+          useGear.name = useGear.name.xmltext;
+        }
         return {
           name: useGear.name,
           rating: useGear.rating,
@@ -684,17 +705,18 @@ export const convertAccessories = function (
 };
 
 export const convertAccessoryMounts = function (
-  xmlAccessoryMountUndefined:
-    | { mount: Array<MountXmlType> | MountXmlType }
+  xmlAccessoryMountsUndefined:
+    | { mount: Array<MountType> | MountType }
     | undefined
 ) {
-  if (!xmlAccessoryMountUndefined) {
+  if (!xmlAccessoryMountsUndefined) {
     return undefined;
   }
+  // console.log("Accessory Mounts: " + xmlAccessoryMountsUndefined.toString());
 
-  return Array.isArray(xmlAccessoryMountUndefined.mount)
-    ? xmlAccessoryMountUndefined.mount
-    : [xmlAccessoryMountUndefined.mount];
+  return Array.isArray(xmlAccessoryMountsUndefined.mount)
+    ? xmlAccessoryMountsUndefined.mount
+    : [xmlAccessoryMountsUndefined.mount];
 };
 
 export const convertAllowGear = function (
@@ -704,6 +726,7 @@ export const convertAllowGear = function (
   if (!xmlAllowGear) {
     return undefined;
   }
+  // console.log("Allow Gear: " + xmlAllowGear.toString());
   const gearCategories = Array.isArray(xmlAllowGear.gearcategory)
     ? xmlAllowGear.gearcategory
     : [xmlAllowGear.gearcategory];
@@ -712,227 +735,274 @@ export const convertAllowGear = function (
   );
 };
 
+export const convertRequirements = function (
+  xmlRequirements: RequiredXmlType | undefined,
+  name: string
+) {
+  if (!xmlRequirements) {
+    return undefined;
+  }
+  // console.log("Requirements" + xmlRequirements.toString());
+  if ("weapondetails" in xmlRequirements) {
+    const weaponName = xmlRequirements.weapondetails.name;
+    const conceal = xmlRequirements.weapondetails.conceal;
+    if (weaponName && conceal !== undefined)
+      assert(false, "only name or conceal should be defined");
+    if (weaponName) {
+      return { weaponAllowed: weaponName };
+    } else if (conceal) {
+      if (conceal._operation === "greaterthan")
+        return { minimumHostConcealment: conceal.xmltext };
+      else return { maximumHostConcealment: conceal.xmltext };
+    }
+    assert(false, "neither name or conceal are defined for: " + name);
+    return undefined;
+  } else {
+    const categories = Array.isArray(xmlRequirements.OR.category)
+      ? xmlRequirements.OR.category
+      : [xmlRequirements.OR.category];
+    const skills = Array.isArray(xmlRequirements.OR.useskill)
+      ? xmlRequirements.OR.useskill
+      : [xmlRequirements.OR.useskill];
+    // currently not using AND portion... Not sure if we need it
+    // xmlRequirements.OR.AND
+    return { categories: categories, skills: skills };
+  }
+};
+
+export const convertWeaponSkill = function (
+  useSkill: string | undefined,
+  category: WeaponSubtypeXmlType,
+  useSkillSpecialisation: string | undefined,
+  previousSpecialisations: Array<string> | undefined
+) {
+  let skill = "";
+  let specialisations = previousSpecialisations;
+  if (useSkillSpecialisation) specialisations = [useSkillSpecialisation];
+  if (useSkill) {
+    return { skill: useSkill, specialisations: specialisations };
+  }
+  switch (category) {
+    case "Bows":
+    case "Crossbows":
+      skill = "Archery";
+      break;
+
+    case "Assault Rifles":
+    case "Carbines":
+    case "Machine Pistols":
+    case "Submachine Guns":
+      skill = "Automatics";
+      break;
+
+    case "Blades":
+      skill = "Blades";
+      break;
+
+    case "Clubs":
+    case "Improvised Weapons":
+      skill = "Clubs";
+      break;
+
+    case "Exotic Melee Weapons":
+      skill = "Exotic Melee Weapon";
+      break;
+
+    case "Exotic Ranged Weapons":
+      skill = "Exotic Ranged Weapon";
+      break;
+
+    case "Flamethrowers":
+      skill = "Exotic Ranged Weapon";
+      specialisations = ["Flamethrowers"];
+      break;
+
+    case "Laser Weapons":
+      skill = "Exotic Ranged Weapon";
+      specialisations = ["Laser Weapons"];
+      break;
+
+    case "Assault Cannons":
+    case "Grenade Launchers":
+    case "Missile Launchers":
+    case "Light Machine Guns":
+    case "Medium Machine Guns":
+    case "Heavy Machine Guns":
+      skill = "Heavy Weapons";
+      break;
+
+    case "Shotguns":
+    case "Sniper Rifles":
+    case "Sporting Rifles":
+      skill = "Longarms";
+      break;
+
+    case "Unarmed":
+      skill = "Unarmed Combat";
+      break;
+
+    case "Heavy Pistols":
+    case "Holdouts":
+    case "Light Pistols":
+    case "Tasers":
+      skill = "Pistols";
+      break;
+
+    default:
+      assert(false, `Unknown skill category: ${category}`);
+  }
+  return { skill: skill, specialisations: specialisations };
+};
+
 export const convertGearCategory = function (
   category: string,
   otherMessage: string
 ) {
   switch (category) {
     case "Alchemical Tools":
-      return { option: gearXmlCategoryEnum.AlchemicalTools };
+      return gearCategoryEnum.AlchemicalTools;
     case "Ammunition":
-      return { option: gearXmlCategoryEnum.Ammunition };
+      return gearCategoryEnum.Ammunition;
     case "Armor Enhancements":
-      return { option: gearXmlCategoryEnum.ArmorEnhancements };
+      return gearCategoryEnum.ArmorEnhancements;
     case "Audio Devices":
-      return { option: gearXmlCategoryEnum.AudioDevices };
+      return gearCategoryEnum.AudioDevices;
     case "Audio Enhancements":
-      return { option: gearXmlCategoryEnum.AudioEnhancements };
+      return gearCategoryEnum.AudioEnhancements;
     case "Autosofts":
-      return { option: gearXmlCategoryEnum.Autosofts };
+      return gearCategoryEnum.Autosofts;
     case "Biotech":
-      return { option: gearXmlCategoryEnum.Biotech };
+      return gearCategoryEnum.Biotech;
     case "Breaking and Entering Gear":
-      return { option: gearXmlCategoryEnum.BreakingAndEnteringGear };
+      return gearCategoryEnum.BreakingAndEnteringGear;
     case "BTLs":
-      return { option: gearXmlCategoryEnum.BTLs };
+      return gearCategoryEnum.BTLs;
     case "Chemicals":
-      return { option: gearXmlCategoryEnum.Chemicals };
+      return gearCategoryEnum.Chemicals;
     case "Commlinks":
-      return { option: gearXmlCategoryEnum.Commlinks };
+      return gearCategoryEnum.Commlinks;
     case "Commlink/Cyberdeck Form Factors":
-      return { option: gearXmlCategoryEnum.Commlink_CyberdeckFormFactors };
+      return gearCategoryEnum.Commlink_CyberdeckFormFactors;
     case "Commlink Accessories":
-      return { option: gearXmlCategoryEnum.CommlinkAccessories };
+      return gearCategoryEnum.CommlinkAccessories;
     case "Commlink Apps":
-      return { option: gearXmlCategoryEnum.CommlinkApps };
+      return gearCategoryEnum.CommlinkApps;
     case "Common Programs":
-      return { option: gearXmlCategoryEnum.CommonPrograms };
+      return gearCategoryEnum.CommonPrograms;
     case "Communications and Countermeasures":
-      return { option: gearXmlCategoryEnum.CommunicationsAndCountermeasures };
+      return gearCategoryEnum.CommunicationsAndCountermeasures;
     case "Contracts/Upkeep":
-      return { option: gearXmlCategoryEnum.Contracts_Upkeep };
+      return gearCategoryEnum.Contracts_Upkeep;
     case "Critter Gear":
-      return { option: gearXmlCategoryEnum.CritterGear };
+      return gearCategoryEnum.CritterGear;
     case "Currency":
-      return { option: gearXmlCategoryEnum.Currency };
+      return gearCategoryEnum.Currency;
     case "Custom":
-      return { option: gearXmlCategoryEnum.Custom };
+      return gearCategoryEnum.Custom;
     case "Custom Cyberdeck Attributes":
-      return { option: gearXmlCategoryEnum.CustomCyberdeckAttributes };
+      return gearCategoryEnum.CustomCyberdeckAttributes;
     case "Custom Drug":
-      return { option: gearXmlCategoryEnum.CustomDrug };
+      return gearCategoryEnum.CustomDrug;
     case "Cyberdeck Modules":
-      return { option: gearXmlCategoryEnum.CyberdeckModules };
+      return gearCategoryEnum.CyberdeckModules;
     case "Cyberdecks":
-      return { option: gearXmlCategoryEnum.Cyberdecks };
+      return gearCategoryEnum.Cyberdecks;
     case "Cyberterminals":
-      return { option: gearXmlCategoryEnum.Cyberterminals };
+      return gearCategoryEnum.Cyberterminals;
     case "Disguises":
-      return { option: gearXmlCategoryEnum.Disguises };
+      return gearCategoryEnum.Disguises;
     case "Drugs":
-      return { option: gearXmlCategoryEnum.Drugs };
+      return gearCategoryEnum.Drugs;
     case "Electronics Accessories":
-      return { option: gearXmlCategoryEnum.ElectronicsAccessories };
+      return gearCategoryEnum.ElectronicsAccessories;
     case "Electronic Modification":
-      return { option: gearXmlCategoryEnum.ElectronicModification };
+      return gearCategoryEnum.ElectronicModification;
     case "Electronic Parts":
-      return { option: gearXmlCategoryEnum.ElectronicParts };
+      return gearCategoryEnum.ElectronicParts;
     case "Entertainment":
-      return { option: gearXmlCategoryEnum.Entertainment };
+      return gearCategoryEnum.Entertainment;
     case "Explosives":
-      return { option: gearXmlCategoryEnum.Explosives };
+      return gearCategoryEnum.Explosives;
     case "Extraction Devices":
-      return { option: gearXmlCategoryEnum.ExtractionDevices };
+      return gearCategoryEnum.ExtractionDevices;
     case "Foci":
-      return { option: gearXmlCategoryEnum.Foci };
+      return gearCategoryEnum.Foci;
     case "Food":
-      return { option: gearXmlCategoryEnum.Food };
+      return gearCategoryEnum.Food;
     case "Formulae":
-      return { option: gearXmlCategoryEnum.Formulae };
+      return gearCategoryEnum.Formulae;
     case "Grapple Gun":
-      return { option: gearXmlCategoryEnum.GrappleGun };
+      return gearCategoryEnum.GrappleGun;
     case "Hacking Programs":
-      return { option: gearXmlCategoryEnum.HackingPrograms };
+      return gearCategoryEnum.HackingPrograms;
     case "Housewares":
-      return { option: gearXmlCategoryEnum.Housewares };
+      return gearCategoryEnum.Housewares;
     case "ID/Credsticks":
-      return { option: gearXmlCategoryEnum.ID_Credsticks };
+      return gearCategoryEnum.ID_Credsticks;
     case "Magical Compounds":
-      return { option: gearXmlCategoryEnum.MagicalCompounds };
+      return gearCategoryEnum.MagicalCompounds;
     case "Magical Supplies":
-      return { option: gearXmlCategoryEnum.MagicalSupplies };
+      return gearCategoryEnum.MagicalSupplies;
     case "Metatype-Specific":
-      return { option: gearXmlCategoryEnum.MetatypeSpecific };
+      return gearCategoryEnum.MetatypeSpecific;
     case "Miscellany":
-      return { option: gearXmlCategoryEnum.Miscellany };
+      return gearCategoryEnum.Miscellany;
     case "Musical Instruments":
-      return { option: gearXmlCategoryEnum.MusicalInstruments };
+      return gearCategoryEnum.MusicalInstruments;
     case "Nanogear":
-      return { option: gearXmlCategoryEnum.Nanogear };
+      return gearCategoryEnum.Nanogear;
     case "Paydata":
-      return { option: gearXmlCategoryEnum.Paydata };
+      return gearCategoryEnum.Paydata;
     case "PI-Tac":
-      return { option: gearXmlCategoryEnum.PiTac };
+      return gearCategoryEnum.PiTac;
     case "Printing":
-      return { option: gearXmlCategoryEnum.Printing };
+      return gearCategoryEnum.Printing;
     case "Reporter Gear":
-      return { option: gearXmlCategoryEnum.ReporterGear };
+      return gearCategoryEnum.ReporterGear;
     case "RFID Tags":
-      return { option: gearXmlCategoryEnum.RFIDTags };
+      return gearCategoryEnum.RFIDTags;
     case "Rigger Command Consoles":
-      return { option: gearXmlCategoryEnum.RiggerCommandConsoles };
+      return gearCategoryEnum.RiggerCommandConsoles;
     case "Security Devices":
-      return { option: gearXmlCategoryEnum.SecurityDevices };
+      return gearCategoryEnum.SecurityDevices;
     case "Sensors":
-      return { option: gearXmlCategoryEnum.Sensors };
+      return gearCategoryEnum.Sensors;
     case "Sensor Functions":
-      return { option: gearXmlCategoryEnum.SensorFunctions };
+      return gearCategoryEnum.SensorFunctions;
     case "Sensor Housings":
-      return { option: gearXmlCategoryEnum.SensorHousings };
+      return gearCategoryEnum.SensorHousings;
     case "Services":
-      return { option: gearXmlCategoryEnum.Services };
+      return gearCategoryEnum.Services;
     case "Skillsofts":
-      return { option: gearXmlCategoryEnum.Skillsofts };
+      return gearCategoryEnum.Skillsofts;
     case "Software":
-      return { option: gearXmlCategoryEnum.Software };
+      return gearCategoryEnum.Software;
     case "Software Tweaks":
-      return { option: gearXmlCategoryEnum.SoftwareTweaks };
+      return gearCategoryEnum.SoftwareTweaks;
     case "Survival Gear":
-      return { option: gearXmlCategoryEnum.SurvivalGear };
+      return gearCategoryEnum.SurvivalGear;
     case "Tailored Perfume/Cologne":
-      return { option: gearXmlCategoryEnum.TailoredPerfume_Cologne };
+      return gearCategoryEnum.TailoredPerfume_Cologne;
     case "Tools":
-      return { option: gearXmlCategoryEnum.Tools };
+      return gearCategoryEnum.Tools;
     case "Tools of the Trade":
-      return { option: gearXmlCategoryEnum.ToolsOfTheTrade };
+      return gearCategoryEnum.ToolsOfTheTrade;
     case "Toxins":
-      return { option: gearXmlCategoryEnum.Toxins };
+      return gearCategoryEnum.Toxins;
     case "Vision Devices":
-      return { option: gearXmlCategoryEnum.VisionDevices };
+      return gearCategoryEnum.VisionDevices;
     case "Vision Enhancements":
-      return { option: gearXmlCategoryEnum.VisionEnhancements };
+      return gearCategoryEnum.VisionEnhancements;
     case "Matrix Accessories":
-      return { option: gearXmlCategoryEnum.MatrixAccessories };
+      return gearCategoryEnum.MatrixAccessories;
     case "Booster Chips":
-      return { option: gearXmlCategoryEnum.BoosterChips };
+      return gearCategoryEnum.BoosterChips;
     case "Appearance Modification":
-      return { option: gearXmlCategoryEnum.AppearanceModification };
+      return gearCategoryEnum.AppearanceModification;
     case "Drug Grades":
-      return { option: gearXmlCategoryEnum.DrugGrades };
+      return gearCategoryEnum.DrugGrades;
   }
   assert(false, `Category not found ${category}, ${otherMessage}`);
-};
-
-export const convertSpecial = function <Type>(
-  propertyList: Array<Type | string | number>,
-  replaceString: string
-) {
-  const insertLocationList: Array<{ value: string; location: number }> = [];
-  for (let i = 0; i < propertyList.length; i++) {
-    const stringSplit = propertyList[i];
-    if (
-      typeof stringSplit === "string" &&
-      stringSplit.indexOf(replaceString) !== -1
-    ) {
-      const index = stringSplit.indexOf(replaceString);
-      const length = replaceString.length;
-      let insertLocation = i;
-      if (index > 0) {
-        propertyList[i] = stringSplit.slice(0, index);
-        insertLocation++;
-      } else {
-        propertyList.splice(i, 1);
-      }
-      if (index + length < stringSplit.length) {
-        propertyList.splice(
-          insertLocation,
-          0,
-          stringSplit.slice(index + length)
-        );
-      }
-      insertLocationList.push({
-        value: replaceString,
-        location: insertLocation,
-      });
-    }
-  }
-  return { propertyList: propertyList, insertLocationList: insertLocationList };
-};
-
-export const getSplit = function <Type>(
-  propertyList: Array<Type | string | number>,
-  replaceString: string
-) {
-  const splitList: Array<number> = [];
-  for (let i = 0; i < propertyList.length; i++) {
-    const stringSplit = propertyList[i];
-    if (
-      typeof stringSplit === "string" &&
-      stringSplit.indexOf(replaceString) !== -1
-    ) {
-      const index = stringSplit.indexOf(replaceString);
-      // avoid /m as used in blast calculation
-      if (propertyList.length > i) {
-        const nextItem = propertyList[i + 1];
-        if (typeof nextItem === "string" && nextItem.indexOf("m") >= 0)
-          continue;
-      }
-      if (stringSplit.substring(index + 1, index + 2) === "m") continue;
-      const length = replaceString.length;
-      let splitIndex = i;
-      if (index > 0) {
-        propertyList[i] = stringSplit.slice(0, index);
-        splitIndex++;
-      } else {
-        propertyList.splice(i, 1);
-      }
-      if (index + length < stringSplit.length) {
-        propertyList.splice(splitIndex, 0, stringSplit.slice(index + length));
-      }
-      splitList.push(splitIndex);
-    }
-  }
-  return { propertyList: propertyList, splitList: splitList };
 };
 
 const getDamageType = function (
@@ -1055,7 +1125,7 @@ const getDamageBlast = function (
     }
     return { damageList: damageList, blastType: blastType };
   }
-  return { damageList: damageList, blast: undefined };
+  return { damageList: damageList, blastType: undefined };
 };
 
 const getAmmoType = function (capacityList: Array<string | number>): {
@@ -1078,7 +1148,7 @@ const getAmmoType = function (capacityList: Array<string | number>): {
     "External Source",
   ];
   let reloadMethod: reloadMethodEnum = reloadMethodEnum.None;
-  let reloadAtEndOfString: boolean = false;
+  let reloadAtEndOfString = false;
   for (const replaceString of xmlReloadList) {
     for (let i = 0; i < capacityList.length; i++) {
       const ammoItem = capacityList[i];
@@ -1132,7 +1202,10 @@ const getNumberOfAmmunitionHolders = function (
   },
   reloadAtEndOfString: boolean
 ) {
-  const conversionInfo = convertSpecial(capacityList.capacity, "x");
+  const conversionInfo = convertSpecial(
+    { propertyList: capacityList.capacity, insertLocationList: [] },
+    "x"
+  );
   const numberList = conversionInfo.propertyList.map((item) => {
     assert(typeof item === "number");
     return item;
@@ -1262,7 +1335,10 @@ const getSubnumbers = function (
           damageList.splice(i, 1);
           i--;
         } else {
-          assert(`Subnumber element not processed: ${typeof damageSplit}`);
+          assert(
+            false,
+            `Subnumber element not processed: ${typeof damageSplit}`
+          );
         }
       }
       if (damageSubnumbers.length > 0) {
@@ -1451,150 +1527,4 @@ export const getWeaponTypeInformation = function (weapon: WeaponXmlType) {
       break;
   }
   return { weaponType, weaponSubtype };
-};
-
-const parseCharacter = function (
-  character: string,
-  digitArray: Array<{ operator: mathOperatorEnum } | number | string>,
-  simpleDivide: boolean
-) {
-  const parsedNumber = parseNumber(character, digitArray);
-  digitArray = parsedNumber.digitArray;
-  let lastIndex = digitArray.length - 1;
-  if (digitArray[lastIndex] === "/" && character !== "/") {
-    // restore / if not a divide
-    if (typeof digitArray[lastIndex - 1] !== "number") {
-      digitArray[lastIndex - 1] = `${digitArray[lastIndex - 1] as string}${
-        digitArray[lastIndex] as string
-      }`;
-      digitArray.splice(lastIndex, 1);
-      lastIndex = digitArray.length - 1;
-    }
-  }
-  if (!parsedNumber.numberFound) {
-    if (
-      charcterIsOperator(character) &&
-      charcterIsOperator(digitArray[lastIndex])
-    ) {
-      assert("Two Operators in a row!");
-    }
-    if (character === mathOperatorEnum.Add) {
-      digitArray.push({ operator: mathOperatorEnum.Add });
-    } else if (character === mathOperatorEnum.Subtract) {
-      digitArray.push({ operator: mathOperatorEnum.Subtract });
-    } else if (character === mathOperatorEnum.Multiply) {
-      digitArray.push({ operator: mathOperatorEnum.Multiply });
-    } else if (`${digitArray[lastIndex] as string}${character}` === "//") {
-      digitArray[lastIndex] = { operator: mathOperatorEnum.Divide };
-    } else if (character === "/") {
-      if (simpleDivide) digitArray.push({ operator: mathOperatorEnum.Divide });
-      else digitArray.push("/");
-    } else if (
-      `${digitArray[lastIndex] as string}${character}` ===
-      mathOperatorEnum.GreaterThan
-    ) {
-      digitArray[lastIndex] = { operator: mathOperatorEnum.GreaterThan };
-    } else if (character === ">") {
-      digitArray.push(">");
-    } else {
-      if (
-        charcterIsOperator(
-          digitArray[lastIndex] as
-            | { operator: mathOperatorEnum }
-            | number
-            | string
-        ) ||
-        typeof digitArray[lastIndex] === "number"
-      ) {
-        digitArray.push(character);
-      } else {
-        if (lastIndex >= 0) {
-          digitArray[lastIndex] = `${
-            digitArray[lastIndex] as string
-          }${character}`;
-        } else {
-          digitArray.push(character);
-        }
-      }
-    }
-  }
-  return digitArray;
-};
-
-const parseNumber = function <Type>(
-  character: string,
-  digitArray: Array<Type | number | string>
-) {
-  let numberFound = true;
-  const lastIndex = digitArray.length - 1;
-  if (!isNaN(parseInt(character))) {
-    // if last character was also a number concat the 2 numbers
-    if (typeof digitArray[lastIndex] === "number") {
-      digitArray[lastIndex] = parseFloat(
-        `${digitArray[lastIndex] as number}${character}`
-      );
-    } else if (digitArray[lastIndex] === ".") {
-      digitArray[lastIndex - 1] = parseFloat(
-        `${digitArray[lastIndex - 1] as number}.${character}`
-      );
-      digitArray.splice(lastIndex, 1);
-    } else {
-      digitArray.push(parseInt(character));
-    }
-  } else if (character === ".") {
-    assert(
-      typeof digitArray[lastIndex] === "number",
-      "Last character was not a number, cannot be float."
-    );
-    digitArray.push(".");
-  } else if (digitArray[lastIndex] === ".") {
-    assert(
-      false,
-      "Last character was not a decimal point, this is not a character."
-    );
-  } else {
-    numberFound = false;
-  }
-  return { digitArray, numberFound };
-};
-
-const charcterIsOperator = function (
-  character: { operator: mathOperatorEnum } | number | string
-) {
-  if (typeof character === "object" && character.operator) {
-    return true;
-  } else if (character === mathOperatorEnum.Add) {
-    return true;
-  } else if (character === mathOperatorEnum.Subtract) {
-    return true;
-  } else if (character === mathOperatorEnum.Divide) {
-    return true;
-  } else if (character === mathOperatorEnum.Multiply) {
-    return true;
-  } else {
-    return false;
-  }
-};
-
-const removeStringFromArray = function <Type>(
-  currentItem: string,
-  removeString: string,
-  itemList: Array<Type | string>,
-  i: number
-): Array<Type | string> {
-  currentItem = currentItem.trim();
-  const index = currentItem.indexOf(removeString);
-  const length = removeString.length;
-  if (currentItem.length > 1) {
-    if (index > 0) {
-      itemList[i] = currentItem.slice(0, index);
-    } else {
-      itemList.splice(i, 1);
-    }
-  } else {
-    itemList.splice(i, 1);
-  }
-  if (currentItem.slice(index + length).length > 0)
-    itemList.push(currentItem.slice(index + length));
-  return itemList;
 };

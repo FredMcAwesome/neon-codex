@@ -7203,7 +7203,6 @@
         </weapondetails>
       </required>
       <sizecategory>Light Crossbows</sizecategory>
-      <spec>Grapple Gun</spec>
       <useskill>Exotic Ranged Weapon</useskill>
       <useskillspec>Grapple Gun</useskillspec>
       <weapontype>grapplegun</weapontype>
@@ -7246,7 +7245,6 @@
       <ammocategory>Shotguns</ammocategory>
       <hide />
       <range>Shotguns</range>
-      <spec>Shotguns</spec>
       <useskill>Longarms</useskill>
       <useskillspec>Shotguns</useskillspec>
     </weapon>
@@ -8014,7 +8012,6 @@
       <allowaccessory>False</allowaccessory>
       <hide />
       <range>Light Crossbows</range>
-      <spec>Grapple Gun</spec>
       <useskill>Exotic Ranged Weapon</useskill>
       <useskillspec>Grapple Gun</useskillspec>
       <weapontype>grapplegun</weapontype>
@@ -12106,7 +12103,7 @@
       <category>Clubs</category>
       <type>Melee</type>
       <conceal>0</conceal>
-      <accuracy>3+number({STR} >= 5)+number({STR} >= 7)</accuracy>
+      <accuracy>3</accuracy> <!-- need to revert this later-->
       <reach>2</reach>
       <damage>({STR}+2+(2*number({STR} >= 5))+(2*number({STR} >= 7)))P</damage>
       <ap>-1</ap>

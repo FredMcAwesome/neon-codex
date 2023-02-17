@@ -5,7 +5,7 @@
     "jsx": "react-jsx",
     "module": "ES6"
   },
-  "include": ["src"],
+  "include": ["src", "../common/src/data/Skills.ts"],
   "exclude": ["node_modules"],
   "references": [
     {

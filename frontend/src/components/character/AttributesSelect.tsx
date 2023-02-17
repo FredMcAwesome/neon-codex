@@ -2,6 +2,13 @@ import { MetatypeEnum } from "./PriorityImports.js";
 import type { IMagicInfo, IPriorities } from "./PriorityImports.js";
 import { Fragment, useEffect, useState } from "react";
 import Dropdown from "react-dropdown";
+import {
+  AttributesEnum,
+  AttributesEnumLength,
+  SpecialAttributesEnum,
+  EdgeBaseAttributeIndex,
+  SpecialAttributesLength,
+} from "@shadowrun/common/src/data/Skills.js";
 interface IAttributeRange {
   minimum: number;
   maximum: number;
@@ -282,26 +289,6 @@ export interface ISpecialAttributes {
   magic: number;
 }
 
-export enum AttributesEnum {
-  Body,
-  Agility,
-  Reaction,
-  Strength,
-  Willpower,
-  Logic,
-  Intuition,
-  Charisma,
-  AttributesEnumMax,
-}
-
-const EdgeBaseAttributeIndex = AttributesEnum.AttributesEnumMax;
-
-export enum SpecialAttributesEnum {
-  Edge,
-  Magic,
-  SpecialAttributesEnumMax,
-}
-
 function checkMinimums(
   attributes: Array<number>,
   attributeRanges: Array<IAttributeRange>,
@@ -322,7 +309,7 @@ function checkMaximums(
 
   for (
     let otherAttributeType = 0;
-    otherAttributeType < AttributesEnum.AttributesEnumMax;
+    otherAttributeType < AttributesEnumLength;
     otherAttributeType++
   ) {
     if (attributeType !== otherAttributeType) {
@@ -404,11 +391,7 @@ const AttributesSelect = function (props: IProps) {
     let tempAttributePoints = attributePoints;
     // check attribute values in case new changes have been made
     // restrict to min/max values and set attribute points if different
-    for (
-      let attribute = 0;
-      attribute < AttributesEnum.AttributesEnumMax;
-      attribute++
-    ) {
+    for (let attribute = 0; attribute < AttributesEnumLength; attribute++) {
       attributeArray = checkMinimums(attributeArray, baseAttributes, attribute);
       attributeArray = checkMaximums(attributeArray, baseAttributes, attribute);
       let difference =
@@ -434,7 +417,7 @@ const AttributesSelect = function (props: IProps) {
       let tempAttributePoints = specialAttributePoints;
       for (
         let attribute = 0;
-        attribute < SpecialAttributesEnum.SpecialAttributesEnumMax;
+        attribute < SpecialAttributesLength;
         attribute++
       ) {
         attributeArray = checkSpecialMinimums(
@@ -468,7 +451,7 @@ const AttributesSelect = function (props: IProps) {
   >(() => {
     let totalArray: Array<Array<string>> = getAttributeOptions(
       baseAttributes,
-      AttributesEnum.AttributesEnumMax
+      AttributesEnumLength
     );
     return totalArray;
   });
@@ -478,7 +461,7 @@ const AttributesSelect = function (props: IProps) {
   >(() => {
     let totalArray: Array<Array<string>> = getSpecialAttributeOptions(
       baseSpecialAttributes,
-      SpecialAttributesEnum.SpecialAttributesEnumMax
+      SpecialAttributesLength
     );
     return totalArray;
   });
@@ -639,16 +622,13 @@ const AttributesSelect = function (props: IProps) {
 
   useEffect(() => {
     setAttributeOptions(
-      getAttributeOptions(baseAttributes, AttributesEnum.AttributesEnumMax)
+      getAttributeOptions(baseAttributes, AttributesEnumLength)
     );
   }, [attributes]);
 
   useEffect(() => {
     setSpecialAttributeOptions(
-      getSpecialAttributeOptions(
-        baseSpecialAttributes,
-        SpecialAttributesEnum.SpecialAttributesEnumMax
-      )
+      getSpecialAttributeOptions(baseSpecialAttributes, SpecialAttributesLength)
     );
   }, [specialAttributes]);
 

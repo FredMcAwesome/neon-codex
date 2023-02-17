@@ -100,3 +100,5 @@ export type {
   AugmentationType,
   EssenceType,
 } from "./schemas/augmentationSchemas.js";
+
+export type { SkillType } from "./schemas/skillSchema.js";

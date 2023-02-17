@@ -2,7 +2,10 @@ import { fireEvent, screen, within } from "@testing-library/react";
 import { useState } from "react";
 import { ISkillPoints } from "../../components/character/PriorityImports.js";
 import { SkillsSelect } from "../../components/character/SkillsSelect.js";
-import { IActiveSkillSelection, skillList } from "../../data/Skills.js";
+import {
+  IActiveSkillSelection,
+  skillList,
+} from "@shadowrun/common/src/Skills.js";
 import { renderWithProviders } from "../../utils/TestingUtils.js";
 
 test("Skills increase", () => {

@@ -1,4 +1,5 @@
 import { augmentationClassificationEnum } from "@shadowrun/common/src/enums.js";
+import assert from "assert";
 import { XMLParser } from "fast-xml-parser";
 import fs from "fs";
 import path from "path";
@@ -16,6 +17,8 @@ import {
   convertAccessories,
   convertAccessoryMounts,
   convertAllowGear,
+  convertRequirements,
+  convertWeaponSkill,
 } from "./WeaponParserHelper.js";
 import {
   WeaponXmlType,
@@ -27,17 +30,27 @@ import {
 
 const currentPath = import.meta.url;
 const xml_string = fs.readFileSync(
-  fileURLToPath(path.dirname(currentPath) + "../../xmls/weapons.xml"),
+  fileURLToPath(path.dirname(currentPath) + "../../../xmls/weapons.xml"),
   "utf8"
 );
-const parser = new XMLParser();
+const parser = new XMLParser({
+  ignoreAttributes: false,
+  attributeNamePrefix: "_",
+  textNodeName: "xmltext",
+});
 const jObj: any = parser.parse(xml_string);
+// console.log(
+//   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+//   jObj.chummer.weapons.weapon.filter(
+//     (weapon: { name: string }) => weapon.name == "Ontario Arms Sling-Shot"
+//   )[0].required.weapondetails
+// );
+
 const weaponListParsed = WeaponListXmlSchema.safeParse(
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   jObj.chummer.weapons.weapon
 );
 
-// console.log(jObj.chummer.weapons.weapon[356]);
 if (weaponListParsed.success) console.log("all g");
 else {
   console.log(weaponListParsed.error.errors[0]);
@@ -123,10 +136,13 @@ if (weaponListParsed.success) {
         !weapon.name.toLowerCase().includes("rocket"))
     );
   });
+
   // const weaponListConverted: Array<RequiredEntityData<MeleeWeapons>> =
-  const weaponListConverted = weaponListNoAmmo.map((weapon: WeaponXmlType) => {
-    return convertWeapon(weapon);
-  });
+  const weaponListConverted = weaponListNoAmmo
+    // .filter((weapon) => weapon.name === "Ares Thunderstruck Gauss Rifle")
+    .map((weapon: WeaponXmlType) => {
+      return convertWeapon(weapon);
+    });
   console.log(weaponListConverted);
 }
 
@@ -176,8 +192,46 @@ function convertWeapon(weapon: WeaponXmlType) {
       ? [weapon.range, weapon.alternaterange]
       : [weapon.range]
     : weapon.alternaterange
-    ? [weapon.alternaterange]
+    ? [weapon.category, weapon.alternaterange]
     : undefined;
+  const weaponRequirements = convertRequirements(weapon.required, weapon.name);
+  const hostWeaponRequirements =
+    weapon.category === weaponSubtypeXmlEnum.UnderbarrelWeapons
+      ? {
+          weaponRequirements: weaponRequirements,
+          hostWeaponMountsRequired: mountLocationsOnHostWeapon,
+        }
+      : undefined;
+  const initialSpecialisations = weapon.spec
+    ? weapon.spec2
+      ? [weapon.spec, weapon.spec2]
+      : [weapon.spec]
+    : weapon.spec2
+    ? [weapon.spec2]
+    : undefined;
+  if (
+    initialSpecialisations !== undefined &&
+    initialSpecialisations.length == 1 &&
+    weapon.useskillspec !== undefined &&
+    weapon.useskillspec !== initialSpecialisations[0]
+  )
+    assert(
+      false,
+      `only one specialisation source should be defined: ${weapon.name}`
+    );
+  const underbarrels = weapon.underbarrels
+    ? Array.isArray(weapon.underbarrels)
+      ? weapon.underbarrels
+      : [weapon.underbarrels]
+    : undefined;
+
+  const { skill, specialisations } = convertWeaponSkill(
+    weapon.useskill,
+    weapon.category,
+    weapon.useskillspec,
+    initialSpecialisations
+  );
+
   return {
     id: weapon.id,
     name: weapon.name,
@@ -185,29 +239,37 @@ function convertWeapon(weapon: WeaponXmlType) {
     subtype: weaponSubtype,
     concealability: weapon.conceal,
     accuracy: accuracy,
+    damage: damage,
     armourPenetration: armourPenetration,
-    mode: mode,
-    recoilCompensation: recoilCompensation,
-    ammunition: ammo,
+    ...(ammo && { ammunition: ammo }),
     availability: availability,
     cost: cost,
-    reach: weapon.reach,
-    damage: damage,
-    relatedSkill: weapon.useskill,
-    accessories: accessories,
-    accessoryMounts: accessoryMounts,
-    doubleCostAccessoryMounts: doubleCostAccessoryMounts,
-    hostWeaponMountsRequired: mountLocationsOnHostWeapon,
-    addWeapons: addWeapons,
-    allowAccessory: weapon.allowaccessory === "True",
-    allowGear: allowGear,
-    ammoCategory: weapon.ammocategory,
-    ammoSlots: weapon.ammoslots,
+    ...(allowGear && { allowedGear: allowGear }),
+    ...(accessories && { accessories: accessories }),
+    allowAccessories: weapon.allowaccessory === "True",
     cyberware: weapon.cyberware === "True",
     hide: weapon.hide === "",
-    range: range,
+    augmentationType: augmentationType,
+    relatedSkill: skill,
+    ...(specialisations && { relatedSkillSpecialisations: specialisations }),
     source: source,
     page: weapon.page,
-    augmentationType: augmentationType,
+    // firearm
+    mode: mode,
+    recoilCompensation: recoilCompensation,
+    ...(weapon.ammocategory && { ammoCategory: weapon.ammocategory }),
+    ...(weapon.ammoslots && { ammoSlots: weapon.ammoslots }),
+    ...(range && { range: range }),
+    ...(hostWeaponRequirements && {
+      hostWeaponRequirements: hostWeaponRequirements,
+    }),
+    ...(underbarrels && { underbarrels: underbarrels }),
+    ...(addWeapons && { addWeapons: addWeapons }),
+    ...(accessoryMounts && { accessoryMounts: accessoryMounts }),
+    ...(doubleCostAccessoryMounts && {
+      doubleCostAccessoryMounts: doubleCostAccessoryMounts,
+    }),
+    // melee
+    reach: weapon.reach,
   };
 }

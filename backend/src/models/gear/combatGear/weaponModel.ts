@@ -1,6 +1,5 @@
 import { Entity, Enum, PrimaryKey, Property } from "@mikro-orm/core";
 import {
-  skillsEnum,
   weaponTypeEnum,
   meleeWeaponTypeEnum,
   firearmWeaponTypeEnum,
@@ -16,8 +15,16 @@ import type {
   DamageType,
   FirearmAmmoType,
   RecoilCompensationType,
-  RatingType,
 } from "@shadowrun/common";
+import {
+  augmentationTypeEnum,
+  gearCategoryEnum,
+} from "@shadowrun/common/src/enums.js";
+import type {
+  AccessoryType,
+  AmmunitionType,
+  ModeType,
+} from "@shadowrun/common/src/schemas/weaponSchemas.js";
 
 @Entity({
   discriminatorColumn: "type",
@@ -26,6 +33,9 @@ import type {
 export abstract class Weapons {
   @PrimaryKey()
   id!: number;
+
+  @Property({ length: 255 })
+  name!: string;
 
   @Enum(() => weaponTypeEnum)
   type!: weaponTypeEnum;
@@ -44,8 +54,8 @@ export abstract class Weapons {
     | firearmWeaponTypeEnum
     | explosiveTypeEnum;
 
-  @Property({ length: 255 })
-  name!: string;
+  @Property()
+  concealability!: number;
 
   @Property({ type: "json" })
   accuracy!: AccuracyType;
@@ -56,32 +66,53 @@ export abstract class Weapons {
   @Property({ type: "json" })
   armourPenetration!: ArmourPenetrationType;
 
+  @Property({ type: "json", nullable: true })
+  ammunition?: AmmunitionType;
+
   @Property({ type: "json" })
   availability!: AvailabilityType;
-
-  @Property({ type: "json", nullable: true })
-  rating?: RatingType;
 
   @Property({ type: "json" })
   cost!: CostType;
 
-  @Property({ length: 5000 })
-  description!: string;
+  @Enum({ nullable: true })
+  allowedGear?: gearCategoryEnum;
 
-  @Property({ length: 5000, nullable: true })
-  wireless?: string;
+  @Property({ type: "json", nullable: true })
+  accessories?: Array<AccessoryType>;
 
-  @Property({ nullable: true })
-  implantWeapon?: boolean;
+  @Property()
+  allowAccessories!: boolean;
+
+  @Property()
+  cyberware!: boolean;
+
+  @Property()
+  hide!: boolean;
 
   @Enum()
-  relatedSkill!: skillsEnum;
+  augmentationCategory!: augmentationTypeEnum;
+
+  @Property()
+  relatedSkill!: string;
+
+  @Property({ type: "string[]", nullable: true })
+  relatedSkillSpecialisations?: Array<string>;
+
+  @Property()
+  source!: string;
+
+  @Property()
+  page!: number;
+
+  @Property({ length: 5000 })
+  description!: string;
 }
 
 @Entity({ discriminatorValue: weaponTypeEnum.Melee })
 export class MeleeWeapons extends Weapons {
-  @Property({ nullable: true })
-  reach?: number;
+  @Property()
+  reach!: number;
 }
 
 @Entity({ discriminatorValue: weaponTypeEnum.Projectile })
@@ -89,11 +120,11 @@ export class ProjectileWeapons extends Weapons {}
 
 @Entity({ discriminatorValue: weaponTypeEnum.Firearm })
 export class FirearmWeapons extends Weapons {
-  @Enum({ items: () => firearmModeEnum, array: true })
-  mode!: firearmModeEnum[];
+  @Enum({ type: "json" })
+  mode!: ModeType;
 
-  @Property({ type: "json" })
-  recoilCompensation!: RecoilCompensationType;
+  @Property()
+  recoilCompensation!: number;
 
   @Property({ type: "json" })
   ammo!: FirearmAmmoType[];
