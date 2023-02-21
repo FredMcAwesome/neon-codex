@@ -3,7 +3,6 @@ import {
   weaponTypeEnum,
   meleeWeaponTypeEnum,
   firearmWeaponTypeEnum,
-  firearmModeEnum,
   projectileWeaponTypeEnum,
   explosiveTypeEnum,
 } from "@shadowrun/common";
@@ -14,14 +13,13 @@ import type {
   CostType,
   DamageType,
   FirearmAmmoType,
-  RecoilCompensationType,
 } from "@shadowrun/common";
 import {
   augmentationTypeEnum,
   gearCategoryEnum,
 } from "@shadowrun/common/src/enums.js";
 import type {
-  AccessoryType,
+  AccessoriesType,
   AmmunitionType,
   ModeType,
 } from "@shadowrun/common/src/schemas/weaponSchemas.js";
@@ -79,7 +77,7 @@ export abstract class Weapons {
   allowedGear?: gearCategoryEnum;
 
   @Property({ type: "json", nullable: true })
-  accessories?: Array<AccessoryType>;
+  accessories?: AccessoriesType;
 
   @Property()
   allowAccessories!: boolean;

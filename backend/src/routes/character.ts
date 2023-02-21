@@ -5,8 +5,6 @@ import {
   matrixWareAccessoryTypeEnum,
   matrixWareTypeEnum,
   otherWareTypeEnum,
-  WeaponSummaryType,
-  weaponTypeEnum,
 } from "@shadowrun/common";
 import type {
   WeaponListType,
@@ -16,10 +14,6 @@ import type {
 import { Database } from "../utils/db.js";
 import * as logger from "../utils/logger.js";
 import { IAuthRequest, isLoggedIn } from "./authentication.js";
-import {
-  FirearmWeapons,
-  MeleeWeapons,
-} from "../models/gear/combatGear/weaponModel.js";
 import { Cyberlimbs } from "../models/gear/augmentationGear/augmentationModel.js";
 import {
   MatrixListType,
@@ -204,58 +198,61 @@ router.get(
 );
 
 export default router;
-
 async function getWeapons() {
-  const weapons = await Database.weaponRespository.findAll();
-  const weaponsResponse: WeaponListType = weapons.map((weapon) => {
-    const meleeWeapon = weapon as MeleeWeapons;
-    const firearmWeapon = weapon as FirearmWeapons;
-    const weaponFormatted: WeaponSummaryType = {
-      ...(weapon.type === weaponTypeEnum.Melee
-        ? {
-            typeInformation: {
-              type: weaponTypeEnum.Melee,
-              meleeOptions: {
-                reach: meleeWeapon.reach || undefined,
-              },
-            },
-          }
-        : weapon.type === weaponTypeEnum.Projectile
-        ? {
-            typeInformation: {
-              type: weaponTypeEnum.Projectile,
-            },
-          }
-        : weapon.type === weaponTypeEnum.Firearm
-        ? {
-            typeInformation: {
-              type: weaponTypeEnum.Firearm,
-              firearmOptions: {
-                mode: firearmWeapon.mode,
-                recoilCompensation: firearmWeapon.recoilCompensation,
-                ammo: firearmWeapon.ammo,
-              },
-            },
-          }
-        : {
-            typeInformation: {
-              type: weaponTypeEnum.Explosive,
-            },
-          }),
-      subtype: weapon.subtype,
-      name: weapon.name,
-      accuracy: weapon.accuracy,
-      damage: weapon.damage,
-      armourPenetration: weapon.armourPenetration,
-      availability: weapon.availability,
-      cost: weapon.cost,
-      description: weapon.description,
-      relatedSkill: weapon.relatedSkill,
-    };
-    return weaponFormatted;
-  });
-  return weaponsResponse;
+  return [];
 }
+
+// async function getWeapons() {
+//   const weapons = await Database.weaponRespository.findAll();
+//   const weaponsResponse: WeaponListType = weapons.map((weapon) => {
+//     const meleeWeapon = weapon as MeleeWeapons;
+//     const firearmWeapon = weapon as FirearmWeapons;
+//     const weaponFormatted: WeaponSummaryType = {
+//       ...(weapon.type === weaponTypeEnum.Melee
+//         ? {
+//             typeInformation: {
+//               type: weaponTypeEnum.Melee,
+//               meleeOptions: {
+//                 reach: meleeWeapon.reach || undefined,
+//               },
+//             },
+//           }
+//         : weapon.type === weaponTypeEnum.Projectile
+//         ? {
+//             typeInformation: {
+//               type: weaponTypeEnum.Projectile,
+//             },
+//           }
+//         : weapon.type === weaponTypeEnum.Firearm
+//         ? {
+//             typeInformation: {
+//               type: weaponTypeEnum.Firearm,
+//               firearmOptions: {
+//                 mode: firearmWeapon.mode,
+//                 recoilCompensation: firearmWeapon.recoilCompensation,
+//                 ammo: firearmWeapon.ammo,
+//               },
+//             },
+//           }
+//         : {
+//             typeInformation: {
+//               type: weaponTypeEnum.Explosive,
+//             },
+//           }),
+//       subtype: weapon.subtype,
+//       name: weapon.name,
+//       accuracy: weapon.accuracy,
+//       damage: weapon.damage,
+//       armourPenetration: weapon.armourPenetration,
+//       availability: weapon.availability,
+//       cost: weapon.cost,
+//       description: weapon.description,
+//       relatedSkill: weapon.relatedSkill,
+//     };
+//     return weaponFormatted;
+//   });
+//   return weaponsResponse;
+// }
 
 async function getElectronics() {
   const matrixWare = await Database.matrixWareRespository.findAll();

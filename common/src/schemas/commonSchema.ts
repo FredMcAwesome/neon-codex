@@ -48,3 +48,41 @@ export type CostType = zod.infer<typeof CostSchema>;
 
 export const CapacitySchema = ValueRangeSchema;
 export type CapacityType = zod.infer<typeof CapacitySchema>;
+
+export enum weaponSubtypeXmlEnum {
+  Blades = "Blades",
+  Clubs = "Clubs",
+  Gear = "Gear",
+  ExoticMeleeWeapons = "Exotic Melee Weapons",
+  ExoticRangedWeapons = "Exotic Ranged Weapons",
+  Flamethrowers = "Flamethrowers",
+  Cyberweapon = "Cyberweapon",
+  Bows = "Bows",
+  Crossbows = "Crossbows",
+  Tasers = "Tasers",
+  Holduts = "Holdouts",
+  LightPistols = "Light Pistols",
+  HeavyPistols = "Heavy Pistols",
+  MachinePistols = "Machine Pistols",
+  SubmachineGuns = "Submachine Guns",
+  AssaultRifles = "Assault Rifles",
+  SportingRifles = "Sporting Rifles",
+  Shotguns = "Shotguns",
+  SniperRifles = "Sniper Rifles",
+  LightMachineguns = "Light Machine Guns",
+  MediumMachineguns = "Medium Machine Guns",
+  HeavyMachineguns = "Heavy Machine Guns",
+  AssaultCannons = "Assault Cannons",
+  GrenadeLaunchers = "Grenade Launchers",
+  MissileLaunchers = "Missile Launchers",
+  ImprovisedWeapons = "Improvised Weapons",
+  LaserWeapons = "Laser Weapons",
+  Unarmed = "Unarmed",
+  Quality = "Quality",
+  UnderbarrelWeapons = "Underbarrel Weapons",
+  BioWeapon = "Bio-Weapon",
+  Carbines = "Carbines",
+}
+
+export const WeaponSubtypeXmlSchema = zod.nativeEnum(weaponSubtypeXmlEnum);
+export type WeaponSubtypeXmlType = zod.infer<typeof WeaponSubtypeXmlSchema>;

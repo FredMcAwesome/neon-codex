@@ -1,0 +1,1 @@
+`npx ts-node-esm src/xmlParser/parsers/weapons/WeaponParser.ts`

@@ -23,16 +23,16 @@ import {
   gearCategoryEnum,
   reloadMethodEnum,
   restrictionEnum,
+  sourceBookEnum,
 } from "@shadowrun/common/src/enums.js";
 import assert from "assert";
 import {
   AccessoryXmlType,
   AccuracyXmlType,
   DamageXmlType,
-  weaponSubtypeXmlEnum,
   WeaponXmlType,
   RequiredXmlType,
-  WeaponSubtypeXmlType,
+  sourceBookXmlEnum,
 } from "./WeaponParserSchema.js";
 import {
   AccessoryType,
@@ -41,7 +41,11 @@ import {
   DamageAmountType,
   DamageSubtypeType,
   DamageType,
+  FirearmOptionsType,
+  MeleeOptionsType,
+  ModeType,
   MountType,
+  typeInformationType,
 } from "@shadowrun/common/src/schemas/weaponSchemas.js";
 import {
   convertSpecial,
@@ -50,7 +54,74 @@ import {
   parseNumber,
   removeStringFromArray,
 } from "../ParserHelper.js";
-import { GearCalculationType } from "@shadowrun/common/src/schemas/commonSchema.js";
+import {
+  CostType,
+  GearCalculationType,
+  weaponSubtypeXmlEnum,
+  WeaponSubtypeXmlType,
+} from "@shadowrun/common/src/schemas/commonSchema.js";
+
+export const convertTypeInformation = function (
+  weaponType: weaponTypeEnum,
+  weaponSubtype:
+    | meleeWeaponTypeEnum
+    | projectileWeaponTypeEnum
+    | firearmWeaponTypeEnum
+    | explosiveTypeEnum,
+  meleeOptions: MeleeOptionsType,
+  firearmOptions: FirearmOptionsType
+): typeInformationType {
+  let check = false;
+  switch (weaponType) {
+    case weaponTypeEnum.Melee:
+      Object.values(meleeWeaponTypeEnum).forEach((enumValue) => {
+        if (enumValue === weaponSubtype) {
+          check = true;
+        }
+      });
+      assert(check, `weaponSubtype: ${weaponSubtype}`);
+      return {
+        type: weaponTypeEnum.Melee,
+        subtype: weaponSubtype as meleeWeaponTypeEnum,
+        meleeOptions: meleeOptions,
+      };
+
+    case weaponTypeEnum.Projectile:
+      Object.values(projectileWeaponTypeEnum).forEach((enumValue) => {
+        if (enumValue === weaponSubtype) {
+          check = true;
+        }
+      });
+      assert(check, `weaponSubtype: ${weaponSubtype}`);
+      return {
+        type: weaponTypeEnum.Projectile,
+        subtype: weaponSubtype as projectileWeaponTypeEnum,
+      };
+    case weaponTypeEnum.Firearm:
+      Object.values(firearmWeaponTypeEnum).forEach((enumValue) => {
+        if (enumValue === weaponSubtype) {
+          check = true;
+        }
+      });
+      assert(check, `weaponSubtype: ${weaponSubtype}`);
+      return {
+        type: weaponTypeEnum.Firearm,
+        subtype: weaponSubtype as firearmWeaponTypeEnum,
+        firearmOptions: firearmOptions,
+      };
+    case weaponTypeEnum.Explosive:
+      Object.values(explosiveTypeEnum).forEach((enumValue) => {
+        if (enumValue === weaponSubtype) {
+          check = true;
+        }
+      });
+      assert(check, `weaponSubtype: ${weaponSubtype}`);
+      return {
+        type: weaponTypeEnum.Explosive,
+        subtype: weaponSubtype as explosiveTypeEnum,
+      };
+  }
+};
 
 export const convertAccuracy = function (
   accuracy: AccuracyXmlType,
@@ -363,10 +434,13 @@ export const convertArmourPenetration = function (
   }
 };
 
-export const convertMode = function (mode: number | string, name: string) {
+export const convertMode = function (
+  mode: number | string,
+  name: string
+): ModeType {
   // console.log("Mode: " + mode.toString());
   if (typeof mode === "number" || mode === "-") {
-    return undefined;
+    return [firearmModeEnum.None];
   } else {
     let modeList: Array<
       | { operator: mathOperatorEnum }
@@ -400,35 +474,24 @@ export const convertMode = function (mode: number | string, name: string) {
         assert(false, "Special string not replaced!");
       }
       if (modeList.length > 1) {
-        modeList.splice(insertLocation.location + locationCounter, 0, {
-          option: option,
-        });
+        modeList.splice(insertLocation.location + locationCounter, 0, option);
       } else {
-        modeList[0] = {
-          option: option,
-        };
+        modeList[0] = option;
       }
       locationCounter++;
     });
     modeList.forEach((modeItem, index) => {
       let check = false;
-      if (typeof modeItem === "number") {
-        check = true;
-      } else {
-        Object.values(firearmModeEnum).forEach((option) => {
-          if (equal(modeItem, { option: option })) check = true;
-        });
-        Object.values(mathOperatorEnum).forEach((operator) => {
-          if (equal(modeItem, { operator: operator })) check = true;
-        });
-      }
+      Object.values(firearmModeEnum).forEach((option) => {
+        if (equal(modeItem, option)) check = true;
+      });
       // console.log(modeItem);
       assert(
         check,
         `Weapon name: ${name}, list length: ${modeList.length}, failed item: ${modeItem} at index: ${index}`
       );
     });
-    return modeList;
+    return modeList as ModeType;
   }
 };
 
@@ -449,13 +512,11 @@ export const convertAmmo = function (ammo: number | string, name: string) {
     return undefined;
   } else if (typeof ammo === "number") {
     return [
-      [
-        {
-          capacity: ammo,
-          numberOfAmmunitionHolders: undefined,
-          reloadMethod: reloadMethodEnum.None,
-        },
-      ],
+      {
+        capacity: ammo,
+        numberOfAmmunitionHolders: undefined,
+        reloadMethod: reloadMethodEnum.None,
+      },
     ];
   } else {
     // options split with '/' or 'or'
@@ -645,7 +706,7 @@ export const convertCost = function (cost: number | string, name: string) {
         `Weapon name: ${name}, list length: ${costList.length}, failed item: ${costItem} at index: ${index}`
       );
     });
-    return costList;
+    return costList as CostType;
   }
 };
 
@@ -852,6 +913,111 @@ export const convertWeaponSkill = function (
       assert(false, `Unknown skill category: ${category}`);
   }
   return { skill: skill, specialisations: specialisations };
+};
+
+export const convertSource = function (source: sourceBookXmlEnum | 2050) {
+  const xmlSource = source === 2050 ? sourceBookXmlEnum.Shadowrun2050 : source;
+  switch (xmlSource) {
+    case sourceBookXmlEnum.AssassinPrimer:
+      return sourceBookEnum.AssassinPrimer;
+    case sourceBookXmlEnum.ChromeFlesh:
+      return sourceBookEnum.ChromeFlesh;
+    case sourceBookXmlEnum.CuttingAces:
+      return sourceBookEnum.CuttingAces;
+    case sourceBookXmlEnum.DataTrails:
+      return sourceBookEnum.DataTrails;
+    case sourceBookXmlEnum.GunHeaven3:
+      return sourceBookEnum.GunHeaven3;
+    case sourceBookXmlEnum.HardTargets:
+      return sourceBookEnum.HardTargets;
+    case sourceBookXmlEnum.KillCode:
+      return sourceBookEnum.KillCode;
+    case sourceBookXmlEnum.KrimeKatalog:
+      return sourceBookEnum.KrimeKatalog;
+    case sourceBookXmlEnum.Lockdown:
+      return sourceBookEnum.Lockdown;
+    case sourceBookXmlEnum.NoFuture:
+      return sourceBookEnum.NoFuture;
+    case sourceBookXmlEnum.Rigger5:
+      return sourceBookEnum.Rigger5;
+    case sourceBookXmlEnum.RunAndGun:
+      return sourceBookEnum.RunAndGun;
+    case sourceBookXmlEnum.RunFaster:
+      return sourceBookEnum.RunFaster;
+    case sourceBookXmlEnum.SailAwaySweetSister:
+      return sourceBookEnum.SailAwaySweetSister;
+    case sourceBookXmlEnum.Shadowrun5:
+      return sourceBookEnum.Shadowrun5;
+    case sourceBookXmlEnum.ShadowsInFocus_SanFranciscoMetroplex:
+      return sourceBookEnum.ShadowsInFocus_SanFranciscoMetroplex;
+    case sourceBookXmlEnum.StolenSouls:
+      return sourceBookEnum.StolenSouls;
+    case sourceBookXmlEnum.StreetGrimoire:
+      return sourceBookEnum.StreetGrimoire;
+    case sourceBookXmlEnum.StreetLethal:
+      return sourceBookEnum.StreetLethal;
+    case sourceBookXmlEnum.TheCompleteTrog:
+      return sourceBookEnum.TheCompleteTrog;
+    case sourceBookXmlEnum.TheSeattleGambit:
+      return sourceBookEnum.TheSeattleGambit;
+    // Not in english
+    case sourceBookXmlEnum.StateOfTheArtADL:
+    case sourceBookXmlEnum.Schattenhandbuch:
+    case sourceBookXmlEnum.Schattenhandbuch2:
+    case sourceBookXmlEnum.Schattenhandbuch3:
+    case sourceBookXmlEnum.Hamburg:
+    case sourceBookXmlEnum.DatapulsSOTA2080:
+    case sourceBookXmlEnum.DatapulsVerschlusssache:
+    case sourceBookXmlEnum.Shadowrun2050:
+    case sourceBookXmlEnum.GrimmesErwachen:
+      assert(false, "Only english books should get here.");
+      break;
+    // Not containing Weapons
+    case sourceBookXmlEnum.StreetGrimoireErrata:
+      return sourceBookEnum.StreetGrimoireErrata;
+    case sourceBookXmlEnum.BulletsAndBandages:
+      return sourceBookEnum.BulletsAndBandages;
+    case sourceBookXmlEnum.ShadowSpells:
+      return sourceBookEnum.ShadowSpells;
+    case sourceBookXmlEnum.NothingPersonal:
+      return sourceBookEnum.NothingPersonal;
+    case sourceBookXmlEnum.BloodyBusiness:
+      return sourceBookEnum.BloodyBusiness;
+    case sourceBookXmlEnum.DataTrailsDissonantEchoes:
+      return sourceBookEnum.DataTrailsDissonantEchoes;
+    case sourceBookXmlEnum.HowlingShadows:
+      return sourceBookEnum.HowlingShadows;
+    case sourceBookXmlEnum.TheVladivostokGauntlet:
+      return sourceBookEnum.TheVladivostokGauntlet;
+    case sourceBookXmlEnum.SplinteredState:
+      return sourceBookEnum.SplinteredState;
+    case sourceBookXmlEnum.ShadowsInFocus_Butte:
+      return sourceBookEnum.ShadowsInFocus_Butte;
+    case sourceBookXmlEnum.HongKongSourcebook:
+      return sourceBookEnum.HongKongSourcebook;
+    case sourceBookXmlEnum.ShadowsInFocus_Metropole:
+      return sourceBookEnum.ShadowsInFocus_Metropole;
+    case sourceBookXmlEnum.BookOfTheLost:
+      return sourceBookEnum.BookOfTheLost;
+    case sourceBookXmlEnum.ForbiddenArcana:
+      return sourceBookEnum.ForbiddenArcana;
+    case sourceBookXmlEnum.ShadowsInFocus_SiouxNation_CountingCoup:
+      return sourceBookEnum.ShadowsInFocus_SiouxNation_CountingCoup;
+    case sourceBookXmlEnum.DarkTerrors:
+      return sourceBookEnum.DarkTerrors;
+    case sourceBookXmlEnum.BetterThanBad:
+      return sourceBookEnum.BetterThanBad;
+    case sourceBookXmlEnum.Aetherology:
+      return sourceBookEnum.Aetherology;
+    case sourceBookXmlEnum.ShadowrunMissions0803_10BlockTango:
+      return sourceBookEnum.ShadowrunMissions0803_10BlockTango;
+    case sourceBookXmlEnum.ShadowrunMissions0804_DirtyLaundry:
+      return sourceBookEnum.ShadowrunMissions0804_DirtyLaundry;
+    case sourceBookXmlEnum.ShadowrunQuickStartRules:
+      return sourceBookEnum.ShadowrunQuickStartRules;
+    case sourceBookXmlEnum.SprawlWilds:
+      return sourceBookEnum.SprawlWilds;
+  }
 };
 
 export const convertGearCategory = function (

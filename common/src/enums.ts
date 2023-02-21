@@ -202,10 +202,10 @@ export enum accuracyTypeEnum {
 }
 
 export enum damageTypeEnum {
-  Physical,
-  Stun,
-  Chemical,
-  None,
+  Physical = "Physical",
+  Stun = "Stun",
+  Chemical = "Chemical",
+  None = "N/A",
 }
 
 export enum damageAnnotationEnum {
@@ -260,6 +260,7 @@ export enum firearmModeEnum {
   SemiAutomatic = "Semi Automatic",
   BurstFire = "Burst Fire",
   FullAutomatic = "Full Automatic",
+  None = "N/A",
 }
 
 export enum reloadMethodEnum {
@@ -286,10 +287,10 @@ export enum firearmAccessoryMountLocationEnum {
 }
 
 export enum ammunitionTypeEnum {
-  Ammo,
-  Grenades,
-  RocketsMissiles,
-  ProjectileAmmo,
+  Ammo = "Ammo",
+  Grenades = "Grenades",
+  RocketsMissiles = "Rockets/Missiles",
+  ProjectileAmmo = "Projectile",
 }
 
 export enum availabilityTypeEnum {
@@ -375,9 +376,9 @@ export enum gearCategoryEnum {
 }
 
 export enum blastTypeEnum {
-  Radius,
-  Reducing,
-  Special,
+  Radius = "Radius",
+  Reducing = "Reducing",
+  Special = "Special",
 }
 
 export enum mathOperatorEnum {
@@ -442,7 +443,6 @@ export enum augmentationClassificationEnum {
   None = "N/A",
   Cyberware = "Cyberware",
   Bioware = "Bioware",
-  CulturedBioware = "Cultured Bioware",
 }
 
 export enum augmentationAccessoryTypeEnum {
@@ -509,4 +509,50 @@ export enum droneSubtypeEnum {
   SmallDrones = "Small Drones",
   MediumDrones = "Medium Drones",
   LargeDrones = "Large Drones",
+}
+
+export enum sourceBookEnum {
+  AssassinPrimer = "Assassin Primer",
+  GunHeaven3 = "GunHeaven 3",
+  RunAndGun = "Run And Gun",
+  Shadowrun5 = "Shadowrun 5 Core Rulebook",
+  StreetGrimoire = "Street Grimoire",
+  StreetGrimoireErrata = "Street Grimoire Errata",
+  BulletsAndBandages = "Bullets And Bandages",
+  SailAwaySweetSister = "Sail Away Sweet Sister",
+  StolenSouls = "Stolen Souls",
+  RunFaster = "Run Faster",
+  ShadowSpells = "Shadow Spells",
+  NothingPersonal = "Nothing Personal",
+  DataTrails = "Data Trails",
+  DataTrailsDissonantEchoes = "Data Trails - Dissonant Echoes",
+  ChromeFlesh = "Chrome Flesh",
+  HardTargets = "Hard Targets",
+  BloodyBusiness = "Bloody Business",
+  Rigger5 = "Rigger 5",
+  HowlingShadows = "Howling Shadows",
+  TheVladivostokGauntlet = "The Vladivostok Gauntlet",
+  SplinteredState = "Splintered State",
+  ShadowsInFocus_Butte = "Shadows In Focus: Butte",
+  HongKongSourcebook = "Hong Kong Sourcebook",
+  Lockdown = "Lockdown",
+  ShadowsInFocus_SanFranciscoMetroplex = "Shadows In Focus: San Francisco Metroplex",
+  ShadowsInFocus_Metropole = "Shadows In Focus: Metropole",
+  CuttingAces = "Cutting Aces",
+  BookOfTheLost = "Book Of The Lost",
+  ForbiddenArcana = "Forbidden Arcana",
+  TheCompleteTrog = "The Complete Trog",
+  ShadowsInFocus_SiouxNation_CountingCoup = "Shadows In Focus: Sioux Nation: Counting Coup",
+  DarkTerrors = "Dark Terrors",
+  TheSeattleGambit = "The Seattle Gambit",
+  StreetLethal = "Street Lethal",
+  KillCode = "Kill Code",
+  BetterThanBad = "Better Than Bad",
+  Aetherology = "Aetherology",
+  NoFuture = "No Future",
+  KrimeKatalog = "Krime Katalog",
+  ShadowrunMissions0803_10BlockTango = "Shadowrun Missions 0803: 10 Block Tango",
+  ShadowrunMissions0804_DirtyLaundry = "Shadowrun Missions 0804: Dirty Laundry",
+  ShadowrunQuickStartRules = "Shadowrun Quick Start Rules",
+  SprawlWilds = "Sprawl Wilds",
 }

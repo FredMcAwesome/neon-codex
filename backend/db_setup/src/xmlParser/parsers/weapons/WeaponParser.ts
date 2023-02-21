@@ -1,7 +1,24 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+import {
+  AccuracyType,
+  ArmourPenetrationType,
+  AvailabilityType,
+  CostType,
+  DamageType,
+  WeaponSummaryType,
+} from "@shadowrun/common";
 import { augmentationClassificationEnum } from "@shadowrun/common/src/enums.js";
+import { weaponSubtypeXmlEnum } from "@shadowrun/common/src/schemas/commonSchema.js";
+import {
+  AccessoriesType,
+  AccessoryMountType,
+  AmmunitionType,
+  ModeType,
+  RecoilCompensationType,
+  WeaponSummaryListType,
+} from "@shadowrun/common/src/schemas/weaponSchemas.js";
 import assert from "assert";
 import { XMLParser } from "fast-xml-parser";
-import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import {
@@ -19,14 +36,16 @@ import {
   convertAllowGear,
   convertRequirements,
   convertWeaponSkill,
+  convertSource,
+  convertTypeInformation,
 } from "./WeaponParserHelper.js";
 import {
   WeaponXmlType,
   WeaponListXmlSchema,
   WeaponListXmlType,
   sourceBookXmlEnum,
-  weaponSubtypeXmlEnum,
 } from "./WeaponParserSchema.js";
+import * as fs from "fs";
 
 const currentPath = import.meta.url;
 const xml_string = fs.readFileSync(
@@ -138,12 +157,27 @@ if (weaponListParsed.success) {
   });
 
   // const weaponListConverted: Array<RequiredEntityData<MeleeWeapons>> =
-  const weaponListConverted = weaponListNoAmmo
+  const weaponListConverted: WeaponSummaryListType = weaponListNoAmmo
     // .filter((weapon) => weapon.name === "Ares Thunderstruck Gauss Rifle")
     .map((weapon: WeaponXmlType) => {
-      return convertWeapon(weapon);
+      const convertedWeapon: WeaponSummaryType = convertWeapon(weapon);
+      return convertedWeapon;
     });
   console.log(weaponListConverted);
+  fs.writeFile(
+    fileURLToPath(
+      path.dirname(currentPath) +
+        "../../../../seeds/gear/combatGear/weapons.json"
+    ),
+    JSON.stringify(weaponListConverted, null, 2),
+    (error) => {
+      if (error) {
+        console.error(error);
+      } else {
+        console.log("File written!");
+      }
+    }
+  );
 }
 
 // function convertWeapon(weapon: WeaponType): RequiredEntityData<MeleeWeapons> {
@@ -157,20 +191,34 @@ function convertWeapon(weapon: WeaponXmlType) {
     augmentationType = augmentationClassificationEnum.Bioware;
   }
 
-  const source =
-    weapon.source === 2050 ? sourceBookXmlEnum.Shadowrun2050 : weapon.source;
+  const source = convertSource(weapon.source);
 
   console.log(weapon.name);
-  const accuracy = convertAccuracy(weapon.accuracy, weapon.name);
-  const damage = convertDamage(weapon.damage, weapon.name);
-  const armourPenetration = convertArmourPenetration(weapon.ap, weapon.name);
-  const mode = convertMode(weapon.mode, weapon.name);
-  const recoilCompensation = convertRecoilCompensation(weapon.rc);
-  const ammo = convertAmmo(weapon.ammo, weapon.name);
-  const availability = convertAvailability(weapon.avail, weapon.name);
-  const cost = convertCost(weapon.cost, weapon.name);
-  const accessories = convertAccessories(weapon.accessories, weapon.name);
-  const accessoryMounts = convertAccessoryMounts(weapon.accessorymounts);
+  const accuracy: AccuracyType = convertAccuracy(weapon.accuracy, weapon.name);
+  const damage: DamageType = convertDamage(weapon.damage, weapon.name);
+  const armourPenetration: ArmourPenetrationType = convertArmourPenetration(
+    weapon.ap,
+    weapon.name
+  );
+  const mode: ModeType = convertMode(weapon.mode, weapon.name);
+  const recoilCompensation: RecoilCompensationType = convertRecoilCompensation(
+    weapon.rc
+  );
+  const ammo: AmmunitionType | undefined = convertAmmo(
+    weapon.ammo,
+    weapon.name
+  );
+  const availability: AvailabilityType = convertAvailability(
+    weapon.avail,
+    weapon.name
+  );
+  const cost: CostType = convertCost(weapon.cost, weapon.name);
+  const accessories: AccessoriesType | undefined = convertAccessories(
+    weapon.accessories,
+    weapon.name
+  );
+  const accessoryMounts: AccessoryMountType | undefined =
+    convertAccessoryMounts(weapon.accessorymounts);
   const addWeapons = weapon.addweapon
     ? Array.isArray(weapon.addweapon)
       ? weapon.addweapon
@@ -180,6 +228,14 @@ function convertWeapon(weapon: WeaponXmlType) {
   const doubleCostAccessoryMounts = convertAccessoryMounts(
     weapon.doubledcostaccessorymounts
   );
+  const range = weapon.range
+    ? weapon.alternaterange
+      ? [weapon.range, weapon.alternaterange]
+      : [weapon.range]
+    : weapon.alternaterange
+    ? [weapon.category, weapon.alternaterange]
+    : [weapon.category];
+  const weaponRequirements = convertRequirements(weapon.required, weapon.name);
   const mountLocationsOnHostWeapon = weapon.mount
     ? weapon.extramount
       ? [weapon.mount, weapon.extramount]
@@ -187,14 +243,6 @@ function convertWeapon(weapon: WeaponXmlType) {
     : weapon.extramount
     ? [weapon.extramount]
     : undefined;
-  const range = weapon.range
-    ? weapon.alternaterange
-      ? [weapon.range, weapon.alternaterange]
-      : [weapon.range]
-    : weapon.alternaterange
-    ? [weapon.category, weapon.alternaterange]
-    : undefined;
-  const weaponRequirements = convertRequirements(weapon.required, weapon.name);
   const hostWeaponRequirements =
     weapon.category === weaponSubtypeXmlEnum.UnderbarrelWeapons
       ? {
@@ -220,9 +268,9 @@ function convertWeapon(weapon: WeaponXmlType) {
       `only one specialisation source should be defined: ${weapon.name}`
     );
   const underbarrels = weapon.underbarrels
-    ? Array.isArray(weapon.underbarrels)
-      ? weapon.underbarrels
-      : [weapon.underbarrels]
+    ? Array.isArray(weapon.underbarrels.underbarrel)
+      ? weapon.underbarrels.underbarrel
+      : [weapon.underbarrels.underbarrel]
     : undefined;
 
   const { skill, specialisations } = convertWeaponSkill(
@@ -232,11 +280,36 @@ function convertWeapon(weapon: WeaponXmlType) {
     initialSpecialisations
   );
 
+  const meleeOptions = { reach: weapon.reach };
+  const firearmOptions = {
+    mode: mode,
+    recoilCompensation: recoilCompensation,
+    ...(weapon.ammocategory && { ammoCategory: weapon.ammocategory }),
+    ammoSlots: weapon.ammoslots || 1,
+    range: range,
+    ...(hostWeaponRequirements && {
+      hostWeaponRequirements: hostWeaponRequirements,
+    }),
+    ...(underbarrels && { underbarrelWeapons: underbarrels }),
+    ...(addWeapons && { addWeapons: addWeapons }),
+    ...(accessoryMounts && { accessoryMounts: accessoryMounts }),
+    ...(doubleCostAccessoryMounts && {
+      doubleCostAccessoryMounts: doubleCostAccessoryMounts,
+    }),
+  };
+
+  const typeInformation = convertTypeInformation(
+    weaponType,
+    weaponSubtype,
+    meleeOptions,
+    firearmOptions
+  );
+
   return {
-    id: weapon.id,
+    // id: weapon.id,
     name: weapon.name,
-    type: weaponType,
-    subtype: weaponSubtype,
+    description: "",
+    typeInformation: typeInformation,
     concealability: weapon.conceal,
     accuracy: accuracy,
     damage: damage,
@@ -246,30 +319,13 @@ function convertWeapon(weapon: WeaponXmlType) {
     cost: cost,
     ...(allowGear && { allowedGear: allowGear }),
     ...(accessories && { accessories: accessories }),
-    allowAccessories: weapon.allowaccessory === "True",
-    cyberware: weapon.cyberware === "True",
-    hide: weapon.hide === "",
+    allowAccessories: weapon.allowaccessory !== "False",
+    isCyberware: weapon.cyberware === "True",
+    // hide: weapon.hide === "", // I don't understand what hide means...
     augmentationType: augmentationType,
     relatedSkill: skill,
     ...(specialisations && { relatedSkillSpecialisations: specialisations }),
     source: source,
     page: weapon.page,
-    // firearm
-    mode: mode,
-    recoilCompensation: recoilCompensation,
-    ...(weapon.ammocategory && { ammoCategory: weapon.ammocategory }),
-    ...(weapon.ammoslots && { ammoSlots: weapon.ammoslots }),
-    ...(range && { range: range }),
-    ...(hostWeaponRequirements && {
-      hostWeaponRequirements: hostWeaponRequirements,
-    }),
-    ...(underbarrels && { underbarrels: underbarrels }),
-    ...(addWeapons && { addWeapons: addWeapons }),
-    ...(accessoryMounts && { accessoryMounts: accessoryMounts }),
-    ...(doubleCostAccessoryMounts && {
-      doubleCostAccessoryMounts: doubleCostAccessoryMounts,
-    }),
-    // melee
-    reach: weapon.reach,
   };
 }

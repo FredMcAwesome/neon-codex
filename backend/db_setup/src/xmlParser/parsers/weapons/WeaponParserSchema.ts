@@ -1,4 +1,5 @@
 import { gearCategoryEnum } from "@shadowrun/common/src/enums.js";
+import { weaponSubtypeXmlEnum, WeaponSubtypeXmlSchema } from "@shadowrun/common/src/schemas/commonSchema.js";
 import { MountSchema } from "@shadowrun/common/src/schemas/weaponSchemas.js";
 import { z as zod } from "zod";
 
@@ -83,43 +84,7 @@ export enum sourceBookXmlEnum {
 }
 const SourceXmlSchema = zod.nativeEnum(sourceBookXmlEnum);
 
-export enum weaponSubtypeXmlEnum {
-  Blades = "Blades",
-  Clubs = "Clubs",
-  Gear = "Gear",
-  ExoticMeleeWeapons = "Exotic Melee Weapons",
-  ExoticRangedWeapons = "Exotic Ranged Weapons",
-  Flamethrowers = "Flamethrowers",
-  Cyberweapon = "Cyberweapon",
-  Bows = "Bows",
-  Crossbows = "Crossbows",
-  Tasers = "Tasers",
-  Holduts = "Holdouts",
-  LightPistols = "Light Pistols",
-  HeavyPistols = "Heavy Pistols",
-  MachinePistols = "Machine Pistols",
-  SubmachineGuns = "Submachine Guns",
-  AssaultRifles = "Assault Rifles",
-  SportingRifles = "Sporting Rifles",
-  Shotguns = "Shotguns",
-  SniperRifles = "Sniper Rifles",
-  LightMachineguns = "Light Machine Guns",
-  MediumMachineguns = "Medium Machine Guns",
-  HeavyMachineguns = "Heavy Machine Guns",
-  AssaultCannons = "Assault Cannons",
-  GrenadeLaunchers = "Grenade Launchers",
-  MissileLaunchers = "Missile Launchers",
-  ImprovisedWeapons = "Improvised Weapons",
-  LaserWeapons = "Laser Weapons",
-  Unarmed = "Unarmed",
-  Quality = "Quality",
-  UnderbarrelWeapons = "Underbarrel Weapons",
-  BioWeapon = "Bio-Weapon",
-  Carbines = "Carbines",
-}
 
-const WeaponSubtypeXmlSchema = zod.nativeEnum(weaponSubtypeXmlEnum);
-export type WeaponSubtypeXmlType = zod.infer<typeof WeaponSubtypeXmlSchema>;
 
 const AccuracyXmlSchema = zod.union([zod.number(), zod.string()]);
 export type AccuracyXmlType = zod.infer<typeof AccuracyXmlSchema>;
@@ -229,7 +194,7 @@ const WeaponXmlSchema = zod
     spec: zod.optional(zod.string()),
     spec2: zod.optional(zod.string()),
     underbarrels: zod.optional(
-      zod.union([zod.array(UnderbarrelXmlSchema), UnderbarrelXmlSchema])
+      UnderbarrelXmlSchema
     ),
     useskill: zod.optional(zod.string()),
     useskillspec: zod.optional(zod.string()),
