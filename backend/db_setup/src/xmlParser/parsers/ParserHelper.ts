@@ -8,20 +8,26 @@ export const parseCharacter = function (
 ) {
   const parsedNumber = parseNumber(character, digitArray);
   digitArray = parsedNumber.digitArray;
-  let lastIndex = digitArray.length - 1;
+  let lastIndex = parsedNumber.numberFound
+    ? digitArray.length - 2
+    : digitArray.length - 1;
   if (lastIndex >= 0 && digitArray[lastIndex] === "/" && character !== "/") {
-    // restore / if not a divide
-    if (typeof digitArray[lastIndex - 1] !== "number") {
-      digitArray[lastIndex - 1] = `${digitArray[lastIndex - 1] as string}${
-        digitArray[lastIndex] as string
-      }`;
-      digitArray.splice(lastIndex, 1);
-      lastIndex = digitArray.length - 1;
+    if (simpleDivide) {
+      digitArray[lastIndex] = { operator: mathOperatorEnum.Divide };
+    } else {
+      // restore / if not a divide
+      if (typeof digitArray[lastIndex - 1] !== "number") {
+        digitArray[lastIndex - 1] = `${digitArray[lastIndex - 1] as string}${
+          digitArray[lastIndex] as string
+        }`;
+        digitArray.splice(lastIndex, 1);
+        lastIndex = digitArray.length - 1;
+      }
     }
   }
   if (!parsedNumber.numberFound) {
     assert(
-      lastIndex >= 0 ||
+      lastIndex == 0 ||
         !(
           charcterIsOperator(character) &&
           charcterIsOperator(digitArray[lastIndex])
@@ -41,8 +47,7 @@ export const parseCharacter = function (
     ) {
       digitArray[lastIndex] = { operator: mathOperatorEnum.Divide };
     } else if (character === "/") {
-      if (simpleDivide) digitArray.push({ operator: mathOperatorEnum.Divide });
-      else digitArray.push("/");
+      digitArray.push("/");
     } else if (
       lastIndex >= 0 &&
       `${digitArray[lastIndex] as string}${character}` ===
@@ -118,19 +123,14 @@ export const charcterIsOperator = function (
   character: { operator: mathOperatorEnum } | number | string
 ) {
   if (typeof character === "object" && character.operator) {
-    console.log("dda");
     return true;
   } else if (character === mathOperatorEnum.Add) {
-    console.log("asd");
     return true;
   } else if (character === mathOperatorEnum.Subtract) {
-    console.log("cxca");
     return true;
   } else if (character === mathOperatorEnum.Divide) {
-    console.log("ag");
     return true;
   } else if (character === mathOperatorEnum.Multiply) {
-    console.log("da");
     return true;
   } else {
     return false;

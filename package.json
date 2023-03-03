@@ -19,7 +19,8 @@
     "prestart": "npm run build-dev -w frontend",
     "start": "npm run dev -w backend",
     "start-prod": "npm run build -w frontend && npm start -w backend",
-    "clean": "npm run clean -w frontend -w common -w backend"
+    "clean": "npm run clean -w frontend -w common -w backend",
+    "prepare": "husky install"
   },
   "private": true,
   "devDependencies": {
@@ -29,8 +30,9 @@
     "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.31.4",
-    "husky": "^8.0.1",
+    "husky": "^8.0.0",
     "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "pretty-quick": "^3.1.3"
   }
 }

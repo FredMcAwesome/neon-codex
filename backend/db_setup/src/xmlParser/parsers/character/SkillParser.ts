@@ -140,4 +140,18 @@ if (skillListParsed.success) {
     return convertSkill(skill);
   });
   console.log(skillListConverted);
+  const jsonFilePath = fileURLToPath(
+    path.dirname(currentPath) + "../../../../seeds/character/skills.json"
+  );
+  fs.writeFile(
+    jsonFilePath,
+    JSON.stringify(skillListConverted, null, 2),
+    (error) => {
+      if (error) {
+        console.error(error);
+      } else {
+        console.log(`File written! Saved to: ${jsonFilePath}`);
+      }
+    }
+  );
 }

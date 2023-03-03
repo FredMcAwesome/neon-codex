@@ -102,4 +102,18 @@ if (rangeListParsed.success) {
     return convertRange(range);
   });
   console.log(rangeListConverted);
+  const jsonFilePath = fileURLToPath(
+    path.dirname(currentPath) + "../../../../seeds/gear/combatGear/range.json"
+  );
+  fs.writeFile(
+    jsonFilePath,
+    JSON.stringify(rangeListConverted, null, 2),
+    (error) => {
+      if (error) {
+        console.error(error);
+      } else {
+        console.log(`File written! Saved to: ${jsonFilePath}`);
+      }
+    }
+  );
 }

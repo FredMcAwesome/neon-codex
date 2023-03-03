@@ -263,7 +263,7 @@ export enum firearmModeEnum {
   None = "N/A",
 }
 
-export enum reloadMethodEnum {
+export enum ammoSourceEnum {
   BreakAction = "Break Action",
   Clip = "Clip",
   Drum = "Drum",
@@ -283,6 +283,7 @@ export enum firearmAccessoryMountLocationEnum {
   Top = "Top",
   Side = "Side",
   Stock = "Stock",
+  Internal = "Internal",
   None = "None",
 }
 
@@ -299,6 +300,7 @@ export enum availabilityTypeEnum {
 
 export enum costTypeEnum {
   Rating = "Rating",
+  Weapon = "Weapon",
 }
 
 export enum gearCategoryEnum {
@@ -329,7 +331,7 @@ export enum gearCategoryEnum {
   Cyberterminals = "Cyberterminals",
   Disguises = "Disguises",
   Drugs = "Drugs",
-  ElectronicsAccessories = "Electronics Accessories",
+  ElectronicAccessories = "Electronic Accessories",
   ElectronicModification = "Electronic Modification",
   ElectronicParts = "Electronic Parts",
   Entertainment = "Entertainment",
@@ -509,6 +511,10 @@ export enum droneSubtypeEnum {
   SmallDrones = "Small Drones",
   MediumDrones = "Medium Drones",
   LargeDrones = "Large Drones",
+}
+
+export enum ammoOptionEnum {
+  "Weapon",
 }
 
 export enum sourceBookEnum {

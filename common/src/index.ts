@@ -42,7 +42,7 @@ export {
   damageTypeEnum,
   restrictionEnum,
   damageAnnotationEnum as damageAnnoationEnum,
-  reloadMethodEnum,
+  ammoSourceEnum as reloadMethodEnum,
   firearmAccessoryMountLocationEnum,
   ammunitionTypeEnum,
   mathOperatorEnum,
@@ -64,7 +64,7 @@ export {
   watercraftSubtypeEnum,
   aircraftSubtypeEnum,
   droneSubtypeEnum,
-  costTypeEnum
+  costTypeEnum,
 } from "./enums.js";
 
 export type {

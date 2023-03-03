@@ -9,7 +9,7 @@ import {
 } from "@shadowrun/common";
 import { augmentationClassificationEnum } from "@shadowrun/common/src/enums.js";
 import { weaponSubtypeXmlEnum } from "@shadowrun/common/src/schemas/commonSchema.js";
-import {
+import type {
   AccessoriesType,
   AccessoryMountType,
   AmmunitionType,
@@ -58,12 +58,13 @@ const parser = new XMLParser({
   textNodeName: "xmltext",
 });
 const jObj: any = parser.parse(xml_string);
-// console.log(
-//   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-//   jObj.chummer.weapons.weapon.filter(
-//     (weapon: { name: string }) => weapon.name == "Ontario Arms Sling-Shot"
-//   )[0].required.weapondetails
-// );
+console.log(
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+  jObj.chummer.weapons
+    .weapon[//   (weapon: { name: string }) => weapon.name == "Ontario Arms Sling-Shot" // .filter(
+  // )
+  275].required.OR
+);
 
 const weaponListParsed = WeaponListXmlSchema.safeParse(
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
@@ -141,6 +142,7 @@ if (weaponListParsed.success) {
       case sourceBookXmlEnum.ShadowrunMissions0804_DirtyLaundry:
       case sourceBookXmlEnum.ShadowrunQuickStartRules:
       case sourceBookXmlEnum.SprawlWilds:
+        assert(false);
         break;
     }
     return found;
@@ -159,22 +161,23 @@ if (weaponListParsed.success) {
   // const weaponListConverted: Array<RequiredEntityData<MeleeWeapons>> =
   const weaponListConverted: WeaponSummaryListType = weaponListNoAmmo
     // .filter((weapon) => weapon.name === "Ares Thunderstruck Gauss Rifle")
+    // .filter((weapon) => weapon.name === "Osmium Mace")
     .map((weapon: WeaponXmlType) => {
       const convertedWeapon: WeaponSummaryType = convertWeapon(weapon);
       return convertedWeapon;
     });
   console.log(weaponListConverted);
+  const jsonFilePath = fileURLToPath(
+    path.dirname(currentPath) + "../../../../seeds/gear/combatGear/weapons.json"
+  );
   fs.writeFile(
-    fileURLToPath(
-      path.dirname(currentPath) +
-        "../../../../seeds/gear/combatGear/weapons.json"
-    ),
+    jsonFilePath,
     JSON.stringify(weaponListConverted, null, 2),
     (error) => {
       if (error) {
         console.error(error);
       } else {
-        console.log("File written!");
+        console.log(`File written! Saved to: ${jsonFilePath}`);
       }
     }
   );
@@ -286,7 +289,6 @@ function convertWeapon(weapon: WeaponXmlType) {
     recoilCompensation: recoilCompensation,
     ...(weapon.ammocategory && { ammoCategory: weapon.ammocategory }),
     ammoSlots: weapon.ammoslots || 1,
-    range: range,
     ...(hostWeaponRequirements && {
       hostWeaponRequirements: hostWeaponRequirements,
     }),
@@ -302,7 +304,8 @@ function convertWeapon(weapon: WeaponXmlType) {
     weaponType,
     weaponSubtype,
     meleeOptions,
-    firearmOptions
+    firearmOptions,
+    range
   );
 
   return {
