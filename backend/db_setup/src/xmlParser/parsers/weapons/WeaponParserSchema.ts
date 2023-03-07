@@ -1,7 +1,7 @@
 import { gearCategoryEnum } from "@shadowrun/common/src/enums.js";
 import {
-  weaponSubtypeXmlEnum,
-  WeaponSubtypeXmlSchema,
+  weaponSubtypeEnum,
+  WeaponSubtypeSchema,
 } from "@shadowrun/common/src/schemas/commonSchema.js";
 import { MountSchema } from "@shadowrun/common/src/schemas/weaponSchemas.js";
 import { z as zod } from "zod";
@@ -111,8 +111,8 @@ export type AccessoriesXmlType = zod.infer<typeof AccessoriesXmlSchema>;
 const WeaponDetailsOrXmlSchema = zod
   .object({
     category: zod.union([
-      zod.array(zod.nativeEnum(weaponSubtypeXmlEnum)),
-      zod.nativeEnum(weaponSubtypeXmlEnum),
+      zod.array(zod.nativeEnum(weaponSubtypeEnum)),
+      zod.nativeEnum(weaponSubtypeEnum),
     ]),
     useskill: zod.union([zod.array(zod.string()), zod.string()]),
     AND: zod.object({
@@ -159,7 +159,7 @@ const WeaponXmlSchema = zod
     id: zod.string(),
     name: zod.string(),
     type: zod.union([zod.literal("Ranged"), zod.literal("Melee")]),
-    category: WeaponSubtypeXmlSchema,
+    category: WeaponSubtypeSchema,
     conceal: zod.number(),
     accuracy: AccuracyXmlSchema,
     reach: zod.number(),
@@ -201,7 +201,7 @@ const WeaponXmlSchema = zod
         .strict()
     ),
     alternaterange: zod.optional(zod.string()),
-    ammocategory: zod.optional(zod.nativeEnum(weaponSubtypeXmlEnum)),
+    ammocategory: zod.optional(zod.nativeEnum(weaponSubtypeEnum)),
     ammoslots: zod.optional(zod.number()),
     cyberware: zod.optional(zod.literal("True")),
     doubledcostaccessorymounts: zod.optional(

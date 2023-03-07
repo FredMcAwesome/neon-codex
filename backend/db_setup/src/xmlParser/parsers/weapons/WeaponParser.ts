@@ -5,17 +5,17 @@ import {
   AvailabilityType,
   CostType,
   DamageType,
-  WeaponSummaryType,
 } from "@shadowrun/common";
 import { augmentationClassificationEnum } from "@shadowrun/common/src/enums.js";
-import { weaponSubtypeXmlEnum } from "@shadowrun/common/src/schemas/commonSchema.js";
+import { weaponSubtypeEnum } from "@shadowrun/common/src/schemas/commonSchema.js";
 import type {
   AccessoriesType,
   AccessoryMountType,
   AmmunitionType,
   ModeType,
   RecoilCompensationType,
-  WeaponSummaryListType,
+  WeaponPreDBSummaryListType,
+  WeaponPreDBSummaryType,
 } from "@shadowrun/common/src/schemas/weaponSchemas.js";
 import assert from "assert";
 import { XMLParser } from "fast-xml-parser";
@@ -57,13 +57,11 @@ const parser = new XMLParser({
   attributeNamePrefix: "_",
   textNodeName: "xmltext",
 });
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const jObj: any = parser.parse(xml_string);
 console.log(
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  jObj.chummer.weapons
-    .weapon[//   (weapon: { name: string }) => weapon.name == "Ontario Arms Sling-Shot" // .filter(
-  // )
-  275].required.OR
+  jObj.chummer.weapons.weapon[275].required.OR // ) //   (weapon: { name: string }) => weapon.name == "Ontario Arms Sling-Shot" // .filter(
 );
 
 const weaponListParsed = WeaponListXmlSchema.safeParse(
@@ -150,7 +148,7 @@ if (weaponListParsed.success) {
   const weaponListNoAmmo = englishWeaponList.filter((weapon) => {
     return (
       // don't include grenades, torpedos, missiles, or rockets. These are ammo
-      weapon.category !== weaponSubtypeXmlEnum.Gear ||
+      weapon.category !== weaponSubtypeEnum.Gear ||
       (!weapon.name.toLowerCase().includes("minigrenade") &&
         !weapon.name.toLowerCase().includes("torpedo") &&
         !weapon.name.toLowerCase().includes("missile") &&
@@ -159,14 +157,14 @@ if (weaponListParsed.success) {
   });
 
   // const weaponListConverted: Array<RequiredEntityData<MeleeWeapons>> =
-  const weaponListConverted: WeaponSummaryListType = weaponListNoAmmo
+  const weaponListConverted: WeaponPreDBSummaryListType = weaponListNoAmmo
     // .filter((weapon) => weapon.name === "Ares Thunderstruck Gauss Rifle")
     // .filter((weapon) => weapon.name === "Osmium Mace")
     .map((weapon: WeaponXmlType) => {
-      const convertedWeapon: WeaponSummaryType = convertWeapon(weapon);
+      const convertedWeapon: WeaponPreDBSummaryType = convertWeapon(weapon);
       return convertedWeapon;
     });
-  console.log(weaponListConverted);
+  // console.log(weaponListConverted);
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../seeds/gear/combatGear/weapons.json"
   );
@@ -190,13 +188,13 @@ function convertWeapon(weapon: WeaponXmlType) {
     augmentationClassificationEnum.None;
   if (weapon.cyberware) {
     augmentationType = augmentationClassificationEnum.Cyberware;
-  } else if (weapon.category === weaponSubtypeXmlEnum.BioWeapon) {
+  } else if (weapon.category === weaponSubtypeEnum.BioWeapon) {
     augmentationType = augmentationClassificationEnum.Bioware;
   }
 
   const source = convertSource(weapon.source);
 
-  console.log(weapon.name);
+  console.log(`\n${weapon.name}`);
   const accuracy: AccuracyType = convertAccuracy(weapon.accuracy, weapon.name);
   const damage: DamageType = convertDamage(weapon.damage, weapon.name);
   const armourPenetration: ArmourPenetrationType = convertArmourPenetration(
@@ -247,7 +245,7 @@ function convertWeapon(weapon: WeaponXmlType) {
     ? [weapon.extramount]
     : undefined;
   const hostWeaponRequirements =
-    weapon.category === weaponSubtypeXmlEnum.UnderbarrelWeapons
+    weapon.category === weaponSubtypeEnum.UnderbarrelWeapons
       ? {
           weaponRequirements: weaponRequirements,
           hostWeaponMountsRequired: mountLocationsOnHostWeapon,

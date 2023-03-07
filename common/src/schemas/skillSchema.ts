@@ -15,6 +15,9 @@ export const SkillSchema = zod
     specialisations: zod.optional(zod.array(zod.string())),
     source: zod.string(),
     page: zod.number(),
+    description: zod.string(),
   })
   .strict();
 export type SkillType = zod.infer<typeof SkillSchema>;
+export const SkillListSchema = zod.array(SkillSchema);
+export type SkillListType = zod.infer<typeof SkillListSchema>;

@@ -23,7 +23,7 @@ import {
 import {
   AvailabilitySchema,
   CostSchema,
-  WeaponSubtypeXmlSchema,
+  WeaponSubtypeSchema,
 } from "./commonSchema.js";
 
 export const GenericCalculationSchema = zod.array(
@@ -125,7 +125,7 @@ export type weaponRestrictionsType = zod.infer<typeof weaponRestrictionsSchema>;
 export const FirearmOptionsSchema = zod.object({
   mode: zod.array(zod.nativeEnum(firearmModeEnum)),
   recoilCompensation: RecoilCompensationSchema,
-  ammoCategory: zod.optional(WeaponSubtypeXmlSchema),
+  ammoCategory: zod.optional(WeaponSubtypeSchema),
   ammoSlots: zod.number(),
   hostWeaponRequirements: zod.optional(
     zod.object({
@@ -195,15 +195,6 @@ const AccessorySchema = zod.object({
 export type AccessoryType = zod.infer<typeof AccessorySchema>;
 const AccessoriesSchema = zod.array(AccessorySchema);
 export type AccessoriesType = zod.infer<typeof AccessoriesSchema>;
-
-export const AmmunitionSchema = zod.array(
-  zod.object({
-    capacity: zod.optional(zod.number()),
-    numberOfAmmunitionHolders: zod.optional(zod.number()),
-    reloadMethod: zod.nativeEnum(ammoSourceEnum),
-  })
-);
-export type AmmunitionType = zod.infer<typeof AmmunitionSchema>;
 
 const AmmoInformationSchema = zod.object({
   ammoCount: zod.optional(zod.number()),

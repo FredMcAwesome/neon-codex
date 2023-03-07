@@ -72,6 +72,7 @@ const convertSkill = function (xmlSkill: SkillXmlType): SkillType {
         : undefined,
     source: xmlSkill.source,
     page: xmlSkill.page,
+    description: "",
   };
 };
 

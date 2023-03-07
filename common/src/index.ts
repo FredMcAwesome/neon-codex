@@ -87,7 +87,7 @@ export type {
   DamageType,
   FirearmAmmoType,
   RecoilCompensationType,
-  WeaponSummaryType,
+  WeaponPreDBSummaryType,
   BlastType,
 } from "./schemas/weaponSchemas.js";
 

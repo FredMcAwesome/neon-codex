@@ -3,10 +3,10 @@ import { AugmentationSchema } from "./augmentationSchemas.js";
 import { MatrixAccessorySchema, MatrixSchema } from "./electronicSchemas.js";
 import { otherGearSchema } from "./otherGearSchema.js";
 import { MagicGearSchema } from "./magicalSchemas.js";
-import { WeaponSummarySchema } from "./weaponSchemas.js";
+import { WeaponPreDBSummarySchema } from "./weaponSchemas.js";
 import { VehiclesAndDronesSchema } from "./riggerSchema.js";
 
-export const WeaponListSchema = zod.array(WeaponSummarySchema);
+export const WeaponListSchema = zod.array(WeaponPreDBSummarySchema);
 export type WeaponListType = zod.infer<typeof WeaponListSchema>;
 
 export const MatrixListSchema = zod.array(MatrixSchema);

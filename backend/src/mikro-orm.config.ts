@@ -83,6 +83,7 @@ import {
   Formulae,
   MagicalSupplies,
 } from "./models/gear/magicGear/magicalGearEquipment.js";
+import { Skills } from "./models/chummerdb/skillModel.js";
 
 const dbOptions: Options<PostgreSqlDriver> = {
   entities: [
@@ -90,6 +91,7 @@ const dbOptions: Options<PostgreSqlDriver> = {
     Threads,
     Comments,
     Weapons,
+    Skills,
     MeleeWeapons,
     ProjectileWeapons,
     FirearmWeapons,

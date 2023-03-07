@@ -26,7 +26,7 @@
       {
         "capacity": 10,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip", "Energy"]
       }
     ],
     "availability": {
@@ -76,7 +76,7 @@
       {
         "capacity": 12,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -118,7 +118,7 @@
       {
         "capacity": 4,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -168,7 +168,7 @@
       {
         "capacity": 6,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -210,7 +210,7 @@
       {
         "capacity": 6,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -284,7 +284,7 @@
       {
         "capacity": 15,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -311,7 +311,7 @@
       "type": "Firearm",
       "subtype": "Assault Rifles",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
@@ -331,7 +331,7 @@
       {
         "capacity": 38,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -353,7 +353,7 @@
       "type": "Firearm",
       "subtype": "Assault Rifles",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "underbarrelWeapons": ["AK-98 Grenade Launcher"],
@@ -374,7 +374,7 @@
       {
         "capacity": 38,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -396,7 +396,7 @@
       "type": "Firearm",
       "subtype": "Assault Rifles",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Burst Fire", "Full Automatic"],
         "recoilCompensation": 2,
         "ammoSlots": 1,
         "underbarrelWeapons": ["Ares Alpha Grenade Launcher"],
@@ -417,7 +417,7 @@
       {
         "capacity": 42,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -444,7 +444,7 @@
       "type": "Firearm",
       "subtype": "Assault Rifles",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Burst Fire", "Full Automatic"],
         "recoilCompensation": 3,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Top", "Under"]
@@ -464,7 +464,7 @@
       {
         "capacity": 50,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -494,7 +494,7 @@
       "type": "Firearm",
       "subtype": "Assault Rifles",
       "firearmOptions": {
-        "mode": ["Burst Fire"],
+        "mode": ["Semi Automatic", "Burst Fire"],
         "recoilCompensation": 1,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
@@ -514,7 +514,7 @@
       {
         "capacity": 35,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -550,7 +550,7 @@
       "type": "Firearm",
       "subtype": "Assault Rifles",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
@@ -570,7 +570,7 @@
       {
         "capacity": 40,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -592,7 +592,7 @@
       "type": "Firearm",
       "subtype": "Assault Rifles",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
@@ -612,7 +612,7 @@
       {
         "capacity": 35,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -642,7 +642,7 @@
       "type": "Firearm",
       "subtype": "Assault Rifles",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "addWeapons": [
@@ -669,7 +669,7 @@
       {
         "capacity": 30,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -727,7 +727,7 @@
       {
         "capacity": 6,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -761,7 +761,7 @@
       "type": "Firearm",
       "subtype": "Submachine Guns",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
@@ -781,7 +781,7 @@
       {
         "capacity": 30,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -815,7 +815,7 @@
       "type": "Firearm",
       "subtype": "Light Machineguns",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
@@ -835,7 +835,7 @@
       {
         "capacity": 100,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Belt Fed"]
       }
     ],
     "availability": {
@@ -892,7 +892,7 @@
       {
         "capacity": 10,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -946,7 +946,7 @@
       {
         "capacity": 10,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -983,7 +983,7 @@
       "type": "Firearm",
       "subtype": "Assault Rifles",
       "firearmOptions": {
-        "mode": ["Burst Fire"],
+        "mode": ["Semi Automatic", "Burst Fire"],
         "recoilCompensation": 1,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
@@ -1003,7 +1003,7 @@
       {
         "capacity": 25,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Drum"]
       }
     ],
     "availability": {
@@ -1037,7 +1037,7 @@
       "type": "Firearm",
       "subtype": "Assault Rifles",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Burst Fire", "Full Automatic"],
         "recoilCompensation": 1,
         "ammoSlots": 1,
         "underbarrelWeapons": ["Nissan Optimum II Shotgun"],
@@ -1058,7 +1058,7 @@
       {
         "capacity": 30,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -1088,7 +1088,7 @@
       "type": "Firearm",
       "subtype": "Assault Rifles",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
@@ -1108,7 +1108,7 @@
       {
         "capacity": 32,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -1135,7 +1135,7 @@
       "type": "Firearm",
       "subtype": "Assault Rifles",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 6,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
@@ -1155,7 +1155,7 @@
       {
         "capacity": 20,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Muzzle Loader"]
       }
     ],
     "availability": {
@@ -1205,7 +1205,7 @@
       {
         "capacity": 18,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -1249,7 +1249,7 @@
       "type": "Firearm",
       "subtype": "Assault Rifles",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
@@ -1269,7 +1269,7 @@
       {
         "capacity": 60,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -2142,7 +2142,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["N/A"]
       }
     ],
     "availability": {
@@ -2178,7 +2178,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["N/A"]
       }
     ],
     "availability": {
@@ -2214,7 +2214,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["N/A"]
       }
     ],
     "availability": {
@@ -2250,7 +2250,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["N/A"]
       }
     ],
     "availability": {
@@ -2286,7 +2286,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["N/A"]
       }
     ],
     "availability": {
@@ -2322,7 +2322,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["N/A"]
       }
     ],
     "availability": {
@@ -2358,7 +2358,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["N/A"]
       }
     ],
     "availability": {
@@ -2394,7 +2394,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["N/A"]
       }
     ],
     "availability": {
@@ -2430,7 +2430,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["N/A"]
       }
     ],
     "availability": {
@@ -2466,7 +2466,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["N/A"]
       }
     ],
     "availability": {
@@ -2697,7 +2697,7 @@
     "ammunition": [
       {
         "capacity": 10,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["N/A"]
       }
     ],
     "availability": {
@@ -2776,7 +2776,7 @@
     "ammunition": [
       {
         "capacity": 3,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["N/A"]
       }
     ],
     "availability": {
@@ -2812,7 +2812,7 @@
       {
         "capacity": 5,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -2849,7 +2849,7 @@
       {
         "capacity": 1,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Muzzle Loader"]
       }
     ],
     "availability": {
@@ -2886,7 +2886,7 @@
       {
         "capacity": 4,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -2923,7 +2923,7 @@
       {
         "capacity": 4,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -2960,7 +2960,7 @@
       {
         "capacity": 4,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -2996,7 +2996,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["N/A"]
       }
     ],
     "availability": {
@@ -3032,7 +3032,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["N/A"]
       }
     ],
     "availability": {
@@ -3332,7 +3332,7 @@
     "ammunition": [
       {
         "capacity": 10,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["N/A"]
       }
     ],
     "availability": {
@@ -3717,7 +3717,7 @@
       {
         "capacity": 1,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Muzzle Loader"]
       }
     ],
     "availability": {
@@ -3758,7 +3758,7 @@
     "ammunition": [
       {
         "capacity": 10,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["N/A"]
       }
     ],
     "availability": {
@@ -3800,7 +3800,7 @@
       {
         "capacity": 1,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Muzzle Loader"]
       }
     ],
     "availability": {
@@ -3843,7 +3843,7 @@
       {
         "capacity": 6,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -3871,7 +3871,7 @@
       "type": "Firearm",
       "subtype": "Flamethrowers",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
@@ -3890,7 +3890,7 @@
       {
         "capacity": 4,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -5000,7 +5000,7 @@
       {
         "capacity": 8,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -5051,7 +5051,7 @@
       {
         "capacity": 12,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -5102,12 +5102,12 @@
       {
         "capacity": 2,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       },
       {
         "capacity": 6,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -5154,7 +5154,7 @@
       {
         "capacity": 50,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -5202,7 +5202,7 @@
       {
         "capacity": 50,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -5256,7 +5256,7 @@
       {
         "capacity": 50,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -5307,7 +5307,7 @@
       {
         "capacity": 15,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -5335,7 +5335,7 @@
       "type": "Firearm",
       "subtype": "Heavy Pistols",
       "firearmOptions": {
-        "mode": ["Burst Fire"],
+        "mode": ["Semi Automatic", "Burst Fire"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
@@ -5356,7 +5356,7 @@
       {
         "capacity": 30,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -5404,7 +5404,7 @@
       {
         "capacity": 10,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -5452,7 +5452,7 @@
       {
         "capacity": 7,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Cylinder"]
       }
     ],
     "availability": {
@@ -5495,7 +5495,7 @@
       {
         "capacity": 7,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Cylinder"]
       }
     ],
     "availability": {
@@ -5538,7 +5538,7 @@
       {
         "capacity": 14,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -5580,12 +5580,12 @@
       {
         "capacity": 8,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       },
       {
         "capacity": 12,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -5633,7 +5633,7 @@
       {
         "capacity": 10,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -5687,7 +5687,7 @@
       {
         "capacity": 10,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -5730,7 +5730,7 @@
       {
         "capacity": 8,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -5773,7 +5773,7 @@
       {
         "capacity": 6,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Cylinder"]
       }
     ],
     "availability": {
@@ -5796,7 +5796,7 @@
       "type": "Firearm",
       "subtype": "Heavy Pistols",
       "firearmOptions": {
-        "mode": ["Burst Fire"],
+        "mode": ["Semi Automatic", "Burst Fire"],
         "recoilCompensation": 1,
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
@@ -5816,7 +5816,7 @@
       {
         "capacity": 12,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -5863,12 +5863,12 @@
       {
         "capacity": 2,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       },
       {
         "capacity": 6,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -5916,7 +5916,7 @@
       {
         "capacity": 4,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -5957,7 +5957,7 @@
       {
         "capacity": 4,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -5998,7 +5998,7 @@
       {
         "capacity": 6,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -6020,7 +6020,7 @@
       "type": "Firearm",
       "subtype": "Hold Outs",
       "firearmOptions": {
-        "mode": ["Single Shot"],
+        "mode": ["Burst Fire", "Single Shot"],
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
@@ -6039,7 +6039,7 @@
       {
         "capacity": 2,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Break Action"]
       }
     ],
     "availability": {
@@ -6503,7 +6503,7 @@
     "armourPenetration": [[-10]],
     "ammunition": [
       {
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["External"]
       }
     ],
     "availability": {
@@ -6549,12 +6549,12 @@
     "armourPenetration": [[-10]],
     "ammunition": [
       {
-        "capacity": 210,
-        "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "capacity": 2,
+        "numberOfAmmunitionHolders": 2,
+        "reloadMethodList": ["Clip"]
       },
       {
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["External"]
       }
     ],
     "availability": {
@@ -6597,10 +6597,10 @@
       {
         "capacity": 10,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       },
       {
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["External"]
       }
     ],
     "availability": {
@@ -6643,7 +6643,7 @@
       {
         "capacity": 200,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Belt Fed"]
       }
     ],
     "availability": {
@@ -6677,7 +6677,7 @@
       "type": "Firearm",
       "subtype": "Light Machineguns",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
@@ -6697,7 +6697,7 @@
       {
         "capacity": 50,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -6751,7 +6751,7 @@
       {
         "capacity": 50,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -6779,7 +6779,7 @@
       "type": "Firearm",
       "subtype": "Light Machineguns",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
@@ -6799,7 +6799,7 @@
       {
         "capacity": 50,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -6856,7 +6856,7 @@
       {
         "capacity": 16,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -6899,7 +6899,7 @@
       {
         "capacity": 16,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -6930,7 +6930,7 @@
       "type": "Firearm",
       "subtype": "Light Pistols",
       "firearmOptions": {
-        "mode": ["Burst Fire"],
+        "mode": ["Semi Automatic", "Burst Fire"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top"]
@@ -6950,7 +6950,7 @@
       {
         "capacity": 21,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -6999,7 +6999,7 @@
       {
         "capacity": 8,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -7042,7 +7042,7 @@
       {
         "capacity": 11,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -7084,7 +7084,7 @@
       {
         "capacity": 5,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Cylinder"]
       }
     ],
     "availability": {
@@ -7107,7 +7107,7 @@
       "type": "Firearm",
       "subtype": "Light Pistols",
       "firearmOptions": {
-        "mode": ["Burst Fire"],
+        "mode": ["Semi Automatic", "Burst Fire"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top"]
@@ -7127,7 +7127,7 @@
       {
         "capacity": 18,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -7170,7 +7170,7 @@
       {
         "capacity": 30,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -7220,12 +7220,12 @@
       {
         "capacity": 10,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       },
       {
         "capacity": 15,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -7273,7 +7273,7 @@
       {
         "capacity": 18,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -7321,7 +7321,7 @@
       {
         "capacity": 12,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -7364,7 +7364,7 @@
       {
         "capacity": 6,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Cylinder"]
       }
     ],
     "availability": {
@@ -7392,7 +7392,7 @@
       "type": "Firearm",
       "subtype": "Machine Pistols",
       "firearmOptions": {
-        "mode": ["Burst Fire"],
+        "mode": ["Semi Automatic", "Burst Fire"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
@@ -7412,7 +7412,7 @@
       {
         "capacity": 40,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -7443,7 +7443,7 @@
       "type": "Firearm",
       "subtype": "Machine Pistols",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
@@ -7463,7 +7463,7 @@
       {
         "capacity": 20,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -7497,7 +7497,7 @@
       "type": "Firearm",
       "subtype": "Machine Pistols",
       "firearmOptions": {
-        "mode": ["Burst Fire"],
+        "mode": ["Semi Automatic", "Burst Fire"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
@@ -7517,7 +7517,7 @@
       {
         "capacity": 35,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -7545,7 +7545,7 @@
       "type": "Firearm",
       "subtype": "Machine Pistols",
       "firearmOptions": {
-        "mode": ["Burst Fire"],
+        "mode": ["Semi Automatic", "Burst Fire"],
         "recoilCompensation": 1,
         "ammoSlots": 1
       },
@@ -7564,12 +7564,12 @@
       {
         "capacity": 18,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       },
       {
         "capacity": 32,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -7597,7 +7597,7 @@
       "type": "Firearm",
       "subtype": "Machine Pistols",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
@@ -7617,7 +7617,7 @@
       {
         "capacity": 20,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -7645,7 +7645,7 @@
       "type": "Firearm",
       "subtype": "Machine Pistols",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
@@ -7665,7 +7665,7 @@
       {
         "capacity": 12,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -7696,7 +7696,7 @@
       "type": "Firearm",
       "subtype": "Machine Pistols",
       "firearmOptions": {
-        "mode": ["Burst Fire"],
+        "mode": ["Semi Automatic", "Burst Fire"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
@@ -7716,7 +7716,7 @@
       {
         "capacity": 30,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -7750,7 +7750,7 @@
       "type": "Firearm",
       "subtype": "Machine Pistols",
       "firearmOptions": {
-        "mode": ["Burst Fire"],
+        "mode": ["Semi Automatic", "Burst Fire"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
@@ -7770,7 +7770,7 @@
       {
         "capacity": 15,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -7798,7 +7798,7 @@
       "type": "Firearm",
       "subtype": "Machine Pistols",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
@@ -7818,7 +7818,7 @@
       {
         "capacity": 30,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -7846,7 +7846,7 @@
       "type": "Firearm",
       "subtype": "Machine Pistols",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
@@ -7866,7 +7866,7 @@
       {
         "capacity": 15,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -7917,7 +7917,7 @@
       {
         "capacity": 50,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -7971,7 +7971,7 @@
       {
         "capacity": 50,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -8014,7 +8014,7 @@
       {
         "capacity": 50,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -8078,7 +8078,7 @@
       {
         "capacity": 1,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Muzzle Loader"]
       }
     ],
     "availability": {
@@ -8100,7 +8100,7 @@
       "type": "Firearm",
       "subtype": "Missile Launchers",
       "firearmOptions": {
-        "mode": ["Burst Fire"],
+        "mode": ["Semi Automatic", "Burst Fire"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Top", "Under"]
@@ -8132,9 +8132,9 @@
     ],
     "ammunition": [
       {
-        "capacity": 42,
-        "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "capacity": 4,
+        "numberOfAmmunitionHolders": 2,
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -8190,7 +8190,7 @@
       {
         "capacity": 4,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -8242,7 +8242,7 @@
       {
         "capacity": 2,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Muzzle Loader"]
       }
     ],
     "availability": {
@@ -8269,7 +8269,7 @@
       "type": "Firearm",
       "subtype": "Shotguns",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Burst Fire", "Full Automatic"],
         "recoilCompensation": 2,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
@@ -8289,7 +8289,7 @@
       {
         "capacity": 10,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -8331,7 +8331,7 @@
       {
         "capacity": 8,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -8386,12 +8386,12 @@
       {
         "capacity": 4,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       },
       {
         "capacity": 10,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -8418,7 +8418,7 @@
       "type": "Firearm",
       "subtype": "Shotguns",
       "firearmOptions": {
-        "mode": ["Single Shot"],
+        "mode": ["Semi Automatic", "Single Shot"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
@@ -8438,7 +8438,7 @@
       {
         "capacity": 5,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -8460,7 +8460,7 @@
       "type": "Firearm",
       "subtype": "Shotguns",
       "firearmOptions": {
-        "mode": ["Single Shot"],
+        "mode": ["Semi Automatic", "Single Shot"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
@@ -8480,7 +8480,7 @@
       {
         "capacity": 5,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -8502,7 +8502,7 @@
       "type": "Firearm",
       "subtype": "Shotguns",
       "firearmOptions": {
-        "mode": ["Burst Fire"],
+        "mode": ["Semi Automatic", "Burst Fire"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
@@ -8522,7 +8522,7 @@
       {
         "capacity": 10,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -8549,7 +8549,7 @@
       "type": "Firearm",
       "subtype": "Shotguns",
       "firearmOptions": {
-        "mode": ["Burst Fire"],
+        "mode": ["Semi Automatic", "Burst Fire"],
         "recoilCompensation": 1,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
@@ -8569,7 +8569,7 @@
       {
         "capacity": 10,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -8619,7 +8619,7 @@
       {
         "capacity": 15,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Drum"]
       }
     ],
     "availability": {
@@ -8641,7 +8641,7 @@
       "type": "Firearm",
       "subtype": "Shotguns",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
@@ -8661,7 +8661,7 @@
       {
         "capacity": 10,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -8708,7 +8708,7 @@
       {
         "capacity": 2,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Break Action"]
       }
     ],
     "availability": {
@@ -8755,7 +8755,7 @@
       {
         "capacity": 8,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -8805,7 +8805,7 @@
       {
         "capacity": 5,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Muzzle Loader"]
       }
     ],
     "availability": {
@@ -8852,7 +8852,7 @@
       {
         "capacity": 2,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Break Action"]
       }
     ],
     "availability": {
@@ -8894,7 +8894,7 @@
       {
         "capacity": 7,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -8944,7 +8944,7 @@
       {
         "capacity": 5,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -8986,7 +8986,7 @@
       {
         "capacity": 14,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -9036,7 +9036,7 @@
       {
         "capacity": 14,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -9069,7 +9069,7 @@
       "type": "Firearm",
       "subtype": "Sniper Rifles",
       "firearmOptions": {
-        "mode": ["Burst Fire"],
+        "mode": ["Semi Automatic", "Burst Fire"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
@@ -9089,7 +9089,7 @@
       {
         "capacity": 20,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -9119,7 +9119,7 @@
       "type": "Firearm",
       "subtype": "Sniper Rifles",
       "firearmOptions": {
-        "mode": ["Burst Fire"],
+        "mode": ["Semi Automatic", "Burst Fire"],
         "recoilCompensation": 1,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
@@ -9139,7 +9139,7 @@
       {
         "capacity": 25,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -9186,7 +9186,7 @@
       {
         "capacity": 5,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -9233,7 +9233,7 @@
       {
         "capacity": 15,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -9286,7 +9286,7 @@
       {
         "capacity": 5,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -9333,7 +9333,7 @@
       {
         "capacity": 8,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -9383,7 +9383,7 @@
       {
         "capacity": 10,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -9425,7 +9425,7 @@
       {
         "capacity": 18,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -9508,7 +9508,7 @@
       {
         "capacity": 20,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -9550,7 +9550,7 @@
       {
         "capacity": 10,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -9591,7 +9591,7 @@
       {
         "capacity": 1,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Muzzle Loader"]
       }
     ],
     "availability": {
@@ -9675,7 +9675,7 @@
       {
         "capacity": 10,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -9716,7 +9716,7 @@
     "ammunition": [
       {
         "capacity": 10,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["N/A"]
       }
     ],
     "availability": {
@@ -9758,7 +9758,7 @@
       {
         "capacity": 1,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Break Action"]
       }
     ],
     "availability": {
@@ -9846,7 +9846,7 @@
       {
         "capacity": 1,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Break Action"]
       }
     ],
     "availability": {
@@ -9892,7 +9892,7 @@
       {
         "capacity": 5,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -9938,7 +9938,7 @@
       {
         "capacity": 6,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -9979,7 +9979,7 @@
       {
         "capacity": 4,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Break Action"]
       }
     ],
     "availability": {
@@ -10020,7 +10020,7 @@
       {
         "capacity": 2,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Break Action"]
       }
     ],
     "availability": {
@@ -10062,7 +10062,7 @@
       {
         "capacity": 1,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Break Action"]
       }
     ],
     "availability": {
@@ -10104,7 +10104,7 @@
       {
         "capacity": 8,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -10151,7 +10151,7 @@
       {
         "capacity": 6,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -10198,7 +10198,7 @@
       {
         "capacity": 4,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -10240,7 +10240,7 @@
       {
         "capacity": 10,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -10282,7 +10282,7 @@
       {
         "capacity": 5,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -10344,7 +10344,7 @@
       {
         "capacity": 5,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -10391,7 +10391,7 @@
       {
         "capacity": 20,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -10449,7 +10449,7 @@
       {
         "capacity": 1,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Cap and Ball"]
       }
     ],
     "availability": {
@@ -10496,7 +10496,7 @@
       {
         "capacity": 7,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -10543,7 +10543,7 @@
       {
         "capacity": 15,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -10570,7 +10570,7 @@
       "type": "Firearm",
       "subtype": "Submachine Guns",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
@@ -10590,7 +10590,7 @@
       {
         "capacity": 30,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -10620,7 +10620,7 @@
       "type": "Firearm",
       "subtype": "Submachine Guns",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
@@ -10640,7 +10640,7 @@
       {
         "capacity": 50,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Drum"]
       }
     ],
     "availability": {
@@ -10679,7 +10679,7 @@
       "type": "Firearm",
       "subtype": "Submachine Guns",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Burst Fire", "Full Automatic"],
         "recoilCompensation": 1,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
@@ -10699,7 +10699,7 @@
       {
         "capacity": 32,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -10729,7 +10729,7 @@
       "type": "Firearm",
       "subtype": "Submachine Guns",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
@@ -10749,7 +10749,7 @@
       {
         "capacity": 32,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -10782,7 +10782,7 @@
       "type": "Firearm",
       "subtype": "Submachine Guns",
       "firearmOptions": {
-        "mode": ["Burst Fire"],
+        "mode": ["Semi Automatic", "Burst Fire"],
         "recoilCompensation": 2,
         "ammoSlots": 1
       },
@@ -10801,12 +10801,12 @@
       {
         "capacity": 18,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       },
       {
         "capacity": 32,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -10833,7 +10833,7 @@
       "type": "Firearm",
       "subtype": "Submachine Guns",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Burst Fire", "Full Automatic"],
         "recoilCompensation": 1,
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
@@ -10853,7 +10853,7 @@
       {
         "capacity": 50,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -10883,7 +10883,7 @@
       "type": "Firearm",
       "subtype": "Submachine Guns",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
@@ -10903,7 +10903,7 @@
       {
         "capacity": 28,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -10936,7 +10936,7 @@
       "type": "Firearm",
       "subtype": "Submachine Guns",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Burst Fire", "Full Automatic"],
         "recoilCompensation": 2,
         "ammoSlots": 1
       },
@@ -10955,7 +10955,7 @@
       {
         "capacity": 36,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -10985,7 +10985,7 @@
       "type": "Firearm",
       "subtype": "Submachine Guns",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
@@ -11005,7 +11005,7 @@
       {
         "capacity": 32,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -11058,7 +11058,7 @@
       {
         "capacity": 30,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -11080,7 +11080,7 @@
       "type": "Firearm",
       "subtype": "Submachine Guns",
       "firearmOptions": {
-        "mode": ["Burst Fire"],
+        "mode": ["Semi Automatic", "Burst Fire"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
@@ -11100,7 +11100,7 @@
       {
         "capacity": 30,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -11150,7 +11150,7 @@
       {
         "capacity": 24,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -11201,7 +11201,7 @@
       {
         "capacity": 6,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -11250,7 +11250,7 @@
       {
         "capacity": 4,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -11288,7 +11288,7 @@
     "ammunition": [
       {
         "capacity": 10,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["N/A"]
       }
     ],
     "availability": {
@@ -11331,7 +11331,7 @@
       {
         "capacity": 3,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -11382,7 +11382,7 @@
       {
         "capacity": 4,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -11467,7 +11467,7 @@
     "ammunition": [
       {
         "capacity": 10,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["N/A"]
       }
     ],
     "availability": {
@@ -11509,7 +11509,7 @@
     "ammunition": [
       {
         "capacity": 10,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["N/A"]
       }
     ],
     "availability": {
@@ -11603,7 +11603,7 @@
       {
         "capacity": 6,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -11657,7 +11657,7 @@
       {
         "capacity": 6,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -11720,7 +11720,7 @@
       {
         "capacity": 6,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -11771,7 +11771,7 @@
       {
         "capacity": 1,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -11818,7 +11818,7 @@
       {
         "capacity": 1,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Muzzle Loader"]
       }
     ],
     "availability": {
@@ -11863,7 +11863,7 @@
       {
         "capacity": 5,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -11914,7 +11914,7 @@
       {
         "capacity": 15,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -12707,7 +12707,7 @@
       "type": "Firearm",
       "subtype": "Flamethrowers",
       "firearmOptions": {
-        "mode": ["Burst Fire"],
+        "mode": ["Semi Automatic", "Burst Fire"],
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
@@ -12726,7 +12726,7 @@
       {
         "capacity": 5,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -13388,7 +13388,7 @@
       {
         "capacity": 1,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Muzzle Loader"]
       }
     ],
     "availability": {
@@ -13430,7 +13430,7 @@
       {
         "capacity": 1,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Break Action"]
       }
     ],
     "availability": {
@@ -13919,7 +13919,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["N/A"]
       }
     ],
     "availability": {
@@ -13963,7 +13963,7 @@
       {
         "capacity": 20,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -14005,7 +14005,7 @@
       {
         "capacity": 2,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -14027,7 +14027,7 @@
       "type": "Firearm",
       "subtype": "Exotic",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoCategory": "Light Pistols",
         "ammoSlots": 1
@@ -14047,7 +14047,7 @@
       {
         "capacity": 6,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Muzzle Loader"]
       }
     ],
     "availability": {
@@ -14089,10 +14089,10 @@
       {
         "capacity": 10,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       },
       {
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["External"]
       }
     ],
     "availability": {
@@ -14178,7 +14178,7 @@
       {
         "capacity": 16,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -14227,7 +14227,7 @@
       {
         "capacity": 9,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Cylinder"]
       }
     ],
     "availability": {
@@ -14276,7 +14276,7 @@
       {
         "capacity": 1,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Break Action"]
       }
     ],
     "availability": {
@@ -14328,7 +14328,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["N/A"]
       }
     ],
     "availability": {
@@ -14381,7 +14381,7 @@
       {
         "capacity": 4,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -14434,10 +14434,10 @@
       {
         "capacity": 5,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       },
       {
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["External"]
       }
     ],
     "availability": {
@@ -14477,7 +14477,7 @@
     "armourPenetration": [[-6]],
     "ammunition": [
       {
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Energy"]
       }
     ],
     "availability": {
@@ -14517,7 +14517,7 @@
     "armourPenetration": [[0]],
     "ammunition": [
       {
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Energy"]
       }
     ],
     "availability": {
@@ -14540,7 +14540,7 @@
       "type": "Firearm",
       "subtype": "Lasers",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Top", "Under"]
@@ -14560,10 +14560,10 @@
       {
         "capacity": 10,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       },
       {
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["External"]
       }
     ],
     "availability": {
@@ -14606,7 +14606,7 @@
       {
         "capacity": 16,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -14694,7 +14694,7 @@
       {
         "capacity": 6,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -14725,7 +14725,7 @@
       "type": "Firearm",
       "subtype": "Light Pistols",
       "firearmOptions": {
-        "mode": ["Burst Fire"],
+        "mode": ["Semi Automatic", "Burst Fire"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top"]
@@ -14743,9 +14743,9 @@
     "armourPenetration": [[0]],
     "ammunition": [
       {
-        "capacity": 84,
-        "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "capacity": 8,
+        "numberOfAmmunitionHolders": 2,
+        "reloadMethodList": ["Muzzle Loader"]
       }
     ],
     "availability": {
@@ -14793,7 +14793,7 @@
       {
         "capacity": 12,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -14846,7 +14846,7 @@
       {
         "capacity": 1,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Break Action"]
       }
     ],
     "availability": {
@@ -14928,7 +14928,7 @@
       {
         "capacity": 1,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -14974,7 +14974,7 @@
       {
         "capacity": 1,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -15193,7 +15193,7 @@
       "type": "Firearm",
       "subtype": "Flamethrowers",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
@@ -15212,7 +15212,7 @@
       {
         "capacity": 12,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -15943,7 +15943,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["N/A"]
       }
     ],
     "availability": {
@@ -15979,7 +15979,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["N/A"]
       }
     ],
     "availability": {
@@ -16015,7 +16015,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["N/A"]
       }
     ],
     "availability": {
@@ -16051,7 +16051,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["N/A"]
       }
     ],
     "availability": {
@@ -16087,7 +16087,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["N/A"]
       }
     ],
     "availability": {
@@ -16123,7 +16123,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["N/A"]
       }
     ],
     "availability": {
@@ -16159,7 +16159,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["N/A"]
       }
     ],
     "availability": {
@@ -16235,7 +16235,7 @@
       {
         "capacity": 1,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Muzzle Loader"]
       }
     ],
     "availability": {
@@ -16279,7 +16279,7 @@
       {
         "capacity": 2,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -16325,7 +16325,7 @@
       {
         "capacity": 6,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -16368,7 +16368,7 @@
       {
         "capacity": 4,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -16415,7 +16415,7 @@
       {
         "capacity": 5,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -16461,7 +16461,7 @@
       {
         "capacity": 10,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -16516,7 +16516,7 @@
       {
         "capacity": 5,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Cylinder"]
       }
     ],
     "availability": {
@@ -16564,7 +16564,7 @@
       {
         "capacity": 12,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -16613,7 +16613,7 @@
       {
         "capacity": 5,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Cylinder"]
       }
     ],
     "availability": {
@@ -16694,7 +16694,7 @@
       {
         "capacity": 12,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -16748,7 +16748,7 @@
       {
         "capacity": 1,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Break Action"]
       }
     ],
     "availability": {
@@ -16795,7 +16795,7 @@
       {
         "capacity": 12,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -16846,7 +16846,7 @@
       {
         "capacity": 16,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -16892,7 +16892,7 @@
       {
         "capacity": 10,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -16943,7 +16943,7 @@
       {
         "capacity": 12,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -16992,7 +16992,7 @@
       {
         "capacity": 5,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -17041,7 +17041,7 @@
       {
         "capacity": 12,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -17095,7 +17095,7 @@
       {
         "capacity": 6,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Cylinder"]
       }
     ],
     "availability": {
@@ -17137,7 +17137,7 @@
       {
         "capacity": 15,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -17159,7 +17159,7 @@
       "type": "Firearm",
       "subtype": "Machine Pistols",
       "firearmOptions": {
-        "mode": ["Burst Fire"],
+        "mode": ["Semi Automatic", "Burst Fire"],
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
@@ -17178,7 +17178,7 @@
       {
         "capacity": 24,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -17206,7 +17206,7 @@
       "type": "Firearm",
       "subtype": "Submachine Guns",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
@@ -17226,7 +17226,7 @@
       {
         "capacity": 40,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -17256,7 +17256,7 @@
       "type": "Firearm",
       "subtype": "Submachine Guns",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
@@ -17276,7 +17276,7 @@
       {
         "capacity": 30,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -17308,7 +17308,7 @@
       "type": "Firearm",
       "subtype": "Carbines",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
@@ -17328,7 +17328,7 @@
       {
         "capacity": 36,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -17355,7 +17355,7 @@
       "type": "Firearm",
       "subtype": "Carbines",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Burst Fire", "Full Automatic"],
         "recoilCompensation": 1,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
@@ -17375,7 +17375,7 @@
       {
         "capacity": 40,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -17414,7 +17414,7 @@
       "type": "Firearm",
       "subtype": "Carbines",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "underbarrelWeapons": ["Underbarrel Grenade Launcher"],
@@ -17435,7 +17435,7 @@
       {
         "capacity": 30,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -17462,7 +17462,7 @@
       "type": "Firearm",
       "subtype": "Assault Rifles",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
@@ -17482,7 +17482,7 @@
       {
         "capacity": 30,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -17533,7 +17533,7 @@
       {
         "capacity": 100,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Belt Fed"]
       }
     ],
     "availability": {
@@ -17555,7 +17555,7 @@
       "type": "Firearm",
       "subtype": "Assault Rifles",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "addWeapons": [
@@ -17580,7 +17580,7 @@
       {
         "capacity": 30,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -17631,7 +17631,7 @@
       {
         "capacity": 30,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -17679,7 +17679,7 @@
       {
         "capacity": 30,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -17711,7 +17711,7 @@
       "type": "Firearm",
       "subtype": "Sniper Rifles",
       "firearmOptions": {
-        "mode": ["Burst Fire"],
+        "mode": ["Semi Automatic", "Burst Fire"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
@@ -17731,7 +17731,7 @@
       {
         "capacity": 30,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -17783,7 +17783,7 @@
       {
         "capacity": 12,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -17835,7 +17835,7 @@
       {
         "capacity": 6,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -17886,7 +17886,7 @@
       {
         "capacity": 20,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -17929,7 +17929,7 @@
       {
         "capacity": 5,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -17983,7 +17983,7 @@
       {
         "capacity": 5,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -18025,7 +18025,7 @@
       {
         "capacity": 100,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Belt Fed"]
       }
     ],
     "availability": {
@@ -18076,7 +18076,7 @@
       {
         "capacity": 100,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Belt Fed"]
       }
     ],
     "availability": {
@@ -18127,7 +18127,7 @@
       {
         "capacity": 100,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Belt Fed"]
       }
     ],
     "availability": {
@@ -18189,7 +18189,7 @@
       {
         "capacity": 1,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Break Action"]
       }
     ],
     "availability": {
@@ -18242,7 +18242,7 @@
       {
         "capacity": 1,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Muzzle Loader"]
       }
     ],
     "availability": {
@@ -18294,7 +18294,7 @@
       {
         "capacity": 1,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Muzzle Loader"]
       }
     ],
     "availability": {
@@ -18352,7 +18352,7 @@
       {
         "capacity": 6,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Cylinder"]
       }
     ],
     "availability": {
@@ -18402,9 +18402,9 @@
     "armourPenetration": [[0]],
     "ammunition": [
       {
-        "capacity": 52,
-        "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "capacity": 5,
+        "numberOfAmmunitionHolders": 2,
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -18450,9 +18450,9 @@
     ],
     "ammunition": [
       {
-        "capacity": 210,
-        "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "capacity": 2,
+        "numberOfAmmunitionHolders": 2,
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -18497,7 +18497,7 @@
     "ammunition": [
       {
         "capacity": 6,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["N/A"]
       }
     ],
     "availability": {
@@ -18535,7 +18535,7 @@
     "ammunition": [
       {
         "capacity": 10,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["N/A"]
       }
     ],
     "availability": {
@@ -18657,7 +18657,7 @@
       {
         "capacity": 200,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Belt Fed"]
       }
     ],
     "availability": {
@@ -18748,7 +18748,7 @@
       {
         "capacity": 2,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Break Action"]
       }
     ],
     "availability": {
@@ -18825,7 +18825,7 @@
       {
         "capacity": 4,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Break Action"]
       }
     ],
     "availability": {
@@ -18867,7 +18867,7 @@
       {
         "capacity": 8,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -18939,7 +18939,7 @@
       "type": "Firearm",
       "subtype": "Submachine Guns",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Burst Fire", "Full Automatic"],
         "recoilCompensation": -2,
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
@@ -18959,7 +18959,7 @@
       {
         "capacity": 40,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -19088,7 +19088,7 @@
       {
         "capacity": 10,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -19099,7 +19099,7 @@
     "allowAccessories": true,
     "isCyberware": false,
     "augmentationType": "N/A",
-    "relatedSkill": "Exotic Ranged Weapons",
+    "relatedSkill": "Exotic Ranged Weapon",
     "source": "Street Lethal",
     "page": 133
   },
@@ -19133,7 +19133,7 @@
       {
         "capacity": 6,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Cylinder"]
       }
     ],
     "availability": {
@@ -19618,7 +19618,7 @@
       {
         "capacity": 3,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Muzzle Loader"]
       }
     ],
     "availability": {
@@ -19835,7 +19835,7 @@
       {
         "capacity": 2,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Break Action"]
       }
     ],
     "availability": {
@@ -19882,7 +19882,7 @@
       {
         "capacity": 8,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -19930,7 +19930,7 @@
       {
         "capacity": 8,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -19981,12 +19981,12 @@
       {
         "capacity": 20,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       },
       {
         "capacity": 60,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Drum"]
       }
     ],
     "availability": {
@@ -20013,7 +20013,7 @@
       "type": "Firearm",
       "subtype": "Submachine Guns",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Full Automatic"],
         "recoilCompensation": -3,
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
@@ -20033,12 +20033,12 @@
       {
         "capacity": 30,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       },
       {
         "capacity": 75,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Drum"]
       }
     ],
     "availability": {
@@ -20091,12 +20091,12 @@
       {
         "capacity": 7,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       },
       {
         "capacity": 21,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -20127,7 +20127,7 @@
       "type": "Firearm",
       "subtype": "Submachine Guns",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
@@ -20147,7 +20147,7 @@
       {
         "capacity": 38,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -20177,7 +20177,7 @@
       "type": "Firearm",
       "subtype": "Assault Rifles",
       "firearmOptions": {
-        "mode": ["Full Automatic"],
+        "mode": ["Semi Automatic", "Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
@@ -20197,7 +20197,7 @@
       {
         "capacity": 38,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -20246,7 +20246,7 @@
       {
         "capacity": 1,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Break Action"]
       }
     ],
     "availability": {
@@ -20294,7 +20294,7 @@
       {
         "capacity": 1,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Break Action"]
       }
     ],
     "availability": {
@@ -20341,7 +20341,7 @@
       {
         "capacity": 2,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Break Action"]
       }
     ],
     "availability": {
@@ -20388,7 +20388,7 @@
       {
         "capacity": 2,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Break Action"]
       }
     ],
     "availability": {
@@ -20438,7 +20438,7 @@
       {
         "capacity": 2,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Break Action"]
       }
     ],
     "availability": {
@@ -20486,7 +20486,7 @@
       {
         "capacity": 10,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -20528,7 +20528,7 @@
       "type": "Firearm",
       "subtype": "Sniper Rifles",
       "firearmOptions": {
-        "mode": ["Burst Fire"],
+        "mode": ["Semi Automatic", "Burst Fire"],
         "recoilCompensation": 0,
         "ammoCategory": "Sniper Rifles",
         "ammoSlots": 1,
@@ -20550,7 +20550,7 @@
       {
         "capacity": 21,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       }
     ],
     "availability": {
@@ -20600,7 +20600,7 @@
       {
         "capacity": 4,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -20647,12 +20647,12 @@
       {
         "capacity": 38,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Clip"]
       },
       {
         "capacity": 114,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Drum"]
       }
     ],
     "availability": {
@@ -20703,7 +20703,7 @@
       {
         "capacity": 100,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Belt Fed"]
       }
     ],
     "availability": {
@@ -20750,7 +20750,7 @@
       {
         "capacity": 2,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Break Action"]
       }
     ],
     "availability": {
@@ -20797,7 +20797,7 @@
       {
         "capacity": 5,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {
@@ -20848,7 +20848,7 @@
       {
         "capacity": 1,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Muzzle Loader"]
       }
     ],
     "availability": {
@@ -20881,7 +20881,7 @@
       "type": "Firearm",
       "subtype": "Missile Launchers",
       "firearmOptions": {
-        "mode": ["Single Shot"],
+        "mode": ["Full Automatic", "Single Shot"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Top", "Under"]
@@ -20905,7 +20905,7 @@
       {
         "capacity": 10,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Muzzle Loader"]
       }
     ],
     "availability": {
@@ -20955,7 +20955,7 @@
       {
         "capacity": 6,
         "numberOfAmmunitionHolders": 1,
-        "reloadMethod": "N/A"
+        "reloadMethodList": ["Internal Magazine"]
       }
     ],
     "availability": {

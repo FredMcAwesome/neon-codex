@@ -23,7 +23,7 @@ import {
 import {
   AvailabilitySchema,
   CostSchema,
-  WeaponSubtypeXmlSchema,
+  WeaponSubtypeSchema,
 } from "./commonSchema.js";
 
 export const GenericCalculationSchema = zod.array(
@@ -108,11 +108,12 @@ export const weaponRequirementsSchema = zod.object({
   categories: zod.optional(zod.array(zod.string())),
   skills: zod.optional(zod.array(zod.string())),
 });
+export type weaponRequirementsType = zod.infer<typeof weaponRequirementsSchema>;
 
 export const FirearmOptionsSchema = zod.object({
   mode: zod.array(zod.nativeEnum(firearmModeEnum)),
   recoilCompensation: RecoilCompensationSchema,
-  ammoCategory: zod.optional(WeaponSubtypeXmlSchema),
+  ammoCategory: zod.optional(WeaponSubtypeSchema),
   ammoSlots: zod.number(),
   hostWeaponRequirements: zod.optional(
     zod.object({
@@ -142,7 +143,7 @@ export const ArmourPenetrationSchema = zod.array(
 );
 export type ArmourPenetrationType = zod.infer<typeof ArmourPenetrationSchema>;
 
-const typeInformationSchema = zod.discriminatedUnion("type", [
+export const typeInformationSchema = zod.discriminatedUnion("type", [
   zod.object({
     type: zod.literal(weaponTypeEnum.Melee),
     subtype: zod.nativeEnum(meleeWeaponTypeEnum),
@@ -181,40 +182,43 @@ const AccessorySchema = zod.object({
   gears: zod.optional(zod.array(UseGearSchema)),
 });
 export type AccessoryType = zod.infer<typeof AccessorySchema>;
-const AccessoriesSchema = zod.array(AccessorySchema);
+export const AccessoriesSchema = zod.array(AccessorySchema);
 export type AccessoriesType = zod.infer<typeof AccessoriesSchema>;
 
-export const AmmunitionSchema = zod.array(
-  zod.object({
-    capacity: zod.optional(zod.number()),
-    numberOfAmmunitionHolders: zod.optional(zod.number()),
-    reloadMethod: zod.nativeEnum(ammoSourceEnum),
-  })
-);
+const AmmunitionSingleSchema = zod.object({
+  capacity: zod.optional(zod.number()),
+  numberOfAmmunitionHolders: zod.optional(zod.number()),
+  reloadMethodList: zod.array(zod.nativeEnum(ammoSourceEnum)),
+});
+export const AmmunitionSchema = zod.array(AmmunitionSingleSchema);
 export type AmmunitionType = zod.infer<typeof AmmunitionSchema>;
 
-export const WeaponSummarySchema = zod.object({
-  name: zod.string(),
-  description: zod.string(),
-  typeInformation: typeInformationSchema,
-  concealability: zod.number(),
-  accuracy: AccuracySchema,
-  damage: DamageSchema,
-  armourPenetration: ArmourPenetrationSchema,
-  ammo: zod.optional(zod.array(FirearmAmmoSchema)),
-  availability: AvailabilitySchema,
-  cost: CostSchema,
-  allowGear: zod.optional(zod.array(zod.nativeEnum(gearCategoryEnum))),
-  accessories: zod.optional(AccessoriesSchema),
-  allowAccessories: zod.boolean(),
-  isCyberware: zod.boolean(),
-  augmentationType: zod.nativeEnum(augmentationClassificationEnum),
-  wireless: zod.optional(zod.string()),
-  relatedSkill: zod.string(),
-  relatedSkillSpecialisations: zod.optional(zod.array(zod.string())),
-  source: zod.nativeEnum(sourceBookEnum),
-  page: zod.number(),
-});
-export type WeaponSummaryType = zod.infer<typeof WeaponSummarySchema>;
-const WeaponSummaryListSchema = zod.array(WeaponSummarySchema);
-export type WeaponSummaryListType = zod.infer<typeof WeaponSummaryListSchema>;
+export const WeaponPreDBSummarySchema = zod
+  .object({
+    name: zod.string(),
+    description: zod.string(),
+    typeInformation: typeInformationSchema,
+    concealability: zod.number(),
+    accuracy: AccuracySchema,
+    damage: DamageSchema,
+    armourPenetration: ArmourPenetrationSchema,
+    ammunition: zod.optional(AmmunitionSchema),
+    availability: AvailabilitySchema,
+    cost: CostSchema,
+    allowedGear: zod.optional(zod.array(zod.nativeEnum(gearCategoryEnum))),
+    accessories: zod.optional(AccessoriesSchema),
+    allowAccessories: zod.boolean(),
+    isCyberware: zod.boolean(),
+    augmentationType: zod.nativeEnum(augmentationClassificationEnum),
+    wireless: zod.optional(zod.string()),
+    relatedSkill: zod.string(),
+    relatedSkillSpecialisations: zod.optional(zod.array(zod.string())),
+    source: zod.nativeEnum(sourceBookEnum),
+    page: zod.number(),
+  })
+  .strict();
+export type WeaponPreDBSummaryType = zod.infer<typeof WeaponPreDBSummarySchema>;
+export const WeaponPreDBSummaryListSchema = zod.array(WeaponPreDBSummarySchema);
+export type WeaponPreDBSummaryListType = zod.infer<
+  typeof WeaponPreDBSummaryListSchema
+>;

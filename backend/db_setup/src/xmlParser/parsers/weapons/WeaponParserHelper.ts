@@ -60,8 +60,8 @@ import {
 import {
   CostType,
   GearCalculationType,
-  weaponSubtypeXmlEnum,
-  WeaponSubtypeXmlType,
+  weaponSubtypeEnum,
+  WeaponSubtypeType,
 } from "@shadowrun/common/src/schemas/commonSchema.js";
 
 export const convertTypeInformation = function (
@@ -268,7 +268,7 @@ export const convertDamage = function (
       } else {
         assert(false, "Special string not replaced!");
       }
-      if (damageSpecialList.length > 1) {
+      if (damageSpecialList.length > 0) {
         damageSpecialList.splice(insertLocation.location + locationCounter, 0, {
           option: option,
         });
@@ -420,7 +420,7 @@ export const convertArmourPenetration = function (
         } else {
           assert(false, "Special string not replaced!");
         }
-        if (armourPenetrationList[index].length > 1) {
+        if (armourPenetrationList[index].length > 0) {
           armourPenetrationList[index].splice(
             insertLocation.location + locationCounter,
             0,
@@ -528,7 +528,7 @@ export const convertMode = function (
       } else {
         assert(false, "Special string not replaced!");
       }
-      if (modeList.length > 1) {
+      if (modeList.length > 0) {
         modeList.splice(insertLocation.location + locationCounter, 0, option);
       } else {
         modeList[0] = option;
@@ -570,17 +570,29 @@ export const convertAmmo = function (ammo: number | string, name: string) {
       {
         capacity: ammo,
         numberOfAmmunitionHolders: undefined,
-        reloadMethod: ammoSourceEnum.None,
+        reloadMethodList: [ammoSourceEnum.None],
       },
     ];
   } else {
     // options split with '/' or 'or'
     const overallList: Array<string> = ammo.split(/\/|or/);
     const ammoList: AmmunitionType = [];
+
     overallList.forEach((ammoItem) => {
       let genericList: Array<string | number> = [];
       Array.from(ammoItem).forEach((character) => {
-        genericList = parseNumber(character, genericList).digitArray;
+        const output = parseNumber(character, genericList);
+        if (!output.numberFound) {
+          const index = output.digitArray.length;
+          if (index > 0 && typeof output.digitArray[index - 1] !== "number") {
+            output.digitArray[index - 1] = `${
+              output.digitArray[index - 1] as string
+            }${character}`;
+          } else {
+            output.digitArray.push(character);
+          }
+        }
+        genericList = output.digitArray;
       });
       const ammoParsingList = getAmmoType(genericList);
       ammoList.push(
@@ -590,12 +602,15 @@ export const convertAmmo = function (ammo: number | string, name: string) {
         )
       );
     });
+
     ammoList.forEach((ammoItem, index) => {
       let check = false;
       Object.values(ammoSourceEnum).forEach((option) => {
-        if (equal(ammoItem.reloadMethod, option)) check = true;
+        ammoItem.reloadMethodList.forEach((reloadMethod) => {
+          if (equal(reloadMethod, option)) check = true;
+        });
       });
-      // console.log(ammoItem);
+      console.log(ammoItem);
       assert(
         check,
         `Weapon name: ${name}, list length: ${ammoList.length}, failed item: ${ammoItem} at index: ${index}`
@@ -640,7 +655,7 @@ export const convertAvailability = function (
       } else {
         assert(false, "Special string not replaced!");
       }
-      if (availabilitySpecialList.length > 1) {
+      if (availabilitySpecialList.length > 0) {
         availabilitySpecialList.splice(
           insertLocation.location + locationCounter,
           0,
@@ -737,7 +752,7 @@ export const convertCost = function (cost: number | string, name: string) {
       } else {
         assert(false, "Special string not replaced!");
       }
-      if (costList.length > 1) {
+      if (costList.length > 0) {
         costList.splice(insertLocation.location + locationCounter, 0, {
           option: option,
         });
@@ -881,7 +896,7 @@ export const convertRequirements = function (
 
 export const convertWeaponSkill = function (
   useSkill: string | undefined,
-  category: WeaponSubtypeXmlType,
+  category: WeaponSubtypeType,
   useSkillSpecialisation: string | undefined,
   previousSpecialisations: Array<string> | undefined
 ) {
@@ -1349,7 +1364,7 @@ const getAmmoType = function (capacityList: Array<string | number>): {
   ammunition: {
     capacity: Array<number | string>;
     numberOfAmmunitionHolders: number | undefined;
-    reloadMethod: ammoSourceEnum;
+    reloadMethodList: Array<ammoSourceEnum>;
   };
   reloadAtEndOfString: boolean;
 } {
@@ -1358,13 +1373,17 @@ const getAmmoType = function (capacityList: Array<string | number>): {
     "(c)",
     "(d)",
     "(ml)",
+    "(ML)",
     "(m)",
     "(cy)",
     "(belt)",
     "(tank)",
     "External Source",
+    "+ energy",
+    "Energy",
+    "(cb)",
   ];
-  let reloadMethod: ammoSourceEnum = ammoSourceEnum.None;
+  const reloadMethodList: Array<ammoSourceEnum> = [ammoSourceEnum.None];
   let reloadAtEndOfString = false;
   for (const replaceString of xmlReloadList) {
     for (let i = 0; i < capacityList.length; i++) {
@@ -1381,10 +1400,11 @@ const getAmmoType = function (capacityList: Array<string | number>): {
           capacityList,
           i
         );
+        let reloadMethod = ammoSourceEnum.None;
         if (replaceString === "(b)") reloadMethod = ammoSourceEnum.BreakAction;
         else if (replaceString === "(c)") reloadMethod = ammoSourceEnum.Clip;
         else if (replaceString === "(d)") reloadMethod = ammoSourceEnum.Drum;
-        else if (replaceString === "(ml)")
+        else if (replaceString === "(ml)" || replaceString === "(ML)")
           reloadMethod = ammoSourceEnum.MuzzleLoader;
         else if (replaceString === "(m)")
           reloadMethod = ammoSourceEnum.InternalMagazine;
@@ -1395,6 +1415,20 @@ const getAmmoType = function (capacityList: Array<string | number>): {
         else if (replaceString === "(tank)") reloadMethod = ammoSourceEnum.Tank;
         else if (replaceString === "External Source")
           reloadMethod = ammoSourceEnum.External;
+        else if (replaceString === "+ energy" || replaceString === "Energy")
+          reloadMethod = ammoSourceEnum.Energy;
+        else if (replaceString === "(cb)")
+          reloadMethod = ammoSourceEnum.CapAndBall;
+        if (reloadMethod !== ammoSourceEnum.None) {
+          if (
+            reloadMethodList.length > 1 ||
+            reloadMethodList[0] !== ammoSourceEnum.None
+          ) {
+            reloadMethodList.push(reloadMethod);
+          } else {
+            reloadMethodList[0] = reloadMethod;
+          }
+        }
       }
     }
   }
@@ -1403,7 +1437,7 @@ const getAmmoType = function (capacityList: Array<string | number>): {
     ammunition: {
       capacity: capacityList,
       numberOfAmmunitionHolders: undefined,
-      reloadMethod: reloadMethod,
+      reloadMethodList: reloadMethodList,
     },
     reloadAtEndOfString: reloadAtEndOfString,
   };
@@ -1413,7 +1447,7 @@ const getNumberOfAmmunitionHolders = function (
   capacityList: {
     capacity: Array<number | string>;
     numberOfAmmunitionHolders: number | undefined;
-    reloadMethod: ammoSourceEnum;
+    reloadMethodList: Array<ammoSourceEnum>;
   },
   reloadAtEndOfString: boolean
 ) {
@@ -1421,14 +1455,16 @@ const getNumberOfAmmunitionHolders = function (
     { propertyList: capacityList.capacity, insertLocationList: [] },
     "x"
   );
-  const numberList = conversionInfo.propertyList.map((item) => {
-    assert(typeof item === "number");
-    return item;
-  });
+  const numberList = conversionInfo.propertyList
+    .filter((item) => item.toString() !== " ")
+    .map((item) => {
+      assert(typeof item === "number", `item: ${item.toString()}`);
+      return item;
+    });
   let ammunition: {
     capacity: number | undefined;
     numberOfAmmunitionHolders: number | undefined;
-    reloadMethod: ammoSourceEnum;
+    reloadMethodList: Array<ammoSourceEnum>;
   };
   // check if there are 2 ammunition holders
   if (conversionInfo.insertLocationList.length > 0) {
@@ -1438,7 +1474,7 @@ const getNumberOfAmmunitionHolders = function (
     ammunition = {
       capacity: capacity,
       numberOfAmmunitionHolders: 2,
-      reloadMethod: capacityList.reloadMethod,
+      reloadMethodList: capacityList.reloadMethodList,
     };
   } else {
     assert(numberList.length <= 1);
@@ -1446,13 +1482,13 @@ const getNumberOfAmmunitionHolders = function (
       ammunition = {
         capacity: numberList[0],
         numberOfAmmunitionHolders: 1,
-        reloadMethod: capacityList.reloadMethod,
+        reloadMethodList: capacityList.reloadMethodList,
       };
     } else {
       ammunition = {
         capacity: undefined,
         numberOfAmmunitionHolders: undefined,
-        reloadMethod: capacityList.reloadMethod,
+        reloadMethodList: capacityList.reloadMethodList,
       };
     }
   }
@@ -1608,43 +1644,43 @@ export const getWeaponTypeInformation = function (weapon: WeaponXmlType) {
     | explosiveTypeEnum;
   switch (weapon.category) {
     // ranged
-    case weaponSubtypeXmlEnum.AssaultCannons:
+    case weaponSubtypeEnum.AssaultCannons:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.AssaultCannons;
       break;
-    case weaponSubtypeXmlEnum.AssaultRifles:
+    case weaponSubtypeEnum.AssaultRifles:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.AssaultRifles;
       break;
-    case weaponSubtypeXmlEnum.GrenadeLaunchers:
+    case weaponSubtypeEnum.GrenadeLaunchers:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.GrenadeLaunchers;
       break;
-    case weaponSubtypeXmlEnum.LightMachineguns:
+    case weaponSubtypeEnum.LightMachineguns:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.LightMachineguns;
       break;
-    case weaponSubtypeXmlEnum.SniperRifles:
+    case weaponSubtypeEnum.SniperRifles:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.SniperRifles;
       break;
-    case weaponSubtypeXmlEnum.Bows:
+    case weaponSubtypeEnum.Bows:
       weaponType = weaponTypeEnum.Projectile;
       weaponSubtype = projectileWeaponTypeEnum.Bows;
       break;
-    case weaponSubtypeXmlEnum.Crossbows:
+    case weaponSubtypeEnum.Crossbows:
       weaponType = weaponTypeEnum.Projectile;
       weaponSubtype = projectileWeaponTypeEnum.Crossbows;
       break;
-    case weaponSubtypeXmlEnum.ExoticRangedWeapons:
+    case weaponSubtypeEnum.ExoticRangedWeapons:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.Exotic;
       break;
-    case weaponSubtypeXmlEnum.Flamethrowers:
+    case weaponSubtypeEnum.Flamethrowers:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.Flamethrowers;
       break;
-    case weaponSubtypeXmlEnum.Gear:
+    case weaponSubtypeEnum.Gear:
       assert(
         !weapon.name.toLowerCase().includes("missile") &&
           !weapon.name.toLowerCase().includes("rocket")
@@ -1657,59 +1693,59 @@ export const getWeaponTypeInformation = function (weapon: WeaponXmlType) {
         weaponSubtype = projectileWeaponTypeEnum.ThrowingWeapons;
       }
       break;
-    case weaponSubtypeXmlEnum.HeavyMachineguns:
+    case weaponSubtypeEnum.HeavyMachineguns:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.MediumHeavyMachineguns;
       break;
-    case weaponSubtypeXmlEnum.HeavyPistols:
+    case weaponSubtypeEnum.HeavyPistols:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.HeavyPistols;
       break;
-    case weaponSubtypeXmlEnum.Holduts:
+    case weaponSubtypeEnum.Holduts:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.HoldOuts;
       break;
-    case weaponSubtypeXmlEnum.LaserWeapons:
+    case weaponSubtypeEnum.LaserWeapons:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.Lasers;
       break;
-    case weaponSubtypeXmlEnum.LightPistols:
+    case weaponSubtypeEnum.LightPistols:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.LightPistols;
       break;
-    case weaponSubtypeXmlEnum.MachinePistols:
+    case weaponSubtypeEnum.MachinePistols:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.MachinePistols;
       break;
-    case weaponSubtypeXmlEnum.MediumMachineguns:
+    case weaponSubtypeEnum.MediumMachineguns:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.MediumHeavyMachineguns;
       break;
-    case weaponSubtypeXmlEnum.MissileLaunchers:
+    case weaponSubtypeEnum.MissileLaunchers:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.MissileLaunchers;
       break;
-    case weaponSubtypeXmlEnum.Shotguns:
+    case weaponSubtypeEnum.Shotguns:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.Shotguns;
       break;
-    case weaponSubtypeXmlEnum.SportingRifles:
+    case weaponSubtypeEnum.SportingRifles:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.SportingRifles;
       break;
-    case weaponSubtypeXmlEnum.SubmachineGuns:
+    case weaponSubtypeEnum.SubmachineGuns:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.SubmachineGuns;
       break;
-    case weaponSubtypeXmlEnum.Tasers:
+    case weaponSubtypeEnum.Tasers:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.Tasers;
       break;
-    case weaponSubtypeXmlEnum.UnderbarrelWeapons:
+    case weaponSubtypeEnum.UnderbarrelWeapons:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.WeaponAttachments;
       break;
-    case weaponSubtypeXmlEnum.Cyberweapon:
+    case weaponSubtypeEnum.Cyberweapon:
       if (weapon.type === "Melee") {
         weaponType = weaponTypeEnum.Melee;
         weaponSubtype = meleeWeaponTypeEnum.Exotic;
@@ -1718,36 +1754,36 @@ export const getWeaponTypeInformation = function (weapon: WeaponXmlType) {
         weaponSubtype = firearmWeaponTypeEnum.Exotic;
       }
       break;
-    case weaponSubtypeXmlEnum.BioWeapon:
+    case weaponSubtypeEnum.BioWeapon:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.BioWeapons;
       break;
-    case weaponSubtypeXmlEnum.Carbines:
+    case weaponSubtypeEnum.Carbines:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.Carbines;
       break;
     // melee
-    case weaponSubtypeXmlEnum.Blades:
+    case weaponSubtypeEnum.Blades:
       weaponType = weaponTypeEnum.Melee;
       weaponSubtype = meleeWeaponTypeEnum.Blades;
       break;
-    case weaponSubtypeXmlEnum.Clubs:
+    case weaponSubtypeEnum.Clubs:
       weaponType = weaponTypeEnum.Melee;
       weaponSubtype = meleeWeaponTypeEnum.Clubs;
       break;
-    case weaponSubtypeXmlEnum.ExoticMeleeWeapons:
+    case weaponSubtypeEnum.ExoticMeleeWeapons:
       weaponType = weaponTypeEnum.Melee;
       weaponSubtype = meleeWeaponTypeEnum.Exotic;
       break;
-    case weaponSubtypeXmlEnum.ImprovisedWeapons:
+    case weaponSubtypeEnum.ImprovisedWeapons:
       weaponType = weaponTypeEnum.Melee;
       weaponSubtype = meleeWeaponTypeEnum.Improvised;
       break;
-    case weaponSubtypeXmlEnum.Unarmed:
+    case weaponSubtypeEnum.Unarmed:
       weaponType = weaponTypeEnum.Melee;
       weaponSubtype = meleeWeaponTypeEnum.Unarmed;
       break;
-    case weaponSubtypeXmlEnum.Quality:
+    case weaponSubtypeEnum.Quality:
       weaponType = weaponTypeEnum.Melee;
       weaponSubtype = meleeWeaponTypeEnum.MetagenicQuality;
       break;

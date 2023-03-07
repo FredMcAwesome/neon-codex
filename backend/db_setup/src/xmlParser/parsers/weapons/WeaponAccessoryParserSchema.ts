@@ -1,5 +1,5 @@
 import { gearCategoryEnum } from "@shadowrun/common/src/enums.js";
-import { weaponSubtypeXmlEnum } from "@shadowrun/common/src/schemas/commonSchema.js";
+import { weaponSubtypeEnum } from "@shadowrun/common/src/schemas/commonSchema.js";
 import { z as zod } from "zod";
 import { GearXmlSchema, SourceXmlSchema } from "./WeaponParserSchema.js";
 
@@ -14,8 +14,8 @@ export type AccessoryDamageXmlType = zod.infer<typeof AccessoryDamageXmlSchema>;
 const LowerSchema = zod
   .object({
     category: zod.union([
-      zod.array(zod.nativeEnum(weaponSubtypeXmlEnum)),
-      zod.nativeEnum(weaponSubtypeXmlEnum),
+      zod.array(zod.nativeEnum(weaponSubtypeEnum)),
+      zod.nativeEnum(weaponSubtypeEnum),
     ]),
     useskill: zod.union([zod.array(zod.string()), zod.string()]),
     AND: zod.object({

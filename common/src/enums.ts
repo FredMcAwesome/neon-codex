@@ -273,6 +273,8 @@ export enum ammoSourceEnum {
   BeltFed = "Belt Fed",
   Tank = "Tank",
   External = "External",
+  Energy = "Energy",
+  CapAndBall = "Cap and Ball",
   Special = "Special",
   None = "N/A",
 }

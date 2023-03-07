@@ -41,6 +41,7 @@ const parser = new XMLParser({
   attributeNamePrefix: "_",
   textNodeName: "xmltext",
 });
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const jObj: any = parser.parse(xml_string);
 // console.log(
 //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access

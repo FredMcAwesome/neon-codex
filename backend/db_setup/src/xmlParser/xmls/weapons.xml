@@ -14407,7 +14407,7 @@
       <page>133</page>
       <range>Missile Launchers</range>
       <sizecategory>Missile Launchers</sizecategory>
-      <useskill>Exotic Ranged Weapons</useskill>
+      <useskill>Exotic Ranged Weapon</useskill>
       <weapontype>man-catcher</weapontype>
     </weapon>
     <weapon>
@@ -14947,7 +14947,7 @@
       <page>16</page>
       <range>Machine Pistols</range>
       <sizecategory>Heavy Machine Guns</sizecategory>
-      <useskill>Exotic Ranged Weapons</useskill>
+      <useskill>Exotic Ranged Weapon</useskill>
       <weapontype>firefighting cannons</weapontype>
     </weapon>
     <weapon>
