@@ -23,8 +23,9 @@ import {
 import {
   AvailabilitySchema,
   CostSchema,
-  WeaponSubtypeSchema,
+  WeaponXmlSubtypeSchema,
 } from "./commonSchema.js";
+import { UseGearListSchema } from "./weaponSchemas.js";
 
 export const GenericCalculationSchema = zod.array(
   zod.union([
@@ -101,35 +102,58 @@ export const MeleeOptionsSchema = zod.object({
 });
 export type MeleeOptionsType = zod.infer<typeof MeleeOptionsSchema>;
 
-export const weaponRequirementsSchema = zod.object({
-  weaponAllowed: zod.optional(zod.string()),
-  minimumHostConcealment: zod.optional(zod.number()),
-  maximumHostConcealment: zod.optional(zod.number()),
-  categories: zod.optional(zod.array(zod.string())),
-  skills: zod.optional(zod.array(zod.string())),
-  requireAccessories: zod.optional(zod.array(zod.string())),
-  specialModificationLimit: zod.optional(zod.number()),
+export const weaponDamageRequirementsSchema = zod.object({
+  type: zod.nativeEnum(damageTypeEnum),
+  annotation: zod.optional(zod.nativeEnum(damageAnnotationEnum)),
 });
-export type weaponRequirementsType = zod.infer<typeof weaponRequirementsSchema>;
+export type weaponDamageRequirementsType = zod.infer<
+  typeof weaponDamageRequirementsSchema
+>;
 
-export const weaponRestrictionsSchema = zod.object({
-  weaponsForbidden: zod.optional(zod.array(zod.string())),
+export const accessoryWeaponRequirementsSchema = zod.object({
+  weapons: zod.optional(zod.array(zod.string())),
   minimumHostConcealment: zod.optional(zod.number()),
   maximumHostConcealment: zod.optional(zod.number()),
-  categories: zod.optional(zod.array(zod.string())),
   skills: zod.optional(zod.array(zod.string())),
-  requireAccessories: zod.optional(zod.array(zod.string())),
+  accessories: zod.optional(zod.array(zod.string())),
+  specialModificationLimit: zod.optional(zod.number()),
+  mode: zod.optional(zod.nativeEnum(firearmModeEnum)),
+  weaponNames: zod.optional(zod.array(zod.string())),
+  ammunitionDetails: zod.optional(
+    zod.array(
+      zod.union([
+        zod.nativeEnum(ammoSourceEnum),
+        zod.nativeEnum(firearmWeaponTypeEnum),
+        zod.nativeEnum(projectileWeaponTypeEnum),
+      ])
+    )
+  ),
+  categories: zod.optional(
+    zod.array(
+      zod.union([
+        zod.literal(weaponTypeEnum.Melee),
+        zod.nativeEnum(firearmWeaponTypeEnum),
+        zod.nativeEnum(projectileWeaponTypeEnum),
+      ])
+    )
+  ),
+  accessoryMounts: zod.optional(
+    zod.array(zod.nativeEnum(firearmAccessoryMountLocationEnum))
+  ),
+  requiredDamage: zod.optional(weaponDamageRequirementsSchema),
 });
-export type weaponRestrictionsType = zod.infer<typeof weaponRestrictionsSchema>;
+export type accessoryWeaponRequirementsType = zod.infer<
+  typeof accessoryWeaponRequirementsSchema
+>;
 
 export const FirearmOptionsSchema = zod.object({
   mode: zod.array(zod.nativeEnum(firearmModeEnum)),
   recoilCompensation: RecoilCompensationSchema,
-  ammoCategory: zod.optional(WeaponSubtypeSchema),
+  ammoCategory: zod.optional(WeaponXmlSubtypeSchema),
   ammoSlots: zod.number(),
   hostWeaponRequirements: zod.optional(
     zod.object({
-      weaponRequirements: zod.optional(weaponRequirementsSchema),
+      weaponRequirements: zod.optional(accessoryWeaponRequirementsSchema),
       hostWeaponMountsRequired: zod.optional(AccessoryMountSchema),
     })
   ),
@@ -155,7 +179,7 @@ export const ArmourPenetrationSchema = zod.array(
 );
 export type ArmourPenetrationType = zod.infer<typeof ArmourPenetrationSchema>;
 
-const typeInformationSchema = zod.discriminatedUnion("type", [
+const TypeInformationSchema = zod.discriminatedUnion("type", [
   zod.object({
     type: zod.literal(weaponTypeEnum.Melee),
     subtype: zod.nativeEnum(meleeWeaponTypeEnum),
@@ -178,23 +202,7 @@ const typeInformationSchema = zod.discriminatedUnion("type", [
     range: zod.array(zod.string()),
   }),
 ]);
-export type typeInformationType = zod.infer<typeof typeInformationSchema>;
-
-const UseGearSchema = zod.object({
-  name: zod.string(),
-  category: zod.optional(zod.nativeEnum(gearCategoryEnum)),
-  rating: zod.optional(zod.number()),
-});
-
-const AccessorySchema = zod.object({
-  name: zod.string(),
-  mount: zod.optional(zod.array(MountSchema)),
-  rating: zod.optional(zod.number()),
-  gears: zod.optional(zod.array(UseGearSchema)),
-});
-export type AccessoryType = zod.infer<typeof AccessorySchema>;
-const AccessoriesSchema = zod.array(AccessorySchema);
-export type AccessoriesType = zod.infer<typeof AccessoriesSchema>;
+export type TypeInformationType = zod.infer<typeof TypeInformationSchema>;
 
 const AmmoInformationSchema = zod.object({
   ammoCount: zod.optional(zod.number()),
@@ -202,53 +210,69 @@ const AmmoInformationSchema = zod.object({
 });
 export type AmmoInformationType = zod.infer<typeof AmmoInformationSchema>;
 
-export const WeaponAccessorySummarySchema = zod.object({
-  name: zod.string(),
-  description: zod.string(),
-  wireless: zod.optional(zod.string()),
-  maxRating: zod.number(),
-  isWeapon: zod.boolean(),
-  accuracyIncrease: zod.optional(zod.number()),
-  damageIncrease: zod.optional(zod.number()),
-  newDamageType: zod.optional(zod.nativeEnum(damageTypeEnum)),
-  reachIncrease: zod.optional(zod.number()),
-  armourPiercingIncrease: zod.optional(zod.number()),
-  recoilCompensationIncrease: zod.optional(zod.number()),
-  recoilCompensationType: zod.optional(zod.number()), // items from the same recoilCompensationType are incompatible with each other
-  deploymentRequired: zod.boolean(),
-  availability: AvailabilitySchema,
-  cost: CostSchema,
-  source: zod.nativeEnum(sourceBookEnum),
-  page: zod.number(),
-  accessoryCostMultiplier: zod.optional(zod.number()),
-  allowGear: zod.optional(zod.array(zod.nativeEnum(gearCategoryEnum))),
-  preinstalledGear: zod.optional(zod.array(UseGearSchema)),
-  specialModification: zod.boolean(),
-  extraAmmoSlots: zod.optional(zod.number()),
-  ammoCapacityCalculation: zod.optional(
-    zod.array(
-      zod.union([
-        zod.number(),
-        zod.object({ option: zod.nativeEnum(ammoOptionEnum) }),
-        zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }),
-      ])
-    )
-  ),
-  newAmmoType: zod.optional(AmmoInformationSchema),
-  hostWeaponMountsRequired: zod.optional(
-    zod.array(zod.nativeEnum(firearmAccessoryMountLocationEnum))
-  ),
-  hostWeaponRequirements: zod.optional(weaponRequirementsSchema),
-  hostWeaponRestrictions: zod.optional(weaponRestrictionsSchema),
-  rangePenaltyDecrease: zod.optional(zod.number()),
-  concealabilityModification: zod.optional(
-    zod.union([zod.number(), zod.nativeEnum(standardCalculationEnum)])
-  ),
-});
+export const AmmoCapacityCalculationSchema = zod.array(
+  zod.union([
+    zod.number(),
+    zod.object({ option: zod.nativeEnum(ammoOptionEnum) }),
+    zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }),
+  ])
+);
+export type AmmoCapacityCalculationType = zod.infer<
+  typeof AmmoCapacityCalculationSchema
+>;
+
+export const hostWeaponMountsRequiredSchema = zod.array(
+  zod.array(zod.nativeEnum(firearmAccessoryMountLocationEnum))
+);
+export type hostWeaponMountsRequiredType = zod.infer<
+  typeof hostWeaponMountsRequiredSchema
+>;
+
+const concealabilityModificationSchema = zod.union([
+  zod.number(),
+  zod.nativeEnum(standardCalculationEnum),
+]);
+export type concealabilityModificationType = zod.infer<
+  typeof concealabilityModificationSchema
+>;
+
+export const WeaponAccessorySummarySchema = zod
+  .object({
+    name: zod.string(),
+    description: zod.string(),
+    wireless: zod.optional(zod.string()),
+    maxRating: zod.number(),
+    isWeapon: zod.boolean(),
+    accuracyIncrease: zod.optional(zod.number()),
+    damageIncrease: zod.optional(zod.number()),
+    newDamageType: zod.optional(zod.nativeEnum(damageTypeEnum)),
+    reachIncrease: zod.optional(zod.number()),
+    armourPiercingIncrease: zod.optional(zod.number()),
+    recoilCompensationIncrease: zod.optional(zod.number()),
+    recoilCompensationType: zod.optional(zod.number()), // items from the same recoilCompensationType are incompatible with each other
+    deploymentRequired: zod.boolean(),
+    availability: AvailabilitySchema,
+    cost: CostSchema,
+    source: zod.nativeEnum(sourceBookEnum),
+    page: zod.number(),
+    accessoryCostMultiplier: zod.optional(zod.number()),
+    allowGear: zod.optional(zod.array(zod.nativeEnum(gearCategoryEnum))),
+    preinstalledGear: zod.optional(UseGearListSchema),
+    specialModification: zod.boolean(),
+    extraAmmoSlots: zod.optional(zod.number()),
+    ammoCapacityCalculation: zod.optional(AmmoCapacityCalculationSchema),
+    newAmmoType: zod.optional(AmmoInformationSchema),
+    hostWeaponMountsRequired: zod.optional(hostWeaponMountsRequiredSchema),
+    hostWeaponRequirements: zod.optional(accessoryWeaponRequirementsSchema),
+    hostWeaponRestrictions: zod.optional(accessoryWeaponRequirementsSchema),
+    rangePenaltyDecrease: zod.optional(zod.number()),
+    concealabilityModification: zod.optional(concealabilityModificationSchema),
+  })
+  .strict();
 export type WeaponAccessorySummaryType = zod.infer<
   typeof WeaponAccessorySummarySchema
 >;
-const WeaponAccessorySummaryListSchema = zod.array(
+export const WeaponAccessorySummaryListSchema = zod.array(
   WeaponAccessorySummarySchema
 );
 export type WeaponAccessorySummaryListType = zod.infer<

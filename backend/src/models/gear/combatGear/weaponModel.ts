@@ -14,6 +14,11 @@ import {
   projectileWeaponTypeEnum,
   explosiveTypeEnum,
 } from "@shadowrun/common";
+import {
+  AccuracySchema,
+  AvailabilitySchema,
+  DamageSchema,
+} from "@shadowrun/common";
 import type {
   AccuracyType,
   ArmourPenetrationType,
@@ -26,16 +31,27 @@ import {
   firearmAccessoryMountLocationEnum,
   firearmModeEnum,
   gearCategoryEnum,
+  sourceBookEnum,
 } from "@shadowrun/common/src/enums.js";
 import type {
-  AccessoriesType,
   AmmunitionType,
   weaponRequirementsType,
 } from "@shadowrun/common/src/schemas/weaponSchemas.js";
-import { weaponSubtypeEnum } from "@shadowrun/common/src/schemas/commonSchema.js";
+import {
+  MountSchema,
+  UseGearListSchema,
+} from "@shadowrun/common/src/schemas/weaponSchemas.js";
+import { weaponXmlSubtypeEnum } from "@shadowrun/common/src/schemas/commonSchema.js";
 import { Skills } from "../../chummerdb/skillModel.js";
-import type { WeaponSummaryType } from "../../chummerdb/skillModel.js";
 import assert from "assert";
+import { CostSchema } from "@shadowrun/common/src/schemas/commonSchema.js";
+import {
+  typeInformationSchema,
+  ArmourPenetrationSchema,
+  AmmunitionSchema,
+} from "@shadowrun/common/src/schemas/weaponSchemas.js";
+import { z as zod } from "zod";
+import { WeaponAccessories } from "./weaponAccessoryModel.js";
 
 @Entity({
   discriminatorColumn: "type",
@@ -90,7 +106,7 @@ export abstract class Weapons {
   allowedGear?: Array<gearCategoryEnum>;
 
   @Property({ type: "json", nullable: true })
-  accessories?: AccessoriesType;
+  accessories?: AccessoryListType;
 
   @Property()
   allowAccessories!: boolean;
@@ -118,6 +134,7 @@ export abstract class Weapons {
 
   @Property({ length: 5000 })
   description!: string;
+
   constructor(dto: WeaponSummaryType) {
     // this.id = dto.id
     this.name = dto.name;
@@ -171,8 +188,8 @@ export class FirearmWeapons extends Weapons {
   @Property()
   recoilCompensation!: number;
 
-  @Enum({ items: () => weaponSubtypeEnum, nullable: true })
-  ammoCategory?: weaponSubtypeEnum;
+  @Enum({ items: () => weaponXmlSubtypeEnum, nullable: true })
+  ammoCategory?: weaponXmlSubtypeEnum;
 
   @Property()
   ammoSlots!: number;
@@ -235,3 +252,38 @@ export class Explosives extends Weapons {
     assert(dto.typeInformation.type === weaponTypeEnum.Explosive);
   }
 }
+
+const AccessorySchema = zod.object({
+  name: zod.instanceof(WeaponAccessories),
+  mount: zod.optional(zod.array(MountSchema)),
+  rating: zod.optional(zod.number()),
+  gears: zod.optional(UseGearListSchema),
+});
+const AccessoryListSchema = zod.array(AccessorySchema);
+export type AccessoryListType = zod.infer<typeof AccessoryListSchema>;
+
+export const WeaponSummarySchema = zod.object({
+  name: zod.string(),
+  description: zod.string(),
+  typeInformation: typeInformationSchema,
+  concealability: zod.number(),
+  accuracy: AccuracySchema,
+  damage: DamageSchema,
+  armourPenetration: ArmourPenetrationSchema,
+  ammunition: zod.optional(AmmunitionSchema),
+  availability: AvailabilitySchema,
+  cost: CostSchema,
+  allowedGear: zod.optional(zod.array(zod.nativeEnum(gearCategoryEnum))),
+  accessories: zod.optional(AccessoryListSchema),
+  allowAccessories: zod.boolean(),
+  isCyberware: zod.boolean(),
+  augmentationType: zod.nativeEnum(augmentationClassificationEnum),
+  wireless: zod.optional(zod.string()),
+  relatedSkill: zod.instanceof(Skills),
+  relatedSkillSpecialisations: zod.optional(zod.array(zod.string())),
+  source: zod.nativeEnum(sourceBookEnum),
+  page: zod.number(),
+});
+export type WeaponSummaryType = zod.infer<typeof WeaponSummarySchema>;
+const WeaponSummaryListSchema = zod.array(WeaponSummarySchema);
+export type WeaponSummaryListType = zod.infer<typeof WeaponSummaryListSchema>;

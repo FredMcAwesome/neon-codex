@@ -8,10 +8,7 @@ import {
   FirearmWeapons,
   Explosives,
 } from "./models/gear/combatGear/weaponModel.js";
-import {
-  FirearmAccessories,
-  WeaponAccessories,
-} from "./models/gear/combatGear/weaponAccessoryModel.js";
+import { WeaponAccessories } from "./models/gear/combatGear/weaponAccessoryModel.js";
 import {
   Ammunitions,
   Ammos,
@@ -97,7 +94,6 @@ const dbOptions: Options<PostgreSqlDriver> = {
     FirearmWeapons,
     Explosives,
     WeaponAccessories,
-    FirearmAccessories,
     Ammunitions,
     Ammos,
     ProjectilesAmmos,

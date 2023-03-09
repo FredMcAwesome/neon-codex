@@ -28,7 +28,6 @@ import {
   convertModifyAmmoCapacity,
   convertAmmoReplace,
   convertRequirements,
-  convertForbidden,
 } from "./WeaponAccessoryParserHelper.js";
 
 const currentPath = import.meta.url;
@@ -52,7 +51,7 @@ const jObj: any = parser.parse(xml_string);
 // );
 console.log(
   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  jObj.chummer.accessories.accessory[124]
+  JSON.stringify(jObj.chummer.accessories.accessory[119].required.weapondetails)
 );
 
 const weaponListParsed = WeaponListXmlSchema.safeParse(
@@ -62,7 +61,10 @@ const weaponListParsed = WeaponListXmlSchema.safeParse(
 
 let weaponNames: Array<string> = [];
 if (weaponListParsed.success) {
+  console.log("weapons all g");
   weaponNames = weaponListParsed.data.map((weapon) => weapon.name);
+} else {
+  assert(false);
 }
 
 const weaponAccessoryListParsed = WeaponAccessoryListXmlSchema.safeParse(
@@ -70,7 +72,7 @@ const weaponAccessoryListParsed = WeaponAccessoryListXmlSchema.safeParse(
   jObj.chummer.accessories.accessory
 );
 
-if (weaponAccessoryListParsed.success) console.log("all g");
+if (weaponAccessoryListParsed.success) console.log("accessories all g");
 else {
   console.log(weaponAccessoryListParsed.error.errors[0]);
 }
@@ -79,22 +81,16 @@ else {
 const convertWeaponAccessory = function (
   weaponAccessory: WeaponAccessoryXmlType
 ): WeaponAccessorySummaryType {
+  console.log(`\n${weaponAccessory.name}`);
+
   const mountLocations = getWeaponMounts(weaponAccessory.mount);
   const extraMountLocations = getWeaponMounts(weaponAccessory.extramount);
-  let filteredExtraMountLocations = undefined;
-  if (extraMountLocations) {
-    filteredExtraMountLocations = extraMountLocations.filter(
-      (extraMountLocation) => {
-        if (mountLocations) !mountLocations.includes(extraMountLocation);
-      }
-    );
-  }
   const mountLocationsOnHostWeapon = mountLocations
-    ? filteredExtraMountLocations
-      ? mountLocations.concat(filteredExtraMountLocations)
-      : mountLocations
-    : extraMountLocations
     ? extraMountLocations
+      ? [mountLocations, extraMountLocations]
+      : [mountLocations]
+    : extraMountLocations
+    ? [extraMountLocations]
     : undefined;
 
   let ammoCapacityCalculation = undefined;
@@ -118,7 +114,7 @@ const convertWeaponAccessory = function (
     weaponAccessory.required,
     weaponAccessory.name
   );
-  const forbidden = convertForbidden(
+  const forbidden = convertRequirements(
     weaponAccessory.forbidden,
     weaponAccessory.name
   );
@@ -244,11 +240,11 @@ if (weaponAccessoryListParsed.success) {
   // const weaponListConverted: Array<RequiredEntityData<MeleeWeapons>> =
   const weaponAccessoryListConverted = englishWeaponAccessoryList
     // .filter((weapon) => weapon.name === "Ares Thunderstruck Gauss Rifle")
-    // .filter((weapon) => weapon.name === "Osmium Mace")
+    // .filter((weaponAccessory) => weaponAccessory.name === "Concealable Holster")
     .map((weaponAccessory: WeaponAccessoryXmlType) => {
       return convertWeaponAccessory(weaponAccessory);
     });
-  console.log(weaponAccessoryListConverted);
+  // console.log(weaponAccessoryListConverted);
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) +
       "../../../../seeds/gear/combatGear/weaponAccessories.json"

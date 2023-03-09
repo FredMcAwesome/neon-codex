@@ -36,7 +36,7 @@ import {
   GearXmlType,
 } from "./WeaponParserSchema.js";
 import {
-  AccessoryType,
+  PreDbAccessoryType,
   AmmunitionType,
   ArmourPenetrationType,
   DamageAmountType,
@@ -60,8 +60,8 @@ import {
 import {
   CostType,
   GearCalculationType,
-  weaponSubtypeEnum,
-  WeaponSubtypeType,
+  weaponXmlSubtypeEnum,
+  WeaponXmlSubtypeType,
 } from "@shadowrun/common/src/schemas/commonSchema.js";
 
 export const convertTypeInformation = function (
@@ -812,7 +812,7 @@ export const convertAccessories = function (
       mount = Array.isArray(xmlAccessory.mount)
         ? xmlAccessory.mount
         : [xmlAccessory.mount];
-    const accessory: AccessoryType = {
+    const accessory: PreDbAccessoryType = {
       name: xmlAccessory.name,
       mount: mount,
       rating: xmlAccessory.rating,
@@ -896,7 +896,7 @@ export const convertRequirements = function (
 
 export const convertWeaponSkill = function (
   useSkill: string | undefined,
-  category: WeaponSubtypeType,
+  category: WeaponXmlSubtypeType,
   useSkillSpecialisation: string | undefined,
   previousSpecialisations: Array<string> | undefined
 ) {
@@ -1644,43 +1644,43 @@ export const getWeaponTypeInformation = function (weapon: WeaponXmlType) {
     | explosiveTypeEnum;
   switch (weapon.category) {
     // ranged
-    case weaponSubtypeEnum.AssaultCannons:
+    case weaponXmlSubtypeEnum.AssaultCannons:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.AssaultCannons;
       break;
-    case weaponSubtypeEnum.AssaultRifles:
+    case weaponXmlSubtypeEnum.AssaultRifles:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.AssaultRifles;
       break;
-    case weaponSubtypeEnum.GrenadeLaunchers:
+    case weaponXmlSubtypeEnum.GrenadeLaunchers:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.GrenadeLaunchers;
       break;
-    case weaponSubtypeEnum.LightMachineguns:
+    case weaponXmlSubtypeEnum.LightMachineguns:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.LightMachineguns;
       break;
-    case weaponSubtypeEnum.SniperRifles:
+    case weaponXmlSubtypeEnum.SniperRifles:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.SniperRifles;
       break;
-    case weaponSubtypeEnum.Bows:
+    case weaponXmlSubtypeEnum.Bows:
       weaponType = weaponTypeEnum.Projectile;
       weaponSubtype = projectileWeaponTypeEnum.Bows;
       break;
-    case weaponSubtypeEnum.Crossbows:
+    case weaponXmlSubtypeEnum.Crossbows:
       weaponType = weaponTypeEnum.Projectile;
       weaponSubtype = projectileWeaponTypeEnum.Crossbows;
       break;
-    case weaponSubtypeEnum.ExoticRangedWeapons:
+    case weaponXmlSubtypeEnum.ExoticRangedWeapons:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.Exotic;
       break;
-    case weaponSubtypeEnum.Flamethrowers:
+    case weaponXmlSubtypeEnum.Flamethrowers:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.Flamethrowers;
       break;
-    case weaponSubtypeEnum.Gear:
+    case weaponXmlSubtypeEnum.Gear:
       assert(
         !weapon.name.toLowerCase().includes("missile") &&
           !weapon.name.toLowerCase().includes("rocket")
@@ -1693,59 +1693,59 @@ export const getWeaponTypeInformation = function (weapon: WeaponXmlType) {
         weaponSubtype = projectileWeaponTypeEnum.ThrowingWeapons;
       }
       break;
-    case weaponSubtypeEnum.HeavyMachineguns:
+    case weaponXmlSubtypeEnum.HeavyMachineguns:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.MediumHeavyMachineguns;
       break;
-    case weaponSubtypeEnum.HeavyPistols:
+    case weaponXmlSubtypeEnum.HeavyPistols:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.HeavyPistols;
       break;
-    case weaponSubtypeEnum.Holduts:
+    case weaponXmlSubtypeEnum.Holduts:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.HoldOuts;
       break;
-    case weaponSubtypeEnum.LaserWeapons:
+    case weaponXmlSubtypeEnum.LaserWeapons:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.Lasers;
       break;
-    case weaponSubtypeEnum.LightPistols:
+    case weaponXmlSubtypeEnum.LightPistols:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.LightPistols;
       break;
-    case weaponSubtypeEnum.MachinePistols:
+    case weaponXmlSubtypeEnum.MachinePistols:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.MachinePistols;
       break;
-    case weaponSubtypeEnum.MediumMachineguns:
+    case weaponXmlSubtypeEnum.MediumMachineguns:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.MediumHeavyMachineguns;
       break;
-    case weaponSubtypeEnum.MissileLaunchers:
+    case weaponXmlSubtypeEnum.MissileLaunchers:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.MissileLaunchers;
       break;
-    case weaponSubtypeEnum.Shotguns:
+    case weaponXmlSubtypeEnum.Shotguns:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.Shotguns;
       break;
-    case weaponSubtypeEnum.SportingRifles:
+    case weaponXmlSubtypeEnum.SportingRifles:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.SportingRifles;
       break;
-    case weaponSubtypeEnum.SubmachineGuns:
+    case weaponXmlSubtypeEnum.SubmachineGuns:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.SubmachineGuns;
       break;
-    case weaponSubtypeEnum.Tasers:
+    case weaponXmlSubtypeEnum.Tasers:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.Tasers;
       break;
-    case weaponSubtypeEnum.UnderbarrelWeapons:
+    case weaponXmlSubtypeEnum.UnderbarrelWeapons:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.WeaponAttachments;
       break;
-    case weaponSubtypeEnum.Cyberweapon:
+    case weaponXmlSubtypeEnum.Cyberweapon:
       if (weapon.type === "Melee") {
         weaponType = weaponTypeEnum.Melee;
         weaponSubtype = meleeWeaponTypeEnum.Exotic;
@@ -1754,39 +1754,42 @@ export const getWeaponTypeInformation = function (weapon: WeaponXmlType) {
         weaponSubtype = firearmWeaponTypeEnum.Exotic;
       }
       break;
-    case weaponSubtypeEnum.BioWeapon:
+    case weaponXmlSubtypeEnum.BioWeapon:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.BioWeapons;
       break;
-    case weaponSubtypeEnum.Carbines:
+    case weaponXmlSubtypeEnum.Carbines:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.Carbines;
       break;
     // melee
-    case weaponSubtypeEnum.Blades:
+    case weaponXmlSubtypeEnum.Blades:
       weaponType = weaponTypeEnum.Melee;
       weaponSubtype = meleeWeaponTypeEnum.Blades;
       break;
-    case weaponSubtypeEnum.Clubs:
+    case weaponXmlSubtypeEnum.Clubs:
       weaponType = weaponTypeEnum.Melee;
       weaponSubtype = meleeWeaponTypeEnum.Clubs;
       break;
-    case weaponSubtypeEnum.ExoticMeleeWeapons:
+    case weaponXmlSubtypeEnum.ExoticMeleeWeapons:
       weaponType = weaponTypeEnum.Melee;
       weaponSubtype = meleeWeaponTypeEnum.Exotic;
       break;
-    case weaponSubtypeEnum.ImprovisedWeapons:
+    case weaponXmlSubtypeEnum.ImprovisedWeapons:
       weaponType = weaponTypeEnum.Melee;
       weaponSubtype = meleeWeaponTypeEnum.Improvised;
       break;
-    case weaponSubtypeEnum.Unarmed:
+    case weaponXmlSubtypeEnum.Unarmed:
       weaponType = weaponTypeEnum.Melee;
       weaponSubtype = meleeWeaponTypeEnum.Unarmed;
       break;
-    case weaponSubtypeEnum.Quality:
+    case weaponXmlSubtypeEnum.Quality:
       weaponType = weaponTypeEnum.Melee;
       weaponSubtype = meleeWeaponTypeEnum.MetagenicQuality;
       break;
+    case weaponXmlSubtypeEnum.Rifles:
+    case weaponXmlSubtypeEnum.Pistol:
+      assert(false);
   }
   return { weaponType, weaponSubtype };
 };

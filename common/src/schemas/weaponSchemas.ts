@@ -23,7 +23,7 @@ import {
 import {
   AvailabilitySchema,
   CostSchema,
-  WeaponSubtypeSchema,
+  WeaponXmlSubtypeSchema,
 } from "./commonSchema.js";
 
 export const GenericCalculationSchema = zod.array(
@@ -113,7 +113,7 @@ export type weaponRequirementsType = zod.infer<typeof weaponRequirementsSchema>;
 export const FirearmOptionsSchema = zod.object({
   mode: zod.array(zod.nativeEnum(firearmModeEnum)),
   recoilCompensation: RecoilCompensationSchema,
-  ammoCategory: zod.optional(WeaponSubtypeSchema),
+  ammoCategory: zod.optional(WeaponXmlSubtypeSchema),
   ammoSlots: zod.number(),
   hostWeaponRequirements: zod.optional(
     zod.object({
@@ -175,15 +175,18 @@ const UseGearSchema = zod.object({
 });
 export type useGearType = zod.infer<typeof UseGearSchema>;
 
-const AccessorySchema = zod.object({
+export const UseGearListSchema = zod.array(UseGearSchema);
+export type UseGearListType = zod.infer<typeof UseGearListSchema>;
+
+const PreDbAccessorySchema = zod.object({
   name: zod.string(),
   mount: zod.optional(zod.array(MountSchema)),
   rating: zod.optional(zod.number()),
-  gears: zod.optional(zod.array(UseGearSchema)),
+  gears: zod.optional(UseGearListSchema),
 });
-export type AccessoryType = zod.infer<typeof AccessorySchema>;
-export const AccessoriesSchema = zod.array(AccessorySchema);
-export type AccessoriesType = zod.infer<typeof AccessoriesSchema>;
+export type PreDbAccessoryType = zod.infer<typeof PreDbAccessorySchema>;
+export const PreDbAccessoriesSchema = zod.array(PreDbAccessorySchema);
+export type PredbAccessoriesType = zod.infer<typeof PreDbAccessoriesSchema>;
 
 const AmmunitionSingleSchema = zod.object({
   capacity: zod.optional(zod.number()),
@@ -206,7 +209,7 @@ export const WeaponPreDBSummarySchema = zod
     availability: AvailabilitySchema,
     cost: CostSchema,
     allowedGear: zod.optional(zod.array(zod.nativeEnum(gearCategoryEnum))),
-    accessories: zod.optional(AccessoriesSchema),
+    accessories: zod.optional(PreDbAccessoriesSchema),
     allowAccessories: zod.boolean(),
     isCyberware: zod.boolean(),
     augmentationType: zod.nativeEnum(augmentationClassificationEnum),

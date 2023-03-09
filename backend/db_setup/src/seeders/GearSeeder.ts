@@ -10,17 +10,23 @@ import {
   ProjectileWeapons,
 } from "../../../src/models/gear/combatGear/weaponModel.js";
 import { weaponTypeEnum } from "@shadowrun/common";
+import { WeaponAccessories } from "../../../src/models/gear/combatGear/weaponAccessoryModel.js";
+import { getWeaponAccessories } from "../seeds/newSeeds/weaponAccessoriesSeed.js";
 
 export class GearSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
     const stagedSkills: Array<Skills> = getSkills();
+    const stagedWeaponAccessories: Array<WeaponAccessories> =
+      getWeaponAccessories();
     const stagedWeapons: Array<
       MeleeWeapons | FirearmWeapons | ProjectileWeapons | Explosives
-    > = getWeapons(stagedSkills);
-    // const stagedSkills: Array<Skills> = [];
+    > = getWeapons(stagedSkills, stagedWeaponAccessories);
     stagedSkills.forEach((skill) => {
-      stagedSkills.push(new Skills(skill));
       em.create(Skills, skill);
+    });
+
+    stagedWeaponAccessories.forEach((weaponAccessory) => {
+      em.create(WeaponAccessories, weaponAccessory);
     });
 
     const stagedMeleeWeapons: Array<MeleeWeapons> = [];

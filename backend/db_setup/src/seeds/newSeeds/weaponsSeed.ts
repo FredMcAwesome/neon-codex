@@ -1,7 +1,4 @@
-import {
-  Skills,
-  WeaponSummaryType,
-} from "../../../../src/models/chummerdb/skillModel.js";
+import { Skills } from "../../../../src/models/chummerdb/skillModel.js";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -11,15 +8,19 @@ import {
   WeaponPreDBSummaryListType,
 } from "@shadowrun/common/src/schemas/weaponSchemas.js";
 import {
+  AccessoryListType,
   Explosives,
   FirearmWeapons,
   MeleeWeapons,
   ProjectileWeapons,
+  WeaponSummaryType,
 } from "../../../../src/models/gear/combatGear/weaponModel.js";
 import { weaponTypeEnum } from "@shadowrun/common";
+import { WeaponAccessories } from "../../../../src/models/gear/combatGear/weaponAccessoryModel.js";
 
 export const getWeapons = function (
-  stagedSkills: Array<Skills>
+  stagedSkills: Array<Skills>,
+  stagedWeaponAccessories: Array<WeaponAccessories>
 ): Array<MeleeWeapons | FirearmWeapons | ProjectileWeapons | Explosives> {
   console.log("getWeapons()");
   const currentPath = import.meta.url;
@@ -56,9 +57,26 @@ export const getWeapons = function (
       relatedSkill.length == 1,
       `Length: ${relatedSkill.length}, name: ${weapon.relatedSkill}`
     );
+
+    let accessories: AccessoryListType | undefined = [];
+    if (weapon.accessories) {
+      accessories = weapon.accessories.map((accessory) => {
+        const relatedAccessory = stagedWeaponAccessories.filter(
+          (weaponAccessory) => accessory.name === weaponAccessory.name
+        );
+        console.log(stagedWeaponAccessories.map((accessory) => accessory.name));
+        assert(
+          relatedAccessory.length == 1,
+          `Length: ${relatedAccessory.length}, name: ${accessory.name}`
+        );
+        return { ...accessory, name: relatedAccessory[0] };
+      });
+    }
+
     const linkedWeapon: WeaponSummaryType = {
       ...weapon,
       relatedSkill: relatedSkill[0],
+      accessories: accessories,
     };
     switch (linkedWeapon.typeInformation.type) {
       case weaponTypeEnum.Melee:

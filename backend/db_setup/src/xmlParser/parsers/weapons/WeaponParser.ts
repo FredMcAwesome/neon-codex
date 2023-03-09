@@ -7,9 +7,9 @@ import {
   DamageType,
 } from "@shadowrun/common";
 import { augmentationClassificationEnum } from "@shadowrun/common/src/enums.js";
-import { weaponSubtypeEnum } from "@shadowrun/common/src/schemas/commonSchema.js";
+import { weaponXmlSubtypeEnum } from "@shadowrun/common/src/schemas/commonSchema.js";
 import type {
-  AccessoriesType,
+  PredbAccessoriesType,
   AccessoryMountType,
   AmmunitionType,
   ModeType,
@@ -148,7 +148,7 @@ if (weaponListParsed.success) {
   const weaponListNoAmmo = englishWeaponList.filter((weapon) => {
     return (
       // don't include grenades, torpedos, missiles, or rockets. These are ammo
-      weapon.category !== weaponSubtypeEnum.Gear ||
+      weapon.category !== weaponXmlSubtypeEnum.Gear ||
       (!weapon.name.toLowerCase().includes("minigrenade") &&
         !weapon.name.toLowerCase().includes("torpedo") &&
         !weapon.name.toLowerCase().includes("missile") &&
@@ -183,18 +183,18 @@ if (weaponListParsed.success) {
 
 // function convertWeapon(weapon: WeaponType): RequiredEntityData<MeleeWeapons> {
 function convertWeapon(weapon: WeaponXmlType) {
+  console.log(`\n${weapon.name}`);
+
   const { weaponType, weaponSubtype } = getWeaponTypeInformation(weapon);
   let augmentationType: augmentationClassificationEnum =
     augmentationClassificationEnum.None;
   if (weapon.cyberware) {
     augmentationType = augmentationClassificationEnum.Cyberware;
-  } else if (weapon.category === weaponSubtypeEnum.BioWeapon) {
+  } else if (weapon.category === weaponXmlSubtypeEnum.BioWeapon) {
     augmentationType = augmentationClassificationEnum.Bioware;
   }
 
   const source = convertSource(weapon.source);
-
-  console.log(`\n${weapon.name}`);
   const accuracy: AccuracyType = convertAccuracy(weapon.accuracy, weapon.name);
   const damage: DamageType = convertDamage(weapon.damage, weapon.name);
   const armourPenetration: ArmourPenetrationType = convertArmourPenetration(
@@ -214,7 +214,7 @@ function convertWeapon(weapon: WeaponXmlType) {
     weapon.name
   );
   const cost: CostType = convertCost(weapon.cost, weapon.name);
-  const accessories: AccessoriesType | undefined = convertAccessories(
+  const accessories: PredbAccessoriesType | undefined = convertAccessories(
     weapon.accessories,
     weapon.name
   );
@@ -245,7 +245,7 @@ function convertWeapon(weapon: WeaponXmlType) {
     ? [weapon.extramount]
     : undefined;
   const hostWeaponRequirements =
-    weapon.category === weaponSubtypeEnum.UnderbarrelWeapons
+    weapon.category === weaponXmlSubtypeEnum.UnderbarrelWeapons
       ? {
           weaponRequirements: weaponRequirements,
           hostWeaponMountsRequired: mountLocationsOnHostWeapon,

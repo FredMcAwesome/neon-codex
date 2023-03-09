@@ -49,7 +49,7 @@ export type CostType = zod.infer<typeof CostSchema>;
 export const CapacitySchema = ValueRangeSchema;
 export type CapacityType = zod.infer<typeof CapacitySchema>;
 
-export enum weaponSubtypeEnum {
+export enum weaponXmlSubtypeEnum {
   Blades = "Blades",
   Clubs = "Clubs",
   Gear = "Gear",
@@ -82,7 +82,9 @@ export enum weaponSubtypeEnum {
   UnderbarrelWeapons = "Underbarrel Weapons",
   BioWeapon = "Bio-Weapon",
   Carbines = "Carbines",
+  Rifles = "Rifles",
+  Pistol = "Pistol",
 }
 
-export const WeaponSubtypeSchema = zod.nativeEnum(weaponSubtypeEnum);
-export type WeaponSubtypeType = zod.infer<typeof WeaponSubtypeSchema>;
+export const WeaponXmlSubtypeSchema = zod.nativeEnum(weaponXmlSubtypeEnum);
+export type WeaponXmlSubtypeType = zod.infer<typeof WeaponXmlSubtypeSchema>;
