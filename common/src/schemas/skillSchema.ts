@@ -2,7 +2,7 @@ import { z as zod } from "zod";
 import { attributeTypeEnum, skillCategoryEnum } from "../enums.js";
 export const SkillSchema = zod
   .object({
-    id: zod.string(),
+    // id: zod.string(),
     name: zod.string(),
     attribute: zod.nativeEnum(attributeTypeEnum),
     category: zod.nativeEnum(skillCategoryEnum),
@@ -21,3 +21,13 @@ export const SkillSchema = zod
 export type SkillType = zod.infer<typeof SkillSchema>;
 export const SkillListSchema = zod.array(SkillSchema);
 export type SkillListType = zod.infer<typeof SkillListSchema>;
+
+export const CustomSkillSchema = SkillSchema.extend({
+  skillGroupPoints: zod.number(),
+  skillPoints: zod.number(),
+  karmaPoints: zod.number(),
+  specialisationsSelected: zod.optional(zod.array(zod.string())),
+}).strict();
+export type CustomSkillType = zod.infer<typeof CustomSkillSchema>;
+export const CustomSkillListSchema = zod.array(CustomSkillSchema);
+export type CustomSkillListType = zod.infer<typeof CustomSkillListSchema>;

@@ -1,50 +1,55 @@
 import {
-  AugmentationType,
-  augmentationTypeEnum,
-  GearListSchema,
-  magicalGearTypeEnum,
-  matrixWareAccessoryTypeEnum,
-  matrixWareTypeEnum,
-  otherWareTypeEnum,
-  vehicleDroneTypeEnum,
+  // AugmentationType,
+  // augmentationTypeEnum,
+  // magicalGearTypeEnum,
+  // matrixWareAccessoryTypeEnum,
+  // matrixWareTypeEnum,
+  // otherWareTypeEnum,
+  // vehicleDroneTypeEnum,
   weaponTypeEnum,
 } from "@shadowrun/common";
 import type {
   GearListType,
-  MatrixType,
-  WeaponListType,
-  WeaponSummaryType,
+  // MatrixType
 } from "@shadowrun/common";
 import { useQuery } from "@tanstack/react-query";
 import { getGearList } from "../../utils/api.js";
 import { useFetchWrapper } from "../../utils/authFetch.js";
-import { MatrixListType } from "@shadowrun/common/src/serverResponse.js";
-import type {
-  AugmentationListType,
-  MagicGearListType,
-  MatrixAccessoriesListType,
-  OtherGearListType,
-  VehiclesAndDronesListType,
+// import { MatrixListType } from "@shadowrun/common/src/serverResponse.js";
+import {
+  // AugmentationListType,
+  GearListSchema,
+  // MagicGearListType,
+  // MatrixAccessoriesListType,
+  // OtherGearListType,
+  // VehiclesAndDronesListType,
 } from "@shadowrun/common/src/schemas/gearSchemas.js";
 import { CollapsibleDiv } from "../../utils/CollapsibleDiv.js";
-import {
-  AudioDeviceTypeInformationSchema,
-  AudioEnhancementTypeInformationSchema,
-  IdentificationTypeInformationSchema,
-  MatrixAccessoryType,
-  electronicTypeInformationType,
-  OpticalDeviceTypeInformationSchema,
-  RFIDTypeInformationSchema,
-  SecurityDeviceTypeInformationSchema,
-  ToolTypeInformationSchema,
-  VisionEnhancementTypeInformationSchema,
-  electronicAccessoryTypeInformationType,
-} from "@shadowrun/common/src/schemas/electronicSchemas.js";
-import { OtherGearType } from "@shadowrun/common/src/schemas/otherGearSchema.js";
-import { MagicGearType } from "@shadowrun/common/src/schemas/magicalSchemas.js";
-import { VehiclesAndDronesType } from "@shadowrun/common/src/schemas/riggerSchema.js";
+// import {
+//   AudioDeviceTypeInformationSchema,
+//   AudioEnhancementTypeInformationSchema,
+//   IdentificationTypeInformationSchema,
+//   MatrixAccessoryType,
+//   electronicTypeInformationType,
+//   OpticalDeviceTypeInformationSchema,
+//   RFIDTypeInformationSchema,
+//   SecurityDeviceTypeInformationSchema,
+//   ToolTypeInformationSchema,
+//   VisionEnhancementTypeInformationSchema,
+//   electronicAccessoryTypeInformationType,
+// } from "@shadowrun/common/src/schemas/electronicSchemas.js";
+// import { OtherGearType } from "@shadowrun/common/src/schemas/otherGearSchema.js";
+// import { MagicGearType } from "@shadowrun/common/src/schemas/magicalSchemas.js";
+// import { VehiclesAndDronesType } from "@shadowrun/common/src/schemas/riggerSchema.js";
 import { CollapsibleGearDiv } from "./GearHelper.js";
-import { costCalculation } from "../../utils/calculations.js";
+import {
+  costCalculation,
+  genericListCalculation,
+} from "../../utils/calculations.js";
+import {
+  WeaponUnlinkedSummaryListType,
+  WeaponUnlinkedSummaryType,
+} from "@shadowrun/common/src/schemas/weaponSchemas.js";
 
 const fetchWrapper = useFetchWrapper();
 
@@ -88,134 +93,147 @@ export const GearSelect = function (props: IProps) {
 
   const gearSelected = props.gearSelected;
 
-  const addWeapon = function (weapon: WeaponSummaryType) {
-    const gear = Object.assign({}, gearSelected);
+  const addWeapon = function (weapon: WeaponUnlinkedSummaryType) {
+    const gear = { ...gearSelected };
     gear.weapons.push(weapon);
     props.setGearSelected(gear);
-    props.setNuyen(props.nuyen - costCalculation(weapon.cost));
+    props.setNuyen(
+      props.nuyen -
+        costCalculation(weapon.cost, {
+          rating: genericListCalculation(weapon.availability.rating, {}),
+        })
+    );
   };
-  const removeWeapon = function (weapon: WeaponSummaryType, index: number) {
-    const gear = Object.assign({}, gearSelected);
+  const removeWeapon = function (
+    weapon: WeaponUnlinkedSummaryType,
+    index: number
+  ) {
+    const gear = { ...gearSelected };
     if (gear.weapons[index] === weapon) {
       gear.weapons.splice(index, 1);
       props.setGearSelected(gear);
-      props.setNuyen(props.nuyen + costCalculation(weapon.cost));
+      props.setNuyen(
+        props.nuyen +
+          costCalculation(weapon.cost, {
+            rating: genericListCalculation(weapon.availability.rating, {}),
+          })
+      );
     } else {
       console.error("No weapon at index: " + index);
     }
   };
-  const addElectronics = function (electronic: MatrixType) {
-    const gear = Object.assign({}, gearSelected);
-    gear.electronics.push(electronic);
-    props.setGearSelected(gear);
-    props.setNuyen(props.nuyen - costCalculation(electronic.cost));
-  };
-  const removeElectronics = function (electronic: MatrixType, index: number) {
-    const gear = Object.assign({}, gearSelected);
-    if (gear.electronics[index] === electronic) {
-      gear.electronics.splice(index, 1);
-      props.setGearSelected(gear);
-      props.setNuyen(props.nuyen + costCalculation(electronic.cost));
-    } else {
-      console.error("No electronic at index: " + index);
-    }
-  };
-  const addElectronicAccessories = function (
-    electronicAccessory: MatrixAccessoryType
-  ) {
-    const gear = Object.assign({}, gearSelected);
-    gear.electronicAccessories.push(electronicAccessory);
-    props.setGearSelected(gear);
-    props.setNuyen(props.nuyen - costCalculation(electronicAccessory.cost));
-  };
-  const removeElectronicAccessories = function (
-    electronicAccessory: MatrixAccessoryType,
-    index: number
-  ) {
-    const gear = Object.assign({}, gearSelected);
-    if (gear.electronicAccessories[index] === electronicAccessory) {
-      gear.electronicAccessories.splice(index, 1);
-      props.setGearSelected(gear);
-      props.setNuyen(props.nuyen + costCalculation(electronicAccessory.cost));
-    } else {
-      console.error("No electronic accessory at index: " + index);
-    }
-  };
-  const addOtherGear = function (other: OtherGearType) {
-    const gear = Object.assign({}, gearSelected);
-    gear.otherGear.push(other);
-    props.setGearSelected(gear);
-    props.setNuyen(props.nuyen - costCalculation(other.cost));
-  };
-  const removeOtherGear = function (other: OtherGearType, index: number) {
-    const gear = Object.assign({}, gearSelected);
-    if (gear.otherGear[index] === other) {
-      gear.otherGear.splice(index, 1);
-      props.setGearSelected(gear);
-      props.setNuyen(props.nuyen + costCalculation(other.cost));
-    } else {
-      console.error("No other gear at index: " + index);
-    }
-  };
-  const addAugmentations = function (augmentation: AugmentationType) {
-    const gear = Object.assign({}, gearSelected);
-    gear.augmentations.push(augmentation);
-    props.setGearSelected(gear);
-    props.setNuyen(props.nuyen - costCalculation(augmentation.cost));
-  };
-  const removeAugmentations = function (
-    augmentation: AugmentationType,
-    index: number
-  ) {
-    const gear = Object.assign({}, gearSelected);
-    if (gear.augmentations[index] === augmentation) {
-      gear.augmentations.splice(index, 1);
-      props.setGearSelected(gear);
-      props.setNuyen(props.nuyen + costCalculation(augmentation.cost));
-    } else {
-      console.error("No augmentation at index: " + index);
-    }
-  };
-  const addMagicalEquipment = function (magicalItem: MagicGearType) {
-    const gear = Object.assign({}, gearSelected);
-    gear.magicalEquipment.push(magicalItem);
-    props.setGearSelected(gear);
-    props.setNuyen(props.nuyen - costCalculation(magicalItem.cost));
-  };
-  const removeMagicalEquipment = function (
-    magicalItem: MagicGearType,
-    index: number
-  ) {
-    const gear = Object.assign({}, gearSelected);
-    if (gear.magicalEquipment[index] === magicalItem) {
-      gear.magicalEquipment.splice(index, 1);
-      props.setGearSelected(gear);
-      props.setNuyen(props.nuyen + costCalculation(magicalItem.cost));
-    } else {
-      console.error("No magical equipment at index: " + index);
-    }
-  };
-  const addVehiclesAndDrones = function (
-    vehicleOrDrone: VehiclesAndDronesType
-  ) {
-    const gear = Object.assign({}, gearSelected);
-    gear.vehiclesAndDrones.push(vehicleOrDrone);
-    props.setGearSelected(gear);
-    props.setNuyen(props.nuyen - costCalculation(vehicleOrDrone.cost));
-  };
-  const removeVehiclesAndDrones = function (
-    vehicleOrDrone: VehiclesAndDronesType,
-    index: number
-  ) {
-    const gear = Object.assign({}, gearSelected);
-    if (gear.vehiclesAndDrones[index] === vehicleOrDrone) {
-      gear.vehiclesAndDrones.splice(index, 1);
-      props.setGearSelected(gear);
-      props.setNuyen(props.nuyen + costCalculation(vehicleOrDrone.cost));
-    } else {
-      console.error("No vehicle/drone at index: " + index);
-    }
-  };
+  // const addElectronics = function (electronic: MatrixType) {
+  //   const gear = Object.assign({}, gearSelected);
+  //   gear.electronics.push(electronic);
+  //   props.setGearSelected(gear);
+  //   props.setNuyen(props.nuyen - costCalculation(electronic.cost));
+  // };
+  // const removeElectronics = function (electronic: MatrixType, index: number) {
+  //   const gear = Object.assign({}, gearSelected);
+  //   if (gear.electronics[index] === electronic) {
+  //     gear.electronics.splice(index, 1);
+  //     props.setGearSelected(gear);
+  //     props.setNuyen(props.nuyen + costCalculation(electronic.cost));
+  //   } else {
+  //     console.error("No electronic at index: " + index);
+  //   }
+  // };
+  // const addElectronicAccessories = function (
+  //   electronicAccessory: MatrixAccessoryType
+  // ) {
+  //   const gear = Object.assign({}, gearSelected);
+  //   gear.electronicAccessories.push(electronicAccessory);
+  //   props.setGearSelected(gear);
+  //   props.setNuyen(props.nuyen - costCalculation(electronicAccessory.cost));
+  // };
+  // const removeElectronicAccessories = function (
+  //   electronicAccessory: MatrixAccessoryType,
+  //   index: number
+  // ) {
+  //   const gear = Object.assign({}, gearSelected);
+  //   if (gear.electronicAccessories[index] === electronicAccessory) {
+  //     gear.electronicAccessories.splice(index, 1);
+  //     props.setGearSelected(gear);
+  //     props.setNuyen(props.nuyen + costCalculation(electronicAccessory.cost));
+  //   } else {
+  //     console.error("No electronic accessory at index: " + index);
+  //   }
+  // };
+  // const addOtherGear = function (other: OtherGearType) {
+  //   const gear = Object.assign({}, gearSelected);
+  //   gear.otherGear.push(other);
+  //   props.setGearSelected(gear);
+  //   props.setNuyen(props.nuyen - costCalculation(other.cost));
+  // };
+  // const removeOtherGear = function (other: OtherGearType, index: number) {
+  //   const gear = Object.assign({}, gearSelected);
+  //   if (gear.otherGear[index] === other) {
+  //     gear.otherGear.splice(index, 1);
+  //     props.setGearSelected(gear);
+  //     props.setNuyen(props.nuyen + costCalculation(other.cost));
+  //   } else {
+  //     console.error("No other gear at index: " + index);
+  //   }
+  // };
+  // const addAugmentations = function (augmentation: AugmentationType) {
+  //   const gear = Object.assign({}, gearSelected);
+  //   gear.augmentations.push(augmentation);
+  //   props.setGearSelected(gear);
+  //   props.setNuyen(props.nuyen - costCalculation(augmentation.cost));
+  // };
+  // const removeAugmentations = function (
+  //   augmentation: AugmentationType,
+  //   index: number
+  // ) {
+  //   const gear = Object.assign({}, gearSelected);
+  //   if (gear.augmentations[index] === augmentation) {
+  //     gear.augmentations.splice(index, 1);
+  //     props.setGearSelected(gear);
+  //     props.setNuyen(props.nuyen + costCalculation(augmentation.cost));
+  //   } else {
+  //     console.error("No augmentation at index: " + index);
+  //   }
+  // };
+  // const addMagicalEquipment = function (magicalItem: MagicGearType) {
+  //   const gear = Object.assign({}, gearSelected);
+  //   gear.magicalEquipment.push(magicalItem);
+  //   props.setGearSelected(gear);
+  //   props.setNuyen(props.nuyen - costCalculation(magicalItem.cost));
+  // };
+  // const removeMagicalEquipment = function (
+  //   magicalItem: MagicGearType,
+  //   index: number
+  // ) {
+  //   const gear = Object.assign({}, gearSelected);
+  //   if (gear.magicalEquipment[index] === magicalItem) {
+  //     gear.magicalEquipment.splice(index, 1);
+  //     props.setGearSelected(gear);
+  //     props.setNuyen(props.nuyen + costCalculation(magicalItem.cost));
+  //   } else {
+  //     console.error("No magical equipment at index: " + index);
+  //   }
+  // };
+  // const addVehiclesAndDrones = function (
+  //   vehicleOrDrone: VehiclesAndDronesType
+  // ) {
+  //   const gear = Object.assign({}, gearSelected);
+  //   gear.vehiclesAndDrones.push(vehicleOrDrone);
+  //   props.setGearSelected(gear);
+  //   props.setNuyen(props.nuyen - costCalculation(vehicleOrDrone.cost));
+  // };
+  // const removeVehiclesAndDrones = function (
+  //   vehicleOrDrone: VehiclesAndDronesType,
+  //   index: number
+  // ) {
+  //   const gear = Object.assign({}, gearSelected);
+  //   if (gear.vehiclesAndDrones[index] === vehicleOrDrone) {
+  //     gear.vehiclesAndDrones.splice(index, 1);
+  //     props.setGearSelected(gear);
+  //     props.setNuyen(props.nuyen + costCalculation(vehicleOrDrone.cost));
+  //   } else {
+  //     console.error("No vehicle/drone at index: " + index);
+  //   }
+  // };
 
   return (
     <div>
@@ -248,7 +266,7 @@ export const GearSelect = function (props: IProps) {
           />
         </div>
       </CollapsibleDiv>
-      <CollapsibleDiv title="Electronics">
+      {/* <CollapsibleDiv title="Electronics">
         <div id="Matrix_Div">
           <MatrixDiv
             title={"Commlinks"}
@@ -493,7 +511,7 @@ export const GearSelect = function (props: IProps) {
             addVehiclesAndDrones={addVehiclesAndDrones}
           />
         </div>
-      </CollapsibleDiv>
+      </CollapsibleDiv> */}
       <h2>Gear Selected</h2>
       <h3>
         Nuyen Remaining: <span>{props.nuyen}</span>
@@ -515,11 +533,21 @@ export const GearSelect = function (props: IProps) {
                 removeItem={removeItem}
               >
                 <div>{weapon.description}</div>
+                {weapon.accessories && (
+                  <div>
+                    <span>Accessories:</span>
+                    <ul>
+                      {weapon.accessories.map((accessory) => {
+                        return <li key={accessory.name}>{accessory.name}</li>;
+                      })}
+                    </ul>
+                  </div>
+                )}
               </CollapsibleGearDiv>
             );
           })}
         </div>
-        <h3>Electronics</h3>
+        {/* <h3>Electronics</h3>
         <div>
           {gearSelected.electronics.map((electronic, index) => {
             const addItem = function () {
@@ -646,7 +674,7 @@ export const GearSelect = function (props: IProps) {
               </CollapsibleGearDiv>
             );
           })}
-        </div>
+        </div> */}
       </div>
     </div>
   );
@@ -654,9 +682,9 @@ export const GearSelect = function (props: IProps) {
 
 interface IWeaponDivProps {
   title: string;
-  data: WeaponListType;
+  data: WeaponUnlinkedSummaryListType;
   weaponType: weaponTypeEnum;
-  addWeapon: (weapon: WeaponSummaryType) => void;
+  addWeapon: (weapon: WeaponUnlinkedSummaryType) => void;
 }
 
 const WeaponDiv = function ({
@@ -679,7 +707,7 @@ const WeaponDiv = function ({
                 <CollapsibleGearDiv title={weapon.name} addItem={addItem}>
                   <div>{weapon.description}</div>
                 </CollapsibleGearDiv>
-                <div>{weapon.subtype}</div>
+                <div>{weapon.typeInformation.subtype}</div>
               </li>
             );
           })}
@@ -688,297 +716,297 @@ const WeaponDiv = function ({
   );
 };
 
-interface IMatrixDivProps {
-  title: string;
-  data: MatrixListType;
-  matrixWareType: matrixWareTypeEnum;
-  addElectronics: (electronic: MatrixType) => void;
-}
+// interface IMatrixDivProps {
+//   title: string;
+//   data: MatrixListType;
+//   matrixWareType: matrixWareTypeEnum;
+//   addElectronics: (electronic: MatrixType) => void;
+// }
 
-const MatrixDiv = function ({
-  data,
-  matrixWareType,
-  title,
-  addElectronics,
-}: IMatrixDivProps) {
-  return (
-    <CollapsibleDiv title={title}>
-      <ul>
-        {data
-          .filter((gear) => gear.typeInformation.type === matrixWareType)
-          .map((electronic: MatrixType) => {
-            const addItem = function () {
-              addElectronics(electronic);
-            };
-            const description = checkForElectronicDescription(
-              electronic.typeInformation
-            );
-            return (
-              <li key={matrixWareType + electronic.name}>
-                <div>{electronic.name}</div>
-                <CollapsibleGearDiv title={electronic.name} addItem={addItem}>
-                  {description && <div>{description}</div>}
-                </CollapsibleGearDiv>
-              </li>
-            );
-          })}
-      </ul>
-    </CollapsibleDiv>
-  );
-};
+// const MatrixDiv = function ({
+//   data,
+//   matrixWareType,
+//   title,
+//   addElectronics,
+// }: IMatrixDivProps) {
+//   return (
+//     <CollapsibleDiv title={title}>
+//       <ul>
+//         {data
+//           .filter((gear) => gear.typeInformation.type === matrixWareType)
+//           .map((electronic: MatrixType) => {
+//             const addItem = function () {
+//               addElectronics(electronic);
+//             };
+//             const description = checkForElectronicDescription(
+//               electronic.typeInformation
+//             );
+//             return (
+//               <li key={matrixWareType + electronic.name}>
+//                 <div>{electronic.name}</div>
+//                 <CollapsibleGearDiv title={electronic.name} addItem={addItem}>
+//                   {description && <div>{description}</div>}
+//                 </CollapsibleGearDiv>
+//               </li>
+//             );
+//           })}
+//       </ul>
+//     </CollapsibleDiv>
+//   );
+// };
 
-interface IMatrixAccessoriesDivProps {
-  title: string;
-  data: MatrixAccessoriesListType;
-  matrixWareAccessoryType: matrixWareAccessoryTypeEnum;
-  addElectronicAccessories: (electronicAccessory: MatrixAccessoryType) => void;
-}
+// interface IMatrixAccessoriesDivProps {
+//   title: string;
+//   data: MatrixAccessoriesListType;
+//   matrixWareAccessoryType: matrixWareAccessoryTypeEnum;
+//   addElectronicAccessories: (electronicAccessory: MatrixAccessoryType) => void;
+// }
 
-const MatrixAccessoriesDiv = function ({
-  data,
-  matrixWareAccessoryType,
-  title,
-  addElectronicAccessories,
-}: IMatrixAccessoriesDivProps) {
-  return (
-    <CollapsibleDiv title={title}>
-      <ul>
-        {data
-          .filter(
-            (gear) => gear.typeInformation.type === matrixWareAccessoryType
-          )
-          .map((electronicAccessory) => {
-            const addItem = function () {
-              addElectronicAccessories(electronicAccessory);
-            };
-            const description = checkForElectronicAccessoryDescription(
-              electronicAccessory.typeInformation
-            );
-            return (
-              <li key={matrixWareAccessoryType + electronicAccessory.name}>
-                <CollapsibleGearDiv
-                  title={electronicAccessory.name}
-                  addItem={addItem}
-                >
-                  {description && <div>{description}</div>}
-                </CollapsibleGearDiv>
-              </li>
-            );
-          })}
-      </ul>
-    </CollapsibleDiv>
-  );
-};
+// const MatrixAccessoriesDiv = function ({
+//   data,
+//   matrixWareAccessoryType,
+//   title,
+//   addElectronicAccessories,
+// }: IMatrixAccessoriesDivProps) {
+//   return (
+//     <CollapsibleDiv title={title}>
+//       <ul>
+//         {data
+//           .filter(
+//             (gear) => gear.typeInformation.type === matrixWareAccessoryType
+//           )
+//           .map((electronicAccessory) => {
+//             const addItem = function () {
+//               addElectronicAccessories(electronicAccessory);
+//             };
+//             const description = checkForElectronicAccessoryDescription(
+//               electronicAccessory.typeInformation
+//             );
+//             return (
+//               <li key={matrixWareAccessoryType + electronicAccessory.name}>
+//                 <CollapsibleGearDiv
+//                   title={electronicAccessory.name}
+//                   addItem={addItem}
+//                 >
+//                   {description && <div>{description}</div>}
+//                 </CollapsibleGearDiv>
+//               </li>
+//             );
+//           })}
+//       </ul>
+//     </CollapsibleDiv>
+//   );
+// };
 
-interface IOtherGearDivProps {
-  title: string;
-  data: OtherGearListType;
-  otherWareType: otherWareTypeEnum;
-  addOtherGear: (other: OtherGearType) => void;
-}
+// interface IOtherGearDivProps {
+//   title: string;
+//   data: OtherGearListType;
+//   otherWareType: otherWareTypeEnum;
+//   addOtherGear: (other: OtherGearType) => void;
+// }
 
-const OtherGearDiv = function ({
-  data,
-  otherWareType,
-  title,
-  addOtherGear,
-}: IOtherGearDivProps) {
-  return (
-    <CollapsibleDiv title={title}>
-      <ul>
-        {data
-          .filter((gear) => gear.typeInformation.type === otherWareType)
-          .map((otherWare) => {
-            const addItem = function () {
-              addOtherGear(otherWare);
-            };
-            return (
-              <li key={otherWareType + otherWare.name}>
-                <CollapsibleGearDiv title={otherWare.name} addItem={addItem}>
-                  <div>{otherWare.description}</div>
-                </CollapsibleGearDiv>
-              </li>
-            );
-          })}
-      </ul>
-    </CollapsibleDiv>
-  );
-};
+// const OtherGearDiv = function ({
+//   data,
+//   otherWareType,
+//   title,
+//   addOtherGear,
+// }: IOtherGearDivProps) {
+//   return (
+//     <CollapsibleDiv title={title}>
+//       <ul>
+//         {data
+//           .filter((gear) => gear.typeInformation.type === otherWareType)
+//           .map((otherWare) => {
+//             const addItem = function () {
+//               addOtherGear(otherWare);
+//             };
+//             return (
+//               <li key={otherWareType + otherWare.name}>
+//                 <CollapsibleGearDiv title={otherWare.name} addItem={addItem}>
+//                   <div>{otherWare.description}</div>
+//                 </CollapsibleGearDiv>
+//               </li>
+//             );
+//           })}
+//       </ul>
+//     </CollapsibleDiv>
+//   );
+// };
 
-interface IAugmentationsDivProps {
-  title: string;
-  data: AugmentationListType;
-  augmentationType: augmentationTypeEnum;
-  addAugmentations: (augmentation: AugmentationType) => void;
-}
+// interface IAugmentationsDivProps {
+//   title: string;
+//   data: AugmentationListType;
+//   augmentationType: augmentationTypeEnum;
+//   addAugmentations: (augmentation: AugmentationType) => void;
+// }
 
-const AugmentationsDiv = function ({
-  data,
-  augmentationType,
-  title,
-  addAugmentations,
-}: IAugmentationsDivProps) {
-  return (
-    <CollapsibleDiv title={title}>
-      <ul>
-        {data
-          .filter((gear) => gear.typeInformation.type === augmentationType)
-          .map((augmentation) => {
-            const addItem = function () {
-              addAugmentations(augmentation);
-            };
-            return (
-              <li key={augmentationType + augmentation.name}>
-                <CollapsibleGearDiv title={augmentation.name} addItem={addItem}>
-                  <div>{augmentation.description}</div>
-                </CollapsibleGearDiv>
-              </li>
-            );
-          })}
-      </ul>
-    </CollapsibleDiv>
-  );
-};
+// const AugmentationsDiv = function ({
+//   data,
+//   augmentationType,
+//   title,
+//   addAugmentations,
+// }: IAugmentationsDivProps) {
+//   return (
+//     <CollapsibleDiv title={title}>
+//       <ul>
+//         {data
+//           .filter((gear) => gear.typeInformation.type === augmentationType)
+//           .map((augmentation) => {
+//             const addItem = function () {
+//               addAugmentations(augmentation);
+//             };
+//             return (
+//               <li key={augmentationType + augmentation.name}>
+//                 <CollapsibleGearDiv title={augmentation.name} addItem={addItem}>
+//                   <div>{augmentation.description}</div>
+//                 </CollapsibleGearDiv>
+//               </li>
+//             );
+//           })}
+//       </ul>
+//     </CollapsibleDiv>
+//   );
+// };
 
-interface IMagicalEquipmentDivProps {
-  title: string;
-  data: MagicGearListType;
-  magicalGearType: magicalGearTypeEnum;
-  addMagicalEquipment: (magicalItem: MagicGearType) => void;
-}
+// interface IMagicalEquipmentDivProps {
+//   title: string;
+//   data: MagicGearListType;
+//   magicalGearType: magicalGearTypeEnum;
+//   addMagicalEquipment: (magicalItem: MagicGearType) => void;
+// }
 
-const MagicalEquipmentDiv = function ({
-  data,
-  magicalGearType,
-  title,
-  addMagicalEquipment,
-}: IMagicalEquipmentDivProps) {
-  return (
-    <CollapsibleDiv title={title}>
-      <ul>
-        {data
-          .filter((gear) => gear.type === magicalGearType)
-          .map((magicalItem) => {
-            const addItem = function () {
-              addMagicalEquipment(magicalItem);
-            };
-            return (
-              <li key={magicalGearTypeEnum[magicalGearType] + magicalItem.name}>
-                <CollapsibleGearDiv title={magicalItem.name} addItem={addItem}>
-                  <div>{magicalItem.description}</div>
-                </CollapsibleGearDiv>
-                {magicalItem.subtype && <div>{magicalItem.subtype}</div>}
-              </li>
-            );
-          })}
-      </ul>
-    </CollapsibleDiv>
-  );
-};
+// const MagicalEquipmentDiv = function ({
+//   data,
+//   magicalGearType,
+//   title,
+//   addMagicalEquipment,
+// }: IMagicalEquipmentDivProps) {
+//   return (
+//     <CollapsibleDiv title={title}>
+//       <ul>
+//         {data
+//           .filter((gear) => gear.type === magicalGearType)
+//           .map((magicalItem) => {
+//             const addItem = function () {
+//               addMagicalEquipment(magicalItem);
+//             };
+//             return (
+//               <li key={magicalGearTypeEnum[magicalGearType] + magicalItem.name}>
+//                 <CollapsibleGearDiv title={magicalItem.name} addItem={addItem}>
+//                   <div>{magicalItem.description}</div>
+//                 </CollapsibleGearDiv>
+//                 {magicalItem.subtype && <div>{magicalItem.subtype}</div>}
+//               </li>
+//             );
+//           })}
+//       </ul>
+//     </CollapsibleDiv>
+//   );
+// };
 
-interface IVehiclesAndDronesDivProps {
-  title: string;
-  data: VehiclesAndDronesListType;
-  vehicleAndDroneType: vehicleDroneTypeEnum;
-  addVehiclesAndDrones: (vehicleOrDrone: VehiclesAndDronesType) => void;
-}
+// interface IVehiclesAndDronesDivProps {
+//   title: string;
+//   data: VehiclesAndDronesListType;
+//   vehicleAndDroneType: vehicleDroneTypeEnum;
+//   addVehiclesAndDrones: (vehicleOrDrone: VehiclesAndDronesType) => void;
+// }
 
-const VehiclesAndDronesDiv = function ({
-  data,
-  vehicleAndDroneType,
-  title,
-  addVehiclesAndDrones,
-}: IVehiclesAndDronesDivProps) {
-  return (
-    <CollapsibleDiv title={title}>
-      <ul>
-        {data
-          .filter((gear) => gear.type === vehicleAndDroneType)
-          .map((vehiclesOrDrone) => {
-            const addItem = function () {
-              addVehiclesAndDrones(vehiclesOrDrone);
-            };
-            return (
-              <li
-                key={
-                  vehicleDroneTypeEnum[vehicleAndDroneType] +
-                  vehiclesOrDrone.name
-                }
-              >
-                <CollapsibleGearDiv
-                  title={vehiclesOrDrone.name}
-                  addItem={addItem}
-                >
-                  <div>{vehiclesOrDrone.description}</div>
-                </CollapsibleGearDiv>
-                <div>{vehiclesOrDrone.subtype}</div>
-              </li>
-            );
-          })}
-      </ul>
-    </CollapsibleDiv>
-  );
-};
-function checkForElectronicAccessoryDescription(
-  typeInformation: electronicAccessoryTypeInformationType
-) {
-  let description = undefined;
-  if (typeInformation.type === matrixWareAccessoryTypeEnum.Identification) {
-    const DescriptionInformationParsed =
-      IdentificationTypeInformationSchema.safeParse(typeInformation);
-    if (DescriptionInformationParsed.success)
-      description = DescriptionInformationParsed.data.description;
-  } else if (typeInformation.type === matrixWareAccessoryTypeEnum.Tool) {
-    const DescriptionInformationParsed =
-      ToolTypeInformationSchema.safeParse(typeInformation);
-    if (DescriptionInformationParsed.success)
-      description = DescriptionInformationParsed.data.description;
-  } else if (
-    typeInformation.type === matrixWareAccessoryTypeEnum.SecurityDevice
-  ) {
-    const DescriptionInformationParsed =
-      SecurityDeviceTypeInformationSchema.safeParse(typeInformation);
-    if (DescriptionInformationParsed.success)
-      description = DescriptionInformationParsed.data.description;
-  } else if (
-    typeInformation.type === matrixWareAccessoryTypeEnum.OpticalDevice
-  ) {
-    const DescriptionInformationParsed =
-      OpticalDeviceTypeInformationSchema.safeParse(typeInformation);
-    if (DescriptionInformationParsed.success)
-      description = DescriptionInformationParsed.data.description;
-  } else if (
-    typeInformation.type === matrixWareAccessoryTypeEnum.VisionEnhancement
-  ) {
-    const DescriptionInformationParsed =
-      VisionEnhancementTypeInformationSchema.safeParse(typeInformation);
-    if (DescriptionInformationParsed.success)
-      description = DescriptionInformationParsed.data.description;
-  } else if (typeInformation.type === matrixWareAccessoryTypeEnum.AudioDevice) {
-    const DescriptionInformationParsed =
-      AudioDeviceTypeInformationSchema.safeParse(typeInformation);
-    if (DescriptionInformationParsed.success)
-      description = DescriptionInformationParsed.data.description;
-  } else if (
-    typeInformation.type === matrixWareAccessoryTypeEnum.AudioEnhancement
-  ) {
-    const DescriptionInformationParsed =
-      AudioEnhancementTypeInformationSchema.safeParse(typeInformation);
-    if (DescriptionInformationParsed.success)
-      description = DescriptionInformationParsed.data.description;
-  }
-  return description;
-}
+// const VehiclesAndDronesDiv = function ({
+//   data,
+//   vehicleAndDroneType,
+//   title,
+//   addVehiclesAndDrones,
+// }: IVehiclesAndDronesDivProps) {
+//   return (
+//     <CollapsibleDiv title={title}>
+//       <ul>
+//         {data
+//           .filter((gear) => gear.type === vehicleAndDroneType)
+//           .map((vehiclesOrDrone) => {
+//             const addItem = function () {
+//               addVehiclesAndDrones(vehiclesOrDrone);
+//             };
+//             return (
+//               <li
+//                 key={
+//                   vehicleDroneTypeEnum[vehicleAndDroneType] +
+//                   vehiclesOrDrone.name
+//                 }
+//               >
+//                 <CollapsibleGearDiv
+//                   title={vehiclesOrDrone.name}
+//                   addItem={addItem}
+//                 >
+//                   <div>{vehiclesOrDrone.description}</div>
+//                 </CollapsibleGearDiv>
+//                 <div>{vehiclesOrDrone.subtype}</div>
+//               </li>
+//             );
+//           })}
+//       </ul>
+//     </CollapsibleDiv>
+//   );
+// };
+// function checkForElectronicAccessoryDescription(
+//   typeInformation: electronicAccessoryTypeInformationType
+// ) {
+//   let description = undefined;
+//   if (typeInformation.type === matrixWareAccessoryTypeEnum.Identification) {
+//     const DescriptionInformationParsed =
+//       IdentificationTypeInformationSchema.safeParse(typeInformation);
+//     if (DescriptionInformationParsed.success)
+//       description = DescriptionInformationParsed.data.description;
+//   } else if (typeInformation.type === matrixWareAccessoryTypeEnum.Tool) {
+//     const DescriptionInformationParsed =
+//       ToolTypeInformationSchema.safeParse(typeInformation);
+//     if (DescriptionInformationParsed.success)
+//       description = DescriptionInformationParsed.data.description;
+//   } else if (
+//     typeInformation.type === matrixWareAccessoryTypeEnum.SecurityDevice
+//   ) {
+//     const DescriptionInformationParsed =
+//       SecurityDeviceTypeInformationSchema.safeParse(typeInformation);
+//     if (DescriptionInformationParsed.success)
+//       description = DescriptionInformationParsed.data.description;
+//   } else if (
+//     typeInformation.type === matrixWareAccessoryTypeEnum.OpticalDevice
+//   ) {
+//     const DescriptionInformationParsed =
+//       OpticalDeviceTypeInformationSchema.safeParse(typeInformation);
+//     if (DescriptionInformationParsed.success)
+//       description = DescriptionInformationParsed.data.description;
+//   } else if (
+//     typeInformation.type === matrixWareAccessoryTypeEnum.VisionEnhancement
+//   ) {
+//     const DescriptionInformationParsed =
+//       VisionEnhancementTypeInformationSchema.safeParse(typeInformation);
+//     if (DescriptionInformationParsed.success)
+//       description = DescriptionInformationParsed.data.description;
+//   } else if (typeInformation.type === matrixWareAccessoryTypeEnum.AudioDevice) {
+//     const DescriptionInformationParsed =
+//       AudioDeviceTypeInformationSchema.safeParse(typeInformation);
+//     if (DescriptionInformationParsed.success)
+//       description = DescriptionInformationParsed.data.description;
+//   } else if (
+//     typeInformation.type === matrixWareAccessoryTypeEnum.AudioEnhancement
+//   ) {
+//     const DescriptionInformationParsed =
+//       AudioEnhancementTypeInformationSchema.safeParse(typeInformation);
+//     if (DescriptionInformationParsed.success)
+//       description = DescriptionInformationParsed.data.description;
+//   }
+//   return description;
+// }
 
-function checkForElectronicDescription(
-  typeInformation: electronicTypeInformationType
-) {
-  let description = undefined;
-  if (typeInformation.type === matrixWareTypeEnum.CommunicationCountermeasure) {
-    const DescriptionInformationParsed =
-      RFIDTypeInformationSchema.safeParse(typeInformation);
-    if (DescriptionInformationParsed.success)
-      description = DescriptionInformationParsed.data.description;
-  }
-  return description;
-}
+// function checkForElectronicDescription(
+//   typeInformation: electronicTypeInformationType
+// ) {
+//   let description = undefined;
+//   if (typeInformation.type === matrixWareTypeEnum.CommunicationCountermeasure) {
+//     const DescriptionInformationParsed =
+//       RFIDTypeInformationSchema.safeParse(typeInformation);
+//     if (DescriptionInformationParsed.success)
+//       description = DescriptionInformationParsed.data.description;
+//   }
+//   return description;
+// }

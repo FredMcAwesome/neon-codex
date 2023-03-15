@@ -3,6 +3,7 @@
   "extends": [
     "../.eslintrc.base.json",
     "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
     "plugin:jest/recommended"
   ],
   "env": {
@@ -11,6 +12,7 @@
   "parserOptions": {
     "project": "./**/tsconfig.json"
   },
+  "plugins": ["react", "eslint-plugin-react-hooks"],
   "rules": {
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off"

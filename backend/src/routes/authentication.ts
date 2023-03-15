@@ -5,10 +5,10 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { LoginSchema } from "@shadowrun/common";
 import type { LoginType, JwtTokenType } from "@shadowrun/common";
-import { Users } from "../models/models.js";
+import { Users } from "@shadowrun/database/build/models/models.js";
 import { Database } from "../utils/db.js";
 import * as logger from "../utils/logger.js";
-import { TOKEN_SECRET } from "../utils/config.js";
+import { TOKEN_SECRET } from "@shadowrun/database/build/utils/databaseConfig.js";
 const router = express.Router();
 
 const isLoggedIn = [verifyToken, getUsername];
@@ -212,6 +212,8 @@ function verifyToken(
     addTokenToRequest(bearerHeader, req);
     next();
   } else {
+    logger.log("Invalid auth header");
+
     res.status(400).send("Invalid auth header");
   }
 }

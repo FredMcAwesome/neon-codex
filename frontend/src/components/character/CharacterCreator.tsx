@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AttributesSelect from "./AttributesSelect.js";
 import type { IAttributes, ISpecialAttributes } from "./AttributesSelect.js";
 import PrioritySelect from "./PrioritySelect.js";
@@ -13,14 +13,40 @@ import "./CharacterCreator.css";
 import React from "react";
 import { QualitiesSelect } from "./QualitiesSelect.js";
 import type { ISelectedQuality } from "./QualitiesSelect.js";
-import { SkillsSelect } from "./SkillsSelect.js";
-import { skillList } from "@shadowrun/common/src/Skills.js";
-import type { IActiveSkillSelection } from "@shadowrun/common/src/Skills.js";
+import { SkillSelectList } from "./SkillsSelect.js";
 import { GearSelect } from "./GearSelect.js";
 import { GearListType } from "@shadowrun/common";
+import { useFetchWrapper } from "../../utils/authFetch.js";
+import { getSkillList } from "../../utils/api.js";
+import {
+  CustomSkillListType,
+  SkillListSchema,
+  SkillListType,
+} from "@shadowrun/common/src/schemas/skillSchema.js";
+import { useQuery } from "@tanstack/react-query";
+
+const fetchWrapper = useFetchWrapper();
+
+async function fetchSkills() {
+  console.log("fetchSkills: " + getSkillList);
+  const response: Response = await fetchWrapper.get(getSkillList);
+  // https://tanstack.com/query/v4/docs/guides/query-functions#usage-with-fetch-and-other-clients-that-do-not-throw-by-default
+  if (!response.ok) {
+    throw new Error(response.statusText);
+  }
+  const resJson: unknown | SkillListType = await response.json();
+  const parsedRes = SkillListSchema.safeParse(resJson);
+  if (parsedRes.success) {
+    return parsedRes.data;
+  } else {
+    throw new Error(parsedRes.error.issues.toString());
+  }
+}
 
 const characterCreatorPath = "/character_creator";
 const CharacterCreator = function () {
+  const { data, error, isError, isLoading } = useQuery(["skills"], fetchSkills);
+
   // Character creator holds values of all sub components
   const [priorityInfo, setPriorityInfo] = useState<IPriorities>({
     MetatypePriority: PriorityLevelEnum.A,
@@ -56,14 +82,25 @@ const CharacterCreator = function () {
   const [skillPoints, setSkillPoints] = useState<ISkillPoints>(
     priorityOptions[priorityInfo.SkillsPriority].skills
   );
-  const [skillSelections, setSkillSelections] = useState<
-    Array<IActiveSkillSelection>
-  >(
-    skillList.map((skill) => ({
-      ...skill,
-      pointsInvested: 0,
-    }))
+
+  // const skills = data !== undefined ? data : [];
+  const [skillSelections, setSkillSelections] = useState<CustomSkillListType>(
+    []
   );
+  useEffect(() => {
+    if (data === undefined) return;
+    setSkillSelections(
+      data.map((skill) => {
+        console.log(skill.name);
+        return {
+          ...skill,
+          skillGroupPoints: 0,
+          skillPoints: 0,
+          karmaPoints: 0,
+        };
+      })
+    );
+  }, [data]);
   const [gearSelected, setGearSelected] = useState<GearListType>({
     weapons: [],
     electronics: [],
@@ -107,7 +144,7 @@ const CharacterCreator = function () {
     setSkillPoints(loadingSkillPoints);
   };
   const onSkillSelectionsChanged = function (
-    loadingSkillSelection: Array<IActiveSkillSelection>
+    loadingSkillSelection: CustomSkillListType
   ) {
     setSkillSelections(loadingSkillSelection);
   };
@@ -119,6 +156,19 @@ const CharacterCreator = function () {
   };
 
   const [page, setPage] = useState(0);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    // https://tanstack.com/query/v4/docs/typescript#typing-the-error-field
+    if (error instanceof Error) {
+      return <div>Error! {error.message}</div>;
+    } else {
+      return <div>Error!</div>;
+    }
+  }
   const firstPage = 0;
   const lastPage = 4;
   let currentStage;
@@ -169,8 +219,8 @@ const CharacterCreator = function () {
       break;
     case 3:
       currentStage = (
-        <SkillsSelect
-          skillPoints={skillPoints}
+        <SkillSelectList
+          skillPointItems={skillPoints}
           setSkillPoints={onSkillPointChanged}
           skillSelections={skillSelections}
           setSkillSelections={onSkillSelectionsChanged}

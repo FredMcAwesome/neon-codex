@@ -6,14 +6,12 @@ export type { Example } from "./types.js";
 export {
   ThreadListSchema,
   JwtTokenSchema,
-  WeaponListSchema,
   AugmentationListSchema,
   GearListSchema,
 } from "./serverResponse.js";
 export type {
   ThreadListType,
   JwtTokenType,
-  WeaponListType,
   OtherGearListType,
   AugmentationListType,
   GearListType,
@@ -31,7 +29,6 @@ export {
 } from "./api.js";
 
 export {
-  skillsEnum,
   gearTypeEnum,
   weaponTypeEnum,
   meleeWeaponTypeEnum,
@@ -87,7 +84,7 @@ export type {
   DamageType,
   FirearmAmmoType,
   RecoilCompensationType,
-  WeaponPreDBSummaryType,
+  WeaponUnlinkedSummaryType as WeaponPreDBSummaryType,
   BlastType,
 } from "./schemas/weaponSchemas.js";
 

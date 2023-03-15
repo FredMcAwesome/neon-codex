@@ -18,9 +18,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@mikro-orm/cli": "^5.6.13",
-    "@mikro-orm/entity-generator": "^5.6.13",
-    "@mikro-orm/seeder": "^5.6.13",
     "@types/async": "^3.2.15",
     "@types/bcrypt": "^5.0.0",
     "@types/cors": "^2.8.12",
@@ -44,6 +41,7 @@
     "@mikro-orm/core": "^5.6.13",
     "@mikro-orm/postgresql": "^5.6.13",
     "@shadowrun/common": "*",
+    "@shadowrun/database": "*",
     "async": "^3.2.4",
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",

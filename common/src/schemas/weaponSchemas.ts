@@ -178,15 +178,17 @@ export type useGearType = zod.infer<typeof UseGearSchema>;
 export const UseGearListSchema = zod.array(UseGearSchema);
 export type UseGearListType = zod.infer<typeof UseGearListSchema>;
 
-const PreDbAccessorySchema = zod.object({
+const UnlinkedAccessorySchema = zod.object({
   name: zod.string(),
   mount: zod.optional(zod.array(MountSchema)),
   rating: zod.optional(zod.number()),
   gears: zod.optional(UseGearListSchema),
 });
-export type PreDbAccessoryType = zod.infer<typeof PreDbAccessorySchema>;
-export const PreDbAccessoriesSchema = zod.array(PreDbAccessorySchema);
-export type PredbAccessoriesType = zod.infer<typeof PreDbAccessoriesSchema>;
+export type UnlinkedAccessoryType = zod.infer<typeof UnlinkedAccessorySchema>;
+export const UnlinkedAccessoryListSchema = zod.array(UnlinkedAccessorySchema);
+export type UnlinkedAccessoryListType = zod.infer<
+  typeof UnlinkedAccessoryListSchema
+>;
 
 const AmmunitionSingleSchema = zod.object({
   capacity: zod.optional(zod.number()),
@@ -196,10 +198,10 @@ const AmmunitionSingleSchema = zod.object({
 export const AmmunitionSchema = zod.array(AmmunitionSingleSchema);
 export type AmmunitionType = zod.infer<typeof AmmunitionSchema>;
 
-export const WeaponPreDBSummarySchema = zod
+export const WeaponUnlinkedSummarySchema = zod
   .object({
+    // id: zod.string(),
     name: zod.string(),
-    description: zod.string(),
     typeInformation: typeInformationSchema,
     concealability: zod.number(),
     accuracy: AccuracySchema,
@@ -209,10 +211,11 @@ export const WeaponPreDBSummarySchema = zod
     availability: AvailabilitySchema,
     cost: CostSchema,
     allowedGear: zod.optional(zod.array(zod.nativeEnum(gearCategoryEnum))),
-    accessories: zod.optional(PreDbAccessoriesSchema),
+    accessories: zod.optional(UnlinkedAccessoryListSchema),
     allowAccessories: zod.boolean(),
     isCyberware: zod.boolean(),
     augmentationType: zod.nativeEnum(augmentationClassificationEnum),
+    description: zod.string(),
     wireless: zod.optional(zod.string()),
     relatedSkill: zod.string(),
     relatedSkillSpecialisations: zod.optional(zod.array(zod.string())),
@@ -220,8 +223,12 @@ export const WeaponPreDBSummarySchema = zod
     page: zod.number(),
   })
   .strict();
-export type WeaponPreDBSummaryType = zod.infer<typeof WeaponPreDBSummarySchema>;
-export const WeaponPreDBSummaryListSchema = zod.array(WeaponPreDBSummarySchema);
-export type WeaponPreDBSummaryListType = zod.infer<
-  typeof WeaponPreDBSummaryListSchema
+export type WeaponUnlinkedSummaryType = zod.infer<
+  typeof WeaponUnlinkedSummarySchema
+>;
+export const WeaponUnlinkedSummaryListSchema = zod.array(
+  WeaponUnlinkedSummarySchema
+);
+export type WeaponUnlinkedSummaryListType = zod.infer<
+  typeof WeaponUnlinkedSummaryListSchema
 >;

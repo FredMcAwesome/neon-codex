@@ -32,14 +32,14 @@ Run the following commands to create a database and fill it with some dummy data
 Create .env_development, .env_production, and .env_test in backend/ and set the DB_NAME to whatever you want each name to be. Can also set all other credentials used in backend/src/utils/config.ts.
 Create Tables:
 ```shell
-cd backend &&
-NODE_ENV=test npx ts-node-esm ./db_setup/src/create-schema.ts &&
-NODE_ENV=development npx ts-node-esm ./db_setup/src/create-schema.ts
+cd database &&
+NODE_ENV=test npx ts-node-esm ./src/create-schema.ts &&
+NODE_ENV=development npx ts-node-esm ./src/create-schema.ts
 ```
 Fill tables with sample data:
 ```shell
-export MIKRO_ORM_CLI='./db_setup/src/mikro-orm.config.ts' && 
-export MIKRO_ORM_SEEDER_PATH='./db_setup/src/seeders/' &&
+export MIKRO_ORM_CLI='./src/mikro-orm_seeder.config.ts' && 
+export MIKRO_ORM_SEEDER_PATH='./src/seeders/' &&
 export NODE_OPTIONS="--loader ts-node/esm" &&
 export NODE_ENV=test &&
 npx mikro-orm seeder:run &&

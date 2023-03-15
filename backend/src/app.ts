@@ -4,7 +4,7 @@ import path from "path";
 import { RequestContext } from "@mikro-orm/core";
 import type { Example } from "@shadowrun/common";
 import * as logger from "./utils/logger.js";
-import { HOST, PORT } from "./utils/config.js";
+import { HOST, PORT } from "@shadowrun/database/build/utils/databaseConfig.js";
 import * as middleware from "./utils/middleware.js";
 import forumRouter from "./routes/forum.js";
 import authenticationRouter from "./routes/authentication.js";
@@ -18,7 +18,7 @@ export { dbInitialised };
 
 const app = express();
 
-const allowedOrigins = ["http://" + HOST + ":" + PORT];
+const allowedOrigins = [`http://${HOST}:${PORT}`];
 const options: cors.CorsOptions = {
   origin: allowedOrigins,
 };

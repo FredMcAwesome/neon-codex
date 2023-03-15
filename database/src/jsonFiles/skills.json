@@ -1,0 +1,1244 @@
+[
+  {
+    "name": "Aeronautics Mechanic",
+    "attribute": "Logic",
+    "category": "Technical Active",
+    "default": false,
+    "exotic": false,
+    "skillGroup": "Engineering",
+    "specialisations": [
+      "Aerospace",
+      "Fixed Wing",
+      "LTA (blimp)",
+      "Rotary Wing",
+      "Tilt Wing",
+      "Vector Thrust"
+    ],
+    "source": "SR5",
+    "page": 143,
+    "description": ""
+  },
+  {
+    "name": "Alchemy",
+    "attribute": "Magic",
+    "category": "Magical Active",
+    "default": false,
+    "exotic": false,
+    "skillGroup": "Enchanting",
+    "specialisations": [
+      "Combat",
+      "Command",
+      "Contact",
+      "Detection",
+      "Health",
+      "Illusion",
+      "Manipulation",
+      "Time",
+      "[Trigger]"
+    ],
+    "source": "SR5",
+    "page": 142,
+    "description": ""
+  },
+  {
+    "name": "Animal Handling",
+    "attribute": "Charisma",
+    "category": "Technical Active",
+    "default": true,
+    "exotic": false,
+    "specialisations": ["Herding", "Riding", "Training", "[Animal Type]"],
+    "source": "SR5",
+    "page": 143,
+    "description": ""
+  },
+  {
+    "name": "Arcana",
+    "attribute": "Logic",
+    "category": "Pseudo-Magical Active",
+    "default": false,
+    "exotic": false,
+    "specialisations": [
+      "Focus Design",
+      "Magical Artifacts",
+      "Spell Design",
+      "Spirit Formula",
+      "Spirit Theory"
+    ],
+    "source": "SR5",
+    "page": 142,
+    "description": ""
+  },
+  {
+    "name": "Archery",
+    "attribute": "Agility",
+    "category": "Combat Active",
+    "default": true,
+    "exotic": false,
+    "specialisations": [
+      "Bow",
+      "Crossbow",
+      "Non-Standard Ammunition",
+      "Slingshot"
+    ],
+    "source": "SR5",
+    "page": 130,
+    "description": ""
+  },
+  {
+    "name": "Armorer",
+    "attribute": "Logic",
+    "category": "Technical Active",
+    "default": true,
+    "exotic": false,
+    "specialisations": [
+      "Armor",
+      "Artillery",
+      "Explosives",
+      "Firearms",
+      "Melee Weapons",
+      "Heavy Weapons",
+      "Weapon Accessories"
+    ],
+    "source": "SR5",
+    "page": 143,
+    "description": ""
+  },
+  {
+    "name": "Artificing",
+    "attribute": "Magic",
+    "category": "Magical Active",
+    "default": false,
+    "exotic": false,
+    "skillGroup": "Enchanting",
+    "specialisations": ["Focus Analysis", "[Focus Type]"],
+    "source": "SR5",
+    "page": 142,
+    "description": ""
+  },
+  {
+    "name": "Artisan",
+    "attribute": "Intuition",
+    "category": "Technical Active",
+    "default": false,
+    "exotic": false,
+    "specialisations": [
+      "Carpentry",
+      "Cooking",
+      "Drawing",
+      "Sculpting",
+      "Fashion",
+      "Writing",
+      "[Discipline]"
+    ],
+    "source": "SR5",
+    "page": 143,
+    "description": ""
+  },
+  {
+    "name": "Assensing",
+    "attribute": "Intuition",
+    "category": "Magical Active",
+    "default": false,
+    "exotic": false,
+    "specialisations": [
+      "Aura Reading",
+      "Astral Signatures",
+      "Psychometry",
+      "[Aura Type]"
+    ],
+    "source": "SR5",
+    "page": 142,
+    "description": ""
+  },
+  {
+    "name": "Astral Combat",
+    "attribute": "Willpower",
+    "category": "Magical Active",
+    "default": false,
+    "exotic": false,
+    "specialisations": [
+      "Magicians",
+      "Mana Barriers",
+      "Spirits",
+      "[Weapon Focus Type]",
+      "[Other Opponent Type]"
+    ],
+    "source": "SR5",
+    "page": 142,
+    "description": ""
+  },
+  {
+    "name": "Automatics",
+    "attribute": "Agility",
+    "category": "Combat Active",
+    "default": true,
+    "exotic": false,
+    "skillGroup": "Firearms",
+    "specialisations": [
+      "Assault Rifles",
+      "Cyber-Implant",
+      "Machine Pistols",
+      "Submachine Guns",
+      "Carbines"
+    ],
+    "source": "SR5",
+    "page": 130,
+    "description": ""
+  },
+  {
+    "name": "Automotive Mechanic",
+    "attribute": "Logic",
+    "category": "Technical Active",
+    "default": false,
+    "exotic": false,
+    "skillGroup": "Engineering",
+    "specialisations": ["Hover", "Tracked", "Walker", "Wheeled"],
+    "source": "SR5",
+    "page": 143,
+    "description": ""
+  },
+  {
+    "name": "Banishing",
+    "attribute": "Magic",
+    "category": "Magical Active",
+    "default": false,
+    "exotic": false,
+    "skillGroup": "Conjuring",
+    "specialisations": [
+      "Spirits of Air",
+      "Spirits of Beasts",
+      "Spirits of Earth",
+      "Spirits of Fire",
+      "Spirits of Man",
+      "Spirits of Water",
+      "Guardian Spirit",
+      "Guidance Spirit",
+      "Plant Spirit",
+      "Task Spirit"
+    ],
+    "source": "SR5",
+    "page": 142,
+    "description": ""
+  },
+  {
+    "name": "Binding",
+    "attribute": "Magic",
+    "category": "Magical Active",
+    "default": false,
+    "exotic": false,
+    "skillGroup": "Conjuring",
+    "specialisations": [
+      "Spirits of Air",
+      "Spirits of Beasts",
+      "Spirits of Earth",
+      "Spirits of Fire",
+      "Spirits of Man",
+      "Spirits of Water",
+      "Guardian Spirit",
+      "Guidance Spirit",
+      "Plant Spirit",
+      "Task Spirit"
+    ],
+    "source": "SR5",
+    "page": 142,
+    "description": ""
+  },
+  {
+    "name": "Biotechnology",
+    "attribute": "Logic",
+    "category": "Technical Active",
+    "default": false,
+    "exotic": false,
+    "skillGroup": "Biotech",
+    "specialisations": [
+      "Bioinformatics",
+      "Bioware",
+      "Cloning",
+      "Gene Therapy",
+      "Vat Maintenance"
+    ],
+    "source": "SR5",
+    "page": 144,
+    "description": ""
+  },
+  {
+    "name": "Blades",
+    "attribute": "Agility",
+    "category": "Combat Active",
+    "default": true,
+    "exotic": false,
+    "skillGroup": "Close Combat",
+    "specialisations": ["Axes", "Knives", "Swords", "Parrying"],
+    "source": "SR5",
+    "page": 130,
+    "description": ""
+  },
+  {
+    "name": "Chemistry",
+    "attribute": "Logic",
+    "category": "Technical Active",
+    "default": false,
+    "exotic": false,
+    "specialisations": [
+      "Analytical",
+      "Biochemistry",
+      "Drugs",
+      "Inorganic",
+      "Organic",
+      "Physical",
+      "Toxins"
+    ],
+    "source": "SR5",
+    "page": 144,
+    "description": ""
+  },
+  {
+    "name": "Clubs",
+    "attribute": "Agility",
+    "category": "Combat Active",
+    "default": true,
+    "exotic": false,
+    "skillGroup": "Close Combat",
+    "specialisations": ["Batons", "Hammers", "Saps", "Staves", "Parrying"],
+    "source": "SR5",
+    "page": 131,
+    "description": ""
+  },
+  {
+    "name": "Compiling",
+    "attribute": "Resonance",
+    "category": "Resonance Active",
+    "default": false,
+    "exotic": false,
+    "skillGroup": "Tasking",
+    "specialisations": ["[Sprite Type]"],
+    "source": "SR5",
+    "page": 143,
+    "description": ""
+  },
+  {
+    "name": "Computer",
+    "attribute": "Logic",
+    "category": "Technical Active",
+    "default": true,
+    "exotic": false,
+    "skillGroup": "Electronics",
+    "specialisations": [
+      "Edit File",
+      "Matrix Perception",
+      "Matrix Search",
+      "[Computer Matrix Action]"
+    ],
+    "source": "SR5",
+    "page": 144,
+    "description": ""
+  },
+  {
+    "name": "Con",
+    "attribute": "Charisma",
+    "category": "Social Active",
+    "default": true,
+    "exotic": false,
+    "skillGroup": "Acting",
+    "specialisations": ["Fast Talk", "Seduction"],
+    "source": "SR5",
+    "page": 138,
+    "description": ""
+  },
+  {
+    "name": "Counterspelling",
+    "attribute": "Magic",
+    "category": "Magical Active",
+    "default": false,
+    "exotic": false,
+    "skillGroup": "Sorcery",
+    "specialisations": [
+      "Combat",
+      "Detection",
+      "Health",
+      "Illusion",
+      "Manipulation"
+    ],
+    "source": "SR5",
+    "page": 142,
+    "description": ""
+  },
+  {
+    "name": "Cybercombat",
+    "attribute": "Logic",
+    "category": "Technical Active",
+    "default": true,
+    "exotic": false,
+    "skillGroup": "Cracking",
+    "specialisations": [
+      "Devices",
+      "Grids",
+      "IC",
+      "Personas",
+      "Sprites",
+      "[Target Type]"
+    ],
+    "source": "SR5",
+    "page": 144,
+    "description": ""
+  },
+  {
+    "name": "Cybertechnology",
+    "attribute": "Logic",
+    "category": "Technical Active",
+    "default": false,
+    "exotic": false,
+    "skillGroup": "Biotech",
+    "specialisations": [
+      "Bodyware",
+      "Cyberlimbs",
+      "Headware",
+      "Nanoware",
+      "Repair"
+    ],
+    "source": "SR5",
+    "page": 144,
+    "description": ""
+  },
+  {
+    "name": "Decompiling",
+    "attribute": "Resonance",
+    "category": "Resonance Active",
+    "default": false,
+    "exotic": false,
+    "skillGroup": "Tasking",
+    "specialisations": ["[Sprite Type]"],
+    "source": "SR5",
+    "page": 143,
+    "description": ""
+  },
+  {
+    "name": "Demolitions",
+    "attribute": "Logic",
+    "category": "Technical Active",
+    "default": true,
+    "exotic": false,
+    "specialisations": [
+      "Commercial Explosives",
+      "Defusing",
+      "Improvised Explosives",
+      "Plastic Explosives"
+    ],
+    "source": "SR5",
+    "page": 144,
+    "description": ""
+  },
+  {
+    "name": "Disenchanting",
+    "attribute": "Magic",
+    "category": "Magical Active",
+    "default": false,
+    "exotic": false,
+    "skillGroup": "Enchanting",
+    "specialisations": ["[Type]"],
+    "source": "SR5",
+    "page": 142,
+    "description": ""
+  },
+  {
+    "name": "Disguise",
+    "attribute": "Intuition",
+    "category": "Physical Active",
+    "default": true,
+    "exotic": false,
+    "skillGroup": "Stealth",
+    "specialisations": [
+      "Camouflage",
+      "Cosmetic",
+      "Theatrical",
+      "Trideo & Video"
+    ],
+    "source": "SR5",
+    "page": 133,
+    "description": ""
+  },
+  {
+    "name": "Diving",
+    "attribute": "Body",
+    "category": "Physical Active",
+    "default": true,
+    "exotic": false,
+    "specialisations": [
+      "Arctic",
+      "Cave",
+      "Commercial",
+      "Controlled Hyperventilation",
+      "Liquid Breathing Apparatus",
+      "Military",
+      "Mixed Gas",
+      "Oxygen Extraction",
+      "SCUBA",
+      "[Other Breathing Apparatus]",
+      "[Other Condition]"
+    ],
+    "source": "SR5",
+    "page": 133,
+    "description": ""
+  },
+  {
+    "name": "Electronic Warfare",
+    "attribute": "Logic",
+    "category": "Technical Active",
+    "default": false,
+    "exotic": false,
+    "skillGroup": "Cracking",
+    "specialisations": [
+      "Communications",
+      "Encryption",
+      "Jamming",
+      "Sensor Operations",
+      "[Electronic Warfare Matrix Action]"
+    ],
+    "source": "SR5",
+    "page": 144,
+    "description": ""
+  },
+  {
+    "name": "Escape Artist",
+    "attribute": "Agility",
+    "category": "Physical Active",
+    "default": true,
+    "exotic": false,
+    "specialisations": [
+      "Contortionism",
+      "Cuffs",
+      "Ropes",
+      "Zip Ties",
+      "[Other Restraint]"
+    ],
+    "source": "SR5",
+    "page": 133,
+    "description": ""
+  },
+  {
+    "name": "Etiquette",
+    "attribute": "Charisma",
+    "category": "Social Active",
+    "default": true,
+    "exotic": false,
+    "skillGroup": "Influence",
+    "specialisations": [
+      "Catholic Church",
+      "Corporate",
+      "High Society",
+      "Mafia",
+      "Magic",
+      "Matrix",
+      "Media",
+      "Mercenary",
+      "Street",
+      "Yakuza",
+      "[Culture or Subculture]"
+    ],
+    "source": "SR5",
+    "page": 138,
+    "description": ""
+  },
+  {
+    "name": "Exotic Melee Weapon",
+    "attribute": "Agility",
+    "category": "Combat Active",
+    "default": false,
+    "exotic": true,
+    "source": "SR5",
+    "page": 131,
+    "description": ""
+  },
+  {
+    "name": "Exotic Ranged Weapon",
+    "attribute": "Agility",
+    "category": "Combat Active",
+    "default": false,
+    "exotic": true,
+    "specialisations": [
+      "Blowguns",
+      "Gyrojet Pistols",
+      "Flamethrowers",
+      "Lasers"
+    ],
+    "source": "SR5",
+    "page": 131,
+    "description": ""
+  },
+  {
+    "name": "Pilot Exotic Vehicle",
+    "attribute": "Reaction",
+    "category": "Vehicle Active",
+    "default": false,
+    "exotic": true,
+    "specialisations": ["Festo Pigeon 2.0"],
+    "source": "SR5",
+    "page": 131,
+    "description": ""
+  },
+  {
+    "name": "First Aid",
+    "attribute": "Logic",
+    "category": "Technical Active",
+    "default": true,
+    "exotic": false,
+    "skillGroup": "Biotech",
+    "specialisations": [
+      "Broken Bones",
+      "Burns",
+      "Gunshot Wounds",
+      "Resuscitation",
+      "[Type of Treatment]"
+    ],
+    "source": "SR5",
+    "page": 144,
+    "description": ""
+  },
+  {
+    "name": "Flight",
+    "attribute": "Agility",
+    "category": "Physical Active",
+    "default": false,
+    "exotic": false,
+    "skillGroup": "Athletics",
+    "specialisations": [
+      "Desert",
+      "Distance",
+      "Sprinting",
+      "Urban",
+      "Wilderness",
+      "[Terrain]"
+    ],
+    "source": "SR5",
+    "page": 394,
+    "description": ""
+  },
+  {
+    "name": "Forgery",
+    "attribute": "Logic",
+    "category": "Technical Active",
+    "default": true,
+    "exotic": false,
+    "specialisations": [
+      "Counterfeiting",
+      "Credstick Forgery",
+      "False ID",
+      "Image Doctoring",
+      "Paper Forgery"
+    ],
+    "source": "SR5",
+    "page": 144,
+    "description": ""
+  },
+  {
+    "name": "Free-Fall",
+    "attribute": "Body",
+    "category": "Physical Active",
+    "default": true,
+    "exotic": false,
+    "specialisations": [
+      "BASE Jumping",
+      "Break-Fall",
+      "Bungee",
+      "HALO",
+      "Low Altitude",
+      "Parachute",
+      "Rappelling",
+      "Static Line",
+      "Wingsuit",
+      "Zipline"
+    ],
+    "source": "SR5",
+    "page": 133,
+    "description": ""
+  },
+  {
+    "name": "Gunnery",
+    "attribute": "Agility",
+    "category": "Vehicle Active",
+    "default": true,
+    "exotic": false,
+    "specialisations": [
+      "Artillery",
+      "Ballistic",
+      "Energy",
+      "Guided Missile",
+      "Rocket"
+    ],
+    "source": "SR5",
+    "page": 146,
+    "description": ""
+  },
+  {
+    "name": "Gymnastics",
+    "attribute": "Agility",
+    "category": "Physical Active",
+    "default": true,
+    "exotic": false,
+    "skillGroup": "Athletics",
+    "specialisations": [
+      "Balance",
+      "Climbing",
+      "Dance",
+      "Dodging",
+      "Leaping",
+      "Parkour",
+      "Rolling"
+    ],
+    "source": "SR5",
+    "page": 133,
+    "description": ""
+  },
+  {
+    "name": "Hacking",
+    "attribute": "Logic",
+    "category": "Technical Active",
+    "default": true,
+    "exotic": false,
+    "skillGroup": "Cracking",
+    "specialisations": ["Devices", "Files", "Hosts", "Personas"],
+    "source": "SR5",
+    "page": 145,
+    "description": ""
+  },
+  {
+    "name": "Hardware",
+    "attribute": "Logic",
+    "category": "Technical Active",
+    "default": false,
+    "exotic": false,
+    "skillGroup": "Electronics",
+    "specialisations": [
+      "Commlinks",
+      "Cyberdecks",
+      "Jack Out",
+      "Smartguns",
+      "[Hardware Type]",
+      "[Hardware Matrix Action]"
+    ],
+    "source": "SR5",
+    "page": 145,
+    "description": ""
+  },
+  {
+    "name": "Heavy Weapons",
+    "attribute": "Agility",
+    "category": "Combat Active",
+    "default": true,
+    "exotic": false,
+    "specialisations": [
+      "Assault Cannons",
+      "Grenade Launchers",
+      "Guided Missiles",
+      "Machine Guns",
+      "Rocket Launchers"
+    ],
+    "source": "SR5",
+    "page": 132,
+    "description": ""
+  },
+  {
+    "name": "Impersonation",
+    "attribute": "Charisma",
+    "category": "Social Active",
+    "default": true,
+    "exotic": false,
+    "skillGroup": "Acting",
+    "specialisations": ["Dwarf", "Elf", "Human", "Ork", "Troll"],
+    "source": "SR5",
+    "page": 138,
+    "description": ""
+  },
+  {
+    "name": "Industrial Mechanic",
+    "attribute": "Logic",
+    "category": "Technical Active",
+    "default": false,
+    "exotic": false,
+    "skillGroup": "Engineering",
+    "specialisations": [
+      "Electrical Power Systems",
+      "Hydraulics",
+      "HVAC",
+      "Industrial Robotics",
+      "Structural",
+      "Welding"
+    ],
+    "source": "SR5",
+    "page": 145,
+    "description": ""
+  },
+  {
+    "name": "Instruction",
+    "attribute": "Charisma",
+    "category": "Social Active",
+    "default": true,
+    "exotic": false,
+    "specialisations": ["[Active or Knowledge Skill Category]"],
+    "source": "SR5",
+    "page": 138,
+    "description": ""
+  },
+  {
+    "name": "Intimidation",
+    "attribute": "Charisma",
+    "category": "Social Active",
+    "default": true,
+    "exotic": false,
+    "specialisations": ["Interrogation", "Mental", "Physical", "Torture"],
+    "source": "SR5",
+    "page": 139,
+    "description": ""
+  },
+  {
+    "name": "Leadership",
+    "attribute": "Charisma",
+    "category": "Social Active",
+    "default": true,
+    "exotic": false,
+    "skillGroup": "Influence",
+    "specialisations": ["Command", "Direct", "Inspire", "Rally"],
+    "source": "SR5",
+    "page": 139,
+    "description": ""
+  },
+  {
+    "name": "Locksmith",
+    "attribute": "Agility",
+    "category": "Technical Active",
+    "default": false,
+    "exotic": false,
+    "specialisations": [
+      "Combination",
+      "Keypad",
+      "Maglock",
+      "Tumbler",
+      "Voice Recognition",
+      "[Lock Type]"
+    ],
+    "source": "SR5",
+    "page": 145,
+    "description": ""
+  },
+  {
+    "name": "Longarms",
+    "attribute": "Agility",
+    "category": "Combat Active",
+    "default": true,
+    "exotic": false,
+    "skillGroup": "Firearms",
+    "specialisations": [
+      "Extended-Range Shots",
+      "Long-Range Shots",
+      "Shotguns",
+      "Sniper Rifles",
+      "Sporting Rifles"
+    ],
+    "source": "SR5",
+    "page": 132,
+    "description": ""
+  },
+  {
+    "name": "Medicine",
+    "attribute": "Logic",
+    "category": "Technical Active",
+    "default": false,
+    "exotic": false,
+    "skillGroup": "Biotech",
+    "specialisations": [
+      "Cosmetic Surgery",
+      "Extended Care",
+      "Implant Surgery",
+      "Magical Health",
+      "Organ Culture",
+      "Trauma Surgery"
+    ],
+    "source": "SR5",
+    "page": 145,
+    "description": ""
+  },
+  {
+    "name": "Nautical Mechanic",
+    "attribute": "Logic",
+    "category": "Technical Active",
+    "default": false,
+    "exotic": false,
+    "skillGroup": "Engineering",
+    "specialisations": ["Motorboat", "Sailboat", "Ship", "Submarine"],
+    "source": "SR5",
+    "page": 145,
+    "description": ""
+  },
+  {
+    "name": "Navigation",
+    "attribute": "Intuition",
+    "category": "Technical Active",
+    "default": true,
+    "exotic": false,
+    "skillGroup": "Outdoors",
+    "specialisations": [
+      "Augmented Reality Markers",
+      "Celestial",
+      "Compass",
+      "Maps",
+      "GPS"
+    ],
+    "source": "SR5",
+    "page": 145,
+    "description": ""
+  },
+  {
+    "name": "Negotiation",
+    "attribute": "Charisma",
+    "category": "Social Active",
+    "default": true,
+    "exotic": false,
+    "skillGroup": "Influence",
+    "specialisations": ["Bargaining", "Contracts", "Diplomacy"],
+    "source": "SR5",
+    "page": 139,
+    "description": ""
+  },
+  {
+    "name": "Palming",
+    "attribute": "Agility",
+    "category": "Physical Active",
+    "default": false,
+    "exotic": false,
+    "skillGroup": "Stealth",
+    "specialisations": ["Legerdemain", "Pickpocket", "Pilfering"],
+    "source": "SR5",
+    "page": 133,
+    "description": ""
+  },
+  {
+    "name": "Perception",
+    "attribute": "Intuition",
+    "category": "Physical Active",
+    "default": true,
+    "exotic": false,
+    "specialisations": [
+      "Hearing",
+      "Numinous Perception",
+      "Scent",
+      "Searching",
+      "Taste",
+      "Touch",
+      "Visual"
+    ],
+    "source": "SR5",
+    "page": 133,
+    "description": ""
+  },
+  {
+    "name": "Performance",
+    "attribute": "Charisma",
+    "category": "Social Active",
+    "default": true,
+    "exotic": false,
+    "skillGroup": "Acting",
+    "specialisations": [
+      "Acting",
+      "Comedy",
+      "Dance",
+      "Presentation",
+      "[Musical Instrument]"
+    ],
+    "source": "SR5",
+    "page": 139,
+    "description": ""
+  },
+  {
+    "name": "Pilot Aerospace",
+    "attribute": "Reaction",
+    "category": "Vehicle Active",
+    "default": false,
+    "exotic": false,
+    "specialisations": [
+      "Deep Space",
+      "Launch Craft",
+      "Remote Operation",
+      "Semiballistic",
+      "Suborbital"
+    ],
+    "source": "SR5",
+    "page": 146,
+    "description": ""
+  },
+  {
+    "name": "Pilot Aircraft",
+    "attribute": "Reaction",
+    "category": "Vehicle Active",
+    "default": false,
+    "exotic": false,
+    "specialisations": [
+      "Fixed-Wing",
+      "Lighter-Than-Air",
+      "Remote Operation",
+      "Rotary Wing",
+      "Tilt Wing",
+      "Vectored Thrust"
+    ],
+    "source": "SR5",
+    "page": 147,
+    "description": ""
+  },
+  {
+    "name": "Pilot Ground Craft",
+    "attribute": "Reaction",
+    "category": "Vehicle Active",
+    "default": true,
+    "exotic": false,
+    "specialisations": [
+      "Bike",
+      "Hovercraft",
+      "Remote Operation",
+      "Tracked",
+      "Wheeled"
+    ],
+    "source": "SR5",
+    "page": 147,
+    "description": ""
+  },
+  {
+    "name": "Pilot Walker",
+    "attribute": "Reaction",
+    "category": "Vehicle Active",
+    "default": false,
+    "exotic": false,
+    "specialisations": ["Biped", "Multiped", "Quadruped", "Remote Operation"],
+    "source": "SR5",
+    "page": 147,
+    "description": ""
+  },
+  {
+    "name": "Pilot Watercraft",
+    "attribute": "Reaction",
+    "category": "Vehicle Active",
+    "default": true,
+    "exotic": false,
+    "specialisations": [
+      "Hydrofoil",
+      "Motorboat",
+      "Remote Operation",
+      "Sail",
+      "Ship",
+      "Submarine"
+    ],
+    "source": "SR5",
+    "page": 147,
+    "description": ""
+  },
+  {
+    "name": "Pistols",
+    "attribute": "Agility",
+    "category": "Combat Active",
+    "default": true,
+    "exotic": false,
+    "skillGroup": "Firearms",
+    "specialisations": ["Holdouts", "Revolvers", "Semi-Automatics", "Tasers"],
+    "source": "SR5",
+    "page": 132,
+    "description": ""
+  },
+  {
+    "name": "Registering",
+    "attribute": "Resonance",
+    "category": "Resonance Active",
+    "default": false,
+    "exotic": false,
+    "skillGroup": "Tasking",
+    "specialisations": ["[Sprite Type]"],
+    "source": "SR5",
+    "page": 143,
+    "description": ""
+  },
+  {
+    "name": "Ritual Spellcasting",
+    "attribute": "Magic",
+    "category": "Magical Active",
+    "default": false,
+    "exotic": false,
+    "skillGroup": "Sorcery",
+    "specialisations": ["[Keyword]"],
+    "source": "SR5",
+    "page": 142,
+    "description": ""
+  },
+  {
+    "name": "Running",
+    "attribute": "Strength",
+    "category": "Physical Active",
+    "default": true,
+    "exotic": false,
+    "skillGroup": "Athletics",
+    "specialisations": [
+      "Desert",
+      "Distance",
+      "Sprinting",
+      "Urban",
+      "Wilderness",
+      "[Terrain]"
+    ],
+    "source": "SR5",
+    "page": 133,
+    "description": ""
+  },
+  {
+    "name": "Sneaking",
+    "attribute": "Agility",
+    "category": "Physical Active",
+    "default": true,
+    "exotic": false,
+    "skillGroup": "Stealth",
+    "specialisations": [
+      "Desert",
+      "Jungle",
+      "Urban",
+      "Vehicle",
+      "Wilderness",
+      "[Terrain]"
+    ],
+    "source": "SR5",
+    "page": 133,
+    "description": ""
+  },
+  {
+    "name": "Software",
+    "attribute": "Logic",
+    "category": "Technical Active",
+    "default": false,
+    "exotic": false,
+    "skillGroup": "Electronics",
+    "specialisations": [
+      "Data Bombs",
+      "[Complex Form]",
+      "[Program Type]",
+      "[Software Matrix Action]"
+    ],
+    "source": "SR5",
+    "page": 145,
+    "description": ""
+  },
+  {
+    "name": "Spellcasting",
+    "attribute": "Magic",
+    "category": "Magical Active",
+    "default": false,
+    "exotic": false,
+    "skillGroup": "Sorcery",
+    "specialisations": [
+      "Combat",
+      "Detection",
+      "Health",
+      "Illusion",
+      "Manipulation"
+    ],
+    "source": "SR5",
+    "page": 143,
+    "description": ""
+  },
+  {
+    "name": "Summoning",
+    "attribute": "Magic",
+    "category": "Magical Active",
+    "default": false,
+    "exotic": false,
+    "skillGroup": "Conjuring",
+    "specialisations": [
+      "Spirits of Air",
+      "Spirits of Beasts",
+      "Spirits of Earth",
+      "Spirits of Fire",
+      "Spirits of Man",
+      "Spirits of Water",
+      "Guardian Spirit",
+      "Guidance Spirit",
+      "Plant Spirit",
+      "Task Spirit"
+    ],
+    "source": "SR5",
+    "page": 143,
+    "description": ""
+  },
+  {
+    "name": "Survival",
+    "attribute": "Willpower",
+    "category": "Physical Active",
+    "default": true,
+    "exotic": false,
+    "skillGroup": "Outdoors",
+    "specialisations": [
+      "Desert",
+      "Forest",
+      "Jungle",
+      "Mountain",
+      "Polar",
+      "Urban",
+      "[Terrain]"
+    ],
+    "source": "SR5",
+    "page": 133,
+    "description": ""
+  },
+  {
+    "name": "Swimming",
+    "attribute": "Strength",
+    "category": "Physical Active",
+    "default": true,
+    "exotic": false,
+    "skillGroup": "Athletics",
+    "specialisations": ["Dash", "Long Distance"],
+    "source": "SR5",
+    "page": 134,
+    "description": ""
+  },
+  {
+    "name": "Throwing Weapons",
+    "attribute": "Agility",
+    "category": "Combat Active",
+    "default": true,
+    "exotic": false,
+    "specialisations": ["Aerodynamic", "Blades", "Non-Aerodynamic"],
+    "source": "SR5",
+    "page": 132,
+    "description": ""
+  },
+  {
+    "name": "Tracking",
+    "attribute": "Intuition",
+    "category": "Physical Active",
+    "default": true,
+    "exotic": false,
+    "skillGroup": "Outdoors",
+    "specialisations": [
+      "Desert",
+      "Forest",
+      "Jungle",
+      "Mountain",
+      "Polar",
+      "Urban",
+      "[Terrain]"
+    ],
+    "source": "SR5",
+    "page": 134,
+    "description": ""
+  },
+  {
+    "name": "Unarmed Combat",
+    "attribute": "Agility",
+    "category": "Combat Active",
+    "default": true,
+    "exotic": false,
+    "skillGroup": "Close Combat",
+    "specialisations": [
+      "Blocking",
+      "Cyber Implants",
+      "Subduing Combat",
+      "[Martial Art]"
+    ],
+    "source": "SR5",
+    "page": 132,
+    "description": ""
+  }
+]

@@ -110,7 +110,7 @@ const SubqualitiesComponent = function ({
           const newQualities = [...qualitiesList];
           const newSubquality = quality.subqualities?.find(
             (subquality) => subquality.name === arg.value
-          );
+          )!;
           newQualities[index].subqualitySelected = newSubquality;
           const newCost = newSubquality?.cost as number;
           const difference = newCost - (currentCost || 0);

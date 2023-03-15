@@ -16,10 +16,11 @@ function useFetchWrapper() {
 
   function request(method: string) {
     return (url: string, body?: BodyInit) => {
+      const headers = authHeader(url);
       const requestOptions: RequestInit = {
         mode: "cors",
         method: method,
-        headers: authHeader(url),
+        ...(headers && { headers: headers }),
       };
       if (body) {
         requestOptions.body = body;

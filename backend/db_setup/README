@@ -1,4 +1,0 @@
-npx ts-node-esm db_setup/src/xmlParser/parsers/weapons/WeaponParser.ts
-npx ts-node-esm db_setup/src/xmlParser/parsers/weapons/WeaponAccessoryParser.ts
-npx ts-node-esm db_setup/src/xmlParser/parsers/weapons/RangeParser.ts
-npx ts-node-esm db_setup/src/xmlParser/parsers/character/SkillParser.ts

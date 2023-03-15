@@ -1,22 +1,28 @@
 import "dotenv/config";
 // import * as logger from "./logger.js";
 // import { DATABASE_URL } from "./config.js";
-import MikroORMConfig from "../mikro-orm.config.js";
+import MikroORMConfig from "@shadowrun/database/build/mikro-orm.config.js";
 import { EntityManager, EntityRepository, MikroORM } from "@mikro-orm/core";
 import { PostgreSqlDriver } from "@mikro-orm/postgresql";
-import { Users, Threads, Comments } from "../models/models.js";
-import { Weapons } from "../models/gear/combatGear/weaponModel.js";
-import { Augmentations } from "../models/gear/augmentationGear/augmentationModel.js";
-import { AugmentationAccessories } from "../models/gear/augmentationGear/augmentationAccessoryModel.js";
-import { Armours } from "../models/gear/combatGear/armourModel.js";
-import { ArmourAccessories } from "../models/gear/combatGear/armourAccessoryModel.js";
-import { Ammunitions } from "../models/gear/combatGear/ammunitionModel.js";
-import { MatrixWares } from "../models/gear/electronicsGear/matrixWareModel.js";
-import { MatrixWareAccessories } from "../models/gear/electronicsGear/matrixWareAccessoryModel.js";
-import { OtherWares } from "../models/gear/otherGear/otherWareModel.js";
-import { VehiclesAndDrones } from "../models/gear/riggerGear/vehicleAndDroneModel.js";
-import { WeaponAccessories } from "../models/gear/combatGear/weaponAccessoryModel.js";
-import { MagicalEquipment } from "../models/gear/magicGear/magicalGearEquipment.js";
+import {
+  Users,
+  Threads,
+  Comments,
+} from "@shadowrun/database/build/models/models.js";
+import { Skills } from "@shadowrun/database/build/models/chummerdb/skillModel.js";
+import { WeaponAccessories } from "@shadowrun/database/build/models/gear/combatGear/weaponAccessoryModel.js";
+import { ActiveWeaponAccessories } from "@shadowrun/database/build/models/chummerdb/customTables/activeWeaponAccessoryModel.js";
+import { Weapons } from "@shadowrun/database/build/models/gear/combatGear/weaponModel.js";
+import { Augmentations } from "@shadowrun/database/build/models/gear/augmentationGear/augmentationModel.js";
+import { AugmentationAccessories } from "@shadowrun/database/build/models/gear/augmentationGear/augmentationAccessoryModel.js";
+import { Armours } from "@shadowrun/database/build/models/gear/combatGear/armourModel.js";
+import { ArmourAccessories } from "@shadowrun/database/build/models/gear/combatGear/armourAccessoryModel.js";
+import { Ammunitions } from "@shadowrun/database/build/models/gear/combatGear/ammunitionModel.js";
+import { MatrixWares } from "@shadowrun/database/build/models/gear/electronicsGear/matrixWareModel.js";
+import { MatrixWareAccessories } from "@shadowrun/database/build/models/gear/electronicsGear/matrixWareAccessoryModel.js";
+import { MagicalEquipment } from "@shadowrun/database/build/models/gear/magicGear/magicalGearEquipment.js";
+import { OtherWares } from "@shadowrun/database/build/models/gear/otherGear/otherWareModel.js";
+import { VehiclesAndDrones } from "@shadowrun/database/build/models/gear/riggerGear/vehicleAndDroneModel.js";
 
 interface IDatabase {
   orm: MikroORM;
@@ -24,10 +30,12 @@ interface IDatabase {
   userRepository: EntityRepository<Users>;
   threadRepository: EntityRepository<Threads>;
   commentRespository: EntityRepository<Comments>;
+  skillRepository: EntityRepository<Skills>;
+  activeWeaponAccessoryRespository: EntityRepository<ActiveWeaponAccessories>;
+  weaponAccessoryRespository: EntityRepository<WeaponAccessories>;
   weaponRespository: EntityRepository<Weapons>;
   augmentationRespository: EntityRepository<Augmentations>;
   augmentationAccessoryRespository: EntityRepository<AugmentationAccessories>;
-  weaponAccessoryRespository: EntityRepository<WeaponAccessories>;
   armourRespository: EntityRepository<Armours>;
   armourAccessoryRespository: EntityRepository<ArmourAccessories>;
   ammunitionRespository: EntityRepository<Ammunitions>;
@@ -48,12 +56,16 @@ export const init = async () => {
   Database.userRepository = em.getRepository(Users);
   Database.threadRepository = em.getRepository(Threads);
   Database.commentRespository = em.getRepository(Comments);
+  Database.skillRepository = em.getRepository(Skills);
+  Database.activeWeaponAccessoryRespository = em.getRepository(
+    ActiveWeaponAccessories
+  );
+  Database.weaponAccessoryRespository = em.getRepository(WeaponAccessories);
   Database.weaponRespository = em.getRepository(Weapons);
   Database.augmentationRespository = em.getRepository(Augmentations);
   Database.augmentationAccessoryRespository = em.getRepository(
     AugmentationAccessories
   );
-  Database.weaponAccessoryRespository = em.getRepository(WeaponAccessories);
   Database.armourRespository = em.getRepository(Armours);
   Database.armourAccessoryRespository = em.getRepository(ArmourAccessories);
   Database.ammunitionRespository = em.getRepository(Ammunitions);

@@ -1,13 +1,11 @@
 import { z as zod } from "zod";
 import type {
   GearListType,
-  WeaponListType,
   MatrixListType,
   OtherGearListType,
   AugmentationListType,
 } from "./schemas/gearSchemas.js";
 import {
-  WeaponListSchema,
   MatrixListSchema,
   AugmentationListSchema,
 } from "./schemas/gearSchemas.js";
@@ -29,7 +27,6 @@ type JwtTokenType = zod.infer<typeof JwtTokenSchema>;
 export type {
   ThreadListType,
   JwtTokenType,
-  WeaponListType,
   MatrixListType,
   OtherGearListType,
   AugmentationListType,
@@ -38,7 +35,6 @@ export type {
 export {
   ThreadListSchema,
   JwtTokenSchema,
-  WeaponListSchema,
   MatrixListSchema,
   AugmentationListSchema,
   GearListSchema,

@@ -1,7 +1,7 @@
 import { fireEvent, screen, within } from "@testing-library/react";
 import { useState } from "react";
 import { ISkillPoints } from "../../components/character/PriorityImports.js";
-import { SkillsSelect } from "../../components/character/SkillsSelect.js";
+import { SkillSelectList } from "../../components/character/SkillsSelect.js";
 import {
   IActiveSkillSelection,
   skillList,
@@ -129,8 +129,8 @@ function DefaultPageRender({
   };
 
   return (
-    <SkillsSelect
-      skillPoints={skillPoints}
+    <SkillSelectList
+      skillPointItems={skillPoints}
       setSkillPoints={onSkillPointChange}
       skillSelections={skillSelections}
       setSkillSelections={onSkillSelections}
