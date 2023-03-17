@@ -23,7 +23,6 @@ import {
   gearCategoryEnum,
   ammoSourceEnum,
   restrictionEnum,
-  sourceBookEnum,
 } from "@shadowrun/common/src/enums.js";
 import assert from "assert";
 import {
@@ -32,8 +31,6 @@ import {
   DamageXmlType,
   WeaponXmlType,
   RequiredXmlType,
-  sourceBookXmlEnum,
-  GearXmlType,
 } from "./WeaponParserSchema.js";
 import {
   UnlinkedAccessoryType,
@@ -63,6 +60,7 @@ import {
   weaponXmlSubtypeEnum,
   WeaponXmlSubtypeType,
 } from "@shadowrun/common/src/schemas/commonSchema.js";
+import { GearXmlType } from "../ParserCommonDefines.js";
 
 export const convertTypeInformation = function (
   weaponType: weaponTypeEnum,
@@ -978,111 +976,6 @@ export const convertWeaponSkill = function (
   return { skill: skill, specialisations: specialisations };
 };
 
-export const convertSource = function (source: sourceBookXmlEnum | 2050) {
-  const xmlSource = source === 2050 ? sourceBookXmlEnum.Shadowrun2050 : source;
-  switch (xmlSource) {
-    case sourceBookXmlEnum.AssassinPrimer:
-      return sourceBookEnum.AssassinPrimer;
-    case sourceBookXmlEnum.ChromeFlesh:
-      return sourceBookEnum.ChromeFlesh;
-    case sourceBookXmlEnum.CuttingAces:
-      return sourceBookEnum.CuttingAces;
-    case sourceBookXmlEnum.DataTrails:
-      return sourceBookEnum.DataTrails;
-    case sourceBookXmlEnum.GunHeaven3:
-      return sourceBookEnum.GunHeaven3;
-    case sourceBookXmlEnum.HardTargets:
-      return sourceBookEnum.HardTargets;
-    case sourceBookXmlEnum.KillCode:
-      return sourceBookEnum.KillCode;
-    case sourceBookXmlEnum.KrimeKatalog:
-      return sourceBookEnum.KrimeKatalog;
-    case sourceBookXmlEnum.Lockdown:
-      return sourceBookEnum.Lockdown;
-    case sourceBookXmlEnum.NoFuture:
-      return sourceBookEnum.NoFuture;
-    case sourceBookXmlEnum.Rigger5:
-      return sourceBookEnum.Rigger5;
-    case sourceBookXmlEnum.RunAndGun:
-      return sourceBookEnum.RunAndGun;
-    case sourceBookXmlEnum.RunFaster:
-      return sourceBookEnum.RunFaster;
-    case sourceBookXmlEnum.SailAwaySweetSister:
-      return sourceBookEnum.SailAwaySweetSister;
-    case sourceBookXmlEnum.Shadowrun5:
-      return sourceBookEnum.Shadowrun5;
-    case sourceBookXmlEnum.ShadowsInFocus_SanFranciscoMetroplex:
-      return sourceBookEnum.ShadowsInFocus_SanFranciscoMetroplex;
-    case sourceBookXmlEnum.StolenSouls:
-      return sourceBookEnum.StolenSouls;
-    case sourceBookXmlEnum.StreetGrimoire:
-      return sourceBookEnum.StreetGrimoire;
-    case sourceBookXmlEnum.StreetLethal:
-      return sourceBookEnum.StreetLethal;
-    case sourceBookXmlEnum.TheCompleteTrog:
-      return sourceBookEnum.TheCompleteTrog;
-    case sourceBookXmlEnum.TheSeattleGambit:
-      return sourceBookEnum.TheSeattleGambit;
-    // Not in english
-    case sourceBookXmlEnum.StateOfTheArtADL:
-    case sourceBookXmlEnum.Schattenhandbuch:
-    case sourceBookXmlEnum.Schattenhandbuch2:
-    case sourceBookXmlEnum.Schattenhandbuch3:
-    case sourceBookXmlEnum.Hamburg:
-    case sourceBookXmlEnum.DatapulsSOTA2080:
-    case sourceBookXmlEnum.DatapulsVerschlusssache:
-    case sourceBookXmlEnum.Shadowrun2050:
-    case sourceBookXmlEnum.GrimmesErwachen:
-      assert(false, "Only english books should get here.");
-      break;
-    // Not containing Weapons
-    case sourceBookXmlEnum.Aetherology:
-      return sourceBookEnum.Aetherology;
-    case sourceBookXmlEnum.BetterThanBad:
-      return sourceBookEnum.BetterThanBad;
-    case sourceBookXmlEnum.BloodyBusiness:
-      return sourceBookEnum.BloodyBusiness;
-    case sourceBookXmlEnum.BookOfTheLost:
-      return sourceBookEnum.BookOfTheLost;
-    case sourceBookXmlEnum.BulletsAndBandages:
-      return sourceBookEnum.BulletsAndBandages;
-    case sourceBookXmlEnum.DarkTerrors:
-      return sourceBookEnum.DarkTerrors;
-    case sourceBookXmlEnum.DataTrailsDissonantEchoes:
-      return sourceBookEnum.DataTrailsDissonantEchoes;
-    case sourceBookXmlEnum.ForbiddenArcana:
-      return sourceBookEnum.ForbiddenArcana;
-    case sourceBookXmlEnum.HongKongSourcebook:
-      return sourceBookEnum.HongKongSourcebook;
-    case sourceBookXmlEnum.HowlingShadows:
-      return sourceBookEnum.HowlingShadows;
-    case sourceBookXmlEnum.NothingPersonal:
-      return sourceBookEnum.NothingPersonal;
-    case sourceBookXmlEnum.ShadowrunMissions0803_10BlockTango:
-      return sourceBookEnum.ShadowrunMissions0803_10BlockTango;
-    case sourceBookXmlEnum.ShadowrunMissions0804_DirtyLaundry:
-      return sourceBookEnum.ShadowrunMissions0804_DirtyLaundry;
-    case sourceBookXmlEnum.ShadowrunQuickStartRules:
-      return sourceBookEnum.ShadowrunQuickStartRules;
-    case sourceBookXmlEnum.ShadowSpells:
-      return sourceBookEnum.ShadowSpells;
-    case sourceBookXmlEnum.ShadowsInFocus_Butte:
-      return sourceBookEnum.ShadowsInFocus_Butte;
-    case sourceBookXmlEnum.ShadowsInFocus_Metropole:
-      return sourceBookEnum.ShadowsInFocus_Metropole;
-    case sourceBookXmlEnum.ShadowsInFocus_SiouxNation_CountingCoup:
-      return sourceBookEnum.ShadowsInFocus_SiouxNation_CountingCoup;
-    case sourceBookXmlEnum.SprawlWilds:
-      return sourceBookEnum.SprawlWilds;
-    case sourceBookXmlEnum.SplinteredState:
-      return sourceBookEnum.SplinteredState;
-    case sourceBookXmlEnum.StreetGrimoireErrata:
-      return sourceBookEnum.StreetGrimoireErrata;
-    case sourceBookXmlEnum.TheVladivostokGauntlet:
-      return sourceBookEnum.TheVladivostokGauntlet;
-  }
-};
-
 export const convertGearCategory = function (
   category: string,
   otherMessage: string
@@ -1142,8 +1035,8 @@ export const convertGearCategory = function (
       return gearCategoryEnum.Disguises;
     case "Drugs":
       return gearCategoryEnum.Drugs;
-    case "Electronic Accessories":
-      return gearCategoryEnum.ElectronicAccessories;
+    case "Electronics Accessories":
+      return gearCategoryEnum.ElectronicsAccessories;
     case "Electronic Modification":
       return gearCategoryEnum.ElectronicModification;
     case "Electronic Parts":

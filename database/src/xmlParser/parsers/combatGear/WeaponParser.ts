@@ -36,16 +36,16 @@ import {
   convertAllowGear,
   convertRequirements,
   convertWeaponSkill,
-  convertSource,
   convertTypeInformation,
 } from "./WeaponParserHelper.js";
 import {
   WeaponXmlType,
   WeaponListXmlSchema,
   WeaponListXmlType,
-  sourceBookXmlEnum,
 } from "./WeaponParserSchema.js";
 import * as fs from "fs";
+import { sourceBookXmlEnum } from "../ParserCommonDefines.js";
+import { convertSource } from "../ParserHelper.js";
 
 const currentPath = import.meta.url;
 const xml_string = fs.readFileSync(
@@ -79,87 +79,87 @@ if (weaponListParsed.success) {
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
   // })
-  const englishWeaponList: WeaponListXmlType = weaponList.filter((weapon) => {
-    let found = false;
-    switch (weapon.source) {
-      case sourceBookXmlEnum.AssassinPrimer:
-      case sourceBookXmlEnum.ChromeFlesh:
-      case sourceBookXmlEnum.CuttingAces:
-      case sourceBookXmlEnum.DataTrails:
-      case sourceBookXmlEnum.GunHeaven3:
-      case sourceBookXmlEnum.HardTargets:
-      case sourceBookXmlEnum.KillCode:
-      case sourceBookXmlEnum.KrimeKatalog:
-      case sourceBookXmlEnum.Lockdown:
-      case sourceBookXmlEnum.NoFuture:
-      case sourceBookXmlEnum.Rigger5:
-      case sourceBookXmlEnum.RunAndGun:
-      case sourceBookXmlEnum.RunFaster:
-      case sourceBookXmlEnum.SailAwaySweetSister:
-      case sourceBookXmlEnum.Shadowrun5:
-      case sourceBookXmlEnum.ShadowsInFocus_SanFranciscoMetroplex:
-      case sourceBookXmlEnum.StolenSouls:
-      case sourceBookXmlEnum.StreetGrimoire:
-      case sourceBookXmlEnum.StreetLethal:
-      case sourceBookXmlEnum.TheCompleteTrog:
-      case sourceBookXmlEnum.TheSeattleGambit:
-        found = true;
-        break;
-      // Not in english
-      case sourceBookXmlEnum.StateOfTheArtADL:
-      case sourceBookXmlEnum.Schattenhandbuch:
-      case sourceBookXmlEnum.Schattenhandbuch2:
-      case sourceBookXmlEnum.Schattenhandbuch3:
-      case sourceBookXmlEnum.Hamburg:
-      case sourceBookXmlEnum.DatapulsSOTA2080:
-      case sourceBookXmlEnum.DatapulsVerschlusssache:
-      case sourceBookXmlEnum.Shadowrun2050:
-      case 2050:
-      case sourceBookXmlEnum.GrimmesErwachen:
-        break;
-      // Not containing Weapons
-      case sourceBookXmlEnum.StreetGrimoireErrata:
-      case sourceBookXmlEnum.BulletsAndBandages:
-      case sourceBookXmlEnum.ShadowSpells:
-      case sourceBookXmlEnum.NothingPersonal:
-      case sourceBookXmlEnum.BloodyBusiness:
-      case sourceBookXmlEnum.DataTrailsDissonantEchoes:
-      case sourceBookXmlEnum.HowlingShadows:
-      case sourceBookXmlEnum.TheVladivostokGauntlet:
-      case sourceBookXmlEnum.SplinteredState:
-      case sourceBookXmlEnum.ShadowsInFocus_Butte:
-      case sourceBookXmlEnum.HongKongSourcebook:
-      case sourceBookXmlEnum.ShadowsInFocus_Metropole:
-      case sourceBookXmlEnum.BookOfTheLost:
-      case sourceBookXmlEnum.ForbiddenArcana:
-      case sourceBookXmlEnum.ShadowsInFocus_SiouxNation_CountingCoup:
-      case sourceBookXmlEnum.DarkTerrors:
-      case sourceBookXmlEnum.BetterThanBad:
-      case sourceBookXmlEnum.Aetherology:
-      case sourceBookXmlEnum.ShadowrunMissions0803_10BlockTango:
-      case sourceBookXmlEnum.ShadowrunMissions0804_DirtyLaundry:
-      case sourceBookXmlEnum.ShadowrunQuickStartRules:
-      case sourceBookXmlEnum.SprawlWilds:
-        assert(false);
-        break;
+  const englishWeaponList: WeaponListXmlType = weaponList.filter(
+    (weaponAccessory) => {
+      let found = false;
+      switch (weaponAccessory.source) {
+        case sourceBookXmlEnum.AssassinPrimer:
+        case sourceBookXmlEnum.ChromeFlesh:
+        case sourceBookXmlEnum.CuttingAces:
+        case sourceBookXmlEnum.DataTrails:
+        case sourceBookXmlEnum.GunHeaven3:
+        case sourceBookXmlEnum.HardTargets:
+        case sourceBookXmlEnum.KillCode:
+        case sourceBookXmlEnum.KrimeKatalog:
+        case sourceBookXmlEnum.Lockdown:
+        case sourceBookXmlEnum.NoFuture:
+        case sourceBookXmlEnum.Rigger5:
+        case sourceBookXmlEnum.RunAndGun:
+        case sourceBookXmlEnum.RunFaster:
+        case sourceBookXmlEnum.SailAwaySweetSister:
+        case sourceBookXmlEnum.Shadowrun5:
+        case sourceBookXmlEnum.ShadowsInFocus_SanFranciscoMetroplex:
+        case sourceBookXmlEnum.StolenSouls:
+        case sourceBookXmlEnum.StreetGrimoire:
+        case sourceBookXmlEnum.StreetLethal:
+        case sourceBookXmlEnum.TheCompleteTrog:
+        case sourceBookXmlEnum.TheSeattleGambit:
+          found = true;
+          break;
+        // Not in english
+        case sourceBookXmlEnum.StateOfTheArtADL:
+        case sourceBookXmlEnum.Schattenhandbuch:
+        case sourceBookXmlEnum.Schattenhandbuch2:
+        case sourceBookXmlEnum.Schattenhandbuch3:
+        case sourceBookXmlEnum.Hamburg:
+        case sourceBookXmlEnum.DatapulsSOTA2080:
+        case sourceBookXmlEnum.DatapulsVerschlusssache:
+        case sourceBookXmlEnum.Shadowrun2050:
+        case 2050:
+        case sourceBookXmlEnum.GrimmesErwachen:
+          break;
+        // Not containing Weapons
+        case sourceBookXmlEnum.StreetGrimoireErrata:
+        case sourceBookXmlEnum.BulletsAndBandages:
+        case sourceBookXmlEnum.ShadowSpells:
+        case sourceBookXmlEnum.NothingPersonal:
+        case sourceBookXmlEnum.BloodyBusiness:
+        case sourceBookXmlEnum.DataTrailsDissonantEchoes:
+        case sourceBookXmlEnum.HowlingShadows:
+        case sourceBookXmlEnum.TheVladivostokGauntlet:
+        case sourceBookXmlEnum.SplinteredState:
+        case sourceBookXmlEnum.ShadowsInFocus_Butte:
+        case sourceBookXmlEnum.HongKongSourcebook:
+        case sourceBookXmlEnum.ShadowsInFocus_Metropole:
+        case sourceBookXmlEnum.BookOfTheLost:
+        case sourceBookXmlEnum.ForbiddenArcana:
+        case sourceBookXmlEnum.ShadowsInFocus_SiouxNation_CountingCoup:
+        case sourceBookXmlEnum.DarkTerrors:
+        case sourceBookXmlEnum.BetterThanBad:
+        case sourceBookXmlEnum.Aetherology:
+        case sourceBookXmlEnum.ShadowrunMissions0803_10BlockTango:
+        case sourceBookXmlEnum.ShadowrunMissions0804_DirtyLaundry:
+        case sourceBookXmlEnum.ShadowrunQuickStartRules:
+        case sourceBookXmlEnum.SprawlWilds:
+          assert(false);
+          break;
+      }
+      return found;
     }
-    return found;
-  });
+  );
   const weaponListNoAmmo = englishWeaponList.filter((weapon) => {
     return (
       // don't include grenades, torpedos, missiles, or rockets. These are ammo
-      weapon.category !== weaponXmlSubtypeEnum.Gear ||
-      (!weapon.name.toLowerCase().includes("minigrenade") &&
-        !weapon.name.toLowerCase().includes("torpedo") &&
-        !weapon.name.toLowerCase().includes("missile") &&
-        !weapon.name.toLowerCase().includes("rocket"))
+      weapon.category !== weaponXmlSubtypeEnum.Gear &&
+      !weapon.name.toLowerCase().includes("minigrenade") &&
+      !weapon.name.toLowerCase().includes("torpedo") &&
+      !weapon.name.toLowerCase().includes("missile") &&
+      !weapon.name.toLowerCase().includes("rocket")
     );
   });
 
-  // const weaponListConverted: Array<RequiredEntityData<MeleeWeapons>> =
   const weaponListConverted: WeaponUnlinkedSummaryListType = weaponListNoAmmo
     // .filter((weapon) => weapon.name === "Ares Thunderstruck Gauss Rifle")
-    // .filter((weapon) => weapon.name === "Osmium Mace")
     .map((weapon: WeaponXmlType) => {
       const convertedWeapon: WeaponUnlinkedSummaryType = convertWeapon(weapon);
       return convertedWeapon;
@@ -181,7 +181,6 @@ if (weaponListParsed.success) {
   );
 }
 
-// function convertWeapon(weapon: WeaponType): RequiredEntityData<MeleeWeapons> {
 function convertWeapon(weapon: WeaponXmlType) {
   console.log(`\n${weapon.name}`);
 

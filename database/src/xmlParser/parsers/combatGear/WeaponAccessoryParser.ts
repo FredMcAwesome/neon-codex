@@ -10,16 +10,12 @@ import {
 import { WeaponAccessorySummaryType } from "@shadowrun/common/src/schemas/weaponAccessorySchema.js";
 import * as fs from "fs";
 import assert from "assert";
-import {
-  sourceBookXmlEnum,
-  WeaponListXmlSchema,
-} from "./WeaponParserSchema.js";
+import { WeaponListXmlSchema } from "./WeaponParserSchema.js";
 import { damageTypeEnum } from "@shadowrun/common";
 import {
   convertAllowGear,
   convertAvailability,
   convertCost,
-  convertSource,
   convertXmlGears,
 } from "./WeaponParserHelper.js";
 import { standardCalculationEnum } from "@shadowrun/common/src/enums.js";
@@ -29,6 +25,8 @@ import {
   convertAmmoReplace,
   convertRequirements,
 } from "./WeaponAccessoryParserHelper.js";
+import { sourceBookXmlEnum } from "../ParserCommonDefines.js";
+import { convertSource } from "../ParserHelper.js";
 
 const currentPath = import.meta.url;
 const xml_string = fs.readFileSync(

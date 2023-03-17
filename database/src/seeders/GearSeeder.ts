@@ -55,12 +55,6 @@ export class GearSeeder extends Seeder {
         em.create(IncludedWeaponAccessories, accessory);
       });
     });
-    //   firearmAccessoriesList.forEach((firearmAccessory) => {
-    //     em.create(FirearmAccessories, firearmAccessory);
-    //   });
-    //   weaponAccessoriesList.forEach((weaponAccessory) => {
-    //     em.create(WeaponAccessories, weaponAccessory);
-    //   });
     //   ammosList.forEach((ammo) => {
     //     em.create(Ammos, ammo);
     //   });

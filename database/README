@@ -1,4 +1,52 @@
-npx ts-node-esm src/xmlParser/parsers/weapons/WeaponParser.ts &&
-npx ts-node-esm src/xmlParser/parsers/weapons/WeaponAccessoryParser.ts &&
-npx ts-node-esm src/xmlParser/parsers/weapons/RangeParser.ts &&
-npx ts-node-esm src/xmlParser/parsers/character/SkillParser.ts
+npx ts-node-esm src/xmlParser/parsers/combatGear/ArmourParser.ts &&
+npx ts-node-esm src/xmlParser/parsers/combatGear/RangeParser.ts &&
+npx ts-node-esm src/xmlParser/parsers/combatGear/WeaponAccessoryParser.ts &&
+npx ts-node-esm src/xmlParser/parsers/combatGear/WeaponParser.ts &&
+npx ts-node-esm src/xmlParser/parsers/character/SkillParser.ts &&
+npx ts-node-esm src/xmlParser/parsers/magic/SpellsParser.ts &&
+npx ts-node-esm src/xmlParser/parsers/otherGear/GenericGearParser.ts &&
+npx ts-node-esm src/xmlParser/parsers/otherGear/DrugParser.ts &&
+npx ts-node-esm src/xmlParser/parsers/bodyModification/BiowareParser.ts &&
+npx ts-node-esm src/xmlParser/parsers/bodyModification/CyberwareParser.ts &&
+npx ts-node-esm src/xmlParser/parsers/riggerGear/VehicleParser.ts
+
+So far I have only parsed:
+
+- Ranges
+- WeaponAccessories
+- Weapons
+- Skills
+
+To match where I previously was, still need (All parsed, stored in database, then passed through to frontend):
+
+- Bioware
+- Cyberware
+- Vehicles
+- Gear
+- Drugs
+
+Other main priorities:
+
+- Complex Forms
+- Critter Powers
+- Critters
+- Echoes
+- Marital Arts
+- Mentors
+- Metamagic
+- Powers
+- Programs
+- Spirit Powers
+- Streams
+
+Other xmls to maybe implement:
+
+- Actions
+- Contacts
+- Life modules
+- Lifestyles
+- Metatypes
+- Packs
+- Priorities
+- Qualities
+- Traditions

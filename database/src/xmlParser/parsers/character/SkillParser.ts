@@ -6,11 +6,13 @@ import {
   standardCalculationEnum,
 } from "@shadowrun/common/src/enums.js";
 import type { SkillType } from "@shadowrun/common/src/schemas/skillSchema.js";
+import assert from "assert";
 import { XMLParser } from "fast-xml-parser";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { z as zod } from "zod";
+import { attributeXMLEnum } from "../ParserCommonDefines.js";
 
 export type GenericXmlParsingType =
   | { option: standardCalculationEnum }
@@ -53,6 +55,8 @@ const convertSkill = function (xmlSkill: SkillXmlType): SkillType {
     case "RES":
       attribute = attributeTypeEnum.Resonance;
       break;
+    default:
+      assert(false, xmlSkill.attribute);
   }
 
   return {
@@ -79,18 +83,7 @@ const SkillXmlSchema = zod
   .object({
     id: zod.string(),
     name: zod.string(),
-    attribute: zod.union([
-      zod.literal("BOD"),
-      zod.literal("AGI"),
-      zod.literal("REA"),
-      zod.literal("STR"),
-      zod.literal("WIL"),
-      zod.literal("LOG"),
-      zod.literal("INT"),
-      zod.literal("CHA"),
-      zod.literal("MAG"),
-      zod.literal("RES"),
-    ]),
+    attribute: zod.nativeEnum(attributeXMLEnum),
     category: zod.nativeEnum(skillCategoryEnum),
     default: zod.union([zod.literal("True"), zod.literal("False")]),
     exotic: zod.optional(zod.literal("True")),
@@ -100,7 +93,7 @@ const SkillXmlSchema = zod
     requiresflymovement: zod.optional(zod.literal("True")),
     specs: zod.union([
       zod.object({
-        spec: zod.union([zod.array(zod.string()), zod.string()]),
+        spec: StringArrayOrStringSchema,
       }),
       zod.literal(""),
     ]),

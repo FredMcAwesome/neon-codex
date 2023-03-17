@@ -1,6 +1,6 @@
 {
   "extends": "../tsconfig.base.json",
-  "include": ["src/**/*", "../src/**/*"],
+  "include": ["src/**/*"],
   "compilerOptions": {
     // allow top level await for models
     "target": "ES2022",

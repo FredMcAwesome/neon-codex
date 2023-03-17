@@ -4,7 +4,12 @@ import {
   WeaponXmlSubtypeSchema,
 } from "@shadowrun/common/src/schemas/commonSchema.js";
 import { z as zod } from "zod";
-import { GearXmlSchema, SourceXmlSchema } from "./WeaponParserSchema.js";
+import {
+  SourceXmlSchema,
+  GearXmlSchema,
+  StringOrNumberSchema,
+  StringArrayOrStringSchema,
+} from "../ParserCommonDefines.js";
 
 const AccessoryAccuracyXmlSchema = zod.number();
 export type AccessoryAccuracyXmlType = zod.infer<
@@ -20,10 +25,10 @@ const LowerSchema = zod
       zod.array(zod.nativeEnum(weaponXmlSubtypeEnum)),
       zod.nativeEnum(weaponXmlSubtypeEnum),
     ]),
-    useskill: zod.union([zod.array(zod.string()), zod.string()]),
+    useskill: StringArrayOrStringSchema,
     AND: zod.object({
       OR: zod.object({
-        category: zod.union([zod.array(zod.string()), zod.string()]),
+        category: StringArrayOrStringSchema,
       }),
     }),
   })
@@ -82,21 +87,21 @@ const RequiredWeaponDetailsXmlSchema = zod
       ])
     ),
     type: zod.optional(zod.string()),
-    spec: zod.optional(zod.union([zod.string(), zod.array(zod.string())])),
-    spec2: zod.optional(zod.union([zod.string(), zod.array(zod.string())])),
+    spec: zod.optional(StringArrayOrStringSchema),
+    spec2: zod.optional(StringArrayOrStringSchema),
     conceal: zod.optional(ConcealXmlSchema),
-    useskill: zod.optional(zod.union([zod.string(), zod.array(zod.string())])),
+    useskill: zod.optional(StringArrayOrStringSchema),
     AND: zod.optional(
       zod.object({
         OR: zod
           .object({
-            category: zod.union([zod.array(zod.string()), zod.string()]),
+            category: StringArrayOrStringSchema,
           })
           .strict(),
       })
     ),
     accessorymounts: zod.optional(
-      zod.object({ mount: zod.union([zod.array(zod.string()), zod.string()]) })
+      zod.object({ mount: StringArrayOrStringSchema })
     ),
     _NOT: zod.optional(zod.literal("")),
     damage: zod.optional(XmlOperationSchema),
@@ -138,7 +143,7 @@ const WeaponAccessoryRequiredXmlSchema = zod.union([
         zod.union([
           zod
             .object({
-              accessory: zod.union([zod.array(zod.string()), zod.string()]),
+              accessory: StringArrayOrStringSchema,
             })
             .strict(),
           zod
@@ -173,8 +178,8 @@ const WeaponAccessoryXmlSchema = zod
     rc: zod.optional(zod.number()),
     rcgroup: zod.optional(zod.number()), // items from the same rcgroup are incompatible with each other
     rcdeployable: zod.optional(zod.literal("True")),
-    avail: zod.union([zod.string(), zod.number()]),
-    cost: zod.union([zod.string(), zod.number()]),
+    avail: StringOrNumberSchema,
+    cost: StringOrNumberSchema,
     source: zod.union([SourceXmlSchema, zod.literal(2050)]),
     page: zod.number(),
     accessorycostmultiplier: zod.optional(zod.number()), // this should really be under a trait category
@@ -192,8 +197,8 @@ const WeaponAccessoryXmlSchema = zod
     specialmodification: zod.optional(zod.literal("True")),
     ammoslots: zod.optional(zod.literal(1)),
     modifyammocapacity: zod.optional(zod.string()), // put this and ammo bonus together
-    ammobonus: zod.optional(zod.union([zod.number(), zod.string()])),
-    ammoreplace: zod.optional(zod.union([zod.string(), zod.number()])),
+    ammobonus: zod.optional(StringOrNumberSchema),
+    ammoreplace: zod.optional(StringOrNumberSchema),
     mount: zod.optional(zod.union([zod.string(), zod.literal("")])),
     extramount: zod.optional(zod.string()),
     hide: zod.optional(zod.literal("")), // unused again?

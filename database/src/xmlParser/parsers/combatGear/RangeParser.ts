@@ -6,6 +6,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { z as zod } from "zod";
 import { xmlStandardMapping } from "../../utils/xmlData.js";
+import { StringOrNumberSchema } from "../ParserCommonDefines.js";
 import { convertStringToOperatorsAndOptions } from "../ParserHelper.js";
 
 export type GenericXmlParsingType =
@@ -64,10 +65,10 @@ const RangeXmlSchema = zod
   .object({
     name: zod.string(),
     min: zod.number(),
-    short: zod.union([zod.number(), zod.string()]),
-    medium: zod.union([zod.number(), zod.string()]),
-    long: zod.union([zod.number(), zod.string()]),
-    extreme: zod.union([zod.number(), zod.string()]),
+    short: StringOrNumberSchema,
+    medium: StringOrNumberSchema,
+    long: StringOrNumberSchema,
+    extreme: StringOrNumberSchema,
   })
   .strict();
 const RangeListXmlSchema = zod.array(RangeXmlSchema);

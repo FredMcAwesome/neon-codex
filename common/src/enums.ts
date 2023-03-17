@@ -230,7 +230,7 @@ export enum gearCategoryEnum {
   Cyberterminals = "Cyberterminals",
   Disguises = "Disguises",
   Drugs = "Drugs",
-  ElectronicAccessories = "Electronic Accessories",
+  ElectronicsAccessories = "Electronics Accessories",
   ElectronicModification = "Electronic Modification",
   ElectronicParts = "Electronic Parts",
   Entertainment = "Entertainment",
