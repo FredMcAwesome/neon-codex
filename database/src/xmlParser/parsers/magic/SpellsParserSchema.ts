@@ -1,6 +1,10 @@
 // import { standardCalculationEnum } from "@shadowrun/common/src/enums.js";
 import { z as zod } from "zod";
-import { attributeXMLEnum, SourceXmlSchema } from "../ParserCommonDefines.js";
+import {
+  attributeXMLEnum,
+  SourceXmlSchema,
+  StringArrayOrStringSchema,
+} from "../ParserCommonDefines.js";
 
 const SpellXmlSchema = zod
   .object({

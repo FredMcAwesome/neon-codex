@@ -8,6 +8,7 @@ import { z as zod } from "zod";
 import {
   GearXmlSchema,
   SourceXmlSchema,
+  StringArrayOrStringSchema,
   StringOrNumberSchema,
 } from "../ParserCommonDefines.js";
 

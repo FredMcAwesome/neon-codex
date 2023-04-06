@@ -12,7 +12,10 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { z as zod } from "zod";
-import { attributeXMLEnum } from "../ParserCommonDefines.js";
+import {
+  attributeXMLEnum,
+  StringArrayOrStringSchema,
+} from "../ParserCommonDefines.js";
 
 export type GenericXmlParsingType =
   | { option: standardCalculationEnum }
