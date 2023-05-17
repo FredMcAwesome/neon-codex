@@ -34,13 +34,14 @@ const columns = [
   columnHelper.accessor("metatypeInfo", {
     header: "Metatype",
     cell: (info) => {
-      return info.getValue().map((line) => (
-        <ul>
+      const metatypes = info.getValue().map((line) => {
+        return (
           <li key={uniqid()}>
             {line.metatype + " (" + line.specialAttributes + ")"}
           </li>
-        </ul>
-      ));
+        );
+      });
+      return <ul>{metatypes}</ul>;
     },
     footer: (info) => info.column.id,
   }),
@@ -51,14 +52,11 @@ const columns = [
   columnHelper.accessor("magicInfo", {
     header: "Magic or Resonance",
     cell: (info) => {
-      return info.getValue().map((line) => {
+      const magics = info.getValue().map((line) => {
         const magicianLine = formatMagic(line);
-        return (
-          <ul>
-            <li key={uniqid()}>{magicianLine}</li>
-          </ul>
-        );
+        return <li key={uniqid()}>{magicianLine}</li>;
       });
+      return <ul>{magics}</ul>;
     },
     footer: (info) => info.column.id,
   }),

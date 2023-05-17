@@ -39,6 +39,7 @@ import {
   WeaponUnlinkedSummaryType,
 } from "@shadowrun/common/src/schemas/weaponSchemas.js";
 import { trpc } from "../../utils/trpc.js";
+import uniqid from "uniqid";
 
 interface IProps {
   gearSelected: GearListType;
@@ -502,6 +503,7 @@ export const GearSelect = function (props: IProps) {
                 title={weapon.name}
                 addItem={addItem}
                 removeItem={removeItem}
+                key={uniqid()}
               >
                 <div>{weapon.description}</div>
                 {weapon.accessories && (
@@ -509,7 +511,7 @@ export const GearSelect = function (props: IProps) {
                     <span>Accessories:</span>
                     <ul>
                       {weapon.accessories.map((accessory) => {
-                        return <li key={accessory.name}>{accessory.name}</li>;
+                        return <li key={uniqid()}>{accessory.name}</li>;
                       })}
                     </ul>
                   </div>
@@ -674,7 +676,7 @@ const WeaponDiv = function ({
               addWeapon(weapon);
             };
             return (
-              <li key={weaponType + weapon.name}>
+              <li key={uniqid()}>
                 <CollapsibleGearDiv title={weapon.name} addItem={addItem}>
                   <div>{weapon.description}</div>
                 </CollapsibleGearDiv>

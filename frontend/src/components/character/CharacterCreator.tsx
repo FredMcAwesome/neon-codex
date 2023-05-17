@@ -67,7 +67,7 @@ const CharacterCreator = function () {
     if (data === undefined) return;
     setSkillSelections(
       data.map((skill) => {
-        console.log(skill.name);
+        // console.log(skill.name);
         return {
           ...skill,
           skillGroupPoints: 0,
