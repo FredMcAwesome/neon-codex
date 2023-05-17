@@ -12,18 +12,6 @@ import type {
   GearListType,
   // MatrixType
 } from "@shadowrun/common";
-import { useQuery } from "@tanstack/react-query";
-import { getGearList } from "../../utils/api.js";
-import { useFetchWrapper } from "../../utils/authFetch.js";
-// import { MatrixListType } from "@shadowrun/common/src/serverResponse.js";
-import {
-  // AugmentationListType,
-  GearListSchema,
-  // MagicGearListType,
-  // MatrixAccessoriesListType,
-  // OtherGearListType,
-  // VehiclesAndDronesListType,
-} from "@shadowrun/common/src/schemas/gearSchemas.js";
 import { CollapsibleDiv } from "../../utils/CollapsibleDiv.js";
 // import {
 //   AudioDeviceTypeInformationSchema,
@@ -50,24 +38,7 @@ import {
   WeaponUnlinkedSummaryListType,
   WeaponUnlinkedSummaryType,
 } from "@shadowrun/common/src/schemas/weaponSchemas.js";
-
-const fetchWrapper = useFetchWrapper();
-
-async function fetchGear() {
-  console.log("fetchGear");
-  const response: Response = await fetchWrapper.get(getGearList);
-  // https://tanstack.com/query/v4/docs/guides/query-functions#usage-with-fetch-and-other-clients-that-do-not-throw-by-default
-  if (!response.ok) {
-    throw new Error(response.statusText);
-  }
-  const resJson: unknown | GearListType = await response.json();
-  const parsedRes = GearListSchema.safeParse(resJson);
-  if (parsedRes.success) {
-    return parsedRes.data;
-  } else {
-    throw new Error(parsedRes.error.issues.toString());
-  }
-}
+import { trpc } from "../../utils/trpc.js";
 
 interface IProps {
   gearSelected: GearListType;
@@ -77,7 +48,7 @@ interface IProps {
 }
 
 export const GearSelect = function (props: IProps) {
-  const { data, error, isError, isLoading } = useQuery(["gear"], fetchGear);
+  const { data, error, isError, isLoading } = trpc.character.all.useQuery();
   if (isLoading) {
     return <div>Loading gear...</div>;
   }

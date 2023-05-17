@@ -1,15 +1,11 @@
-import express from "express";
 import type { ThreadListType } from "@shadowrun/common";
 import { Database } from "../utils/db.js";
 import * as logger from "../utils/logger.js";
-import { IAuthRequest, isLoggedIn } from "./authentication.js";
+import { router, privateProcedure } from "../trpc.js";
+import { z as zod } from "zod";
 
-const router = express.Router();
-
-router.get(
-  "/threads",
-  isLoggedIn,
-  async function (_req: IAuthRequest, res: express.Response) {
+export const forumRouter = router({
+  getThreads: privateProcedure.query(async () => {
     try {
       const threads = await Database.threadRepository.findAll({
         populate: ["user"],
@@ -22,23 +18,31 @@ router.get(
         };
       });
       logger.log(JSON.stringify(threadsResponse, null, 2));
-      res.json(threadsResponse);
+      return threadsResponse;
     } catch (error) {
       logger.error("Unable to connect to the database:", error);
-
-      res.status(500).send("Database error");
+      throw new Error("Database error");
     }
-  }
-);
-
-router.post(
-  "/threads",
-  isLoggedIn,
-  (req: IAuthRequest, res: express.Response) => {
-    logger.log(req.body);
-    const note = Database.threadRepository.create(req.body);
-    res.json(note);
-  }
-);
-
-export default router;
+  }),
+  createThread: privateProcedure
+    .input(
+      zod.object({
+        title: zod.string(),
+        username: zod.string(),
+      })
+    )
+    .mutation(async (opts) => {
+      const user = await Database.userRepository.findOne({
+        username: opts.input.username,
+      });
+      logger.log(opts);
+      if (user !== null) {
+        const note = Database.threadRepository.create({
+          title: opts.input.title,
+          user: user,
+        });
+        return note;
+      }
+      throw new Error(`User ${opts.input.username} does not exist.`);
+    }),
+});

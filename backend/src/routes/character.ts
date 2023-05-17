@@ -1,4 +1,3 @@
-import express from "express";
 import {
   augmentationTypeEnum,
   MatrixType,
@@ -10,7 +9,6 @@ import {
 import type { AugmentationListType, GearListType } from "@shadowrun/common";
 import { Database } from "../utils/db.js";
 import * as logger from "../utils/logger.js";
-import { IAuthRequest, isLoggedIn } from "./authentication.js";
 import {
   MatrixListType,
   OtherGearListType,
@@ -52,177 +50,9 @@ import {
   CommunicationCountermeasures,
 } from "@shadowrun/database/build/models/gear/electronicsGear/matrixWareModel.js";
 import { GrappleGun } from "@shadowrun/database/build/models/gear/otherGear/otherWareModel.js";
+import { router, privateProcedure } from "../trpc.js";
 
-const router = express.Router();
-
-router.get(
-  "/all",
-  isLoggedIn,
-  async function (_req: IAuthRequest, res: express.Response) {
-    try {
-      const weaponsResponse: WeaponUnlinkedSummaryListType = await getWeapons();
-      const electronicsResponse: MatrixListType = await getElectronics();
-      const electronicAccessoriesResponse: MatrixAccessoriesListType =
-        await getElectronicAccessories();
-      const otherGearResponse: OtherGearListType = await getOtherGear();
-      const augmentationsResponse: AugmentationListType =
-        await getAugmentations();
-      const magicalEqipmentResponse: MagicGearListType =
-        await getMagicalEquipment();
-      const vehiclesAndDronesResponse: VehiclesAndDronesListType =
-        await getVehiclesAndDrones();
-      const gearResponse: GearListType = {
-        weapons: weaponsResponse,
-        electronics: electronicsResponse,
-        electronicAccessories: electronicAccessoriesResponse,
-        otherGear: otherGearResponse,
-        augmentations: augmentationsResponse,
-        magicalEquipment: magicalEqipmentResponse,
-        vehiclesAndDrones: vehiclesAndDronesResponse,
-      };
-      // logger.log(JSON.stringify(gearResponse, null, 2));
-      res.json(gearResponse);
-    } catch (error) {
-      logger.error("Unable to connect to the database:", error);
-
-      res.status(500).send("Database error");
-    }
-  }
-);
-
-router.get(
-  "/skills",
-  async function (_req: IAuthRequest, res: express.Response) {
-    try {
-      const skillsResponse: SkillListType = await getSkills();
-      // logger.log(JSON.stringify(skillsResponse, null, 2));
-      res.json(skillsResponse);
-    } catch (error) {
-      logger.error("Unable to connect to the database:", error);
-
-      res.status(500).send("Database error");
-    }
-  }
-);
-
-router.get(
-  "/weapons",
-  isLoggedIn,
-  async function (_req: IAuthRequest, res: express.Response) {
-    try {
-      const weaponsResponse: WeaponUnlinkedSummaryListType = await getWeapons();
-      logger.log(JSON.stringify(weaponsResponse, null, 2));
-      res.json(weaponsResponse);
-    } catch (error) {
-      logger.error("Unable to connect to the database:", error);
-
-      res.status(500).send("Database error");
-    }
-  }
-);
-
-router.get(
-  "/electronics",
-  isLoggedIn,
-  async function (_req: IAuthRequest, res: express.Response) {
-    try {
-      const matrixResponse: MatrixListType = await getElectronics();
-      logger.log(JSON.stringify(matrixResponse, null, 2));
-      res.json(matrixResponse);
-    } catch (error) {
-      logger.error("Unable to connect to the database:", error);
-
-      res.status(500).send("Database error");
-    }
-  }
-);
-
-router.get(
-  "/electronicsAccessories",
-  isLoggedIn,
-  async function (_req: IAuthRequest, res: express.Response) {
-    try {
-      const matrixAccessoriesResponse: MatrixAccessoriesListType =
-        await getElectronicAccessories();
-      logger.log(JSON.stringify(matrixAccessoriesResponse, null, 2));
-      res.json(matrixAccessoriesResponse);
-    } catch (error) {
-      logger.error("Unable to connect to the database:", error);
-
-      res.status(500).send("Database error");
-    }
-  }
-);
-
-router.get(
-  "/otherGear",
-  isLoggedIn,
-  async function (_req: IAuthRequest, res: express.Response) {
-    try {
-      const matrixResponse = await getOtherGear();
-      logger.log(JSON.stringify(matrixResponse, null, 2));
-      res.json(matrixResponse);
-    } catch (error) {
-      logger.error("Unable to connect to the database:", error);
-
-      res.status(500).send("Database error");
-    }
-  }
-);
-
-router.get(
-  "/augmentations",
-  isLoggedIn,
-  async function (_req: IAuthRequest, res: express.Response) {
-    try {
-      const augmentationsResponse: AugmentationListType =
-        await getAugmentations();
-      logger.log(JSON.stringify(augmentationsResponse, null, 2));
-      res.json(augmentationsResponse);
-    } catch (error) {
-      logger.error("Unable to connect to the database:", error);
-
-      res.status(500).send("Database error");
-    }
-  }
-);
-
-router.get(
-  "/magicalEquipment",
-  isLoggedIn,
-  async function (_req: IAuthRequest, res: express.Response) {
-    try {
-      const magicalEquipmentResponse: MagicGearListType =
-        await getMagicalEquipment();
-      logger.log(JSON.stringify(magicalEquipmentResponse, null, 2));
-      res.json(magicalEquipmentResponse);
-    } catch (error) {
-      logger.error("Unable to connect to the database:", error);
-
-      res.status(500).send("Database error");
-    }
-  }
-);
-
-router.get(
-  "/vehiclesAndDrones",
-  isLoggedIn,
-  async function (_req: IAuthRequest, res: express.Response) {
-    try {
-      const vehiclesAndDronesResponse: VehiclesAndDronesListType =
-        await getVehiclesAndDrones();
-      logger.log(JSON.stringify(vehiclesAndDronesResponse, null, 2));
-      res.json(vehiclesAndDronesResponse);
-    } catch (error) {
-      logger.error("Unable to connect to the database:", error);
-      res.status(500).send("Database error");
-    }
-  }
-);
-
-export default router;
-
-async function getSkills() {
+export async function getSkills() {
   const skills = await Database.skillRepository.findAll();
   const skillsResponse: SkillListType = skills.map((skill) => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -680,3 +510,118 @@ async function getVehiclesAndDrones() {
     });
   return vehiclesAndDronesResponse;
 }
+
+export const characterRouter = router({
+  skills: privateProcedure.query(async () => {
+    try {
+      const skillsResponse = await getSkills();
+      return skillsResponse;
+    } catch (error) {
+      logger.error("Unable to connect to the database:", error);
+      throw new Error("Database error");
+    }
+  }),
+  weapons: privateProcedure.query(async () => {
+    try {
+      const weaponsResponse: WeaponUnlinkedSummaryListType = await getWeapons();
+      logger.log(JSON.stringify(weaponsResponse, null, 2));
+      return weaponsResponse;
+    } catch (error) {
+      logger.error("Unable to connect to the database:", error);
+      throw new Error("Database error");
+    }
+  }),
+  electronics: privateProcedure.query(async () => {
+    try {
+      const matrixResponse: MatrixListType = await getElectronics();
+      logger.log(JSON.stringify(matrixResponse, null, 2));
+      return matrixResponse;
+    } catch (error) {
+      logger.error("Unable to connect to the database:", error);
+      throw new Error("Database error");
+    }
+  }),
+  electronicsAccessories: privateProcedure.query(async () => {
+    try {
+      const matrixAccessoriesResponse: MatrixAccessoriesListType =
+        await getElectronicAccessories();
+      logger.log(JSON.stringify(matrixAccessoriesResponse, null, 2));
+      return matrixAccessoriesResponse;
+    } catch (error) {
+      logger.error("Unable to connect to the database:", error);
+      throw new Error("Database error");
+    }
+  }),
+  otherGear: privateProcedure.query(async () => {
+    try {
+      const matrixResponse = await getOtherGear();
+      logger.log(JSON.stringify(matrixResponse, null, 2));
+      return matrixResponse;
+    } catch (error) {
+      logger.error("Unable to connect to the database:", error);
+      throw new Error("Database error");
+    }
+  }),
+  augmentations: privateProcedure.query(async () => {
+    try {
+      const augmentationsResponse: AugmentationListType =
+        await getAugmentations();
+      logger.log(JSON.stringify(augmentationsResponse, null, 2));
+      return augmentationsResponse;
+    } catch (error) {
+      logger.error("Unable to connect to the database:", error);
+      throw new Error("Database error");
+    }
+  }),
+  magicalEquipment: privateProcedure.query(async () => {
+    try {
+      const magicalEquipmentResponse: MagicGearListType =
+        await getMagicalEquipment();
+      logger.log(JSON.stringify(magicalEquipmentResponse, null, 2));
+      return magicalEquipmentResponse;
+    } catch (error) {
+      logger.error("Unable to connect to the database:", error);
+      throw new Error("Database error");
+    }
+  }),
+  vehiclesAndDrones: privateProcedure.query(async () => {
+    try {
+      const vehiclesAndDronesResponse: VehiclesAndDronesListType =
+        await getVehiclesAndDrones();
+      logger.log(JSON.stringify(vehiclesAndDronesResponse, null, 2));
+      return vehiclesAndDronesResponse;
+    } catch (error) {
+      logger.error("Unable to connect to the database:", error);
+      throw new Error("Database error");
+    }
+  }),
+  all: privateProcedure.query(async () => {
+    try {
+      const weaponsResponse: WeaponUnlinkedSummaryListType = await getWeapons();
+      const electronicsResponse: MatrixListType = await getElectronics();
+      const electronicAccessoriesResponse: MatrixAccessoriesListType =
+        await getElectronicAccessories();
+      const otherGearResponse: OtherGearListType = await getOtherGear();
+      const augmentationsResponse: AugmentationListType =
+        await getAugmentations();
+      const magicalEqipmentResponse: MagicGearListType =
+        await getMagicalEquipment();
+      const vehiclesAndDronesResponse: VehiclesAndDronesListType =
+        await getVehiclesAndDrones();
+      const gearResponse: GearListType = {
+        weapons: weaponsResponse,
+        electronics: electronicsResponse,
+        electronicAccessories: electronicAccessoriesResponse,
+        otherGear: otherGearResponse,
+        augmentations: augmentationsResponse,
+        magicalEquipment: magicalEqipmentResponse,
+        vehiclesAndDrones: vehiclesAndDronesResponse,
+      };
+      // logger.log(JSON.stringify(gearResponse, null, 2));
+      return gearResponse;
+    } catch (error) {
+      logger.error("Unable to connect to the database:", error);
+      throw new Error("Database error");
+    }
+  }),
+});

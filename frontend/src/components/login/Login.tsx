@@ -1,35 +1,29 @@
-import { useMutation } from "@tanstack/react-query";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { dashboardPath } from "../dashboard/Dashboard.js";
-import { attemptLogin } from "./loginHelper.js";
+import { saveUserSession } from "./loginHelper.js";
+import { trpc } from "../../utils/trpc.js";
 
 const loginPath = "/login";
 
 const LoginRoute = function () {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const { mutateAsync, isLoading, data, isError, error } =
-    useMutation(attemptLogin);
+  const { mutateAsync, isLoading, isError, error } =
+    trpc.authentication.login.useMutation({
+      onSuccess(data, variables) {
+        saveUserSession(data, variables.username);
+        navigate(dashboardPath, { replace: true });
+      },
+    });
   const navigate = useNavigate();
 
   const handleSubmit = async function (
     event: React.FormEvent<HTMLFormElement>
   ) {
     event.preventDefault();
-    try {
-      await mutateAsync({ username, password });
-    } catch (err) {
-      //catch pointless error
-    }
+    mutateAsync({ username, password });
   };
-
-  useEffect(() => {
-    if (data?.success) {
-      console.log("logged in");
-      navigate(dashboardPath, { replace: true });
-    }
-  }, [data]);
 
   return (
     <div>

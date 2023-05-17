@@ -2,67 +2,39 @@ import {
   clearUserSession,
   getUserSession,
 } from "../components/login/loginHelper.js";
-import { SERVER } from "./config.js";
 
-export { useFetchWrapper };
+// helper functions
 
-function useFetchWrapper() {
-  return {
-    get: request("GET"),
-    post: request("POST"),
-    put: request("PUT"),
-    delete: request("DELETE"),
-  };
-
-  function request(method: string) {
-    return (url: string, body?: BodyInit) => {
-      const headers = authHeader(url);
-      const requestOptions: RequestInit = {
-        mode: "cors",
-        method: method,
-        ...(headers && { headers: headers }),
-      };
-      if (body) {
-        requestOptions.body = body;
-      }
-      return fetch(url, requestOptions).then(handleResponse);
-    };
+export function isLoggedIn() {
+  const { token } = getUserSession();
+  if (!token || token.length == 0) {
+    return false;
   }
+  return true;
+}
 
-  // helper functions
+export function getToken() {
+  const { token } = getUserSession();
+  return token;
+}
 
-  function isLoggedIn() {
-    const { token } = getUserSession();
-    if (!token || token.length == 0) {
-      return false;
-    }
-    return true;
+export function getAuthHeader() {
+  // return auth header with jwt if user is logged in and request is to the api url
+  const token = getToken();
+  const loggedIn = isLoggedIn();
+  if (loggedIn) {
+    return `Bearer ${token}`;
+  } else {
+    return undefined;
   }
+}
 
-  function getToken() {
-    const { token } = getUserSession();
-    return token;
-  }
-
-  function authHeader(url: string) {
-    // return auth header with jwt if user is logged in and request is to the api url
-    const token = getToken();
-    const loggedIn = isLoggedIn();
-    const isApiUrl = url.startsWith(SERVER);
-    if (loggedIn && isApiUrl) {
-      return { Authorization: `Bearer ${token}` };
-    } else {
-      return undefined;
+export function handleResponse(response: Response) {
+  if (!response.ok) {
+    if ([401, 403].includes(response.status) && isLoggedIn()) {
+      // auto logout if 401 Unauthorized or 403 Forbidden response returned from api
+      clearUserSession();
     }
   }
-
-  function handleResponse(response: Response) {
-    if (!response.ok) {
-      if ([401, 403].includes(response.status) && isLoggedIn()) {
-        // auto logout if 401 Unauthorized or 403 Forbidden response returned from api
-        clearUserSession();
-      }
-    }
-    return response;
-  }
+  return response;
 }

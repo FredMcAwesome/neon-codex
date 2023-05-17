@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { forumPath } from "../forum/Forum.js";
 
 const dashboardPath = "/";
 
@@ -6,7 +7,7 @@ const Dashboard = function () {
   return (
     <div>
       <h1>Dashboard</h1>
-      <Link to="/forum"> forum </Link>
+      <Link to={forumPath}> forum </Link>
     </div>
   );
 };

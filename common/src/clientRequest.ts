@@ -1,7 +1,7 @@
 import { z as zod } from "zod";
 const LoginSchema = zod.object({
-  username: zod.string(),
-  password: zod.string(),
+  username: zod.string().min(1),
+  password: zod.string().min(1),
 });
 
 type LoginType = zod.infer<typeof LoginSchema>;

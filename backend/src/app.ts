@@ -2,19 +2,26 @@ import express from "express";
 import cors from "cors";
 import path from "path";
 import { RequestContext } from "@mikro-orm/core";
-import type { Example } from "@shadowrun/common";
 import * as logger from "./utils/logger.js";
 import { HOST, PORT } from "@shadowrun/database/build/utils/databaseConfig.js";
 import * as middleware from "./utils/middleware.js";
-import forumRouter from "./routes/forum.js";
-import authenticationRouter from "./routes/authentication.js";
-import characterRouter from "./routes/character.js";
+import { forumRouter } from "./routes/forum.js";
+import { authenticationRouter } from "./routes/authentication.js";
+import { characterRouter } from "./routes/character.js";
 import { init, Database } from "./utils/db.js";
+import { createExpressMiddleware } from "@trpc/server/adapters/express";
+import { createContext, router } from "./trpc.js";
 
 // dodgy way to allow jest testing to know we are initialise
 // when jest esm support is better change this to a top level await
 const dbInitialised = init();
 export { dbInitialised };
+
+const appRouter = router({
+  character: characterRouter,
+  forum: forumRouter,
+  authentication: authenticationRouter,
+});
 
 const app = express();
 
@@ -31,14 +38,7 @@ app.use((_req, _res, next) => {
 
 app.use(middleware.requestLogger);
 
-app.get("/api/example", (_req, res) => {
-  const data: Example = { example: "ster" };
-  res.json(data);
-});
-
-app.use("/api/forum", forumRouter);
-app.use("/api/authentication", authenticationRouter);
-app.use("/api/character", characterRouter);
+app.use("/trpc", createExpressMiddleware({ router: appRouter, createContext }));
 
 // Have Node serve the files for built React app
 const frontendPath = path.resolve("..", "frontend/build");
@@ -51,3 +51,4 @@ app.get("*", function (_req, res) {
 });
 
 export default app;
+export type AppRouter = typeof appRouter;

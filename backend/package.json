@@ -7,6 +7,7 @@
   "type": "module",
   "scripts": {
     "start": "cross-env NODE_ENV=production node .",
+    "watch": "tsc-watch -b",
     "clean": "tsc --build --clean",
     "build": "tsc --build",
     "prestart": "npm run build",
@@ -42,6 +43,7 @@
     "@mikro-orm/postgresql": "^5.6.13",
     "@shadowrun/common": "*",
     "@shadowrun/database": "*",
+    "@trpc/server": "^10.19.0",
     "async": "^3.2.4",
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",

@@ -2,7 +2,7 @@
 
 import { JwtTokenSchema } from "@shadowrun/common/";
 import type { JwtTokenType, LoginType } from "@shadowrun/common";
-import { getLoginStatus, postLogin } from "../../utils/api.js";
+import { postLogin } from "../../utils/api.js";
 
 // otherwise use store values
 export const saveUserSession = (token: string, username: string) => {
@@ -70,14 +70,14 @@ export const isAuthenticated = async function () {
   if (!token || token.length == 0) {
     return false;
   }
-  const authHeader = { Authorization: "Bearer " + token };
-  const response = await fetch(getLoginStatus, {
-    mode: "cors",
-    headers: authHeader,
-  });
-  if (!response.ok) {
-    clearUserSession();
-    return false;
-  }
+  // const authHeader = { Authorization: "Bearer " + token };
+  // const response = await fetch(getLoginStatus, {
+  //   mode: "cors",
+  //   headers: authHeader,
+  // });
+  // if (!response.ok) {
+  //   clearUserSession();
+  //   return false;
+  // }
   return true;
 };

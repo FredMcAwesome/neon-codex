@@ -16,36 +16,12 @@ import type { ISelectedQuality } from "./QualitiesSelect.js";
 import { SkillSelectList } from "./SkillsSelect.js";
 import { GearSelect } from "./GearSelect.js";
 import { GearListType } from "@shadowrun/common";
-import { useFetchWrapper } from "../../utils/authFetch.js";
-import { getSkillList } from "../../utils/api.js";
-import {
-  CustomSkillListType,
-  SkillListSchema,
-  SkillListType,
-} from "@shadowrun/common/src/schemas/skillSchema.js";
-import { useQuery } from "@tanstack/react-query";
-
-const fetchWrapper = useFetchWrapper();
-
-async function fetchSkills() {
-  console.log("fetchSkills: " + getSkillList);
-  const response: Response = await fetchWrapper.get(getSkillList);
-  // https://tanstack.com/query/v4/docs/guides/query-functions#usage-with-fetch-and-other-clients-that-do-not-throw-by-default
-  if (!response.ok) {
-    throw new Error(response.statusText);
-  }
-  const resJson: unknown | SkillListType = await response.json();
-  const parsedRes = SkillListSchema.safeParse(resJson);
-  if (parsedRes.success) {
-    return parsedRes.data;
-  } else {
-    throw new Error(parsedRes.error.issues.toString());
-  }
-}
+import { CustomSkillListType } from "@shadowrun/common/src/schemas/skillSchema.js";
+import { trpc } from "../../utils/trpc.js";
 
 const characterCreatorPath = "/character_creator";
 const CharacterCreator = function () {
-  const { data, error, isError, isLoading } = useQuery(["skills"], fetchSkills);
+  const { data, error, isError, isLoading } = trpc.character.skills.useQuery();
 
   // Character creator holds values of all sub components
   const [priorityInfo, setPriorityInfo] = useState<IPriorities>({
