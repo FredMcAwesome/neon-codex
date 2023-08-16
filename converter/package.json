@@ -1,0 +1,26 @@
+{
+  "name": "@shadowrun/converter",
+  "version": "1.0.0",
+  "description": "This project converts xml files from the chummer5 project to formats understood in this project.",
+  "main": "build/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate": "npx ohm generateBundles --withTypes --esm 'src/grammar/*.ohm'",
+    "move_generated": "cp src/grammar/*.js build/grammar/ && cp src/grammar/*.d.ts build/grammar/",
+    "build_generated": "mkdir -p build/grammar && npm run generate && npm run move_generated",
+    "build": "tsc --build",
+    "clean": "tsc --build --clean",
+    "prestart": "npm run build_generated && npm run build",
+    "start": "node ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ohm-js": "^17.1.0"
+  },
+  "devDependencies": {
+    "@ohm-js/cli": "^2.0.0",
+    "typescript": "^5.1.6"
+  }
+}

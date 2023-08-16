@@ -19,6 +19,7 @@ So far I have only parsed:
 
 To match where I previously was, still need (All parsed, stored in database, then passed through to frontend):
 
+- Armour
 - Bioware
 - Cyberware
 - Vehicles

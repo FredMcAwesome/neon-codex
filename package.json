@@ -4,7 +4,8 @@
     "frontend",
     "backend",
     "common",
-    "database"
+    "database",
+    "converter"
   ],
   "scripts": {
     "build": "npm run build-frontend && npm run build-backend",

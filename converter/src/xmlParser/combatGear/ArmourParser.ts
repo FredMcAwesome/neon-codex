@@ -4,11 +4,12 @@ import { XMLParser } from "fast-xml-parser";
 import path from "path";
 import { fileURLToPath } from "url";
 import * as fs from "fs";
+import { sourceBookXmlEnum } from "../ParserCommonDefines.js";
 import {
   ArmourListXmlSchema,
   ArmourListXmlType,
+  ArmourXmlType,
 } from "./ArmourParserSchema.js";
-import { sourceBookXmlEnum } from "../ParserCommonDefines.js";
 
 const currentPath = import.meta.url;
 const xml_string = fs.readFileSync(
@@ -111,25 +112,45 @@ if (armourListParsed.success) {
 
   console.log(englishArmourList);
 
-  // const armourListConverted = englishArmourList
-  //   // .filter((weapon) => weapon.name === "Osmium Mace")
-  //   .map((armour) => {
-  //     const convertedArmour = convertArmour(armour);
-  //     return convertedArmour;
-  //   });
-  // // console.log(armourListConverted);
-  // const jsonFilePath = fileURLToPath(
-  //   path.dirname(currentPath) + "../../../../jsonFiles/armour.json"
-  // );
-  // fs.writeFile(
-  //   jsonFilePath,
-  //   JSON.stringify(armourListConverted, null, 2),
-  //   (error) => {
-  //     if (error) {
-  //       console.error(error);
-  //     } else {
-  //       console.log(`File written! Saved to: ${jsonFilePath}`);
-  //     }
-  //   }
-  // );
+  const armourListConverted = englishArmourList
+    // .filter((weapon) => weapon.name === "Osmium Mace")
+    .map((armour) => {
+      const convertedArmour = convertArmour(armour);
+      return convertedArmour;
+    });
+  // console.log(armourListConverted);
+  const jsonFilePath = fileURLToPath(
+    path.dirname(currentPath) + "../../../../jsonFiles/armour.json"
+  );
+  fs.writeFile(
+    jsonFilePath,
+    JSON.stringify(armourListConverted, null, 2),
+    (error) => {
+      if (error) {
+        console.error(error);
+      } else {
+        console.log(`File written! Saved to: ${jsonFilePath}`);
+      }
+    }
+  );
+}
+
+function convertArmour(armour: ArmourXmlType) {
+  console.log(`\n${armour.name}`);
+
+  const availability = "convertAvailability(armour.avail, armour.name);";
+  const cost = "convertCost(armour.cost, armour.name);";
+
+  return {
+    name: armour.name,
+    description: "",
+    category: armour.category,
+    ...(armour.rating && { maxRating: armour.rating }),
+    rating: armour.armor,
+    capacity: armour.armorcapacity,
+    availability: availability,
+    cost: cost,
+    source: armour.source,
+    page: armour.page,
+  };
 }

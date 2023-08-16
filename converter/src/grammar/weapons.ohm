@@ -1,0 +1,212 @@
+Accuracy {
+  Exp = Accuracy
+  Accuracy = AddSub
+  AddSub = AddSub "+" MulDiv -- add
+    | AddSub "-" MulDiv -- subtract
+    | MulDiv
+  MulDiv = MulDiv "*" AccuracyValue -- multiply
+    | MulDiv "/" AccuracyValue -- divide
+    | AccuracyValue
+  AccuracyValue = Physical
+    | Missile
+    | Number
+  Physical = "Physical"
+  Missile = "Missile"
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+}
+
+Damage {
+  Exp = Total "/" Total -- multipleDamage
+    | Total "+" Total -- splitDamage
+    | Total "(" Special ")" -- special
+    | Total -- base
+  Total = Overall Annotation Radius -- annotationRadius
+    | Overall Annotation Range -- annotationRange
+    | Overall Annotation -- annotation
+    | Overall Radius -- radius
+    | Overall Range -- range
+    | Overall
+    | Radius -- radiusNoDamage
+  Overall = Damage DamageType -- typed
+    | Damage -- untyped
+  Radius = "(" Number "m Radius)"
+  Range = "(" Number "/m)"
+  Damage = AddSub
+  AddSub = AddSub "+" MulDiv -- add
+    | AddSub "-" MulDiv -- subtract
+    | MulDiv -- base
+  MulDiv = MulDiv "*" SubCalculation -- multiply
+    | MulDiv "/" SubCalculation -- divide
+    | SubCalculation
+  SubCalculation = "(" Damage ")" -- parenthesis
+    | "number(" Damage ">=" Damage ")" -- numberCalc
+    | DamageValue
+  DamageValue = DrugToxin
+    | Missile
+    | PepperPunch
+    | Strength
+    | Magic
+    | Chemical
+    | Rating
+    | Torpedo
+    | Narcoject
+    | Grenade
+    | Special
+    | Number
+  DrugToxin = "As Drug/Toxin"
+  Missile = "Missile"
+  PepperPunch = "As Pepper Punch"
+  Strength = "{STR}" | "({STR})"
+  Magic = "MAG"
+  Chemical = "Chemical"
+  Rating = "Rating"
+  Torpedo = "Torpedo"
+  Narcoject = "as Narcoject"
+  Grenade = "Grenade"
+  Special = "Special"
+  Annotation = caseInsensitive<"(fire)"> -- fire
+    | "(f)" -- flechette
+    | "(e)" -- electrical
+  DamageType = "P" -- physical
+    | "S" -- stun
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+}
+
+ArmourPenetration {
+  Exp = Total
+  Total = ArmourPenetration "//" ArmourPenetration -- multiple
+    | ArmourPenetration -- single
+  ArmourPenetration = AddSub
+  AddSub = AddSub "+" MulDiv -- add
+    | AddSub "-" MulDiv -- subtract
+    | MulDiv -- base
+  MulDiv = MulDiv "*" NegativeAP -- multiply
+    | MulDiv "/" NegativeAP -- divide
+    | NegativeAP
+  NegativeAP = "-" SubCalculation -- negative
+    | SubCalculation -- base
+  SubCalculation = "(" AddSub ")" -- parenthesis
+    | APValue
+  APValue = Grenade
+    | Missile
+    | Rating
+    | Special
+    | Magic
+    | Number
+    | Nil
+  Grenade = "Grenade"
+  Missile = "Missile"
+  Rating = "Rating"
+  Special = "Special"
+  Magic = "Mag" | "{MAG}"
+  Nil = "-"
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+}
+
+Mode {
+  Exp = Total
+  Total = Total "/" Mode -- multiple
+    | Mode -- single
+  Mode = BF
+    | FA
+    | SS
+    | SA
+    | Nil
+  BF = "BF"
+  FA = "FA"
+  SS = "SS"
+  SA = "SA"
+  Nil = "0" | "-"
+}
+
+Ammo {
+  Exp = Total
+  Total = Multiple
+    | Ammo -- single
+  Multiple = Total "/" Ammo
+    | Total "or" Ammo
+    | Total "+" Ammo
+  Ammo = Number ReloadMethod "x" Number -- multipleBarrels
+    | Number ReloadMethod -- base
+    | Number "x" Number ReloadMethod -- multipleAmmoNeeded
+    | Number -- noReload
+    | ReloadMethod -- external
+  ReloadMethod = Break
+    | Clip
+    | Drum
+    | MuzzleLoader
+    | InternalMagazine
+    | Cylinder
+    | BeltFed
+    | Tank
+    | External
+    | Energy
+    | CapAndBall
+  Break = "(b)"
+  Clip = "(c)"
+  Drum = "(d)"
+  MuzzleLoader = caseInsensitive<"(ml)">
+  InternalMagazine = "(m)"
+  Cylinder = "(cy)"
+  BeltFed = "(belt)"
+  Tank = "(tank)"
+  External = "External Source" | "energy"
+  Energy = "Energy"
+  CapAndBall = "(cb)"
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+}
+
+Availability {
+  Exp = Availability
+  Availability = Next Restriction -- full
+    | Next -- partial
+  Next = AddSub 
+    | "(" AddSub ")" -- parenthesis
+  AddSub = AddSub "+" MulDiv -- add
+    | AddSub "-" MulDiv -- subtract
+    | MulDiv -- base
+  MulDiv = MulDiv "*" AvailabilityValue -- multiply
+    | MulDiv "/" AvailabilityValue -- divide
+    | AvailabilityValue
+  AvailabilityValue = Number
+    | Rating
+  Rating = "Rating" | "{Rating}"
+  Restriction = Restricted
+    | Forbidden
+  Restricted = "R"
+  Forbidden = "F"
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+}
+
+Cost {
+  Exp = Cost
+  Cost = AddSub
+  AddSub = AddSub "+" MulDiv -- add
+    | AddSub "-" MulDiv -- subtract
+    | MulDiv -- base
+  MulDiv = MulDiv "*" CostValue -- multiply
+    | MulDiv "/" CostValue -- divide
+    | CostValue
+  CostValue = Number
+    | Rating
+  Rating = "{Rating}"
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+}

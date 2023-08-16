@@ -72,10 +72,10 @@ export const getWeapons = function (
   const currentPath = import.meta.url;
 
   let weaponsUnlinked: WeaponUnlinkedSummaryListType | undefined = undefined;
+  const relativeConverterPath = "converter/jsonFiles/weapons.json";
+  const rootPath = "../../../../../";
   const jsonString = fs.readFileSync(
-    fileURLToPath(
-      path.dirname(currentPath) + "../../../jsonFiles/weapons.json"
-    ),
+    fileURLToPath(path.dirname(currentPath) + rootPath + relativeConverterPath),
     "utf8"
   );
 

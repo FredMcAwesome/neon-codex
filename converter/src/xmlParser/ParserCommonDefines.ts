@@ -1,4 +1,4 @@
-import { gearCategoryEnum } from "@shadowrun/common/src/enums.js";
+import { gearCategoryEnum } from "@shadowrun/common/build/enums.js";
 import { z as zod } from "zod";
 
 export enum sourceBookXmlEnum {

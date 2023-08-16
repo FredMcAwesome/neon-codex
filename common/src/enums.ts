@@ -122,6 +122,7 @@ export enum damageCalculationOptionEnum {
   Rating = "Rating",
   Torpedo = "Torpedo",
   Narcoject = "Narcoject",
+  Special = "Special",
 }
 
 export enum armourPenetrationEnum {
@@ -191,6 +192,14 @@ export enum ammunitionTypeEnum {
   Grenades = "Grenades",
   RocketsMissiles = "Rockets/Missiles",
   ProjectileAmmo = "Projectile",
+}
+
+export enum rangeTypeEnum {
+  Strength = "Strength",
+}
+
+export enum armourTypeEnum {
+  Rating = "Rating",
 }
 
 export enum availabilityTypeEnum {
@@ -413,7 +422,7 @@ export enum droneSubtypeEnum {
 }
 
 export enum ammoOptionEnum {
-  "Weapon",
+  Weapon = "Weapon",
 }
 
 export enum sourceBookEnum {

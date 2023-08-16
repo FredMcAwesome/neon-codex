@@ -67,16 +67,29 @@ const AmmoInformationSchema = zod.object({
 });
 export type AmmoInformationType = zod.infer<typeof AmmoInformationSchema>;
 
-export const AmmoCapacityCalculationSchema = zod.array(
-  zod.union([
-    zod.number(),
-    zod.object({ option: zod.nativeEnum(ammoOptionEnum) }),
-    zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }),
-  ])
-);
-export type AmmoCapacityCalculationType = zod.infer<
-  typeof AmmoCapacityCalculationSchema
+export const AmmoCapacityCalculationSubnumberSchema = zod.union([
+  zod.number(),
+  zod.object({ option: zod.nativeEnum(ammoOptionEnum) }),
+  zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }),
+]);
+
+export type AmmoCapacityCalculationType = Array<
+  | zod.infer<typeof AmmoCapacityCalculationSubnumberSchema>
+  | {
+      subnumbers?: AmmoCapacityCalculationType;
+    }
 >;
+export const AmmoCapacityCalculationSchema: zod.ZodType<AmmoCapacityCalculationType> =
+  zod.array(
+    zod.union([
+      AmmoCapacityCalculationSubnumberSchema,
+      zod
+        .object({
+          subnumbers: zod.lazy(() => AmmoCapacityCalculationSchema),
+        })
+        .strict(),
+    ])
+  );
 
 export const hostWeaponMountsRequiredSchema = zod.array(
   zod.array(zod.nativeEnum(firearmAccessoryMountLocationEnum))

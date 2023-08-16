@@ -1,0 +1,22 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    // allow top level await for models
+    "target": "ES2022",
+    "rootDir": "./src",
+    "outDir": "./build",
+    "module": "NodeNext",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "src/tests"],
+  "references": [
+    {
+      "path": "../common"
+    },
+    {
+      "path": "../database"
+    }
+  ]
+}

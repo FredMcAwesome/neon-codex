@@ -11,10 +11,10 @@ import { WeaponAccessories } from "../../models/gear/combatGear/weaponAccessoryM
 export const getWeaponAccessories = function () {
   const currentPath = import.meta.url;
   let weaponAccessories: WeaponAccessorySummaryListType | undefined = undefined;
+  const relativeConverterPath = "converter/jsonFiles/weaponAccessories.json";
+  const rootPath = "../../../../../";
   const jsonString = fs.readFileSync(
-    fileURLToPath(
-      path.dirname(currentPath) + "../../../jsonFiles/weaponAccessories.json"
-    ),
+    fileURLToPath(path.dirname(currentPath) + rootPath + relativeConverterPath),
     "utf8"
   );
 

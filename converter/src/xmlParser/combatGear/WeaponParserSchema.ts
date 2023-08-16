@@ -1,9 +1,9 @@
-import { gearCategoryEnum } from "@shadowrun/common/src/enums.js";
+import { gearCategoryEnum } from "@shadowrun/common/build/enums.js";
 import {
   weaponXmlSubtypeEnum,
   WeaponXmlSubtypeSchema,
-} from "@shadowrun/common/src/schemas/commonSchema.js";
-import { MountSchema } from "@shadowrun/common/src/schemas/weaponSchemas.js";
+} from "@shadowrun/common/build/schemas/commonSchema.js";
+import { MountSchema } from "@shadowrun/common/build/schemas/weaponSchemas.js";
 import { z as zod } from "zod";
 import {
   GearXmlSchema,

@@ -36,7 +36,7 @@ cd database &&
 NODE_ENV=test npx ts-node-esm ./src/create-schema.ts &&
 NODE_ENV=development npx ts-node-esm ./src/create-schema.ts
 ```
-Fill tables with sample data:
+Fill tables with initial data:
 ```shell
 export MIKRO_ORM_CLI='./src/mikro-orm_seeder.config.ts' && 
 export MIKRO_ORM_SEEDER_PATH='./src/seeders/' &&

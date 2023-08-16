@@ -1,0 +1,13 @@
+Range {
+  Exp = Range
+  Range = Range "*" RangeValue -- multiply
+    | Range "/" RangeValue -- divide
+    | RangeValue
+  RangeValue = Strength
+    | Number
+  Strength = "{STR}"
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+}

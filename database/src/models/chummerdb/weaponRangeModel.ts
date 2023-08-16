@@ -1,5 +1,5 @@
 import { Entity, PrimaryKey, Property } from "@mikro-orm/core";
-import type { GenericCalculationType } from "@shadowrun/common/src/schemas/weaponSchemas.js";
+import type { RangeIncrementType } from "@shadowrun/common/src/schemas/weaponSchemas.js";
 
 @Entity({
   discriminatorColumn: "type",
@@ -13,17 +13,17 @@ export abstract class WeaponRanges {
   name!: string;
 
   @Property({ type: "json" })
-  min!: GenericCalculationType;
+  min!: RangeIncrementType;
 
   @Property({ type: "json" })
-  short!: GenericCalculationType;
+  short!: RangeIncrementType;
 
   @Property({ type: "json" })
-  medium!: GenericCalculationType;
+  medium!: RangeIncrementType;
 
   @Property({ type: "json" })
-  long!: GenericCalculationType;
+  long!: RangeIncrementType;
 
   @Property({ type: "json" })
-  extreme!: GenericCalculationType;
+  extreme!: RangeIncrementType;
 }

@@ -1,5 +1,5 @@
 import { mathOperatorEnum } from "@shadowrun/common";
-import { sourceBookEnum } from "@shadowrun/common/src/enums.js";
+import { sourceBookEnum } from "@shadowrun/common/build/enums.js";
 import assert from "assert";
 import { sourceBookXmlEnum } from "./ParserCommonDefines.js";
 

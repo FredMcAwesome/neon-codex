@@ -4,8 +4,12 @@ import {
   attributeTypeEnum,
   skillCategoryEnum,
   standardCalculationEnum,
-} from "@shadowrun/common/src/enums.js";
-import type { SkillType } from "@shadowrun/common/src/schemas/skillSchema.js";
+} from "@shadowrun/common/build/enums.js";
+import {
+  SkillListSchema,
+  SkillSchema,
+  SkillType,
+} from "@shadowrun/common/build/schemas/skillSchema.js";
 import assert from "assert";
 import { XMLParser } from "fast-xml-parser";
 import fs from "fs";
@@ -107,47 +111,60 @@ const SkillXmlSchema = zod
 const SkillListXmlSchema = zod.array(SkillXmlSchema);
 type SkillXmlType = zod.infer<typeof SkillXmlSchema>;
 
-const currentPath = import.meta.url;
-const xml_string = fs.readFileSync(
-  fileURLToPath(path.dirname(currentPath) + "../../../xmls/skills.xml"),
-  "utf8"
-);
-const parser = new XMLParser({
-  ignoreAttributes: false,
-  attributeNamePrefix: "_",
-  textNodeName: "xmltext",
-});
-const jObj: any = parser.parse(xml_string);
-// console.log(jObj.chummer.skills.skill[18]);
-const skillListParsed = SkillListXmlSchema.safeParse(
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  jObj.chummer.skills.skill
-);
-
-// console.log(jObj.chummer.weapons.weapon[356]);
-if (skillListParsed.success) console.log("all g");
-else {
-  console.log(skillListParsed.error.errors[0]);
-}
-
-if (skillListParsed.success) {
-  const skillList = skillListParsed.data;
-  const skillListConverted = skillList.map((skill: SkillXmlType) => {
-    return convertSkill(skill);
+export function ParseSkills() {
+  const currentPath = import.meta.url;
+  const xml_string = fs.readFileSync(
+    fileURLToPath(path.dirname(currentPath) + "../../../../xmls/skills.xml"),
+    "utf8"
+  );
+  const parser = new XMLParser({
+    ignoreAttributes: false,
+    attributeNamePrefix: "_",
+    textNodeName: "xmltext",
   });
-  console.log(skillListConverted);
-  const jsonFilePath = fileURLToPath(
-    path.dirname(currentPath) + "../../../../jsonFiles/skills.json"
+  const jObj: any = parser.parse(xml_string);
+  // console.log(jObj.chummer.skills.skill[18]);
+  const skillListParsed = SkillListXmlSchema.safeParse(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    jObj.chummer.skills.skill
   );
-  fs.writeFile(
-    jsonFilePath,
-    JSON.stringify(skillListConverted, null, 2),
-    (error) => {
-      if (error) {
-        console.error(error);
-      } else {
-        console.log(`File written! Saved to: ${jsonFilePath}`);
+
+  // console.log(jObj.chummer.skills.skill[356]);
+  if (skillListParsed.success) console.log("all g");
+  else {
+    console.log(skillListParsed.error.errors[0]);
+  }
+
+  if (skillListParsed.success) {
+    const skillList = skillListParsed.data;
+    const skillListConverted = skillList.map((skill: SkillXmlType) => {
+      const convertedSkill = convertSkill(skill);
+      const check = SkillSchema.safeParse(convertedSkill);
+      if (!check.success) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        console.log(convertedSkill);
+        throw new Error(check.error.message);
       }
+      return convertedSkill;
+    });
+    // console.log(skillListConverted);
+    const check = SkillListSchema.safeParse(skillListConverted);
+    if (!check.success) {
+      throw new Error(check.error.message);
     }
-  );
+    const jsonFilePath = fileURLToPath(
+      path.dirname(currentPath) + "../../../../jsonFiles/skills.json"
+    );
+    fs.writeFile(
+      jsonFilePath,
+      JSON.stringify(skillListConverted, null, 2),
+      (error) => {
+        if (error) {
+          console.error(error);
+        } else {
+          console.log(`File written! Saved to: ${jsonFilePath}`);
+        }
+      }
+    );
+  }
 }

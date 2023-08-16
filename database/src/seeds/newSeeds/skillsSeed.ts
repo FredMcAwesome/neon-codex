@@ -11,8 +11,10 @@ import { Skills } from "../../models/chummerdb/skillModel.js";
 export const getSkills = function () {
   const currentPath = import.meta.url;
   let skills: SkillListType | undefined = undefined;
+  const relativeConverterPath = "converter/jsonFiles/skills.json";
+  const rootPath = "../../../../../";
   const jsonString = fs.readFileSync(
-    fileURLToPath(path.dirname(currentPath) + "../../../jsonFiles/skills.json"),
+    fileURLToPath(path.dirname(currentPath) + rootPath + relativeConverterPath),
     "utf8"
   );
 

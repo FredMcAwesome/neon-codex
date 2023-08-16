@@ -5,18 +5,21 @@ import {
 import {
   ammoOptionEnum,
   ammoSourceEnum,
+  availabilityTypeEnum,
+  costTypeEnum,
   damageAnnotationEnum,
   damageTypeEnum,
   firearmWeaponTypeEnum,
   projectileWeaponTypeEnum,
+  restrictionEnum,
   weaponTypeEnum,
-} from "@shadowrun/common/src/enums.js";
-import { weaponXmlSubtypeEnum } from "@shadowrun/common/src/schemas/commonSchema.js";
+} from "@shadowrun/common/build/enums.js";
+import { weaponXmlSubtypeEnum } from "@shadowrun/common/build/schemas/commonSchema.js";
 import {
   AmmoInformationType,
   weaponDamageRequirementsType,
   accessoryWeaponRequirementsType,
-} from "@shadowrun/common/src/schemas/weaponAccessorySchema.js";
+} from "@shadowrun/common/build/schemas/weaponAccessorySchema.js";
 import assert from "assert";
 import equal from "fast-deep-equal";
 import { parseCharacter, convertSpecial } from "../ParserHelper.js";
@@ -25,85 +28,198 @@ import {
   RequiredWeaponDetailsXmlType,
   XmlCategoryOrOperationType,
 } from "./WeaponAccessoryParserSchema.js";
-import { removeUnneededCharacters } from "./WeaponParserHelper.js";
+import WeaponAccessories from "../../grammar/weaponAccessories.ohm-bundle.js";
+const ModifyAmmoCapacity = WeaponAccessories.ModifyAmmoCapacity;
+// const Accuracy = WeaponAccessories.Accuracy;
+// const Damage = WeaponAccessories.Damage;
+// const ArmourPenetration = WeaponAccessories.ArmourPenetration;
+// const Mode = WeaponAccessories.Mode;
+// const Ammo = WeaponAccessories.Ammo;
+const Availability = WeaponAccessories.Availability;
+const Cost = WeaponAccessories.Cost;
 
-export const convertModifyAmmoCapacity = function (
-  modifyammocapacity: string,
-  name: string
-) {
-  console.log(`Modify Ammo Capacity: ${modifyammocapacity}`);
-  let genericList: Array<{ operator: mathOperatorEnum } | string | number> = [];
-  let ammoCapacityList: Array<
-    | { operator: mathOperatorEnum }
-    | { option: ammoOptionEnum }
-    | string
-    | number
-  > = [];
-  Array.from(modifyammocapacity).forEach((character) => {
-    genericList = parseCharacter(character, genericList, true);
-  });
+const modifyAmmoCapacitySemantics = ModifyAmmoCapacity.createSemantics();
+modifyAmmoCapacitySemantics.addOperation("eval", {
+  FirstOperator_multiply(_, range) {
+    return [{ operator: mathOperatorEnum.Multiply }].concat(range.eval());
+  },
+  FirstOperator_divide(_, range) {
+    return [{ operator: mathOperatorEnum.Divide }].concat(range.eval());
+  },
+  FirstOperator_add(_, range) {
+    return [{ operator: mathOperatorEnum.Add }].concat(range.eval());
+  },
+  FirstOperator_subtract(_, range) {
+    return [{ operator: mathOperatorEnum.Subtract }].concat(range.eval());
+  },
+  AddSub_add(str, _, range) {
+    return str
+      .eval()
+      .concat([{ operator: mathOperatorEnum.Add }], range.eval());
+  },
+  AddSub_subtract(str, _, range) {
+    return str
+      .eval()
+      .concat([{ operator: mathOperatorEnum.Subtract }], range.eval());
+  },
+  MulDiv_multiply(str, _, range) {
+    return str
+      .eval()
+      .concat([{ operator: mathOperatorEnum.Multiply }], range.eval());
+  },
+  MulDiv_divide(str, _, range) {
+    return str
+      .eval()
+      .concat([{ operator: mathOperatorEnum.Divide }], range.eval());
+  },
+  SubCalculation_parenthesis(_a, damage, _b) {
+    return {
+      subnumbers: damage.eval(),
+    };
+  },
+  ModifyValue(value) {
+    return [value.eval()];
+  },
+  Weapon(_) {
+    return { option: ammoOptionEnum.Weapon };
+  },
+  Number(damage) {
+    return damage.eval();
+  },
+  Number_negative(_, range) {
+    return -range.eval();
+  },
+  PositiveNumber_float(rangeInt, _, rangeDecimal) {
+    return parseFloat(rangeInt.sourceString + "." + rangeDecimal.sourceString);
+  },
+  PositiveNumber_int(range) {
+    return parseInt(range.sourceString);
+  },
+});
 
-  let conversionInfo = convertSpecial(
-    { propertyList: genericList, insertLocationList: [] },
-    "div"
-  );
-  conversionInfo = convertSpecial(conversionInfo, "Weapon");
-  ammoCapacityList = conversionInfo.propertyList;
-  let locationCounter = 0;
-  conversionInfo.insertLocationList.forEach((insertLocation) => {
-    const replaceString = insertLocation.value;
+const availabilitySemantics = Availability.createSemantics();
+availabilitySemantics.addOperation("eval", {
+  Exp_addition(_, availability) {
+    return { ...availability.eval(), modifier: mathOperatorEnum.Add };
+  },
+  Availability_full(availability, restriction) {
+    return { rating: availability.eval(), restriction: restriction.eval() };
+  },
+  Availability_partial(availability) {
+    return {
+      rating: availability.eval(),
+      restriction: restrictionEnum.Legal,
+    };
+  },
+  AddSub_add(str, _, range) {
+    return str
+      .eval()
+      .concat([{ operator: mathOperatorEnum.Add }], range.eval());
+  },
+  AddSub_subtract(str, _, range) {
+    return str
+      .eval()
+      .concat([{ operator: mathOperatorEnum.Subtract }], range.eval());
+  },
+  MulDiv_multiply(str, _, range) {
+    return [
+      {
+        subnumbers: str
+          .eval()
+          .concat([{ operator: mathOperatorEnum.Multiply }], range.eval()),
+      },
+    ];
+  },
+  MulDiv_divide(str, _, range) {
+    return [
+      {
+        subnumbers: str
+          .eval()
+          .concat([{ operator: mathOperatorEnum.Divide }], range.eval()),
+      },
+    ];
+  },
+  AvailabilityValue(availability) {
+    return [availability.eval()];
+  },
+  Number(availability) {
+    return availability.eval();
+  },
+  Number_negative(_, range) {
+    return -range.eval();
+  },
+  PositiveNumber_float(rangeInt, _, rangeDecimal) {
+    return parseFloat(rangeInt.sourceString + "." + rangeDecimal.sourceString);
+  },
+  PositiveNumber_int(range) {
+    return parseInt(range.sourceString);
+  },
+  Rating(_) {
+    return { option: availabilityTypeEnum.Rating };
+  },
+  Restriction(restriction) {
+    return restriction.eval();
+  },
+  Restricted(_) {
+    return restrictionEnum.Restricted;
+  },
+  Forbidden(_) {
+    return restrictionEnum.Forbidden;
+  },
+});
 
-    if (replaceString === "div") {
-      const operator = mathOperatorEnum.Divide;
-      if (ammoCapacityList.length > 0) {
-        ammoCapacityList.splice(insertLocation.location + locationCounter, 0, {
-          operator: operator,
-        });
-      } else {
-        ammoCapacityList[0] = { operator: operator };
-      }
-      locationCounter++;
-    } else if (replaceString === "Weapon") {
-      const option = ammoOptionEnum.Weapon;
-      if (ammoCapacityList.length > 0) {
-        ammoCapacityList.splice(insertLocation.location + locationCounter, 0, {
-          option: option,
-        });
-      } else {
-        ammoCapacityList[0] = { option: option };
-      }
-    } else {
-      assert(false, "Special string not replaced!");
-    }
-    locationCounter++;
-  });
-
-  ammoCapacityList = removeUnneededCharacters(ammoCapacityList);
-
-  ammoCapacityList.forEach((ammoCapacity, index) => {
-    let check = false;
-    if (typeof ammoCapacity === "number") {
-      check = true;
-    } else {
-      Object.values(mathOperatorEnum).forEach((operator) => {
-        if (equal(ammoCapacity, { operator: operator })) check = true;
-      });
-      Object.values(ammoOptionEnum).forEach((option) => {
-        if (equal(ammoCapacity, { option: option })) check = true;
-      });
-    }
-    // console.log(
-    //   ammoCapacityList[index]
-    // );
-    assert(
-      check,
-      `Weapon name: ${name}, list length: ${ammoCapacityList.length}, failed item: ${ammoCapacity} at index: ${index}`
-    );
-  });
-  return ammoCapacityList as Array<
-    { operator: mathOperatorEnum } | { option: ammoOptionEnum } | number
-  >;
-};
+const costSemantics = Cost.createSemantics();
+costSemantics.addOperation("eval", {
+  AddSub_add(str, _, range) {
+    return str
+      .eval()
+      .concat([{ operator: mathOperatorEnum.Add }], range.eval());
+  },
+  AddSub_subtract(str, _, range) {
+    return str
+      .eval()
+      .concat([{ operator: mathOperatorEnum.Subtract }], range.eval());
+  },
+  MulDiv_multiply(str, _, range) {
+    return [
+      {
+        subnumbers: str
+          .eval()
+          .concat([{ operator: mathOperatorEnum.Multiply }], range.eval()),
+      },
+    ];
+  },
+  MulDiv_divide(str, _, range) {
+    return [
+      {
+        subnumbers: str
+          .eval()
+          .concat([{ operator: mathOperatorEnum.Divide }], range.eval()),
+      },
+    ];
+  },
+  CostValue(cost) {
+    return [cost.eval()];
+  },
+  Rating(_) {
+    return { option: costTypeEnum.Rating };
+  },
+  Weapon(_) {
+    return { option: costTypeEnum.Weapon };
+  },
+  Number(availability) {
+    return availability.eval();
+  },
+  Number_negative(_, range) {
+    return -range.eval();
+  },
+  PositiveNumber_float(rangeInt, _, rangeDecimal) {
+    return parseFloat(rangeInt.sourceString + "." + rangeDecimal.sourceString);
+  },
+  PositiveNumber_int(range) {
+    return parseInt(range.sourceString);
+  },
+});
 
 export const convertAmmoReplace = function (
   ammoReplace: string | number,
@@ -349,13 +465,11 @@ export const convertWeaponDetails = function (
 };
 
 export const convertRequirements = function (
-  xmlRequirements: WeaponAccessoryRequiredXmlType | undefined,
-  name: string
+  xmlRequirements: WeaponAccessoryRequiredXmlType | undefined
 ): accessoryWeaponRequirementsType | undefined {
   if (typeof xmlRequirements === "undefined") {
     return undefined;
   }
-  console.log(name);
   console.log("Requirements: " + JSON.stringify(xmlRequirements));
   let weaponRequirements: accessoryWeaponRequirementsType | undefined =
     undefined;
@@ -460,6 +574,7 @@ export const getWeaponMounts = function (mounts: string | undefined) {
     }
   }) as Array<firearmAccessoryMountLocationEnum>;
 };
+
 function getCategories<Type>(
   categoryArray: Array<XmlCategoryOrOperationType>,
   requiredCategory: Array<
@@ -565,3 +680,5 @@ function getCategories<Type>(
   });
   return requiredCategory;
 }
+
+export { modifyAmmoCapacitySemantics, availabilitySemantics, costSemantics };
