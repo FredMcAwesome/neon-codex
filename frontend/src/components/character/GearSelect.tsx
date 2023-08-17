@@ -30,10 +30,7 @@ import { CollapsibleDiv } from "../../utils/CollapsibleDiv.js";
 // import { MagicGearType } from "@shadowrun/common/src/schemas/magicalSchemas.js";
 // import { VehiclesAndDronesType } from "@shadowrun/common/src/schemas/riggerSchema.js";
 import { CollapsibleGearDiv } from "./GearHelper.js";
-import {
-  costCalculation,
-  genericListCalculation,
-} from "../../utils/calculations.js";
+import { costCalculation } from "../../utils/calculations.js";
 import {
   WeaponUnlinkedSummaryListType,
   WeaponUnlinkedSummaryType,
@@ -71,9 +68,14 @@ export const GearSelect = function (props: IProps) {
     props.setGearSelected(gear);
     props.setNuyen(
       props.nuyen -
-        costCalculation(weapon.cost, {
-          rating: genericListCalculation(weapon.availability.rating, {}),
-        })
+        costCalculation(
+          weapon.cost,
+          weapon.rating !== undefined
+            ? {
+                rating: weapon.rating,
+              }
+            : {}
+        )
     );
   };
   const removeWeapon = function (
@@ -86,9 +88,14 @@ export const GearSelect = function (props: IProps) {
       props.setGearSelected(gear);
       props.setNuyen(
         props.nuyen +
-          costCalculation(weapon.cost, {
-            rating: genericListCalculation(weapon.availability.rating, {}),
-          })
+          costCalculation(
+            weapon.cost,
+            weapon.rating !== undefined
+              ? {
+                  rating: weapon.rating,
+                }
+              : {}
+          )
       );
     } else {
       console.error("No weapon at index: " + index);

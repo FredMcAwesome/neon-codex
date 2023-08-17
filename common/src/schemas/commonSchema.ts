@@ -40,7 +40,7 @@ export const AvailabilityRatingSubnumberSchema = zod.union([
 export type AvailabilityRatingType = Array<
   | zod.infer<typeof AvailabilityRatingSubnumberSchema>
   | {
-      subnumbers?: AvailabilityRatingType;
+      subnumbers: AvailabilityRatingType;
     }
 >;
 export const AvailabilityRatingSchema: zod.ZodType<AvailabilityRatingType> =
@@ -83,7 +83,7 @@ const InnerCostSchema = zod.union([
 ]);
 
 export type CostType = Array<
-  zod.infer<typeof InnerCostSchema> | { subnumbers?: CostType }
+  zod.infer<typeof InnerCostSchema> | { subnumbers: CostType }
 >;
 export const CostSchema: zod.ZodType<CostType> = zod.array(
   zod.union([

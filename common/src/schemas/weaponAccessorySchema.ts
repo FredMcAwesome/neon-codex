@@ -76,7 +76,7 @@ export const AmmoCapacityCalculationSubnumberSchema = zod.union([
 export type AmmoCapacityCalculationType = Array<
   | zod.infer<typeof AmmoCapacityCalculationSubnumberSchema>
   | {
-      subnumbers?: AmmoCapacityCalculationType;
+      subnumbers: AmmoCapacityCalculationType;
     }
 >;
 export const AmmoCapacityCalculationSchema: zod.ZodType<AmmoCapacityCalculationType> =

@@ -40,8 +40,13 @@ export async function getLoginStatus({
   if (typeof bearerHeader !== "undefined") {
     const token = getToken(bearerHeader);
     if (token) {
-      const decoded = jwt.verify(token, TOKEN_SECRET) as jwtUsername;
-      if (decoded && decoded.username) {
+      let decoded;
+      try {
+        decoded = jwt.verify(token, TOKEN_SECRET) as jwtUsername;
+      } catch (e) {
+        if (e instanceof Error) console.log(e.message);
+      }
+      if (decoded !== undefined && decoded.username) {
         const user = await Database.userRepository.findOne({
           username: decoded.username,
         });

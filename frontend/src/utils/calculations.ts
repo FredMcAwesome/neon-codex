@@ -1,4 +1,4 @@
-import { CostType, mathOperatorEnum } from "@shadowrun/common";
+import { CostType, costTypeEnum, mathOperatorEnum } from "@shadowrun/common";
 import { GearCalculationType } from "@shadowrun/common/src/schemas/commonSchema.js";
 
 export const genericListCalculation = function (
@@ -65,7 +65,7 @@ export const genericListCalculation = function (
 export const costCalculation = function (
   costArray: CostType,
   options: {
-    rating: number;
+    rating?: number;
     weapon?: number;
     chemical?: number;
     sensor?: number;
@@ -83,25 +83,29 @@ export const costCalculation = function (
       if (typeof costItem === "number") {
         nextValue = costItem;
       } else {
-        switch (costItem.option) {
-          case "Rating":
-            nextValue = options.rating;
-            break;
-          case "Weapon":
-            nextValue = options.weapon || 0;
-            break;
-          case "Chemical":
-            nextValue = options.chemical || 0;
-            break;
-          case "Sensor":
-            nextValue = options.sensor || 0;
-            break;
-          case "Capacity":
-            nextValue = options.capacity || 0;
-            break;
-          case "Force":
-            nextValue = options.force || 0;
-            break;
+        if (typeof costItem === "object" && "subnumbers" in costItem) {
+          nextValue = costCalculation(costItem.subnumbers, options);
+        } else {
+          switch (costItem.option) {
+            case costTypeEnum.Rating:
+              nextValue = options.rating || 0;
+              break;
+            case costTypeEnum.Weapon:
+              nextValue = options.weapon || 0;
+              break;
+            // case "Chemical":
+            //   nextValue = options.chemical || 0;
+            //   break;
+            // case "Sensor":
+            //   nextValue = options.sensor || 0;
+            //   break;
+            // case "Capacity":
+            //   nextValue = options.capacity || 0;
+            //   break;
+            // case "Force":
+            //   nextValue = options.force || 0;
+            //   break;
+          }
         }
       }
       switch (nextOperation) {

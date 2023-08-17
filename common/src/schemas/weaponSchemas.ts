@@ -54,7 +54,7 @@ export const AccuracySubnumberSchema = zod.union([
 export type AccuracyType = Array<
   | zod.infer<typeof AccuracySubnumberSchema>
   | {
-      subnumbers?: AccuracyType;
+      subnumbers: AccuracyType;
     }
 >;
 export const AccuracySchema: zod.ZodType<AccuracyType> = zod.array(
@@ -85,7 +85,7 @@ export const DamageSubnumberSchema = zod.union([
 export type DamageAmountType = Array<
   | zod.infer<typeof DamageSubnumberSchema>
   | {
-      subnumbers?: DamageAmountType;
+      subnumbers: DamageAmountType;
     }
 >;
 export const DamageAmountSchema: zod.ZodType<DamageAmountType> = zod.array(
@@ -170,7 +170,7 @@ export type FirearmOptionsType = zod.infer<typeof FirearmOptionsSchema>;
 export const Mode = zod.array(zod.nativeEnum(firearmModeEnum));
 export type ModeType = zod.infer<typeof Mode>;
 
-// outer array is different ap values, inner is ap calculation for one ap value
+// outer array is different ap values, inner is calculation for one ap value
 export const ArmourPenetrationSubnumberSchema = zod.union([
   zod.object({ option: zod.nativeEnum(armourPenetrationEnum) }),
   zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
@@ -179,7 +179,7 @@ export const ArmourPenetrationSubnumberSchema = zod.union([
 export type SingleArmourPenetrationType = Array<
   | zod.infer<typeof ArmourPenetrationSubnumberSchema>
   | {
-      subnumbers?: SingleArmourPenetrationType;
+      subnumbers: SingleArmourPenetrationType;
     }
 >;
 export const SingleArmourPenetrationSchema: zod.ZodType<SingleArmourPenetrationType> =
@@ -286,6 +286,7 @@ export const WeaponUnlinkedSummarySchema = zod
     wireless: zod.optional(zod.string()),
     relatedSkill: zod.string(),
     relatedSkillSpecialisations: zod.optional(zod.array(zod.string())),
+    rating: zod.optional(zod.number()),
     source: zod.nativeEnum(sourceBookEnum),
     page: zod.number(),
   })
