@@ -15338,14 +15338,11 @@
     "name": "Claws (Bio-Weapon)",
     "description": "",
     "typeInformation": {
-      "type": "Firearm",
+      "type": "Melee",
       "subtype": "Bio-Weapons",
-      "firearmOptions": {
-        "mode": ["N/A"],
-        "recoilCompensation": 0,
-        "ammoSlots": 1
-      },
-      "range": ["Bio-Weapon"]
+      "meleeOptions": {
+        "reach": 0
+      }
     },
     "concealability": 0,
     "accuracy": [
@@ -15403,14 +15400,11 @@
     "name": "Retractable Claws (Bio-Weapon)",
     "description": "",
     "typeInformation": {
-      "type": "Firearm",
+      "type": "Melee",
       "subtype": "Bio-Weapons",
-      "firearmOptions": {
-        "mode": ["N/A"],
-        "recoilCompensation": 0,
-        "ammoSlots": 1
-      },
-      "range": ["Bio-Weapon"]
+      "meleeOptions": {
+        "reach": 0
+      }
     },
     "concealability": 0,
     "accuracy": [
@@ -15468,14 +15462,11 @@
     "name": "Electrical Discharge",
     "description": "",
     "typeInformation": {
-      "type": "Firearm",
+      "type": "Melee",
       "subtype": "Bio-Weapons",
-      "firearmOptions": {
-        "mode": ["N/A"],
-        "recoilCompensation": 0,
-        "ammoSlots": 1
-      },
-      "range": ["Bio-Weapon"]
+      "meleeOptions": {
+        "reach": 0
+      }
     },
     "concealability": 0,
     "accuracy": [
@@ -15529,14 +15520,11 @@
     "name": "Fangs (Bio-Weapon)",
     "description": "",
     "typeInformation": {
-      "type": "Firearm",
+      "type": "Melee",
       "subtype": "Bio-Weapons",
-      "firearmOptions": {
-        "mode": ["N/A"],
-        "recoilCompensation": 0,
-        "ammoSlots": 1
-      },
-      "range": ["Bio-Weapon"]
+      "meleeOptions": {
+        "reach": 0
+      }
     },
     "concealability": 0,
     "accuracy": [3],
@@ -15590,14 +15578,11 @@
     "name": "Retractable Fangs (Bio-Weapon)",
     "description": "",
     "typeInformation": {
-      "type": "Firearm",
+      "type": "Melee",
       "subtype": "Bio-Weapons",
-      "firearmOptions": {
-        "mode": ["N/A"],
-        "recoilCompensation": 0,
-        "ammoSlots": 1
-      },
-      "range": ["Bio-Weapon"]
+      "meleeOptions": {
+        "reach": 0
+      }
     },
     "concealability": 0,
     "accuracy": [3],
@@ -15651,14 +15636,11 @@
     "name": "Horns (Bio-Weapon)",
     "description": "",
     "typeInformation": {
-      "type": "Firearm",
+      "type": "Melee",
       "subtype": "Bio-Weapons",
-      "firearmOptions": {
-        "mode": ["N/A"],
-        "recoilCompensation": 0,
-        "ammoSlots": 1
-      },
-      "range": ["Bio-Weapon"]
+      "meleeOptions": {
+        "reach": 0
+      }
     },
     "concealability": 0,
     "accuracy": [4],
@@ -15712,14 +15694,11 @@
     "name": "Large Stinger",
     "description": "",
     "typeInformation": {
-      "type": "Firearm",
+      "type": "Melee",
       "subtype": "Bio-Weapons",
-      "firearmOptions": {
-        "mode": ["N/A"],
-        "recoilCompensation": 0,
-        "ammoSlots": 1
-      },
-      "range": ["Bio-Weapon"]
+      "meleeOptions": {
+        "reach": 1
+      }
     },
     "concealability": 0,
     "accuracy": [
@@ -15777,14 +15756,11 @@
     "name": "Medium Stinger",
     "description": "",
     "typeInformation": {
-      "type": "Firearm",
+      "type": "Melee",
       "subtype": "Bio-Weapons",
-      "firearmOptions": {
-        "mode": ["N/A"],
-        "recoilCompensation": 0,
-        "ammoSlots": 1
-      },
-      "range": ["Bio-Weapon"]
+      "meleeOptions": {
+        "reach": 0
+      }
     },
     "concealability": 0,
     "accuracy": [
@@ -15842,14 +15818,11 @@
     "name": "Medium Tusk(s)",
     "description": "",
     "typeInformation": {
-      "type": "Firearm",
+      "type": "Melee",
       "subtype": "Bio-Weapons",
-      "firearmOptions": {
-        "mode": ["N/A"],
-        "recoilCompensation": 0,
-        "ammoSlots": 1
-      },
-      "range": ["Bio-Weapon"]
+      "meleeOptions": {
+        "reach": 0
+      }
     },
     "concealability": 0,
     "accuracy": [4],
@@ -15899,14 +15872,11 @@
     "name": "Large Tusk(s)",
     "description": "",
     "typeInformation": {
-      "type": "Firearm",
+      "type": "Melee",
       "subtype": "Bio-Weapons",
-      "firearmOptions": {
-        "mode": ["N/A"],
-        "recoilCompensation": 0,
-        "ammoSlots": 1
-      },
-      "range": ["Bio-Weapon"]
+      "meleeOptions": {
+        "reach": 0
+      }
     },
     "concealability": 0,
     "accuracy": [4],
@@ -16302,14 +16272,11 @@
     "name": "Bone Spike I",
     "description": "",
     "typeInformation": {
-      "type": "Firearm",
+      "type": "Melee",
       "subtype": "Bio-Weapons",
-      "firearmOptions": {
-        "mode": ["N/A"],
-        "recoilCompensation": 0,
-        "ammoSlots": 1
-      },
-      "range": ["Bio-Weapon"]
+      "meleeOptions": {
+        "reach": 0
+      }
     },
     "concealability": -10,
     "accuracy": [
@@ -16355,14 +16322,11 @@
     "name": "Bone Spike II",
     "description": "",
     "typeInformation": {
-      "type": "Firearm",
+      "type": "Melee",
       "subtype": "Bio-Weapons",
-      "firearmOptions": {
-        "mode": ["N/A"],
-        "recoilCompensation": 0,
-        "ammoSlots": 1
-      },
-      "range": ["Bio-Weapon"]
+      "meleeOptions": {
+        "reach": 0
+      }
     },
     "concealability": -10,
     "accuracy": [
@@ -16408,14 +16372,11 @@
     "name": "Bone Spike III",
     "description": "",
     "typeInformation": {
-      "type": "Firearm",
+      "type": "Melee",
       "subtype": "Bio-Weapons",
-      "firearmOptions": {
-        "mode": ["N/A"],
-        "recoilCompensation": 0,
-        "ammoSlots": 1
-      },
-      "range": ["Bio-Weapon"]
+      "meleeOptions": {
+        "reach": 0
+      }
     },
     "concealability": -10,
     "accuracy": [

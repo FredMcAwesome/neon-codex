@@ -24,6 +24,10 @@ export class CustomisedWeapons {
   )
   accessories = new Collection<CustomisedWeaponAccessories>(this);
 
+  // rating is only used in a few weapons
+  @Property({ nullable: true })
+  rating?: string;
+
   @Property({ nullable: true })
   customName?: string;
 

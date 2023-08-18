@@ -61,7 +61,7 @@ export {
   watercraftSubtypeEnum,
   aircraftSubtypeEnum,
   droneSubtypeEnum,
-  costTypeEnum,
+  costEnum,
 } from "./enums.js";
 
 export type {

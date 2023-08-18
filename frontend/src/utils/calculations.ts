@@ -1,4 +1,4 @@
-import { CostType, costTypeEnum, mathOperatorEnum } from "@shadowrun/common";
+import { CostType, costEnum, mathOperatorEnum } from "@shadowrun/common";
 import { GearCalculationType } from "@shadowrun/common/src/schemas/commonSchema.js";
 
 export const genericListCalculation = function (
@@ -87,10 +87,10 @@ export const costCalculation = function (
           nextValue = costCalculation(costItem.subnumbers, options);
         } else {
           switch (costItem.option) {
-            case costTypeEnum.Rating:
+            case costEnum.Rating:
               nextValue = options.rating || 0;
               break;
-            case costTypeEnum.Weapon:
+            case costEnum.Weapon:
               nextValue = options.weapon || 0;
               break;
             // case "Chemical":

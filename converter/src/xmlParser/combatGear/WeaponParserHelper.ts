@@ -8,7 +8,7 @@ import {
   reloadMethodEnum,
 } from "@shadowrun/common";
 import {
-  accuracyTypeEnum,
+  accuracyEnum,
   blastTypeEnum,
   damageAnnotationEnum,
   damageCalculationOptionEnum,
@@ -18,8 +18,8 @@ import {
   ammoSourceEnum,
   restrictionEnum,
   armourPenetrationEnum,
-  costTypeEnum,
-  availabilityTypeEnum,
+  costEnum,
+  availabilityEnum,
 } from "@shadowrun/common/build/enums.js";
 import assert from "assert";
 import {
@@ -149,10 +149,10 @@ accuracySemantics.addOperation("eval", {
     return [str.eval()];
   },
   Physical(_) {
-    return { option: accuracyTypeEnum.Physical };
+    return { option: accuracyEnum.Physical };
   },
   Missile(_) {
-    return { option: accuracyTypeEnum.Missile };
+    return { option: accuracyEnum.Missile };
   },
   Number_negative(_, range) {
     return -range.eval();
@@ -583,7 +583,7 @@ availabilitySemantics.addOperation("eval", {
     return [value.eval()];
   },
   Rating(_) {
-    return { option: availabilityTypeEnum.Rating };
+    return { option: availabilityEnum.Rating };
   },
   Restriction(restriction) {
     return restriction.eval();
@@ -642,7 +642,7 @@ costSemantics.addOperation("eval", {
     return [cost.eval()];
   },
   Rating(_) {
-    return { option: costTypeEnum.Rating };
+    return { option: costEnum.Rating };
   },
   Number(availability) {
     return availability.eval();
@@ -1118,8 +1118,12 @@ export const getWeaponTypeInformation = function (weapon: WeaponXmlType) {
       }
       break;
     case weaponXmlSubtypeEnum.BioWeapon:
-      weaponType = weaponTypeEnum.Firearm;
-      weaponSubtype = firearmWeaponTypeEnum.BioWeapons;
+      if (weapon.type === "Melee") {
+        weaponType = weaponTypeEnum.Melee;
+        weaponSubtype = meleeWeaponTypeEnum.BioWeapons;
+      } else {
+        assert(false, "Bio-weapons not expected to be ranged");
+      }
       break;
     case weaponXmlSubtypeEnum.Carbines:
       weaponType = weaponTypeEnum.Firearm;

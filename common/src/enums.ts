@@ -52,6 +52,7 @@ export enum meleeWeaponTypeEnum {
   Exotic = "Exotic",
   Unarmed = "Unarmed",
   MetagenicQuality = "Mutagenic Quality",
+  BioWeapons = "Bio-Weapons",
 }
 
 export enum projectileWeaponTypeEnum {
@@ -93,7 +94,7 @@ export enum explosiveTypeEnum {
   Standard = "Standard",
 }
 
-export enum accuracyTypeEnum {
+export enum accuracyEnum {
   Physical = "Physical",
   Missile = "Missile",
 }
@@ -101,7 +102,6 @@ export enum accuracyTypeEnum {
 export enum damageTypeEnum {
   Physical = "Physical",
   Stun = "Stun",
-  Chemical = "Chemical",
   None = "N/A",
 }
 
@@ -189,24 +189,24 @@ export enum firearmAccessoryMountLocationEnum {
 
 export enum ammunitionTypeEnum {
   Ammo = "Ammo",
-  Grenades = "Grenades",
+  GrenadesTorpedoes = "GrenadesTorpedoes",
   RocketsMissiles = "Rockets/Missiles",
   ProjectileAmmo = "Projectile",
 }
 
-export enum rangeTypeEnum {
+export enum rangeEnum {
   Strength = "Strength",
 }
 
-export enum armourTypeEnum {
+export enum armourEnum {
   Rating = "Rating",
 }
 
-export enum availabilityTypeEnum {
+export enum availabilityEnum {
   Rating = "Rating",
 }
 
-export enum costTypeEnum {
+export enum costEnum {
   Rating = "Rating",
   Weapon = "Weapon",
 }
@@ -288,7 +288,6 @@ export enum gearCategoryEnum {
 export enum blastTypeEnum {
   Radius = "Radius",
   Reducing = "Reducing",
-  Special = "Special",
 }
 
 export enum mathOperatorEnum {

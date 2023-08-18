@@ -1,4 +1,4 @@
-import { armourTypeEnum } from "@shadowrun/common/src/enums.js";
+import { armourEnum } from "@shadowrun/common/src/enums.js";
 import { z as zod } from "zod";
 import {
   BonusXmlSchema,
@@ -42,9 +42,9 @@ const ArmourXmlSchema = zod
     name: zod.string(),
     category: zod.string(),
     rating: zod.optional(zod.number()),
-    armor: zod.union([zod.number(), zod.nativeEnum(armourTypeEnum)]),
+    armor: zod.union([zod.number(), zod.nativeEnum(armourEnum)]),
     armoroverride: zod.optional(zod.number()),
-    armorcapacity: zod.union([zod.number(), zod.nativeEnum(armourTypeEnum)]),
+    armorcapacity: zod.union([zod.number(), zod.nativeEnum(armourEnum)]),
     addweapon: zod.optional(zod.string()),
     avail: StringOrNumberSchema,
     cost: StringOrNumberSchema,

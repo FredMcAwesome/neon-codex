@@ -1,24 +1,26 @@
 import { z as zod } from "zod";
 import {
-  availabilityTypeEnum,
-  costTypeEnum,
+  availabilityEnum,
+  costEnum,
   mathOperatorEnum,
   restrictionEnum,
 } from "../enums.js";
 export const GearCalculation = zod.array(
   zod.union([
     zod.number(),
-    zod.object({
-      option: zod.enum([
-        "Rating",
-        "Weapon",
-        "Chemical",
-        "Sensor",
-        "Capacity",
-        "Force",
-      ]),
-    }),
-    zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }),
+    zod
+      .object({
+        option: zod.enum([
+          "Rating",
+          "Weapon",
+          "Chemical",
+          "Sensor",
+          "Capacity",
+          "Force",
+        ]),
+      })
+      .strict(),
+    zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
   ])
 );
 
@@ -32,10 +34,12 @@ export const BaseOrSpecial = zod.union([
 // availability rating is a recursive type
 export const AvailabilityRatingSubnumberSchema = zod.union([
   zod.number(),
-  zod.object({
-    option: zod.nativeEnum(availabilityTypeEnum),
-  }),
-  zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }),
+  zod
+    .object({
+      option: zod.nativeEnum(availabilityEnum),
+    })
+    .strict(),
+  zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
 ]);
 export type AvailabilityRatingType = Array<
   | zod.infer<typeof AvailabilityRatingSubnumberSchema>
@@ -55,31 +59,50 @@ export const AvailabilityRatingSchema: zod.ZodType<AvailabilityRatingType> =
     ])
   );
 
-export const AvailabilitySchema = zod.object({
-  rating: AvailabilityRatingSchema,
-  restriction: zod.nativeEnum(restrictionEnum),
-});
+export const AvailabilitySchema = zod
+  .object({
+    rating: AvailabilityRatingSchema,
+    restriction: zod.nativeEnum(restrictionEnum),
+  })
+  .strict();
 export type AvailabilityType = zod.infer<typeof AvailabilitySchema>;
 
+export const WeaponAccessoryAvailabilitySchema = zod
+  .object({
+    rating: AvailabilityRatingSchema,
+    restriction: zod.nativeEnum(restrictionEnum),
+    modifier: zod.optional(zod.literal(mathOperatorEnum.Add)),
+  })
+  .strict();
+export type WeaponAccessoryAvailabilityType = zod.infer<
+  typeof WeaponAccessoryAvailabilitySchema
+>;
+
 export const ValueRangeSchema = zod.union([
-  zod.object({
-    minimum: zod.optional(zod.number()),
-    maximum: zod.optional(zod.number()),
-  }),
-  zod.object({
-    base: BaseOrSpecial,
-    specialCalculation: GearCalculation,
-  }),
+  zod
+    .object({
+      minimum: zod.optional(zod.number()),
+      maximum: zod.optional(zod.number()),
+    })
+    .strict(),
+  zod
+    .object({
+      base: BaseOrSpecial,
+      specialCalculation: GearCalculation,
+    })
+    .strict(),
 ]);
 export const RatingSchema = ValueRangeSchema;
 export type RatingType = zod.infer<typeof RatingSchema>;
 
 const InnerCostSchema = zod.union([
   zod.number(),
-  zod.object({
-    option: zod.nativeEnum(costTypeEnum),
-  }),
-  zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }),
+  zod
+    .object({
+      option: zod.nativeEnum(costEnum),
+    })
+    .strict(),
+  zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
 ]);
 
 export type CostType = Array<

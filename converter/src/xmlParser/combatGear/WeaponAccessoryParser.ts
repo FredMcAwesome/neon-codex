@@ -16,7 +16,7 @@ import {
 import * as fs from "fs";
 import assert from "assert";
 import { WeaponListXmlSchema } from "./WeaponParserSchema.js";
-import { AvailabilityType, CostType, damageTypeEnum } from "@shadowrun/common";
+import { CostType, damageTypeEnum } from "@shadowrun/common";
 import { convertAllowGear, convertXmlGears } from "./WeaponParserHelper.js";
 import { standardCalculationEnum } from "@shadowrun/common/build/enums.js";
 import {
@@ -31,6 +31,7 @@ import { sourceBookXmlEnum } from "../ParserCommonDefines.js";
 import { convertSource } from "../ParserHelper.js";
 import WeaponAccessories from "../../grammar/weaponAccessories.ohm-bundle.js";
 import { MatchResult } from "ohm-js";
+import { WeaponAccessoryAvailabilityType } from "@shadowrun/common/src/schemas/commonSchema.js";
 const Availability = WeaponAccessories.Availability;
 const Cost = WeaponAccessories.Cost;
 const ModifyAmmoCapacity = WeaponAccessories.ModifyAmmoCapacity;
@@ -131,7 +132,8 @@ export function ParseWeaponAccessories() {
     if (match.failed()) {
       throw match.message;
     }
-    const availability: AvailabilityType = availabilitySemantics(match).eval();
+    const availability: WeaponAccessoryAvailabilityType =
+      availabilitySemantics(match).eval();
     console.log(`Availability: ${availability}`);
 
     match = Cost.match(weaponAccessory.cost.toString());

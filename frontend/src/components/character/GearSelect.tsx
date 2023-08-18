@@ -35,6 +35,7 @@ import {
   WeaponUnlinkedSummaryListType,
   WeaponUnlinkedSummaryType,
 } from "@shadowrun/common/src/schemas/weaponSchemas.js";
+import { formatDamage } from "@shadowrun/common/src/formatters/weaponFormatter.js";
 import { trpc } from "../../utils/trpc.js";
 import uniqid from "uniqid";
 
@@ -685,7 +686,10 @@ const WeaponDiv = function ({
             return (
               <li key={uniqid()}>
                 <CollapsibleGearDiv title={weapon.name} addItem={addItem}>
-                  <div>{weapon.description}</div>
+                  <div>
+                    <div>{weapon.description}</div>
+                    <div>Damage: {formatDamage(weapon.damage)}</div>
+                  </div>
                 </CollapsibleGearDiv>
                 <div>{weapon.typeInformation.subtype}</div>
               </li>

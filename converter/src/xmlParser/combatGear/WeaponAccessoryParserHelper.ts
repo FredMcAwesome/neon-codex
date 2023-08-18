@@ -5,8 +5,8 @@ import {
 import {
   ammoOptionEnum,
   ammoSourceEnum,
-  availabilityTypeEnum,
-  costTypeEnum,
+  availabilityEnum,
+  costEnum,
   damageAnnotationEnum,
   damageTypeEnum,
   firearmWeaponTypeEnum,
@@ -155,7 +155,7 @@ availabilitySemantics.addOperation("eval", {
     return parseInt(range.sourceString);
   },
   Rating(_) {
-    return { option: availabilityTypeEnum.Rating };
+    return { option: availabilityEnum.Rating };
   },
   Restriction(restriction) {
     return restriction.eval();
@@ -202,10 +202,10 @@ costSemantics.addOperation("eval", {
     return [cost.eval()];
   },
   Rating(_) {
-    return { option: costTypeEnum.Rating };
+    return { option: costEnum.Rating };
   },
   Weapon(_) {
-    return { option: costTypeEnum.Weapon };
+    return { option: costEnum.Weapon };
   },
   Number(availability) {
     return availability.eval();

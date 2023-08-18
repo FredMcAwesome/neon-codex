@@ -14,63 +14,72 @@ import {
   sourceBookEnum,
   ammoOptionEnum,
 } from "../enums.js";
-import { AvailabilitySchema, CostSchema } from "./commonSchema.js";
+import {
+  CostSchema,
+  WeaponAccessoryAvailabilitySchema,
+} from "./commonSchema.js";
 import { UseGearListSchema } from "./weaponSchemas.js";
 
-export const weaponDamageRequirementsSchema = zod.object({
-  type: zod.nativeEnum(damageTypeEnum),
-  annotation: zod.optional(zod.nativeEnum(damageAnnotationEnum)),
-});
+export const weaponDamageRequirementsSchema = zod
+  .object({
+    type: zod.nativeEnum(damageTypeEnum),
+    annotation: zod.optional(zod.nativeEnum(damageAnnotationEnum)),
+  })
+  .strict();
 export type weaponDamageRequirementsType = zod.infer<
   typeof weaponDamageRequirementsSchema
 >;
 
-export const accessoryWeaponRequirementsSchema = zod.object({
-  weapons: zod.optional(zod.array(zod.string())),
-  minimumHostConcealment: zod.optional(zod.number()),
-  maximumHostConcealment: zod.optional(zod.number()),
-  skills: zod.optional(zod.array(zod.string())),
-  accessories: zod.optional(zod.array(zod.string())),
-  specialModificationLimit: zod.optional(zod.number()),
-  mode: zod.optional(zod.nativeEnum(firearmModeEnum)),
-  weaponNames: zod.optional(zod.array(zod.string())),
-  ammunitionDetails: zod.optional(
-    zod.array(
-      zod.union([
-        zod.nativeEnum(ammoSourceEnum),
-        zod.nativeEnum(firearmWeaponTypeEnum),
-        zod.nativeEnum(projectileWeaponTypeEnum),
-      ])
-    )
-  ),
-  categories: zod.optional(
-    zod.array(
-      zod.union([
-        zod.literal(weaponTypeEnum.Melee),
-        zod.nativeEnum(firearmWeaponTypeEnum),
-        zod.nativeEnum(projectileWeaponTypeEnum),
-      ])
-    )
-  ),
-  accessoryMounts: zod.optional(
-    zod.array(zod.nativeEnum(firearmAccessoryMountLocationEnum))
-  ),
-  requiredDamage: zod.optional(weaponDamageRequirementsSchema),
-});
+export const accessoryWeaponRequirementsSchema = zod
+  .object({
+    weapons: zod.optional(zod.array(zod.string())),
+    minimumHostConcealment: zod.optional(zod.number()),
+    maximumHostConcealment: zod.optional(zod.number()),
+    skills: zod.optional(zod.array(zod.string())),
+    accessories: zod.optional(zod.array(zod.string())),
+    specialModificationLimit: zod.optional(zod.number()),
+    mode: zod.optional(zod.nativeEnum(firearmModeEnum)),
+    weaponNames: zod.optional(zod.array(zod.string())),
+    ammunitionDetails: zod.optional(
+      zod.array(
+        zod.union([
+          zod.nativeEnum(ammoSourceEnum),
+          zod.nativeEnum(firearmWeaponTypeEnum),
+          zod.nativeEnum(projectileWeaponTypeEnum),
+        ])
+      )
+    ),
+    categories: zod.optional(
+      zod.array(
+        zod.union([
+          zod.literal(weaponTypeEnum.Melee),
+          zod.nativeEnum(firearmWeaponTypeEnum),
+          zod.nativeEnum(projectileWeaponTypeEnum),
+        ])
+      )
+    ),
+    accessoryMounts: zod.optional(
+      zod.array(zod.nativeEnum(firearmAccessoryMountLocationEnum))
+    ),
+    requiredDamage: zod.optional(weaponDamageRequirementsSchema),
+  })
+  .strict();
 export type accessoryWeaponRequirementsType = zod.infer<
   typeof accessoryWeaponRequirementsSchema
 >;
 
-const AmmoInformationSchema = zod.object({
-  ammoCount: zod.optional(zod.number()),
-  ammoSource: zod.optional(zod.nativeEnum(ammoSourceEnum)),
-});
+const AmmoInformationSchema = zod
+  .object({
+    ammoCount: zod.optional(zod.number()),
+    ammoSource: zod.optional(zod.nativeEnum(ammoSourceEnum)),
+  })
+  .strict();
 export type AmmoInformationType = zod.infer<typeof AmmoInformationSchema>;
 
 export const AmmoCapacityCalculationSubnumberSchema = zod.union([
   zod.number(),
-  zod.object({ option: zod.nativeEnum(ammoOptionEnum) }),
-  zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }),
+  zod.object({ option: zod.nativeEnum(ammoOptionEnum) }).strict(),
+  zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
 ]);
 
 export type AmmoCapacityCalculationType = Array<
@@ -121,7 +130,7 @@ export const WeaponAccessorySummarySchema = zod
     recoilCompensationIncrease: zod.optional(zod.number()),
     recoilCompensationType: zod.optional(zod.number()), // items from the same recoilCompensationType are incompatible with each other
     deploymentRequired: zod.boolean(),
-    availability: AvailabilitySchema,
+    availability: WeaponAccessoryAvailabilitySchema,
     cost: CostSchema,
     source: zod.nativeEnum(sourceBookEnum),
     page: zod.number(),

@@ -28,13 +28,15 @@ export type VehiclesAndDronesListType = zod.infer<
   typeof VehiclesAndDronesListSchema
 >;
 
-export const GearListSchema = zod.object({
-  weapons: WeaponUnlinkedSummaryListSchema,
-  electronics: MatrixListSchema,
-  electronicAccessories: MatrixAccessoriesListSchema,
-  otherGear: OtherGearListSchema,
-  augmentations: AugmentationListSchema,
-  magicalEquipment: MagicGearListSchema,
-  vehiclesAndDrones: VehiclesAndDronesListSchema,
-});
+export const GearListSchema = zod
+  .object({
+    weapons: WeaponUnlinkedSummaryListSchema,
+    electronics: MatrixListSchema,
+    electronicAccessories: MatrixAccessoriesListSchema,
+    otherGear: OtherGearListSchema,
+    augmentations: AugmentationListSchema,
+    magicalEquipment: MagicGearListSchema,
+    vehiclesAndDrones: VehiclesAndDronesListSchema,
+  })
+  .strict();
 export type GearListType = zod.infer<typeof GearListSchema>;

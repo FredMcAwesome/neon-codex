@@ -10,7 +10,7 @@ import {
   weaponTypeEnum,
   blastTypeEnum,
   explosiveTypeEnum,
-  accuracyTypeEnum,
+  accuracyEnum,
   mathOperatorEnum,
   damageCalculationOptionEnum,
   armourPenetrationEnum,
@@ -18,7 +18,7 @@ import {
   firearmAccessoryMountLocationEnum,
   augmentationClassificationEnum,
   sourceBookEnum,
-  rangeTypeEnum,
+  rangeEnum,
 } from "../enums.js";
 import {
   AvailabilitySchema,
@@ -30,24 +30,26 @@ export const RangeIncrementSchema = zod.array(
   zod.union([
     zod.number(),
     zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
-    zod.object({ option: zod.nativeEnum(rangeTypeEnum) }).strict(),
+    zod.object({ option: zod.nativeEnum(rangeEnum) }).strict(),
   ])
 );
 export type RangeIncrementType = zod.infer<typeof RangeIncrementSchema>;
-export const RangeSchema = zod.object({
-  name: zod.string(),
-  min: RangeIncrementSchema,
-  short: RangeIncrementSchema,
-  medium: RangeIncrementSchema,
-  long: RangeIncrementSchema,
-  extreme: RangeIncrementSchema,
-});
+export const RangeSchema = zod
+  .object({
+    name: zod.string(),
+    min: RangeIncrementSchema,
+    short: RangeIncrementSchema,
+    medium: RangeIncrementSchema,
+    long: RangeIncrementSchema,
+    extreme: RangeIncrementSchema,
+  })
+  .strict();
 
 export const RangeListSchema = zod.array(RangeSchema);
 
 export const AccuracySubnumberSchema = zod.union([
   zod.number(),
-  zod.object({ option: zod.nativeEnum(accuracyTypeEnum) }).strict(),
+  zod.object({ option: zod.nativeEnum(accuracyEnum) }).strict(),
   zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
 ]);
 
@@ -172,7 +174,7 @@ export type ModeType = zod.infer<typeof Mode>;
 
 // outer array is different ap values, inner is calculation for one ap value
 export const ArmourPenetrationSubnumberSchema = zod.union([
-  zod.object({ option: zod.nativeEnum(armourPenetrationEnum) }),
+  zod.object({ option: zod.nativeEnum(armourPenetrationEnum) }).strict(),
   zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
   zod.number(),
 ]);
@@ -265,6 +267,8 @@ const AmmunitionSingleSchema = zod
 export const AmmunitionSchema = zod.array(AmmunitionSingleSchema);
 export type AmmunitionType = zod.infer<typeof AmmunitionSchema>;
 
+const AllowedGearSchema = zod.array(zod.nativeEnum(gearCategoryEnum));
+
 export const WeaponUnlinkedSummarySchema = zod
   .object({
     // id: zod.string(),
@@ -277,7 +281,7 @@ export const WeaponUnlinkedSummarySchema = zod
     ammunition: zod.optional(AmmunitionSchema),
     availability: AvailabilitySchema,
     cost: CostSchema,
-    allowedGear: zod.optional(zod.array(zod.nativeEnum(gearCategoryEnum))),
+    allowedGear: zod.optional(AllowedGearSchema),
     accessories: zod.optional(UnlinkedAccessoryListSchema),
     allowAccessories: zod.boolean(),
     isCyberware: zod.boolean(),

@@ -26,7 +26,7 @@ import {
   Ammunitions,
   Ammos,
   ProjectilesAmmos,
-  Grenades,
+  GrenadesTorpedoes,
   RocketsMissiles,
 } from "./models/gear/combatGear/ammunitionModel.js";
 import {
@@ -110,7 +110,7 @@ const dbOptions: Options<PostgreSqlDriver> = {
     Ammunitions,
     Ammos,
     ProjectilesAmmos,
-    Grenades,
+    GrenadesTorpedoes,
     RocketsMissiles,
 
     CustomisedWeapons,

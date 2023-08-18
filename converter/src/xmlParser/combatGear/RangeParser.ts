@@ -11,7 +11,7 @@ import {
   RangeListSchema,
   RangeSchema,
 } from "@shadowrun/common/build/schemas/weaponSchemas.js";
-import { rangeTypeEnum } from "@shadowrun/common/build/enums.js";
+import { rangeEnum } from "@shadowrun/common/build/enums.js";
 
 const RangeXmlSchema = zod
   .object({
@@ -42,7 +42,7 @@ semantics.addOperation("eval", {
     return [range.eval()];
   },
   Strength(_) {
-    return { option: rangeTypeEnum.Strength };
+    return { option: rangeEnum.Strength };
   },
   Number_negative(_, range) {
     return -range.eval();

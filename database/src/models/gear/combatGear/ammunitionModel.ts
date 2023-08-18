@@ -44,8 +44,8 @@ export abstract class Ammunitions {
 @Entity({ discriminatorValue: ammunitionTypeEnum.Ammo })
 export class Ammos extends Ammunitions {}
 
-@Entity({ discriminatorValue: ammunitionTypeEnum.Grenades })
-export class Grenades extends Ammunitions {
+@Entity({ discriminatorValue: ammunitionTypeEnum.GrenadesTorpedoes })
+export class GrenadesTorpedoes extends Ammunitions {
   @Property({ type: "json" })
   blast!: BlastType;
 }
