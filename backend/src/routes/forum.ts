@@ -26,10 +26,12 @@ export const forumRouter = router({
   }),
   createThread: privateProcedure
     .input(
-      zod.object({
-        title: zod.string(),
-        username: zod.string(),
-      })
+      zod
+        .object({
+          title: zod.string(),
+          username: zod.string(),
+        })
+        .strict()
     )
     .mutation(async (opts) => {
       const user = await Database.userRepository.findOne({

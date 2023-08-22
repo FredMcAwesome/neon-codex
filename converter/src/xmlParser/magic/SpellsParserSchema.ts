@@ -30,29 +30,39 @@ const SpellXmlSchema = zod
     range: zod.string(),
     type: zod.string(),
     bonus: zod.optional(
-      zod.object({
-        selecttext: zod.optional(zod.literal("")),
-        selectattribute: zod.optional(
-          zod.object({
-            excludeattribute: zod.array(zod.nativeEnum(attributeXMLEnum)),
-          })
-        ),
-      })
+      zod
+        .object({
+          selecttext: zod.optional(zod.literal("")),
+          selectattribute: zod.optional(
+            zod
+              .object({
+                excludeattribute: zod.array(zod.nativeEnum(attributeXMLEnum)),
+              })
+              .strict()
+          ),
+        })
+        .strict()
     ),
     required: zod.optional(
-      zod.object({
-        allof: zod.optional(
-          zod.object({
-            metamagicart: zod.optional(zod.string()),
-            spell: zod.optional(zod.string()),
-          })
-        ),
-        oneof: zod.optional(
-          zod.object({
-            quality: StringArrayOrStringSchema,
-          })
-        ),
-      })
+      zod
+        .object({
+          allof: zod.optional(
+            zod
+              .object({
+                metamagicart: zod.optional(zod.string()),
+                spell: zod.optional(zod.string()),
+              })
+              .strict()
+          ),
+          oneof: zod.optional(
+            zod
+              .object({
+                quality: StringArrayOrStringSchema,
+              })
+              .strict()
+          ),
+        })
+        .strict()
     ),
   })
   .strict();

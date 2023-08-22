@@ -99,9 +99,11 @@ const SkillXmlSchema = zod
     requiresswimmovement: zod.optional(zod.literal("True")),
     requiresflymovement: zod.optional(zod.literal("True")),
     specs: zod.union([
-      zod.object({
-        spec: StringArrayOrStringSchema,
-      }),
+      zod
+        .object({
+          spec: StringArrayOrStringSchema,
+        })
+        .strict(),
       zod.literal(""),
     ]),
     source: zod.string(),

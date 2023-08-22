@@ -6,19 +6,23 @@ import {
   UseGearXmlSchema,
 } from "../ParserCommonDefines.js";
 
-const WeaponMountXmlSchema = zod.object({
-  control: zod.string(),
-  flexibility: zod.string(),
-  size: zod.string(),
-  visibility: zod.string(),
-});
+const WeaponMountXmlSchema = zod
+  .object({
+    control: zod.string(),
+    flexibility: zod.string(),
+    size: zod.string(),
+    visibility: zod.string(),
+  })
+  .strict();
 
 const GearOtherXmlSchema = zod.union([
-  zod.object({
-    xmltext: zod.string(),
-    _select: zod.optional(zod.string()),
-    _rating: zod.optional(zod.string()),
-  }),
+  zod
+    .object({
+      xmltext: zod.string(),
+      _select: zod.optional(zod.string()),
+      _rating: zod.optional(zod.string()),
+    })
+    .strict(),
   zod.string(),
 ]);
 
@@ -46,9 +50,11 @@ const VehicleXmlSchema = zod
     electromagneticmodslots: zod.optional(zod.number()),
     cosmeticmodslots: zod.optional(zod.number()),
     gears: zod.optional(
-      zod.object({
-        gear: zod.union([zod.array(GearCombinedSchema), GearCombinedSchema]),
-      })
+      zod
+        .object({
+          gear: zod.union([zod.array(GearCombinedSchema), GearCombinedSchema]),
+        })
+        .strict()
     ),
     mods: zod.optional(
       zod.union([
@@ -60,26 +66,34 @@ const VehicleXmlSchema = zod
     modslots: zod.optional(zod.number()),
     seats: zod.optional(StringOrNumberSchema),
     weapons: zod.optional(
-      zod.object({
-        weapon: zod.union([
-          zod.array(
-            zod.object({
-              name: zod.string(),
-            })
-          ),
-          zod.object({
-            name: zod.string(),
-          }),
-        ]),
-      })
+      zod
+        .object({
+          weapon: zod.union([
+            zod.array(
+              zod
+                .object({
+                  name: zod.string(),
+                })
+                .strict()
+            ),
+            zod
+              .object({
+                name: zod.string(),
+              })
+              .strict(),
+          ]),
+        })
+        .strict()
     ),
     weaponmounts: zod.optional(
-      zod.object({
-        weaponmount: zod.union([
-          zod.array(WeaponMountXmlSchema),
-          WeaponMountXmlSchema,
-        ]),
-      })
+      zod
+        .object({
+          weaponmount: zod.union([
+            zod.array(WeaponMountXmlSchema),
+            WeaponMountXmlSchema,
+          ]),
+        })
+        .strict()
     ),
     weaponmodslots: zod.optional(zod.number()),
     hide: zod.optional(zod.literal("")),

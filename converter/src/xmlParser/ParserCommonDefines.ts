@@ -57,16 +57,20 @@ export enum sourceBookXmlEnum {
 }
 export const SourceXmlSchema = zod.nativeEnum(sourceBookXmlEnum);
 
-const NameCategorySchema = zod.object({
-  name: zod.string(),
-  category: zod.string(),
-});
+const NameCategorySchema = zod
+  .object({
+    name: zod.string(),
+    category: zod.string(),
+  })
+  .strict();
 
-const GearsGearsSchema = zod.object({
-  xmltext: zod.string(),
-  _rating: zod.string(),
-  _consumecapacity: zod.string(),
-});
+const GearsGearsSchema = zod
+  .object({
+    xmltext: zod.string(),
+    _rating: zod.string(),
+    _consumecapacity: zod.string(),
+  })
+  .strict();
 
 export const UseGearXmlSchema = zod
   .object({
@@ -79,14 +83,16 @@ export const UseGearXmlSchema = zod
     maxrating: zod.optional(zod.number()),
     capacity: zod.optional(zod.string()),
     gears: zod.optional(
-      zod.object({
-        usegear: zod.optional(
-          zod.union([zod.array(NameCategorySchema), NameCategorySchema])
-        ),
-        gear: zod.optional(
-          zod.union([zod.array(GearsGearsSchema), GearsGearsSchema])
-        ),
-      })
+      zod
+        .object({
+          usegear: zod.optional(
+            zod.union([zod.array(NameCategorySchema), NameCategorySchema])
+          ),
+          gear: zod.optional(
+            zod.union([zod.array(GearsGearsSchema), GearsGearsSchema])
+          ),
+        })
+        .strict()
     ),
   })
   .strict();
@@ -119,28 +125,36 @@ export const StringArrayOrStringSchema = zod.union([
   zod.string(),
 ]);
 
-const LimitModifierSchema = zod.object({
-  limit: zod.string(),
-  value: zod.number(),
-  condition: zod.optional(zod.string()),
-});
+const LimitModifierSchema = zod
+  .object({
+    limit: zod.string(),
+    value: zod.number(),
+    condition: zod.optional(zod.string()),
+  })
+  .strict();
 
-const SkillSchema = zod.object({
-  name: zod.string(),
-  bonus: zod.number(),
-});
+const SkillSchema = zod
+  .object({
+    name: zod.string(),
+    bonus: zod.number(),
+  })
+  .strict();
 
-export const BonusXmlSchema = zod.object({
-  limitmodifier: zod.optional(
-    zod.union([zod.array(LimitModifierSchema), LimitModifierSchema])
-  ),
-  fatigueresist: zod.optional(zod.number()),
-});
+export const BonusXmlSchema = zod
+  .object({
+    limitmodifier: zod.optional(
+      zod.union([zod.array(LimitModifierSchema), LimitModifierSchema])
+    ),
+    fatigueresist: zod.optional(zod.number()),
+  })
+  .strict();
 
 export const WirelessXmlSchema = zod.union([
   BonusXmlSchema,
-  zod.object({
-    skillcategory: SkillSchema,
-  }),
-  zod.object({ specificskill: SkillSchema }),
+  zod
+    .object({
+      skillcategory: SkillSchema,
+    })
+    .strict(),
+  zod.object({ specificskill: SkillSchema }).strict(),
 ]);

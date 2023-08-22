@@ -19,14 +19,18 @@ export const getToken = function (bearerHeader: string) {
 };
 
 const LoginStatus = zod.discriminatedUnion("loginStatus", [
-  zod.object({
-    loginStatus: zod.literal(true),
-    username: zod.string(),
-    isAdmin: zod.boolean(),
-  }),
-  zod.object({
-    loginStatus: zod.literal(false),
-  }),
+  zod
+    .object({
+      loginStatus: zod.literal(true),
+      username: zod.string(),
+      isAdmin: zod.boolean(),
+    })
+    .strict(),
+  zod
+    .object({
+      loginStatus: zod.literal(false),
+    })
+    .strict(),
 ]);
 
 type LoginStatusType = zod.infer<typeof LoginStatus>;

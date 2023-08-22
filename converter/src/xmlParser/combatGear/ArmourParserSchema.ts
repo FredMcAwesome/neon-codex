@@ -10,20 +10,26 @@ import {
 
 const ModXmlSchema = zod.union([
   zod.string(),
-  zod.object({
-    xmltext: zod.string(),
-    _rating: zod.optional(zod.string()),
-    _select: zod.optional(zod.string()),
-  }),
+  zod
+    .object({
+      xmltext: zod.string(),
+      _rating: zod.optional(zod.string()),
+      _select: zod.optional(zod.string()),
+    })
+    .strict(),
 ]);
 
-export const ModListXmlSchema = zod.object({
-  name: zod.union([zod.array(ModXmlSchema), ModXmlSchema]),
-});
+export const ModListXmlSchema = zod
+  .object({
+    name: zod.union([zod.array(ModXmlSchema), ModXmlSchema]),
+  })
+  .strict();
 
-const ModCategoryXmlSchema = zod.object({
-  category: zod.string(),
-});
+const ModCategoryXmlSchema = zod
+  .object({
+    category: zod.string(),
+  })
+  .strict();
 
 const ModCategoryListXmlSchema = zod.union([
   zod.array(ModCategoryXmlSchema),
@@ -49,9 +55,14 @@ const ArmourXmlSchema = zod
     avail: StringOrNumberSchema,
     cost: StringOrNumberSchema,
     gears: zod.optional(
-      zod.object({
-        usegear: zod.union([zod.array(ArmorGearXmlSchema), ArmorGearXmlSchema]),
-      })
+      zod
+        .object({
+          usegear: zod.union([
+            zod.array(ArmorGearXmlSchema),
+            ArmorGearXmlSchema,
+          ]),
+        })
+        .strict()
     ),
     bonus: zod.optional(BonusXmlSchema),
     wirelessbonus: zod.optional(WirelessXmlSchema),

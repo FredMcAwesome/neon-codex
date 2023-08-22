@@ -1,8 +1,5 @@
 import { gearCategoryEnum } from "@shadowrun/common/build/enums.js";
-import {
-  weaponXmlSubtypeEnum,
-  WeaponXmlSubtypeSchema,
-} from "@shadowrun/common/build/schemas/commonSchema.js";
+import { WeaponXmlSubtypeSchema } from "@shadowrun/common/build/schemas/commonSchema.js";
 import { z as zod } from "zod";
 import {
   SourceXmlSchema,
@@ -19,21 +16,6 @@ export type AccessoryAccuracyXmlType = zod.infer<
 const AccessoryDamageXmlSchema = zod.number();
 export type AccessoryDamageXmlType = zod.infer<typeof AccessoryDamageXmlSchema>;
 
-const LowerSchema = zod
-  .object({
-    category: zod.union([
-      zod.array(zod.nativeEnum(weaponXmlSubtypeEnum)),
-      zod.nativeEnum(weaponXmlSubtypeEnum),
-    ]),
-    useskill: StringArrayOrStringSchema,
-    AND: zod.object({
-      OR: zod.object({
-        category: StringArrayOrStringSchema,
-      }),
-    }),
-  })
-  .strict();
-
 const ConcealXmlSchema = zod
   .object({
     xmltext: zod.number(),
@@ -45,10 +27,12 @@ const ConcealXmlSchema = zod
   })
   .strict();
 
-const XmlOperationSchema = zod.object({
-  xmltext: zod.string(),
-  _operation: zod.string(),
-});
+const XmlOperationSchema = zod
+  .object({
+    xmltext: zod.string(),
+    _operation: zod.string(),
+  })
+  .strict();
 
 const XmlStringOrOperationSchema = zod.union([
   XmlOperationSchema,
@@ -57,16 +41,55 @@ const XmlStringOrOperationSchema = zod.union([
 
 const XmlCategoryOrOperationSchema = zod.union([
   WeaponXmlSubtypeSchema,
-  zod.object({
-    xmltext: WeaponXmlSubtypeSchema,
-    _operation: zod.string(),
-  }),
+  zod
+    .object({
+      xmltext: WeaponXmlSubtypeSchema,
+      _operation: zod.string(),
+    })
+    .strict(),
 ]);
 export type XmlCategoryOrOperationType = zod.infer<
   typeof XmlCategoryOrOperationSchema
 >;
 
-const RequiredWeaponDetailsXmlSchema = zod
+type WeaponAccessoryAndType = {
+  AND: RequiredWeaponDetailsXmlType | Array<RequiredWeaponDetailsXmlType>;
+};
+
+const WeaponAccessoryAndSchema: zod.Schema<WeaponAccessoryAndType> = zod
+  .object({
+    AND: zod.lazy(() =>
+      zod.union([
+        RequiredWeaponDetailsXmlSchema,
+        zod.array(RequiredWeaponDetailsXmlSchema),
+      ])
+    ),
+  })
+  .strict();
+
+type WeaponAccessoryOrType = {
+  OR: RequiredWeaponDetailsXmlType | Array<RequiredWeaponDetailsXmlType>;
+};
+
+const WeaponAccessoryOrSchema: zod.Schema<WeaponAccessoryOrType> = zod
+  .object({
+    OR: zod.lazy(() =>
+      zod.union([
+        RequiredWeaponDetailsXmlSchema,
+        zod.array(RequiredWeaponDetailsXmlSchema),
+      ])
+    ),
+  })
+  .strict();
+
+const WeaponAccessoryAndOROptionalSchema = zod
+  .object({
+    WeaponAccessoryAndSchema,
+    WeaponAccessoryOrSchema,
+  })
+  .partial();
+
+const RequiredWeaponDetailsXmlSubSchema = zod
   .object({
     name: zod.optional(
       zod.union([
@@ -91,30 +114,27 @@ const RequiredWeaponDetailsXmlSchema = zod
     spec2: zod.optional(StringArrayOrStringSchema),
     conceal: zod.optional(ConcealXmlSchema),
     useskill: zod.optional(StringArrayOrStringSchema),
-    AND: zod.optional(
-      zod.object({
-        OR: zod
-          .object({
-            category: StringArrayOrStringSchema,
-          })
-          .strict(),
-      })
-    ),
     accessorymounts: zod.optional(
-      zod.object({ mount: StringArrayOrStringSchema })
+      zod.object({ mount: StringArrayOrStringSchema }).strict()
     ),
     _NOT: zod.optional(zod.literal("")),
     damage: zod.optional(XmlOperationSchema),
-    // OR: zod.optional(LowerSchema),
+    mode: zod.optional(XmlOperationSchema),
+    WeaponAccessoryAndSchema,
+    WeaponAccessoryOrSchema,
   })
   .strict();
+
+const RequiredWeaponDetailsXmlSchema = RequiredWeaponDetailsXmlSubSchema.merge(
+  WeaponAccessoryAndOROptionalSchema
+);
 
 export type RequiredWeaponDetailsXmlType = zod.infer<
   typeof RequiredWeaponDetailsXmlSchema
 >;
 
 const WeaponAccessoryDetailsOrXmlSchema = zod.union([
-  LowerSchema,
+  RequiredWeaponDetailsXmlSchema,
   zod
     .object({
       weapondetails: RequiredWeaponDetailsXmlSchema,
@@ -122,22 +142,15 @@ const WeaponAccessoryDetailsOrXmlSchema = zod.union([
     .strict(),
 ]);
 
-const WeaponAccessoryOr = zod
-  .object({
-    OR: zod.union([
-      RequiredWeaponDetailsXmlSchema,
-      zod.array(RequiredWeaponDetailsXmlSchema),
-    ]),
-    mode: zod.optional(XmlOperationSchema),
-    conceal: zod.optional(ConcealXmlSchema),
-  })
-  .strict();
-
 const WeaponAccessoryRequiredXmlSchema = zod.union([
   zod
     .object({
       weapondetails: zod.optional(
-        zod.union([WeaponAccessoryOr, RequiredWeaponDetailsXmlSchema])
+        zod.union([
+          WeaponAccessoryOrSchema,
+          WeaponAccessoryAndSchema,
+          RequiredWeaponDetailsXmlSchema,
+        ])
       ),
       oneof: zod.optional(
         zod.union([

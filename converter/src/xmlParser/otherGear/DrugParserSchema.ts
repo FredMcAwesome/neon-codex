@@ -5,10 +5,12 @@ import {
   StringOrNumberSchema,
 } from "../ParserCommonDefines.js";
 
-const GenericNameValueSchema = zod.object({
-  name: zod.string(),
-  value: zod.number(),
-});
+const GenericNameValueSchema = zod
+  .object({
+    name: zod.string(),
+    value: zod.number(),
+  })
+  .strict();
 
 const DrugXmlSchema = zod
   .object({
@@ -27,22 +29,29 @@ const DrugXmlSchema = zod
     vectors: zod.optional(zod.string()),
     duration: zod.optional(StringOrNumberSchema),
     bonus: zod.optional(
-      zod.object({
-        attribute: zod.union([
-          zod.array(GenericNameValueSchema),
-          GenericNameValueSchema,
-        ]),
-        limit: zod.optional(
-          zod.union([zod.array(GenericNameValueSchema), GenericNameValueSchema])
-        ),
-        quality: zod.optional(
-          zod.object({
-            xmltext: zod.string(),
-            _rating: zod.string(),
-          })
-        ),
-        initiativedice: zod.optional(zod.number()),
-      })
+      zod
+        .object({
+          attribute: zod.union([
+            zod.array(GenericNameValueSchema),
+            GenericNameValueSchema,
+          ]),
+          limit: zod.optional(
+            zod.union([
+              zod.array(GenericNameValueSchema),
+              GenericNameValueSchema,
+            ])
+          ),
+          quality: zod.optional(
+            zod
+              .object({
+                xmltext: zod.string(),
+                _rating: zod.string(),
+              })
+              .strict()
+          ),
+          initiativedice: zod.optional(zod.number()),
+        })
+        .strict()
     ),
   })
   .strict();

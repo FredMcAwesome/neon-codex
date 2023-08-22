@@ -29,6 +29,7 @@ import {
   AccessoryMountType,
   WeaponUnlinkedSummaryListSchema,
   WeaponUnlinkedSummarySchema,
+  FirearmOptionsType,
 } from "@shadowrun/common/build/schemas/weaponSchemas.js";
 import {
   getWeaponTypeInformation,
@@ -327,7 +328,7 @@ function convertWeapon(weapon: WeaponXmlType) {
   );
 
   const meleeOptions = { reach: weapon.reach };
-  const firearmOptions = {
+  const firearmOptions: FirearmOptionsType = {
     mode: mode,
     recoilCompensation: recoilCompensation,
     ...(weapon.ammocategory && { ammoCategory: weapon.ammocategory }),

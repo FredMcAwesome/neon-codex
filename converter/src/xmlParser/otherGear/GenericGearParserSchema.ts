@@ -18,34 +18,42 @@ const GenericGearXmlSchema = zod
     addweapon: zod.optional(
       zod.union([
         zod.string(),
-        zod.object({
-          xmltext: zod.string(),
-          _rating: zod.string(),
-        }),
+        zod
+          .object({
+            xmltext: zod.string(),
+            _rating: zod.string(),
+          })
+          .strict(),
       ])
     ),
     bonus: zod.optional(
       zod.union([
-        zod.object({
-          selectweapon: zod.optional(
-            zod.union([
-              zod.object({
-                _weapondetails: zod.string(),
-              }),
-              zod.literal(""),
-            ])
-          ),
-          selecttext: zod.optional(
-            zod.union([
-              zod.string(),
-              zod.object({
-                _xml: zod.string(),
-                _xpath: zod.string(),
-                _allowedit: zod.optional(zod.string()),
-              }),
-            ])
-          ),
-        }),
+        zod
+          .object({
+            selectweapon: zod.optional(
+              zod.union([
+                zod
+                  .object({
+                    _weapondetails: zod.string(),
+                  })
+                  .strict(),
+                zod.literal(""),
+              ])
+            ),
+            selecttext: zod.optional(
+              zod.union([
+                zod.string(),
+                zod
+                  .object({
+                    _xml: zod.string(),
+                    _xpath: zod.string(),
+                    _allowedit: zod.optional(zod.string()),
+                  })
+                  .strict(),
+              ])
+            ),
+          })
+          .strict(),
         zod.literal(""),
       ])
     ),
@@ -53,38 +61,48 @@ const GenericGearXmlSchema = zod
     cost: StringOrNumberSchema,
     costfor: zod.optional(zod.number()),
     weaponbonus: zod.optional(
-      zod.object({
-        ap: zod.optional(zod.number()),
-        damage: zod.optional(StringOrNumberSchema),
-      })
+      zod
+        .object({
+          ap: zod.optional(zod.number()),
+          damage: zod.optional(StringOrNumberSchema),
+        })
+        .strict()
     ),
     isflechetteammo: zod.optional(zod.literal("True")),
     flechetteweaponbonus: zod.optional(
-      zod.object({
-        damagetype: zod.string(),
-      })
+      zod
+        .object({
+          damagetype: zod.string(),
+        })
+        .strict()
     ),
     ammoforweapontype: zod.optional(
       zod.union([
         zod.string(),
-        zod.object({
-          _noextra: zod.string(),
-        }),
+        zod
+          .object({
+            _noextra: zod.string(),
+          })
+          .strict(),
       ])
     ),
     minrating: zod.optional(zod.number()),
     weight: zod.optional(zod.number()),
     hide: zod.optional(zod.literal("")),
     allowgear: zod.optional(
-      zod.object({
-        name: StringArrayOrStringSchema,
-      })
+      zod
+        .object({
+          name: StringArrayOrStringSchema,
+        })
+        .strict()
     ),
     gears: zod.optional(
-      zod.object({
-        usegear: zod.union([zod.array(UseGearXmlSchema), UseGearXmlSchema]),
-        _startcollapsed: zod.optional(zod.literal("True")),
-      })
+      zod
+        .object({
+          usegear: zod.union([zod.array(UseGearXmlSchema), UseGearXmlSchema]),
+          _startcollapsed: zod.optional(zod.literal("True")),
+        })
+        .strict()
     ),
     devicerating: zod.optional(StringOrNumberSchema),
     attributearray: zod.optional(zod.string()),
@@ -97,44 +115,60 @@ const GenericGearXmlSchema = zod
     armorcapacity: zod.optional(StringOrNumberSchema),
     capacity: zod.optional(StringOrNumberSchema),
     required: zod.optional(
-      zod.object({
-        geardetails: zod.optional(
-          zod.union([
-            zod.object({
-              OR: zod
+      zod
+        .object({
+          geardetails: zod.optional(
+            zod.union([
+              zod
                 .object({
-                  category: zod.optional(StringArrayOrStringSchema),
-                  name: zod.optional(StringArrayOrStringSchema),
+                  OR: zod
+                    .object({
+                      category: zod.optional(StringArrayOrStringSchema),
+                      name: zod.optional(StringArrayOrStringSchema),
+                    })
+                    .strict(),
                 })
                 .strict(),
-            }),
-            zod.object({
-              category: zod.optional(StringArrayOrStringSchema),
-            }),
-          ])
-        ),
-        parentdetails: zod.optional(
-          zod.object({
-            name: zod.string(),
-            category: zod.optional(zod.string()),
-          })
-        ),
-      })
+              zod
+                .object({
+                  category: zod.optional(StringArrayOrStringSchema),
+                })
+                .strict(),
+            ])
+          ),
+          parentdetails: zod.optional(
+            zod
+              .object({
+                name: zod.string(),
+                category: zod.optional(zod.string()),
+              })
+              .strict()
+          ),
+        })
+        .strict()
     ),
     requireparent: zod.optional(zod.literal("")),
     forbidden: zod.optional(
-      zod.object({
-        geardetails: zod.union([
-          zod.object({
-            name: zod.string(),
-          }),
-          zod.object({
-            OR: zod.object({
-              name: StringArrayOrStringSchema,
-            }),
-          }),
-        ]),
-      })
+      zod
+        .object({
+          geardetails: zod.union([
+            zod
+              .object({
+                name: zod.string(),
+              })
+              .strict(),
+            zod
+              .object({
+                OR: zod
+                  .object({
+                    name: StringArrayOrStringSchema,
+                  })
+                  .strict(),
+              })
+              .strict(),
+          ]),
+        })
+        .strict()
     ),
     modattack: zod.optional(StringOrNumberSchema),
     modsleaze: zod.optional(StringOrNumberSchema),

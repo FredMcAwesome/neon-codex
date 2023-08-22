@@ -34,6 +34,7 @@ import {
   MountType,
   typeInformationType,
   useGearType,
+  weaponRequirementsType,
 } from "@shadowrun/common/build/schemas/weaponSchemas.js";
 import {
   weaponXmlSubtypeEnum,
@@ -725,10 +726,12 @@ export const convertAllowGear = function (
   );
 };
 
+// This function does NOT handle requirements properly
+// TODO: put in lots of work here, after seeing what frontend needs
 export const convertRequirements = function (
   xmlRequirements: RequiredXmlType | undefined,
   name: string
-) {
+): weaponRequirementsType | undefined {
   if (!xmlRequirements) {
     return undefined;
   }
@@ -750,13 +753,22 @@ export const convertRequirements = function (
     assert(false, "neither name or conceal are defined for: " + name);
     return undefined;
   } else if ("OR" in xmlRequirements) {
-    const categories = Array.isArray(xmlRequirements.OR.category)
-      ? xmlRequirements.OR.category
-      : [xmlRequirements.OR.category];
-    const skills = Array.isArray(xmlRequirements.OR.useskill)
-      ? xmlRequirements.OR.useskill
-      : [xmlRequirements.OR.useskill];
-    return { categories: categories, skills: skills };
+    const categories =
+      xmlRequirements.OR.category === undefined
+        ? undefined
+        : Array.isArray(xmlRequirements.OR.category)
+        ? xmlRequirements.OR.category
+        : [xmlRequirements.OR.category];
+    const skills =
+      xmlRequirements.OR.useskill === undefined
+        ? undefined
+        : Array.isArray(xmlRequirements.OR.useskill)
+        ? xmlRequirements.OR.useskill
+        : [xmlRequirements.OR.useskill];
+    return {
+      categories: categories,
+      skills: skills,
+    };
   } else {
     // skip the AND portion
     return undefined;

@@ -58,9 +58,7 @@ export function ParseWeaponAccessories() {
   // );
   console.log(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    JSON.stringify(
-      jObj.chummer.accessories.accessory[119].required.weapondetails
-    )
+    JSON.stringify(jObj.chummer.accessories.accessory[86])
   );
 
   const weaponListParsed = WeaponListXmlSchema.safeParse(

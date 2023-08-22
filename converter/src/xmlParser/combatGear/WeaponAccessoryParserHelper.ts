@@ -464,6 +464,8 @@ export const convertWeaponDetails = function (
   };
 };
 
+// This function does NOT handle requirements properly
+// TODO: put in lots of work here, after seeing what frontend needs
 export const convertRequirements = function (
   xmlRequirements: WeaponAccessoryRequiredXmlType | undefined
 ): accessoryWeaponRequirementsType | undefined {
@@ -477,9 +479,9 @@ export const convertRequirements = function (
   if ("weapondetails" in xmlRequirements) {
     const weaponDetails = xmlRequirements.weapondetails;
     assert(weaponDetails);
-    if (!("OR" in weaponDetails)) {
+    if (!("OR" in weaponDetails) && !("AND" in weaponDetails)) {
       weaponRequirements = convertWeaponDetails(weaponDetails);
-    } else if ("OR" in weaponDetails) {
+    } else if ("OR" in weaponDetails && weaponDetails.OR !== undefined) {
       const detailsOr = Array.isArray(weaponDetails.OR)
         ? weaponDetails.OR
         : [weaponDetails.OR];
@@ -490,12 +492,18 @@ export const convertRequirements = function (
     }
   } else if ("OR" in xmlRequirements) {
     if ("category" in xmlRequirements.OR) {
-      const categories = Array.isArray(xmlRequirements.OR.category)
-        ? xmlRequirements.OR.category
-        : [xmlRequirements.OR.category];
-      const skills = Array.isArray(xmlRequirements.OR.useskill)
-        ? xmlRequirements.OR.useskill
-        : [xmlRequirements.OR.useskill];
+      const categories =
+        xmlRequirements.OR.category === undefined
+          ? undefined
+          : Array.isArray(xmlRequirements.OR.category)
+          ? xmlRequirements.OR.category
+          : [xmlRequirements.OR.category];
+      const skills =
+        xmlRequirements.OR.useskill === undefined
+          ? undefined
+          : Array.isArray(xmlRequirements.OR.useskill)
+          ? xmlRequirements.OR.useskill
+          : [xmlRequirements.OR.useskill];
       // currently not using AND portion... should be handled by the skill fix
       // xmlRequirements.OR.AND
       let parsedCategories: Array<
@@ -505,12 +513,15 @@ export const convertRequirements = function (
         parsedCategories = getCategories(categories, parsedCategories);
       weaponRequirements = { categories: parsedCategories, skills: skills };
     } else {
-      xmlRequirements.OR.weapondetails;
+      const orDetails =
+        "weapondetails" in xmlRequirements.OR
+          ? xmlRequirements.OR.weapondetails
+          : xmlRequirements.OR;
       const categories =
-        xmlRequirements.OR.weapondetails.category !== undefined
-          ? Array.isArray(xmlRequirements.OR.weapondetails.category)
-            ? xmlRequirements.OR.weapondetails.category
-            : [xmlRequirements.OR.weapondetails.category]
+        orDetails.category !== undefined
+          ? Array.isArray(orDetails.category)
+            ? orDetails.category
+            : [orDetails.category]
           : undefined;
 
       let parsedCategories: Array<
@@ -520,10 +531,10 @@ export const convertRequirements = function (
         parsedCategories = getCategories(categories, parsedCategories);
 
       const skills =
-        xmlRequirements.OR.weapondetails.useskill !== undefined
-          ? Array.isArray(xmlRequirements.OR.weapondetails.useskill)
-            ? xmlRequirements.OR.weapondetails.useskill
-            : [xmlRequirements.OR.weapondetails.useskill]
+        orDetails.useskill !== undefined
+          ? Array.isArray(orDetails.useskill)
+            ? orDetails.useskill
+            : [orDetails.useskill]
           : undefined;
       weaponRequirements = { categories: parsedCategories, skills: skills };
     }
