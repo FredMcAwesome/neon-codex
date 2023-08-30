@@ -32,7 +32,7 @@ import {
   FirearmOptionsType,
   MeleeOptionsType,
   MountType,
-  typeInformationType,
+  unlinkedTypeInformationType,
   useGearType,
   weaponRequirementsType,
 } from "@shadowrun/common/build/schemas/weaponSchemas.js";
@@ -59,8 +59,8 @@ export const convertTypeInformation = function (
     | explosiveTypeEnum,
   meleeOptions: MeleeOptionsType,
   firearmOptions: FirearmOptionsType,
-  range: Array<string>
-): typeInformationType {
+  ranges: Array<string>
+): unlinkedTypeInformationType {
   let check = false;
   switch (weaponType) {
     case weaponTypeEnum.Melee:
@@ -86,7 +86,7 @@ export const convertTypeInformation = function (
       return {
         type: weaponTypeEnum.Projectile,
         subtype: weaponSubtype as projectileWeaponTypeEnum,
-        range: range,
+        rangeList: ranges,
       };
     case weaponTypeEnum.Firearm:
       Object.values(firearmWeaponTypeEnum).forEach((enumValue) => {
@@ -99,7 +99,7 @@ export const convertTypeInformation = function (
         type: weaponTypeEnum.Firearm,
         subtype: weaponSubtype as firearmWeaponTypeEnum,
         firearmOptions: firearmOptions,
-        range: range,
+        rangeList: ranges,
       };
     case weaponTypeEnum.Explosive:
       Object.values(explosiveTypeEnum).forEach((enumValue) => {
@@ -111,7 +111,7 @@ export const convertTypeInformation = function (
       return {
         type: weaponTypeEnum.Explosive,
         subtype: weaponSubtype as explosiveTypeEnum,
-        range: range,
+        rangeList: ranges,
       };
   }
 };
@@ -1117,8 +1117,13 @@ export const getWeaponTypeInformation = function (weapon: WeaponXmlType) {
       weaponSubtype = firearmWeaponTypeEnum.Tasers;
       break;
     case weaponXmlSubtypeEnum.UnderbarrelWeapons:
-      weaponType = weaponTypeEnum.Firearm;
-      weaponSubtype = firearmWeaponTypeEnum.WeaponAttachments;
+      if (weapon.type === "Melee") {
+        weaponType = weaponTypeEnum.Melee;
+        weaponSubtype = meleeWeaponTypeEnum.WeaponAttachments;
+      } else {
+        weaponType = weaponTypeEnum.Firearm;
+        weaponSubtype = firearmWeaponTypeEnum.WeaponAttachments;
+      }
       break;
     case weaponXmlSubtypeEnum.Cyberweapon:
       if (weapon.type === "Melee") {

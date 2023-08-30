@@ -53,6 +53,7 @@ export enum meleeWeaponTypeEnum {
   Unarmed = "Unarmed",
   MetagenicQuality = "Mutagenic Quality",
   BioWeapons = "Bio-Weapons",
+  WeaponAttachments = "Weapon Attachments",
 }
 
 export enum projectileWeaponTypeEnum {

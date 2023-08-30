@@ -1850,8 +1850,7 @@
       ["Under", "Barrel"]
     ],
     "hostWeaponRequirements": {
-      "categories": ["Assault Rifles", "Sniper Rifles", "Sporting Rifles"],
-      "skills": ["Longarms"]
+      "categories": []
     }
   },
   {
@@ -2029,10 +2028,7 @@
     "page": 182,
     "specialModification": false,
     "hostWeaponMountsRequired": [["Stock"], ["Barrel"]],
-    "hostWeaponRequirements": {
-      "categories": ["Heavy Pistols", "Assault Rifles"],
-      "skills": ["Longarms"]
-    },
+    "hostWeaponRequirements": {},
     "hostWeaponRestrictions": {
       "accessories": ["Stock Removal", "Sawed Off/Shortbarrel"]
     },
@@ -2399,9 +2395,7 @@
     "page": 76,
     "specialModification": false,
     "extraAmmoSlots": 1,
-    "hostWeaponRequirements": {
-      "ammunitionDetails": ["Clip", "Drum"]
-    },
+    "hostWeaponRequirements": {},
     "hostWeaponRestrictions": {
       "weaponNames": ["HK Urban Fighter"]
     }
@@ -2433,9 +2427,7 @@
     "page": 76,
     "specialModification": false,
     "extraAmmoSlots": 1,
-    "hostWeaponRequirements": {
-      "ammunitionDetails": ["Clip", "Drum"]
-    },
+    "hostWeaponRequirements": {},
     "hostWeaponRestrictions": {
       "weaponNames": ["HK Urban Fighter"]
     },

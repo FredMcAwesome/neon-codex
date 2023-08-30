@@ -1716,7 +1716,7 @@
       <type>Ranged</type>
       <conceal>6</conceal>
       <accuracy>7</accuracy>
-      <reach>1</reach>
+      <reach>0</reach>
       <damage>2P</damage>
       <ap>0</ap>
       <mode>SS</mode>
@@ -8557,6 +8557,7 @@
       <page>182</page>
       <extramount>Side</extramount>
       <mount>Under</mount>
+      <range>Submachine Guns</range>
       <required>
         <OR>
           <category>Assault Rifles</category>
@@ -9174,6 +9175,7 @@
       <cost>45</cost>
       <source>CA</source>
       <page>134</page>
+      <range>Spray Pen</range>
       <spec>Pepper Punch Pen</spec>
       <!-- ReSharper disable once MarkupTextTypo -->
       <weapontype>pepperpunch</weapontype>
@@ -9195,6 +9197,7 @@
       <cost>60</cost>
       <source>CA</source>
       <page>134</page>
+      <range>Spray Pen</range>
       <spec>Modified Spray Pen</spec>
       <!-- ReSharper disable once MarkupTextTypo -->
       <weapontype>spraypen</weapontype>

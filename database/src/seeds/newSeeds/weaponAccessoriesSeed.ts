@@ -1,7 +1,7 @@
 import {
   WeaponAccessorySummaryListSchema,
   WeaponAccessorySummaryListType,
-} from "@shadowrun/common/src/schemas/weaponAccessorySchema.js";
+} from "@shadowrun/common/build/schemas/weaponAccessorySchema.js";
 import assert from "assert";
 import fs from "fs";
 import path from "path";
@@ -22,7 +22,7 @@ export const getWeaponAccessories = function () {
   const weaponAccessoryListParsed =
     WeaponAccessorySummaryListSchema.safeParse(rawJson);
   if (weaponAccessoryListParsed.success) {
-    console.log("Weapon Accessories all g");
+    console.log("weapon accessories all g");
     weaponAccessories = weaponAccessoryListParsed.data;
   } else {
     console.log(weaponAccessoryListParsed.error.errors[0]);
@@ -33,7 +33,7 @@ export const getWeaponAccessories = function () {
   const stagedWeaponAccessories: Array<WeaponAccessories> = [];
   weaponAccessories.forEach((weaponAccessory) => {
     stagedWeaponAccessories.push(new WeaponAccessories(weaponAccessory));
-    console.log(weaponAccessory.name);
+    // console.log(weaponAccessory.name);
   });
   return stagedWeaponAccessories;
 };

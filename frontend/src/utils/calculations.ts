@@ -1,5 +1,5 @@
 import { CostType, costEnum, mathOperatorEnum } from "@shadowrun/common";
-import { GearCalculationType } from "@shadowrun/common/src/schemas/commonSchema.js";
+import { GearCalculationType } from "@shadowrun/common/build/schemas/commonSchema.js";
 
 export const genericListCalculation = function (
   genericList: GearCalculationType,

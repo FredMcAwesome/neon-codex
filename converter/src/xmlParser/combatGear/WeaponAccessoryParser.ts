@@ -31,7 +31,7 @@ import { sourceBookXmlEnum } from "../ParserCommonDefines.js";
 import { convertSource } from "../ParserHelper.js";
 import WeaponAccessories from "../../grammar/weaponAccessories.ohm-bundle.js";
 import { MatchResult } from "ohm-js";
-import { WeaponAccessoryAvailabilityType } from "@shadowrun/common/src/schemas/commonSchema.js";
+import { WeaponAccessoryAvailabilityType } from "@shadowrun/common/build/schemas/commonSchema.js";
 const Availability = WeaponAccessories.Availability;
 const Cost = WeaponAccessories.Cost;
 const ModifyAmmoCapacity = WeaponAccessories.ModifyAmmoCapacity;

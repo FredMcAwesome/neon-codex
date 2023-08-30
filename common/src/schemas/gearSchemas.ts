@@ -4,7 +4,7 @@ import { MatrixAccessorySchema, MatrixSchema } from "./electronicSchemas.js";
 import { otherGearSchema } from "./otherGearSchema.js";
 import { MagicGearSchema } from "./magicalSchemas.js";
 import { VehiclesAndDronesSchema } from "./riggerSchema.js";
-import { WeaponUnlinkedSummaryListSchema } from "./weaponSchemas.js";
+import { WeaponLinkedListSchema } from "./weaponSchemas.js";
 
 export const MatrixListSchema = zod.array(MatrixSchema);
 export type MatrixListType = zod.infer<typeof MatrixListSchema>;
@@ -30,7 +30,7 @@ export type VehiclesAndDronesListType = zod.infer<
 
 export const GearListSchema = zod
   .object({
-    weapons: WeaponUnlinkedSummaryListSchema,
+    weapons: WeaponLinkedListSchema,
     electronics: MatrixListSchema,
     electronicAccessories: MatrixAccessoriesListSchema,
     otherGear: OtherGearListSchema,

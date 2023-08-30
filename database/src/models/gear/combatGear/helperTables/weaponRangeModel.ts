@@ -1,11 +1,8 @@
 import { Entity, PrimaryKey, Property } from "@mikro-orm/core";
-import type { RangeIncrementType } from "@shadowrun/common/src/schemas/weaponSchemas.js";
+import type { RangeIncrementType } from "@shadowrun/common/build/schemas/weaponSchemas.js";
 
-@Entity({
-  discriminatorColumn: "type",
-  abstract: true,
-})
-export abstract class WeaponRanges {
+@Entity()
+export class WeaponRanges {
   @PrimaryKey()
   id!: number;
 
@@ -26,4 +23,13 @@ export abstract class WeaponRanges {
 
   @Property({ type: "json" })
   extreme!: RangeIncrementType;
+
+  constructor(dto: any) {
+    this.name = dto.name;
+    this.min = dto.min;
+    this.short = dto.short;
+    this.medium = dto.medium;
+    this.long = dto.long;
+    this.extreme = dto.extreme;
+  }
 }

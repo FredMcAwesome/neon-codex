@@ -1,4 +1,4 @@
-// import { standardCalculationEnum } from "@shadowrun/common/src/enums.js";
+// import { standardCalculationEnum } from "@shadowrun/common/build/enums.js";
 import { z as zod } from "zod";
 import {
   attributeXMLEnum,

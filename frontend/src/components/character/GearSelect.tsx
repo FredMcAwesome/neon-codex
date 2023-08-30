@@ -25,17 +25,17 @@ import { CollapsibleDiv } from "../../utils/CollapsibleDiv.js";
 //   ToolTypeInformationSchema,
 //   VisionEnhancementTypeInformationSchema,
 //   electronicAccessoryTypeInformationType,
-// } from "@shadowrun/common/src/schemas/electronicSchemas.js";
-// import { OtherGearType } from "@shadowrun/common/src/schemas/otherGearSchema.js";
-// import { MagicGearType } from "@shadowrun/common/src/schemas/magicalSchemas.js";
-// import { VehiclesAndDronesType } from "@shadowrun/common/src/schemas/riggerSchema.js";
+// } from "@shadowrun/common/build/schemas/electronicSchemas.js";
+// import { OtherGearType } from "@shadowrun/common/build/schemas/otherGearSchema.js";
+// import { MagicGearType } from "@shadowrun/common/build/schemas/magicalSchemas.js";
+// import { VehiclesAndDronesType } from "@shadowrun/common/build/schemas/riggerSchema.js";
 import { CollapsibleGearDiv } from "./GearHelper.js";
 import { costCalculation } from "../../utils/calculations.js";
 import {
-  WeaponUnlinkedSummaryListType,
-  WeaponUnlinkedSummaryType,
-} from "@shadowrun/common/src/schemas/weaponSchemas.js";
-import { formatDamage } from "@shadowrun/common/src/formatters/weaponFormatter.js";
+  WeaponLinkedListType,
+  WeaponLinkedType,
+} from "@shadowrun/common/build/schemas/weaponSchemas.js";
+import { formatDamage } from "@shadowrun/common/build/formatters/weaponFormatter.js";
 import { trpc } from "../../utils/trpc.js";
 import uniqid from "uniqid";
 
@@ -63,7 +63,7 @@ export const GearSelect = function (props: IProps) {
 
   const gearSelected = props.gearSelected;
 
-  const addWeapon = function (weapon: WeaponUnlinkedSummaryType) {
+  const addWeapon = function (weapon: WeaponLinkedType) {
     const gear = { ...gearSelected };
     gear.weapons.push(weapon);
     props.setGearSelected(gear);
@@ -79,10 +79,7 @@ export const GearSelect = function (props: IProps) {
         )
     );
   };
-  const removeWeapon = function (
-    weapon: WeaponUnlinkedSummaryType,
-    index: number
-  ) {
+  const removeWeapon = function (weapon: WeaponLinkedType, index: number) {
     const gear = { ...gearSelected };
     if (gear.weapons[index] === weapon) {
       gear.weapons.splice(index, 1);
@@ -663,9 +660,9 @@ export const GearSelect = function (props: IProps) {
 
 interface IWeaponDivProps {
   title: string;
-  data: WeaponUnlinkedSummaryListType;
+  data: WeaponLinkedListType;
   weaponType: weaponTypeEnum;
-  addWeapon: (weapon: WeaponUnlinkedSummaryType) => void;
+  addWeapon: (weapon: WeaponLinkedType) => void;
 }
 
 const WeaponDiv = function ({

@@ -275,13 +275,19 @@ function convertWeapon(weapon: WeaponXmlType) {
   const doubleCostAccessoryMounts = convertAccessoryMounts(
     weapon.doubledcostaccessorymounts
   );
-  const range = weapon.range
+  const unfilteredRanges = weapon.range
     ? weapon.alternaterange
       ? [weapon.range, weapon.alternaterange]
       : [weapon.range]
     : weapon.alternaterange
     ? [weapon.category, weapon.alternaterange]
     : [weapon.category];
+  const ranges = unfilteredRanges.map((range) => {
+    if (range === "Heavy Machine Guns" || range === "Medium Machine Guns") {
+      return "Medium/Heavy Machinegun";
+    }
+    return range;
+  });
   const weaponRequirements = convertRequirements(weapon.required, weapon.name);
   const mountLocationsOnHostWeapon = weapon.mount
     ? weapon.extramount
@@ -349,7 +355,7 @@ function convertWeapon(weapon: WeaponXmlType) {
     weaponSubtype,
     meleeOptions,
     firearmOptions,
-    range
+    ranges
   );
 
   return {

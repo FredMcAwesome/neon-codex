@@ -1,5 +1,4 @@
 import {
-  ArrayType,
   Collection,
   Entity,
   Enum,
@@ -10,36 +9,36 @@ import {
   ref,
 } from "@mikro-orm/core";
 import type { Ref } from "@mikro-orm/core";
-import {
-  weaponTypeEnum,
-  meleeWeaponTypeEnum,
-  firearmWeaponTypeEnum,
-  projectileWeaponTypeEnum,
-  explosiveTypeEnum,
-} from "@shadowrun/common";
-import type {
-  AccuracyType,
-  ArmourPenetrationType,
-  AvailabilityType,
-  CostType,
-  DamageType,
-} from "@shadowrun/common";
+
 import {
   augmentationClassificationEnum,
+  explosiveTypeEnum,
   firearmAccessoryMountLocationEnum,
   firearmModeEnum,
+  firearmWeaponTypeEnum,
   gearCategoryEnum,
+  meleeWeaponTypeEnum,
+  projectileWeaponTypeEnum,
   sourceBookEnum,
+  weaponTypeEnum,
 } from "@shadowrun/common/build/enums.js";
 import type {
+  AccuracyType,
   AmmunitionType,
+  ArmourPenetrationType,
+  DamageType,
   weaponRequirementsType,
 } from "@shadowrun/common/build/schemas/weaponSchemas.js";
+import type {
+  AvailabilityType,
+  CostType,
+} from "@shadowrun/common/build/schemas/commonSchema.js";
 import { weaponXmlSubtypeEnum } from "@shadowrun/common/build/schemas/commonSchema.js";
 import { Skills } from "../../chummerdb/skillModel.js";
 import assert from "assert";
-import { IncludedWeaponAccessories } from "../../chummerdb/customTables/activeWeaponAccessoryModel.js";
 import type { WeaponSummaryType } from "../../../seeds/newSeeds/weaponsSeed.js";
+import { IncludedWeaponAccessories } from "../../chummerdb/customTables/activeWeaponAccessoryModel.js";
+import { WeaponRangeLinks } from "../../chummerdb/customTables/weaponRangeLinkModel.js";
 
 @Entity({
   discriminatorColumn: "type",
@@ -158,33 +157,37 @@ export class MeleeWeapons extends Weapons {
   }
 }
 
+// this should be fully abstract but getting an error when I do so
+// just leaving as partially abstract for now... TODO: fix
+@Entity()
+export abstract class RangedWeapons extends Weapons {
+  @OneToMany(() => WeaponRangeLinks, (linkTable) => linkTable.weapon)
+  ranges = new Collection<WeaponRangeLinks>(this);
+
+  constructor(dto: WeaponSummaryType) {
+    super(dto);
+  }
+}
+
 @Entity({ discriminatorValue: weaponTypeEnum.Projectile })
-export class ProjectileWeapons extends Weapons {
+export class ProjectileWeapons extends RangedWeapons {
   @Enum({
     items: () => projectileWeaponTypeEnum,
   })
   subtypeProjectile!: projectileWeaponTypeEnum;
-
-  @Property({ type: ArrayType })
-  range!: Array<string>;
-
   constructor(dto: WeaponSummaryType) {
     super(dto);
     assert(dto.typeInformation.type === weaponTypeEnum.Projectile);
-    this.range = dto.typeInformation.range;
     this.subtypeProjectile = dto.typeInformation.subtype;
   }
 }
 
 @Entity({ discriminatorValue: weaponTypeEnum.Firearm })
-export class FirearmWeapons extends Weapons {
+export class FirearmWeapons extends RangedWeapons {
   @Enum({
     items: () => firearmWeaponTypeEnum,
   })
   subtypeFirearm!: firearmWeaponTypeEnum;
-
-  @Property({ type: ArrayType })
-  range!: Array<string>;
 
   @Enum({ items: () => firearmModeEnum, array: true })
   mode!: Array<firearmModeEnum>;
@@ -232,7 +235,6 @@ export class FirearmWeapons extends Weapons {
     super(dto);
     assert(dto.typeInformation.type === weaponTypeEnum.Firearm);
     this.subtypeFirearm = dto.typeInformation.subtype;
-    this.range = dto.typeInformation.range;
     this.mode = dto.typeInformation.firearmOptions.mode;
     this.recoilCompensation =
       dto.typeInformation.firearmOptions.recoilCompensation;
@@ -267,19 +269,15 @@ export class FirearmWeapons extends Weapons {
 }
 
 @Entity({ discriminatorValue: weaponTypeEnum.Explosive })
-export class Explosives extends Weapons {
+export class Explosives extends RangedWeapons {
   @Enum({
     items: () => explosiveTypeEnum,
   })
   subtypeExplosive!: explosiveTypeEnum;
 
-  @Property({ type: ArrayType })
-  range!: Array<string>;
-
   constructor(dto: WeaponSummaryType) {
     super(dto);
     assert(dto.typeInformation.type === weaponTypeEnum.Explosive);
     this.subtypeExplosive = dto.typeInformation.subtype;
-    this.range = dto.typeInformation.range;
   }
 }

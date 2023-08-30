@@ -73,3 +73,6 @@ The server and DB will be hosted together.
 
 ### CI/CD
 Github actions to deploy website updates automatically after automated testing.
+
+## Bugs
+Currently typescript-eslint has a [problem](https://github.com/typescript-eslint/typescript-eslint/issues/2094) where project references aren't properly acknowledged when changed. If you see a linting error but it compiles fine you need to restart the eslint server to fix it...

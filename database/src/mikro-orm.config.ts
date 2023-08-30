@@ -6,6 +6,7 @@ import {
   CustomisedWeaponAccessories,
 } from "./models/chummerdb/customTables/activeWeaponAccessoryModel.js";
 import { CustomisedWeapons } from "./models/chummerdb/customTables/customisedWeaponModel.js";
+import { WeaponRangeLinks } from "./models/chummerdb/customTables/weaponRangeLinkModel.js";
 import { Skills } from "./models/chummerdb/skillModel.js";
 import {
   AugmentationAccessories,
@@ -34,6 +35,7 @@ import {
   ArmourModifications,
 } from "./models/gear/combatGear/armourAccessoryModel.js";
 import { Armours } from "./models/gear/combatGear/armourModel.js";
+import { WeaponRanges } from "./models/gear/combatGear/helperTables/weaponRangeModel.js";
 import { WeaponAccessories } from "./models/gear/combatGear/weaponAccessoryModel.js";
 import {
   MeleeWeapons,
@@ -85,7 +87,7 @@ import {
   Aircrafts,
   Drones,
 } from "./models/gear/riggerGear/vehicleAndDroneModel.js";
-import { Comments, Weapons } from "./models/models.js";
+import { Comments, Weapons, RangedWeapons } from "./models/models.js";
 import Threads from "./models/threadModel.js";
 import Users from "./models/userModel.js";
 import {
@@ -100,9 +102,11 @@ const dbOptions: Options<PostgreSqlDriver> = {
     Users,
     Threads,
     Comments,
-    Weapons,
     Skills,
+
+    Weapons,
     MeleeWeapons,
+    RangedWeapons,
     ProjectileWeapons,
     FirearmWeapons,
     Explosives,
@@ -117,6 +121,9 @@ const dbOptions: Options<PostgreSqlDriver> = {
     ActiveWeaponAccessories,
     IncludedWeaponAccessories,
     CustomisedWeaponAccessories,
+
+    WeaponRanges,
+    WeaponRangeLinks,
 
     Armours,
     ArmourAccessories,

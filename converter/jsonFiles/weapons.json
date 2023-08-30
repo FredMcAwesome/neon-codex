@@ -11,7 +11,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Top", "Under"]
       },
-      "range": ["Assault Cannons"]
+      "rangeList": ["Assault Cannons"]
     },
     "concealability": 10,
     "accuracy": [7],
@@ -75,7 +75,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Top", "Under"]
       },
-      "range": ["Assault Cannons"]
+      "rangeList": ["Assault Cannons"]
     },
     "concealability": 10,
     "accuracy": [4],
@@ -128,7 +128,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Top", "Under"]
       },
-      "range": ["Assault Cannons"]
+      "rangeList": ["Assault Cannons"]
     },
     "concealability": 10,
     "accuracy": [6],
@@ -189,7 +189,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Top", "Under"]
       },
-      "range": ["Assault Cannons"]
+      "rangeList": ["Assault Cannons"]
     },
     "concealability": 10,
     "accuracy": [4],
@@ -242,7 +242,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Top", "Under"]
       },
-      "range": ["Assault Cannons"]
+      "rangeList": ["Assault Cannons"]
     },
     "concealability": 10,
     "accuracy": [6],
@@ -327,7 +327,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Top", "Under"]
       },
-      "range": ["Assault Cannons"]
+      "rangeList": ["Assault Cannons"]
     },
     "concealability": 10,
     "accuracy": [5],
@@ -385,7 +385,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Assault Rifles"]
+      "rangeList": ["Assault Rifles"]
     },
     "concealability": 6,
     "accuracy": [5],
@@ -439,7 +439,7 @@
         "underbarrelWeapons": ["AK-98 Grenade Launcher"],
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Assault Rifles"]
+      "rangeList": ["Assault Rifles"]
     },
     "concealability": 6,
     "accuracy": [5],
@@ -493,7 +493,7 @@
         "underbarrelWeapons": ["Ares Alpha Grenade Launcher"],
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Assault Rifles"]
+      "rangeList": ["Assault Rifles"]
     },
     "concealability": 6,
     "accuracy": [5],
@@ -551,7 +551,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Top", "Under"]
       },
-      "range": ["Assault Rifles"]
+      "rangeList": ["Assault Rifles"]
     },
     "concealability": 6,
     "accuracy": [5],
@@ -600,7 +600,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Assault Rifles"]
+      "rangeList": ["Assault Rifles"]
     },
     "concealability": 6,
     "accuracy": [7],
@@ -667,7 +667,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Assault Rifles"]
+      "rangeList": ["Assault Rifles"]
     },
     "concealability": 6,
     "accuracy": [4],
@@ -720,7 +720,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Assault Rifles"]
+      "rangeList": ["Assault Rifles"]
     },
     "concealability": 6,
     "accuracy": [5],
@@ -788,7 +788,7 @@
         ],
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Assault Rifles"]
+      "rangeList": ["Assault Rifles"]
     },
     "concealability": 6,
     "accuracy": [6],
@@ -853,7 +853,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Top", "Under"]
       },
-      "range": ["Grenade Launchers"]
+      "rangeList": ["Grenade Launchers"]
     },
     "concealability": 6,
     "accuracy": [4],
@@ -910,7 +910,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Submachine Guns"]
+      "rangeList": ["Submachine Guns"]
     },
     "concealability": 6,
     "accuracy": [6],
@@ -975,7 +975,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Light Machine Guns"]
+      "rangeList": ["Light Machine Guns"]
     },
     "concealability": 6,
     "accuracy": [6],
@@ -1043,7 +1043,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Shotguns", "Shotguns (flechette)"]
+      "rangeList": ["Shotguns", "Shotguns (flechette)"]
     },
     "concealability": 6,
     "accuracy": [3],
@@ -1108,7 +1108,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Sniper Rifles"]
+      "rangeList": ["Sniper Rifles"]
     },
     "concealability": 6,
     "accuracy": [7],
@@ -1176,7 +1176,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Assault Rifles"]
+      "rangeList": ["Assault Rifles"]
     },
     "concealability": 6,
     "accuracy": [8],
@@ -1242,7 +1242,7 @@
         "underbarrelWeapons": ["Nissan Optimum II Shotgun"],
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Assault Rifles"]
+      "rangeList": ["Assault Rifles"]
     },
     "concealability": 6,
     "accuracy": [5],
@@ -1303,7 +1303,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Assault Rifles"]
+      "rangeList": ["Assault Rifles"]
     },
     "concealability": 6,
     "accuracy": [3],
@@ -1361,7 +1361,7 @@
         "ammoSlots": 6,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Assault Rifles"]
+      "rangeList": ["Assault Rifles"]
     },
     "concealability": 6,
     "accuracy": [5],
@@ -1422,7 +1422,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Assault Rifles"]
+      "rangeList": ["Assault Rifles"]
     },
     "concealability": 6,
     "accuracy": [7],
@@ -1497,7 +1497,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Assault Rifles"]
+      "rangeList": ["Assault Rifles"]
     },
     "concealability": 6,
     "accuracy": [6],
@@ -2742,7 +2742,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Bows",
-      "range": ["Bows"]
+      "rangeList": ["Bows"]
     },
     "concealability": 8,
     "accuracy": [6],
@@ -2790,7 +2790,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Bows",
-      "range": ["Bows"]
+      "rangeList": ["Bows"]
     },
     "concealability": 8,
     "accuracy": [6],
@@ -2838,7 +2838,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Bows",
-      "range": ["Bows"]
+      "rangeList": ["Bows"]
     },
     "concealability": 8,
     "accuracy": [6],
@@ -2886,7 +2886,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Bows",
-      "range": ["Bows"]
+      "rangeList": ["Bows"]
     },
     "concealability": 8,
     "accuracy": [6],
@@ -2934,7 +2934,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Bows",
-      "range": ["Bows"]
+      "rangeList": ["Bows"]
     },
     "concealability": 8,
     "accuracy": [6],
@@ -2982,7 +2982,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Bows",
-      "range": ["Bows"]
+      "rangeList": ["Bows"]
     },
     "concealability": 8,
     "accuracy": [6],
@@ -3030,7 +3030,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Bows",
-      "range": ["Bows"]
+      "rangeList": ["Bows"]
     },
     "concealability": 8,
     "accuracy": [6],
@@ -3078,7 +3078,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Bows",
-      "range": ["Bows"]
+      "rangeList": ["Bows"]
     },
     "concealability": 8,
     "accuracy": [6],
@@ -3126,7 +3126,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Bows",
-      "range": ["Bows"]
+      "rangeList": ["Bows"]
     },
     "concealability": 8,
     "accuracy": [6],
@@ -3174,7 +3174,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Bows",
-      "range": ["Bows"]
+      "rangeList": ["Bows"]
     },
     "concealability": 8,
     "accuracy": [6],
@@ -3603,7 +3603,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Crossbows",
-      "range": ["Harpoon Gun", "Harpoon Gun (Underwater)"]
+      "rangeList": ["Harpoon Gun", "Harpoon Gun (Underwater)"]
     },
     "concealability": 6,
     "accuracy": [5],
@@ -3651,7 +3651,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Crossbows",
-      "range": ["Shuriken"]
+      "rangeList": ["Shuriken"]
     },
     "concealability": 6,
     "accuracy": [7],
@@ -3687,7 +3687,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Crossbows",
-      "range": ["Heavy Crossbows"]
+      "rangeList": ["Heavy Crossbows"]
     },
     "concealability": 6,
     "accuracy": [5],
@@ -3735,7 +3735,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Crossbows",
-      "range": ["Light Crossbows"]
+      "rangeList": ["Light Crossbows"]
     },
     "concealability": 6,
     "accuracy": [7],
@@ -3783,7 +3783,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Crossbows",
-      "range": ["Medium Crossbows"]
+      "rangeList": ["Medium Crossbows"]
     },
     "concealability": 6,
     "accuracy": [6],
@@ -3831,7 +3831,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Crossbows",
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": -4,
     "accuracy": [7],
@@ -3867,7 +3867,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Crossbows",
-      "range": ["Harpoon Gun", "Harpoon Gun (Underwater)"]
+      "rangeList": ["Harpoon Gun", "Harpoon Gun (Underwater)"]
     },
     "concealability": 6,
     "accuracy": [5],
@@ -4845,7 +4845,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Light Crossbows"]
+      "rangeList": ["Light Crossbows"]
     },
     "concealability": 6,
     "accuracy": [3],
@@ -4898,7 +4898,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Tasers"]
+      "rangeList": ["Tasers"]
     },
     "concealability": 6,
     "accuracy": [2],
@@ -4955,7 +4955,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Tasers"]
+      "rangeList": ["Tasers"]
     },
     "concealability": -2,
     "accuracy": [3],
@@ -5010,7 +5010,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Under"]
       },
-      "range": ["Light Pistols"]
+      "rangeList": ["Light Pistols"]
     },
     "concealability": 2,
     "accuracy": [4],
@@ -5068,7 +5068,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Flamethrowers"]
+      "rangeList": ["Flamethrowers"]
     },
     "concealability": 6,
     "accuracy": [6],
@@ -5116,7 +5116,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Throwing Weapons",
-      "range": ["Aerodynamic Grenade"]
+      "rangeList": ["Aerodynamic Grenade"]
     },
     "concealability": -2,
     "accuracy": [
@@ -5168,7 +5168,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Throwing Weapons",
-      "range": ["Aerodynamic Grenade"]
+      "rangeList": ["Aerodynamic Grenade"]
     },
     "concealability": -2,
     "accuracy": [
@@ -5220,7 +5220,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Throwing Weapons",
-      "range": ["Thrown Knife"]
+      "rangeList": ["Thrown Knife"]
     },
     "concealability": -2,
     "accuracy": [
@@ -5284,7 +5284,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Standard Grenade"]
+      "rangeList": ["Standard Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -5340,7 +5340,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Standard Grenade"]
+      "rangeList": ["Standard Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -5384,7 +5384,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Standard Grenade"]
+      "rangeList": ["Standard Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -5429,7 +5429,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Standard Grenade"]
+      "rangeList": ["Standard Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -5477,7 +5477,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Standard Grenade"]
+      "rangeList": ["Standard Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -5533,7 +5533,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Standard Grenade"]
+      "rangeList": ["Standard Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -5577,7 +5577,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Standard Grenade"]
+      "rangeList": ["Standard Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -5621,7 +5621,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Standard Grenade"]
+      "rangeList": ["Standard Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -5665,7 +5665,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Standard Grenade"]
+      "rangeList": ["Standard Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -5709,7 +5709,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Aerodynamic Grenade"]
+      "rangeList": ["Aerodynamic Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -5765,7 +5765,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Aerodynamic Grenade"]
+      "rangeList": ["Aerodynamic Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -5809,7 +5809,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Aerodynamic Grenade"]
+      "rangeList": ["Aerodynamic Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -5854,7 +5854,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Aerodynamic Grenade"]
+      "rangeList": ["Aerodynamic Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -5902,7 +5902,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Aerodynamic Grenade"]
+      "rangeList": ["Aerodynamic Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -5958,7 +5958,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Aerodynamic Grenade"]
+      "rangeList": ["Aerodynamic Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -6002,7 +6002,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Aerodynamic Grenade"]
+      "rangeList": ["Aerodynamic Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -6046,7 +6046,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Aerodynamic Grenade"]
+      "rangeList": ["Aerodynamic Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -6090,7 +6090,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Aerodynamic Grenade"]
+      "rangeList": ["Aerodynamic Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -6134,7 +6134,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Throwing Weapons",
-      "range": ["Aerodynamic Grenade"]
+      "rangeList": ["Aerodynamic Grenade"]
     },
     "concealability": -2,
     "accuracy": [
@@ -6194,7 +6194,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Throwing Weapons",
-      "range": ["Aerodynamic Grenade"]
+      "rangeList": ["Aerodynamic Grenade"]
     },
     "concealability": -2,
     "accuracy": [
@@ -6254,7 +6254,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Throwing Weapons",
-      "range": ["Thrown Knife"]
+      "rangeList": ["Thrown Knife"]
     },
     "concealability": -2,
     "accuracy": [
@@ -6297,7 +6297,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Throwing Weapons",
-      "range": ["Shuriken"]
+      "rangeList": ["Shuriken"]
     },
     "concealability": -2,
     "accuracy": [
@@ -6357,7 +6357,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Throwing Weapons",
-      "range": ["Shuriken"]
+      "rangeList": ["Shuriken"]
     },
     "concealability": 0,
     "accuracy": [4],
@@ -6397,7 +6397,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Throwing Weapons",
-      "range": ["Thrown Knife"]
+      "rangeList": ["Thrown Knife"]
     },
     "concealability": -2,
     "accuracy": [
@@ -6463,7 +6463,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Top", "Under"]
       },
-      "range": ["Grenade Launchers"]
+      "rangeList": ["Grenade Launchers"]
     },
     "concealability": 8,
     "accuracy": [4],
@@ -6513,7 +6513,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Top", "Under"]
       },
-      "range": ["Grenade Launchers"]
+      "rangeList": ["Grenade Launchers"]
     },
     "concealability": 8,
     "accuracy": [4],
@@ -6557,7 +6557,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Grenade Launchers"]
+      "rangeList": ["Grenade Launchers"]
     },
     "concealability": 8,
     "accuracy": [4],
@@ -6617,7 +6617,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Medium/Heavy Machinegun"]
+      "rangeList": ["Medium/Heavy Machinegun"]
     },
     "concealability": 10,
     "accuracy": [5],
@@ -6676,7 +6676,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Medium/Heavy Machinegun"]
+      "rangeList": ["Medium/Heavy Machinegun"]
     },
     "concealability": 10,
     "accuracy": [5],
@@ -6741,7 +6741,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Medium/Heavy Machinegun"]
+      "rangeList": ["Medium/Heavy Machinegun"]
     },
     "concealability": 10,
     "accuracy": [4],
@@ -6803,7 +6803,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 0,
     "accuracy": [5],
@@ -6862,7 +6862,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 0,
     "accuracy": [4],
@@ -6910,7 +6910,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 0,
     "accuracy": [5],
@@ -6969,7 +6969,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 0,
     "accuracy": [6],
@@ -7023,7 +7023,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 0,
     "accuracy": [5],
@@ -7077,7 +7077,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 0,
     "accuracy": [6],
@@ -7130,7 +7130,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 0,
     "accuracy": [4],
@@ -7193,7 +7193,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 0,
     "accuracy": [5],
@@ -7258,7 +7258,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 0,
     "accuracy": [4],
@@ -7312,7 +7312,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 0,
     "accuracy": [4],
@@ -7366,7 +7366,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 0,
     "accuracy": [5],
@@ -7420,7 +7420,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 0,
     "accuracy": [5],
@@ -7478,7 +7478,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Holdouts"]
+      "rangeList": ["Holdouts"]
     },
     "concealability": -4,
     "accuracy": [4],
@@ -7528,7 +7528,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Holdouts"]
+      "rangeList": ["Holdouts"]
     },
     "concealability": -4,
     "accuracy": [5],
@@ -7569,7 +7569,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Holdouts"]
+      "rangeList": ["Holdouts"]
     },
     "concealability": -4,
     "accuracy": [4],
@@ -7609,7 +7609,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Holdouts"]
+      "rangeList": ["Holdouts"]
     },
     "concealability": -4,
     "accuracy": [4],
@@ -7649,7 +7649,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Holdouts"]
+      "rangeList": ["Holdouts"]
     },
     "concealability": -4,
     "accuracy": [4],
@@ -8203,7 +8203,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Top", "Under"]
       },
-      "range": ["Sniper Rifles"]
+      "rangeList": ["Sniper Rifles"]
     },
     "concealability": 10,
     "accuracy": [7],
@@ -8261,7 +8261,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Top", "Under"]
       },
-      "range": ["Assault Rifles"]
+      "rangeList": ["Assault Rifles"]
     },
     "concealability": 6,
     "accuracy": [7],
@@ -8319,7 +8319,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Top", "Under"]
       },
-      "range": ["Submachine Guns"]
+      "rangeList": ["Submachine Guns"]
     },
     "concealability": 2,
     "accuracy": [9],
@@ -8376,7 +8376,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Light Machine Guns"]
+      "rangeList": ["Light Machine Guns"]
     },
     "concealability": 10,
     "accuracy": [4],
@@ -8441,7 +8441,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Light Machine Guns"]
+      "rangeList": ["Light Machine Guns"]
     },
     "concealability": 10,
     "accuracy": [5],
@@ -8506,7 +8506,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Light Machine Guns"]
+      "rangeList": ["Light Machine Guns"]
     },
     "concealability": 10,
     "accuracy": [5],
@@ -8565,7 +8565,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Light Machine Guns"]
+      "rangeList": ["Light Machine Guns"]
     },
     "concealability": 10,
     "accuracy": [5],
@@ -8633,7 +8633,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top"]
       },
-      "range": ["Light Pistols"]
+      "rangeList": ["Light Pistols"]
     },
     "concealability": -2,
     "accuracy": [7],
@@ -8675,7 +8675,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top"]
       },
-      "range": ["Light Pistols"]
+      "rangeList": ["Light Pistols"]
     },
     "concealability": -2,
     "accuracy": [6],
@@ -8725,7 +8725,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top"]
       },
-      "range": ["Light Pistols"]
+      "rangeList": ["Light Pistols"]
     },
     "concealability": -2,
     "accuracy": [6],
@@ -8773,7 +8773,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top"]
       },
-      "range": ["Tasers"]
+      "rangeList": ["Tasers"]
     },
     "concealability": -2,
     "accuracy": [5],
@@ -8815,7 +8815,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top"]
       },
-      "range": ["Light Pistols"]
+      "rangeList": ["Light Pistols"]
     },
     "concealability": -2,
     "accuracy": [7],
@@ -8856,7 +8856,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Holdouts"]
+      "rangeList": ["Holdouts"]
     },
     "concealability": -4,
     "accuracy": [6],
@@ -8898,7 +8898,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top"]
       },
-      "range": ["Light Pistols"]
+      "rangeList": ["Light Pistols"]
     },
     "concealability": -2,
     "accuracy": [6],
@@ -8940,7 +8940,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top"]
       },
-      "range": ["Light Pistols"]
+      "rangeList": ["Light Pistols"]
     },
     "concealability": -2,
     "accuracy": [6],
@@ -8989,7 +8989,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Light Pistols"]
+      "rangeList": ["Light Pistols"]
     },
     "concealability": -2,
     "accuracy": [6],
@@ -9040,7 +9040,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": -2,
     "accuracy": [6],
@@ -9087,7 +9087,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top"]
       },
-      "range": ["Light Pistols"]
+      "rangeList": ["Light Pistols"]
     },
     "concealability": -2,
     "accuracy": [4],
@@ -9129,7 +9129,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top"]
       },
-      "range": ["Light Pistols"]
+      "rangeList": ["Light Pistols"]
     },
     "concealability": -2,
     "accuracy": [5],
@@ -9176,7 +9176,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
       },
-      "range": ["Machine Pistols"]
+      "rangeList": ["Machine Pistols"]
     },
     "concealability": 0,
     "accuracy": [5],
@@ -9226,7 +9226,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
       },
-      "range": ["Machine Pistols"]
+      "rangeList": ["Machine Pistols"]
     },
     "concealability": 0,
     "accuracy": [5],
@@ -9279,7 +9279,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
       },
-      "range": ["Machine Pistols"]
+      "rangeList": ["Machine Pistols"]
     },
     "concealability": 0,
     "accuracy": [5],
@@ -9325,7 +9325,7 @@
         "recoilCompensation": 1,
         "ammoSlots": 1
       },
-      "range": ["Machine Pistols"]
+      "rangeList": ["Machine Pistols"]
     },
     "concealability": 0,
     "accuracy": [4],
@@ -9376,7 +9376,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
       },
-      "range": ["Machine Pistols"]
+      "rangeList": ["Machine Pistols"]
     },
     "concealability": 0,
     "accuracy": [5],
@@ -9423,7 +9423,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
       },
-      "range": ["Machine Pistols"]
+      "rangeList": ["Machine Pistols"]
     },
     "concealability": 0,
     "accuracy": [4],
@@ -9473,7 +9473,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
       },
-      "range": ["Machine Pistols"]
+      "rangeList": ["Machine Pistols"]
     },
     "concealability": 0,
     "accuracy": [5],
@@ -9526,7 +9526,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
       },
-      "range": ["Machine Pistols"]
+      "rangeList": ["Machine Pistols"]
     },
     "concealability": 0,
     "accuracy": [6],
@@ -9585,7 +9585,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
       },
-      "range": ["Machine Pistols"]
+      "rangeList": ["Machine Pistols"]
     },
     "concealability": 0,
     "accuracy": [4],
@@ -9632,7 +9632,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
       },
-      "range": ["Machine Pistols"]
+      "rangeList": ["Machine Pistols"]
     },
     "concealability": 0,
     "accuracy": [5],
@@ -9682,7 +9682,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Medium/Heavy Machinegun"]
+      "rangeList": ["Medium/Heavy Machinegun"]
     },
     "concealability": 10,
     "accuracy": [4],
@@ -9747,7 +9747,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Medium/Heavy Machinegun"]
+      "rangeList": ["Medium/Heavy Machinegun"]
     },
     "concealability": 10,
     "accuracy": [5],
@@ -9801,7 +9801,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Medium/Heavy Machinegun"]
+      "rangeList": ["Medium/Heavy Machinegun"]
     },
     "concealability": 10,
     "accuracy": [5],
@@ -9866,7 +9866,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Top", "Under"]
       },
-      "range": ["Missile Launchers"]
+      "rangeList": ["Missile Launchers"]
     },
     "concealability": 10,
     "accuracy": [5],
@@ -9917,7 +9917,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Top", "Under"]
       },
-      "range": ["Missile Launchers"]
+      "rangeList": ["Missile Launchers"]
     },
     "concealability": 10,
     "accuracy": [
@@ -9973,7 +9973,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Top", "Under"]
       },
-      "range": ["Missile Launchers"]
+      "rangeList": ["Missile Launchers"]
     },
     "concealability": 10,
     "accuracy": [
@@ -10028,7 +10028,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Top", "Under"]
       },
-      "range": ["Missile Launchers"]
+      "rangeList": ["Missile Launchers"]
     },
     "concealability": 10,
     "accuracy": [4],
@@ -10084,7 +10084,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Shotguns", "Shotguns (flechette)"]
+      "rangeList": ["Shotguns", "Shotguns (flechette)"]
     },
     "concealability": 6,
     "accuracy": [4],
@@ -10137,7 +10137,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Shotguns", "Shotguns (flechette)"]
+      "rangeList": ["Shotguns", "Shotguns (flechette)"]
     },
     "concealability": 6,
     "accuracy": [4],
@@ -10203,7 +10203,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Shotguns", "Shotguns (flechette)"]
+      "rangeList": ["Shotguns", "Shotguns (flechette)"]
     },
     "concealability": 6,
     "accuracy": [4],
@@ -10265,7 +10265,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Shotguns", "Shotguns (flechette)"]
+      "rangeList": ["Shotguns", "Shotguns (flechette)"]
     },
     "concealability": 6,
     "accuracy": [4],
@@ -10318,7 +10318,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 4,
     "accuracy": [4],
@@ -10371,7 +10371,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Shotguns", "Shotguns (flechette)"]
+      "rangeList": ["Shotguns", "Shotguns (flechette)"]
     },
     "concealability": 6,
     "accuracy": [4],
@@ -10429,7 +10429,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Shotguns", "Shotguns (flechette)"]
+      "rangeList": ["Shotguns", "Shotguns (flechette)"]
     },
     "concealability": 6,
     "accuracy": [4],
@@ -10490,7 +10490,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Shotguns", "Shotguns (flechette)"]
+      "rangeList": ["Shotguns", "Shotguns (flechette)"]
     },
     "concealability": 6,
     "accuracy": [3],
@@ -10543,7 +10543,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Shotguns", "Shotguns (flechette)"]
+      "rangeList": ["Shotguns", "Shotguns (flechette)"]
     },
     "concealability": 6,
     "accuracy": [5],
@@ -10601,7 +10601,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Shotguns", "Shotguns (flechette)"]
+      "rangeList": ["Shotguns", "Shotguns (flechette)"]
     },
     "concealability": 6,
     "accuracy": [6],
@@ -10659,7 +10659,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Shotguns", "Shotguns (flechette)"]
+      "rangeList": ["Shotguns", "Shotguns (flechette)"]
     },
     "concealability": 6,
     "accuracy": [4],
@@ -10720,7 +10720,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Shotguns", "Shotguns (flechette)"]
+      "rangeList": ["Shotguns", "Shotguns (flechette)"]
     },
     "concealability": 6,
     "accuracy": [4],
@@ -10778,7 +10778,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Shotguns", "Shotguns (flechette)"]
+      "rangeList": ["Shotguns", "Shotguns (flechette)"]
     },
     "concealability": 6,
     "accuracy": [8],
@@ -10831,7 +10831,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Shotguns", "Shotguns (flechette)"]
+      "rangeList": ["Shotguns", "Shotguns (flechette)"]
     },
     "concealability": 6,
     "accuracy": [4],
@@ -10892,7 +10892,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Shotguns", "Shotguns (flechette)"]
+      "rangeList": ["Shotguns", "Shotguns (flechette)"]
     },
     "concealability": 6,
     "accuracy": [4],
@@ -10945,7 +10945,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Sniper Rifles"]
+      "rangeList": ["Sniper Rifles"]
     },
     "concealability": 8,
     "accuracy": [7],
@@ -11006,7 +11006,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Sniper Rifles"]
+      "rangeList": ["Sniper Rifles"]
     },
     "concealability": 8,
     "accuracy": [7],
@@ -11070,7 +11070,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Sniper Rifles"]
+      "rangeList": ["Sniper Rifles"]
     },
     "concealability": 8,
     "accuracy": [7],
@@ -11128,7 +11128,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Sniper Rifles"]
+      "rangeList": ["Sniper Rifles"]
     },
     "concealability": 8,
     "accuracy": [5],
@@ -11186,7 +11186,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Sniper Rifles"]
+      "rangeList": ["Sniper Rifles"]
     },
     "concealability": 8,
     "accuracy": [8],
@@ -11250,7 +11250,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Sniper Rifles"]
+      "rangeList": ["Sniper Rifles"]
     },
     "concealability": 8,
     "accuracy": [7],
@@ -11308,7 +11308,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Sniper Rifles"]
+      "rangeList": ["Sniper Rifles"]
     },
     "concealability": 8,
     "accuracy": [6],
@@ -11369,7 +11369,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Sniper Rifles"]
+      "rangeList": ["Sniper Rifles"]
     },
     "concealability": 8,
     "accuracy": [5],
@@ -11422,7 +11422,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Sniper Rifles"]
+      "rangeList": ["Sniper Rifles"]
     },
     "concealability": 8,
     "accuracy": [7],
@@ -11512,7 +11512,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Top", "Under", "Stock", "Side"]
       },
-      "range": ["Light Pistols"]
+      "rangeList": ["Light Pistols"]
     },
     "concealability": 6,
     "accuracy": [3],
@@ -11557,7 +11557,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Top", "Under", "Stock", "Side"]
       },
-      "range": ["Shotguns (flechette)"]
+      "rangeList": ["Shotguns (flechette)"]
     },
     "concealability": 6,
     "accuracy": [6],
@@ -11597,7 +11597,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Tasers"]
+      "rangeList": ["Tasers"]
     },
     "concealability": 4,
     "accuracy": [8],
@@ -11632,7 +11632,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Throwing Weapons",
-      "range": ["Shuriken"]
+      "rangeList": ["Shuriken"]
     },
     "concealability": -2,
     "accuracy": [
@@ -11686,7 +11686,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Top", "Barrel", "Stock", "Side"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 0,
     "accuracy": [5],
@@ -11739,7 +11739,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Top", "Under", "Stock", "Side"]
       },
-      "range": ["Submachine Guns"]
+      "rangeList": ["Submachine Guns"]
     },
     "concealability": -2,
     "accuracy": [3],
@@ -11784,7 +11784,7 @@
         "ammoCategory": "Heavy Pistols",
         "ammoSlots": 1
       },
-      "range": ["Tasers"]
+      "rangeList": ["Tasers"]
     },
     "concealability": 4,
     "accuracy": [5],
@@ -11825,7 +11825,7 @@
         "ammoCategory": "Light Pistols",
         "ammoSlots": 1
       },
-      "range": ["Tasers"]
+      "rangeList": ["Tasers"]
     },
     "concealability": 4,
     "accuracy": [6],
@@ -11866,7 +11866,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Top", "Stock", "Side"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 0,
     "accuracy": [5],
@@ -11911,7 +11911,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Top", "Under", "Stock", "Side"]
       },
-      "range": ["Sporting Rifles"]
+      "rangeList": ["Sporting Rifles"]
     },
     "concealability": 6,
     "accuracy": [6],
@@ -11955,7 +11955,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Light Pistols"]
+      "rangeList": ["Light Pistols"]
     },
     "concealability": 6,
     "accuracy": [5],
@@ -11995,7 +11995,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Light Pistols"]
+      "rangeList": ["Light Pistols"]
     },
     "concealability": 6,
     "accuracy": [5],
@@ -12036,7 +12036,7 @@
         "ammoCategory": "Holdouts",
         "ammoSlots": 1
       },
-      "range": ["Tasers"]
+      "rangeList": ["Tasers"]
     },
     "concealability": -5,
     "accuracy": [5],
@@ -12077,7 +12077,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Sporting Rifles"]
+      "rangeList": ["Sporting Rifles"]
     },
     "concealability": 8,
     "accuracy": [5],
@@ -12135,7 +12135,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Sporting Rifles"]
+      "rangeList": ["Sporting Rifles"]
     },
     "concealability": 8,
     "accuracy": [5],
@@ -12193,7 +12193,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Sporting Rifles"]
+      "rangeList": ["Sporting Rifles"]
     },
     "concealability": 8,
     "accuracy": [4],
@@ -12246,7 +12246,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Sporting Rifles"]
+      "rangeList": ["Sporting Rifles"]
     },
     "concealability": 8,
     "accuracy": [4],
@@ -12287,7 +12287,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Sporting Rifles"]
+      "rangeList": ["Sporting Rifles"]
     },
     "concealability": 8,
     "accuracy": [5],
@@ -12360,7 +12360,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Sporting Rifles"]
+      "rangeList": ["Sporting Rifles"]
     },
     "concealability": 8,
     "accuracy": [9],
@@ -12418,7 +12418,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Sporting Rifles"]
+      "rangeList": ["Sporting Rifles"]
     },
     "concealability": 8,
     "accuracy": [6],
@@ -12487,7 +12487,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Sporting Rifles"]
+      "rangeList": ["Sporting Rifles"]
     },
     "concealability": 8,
     "accuracy": [2],
@@ -12533,7 +12533,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Sporting Rifles"]
+      "rangeList": ["Sporting Rifles"]
     },
     "concealability": 8,
     "accuracy": [6],
@@ -12579,7 +12579,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Submachine Guns"]
+      "rangeList": ["Submachine Guns"]
     },
     "concealability": 8,
     "accuracy": [5],
@@ -12637,7 +12637,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Submachine Guns"]
+      "rangeList": ["Submachine Guns"]
     },
     "concealability": 2,
     "accuracy": [4],
@@ -12686,7 +12686,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
       },
-      "range": ["Submachine Guns"]
+      "rangeList": ["Submachine Guns"]
     },
     "concealability": 2,
     "accuracy": [4],
@@ -12744,7 +12744,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
       },
-      "range": ["Submachine Guns"]
+      "rangeList": ["Submachine Guns"]
     },
     "concealability": 2,
     "accuracy": [3],
@@ -12793,7 +12793,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Submachine Guns"]
+      "rangeList": ["Submachine Guns"]
     },
     "concealability": 2,
     "accuracy": [4],
@@ -12844,7 +12844,7 @@
         "recoilCompensation": 2,
         "ammoSlots": 1
       },
-      "range": ["Submachine Guns"]
+      "rangeList": ["Submachine Guns"]
     },
     "concealability": 2,
     "accuracy": [4],
@@ -12894,7 +12894,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Submachine Guns"]
+      "rangeList": ["Submachine Guns"]
     },
     "concealability": 2,
     "accuracy": [6],
@@ -12943,7 +12943,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Submachine Guns"]
+      "rangeList": ["Submachine Guns"]
     },
     "concealability": 2,
     "accuracy": [5],
@@ -12994,7 +12994,7 @@
         "recoilCompensation": 2,
         "ammoSlots": 1
       },
-      "range": ["Submachine Guns"]
+      "rangeList": ["Submachine Guns"]
     },
     "concealability": 2,
     "accuracy": [7],
@@ -13043,7 +13043,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Submachine Guns"]
+      "rangeList": ["Submachine Guns"]
     },
     "concealability": 2,
     "accuracy": [4],
@@ -13095,7 +13095,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
       },
-      "range": ["Submachine Guns"]
+      "rangeList": ["Submachine Guns"]
     },
     "concealability": 2,
     "accuracy": [4],
@@ -13136,7 +13136,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Submachine Guns"]
+      "rangeList": ["Submachine Guns"]
     },
     "concealability": 2,
     "accuracy": [5],
@@ -13185,7 +13185,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Submachine Guns"]
+      "rangeList": ["Submachine Guns"]
     },
     "concealability": 2,
     "accuracy": [4],
@@ -13234,7 +13234,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Top", "Stock", "Side"]
       },
-      "range": ["Tasers"]
+      "rangeList": ["Tasers"]
     },
     "concealability": -2,
     "accuracy": [5],
@@ -13294,7 +13294,7 @@
         "underbarrelWeapons": ["Defiance EX Shocker (Melee Contacts)"],
         "accessoryMounts": ["Top", "Stock", "Side"]
       },
-      "range": ["Tasers"]
+      "rangeList": ["Tasers"]
     },
     "concealability": -2,
     "accuracy": [4],
@@ -13398,7 +13398,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Top", "Stock", "Side"]
       },
-      "range": ["Tasers"]
+      "rangeList": ["Tasers"]
     },
     "concealability": -2,
     "accuracy": [5],
@@ -13460,7 +13460,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Top", "Stock", "Side"]
       },
-      "range": ["Tasers"]
+      "rangeList": ["Tasers"]
     },
     "concealability": -2,
     "accuracy": [5],
@@ -13719,7 +13719,7 @@
         "hostWeaponRequirements": {},
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Grenade Launchers"]
+      "rangeList": ["Grenade Launchers"]
     },
     "concealability": 6,
     "accuracy": [3],
@@ -13772,7 +13772,7 @@
         "hostWeaponRequirements": {},
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Grenade Launchers"]
+      "rangeList": ["Grenade Launchers"]
     },
     "concealability": 6,
     "accuracy": [6],
@@ -13834,7 +13834,7 @@
         },
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Grenade Launchers"]
+      "rangeList": ["Grenade Launchers"]
     },
     "concealability": 6,
     "accuracy": [6],
@@ -13890,7 +13890,7 @@
           }
         }
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 6,
     "accuracy": [
@@ -13940,7 +13940,7 @@
           }
         }
       },
-      "range": ["Light Crossbows"]
+      "rangeList": ["Light Crossbows"]
     },
     "concealability": 6,
     "accuracy": [3],
@@ -13996,7 +13996,7 @@
         "hostWeaponRequirements": {},
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Shotguns", "Shotguns (flechette)"]
+      "rangeList": ["Shotguns", "Shotguns (flechette)"]
     },
     "concealability": 6,
     "accuracy": [4],
@@ -14058,7 +14058,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 0,
     "accuracy": [5],
@@ -15134,7 +15134,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Tasers"]
+      "rangeList": ["Tasers"]
     },
     "concealability": 2,
     "accuracy": [4],
@@ -16002,7 +16002,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Light Crossbows"]
+      "rangeList": ["Light Crossbows"]
     },
     "concealability": 0,
     "accuracy": [3],
@@ -16055,7 +16055,7 @@
         "recoilCompensation": 1,
         "ammoSlots": 1
       },
-      "range": ["Heavy Crossbows"]
+      "rangeList": ["Heavy Crossbows"]
     },
     "concealability": 6,
     "accuracy": [4],
@@ -16598,7 +16598,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Throwing Weapons",
-      "range": ["Aerodynamic Grenade"]
+      "rangeList": ["Aerodynamic Grenade"]
     },
     "concealability": -2,
     "accuracy": [
@@ -16658,7 +16658,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Bows",
-      "range": ["Bows"]
+      "rangeList": ["Bows"]
     },
     "concealability": 8,
     "accuracy": [5],
@@ -16734,7 +16734,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top"]
       },
-      "range": ["Light Pistols"]
+      "rangeList": ["Light Pistols"]
     },
     "concealability": -2,
     "accuracy": [5],
@@ -16776,7 +16776,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Flamethrowers"]
+      "rangeList": ["Flamethrowers"]
     },
     "concealability": -5,
     "accuracy": [4],
@@ -16830,7 +16830,7 @@
         "ammoCategory": "Light Pistols",
         "ammoSlots": 1
       },
-      "range": ["Light Pistols"]
+      "rangeList": ["Light Pistols"]
     },
     "concealability": -4,
     "accuracy": [5],
@@ -16871,7 +16871,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Top", "Under"]
       },
-      "range": ["Shotguns (flechette)"]
+      "rangeList": ["Shotguns (flechette)"]
     },
     "concealability": 4,
     "accuracy": [6],
@@ -16977,7 +16977,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 0,
     "accuracy": [5],
@@ -17037,7 +17037,7 @@
         "underbarrelWeapons": ["Lemat 2072 (Shotgun Barrel)"],
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 0,
     "accuracy": [5],
@@ -17096,7 +17096,7 @@
         "ammoCategory": "Shotguns",
         "ammoSlots": 1
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 0,
     "accuracy": [5],
@@ -17149,7 +17149,7 @@
           "hostWeaponMountsRequired": ["Barrel", "Under"]
         }
       },
-      "range": ["Medium Crossbows"]
+      "rangeList": ["Medium Crossbows"]
     },
     "concealability": 0,
     "accuracy": [5],
@@ -17213,7 +17213,7 @@
           "hostWeaponMountsRequired": ["Under"]
         }
       },
-      "range": ["Shotguns", "Shotguns (flechette)"]
+      "rangeList": ["Shotguns", "Shotguns (flechette)"]
     },
     "concealability": 0,
     "accuracy": [3],
@@ -17277,7 +17277,7 @@
           "hostWeaponMountsRequired": ["Under", "Side"]
         }
       },
-      "range": ["Underbarrel Weapons"]
+      "rangeList": ["Submachine Guns"]
     },
     "concealability": 0,
     "accuracy": [8],
@@ -17333,7 +17333,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Light Pistols"]
+      "rangeList": ["Light Pistols"]
     },
     "concealability": 4,
     "accuracy": [6],
@@ -17385,7 +17385,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Light Pistols"]
+      "rangeList": ["Light Pistols"]
     },
     "concealability": 4,
     "accuracy": [4],
@@ -17426,7 +17426,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Top", "Under"]
       },
-      "range": ["Submachine Guns"]
+      "rangeList": ["Submachine Guns"]
     },
     "concealability": 6,
     "accuracy": [7],
@@ -17483,7 +17483,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 0,
     "accuracy": [5],
@@ -17600,7 +17600,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": -2,
     "accuracy": [5],
@@ -17650,7 +17650,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top"]
       },
-      "range": ["Light Pistols"]
+      "rangeList": ["Light Pistols"]
     },
     "concealability": -2,
     "accuracy": [6],
@@ -17699,7 +17699,7 @@
         "underbarrelWeapons": ["Bayonet"],
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 0,
     "accuracy": [4],
@@ -17760,7 +17760,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Holdouts"]
+      "rangeList": ["Holdouts"]
     },
     "concealability": -4,
     "accuracy": [4],
@@ -17855,7 +17855,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Exotic Ranged Weapons"]
+      "rangeList": ["Spray Pen"]
     },
     "concealability": -4,
     "accuracy": [3],
@@ -17900,7 +17900,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Exotic Ranged Weapons"]
+      "rangeList": ["Spray Pen"]
     },
     "concealability": -4,
     "accuracy": [3],
@@ -18197,7 +18197,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Flamethrowers"]
+      "rangeList": ["Flamethrowers"]
     },
     "concealability": 0,
     "accuracy": [4],
@@ -18245,7 +18245,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Standard Grenade"]
+      "rangeList": ["Standard Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -18301,7 +18301,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Aerodynamic Grenade"]
+      "rangeList": ["Aerodynamic Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -19216,7 +19216,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Bows",
-      "range": ["Bows"]
+      "rangeList": ["Bows"]
     },
     "concealability": 8,
     "accuracy": [4],
@@ -19264,7 +19264,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Bows",
-      "range": ["Bows"]
+      "rangeList": ["Bows"]
     },
     "concealability": 8,
     "accuracy": [4],
@@ -19312,7 +19312,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Bows",
-      "range": ["Bows"]
+      "rangeList": ["Bows"]
     },
     "concealability": 8,
     "accuracy": [4],
@@ -19360,7 +19360,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Bows",
-      "range": ["Bows"]
+      "rangeList": ["Bows"]
     },
     "concealability": 8,
     "accuracy": [4],
@@ -19408,7 +19408,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Bows",
-      "range": ["Bows"]
+      "rangeList": ["Bows"]
     },
     "concealability": 8,
     "accuracy": [4],
@@ -19456,7 +19456,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Bows",
-      "range": ["Bows"]
+      "rangeList": ["Bows"]
     },
     "concealability": 8,
     "accuracy": [4],
@@ -19504,7 +19504,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Bows",
-      "range": ["Bows"]
+      "rangeList": ["Bows"]
     },
     "concealability": 8,
     "accuracy": [4],
@@ -19609,7 +19609,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Crossbows",
-      "range": ["Medium Crossbows"]
+      "rangeList": ["Medium Crossbows"]
     },
     "concealability": 4,
     "accuracy": [5],
@@ -19663,7 +19663,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Top", "Stock", "Side"]
       },
-      "range": ["Tasers"]
+      "rangeList": ["Tasers"]
     },
     "concealability": 0,
     "accuracy": [3],
@@ -19717,7 +19717,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top"]
       },
-      "range": ["Holdouts"]
+      "rangeList": ["Holdouts"]
     },
     "concealability": -2,
     "accuracy": [5],
@@ -19762,7 +19762,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Holdouts"]
+      "rangeList": ["Holdouts"]
     },
     "concealability": -4,
     "accuracy": [4],
@@ -19809,7 +19809,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Holdouts"]
+      "rangeList": ["Holdouts"]
     },
     "concealability": -4,
     "accuracy": [4],
@@ -19854,7 +19854,7 @@
         "recoilCompensation": 1,
         "ammoSlots": 1
       },
-      "range": ["Light Pistols"]
+      "rangeList": ["Light Pistols"]
     },
     "concealability": -2,
     "accuracy": [5],
@@ -19908,7 +19908,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": -2,
     "accuracy": [5],
@@ -19967,7 +19967,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 0,
     "accuracy": [5],
@@ -20027,7 +20027,7 @@
         "addWeapons": ["Barrens Special: Bayonet"],
         "accessoryMounts": ["Barrel", "Top", "Under", "Stock", "Side"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 0,
     "accuracy": [4],
@@ -20137,7 +20137,7 @@
         "recoilCompensation": 1,
         "ammoSlots": 1
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 0,
     "accuracy": [4],
@@ -20202,7 +20202,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Submachine Guns"]
+      "rangeList": ["Submachine Guns"]
     },
     "concealability": 0,
     "accuracy": [6],
@@ -20260,7 +20260,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side", "Side"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 0,
     "accuracy": [5],
@@ -20322,7 +20322,7 @@
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"],
         "doubleCostAccessoryMounts": ["Barrel"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 1,
     "accuracy": [5],
@@ -20379,7 +20379,7 @@
         "recoilCompensation": 1,
         "ammoSlots": 1
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 0,
     "accuracy": [5],
@@ -20441,7 +20441,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 0,
     "accuracy": [5],
@@ -20501,7 +20501,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Light Pistols"]
+      "rangeList": ["Light Pistols"]
     },
     "concealability": -1,
     "accuracy": [4],
@@ -20562,7 +20562,7 @@
         "underbarrelWeapons": ["Bayonet"],
         "accessoryMounts": ["Top", "Stock", "Side"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 0,
     "accuracy": [4],
@@ -20616,15 +20616,11 @@
     "name": "Bayonet",
     "description": "",
     "typeInformation": {
-      "type": "Firearm",
+      "type": "Melee",
       "subtype": "Weapon Attachments",
-      "firearmOptions": {
-        "mode": ["N/A"],
-        "recoilCompensation": 0,
-        "ammoSlots": 1,
-        "hostWeaponRequirements": {}
-      },
-      "range": ["Underbarrel Weapons"]
+      "meleeOptions": {
+        "reach": 2
+      }
     },
     "concealability": 0,
     "accuracy": [5],
@@ -20686,7 +20682,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 0,
     "accuracy": [5],
@@ -20739,7 +20735,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 0,
     "accuracy": [5],
@@ -20791,7 +20787,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Machine Pistols"]
+      "rangeList": ["Machine Pistols"]
     },
     "concealability": 0,
     "accuracy": [4],
@@ -20838,7 +20834,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
       },
-      "range": ["Submachine Guns"]
+      "rangeList": ["Submachine Guns"]
     },
     "concealability": 2,
     "accuracy": [4],
@@ -20887,7 +20883,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
       },
-      "range": ["Submachine Guns"]
+      "rangeList": ["Submachine Guns"]
     },
     "concealability": 2,
     "accuracy": [4],
@@ -20938,7 +20934,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
       },
-      "range": ["Carbines"]
+      "rangeList": ["Carbines"]
     },
     "concealability": 4,
     "accuracy": [5],
@@ -20996,7 +20992,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
       },
-      "range": ["Carbines"]
+      "rangeList": ["Carbines"]
     },
     "concealability": 4,
     "accuracy": [5],
@@ -21067,7 +21063,7 @@
         "underbarrelWeapons": ["Underbarrel Grenade Launcher"],
         "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
       },
-      "range": ["Carbines"]
+      "rangeList": ["Carbines"]
     },
     "concealability": 4,
     "accuracy": [5],
@@ -21125,7 +21121,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
       },
-      "range": ["Assault Rifles"]
+      "rangeList": ["Assault Rifles"]
     },
     "concealability": 6,
     "accuracy": [5],
@@ -21187,7 +21183,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
       },
-      "range": ["Assault Rifles"]
+      "rangeList": ["Assault Rifles"]
     },
     "concealability": 6,
     "accuracy": [3],
@@ -21245,7 +21241,7 @@
         ],
         "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
       },
-      "range": ["Assault Rifles"]
+      "rangeList": ["Assault Rifles"]
     },
     "concealability": 4,
     "accuracy": [5],
@@ -21307,7 +21303,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
       },
-      "range": ["Submachine Guns"]
+      "rangeList": ["Submachine Guns"]
     },
     "concealability": 2,
     "accuracy": [4],
@@ -21366,7 +21362,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
       },
-      "range": ["Submachine Guns"]
+      "rangeList": ["Submachine Guns"]
     },
     "concealability": 4,
     "accuracy": [3],
@@ -21429,7 +21425,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Sniper Rifles"]
+      "rangeList": ["Sniper Rifles"]
     },
     "concealability": 6,
     "accuracy": [6],
@@ -21492,7 +21488,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
       },
-      "range": ["Sniper Rifles"]
+      "rangeList": ["Sniper Rifles"]
     },
     "concealability": 8,
     "accuracy": [6],
@@ -21555,7 +21551,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
       },
-      "range": ["Shotguns"]
+      "rangeList": ["Shotguns"]
     },
     "concealability": 6,
     "accuracy": [4],
@@ -21617,7 +21613,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
       },
-      "range": ["Shotguns"]
+      "rangeList": ["Shotguns"]
     },
     "concealability": 6,
     "accuracy": [4],
@@ -21671,7 +21667,7 @@
         "addWeapons": ["Krime Whammy (Melee)"],
         "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
       },
-      "range": ["Shotguns"]
+      "rangeList": ["Shotguns"]
     },
     "concealability": 6,
     "accuracy": [3],
@@ -21777,7 +21773,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Light Machine Guns"]
+      "rangeList": ["Light Machine Guns"]
     },
     "concealability": 10,
     "accuracy": [3],
@@ -21839,7 +21835,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Light Machine Guns"]
+      "rangeList": ["Light Machine Guns"]
     },
     "concealability": 10,
     "accuracy": [3],
@@ -21901,7 +21897,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Light Machine Guns"]
+      "rangeList": ["Light Machine Guns"]
     },
     "concealability": 10,
     "accuracy": [3],
@@ -21952,7 +21948,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Top", "Under"]
       },
-      "range": ["Grenade Launchers"]
+      "rangeList": ["Grenade Launchers"]
     },
     "concealability": 8,
     "accuracy": [3],
@@ -22004,7 +22000,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Top", "Under"]
       },
-      "range": ["Missile Launchers"]
+      "rangeList": ["Missile Launchers"]
     },
     "concealability": 10,
     "accuracy": [5],
@@ -22061,7 +22057,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Top", "Under"]
       },
-      "range": ["Grenade Launchers"]
+      "rangeList": ["Grenade Launchers"]
     },
     "concealability": 8,
     "accuracy": [4],
@@ -22118,7 +22114,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Top", "Under", "Stock", "Side"]
       },
-      "range": ["Tasers"]
+      "rangeList": ["Tasers"]
     },
     "concealability": 2,
     "accuracy": [5],
@@ -22164,7 +22160,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Top", "Under"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 0,
     "accuracy": [6],
@@ -22212,7 +22208,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Top", "Under", "Stock", "Side"]
       },
-      "range": ["Light Pistols"]
+      "rangeList": ["Light Pistols"]
     },
     "concealability": 2,
     "accuracy": [5],
@@ -22301,7 +22297,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Standard Grenade"]
+      "rangeList": ["Standard Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -22351,7 +22347,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Aerodynamic Grenade"]
+      "rangeList": ["Aerodynamic Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -22407,7 +22403,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Heavy Machine Guns"]
+      "rangeList": ["Medium/Heavy Machinegun"]
     },
     "concealability": 10,
     "accuracy": [4],
@@ -22527,7 +22523,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Holdouts"]
+      "rangeList": ["Holdouts"]
     },
     "concealability": -2,
     "accuracy": [5],
@@ -22620,7 +22616,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Tasers"]
+      "rangeList": ["Tasers"]
     },
     "concealability": -2,
     "accuracy": [5],
@@ -22674,7 +22670,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
       },
-      "range": ["Shotguns"]
+      "rangeList": ["Shotguns"]
     },
     "concealability": 6,
     "accuracy": [4],
@@ -22795,7 +22791,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Submachine Guns"]
+      "rangeList": ["Submachine Guns"]
     },
     "concealability": 2,
     "accuracy": [6],
@@ -22967,7 +22963,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Missile Launchers"]
+      "rangeList": ["Missile Launchers"]
     },
     "concealability": 10,
     "accuracy": [4],
@@ -23015,7 +23011,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Grenade Launchers"]
+      "rangeList": ["Grenade Launchers"]
     },
     "concealability": 6,
     "accuracy": [5],
@@ -23476,7 +23472,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Standard Grenade"]
+      "rangeList": ["Standard Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -23532,7 +23528,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Aerodynamic Grenade"]
+      "rangeList": ["Aerodynamic Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -23686,7 +23682,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Standard Grenade"]
+      "rangeList": ["Standard Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -23730,7 +23726,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Standard Grenade"]
+      "rangeList": ["Standard Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -23798,7 +23794,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Standard Grenade"]
+      "rangeList": ["Standard Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -23866,7 +23862,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Standard Grenade"]
+      "rangeList": ["Standard Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -23927,7 +23923,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Holdouts"]
+      "rangeList": ["Holdouts"]
     },
     "concealability": -4,
     "accuracy": [4],
@@ -23973,7 +23969,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 0,
     "accuracy": [3],
@@ -24032,7 +24028,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Submachine Guns"]
+      "rangeList": ["Submachine Guns"]
     },
     "concealability": 2,
     "accuracy": [4],
@@ -24094,7 +24090,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
       },
-      "range": ["Machine Pistols"]
+      "rangeList": ["Machine Pistols"]
     },
     "concealability": 0,
     "accuracy": [4],
@@ -24144,7 +24140,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
       },
-      "range": ["Submachine Guns"]
+      "rangeList": ["Submachine Guns"]
     },
     "concealability": 6,
     "accuracy": [5],
@@ -24200,7 +24196,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
       },
-      "range": ["Carbines"]
+      "rangeList": ["Carbines"]
     },
     "concealability": 2,
     "accuracy": [3],
@@ -24266,7 +24262,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
       },
-      "range": ["Submachine Guns"]
+      "rangeList": ["Submachine Guns"]
     },
     "concealability": 2,
     "accuracy": [4],
@@ -24327,7 +24323,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
       },
-      "range": ["Assault Rifles"]
+      "rangeList": ["Assault Rifles"]
     },
     "concealability": 6,
     "accuracy": [5],
@@ -24387,7 +24383,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Shotguns"]
+      "rangeList": ["Shotguns"]
     },
     "concealability": 6,
     "accuracy": [4],
@@ -24446,7 +24442,7 @@
         "underbarrelWeapons": ["Krime Ditch (Shotgun)"],
         "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
       },
-      "range": ["Assault Rifles"]
+      "rangeList": ["Assault Rifles"]
     },
     "concealability": 6,
     "accuracy": [4],
@@ -24504,7 +24500,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 4,
     "accuracy": [4],
@@ -24562,7 +24558,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 2,
     "accuracy": [4],
@@ -24623,7 +24619,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 2,
     "accuracy": [4],
@@ -24682,7 +24678,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
       },
-      "range": ["Heavy Pistols"]
+      "rangeList": ["Heavy Pistols"]
     },
     "concealability": 4,
     "accuracy": [5],
@@ -24745,7 +24741,7 @@
         "underbarrelWeapons": ["Krime Soldier GL"],
         "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
       },
-      "range": ["Sniper Rifles"]
+      "rangeList": ["Sniper Rifles"]
     },
     "concealability": 8,
     "accuracy": [3],
@@ -24802,7 +24798,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Grenade Launchers"]
+      "rangeList": ["Grenade Launchers"]
     },
     "concealability": 8,
     "accuracy": [4],
@@ -24852,7 +24848,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Light Machine Guns"]
+      "rangeList": ["Light Machine Guns"]
     },
     "concealability": 10,
     "accuracy": [6],
@@ -24918,7 +24914,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
-      "range": ["Heavy Machine Guns"]
+      "rangeList": ["Medium/Heavy Machinegun"]
     },
     "concealability": 10,
     "accuracy": [2],
@@ -24976,7 +24972,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Top", "Under"]
       },
-      "range": ["Assault Cannons"]
+      "rangeList": ["Assault Cannons"]
     },
     "concealability": 10,
     "accuracy": [5],
@@ -25034,7 +25030,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Top", "Under"]
       },
-      "range": ["Assault Cannons"]
+      "rangeList": ["Assault Cannons"]
     },
     "concealability": 10,
     "accuracy": [5],
@@ -25080,7 +25076,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Top", "Under"]
       },
-      "range": ["Missile Launchers"]
+      "rangeList": ["Missile Launchers"]
     },
     "concealability": 10,
     "accuracy": [4],
@@ -25136,7 +25132,7 @@
         "ammoSlots": 1,
         "accessoryMounts": ["Stock", "Side", "Top", "Under"]
       },
-      "range": ["Missile Launchers"]
+      "rangeList": ["Missile Launchers"]
     },
     "concealability": 10,
     "accuracy": [4],
@@ -25185,7 +25181,7 @@
         "recoilCompensation": 0,
         "ammoSlots": 1
       },
-      "range": ["Grenade Launchers"]
+      "rangeList": ["Grenade Launchers"]
     },
     "concealability": 8,
     "accuracy": [5],
@@ -25224,7 +25220,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Standard Grenade"]
+      "rangeList": ["Standard Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -25268,7 +25264,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Standard Grenade"]
+      "rangeList": ["Standard Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -25318,7 +25314,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Standard Grenade"]
+      "rangeList": ["Standard Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -25374,7 +25370,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Standard Grenade"]
+      "rangeList": ["Standard Grenade"]
     },
     "concealability": 0,
     "accuracy": [
@@ -25431,7 +25427,7 @@
     "typeInformation": {
       "type": "Explosive",
       "subtype": "Grenade",
-      "range": ["Standard Grenade"]
+      "rangeList": ["Standard Grenade"]
     },
     "concealability": 0,
     "accuracy": [

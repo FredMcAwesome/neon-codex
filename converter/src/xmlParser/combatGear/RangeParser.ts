@@ -55,7 +55,7 @@ semantics.addOperation("eval", {
   },
 });
 
-export function ParseRange() {
+export function ParseRanges() {
   const currentPath = import.meta.url;
   const xml_string = fs.readFileSync(
     fileURLToPath(path.dirname(currentPath) + "../../../../xmls/ranges.xml"),
@@ -96,7 +96,7 @@ export function ParseRange() {
       throw new Error(check.error.message);
     }
     const jsonFilePath = fileURLToPath(
-      path.dirname(currentPath) + "../../../../jsonFiles/range.json"
+      path.dirname(currentPath) + "../../../../jsonFiles/ranges.json"
     );
     fs.writeFile(
       jsonFilePath,

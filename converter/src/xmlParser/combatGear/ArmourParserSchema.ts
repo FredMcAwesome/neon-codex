@@ -1,4 +1,4 @@
-import { armourEnum } from "@shadowrun/common/src/enums.js";
+import { armourEnum } from "@shadowrun/common/build/enums.js";
 import { z as zod } from "zod";
 import {
   BonusXmlSchema,

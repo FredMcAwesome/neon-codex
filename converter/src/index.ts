@@ -1,5 +1,5 @@
-import { ParseRange } from "./xmlParser/combatGear/RangeParser.js";
-ParseRange();
+import { ParseRanges } from "./xmlParser/combatGear/RangeParser.js";
+ParseRanges();
 
 import { ParseWeapons } from "./xmlParser/combatGear/WeaponParser.js";
 

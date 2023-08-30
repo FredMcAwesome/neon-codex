@@ -23,7 +23,7 @@
     "prestart": "npm run build -w backend && npm run build-dev -w frontend",
     "start": "npm run dev -w backend",
     "start-prod": "npm run build -w backend && npm run build -w frontend && npm start -w backend",
-    "clean": "npm run clean -w frontend -w common -w backend -w database",
+    "clean": "npm run clean -w frontend -w common -w backend -w database -w converter",
     "prepare": "husky install"
   },
   "private": true,

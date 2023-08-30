@@ -12,10 +12,14 @@ import {
   Explosives,
 } from "../models/gear/combatGear/weaponModel.js";
 import { IncludedWeaponAccessories } from "../models/chummerdb/customTables/activeWeaponAccessoryModel.js";
+import { WeaponRanges } from "../models/gear/combatGear/helperTables/weaponRangeModel.js";
+import { getRanges } from "../seeds/newSeeds/rangesSeed.js";
+import { WeaponRangeLinks } from "../models/chummerdb/customTables/weaponRangeLinkModel.js";
 
 export class GearSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
     const stagedSkills: Array<Skills> = getSkills();
+    const stagedWeaponRanges: Array<WeaponRanges> = getRanges();
     const stagedWeaponAccessories: Array<WeaponAccessories> =
       getWeaponAccessories();
     const {
@@ -24,10 +28,15 @@ export class GearSeeder extends Seeder {
       stagedFirearmWeapons,
       stagedExplosiveWeapons,
       stagedAccessories,
-    } = getWeapons(stagedSkills, stagedWeaponAccessories);
+      stagedRanges,
+    } = getWeapons(stagedSkills, stagedWeaponRanges, stagedWeaponAccessories);
 
     stagedSkills.forEach((skill) => {
       em.create(Skills, skill);
+    });
+
+    stagedWeaponRanges.forEach((range) => {
+      em.create(WeaponRanges, range);
     });
 
     stagedWeaponAccessories.forEach((weaponAccessory) => {
@@ -38,21 +47,22 @@ export class GearSeeder extends Seeder {
       em.create(MeleeWeapons, meleeWeapon);
     });
     stagedProjectileWeapons.forEach((projectileWeapon) => {
-      console.log(projectileWeapon.name);
       em.create(ProjectileWeapons, projectileWeapon);
     });
     stagedFirearmWeapons.forEach((firearmWeapon) => {
-      console.log(firearmWeapon.name);
-      console.log(JSON.stringify(firearmWeapon));
       em.create(FirearmWeapons, firearmWeapon);
     });
     stagedExplosiveWeapons.forEach((explosive) => {
-      console.log(explosive.name);
       em.create(Explosives, explosive);
     });
     stagedAccessories.forEach((weaponAccessories) => {
       weaponAccessories.forEach((accessory) => {
         em.create(IncludedWeaponAccessories, accessory);
+      });
+    });
+    stagedRanges.forEach((weaponRanges) => {
+      weaponRanges.forEach((range) => {
+        em.create(WeaponRangeLinks, range);
       });
     });
     //   ammosList.forEach((ammo) => {

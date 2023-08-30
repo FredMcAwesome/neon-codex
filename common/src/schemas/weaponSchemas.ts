@@ -46,6 +46,7 @@ export const RangeSchema = zod
   .strict();
 
 export const RangeListSchema = zod.array(RangeSchema);
+export type RangeListType = zod.infer<typeof RangeListSchema>;
 
 export const AccuracySubnumberSchema = zod.union([
   zod.number(),
@@ -198,7 +199,7 @@ export const SingleArmourPenetrationSchema: zod.ZodType<SingleArmourPenetrationT
 export const ArmourPenetrationSchema = zod.array(SingleArmourPenetrationSchema);
 export type ArmourPenetrationType = zod.infer<typeof ArmourPenetrationSchema>;
 
-export const typeInformationSchema = zod.discriminatedUnion("type", [
+export const unlinkedTypeInformationSchema = zod.discriminatedUnion("type", [
   zod
     .object({
       type: zod.literal(weaponTypeEnum.Melee),
@@ -210,7 +211,7 @@ export const typeInformationSchema = zod.discriminatedUnion("type", [
     .object({
       type: zod.literal(weaponTypeEnum.Projectile),
       subtype: zod.nativeEnum(projectileWeaponTypeEnum),
-      range: zod.array(zod.string()),
+      rangeList: zod.array(zod.string()),
     })
     .strict(),
   zod
@@ -218,16 +219,66 @@ export const typeInformationSchema = zod.discriminatedUnion("type", [
       type: zod.literal(weaponTypeEnum.Firearm),
       subtype: zod.nativeEnum(firearmWeaponTypeEnum),
       firearmOptions: FirearmOptionsSchema,
-      range: zod.array(zod.string()),
+      rangeList: zod.array(zod.string()),
     })
     .strict(),
   zod
     .object({
       type: zod.literal(weaponTypeEnum.Explosive),
       subtype: zod.nativeEnum(explosiveTypeEnum),
-      range: zod.array(zod.string()),
+      rangeList: zod.array(zod.string()),
     })
     .strict(),
+]);
+export type unlinkedTypeInformationType = zod.infer<
+  typeof unlinkedTypeInformationSchema
+>;
+
+const firearmTypeInformation = zod
+  .object({
+    type: zod.literal(weaponTypeEnum.Firearm),
+    subtype: zod.nativeEnum(firearmWeaponTypeEnum),
+    firearmOptions: FirearmOptionsSchema,
+    rangeList: RangeListSchema,
+  })
+  .strict();
+export type firearmTypeInformationType = zod.infer<
+  typeof firearmTypeInformation
+>;
+const meleeTypeInformation = zod
+  .object({
+    type: zod.literal(weaponTypeEnum.Melee),
+    subtype: zod.nativeEnum(meleeWeaponTypeEnum),
+    meleeOptions: MeleeOptionsSchema,
+  })
+  .strict();
+export type meleeTypeInformationType = zod.infer<typeof meleeTypeInformation>;
+const projectileTypeInformation = zod
+  .object({
+    type: zod.literal(weaponTypeEnum.Projectile),
+    subtype: zod.nativeEnum(projectileWeaponTypeEnum),
+    rangeList: RangeListSchema,
+  })
+  .strict();
+export type projectileTypeInformationType = zod.infer<
+  typeof projectileTypeInformation
+>;
+const explosiveTypeInformation = zod
+  .object({
+    type: zod.literal(weaponTypeEnum.Explosive),
+    subtype: zod.nativeEnum(explosiveTypeEnum),
+    rangeList: RangeListSchema,
+  })
+  .strict();
+export type explosiveTypeInformationType = zod.infer<
+  typeof explosiveTypeInformation
+>;
+
+export const typeInformationSchema = zod.discriminatedUnion("type", [
+  firearmTypeInformation,
+  meleeTypeInformation,
+  projectileTypeInformation,
+  explosiveTypeInformation,
 ]);
 export type typeInformationType = zod.infer<typeof typeInformationSchema>;
 
@@ -273,7 +324,7 @@ export const WeaponUnlinkedSummarySchema = zod
   .object({
     // id: zod.string(),
     name: zod.string(),
-    typeInformation: typeInformationSchema,
+    typeInformation: unlinkedTypeInformationSchema,
     concealability: zod.number(),
     accuracy: AccuracySchema,
     damage: DamageSchema,
@@ -304,3 +355,33 @@ export const WeaponUnlinkedSummaryListSchema = zod.array(
 export type WeaponUnlinkedSummaryListType = zod.infer<
   typeof WeaponUnlinkedSummaryListSchema
 >;
+
+export const WeaponLinkedSchema = zod
+  .object({
+    // id: zod.string(),
+    name: zod.string(),
+    typeInformation: typeInformationSchema,
+    concealability: zod.number(),
+    accuracy: AccuracySchema,
+    damage: DamageSchema,
+    armourPenetration: ArmourPenetrationSchema,
+    ammunition: zod.optional(AmmunitionSchema),
+    availability: AvailabilitySchema,
+    cost: CostSchema,
+    allowedGear: zod.optional(AllowedGearSchema),
+    accessories: zod.optional(UnlinkedAccessoryListSchema),
+    allowAccessories: zod.boolean(),
+    isCyberware: zod.boolean(),
+    augmentationType: zod.nativeEnum(augmentationClassificationEnum),
+    description: zod.string(),
+    wireless: zod.optional(zod.string()),
+    relatedSkill: zod.string(),
+    relatedSkillSpecialisations: zod.optional(zod.array(zod.string())),
+    rating: zod.optional(zod.number()),
+    source: zod.nativeEnum(sourceBookEnum),
+    page: zod.number(),
+  })
+  .strict();
+export type WeaponLinkedType = zod.infer<typeof WeaponLinkedSchema>;
+export const WeaponLinkedListSchema = zod.array(WeaponLinkedSchema);
+export type WeaponLinkedListType = zod.infer<typeof WeaponLinkedListSchema>;

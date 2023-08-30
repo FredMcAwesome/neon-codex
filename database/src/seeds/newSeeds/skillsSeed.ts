@@ -1,7 +1,7 @@
 import {
   SkillListType,
   SkillListSchema,
-} from "@shadowrun/common/src/schemas/skillSchema.js";
+} from "@shadowrun/common/build/schemas/skillSchema.js";
 import assert from "assert";
 import fs from "fs";
 import path from "path";
@@ -32,7 +32,7 @@ export const getSkills = function () {
   const stagedSkills: Array<Skills> = [];
   skills.forEach((skill) => {
     stagedSkills.push(new Skills(skill));
-    console.log(skill.name);
+    // console.log(skill.name);
   });
   return stagedSkills;
 };
