@@ -1,17 +1,58 @@
 import { z as zod } from "zod";
-import { augmentationTypeEnum } from "../enums.js";
 import {
-  AvailabilitySchema,
-  BaseOrSpecial,
+  augmentationTypeEnum,
+  costAugmentationEnum,
+  mathOperatorEnum,
+  restrictionEnum,
+} from "../enums.js";
+import {
+  AvailabilityRatingSchema,
+  BaseOrSpecialSchema,
   CapacitySchema,
-  CostSchema,
   GearCalculation,
   RatingSchema,
-} from "./commonSchema.js";
+} from "./commonSchemas.js";
+
+export const AvailabilityAugmentationSchema = zod
+  .object({
+    rating: AvailabilityRatingSchema,
+    restriction: zod.nativeEnum(restrictionEnum),
+    modifier: zod.optional(zod.literal(mathOperatorEnum.Add)),
+  })
+  .strict();
+export type AvailabilityAugmentationType = zod.infer<
+  typeof AvailabilityAugmentationSchema
+>;
+
+const InnerCostAugmentationSchema = zod.union([
+  zod.number(),
+  zod
+    .object({
+      option: zod.nativeEnum(costAugmentationEnum),
+    })
+    .strict(),
+  zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
+]);
+
+export type CostAugmentationType = Array<
+  | zod.infer<typeof InnerCostAugmentationSchema>
+  | { subnumbers: CostAugmentationType }
+>;
+export const CostAugmentationSchema: zod.ZodType<CostAugmentationType> =
+  zod.array(
+    zod.union([
+      InnerCostAugmentationSchema,
+      zod
+        .object({
+          subnumbers: zod.lazy(() => CostAugmentationSchema),
+        })
+        .strict(),
+    ])
+  );
 
 export const EssenceSchema = zod
   .object({
-    base: BaseOrSpecial,
+    base: BaseOrSpecialSchema,
     specialCalculation: GearCalculation,
   })
   .strict();
@@ -20,11 +61,11 @@ export type EssenceType = zod.infer<typeof EssenceSchema>;
 export const CyberlimbOptionsSchema = zod
   .object({
     syntheticCapacity: CapacitySchema,
-    syntheticCost: CostSchema,
+    syntheticCost: CostAugmentationSchema,
   })
   .strict();
 
-const typeInformation = zod.discriminatedUnion("type", [
+const TypeInformationAugmentationSchema = zod.discriminatedUnion("type", [
   zod
     .object({
       type: zod.literal(augmentationTypeEnum.Headware),
@@ -49,7 +90,7 @@ const typeInformation = zod.discriminatedUnion("type", [
     .object({
       type: zod.literal(augmentationTypeEnum.Cyberlimbs),
       syntheticCapacity: CapacitySchema,
-      syntheticCost: CostSchema,
+      syntheticCost: CostAugmentationSchema,
     })
     .strict(),
   zod
@@ -66,14 +107,14 @@ const typeInformation = zod.discriminatedUnion("type", [
 
 export const AugmentationSchema = zod
   .object({
-    typeInformation: typeInformation,
+    typeInformation: TypeInformationAugmentationSchema,
     name: zod.string(),
     rating: zod.optional(RatingSchema),
     essense: EssenceSchema,
     capacity: zod.optional(CapacitySchema),
-    capacityCost: zod.optional(CostSchema),
-    availability: AvailabilitySchema,
-    cost: CostSchema,
+    capacityCost: zod.optional(CostAugmentationSchema),
+    availability: AvailabilityAugmentationSchema,
+    cost: CostAugmentationSchema,
     cyberlimbOptions: zod.optional(CyberlimbOptionsSchema),
     description: zod.string(),
     wireless: zod.optional(zod.string()),

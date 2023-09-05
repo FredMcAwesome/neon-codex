@@ -1,6 +1,9 @@
 import { Entity, PrimaryKey, Property } from "@mikro-orm/core";
-import type { AvailabilityType, CostType } from "@shadowrun/common";
 import { armourAccessoryTypeEnum } from "@shadowrun/common";
+import type {
+  AvailabilityArmourAccessoryType,
+  CostArmourAccessoryType,
+} from "@shadowrun/common/build/schemas/armourSchemas.js";
 
 @Entity({
   discriminatorColumn: "type",
@@ -14,13 +17,13 @@ export class ArmourAccessories {
   name!: string;
 
   @Property({ type: "json" })
-  availability!: AvailabilityType;
+  availability!: AvailabilityArmourAccessoryType;
 
   @Property()
   armourRating!: number;
 
   @Property({ type: "json" })
-  cost!: CostType;
+  cost!: CostArmourAccessoryType;
 
   @Property({ length: 5000 })
   description!: string;
@@ -32,5 +35,5 @@ export class ArmourAccessories {
 @Entity({ discriminatorValue: armourAccessoryTypeEnum.Modification })
 export class ArmourModifications extends ArmourAccessories {
   @Property({ type: "json" })
-  capacityCost!: CostType;
+  capacityCost!: CostArmourAccessoryType;
 }

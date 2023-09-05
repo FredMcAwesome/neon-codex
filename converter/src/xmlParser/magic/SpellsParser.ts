@@ -5,7 +5,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import * as fs from "fs";
 import { sourceBookXmlEnum } from "../ParserCommonDefines.js";
-import { SpellListXmlSchema, SpellListXmlType } from "./SpellsParserSchema.js";
+import { SpellListXmlSchema, SpellListXmlType } from "./SpellsParserSchemas.js";
 
 const currentPath = import.meta.url;
 const xml_string = fs.readFileSync(

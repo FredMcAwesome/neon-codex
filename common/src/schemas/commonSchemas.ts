@@ -1,10 +1,6 @@
 import { z as zod } from "zod";
-import {
-  availabilityEnum,
-  costEnum,
-  mathOperatorEnum,
-  restrictionEnum,
-} from "../enums.js";
+import { availabilityEnum, mathOperatorEnum } from "../enums.js";
+
 export const GearCalculation = zod.array(
   zod.union([
     zod.number(),
@@ -26,7 +22,7 @@ export const GearCalculation = zod.array(
 
 export type GearCalculationType = zod.infer<typeof GearCalculation>;
 
-export const BaseOrSpecial = zod.union([
+export const BaseOrSpecialSchema = zod.union([
   zod.number(),
   zod.enum(["Calculation"]),
 ]);
@@ -59,25 +55,6 @@ export const AvailabilityRatingSchema: zod.ZodType<AvailabilityRatingType> =
     ])
   );
 
-export const AvailabilitySchema = zod
-  .object({
-    rating: AvailabilityRatingSchema,
-    restriction: zod.nativeEnum(restrictionEnum),
-  })
-  .strict();
-export type AvailabilityType = zod.infer<typeof AvailabilitySchema>;
-
-export const WeaponAccessoryAvailabilitySchema = zod
-  .object({
-    rating: AvailabilityRatingSchema,
-    restriction: zod.nativeEnum(restrictionEnum),
-    modifier: zod.optional(zod.literal(mathOperatorEnum.Add)),
-  })
-  .strict();
-export type WeaponAccessoryAvailabilityType = zod.infer<
-  typeof WeaponAccessoryAvailabilitySchema
->;
-
 export const ValueRangeSchema = zod.union([
   zod
     .object({
@@ -87,37 +64,13 @@ export const ValueRangeSchema = zod.union([
     .strict(),
   zod
     .object({
-      base: BaseOrSpecial,
+      base: BaseOrSpecialSchema,
       specialCalculation: GearCalculation,
     })
     .strict(),
 ]);
 export const RatingSchema = ValueRangeSchema;
 export type RatingType = zod.infer<typeof RatingSchema>;
-
-const InnerCostSchema = zod.union([
-  zod.number(),
-  zod
-    .object({
-      option: zod.nativeEnum(costEnum),
-    })
-    .strict(),
-  zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
-]);
-
-export type CostType = Array<
-  zod.infer<typeof InnerCostSchema> | { subnumbers: CostType }
->;
-export const CostSchema: zod.ZodType<CostType> = zod.array(
-  zod.union([
-    InnerCostSchema,
-    zod
-      .object({
-        subnumbers: zod.lazy(() => CostSchema),
-      })
-      .strict(),
-  ])
-);
 
 export const CapacitySchema = ValueRangeSchema;
 export type CapacityType = zod.infer<typeof CapacitySchema>;

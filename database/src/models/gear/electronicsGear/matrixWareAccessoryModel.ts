@@ -1,11 +1,10 @@
 import { Entity, PrimaryKey, Property, Enum } from "@mikro-orm/core";
-import type {
-  AvailabilityType,
-  CapacityType,
-  CostType,
-  RatingType,
-} from "@shadowrun/common";
+import type { CapacityType, RatingType } from "@shadowrun/common";
 import { matrixWareAccessoryTypeEnum } from "@shadowrun/common";
+import type {
+  CostElectronicType,
+  AvailabilityElectronicType,
+} from "@shadowrun/common/build/schemas/electronicSchemas.js";
 
 @Entity({
   discriminatorColumn: "type",
@@ -25,10 +24,10 @@ export abstract class MatrixWareAccessories {
   rating?: RatingType;
 
   @Property({ type: "json" })
-  availability!: AvailabilityType;
+  availability!: AvailabilityElectronicType;
 
   @Property({ type: "json" })
-  cost!: CostType;
+  cost!: CostElectronicType;
 }
 
 @Entity({ discriminatorValue: matrixWareAccessoryTypeEnum.CredStick })
@@ -94,7 +93,7 @@ export class AudioDevices extends MatrixWareAccessories {
 @Entity({ discriminatorValue: matrixWareAccessoryTypeEnum.AudioEnhancement })
 export class AudioEnhancements extends MatrixWareAccessories {
   @Property({ type: "json" })
-  capacityCost!: CostType;
+  capacityCost!: CostElectronicType;
 
   @Property({ length: 5000 })
   description!: string;

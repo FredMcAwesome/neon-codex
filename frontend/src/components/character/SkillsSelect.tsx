@@ -5,7 +5,7 @@ import { CollapsibleDiv } from "../../utils/CollapsibleDiv.js";
 import {
   CustomSkillListType,
   CustomSkillType,
-} from "@shadowrun/common/build/schemas/skillSchema.js";
+} from "@shadowrun/common/build/schemas/skillSchemas.js";
 import { skillCategoryEnum } from "@shadowrun/common/build/enums.js";
 
 // first rating empty for no points in skill

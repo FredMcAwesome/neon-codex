@@ -1,5 +1,5 @@
 import { z as zod } from "zod";
-import { ModListXmlSchema } from "../combatGear/ArmourParserSchema.js";
+import { ModListXmlSchema } from "../combatGear/ArmourParserSchemas.js";
 import {
   SourceXmlSchema,
   StringOrNumberSchema,

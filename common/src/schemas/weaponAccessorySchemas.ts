@@ -13,24 +13,60 @@ import {
   firearmAccessoryMountLocationEnum,
   sourceBookEnum,
   ammoOptionEnum,
+  costWeaponAccessoryEnum,
+  restrictionEnum,
 } from "../enums.js";
-import {
-  CostSchema,
-  WeaponAccessoryAvailabilitySchema,
-} from "./commonSchema.js";
+import { AvailabilityRatingSchema } from "./commonSchemas.js";
 import { UseGearListSchema } from "./weaponSchemas.js";
 
-export const weaponDamageRequirementsSchema = zod
+export const AvailabilityWeaponAccessorySchema = zod
+  .object({
+    rating: AvailabilityRatingSchema,
+    restriction: zod.nativeEnum(restrictionEnum),
+    modifier: zod.optional(zod.literal(mathOperatorEnum.Add)),
+  })
+  .strict();
+export type AvailabilityWeaponAccessoryType = zod.infer<
+  typeof AvailabilityWeaponAccessorySchema
+>;
+
+const InnerCostWeaponAccessorySchema = zod.union([
+  zod.number(),
+  zod
+    .object({
+      option: zod.nativeEnum(costWeaponAccessoryEnum),
+    })
+    .strict(),
+  zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
+]);
+
+export type CostWeaponAccessoryType = Array<
+  | zod.infer<typeof InnerCostWeaponAccessorySchema>
+  | { subnumbers: CostWeaponAccessoryType }
+>;
+export const CostWeaponAccessorySchema: zod.ZodType<CostWeaponAccessoryType> =
+  zod.array(
+    zod.union([
+      InnerCostWeaponAccessorySchema,
+      zod
+        .object({
+          subnumbers: zod.lazy(() => CostWeaponAccessorySchema),
+        })
+        .strict(),
+    ])
+  );
+
+export const WeaponDamageRequirementsSchema = zod
   .object({
     type: zod.nativeEnum(damageTypeEnum),
     annotation: zod.optional(zod.nativeEnum(damageAnnotationEnum)),
   })
   .strict();
-export type weaponDamageRequirementsType = zod.infer<
-  typeof weaponDamageRequirementsSchema
+export type WeaponDamageRequirementsType = zod.infer<
+  typeof WeaponDamageRequirementsSchema
 >;
 
-export const accessoryWeaponRequirementsSchema = zod
+export const AccessoryWeaponRequirementsSchema = zod
   .object({
     weapons: zod.optional(zod.array(zod.string())),
     minimumHostConcealment: zod.optional(zod.number()),
@@ -61,11 +97,11 @@ export const accessoryWeaponRequirementsSchema = zod
     accessoryMounts: zod.optional(
       zod.array(zod.nativeEnum(firearmAccessoryMountLocationEnum))
     ),
-    requiredDamage: zod.optional(weaponDamageRequirementsSchema),
+    requiredDamage: zod.optional(WeaponDamageRequirementsSchema),
   })
   .strict();
-export type accessoryWeaponRequirementsType = zod.infer<
-  typeof accessoryWeaponRequirementsSchema
+export type AccessoryWeaponRequirementsType = zod.infer<
+  typeof AccessoryWeaponRequirementsSchema
 >;
 
 const AmmoInformationSchema = zod
@@ -100,19 +136,19 @@ export const AmmoCapacityCalculationSchema: zod.ZodType<AmmoCapacityCalculationT
     ])
   );
 
-export const hostWeaponMountsRequiredSchema = zod.array(
+export const HostWeaponMountsRequiredSchema = zod.array(
   zod.array(zod.nativeEnum(firearmAccessoryMountLocationEnum))
 );
-export type hostWeaponMountsRequiredType = zod.infer<
-  typeof hostWeaponMountsRequiredSchema
+export type HostWeaponMountsRequiredType = zod.infer<
+  typeof HostWeaponMountsRequiredSchema
 >;
 
-const concealabilityModificationSchema = zod.union([
+const ConcealabilityModificationSchema = zod.union([
   zod.number(),
   zod.nativeEnum(standardCalculationEnum),
 ]);
-export type concealabilityModificationType = zod.infer<
-  typeof concealabilityModificationSchema
+export type ConcealabilityModificationType = zod.infer<
+  typeof ConcealabilityModificationSchema
 >;
 
 export const WeaponAccessorySummarySchema = zod
@@ -130,8 +166,8 @@ export const WeaponAccessorySummarySchema = zod
     recoilCompensationIncrease: zod.optional(zod.number()),
     recoilCompensationType: zod.optional(zod.number()), // items from the same recoilCompensationType are incompatible with each other
     deploymentRequired: zod.boolean(),
-    availability: WeaponAccessoryAvailabilitySchema,
-    cost: CostSchema,
+    availability: AvailabilityWeaponAccessorySchema,
+    cost: CostWeaponAccessorySchema,
     source: zod.nativeEnum(sourceBookEnum),
     page: zod.number(),
     accessoryCostMultiplier: zod.optional(zod.number()),
@@ -141,11 +177,11 @@ export const WeaponAccessorySummarySchema = zod
     extraAmmoSlots: zod.optional(zod.number()),
     ammoCapacityCalculation: zod.optional(AmmoCapacityCalculationSchema),
     newAmmoType: zod.optional(AmmoInformationSchema),
-    hostWeaponMountsRequired: zod.optional(hostWeaponMountsRequiredSchema),
-    hostWeaponRequirements: zod.optional(accessoryWeaponRequirementsSchema),
-    hostWeaponRestrictions: zod.optional(accessoryWeaponRequirementsSchema),
+    hostWeaponMountsRequired: zod.optional(HostWeaponMountsRequiredSchema),
+    hostWeaponRequirements: zod.optional(AccessoryWeaponRequirementsSchema),
+    hostWeaponRestrictions: zod.optional(AccessoryWeaponRequirementsSchema),
     rangePenaltyDecrease: zod.optional(zod.number()),
-    concealabilityModification: zod.optional(concealabilityModificationSchema),
+    concealabilityModification: zod.optional(ConcealabilityModificationSchema),
   })
   .strict();
 export type WeaponAccessorySummaryType = zod.infer<

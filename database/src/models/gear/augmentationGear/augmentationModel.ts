@@ -1,12 +1,10 @@
 import { Entity, PrimaryKey, Property, Enum } from "@mikro-orm/core";
 import { augmentationTypeEnum } from "@shadowrun/common";
+import type { CapacityType, RatingType, EssenceType } from "@shadowrun/common";
 import type {
-  AvailabilityType,
-  CapacityType,
-  CostType,
-  RatingType,
-  EssenceType,
-} from "@shadowrun/common";
+  CostAugmentationType,
+  AvailabilityAugmentationType,
+} from "@shadowrun/common/src/schemas/augmentationSchemas.js";
 
 @Entity({
   discriminatorColumn: "type",
@@ -32,13 +30,13 @@ export abstract class Augmentations {
   capacity?: CapacityType;
 
   @Property({ type: "json", nullable: true })
-  capacityCost?: CostType;
+  capacityCost?: CostAugmentationType;
 
   @Property({ type: "json" })
-  availability!: AvailabilityType;
+  availability!: AvailabilityAugmentationType;
 
   @Property({ type: "json" })
-  cost!: CostType;
+  cost!: CostAugmentationType;
 
   @Property({ length: 5000 })
   description!: string;
@@ -65,7 +63,7 @@ export class Cyberlimbs extends Augmentations {
   syntheticCapacity!: CapacityType;
 
   @Property()
-  syntheticCost!: CostType;
+  syntheticCost!: CostAugmentationType;
 }
 
 @Entity({ discriminatorValue: augmentationTypeEnum.Bioware })

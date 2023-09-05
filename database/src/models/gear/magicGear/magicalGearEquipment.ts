@@ -1,10 +1,13 @@
 import { Entity, Enum, PrimaryKey, Property } from "@mikro-orm/core";
-import type { AvailabilityType, CostType } from "@shadowrun/common";
 import {
   focusTypeEnum,
   formulaTypeEnum,
   magicalGearTypeEnum,
 } from "@shadowrun/common";
+import type {
+  AvailabilityMagicalType,
+  CostMagicalType,
+} from "@shadowrun/common/src/schemas/magicalSchemas.js";
 
 @Entity({
   discriminatorColumn: "type",
@@ -27,10 +30,10 @@ export abstract class MagicalEquipment {
   name!: string;
 
   @Property({ type: "json" })
-  availability!: AvailabilityType;
+  availability!: AvailabilityMagicalType;
 
   @Property({ type: "json" })
-  cost!: CostType;
+  cost!: CostMagicalType;
 
   @Property({ length: 5000 })
   description!: string;

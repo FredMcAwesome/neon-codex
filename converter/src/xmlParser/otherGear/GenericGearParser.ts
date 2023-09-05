@@ -8,7 +8,7 @@ import { sourceBookXmlEnum } from "../ParserCommonDefines.js";
 import {
   GenericGearListXmlSchema,
   GenericGearListXmlType,
-} from "./GenericGearParserSchema.js";
+} from "./GenericGearParserSchemas.js";
 
 const currentPath = import.meta.url;
 const xml_string = fs.readFileSync(

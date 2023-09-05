@@ -31,7 +31,8 @@ import { CollapsibleDiv } from "../../utils/CollapsibleDiv.js";
 // import { VehiclesAndDronesType } from "@shadowrun/common/build/schemas/riggerSchema.js";
 import { CollapsibleGearDiv } from "./GearHelper.js";
 import { costCalculation } from "../../utils/calculations.js";
-import {
+import type {
+  CostWeaponType,
   WeaponLinkedListType,
   WeaponLinkedType,
 } from "@shadowrun/common/build/schemas/weaponSchemas.js";
@@ -69,7 +70,7 @@ export const GearSelect = function (props: IProps) {
     props.setGearSelected(gear);
     props.setNuyen(
       props.nuyen -
-        costCalculation(
+        costCalculation<CostWeaponType>(
           weapon.cost,
           weapon.rating !== undefined
             ? {
@@ -86,7 +87,7 @@ export const GearSelect = function (props: IProps) {
       props.setGearSelected(gear);
       props.setNuyen(
         props.nuyen +
-          costCalculation(
+          costCalculation<CostWeaponType>(
             weapon.cost,
             weapon.rating !== undefined
               ? {

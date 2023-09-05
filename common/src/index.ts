@@ -38,7 +38,7 @@ export {
   damageCalculationOptionEnum,
   damageTypeEnum,
   restrictionEnum,
-  damageAnnotationEnum as damageAnnoationEnum,
+  damageAnnotationEnum,
   ammoSourceEnum as reloadMethodEnum,
   firearmAccessoryMountLocationEnum,
   ammunitionTypeEnum,
@@ -61,16 +61,9 @@ export {
   watercraftSubtypeEnum,
   aircraftSubtypeEnum,
   droneSubtypeEnum,
-  costEnum,
 } from "./enums.js";
 
-export type {
-  RatingType,
-  AvailabilityType,
-  CostType,
-  CapacityType,
-} from "./schemas/commonSchema.js";
-export { AvailabilitySchema } from "./schemas/commonSchema.js";
+export type { RatingType, CapacityType } from "./schemas/commonSchemas.js";
 
 export {
   AccuracySchema,
@@ -99,4 +92,4 @@ export type {
   EssenceType,
 } from "./schemas/augmentationSchemas.js";
 
-export type { SkillType } from "./schemas/skillSchema.js";
+export type { SkillType } from "./schemas/skillSchemas.js";

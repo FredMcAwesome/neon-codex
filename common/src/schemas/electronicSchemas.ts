@@ -1,11 +1,52 @@
 import { z as zod } from "zod";
-import { matrixWareAccessoryTypeEnum, matrixWareTypeEnum } from "../enums.js";
+import {
+  costElectronicEnum,
+  mathOperatorEnum,
+  matrixWareAccessoryTypeEnum,
+  matrixWareTypeEnum,
+  restrictionEnum,
+} from "../enums.js";
 import {
   RatingSchema,
-  AvailabilitySchema,
-  CostSchema,
   CapacitySchema,
-} from "./commonSchema.js";
+  AvailabilityRatingSchema,
+} from "./commonSchemas.js";
+
+export const AvailabilityElectronicSchema = zod
+  .object({
+    rating: AvailabilityRatingSchema,
+    restriction: zod.nativeEnum(restrictionEnum),
+    modifier: zod.optional(zod.literal(mathOperatorEnum.Add)),
+  })
+  .strict();
+export type AvailabilityElectronicType = zod.infer<
+  typeof AvailabilityElectronicSchema
+>;
+
+const InnerCostElectronicSchema = zod.union([
+  zod.number(),
+  zod
+    .object({
+      option: zod.nativeEnum(costElectronicEnum),
+    })
+    .strict(),
+  zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
+]);
+
+export type CostElectronicType = Array<
+  | zod.infer<typeof InnerCostElectronicSchema>
+  | { subnumbers: CostElectronicType }
+>;
+export const CostElectronicSchema: zod.ZodType<CostElectronicType> = zod.array(
+  zod.union([
+    InnerCostElectronicSchema,
+    zod
+      .object({
+        subnumbers: zod.lazy(() => CostElectronicSchema),
+      })
+      .strict(),
+  ])
+);
 
 export const CyberdeckAttributeArraySchema = zod.array(zod.number()).length(4);
 export type CyberdeckAttributeArrayType = zod.infer<
@@ -67,7 +108,7 @@ export type SkillsoftTypeInformationType = zod.infer<
   typeof SkillsoftTypeInformationSchema
 >;
 
-export const electronicTypeInformationSchema = zod
+export const ElectronicTypeInformationSchema = zod
   .discriminatedUnion("type", [
     CommlinkTypeInformationSchema,
     CyberdeckTypeInformationSchema,
@@ -91,15 +132,15 @@ export const electronicTypeInformationSchema = zod
   );
 
 export type electronicTypeInformationType = zod.infer<
-  typeof electronicTypeInformationSchema
+  typeof ElectronicTypeInformationSchema
 >;
 export const MatrixSchema = zod
   .object({
-    typeInformation: electronicTypeInformationSchema,
+    typeInformation: ElectronicTypeInformationSchema,
     name: zod.string(),
     rating: zod.optional(RatingSchema),
-    availability: AvailabilitySchema,
-    cost: CostSchema,
+    availability: AvailabilityElectronicSchema,
+    cost: CostElectronicSchema,
     attributeArray: zod.optional(CyberdeckAttributeArraySchema),
     programs: zod.optional(zod.number()),
   })
@@ -191,7 +232,7 @@ export type AudioDeviceTypeInformationType = zod.infer<
 export const AudioEnhancementTypeInformationSchema = zod
   .object({
     type: zod.literal(matrixWareAccessoryTypeEnum.AudioEnhancement),
-    capacityCost: CostSchema,
+    capacityCost: CostElectronicSchema,
     description: zod.string(),
     wireless: zod.optional(zod.string()),
   })
@@ -209,7 +250,7 @@ export type SensorSchemaTypeInformationType = zod.infer<
   typeof SensorSchemaTypeInformationSchema
 >;
 
-export const electronicAccessoryTypeInformation = zod
+export const ElectronicAccessoryTypeInformationSchema = zod
   .discriminatedUnion("type", [
     CredStickTypeInformationSchema,
     IdentificationTypeInformationSchema,
@@ -240,16 +281,16 @@ export const electronicAccessoryTypeInformation = zod
     }
   );
 export type electronicAccessoryTypeInformationType = zod.infer<
-  typeof electronicAccessoryTypeInformation
+  typeof ElectronicAccessoryTypeInformationSchema
 >;
 
 export const MatrixAccessorySchema = zod
   .object({
-    typeInformation: electronicAccessoryTypeInformation,
+    typeInformation: ElectronicAccessoryTypeInformationSchema,
     name: zod.string(),
     rating: zod.optional(RatingSchema),
-    availability: AvailabilitySchema,
-    cost: CostSchema,
+    availability: AvailabilityElectronicSchema,
+    cost: CostElectronicSchema,
     attributeArray: zod.optional(CyberdeckAttributeArraySchema),
     programs: zod.optional(zod.number()),
   })

@@ -8,7 +8,7 @@ import { sourceBookXmlEnum } from "../ParserCommonDefines.js";
 import {
   BiowareListXmlSchema,
   BiowareListXmlType,
-} from "./BiowareParserSchema.js";
+} from "./BiowareParserSchemas.js";
 
 const currentPath = import.meta.url;
 const xml_string = fs.readFileSync(

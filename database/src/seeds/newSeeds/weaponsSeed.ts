@@ -10,6 +10,8 @@ import {
   UnlinkedAccessoryListSchema,
   FirearmOptionsSchema,
   MeleeOptionsSchema,
+  AvailabilityWeaponSchema,
+  CostWeaponSchema,
 } from "@shadowrun/common/build/schemas/weaponSchemas.js";
 import {
   WeaponUnlinkedSummaryListSchema,
@@ -37,14 +39,10 @@ import {
   projectileWeaponTypeEnum,
   weaponTypeEnum,
 } from "@shadowrun/common/build/enums.js";
-import {
-  AvailabilitySchema,
-  CostSchema,
-} from "@shadowrun/common/build/schemas/commonSchema.js";
 import { WeaponRanges } from "../../models/gear/combatGear/helperTables/weaponRangeModel.js";
 import { WeaponRangeLinks } from "../../models/chummerdb/customTables/weaponRangeLinkModel.js";
 
-const limitedTypeInformationSchema = zod.discriminatedUnion("type", [
+const LimitedWeaponTypeInformationSchema = zod.discriminatedUnion("type", [
   zod
     .object({
       type: zod.literal(weaponTypeEnum.Melee),
@@ -77,14 +75,14 @@ export const WeaponSummarySchema = zod
   .object({
     name: zod.string(),
     description: zod.string(),
-    typeInformation: limitedTypeInformationSchema,
+    typeInformation: LimitedWeaponTypeInformationSchema,
     concealability: zod.number(),
     accuracy: AccuracySchema,
     damage: DamageSchema,
     armourPenetration: ArmourPenetrationSchema,
     ammunition: zod.optional(AmmunitionSchema),
-    availability: AvailabilitySchema,
-    cost: CostSchema,
+    availability: AvailabilityWeaponSchema,
+    cost: CostWeaponSchema,
     allowedGear: zod.optional(zod.array(zod.nativeEnum(gearCategoryEnum))),
     gears: zod.optional(UnlinkedAccessoryListSchema),
     allowAccessories: zod.boolean(),

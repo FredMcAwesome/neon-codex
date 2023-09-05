@@ -8,7 +8,7 @@ import { sourceBookXmlEnum } from "../ParserCommonDefines.js";
 import {
   VehicleListXmlSchema,
   VehicleListXmlType,
-} from "./VehicleParserSchema.js";
+} from "./VehicleParserSchemas.js";
 
 const currentPath = import.meta.url;
 const xml_string = fs.readFileSync(

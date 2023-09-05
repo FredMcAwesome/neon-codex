@@ -1,11 +1,10 @@
 import { Entity, PrimaryKey, Property, Enum } from "@mikro-orm/core";
-import type {
-  AvailabilityType,
-  CostType,
-  RatingType,
-  EssenceType,
-} from "@shadowrun/common";
+import type { RatingType, EssenceType } from "@shadowrun/common";
 import { augmentationAccessoryTypeEnum } from "@shadowrun/common";
+import type {
+  CostAugmentationType,
+  AvailabilityAugmentationType,
+} from "@shadowrun/common/src/schemas/augmentationSchemas.js";
 
 @Entity({
   discriminatorColumn: "type",
@@ -28,13 +27,13 @@ export abstract class AugmentationAccessories {
   essence!: EssenceType;
 
   @Property({ type: "json" })
-  capacityCost!: CostType;
+  capacityCost!: CostAugmentationType;
 
   @Property({ type: "json" })
-  availability!: AvailabilityType;
+  availability!: AvailabilityAugmentationType;
 
   @Property({ type: "json" })
-  cost!: CostType;
+  cost!: CostAugmentationType;
 
   @Property({ length: 5000 })
   description!: string;

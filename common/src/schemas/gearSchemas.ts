@@ -1,9 +1,9 @@
 import { z as zod } from "zod";
 import { AugmentationSchema } from "./augmentationSchemas.js";
 import { MatrixAccessorySchema, MatrixSchema } from "./electronicSchemas.js";
-import { otherGearSchema } from "./otherGearSchema.js";
+import { OtherGearSchema } from "./otherGearSchemas.js";
 import { MagicGearSchema } from "./magicalSchemas.js";
-import { VehiclesAndDronesSchema } from "./riggerSchema.js";
+import { VehiclesAndDronesSchema } from "./riggerSchemas.js";
 import { WeaponLinkedListSchema } from "./weaponSchemas.js";
 
 export const MatrixListSchema = zod.array(MatrixSchema);
@@ -14,7 +14,7 @@ export type MatrixAccessoriesListType = zod.infer<
   typeof MatrixAccessoriesListSchema
 >;
 
-export const OtherGearListSchema = zod.array(otherGearSchema);
+export const OtherGearListSchema = zod.array(OtherGearSchema);
 export type OtherGearListType = zod.infer<typeof OtherGearListSchema>;
 
 export const AugmentationListSchema = zod.array(AugmentationSchema);

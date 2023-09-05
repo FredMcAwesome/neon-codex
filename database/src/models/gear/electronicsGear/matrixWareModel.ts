@@ -1,11 +1,13 @@
 import { Entity, PrimaryKey, Property, Enum } from "@mikro-orm/core";
 import type {
-  AvailabilityType,
-  CostType,
   CyberdeckAttributeArrayType,
   RatingType,
 } from "@shadowrun/common";
 import { matrixWareTypeEnum } from "@shadowrun/common";
+import type {
+  AvailabilityElectronicType,
+  CostElectronicType,
+} from "@shadowrun/common/build/schemas/electronicSchemas.js";
 
 @Entity({
   discriminatorColumn: "type",
@@ -25,10 +27,10 @@ export abstract class MatrixWares {
   rating?: RatingType;
 
   @Property({ type: "json" })
-  availability!: AvailabilityType;
+  availability!: AvailabilityElectronicType;
 
   @Property({ type: "json" })
-  cost!: CostType;
+  cost!: CostElectronicType;
 }
 
 @Entity({ discriminatorValue: matrixWareTypeEnum.Commlink })

@@ -6,32 +6,35 @@ import {
   WeaponAccessoryXmlType,
   WeaponAccessoryListXmlSchema,
   WeaponAccessoryListXmlType,
-} from "./WeaponAccessoryParserSchema.js";
+} from "./WeaponAccessoryParserSchemas.js";
 import {
   AmmoCapacityCalculationType,
   WeaponAccessorySummaryListSchema,
   WeaponAccessorySummarySchema,
   WeaponAccessorySummaryType,
-} from "@shadowrun/common/build/schemas/weaponAccessorySchema.js";
+} from "@shadowrun/common/build/schemas/weaponAccessorySchemas.js";
 import * as fs from "fs";
 import assert from "assert";
-import { WeaponListXmlSchema } from "./WeaponParserSchema.js";
-import { CostType, damageTypeEnum } from "@shadowrun/common";
+import { WeaponListXmlSchema } from "./WeaponParserSchemas.js";
+import { damageTypeEnum } from "@shadowrun/common";
 import { convertAllowGear, convertXmlGears } from "./WeaponParserHelper.js";
 import { standardCalculationEnum } from "@shadowrun/common/build/enums.js";
 import {
-  availabilitySemantics,
   getWeaponMounts,
   convertAmmoReplace,
   convertRequirements,
-  costSemantics,
+  availabilityWeaponAccessorySemantics,
+  costWeaponAccessorySemantics,
   modifyAmmoCapacitySemantics,
 } from "./WeaponAccessoryParserHelper.js";
 import { sourceBookXmlEnum } from "../ParserCommonDefines.js";
 import { convertSource } from "../ParserHelper.js";
 import WeaponAccessories from "../../grammar/weaponAccessories.ohm-bundle.js";
 import { MatchResult } from "ohm-js";
-import { WeaponAccessoryAvailabilityType } from "@shadowrun/common/build/schemas/commonSchema.js";
+import type {
+  AvailabilityWeaponAccessoryType,
+  CostWeaponAccessoryType,
+} from "@shadowrun/common/build/schemas/weaponAccessorySchemas.js";
 const Availability = WeaponAccessories.Availability;
 const Cost = WeaponAccessories.Cost;
 const ModifyAmmoCapacity = WeaponAccessories.ModifyAmmoCapacity;
@@ -130,15 +133,16 @@ export function ParseWeaponAccessories() {
     if (match.failed()) {
       throw match.message;
     }
-    const availability: WeaponAccessoryAvailabilityType =
-      availabilitySemantics(match).eval();
+    const availability: AvailabilityWeaponAccessoryType =
+      availabilityWeaponAccessorySemantics(match).eval();
     console.log(`Availability: ${availability}`);
 
     match = Cost.match(weaponAccessory.cost.toString());
     if (match.failed()) {
       throw match.message;
     }
-    const cost: CostType = costSemantics(match).eval();
+    const cost: CostWeaponAccessoryType =
+      costWeaponAccessorySemantics(match).eval();
     console.log(`Cost: ${cost}`);
 
     return {

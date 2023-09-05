@@ -2,11 +2,13 @@ import { Entity, PrimaryKey, Property, Enum } from "@mikro-orm/core";
 import type {
   DamageType,
   ArmourPenetrationType,
-  AvailabilityType,
-  CostType,
   BlastType,
 } from "@shadowrun/common";
 import { ammunitionTypeEnum } from "@shadowrun/common";
+import type {
+  AvailabilityAmmunitionType,
+  CostAmmunitionType,
+} from "@shadowrun/common/build/schemas/ammunitionSchemas.js";
 
 @Entity({
   discriminatorColumn: "type",
@@ -29,10 +31,10 @@ export abstract class Ammunitions {
   armourPenetrationModifier!: ArmourPenetrationType;
 
   @Property({ type: "json" })
-  availability!: AvailabilityType;
+  availability!: AvailabilityAmmunitionType;
 
   @Property({ type: "json" })
-  cost!: CostType;
+  cost!: CostAmmunitionType;
 
   @Property({ length: 5000 })
   description!: string;

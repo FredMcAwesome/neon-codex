@@ -18,7 +18,7 @@ import {
   ammoSourceEnum,
   restrictionEnum,
   armourPenetrationEnum,
-  costEnum,
+  costWeaponEnum,
   availabilityEnum,
 } from "@shadowrun/common/build/enums.js";
 import assert from "assert";
@@ -26,20 +26,20 @@ import {
   AccessoryXmlType,
   WeaponXmlType,
   RequiredXmlType,
-} from "./WeaponParserSchema.js";
+} from "./WeaponParserSchemas.js";
 import {
   UnlinkedAccessoryType,
   FirearmOptionsType,
   MeleeOptionsType,
   MountType,
-  unlinkedTypeInformationType,
+  UnlinkedWeaponTypeInformationType,
   useGearType,
   weaponRequirementsType,
 } from "@shadowrun/common/build/schemas/weaponSchemas.js";
 import {
   weaponXmlSubtypeEnum,
   WeaponXmlSubtypeType,
-} from "@shadowrun/common/build/schemas/commonSchema.js";
+} from "@shadowrun/common/build/schemas/commonSchemas.js";
 import { GearXmlType } from "../ParserCommonDefines.js";
 import Weapons from "../../grammar/weapons.ohm-bundle.js";
 const Accuracy = Weapons.Accuracy;
@@ -60,7 +60,7 @@ export const convertTypeInformation = function (
   meleeOptions: MeleeOptionsType,
   firearmOptions: FirearmOptionsType,
   ranges: Array<string>
-): unlinkedTypeInformationType {
+): UnlinkedWeaponTypeInformationType {
   let check = false;
   switch (weaponType) {
     case weaponTypeEnum.Melee:
@@ -538,8 +538,8 @@ ammoSemantics.addOperation("eval", {
   },
 });
 
-const availabilitySemantics = Availability.createSemantics();
-availabilitySemantics.addOperation("eval", {
+const availabilityWeaponSemantics = Availability.createSemantics();
+availabilityWeaponSemantics.addOperation("eval", {
   Availability_full(availability, restriction) {
     return { rating: availability.eval(), restriction: restriction.eval() };
   },
@@ -609,8 +609,8 @@ availabilitySemantics.addOperation("eval", {
   },
 });
 
-const costSemantics = Cost.createSemantics();
-costSemantics.addOperation("eval", {
+const costWeaponSemantics = Cost.createSemantics();
+costWeaponSemantics.addOperation("eval", {
   AddSub_add(str, _, range) {
     return str
       .eval()
@@ -643,7 +643,7 @@ costSemantics.addOperation("eval", {
     return [cost.eval()];
   },
   Rating(_) {
-    return { option: costEnum.Rating };
+    return { option: costWeaponEnum.Rating };
   },
   Number(availability) {
     return availability.eval();
@@ -1206,6 +1206,6 @@ export {
   armourPenetrationSemantics,
   modeSemantics,
   ammoSemantics,
-  availabilitySemantics,
-  costSemantics,
+  availabilityWeaponSemantics,
+  costWeaponSemantics,
 };

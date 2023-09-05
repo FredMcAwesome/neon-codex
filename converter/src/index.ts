@@ -12,3 +12,6 @@ ParseWeaponAccessories();
 import { ParseSkills } from "./xmlParser/character/SkillParser.js";
 
 ParseSkills();
+
+// import { ParseArmour } from "./xmlParser/combatGear/ArmourParser.js";
+// ParseArmour();

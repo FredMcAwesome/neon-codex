@@ -9,7 +9,7 @@ import {
   SkillListSchema,
   SkillSchema,
   SkillType,
-} from "@shadowrun/common/build/schemas/skillSchema.js";
+} from "@shadowrun/common/build/schemas/skillSchemas.js";
 import assert from "assert";
 import { XMLParser } from "fast-xml-parser";
 import fs from "fs";

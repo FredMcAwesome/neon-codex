@@ -1,6 +1,10 @@
 import { Entity, PrimaryKey, Property, Enum } from "@mikro-orm/core";
-import type { AvailabilityType, CostType, RatingType } from "@shadowrun/common";
+import type { RatingType } from "@shadowrun/common";
 import { otherWareTypeEnum } from "@shadowrun/common";
+import type {
+  AvailabilityGearType,
+  CostGearType,
+} from "@shadowrun/common/src/schemas/otherGearSchemas.js";
 
 @Entity({
   discriminatorColumn: "type",
@@ -20,10 +24,10 @@ export abstract class OtherWares {
   rating?: RatingType;
 
   @Property({ type: "json" })
-  availability!: AvailabilityType;
+  availability!: AvailabilityGearType;
 
   @Property({ type: "json" })
-  cost!: CostType;
+  cost!: CostGearType;
 
   @Property({ length: 5000 })
   description!: string;

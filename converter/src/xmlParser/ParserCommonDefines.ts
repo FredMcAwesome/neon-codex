@@ -140,12 +140,24 @@ const SkillSchema = zod
   })
   .strict();
 
+const SpecificSkillSchema = zod
+  .object({
+    name: zod.string(),
+    bonus: zod.number(),
+  })
+  .strict();
+
 export const BonusXmlSchema = zod
   .object({
     limitmodifier: zod.optional(
       zod.union([zod.array(LimitModifierSchema), LimitModifierSchema])
     ),
     fatigueresist: zod.optional(zod.number()),
+    selecttext: zod.optional(zod.literal("")),
+    sociallimit: zod.optional(zod.number()),
+    specificskill: zod.optional(
+      zod.union([zod.array(SpecificSkillSchema), SpecificSkillSchema])
+    ),
   })
   .strict();
 

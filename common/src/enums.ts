@@ -199,15 +199,42 @@ export enum rangeEnum {
   Strength = "Strength",
 }
 
-export enum armourEnum {
-  Rating = "Rating",
-}
-
 export enum availabilityEnum {
   Rating = "Rating",
 }
 
-export enum costEnum {
+export enum costAmmunitionEnum {
+  Rating = "Rating",
+}
+
+export enum costArmourEnum {
+  Rating = "Rating",
+}
+
+export enum costAugmentationEnum {
+  Rating = "Rating",
+}
+
+export enum costElectronicEnum {
+  Rating = "Rating",
+}
+
+export enum costMagicalEnum {
+  Rating = "Rating",
+}
+export enum costGearEnum {
+  Rating = "Rating",
+}
+
+export enum costRiggerEnum {
+  Rating = "Rating",
+}
+
+export enum costWeaponEnum {
+  Rating = "Rating",
+}
+
+export enum costWeaponAccessoryEnum {
   Rating = "Rating",
   Weapon = "Weapon",
 }
@@ -469,4 +496,12 @@ export enum sourceBookEnum {
   ShadowrunMissions0804_DirtyLaundry = "Shadowrun Missions 0804: Dirty Laundry",
   ShadowrunQuickStartRules = "Shadowrun Quick Start Rules",
   SprawlWilds = "Sprawl Wilds",
+}
+
+export enum armourCategoryEnum {
+  Armour = "Armour",
+  Clothing = "Clothing",
+  Cloaks = "Cloaks",
+  FashionableArmour = "High-Fashion Armour",
+  SpecialtyArmour = "Specialty Armour",
 }

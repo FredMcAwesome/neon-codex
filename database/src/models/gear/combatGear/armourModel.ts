@@ -1,5 +1,8 @@
 import { Entity, PrimaryKey, Property } from "@mikro-orm/core";
-import type { AvailabilityType, CostType } from "@shadowrun/common";
+import type {
+  AvailabilityArmourType,
+  CostArmourType,
+} from "@shadowrun/common/build/schemas/armourSchemas.js";
 
 @Entity()
 export class Armours {
@@ -10,13 +13,13 @@ export class Armours {
   name!: string;
 
   @Property({ type: "json" })
-  availability!: AvailabilityType;
+  availability!: AvailabilityArmourType;
 
   @Property()
   armourRating!: number;
 
   @Property({ type: "json" })
-  cost!: CostType;
+  cost!: CostArmourType;
 
   @Property({ length: 5000 })
   description!: string;

@@ -19,17 +19,17 @@ import {
   VehiclesAndDronesListType,
 } from "@shadowrun/common/build/schemas/gearSchemas.js";
 import { MatrixAccessoryType } from "@shadowrun/common/build/schemas/electronicSchemas.js";
-import { VehiclesAndDronesType } from "@shadowrun/common/build/schemas/riggerSchema.js";
+import { VehiclesAndDronesType } from "@shadowrun/common/build/schemas/riggerSchemas.js";
 import {
-  typeInformationType,
+  WeaponTypeInformationType,
   WeaponLinkedListType,
   WeaponLinkedType,
-  firearmTypeInformationType,
-  meleeTypeInformationType,
-  projectileTypeInformationType,
-  explosiveTypeInformationType,
+  FirearmTypeInformationType,
+  MeleeTypeInformationType,
+  ProjectileTypeInformationType,
+  ExplosiveTypeInformationType,
 } from "@shadowrun/common/build/schemas/weaponSchemas.js";
-import { SkillListType } from "@shadowrun/common/build/schemas/skillSchema.js";
+import { SkillListType } from "@shadowrun/common/build/schemas/skillSchemas.js";
 import { Cyberlimbs } from "@shadowrun/database/build/models/gear/augmentationGear/augmentationModel.js";
 import {
   MeleeWeapons,
@@ -75,9 +75,8 @@ async function getWeapons() {
     weapons.map(async (weapon) => {
       const skill = await weapon.relatedSkill.load();
       const accessories = await weapon.accessories.loadItems();
-      const typeInformation: typeInformationType = await getTypeInformation(
-        weapon
-      );
+      const typeInformation: WeaponTypeInformationType =
+        await getTypeInformation(weapon);
       const weaponFormatted: WeaponLinkedType = {
         // id: weapon.id,
         name: weapon.name,
@@ -124,7 +123,7 @@ async function getWeapons() {
 async function getTypeInformation(weapon: Weapons) {
   if (weapon.type === weaponTypeEnum.Melee) {
     const meleeWeapon = weapon as MeleeWeapons;
-    const typeInformation: meleeTypeInformationType = {
+    const typeInformation: MeleeTypeInformationType = {
       type: weaponTypeEnum.Melee,
       subtype: meleeWeapon.subtypeMelee,
       meleeOptions: {
@@ -142,7 +141,7 @@ async function getTypeInformation(weapon: Weapons) {
 
   if (weapon.type === weaponTypeEnum.Projectile) {
     const projectileWeapon = weapon as ProjectileWeapons;
-    const typeInformation: projectileTypeInformationType = {
+    const typeInformation: ProjectileTypeInformationType = {
       type: weaponTypeEnum.Projectile,
       subtype: projectileWeapon.subtypeProjectile,
       rangeList: rangeList,
@@ -150,7 +149,7 @@ async function getTypeInformation(weapon: Weapons) {
     return typeInformation;
   } else if (weapon.type === weaponTypeEnum.Firearm) {
     const firearmWeapon = weapon as FirearmWeapons;
-    const typeInformation: firearmTypeInformationType = {
+    const typeInformation: FirearmTypeInformationType = {
       type: weaponTypeEnum.Firearm,
       subtype: firearmWeapon.subtypeFirearm,
       firearmOptions: {
@@ -195,7 +194,7 @@ async function getTypeInformation(weapon: Weapons) {
     return typeInformation;
   } else {
     const explosiveWeapon = weapon as Explosives;
-    const typeInformation: explosiveTypeInformationType = {
+    const typeInformation: ExplosiveTypeInformationType = {
       type: weaponTypeEnum.Explosive,
       subtype: explosiveWeapon.subtypeExplosive,
       rangeList: rangeList,

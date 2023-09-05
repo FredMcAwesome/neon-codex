@@ -26,14 +26,12 @@ import type {
   AccuracyType,
   AmmunitionType,
   ArmourPenetrationType,
+  AvailabilityWeaponType,
+  CostWeaponType,
   DamageType,
   weaponRequirementsType,
 } from "@shadowrun/common/build/schemas/weaponSchemas.js";
-import type {
-  AvailabilityType,
-  CostType,
-} from "@shadowrun/common/build/schemas/commonSchema.js";
-import { weaponXmlSubtypeEnum } from "@shadowrun/common/build/schemas/commonSchema.js";
+import { weaponXmlSubtypeEnum } from "@shadowrun/common/build/schemas/commonSchemas.js";
 import { Skills } from "../../chummerdb/skillModel.js";
 import assert from "assert";
 import type { WeaponSummaryType } from "../../../seeds/newSeeds/weaponsSeed.js";
@@ -70,10 +68,10 @@ export abstract class Weapons {
   ammunition?: AmmunitionType;
 
   @Property({ type: "json" })
-  availability!: AvailabilityType;
+  availability!: AvailabilityWeaponType;
 
   @Property({ type: "json" })
-  cost!: CostType;
+  cost!: CostWeaponType;
 
   @Enum({ items: () => gearCategoryEnum, array: true, nullable: true })
   allowedGear?: Array<gearCategoryEnum>;

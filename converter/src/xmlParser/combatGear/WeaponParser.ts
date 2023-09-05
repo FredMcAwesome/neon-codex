@@ -5,8 +5,6 @@ import { fileURLToPath } from "url";
 import {
   AccuracyType,
   ArmourPenetrationType,
-  AvailabilityType,
-  CostType,
   DamageType,
   RecoilCompensationType,
 } from "@shadowrun/common";
@@ -14,12 +12,12 @@ import {
   WeaponXmlType,
   WeaponListXmlSchema,
   WeaponListXmlType,
-} from "./WeaponParserSchema.js";
+} from "./WeaponParserSchemas.js";
 import { sourceBookXmlEnum } from "../ParserCommonDefines.js";
 import { convertSource } from "../ParserHelper.js";
 import assert from "assert";
 import { augmentationClassificationEnum } from "@shadowrun/common/build/enums.js";
-import { weaponXmlSubtypeEnum } from "@shadowrun/common/build/schemas/commonSchema.js";
+import { weaponXmlSubtypeEnum } from "@shadowrun/common/build/schemas/commonSchemas.js";
 import {
   WeaponUnlinkedSummaryListType,
   WeaponUnlinkedSummaryType,
@@ -30,6 +28,8 @@ import {
   WeaponUnlinkedSummaryListSchema,
   WeaponUnlinkedSummarySchema,
   FirearmOptionsType,
+  AvailabilityWeaponType,
+  CostWeaponType,
 } from "@shadowrun/common/build/schemas/weaponSchemas.js";
 import {
   getWeaponTypeInformation,
@@ -45,8 +45,8 @@ import {
   armourPenetrationSemantics,
   modeSemantics,
   ammoSemantics,
-  availabilitySemantics,
-  costSemantics,
+  availabilityWeaponSemantics,
+  costWeaponSemantics,
 } from "./WeaponParserHelper.js";
 import Weapons from "../../grammar/weapons.ohm-bundle.js";
 const Accuracy = Weapons.Accuracy;
@@ -252,13 +252,14 @@ function convertWeapon(weapon: WeaponXmlType) {
   if (match.failed()) {
     throw match.message;
   }
-  const availability: AvailabilityType = availabilitySemantics(match).eval();
+  const availability: AvailabilityWeaponType =
+    availabilityWeaponSemantics(match).eval();
   console.log(`Availability: ${availability}`);
   match = Cost.match(weapon.cost.toString());
   if (match.failed()) {
     throw match.message;
   }
-  const cost: CostType = costSemantics(match).eval();
+  const cost: CostWeaponType = costWeaponSemantics(match).eval();
   console.log(`Cost: ${cost}`);
   const accessories: UnlinkedAccessoryListType | undefined = convertAccessories(
     weapon.accessories,

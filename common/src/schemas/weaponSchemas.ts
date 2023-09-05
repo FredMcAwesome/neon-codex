@@ -19,12 +19,46 @@ import {
   augmentationClassificationEnum,
   sourceBookEnum,
   rangeEnum,
+  costWeaponEnum,
+  restrictionEnum,
 } from "../enums.js";
 import {
-  AvailabilitySchema,
-  CostSchema,
+  AvailabilityRatingSchema,
   WeaponXmlSubtypeSchema,
-} from "./commonSchema.js";
+} from "./commonSchemas.js";
+
+export const AvailabilityWeaponSchema = zod
+  .object({
+    rating: AvailabilityRatingSchema,
+    restriction: zod.nativeEnum(restrictionEnum),
+    modifier: zod.optional(zod.literal(mathOperatorEnum.Add)),
+  })
+  .strict();
+export type AvailabilityWeaponType = zod.infer<typeof AvailabilityWeaponSchema>;
+
+const InnerCostWeaponSchema = zod.union([
+  zod.number(),
+  zod
+    .object({
+      option: zod.nativeEnum(costWeaponEnum),
+    })
+    .strict(),
+  zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
+]);
+
+export type CostWeaponType = Array<
+  zod.infer<typeof InnerCostWeaponSchema> | { subnumbers: CostWeaponType }
+>;
+export const CostWeaponSchema: zod.ZodType<CostWeaponType> = zod.array(
+  zod.union([
+    InnerCostWeaponSchema,
+    zod
+      .object({
+        subnumbers: zod.lazy(() => CostWeaponSchema),
+      })
+      .strict(),
+  ])
+);
 
 export const RangeIncrementSchema = zod.array(
   zod.union([
@@ -137,7 +171,7 @@ export const MeleeOptionsSchema = zod
   .strict();
 export type MeleeOptionsType = zod.infer<typeof MeleeOptionsSchema>;
 
-export const weaponRequirementsSchema = zod
+export const WeaponRequirementsSchema = zod
   .object({
     weaponAllowed: zod.optional(zod.string()),
     minimumHostConcealment: zod.optional(zod.number()),
@@ -146,7 +180,7 @@ export const weaponRequirementsSchema = zod
     skills: zod.optional(zod.array(zod.string())),
   })
   .strict();
-export type weaponRequirementsType = zod.infer<typeof weaponRequirementsSchema>;
+export type weaponRequirementsType = zod.infer<typeof WeaponRequirementsSchema>;
 
 export const FirearmOptionsSchema = zod
   .object({
@@ -157,7 +191,7 @@ export const FirearmOptionsSchema = zod
     hostWeaponRequirements: zod.optional(
       zod
         .object({
-          weaponRequirements: zod.optional(weaponRequirementsSchema),
+          weaponRequirements: zod.optional(WeaponRequirementsSchema),
           hostWeaponMountsRequired: zod.optional(AccessoryMountSchema),
         })
         .strict()
@@ -199,42 +233,45 @@ export const SingleArmourPenetrationSchema: zod.ZodType<SingleArmourPenetrationT
 export const ArmourPenetrationSchema = zod.array(SingleArmourPenetrationSchema);
 export type ArmourPenetrationType = zod.infer<typeof ArmourPenetrationSchema>;
 
-export const unlinkedTypeInformationSchema = zod.discriminatedUnion("type", [
-  zod
-    .object({
-      type: zod.literal(weaponTypeEnum.Melee),
-      subtype: zod.nativeEnum(meleeWeaponTypeEnum),
-      meleeOptions: MeleeOptionsSchema,
-    })
-    .strict(),
-  zod
-    .object({
-      type: zod.literal(weaponTypeEnum.Projectile),
-      subtype: zod.nativeEnum(projectileWeaponTypeEnum),
-      rangeList: zod.array(zod.string()),
-    })
-    .strict(),
-  zod
-    .object({
-      type: zod.literal(weaponTypeEnum.Firearm),
-      subtype: zod.nativeEnum(firearmWeaponTypeEnum),
-      firearmOptions: FirearmOptionsSchema,
-      rangeList: zod.array(zod.string()),
-    })
-    .strict(),
-  zod
-    .object({
-      type: zod.literal(weaponTypeEnum.Explosive),
-      subtype: zod.nativeEnum(explosiveTypeEnum),
-      rangeList: zod.array(zod.string()),
-    })
-    .strict(),
-]);
-export type unlinkedTypeInformationType = zod.infer<
-  typeof unlinkedTypeInformationSchema
+export const UnlinkedWeaponTypeInformationSchema = zod.discriminatedUnion(
+  "type",
+  [
+    zod
+      .object({
+        type: zod.literal(weaponTypeEnum.Melee),
+        subtype: zod.nativeEnum(meleeWeaponTypeEnum),
+        meleeOptions: MeleeOptionsSchema,
+      })
+      .strict(),
+    zod
+      .object({
+        type: zod.literal(weaponTypeEnum.Projectile),
+        subtype: zod.nativeEnum(projectileWeaponTypeEnum),
+        rangeList: zod.array(zod.string()),
+      })
+      .strict(),
+    zod
+      .object({
+        type: zod.literal(weaponTypeEnum.Firearm),
+        subtype: zod.nativeEnum(firearmWeaponTypeEnum),
+        firearmOptions: FirearmOptionsSchema,
+        rangeList: zod.array(zod.string()),
+      })
+      .strict(),
+    zod
+      .object({
+        type: zod.literal(weaponTypeEnum.Explosive),
+        subtype: zod.nativeEnum(explosiveTypeEnum),
+        rangeList: zod.array(zod.string()),
+      })
+      .strict(),
+  ]
+);
+export type UnlinkedWeaponTypeInformationType = zod.infer<
+  typeof UnlinkedWeaponTypeInformationSchema
 >;
 
-const firearmTypeInformation = zod
+const FirearmTypeInformationSchema = zod
   .object({
     type: zod.literal(weaponTypeEnum.Firearm),
     subtype: zod.nativeEnum(firearmWeaponTypeEnum),
@@ -242,45 +279,49 @@ const firearmTypeInformation = zod
     rangeList: RangeListSchema,
   })
   .strict();
-export type firearmTypeInformationType = zod.infer<
-  typeof firearmTypeInformation
+export type FirearmTypeInformationType = zod.infer<
+  typeof FirearmTypeInformationSchema
 >;
-const meleeTypeInformation = zod
+const MeleeTypeInformationSchema = zod
   .object({
     type: zod.literal(weaponTypeEnum.Melee),
     subtype: zod.nativeEnum(meleeWeaponTypeEnum),
     meleeOptions: MeleeOptionsSchema,
   })
   .strict();
-export type meleeTypeInformationType = zod.infer<typeof meleeTypeInformation>;
-const projectileTypeInformation = zod
+export type MeleeTypeInformationType = zod.infer<
+  typeof MeleeTypeInformationSchema
+>;
+const ProjectileTypeInformationSchema = zod
   .object({
     type: zod.literal(weaponTypeEnum.Projectile),
     subtype: zod.nativeEnum(projectileWeaponTypeEnum),
     rangeList: RangeListSchema,
   })
   .strict();
-export type projectileTypeInformationType = zod.infer<
-  typeof projectileTypeInformation
+export type ProjectileTypeInformationType = zod.infer<
+  typeof ProjectileTypeInformationSchema
 >;
-const explosiveTypeInformation = zod
+const ExplosiveTypeInformationSchema = zod
   .object({
     type: zod.literal(weaponTypeEnum.Explosive),
     subtype: zod.nativeEnum(explosiveTypeEnum),
     rangeList: RangeListSchema,
   })
   .strict();
-export type explosiveTypeInformationType = zod.infer<
-  typeof explosiveTypeInformation
+export type ExplosiveTypeInformationType = zod.infer<
+  typeof ExplosiveTypeInformationSchema
 >;
 
-export const typeInformationSchema = zod.discriminatedUnion("type", [
-  firearmTypeInformation,
-  meleeTypeInformation,
-  projectileTypeInformation,
-  explosiveTypeInformation,
+export const WeaponTypeInformationSchema = zod.discriminatedUnion("type", [
+  FirearmTypeInformationSchema,
+  MeleeTypeInformationSchema,
+  ProjectileTypeInformationSchema,
+  ExplosiveTypeInformationSchema,
 ]);
-export type typeInformationType = zod.infer<typeof typeInformationSchema>;
+export type WeaponTypeInformationType = zod.infer<
+  typeof WeaponTypeInformationSchema
+>;
 
 const UseGearSchema = zod
   .object({
@@ -324,14 +365,14 @@ export const WeaponUnlinkedSummarySchema = zod
   .object({
     // id: zod.string(),
     name: zod.string(),
-    typeInformation: unlinkedTypeInformationSchema,
+    typeInformation: UnlinkedWeaponTypeInformationSchema,
     concealability: zod.number(),
     accuracy: AccuracySchema,
     damage: DamageSchema,
     armourPenetration: ArmourPenetrationSchema,
     ammunition: zod.optional(AmmunitionSchema),
-    availability: AvailabilitySchema,
-    cost: CostSchema,
+    availability: AvailabilityWeaponSchema,
+    cost: CostWeaponSchema,
     allowedGear: zod.optional(AllowedGearSchema),
     accessories: zod.optional(UnlinkedAccessoryListSchema),
     allowAccessories: zod.boolean(),
@@ -360,14 +401,14 @@ export const WeaponLinkedSchema = zod
   .object({
     // id: zod.string(),
     name: zod.string(),
-    typeInformation: typeInformationSchema,
+    typeInformation: WeaponTypeInformationSchema,
     concealability: zod.number(),
     accuracy: AccuracySchema,
     damage: DamageSchema,
     armourPenetration: ArmourPenetrationSchema,
     ammunition: zod.optional(AmmunitionSchema),
-    availability: AvailabilitySchema,
-    cost: CostSchema,
+    availability: AvailabilityWeaponSchema,
+    cost: CostWeaponSchema,
     allowedGear: zod.optional(AllowedGearSchema),
     accessories: zod.optional(UnlinkedAccessoryListSchema),
     allowAccessories: zod.boolean(),

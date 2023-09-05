@@ -20,6 +20,7 @@ So far I have only parsed:
 To match where I previously was, still need (All parsed, stored in database, then passed through to frontend):
 
 - Armour
+- ArmourAccessories
 - Bioware
 - Cyberware
 - Vehicles
@@ -37,6 +38,7 @@ Other main priorities:
 - Metamagic
 - Powers
 - Programs
+- Spells
 - Spirit Powers
 - Streams
 
@@ -48,6 +50,9 @@ Other xmls to maybe implement:
 - Lifestyles
 - Metatypes
 - Packs
+- Paragons
 - Priorities
 - Qualities
+- References
+- Settings
 - Traditions

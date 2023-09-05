@@ -16,7 +16,7 @@ import type { ISelectedQuality } from "./QualitiesSelect.js";
 import { SkillSelectList } from "./SkillsSelect.js";
 import { GearSelect } from "./GearSelect.js";
 import { GearListType } from "@shadowrun/common";
-import { CustomSkillListType } from "@shadowrun/common/build/schemas/skillSchema.js";
+import { CustomSkillListType } from "@shadowrun/common/build/schemas/skillSchemas.js";
 import { trpc } from "../../utils/trpc.js";
 
 const characterCreatorPath = "/character_creator";

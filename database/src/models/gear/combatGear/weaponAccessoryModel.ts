@@ -1,16 +1,17 @@
 import { Entity, PrimaryKey, Property, Enum } from "@mikro-orm/core";
-import type { AvailabilityType, CostType } from "@shadowrun/common";
 import { damageTypeEnum } from "@shadowrun/common";
 import { gearCategoryEnum } from "@shadowrun/common/build/enums.js";
 import type { UseGearListType } from "@shadowrun/common/build/schemas/weaponSchemas.js";
 import type {
   AmmoCapacityCalculationType,
   AmmoInformationType,
-  hostWeaponMountsRequiredType,
-  accessoryWeaponRequirementsType,
-  concealabilityModificationType,
+  HostWeaponMountsRequiredType,
+  AccessoryWeaponRequirementsType,
+  ConcealabilityModificationType,
   WeaponAccessorySummaryType,
-} from "@shadowrun/common/build/schemas/weaponAccessorySchema.js";
+  AvailabilityWeaponAccessoryType,
+  CostWeaponAccessoryType,
+} from "@shadowrun/common/build/schemas/weaponAccessorySchemas.js";
 
 @Entity()
 export class WeaponAccessories {
@@ -51,10 +52,10 @@ export class WeaponAccessories {
   deploymentRequired?: boolean;
 
   @Property({ type: "json" })
-  availability!: AvailabilityType;
+  availability!: AvailabilityWeaponAccessoryType;
 
   @Property({ type: "json" })
-  cost!: CostType;
+  cost!: CostWeaponAccessoryType;
 
   @Property({ nullable: true })
   accessoryCostMultiplier?: number;
@@ -78,19 +79,19 @@ export class WeaponAccessories {
   newAmmoType?: AmmoInformationType;
 
   @Property({ type: "json", nullable: true })
-  hostWeaponMountsRequired?: hostWeaponMountsRequiredType;
+  hostWeaponMountsRequired?: HostWeaponMountsRequiredType;
 
   @Property({ type: "json", nullable: true })
-  hostWeaponRequirements?: accessoryWeaponRequirementsType;
+  hostWeaponRequirements?: AccessoryWeaponRequirementsType;
 
   @Property({ type: "json", nullable: true })
-  hostWeaponRestrictions?: accessoryWeaponRequirementsType;
+  hostWeaponRestrictions?: AccessoryWeaponRequirementsType;
 
   @Property({ nullable: true })
   rangePenaltyDecrease?: number;
 
   @Property({ type: "json", nullable: true })
-  concealabilityModification?: concealabilityModificationType;
+  concealabilityModification?: ConcealabilityModificationType;
 
   @Property()
   source!: string;

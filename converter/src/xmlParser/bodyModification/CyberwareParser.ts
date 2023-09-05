@@ -8,7 +8,7 @@ import { sourceBookXmlEnum } from "../ParserCommonDefines.js";
 import {
   CyberwareListXmlSchema,
   CyberwareListXmlType,
-} from "./CyberwareParserSchema.js";
+} from "./CyberwareParserSchemas.js";
 
 const currentPath = import.meta.url;
 const xml_string = fs.readFileSync(

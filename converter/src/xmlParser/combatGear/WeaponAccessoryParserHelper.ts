@@ -6,7 +6,7 @@ import {
   ammoOptionEnum,
   ammoSourceEnum,
   availabilityEnum,
-  costEnum,
+  costWeaponAccessoryEnum,
   damageAnnotationEnum,
   damageTypeEnum,
   firearmWeaponTypeEnum,
@@ -14,12 +14,12 @@ import {
   restrictionEnum,
   weaponTypeEnum,
 } from "@shadowrun/common/build/enums.js";
-import { weaponXmlSubtypeEnum } from "@shadowrun/common/build/schemas/commonSchema.js";
+import { weaponXmlSubtypeEnum } from "@shadowrun/common/build/schemas/commonSchemas.js";
 import {
   AmmoInformationType,
-  weaponDamageRequirementsType,
-  accessoryWeaponRequirementsType,
-} from "@shadowrun/common/build/schemas/weaponAccessorySchema.js";
+  WeaponDamageRequirementsType,
+  AccessoryWeaponRequirementsType,
+} from "@shadowrun/common/build/schemas/weaponAccessorySchemas.js";
 import assert from "assert";
 import equal from "fast-deep-equal";
 import { parseCharacter, convertSpecial } from "../ParserHelper.js";
@@ -27,7 +27,7 @@ import {
   WeaponAccessoryRequiredXmlType,
   RequiredWeaponDetailsXmlType,
   XmlCategoryOrOperationType,
-} from "./WeaponAccessoryParserSchema.js";
+} from "./WeaponAccessoryParserSchemas.js";
 import WeaponAccessories from "../../grammar/weaponAccessories.ohm-bundle.js";
 const ModifyAmmoCapacity = WeaponAccessories.ModifyAmmoCapacity;
 // const Accuracy = WeaponAccessories.Accuracy;
@@ -97,8 +97,8 @@ modifyAmmoCapacitySemantics.addOperation("eval", {
   },
 });
 
-const availabilitySemantics = Availability.createSemantics();
-availabilitySemantics.addOperation("eval", {
+const availabilityWeaponAccessorySemantics = Availability.createSemantics();
+availabilityWeaponAccessorySemantics.addOperation("eval", {
   Exp_addition(_, availability) {
     return { ...availability.eval(), modifier: mathOperatorEnum.Add };
   },
@@ -168,8 +168,8 @@ availabilitySemantics.addOperation("eval", {
   },
 });
 
-const costSemantics = Cost.createSemantics();
-costSemantics.addOperation("eval", {
+const costWeaponAccessorySemantics = Cost.createSemantics();
+costWeaponAccessorySemantics.addOperation("eval", {
   AddSub_add(str, _, range) {
     return str
       .eval()
@@ -202,10 +202,10 @@ costSemantics.addOperation("eval", {
     return [cost.eval()];
   },
   Rating(_) {
-    return { option: costEnum.Rating };
+    return { option: costWeaponAccessoryEnum.Rating };
   },
   Weapon(_) {
-    return { option: costEnum.Weapon };
+    return { option: costWeaponAccessoryEnum.Weapon };
   },
   Number(availability) {
     return availability.eval();
@@ -294,7 +294,7 @@ export const convertAmmoReplace = function (
 
 export const convertWeaponDetails = function (
   weaponDetails: RequiredWeaponDetailsXmlType
-): accessoryWeaponRequirementsType {
+): AccessoryWeaponRequirementsType {
   const requiredWeaponNames: Array<string> = [];
   let requiredAmmunitionDetails: Array<
     ammoSourceEnum | firearmWeaponTypeEnum | projectileWeaponTypeEnum
@@ -305,7 +305,7 @@ export const convertWeaponDetails = function (
   const requiredSkills: Array<string> = [];
   const requiredAccessoryMountsArray: Array<firearmAccessoryMountLocationEnum> =
     [];
-  let requiredDamage: weaponDamageRequirementsType | undefined = undefined;
+  let requiredDamage: WeaponDamageRequirementsType | undefined = undefined;
 
   const weaponName = weaponDetails.name;
   const ammo = weaponDetails.ammo;
@@ -468,12 +468,12 @@ export const convertWeaponDetails = function (
 // TODO: put in lots of work here, after seeing what frontend needs
 export const convertRequirements = function (
   xmlRequirements: WeaponAccessoryRequiredXmlType | undefined
-): accessoryWeaponRequirementsType | undefined {
+): AccessoryWeaponRequirementsType | undefined {
   if (typeof xmlRequirements === "undefined") {
     return undefined;
   }
   console.log("Requirements: " + JSON.stringify(xmlRequirements));
-  let weaponRequirements: accessoryWeaponRequirementsType | undefined =
+  let weaponRequirements: AccessoryWeaponRequirementsType | undefined =
     undefined;
   // if (Object.hasOwn(xmlRequirements, "weapondetails")){  //typescript doesn't yet support the type narrowing for this
   if ("weapondetails" in xmlRequirements) {
@@ -692,4 +692,8 @@ function getCategories<Type>(
   return requiredCategory;
 }
 
-export { modifyAmmoCapacitySemantics, availabilitySemantics, costSemantics };
+export {
+  modifyAmmoCapacitySemantics,
+  availabilityWeaponAccessorySemantics,
+  costWeaponAccessorySemantics,
+};

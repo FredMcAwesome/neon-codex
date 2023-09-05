@@ -1,7 +1,7 @@
 import {
   WeaponAccessorySummaryListSchema,
   WeaponAccessorySummaryListType,
-} from "@shadowrun/common/build/schemas/weaponAccessorySchema.js";
+} from "@shadowrun/common/build/schemas/weaponAccessorySchemas.js";
 import assert from "assert";
 import fs from "fs";
 import path from "path";

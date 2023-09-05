@@ -1,5 +1,4 @@
 import { Entity, PrimaryKey, Property, Enum } from "@mikro-orm/core";
-import type { AvailabilityType, CostType } from "@shadowrun/common";
 import {
   vehicleDroneTypeEnum,
   groundcraftSubtypeEnum,
@@ -7,6 +6,10 @@ import {
   aircraftSubtypeEnum,
   droneSubtypeEnum,
 } from "@shadowrun/common";
+import type {
+  AvailabilityRiggerType,
+  CostRiggerType,
+} from "@shadowrun/common/src/schemas/riggerSchemas.js";
 
 @Entity({
   discriminatorColumn: "type",
@@ -61,10 +64,10 @@ export abstract class VehiclesAndDrones {
   seats!: number;
 
   @Property({ type: "json" })
-  availability!: AvailabilityType;
+  availability!: AvailabilityRiggerType;
 
   @Property({ type: "json" })
-  cost!: CostType;
+  cost!: CostRiggerType;
 
   @Property({ length: 5000 })
   description!: string;

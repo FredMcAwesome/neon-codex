@@ -1,5 +1,17 @@
-import { CostType, costEnum, mathOperatorEnum } from "@shadowrun/common";
-import { GearCalculationType } from "@shadowrun/common/build/schemas/commonSchema.js";
+import { mathOperatorEnum } from "@shadowrun/common";
+import type { GearCalculationType } from "@shadowrun/common/build/schemas/commonSchemas.js";
+import type { CostWeaponAccessoryType } from "@shadowrun/common/build/schemas/weaponAccessorySchemas.js";
+import type { CostAmmunitionType } from "@shadowrun/common/build/schemas/ammunitionSchemas.js";
+import type {
+  CostArmourType,
+  CostArmourAccessoryType,
+} from "@shadowrun/common/build/schemas/armourSchemas.js";
+import type { CostAugmentationType } from "@shadowrun/common/build/schemas/augmentationSchemas.js";
+import type { CostElectronicType } from "@shadowrun/common/build/schemas/electronicSchemas.js";
+import type { CostMagicalType } from "@shadowrun/common/build/schemas/magicalSchemas.js";
+import type { CostGearType } from "@shadowrun/common/build/schemas/otherGearSchemas.js";
+import type { CostRiggerType } from "@shadowrun/common/build/schemas/riggerSchemas.js";
+import type { CostWeaponType } from "@shadowrun/common/build/schemas/weaponSchemas.js";
 
 export const genericListCalculation = function (
   genericList: GearCalculationType,
@@ -62,7 +74,19 @@ export const genericListCalculation = function (
   return cost;
 };
 
-export const costCalculation = function (
+export const costCalculation = function <
+  CostType extends
+    | CostAmmunitionType
+    | CostArmourType
+    | CostArmourAccessoryType
+    | CostAugmentationType
+    | CostElectronicType
+    | CostMagicalType
+    | CostGearType
+    | CostRiggerType
+    | CostWeaponType
+    | CostWeaponAccessoryType
+>(
   costArray: CostType,
   options: {
     rating?: number;
@@ -84,13 +108,18 @@ export const costCalculation = function (
         nextValue = costItem;
       } else {
         if (typeof costItem === "object" && "subnumbers" in costItem) {
-          nextValue = costCalculation(costItem.subnumbers, options);
+          // typescript isn't realising the recursive nature of these types
+          // means subnumbers will always be the same type as costItem
+          nextValue = costCalculation<CostType>(
+            costItem.subnumbers as CostType,
+            options
+          );
         } else {
           switch (costItem.option) {
-            case costEnum.Rating:
+            case "Rating":
               nextValue = options.rating || 0;
               break;
-            case costEnum.Weapon:
+            case "Weapon":
               nextValue = options.weapon || 0;
               break;
             // case "Chemical":
