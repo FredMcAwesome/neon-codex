@@ -132,41 +132,40 @@ export function ParseSkills() {
   );
 
   // console.log(jObj.chummer.skills.skill[356]);
-  if (skillListParsed.success) console.log("all g");
+  if (skillListParsed.success) console.log("skills.xml initial zod parsed");
   else {
     console.log(skillListParsed.error.errors[0]);
+    assert(false);
   }
 
-  if (skillListParsed.success) {
-    const skillList = skillListParsed.data;
-    const skillListConverted = skillList.map((skill: SkillXmlType) => {
-      const convertedSkill = convertSkill(skill);
-      const check = SkillSchema.safeParse(convertedSkill);
-      if (!check.success) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.log(convertedSkill);
-        throw new Error(check.error.message);
-      }
-      return convertedSkill;
-    });
-    // console.log(skillListConverted);
-    const check = SkillListSchema.safeParse(skillListConverted);
+  const skillList = skillListParsed.data;
+  const skillListConverted = skillList.map((skill: SkillXmlType) => {
+    const convertedSkill = convertSkill(skill);
+    const check = SkillSchema.safeParse(convertedSkill);
     if (!check.success) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      // console.log(convertedSkill);
       throw new Error(check.error.message);
     }
-    const jsonFilePath = fileURLToPath(
-      path.dirname(currentPath) + "../../../../jsonFiles/skills.json"
-    );
-    fs.writeFile(
-      jsonFilePath,
-      JSON.stringify(skillListConverted, null, 2),
-      (error) => {
-        if (error) {
-          console.error(error);
-        } else {
-          console.log(`File written! Saved to: ${jsonFilePath}`);
-        }
-      }
-    );
+    return convertedSkill;
+  });
+  // console.log(skillListConverted);
+  const check = SkillListSchema.safeParse(skillListConverted);
+  if (!check.success) {
+    throw new Error(check.error.message);
   }
+  const jsonFilePath = fileURLToPath(
+    path.dirname(currentPath) + "../../../../jsonFiles/skills.json"
+  );
+  fs.writeFile(
+    jsonFilePath,
+    JSON.stringify(skillListConverted, null, 2),
+    (error) => {
+      if (error) {
+        console.error(error);
+      } else {
+        console.log(`File written! Saved to: ${jsonFilePath}`);
+      }
+    }
+  );
 }

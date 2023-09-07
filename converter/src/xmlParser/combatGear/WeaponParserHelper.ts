@@ -14,7 +14,6 @@ import {
   damageCalculationOptionEnum,
   damageTypeEnum,
   firearmModeEnum,
-  gearCategoryEnum,
   ammoSourceEnum,
   restrictionEnum,
   armourPenetrationEnum,
@@ -33,15 +32,14 @@ import {
   MeleeOptionsType,
   MountType,
   UnlinkedWeaponTypeInformationType,
-  useGearType,
   weaponRequirementsType,
 } from "@shadowrun/common/build/schemas/weaponSchemas.js";
 import {
   weaponXmlSubtypeEnum,
   WeaponXmlSubtypeType,
 } from "@shadowrun/common/build/schemas/commonSchemas.js";
-import { GearXmlType } from "../ParserCommonDefines.js";
 import Weapons from "../../grammar/weapons.ohm-bundle.js";
+import { convertXmlGears, convertGearCategory } from "../ParserHelper.js";
 const Accuracy = Weapons.Accuracy;
 const Damage = Weapons.Damage;
 const ArmourPenetration = Weapons.ArmourPenetration;
@@ -443,7 +441,7 @@ modeSemantics.addOperation("eval", {
 export const convertRecoilCompensation = function (
   recoilCompensation: number | string
 ) {
-  console.log("Recoil Compensation: " + recoilCompensation.toString());
+  // console.log("Recoil Compensation: " + recoilCompensation.toString());
   if (typeof recoilCompensation === "string") {
     return 0;
   } else {
@@ -668,7 +666,7 @@ export const convertAccessories = function (
   if (!xmlAccessoriesUndefined) {
     return undefined;
   }
-  console.log("Accessories: " + xmlAccessoriesUndefined.toString());
+  // console.log("Accessories: " + xmlAccessoriesUndefined.toString());
 
   const xmlAccessories: Array<AccessoryXmlType> = Array.isArray(
     xmlAccessoriesUndefined.accessory
@@ -703,7 +701,7 @@ export const convertAccessoryMounts = function (
   if (!xmlAccessoryMountsUndefined) {
     return undefined;
   }
-  console.log("Accessory Mounts: " + xmlAccessoryMountsUndefined.toString());
+  // console.log("Accessory Mounts: " + xmlAccessoryMountsUndefined.toString());
 
   return Array.isArray(xmlAccessoryMountsUndefined.mount)
     ? xmlAccessoryMountsUndefined.mount
@@ -717,7 +715,7 @@ export const convertAllowGear = function (
   if (!xmlAllowGear) {
     return undefined;
   }
-  console.log("Allow Gear: " + xmlAllowGear.toString());
+  // console.log("Allow Gear: " + xmlAllowGear.toString());
   const gearCategories = Array.isArray(xmlAllowGear.gearcategory)
     ? xmlAllowGear.gearcategory
     : [xmlAllowGear.gearcategory];
@@ -735,7 +733,7 @@ export const convertRequirements = function (
   if (!xmlRequirements) {
     return undefined;
   }
-  console.log("Requirements" + xmlRequirements.toString());
+  // console.log("Requirements" + xmlRequirements.toString());
   assert(typeof xmlRequirements === "object");
   // if (Object.hasOwn(xmlRequirements, "weapondetails")){  //typescript doesn't yet support the type narrowing for this
   if ("weapondetails" in xmlRequirements) {
@@ -857,157 +855,6 @@ export const convertWeaponSkill = function (
       assert(false, `Unknown skill category: ${category}`);
   }
   return { skill: skill, specialisations: specialisations };
-};
-
-export const convertGearCategory = function (
-  category: string,
-  otherMessage: string
-) {
-  switch (category) {
-    case "Alchemical Tools":
-      return gearCategoryEnum.AlchemicalTools;
-    case "Ammunition":
-      return gearCategoryEnum.Ammunition;
-    case "Armor Enhancements":
-      return gearCategoryEnum.ArmorEnhancements;
-    case "Audio Devices":
-      return gearCategoryEnum.AudioDevices;
-    case "Audio Enhancements":
-      return gearCategoryEnum.AudioEnhancements;
-    case "Autosofts":
-      return gearCategoryEnum.Autosofts;
-    case "Biotech":
-      return gearCategoryEnum.Biotech;
-    case "Breaking and Entering Gear":
-      return gearCategoryEnum.BreakingAndEnteringGear;
-    case "BTLs":
-      return gearCategoryEnum.BTLs;
-    case "Chemicals":
-      return gearCategoryEnum.Chemicals;
-    case "Commlinks":
-      return gearCategoryEnum.Commlinks;
-    case "Commlink/Cyberdeck Form Factors":
-      return gearCategoryEnum.Commlink_CyberdeckFormFactors;
-    case "Commlink Accessories":
-      return gearCategoryEnum.CommlinkAccessories;
-    case "Commlink Apps":
-      return gearCategoryEnum.CommlinkApps;
-    case "Common Programs":
-      return gearCategoryEnum.CommonPrograms;
-    case "Communications and Countermeasures":
-      return gearCategoryEnum.CommunicationsAndCountermeasures;
-    case "Contracts/Upkeep":
-      return gearCategoryEnum.Contracts_Upkeep;
-    case "Critter Gear":
-      return gearCategoryEnum.CritterGear;
-    case "Currency":
-      return gearCategoryEnum.Currency;
-    case "Custom":
-      return gearCategoryEnum.Custom;
-    case "Custom Cyberdeck Attributes":
-      return gearCategoryEnum.CustomCyberdeckAttributes;
-    case "Custom Drug":
-      return gearCategoryEnum.CustomDrug;
-    case "Cyberdeck Modules":
-      return gearCategoryEnum.CyberdeckModules;
-    case "Cyberdecks":
-      return gearCategoryEnum.Cyberdecks;
-    case "Cyberterminals":
-      return gearCategoryEnum.Cyberterminals;
-    case "Disguises":
-      return gearCategoryEnum.Disguises;
-    case "Drugs":
-      return gearCategoryEnum.Drugs;
-    case "Electronics Accessories":
-      return gearCategoryEnum.ElectronicsAccessories;
-    case "Electronic Modification":
-      return gearCategoryEnum.ElectronicModification;
-    case "Electronic Parts":
-      return gearCategoryEnum.ElectronicParts;
-    case "Entertainment":
-      return gearCategoryEnum.Entertainment;
-    case "Explosives":
-      return gearCategoryEnum.Explosives;
-    case "Extraction Devices":
-      return gearCategoryEnum.ExtractionDevices;
-    case "Foci":
-      return gearCategoryEnum.Foci;
-    case "Food":
-      return gearCategoryEnum.Food;
-    case "Formulae":
-      return gearCategoryEnum.Formulae;
-    case "Grapple Gun":
-      return gearCategoryEnum.GrappleGun;
-    case "Hacking Programs":
-      return gearCategoryEnum.HackingPrograms;
-    case "Housewares":
-      return gearCategoryEnum.Housewares;
-    case "ID/Credsticks":
-      return gearCategoryEnum.ID_Credsticks;
-    case "Magical Compounds":
-      return gearCategoryEnum.MagicalCompounds;
-    case "Magical Supplies":
-      return gearCategoryEnum.MagicalSupplies;
-    case "Metatype-Specific":
-      return gearCategoryEnum.MetatypeSpecific;
-    case "Miscellany":
-      return gearCategoryEnum.Miscellany;
-    case "Musical Instruments":
-      return gearCategoryEnum.MusicalInstruments;
-    case "Nanogear":
-      return gearCategoryEnum.Nanogear;
-    case "Paydata":
-      return gearCategoryEnum.Paydata;
-    case "PI-Tac":
-      return gearCategoryEnum.PiTac;
-    case "Printing":
-      return gearCategoryEnum.Printing;
-    case "Reporter Gear":
-      return gearCategoryEnum.ReporterGear;
-    case "RFID Tags":
-      return gearCategoryEnum.RFIDTags;
-    case "Rigger Command Consoles":
-      return gearCategoryEnum.RiggerCommandConsoles;
-    case "Security Devices":
-      return gearCategoryEnum.SecurityDevices;
-    case "Sensors":
-      return gearCategoryEnum.Sensors;
-    case "Sensor Functions":
-      return gearCategoryEnum.SensorFunctions;
-    case "Sensor Housings":
-      return gearCategoryEnum.SensorHousings;
-    case "Services":
-      return gearCategoryEnum.Services;
-    case "Skillsofts":
-      return gearCategoryEnum.Skillsofts;
-    case "Software":
-      return gearCategoryEnum.Software;
-    case "Software Tweaks":
-      return gearCategoryEnum.SoftwareTweaks;
-    case "Survival Gear":
-      return gearCategoryEnum.SurvivalGear;
-    case "Tailored Perfume/Cologne":
-      return gearCategoryEnum.TailoredPerfume_Cologne;
-    case "Tools":
-      return gearCategoryEnum.Tools;
-    case "Tools of the Trade":
-      return gearCategoryEnum.ToolsOfTheTrade;
-    case "Toxins":
-      return gearCategoryEnum.Toxins;
-    case "Vision Devices":
-      return gearCategoryEnum.VisionDevices;
-    case "Vision Enhancements":
-      return gearCategoryEnum.VisionEnhancements;
-    case "Matrix Accessories":
-      return gearCategoryEnum.MatrixAccessories;
-    case "Booster Chips":
-      return gearCategoryEnum.BoosterChips;
-    case "Appearance Modification":
-      return gearCategoryEnum.AppearanceModification;
-    case "Drug Grades":
-      return gearCategoryEnum.DrugGrades;
-  }
-  assert(false, `Category not found ${category}, ${otherMessage}`);
 };
 
 export const getWeaponTypeInformation = function (weapon: WeaponXmlType) {
@@ -1177,28 +1024,6 @@ export const getWeaponTypeInformation = function (weapon: WeaponXmlType) {
   }
   return { weaponType, weaponSubtype };
 };
-export function convertXmlGears(
-  gears: GearXmlType,
-  name: string
-): Array<useGearType> {
-  const xmlUseGear = Array.isArray(gears.usegear)
-    ? gears.usegear
-    : [gears.usegear];
-  return xmlUseGear.map((useGear) => {
-    let category;
-    if (useGear.category) {
-      category = convertGearCategory(useGear.category, `weapon.name = ${name}`);
-    }
-    if (typeof useGear.name !== "string") {
-      useGear.name = useGear.name.xmltext;
-    }
-    return {
-      name: useGear.name,
-      rating: useGear.rating,
-      category: category,
-    };
-  });
-}
 
 export {
   accuracySemantics,

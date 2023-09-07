@@ -1,6 +1,7 @@
 import {
   mathOperatorEnum,
   firearmAccessoryMountLocationEnum,
+  reloadMethodEnum,
 } from "@shadowrun/common";
 import {
   ammoOptionEnum,
@@ -16,13 +17,10 @@ import {
 } from "@shadowrun/common/build/enums.js";
 import { weaponXmlSubtypeEnum } from "@shadowrun/common/build/schemas/commonSchemas.js";
 import {
-  AmmoInformationType,
   WeaponDamageRequirementsType,
   AccessoryWeaponRequirementsType,
 } from "@shadowrun/common/build/schemas/weaponAccessorySchemas.js";
 import assert from "assert";
-import equal from "fast-deep-equal";
-import { parseCharacter, convertSpecial } from "../ParserHelper.js";
 import {
   WeaponAccessoryRequiredXmlType,
   RequiredWeaponDetailsXmlType,
@@ -34,7 +32,7 @@ const ModifyAmmoCapacity = WeaponAccessories.ModifyAmmoCapacity;
 // const Damage = WeaponAccessories.Damage;
 // const ArmourPenetration = WeaponAccessories.ArmourPenetration;
 // const Mode = WeaponAccessories.Mode;
-// const Ammo = WeaponAccessories.Ammo;
+const Ammo = WeaponAccessories.Ammo;
 const Availability = WeaponAccessories.Availability;
 const Cost = WeaponAccessories.Cost;
 
@@ -82,6 +80,90 @@ modifyAmmoCapacitySemantics.addOperation("eval", {
   },
   Weapon(_) {
     return { option: ammoOptionEnum.Weapon };
+  },
+  Number(damage) {
+    return damage.eval();
+  },
+  Number_negative(_, range) {
+    return -range.eval();
+  },
+  PositiveNumber_float(rangeInt, _, rangeDecimal) {
+    return parseFloat(rangeInt.sourceString + "." + rangeDecimal.sourceString);
+  },
+  PositiveNumber_int(range) {
+    return parseInt(range.sourceString);
+  },
+});
+
+const ammoWeaponAccessorySemantics = Ammo.createSemantics();
+ammoWeaponAccessorySemantics.addOperation("eval", {
+  Ammo(ammo) {
+    return ammo.eval();
+  },
+  Ammo_base(ammo, reloadMethod) {
+    return {
+      capacity: ammo.eval(),
+      ...reloadMethod.eval(),
+    };
+  },
+  Ammo_noReload(ammo) {
+    return {
+      capacity: ammo.eval(),
+      reloadMethod: reloadMethodEnum.None,
+    };
+  },
+  Ammo_external(reloadMethod) {
+    return reloadMethod.eval();
+  },
+  Ammo_multipleAmmoNeeded(ammo, _, holders, reloadMethod) {
+    return {
+      capacity: ammo.eval(),
+      numberOfAmmunitionHolders: holders.eval(),
+      ...reloadMethod.eval(),
+    };
+  },
+  Ammo_multipleBarrels(ammo, reloadMethod, _, holders) {
+    return {
+      capacity: ammo.eval(),
+      numberOfAmmunitionHolders: holders.eval(),
+      ...reloadMethod.eval(),
+    };
+  },
+  ReloadMethod(method) {
+    return { reloadMethod: method.eval() };
+  },
+  Break(_) {
+    return ammoSourceEnum.BreakAction;
+  },
+  Clip(_) {
+    return ammoSourceEnum.Clip;
+  },
+  Drum(_) {
+    return ammoSourceEnum.Drum;
+  },
+  MuzzleLoader(_) {
+    return ammoSourceEnum.MuzzleLoader;
+  },
+  InternalMagazine(_) {
+    return ammoSourceEnum.InternalMagazine;
+  },
+  Cylinder(_) {
+    return ammoSourceEnum.Cylinder;
+  },
+  BeltFed(_) {
+    return ammoSourceEnum.BeltFed;
+  },
+  Tank(_) {
+    return ammoSourceEnum.Tank;
+  },
+  External(_) {
+    return ammoSourceEnum.External;
+  },
+  Energy(_) {
+    return ammoSourceEnum.Energy;
+  },
+  CapAndBall(_) {
+    return ammoSourceEnum.CapAndBall;
   },
   Number(damage) {
     return damage.eval();
@@ -221,77 +303,6 @@ costWeaponAccessorySemantics.addOperation("eval", {
   },
 });
 
-export const convertAmmoReplace = function (
-  ammoReplace: string | number,
-  name: string
-): AmmoInformationType {
-  console.log(`Ammo Replace: ${ammoReplace}`);
-  if (typeof ammoReplace === "number")
-    return { ammoCount: ammoReplace, ammoSource: ammoSourceEnum.None };
-  let ammoReplaceList: Array<
-    | { operator: mathOperatorEnum }
-    | string
-    | number
-    | { option: ammoSourceEnum }
-  > = [];
-
-  let genericList: Array<{ operator: mathOperatorEnum } | string | number> = [];
-  Array.from(ammoReplace).forEach((character) => {
-    genericList = parseCharacter(character, genericList, true);
-  });
-  let conversionInfo = convertSpecial(
-    { propertyList: genericList, insertLocationList: [] },
-    "(belt)"
-  );
-  conversionInfo = convertSpecial(conversionInfo, "(d)");
-  conversionInfo = convertSpecial(conversionInfo, "External Source");
-  ammoReplaceList = conversionInfo.propertyList;
-  let locationCounter = 0;
-  conversionInfo.insertLocationList.forEach((insertLocation) => {
-    const replaceString = insertLocation.value;
-    let option: ammoSourceEnum = ammoSourceEnum.None;
-    if (replaceString === "(belt)") {
-      option = ammoSourceEnum.BeltFed;
-    } else if (replaceString === "(d)") {
-      option = ammoSourceEnum.Drum;
-    } else if (replaceString === "External Source") {
-      option = ammoSourceEnum.External;
-    } else {
-      assert(false, "Special string not replaced!");
-    }
-    if (ammoReplaceList.length > 0) {
-      ammoReplaceList.splice(insertLocation.location + locationCounter, 0, {
-        option: option,
-      });
-    } else {
-      ammoReplaceList[0] = {
-        option: option,
-      };
-    }
-    locationCounter++;
-  });
-  let count = undefined;
-  let source = undefined;
-
-  // just take a shortcut here, fix it later if we assert fail
-  ammoReplaceList.forEach((ammoReplace) => {
-    let check = false;
-    if (typeof ammoReplace === "number") {
-      check = true;
-      count = ammoReplace;
-    } else {
-      Object.values(ammoSourceEnum).forEach((option) => {
-        if (equal(ammoReplace, { option: option })) {
-          check = true;
-          source = option;
-        }
-      });
-    }
-    assert(check, `name: ${name} ammoReplace: ${ammoReplace}`);
-  });
-  return { ammoCount: count, ammoSource: source };
-};
-
 export const convertWeaponDetails = function (
   weaponDetails: RequiredWeaponDetailsXmlType
 ): AccessoryWeaponRequirementsType {
@@ -328,7 +339,7 @@ export const convertWeaponDetails = function (
       } else requiredWeaponNames.push(weapon);
     });
   }
-  if (ammo) {
+  if (ammo !== undefined) {
     const ammoArray = Array.isArray(ammo) ? ammo : [ammo];
     ammoArray.forEach((ammo) => {
       switch (ammo.xmltext) {
@@ -392,20 +403,21 @@ export const convertWeaponDetails = function (
     }
   }
   if (conceal) {
-    console.log("conceal:" + conceal.xmltext);
+    // console.log("conceal:" + conceal.xmltext);
     if (conceal._operation === "greaterthan")
       minimumHostConcealment = conceal.xmltext;
     else if (conceal._operation === "greaterthanorequals")
       minimumHostConcealment = conceal.xmltext - 1;
     else maximumHostConcealment = conceal.xmltext;
-    console.log(
-      `minimumHostConcealment: ${minimumHostConcealment}, maximumHostConcealment: ${maximumHostConcealment}`
-    );
+    // console.log(
+    //   `minimumHostConcealment: ${minimumHostConcealment}, maximumHostConcealment: ${maximumHostConcealment}`
+    // );
   }
   if (useSkill) {
     const useSkillArray = Array.isArray(useSkill) ? useSkill : [useSkill];
     useSkillArray.forEach((skill) => {
-      requiredSkills.push(skill);
+      // TODO: fix skills for object here
+      if (typeof skill !== "object") requiredSkills.push(skill);
     });
   }
   if (accessoryMounts) {
@@ -472,7 +484,7 @@ export const convertRequirements = function (
   if (typeof xmlRequirements === "undefined") {
     return undefined;
   }
-  console.log("Requirements: " + JSON.stringify(xmlRequirements));
+  // console.log("Requirements: " + JSON.stringify(xmlRequirements));
   let weaponRequirements: AccessoryWeaponRequirementsType | undefined =
     undefined;
   // if (Object.hasOwn(xmlRequirements, "weapondetails")){  //typescript doesn't yet support the type narrowing for this
@@ -503,6 +515,9 @@ export const convertRequirements = function (
           ? undefined
           : Array.isArray(xmlRequirements.OR.useskill)
           ? xmlRequirements.OR.useskill
+          : // TODO: fix skills for object here
+          typeof xmlRequirements.OR.useskill === "object"
+          ? undefined
           : [xmlRequirements.OR.useskill];
       // currently not using AND portion... should be handled by the skill fix
       // xmlRequirements.OR.AND
@@ -530,8 +545,10 @@ export const convertRequirements = function (
       if (categories)
         parsedCategories = getCategories(categories, parsedCategories);
 
+      // TODO: fix skills for object here
       const skills =
-        orDetails.useskill !== undefined
+        orDetails.useskill !== undefined &&
+        typeof orDetails.useskill !== "object"
           ? Array.isArray(orDetails.useskill)
             ? orDetails.useskill
             : [orDetails.useskill]
@@ -563,7 +580,7 @@ export const convertRequirements = function (
 
 export const getWeaponMounts = function (mounts: string | undefined) {
   if (mounts === undefined || mounts === "") return undefined;
-  console.log("Mounts: " + mounts);
+  // console.log("Mounts: " + mounts);
   const mountLocations = mounts.split("/");
   return mountLocations.map((mountLocation) => {
     switch (mountLocation) {
@@ -694,6 +711,7 @@ function getCategories<Type>(
 
 export {
   modifyAmmoCapacitySemantics,
+  ammoWeaponAccessorySemantics,
   availabilityWeaponAccessorySemantics,
   costWeaponAccessorySemantics,
 };

@@ -7,34 +7,35 @@ import * as fs from "fs";
 import { sourceBookXmlEnum } from "../ParserCommonDefines.js";
 import { SpellListXmlSchema, SpellListXmlType } from "./SpellsParserSchemas.js";
 
-const currentPath = import.meta.url;
-const xml_string = fs.readFileSync(
-  fileURLToPath(path.dirname(currentPath) + "../../../xmls/spells.xml"),
-  "utf8"
-);
-const parser = new XMLParser({
-  ignoreAttributes: false,
-  attributeNamePrefix: "_",
-  textNodeName: "xmltext",
-});
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const jObj: any = parser.parse(xml_string);
-console.log(
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  jObj.chummer.spells.spell[257]
-);
+export function ParseSpells() {
+  const currentPath = import.meta.url;
+  const xml_string = fs.readFileSync(
+    fileURLToPath(path.dirname(currentPath) + "../../../../xmls/spells.xml"),
+    "utf8"
+  );
+  const parser = new XMLParser({
+    ignoreAttributes: false,
+    attributeNamePrefix: "_",
+    textNodeName: "xmltext",
+  });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const jObj: any = parser.parse(xml_string);
+  // console.log(
+  //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+  //   jObj.chummer.spells.spell[337].required
+  // );
 
-const armourListParsed = SpellListXmlSchema.safeParse(
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  jObj.chummer.spells.spell
-);
+  const armourListParsed = SpellListXmlSchema.safeParse(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    jObj.chummer.spells.spell
+  );
 
-if (armourListParsed.success) console.log("all g");
-else {
-  console.log(armourListParsed.error.errors[0]);
-}
+  if (armourListParsed.success) console.log("spells.xml initial zod parsed");
+  else {
+    console.log(armourListParsed.error.errors[0]);
+    assert(false);
+  }
 
-if (armourListParsed.success) {
   const armourList = armourListParsed.data;
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
@@ -106,7 +107,7 @@ if (armourListParsed.success) {
     return found;
   });
 
-  console.log(englishSpellsList);
+  console.log(englishSpellsList[0]);
 
   // const armourListConverted = englishArmourList
   //   // .filter((weapon) => weapon.name === "Osmium Mace")

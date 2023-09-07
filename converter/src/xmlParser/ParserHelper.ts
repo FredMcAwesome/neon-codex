@@ -1,295 +1,10 @@
-import { mathOperatorEnum } from "@shadowrun/common";
-import { sourceBookEnum } from "@shadowrun/common/build/enums.js";
+import {
+  gearCategoryEnum,
+  sourceBookEnum,
+} from "@shadowrun/common/build/enums.js";
+import { useGearType } from "@shadowrun/common/src/schemas/weaponSchemas.js";
 import assert from "assert";
-import { sourceBookXmlEnum } from "./ParserCommonDefines.js";
-
-export const parseCharacter = function (
-  character: string,
-  digitArray: Array<{ operator: mathOperatorEnum } | number | string>,
-  simpleDivide: boolean
-) {
-  const parsedNumber = parseNumber(character, digitArray);
-  digitArray = parsedNumber.digitArray;
-  let lastIndex = parsedNumber.numberFound
-    ? digitArray.length - 2
-    : digitArray.length - 1;
-  if (lastIndex >= 0 && digitArray[lastIndex] === "/" && character !== "/") {
-    if (simpleDivide) {
-      digitArray[lastIndex] = { operator: mathOperatorEnum.Divide };
-    } else {
-      // restore / if not a divide
-      if (typeof digitArray[lastIndex - 1] !== "number") {
-        digitArray[lastIndex - 1] = `${digitArray[lastIndex - 1] as string}${
-          digitArray[lastIndex] as string
-        }`;
-        digitArray.splice(lastIndex, 1);
-        lastIndex = digitArray.length - 1;
-      }
-    }
-  }
-  if (!parsedNumber.numberFound) {
-    assert(
-      lastIndex == 0 ||
-        !(
-          charcterIsOperator(character) &&
-          charcterIsOperator(digitArray[lastIndex])
-        ),
-      "Two Operators in a row!"
-    );
-
-    if (character === mathOperatorEnum.Add) {
-      digitArray.push({ operator: mathOperatorEnum.Add });
-    } else if (character === mathOperatorEnum.Subtract) {
-      digitArray.push({ operator: mathOperatorEnum.Subtract });
-    } else if (character === mathOperatorEnum.Multiply) {
-      digitArray.push({ operator: mathOperatorEnum.Multiply });
-    } else if (
-      lastIndex >= 0 &&
-      `${digitArray[lastIndex] as string}${character}` === "//"
-    ) {
-      digitArray[lastIndex] = { operator: mathOperatorEnum.Divide };
-    } else if (character === "/") {
-      digitArray.push("/");
-    } else if (
-      lastIndex >= 0 &&
-      `${digitArray[lastIndex] as string}${character}` ===
-        mathOperatorEnum.GreaterThan
-    ) {
-      digitArray[lastIndex] = { operator: mathOperatorEnum.GreaterThan };
-    } else if (character === ">") {
-      digitArray.push(">");
-    } else {
-      if (
-        (lastIndex >= 0 &&
-          charcterIsOperator(
-            digitArray[lastIndex] as
-              | { operator: mathOperatorEnum }
-              | number
-              | string
-          )) ||
-        typeof digitArray[lastIndex] === "number"
-      ) {
-        digitArray.push(character);
-      } else {
-        if (lastIndex >= 0) {
-          digitArray[lastIndex] = `${
-            digitArray[lastIndex] as string
-          }${character}`;
-        } else {
-          digitArray.push(character);
-        }
-      }
-    }
-  }
-  return digitArray;
-};
-
-export const parseNumber = function <Type>(
-  character: string,
-  digitArray: Array<Type | number | string>
-) {
-  let numberFound = true;
-  const lastIndex = digitArray.length - 1;
-  if (!isNaN(parseInt(character))) {
-    // if last character was also a number concat the 2 numbers
-    if (typeof digitArray[lastIndex] === "number") {
-      digitArray[lastIndex] = parseFloat(
-        `${digitArray[lastIndex] as number}${character}`
-      );
-    } else if (digitArray[lastIndex] === ".") {
-      digitArray[lastIndex - 1] = parseFloat(
-        `${digitArray[lastIndex - 1] as number}.${character}`
-      );
-      digitArray.splice(lastIndex, 1);
-    } else {
-      digitArray.push(parseInt(character));
-    }
-  } else if (character === ".") {
-    assert(
-      typeof digitArray[lastIndex] === "number",
-      "Last character was not a number, cannot be float."
-    );
-    digitArray.push(".");
-  } else if (digitArray[lastIndex] === ".") {
-    assert(
-      false,
-      "Last character was not a decimal point, this is not a character."
-    );
-  } else {
-    numberFound = false;
-  }
-  return { digitArray, numberFound };
-};
-
-export const charcterIsOperator = function (
-  character: { operator: mathOperatorEnum } | number | string
-) {
-  if (typeof character === "object" && character.operator) {
-    return true;
-  } else if (character === mathOperatorEnum.Add) {
-    return true;
-  } else if (character === mathOperatorEnum.Subtract) {
-    return true;
-  } else if (character === mathOperatorEnum.Divide) {
-    return true;
-  } else if (character === mathOperatorEnum.Multiply) {
-    return true;
-  } else {
-    return false;
-  }
-};
-
-export const removeStringFromArray = function <Type>(
-  currentItem: string,
-  removeString: string,
-  itemList: Array<Type | string>,
-  i: number
-): Array<Type | string> {
-  currentItem = currentItem.trim();
-  const index = currentItem.indexOf(removeString);
-  const length = removeString.length;
-  if (currentItem.length > 1) {
-    if (index > 0) {
-      itemList[i] = currentItem.slice(0, index);
-    } else {
-      itemList.splice(i, 1);
-    }
-  } else {
-    itemList.splice(i, 1);
-  }
-  if (currentItem.slice(index + length).length > 0)
-    itemList.push(currentItem.slice(index + length));
-  return itemList;
-};
-
-export const convertSpecial = function <Type>(
-  conversionInfo: {
-    propertyList: Array<Type | string | number>;
-    insertLocationList: Array<{ value: string; location: number }>;
-  },
-  replaceString: string
-) {
-  const { propertyList, insertLocationList } = conversionInfo;
-  for (let i = 0; i < propertyList.length; i++) {
-    const stringSplit = propertyList[i];
-    if (
-      typeof stringSplit === "string" &&
-      stringSplit.indexOf(replaceString) !== -1
-    ) {
-      const index = stringSplit.indexOf(replaceString);
-      const length = replaceString.length;
-      let insertLocation = i;
-      if (index > 0) {
-        propertyList[i] = stringSplit.slice(0, index);
-        insertLocation++;
-      } else {
-        propertyList.splice(i, 1);
-      }
-      if (index + length < stringSplit.length) {
-        propertyList.splice(
-          insertLocation,
-          0,
-          stringSplit.slice(index + length)
-        );
-      }
-      insertLocationList.push({
-        value: replaceString,
-        location: insertLocation,
-      });
-    }
-  }
-  return { propertyList: propertyList, insertLocationList: insertLocationList };
-};
-
-export const getSplit = function <Type>(
-  propertyList: Array<Type | string | number>,
-  replaceString: string
-) {
-  const splitList: Array<number> = [];
-  for (let i = 0; i < propertyList.length; i++) {
-    const stringSplit = propertyList[i];
-    if (
-      typeof stringSplit === "string" &&
-      stringSplit.indexOf(replaceString) !== -1
-    ) {
-      const index = stringSplit.indexOf(replaceString);
-      // avoid /m as used in blast calculation
-      if (propertyList.length > i) {
-        const nextItem = propertyList[i + 1];
-        if (typeof nextItem === "string" && nextItem.indexOf("m") >= 0)
-          continue;
-      }
-      if (stringSplit.substring(index + 1, index + 2) === "m") continue;
-      const length = replaceString.length;
-      let splitIndex = i;
-      if (index > 0) {
-        propertyList[i] = stringSplit.slice(0, index);
-        splitIndex++;
-      } else {
-        propertyList.splice(i, 1);
-      }
-      if (index + length < stringSplit.length) {
-        propertyList.splice(splitIndex, 0, stringSplit.slice(index + length));
-      }
-      splitList.push(splitIndex);
-    }
-  }
-  return { propertyList: propertyList, splitList: splitList };
-};
-
-const convertToOption = function <Type>(
-  propertyList: Array<
-    { option: Type } | { operator: mathOperatorEnum } | string | number
-  >,
-  optionPair: {
-    value: string;
-    option: Type;
-  }
-) {
-  for (let i = 0; i < propertyList.length; i++) {
-    const stringSplit = propertyList[i];
-    if (
-      typeof stringSplit === "string" &&
-      stringSplit.indexOf(optionPair.value) !== -1
-    ) {
-      const index = stringSplit.indexOf(optionPair.value);
-      const length = optionPair.value.length;
-      let insertLocation = i;
-      if (index > 0) {
-        propertyList[i] = stringSplit.slice(0, index);
-        insertLocation++;
-      } else {
-        propertyList.splice(i, 1);
-      }
-      propertyList.splice(insertLocation, 0, { option: optionPair.option });
-      if (index + length < stringSplit.length) {
-        propertyList.splice(
-          insertLocation,
-          0,
-          stringSplit.slice(index + length)
-        );
-      }
-    }
-  }
-  return propertyList;
-};
-
-export const convertStringToOperatorsAndOptions = function <Type>(
-  unparsedString: string,
-  optionList: Array<{ value: string; option: Type }>
-) {
-  let genericList: Array<{ operator: mathOperatorEnum } | number | string> = [];
-  Array.from(unparsedString).forEach((character) => {
-    genericList = parseCharacter(character, genericList, false);
-  });
-  let propertyList: Array<
-    { option: Type } | { operator: mathOperatorEnum } | number | string
-  > = genericList;
-  optionList.forEach((optionPair) => {
-    propertyList = convertToOption<Type>(propertyList, optionPair);
-  });
-  return propertyList;
-};
+import { GearXmlType, sourceBookXmlEnum } from "./ParserCommonDefines.js";
 
 export const convertSource = function (source: sourceBookXmlEnum | 2050) {
   const xmlSource = source === 2050 ? sourceBookXmlEnum.Shadowrun2050 : source;
@@ -394,3 +109,188 @@ export const convertSource = function (source: sourceBookXmlEnum | 2050) {
       break;
   }
 };
+
+export const convertGearCategory = function (
+  category: string,
+  otherMessage: string
+) {
+  switch (category) {
+    case "Alchemical Tools":
+      return gearCategoryEnum.AlchemicalTools;
+    case "Ammunition":
+      return gearCategoryEnum.Ammunition;
+    case "Armor Enhancements":
+      return gearCategoryEnum.ArmorEnhancements;
+    case "Audio Devices":
+      return gearCategoryEnum.AudioDevices;
+    case "Audio Enhancements":
+      return gearCategoryEnum.AudioEnhancements;
+    case "Autosofts":
+      return gearCategoryEnum.Autosofts;
+    case "Biotech":
+      return gearCategoryEnum.Biotech;
+    case "Breaking and Entering Gear":
+      return gearCategoryEnum.BreakingAndEnteringGear;
+    case "BTLs":
+      return gearCategoryEnum.BTLs;
+    case "Chemicals":
+      return gearCategoryEnum.Chemicals;
+    case "Commlinks":
+      return gearCategoryEnum.Commlinks;
+    case "Commlink/Cyberdeck Form Factors":
+      return gearCategoryEnum.Commlink_CyberdeckFormFactors;
+    case "Commlink Accessories":
+      return gearCategoryEnum.CommlinkAccessories;
+    case "Commlink Apps":
+      return gearCategoryEnum.CommlinkApps;
+    case "Common Programs":
+      return gearCategoryEnum.CommonPrograms;
+    case "Communications and Countermeasures":
+      return gearCategoryEnum.CommunicationsAndCountermeasures;
+    case "Contracts/Upkeep":
+      return gearCategoryEnum.Contracts_Upkeep;
+    case "Critter Gear":
+      return gearCategoryEnum.CritterGear;
+    case "Currency":
+      return gearCategoryEnum.Currency;
+    case "Custom":
+      return gearCategoryEnum.Custom;
+    case "Custom Cyberdeck Attributes":
+      return gearCategoryEnum.CustomCyberdeckAttributes;
+    case "Custom Drug":
+      return gearCategoryEnum.CustomDrug;
+    case "Cyberdeck Modules":
+      return gearCategoryEnum.CyberdeckModules;
+    case "Cyberdecks":
+      return gearCategoryEnum.Cyberdecks;
+    case "Cyberterminals":
+      return gearCategoryEnum.Cyberterminals;
+    case "Disguises":
+      return gearCategoryEnum.Disguises;
+    case "Drugs":
+      return gearCategoryEnum.Drugs;
+    case "Electronics Accessories":
+      return gearCategoryEnum.ElectronicsAccessories;
+    case "Electronic Modification":
+      return gearCategoryEnum.ElectronicModification;
+    case "Electronic Parts":
+      return gearCategoryEnum.ElectronicParts;
+    case "Entertainment":
+      return gearCategoryEnum.Entertainment;
+    case "Explosives":
+      return gearCategoryEnum.Explosives;
+    case "Extraction Devices":
+      return gearCategoryEnum.ExtractionDevices;
+    case "Foci":
+      return gearCategoryEnum.Foci;
+    case "Food":
+      return gearCategoryEnum.Food;
+    case "Formulae":
+      return gearCategoryEnum.Formulae;
+    case "Grapple Gun":
+      return gearCategoryEnum.GrappleGun;
+    case "Hacking Programs":
+      return gearCategoryEnum.HackingPrograms;
+    case "Housewares":
+      return gearCategoryEnum.Housewares;
+    case "ID/Credsticks":
+      return gearCategoryEnum.ID_Credsticks;
+    case "Magical Compounds":
+      return gearCategoryEnum.MagicalCompounds;
+    case "Magical Supplies":
+      return gearCategoryEnum.MagicalSupplies;
+    case "Metatype-Specific":
+      return gearCategoryEnum.MetatypeSpecific;
+    case "Miscellany":
+      return gearCategoryEnum.Miscellany;
+    case "Musical Instruments":
+      return gearCategoryEnum.MusicalInstruments;
+    case "Nanogear":
+      return gearCategoryEnum.Nanogear;
+    case "Paydata":
+      return gearCategoryEnum.Paydata;
+    case "PI-Tac":
+      return gearCategoryEnum.PiTac;
+    case "Printing":
+      return gearCategoryEnum.Printing;
+    case "Reporter Gear":
+      return gearCategoryEnum.ReporterGear;
+    case "RFID Tags":
+      return gearCategoryEnum.RFIDTags;
+    case "Rigger Command Consoles":
+      return gearCategoryEnum.RiggerCommandConsoles;
+    case "Security Devices":
+      return gearCategoryEnum.SecurityDevices;
+    case "Sensors":
+      return gearCategoryEnum.Sensors;
+    case "Sensor Functions":
+      return gearCategoryEnum.SensorFunctions;
+    case "Sensor Housings":
+      return gearCategoryEnum.SensorHousings;
+    case "Services":
+      return gearCategoryEnum.Services;
+    case "Skillsofts":
+      return gearCategoryEnum.Skillsofts;
+    case "Software":
+      return gearCategoryEnum.Software;
+    case "Software Tweaks":
+      return gearCategoryEnum.SoftwareTweaks;
+    case "Survival Gear":
+      return gearCategoryEnum.SurvivalGear;
+    case "Tailored Perfume/Cologne":
+      return gearCategoryEnum.TailoredPerfume_Cologne;
+    case "Tools":
+      return gearCategoryEnum.Tools;
+    case "Tools of the Trade":
+      return gearCategoryEnum.ToolsOfTheTrade;
+    case "Toxins":
+      return gearCategoryEnum.Toxins;
+    case "Vision Devices":
+      return gearCategoryEnum.VisionDevices;
+    case "Vision Enhancements":
+      return gearCategoryEnum.VisionEnhancements;
+    case "Matrix Accessories":
+      return gearCategoryEnum.MatrixAccessories;
+    case "Booster Chips":
+      return gearCategoryEnum.BoosterChips;
+    case "Appearance Modification":
+      return gearCategoryEnum.AppearanceModification;
+    case "Drug Grades":
+      return gearCategoryEnum.DrugGrades;
+  }
+  assert(false, `Category not found ${category}, ${otherMessage}`);
+};
+
+// TODO: handle gear correctly
+export function convertXmlGears(
+  gears: GearXmlType,
+  name: string
+): Array<useGearType> {
+  const xmlUseGear = Array.isArray(gears.usegear)
+    ? gears.usegear
+    : [gears.usegear];
+  return xmlUseGear.map((useGear) => {
+    if (typeof useGear === "string") {
+      return {
+        name: useGear,
+      };
+    } else if ("xmltext" in useGear) {
+      return {
+        name: useGear.xmltext,
+        rating: parseInt(useGear._rating),
+      };
+    }
+    let category;
+    if (useGear.category) {
+      category = convertGearCategory(useGear.category, `item.name = ${name}`);
+    }
+    if (typeof useGear.name !== "string") {
+      useGear.name = useGear.name.xmltext;
+    }
+    return {
+      name: useGear.name,
+      ...(useGear.rating !== undefined && { rating: useGear.rating }),
+      ...(category !== undefined && { category: category }),
+    };
+  });
+}

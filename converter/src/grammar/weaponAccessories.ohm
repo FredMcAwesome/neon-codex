@@ -125,12 +125,7 @@ Mode {
 }
 
 Ammo {
-  Exp = Total
-  Total = Multiple
-    | Ammo -- single
-  Multiple = Total "/" Ammo
-    | Total "or" Ammo
-    | Total "+" Ammo
+  Exp = Ammo
   Ammo = Number ReloadMethod "x" Number -- multipleBarrels
     | Number ReloadMethod -- base
     | Number "x" Number ReloadMethod -- multipleAmmoNeeded

@@ -7,34 +7,38 @@ import * as fs from "fs";
 import { sourceBookXmlEnum } from "../ParserCommonDefines.js";
 import { DrugListXmlSchema, DrugListXmlType } from "./DrugParserSchemas.js";
 
-const currentPath = import.meta.url;
-const xml_string = fs.readFileSync(
-  fileURLToPath(path.dirname(currentPath) + "../../../xmls/drugcomponents.xml"),
-  "utf8"
-);
-const parser = new XMLParser({
-  ignoreAttributes: false,
-  attributeNamePrefix: "_",
-  textNodeName: "xmltext",
-});
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const jObj: any = parser.parse(xml_string);
-console.log(
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  jObj.chummer.drugs.drug[10]
-);
+export function ParseDrugs() {
+  const currentPath = import.meta.url;
+  const xml_string = fs.readFileSync(
+    fileURLToPath(
+      path.dirname(currentPath) + "../../../../xmls/drugcomponents.xml"
+    ),
+    "utf8"
+  );
+  const parser = new XMLParser({
+    ignoreAttributes: false,
+    attributeNamePrefix: "_",
+    textNodeName: "xmltext",
+  });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const jObj: any = parser.parse(xml_string);
+  // console.log(
+  //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+  //   jObj.chummer.drugs.drug[6].bonus
+  // );
 
-const drugListParsed = DrugListXmlSchema.safeParse(
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  jObj.chummer.drugs.drug
-);
+  const drugListParsed = DrugListXmlSchema.safeParse(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    jObj.chummer.drugs.drug
+  );
 
-if (drugListParsed.success) console.log("all g");
-else {
-  console.log(drugListParsed.error.errors[0]);
-}
+  if (drugListParsed.success)
+    console.log("drugcomponents.xml initial zod parsed");
+  else {
+    console.log(drugListParsed.error.errors[0]);
+    assert(false);
+  }
 
-if (drugListParsed.success) {
   const drugList = drugListParsed.data;
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
@@ -106,7 +110,7 @@ if (drugListParsed.success) {
     return found;
   });
 
-  console.log(englishDrugList);
+  console.log(englishDrugList[0]);
 
   // const armourListConverted = englishArmourList
   //   // .filter((weapon) => weapon.name === "Osmium Mace")

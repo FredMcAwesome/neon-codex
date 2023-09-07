@@ -1,10 +1,88 @@
 import { z as zod } from "zod";
 import {
+  BonusXmlSchema,
   SourceXmlSchema,
   StringArrayOrStringSchema,
   StringOrNumberSchema,
   UseGearXmlSchema,
 } from "../ParserCommonDefines.js";
+
+const GearRequiredGearDetailsPropertyStandardSchema = zod.union([
+  zod
+    .object({
+      _operation: zod.string(),
+      _NOT: zod.optional(zod.literal("")),
+      xmltext: zod.optional(zod.union([zod.literal(0), zod.string()])),
+    })
+    .strict(),
+  zod.literal(0),
+]);
+
+const GearDetailsPropertyUnionSchema = zod.union([
+  GearRequiredGearDetailsPropertyStandardSchema,
+  zod.array(GearRequiredGearDetailsPropertyStandardSchema),
+]);
+
+const NameUnionSchema = zod.union([
+  StringArrayOrStringSchema,
+  zod.array(
+    zod.union([zod.string(), GearRequiredGearDetailsPropertyStandardSchema])
+  ),
+]);
+
+const PartialGearRequiredInnerSchema = zod
+  .object({
+    category: zod.optional(StringArrayOrStringSchema),
+    attributearray: zod.optional(
+      zod
+        .object({
+          _operation: zod.string(),
+          _NOT: zod.optional(zod.literal("")),
+        })
+        .strict()
+    ),
+    name: zod.optional(NameUnionSchema),
+    NONE: zod.optional(zod.literal("")),
+    attack: zod.optional(GearDetailsPropertyUnionSchema),
+    sleaze: zod.optional(GearDetailsPropertyUnionSchema),
+    dataprocessing: zod.optional(GearDetailsPropertyUnionSchema),
+    firewall: zod.optional(GearDetailsPropertyUnionSchema),
+  })
+  .strict();
+
+type GearsRequiredInnerType = zod.infer<
+  typeof PartialGearRequiredInnerSchema
+> & {
+  OR?: zod.infer<typeof GearRequiredInnerSchema> | undefined;
+  AND?: zod.infer<typeof GearRequiredInnerSchema> | undefined;
+};
+
+const GearRequiredInnerSchema: zod.ZodType<GearsRequiredInnerType> =
+  PartialGearRequiredInnerSchema.extend({
+    OR: zod.optional(zod.lazy(() => GearRequiredInnerSchema)),
+    AND: zod.optional(zod.lazy(() => GearRequiredInnerSchema)),
+  }).strict();
+
+const GenericGearRequiredXmlSchema = zod
+  .object({
+    geardetails: zod.optional(GearRequiredInnerSchema),
+    parentdetails: zod.optional(
+      zod
+        .object({
+          name: zod.string(),
+          category: zod.optional(zod.string()),
+        })
+        .strict()
+    ),
+    oneof: zod.optional(
+      zod
+        .object({
+          quality: zod.string(),
+        })
+        .strict()
+    ),
+  })
+  .strict();
 
 const GenericGearXmlSchema = zod
   .object({
@@ -26,37 +104,7 @@ const GenericGearXmlSchema = zod
           .strict(),
       ])
     ),
-    bonus: zod.optional(
-      zod.union([
-        zod
-          .object({
-            selectweapon: zod.optional(
-              zod.union([
-                zod
-                  .object({
-                    _weapondetails: zod.string(),
-                  })
-                  .strict(),
-                zod.literal(""),
-              ])
-            ),
-            selecttext: zod.optional(
-              zod.union([
-                zod.string(),
-                zod
-                  .object({
-                    _xml: zod.string(),
-                    _xpath: zod.string(),
-                    _allowedit: zod.optional(zod.string()),
-                  })
-                  .strict(),
-              ])
-            ),
-          })
-          .strict(),
-        zod.literal(""),
-      ])
-    ),
+    bonus: zod.optional(BonusXmlSchema),
     addoncategory: zod.optional(StringArrayOrStringSchema),
     cost: StringOrNumberSchema,
     costfor: zod.optional(zod.number()),
@@ -64,7 +112,14 @@ const GenericGearXmlSchema = zod
       zod
         .object({
           ap: zod.optional(zod.number()),
+          apreplace: zod.optional(zod.number()),
           damage: zod.optional(StringOrNumberSchema),
+          damagereplace: zod.optional(zod.string()),
+          damagetype: zod.optional(zod.string()),
+          modereplace: zod.optional(zod.string()),
+          userange: zod.optional(zod.string()),
+          accuracy: zod.optional(zod.number()),
+          accuracyreplace: zod.optional(zod.number()),
         })
         .strict()
     ),
@@ -72,6 +127,8 @@ const GenericGearXmlSchema = zod
     flechetteweaponbonus: zod.optional(
       zod
         .object({
+          ap: zod.optional(zod.number()),
+          damage: zod.optional(zod.number()),
           damagetype: zod.string(),
         })
         .strict()
@@ -82,6 +139,7 @@ const GenericGearXmlSchema = zod
         zod
           .object({
             _noextra: zod.string(),
+            xmltext: zod.optional(zod.string()),
           })
           .strict(),
       ])
@@ -114,39 +172,7 @@ const GenericGearXmlSchema = zod
     canformpersona: zod.optional(zod.string()),
     armorcapacity: zod.optional(StringOrNumberSchema),
     capacity: zod.optional(StringOrNumberSchema),
-    required: zod.optional(
-      zod
-        .object({
-          geardetails: zod.optional(
-            zod.union([
-              zod
-                .object({
-                  OR: zod
-                    .object({
-                      category: zod.optional(StringArrayOrStringSchema),
-                      name: zod.optional(StringArrayOrStringSchema),
-                    })
-                    .strict(),
-                })
-                .strict(),
-              zod
-                .object({
-                  category: zod.optional(StringArrayOrStringSchema),
-                })
-                .strict(),
-            ])
-          ),
-          parentdetails: zod.optional(
-            zod
-              .object({
-                name: zod.string(),
-                category: zod.optional(zod.string()),
-              })
-              .strict()
-          ),
-        })
-        .strict()
-    ),
+    required: zod.optional(GenericGearRequiredXmlSchema),
     requireparent: zod.optional(zod.literal("")),
     forbidden: zod.optional(
       zod

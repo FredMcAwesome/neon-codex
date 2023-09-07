@@ -349,13 +349,14 @@ export type UnlinkedAccessoryListType = zod.infer<
   typeof UnlinkedAccessoryListSchema
 >;
 
-const AmmunitionSingleSchema = zod
+export const AmmunitionSingleSchema = zod
   .object({
     capacity: zod.optional(zod.number()),
     numberOfAmmunitionHolders: zod.optional(zod.number()),
     reloadMethod: zod.nativeEnum(ammoSourceEnum),
   })
   .strict();
+export type AmmunitionSingleType = zod.infer<typeof AmmunitionSingleSchema>;
 export const AmmunitionSchema = zod.array(AmmunitionSingleSchema);
 export type AmmunitionType = zod.infer<typeof AmmunitionSchema>;
 

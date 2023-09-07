@@ -6,6 +6,7 @@ import {
   GearXmlSchema,
   StringOrNumberSchema,
   StringArrayOrStringSchema,
+  NumberOrRatingSchema,
 } from "../ParserCommonDefines.js";
 
 const AccessoryAccuracyXmlSchema = zod.number();
@@ -52,43 +53,6 @@ export type XmlCategoryOrOperationType = zod.infer<
   typeof XmlCategoryOrOperationSchema
 >;
 
-type WeaponAccessoryAndType = {
-  AND: RequiredWeaponDetailsXmlType | Array<RequiredWeaponDetailsXmlType>;
-};
-
-const WeaponAccessoryAndSchema: zod.Schema<WeaponAccessoryAndType> = zod
-  .object({
-    AND: zod.lazy(() =>
-      zod.union([
-        RequiredWeaponDetailsXmlSchema,
-        zod.array(RequiredWeaponDetailsXmlSchema),
-      ])
-    ),
-  })
-  .strict();
-
-type WeaponAccessoryOrType = {
-  OR: RequiredWeaponDetailsXmlType | Array<RequiredWeaponDetailsXmlType>;
-};
-
-const WeaponAccessoryOrSchema: zod.Schema<WeaponAccessoryOrType> = zod
-  .object({
-    OR: zod.lazy(() =>
-      zod.union([
-        RequiredWeaponDetailsXmlSchema,
-        zod.array(RequiredWeaponDetailsXmlSchema),
-      ])
-    ),
-  })
-  .strict();
-
-const WeaponAccessoryAndOROptionalSchema = zod
-  .object({
-    WeaponAccessoryAndSchema,
-    WeaponAccessoryOrSchema,
-  })
-  .partial();
-
 const RequiredWeaponDetailsXmlSubSchema = zod
   .object({
     name: zod.optional(
@@ -113,25 +77,60 @@ const RequiredWeaponDetailsXmlSubSchema = zod
     spec: zod.optional(StringArrayOrStringSchema),
     spec2: zod.optional(StringArrayOrStringSchema),
     conceal: zod.optional(ConcealXmlSchema),
-    useskill: zod.optional(StringArrayOrStringSchema),
+    useskill: zod.optional(
+      zod.union([
+        StringArrayOrStringSchema,
+        zod
+          .object({
+            _NOT: zod.literal(""),
+            _operation: zod.literal("exists"),
+          })
+          .strict(),
+      ])
+    ),
     accessorymounts: zod.optional(
       zod.object({ mount: StringArrayOrStringSchema }).strict()
     ),
     _NOT: zod.optional(zod.literal("")),
     damage: zod.optional(XmlOperationSchema),
     mode: zod.optional(XmlOperationSchema),
-    WeaponAccessoryAndSchema,
-    WeaponAccessoryOrSchema,
   })
   .strict();
 
-const RequiredWeaponDetailsXmlSchema = RequiredWeaponDetailsXmlSubSchema.merge(
-  WeaponAccessoryAndOROptionalSchema
-);
-
+// add recursive properties
 export type RequiredWeaponDetailsXmlType = zod.infer<
-  typeof RequiredWeaponDetailsXmlSchema
->;
+  typeof RequiredWeaponDetailsXmlSubSchema
+> & {
+  AND?:
+    | RequiredWeaponDetailsXmlType
+    | Array<RequiredWeaponDetailsXmlType>
+    | undefined;
+} & {
+  OR?:
+    | RequiredWeaponDetailsXmlType
+    | Array<RequiredWeaponDetailsXmlType>
+    | undefined;
+};
+
+const RequiredWeaponDetailsXmlSchema: zod.ZodType<RequiredWeaponDetailsXmlType> =
+  RequiredWeaponDetailsXmlSubSchema.extend({
+    AND: zod.optional(
+      zod.lazy(() =>
+        zod.union([
+          RequiredWeaponDetailsXmlSchema,
+          zod.array(RequiredWeaponDetailsXmlSchema),
+        ])
+      )
+    ),
+    OR: zod.optional(
+      zod.lazy(() =>
+        zod.union([
+          RequiredWeaponDetailsXmlSchema,
+          zod.array(RequiredWeaponDetailsXmlSchema),
+        ])
+      )
+    ),
+  }).strict();
 
 const WeaponAccessoryDetailsOrXmlSchema = zod.union([
   RequiredWeaponDetailsXmlSchema,
@@ -145,13 +144,7 @@ const WeaponAccessoryDetailsOrXmlSchema = zod.union([
 const WeaponAccessoryRequiredXmlSchema = zod.union([
   zod
     .object({
-      weapondetails: zod.optional(
-        zod.union([
-          WeaponAccessoryOrSchema,
-          WeaponAccessoryAndSchema,
-          RequiredWeaponDetailsXmlSchema,
-        ])
-      ),
+      weapondetails: zod.optional(RequiredWeaponDetailsXmlSchema),
       oneof: zod.optional(
         zod.union([
           zod
@@ -224,7 +217,7 @@ const WeaponAccessoryXmlSchema = zod
         })
         .strict()
     ),
-    conceal: zod.optional(zod.union([zod.number(), zod.literal("Rating")])),
+    conceal: zod.optional(NumberOrRatingSchema),
     required: zod.optional(WeaponAccessoryRequiredXmlSchema),
     forbidden: zod.optional(WeaponAccessoryRequiredXmlSchema),
   })

@@ -2,9 +2,11 @@ import { costArmourEnum } from "@shadowrun/common/build/enums.js";
 import { z as zod } from "zod";
 import {
   BonusXmlSchema,
+  GearXmlSchema,
+  ModCategoryListXmlSchema,
+  ModListXmlSchema,
   SourceXmlSchema,
   StringOrNumberSchema,
-  UseGearXmlSchema,
   WirelessXmlSchema,
 } from "../ParserCommonDefines.js";
 
@@ -15,41 +17,6 @@ export enum armourXmlCategoryEnum {
   FashionableArmor = "High-Fashion Armor Clothing",
   SpecialtyArmor = "Specialty Armor",
 }
-
-const ModXmlSchema = zod.union([
-  zod.string(),
-  zod
-    .object({
-      xmltext: zod.string(),
-      _rating: zod.optional(zod.string()),
-      _select: zod.optional(zod.string()),
-      _maxrating: zod.optional(zod.string()),
-    })
-    .strict(),
-]);
-
-export const ModListXmlSchema = zod
-  .object({
-    name: zod.union([zod.array(ModXmlSchema), ModXmlSchema]),
-  })
-  .strict();
-
-const ModCategoryXmlSchema = zod
-  .object({
-    category: zod.string(),
-  })
-  .strict();
-
-const ModCategoryListXmlSchema = zod.union([
-  zod.array(ModCategoryXmlSchema),
-  ModCategoryXmlSchema,
-]);
-
-const ArmorGearXmlSchema = zod.union([
-  zod.string(),
-  zod.object({ xmltext: zod.string(), _rating: zod.string() }).strict(),
-  UseGearXmlSchema,
-]);
 
 const ArmourXmlSchema = zod
   .object({
@@ -63,16 +30,7 @@ const ArmourXmlSchema = zod
     addweapon: zod.optional(zod.string()),
     avail: StringOrNumberSchema,
     cost: StringOrNumberSchema,
-    gears: zod.optional(
-      zod
-        .object({
-          usegear: zod.union([
-            zod.array(ArmorGearXmlSchema),
-            ArmorGearXmlSchema,
-          ]),
-        })
-        .strict()
-    ),
+    gears: zod.optional(GearXmlSchema),
     bonus: zod.optional(BonusXmlSchema),
     wirelessbonus: zod.optional(WirelessXmlSchema),
     mods: zod.optional(ModListXmlSchema),

@@ -1,6 +1,6 @@
 import { z as zod } from "zod";
-import { ModListXmlSchema } from "../combatGear/ArmourParserSchemas.js";
 import {
+  ModUnionXmlSchema,
   SourceXmlSchema,
   StringOrNumberSchema,
   UseGearXmlSchema,
@@ -12,6 +12,8 @@ const WeaponMountXmlSchema = zod
     flexibility: zod.string(),
     size: zod.string(),
     visibility: zod.string(),
+    allowedweapons: zod.optional(zod.string()),
+    mods: zod.optional(zod.object({ mod: zod.string() }).strict()),
   })
   .strict();
 
@@ -21,6 +23,8 @@ const GearOtherXmlSchema = zod.union([
       xmltext: zod.string(),
       _select: zod.optional(zod.string()),
       _rating: zod.optional(zod.string()),
+      _consumecapacity: zod.optional(zod.string()),
+      _costfor: zod.optional(zod.string()),
     })
     .strict(),
   zod.string(),
@@ -58,8 +62,8 @@ const VehicleXmlSchema = zod
     ),
     mods: zod.optional(
       zod.union([
-        zod.array(ModListXmlSchema),
-        ModListXmlSchema,
+        zod.array(ModUnionXmlSchema),
+        ModUnionXmlSchema,
         zod.literal(""),
       ])
     ),

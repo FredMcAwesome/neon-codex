@@ -80,129 +80,126 @@ export function ParseWeapons() {
     jObj.chummer.weapons.weapon
   );
 
-  if (weaponListParsed.success) console.log("all g");
+  if (weaponListParsed.success) console.log("weapons.xml initial zod parsed");
   else {
     console.log(weaponListParsed.error.errors[0]);
+    assert(false);
   }
 
-  if (weaponListParsed.success) {
-    const weaponList = weaponListParsed.data;
-    const englishWeaponList: WeaponListXmlType = weaponList.filter(
-      (weaponAccessory) => {
-        let found = false;
-        switch (weaponAccessory.source) {
-          case sourceBookXmlEnum.AssassinPrimer:
-          case sourceBookXmlEnum.ChromeFlesh:
-          case sourceBookXmlEnum.CuttingAces:
-          case sourceBookXmlEnum.DataTrails:
-          case sourceBookXmlEnum.GunHeaven3:
-          case sourceBookXmlEnum.HardTargets:
-          case sourceBookXmlEnum.KillCode:
-          case sourceBookXmlEnum.KrimeKatalog:
-          case sourceBookXmlEnum.Lockdown:
-          case sourceBookXmlEnum.NoFuture:
-          case sourceBookXmlEnum.Rigger5:
-          case sourceBookXmlEnum.RunAndGun:
-          case sourceBookXmlEnum.RunFaster:
-          case sourceBookXmlEnum.SailAwaySweetSister:
-          case sourceBookXmlEnum.Shadowrun5:
-          case sourceBookXmlEnum.ShadowsInFocus_SanFranciscoMetroplex:
-          case sourceBookXmlEnum.StolenSouls:
-          case sourceBookXmlEnum.StreetGrimoire:
-          case sourceBookXmlEnum.StreetLethal:
-          case sourceBookXmlEnum.TheCompleteTrog:
-          case sourceBookXmlEnum.TheSeattleGambit:
-            found = true;
-            break;
-          // Not in english
-          case sourceBookXmlEnum.StateOfTheArtADL:
-          case sourceBookXmlEnum.Schattenhandbuch:
-          case sourceBookXmlEnum.Schattenhandbuch2:
-          case sourceBookXmlEnum.Schattenhandbuch3:
-          case sourceBookXmlEnum.Hamburg:
-          case sourceBookXmlEnum.DatapulsSOTA2080:
-          case sourceBookXmlEnum.DatapulsVerschlusssache:
-          case sourceBookXmlEnum.Shadowrun2050:
-          case 2050:
-          case sourceBookXmlEnum.GrimmesErwachen:
-            break;
-          // Not containing Weapons
-          case sourceBookXmlEnum.StreetGrimoireErrata:
-          case sourceBookXmlEnum.BulletsAndBandages:
-          case sourceBookXmlEnum.ShadowSpells:
-          case sourceBookXmlEnum.NothingPersonal:
-          case sourceBookXmlEnum.BloodyBusiness:
-          case sourceBookXmlEnum.DataTrailsDissonantEchoes:
-          case sourceBookXmlEnum.HowlingShadows:
-          case sourceBookXmlEnum.TheVladivostokGauntlet:
-          case sourceBookXmlEnum.SplinteredState:
-          case sourceBookXmlEnum.ShadowsInFocus_Butte:
-          case sourceBookXmlEnum.HongKongSourcebook:
-          case sourceBookXmlEnum.ShadowsInFocus_Metropole:
-          case sourceBookXmlEnum.BookOfTheLost:
-          case sourceBookXmlEnum.ForbiddenArcana:
-          case sourceBookXmlEnum.ShadowsInFocus_SiouxNation_CountingCoup:
-          case sourceBookXmlEnum.DarkTerrors:
-          case sourceBookXmlEnum.BetterThanBad:
-          case sourceBookXmlEnum.Aetherology:
-          case sourceBookXmlEnum.ShadowrunMissions0803_10BlockTango:
-          case sourceBookXmlEnum.ShadowrunMissions0804_DirtyLaundry:
-          case sourceBookXmlEnum.ShadowrunQuickStartRules:
-          case sourceBookXmlEnum.SprawlWilds:
-            assert(false);
-            break;
-        }
-        return found;
+  const weaponList = weaponListParsed.data;
+  const englishWeaponList: WeaponListXmlType = weaponList.filter(
+    (weaponAccessory) => {
+      let found = false;
+      switch (weaponAccessory.source) {
+        case sourceBookXmlEnum.AssassinPrimer:
+        case sourceBookXmlEnum.ChromeFlesh:
+        case sourceBookXmlEnum.CuttingAces:
+        case sourceBookXmlEnum.DataTrails:
+        case sourceBookXmlEnum.GunHeaven3:
+        case sourceBookXmlEnum.HardTargets:
+        case sourceBookXmlEnum.KillCode:
+        case sourceBookXmlEnum.KrimeKatalog:
+        case sourceBookXmlEnum.Lockdown:
+        case sourceBookXmlEnum.NoFuture:
+        case sourceBookXmlEnum.Rigger5:
+        case sourceBookXmlEnum.RunAndGun:
+        case sourceBookXmlEnum.RunFaster:
+        case sourceBookXmlEnum.SailAwaySweetSister:
+        case sourceBookXmlEnum.Shadowrun5:
+        case sourceBookXmlEnum.ShadowsInFocus_SanFranciscoMetroplex:
+        case sourceBookXmlEnum.StolenSouls:
+        case sourceBookXmlEnum.StreetGrimoire:
+        case sourceBookXmlEnum.StreetLethal:
+        case sourceBookXmlEnum.TheCompleteTrog:
+        case sourceBookXmlEnum.TheSeattleGambit:
+          found = true;
+          break;
+        // Not in english
+        case sourceBookXmlEnum.StateOfTheArtADL:
+        case sourceBookXmlEnum.Schattenhandbuch:
+        case sourceBookXmlEnum.Schattenhandbuch2:
+        case sourceBookXmlEnum.Schattenhandbuch3:
+        case sourceBookXmlEnum.Hamburg:
+        case sourceBookXmlEnum.DatapulsSOTA2080:
+        case sourceBookXmlEnum.DatapulsVerschlusssache:
+        case sourceBookXmlEnum.Shadowrun2050:
+        case 2050:
+        case sourceBookXmlEnum.GrimmesErwachen:
+          break;
+        // Not containing Weapons
+        case sourceBookXmlEnum.StreetGrimoireErrata:
+        case sourceBookXmlEnum.BulletsAndBandages:
+        case sourceBookXmlEnum.ShadowSpells:
+        case sourceBookXmlEnum.NothingPersonal:
+        case sourceBookXmlEnum.BloodyBusiness:
+        case sourceBookXmlEnum.DataTrailsDissonantEchoes:
+        case sourceBookXmlEnum.HowlingShadows:
+        case sourceBookXmlEnum.TheVladivostokGauntlet:
+        case sourceBookXmlEnum.SplinteredState:
+        case sourceBookXmlEnum.ShadowsInFocus_Butte:
+        case sourceBookXmlEnum.HongKongSourcebook:
+        case sourceBookXmlEnum.ShadowsInFocus_Metropole:
+        case sourceBookXmlEnum.BookOfTheLost:
+        case sourceBookXmlEnum.ForbiddenArcana:
+        case sourceBookXmlEnum.ShadowsInFocus_SiouxNation_CountingCoup:
+        case sourceBookXmlEnum.DarkTerrors:
+        case sourceBookXmlEnum.BetterThanBad:
+        case sourceBookXmlEnum.Aetherology:
+        case sourceBookXmlEnum.ShadowrunMissions0803_10BlockTango:
+        case sourceBookXmlEnum.ShadowrunMissions0804_DirtyLaundry:
+        case sourceBookXmlEnum.ShadowrunQuickStartRules:
+        case sourceBookXmlEnum.SprawlWilds:
+          assert(false);
+          break;
       }
-    );
-    const weaponListNoAmmo = englishWeaponList.filter((weapon) => {
-      return (
-        // don't include minigrenades, torpedos, missiles, or rockets. These are ammo
-        !weapon.name.toLowerCase().includes("minigrenade") &&
-        !weapon.name.toLowerCase().includes("torpedo") &&
-        !weapon.name.toLowerCase().includes("missile") &&
-        !weapon.name.toLowerCase().includes("rocket")
-      );
-    });
-
-    const weaponListConverted: WeaponUnlinkedSummaryListType = weaponListNoAmmo
-      // .filter((weapon) => weapon.name === "Ares Thunderstruck Gauss Rifle")
-      .map((weapon: WeaponXmlType) => {
-        const convertedWeapon: WeaponUnlinkedSummaryType =
-          convertWeapon(weapon);
-        const check = WeaponUnlinkedSummarySchema.safeParse(convertedWeapon);
-        if (!check.success) {
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-          console.log(convertedWeapon);
-          throw new Error(check.error.message);
-        }
-        return convertedWeapon;
-      });
-    // console.log(weaponListConverted);
-    const check =
-      WeaponUnlinkedSummaryListSchema.safeParse(weaponListConverted);
-    if (!check.success) {
-      throw new Error(check.error.message);
+      return found;
     }
-    const jsonFilePath = fileURLToPath(
-      path.dirname(currentPath) + "../../../../jsonFiles/weapons.json"
+  );
+  const weaponListNoAmmo = englishWeaponList.filter((weapon) => {
+    return (
+      // don't include minigrenades, torpedos, missiles, or rockets. These are ammo
+      !weapon.name.toLowerCase().includes("minigrenade") &&
+      !weapon.name.toLowerCase().includes("torpedo") &&
+      !weapon.name.toLowerCase().includes("missile") &&
+      !weapon.name.toLowerCase().includes("rocket")
     );
-    fs.writeFile(
-      jsonFilePath,
-      JSON.stringify(weaponListConverted, null, 2),
-      (error) => {
-        if (error) {
-          console.error(error);
-        } else {
-          console.log(`File written! Saved to: ${jsonFilePath}`);
-        }
+  });
+
+  const weaponListConverted: WeaponUnlinkedSummaryListType = weaponListNoAmmo
+    // .filter((weapon) => weapon.name === "Ares Thunderstruck Gauss Rifle")
+    .map((weapon: WeaponXmlType) => {
+      const convertedWeapon: WeaponUnlinkedSummaryType = convertWeapon(weapon);
+      const check = WeaponUnlinkedSummarySchema.safeParse(convertedWeapon);
+      if (!check.success) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        // console.log(convertedWeapon);
+        throw new Error(check.error.message);
       }
-    );
+      return convertedWeapon;
+    });
+  // console.log(weaponListConverted);
+  const check = WeaponUnlinkedSummaryListSchema.safeParse(weaponListConverted);
+  if (!check.success) {
+    throw new Error(check.error.message);
   }
+  const jsonFilePath = fileURLToPath(
+    path.dirname(currentPath) + "../../../../jsonFiles/weapons.json"
+  );
+  fs.writeFile(
+    jsonFilePath,
+    JSON.stringify(weaponListConverted, null, 2),
+    (error) => {
+      if (error) {
+        console.error(error);
+      } else {
+        console.log(`File written! Saved to: ${jsonFilePath}`);
+      }
+    }
+  );
 }
 
 function convertWeapon(weapon: WeaponXmlType) {
-  console.log(`\n${weapon.name}`);
+  // console.log(`\n${weapon.name}`);
 
   const { weaponType, weaponSubtype } = getWeaponTypeInformation(weapon);
   let augmentationType: augmentationClassificationEnum =
@@ -219,26 +216,26 @@ function convertWeapon(weapon: WeaponXmlType) {
     throw match.message;
   }
   const accuracy: AccuracyType = accuracySemantics(match).eval();
-  console.log(`Accuracy: ${accuracy}`);
+  // console.log(`Accuracy: ${accuracy}`);
   match = Damage.match(weapon.damage.toString());
   if (match.failed()) {
     throw match.message;
   }
   const damage: DamageType = damageSemantics(match).eval();
-  console.log(`Damage: ${damage}`);
+  // console.log(`Damage: ${damage}`);
   match = ArmourPenetration.match(weapon.ap.toString());
   if (match.failed()) {
     throw match.message;
   }
   const armourPenetration: ArmourPenetrationType =
     armourPenetrationSemantics(match).eval();
-  console.log(`Armour Penetration: ${armourPenetration}`);
+  // console.log(`Armour Penetration: ${armourPenetration}`);
   match = Mode.match(weapon.mode.toString());
   if (match.failed()) {
     throw match.message;
   }
   const mode: ModeType = modeSemantics(match).eval();
-  console.log(`Mode: ${mode}`);
+  // console.log(`Mode: ${mode}`);
   const recoilCompensation: RecoilCompensationType = convertRecoilCompensation(
     weapon.rc
   );
@@ -247,20 +244,20 @@ function convertWeapon(weapon: WeaponXmlType) {
     throw match.message;
   }
   const ammo: AmmunitionType | undefined = ammoSemantics(match).eval();
-  console.log(`Ammo: ${ammo}`);
+  // console.log(`Ammo: ${ammo}`);
   match = Availability.match(weapon.avail.toString());
   if (match.failed()) {
     throw match.message;
   }
   const availability: AvailabilityWeaponType =
     availabilityWeaponSemantics(match).eval();
-  console.log(`Availability: ${availability}`);
+  // console.log(`Availability: ${availability}`);
   match = Cost.match(weapon.cost.toString());
   if (match.failed()) {
     throw match.message;
   }
   const cost: CostWeaponType = costWeaponSemantics(match).eval();
-  console.log(`Cost: ${cost}`);
+  // console.log(`Cost: ${cost}`);
   const accessories: UnlinkedAccessoryListType | undefined = convertAccessories(
     weapon.accessories,
     weapon.name

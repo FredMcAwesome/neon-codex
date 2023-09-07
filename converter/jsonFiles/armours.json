@@ -1,0 +1,2677 @@
+[
+  {
+    "name": "Clothing",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "range": {
+          "min": 20,
+          "max": 100000
+        }
+      }
+    ],
+    "source": "SR5",
+    "page": 437
+  },
+  {
+    "name": "Actioneer Business Clothes",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 8,
+    "capacity": 8,
+    "includedGear": [
+      {
+        "name": "Holster"
+      }
+    ],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [1500],
+    "source": "SR5",
+    "page": 437
+  },
+  {
+    "name": "Armor Clothing",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 6,
+    "capacity": 6,
+    "availability": {
+      "rating": [2],
+      "restriction": "Legal"
+    },
+    "cost": [450],
+    "source": "SR5",
+    "page": 437
+  },
+  {
+    "name": "Armor Jacket",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 12,
+    "capacity": 12,
+    "availability": {
+      "rating": [2],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
+    "source": "SR5",
+    "page": 437
+  },
+  {
+    "name": "Armor Vest",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 9,
+    "capacity": 9,
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [500],
+    "source": "SR5",
+    "page": 437
+  },
+  {
+    "name": "Chameleon Suit",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 9,
+    "capacity": 9,
+    "availability": {
+      "rating": [10],
+      "restriction": "Restricted"
+    },
+    "cost": [1700],
+    "source": "SR5",
+    "page": 437
+  },
+  {
+    "name": "Full Body Armor",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 15,
+    "capacity": 15,
+    "availability": {
+      "rating": [14],
+      "restriction": "Restricted"
+    },
+    "cost": [2000],
+    "source": "SR5",
+    "page": 437
+  },
+  {
+    "name": "Lined Coat",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 9,
+    "capacity": 9,
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [900],
+    "source": "SR5",
+    "page": 437
+  },
+  {
+    "name": "Urban Explorer Jumpsuit",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 9,
+    "capacity": 9,
+    "includedGear": [
+      {
+        "name": "Biomonitor"
+      },
+      {
+        "name": "Music Player"
+      }
+    ],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [650],
+    "source": "SR5",
+    "page": 437
+  },
+  {
+    "name": "Helmet",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 2,
+    "capacity": 6,
+    "availability": {
+      "rating": [2],
+      "restriction": "Legal"
+    },
+    "cost": [100],
+    "source": "SR5",
+    "page": 438
+  },
+  {
+    "name": "Ballistic Shield",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 6,
+    "capacity": 6,
+    "isWeapon": true,
+    "availability": {
+      "rating": [12],
+      "restriction": "Restricted"
+    },
+    "cost": [1200],
+    "source": "SR5",
+    "page": 438
+  },
+  {
+    "name": "Riot Shield",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 6,
+    "capacity": 6,
+    "isWeapon": true,
+    "availability": {
+      "rating": [10],
+      "restriction": "Restricted"
+    },
+    "cost": [1500],
+    "source": "SR5",
+    "page": 438
+  },
+  {
+    "name": "Armanté Suit",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 8,
+    "capacity": 4,
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [2500],
+    "source": "RG",
+    "page": 57
+  },
+  {
+    "name": "Armanté Dress",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 8,
+    "capacity": 4,
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [2500],
+    "source": "RG",
+    "page": 57
+  },
+  {
+    "name": "Mortimer of London: Berwick Suit",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 9,
+    "capacity": 5,
+    "availability": {
+      "rating": [9],
+      "restriction": "Legal"
+    },
+    "cost": [2600],
+    "source": "RG",
+    "page": 58
+  },
+  {
+    "name": "Mortimer of London: Berwick Dress",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 8,
+    "capacity": 4,
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [2300],
+    "source": "RG",
+    "page": 58
+  },
+  {
+    "name": "Mortimer of London: Crimson Sky Suit",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 8,
+    "capacity": 5,
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [2400],
+    "source": "RG",
+    "page": 58
+  },
+  {
+    "name": "Mortimer of London: Summit Suit",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 8,
+    "capacity": 6,
+    "availability": {
+      "rating": [7],
+      "restriction": "Legal"
+    },
+    "cost": [2500],
+    "source": "RG",
+    "page": 58
+  },
+  {
+    "name": "Mortimer of London: Summit Dress",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 7,
+    "capacity": 5,
+    "availability": {
+      "rating": [7],
+      "restriction": "Legal"
+    },
+    "cost": [2200],
+    "source": "RG",
+    "page": 58
+  },
+  {
+    "name": "Mortimer of London: Greatcoat Coat",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 10,
+    "customFitStackDamageReduction": 3,
+    "capacity": 10,
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [3000],
+    "source": "RG",
+    "page": 58
+  },
+  {
+    "name": "Mortimer of London: Ulysses Coat",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 10,
+    "customFitStackDamageReduction": 3,
+    "capacity": 12,
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [3100],
+    "source": "RG",
+    "page": 58
+  },
+  {
+    "name": "Mortimer of London: Argentum Coat",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 12,
+    "customFitStackDamageReduction": 4,
+    "capacity": 14,
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [3600],
+    "source": "RG",
+    "page": 58
+  },
+  {
+    "name": "Vashon Island: Ace of Cups",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 9,
+    "capacity": 8,
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [1600],
+    "source": "RG",
+    "page": 60
+  },
+  {
+    "name": "Vashon Island: Ace of Swords",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 7,
+    "capacity": 8,
+    "includedGear": [
+      {
+        "name": "Holster"
+      }
+    ],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [1300],
+    "source": "RG",
+    "page": 60
+  },
+  {
+    "name": "Vashon Island: Ace of Wands",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 6,
+    "capacity": 8,
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [1200],
+    "source": "RG",
+    "page": 60
+  },
+  {
+    "name": "Vashon Island: Ace of Coins",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 7,
+    "capacity": 10,
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [2100],
+    "source": "RG",
+    "page": 60
+  },
+  {
+    "name": "Vashon Island: Ace of Spades",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 7,
+    "capacity": 6,
+    "includedGear": [
+      {
+        "name": "Holster"
+      }
+    ],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
+    "source": "RG",
+    "page": 60
+  },
+  {
+    "name": "Vashon Island: Ace of Clubs",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 7,
+    "capacity": 6,
+    "includedGear": [
+      {
+        "name": "Holster"
+      }
+    ],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
+    "source": "RG",
+    "page": 60
+  },
+  {
+    "name": "Vashon Island: Ace of Hearts",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 7,
+    "capacity": 6,
+    "includedGear": [
+      {
+        "name": "Holster"
+      }
+    ],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
+    "source": "RG",
+    "page": 60
+  },
+  {
+    "name": "Vashon Island: Ace of Diamonds",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 8,
+    "capacity": 6,
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [1400],
+    "source": "RG",
+    "page": 60
+  },
+  {
+    "name": "Vashon Island: Steampunk",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 10,
+    "capacity": 14,
+    "availability": {
+      "rating": [7],
+      "restriction": "Legal"
+    },
+    "cost": [2250],
+    "source": "RG",
+    "page": 61
+  },
+  {
+    "name": "Vashon Island: Synergist Business Line",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 9,
+    "capacity": 5,
+    "includedGear": [
+      {
+        "name": "Holster"
+      }
+    ],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [1500],
+    "source": "RG",
+    "page": 61
+  },
+  {
+    "name": "Vashon Island: Synergist Business Line Longcoat",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 10,
+    "customFitStackDamageReduction": 3,
+    "capacity": 6,
+    "includedGear": [
+      {
+        "name": "Holster"
+      }
+    ],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [2300],
+    "source": "RG",
+    "page": 61
+  },
+  {
+    "name": "Vashon Island: Sleeping Tiger",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 13,
+    "capacity": 10,
+    "includedGear": [
+      {
+        "name": "Holster"
+      }
+    ],
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [13500],
+    "source": "RG",
+    "page": 61
+  },
+  {
+    "name": "Zoé: Executive Suite",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 12,
+    "capacity": 4,
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [2000],
+    "source": "RG",
+    "page": 61
+  },
+  {
+    "name": "Zoé: Heritage 4",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 4,
+    "capacity": 2,
+    "availability": {
+      "rating": [16],
+      "restriction": "Legal"
+    },
+    "cost": [4000],
+    "source": "RG",
+    "page": 62
+  },
+  {
+    "name": "Zoé: Heritage 6",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 6,
+    "capacity": 3,
+    "availability": {
+      "rating": [16],
+      "restriction": "Legal"
+    },
+    "cost": [5000],
+    "source": "RG",
+    "page": 62
+  },
+  {
+    "name": "Zoé: Heritage 8",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 8,
+    "capacity": 4,
+    "availability": {
+      "rating": [16],
+      "restriction": "Legal"
+    },
+    "cost": [6000],
+    "source": "RG",
+    "page": 62
+  },
+  {
+    "name": "Zoé: Heritage 10",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 10,
+    "capacity": 5,
+    "availability": {
+      "rating": [16],
+      "restriction": "Legal"
+    },
+    "cost": [7000],
+    "source": "RG",
+    "page": 62
+  },
+  {
+    "name": "Zoé: Heritage 12",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 12,
+    "capacity": 6,
+    "availability": {
+      "rating": [16],
+      "restriction": "Legal"
+    },
+    "cost": [8000],
+    "source": "RG",
+    "page": 62
+  },
+  {
+    "name": "Zoé: Nightshade/Moonsilver",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 7,
+    "capacity": 2,
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [8500],
+    "source": "RG",
+    "page": 62
+  },
+  {
+    "name": "Zoé: Second Skin",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 6,
+    "customFitStackDamageReduction": 2,
+    "capacity": 2,
+    "availability": {
+      "rating": [14],
+      "restriction": "Legal"
+    },
+    "cost": [12000],
+    "source": "RG",
+    "page": 63
+  },
+  {
+    "name": "Ares Victory: Globetrotter Jacket",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 12,
+    "capacity": 10,
+    "includedGear": [
+      {
+        "name": "Holster"
+      }
+    ],
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [1300],
+    "source": "RG",
+    "page": 63
+  },
+  {
+    "name": "Ares Victory: Globetrotter Vest",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 9,
+    "capacity": 10,
+    "availability": {
+      "rating": [7],
+      "restriction": "Legal"
+    },
+    "cost": [900],
+    "source": "RG",
+    "page": 63
+  },
+  {
+    "name": "Ares Victory: Globetrotter Clothing",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 7,
+    "capacity": 10,
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [600],
+    "source": "RG",
+    "page": 63
+  },
+  {
+    "name": "Ares Victory: Wild Hunt",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 12,
+    "capacity": 10,
+    "includedGear": [
+      {
+        "name": "Holster"
+      }
+    ],
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [3000],
+    "source": "RG",
+    "page": 63
+  },
+  {
+    "name": "Ares Victory: Industrious",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 9,
+    "capacity": 6,
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [1100],
+    "source": "RG",
+    "page": 64
+  },
+  {
+    "name": "Ares Victory: Big Game Hunter",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 14,
+    "capacity": 12,
+    "includedGear": [
+      {
+        "name": "Holster"
+      }
+    ],
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [5000],
+    "source": "RG",
+    "page": 64
+  },
+  {
+    "name": "Ares Victory: Rapid Transit",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 9,
+    "capacity": 6,
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [400],
+    "source": "RG",
+    "page": 65
+  },
+  {
+    "name": "Form-Fitting Body Armor",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 8,
+    "capacity": 3,
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [1300],
+    "source": "RG",
+    "page": 65
+  },
+  {
+    "name": "Hardened Mil-Spec Battle Armor: Light",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 15,
+    "capacity": 15,
+    "availability": {
+      "rating": [16],
+      "restriction": "Forbidden"
+    },
+    "cost": [15000],
+    "source": "RG",
+    "page": 66
+  },
+  {
+    "name": "Hardened Mil-Spec Battle Armor: Medium",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 18,
+    "capacity": 18,
+    "availability": {
+      "rating": [18],
+      "restriction": "Forbidden"
+    },
+    "cost": [20000],
+    "source": "RG",
+    "page": 66
+  },
+  {
+    "name": "Hardened Mil-Spec Battle Armor: Heavy",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 20,
+    "capacity": 20,
+    "availability": {
+      "rating": [22],
+      "restriction": "Forbidden"
+    },
+    "cost": [25000],
+    "source": "RG",
+    "page": 66
+  },
+  {
+    "name": "Hardened Mil-Spec Battle Armor: Helmet",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 3,
+    "capacity": 8,
+    "availability": {
+      "rating": [8],
+      "restriction": "Forbidden"
+    },
+    "cost": [10000],
+    "source": "RG",
+    "page": 66
+  },
+  {
+    "name": "Security Armor: Light",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 15,
+    "capacity": 12,
+    "includedGear": [
+      {
+        "name": "Holster"
+      }
+    ],
+    "availability": {
+      "rating": [14],
+      "restriction": "Restricted"
+    },
+    "cost": [8000],
+    "source": "RG",
+    "page": 67
+  },
+  {
+    "name": "Security Armor: Medium",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 18,
+    "capacity": 14,
+    "includedGear": [
+      {
+        "name": "Holster"
+      }
+    ],
+    "availability": {
+      "rating": [16],
+      "restriction": "Restricted"
+    },
+    "cost": [14000],
+    "source": "RG",
+    "page": 67
+  },
+  {
+    "name": "Security Armor: Heavy",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 20,
+    "capacity": 16,
+    "includedGear": [
+      {
+        "name": "Holster"
+      }
+    ],
+    "availability": {
+      "rating": [18],
+      "restriction": "Restricted"
+    },
+    "cost": [20000],
+    "source": "RG",
+    "page": 67
+  },
+  {
+    "name": "Security Armor: Helmet",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 3,
+    "capacity": 5,
+    "availability": {
+      "rating": [8],
+      "restriction": "Restricted"
+    },
+    "cost": [5000],
+    "source": "RG",
+    "page": 67
+  },
+  {
+    "name": "Bike Racing Armor",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 8,
+    "capacity": 8,
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [500],
+    "source": "RG",
+    "page": 68
+  },
+  {
+    "name": "Bike Racing Helmet",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 2,
+    "capacity": 6,
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [200],
+    "source": "RG",
+    "page": 68
+  },
+  {
+    "name": "Bunker Gear",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 6,
+    "capacity": 6,
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [3000],
+    "source": "RG",
+    "page": 69
+  },
+  {
+    "name": "Bunker Gear Helmet",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 2,
+    "capacity": 3,
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [750],
+    "source": "RG",
+    "page": 69
+  },
+  {
+    "name": "Riot Control Armor",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 14,
+    "capacity": 8,
+    "availability": {
+      "rating": [10],
+      "restriction": "Restricted"
+    },
+    "cost": [5000],
+    "source": "RG",
+    "page": 69
+  },
+  {
+    "name": "Riot Control Helmet",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 2,
+    "capacity": 6,
+    "availability": {
+      "rating": [6],
+      "restriction": "Restricted"
+    },
+    "cost": [1000],
+    "source": "RG",
+    "page": 69
+  },
+  {
+    "name": "SWAT Armor",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 15,
+    "capacity": 15,
+    "availability": {
+      "rating": [16],
+      "restriction": "Restricted"
+    },
+    "cost": [8000],
+    "source": "RG",
+    "page": 70
+  },
+  {
+    "name": "SWAT Helmet",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 3,
+    "capacity": 8,
+    "availability": {
+      "rating": [10],
+      "restriction": "Restricted"
+    },
+    "cost": [1500],
+    "source": "RG",
+    "page": 70
+  },
+  {
+    "name": "Securetech PPP: Arms Kit",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 1,
+    "capacity": 1,
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [250],
+    "source": "RG",
+    "page": 70
+  },
+  {
+    "name": "Securetech PPP: Legs Kit",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 1,
+    "capacity": 1,
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [300],
+    "source": "RG",
+    "page": 70
+  },
+  {
+    "name": "Securetech PPP: Vitals Kit",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 1,
+    "capacity": 1,
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [350],
+    "source": "RG",
+    "page": 70
+  },
+  {
+    "name": "Body Armor Bag",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 8,
+    "capacity": 4,
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [750],
+    "source": "RG",
+    "page": 70
+  },
+  {
+    "name": "Chain Mail",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 8,
+    "capacity": 2,
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [900],
+    "source": "RG",
+    "page": 71
+  },
+  {
+    "name": "Padded Leather",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 7,
+    "capacity": 2,
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [600],
+    "source": "RG",
+    "page": 72
+  },
+  {
+    "name": "Ares FlaShield",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 6,
+    "capacity": 4,
+    "includedGear": [
+      {
+        "name": "Grenade: Flash-Pak"
+      }
+    ],
+    "availability": {
+      "rating": [12],
+      "restriction": "Restricted"
+    },
+    "cost": [4000],
+    "source": "RG",
+    "page": 72
+  },
+  {
+    "name": "Murder Armor",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 13,
+    "capacity": 4,
+    "includedGear": [
+      {
+        "name": "Biomonitor"
+      },
+      {
+        "name": "Holster"
+      }
+    ],
+    "availability": {
+      "rating": [12],
+      "restriction": "Restricted"
+    },
+    "cost": [5000],
+    "source": "RG",
+    "page": 72
+  },
+  {
+    "name": "Forearm Guards",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 1,
+    "capacity": 3,
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [300],
+    "source": "RG",
+    "page": 73
+  },
+  {
+    "name": "Ballistic Mask",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 2,
+    "capacity": 8,
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [150],
+    "source": "RG",
+    "page": 74
+  },
+  {
+    "name": "Custom Ballistic Mask",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 2,
+    "capacity": 8,
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [300],
+    "source": "RG",
+    "page": 74
+  },
+  {
+    "name": "Ghillie Suit",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 4,
+    "capacity": 4,
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [600],
+    "source": "RG",
+    "page": 75
+  },
+  {
+    "name": "Ares Armored Survivalist",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 8,
+    "capacity": 6,
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [1500],
+    "source": "RG",
+    "page": 75
+  },
+  {
+    "name": "Desert Suit",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 3,
+    "capacity": 2,
+    "includedGear": [
+      {
+        "name": "Flare Compensation"
+      }
+    ],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
+    "source": "RG",
+    "page": 75
+  },
+  {
+    "name": "Snake Mesh Socks",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 2,
+    "capacity": 0,
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [50],
+    "source": "RG",
+    "page": 76
+  },
+  {
+    "name": "Coldsuit",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 0,
+    "capacity": 4,
+    "includedGear": [
+      {
+        "name": "Flare Compensation"
+      }
+    ],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [800],
+    "source": "RG",
+    "page": 76
+  },
+  {
+    "name": "Polar Survival Suit",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 6,
+    "capacity": 6,
+    "includedGear": [
+      {
+        "name": "Flare Compensation"
+      }
+    ],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [2000],
+    "source": "RG",
+    "page": 76
+  },
+  {
+    "name": "Ares Arctic Forces Suit",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 15,
+    "capacity": 14,
+    "includedGear": [
+      {
+        "name": "Gas Mask"
+      },
+      {
+        "name": "Flare Compensation"
+      }
+    ],
+    "availability": {
+      "rating": [16],
+      "restriction": "Restricted"
+    },
+    "cost": [11000],
+    "source": "RG",
+    "page": 77
+  },
+  {
+    "name": "Ares Armored Coldsuit",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 9,
+    "capacity": 6,
+    "includedGear": [
+      {
+        "name": "Flare Compensation"
+      }
+    ],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [1200],
+    "source": "RG",
+    "page": 78
+  },
+  {
+    "name": "Ares Polar Sneak Suit",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 6,
+    "capacity": 4,
+    "includedGear": [
+      {
+        "name": "Flare Compensation"
+      }
+    ],
+    "availability": {
+      "rating": [16],
+      "restriction": "Forbidden"
+    },
+    "cost": [10000],
+    "source": "RG",
+    "page": 78
+  },
+  {
+    "name": "Enclosed Breathing Helmet",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 0,
+    "capacity": 6,
+    "includedGear": [
+      {
+        "name": "Low Light"
+      }
+    ],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [900],
+    "source": "RG",
+    "page": 79
+  },
+  {
+    "name": "Full Face Mask",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 0,
+    "capacity": 4,
+    "includedGear": [
+      {
+        "name": "Gas Mask"
+      }
+    ],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [300],
+    "source": "RG",
+    "page": 79
+  },
+  {
+    "name": "Drysuit",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 0,
+    "capacity": 4,
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [2500],
+    "source": "RG",
+    "page": 79
+  },
+  {
+    "name": "Diving Armor",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 7,
+    "capacity": 4,
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [1750],
+    "source": "RG",
+    "page": 80
+  },
+  {
+    "name": "Arctic Diving Suit",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 1,
+    "capacity": 4,
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [3000],
+    "source": "RG",
+    "page": 80
+  },
+  {
+    "name": "Evo HEL Suit",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 8,
+    "capacity": 5,
+    "includedGear": [
+      {
+        "name": "Gas Mask"
+      }
+    ],
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [3000],
+    "source": "RG",
+    "page": 81
+  },
+  {
+    "name": "Spacesuit",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 12,
+    "capacity": 6,
+    "includedGear": [
+      {
+        "name": "Renraku Sensei"
+      },
+      {
+        "name": "Flare Compensation"
+      },
+      {
+        "name": "Biomonitor"
+      }
+    ],
+    "availability": {
+      "rating": [16],
+      "restriction": "Legal"
+    },
+    "cost": [12000],
+    "source": "RG",
+    "page": 81
+  },
+  {
+    "name": "Security Spacesuit",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 15,
+    "capacity": 10,
+    "includedGear": [
+      {
+        "name": "Renraku Sensei"
+      },
+      {
+        "name": "Flare Compensation"
+      },
+      {
+        "name": "Biomonitor"
+      }
+    ],
+    "availability": {
+      "rating": [24],
+      "restriction": "Legal"
+    },
+    "cost": [25000],
+    "source": "RG",
+    "page": 81
+  },
+  {
+    "name": "Evo Armadillo Armored Spacesuit",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 16,
+    "capacity": 10,
+    "includedGear": [
+      {
+        "name": "Renraku Sensei"
+      },
+      {
+        "name": "Biomonitor"
+      }
+    ],
+    "availability": {
+      "rating": [24],
+      "restriction": "Restricted"
+    },
+    "cost": [35000],
+    "source": "RG",
+    "page": 82
+  },
+  {
+    "name": "Magnetic Boots",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 0,
+    "capacity": 4,
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [2500],
+    "source": "RG",
+    "page": 83
+  },
+  {
+    "name": "Survival Bubble, Rating 1",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 4,
+    "capacity": 4,
+    "availability": {
+      "rating": [3],
+      "restriction": "Legal"
+    },
+    "cost": [2000],
+    "source": "RG",
+    "page": 83
+  },
+  {
+    "name": "Survival Bubble, Rating 2",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 4,
+    "capacity": 4,
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [2000],
+    "source": "RG",
+    "page": 83
+  },
+  {
+    "name": "Survival Bubble, Rating 3",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 4,
+    "capacity": 4,
+    "availability": {
+      "rating": [9],
+      "restriction": "Legal"
+    },
+    "cost": [2000],
+    "source": "RG",
+    "page": 83
+  },
+  {
+    "name": "Survival Bubble, Rating 4",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 4,
+    "capacity": 4,
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [2000],
+    "source": "RG",
+    "page": 83
+  },
+  {
+    "name": "Survival Bubble, Rating 5",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 4,
+    "capacity": 4,
+    "availability": {
+      "rating": [15],
+      "restriction": "Legal"
+    },
+    "cost": [2000],
+    "source": "RG",
+    "page": 83
+  },
+  {
+    "name": "Survival Bubble, Rating 6",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 4,
+    "capacity": 4,
+    "availability": {
+      "rating": [18],
+      "restriction": "Legal"
+    },
+    "cost": [2000],
+    "source": "RG",
+    "page": 83
+  },
+  {
+    "name": "MCT EE Suit",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 6,
+    "capacity": 5,
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [2500],
+    "source": "RG",
+    "page": 83
+  },
+  {
+    "name": "Pneumatic Anti-Shock Garments",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 3,
+    "capacity": 4,
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [500],
+    "source": "BB",
+    "page": 23
+  },
+  {
+    "name": "Shiawase Arms Simoom",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 1,
+    "capacity": 0,
+    "isWeapon": true,
+    "availability": {
+      "rating": [14],
+      "restriction": "Restricted"
+    },
+    "cost": [1500],
+    "source": "HT",
+    "page": 184
+  },
+  {
+    "name": "Cloak",
+    "description": "",
+    "category": "Cloaks",
+    "maxRating": 6,
+    "damageReduction": 0,
+    "capacity": "Rating",
+    "availability": {
+      "rating": [1],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          100,
+          {
+            "operator": "*"
+          },
+          {
+            "option": "Rating"
+          }
+        ]
+      }
+    ],
+    "source": "HT",
+    "page": 184
+  },
+  {
+    "name": "Designer Cloak",
+    "description": "",
+    "category": "Cloaks",
+    "maxRating": 6,
+    "damageReduction": 0,
+    "capacity": "Rating",
+    "availability": {
+      "rating": [1],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          100,
+          {
+            "operator": "*"
+          },
+          {
+            "option": "Rating"
+          }
+        ]
+      },
+      {
+        "operator": "+"
+      },
+      300
+    ],
+    "source": "HT",
+    "page": 184
+  },
+  {
+    "name": "Ruthenium Polymer Cloak",
+    "description": "",
+    "category": "Cloaks",
+    "maxRating": 4,
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [14],
+      "restriction": "Forbidden"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          4000,
+          {
+            "operator": "*"
+          },
+          {
+            "option": "Rating"
+          }
+        ]
+      }
+    ],
+    "source": "HT",
+    "page": 184
+  },
+  {
+    "name": "One-Use Shoes",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [2],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "One-Use Pants",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [2],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "One-Use Shirt",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [2],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "One-Use Skirt",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [2],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Cheap Shoes",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [10],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Cheap Pants",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [10],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Cheap Shirt",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [10],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Cheap Skirt",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [10],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Good Shoes",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [50],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Good Pants",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [50],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Good Shirt",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [50],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Good Skirt",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [50],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Nice Shoes",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [200],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Nice Pants",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [200],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Nice Shirt",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [200],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Nice Skirt",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [200],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Cheap Dress",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [200],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Cheap Suit",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [200],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Good Dress",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Good Suit",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Nice Dress",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [10000],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Nice Suit",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [10000],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Tuxedo Rental",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [75],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Hat",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [20],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Ski Mask",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [5],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Coveralls",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [50],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Cheap Socks",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [2],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Cheap Undergarments",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [2],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Good Socks",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [10],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Good Undergarments",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [10],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Nice Socks",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [50],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Nice Undergarments",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [50],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "One-Use Gloves",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [2],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Cheap Gloves",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [10],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Cheap Watch",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [10],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Cheap Jewelry",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [10],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Good Gloves",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [50],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Good Watch",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [50],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Good Jewelry",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [50],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Nice Gloves",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [200],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Nice Watch",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [200],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Nice Jewelry",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [200],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Decent Diamond Ring",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [500],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Large Diamond Ring",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [5000],
+    "source": "RF",
+    "page": 253
+  },
+  {
+    "name": "Sensor Collar",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 0,
+    "capacity": 0,
+    "includedGear": [
+      {
+        "name": "Camera",
+        "rating": 2,
+        "category": "Vision Devices"
+      },
+      {
+        "name": "Microphone, Omni-Directional",
+        "rating": 2,
+        "category": "Audio Devices"
+      }
+    ],
+    "availability": {
+      "rating": [2],
+      "restriction": "Legal"
+    },
+    "cost": [200],
+    "source": "HS",
+    "page": 185
+  },
+  {
+    "name": "Critter Body Armor",
+    "description": "",
+    "category": "Specialty Armour",
+    "maxRating": 24,
+    "damageReduction": "Rating",
+    "capacity": "Rating",
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          50,
+          {
+            "operator": "*"
+          },
+          {
+            "option": "Rating"
+          }
+        ]
+      }
+    ],
+    "source": "HS",
+    "page": 185
+  },
+  {
+    "name": "Team Jersey (Licensed)",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 8,
+    "capacity": 8,
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [750],
+    "source": "CA",
+    "page": 136
+  },
+  {
+    "name": "Team Jersey (Unlicensed)",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 6,
+    "capacity": 6,
+    "availability": {
+      "rating": [2],
+      "restriction": "Legal"
+    },
+    "cost": [500],
+    "source": "CA",
+    "page": 136
+  },
+  {
+    "name": "Ares Briefcase Shield",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 4,
+    "capacity": 0,
+    "isWeapon": true,
+    "availability": {
+      "rating": [14],
+      "restriction": "Restricted"
+    },
+    "cost": [1800],
+    "source": "CA",
+    "page": 136
+  },
+  {
+    "name": "Catsuit",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 9,
+    "capacity": 10,
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [900],
+    "source": "CA",
+    "page": 136
+  },
+  {
+    "name": "Scout's Tux",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 8,
+    "capacity": 6,
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [2000],
+    "source": "CA",
+    "page": 136
+  },
+  {
+    "name": "Rockblood Old School Line",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 8,
+    "capacity": 10,
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [1900],
+    "source": "TCT",
+    "page": 186
+  },
+  {
+    "name": "Rockblood Signature Armored Shirt",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 6,
+    "capacity": 4,
+    "availability": {
+      "rating": [14],
+      "restriction": "Legal"
+    },
+    "cost": [800],
+    "source": "TCT",
+    "page": 186
+  },
+  {
+    "name": "Urban Explorer Daedalus",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 9,
+    "capacity": 4,
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [3200],
+    "source": "SL",
+    "page": 48
+  },
+  {
+    "name": "Urban Explorer Daedalus: Helmet",
+    "description": "",
+    "category": "Specialty Armour",
+    "damageReduction": 2,
+    "capacity": 6,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [100],
+    "source": "SL",
+    "page": 48
+  },
+  {
+    "name": "Ares Arms Bug Stomper Custom Armor",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 20,
+    "capacity": 20,
+    "availability": {
+      "rating": [30],
+      "restriction": "Forbidden"
+    },
+    "cost": [35000],
+    "source": "SL",
+    "page": 130
+  },
+  {
+    "name": "Yamatetsu Naval Technologies Rampart",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 10,
+    "capacity": 10,
+    "availability": {
+      "rating": [12],
+      "restriction": "Forbidden"
+    },
+    "cost": [3000],
+    "source": "SL",
+    "page": 130
+  },
+  {
+    "name": "Pantheon Industries Hard Case CCOB",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 12,
+    "capacity": 8,
+    "includedGear": [
+      {
+        "name": "Holster"
+      }
+    ],
+    "availability": {
+      "rating": [12],
+      "restriction": "Restricted"
+    },
+    "cost": [1700],
+    "source": "KC",
+    "page": 70
+  },
+  {
+    "name": "Generic CCOB",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 8,
+    "capacity": 8,
+    "includedGear": [
+      {
+        "name": "Holster"
+      },
+      {
+        "name": "Medkit",
+        "rating": 4
+      }
+    ],
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
+    "source": "KC",
+    "page": 70
+  },
+  {
+    "name": "Trenchcoat",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [100],
+    "source": "NF",
+    "page": 173
+  },
+  {
+    "name": "Fedora",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [30],
+    "source": "NF",
+    "page": 173
+  },
+  {
+    "name": "Trilby",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [20],
+    "source": "NF",
+    "page": 173
+  },
+  {
+    "name": "Hornburg",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [40],
+    "source": "NF",
+    "page": 173
+  },
+  {
+    "name": "Bowler",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [10],
+    "source": "NF",
+    "page": 173
+  }
+]

@@ -17,7 +17,7 @@ import {
   restrictionEnum,
 } from "../enums.js";
 import { AvailabilityRatingSchema } from "./commonSchemas.js";
-import { UseGearListSchema } from "./weaponSchemas.js";
+import { AmmunitionSingleSchema, UseGearListSchema } from "./weaponSchemas.js";
 
 export const AvailabilityWeaponAccessorySchema = zod
   .object({
@@ -104,14 +104,6 @@ export type AccessoryWeaponRequirementsType = zod.infer<
   typeof AccessoryWeaponRequirementsSchema
 >;
 
-const AmmoInformationSchema = zod
-  .object({
-    ammoCount: zod.optional(zod.number()),
-    ammoSource: zod.optional(zod.nativeEnum(ammoSourceEnum)),
-  })
-  .strict();
-export type AmmoInformationType = zod.infer<typeof AmmoInformationSchema>;
-
 export const AmmoCapacityCalculationSubnumberSchema = zod.union([
   zod.number(),
   zod.object({ option: zod.nativeEnum(ammoOptionEnum) }).strict(),
@@ -176,7 +168,7 @@ export const WeaponAccessorySummarySchema = zod
     specialModification: zod.boolean(),
     extraAmmoSlots: zod.optional(zod.number()),
     ammoCapacityCalculation: zod.optional(AmmoCapacityCalculationSchema),
-    newAmmoType: zod.optional(AmmoInformationSchema),
+    newAmmoType: zod.optional(AmmunitionSingleSchema),
     hostWeaponMountsRequired: zod.optional(HostWeaponMountsRequiredSchema),
     hostWeaponRequirements: zod.optional(AccessoryWeaponRequirementsSchema),
     hostWeaponRestrictions: zod.optional(AccessoryWeaponRequirementsSchema),

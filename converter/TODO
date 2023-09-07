@@ -56,3 +56,7 @@ Other xmls to maybe implement:
 - References
 - Settings
 - Traditions
+
+Some xmls are better to just copy paste to an enum:
+
+- Licenses

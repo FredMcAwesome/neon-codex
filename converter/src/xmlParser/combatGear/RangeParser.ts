@@ -1,3 +1,4 @@
+import assert from "assert";
 import { XMLParser } from "fast-xml-parser";
 import fs from "fs";
 import path from "path";
@@ -72,44 +73,43 @@ export function ParseRanges() {
     jObj.chummer.ranges.range
   );
 
-  if (rangeListParsed.success) console.log("all g");
+  if (rangeListParsed.success) console.log("ranges.xml initial zod parsed");
   else {
     console.log(rangeListParsed.error.errors[0]);
+    assert(false);
   }
 
-  if (rangeListParsed.success) {
-    const rangeList = rangeListParsed.data;
+  const rangeList = rangeListParsed.data;
 
-    const rangeListConverted = rangeList.map((range: RangeXmlType) => {
-      const convertedRange = convertRange(range);
-      const check = RangeSchema.safeParse(convertedRange);
-      if (!check.success) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.log(convertedRange);
-        throw new Error(check.error.message);
-      }
-      return convertedRange;
-    });
-    // console.log(rangeListConverted);
-    const check = RangeListSchema.safeParse(rangeListConverted);
+  const rangeListConverted = rangeList.map((range: RangeXmlType) => {
+    const convertedRange = convertRange(range);
+    const check = RangeSchema.safeParse(convertedRange);
     if (!check.success) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      // console.log(convertedRange);
       throw new Error(check.error.message);
     }
-    const jsonFilePath = fileURLToPath(
-      path.dirname(currentPath) + "../../../../jsonFiles/ranges.json"
-    );
-    fs.writeFile(
-      jsonFilePath,
-      JSON.stringify(rangeListConverted, null, 2),
-      (error) => {
-        if (error) {
-          console.error(error);
-        } else {
-          console.log(`File written! Saved to: ${jsonFilePath}`);
-        }
-      }
-    );
+    return convertedRange;
+  });
+  // console.log(rangeListConverted);
+  const check = RangeListSchema.safeParse(rangeListConverted);
+  if (!check.success) {
+    throw new Error(check.error.message);
   }
+  const jsonFilePath = fileURLToPath(
+    path.dirname(currentPath) + "../../../../jsonFiles/ranges.json"
+  );
+  fs.writeFile(
+    jsonFilePath,
+    JSON.stringify(rangeListConverted, null, 2),
+    (error) => {
+      if (error) {
+        console.error(error);
+      } else {
+        console.log(`File written! Saved to: ${jsonFilePath}`);
+      }
+    }
+  );
 }
 
 function convertRange(range: RangeXmlType) {

@@ -10,34 +10,36 @@ import {
   CyberwareListXmlType,
 } from "./CyberwareParserSchemas.js";
 
-const currentPath = import.meta.url;
-const xml_string = fs.readFileSync(
-  fileURLToPath(path.dirname(currentPath) + "../../../xmls/cyberware.xml"),
-  "utf8"
-);
-const parser = new XMLParser({
-  ignoreAttributes: false,
-  attributeNamePrefix: "_",
-  textNodeName: "xmltext",
-});
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const jObj: any = parser.parse(xml_string);
-console.log(
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  jObj.chummer.cyberwares.cyberware[356]
-);
+export function ParseCyberware() {
+  const currentPath = import.meta.url;
+  const xml_string = fs.readFileSync(
+    fileURLToPath(path.dirname(currentPath) + "../../../../xmls/cyberware.xml"),
+    "utf8"
+  );
+  const parser = new XMLParser({
+    ignoreAttributes: false,
+    attributeNamePrefix: "_",
+    textNodeName: "xmltext",
+  });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const jObj: any = parser.parse(xml_string);
+  // console.log(
+  //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+  //   jObj.chummer.cyberwares.cyberware[286].bonus
+  // );
 
-const cyberwareListParsed = CyberwareListXmlSchema.safeParse(
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  jObj.chummer.cyberwares.cyberware
-);
+  const cyberwareListParsed = CyberwareListXmlSchema.safeParse(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    jObj.chummer.cyberwares.cyberware
+  );
 
-if (cyberwareListParsed.success) console.log("all g");
-else {
-  console.log(cyberwareListParsed.error.errors[0]);
-}
+  if (cyberwareListParsed.success)
+    console.log("cyberware.xml initial zod parsed");
+  else {
+    console.log(cyberwareListParsed.error.errors[0]);
+    assert(false);
+  }
 
-if (cyberwareListParsed.success) {
   const cyberwareList = cyberwareListParsed.data;
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
@@ -111,7 +113,7 @@ if (cyberwareListParsed.success) {
     }
   );
 
-  console.log(englishCyberwareList);
+  console.log(englishCyberwareList[0]);
 
   // const armourListConverted = englishArmourList
   //   // .filter((weapon) => weapon.name === "Osmium Mace")

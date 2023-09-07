@@ -10,34 +10,35 @@ import {
   BiowareListXmlType,
 } from "./BiowareParserSchemas.js";
 
-const currentPath = import.meta.url;
-const xml_string = fs.readFileSync(
-  fileURLToPath(path.dirname(currentPath) + "../../../xmls/bioware.xml"),
-  "utf8"
-);
-const parser = new XMLParser({
-  ignoreAttributes: false,
-  attributeNamePrefix: "_",
-  textNodeName: "xmltext",
-});
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const jObj: any = parser.parse(xml_string);
-console.log(
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  jObj.chummer.biowares.bioware[211]
-);
+export function ParseBioware() {
+  const currentPath = import.meta.url;
+  const xml_string = fs.readFileSync(
+    fileURLToPath(path.dirname(currentPath) + "../../../../xmls/bioware.xml"),
+    "utf8"
+  );
+  const parser = new XMLParser({
+    ignoreAttributes: false,
+    attributeNamePrefix: "_",
+    textNodeName: "xmltext",
+  });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const jObj: any = parser.parse(xml_string);
+  // console.log(
+  //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+  //   jObj.chummer.biowares.bioware[186].bonus
+  // );
 
-const biowareListParsed = BiowareListXmlSchema.safeParse(
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  jObj.chummer.biowares.bioware
-);
+  const biowareListParsed = BiowareListXmlSchema.safeParse(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    jObj.chummer.biowares.bioware
+  );
 
-if (biowareListParsed.success) console.log("all g");
-else {
-  console.log(biowareListParsed.error.errors[0]);
-}
+  if (biowareListParsed.success) console.log("bioware.xml initial zod parsed");
+  else {
+    console.log(biowareListParsed.error.errors[0]);
+    assert(false);
+  }
 
-if (biowareListParsed.success) {
   const biowareList = biowareListParsed.data;
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
@@ -111,7 +112,7 @@ if (biowareListParsed.success) {
     }
   );
 
-  console.log(englishBiowareList);
+  console.log(englishBiowareList[0]);
 
   // const armourListConverted = englishArmourList
   //   // .filter((weapon) => weapon.name === "Osmium Mace")

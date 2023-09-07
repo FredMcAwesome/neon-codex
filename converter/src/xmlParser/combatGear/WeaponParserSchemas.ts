@@ -28,8 +28,6 @@ const UnderbarrelXmlSchema = zod
   })
   .strict();
 
-export type RequiredXmlType = zod.infer<typeof RequiredXmlSchema>;
-
 const AccuracyXmlSchema = StringOrNumberSchema;
 export type AccuracyXmlType = zod.infer<typeof AccuracyXmlSchema>;
 
@@ -118,6 +116,8 @@ const RequiredXmlSchema = zod.union([
     })
     .strict(),
 ]);
+
+export type RequiredXmlType = zod.infer<typeof RequiredXmlSchema>;
 
 const WeaponXmlSchema = zod
   .object({

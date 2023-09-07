@@ -1,17 +1,10 @@
 import { z as zod } from "zod";
 import {
+  BonusXmlSchema,
   SourceXmlSchema,
   StringArrayOrStringSchema,
   StringOrNumberSchema,
 } from "../ParserCommonDefines.js";
-
-const GenericNameValueSchema = zod
-  .object({
-    name: zod.string(),
-    val: zod.optional(StringOrNumberSchema),
-    max: zod.optional(StringOrNumberSchema),
-  })
-  .strict();
 
 const BiowareXmlSchema = zod
   .object({
@@ -43,21 +36,7 @@ const BiowareXmlSchema = zod
     addweapon: zod.optional(zod.string()),
     blocksmounts: zod.optional(zod.string()),
     selectside: zod.optional(zod.literal("")),
-    bonus: zod.optional(
-      zod
-        .object({
-          damageresistance: zod.optional(zod.string()),
-          unarmeddv: zod.optional(zod.string()),
-          unarmeddvphysical: zod.optional(zod.string()),
-          specificattribute: zod.optional(
-            zod.union([
-              GenericNameValueSchema,
-              zod.array(GenericNameValueSchema),
-            ])
-          ),
-        })
-        .strict()
-    ),
+    bonus: zod.optional(BonusXmlSchema),
     forbidden: zod.optional(
       zod
         .object({
@@ -94,6 +73,7 @@ const BiowareXmlSchema = zod
             zod
               .object({
                 bioware: zod.optional(StringArrayOrStringSchema),
+                cyberware: zod.optional(StringArrayOrStringSchema),
                 metatype: zod.optional(zod.string()),
               })
               .strict()
@@ -120,6 +100,15 @@ const BiowareXmlSchema = zod
               .strict()
           ),
           unarmedreach: zod.optional(zod.number()),
+          unarmeddv: zod.optional(zod.number()),
+          reach: zod.optional(
+            zod
+              .object({
+                xmltext: zod.number(),
+                _name: zod.string(),
+              })
+              .strict()
+          ),
         })
         .strict()
     ),

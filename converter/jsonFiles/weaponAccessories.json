@@ -494,8 +494,8 @@
     "specialModification": false,
     "extraAmmoSlots": 1,
     "newAmmoType": {
-      "ammoCount": 100,
-      "ammoSource": "Belt Fed"
+      "capacity": 100,
+      "reloadMethod": "Belt Fed"
     },
     "hostWeaponRequirements": {
       "weaponNames": [
@@ -527,8 +527,8 @@
     "specialModification": false,
     "extraAmmoSlots": 1,
     "newAmmoType": {
-      "ammoCount": 24,
-      "ammoSource": "Drum"
+      "capacity": 24,
+      "reloadMethod": "Drum"
     },
     "hostWeaponRequirements": {
       "weaponNames": ["Enfield AS-7"]
@@ -550,8 +550,8 @@
     "specialModification": false,
     "extraAmmoSlots": 1,
     "newAmmoType": {
-      "ammoCount": 32,
-      "ammoSource": "Drum"
+      "capacity": 32,
+      "reloadMethod": "Drum"
     },
     "hostWeaponRequirements": {
       "weaponNames": ["Auto-Assault 16"]
@@ -573,7 +573,7 @@
     "specialModification": false,
     "extraAmmoSlots": 1,
     "newAmmoType": {
-      "ammoSource": "External"
+      "reloadMethod": "External"
     },
     "hostWeaponRequirements": {
       "weaponNames": [
@@ -1143,8 +1143,8 @@
     "specialModification": false,
     "extraAmmoSlots": 1,
     "newAmmoType": {
-      "ammoCount": 10,
-      "ammoSource": "N/A"
+      "capacity": 10,
+      "reloadMethod": "N/A"
     },
     "hostWeaponRequirements": {
       "ammunitionDetails": ["External", "Energy"]
@@ -1166,8 +1166,8 @@
     "specialModification": false,
     "extraAmmoSlots": 1,
     "newAmmoType": {
-      "ammoCount": 20,
-      "ammoSource": "N/A"
+      "capacity": 20,
+      "reloadMethod": "N/A"
     },
     "hostWeaponRequirements": {
       "ammunitionDetails": ["External", "Energy"]
@@ -1189,8 +1189,8 @@
     "specialModification": false,
     "extraAmmoSlots": 1,
     "newAmmoType": {
-      "ammoCount": 30,
-      "ammoSource": "N/A"
+      "capacity": 30,
+      "reloadMethod": "N/A"
     },
     "hostWeaponRequirements": {
       "ammunitionDetails": ["External", "Energy"]
@@ -1850,7 +1850,8 @@
       ["Under", "Barrel"]
     ],
     "hostWeaponRequirements": {
-      "categories": []
+      "categories": ["Assault Rifles", "Sniper Rifles", "Sporting Rifles"],
+      "skills": ["Longarms"]
     }
   },
   {
@@ -2028,7 +2029,10 @@
     "page": 182,
     "specialModification": false,
     "hostWeaponMountsRequired": [["Stock"], ["Barrel"]],
-    "hostWeaponRequirements": {},
+    "hostWeaponRequirements": {
+      "categories": ["Heavy Pistols", "Assault Rifles"],
+      "skills": ["Longarms"]
+    },
     "hostWeaponRestrictions": {
       "accessories": ["Stock Removal", "Sawed Off/Shortbarrel"]
     },
@@ -2306,8 +2310,8 @@
     "specialModification": false,
     "extraAmmoSlots": 1,
     "newAmmoType": {
-      "ammoCount": 2500,
-      "ammoSource": "Belt Fed"
+      "capacity": 2500,
+      "reloadMethod": "Belt Fed"
     },
     "hostWeaponRequirements": {
       "ammunitionDetails": ["Belt Fed"]
@@ -2395,7 +2399,9 @@
     "page": 76,
     "specialModification": false,
     "extraAmmoSlots": 1,
-    "hostWeaponRequirements": {},
+    "hostWeaponRequirements": {
+      "ammunitionDetails": ["Clip", "Drum"]
+    },
     "hostWeaponRestrictions": {
       "weaponNames": ["HK Urban Fighter"]
     }
@@ -2427,7 +2433,9 @@
     "page": 76,
     "specialModification": false,
     "extraAmmoSlots": 1,
-    "hostWeaponRequirements": {},
+    "hostWeaponRequirements": {
+      "ammunitionDetails": ["Clip", "Drum"]
+    },
     "hostWeaponRestrictions": {
       "weaponNames": ["HK Urban Fighter"]
     },

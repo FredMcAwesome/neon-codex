@@ -10,34 +10,35 @@ import {
   GenericGearListXmlType,
 } from "./GenericGearParserSchemas.js";
 
-const currentPath = import.meta.url;
-const xml_string = fs.readFileSync(
-  fileURLToPath(path.dirname(currentPath) + "../../../xmls/gear.xml"),
-  "utf8"
-);
-const parser = new XMLParser({
-  ignoreAttributes: false,
-  attributeNamePrefix: "_",
-  textNodeName: "xmltext",
-});
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const jObj: any = parser.parse(xml_string);
-console.log(
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  jObj.chummer.gears.gear[1481]
-);
+export function ParseGear() {
+  const currentPath = import.meta.url;
+  const xml_string = fs.readFileSync(
+    fileURLToPath(path.dirname(currentPath) + "../../../../xmls/gear.xml"),
+    "utf8"
+  );
+  const parser = new XMLParser({
+    ignoreAttributes: false,
+    attributeNamePrefix: "_",
+    textNodeName: "xmltext",
+  });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const jObj: any = parser.parse(xml_string);
+  // console.log(
+  //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+  //   jObj.chummer.gears.gear[1486].required.geardetails.OR.name
+  // );
 
-const genericGearListParsed = GenericGearListXmlSchema.safeParse(
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  jObj.chummer.gears.gear
-);
+  const genericGearListParsed = GenericGearListXmlSchema.safeParse(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    jObj.chummer.gears.gear
+  );
 
-if (genericGearListParsed.success) console.log("all g");
-else {
-  console.log(genericGearListParsed.error.errors[0]);
-}
+  if (genericGearListParsed.success) console.log("gear.xml initial zod parsed");
+  else {
+    console.log(genericGearListParsed.error.errors[0]);
+    assert(false);
+  }
 
-if (genericGearListParsed.success) {
   const genericGearList = genericGearListParsed.data;
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
@@ -111,7 +112,7 @@ if (genericGearListParsed.success) {
     }
   );
 
-  console.log(englishGenericGearList);
+  console.log(englishGenericGearList[0]);
 
   // const armourListConverted = englishArmourList
   //   // .filter((weapon) => weapon.name === "Osmium Mace")

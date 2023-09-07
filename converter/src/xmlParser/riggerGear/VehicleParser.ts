@@ -10,34 +10,35 @@ import {
   VehicleListXmlType,
 } from "./VehicleParserSchemas.js";
 
-const currentPath = import.meta.url;
-const xml_string = fs.readFileSync(
-  fileURLToPath(path.dirname(currentPath) + "../../../xmls/vehicles.xml"),
-  "utf8"
-);
-const parser = new XMLParser({
-  ignoreAttributes: false,
-  attributeNamePrefix: "_",
-  textNodeName: "xmltext",
-});
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const jObj: any = parser.parse(xml_string);
-console.log(
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  jObj.chummer.vehicles.vehicle[223].weaponmodslots
-);
+export function ParseVehicles() {
+  const currentPath = import.meta.url;
+  const xml_string = fs.readFileSync(
+    fileURLToPath(path.dirname(currentPath) + "../../../../xmls/vehicles.xml"),
+    "utf8"
+  );
+  const parser = new XMLParser({
+    ignoreAttributes: false,
+    attributeNamePrefix: "_",
+    textNodeName: "xmltext",
+  });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const jObj: any = parser.parse(xml_string);
+  // console.log(
+  //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+  //   jObj.chummer.vehicles.vehicle[230].mods
+  // );
 
-const vehicleListParsed = VehicleListXmlSchema.safeParse(
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  jObj.chummer.vehicles.vehicle
-);
+  const vehicleListParsed = VehicleListXmlSchema.safeParse(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    jObj.chummer.vehicles.vehicle
+  );
 
-if (vehicleListParsed.success) console.log("all g");
-else {
-  console.log(vehicleListParsed.error.errors[0]);
-}
+  if (vehicleListParsed.success) console.log("vehicles.xml initial zod parsed");
+  else {
+    console.log(vehicleListParsed.error.errors[0]);
+    assert(false);
+  }
 
-if (vehicleListParsed.success) {
   const vehicleList = vehicleListParsed.data;
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
@@ -48,15 +49,18 @@ if (vehicleListParsed.success) {
       switch (vehicle.source) {
         case sourceBookXmlEnum.Shadowrun5:
         case sourceBookXmlEnum.Rigger5:
-        case sourceBookXmlEnum.KillCode:
-        case sourceBookXmlEnum.TheSeattleGambit:
-        case sourceBookXmlEnum.ChromeFlesh:
+        case sourceBookXmlEnum.StolenSouls:
+        case sourceBookXmlEnum.NothingPersonal:
         case sourceBookXmlEnum.BulletsAndBandages:
         case sourceBookXmlEnum.HardTargets:
-        case sourceBookXmlEnum.Lockdown:
-        case sourceBookXmlEnum.HowlingShadows:
+        case sourceBookXmlEnum.TheVladivostokGauntlet:
+        case sourceBookXmlEnum.CuttingAces:
         case sourceBookXmlEnum.TheCompleteTrog:
+        case sourceBookXmlEnum.ShadowsInFocus_Metropole:
+        case sourceBookXmlEnum.TheSeattleGambit:
+        case sourceBookXmlEnum.StreetLethal:
         case sourceBookXmlEnum.NoFuture:
+        case sourceBookXmlEnum.KrimeKatalog:
           found = true;
           break;
         // Not in english
@@ -72,29 +76,26 @@ if (vehicleListParsed.success) {
         case sourceBookXmlEnum.GrimmesErwachen:
           break;
         // Not containing Cyberware
+        case sourceBookXmlEnum.KillCode:
+        case sourceBookXmlEnum.ChromeFlesh:
+        case sourceBookXmlEnum.Lockdown:
+        case sourceBookXmlEnum.HowlingShadows:
         case sourceBookXmlEnum.DarkTerrors:
-        case sourceBookXmlEnum.TheVladivostokGauntlet:
-        case sourceBookXmlEnum.StolenSouls:
         case sourceBookXmlEnum.RunAndGun:
         case sourceBookXmlEnum.RunFaster:
-        case sourceBookXmlEnum.CuttingAces:
-        case sourceBookXmlEnum.StreetLethal:
         case sourceBookXmlEnum.AssassinPrimer:
         case sourceBookXmlEnum.DataTrails:
         case sourceBookXmlEnum.GunHeaven3:
-        case sourceBookXmlEnum.KrimeKatalog:
         case sourceBookXmlEnum.SailAwaySweetSister:
         case sourceBookXmlEnum.ShadowsInFocus_SanFranciscoMetroplex:
         case sourceBookXmlEnum.StreetGrimoire:
         case sourceBookXmlEnum.StreetGrimoireErrata:
         case sourceBookXmlEnum.ShadowSpells:
-        case sourceBookXmlEnum.NothingPersonal:
         case sourceBookXmlEnum.BloodyBusiness:
         case sourceBookXmlEnum.DataTrailsDissonantEchoes:
         case sourceBookXmlEnum.SplinteredState:
         case sourceBookXmlEnum.ShadowsInFocus_Butte:
         case sourceBookXmlEnum.HongKongSourcebook:
-        case sourceBookXmlEnum.ShadowsInFocus_Metropole:
         case sourceBookXmlEnum.BookOfTheLost:
         case sourceBookXmlEnum.ForbiddenArcana:
         case sourceBookXmlEnum.ShadowsInFocus_SiouxNation_CountingCoup:
@@ -111,7 +112,7 @@ if (vehicleListParsed.success) {
     }
   );
 
-  console.log(englishVehicleList);
+  console.log(englishVehicleList[0]);
 
   // const armourListConverted = englishArmourList
   //   // .filter((weapon) => weapon.name === "Osmium Mace")

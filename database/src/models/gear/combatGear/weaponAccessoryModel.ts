@@ -1,10 +1,12 @@
 import { Entity, PrimaryKey, Property, Enum } from "@mikro-orm/core";
 import { damageTypeEnum } from "@shadowrun/common";
 import { gearCategoryEnum } from "@shadowrun/common/build/enums.js";
-import type { UseGearListType } from "@shadowrun/common/build/schemas/weaponSchemas.js";
+import type {
+  AmmunitionSingleType,
+  UseGearListType,
+} from "@shadowrun/common/build/schemas/weaponSchemas.js";
 import type {
   AmmoCapacityCalculationType,
-  AmmoInformationType,
   HostWeaponMountsRequiredType,
   AccessoryWeaponRequirementsType,
   ConcealabilityModificationType,
@@ -76,7 +78,7 @@ export class WeaponAccessories {
   ammoCapacityCalculation?: AmmoCapacityCalculationType;
 
   @Property({ nullable: true })
-  newAmmoType?: AmmoInformationType;
+  newAmmoType?: AmmunitionSingleType;
 
   @Property({ type: "json", nullable: true })
   hostWeaponMountsRequired?: HostWeaponMountsRequiredType;

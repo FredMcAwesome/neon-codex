@@ -1,26 +1,18 @@
 import { z as zod } from "zod";
 import {
+  BonusXmlSchema,
   GearXmlSchema,
+  GearXmlType,
   SourceXmlSchema,
   StringArrayOrStringSchema,
   StringOrNumberSchema,
   WirelessXmlSchema,
 } from "../ParserCommonDefines.js";
-
-const GenericNameValueSchema = zod
-  .object({
-    name: zod.string(),
-    val: zod.optional(StringOrNumberSchema),
-    max: zod.optional(StringOrNumberSchema),
-    aug: zod.optional(zod.string()),
-    _precedence: zod.optional(zod.string()),
-  })
-  .strict();
-
 const GenericNameForcedSchema = zod
   .object({
     name: zod.string(),
     forced: zod.optional(zod.string()),
+    rating: zod.optional(zod.number()),
   })
   .strict();
 
@@ -40,6 +32,80 @@ export enum mountLocationXmlEnum {
   HIP = "hip",
 }
 
+const CyberwareRequiredXmlSchema = zod
+  .object({
+    oneof: zod.optional(
+      zod
+        .object({
+          bioware: zod.optional(StringArrayOrStringSchema),
+          metatype: zod.optional(zod.string()),
+        })
+        .strict()
+    ),
+    allof: zod.optional(
+      zod
+        .object({
+          metatype: zod.optional(zod.string()),
+          cyberware: zod.optional(StringArrayOrStringSchema),
+        })
+        .strict()
+    ),
+    parentdetails: zod.optional(
+      zod
+        .object({
+          NONE: zod.optional(zod.literal("")),
+          OR: zod.optional(
+            zod
+              .object({
+                name: zod.array(
+                  zod.union([
+                    zod
+                      .object({
+                        xmltext: zod.string(),
+                        _operation: zod.string(),
+                      })
+                      .strict(),
+                    zod.string(),
+                  ])
+                ),
+                NONE: zod.optional(zod.literal("")),
+              })
+              .strict()
+          ),
+          category: zod.optional(zod.string()),
+          name: zod.optional(zod.string()),
+        })
+        .strict()
+    ),
+  })
+  .strict();
+
+type CyberwareSubsystemsRecursiveType = {
+  gears?: GearXmlType | undefined;
+  subsystems?: CyberwareSubsystemsXmlType | undefined;
+};
+
+const SubsystemInternalSchema: zod.ZodType<CyberwareSubsystemsRecursiveType> =
+  GenericNameForcedSchema.extend({
+    gears: zod.optional(GearXmlSchema),
+    subsystems: zod.optional(zod.lazy(() => CyberwareSubsystemsXmlSchema)),
+  }).strict();
+
+const CyberwareSubsystemsXmlSchema = zod
+  .object({
+    cyberware: zod.optional(
+      zod.union([SubsystemInternalSchema, zod.array(SubsystemInternalSchema)])
+    ),
+    bioware: zod.optional(
+      zod.union([SubsystemInternalSchema, zod.array(SubsystemInternalSchema)])
+    ),
+  })
+  .strict();
+
+type CyberwareSubsystemsXmlType = zod.infer<
+  typeof CyberwareSubsystemsXmlSchema
+>;
+
 const CyberwareXmlSchema = zod
   .object({
     id: zod.string(),
@@ -58,16 +124,7 @@ const CyberwareXmlSchema = zod
     ess: StringOrNumberSchema,
     addtoparentess: zod.optional(zod.literal("")),
     gears: zod.optional(GearXmlSchema),
-    subsystems: zod.optional(
-      zod
-        .object({
-          cyberware: zod.union([
-            GenericNameForcedSchema,
-            zod.array(GenericNameForcedSchema),
-          ]),
-        })
-        .strict()
-    ),
+    subsystems: zod.optional(CyberwareSubsystemsXmlSchema),
     minrating: zod.optional(StringOrNumberSchema),
     rating: zod.optional(StringOrNumberSchema),
     ratinglabel: zod.optional(zod.string()),
@@ -86,38 +143,9 @@ const CyberwareXmlSchema = zod
     modularmount: zod.optional(zod.nativeEnum(mountLocationXmlEnum)),
     blocksmounts: zod.optional(zod.string()),
     selectside: zod.optional(zod.literal("")),
-    bonus: zod.optional(
-      zod.union([
-        zod
-          .object({
-            damageresistance: zod.optional(zod.number()),
-            unarmeddv: zod.optional(zod.number()),
-            unarmeddvphysical: zod.optional(zod.literal("")),
-            specificattribute: zod.optional(
-              zod.union([
-                GenericNameValueSchema,
-                zod.array(GenericNameValueSchema),
-              ])
-            ),
-          })
-          .strict(),
-        zod.literal(""),
-      ])
-    ),
+    bonus: zod.optional(BonusXmlSchema),
     wirelessbonus: zod.optional(WirelessXmlSchema),
-    wirelesspairbonus: zod.optional(
-      zod
-        .object({
-          specificattribute: zod.optional(
-            zod.union([
-              GenericNameValueSchema,
-              zod.array(GenericNameValueSchema),
-            ])
-          ),
-          _mode: zod.optional(zod.string()),
-        })
-        .strict()
-    ),
+    wirelesspairbonus: zod.optional(BonusXmlSchema),
     wirelesspairinclude: zod.optional(
       zod
         .object({
@@ -135,6 +163,7 @@ const CyberwareXmlSchema = zod
                 cyberware: zod.optional(StringArrayOrStringSchema),
                 bioware: zod.optional(StringArrayOrStringSchema),
                 quality: zod.optional(zod.string()),
+                cyberwarecontains: zod.optional(zod.string()),
               })
               .strict()
           ),
@@ -168,44 +197,8 @@ const CyberwareXmlSchema = zod
     ),
     notes: zod.optional(zod.string()),
     requireparent: zod.optional(zod.literal("")),
-    required: zod.optional(
-      zod
-        .object({
-          oneof: zod.optional(
-            zod
-              .object({
-                bioware: zod.optional(StringArrayOrStringSchema),
-                metatype: zod.optional(zod.string()),
-              })
-              .strict()
-          ),
-          allof: zod.optional(
-            zod
-              .object({
-                metatype: zod.optional(zod.string()),
-                cyberware: zod.optional(StringArrayOrStringSchema),
-              })
-              .strict()
-          ),
-        })
-        .strict()
-    ),
-    pairbonus: zod.optional(
-      zod
-        .object({
-          walkmultiplier: zod.optional(
-            zod
-              .object({
-                val: zod.optional(zod.number()),
-                category: zod.string(),
-                percent: zod.optional(zod.number()),
-              })
-              .strict()
-          ),
-          unarmedreach: zod.optional(zod.number()),
-        })
-        .strict()
-    ),
+    required: zod.optional(CyberwareRequiredXmlSchema),
+    pairbonus: zod.optional(BonusXmlSchema),
     pairinclude: zod.optional(
       zod
         .object({

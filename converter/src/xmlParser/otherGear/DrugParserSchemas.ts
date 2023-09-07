@@ -1,16 +1,10 @@
 import { gearCategoryEnum } from "@shadowrun/common/build/enums.js";
 import { z as zod } from "zod";
 import {
+  BonusXmlSchema,
   SourceXmlSchema,
   StringOrNumberSchema,
 } from "../ParserCommonDefines.js";
-
-const GenericNameValueSchema = zod
-  .object({
-    name: zod.string(),
-    value: zod.number(),
-  })
-  .strict();
 
 const DrugXmlSchema = zod
   .object({
@@ -28,31 +22,7 @@ const DrugXmlSchema = zod
     speed: zod.optional(zod.number()),
     vectors: zod.optional(zod.string()),
     duration: zod.optional(StringOrNumberSchema),
-    bonus: zod.optional(
-      zod
-        .object({
-          attribute: zod.union([
-            zod.array(GenericNameValueSchema),
-            GenericNameValueSchema,
-          ]),
-          limit: zod.optional(
-            zod.union([
-              zod.array(GenericNameValueSchema),
-              GenericNameValueSchema,
-            ])
-          ),
-          quality: zod.optional(
-            zod
-              .object({
-                xmltext: zod.string(),
-                _rating: zod.string(),
-              })
-              .strict()
-          ),
-          initiativedice: zod.optional(zod.number()),
-        })
-        .strict()
-    ),
+    bonus: zod.optional(BonusXmlSchema),
   })
   .strict();
 export type DrugXmlType = zod.infer<typeof DrugXmlSchema>;

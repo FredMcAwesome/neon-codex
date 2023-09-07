@@ -9,36 +9,50 @@ import {
   ArmourListXmlSchema,
   ArmourListXmlType,
   ArmourXmlType,
-} from "./ArmourParserSchema.js";
+} from "./ArmourParserSchemas.js";
+import {
+  availabilityArmourSemantics,
+  convertArmourCategory,
+  costArmourSemantics,
+} from "./ArmourParserHelper.js";
+import type {
+  AvailabilityArmourType,
+  CostArmourType,
+} from "@shadowrun/common/build/schemas/armourSchemas.js";
+import Armours from "../../grammar/armours.ohm-bundle.js";
+import { convertXmlGears } from "../ParserHelper.js";
+const Availability = Armours.Availability;
+const Cost = Armours.Cost;
 
-const currentPath = import.meta.url;
-const xml_string = fs.readFileSync(
-  fileURLToPath(path.dirname(currentPath) + "../../../xmls/armor.xml"),
-  "utf8"
-);
-const parser = new XMLParser({
-  ignoreAttributes: false,
-  attributeNamePrefix: "_",
-  textNodeName: "xmltext",
-});
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const jObj: any = parser.parse(xml_string);
-console.log(
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  jObj.chummer.armors.armor[193].gears.usegear
-);
+export function ParseArmour() {
+  const currentPath = import.meta.url;
+  const xml_string = fs.readFileSync(
+    fileURLToPath(path.dirname(currentPath) + "../../../../xmls/armor.xml"),
+    "utf8"
+  );
+  const parser = new XMLParser({
+    ignoreAttributes: false,
+    attributeNamePrefix: "_",
+    textNodeName: "xmltext",
+  });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const jObj: any = parser.parse(xml_string);
+  // console.log(
+  //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+  //   jObj.chummer.armors.armor[193].gears.usegear
+  // );
 
-const armourListParsed = ArmourListXmlSchema.safeParse(
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  jObj.chummer.armors.armor
-);
+  const armourListParsed = ArmourListXmlSchema.safeParse(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    jObj.chummer.armors.armor
+  );
 
-if (armourListParsed.success) console.log("all g");
-else {
-  console.log(armourListParsed.error.errors[0]);
-}
+  if (armourListParsed.success) console.log("armor.xml initial zod parsed");
+  else {
+    console.log(armourListParsed.error.errors[0]);
+    assert(false);
+  }
 
-if (armourListParsed.success) {
   const armourList = armourListParsed.data;
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
@@ -110,7 +124,7 @@ if (armourListParsed.success) {
     return found;
   });
 
-  console.log(englishArmourList);
+  // console.log(englishArmourList);
 
   const armourListConverted = englishArmourList
     // .filter((weapon) => weapon.name === "Osmium Mace")
@@ -120,7 +134,7 @@ if (armourListParsed.success) {
     });
   // console.log(armourListConverted);
   const jsonFilePath = fileURLToPath(
-    path.dirname(currentPath) + "../../../../jsonFiles/armour.json"
+    path.dirname(currentPath) + "../../../../jsonFiles/armours.json"
   );
   fs.writeFile(
     jsonFilePath,
@@ -136,18 +150,48 @@ if (armourListParsed.success) {
 }
 
 function convertArmour(armour: ArmourXmlType) {
-  console.log(`\n${armour.name}`);
+  // console.log(`\n${armour.name}`);
 
-  const availability = "convertAvailability(armour.avail, armour.name);";
-  const cost = "convertCost(armour.cost, armour.name);";
+  const category = convertArmourCategory(armour.category);
+
+  // check that the name always refers to the same name as this item
+  if (armour.addweapon !== undefined) assert(armour.addweapon === armour.name);
+
+  const gears =
+    armour.gears !== undefined
+      ? convertXmlGears(armour.gears, armour.name)
+      : undefined;
+
+  let match = Availability.match(armour.avail.toString());
+  if (match.failed()) {
+    throw match.message;
+  }
+  const availability: AvailabilityArmourType =
+    availabilityArmourSemantics(match).eval();
+  match = Cost.match(armour.cost.toString());
+  if (match.failed()) {
+    throw match.message;
+  }
+  const cost: CostArmourType = costArmourSemantics(match).eval();
+
+  // const bonus = armour.bonus
 
   return {
     name: armour.name,
     description: "",
-    category: armour.category,
-    ...(armour.rating && { maxRating: armour.rating }),
-    rating: armour.armor,
+    category: category,
+    ...(armour.rating !== undefined && { maxRating: armour.rating }),
+    damageReduction: armour.armor,
+    ...(armour.armoroverride !== undefined && {
+      customFitStackDamageReduction: armour.armoroverride,
+    }),
     capacity: armour.armorcapacity,
+    ...(armour.addweapon !== undefined && {
+      isWeapon: true,
+    }),
+    ...(gears !== undefined && {
+      includedGear: gears,
+    }),
     availability: availability,
     cost: cost,
     source: armour.source,
