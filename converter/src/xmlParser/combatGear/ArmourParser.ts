@@ -4,7 +4,8 @@ import { XMLParser } from "fast-xml-parser";
 import path from "path";
 import { fileURLToPath } from "url";
 import * as fs from "fs";
-import { sourceBookXmlEnum } from "../ParserCommonDefines.js";
+import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
+import { convertXmlBonus } from "../common/BonusHelper.js";
 import {
   ArmourListXmlSchema,
   ArmourListXmlType,
@@ -15,12 +16,18 @@ import {
   convertArmourCategory,
   costArmourSemantics,
 } from "./ArmourParserHelper.js";
-import type {
+import {
+  ArmourListSchema,
+  ArmourSchema,
   AvailabilityArmourType,
   CostArmourType,
 } from "@shadowrun/common/build/schemas/armourSchemas.js";
 import Armours from "../../grammar/armours.ohm-bundle.js";
-import { convertXmlGears } from "../ParserHelper.js";
+import {
+  convertSource,
+  convertXmlGears,
+  convertXmlModList,
+} from "../common/ParserHelper.js";
 const Availability = Armours.Availability;
 const Cost = Armours.Cost;
 
@@ -130,9 +137,19 @@ export function ParseArmour() {
     // .filter((weapon) => weapon.name === "Osmium Mace")
     .map((armour) => {
       const convertedArmour = convertArmour(armour);
-      return convertedArmour;
+      const check = ArmourSchema.safeParse(convertedArmour);
+      if (!check.success) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        console.log(convertedArmour.cost[0]);
+        throw new Error(check.error.message);
+      }
+      return check.data;
     });
   // console.log(armourListConverted);
+  const check = ArmourListSchema.safeParse(armourListConverted);
+  if (!check.success) {
+    throw new Error(check.error.message);
+  }
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/armours.json"
   );
@@ -150,9 +167,15 @@ export function ParseArmour() {
 }
 
 function convertArmour(armour: ArmourXmlType) {
-  // console.log(`\n${armour.name}`);
+  console.log(`\n${armour.name}`);
 
   const category = convertArmourCategory(armour.category);
+  const damageReduction =
+    typeof armour.armor === "number" ? armour.armor : { option: armour.armor };
+  const capacity =
+    typeof armour.armorcapacity === "number"
+      ? armour.armorcapacity
+      : { option: armour.armorcapacity };
 
   // check that the name always refers to the same name as this item
   if (armour.addweapon !== undefined) assert(armour.addweapon === armour.name);
@@ -174,27 +197,39 @@ function convertArmour(armour: ArmourXmlType) {
   }
   const cost: CostArmourType = costArmourSemantics(match).eval();
 
-  // const bonus = armour.bonus
+  const bonus =
+    armour.bonus !== undefined ? convertXmlBonus(armour.bonus) : undefined;
+  const wirelessBonus =
+    armour.wirelessbonus !== undefined
+      ? convertXmlBonus(armour.wirelessbonus)
+      : undefined;
+
+  const mods =
+    armour.mods !== undefined ? convertXmlModList(armour.mods) : undefined;
+  const source = convertSource(armour.source);
 
   return {
     name: armour.name,
     description: "",
     category: category,
     ...(armour.rating !== undefined && { maxRating: armour.rating }),
-    damageReduction: armour.armor,
+    damageReduction: damageReduction,
     ...(armour.armoroverride !== undefined && {
       customFitStackDamageReduction: armour.armoroverride,
     }),
-    capacity: armour.armorcapacity,
+    capacity: capacity,
     ...(armour.addweapon !== undefined && {
       isWeapon: true,
     }),
+    availability: availability,
+    cost: cost,
     ...(gears !== undefined && {
       includedGear: gears,
     }),
-    availability: availability,
-    cost: cost,
-    source: armour.source,
+    ...(bonus !== undefined && { bonus: bonus }),
+    ...(wirelessBonus !== undefined && { wirelessBonus: wirelessBonus }),
+    ...(mods !== undefined && { mods: mods }),
+    source: source,
     page: armour.page,
   };
 }

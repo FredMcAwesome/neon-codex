@@ -129,6 +129,13 @@ export enum attributeXMLEnum {
   EDG = "EDG",
 }
 
+export enum limbSlotXmlEnum {
+  ARM = "arm",
+  LEG = "leg",
+  TORSO = "torso",
+  SKULL = "skull",
+}
+
 export const StringOrNumberSchema = zod.union([zod.number(), zod.string()]);
 export const StringArrayOrStringSchema = zod.union([
   zod.array(zod.string()),
@@ -141,9 +148,72 @@ export const NumberOrRatingSchema = zod.union([
 
 const LimitModifierSchema = zod
   .object({
-    limit: zod.string(),
+    limit: zod.union([
+      zod.literal("Physical"),
+      zod.literal("Social"),
+      zod.literal("Mental"),
+    ]),
     value: NumberOrRatingSchema,
-    condition: zod.optional(zod.string()),
+    // these are keys for strings listed in en-us.xml
+    condition: zod.optional(
+      zod.union([
+        zod.literal("LimitCondition_AttribSkillINT"),
+        zod.literal("LimitCondition_AttribSkillLOG"),
+        zod.literal("LimitCondition_ShieldPhysicalPenalty"),
+        zod.literal("LimitCondition_Visible"),
+        zod.literal("LimitCondition_BunkerGearVisible"),
+        zod.literal("LimitCondition_CorporationVisible"),
+        zod.literal("LimitCondition_IntimidationVisible"),
+        zod.literal("LimitCondition_ExcludeIntimidationVisible"),
+        zod.literal("LimitCondition_PublicVisible"),
+        zod.literal("LimitCondition_GangVisible"),
+        zod.literal("LimitCondition_ClimbingTests"),
+        zod.literal("LimitCondition_SkillGroupStealth"),
+        zod.literal("LimitCondition_SkillGroupStealthNaked"),
+        zod.literal("LimitCondition_SkillsKnowledgeAcademic"),
+        zod.literal("LimitCondition_SkillsKnowledgeScientificTechnical"),
+        zod.literal("LimitCondition_SkillsActiveDisguiseImpersonation"),
+        zod.literal("LimitCondition_SkillsActiveEscapeArtist"),
+        zod.literal("LimitCondition_SkillsActiveEscapeArtistGrappleLoose"),
+        zod.literal("LimitCondition_SkillsActiveFirstAidMedicine"),
+        zod.literal("LimitCondition_SkillsActiveGymnasticsClimbing"),
+        zod.literal("LimitCondition_SkillsActiveLeadership"),
+        zod.literal("LimitCondition_SkillsActiveNavigation"),
+        zod.literal("LimitCondition_SkillsActivePerception"),
+        zod.literal("LimitCondition_SkillsActivePerceptionHearing"),
+        zod.literal("LimitCondition_SkillsActivePerceptionSpatialRecognizer"),
+        zod.literal("LimitCondition_SkillsActivePerceptionVisual"),
+        zod.literal("LimitCondition_SkillsActivePerformance"),
+        zod.literal("LimitCondition_SkillsActivePerformanceSinging"),
+        zod.literal("LimitCondition_SkillsActivePerformanceSynthtrument"),
+        zod.literal("LimitCondition_SkillsActiveSneakingVisible"),
+        zod.literal("LimitCondition_SkillsActiveSneakingNaked"),
+        zod.literal("LimitCondition_SkillsActiveSwimming"),
+        zod.literal("LimitCondition_SportsFans"),
+        zod.literal("LimitCondition_SportsRivals"),
+        zod.literal("LimitCondition_Sprawl"),
+        zod.literal("LimitCondition_ExcludeFansGangers"),
+        zod.literal("LimitCondition_TestSneakingThermal"),
+        zod.literal("LimitCondition_TestSpeech"),
+        zod.literal("LimitCondition_TestsEndurance"),
+        zod.literal("LimitCondition_Skillwires"),
+        zod.literal("LimitCondition_CyberwareHydraulicJacks"),
+        zod.literal("LimitCondition_CyberwareBalanceTail"),
+        zod.literal("LimitCondition_CyberwareCyberfins"),
+        zod.literal("LimitCondition_CyberwareFootAnchor"),
+        zod.literal("LimitCondition_CyberwareMonkeyFoot"),
+        zod.literal("LimitCondition_CyberwareRaptorFoot"),
+        zod.literal("LimitCondition_CyberwareSnakeFingers"),
+        zod.literal("LimitCondition_InUse"),
+        zod.literal("LimitCondition_ExcludeIntimidation"),
+        zod.literal("LimitCondition_Intimidation"),
+        zod.literal("LimitCondition_GearAutopicker"),
+        zod.literal("LimitCondition_NationalLanguageRanks"),
+        zod.literal("LimitCondition_Megacorp"),
+        zod.literal("LimitCondition_QualityTrustworthy"),
+        zod.literal("LimitCondition_QualityChatty"),
+      ])
+    ),
   })
   .strict();
 
@@ -155,6 +225,9 @@ const SkillSchema = zod
     condition: zod.optional(zod.string()),
   })
   .strict();
+
+const SkillListSchema = zod.union([zod.array(SkillSchema), SkillSchema]);
+export type SkillListType = zod.infer<typeof SkillListSchema>;
 
 const GenericNameValueSchema = zod
   .object({
@@ -169,9 +242,25 @@ const GenericNameValueSchema = zod
   })
   .strict();
 
+export type GenericNameValueType = zod.infer<typeof GenericNameValueSchema>;
+
+const GenericNameValueListSchema = zod.union([
+  zod.array(GenericNameValueSchema),
+  GenericNameValueSchema,
+]);
+
+export type GenericNameValueListType = zod.infer<
+  typeof GenericNameValueListSchema
+>;
+
+// https://github.com/chummer5a/chummer5a/wiki/Improvement-Manager explains bonus properties
 export const BonusXmlSchema = zod.union([
   zod
     .object({
+      // unique bonus... these don't seem to be used?
+      _unique: zod.optional(zod.string()),
+      // for wireless bonus, replace normal bonus
+      _mode: zod.optional(zod.literal("replace")),
       // Enter a name for this item
       selecttext: zod.optional(
         zod.union([
@@ -240,35 +329,33 @@ export const BonusXmlSchema = zod.union([
           zod.literal(""),
         ])
       ),
-      // bonus to these categories
+      // bonus to these skill categories
       skillcategory: zod.optional(
         zod.union([zod.array(SkillSchema), SkillSchema])
       ),
+      // bonus to these skill groups (groups and categories and different...)
       skillgroup: zod.optional(
         zod.union([zod.array(SkillSchema), SkillSchema])
       ),
+      // skillsoft for physical active skills
       activesoft: zod.optional(
         zod
           .object({
-            val: zod.string(),
+            val: zod.literal("Rating"),
           })
           .strict()
       ),
+      // skillsoft for any skill
       skillsoft: zod.optional(
         zod
           .object({
-            val: zod.string(),
+            val: zod.literal("Rating"),
             _excludecategory: zod.optional(zod.string()),
             _skillcategory: zod.optional(zod.string()),
           })
           .strict()
       ),
-      limitmodifier: zod.optional(
-        zod.union([zod.array(LimitModifierSchema), LimitModifierSchema])
-      ),
-      specificskill: zod.optional(
-        zod.union([zod.array(SkillSchema), SkillSchema])
-      ),
+      // max skillsoft rating
       skillsoftaccess: zod.optional(
         zod
           .object({
@@ -277,24 +364,57 @@ export const BonusXmlSchema = zod.union([
           })
           .strict()
       ),
-      skillattribute: zod.optional(
-        zod.union([zod.array(SkillSchema), SkillSchema])
-      ),
-      skilllinkedattribute: zod.optional(
-        zod.union([zod.array(SkillSchema), SkillSchema])
-      ),
+      // max activesoft rating
       skillwire: zod.optional(
         zod.union([GenericNameValueSchema, zod.string()])
       ),
+      // max skillsoft/activesoft rating (only supports 1)
       hardwires: zod.optional(
-        zod
-          .object({
-            xmltext: zod.literal("Rating"),
-            _knowledgeskill: zod.optional(zod.literal("True")),
-            _excludecategory: zod.optional(zod.string()),
-          })
-          .strict()
+        zod.union([
+          zod
+            .object({
+              xmltext: zod.literal("Rating"),
+              _knowledgeskill: zod.literal("True"),
+            })
+            .strict(),
+
+          zod
+            .object({
+              xmltext: zod.literal("Rating"),
+              _excludecategory: zod.string(),
+            })
+            .strict(),
+        ])
       ),
+      // modifications to test limits
+      limit: zod.optional(
+        zod.union([zod.array(GenericNameValueSchema), GenericNameValueSchema])
+      ),
+      // modifications to test limits (normally with conditions)
+      limitmodifier: zod.optional(
+        zod.union([zod.array(LimitModifierSchema), LimitModifierSchema])
+      ),
+      // bonus to an attribute
+      attribute: zod.optional(
+        zod.union([zod.array(GenericNameValueSchema), GenericNameValueSchema])
+      ),
+      // bonus to an attribute
+      specificattribute: zod.optional(
+        zod.union([zod.array(GenericNameValueSchema), GenericNameValueSchema])
+      ),
+      // bonus to a specific skill
+      specificskill: zod.optional(
+        zod.union([zod.array(SkillSchema), SkillSchema])
+      ),
+      // bonus to tests with an attribute
+      skillattribute: zod.optional(
+        zod.union([zod.array(SkillSchema), SkillSchema])
+      ),
+      // bonus to tests with an attribute
+      skilllinkedattribute: zod.optional(
+        zod.union([zod.array(SkillSchema), SkillSchema])
+      ),
+      // bonus to a specific spell category
       spellcategory: zod.optional(
         zod
           .object({
@@ -303,7 +423,9 @@ export const BonusXmlSchema = zod.union([
           })
           .strict()
       ),
+      // essence cost times 100 (to avoid float issues)
       essencepenaltyt100: zod.optional(zod.string()),
+      // bonus to a weapon that needs to be selected
       weaponspecificdice: zod.optional(
         zod
           .object({
@@ -312,6 +434,7 @@ export const BonusXmlSchema = zod.union([
           })
           .strict()
       ),
+      // increases the accuracy of a weapon
       weaponaccuracy: zod.optional(
         zod
           .object({
@@ -320,13 +443,19 @@ export const BonusXmlSchema = zod.union([
           })
           .strict()
       ),
+      // increases the accuracy of all weapons linked to a skill
+      // select means this is chosen when bought
       weaponskillaccuracy: zod.optional(
         zod
           .object({
+            name: zod.optional(zod.string()),
             selectskill: zod.optional(
               zod
                 .object({
-                  _knowledgeskills: zod.optional(zod.string()),
+                  _knowledgeskills: zod.optional(zod.literal("False")),
+                  _exludecategory: zod.optional(zod.string()),
+                  _skillcategory: zod.optional(zod.string()),
+                  _excludeskill: zod.optional(zod.string()),
                 })
                 .strict()
             ),
@@ -334,7 +463,17 @@ export const BonusXmlSchema = zod.union([
           })
           .strict()
       ),
+      // smartlink accuracy bonus for smartgun systems
       smartlink: zod.optional(zod.number()),
+      // additional initiative (not dice)
+      initiative: zod.optional(
+        zod.union([zod.number(), GenericNameValueSchema])
+      ),
+      // additional initiative dice
+      initiativedice: zod.optional(zod.number()),
+      // additional initiative dice
+      initiativepass: zod.optional(GenericNameValueSchema),
+      // additional matrix initiative dice
       matrixinitiativedice: zod.optional(
         zod
           .object({
@@ -343,11 +482,12 @@ export const BonusXmlSchema = zod.union([
           })
           .strict()
       ),
-      _unique: zod.optional(zod.string()),
+
+      // Toxin and pathogen resistances/immunities
       toxincontactresist: zod.optional(NumberOrRatingSchema),
       pathogencontactresist: zod.optional(NumberOrRatingSchema),
-      toxincontactimmune: zod.optional(zod.string()),
-      pathogencontactimmune: zod.optional(zod.string()),
+      toxincontactimmune: zod.optional(zod.literal("")),
+      pathogencontactimmune: zod.optional(zod.literal("")),
       toxininhalationresist: zod.optional(NumberOrRatingSchema),
       pathogeninhalationresist: zod.optional(NumberOrRatingSchema),
       toxininhalationimmune: zod.optional(zod.literal("")),
@@ -360,15 +500,19 @@ export const BonusXmlSchema = zod.union([
       pathogeninjectionresist: zod.optional(NumberOrRatingSchema),
       toxininjectionimmune: zod.optional(zod.literal("")),
       pathogeninjectionimmune: zod.optional(zod.literal("")),
+
+      // fatigue test bonus
       fatigueresist: zod.optional(NumberOrRatingSchema),
+
+      // Limit bonuses
+      // bonus to social limit
       sociallimit: zod.optional(StringOrNumberSchema),
+      // bonus to physical limit
       physicallimit: zod.optional(NumberOrRatingSchema),
-      attribute: zod.optional(
-        zod.union([zod.array(GenericNameValueSchema), GenericNameValueSchema])
-      ),
-      limit: zod.optional(
-        zod.union([zod.array(GenericNameValueSchema), GenericNameValueSchema])
-      ),
+      // bonus to mental limit
+      mentallimit: zod.optional(NumberOrRatingSchema),
+
+      // add a quality (mainly temporary from drugs)
       quality: zod.optional(
         zod
           .object({
@@ -377,67 +521,82 @@ export const BonusXmlSchema = zod.union([
           })
           .strict()
       ),
+      // add a quality
       addqualities: zod.optional(
         zod
           .object({
-            addquality: zod.string(),
+            addquality: zod.union([zod.string(), zod.array(zod.string())]),
           })
           .strict()
       ),
-      initiativedice: zod.optional(zod.number()),
-      damageresistance: zod.optional(StringOrNumberSchema),
-      radiationresist: zod.optional(zod.number()),
+      // disable quality (sometimes uses the quality guid)
+      disablequality: zod.optional(StringArrayOrStringSchema),
+      // add dice for damage resistance
+      damageresistance: zod.optional(NumberOrRatingSchema),
+      // add dice for radiation resistance
+      radiationresist: zod.optional(NumberOrRatingSchema),
+      // add dice for sonic resistance
       sonicresist: zod.optional(zod.number()),
+      // bonus damage
       unarmeddv: zod.optional(StringOrNumberSchema),
+      // unarmed does physical instead of stun
       unarmeddvphysical: zod.optional(zod.string()),
-      specificattribute: zod.optional(
-        zod.union([GenericNameValueSchema, zod.array(GenericNameValueSchema)])
-      ),
-      _mode: zod.optional(zod.string()),
+      // modify the cost to improve an attribute
       attributekarmacost: zod.optional(
         zod.union([GenericNameValueSchema, zod.array(GenericNameValueSchema)])
       ),
+      // modify the cost to improve a knowledge skill
       knowledgeskillkarmacost: zod.optional(
         zod.union([GenericNameValueSchema, zod.array(GenericNameValueSchema)])
       ),
+      // modify the condition modifier track
       conditionmonitor: zod.optional(
         zod
           .object({
+            // ignore the negative effects of a number of boxes on one track
             sharedthresholdoffset: zod.optional(NumberOrRatingSchema),
+            // add boxes to physical track
             physical: zod.optional(zod.number()),
           })
           .strict()
       ),
-      memory: zod.optional(NumberOrRatingSchema),
-      mentallimit: zod.optional(NumberOrRatingSchema),
-      disablequality: zod.optional(StringArrayOrStringSchema),
+      // Swim and walk speed modifiers
       walkmultiplier: zod.optional(
         zod
           .object({
+            category: zod.union([zod.literal("Ground"), zod.literal("Swim")]),
             val: zod.optional(zod.number()),
-            category: zod.string(),
             percent: zod.optional(zod.number()),
           })
           .strict()
       ),
+      // Run speed modifier
       runmultiplier: zod.optional(
         zod
           .object({
-            val: zod.optional(zod.number()),
             category: zod.string(),
+            val: zod.optional(zod.number()),
             percent: zod.optional(zod.number()),
           })
           .strict()
       ),
+      // Sprint speed modifier
       sprintbonus: zod.optional(
         zod
           .object({
-            val: zod.optional(zod.number()),
             category: zod.string(),
+            val: zod.optional(zod.number()),
             percent: zod.optional(zod.number()),
           })
           .strict()
       ),
+      // increase to lifestyle cost
+      lifestylecost: zod.optional(zod.number()),
+      // stun condition modifier dice bonus
+      stuncmrecovery: zod.optional(NumberOrRatingSchema),
+      // physical condition modifier dice bonus
+      physicalcmrecovery: zod.optional(NumberOrRatingSchema),
+      // Armour bonus, only one from each group applies
       armor: zod.optional(
         zod.union([
           zod
@@ -449,27 +608,48 @@ export const BonusXmlSchema = zod.union([
           NumberOrRatingSchema,
         ])
       ),
-      lifestylecost: zod.optional(zod.number()),
-      stuncmrecovery: zod.optional(NumberOrRatingSchema),
-      physicalcmrecovery: zod.optional(NumberOrRatingSchema),
-      initiativepass: zod.optional(GenericNameValueSchema),
+      // Armour bonus against fire attacks/damage
       firearmor: zod.optional(zod.number()),
+      // Armour bonus against electricity attacks/damage
       electricityarmor: zod.optional(zod.number()),
+      // Armour bonus against cold attacks/damage
       coldarmor: zod.optional(zod.number()),
+      // bonus to ranged and melee defense tests
+      dodge: zod.optional(zod.number()),
+      // Unarmed reach bonus
       unarmedreach: zod.optional(zod.number()),
+
+      // Addiction Bonuses
+      // Bonus to avoid physiological addiction starting
       physiologicaladdictionfirsttime: zod.optional(NumberOrRatingSchema),
+      // Bonus to avoid psychological addiction starting
       psychologicaladdictionfirsttime: zod.optional(NumberOrRatingSchema),
+      // Bonus to avoid physiological addiction progressing
       physiologicaladdictionalreadyaddicted: zod.optional(NumberOrRatingSchema),
+      // Bonus to avoid psychological addiction progressing
       psychologicaladdictionalreadyaddicted: zod.optional(NumberOrRatingSchema),
-      adapsin: zod.optional(zod.literal("")),
+
+      // Bonuses to attribute-only tests
+      // bonus to composure tests
       composure: zod.optional(zod.number()),
+      // bonus to defense for judge intentions test
       judgeintentionsdefense: zod.optional(zod.number()),
+      // bonus to memory tests
+      memory: zod.optional(NumberOrRatingSchema),
+
+      // resist drain
       drainresist: zod.optional(zod.number()),
+      // resist fading
       fadingresist: zod.optional(zod.number()),
+      // resist direct combat mana spells (you are attacked)
       directmanaspellresist: zod.optional(zod.number()),
+      // resist detection spells (you are being detected)
       detectionspellresist: zod.optional(zod.number()),
+      // resist illusion - mana illusion spells (try to detect illusion)
       manaillusionresist: zod.optional(zod.number()),
+      // resist manipulation mental spells
       mentalmanipulationresist: zod.optional(zod.number()),
+      // Resist spell: Decrease [Attribute]
       decreasebodresist: zod.optional(zod.number()),
       decreaseagiresist: zod.optional(zod.number()),
       decreaserearesist: zod.optional(zod.number()),
@@ -478,21 +658,25 @@ export const BonusXmlSchema = zod.union([
       decreaseintresist: zod.optional(zod.number()),
       decreaselogresist: zod.optional(zod.number()),
       decreasewilresist: zod.optional(zod.number()),
-      dodge: zod.optional(zod.number()),
-      initiative: zod.optional(
-        zod.union([zod.number(), GenericNameValueSchema])
-      ),
-      reflexrecorderoptimization: zod.optional(zod.literal("")),
-      ambidextrous: zod.optional(zod.literal("")),
+      // add limb slot
       addlimb: zod.optional(
         zod
           .object({
-            limbslot: zod.string(),
+            limbslot: zod.nativeEnum(limbSlotXmlEnum),
             val: zod.number(),
             _precedence: zod.literal("0"),
           })
           .strict()
       ),
+
+      // One-off bonuses e.g. very specific to one thing
+      // Reduces future cyberware essence cost
+      adapsin: zod.optional(zod.literal("")),
+      // avoid default penalty (-1) on skills without ranks when
+      // you have reflex recorder for a skill in its group
+      reflexrecorderoptimization: zod.optional(zod.literal("")),
+      // no offhand penalty
+      ambidextrous: zod.optional(zod.literal("")),
     })
     .strict(),
   zod.literal(""),
@@ -500,28 +684,21 @@ export const BonusXmlSchema = zod.union([
 
 export type BonusXmlType = zod.infer<typeof BonusXmlSchema>;
 
-export const WirelessXmlSchema = zod.union([
-  BonusXmlSchema,
-  zod
-    .object({
-      skillcategory: SkillSchema,
-    })
-    .strict(),
-  zod.object({ specificskill: SkillSchema }).strict(),
-]);
-
 const ModXmlSchema = zod.union([
   zod.string(),
   zod
     .object({
       xmltext: zod.string(),
-      _rating: zod.optional(zod.string()),
+      // select="Driver">Searchlight
       _select: zod.optional(zod.string()),
+      _rating: zod.optional(zod.string()),
+      // used when the mod rating exceeds the item rating
       _maxrating: zod.optional(zod.string()),
       _cost: zod.optional(zod.string()),
     })
     .strict(),
 ]);
+export type ModXmlType = zod.infer<typeof ModXmlSchema>;
 
 export const ModListXmlSchema = zod
   .object({
@@ -540,16 +717,13 @@ export const ModListXmlSchema = zod
     ),
   })
   .strict();
+export type ModListXmlType = zod.infer<typeof ModListXmlSchema>;
 
-export const ModUnionXmlSchema = zod.union([
-  ModListXmlSchema,
-  zod
-    .object({
-      name: zod.optional(zod.union([zod.string(), zod.array(zod.string())])),
-      mod: zod.union([ModListXmlSchema, zod.array(ModListXmlSchema)]),
-    })
-    .strict(),
-]);
+export const ModRecursiveXmlSchema = ModListXmlSchema.extend({
+  mod: zod.optional(zod.union([ModListXmlSchema, zod.array(ModListXmlSchema)])),
+}).strict();
+
+export type ModRecursiveXmlType = zod.infer<typeof ModRecursiveXmlSchema>;
 
 const ModCategoryXmlSchema = zod
   .object({
@@ -561,3 +735,13 @@ export const ModCategoryListXmlSchema = zod.union([
   zod.array(ModCategoryXmlSchema),
   ModCategoryXmlSchema,
 ]);
+
+export const CategoryXmlListSchema = zod.array(
+  zod
+    .object({
+      _blackmarket: zod.string(),
+      xmltext: zod.string(),
+    })
+    .strict()
+);
+export type CategoryXmlListType = zod.infer<typeof CategoryXmlListSchema>;

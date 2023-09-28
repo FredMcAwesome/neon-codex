@@ -18,7 +18,7 @@ import assert from "assert";
 import { WeaponListXmlSchema } from "./WeaponParserSchemas.js";
 import { damageTypeEnum } from "@shadowrun/common";
 import { convertAllowGear } from "./WeaponParserHelper.js";
-import { convertXmlGears } from "../ParserHelper.js";
+import { convertXmlGears } from "../common/ParserHelper.js";
 import { standardCalculationEnum } from "@shadowrun/common/build/enums.js";
 import {
   getWeaponMounts,
@@ -28,8 +28,8 @@ import {
   modifyAmmoCapacitySemantics,
   ammoWeaponAccessorySemantics,
 } from "./WeaponAccessoryParserHelper.js";
-import { sourceBookXmlEnum } from "../ParserCommonDefines.js";
-import { convertSource } from "../ParserHelper.js";
+import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
+import { convertSource } from "../common/ParserHelper.js";
 import WeaponAccessories from "../../grammar/weaponAccessories.ohm-bundle.js";
 import { MatchResult } from "ohm-js";
 import type {

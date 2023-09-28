@@ -4,7 +4,7 @@ import { XMLParser } from "fast-xml-parser";
 import path from "path";
 import { fileURLToPath } from "url";
 import * as fs from "fs";
-import { sourceBookXmlEnum } from "../ParserCommonDefines.js";
+import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
 import { SpellListXmlSchema, SpellListXmlType } from "./SpellsParserSchemas.js";
 
 export function ParseSpells() {

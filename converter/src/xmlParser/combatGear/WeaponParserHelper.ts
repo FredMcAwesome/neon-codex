@@ -39,7 +39,10 @@ import {
   WeaponXmlSubtypeType,
 } from "@shadowrun/common/build/schemas/commonSchemas.js";
 import Weapons from "../../grammar/weapons.ohm-bundle.js";
-import { convertXmlGears, convertGearCategory } from "../ParserHelper.js";
+import {
+  convertXmlGears,
+  convertGearCategory,
+} from "../common/ParserHelper.js";
 const Accuracy = Weapons.Accuracy;
 const Damage = Weapons.Damage;
 const ArmourPenetration = Weapons.ArmourPenetration;

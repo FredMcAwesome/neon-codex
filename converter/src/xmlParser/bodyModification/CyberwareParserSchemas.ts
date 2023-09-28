@@ -3,11 +3,11 @@ import {
   BonusXmlSchema,
   GearXmlSchema,
   GearXmlType,
+  limbSlotXmlEnum,
   SourceXmlSchema,
   StringArrayOrStringSchema,
   StringOrNumberSchema,
-  WirelessXmlSchema,
-} from "../ParserCommonDefines.js";
+} from "../common/ParserCommonDefines.js";
 const GenericNameForcedSchema = zod
   .object({
     name: zod.string(),
@@ -15,13 +15,6 @@ const GenericNameForcedSchema = zod
     rating: zod.optional(zod.number()),
   })
   .strict();
-
-export enum limbSlotXmlEnum {
-  ARM = "arm",
-  LEG = "leg",
-  TORSO = "torso",
-  SKULL = "skull",
-}
 
 export enum mountLocationXmlEnum {
   WRIST = "wrist",
@@ -144,7 +137,7 @@ const CyberwareXmlSchema = zod
     blocksmounts: zod.optional(zod.string()),
     selectside: zod.optional(zod.literal("")),
     bonus: zod.optional(BonusXmlSchema),
-    wirelessbonus: zod.optional(WirelessXmlSchema),
+    wirelessbonus: zod.optional(BonusXmlSchema),
     wirelesspairbonus: zod.optional(BonusXmlSchema),
     wirelesspairinclude: zod.optional(
       zod

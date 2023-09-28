@@ -4,7 +4,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { z as zod } from "zod";
-import { StringOrNumberSchema } from "../ParserCommonDefines.js";
+import { StringOrNumberSchema } from "../common/ParserCommonDefines.js";
 import { mathOperatorEnum } from "@shadowrun/common";
 import Range from "../../grammar/range.ohm-bundle.js";
 import {
@@ -89,7 +89,7 @@ export function ParseRanges() {
       // console.log(convertedRange);
       throw new Error(check.error.message);
     }
-    return convertedRange;
+    return check.data;
   });
   // console.log(rangeListConverted);
   const check = RangeListSchema.safeParse(rangeListConverted);

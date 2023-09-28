@@ -10,7 +10,7 @@ import {
   SourceXmlSchema,
   StringArrayOrStringSchema,
   StringOrNumberSchema,
-} from "../ParserCommonDefines.js";
+} from "../common/ParserCommonDefines.js";
 
 const AccessoryXmlSchema = zod
   .object({

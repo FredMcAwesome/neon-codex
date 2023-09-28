@@ -16,10 +16,10 @@ So far I have only parsed:
 - WeaponAccessories
 - Weapons
 - Skills
+- Armour
 
 To match where I previously was, still need (All parsed, stored in database, then passed through to frontend):
 
-- Armour
 - ArmourAccessories
 - Bioware
 - Cyberware

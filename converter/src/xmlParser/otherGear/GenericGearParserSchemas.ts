@@ -5,7 +5,7 @@ import {
   StringArrayOrStringSchema,
   StringOrNumberSchema,
   UseGearXmlSchema,
-} from "../ParserCommonDefines.js";
+} from "../common/ParserCommonDefines.js";
 
 const GearRequiredGearDetailsPropertyStandardSchema = zod.union([
   zod

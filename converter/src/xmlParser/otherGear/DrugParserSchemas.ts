@@ -4,7 +4,7 @@ import {
   BonusXmlSchema,
   SourceXmlSchema,
   StringOrNumberSchema,
-} from "../ParserCommonDefines.js";
+} from "../common/ParserCommonDefines.js";
 
 const DrugXmlSchema = zod
   .object({

@@ -7,7 +7,7 @@ import {
   StringOrNumberSchema,
   StringArrayOrStringSchema,
   NumberOrRatingSchema,
-} from "../ParserCommonDefines.js";
+} from "../common/ParserCommonDefines.js";
 
 const AccessoryAccuracyXmlSchema = zod.number();
 export type AccessoryAccuracyXmlType = zod.infer<

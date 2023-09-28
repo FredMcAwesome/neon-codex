@@ -13,8 +13,8 @@ import {
   WeaponListXmlSchema,
   WeaponListXmlType,
 } from "./WeaponParserSchemas.js";
-import { sourceBookXmlEnum } from "../ParserCommonDefines.js";
-import { convertSource } from "../ParserHelper.js";
+import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
+import { convertSource } from "../common/ParserHelper.js";
 import assert from "assert";
 import { augmentationClassificationEnum } from "@shadowrun/common/build/enums.js";
 import { weaponXmlSubtypeEnum } from "@shadowrun/common/build/schemas/commonSchemas.js";

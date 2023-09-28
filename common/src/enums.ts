@@ -505,3 +505,16 @@ export enum armourCategoryEnum {
   FashionableArmour = "High-Fashion Armour",
   SpecialtyArmour = "Specialty Armour",
 }
+
+export enum limitCategoryEnum {
+  Physical = "Physical",
+  Mental = "Mental",
+  Social = "Social",
+}
+
+export enum limbSlotEnum {
+  Arm = "Arm",
+  Leg = "Leg",
+  Skull = "Skull",
+  Torso = "Torso",
+}

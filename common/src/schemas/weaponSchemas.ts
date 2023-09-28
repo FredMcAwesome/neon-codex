@@ -419,6 +419,7 @@ export const WeaponLinkedSchema = zod
     wireless: zod.optional(zod.string()),
     relatedSkill: zod.string(),
     relatedSkillSpecialisations: zod.optional(zod.array(zod.string())),
+    // rating is only used for a select few weapons
     rating: zod.optional(zod.number()),
     source: zod.nativeEnum(sourceBookEnum),
     page: zod.number(),

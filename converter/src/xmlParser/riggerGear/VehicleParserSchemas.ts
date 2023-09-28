@@ -1,10 +1,10 @@
 import { z as zod } from "zod";
 import {
-  ModUnionXmlSchema,
+  ModRecursiveXmlSchema,
   SourceXmlSchema,
   StringOrNumberSchema,
   UseGearXmlSchema,
-} from "../ParserCommonDefines.js";
+} from "../common/ParserCommonDefines.js";
 
 const WeaponMountXmlSchema = zod
   .object({
@@ -62,8 +62,8 @@ const VehicleXmlSchema = zod
     ),
     mods: zod.optional(
       zod.union([
-        zod.array(ModUnionXmlSchema),
-        ModUnionXmlSchema,
+        zod.array(ModRecursiveXmlSchema),
+        ModRecursiveXmlSchema,
         zod.literal(""),
       ])
     ),

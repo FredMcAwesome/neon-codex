@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { mathOperatorEnum } from "@shadowrun/common";
 import {
-  attributeTypeEnum,
   skillCategoryEnum,
   standardCalculationEnum,
 } from "@shadowrun/common/build/enums.js";
@@ -19,7 +18,8 @@ import { z as zod } from "zod";
 import {
   attributeXMLEnum,
   StringArrayOrStringSchema,
-} from "../ParserCommonDefines.js";
+} from "../common/ParserCommonDefines.js";
+import { convertAttribute } from "../common/ParserHelper.js";
 
 export type GenericXmlParsingType =
   | { option: standardCalculationEnum }
@@ -30,41 +30,7 @@ export type GenericXmlParsingType =
 export type GenericArrayXmlParsingType = Array<GenericXmlParsingType>;
 
 const convertSkill = function (xmlSkill: SkillXmlType): SkillType {
-  let attribute: attributeTypeEnum;
-  switch (xmlSkill.attribute) {
-    case "BOD":
-      attribute = attributeTypeEnum.Body;
-      break;
-    case "AGI":
-      attribute = attributeTypeEnum.Agility;
-      break;
-    case "REA":
-      attribute = attributeTypeEnum.Reaction;
-      break;
-    case "STR":
-      attribute = attributeTypeEnum.Strength;
-      break;
-    case "WIL":
-      attribute = attributeTypeEnum.Willpower;
-      break;
-    case "LOG":
-      attribute = attributeTypeEnum.Logic;
-      break;
-    case "INT":
-      attribute = attributeTypeEnum.Intuition;
-      break;
-    case "CHA":
-      attribute = attributeTypeEnum.Charisma;
-      break;
-    case "MAG":
-      attribute = attributeTypeEnum.Magic;
-      break;
-    case "RES":
-      attribute = attributeTypeEnum.Resonance;
-      break;
-    default:
-      assert(false, xmlSkill.attribute);
-  }
+  let attribute = convertAttribute(xmlSkill.attribute);
 
   return {
     // id: xmlSkill.id,

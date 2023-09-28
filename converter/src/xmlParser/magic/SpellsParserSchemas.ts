@@ -4,7 +4,7 @@ import {
   attributeXMLEnum,
   SourceXmlSchema,
   StringArrayOrStringSchema,
-} from "../ParserCommonDefines.js";
+} from "../common/ParserCommonDefines.js";
 
 const SpiritSchema = zod
   .object({

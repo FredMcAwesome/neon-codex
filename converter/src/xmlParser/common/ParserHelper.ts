@@ -1,10 +1,22 @@
 import {
+  attributeTypeEnum,
   gearCategoryEnum,
   sourceBookEnum,
 } from "@shadowrun/common/build/enums.js";
-import { useGearType } from "@shadowrun/common/src/schemas/weaponSchemas.js";
+import type { UseGearListType } from "@shadowrun/common/build/schemas/weaponSchemas.js";
+import { ModListType } from "@shadowrun/common/src/schemas/shared/modSchemas.js";
 import assert from "assert";
-import { GearXmlType, sourceBookXmlEnum } from "./ParserCommonDefines.js";
+import {
+  attributeXMLEnum,
+  CategoryXmlListType,
+} from "./ParserCommonDefines.js";
+import type {
+  GearXmlType,
+  ModListXmlType,
+  ModRecursiveXmlType,
+  ModXmlType,
+} from "./ParserCommonDefines.js";
+import { sourceBookXmlEnum } from "./ParserCommonDefines.js";
 
 export const convertSource = function (source: sourceBookXmlEnum | 2050) {
   const xmlSource = source === 2050 ? sourceBookXmlEnum.Shadowrun2050 : source;
@@ -265,7 +277,7 @@ export const convertGearCategory = function (
 export function convertXmlGears(
   gears: GearXmlType,
   name: string
-): Array<useGearType> {
+): UseGearListType {
   const xmlUseGear = Array.isArray(gears.usegear)
     ? gears.usegear
     : [gears.usegear];
@@ -294,3 +306,130 @@ export function convertXmlGears(
     };
   });
 }
+export function convertAttribute(attribute: attributeXMLEnum) {
+  switch (attribute) {
+    case attributeXMLEnum.BOD:
+      return attributeTypeEnum.Body;
+      break;
+    case attributeXMLEnum.AGI:
+      return attributeTypeEnum.Agility;
+      break;
+    case attributeXMLEnum.REA:
+      return attributeTypeEnum.Reaction;
+      break;
+    case attributeXMLEnum.STR:
+      return attributeTypeEnum.Strength;
+      break;
+    case attributeXMLEnum.WIL:
+      return attributeTypeEnum.Willpower;
+      break;
+    case attributeXMLEnum.LOG:
+      return attributeTypeEnum.Logic;
+      break;
+    case attributeXMLEnum.INT:
+      return attributeTypeEnum.Intuition;
+      break;
+    case attributeXMLEnum.CHA:
+      return attributeTypeEnum.Charisma;
+      break;
+    case attributeXMLEnum.MAG:
+      return attributeTypeEnum.Magic;
+      break;
+    case attributeXMLEnum.RES:
+      return attributeTypeEnum.Resonance;
+      break;
+    case attributeXMLEnum.EDG:
+      return attributeTypeEnum.Edge;
+      break;
+    default:
+      assert(false, attribute);
+  }
+}
+
+export const convertXmlModList = function (
+  modList: ModRecursiveXmlType
+): ModListType | undefined {
+  const mods: ModListType = [];
+  if ("mod" in modList && modList.mod !== undefined) {
+    const nameList = Array.isArray(modList.mod) ? modList.mod : [modList.mod];
+    nameList.forEach((name) => {
+      mods.concat(convertXmlModObject(name));
+    });
+  }
+  mods.concat(convertXmlModObject(modList));
+  if (mods.length === 0) {
+    return undefined;
+  }
+  return mods;
+};
+
+const convertXmlModObject = function (modList: ModListXmlType): ModListType {
+  const mods: ModListType = [];
+  if (Array.isArray(modList.name)) {
+    // related to a specific mod, doesn't make sense for array
+    assert(modList.subsystems === undefined);
+    modList.name.forEach((name) => {
+      const mod = convertXmlModInner(name, undefined);
+      mods.concat(mod);
+    });
+  } else {
+    let subsystem;
+    if (modList.subsystems !== undefined) {
+      // technically this could also be bioware but no examples yet
+      assert("cyberware" in modList.subsystems);
+      subsystem = modList.subsystems.cyberware.name;
+    }
+    const mod = convertXmlModInner(modList.name, subsystem);
+    mods.concat(mod);
+  }
+
+  if (modList.addslots !== undefined) {
+    mods.concat({ additionalSlots: modList.addslots });
+  }
+  return mods;
+};
+
+const convertXmlModInner = function (
+  mod: ModXmlType,
+  subsystem: string | undefined
+) {
+  if (typeof mod === "string") {
+    return { name: mod };
+  }
+
+  let rating, cost;
+  if (mod._rating !== undefined) {
+    rating = Number(mod._rating);
+    assert(!isNaN(rating));
+  }
+  if (mod._cost !== undefined) {
+    cost = Number(mod._cost);
+    assert(!isNaN(cost));
+  }
+
+  return {
+    name: mod.xmltext,
+    ...(mod._select !== undefined && { specificOption: mod._select }),
+    ...(rating !== undefined && { rating: rating }),
+    ...(cost !== undefined && { cost: cost }),
+    ...(subsystem !== undefined && { addCyberware: subsystem }),
+  };
+};
+
+export const convertXmlCategory = function (
+  category: string,
+  categoryList: CategoryXmlListType
+) {
+  const categoryInformation = categoryList.find((categoryObject) => {
+    return categoryObject.xmltext === category;
+  });
+  console.log(categoryList);
+  assert(
+    categoryInformation !== undefined,
+    `Category: ${category} is undefined`
+  );
+  return {
+    blackMarketCategories: categoryInformation._blackmarket.split(","),
+    category: categoryInformation.xmltext,
+  };
+};
