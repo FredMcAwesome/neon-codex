@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "compile": "tsc -b",
-    "clean": "tsc --build --clean"
+    "clean": "tsc --build --clean && rm -r build/"
   },
   "dependencies": {
     "zod": "^3.19.0"

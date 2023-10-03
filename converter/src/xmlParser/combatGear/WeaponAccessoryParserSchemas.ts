@@ -207,7 +207,8 @@ const WeaponAccessoryXmlSchema = zod
     ammoreplace: zod.optional(StringOrNumberSchema),
     mount: zod.optional(zod.union([zod.string(), zod.literal("")])),
     extramount: zod.optional(zod.string()),
-    hide: zod.optional(zod.literal("")), // unused again?
+    // this item is not selectable i.e. only used when weapon includes it
+    hide: zod.optional(zod.literal("")),
     rangemodifier: zod.optional(zod.number()),
     addunderbarrels: zod.optional(
       // redundant information

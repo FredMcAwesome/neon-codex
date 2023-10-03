@@ -46,7 +46,6 @@ export {
   blastTypeEnum,
   explosiveTypeEnum,
   weaponAccessoryTypeEnum,
-  armourAccessoryTypeEnum,
   matrixWareTypeEnum,
   matrixWareAccessoryTypeEnum,
   otherWareTypeEnum,

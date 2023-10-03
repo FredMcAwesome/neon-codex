@@ -119,6 +119,16 @@ export const convertTypeInformation = function (
 
 const accuracySemantics = Accuracy.createSemantics();
 accuracySemantics.addOperation("eval", {
+  AddSub_add(str, _, range) {
+    return str
+      .eval()
+      .concat([{ operator: mathOperatorEnum.Add }], range.eval());
+  },
+  AddSub_subtract(str, _, range) {
+    return str
+      .eval()
+      .concat([{ operator: mathOperatorEnum.Subtract }], range.eval());
+  },
   MulDiv_multiply(str, _, range) {
     return [
       {
@@ -136,16 +146,6 @@ accuracySemantics.addOperation("eval", {
           .concat([{ operator: mathOperatorEnum.Divide }], range.eval()),
       },
     ];
-  },
-  AddSub_add(str, _, range) {
-    return str
-      .eval()
-      .concat([{ operator: mathOperatorEnum.Add }], range.eval());
-  },
-  AddSub_subtract(str, _, range) {
-    return str
-      .eval()
-      .concat([{ operator: mathOperatorEnum.Subtract }], range.eval());
   },
   AccuracyValue(str) {
     return [str.eval()];
@@ -248,11 +248,13 @@ damageSemantics.addOperation("eval", {
     ];
   },
   SubCalculation_numberCalc(_a, damage1, _b, damage2, _c) {
-    return {
-      subnumbers: damage1
-        .eval()
-        .concat([{ operator: mathOperatorEnum.GreaterThan }], damage2.eval()),
-    };
+    return [
+      {
+        subnumbers: damage1
+          .eval()
+          .concat([{ operator: mathOperatorEnum.GreaterThan }], damage2.eval()),
+      },
+    ];
   },
   // TODO: is this array check needed anymore with subnumbers implemented?
   SubCalculation_parenthesis(_a, damage, _b) {
@@ -369,17 +371,26 @@ armourPenetrationSemantics.addOperation("eval", {
     ];
   },
   NegativeAP_negative(_, ap) {
-    return {
-      subnumbers: [-1, { operator: mathOperatorEnum.Multiply }, ap.eval()],
-    };
+    return [
+      {
+        subnumbers: [-1, { operator: mathOperatorEnum.Multiply }].concat(
+          ap.eval()
+        ),
+      },
+    ];
   },
   NegativeAP(ap) {
-    return [ap.eval()];
+    return ap.eval();
   },
   SubCalculation_parenthesis(_a, ap, _b) {
-    return {
-      subnumbers: ap.eval(),
-    };
+    return [
+      {
+        subnumbers: ap.eval(),
+      },
+    ];
+  },
+  APValue(ap) {
+    return [ap.eval()];
   },
   Nil(_) {
     return 0;

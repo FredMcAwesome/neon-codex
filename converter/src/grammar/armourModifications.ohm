@@ -1,0 +1,77 @@
+Availability {
+  Exp = Availability
+    | "+" Availability -- addition
+    | "FixedValues(" Inner ")" -- fixed
+  Inner = Inner "," Availability -- list
+    | Availability -- available
+  Availability = AddSub Restriction -- full
+    | AddSub -- partial  
+  AddSub = AddSub "+" MulDiv -- add
+    | AddSub "-" MulDiv -- subtract
+    | MulDiv -- base
+  MulDiv = MulDiv "*" AvailabilityValue -- multiply
+    | MulDiv "/" AvailabilityValue -- divide
+    | AvailabilityValue
+  AvailabilityValue = Number
+    | Rating
+  Rating = "{Rating}" | "Rating"
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+  Restriction = Restricted
+    | Forbidden
+  Restricted = "R"
+  Forbidden = "F"
+}
+
+Cost {
+  Exp = Cost
+    | "FixedValues(" Inner ")" -- fixed
+  Inner = Inner "," Cost -- list
+    | Cost
+  Cost = AddSub
+  AddSub = AddSub "+" MulDiv -- add
+    | AddSub "-" MulDiv -- subtract
+    | MulDiv -- base
+  MulDiv = MulDiv "*" CostValue -- multiply
+    | MulDiv "/" CostValue -- divide
+    | CostValue
+  CostValue = Number
+    | Rating
+    | Armour
+  Rating = "{Rating}" | "Rating"
+  Armour = "Armor Cost"
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+}
+
+Capacity {
+  Exp = CapacityArray
+    | "FixedValues(" Inner ")" -- fixed
+  Inner = Inner "," CapacityArray -- list
+    | CapacityArray
+  CapacityArray = "[" AddSub "]"
+  AddSub = AddSub "+" MulDiv -- add
+    | AddSub "-" MulDiv -- subtract
+    | MulDiv -- base
+  MulDiv = MulDiv "*" SubCalculation -- multiply
+  // mod is used instead of '/' in the xml for some reason
+    | MulDiv "mod" SubCalculation -- divide
+    | SubCalculation  
+  SubCalculation = "-(" AddSub ")" -- negativeParenthesis
+    | "(" AddSub ")" -- parenthesis
+    | "number(" AddSub "=" AddSub ")" -- numberCalc
+    | CapacityValue
+  CapacityValue = Number
+    | Rating
+    | Capacity
+  Rating = "{Rating}" | "Rating"
+  Capacity = "Capacity"
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+}

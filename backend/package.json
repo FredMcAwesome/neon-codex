@@ -8,7 +8,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=production node .",
     "watch": "tsc-watch -b",
-    "clean": "tsc --build --clean",
+    "clean": "tsc --build --clean  && rm -r build/",
     "build": "tsc --build",
     "prestart": "npm run build",
     "dev": "tsc-watch -b --onSuccess 'cross-env NODE_ENV=development node .'",

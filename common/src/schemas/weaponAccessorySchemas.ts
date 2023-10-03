@@ -174,6 +174,7 @@ export const WeaponAccessorySummarySchema = zod
     hostWeaponRestrictions: zod.optional(AccessoryWeaponRequirementsSchema),
     rangePenaltyDecrease: zod.optional(zod.number()),
     concealabilityModification: zod.optional(ConcealabilityModificationSchema),
+    userSelectable: zod.optional(zod.literal(false)),
   })
   .strict();
 export type WeaponAccessorySummaryType = zod.infer<

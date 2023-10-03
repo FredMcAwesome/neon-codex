@@ -285,6 +285,7 @@ export const BonusXmlSchema = zod.union([
           zod.literal(""),
         ])
       ),
+      selectarmor: zod.optional(zod.literal("")),
       // Choose a skill to link to
       selectskill: zod.optional(
         zod
@@ -609,11 +610,11 @@ export const BonusXmlSchema = zod.union([
         ])
       ),
       // Armour bonus against fire attacks/damage
-      firearmor: zod.optional(zod.number()),
+      firearmor: zod.optional(NumberOrRatingSchema),
       // Armour bonus against electricity attacks/damage
-      electricityarmor: zod.optional(zod.number()),
+      electricityarmor: zod.optional(NumberOrRatingSchema),
       // Armour bonus against cold attacks/damage
-      coldarmor: zod.optional(zod.number()),
+      coldarmor: zod.optional(NumberOrRatingSchema),
       // bonus to ranged and melee defense tests
       dodge: zod.optional(zod.number()),
       // Unarmed reach bonus

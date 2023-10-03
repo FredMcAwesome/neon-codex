@@ -85,13 +85,13 @@ async function getWeapons() {
         accuracy: weapon.accuracy,
         damage: weapon.damage,
         armourPenetration: weapon.armourPenetration,
-        ...(weapon.ammunition &&
+        ...(weapon.ammunition !== undefined &&
           weapon.ammunition.length > 0 && { ammunition: weapon.ammunition }),
         availability: weapon.availability,
         cost: weapon.cost,
-        ...(weapon.allowedGear &&
+        ...(weapon.allowedGear !== undefined &&
           weapon.allowedGear.length > 0 && { allowedGear: weapon.allowedGear }),
-        ...(weapon.accessories &&
+        ...(weapon.accessories !== undefined &&
           weapon.accessories.length > 0 && {
             accessories: await Promise.all(
               accessories.map(async (accessory) => {
@@ -105,9 +105,9 @@ async function getWeapons() {
         isCyberware: weapon.cyberware,
         augmentationType: weapon.augmentationCategory,
         description: weapon.description,
-        ...(weapon.wireless && { wireless: weapon.wireless }),
+        ...(weapon.wireless !== undefined && { wireless: weapon.wireless }),
         relatedSkill: skill.name,
-        ...(weapon.relatedSkillSpecialisations &&
+        ...(weapon.relatedSkillSpecialisations !== undefined &&
           weapon.relatedSkillSpecialisations.length > 0 && {
             relatedSkillSpecialisations: weapon.relatedSkillSpecialisations,
           }),
@@ -155,36 +155,36 @@ async function getTypeInformation(weapon: Weapons) {
       firearmOptions: {
         mode: firearmWeapon.mode,
         recoilCompensation: firearmWeapon.recoilCompensation,
-        ...(firearmWeapon.ammoCategory && {
+        ...(firearmWeapon.ammoCategory !== undefined && {
           ammoCategory: firearmWeapon.ammoCategory,
         }),
         ammoSlots: firearmWeapon.ammoSlots,
         ...((firearmWeapon.weaponRequirements ||
           firearmWeapon.hostWeaponMountsRequired) && {
           hostWeaponRequirements: {
-            ...(firearmWeapon.weaponRequirements && {
+            ...(firearmWeapon.weaponRequirements !== undefined && {
               weaponRequirements: firearmWeapon.weaponRequirements,
             }),
-            ...(firearmWeapon.hostWeaponMountsRequired &&
+            ...(firearmWeapon.hostWeaponMountsRequired !== undefined &&
               firearmWeapon.hostWeaponMountsRequired.length > 0 && {
                 hostWeaponMountsRequired:
                   firearmWeapon.hostWeaponMountsRequired,
               }),
           },
         }),
-        ...(firearmWeapon.underbarrelWeapons &&
+        ...(firearmWeapon.underbarrelWeapons !== undefined &&
           firearmWeapon.underbarrelWeapons.length > 0 && {
             underbarrelWeapons: firearmWeapon.underbarrelWeapons,
           }),
-        ...(firearmWeapon.addWeapons &&
+        ...(firearmWeapon.addWeapons !== undefined &&
           firearmWeapon.addWeapons.length > 0 && {
             addWeapons: firearmWeapon.addWeapons,
           }),
-        ...(firearmWeapon.accessoryMounts &&
+        ...(firearmWeapon.accessoryMounts !== undefined &&
           firearmWeapon.accessoryMounts.length > 0 && {
             accessoryMounts: firearmWeapon.accessoryMounts,
           }),
-        ...(firearmWeapon.doubleCostAccessoryMounts &&
+        ...(firearmWeapon.doubleCostAccessoryMounts !== undefined &&
           firearmWeapon.doubleCostAccessoryMounts.length > 0 && {
             doubleCostAccessoryMounts: firearmWeapon.doubleCostAccessoryMounts,
           }),

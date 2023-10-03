@@ -92,6 +92,7 @@ export const BonusSchema = zod
       })
     ),
     linkWeapon: zod.optional(zod.boolean()),
+    linkArmour: zod.optional(zod.boolean()),
     linkSkill: zod.optional(zod.boolean()),
     linkPower: zod.optional(zod.boolean()),
     linkTradition: zod.optional(zod.boolean()),

@@ -4,7 +4,7 @@ import type { CostWeaponAccessoryType } from "@shadowrun/common/build/schemas/we
 import type { CostAmmunitionType } from "@shadowrun/common/build/schemas/ammunitionSchemas.js";
 import type {
   CostArmourType,
-  CostArmourAccessoryType,
+  CostArmourModType,
 } from "@shadowrun/common/build/schemas/armourSchemas.js";
 import type { CostAugmentationType } from "@shadowrun/common/build/schemas/augmentationSchemas.js";
 import type { CostElectronicType } from "@shadowrun/common/build/schemas/electronicSchemas.js";
@@ -78,7 +78,7 @@ export const costCalculation = function <
   CostType extends
     | CostAmmunitionType
     | CostArmourType
-    | CostArmourAccessoryType
+    | CostArmourModType
     | CostAugmentationType
     | CostElectronicType
     | CostMagicalType

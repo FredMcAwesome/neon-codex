@@ -12,15 +12,15 @@ npx ts-node-esm src/xmlParser/parsers/riggerGear/VehicleParser.ts
 
 So far I have only parsed:
 
-- Ranges
-- WeaponAccessories
-- Weapons
-- Skills
+- Ranges (DB)
+- Weapons (DB)
+- WeaponAccessories (DB)
+- Skills (DB)
 - Armour
+- ArmourAccessories
 
 To match where I previously was, still need (All parsed, stored in database, then passed through to frontend):
 
-- ArmourAccessories
 - Bioware
 - Cyberware
 - Vehicles

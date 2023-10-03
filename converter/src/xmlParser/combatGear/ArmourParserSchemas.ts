@@ -8,6 +8,7 @@ import {
   SourceXmlSchema,
   StringOrNumberSchema,
 } from "../common/ParserCommonDefines.js";
+import { armourModXmlCategoryEnum } from "./ArmourModParserSchemas.js";
 
 export enum armourXmlCategoryEnum {
   Armor = "Armor",
@@ -33,11 +34,8 @@ const ArmourXmlSchema = zod
     bonus: zod.optional(BonusXmlSchema),
     wirelessbonus: zod.optional(BonusXmlSchema),
     mods: zod.optional(ModListXmlSchema),
-    // add category to any mods this weapon uses
-    // needed for "black market pipelines" quality
-    // however, I think this is just redundant as mods have
-    // a category anyway which will always include armour...
-    addmodcategory: zod.optional(zod.string()),
+    // allow mods outside general category
+    addmodcategory: zod.optional(zod.nativeEnum(armourModXmlCategoryEnum)),
     selectmodsfromcategory: zod.optional(ModCategoryListXmlSchema),
     source: zod.union([SourceXmlSchema, zod.literal(2050)]),
     page: zod.number(),

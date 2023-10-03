@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "compile": "tsc -b",
-    "clean": "tsc --build --clean"
+    "clean": "tsc --build --clean && rm -r build/"
   },
   "keywords": [],
   "author": "",

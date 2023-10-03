@@ -10,7 +10,7 @@
     "move_generated": "cp src/grammar/*.js build/grammar/ && cp src/grammar/*.d.ts build/grammar/",
     "build_generated": "mkdir -p build/grammar && npm run generate && npm run move_generated",
     "build": "tsc --build",
-    "clean": "tsc --build --clean",
+    "clean": "tsc --build --clean && rm -r build/",
     "prestart": "npm run build_generated && npm run build",
     "start": "node ."
   },

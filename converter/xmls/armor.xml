@@ -48,7 +48,6 @@
     <category blackmarket="Armor">Specialty Armor</category>
   </categories>
   <modcategories>
-    <category blackmarket="Armor">Customized Ballistic Mask</category>
     <category blackmarket="Armor">Full Body Armor Mods</category>
     <category blackmarket="Armor,Electronics,Magic,Software">General</category>
     <category blackmarket="Armor">Globetrotter Clothing Liners</category>
@@ -1615,7 +1614,6 @@
           <condition>LimitCondition_IntimidationVisible</condition>
         </limitmodifier>
       </bonus>
-      <addmodcategory>Ballistic Mask</addmodcategory>
       <source>RG</source>
       <page>74</page>
     </armor>
@@ -1634,7 +1632,6 @@
           <condition>LimitCondition_IntimidationVisible</condition>
         </limitmodifier>
       </bonus>
-      <addmodcategory>Ballistic Mask</addmodcategory>
       <source>RG</source>
       <page>74</page>
     </armor>
@@ -2744,7 +2741,7 @@
       <avail>14R</avail>
       <cost>1800</cost>
       <source>CA</source>
-      <page>136</page>
+      <page>137</page>
     </armor>
     <armor>
       <id>c9424dfb-1e01-4073-995a-7935efc1894d</id>
@@ -2755,7 +2752,7 @@
       <avail>6</avail>
       <cost>900</cost>
       <source>CA</source>
-      <page>136</page>
+      <page>137</page>
     </armor>
     <armor>
       <id>f22a86ba-e660-4c32-a998-d04def23d287</id>
@@ -3428,7 +3425,7 @@
     <mod>
       <id>142031f9-ab13-4dd0-a5a4-2cc4d06055ea</id>
       <name>(Synth)Leather</name>
-      <category>Clothing</category>
+      <category>General</category>
       <armor>4</armor>
       <maxrating>1</maxrating>
       <armorcapacity>[0]</armorcapacity>
@@ -3861,6 +3858,7 @@
       <name>Illuminating</name>
       <category>General</category>
       <armor>0</armor>
+      <hide />
       <maxrating>0</maxrating>
       <armorcapacity>[0]</armorcapacity>
       <avail>0</avail>
@@ -3977,18 +3975,6 @@
       <page>62</page>
     </mod>
     <mod>
-      <id>8b1bc34c-4de9-4111-a5f6-bae7fa35b8af</id>
-      <name>Ballistic Mask</name>
-      <category>Customized Ballistic Mask</category>
-      <armor>0</armor>
-      <maxrating>1</maxrating>
-      <armorcapacity>[0]</armorcapacity>
-      <avail>0</avail>
-      <cost>150</cost>
-      <source>RG</source>
-      <page>62</page>
-    </mod>
-    <mod>
       <id>5a0965bd-759c-4e41-8c47-2b87c9de06d6</id>
       <name>Auto-Injector</name>
       <category>General</category>
@@ -4026,7 +4012,7 @@
       <name>Pulse Weave</name>
       <category>General</category>
       <armor>0</armor>
-      <maxrating>6</maxrating>
+      <maxrating>1</maxrating>
       <armorcapacity>[3]</armorcapacity>
       <avail>+8R</avail>
       <cost>Rating * 3000</cost>
@@ -4253,6 +4239,7 @@
       <name>Parachute (Urban Explorer Daedalus)</name>
       <category>General</category>
       <hide />
+      <armor>0</armor>
       <maxrating>0</maxrating>
       <armorcapacity>[0]</armorcapacity>
       <avail>8</avail>
@@ -4284,6 +4271,7 @@
       <category>General</category>
       <armor>0</armor>
       <maxrating>1</maxrating>
+      <armorcapacity>[0]</armorcapacity>
       <avail>4</avail>
       <cost>0</cost>
       <source>KC</source>

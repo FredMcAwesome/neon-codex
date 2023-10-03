@@ -71,9 +71,11 @@ modifyAmmoCapacitySemantics.addOperation("eval", {
       .concat([{ operator: mathOperatorEnum.Divide }], range.eval());
   },
   SubCalculation_parenthesis(_a, damage, _b) {
-    return {
-      subnumbers: damage.eval(),
-    };
+    return [
+      {
+        subnumbers: damage.eval(),
+      },
+    ];
   },
   ModifyValue(value) {
     return [value.eval()];
@@ -452,7 +454,7 @@ export const convertWeaponDetails = function (
       ? damageTypeEnum.Stun
       : damageTypeEnum.Physical;
     requiredDamage = {
-      ...(annotation && { annotation: annotation }),
+      ...(annotation !== undefined && { annotation: annotation }),
       type: damageType,
     };
   }
@@ -467,7 +469,7 @@ export const convertWeaponDetails = function (
       accessoryMounts: requiredAccessoryMountsArray,
     }),
     ...(requiredDamage !== undefined && { requiredDamage: requiredDamage }),
-    ...(minimumHostConcealment && {
+    ...(minimumHostConcealment !== undefined && {
       minimumHostConcealment: minimumHostConcealment,
     }),
     ...(maximumHostConcealment !== undefined && {

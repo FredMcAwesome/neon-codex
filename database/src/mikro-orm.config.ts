@@ -30,10 +30,7 @@ import {
   GrenadesTorpedoes,
   RocketsMissiles,
 } from "./models/gear/combatGear/ammunitionModel.js";
-import {
-  ArmourAccessories,
-  ArmourModifications,
-} from "./models/gear/combatGear/armourAccessoryModel.js";
+import { ArmourModifications } from "./models/gear/combatGear/armourModificationModel.js";
 import { Armours } from "./models/gear/combatGear/armourModel.js";
 import { WeaponRanges } from "./models/gear/combatGear/helperTables/weaponRangeModel.js";
 import { WeaponAccessories } from "./models/gear/combatGear/weaponAccessoryModel.js";
@@ -126,7 +123,6 @@ const dbOptions: Options<PostgreSqlDriver> = {
     WeaponRangeLinks,
 
     Armours,
-    ArmourAccessories,
     ArmourModifications,
     MatrixWares,
     Commlinks,

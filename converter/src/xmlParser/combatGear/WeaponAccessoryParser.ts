@@ -187,6 +187,9 @@ export function ParseWeaponAccessories() {
       hostWeaponMountsRequired: mountLocationsOnHostWeapon,
       hostWeaponRequirements: required,
       hostWeaponRestrictions: forbidden,
+      ...(weaponAccessory.hide !== undefined && {
+        userSelectable: false as const,
+      }),
       rangePenaltyDecrease: weaponAccessory.rangemodifier,
       concealabilityModification: conceal,
     };

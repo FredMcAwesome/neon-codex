@@ -203,12 +203,22 @@ export enum availabilityEnum {
   Rating = "Rating",
 }
 
+export enum capcityArmourModEnum {
+  Rating = "Rating",
+  Capacity = "Capacity",
+}
+
 export enum costAmmunitionEnum {
   Rating = "Rating",
 }
 
 export enum costArmourEnum {
   Rating = "Rating",
+}
+
+export enum costArmourModEnum {
+  Rating = "Rating",
+  Armour = "Armour",
 }
 
 export enum costAugmentationEnum {
@@ -324,16 +334,12 @@ export enum mathOperatorEnum {
   Divide = "/",
   Multiply = "*",
   GreaterThan = ">=",
+  Equals = "==",
 }
 
 export enum weaponAccessoryTypeEnum {
   Standard = "Standard",
   Firearm = "Firearm",
-}
-
-export enum armourAccessoryTypeEnum {
-  Standard = "Standard",
-  Modification = "Modification",
 }
 
 export enum matrixWareTypeEnum {
@@ -504,6 +510,18 @@ export enum armourCategoryEnum {
   Cloaks = "Cloaks",
   FashionableArmour = "High-Fashion Armour",
   SpecialtyArmour = "Specialty Armour",
+}
+
+export enum armourModCategoryEnum {
+  FullBodyArmourMods = "Full Body Armour Mods",
+  General = "General",
+  GlobetrotterClothingLiners = "Globetrotter Clothing Liners",
+  GlobetrotterJacketLiners = "Globetrotter Jacket Liners",
+  GlobetrotterVestLiners = "Globetrotter Vest Liners",
+  NightshadeIR = "Nightshade IR",
+  RapidTransitDetailing = "Rapid Transit Detailing",
+  UrbanExplorerJumpsuitAccessories = "Urban Explorer Jumpsuit Accessories",
+  VictoryLiners = "Victory Liners",
 }
 
 export enum limitCategoryEnum {

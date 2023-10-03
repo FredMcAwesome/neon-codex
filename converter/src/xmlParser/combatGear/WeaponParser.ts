@@ -172,7 +172,7 @@ export function ParseWeapons() {
       const check = WeaponUnlinkedSummarySchema.safeParse(convertedWeapon);
       if (!check.success) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        // console.log(convertedWeapon);
+        console.log(convertedWeapon.armourPenetration[0][0]);
         throw new Error(check.error.message);
       }
       return convertedWeapon;
@@ -335,15 +335,17 @@ function convertWeapon(weapon: WeaponXmlType) {
   const firearmOptions: FirearmOptionsType = {
     mode: mode,
     recoilCompensation: recoilCompensation,
-    ...(weapon.ammocategory && { ammoCategory: weapon.ammocategory }),
+    ...(weapon.ammocategory !== undefined && {
+      ammoCategory: weapon.ammocategory,
+    }),
     ammoSlots: weapon.ammoslots || 1,
-    ...(hostWeaponRequirements && {
+    ...(hostWeaponRequirements !== undefined && {
       hostWeaponRequirements: hostWeaponRequirements,
     }),
-    ...(underbarrels && { underbarrelWeapons: underbarrels }),
-    ...(addWeapons && { addWeapons: addWeapons }),
-    ...(accessoryMounts && { accessoryMounts: accessoryMounts }),
-    ...(doubleCostAccessoryMounts && {
+    ...(underbarrels !== undefined && { underbarrelWeapons: underbarrels }),
+    ...(addWeapons !== undefined && { addWeapons: addWeapons }),
+    ...(accessoryMounts !== undefined && { accessoryMounts: accessoryMounts }),
+    ...(doubleCostAccessoryMounts !== undefined && {
       doubleCostAccessoryMounts: doubleCostAccessoryMounts,
     }),
   };
@@ -365,17 +367,19 @@ function convertWeapon(weapon: WeaponXmlType) {
     accuracy: accuracy,
     damage: damage,
     armourPenetration: armourPenetration,
-    ...(ammo && { ammunition: ammo }),
+    ...(ammo !== undefined && { ammunition: ammo }),
     availability: availability,
     cost: cost,
-    ...(allowGear && { allowedGear: allowGear }),
-    ...(accessories && { accessories: accessories }),
+    ...(allowGear !== undefined && { allowedGear: allowGear }),
+    ...(accessories !== undefined && { accessories: accessories }),
     allowAccessories: weapon.allowaccessory !== "False",
     isCyberware: weapon.cyberware === "True",
-    // hide: weapon.hide === "", // I don't understand what hide means...
+    ...(weapon.hide !== undefined && { userSelectable: false as const }),
     augmentationType: augmentationType,
     relatedSkill: skill,
-    ...(specialisations && { relatedSkillSpecialisations: specialisations }),
+    ...(specialisations !== undefined && {
+      relatedSkillSpecialisations: specialisations,
+    }),
     source: source,
     page: weapon.page,
   };

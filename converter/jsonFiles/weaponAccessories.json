@@ -344,7 +344,8 @@
       "weaponNames": ["PSK-3 Collapsible Heavy Pistol"],
       "ammunitionDetails": ["Cylinder", "Shotguns"],
       "categories": ["Shotguns"]
-    }
+    },
+    "userSelectable": false
   },
   {
     "name": "External Clip Port",
@@ -359,7 +360,8 @@
     "cost": [1000],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 458,
-    "specialModification": false
+    "specialModification": false,
+    "userSelectable": false
   },
   {
     "name": "Smart Firing Platform",
@@ -867,7 +869,9 @@
     "page": 50,
     "specialModification": false,
     "hostWeaponMountsRequired": [["Top", "Under"]],
-    "hostWeaponRequirements": {}
+    "hostWeaponRequirements": {
+      "minimumHostConcealment": 0
+    }
   },
   {
     "name": "Concealed Quick-Draw Holster",
@@ -1003,7 +1007,8 @@
     "source": "Run And Gun",
     "page": 51,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Stock"]]
+    "hostWeaponMountsRequired": [["Stock"]],
+    "userSelectable": false
   },
   {
     "name": "Foregrip",
@@ -1347,7 +1352,10 @@
     "page": 53,
     "specialModification": false,
     "hostWeaponMountsRequired": [["Under"]],
-    "hostWeaponRequirements": {}
+    "hostWeaponRequirements": {
+      "minimumHostConcealment": 0
+    },
+    "userSelectable": false
   },
   {
     "name": "Underbarrel Chainsaw",
@@ -1364,7 +1372,9 @@
     "page": 53,
     "specialModification": false,
     "hostWeaponMountsRequired": [["Under"]],
-    "hostWeaponRequirements": {}
+    "hostWeaponRequirements": {
+      "minimumHostConcealment": 0
+    }
   },
   {
     "name": "Underbarrel Flamethrower",
@@ -1381,7 +1391,9 @@
     "page": 53,
     "specialModification": false,
     "hostWeaponMountsRequired": [["Under"]],
-    "hostWeaponRequirements": {}
+    "hostWeaponRequirements": {
+      "minimumHostConcealment": 0
+    }
   },
   {
     "name": "Underbarrel Grapple Gun",
@@ -1398,7 +1410,10 @@
     "page": 53,
     "specialModification": false,
     "hostWeaponMountsRequired": [["Under"]],
-    "hostWeaponRequirements": {}
+    "hostWeaponRequirements": {
+      "minimumHostConcealment": 0
+    },
+    "userSelectable": false
   },
   {
     "name": "Underbarrel Grenade Launcher",
@@ -1415,7 +1430,10 @@
     "page": 53,
     "specialModification": false,
     "hostWeaponMountsRequired": [["Under"]],
-    "hostWeaponRequirements": {}
+    "hostWeaponRequirements": {
+      "minimumHostConcealment": 0
+    },
+    "userSelectable": false
   },
   {
     "name": "Underbarrel Weight",
@@ -1852,7 +1870,8 @@
     "hostWeaponRequirements": {
       "categories": ["Assault Rifles", "Sniper Rifles", "Sporting Rifles"],
       "skills": ["Longarms"]
-    }
+    },
+    "userSelectable": false
   },
   {
     "name": "Underbarrel Laser",
@@ -1871,7 +1890,8 @@
     "hostWeaponMountsRequired": [
       ["Under", "Side"],
       ["Under", "Side"]
-    ]
+    ],
+    "userSelectable": false
   },
   {
     "name": "Underbarrel Shotgun",
@@ -1891,7 +1911,8 @@
     "hostWeaponRequirements": {
       "categories": ["Assault Rifles", "Sniper Rifles", "Sporting Rifles"],
       "skills": ["Longarms", "Heavy Weapons"]
-    }
+    },
+    "userSelectable": false
   },
   {
     "name": "Overclocked",
@@ -2003,7 +2024,9 @@
     "page": 182,
     "specialModification": false,
     "hostWeaponMountsRequired": [["Stock"]],
-    "hostWeaponRequirements": {},
+    "hostWeaponRequirements": {
+      "minimumHostConcealment": 0
+    },
     "hostWeaponRestrictions": {
       "accessories": [
         "Sawed Off/Shortbarrel",
@@ -2158,7 +2181,8 @@
         "category": "Survival Gear"
       }
     ],
-    "specialModification": false
+    "specialModification": false,
+    "userSelectable": false
   },
   {
     "name": "Survival Knife Wireless Bonuses",
@@ -2183,7 +2207,8 @@
         "category": "Electronics Accessories"
       }
     ],
-    "specialModification": false
+    "specialModification": false,
+    "userSelectable": false
   },
   {
     "name": "Terracotta Arms Pup Silencer",
@@ -2454,7 +2479,8 @@
     "cost": [0],
     "source": "Street Lethal",
     "page": 131,
-    "specialModification": false
+    "specialModification": false,
+    "userSelectable": false
   },
   {
     "name": "Modified Pump Handle",
@@ -2469,7 +2495,8 @@
     "cost": [0],
     "source": "Street Lethal",
     "page": 131,
-    "specialModification": false
+    "specialModification": false,
+    "userSelectable": false
   },
   {
     "name": "Special Modification: Improved AP",
@@ -2653,7 +2680,8 @@
     "cost": [0],
     "source": "Krime Katalog",
     "page": 0,
-    "specialModification": false
+    "specialModification": false,
+    "userSelectable": false
   },
   {
     "name": "Matrix Signal Scanner",
@@ -2674,7 +2702,8 @@
         "category": "Sensor Functions"
       }
     ],
-    "specialModification": false
+    "specialModification": false,
+    "userSelectable": false
   },
   {
     "name": "Krime Dual-Mode External Smartgun Link",

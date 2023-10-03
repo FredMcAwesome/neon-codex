@@ -167,7 +167,7 @@ export function ParseArmour() {
 }
 
 function convertArmour(armour: ArmourXmlType) {
-  console.log(`\n${armour.name}`);
+  // console.log(`\n${armour.name}`);
 
   const category = convertArmourCategory(armour.category);
   const damageReduction =

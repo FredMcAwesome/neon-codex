@@ -6,11 +6,11 @@ import {
   spellCategoryEnum,
   weaponTypeEnum,
 } from "@shadowrun/common/build/enums.js";
-import type {
+import {
   BonusType,
   QualityListType,
   SelectSkillType,
-} from "@shadowrun/common/build/schemas/shared/bonusSchema.js";
+} from "@shadowrun/common/build/schemas/shared/bonusSchemas.js";
 import assert from "assert";
 import {
   attributeXMLEnum,
@@ -59,6 +59,9 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       linkWeapon._weapondetails;
       bonusObject.linkWeapon = true;
     }
+  }
+  if ("selectarmor" in bonus && bonus.selectarmor !== undefined) {
+    bonusObject.linkArmour = true;
   }
   if ("selectskill" in bonus && bonus.selectskill !== undefined) {
     const linkSkill = bonus.selectskill;
@@ -689,13 +692,25 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     };
   }
   if ("firearmor" in bonus && bonus.firearmor !== undefined) {
-    bonusObject.fireArmour = bonus.firearmor;
+    const fireArmour =
+      typeof bonus.firearmor === "number"
+        ? bonus.firearmor
+        : { option: bonus.firearmor };
+    bonusObject.fireArmour = fireArmour;
   }
   if ("electricityarmor" in bonus && bonus.electricityarmor !== undefined) {
-    bonusObject.electricityArmour = bonus.electricityarmor;
+    const electricityArmour =
+      typeof bonus.electricityarmor === "number"
+        ? bonus.electricityarmor
+        : { option: bonus.electricityarmor };
+    bonusObject.electricityArmour = electricityArmour;
   }
   if ("coldarmor" in bonus && bonus.coldarmor !== undefined) {
-    bonusObject.coldArmour = bonus.coldarmor;
+    const coldArmour =
+      typeof bonus.coldarmor === "number"
+        ? bonus.coldarmor
+        : { option: bonus.coldarmor };
+    bonusObject.coldArmour = coldArmour;
   }
   if ("dodge" in bonus && bonus.dodge !== undefined) {
     bonusObject.dodge = bonus.dodge;

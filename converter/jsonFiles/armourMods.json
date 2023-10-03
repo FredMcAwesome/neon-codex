@@ -1,0 +1,1336 @@
+[
+  {
+    "name": "Electrochromic Clothing",
+    "description": "",
+    "category": "General",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [0],
+    "availability": {
+      "rating": [2],
+      "restriction": "Legal"
+    },
+    "cost": [500],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Feedback Clothing",
+    "description": "",
+    "category": "General",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [3],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [500],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "(Synth)Leather",
+    "description": "",
+    "category": "General",
+    "maxRating": 1,
+    "damageReduction": 4,
+    "capacity": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [200],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Chemical Protection",
+    "description": "",
+    "category": "General",
+    "maxRating": 6,
+    "damageReduction": 0,
+    "capacity": {
+      "ratingLinked": [1, 2, 3, 4, 5, 6]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          250
+        ]
+      }
+    ],
+    "bonus": {
+      "toxinContactResist": {
+        "option": "Rating"
+      },
+      "pathogenContactResist": {
+        "option": "Rating"
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Chemical Seal",
+    "description": "",
+    "category": "General",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [6],
+    "availability": {
+      "rating": [12],
+      "restriction": "Restricted"
+    },
+    "cost": [3000],
+    "bonus": {
+      "toxinContactImmune": true,
+      "pathogenContactImmune": true,
+      "toxinInhalationImmune": true,
+      "pathogenInhalationImmune": true
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Fire Resistance",
+    "description": "",
+    "category": "General",
+    "maxRating": 6,
+    "damageReduction": 0,
+    "capacity": {
+      "ratingLinked": [1, 2, 3, 4, 5, 6]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          250
+        ]
+      }
+    ],
+    "bonus": {
+      "fireArmour": {
+        "option": "Rating"
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Insulation",
+    "description": "",
+    "category": "General",
+    "maxRating": 6,
+    "damageReduction": 0,
+    "capacity": {
+      "ratingLinked": [1, 2, 3, 4, 5, 6]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          250
+        ]
+      }
+    ],
+    "bonus": {
+      "coldArmour": {
+        "option": "Rating"
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Nonconductivity",
+    "description": "",
+    "category": "General",
+    "maxRating": 6,
+    "damageReduction": 0,
+    "capacity": {
+      "ratingLinked": [1, 2, 3, 4, 5, 6]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          250
+        ]
+      }
+    ],
+    "bonus": {
+      "electricityArmour": {
+        "option": "Rating"
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 438
+  },
+  {
+    "name": "Thermal Damping",
+    "description": "",
+    "category": "General",
+    "maxRating": 6,
+    "damageReduction": 0,
+    "capacity": {
+      "ratingLinked": [1, 2, 3, 4, 5, 6]
+    },
+    "availability": {
+      "rating": [10],
+      "restriction": "Restricted"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      }
+    ],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 438
+  },
+  {
+    "name": "Full Body Armor: Helmet",
+    "description": "",
+    "category": "General",
+    "maxRating": 1,
+    "damageReduction": 3,
+    "capacity": [0],
+    "hostArmourRequirements": {
+      "hostArmour": "Full Body Armor"
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [500],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Full Body Armor: Chemical Seal",
+    "description": "",
+    "category": "Full Body Armour Mods",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [0],
+    "hostArmourRequirements": {
+      "hostArmour": "Full Body Armor"
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [6000],
+    "bonus": {
+      "toxinContactImmune": true,
+      "pathogenContactImmune": true,
+      "toxinInhalationImmune": true,
+      "pathogenInhalationImmune": true
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Full Body Armor: Environment Adaptation",
+    "description": "",
+    "category": "Full Body Armour Mods",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [0],
+    "hostArmourRequirements": {
+      "hostArmour": "Full Body Armor"
+    },
+    "availability": {
+      "rating": [3],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Urban Explorer Jumpsuit: Helmet",
+    "description": "",
+    "category": "Urban Explorer Jumpsuit Accessories",
+    "maxRating": 1,
+    "damageReduction": 2,
+    "capacity": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [100],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Shock Frills",
+    "description": "",
+    "category": "General",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [2],
+    "availability": {
+      "rating": [6],
+      "restriction": "Restricted"
+    },
+    "cost": [250],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 438
+  },
+  {
+    "name": "Liner - Fire Resistance (4)",
+    "description": "",
+    "category": "Globetrotter Jacket Liners",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "bonus": {
+      "fireArmour": 4
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Liner - Chemical Protection (4)",
+    "description": "",
+    "category": "Globetrotter Jacket Liners",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "bonus": {
+      "toxinContactResist": 4,
+      "pathogenContactResist": 4
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Liner - Insulation (4)",
+    "description": "",
+    "category": "Globetrotter Jacket Liners",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "bonus": {
+      "coldArmour": 4
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Liner - Fire Resistance (3)",
+    "description": "",
+    "category": "Globetrotter Vest Liners",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Liner - Chemical Protection (3)",
+    "description": "",
+    "category": "Globetrotter Vest Liners",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "bonus": {
+      "toxinContactResist": 3,
+      "pathogenContactResist": 3
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Liner - Insulation (3)",
+    "description": "",
+    "category": "Globetrotter Vest Liners",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "bonus": {
+      "coldArmour": 3
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Liner - Fire Resistance (2)",
+    "description": "",
+    "category": "Globetrotter Clothing Liners",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "bonus": {
+      "fireArmour": 2
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Liner - Chemical Protection (2)",
+    "description": "",
+    "category": "Globetrotter Clothing Liners",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "bonus": {
+      "toxinContactResist": 2,
+      "pathogenContactResist": 2
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Liner - Insulation (2)",
+    "description": "",
+    "category": "Globetrotter Clothing Liners",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "bonus": {
+      "coldArmour": 2
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Liner - Fire Resistance (6)",
+    "description": "",
+    "category": "Victory Liners",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "bonus": {
+      "fireArmour": 6
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Liner - Chemical Protection (6)",
+    "description": "",
+    "category": "Victory Liners",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "bonus": {
+      "toxinContactResist": 6,
+      "pathogenContactResist": 6
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Liner - Insulation (6)",
+    "description": "",
+    "category": "Victory Liners",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "bonus": {
+      "coldArmour": 6
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 437
+  },
+  {
+    "name": "Custom Fit",
+    "description": "",
+    "category": "General",
+    "maxRating": 0,
+    "damageReduction": 0,
+    "capacity": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "userSelectable": false,
+    "source": "Run And Gun",
+    "page": 59
+  },
+  {
+    "name": "Custom Fit (Stack)",
+    "description": "",
+    "category": "General",
+    "maxRating": 0,
+    "damageReduction": 0,
+    "capacity": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "bonus": {
+      "linkArmour": true
+    },
+    "userSelectable": false,
+    "source": "Run And Gun",
+    "page": 59
+  },
+  {
+    "name": "Gear Access",
+    "description": "",
+    "category": "General",
+    "maxRating": 0,
+    "damageReduction": 0,
+    "capacity": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "userSelectable": false,
+    "source": "Run And Gun",
+    "page": 59
+  },
+  {
+    "name": "Newest Model",
+    "description": "",
+    "category": "General",
+    "maxRating": 0,
+    "damageReduction": 0,
+    "capacity": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "userSelectable": false,
+    "source": "Run And Gun",
+    "page": 59
+  },
+  {
+    "name": "Illuminating",
+    "description": "",
+    "category": "General",
+    "maxRating": 0,
+    "damageReduction": 0,
+    "capacity": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "userSelectable": false,
+    "source": "Run And Gun",
+    "page": 59
+  },
+  {
+    "name": "Restrictive",
+    "description": "",
+    "category": "General",
+    "maxRating": 0,
+    "damageReduction": 0,
+    "capacity": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "userSelectable": false,
+    "source": "Run And Gun",
+    "page": 59
+  },
+  {
+    "name": "Padded",
+    "description": "",
+    "category": "General",
+    "maxRating": 0,
+    "damageReduction": 0,
+    "capacity": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "userSelectable": false,
+    "source": "Run And Gun",
+    "page": 59
+  },
+  {
+    "name": "Concealability",
+    "description": "",
+    "category": "General",
+    "maxRating": 0,
+    "damageReduction": 0,
+    "capacity": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "userSelectable": false,
+    "source": "Run And Gun",
+    "page": 59
+  },
+  {
+    "name": "Rapid Transit: Elite",
+    "description": "",
+    "category": "Rapid Transit Detailing",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [600],
+    "source": "Run And Gun",
+    "page": 65
+  },
+  {
+    "name": "Rapid Transit: Platinum",
+    "description": "",
+    "category": "Rapid Transit Detailing",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [1100],
+    "source": "Run And Gun",
+    "page": 65
+  },
+  {
+    "name": "Rapid Transit: Diamond",
+    "description": "",
+    "category": "Rapid Transit Detailing",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [2400],
+    "source": "Run And Gun",
+    "page": 65
+  },
+  {
+    "name": "Nightshade IR and Contacts",
+    "description": "",
+    "category": "Nightshade IR",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [1500],
+    "source": "Run And Gun",
+    "page": 62
+  },
+  {
+    "name": "Auto-Injector",
+    "description": "",
+    "category": "General",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [2],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [1500],
+    "source": "Run And Gun",
+    "page": 84
+  },
+  {
+    "name": "Fresnel Fabric",
+    "description": "",
+    "category": "General",
+    "maxRating": 6,
+    "damageReduction": 0,
+    "capacity": [2],
+    "availability": {
+      "rating": [14],
+      "restriction": "Restricted"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          1000
+        ]
+      }
+    ],
+    "source": "Run And Gun",
+    "page": 84
+  },
+  {
+    "name": "Pulse Weave",
+    "description": "",
+    "category": "General",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [3],
+    "availability": {
+      "rating": [8],
+      "restriction": "Restricted",
+      "modifier": "+"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          3000
+        ]
+      }
+    ],
+    "source": "Run And Gun",
+    "page": 84
+  },
+  {
+    "name": "Shock Weave",
+    "description": "",
+    "category": "General",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [3],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
+    "source": "Run And Gun",
+    "page": 84
+  },
+  {
+    "name": "Universal Mirror Material",
+    "description": "",
+    "category": "General",
+    "maxRating": 6,
+    "damageReduction": 0,
+    "capacity": [3],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          250
+        ]
+      }
+    ],
+    "source": "Run And Gun",
+    "page": 84
+  },
+  {
+    "name": "YNT Softweave Armor",
+    "description": "",
+    "category": "General",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [
+      -1,
+      {
+        "operator": "*"
+      },
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Capacity"
+              },
+              {
+                "operator": "*"
+              },
+              0.5
+            ]
+          },
+          {
+            "operator": "+"
+          },
+          {
+            "subnumbers": [
+              0.5,
+              {
+                "operator": "*"
+              },
+              {
+                "subnumbers": [
+                  {
+                    "subnumbers": [
+                      {
+                        "subnumbers": [
+                          {
+                            "option": "Capacity"
+                          },
+                          {
+                            "operator": "/"
+                          },
+                          2
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "operator": "=="
+                  },
+                  1
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "option": "Armour"
+      }
+    ],
+    "source": "Run And Gun",
+    "page": 84
+  },
+  {
+    "name": "Ruthenium Polymer Coating",
+    "description": "",
+    "category": "General",
+    "maxRating": 4,
+    "damageReduction": 0,
+    "capacity": [4],
+    "availability": {
+      "rating": [16],
+      "restriction": "Forbidden"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          5000
+        ]
+      }
+    ],
+    "source": "Run And Gun",
+    "page": 85
+  },
+  {
+    "name": "Radiation Shielding",
+    "description": "",
+    "category": "General",
+    "maxRating": 6,
+    "damageReduction": 0,
+    "capacity": {
+      "ratingLinked": [1, 2, 3, 4, 5, 6]
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          200
+        ]
+      }
+    ],
+    "bonus": {
+      "radiationResistance": {
+        "option": "Rating"
+      }
+    },
+    "source": "Run And Gun",
+    "page": 84
+  },
+  {
+    "name": "Gel Packs",
+    "description": "",
+    "category": "General",
+    "maxRating": 1,
+    "damageReduction": 2,
+    "capacity": [0],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [1500],
+    "source": "Run And Gun",
+    "page": 85
+  },
+  {
+    "name": "Responsive Interface Gear: Armor",
+    "description": "",
+    "category": "General",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [4],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [2500],
+    "source": "Run And Gun",
+    "page": 85
+  },
+  {
+    "name": "Responsive Interface Gear: Helmet",
+    "description": "",
+    "category": "General",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [2],
+    "hostArmourRequirements": {
+      "requiredMod": "Responsive Interface Gear: Armor"
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Run And Gun",
+    "page": 85
+  },
+  {
+    "name": "Pneumatic Anti-Shock Garment",
+    "description": "",
+    "category": "General",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [6],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [500],
+    "source": "Bullets And Bandages",
+    "page": 23
+  },
+  {
+    "name": "Drag Handle",
+    "description": "",
+    "category": "General",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [1],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [50],
+    "source": "Bullets And Bandages",
+    "page": 23
+  },
+  {
+    "name": "Concealed Pocket",
+    "description": "",
+    "category": "General",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [1],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [40],
+    "source": "Hard Targets",
+    "page": 185
+  },
+  {
+    "name": "Attachable Gear Access",
+    "description": "",
+    "category": "General",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [4],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [150],
+    "source": "Hard Targets",
+    "page": 185
+  },
+  {
+    "name": "Faraday Pocket",
+    "description": "",
+    "category": "General",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [1],
+    "availability": {
+      "rating": [7],
+      "restriction": "Restricted"
+    },
+    "cost": [50],
+    "source": "Hard Targets",
+    "page": 185
+  },
+  {
+    "name": "Biofiber Pocket",
+    "description": "",
+    "category": "General",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [2],
+    "availability": {
+      "rating": [10],
+      "restriction": "Forbidden"
+    },
+    "cost": [700],
+    "source": "Hard Targets",
+    "page": 185
+  },
+  {
+    "name": "Voidblack Coating",
+    "description": "",
+    "category": "General",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [6],
+    "availability": {
+      "rating": [14],
+      "restriction": "Forbidden"
+    },
+    "cost": [3000],
+    "source": "Cutting Aces",
+    "page": 138
+  },
+  {
+    "name": "AR Fashion",
+    "description": "",
+    "category": "General",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [50],
+    "source": "Cutting Aces",
+    "page": 138
+  },
+  {
+    "name": "Parachute (Urban Explorer Daedalus)",
+    "description": "",
+    "category": "General",
+    "maxRating": 0,
+    "damageReduction": 0,
+    "capacity": [0],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "userSelectable": false,
+    "source": "Street Lethal",
+    "page": 48
+  },
+  {
+    "name": "Pantheon Armored Shell",
+    "description": "",
+    "category": "General",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [0],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "userSelectable": false,
+    "source": "Kill Code",
+    "page": 73
+  },
+  {
+    "name": "Pantheon Quick-Charge Battery Pack",
+    "description": "",
+    "category": "General",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [0],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "userSelectable": false,
+    "source": "Kill Code",
+    "page": 73
+  },
+  {
+    "name": "Micro-Hardpoint",
+    "description": "",
+    "category": "General",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacity": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "userSelectable": false,
+    "source": "Kill Code",
+    "page": 73
+  },
+  {
+    "name": "Grey Mana Integration",
+    "description": "",
+    "category": "General",
+    "maxRating": 6,
+    "damageReduction": 0,
+    "capacity": [
+      {
+        "option": "Rating"
+      }
+    ],
+    "availability": {
+      "ratingLinked": [
+        {
+          "rating": [6],
+          "restriction": "Forbidden"
+        },
+        {
+          "rating": [6],
+          "restriction": "Forbidden"
+        },
+        {
+          "rating": [6],
+          "restriction": "Forbidden"
+        },
+        {
+          "rating": [9],
+          "restriction": "Forbidden"
+        },
+        {
+          "rating": [9],
+          "restriction": "Forbidden"
+        },
+        {
+          "rating": [9],
+          "restriction": "Forbidden"
+        }
+      ]
+    },
+    "cost": {
+      "ratingLinked": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            1000
+          ]
+        },
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            1000
+          ]
+        },
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            1000
+          ]
+        },
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            2000
+          ]
+        },
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            2000
+          ]
+        },
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            2000
+          ]
+        }
+      ]
+    },
+    "source": "Better Than Bad",
+    "page": 156
+  }
+]

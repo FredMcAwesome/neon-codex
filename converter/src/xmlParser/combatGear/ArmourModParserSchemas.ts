@@ -1,0 +1,80 @@
+import {
+  costArmourEnum,
+  gearCategoryEnum,
+} from "@shadowrun/common/build/enums.js";
+import { z as zod } from "zod";
+import {
+  BonusXmlSchema,
+  SourceXmlSchema,
+  StringOrNumberSchema,
+} from "../common/ParserCommonDefines.js";
+
+export enum armourModXmlCategoryEnum {
+  FullBodyArmorMods = "Full Body Armor Mods",
+  General = "General",
+  GlobetrotterClothingLiners = "Globetrotter Clothing Liners",
+  GlobetrotterJacketLiners = "Globetrotter Jacket Liners",
+  GlobetrotterVestLiners = "Globetrotter Vest Liners",
+  NightshadeIR = "Nightshade IR",
+  RapidTransitDetailing = "Rapid Transit Detailing",
+  UrbanExplorerJumpsuitAccessories = "Urban Explorer Jumpsuit Accessories",
+  VictoryLiners = "Victory Liners",
+}
+
+const ArmourModRequiredXmlSchema = zod
+  .object({
+    parentdetails: zod.optional(
+      zod
+        .object({
+          name: zod.string(),
+        })
+        .strict()
+    ),
+    oneof: zod.optional(
+      zod
+        .object({
+          armormod: zod.object({
+            xmltext: zod.string(),
+            _sameparent: zod.literal("True"),
+          }),
+        })
+        .strict()
+    ),
+  })
+  .strict();
+
+export type ArmourModRequiredXmlType = zod.infer<
+  typeof ArmourModRequiredXmlSchema
+>;
+
+const ArmourModXmlSchema = zod
+  .object({
+    id: zod.string(),
+    name: zod.string(),
+    category: zod.nativeEnum(armourModXmlCategoryEnum),
+    armor: zod.union([zod.number(), zod.nativeEnum(costArmourEnum)]),
+    // maximum rating for armour mod
+    // this should be 1 for items without rating variable effects
+    maxrating: zod.number(),
+    armorcapacity: zod.string(),
+    required: zod.optional(ArmourModRequiredXmlSchema),
+    // this item is not selectable i.e. only used when armour includes it
+    hide: zod.optional(zod.literal("")),
+    addoncategory: zod.optional(
+      zod.union([
+        zod.array(zod.nativeEnum(gearCategoryEnum)),
+        zod.nativeEnum(gearCategoryEnum),
+      ])
+    ),
+    avail: StringOrNumberSchema,
+    cost: StringOrNumberSchema,
+    gearcapacity: zod.optional(zod.number()),
+    bonus: zod.optional(BonusXmlSchema),
+    wirelessbonus: zod.optional(BonusXmlSchema),
+    source: zod.union([SourceXmlSchema, zod.literal(2050)]),
+    page: zod.number(),
+  })
+  .strict();
+export type ArmourModXmlType = zod.infer<typeof ArmourModXmlSchema>;
+export const ArmourModListXmlSchema = zod.array(ArmourModXmlSchema);
+export type ArmourModListXmlType = zod.infer<typeof ArmourModListXmlSchema>;
