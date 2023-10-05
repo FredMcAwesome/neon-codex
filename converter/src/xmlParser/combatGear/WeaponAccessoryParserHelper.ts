@@ -111,7 +111,7 @@ ammoWeaponAccessorySemantics.addOperation("eval", {
   Ammo_noReload(ammo) {
     return {
       capacity: ammo.eval(),
-      reloadMethod: reloadMethodEnum.None,
+      reloadMethod: reloadMethodEnum.Special,
     };
   },
   Ammo_external(reloadMethod) {

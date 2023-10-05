@@ -63,12 +63,12 @@ const TypeInformationGearSchema = zod.discriminatedUnion("type", [
 
 export const OtherGearSchema = zod
   .object({
-    typeInformation: TypeInformationGearSchema,
     name: zod.string(),
+    description: zod.string(),
+    typeInformation: TypeInformationGearSchema,
     rating: zod.optional(RatingSchema),
     availability: AvailabilityGearSchema,
     cost: CostGearSchema,
-    description: zod.string(),
     wireless: zod.optional(zod.string()),
   })
   .strict();

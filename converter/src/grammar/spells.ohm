@@ -1,0 +1,16 @@
+Damage {
+  Exp = Damage
+    | Special
+  Damage = "F+" digit+ -- add
+    | "F-" digit+ -- minus
+    | "F" -- base
+  Special = "Special"
+}
+
+Other {
+  Exp = Damage
+    | Special
+  Damage = "F-" digit+ -- add
+    | "F"
+  Special = "Special"
+}

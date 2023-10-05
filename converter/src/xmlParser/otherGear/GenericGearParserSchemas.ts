@@ -123,6 +123,8 @@ const GenericGearXmlSchema = zod
         })
         .strict()
     ),
+    // This is flechette ammo
+    // ammoforweapontype should always be set when this is true
     isflechetteammo: zod.optional(zod.literal("True")),
     flechetteweaponbonus: zod.optional(
       zod
@@ -133,6 +135,11 @@ const GenericGearXmlSchema = zod
         })
         .strict()
     ),
+    // This gear is ammo for a specific weapon type
+    // If a weapon has weapontype set compare to that,
+    // otherwise use some other heuristics to determine if this ammo
+    // is useable in a weapon e.g. bolts have "crossbow"
+    // Not entirely sure how the determination is done...
     ammoforweapontype: zod.optional(
       zod.union([
         zod.string(),

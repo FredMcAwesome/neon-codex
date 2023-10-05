@@ -16,7 +16,10 @@ import {
 import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
 import { convertSource } from "../common/ParserHelper.js";
 import assert from "assert";
-import { augmentationClassificationEnum } from "@shadowrun/common/build/enums.js";
+import {
+  ammoSourceEnum,
+  augmentationClassificationEnum,
+} from "@shadowrun/common/build/enums.js";
 import { weaponXmlSubtypeEnum } from "@shadowrun/common/build/schemas/commonSchemas.js";
 import {
   WeaponUnlinkedSummaryListType,
@@ -243,7 +246,7 @@ function convertWeapon(weapon: WeaponXmlType) {
   if (match.failed()) {
     throw match.message;
   }
-  const ammo: AmmunitionType | undefined = ammoSemantics(match).eval();
+  const ammo: AmmunitionType = ammoSemantics(match).eval();
   // console.log(`Ammo: ${ammo}`);
   match = Availability.match(weapon.avail.toString());
   if (match.failed()) {
@@ -310,9 +313,10 @@ function convertWeapon(weapon: WeaponXmlType) {
     : undefined;
   if (
     initialSpecialisations !== undefined &&
-    initialSpecialisations.length == 1 &&
-    weapon.useskillspec !== undefined &&
-    weapon.useskillspec !== initialSpecialisations[0]
+    ((initialSpecialisations.length == 1 &&
+      weapon.useskillspec !== undefined &&
+      weapon.useskillspec !== initialSpecialisations[0]) ||
+      (initialSpecialisations.length > 1 && weapon.useskillspec !== undefined))
   )
     assert(
       false,
@@ -331,6 +335,14 @@ function convertWeapon(weapon: WeaponXmlType) {
     initialSpecialisations
   );
 
+  if (weapon.type === "Melee") {
+    if (weapon.ammo !== 0) {
+      assert(weapon.requireammo === "False", weapon.name);
+    }
+    ammo.forEach((ammunition) => {
+      assert(ammunition.reloadMethod === ammoSourceEnum.Special, weapon.name);
+    });
+  }
   const meleeOptions = { reach: weapon.reach };
   const firearmOptions: FirearmOptionsType = {
     mode: mode,
@@ -343,7 +355,6 @@ function convertWeapon(weapon: WeaponXmlType) {
       hostWeaponRequirements: hostWeaponRequirements,
     }),
     ...(underbarrels !== undefined && { underbarrelWeapons: underbarrels }),
-    ...(addWeapons !== undefined && { addWeapons: addWeapons }),
     ...(accessoryMounts !== undefined && { accessoryMounts: accessoryMounts }),
     ...(doubleCostAccessoryMounts !== undefined && {
       doubleCostAccessoryMounts: doubleCostAccessoryMounts,
@@ -376,6 +387,7 @@ function convertWeapon(weapon: WeaponXmlType) {
     isCyberware: weapon.cyberware === "True",
     ...(weapon.hide !== undefined && { userSelectable: false as const }),
     augmentationType: augmentationType,
+    ...(addWeapons !== undefined && { addWeapons: addWeapons }),
     relatedSkill: skill,
     ...(specialisations !== undefined && {
       relatedSkillSpecialisations: specialisations,

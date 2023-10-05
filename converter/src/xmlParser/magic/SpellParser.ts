@@ -5,7 +5,25 @@ import path from "path";
 import { fileURLToPath } from "url";
 import * as fs from "fs";
 import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
-import { SpellListXmlSchema, SpellListXmlType } from "./SpellsParserSchemas.js";
+import {
+  SpellListXmlSchema,
+  SpellListXmlType,
+  SpellXmlType,
+} from "./SpellParserSchemas.js";
+import {
+  convertSpellCategory,
+  convertSpellDamageType,
+  convertSpellDescriptors,
+  convertSpellDuration,
+  convertSpellRange,
+  convertSpellRequired,
+  convertSpellType,
+  damageSpellSemantics,
+} from "./SpellParserHelper.js";
+import { convertXmlBonus } from "../common/BonusHelper.js";
+import { convertSource } from "../common/ParserHelper.js";
+import Spells from "../../grammar/spells.ohm-bundle.js";
+const Damage = Spells.Damage;
 
 export function ParseSpells() {
   const currentPath = import.meta.url;
@@ -25,22 +43,22 @@ export function ParseSpells() {
   //   jObj.chummer.spells.spell[337].required
   // );
 
-  const armourListParsed = SpellListXmlSchema.safeParse(
+  const spellListParsed = SpellListXmlSchema.safeParse(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.spells.spell
   );
 
-  if (armourListParsed.success) console.log("spells.xml initial zod parsed");
+  if (spellListParsed.success) console.log("spells.xml initial zod parsed");
   else {
-    console.log(armourListParsed.error.errors[0]);
+    console.log(spellListParsed.error.errors[0]);
     assert(false);
   }
 
-  const armourList = armourListParsed.data;
+  const spellList = spellListParsed.data;
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
   // })
-  const englishSpellsList: SpellListXmlType = armourList.filter((spell) => {
+  const englishSpellsList: SpellListXmlType = spellList.filter((spell) => {
     let found = false;
     switch (spell.source) {
       case sourceBookXmlEnum.Shadowrun5:
@@ -109,25 +127,65 @@ export function ParseSpells() {
 
   console.log(englishSpellsList[0]);
 
-  // const armourListConverted = englishArmourList
-  //   // .filter((weapon) => weapon.name === "Osmium Mace")
-  //   .map((armour) => {
-  //     const convertedArmour = convertArmour(armour);
-  //     return convertedArmour;
-  //   });
-  // // console.log(armourListConverted);
-  // const jsonFilePath = fileURLToPath(
-  //   path.dirname(currentPath) + "../../../../jsonFiles/armour.json"
-  // );
-  // fs.writeFile(
-  //   jsonFilePath,
-  //   JSON.stringify(armourListConverted, null, 2),
-  //   (error) => {
-  //     if (error) {
-  //       console.error(error);
-  //     } else {
-  //       console.log(`File written! Saved to: ${jsonFilePath}`);
-  //     }
-  //   }
-  // );
+  const spellListConverted = englishSpellsList
+    // .filter((weapon) => weapon.name === "Osmium Mace")
+    .map((spell) => {
+      const convertedSpell = convertSpell(spell);
+      return convertedSpell;
+    });
+  // console.log(spellListConverted);
+  const jsonFilePath = fileURLToPath(
+    path.dirname(currentPath) + "../../../../jsonFiles/spells.json"
+  );
+  fs.writeFile(
+    jsonFilePath,
+    JSON.stringify(spellListConverted, null, 2),
+    (error) => {
+      if (error) {
+        console.error(error);
+      } else {
+        console.log(`File written! Saved to: ${jsonFilePath}`);
+      }
+    }
+  );
+}
+
+function convertSpell(spell: SpellXmlType) {
+  // console.log(`\n${armour.name}`);
+
+  const category = convertSpellCategory(spell.category);
+  const damageType = convertSpellDamageType(spell.damage);
+  const descriptorList = convertSpellDescriptors(spell.descriptor);
+  const duration = convertSpellDuration(spell.duration);
+  let match = Damage.match(spell.dv);
+  if (match.failed()) {
+    throw match.message;
+  }
+  const damage = damageSpellSemantics(match).eval();
+  const range = convertSpellRange(spell.range);
+  const type = convertSpellType(spell.type);
+
+  const bonus =
+    spell.bonus !== undefined ? convertXmlBonus(spell.bonus) : undefined;
+  const required =
+    spell.required !== undefined
+      ? convertSpellRequired(spell.required)
+      : undefined;
+  const source = convertSource(spell.source);
+
+  return {
+    name: spell.name,
+    description: "",
+    category: category,
+    damageType: damageType,
+    descriptorList: descriptorList,
+    duration: duration,
+    damage: damage,
+    range: range,
+    type: type,
+    ...(bonus !== undefined && { bonus: bonus }),
+    ...(required !== undefined && { required: required }),
+    source: source,
+    page: spell.page,
+  };
 }

@@ -103,6 +103,7 @@ export enum accuracyEnum {
 export enum damageTypeEnum {
   Physical = "Physical",
   Stun = "Stun",
+  Special = "Special",
   None = "N/A",
 }
 
@@ -175,7 +176,6 @@ export enum ammoSourceEnum {
   Energy = "Energy",
   CapAndBall = "Cap and Ball",
   Special = "Special",
-  None = "N/A",
 }
 
 export enum firearmAccessoryMountLocationEnum {
@@ -413,8 +413,89 @@ export enum spellCategoryEnum {
   Combat = "Combat",
   Detection = "Detection",
   Illusion = "Illusion",
-  Healing = "Healing",
+  Health = "Health",
   Manipulation = "Manipulation",
+  Enchantment = "Enchantment",
+  Ritual = "Ritual",
+}
+
+export enum spellTypeEnum {
+  Mana = "Mana",
+  Physical = "Physical",
+}
+
+export enum spellRangeEnum {
+  LineOfSight = "Line Of Sight",
+  Touch = "Touch",
+  Self = "Self",
+  Special = "Special",
+}
+
+export enum spellTargetEnum {
+  Area = "Area",
+  Target = "Single Target",
+}
+
+export enum spellDescriptorEnum {
+  Direct = "Direct",
+  Indirect = "Indirect",
+  Active = "Active",
+  Passive = "Passive",
+  Area = "Area",
+  ExtendedArea = "Extended Area",
+  Directional = "Directional",
+  Psychic = "Psychic",
+  Essence = "Essence",
+  Negative = "Negative",
+  Physical = "Physical",
+  Mental = "Mental",
+  Environmental = "Environmental",
+  MaterialLink = "Material Link",
+  Spotter = "Spotter",
+  Anchored = "Anchored",
+  Blood = "Blood",
+  Elemental = "Elemental",
+  Realistic = "Realistic",
+  SingleSense = "Single-Sense",
+  MultiSense = "Multi-Sense",
+  Obvious = "Obvious",
+  Damaging = "Damaging",
+  Spell = "Spell",
+  Minion = "Minion",
+  Mana = "Mana",
+  Contractual = "Contractual",
+  Adept = "Adept",
+  OrganicLink = "Organic Link",
+  Geomancy = "Geomancy",
+  Object = "Object",
+}
+
+export enum metamagicArtEnum {
+  AdvancedAlchemy = "Advanced Alchemy",
+  AdvancedRitualCasting = "Advanced Ritual Casting",
+  AdvancedSpellcasting = "Advanced Spellcasting",
+  ApotropaicMagic = "Apotropaic Magic",
+  BloodMagic = "Blood Magic",
+  Centering = "Centering",
+  Channeling = "Channeling",
+  Cleansing = "Cleansing",
+  Divination = "Divination",
+  Exorcism = "Exorcism",
+  FlexibleSignature = "Flexible Signature",
+  Geomancy = "Geomancy",
+  Invocation = "Invocation",
+  Masking = "Masking",
+  Necromancy = "Necromancy",
+  Psychometry = "Psychometry",
+  Quickening = "Quickening",
+  Sensing = "Sensing",
+}
+
+export enum durationEnum {
+  Instantaneous = "Instantaneous",
+  Sustained = "Sustained",
+  Permanent = "Permanent",
+  Special = "Special",
 }
 
 export enum formulaTypeEnum {

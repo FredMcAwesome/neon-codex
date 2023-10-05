@@ -4,7 +4,7 @@ import {
   sourceBookEnum,
 } from "@shadowrun/common/build/enums.js";
 import type { UseGearListType } from "@shadowrun/common/build/schemas/weaponSchemas.js";
-import { ModListType } from "@shadowrun/common/src/schemas/shared/modSchemas.js";
+import { ModListType } from "@shadowrun/common/build/schemas/shared/modSchemas.js";
 import assert from "assert";
 import {
   attributeXMLEnum,

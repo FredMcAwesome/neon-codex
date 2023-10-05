@@ -197,7 +197,6 @@ export const FirearmOptionsSchema = zod
         .strict()
     ),
     underbarrelWeapons: zod.optional(zod.array(zod.string())),
-    addWeapons: zod.optional(zod.array(zod.string())),
     accessoryMounts: zod.optional(AccessoryMountSchema),
     doubleCostAccessoryMounts: zod.optional(AccessoryMountSchema),
   })
@@ -380,6 +379,7 @@ export const WeaponUnlinkedSummarySchema = zod
     isCyberware: zod.boolean(),
     userSelectable: zod.optional(zod.literal(false)),
     augmentationType: zod.nativeEnum(augmentationClassificationEnum),
+    addWeapons: zod.optional(zod.array(zod.string())),
     description: zod.string(),
     wireless: zod.optional(zod.string()),
     relatedSkill: zod.string(),
@@ -417,12 +417,11 @@ export const WeaponLinkedSchema = zod
     isCyberware: zod.boolean(),
     userSelectable: zod.optional(zod.literal(false)),
     augmentationType: zod.nativeEnum(augmentationClassificationEnum),
+    addWeapons: zod.optional(zod.array(zod.string())),
     description: zod.string(),
     wireless: zod.optional(zod.string()),
     relatedSkill: zod.string(),
     relatedSkillSpecialisations: zod.optional(zod.array(zod.string())),
-    // rating is only used for a select few weapons
-    rating: zod.optional(zod.number()),
     source: zod.nativeEnum(sourceBookEnum),
     page: zod.number(),
   })

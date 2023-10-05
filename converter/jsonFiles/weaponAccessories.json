@@ -1149,7 +1149,7 @@
     "extraAmmoSlots": 1,
     "newAmmoType": {
       "capacity": 10,
-      "reloadMethod": "N/A"
+      "reloadMethod": "Special"
     },
     "hostWeaponRequirements": {
       "ammunitionDetails": ["External", "Energy"]
@@ -1172,7 +1172,7 @@
     "extraAmmoSlots": 1,
     "newAmmoType": {
       "capacity": 20,
-      "reloadMethod": "N/A"
+      "reloadMethod": "Special"
     },
     "hostWeaponRequirements": {
       "ammunitionDetails": ["External", "Energy"]
@@ -1195,7 +1195,7 @@
     "extraAmmoSlots": 1,
     "newAmmoType": {
       "capacity": 30,
-      "reloadMethod": "N/A"
+      "reloadMethod": "Special"
     },
     "hostWeaponRequirements": {
       "ammunitionDetails": ["External", "Energy"]

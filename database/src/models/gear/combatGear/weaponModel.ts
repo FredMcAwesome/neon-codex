@@ -97,6 +97,12 @@ export abstract class Weapons {
   @ManyToOne({ entity: () => Skills, ref: true })
   relatedSkill!: Ref<Skills>;
 
+  @ManyToOne(() => Weapons)
+  baseWeaponForm!: Weapons;
+
+  @OneToMany(() => Weapons, (weapon) => weapon.baseWeaponForm)
+  otherWeaponForms = new Collection<IncludedWeaponAccessories>(this);
+
   @Property({ type: "string[]", nullable: true })
   relatedSkillSpecialisations?: Array<string>;
 
@@ -254,8 +260,6 @@ export class FirearmWeapons extends RangedWeapons {
     if (dto.typeInformation.firearmOptions.underbarrelWeapons !== undefined)
       this.underbarrelWeapons =
         dto.typeInformation.firearmOptions.underbarrelWeapons;
-    if (dto.typeInformation.firearmOptions.addWeapons !== undefined)
-      this.addWeapons = dto.typeInformation.firearmOptions.addWeapons;
     if (dto.typeInformation.firearmOptions.accessoryMounts !== undefined)
       this.accessoryMounts = dto.typeInformation.firearmOptions.accessoryMounts;
     if (

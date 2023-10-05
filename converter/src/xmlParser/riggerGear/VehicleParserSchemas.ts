@@ -36,8 +36,6 @@ const VehicleXmlSchema = zod
   .object({
     id: zod.string(),
     name: zod.string(),
-    page: zod.number(),
-    source: zod.union([SourceXmlSchema, zod.literal(2050)]),
     accel: StringOrNumberSchema,
     armor: zod.number(),
     avail: StringOrNumberSchema,
@@ -101,6 +99,8 @@ const VehicleXmlSchema = zod
     ),
     weaponmodslots: zod.optional(zod.number()),
     hide: zod.optional(zod.literal("")),
+    source: zod.union([SourceXmlSchema, zod.literal(2050)]),
+    page: zod.number(),
   })
   .strict();
 export type VehicleXmlType = zod.infer<typeof VehicleXmlSchema>;

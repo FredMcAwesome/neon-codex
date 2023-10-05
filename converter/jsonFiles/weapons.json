@@ -779,13 +779,6 @@
         "mode": ["Semi Automatic", "Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
-        "addWeapons": [
-          "HK XM30 Grenade Launcher",
-          "HK XM30 Carbine",
-          "HK XM30 LMG",
-          "HK XM30 Shotgun",
-          "HK XM30 Sniper"
-        ],
         "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
       },
       "rangeList": ["Assault Rifles"]
@@ -836,6 +829,13 @@
     "allowAccessories": true,
     "isCyberware": false,
     "augmentationType": "N/A",
+    "addWeapons": [
+      "HK XM30 Grenade Launcher",
+      "HK XM30 Carbine",
+      "HK XM30 LMG",
+      "HK XM30 Shotgun",
+      "HK XM30 Sniper"
+    ],
     "relatedSkill": "Automatics",
     "source": "Run And Gun",
     "page": 37
@@ -1596,7 +1596,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -1654,7 +1654,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -1712,7 +1712,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -1770,7 +1770,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -1828,7 +1828,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -1886,7 +1886,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -1948,7 +1948,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -2011,7 +2011,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -2077,7 +2077,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -2136,7 +2136,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -2194,7 +2194,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -2252,7 +2252,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -2310,7 +2310,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -2368,7 +2368,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -2427,7 +2427,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -2488,7 +2488,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -2547,7 +2547,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -2613,7 +2613,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -2671,7 +2671,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -2729,7 +2729,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -2777,7 +2777,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -2825,7 +2825,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -2873,7 +2873,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -2921,7 +2921,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -2969,7 +2969,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -3017,7 +3017,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -3065,7 +3065,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -3113,7 +3113,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -3161,7 +3161,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -3209,7 +3209,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -3255,7 +3255,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -3300,7 +3300,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -3351,7 +3351,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -3397,7 +3397,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -3443,7 +3443,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -3494,7 +3494,7 @@
     "ammunition": [
       {
         "capacity": 10,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -3540,7 +3540,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -3591,7 +3591,7 @@
     "ammunition": [
       {
         "capacity": 3,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -3855,7 +3855,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -3903,7 +3903,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -3949,7 +3949,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -4008,7 +4008,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -4058,7 +4058,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -4121,7 +4121,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -4179,7 +4179,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -4229,7 +4229,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -4279,7 +4279,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -4330,7 +4330,7 @@
     "ammunition": [
       {
         "capacity": 10,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -4381,7 +4381,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -4430,7 +4430,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -4479,7 +4479,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -4528,7 +4528,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -4573,7 +4573,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -4630,7 +4630,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -4687,7 +4687,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -4736,7 +4736,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -4777,7 +4777,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -4831,7 +4831,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -4942,7 +4942,7 @@
     "ammunition": [
       {
         "capacity": 10,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -5162,7 +5162,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -5214,7 +5214,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -5278,7 +5278,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -5334,7 +5334,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -5378,7 +5378,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -5423,7 +5423,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -5471,7 +5471,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -5527,7 +5527,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -5571,7 +5571,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -5615,7 +5615,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -5659,7 +5659,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -5703,7 +5703,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -5759,7 +5759,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -5803,7 +5803,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -5848,7 +5848,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -5896,7 +5896,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -5952,7 +5952,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -5996,7 +5996,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -6040,7 +6040,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -6084,7 +6084,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -6128,7 +6128,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -6188,7 +6188,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -6248,7 +6248,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -6292,7 +6292,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -6351,7 +6351,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -6391,7 +6391,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -6451,7 +6451,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -7723,7 +7723,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -7768,7 +7768,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -7813,7 +7813,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -7858,7 +7858,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -7903,7 +7903,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -7948,7 +7948,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -8016,7 +8016,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -8062,7 +8062,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -8103,7 +8103,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -8149,7 +8149,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -8194,7 +8194,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -11680,7 +11680,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -11779,7 +11779,7 @@
     "ammunition": [
       {
         "capacity": 10,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -13394,7 +13394,7 @@
     "ammunition": [
       {
         "capacity": 10,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -13560,7 +13560,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -13614,7 +13614,7 @@
     "ammunition": [
       {
         "capacity": 10,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -13668,7 +13668,7 @@
     "ammunition": [
       {
         "capacity": 10,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -13715,7 +13715,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -13782,8 +13782,8 @@
     "userSelectable": false,
     "augmentationType": "N/A",
     "relatedSkill": "Heavy Weapons",
-    "source": "Shadowrun 5 Core Rulebook",
-    "page": 428
+    "source": "Run And Gun",
+    "page": 36
   },
   {
     "name": "Ares Alpha Grenade Launcher",
@@ -14171,7 +14171,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -14229,7 +14229,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -14275,7 +14275,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -14337,7 +14337,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -14399,7 +14399,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -14461,7 +14461,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -14511,7 +14511,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -14573,7 +14573,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -14635,7 +14635,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -14685,7 +14685,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -14735,7 +14735,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -14785,7 +14785,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -14847,7 +14847,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -14909,7 +14909,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -14959,7 +14959,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -15035,7 +15035,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -15097,7 +15097,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -15152,7 +15152,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -15255,7 +15255,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -15305,7 +15305,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -15367,7 +15367,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -15429,7 +15429,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -15492,7 +15492,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -15551,7 +15551,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -15610,7 +15610,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -15669,7 +15669,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -15728,7 +15728,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -15791,7 +15791,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -15854,7 +15854,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -15909,7 +15909,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -15968,7 +15968,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -16035,7 +16035,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -16206,7 +16206,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -16264,7 +16264,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -16314,7 +16314,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -16365,7 +16365,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -16416,7 +16416,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -16467,7 +16467,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -16526,7 +16526,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -16584,7 +16584,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -16642,7 +16642,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -16702,7 +16702,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -16772,7 +16772,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -17017,7 +17017,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -17243,7 +17243,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -17640,7 +17640,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -17895,7 +17895,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -18032,7 +18032,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -18090,7 +18090,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -18136,7 +18136,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -18239,7 +18239,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -18348,7 +18348,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -18404,7 +18404,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -18462,7 +18462,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -18519,7 +18519,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -18530,6 +18530,7 @@
     "allowAccessories": true,
     "isCyberware": false,
     "augmentationType": "N/A",
+    "addWeapons": ["Krime Reaver Pick", "Krime Reaver Knob"],
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Axes"],
     "source": "Street Lethal",
@@ -18577,7 +18578,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -18635,7 +18636,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -18693,7 +18694,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -18750,7 +18751,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -18808,7 +18809,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -18866,7 +18867,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -18912,7 +18913,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -18970,7 +18971,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -18981,6 +18982,7 @@
     "allowAccessories": true,
     "isCyberware": false,
     "augmentationType": "N/A",
+    "addWeapons": ["Gunstock War Club (Thrown)"],
     "relatedSkill": "Clubs",
     "source": "Street Lethal",
     "page": 22
@@ -19027,7 +19029,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -19073,7 +19075,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -19118,7 +19120,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -19163,7 +19165,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -19174,6 +19176,7 @@
     "allowAccessories": true,
     "isCyberware": false,
     "augmentationType": "N/A",
+    "addWeapons": ["Krime Gloves: Stun Pad"],
     "relatedSkill": "Unarmed Combat",
     "source": "Street Lethal",
     "page": 23
@@ -19217,7 +19220,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -19268,7 +19271,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -19315,7 +19318,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -19326,6 +19329,7 @@
     "allowAccessories": true,
     "isCyberware": false,
     "augmentationType": "N/A",
+    "addWeapons": ["Krime Trollbow Horns"],
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Bow"],
     "source": "Street Lethal",
@@ -19363,7 +19367,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -19374,6 +19378,7 @@
     "allowAccessories": true,
     "isCyberware": false,
     "augmentationType": "N/A",
+    "addWeapons": ["Krime Trollbow Horns"],
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Bow"],
     "source": "Street Lethal",
@@ -19411,7 +19416,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -19422,6 +19427,7 @@
     "allowAccessories": true,
     "isCyberware": false,
     "augmentationType": "N/A",
+    "addWeapons": ["Krime Trollbow Horns"],
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Bow"],
     "source": "Street Lethal",
@@ -19459,7 +19465,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -19470,6 +19476,7 @@
     "allowAccessories": true,
     "isCyberware": false,
     "augmentationType": "N/A",
+    "addWeapons": ["Krime Trollbow Horns"],
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Bow"],
     "source": "Street Lethal",
@@ -19507,7 +19514,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -19518,6 +19525,7 @@
     "allowAccessories": true,
     "isCyberware": false,
     "augmentationType": "N/A",
+    "addWeapons": ["Krime Trollbow Horns"],
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Bow"],
     "source": "Street Lethal",
@@ -19555,7 +19563,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -19566,6 +19574,7 @@
     "allowAccessories": true,
     "isCyberware": false,
     "augmentationType": "N/A",
+    "addWeapons": ["Krime Trollbow Horns"],
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Bow"],
     "source": "Street Lethal",
@@ -19603,7 +19612,7 @@
     "ammunition": [
       {
         "capacity": 1,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -19614,6 +19623,7 @@
     "allowAccessories": true,
     "isCyberware": false,
     "augmentationType": "N/A",
+    "addWeapons": ["Krime Trollbow Horns"],
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Bow"],
     "source": "Street Lethal",
@@ -19661,7 +19671,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -20098,7 +20108,6 @@
         "mode": ["Single Shot"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
-        "addWeapons": ["Barrens Special: Bayonet"],
         "accessoryMounts": ["Barrel", "Top", "Under", "Stock", "Side"]
       },
       "rangeList": ["Heavy Pistols"]
@@ -20138,6 +20147,7 @@
     "allowAccessories": true,
     "isCyberware": false,
     "augmentationType": "N/A",
+    "addWeapons": ["Barrens Special: Bayonet"],
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Revolvers"],
     "source": "Street Lethal",
@@ -20185,7 +20195,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -20729,7 +20739,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -21309,11 +21319,6 @@
         "mode": ["Semi Automatic", "Burst Fire", "Full Automatic"],
         "recoilCompensation": 0,
         "ammoSlots": 1,
-        "addWeapons": [
-          "Onotari HL-13 Personal Defense Weapon",
-          "Onotari HL-13 Urban Assault",
-          "Onotari HL-13 (Sniper Rifle)"
-        ],
         "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
       },
       "rangeList": ["Assault Rifles"]
@@ -21362,6 +21367,11 @@
     "allowAccessories": true,
     "isCyberware": false,
     "augmentationType": "N/A",
+    "addWeapons": [
+      "Onotari HL-13 Personal Defense Weapon",
+      "Onotari HL-13 Urban Assault",
+      "Onotari HL-13 (Sniper Rifle)"
+    ],
     "relatedSkill": "Automatics",
     "source": "Street Lethal",
     "page": 38
@@ -21742,7 +21752,6 @@
         "mode": ["Single Shot"],
         "recoilCompensation": 1,
         "ammoSlots": 1,
-        "addWeapons": ["Krime Whammy (Melee)"],
         "accessoryMounts": ["Stock", "Side", "Barrel", "Under", "Top"]
       },
       "rangeList": ["Shotguns"]
@@ -21790,6 +21799,7 @@
     "allowAccessories": true,
     "isCyberware": false,
     "augmentationType": "N/A",
+    "addWeapons": ["Krime Whammy (Melee)"],
     "relatedSkill": "Longarms",
     "source": "Street Lethal",
     "page": 40
@@ -21823,8 +21833,8 @@
     "armourPenetration": [[0]],
     "ammunition": [
       {
-        "capacity": 5,
-        "reloadMethod": "Internal Magazine"
+        "capacity": 0,
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -22305,7 +22315,7 @@
     "ammunition": [
       {
         "capacity": 6,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -22355,7 +22365,7 @@
     "ammunition": [
       {
         "capacity": 10,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -22404,7 +22414,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -22454,7 +22464,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -22575,7 +22585,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -22669,7 +22679,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -22843,7 +22853,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -22961,7 +22971,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -23015,7 +23025,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -23159,7 +23169,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -23216,7 +23226,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -23265,7 +23275,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -23310,7 +23320,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -23367,7 +23377,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -23424,7 +23434,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -23473,7 +23483,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -23530,7 +23540,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -23585,7 +23595,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -23641,7 +23651,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -23691,7 +23701,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -23741,7 +23751,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -23785,7 +23795,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -23829,7 +23839,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -23897,7 +23907,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -23965,7 +23975,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -25325,7 +25335,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -25370,7 +25380,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -25431,7 +25441,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -25489,7 +25499,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {
@@ -25533,7 +25543,7 @@
     "ammunition": [
       {
         "capacity": 0,
-        "reloadMethod": "N/A"
+        "reloadMethod": "Special"
       }
     ],
     "availability": {

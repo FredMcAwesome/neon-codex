@@ -7033,8 +7033,8 @@
       <ammo>6(m)</ammo>
       <avail>0</avail>
       <cost>0</cost>
-      <source>SR5</source>
-      <page>428</page>
+      <source>RG</source>
+      <page>36</page>
       <accessorymounts>
         <mount>Stock</mount>
         <mount>Side</mount>
@@ -12462,7 +12462,7 @@
       <cost>0</cost>
       <source>SL</source>
       <page>23</page>
-	  <hide />
+      <hide />
     </weapon>
     <weapon>
       <id>884d8ed3-3e21-4bf6-b0e5-2197b3d8bc5f</id>
@@ -13756,7 +13756,7 @@
       <ap>0</ap>
       <mode>FA</mode>
       <rc>0</rc>
-      <ammo>5(m)</ammo>
+      <ammo>0</ammo>
       <avail>12F</avail>
       <cost>2000</cost>
       <source>SL</source>

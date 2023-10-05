@@ -72,6 +72,9 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       // TODO: handle
     }
   }
+  if ("selectattribute" in bonus && bonus.selectattribute !== undefined) {
+    // TODO: handle
+  }
   if ("selectpowers" in bonus && bonus.selectpowers !== undefined) {
     const linkPower = bonus.selectpowers;
     if (typeof linkPower === "string") {
@@ -881,6 +884,12 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       limbSlot: limbSlot,
       numberOfLimbs: bonus.addlimb.val,
     };
+  }
+  if ("addspirit" in bonus && bonus.addspirit !== undefined) {
+    // const addSpirits = Array.isArray(bonus.addspirit)
+    // ? bonus.addspirit
+    // : [bonus.addspirit];
+    //TODO: handle
   }
   if ("adapsin" in bonus && bonus.adapsin !== undefined) {
     bonusObject.adapsin = true;

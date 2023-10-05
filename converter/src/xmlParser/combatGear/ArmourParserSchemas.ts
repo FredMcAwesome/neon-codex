@@ -22,20 +22,35 @@ const ArmourXmlSchema = zod
   .object({
     id: zod.string(),
     name: zod.string(),
+    // Category of clothing
     category: zod.nativeEnum(armourXmlCategoryEnum),
+    // Maximum rating of armour
     rating: zod.optional(zod.number()),
+    // Damage reduction of armour
     armor: zod.union([zod.number(), zod.nativeEnum(costArmourEnum)]),
+    // This item has the Custom Fit (Stack) feature which gives the option of
+    // allowing it to increase other Custom Fit armour by this amount instead
+    // of uses its own armour value
     armoroverride: zod.optional(zod.number()),
+    // Capacity of the armour
     armorcapacity: zod.union([zod.number(), zod.nativeEnum(costArmourEnum)]),
+    // This item is a weapon, this should always match the name
     addweapon: zod.optional(zod.string()),
+    // Availability
     avail: StringOrNumberSchema,
+    // Cost
     cost: StringOrNumberSchema,
+    // Included gear
     gears: zod.optional(GearXmlSchema),
+    // Applies some form of bonus
     bonus: zod.optional(BonusXmlSchema),
+    // Bonus that is applied when wireless
     wirelessbonus: zod.optional(BonusXmlSchema),
+    // Included mods
     mods: zod.optional(ModListXmlSchema),
-    // allow mods outside general category
+    // Allow mods outside the "General" category
     addmodcategory: zod.optional(zod.nativeEnum(armourModXmlCategoryEnum)),
+    // Select one mod from this category to be preinstalled
     selectmodsfromcategory: zod.optional(ModCategoryListXmlSchema),
     source: zod.union([SourceXmlSchema, zod.literal(2050)]),
     page: zod.number(),

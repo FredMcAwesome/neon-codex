@@ -286,8 +286,8 @@ export type electronicAccessoryTypeInformationType = zod.infer<
 
 export const MatrixAccessorySchema = zod
   .object({
-    typeInformation: ElectronicAccessoryTypeInformationSchema,
     name: zod.string(),
+    typeInformation: ElectronicAccessoryTypeInformationSchema,
     rating: zod.optional(RatingSchema),
     availability: AvailabilityElectronicSchema,
     cost: CostElectronicSchema,

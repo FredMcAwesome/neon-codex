@@ -107,8 +107,9 @@ const TypeInformationAugmentationSchema = zod.discriminatedUnion("type", [
 
 export const AugmentationSchema = zod
   .object({
-    typeInformation: TypeInformationAugmentationSchema,
     name: zod.string(),
+    description: zod.string(),
+    typeInformation: TypeInformationAugmentationSchema,
     rating: zod.optional(RatingSchema),
     essense: EssenceSchema,
     capacity: zod.optional(CapacitySchema),
@@ -116,7 +117,6 @@ export const AugmentationSchema = zod
     availability: AvailabilityAugmentationSchema,
     cost: CostAugmentationSchema,
     cyberlimbOptions: zod.optional(CyberlimbOptionsSchema),
-    description: zod.string(),
     wireless: zod.optional(zod.string()),
   })
   .strict();

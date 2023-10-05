@@ -229,6 +229,15 @@ const SkillSchema = zod
 const SkillListSchema = zod.union([zod.array(SkillSchema), SkillSchema]);
 export type SkillListType = zod.infer<typeof SkillListSchema>;
 
+const SpiritSchema = zod
+  .object({
+    spirit: StringArrayOrStringSchema,
+    addtoselected: zod.optional(
+      zod.union([zod.literal("False"), zod.literal("True")])
+    ),
+  })
+  .strict();
+
 const GenericNameValueSchema = zod
   .object({
     name: zod.optional(zod.string()),
@@ -285,7 +294,16 @@ export const BonusXmlSchema = zod.union([
           zod.literal(""),
         ])
       ),
+      // Choose an armour to link to
       selectarmor: zod.optional(zod.literal("")),
+      // Choose an attribute to link to
+      selectattribute: zod.optional(
+        zod
+          .object({
+            excludeattribute: zod.array(zod.nativeEnum(attributeXMLEnum)),
+          })
+          .strict()
+      ),
       // Choose a skill to link to
       selectskill: zod.optional(
         zod
@@ -669,7 +687,10 @@ export const BonusXmlSchema = zod.union([
           })
           .strict()
       ),
-
+      // add spirits?
+      addspirit: zod.optional(
+        zod.union([zod.array(SpiritSchema), SpiritSchema])
+      ),
       // One-off bonuses e.g. very specific to one thing
       // Reduces future cyberware essence cost
       adapsin: zod.optional(zod.literal("")),

@@ -46,6 +46,8 @@ export const CostRiggerSchema: zod.ZodType<CostRiggerType> = zod.array(
 
 export const VehiclesAndDronesSchema = zod
   .object({
+    name: zod.string(),
+    description: zod.string(),
     type: zod.nativeEnum(vehicleDroneTypeEnum),
     subtype: zod.union([
       zod.nativeEnum(groundcraftSubtypeEnum),
@@ -53,7 +55,6 @@ export const VehiclesAndDronesSchema = zod
       zod.nativeEnum(aircraftSubtypeEnum),
       zod.nativeEnum(droneSubtypeEnum),
     ]),
-    name: zod.string(),
     handling: zod.array(zod.number()),
     speed: zod.array(zod.number()),
     acceleration: zod.number(),
@@ -64,7 +65,6 @@ export const VehiclesAndDronesSchema = zod
     seats: zod.number(),
     availability: AvailabilityRiggerSchema,
     cost: CostRiggerSchema,
-    description: zod.string(),
   })
   .strict();
 

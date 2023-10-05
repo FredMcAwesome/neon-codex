@@ -3514,7 +3514,7 @@
       <type>M</type>
       <required>
         <allof>
-          <art>Invocation</art>
+          <metamagicart>Invocation</metamagicart>
         </allof>
       </required>
     </spell>

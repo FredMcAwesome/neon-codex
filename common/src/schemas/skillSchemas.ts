@@ -4,6 +4,7 @@ export const SkillSchema = zod
   .object({
     // id: zod.string(),
     name: zod.string(),
+    description: zod.string(),
     attribute: zod.nativeEnum(attributeTypeEnum),
     category: zod.nativeEnum(skillCategoryEnum),
     default: zod.boolean(),
@@ -15,7 +16,6 @@ export const SkillSchema = zod
     specialisations: zod.optional(zod.array(zod.string())),
     source: zod.string(),
     page: zod.number(),
-    description: zod.string(),
   })
   .strict();
 export type SkillType = zod.infer<typeof SkillSchema>;

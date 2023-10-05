@@ -46,6 +46,7 @@ export const CostMagicalSchema: zod.ZodType<CostMagicalType> = zod.array(
 
 export const MagicGearSchema = zod
   .object({
+    name: zod.string(),
     type: zod.nativeEnum(magicalGearTypeEnum),
     subtype: zod.optional(
       zod.union([
@@ -53,7 +54,6 @@ export const MagicGearSchema = zod
         zod.nativeEnum(formulaTypeEnum),
       ])
     ),
-    name: zod.string(),
     availability: AvailabilityMagicalSchema,
     cost: CostMagicalSchema,
     description: zod.string(),

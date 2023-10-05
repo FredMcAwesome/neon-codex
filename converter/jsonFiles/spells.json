@@ -1,0 +1,5985 @@
+[
+  {
+    "name": "Acid Stream",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Indirect", "Elemental"],
+    "duration": "Instantaneous",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 283
+  },
+  {
+    "name": "Toxic Wave",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Indirect", "Elemental", "Area"],
+    "duration": "Instantaneous",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 283
+  },
+  {
+    "name": "Punch",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Stun",
+    "descriptorList": ["Indirect"],
+    "duration": "Instantaneous",
+    "damage": 6,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 283
+  },
+  {
+    "name": "Clout",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Stun",
+    "descriptorList": ["Indirect"],
+    "duration": "Instantaneous",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 284
+  },
+  {
+    "name": "Blast",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Stun",
+    "descriptorList": ["Indirect", "Area"],
+    "duration": "Instantaneous",
+    "damage": 0,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 284
+  },
+  {
+    "name": "Death Touch",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Direct"],
+    "duration": "Instantaneous",
+    "damage": 6,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 284
+  },
+  {
+    "name": "Manabolt",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Direct"],
+    "duration": "Instantaneous",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 284
+  },
+  {
+    "name": "Manaball",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Direct", "Area"],
+    "duration": "Instantaneous",
+    "damage": 0,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 284
+  },
+  {
+    "name": "Flamethrower",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Indirect", "Elemental"],
+    "duration": "Instantaneous",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 284
+  },
+  {
+    "name": "Fireball",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Indirect", "Elemental", "Area"],
+    "duration": "Instantaneous",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 284
+  },
+  {
+    "name": "Lightning Bolt",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Indirect", "Elemental"],
+    "duration": "Instantaneous",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 284
+  },
+  {
+    "name": "Ball Lightning",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Indirect", "Elemental", "Area"],
+    "duration": "Instantaneous",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 284
+  },
+  {
+    "name": "Shatter",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Direct"],
+    "duration": "Instantaneous",
+    "damage": 6,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 284
+  },
+  {
+    "name": "Powerbolt",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Direct"],
+    "duration": "Instantaneous",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 284
+  },
+  {
+    "name": "Powerball",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Direct", "Area"],
+    "duration": "Instantaneous",
+    "damage": 0,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 284
+  },
+  {
+    "name": "Knockout",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Stun",
+    "descriptorList": ["Direct"],
+    "duration": "Instantaneous",
+    "damage": 6,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 284
+  },
+  {
+    "name": "Stunbolt",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Stun",
+    "descriptorList": ["Direct"],
+    "duration": "Instantaneous",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 284
+  },
+  {
+    "name": "Stunball",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Stun",
+    "descriptorList": ["Direct", "Area"],
+    "duration": "Instantaneous",
+    "damage": 0,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 284
+  },
+  {
+    "name": "Analyze Device",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Directional"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 285
+  },
+  {
+    "name": "Analyze Magic",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Directional"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 285
+  },
+  {
+    "name": "Analyze Truth",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Directional"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 286
+  },
+  {
+    "name": "Clairaudience",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Passive", "Directional"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 286
+  },
+  {
+    "name": "Clairvoyance",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Passive", "Directional"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 286
+  },
+  {
+    "name": "Combat Sense",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Passive", "Psychic"],
+    "duration": "Sustained",
+    "damage": 0,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 286
+  },
+  {
+    "name": "Detect Enemies",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Area"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 286
+  },
+  {
+    "name": "Detect Enemies, Extended",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Extended Area"],
+    "duration": "Sustained",
+    "damage": 0,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 286
+  },
+  {
+    "name": "Detect Individual",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Area"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 286
+  },
+  {
+    "name": "Detect Life",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Area"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 286
+  },
+  {
+    "name": "Detect Life, Extended",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Extended Area"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 286
+  },
+  {
+    "name": "Detect [Life Form]",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Area"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 287
+  },
+  {
+    "name": "Detect [Life Form], Extended",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Extended Area"],
+    "duration": "Sustained",
+    "damage": 0,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 287
+  },
+  {
+    "name": "Detect Magic",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Area"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 287
+  },
+  {
+    "name": "Detect Magic, Extended",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Extended Area"],
+    "duration": "Sustained",
+    "damage": 0,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 287
+  },
+  {
+    "name": "Detect [Object]",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Area"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 287
+  },
+  {
+    "name": "Mindlink",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Psychic"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 287
+  },
+  {
+    "name": "Mind Probe",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Directional"],
+    "duration": "Sustained",
+    "damage": 0,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 287
+  },
+  {
+    "name": "Antidote",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": [],
+    "duration": "Permanent",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 288
+  },
+  {
+    "name": "Awaken",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": [],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 109
+  },
+  {
+    "name": "Cure Disease",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Essence"],
+    "duration": "Permanent",
+    "damage": 4,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 288
+  },
+  {
+    "name": "Decrease [Attribute]",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Essence"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 288
+  },
+  {
+    "name": "Detox",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": [],
+    "duration": "Permanent",
+    "damage": 6,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 288
+  },
+  {
+    "name": "Heal",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Essence"],
+    "duration": "Permanent",
+    "damage": 4,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 288
+  },
+  {
+    "name": "Increase [Attribute]",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Essence"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 288
+  },
+  {
+    "name": "Increase Reflexes",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Essence"],
+    "duration": "Sustained",
+    "damage": 0,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 288
+  },
+  {
+    "name": "Oxygenate",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": [],
+    "duration": "Sustained",
+    "damage": 5,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 288
+  },
+  {
+    "name": "Prophylaxis",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": [],
+    "duration": "Sustained",
+    "damage": 4,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 289
+  },
+  {
+    "name": "Resist Pain",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": [],
+    "duration": "Permanent",
+    "damage": 4,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 289
+  },
+  {
+    "name": "Stabilize",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": [],
+    "duration": "Permanent",
+    "damage": 4,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 289
+  },
+  {
+    "name": "Agony",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Single-Sense"],
+    "duration": "Sustained",
+    "damage": 4,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 290
+  },
+  {
+    "name": "Mass Agony",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Single-Sense"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 290
+  },
+  {
+    "name": "Bugs",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Multi-Sense"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 290
+  },
+  {
+    "name": "Swarm",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Multi-Sense", "Area"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 290
+  },
+  {
+    "name": "Chaos",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Multi-Sense"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 290
+  },
+  {
+    "name": "Chaotic World",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Multi-Sense", "Area"],
+    "duration": "Sustained",
+    "damage": 0,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 290
+  },
+  {
+    "name": "Confusion",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Multi-Sense"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 290
+  },
+  {
+    "name": "Mass Confusion",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Multi-Sense", "Area"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 290
+  },
+  {
+    "name": "Entertainment",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Obvious", "Multi-Sense", "Area"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 290
+  },
+  {
+    "name": "Trid Entertainment",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Obvious", "Multi-Sense", "Area"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 290
+  },
+  {
+    "name": "Improved Invisibility",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Single-Sense"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 291
+  },
+  {
+    "name": "Invisibility",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Single-Sense"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 291
+  },
+  {
+    "name": "Mask",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Multi-Sense"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 291
+  },
+  {
+    "name": "Physical Mask",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Multi-Sense"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 291
+  },
+  {
+    "name": "Phantasm",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Multi-Sense", "Area"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 291
+  },
+  {
+    "name": "Trid Phantasm",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Multi-Sense", "Area"],
+    "duration": "Sustained",
+    "damage": 0,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 291
+  },
+  {
+    "name": "Hush",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Single-Sense", "Area"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 291
+  },
+  {
+    "name": "Silence",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Single-Sense", "Area"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 291
+  },
+  {
+    "name": "Stealth",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Single-Sense"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 292
+  },
+  {
+    "name": "Animate",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 292
+  },
+  {
+    "name": "Mass Animate",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 292
+  },
+  {
+    "name": "Armor",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 292
+  },
+  {
+    "name": "Control Actions",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Mental"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 292
+  },
+  {
+    "name": "Mob Control",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Mental"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 292
+  },
+  {
+    "name": "Control Thoughts",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Mental"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 293
+  },
+  {
+    "name": "Mob Mind",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Mental"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 293
+  },
+  {
+    "name": "Fling",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical", "Damaging"],
+    "duration": "Instantaneous",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 293
+  },
+  {
+    "name": "Ice Sheet",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Environmental", "Area"],
+    "duration": "Instantaneous",
+    "damage": 0,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 293
+  },
+  {
+    "name": "Ignite",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Permanent",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 293
+  },
+  {
+    "name": "Influence",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Mental"],
+    "duration": "Permanent",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 293
+  },
+  {
+    "name": "Levitate",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 293
+  },
+  {
+    "name": "Light",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Environmental", "Area"],
+    "duration": "Sustained",
+    "damage": 4,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 293
+  },
+  {
+    "name": "Magic Fingers",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 294
+  },
+  {
+    "name": "Mana Barrier",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Environmental", "Area"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 294
+  },
+  {
+    "name": "Physical Barrier",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Environmental", "Area"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 294
+  },
+  {
+    "name": "Poltergeist",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Environmental", "Area"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 294
+  },
+  {
+    "name": "Shadow",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Environmental", "Area"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 294
+  },
+  {
+    "name": "Curse",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Material Link", "Spell"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 297
+  },
+  {
+    "name": "Prodigal Spell",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Spell", "Spotter"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 297
+  },
+  {
+    "name": "Remote Sensing",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Spell", "Spotter"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 297
+  },
+  {
+    "name": "Ward",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Anchored"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 297
+  },
+  {
+    "name": "Circle of Protection",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Anchored"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 298
+  },
+  {
+    "name": "Circle of Healing",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Anchored", "Spell"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 298
+  },
+  {
+    "name": "Renascence",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Anchored", "Spell"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 298
+  },
+  {
+    "name": "Watcher",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Minion"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 298
+  },
+  {
+    "name": "Homunculus",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Minion"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 298
+  },
+  {
+    "name": "Corrode [Object]",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Indirect", "Elemental"],
+    "duration": "Instantaneous",
+    "damage": 5,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Street Grimoire",
+    "page": 102
+  },
+  {
+    "name": "Melt [Object]",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Indirect", "Elemental"],
+    "duration": "Instantaneous",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Street Grimoire",
+    "page": 102
+  },
+  {
+    "name": "Sludge [Object]",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Indirect", "Area", "Elemental"],
+    "duration": "Instantaneous",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Street Grimoire",
+    "page": 102
+  },
+  {
+    "name": "Disrupt [Object]",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Special",
+    "descriptorList": ["Direct"],
+    "duration": "Instantaneous",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Street Grimoire",
+    "page": 102
+  },
+  {
+    "name": "Destroy [Free Spirit]",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Direct"],
+    "duration": "Instantaneous",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Street Grimoire",
+    "page": 103
+  },
+  {
+    "name": "Destroy [Vehicle]",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Direct"],
+    "duration": "Instantaneous",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Street Grimoire",
+    "page": 103
+  },
+  {
+    "name": "Firewater",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Indirect", "Elemental"],
+    "duration": "Instantaneous",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 103
+  },
+  {
+    "name": "Napalm",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Indirect", "Area", "Elemental"],
+    "duration": "Instantaneous",
+    "damage": 0,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 103
+  },
+  {
+    "name": "Insecticide [Insect Spirit]",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Direct", "Area"],
+    "duration": "Instantaneous",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Mana",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Street Grimoire",
+    "page": 103
+  },
+  {
+    "name": "Ice Spear",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Indirect", "Elemental"],
+    "duration": "Instantaneous",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 103
+  },
+  {
+    "name": "Ice Storm",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Indirect", "Area", "Elemental"],
+    "duration": "Instantaneous",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 103
+  },
+  {
+    "name": "One Less [Metatype/Species]",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Direct"],
+    "duration": "Instantaneous",
+    "damage": 6,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Street Grimoire",
+    "page": 104
+  },
+  {
+    "name": "Slay [Metatype/Species]",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Direct"],
+    "duration": "Instantaneous",
+    "damage": 4,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Street Grimoire",
+    "page": 104
+  },
+  {
+    "name": "Slaughter [Metatype/Species]",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Direct", "Area"],
+    "duration": "Instantaneous",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Mana",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Street Grimoire",
+    "page": 104
+  },
+  {
+    "name": "Ram [Object]",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Direct"],
+    "duration": "Instantaneous",
+    "damage": 5,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Street Grimoire",
+    "page": 104
+  },
+  {
+    "name": "Wreck [Object]",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Direct"],
+    "duration": "Instantaneous",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Street Grimoire",
+    "page": 105
+  },
+  {
+    "name": "Demolish [Object]",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Direct", "Area"],
+    "duration": "Instantaneous",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Street Grimoire",
+    "page": 105
+  },
+  {
+    "name": "Radiation Beam",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Indirect", "Elemental"],
+    "duration": "Instantaneous",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 105
+  },
+  {
+    "name": "Radiation Burst",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Indirect", "Area", "Elemental"],
+    "duration": "Instantaneous",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 105
+  },
+  {
+    "name": "Pollutant Stream",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Indirect", "Elemental"],
+    "duration": "Instantaneous",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 106
+  },
+  {
+    "name": "Pollutant Wave",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Indirect", "Area", "Elemental"],
+    "duration": "Instantaneous",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 106
+  },
+  {
+    "name": "Shattershield",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Direct"],
+    "duration": "Instantaneous",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 106
+  },
+  {
+    "name": "Astral Message",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Passive", "Directional"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 106
+  },
+  {
+    "name": "Astral Clairvoyance",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Passive", "Directional"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 106
+  },
+  {
+    "name": "Borrow Sense",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Directional"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 106
+  },
+  {
+    "name": "Animal Sense",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Directional"],
+    "duration": "Sustained",
+    "damage": 5,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 106
+  },
+  {
+    "name": "Eyes of the Pack",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Directional"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 106
+  },
+  {
+    "name": "Catalog",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Area"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 107
+  },
+  {
+    "name": "Diagnose",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Directional"],
+    "duration": "Instantaneous",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 107
+  },
+  {
+    "name": "Dragon Astral Signature",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Psychic", "Area"],
+    "duration": "Sustained",
+    "damage": 5,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 107
+  },
+  {
+    "name": "Enhance Aim",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Passive", "Directional"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 107
+  },
+  {
+    "name": "Hawkeye",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Passive", "Directional"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 107
+  },
+  {
+    "name": "Mana Window",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Directional"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 107
+  },
+  {
+    "name": "Astral Window",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Directional"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 107
+  },
+  {
+    "name": "Mindnet",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Psychic", "Area"],
+    "duration": "Sustained",
+    "damage": 0,
+    "range": {
+      "value": "Touch",
+      "target": "Area"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 108
+  },
+  {
+    "name": "Mindnet Extended",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Psychic", "Extended Area"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Touch",
+      "target": "Area"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 108
+  },
+  {
+    "name": "Night Vision",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Passive", "Directional"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 108
+  },
+  {
+    "name": "[Sense] Cryptesthesia",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Passive", "Directional"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Street Grimoire",
+    "page": 108
+  },
+  {
+    "name": "Spatial Sense",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Passive", "Area"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 108
+  },
+  {
+    "name": "Spatial Sense, Extended",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Passive", "Extended Area"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Touch",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 108
+  },
+  {
+    "name": "Thought Recognition",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Psychic", "Directional"],
+    "duration": "Sustained",
+    "damage": 0,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 108
+  },
+  {
+    "name": "Area Thought Recognition",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Psychic", "Area"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 108
+  },
+  {
+    "name": "Translate",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Psychic", "Directional"],
+    "duration": "Sustained",
+    "damage": 4,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 109
+  },
+  {
+    "name": "Ambidexterity",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Essence"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 109
+  },
+  {
+    "name": "Alleviate Addiction",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Essence"],
+    "duration": "Sustained",
+    "damage": 6,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 109
+  },
+  {
+    "name": "Alleviate [Allergy]",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Essence"],
+    "duration": "Sustained",
+    "damage": 6,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Street Grimoire",
+    "page": 109
+  },
+  {
+    "name": "Crank",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Essence"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 109
+  },
+  {
+    "name": "Decrease Reflexes",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Negative"],
+    "duration": "Permanent",
+    "damage": 2,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 110
+  },
+  {
+    "name": "Enabler",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Negative"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 110
+  },
+  {
+    "name": "Fast",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Essence"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 110
+  },
+  {
+    "name": "Forced Defense",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Essence"],
+    "duration": "Instantaneous",
+    "damage": 1,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 110
+  },
+  {
+    "name": "Increase Inherent Limits",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Essence"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 110
+  },
+  {
+    "name": "Decrease Inherent Limits",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Negative"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 110
+  },
+  {
+    "name": "Camouflage",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Single-Sense"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 111
+  },
+  {
+    "name": "Physical Camouflage",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Single-Sense"],
+    "duration": "Sustained",
+    "damage": 0,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 111
+  },
+  {
+    "name": "Decoy",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Multi-Sense"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 111
+  },
+  {
+    "name": "Chaff",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Multi-Sense", "Area"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 111
+  },
+  {
+    "name": "Double Image",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Multi-Sense"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 111
+  },
+  {
+    "name": "Dream",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Multi-Sense"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 111
+  },
+  {
+    "name": "Euphoria",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Single-Sense"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 111
+  },
+  {
+    "name": "Opium Den",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Single-Sense", "Area"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 111
+  },
+  {
+    "name": "Foreboding",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Multi-Sense", "Area"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 112
+  },
+  {
+    "name": "Hot Potato",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Multi-Sense", "Area"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 112
+  },
+  {
+    "name": "[Sense] Removal",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Single-Sense"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Street Grimoire",
+    "page": 112
+  },
+  {
+    "name": "Mass [Sense] Removal",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Single-Sense", "Area"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Street Grimoire",
+    "page": 112
+  },
+  {
+    "name": "Stink",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Single-Sense"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 113
+  },
+  {
+    "name": "Stench",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Single-Sense", "Area"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 113
+  },
+  {
+    "name": "Sound Barrier",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Single-Sense", "Area"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 113
+  },
+  {
+    "name": "Switch Vehicle Signature",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Multi-Sense"],
+    "duration": "Special",
+    "damage": 1,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 113
+  },
+  {
+    "name": "Vehicle Mask",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Multi-Sense"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 113
+  },
+  {
+    "name": "Bind",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 113
+  },
+  {
+    "name": "Net Bind",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical", "Area"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 113
+  },
+  {
+    "name": "Mana Bind",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Mana"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 114
+  },
+  {
+    "name": "Mana Net",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Mana", "Area"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 114
+  },
+  {
+    "name": "Bug Zapper",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Environmental", "Area"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 114
+  },
+  {
+    "name": "Calm Animal",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Mental"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 114
+  },
+  {
+    "name": "Calm Pack",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Mental", "Area"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 114
+  },
+  {
+    "name": "Catfall",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 114
+  },
+  {
+    "name": "Clean [Element]",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Environmental", "Area", "Elemental"],
+    "duration": "Permanent",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Street Grimoire",
+    "page": 114
+  },
+  {
+    "name": "Compel Truth",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Mental"],
+    "duration": "Special",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 114
+  },
+  {
+    "name": "Control Animal",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Mental"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 115
+  },
+  {
+    "name": "Control Pack",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Mental", "Area"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 115
+  },
+  {
+    "name": "Deflection",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 115
+  },
+  {
+    "name": "[Element] Aura",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Environmental", "Elemental"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Street Grimoire",
+    "page": 115
+  },
+  {
+    "name": "[Element] Wall",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Environmental", "Area", "Elemental"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Street Grimoire",
+    "page": 115
+  },
+  {
+    "name": "Fashion",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Environmental", "Area"],
+    "duration": "Permanent",
+    "damage": 1,
+    "range": {
+      "value": "Touch",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 115
+  },
+  {
+    "name": "Fix",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Permanent",
+    "damage": 0,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 116
+  },
+  {
+    "name": "Gecko Crawl",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 116
+  },
+  {
+    "name": "Glue",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Permanent",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 116
+  },
+  {
+    "name": "Glue Strip",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical", "Area"],
+    "duration": "Permanent",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 116
+  },
+  {
+    "name": "Increase Noise",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 116
+  },
+  {
+    "name": "Decrease Noise",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 116
+  },
+  {
+    "name": "Increase Gear Limits",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 116
+  },
+  {
+    "name": "Decrease Gear Limits",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 116
+  },
+  {
+    "name": "Interference",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Environmental", "Area"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 117
+  },
+  {
+    "name": "Lock",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 117
+  },
+  {
+    "name": "Mana Static",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Environmental", "Area"],
+    "duration": "Permanent",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 117
+  },
+  {
+    "name": "Makeover",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Permanent",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 117
+  },
+  {
+    "name": "Mist",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Environmental", "Area"],
+    "duration": "Instantaneous",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 117
+  },
+  {
+    "name": "Offensive Mana Barrier",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Environmental", "Area"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 117
+  },
+  {
+    "name": "Preserve",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical", "Area"],
+    "duration": "Instantaneous",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 117
+  },
+  {
+    "name": "Protect Vehicle",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical", "Area"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 117
+  },
+  {
+    "name": "Pulse",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Environmental", "Area"],
+    "duration": "Instantaneous",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 118
+  },
+  {
+    "name": "Reinforce",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 118
+  },
+  {
+    "name": "Slow Vehicle",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 118
+  },
+  {
+    "name": "Shape [Material]",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Environmental", "Area"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Street Grimoire",
+    "page": 118
+  },
+  {
+    "name": "Shapechange",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 118
+  },
+  {
+    "name": "[Critter] Form",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Sustained",
+    "damage": 4,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Street Grimoire",
+    "page": 118
+  },
+  {
+    "name": "Spirit Barrier",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Environmental", "Area"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 119
+  },
+  {
+    "name": "Spirit Zapper",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Environmental", "Area"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 119
+  },
+  {
+    "name": "Sterilize",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical", "Area"],
+    "duration": "Instantaneous",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 119
+  },
+  {
+    "name": "Turn To Goo",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 119
+  },
+  {
+    "name": "Aspect Mana Line",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Mana"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 122
+  },
+  {
+    "name": "Alarm Ward",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Anchored"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 122
+  },
+  {
+    "name": "Ally Conjuration",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Minion"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 122
+  },
+  {
+    "name": "Astral Doppelganger",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Spotter", "Material Link"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 122
+  },
+  {
+    "name": "Atonement",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Contractual"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 123
+  },
+  {
+    "name": "Attune Animal",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Adept"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Street Grimoire",
+    "page": 123
+  },
+  {
+    "name": "Attune Item",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Adept"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Street Grimoire",
+    "page": 124
+  },
+  {
+    "name": "Augury and Sortilege",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Material Link"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 124
+  },
+  {
+    "name": "Blood Bond",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Material Link"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 125
+  },
+  {
+    "name": "Blood Rite",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Blood", "Organic Link"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 125
+  },
+  {
+    "name": "Blood Sight",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Organic Link"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 125
+  },
+  {
+    "name": "Calling [Spirit Type]",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Contractual"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 126
+  },
+  {
+    "name": "Charged Ward",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Anchored"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 127
+  },
+  {
+    "name": "Circle of Cleansing",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Anchored", "Mana"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 127
+  },
+  {
+    "name": "Create Ally Spirit",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Minion"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 127
+  },
+  {
+    "name": "Death Mark",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Organic Link", "Spotter"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 127
+  },
+  {
+    "name": "Dispersion Circle",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Anchored"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 127
+  },
+  {
+    "name": "Door Wards",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Anchored"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 127
+  },
+  {
+    "name": "Empower",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Adept"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 128
+  },
+  {
+    "name": "Grave Binding",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Anchored", "Organic Link"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 129
+  },
+  {
+    "name": "Group Bond",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Contractual"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 129
+  },
+  {
+    "name": "Imbue Item",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": [],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 133
+  },
+  {
+    "name": "Kything",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Anchored"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 133
+  },
+  {
+    "name": "Far Sensing",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Spotter"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 133
+  },
+  {
+    "name": "Leeching",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Mana"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 133
+  },
+  {
+    "name": "Ley Sight",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Mana"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 134
+  },
+  {
+    "name": "Light of Dharma",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Anchored"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 134
+  },
+  {
+    "name": "Living Vessel Preparation",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Organic Link"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 135
+  },
+  {
+    "name": "Inanimate Vessel Preparation",
+    "description": "",
+    "category": "Enchantment",
+    "damageType": "N/A",
+    "descriptorList": ["Organic Link"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 214
+  },
+  {
+    "name": "Manifest Sha",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Anchored", "Mana"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 135
+  },
+  {
+    "name": "Masking Ward",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Anchored"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 135
+  },
+  {
+    "name": "Obfuscating Ward",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Anchored"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 135
+  },
+  {
+    "name": "Polarized Ward",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Anchored"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 136
+  },
+  {
+    "name": "Recharge Reagents",
+    "description": "",
+    "category": "Enchantment",
+    "damageType": "N/A",
+    "descriptorList": ["Geomancy"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 136
+  },
+  {
+    "name": "Shofar",
+    "description": "",
+    "category": "Enchantment",
+    "damageType": "N/A",
+    "descriptorList": [],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 216
+  },
+  {
+    "name": "Ritual of Change",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Minion"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 136
+  },
+  {
+    "name": "Smudging",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Mana", "Material Link"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 136
+  },
+  {
+    "name": "Spirit Pact",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Contractual"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 136
+  },
+  {
+    "name": "Summon Great Form Spirit",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Minion"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 136
+  },
+  {
+    "name": "Trap Ward",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Anchored"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 137
+  },
+  {
+    "name": "Whisper of Bones",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Organic Link"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Street Grimoire",
+    "page": 137
+  },
+  {
+    "name": "Death Replay",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Directional"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Bullets And Bandages",
+    "page": 21
+  },
+  {
+    "name": "Incision",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Bullets And Bandages",
+    "page": 21
+  },
+  {
+    "name": "Hand of Glory",
+    "description": "",
+    "category": "Enchantment",
+    "damageType": "N/A",
+    "descriptorList": [],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 213
+  },
+  {
+    "name": "Mortis Optigram",
+    "description": "",
+    "category": "Enchantment",
+    "damageType": "N/A",
+    "descriptorList": [],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 214
+  },
+  {
+    "name": "Symbolic Link",
+    "description": "",
+    "category": "Enchantment",
+    "damageType": "N/A",
+    "descriptorList": [],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 216
+  },
+  {
+    "name": "Mystic Restraints",
+    "description": "",
+    "category": "Enchantment",
+    "damageType": "N/A",
+    "descriptorList": [],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 214
+  },
+  {
+    "name": "Paper Lotus",
+    "description": "",
+    "category": "Enchantment",
+    "damageType": "N/A",
+    "descriptorList": [],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 215
+  },
+  {
+    "name": "Govi",
+    "description": "",
+    "category": "Enchantment",
+    "damageType": "N/A",
+    "descriptorList": [],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 212
+  },
+  {
+    "name": "Astral Powder",
+    "description": "",
+    "category": "Enchantment",
+    "damageType": "N/A",
+    "descriptorList": [],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Street Grimoire",
+    "page": 212
+  },
+  {
+    "name": "Convince",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": [],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Stolen Souls",
+    "page": 189
+  },
+  {
+    "name": "Fashion",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": [],
+    "duration": "Permanent",
+    "damage": 1,
+    "range": {
+      "value": "Touch",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Stolen Souls",
+    "page": 190
+  },
+  {
+    "name": "Hibernate",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": [],
+    "duration": "Permanent",
+    "damage": 2,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Stolen Souls",
+    "page": 190
+  },
+  {
+    "name": "Interference",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Environmental", "Area"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Stolen Souls",
+    "page": 190
+  },
+  {
+    "name": "Intoxication",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": [],
+    "duration": "Permanent",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Stolen Souls",
+    "page": 190
+  },
+  {
+    "name": "Nutrition",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": [],
+    "duration": "Permanent",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Stolen Souls",
+    "page": 190
+  },
+  {
+    "name": "Sound Barrier",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Single-Sense", "Area"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Stolen Souls",
+    "page": 190
+  },
+  {
+    "name": "Vehicle Mask",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Multi-Sense"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Stolen Souls",
+    "page": 190
+  },
+  {
+    "name": "Chill",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Stun",
+    "descriptorList": ["Direct"],
+    "duration": "Instantaneous",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadow Spells",
+    "page": 16
+  },
+  {
+    "name": "Frigid",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Stun",
+    "descriptorList": ["Direct", "Area"],
+    "duration": "Instantaneous",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Shadow Spells",
+    "page": 16
+  },
+  {
+    "name": "Flame Burst",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Direct", "Elemental"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Self",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Shadow Spells",
+    "page": 16
+  },
+  {
+    "name": "Magebolt",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Direct"],
+    "duration": "Instantaneous",
+    "damage": 4,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadow Spells",
+    "page": 17
+  },
+  {
+    "name": "[Element] Grenade",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Indirect", "Elemental"],
+    "duration": "Instantaneous",
+    "damage": 1,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Shadow Spells",
+    "page": 17
+  },
+  {
+    "name": "Sunbeam",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Indirect"],
+    "duration": "Instantaneous",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadow Spells",
+    "page": 17
+  },
+  {
+    "name": "Passenger",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Passive", "Psychic"],
+    "duration": "Sustained",
+    "damage": 0,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadow Spells",
+    "page": 18
+  },
+  {
+    "name": "Recorded Room",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Passive", "Area"],
+    "duration": "Sustained",
+    "damage": 0,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Shadow Spells",
+    "page": 18
+  },
+  {
+    "name": "Secret Handshake",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Area"],
+    "duration": "Sustained",
+    "damage": 4,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadow Spells",
+    "page": 18
+  },
+  {
+    "name": "Broadcast",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Area"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadow Spells",
+    "page": 18
+  },
+  {
+    "name": "Sending",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Active", "Extended Area"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadow Spells",
+    "page": 18
+  },
+  {
+    "name": "[Sense] Link",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Passive", "Psychic"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Shadow Spells",
+    "page": 18
+  },
+  {
+    "name": "Convert Blood to Ichor",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Essence", "Negative"],
+    "duration": "Instantaneous",
+    "damage": 0,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadow Spells",
+    "page": 18
+  },
+  {
+    "name": "Decontamination",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Essence"],
+    "duration": "Permanent",
+    "damage": 4,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadow Spells",
+    "page": 18
+  },
+  {
+    "name": "Dehydrate",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Essence"],
+    "duration": "Sustained",
+    "damage": 4,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadow Spells",
+    "page": 18
+  },
+  {
+    "name": "Ghoulish Strength",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Essence"],
+    "duration": "Sustained",
+    "damage": 4,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadow Spells",
+    "page": 19
+  },
+  {
+    "name": "Healthy Glow",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Essence"],
+    "duration": "Permanent",
+    "damage": 2,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadow Spells",
+    "page": 19
+  },
+  {
+    "name": "Hydrate",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Essence"],
+    "duration": "Permanent",
+    "damage": 4,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadow Spells",
+    "page": 19
+  },
+  {
+    "name": "Inflict Disease",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Negative", "Essence"],
+    "duration": "Permanent",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadow Spells",
+    "page": 19
+  },
+  {
+    "name": "Nauseate",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Negative"],
+    "duration": "Instantaneous",
+    "damage": 2,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadow Spells",
+    "page": 19
+  },
+  {
+    "name": "Alleviate Nausea",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Essence"],
+    "duration": "Sustained",
+    "damage": 4,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadow Spells",
+    "page": 19
+  },
+  {
+    "name": "Personal Warmth",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Essence"],
+    "duration": "Sustained",
+    "damage": 4,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadow Spells",
+    "page": 19
+  },
+  {
+    "name": "Rot",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Essence", "Negative"],
+    "duration": "Instantaneous",
+    "damage": 0,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadow Spells",
+    "page": 20
+  },
+  {
+    "name": "Vampiric Speed",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Essence"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Self",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Shadow Spells",
+    "page": 20
+  },
+  {
+    "name": "False Impression",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": [],
+    "duration": "Sustained",
+    "damage": 4,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadow Spells",
+    "page": 20
+  },
+  {
+    "name": "Manascape",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": [],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Mana",
+    "source": "Shadow Spells",
+    "page": 20
+  },
+  {
+    "name": "Vampiric Stealth",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": [],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Self",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadow Spells",
+    "page": 20
+  },
+  {
+    "name": "Air Filter",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Sustained",
+    "damage": 6,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadow Spells",
+    "page": 20
+  },
+  {
+    "name": "Alter Memory",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Mental"],
+    "duration": "Permanent",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadow Spells",
+    "page": 20
+  },
+  {
+    "name": "Alter Temperature",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Shadow Spells",
+    "page": 20
+  },
+  {
+    "name": "Astral Armor",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Mental"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadow Spells",
+    "page": 21
+  },
+  {
+    "name": "Control Emotions",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Mental"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadow Spells",
+    "page": 21
+  },
+  {
+    "name": "Mob Mood",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Mental"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Mana",
+    "source": "Shadow Spells",
+    "page": 21
+  },
+  {
+    "name": "Evaporate",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Sustained",
+    "damage": 4,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadow Spells",
+    "page": 21
+  },
+  {
+    "name": "Looking Glass",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadow Spells",
+    "page": 21
+  },
+  {
+    "name": "Insulate",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical", "Environmental"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Shadow Spells",
+    "page": 21
+  },
+  {
+    "name": "Napalm Wall",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical", "Environmental"],
+    "duration": "Sustained",
+    "damage": 0,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Shadow Spells",
+    "page": 21
+  },
+  {
+    "name": "Petrify",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadow Spells",
+    "page": 21
+  },
+  {
+    "name": "Pulse",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical", "Environmental"],
+    "duration": "Instantaneous",
+    "damage": 4,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Shadow Spells",
+    "page": 21
+  },
+  {
+    "name": "Radiation Shield",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Sustained",
+    "damage": 4,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Shadow Spells",
+    "page": 21
+  },
+  {
+    "name": "Radiation Barrier",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Shadow Spells",
+    "page": 21
+  },
+  {
+    "name": "Decrystalize",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Material Link", "Spotter"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadow Spells",
+    "page": 22
+  },
+  {
+    "name": "Mana Flow",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Anchored"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadow Spells",
+    "page": 22
+  },
+  {
+    "name": "Mana Ebb",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Anchored"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Shadow Spells",
+    "page": 22
+  },
+  {
+    "name": "Catch",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "Physical",
+    "descriptorList": [],
+    "duration": "Instantaneous",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Hard Targets",
+    "page": 191
+  },
+  {
+    "name": "Snakeblood",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": [],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Hard Targets",
+    "page": 192
+  },
+  {
+    "name": "Conceal Scent",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Object"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Hard Targets",
+    "page": 191
+  },
+  {
+    "name": "Recharge Potency",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": [],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Hard Targets",
+    "page": 192
+  },
+  {
+    "name": "Manablade",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": [],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Hard Targets",
+    "page": 192
+  },
+  {
+    "name": "Powerblade",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": [],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Hard Targets",
+    "page": 192
+  },
+  {
+    "name": "Corps Cadavre",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Minion"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Hard Targets",
+    "page": 129
+  },
+  {
+    "name": "Zombie",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Minion"],
+    "duration": "Special",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Hard Targets",
+    "page": 131
+  },
+  {
+    "name": "Incubus",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Multi-Sense"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Cutting Aces",
+    "page": 153
+  },
+  {
+    "name": "Incubus Shroud",
+    "description": "",
+    "category": "Illusion",
+    "damageType": "N/A",
+    "descriptorList": ["Realistic", "Multi-Sense", "Area"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Mana",
+    "source": "Cutting Aces",
+    "page": 153
+  },
+  {
+    "name": "Rewind",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Mental"],
+    "duration": "Permanent",
+    "damage": 0,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Cutting Aces",
+    "page": 153
+  },
+  {
+    "name": "Consistency",
+    "description": "",
+    "category": "Detection",
+    "damageType": "N/A",
+    "descriptorList": ["Psychic"],
+    "duration": "Instantaneous",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Cutting Aces",
+    "page": 153
+  },
+  {
+    "name": "Branch",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Forbidden Arcana",
+    "page": 49
+  },
+  {
+    "name": "Vines",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical", "Area"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Forbidden Arcana",
+    "page": 49
+  },
+  {
+    "name": "Thorn",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Sustained",
+    "damage": 0,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Forbidden Arcana",
+    "page": 49
+  },
+  {
+    "name": "Rosebush",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical", "Area"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Forbidden Arcana",
+    "page": 49
+  },
+  {
+    "name": "Growth",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Forbidden Arcana",
+    "page": 49
+  },
+  {
+    "name": "Lash",
+    "description": "",
+    "category": "Combat",
+    "damageType": "N/A",
+    "descriptorList": ["Indirect"],
+    "duration": "Instantaneous",
+    "damage": 0,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Forbidden Arcana",
+    "page": 49
+  },
+  {
+    "name": "Slash",
+    "description": "",
+    "category": "Combat",
+    "damageType": "N/A",
+    "descriptorList": ["Indirect", "Area"],
+    "duration": "Instantaneous",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Forbidden Arcana",
+    "page": 49
+  },
+  {
+    "name": "Claw",
+    "description": "",
+    "category": "Combat",
+    "damageType": "N/A",
+    "descriptorList": ["Indirect"],
+    "duration": "Instantaneous",
+    "damage": 0,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Forbidden Arcana",
+    "page": 50
+  },
+  {
+    "name": "Barrage",
+    "description": "",
+    "category": "Combat",
+    "damageType": "N/A",
+    "descriptorList": ["Indirect", "Area"],
+    "duration": "Instantaneous",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Forbidden Arcana",
+    "page": 50
+  },
+  {
+    "name": "Multiply Food",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Essence"],
+    "duration": "Permanent",
+    "damage": 2,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Forbidden Arcana",
+    "page": 50
+  },
+  {
+    "name": "Comet",
+    "description": "",
+    "category": "Combat",
+    "damageType": "N/A",
+    "descriptorList": ["Indirect", "Area", "Elemental"],
+    "duration": "Instantaneous",
+    "damage": 0,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Forbidden Arcana",
+    "page": 50
+  },
+  {
+    "name": "Gravity",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Forbidden Arcana",
+    "page": 50
+  },
+  {
+    "name": "Gravity Well",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical", "Area"],
+    "duration": "Sustained",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Forbidden Arcana",
+    "page": 50
+  },
+  {
+    "name": "Evil Eye",
+    "description": "",
+    "category": "Combat",
+    "damageType": "N/A",
+    "descriptorList": ["Direct"],
+    "duration": "Instantaneous",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Forbidden Arcana",
+    "page": 50
+  },
+  {
+    "name": "Alter Ballistics",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Physical"],
+    "duration": "Instantaneous",
+    "damage": 2,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Forbidden Arcana",
+    "page": 51
+  },
+  {
+    "name": "Forest Transformation",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Anchored"],
+    "duration": "Sustained",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Forbidden Arcana",
+    "page": 52
+  },
+  {
+    "name": "Necro Summoning",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Minion"],
+    "duration": "Sustained",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Forbidden Arcana",
+    "page": 52
+  },
+  {
+    "name": "Boil Blood",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Blood", "Direct", "Elemental"],
+    "duration": "Instantaneous",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Forbidden Arcana",
+    "page": 125
+  },
+  {
+    "name": "Corpse Explosion",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Blood", "Direct", "Elemental"],
+    "duration": "Instantaneous",
+    "damage": 0,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Forbidden Arcana",
+    "page": 126
+  },
+  {
+    "name": "Embolism",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Blood", "Direct"],
+    "duration": "Instantaneous",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Forbidden Arcana",
+    "page": 126
+  },
+  {
+    "name": "Giger Spit",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Blood", "Direct", "Elemental"],
+    "duration": "Instantaneous",
+    "damage": 4,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Forbidden Arcana",
+    "page": 126
+  },
+  {
+    "name": "Ice Veins",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Special",
+    "descriptorList": ["Blood", "Direct"],
+    "duration": "Instantaneous",
+    "damage": 3,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Forbidden Arcana",
+    "page": 127
+  },
+  {
+    "name": "Pyrohemetics",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Blood", "Direct", "Elemental"],
+    "duration": "Instantaneous",
+    "damage": 4,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Forbidden Arcana",
+    "page": 127
+  },
+  {
+    "name": "Rupture",
+    "description": "",
+    "category": "Combat",
+    "damageType": "Physical",
+    "descriptorList": ["Blood", "Direct"],
+    "duration": "Instantaneous",
+    "damage": 6,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Forbidden Arcana",
+    "page": 127
+  },
+  {
+    "name": "Clot",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Blood", "Essence"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Forbidden Arcana",
+    "page": 127
+  },
+  {
+    "name": "Share Damage",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Blood"],
+    "duration": "Sustained",
+    "damage": 4,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Forbidden Arcana",
+    "page": 127
+  },
+  {
+    "name": "Somatic Healing",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Blood", "Essence"],
+    "duration": "Permanent",
+    "damage": 4,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Forbidden Arcana",
+    "page": 127
+  },
+  {
+    "name": "Sympathetic Reprisal",
+    "description": "",
+    "category": "Health",
+    "damageType": "N/A",
+    "descriptorList": ["Blood"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Forbidden Arcana",
+    "page": 128
+  },
+  {
+    "name": "Blood Puppet",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Blood", "Mental"],
+    "duration": "Sustained",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Forbidden Arcana",
+    "page": 128
+  },
+  {
+    "name": "Corpse Spikes",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Blood", "Environmental", "Area"],
+    "duration": "Instantaneous",
+    "damage": 0,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Forbidden Arcana",
+    "page": 129
+  },
+  {
+    "name": "Corpse Lash",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Blood", "Environmental", "Area"],
+    "duration": "Instantaneous",
+    "damage": 1,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Area"
+    },
+    "type": "Physical",
+    "source": "Forbidden Arcana",
+    "page": 129
+  },
+  {
+    "name": "Blood Whip",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Blood", "Physical"],
+    "duration": "Instantaneous",
+    "damage": 2,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Forbidden Arcana",
+    "page": 129
+  },
+  {
+    "name": "Blood Blade",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Blood", "Physical"],
+    "duration": "Instantaneous",
+    "damage": 1,
+    "range": {
+      "value": "Touch",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Forbidden Arcana",
+    "page": 129
+  },
+  {
+    "name": "Viscera Web",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Blood", "Physical", "Damaging"],
+    "duration": "Sustained",
+    "damage": 4,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Physical",
+    "source": "Forbidden Arcana",
+    "page": 129
+  },
+  {
+    "name": "Blood Bath",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Adept", "Blood"],
+    "duration": "Instantaneous",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Forbidden Arcana",
+    "page": 130
+  },
+  {
+    "name": "Blood Oath",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Material Link"],
+    "duration": "Instantaneous",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Forbidden Arcana",
+    "page": 130
+  },
+  {
+    "name": "Death Curse",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Material Link"],
+    "duration": "Instantaneous",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Forbidden Arcana",
+    "page": 130
+  },
+  {
+    "name": "Guardian Bond",
+    "description": "",
+    "category": "Ritual",
+    "damageType": "N/A",
+    "descriptorList": ["Material Link"],
+    "duration": "Instantaneous",
+    "damage": {
+      "option": "Special"
+    },
+    "range": {
+      "value": "Special",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Forbidden Arcana",
+    "page": 131
+  },
+  {
+    "name": "Astral Disruption",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Mana"],
+    "duration": "Sustained",
+    "damage": 2,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Better Than Bad",
+    "page": 158
+  },
+  {
+    "name": "Mass Astral Disruption",
+    "description": "",
+    "category": "Manipulation",
+    "damageType": "N/A",
+    "descriptorList": ["Mana", "Area"],
+    "duration": "Sustained",
+    "damage": 0,
+    "range": {
+      "value": "Line Of Sight",
+      "target": "Single Target"
+    },
+    "type": "Mana",
+    "source": "Better Than Bad",
+    "page": 158
+  }
+]

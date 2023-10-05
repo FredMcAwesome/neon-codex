@@ -160,8 +160,6 @@ export const WeaponAccessorySummarySchema = zod
     deploymentRequired: zod.boolean(),
     availability: AvailabilityWeaponAccessorySchema,
     cost: CostWeaponAccessorySchema,
-    source: zod.nativeEnum(sourceBookEnum),
-    page: zod.number(),
     accessoryCostMultiplier: zod.optional(zod.number()),
     allowGear: zod.optional(zod.array(zod.nativeEnum(gearCategoryEnum))),
     preinstalledGear: zod.optional(UseGearListSchema),
@@ -175,6 +173,8 @@ export const WeaponAccessorySummarySchema = zod
     rangePenaltyDecrease: zod.optional(zod.number()),
     concealabilityModification: zod.optional(ConcealabilityModificationSchema),
     userSelectable: zod.optional(zod.literal(false)),
+    source: zod.nativeEnum(sourceBookEnum),
+    page: zod.number(),
   })
   .strict();
 export type WeaponAccessorySummaryType = zod.infer<

@@ -51,25 +51,37 @@ const ArmourModXmlSchema = zod
   .object({
     id: zod.string(),
     name: zod.string(),
+    // Category of mod, if not "General" then the host armour must have the
+    // matching addmodcategory in order to use this
     category: zod.nativeEnum(armourModXmlCategoryEnum),
     armor: zod.union([zod.number(), zod.nativeEnum(costArmourEnum)]),
-    // maximum rating for armour mod
+    // Maximum rating for armour mod
     // this should be 1 for items without rating variable effects
     maxrating: zod.number(),
+    // Capacity taken up by this mod
     armorcapacity: zod.string(),
+    // Armour requirements
     required: zod.optional(ArmourModRequiredXmlSchema),
-    // this item is not selectable i.e. only used when armour includes it
+    // This item is not selectable i.e. only used when armour includes it
     hide: zod.optional(zod.literal("")),
+    // Allows gear to be added from these gear categories
     addoncategory: zod.optional(
       zod.union([
         zod.array(zod.nativeEnum(gearCategoryEnum)),
         zod.nativeEnum(gearCategoryEnum),
       ])
     ),
+    // Availability
     avail: StringOrNumberSchema,
+    // Cost
     cost: StringOrNumberSchema,
+    // Number of gear that can be added to armour mod
+    // currently this seems to crash chummer if more than this is added
+    // rather than preventing more from being added...
     gearcapacity: zod.optional(zod.number()),
+    // Bonus from mod
     bonus: zod.optional(BonusXmlSchema),
+    // Bonus when mod is wirelessly enabled
     wirelessbonus: zod.optional(BonusXmlSchema),
     source: zod.union([SourceXmlSchema, zod.literal(2050)]),
     page: zod.number(),

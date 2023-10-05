@@ -46,9 +46,9 @@ const convertSkill = function (xmlSkill: SkillXmlType): SkillType {
           ? xmlSkill.specs.spec
           : [xmlSkill.specs.spec]
         : undefined,
+    description: "",
     source: xmlSkill.source,
     page: xmlSkill.page,
-    description: "",
   };
 };
 
@@ -56,14 +56,21 @@ const SkillXmlSchema = zod
   .object({
     id: zod.string(),
     name: zod.string(),
+    // Related attribute
     attribute: zod.nativeEnum(attributeXMLEnum),
+    // Category of skill
     category: zod.nativeEnum(skillCategoryEnum),
+    // Able to use this skill without ranks
     default: zod.union([zod.literal("True"), zod.literal("False")]),
+    // This skill is for one specific exotic thing e.g. exotic weapon
     exotic: zod.optional(zod.literal("True")),
+    // Skillgroup this belongs to "" for none
     skillgroup: zod.string(),
+    // Skills with these are related to the movement type
     requiresgroundmovement: zod.optional(zod.literal("True")),
     requiresswimmovement: zod.optional(zod.literal("True")),
     requiresflymovement: zod.optional(zod.literal("True")),
+    // List of default specialisations, however custom ones are normally possible
     specs: zod.union([
       zod
         .object({
