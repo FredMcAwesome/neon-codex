@@ -113,6 +113,11 @@ async function getWeapons() {
           }),
         source: weapon.source,
         page: weapon.page,
+
+        ...(weapon.addWeapons !== undefined &&
+          weapon.addWeapons.length > 0 && {
+            addWeapons: weapon.addWeapons,
+          }),
       };
       return weaponFormatted;
     })
@@ -175,10 +180,6 @@ async function getTypeInformation(weapon: Weapons) {
         ...(firearmWeapon.underbarrelWeapons !== undefined &&
           firearmWeapon.underbarrelWeapons.length > 0 && {
             underbarrelWeapons: firearmWeapon.underbarrelWeapons,
-          }),
-        ...(firearmWeapon.addWeapons !== undefined &&
-          firearmWeapon.addWeapons.length > 0 && {
-            addWeapons: firearmWeapon.addWeapons,
           }),
         ...(firearmWeapon.accessoryMounts !== undefined &&
           firearmWeapon.accessoryMounts.length > 0 && {

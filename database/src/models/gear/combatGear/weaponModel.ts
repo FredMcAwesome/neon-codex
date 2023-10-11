@@ -29,7 +29,6 @@ import type {
   AvailabilityWeaponType,
   CostWeaponType,
   DamageType,
-  weaponRequirementsType,
 } from "@shadowrun/common/build/schemas/weaponSchemas.js";
 import { weaponXmlSubtypeEnum } from "@shadowrun/common/build/schemas/commonSchemas.js";
 import { Skills } from "../../chummerdb/skillModel.js";
@@ -37,6 +36,7 @@ import assert from "assert";
 import type { WeaponSummaryType } from "../../../seeds/newSeeds/weaponsSeed.js";
 import { IncludedWeaponAccessories } from "../../chummerdb/customTables/activeWeaponAccessoryModel.js";
 import { WeaponRangeLinks } from "../../chummerdb/customTables/weaponRangeLinkModel.js";
+import type { RequirementsType } from "@shadowrun/common/build/schemas/shared/requiredSchemas.js";
 
 @Entity({
   discriminatorColumn: "type",
@@ -106,6 +106,19 @@ export abstract class Weapons {
   @Property({ type: "string[]", nullable: true })
   relatedSkillSpecialisations?: Array<string>;
 
+  @Property({ type: "string[]", nullable: true })
+  addWeapons?: Array<string>;
+
+  @Property({ type: "json", nullable: true })
+  weaponRequirements?: RequirementsType;
+
+  @Enum({
+    items: () => firearmAccessoryMountLocationEnum,
+    array: true,
+    nullable: true,
+  })
+  hostWeaponMountsRequired?: Array<firearmAccessoryMountLocationEnum>;
+
   @Enum(() => sourceBookEnum)
   source!: sourceBookEnum;
 
@@ -140,6 +153,12 @@ export abstract class Weapons {
     this.source = dto.source;
     this.page = dto.page;
     this.description = dto.description;
+
+    if (dto.hostWeaponRequirements?.weaponRequirements !== undefined)
+      this.weaponRequirements = dto.hostWeaponRequirements.weaponRequirements;
+    if (dto.hostWeaponRequirements?.hostWeaponMountsRequired !== undefined)
+      this.hostWeaponMountsRequired =
+        dto.hostWeaponRequirements.hostWeaponMountsRequired;
   }
 }
 
@@ -205,21 +224,8 @@ export class FirearmWeapons extends RangedWeapons {
   @Property()
   ammoSlots!: number;
 
-  @Property({ type: "json", nullable: true })
-  weaponRequirements?: weaponRequirementsType;
-
-  @Enum({
-    items: () => firearmAccessoryMountLocationEnum,
-    array: true,
-    nullable: true,
-  })
-  hostWeaponMountsRequired?: Array<firearmAccessoryMountLocationEnum>;
-
   @Property({ type: "string[]", nullable: true })
   underbarrelWeapons?: Array<string>;
-
-  @Property({ type: "string[]", nullable: true })
-  addWeapons?: Array<string>;
 
   @Enum({
     items: () => firearmAccessoryMountLocationEnum,
@@ -245,18 +251,6 @@ export class FirearmWeapons extends RangedWeapons {
     if (dto.typeInformation.firearmOptions.ammoCategory !== undefined)
       this.ammoCategory = dto.typeInformation.firearmOptions.ammoCategory;
     this.ammoSlots = dto.typeInformation.firearmOptions.ammoSlots;
-    if (
-      dto.typeInformation.firearmOptions.hostWeaponRequirements
-        ?.weaponRequirements !== undefined
-    )
-      this.weaponRequirements =
-        dto.typeInformation.firearmOptions.hostWeaponRequirements.weaponRequirements;
-    if (
-      dto.typeInformation.firearmOptions.hostWeaponRequirements
-        ?.hostWeaponMountsRequired !== undefined
-    )
-      this.hostWeaponMountsRequired =
-        dto.typeInformation.firearmOptions.hostWeaponRequirements.hostWeaponMountsRequired;
     if (dto.typeInformation.firearmOptions.underbarrelWeapons !== undefined)
       this.underbarrelWeapons =
         dto.typeInformation.firearmOptions.underbarrelWeapons;

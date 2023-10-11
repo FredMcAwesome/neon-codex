@@ -7035,13 +7035,7 @@
       <cost>0</cost>
       <source>RG</source>
       <page>36</page>
-      <accessorymounts>
-        <mount>Stock</mount>
-        <mount>Side</mount>
-        <mount>Barrel</mount>
-        <mount>Top</mount>
-        <mount>Under</mount>
-      </accessorymounts>
+      <mount>Under</mount>
       <ammocategory>Grenade Launchers</ammocategory>
       <hide />
       <range>Grenade Launchers</range>
@@ -7065,13 +7059,7 @@
       <cost>0</cost>
       <source>SR5</source>
       <page>428</page>
-      <accessorymounts>
-        <mount>Stock</mount>
-        <mount>Side</mount>
-        <mount>Barrel</mount>
-        <mount>Top</mount>
-        <mount>Under</mount>
-      </accessorymounts>
+      <mount>Under</mount>
       <ammocategory>Grenade Launchers</ammocategory>
       <hide />
       <range>Grenade Launchers</range>
@@ -7095,37 +7083,33 @@
       <cost>3500</cost>
       <source>SR5</source>
       <page>428</page>
-      <accessorymounts>
-        <mount>Stock</mount>
-        <mount>Side</mount>
-        <mount>Barrel</mount>
-        <mount>Top</mount>
-        <mount>Under</mount>
-      </accessorymounts>
+      <mount>Under</mount>
       <ammocategory>Grenade Launchers</ammocategory>
       <range>Grenade Launchers</range>
       <required>
-        <OR>
-          <category>Assault Rifles</category>
-          <category>Sniper Rifles</category>
-          <category>Sporting Rifles</category>
-          <useskill>Longarms</useskill>
-          <useskill>Heavy Weapons</useskill>
-          <AND>
-            <useskill NOT="" operation="exists" />
-            <OR>
-              <category>Shotguns</category>
-              <category>Sporting Rifles</category>
-              <category>Sniper Rifles</category>
-              <category>Light Machine Guns</category>
-              <category>Medium Machine Guns</category>
-              <category>Heavy Machine Guns</category>
-              <category>Assault Cannons</category>
-              <category>Grenade Launchers</category>
-              <category>Missile Launchers</category>
-            </OR>
-          </AND>
-        </OR>
+        <weapondetails>
+          <OR>
+            <category>Assault Rifles</category>
+            <category>Sniper Rifles</category>
+            <category>Sporting Rifles</category>
+            <useskill>Longarms</useskill>
+            <useskill>Heavy Weapons</useskill>
+            <AND>
+              <useskill NOT="" operation="exists" />
+              <OR>
+                <category>Shotguns</category>
+                <category>Sporting Rifles</category>
+                <category>Sniper Rifles</category>
+                <category>Light Machine Guns</category>
+                <category>Medium Machine Guns</category>
+                <category>Heavy Machine Guns</category>
+                <category>Assault Cannons</category>
+                <category>Grenade Launchers</category>
+                <category>Missile Launchers</category>
+              </OR>
+            </AND>
+          </OR>
+        </weapondetails>
       </required>
       <useskill>Heavy Weapons</useskill>
       <useskillspec>Grenade Launchers</useskillspec>
@@ -7149,6 +7133,7 @@
       <source>RG</source>
       <page>53</page>
       <range>Heavy Pistols</range>
+      <mount>Under</mount>
       <required>
         <weapondetails>
           <conceal operation="greaterthan">0</conceal>
@@ -7176,6 +7161,7 @@
       <source>SR5</source>
       <page>449</page>
       <range>Light Crossbows</range>
+      <mount>Under</mount>
       <required>
         <weapondetails>
           <conceal operation="greaterthan">0</conceal>
@@ -7213,13 +7199,7 @@
           <name>Smartgun System, Internal</name>
         </accessory>
       </accessories>
-      <accessorymounts>
-        <mount>Stock</mount>
-        <mount>Side</mount>
-        <mount>Barrel</mount>
-        <mount>Top</mount>
-        <mount>Under</mount>
-      </accessorymounts>
+      <mount>Under</mount>
       <alternaterange>Shotguns (flechette)</alternaterange>
       <ammocategory>Shotguns</ammocategory>
       <hide />
@@ -10197,6 +10177,7 @@
       <cost>0</cost>
       <source>2050</source>
       <page>185</page>
+      <mount>Under</mount>
       <ammocategory>Grenade Launchers</ammocategory>
       <hide />
       <range>Grenade Launchers</range>
@@ -11470,13 +11451,7 @@
       <cost>0</cost>
       <source>SAG</source>
       <page>27</page>
-      <accessorymounts>
-        <mount>Stock</mount>
-        <mount>Side</mount>
-        <mount>Barrel</mount>
-        <mount>Top</mount>
-        <mount>Under</mount>
-      </accessorymounts>
+      <mount>Under</mount>
       <ammocategory>Grenade Launchers</ammocategory>
       <hide />
       <range>Grenade Launchers</range>
@@ -11714,13 +11689,7 @@
       <cost>0</cost>
       <source>SAG</source>
       <page>30</page>
-      <accessorymounts>
-        <mount>Stock</mount>
-        <mount>Side</mount>
-        <mount>Barrel</mount>
-        <mount>Top</mount>
-        <mount>Under</mount>
-      </accessorymounts>
+      <mount>Under</mount>
       <ammocategory>Grenade Launchers</ammocategory>
       <hide />
       <range>Grenade Launchers</range>
@@ -13164,6 +13133,7 @@
       <mode>0</mode>
       <rc>0</rc>
       <ammo>0</ammo>
+      <mount>Under</mount>
       <avail>4R</avail>
       <cost>50</cost>
       <source>RG</source>
@@ -15023,6 +14993,7 @@
       <rc>0</rc>
       <ammo>10(m)</ammo>
       <avail>0</avail>
+      <mount>Under</mount>
 	    <range>Shuriken</range>
       <cost>150</cost>
       <source>SOTG</source>
@@ -17699,8 +17670,8 @@
     <accessory>
       <id>a2e4fcc6-cc21-4fc8-bbdf-efb489e9c377</id>
       <name>Mounted Crossbow</name>
-      <mount>Under/Barrel</mount>
-      <extramount>Under/Barrel</extramount>
+      <mount>Barrel</mount>
+      <extramount>Under</extramount>
       <avail>8R</avail>
       <cost>1000</cost>
       <source>HT</source>
@@ -17729,8 +17700,8 @@
     <accessory>
       <id>b83d5f60-7be2-4991-a518-775f6ae49207</id>
       <name>Underbarrel Laser</name>
-      <mount>Under/Side</mount>
-      <extramount>Under/Side</extramount>
+      <mount>Under</mount>
+      <extramount>Side</extramount>
       <avail>16F</avail>
       <cost>22000</cost>
       <source>HT</source>

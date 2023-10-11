@@ -26,6 +26,7 @@ import {
   AvailabilityRatingSchema,
   WeaponXmlSubtypeSchema,
 } from "./commonSchemas.js";
+import { RequirementsSchema } from "./shared/requiredSchemas.js";
 
 export const AvailabilityWeaponSchema = zod
   .object({
@@ -171,31 +172,12 @@ export const MeleeOptionsSchema = zod
   .strict();
 export type MeleeOptionsType = zod.infer<typeof MeleeOptionsSchema>;
 
-export const WeaponRequirementsSchema = zod
-  .object({
-    weaponAllowed: zod.optional(zod.string()),
-    minimumHostConcealment: zod.optional(zod.number()),
-    maximumHostConcealment: zod.optional(zod.number()),
-    categories: zod.optional(zod.array(zod.string())),
-    skills: zod.optional(zod.array(zod.string())),
-  })
-  .strict();
-export type weaponRequirementsType = zod.infer<typeof WeaponRequirementsSchema>;
-
 export const FirearmOptionsSchema = zod
   .object({
     mode: zod.array(zod.nativeEnum(firearmModeEnum)),
     recoilCompensation: RecoilCompensationSchema,
     ammoCategory: zod.optional(WeaponXmlSubtypeSchema),
     ammoSlots: zod.number(),
-    hostWeaponRequirements: zod.optional(
-      zod
-        .object({
-          weaponRequirements: zod.optional(WeaponRequirementsSchema),
-          hostWeaponMountsRequired: zod.optional(AccessoryMountSchema),
-        })
-        .strict()
-    ),
     underbarrelWeapons: zod.optional(zod.array(zod.string())),
     accessoryMounts: zod.optional(AccessoryMountSchema),
     doubleCostAccessoryMounts: zod.optional(AccessoryMountSchema),
@@ -380,6 +362,14 @@ export const WeaponUnlinkedSummarySchema = zod
     userSelectable: zod.optional(zod.literal(false)),
     augmentationType: zod.nativeEnum(augmentationClassificationEnum),
     addWeapons: zod.optional(zod.array(zod.string())),
+    hostWeaponRequirements: zod.optional(
+      zod
+        .object({
+          weaponRequirements: zod.optional(RequirementsSchema),
+          hostWeaponMountsRequired: zod.optional(AccessoryMountSchema),
+        })
+        .strict()
+    ),
     description: zod.string(),
     wireless: zod.optional(zod.string()),
     relatedSkill: zod.string(),
@@ -418,6 +408,14 @@ export const WeaponLinkedSchema = zod
     userSelectable: zod.optional(zod.literal(false)),
     augmentationType: zod.nativeEnum(augmentationClassificationEnum),
     addWeapons: zod.optional(zod.array(zod.string())),
+    hostWeaponRequirements: zod.optional(
+      zod
+        .object({
+          weaponRequirements: zod.optional(RequirementsSchema),
+          hostWeaponMountsRequired: zod.optional(AccessoryMountSchema),
+        })
+        .strict()
+    ),
     description: zod.string(),
     wireless: zod.optional(zod.string()),
     relatedSkill: zod.string(),

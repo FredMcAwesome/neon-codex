@@ -7,7 +7,6 @@ import {
   restrictionEnum,
 } from "@shadowrun/common/build/enums.js";
 import ArmourModifications from "../../grammar/armourModifications.ohm-bundle.js";
-import type { ArmourModRequiredXmlType } from "./ArmourModParserSchemas.js";
 import { armourModXmlCategoryEnum } from "./ArmourModParserSchemas.js";
 const Availability = ArmourModifications.Availability;
 const Cost = ArmourModifications.Cost;
@@ -45,33 +44,6 @@ export const convertArmourModCategory = function (
       return armourModCategoryEnum.VictoryLiners;
       break;
   }
-};
-
-export const convertArmourModRequirements = function (
-  xmlRequirements: ArmourModRequiredXmlType | undefined
-) {
-  if (typeof xmlRequirements === "undefined") {
-    return undefined;
-  }
-  let requiredMod, hostArmour;
-  if ("oneof" in xmlRequirements && xmlRequirements.oneof !== undefined) {
-    const oneof = xmlRequirements.oneof;
-    requiredMod = oneof.armormod.xmltext;
-  }
-  if (
-    "parentdetails" in xmlRequirements &&
-    xmlRequirements.parentdetails !== undefined
-  ) {
-    const parentdetails = xmlRequirements.parentdetails;
-    hostArmour = parentdetails.name;
-  }
-  if (requiredMod === undefined && hostArmour === undefined) {
-    return undefined;
-  }
-  return {
-    ...(requiredMod !== undefined && { requiredMod: requiredMod }),
-    ...(hostArmour !== undefined && { hostArmour: hostArmour }),
-  };
 };
 
 const availabilityArmourModificationSemantics = Availability.createSemantics();

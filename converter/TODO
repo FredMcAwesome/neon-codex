@@ -18,6 +18,7 @@ So far I have only parsed:
 - Skills (DB)
 - Armour
 - ArmourAccessories
+- Spells
 
 To match where I previously was, still need (All parsed, stored in database, then passed through to frontend):
 
@@ -38,7 +39,6 @@ Other main priorities:
 - Metamagic
 - Powers
 - Programs
-- Spells
 - Spirit Powers
 - Streams
 

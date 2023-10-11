@@ -21,18 +21,13 @@ import {
   availabilityEnum,
 } from "@shadowrun/common/build/enums.js";
 import assert from "assert";
-import {
-  AccessoryXmlType,
-  WeaponXmlType,
-  RequiredXmlType,
-} from "./WeaponParserSchemas.js";
+import { AccessoryXmlType, WeaponXmlType } from "./WeaponParserSchemas.js";
 import {
   UnlinkedAccessoryType,
   FirearmOptionsType,
   MeleeOptionsType,
   MountType,
   UnlinkedWeaponTypeInformationType,
-  weaponRequirementsType,
 } from "@shadowrun/common/build/schemas/weaponSchemas.js";
 import {
   weaponXmlSubtypeEnum,
@@ -736,55 +731,6 @@ export const convertAllowGear = function (
   return gearCategories.map((gearCategory) =>
     convertGearCategory(gearCategory, `weapon.name: ${name}`)
   );
-};
-
-// This function does NOT handle requirements properly
-// TODO: put in lots of work here, after seeing what frontend needs
-export const convertRequirements = function (
-  xmlRequirements: RequiredXmlType | undefined,
-  name: string
-): weaponRequirementsType | undefined {
-  if (!xmlRequirements) {
-    return undefined;
-  }
-  // console.log("Requirements" + xmlRequirements.toString());
-  assert(typeof xmlRequirements === "object");
-  // if (Object.hasOwn(xmlRequirements, "weapondetails")){  //typescript doesn't yet support the type narrowing for this
-  if ("weapondetails" in xmlRequirements) {
-    const weaponName = xmlRequirements.weapondetails.name;
-    const conceal = xmlRequirements.weapondetails.conceal;
-    if (weaponName && conceal !== undefined)
-      assert(false, "only name or conceal should be defined");
-    if (weaponName) {
-      return { weaponAllowed: weaponName };
-    } else if (conceal) {
-      if (conceal._operation === "greaterthan")
-        return { minimumHostConcealment: conceal.xmltext };
-      else return { maximumHostConcealment: conceal.xmltext };
-    }
-    assert(false, "neither name or conceal are defined for: " + name);
-    return undefined;
-  } else if ("OR" in xmlRequirements) {
-    const categories =
-      xmlRequirements.OR.category === undefined
-        ? undefined
-        : Array.isArray(xmlRequirements.OR.category)
-        ? xmlRequirements.OR.category
-        : [xmlRequirements.OR.category];
-    const skills =
-      xmlRequirements.OR.useskill === undefined
-        ? undefined
-        : Array.isArray(xmlRequirements.OR.useskill)
-        ? xmlRequirements.OR.useskill
-        : [xmlRequirements.OR.useskill];
-    return {
-      categories: categories,
-      skills: skills,
-    };
-  } else {
-    // skip the AND portion
-    return undefined;
-  }
 };
 
 export const convertWeaponSkill = function (

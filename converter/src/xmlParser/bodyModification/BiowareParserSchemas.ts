@@ -1,10 +1,11 @@
 import { z as zod } from "zod";
+import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
 import {
-  BonusXmlSchema,
   SourceXmlSchema,
   StringArrayOrStringSchema,
   StringOrNumberSchema,
 } from "../common/ParserCommonDefines.js";
+import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
 
 const BiowareXmlSchema = zod
   .object({
@@ -37,19 +38,8 @@ const BiowareXmlSchema = zod
     blocksmounts: zod.optional(zod.string()),
     selectside: zod.optional(zod.literal("")),
     bonus: zod.optional(BonusXmlSchema),
-    forbidden: zod.optional(
-      zod
-        .object({
-          oneof: zod
-            .object({
-              cyberware: zod.optional(StringArrayOrStringSchema),
-              bioware: zod.optional(StringArrayOrStringSchema),
-              quality: zod.optional(zod.string()),
-            })
-            .strict(),
-        })
-        .strict()
-    ),
+    required: zod.optional(RequiredXmlSchema),
+    forbidden: zod.optional(RequiredXmlSchema),
     allowgear: zod.optional(
       zod
         .object({
@@ -66,28 +56,6 @@ const BiowareXmlSchema = zod
     ),
     notes: zod.optional(zod.string()),
     requireparent: zod.optional(zod.literal("")),
-    required: zod.optional(
-      zod
-        .object({
-          oneof: zod.optional(
-            zod
-              .object({
-                bioware: zod.optional(StringArrayOrStringSchema),
-                cyberware: zod.optional(StringArrayOrStringSchema),
-                metatype: zod.optional(zod.string()),
-              })
-              .strict()
-          ),
-          allof: zod.optional(
-            zod
-              .object({
-                metatype: zod.string(),
-              })
-              .strict()
-          ),
-        })
-        .strict()
-    ),
     pairbonus: zod.optional(
       zod
         .object({

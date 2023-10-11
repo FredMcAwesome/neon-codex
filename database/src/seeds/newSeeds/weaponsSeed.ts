@@ -12,6 +12,7 @@ import {
   MeleeOptionsSchema,
   AvailabilityWeaponSchema,
   CostWeaponSchema,
+  AccessoryMountSchema,
 } from "@shadowrun/common/build/schemas/weaponSchemas.js";
 import {
   WeaponUnlinkedSummaryListSchema,
@@ -41,6 +42,7 @@ import {
 } from "@shadowrun/common/build/enums.js";
 import { WeaponRanges } from "../../models/gear/combatGear/helperTables/weaponRangeModel.js";
 import { WeaponRangeLinks } from "../../models/chummerdb/customTables/weaponRangeLinkModel.js";
+import { RequirementsSchema } from "@shadowrun/common/src/schemas/shared/requiredSchemas.js";
 
 const LimitedWeaponTypeInformationSchema = zod.discriminatedUnion("type", [
   zod
@@ -89,6 +91,14 @@ export const WeaponSummarySchema = zod
     isCyberware: zod.boolean(),
     augmentationType: zod.nativeEnum(augmentationClassificationEnum),
     addWeapons: zod.optional(zod.array(zod.string())),
+    hostWeaponRequirements: zod.optional(
+      zod
+        .object({
+          weaponRequirements: zod.optional(RequirementsSchema),
+          hostWeaponMountsRequired: zod.optional(AccessoryMountSchema),
+        })
+        .strict()
+    ),
     wireless: zod.optional(zod.string()),
     relatedSkill: zod.instanceof(Skills),
     relatedSkillSpecialisations: zod.optional(zod.array(zod.string())),

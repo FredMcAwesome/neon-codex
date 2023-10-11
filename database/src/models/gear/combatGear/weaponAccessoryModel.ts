@@ -2,18 +2,18 @@ import { Entity, PrimaryKey, Property, Enum } from "@mikro-orm/core";
 import { damageTypeEnum } from "@shadowrun/common";
 import { gearCategoryEnum } from "@shadowrun/common/build/enums.js";
 import type {
+  AccessoryMountType,
   AmmunitionSingleType,
   UseGearListType,
 } from "@shadowrun/common/build/schemas/weaponSchemas.js";
 import type {
   AmmoCapacityCalculationType,
-  HostWeaponMountsRequiredType,
-  AccessoryWeaponRequirementsType,
   ConcealabilityModificationType,
   WeaponAccessorySummaryType,
   AvailabilityWeaponAccessoryType,
   CostWeaponAccessoryType,
 } from "@shadowrun/common/build/schemas/weaponAccessorySchemas.js";
+import type { RequirementsType } from "@shadowrun/common/build/schemas/shared/requiredSchemas.js";
 
 @Entity()
 export class WeaponAccessories {
@@ -81,13 +81,13 @@ export class WeaponAccessories {
   newAmmoType?: AmmunitionSingleType;
 
   @Property({ type: "json", nullable: true })
-  hostWeaponMountsRequired?: HostWeaponMountsRequiredType;
+  hostWeaponMountsRequired?: AccessoryMountType;
 
   @Property({ type: "json", nullable: true })
-  hostWeaponRequirements?: AccessoryWeaponRequirementsType;
+  hostWeaponRequirements?: RequirementsType;
 
   @Property({ type: "json", nullable: true })
-  hostWeaponRestrictions?: AccessoryWeaponRequirementsType;
+  hostWeaponRestrictions?: RequirementsType;
 
   @Property({ nullable: true })
   rangePenaltyDecrease?: number;

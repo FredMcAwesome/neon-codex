@@ -8,12 +8,10 @@ import {
   spellTypeEnum,
 } from "@shadowrun/common/build/enums.js";
 import {
-  RequiredSubtypeType,
   spellXmlCategoryEnum,
   SpellXmlDamageType,
   SpellXmlDurationType,
   SpellXmlRangeType,
-  SpellXmlRequiredType,
 } from "./SpellParserSchemas.js";
 import Spells from "../../grammar/spells.ohm-bundle.js";
 const Damage = Spells.Damage;
@@ -212,29 +210,5 @@ damageSpellSemantics.addOperation("eval", {
     return { option: "Special" };
   },
 });
-
-export const convertSpellRequired = function (required: SpellXmlRequiredType) {
-  if ("allof" in required && required.allof !== undefined) {
-    convertSpellRequiredDetails(required.allof);
-  }
-  if ("oneof" in required && required.oneof !== undefined) {
-    convertSpellRequiredDetails(required.oneof);
-  }
-};
-
-export const convertSpellRequiredDetails = function (
-  required: RequiredSubtypeType
-) {
-  if ("group" in required && required.group !== undefined) {
-  }
-  if ("metamagic" in required && required.metamagic !== undefined) {
-  }
-  if ("metamagicart" in required && required.metamagicart !== undefined) {
-  }
-  if ("quality" in required && required.quality !== undefined) {
-  }
-  if ("spell" in required && required.spell !== undefined) {
-  }
-};
 
 export { damageSpellSemantics };

@@ -15,10 +15,7 @@ import {
   capacityArmourModificationSemantics,
   costArmourModificationSemantics,
 } from "./ArmourModParserHelper.js";
-import {
-  convertArmourModCategory,
-  convertArmourModRequirements,
-} from "./ArmourModParserHelper.js";
+import { convertArmourModCategory } from "./ArmourModParserHelper.js";
 import {
   ArmourModListSchema,
   AvailabilityArmourModType,
@@ -27,6 +24,7 @@ import {
 import { ArmourModSchema } from "@shadowrun/common/build/schemas/armourModSchemas.js";
 import ArmourModifications from "../../grammar/armourModifications.ohm-bundle.js";
 import { convertSource } from "../common/ParserHelper.js";
+import { convertRequirements } from "../common/RequiredHelper.js";
 
 const Availability = ArmourModifications.Availability;
 const Cost = ArmourModifications.Cost;
@@ -186,7 +184,7 @@ function convertArmourMod(armourMod: ArmourModXmlType) {
   const capacity = capacityArmourModificationSemantics(match).eval();
   // console.log(`Capacity: ${capacity}`);
 
-  const requirements = convertArmourModRequirements(armourMod.required);
+  const requirements = convertRequirements(armourMod.required);
 
   match = Availability.match(armourMod.avail.toString());
   if (match.failed()) {

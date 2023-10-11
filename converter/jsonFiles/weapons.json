@@ -13741,9 +13741,7 @@
         "mode": ["Single Shot"],
         "recoilCompensation": 0,
         "ammoCategory": "Grenade Launchers",
-        "ammoSlots": 1,
-        "hostWeaponRequirements": {},
-        "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+        "ammoSlots": 1
       },
       "rangeList": ["Grenade Launchers"]
     },
@@ -13781,6 +13779,9 @@
     "isCyberware": false,
     "userSelectable": false,
     "augmentationType": "N/A",
+    "hostWeaponRequirements": {
+      "hostWeaponMountsRequired": ["Under"]
+    },
     "relatedSkill": "Heavy Weapons",
     "source": "Run And Gun",
     "page": 36
@@ -13795,9 +13796,7 @@
         "mode": ["Single Shot"],
         "recoilCompensation": 0,
         "ammoCategory": "Grenade Launchers",
-        "ammoSlots": 1,
-        "hostWeaponRequirements": {},
-        "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+        "ammoSlots": 1
       },
       "rangeList": ["Grenade Launchers"]
     },
@@ -13835,6 +13834,9 @@
     "isCyberware": false,
     "userSelectable": false,
     "augmentationType": "N/A",
+    "hostWeaponRequirements": {
+      "hostWeaponMountsRequired": ["Under"]
+    },
     "relatedSkill": "Heavy Weapons",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 428
@@ -13849,18 +13851,7 @@
         "mode": ["Single Shot"],
         "recoilCompensation": 0,
         "ammoCategory": "Grenade Launchers",
-        "ammoSlots": 1,
-        "hostWeaponRequirements": {
-          "weaponRequirements": {
-            "categories": [
-              "Assault Rifles",
-              "Sniper Rifles",
-              "Sporting Rifles"
-            ],
-            "skills": ["Longarms", "Heavy Weapons"]
-          }
-        },
-        "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+        "ammoSlots": 1
       },
       "rangeList": ["Grenade Launchers"]
     },
@@ -13897,6 +13888,13 @@
     "allowAccessories": true,
     "isCyberware": false,
     "augmentationType": "N/A",
+    "hostWeaponRequirements": {
+      "weaponRequirements": {
+        "categories": ["Assault Rifles", "Sniper Rifles", "Sporting Rifles"],
+        "skills": ["Longarms", "Heavy Weapons"]
+      },
+      "hostWeaponMountsRequired": ["Under"]
+    },
     "relatedSkill": "Heavy Weapons",
     "relatedSkillSpecialisations": ["Grenade Launchers"],
     "source": "Shadowrun 5 Core Rulebook",
@@ -13911,12 +13909,7 @@
       "firearmOptions": {
         "mode": ["Single Shot"],
         "recoilCompensation": 0,
-        "ammoSlots": 1,
-        "hostWeaponRequirements": {
-          "weaponRequirements": {
-            "minimumHostConcealment": 0
-          }
-        }
+        "ammoSlots": 1
       },
       "rangeList": ["Heavy Pistols"]
     },
@@ -13947,6 +13940,12 @@
     "allowAccessories": true,
     "isCyberware": false,
     "augmentationType": "N/A",
+    "hostWeaponRequirements": {
+      "weaponRequirements": {
+        "minimumHostConcealment": 0
+      },
+      "hostWeaponMountsRequired": ["Under"]
+    },
     "relatedSkill": "Exotic Ranged Weapon",
     "relatedSkillSpecialisations": ["Bola"],
     "source": "Run And Gun",
@@ -13961,12 +13960,7 @@
       "firearmOptions": {
         "mode": ["Single Shot"],
         "recoilCompensation": 0,
-        "ammoSlots": 1,
-        "hostWeaponRequirements": {
-          "weaponRequirements": {
-            "minimumHostConcealment": 0
-          }
-        }
+        "ammoSlots": 1
       },
       "rangeList": ["Light Crossbows"]
     },
@@ -14005,6 +13999,12 @@
     "allowAccessories": true,
     "isCyberware": false,
     "augmentationType": "N/A",
+    "hostWeaponRequirements": {
+      "weaponRequirements": {
+        "minimumHostConcealment": 0
+      },
+      "hostWeaponMountsRequired": ["Under"]
+    },
     "relatedSkill": "Exotic Ranged Weapon",
     "relatedSkillSpecialisations": ["Grapple Gun"],
     "source": "Shadowrun 5 Core Rulebook",
@@ -14020,9 +14020,7 @@
         "mode": ["Semi Automatic"],
         "recoilCompensation": 1,
         "ammoCategory": "Shotguns",
-        "ammoSlots": 1,
-        "hostWeaponRequirements": {},
-        "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+        "ammoSlots": 1
       },
       "rangeList": ["Shotguns", "Shotguns (flechette)"]
     },
@@ -14070,6 +14068,9 @@
     "isCyberware": false,
     "userSelectable": false,
     "augmentationType": "N/A",
+    "hostWeaponRequirements": {
+      "hostWeaponMountsRequired": ["Under"]
+    },
     "relatedSkill": "Longarms",
     "relatedSkillSpecialisations": ["Shotguns"],
     "source": "Run And Gun",
@@ -17204,18 +17205,7 @@
       "firearmOptions": {
         "mode": ["Single Shot"],
         "recoilCompensation": 0,
-        "ammoSlots": 1,
-        "hostWeaponRequirements": {
-          "weaponRequirements": {
-            "categories": [
-              "Assault Rifles",
-              "Sniper Rifles",
-              "Sporting Rifles"
-            ],
-            "skills": ["Longarms", "Heavy Weapons"]
-          },
-          "hostWeaponMountsRequired": ["Barrel", "Under"]
-        }
+        "ammoSlots": 1
       },
       "rangeList": ["Medium Crossbows"]
     },
@@ -17254,6 +17244,9 @@
     "allowAccessories": true,
     "isCyberware": false,
     "augmentationType": "N/A",
+    "hostWeaponRequirements": {
+      "hostWeaponMountsRequired": ["Barrel", "Under"]
+    },
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Crossbow"],
     "source": "Hard Targets",
@@ -17268,18 +17261,7 @@
       "firearmOptions": {
         "mode": ["Single Shot"],
         "recoilCompensation": -1,
-        "ammoSlots": 1,
-        "hostWeaponRequirements": {
-          "weaponRequirements": {
-            "categories": [
-              "Assault Rifles",
-              "Sniper Rifles",
-              "Sporting Rifles"
-            ],
-            "skills": ["Longarms", "Heavy Weapons"]
-          },
-          "hostWeaponMountsRequired": ["Under"]
-        }
+        "ammoSlots": 1
       },
       "rangeList": ["Shotguns", "Shotguns (flechette)"]
     },
@@ -17318,6 +17300,9 @@
     "allowAccessories": true,
     "isCyberware": false,
     "augmentationType": "N/A",
+    "hostWeaponRequirements": {
+      "hostWeaponMountsRequired": ["Under"]
+    },
     "relatedSkill": "Longarms",
     "relatedSkillSpecialisations": ["Shotguns"],
     "source": "Hard Targets",
@@ -17332,18 +17317,7 @@
       "firearmOptions": {
         "mode": ["Semi Automatic"],
         "recoilCompensation": 0,
-        "ammoSlots": 1,
-        "hostWeaponRequirements": {
-          "weaponRequirements": {
-            "categories": [
-              "Assault Rifles",
-              "Sniper Rifles",
-              "Sporting Rifles"
-            ],
-            "skills": ["Longarms", "Heavy Weapons"]
-          },
-          "hostWeaponMountsRequired": ["Under", "Side"]
-        }
+        "ammoSlots": 1
       },
       "rangeList": ["Submachine Guns"]
     },
@@ -17385,6 +17359,9 @@
     "allowAccessories": true,
     "isCyberware": false,
     "augmentationType": "N/A",
+    "hostWeaponRequirements": {
+      "hostWeaponMountsRequired": ["Under", "Side"]
+    },
     "relatedSkill": "Exotic Ranged Weapon",
     "relatedSkillSpecialisations": ["Laser Weapons"],
     "source": "Hard Targets",
@@ -20750,6 +20727,9 @@
     "allowAccessories": true,
     "isCyberware": false,
     "augmentationType": "N/A",
+    "hostWeaponRequirements": {
+      "hostWeaponMountsRequired": ["Under"]
+    },
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Blades"],
     "source": "Run And Gun",

@@ -42,7 +42,6 @@ import {
   convertAccessories,
   convertAccessoryMounts,
   convertAllowGear,
-  convertRequirements,
   convertWeaponSkill,
   convertTypeInformation,
   armourPenetrationSemantics,
@@ -52,6 +51,7 @@ import {
   costWeaponSemantics,
 } from "./WeaponParserHelper.js";
 import Weapons from "../../grammar/weapons.ohm-bundle.js";
+import { convertRequirements } from "../common/RequiredHelper.js";
 const Accuracy = Weapons.Accuracy;
 const Damage = Weapons.Damage;
 const ArmourPenetration = Weapons.ArmourPenetration;
@@ -289,7 +289,7 @@ function convertWeapon(weapon: WeaponXmlType) {
     }
     return range;
   });
-  const weaponRequirements = convertRequirements(weapon.required, weapon.name);
+  const weaponRequirements = convertRequirements(weapon.required);
   const mountLocationsOnHostWeapon = weapon.mount
     ? weapon.extramount
       ? [weapon.mount, weapon.extramount]
@@ -304,6 +304,25 @@ function convertWeapon(weapon: WeaponXmlType) {
           hostWeaponMountsRequired: mountLocationsOnHostWeapon,
         }
       : undefined;
+  if (weapon.category === weaponXmlSubtypeEnum.UnderbarrelWeapons) {
+    if (weapon.hide === undefined) {
+      // TODO: renable
+      // assert(
+      //   weaponRequirements !== undefined,
+      //   `No weaponRequirements: ${weapon.name}`
+      // );
+      assert(
+        mountLocationsOnHostWeapon !== undefined,
+        `No mountLocations: ${weapon.name}`
+      );
+    }
+  } else {
+    assert(
+      weaponRequirements === undefined &&
+        mountLocationsOnHostWeapon === undefined,
+      weapon.name
+    );
+  }
   const initialSpecialisations = weapon.spec
     ? weapon.spec2
       ? [weapon.spec, weapon.spec2]
@@ -351,9 +370,6 @@ function convertWeapon(weapon: WeaponXmlType) {
       ammoCategory: weapon.ammocategory,
     }),
     ammoSlots: weapon.ammoslots || 1,
-    ...(hostWeaponRequirements !== undefined && {
-      hostWeaponRequirements: hostWeaponRequirements,
-    }),
     ...(underbarrels !== undefined && { underbarrelWeapons: underbarrels }),
     ...(accessoryMounts !== undefined && { accessoryMounts: accessoryMounts }),
     ...(doubleCostAccessoryMounts !== undefined && {
@@ -388,6 +404,9 @@ function convertWeapon(weapon: WeaponXmlType) {
     ...(weapon.hide !== undefined && { userSelectable: false as const }),
     augmentationType: augmentationType,
     ...(addWeapons !== undefined && { addWeapons: addWeapons }),
+    ...(hostWeaponRequirements !== undefined && {
+      hostWeaponRequirements: hostWeaponRequirements,
+    }),
     relatedSkill: skill,
     ...(specialisations !== undefined && {
       relatedSkillSpecialisations: specialisations,

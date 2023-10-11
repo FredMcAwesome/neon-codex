@@ -3,11 +3,12 @@ import {
   gearCategoryEnum,
 } from "@shadowrun/common/build/enums.js";
 import { z as zod } from "zod";
+import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
 import {
-  BonusXmlSchema,
   SourceXmlSchema,
   StringOrNumberSchema,
 } from "../common/ParserCommonDefines.js";
+import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
 
 export enum armourModXmlCategoryEnum {
   FullBodyArmorMods = "Full Body Armor Mods",
@@ -20,32 +21,6 @@ export enum armourModXmlCategoryEnum {
   UrbanExplorerJumpsuitAccessories = "Urban Explorer Jumpsuit Accessories",
   VictoryLiners = "Victory Liners",
 }
-
-const ArmourModRequiredXmlSchema = zod
-  .object({
-    parentdetails: zod.optional(
-      zod
-        .object({
-          name: zod.string(),
-        })
-        .strict()
-    ),
-    oneof: zod.optional(
-      zod
-        .object({
-          armormod: zod.object({
-            xmltext: zod.string(),
-            _sameparent: zod.literal("True"),
-          }),
-        })
-        .strict()
-    ),
-  })
-  .strict();
-
-export type ArmourModRequiredXmlType = zod.infer<
-  typeof ArmourModRequiredXmlSchema
->;
 
 const ArmourModXmlSchema = zod
   .object({
@@ -61,7 +36,7 @@ const ArmourModXmlSchema = zod
     // Capacity taken up by this mod
     armorcapacity: zod.string(),
     // Armour requirements
-    required: zod.optional(ArmourModRequiredXmlSchema),
+    required: zod.optional(RequiredXmlSchema),
     // This item is not selectable i.e. only used when armour includes it
     hide: zod.optional(zod.literal("")),
     // Allows gear to be added from these gear categories

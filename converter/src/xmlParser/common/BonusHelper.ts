@@ -14,7 +14,6 @@ import {
 import assert from "assert";
 import {
   attributeXMLEnum,
-  BonusXmlType,
   GenericNameValueListType,
   GenericNameValueType,
   limbSlotXmlEnum,
@@ -27,6 +26,7 @@ import {
   skillKarmaCostSemantics,
 } from "./ParserSemanticsHelper.js";
 import { convertAttribute } from "./ParserHelper.js";
+import type { BonusXmlType } from "./BonusParserSchemas.js";
 const EssenceCost = Bonus.EssenceCost;
 const Initiative = Bonus.Initiative;
 const SkillKarmaCost = Bonus.SkillKarmaCost;

@@ -11,6 +11,7 @@ import {
   StringArrayOrStringSchema,
   StringOrNumberSchema,
 } from "../common/ParserCommonDefines.js";
+import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
 
 const AccessoryXmlSchema = zod
   .object({
@@ -39,85 +40,6 @@ const AccessoriesXmlSchema = zod.union([
   AccessoryXmlSchema,
 ]);
 export type AccessoriesXmlType = zod.infer<typeof AccessoriesXmlSchema>;
-
-const categorySchema = zod.union([
-  zod.array(zod.nativeEnum(weaponXmlSubtypeEnum)),
-  zod.nativeEnum(weaponXmlSubtypeEnum),
-]);
-
-type categoryType = zod.infer<typeof categorySchema>;
-
-type NotExistsType = {
-  _NOT: "";
-  _operation: "exists";
-};
-
-type WeaponDetailsAndXmlType = {
-  category?: categoryType | undefined;
-  useskill: Array<String> | String | NotExistsType;
-  OR: WeaponDetailsOrXmlType;
-};
-
-const WeaponDetailsAndXmlSchema: zod.ZodType<WeaponDetailsAndXmlType> = zod
-  .object({
-    category: zod.optional(categorySchema),
-    useskill: zod.union([
-      StringArrayOrStringSchema,
-      zod
-        .object({
-          _NOT: zod.literal(""),
-          _operation: zod.literal("exists"),
-        })
-        .strict(),
-    ]),
-    OR: zod.lazy(() => WeaponDetailsOrXmlSchema),
-  })
-  .strict();
-
-const WeaponDetailsOrXmlSchema = zod
-  .object({
-    category: zod.optional(categorySchema),
-    useskill: zod.optional(StringArrayOrStringSchema),
-    AND: zod.optional(WeaponDetailsAndXmlSchema),
-  })
-  .strict();
-
-type WeaponDetailsOrXmlType = zod.infer<typeof WeaponDetailsOrXmlSchema>;
-
-const RequiredXmlSchema = zod.union([
-  zod
-    .object({
-      weapondetails: zod
-        .object({
-          name: zod.optional(zod.string()),
-          conceal: zod.optional(
-            zod
-              .object({
-                xmltext: zod.number(),
-                _operation: zod.union([
-                  zod.literal("lessthanequals"),
-                  zod.literal("greaterthan"),
-                ]),
-              })
-              .strict()
-          ),
-        })
-        .strict(),
-    })
-    .strict(),
-  zod
-    .object({
-      OR: WeaponDetailsOrXmlSchema,
-    })
-    .strict(),
-  zod
-    .object({
-      AND: WeaponDetailsAndXmlSchema,
-    })
-    .strict(),
-]);
-
-export type RequiredXmlType = zod.infer<typeof RequiredXmlSchema>;
 
 const WeaponXmlSchema = zod
   .object({

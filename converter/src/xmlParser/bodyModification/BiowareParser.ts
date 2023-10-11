@@ -111,22 +111,19 @@ export function ParseBioware() {
       return found;
     }
   );
-
   console.log(englishBiowareList[0]);
 
-  // const armourListConverted = englishArmourList
-  //   // .filter((weapon) => weapon.name === "Osmium Mace")
-  //   .map((armour) => {
-  //     const convertedArmour = convertArmour(armour);
-  //     return convertedArmour;
-  //   });
+  // const biowareListConverted = englishBiowareList.map((bioware) => {
+  //   const convertedBioware = convertArmour(bioware);
+  //   return convertedBioware;
+  // });
   // // console.log(armourListConverted);
   // const jsonFilePath = fileURLToPath(
-  //   path.dirname(currentPath) + "../../../../jsonFiles/armour.json"
+  //   path.dirname(currentPath) + "../../../../jsonFiles/bioware.json"
   // );
   // fs.writeFile(
   //   jsonFilePath,
-  //   JSON.stringify(armourListConverted, null, 2),
+  //   JSON.stringify(biowareListConverted, null, 2),
   //   (error) => {
   //     if (error) {
   //       console.error(error);

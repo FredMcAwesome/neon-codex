@@ -1,11 +1,8 @@
 // import { standardCalculationEnum } from "@shadowrun/common/build/enums.js";
-import { metamagicArtEnum } from "@shadowrun/common/build/enums.js";
 import { z as zod } from "zod";
-import {
-  BonusXmlSchema,
-  SourceXmlSchema,
-  StringArrayOrStringSchema,
-} from "../common/ParserCommonDefines.js";
+import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
+import { SourceXmlSchema } from "../common/ParserCommonDefines.js";
+import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
 
 export enum spellXmlCategoryEnum {
   Combat = "Combat",
@@ -16,25 +13,6 @@ export enum spellXmlCategoryEnum {
   Enchantments = "Enchantments",
   Rituals = "Rituals",
 }
-
-const RequiredSubtypeSchema = zod
-  .object({
-    quality: zod.optional(StringArrayOrStringSchema),
-    group: zod.optional(
-      zod
-        .object({
-          initiategrade: zod.number(),
-          tradition: zod.string(),
-        })
-        .strict()
-    ),
-    metamagic: zod.optional(zod.string()),
-    metamagicart: zod.optional(zod.nativeEnum(metamagicArtEnum)),
-    spell: zod.optional(zod.string()),
-  })
-  .strict();
-
-export type RequiredSubtypeType = zod.infer<typeof RequiredSubtypeSchema>;
 
 const SpellXmlDamageSchema = zod.union([
   zod.literal("P"), // Physical
@@ -64,33 +42,29 @@ const SpellXmlDurationSchema = zod.union([
 ]);
 export type SpellXmlDurationType = zod.infer<typeof SpellXmlDurationSchema>;
 
-const SpellXmlRequiredSchema = zod
-  .object({
-    allof: zod.optional(RequiredSubtypeSchema),
-    oneof: zod.optional(RequiredSubtypeSchema),
-  })
-  .strict();
-export type SpellXmlRequiredType = zod.infer<typeof SpellXmlRequiredSchema>;
-
 const SpellXmlSchema = zod
   .object({
     id: zod.string(),
     name: zod.string(),
+    // Category
     category: zod.nativeEnum(spellXmlCategoryEnum),
-    // damageType
+    // Damage Type
     damage: SpellXmlDamageSchema,
-    // list of descriptors (don't think these are used for anything?)
+    // List of descriptors (don't think these are used for anything?)
     descriptor: zod.string(),
-    // duration spell lasts/casting time
+    // Duration spell lasts/casting time
     duration: SpellXmlDurationSchema,
-    // damage value
+    // Damage value
     dv: zod.string(),
-    // spell targets + if AOE
+    // Spell targets + states if AOE
     range: SpellXmlRangeSchema,
     // Physical or Mana
     type: zod.union([zod.literal("P"), zod.literal("M")]),
+    // Bonus (these are specific choices to select when adding when)
+    // e.g. summoning spell chooses what you summon
     bonus: zod.optional(BonusXmlSchema),
-    required: zod.optional(SpellXmlRequiredSchema),
+    // Requirements e.g. type of spellcaster
+    required: zod.optional(RequiredXmlSchema),
     source: zod.union([SourceXmlSchema, zod.literal(2050)]),
     page: zod.number(),
   })

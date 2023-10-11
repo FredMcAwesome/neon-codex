@@ -1,6 +1,6 @@
 import { z as zod } from "zod";
+import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
 import {
-  BonusXmlSchema,
   GearXmlSchema,
   GearXmlType,
   limbSlotXmlEnum,

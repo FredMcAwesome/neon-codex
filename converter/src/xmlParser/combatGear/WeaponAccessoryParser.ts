@@ -22,7 +22,6 @@ import { convertXmlGears } from "../common/ParserHelper.js";
 import { standardCalculationEnum } from "@shadowrun/common/build/enums.js";
 import {
   getWeaponMounts,
-  convertRequirements,
   availabilityWeaponAccessorySemantics,
   costWeaponAccessorySemantics,
   modifyAmmoCapacitySemantics,
@@ -36,6 +35,7 @@ import type {
   AvailabilityWeaponAccessoryType,
   CostWeaponAccessoryType,
 } from "@shadowrun/common/build/schemas/weaponAccessorySchemas.js";
+import { convertRequirements } from "../common/RequiredHelper.js";
 const Availability = WeaponAccessories.Availability;
 const Cost = WeaponAccessories.Cost;
 const ModifyAmmoCapacity = WeaponAccessories.ModifyAmmoCapacity;
@@ -99,10 +99,10 @@ export function ParseWeaponAccessories() {
     const extraMountLocations = getWeaponMounts(weaponAccessory.extramount);
     const mountLocationsOnHostWeapon = mountLocations
       ? extraMountLocations
-        ? [mountLocations, extraMountLocations]
-        : [mountLocations]
+        ? mountLocations.concat(extraMountLocations)
+        : mountLocations
       : extraMountLocations
-      ? [extraMountLocations]
+      ? extraMountLocations
       : undefined;
 
     let ammoCapacityCalculation: AmmoCapacityCalculationType | undefined =

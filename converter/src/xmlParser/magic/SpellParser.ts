@@ -16,13 +16,13 @@ import {
   convertSpellDescriptors,
   convertSpellDuration,
   convertSpellRange,
-  convertSpellRequired,
   convertSpellType,
   damageSpellSemantics,
 } from "./SpellParserHelper.js";
 import { convertXmlBonus } from "../common/BonusHelper.js";
 import { convertSource } from "../common/ParserHelper.js";
 import Spells from "../../grammar/spells.ohm-bundle.js";
+import { convertRequirements } from "../common/RequiredHelper.js";
 const Damage = Spells.Damage;
 
 export function ParseSpells() {
@@ -169,7 +169,7 @@ function convertSpell(spell: SpellXmlType) {
     spell.bonus !== undefined ? convertXmlBonus(spell.bonus) : undefined;
   const required =
     spell.required !== undefined
-      ? convertSpellRequired(spell.required)
+      ? convertRequirements(spell.required)
       : undefined;
   const source = convertSource(spell.source);
 

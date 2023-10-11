@@ -13,7 +13,7 @@
     "source": "Shadowrun 5 Core Rulebook",
     "page": 425,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Barrel"]],
+    "hostWeaponMountsRequired": ["Barrel"],
     "hostWeaponRequirements": {
       "weaponNames": ["Ares Light Fire 70"]
     }
@@ -32,7 +32,7 @@
     "source": "Shadowrun 5 Core Rulebook",
     "page": 425,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Barrel"]],
+    "hostWeaponMountsRequired": ["Barrel"],
     "hostWeaponRequirements": {
       "weaponNames": ["Ares Light Fire 75"]
     }
@@ -75,7 +75,7 @@
     "source": "Shadowrun 5 Core Rulebook",
     "page": 431,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Under"]]
+    "hostWeaponMountsRequired": ["Under"]
   },
   {
     "name": "Concealable Holster",
@@ -111,7 +111,7 @@
     "source": "Shadowrun 5 Core Rulebook",
     "page": 431,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Barrel"]]
+    "hostWeaponMountsRequired": ["Barrel"]
   },
   {
     "name": "Gas-Vent 2 System",
@@ -128,7 +128,7 @@
     "source": "Shadowrun 5 Core Rulebook",
     "page": 431,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Barrel"]]
+    "hostWeaponMountsRequired": ["Barrel"]
   },
   {
     "name": "Gas-Vent 3 System",
@@ -145,7 +145,7 @@
     "source": "Shadowrun 5 Core Rulebook",
     "page": 431,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Barrel"]]
+    "hostWeaponMountsRequired": ["Barrel"]
   },
   {
     "name": "Gyro Mount",
@@ -163,7 +163,7 @@
     "source": "Shadowrun 5 Core Rulebook",
     "page": 432,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Under"]]
+    "hostWeaponMountsRequired": ["Under"]
   },
   {
     "name": "Hidden Gun Arm Slide",
@@ -210,7 +210,7 @@
       }
     ],
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Top"]]
+    "hostWeaponMountsRequired": ["Top"]
   },
   {
     "name": "Laser Sight",
@@ -227,7 +227,7 @@
     "source": "Shadowrun 5 Core Rulebook",
     "page": 432,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Top", "Under"]]
+    "hostWeaponMountsRequired": ["Top", "Under"]
   },
   {
     "name": "Periscope",
@@ -243,7 +243,7 @@
     "source": "Shadowrun 5 Core Rulebook",
     "page": 432,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Top"]]
+    "hostWeaponMountsRequired": ["Top"]
   },
   {
     "name": "Quick-Draw Holster",
@@ -297,7 +297,6 @@
       ]
     },
     "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"],
       "accessories": [
         "Stock Removal",
         "Sawed Off/Shortbarrel and Stock Removal"
@@ -318,7 +317,7 @@
     "source": "Shadowrun 5 Core Rulebook",
     "page": 432,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Barrel"]],
+    "hostWeaponMountsRequired": ["Barrel"],
     "hostWeaponRestrictions": {
       "weaponNames": ["PSK-3 Collapsible Heavy Pistol"],
       "ammunitionDetails": ["Cylinder", "Shotguns"],
@@ -339,7 +338,7 @@
     "source": "Shadowrun 5 Core Rulebook",
     "page": 432,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Barrel"]],
+    "hostWeaponMountsRequired": ["Barrel"],
     "hostWeaponRestrictions": {
       "weaponNames": ["PSK-3 Collapsible Heavy Pistol"],
       "ammunitionDetails": ["Cylinder", "Shotguns"],
@@ -378,7 +377,7 @@
     "page": 433,
     "allowGear": ["Autosofts", "Custom"],
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Under"]],
+    "hostWeaponMountsRequired": ["Under"],
     "hostWeaponRestrictions": {
       "accessories": ["Vintage"]
     }
@@ -414,8 +413,6 @@
     ],
     "specialModification": false,
     "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"],
-      "categories": ["Melee"],
       "accessories": [
         "Ceramic/Plasteel Components",
         "Collapsible Traditional Bow",
@@ -448,9 +445,8 @@
       }
     ],
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Top", "Under"]],
+    "hostWeaponMountsRequired": ["Top", "Under"],
     "hostWeaponRestrictions": {
-      "categories": ["Melee"],
       "accessories": [
         "Ceramic/Plasteel Components",
         "Collapsible Traditional Bow",
@@ -621,7 +617,7 @@
     "source": "Shadowrun 5 Core Rulebook",
     "page": 433,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Under"]]
+    "hostWeaponMountsRequired": ["Under"]
   },
   {
     "name": "Advanced Safety System, Basic",
@@ -645,7 +641,6 @@
       ]
     },
     "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"],
       "accessories": [
         "Advanced Safety System, Basic",
         "Advanced Safety System, Electro Shocker",
@@ -669,7 +664,7 @@
     "source": "Run And Gun",
     "page": 32,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Barrel"]],
+    "hostWeaponMountsRequired": ["Barrel"],
     "hostWeaponRequirements": {
       "weaponNames": ["PSK-3 Collapsible Heavy Pistol"]
     }
@@ -752,7 +747,6 @@
       ]
     },
     "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"],
       "accessories": [
         "Advanced Safety System, Basic",
         "Advanced Safety System, Self Destruct",
@@ -783,7 +777,6 @@
       ]
     },
     "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"],
       "accessories": [
         "Advanced Safety System, Immobilization",
         "Advanced Safety System, Basic",
@@ -814,7 +807,6 @@
       ]
     },
     "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"],
       "accessories": [
         "Advanced Safety System, Immobilization",
         "Advanced Safety System, Self Destruct",
@@ -845,7 +837,6 @@
       ]
     },
     "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"],
       "accessories": [
         "Advanced Safety System, Immobilization",
         "Advanced Safety System, Self Destruct",
@@ -868,7 +859,7 @@
     "source": "Run And Gun",
     "page": 50,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Top", "Under"]],
+    "hostWeaponMountsRequired": ["Top", "Under"],
     "hostWeaponRequirements": {
       "minimumHostConcealment": 0
     }
@@ -939,7 +930,7 @@
     "source": "Run And Gun",
     "page": 51,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Top", "Under", "Side"]]
+    "hostWeaponMountsRequired": ["Top", "Under", "Side"]
   },
   {
     "name": "Flashlight, Low Light",
@@ -955,7 +946,7 @@
     "source": "Run And Gun",
     "page": 51,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Top", "Under", "Side"]]
+    "hostWeaponMountsRequired": ["Top", "Under", "Side"]
   },
   {
     "name": "Flashlight, Infrared",
@@ -971,7 +962,7 @@
     "source": "Run And Gun",
     "page": 51,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Top", "Under", "Side"]]
+    "hostWeaponMountsRequired": ["Top", "Under", "Side"]
   },
   {
     "name": "Folding Stock",
@@ -989,7 +980,7 @@
     "source": "Run And Gun",
     "page": 51,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Stock"]]
+    "hostWeaponMountsRequired": ["Stock"]
   },
   {
     "name": "Stock",
@@ -1007,7 +998,7 @@
     "source": "Run And Gun",
     "page": 51,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Stock"]],
+    "hostWeaponMountsRequired": ["Stock"],
     "userSelectable": false
   },
   {
@@ -1026,7 +1017,7 @@
     "source": "Run And Gun",
     "page": 52,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Under", "Barrel"]],
+    "hostWeaponMountsRequired": ["Under", "Barrel"],
     "hostWeaponRestrictions": {
       "categories": ["Machine Pistols"],
       "skills": ["Pistols"],
@@ -1067,7 +1058,7 @@
     "source": "Run And Gun",
     "page": 52,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Stock"]],
+    "hostWeaponMountsRequired": ["Stock"],
     "hostWeaponRequirements": {
       "accessoryMounts": ["Stock"]
     }
@@ -1086,7 +1077,7 @@
     "source": "Run And Gun",
     "page": 52,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Top", "Under", "Barrel", "Side", "Internal"]]
+    "hostWeaponMountsRequired": ["Top", "Under", "Barrel", "Side", "Internal"]
   },
   {
     "name": "Hip Pad Bracing System",
@@ -1104,7 +1095,7 @@
     "source": "Run And Gun",
     "page": 52,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Stock"]]
+    "hostWeaponMountsRequired": ["Stock"]
   },
   {
     "name": "Improved Range Finder",
@@ -1120,9 +1111,7 @@
     "source": "Run And Gun",
     "page": 52,
     "specialModification": false,
-    "hostWeaponMountsRequired": [
-      ["Top", "Under", "Barrel", "Side", "Internal"]
-    ],
+    "hostWeaponMountsRequired": ["Top", "Under", "Barrel", "Side", "Internal"],
     "hostWeaponRequirements": {
       "accessories": [
         "Smartgun System, External",
@@ -1215,9 +1204,7 @@
     "source": "Run And Gun",
     "page": 52,
     "specialModification": false,
-    "hostWeaponMountsRequired": [
-      ["Top", "Under", "Barrel", "Side", "Internal"]
-    ],
+    "hostWeaponMountsRequired": ["Top", "Under", "Barrel", "Side", "Internal"],
     "hostWeaponRestrictions": {
       "accessories": ["Vintage"]
     }
@@ -1299,7 +1286,7 @@
     "source": "Run And Gun",
     "page": 52,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Top", "Under", "Side"]]
+    "hostWeaponMountsRequired": ["Top", "Under", "Side"]
   },
   {
     "name": "Sling",
@@ -1351,7 +1338,7 @@
     "source": "Run And Gun",
     "page": 53,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Under"]],
+    "hostWeaponMountsRequired": ["Under"],
     "hostWeaponRequirements": {
       "minimumHostConcealment": 0
     },
@@ -1371,7 +1358,7 @@
     "source": "Run And Gun",
     "page": 53,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Under"]],
+    "hostWeaponMountsRequired": ["Under"],
     "hostWeaponRequirements": {
       "minimumHostConcealment": 0
     }
@@ -1390,7 +1377,7 @@
     "source": "Run And Gun",
     "page": 53,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Under"]],
+    "hostWeaponMountsRequired": ["Under"],
     "hostWeaponRequirements": {
       "minimumHostConcealment": 0
     }
@@ -1409,7 +1396,7 @@
     "source": "Run And Gun",
     "page": 53,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Under"]],
+    "hostWeaponMountsRequired": ["Under"],
     "hostWeaponRequirements": {
       "minimumHostConcealment": 0
     },
@@ -1429,7 +1416,7 @@
     "source": "Run And Gun",
     "page": 53,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Under"]],
+    "hostWeaponMountsRequired": ["Under"],
     "hostWeaponRequirements": {
       "minimumHostConcealment": 0
     },
@@ -1451,7 +1438,7 @@
     "source": "Run And Gun",
     "page": 53,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Under"]]
+    "hostWeaponMountsRequired": ["Under"]
   },
   {
     "name": "Weapon Commlink",
@@ -1469,7 +1456,6 @@
     "allowGear": ["Commlinks", "Custom"],
     "specialModification": false,
     "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"],
       "accessories": ["Vintage"]
     }
   },
@@ -1488,7 +1474,6 @@
     "page": 53,
     "specialModification": false,
     "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"],
       "accessories": ["Vintage"]
     }
   },
@@ -1558,9 +1543,8 @@
     "source": "Hard Targets",
     "page": 180,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Under"]],
+    "hostWeaponMountsRequired": ["Under"],
     "hostWeaponRequirements": {
-      "ammunitionDetails": ["Cylinder", "Drum"],
       "accessories": ["Drum Magazine, 24-round", "Drum Magazine, 32-round"]
     },
     "hostWeaponRestrictions": {
@@ -1679,7 +1663,6 @@
     "page": 180,
     "specialModification": false,
     "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"],
       "accessories": [
         "Smartgun System, Internal",
         "Smartgun System, External",
@@ -1703,7 +1686,7 @@
     "source": "Hard Targets",
     "page": 180,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Side"]],
+    "hostWeaponMountsRequired": ["Side"],
     "hostWeaponRequirements": {
       "categories": ["Heavy Pistols", "Light Pistols", "Machine Pistols"],
       "maximumHostConcealment": 0
@@ -1727,7 +1710,7 @@
     "source": "Hard Targets",
     "page": 180,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Side"]],
+    "hostWeaponMountsRequired": ["Side"],
     "hostWeaponRequirements": {
       "categories": ["Heavy Pistols", "Light Pistols", "Machine Pistols"],
       "maximumHostConcealment": 0
@@ -1752,7 +1735,7 @@
     "source": "Hard Targets",
     "page": 181,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Top"]]
+    "hostWeaponMountsRequired": ["Top"]
   },
   {
     "name": "Long Barrel",
@@ -1773,7 +1756,7 @@
     "source": "Hard Targets",
     "page": 181,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Barrel"]],
+    "hostWeaponMountsRequired": ["Barrel"],
     "concealabilityModification": 1
   },
   {
@@ -1808,7 +1791,7 @@
     "source": "Hard Targets",
     "page": 180,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Side"]]
+    "hostWeaponMountsRequired": ["Side"]
   },
   {
     "name": "Easy Breakdown (Powered)",
@@ -1824,7 +1807,7 @@
     "source": "Hard Targets",
     "page": 180,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Side"]],
+    "hostWeaponMountsRequired": ["Side"],
     "hostWeaponRestrictions": {
       "accessories": ["Vintage"]
     }
@@ -1844,7 +1827,7 @@
     "source": "Hard Targets",
     "page": 180,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Barrel"]],
+    "hostWeaponMountsRequired": ["Barrel"],
     "hostWeaponRestrictions": {
       "accessories": ["Vintage"]
     }
@@ -1863,14 +1846,7 @@
     "source": "Hard Targets",
     "page": 182,
     "specialModification": false,
-    "hostWeaponMountsRequired": [
-      ["Under", "Barrel"],
-      ["Under", "Barrel"]
-    ],
-    "hostWeaponRequirements": {
-      "categories": ["Assault Rifles", "Sniper Rifles", "Sporting Rifles"],
-      "skills": ["Longarms"]
-    },
+    "hostWeaponMountsRequired": ["Barrel", "Under"],
     "userSelectable": false
   },
   {
@@ -1887,10 +1863,7 @@
     "source": "Hard Targets",
     "page": 182,
     "specialModification": false,
-    "hostWeaponMountsRequired": [
-      ["Under", "Side"],
-      ["Under", "Side"]
-    ],
+    "hostWeaponMountsRequired": ["Under", "Side"],
     "userSelectable": false
   },
   {
@@ -1907,11 +1880,7 @@
     "source": "Hard Targets",
     "page": 182,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Under"]],
-    "hostWeaponRequirements": {
-      "categories": ["Assault Rifles", "Sniper Rifles", "Sporting Rifles"],
-      "skills": ["Longarms", "Heavy Weapons"]
-    },
+    "hostWeaponMountsRequired": ["Under"],
     "userSelectable": false
   },
   {
@@ -1955,7 +1924,7 @@
     "source": "Hard Targets",
     "page": 182,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Under"]]
+    "hostWeaponMountsRequired": ["Under"]
   },
   {
     "name": "Custom Look",
@@ -1990,7 +1959,7 @@
     "source": "Hard Targets",
     "page": 182,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Barrel"]],
+    "hostWeaponMountsRequired": ["Barrel"],
     "hostWeaponRequirements": {
       "categories": [
         "Heavy Pistols",
@@ -2023,7 +1992,7 @@
     "source": "Hard Targets",
     "page": 182,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Stock"]],
+    "hostWeaponMountsRequired": ["Stock"],
     "hostWeaponRequirements": {
       "minimumHostConcealment": 0
     },
@@ -2051,7 +2020,7 @@
     "source": "Hard Targets",
     "page": 182,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Stock"], ["Barrel"]],
+    "hostWeaponMountsRequired": ["Stock", "Barrel"],
     "hostWeaponRequirements": {
       "categories": ["Heavy Pistols", "Assault Rifles"],
       "skills": ["Longarms"]
@@ -2084,8 +2053,6 @@
       ]
     },
     "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"],
-      "categories": ["Bows", "Melee"],
       "accessories": ["Vintage"]
     }
   },
@@ -2138,7 +2105,6 @@
       "categories": ["Bows"]
     },
     "hostWeaponRestrictions": {
-      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"],
       "accessories": [
         "Smartgun System, Internal",
         "Smartgun System, External",
@@ -2270,7 +2236,7 @@
     "page": 45,
     "specialModification": false,
     "extraAmmoSlots": 1,
-    "hostWeaponMountsRequired": [["Side"]],
+    "hostWeaponMountsRequired": ["Side"],
     "hostWeaponRequirements": {
       "ammunitionDetails": ["Clip", "Internal Magazine"]
     },
@@ -2313,7 +2279,7 @@
       },
       4
     ],
-    "hostWeaponMountsRequired": [["Side"]],
+    "hostWeaponMountsRequired": ["Side"],
     "hostWeaponRequirements": {
       "ammunitionDetails": ["Clip", "Internal Magazine"]
     },
@@ -2356,7 +2322,7 @@
     "source": "Street Lethal",
     "page": 46,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Under"]],
+    "hostWeaponMountsRequired": ["Under"],
     "hostWeaponRequirements": {
       "categories": ["Assault Rifles", "Sniper Rifles", "Sporting Rifles"],
       "skills": ["Longarms", "Heavy Weapons"]
@@ -2376,7 +2342,7 @@
     "source": "Street Lethal",
     "page": 46,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Top"]],
+    "hostWeaponMountsRequired": ["Top"],
     "hostWeaponRequirements": {
       "minimumHostConcealment": 3
     }
@@ -2395,7 +2361,7 @@
     "source": "Street Lethal",
     "page": 47,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Top"]]
+    "hostWeaponMountsRequired": ["Top"]
   },
   {
     "name": "Standard Maker Mag",
@@ -2730,9 +2696,8 @@
       }
     ],
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Top", "Under"]],
+    "hostWeaponMountsRequired": ["Top", "Under"],
     "hostWeaponRestrictions": {
-      "categories": ["Melee"],
       "accessories": [
         "Ceramic/Plasteel Components",
         "Collapsible Traditional Bow",
@@ -2756,7 +2721,7 @@
     "source": "Krime Katalog",
     "page": 23,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Under"]]
+    "hostWeaponMountsRequired": ["Under"]
   },
   {
     "name": "Krime Offline Support Solutions",
@@ -2791,7 +2756,7 @@
     "source": "Krime Katalog",
     "page": 23,
     "specialModification": false,
-    "hostWeaponMountsRequired": [["Barrel"]]
+    "hostWeaponMountsRequired": ["Barrel"]
   },
   {
     "name": "Krime Keeper",

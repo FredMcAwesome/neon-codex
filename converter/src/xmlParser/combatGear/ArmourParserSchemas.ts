@@ -1,7 +1,7 @@
 import { costArmourEnum } from "@shadowrun/common/build/enums.js";
 import { z as zod } from "zod";
+import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
 import {
-  BonusXmlSchema,
   GearXmlSchema,
   ModCategoryListXmlSchema,
   ModListXmlSchema,

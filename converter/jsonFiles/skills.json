@@ -14,9 +14,9 @@
       "Tilt Wing",
       "Vector Thrust"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 143,
-    "description": ""
+    "page": 143
   },
   {
     "name": "Alchemy",
@@ -36,9 +36,9 @@
       "Time",
       "[Trigger]"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 142,
-    "description": ""
+    "page": 142
   },
   {
     "name": "Animal Handling",
@@ -47,9 +47,9 @@
     "default": true,
     "exotic": false,
     "specialisations": ["Herding", "Riding", "Training", "[Animal Type]"],
+    "description": "",
     "source": "SR5",
-    "page": 143,
-    "description": ""
+    "page": 143
   },
   {
     "name": "Arcana",
@@ -64,9 +64,9 @@
       "Spirit Formula",
       "Spirit Theory"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 142,
-    "description": ""
+    "page": 142
   },
   {
     "name": "Archery",
@@ -80,9 +80,9 @@
       "Non-Standard Ammunition",
       "Slingshot"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 130,
-    "description": ""
+    "page": 130
   },
   {
     "name": "Armorer",
@@ -99,9 +99,9 @@
       "Heavy Weapons",
       "Weapon Accessories"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 143,
-    "description": ""
+    "page": 143
   },
   {
     "name": "Artificing",
@@ -111,9 +111,9 @@
     "exotic": false,
     "skillGroup": "Enchanting",
     "specialisations": ["Focus Analysis", "[Focus Type]"],
+    "description": "",
     "source": "SR5",
-    "page": 142,
-    "description": ""
+    "page": 142
   },
   {
     "name": "Artisan",
@@ -130,9 +130,9 @@
       "Writing",
       "[Discipline]"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 143,
-    "description": ""
+    "page": 143
   },
   {
     "name": "Assensing",
@@ -146,9 +146,9 @@
       "Psychometry",
       "[Aura Type]"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 142,
-    "description": ""
+    "page": 142
   },
   {
     "name": "Astral Combat",
@@ -163,9 +163,9 @@
       "[Weapon Focus Type]",
       "[Other Opponent Type]"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 142,
-    "description": ""
+    "page": 142
   },
   {
     "name": "Automatics",
@@ -181,9 +181,9 @@
       "Submachine Guns",
       "Carbines"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 130,
-    "description": ""
+    "page": 130
   },
   {
     "name": "Automotive Mechanic",
@@ -193,9 +193,9 @@
     "exotic": false,
     "skillGroup": "Engineering",
     "specialisations": ["Hover", "Tracked", "Walker", "Wheeled"],
+    "description": "",
     "source": "SR5",
-    "page": 143,
-    "description": ""
+    "page": 143
   },
   {
     "name": "Banishing",
@@ -216,9 +216,9 @@
       "Plant Spirit",
       "Task Spirit"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 142,
-    "description": ""
+    "page": 142
   },
   {
     "name": "Binding",
@@ -239,9 +239,9 @@
       "Plant Spirit",
       "Task Spirit"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 142,
-    "description": ""
+    "page": 142
   },
   {
     "name": "Biotechnology",
@@ -257,9 +257,9 @@
       "Gene Therapy",
       "Vat Maintenance"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 144,
-    "description": ""
+    "page": 144
   },
   {
     "name": "Blades",
@@ -269,9 +269,9 @@
     "exotic": false,
     "skillGroup": "Close Combat",
     "specialisations": ["Axes", "Knives", "Swords", "Parrying"],
+    "description": "",
     "source": "SR5",
-    "page": 130,
-    "description": ""
+    "page": 130
   },
   {
     "name": "Chemistry",
@@ -288,9 +288,9 @@
       "Physical",
       "Toxins"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 144,
-    "description": ""
+    "page": 144
   },
   {
     "name": "Clubs",
@@ -300,9 +300,9 @@
     "exotic": false,
     "skillGroup": "Close Combat",
     "specialisations": ["Batons", "Hammers", "Saps", "Staves", "Parrying"],
+    "description": "",
     "source": "SR5",
-    "page": 131,
-    "description": ""
+    "page": 131
   },
   {
     "name": "Compiling",
@@ -312,9 +312,9 @@
     "exotic": false,
     "skillGroup": "Tasking",
     "specialisations": ["[Sprite Type]"],
+    "description": "",
     "source": "SR5",
-    "page": 143,
-    "description": ""
+    "page": 143
   },
   {
     "name": "Computer",
@@ -329,9 +329,9 @@
       "Matrix Search",
       "[Computer Matrix Action]"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 144,
-    "description": ""
+    "page": 144
   },
   {
     "name": "Con",
@@ -341,9 +341,9 @@
     "exotic": false,
     "skillGroup": "Acting",
     "specialisations": ["Fast Talk", "Seduction"],
+    "description": "",
     "source": "SR5",
-    "page": 138,
-    "description": ""
+    "page": 138
   },
   {
     "name": "Counterspelling",
@@ -359,9 +359,9 @@
       "Illusion",
       "Manipulation"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 142,
-    "description": ""
+    "page": 142
   },
   {
     "name": "Cybercombat",
@@ -378,9 +378,9 @@
       "Sprites",
       "[Target Type]"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 144,
-    "description": ""
+    "page": 144
   },
   {
     "name": "Cybertechnology",
@@ -396,9 +396,9 @@
       "Nanoware",
       "Repair"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 144,
-    "description": ""
+    "page": 144
   },
   {
     "name": "Decompiling",
@@ -408,9 +408,9 @@
     "exotic": false,
     "skillGroup": "Tasking",
     "specialisations": ["[Sprite Type]"],
+    "description": "",
     "source": "SR5",
-    "page": 143,
-    "description": ""
+    "page": 143
   },
   {
     "name": "Demolitions",
@@ -424,9 +424,9 @@
       "Improvised Explosives",
       "Plastic Explosives"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 144,
-    "description": ""
+    "page": 144
   },
   {
     "name": "Disenchanting",
@@ -436,9 +436,9 @@
     "exotic": false,
     "skillGroup": "Enchanting",
     "specialisations": ["[Type]"],
+    "description": "",
     "source": "SR5",
-    "page": 142,
-    "description": ""
+    "page": 142
   },
   {
     "name": "Disguise",
@@ -453,9 +453,9 @@
       "Theatrical",
       "Trideo & Video"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 133,
-    "description": ""
+    "page": 133
   },
   {
     "name": "Diving",
@@ -476,9 +476,9 @@
       "[Other Breathing Apparatus]",
       "[Other Condition]"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 133,
-    "description": ""
+    "page": 133
   },
   {
     "name": "Electronic Warfare",
@@ -494,9 +494,9 @@
       "Sensor Operations",
       "[Electronic Warfare Matrix Action]"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 144,
-    "description": ""
+    "page": 144
   },
   {
     "name": "Escape Artist",
@@ -511,9 +511,9 @@
       "Zip Ties",
       "[Other Restraint]"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 133,
-    "description": ""
+    "page": 133
   },
   {
     "name": "Etiquette",
@@ -535,9 +535,9 @@
       "Yakuza",
       "[Culture or Subculture]"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 138,
-    "description": ""
+    "page": 138
   },
   {
     "name": "Exotic Melee Weapon",
@@ -545,9 +545,9 @@
     "category": "Combat Active",
     "default": false,
     "exotic": true,
+    "description": "",
     "source": "SR5",
-    "page": 131,
-    "description": ""
+    "page": 131
   },
   {
     "name": "Exotic Ranged Weapon",
@@ -561,9 +561,9 @@
       "Flamethrowers",
       "Lasers"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 131,
-    "description": ""
+    "page": 131
   },
   {
     "name": "Pilot Exotic Vehicle",
@@ -572,9 +572,9 @@
     "default": false,
     "exotic": true,
     "specialisations": ["Festo Pigeon 2.0"],
+    "description": "",
     "source": "SR5",
-    "page": 131,
-    "description": ""
+    "page": 131
   },
   {
     "name": "First Aid",
@@ -590,9 +590,9 @@
       "Resuscitation",
       "[Type of Treatment]"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 144,
-    "description": ""
+    "page": 144
   },
   {
     "name": "Flight",
@@ -609,9 +609,9 @@
       "Wilderness",
       "[Terrain]"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 394,
-    "description": ""
+    "page": 394
   },
   {
     "name": "Forgery",
@@ -626,9 +626,9 @@
       "Image Doctoring",
       "Paper Forgery"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 144,
-    "description": ""
+    "page": 144
   },
   {
     "name": "Free-Fall",
@@ -648,9 +648,9 @@
       "Wingsuit",
       "Zipline"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 133,
-    "description": ""
+    "page": 133
   },
   {
     "name": "Gunnery",
@@ -665,9 +665,9 @@
       "Guided Missile",
       "Rocket"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 146,
-    "description": ""
+    "page": 146
   },
   {
     "name": "Gymnastics",
@@ -685,9 +685,9 @@
       "Parkour",
       "Rolling"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 133,
-    "description": ""
+    "page": 133
   },
   {
     "name": "Hacking",
@@ -697,9 +697,9 @@
     "exotic": false,
     "skillGroup": "Cracking",
     "specialisations": ["Devices", "Files", "Hosts", "Personas"],
+    "description": "",
     "source": "SR5",
-    "page": 145,
-    "description": ""
+    "page": 145
   },
   {
     "name": "Hardware",
@@ -716,9 +716,9 @@
       "[Hardware Type]",
       "[Hardware Matrix Action]"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 145,
-    "description": ""
+    "page": 145
   },
   {
     "name": "Heavy Weapons",
@@ -733,9 +733,9 @@
       "Machine Guns",
       "Rocket Launchers"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 132,
-    "description": ""
+    "page": 132
   },
   {
     "name": "Impersonation",
@@ -745,9 +745,9 @@
     "exotic": false,
     "skillGroup": "Acting",
     "specialisations": ["Dwarf", "Elf", "Human", "Ork", "Troll"],
+    "description": "",
     "source": "SR5",
-    "page": 138,
-    "description": ""
+    "page": 138
   },
   {
     "name": "Industrial Mechanic",
@@ -764,9 +764,9 @@
       "Structural",
       "Welding"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 145,
-    "description": ""
+    "page": 145
   },
   {
     "name": "Instruction",
@@ -775,9 +775,9 @@
     "default": true,
     "exotic": false,
     "specialisations": ["[Active or Knowledge Skill Category]"],
+    "description": "",
     "source": "SR5",
-    "page": 138,
-    "description": ""
+    "page": 138
   },
   {
     "name": "Intimidation",
@@ -786,9 +786,9 @@
     "default": true,
     "exotic": false,
     "specialisations": ["Interrogation", "Mental", "Physical", "Torture"],
+    "description": "",
     "source": "SR5",
-    "page": 139,
-    "description": ""
+    "page": 139
   },
   {
     "name": "Leadership",
@@ -798,9 +798,9 @@
     "exotic": false,
     "skillGroup": "Influence",
     "specialisations": ["Command", "Direct", "Inspire", "Rally"],
+    "description": "",
     "source": "SR5",
-    "page": 139,
-    "description": ""
+    "page": 139
   },
   {
     "name": "Locksmith",
@@ -816,9 +816,9 @@
       "Voice Recognition",
       "[Lock Type]"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 145,
-    "description": ""
+    "page": 145
   },
   {
     "name": "Longarms",
@@ -834,9 +834,9 @@
       "Sniper Rifles",
       "Sporting Rifles"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 132,
-    "description": ""
+    "page": 132
   },
   {
     "name": "Medicine",
@@ -853,9 +853,9 @@
       "Organ Culture",
       "Trauma Surgery"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 145,
-    "description": ""
+    "page": 145
   },
   {
     "name": "Nautical Mechanic",
@@ -865,9 +865,9 @@
     "exotic": false,
     "skillGroup": "Engineering",
     "specialisations": ["Motorboat", "Sailboat", "Ship", "Submarine"],
+    "description": "",
     "source": "SR5",
-    "page": 145,
-    "description": ""
+    "page": 145
   },
   {
     "name": "Navigation",
@@ -883,9 +883,9 @@
       "Maps",
       "GPS"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 145,
-    "description": ""
+    "page": 145
   },
   {
     "name": "Negotiation",
@@ -895,9 +895,9 @@
     "exotic": false,
     "skillGroup": "Influence",
     "specialisations": ["Bargaining", "Contracts", "Diplomacy"],
+    "description": "",
     "source": "SR5",
-    "page": 139,
-    "description": ""
+    "page": 139
   },
   {
     "name": "Palming",
@@ -907,9 +907,9 @@
     "exotic": false,
     "skillGroup": "Stealth",
     "specialisations": ["Legerdemain", "Pickpocket", "Pilfering"],
+    "description": "",
     "source": "SR5",
-    "page": 133,
-    "description": ""
+    "page": 133
   },
   {
     "name": "Perception",
@@ -926,9 +926,9 @@
       "Touch",
       "Visual"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 133,
-    "description": ""
+    "page": 133
   },
   {
     "name": "Performance",
@@ -944,9 +944,9 @@
       "Presentation",
       "[Musical Instrument]"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 139,
-    "description": ""
+    "page": 139
   },
   {
     "name": "Pilot Aerospace",
@@ -961,9 +961,9 @@
       "Semiballistic",
       "Suborbital"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 146,
-    "description": ""
+    "page": 146
   },
   {
     "name": "Pilot Aircraft",
@@ -979,9 +979,9 @@
       "Tilt Wing",
       "Vectored Thrust"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 147,
-    "description": ""
+    "page": 147
   },
   {
     "name": "Pilot Ground Craft",
@@ -996,9 +996,9 @@
       "Tracked",
       "Wheeled"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 147,
-    "description": ""
+    "page": 147
   },
   {
     "name": "Pilot Walker",
@@ -1007,9 +1007,9 @@
     "default": false,
     "exotic": false,
     "specialisations": ["Biped", "Multiped", "Quadruped", "Remote Operation"],
+    "description": "",
     "source": "SR5",
-    "page": 147,
-    "description": ""
+    "page": 147
   },
   {
     "name": "Pilot Watercraft",
@@ -1025,9 +1025,9 @@
       "Ship",
       "Submarine"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 147,
-    "description": ""
+    "page": 147
   },
   {
     "name": "Pistols",
@@ -1037,9 +1037,9 @@
     "exotic": false,
     "skillGroup": "Firearms",
     "specialisations": ["Holdouts", "Revolvers", "Semi-Automatics", "Tasers"],
+    "description": "",
     "source": "SR5",
-    "page": 132,
-    "description": ""
+    "page": 132
   },
   {
     "name": "Registering",
@@ -1049,9 +1049,9 @@
     "exotic": false,
     "skillGroup": "Tasking",
     "specialisations": ["[Sprite Type]"],
+    "description": "",
     "source": "SR5",
-    "page": 143,
-    "description": ""
+    "page": 143
   },
   {
     "name": "Ritual Spellcasting",
@@ -1061,9 +1061,9 @@
     "exotic": false,
     "skillGroup": "Sorcery",
     "specialisations": ["[Keyword]"],
+    "description": "",
     "source": "SR5",
-    "page": 142,
-    "description": ""
+    "page": 142
   },
   {
     "name": "Running",
@@ -1080,9 +1080,9 @@
       "Wilderness",
       "[Terrain]"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 133,
-    "description": ""
+    "page": 133
   },
   {
     "name": "Sneaking",
@@ -1099,9 +1099,9 @@
       "Wilderness",
       "[Terrain]"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 133,
-    "description": ""
+    "page": 133
   },
   {
     "name": "Software",
@@ -1116,9 +1116,9 @@
       "[Program Type]",
       "[Software Matrix Action]"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 145,
-    "description": ""
+    "page": 145
   },
   {
     "name": "Spellcasting",
@@ -1134,9 +1134,9 @@
       "Illusion",
       "Manipulation"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 143,
-    "description": ""
+    "page": 143
   },
   {
     "name": "Summoning",
@@ -1157,9 +1157,9 @@
       "Plant Spirit",
       "Task Spirit"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 143,
-    "description": ""
+    "page": 143
   },
   {
     "name": "Survival",
@@ -1177,9 +1177,9 @@
       "Urban",
       "[Terrain]"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 133,
-    "description": ""
+    "page": 133
   },
   {
     "name": "Swimming",
@@ -1189,9 +1189,9 @@
     "exotic": false,
     "skillGroup": "Athletics",
     "specialisations": ["Dash", "Long Distance"],
+    "description": "",
     "source": "SR5",
-    "page": 134,
-    "description": ""
+    "page": 134
   },
   {
     "name": "Throwing Weapons",
@@ -1200,9 +1200,9 @@
     "default": true,
     "exotic": false,
     "specialisations": ["Aerodynamic", "Blades", "Non-Aerodynamic"],
+    "description": "",
     "source": "SR5",
-    "page": 132,
-    "description": ""
+    "page": 132
   },
   {
     "name": "Tracking",
@@ -1220,9 +1220,9 @@
       "Urban",
       "[Terrain]"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 134,
-    "description": ""
+    "page": 134
   },
   {
     "name": "Unarmed Combat",
@@ -1237,8 +1237,8 @@
       "Subduing Combat",
       "[Martial Art]"
     ],
+    "description": "",
     "source": "SR5",
-    "page": 132,
-    "description": ""
+    "page": 132
   }
 ]
