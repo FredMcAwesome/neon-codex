@@ -3,13 +3,15 @@ import {
   damageTypeEnum,
   mathOperatorEnum,
   standardCalculationEnum,
-  gearCategoryEnum,
   sourceBookEnum,
   ammoOptionEnum,
   costWeaponAccessoryEnum,
   restrictionEnum,
 } from "../enums.js";
-import { AvailabilityRatingSchema } from "./commonSchemas.js";
+import {
+  AllowedGearSchema,
+  AvailabilityRatingSchema,
+} from "./commonSchemas.js";
 import { RequirementsSchema } from "./shared/requiredSchemas.js";
 import {
   AccessoryMountSchema,
@@ -104,7 +106,7 @@ export const WeaponAccessorySummarySchema = zod
     availability: AvailabilityWeaponAccessorySchema,
     cost: CostWeaponAccessorySchema,
     accessoryCostMultiplier: zod.optional(zod.number()),
-    allowGear: zod.optional(zod.array(zod.nativeEnum(gearCategoryEnum))),
+    allowGear: zod.optional(AllowedGearSchema),
     preinstalledGear: zod.optional(UseGearListSchema),
     specialModification: zod.boolean(),
     extraAmmoSlots: zod.optional(zod.number()),

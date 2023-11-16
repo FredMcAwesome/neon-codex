@@ -187,13 +187,13 @@ function convertArmour(armour: ArmourXmlType) {
 
   let match = Availability.match(armour.avail.toString());
   if (match.failed()) {
-    throw match.message;
+    assert(false, match.message);
   }
   const availability: AvailabilityArmourType =
     availabilityArmourSemantics(match).eval();
   match = Cost.match(armour.cost.toString());
   if (match.failed()) {
-    throw match.message;
+    assert(false, match.message);
   }
   const cost: CostArmourType = costArmourSemantics(match).eval();
 
@@ -206,6 +206,14 @@ function convertArmour(armour: ArmourXmlType) {
 
   const mods =
     armour.mods !== undefined ? convertXmlModList(armour.mods) : undefined;
+  // TODO: fix - what am I going to do with these?
+  // const allowModCategory = armour.addmodcategory;
+  // const addModCategoryList =
+  //   armour.selectmodsfromcategory !== undefined
+  //     ? Array.isArray(armour.selectmodsfromcategory)
+  //       ? armour.selectmodsfromcategory
+  //       : [armour.selectmodsfromcategory]
+  //     : [];
   const source = convertSource(armour.source);
 
   return {
@@ -229,6 +237,8 @@ function convertArmour(armour: ArmourXmlType) {
     ...(bonus !== undefined && { bonus: bonus }),
     ...(wirelessBonus !== undefined && { wirelessBonus: wirelessBonus }),
     ...(mods !== undefined && { mods: mods }),
+    // allowModCategory: allowModCategory,
+    // addModCategoryList: addModCategoryList,
     source: source,
     page: armour.page,
   };

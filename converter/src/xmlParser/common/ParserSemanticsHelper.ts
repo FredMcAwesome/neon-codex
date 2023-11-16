@@ -53,11 +53,16 @@ essenceCostSemantics.addOperation("eval", {
 
 const initiativeSemantics = Initiative.createSemantics();
 initiativeSemantics.addOperation("eval", {
-  FixedValues(_a, inner, _b) {
-    return inner.eval();
+  Exp_fixed(_a, inner, _b) {
+    return {
+      ratingLinked: inner.eval(),
+    };
   },
-  Inner(recursive, _, val) {
-    return [val.eval()].concat(recursive.eval());
+  Inner_list(inner, _, capacity) {
+    return inner.eval().concat(capacity.eval());
+  },
+  ArrayWrapper(inner) {
+    return [inner.eval()];
   },
   Rating(_) {
     return { option: "Rating" };

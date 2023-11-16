@@ -1,10 +1,10 @@
-import { gearCategoryEnum } from "@shadowrun/common/build/enums.js";
 import { z as zod } from "zod";
 import {
   SourceXmlSchema,
   GearXmlSchema,
   StringOrNumberSchema,
   NumberOrRatingSchema,
+  xmlAllowGearSchema,
 } from "../common/ParserCommonDefines.js";
 import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
 
@@ -55,16 +55,7 @@ const WeaponAccessoryXmlSchema = zod
     // Gear included with the weapon
     gears: zod.optional(GearXmlSchema),
     // Gear that can be added to the weapon accessory
-    allowgear: zod.optional(
-      zod
-        .object({
-          gearcategory: zod.union([
-            zod.array(zod.nativeEnum(gearCategoryEnum)),
-            zod.nativeEnum(gearCategoryEnum),
-          ]),
-        })
-        .strict()
-    ),
+    allowgear: zod.optional(xmlAllowGearSchema),
     // Requires the special modification quality
     specialmodification: zod.optional(zod.literal("True")),
     // Adds an additional ammo slot to a weapon

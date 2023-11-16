@@ -3908,7 +3908,7 @@
       <name>Adrenaline Filter</name>
       <limit>1</limit>
       <category>Basic</category>
-      <ess>(Rating)*0.5</ess>
+      <ess>Rating*0.5</ess>
       <rating>3</rating>
       <capacity>0</capacity>
       <avail>(Rating*3)R</avail>

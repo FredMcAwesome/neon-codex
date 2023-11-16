@@ -34,10 +34,7 @@ import {
   WeaponXmlSubtypeType,
 } from "@shadowrun/common/build/schemas/commonSchemas.js";
 import Weapons from "../../grammar/weapons.ohm-bundle.js";
-import {
-  convertXmlGears,
-  convertGearCategory,
-} from "../common/ParserHelper.js";
+import { convertXmlGears } from "../common/ParserHelper.js";
 const Accuracy = Weapons.Accuracy;
 const Damage = Weapons.Damage;
 const ArmourPenetration = Weapons.ArmourPenetration;
@@ -715,22 +712,6 @@ export const convertAccessoryMounts = function (
   return Array.isArray(xmlAccessoryMountsUndefined.mount)
     ? xmlAccessoryMountsUndefined.mount
     : [xmlAccessoryMountsUndefined.mount];
-};
-
-export const convertAllowGear = function (
-  xmlAllowGear: { gearcategory: string | Array<string> } | undefined,
-  name: string
-) {
-  if (!xmlAllowGear) {
-    return undefined;
-  }
-  // console.log("Allow Gear: " + xmlAllowGear.toString());
-  const gearCategories = Array.isArray(xmlAllowGear.gearcategory)
-    ? xmlAllowGear.gearcategory
-    : [xmlAllowGear.gearcategory];
-  return gearCategories.map((gearCategory) =>
-    convertGearCategory(gearCategory, `weapon.name: ${name}`)
-  );
 };
 
 export const convertWeaponSkill = function (

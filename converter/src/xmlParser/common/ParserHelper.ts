@@ -1,6 +1,9 @@
 import {
   attributeTypeEnum,
+  augmentationGradeEnum,
+  augmentationLimitEnum,
   gearCategoryEnum,
+  limbSlotEnum,
   sourceBookEnum,
 } from "@shadowrun/common/build/enums.js";
 import type { UseGearListType } from "@shadowrun/common/build/schemas/weaponSchemas.js";
@@ -9,6 +12,10 @@ import assert from "assert";
 import {
   attributeXMLEnum,
   CategoryXmlListType,
+  augmentationXmlGradeEnum,
+  AugmentationXmlLimitType,
+  xmlAllowGearType,
+  limbSlotXmlEnum,
 } from "./ParserCommonDefines.js";
 import type {
   GearXmlType,
@@ -17,6 +24,7 @@ import type {
   ModXmlType,
 } from "./ParserCommonDefines.js";
 import { sourceBookXmlEnum } from "./ParserCommonDefines.js";
+import { AllowedGearType } from "@shadowrun/common/build/schemas/commonSchemas.js";
 
 export const convertSource = function (source: sourceBookXmlEnum | 2050) {
   const xmlSource = source === 2050 ? sourceBookXmlEnum.Shadowrun2050 : source;
@@ -203,6 +211,8 @@ export const convertGearCategory = function (
       return gearCategoryEnum.GrappleGun;
     case "Hacking Programs":
       return gearCategoryEnum.HackingPrograms;
+    case "Hard Nanoware":
+      return gearCategoryEnum.HardNanoware;
     case "Housewares":
       return gearCategoryEnum.Housewares;
     case "ID/Credsticks":
@@ -273,6 +283,39 @@ export const convertGearCategory = function (
   assert(false, `Category not found ${category}, ${otherMessage}`);
 };
 
+export const convertAllowGear = function (
+  xmlAllowGear: xmlAllowGearType | undefined,
+  name: string
+): AllowedGearType | undefined {
+  if (!xmlAllowGear) {
+    return undefined;
+  }
+  if (typeof xmlAllowGear === "string") {
+    return { gearNameList: [xmlAllowGear] };
+  }
+  // console.log("Allow Gear: " + xmlAllowGear.toString());
+  let gearCategories =
+    xmlAllowGear.gearcategory === undefined
+      ? undefined
+      : Array.isArray(xmlAllowGear.gearcategory)
+      ? xmlAllowGear.gearcategory
+      : [xmlAllowGear.gearcategory];
+  if (gearCategories !== undefined) {
+    gearCategories = gearCategories.map((gearCategory) =>
+      convertGearCategory(gearCategory, `name: ${name}`)
+    );
+  }
+
+  const gearNames =
+    xmlAllowGear.gearname === undefined
+      ? undefined
+      : Array.isArray(xmlAllowGear.gearname)
+      ? xmlAllowGear.gearname
+      : [xmlAllowGear.gearname];
+  assert(!(gearNames === undefined && gearCategories === undefined));
+  return { gearNameList: gearNames, gearCategoryList: gearCategories };
+};
+
 // TODO: handle gear correctly
 export function convertXmlGears(
   gears: GearXmlType,
@@ -306,6 +349,7 @@ export function convertXmlGears(
     };
   });
 }
+
 export function convertAttribute(attribute: attributeXMLEnum) {
   switch (attribute) {
     case attributeXMLEnum.BOD:
@@ -432,4 +476,116 @@ export const convertXmlCategory = function (
     blackMarketCategories: categoryInformation._blackmarket.split(","),
     category: categoryInformation.xmltext,
   };
+};
+
+export const convertAugmentationGradeList = function (
+  gradeList: Array<augmentationXmlGradeEnum>
+) {
+  if (gradeList.includes(augmentationXmlGradeEnum.UsedAdapsin)) {
+    assert(gradeList.includes(augmentationXmlGradeEnum.Used));
+    // remove Adapsin
+    gradeList.splice(
+      gradeList.indexOf(augmentationXmlGradeEnum.UsedAdapsin),
+      1
+    );
+  }
+  if (gradeList.includes(augmentationXmlGradeEnum.StandardBurnout)) {
+    assert(gradeList.includes(augmentationXmlGradeEnum.Standard));
+    // remove Burnout
+    gradeList.splice(
+      gradeList.indexOf(augmentationXmlGradeEnum.StandardBurnout),
+      1
+    );
+  }
+
+  return gradeList
+    .filter((grade) => {
+      return !(
+        grade.includes(augmentationXmlGradeEnum.UsedAdapsin) ||
+        grade.includes(augmentationXmlGradeEnum.StandardBurnout) ||
+        grade.includes(augmentationXmlGradeEnum.AlphawareAdapsin) ||
+        grade.includes(augmentationXmlGradeEnum.BetawareAdapsin) ||
+        grade.includes(augmentationXmlGradeEnum.DeltawareAdapsin) ||
+        grade.includes(augmentationXmlGradeEnum.GammawareAdapsin) ||
+        grade.includes(augmentationXmlGradeEnum.OmegawareAdapsin) ||
+        grade.includes(augmentationXmlGradeEnum.GreywareAdapsin)
+      );
+    })
+    .map((grade) => {
+      return convertAugmentationGrade(grade);
+    });
+};
+export const convertAugmentationGrade = function (
+  grade: augmentationXmlGradeEnum
+) {
+  switch (grade) {
+    case augmentationXmlGradeEnum.UsedAdapsin:
+    case augmentationXmlGradeEnum.StandardBurnout:
+    case augmentationXmlGradeEnum.AlphawareAdapsin:
+    case augmentationXmlGradeEnum.BetawareAdapsin:
+    case augmentationXmlGradeEnum.DeltawareAdapsin:
+    case augmentationXmlGradeEnum.GammawareAdapsin:
+    case augmentationXmlGradeEnum.OmegawareAdapsin:
+    case augmentationXmlGradeEnum.GreywareAdapsin:
+      assert(false, `Grade: ${grade} exists`);
+    case augmentationXmlGradeEnum.None:
+      return augmentationGradeEnum.None;
+    case augmentationXmlGradeEnum.Used:
+      return augmentationGradeEnum.Used;
+    case augmentationXmlGradeEnum.Standard:
+      return augmentationGradeEnum.Standard;
+    case augmentationXmlGradeEnum.Alphaware:
+      return augmentationGradeEnum.Alphaware;
+    case augmentationXmlGradeEnum.Betaware:
+      return augmentationGradeEnum.Betaware;
+    case augmentationXmlGradeEnum.Deltaware:
+      return augmentationGradeEnum.Deltaware;
+    case augmentationXmlGradeEnum.Gammaware:
+      return augmentationGradeEnum.Gammaware;
+    case augmentationXmlGradeEnum.Omegaware:
+      return augmentationGradeEnum.Omegaware;
+    case augmentationXmlGradeEnum.Greyware:
+      return augmentationGradeEnum.Greyware;
+  }
+};
+
+export const convertLimit = function (
+  limit: AugmentationXmlLimitType | undefined
+) {
+  if (typeof limit === "number") {
+    return limit;
+  }
+  switch (limit) {
+    case "False":
+      return { option: augmentationLimitEnum.None };
+    case "{arm}":
+      return { option: augmentationLimitEnum.Arm };
+    case "{leg}":
+      return { option: augmentationLimitEnum.Leg };
+    case "{torso}":
+      return { option: augmentationLimitEnum.Leg };
+    case "{skull}":
+      return { option: augmentationLimitEnum.Skull };
+    case "{arm} * 5":
+      return { option: augmentationLimitEnum.Finger };
+    case "{BODUnaug}":
+      return { option: augmentationLimitEnum.UnaugmentedBody };
+    case undefined:
+      return undefined;
+  }
+};
+
+export const convertLimbSlot = function (slot: limbSlotXmlEnum) {
+  switch (slot) {
+    case limbSlotXmlEnum.ARM:
+      return limbSlotEnum.Arm;
+    case limbSlotXmlEnum.LEG:
+      return limbSlotEnum.Leg;
+    case limbSlotXmlEnum.SKULL:
+      return limbSlotEnum.Skull;
+    case limbSlotXmlEnum.TORSO:
+      return limbSlotEnum.Torso;
+    default:
+      assert(false);
+  }
 };

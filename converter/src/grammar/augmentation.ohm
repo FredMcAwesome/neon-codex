@@ -1,0 +1,132 @@
+EssenceCost {
+  Exp = Essence
+    | "FixedValues(" Inner ")" -- fixed
+  Essence = AddSub
+  Inner = Inner "," AddSub -- list
+    | AddSub -- essence
+  AddSub = AddSub "+" MulDiv -- add
+    | AddSub "-" MulDiv -- subtract
+    | MulDiv
+  MulDiv = MulDiv "*" SubCalculation -- multiply
+    | MulDiv "/" SubCalculation -- divide
+    | SubCalculation
+  SubCalculation = "(" Essence ")" -- parenthesis
+    | EssenceValue
+  EssenceValue = Rating 
+    | Number
+  Rating = "Rating"
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+}
+
+Availability {
+  Exp = Availability "or Gear" -- gear
+    | "+" Availability -- addition
+    | "FixedValues(" Inner ")" -- fixed
+    | Availability
+  Inner = Inner "," Availability -- list
+    | Availability -- availability
+  Availability = AddSub Restriction -- full
+    | "(" AddSub ")" Restriction -- parenthesisFull
+    | AddSub -- partial
+    | "(" AddSub ")" -- parenthesisPartial
+  AddSub = AddSub "+" MulDiv -- add
+    | AddSub "-" MulDiv -- subtract
+    | MulDiv -- base
+  MulDiv = MulDiv "*" AvailabilityValue -- multiply
+    | MulDiv "/" AvailabilityValue -- divide
+    | AvailabilityValue
+  AvailabilityValue = Number
+    | Rating
+    | MinRating
+  Rating = "{Rating}" | "Rating"
+  MinRating = "MinRating"
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+  Restriction = Restricted
+    | Forbidden
+  Restricted = "R"
+  Forbidden = "F"
+}
+
+Cost {
+  Exp = Cost
+    | "FixedValues(" Inner ")" -- fixed
+    | Variable
+  Cost = AddSub
+  Inner = Inner "," AddSub -- list
+    | AddSub -- cost
+  Variable = "Variable(" InnerVariable ")"
+  InnerVariable = Number "-" Number
+  AddSub = AddSub "+" MulDiv -- add
+    | AddSub "-" MulDiv -- subtract
+    | MulDiv -- base
+  MulDiv = MulDiv "*" CostValue -- multiply
+    | MulDiv "/" CostValue -- divide
+    | CostValue
+    | Parenthesis
+  Parenthesis = "(" AddSub ")"
+  CostValue = Number
+    | Rating
+    | MinRating
+    | Parent
+    | Gear
+  Rating = "{Rating}" | "Rating"
+  MinRating = "MinRating"
+  Parent = "Parent Gear Cost"
+  Gear = "Gear Cost"
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+}
+
+MountList {
+  Exp = Mount
+  Mount = Mount "," MountValue -- list
+    | MountValue -- base
+  MountValue = letter+
+}
+
+SubsystemCategoryList {
+  Exp = Mount
+  Mount = Mount "," MountValue -- list
+    | MountValue -- base
+  MountValue = letter+
+}
+
+Capacity {
+  Exp = CapacityArray
+    | "FixedValues(" Inner ")" -- fixed
+    | AddSub -- capacity
+  Inner = Inner "," CapacityArray -- list
+    | CapacityArray
+  CapacityArray = "[" AddSub "]" -- base
+    | "[*]" -- all 
+  AddSub = AddSub "+" MulDiv -- add
+    | AddSub "-" MulDiv -- subtract
+    | MulDiv -- base
+  MulDiv = MulDiv "*" SubCalculation -- multiply
+  // mod is used instead of '/' in the xml for some reason
+    | MulDiv "mod" SubCalculation -- divide
+    | SubCalculation  
+  SubCalculation = "-(" AddSub ")" -- negativeParenthesis
+    | "(" AddSub ")" -- parenthesis
+    | "number(" AddSub "=" AddSub ")" -- numberCalc
+    | CapacityValue
+  CapacityValue = Number
+    | Rating
+    | Capacity
+  Rating = "{Rating}" | "Rating" -- base
+    | "-" Rating -- negative
+  Capacity = "Capacity"
+  Included = "*"
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+}

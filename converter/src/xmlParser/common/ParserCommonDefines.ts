@@ -241,6 +241,7 @@ export const SpiritSchema = zod
 export const GenericNameValueSchema = zod
   .object({
     name: zod.optional(zod.string()),
+    _name: zod.optional(zod.string()),
     value: zod.optional(zod.number()),
     val: zod.optional(StringOrNumberSchema),
     min: zod.optional(StringOrNumberSchema),
@@ -303,17 +304,6 @@ export const ModRecursiveXmlSchema = ModListXmlSchema.extend({
 
 export type ModRecursiveXmlType = zod.infer<typeof ModRecursiveXmlSchema>;
 
-const ModCategoryXmlSchema = zod
-  .object({
-    category: zod.string(),
-  })
-  .strict();
-
-export const ModCategoryListXmlSchema = zod.union([
-  zod.array(ModCategoryXmlSchema),
-  ModCategoryXmlSchema,
-]);
-
 export const CategoryXmlListSchema = zod.array(
   zod
     .object({
@@ -323,3 +313,64 @@ export const CategoryXmlListSchema = zod.array(
     .strict()
 );
 export type CategoryXmlListType = zod.infer<typeof CategoryXmlListSchema>;
+
+export const AugmentationXmlLimitSchema = zod.union([
+  // Unlimited times
+  zod.literal("False"),
+  // Replaces arm
+  zod.literal("{arm}"),
+  // Replaces leg
+  zod.literal("{leg}"),
+  // Replaces torso
+  zod.literal("{torso}"),
+  // Replaces skull
+  zod.literal("{skull}"),
+  // Replaces finger
+  zod.literal("{arm} * 5"),
+  // Up to Unaugmented Body Score
+  zod.literal("{BODUnaug}"),
+  // This augmentation can be taken up to this number
+  zod.number(),
+]);
+
+export type AugmentationXmlLimitType = zod.infer<
+  typeof AugmentationXmlLimitSchema
+>;
+
+export enum augmentationXmlGradeEnum {
+  None = "None",
+  Used = "Used",
+  UsedAdapsin = "Used (Adapsin)",
+  Standard = "Standard",
+  // Standard augmentations after taking Burnout's Way quality
+  StandardBurnout = "Standard (Burnout's Way)",
+  Alphaware = "Alphaware",
+  AlphawareAdapsin = "Alphaware (Adapsin)",
+  Betaware = "Betaware",
+  BetawareAdapsin = "Betaware (Adapsin)",
+  Deltaware = "Deltaware",
+  DeltawareAdapsin = "Deltaware (Adapsin)",
+  Gammaware = "Gammaware",
+  GammawareAdapsin = "Gammaware (Adapsin)",
+  Omegaware = "Omegaware",
+  OmegawareAdapsin = "Omegaware (Adapsin)",
+  Greyware = "Greyware",
+  GreywareAdapsin = "Greyware (Adapsin)",
+}
+
+export const xmlAllowGearSchema = zod.union([
+  zod
+    .object({
+      gearcategory: zod.optional(
+        zod.union([
+          zod.array(zod.nativeEnum(gearCategoryEnum)),
+          zod.nativeEnum(gearCategoryEnum),
+        ])
+      ),
+      gearname: zod.optional(zod.array(zod.string())),
+    })
+    .strict(),
+  zod.string(),
+]);
+
+export type xmlAllowGearType = zod.infer<typeof xmlAllowGearSchema>;

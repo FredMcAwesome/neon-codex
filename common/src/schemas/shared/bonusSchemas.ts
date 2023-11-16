@@ -307,15 +307,21 @@ export const BonusSchema = zod
     smartlinkAccuracy: zod.optional(zod.number()),
     initiative: zod.optional(
       zod.object({
-        bonus: zod.optional(zod.array(zod.number())),
+        bonus: zod.optional(
+          zod.union([
+            zod.object({ ratingLinked: zod.array(zod.number()) }).strict(),
+            zod.number(),
+          ])
+        ),
         bonusDice: zod.optional(
           zod.union([
-            zod.array(zod.number()),
+            zod.object({ ratingLinked: zod.array(zod.number()) }).strict(),
             zod
               .object({
                 option: zod.literal("Rating"),
               })
               .strict(),
+            zod.number(),
           ])
         ),
       })
@@ -527,30 +533,32 @@ export const BonusSchema = zod
       )
     ),
     modifySkillImprovementKarmaCost: zod.optional(
-      zod
-        .object({
-          skillRating: zod.union([
-            zod
-              .object({
-                minimum: zod.number(),
-              })
-              .strict(),
-            zod
-              .object({
-                maximum: zod.number(),
-              })
-              .strict(),
-          ]),
-          conditionalBonus: zod.union([
-            zod.number(),
-            zod
-              .object({
-                RatingRequired: zod.number(),
-              })
-              .strict(),
-          ]),
-        })
-        .strict()
+      zod.array(
+        zod
+          .object({
+            skillRating: zod.union([
+              zod
+                .object({
+                  minimum: zod.number(),
+                })
+                .strict(),
+              zod
+                .object({
+                  maximum: zod.number(),
+                })
+                .strict(),
+            ]),
+            conditionalBonus: zod.union([
+              zod.number(),
+              zod
+                .object({
+                  RatingRequired: zod.number(),
+                })
+                .strict(),
+            ]),
+          })
+          .strict()
+      )
     ),
     ignoreConditionModifierNegativeEffects: zod.optional(
       zod.union([

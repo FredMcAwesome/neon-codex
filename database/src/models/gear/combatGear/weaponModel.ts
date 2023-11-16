@@ -16,7 +16,6 @@ import {
   firearmAccessoryMountLocationEnum,
   firearmModeEnum,
   firearmWeaponTypeEnum,
-  gearCategoryEnum,
   meleeWeaponTypeEnum,
   projectileWeaponTypeEnum,
   sourceBookEnum,
@@ -31,6 +30,7 @@ import type {
   DamageType,
 } from "@shadowrun/common/build/schemas/weaponSchemas.js";
 import { weaponXmlSubtypeEnum } from "@shadowrun/common/build/schemas/commonSchemas.js";
+import type { AllowedGearType } from "@shadowrun/common/build/schemas/commonSchemas.js";
 import { Skills } from "../../chummerdb/skillModel.js";
 import assert from "assert";
 import type { WeaponSummaryType } from "../../../seeds/newSeeds/weaponsSeed.js";
@@ -73,8 +73,8 @@ export abstract class Weapons {
   @Property({ type: "json" })
   cost!: CostWeaponType;
 
-  @Enum({ items: () => gearCategoryEnum, array: true, nullable: true })
-  allowedGear?: Array<gearCategoryEnum>;
+  @Property({ type: "json", nullable: true })
+  allowedGear?: AllowedGearType;
 
   @OneToMany(
     () => IncludedWeaponAccessories,

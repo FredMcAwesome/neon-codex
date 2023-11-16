@@ -17,10 +17,13 @@ EssenceCost {
 
 // FixedValues(1,2,5...)
 Initiative {
-  Exp = FixedValues
-    | Rating
-  FixedValues = "FixedValues(" Inner ")"
-  Inner = Inner "," Number
+  Exp = "FixedValues(" Inner ")" -- fixed
+    | InitiativeValue
+  Inner = Inner "," ArrayWrapper -- list
+    | ArrayWrapper
+  ArrayWrapper = InitiativeValue
+  InitiativeValue = Rating
+    | Number
   Rating = "Rating"
   Number = "-" PositiveNumber -- negative
     | PositiveNumber

@@ -1,6 +1,5 @@
 import { Entity, PrimaryKey, Property, Enum } from "@mikro-orm/core";
 import { damageTypeEnum } from "@shadowrun/common";
-import { gearCategoryEnum } from "@shadowrun/common/build/enums.js";
 import type {
   AccessoryMountType,
   AmmunitionSingleType,
@@ -14,6 +13,7 @@ import type {
   CostWeaponAccessoryType,
 } from "@shadowrun/common/build/schemas/weaponAccessorySchemas.js";
 import type { RequirementsType } from "@shadowrun/common/build/schemas/shared/requiredSchemas.js";
+import type { AllowedGearType } from "@shadowrun/common/build/schemas/commonSchemas.js";
 
 @Entity()
 export class WeaponAccessories {
@@ -62,8 +62,8 @@ export class WeaponAccessories {
   @Property({ nullable: true })
   accessoryCostMultiplier?: number;
 
-  @Enum({ items: () => gearCategoryEnum, array: true, nullable: true })
-  allowGear?: Array<gearCategoryEnum>;
+  @Property({ type: "json", nullable: true })
+  allowedGear?: AllowedGearType;
 
   @Property({ type: "json", nullable: true })
   preinstalledGear?: UseGearListType;
@@ -128,7 +128,7 @@ export class WeaponAccessories {
     this.cost = dto.cost;
     if (dto.accessoryCostMultiplier !== undefined)
       this.accessoryCostMultiplier = dto.accessoryCostMultiplier;
-    if (dto.allowGear !== undefined) this.allowGear = dto.allowGear;
+    if (dto.allowGear !== undefined) this.allowedGear = dto.allowGear;
     if (dto.preinstalledGear !== undefined)
       this.preinstalledGear = dto.preinstalledGear;
     this.specialModification = dto.specialModification;

@@ -198,7 +198,9 @@
     "cost": [300],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 432,
-    "allowGear": ["Vision Enhancements", "Custom"],
+    "allowGear": {
+      "gearCategoryList": ["Vision Enhancements", "Custom"]
+    },
     "preinstalledGear": [
       {
         "name": "Camera, Micro",
@@ -375,7 +377,9 @@
     "cost": [2000],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 433,
-    "allowGear": ["Autosofts", "Custom"],
+    "allowGear": {
+      "gearCategoryList": ["Autosofts", "Custom"]
+    },
     "specialModification": false,
     "hostWeaponMountsRequired": ["Under"],
     "hostWeaponRestrictions": {
@@ -1453,7 +1457,9 @@
     "cost": [200],
     "source": "Run And Gun",
     "page": 53,
-    "allowGear": ["Commlinks", "Custom"],
+    "allowGear": {
+      "gearCategoryList": ["Commlinks", "Custom"]
+    },
     "specialModification": false,
     "hostWeaponRestrictions": {
       "accessories": ["Vintage"]

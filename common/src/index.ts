@@ -86,9 +86,4 @@ export type {
   MatrixAccessoryType,
 } from "./schemas/electronicSchemas.js";
 
-export type {
-  AugmentationType,
-  EssenceType,
-} from "./schemas/augmentationSchemas.js";
-
 export type { SkillType } from "./schemas/skillSchemas.js";

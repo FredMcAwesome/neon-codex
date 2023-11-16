@@ -169,6 +169,7 @@ const containsSchema = zod.union([
       quality: zod.optional(zod.string()),
       bioware: zod.optional(StringArrayOrStringSchema),
       cyberware: zod.optional(StringArrayOrStringSchema),
+      cyberwarecontains: zod.optional(zod.string()),
       metatype: zod.optional(zod.string()),
     })
     .strict(),
@@ -176,19 +177,39 @@ const containsSchema = zod.union([
 
 export type containsType = zod.infer<typeof containsSchema>;
 
+const parentDetailsSchema = zod
+  .object({
+    NONE: zod.optional(zod.literal("")),
+    OR: zod.optional(
+      zod
+        .object({
+          name: zod.array(
+            zod.union([
+              zod
+                .object({
+                  xmltext: zod.string(),
+                  _operation: zod.string(),
+                })
+                .strict(),
+              zod.string(),
+            ])
+          ),
+          NONE: zod.optional(zod.literal("")),
+        })
+        .strict()
+    ),
+    category: zod.optional(zod.string()),
+    name: zod.optional(zod.string()),
+  })
+  .strict();
+
 export const RequiredXmlSchema = zod.union([
   zod
     .object({
       weapondetails: zod.optional(RequiredWeaponDetailsXmlSchema),
       oneof: zod.optional(containsSchema),
       allof: zod.optional(containsSchema),
-      parentdetails: zod.optional(
-        zod
-          .object({
-            name: zod.string(),
-          })
-          .strict()
-      ),
+      parentdetails: zod.optional(parentDetailsSchema),
     })
     .strict(),
   zod

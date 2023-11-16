@@ -14,7 +14,7 @@ import {
   WeaponListXmlType,
 } from "./WeaponParserSchemas.js";
 import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
-import { convertSource } from "../common/ParserHelper.js";
+import { convertAllowGear, convertSource } from "../common/ParserHelper.js";
 import assert from "assert";
 import {
   ammoSourceEnum,
@@ -41,7 +41,6 @@ import {
   convertRecoilCompensation,
   convertAccessories,
   convertAccessoryMounts,
-  convertAllowGear,
   convertWeaponSkill,
   convertTypeInformation,
   armourPenetrationSemantics,
@@ -216,26 +215,26 @@ function convertWeapon(weapon: WeaponXmlType) {
   const source = convertSource(weapon.source);
   let match = Accuracy.match(weapon.accuracy.toString());
   if (match.failed()) {
-    throw match.message;
+    assert(false, match.message);
   }
   const accuracy: AccuracyType = accuracySemantics(match).eval();
   // console.log(`Accuracy: ${accuracy}`);
   match = Damage.match(weapon.damage.toString());
   if (match.failed()) {
-    throw match.message;
+    assert(false, match.message);
   }
   const damage: DamageType = damageSemantics(match).eval();
   // console.log(`Damage: ${damage}`);
   match = ArmourPenetration.match(weapon.ap.toString());
   if (match.failed()) {
-    throw match.message;
+    assert(false, match.message);
   }
   const armourPenetration: ArmourPenetrationType =
     armourPenetrationSemantics(match).eval();
   // console.log(`Armour Penetration: ${armourPenetration}`);
   match = Mode.match(weapon.mode.toString());
   if (match.failed()) {
-    throw match.message;
+    assert(false, match.message);
   }
   const mode: ModeType = modeSemantics(match).eval();
   // console.log(`Mode: ${mode}`);
@@ -244,20 +243,20 @@ function convertWeapon(weapon: WeaponXmlType) {
   );
   match = Ammo.match(weapon.ammo.toString());
   if (match.failed()) {
-    throw match.message;
+    assert(false, match.message);
   }
   const ammo: AmmunitionType = ammoSemantics(match).eval();
   // console.log(`Ammo: ${ammo}`);
   match = Availability.match(weapon.avail.toString());
   if (match.failed()) {
-    throw match.message;
+    assert(false, match.message);
   }
   const availability: AvailabilityWeaponType =
     availabilityWeaponSemantics(match).eval();
   // console.log(`Availability: ${availability}`);
   match = Cost.match(weapon.cost.toString());
   if (match.failed()) {
-    throw match.message;
+    assert(false, match.message);
   }
   const cost: CostWeaponType = costWeaponSemantics(match).eval();
   // console.log(`Cost: ${cost}`);

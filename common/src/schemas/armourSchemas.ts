@@ -85,6 +85,8 @@ export const ArmourSchema = zod
     bonus: zod.optional(BonusSchema),
     wirelessBonus: zod.optional(BonusSchema),
     mods: zod.optional(ModListSchema),
+    // allowModCategory: zod.optional(),
+    // addModCategoryList: zod.optional(zod.array()),
     source: zod.nativeEnum(sourceBookEnum),
     page: zod.number(),
   })

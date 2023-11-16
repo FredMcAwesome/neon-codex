@@ -159,7 +159,7 @@ function convertSpell(spell: SpellXmlType) {
   const duration = convertSpellDuration(spell.duration);
   let match = Damage.match(spell.dv);
   if (match.failed()) {
-    throw match.message;
+    assert(false, match.message);
   }
   const damage = damageSpellSemantics(match).eval();
   const range = convertSpellRange(spell.range);

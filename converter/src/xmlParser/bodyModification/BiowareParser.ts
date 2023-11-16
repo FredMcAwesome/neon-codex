@@ -8,7 +8,29 @@ import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
 import {
   BiowareListXmlSchema,
   BiowareListXmlType,
+  BiowareXmlType,
 } from "./BiowareParserSchemas.js";
+import { convertBiowareCategory } from "./BiowareParserHelper.js";
+import { convertXmlBonus } from "../common/BonusHelper.js";
+import { convertRequirements } from "../common/RequiredHelper.js";
+import {
+  convertAllowGear,
+  convertAugmentationGradeList,
+  convertLimit,
+  convertSource,
+} from "../common/ParserHelper.js";
+import { AugmentationSchema } from "@shadowrun/common/build/schemas/augmentationSchemas.js";
+import Augmentation from "../../grammar/augmentation.ohm-bundle.js";
+import {
+  availabilityAugmentationSemantics,
+  costAugmentationSemantics,
+  essenceCostSemantics,
+  mountsAugmentationSemantics,
+} from "./augmentationParserHelper.js";
+const EssenceCost = Augmentation.EssenceCost;
+const Cost = Augmentation.Cost;
+const Availability = Augmentation.Availability;
+const MountList = Augmentation.MountList;
 
 export function ParseBioware() {
   const currentPath = import.meta.url;
@@ -111,25 +133,127 @@ export function ParseBioware() {
       return found;
     }
   );
-  console.log(englishBiowareList[0]);
 
-  // const biowareListConverted = englishBiowareList.map((bioware) => {
-  //   const convertedBioware = convertArmour(bioware);
-  //   return convertedBioware;
-  // });
-  // // console.log(armourListConverted);
-  // const jsonFilePath = fileURLToPath(
-  //   path.dirname(currentPath) + "../../../../jsonFiles/bioware.json"
-  // );
-  // fs.writeFile(
-  //   jsonFilePath,
-  //   JSON.stringify(biowareListConverted, null, 2),
-  //   (error) => {
-  //     if (error) {
-  //       console.error(error);
-  //     } else {
-  //       console.log(`File written! Saved to: ${jsonFilePath}`);
-  //     }
-  //   }
-  // );
+  const biowareListConverted = englishBiowareList.map((bioware) => {
+    const convertedBioware = convertBioware(bioware);
+    const check = AugmentationSchema.safeParse(convertedBioware);
+    if (!check.success) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      console.log(convertedBioware.name);
+      throw new Error(check.error.message);
+    }
+    return check.data;
+  });
+  const jsonFilePath = fileURLToPath(
+    path.dirname(currentPath) + "../../../../jsonFiles/biowares.json"
+  );
+  fs.writeFile(
+    jsonFilePath,
+    JSON.stringify(biowareListConverted, null, 2),
+    (error) => {
+      if (error) {
+        console.error(error);
+      } else {
+        console.log(`File written! Saved to: ${jsonFilePath}`);
+      }
+    }
+  );
+}
+
+function convertBioware(bioware: BiowareXmlType) {
+  const augmentationLimit = convertLimit(bioware.limit);
+  const category = convertBiowareCategory(bioware.category);
+  const unavailableGrades =
+    bioware.bannedgrades !== undefined
+      ? convertAugmentationGradeList(bioware.bannedgrades.grade)
+      : undefined;
+  let match = EssenceCost.match(bioware.ess.toString());
+  if (match.failed()) {
+    assert(false, match.message);
+  }
+  const essenceCost = essenceCostSemantics(match).eval();
+  let biowareModification;
+  if (bioware.addtoparentess !== undefined) {
+    assert(
+      bioware.requireparent !== undefined,
+      `Missing requireparent for ${bioware.name}`
+    );
+    biowareModification = true as const;
+  }
+  const maxRating = bioware.rating !== undefined ? bioware.rating : 1;
+  match = Availability.match(bioware.avail.toString());
+  if (match.failed()) {
+    assert(false, match.message);
+  }
+  const availability = availabilityAugmentationSemantics(match).eval();
+  match = Cost.match(bioware.cost.toString());
+  if (match.failed()) {
+    assert(false, match.message);
+  }
+  const cost = costAugmentationSemantics(match).eval();
+  let blockedMountList = [];
+  if (bioware.blocksmounts !== undefined) {
+    match = MountList.match(bioware.blocksmounts.toString());
+    if (match.failed()) {
+      assert(false, match.message);
+    }
+    blockedMountList = mountsAugmentationSemantics(match).eval();
+  }
+  const selectSide = bioware.selectside === undefined ? undefined : true;
+
+  const bonus =
+    bioware.bonus !== undefined ? convertXmlBonus(bioware.bonus) : undefined;
+  const pairBonus =
+    bioware.pairbonus !== undefined
+      ? convertXmlBonus(bioware.pairbonus)
+      : undefined;
+  const pairIncludeList =
+    bioware.pairinclude !== undefined
+      ? Array.isArray(bioware.pairinclude.name)
+        ? bioware.pairinclude.name
+        : [bioware.pairinclude.name]
+      : undefined;
+
+  const requirements = convertRequirements(bioware.required);
+  const forbidden = convertRequirements(bioware.forbidden);
+  const allowGear = convertAllowGear(bioware.allowgear, bioware.name);
+  const allowCategory = bioware.allowsubsystems
+    ? convertBiowareCategory(bioware.allowsubsystems.category)
+    : undefined;
+  const allowCategoryList =
+    allowCategory === undefined ? undefined : [allowCategory];
+
+  // forcegrade is currently only used for isgeneware
+  assert(
+    (bioware.forcegrade !== undefined) === (bioware.isgeneware !== undefined)
+  );
+  const isGeneware = bioware.isgeneware === undefined ? undefined : true;
+  const source = convertSource(bioware.source);
+
+  return {
+    name: bioware.name,
+    description: "",
+    augmentationLimit: augmentationLimit,
+    category: category,
+    unavailableGrades: unavailableGrades,
+    essenceCost: essenceCost,
+    modification: biowareModification,
+    rating: { maximum: [maxRating] },
+    availability: availability,
+    cost: cost,
+    addWeapon: bioware.addweapon,
+    blockedMountList: blockedMountList,
+    selectSide: selectSide,
+    bonus: bonus,
+    pairBonus: pairBonus,
+    pairIncludeList: pairIncludeList,
+    requirements: requirements,
+    forbidden: forbidden,
+    ...(allowGear !== undefined && { allowedGear: allowGear }),
+    ...(bioware.hide !== undefined && { userSelectable: false as const }),
+    allowCategoryList: allowCategoryList,
+    isGeneware: isGeneware,
+    source: source,
+    page: bioware.page,
+  };
 }

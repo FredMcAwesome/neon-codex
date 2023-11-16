@@ -1,0 +1,5316 @@
+[
+  {
+    "name": "Adrenaline Pump",
+    "description": "",
+    "category": "Basic",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.75
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [3]
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            6
+          ]
+        }
+      ],
+      "restriction": "Forbidden"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          55000
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 459
+  },
+  {
+    "name": "Bone Density Augmentation",
+    "description": "",
+    "category": "Basic",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.3
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [4]
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            4
+          ]
+        }
+      ],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          5000
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "bonus": {
+      "damageResistance": {
+        "option": "Rating"
+      },
+      "unarmedDamageType": "Physical"
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 459
+  },
+  {
+    "name": "Cat's Eyes",
+    "description": "",
+    "category": "Basic",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [4000],
+    "blockedMountList": [],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 459
+  },
+  {
+    "name": "Cerebral Booster",
+    "description": "",
+    "category": "Cultured",
+    "unavailableGrades": ["Used"],
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.2
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [3]
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            6
+          ]
+        }
+      ],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          31500
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 460
+  },
+  {
+    "name": "Damage Compensators",
+    "description": "",
+    "category": "Cultured",
+    "unavailableGrades": ["Used"],
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.1
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [12]
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            3
+          ]
+        }
+      ],
+      "restriction": "Forbidden"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          2000
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "bonus": {
+      "ignoreConditionModifierNegativeEffects": {
+        "option": "Rating"
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 460
+  },
+  {
+    "name": "Enhanced Articulation",
+    "description": "",
+    "category": "Basic",
+    "essenceCost": [0.3],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [24000],
+    "blockedMountList": [],
+    "bonus": {
+      "physicalLimit": 1
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 459
+  },
+  {
+    "name": "Mnemonic Enhancer",
+    "description": "",
+    "category": "Cultured",
+    "unavailableGrades": ["Used"],
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.1
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [3]
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            5
+          ]
+        }
+      ],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          9000
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "bonus": {
+      "skillCategories": [
+        {
+          "category": "Academic",
+          "bonus": {
+            "option": "Rating"
+          }
+        },
+        {
+          "category": "Interest",
+          "bonus": {
+            "option": "Rating"
+          }
+        },
+        {
+          "category": "Language",
+          "bonus": {
+            "option": "Rating"
+          }
+        },
+        {
+          "category": "Professional",
+          "bonus": {
+            "option": "Rating"
+          }
+        },
+        {
+          "category": "Street",
+          "bonus": {
+            "option": "Rating"
+          }
+        }
+      ],
+      "mentalLimit": {
+        "option": "Rating"
+      },
+      "memory": {
+        "option": "Rating"
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 460
+  },
+  {
+    "name": "Muscle Augmentation",
+    "description": "",
+    "category": "Basic",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.2
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [4]
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            5
+          ]
+        }
+      ],
+      "restriction": "Restricted"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          31000
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "bonus": {
+      "disableQualities": [
+        {
+          "name": "Celerity"
+        }
+      ]
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 459
+  },
+  {
+    "name": "Muscle Toner",
+    "description": "",
+    "category": "Basic",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.2
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [4]
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            5
+          ]
+        }
+      ],
+      "restriction": "Restricted"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          32000
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "bonus": {
+      "disableQualities": [
+        {
+          "name": "Celerity"
+        }
+      ]
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 459
+  },
+  {
+    "name": "Orthoskin",
+    "description": "",
+    "category": "Basic",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.25
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [4]
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            4
+          ]
+        }
+      ],
+      "restriction": "Restricted"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          6000
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "bonus": {
+      "armour": {
+        "nonStacking": true,
+        "bonus": {
+          "option": "Rating"
+        }
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 459
+  },
+  {
+    "name": "Pain Editor",
+    "description": "",
+    "category": "Cultured",
+    "unavailableGrades": ["Used"],
+    "essenceCost": [0.3],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [18],
+      "restriction": "Forbidden"
+    },
+    "cost": [48000],
+    "blockedMountList": [],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 460
+  },
+  {
+    "name": "Pathogenic Defense",
+    "description": "",
+    "category": "Basic",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.1
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [6]
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          4500
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "bonus": {
+      "pathogenContactResist": {
+        "option": "Rating"
+      },
+      "pathogenInhalationResist": {
+        "option": "Rating"
+      },
+      "pathogenIngestionResist": {
+        "option": "Rating"
+      },
+      "pathogenInjectionResist": {
+        "option": "Rating"
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 459
+  },
+  {
+    "name": "Platelet Factories",
+    "description": "",
+    "category": "Basic",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [17000],
+    "blockedMountList": [],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 459
+  },
+  {
+    "name": "Reflex Recorder",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Cultured",
+    "unavailableGrades": ["Used"],
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [14000],
+    "blockedMountList": [],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 460
+  },
+  {
+    "name": "Skin Pocket",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Basic",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [12000],
+    "blockedMountList": [],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 459
+  },
+  {
+    "name": "Sleep Regulator",
+    "description": "",
+    "category": "Cultured",
+    "unavailableGrades": ["Used"],
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [12000],
+    "blockedMountList": [],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 460
+  },
+  {
+    "name": "Suprathyroid Gland",
+    "description": "",
+    "category": "Basic",
+    "essenceCost": [0.7],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [20],
+      "restriction": "Restricted"
+    },
+    "cost": [140000],
+    "blockedMountList": [],
+    "bonus": {
+      "lifestyleCostModifier": 25
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 459
+  },
+  {
+    "name": "Symbiotes",
+    "description": "",
+    "category": "Basic",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.2
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [4]
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            5
+          ]
+        }
+      ],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          3500
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "bonus": {
+      "stunHealing": {
+        "option": "Rating"
+      },
+      "physicalHealing": {
+        "option": "Rating"
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 459
+  },
+  {
+    "name": "Synaptic Booster",
+    "description": "",
+    "category": "Cultured",
+    "unavailableGrades": ["Used"],
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.5
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [3]
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            6
+          ]
+        }
+      ],
+      "restriction": "Restricted"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          95000
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "bonus": {
+      "initiative": {
+        "bonusDice": {
+          "option": "Rating"
+        }
+      },
+      "disableQualities": [
+        {
+          "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
+        }
+      ]
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 461
+  },
+  {
+    "name": "Synthacardium",
+    "description": "",
+    "category": "Basic",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.1
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [3]
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            4
+          ]
+        }
+      ],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          30000
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "bonus": {
+      "skillGroups": [
+        {
+          "group": "Athletics",
+          "bonus": {
+            "option": "Rating"
+          }
+        }
+      ]
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 460
+  },
+  {
+    "name": "Tailored Pheromones",
+    "description": "",
+    "category": "Basic",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.2
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [3]
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            4
+          ]
+        }
+      ],
+      "restriction": "Restricted"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          31000
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "bonus": {
+      "skillGroups": [
+        {
+          "group": "Acting",
+          "bonus": {
+            "option": "Rating"
+          }
+        },
+        {
+          "group": "Influence",
+          "bonus": {
+            "option": "Rating"
+          }
+        }
+      ],
+      "socialLimit": [
+        {
+          "option": "Rating"
+        }
+      ]
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 460
+  },
+  {
+    "name": "Toxin Extractor",
+    "description": "",
+    "category": "Basic",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.2
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [6]
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            3
+          ]
+        }
+      ],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          4800
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "bonus": {
+      "toxinContactResist": {
+        "option": "Rating"
+      },
+      "toxinInhalationResist": {
+        "option": "Rating"
+      },
+      "toxinIngestionResist": {
+        "option": "Rating"
+      },
+      "toxinInjectionResist": {
+        "option": "Rating"
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 460
+  },
+  {
+    "name": "Tracheal Filter",
+    "description": "",
+    "category": "Basic",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.1
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [6]
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            3
+          ]
+        }
+      ],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          4500
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "bonus": {
+      "toxinInhalationResist": {
+        "option": "Rating"
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 460
+  },
+  {
+    "name": "Chemical Gland (Internal Release or Gradual Release)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Basic",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [12],
+      "restriction": "Restricted",
+      "modifier": "Gear"
+    },
+    "cost": [
+      20000,
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              99,
+              {
+                "operator": "*"
+              },
+              {
+                "option": "Gear"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
+    },
+    "allowedGear": {
+      "gearCategoryList": [
+        "Chemicals",
+        "Custom Drug",
+        "Drugs",
+        "Toxins",
+        "Custom"
+      ]
+    },
+    "allowCategoryList": ["Chemical Gland Modifications"],
+    "source": "Chrome Flesh",
+    "page": 112
+  },
+  {
+    "name": "Chemical Gland (Exhalation Sprayer)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Basic",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [12],
+      "restriction": "Restricted",
+      "modifier": "Gear"
+    },
+    "cost": [
+      26000,
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              99,
+              {
+                "operator": "*"
+              },
+              {
+                "option": "Gear"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "allowedGear": {
+      "gearCategoryList": [
+        "Chemicals",
+        "Custom Drug",
+        "Drugs",
+        "Toxins",
+        "Custom"
+      ]
+    },
+    "allowCategoryList": ["Chemical Gland Modifications"],
+    "source": "Chrome Flesh",
+    "page": 112
+  },
+  {
+    "name": "Chemical Gland (Spitter)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Basic",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [12],
+      "restriction": "Restricted",
+      "modifier": "Gear"
+    },
+    "cost": [
+      26000,
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              99,
+              {
+                "operator": "*"
+              },
+              {
+                "option": "Gear"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "allowedGear": {
+      "gearCategoryList": [
+        "Chemicals",
+        "Custom Drug",
+        "Drugs",
+        "Toxins",
+        "Custom"
+      ]
+    },
+    "allowCategoryList": ["Chemical Gland Modifications"],
+    "source": "Chrome Flesh",
+    "page": 112
+  },
+  {
+    "name": "Chemical Gland (Weapon Reservoir)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Basic",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [12],
+      "restriction": "Forbidden",
+      "modifier": "Gear"
+    },
+    "cost": [
+      24000,
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              99,
+              {
+                "operator": "*"
+              },
+              {
+                "option": "Gear"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "allowedGear": {
+      "gearCategoryList": [
+        "Chemicals",
+        "Custom Drug",
+        "Drugs",
+        "Toxins",
+        "Custom"
+      ]
+    },
+    "allowCategoryList": ["Chemical Gland Modifications"],
+    "source": "Chrome Flesh",
+    "page": 112
+  },
+  {
+    "name": "Chemical Gland Expanded Reservoir",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Chemical Gland Modifications",
+    "essenceCost": [0.1],
+    "modification": true,
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [
+      2000,
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              4,
+              {
+                "operator": "*"
+              },
+              {
+                "option": "Parent"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "allowedGear": {
+      "gearCategoryList": [
+        "Chemicals",
+        "Custom Drug",
+        "Drugs",
+        "Toxins",
+        "Custom"
+      ]
+    },
+    "source": "Chrome Flesh",
+    "page": 112
+  },
+  {
+    "name": "Chemical Repulsion",
+    "description": "",
+    "category": "Orthoskin Upgrades",
+    "essenceCost": [0.25],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [12],
+      "restriction": "Restricted"
+    },
+    "cost": [20000],
+    "blockedMountList": [],
+    "bonus": {
+      "toxinContactResist": 2,
+      "fatigueResist": -2
+    },
+    "source": "Chrome Flesh",
+    "page": 116
+  },
+  {
+    "name": "Dragon Hide",
+    "description": "",
+    "category": "Orthoskin Upgrades",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [2000],
+    "blockedMountList": [],
+    "bonus": {
+      "fireArmour": 2
+    },
+    "source": "Chrome Flesh",
+    "page": 116
+  },
+  {
+    "name": "Insulation",
+    "description": "",
+    "category": "Orthoskin Upgrades",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [8000],
+    "blockedMountList": [],
+    "bonus": {
+      "electricityArmour": 2
+    },
+    "source": "Chrome Flesh",
+    "page": 116
+  },
+  {
+    "name": "Electroshock",
+    "description": "",
+    "category": "Orthoskin Upgrades",
+    "essenceCost": [0.25],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [8000],
+    "blockedMountList": [],
+    "bonus": {
+      "electricityArmour": -2
+    },
+    "source": "Chrome Flesh",
+    "page": 116
+  },
+  {
+    "name": "Penguin Blubber",
+    "description": "",
+    "category": "Orthoskin Upgrades",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [2000],
+    "blockedMountList": [],
+    "bonus": {
+      "coldArmour": 2
+    },
+    "source": "Chrome Flesh",
+    "page": 116
+  },
+  {
+    "name": "Sealskin",
+    "description": "",
+    "category": "Orthoskin Upgrades",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [2000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 116
+  },
+  {
+    "name": "Sharkskin",
+    "description": "",
+    "category": "Orthoskin Upgrades",
+    "essenceCost": [0.25],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [8000],
+    "blockedMountList": [],
+    "bonus": {
+      "unarmedReach": 1
+    },
+    "source": "Chrome Flesh",
+    "page": 116
+  },
+  {
+    "name": "Elastic Joints",
+    "description": "",
+    "category": "Basic",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [8000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 112
+  },
+  {
+    "name": "Gills",
+    "description": "",
+    "category": "Basic",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [8000],
+    "blockedMountList": [],
+    "bonus": {
+      "fatigueResist": -2
+    },
+    "source": "Chrome Flesh",
+    "page": 113
+  },
+  {
+    "name": "Hand and Foot Webbing (Hands)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "Arm"
+    },
+    "category": "Basic",
+    "essenceCost": [0.05],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
+    "blockedMountList": [],
+    "selectSide": true,
+    "pairBonus": {
+      "swimSpeedPercentageModifier": 100
+    },
+    "source": "Chrome Flesh",
+    "page": 113
+  },
+  {
+    "name": "Hand and Foot Webbing (Feet)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "Leg"
+    },
+    "category": "Basic",
+    "essenceCost": [0.05],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
+    "blockedMountList": [],
+    "selectSide": true,
+    "pairBonus": {
+      "swimSpeedPercentageModifier": 100
+    },
+    "source": "Chrome Flesh",
+    "page": 113
+  },
+  {
+    "name": "Hearing Enhancement",
+    "description": "",
+    "category": "Basic",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [4000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 113
+  },
+  {
+    "name": "Hearing Expansion",
+    "description": "",
+    "category": "Basic",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [4000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 113
+  },
+  {
+    "name": "Joint Replacement",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Basic",
+    "essenceCost": [0.05],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [2],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 113
+  },
+  {
+    "name": "Spidersilk Gland",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Basic",
+    "essenceCost": [0.3],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [35000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 114
+  },
+  {
+    "name": "Spinal Realignment",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Basic",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [4000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 114
+  },
+  {
+    "name": "Tactile Sensitivity",
+    "description": "",
+    "category": "Basic",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [8000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 114
+  },
+  {
+    "name": "Tail",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Basic",
+    "essenceCost": [0.25],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [2000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 115
+  },
+  {
+    "name": "Tail, Prehensile",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Basic",
+    "essenceCost": [0.5],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [8000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 115
+  },
+  {
+    "name": "Troll Eyes",
+    "description": "",
+    "category": "Basic",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [10000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 115
+  },
+  {
+    "name": "Vocal Range Enhancer",
+    "description": "",
+    "category": "Basic",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [10000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 115
+  },
+  {
+    "name": "Vocal Range Expander",
+    "description": "",
+    "category": "Basic",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [12],
+      "restriction": "Restricted"
+    },
+    "cost": [30000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 115
+  },
+  {
+    "name": "Nephritic screen",
+    "description": "",
+    "category": "Basic",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.05
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [6]
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          4000
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "bonus": {
+      "toxinContactResist": {
+        "option": "Rating"
+      },
+      "pathogenContactResist": {
+        "option": "Rating"
+      },
+      "toxinInhalationResist": {
+        "option": "Rating"
+      },
+      "pathogenInhalationResist": {
+        "option": "Rating"
+      },
+      "toxinIngestionResist": {
+        "option": "Rating"
+      },
+      "pathogenIngestionResist": {
+        "option": "Rating"
+      },
+      "toxinInjectionResist": {
+        "option": "Rating"
+      },
+      "pathogenInjectionResist": {
+        "option": "Rating"
+      },
+      "addictionResistance": {
+        "physiological": {
+          "initialTest": {
+            "option": "Rating"
+          },
+          "progressingTest": {
+            "option": "Rating"
+          }
+        },
+        "psychological": {
+          "initialTest": {
+            "option": "Rating"
+          },
+          "progressingTest": {
+            "option": "Rating"
+          }
+        }
+      }
+    },
+    "source": "Chrome Flesh",
+    "page": 113
+  },
+  {
+    "name": "Nictitating Membranes",
+    "description": "",
+    "category": "Basic",
+    "essenceCost": [0.05],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 113
+  },
+  {
+    "name": "Tailored Critter Pheromones",
+    "description": "",
+    "category": "Basic",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.1
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [3]
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            4
+          ]
+        }
+      ],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          2000
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Chrome Flesh",
+    "page": 115
+  },
+  {
+    "name": "Expanded Volume",
+    "description": "",
+    "category": "Basic",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.1
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [4]
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            4
+          ]
+        }
+      ],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          2000
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "bonus": {
+      "fatigueResist": {
+        "option": "Rating"
+      }
+    },
+    "source": "Chrome Flesh",
+    "page": 112
+  },
+  {
+    "name": "Amplified Immune System",
+    "description": "",
+    "category": "Basic",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.1
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [4]
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            7
+          ]
+        }
+      ],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          4000
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "bonus": {
+      "pathogenContactResist": {
+        "option": "Rating"
+      },
+      "pathogenInhalationResist": {
+        "option": "Rating"
+      },
+      "pathogenIngestionResist": {
+        "option": "Rating"
+      },
+      "pathogenInjectionResist": {
+        "option": "Rating"
+      }
+    },
+    "source": "Chrome Flesh",
+    "page": 111
+  },
+  {
+    "name": "Minor Biosculpting Modification",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Biosculpting",
+    "essenceCost": [0],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [2],
+      "restriction": "Legal"
+    },
+    "cost": {
+      "range": {
+        "min": 50,
+        "max": 500
+      }
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Chrome Flesh",
+    "page": 108
+  },
+  {
+    "name": "Moderate Biosculpting Modification",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Biosculpting",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": {
+      "range": {
+        "min": 500,
+        "max": 2000
+      }
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Chrome Flesh",
+    "page": 108
+  },
+  {
+    "name": "Severe Biosculpting Modification",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Biosculpting",
+    "essenceCost": [0.25],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": {
+      "range": {
+        "min": 2000,
+        "max": 10000
+      }
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Chrome Flesh",
+    "page": 108
+  },
+  {
+    "name": "Troll Reduction",
+    "description": "",
+    "category": "Biosculpting",
+    "essenceCost": {
+      "ratingLinked": [0.2, 0.5]
+    },
+    "rating": {
+      "maximum": [2]
+    },
+    "availability": {
+      "ratingLinked": [
+        {
+          "rating": [8],
+          "restriction": "Legal"
+        },
+        {
+          "rating": [12],
+          "restriction": "Legal"
+        }
+      ]
+    },
+    "cost": {
+      "ratingLinked": [15000, 25000]
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "armour": {
+        "bonus": -1
+      }
+    },
+    "source": "Chrome Flesh",
+    "page": 108
+  },
+  {
+    "name": "Troll Reduction (Ork)",
+    "description": "",
+    "category": "Biosculpting",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [15000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 108
+  },
+  {
+    "name": "Ethnicity/Sex Change",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Biosculpting",
+    "essenceCost": [0],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [10000],
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Chrome Flesh",
+    "page": 108
+  },
+  {
+    "name": "Metatype Modification",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Biosculpting",
+    "essenceCost": [0],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [20000],
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Chrome Flesh",
+    "page": 108
+  },
+  {
+    "name": "Claws",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Bio-Weapons",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          0.1,
+          {
+            "operator": "*"
+          },
+          {
+            "option": "Rating"
+          }
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [2]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Restricted"
+    },
+    "cost": [500],
+    "addWeapon": "Claws (Bio-Weapon)",
+    "blockedMountList": [],
+    "userSelectable": false,
+    "source": "Chrome Flesh",
+    "page": 120
+  },
+  {
+    "name": "Claws (Retractable)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Bio-Weapons",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          0.15,
+          {
+            "operator": "*"
+          },
+          {
+            "option": "Rating"
+          }
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [2]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "Restricted"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          1000
+        ]
+      }
+    ],
+    "addWeapon": "Retractable Claws (Bio-Weapon)",
+    "blockedMountList": [],
+    "userSelectable": false,
+    "source": "Chrome Flesh",
+    "page": 120
+  },
+  {
+    "name": "Striking Callus",
+    "description": "",
+    "category": "Bio-Weapons",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          0.05,
+          {
+            "operator": "*"
+          },
+          {
+            "option": "Rating"
+          }
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [4]
+    },
+    "availability": {
+      "rating": [2],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          250
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "bonus": {
+      "unarmedDamageType": "Physical"
+    },
+    "userSelectable": false,
+    "source": "Chrome Flesh",
+    "page": 121
+  },
+  {
+    "name": "Tusk(s), Small",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Bio-Weapons",
+    "essenceCost": [0],
+    "rating": {
+      "maximum": [2]
+    },
+    "availability": {
+      "rating": [2],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          100
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "userSelectable": false,
+    "source": "Chrome Flesh",
+    "page": 121
+  },
+  {
+    "name": "Tusk(s), Medium",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Bio-Weapons",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          0.1,
+          {
+            "operator": "*"
+          },
+          {
+            "option": "Rating"
+          }
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [2]
+    },
+    "availability": {
+      "rating": [2],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      }
+    ],
+    "addWeapon": "Medium Tusk(s)",
+    "blockedMountList": [],
+    "userSelectable": false,
+    "source": "Chrome Flesh",
+    "page": 121
+  },
+  {
+    "name": "Tusk(s), Large",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Bio-Weapons",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          0.2,
+          {
+            "operator": "*"
+          },
+          {
+            "option": "Rating"
+          }
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [2]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Restricted"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          1000
+        ]
+      }
+    ],
+    "addWeapon": "Large Tusk(s)",
+    "blockedMountList": [],
+    "userSelectable": false,
+    "source": "Chrome Flesh",
+    "page": 121
+  },
+  {
+    "name": "Claws, Fixed (Hands)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "Arm"
+    },
+    "category": "Bio-Weapons",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Restricted"
+    },
+    "cost": [500],
+    "addWeapon": "Claws (Bio-Weapon)",
+    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
+    "selectSide": true,
+    "pairBonus": {
+      "unarmedReach": 1
+    },
+    "source": "Chrome Flesh",
+    "page": 120
+  },
+  {
+    "name": "Claws, Retractable (Hands)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "Arm"
+    },
+    "category": "Bio-Weapons",
+    "essenceCost": [0.15],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "Restricted"
+    },
+    "cost": [1000],
+    "addWeapon": "Retractable Claws (Bio-Weapon)",
+    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
+    "selectSide": true,
+    "source": "Chrome Flesh",
+    "page": 120
+  },
+  {
+    "name": "Claws, Fixed (Feet)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "Leg"
+    },
+    "category": "Bio-Weapons",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Restricted"
+    },
+    "cost": [500],
+    "addWeapon": "Claws (Bio-Weapon)",
+    "blockedMountList": ["Ankle", "Knee", "Hip"],
+    "selectSide": true,
+    "source": "Chrome Flesh",
+    "page": 120
+  },
+  {
+    "name": "Claws, Retractable (Feet)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "Leg"
+    },
+    "category": "Bio-Weapons",
+    "essenceCost": [0.15],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "Restricted"
+    },
+    "cost": [1000],
+    "addWeapon": "Retractable Claws (Bio-Weapon)",
+    "blockedMountList": ["Ankle", "Knee", "Hip"],
+    "selectSide": true,
+    "source": "Chrome Flesh",
+    "page": 120
+  },
+  {
+    "name": "Striking Callus (Hands)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "Arm"
+    },
+    "category": "Bio-Weapons",
+    "essenceCost": [0.05],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [2],
+      "restriction": "Legal"
+    },
+    "cost": [250],
+    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
+    "selectSide": true,
+    "bonus": {
+      "unarmedDamageType": "Physical"
+    },
+    "pairIncludeList": ["Striking Callus (Feet)"],
+    "source": "Chrome Flesh",
+    "page": 121
+  },
+  {
+    "name": "Striking Callus (Feet)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "Leg"
+    },
+    "category": "Bio-Weapons",
+    "essenceCost": [0.05],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [2],
+      "restriction": "Legal"
+    },
+    "cost": [250],
+    "blockedMountList": ["Ankle", "Knee", "Hip"],
+    "selectSide": true,
+    "bonus": {
+      "unarmedDamageType": "Physical"
+    },
+    "pairIncludeList": ["Striking Callus (Hands)"],
+    "source": "Chrome Flesh",
+    "page": 121
+  },
+  {
+    "name": "Tusk(s), Small",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Bio-Weapons",
+    "essenceCost": [0],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [2],
+      "restriction": "Legal"
+    },
+    "cost": [100],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 121
+  },
+  {
+    "name": "Tusk(s), Medium",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Bio-Weapons",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [500],
+    "addWeapon": "Medium Tusk(s)",
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 121
+  },
+  {
+    "name": "Tusk(s), Large",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Bio-Weapons",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Restricted"
+    },
+    "cost": [1000],
+    "addWeapon": "Large Tusk(s)",
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 121
+  },
+  {
+    "name": "Replacement Tusk(s), Small",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Bio-Weapons",
+    "essenceCost": [0],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [2],
+      "restriction": "Legal"
+    },
+    "cost": [100],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 121
+  },
+  {
+    "name": "Replacement Tusk(s), Medium",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Bio-Weapons",
+    "essenceCost": [0],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [500],
+    "addWeapon": "Medium Tusk(s)",
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 121
+  },
+  {
+    "name": "Electrical Discharge",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Bio-Weapons",
+    "essenceCost": [0.3],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [10000],
+    "addWeapon": "Electrical Discharge",
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 120
+  },
+  {
+    "name": "Fangs",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Bio-Weapons",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [500],
+    "addWeapon": "Fangs (Bio-Weapon)",
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 120
+  },
+  {
+    "name": "Fangs (Retractable)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Bio-Weapons",
+    "essenceCost": [0.15],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
+    "addWeapon": "Retractable Fangs (Bio-Weapon)",
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 120
+  },
+  {
+    "name": "Horns",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Bio-Weapons",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [500],
+    "addWeapon": "Horns (Bio-Weapon)",
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 120
+  },
+  {
+    "name": "Muzzle",
+    "description": "",
+    "category": "Bio-Weapons",
+    "essenceCost": [0.3],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Restricted"
+    },
+    "cost": [2000],
+    "blockedMountList": [],
+    "bonus": {
+      "weaponAccuracy": {
+        "weapon": "[contains]Fangs",
+        "bonus": 2
+      }
+    },
+    "source": "Chrome Flesh",
+    "page": 121
+  },
+  {
+    "name": "Sprayer",
+    "description": "",
+    "category": "Bio-Weapons",
+    "essenceCost": [0.25],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [4000],
+    "addWeapon": "",
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 121
+  },
+  {
+    "name": "Stinger, Tiny",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Bio-Weapons",
+    "essenceCost": [0.05],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [100],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 121
+  },
+  {
+    "name": "Stinger, Medium",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Bio-Weapons",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Restricted"
+    },
+    "cost": [2000],
+    "addWeapon": "Medium Stinger",
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 121
+  },
+  {
+    "name": "Stinger, Large",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Bio-Weapons",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [12],
+      "restriction": "Forbidden"
+    },
+    "cost": [8000],
+    "addWeapon": "Large Stinger",
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 121
+  },
+  {
+    "name": "Bio-Tattoos",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Cosmetic Bioware",
+    "essenceCost": {
+      "ratingLinked": [0, 0.01, 0.02]
+    },
+    "rating": {
+      "maximum": [3]
+    },
+    "availability": {
+      "ratingLinked": [
+        {
+          "rating": [4],
+          "restriction": "Legal"
+        },
+        {
+          "rating": [5],
+          "restriction": "Legal"
+        },
+        {
+          "rating": [6],
+          "restriction": "Legal"
+        }
+      ]
+    },
+    "cost": {
+      "ratingLinked": [500, 1000, 1500]
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Chrome Flesh",
+    "page": 109
+  },
+  {
+    "name": "Chameleon Skin",
+    "description": "",
+    "category": "Cosmetic Bioware",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [2000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 109
+  },
+  {
+    "name": "Chameleon Skin (Dynamic)",
+    "description": "",
+    "category": "Cosmetic Bioware",
+    "essenceCost": [0.3],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [4000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 109
+  },
+  {
+    "name": "Clean Metabolism",
+    "description": "",
+    "category": "Cosmetic Bioware",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 109
+  },
+  {
+    "name": "Chloroplast Skin",
+    "description": "",
+    "category": "Cosmetic Bioware",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [2000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 109
+  },
+  {
+    "name": "Dietware",
+    "description": "",
+    "category": "Cosmetic Bioware",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 109
+  },
+  {
+    "name": "Hair Growth",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Cosmetic Bioware",
+    "essenceCost": [0],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [200],
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Chrome Flesh",
+    "page": 109
+  },
+  {
+    "name": "Hair Growth (Full-Body)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Cosmetic Bioware",
+    "essenceCost": [0],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [5],
+      "restriction": "Legal"
+    },
+    "cost": [500],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 109
+  },
+  {
+    "name": "Perfect Eyes",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Cosmetic Bioware",
+    "essenceCost": [0],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 109
+  },
+  {
+    "name": "Sensitive Skin",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Cosmetic Bioware",
+    "essenceCost": [0],
+    "rating": {
+      "maximum": [20]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Chrome Flesh",
+    "page": 110
+  },
+  {
+    "name": "Silky Skin",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Cosmetic Bioware",
+    "essenceCost": [0],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [500],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 110
+  },
+  {
+    "name": "Skin Pigmentation",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Cosmetic Bioware",
+    "essenceCost": [0],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [200],
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Chrome Flesh",
+    "page": 111
+  },
+  {
+    "name": "Skin Pigmentation (Permanent)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Cosmetic Bioware",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Chrome Flesh",
+    "page": 111
+  },
+  {
+    "name": "Cerebellum Booster",
+    "description": "",
+    "category": "Cultured",
+    "unavailableGrades": ["Used"],
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.2
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [2]
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            8
+          ]
+        }
+      ],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          50000
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 118
+  },
+  {
+    "name": "Boosted Reflexes",
+    "description": "",
+    "category": "Cultured",
+    "unavailableGrades": ["Used"],
+    "essenceCost": [1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Restricted"
+    },
+    "cost": [10000],
+    "blockedMountList": [],
+    "bonus": {
+      "initiative": {
+        "bonusDice": 1
+      },
+      "disableQualities": [
+        {
+          "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
+        }
+      ]
+    },
+    "source": "Chrome Flesh",
+    "page": 118
+  },
+  {
+    "name": "Knowledge Infusion",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Cultured",
+    "unavailableGrades": ["Used"],
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [2000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 118
+  },
+  {
+    "name": "Limb replacement (Finger/Toe)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Cultured",
+    "unavailableGrades": ["Used"],
+    "essenceCost": [0.02],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [2000],
+    "blockedMountList": [],
+    "selectSide": true,
+    "source": "Chrome Flesh",
+    "page": 118
+  },
+  {
+    "name": "Limb replacement (Hand/foot)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Cultured",
+    "unavailableGrades": ["Used"],
+    "essenceCost": [0.02],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [20000],
+    "blockedMountList": [],
+    "selectSide": true,
+    "source": "Chrome Flesh",
+    "page": 118
+  },
+  {
+    "name": "Limb replacement (Half arm/leg)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Cultured",
+    "unavailableGrades": ["Used"],
+    "essenceCost": [0.02],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [40000],
+    "blockedMountList": [],
+    "selectSide": true,
+    "source": "Chrome Flesh",
+    "page": 118
+  },
+  {
+    "name": "Limb replacement (Full arm/leg)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Cultured",
+    "unavailableGrades": ["Used"],
+    "essenceCost": [0.02],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [80000],
+    "blockedMountList": [],
+    "selectSide": true,
+    "source": "Chrome Flesh",
+    "page": 118
+  },
+  {
+    "name": "Neuro Retention Amplification",
+    "description": "",
+    "category": "Cultured",
+    "unavailableGrades": ["Used"],
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [10000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 118
+  },
+  {
+    "name": "Reproductive Replacement, Male",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Cultured",
+    "unavailableGrades": ["Used"],
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [8000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 118
+  },
+  {
+    "name": "Reproductive Replacement, Female",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Cultured",
+    "unavailableGrades": ["Used"],
+    "essenceCost": [0.3],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [20000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 118
+  },
+  {
+    "name": "Trauma Damper",
+    "description": "",
+    "category": "Cultured",
+    "unavailableGrades": ["Used"],
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.1
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [4]
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            4
+          ]
+        }
+      ],
+      "restriction": "Restricted"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          4000
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 119
+  },
+  {
+    "name": "Tremor Reducer",
+    "description": "",
+    "category": "Cultured",
+    "unavailableGrades": ["Used"],
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.1
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [3]
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            6
+          ]
+        }
+      ],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          10000
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 119
+  },
+  {
+    "name": "Reception Enhancer",
+    "description": "",
+    "category": "Cultured",
+    "unavailableGrades": ["Used"],
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [10000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 118
+  },
+  {
+    "name": "Genewipe",
+    "description": "",
+    "category": "Phenotype Adjustment",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [16],
+      "restriction": "Forbidden"
+    },
+    "cost": [57000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 157,
+    "isGeneware": true
+  },
+  {
+    "name": "Masque",
+    "description": "",
+    "category": "Phenotype Adjustment",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [10],
+      "restriction": "Forbidden"
+    },
+    "cost": [40000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 157,
+    "isGeneware": true
+  },
+  {
+    "name": "Reprint",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Phenotype Adjustment",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [12],
+      "restriction": "Forbidden"
+    },
+    "cost": [30000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 157,
+    "isGeneware": true
+  },
+  {
+    "name": "Shuffle",
+    "description": "",
+    "category": "Phenotype Adjustment",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [12],
+      "restriction": "Forbidden"
+    },
+    "cost": [20000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 157,
+    "isGeneware": true
+  },
+  {
+    "name": "Elastic Stomach",
+    "description": "",
+    "category": "Exotic Metagenetics",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [10000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 159,
+    "isGeneware": true
+  },
+  {
+    "name": "Hyperthymesia",
+    "description": "",
+    "category": "Exotic Metagenetics",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [15000],
+    "blockedMountList": [],
+    "bonus": {
+      "memory": 2
+    },
+    "source": "Chrome Flesh",
+    "page": 159,
+    "isGeneware": true
+  },
+  {
+    "name": "Lung Expansion",
+    "description": "",
+    "category": "Exotic Metagenetics",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [16500],
+    "blockedMountList": [],
+    "bonus": {
+      "fatigueResist": 1
+    },
+    "source": "Chrome Flesh",
+    "page": 159,
+    "isGeneware": true
+  },
+  {
+    "name": "Increased Myelination",
+    "description": "",
+    "category": "Exotic Metagenetics",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [12000],
+    "blockedMountList": [],
+    "bonus": {
+      "electricityArmour": 1
+    },
+    "source": "Chrome Flesh",
+    "page": 159,
+    "isGeneware": true
+  },
+  {
+    "name": "Myostatin Inhibitor",
+    "description": "",
+    "category": "Exotic Metagenetics",
+    "essenceCost": [0.3],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [30500],
+    "blockedMountList": [],
+    "bonus": {
+      "modifyAttributeImprovementKarmaCost": [
+        {
+          "name": "Strength",
+          "bonus": -2
+        }
+      ]
+    },
+    "source": "Chrome Flesh",
+    "page": 159,
+    "isGeneware": true
+  },
+  {
+    "name": "Narco",
+    "description": "",
+    "category": "Exotic Metagenetics",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [12],
+      "restriction": "Forbidden"
+    },
+    "cost": [16420],
+    "blockedMountList": [],
+    "bonus": {
+      "addictionResistance": {
+        "physiological": {
+          "initialTest": -2,
+          "progressingTest": 2
+        },
+        "psychological": {
+          "initialTest": -2,
+          "progressingTest": 2
+        }
+      }
+    },
+    "source": "Chrome Flesh",
+    "page": 159,
+    "isGeneware": true
+  },
+  {
+    "name": "Selective Hearing",
+    "description": "",
+    "category": "Exotic Metagenetics",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [17000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 160,
+    "isGeneware": true
+  },
+  {
+    "name": "Thickened Digestive Tract Lining",
+    "description": "",
+    "category": "Exotic Metagenetics",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [8000],
+    "blockedMountList": [],
+    "bonus": {
+      "toxinContactResist": 1,
+      "toxinInhalationResist": 1,
+      "toxinIngestionResist": 1,
+      "toxinInjectionResist": 1,
+      "lifestyleCostModifier": -10
+    },
+    "source": "Chrome Flesh",
+    "page": 160,
+    "isGeneware": true
+  },
+  {
+    "name": "Adapsin",
+    "description": "",
+    "category": "Transgenics",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [16],
+      "restriction": "Legal"
+    },
+    "cost": [30000],
+    "blockedMountList": [],
+    "bonus": {
+      "adapsin": true
+    },
+    "source": "Chrome Flesh",
+    "page": 160,
+    "isGeneware": true
+  },
+  {
+    "name": "Dareadrenaline",
+    "description": "",
+    "category": "Transgenics",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [61000],
+    "blockedMountList": [],
+    "bonus": {
+      "addictionResistance": {
+        "physiological": {
+          "initialTest": 1,
+          "progressingTest": 1
+        },
+        "psychological": {
+          "initialTest": 1,
+          "progressingTest": 1
+        }
+      },
+      "composure": 1,
+      "judgeIntentionsDefense": 1,
+      "drainResist": 1,
+      "fadingResist": 1,
+      "directManaResist": 1,
+      "detectionResist": 1,
+      "manaIllusionResist": 1,
+      "mentalManipulationResist": 1,
+      "decreaseBodyResist": 1,
+      "decreaseAgilityResist": 1,
+      "decreaseReasonanceResist": 1,
+      "decreaseStrengthResist": 1,
+      "decreaseCharismaResist": 1,
+      "decreaseIntuitionResist": 1,
+      "decreaseLogicResist": 1,
+      "decreaseWillpowerResist": 1
+    },
+    "source": "Chrome Flesh",
+    "page": 160,
+    "isGeneware": true
+  },
+  {
+    "name": "Double Elastin",
+    "description": "",
+    "category": "Transgenics",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [18000],
+    "blockedMountList": [],
+    "bonus": {
+      "fatigueResist": -1
+    },
+    "source": "Chrome Flesh",
+    "page": 160,
+    "isGeneware": true
+  },
+  {
+    "name": "Hyper-Glucagon",
+    "description": "",
+    "category": "Transgenics",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [8000],
+    "blockedMountList": [],
+    "bonus": {
+      "lifestyleCostModifier": 10
+    },
+    "source": "Chrome Flesh",
+    "page": 160,
+    "isGeneware": true
+  },
+  {
+    "name": "Magnesense",
+    "description": "",
+    "category": "Transgenics",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [7000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 160,
+    "isGeneware": true
+  },
+  {
+    "name": "Neo-EPO",
+    "description": "",
+    "category": "Transgenics",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [38000],
+    "blockedMountList": [],
+    "bonus": {
+      "skillGroups": [
+        {
+          "group": "Athletics",
+          "bonus": 1
+        }
+      ],
+      "fatigueResist": 1,
+      "physicalLimit": 1,
+      "stunHealing": 1,
+      "physicalHealing": 1
+    },
+    "source": "Chrome Flesh",
+    "page": 160,
+    "isGeneware": true
+  },
+  {
+    "name": "PuSHed",
+    "description": "",
+    "category": "Transgenics",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [14],
+      "restriction": "Legal"
+    },
+    "cost": [62000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 160,
+    "isGeneware": true
+  },
+  {
+    "name": "Qualia",
+    "description": "",
+    "category": "Transgenics",
+    "essenceCost": [0.4],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [14],
+      "restriction": "Legal"
+    },
+    "cost": [65000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 161,
+    "isGeneware": true
+  },
+  {
+    "name": "Reakt",
+    "description": "",
+    "category": "Transgenics",
+    "essenceCost": [0.4],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [73000],
+    "blockedMountList": [],
+    "bonus": {
+      "dodge": 2
+    },
+    "source": "Chrome Flesh",
+    "page": 161,
+    "isGeneware": true
+  },
+  {
+    "name": "Skeletal Pneumaticity",
+    "description": "",
+    "category": "Transgenics",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [5],
+      "restriction": "Legal"
+    },
+    "cost": [9000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 161,
+    "isGeneware": true
+  },
+  {
+    "name": "Solus",
+    "description": "",
+    "category": "Transgenics",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [8000],
+    "blockedMountList": [],
+    "bonus": {
+      "lifestyleCostModifier": -10
+    },
+    "source": "Chrome Flesh",
+    "page": 161,
+    "isGeneware": true
+  },
+  {
+    "name": "Synaptic Acceleration",
+    "description": "",
+    "category": "Transgenics",
+    "essenceCost": [0.4],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [78000],
+    "blockedMountList": [],
+    "bonus": {
+      "initiative": {
+        "bonusDice": 1
+      },
+      "disableQualities": [
+        {
+          "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
+        }
+      ],
+      "dodge": 1
+    },
+    "source": "Chrome Flesh",
+    "page": 162,
+    "isGeneware": true
+  },
+  {
+    "name": "Synch",
+    "description": "",
+    "category": "Transgenics",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [14000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 162,
+    "isGeneware": true
+  },
+  {
+    "name": "Tetrachromacy",
+    "description": "",
+    "category": "Transgenics",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [8000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 161,
+    "isGeneware": true
+  },
+  {
+    "name": "Vasocon",
+    "description": "",
+    "category": "Transgenics",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [15000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 161,
+    "isGeneware": true
+  },
+  {
+    "name": "Allergen Tolerance",
+    "description": "",
+    "category": "Environmental Microadaptation",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [20000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 163,
+    "isGeneware": true
+  },
+  {
+    "name": "Cold Adaptation",
+    "description": "",
+    "category": "Environmental Microadaptation",
+    "essenceCost": [0.5],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [5],
+      "restriction": "Legal"
+    },
+    "cost": [8000],
+    "blockedMountList": [],
+    "bonus": {
+      "coldArmour": 2
+    },
+    "source": "Chrome Flesh",
+    "page": 163,
+    "isGeneware": true
+  },
+  {
+    "name": "Cryo Tolerance",
+    "description": "",
+    "category": "Environmental Microadaptation",
+    "essenceCost": [0.5],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [18],
+      "restriction": "Legal"
+    },
+    "cost": [50000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 163,
+    "isGeneware": true
+  },
+  {
+    "name": "Heat Adaptation",
+    "description": "",
+    "category": "Environmental Microadaptation",
+    "essenceCost": [0.5],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [5],
+      "restriction": "Legal"
+    },
+    "cost": [8000],
+    "blockedMountList": [],
+    "bonus": {
+      "fireArmour": 2
+    },
+    "source": "Chrome Flesh",
+    "page": 163,
+    "isGeneware": true
+  },
+  {
+    "name": "Low Oxygen Adaptation",
+    "description": "",
+    "category": "Environmental Microadaptation",
+    "essenceCost": [0.5],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [8000],
+    "blockedMountList": [],
+    "bonus": {
+      "lifestyleCostModifier": 10
+    },
+    "source": "Chrome Flesh",
+    "page": 163,
+    "isGeneware": true
+  },
+  {
+    "name": "Microgravity Adaptation",
+    "description": "",
+    "category": "Environmental Microadaptation",
+    "essenceCost": [0.5],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [30000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 163,
+    "isGeneware": true
+  },
+  {
+    "name": "Pollution Tolerance",
+    "description": "",
+    "category": "Environmental Microadaptation",
+    "essenceCost": [0.5],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [5],
+      "restriction": "Legal"
+    },
+    "cost": [15000],
+    "blockedMountList": [],
+    "bonus": {
+      "toxinContactResist": 2,
+      "toxinInhalationResist": 2,
+      "toxinIngestionResist": 2
+    },
+    "source": "Chrome Flesh",
+    "page": 163,
+    "isGeneware": true
+  },
+  {
+    "name": "Radiation Tolerance",
+    "description": "",
+    "category": "Environmental Microadaptation",
+    "essenceCost": [0.5],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [15000],
+    "blockedMountList": [],
+    "bonus": {
+      "radiationResistance": 2
+    },
+    "source": "Chrome Flesh",
+    "page": 164,
+    "isGeneware": true
+  },
+  {
+    "name": "Transgenic Alteration",
+    "description": "",
+    "category": "Transgenic Alteration",
+    "essenceCost": [0.3],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": {
+      "range": {
+        "min": 30000,
+        "max": 1000000
+      }
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Chrome Flesh",
+    "page": 164,
+    "isGeneware": true
+  },
+  {
+    "name": "Control Rig Optimization",
+    "description": "",
+    "category": "Complimentary Genetics",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [7],
+      "restriction": "Legal"
+    },
+    "cost": [4600],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 165,
+    "isGeneware": true
+  },
+  {
+    "name": "Reaction Optimization",
+    "description": "",
+    "category": "Complimentary Genetics",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [6600],
+    "blockedMountList": [],
+    "bonus": {
+      "initiative": {
+        "bonus": 1
+      }
+    },
+    "source": "Chrome Flesh",
+    "page": 165,
+    "isGeneware": true
+  },
+  {
+    "name": "Reflex Recorder Optimization",
+    "description": "",
+    "category": "Complimentary Genetics",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [11],
+      "restriction": "Legal"
+    },
+    "cost": [3800],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 165,
+    "isGeneware": true
+  },
+  {
+    "name": "Wired Reflex Optimization",
+    "description": "",
+    "category": "Complimentary Genetics",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [9],
+      "restriction": "Restricted"
+    },
+    "cost": [9000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 165,
+    "isGeneware": true
+  },
+  {
+    "name": "Adrenaline Pump Optimization",
+    "description": "",
+    "category": "Complimentary Genetics",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [7],
+      "restriction": "Forbidden"
+    },
+    "cost": [6000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 165,
+    "isGeneware": true
+  },
+  {
+    "name": "Enhanced Symbiosis",
+    "description": "",
+    "category": "Complimentary Genetics",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [4000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 165,
+    "isGeneware": true
+  },
+  {
+    "name": "Genetic Optimization (Body)",
+    "description": "",
+    "category": "Phenotype Adjustment",
+    "essenceCost": [0.3],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [47000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 157,
+    "isGeneware": true
+  },
+  {
+    "name": "Genetic Optimization (Agility)",
+    "description": "",
+    "category": "Phenotype Adjustment",
+    "essenceCost": [0.3],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [47000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 157,
+    "isGeneware": true
+  },
+  {
+    "name": "Genetic Optimization (Reaction)",
+    "description": "",
+    "category": "Phenotype Adjustment",
+    "essenceCost": [0.3],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [47000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 157,
+    "isGeneware": true
+  },
+  {
+    "name": "Genetic Optimization (Strength)",
+    "description": "",
+    "category": "Phenotype Adjustment",
+    "essenceCost": [0.3],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [47000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 157,
+    "isGeneware": true
+  },
+  {
+    "name": "Genetic Optimization (Charisma)",
+    "description": "",
+    "category": "Phenotype Adjustment",
+    "essenceCost": [0.3],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [47000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 157,
+    "isGeneware": true
+  },
+  {
+    "name": "Genetic Optimization (Intuition)",
+    "description": "",
+    "category": "Phenotype Adjustment",
+    "essenceCost": [0.3],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [47000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 157,
+    "isGeneware": true
+  },
+  {
+    "name": "Genetic Optimization (Logic)",
+    "description": "",
+    "category": "Phenotype Adjustment",
+    "essenceCost": [0.3],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [47000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 157,
+    "isGeneware": true
+  },
+  {
+    "name": "Genetic Optimization (Willpower)",
+    "description": "",
+    "category": "Phenotype Adjustment",
+    "essenceCost": [0.3],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [47000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 157,
+    "isGeneware": true
+  },
+  {
+    "name": "Cosmetic Alteration",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Phenotype Adjustment",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [35000],
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Chrome Flesh",
+    "page": 158,
+    "isGeneware": true
+  },
+  {
+    "name": "Print Removal",
+    "description": "",
+    "category": "Phenotype Adjustment",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [10],
+      "restriction": "Forbidden"
+    },
+    "cost": [18000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 158,
+    "isGeneware": true
+  },
+  {
+    "name": "Metaposeur",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Phenotype Adjustment",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [38000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 158,
+    "isGeneware": true
+  },
+  {
+    "name": "Immunization",
+    "description": "",
+    "augmentationLimit": {
+      "option": "Unaugmented Body Score"
+    },
+    "category": "Immunisation",
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [20000],
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Chrome Flesh",
+    "page": 164,
+    "isGeneware": true
+  },
+  {
+    "name": "Therapeutic Genetics",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Genetic Restoration",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [90000],
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Chrome Flesh",
+    "page": 156,
+    "isGeneware": true
+  },
+  {
+    "name": "Leónization",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Genetic Restoration",
+    "essenceCost": [1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [15],
+      "restriction": "Legal"
+    },
+    "cost": [2000000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 156,
+    "isGeneware": true
+  },
+  {
+    "name": "Lifespan Extension",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Genetic Restoration",
+    "essenceCost": [0.5],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [300000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 157,
+    "isGeneware": true
+  },
+  {
+    "name": "Physical Vigor",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Genetic Restoration",
+    "essenceCost": [0.5],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [13],
+      "restriction": "Legal"
+    },
+    "cost": [250000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 156,
+    "isGeneware": true
+  },
+  {
+    "name": "Augmented Healing",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Genetic Restoration",
+    "essenceCost": [0],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [35000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 156,
+    "isGeneware": true
+  },
+  {
+    "name": "Cellular Repair",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Genetic Restoration",
+    "essenceCost": [0],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [65000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 156,
+    "isGeneware": true
+  },
+  {
+    "name": "Revitilization",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Genetic Restoration",
+    "essenceCost": [-0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [14],
+      "restriction": "Legal"
+    },
+    "cost": [110000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 157,
+    "isGeneware": true
+  },
+  {
+    "name": "Cleaner Leech",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Symbionts",
+    "essenceCost": [0],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [100],
+    "blockedMountList": [],
+    "bonus": {
+      "stunHealing": 1,
+      "physicalHealing": 1
+    },
+    "source": "Chrome Flesh",
+    "page": 123
+  },
+  {
+    "name": "Booster Endosont",
+    "description": "",
+    "category": "Symbionts",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [10000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 123
+  },
+  {
+    "name": "Digester Endosont",
+    "description": "",
+    "category": "Symbionts",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [10000],
+    "blockedMountList": [],
+    "bonus": {
+      "lifestyleCostModifier": -10
+    },
+    "source": "Chrome Flesh",
+    "page": 123
+  },
+  {
+    "name": "Electroreceptor Endosont",
+    "description": "",
+    "category": "Symbionts",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [10000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 123
+  },
+  {
+    "name": "Mild Allergy Resistance",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Symbionts",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [10000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 123
+  },
+  {
+    "name": "Moderate Allergy Resistance",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Symbionts",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [30000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 123
+  },
+  {
+    "name": "Severe Allergy Resistance",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Symbionts",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [16],
+      "restriction": "Legal"
+    },
+    "cost": [50000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 123
+  },
+  {
+    "name": "Lactose Tolerance",
+    "description": "",
+    "category": "Symbionts",
+    "essenceCost": [0],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [2],
+      "restriction": "Legal"
+    },
+    "cost": [50],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 123
+  },
+  {
+    "name": "Mender Endosont",
+    "description": "",
+    "category": "Symbionts",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [30000],
+    "blockedMountList": [],
+    "bonus": {
+      "stunHealing": 1,
+      "physicalHealing": 2
+    },
+    "source": "Chrome Flesh",
+    "page": 124
+  },
+  {
+    "name": "Slimworm",
+    "description": "",
+    "category": "Symbionts",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
+    "blockedMountList": [],
+    "bonus": {
+      "toxinIngestionResist": 1
+    },
+    "source": "Chrome Flesh",
+    "page": 124
+  },
+  {
+    "name": "Stalwart Endosont",
+    "description": "",
+    "category": "Symbionts",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [10000],
+    "blockedMountList": [],
+    "source": "Chrome Flesh",
+    "page": 124
+  },
+  {
+    "name": "Bilateral Coordination Co-processor",
+    "description": "",
+    "category": "Basic",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [4500],
+    "blockedMountList": [],
+    "bonus": {
+      "ambidextrous": true
+    },
+    "source": "Hard Targets",
+    "page": 185
+  },
+  {
+    "name": "Bone Spike (No Bone Density)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Bio-Weapons",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [14],
+      "restriction": "Forbidden"
+    },
+    "cost": [20000],
+    "addWeapon": "Bone Spike I",
+    "blockedMountList": [],
+    "source": "Hard Targets",
+    "page": 185
+  },
+  {
+    "name": "Bone Spike (Bone Density 2-3)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Bio-Weapons",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [14],
+      "restriction": "Forbidden"
+    },
+    "cost": [20000],
+    "addWeapon": "Bone Spike II",
+    "blockedMountList": [],
+    "source": "Hard Targets",
+    "page": 185
+  },
+  {
+    "name": "Bone Spike (Bone Density 4)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Bio-Weapons",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [14],
+      "restriction": "Forbidden"
+    },
+    "cost": [20000],
+    "addWeapon": "Bone Spike III",
+    "blockedMountList": [],
+    "source": "Hard Targets",
+    "page": 185
+  },
+  {
+    "name": "Spur Pocket",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "category": "Cultured",
+    "unavailableGrades": ["Used"],
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [8000],
+    "blockedMountList": [],
+    "source": "Hard Targets",
+    "page": 185
+  },
+  {
+    "name": "MCT BioLink",
+    "description": "",
+    "category": "Basic",
+    "essenceCost": [0.5],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [15000],
+    "blockedMountList": [],
+    "source": "Kill Code",
+    "page": 67
+  },
+  {
+    "name": "Vocal Expansion",
+    "description": "",
+    "augmentationLimit": 1,
+    "category": "Basic",
+    "unavailableGrades": ["Used", "Standard", "Alphaware", "Omegaware"],
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [3]
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            6
+          ]
+        }
+      ],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          8000
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "source": "No Future",
+    "page": 175
+  },
+  {
+    "name": "Adrenaline Filter",
+    "description": "",
+    "augmentationLimit": 1,
+    "category": "Basic",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.5
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [3]
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            3
+          ]
+        }
+      ],
+      "restriction": "Restricted"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          35000
+        ]
+      }
+    ],
+    "blockedMountList": [],
+    "source": "Dark Terrors",
+    "page": 163
+  }
+]

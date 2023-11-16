@@ -23,6 +23,7 @@ import {
   restrictionEnum,
 } from "../enums.js";
 import {
+  AllowedGearSchema,
   AvailabilityRatingSchema,
   WeaponXmlSubtypeSchema,
 } from "./commonSchemas.js";
@@ -340,8 +341,6 @@ export const AmmunitionSingleSchema = zod
 export type AmmunitionSingleType = zod.infer<typeof AmmunitionSingleSchema>;
 export const AmmunitionSchema = zod.array(AmmunitionSingleSchema);
 export type AmmunitionType = zod.infer<typeof AmmunitionSchema>;
-
-const AllowedGearSchema = zod.array(zod.nativeEnum(gearCategoryEnum));
 
 export const WeaponUnlinkedSummarySchema = zod
   .object({

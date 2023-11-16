@@ -386,6 +386,8 @@ export const BonusXmlSchema = zod.union([
       dodge: zod.optional(zod.number()),
       // Unarmed reach bonus
       unarmedreach: zod.optional(zod.number()),
+      // Reach with a specific bioware
+      reach: zod.optional(GenericNameValueSchema),
 
       // Addiction Bonuses
       // Bonus to avoid physiological addiction starting

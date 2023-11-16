@@ -1,4 +1,3 @@
-import { gearCategoryEnum } from "@shadowrun/common/build/enums.js";
 import {
   weaponXmlSubtypeEnum,
   WeaponXmlSubtypeSchema,
@@ -6,6 +5,7 @@ import {
 import { MountSchema } from "@shadowrun/common/build/schemas/weaponSchemas.js";
 import { z as zod } from "zod";
 import {
+  xmlAllowGearSchema,
   GearXmlSchema,
   SourceXmlSchema,
   StringArrayOrStringSchema,
@@ -115,16 +115,7 @@ const WeaponXmlSchema = zod
     ),
     // Gear that can be added to this weapon,
     // only used to add poison to an injector pen
-    allowgear: zod.optional(
-      zod
-        .object({
-          gearcategory: zod.union([
-            zod.array(zod.nativeEnum(gearCategoryEnum)),
-            zod.nativeEnum(gearCategoryEnum),
-          ]),
-        })
-        .strict()
-    ),
+    allowgear: zod.optional(xmlAllowGearSchema),
     // Ammo type if different than weapon type or for exotic ranged weapons
     ammocategory: zod.optional(zod.nativeEnum(weaponXmlSubtypeEnum)),
     // This is maybe redundant as ammo already says if multiple barrels are in use

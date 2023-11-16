@@ -179,7 +179,7 @@ function convertArmourMod(armourMod: ArmourModXmlType) {
 
   let match = Capacity.match(armourMod.armorcapacity);
   if (match.failed()) {
-    throw match.message;
+    assert(false, match.message);
   }
   const capacity = capacityArmourModificationSemantics(match).eval();
   // console.log(`Capacity: ${capacity}`);
@@ -188,7 +188,7 @@ function convertArmourMod(armourMod: ArmourModXmlType) {
 
   match = Availability.match(armourMod.avail.toString());
   if (match.failed()) {
-    throw match.message;
+    assert(false, match.message);
   }
   const availability: AvailabilityArmourModType =
     availabilityArmourModificationSemantics(match).eval();
@@ -196,7 +196,7 @@ function convertArmourMod(armourMod: ArmourModXmlType) {
 
   match = Cost.match(armourMod.cost.toString());
   if (match.failed()) {
-    throw match.message;
+    assert(false, match.message);
   }
   const cost: CostArmourModType = costArmourModificationSemantics(match).eval();
   // console.log(`Cost: ${cost}`);

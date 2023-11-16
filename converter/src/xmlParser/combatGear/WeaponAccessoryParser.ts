@@ -17,8 +17,7 @@ import * as fs from "fs";
 import assert from "assert";
 import { WeaponListXmlSchema } from "./WeaponParserSchemas.js";
 import { damageTypeEnum } from "@shadowrun/common";
-import { convertAllowGear } from "./WeaponParserHelper.js";
-import { convertXmlGears } from "../common/ParserHelper.js";
+import { convertAllowGear, convertXmlGears } from "../common/ParserHelper.js";
 import { standardCalculationEnum } from "@shadowrun/common/build/enums.js";
 import {
   getWeaponMounts,
@@ -113,7 +112,7 @@ export function ParseWeaponAccessories() {
         weaponAccessory.modifyammocapacity.toString()
       );
       if (match.failed()) {
-        throw match.message;
+        assert(false, match.message);
       }
       ammoCapacityCalculation = modifyAmmoCapacitySemantics(match).eval();
       // console.log(`Ammo Capacity: ${ammoCapacityCalculation}`);
@@ -122,7 +121,7 @@ export function ParseWeaponAccessories() {
     if (weaponAccessory.ammoreplace) {
       match = Ammo.match(weaponAccessory.ammoreplace.toString());
       if (match.failed()) {
-        throw match.message;
+        assert(false, match.message);
       }
       newAmmoType = ammoWeaponAccessorySemantics(match).eval();
       // console.log(`New Ammo type: ${newAmmoType}`);
@@ -136,7 +135,7 @@ export function ParseWeaponAccessories() {
     const forbidden = convertRequirements(weaponAccessory.forbidden);
     match = Availability.match(weaponAccessory.avail.toString());
     if (match.failed()) {
-      throw match.message;
+      assert(false, match.message);
     }
     const availability: AvailabilityWeaponAccessoryType =
       availabilityWeaponAccessorySemantics(match).eval();
@@ -144,11 +143,16 @@ export function ParseWeaponAccessories() {
 
     match = Cost.match(weaponAccessory.cost.toString());
     if (match.failed()) {
-      throw match.message;
+      assert(false, match.message);
     }
     const cost: CostWeaponAccessoryType =
       costWeaponAccessorySemantics(match).eval();
     // console.log(`Cost: ${cost}`);
+
+    const allowGear = convertAllowGear(
+      weaponAccessory.allowgear,
+      weaponAccessory.name
+    );
 
     return {
       // id: weapon.id,
@@ -173,10 +177,7 @@ export function ParseWeaponAccessories() {
       source: convertSource(weaponAccessory.source),
       page: weaponAccessory.page,
       accessoryCostMultiplier: weaponAccessory.accessorycostmultiplier,
-      allowGear: convertAllowGear(
-        weaponAccessory.allowgear,
-        weaponAccessory.name
-      ),
+      allowGear: allowGear,
       preinstalledGear: weaponAccessory.gears
         ? convertXmlGears(weaponAccessory.gears, weaponAccessory.name)
         : undefined,

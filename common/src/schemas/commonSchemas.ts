@@ -1,5 +1,10 @@
 import { z as zod } from "zod";
-import { availabilityEnum, mathOperatorEnum } from "../enums.js";
+import {
+  availabilityEnum,
+  gearCategoryEnum,
+  mathOperatorEnum,
+  ratingAugmentationEnum,
+} from "../enums.js";
 
 export const GearCalculation = zod.array(
   zod.union([
@@ -55,11 +60,23 @@ export const AvailabilityRatingSchema: zod.ZodType<AvailabilityRatingType> =
     ])
   );
 
+const ratingCalculation = zod.array(
+  zod.union([
+    zod.number(),
+    zod
+      .object({
+        option: zod.nativeEnum(ratingAugmentationEnum),
+      })
+      .strict(),
+    zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
+  ])
+);
+
 export const ValueRangeSchema = zod.union([
   zod
     .object({
-      minimum: zod.optional(zod.number()),
-      maximum: zod.optional(zod.number()),
+      minimum: zod.optional(ratingCalculation),
+      maximum: zod.optional(ratingCalculation),
     })
     .strict(),
   zod
@@ -114,3 +131,11 @@ export enum weaponXmlSubtypeEnum {
 
 export const WeaponXmlSubtypeSchema = zod.nativeEnum(weaponXmlSubtypeEnum);
 export type WeaponXmlSubtypeType = zod.infer<typeof WeaponXmlSubtypeSchema>;
+
+export const AllowedGearSchema = zod
+  .object({
+    gearNameList: zod.optional(zod.array(zod.string())),
+    gearCategoryList: zod.optional(zod.array(zod.nativeEnum(gearCategoryEnum))),
+  })
+  .strict();
+export type AllowedGearType = zod.infer<typeof AllowedGearSchema>;

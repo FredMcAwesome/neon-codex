@@ -1,7 +1,6 @@
 import { z as zod } from "zod";
 import {
   damageTypeEnum,
-  limbSlotEnum,
   mathOperatorEnum,
   spellCategoryEnum,
   weaponTypeEnum,
@@ -16,7 +15,6 @@ import {
   attributeXMLEnum,
   GenericNameValueListType,
   GenericNameValueType,
-  limbSlotXmlEnum,
   SkillListType,
 } from "./ParserCommonDefines.js";
 import Bonus from "../../grammar/bonus.ohm-bundle.js";
@@ -25,7 +23,7 @@ import {
   initiativeSemantics,
   skillKarmaCostSemantics,
 } from "./ParserSemanticsHelper.js";
-import { convertAttribute } from "./ParserHelper.js";
+import { convertAttribute, convertLimbSlot } from "./ParserHelper.js";
 import type { BonusXmlType } from "./BonusParserSchemas.js";
 const EssenceCost = Bonus.EssenceCost;
 const Initiative = Bonus.Initiative;
@@ -236,7 +234,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
   if ("essencepenaltyt100" in bonus && bonus.essencepenaltyt100 !== undefined) {
     const match = EssenceCost.match(bonus.essencepenaltyt100);
     if (match.failed()) {
-      throw match.message;
+      assert(false, match.message);
     }
     // TODO: fix this! the schema is wrong
     bonusObject.essenceCostTimes100 = essenceCostSemantics(match).eval();
@@ -311,9 +309,8 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       } else {
         const match = Initiative.match(initiativeText);
         if (match.failed()) {
-          throw match.message;
+          assert(false, match.message);
         }
-        // TODO: fix this! the schema is wrong
         initiative = initiativeSemantics(match).eval();
       }
     }
@@ -321,26 +318,21 @@ export function convertXmlBonus(bonus: BonusXmlType) {
   }
   if ("initiativedice" in bonus && bonus.initiativedice !== undefined) {
     bonusObject.initiative = {
-      bonusDice: [bonus.initiativedice],
+      bonusDice: bonus.initiativedice,
     };
   }
   if ("initiativepass" in bonus && bonus.initiativepass !== undefined) {
     let initiative;
     if (typeof bonus.initiativepass === "number") {
-      initiative = [bonus.initiativepass];
+      initiative = bonus.initiativepass;
     } else {
       assert(bonus.initiativepass.xmltext !== undefined);
       const initiativeText = bonus.initiativepass.xmltext;
-      if (typeof initiativeText === "number") {
-        initiative = [initiativeText];
-      } else {
-        const match = Initiative.match(initiativeText);
-        if (match.failed()) {
-          throw match.message;
-        }
-        // TODO: fix this! the schema is wrong
-        initiative = initiativeSemantics(match).eval();
+      const match = Initiative.match(initiativeText.toString());
+      if (match.failed()) {
+        assert(false, match.message);
       }
+      initiative = initiativeSemantics(match).eval();
     }
     bonusObject.initiative = { bonusDice: initiative };
   }
@@ -579,29 +571,36 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     "knowledgeskillkarmacost" in bonus &&
     bonus.knowledgeskillkarmacost !== undefined
   ) {
-    assert("val" in bonus.knowledgeskillkarmacost);
-    const conditionalBonus = bonus.knowledgeskillkarmacost.val;
-    assert(conditionalBonus !== undefined);
-    const match = SkillKarmaCost.match(conditionalBonus.toString());
-    if (match.failed()) {
-      throw match.message;
-    }
-    let skillRating;
-    if ("min" in bonus.knowledgeskillkarmacost) {
-      assert(typeof bonus.knowledgeskillkarmacost.min === "number");
-      skillRating = {
-        minimum: bonus.knowledgeskillkarmacost.min,
-      };
-    } else {
-      assert(typeof bonus.knowledgeskillkarmacost.max === "number");
-      skillRating = {
-        maximum: bonus.knowledgeskillkarmacost.max,
-      };
-    }
-    bonusObject.modifySkillImprovementKarmaCost = {
-      skillRating: skillRating,
-      conditionalBonus: skillKarmaCostSemantics(match).eval(),
-    };
+    const karmaCostArray = Array.isArray(bonus.knowledgeskillkarmacost)
+      ? bonus.knowledgeskillkarmacost
+      : [bonus.knowledgeskillkarmacost];
+    bonusObject.modifySkillImprovementKarmaCost = karmaCostArray.map(
+      (karmaCost) => {
+        assert("val" in karmaCost, JSON.stringify(karmaCost));
+        const conditionalBonus = karmaCost.val;
+        assert(conditionalBonus !== undefined);
+        const match = SkillKarmaCost.match(conditionalBonus.toString());
+        if (match.failed()) {
+          assert(false, match.message);
+        }
+        let skillRating;
+        if ("min" in karmaCost) {
+          assert(typeof karmaCost.min === "number");
+          skillRating = {
+            minimum: karmaCost.min,
+          };
+        } else {
+          assert(typeof karmaCost.max === "number");
+          skillRating = {
+            maximum: karmaCost.max,
+          };
+        }
+        return {
+          skillRating: skillRating,
+          conditionalBonus: skillKarmaCostSemantics(match).eval(),
+        };
+      }
+    );
   }
   if ("conditionmonitor" in bonus && bonus.conditionmonitor !== undefined) {
     const conditionMonitor = bonus.conditionmonitor;
@@ -863,23 +862,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     bonusObject.decreaseWillpowerResist = bonus.decreasewilresist;
   }
   if ("addlimb" in bonus && bonus.addlimb !== undefined) {
-    let limbSlot;
-    switch (bonus.addlimb.limbslot) {
-      case limbSlotXmlEnum.LEG:
-        limbSlot = limbSlotEnum.Leg;
-        break;
-      case limbSlotXmlEnum.ARM:
-        limbSlot = limbSlotEnum.Leg;
-        break;
-      case limbSlotXmlEnum.SKULL:
-        limbSlot = limbSlotEnum.Skull;
-        break;
-      case limbSlotXmlEnum.TORSO:
-        limbSlot = limbSlotEnum.Torso;
-        break;
-      default:
-        assert(false);
-    }
+    let limbSlot = convertLimbSlot(bonus.addlimb.limbslot);
     bonusObject.addLimb = {
       limbSlot: limbSlot,
       numberOfLimbs: bonus.addlimb.val,

@@ -200,12 +200,19 @@ export enum rangeEnum {
 }
 
 export enum availabilityEnum {
+  MinimumRating = "Minimum Rating",
   Rating = "Rating",
+  Gear = "Gear",
 }
 
 export enum capcityArmourModEnum {
   Rating = "Rating",
   Capacity = "Capacity",
+}
+export enum capcityAugmentationEnum {
+  Rating = "Rating",
+  Capacity = "Capacity",
+  IncludedInParent = "Included",
 }
 
 export enum costAmmunitionEnum {
@@ -219,10 +226,6 @@ export enum costArmourEnum {
 export enum costArmourModEnum {
   Rating = "Rating",
   Armour = "Armour",
-}
-
-export enum costAugmentationEnum {
-  Rating = "Rating",
 }
 
 export enum costElectronicEnum {
@@ -247,6 +250,20 @@ export enum costWeaponEnum {
 export enum costWeaponAccessoryEnum {
   Rating = "Rating",
   Weapon = "Weapon",
+}
+
+export enum costAugmentationEnum {
+  Rating = "Rating",
+  MinimumRating = "Minimum Rating",
+  Parent = "Parent",
+  Gear = "Gear",
+}
+
+export enum ratingAugmentationEnum {
+  MinimumStrength = "Minimum Strength",
+  MinimumAgility = "Minimum Agility",
+  MaximumStrength = "Maximum Strength",
+  MaximumAgility = "Maximum Agility",
 }
 
 export enum gearCategoryEnum {
@@ -288,6 +305,7 @@ export enum gearCategoryEnum {
   Formulae = "Formulae",
   GrappleGun = "Grapple Gun",
   HackingPrograms = "Hacking Programs",
+  HardNanoware = "Hard Nanoware",
   Housewares = "Housewares",
   ID_Credsticks = "ID/Credsticks",
   MagicalCompounds = "Magical Compounds",
@@ -605,6 +623,56 @@ export enum armourModCategoryEnum {
   VictoryLiners = "Victory Liners",
 }
 
+export enum biowareCategoryEnum {
+  Basic = "Basic",
+  Biosculpting = "Biosculpting",
+  BioWeapons = "Bio-Weapons",
+  ChemicalGlandModifications = "Chemical Gland Modifications",
+  CosmeticBioware = "Cosmetic Bioware",
+  Cultured = "Cultured",
+  OrthoskinUpgrades = "Orthoskin Upgrades",
+  Symbionts = "Symbionts",
+  GeneticRestoration = "Genetic Restoration",
+  PhenotypeAdjustment = "Phenotype Adjustment",
+  ExoticMetagenetics = "Exotic Metagenetics",
+  Transgenics = "Transgenics",
+  EnvironmentalMicroadaptation = "Environmental Microadaptation",
+  Immunisation = "Immunisation",
+  TransgenicAlteration = "Transgenic Alteration",
+  ComplimentaryGenetics = "Complimentary Genetics",
+}
+
+export enum cyberwareCategoryEnum {
+  Bodyware = "Bodyware",
+  AutoInjectorMods = "Auto Injector Mods",
+  CosmeticEnhancement = "Cosmetic Enhancement",
+  Cyberlimb = "Cyberlimb",
+  CyberlimbAccessory = "Cyberlimb Accessory",
+  CyberlimbEnhancement = "Cyberlimb Enhancement",
+  Cybersuite = "Cybersuite",
+  CyberImplantWeapon = "Cyber Implant Weapon",
+  CyberImplantWeaponAccessory = "Cyber Implant Weapon Accessory",
+  Earware = "Earware",
+  Eyeware = "Eyeware",
+  HardNanoware = "Hard Nanoware",
+  Headware = "Headware",
+  Nanocybernetics = "Nanocybernetics",
+  SoftNanoware = "Soft Nanoware",
+  SpecialBiodroneCyberware = "Special Biodrone Cyberware",
+}
+
+export enum augmentationGradeEnum {
+  None = "None",
+  Used = "Used",
+  Standard = "Standard",
+  Alphaware = "Alphaware",
+  Betaware = "Betaware",
+  Deltaware = "Deltaware",
+  Gammaware = "Gammaware",
+  Omegaware = "Omegaware",
+  Greyware = "Greyware",
+}
+
 export enum limitCategoryEnum {
   Physical = "Physical",
   Mental = "Mental",
@@ -616,4 +684,25 @@ export enum limbSlotEnum {
   Leg = "Leg",
   Skull = "Skull",
   Torso = "Torso",
+}
+
+// Maximum number of cyberware/bioware that can be used
+// if they require a certain limit type
+export enum augmentationLimitEnum {
+  Arm = "Arm",
+  Leg = "Leg",
+  Torso = "Torso",
+  Skull = "Skull",
+  Finger = "Finger",
+  UnaugmentedBody = "Unaugmented Body Score",
+  None = "N/A",
+}
+
+export enum mountSlotEnum {
+  Wrist = "Wrist",
+  Elbow = "Elbow",
+  Shoulder = "Shoulder",
+  Ankle = "Ankle",
+  Knee = "Knee",
+  Hip = "Hip",
 }

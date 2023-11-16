@@ -31,7 +31,6 @@ import {
 } from "../../models/gear/combatGear/weaponModel.js";
 import { z as zod } from "zod";
 import {
-  gearCategoryEnum,
   augmentationClassificationEnum,
   sourceBookEnum,
   explosiveTypeEnum,
@@ -42,7 +41,8 @@ import {
 } from "@shadowrun/common/build/enums.js";
 import { WeaponRanges } from "../../models/gear/combatGear/helperTables/weaponRangeModel.js";
 import { WeaponRangeLinks } from "../../models/chummerdb/customTables/weaponRangeLinkModel.js";
-import { RequirementsSchema } from "@shadowrun/common/src/schemas/shared/requiredSchemas.js";
+import { RequirementsSchema } from "@shadowrun/common/build/schemas/shared/requiredSchemas.js";
+import { AllowedGearSchema } from "@shadowrun/common/build/schemas/commonSchemas.js";
 
 const LimitedWeaponTypeInformationSchema = zod.discriminatedUnion("type", [
   zod
@@ -85,7 +85,7 @@ export const WeaponSummarySchema = zod
     ammunition: zod.optional(AmmunitionSchema),
     availability: AvailabilityWeaponSchema,
     cost: CostWeaponSchema,
-    allowedGear: zod.optional(zod.array(zod.nativeEnum(gearCategoryEnum))),
+    allowedGear: zod.optional(AllowedGearSchema),
     gears: zod.optional(UnlinkedAccessoryListSchema),
     allowAccessories: zod.boolean(),
     isCyberware: zod.boolean(),

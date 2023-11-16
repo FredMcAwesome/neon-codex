@@ -3,7 +3,6 @@ import { z as zod } from "zod";
 import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
 import {
   GearXmlSchema,
-  ModCategoryListXmlSchema,
   ModListXmlSchema,
   SourceXmlSchema,
   StringOrNumberSchema,
@@ -17,6 +16,17 @@ export enum armourXmlCategoryEnum {
   FashionableArmor = "High-Fashion Armor Clothing",
   SpecialtyArmor = "Specialty Armor",
 }
+
+const ModCategoryXmlSchema = zod
+  .object({
+    category: zod.nativeEnum(armourModXmlCategoryEnum),
+  })
+  .strict();
+
+export const ModCategoryListXmlSchema = zod.union([
+  zod.array(ModCategoryXmlSchema),
+  ModCategoryXmlSchema,
+]);
 
 const ArmourXmlSchema = zod
   .object({
