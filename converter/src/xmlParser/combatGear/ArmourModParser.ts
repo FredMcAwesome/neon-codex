@@ -142,7 +142,7 @@ export function ParseArmourMods() {
       const check = ArmourModSchema.safeParse(convertedArmourMod);
       if (!check.success) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        // console.log(convertedArmourMod.capacity);
+        console.log(convertedArmourMod);
         throw new Error(check.error.message);
       }
       return check.data;

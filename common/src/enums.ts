@@ -706,3 +706,9 @@ export enum mountSlotEnum {
   Knee = "Knee",
   Hip = "Hip",
 }
+
+export enum drugComponentCategoryEnum {
+  Foundation = "Foundation",
+  Block = "Block",
+  Enhancer = "Enhancer",
+}

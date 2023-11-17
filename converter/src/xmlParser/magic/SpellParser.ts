@@ -21,8 +21,9 @@ import {
 } from "./SpellParserHelper.js";
 import { convertXmlBonus } from "../common/BonusHelper.js";
 import { convertSource } from "../common/ParserHelper.js";
-import Spells from "../../grammar/spells.ohm-bundle.js";
 import { convertRequirements } from "../common/RequiredHelper.js";
+import { SpellSchema } from "@shadowrun/common/build/schemas/spellSchemas.js";
+import Spells from "../../grammar/spells.ohm-bundle.js";
 const Damage = Spells.Damage;
 
 export function ParseSpells() {
@@ -125,12 +126,16 @@ export function ParseSpells() {
     return found;
   });
 
-  console.log(englishSpellsList[0]);
-
   const spellListConverted = englishSpellsList
     // .filter((weapon) => weapon.name === "Osmium Mace")
     .map((spell) => {
       const convertedSpell = convertSpell(spell);
+      const check = SpellSchema.safeParse(convertedSpell);
+      if (!check.success) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        console.log(convertedSpell);
+        throw new Error(check.error.message);
+      }
       return convertedSpell;
     });
   // console.log(spellListConverted);

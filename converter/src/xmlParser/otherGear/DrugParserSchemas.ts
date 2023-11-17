@@ -10,16 +10,24 @@ const DrugXmlSchema = zod
   .object({
     id: zod.string(),
     name: zod.string(),
+    // Category of gear this is
     category: zod.union([
-      zod.array(zod.nativeEnum(gearCategoryEnum)),
-      zod.nativeEnum(gearCategoryEnum),
+      zod.literal(gearCategoryEnum.Drugs),
+      zod.literal(gearCategoryEnum.Toxins),
     ]),
-    rating: zod.optional(StringOrNumberSchema),
+    // Unused
+    rating: zod.literal(0),
+    // Availability
     avail: StringOrNumberSchema,
-    cost: StringOrNumberSchema,
+    // Cost
+    cost: zod.number(),
+    // How quickly drug takes effect
     speed: zod.optional(zod.number()),
+    // How the drug is administered (Contact, Injection, Ingestion, Inhalation)
     vectors: zod.optional(zod.string()),
+    // How long the effect lasts
     duration: zod.optional(StringOrNumberSchema),
+    // Bonus applied by Drug
     bonus: zod.optional(BonusXmlSchema),
     source: zod.union([SourceXmlSchema, zod.literal(2050)]),
     page: zod.number(),

@@ -86,7 +86,7 @@ export function ParseRanges() {
     const check = RangeSchema.safeParse(convertedRange);
     if (!check.success) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      // console.log(convertedRange);
+      console.log(convertedRange);
       throw new Error(check.error.message);
     }
     return check.data;

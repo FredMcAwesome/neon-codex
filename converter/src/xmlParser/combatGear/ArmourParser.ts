@@ -140,7 +140,7 @@ export function ParseArmour() {
       const check = ArmourSchema.safeParse(convertedArmour);
       if (!check.success) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.log(convertedArmour.cost[0]);
+        console.log(convertedArmour);
         throw new Error(check.error.message);
       }
       return check.data;

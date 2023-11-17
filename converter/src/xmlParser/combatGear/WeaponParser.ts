@@ -174,7 +174,7 @@ export function ParseWeapons() {
       const check = WeaponUnlinkedSummarySchema.safeParse(convertedWeapon);
       if (!check.success) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.log(convertedWeapon.armourPenetration[0][0]);
+        console.log(convertedWeapon);
         throw new Error(check.error.message);
       }
       return convertedWeapon;

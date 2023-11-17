@@ -279,7 +279,7 @@ export function ParseWeaponAccessories() {
       );
       if (!check.success) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        // console.log(convertedWeaponAccessory);
+        console.log(convertedWeaponAccessory);
         throw new Error(check.error.message);
       }
       return convertedWeaponAccessory;

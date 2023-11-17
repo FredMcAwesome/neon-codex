@@ -1,0 +1,286 @@
+[
+  {
+    "name": "Tank",
+    "description": "",
+    "category": "Foundation",
+    "availability": {
+      "rating": 4,
+      "restriction": "Restricted"
+    },
+    "cost": 75,
+    "addictionRating": 6,
+    "addictionThreshold": 2,
+    "source": "Chrome Flesh",
+    "page": 190
+  },
+  {
+    "name": "Defender",
+    "description": "",
+    "category": "Foundation",
+    "availability": {
+      "rating": 4,
+      "restriction": "Restricted"
+    },
+    "cost": 75,
+    "addictionRating": 6,
+    "addictionThreshold": 2,
+    "source": "Chrome Flesh",
+    "page": 190
+  },
+  {
+    "name": "Genius",
+    "description": "",
+    "category": "Foundation",
+    "availability": {
+      "rating": 4,
+      "restriction": "Restricted"
+    },
+    "cost": 75,
+    "addictionRating": 6,
+    "addictionThreshold": 2,
+    "source": "Chrome Flesh",
+    "page": 190
+  },
+  {
+    "name": "Charmer",
+    "description": "",
+    "category": "Foundation",
+    "availability": {
+      "rating": 4,
+      "restriction": "Restricted"
+    },
+    "cost": 75,
+    "addictionRating": 6,
+    "addictionThreshold": 2,
+    "source": "Chrome Flesh",
+    "page": 190
+  },
+  {
+    "name": "Warrior",
+    "description": "",
+    "category": "Foundation",
+    "availability": {
+      "rating": 4,
+      "restriction": "Restricted"
+    },
+    "cost": 75,
+    "addictionRating": 6,
+    "addictionThreshold": 2,
+    "source": "Chrome Flesh",
+    "page": 190
+  },
+  {
+    "name": "Crush",
+    "description": "",
+    "category": "Block",
+    "availability": {
+      "rating": 1,
+      "restriction": "Legal"
+    },
+    "cost": 20,
+    "source": "Chrome Flesh",
+    "page": 190
+  },
+  {
+    "name": "Brute",
+    "description": "",
+    "category": "Block",
+    "availability": {
+      "rating": 1,
+      "restriction": "Legal"
+    },
+    "cost": 20,
+    "source": "Chrome Flesh",
+    "page": 190
+  },
+  {
+    "name": "Strike",
+    "description": "",
+    "category": "Block",
+    "availability": {
+      "rating": 1,
+      "restriction": "Legal"
+    },
+    "cost": 20,
+    "source": "Chrome Flesh",
+    "page": 190
+  },
+  {
+    "name": "Lighting",
+    "description": "",
+    "category": "Block",
+    "availability": {
+      "rating": 1,
+      "restriction": "Legal"
+    },
+    "cost": 20,
+    "source": "Chrome Flesh",
+    "page": 190
+  },
+  {
+    "name": "Einstein",
+    "description": "",
+    "category": "Block",
+    "availability": {
+      "rating": 1,
+      "restriction": "Legal"
+    },
+    "cost": 20,
+    "source": "Chrome Flesh",
+    "page": 190
+  },
+  {
+    "name": "Gut Check",
+    "description": "",
+    "category": "Block",
+    "availability": {
+      "rating": 1,
+      "restriction": "Legal"
+    },
+    "cost": 20,
+    "source": "Chrome Flesh",
+    "page": 190
+  },
+  {
+    "name": "Stonewall",
+    "description": "",
+    "category": "Block",
+    "availability": {
+      "rating": 1,
+      "restriction": "Legal"
+    },
+    "cost": 20,
+    "source": "Chrome Flesh",
+    "page": 191
+  },
+  {
+    "name": "Smoothtalk",
+    "description": "",
+    "category": "Block",
+    "availability": {
+      "rating": 1,
+      "restriction": "Legal"
+    },
+    "cost": 20,
+    "source": "Chrome Flesh",
+    "page": 191
+  },
+  {
+    "name": "Shock and Awe",
+    "description": "",
+    "category": "Block",
+    "availability": {
+      "rating": 2,
+      "restriction": "Legal"
+    },
+    "cost": 40,
+    "source": "Chrome Flesh",
+    "page": 191
+  },
+  {
+    "name": "Razor Mind",
+    "description": "",
+    "category": "Block",
+    "availability": {
+      "rating": 2,
+      "restriction": "Legal"
+    },
+    "cost": 30,
+    "source": "Chrome Flesh",
+    "page": 191
+  },
+  {
+    "name": "The General",
+    "description": "",
+    "category": "Block",
+    "availability": {
+      "rating": 2,
+      "restriction": "Legal"
+    },
+    "cost": 30,
+    "source": "Chrome Flesh",
+    "page": 191
+  },
+  {
+    "name": "Resist",
+    "description": "",
+    "category": "Block",
+    "availability": {
+      "rating": 2,
+      "restriction": "Legal"
+    },
+    "cost": 30,
+    "source": "Chrome Flesh",
+    "page": 191
+  },
+  {
+    "name": "Speed Demon",
+    "description": "",
+    "category": "Block",
+    "availability": {
+      "rating": 2,
+      "restriction": "Legal"
+    },
+    "cost": 30,
+    "source": "Chrome Flesh",
+    "page": 191
+  },
+  {
+    "name": "Ingestion Enhancer",
+    "description": "",
+    "category": "Enhancer",
+    "availability": {
+      "rating": 1,
+      "restriction": "Legal"
+    },
+    "cost": 50,
+    "addictionRating": 1,
+    "addictionThreshold": 1,
+    "source": "Chrome Flesh",
+    "page": 191
+  },
+  {
+    "name": "Inhalation Enhancer",
+    "description": "",
+    "category": "Enhancer",
+    "availability": {
+      "rating": 1,
+      "restriction": "Legal"
+    },
+    "cost": 50,
+    "addictionRating": 1,
+    "addictionThreshold": 1,
+    "source": "Chrome Flesh",
+    "page": 191
+  },
+  {
+    "name": "Speed Enhancer",
+    "description": "",
+    "category": "Enhancer",
+    "availability": {
+      "rating": 1,
+      "restriction": "Legal"
+    },
+    "cost": 50,
+    "appliedLimit": 3,
+    "addictionRating": 1,
+    "addictionThreshold": 1,
+    "source": "Chrome Flesh",
+    "page": 191
+  },
+  {
+    "name": "Duration Enhancer",
+    "description": "",
+    "category": "Enhancer",
+    "availability": {
+      "rating": 1,
+      "restriction": "Legal"
+    },
+    "cost": 50,
+    "appliedLimit": 3,
+    "addictionRating": 1,
+    "addictionThreshold": 1,
+    "source": "Chrome Flesh",
+    "page": 191
+  }
+]

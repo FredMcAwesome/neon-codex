@@ -19,14 +19,14 @@ So far I have only parsed:
 - Armour
 - ArmourAccessories
 - Spells
+- Bioware
+- Cyberware
+- Drugs
 
 To match where I previously was, still need (All parsed, stored in database, then passed through to frontend):
 
-- Bioware
-- Cyberware
 - Vehicles
 - Gear
-- Drugs
 
 Other main priorities:
 

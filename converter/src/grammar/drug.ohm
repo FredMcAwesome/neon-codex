@@ -1,0 +1,23 @@
+Availability {
+  Exp = "+" Availability -- add
+    | Availability
+  Availability = AddSub Restriction -- full
+    | AddSub -- partial
+  AddSub = AddSub "+" MulDiv -- add
+    | AddSub "-" MulDiv -- subtract
+    | MulDiv -- base
+  MulDiv = MulDiv "*" AvailabilityValue -- multiply
+    | MulDiv "/" AvailabilityValue -- divide
+    | AvailabilityValue
+  AvailabilityValue = Number
+    | Rating
+  Rating = "{Rating}" | "Rating"
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+  Restriction = Restricted
+    | Forbidden
+  Restricted = "R"
+  Forbidden = "F"
+}

@@ -549,7 +549,7 @@ export const convertAugmentationGrade = function (
   }
 };
 
-export const convertLimit = function (
+export const convertAugmentationLimit = function (
   limit: AugmentationXmlLimitType | undefined
 ) {
   if (typeof limit === "number") {

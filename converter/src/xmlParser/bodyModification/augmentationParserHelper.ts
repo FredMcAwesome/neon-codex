@@ -6,8 +6,8 @@ import {
   mountSlotEnum,
 } from "@shadowrun/common/build/enums.js";
 import assert from "assert";
-import Augmentation from "../../grammar/augmentation.ohm-bundle.js";
 import { mountLocationXmlEnum } from "./CyberwareParserSchemas.js";
+import Augmentation from "../../grammar/augmentation.ohm-bundle.js";
 const EssenceCost = Augmentation.EssenceCost;
 const Availability = Augmentation.Availability;
 const Cost = Augmentation.Cost;

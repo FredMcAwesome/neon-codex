@@ -10,6 +10,7 @@ import {
   spellTypeEnum,
 } from "../enums.js";
 import { BonusSchema } from "./shared/bonusSchemas.js";
+import { RequirementsSchema } from "./shared/requiredSchemas.js";
 
 export const SpellSchema = zod
   .object({
@@ -32,9 +33,11 @@ export const SpellSchema = zod
       target: zod.nativeEnum(spellTargetEnum),
     }),
     type: zod.nativeEnum(spellTypeEnum),
-    bonus: BonusSchema,
-    // required: zod.
+    bonus: zod.optional(BonusSchema),
+    required: zod.optional(RequirementsSchema),
     source: zod.nativeEnum(sourceBookEnum),
     page: zod.number(),
   })
   .strict();
+
+export const SpellListSchema = zod.array(SpellSchema);

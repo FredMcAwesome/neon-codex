@@ -5,7 +5,17 @@ import path from "path";
 import { fileURLToPath } from "url";
 import * as fs from "fs";
 import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
-import { DrugListXmlSchema, DrugListXmlType } from "./DrugParserSchemas.js";
+import {
+  DrugListXmlSchema,
+  DrugListXmlType,
+  DrugXmlType,
+} from "./DrugParserSchemas.js";
+import { convertXmlBonus } from "../common/BonusHelper.js";
+import { convertSource } from "../common/ParserHelper.js";
+import { availabilityDrugSemantics } from "./DrugHelper.js";
+import { DrugSchema } from "@shadowrun/common/build/schemas/drugSchemas.js";
+import Drug from "../../grammar/drug.ohm-bundle.js";
+const Availability = Drug;
 
 export function ParseDrugs() {
   const currentPath = import.meta.url;
@@ -110,27 +120,55 @@ export function ParseDrugs() {
     return found;
   });
 
-  console.log(englishDrugList[0]);
+  const drugListConverted = englishDrugList
+    // .filter((weapon) => weapon.name === "Osmium Mace")
+    .map((drug) => {
+      const convertedDrug = convertDrug(drug);
+      const check = DrugSchema.safeParse(convertedDrug);
+      if (!check.success) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        console.log(convertedDrug);
+        throw new Error(check.error.message);
+      }
+      return convertedDrug;
+    });
+  // console.log(armourListConverted);
+  const jsonFilePath = fileURLToPath(
+    path.dirname(currentPath) + "../../../../jsonFiles/drugComponents.json"
+  );
+  fs.writeFile(
+    jsonFilePath,
+    JSON.stringify(drugListConverted, null, 2),
+    (error) => {
+      if (error) {
+        console.error(error);
+      } else {
+        console.log(`File written! Saved to: ${jsonFilePath}`);
+      }
+    }
+  );
+}
 
-  // const armourListConverted = englishArmourList
-  //   // .filter((weapon) => weapon.name === "Osmium Mace")
-  //   .map((armour) => {
-  //     const convertedArmour = convertArmour(armour);
-  //     return convertedArmour;
-  //   });
-  // // console.log(armourListConverted);
-  // const jsonFilePath = fileURLToPath(
-  //   path.dirname(currentPath) + "../../../../jsonFiles/armour.json"
-  // );
-  // fs.writeFile(
-  //   jsonFilePath,
-  //   JSON.stringify(armourListConverted, null, 2),
-  //   (error) => {
-  //     if (error) {
-  //       console.error(error);
-  //     } else {
-  //       console.log(`File written! Saved to: ${jsonFilePath}`);
-  //     }
-  //   }
-  // );
+function convertDrug(drug: DrugXmlType) {
+  let match = Availability.match(drug.avail.toString());
+  if (match.failed()) {
+    assert(false, match.message);
+  }
+  const availability = availabilityDrugSemantics(match).eval();
+
+  const bonus =
+    drug.bonus === undefined ? undefined : convertXmlBonus(drug.bonus);
+  const source = convertSource(drug.source);
+
+  return {
+    name: drug.name,
+    description: "",
+    category: drug.category,
+    availability: availability,
+    cost: drug.cost,
+    speed: drug.speed,
+    bonus: bonus,
+    source: source,
+    page: drug.page,
+  };
 }

@@ -117,7 +117,7 @@ export function ParseSkills() {
     const check = SkillSchema.safeParse(convertedSkill);
     if (!check.success) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      // console.log(convertedSkill);
+      console.log(convertedSkill);
       throw new Error(check.error.message);
     }
     return convertedSkill;

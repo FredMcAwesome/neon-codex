@@ -16,7 +16,7 @@ import { convertRequirements } from "../common/RequiredHelper.js";
 import {
   convertAllowGear,
   convertAugmentationGradeList,
-  convertLimit,
+  convertAugmentationLimit,
   convertSource,
 } from "../common/ParserHelper.js";
 import { AugmentationSchema } from "@shadowrun/common/build/schemas/augmentationSchemas.js";
@@ -139,7 +139,7 @@ export function ParseBioware() {
     const check = AugmentationSchema.safeParse(convertedBioware);
     if (!check.success) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      console.log(convertedBioware.name);
+      console.log(convertedBioware);
       throw new Error(check.error.message);
     }
     return check.data;
@@ -161,7 +161,7 @@ export function ParseBioware() {
 }
 
 function convertBioware(bioware: BiowareXmlType) {
-  const augmentationLimit = convertLimit(bioware.limit);
+  const augmentationLimit = convertAugmentationLimit(bioware.limit);
   const category = convertBiowareCategory(bioware.category);
   const unavailableGrades =
     bioware.bannedgrades !== undefined

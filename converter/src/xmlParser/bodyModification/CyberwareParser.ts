@@ -18,7 +18,7 @@ import {
   convertAugmentationGrade,
   convertAugmentationGradeList,
   convertLimbSlot,
-  convertLimit,
+  convertAugmentationLimit,
   convertSource,
   convertXmlGears,
 } from "../common/ParserHelper.js";
@@ -155,7 +155,7 @@ export function ParseCyberware() {
     const check = AugmentationSchema.safeParse(convertedCyberware);
     if (!check.success) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      console.log(convertedCyberware.name);
+      console.log(convertedCyberware);
       throw new Error(check.error.message);
     }
     return check.data;
@@ -178,7 +178,7 @@ export function ParseCyberware() {
 }
 
 function convertCyberware(cyberware: CyberwareXmlType) {
-  const augmentationLimit = convertLimit(cyberware.limit);
+  const augmentationLimit = convertAugmentationLimit(cyberware.limit);
   const category = convertCyberwareCategory(cyberware.category);
   const unavailableGrades =
     cyberware.bannedgrades !== undefined
