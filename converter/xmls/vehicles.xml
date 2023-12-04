@@ -3778,11 +3778,9 @@
       </gears>
       <mods>
         <name>Drone Arm</name>
-      </mods>
-      <modslots>1</modslots>
-      <mods>
         <name>Rigger Interface</name>
       </mods>
+      <modslots>1</modslots>
     </vehicle>
     <vehicle>
       <id>6b0c07b2-6e3d-4174-a748-859fd46c090c</id>
@@ -3851,11 +3849,9 @@
       <mods>
         <name>Submersible (Drone)</name>
         <name>Gecko Grips (Drone)</name>
-      </mods>
-      <modslots>1</modslots>
-      <mods>
         <name>Rigger Interface</name>
       </mods>
+      <modslots>1</modslots>
     </vehicle>
     <vehicle>
       <id>89392969-1d03-4322-9aa8-c0160ba3ee76</id>
@@ -4416,11 +4412,9 @@
       </gears>
       <mods>
         <name select="Storage Compartment">Special Equipment</name>
-      </mods>
-      <modslots>1</modslots>
-      <mods>
         <name>Rigger Interface</name>
       </mods>
+      <modslots>1</modslots>
     </vehicle>
     <vehicle>
       <id>50d4bce4-79f1-48d4-8b38-68969802dec0</id>
@@ -6173,7 +6167,6 @@
           <maxrating>7</maxrating>
         </gear>
       </gears>
-      <mods />
       <seats>1</seats>
       <weaponmounts>
         <weaponmount>

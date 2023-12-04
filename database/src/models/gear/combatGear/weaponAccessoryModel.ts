@@ -3,7 +3,6 @@ import { damageTypeEnum } from "@shadowrun/common";
 import type {
   AccessoryMountType,
   AmmunitionSingleType,
-  UseGearListType,
 } from "@shadowrun/common/build/schemas/weaponSchemas.js";
 import type {
   AmmoCapacityCalculationType,
@@ -13,7 +12,10 @@ import type {
   CostWeaponAccessoryType,
 } from "@shadowrun/common/build/schemas/weaponAccessorySchemas.js";
 import type { RequirementsType } from "@shadowrun/common/build/schemas/shared/requiredSchemas.js";
-import type { AllowedGearType } from "@shadowrun/common/build/schemas/commonSchemas.js";
+import type {
+  AllowedGearType,
+  UseGearListType,
+} from "@shadowrun/common/build/schemas/commonSchemas.js";
 
 @Entity()
 export class WeaponAccessories {

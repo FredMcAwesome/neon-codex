@@ -11,12 +11,12 @@ import {
 import {
   AllowedGearSchema,
   AvailabilityRatingSchema,
+  UseGearListSchema,
 } from "./commonSchemas.js";
 import { RequirementsSchema } from "./shared/requiredSchemas.js";
 import {
   AccessoryMountSchema,
   AmmunitionSingleSchema,
-  UseGearListSchema,
 } from "./weaponSchemas.js";
 
 export const AvailabilityWeaponAccessorySchema = zod
@@ -103,8 +103,6 @@ export const WeaponAccessorySummarySchema = zod
     recoilCompensationIncrease: zod.optional(zod.number()),
     recoilCompensationType: zod.optional(zod.number()), // items from the same recoilCompensationType are incompatible with each other
     deploymentRequired: zod.boolean(),
-    availability: AvailabilityWeaponAccessorySchema,
-    cost: CostWeaponAccessorySchema,
     accessoryCostMultiplier: zod.optional(zod.number()),
     allowGear: zod.optional(AllowedGearSchema),
     preinstalledGear: zod.optional(UseGearListSchema),
@@ -118,6 +116,8 @@ export const WeaponAccessorySummarySchema = zod
     rangePenaltyDecrease: zod.optional(zod.number()),
     concealabilityModification: zod.optional(ConcealabilityModificationSchema),
     userSelectable: zod.optional(zod.literal(false)),
+    availability: AvailabilityWeaponAccessorySchema,
+    cost: CostWeaponAccessorySchema,
     source: zod.nativeEnum(sourceBookEnum),
     page: zod.number(),
   })

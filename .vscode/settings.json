@@ -1,3 +1,9 @@
 {
-  "eslint.workingDirectories": ["common", "frontend", "backend", "database"]
+  "eslint.workingDirectories": [
+    "./common",
+    "./frontend",
+    "./backend",
+    "./database",
+    "./converter"
+  ]
 }

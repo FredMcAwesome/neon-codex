@@ -14,7 +14,6 @@ import {
   mathOperatorEnum,
   damageCalculationOptionEnum,
   armourPenetrationEnum,
-  gearCategoryEnum,
   firearmAccessoryMountLocationEnum,
   augmentationClassificationEnum,
   sourceBookEnum,
@@ -25,6 +24,7 @@ import {
 import {
   AllowedGearSchema,
   AvailabilityRatingSchema,
+  UseGearListSchema,
   WeaponXmlSubtypeSchema,
 } from "./commonSchemas.js";
 import { RequirementsSchema } from "./shared/requiredSchemas.js";
@@ -305,18 +305,6 @@ export type WeaponTypeInformationType = zod.infer<
   typeof WeaponTypeInformationSchema
 >;
 
-const UseGearSchema = zod
-  .object({
-    name: zod.string(),
-    category: zod.optional(zod.nativeEnum(gearCategoryEnum)),
-    rating: zod.optional(zod.number()),
-  })
-  .strict();
-export type useGearType = zod.infer<typeof UseGearSchema>;
-
-export const UseGearListSchema = zod.array(UseGearSchema);
-export type UseGearListType = zod.infer<typeof UseGearListSchema>;
-
 const UnlinkedAccessorySchema = zod
   .object({
     name: zod.string(),
@@ -346,14 +334,13 @@ export const WeaponUnlinkedSummarySchema = zod
   .object({
     // id: zod.string(),
     name: zod.string(),
+    description: zod.string(),
     typeInformation: UnlinkedWeaponTypeInformationSchema,
     concealability: zod.number(),
     accuracy: AccuracySchema,
     damage: DamageSchema,
     armourPenetration: ArmourPenetrationSchema,
     ammunition: zod.optional(AmmunitionSchema),
-    availability: AvailabilityWeaponSchema,
-    cost: CostWeaponSchema,
     allowedGear: zod.optional(AllowedGearSchema),
     accessories: zod.optional(UnlinkedAccessoryListSchema),
     allowAccessories: zod.boolean(),
@@ -369,11 +356,12 @@ export const WeaponUnlinkedSummarySchema = zod
         })
         .strict()
     ),
-    description: zod.string(),
     wireless: zod.optional(zod.string()),
     relatedSkill: zod.string(),
     relatedSkillSpecialisations: zod.optional(zod.array(zod.string())),
     rating: zod.optional(zod.number()),
+    availability: AvailabilityWeaponSchema,
+    cost: CostWeaponSchema,
     source: zod.nativeEnum(sourceBookEnum),
     page: zod.number(),
   })
@@ -392,14 +380,13 @@ export const WeaponLinkedSchema = zod
   .object({
     // id: zod.string(),
     name: zod.string(),
+    description: zod.string(),
     typeInformation: WeaponTypeInformationSchema,
     concealability: zod.number(),
     accuracy: AccuracySchema,
     damage: DamageSchema,
     armourPenetration: ArmourPenetrationSchema,
     ammunition: zod.optional(AmmunitionSchema),
-    availability: AvailabilityWeaponSchema,
-    cost: CostWeaponSchema,
     allowedGear: zod.optional(AllowedGearSchema),
     accessories: zod.optional(UnlinkedAccessoryListSchema),
     allowAccessories: zod.boolean(),
@@ -415,10 +402,11 @@ export const WeaponLinkedSchema = zod
         })
         .strict()
     ),
-    description: zod.string(),
     wireless: zod.optional(zod.string()),
     relatedSkill: zod.string(),
     relatedSkillSpecialisations: zod.optional(zod.array(zod.string())),
+    availability: AvailabilityWeaponSchema,
+    cost: CostWeaponSchema,
     source: zod.nativeEnum(sourceBookEnum),
     page: zod.number(),
   })

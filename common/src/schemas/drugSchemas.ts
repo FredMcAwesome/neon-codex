@@ -34,11 +34,11 @@ export const DrugComponentSchema = zod
     name: zod.string(),
     description: zod.string(),
     category: zod.nativeEnum(drugComponentCategoryEnum),
-    availability: AvailabilityDrugSchema,
-    cost: zod.number(),
     appliedLimit: zod.optional(zod.number()),
     addictionRating: zod.optional(zod.number()),
     addictionThreshold: zod.optional(zod.number()),
+    availability: AvailabilityDrugSchema,
+    cost: zod.number(),
     source: zod.nativeEnum(sourceBookEnum),
     page: zod.number(),
   })

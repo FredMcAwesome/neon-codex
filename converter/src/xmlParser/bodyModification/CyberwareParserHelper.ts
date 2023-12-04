@@ -12,7 +12,7 @@ import {
 } from "./CyberwareParserSchemas.js";
 import { cyberwareXmlCategoryEnum } from "./CyberwareParserSchemas.js";
 import { convertXmlGears } from "../common/ParserHelper.js";
-import { AugmentationListType } from "@shadowrun/common/src/schemas/augmentationSchemas.js";
+import { AugmentationSubsystemListType } from "@shadowrun/common/src/schemas/augmentationSchemas.js";
 
 export const convertCyberwareCategory = function (
   category: cyberwareXmlCategoryEnum
@@ -100,7 +100,7 @@ export const convertMountLocation = function (
 
 export const convertSubsystem = function (
   subsystems: CyberwareSubsystemsXmlType | undefined
-): AugmentationListType | undefined {
+): AugmentationSubsystemListType | undefined {
   if (subsystems === undefined) {
     return undefined;
   }

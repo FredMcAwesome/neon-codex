@@ -22,10 +22,12 @@ So far I have only parsed:
 - Bioware
 - Cyberware
 - Drugs
+- DrugComponents
+- Vehicles
 
 To match where I previously was, still need (All parsed, stored in database, then passed through to frontend):
 
-- Vehicles
+- VehicleMods (including weapon mount mods)
 - Gear
 
 Other main priorities:

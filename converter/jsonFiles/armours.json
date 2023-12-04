@@ -26,16 +26,16 @@
     "category": "Armour",
     "damageReduction": 8,
     "capacity": 8,
-    "availability": {
-      "rating": [8],
-      "restriction": "Legal"
-    },
-    "cost": [1500],
     "includedGear": [
       {
         "name": "Holster"
       }
     ],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [1500],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
   },
@@ -129,11 +129,6 @@
     "category": "Armour",
     "damageReduction": 9,
     "capacity": 9,
-    "availability": {
-      "rating": [8],
-      "restriction": "Legal"
-    },
-    "cost": [650],
     "includedGear": [
       {
         "name": "Biomonitor"
@@ -142,6 +137,11 @@
         "name": "Music Player"
       }
     ],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [650],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
   },
@@ -195,11 +195,6 @@
     "category": "High-Fashion Armour",
     "damageReduction": 8,
     "capacity": 4,
-    "availability": {
-      "rating": [10],
-      "restriction": "Legal"
-    },
-    "cost": [2500],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -208,6 +203,11 @@
         }
       ]
     },
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [2500],
     "source": "Run And Gun",
     "page": 57
   },
@@ -217,11 +217,6 @@
     "category": "High-Fashion Armour",
     "damageReduction": 8,
     "capacity": 4,
-    "availability": {
-      "rating": [10],
-      "restriction": "Legal"
-    },
-    "cost": [2500],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -230,6 +225,11 @@
         }
       ]
     },
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [2500],
     "source": "Run And Gun",
     "page": 57
   },
@@ -239,11 +239,6 @@
     "category": "High-Fashion Armour",
     "damageReduction": 9,
     "capacity": 5,
-    "availability": {
-      "rating": [9],
-      "restriction": "Legal"
-    },
-    "cost": [2600],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -252,6 +247,11 @@
         }
       ]
     },
+    "availability": {
+      "rating": [9],
+      "restriction": "Legal"
+    },
+    "cost": [2600],
     "source": "Run And Gun",
     "page": 58
   },
@@ -261,11 +261,6 @@
     "category": "High-Fashion Armour",
     "damageReduction": 8,
     "capacity": 4,
-    "availability": {
-      "rating": [8],
-      "restriction": "Legal"
-    },
-    "cost": [2300],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -274,6 +269,11 @@
         }
       ]
     },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [2300],
     "source": "Run And Gun",
     "page": 58
   },
@@ -283,11 +283,6 @@
     "category": "High-Fashion Armour",
     "damageReduction": 8,
     "capacity": 5,
-    "availability": {
-      "rating": [6],
-      "restriction": "Legal"
-    },
-    "cost": [2400],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -296,6 +291,11 @@
         }
       ]
     },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [2400],
     "source": "Run And Gun",
     "page": 58
   },
@@ -305,11 +305,6 @@
     "category": "High-Fashion Armour",
     "damageReduction": 8,
     "capacity": 6,
-    "availability": {
-      "rating": [7],
-      "restriction": "Legal"
-    },
-    "cost": [2500],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -318,6 +313,11 @@
         }
       ]
     },
+    "availability": {
+      "rating": [7],
+      "restriction": "Legal"
+    },
+    "cost": [2500],
     "source": "Run And Gun",
     "page": 58
   },
@@ -327,11 +327,6 @@
     "category": "High-Fashion Armour",
     "damageReduction": 7,
     "capacity": 5,
-    "availability": {
-      "rating": [7],
-      "restriction": "Legal"
-    },
-    "cost": [2200],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -340,6 +335,11 @@
         }
       ]
     },
+    "availability": {
+      "rating": [7],
+      "restriction": "Legal"
+    },
+    "cost": [2200],
     "source": "Run And Gun",
     "page": 58
   },
@@ -350,11 +350,6 @@
     "damageReduction": 10,
     "customFitStackDamageReduction": 3,
     "capacity": 10,
-    "availability": {
-      "rating": [8],
-      "restriction": "Legal"
-    },
-    "cost": [3000],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -363,6 +358,11 @@
         }
       ]
     },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [3000],
     "source": "Run And Gun",
     "page": 58
   },
@@ -373,11 +373,6 @@
     "damageReduction": 10,
     "customFitStackDamageReduction": 3,
     "capacity": 12,
-    "availability": {
-      "rating": [8],
-      "restriction": "Legal"
-    },
-    "cost": [3100],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -386,6 +381,11 @@
         }
       ]
     },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [3100],
     "source": "Run And Gun",
     "page": 58
   },
@@ -396,11 +396,6 @@
     "damageReduction": 12,
     "customFitStackDamageReduction": 4,
     "capacity": 14,
-    "availability": {
-      "rating": [10],
-      "restriction": "Legal"
-    },
-    "cost": [3600],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -409,6 +404,11 @@
         }
       ]
     },
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [3600],
     "source": "Run And Gun",
     "page": 58
   },
@@ -418,11 +418,6 @@
     "category": "High-Fashion Armour",
     "damageReduction": 9,
     "capacity": 8,
-    "availability": {
-      "rating": [6],
-      "restriction": "Legal"
-    },
-    "cost": [1600],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -431,6 +426,11 @@
         }
       ]
     },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [1600],
     "source": "Run And Gun",
     "page": 60
   },
@@ -440,11 +440,6 @@
     "category": "High-Fashion Armour",
     "damageReduction": 7,
     "capacity": 8,
-    "availability": {
-      "rating": [6],
-      "restriction": "Legal"
-    },
-    "cost": [1300],
     "includedGear": [
       {
         "name": "Holster"
@@ -458,6 +453,11 @@
         }
       ]
     },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [1300],
     "source": "Run And Gun",
     "page": 60
   },
@@ -467,11 +467,6 @@
     "category": "High-Fashion Armour",
     "damageReduction": 6,
     "capacity": 8,
-    "availability": {
-      "rating": [6],
-      "restriction": "Legal"
-    },
-    "cost": [1200],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -480,6 +475,11 @@
         }
       ]
     },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [1200],
     "source": "Run And Gun",
     "page": 60
   },
@@ -489,11 +489,6 @@
     "category": "High-Fashion Armour",
     "damageReduction": 7,
     "capacity": 10,
-    "availability": {
-      "rating": [4],
-      "restriction": "Legal"
-    },
-    "cost": [2100],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -502,6 +497,11 @@
         }
       ]
     },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [2100],
     "source": "Run And Gun",
     "page": 60
   },
@@ -511,11 +511,6 @@
     "category": "High-Fashion Armour",
     "damageReduction": 7,
     "capacity": 6,
-    "availability": {
-      "rating": [6],
-      "restriction": "Legal"
-    },
-    "cost": [1000],
     "includedGear": [
       {
         "name": "Holster"
@@ -529,6 +524,11 @@
         }
       ]
     },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
     "source": "Run And Gun",
     "page": 60
   },
@@ -538,11 +538,6 @@
     "category": "High-Fashion Armour",
     "damageReduction": 7,
     "capacity": 6,
-    "availability": {
-      "rating": [6],
-      "restriction": "Legal"
-    },
-    "cost": [1000],
     "includedGear": [
       {
         "name": "Holster"
@@ -556,6 +551,11 @@
         }
       ]
     },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
     "source": "Run And Gun",
     "page": 60
   },
@@ -565,11 +565,6 @@
     "category": "High-Fashion Armour",
     "damageReduction": 7,
     "capacity": 6,
-    "availability": {
-      "rating": [6],
-      "restriction": "Legal"
-    },
-    "cost": [1000],
     "includedGear": [
       {
         "name": "Holster"
@@ -583,6 +578,11 @@
         }
       ]
     },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
     "source": "Run And Gun",
     "page": 60
   },
@@ -592,11 +592,6 @@
     "category": "High-Fashion Armour",
     "damageReduction": 8,
     "capacity": 6,
-    "availability": {
-      "rating": [8],
-      "restriction": "Legal"
-    },
-    "cost": [1400],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -605,6 +600,11 @@
         }
       ]
     },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [1400],
     "source": "Run And Gun",
     "page": 60
   },
@@ -628,16 +628,16 @@
     "category": "High-Fashion Armour",
     "damageReduction": 9,
     "capacity": 5,
-    "availability": {
-      "rating": [8],
-      "restriction": "Legal"
-    },
-    "cost": [1500],
     "includedGear": [
       {
         "name": "Holster"
       }
     ],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [1500],
     "source": "Run And Gun",
     "page": 61
   },
@@ -648,16 +648,16 @@
     "damageReduction": 10,
     "customFitStackDamageReduction": 3,
     "capacity": 6,
-    "availability": {
-      "rating": [8],
-      "restriction": "Legal"
-    },
-    "cost": [2300],
     "includedGear": [
       {
         "name": "Holster"
       }
     ],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [2300],
     "source": "Run And Gun",
     "page": 61
   },
@@ -667,16 +667,16 @@
     "category": "High-Fashion Armour",
     "damageReduction": 13,
     "capacity": 10,
-    "availability": {
-      "rating": [10],
-      "restriction": "Legal"
-    },
-    "cost": [13500],
     "includedGear": [
       {
         "name": "Holster"
       }
     ],
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [13500],
     "source": "Run And Gun",
     "page": 61
   },
@@ -799,16 +799,16 @@
     "category": "High-Fashion Armour",
     "damageReduction": 12,
     "capacity": 10,
-    "availability": {
-      "rating": [10],
-      "restriction": "Legal"
-    },
-    "cost": [1300],
     "includedGear": [
       {
         "name": "Holster"
       }
     ],
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [1300],
     "source": "Run And Gun",
     "page": 63
   },
@@ -846,16 +846,16 @@
     "category": "High-Fashion Armour",
     "damageReduction": 12,
     "capacity": 10,
-    "availability": {
-      "rating": [12],
-      "restriction": "Legal"
-    },
-    "cost": [3000],
     "includedGear": [
       {
         "name": "Holster"
       }
     ],
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [3000],
     "source": "Run And Gun",
     "page": 63
   },
@@ -865,11 +865,6 @@
     "category": "High-Fashion Armour",
     "damageReduction": 9,
     "capacity": 6,
-    "availability": {
-      "rating": [6],
-      "restriction": "Legal"
-    },
-    "cost": [1100],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -878,6 +873,11 @@
         }
       ]
     },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [1100],
     "source": "Run And Gun",
     "page": 64
   },
@@ -887,16 +887,16 @@
     "category": "High-Fashion Armour",
     "damageReduction": 14,
     "capacity": 12,
-    "availability": {
-      "rating": [12],
-      "restriction": "Legal"
-    },
-    "cost": [5000],
     "includedGear": [
       {
         "name": "Holster"
       }
     ],
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [5000],
     "source": "Run And Gun",
     "page": 64
   },
@@ -990,16 +990,16 @@
     "category": "Specialty Armour",
     "damageReduction": 15,
     "capacity": 12,
-    "availability": {
-      "rating": [14],
-      "restriction": "Restricted"
-    },
-    "cost": [8000],
     "includedGear": [
       {
         "name": "Holster"
       }
     ],
+    "availability": {
+      "rating": [14],
+      "restriction": "Restricted"
+    },
+    "cost": [8000],
     "source": "Run And Gun",
     "page": 67
   },
@@ -1009,16 +1009,16 @@
     "category": "Specialty Armour",
     "damageReduction": 18,
     "capacity": 14,
-    "availability": {
-      "rating": [16],
-      "restriction": "Restricted"
-    },
-    "cost": [14000],
     "includedGear": [
       {
         "name": "Holster"
       }
     ],
+    "availability": {
+      "rating": [16],
+      "restriction": "Restricted"
+    },
+    "cost": [14000],
     "source": "Run And Gun",
     "page": 67
   },
@@ -1028,16 +1028,16 @@
     "category": "Specialty Armour",
     "damageReduction": 20,
     "capacity": 16,
-    "availability": {
-      "rating": [18],
-      "restriction": "Restricted"
-    },
-    "cost": [20000],
     "includedGear": [
       {
         "name": "Holster"
       }
     ],
+    "availability": {
+      "rating": [18],
+      "restriction": "Restricted"
+    },
+    "cost": [20000],
     "source": "Run And Gun",
     "page": 67
   },
@@ -1089,11 +1089,6 @@
     "category": "Specialty Armour",
     "damageReduction": 6,
     "capacity": 6,
-    "availability": {
-      "rating": [6],
-      "restriction": "Legal"
-    },
-    "cost": [3000],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -1102,6 +1097,11 @@
         }
       ]
     },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [3000],
     "source": "Run And Gun",
     "page": 69
   },
@@ -1265,16 +1265,16 @@
     "category": "Specialty Armour",
     "damageReduction": 6,
     "capacity": 4,
-    "availability": {
-      "rating": [12],
-      "restriction": "Restricted"
-    },
-    "cost": [4000],
     "includedGear": [
       {
         "name": "Grenade: Flash-Pak"
       }
     ],
+    "availability": {
+      "rating": [12],
+      "restriction": "Restricted"
+    },
+    "cost": [4000],
     "source": "Run And Gun",
     "page": 72
   },
@@ -1284,11 +1284,6 @@
     "category": "Specialty Armour",
     "damageReduction": 13,
     "capacity": 4,
-    "availability": {
-      "rating": [12],
-      "restriction": "Restricted"
-    },
-    "cost": [5000],
     "includedGear": [
       {
         "name": "Biomonitor"
@@ -1297,6 +1292,11 @@
         "name": "Holster"
       }
     ],
+    "availability": {
+      "rating": [12],
+      "restriction": "Restricted"
+    },
+    "cost": [5000],
     "source": "Run And Gun",
     "page": 72
   },
@@ -1376,16 +1376,16 @@
     "category": "Specialty Armour",
     "damageReduction": 3,
     "capacity": 2,
-    "availability": {
-      "rating": [8],
-      "restriction": "Legal"
-    },
-    "cost": [1000],
     "includedGear": [
       {
         "name": "Flare Compensation"
       }
     ],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
     "source": "Run And Gun",
     "page": 75
   },
@@ -1409,16 +1409,16 @@
     "category": "Specialty Armour",
     "damageReduction": 0,
     "capacity": 4,
-    "availability": {
-      "rating": [4],
-      "restriction": "Legal"
-    },
-    "cost": [800],
     "includedGear": [
       {
         "name": "Flare Compensation"
       }
     ],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [800],
     "source": "Run And Gun",
     "page": 76
   },
@@ -1428,16 +1428,16 @@
     "category": "Specialty Armour",
     "damageReduction": 6,
     "capacity": 6,
-    "availability": {
-      "rating": [8],
-      "restriction": "Legal"
-    },
-    "cost": [2000],
     "includedGear": [
       {
         "name": "Flare Compensation"
       }
     ],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [2000],
     "source": "Run And Gun",
     "page": 76
   },
@@ -1447,11 +1447,6 @@
     "category": "Specialty Armour",
     "damageReduction": 15,
     "capacity": 14,
-    "availability": {
-      "rating": [16],
-      "restriction": "Restricted"
-    },
-    "cost": [11000],
     "includedGear": [
       {
         "name": "Gas Mask"
@@ -1460,6 +1455,11 @@
         "name": "Flare Compensation"
       }
     ],
+    "availability": {
+      "rating": [16],
+      "restriction": "Restricted"
+    },
+    "cost": [11000],
     "source": "Run And Gun",
     "page": 77
   },
@@ -1469,11 +1469,6 @@
     "category": "Specialty Armour",
     "damageReduction": 9,
     "capacity": 6,
-    "availability": {
-      "rating": [6],
-      "restriction": "Legal"
-    },
-    "cost": [1200],
     "includedGear": [
       {
         "name": "Flare Compensation"
@@ -1482,6 +1477,11 @@
     "bonus": {
       "fatigueResist": -2
     },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [1200],
     "source": "Run And Gun",
     "page": 78
   },
@@ -1491,16 +1491,16 @@
     "category": "Specialty Armour",
     "damageReduction": 6,
     "capacity": 4,
-    "availability": {
-      "rating": [16],
-      "restriction": "Forbidden"
-    },
-    "cost": [10000],
     "includedGear": [
       {
         "name": "Flare Compensation"
       }
     ],
+    "availability": {
+      "rating": [16],
+      "restriction": "Forbidden"
+    },
+    "cost": [10000],
     "source": "Run And Gun",
     "page": 78
   },
@@ -1510,16 +1510,16 @@
     "category": "Specialty Armour",
     "damageReduction": 0,
     "capacity": 6,
-    "availability": {
-      "rating": [8],
-      "restriction": "Legal"
-    },
-    "cost": [900],
     "includedGear": [
       {
         "name": "Low Light"
       }
     ],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [900],
     "source": "Run And Gun",
     "page": 79
   },
@@ -1529,16 +1529,16 @@
     "category": "Specialty Armour",
     "damageReduction": 0,
     "capacity": 4,
-    "availability": {
-      "rating": [8],
-      "restriction": "Legal"
-    },
-    "cost": [300],
     "includedGear": [
       {
         "name": "Gas Mask"
       }
     ],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [300],
     "source": "Run And Gun",
     "page": 79
   },
@@ -1590,16 +1590,16 @@
     "category": "Specialty Armour",
     "damageReduction": 8,
     "capacity": 5,
-    "availability": {
-      "rating": [10],
-      "restriction": "Legal"
-    },
-    "cost": [3000],
     "includedGear": [
       {
         "name": "Gas Mask"
       }
     ],
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [3000],
     "source": "Run And Gun",
     "page": 81
   },
@@ -1609,11 +1609,6 @@
     "category": "Specialty Armour",
     "damageReduction": 12,
     "capacity": 6,
-    "availability": {
-      "rating": [16],
-      "restriction": "Legal"
-    },
-    "cost": [12000],
     "includedGear": [
       {
         "name": "Renraku Sensei"
@@ -1625,6 +1620,11 @@
         "name": "Biomonitor"
       }
     ],
+    "availability": {
+      "rating": [16],
+      "restriction": "Legal"
+    },
+    "cost": [12000],
     "source": "Run And Gun",
     "page": 81
   },
@@ -1634,11 +1634,6 @@
     "category": "Specialty Armour",
     "damageReduction": 15,
     "capacity": 10,
-    "availability": {
-      "rating": [24],
-      "restriction": "Legal"
-    },
-    "cost": [25000],
     "includedGear": [
       {
         "name": "Renraku Sensei"
@@ -1650,6 +1645,11 @@
         "name": "Biomonitor"
       }
     ],
+    "availability": {
+      "rating": [24],
+      "restriction": "Legal"
+    },
+    "cost": [25000],
     "source": "Run And Gun",
     "page": 81
   },
@@ -1659,11 +1659,6 @@
     "category": "Specialty Armour",
     "damageReduction": 16,
     "capacity": 10,
-    "availability": {
-      "rating": [24],
-      "restriction": "Restricted"
-    },
-    "cost": [35000],
     "includedGear": [
       {
         "name": "Renraku Sensei"
@@ -1672,6 +1667,11 @@
         "name": "Biomonitor"
       }
     ],
+    "availability": {
+      "rating": [24],
+      "restriction": "Restricted"
+    },
+    "cost": [35000],
     "source": "Run And Gun",
     "page": 82
   },
@@ -2527,23 +2527,23 @@
     "category": "Specialty Armour",
     "damageReduction": 0,
     "capacity": 0,
+    "includedGear": [
+      {
+        "name": "Camera",
+        "rating": 2,
+        "category": "Vision Devices"
+      },
+      {
+        "name": "Microphone, Omni-Directional",
+        "rating": 2,
+        "category": "Audio Devices"
+      }
+    ],
     "availability": {
       "rating": [2],
       "restriction": "Legal"
     },
     "cost": [200],
-    "includedGear": [
-      {
-        "name": "Camera",
-        "category": "Vision Devices",
-        "rating": 2
-      },
-      {
-        "name": "Microphone, Omni-Directional",
-        "category": "Audio Devices",
-        "rating": 2
-      }
-    ],
     "source": "Howling Shadows",
     "page": 185
   },
@@ -2584,14 +2584,14 @@
     "category": "Specialty Armour",
     "damageReduction": 8,
     "capacity": 8,
+    "bonus": {
+      "enterName": true
+    },
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [750],
-    "bonus": {
-      "enterName": true
-    },
     "source": "Cutting Aces",
     "page": 136
   },
@@ -2601,14 +2601,14 @@
     "category": "Specialty Armour",
     "damageReduction": 6,
     "capacity": 6,
+    "bonus": {
+      "enterName": true
+    },
     "availability": {
       "rating": [2],
       "restriction": "Legal"
     },
     "cost": [500],
-    "bonus": {
-      "enterName": true
-    },
     "source": "Cutting Aces",
     "page": 136
   },
@@ -2647,14 +2647,14 @@
     "category": "Specialty Armour",
     "damageReduction": 8,
     "capacity": 6,
+    "bonus": {
+      "socialLimit": [1]
+    },
     "availability": {
       "rating": [10],
       "restriction": "Legal"
     },
     "cost": [2000],
-    "bonus": {
-      "socialLimit": [1]
-    },
     "source": "Cutting Aces",
     "page": 136
   },
@@ -2748,16 +2748,16 @@
     "category": "Armour",
     "damageReduction": 12,
     "capacity": 8,
-    "availability": {
-      "rating": [12],
-      "restriction": "Restricted"
-    },
-    "cost": [1700],
     "includedGear": [
       {
         "name": "Holster"
       }
     ],
+    "availability": {
+      "rating": [12],
+      "restriction": "Restricted"
+    },
+    "cost": [1700],
     "source": "Kill Code",
     "page": 70
   },
@@ -2767,11 +2767,6 @@
     "category": "Armour",
     "damageReduction": 8,
     "capacity": 8,
-    "availability": {
-      "rating": [10],
-      "restriction": "Legal"
-    },
-    "cost": [1000],
     "includedGear": [
       {
         "name": "Holster"
@@ -2781,6 +2776,11 @@
         "rating": 4
       }
     ],
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
     "source": "Kill Code",
     "page": 70
   },

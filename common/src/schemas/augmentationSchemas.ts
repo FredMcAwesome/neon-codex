@@ -18,10 +18,11 @@ import {
   AvailabilityRatingSchema,
   CapacitySchema,
   RatingSchema,
+  UseGearListSchema,
+  UseGearListType,
 } from "./commonSchemas.js";
 import { BonusSchema } from "./shared/bonusSchemas.js";
 import { RequirementsSchema } from "./shared/requiredSchemas.js";
-import { UseGearListSchema, UseGearListType } from "./weaponSchemas.js";
 
 export const InnerAvailabilityAugmentationSchema = zod
   .object({
@@ -239,7 +240,7 @@ export type CyberwareSubsystemsRecursiveType = {
   forced?: string | undefined;
   rating?: number | undefined;
   gears?: UseGearListType | undefined;
-  subsystems?: AugmentationListType | undefined;
+  subsystem?: AugmentationSubsystemListType | undefined;
 };
 
 const SubsystemListSchema: zod.ZodType<
@@ -247,20 +248,22 @@ const SubsystemListSchema: zod.ZodType<
 > = zod.array(
   zod.object({
     name: zod.string(),
-    rating: zod.optional(zod.number()),
     forced: zod.optional(zod.string()),
-    subsystem: zod.optional(zod.lazy(() => AugmentationListSchema)),
+    rating: zod.optional(zod.number()),
     gears: zod.optional(UseGearListSchema),
+    subsystem: zod.optional(zod.lazy(() => AugmentationSubsystemListSchema)),
   })
 );
 
-const AugmentationListSchema = zod
+export const AugmentationSubsystemListSchema = zod
   .object({
     cyberwareList: zod.optional(SubsystemListSchema),
     biowareList: zod.optional(SubsystemListSchema),
   })
   .strict();
-export type AugmentationListType = zod.infer<typeof AugmentationListSchema>;
+export type AugmentationSubsystemListType = zod.infer<
+  typeof AugmentationSubsystemListSchema
+>;
 
 export const AugmentationSchema = zod
   .object({
@@ -277,8 +280,6 @@ export const AugmentationSchema = zod
     essenceCost: EssenceCostSchema,
     modification: zod.optional(zod.literal(true)),
     rating: zod.optional(RatingSchema),
-    availability: AvailabilityAugmentationSchema,
-    cost: CostAugmentationSchema,
     addWeapon: zod.optional(zod.string()),
     blockedMountList: zod.optional(zod.array(zod.nativeEnum(mountSlotEnum))),
     selectSide: zod.optional(zod.literal(true)),
@@ -295,6 +296,8 @@ export const AugmentationSchema = zod
         zod.array(zod.nativeEnum(biowareCategoryEnum)),
       ])
     ),
+    availability: AvailabilityAugmentationSchema,
+    cost: CostAugmentationSchema,
     source: zod.nativeEnum(sourceBookEnum),
     page: zod.number(),
 
@@ -325,7 +328,7 @@ export const AugmentationSchema = zod
     wirelessPairBonus: zod.optional(BonusSchema),
     wirelessPairIncludeList: zod.optional(zod.array(zod.string())),
     gearList: zod.optional(UseGearListSchema),
-    subsystemList: zod.optional(AugmentationListSchema),
+    subsystemList: zod.optional(AugmentationSubsystemListSchema),
     forceGrade: zod.optional(zod.nativeEnum(augmentationGradeEnum)),
     deviceRating: zod.optional(
       zod.object({ option: zod.literal("Rating") }).strict()

@@ -475,7 +475,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
   }
   if ("sociallimit" in bonus && bonus.sociallimit !== undefined) {
     // fix this weird type error... Also create an enum for rating
-    const temp: "Rating" = "Rating";
+    const temp = "Rating" as const;
     let socialLimit;
     if (typeof bonus.sociallimit === "number") {
       socialLimit = [bonus.sociallimit];
@@ -685,7 +685,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       typeof bonus.armor === "number"
         ? bonus.armor
         : typeof bonus.armor === "string"
-        ? { option: bonus.armor }
+        ? { option: "Rating" as const }
         : { option: bonus.armor.xmltext };
 
     bonusObject.armour = {
@@ -862,7 +862,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     bonusObject.decreaseWillpowerResist = bonus.decreasewilresist;
   }
   if ("addlimb" in bonus && bonus.addlimb !== undefined) {
-    let limbSlot = convertLimbSlot(bonus.addlimb.limbslot);
+    const limbSlot = convertLimbSlot(bonus.addlimb.limbslot);
     bonusObject.addLimb = {
       limbSlot: limbSlot,
       numberOfLimbs: bonus.addlimb.val,
@@ -877,9 +877,10 @@ export function convertXmlBonus(bonus: BonusXmlType) {
   if ("adapsin" in bonus && bonus.adapsin !== undefined) {
     bonusObject.adapsin = true;
   }
-  if ("reflex" in bonus && bonus.reflex !== undefined) {
-    bonusObject.reflex = true;
-  }
+  // TODO: Reflex is not defined
+  // if ("reflex" in bonus && bonus.reflex !== undefined) {
+  //   bonusObject.reflex = true;
+  // }
   if ("ambidextrous" in bonus && bonus.ambidextrous !== undefined) {
     bonusObject.ambidextrous = true;
   }

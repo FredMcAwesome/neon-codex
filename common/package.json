@@ -8,9 +8,9 @@
     "clean": "tsc --build --clean && rm -r build/"
   },
   "dependencies": {
-    "zod": "^3.19.0"
+    "zod": "^3.22.4"
   },
   "devDependencies": {
-    "typescript": "^4.8.2"
+    "typescript": "^5.3.2"
   }
 }

@@ -57,12 +57,13 @@ export enum sourceBookXmlEnum {
 }
 export const SourceXmlSchema = zod.nativeEnum(sourceBookXmlEnum);
 
-// TODO: does this need to be separate?
 const GearsGearsSchema = zod
   .object({
     xmltext: zod.string(),
-    _rating: zod.string(),
-    _consumecapacity: zod.string(),
+    _select: zod.optional(zod.string()),
+    _rating: zod.optional(zod.string()),
+    _consumecapacity: zod.optional(zod.string()),
+    _costfor: zod.optional(zod.string()),
   })
   .strict();
 
@@ -103,7 +104,7 @@ const InnerUseGearXmlSchema: zod.ZodType<GearsType> =
 // split into its own schema for ease of reading
 export const UseGearXmlSchema = zod.union([
   zod.string(),
-  zod.object({ xmltext: zod.string(), _rating: zod.string() }).strict(),
+  GearsGearsSchema,
   InnerUseGearXmlSchema,
 ]);
 export const GearXmlSchema = zod

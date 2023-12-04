@@ -23,10 +23,10 @@ export function ParseGear() {
   });
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const jObj: any = parser.parse(xml_string);
-  console.log(
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    jObj.chummer.gears.gear[480].bonus.limitmodifier
-  );
+  // console.log(
+  //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+  //   jObj.chummer.gears.gear[480].bonus.limitmodifier
+  // );
 
   const genericGearListParsed = GenericGearListXmlSchema.safeParse(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access

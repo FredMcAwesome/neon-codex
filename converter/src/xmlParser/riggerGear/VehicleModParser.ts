@@ -1,0 +1,157 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+import assert from "assert";
+import { XMLParser } from "fast-xml-parser";
+import path from "path";
+import { fileURLToPath } from "url";
+import * as fs from "fs";
+import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
+import {
+  VehicleModListXmlSchema,
+  VehicleModListXmlType,
+  VehicleModXmlType,
+} from "./VehicleModParserSchemas.js";
+
+export function ParseVehicleMods() {
+  const currentPath = import.meta.url;
+  const xml_string = fs.readFileSync(
+    fileURLToPath(path.dirname(currentPath) + "../../../../xmls/vehicles.xml"),
+    "utf8"
+  );
+  const parser = new XMLParser({
+    ignoreAttributes: false,
+    attributeNamePrefix: "_",
+    textNodeName: "xmltext",
+  });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const jObj: any = parser.parse(xml_string);
+  // console.log(
+  //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+  //   jObj.chummer.mods.mod[189]
+  // );
+
+  const vehicleModListParsed = VehicleModListXmlSchema.safeParse(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    jObj.chummer.mods.mod
+  );
+  const vehicleWeaponMountModListParsed = VehicleModListXmlSchema.safeParse(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    jObj.chummer.weaponmountmods.mod
+  );
+
+  if (!vehicleModListParsed.success) {
+    console.log(vehicleModListParsed.error.errors[0]);
+    assert(false);
+  } else if (!vehicleWeaponMountModListParsed.success) {
+    console.log(vehicleWeaponMountModListParsed.error.errors[0]);
+    assert(false);
+  } else {
+    console.log("vehicles.xml (Mods) initial zod parsed");
+  }
+
+  const vehicleChassisModList: VehicleModListXmlType =
+    vehicleModListParsed.data.map((vehicle) => {
+      return { ...vehicle, modType: "Vehicle" as const };
+    });
+  const vehicleModList = vehicleChassisModList.concat(
+    vehicleWeaponMountModListParsed.data.map((vehicle) => {
+      return { ...vehicle, modType: "Weapon Mount" as const };
+    })
+  );
+  // .filter((weapon) => {
+  //   return weapon.type === weaponTypeEnum.Melee;
+  // })
+  const englishVehicleModList: VehicleModListXmlType = vehicleModList.filter(
+    (vehicleMod) => {
+      let found = false;
+      switch (vehicleMod.source) {
+        case sourceBookXmlEnum.Shadowrun5:
+        case sourceBookXmlEnum.Rigger5:
+        case sourceBookXmlEnum.StolenSouls:
+        case sourceBookXmlEnum.NothingPersonal:
+        case sourceBookXmlEnum.BulletsAndBandages:
+        case sourceBookXmlEnum.HardTargets:
+        case sourceBookXmlEnum.TheVladivostokGauntlet:
+        case sourceBookXmlEnum.CuttingAces:
+        case sourceBookXmlEnum.TheCompleteTrog:
+        case sourceBookXmlEnum.ShadowsInFocus_Metropole:
+        case sourceBookXmlEnum.TheSeattleGambit:
+        case sourceBookXmlEnum.StreetLethal:
+        case sourceBookXmlEnum.NoFuture:
+        case sourceBookXmlEnum.KrimeKatalog:
+        case sourceBookXmlEnum.RunFaster:
+          found = true;
+          break;
+        // Not in english
+        case sourceBookXmlEnum.StateOfTheArtADL:
+        case sourceBookXmlEnum.Schattenhandbuch:
+        case sourceBookXmlEnum.Schattenhandbuch2:
+        case sourceBookXmlEnum.Schattenhandbuch3:
+        case sourceBookXmlEnum.Hamburg:
+        case sourceBookXmlEnum.DatapulsSOTA2080:
+        case sourceBookXmlEnum.DatapulsVerschlusssache:
+        case sourceBookXmlEnum.Shadowrun2050:
+        case 2050:
+        case sourceBookXmlEnum.GrimmesErwachen:
+          break;
+        // Not containing Cyberware
+        case sourceBookXmlEnum.KillCode:
+        case sourceBookXmlEnum.ChromeFlesh:
+        case sourceBookXmlEnum.Lockdown:
+        case sourceBookXmlEnum.HowlingShadows:
+        case sourceBookXmlEnum.DarkTerrors:
+        case sourceBookXmlEnum.RunAndGun:
+        case sourceBookXmlEnum.AssassinPrimer:
+        case sourceBookXmlEnum.DataTrails:
+        case sourceBookXmlEnum.GunHeaven3:
+        case sourceBookXmlEnum.SailAwaySweetSister:
+        case sourceBookXmlEnum.ShadowsInFocus_SanFranciscoMetroplex:
+        case sourceBookXmlEnum.StreetGrimoire:
+        case sourceBookXmlEnum.StreetGrimoireErrata:
+        case sourceBookXmlEnum.ShadowSpells:
+        case sourceBookXmlEnum.BloodyBusiness:
+        case sourceBookXmlEnum.DataTrailsDissonantEchoes:
+        case sourceBookXmlEnum.SplinteredState:
+        case sourceBookXmlEnum.ShadowsInFocus_Butte:
+        case sourceBookXmlEnum.HongKongSourcebook:
+        case sourceBookXmlEnum.BookOfTheLost:
+        case sourceBookXmlEnum.ForbiddenArcana:
+        case sourceBookXmlEnum.ShadowsInFocus_SiouxNation_CountingCoup:
+        case sourceBookXmlEnum.BetterThanBad:
+        case sourceBookXmlEnum.Aetherology:
+        case sourceBookXmlEnum.ShadowrunMissions0803_10BlockTango:
+        case sourceBookXmlEnum.ShadowrunMissions0804_DirtyLaundry:
+        case sourceBookXmlEnum.ShadowrunQuickStartRules:
+        case sourceBookXmlEnum.SprawlWilds:
+          assert(false, vehicleMod.source);
+          break;
+      }
+      return found;
+    }
+  );
+
+  const vehicleModListConverted = englishVehicleModList.map((vehicleMod) => {
+    const convertedVehicleMod = convertVehicleMod(vehicleMod);
+    return convertedVehicleMod;
+  });
+  // console.log(vehicleListConverted);
+  const jsonFilePath = fileURLToPath(
+    path.dirname(currentPath) + "../../../../jsonFiles/vehicleMods.json"
+  );
+  fs.writeFile(
+    jsonFilePath,
+    JSON.stringify(vehicleModListConverted, null, 2),
+    (error) => {
+      if (error) {
+        console.error(error);
+      } else {
+        console.log(`File written! Saved to: ${jsonFilePath}`);
+      }
+    }
+  );
+}
+
+const convertVehicleMod = function (vehicleMod: VehicleModXmlType) {
+  return {
+    name: vehicleMod.name,
+  };
+};

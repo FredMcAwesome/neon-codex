@@ -8,7 +8,29 @@ import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
 import {
   VehicleListXmlSchema,
   VehicleListXmlType,
+  VehicleXmlType,
 } from "./VehicleParserSchemas.js";
+import {
+  convertSource,
+  convertXmlGears,
+  convertXmlModList,
+} from "../common/ParserHelper.js";
+import {
+  accelerationSemantics,
+  availabilitySemantics,
+  convertVehicleCategory,
+  convertWeaponMount,
+  costSemantics,
+  speedSemantics,
+  handlingSemantics,
+} from "./VehicleParserHelper.js";
+import Vehicles from "../../grammar/vehicles.ohm-bundle.js";
+import { Vehicle_DroneSchema } from "@shadowrun/common/build/schemas/riggerSchemas.js";
+const Acceleration = Vehicles.Acceleration;
+const Speed = Vehicles.Speed;
+const Availability = Vehicles.Availability;
+const Cost = Vehicles.Cost;
+const Handling = Vehicles.Handling;
 
 export function ParseVehicles() {
   const currentPath = import.meta.url;
@@ -25,7 +47,7 @@ export function ParseVehicles() {
   const jObj: any = parser.parse(xml_string);
   // console.log(
   //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  //   jObj.chummer.vehicles.vehicle[230].mods
+  //   jObj.chummer.vehicles.vehicle[305]
   // );
 
   const vehicleListParsed = VehicleListXmlSchema.safeParse(
@@ -112,27 +134,126 @@ export function ParseVehicles() {
     }
   );
 
-  console.log(englishVehicleList[0]);
-
-  // const armourListConverted = englishArmourList
-  //   // .filter((weapon) => weapon.name === "Osmium Mace")
-  //   .map((armour) => {
-  //     const convertedArmour = convertArmour(armour);
-  //     return convertedArmour;
-  //   });
-  // // console.log(armourListConverted);
-  // const jsonFilePath = fileURLToPath(
-  //   path.dirname(currentPath) + "../../../../jsonFiles/armour.json"
-  // );
-  // fs.writeFile(
-  //   jsonFilePath,
-  //   JSON.stringify(armourListConverted, null, 2),
-  //   (error) => {
-  //     if (error) {
-  //       console.error(error);
-  //     } else {
-  //       console.log(`File written! Saved to: ${jsonFilePath}`);
-  //     }
-  //   }
-  // );
+  const vehicleListConverted = englishVehicleList
+    // .filter((weapon) => weapon.name === "Osmium Mace")
+    .map((vehicle) => {
+      const convertedVehicle = convertVehicle(vehicle);
+      const check = Vehicle_DroneSchema.safeParse(convertedVehicle);
+      if (!check.success) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        console.log(convertedVehicle);
+        throw new Error(check.error.message);
+      }
+      return convertedVehicle;
+    });
+  // console.log(vehicleListConverted);
+  const jsonFilePath = fileURLToPath(
+    path.dirname(currentPath) + "../../../../jsonFiles/vehicles.json"
+  );
+  fs.writeFile(
+    jsonFilePath,
+    JSON.stringify(vehicleListConverted, null, 2),
+    (error) => {
+      if (error) {
+        console.error(error);
+      } else {
+        console.log(`File written! Saved to: ${jsonFilePath}`);
+      }
+    }
+  );
 }
+
+const convertVehicle = function (vehicle: VehicleXmlType) {
+  let match = Acceleration.match(vehicle.accel.toString());
+  if (match.failed()) {
+    assert(false, match.message);
+  }
+  const acceleration = accelerationSemantics(match).eval();
+  match = Speed.match(vehicle.speed.toString());
+  if (match.failed()) {
+    assert(false, match.message);
+  }
+  const speed = speedSemantics(match).eval();
+
+  const category = convertVehicleCategory(vehicle.category);
+  match = Availability.match(vehicle.avail.toString());
+  if (match.failed()) {
+    assert(false, match.message);
+  }
+  const availability = availabilitySemantics(match).eval();
+  match = Cost.match(vehicle.cost.toString());
+  if (match.failed()) {
+    assert(false, match.message);
+  }
+  const cost = costSemantics(match).eval();
+
+  match = Handling.match(vehicle.handling.toString());
+  if (match.failed()) {
+    assert(false, match.message);
+  }
+  const handling = handlingSemantics(match).eval();
+
+  const includedGear =
+    vehicle.gears !== undefined
+      ? // switch gear to usegear (as it should be in xml...)
+        convertXmlGears({ usegear: vehicle.gears.gear }, vehicle.name)
+      : undefined;
+  const includedMods =
+    vehicle.mods !== undefined ? convertXmlModList(vehicle.mods) : undefined;
+
+  const weaponXmlList =
+    vehicle.weapons !== undefined
+      ? Array.isArray(vehicle.weapons.weapon)
+        ? vehicle.weapons.weapon
+        : [vehicle.weapons.weapon]
+      : undefined;
+  let weaponList;
+  if (weaponXmlList !== undefined) {
+    weaponList = weaponXmlList.map((weapon) => {
+      return weapon.name;
+    });
+  }
+  const weaponMountXmlList =
+    vehicle.weaponmounts !== undefined
+      ? Array.isArray(vehicle.weaponmounts.weaponmount)
+        ? vehicle.weaponmounts.weaponmount
+        : [vehicle.weaponmounts.weaponmount]
+      : undefined;
+  let weaponMountList;
+  if (weaponMountXmlList !== undefined) {
+    weaponMountList = weaponMountXmlList.map((weaponMount) => {
+      return convertWeaponMount(weaponMount);
+    });
+  }
+  const source = convertSource(vehicle.source);
+
+  return {
+    name: vehicle.name,
+    description: "",
+    category: category,
+    handling: handling,
+    speed: speed,
+    acceleration: acceleration,
+    body: vehicle.body,
+    armour: vehicle.armor,
+    pilot: vehicle.pilot,
+    sensor: vehicle.sensor,
+    includedGear: includedGear,
+    includedMods: includedMods,
+    modSlots: vehicle.modslots,
+    powerTrainModSlots: vehicle.powertrainmodslots,
+    protectionModSlots: vehicle.protectionmodslots,
+    weaponModSlots: vehicle.weaponmodslots,
+    bodyModSlots: vehicle.bodymodslots,
+    electromagneticModSlots: vehicle.electromagneticmodslots,
+    cosmeticModSlots: vehicle.cosmeticmodslots,
+    seats: vehicle.seats,
+    weaponList: weaponList,
+    weaponMountList: weaponMountList,
+    ...(vehicle.hide !== undefined && { userSelectable: false as const }),
+    availability: availability,
+    cost: cost,
+    source: source,
+    page: vehicle.page,
+  };
+};

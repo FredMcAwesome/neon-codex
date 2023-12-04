@@ -1,5 +1,8 @@
 import { z as zod } from "zod";
-import { StringArrayOrStringSchema } from "../common/ParserCommonDefines.js";
+import {
+  StringArrayOrStringSchema,
+  StringOrNumberSchema,
+} from "../common/ParserCommonDefines.js";
 import { WeaponXmlSubtypeSchema } from "@shadowrun/common/build/schemas/commonSchemas.js";
 import { metamagicArtEnum } from "@shadowrun/common/build/enums.js";
 
@@ -16,14 +19,14 @@ const ConcealXmlSchema = zod
 
 const XmlOperationSchema = zod
   .object({
-    xmltext: zod.string(),
+    xmltext: StringOrNumberSchema,
     _operation: zod.string(),
   })
   .strict();
 
 const XmlStringOrOperationSchema = zod.union([
   XmlOperationSchema,
-  zod.string(),
+  StringOrNumberSchema,
 ]);
 
 const XmlCategoryOrOperationSchema = zod.union([
@@ -127,6 +130,125 @@ const WeaponAccessoryDetailsOrXmlSchema = zod.union([
     .strict(),
 ]);
 
+const RequiredVehicleDetailsXmlSubSchema = zod
+  .object({
+    name: zod.optional(
+      zod.union([
+        XmlStringOrOperationSchema,
+        zod.array(XmlStringOrOperationSchema),
+      ])
+    ),
+    body: zod.optional(
+      zod.union([zod.array(XmlOperationSchema), XmlOperationSchema])
+    ),
+    seats: zod.optional(
+      zod.union([zod.array(XmlOperationSchema), XmlOperationSchema])
+    ),
+    category: zod.optional(
+      zod.union([
+        zod.array(XmlStringOrOperationSchema),
+        XmlStringOrOperationSchema,
+      ])
+    ),
+  })
+  .strict();
+
+// add recursive properties
+export type RequiredVehicleDetailsXmlType = zod.infer<
+  typeof RequiredVehicleDetailsXmlSubSchema
+> & {
+  AND?:
+    | RequiredVehicleDetailsXmlType
+    | Array<RequiredVehicleDetailsXmlType>
+    | undefined;
+} & {
+  OR?:
+    | RequiredVehicleDetailsXmlType
+    | Array<RequiredVehicleDetailsXmlType>
+    | undefined;
+};
+
+const RequiredVehicleDetailsXmlSchema: zod.ZodType<RequiredVehicleDetailsXmlType> =
+  RequiredVehicleDetailsXmlSubSchema.extend({
+    AND: zod.optional(
+      zod.lazy(() =>
+        zod.union([
+          RequiredVehicleDetailsXmlSchema,
+          zod.array(RequiredVehicleDetailsXmlSchema),
+        ])
+      )
+    ),
+    OR: zod.optional(
+      zod.lazy(() =>
+        zod.union([
+          RequiredVehicleDetailsXmlSchema,
+          zod.array(RequiredVehicleDetailsXmlSchema),
+        ])
+      )
+    ),
+  }).strict();
+
+const RequiredWeaponMountDetailsXmlSubSchema = zod
+  .object({
+    control: zod.optional(StringArrayOrStringSchema),
+    flexibility: zod.optional(StringArrayOrStringSchema),
+    visibility: zod.optional(StringArrayOrStringSchema),
+    // name: zod.optional(
+    //   zod.union([
+    //     XmlStringOrOperationSchema,
+    //     zod.array(XmlStringOrOperationSchema),
+    //   ])
+    // ),
+    // body: zod.optional(
+    //   zod.union([zod.array(XmlOperationSchema), XmlOperationSchema])
+    // ),
+    // seats: zod.optional(
+    //   zod.union([zod.array(XmlOperationSchema), XmlOperationSchema])
+    // ),
+    // category: zod.optional(
+    //   zod.union([
+    //     zod.array(XmlStringOrOperationSchema),
+    //     XmlStringOrOperationSchema,
+    //   ])
+    // ),
+  })
+  .strict();
+
+// add recursive properties
+export type RequiredWeaponMountDetailsXmlType = zod.infer<
+  typeof RequiredWeaponMountDetailsXmlSubSchema
+> & {
+  AND?:
+    | RequiredWeaponMountDetailsXmlType
+    | Array<RequiredWeaponMountDetailsXmlType>
+    | undefined;
+} & {
+  OR?:
+    | RequiredWeaponMountDetailsXmlType
+    | Array<RequiredWeaponMountDetailsXmlType>
+    | undefined;
+};
+
+const RequiredWeaponMountDetailsXmlSchema: zod.ZodType<RequiredWeaponMountDetailsXmlType> =
+  RequiredWeaponMountDetailsXmlSubSchema.extend({
+    AND: zod.optional(
+      zod.lazy(() =>
+        zod.union([
+          RequiredWeaponMountDetailsXmlSchema,
+          zod.array(RequiredWeaponMountDetailsXmlSchema),
+        ])
+      )
+    ),
+    OR: zod.optional(
+      zod.lazy(() =>
+        zod.union([
+          RequiredWeaponMountDetailsXmlSchema,
+          zod.array(RequiredWeaponMountDetailsXmlSchema),
+        ])
+      )
+    ),
+  }).strict();
+
 const containsSchema = zod.union([
   zod
     .object({
@@ -207,6 +329,8 @@ export const RequiredXmlSchema = zod.union([
   zod
     .object({
       weapondetails: zod.optional(RequiredWeaponDetailsXmlSchema),
+      vehicledetails: zod.optional(RequiredVehicleDetailsXmlSchema),
+      weaponmountdetails: zod.optional(RequiredWeaponMountDetailsXmlSchema),
       oneof: zod.optional(containsSchema),
       allof: zod.optional(containsSchema),
       parentdetails: zod.optional(parentDetailsSchema),

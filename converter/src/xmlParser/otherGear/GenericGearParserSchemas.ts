@@ -90,9 +90,6 @@ const GenericGearXmlSchema = zod
     name: zod.string(),
     category: zod.string(),
     rating: zod.optional(StringOrNumberSchema),
-    source: zod.union([SourceXmlSchema, zod.literal(2050)]),
-    page: zod.number(),
-    avail: StringOrNumberSchema,
     addweapon: zod.optional(
       zod.union([
         zod.string(),
@@ -106,6 +103,9 @@ const GenericGearXmlSchema = zod
     ),
     bonus: zod.optional(BonusXmlSchema),
     addoncategory: zod.optional(StringArrayOrStringSchema),
+    // Availability
+    avail: StringOrNumberSchema,
+    // Cost
     cost: StringOrNumberSchema,
     costfor: zod.optional(zod.number()),
     weaponbonus: zod.optional(
@@ -210,6 +210,8 @@ const GenericGearXmlSchema = zod
     modattributearray: zod.optional(zod.string()),
     allowrename: zod.optional(zod.string()),
     matrixcmbonus: zod.optional(zod.number()),
+    source: zod.union([SourceXmlSchema, zod.literal(2050)]),
+    page: zod.number(),
   })
   .strict();
 export type GenericGearXmlType = zod.infer<typeof GenericGearXmlSchema>;

@@ -31,10 +31,10 @@ export function ParseDrugComponents() {
   });
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const jObj: any = parser.parse(xml_string);
-  console.log(
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    jObj.chummer.drugcomponents.drugcomponent[20]
-  );
+  // console.log(
+  //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+  //   jObj.chummer.drugcomponents.drugcomponent[20]
+  // );
 
   const drugComponentListParsed = DrugComponentListXmlSchema.safeParse(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
@@ -150,7 +150,7 @@ export function ParseDrugComponents() {
 }
 
 function convertDrugComponent(drugComponent: DrugComponentXmlType) {
-  let match = Availability.match(drugComponent.availability.toString());
+  const match = Availability.match(drugComponent.availability.toString());
   if (match.failed()) {
     assert(false, match.message);
   }

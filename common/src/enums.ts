@@ -259,6 +259,10 @@ export enum costAugmentationEnum {
   Gear = "Gear",
 }
 
+export enum costVehicleEnum {
+  Rating = "Rating",
+}
+
 export enum ratingAugmentationEnum {
   MinimumStrength = "Minimum Strength",
   MinimumAgility = "Minimum Agility",
@@ -661,6 +665,29 @@ export enum cyberwareCategoryEnum {
   SpecialBiodroneCyberware = "Special Biodrone Cyberware",
 }
 
+export enum vehicleCategoryEnum {
+  Bikes = "Bikes",
+  Cars = "Cars",
+  Trucks = "Trucks",
+  Municipal = "Municipal/Construction",
+  Corpsec = "Corpsec/Police/Military",
+  Boats = "Boats",
+  Submarines = "Submarines",
+  FixedWing_Aircraft = "Fixed-Wing Aircraft",
+  LTAV = "LTAV",
+  Rotorcraft = "Rotorcraft",
+  VTOL_VSTOL = "VTOL/VSTOL",
+  Drones_Micro = "Drones: Micro",
+  Drones_Mini = "Drones: Mini",
+  Drones_Small = "Drones: Small",
+  Drones_Medium = "Drones: Medium",
+  Drones_Anthro = "Drones: Anthro",
+  Drones_Large = "Drones: Large",
+  Drones_Huge = "Drones: Huge",
+  Drones_Missile = "Drones: Missile",
+  Hovercraft = "Hovercraft",
+}
+
 export enum augmentationGradeEnum {
   None = "None",
   Used = "Used",
@@ -711,4 +738,40 @@ export enum drugComponentCategoryEnum {
   Foundation = "Foundation",
   Block = "Block",
   Enhancer = "Enhancer",
+}
+
+export enum weaponMountSizeEnum {
+  Built_In = "Built-In",
+  Light = "Light",
+  Standard = "Standard",
+  Heavy = "Heavy",
+  Heavy_SR5 = "Heavy [SR5]",
+  Standard_Drone = "Standard (Drone)",
+  Mini_Drone = "Mini (Drone)",
+  Small_Drone = "Small (Drone)",
+  Large_Drone = "Large (Drone)",
+  Heavy_Drone = "Heavy (Drone)",
+  Huge_Drone = "Huge (Drone)",
+}
+
+export enum weaponMountVisibilityEnum {
+  External_SR5 = "External [SR5]",
+  External = "External",
+  Internal = "Internal",
+  Concealed = "Concealed",
+}
+
+export enum weaponMountFlexibilityEnum {
+  Flexible_SR5 = "Flexible [SR5]",
+  Fixed = "Fixed",
+  Flexible = "Flexible",
+  Turret = "Turret",
+}
+
+export enum weaponMountControlEnum {
+  Remote = "Remote",
+  Remote_SR5 = "Remote [SR5]",
+  Manual = "Manual",
+  Manual_SR5 = "Manual [SR5]",
+  ArmoredManual = "Armored Manual",
 }

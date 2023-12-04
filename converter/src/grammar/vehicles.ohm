@@ -1,0 +1,89 @@
+Handling {
+  Exp = Handling
+  Handling = HandlingValue "/" HandlingValue -- multiple
+    | HandlingValue
+  HandlingValue = Number
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+}
+
+Speed {
+  Exp = Speed
+  Speed = SpeedValue "/" SpeedValue -- multiple
+    | SpeedValue
+  SpeedValue = Number
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+}
+
+Acceleration {
+  Exp = Acceleration
+  Acceleration = AccelerationValue "/" AccelerationValue -- multiple
+    | AccelerationValue
+  AccelerationValue = Number
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+}
+
+Availability {
+  Exp = Availability
+  Availability = AddSub Restriction -- full
+    | AddSub -- partial
+    | Variable -- variable
+  Variable = "Variable(" InnerVariable ")"
+  InnerVariable = Number "-" Number
+  AddSub = AddSub "+" MulDiv -- add
+    | AddSub "-" MulDiv -- subtract
+    | MulDiv -- base
+  MulDiv = MulDiv "*" AvailabilityValue -- multiply
+    | MulDiv "/" AvailabilityValue -- divide
+    | AvailabilityValue
+  AvailabilityValue = Number
+    | Rating
+  Rating = "Rating" | "{Rating}"
+  Restriction = Restricted
+    | Forbidden
+  Restricted = "R"
+  Forbidden = "F"
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+}
+
+Cost {
+  Exp = Cost
+  Cost = AddSub
+    | Variable
+  Variable = "Variable(" InnerVariable ")"
+  InnerVariable = Number "-" Number
+  AddSub = AddSub "+" MulDiv -- add
+    | AddSub "-" MulDiv -- subtract
+    | MulDiv -- base
+  MulDiv = MulDiv "*" CostValue -- multiply
+    | MulDiv "/" CostValue -- divide
+    | CostValue
+  CostValue = Number
+    | Rating
+  Rating = "{Rating}"
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+}
+
+Seats {
+  Exp = Seats
+  Seats = Number "-" Number -- variable
+    | Number -- single
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+}

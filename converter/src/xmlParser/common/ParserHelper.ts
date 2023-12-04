@@ -6,7 +6,6 @@ import {
   limbSlotEnum,
   sourceBookEnum,
 } from "@shadowrun/common/build/enums.js";
-import type { UseGearListType } from "@shadowrun/common/build/schemas/weaponSchemas.js";
 import { ModListType } from "@shadowrun/common/build/schemas/shared/modSchemas.js";
 import assert from "assert";
 import {
@@ -24,7 +23,10 @@ import type {
   ModXmlType,
 } from "./ParserCommonDefines.js";
 import { sourceBookXmlEnum } from "./ParserCommonDefines.js";
-import { AllowedGearType } from "@shadowrun/common/build/schemas/commonSchemas.js";
+import {
+  AllowedGearType,
+  UseGearListType,
+} from "@shadowrun/common/build/schemas/commonSchemas.js";
 
 export const convertSource = function (source: sourceBookXmlEnum | 2050) {
   const xmlSource = source === 2050 ? sourceBookXmlEnum.Shadowrun2050 : source;
@@ -330,9 +332,25 @@ export function convertXmlGears(
         name: useGear,
       };
     } else if ("xmltext" in useGear) {
+      const enterName =
+        useGear._select !== undefined
+          ? useGear._select === ""
+            ? (true as const)
+            : useGear._select
+          : undefined;
+      const rating =
+        useGear._rating !== undefined ? parseInt(useGear._rating) : undefined;
+      const consumeCapacity =
+        useGear._consumecapacity !== undefined ? (true as const) : undefined;
+      const quantity =
+        useGear._costfor !== undefined ? parseInt(useGear._costfor) : undefined;
+
       return {
         name: useGear.xmltext,
-        rating: parseInt(useGear._rating),
+        enterName: enterName,
+        rating: rating,
+        consumeCapacity: consumeCapacity,
+        quantity: quantity,
       };
     }
     let category;

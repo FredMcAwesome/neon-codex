@@ -152,7 +152,8 @@ const CyberwareXmlSchema = zod
     // Select which side it is installed on
     selectside: zod.optional(zod.literal("")),
     // Bonus applied by Cyberware
-    bonus: zod.optional(BonusXmlSchema), // Bonus applied when 2 are equipped e.g. 2 feet = different run speed
+    bonus: zod.optional(BonusXmlSchema),
+    // Bonus applied when 2 are equipped e.g. 2 feet = different run speed
     pairbonus: zod.optional(BonusXmlSchema),
     // pairbonus applies when there is 2 of this or 1 of this and 1 of
     // the cyberware here

@@ -53,6 +53,14 @@
     "capacity": {
       "ratingLinked": [1, 2, 3, 4, 5, 6]
     },
+    "bonus": {
+      "toxinContactResist": {
+        "option": "Rating"
+      },
+      "pathogenContactResist": {
+        "option": "Rating"
+      }
+    },
     "availability": {
       "rating": [6],
       "restriction": "Legal"
@@ -70,14 +78,6 @@
         ]
       }
     ],
-    "bonus": {
-      "toxinContactResist": {
-        "option": "Rating"
-      },
-      "pathogenContactResist": {
-        "option": "Rating"
-      }
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
   },
@@ -88,17 +88,17 @@
     "maxRating": 1,
     "damageReduction": 0,
     "capacity": [6],
-    "availability": {
-      "rating": [12],
-      "restriction": "Restricted"
-    },
-    "cost": [3000],
     "bonus": {
       "toxinContactImmune": true,
       "pathogenContactImmune": true,
       "toxinInhalationImmune": true,
       "pathogenInhalationImmune": true
     },
+    "availability": {
+      "rating": [12],
+      "restriction": "Restricted"
+    },
+    "cost": [3000],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
   },
@@ -111,6 +111,11 @@
     "capacity": {
       "ratingLinked": [1, 2, 3, 4, 5, 6]
     },
+    "bonus": {
+      "fireArmour": {
+        "option": "Rating"
+      }
+    },
     "availability": {
       "rating": [6],
       "restriction": "Legal"
@@ -128,11 +133,6 @@
         ]
       }
     ],
-    "bonus": {
-      "fireArmour": {
-        "option": "Rating"
-      }
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
   },
@@ -145,6 +145,11 @@
     "capacity": {
       "ratingLinked": [1, 2, 3, 4, 5, 6]
     },
+    "bonus": {
+      "coldArmour": {
+        "option": "Rating"
+      }
+    },
     "availability": {
       "rating": [6],
       "restriction": "Legal"
@@ -162,11 +167,6 @@
         ]
       }
     ],
-    "bonus": {
-      "coldArmour": {
-        "option": "Rating"
-      }
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
   },
@@ -179,6 +179,11 @@
     "capacity": {
       "ratingLinked": [1, 2, 3, 4, 5, 6]
     },
+    "bonus": {
+      "electricityArmour": {
+        "option": "Rating"
+      }
+    },
     "availability": {
       "rating": [6],
       "restriction": "Legal"
@@ -196,11 +201,6 @@
         ]
       }
     ],
-    "bonus": {
-      "electricityArmour": {
-        "option": "Rating"
-      }
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 438
   },
@@ -261,17 +261,17 @@
     "hostArmourRequirements": {
       "hostArmour": "Full Body Armor"
     },
-    "availability": {
-      "rating": [6],
-      "restriction": "Legal"
-    },
-    "cost": [6000],
     "bonus": {
       "toxinContactImmune": true,
       "pathogenContactImmune": true,
       "toxinInhalationImmune": true,
       "pathogenInhalationImmune": true
     },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [6000],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
   },
@@ -330,14 +330,14 @@
     "maxRating": 1,
     "damageReduction": 0,
     "capacity": [0],
+    "bonus": {
+      "fireArmour": 4
+    },
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [0],
-    "bonus": {
-      "fireArmour": 4
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
   },
@@ -348,15 +348,15 @@
     "maxRating": 1,
     "damageReduction": 0,
     "capacity": [0],
+    "bonus": {
+      "toxinContactResist": 4,
+      "pathogenContactResist": 4
+    },
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [0],
-    "bonus": {
-      "toxinContactResist": 4,
-      "pathogenContactResist": 4
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
   },
@@ -367,14 +367,14 @@
     "maxRating": 1,
     "damageReduction": 0,
     "capacity": [0],
+    "bonus": {
+      "coldArmour": 4
+    },
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [0],
-    "bonus": {
-      "coldArmour": 4
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
   },
@@ -400,15 +400,15 @@
     "maxRating": 1,
     "damageReduction": 0,
     "capacity": [0],
+    "bonus": {
+      "toxinContactResist": 3,
+      "pathogenContactResist": 3
+    },
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [0],
-    "bonus": {
-      "toxinContactResist": 3,
-      "pathogenContactResist": 3
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
   },
@@ -419,14 +419,14 @@
     "maxRating": 1,
     "damageReduction": 0,
     "capacity": [0],
+    "bonus": {
+      "coldArmour": 3
+    },
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [0],
-    "bonus": {
-      "coldArmour": 3
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
   },
@@ -437,14 +437,14 @@
     "maxRating": 1,
     "damageReduction": 0,
     "capacity": [0],
+    "bonus": {
+      "fireArmour": 2
+    },
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [0],
-    "bonus": {
-      "fireArmour": 2
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
   },
@@ -455,15 +455,15 @@
     "maxRating": 1,
     "damageReduction": 0,
     "capacity": [0],
+    "bonus": {
+      "toxinContactResist": 2,
+      "pathogenContactResist": 2
+    },
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [0],
-    "bonus": {
-      "toxinContactResist": 2,
-      "pathogenContactResist": 2
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
   },
@@ -474,14 +474,14 @@
     "maxRating": 1,
     "damageReduction": 0,
     "capacity": [0],
+    "bonus": {
+      "coldArmour": 2
+    },
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [0],
-    "bonus": {
-      "coldArmour": 2
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
   },
@@ -492,14 +492,14 @@
     "maxRating": 1,
     "damageReduction": 0,
     "capacity": [0],
+    "bonus": {
+      "fireArmour": 6
+    },
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [0],
-    "bonus": {
-      "fireArmour": 6
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
   },
@@ -510,15 +510,15 @@
     "maxRating": 1,
     "damageReduction": 0,
     "capacity": [0],
+    "bonus": {
+      "toxinContactResist": 6,
+      "pathogenContactResist": 6
+    },
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [0],
-    "bonus": {
-      "toxinContactResist": 6,
-      "pathogenContactResist": 6
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
   },
@@ -529,14 +529,14 @@
     "maxRating": 1,
     "damageReduction": 0,
     "capacity": [0],
+    "bonus": {
+      "coldArmour": 6
+    },
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [0],
-    "bonus": {
-      "coldArmour": 6
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
   },
@@ -547,12 +547,12 @@
     "maxRating": 0,
     "damageReduction": 0,
     "capacity": [0],
+    "userSelectable": false,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [0],
-    "userSelectable": false,
     "source": "Run And Gun",
     "page": 59
   },
@@ -563,15 +563,15 @@
     "maxRating": 0,
     "damageReduction": 0,
     "capacity": [0],
+    "bonus": {
+      "linkArmour": true
+    },
+    "userSelectable": false,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [0],
-    "bonus": {
-      "linkArmour": true
-    },
-    "userSelectable": false,
     "source": "Run And Gun",
     "page": 59
   },
@@ -582,12 +582,12 @@
     "maxRating": 0,
     "damageReduction": 0,
     "capacity": [0],
+    "userSelectable": false,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [0],
-    "userSelectable": false,
     "source": "Run And Gun",
     "page": 59
   },
@@ -598,12 +598,12 @@
     "maxRating": 0,
     "damageReduction": 0,
     "capacity": [0],
+    "userSelectable": false,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [0],
-    "userSelectable": false,
     "source": "Run And Gun",
     "page": 59
   },
@@ -614,12 +614,12 @@
     "maxRating": 0,
     "damageReduction": 0,
     "capacity": [0],
+    "userSelectable": false,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [0],
-    "userSelectable": false,
     "source": "Run And Gun",
     "page": 59
   },
@@ -630,12 +630,12 @@
     "maxRating": 0,
     "damageReduction": 0,
     "capacity": [0],
+    "userSelectable": false,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [0],
-    "userSelectable": false,
     "source": "Run And Gun",
     "page": 59
   },
@@ -646,12 +646,12 @@
     "maxRating": 0,
     "damageReduction": 0,
     "capacity": [0],
+    "userSelectable": false,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [0],
-    "userSelectable": false,
     "source": "Run And Gun",
     "page": 59
   },
@@ -662,12 +662,12 @@
     "maxRating": 0,
     "damageReduction": 0,
     "capacity": [0],
+    "userSelectable": false,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [0],
-    "userSelectable": false,
     "source": "Run And Gun",
     "page": 59
   },
@@ -952,6 +952,11 @@
     "capacity": {
       "ratingLinked": [1, 2, 3, 4, 5, 6]
     },
+    "bonus": {
+      "radiationResistance": {
+        "option": "Rating"
+      }
+    },
     "availability": {
       "rating": [
         {
@@ -981,11 +986,6 @@
         ]
       }
     ],
-    "bonus": {
-      "radiationResistance": {
-        "option": "Rating"
-      }
-    },
     "source": "Run And Gun",
     "page": 84
   },
@@ -1164,12 +1164,12 @@
     "maxRating": 0,
     "damageReduction": 0,
     "capacity": [0],
+    "userSelectable": false,
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [0],
-    "userSelectable": false,
     "source": "Street Lethal",
     "page": 48
   },
@@ -1180,12 +1180,12 @@
     "maxRating": 1,
     "damageReduction": 0,
     "capacity": [0],
+    "userSelectable": false,
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [0],
-    "userSelectable": false,
     "source": "Kill Code",
     "page": 73
   },
@@ -1196,12 +1196,12 @@
     "maxRating": 1,
     "damageReduction": 0,
     "capacity": [0],
+    "userSelectable": false,
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [0],
-    "userSelectable": false,
     "source": "Kill Code",
     "page": 73
   },
@@ -1212,12 +1212,12 @@
     "maxRating": 1,
     "damageReduction": 0,
     "capacity": [0],
+    "userSelectable": false,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [0],
-    "userSelectable": false,
     "source": "Kill Code",
     "page": 73
   },

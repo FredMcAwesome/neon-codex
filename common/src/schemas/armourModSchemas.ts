@@ -8,10 +8,12 @@ import {
   restrictionEnum,
   sourceBookEnum,
 } from "../enums.js";
-import { AvailabilityRatingSchema } from "./commonSchemas.js";
+import {
+  AvailabilityRatingSchema,
+  UseGearListSchema,
+} from "./commonSchemas.js";
 import { BonusSchema } from "./shared/bonusSchemas.js";
 import { ModListSchema } from "./shared/modSchemas.js";
-import { UseGearListSchema } from "./weaponSchemas.js";
 
 const InnerAvailabilityArmourModSchema = zod
   .object({
@@ -117,13 +119,13 @@ export const ArmourModSchema = zod
         })
         .strict()
     ),
-    availability: AvailabilityArmourModSchema,
-    cost: CostArmourModSchema,
     includedGear: zod.optional(UseGearListSchema),
     bonus: zod.optional(BonusSchema),
     wirelessBonus: zod.optional(BonusSchema),
     mods: zod.optional(ModListSchema),
     userSelectable: zod.optional(zod.literal(false)),
+    availability: AvailabilityArmourModSchema,
+    cost: CostArmourModSchema,
     source: zod.nativeEnum(sourceBookEnum),
     page: zod.number(),
   })

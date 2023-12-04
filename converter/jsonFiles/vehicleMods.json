@@ -1,0 +1,581 @@
+[
+  {
+    "name": "Tracked Propulsion"
+  },
+  {
+    "name": "Signature Dampening"
+  },
+  {
+    "name": "FlashTech"
+  },
+  {
+    "name": "Enviroseal"
+  },
+  {
+    "name": "Drone Rail"
+  },
+  {
+    "name": "Gyro-Stabilization"
+  },
+  {
+    "name": "Smart Tires"
+  },
+  {
+    "name": "Dustoff Armored Valkyrie Module"
+  },
+  {
+    "name": "Reloading Drone Forbidden Weapon Reloading Autosoft"
+  },
+  {
+    "name": "Avibras-Nissan AN 822 Device Rating Upgrade"
+  },
+  {
+    "name": "Ruhrmetall Wolf II Troop Transport Module"
+  },
+  {
+    "name": "Maersk Shipyards Wavecutter MPAC Small Craft Bay"
+  },
+  {
+    "name": "Speakers"
+  },
+  {
+    "name": "Strobes"
+  },
+  {
+    "name": "Acceleration Enhancement"
+  },
+  {
+    "name": "Gecko Tips"
+  },
+  {
+    "name": "Gliding System"
+  },
+  {
+    "name": "Handling Enhancement"
+  },
+  {
+    "name": "Improved Economy"
+  },
+  {
+    "name": "Manual Control Override"
+  },
+  {
+    "name": "Multifuel Engine"
+  },
+  {
+    "name": "Off-Road Suspension"
+  },
+  {
+    "name": "Rigger Cocoon"
+  },
+  {
+    "name": "Removed Manual Controls"
+  },
+  {
+    "name": "Rocket Booster"
+  },
+  {
+    "name": "Secondary Manual Controls"
+  },
+  {
+    "name": "Secondary Propulsion (Amphibious, Surface)"
+  },
+  {
+    "name": "Secondary Propulsion (Amphibious, Submersible)"
+  },
+  {
+    "name": "Secondary Propulsion (Hovercraft)"
+  },
+  {
+    "name": "Secondary Propulsion (Rotor)"
+  },
+  {
+    "name": "Secondary Propulsion (Tracked)"
+  },
+  {
+    "name": "Secondary Propulsion (Walker)"
+  },
+  {
+    "name": "Speed Enhancement"
+  },
+  {
+    "name": "Anti-Theft System"
+  },
+  {
+    "name": "Armor (Standard)"
+  },
+  {
+    "name": "Armor (Concealed)"
+  },
+  {
+    "name": "Passenger Protection System"
+  },
+  {
+    "name": "Personal Armor"
+  },
+  {
+    "name": "Special Armor Modification (Chemical)"
+  },
+  {
+    "name": "Special Armor Modification (Fire)"
+  },
+  {
+    "name": "Special Armor Modification (Insulation)"
+  },
+  {
+    "name": "Special Armor Modification (Nonconductivity)"
+  },
+  {
+    "name": "Special Armor Modification (Radiation)"
+  },
+  {
+    "name": "Special Armor Modification (Universal Mirror Material)"
+  },
+  {
+    "name": "Standard Drone Rack (Micro)"
+  },
+  {
+    "name": "Standard Drone Rack (Mini)"
+  },
+  {
+    "name": "Standard Drone Rack (Small)"
+  },
+  {
+    "name": "Standard Drone Rack (Medium)"
+  },
+  {
+    "name": "Standard Drone Rack (Large)"
+  },
+  {
+    "name": "Landing Drone Rack (Micro)"
+  },
+  {
+    "name": "Landing Drone Rack (Mini)"
+  },
+  {
+    "name": "Landing Drone Rack (Small)"
+  },
+  {
+    "name": "Landing Drone Rack (Medium)"
+  },
+  {
+    "name": "Landing Drone Rack (Large)"
+  },
+  {
+    "name": "Gun Port"
+  },
+  {
+    "name": "Missile Defense System"
+  },
+  {
+    "name": "Oil Slick Sprayer"
+  },
+  {
+    "name": "Ram Plate"
+  },
+  {
+    "name": "Smoke Projector"
+  },
+  {
+    "name": "Smoke Projector (Thermal)"
+  },
+  {
+    "name": "Road Strip Ejector"
+  },
+  {
+    "name": "Assembly/Disassembly"
+  },
+  {
+    "name": "Chameleon Coating"
+  },
+  {
+    "name": "Extra Entry/Exit Points"
+  },
+  {
+    "name": "Extreme Environment Modification"
+  },
+  {
+    "name": "Increased Seating"
+  },
+  {
+    "name": "Life Support"
+  },
+  {
+    "name": "Mechanical Arm (Basic)"
+  },
+  {
+    "name": "Mechanical Arm (Articulated)"
+  },
+  {
+    "name": "Nanomaintenance System"
+  },
+  {
+    "name": "Realistic Features"
+  },
+  {
+    "name": "Smuggling Compartment"
+  },
+  {
+    "name": "Special Equipment"
+  },
+  {
+    "name": "Smuggling Compartment Shielding"
+  },
+  {
+    "name": "Valkyrie Module"
+  },
+  {
+    "name": "Winch (Basic)"
+  },
+  {
+    "name": "Winch (Enhanced)"
+  },
+  {
+    "name": "Workshop"
+  },
+  {
+    "name": "Electromagnetic Shielding"
+  },
+  {
+    "name": "ECM"
+  },
+  {
+    "name": "GridLink"
+  },
+  {
+    "name": "GridLink Override"
+  },
+  {
+    "name": "Retrans Unit"
+  },
+  {
+    "name": "Satellite Link"
+  },
+  {
+    "name": "Pilot Enhancement"
+  },
+  {
+    "name": "Sensor Enhancement"
+  },
+  {
+    "name": "Signature Masking"
+  },
+  {
+    "name": "SunCell"
+  },
+  {
+    "name": "Touch Sensors"
+  },
+  {
+    "name": "Amenities (Squatter)"
+  },
+  {
+    "name": "Amenities (Low)"
+  },
+  {
+    "name": "Amenities (Middle)"
+  },
+  {
+    "name": "Amenities (High)"
+  },
+  {
+    "name": "Amenities (Luxury)"
+  },
+  {
+    "name": "Enhanced Image Screens"
+  },
+  {
+    "name": "Máquina Conversion"
+  },
+  {
+    "name": "Metahuman Adjustment"
+  },
+  {
+    "name": "Manual Operation"
+  },
+  {
+    "name": "Rigger Interface"
+  },
+  {
+    "name": "Interior Cameras"
+  },
+  {
+    "name": "Searchlight"
+  },
+  {
+    "name": "Vehicle Tag Eraser"
+  },
+  {
+    "name": "Yerz Kit"
+  },
+  {
+    "name": "Yerzed Out"
+  },
+  {
+    "name": "Micro Weapon Mount (Drone)"
+  },
+  {
+    "name": "Mini Weapon Mount (Drone)"
+  },
+  {
+    "name": "Gecko Grips (Drone)"
+  },
+  {
+    "name": "Small Weapon Mount (Drone)"
+  },
+  {
+    "name": "Standard Weapon Mount (Drone)"
+  },
+  {
+    "name": "Large Weapon Mount (Drone)"
+  },
+  {
+    "name": "Huge Weapon Mount (Drone)"
+  },
+  {
+    "name": "Heavy Weapon Mount (Drone)"
+  },
+  {
+    "name": "Realistic Features (Drone)"
+  },
+  {
+    "name": "Amphibious (Drone)"
+  },
+  {
+    "name": "Submersible (Drone)"
+  },
+  {
+    "name": "Assembly Time Improvement (Drone)"
+  },
+  {
+    "name": "Customized (Drone)"
+  },
+  {
+    "name": "Drone Arm"
+  },
+  {
+    "name": "Synthetic Drone Arm"
+  },
+  {
+    "name": "Primitive Drone Arm"
+  },
+  {
+    "name": "Drone Leg"
+  },
+  {
+    "name": "Synthetic Drone Leg"
+  },
+  {
+    "name": "Immobile (Drone)"
+  },
+  {
+    "name": "SkyGuide (Drone)"
+  },
+  {
+    "name": "Spotlight (Drone)"
+  },
+  {
+    "name": "Suspension (Drone)"
+  },
+  {
+    "name": "Tire Mod (Drone)"
+  },
+  {
+    "name": "Pilot Program (Drone)"
+  },
+  {
+    "name": "Spoof Chips"
+  },
+  {
+    "name": "Spoof Chips"
+  },
+  {
+    "name": "Fragile (Drone)"
+  },
+  {
+    "name": "Single Sensor (Drone)"
+  },
+  {
+    "name": "Paraplegic Modification"
+  },
+  {
+    "name": "Daihatsu-Caterpillar Horseman Passenger Pod"
+  },
+  {
+    "name": "Daihatsu-Caterpillar Horseman Cargo Pod"
+  },
+  {
+    "name": "Daihatsu-Caterpillar Horseman Advanced Cargo Pod"
+  },
+  {
+    "name": "Daihatsu-Caterpillar Horseman Drone Pod"
+  },
+  {
+    "name": "Daihatsu-Caterpillar Horseman Security Pod"
+  },
+  {
+    "name": "Chameleon Coating"
+  },
+  {
+    "name": "Dash Light Bar"
+  },
+  {
+    "name": "Emergency Light Bar"
+  },
+  {
+    "name": "Morphing License Plate"
+  },
+  {
+    "name": "Morphing License Plate"
+  },
+  {
+    "name": "Spike Strip"
+  },
+  {
+    "name": "Zapper Strip"
+  },
+  {
+    "name": "Tracking Strip"
+  },
+  {
+    "name": "Off-Road Tires"
+  },
+  {
+    "name": "Racing Tires"
+  },
+  {
+    "name": "Run-Flat Tires"
+  },
+  {
+    "name": "Siren"
+  },
+  {
+    "name": "Smuggling Compartment (Dwarf, Human, Elf, or Ork)"
+  },
+  {
+    "name": "Smuggling Compartment (Troll)"
+  },
+  {
+    "name": "Rigger Services (1 hour)"
+  },
+  {
+    "name": "Extended Roof"
+  },
+  {
+    "name": "Bathroom"
+  },
+  {
+    "name": "Holding Cell"
+  },
+  {
+    "name": "Sleeping Quarters"
+  },
+  {
+    "name": "Advanced Lightbar"
+  },
+  {
+    "name": "Open Box Storage"
+  },
+  {
+    "name": "Interchangeable Bed: Armory"
+  },
+  {
+    "name": "Interchangeable Bed: Cargo Pod"
+  },
+  {
+    "name": "Interchangeable Bed: Food Truck"
+  },
+  {
+    "name": "Interchangeable Bed: Sleeper Command Cabin"
+  },
+  {
+    "name": "Interchangeable Bed: Transport"
+  },
+  {
+    "name": "Interchangeable Bed: Standard Drone Rack (Micro)"
+  },
+  {
+    "name": "Interchangeable Bed: Standard Drone Rack (Mini)"
+  },
+  {
+    "name": "Interchangeable Bed: Standard Drone Rack (Small)"
+  },
+  {
+    "name": "Interchangeable Bed: Standard Drone Rack (Medium)"
+  },
+  {
+    "name": "Interchangeable Bed: Standard Drone Rack (Large)"
+  },
+  {
+    "name": "Interchangeable Bed: Landing Drone Rack (Micro)"
+  },
+  {
+    "name": "Interchangeable Bed: Landing Drone Rack (Mini)"
+  },
+  {
+    "name": "Interchangeable Bed: Landing Drone Rack (Small)"
+  },
+  {
+    "name": "Interchangeable Bed: Landing Drone Rack (Medium)"
+  },
+  {
+    "name": "Interchangeable Bed: Landing Drone Rack (Large)"
+  },
+  {
+    "name": "Interchangeable Bed: Workshop"
+  },
+  {
+    "name": "Interchangeable Bed: Rigger Cocoon"
+  },
+  {
+    "name": "Interchangeable Bed: Custom"
+  },
+  {
+    "name": "Handling (Drone)"
+  },
+  {
+    "name": "Speed (Drone)"
+  },
+  {
+    "name": "Acceleration (Drone)"
+  },
+  {
+    "name": "Armor (Drone)"
+  },
+  {
+    "name": "Sensor (Drone)"
+  },
+  {
+    "name": "Handling Downgrade (Drone)"
+  },
+  {
+    "name": "Speed Downgrade (Drone)"
+  },
+  {
+    "name": "Acceleration Downgrade (Drone)"
+  },
+  {
+    "name": "Body Downgrade (Drone)"
+  },
+  {
+    "name": "Armor Downgrade (Drone)"
+  },
+  {
+    "name": "Sensor Downgrade (Drone)"
+  },
+  {
+    "name": "Blow-Away Panel Weapon Mount Add-on (Drone)"
+  },
+  {
+    "name": "Pop-Out Weapon Mount Add-on (Drone)"
+  },
+  {
+    "name": "Expanded Ammunition Bay (Second Bin) Weapon Mount Add-on (Drone)"
+  },
+  {
+    "name": "Expanded Ammunition Bay (Belt-Feed) Weapon Mount Add-on (Drone)"
+  },
+  {
+    "name": "Ammo Bin"
+  }
+]

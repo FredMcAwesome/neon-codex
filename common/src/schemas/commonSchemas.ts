@@ -139,3 +139,18 @@ export const AllowedGearSchema = zod
   })
   .strict();
 export type AllowedGearType = zod.infer<typeof AllowedGearSchema>;
+
+const UseGearSchema = zod
+  .object({
+    name: zod.string(),
+    enterName: zod.optional(zod.union([zod.literal(true), zod.string()])),
+    rating: zod.optional(zod.number()),
+    consumeCapacity: zod.optional(zod.literal(true)),
+    quantity: zod.optional(zod.number()),
+    category: zod.optional(zod.nativeEnum(gearCategoryEnum)),
+  })
+  .strict();
+export type useGearType = zod.infer<typeof UseGearSchema>;
+
+export const UseGearListSchema = zod.array(UseGearSchema);
+export type UseGearListType = zod.infer<typeof UseGearListSchema>;

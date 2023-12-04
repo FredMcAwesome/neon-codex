@@ -374,6 +374,7 @@ export const BonusXmlSchema = zod.union([
             })
             .strict(),
           NumberOrRatingSchema,
+          zod.literal("+Rating"),
         ])
       ),
       // Armour bonus against fire attacks/damage
@@ -442,6 +443,18 @@ export const BonusXmlSchema = zod.union([
       addspirit: zod.optional(
         zod.union([zod.array(SpiritSchema), SpiritSchema])
       ),
+      devicerating: zod.optional(zod.number()),
+      seats: zod.optional(StringOrNumberSchema),
+      accel: zod.optional(StringOrNumberSchema),
+      offroadaccel: zod.optional(StringOrNumberSchema),
+      handling: zod.optional(StringOrNumberSchema),
+      offroadhandling: zod.optional(StringOrNumberSchema),
+      speed: zod.optional(StringOrNumberSchema),
+      offroadspeed: zod.optional(StringOrNumberSchema),
+      pilot: zod.optional(zod.string()),
+      sensor: zod.optional(StringOrNumberSchema),
+      body: zod.optional(StringOrNumberSchema),
+
       // One-off bonuses e.g. very specific to one thing
       // Reduces future cyberware essence cost
       adapsin: zod.optional(zod.literal("")),

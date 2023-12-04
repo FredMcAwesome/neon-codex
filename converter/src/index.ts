@@ -27,7 +27,10 @@ ParseDrugs();
 import { ParseDrugComponents } from "./xmlParser/otherGear/DrugComponentParser.js";
 ParseDrugComponents();
 
-import { ParseGear } from "./xmlParser/otherGear/GenericGearParser.js";
 import { ParseVehicles } from "./xmlParser/riggerGear/VehicleParser.js";
-ParseGear();
 ParseVehicles();
+import { ParseVehicleMods } from "./xmlParser/riggerGear/VehicleModParser.js";
+ParseVehicleMods();
+
+import { ParseGear } from "./xmlParser/otherGear/GenericGearParser.js";
+ParseGear();

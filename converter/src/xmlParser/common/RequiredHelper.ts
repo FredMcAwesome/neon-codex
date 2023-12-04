@@ -145,8 +145,12 @@ const convertWeaponDetailsInner = function (
       : [weaponName];
     weaponNameArray.forEach((weapon) => {
       if (typeof weapon === "object") {
+        assert(typeof weapon.xmltext === "string");
         requiredWeaponNames.push(weapon.xmltext);
-      } else requiredWeaponNames.push(weapon);
+      } else {
+        assert(typeof weapon === "string");
+        requiredWeaponNames.push(weapon);
+      }
     });
   }
   if (ammo !== undefined) {
@@ -253,6 +257,8 @@ const convertWeaponDetailsInner = function (
   }
   if (damage) {
     let annotation = undefined;
+
+    assert(typeof damage.xmltext === "string");
     if (damage.xmltext.includes("(fire)")) {
       annotation = damageAnnotationEnum.Fire;
     } else if (damage.xmltext.includes("(f)")) {

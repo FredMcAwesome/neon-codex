@@ -23,13 +23,13 @@
       "minimum": [1],
       "maximum": [600]
     },
+    "blockedMountList": [],
+    "requirements": {},
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [0],
-    "blockedMountList": [],
-    "requirements": {},
     "source": "Shadowrun 5 Core Rulebook",
     "page": 0,
     "capacity": [0],
@@ -59,13 +59,13 @@
       "minimum": [1],
       "maximum": [600]
     },
+    "blockedMountList": [],
+    "requirements": {},
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [0],
-    "blockedMountList": [],
-    "requirements": {},
     "source": "Shadowrun 5 Core Rulebook",
     "page": 0,
     "capacity": [0],
@@ -84,15 +84,15 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "allowedGear": {
+      "gearCategoryList": ["Commlinks"]
+    },
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [2000],
-    "blockedMountList": [],
-    "allowedGear": {
-      "gearCategoryList": ["Commlinks"]
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 451,
     "capacity": [2]
@@ -118,6 +118,7 @@
       "minimum": [1],
       "maximum": [3]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [
         {
@@ -137,7 +138,6 @@
     "cost": {
       "ratingLinked": [43000, 97000, 208000]
     },
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 452,
     "capacity": [0],
@@ -167,12 +167,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [12],
       "restriction": "Forbidden"
     },
     "cost": [10000],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 452,
     "capacity": [1]
@@ -189,12 +189,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [16],
       "restriction": "Forbidden"
     },
     "cost": [25000],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 452,
     "capacity": [2]
@@ -211,12 +211,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [20],
       "restriction": "Forbidden"
     },
     "cost": [40000],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 452,
     "capacity": [3]
@@ -234,15 +234,15 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "allowedGear": {
+      "gearCategoryList": ["Cyberdecks"]
+    },
     "availability": {
       "rating": [5],
       "restriction": "Restricted"
     },
     "cost": [5000],
-    "blockedMountList": [],
-    "allowedGear": {
-      "gearCategoryList": ["Cyberdecks"]
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 452,
     "capacity": [4]
@@ -259,12 +259,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [2],
       "restriction": "Legal"
     },
     "cost": [1000],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 452,
     "capacity": [0],
@@ -287,6 +287,7 @@
       "minimum": [1],
       "maximum": [12]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [
         {
@@ -316,7 +317,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 452,
     "capacity": [1],
@@ -333,6 +333,7 @@
       "minimum": [1],
       "maximum": [6]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [
         {
@@ -362,7 +363,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 452,
     "capacity": [0]
@@ -376,12 +376,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [12],
       "restriction": "Restricted"
     },
     "cost": [4000],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 452,
     "capacity": [0]
@@ -406,6 +406,14 @@
     "rating": {
       "minimum": [1],
       "maximum": [6]
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "skillSoftMaxRating": {
+        "bonus": {
+          "option": "Rating"
+        }
+      }
     },
     "availability": {
       "rating": [
@@ -436,14 +444,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "bonus": {
-      "skillSoftMaxRating": {
-        "bonus": {
-          "option": "Rating"
-        }
-      }
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 452,
     "capacity": [0]
@@ -457,6 +457,7 @@
       "minimum": [1],
       "maximum": [6]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [
         {
@@ -486,7 +487,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 452,
     "capacity": [0]
@@ -503,12 +503,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [800],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 452,
     "capacity": [0]
@@ -525,12 +525,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [800],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 452,
     "capacity": [0]
@@ -544,6 +544,7 @@
       "minimum": [1],
       "maximum": [6]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [10],
       "restriction": "Legal"
@@ -561,7 +562,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 452,
     "capacity": [2]
@@ -575,6 +575,7 @@
       "minimum": [1],
       "maximum": [6]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [
         {
@@ -604,7 +605,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 452,
     "capacity": [0]
@@ -638,25 +638,6 @@
       "minimum": [1],
       "maximum": [6]
     },
-    "availability": {
-      "rating": [
-        {
-          "subnumbers": [
-            {
-              "option": "Rating"
-            },
-            {
-              "operator": "*"
-            },
-            3
-          ]
-        }
-      ],
-      "restriction": "Legal"
-    },
-    "cost": {
-      "ratingLinked": [4000, 6000, 10000, 14000, 18000, 22000]
-    },
     "blockedMountList": [],
     "bonus": {
       "disableQualities": [
@@ -687,6 +668,25 @@
       "gearCategoryList": ["Custom", "Sensors"]
     },
     "allowCategoryList": ["Eyeware"],
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            3
+          ]
+        }
+      ],
+      "restriction": "Legal"
+    },
+    "cost": {
+      "ratingLinked": [4000, 6000, 10000, 14000, 18000, 22000]
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 453,
     "capacity": [
@@ -726,12 +726,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [1000],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 453,
     "capacity": [1]
@@ -748,12 +748,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [1000],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 453,
     "capacity": [
@@ -774,12 +774,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [1500],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 453,
     "capacity": [2]
@@ -796,12 +796,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [6],
       "restriction": "Legal"
     },
     "cost": [6000],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 453,
     "capacity": [6],
@@ -819,6 +819,7 @@
       "minimum": [1],
       "maximum": [6]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [16],
       "restriction": "Forbidden"
@@ -836,7 +837,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 453,
     "capacity": [1]
@@ -853,15 +853,15 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "smartlinkAccuracy": 2
+    },
     "availability": {
       "rating": [8],
       "restriction": "Restricted"
     },
     "cost": [4000],
-    "blockedMountList": [],
-    "bonus": {
-      "smartlinkAccuracy": 2
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 453,
     "capacity": [3]
@@ -878,12 +878,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [1500],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 453,
     "capacity": [2]
@@ -902,6 +902,7 @@
       "minimum": [1],
       "maximum": [6]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [
         {
@@ -921,7 +922,6 @@
     "cost": {
       "ratingLinked": [4000, 8000, 12000, 20000, 25000, 30000]
     },
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 453,
     "capacity": {
@@ -940,12 +940,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [2000],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 453,
     "capacity": [2]
@@ -979,6 +979,11 @@
       "minimum": [1],
       "maximum": [6]
     },
+    "blockedMountList": [],
+    "allowedGear": {
+      "gearCategoryList": ["Custom", "Sensors"]
+    },
+    "allowCategoryList": ["Earware"],
     "availability": {
       "rating": [
         {
@@ -998,11 +1003,6 @@
     "cost": {
       "ratingLinked": [3000, 4500, 7500, 11000, 15500, 21000]
     },
-    "blockedMountList": [],
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
-    "allowCategoryList": ["Earware"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 453,
     "capacity": [
@@ -1040,6 +1040,7 @@
       "minimum": [1],
       "maximum": [6]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [
         {
@@ -1059,7 +1060,6 @@
     "cost": {
       "ratingLinked": [4000, 8000, 12000, 20000, 25000, 30000]
     },
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 453,
     "capacity": {
@@ -1075,12 +1075,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [8000],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 453,
     "capacity": [4]
@@ -1094,15 +1094,15 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "sonicResistance": 2
+    },
     "availability": {
       "rating": [6],
       "restriction": "Legal"
     },
     "cost": [2250],
-    "blockedMountList": [],
-    "bonus": {
-      "sonicResistance": 2
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 454,
     "capacity": [1]
@@ -1119,6 +1119,7 @@
       "minimum": [1],
       "maximum": [6]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [
         {
@@ -1148,7 +1149,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 454,
     "capacity": [
@@ -1169,12 +1169,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [1000],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 454,
     "capacity": [
@@ -1195,12 +1195,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [4000],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 454,
     "capacity": [2]
@@ -1214,11 +1214,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [12],
-      "restriction": "Restricted"
-    },
-    "cost": [18000],
     "blockedMountList": [],
     "bonus": {
       "damageResistance": 2,
@@ -1227,6 +1222,11 @@
         "bonus": 2
       }
     },
+    "availability": {
+      "rating": [12],
+      "restriction": "Restricted"
+    },
+    "cost": [18000],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 454,
     "capacity": [0]
@@ -1240,11 +1240,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [8],
-      "restriction": "Restricted"
-    },
-    "cost": [8000],
     "blockedMountList": [],
     "bonus": {
       "damageResistance": 1,
@@ -1253,6 +1248,11 @@
         "bonus": 1
       }
     },
+    "availability": {
+      "rating": [8],
+      "restriction": "Restricted"
+    },
+    "cost": [8000],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 454,
     "capacity": [0]
@@ -1266,11 +1266,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [16],
-      "restriction": "Restricted"
-    },
-    "cost": [30000],
     "blockedMountList": [],
     "bonus": {
       "damageResistance": 3,
@@ -1279,6 +1274,11 @@
         "bonus": 3
       }
     },
+    "availability": {
+      "rating": [16],
+      "restriction": "Restricted"
+    },
+    "cost": [30000],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 454,
     "capacity": [0]
@@ -1303,6 +1303,15 @@
     "rating": {
       "minimum": [1],
       "maximum": [6]
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "armour": {
+        "nonStacking": true,
+        "bonus": {
+          "option": "Rating"
+        }
+      }
     },
     "availability": {
       "rating": [
@@ -1333,15 +1342,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "bonus": {
-      "armour": {
-        "nonStacking": true,
-        "bonus": {
-          "option": "Rating"
-        }
-      }
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 454,
     "capacity": [0]
@@ -1358,12 +1358,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [3000],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 454,
     "capacity": [1]
@@ -1380,12 +1380,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [5000],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 455,
     "capacity": [4]
@@ -1401,6 +1401,11 @@
     "rating": {
       "minimum": [1],
       "maximum": [3]
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "toxinInhalationImmune": true,
+      "pathogenInhalationImmune": true
     },
     "availability": {
       "rating": [
@@ -1423,11 +1428,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "bonus": {
-      "toxinInhalationImmune": true,
-      "pathogenInhalationImmune": true
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 455,
     "capacity": [3]
@@ -1452,6 +1452,14 @@
     "rating": {
       "minimum": [1],
       "maximum": [4]
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "disableQualities": [
+        {
+          "name": "Celerity"
+        }
+      ]
     },
     "availability": {
       "rating": [
@@ -1482,14 +1490,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "bonus": {
-      "disableQualities": [
-        {
-          "name": "Celerity"
-        }
-      ]
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 455,
     "capacity": [0]
@@ -1515,6 +1515,7 @@
       "minimum": [1],
       "maximum": [3]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [
         {
@@ -1544,7 +1545,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 455,
     "capacity": [0],
@@ -1571,6 +1571,7 @@
       "minimum": [1],
       "maximum": [6]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [
         {
@@ -1600,7 +1601,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 455,
     "capacity": [0]
@@ -1617,12 +1617,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [6],
       "restriction": "Legal"
     },
     "cost": [7500],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 455,
     "capacity": [2]
@@ -1637,6 +1637,19 @@
     "rating": {
       "minimum": [1],
       "maximum": [3]
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "initiative": {
+        "bonusDice": {
+          "option": "Rating"
+        }
+      },
+      "disableQualities": [
+        {
+          "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
+        }
+      ]
     },
     "availability": {
       "ratingLinked": [
@@ -1656,19 +1669,6 @@
     },
     "cost": {
       "ratingLinked": [39000, 149000, 217000]
-    },
-    "blockedMountList": [],
-    "bonus": {
-      "initiative": {
-        "bonusDice": {
-          "option": "Rating"
-        }
-      },
-      "disableQualities": [
-        {
-          "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
-        }
-      ]
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 455,
@@ -1699,11 +1699,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [4],
-      "restriction": "Legal"
-    },
-    "cost": [15000],
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
     "bonus": {
@@ -1722,6 +1717,11 @@
       "Headware",
       "Nanocybernetics"
     ],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [15000],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 456,
     "capacity": [15],
@@ -1739,11 +1739,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [4],
-      "restriction": "Legal"
-    },
-    "cost": [15000],
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "selectSide": true,
     "bonus": {
@@ -1767,6 +1762,11 @@
       "Headware",
       "Nanocybernetics"
     ],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [15000],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 456,
     "capacity": [20],
@@ -1784,11 +1784,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [2],
-      "restriction": "Legal"
-    },
-    "cost": [5000],
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "selectSide": true,
     "bonus": {
@@ -1811,6 +1806,11 @@
       "Headware",
       "Nanocybernetics"
     ],
+    "availability": {
+      "rating": [2],
+      "restriction": "Legal"
+    },
+    "cost": [5000],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 456,
     "capacity": [4]
@@ -1827,11 +1827,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [2],
-      "restriction": "Legal"
-    },
-    "cost": [5000],
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
     "allowedGear": {
@@ -1847,6 +1842,11 @@
       "Headware",
       "Nanocybernetics"
     ],
+    "availability": {
+      "rating": [2],
+      "restriction": "Legal"
+    },
+    "cost": [5000],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 456,
     "capacity": [4]
@@ -1863,11 +1863,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [4],
-      "restriction": "Legal"
-    },
-    "cost": [10000],
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
     "pairBonus": {
@@ -1895,6 +1890,11 @@
       "Headware",
       "Nanocybernetics"
     ],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [10000],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 456,
     "capacity": [10]
@@ -1911,11 +1911,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [4],
-      "restriction": "Legal"
-    },
-    "cost": [10000],
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "selectSide": true,
     "bonus": {
@@ -1950,6 +1945,11 @@
       "Headware",
       "Nanocybernetics"
     ],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [10000],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 456,
     "capacity": [12]
@@ -1966,11 +1966,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [12],
-      "restriction": "Legal"
-    },
-    "cost": [20000],
     "blockedMountList": [],
     "bonus": {
       "addPhysicalBoxes": 1
@@ -1988,6 +1983,11 @@
       "Headware",
       "Nanocybernetics"
     ],
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [20000],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 456,
     "capacity": [10],
@@ -2005,11 +2005,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [16],
-      "restriction": "Legal"
-    },
-    "cost": [10000],
     "blockedMountList": [],
     "bonus": {
       "addPhysicalBoxes": 1
@@ -2027,6 +2022,11 @@
       "Headware",
       "Nanocybernetics"
     ],
+    "availability": {
+      "rating": [16],
+      "restriction": "Legal"
+    },
+    "cost": [10000],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 456,
     "capacity": [4],
@@ -2044,11 +2044,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [4],
-      "restriction": "Legal"
-    },
-    "cost": [20000],
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
     "bonus": {
@@ -2067,6 +2062,11 @@
       "Headware",
       "Nanocybernetics"
     ],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [20000],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 456,
     "capacity": [8],
@@ -2084,11 +2084,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [4],
-      "restriction": "Legal"
-    },
-    "cost": [20000],
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "selectSide": true,
     "bonus": {
@@ -2112,6 +2107,11 @@
       "Headware",
       "Nanocybernetics"
     ],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [20000],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 456,
     "capacity": [10],
@@ -2129,11 +2129,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [2],
-      "restriction": "Legal"
-    },
-    "cost": [6000],
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "selectSide": true,
     "bonus": {
@@ -2156,6 +2151,11 @@
       "Headware",
       "Nanocybernetics"
     ],
+    "availability": {
+      "rating": [2],
+      "restriction": "Legal"
+    },
+    "cost": [6000],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 456,
     "capacity": [2]
@@ -2172,11 +2172,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [2],
-      "restriction": "Legal"
-    },
-    "cost": [6000],
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
     "allowedGear": {
@@ -2192,6 +2187,11 @@
       "Headware",
       "Nanocybernetics"
     ],
+    "availability": {
+      "rating": [2],
+      "restriction": "Legal"
+    },
+    "cost": [6000],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 456,
     "capacity": [2]
@@ -2208,11 +2208,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [4],
-      "restriction": "Legal"
-    },
-    "cost": [12000],
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
     "pairBonus": {
@@ -2240,6 +2235,11 @@
       "Headware",
       "Nanocybernetics"
     ],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [12000],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 456,
     "capacity": [5]
@@ -2256,11 +2256,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [4],
-      "restriction": "Legal"
-    },
-    "cost": [12000],
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "selectSide": true,
     "bonus": {
@@ -2295,6 +2290,11 @@
       "Headware",
       "Nanocybernetics"
     ],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [12000],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 456,
     "capacity": [6]
@@ -2311,11 +2311,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [12],
-      "restriction": "Legal"
-    },
-    "cost": [25000],
     "blockedMountList": [],
     "bonus": {
       "addPhysicalBoxes": 1
@@ -2333,6 +2328,11 @@
       "Headware",
       "Nanocybernetics"
     ],
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [25000],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 456,
     "capacity": [5],
@@ -2350,11 +2350,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [16],
-      "restriction": "Legal"
-    },
-    "cost": [15000],
     "blockedMountList": [],
     "bonus": {
       "addPhysicalBoxes": 1
@@ -2371,6 +2366,11 @@
       "Cyber Implant Weapon",
       "Nanocybernetics"
     ],
+    "availability": {
+      "rating": [16],
+      "restriction": "Legal"
+    },
+    "cost": [15000],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 456,
     "capacity": [2],
@@ -2387,6 +2387,14 @@
     "rating": {
       "minimum": [1],
       "maximum": [3]
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "armour": {
+        "bonus": {
+          "option": "Rating"
+        }
+      }
     },
     "availability": {
       "rating": [
@@ -2417,14 +2425,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "bonus": {
-      "armour": {
-        "bonus": {
-          "option": "Rating"
-        }
-      }
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 456,
     "capacity": [
@@ -2457,6 +2457,7 @@
         }
       ]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [
         {
@@ -2503,7 +2504,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 456,
     "capacity": [0]
@@ -2532,6 +2532,7 @@
         }
       ]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [
         {
@@ -2578,7 +2579,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 456,
     "capacity": [0]
@@ -2595,6 +2595,7 @@
       "minimum": [1],
       "maximum": [3]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [
         {
@@ -2624,7 +2625,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 456,
     "capacity": [
@@ -2653,6 +2653,7 @@
       "minimum": [1],
       "maximum": [3]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [
         {
@@ -2682,7 +2683,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 456,
     "capacity": [
@@ -2711,12 +2711,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Restricted"
     },
     "cost": [2000],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 457,
     "capacity": [5]
@@ -2733,13 +2733,13 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": ["Elbow", "Shoulder"],
+    "requirements": {},
     "availability": {
       "rating": [12],
       "restriction": "Forbidden"
     },
     "cost": [6000],
-    "blockedMountList": ["Elbow", "Shoulder"],
-    "requirements": {},
     "source": "Shadowrun 5 Core Rulebook",
     "page": 456,
     "capacity": [8]
@@ -2756,12 +2756,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [12],
       "restriction": "Restricted"
     },
     "cost": [3000],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 456,
     "capacity": [3]
@@ -2778,6 +2778,8 @@
       "minimum": [1],
       "maximum": [6]
     },
+    "blockedMountList": ["Ankle", "Knee", "Hip"],
+    "requirements": {},
     "availability": {
       "rating": [9],
       "restriction": "Legal"
@@ -2795,8 +2797,6 @@
         ]
       }
     ],
-    "blockedMountList": ["Ankle", "Knee", "Hip"],
-    "requirements": {},
     "source": "Shadowrun 5 Core Rulebook",
     "page": 457,
     "capacity": [
@@ -2817,12 +2817,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [6],
       "restriction": "Legal"
     },
     "cost": [8000],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 457,
     "capacity": [5]
@@ -2840,13 +2840,13 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "requirements": {},
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [1000],
-    "blockedMountList": [],
-    "requirements": {},
     "source": "Shadowrun 5 Core Rulebook",
     "page": 458,
     "capacity": [1],
@@ -2865,14 +2865,14 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "addWeapon": "Cyber Microgrenade Launcher",
+    "blockedMountList": [],
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [20],
       "restriction": "Forbidden"
     },
     "cost": [30000],
-    "addWeapon": "Cyber Microgrenade Launcher",
-    "blockedMountList": [],
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 458,
     "capacity": [15]
@@ -2889,15 +2889,15 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "addWeapon": "Hand Blade",
+    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
+    "requirements": {},
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [10],
       "restriction": "Forbidden"
     },
     "cost": [2500],
-    "addWeapon": "Hand Blade",
-    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
-    "requirements": {},
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 458,
     "capacity": [2]
@@ -2914,15 +2914,15 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "addWeapon": "Hand Razors",
+    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
+    "requirements": {},
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [8],
       "restriction": "Forbidden"
     },
     "cost": [1250],
-    "addWeapon": "Hand Razors",
-    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
-    "requirements": {},
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 458,
     "capacity": [2]
@@ -2939,14 +2939,14 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "addWeapon": "Heavy Cyber Pistol",
+    "blockedMountList": [],
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [12],
       "restriction": "Restricted"
     },
     "cost": [4300],
-    "addWeapon": "Heavy Cyber Pistol",
-    "blockedMountList": [],
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 458,
     "capacity": [6]
@@ -2963,14 +2963,14 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "addWeapon": "Cyber Hold-Out",
+    "blockedMountList": [],
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [8],
       "restriction": "Restricted"
     },
     "cost": [2000],
-    "addWeapon": "Cyber Hold-Out",
-    "blockedMountList": [],
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 458,
     "capacity": [2]
@@ -2988,13 +2988,13 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "requirements": {},
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [1000],
-    "blockedMountList": [],
-    "requirements": {},
     "source": "Shadowrun 5 Core Rulebook",
     "page": 458,
     "capacity": [1],
@@ -3013,14 +3013,14 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "addWeapon": "Light Cyber Pistol",
+    "blockedMountList": [],
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [10],
       "restriction": "Restricted"
     },
     "cost": [3900],
-    "addWeapon": "Light Cyber Pistol",
-    "blockedMountList": [],
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 458,
     "capacity": [4]
@@ -3037,14 +3037,14 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "addWeapon": "Cyber Machine Pistol",
+    "blockedMountList": [],
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [12],
       "restriction": "Restricted"
     },
     "cost": [3500],
-    "addWeapon": "Cyber Machine Pistol",
-    "blockedMountList": [],
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 458,
     "capacity": [6]
@@ -3061,15 +3061,15 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "addWeapon": "Shock Hand",
+    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
+    "requirements": {},
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [8],
       "restriction": "Restricted"
     },
     "cost": [5000],
-    "addWeapon": "Shock Hand",
-    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
-    "requirements": {},
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 458,
     "capacity": [4]
@@ -3086,14 +3086,14 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "addWeapon": "Cyber Shotgun",
+    "blockedMountList": [],
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [12],
       "restriction": "Restricted"
     },
     "cost": [8500],
-    "addWeapon": "Cyber Shotgun",
-    "blockedMountList": [],
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 458,
     "capacity": [10]
@@ -3111,13 +3111,13 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "requirements": {},
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [1000],
-    "blockedMountList": [],
-    "requirements": {},
     "source": "Shadowrun 5 Core Rulebook",
     "page": 458,
     "capacity": [2],
@@ -3136,14 +3136,14 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "addWeapon": "Spurs",
+    "blockedMountList": [],
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [12],
       "restriction": "Forbidden"
     },
     "cost": [5000],
-    "addWeapon": "Spurs",
-    "blockedMountList": [],
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 458,
     "capacity": [3]
@@ -3160,14 +3160,14 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "addWeapon": "Cyber Submachine Gun",
+    "blockedMountList": [],
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [12],
       "restriction": "Restricted"
     },
     "cost": [4800],
-    "addWeapon": "Cyber Submachine Gun",
-    "blockedMountList": [],
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 458,
     "capacity": [8]
@@ -3181,12 +3181,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [3000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 78,
     "capacity": [1]
@@ -3212,6 +3212,7 @@
       "minimum": [1],
       "maximum": [6]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [
         {
@@ -3241,7 +3242,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 79,
     "capacity": [0]
@@ -3255,12 +3255,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [1000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 79,
     "capacity": [0]
@@ -3274,12 +3274,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [12],
       "restriction": "Restricted"
     },
     "cost": [20000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 79,
     "capacity": [8]
@@ -3308,6 +3308,14 @@
       "minimum": [1],
       "maximum": [6]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "skillSoftMaxRating": {
+        "bonus": {
+          "option": "Rating"
+        }
+      }
+    },
     "availability": {
       "rating": [
         {
@@ -3329,14 +3337,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "bonus": {
-      "skillSoftMaxRating": {
-        "bonus": {
-          "option": "Rating"
-        }
-      }
-    },
     "source": "Chrome Flesh",
     "page": 80,
     "capacity": [0]
@@ -3350,12 +3350,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [2000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 80,
     "capacity": [1]
@@ -3369,12 +3369,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [500],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 80,
     "capacity": [1]
@@ -3400,6 +3400,7 @@
       "minimum": [1],
       "maximum": [4]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [
         {
@@ -3429,7 +3430,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 81,
     "capacity": [
@@ -3447,12 +3447,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [1000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 81,
     "capacity": [1]
@@ -3466,12 +3466,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [2000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 81,
     "capacity": [0]
@@ -3485,12 +3485,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Forbidden"
     },
     "cost": [2000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 81,
     "capacity": [0]
@@ -3507,13 +3507,13 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "forbidden": {},
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [1000],
-    "blockedMountList": [],
-    "forbidden": {},
     "source": "Chrome Flesh",
     "page": 75,
     "capacity": [2]
@@ -3530,13 +3530,13 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "requirements": {},
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [1000],
-    "blockedMountList": [],
-    "requirements": {},
     "source": "Chrome Flesh",
     "page": 75,
     "capacity": [2]
@@ -3553,12 +3553,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [2],
       "restriction": "Legal"
     },
     "cost": [500],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 76,
     "capacity": [2]
@@ -3575,12 +3575,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [100],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 76,
     "capacity": [2]
@@ -3597,12 +3597,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [100],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 76,
     "capacity": [2]
@@ -3619,12 +3619,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [1000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 76,
     "capacity": [3]
@@ -3638,12 +3638,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [2000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 76,
     "capacity": [2]
@@ -3660,12 +3660,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [1000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 77,
     "capacity": [4],
@@ -3690,12 +3690,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [6],
       "restriction": "Legal"
     },
     "cost": [1000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 77,
     "capacity": [4]
@@ -3710,12 +3710,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [2],
       "restriction": "Legal"
     },
     "cost": [500],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 74,
     "capacity": [1]
@@ -3729,12 +3729,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [250],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 75,
     "capacity": [1]
@@ -3748,12 +3748,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [6],
       "restriction": "Legal"
     },
     "cost": [500],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 75,
     "capacity": [1]
@@ -3770,12 +3770,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [250],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 75,
     "capacity": [1]
@@ -3789,6 +3789,7 @@
       "minimum": [1],
       "maximum": [6]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
@@ -3806,7 +3807,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 75,
     "capacity": [1]
@@ -3820,12 +3820,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [1000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 75,
     "capacity": [1]
@@ -3842,16 +3842,16 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [2],
-      "restriction": "Legal"
-    },
-    "cost": [500],
     "blockedMountList": [],
     "allowedGear": {
       "gearCategoryList": ["Drugs", "Toxins"]
     },
     "allowCategoryList": ["Auto Injector Mods"],
+    "availability": {
+      "rating": [2],
+      "restriction": "Legal"
+    },
+    "cost": [500],
     "source": "Chrome Flesh",
     "page": 82,
     "capacity": [0]
@@ -3869,12 +3869,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [250],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 82,
     "capacity": [0]
@@ -3891,12 +3891,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Forbidden"
     },
     "cost": [750],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 82,
     "capacity": [0]
@@ -3913,12 +3913,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [2000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 82,
     "capacity": [0]
@@ -3935,12 +3935,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [2],
       "restriction": "Legal"
     },
     "cost": [500],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 82,
     "capacity": [1]
@@ -3966,6 +3966,7 @@
       "minimum": [1],
       "maximum": [6]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
@@ -3983,7 +3984,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 82,
     "capacity": [
@@ -4004,17 +4004,17 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [8],
-      "restriction": "Legal"
-    },
-    "cost": [500],
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "pairBonus": {
       "swimSpeedPercentageModifier": 50,
       "sprintSpeedPercentageModifier": 50
     },
     "requirements": {},
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [500],
     "source": "Chrome Flesh",
     "page": 83,
     "capacity": [1]
@@ -4031,17 +4031,17 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [8],
-      "restriction": "Legal"
-    },
-    "cost": [500],
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "pairBonus": {
       "swimSpeedPercentageModifier": 50,
       "sprintSpeedPercentageModifier": 50
     },
     "requirements": {},
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [500],
     "source": "Chrome Flesh",
     "page": 83,
     "capacity": [1]
@@ -4058,12 +4058,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [100],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 83,
     "capacity": [1]
@@ -4080,13 +4080,13 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
+    "selectSide": true,
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [2000],
-    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
-    "selectSide": true,
     "source": "Chrome Flesh",
     "page": 83,
     "capacity": [0]
@@ -4103,15 +4103,15 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "addWeapon": "Foot Anchor",
+    "blockedMountList": ["Ankle", "Knee", "Hip"],
+    "selectSide": true,
+    "requirements": {},
     "availability": {
       "rating": [10],
       "restriction": "Legal"
     },
     "cost": [2000],
-    "addWeapon": "Foot Anchor",
-    "blockedMountList": ["Ankle", "Knee", "Hip"],
-    "selectSide": true,
-    "requirements": {},
     "source": "Chrome Flesh",
     "page": 84,
     "capacity": [3]
@@ -4125,12 +4125,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [2000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 84,
     "capacity": [0]
@@ -4144,12 +4144,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [15000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 84,
     "capacity": [0]
@@ -4166,12 +4166,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [1000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 84,
     "capacity": [2]
@@ -4185,12 +4185,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [2000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 85,
     "capacity": [0]
@@ -4207,14 +4207,14 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "addWeapon": "Retractable Climbing Claws",
+    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
+    "requirements": {},
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [2000],
-    "addWeapon": "Retractable Climbing Claws",
-    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
-    "requirements": {},
     "source": "Chrome Flesh",
     "page": 86,
     "capacity": [2]
@@ -4231,14 +4231,14 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "addWeapon": "Retractable Climbing Claws",
+    "blockedMountList": ["Ankle", "Knee", "Hip"],
+    "requirements": {},
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [2000],
-    "addWeapon": "Retractable Climbing Claws",
-    "blockedMountList": ["Ankle", "Knee", "Hip"],
-    "requirements": {},
     "source": "Chrome Flesh",
     "page": 86,
     "capacity": [2]
@@ -4252,12 +4252,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": ["Wrist", "Elbow", "Shoulder", "Ankle", "Knee", "Hip"],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [6000],
-    "blockedMountList": ["Wrist", "Elbow", "Shoulder", "Ankle", "Knee", "Hip"],
     "source": "Chrome Flesh",
     "page": 86,
     "capacity": [0]
@@ -4271,12 +4271,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [1000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 86,
     "capacity": [0]
@@ -4291,25 +4291,6 @@
     "rating": {
       "minimum": [1],
       "maximum": [3]
-    },
-    "availability": {
-      "ratingLinked": [
-        {
-          "rating": [12],
-          "restriction": "Forbidden"
-        },
-        {
-          "rating": [18],
-          "restriction": "Forbidden"
-        },
-        {
-          "rating": [24],
-          "restriction": "Forbidden"
-        }
-      ]
-    },
-    "cost": {
-      "ratingLinked": [40000, 125000, 205000]
     },
     "blockedMountList": [],
     "bonus": {
@@ -4332,6 +4313,25 @@
           "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
         }
       ]
+    },
+    "availability": {
+      "ratingLinked": [
+        {
+          "rating": [12],
+          "restriction": "Forbidden"
+        },
+        {
+          "rating": [18],
+          "restriction": "Forbidden"
+        },
+        {
+          "rating": [24],
+          "restriction": "Forbidden"
+        }
+      ]
+    },
+    "cost": {
+      "ratingLinked": [40000, 125000, 205000]
     },
     "source": "Chrome Flesh",
     "page": 84,
@@ -4361,6 +4361,12 @@
       "minimum": [1],
       "maximum": [6]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "activeSoftMaxRating": {
+        "option": "Rating"
+      }
+    },
     "availability": {
       "rating": [
         {
@@ -4390,12 +4396,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "bonus": {
-      "activeSoftMaxRating": {
-        "option": "Rating"
-      }
-    },
     "source": "Chrome Flesh",
     "page": 81,
     "capacity": [0]
@@ -4421,6 +4421,7 @@
       "minimum": [1],
       "maximum": [6]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
@@ -4438,7 +4439,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 84,
     "capacity": [
@@ -4459,6 +4459,7 @@
       "minimum": [1],
       "maximum": [4]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [
         {
@@ -4473,7 +4474,6 @@
         "max": 10000
       }
     },
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 72,
     "capacity": [0]
@@ -4490,6 +4490,7 @@
       "minimum": [1],
       "maximum": [10]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
@@ -4507,7 +4508,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 73,
     "ratingLabel": "Rating_LengthInCmBy10",
@@ -4525,12 +4525,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [2],
       "restriction": "Legal"
     },
     "cost": [250],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 73,
     "capacity": [0]
@@ -4547,12 +4547,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [1000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 73,
     "capacity": [1]
@@ -4569,12 +4569,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [6],
       "restriction": "Legal"
     },
     "cost": [2000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 73,
     "capacity": [1]
@@ -4591,12 +4591,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [100],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 73,
     "capacity": [1]
@@ -4613,12 +4613,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [500],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 73,
     "capacity": [2]
@@ -4635,12 +4635,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [1000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 73,
     "capacity": [4]
@@ -4654,12 +4654,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [6000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 73,
     "capacity": [0]
@@ -4673,12 +4673,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [6000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 73,
     "capacity": [0]
@@ -4692,12 +4692,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [2000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 74,
     "capacity": [0]
@@ -4711,12 +4711,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [12],
       "restriction": "Restricted"
     },
     "cost": [8000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 74,
     "capacity": [2]
@@ -4733,12 +4733,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [500],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 74,
     "capacity": [1]
@@ -4755,6 +4755,10 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
+    },
     "availability": {
       "rating": [2],
       "restriction": "Legal"
@@ -4764,10 +4768,6 @@
         "min": 100,
         "max": 20000
       }
-    },
-    "blockedMountList": [],
-    "bonus": {
-      "enterName": true
     },
     "source": "Chrome Flesh",
     "page": 72,
@@ -4785,16 +4785,16 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [0],
-      "restriction": "Legal"
-    },
-    "cost": [250],
     "blockedMountList": [],
     "selectSide": true,
     "allowedGear": {
       "gearCategoryList": ["Custom", "Sensors"]
     },
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [250],
     "source": "Chrome Flesh",
     "page": 86,
     "capacity": [0],
@@ -4812,16 +4812,16 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [0],
-      "restriction": "Legal"
-    },
-    "cost": [100],
     "blockedMountList": [],
     "selectSide": true,
     "allowedGear": {
       "gearCategoryList": ["Custom", "Sensors"]
     },
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [100],
     "source": "Chrome Flesh",
     "page": 86,
     "capacity": [0]
@@ -4838,16 +4838,16 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [0],
-      "restriction": "Legal"
-    },
-    "cost": [20],
     "blockedMountList": [],
     "selectSide": true,
     "allowedGear": {
       "gearCategoryList": ["Custom", "Sensors"]
     },
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [20],
     "source": "Chrome Flesh",
     "page": 86,
     "capacity": [0]
@@ -4864,11 +4864,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [0],
-      "restriction": "Legal"
-    },
-    "cost": [250],
     "blockedMountList": [],
     "selectSide": true,
     "bonus": {
@@ -4883,6 +4878,11 @@
     "allowedGear": {
       "gearCategoryList": ["Custom", "Sensors"]
     },
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [250],
     "source": "Chrome Flesh",
     "page": 86,
     "capacity": [0],
@@ -4900,11 +4900,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [0],
-      "restriction": "Legal"
-    },
-    "cost": [100],
     "blockedMountList": [],
     "selectSide": true,
     "bonus": {
@@ -4919,6 +4914,11 @@
     "allowedGear": {
       "gearCategoryList": ["Custom", "Sensors"]
     },
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [100],
     "source": "Chrome Flesh",
     "page": 86,
     "capacity": [0]
@@ -4935,11 +4935,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [0],
-      "restriction": "Legal"
-    },
-    "cost": [20],
     "blockedMountList": [],
     "selectSide": true,
     "bonus": {
@@ -4954,6 +4949,11 @@
     "allowedGear": {
       "gearCategoryList": ["Custom", "Sensors"]
     },
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [20],
     "source": "Chrome Flesh",
     "page": 86,
     "capacity": [0]
@@ -4970,11 +4970,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [8],
-      "restriction": "Legal"
-    },
-    "cost": [1000],
     "blockedMountList": [],
     "allowedGear": {
       "gearNameList": [
@@ -4984,6 +4979,11 @@
         "Savior Medkit"
       ]
     },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
     "source": "Chrome Flesh",
     "page": 86,
     "capacity": [10]
@@ -5000,12 +5000,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [2000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 86,
     "capacity": [10]
@@ -5022,17 +5022,17 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [2],
-      "restriction": "Legal"
-    },
-    "cost": [500],
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
     "bonus": {
       "enterName": true
     },
     "requirements": {},
+    "availability": {
+      "rating": [2],
+      "restriction": "Legal"
+    },
+    "cost": [500],
     "source": "Chrome Flesh",
     "page": 86,
     "capacity": [1]
@@ -5049,14 +5049,14 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
+    "selectSide": true,
+    "requirements": {},
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [550],
-    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
-    "selectSide": true,
-    "requirements": {},
     "source": "Chrome Flesh",
     "page": 86,
     "capacity": [1]
@@ -5073,14 +5073,14 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
+    "selectSide": true,
+    "requirements": {},
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [550],
-    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
-    "selectSide": true,
-    "requirements": {},
     "source": "Chrome Flesh",
     "page": 86,
     "capacity": [1]
@@ -5097,17 +5097,17 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [4],
-      "restriction": "Legal"
-    },
-    "cost": [500],
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
     "requirements": {},
     "allowedGear": {
       "gearCategoryList": ["Ammunition"]
     },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [500],
     "source": "Chrome Flesh",
     "page": 86,
     "capacity": [1]
@@ -5124,14 +5124,14 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
+    "selectSide": true,
+    "requirements": {},
     "availability": {
       "rating": [8],
       "restriction": "Restricted"
     },
     "cost": [1000],
-    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
-    "selectSide": true,
-    "requirements": {},
     "source": "Chrome Flesh",
     "page": 86,
     "capacity": [1]
@@ -5149,11 +5149,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [4],
-      "restriction": "Legal"
-    },
-    "cost": [5000],
     "blockedMountList": [],
     "pairBonus": {
       "weaponAccuracy": {
@@ -5163,6 +5158,11 @@
       "runSpeedPercentageModifier": 100
     },
     "requirements": {},
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [5000],
     "source": "Chrome Flesh",
     "page": 87,
     "capacity": [4]
@@ -5179,15 +5179,15 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "addWeapon": "Grapple Fist",
+    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
+    "selectSide": true,
+    "requirements": {},
     "availability": {
       "rating": [12],
       "restriction": "Restricted"
     },
     "cost": [2000],
-    "addWeapon": "Grapple Fist",
-    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
-    "selectSide": true,
-    "requirements": {},
     "source": "Chrome Flesh",
     "page": 87,
     "capacity": [10]
@@ -5204,14 +5204,14 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
+    "selectSide": true,
+    "requirements": {},
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [8000],
-    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
-    "selectSide": true,
-    "requirements": {},
     "source": "Rigger 5",
     "page": 130,
     "capacity": [5],
@@ -5229,14 +5229,14 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": ["Ankle", "Knee", "Hip"],
+    "selectSide": true,
+    "requirements": {},
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [6000],
-    "blockedMountList": ["Ankle", "Knee", "Hip"],
-    "selectSide": true,
-    "requirements": {},
     "source": "Chrome Flesh",
     "page": 88,
     "capacity": [2]
@@ -5253,15 +5253,15 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "addWeapon": "Raptor Foot",
+    "blockedMountList": ["Ankle", "Knee", "Hip"],
+    "selectSide": true,
+    "requirements": {},
     "availability": {
       "rating": [8],
       "restriction": "Restricted"
     },
     "cost": [8000],
-    "addWeapon": "Raptor Foot",
-    "blockedMountList": ["Ankle", "Knee", "Hip"],
-    "selectSide": true,
-    "requirements": {},
     "source": "Chrome Flesh",
     "page": 88,
     "capacity": [4]
@@ -5278,17 +5278,17 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [4],
-      "restriction": "Legal"
-    },
-    "cost": [250],
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "pairBonus": {
       "walkSpeedPercentageModifier": 50,
       "runSpeedPercentageModifier": 50
     },
     "requirements": {},
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [250],
     "source": "Chrome Flesh",
     "page": 88,
     "capacity": [2]
@@ -5305,11 +5305,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [8],
-      "restriction": "Legal"
-    },
-    "cost": [2000],
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "bonus": {
       "disableQualities": [
@@ -5323,6 +5318,11 @@
       "runSpeedPercentageModifier": 100
     },
     "requirements": {},
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [2000],
     "source": "Chrome Flesh",
     "page": 88,
     "capacity": [4]
@@ -5339,13 +5339,13 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
+    "requirements": {},
     "availability": {
       "rating": [6],
       "restriction": "Legal"
     },
     "cost": [1000],
-    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
-    "requirements": {},
     "source": "Chrome Flesh",
     "page": 88,
     "capacity": [2]
@@ -5362,11 +5362,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [4],
-      "restriction": "Legal"
-    },
-    "cost": [6000],
     "blockedMountList": [],
     "selectSide": true,
     "allowedGear": {
@@ -5382,6 +5377,11 @@
       "Headware",
       "Nanocybernetics"
     ],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [6000],
     "source": "Chrome Flesh",
     "page": 88,
     "capacity": [3],
@@ -5399,11 +5399,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [4],
-      "restriction": "Legal"
-    },
-    "cost": [6000],
     "blockedMountList": [],
     "selectSide": true,
     "allowedGear": {
@@ -5419,6 +5414,11 @@
       "Headware",
       "Nanocybernetics"
     ],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [6000],
     "source": "Chrome Flesh",
     "page": 88,
     "capacity": [3],
@@ -5436,11 +5436,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [4],
-      "restriction": "Legal"
-    },
-    "cost": [7000],
     "blockedMountList": [],
     "selectSide": true,
     "allowedGear": {
@@ -5456,6 +5451,11 @@
       "Headware",
       "Nanocybernetics"
     ],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [7000],
     "source": "Chrome Flesh",
     "page": 88,
     "capacity": [1],
@@ -5473,11 +5473,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [4],
-      "restriction": "Legal"
-    },
-    "cost": [7000],
     "blockedMountList": [],
     "selectSide": true,
     "allowedGear": {
@@ -5493,6 +5488,11 @@
       "Headware",
       "Nanocybernetics"
     ],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [7000],
     "source": "Chrome Flesh",
     "page": 88,
     "capacity": [1],
@@ -5510,11 +5510,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [6],
-      "restriction": "Legal"
-    },
-    "cost": [12000],
     "blockedMountList": [],
     "selectSide": true,
     "pairBonus": {
@@ -5543,6 +5538,11 @@
       "Headware",
       "Nanocybernetics"
     ],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [12000],
     "source": "Chrome Flesh",
     "page": 88,
     "capacity": [8],
@@ -5560,11 +5560,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [6],
-      "restriction": "Legal"
-    },
-    "cost": [12000],
     "blockedMountList": [],
     "selectSide": true,
     "pairBonus": {
@@ -5593,6 +5588,11 @@
       "Headware",
       "Nanocybernetics"
     ],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [12000],
     "source": "Chrome Flesh",
     "page": 88,
     "capacity": [10],
@@ -5610,11 +5610,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [6],
-      "restriction": "Legal"
-    },
-    "cost": [14000],
     "blockedMountList": [],
     "selectSide": true,
     "pairBonus": {
@@ -5643,6 +5638,11 @@
       "Headware",
       "Nanocybernetics"
     ],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [14000],
     "source": "Chrome Flesh",
     "page": 88,
     "capacity": [3],
@@ -5660,11 +5660,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [6],
-      "restriction": "Legal"
-    },
-    "cost": [14000],
     "blockedMountList": [],
     "selectSide": true,
     "pairBonus": {
@@ -5693,6 +5688,11 @@
       "Headware",
       "Nanocybernetics"
     ],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [14000],
     "source": "Chrome Flesh",
     "page": 88,
     "capacity": [4],
@@ -5710,11 +5710,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [6],
-      "restriction": "Legal"
-    },
-    "cost": [18000],
     "blockedMountList": [],
     "selectSide": true,
     "bonus": {
@@ -5733,6 +5728,11 @@
       "Headware",
       "Nanocybernetics"
     ],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [18000],
     "source": "Chrome Flesh",
     "page": 88,
     "capacity": [12],
@@ -5750,11 +5750,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [6],
-      "restriction": "Legal"
-    },
-    "cost": [18000],
     "blockedMountList": [],
     "selectSide": true,
     "bonus": {
@@ -5773,6 +5768,11 @@
       "Headware",
       "Nanocybernetics"
     ],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [18000],
     "source": "Chrome Flesh",
     "page": 88,
     "capacity": [17],
@@ -5790,11 +5790,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [6],
-      "restriction": "Legal"
-    },
-    "cost": [23000],
     "blockedMountList": [],
     "selectSide": true,
     "bonus": {
@@ -5813,6 +5808,11 @@
       "Headware",
       "Nanocybernetics"
     ],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [23000],
     "source": "Chrome Flesh",
     "page": 88,
     "capacity": [5],
@@ -5830,11 +5830,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [6],
-      "restriction": "Legal"
-    },
-    "cost": [23000],
     "blockedMountList": [],
     "selectSide": true,
     "bonus": {
@@ -5853,6 +5848,11 @@
       "Headware",
       "Nanocybernetics"
     ],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [23000],
     "source": "Chrome Flesh",
     "page": 88,
     "capacity": [7],
@@ -5870,12 +5870,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [50],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 88,
     "capacity": [0],
@@ -5893,16 +5893,16 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [0],
-      "restriction": "Legal"
-    },
-    "cost": [50],
     "blockedMountList": [],
     "bonus": {
       "walkSpeedPercentageModifier": -50,
       "runSpeedPercentageModifier": -100
     },
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [50],
     "source": "Chrome Flesh",
     "page": 88,
     "capacity": [0],
@@ -5920,12 +5920,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [50],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 88,
     "capacity": [0],
@@ -5943,16 +5943,16 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [0],
-      "restriction": "Legal"
-    },
-    "cost": [50],
     "blockedMountList": [],
     "bonus": {
       "walkSpeedPercentageModifier": -50,
       "runSpeedPercentageModifier": -100
     },
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [50],
     "source": "Chrome Flesh",
     "page": 88,
     "capacity": [0],
@@ -5970,12 +5970,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [50],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 88,
     "capacity": [0],
@@ -5993,16 +5993,16 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [0],
-      "restriction": "Legal"
-    },
-    "cost": [50],
     "blockedMountList": [],
     "bonus": {
       "walkSpeedPercentageModifier": -50,
       "runSpeedPercentageModifier": -100
     },
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [50],
     "source": "Chrome Flesh",
     "page": 88,
     "capacity": [0],
@@ -6020,6 +6020,8 @@
       "minimum": [1],
       "maximum": [2]
     },
+    "blockedMountList": ["Elbow", "Knee"],
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -6049,8 +6051,6 @@
         ]
       }
     ],
-    "blockedMountList": ["Elbow", "Knee"],
-    "requirements": {},
     "source": "Chrome Flesh",
     "page": 90,
     "ratingLabel": "Rating_Meters",
@@ -6080,17 +6080,17 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [8],
-      "restriction": "Legal"
-    },
-    "cost": [1000],
     "blockedMountList": ["Knee", "Hip"],
     "bonus": {
       "swimSpeedPercentageModifier": 100,
       "sprintSpeedPercentageModifier": 100
     },
     "requirements": {},
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
     "source": "Chrome Flesh",
     "page": 90,
     "capacity": [4]
@@ -6107,14 +6107,14 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
+    "selectSide": true,
+    "requirements": {},
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [2000],
-    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
-    "selectSide": true,
-    "requirements": {},
     "source": "Chrome Flesh",
     "page": 88,
     "capacity": [5],
@@ -6133,11 +6133,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [4],
-      "restriction": "Legal"
-    },
-    "cost": [2000],
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "selectSide": true,
     "bonus": {
@@ -6148,6 +6143,11 @@
       ]
     },
     "requirements": {},
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [2000],
     "source": "Chrome Flesh",
     "page": 88,
     "capacity": [5],
@@ -6166,14 +6166,14 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
+    "selectSide": true,
+    "requirements": {},
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [4000],
-    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
-    "selectSide": true,
-    "requirements": {},
     "source": "Chrome Flesh",
     "page": 88,
     "capacity": [10],
@@ -6192,11 +6192,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [8],
-      "restriction": "Legal"
-    },
-    "cost": [4000],
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "selectSide": true,
     "bonus": {
@@ -6207,6 +6202,11 @@
       ]
     },
     "requirements": {},
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [4000],
     "source": "Chrome Flesh",
     "page": 88,
     "capacity": [10],
@@ -6225,13 +6225,13 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
+    "selectSide": true,
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [6000],
-    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
-    "selectSide": true,
     "source": "Chrome Flesh",
     "page": 88,
     "capacity": [0],
@@ -6252,11 +6252,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [12],
-      "restriction": "Legal"
-    },
-    "cost": [6000],
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "selectSide": true,
     "bonus": {
@@ -6266,6 +6261,11 @@
         }
       ]
     },
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [6000],
     "source": "Chrome Flesh",
     "page": 88,
     "capacity": [0],
@@ -6286,11 +6286,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [12],
-      "restriction": "Legal"
-    },
-    "cost": [8000],
     "blockedMountList": [],
     "allowedGear": {
       "gearCategoryList": ["Custom", "Sensors"]
@@ -6305,6 +6300,11 @@
       "Cyber Implant Weapon",
       "Nanocybernetics"
     ],
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [8000],
     "source": "Chrome Flesh",
     "page": 88,
     "capacity": [4]
@@ -6321,6 +6321,8 @@
       "minimum": [1],
       "maximum": [4]
     },
+    "blockedMountList": [],
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -6350,8 +6352,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "requirements": {},
     "source": "Chrome Flesh",
     "page": 87,
     "capacity": [
@@ -6377,11 +6377,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [12],
-      "restriction": "Legal"
-    },
-    "cost": [80000],
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "bonus": {
       "disableQualities": [
@@ -6395,6 +6390,11 @@
         "numberOfLimbs": 2
       }
     },
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [80000],
     "source": "Chrome Flesh",
     "page": 87,
     "capacity": [80],
@@ -6431,11 +6431,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [12],
-      "restriction": "Legal"
-    },
-    "cost": [0],
     "blockedMountList": [],
     "selectSide": true,
     "bonus": {
@@ -6454,6 +6449,11 @@
       "Cyber Implant Weapon",
       "Headware"
     ],
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [0],
     "source": "Chrome Flesh",
     "page": 87,
     "capacity": [20],
@@ -6468,11 +6468,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [12],
-      "restriction": "Legal"
-    },
-    "cost": [0],
     "blockedMountList": [],
     "selectSide": true,
     "bonus": {
@@ -6491,6 +6486,11 @@
       "Cyber Implant Weapon",
       "Headware"
     ],
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [0],
     "source": "Chrome Flesh",
     "page": 87,
     "capacity": [20],
@@ -6505,11 +6505,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [8],
-      "restriction": "Legal"
-    },
-    "cost": [40000],
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "bonus": {
       "disableQualities": [
@@ -6531,6 +6526,11 @@
       "Cyberlimb Accessory",
       "Cyber Implant Weapon"
     ],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [40000],
     "source": "Chrome Flesh",
     "page": 87,
     "capacity": [40],
@@ -6546,11 +6546,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [12],
-      "restriction": "Restricted"
-    },
-    "cost": [50000],
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "bonus": {
       "disableQualities": [
@@ -6571,6 +6566,11 @@
       "Cyberlimb Accessory",
       "Cyber Implant Weapon"
     ],
+    "availability": {
+      "rating": [12],
+      "restriction": "Restricted"
+    },
+    "cost": [50000],
     "source": "Chrome Flesh",
     "page": 87,
     "capacity": [60],
@@ -6589,11 +6589,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [2],
-      "restriction": "Legal"
-    },
-    "cost": [2000],
     "blockedMountList": [],
     "bonus": {
       "weaponSkillAccuracy": {
@@ -6605,6 +6600,11 @@
       }
     },
     "requirements": {},
+    "availability": {
+      "rating": [2],
+      "restriction": "Legal"
+    },
+    "cost": [2000],
     "source": "Chrome Flesh",
     "page": 87,
     "capacity": [2]
@@ -6621,6 +6621,8 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -6643,8 +6645,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "requirements": {},
     "source": "Chrome Flesh",
     "page": 86,
     "capacity": [
@@ -6669,6 +6669,8 @@
       "minimum": [1],
       "maximum": [2]
     },
+    "blockedMountList": [],
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -6691,8 +6693,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "requirements": {},
     "source": "Chrome Flesh",
     "page": 86,
     "capacity": [
@@ -6717,6 +6717,8 @@
       "minimum": [1],
       "maximum": [4]
     },
+    "blockedMountList": [],
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -6739,8 +6741,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "requirements": {},
     "source": "Chrome Flesh",
     "page": 86,
     "capacity": [
@@ -6765,6 +6765,8 @@
       "minimum": [1],
       "maximum": [6]
     },
+    "blockedMountList": [],
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -6787,8 +6789,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "requirements": {},
     "source": "Chrome Flesh",
     "page": 86,
     "capacity": [
@@ -6813,13 +6813,13 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [20000],
-    "blockedMountList": [],
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "source": "Chrome Flesh",
     "page": 90,
     "capacity": [15]
@@ -6836,13 +6836,13 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [3800],
-    "blockedMountList": [],
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "source": "Chrome Flesh",
     "page": 90,
     "capacity": [6]
@@ -6859,13 +6859,13 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [1800],
-    "blockedMountList": [],
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "source": "Chrome Flesh",
     "page": 90,
     "capacity": [2]
@@ -6882,13 +6882,13 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [3500],
-    "blockedMountList": [],
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "source": "Chrome Flesh",
     "page": 90,
     "capacity": [4]
@@ -6905,13 +6905,13 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [3000],
-    "blockedMountList": [],
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "source": "Chrome Flesh",
     "page": 90,
     "capacity": [6]
@@ -6928,17 +6928,17 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [8],
-      "restriction": "Forbidden"
-    },
-    "cost": [2000],
     "addWeapon": "Extreme Cyberimplant",
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "bonus": {
       "enterName": true
     },
     "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "availability": {
+      "rating": [8],
+      "restriction": "Forbidden"
+    },
+    "cost": [2000],
     "source": "Chrome Flesh",
     "page": 90,
     "capacity": [5]
@@ -6955,13 +6955,13 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [7000],
-    "blockedMountList": [],
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "source": "Chrome Flesh",
     "page": 90,
     "capacity": [10]
@@ -6978,15 +6978,15 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "addWeapon": "Cyberfangs",
+    "blockedMountList": [],
+    "requirements": {},
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [6],
       "restriction": "Legal"
     },
     "cost": [200],
-    "addWeapon": "Cyberfangs",
-    "blockedMountList": [],
-    "requirements": {},
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "source": "Chrome Flesh",
     "page": 90,
     "capacity": [1]
@@ -7003,15 +7003,15 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "addWeapon": "Oral Slasher",
+    "blockedMountList": [],
+    "requirements": {},
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [12],
       "restriction": "Restricted"
     },
     "cost": [750],
-    "addWeapon": "Oral Slasher",
-    "blockedMountList": [],
-    "requirements": {},
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "source": "Chrome Flesh",
     "page": 92,
     "capacity": [3]
@@ -7029,13 +7029,13 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "requirements": {},
     "availability": {
       "rating": [12],
       "restriction": "Forbidden"
     },
     "cost": [500],
-    "blockedMountList": [],
-    "requirements": {},
     "source": "Chrome Flesh",
     "page": 92,
     "capacity": [2],
@@ -7053,11 +7053,6 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [8],
-      "restriction": "Forbidden"
-    },
-    "cost": [2000],
     "addWeapon": "Junkyard Jaw",
     "blockedMountList": [],
     "bonus": {
@@ -7065,6 +7060,11 @@
     },
     "requirements": {},
     "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "availability": {
+      "rating": [8],
+      "restriction": "Forbidden"
+    },
+    "cost": [2000],
     "source": "Chrome Flesh",
     "page": 91,
     "capacity": [6]
@@ -7081,15 +7081,15 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "addWeapon": "Cyberfangs",
+    "blockedMountList": [],
+    "requirements": {},
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [500],
-    "addWeapon": "Cyberfangs",
-    "blockedMountList": [],
-    "requirements": {},
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "source": "Chrome Flesh",
     "page": 90,
     "capacity": [2]
@@ -7106,14 +7106,14 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "addWeapon": "Flametosser",
+    "blockedMountList": [],
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [12],
       "restriction": "Forbidden"
     },
     "cost": [4000],
-    "addWeapon": "Flametosser",
-    "blockedMountList": [],
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "source": "Chrome Flesh",
     "page": 91,
     "capacity": [8]
@@ -7131,15 +7131,15 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "requirements": {
+      "hostArmour": "Flametosser"
+    },
     "availability": {
       "rating": [12],
       "restriction": "Forbidden"
     },
     "cost": [500],
-    "blockedMountList": [],
-    "requirements": {
-      "hostArmour": "Flametosser"
-    },
     "source": "Chrome Flesh",
     "page": 91,
     "capacity": [2],
@@ -7157,13 +7157,13 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [4000],
-    "blockedMountList": [],
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "source": "Chrome Flesh",
     "page": 90,
     "capacity": [8]
@@ -7178,6 +7178,7 @@
       "minimum": [1],
       "maximum": [6]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [16],
       "restriction": "Forbidden"
@@ -7195,7 +7196,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 152,
     "capacity": [0]
@@ -7210,6 +7210,7 @@
       "minimum": [1],
       "maximum": [6]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [12],
       "restriction": "Forbidden"
@@ -7227,7 +7228,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 151,
     "capacity": [0]
@@ -7242,12 +7242,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Restricted"
     },
     "cost": [6000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 151,
     "capacity": [0]
@@ -7276,6 +7276,10 @@
     "rating": {
       "minimum": [1],
       "maximum": [6]
+    },
+    "blockedMountList": [],
+    "allowedGear": {
+      "gearCategoryList": ["Hard Nanoware"]
     },
     "availability": {
       "rating": [
@@ -7306,10 +7310,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "allowedGear": {
-      "gearCategoryList": ["Hard Nanoware"]
-    },
     "source": "Chrome Flesh",
     "page": 151,
     "capacity": [2]
@@ -7339,6 +7339,7 @@
       "minimum": [1],
       "maximum": [6]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [
         {
@@ -7368,7 +7369,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 151,
     "capacity": [0]
@@ -7383,6 +7383,7 @@
       "minimum": [1],
       "maximum": [6]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [16],
       "restriction": "Forbidden"
@@ -7400,7 +7401,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 151,
     "capacity": [0]
@@ -7426,6 +7426,15 @@
     "rating": {
       "minimum": [1],
       "maximum": [6]
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "armour": {
+        "nonStacking": true,
+        "bonus": {
+          "option": "Rating"
+        }
+      }
     },
     "availability": {
       "rating": [
@@ -7456,15 +7465,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "bonus": {
-      "armour": {
-        "nonStacking": true,
-        "bonus": {
-          "option": "Rating"
-        }
-      }
-    },
     "source": "Chrome Flesh",
     "page": 151,
     "capacity": [0]
@@ -7481,6 +7481,7 @@
       "minimum": [1],
       "maximum": [6]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [14],
       "restriction": "Forbidden"
@@ -7498,7 +7499,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 147,
     "capacity": [0],
@@ -7516,6 +7516,7 @@
       "minimum": [1],
       "maximum": [3]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [12],
       "restriction": "Forbidden"
@@ -7533,7 +7534,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 147,
     "capacity": [0],
@@ -7551,6 +7551,10 @@
       "minimum": [1],
       "maximum": [6]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "linkCyberware": true
+    },
     "availability": {
       "rating": [12],
       "restriction": "Forbidden"
@@ -7560,10 +7564,6 @@
         "min": 0,
         "max": 1000000
       }
-    },
-    "blockedMountList": [],
-    "bonus": {
-      "linkCyberware": true
     },
     "source": "Chrome Flesh",
     "page": 147,
@@ -7582,6 +7582,7 @@
       "minimum": [1],
       "maximum": [6]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [16],
       "restriction": "Restricted"
@@ -7599,7 +7600,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 147,
     "capacity": [0],
@@ -7617,6 +7617,7 @@
       "minimum": [1],
       "maximum": [3]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [12],
       "restriction": "Legal"
@@ -7634,7 +7635,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 148,
     "capacity": [0],
@@ -7652,6 +7652,7 @@
       "minimum": [1],
       "maximum": [3]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [12],
       "restriction": "Forbidden"
@@ -7669,7 +7670,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 148,
     "capacity": [0],
@@ -7687,6 +7687,7 @@
       "minimum": [1],
       "maximum": [3]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [12],
       "restriction": "Legal"
@@ -7704,7 +7705,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 148,
     "capacity": [0],
@@ -7722,6 +7722,7 @@
       "minimum": [1],
       "maximum": [6]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [12],
       "restriction": "Forbidden"
@@ -7739,7 +7740,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 148,
     "capacity": [0],
@@ -7757,6 +7757,7 @@
       "minimum": [1],
       "maximum": [9]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [16],
       "restriction": "Forbidden"
@@ -7774,7 +7775,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 149,
     "capacity": [0],
@@ -7791,6 +7791,10 @@
     "rating": {
       "minimum": [1],
       "maximum": [6]
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
     },
     "availability": {
       "rating": [10],
@@ -7809,10 +7813,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "bonus": {
-      "enterName": true
-    },
     "source": "Chrome Flesh",
     "page": 149,
     "capacity": [0],
@@ -7829,6 +7829,15 @@
     "rating": {
       "minimum": [1],
       "maximum": [3]
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "stunHealing": {
+        "option": "Rating"
+      },
+      "physicalHealing": {
+        "option": "Rating"
+      }
     },
     "availability": {
       "rating": [16],
@@ -7847,15 +7856,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "bonus": {
-      "stunHealing": {
-        "option": "Rating"
-      },
-      "physicalHealing": {
-        "option": "Rating"
-      }
-    },
     "source": "Chrome Flesh",
     "page": 149,
     "capacity": [0],
@@ -7873,6 +7873,7 @@
       "minimum": [1],
       "maximum": [6]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Forbidden"
@@ -7890,7 +7891,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 149,
     "capacity": [0],
@@ -7908,6 +7908,7 @@
       "minimum": [1],
       "maximum": [3]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [12],
       "restriction": "Forbidden"
@@ -7925,7 +7926,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 150,
     "capacity": [0],
@@ -7943,23 +7943,6 @@
       "minimum": [1],
       "maximum": [3]
     },
-    "availability": {
-      "rating": [14],
-      "restriction": "Forbidden"
-    },
-    "cost": [
-      {
-        "subnumbers": [
-          {
-            "option": "Rating"
-          },
-          {
-            "operator": "*"
-          },
-          5000
-        ]
-      }
-    ],
     "blockedMountList": [],
     "bonus": {
       "modifySkillImprovementKarmaCost": [
@@ -7987,6 +7970,23 @@
         }
       ]
     },
+    "availability": {
+      "rating": [14],
+      "restriction": "Forbidden"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          5000
+        ]
+      }
+    ],
     "source": "Chrome Flesh",
     "page": 149,
     "capacity": [0],
@@ -8004,6 +8004,7 @@
       "minimum": [1],
       "maximum": [3]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [16],
       "restriction": "Forbidden"
@@ -8021,7 +8022,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 149,
     "capacity": [0],
@@ -8039,6 +8039,7 @@
       "minimum": [1],
       "maximum": [3]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [16],
       "restriction": "Forbidden"
@@ -8056,7 +8057,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 150,
     "capacity": [0],
@@ -8073,6 +8073,12 @@
     "rating": {
       "minimum": [1],
       "maximum": [3]
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "memory": {
+        "option": "Rating"
+      }
     },
     "availability": {
       "rating": [12],
@@ -8091,12 +8097,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "bonus": {
-      "memory": {
-        "option": "Rating"
-      }
-    },
     "source": "Chrome Flesh",
     "page": 150,
     "capacity": [0],
@@ -8114,6 +8114,7 @@
       "minimum": [1],
       "maximum": [9]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [12],
       "restriction": "Forbidden"
@@ -8131,7 +8132,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 150,
     "capacity": [0],
@@ -8148,6 +8148,12 @@
     "rating": {
       "minimum": [1],
       "maximum": [5]
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "fatigueResist": {
+        "option": "Rating"
+      }
     },
     "availability": {
       "rating": [12],
@@ -8166,12 +8172,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "bonus": {
-      "fatigueResist": {
-        "option": "Rating"
-      }
-    },
     "source": "Chrome Flesh",
     "page": 150,
     "capacity": [0],
@@ -8187,12 +8187,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Restricted"
     },
     "cost": [68000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 92,
     "capacity": [0],
@@ -8225,12 +8225,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [12],
       "restriction": "Forbidden"
     },
     "cost": [222000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 92,
     "capacity": [0],
@@ -8267,12 +8267,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [16000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 93,
     "capacity": [0],
@@ -8313,12 +8313,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [12],
       "restriction": "Restricted"
     },
     "cost": [20000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 93,
     "capacity": [0],
@@ -8362,12 +8362,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [124000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 93,
     "capacity": [0],
@@ -8398,12 +8398,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [16000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 93,
     "capacity": [0],
@@ -8447,12 +8447,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [6000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 93,
     "capacity": [0],
@@ -8491,13 +8491,13 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
+    "requirements": {},
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [2500],
-    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
-    "requirements": {},
     "source": "Bullets And Bandages",
     "page": 22,
     "capacity": [2]
@@ -8526,6 +8526,7 @@
       "minimum": [1],
       "maximum": [4]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [
         {
@@ -8555,7 +8556,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Hard Targets",
     "page": 186,
     "capacity": [
@@ -8573,6 +8573,7 @@
       "minimum": [1],
       "maximum": [4]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [
         {
@@ -8602,7 +8603,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Hard Targets",
     "page": 186,
     "capacity": [2]
@@ -8619,13 +8619,13 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": ["Elbow", "Shoulder"],
+    "requirements": {},
     "availability": {
       "rating": [10],
       "restriction": "Restricted"
     },
     "cost": [2750],
-    "blockedMountList": ["Elbow", "Shoulder"],
-    "requirements": {},
     "source": "Hard Targets",
     "page": 187,
     "capacity": [3]
@@ -8642,13 +8642,13 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "requirements": {},
     "availability": {
       "rating": [7],
       "restriction": "Restricted"
     },
     "cost": [3500],
-    "blockedMountList": [],
-    "requirements": {},
     "source": "Hard Targets",
     "page": 187,
     "capacity": [5]
@@ -8665,13 +8665,13 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "requirements": {},
     "availability": {
       "rating": [6],
       "restriction": "Forbidden"
     },
     "cost": [200],
-    "blockedMountList": [],
-    "requirements": {},
     "source": "Hard Targets",
     "page": 182,
     "capacity": [0],
@@ -8690,13 +8690,13 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
+    "requirements": {},
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [500],
-    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
-    "requirements": {},
     "source": "Hard Targets",
     "page": 186,
     "capacity": [1]
@@ -8713,13 +8713,13 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
+    "requirements": {},
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [550],
-    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
-    "requirements": {},
     "source": "Hard Targets",
     "page": 186,
     "capacity": [1]
@@ -8736,16 +8736,16 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "availability": {
-      "rating": [8],
-      "restriction": "Forbidden"
-    },
-    "cost": [650],
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "requirements": {},
     "allowedGear": {
       "gearCategoryList": ["Drugs", "Toxins"]
     },
+    "availability": {
+      "rating": [8],
+      "restriction": "Forbidden"
+    },
+    "cost": [650],
     "source": "Hard Targets",
     "page": 186,
     "capacity": [1]
@@ -8762,13 +8762,13 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
+    "requirements": {},
     "availability": {
       "rating": [6],
       "restriction": "Restricted"
     },
     "cost": [750],
-    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
-    "requirements": {},
     "source": "Hard Targets",
     "page": 186,
     "capacity": [1]
@@ -8785,14 +8785,14 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "addWeapon": "Foot Blade",
+    "blockedMountList": [],
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [20],
       "restriction": "Forbidden"
     },
     "cost": [28000],
-    "addWeapon": "Foot Blade",
-    "blockedMountList": [],
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
     "source": "Hard Targets",
     "page": 185,
     "capacity": [0]
@@ -8807,12 +8807,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [10],
       "restriction": "Restricted"
     },
     "cost": [125000],
-    "blockedMountList": [],
     "source": "Lockdown",
     "page": 205,
     "capacity": [0],
@@ -8850,12 +8850,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [14],
       "restriction": "Restricted"
     },
     "cost": [195000],
-    "blockedMountList": [],
     "source": "Lockdown",
     "page": 205,
     "capacity": [0],
@@ -8897,12 +8897,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [14],
       "restriction": "Restricted"
     },
     "cost": [325000],
-    "blockedMountList": [],
     "source": "Lockdown",
     "page": 205,
     "capacity": [0],
@@ -8944,12 +8944,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": ["Ankle", "Knee", "Wrist", "Elbow", "Hip", "Shoulder"],
     "availability": {
       "rating": [18],
       "restriction": "Restricted"
     },
     "cost": [150000],
-    "blockedMountList": ["Ankle", "Knee", "Wrist", "Elbow", "Hip", "Shoulder"],
     "source": "Lockdown",
     "page": 206,
     "capacity": [0],
@@ -9003,12 +9003,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": ["Ankle", "Knee", "Wrist", "Elbow", "Hip", "Shoulder"],
     "availability": {
       "rating": [16],
       "restriction": "Restricted"
     },
     "cost": [275000],
-    "blockedMountList": ["Ankle", "Knee", "Wrist", "Elbow", "Hip", "Shoulder"],
     "source": "Lockdown",
     "page": 206,
     "capacity": [0],
@@ -9065,12 +9065,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": ["Ankle", "Knee", "Wrist", "Elbow", "Hip", "Shoulder"],
     "availability": {
       "rating": [18],
       "restriction": "Restricted"
     },
     "cost": [175000],
-    "blockedMountList": ["Ankle", "Knee", "Wrist", "Elbow", "Hip", "Shoulder"],
     "source": "Lockdown",
     "page": 206,
     "capacity": [0],
@@ -9123,12 +9123,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [10],
       "restriction": "Legal"
     },
     "cost": [185000],
-    "blockedMountList": [],
     "source": "Lockdown",
     "page": 206,
     "capacity": [0],
@@ -9188,12 +9188,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [20],
       "restriction": "Legal"
     },
     "cost": [375000],
-    "blockedMountList": [],
     "source": "Lockdown",
     "page": 207,
     "capacity": [0],
@@ -9253,12 +9253,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [14],
       "restriction": "Legal"
     },
     "cost": [575000],
-    "blockedMountList": [],
     "source": "Lockdown",
     "page": 207,
     "capacity": [0],
@@ -9330,12 +9330,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "availability": {
       "rating": [14],
       "restriction": "Restricted"
     },
     "cost": [210000],
-    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "source": "Lockdown",
     "page": 207,
     "capacity": [0],
@@ -9388,12 +9388,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [10],
       "restriction": "Restricted"
     },
     "cost": [120000],
-    "blockedMountList": [],
     "source": "Lockdown",
     "page": 207,
     "capacity": [0],
@@ -9443,12 +9443,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [22],
       "restriction": "Restricted"
     },
     "cost": [725000],
-    "blockedMountList": [],
     "source": "Lockdown",
     "page": 207,
     "capacity": [0],
@@ -9512,12 +9512,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [10],
       "restriction": "Restricted"
     },
     "cost": [120000],
-    "blockedMountList": [],
     "source": "Lockdown",
     "page": 207,
     "capacity": [0],
@@ -9564,12 +9564,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [14],
       "restriction": "Restricted"
     },
     "cost": [345000],
-    "blockedMountList": [],
     "source": "Lockdown",
     "page": 207,
     "capacity": [0],
@@ -9606,12 +9606,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [22],
       "restriction": "Restricted"
     },
     "cost": [725000],
-    "blockedMountList": [],
     "source": "Lockdown",
     "page": 207,
     "capacity": [0],
@@ -9687,6 +9687,7 @@
       "minimum": [1],
       "maximum": [4]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [20],
       "restriction": "Forbidden"
@@ -9704,7 +9705,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Howling Shadows",
     "page": 181,
     "capacity": [0]
@@ -9719,12 +9719,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [25],
       "restriction": "Legal"
     },
     "cost": [25000],
-    "blockedMountList": [],
     "source": "Howling Shadows",
     "page": 181,
     "capacity": [0]
@@ -9739,12 +9739,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [26],
       "restriction": "Legal"
     },
     "cost": [30000],
-    "blockedMountList": [],
     "source": "Howling Shadows",
     "page": 181,
     "capacity": [0]
@@ -9759,12 +9759,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [500],
-    "blockedMountList": [],
     "source": "Howling Shadows",
     "page": 181,
     "capacity": [0]
@@ -9787,6 +9787,19 @@
       "minimum": [1],
       "maximum": [3]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "initiative": {
+        "bonusDice": {
+          "ratingLinked": [0, 1, 1]
+        }
+      },
+      "disableQualities": [
+        {
+          "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
+        }
+      ]
+    },
     "availability": {
       "ratingLinked": [
         {
@@ -9806,19 +9819,6 @@
     "cost": {
       "ratingLinked": [45000, 135000, 220000]
     },
-    "blockedMountList": [],
-    "bonus": {
-      "initiative": {
-        "bonusDice": {
-          "ratingLinked": [0, 1, 1]
-        }
-      },
-      "disableQualities": [
-        {
-          "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
-        }
-      ]
-    },
     "source": "Howling Shadows",
     "page": 182,
     "capacity": [0]
@@ -9833,12 +9833,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [25],
       "restriction": "Forbidden"
     },
     "cost": [20000],
-    "blockedMountList": [],
     "source": "Howling Shadows",
     "page": 182,
     "capacity": [0]
@@ -9853,12 +9853,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [25],
       "restriction": "Forbidden"
     },
     "cost": [25000],
-    "blockedMountList": [],
     "source": "Howling Shadows",
     "page": 182,
     "capacity": [0]
@@ -9872,12 +9872,12 @@
       "minimum": [1],
       "maximum": [0]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [1000],
-    "blockedMountList": [],
     "source": "The Complete Trog",
     "page": 184,
     "capacity": [0]
@@ -9894,12 +9894,12 @@
       "minimum": [1],
       "maximum": [0]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [1000],
-    "blockedMountList": [],
     "source": "The Complete Trog",
     "page": 185,
     "capacity": [0]
@@ -9913,6 +9913,7 @@
       "minimum": [1],
       "maximum": [12]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [
         {
@@ -9934,7 +9935,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "The Complete Trog",
     "page": 187,
     "capacity": [0]
@@ -9951,13 +9951,13 @@
       "minimum": [1],
       "maximum": [0]
     },
+    "blockedMountList": [],
+    "userSelectable": false,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [0],
-    "blockedMountList": [],
-    "userSelectable": false,
     "source": "The Seattle Gambit",
     "page": 30,
     "capacity": [0],
@@ -9976,6 +9976,10 @@
       "minimum": [1],
       "maximum": [3]
     },
+    "blockedMountList": [],
+    "allowedGear": {
+      "gearCategoryList": ["Common Programs", "Hacking Programs"]
+    },
     "availability": {
       "rating": [4],
       "restriction": "Legal"
@@ -9993,10 +9997,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "allowedGear": {
-      "gearCategoryList": ["Common Programs", "Hacking Programs"]
-    },
     "source": "Kill Code",
     "page": 65,
     "programs": "Rating",
@@ -10018,12 +10018,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [10],
       "restriction": "Restricted"
     },
     "cost": [30000],
-    "blockedMountList": [],
     "source": "Kill Code",
     "page": 66,
     "capacity": [0]
@@ -10038,12 +10038,12 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [5000],
-    "blockedMountList": [],
     "source": "Kill Code",
     "page": 66,
     "capacity": [0]
@@ -10058,6 +10058,7 @@
       "minimum": [1],
       "maximum": [6]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [
         {
@@ -10079,7 +10080,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "No Future",
     "page": 175,
     "capacity": [0]
@@ -10094,6 +10094,7 @@
       "minimum": [1],
       "maximum": [6]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [
         {
@@ -10123,7 +10124,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "No Future",
     "page": 175,
     "capacity": [0]

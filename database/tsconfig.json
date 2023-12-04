@@ -6,7 +6,6 @@
     "target": "ES2022",
     "rootDir": "./src",
     "outDir": "./build",
-    "module": "NodeNext",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },

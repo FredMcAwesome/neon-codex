@@ -19,6 +19,7 @@
     "rating": {
       "maximum": [3]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [
         {
@@ -48,7 +49,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 459
   },
@@ -71,6 +71,13 @@
     ],
     "rating": {
       "maximum": [4]
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "damageResistance": {
+        "option": "Rating"
+      },
+      "unarmedDamageType": "Physical"
     },
     "availability": {
       "rating": [
@@ -101,13 +108,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "bonus": {
-      "damageResistance": {
-        "option": "Rating"
-      },
-      "unarmedDamageType": "Physical"
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 459
   },
@@ -119,12 +119,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [4000],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 459
   },
@@ -149,6 +149,7 @@
     "rating": {
       "maximum": [3]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [
         {
@@ -178,7 +179,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 460
   },
@@ -202,6 +202,12 @@
     ],
     "rating": {
       "maximum": [12]
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "ignoreConditionModifierNegativeEffects": {
+        "option": "Rating"
+      }
     },
     "availability": {
       "rating": [
@@ -232,12 +238,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "bonus": {
-      "ignoreConditionModifierNegativeEffects": {
-        "option": "Rating"
-      }
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 460
   },
@@ -249,15 +249,15 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "physicalLimit": 1
+    },
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [24000],
-    "blockedMountList": [],
-    "bonus": {
-      "physicalLimit": 1
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 459
   },
@@ -282,35 +282,6 @@
     "rating": {
       "maximum": [3]
     },
-    "availability": {
-      "rating": [
-        {
-          "subnumbers": [
-            {
-              "option": "Rating"
-            },
-            {
-              "operator": "*"
-            },
-            5
-          ]
-        }
-      ],
-      "restriction": "Legal"
-    },
-    "cost": [
-      {
-        "subnumbers": [
-          {
-            "option": "Rating"
-          },
-          {
-            "operator": "*"
-          },
-          9000
-        ]
-      }
-    ],
     "blockedMountList": [],
     "bonus": {
       "skillCategories": [
@@ -352,6 +323,35 @@
         "option": "Rating"
       }
     },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            5
+          ]
+        }
+      ],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          9000
+        ]
+      }
+    ],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 460
   },
@@ -374,6 +374,14 @@
     ],
     "rating": {
       "maximum": [4]
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "disableQualities": [
+        {
+          "name": "Celerity"
+        }
+      ]
     },
     "availability": {
       "rating": [
@@ -404,14 +412,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "bonus": {
-      "disableQualities": [
-        {
-          "name": "Celerity"
-        }
-      ]
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 459
   },
@@ -434,6 +434,14 @@
     ],
     "rating": {
       "maximum": [4]
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "disableQualities": [
+        {
+          "name": "Celerity"
+        }
+      ]
     },
     "availability": {
       "rating": [
@@ -464,14 +472,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "bonus": {
-      "disableQualities": [
-        {
-          "name": "Celerity"
-        }
-      ]
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 459
   },
@@ -494,6 +494,15 @@
     ],
     "rating": {
       "maximum": [4]
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "armour": {
+        "nonStacking": true,
+        "bonus": {
+          "option": "Rating"
+        }
+      }
     },
     "availability": {
       "rating": [
@@ -524,15 +533,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "bonus": {
-      "armour": {
-        "nonStacking": true,
-        "bonus": {
-          "option": "Rating"
-        }
-      }
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 459
   },
@@ -545,12 +545,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [18],
       "restriction": "Forbidden"
     },
     "cost": [48000],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 460
   },
@@ -573,6 +573,21 @@
     ],
     "rating": {
       "maximum": [6]
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "pathogenContactResist": {
+        "option": "Rating"
+      },
+      "pathogenInhalationResist": {
+        "option": "Rating"
+      },
+      "pathogenIngestionResist": {
+        "option": "Rating"
+      },
+      "pathogenInjectionResist": {
+        "option": "Rating"
+      }
     },
     "availability": {
       "rating": [
@@ -603,21 +618,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "bonus": {
-      "pathogenContactResist": {
-        "option": "Rating"
-      },
-      "pathogenInhalationResist": {
-        "option": "Rating"
-      },
-      "pathogenIngestionResist": {
-        "option": "Rating"
-      },
-      "pathogenInjectionResist": {
-        "option": "Rating"
-      }
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 459
   },
@@ -629,12 +629,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [17000],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 459
   },
@@ -650,12 +650,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [10],
       "restriction": "Legal"
     },
     "cost": [14000],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 460
   },
@@ -670,12 +670,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [12000],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 459
   },
@@ -688,12 +688,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [6],
       "restriction": "Legal"
     },
     "cost": [12000],
-    "blockedMountList": [],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 460
   },
@@ -705,15 +705,15 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "lifestyleCostModifier": 25
+    },
     "availability": {
       "rating": [20],
       "restriction": "Restricted"
     },
     "cost": [140000],
-    "blockedMountList": [],
-    "bonus": {
-      "lifestyleCostModifier": 25
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 459
   },
@@ -736,6 +736,15 @@
     ],
     "rating": {
       "maximum": [4]
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "stunHealing": {
+        "option": "Rating"
+      },
+      "physicalHealing": {
+        "option": "Rating"
+      }
     },
     "availability": {
       "rating": [
@@ -766,15 +775,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "bonus": {
-      "stunHealing": {
-        "option": "Rating"
-      },
-      "physicalHealing": {
-        "option": "Rating"
-      }
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 459
   },
@@ -798,6 +798,19 @@
     ],
     "rating": {
       "maximum": [3]
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "initiative": {
+        "bonusDice": {
+          "option": "Rating"
+        }
+      },
+      "disableQualities": [
+        {
+          "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
+        }
+      ]
     },
     "availability": {
       "rating": [
@@ -828,19 +841,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "bonus": {
-      "initiative": {
-        "bonusDice": {
-          "option": "Rating"
-        }
-      },
-      "disableQualities": [
-        {
-          "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
-        }
-      ]
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 461
   },
@@ -863,6 +863,17 @@
     ],
     "rating": {
       "maximum": [3]
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "skillGroups": [
+        {
+          "group": "Athletics",
+          "bonus": {
+            "option": "Rating"
+          }
+        }
+      ]
     },
     "availability": {
       "rating": [
@@ -893,17 +904,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "bonus": {
-      "skillGroups": [
-        {
-          "group": "Athletics",
-          "bonus": {
-            "option": "Rating"
-          }
-        }
-      ]
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 460
   },
@@ -926,6 +926,28 @@
     ],
     "rating": {
       "maximum": [3]
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "skillGroups": [
+        {
+          "group": "Acting",
+          "bonus": {
+            "option": "Rating"
+          }
+        },
+        {
+          "group": "Influence",
+          "bonus": {
+            "option": "Rating"
+          }
+        }
+      ],
+      "socialLimit": [
+        {
+          "option": "Rating"
+        }
+      ]
     },
     "availability": {
       "rating": [
@@ -956,28 +978,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "bonus": {
-      "skillGroups": [
-        {
-          "group": "Acting",
-          "bonus": {
-            "option": "Rating"
-          }
-        },
-        {
-          "group": "Influence",
-          "bonus": {
-            "option": "Rating"
-          }
-        }
-      ],
-      "socialLimit": [
-        {
-          "option": "Rating"
-        }
-      ]
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 460
   },
@@ -1000,6 +1000,21 @@
     ],
     "rating": {
       "maximum": [6]
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "toxinContactResist": {
+        "option": "Rating"
+      },
+      "toxinInhalationResist": {
+        "option": "Rating"
+      },
+      "toxinIngestionResist": {
+        "option": "Rating"
+      },
+      "toxinInjectionResist": {
+        "option": "Rating"
+      }
     },
     "availability": {
       "rating": [
@@ -1030,21 +1045,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "bonus": {
-      "toxinContactResist": {
-        "option": "Rating"
-      },
-      "toxinInhalationResist": {
-        "option": "Rating"
-      },
-      "toxinIngestionResist": {
-        "option": "Rating"
-      },
-      "toxinInjectionResist": {
-        "option": "Rating"
-      }
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 460
   },
@@ -1067,6 +1067,12 @@
     ],
     "rating": {
       "maximum": [6]
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "toxinInhalationResist": {
+        "option": "Rating"
+      }
     },
     "availability": {
       "rating": [
@@ -1097,12 +1103,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "bonus": {
-      "toxinInhalationResist": {
-        "option": "Rating"
-      }
-    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 460
   },
@@ -1117,6 +1117,20 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
+    },
+    "allowedGear": {
+      "gearCategoryList": [
+        "Chemicals",
+        "Custom Drug",
+        "Drugs",
+        "Toxins",
+        "Custom"
+      ]
+    },
+    "allowCategoryList": ["Chemical Gland Modifications"],
     "availability": {
       "rating": [12],
       "restriction": "Restricted",
@@ -1143,20 +1157,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "bonus": {
-      "enterName": true
-    },
-    "allowedGear": {
-      "gearCategoryList": [
-        "Chemicals",
-        "Custom Drug",
-        "Drugs",
-        "Toxins",
-        "Custom"
-      ]
-    },
-    "allowCategoryList": ["Chemical Gland Modifications"],
     "source": "Chrome Flesh",
     "page": 112
   },
@@ -1171,6 +1171,17 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "allowedGear": {
+      "gearCategoryList": [
+        "Chemicals",
+        "Custom Drug",
+        "Drugs",
+        "Toxins",
+        "Custom"
+      ]
+    },
+    "allowCategoryList": ["Chemical Gland Modifications"],
     "availability": {
       "rating": [12],
       "restriction": "Restricted",
@@ -1197,17 +1208,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "allowedGear": {
-      "gearCategoryList": [
-        "Chemicals",
-        "Custom Drug",
-        "Drugs",
-        "Toxins",
-        "Custom"
-      ]
-    },
-    "allowCategoryList": ["Chemical Gland Modifications"],
     "source": "Chrome Flesh",
     "page": 112
   },
@@ -1222,6 +1222,17 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "allowedGear": {
+      "gearCategoryList": [
+        "Chemicals",
+        "Custom Drug",
+        "Drugs",
+        "Toxins",
+        "Custom"
+      ]
+    },
+    "allowCategoryList": ["Chemical Gland Modifications"],
     "availability": {
       "rating": [12],
       "restriction": "Restricted",
@@ -1248,17 +1259,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "allowedGear": {
-      "gearCategoryList": [
-        "Chemicals",
-        "Custom Drug",
-        "Drugs",
-        "Toxins",
-        "Custom"
-      ]
-    },
-    "allowCategoryList": ["Chemical Gland Modifications"],
     "source": "Chrome Flesh",
     "page": 112
   },
@@ -1273,6 +1273,17 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "allowedGear": {
+      "gearCategoryList": [
+        "Chemicals",
+        "Custom Drug",
+        "Drugs",
+        "Toxins",
+        "Custom"
+      ]
+    },
+    "allowCategoryList": ["Chemical Gland Modifications"],
     "availability": {
       "rating": [12],
       "restriction": "Forbidden",
@@ -1299,17 +1310,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "allowedGear": {
-      "gearCategoryList": [
-        "Chemicals",
-        "Custom Drug",
-        "Drugs",
-        "Toxins",
-        "Custom"
-      ]
-    },
-    "allowCategoryList": ["Chemical Gland Modifications"],
     "source": "Chrome Flesh",
     "page": 112
   },
@@ -1324,6 +1324,16 @@
     "modification": true,
     "rating": {
       "maximum": [1]
+    },
+    "blockedMountList": [],
+    "allowedGear": {
+      "gearCategoryList": [
+        "Chemicals",
+        "Custom Drug",
+        "Drugs",
+        "Toxins",
+        "Custom"
+      ]
     },
     "availability": {
       "rating": [12],
@@ -1350,16 +1360,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "allowedGear": {
-      "gearCategoryList": [
-        "Chemicals",
-        "Custom Drug",
-        "Drugs",
-        "Toxins",
-        "Custom"
-      ]
-    },
     "source": "Chrome Flesh",
     "page": 112
   },
@@ -1371,16 +1371,16 @@
     "rating": {
       "maximum": [1]
     },
-    "availability": {
-      "rating": [12],
-      "restriction": "Restricted"
-    },
-    "cost": [20000],
     "blockedMountList": [],
     "bonus": {
       "toxinContactResist": 2,
       "fatigueResist": -2
     },
+    "availability": {
+      "rating": [12],
+      "restriction": "Restricted"
+    },
+    "cost": [20000],
     "source": "Chrome Flesh",
     "page": 116
   },
@@ -1392,15 +1392,15 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "fireArmour": 2
+    },
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [2000],
-    "blockedMountList": [],
-    "bonus": {
-      "fireArmour": 2
-    },
     "source": "Chrome Flesh",
     "page": 116
   },
@@ -1412,15 +1412,15 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "electricityArmour": 2
+    },
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [8000],
-    "blockedMountList": [],
-    "bonus": {
-      "electricityArmour": 2
-    },
     "source": "Chrome Flesh",
     "page": 116
   },
@@ -1432,15 +1432,15 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "electricityArmour": -2
+    },
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [8000],
-    "blockedMountList": [],
-    "bonus": {
-      "electricityArmour": -2
-    },
     "source": "Chrome Flesh",
     "page": 116
   },
@@ -1452,15 +1452,15 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "coldArmour": 2
+    },
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [2000],
-    "blockedMountList": [],
-    "bonus": {
-      "coldArmour": 2
-    },
     "source": "Chrome Flesh",
     "page": 116
   },
@@ -1472,12 +1472,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [2000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 116
   },
@@ -1489,15 +1489,15 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "unarmedReach": 1
+    },
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [8000],
-    "blockedMountList": [],
-    "bonus": {
-      "unarmedReach": 1
-    },
     "source": "Chrome Flesh",
     "page": 116
   },
@@ -1509,12 +1509,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [8000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 112
   },
@@ -1526,15 +1526,15 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "fatigueResist": -2
+    },
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [8000],
-    "blockedMountList": [],
-    "bonus": {
-      "fatigueResist": -2
-    },
     "source": "Chrome Flesh",
     "page": 113
   },
@@ -1549,16 +1549,16 @@
     "rating": {
       "maximum": [1]
     },
-    "availability": {
-      "rating": [8],
-      "restriction": "Legal"
-    },
-    "cost": [1000],
     "blockedMountList": [],
     "selectSide": true,
     "pairBonus": {
       "swimSpeedPercentageModifier": 100
     },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
     "source": "Chrome Flesh",
     "page": 113
   },
@@ -1573,16 +1573,16 @@
     "rating": {
       "maximum": [1]
     },
-    "availability": {
-      "rating": [8],
-      "restriction": "Legal"
-    },
-    "cost": [1000],
     "blockedMountList": [],
     "selectSide": true,
     "pairBonus": {
       "swimSpeedPercentageModifier": 100
     },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
     "source": "Chrome Flesh",
     "page": 113
   },
@@ -1594,12 +1594,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [4000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 113
   },
@@ -1611,12 +1611,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [4000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 113
   },
@@ -1631,12 +1631,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [2],
       "restriction": "Legal"
     },
     "cost": [1000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 113
   },
@@ -1651,12 +1651,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [10],
       "restriction": "Legal"
     },
     "cost": [35000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 114
   },
@@ -1671,12 +1671,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [4000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 114
   },
@@ -1688,12 +1688,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [8000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 114
   },
@@ -1708,12 +1708,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [2000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 115
   },
@@ -1728,12 +1728,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [8000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 115
   },
@@ -1745,12 +1745,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [10000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 115
   },
@@ -1762,12 +1762,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [10000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 115
   },
@@ -1779,12 +1779,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [12],
       "restriction": "Restricted"
     },
     "cost": [30000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 115
   },
@@ -1808,35 +1808,6 @@
     "rating": {
       "maximum": [6]
     },
-    "availability": {
-      "rating": [
-        {
-          "subnumbers": [
-            {
-              "option": "Rating"
-            },
-            {
-              "operator": "*"
-            },
-            2
-          ]
-        }
-      ],
-      "restriction": "Legal"
-    },
-    "cost": [
-      {
-        "subnumbers": [
-          {
-            "option": "Rating"
-          },
-          {
-            "operator": "*"
-          },
-          4000
-        ]
-      }
-    ],
     "blockedMountList": [],
     "bonus": {
       "toxinContactResist": {
@@ -1882,6 +1853,35 @@
         }
       }
     },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          4000
+        ]
+      }
+    ],
     "source": "Chrome Flesh",
     "page": 113
   },
@@ -1893,12 +1893,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [6],
       "restriction": "Legal"
     },
     "cost": [1000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 113
   },
@@ -1922,6 +1922,10 @@
     "rating": {
       "maximum": [3]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
+    },
     "availability": {
       "rating": [
         {
@@ -1951,10 +1955,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "bonus": {
-      "enterName": true
-    },
     "source": "Chrome Flesh",
     "page": 115
   },
@@ -1978,6 +1978,12 @@
     "rating": {
       "maximum": [4]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "fatigueResist": {
+        "option": "Rating"
+      }
+    },
     "availability": {
       "rating": [
         {
@@ -2007,12 +2013,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "bonus": {
-      "fatigueResist": {
-        "option": "Rating"
-      }
-    },
     "source": "Chrome Flesh",
     "page": 112
   },
@@ -2035,6 +2035,21 @@
     ],
     "rating": {
       "maximum": [4]
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "pathogenContactResist": {
+        "option": "Rating"
+      },
+      "pathogenInhalationResist": {
+        "option": "Rating"
+      },
+      "pathogenIngestionResist": {
+        "option": "Rating"
+      },
+      "pathogenInjectionResist": {
+        "option": "Rating"
+      }
     },
     "availability": {
       "rating": [
@@ -2065,21 +2080,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "bonus": {
-      "pathogenContactResist": {
-        "option": "Rating"
-      },
-      "pathogenInhalationResist": {
-        "option": "Rating"
-      },
-      "pathogenIngestionResist": {
-        "option": "Rating"
-      },
-      "pathogenInjectionResist": {
-        "option": "Rating"
-      }
-    },
     "source": "Chrome Flesh",
     "page": 111
   },
@@ -2094,6 +2094,10 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
+    },
     "availability": {
       "rating": [2],
       "restriction": "Legal"
@@ -2103,10 +2107,6 @@
         "min": 50,
         "max": 500
       }
-    },
-    "blockedMountList": [],
-    "bonus": {
-      "enterName": true
     },
     "source": "Chrome Flesh",
     "page": 108
@@ -2122,6 +2122,10 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
+    },
     "availability": {
       "rating": [4],
       "restriction": "Legal"
@@ -2131,10 +2135,6 @@
         "min": 500,
         "max": 2000
       }
-    },
-    "blockedMountList": [],
-    "bonus": {
-      "enterName": true
     },
     "source": "Chrome Flesh",
     "page": 108
@@ -2150,6 +2150,10 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
+    },
     "availability": {
       "rating": [8],
       "restriction": "Legal"
@@ -2159,10 +2163,6 @@
         "min": 2000,
         "max": 10000
       }
-    },
-    "blockedMountList": [],
-    "bonus": {
-      "enterName": true
     },
     "source": "Chrome Flesh",
     "page": 108
@@ -2176,6 +2176,12 @@
     },
     "rating": {
       "maximum": [2]
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "armour": {
+        "bonus": -1
+      }
     },
     "availability": {
       "ratingLinked": [
@@ -2192,12 +2198,6 @@
     "cost": {
       "ratingLinked": [15000, 25000]
     },
-    "blockedMountList": [],
-    "bonus": {
-      "armour": {
-        "bonus": -1
-      }
-    },
     "source": "Chrome Flesh",
     "page": 108
   },
@@ -2209,12 +2209,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [15000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 108
   },
@@ -2229,15 +2229,15 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
+    },
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [10000],
-    "blockedMountList": [],
-    "bonus": {
-      "enterName": true
-    },
     "source": "Chrome Flesh",
     "page": 108
   },
@@ -2252,15 +2252,15 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
+    },
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [20000],
-    "blockedMountList": [],
-    "bonus": {
-      "enterName": true
-    },
     "source": "Chrome Flesh",
     "page": 108
   },
@@ -2287,14 +2287,14 @@
     "rating": {
       "maximum": [2]
     },
+    "addWeapon": "Claws (Bio-Weapon)",
+    "blockedMountList": [],
+    "userSelectable": false,
     "availability": {
       "rating": [4],
       "restriction": "Restricted"
     },
     "cost": [500],
-    "addWeapon": "Claws (Bio-Weapon)",
-    "blockedMountList": [],
-    "userSelectable": false,
     "source": "Chrome Flesh",
     "page": 120
   },
@@ -2321,6 +2321,9 @@
     "rating": {
       "maximum": [2]
     },
+    "addWeapon": "Retractable Claws (Bio-Weapon)",
+    "blockedMountList": [],
+    "userSelectable": false,
     "availability": {
       "rating": [6],
       "restriction": "Restricted"
@@ -2338,9 +2341,6 @@
         ]
       }
     ],
-    "addWeapon": "Retractable Claws (Bio-Weapon)",
-    "blockedMountList": [],
-    "userSelectable": false,
     "source": "Chrome Flesh",
     "page": 120
   },
@@ -2364,6 +2364,11 @@
     "rating": {
       "maximum": [4]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "unarmedDamageType": "Physical"
+    },
+    "userSelectable": false,
     "availability": {
       "rating": [2],
       "restriction": "Legal"
@@ -2381,11 +2386,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "bonus": {
-      "unarmedDamageType": "Physical"
-    },
-    "userSelectable": false,
     "source": "Chrome Flesh",
     "page": 121
   },
@@ -2400,6 +2400,8 @@
     "rating": {
       "maximum": [2]
     },
+    "blockedMountList": [],
+    "userSelectable": false,
     "availability": {
       "rating": [2],
       "restriction": "Legal"
@@ -2417,8 +2419,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "userSelectable": false,
     "source": "Chrome Flesh",
     "page": 121
   },
@@ -2445,6 +2445,9 @@
     "rating": {
       "maximum": [2]
     },
+    "addWeapon": "Medium Tusk(s)",
+    "blockedMountList": [],
+    "userSelectable": false,
     "availability": {
       "rating": [2],
       "restriction": "Legal"
@@ -2462,9 +2465,6 @@
         ]
       }
     ],
-    "addWeapon": "Medium Tusk(s)",
-    "blockedMountList": [],
-    "userSelectable": false,
     "source": "Chrome Flesh",
     "page": 121
   },
@@ -2491,6 +2491,9 @@
     "rating": {
       "maximum": [2]
     },
+    "addWeapon": "Large Tusk(s)",
+    "blockedMountList": [],
+    "userSelectable": false,
     "availability": {
       "rating": [8],
       "restriction": "Restricted"
@@ -2508,9 +2511,6 @@
         ]
       }
     ],
-    "addWeapon": "Large Tusk(s)",
-    "blockedMountList": [],
-    "userSelectable": false,
     "source": "Chrome Flesh",
     "page": 121
   },
@@ -2525,17 +2525,17 @@
     "rating": {
       "maximum": [1]
     },
-    "availability": {
-      "rating": [4],
-      "restriction": "Restricted"
-    },
-    "cost": [500],
     "addWeapon": "Claws (Bio-Weapon)",
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
     "pairBonus": {
       "unarmedReach": 1
     },
+    "availability": {
+      "rating": [4],
+      "restriction": "Restricted"
+    },
+    "cost": [500],
     "source": "Chrome Flesh",
     "page": 120
   },
@@ -2550,14 +2550,14 @@
     "rating": {
       "maximum": [1]
     },
+    "addWeapon": "Retractable Claws (Bio-Weapon)",
+    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
+    "selectSide": true,
     "availability": {
       "rating": [6],
       "restriction": "Restricted"
     },
     "cost": [1000],
-    "addWeapon": "Retractable Claws (Bio-Weapon)",
-    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
-    "selectSide": true,
     "source": "Chrome Flesh",
     "page": 120
   },
@@ -2572,14 +2572,14 @@
     "rating": {
       "maximum": [1]
     },
+    "addWeapon": "Claws (Bio-Weapon)",
+    "blockedMountList": ["Ankle", "Knee", "Hip"],
+    "selectSide": true,
     "availability": {
       "rating": [4],
       "restriction": "Restricted"
     },
     "cost": [500],
-    "addWeapon": "Claws (Bio-Weapon)",
-    "blockedMountList": ["Ankle", "Knee", "Hip"],
-    "selectSide": true,
     "source": "Chrome Flesh",
     "page": 120
   },
@@ -2594,14 +2594,14 @@
     "rating": {
       "maximum": [1]
     },
+    "addWeapon": "Retractable Claws (Bio-Weapon)",
+    "blockedMountList": ["Ankle", "Knee", "Hip"],
+    "selectSide": true,
     "availability": {
       "rating": [6],
       "restriction": "Restricted"
     },
     "cost": [1000],
-    "addWeapon": "Retractable Claws (Bio-Weapon)",
-    "blockedMountList": ["Ankle", "Knee", "Hip"],
-    "selectSide": true,
     "source": "Chrome Flesh",
     "page": 120
   },
@@ -2616,17 +2616,17 @@
     "rating": {
       "maximum": [1]
     },
-    "availability": {
-      "rating": [2],
-      "restriction": "Legal"
-    },
-    "cost": [250],
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
     "bonus": {
       "unarmedDamageType": "Physical"
     },
     "pairIncludeList": ["Striking Callus (Feet)"],
+    "availability": {
+      "rating": [2],
+      "restriction": "Legal"
+    },
+    "cost": [250],
     "source": "Chrome Flesh",
     "page": 121
   },
@@ -2641,17 +2641,17 @@
     "rating": {
       "maximum": [1]
     },
-    "availability": {
-      "rating": [2],
-      "restriction": "Legal"
-    },
-    "cost": [250],
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "selectSide": true,
     "bonus": {
       "unarmedDamageType": "Physical"
     },
     "pairIncludeList": ["Striking Callus (Hands)"],
+    "availability": {
+      "rating": [2],
+      "restriction": "Legal"
+    },
+    "cost": [250],
     "source": "Chrome Flesh",
     "page": 121
   },
@@ -2666,12 +2666,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [2],
       "restriction": "Legal"
     },
     "cost": [100],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 121
   },
@@ -2686,13 +2686,13 @@
     "rating": {
       "maximum": [1]
     },
+    "addWeapon": "Medium Tusk(s)",
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [500],
-    "addWeapon": "Medium Tusk(s)",
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 121
   },
@@ -2707,13 +2707,13 @@
     "rating": {
       "maximum": [1]
     },
+    "addWeapon": "Large Tusk(s)",
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Restricted"
     },
     "cost": [1000],
-    "addWeapon": "Large Tusk(s)",
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 121
   },
@@ -2728,12 +2728,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [2],
       "restriction": "Legal"
     },
     "cost": [100],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 121
   },
@@ -2748,13 +2748,13 @@
     "rating": {
       "maximum": [1]
     },
+    "addWeapon": "Medium Tusk(s)",
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [500],
-    "addWeapon": "Medium Tusk(s)",
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 121
   },
@@ -2769,13 +2769,13 @@
     "rating": {
       "maximum": [1]
     },
+    "addWeapon": "Electrical Discharge",
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [10000],
-    "addWeapon": "Electrical Discharge",
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 120
   },
@@ -2790,13 +2790,13 @@
     "rating": {
       "maximum": [1]
     },
+    "addWeapon": "Fangs (Bio-Weapon)",
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [500],
-    "addWeapon": "Fangs (Bio-Weapon)",
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 120
   },
@@ -2811,13 +2811,13 @@
     "rating": {
       "maximum": [1]
     },
+    "addWeapon": "Retractable Fangs (Bio-Weapon)",
+    "blockedMountList": [],
     "availability": {
       "rating": [6],
       "restriction": "Legal"
     },
     "cost": [1000],
-    "addWeapon": "Retractable Fangs (Bio-Weapon)",
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 120
   },
@@ -2832,13 +2832,13 @@
     "rating": {
       "maximum": [1]
     },
+    "addWeapon": "Horns (Bio-Weapon)",
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [500],
-    "addWeapon": "Horns (Bio-Weapon)",
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 120
   },
@@ -2850,11 +2850,6 @@
     "rating": {
       "maximum": [1]
     },
-    "availability": {
-      "rating": [8],
-      "restriction": "Restricted"
-    },
-    "cost": [2000],
     "blockedMountList": [],
     "bonus": {
       "weaponAccuracy": {
@@ -2862,6 +2857,11 @@
         "bonus": 2
       }
     },
+    "availability": {
+      "rating": [8],
+      "restriction": "Restricted"
+    },
+    "cost": [2000],
     "source": "Chrome Flesh",
     "page": 121
   },
@@ -2873,13 +2873,13 @@
     "rating": {
       "maximum": [1]
     },
+    "addWeapon": "",
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [4000],
-    "addWeapon": "",
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 121
   },
@@ -2894,12 +2894,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [100],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 121
   },
@@ -2914,13 +2914,13 @@
     "rating": {
       "maximum": [1]
     },
+    "addWeapon": "Medium Stinger",
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Restricted"
     },
     "cost": [2000],
-    "addWeapon": "Medium Stinger",
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 121
   },
@@ -2935,13 +2935,13 @@
     "rating": {
       "maximum": [1]
     },
+    "addWeapon": "Large Stinger",
+    "blockedMountList": [],
     "availability": {
       "rating": [12],
       "restriction": "Forbidden"
     },
     "cost": [8000],
-    "addWeapon": "Large Stinger",
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 121
   },
@@ -2957,6 +2957,10 @@
     },
     "rating": {
       "maximum": [3]
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
     },
     "availability": {
       "ratingLinked": [
@@ -2977,10 +2981,6 @@
     "cost": {
       "ratingLinked": [500, 1000, 1500]
     },
-    "blockedMountList": [],
-    "bonus": {
-      "enterName": true
-    },
     "source": "Chrome Flesh",
     "page": 109
   },
@@ -2992,12 +2992,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [6],
       "restriction": "Legal"
     },
     "cost": [2000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 109
   },
@@ -3009,12 +3009,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [4000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 109
   },
@@ -3026,12 +3026,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [1000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 109
   },
@@ -3043,12 +3043,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [2000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 109
   },
@@ -3060,12 +3060,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [1000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 109
   },
@@ -3080,15 +3080,15 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
+    },
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [200],
-    "blockedMountList": [],
-    "bonus": {
-      "enterName": true
-    },
     "source": "Chrome Flesh",
     "page": 109
   },
@@ -3103,12 +3103,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [5],
       "restriction": "Legal"
     },
     "cost": [500],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 109
   },
@@ -3123,12 +3123,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [1000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 109
   },
@@ -3142,6 +3142,10 @@
     "essenceCost": [0],
     "rating": {
       "maximum": [20]
+    },
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
     },
     "availability": {
       "rating": [4],
@@ -3160,10 +3164,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
-    "bonus": {
-      "enterName": true
-    },
     "source": "Chrome Flesh",
     "page": 110
   },
@@ -3178,12 +3178,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [500],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 110
   },
@@ -3198,15 +3198,15 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
+    },
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [200],
-    "blockedMountList": [],
-    "bonus": {
-      "enterName": true
-    },
     "source": "Chrome Flesh",
     "page": 111
   },
@@ -3221,15 +3221,15 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
+    },
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [1000],
-    "blockedMountList": [],
-    "bonus": {
-      "enterName": true
-    },
     "source": "Chrome Flesh",
     "page": 111
   },
@@ -3254,6 +3254,7 @@
     "rating": {
       "maximum": [2]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [
         {
@@ -3283,7 +3284,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 118
   },
@@ -3296,11 +3296,6 @@
     "rating": {
       "maximum": [1]
     },
-    "availability": {
-      "rating": [8],
-      "restriction": "Restricted"
-    },
-    "cost": [10000],
     "blockedMountList": [],
     "bonus": {
       "initiative": {
@@ -3312,6 +3307,11 @@
         }
       ]
     },
+    "availability": {
+      "rating": [8],
+      "restriction": "Restricted"
+    },
+    "cost": [10000],
     "source": "Chrome Flesh",
     "page": 118
   },
@@ -3327,12 +3327,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [2000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 118
   },
@@ -3348,13 +3348,13 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "selectSide": true,
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [2000],
-    "blockedMountList": [],
-    "selectSide": true,
     "source": "Chrome Flesh",
     "page": 118
   },
@@ -3370,13 +3370,13 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "selectSide": true,
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [20000],
-    "blockedMountList": [],
-    "selectSide": true,
     "source": "Chrome Flesh",
     "page": 118
   },
@@ -3392,13 +3392,13 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "selectSide": true,
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [40000],
-    "blockedMountList": [],
-    "selectSide": true,
     "source": "Chrome Flesh",
     "page": 118
   },
@@ -3414,13 +3414,13 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "selectSide": true,
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [80000],
-    "blockedMountList": [],
-    "selectSide": true,
     "source": "Chrome Flesh",
     "page": 118
   },
@@ -3433,12 +3433,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [10000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 118
   },
@@ -3454,12 +3454,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [8000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 118
   },
@@ -3475,12 +3475,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [20000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 118
   },
@@ -3505,6 +3505,7 @@
     "rating": {
       "maximum": [4]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [
         {
@@ -3534,7 +3535,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 119
   },
@@ -3559,6 +3559,7 @@
     "rating": {
       "maximum": [3]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [
         {
@@ -3588,7 +3589,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 119
   },
@@ -3601,12 +3601,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [10000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 118
   },
@@ -3618,12 +3618,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [16],
       "restriction": "Forbidden"
     },
     "cost": [57000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 157,
     "isGeneware": true
@@ -3636,12 +3636,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [10],
       "restriction": "Forbidden"
     },
     "cost": [40000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 157,
     "isGeneware": true
@@ -3657,12 +3657,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [12],
       "restriction": "Forbidden"
     },
     "cost": [30000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 157,
     "isGeneware": true
@@ -3675,12 +3675,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [12],
       "restriction": "Forbidden"
     },
     "cost": [20000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 157,
     "isGeneware": true
@@ -3693,12 +3693,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [6],
       "restriction": "Legal"
     },
     "cost": [10000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 159,
     "isGeneware": true
@@ -3711,15 +3711,15 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "memory": 2
+    },
     "availability": {
       "rating": [10],
       "restriction": "Legal"
     },
     "cost": [15000],
-    "blockedMountList": [],
-    "bonus": {
-      "memory": 2
-    },
     "source": "Chrome Flesh",
     "page": 159,
     "isGeneware": true
@@ -3732,15 +3732,15 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "fatigueResist": 1
+    },
     "availability": {
       "rating": [6],
       "restriction": "Legal"
     },
     "cost": [16500],
-    "blockedMountList": [],
-    "bonus": {
-      "fatigueResist": 1
-    },
     "source": "Chrome Flesh",
     "page": 159,
     "isGeneware": true
@@ -3753,15 +3753,15 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "electricityArmour": 1
+    },
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [12000],
-    "blockedMountList": [],
-    "bonus": {
-      "electricityArmour": 1
-    },
     "source": "Chrome Flesh",
     "page": 159,
     "isGeneware": true
@@ -3774,11 +3774,6 @@
     "rating": {
       "maximum": [1]
     },
-    "availability": {
-      "rating": [10],
-      "restriction": "Legal"
-    },
-    "cost": [30500],
     "blockedMountList": [],
     "bonus": {
       "modifyAttributeImprovementKarmaCost": [
@@ -3788,6 +3783,11 @@
         }
       ]
     },
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [30500],
     "source": "Chrome Flesh",
     "page": 159,
     "isGeneware": true
@@ -3800,11 +3800,6 @@
     "rating": {
       "maximum": [1]
     },
-    "availability": {
-      "rating": [12],
-      "restriction": "Forbidden"
-    },
-    "cost": [16420],
     "blockedMountList": [],
     "bonus": {
       "addictionResistance": {
@@ -3818,6 +3813,11 @@
         }
       }
     },
+    "availability": {
+      "rating": [12],
+      "restriction": "Forbidden"
+    },
+    "cost": [16420],
     "source": "Chrome Flesh",
     "page": 159,
     "isGeneware": true
@@ -3830,12 +3830,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [6],
       "restriction": "Legal"
     },
     "cost": [17000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 160,
     "isGeneware": true
@@ -3848,11 +3848,6 @@
     "rating": {
       "maximum": [1]
     },
-    "availability": {
-      "rating": [6],
-      "restriction": "Legal"
-    },
-    "cost": [8000],
     "blockedMountList": [],
     "bonus": {
       "toxinContactResist": 1,
@@ -3861,6 +3856,11 @@
       "toxinInjectionResist": 1,
       "lifestyleCostModifier": -10
     },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [8000],
     "source": "Chrome Flesh",
     "page": 160,
     "isGeneware": true
@@ -3873,15 +3873,15 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "adapsin": true
+    },
     "availability": {
       "rating": [16],
       "restriction": "Legal"
     },
     "cost": [30000],
-    "blockedMountList": [],
-    "bonus": {
-      "adapsin": true
-    },
     "source": "Chrome Flesh",
     "page": 160,
     "isGeneware": true
@@ -3894,11 +3894,6 @@
     "rating": {
       "maximum": [1]
     },
-    "availability": {
-      "rating": [6],
-      "restriction": "Legal"
-    },
-    "cost": [61000],
     "blockedMountList": [],
     "bonus": {
       "addictionResistance": {
@@ -3928,6 +3923,11 @@
       "decreaseLogicResist": 1,
       "decreaseWillpowerResist": 1
     },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [61000],
     "source": "Chrome Flesh",
     "page": 160,
     "isGeneware": true
@@ -3940,15 +3940,15 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "fatigueResist": -1
+    },
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [18000],
-    "blockedMountList": [],
-    "bonus": {
-      "fatigueResist": -1
-    },
     "source": "Chrome Flesh",
     "page": 160,
     "isGeneware": true
@@ -3961,15 +3961,15 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "lifestyleCostModifier": 10
+    },
     "availability": {
       "rating": [6],
       "restriction": "Legal"
     },
     "cost": [8000],
-    "blockedMountList": [],
-    "bonus": {
-      "lifestyleCostModifier": 10
-    },
     "source": "Chrome Flesh",
     "page": 160,
     "isGeneware": true
@@ -3982,12 +3982,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [7000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 160,
     "isGeneware": true
@@ -4000,11 +4000,6 @@
     "rating": {
       "maximum": [1]
     },
-    "availability": {
-      "rating": [6],
-      "restriction": "Legal"
-    },
-    "cost": [38000],
     "blockedMountList": [],
     "bonus": {
       "skillGroups": [
@@ -4018,6 +4013,11 @@
       "stunHealing": 1,
       "physicalHealing": 1
     },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [38000],
     "source": "Chrome Flesh",
     "page": 160,
     "isGeneware": true
@@ -4030,12 +4030,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [14],
       "restriction": "Legal"
     },
     "cost": [62000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 160,
     "isGeneware": true
@@ -4048,12 +4048,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [14],
       "restriction": "Legal"
     },
     "cost": [65000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 161,
     "isGeneware": true
@@ -4066,15 +4066,15 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "dodge": 2
+    },
     "availability": {
       "rating": [10],
       "restriction": "Legal"
     },
     "cost": [73000],
-    "blockedMountList": [],
-    "bonus": {
-      "dodge": 2
-    },
     "source": "Chrome Flesh",
     "page": 161,
     "isGeneware": true
@@ -4087,12 +4087,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [5],
       "restriction": "Legal"
     },
     "cost": [9000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 161,
     "isGeneware": true
@@ -4105,15 +4105,15 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "lifestyleCostModifier": -10
+    },
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [8000],
-    "blockedMountList": [],
-    "bonus": {
-      "lifestyleCostModifier": -10
-    },
     "source": "Chrome Flesh",
     "page": 161,
     "isGeneware": true
@@ -4126,11 +4126,6 @@
     "rating": {
       "maximum": [1]
     },
-    "availability": {
-      "rating": [8],
-      "restriction": "Legal"
-    },
-    "cost": [78000],
     "blockedMountList": [],
     "bonus": {
       "initiative": {
@@ -4143,6 +4138,11 @@
       ],
       "dodge": 1
     },
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [78000],
     "source": "Chrome Flesh",
     "page": 162,
     "isGeneware": true
@@ -4155,12 +4155,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [14000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 162,
     "isGeneware": true
@@ -4173,12 +4173,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [10],
       "restriction": "Legal"
     },
     "cost": [8000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 161,
     "isGeneware": true
@@ -4191,12 +4191,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [6],
       "restriction": "Legal"
     },
     "cost": [15000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 161,
     "isGeneware": true
@@ -4209,12 +4209,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [6],
       "restriction": "Legal"
     },
     "cost": [20000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 163,
     "isGeneware": true
@@ -4227,15 +4227,15 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "coldArmour": 2
+    },
     "availability": {
       "rating": [5],
       "restriction": "Legal"
     },
     "cost": [8000],
-    "blockedMountList": [],
-    "bonus": {
-      "coldArmour": 2
-    },
     "source": "Chrome Flesh",
     "page": 163,
     "isGeneware": true
@@ -4248,12 +4248,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [18],
       "restriction": "Legal"
     },
     "cost": [50000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 163,
     "isGeneware": true
@@ -4266,15 +4266,15 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "fireArmour": 2
+    },
     "availability": {
       "rating": [5],
       "restriction": "Legal"
     },
     "cost": [8000],
-    "blockedMountList": [],
-    "bonus": {
-      "fireArmour": 2
-    },
     "source": "Chrome Flesh",
     "page": 163,
     "isGeneware": true
@@ -4287,15 +4287,15 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "lifestyleCostModifier": 10
+    },
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [8000],
-    "blockedMountList": [],
-    "bonus": {
-      "lifestyleCostModifier": 10
-    },
     "source": "Chrome Flesh",
     "page": 163,
     "isGeneware": true
@@ -4308,12 +4308,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [30000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 163,
     "isGeneware": true
@@ -4326,17 +4326,17 @@
     "rating": {
       "maximum": [1]
     },
-    "availability": {
-      "rating": [5],
-      "restriction": "Legal"
-    },
-    "cost": [15000],
     "blockedMountList": [],
     "bonus": {
       "toxinContactResist": 2,
       "toxinInhalationResist": 2,
       "toxinIngestionResist": 2
     },
+    "availability": {
+      "rating": [5],
+      "restriction": "Legal"
+    },
+    "cost": [15000],
     "source": "Chrome Flesh",
     "page": 163,
     "isGeneware": true
@@ -4349,15 +4349,15 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "radiationResistance": 2
+    },
     "availability": {
       "rating": [6],
       "restriction": "Legal"
     },
     "cost": [15000],
-    "blockedMountList": [],
-    "bonus": {
-      "radiationResistance": 2
-    },
     "source": "Chrome Flesh",
     "page": 164,
     "isGeneware": true
@@ -4370,6 +4370,10 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
+    },
     "availability": {
       "rating": [10],
       "restriction": "Legal"
@@ -4379,10 +4383,6 @@
         "min": 30000,
         "max": 1000000
       }
-    },
-    "blockedMountList": [],
-    "bonus": {
-      "enterName": true
     },
     "source": "Chrome Flesh",
     "page": 164,
@@ -4396,12 +4396,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [7],
       "restriction": "Legal"
     },
     "cost": [4600],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 165,
     "isGeneware": true
@@ -4414,17 +4414,17 @@
     "rating": {
       "maximum": [1]
     },
-    "availability": {
-      "rating": [6],
-      "restriction": "Legal"
-    },
-    "cost": [6600],
     "blockedMountList": [],
     "bonus": {
       "initiative": {
         "bonus": 1
       }
     },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [6600],
     "source": "Chrome Flesh",
     "page": 165,
     "isGeneware": true
@@ -4437,12 +4437,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [11],
       "restriction": "Legal"
     },
     "cost": [3800],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 165,
     "isGeneware": true
@@ -4455,12 +4455,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [9],
       "restriction": "Restricted"
     },
     "cost": [9000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 165,
     "isGeneware": true
@@ -4473,12 +4473,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [7],
       "restriction": "Forbidden"
     },
     "cost": [6000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 165,
     "isGeneware": true
@@ -4491,12 +4491,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [6],
       "restriction": "Legal"
     },
     "cost": [4000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 165,
     "isGeneware": true
@@ -4509,12 +4509,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [10],
       "restriction": "Legal"
     },
     "cost": [47000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 157,
     "isGeneware": true
@@ -4527,12 +4527,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [10],
       "restriction": "Legal"
     },
     "cost": [47000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 157,
     "isGeneware": true
@@ -4545,12 +4545,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [10],
       "restriction": "Legal"
     },
     "cost": [47000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 157,
     "isGeneware": true
@@ -4563,12 +4563,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [10],
       "restriction": "Legal"
     },
     "cost": [47000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 157,
     "isGeneware": true
@@ -4581,12 +4581,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [10],
       "restriction": "Legal"
     },
     "cost": [47000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 157,
     "isGeneware": true
@@ -4599,12 +4599,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [10],
       "restriction": "Legal"
     },
     "cost": [47000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 157,
     "isGeneware": true
@@ -4617,12 +4617,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [10],
       "restriction": "Legal"
     },
     "cost": [47000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 157,
     "isGeneware": true
@@ -4635,12 +4635,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [10],
       "restriction": "Legal"
     },
     "cost": [47000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 157,
     "isGeneware": true
@@ -4656,15 +4656,15 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
+    },
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [35000],
-    "blockedMountList": [],
-    "bonus": {
-      "enterName": true
-    },
     "source": "Chrome Flesh",
     "page": 158,
     "isGeneware": true
@@ -4677,12 +4677,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [10],
       "restriction": "Forbidden"
     },
     "cost": [18000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 158,
     "isGeneware": true
@@ -4698,12 +4698,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [38000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 158,
     "isGeneware": true
@@ -4719,15 +4719,15 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
+    },
     "availability": {
       "rating": [6],
       "restriction": "Legal"
     },
     "cost": [20000],
-    "blockedMountList": [],
-    "bonus": {
-      "enterName": true
-    },
     "source": "Chrome Flesh",
     "page": 164,
     "isGeneware": true
@@ -4743,15 +4743,15 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "enterName": true
+    },
     "availability": {
       "rating": [10],
       "restriction": "Legal"
     },
     "cost": [90000],
-    "blockedMountList": [],
-    "bonus": {
-      "enterName": true
-    },
     "source": "Chrome Flesh",
     "page": 156,
     "isGeneware": true
@@ -4767,12 +4767,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [15],
       "restriction": "Legal"
     },
     "cost": [2000000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 156,
     "isGeneware": true
@@ -4788,12 +4788,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [300000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 157,
     "isGeneware": true
@@ -4809,12 +4809,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [13],
       "restriction": "Legal"
     },
     "cost": [250000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 156,
     "isGeneware": true
@@ -4830,12 +4830,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [10],
       "restriction": "Legal"
     },
     "cost": [35000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 156,
     "isGeneware": true
@@ -4851,12 +4851,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [10],
       "restriction": "Legal"
     },
     "cost": [65000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 156,
     "isGeneware": true
@@ -4872,12 +4872,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [14],
       "restriction": "Legal"
     },
     "cost": [110000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 157,
     "isGeneware": true
@@ -4893,16 +4893,16 @@
     "rating": {
       "maximum": [1]
     },
-    "availability": {
-      "rating": [4],
-      "restriction": "Legal"
-    },
-    "cost": [100],
     "blockedMountList": [],
     "bonus": {
       "stunHealing": 1,
       "physicalHealing": 1
     },
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [100],
     "source": "Chrome Flesh",
     "page": 123
   },
@@ -4914,12 +4914,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [10000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 123
   },
@@ -4931,15 +4931,15 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "lifestyleCostModifier": -10
+    },
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [10000],
-    "blockedMountList": [],
-    "bonus": {
-      "lifestyleCostModifier": -10
-    },
     "source": "Chrome Flesh",
     "page": 123
   },
@@ -4951,12 +4951,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [10000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 123
   },
@@ -4971,12 +4971,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [10000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 123
   },
@@ -4991,12 +4991,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [30000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 123
   },
@@ -5011,12 +5011,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [16],
       "restriction": "Legal"
     },
     "cost": [50000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 123
   },
@@ -5028,12 +5028,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [2],
       "restriction": "Legal"
     },
     "cost": [50],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 123
   },
@@ -5045,16 +5045,16 @@
     "rating": {
       "maximum": [1]
     },
-    "availability": {
-      "rating": [12],
-      "restriction": "Legal"
-    },
-    "cost": [30000],
     "blockedMountList": [],
     "bonus": {
       "stunHealing": 1,
       "physicalHealing": 2
     },
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [30000],
     "source": "Chrome Flesh",
     "page": 124
   },
@@ -5066,15 +5066,15 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "toxinIngestionResist": 1
+    },
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [1000],
-    "blockedMountList": [],
-    "bonus": {
-      "toxinIngestionResist": 1
-    },
     "source": "Chrome Flesh",
     "page": 124
   },
@@ -5086,12 +5086,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [10000],
-    "blockedMountList": [],
     "source": "Chrome Flesh",
     "page": 124
   },
@@ -5103,15 +5103,15 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
+    "bonus": {
+      "ambidextrous": true
+    },
     "availability": {
       "rating": [6],
       "restriction": "Legal"
     },
     "cost": [4500],
-    "blockedMountList": [],
-    "bonus": {
-      "ambidextrous": true
-    },
     "source": "Hard Targets",
     "page": 185
   },
@@ -5126,13 +5126,13 @@
     "rating": {
       "maximum": [1]
     },
+    "addWeapon": "Bone Spike I",
+    "blockedMountList": [],
     "availability": {
       "rating": [14],
       "restriction": "Forbidden"
     },
     "cost": [20000],
-    "addWeapon": "Bone Spike I",
-    "blockedMountList": [],
     "source": "Hard Targets",
     "page": 185
   },
@@ -5147,13 +5147,13 @@
     "rating": {
       "maximum": [1]
     },
+    "addWeapon": "Bone Spike II",
+    "blockedMountList": [],
     "availability": {
       "rating": [14],
       "restriction": "Forbidden"
     },
     "cost": [20000],
-    "addWeapon": "Bone Spike II",
-    "blockedMountList": [],
     "source": "Hard Targets",
     "page": 185
   },
@@ -5168,13 +5168,13 @@
     "rating": {
       "maximum": [1]
     },
+    "addWeapon": "Bone Spike III",
+    "blockedMountList": [],
     "availability": {
       "rating": [14],
       "restriction": "Forbidden"
     },
     "cost": [20000],
-    "addWeapon": "Bone Spike III",
-    "blockedMountList": [],
     "source": "Hard Targets",
     "page": 185
   },
@@ -5190,12 +5190,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [6],
       "restriction": "Legal"
     },
     "cost": [8000],
-    "blockedMountList": [],
     "source": "Hard Targets",
     "page": 185
   },
@@ -5207,12 +5207,12 @@
     "rating": {
       "maximum": [1]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [10],
       "restriction": "Legal"
     },
     "cost": [15000],
-    "blockedMountList": [],
     "source": "Kill Code",
     "page": 67
   },
@@ -5226,6 +5226,7 @@
     "rating": {
       "maximum": [3]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [
         {
@@ -5255,7 +5256,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "No Future",
     "page": 175
   },
@@ -5280,6 +5280,7 @@
     "rating": {
       "maximum": [3]
     },
+    "blockedMountList": [],
     "availability": {
       "rating": [
         {
@@ -5309,7 +5310,6 @@
         ]
       }
     ],
-    "blockedMountList": [],
     "source": "Dark Terrors",
     "page": 163
   }
