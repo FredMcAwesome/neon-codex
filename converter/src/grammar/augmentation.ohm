@@ -56,7 +56,7 @@ Availability {
 Cost {
   Exp = Cost
     | "FixedValues(" Inner ")" -- fixed
-    | Variable
+    | Variable -- variable
   Cost = AddSub
   Inner = Inner "," AddSub -- list
     | AddSub -- cost

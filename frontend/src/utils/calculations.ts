@@ -2,10 +2,8 @@ import { mathOperatorEnum } from "@shadowrun/common";
 import type { GearCalculationType } from "@shadowrun/common/build/schemas/commonSchemas.js";
 import type { CostWeaponAccessoryType } from "@shadowrun/common/build/schemas/weaponAccessorySchemas.js";
 import type { CostAmmunitionType } from "@shadowrun/common/build/schemas/ammunitionSchemas.js";
-import type {
-  CostArmourType,
-  CostArmourModType,
-} from "@shadowrun/common/build/schemas/armourSchemas.js";
+import type { CostArmourType } from "@shadowrun/common/build/schemas/armourSchemas.js";
+import type { CostArmourModType } from "@shadowrun/common/build/schemas/armourModSchemas.js";
 import type { CostAugmentationType } from "@shadowrun/common/build/schemas/augmentationSchemas.js";
 import type { CostElectronicType } from "@shadowrun/common/build/schemas/electronicSchemas.js";
 import type { CostMagicalType } from "@shadowrun/common/build/schemas/magicalSchemas.js";

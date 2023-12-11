@@ -77,7 +77,8 @@ const WeaponMountSchema = zod
   })
   .strict();
 
-export const Vehicle_DroneSchema = zod
+// TODO: make discriminated union
+export const RiggerSchema = zod
   .object({
     name: zod.string(),
     description: zod.string(),
@@ -136,5 +137,5 @@ export const Vehicle_DroneSchema = zod
   })
   .strict();
 
-export type Vehicle_DroneType = zod.infer<typeof Vehicle_DroneSchema>;
-export const Vehicle_DroneListSchema = zod.array(Vehicle_DroneSchema);
+export type RiggerType = zod.infer<typeof RiggerSchema>;
+export const RiggerListSchema = zod.array(RiggerSchema);

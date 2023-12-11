@@ -180,10 +180,10 @@ costAugmentationSemantics.addOperation("eval", {
     };
   },
   Inner_list(inner, _, cost) {
-    return inner.eval().concat(cost.eval());
+    return inner.eval().concat([cost.eval()]);
   },
   Inner_cost(cost) {
-    return cost.eval();
+    return [cost.eval()];
   },
   Variable(_a, inner, _b) {
     return inner.eval();

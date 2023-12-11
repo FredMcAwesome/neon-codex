@@ -10,6 +10,32 @@ import {
   VehicleModListXmlType,
   VehicleModXmlType,
 } from "./VehicleModParserSchemas.js";
+import {
+  availabilityVehicleModificationSemantics,
+  convertSubsystems,
+  convertVehicleModCategory,
+  convertVehicleModMaxRating,
+  costVehicleModificationSemantics,
+  ratingSemantics,
+  slotSemantics,
+  weaponMountCategoriesSemantics,
+} from "./VehicleModHelper.js";
+import { convertXmlBonus } from "../common/BonusHelper.js";
+import { convertRequirements } from "../common/RequiredHelper.js";
+import { ammoSemantics } from "../combatGear/WeaponParserHelper.js";
+import Weapons from "../../grammar/weapons.ohm-bundle.js";
+const Ammo = Weapons.Ammo;
+import type { AmmunitionType } from "@shadowrun/common/build/schemas/weaponSchemas.js";
+import { firearmWeaponTypeEnum } from "@shadowrun/common/build/enums.js";
+import { convertRatingMeaning } from "./VehicleParserHelper.js";
+import { convertSource } from "../common/ParserHelper.js";
+import { RiggerModSchema } from "@shadowrun/common/build/schemas/riggerModSchemas.js";
+import VehicleModifications from "../../grammar/vehicleModifications.ohm-bundle.js";
+const Rating = VehicleModifications.Rating;
+const Slot = VehicleModifications.Slot;
+const WeaponMountCategories = VehicleModifications.WeaponMountCategories;
+const Availability = VehicleModifications.Availability;
+const Cost = VehicleModifications.Cost;
 
 export function ParseVehicleMods() {
   const currentPath = import.meta.url;
@@ -26,7 +52,7 @@ export function ParseVehicleMods() {
   const jObj: any = parser.parse(xml_string);
   // console.log(
   //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  //   jObj.chummer.mods.mod[189]
+  //   jObj.chummer.mods.mod[96]
   // );
 
   const vehicleModListParsed = VehicleModListXmlSchema.safeParse(
@@ -131,7 +157,14 @@ export function ParseVehicleMods() {
 
   const vehicleModListConverted = englishVehicleModList.map((vehicleMod) => {
     const convertedVehicleMod = convertVehicleMod(vehicleMod);
-    return convertedVehicleMod;
+
+    const check = RiggerModSchema.safeParse(convertedVehicleMod);
+    if (!check.success) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      console.log(convertedVehicleMod);
+      throw new Error(check.error.message);
+    }
+    return check.data;
   });
   // console.log(vehicleListConverted);
   const jsonFilePath = fileURLToPath(
@@ -151,7 +184,97 @@ export function ParseVehicleMods() {
 }
 
 const convertVehicleMod = function (vehicleMod: VehicleModXmlType) {
+  const category = convertVehicleModCategory(vehicleMod.category);
+  const maxRating = convertVehicleModMaxRating(vehicleMod.rating);
+  let minRating;
+  if (vehicleMod.minrating !== undefined) {
+    const match = Rating.match(vehicleMod.minrating);
+    if (match.failed()) {
+      assert(false, match.message);
+    }
+    minRating = ratingSemantics(match).eval();
+  }
+  const ratingMeaning = convertRatingMeaning(vehicleMod.ratinglabel);
+
+  const bonus =
+    vehicleMod.bonus !== undefined
+      ? convertXmlBonus(vehicleMod.bonus)
+      : undefined;
+  const additionalAmmo = vehicleMod.ammobonus;
+  const percentageAmmoIncrease = vehicleMod.ammobonus;
+
+  let replaceAmmo: AmmunitionType | undefined;
+  if (vehicleMod.ammoreplace !== undefined) {
+    const match = Ammo.match(vehicleMod.ammoreplace);
+    if (match.failed()) {
+      assert(false, match.message);
+    }
+    replaceAmmo = ammoSemantics(match).eval();
+  }
+
+  const requirements = convertRequirements(vehicleMod.required);
+  let match = Slot.match(vehicleMod.slots.toString());
+  if (match.failed()) {
+    assert(false, match.message);
+  }
+  const slotCost = slotSemantics(match).eval();
+
+  const subsystemList = convertSubsystems(vehicleMod.subsystems);
+  let weaponMountValidCategoryList: Array<firearmWeaponTypeEnum> | undefined;
+  if (vehicleMod.weaponmountcategories !== undefined) {
+    match = WeaponMountCategories.match(vehicleMod.weaponmountcategories);
+    if (match.failed()) {
+      assert(false, match.message);
+    }
+    weaponMountValidCategoryList = weaponMountCategoriesSemantics(match).eval();
+  }
+
+  match = Availability.match(vehicleMod.avail.toString());
+  if (match.failed()) {
+    console.log(vehicleMod.name);
+    assert(false, match.message);
+  }
+  const availability = availabilityVehicleModificationSemantics(match).eval();
+
+  match = Cost.match(vehicleMod.cost.toString());
+  if (match.failed()) {
+    console.log(vehicleMod.name);
+    assert(false, match.message);
+  }
+  const cost = costVehicleModificationSemantics(match).eval();
+
+  const source = convertSource(vehicleMod.source);
+  const page = vehicleMod.page === "?" ? 0 : vehicleMod.page;
+
+  assert(vehicleMod.modType !== undefined);
+
   return {
     name: vehicleMod.name,
+    description: "",
+    category: category,
+    maxRating: maxRating,
+    minRating: minRating,
+    ratingMeaning: ratingMeaning,
+    bonus: bonus,
+    additionalAmmo: additionalAmmo,
+    percentageAmmoIncrease: percentageAmmoIncrease,
+    replaceAmmo: replaceAmmo,
+    capacity: vehicleMod.capacity,
+    addPhysicalBoxes: vehicleMod.conditionmonitor,
+    isDowngrade:
+      vehicleMod.downgrade !== undefined ? (true as const) : undefined,
+    requiresDroneParent:
+      vehicleMod.optionaldrone !== undefined ? (true as const) : undefined,
+    requirements: requirements,
+    slotCost: slotCost,
+    subsystemList: subsystemList,
+    weaponMountValidCategoryList: weaponMountValidCategoryList,
+    ...(vehicleMod.hide !== undefined && { userSelectable: false as const }),
+    availability: availability,
+    cost: cost,
+    source: source,
+    page: page,
+    // TODO: make this discriminated union flag
+    modType: vehicleMod.modType,
   };
 };

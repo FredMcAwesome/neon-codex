@@ -13256,7 +13256,7 @@
       <name>Interchangeable Bed: Custom</name>
       <page>54</page>
       <source>R5</source>
-      <avail></avail>
+      <avail>0</avail>
       <category>All</category>
       <cost>Variable(0-1000000)</cost>
       <rating>0</rating>

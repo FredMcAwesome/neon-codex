@@ -110,7 +110,7 @@ export const ArmourModSchema = zod
         option: zod.nativeEnum(availabilityEnum),
       }),
     ]),
-    capacity: CapacityArmourModSchema,
+    capacityCost: CapacityArmourModSchema,
     hostArmourRequirements: zod.optional(
       zod
         .object({

@@ -1,15 +1,17 @@
+import assert from "assert";
 import {
   IncludedWeaponMountXmlType,
   vehicleXmlCategoryEnum,
 } from "./VehicleParserSchemas.js";
-import Vehicles from "../../grammar/vehicles.ohm-bundle.js";
 import {
   availabilityEnum,
   costVehicleEnum,
   mathOperatorEnum,
+  ratingMeaningEnum,
   restrictionEnum,
   vehicleCategoryEnum,
 } from "@shadowrun/common/build/enums.js";
+import Vehicles from "../../grammar/vehicles.ohm-bundle.js";
 const Acceleration = Vehicles.Acceleration;
 const Speed = Vehicles.Speed;
 const Availability = Vehicles.Availability;
@@ -284,6 +286,20 @@ seatsSemantics.addOperation("eval", {
     return parseInt(range.sourceString);
   },
 });
+
+export const convertRatingMeaning = function (meaning: string | undefined) {
+  if (meaning === undefined) {
+    return undefined;
+  }
+  switch (meaning) {
+    case "String_Hours":
+      return ratingMeaningEnum.HourPerRating;
+    case "String_UpgradedRating":
+      return ratingMeaningEnum.UpgradedRating;
+    default:
+      assert(false);
+  }
+};
 
 export {
   accelerationSemantics,

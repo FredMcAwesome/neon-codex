@@ -86,8 +86,8 @@ export enum firearmWeaponTypeEnum {
   Lasers = "Lasers",
   SportingRifles = "Sporting Rifles",
   WeaponAttachments = "Weapon Attachments",
-  BioWeapons = "Bio-Weapons",
   Carbines = "Carbines",
+  MicroDroneWeapons = "Micro-Drone Weapons",
 }
 
 export enum explosiveTypeEnum {
@@ -209,6 +209,7 @@ export enum capcityArmourModEnum {
   Rating = "Rating",
   Capacity = "Capacity",
 }
+
 export enum capcityAugmentationEnum {
   Rating = "Rating",
   Capacity = "Capacity",
@@ -355,7 +356,8 @@ export enum mathOperatorEnum {
   Subtract = "-",
   Divide = "/",
   Multiply = "*",
-  GreaterThan = ">=",
+  GreaterThan = ">",
+  GreaterThanOrEqual = ">=",
   Equals = "==",
 }
 
@@ -774,4 +776,51 @@ export enum weaponMountControlEnum {
   Manual = "Manual",
   Manual_SR5 = "Manual [SR5]",
   ArmoredManual = "Armored Manual",
+}
+
+export enum vehicleModCategoryEnum {
+  Body = "Body",
+  Cosmetic = "Cosmetic",
+  Electromagnetic = "Electromagnetic",
+  ModelSpecific = "Model-Specific",
+  PowerTrain = "Power Train",
+  Protection = "Protection",
+  Weapons = "Weapons",
+  All = "All",
+  Handling = "Handling",
+  Speed = "Speed",
+  Acceleration = "Acceleration",
+  Armour = "Armour",
+  Sensor = "Sensor",
+}
+
+export enum vehicleModRatingEnum {
+  Handling = "Handling",
+  Speed = "Speed",
+  Acceleration = "Acceleration",
+  Body = "Body",
+  Armour = "Armour",
+  Pilot = "Pilot",
+  Sensor = "Sensor",
+  Seats = "Seats",
+  Quantity = "Quantity of Mod",
+}
+
+export enum vehicleModAttributeEnum {
+  Handling = "Handling",
+  Speed = "Speed",
+  Acceleration = "Acceleration",
+  Body = "Body",
+  Armour = "Armour",
+  Pilot = "Pilot",
+  Sensor = "Sensor",
+  Seats = "Seats",
+  Rating = "Rating",
+  VehicleCost = "Vehicle Cost",
+  WeaponMountSlots = "Weapon Mount Slots",
+}
+
+export enum ratingMeaningEnum {
+  HourPerRating = "1 Hour per Rating Level",
+  UpgradedRating = "Rating of parent is upgraded",
 }

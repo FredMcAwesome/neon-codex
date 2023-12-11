@@ -61,41 +61,40 @@ const InnerCostAugmentationSchema = zod.union([
 ]);
 type InnerCostAugmentationType = zod.infer<typeof InnerCostAugmentationSchema>;
 
-export type CostAugmentationType =
-  | { ratingLinked: Array<InnerCostAugmentationType> }
-  | Array<InnerCostAugmentationType | { subnumbers: CostAugmentationType }>
-  | {
-      range: {
-        min: InnerCostAugmentationType;
-        max: InnerCostAugmentationType;
-      };
-    };
-export const CostAugmentationSchema: zod.ZodType<CostAugmentationType> =
-  zod.union([
-    zod
-      .object({ ratingLinked: zod.array(InnerCostAugmentationSchema) })
-      .strict(),
-    zod.array(
-      zod.union([
-        InnerCostAugmentationSchema,
-        zod
-          .object({
-            subnumbers: zod.lazy(() => CostAugmentationSchema),
-          })
-          .strict(),
-      ])
-    ),
-    zod
-      .object({
-        range: zod
-          .object({
-            min: InnerCostAugmentationSchema,
-            max: InnerCostAugmentationSchema,
-          })
-          .strict(),
-      })
-      .strict(),
-  ]);
+type PartialCostAugmentationType = Array<
+  InnerCostAugmentationType | { subnumbers: PartialCostAugmentationType }
+>;
+
+const PartialCostAugmentationSchema: zod.ZodType<PartialCostAugmentationType> =
+  zod.array(
+    zod.union([
+      InnerCostAugmentationSchema,
+      zod
+        .object({
+          subnumbers: zod.lazy(() => PartialCostAugmentationSchema),
+        })
+        .strict(),
+    ])
+  );
+
+export const CostAugmentationSchema = zod.union([
+  PartialCostAugmentationSchema,
+  zod
+    .object({ ratingLinked: zod.array(PartialCostAugmentationSchema) })
+    .strict(),
+  zod
+    .object({
+      range: zod
+        .object({
+          min: InnerCostAugmentationSchema,
+          max: InnerCostAugmentationSchema,
+        })
+        .strict(),
+    })
+    .strict(),
+]);
+
+export type CostAugmentationType = zod.infer<typeof CostAugmentationSchema>;
 
 const InnerCapacityAugmentationSchema = zod.union([
   zod.number(),

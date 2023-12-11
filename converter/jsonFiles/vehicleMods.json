@@ -1,581 +1,6047 @@
 [
   {
-    "name": "Tracked Propulsion"
-  },
-  {
-    "name": "Signature Dampening"
-  },
-  {
-    "name": "FlashTech"
-  },
-  {
-    "name": "Enviroseal"
-  },
-  {
-    "name": "Drone Rail"
-  },
-  {
-    "name": "Gyro-Stabilization"
-  },
-  {
-    "name": "Smart Tires"
-  },
-  {
-    "name": "Dustoff Armored Valkyrie Module"
-  },
-  {
-    "name": "Reloading Drone Forbidden Weapon Reloading Autosoft"
-  },
-  {
-    "name": "Avibras-Nissan AN 822 Device Rating Upgrade"
-  },
-  {
-    "name": "Ruhrmetall Wolf II Troop Transport Module"
-  },
-  {
-    "name": "Maersk Shipyards Wavecutter MPAC Small Craft Bay"
-  },
-  {
-    "name": "Speakers"
-  },
-  {
-    "name": "Strobes"
-  },
-  {
-    "name": "Acceleration Enhancement"
-  },
-  {
-    "name": "Gecko Tips"
-  },
-  {
-    "name": "Gliding System"
-  },
-  {
-    "name": "Handling Enhancement"
-  },
-  {
-    "name": "Improved Economy"
-  },
-  {
-    "name": "Manual Control Override"
-  },
-  {
-    "name": "Multifuel Engine"
-  },
-  {
-    "name": "Off-Road Suspension"
-  },
-  {
-    "name": "Rigger Cocoon"
-  },
-  {
-    "name": "Removed Manual Controls"
-  },
-  {
-    "name": "Rocket Booster"
-  },
-  {
-    "name": "Secondary Manual Controls"
-  },
-  {
-    "name": "Secondary Propulsion (Amphibious, Surface)"
-  },
-  {
-    "name": "Secondary Propulsion (Amphibious, Submersible)"
-  },
-  {
-    "name": "Secondary Propulsion (Hovercraft)"
-  },
-  {
-    "name": "Secondary Propulsion (Rotor)"
-  },
-  {
-    "name": "Secondary Propulsion (Tracked)"
-  },
-  {
-    "name": "Secondary Propulsion (Walker)"
-  },
-  {
-    "name": "Speed Enhancement"
-  },
-  {
-    "name": "Anti-Theft System"
-  },
-  {
-    "name": "Armor (Standard)"
-  },
-  {
-    "name": "Armor (Concealed)"
-  },
-  {
-    "name": "Passenger Protection System"
-  },
-  {
-    "name": "Personal Armor"
-  },
-  {
-    "name": "Special Armor Modification (Chemical)"
-  },
-  {
-    "name": "Special Armor Modification (Fire)"
-  },
-  {
-    "name": "Special Armor Modification (Insulation)"
-  },
-  {
-    "name": "Special Armor Modification (Nonconductivity)"
-  },
-  {
-    "name": "Special Armor Modification (Radiation)"
-  },
-  {
-    "name": "Special Armor Modification (Universal Mirror Material)"
-  },
-  {
-    "name": "Standard Drone Rack (Micro)"
-  },
-  {
-    "name": "Standard Drone Rack (Mini)"
-  },
-  {
-    "name": "Standard Drone Rack (Small)"
-  },
-  {
-    "name": "Standard Drone Rack (Medium)"
-  },
-  {
-    "name": "Standard Drone Rack (Large)"
-  },
-  {
-    "name": "Landing Drone Rack (Micro)"
-  },
-  {
-    "name": "Landing Drone Rack (Mini)"
-  },
-  {
-    "name": "Landing Drone Rack (Small)"
-  },
-  {
-    "name": "Landing Drone Rack (Medium)"
-  },
-  {
-    "name": "Landing Drone Rack (Large)"
-  },
-  {
-    "name": "Gun Port"
-  },
-  {
-    "name": "Missile Defense System"
-  },
-  {
-    "name": "Oil Slick Sprayer"
-  },
-  {
-    "name": "Ram Plate"
-  },
-  {
-    "name": "Smoke Projector"
-  },
-  {
-    "name": "Smoke Projector (Thermal)"
-  },
-  {
-    "name": "Road Strip Ejector"
-  },
-  {
-    "name": "Assembly/Disassembly"
-  },
-  {
-    "name": "Chameleon Coating"
-  },
-  {
-    "name": "Extra Entry/Exit Points"
-  },
-  {
-    "name": "Extreme Environment Modification"
-  },
-  {
-    "name": "Increased Seating"
-  },
-  {
-    "name": "Life Support"
-  },
-  {
-    "name": "Mechanical Arm (Basic)"
-  },
-  {
-    "name": "Mechanical Arm (Articulated)"
-  },
-  {
-    "name": "Nanomaintenance System"
-  },
-  {
-    "name": "Realistic Features"
-  },
-  {
-    "name": "Smuggling Compartment"
-  },
-  {
-    "name": "Special Equipment"
-  },
-  {
-    "name": "Smuggling Compartment Shielding"
-  },
-  {
-    "name": "Valkyrie Module"
-  },
-  {
-    "name": "Winch (Basic)"
-  },
-  {
-    "name": "Winch (Enhanced)"
-  },
-  {
-    "name": "Workshop"
-  },
-  {
-    "name": "Electromagnetic Shielding"
-  },
-  {
-    "name": "ECM"
-  },
-  {
-    "name": "GridLink"
-  },
-  {
-    "name": "GridLink Override"
-  },
-  {
-    "name": "Retrans Unit"
-  },
-  {
-    "name": "Satellite Link"
-  },
-  {
-    "name": "Pilot Enhancement"
-  },
-  {
-    "name": "Sensor Enhancement"
-  },
-  {
-    "name": "Signature Masking"
-  },
-  {
-    "name": "SunCell"
-  },
-  {
-    "name": "Touch Sensors"
-  },
-  {
-    "name": "Amenities (Squatter)"
-  },
-  {
-    "name": "Amenities (Low)"
-  },
-  {
-    "name": "Amenities (Middle)"
-  },
-  {
-    "name": "Amenities (High)"
-  },
-  {
-    "name": "Amenities (Luxury)"
-  },
-  {
-    "name": "Enhanced Image Screens"
-  },
-  {
-    "name": "Máquina Conversion"
-  },
-  {
-    "name": "Metahuman Adjustment"
-  },
-  {
-    "name": "Manual Operation"
-  },
-  {
-    "name": "Rigger Interface"
-  },
-  {
-    "name": "Interior Cameras"
-  },
-  {
-    "name": "Searchlight"
-  },
-  {
-    "name": "Vehicle Tag Eraser"
-  },
-  {
-    "name": "Yerz Kit"
-  },
-  {
-    "name": "Yerzed Out"
-  },
-  {
-    "name": "Micro Weapon Mount (Drone)"
-  },
-  {
-    "name": "Mini Weapon Mount (Drone)"
-  },
-  {
-    "name": "Gecko Grips (Drone)"
-  },
-  {
-    "name": "Small Weapon Mount (Drone)"
-  },
-  {
-    "name": "Standard Weapon Mount (Drone)"
-  },
-  {
-    "name": "Large Weapon Mount (Drone)"
-  },
-  {
-    "name": "Huge Weapon Mount (Drone)"
-  },
-  {
-    "name": "Heavy Weapon Mount (Drone)"
-  },
-  {
-    "name": "Realistic Features (Drone)"
-  },
-  {
-    "name": "Amphibious (Drone)"
-  },
-  {
-    "name": "Submersible (Drone)"
-  },
-  {
-    "name": "Assembly Time Improvement (Drone)"
-  },
-  {
-    "name": "Customized (Drone)"
-  },
-  {
-    "name": "Drone Arm"
-  },
-  {
-    "name": "Synthetic Drone Arm"
-  },
-  {
-    "name": "Primitive Drone Arm"
-  },
-  {
-    "name": "Drone Leg"
-  },
-  {
-    "name": "Synthetic Drone Leg"
-  },
-  {
-    "name": "Immobile (Drone)"
-  },
-  {
-    "name": "SkyGuide (Drone)"
-  },
-  {
-    "name": "Spotlight (Drone)"
-  },
-  {
-    "name": "Suspension (Drone)"
-  },
-  {
-    "name": "Tire Mod (Drone)"
-  },
-  {
-    "name": "Pilot Program (Drone)"
-  },
-  {
-    "name": "Spoof Chips"
-  },
-  {
-    "name": "Spoof Chips"
-  },
-  {
-    "name": "Fragile (Drone)"
-  },
-  {
-    "name": "Single Sensor (Drone)"
-  },
-  {
-    "name": "Paraplegic Modification"
-  },
-  {
-    "name": "Daihatsu-Caterpillar Horseman Passenger Pod"
-  },
-  {
-    "name": "Daihatsu-Caterpillar Horseman Cargo Pod"
-  },
-  {
-    "name": "Daihatsu-Caterpillar Horseman Advanced Cargo Pod"
-  },
-  {
-    "name": "Daihatsu-Caterpillar Horseman Drone Pod"
-  },
-  {
-    "name": "Daihatsu-Caterpillar Horseman Security Pod"
-  },
-  {
-    "name": "Chameleon Coating"
-  },
-  {
-    "name": "Dash Light Bar"
-  },
-  {
-    "name": "Emergency Light Bar"
-  },
-  {
-    "name": "Morphing License Plate"
-  },
-  {
-    "name": "Morphing License Plate"
-  },
-  {
-    "name": "Spike Strip"
-  },
-  {
-    "name": "Zapper Strip"
-  },
-  {
-    "name": "Tracking Strip"
-  },
-  {
-    "name": "Off-Road Tires"
-  },
-  {
-    "name": "Racing Tires"
-  },
-  {
-    "name": "Run-Flat Tires"
-  },
-  {
-    "name": "Siren"
-  },
-  {
-    "name": "Smuggling Compartment (Dwarf, Human, Elf, or Ork)"
-  },
-  {
-    "name": "Smuggling Compartment (Troll)"
-  },
-  {
-    "name": "Rigger Services (1 hour)"
-  },
-  {
-    "name": "Extended Roof"
-  },
-  {
-    "name": "Bathroom"
-  },
-  {
-    "name": "Holding Cell"
-  },
-  {
-    "name": "Sleeping Quarters"
-  },
-  {
-    "name": "Advanced Lightbar"
-  },
-  {
-    "name": "Open Box Storage"
-  },
-  {
-    "name": "Interchangeable Bed: Armory"
-  },
-  {
-    "name": "Interchangeable Bed: Cargo Pod"
-  },
-  {
-    "name": "Interchangeable Bed: Food Truck"
-  },
-  {
-    "name": "Interchangeable Bed: Sleeper Command Cabin"
-  },
-  {
-    "name": "Interchangeable Bed: Transport"
-  },
-  {
-    "name": "Interchangeable Bed: Standard Drone Rack (Micro)"
-  },
-  {
-    "name": "Interchangeable Bed: Standard Drone Rack (Mini)"
-  },
-  {
-    "name": "Interchangeable Bed: Standard Drone Rack (Small)"
-  },
-  {
-    "name": "Interchangeable Bed: Standard Drone Rack (Medium)"
-  },
-  {
-    "name": "Interchangeable Bed: Standard Drone Rack (Large)"
-  },
-  {
-    "name": "Interchangeable Bed: Landing Drone Rack (Micro)"
-  },
-  {
-    "name": "Interchangeable Bed: Landing Drone Rack (Mini)"
-  },
-  {
-    "name": "Interchangeable Bed: Landing Drone Rack (Small)"
-  },
-  {
-    "name": "Interchangeable Bed: Landing Drone Rack (Medium)"
-  },
-  {
-    "name": "Interchangeable Bed: Landing Drone Rack (Large)"
-  },
-  {
-    "name": "Interchangeable Bed: Workshop"
-  },
-  {
-    "name": "Interchangeable Bed: Rigger Cocoon"
-  },
-  {
-    "name": "Interchangeable Bed: Custom"
-  },
-  {
-    "name": "Handling (Drone)"
-  },
-  {
-    "name": "Speed (Drone)"
-  },
-  {
-    "name": "Acceleration (Drone)"
-  },
-  {
-    "name": "Armor (Drone)"
-  },
-  {
-    "name": "Sensor (Drone)"
-  },
-  {
-    "name": "Handling Downgrade (Drone)"
-  },
-  {
-    "name": "Speed Downgrade (Drone)"
-  },
-  {
-    "name": "Acceleration Downgrade (Drone)"
-  },
-  {
-    "name": "Body Downgrade (Drone)"
-  },
-  {
-    "name": "Armor Downgrade (Drone)"
-  },
-  {
-    "name": "Sensor Downgrade (Drone)"
-  },
-  {
-    "name": "Blow-Away Panel Weapon Mount Add-on (Drone)"
-  },
-  {
-    "name": "Pop-Out Weapon Mount Add-on (Drone)"
-  },
-  {
-    "name": "Expanded Ammunition Bay (Second Bin) Weapon Mount Add-on (Drone)"
-  },
-  {
-    "name": "Expanded Ammunition Bay (Belt-Feed) Weapon Mount Add-on (Drone)"
-  },
-  {
-    "name": "Ammo Bin"
+    "name": "Tracked Propulsion",
+    "description": "",
+    "category": "Model-Specific",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Rigger 5",
+    "page": 0,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Signature Dampening",
+    "description": "",
+    "category": "Model-Specific",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Rigger 5",
+    "page": 0,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "FlashTech",
+    "description": "",
+    "category": "Model-Specific",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Rigger 5",
+    "page": 0,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Enviroseal",
+    "description": "",
+    "category": "Model-Specific",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Rigger 5",
+    "page": 0,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Drone Rail",
+    "description": "",
+    "category": "Model-Specific",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Rigger 5",
+    "page": 0,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Gyro-Stabilization",
+    "description": "",
+    "category": "Model-Specific",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Rigger 5",
+    "page": 0,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Smart Tires",
+    "description": "",
+    "category": "Model-Specific",
+    "maxRating": {
+      "option": "Quantity of Mod"
+    },
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Rigger 5",
+    "page": 0,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Dustoff Armored Valkyrie Module",
+    "description": "",
+    "category": "Model-Specific",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Bullets And Bandages",
+    "page": 23,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Reloading Drone Forbidden Weapon Reloading Autosoft",
+    "description": "",
+    "category": "Model-Specific",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Forbidden"
+    },
+    "cost": [250],
+    "source": "Hard Targets",
+    "page": 189,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Avibras-Nissan AN 822 Device Rating Upgrade",
+    "description": "",
+    "category": "Model-Specific",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Shadows In Focus: Metropole",
+    "page": 31,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Ruhrmetall Wolf II Troop Transport Module",
+    "description": "",
+    "category": "Model-Specific",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Rigger 5",
+    "page": 77,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Maersk Shipyards Wavecutter MPAC Small Craft Bay",
+    "description": "",
+    "category": "Model-Specific",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Street Lethal",
+    "page": 132,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Speakers",
+    "description": "",
+    "category": "Cosmetic",
+    "maxRating": 0,
+    "slotCost": [0],
+    "userSelectable": false,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Rigger 5",
+    "page": 128,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Strobes",
+    "description": "",
+    "category": "Cosmetic",
+    "maxRating": 0,
+    "slotCost": [0],
+    "userSelectable": false,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Rigger 5",
+    "page": 128,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Acceleration Enhancement",
+    "description": "",
+    "category": "Power Train",
+    "maxRating": 2,
+    "slotCost": {
+      "ratingLinked": [[4], [8]]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": {
+      "ratingLinked": [
+        [
+          {
+            "subnumbers": [
+              {
+                "subnumbers": [
+                  {
+                    "option": "Acceleration"
+                  },
+                  {
+                    "operator": ">="
+                  },
+                  0
+                ]
+              },
+              {
+                "operator": "*"
+              },
+              5000
+            ]
+          },
+          {
+            "operator": "+"
+          },
+          {
+            "subnumbers": [
+              {
+                "option": "Acceleration"
+              },
+              {
+                "operator": "*"
+              },
+              10000
+            ]
+          }
+        ],
+        [
+          {
+            "subnumbers": [
+              {
+                "subnumbers": [
+                  {
+                    "option": "Acceleration"
+                  },
+                  {
+                    "operator": ">="
+                  },
+                  0
+                ]
+              },
+              {
+                "operator": "*"
+              },
+              12500
+            ]
+          },
+          {
+            "operator": "+"
+          },
+          {
+            "subnumbers": [
+              {
+                "option": "Acceleration"
+              },
+              {
+                "operator": "*"
+              },
+              25000
+            ]
+          }
+        ]
+      ]
+    },
+    "source": "Rigger 5",
+    "page": 154,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Gecko Tips",
+    "description": "",
+    "category": "Power Train",
+    "maxRating": 0,
+    "slotCost": [
+      1,
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          3,
+          {
+            "operator": "*"
+          },
+          {
+            "subnumbers": [
+              {
+                "option": "Body"
+              },
+              {
+                "operator": ">="
+              },
+              4
+            ]
+          }
+        ]
+      }
+    ],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [
+      1000,
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          4000,
+          {
+            "operator": "*"
+          },
+          {
+            "subnumbers": [
+              {
+                "option": "Body"
+              },
+              {
+                "operator": ">="
+              },
+              4
+            ]
+          }
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 154,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Gliding System",
+    "description": "",
+    "category": "Power Train",
+    "maxRating": 0,
+    "slotCost": [
+      5,
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          5,
+          {
+            "operator": "*"
+          },
+          {
+            "subnumbers": [
+              {
+                "option": "Body"
+              },
+              {
+                "operator": ">"
+              },
+              12
+            ]
+          }
+        ]
+      }
+    ],
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            12,
+            {
+              "operator": "+"
+            },
+            {
+              "subnumbers": [
+                4,
+                {
+                  "operator": "*"
+                },
+                {
+                  "subnumbers": [
+                    {
+                      "option": "Body"
+                    },
+                    {
+                      "operator": ">"
+                    },
+                    12
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "restriction": "Restricted"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Body"
+              },
+              {
+                "operator": ">="
+              },
+              0
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          1500
+        ]
+      },
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "option": "Body"
+          },
+          {
+            "operator": "*"
+          },
+          3000
+        ]
+      },
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "subnumbers": [
+                  {
+                    "option": "Body"
+                  },
+                  {
+                    "operator": "*"
+                  },
+                  1000
+                ]
+              }
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          {
+            "subnumbers": [
+              {
+                "option": "Body"
+              },
+              {
+                "operator": ">"
+              },
+              12
+            ]
+          }
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 154,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Handling Enhancement",
+    "description": "",
+    "category": "Power Train",
+    "maxRating": 3,
+    "slotCost": {
+      "ratingLinked": [[4], [10], [18]]
+    },
+    "availability": {
+      "ratingLinked": [
+        {
+          "rating": [6],
+          "restriction": "Legal"
+        },
+        {
+          "rating": [8],
+          "restriction": "Legal"
+        },
+        {
+          "rating": [10],
+          "restriction": "Legal"
+        }
+      ]
+    },
+    "cost": {
+      "ratingLinked": [
+        [
+          {
+            "subnumbers": [
+              {
+                "subnumbers": [
+                  {
+                    "option": "Handling"
+                  },
+                  {
+                    "operator": ">="
+                  },
+                  0
+                ]
+              },
+              {
+                "operator": "*"
+              },
+              1000
+            ]
+          },
+          {
+            "operator": "+"
+          },
+          {
+            "subnumbers": [
+              {
+                "option": "Handling"
+              },
+              {
+                "operator": "*"
+              },
+              2000
+            ]
+          }
+        ],
+        [
+          {
+            "subnumbers": [
+              {
+                "subnumbers": [
+                  {
+                    "option": "Handling"
+                  },
+                  {
+                    "operator": ">="
+                  },
+                  0
+                ]
+              },
+              {
+                "operator": "*"
+              },
+              2500
+            ]
+          },
+          {
+            "operator": "+"
+          },
+          {
+            "subnumbers": [
+              {
+                "option": "Handling"
+              },
+              {
+                "operator": "*"
+              },
+              5000
+            ]
+          }
+        ],
+        [
+          {
+            "subnumbers": [
+              {
+                "subnumbers": [
+                  {
+                    "option": "Handling"
+                  },
+                  {
+                    "operator": ">="
+                  },
+                  0
+                ]
+              },
+              {
+                "operator": "*"
+              },
+              6000
+            ]
+          },
+          {
+            "operator": "+"
+          },
+          {
+            "subnumbers": [
+              {
+                "option": "Handling"
+              },
+              {
+                "operator": "*"
+              },
+              12000
+            ]
+          }
+        ]
+      ]
+    },
+    "source": "Rigger 5",
+    "page": 154,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Improved Economy",
+    "description": "",
+    "category": "Power Train",
+    "maxRating": 0,
+    "slotCost": [2],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [7500],
+    "source": "Rigger 5",
+    "page": 154,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Manual Control Override",
+    "description": "",
+    "category": "Power Train",
+    "maxRating": 0,
+    "slotCost": [1],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [500],
+    "source": "Rigger 5",
+    "page": 154,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Multifuel Engine",
+    "description": "",
+    "category": "Power Train",
+    "maxRating": 0,
+    "slotCost": [4],
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Body"
+              },
+              {
+                "operator": ">="
+              },
+              0
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      },
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "option": "Body"
+          },
+          {
+            "operator": "*"
+          },
+          1000
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 155,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Off-Road Suspension",
+    "description": "",
+    "category": "Power Train",
+    "maxRating": 0,
+    "slotCost": [2],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Vehicle Cost"
+          },
+          {
+            "operator": "*"
+          },
+          0.25
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 155,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Rigger Cocoon",
+    "description": "",
+    "category": "Power Train",
+    "maxRating": 0,
+    "slotCost": [2],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [1500],
+    "source": "Rigger 5",
+    "page": 155,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Removed Manual Controls",
+    "description": "",
+    "category": "Power Train",
+    "maxRating": 0,
+    "slotCost": [1],
+    "availability": {
+      "rating": [2],
+      "restriction": "Legal"
+    },
+    "cost": [200],
+    "source": "Rigger 5",
+    "page": 155,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Rocket Booster",
+    "description": "",
+    "category": "Power Train",
+    "maxRating": 0,
+    "slotCost": [10],
+    "availability": {
+      "rating": [16],
+      "restriction": "Forbidden"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Body"
+              },
+              {
+                "operator": ">="
+              },
+              0
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          2500
+        ]
+      },
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "option": "Body"
+          },
+          {
+            "operator": "*"
+          },
+          5000
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 156,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Secondary Manual Controls",
+    "description": "",
+    "category": "Power Train",
+    "maxRating": 0,
+    "slotCost": [2],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
+    "source": "Rigger 5",
+    "page": 156,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Secondary Propulsion (Amphibious, Surface)",
+    "description": "",
+    "category": "Power Train",
+    "maxRating": 0,
+    "slotCost": [4],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Body"
+              },
+              {
+                "operator": ">="
+              },
+              0
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          100
+        ]
+      },
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "option": "Body"
+          },
+          {
+            "operator": "*"
+          },
+          200
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 156,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Secondary Propulsion (Amphibious, Submersible)",
+    "description": "",
+    "category": "Power Train",
+    "maxRating": 0,
+    "slotCost": [8],
+    "availability": {
+      "rating": [12],
+      "restriction": "Restricted"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Body"
+              },
+              {
+                "operator": ">="
+              },
+              0
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          1000
+        ]
+      },
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "option": "Body"
+          },
+          {
+            "operator": "*"
+          },
+          2000
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 156,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Secondary Propulsion (Hovercraft)",
+    "description": "",
+    "category": "Power Train",
+    "maxRating": 0,
+    "slotCost": [8],
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Body"
+              },
+              {
+                "operator": ">="
+              },
+              0
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      },
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "option": "Body"
+          },
+          {
+            "operator": "*"
+          },
+          1000
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 156,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Secondary Propulsion (Rotor)",
+    "description": "",
+    "category": "Power Train",
+    "maxRating": 0,
+    "slotCost": [10],
+    "availability": {
+      "rating": [12],
+      "restriction": "Restricted"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Body"
+              },
+              {
+                "operator": ">="
+              },
+              0
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          1500
+        ]
+      },
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "option": "Body"
+          },
+          {
+            "operator": "*"
+          },
+          3000
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 157,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Secondary Propulsion (Tracked)",
+    "description": "",
+    "category": "Power Train",
+    "maxRating": 0,
+    "slotCost": [6],
+    "availability": {
+      "rating": [10],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Body"
+              },
+              {
+                "operator": ">="
+              },
+              0
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      },
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "option": "Body"
+          },
+          {
+            "operator": "*"
+          },
+          1000
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 157,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Secondary Propulsion (Walker)",
+    "description": "",
+    "category": "Power Train",
+    "maxRating": 0,
+    "slotCost": [8],
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Body"
+              },
+              {
+                "operator": ">="
+              },
+              0
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          1000
+        ]
+      },
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "option": "Body"
+          },
+          {
+            "operator": "*"
+          },
+          2000
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 157,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Speed Enhancement",
+    "description": "",
+    "category": "Power Train",
+    "maxRating": 3,
+    "slotCost": {
+      "ratingLinked": [[5], [14], [20]]
+    },
+    "availability": {
+      "ratingLinked": [
+        {
+          "rating": [6],
+          "restriction": "Legal"
+        },
+        {
+          "rating": [8],
+          "restriction": "Legal"
+        },
+        {
+          "rating": [12],
+          "restriction": "Legal"
+        }
+      ]
+    },
+    "cost": {
+      "ratingLinked": [
+        [
+          {
+            "subnumbers": [
+              {
+                "subnumbers": [
+                  {
+                    "option": "Speed"
+                  },
+                  {
+                    "operator": ">="
+                  },
+                  0
+                ]
+              },
+              {
+                "operator": "*"
+              },
+              1000
+            ]
+          },
+          {
+            "operator": "+"
+          },
+          {
+            "subnumbers": [
+              {
+                "option": "Speed"
+              },
+              {
+                "operator": "*"
+              },
+              2000
+            ]
+          }
+        ],
+        [
+          {
+            "subnumbers": [
+              {
+                "subnumbers": [
+                  {
+                    "option": "Speed"
+                  },
+                  {
+                    "operator": ">="
+                  },
+                  0
+                ]
+              },
+              {
+                "operator": "*"
+              },
+              2500
+            ]
+          },
+          {
+            "operator": "+"
+          },
+          {
+            "subnumbers": [
+              {
+                "option": "Speed"
+              },
+              {
+                "operator": "*"
+              },
+              5000
+            ]
+          }
+        ],
+        [
+          {
+            "subnumbers": [
+              {
+                "subnumbers": [
+                  {
+                    "option": "Speed"
+                  },
+                  {
+                    "operator": ">="
+                  },
+                  0
+                ]
+              },
+              {
+                "operator": "*"
+              },
+              6000
+            ]
+          },
+          {
+            "operator": "+"
+          },
+          {
+            "subnumbers": [
+              {
+                "option": "Speed"
+              },
+              {
+                "operator": "*"
+              },
+              12000
+            ]
+          }
+        ]
+      ]
+    },
+    "source": "Rigger 5",
+    "page": 157,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Anti-Theft System",
+    "description": "",
+    "category": "Protection",
+    "maxRating": 4,
+    "slotCost": {
+      "ratingLinked": [[1], [2], [4], [6]]
+    },
+    "availability": {
+      "ratingLinked": [
+        {
+          "rating": [4],
+          "restriction": "Legal"
+        },
+        {
+          "rating": [6],
+          "restriction": "Legal"
+        },
+        {
+          "rating": [8],
+          "restriction": "Restricted"
+        },
+        {
+          "rating": [12],
+          "restriction": "Forbidden"
+        }
+      ]
+    },
+    "cost": {
+      "ratingLinked": [[500], [1000], [2500], [5000]]
+    },
+    "source": "Rigger 5",
+    "page": 159,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Armor (Standard)",
+    "description": "",
+    "category": "Protection",
+    "maxRating": {
+      "option": "Body"
+    },
+    "bonus": {
+      "armour": {
+        "bonus": {
+          "option": "Rating"
+        }
+      }
+    },
+    "slotCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          2
+        ]
+      }
+    ],
+    "availability": {
+      "rating": [6],
+      "restriction": "Restricted"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 159,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Armor (Concealed)",
+    "description": "",
+    "category": "Protection",
+    "maxRating": {
+      "option": "Body"
+    },
+    "bonus": {
+      "armour": {
+        "bonus": {
+          "option": "Rating"
+        }
+      }
+    },
+    "slotCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          3
+        ]
+      }
+    ],
+    "availability": {
+      "rating": [12],
+      "restriction": "Restricted"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          3000
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 159,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Passenger Protection System",
+    "description": "",
+    "category": "Protection",
+    "maxRating": 6,
+    "slotCost": [2],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          2000
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 159,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Personal Armor",
+    "description": "",
+    "category": "Protection",
+    "maxRating": 10,
+    "slotCost": [2],
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            }
+          ]
+        }
+      ],
+      "restriction": "Restricted"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 159,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Special Armor Modification (Chemical)",
+    "description": "",
+    "category": "Protection",
+    "maxRating": 50,
+    "slotCost": [2],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 159,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Special Armor Modification (Fire)",
+    "description": "",
+    "category": "Protection",
+    "maxRating": 50,
+    "slotCost": [2],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 159,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Special Armor Modification (Insulation)",
+    "description": "",
+    "category": "Protection",
+    "maxRating": 50,
+    "slotCost": [2],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 159,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Special Armor Modification (Nonconductivity)",
+    "description": "",
+    "category": "Protection",
+    "maxRating": 50,
+    "slotCost": [2],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 159,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Special Armor Modification (Radiation)",
+    "description": "",
+    "category": "Protection",
+    "maxRating": 50,
+    "slotCost": [2],
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                2
+              ]
+            }
+          ]
+        }
+      ],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          400
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 159,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Special Armor Modification (Universal Mirror Material)",
+    "description": "",
+    "category": "Protection",
+    "maxRating": 50,
+    "slotCost": [2],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 159,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Standard Drone Rack (Micro)",
+    "description": "",
+    "category": "Weapons",
+    "maxRating": 0,
+    "slotCost": [1],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [350],
+    "source": "Rigger 5",
+    "page": 160,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Standard Drone Rack (Mini)",
+    "description": "",
+    "category": "Weapons",
+    "maxRating": 0,
+    "slotCost": [1],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [500],
+    "source": "Rigger 5",
+    "page": 160,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Standard Drone Rack (Small)",
+    "description": "",
+    "category": "Weapons",
+    "maxRating": 0,
+    "slotCost": [2],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
+    "source": "Rigger 5",
+    "page": 160,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Standard Drone Rack (Medium)",
+    "description": "",
+    "category": "Weapons",
+    "maxRating": 0,
+    "slotCost": [3],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [2000],
+    "source": "Rigger 5",
+    "page": 160,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Standard Drone Rack (Large)",
+    "description": "",
+    "category": "Weapons",
+    "maxRating": 0,
+    "slotCost": [4],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [4000],
+    "source": "Rigger 5",
+    "page": 160,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Landing Drone Rack (Micro)",
+    "description": "",
+    "category": "Weapons",
+    "maxRating": 0,
+    "slotCost": [2],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [750],
+    "source": "Rigger 5",
+    "page": 160,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Landing Drone Rack (Mini)",
+    "description": "",
+    "category": "Weapons",
+    "maxRating": 0,
+    "slotCost": [2],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
+    "source": "Rigger 5",
+    "page": 160,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Landing Drone Rack (Small)",
+    "description": "",
+    "category": "Weapons",
+    "maxRating": 0,
+    "slotCost": [3],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [4000],
+    "source": "Rigger 5",
+    "page": 160,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Landing Drone Rack (Medium)",
+    "description": "",
+    "category": "Weapons",
+    "maxRating": 0,
+    "slotCost": [4],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [10000],
+    "source": "Rigger 5",
+    "page": 160,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Landing Drone Rack (Large)",
+    "description": "",
+    "category": "Weapons",
+    "maxRating": 0,
+    "slotCost": [5],
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [20000],
+    "source": "Rigger 5",
+    "page": 160,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Gun Port",
+    "description": "",
+    "category": "Weapons",
+    "maxRating": 0,
+    "slotCost": [1],
+    "availability": {
+      "rating": [6],
+      "restriction": "Restricted"
+    },
+    "cost": [500],
+    "source": "Rigger 5",
+    "page": 160,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Missile Defense System",
+    "description": "",
+    "category": "Weapons",
+    "maxRating": 0,
+    "slotCost": [3],
+    "availability": {
+      "rating": [12],
+      "restriction": "Restricted"
+    },
+    "cost": [15000],
+    "source": "Rigger 5",
+    "page": 160,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Oil Slick Sprayer",
+    "description": "",
+    "category": "Weapons",
+    "maxRating": 0,
+    "slotCost": [2],
+    "availability": {
+      "rating": [8],
+      "restriction": "Forbidden"
+    },
+    "cost": [500],
+    "source": "Rigger 5",
+    "page": 161,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Ram Plate",
+    "description": "",
+    "category": "Weapons",
+    "maxRating": 0,
+    "slotCost": [1],
+    "availability": {
+      "rating": [6],
+      "restriction": "Restricted"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Body"
+              },
+              {
+                "operator": ">="
+              },
+              0
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          125
+        ]
+      },
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "option": "Body"
+          },
+          {
+            "operator": "*"
+          },
+          250
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 161,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Smoke Projector",
+    "description": "",
+    "category": "Weapons",
+    "maxRating": 0,
+    "slotCost": [2],
+    "availability": {
+      "rating": [6],
+      "restriction": "Restricted"
+    },
+    "cost": [750],
+    "source": "Rigger 5",
+    "page": 161,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Smoke Projector (Thermal)",
+    "description": "",
+    "category": "Weapons",
+    "maxRating": 0,
+    "slotCost": [2],
+    "availability": {
+      "rating": [6],
+      "restriction": "Restricted"
+    },
+    "cost": [850],
+    "source": "Rigger 5",
+    "page": 161,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Road Strip Ejector",
+    "description": "",
+    "category": "Weapons",
+    "maxRating": 0,
+    "slotCost": [2],
+    "availability": {
+      "rating": [10],
+      "restriction": "Forbidden"
+    },
+    "cost": [800],
+    "source": "Rigger 5",
+    "page": 161,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Assembly/Disassembly",
+    "description": "",
+    "category": "Body",
+    "maxRating": 0,
+    "slotCost": [2],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
+    "source": "Rigger 5",
+    "page": 163,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Chameleon Coating",
+    "description": "",
+    "category": "Body",
+    "maxRating": 0,
+    "slotCost": [2],
+    "availability": {
+      "rating": [12],
+      "restriction": "Forbidden"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Body"
+              },
+              {
+                "operator": ">="
+              },
+              0
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      },
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "option": "Body"
+          },
+          {
+            "operator": "*"
+          },
+          1000
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 163,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Extra Entry/Exit Points",
+    "description": "",
+    "category": "Body",
+    "maxRating": 0,
+    "slotCost": [1],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [2500],
+    "source": "Rigger 5",
+    "page": 164,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Extreme Environment Modification",
+    "description": "",
+    "category": "Body",
+    "maxRating": 0,
+    "slotCost": [2],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [2000],
+    "source": "Rigger 5",
+    "page": 164,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Increased Seating",
+    "description": "",
+    "category": "Body",
+    "maxRating": 0,
+    "slotCost": [2],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [2000],
+    "source": "Rigger 5",
+    "page": 164,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Life Support",
+    "description": "",
+    "category": "Body",
+    "maxRating": 2,
+    "slotCost": [2],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": {
+      "ratingLinked": [
+        [
+          {
+            "subnumbers": [
+              {
+                "subnumbers": [
+                  {
+                    "option": "Body"
+                  },
+                  {
+                    "operator": ">="
+                  },
+                  0
+                ]
+              },
+              {
+                "operator": "*"
+              },
+              250
+            ]
+          },
+          {
+            "operator": "+"
+          },
+          {
+            "subnumbers": [
+              {
+                "option": "Body"
+              },
+              {
+                "operator": "*"
+              },
+              500
+            ]
+          }
+        ],
+        [
+          {
+            "subnumbers": [
+              {
+                "subnumbers": [
+                  {
+                    "option": "Body"
+                  },
+                  {
+                    "operator": ">="
+                  },
+                  0
+                ]
+              },
+              {
+                "operator": "*"
+              },
+              1000
+            ]
+          },
+          {
+            "operator": "+"
+          },
+          {
+            "subnumbers": [
+              {
+                "option": "Body"
+              },
+              {
+                "operator": "*"
+              },
+              2000
+            ]
+          }
+        ]
+      ]
+    },
+    "source": "Rigger 5",
+    "page": 164,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Mechanical Arm (Basic)",
+    "description": "",
+    "category": "Body",
+    "maxRating": 0,
+    "slotCost": [2],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
+    "source": "Rigger 5",
+    "page": 165,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Mechanical Arm (Articulated)",
+    "description": "",
+    "category": "Body",
+    "maxRating": 0,
+    "slotCost": [3],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [5000],
+    "source": "Rigger 5",
+    "page": 165,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Nanomaintenance System",
+    "description": "",
+    "category": "Body",
+    "maxRating": 4,
+    "slotCost": [
+      {
+        "option": "Rating"
+      }
+    ],
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                5
+              ]
+            }
+          ]
+        }
+      ],
+      "restriction": "Restricted"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          5000
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 165,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Realistic Features",
+    "description": "",
+    "category": "Body",
+    "maxRating": 4,
+    "slotCost": [
+      {
+        "option": "Rating"
+      }
+    ],
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                3
+              ]
+            }
+          ]
+        }
+      ],
+      "restriction": "Restricted"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          {
+            "subnumbers": [
+              {
+                "subnumbers": [
+                  {
+                    "subnumbers": [
+                      {
+                        "option": "Body"
+                      },
+                      {
+                        "operator": ">="
+                      },
+                      0
+                    ]
+                  },
+                  {
+                    "operator": "*"
+                  },
+                  500
+                ]
+              },
+              {
+                "operator": "+"
+              },
+              {
+                "subnumbers": [
+                  {
+                    "option": "Body"
+                  },
+                  {
+                    "operator": "*"
+                  },
+                  1000
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 165,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Smuggling Compartment",
+    "description": "",
+    "category": "Body",
+    "maxRating": 0,
+    "slotCost": [3],
+    "availability": {
+      "rating": [8],
+      "restriction": "Forbidden"
+    },
+    "cost": [1500],
+    "source": "Rigger 5",
+    "page": 165,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Special Equipment",
+    "description": "",
+    "category": "Body",
+    "maxRating": 0,
+    "bonus": {
+      "enterName": true
+    },
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Rigger 5",
+    "page": 165,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Smuggling Compartment Shielding",
+    "description": "",
+    "category": "Body",
+    "maxRating": 0,
+    "bonus": {
+      "enterName": true
+    },
+    "slotCost": [0],
+    "availability": {
+      "rating": [12],
+      "restriction": "Forbidden"
+    },
+    "cost": [3000],
+    "source": "Rigger 5",
+    "page": 165,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Valkyrie Module",
+    "description": "",
+    "category": "Body",
+    "maxRating": 0,
+    "slotCost": [4],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [2000],
+    "source": "Rigger 5",
+    "page": 166,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Winch (Basic)",
+    "description": "",
+    "category": "Body",
+    "maxRating": 0,
+    "slotCost": [1],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [750],
+    "source": "Rigger 5",
+    "page": 166,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Winch (Enhanced)",
+    "description": "",
+    "category": "Body",
+    "maxRating": 0,
+    "slotCost": [2],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [4000],
+    "source": "Rigger 5",
+    "page": 166,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Workshop",
+    "description": "",
+    "category": "Body",
+    "maxRating": 0,
+    "slotCost": [6],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [5000],
+    "source": "Rigger 5",
+    "page": 166,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Electromagnetic Shielding",
+    "description": "",
+    "category": "Electromagnetic",
+    "maxRating": 0,
+    "slotCost": [2],
+    "availability": {
+      "rating": [6],
+      "restriction": "Restricted"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Body"
+              },
+              {
+                "operator": ">="
+              },
+              0
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          250
+        ]
+      },
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "option": "Body"
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 166,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "ECM",
+    "description": "",
+    "category": "Electromagnetic",
+    "maxRating": 6,
+    "slotCost": [2],
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                3
+              ]
+            }
+          ]
+        }
+      ],
+      "restriction": "Forbidden"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 166,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "GridLink",
+    "description": "",
+    "category": "Electromagnetic",
+    "maxRating": 0,
+    "slotCost": [2],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [750],
+    "source": "Rigger 5",
+    "page": 166,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "GridLink Override",
+    "description": "",
+    "category": "Electromagnetic",
+    "maxRating": 0,
+    "slotCost": [1],
+    "availability": {
+      "rating": [8],
+      "restriction": "Forbidden"
+    },
+    "cost": [1000],
+    "source": "Rigger 5",
+    "page": 167,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Retrans Unit",
+    "description": "",
+    "category": "Electromagnetic",
+    "maxRating": 0,
+    "slotCost": [2],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [4000],
+    "source": "Rigger 5",
+    "page": 168,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Satellite Link",
+    "description": "",
+    "category": "Electromagnetic",
+    "maxRating": 0,
+    "slotCost": [1],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [500],
+    "source": "Rigger 5",
+    "page": 168,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Pilot Enhancement",
+    "description": "",
+    "category": "Electromagnetic",
+    "maxRating": 6,
+    "slotCost": [
+      {
+        "option": "Rating"
+      }
+    ],
+    "availability": {
+      "ratingLinked": [
+        {
+          "rating": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                2
+              ]
+            }
+          ],
+          "restriction": "Legal"
+        },
+        {
+          "rating": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                2
+              ]
+            }
+          ],
+          "restriction": "Legal"
+        },
+        {
+          "rating": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                2
+              ]
+            }
+          ],
+          "restriction": "Legal"
+        },
+        {
+          "rating": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                3
+              ]
+            }
+          ],
+          "restriction": "Legal"
+        },
+        {
+          "rating": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                3
+              ]
+            }
+          ],
+          "restriction": "Legal"
+        },
+        {
+          "rating": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                3
+              ]
+            }
+          ],
+          "restriction": "Legal"
+        }
+      ]
+    },
+    "cost": {
+      "ratingLinked": [
+        [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "*"
+              },
+              2000
+            ]
+          }
+        ],
+        [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "*"
+              },
+              2000
+            ]
+          }
+        ],
+        [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "*"
+              },
+              2000
+            ]
+          }
+        ],
+        [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "*"
+              },
+              5000
+            ]
+          }
+        ],
+        [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "*"
+              },
+              5000
+            ]
+          }
+        ],
+        [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "*"
+              },
+              5000
+            ]
+          }
+        ]
+      ]
+    },
+    "source": "Rigger 5",
+    "page": 167,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Sensor Enhancement",
+    "description": "",
+    "category": "Electromagnetic",
+    "maxRating": 6,
+    "slotCost": [
+      {
+        "option": "Rating"
+      }
+    ],
+    "availability": {
+      "ratingLinked": [
+        {
+          "rating": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                2
+              ]
+            }
+          ],
+          "restriction": "Legal"
+        },
+        {
+          "rating": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                2
+              ]
+            }
+          ],
+          "restriction": "Legal"
+        },
+        {
+          "rating": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                2
+              ]
+            }
+          ],
+          "restriction": "Legal"
+        },
+        {
+          "rating": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                3
+              ]
+            }
+          ],
+          "restriction": "Legal"
+        },
+        {
+          "rating": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                3
+              ]
+            }
+          ],
+          "restriction": "Legal"
+        },
+        {
+          "rating": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                3
+              ]
+            }
+          ],
+          "restriction": "Legal"
+        }
+      ]
+    },
+    "cost": {
+      "ratingLinked": [
+        [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "*"
+              },
+              2000
+            ]
+          }
+        ],
+        [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "*"
+              },
+              2000
+            ]
+          }
+        ],
+        [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "*"
+              },
+              2000
+            ]
+          }
+        ],
+        [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "*"
+              },
+              5000
+            ]
+          }
+        ],
+        [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "*"
+              },
+              5000
+            ]
+          }
+        ],
+        [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "*"
+              },
+              5000
+            ]
+          }
+        ]
+      ]
+    },
+    "source": "Rigger 5",
+    "page": 167,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Signature Masking",
+    "description": "",
+    "category": "Electromagnetic",
+    "maxRating": 6,
+    "slotCost": [
+      {
+        "option": "Rating"
+      }
+    ],
+    "availability": {
+      "rating": [14],
+      "restriction": "Forbidden"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          2000
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 168,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "SunCell",
+    "description": "",
+    "category": "Electromagnetic",
+    "maxRating": 0,
+    "slotCost": [2],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Body"
+              },
+              {
+                "operator": ">="
+              },
+              0
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          250
+        ]
+      },
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "option": "Body"
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 168,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Touch Sensors",
+    "description": "",
+    "category": "Electromagnetic",
+    "maxRating": 0,
+    "slotCost": [3],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Body"
+              },
+              {
+                "operator": ">="
+              },
+              0
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          250
+        ]
+      },
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "option": "Body"
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 169,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Amenities (Squatter)",
+    "description": "",
+    "category": "Cosmetic",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [100],
+    "source": "Rigger 5",
+    "page": 169,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Amenities (Low)",
+    "description": "",
+    "category": "Cosmetic",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Rigger 5",
+    "page": 169,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Amenities (Middle)",
+    "description": "",
+    "category": "Cosmetic",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [2],
+      "restriction": "Legal"
+    },
+    "cost": [500],
+    "source": "Rigger 5",
+    "page": 169,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Amenities (High)",
+    "description": "",
+    "category": "Cosmetic",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
+    "source": "Rigger 5",
+    "page": 169,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Amenities (Luxury)",
+    "description": "",
+    "category": "Cosmetic",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [16],
+      "restriction": "Legal"
+    },
+    "cost": [10000],
+    "source": "Rigger 5",
+    "page": 169,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Enhanced Image Screens",
+    "description": "",
+    "category": "Cosmetic",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [5000],
+    "source": "Rigger 5",
+    "page": 170,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Máquina Conversion",
+    "description": "",
+    "category": "Cosmetic",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Body"
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      }
+    ],
+    "source": "Hard Targets",
+    "page": 139,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Metahuman Adjustment",
+    "description": "",
+    "category": "Cosmetic",
+    "maxRating": {
+      "option": "Seats"
+    },
+    "slotCost": [0],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 170,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Manual Operation",
+    "description": "",
+    "category": "Cosmetic",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [1],
+      "restriction": "Legal"
+    },
+    "cost": [500],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 461,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Rigger Interface",
+    "description": "",
+    "category": "Cosmetic",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 461,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Interior Cameras",
+    "description": "",
+    "category": "Cosmetic",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [2000],
+    "source": "Rigger 5",
+    "page": 171,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Searchlight",
+    "description": "",
+    "category": "Cosmetic",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [800],
+    "source": "Rigger 5",
+    "page": 171,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Vehicle Tag Eraser",
+    "description": "",
+    "category": "Cosmetic",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [6],
+      "restriction": "Restricted"
+    },
+    "cost": [750],
+    "source": "Rigger 5",
+    "page": 171,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Yerz Kit",
+    "description": "",
+    "category": "Cosmetic",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [500],
+    "source": "The Complete Trog",
+    "page": 187,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Yerzed Out",
+    "description": "",
+    "category": "Cosmetic",
+    "maxRating": 4,
+    "slotCost": [0],
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          1000
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 171,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Micro Weapon Mount (Drone)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "requiresDroneParent": true,
+    "slotCost": [0],
+    "weaponMountValidCategoryList": ["Micro-Drone Weapons"],
+    "userSelectable": false,
+    "availability": {
+      "rating": [8],
+      "restriction": "Restricted"
+    },
+    "cost": [400],
+    "source": "Rigger 5",
+    "page": 124,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Mini Weapon Mount (Drone)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "requiresDroneParent": true,
+    "slotCost": [1],
+    "userSelectable": false,
+    "availability": {
+      "rating": [4],
+      "restriction": "Restricted"
+    },
+    "cost": [800],
+    "source": "Rigger 5",
+    "page": 124,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Gecko Grips (Drone)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "requiresDroneParent": true,
+    "slotCost": [1],
+    "availability": {
+      "rating": [4],
+      "restriction": "Restricted"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Body"
+              },
+              {
+                "operator": ">="
+              },
+              0
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          75
+        ]
+      },
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "option": "Body"
+          },
+          {
+            "operator": "*"
+          },
+          150
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 125,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Small Weapon Mount (Drone)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "requiresDroneParent": true,
+    "slotCost": [2],
+    "userSelectable": false,
+    "availability": {
+      "rating": [8],
+      "restriction": "Restricted"
+    },
+    "cost": [1600],
+    "source": "Rigger 5",
+    "page": 124,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Standard Weapon Mount (Drone)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "requiresDroneParent": true,
+    "slotCost": [3],
+    "userSelectable": false,
+    "availability": {
+      "rating": [10],
+      "restriction": "Forbidden"
+    },
+    "cost": [2400],
+    "source": "Rigger 5",
+    "page": 124,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Large Weapon Mount (Drone)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "requiresDroneParent": true,
+    "slotCost": [4],
+    "weaponMountValidCategoryList": ["Sporting Rifles"],
+    "userSelectable": false,
+    "availability": {
+      "rating": [12],
+      "restriction": "Forbidden"
+    },
+    "cost": [3200],
+    "source": "Rigger 5",
+    "page": 124,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Huge Weapon Mount (Drone)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "requiresDroneParent": true,
+    "slotCost": [5],
+    "weaponMountValidCategoryList": ["Sniper Rifles"],
+    "userSelectable": false,
+    "availability": {
+      "rating": [16],
+      "restriction": "Forbidden"
+    },
+    "cost": [4000],
+    "source": "Rigger 5",
+    "page": 124,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Heavy Weapon Mount (Drone)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "requiresDroneParent": true,
+    "slotCost": [6],
+    "userSelectable": false,
+    "availability": {
+      "rating": [20],
+      "restriction": "Forbidden"
+    },
+    "cost": [4800],
+    "source": "Rigger 5",
+    "page": 124,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Realistic Features (Drone)",
+    "description": "",
+    "category": "All",
+    "maxRating": 4,
+    "requiresDroneParent": true,
+    "slotCost": [0],
+    "availability": {
+      "ratingLinked": [
+        {
+          "rating": [2],
+          "restriction": "Legal"
+        },
+        {
+          "rating": [4],
+          "restriction": "Legal"
+        },
+        {
+          "rating": [8],
+          "restriction": "Legal"
+        },
+        {
+          "rating": [12],
+          "restriction": "Restricted"
+        }
+      ]
+    },
+    "cost": {
+      "ratingLinked": [
+        [
+          {
+            "subnumbers": [
+              {
+                "subnumbers": [
+                  {
+                    "option": "Body"
+                  },
+                  {
+                    "operator": ">="
+                  },
+                  0
+                ]
+              },
+              {
+                "operator": "*"
+              },
+              25
+            ]
+          },
+          {
+            "operator": "+"
+          },
+          {
+            "subnumbers": [
+              {
+                "subnumbers": [
+                  {
+                    "option": "Body"
+                  },
+                  {
+                    "operator": "*"
+                  },
+                  {
+                    "option": "Body"
+                  }
+                ]
+              },
+              {
+                "operator": "*"
+              },
+              100
+            ]
+          }
+        ],
+        [
+          {
+            "subnumbers": [
+              {
+                "subnumbers": [
+                  {
+                    "option": "Body"
+                  },
+                  {
+                    "operator": ">="
+                  },
+                  0
+                ]
+              },
+              {
+                "operator": "*"
+              },
+              125
+            ]
+          },
+          {
+            "operator": "+"
+          },
+          {
+            "subnumbers": [
+              {
+                "subnumbers": [
+                  {
+                    "option": "Body"
+                  },
+                  {
+                    "operator": "*"
+                  },
+                  {
+                    "option": "Body"
+                  }
+                ]
+              },
+              {
+                "operator": "*"
+              },
+              500
+            ]
+          }
+        ],
+        [
+          {
+            "subnumbers": [
+              {
+                "subnumbers": [
+                  {
+                    "option": "Body"
+                  },
+                  {
+                    "operator": ">="
+                  },
+                  0
+                ]
+              },
+              {
+                "operator": "*"
+              },
+              250
+            ]
+          },
+          {
+            "operator": "+"
+          },
+          {
+            "subnumbers": [
+              {
+                "subnumbers": [
+                  {
+                    "option": "Body"
+                  },
+                  {
+                    "operator": "*"
+                  },
+                  {
+                    "option": "Body"
+                  }
+                ]
+              },
+              {
+                "operator": "*"
+              },
+              1000
+            ]
+          }
+        ],
+        [
+          {
+            "subnumbers": [
+              {
+                "subnumbers": [
+                  {
+                    "option": "Body"
+                  },
+                  {
+                    "operator": ">="
+                  },
+                  0
+                ]
+              },
+              {
+                "operator": "*"
+              },
+              1250
+            ]
+          },
+          {
+            "operator": "+"
+          },
+          {
+            "subnumbers": [
+              {
+                "subnumbers": [
+                  {
+                    "option": "Body"
+                  },
+                  {
+                    "operator": "*"
+                  },
+                  {
+                    "option": "Body"
+                  }
+                ]
+              },
+              {
+                "operator": "*"
+              },
+              5000
+            ]
+          }
+        ]
+      ]
+    },
+    "source": "Rigger 5",
+    "page": 125,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Amphibious (Drone)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "requiresDroneParent": true,
+    "slotCost": [1],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Body"
+              },
+              {
+                "operator": ">="
+              },
+              0
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          25
+        ]
+      },
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Body"
+              },
+              {
+                "operator": "*"
+              },
+              {
+                "option": "Body"
+              }
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          100
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 125,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Submersible (Drone)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "requiresDroneParent": true,
+    "slotCost": [2],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Body"
+              },
+              {
+                "operator": ">="
+              },
+              0
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          250
+        ]
+      },
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Body"
+              },
+              {
+                "operator": "*"
+              },
+              {
+                "option": "Body"
+              }
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          1000
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 125,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Assembly Time Improvement (Drone)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "requiresDroneParent": true,
+    "slotCost": [1],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Body"
+              },
+              {
+                "operator": ">="
+              },
+              0
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          50
+        ]
+      },
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "option": "Body"
+          },
+          {
+            "operator": "*"
+          },
+          100
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 125,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Customized (Drone)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "requiresDroneParent": true,
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": {
+      "range": {
+        "min": 10,
+        "max": 10000
+      }
+    },
+    "source": "Rigger 5",
+    "page": 125,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Drone Arm",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "capacity": 15,
+    "addPhysicalBoxes": 1,
+    "requiresDroneParent": true,
+    "slotCost": [1],
+    "subsystemList": [
+      "Bodyware",
+      "Headware",
+      "Cosmetic Enhancement",
+      "Cyberlimb",
+      "Cyberlimb Enhancement",
+      "Cyberlimb Accessory",
+      "Cyber Implant Weapon"
+    ],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [7500],
+    "source": "Rigger 5",
+    "page": 125,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Synthetic Drone Arm",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "capacity": 15,
+    "addPhysicalBoxes": 1,
+    "requiresDroneParent": true,
+    "slotCost": [1],
+    "subsystemList": [
+      "Bodyware",
+      "Headware",
+      "Cosmetic Enhancement",
+      "Cyberlimb",
+      "Cyberlimb Enhancement",
+      "Cyberlimb Accessory",
+      "Cyber Implant Weapon"
+    ],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [10000],
+    "source": "Rigger 5",
+    "page": 125,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Primitive Drone Arm",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "capacity": 15,
+    "addPhysicalBoxes": 1,
+    "requiresDroneParent": true,
+    "slotCost": [1],
+    "subsystemList": [
+      "Bodyware",
+      "Headware",
+      "Cosmetic Enhancement",
+      "Cyberlimb",
+      "Cyberlimb Enhancement",
+      "Cyberlimb Accessory",
+      "Cyber Implant Weapon"
+    ],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [1500],
+    "source": "Rigger 5",
+    "page": 125,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Drone Leg",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "capacity": 20,
+    "requiresDroneParent": true,
+    "slotCost": [1],
+    "subsystemList": [
+      "Bodyware",
+      "Headware",
+      "Cosmetic Enhancement",
+      "Cyberlimb",
+      "Cyberlimb Enhancement",
+      "Cyberlimb Accessory",
+      "Cyber Implant Weapon"
+    ],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [7500],
+    "source": "Rigger 5",
+    "page": 125,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Synthetic Drone Leg",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "capacity": 20,
+    "requiresDroneParent": true,
+    "slotCost": [1],
+    "subsystemList": [
+      "Bodyware",
+      "Headware",
+      "Cosmetic Enhancement",
+      "Cyberlimb",
+      "Cyberlimb Enhancement",
+      "Cyberlimb Accessory",
+      "Cyber Implant Weapon"
+    ],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [10000],
+    "source": "Rigger 5",
+    "page": 125,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Immobile (Drone)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "requiresDroneParent": true,
+    "slotCost": [-2],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Rigger 5",
+    "page": 126,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "SkyGuide (Drone)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "requiresDroneParent": true,
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [5],
+    "source": "Rigger 5",
+    "page": 126,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Spotlight (Drone)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "requiresDroneParent": true,
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [50],
+    "source": "Rigger 5",
+    "page": 126,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Suspension (Drone)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "requiresDroneParent": true,
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Body"
+              },
+              {
+                "operator": ">="
+              },
+              0
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          150
+        ]
+      },
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "option": "Body"
+          },
+          {
+            "operator": "*"
+          },
+          300
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 126,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Tire Mod (Drone)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "requiresDroneParent": true,
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Body"
+              },
+              {
+                "operator": ">="
+              },
+              0
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          37.5
+        ]
+      },
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "option": "Body"
+          },
+          {
+            "operator": "*"
+          },
+          75
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 126,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Pilot Program (Drone)",
+    "description": "",
+    "category": "All",
+    "maxRating": 6,
+    "requiresDroneParent": true,
+    "slotCost": [0],
+    "availability": {
+      "ratingLinked": [
+        {
+          "rating": [4],
+          "restriction": "Legal"
+        },
+        {
+          "rating": [0],
+          "restriction": "Legal"
+        },
+        {
+          "rating": [8],
+          "restriction": "Restricted"
+        },
+        {
+          "rating": [12],
+          "restriction": "Restricted"
+        },
+        {
+          "rating": [16],
+          "restriction": "Forbidden"
+        },
+        {
+          "rating": [24],
+          "restriction": "Forbidden"
+        }
+      ]
+    },
+    "cost": {
+      "ratingLinked": [[100], [400], [1800], [3200], [10000], [20000]]
+    },
+    "source": "Rigger 5",
+    "page": 126,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Spoof Chips",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [8],
+      "restriction": "Forbidden"
+    },
+    "cost": [500],
+    "source": "Stolen Souls",
+    "page": 177,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Spoof Chips",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [8],
+      "restriction": "Forbidden"
+    },
+    "cost": [500],
+    "source": "Rigger 5",
+    "page": 152,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Fragile (Drone)",
+    "description": "",
+    "category": "All",
+    "maxRating": 99,
+    "requiresDroneParent": true,
+    "slotCost": [
+      -1,
+      {
+        "operator": "*"
+      },
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          2
+        ]
+      }
+    ],
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            3
+          ]
+        }
+      ],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Rigger 5",
+    "page": 123,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Single Sensor (Drone)",
+    "description": "",
+    "category": "All",
+    "maxRating": 99,
+    "minRating": [
+      {
+        "option": "Sensor"
+      },
+      "+",
+      1
+    ],
+    "requiresDroneParent": true,
+    "slotCost": [0],
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          100
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 123,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Paraplegic Modification",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Vehicle Cost"
+          },
+          {
+            "operator": "*"
+          },
+          0.05
+        ]
+      }
+    ],
+    "source": "Run Faster",
+    "page": 157,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Daihatsu-Caterpillar Horseman Passenger Pod",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [6000],
+    "source": "Rigger 5",
+    "page": 42,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Daihatsu-Caterpillar Horseman Cargo Pod",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [6000],
+    "source": "Rigger 5",
+    "page": 42,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Daihatsu-Caterpillar Horseman Advanced Cargo Pod",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [5000],
+    "source": "Rigger 5",
+    "page": 42,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Daihatsu-Caterpillar Horseman Drone Pod",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [4000],
+    "source": "Rigger 5",
+    "page": 42,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Daihatsu-Caterpillar Horseman Security Pod",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "weaponMountValidCategoryList": ["Flamethrowers"],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [5500],
+    "source": "Rigger 5",
+    "page": 42,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Chameleon Coating",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [12],
+      "restriction": "Restricted"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Body"
+              },
+              {
+                "operator": ">="
+              },
+              0
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          1000
+        ]
+      },
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "option": "Body"
+          },
+          {
+            "operator": "*"
+          },
+          2000
+        ]
+      }
+    ],
+    "source": "Stolen Souls",
+    "page": 174,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Dash Light Bar",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [15],
+      "restriction": "Forbidden"
+    },
+    "cost": [3500],
+    "source": "Stolen Souls",
+    "page": 176,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Emergency Light Bar",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [15],
+      "restriction": "Forbidden"
+    },
+    "cost": [5000],
+    "source": "Stolen Souls",
+    "page": 176,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Morphing License Plate",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [8],
+      "restriction": "Forbidden"
+    },
+    "cost": [1000],
+    "source": "Stolen Souls",
+    "page": 186,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Morphing License Plate",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [8],
+      "restriction": "Forbidden"
+    },
+    "cost": [1000],
+    "source": "Rigger 5",
+    "page": 152,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Spike Strip",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [8],
+      "restriction": "Restricted"
+    },
+    "cost": [200],
+    "source": "Rigger 5",
+    "page": 152,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Zapper Strip",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [12],
+      "restriction": "Restricted"
+    },
+    "cost": [2500],
+    "source": "Rigger 5",
+    "page": 152,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Tracking Strip",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [8],
+      "restriction": "Restricted"
+    },
+    "cost": [600],
+    "source": "Rigger 5",
+    "page": 153,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Off-Road Tires",
+    "description": "",
+    "category": "All",
+    "maxRating": {
+      "option": "Quantity of Mod"
+    },
+    "slotCost": [0],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          400
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 152,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Racing Tires",
+    "description": "",
+    "category": "All",
+    "maxRating": {
+      "option": "Quantity of Mod"
+    },
+    "slotCost": [0],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          250
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 152,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Run-Flat Tires",
+    "description": "",
+    "category": "All",
+    "maxRating": {
+      "option": "Quantity of Mod"
+    },
+    "slotCost": [0],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          250
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 152,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Siren",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [15],
+      "restriction": "Forbidden"
+    },
+    "cost": [1400],
+    "source": "Stolen Souls",
+    "page": 176,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Smuggling Compartment (Dwarf, Human, Elf, or Ork)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [12],
+      "restriction": "Forbidden"
+    },
+    "cost": [3500],
+    "source": "Stolen Souls",
+    "page": 177,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Smuggling Compartment (Troll)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [12],
+      "restriction": "Forbidden"
+    },
+    "cost": [7000],
+    "source": "Stolen Souls",
+    "page": 177,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Rigger Services (1 hour)",
+    "description": "",
+    "category": "All",
+    "maxRating": 1000000,
+    "ratingMeaning": "1 Hour per Rating Level",
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [500],
+    "source": "Stolen Souls",
+    "page": 186,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Extended Roof",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "userSelectable": false,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Rigger 5",
+    "page": 70,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Bathroom",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "userSelectable": false,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Rigger 5",
+    "page": 74,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Holding Cell",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "userSelectable": false,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Rigger 5",
+    "page": 74,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Sleeping Quarters",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "userSelectable": false,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Rigger 5",
+    "page": 74,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Advanced Lightbar",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "userSelectable": false,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Rigger 5",
+    "page": 74,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Open Box Storage",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "userSelectable": false,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Rigger 5",
+    "page": 74,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Interchangeable Bed: Armory",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": {
+      "range": {
+        "min": 0,
+        "max": 1000000
+      }
+    },
+    "source": "Rigger 5",
+    "page": 54,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Interchangeable Bed: Cargo Pod",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": {
+      "range": {
+        "min": 0,
+        "max": 1000000
+      }
+    },
+    "source": "Rigger 5",
+    "page": 54,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Interchangeable Bed: Food Truck",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": {
+      "range": {
+        "min": 0,
+        "max": 1000000
+      }
+    },
+    "source": "Rigger 5",
+    "page": 54,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Interchangeable Bed: Sleeper Command Cabin",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": {
+      "range": {
+        "min": 0,
+        "max": 1000000
+      }
+    },
+    "source": "Rigger 5",
+    "page": 54,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Interchangeable Bed: Transport",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": {
+      "range": {
+        "min": 0,
+        "max": 1000000
+      }
+    },
+    "source": "Rigger 5",
+    "page": 54,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Interchangeable Bed: Standard Drone Rack (Micro)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [350],
+    "source": "Rigger 5",
+    "page": 54,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Interchangeable Bed: Standard Drone Rack (Mini)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [500],
+    "source": "Rigger 5",
+    "page": 54,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Interchangeable Bed: Standard Drone Rack (Small)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
+    "source": "Rigger 5",
+    "page": 54,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Interchangeable Bed: Standard Drone Rack (Medium)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [2000],
+    "source": "Rigger 5",
+    "page": 54,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Interchangeable Bed: Standard Drone Rack (Large)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [4000],
+    "source": "Rigger 5",
+    "page": 54,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Interchangeable Bed: Landing Drone Rack (Micro)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [750],
+    "source": "Rigger 5",
+    "page": 54,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Interchangeable Bed: Landing Drone Rack (Mini)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [1000],
+    "source": "Rigger 5",
+    "page": 54,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Interchangeable Bed: Landing Drone Rack (Small)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [6],
+      "restriction": "Legal"
+    },
+    "cost": [4000],
+    "source": "Rigger 5",
+    "page": 54,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Interchangeable Bed: Landing Drone Rack (Medium)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [10000],
+    "source": "Rigger 5",
+    "page": 54,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Interchangeable Bed: Landing Drone Rack (Large)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [12],
+      "restriction": "Legal"
+    },
+    "cost": [20000],
+    "source": "Rigger 5",
+    "page": 54,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Interchangeable Bed: Workshop",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [5000],
+    "source": "Rigger 5",
+    "page": 54,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Interchangeable Bed: Rigger Cocoon",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "slotCost": [0],
+    "availability": {
+      "rating": [8],
+      "restriction": "Legal"
+    },
+    "cost": [1500],
+    "source": "Rigger 5",
+    "page": 54,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Interchangeable Bed: Custom",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "bonus": {
+      "enterName": true
+    },
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": {
+      "range": {
+        "min": 0,
+        "max": 1000000
+      }
+    },
+    "source": "Rigger 5",
+    "page": 54,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Handling (Drone)",
+    "description": "",
+    "category": "Handling",
+    "maxRating": 99,
+    "minRating": [
+      {
+        "option": "Handling"
+      },
+      "+",
+      1
+    ],
+    "ratingMeaning": "Rating of parent is upgraded",
+    "requiresDroneParent": true,
+    "slotCost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "-"
+              },
+              {
+                "option": "Handling"
+              },
+              {
+                "operator": "-"
+              },
+              1
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "-"
+              },
+              {
+                "option": "Handling"
+              },
+              {
+                "operator": "-"
+              },
+              1,
+              {
+                "operator": ">="
+              },
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          {
+            "subnumbers": [
+              {
+                "subnumbers": [
+                  {
+                    "subnumbers": [
+                      {
+                        "option": "Body"
+                      },
+                      {
+                        "operator": ">="
+                      },
+                      0
+                    ]
+                  },
+                  {
+                    "operator": "*"
+                  },
+                  100
+                ]
+              },
+              {
+                "operator": "+"
+              },
+              {
+                "subnumbers": [
+                  {
+                    "option": "Body"
+                  },
+                  {
+                    "operator": "*"
+                  },
+                  200
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 123,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Speed (Drone)",
+    "description": "",
+    "category": "Speed",
+    "maxRating": 99,
+    "minRating": [
+      {
+        "option": "Speed"
+      },
+      "+",
+      1
+    ],
+    "ratingMeaning": "Rating of parent is upgraded",
+    "requiresDroneParent": true,
+    "slotCost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "-"
+              },
+              {
+                "option": "Speed"
+              },
+              {
+                "operator": "-"
+              },
+              1
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "-"
+              },
+              {
+                "option": "Speed"
+              },
+              {
+                "operator": "-"
+              },
+              1,
+              {
+                "operator": ">="
+              },
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          {
+            "subnumbers": [
+              {
+                "subnumbers": [
+                  {
+                    "subnumbers": [
+                      {
+                        "option": "Body"
+                      },
+                      {
+                        "operator": ">="
+                      },
+                      0
+                    ]
+                  },
+                  {
+                    "operator": "*"
+                  },
+                  200
+                ]
+              },
+              {
+                "operator": "+"
+              },
+              {
+                "subnumbers": [
+                  {
+                    "option": "Body"
+                  },
+                  {
+                    "operator": "*"
+                  },
+                  400
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 123,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Acceleration (Drone)",
+    "description": "",
+    "category": "Acceleration",
+    "maxRating": 99,
+    "minRating": [
+      {
+        "option": "Acceleration"
+      },
+      "+",
+      1
+    ],
+    "ratingMeaning": "Rating of parent is upgraded",
+    "requiresDroneParent": true,
+    "slotCost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "-"
+              },
+              {
+                "option": "Acceleration"
+              },
+              {
+                "operator": "-"
+              },
+              1
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "-"
+              },
+              {
+                "option": "Acceleration"
+              },
+              {
+                "operator": "-"
+              },
+              1,
+              {
+                "operator": ">="
+              },
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            4
+          ]
+        }
+      ],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          {
+            "subnumbers": [
+              {
+                "subnumbers": [
+                  {
+                    "subnumbers": [
+                      {
+                        "option": "Body"
+                      },
+                      {
+                        "operator": ">="
+                      },
+                      0
+                    ]
+                  },
+                  {
+                    "operator": "*"
+                  },
+                  100
+                ]
+              },
+              {
+                "operator": "+"
+              },
+              {
+                "subnumbers": [
+                  {
+                    "option": "Body"
+                  },
+                  {
+                    "operator": "*"
+                  },
+                  200
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 123,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Armor (Drone)",
+    "description": "",
+    "category": "Armour",
+    "maxRating": 99,
+    "minRating": [
+      {
+        "option": "Armour"
+      },
+      "+",
+      1
+    ],
+    "ratingMeaning": "Rating of parent is upgraded",
+    "bonus": {
+      "armour": {
+        "bonus": {
+          "option": "Rating"
+        }
+      }
+    },
+    "requiresDroneParent": true,
+    "slotCost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "-"
+              },
+              {
+                "option": "Armour"
+              },
+              {
+                "operator": "-"
+              },
+              3
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "-"
+              },
+              {
+                "option": "Armour"
+              },
+              {
+                "operator": "-"
+              },
+              3,
+              {
+                "operator": ">="
+              },
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "availability": {
+      "ratingLinked": [
+        {
+          "rating": [1],
+          "restriction": "Legal"
+        },
+        {
+          "rating": [2],
+          "restriction": "Legal"
+        },
+        {
+          "rating": [3],
+          "restriction": "Legal"
+        },
+        {
+          "rating": [4],
+          "restriction": "Legal"
+        },
+        {
+          "rating": [5],
+          "restriction": "Legal"
+        },
+        {
+          "rating": [6],
+          "restriction": "Legal"
+        },
+        {
+          "rating": [7],
+          "restriction": "Restricted"
+        },
+        {
+          "rating": [8],
+          "restriction": "Restricted"
+        },
+        {
+          "rating": [9],
+          "restriction": "Restricted"
+        },
+        {
+          "rating": [10],
+          "restriction": "Restricted"
+        },
+        {
+          "rating": [11],
+          "restriction": "Restricted"
+        },
+        {
+          "rating": [12],
+          "restriction": "Restricted"
+        },
+        {
+          "rating": [
+            {
+              "option": "Rating"
+            }
+          ],
+          "restriction": "Forbidden"
+        }
+      ]
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          {
+            "subnumbers": [
+              {
+                "subnumbers": [
+                  {
+                    "subnumbers": [
+                      {
+                        "option": "Body"
+                      },
+                      {
+                        "operator": ">="
+                      },
+                      0
+                    ]
+                  },
+                  {
+                    "operator": "*"
+                  },
+                  100
+                ]
+              },
+              {
+                "operator": "+"
+              },
+              {
+                "subnumbers": [
+                  {
+                    "option": "Body"
+                  },
+                  {
+                    "operator": "*"
+                  },
+                  200
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 123,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Sensor (Drone)",
+    "description": "",
+    "category": "Sensor",
+    "maxRating": 8,
+    "minRating": [
+      {
+        "option": "Sensor"
+      },
+      "+",
+      1
+    ],
+    "ratingMeaning": "Rating of parent is upgraded",
+    "requiresDroneParent": true,
+    "slotCost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "-"
+              },
+              {
+                "option": "Sensor"
+              },
+              {
+                "operator": "-"
+              },
+              1
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "-"
+              },
+              {
+                "option": "Sensor"
+              },
+              {
+                "operator": "-"
+              },
+              1,
+              {
+                "operator": ">="
+              },
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          1000
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 123,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Handling Downgrade (Drone)",
+    "description": "",
+    "category": "Handling",
+    "maxRating": 0,
+    "isDowngrade": true,
+    "requiresDroneParent": true,
+    "slotCost": [-1],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Rigger 5",
+    "page": 123,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Speed Downgrade (Drone)",
+    "description": "",
+    "category": "Speed",
+    "maxRating": 0,
+    "isDowngrade": true,
+    "requiresDroneParent": true,
+    "slotCost": [-1],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Rigger 5",
+    "page": 123,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Acceleration Downgrade (Drone)",
+    "description": "",
+    "category": "Acceleration",
+    "maxRating": 0,
+    "isDowngrade": true,
+    "requiresDroneParent": true,
+    "slotCost": [-1],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Rigger 5",
+    "page": 123,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Body Downgrade (Drone)",
+    "description": "",
+    "category": "Body",
+    "maxRating": 0,
+    "isDowngrade": true,
+    "requiresDroneParent": true,
+    "slotCost": [-1],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Rigger 5",
+    "page": 123,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Armor Downgrade (Drone)",
+    "description": "",
+    "category": "Armour",
+    "maxRating": 0,
+    "bonus": {
+      "armour": {
+        "bonus": -3
+      }
+    },
+    "isDowngrade": true,
+    "requiresDroneParent": true,
+    "slotCost": [-1],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Rigger 5",
+    "page": 123,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Sensor Downgrade (Drone)",
+    "description": "",
+    "category": "Sensor",
+    "maxRating": 0,
+    "isDowngrade": true,
+    "requiresDroneParent": true,
+    "slotCost": [-1],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Rigger 5",
+    "page": 123,
+    "modType": "Vehicle"
+  },
+  {
+    "name": "Blow-Away Panel Weapon Mount Add-on (Drone)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "requiresDroneParent": true,
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [25],
+    "source": "Rigger 5",
+    "page": 124,
+    "modType": "Weapon Mount"
+  },
+  {
+    "name": "Pop-Out Weapon Mount Add-on (Drone)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "requiresDroneParent": true,
+    "slotCost": [1],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Weapon Mount Slots"
+          },
+          {
+            "operator": "*"
+          },
+          100
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 124,
+    "modType": "Weapon Mount"
+  },
+  {
+    "name": "Expanded Ammunition Bay (Second Bin) Weapon Mount Add-on (Drone)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "requiresDroneParent": true,
+    "slotCost": [1],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [50],
+    "source": "Rigger 5",
+    "page": 124,
+    "modType": "Weapon Mount"
+  },
+  {
+    "name": "Expanded Ammunition Bay (Belt-Feed) Weapon Mount Add-on (Drone)",
+    "description": "",
+    "category": "All",
+    "maxRating": 0,
+    "replaceAmmo": [
+      {
+        "reloadMethod": "Belt Fed",
+        "capacity": 100
+      }
+    ],
+    "requiresDroneParent": true,
+    "slotCost": [2],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [500],
+    "source": "Rigger 5",
+    "page": 124,
+    "modType": "Weapon Mount"
+  },
+  {
+    "name": "Ammo Bin",
+    "description": "",
+    "category": "Weapons",
+    "maxRating": 0,
+    "additionalAmmo": 250,
+    "percentageAmmoIncrease": 250,
+    "slotCost": [1],
+    "availability": {
+      "rating": [6],
+      "restriction": "Restricted"
+    },
+    "cost": [200],
+    "source": "Rigger 5",
+    "page": 159,
+    "modType": "Weapon Mount"
   }
 ]

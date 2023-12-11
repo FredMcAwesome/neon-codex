@@ -103,7 +103,7 @@ export enum weaponXmlSubtypeEnum {
   Bows = "Bows",
   Crossbows = "Crossbows",
   Tasers = "Tasers",
-  Holduts = "Holdouts",
+  Holdouts = "Holdouts",
   LightPistols = "Light Pistols",
   HeavyPistols = "Heavy Pistols",
   MachinePistols = "Machine Pistols",

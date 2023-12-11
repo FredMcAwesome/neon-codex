@@ -103,7 +103,7 @@ availabilityArmourSemantics.addOperation("eval", {
 const costArmourSemantics = Cost.createSemantics();
 costArmourSemantics.addOperation("eval", {
   Variable(_a, inner, _b) {
-    return [inner.eval()];
+    return inner.eval();
   },
   InnerVariable(min, _, max) {
     return { range: { min: min.eval(), max: max.eval() } };

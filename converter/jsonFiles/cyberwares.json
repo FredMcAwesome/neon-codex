@@ -136,7 +136,7 @@
       "restriction": "Restricted"
     },
     "cost": {
-      "ratingLinked": [43000, 97000, 208000]
+      "ratingLinked": [[43000], [97000], [208000]]
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 452,
@@ -685,7 +685,7 @@
       "restriction": "Legal"
     },
     "cost": {
-      "ratingLinked": [4000, 6000, 10000, 14000, 18000, 22000]
+      "ratingLinked": [[4000], [6000], [10000], [14000], [18000], [22000]]
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 453,
@@ -920,7 +920,7 @@
       "restriction": "Legal"
     },
     "cost": {
-      "ratingLinked": [4000, 8000, 12000, 20000, 25000, 30000]
+      "ratingLinked": [[4000], [8000], [12000], [20000], [25000], [30000]]
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 453,
@@ -1001,7 +1001,7 @@
       "restriction": "Legal"
     },
     "cost": {
-      "ratingLinked": [3000, 4500, 7500, 11000, 15500, 21000]
+      "ratingLinked": [[3000], [4500], [7500], [11000], [15500], [21000]]
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 453,
@@ -1058,7 +1058,7 @@
       "restriction": "Legal"
     },
     "cost": {
-      "ratingLinked": [4000, 8000, 12000, 20000, 25000, 30000]
+      "ratingLinked": [[4000], [8000], [12000], [20000], [25000], [30000]]
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 453,
@@ -1668,7 +1668,7 @@
       ]
     },
     "cost": {
-      "ratingLinked": [39000, 149000, 217000]
+      "ratingLinked": [[39000], [149000], [217000]]
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 455,
@@ -4331,7 +4331,7 @@
       ]
     },
     "cost": {
-      "ratingLinked": [40000, 125000, 205000]
+      "ratingLinked": [[40000], [125000], [205000]]
     },
     "source": "Chrome Flesh",
     "page": 84,
@@ -9817,7 +9817,7 @@
       ]
     },
     "cost": {
-      "ratingLinked": [45000, 135000, 220000]
+      "ratingLinked": [[45000], [135000], [220000]]
     },
     "source": "Howling Shadows",
     "page": 182,

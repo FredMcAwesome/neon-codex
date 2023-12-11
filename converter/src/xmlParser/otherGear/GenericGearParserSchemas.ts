@@ -103,10 +103,6 @@ const GenericGearXmlSchema = zod
     ),
     bonus: zod.optional(BonusXmlSchema),
     addoncategory: zod.optional(StringArrayOrStringSchema),
-    // Availability
-    avail: StringOrNumberSchema,
-    // Cost
-    cost: StringOrNumberSchema,
     costfor: zod.optional(zod.number()),
     weaponbonus: zod.optional(
       zod
@@ -210,6 +206,10 @@ const GenericGearXmlSchema = zod
     modattributearray: zod.optional(zod.string()),
     allowrename: zod.optional(zod.string()),
     matrixcmbonus: zod.optional(zod.number()),
+    // Availability
+    avail: StringOrNumberSchema,
+    // Cost
+    cost: StringOrNumberSchema,
     source: zod.union([SourceXmlSchema, zod.literal(2050)]),
     page: zod.number(),
   })

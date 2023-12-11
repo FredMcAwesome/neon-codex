@@ -244,7 +244,10 @@ damageSemantics.addOperation("eval", {
       {
         subnumbers: damage1
           .eval()
-          .concat([{ operator: mathOperatorEnum.GreaterThan }], damage2.eval()),
+          .concat(
+            [{ operator: mathOperatorEnum.GreaterThanOrEqual }],
+            damage2.eval()
+          ),
       },
     ];
   },
@@ -727,68 +730,68 @@ export const convertWeaponSkill = function (
     return { skill: useSkill, specialisations: specialisations };
   }
   switch (category) {
-    case "Bows":
-    case "Crossbows":
+    case weaponXmlSubtypeEnum.Bows:
+    case weaponXmlSubtypeEnum.Crossbows:
       skill = "Archery";
       break;
 
-    case "Assault Rifles":
-    case "Carbines":
-    case "Machine Pistols":
-    case "Submachine Guns":
+    case weaponXmlSubtypeEnum.AssaultRifles:
+    case weaponXmlSubtypeEnum.Carbines:
+    case weaponXmlSubtypeEnum.MachinePistols:
+    case weaponXmlSubtypeEnum.SubmachineGuns:
       skill = "Automatics";
       break;
 
-    case "Blades":
+    case weaponXmlSubtypeEnum.Blades:
       skill = "Blades";
       break;
 
-    case "Clubs":
-    case "Improvised Weapons":
+    case weaponXmlSubtypeEnum.Clubs:
+    case weaponXmlSubtypeEnum.ImprovisedWeapons:
       skill = "Clubs";
       break;
 
-    case "Exotic Melee Weapons":
+    case weaponXmlSubtypeEnum.ExoticMeleeWeapons:
       skill = "Exotic Melee Weapon";
       break;
 
-    case "Exotic Ranged Weapons":
+    case weaponXmlSubtypeEnum.ExoticRangedWeapons:
       skill = "Exotic Ranged Weapon";
       break;
 
-    case "Flamethrowers":
+    case weaponXmlSubtypeEnum.Flamethrowers:
       skill = "Exotic Ranged Weapon";
       specialisations = ["Flamethrowers"];
       break;
 
-    case "Laser Weapons":
+    case weaponXmlSubtypeEnum.LaserWeapons:
       skill = "Exotic Ranged Weapon";
       specialisations = ["Laser Weapons"];
       break;
 
-    case "Assault Cannons":
-    case "Grenade Launchers":
-    case "Missile Launchers":
-    case "Light Machine Guns":
-    case "Medium Machine Guns":
-    case "Heavy Machine Guns":
+    case weaponXmlSubtypeEnum.AssaultCannons:
+    case weaponXmlSubtypeEnum.GrenadeLaunchers:
+    case weaponXmlSubtypeEnum.MissileLaunchers:
+    case weaponXmlSubtypeEnum.LightMachineguns:
+    case weaponXmlSubtypeEnum.MediumMachineguns:
+    case weaponXmlSubtypeEnum.HeavyMachineguns:
       skill = "Heavy Weapons";
       break;
 
-    case "Shotguns":
-    case "Sniper Rifles":
-    case "Sporting Rifles":
+    case weaponXmlSubtypeEnum.Shotguns:
+    case weaponXmlSubtypeEnum.SniperRifles:
+    case weaponXmlSubtypeEnum.SportingRifles:
       skill = "Longarms";
       break;
 
-    case "Unarmed":
+    case weaponXmlSubtypeEnum.Unarmed:
       skill = "Unarmed Combat";
       break;
 
-    case "Heavy Pistols":
-    case "Holdouts":
-    case "Light Pistols":
-    case "Tasers":
+    case weaponXmlSubtypeEnum.HeavyPistols:
+    case weaponXmlSubtypeEnum.Holdouts:
+    case weaponXmlSubtypeEnum.LightPistols:
+    case weaponXmlSubtypeEnum.Tasers:
       skill = "Pistols";
       break;
 
@@ -864,7 +867,7 @@ export const getWeaponTypeInformation = function (weapon: WeaponXmlType) {
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.HeavyPistols;
       break;
-    case weaponXmlSubtypeEnum.Holduts:
+    case weaponXmlSubtypeEnum.Holdouts:
       weaponType = weaponTypeEnum.Firearm;
       weaponSubtype = firearmWeaponTypeEnum.HoldOuts;
       break;
@@ -922,6 +925,11 @@ export const getWeaponTypeInformation = function (weapon: WeaponXmlType) {
         weaponSubtype = firearmWeaponTypeEnum.Exotic;
       }
       break;
+    case weaponXmlSubtypeEnum.Carbines:
+      weaponType = weaponTypeEnum.Firearm;
+      weaponSubtype = firearmWeaponTypeEnum.Carbines;
+      break;
+    // melee
     case weaponXmlSubtypeEnum.BioWeapon:
       if (weapon.type === "Melee") {
         weaponType = weaponTypeEnum.Melee;
@@ -930,11 +938,6 @@ export const getWeaponTypeInformation = function (weapon: WeaponXmlType) {
         assert(false, "Bio-weapons not expected to be ranged");
       }
       break;
-    case weaponXmlSubtypeEnum.Carbines:
-      weaponType = weaponTypeEnum.Firearm;
-      weaponSubtype = firearmWeaponTypeEnum.Carbines;
-      break;
-    // melee
     case weaponXmlSubtypeEnum.Blades:
       weaponType = weaponTypeEnum.Melee;
       weaponSubtype = meleeWeaponTypeEnum.Blades;

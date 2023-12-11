@@ -335,7 +335,7 @@ function getWeaponCategories<Type>(
       case weaponXmlSubtypeEnum.HeavyPistols:
         requiredCategory.push(firearmWeaponTypeEnum.HeavyPistols);
         break;
-      case weaponXmlSubtypeEnum.Holduts:
+      case weaponXmlSubtypeEnum.Holdouts:
         requiredCategory.push(firearmWeaponTypeEnum.HoldOuts);
         break;
       case weaponXmlSubtypeEnum.LaserWeapons:
@@ -371,9 +371,9 @@ function getWeaponCategories<Type>(
       case weaponXmlSubtypeEnum.Cyberweapon:
         requiredCategory.push(firearmWeaponTypeEnum.Exotic);
         break;
-      case weaponXmlSubtypeEnum.BioWeapon:
-        requiredCategory.push(firearmWeaponTypeEnum.BioWeapons);
-        break;
+      // case weaponXmlSubtypeEnum.BioWeapon:
+      //   requiredCategory.push(meleeWeaponTypeEnum.BioWeapons);
+      //   break;
       case weaponXmlSubtypeEnum.Carbines:
         requiredCategory.push(firearmWeaponTypeEnum.Carbines);
         break;

@@ -59,8 +59,8 @@ Availability {
 
 Cost {
   Exp = Cost
+    | Variable -- variable
   Cost = AddSub
-    | Variable
   Variable = "Variable(" InnerVariable ")"
   InnerVariable = Number "-" Number
   AddSub = AddSub "+" MulDiv -- add

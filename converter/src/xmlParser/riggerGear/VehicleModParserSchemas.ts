@@ -1,4 +1,3 @@
-import { AugmentationSubsystemListSchema } from "@shadowrun/common/build/schemas/augmentationSchemas.js";
 import { z as zod } from "zod";
 import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
 import {
@@ -28,6 +27,17 @@ const SubsystemXmlSchema = zod
     subsystem: zod.union([zod.string(), zod.array(zod.string())]),
   })
   .strict();
+export type SubsystemXmlType = zod.infer<typeof SubsystemXmlSchema>;
+
+const VehicleModMaxRatingSchema = zod.union([
+  zod.number(),
+  zod.literal("qty"),
+  zod.literal("body"),
+  zod.literal("Seats"),
+]);
+export type VehicleModMaxRatingType = zod.infer<
+  typeof VehicleModMaxRatingSchema
+>;
 
 const VehicleModXmlSchema = zod
   .object({
@@ -35,14 +45,17 @@ const VehicleModXmlSchema = zod
     name: zod.string(),
     // Category of vehicle mod
     category: zod.nativeEnum(vehicleModXmlCategoryEnum),
-    // Availability
-    avail: StringOrNumberSchema,
-    // Cost
-    cost: StringOrNumberSchema,
     // Max Rating
-    rating: StringOrNumberSchema,
+    rating: VehicleModMaxRatingSchema,
     // Min Rating
     minrating: zod.optional(zod.string()),
+    // Label linked to what rating does for this cyberware
+    ratinglabel: zod.optional(
+      zod.union([
+        zod.literal("String_Hours"),
+        zod.literal("String_UpgradedRating"),
+      ])
+    ),
     // Bonus
     bonus: zod.optional(BonusXmlSchema),
     // Additional ammunition for one of the vehicle's weapon mounts
@@ -55,33 +68,28 @@ const VehicleModXmlSchema = zod
     // Capacity for mods/subsystems
     capacity: zod.optional(zod.number()),
     // Add boxes to physical condition track
-    conditionmonitor: zod.optional(StringOrNumberSchema),
+    conditionmonitor: zod.optional(zod.number()),
     // Mod is a downgrade
     // Downgrades give a mod point when installed
     // idea is you are removing things to make room
     downgrade: zod.optional(zod.literal("")),
     // This mod is only available for a drone
-    optionaldrone: zod.optional(zod.string()),
+    optionaldrone: zod.optional(zod.literal("")),
     // pilot: zod.optional(zod.string()),
     required: zod.optional(RequiredXmlSchema),
     // Mod slots taken by this mod
     slots: StringOrNumberSchema,
     // Allowed augmentation subsystems (cyberware) that can be installed
-    subsystems: zod.optional(
-      zod.union([AugmentationSubsystemListSchema, SubsystemXmlSchema])
-    ),
+    subsystems: zod.optional(SubsystemXmlSchema),
     // This is a weapon mount mod and lists the categories
     // of weapon that can be mounted in it
     weaponmountcategories: zod.optional(zod.string()),
-    // Label linked to what rating does for this cyberware
-    ratinglabel: zod.optional(
-      zod.union([
-        zod.literal("String_Hours"),
-        zod.literal("String_UpgradedRating"),
-      ])
-    ),
     // Not selectable
     hide: zod.optional(zod.literal("")),
+    // Availability
+    avail: StringOrNumberSchema,
+    // Cost
+    cost: StringOrNumberSchema,
     source: zod.union([SourceXmlSchema, zod.literal(2050)]),
     page: zod.union([zod.number(), zod.literal("?")]),
 

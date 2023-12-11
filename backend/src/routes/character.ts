@@ -19,7 +19,7 @@ import {
   VehiclesAndDronesListType,
 } from "@shadowrun/common/build/schemas/gearSchemas.js";
 import { MatrixAccessoryType } from "@shadowrun/common/build/schemas/electronicSchemas.js";
-import { Vehicle_DroneType } from "@shadowrun/common/build/schemas/riggerSchemas.js";
+import { RiggerType } from "@shadowrun/common/build/schemas/riggerSchemas.js";
 import {
   WeaponTypeInformationType,
   WeaponLinkedListType,
@@ -509,7 +509,7 @@ async function getVehiclesAndDrones() {
   const vehiclesAndDrones = await Database.vehicleAndDroneRespository.findAll();
   const vehiclesAndDronesResponse: VehiclesAndDronesListType =
     vehiclesAndDrones.map((vehicleOrDrone) => {
-      const vehicleOrDroneFormatted: Vehicle_DroneType = {
+      const vehicleOrDroneFormatted: RiggerType = {
         type: vehicleOrDrone.type,
         subtype: vehicleOrDrone.subtype,
         name: vehicleOrDrone.name,

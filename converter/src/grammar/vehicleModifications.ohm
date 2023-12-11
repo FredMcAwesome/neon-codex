@@ -1,0 +1,224 @@
+
+Rating {
+  Exp = Rating
+  Rating = RatingValue "+" RatingValue -- addition
+    | RatingValue -- single
+  RatingValue = Number
+    | Handling
+    | Speed
+    | Acceleration
+    | Body
+    | Armour
+    | Pilot
+    | Sensor
+  Handling = "Handling"
+  Speed = "Speed"
+  Acceleration = "Acceleration"
+  Body = "Body"
+  Armour = "Armor"
+  Pilot = "Pilot"
+  Sensor = "Sensor"
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+}
+
+Slot {
+  Exp = AddSub
+    | "-" AddSub -- negative
+    | "FixedValues(" Inner ")" -- fixed
+  Inner = Inner "," AddSub -- list
+    | AddSub -- slot
+  AddSub = AddSub "+" MulDiv -- add
+    | AddSub "-" MulDiv -- subtract
+    | MulDiv -- base
+  MulDiv = MulDiv "*" SubCalculation -- multiply
+    | MulDiv "/" SubCalculation -- divide
+    | SubCalculation  
+  SubCalculation = "(" AddSub ")" -- parenthesis
+    | NumberCalc
+    | SlotValue
+  NumberCalc = "number(" AddSub ">=" AddSub ")" -- greaterOrEqual
+    | "number(" AddSub ">" AddSub ")" -- greaterThan
+  SlotValue = Number
+    | Handling
+    | Speed
+    | Acceleration
+    | Body
+    | Armour
+    | Pilot
+    | Sensor
+    | Rating
+  Handling = "Handling"
+  Speed = "Speed"
+  Acceleration = "Acceleration"
+  Body = "Body"
+  Armour = "Armor"
+  Pilot = "Pilot"
+  Sensor = "Sensor"
+  Rating = "{Rating}" | "Rating"
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+}
+
+WeaponMountCategories {
+  Exp = Exp "," Category -- list
+    | Category -- single
+  Category = Tasers
+    | Holdouts
+    | LightPistols
+    | HeavyPistols
+    | MachinePistols
+    | SubmachineGuns
+    | AssaultRifles
+    | Shotguns
+    | SniperRifles
+    | MachineGuns
+    | LightMachineguns
+    | MediumMachineguns
+    | HeavyMachineguns
+    | AssaultCannons
+    | GrenadeLaunchers
+    | MissileLaunchers
+    | Crossbow
+    | ExoticMeleeWeapons
+    | ExoticRangedWeapons
+    | Cyberweapon
+    | Flamethrowers
+    | LaserWeapons
+    | SportingRifles
+    | SpecialWeapons
+    | Micro_DroneWeapons
+    | Grenades
+    | Blades
+    | Clubs
+    | ImprovisedWeapons
+    | Bio_Weapon
+    | Unarmed
+    | SubmachineGuns
+  Tasers = "Tasers"
+  Holdouts = "Holdouts"
+  LightPistols = "Light Pistols"
+  HeavyPistols = "Heavy Pistols"
+  MachinePistols = "Machine Pistols"
+  SubmachineGuns = "Submachine Guns"
+  AssaultRifles = "Assault Rifles"
+  Shotguns = "Shotguns"
+  SniperRifles = "Sniper Rifles"
+  MachineGuns = "Machine Guns"
+  LightMachineguns = "Light Machine Guns"
+  MediumMachineguns = "Medium Machine Guns"
+  HeavyMachineguns = "Heavy Machine Guns"
+  AssaultCannons = "Assault Cannons"
+  GrenadeLaunchers = "Grenade Launchers"
+  MissileLaunchers = "Missile Launchers"
+  Crossbow = "Crossbow"
+  ExoticMeleeWeapons = "Exotic Melee Weapons"
+  ExoticRangedWeapons = "Exotic Ranged Weapons"
+  Cyberweapon = "Cyberweapon"
+  Flamethrowers = "Flamethrowers"
+  LaserWeapons = "Laser Weapons"
+  SportingRifles = "Sporting Rifles"
+  SpecialWeapons = "Special Weapons"
+  Micro_DroneWeapons = "Micro-Drone Weapons"
+  Grenades = "Grenades"
+  Blades = "Blades"
+  Clubs = "Clubs"
+  ImprovisedWeapons = "Improvised Weapons"
+  Bio_Weapon = "Bio-Weapon"
+  Unarmed = "Unarmed"
+}
+
+Availability {
+  Exp = Availability
+    | "FixedValues(" Inner ")" -- fixed
+  Inner = Inner "," Availability -- list
+    | Availability -- available
+  Availability = AddSub Restriction -- full
+    | AddSub -- partial  
+  AddSub = AddSub "+" MulDiv -- add
+    | AddSub "-" MulDiv -- subtract
+    | MulDiv -- base
+  MulDiv = MulDiv "*" SubCalculation -- multiply
+    | MulDiv "/" SubCalculation -- divide
+    | SubCalculation
+  SubCalculation = "number(" AddSub ">" AddSub ")" -- greaterThan
+    | "(" AddSub ")" -- parenthesis
+    | AvailabilityValue
+  AvailabilityValue = Number
+    | Rating
+    | Handling
+    | Speed
+    | Acceleration
+    | Body
+    | Armour
+    | Pilot
+    | Sensor
+    | Rating
+  Handling = "Handling"
+  Speed = "Speed"
+  Acceleration = "Acceleration"
+  Body = "Body"
+  Armour = "Armor"
+  Pilot = "Pilot"
+  Sensor = "Sensor"
+  Rating = "{Rating}" | "Rating"
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+  Restriction = Restricted
+    | Forbidden
+  Restricted = "R"
+  Forbidden = "F"
+}
+
+Cost {
+  Exp = Cost
+    | "FixedValues(" Inner ")" -- fixed
+    | Variable -- variable
+  Inner = Inner "," Cost -- list
+    | Cost -- cost
+  Cost = AddSub
+  Variable = "Variable(" InnerVariable ")"
+  InnerVariable = Number "-" Number
+  AddSub = AddSub "+" MulDiv -- add
+    | AddSub "-" MulDiv -- subtract
+    | MulDiv -- base
+  MulDiv = MulDiv "*" SubCalculation -- multiply
+    | MulDiv "/" SubCalculation -- divide
+    | SubCalculation
+  SubCalculation = "number(" AddSub "=" AddSub ")" -- equal
+    | "number(" AddSub ">=" AddSub ")" -- greaterOrEqual
+    | "number(" AddSub ">" AddSub ")" -- greaterThan
+    | "(" AddSub ")" -- parenthesis
+    | CostValue
+  CostValue = Number
+    | VehicleCost
+    | Handling
+    | Speed
+    | Acceleration
+    | Body
+    | Armour
+    | Pilot
+    | Sensor
+    | Rating
+    | Slots
+  Handling = "Handling"
+  Speed = "Speed"
+  Acceleration = "Acceleration"
+  Body = "Body"
+  Armour = "Armor"
+  Pilot = "Pilot"
+  Sensor = "Sensor"
+  Rating = "Rating"
+  VehicleCost = "Vehicle Cost"
+  Slots = "Slots"
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+}

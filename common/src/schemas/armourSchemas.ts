@@ -44,22 +44,28 @@ const RangeCostArmourSchema = zod
   })
   .strict();
 
-export type CostArmourType = Array<
+type PartialCostArmourType = Array<
   | zod.infer<typeof InnerCostArmourSchema>
-  | { subnumbers: CostArmourType }
+  | { subnumbers: PartialCostArmourType }
   | zod.infer<typeof RangeCostArmourSchema>
 >;
-export const CostArmourSchema: zod.ZodType<CostArmourType> = zod.array(
+const PartialCostArmourSchema: zod.ZodType<PartialCostArmourType> = zod.array(
   zod.union([
     InnerCostArmourSchema,
     zod
       .object({
-        subnumbers: zod.lazy(() => CostArmourSchema),
+        subnumbers: zod.lazy(() => PartialCostArmourSchema),
       })
       .strict(),
-    RangeCostArmourSchema,
   ])
 );
+
+export const CostArmourSchema = zod.union([
+  RangeCostArmourSchema,
+  PartialCostArmourSchema,
+]);
+
+export type CostArmourType = zod.infer<typeof CostArmourSchema>;
 
 export const ArmourSchema = zod
   .object({

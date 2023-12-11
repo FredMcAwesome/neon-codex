@@ -24,8 +24,8 @@ import {
   speedSemantics,
   handlingSemantics,
 } from "./VehicleParserHelper.js";
+import { RiggerSchema } from "@shadowrun/common/build/schemas/riggerSchemas.js";
 import Vehicles from "../../grammar/vehicles.ohm-bundle.js";
-import { Vehicle_DroneSchema } from "@shadowrun/common/build/schemas/riggerSchemas.js";
 const Acceleration = Vehicles.Acceleration;
 const Speed = Vehicles.Speed;
 const Availability = Vehicles.Availability;
@@ -138,7 +138,7 @@ export function ParseVehicles() {
     // .filter((weapon) => weapon.name === "Osmium Mace")
     .map((vehicle) => {
       const convertedVehicle = convertVehicle(vehicle);
-      const check = Vehicle_DroneSchema.safeParse(convertedVehicle);
+      const check = RiggerSchema.safeParse(convertedVehicle);
       if (!check.success) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         console.log(convertedVehicle);

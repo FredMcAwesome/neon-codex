@@ -2196,7 +2196,7 @@
       ]
     },
     "cost": {
-      "ratingLinked": [15000, 25000]
+      "ratingLinked": [[15000], [25000]]
     },
     "source": "Chrome Flesh",
     "page": 108
@@ -2979,7 +2979,7 @@
       ]
     },
     "cost": {
-      "ratingLinked": [500, 1000, 1500]
+      "ratingLinked": [[500], [1000], [1500]]
     },
     "source": "Chrome Flesh",
     "page": 109

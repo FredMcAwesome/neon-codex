@@ -5,7 +5,7 @@
     "category": "General",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "availability": {
       "rating": [2],
       "restriction": "Legal"
@@ -20,7 +20,7 @@
     "category": "General",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [3],
+    "capacityCost": [3],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
@@ -35,7 +35,7 @@
     "category": "General",
     "maxRating": 1,
     "damageReduction": 4,
-    "capacity": [0],
+    "capacityCost": [0],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
@@ -50,7 +50,7 @@
     "category": "General",
     "maxRating": 6,
     "damageReduction": 0,
-    "capacity": {
+    "capacityCost": {
       "ratingLinked": [1, 2, 3, 4, 5, 6]
     },
     "bonus": {
@@ -87,7 +87,7 @@
     "category": "General",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [6],
+    "capacityCost": [6],
     "bonus": {
       "toxinContactImmune": true,
       "pathogenContactImmune": true,
@@ -108,7 +108,7 @@
     "category": "General",
     "maxRating": 6,
     "damageReduction": 0,
-    "capacity": {
+    "capacityCost": {
       "ratingLinked": [1, 2, 3, 4, 5, 6]
     },
     "bonus": {
@@ -142,7 +142,7 @@
     "category": "General",
     "maxRating": 6,
     "damageReduction": 0,
-    "capacity": {
+    "capacityCost": {
       "ratingLinked": [1, 2, 3, 4, 5, 6]
     },
     "bonus": {
@@ -176,7 +176,7 @@
     "category": "General",
     "maxRating": 6,
     "damageReduction": 0,
-    "capacity": {
+    "capacityCost": {
       "ratingLinked": [1, 2, 3, 4, 5, 6]
     },
     "bonus": {
@@ -210,7 +210,7 @@
     "category": "General",
     "maxRating": 6,
     "damageReduction": 0,
-    "capacity": {
+    "capacityCost": {
       "ratingLinked": [1, 2, 3, 4, 5, 6]
     },
     "availability": {
@@ -239,7 +239,7 @@
     "category": "General",
     "maxRating": 1,
     "damageReduction": 3,
-    "capacity": [0],
+    "capacityCost": [0],
     "hostArmourRequirements": {
       "hostArmour": "Full Body Armor"
     },
@@ -257,7 +257,7 @@
     "category": "Full Body Armour Mods",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "hostArmourRequirements": {
       "hostArmour": "Full Body Armor"
     },
@@ -281,7 +281,7 @@
     "category": "Full Body Armour Mods",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "hostArmourRequirements": {
       "hostArmour": "Full Body Armor"
     },
@@ -299,7 +299,7 @@
     "category": "Urban Explorer Jumpsuit Accessories",
     "maxRating": 1,
     "damageReduction": 2,
-    "capacity": [0],
+    "capacityCost": [0],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
@@ -314,7 +314,7 @@
     "category": "General",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [2],
+    "capacityCost": [2],
     "availability": {
       "rating": [6],
       "restriction": "Restricted"
@@ -329,7 +329,7 @@
     "category": "Globetrotter Jacket Liners",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "bonus": {
       "fireArmour": 4
     },
@@ -347,7 +347,7 @@
     "category": "Globetrotter Jacket Liners",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "bonus": {
       "toxinContactResist": 4,
       "pathogenContactResist": 4
@@ -366,7 +366,7 @@
     "category": "Globetrotter Jacket Liners",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "bonus": {
       "coldArmour": 4
     },
@@ -384,7 +384,7 @@
     "category": "Globetrotter Vest Liners",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
@@ -399,7 +399,7 @@
     "category": "Globetrotter Vest Liners",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "bonus": {
       "toxinContactResist": 3,
       "pathogenContactResist": 3
@@ -418,7 +418,7 @@
     "category": "Globetrotter Vest Liners",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "bonus": {
       "coldArmour": 3
     },
@@ -436,7 +436,7 @@
     "category": "Globetrotter Clothing Liners",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "bonus": {
       "fireArmour": 2
     },
@@ -454,7 +454,7 @@
     "category": "Globetrotter Clothing Liners",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "bonus": {
       "toxinContactResist": 2,
       "pathogenContactResist": 2
@@ -473,7 +473,7 @@
     "category": "Globetrotter Clothing Liners",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "bonus": {
       "coldArmour": 2
     },
@@ -491,7 +491,7 @@
     "category": "Victory Liners",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "bonus": {
       "fireArmour": 6
     },
@@ -509,7 +509,7 @@
     "category": "Victory Liners",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "bonus": {
       "toxinContactResist": 6,
       "pathogenContactResist": 6
@@ -528,7 +528,7 @@
     "category": "Victory Liners",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "bonus": {
       "coldArmour": 6
     },
@@ -546,7 +546,7 @@
     "category": "General",
     "maxRating": 0,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "userSelectable": false,
     "availability": {
       "rating": [0],
@@ -562,7 +562,7 @@
     "category": "General",
     "maxRating": 0,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "bonus": {
       "linkArmour": true
     },
@@ -581,7 +581,7 @@
     "category": "General",
     "maxRating": 0,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "userSelectable": false,
     "availability": {
       "rating": [0],
@@ -597,7 +597,7 @@
     "category": "General",
     "maxRating": 0,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "userSelectable": false,
     "availability": {
       "rating": [0],
@@ -613,7 +613,7 @@
     "category": "General",
     "maxRating": 0,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "userSelectable": false,
     "availability": {
       "rating": [0],
@@ -629,7 +629,7 @@
     "category": "General",
     "maxRating": 0,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "userSelectable": false,
     "availability": {
       "rating": [0],
@@ -645,7 +645,7 @@
     "category": "General",
     "maxRating": 0,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "userSelectable": false,
     "availability": {
       "rating": [0],
@@ -661,7 +661,7 @@
     "category": "General",
     "maxRating": 0,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "userSelectable": false,
     "availability": {
       "rating": [0],
@@ -677,7 +677,7 @@
     "category": "Rapid Transit Detailing",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
@@ -692,7 +692,7 @@
     "category": "Rapid Transit Detailing",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
@@ -707,7 +707,7 @@
     "category": "Rapid Transit Detailing",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
@@ -722,7 +722,7 @@
     "category": "Nightshade IR",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
@@ -737,7 +737,7 @@
     "category": "General",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [2],
+    "capacityCost": [2],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
@@ -752,7 +752,7 @@
     "category": "General",
     "maxRating": 6,
     "damageReduction": 0,
-    "capacity": [2],
+    "capacityCost": [2],
     "availability": {
       "rating": [14],
       "restriction": "Restricted"
@@ -779,7 +779,7 @@
     "category": "General",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [3],
+    "capacityCost": [3],
     "availability": {
       "rating": [8],
       "restriction": "Restricted",
@@ -807,7 +807,7 @@
     "category": "General",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [3],
+    "capacityCost": [3],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
@@ -822,7 +822,7 @@
     "category": "General",
     "maxRating": 6,
     "damageReduction": 0,
-    "capacity": [3],
+    "capacityCost": [3],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
@@ -849,7 +849,7 @@
     "category": "General",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [
+    "capacityCost": [
       -1,
       {
         "operator": "*"
@@ -922,7 +922,7 @@
     "category": "General",
     "maxRating": 4,
     "damageReduction": 0,
-    "capacity": [4],
+    "capacityCost": [4],
     "availability": {
       "rating": [16],
       "restriction": "Forbidden"
@@ -949,7 +949,7 @@
     "category": "General",
     "maxRating": 6,
     "damageReduction": 0,
-    "capacity": {
+    "capacityCost": {
       "ratingLinked": [1, 2, 3, 4, 5, 6]
     },
     "bonus": {
@@ -995,7 +995,7 @@
     "category": "General",
     "maxRating": 1,
     "damageReduction": 2,
-    "capacity": [0],
+    "capacityCost": [0],
     "availability": {
       "rating": [6],
       "restriction": "Legal"
@@ -1010,7 +1010,7 @@
     "category": "General",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [4],
+    "capacityCost": [4],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
@@ -1025,7 +1025,7 @@
     "category": "General",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [2],
+    "capacityCost": [2],
     "hostArmourRequirements": {
       "requiredMod": "Responsive Interface Gear: Armor"
     },
@@ -1043,7 +1043,7 @@
     "category": "General",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [6],
+    "capacityCost": [6],
     "availability": {
       "rating": [6],
       "restriction": "Legal"
@@ -1058,7 +1058,7 @@
     "category": "General",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [1],
+    "capacityCost": [1],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
@@ -1073,7 +1073,7 @@
     "category": "General",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [1],
+    "capacityCost": [1],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
@@ -1088,7 +1088,7 @@
     "category": "General",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [4],
+    "capacityCost": [4],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
@@ -1103,7 +1103,7 @@
     "category": "General",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [1],
+    "capacityCost": [1],
     "availability": {
       "rating": [7],
       "restriction": "Restricted"
@@ -1118,7 +1118,7 @@
     "category": "General",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [2],
+    "capacityCost": [2],
     "availability": {
       "rating": [10],
       "restriction": "Forbidden"
@@ -1133,7 +1133,7 @@
     "category": "General",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [6],
+    "capacityCost": [6],
     "availability": {
       "rating": [14],
       "restriction": "Forbidden"
@@ -1148,7 +1148,7 @@
     "category": "General",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
@@ -1163,7 +1163,7 @@
     "category": "General",
     "maxRating": 0,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "userSelectable": false,
     "availability": {
       "rating": [8],
@@ -1179,7 +1179,7 @@
     "category": "General",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "userSelectable": false,
     "availability": {
       "rating": [4],
@@ -1195,7 +1195,7 @@
     "category": "General",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "userSelectable": false,
     "availability": {
       "rating": [4],
@@ -1211,7 +1211,7 @@
     "category": "General",
     "maxRating": 1,
     "damageReduction": 0,
-    "capacity": [0],
+    "capacityCost": [0],
     "userSelectable": false,
     "availability": {
       "rating": [0],
@@ -1227,7 +1227,7 @@
     "category": "General",
     "maxRating": 6,
     "damageReduction": 0,
-    "capacity": [
+    "capacityCost": [
       {
         "option": "Rating"
       }

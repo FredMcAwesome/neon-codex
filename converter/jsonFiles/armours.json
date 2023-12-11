@@ -9,14 +9,12 @@
       "rating": [0],
       "restriction": "Legal"
     },
-    "cost": [
-      {
-        "range": {
-          "min": 20,
-          "max": 100000
-        }
+    "cost": {
+      "range": {
+        "min": 20,
+        "max": 100000
       }
-    ],
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
   },

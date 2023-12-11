@@ -49,8 +49,8 @@ import {
   availabilityWeaponSemantics,
   costWeaponSemantics,
 } from "./WeaponParserHelper.js";
-import Weapons from "../../grammar/weapons.ohm-bundle.js";
 import { convertRequirements } from "../common/RequiredHelper.js";
+import Weapons from "../../grammar/weapons.ohm-bundle.js";
 const Accuracy = Weapons.Accuracy;
 const Damage = Weapons.Damage;
 const ArmourPenetration = Weapons.ArmourPenetration;
