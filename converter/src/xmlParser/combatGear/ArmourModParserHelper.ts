@@ -6,8 +6,8 @@ import {
   mathOperatorEnum,
   restrictionEnum,
 } from "@shadowrun/common/build/enums.js";
-import ArmourModifications from "../../grammar/armourModifications.ohm-bundle.js";
 import { armourModXmlCategoryEnum } from "./ArmourModParserSchemas.js";
+import ArmourModifications from "../../grammar/armourModifications.ohm-bundle.js";
 const Availability = ArmourModifications.Availability;
 const Cost = ArmourModifications.Cost;
 const Capacity = ArmourModifications.Capacity;
@@ -136,10 +136,10 @@ costArmourModificationSemantics.addOperation("eval", {
     };
   },
   Inner_list(inner, _, cost) {
-    return inner.eval().concat(cost.eval());
+    return inner.eval().concat([cost.eval()]);
   },
-  Inner(cost) {
-    return cost.eval();
+  Inner_cost(cost) {
+    return [cost.eval()];
   },
   AddSub_add(str, _, range) {
     return str

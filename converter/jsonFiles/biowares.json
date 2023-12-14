@@ -2172,7 +2172,7 @@
     "description": "",
     "category": "Biosculpting",
     "essenceCost": {
-      "ratingLinked": [0.2, 0.5]
+      "ratingLinked": [[0.2], [0.5]]
     },
     "rating": {
       "maximum": [2]
@@ -2953,7 +2953,7 @@
     },
     "category": "Cosmetic Bioware",
     "essenceCost": {
-      "ratingLinked": [0, 0.01, 0.02]
+      "ratingLinked": [[0], [0.01], [0.02]]
     },
     "rating": {
       "maximum": [3]

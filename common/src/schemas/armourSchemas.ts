@@ -75,16 +75,20 @@ export const ArmourSchema = zod
     maxRating: zod.optional(zod.number()),
     damageReduction: zod.union([
       zod.number(),
-      zod.object({
-        option: zod.nativeEnum(availabilityEnum),
-      }),
+      zod
+        .object({
+          option: zod.nativeEnum(availabilityEnum),
+        })
+        .strict(),
     ]),
     customFitStackDamageReduction: zod.optional(zod.number()),
     capacity: zod.union([
       zod.number(),
-      zod.object({
-        option: zod.nativeEnum(availabilityEnum),
-      }),
+      zod
+        .object({
+          option: zod.nativeEnum(availabilityEnum),
+        })
+        .strict(),
     ]),
     isWeapon: zod.optional(zod.literal(true)),
     includedGear: zod.optional(UseGearListSchema),

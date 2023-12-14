@@ -22,10 +22,10 @@ essenceCostSemantics.addOperation("eval", {
     };
   },
   Inner_list(inner, _, essence) {
-    return inner.eval().concat(essence.eval());
+    return inner.eval().concat([essence.eval()]);
   },
   Inner_essence(essence) {
-    return essence.eval();
+    return [essence.eval()];
   },
   MulDiv_multiply(str, _, range) {
     return [
@@ -291,10 +291,10 @@ capacityCyberwareSemantics.addOperation("eval", {
     };
   },
   Inner_list(inner, _, capacity) {
-    return inner.eval().concat(capacity.eval());
+    return inner.eval().concat([capacity.eval()]);
   },
-  Inner(capacity) {
-    return capacity.eval();
+  Inner_capacity(capacity) {
+    return [capacity.eval()];
   },
   CapacityArray_base(_a, capacity, _b) {
     return capacity.eval();

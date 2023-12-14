@@ -149,7 +149,7 @@ export const convertSubsystemInternal = function (
 
   let gears;
   if (gearsXml !== undefined) {
-    gears = convertXmlGears(gearsXml, name);
+    gears = convertXmlGears(gearsXml);
   }
   let subsystems;
   if (subsystemsXml !== undefined) {

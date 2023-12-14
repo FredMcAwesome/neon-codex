@@ -104,7 +104,7 @@ Capacity {
     | "FixedValues(" Inner ")" -- fixed
     | AddSub -- capacity
   Inner = Inner "," CapacityArray -- list
-    | CapacityArray
+    | CapacityArray -- capacity
   CapacityArray = "[" AddSub "]" -- base
     | "[*]" -- all 
   AddSub = AddSub "+" MulDiv -- add

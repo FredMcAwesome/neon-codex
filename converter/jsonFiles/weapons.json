@@ -3613,6 +3613,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Crossbows",
+      "extraClassification": "Harpoongun",
       "rangeList": ["Harpoon Gun", "Harpoon Gun (Underwater)"]
     },
     "concealability": 6,
@@ -3661,6 +3662,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Crossbows",
+      "extraClassification": "Slingshot",
       "rangeList": ["Shuriken"]
     },
     "concealability": 6,
@@ -3877,6 +3879,7 @@
     "typeInformation": {
       "type": "Projectile",
       "subtype": "Crossbows",
+      "extraClassification": "Harpoongun",
       "rangeList": ["Harpoon Gun", "Harpoon Gun (Underwater)"]
     },
     "concealability": 6,
@@ -4853,6 +4856,7 @@
     "typeInformation": {
       "type": "Firearm",
       "subtype": "Exotic",
+      "extraClassification": "Grapple Gun",
       "firearmOptions": {
         "mode": ["Single Shot"],
         "recoilCompensation": 0,
@@ -4965,6 +4969,7 @@
     "typeInformation": {
       "type": "Firearm",
       "subtype": "Exotic",
+      "extraClassification": "Flaregun",
       "firearmOptions": {
         "mode": ["Single Shot"],
         "recoilCompensation": 0,
@@ -11528,6 +11533,7 @@
     "typeInformation": {
       "type": "Firearm",
       "subtype": "Exotic",
+      "extraClassification": "Squirt gun",
       "firearmOptions": {
         "mode": ["Semi Automatic"],
         "recoilCompensation": 0,
@@ -11614,6 +11620,7 @@
     "typeInformation": {
       "type": "Firearm",
       "subtype": "Exotic",
+      "extraClassification": "Dart Gun",
       "firearmOptions": {
         "mode": ["Single Shot"],
         "recoilCompensation": 0,
@@ -11702,6 +11709,7 @@
     "typeInformation": {
       "type": "Firearm",
       "subtype": "Exotic",
+      "extraClassification": "Gyrojet",
       "firearmOptions": {
         "mode": ["Semi Automatic"],
         "recoilCompensation": 0,
@@ -11882,6 +11890,7 @@
     "typeInformation": {
       "type": "Firearm",
       "subtype": "Exotic",
+      "extraClassification": "Dart Gun",
       "firearmOptions": {
         "mode": ["Semi Automatic"],
         "recoilCompensation": 0,
@@ -11927,6 +11936,7 @@
     "typeInformation": {
       "type": "Firearm",
       "subtype": "Exotic",
+      "extraClassification": "Dart Gun",
       "firearmOptions": {
         "mode": ["Semi Automatic"],
         "recoilCompensation": 0,
@@ -11972,6 +11982,7 @@
     "typeInformation": {
       "type": "Firearm",
       "subtype": "Exotic",
+      "extraClassification": "Net Gun",
       "firearmOptions": {
         "mode": ["Semi Automatic"],
         "recoilCompensation": 0,
@@ -12012,6 +12023,7 @@
     "typeInformation": {
       "type": "Firearm",
       "subtype": "Exotic",
+      "extraClassification": "Net Gun Large",
       "firearmOptions": {
         "mode": ["Semi Automatic"],
         "recoilCompensation": 0,
@@ -13906,6 +13918,7 @@
     "typeInformation": {
       "type": "Firearm",
       "subtype": "Weapon Attachments",
+      "extraClassification": "Bola",
       "firearmOptions": {
         "mode": ["Single Shot"],
         "recoilCompensation": 0,
@@ -13957,6 +13970,7 @@
     "typeInformation": {
       "type": "Firearm",
       "subtype": "Weapon Attachments",
+      "extraClassification": "Grapple Gun",
       "firearmOptions": {
         "mode": ["Single Shot"],
         "recoilCompensation": 0,
@@ -16058,6 +16072,7 @@
     "typeInformation": {
       "type": "Firearm",
       "subtype": "Exotic",
+      "extraClassification": "Grapple Gun",
       "firearmOptions": {
         "mode": ["Single Shot"],
         "recoilCompensation": 0,
@@ -16112,6 +16127,7 @@
     "typeInformation": {
       "type": "Firearm",
       "subtype": "Exotic",
+      "extraClassification": "Grapple Gun",
       "firearmOptions": {
         "mode": ["Single Shot"],
         "recoilCompensation": 1,
@@ -17897,6 +17913,7 @@
     "typeInformation": {
       "type": "Firearm",
       "subtype": "Exotic",
+      "extraClassification": "Pepper Punch",
       "firearmOptions": {
         "mode": ["Single Shot"],
         "recoilCompensation": 0,
@@ -17942,6 +17959,7 @@
     "typeInformation": {
       "type": "Firearm",
       "subtype": "Exotic",
+      "extraClassification": "Spraypen",
       "firearmOptions": {
         "mode": ["Single Shot"],
         "recoilCompensation": 0,
@@ -19774,6 +19792,7 @@
     "typeInformation": {
       "type": "Firearm",
       "subtype": "Light Pistols",
+      "extraClassification": "Dart Gun",
       "firearmOptions": {
         "mode": ["Semi Automatic"],
         "recoilCompensation": 0,
@@ -22179,6 +22198,7 @@
     "typeInformation": {
       "type": "Firearm",
       "subtype": "Exotic",
+      "extraClassification": "Gas gun",
       "firearmOptions": {
         "mode": ["Single Shot"],
         "recoilCompensation": 0,
@@ -22273,6 +22293,7 @@
     "typeInformation": {
       "type": "Firearm",
       "subtype": "Exotic",
+      "extraClassification": "Trackstopper",
       "firearmOptions": {
         "mode": ["Single Shot"],
         "recoilCompensation": 0,
@@ -22856,6 +22877,7 @@
     "typeInformation": {
       "type": "Firearm",
       "subtype": "Submachine Guns",
+      "extraClassification": "Supermach",
       "firearmOptions": {
         "mode": ["Burst Fire", "Full Automatic"],
         "recoilCompensation": -2,
@@ -23029,6 +23051,7 @@
     "typeInformation": {
       "type": "Firearm",
       "subtype": "Exotic",
+      "extraClassification": "Man-Catcher",
       "firearmOptions": {
         "mode": ["Single Shot"],
         "recoilCompensation": 0,
@@ -23077,6 +23100,7 @@
     "typeInformation": {
       "type": "Firearm",
       "subtype": "Grenade Launchers",
+      "extraClassification": "Torpedo Grenade Launcher",
       "firearmOptions": {
         "mode": ["Single Shot"],
         "recoilCompensation": 0,

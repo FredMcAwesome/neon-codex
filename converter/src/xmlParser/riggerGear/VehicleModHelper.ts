@@ -7,6 +7,7 @@ import {
   vehicleModCategoryEnum,
   vehicleModRatingEnum,
   vehicleModAttributeEnum,
+  projectileWeaponTypeEnum,
 } from "@shadowrun/common/build/enums.js";
 import {
   SubsystemXmlType,
@@ -302,11 +303,7 @@ weaponMountCategoriesSemantics.addOperation("eval", {
     return [firearmWeaponTypeEnum.MissileLaunchers];
   },
   Crossbow(_) {
-    return [
-      firearmWeaponTypeEnum.LightCrossbows,
-      firearmWeaponTypeEnum.MediumCrossbows,
-      firearmWeaponTypeEnum.HeavyCrossbows,
-    ];
+    return [projectileWeaponTypeEnum.Crossbows];
   },
   ExoticMeleeWeapons(_) {
     // assume exotic melee won't appear without exotic ranged

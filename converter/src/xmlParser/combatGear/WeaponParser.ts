@@ -48,6 +48,7 @@ import {
   ammoSemantics,
   availabilityWeaponSemantics,
   costWeaponSemantics,
+  convertExtraClassification,
 } from "./WeaponParserHelper.js";
 import { convertRequirements } from "../common/RequiredHelper.js";
 import Weapons from "../../grammar/weapons.ohm-bundle.js";
@@ -261,8 +262,7 @@ function convertWeapon(weapon: WeaponXmlType) {
   const cost: CostWeaponType = costWeaponSemantics(match).eval();
   // console.log(`Cost: ${cost}`);
   const accessories: UnlinkedAccessoryListType | undefined = convertAccessories(
-    weapon.accessories,
-    weapon.name
+    weapon.accessories
   );
   const accessoryMounts: AccessoryMountType | undefined =
     convertAccessoryMounts(weapon.accessorymounts);
@@ -271,7 +271,7 @@ function convertWeapon(weapon: WeaponXmlType) {
       ? weapon.addweapon
       : [weapon.addweapon]
     : undefined;
-  const allowGear = convertAllowGear(weapon.allowgear, weapon.name);
+  const allowGear = convertAllowGear(weapon.allowgear);
   const doubleCostAccessoryMounts = convertAccessoryMounts(
     weapon.doubledcostaccessorymounts
   );
@@ -379,6 +379,7 @@ function convertWeapon(weapon: WeaponXmlType) {
   const typeInformation = convertTypeInformation(
     weaponType,
     weaponSubtype,
+    convertExtraClassification(weapon.weapontype),
     meleeOptions,
     firearmOptions,
     ranges

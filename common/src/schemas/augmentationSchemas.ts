@@ -125,7 +125,7 @@ export const CapacityAugmentationSchema = zod.union([
   SingleCapacityAugmentationSchema,
   zod
     .object({
-      ratingLinked: SingleCapacityAugmentationSchema,
+      ratingLinked: zod.array(SingleCapacityAugmentationSchema),
     })
     .strict(),
 ]);
@@ -172,7 +172,7 @@ export const EssenceCostRecursiveSchema: zod.ZodType<EssenceCostType> =
 export const EssenceCostSchema = zod.union([
   zod
     .object({
-      ratingLinked: EssenceCostRecursiveSchema,
+      ratingLinked: zod.array(EssenceCostRecursiveSchema),
     })
     .strict(),
   EssenceCostRecursiveSchema,
@@ -245,13 +245,15 @@ export type CyberwareSubsystemsRecursiveType = {
 const SubsystemListSchema: zod.ZodType<
   Array<CyberwareSubsystemsRecursiveType>
 > = zod.array(
-  zod.object({
-    name: zod.string(),
-    forced: zod.optional(zod.string()),
-    rating: zod.optional(zod.number()),
-    gears: zod.optional(UseGearListSchema),
-    subsystem: zod.optional(zod.lazy(() => AugmentationSubsystemListSchema)),
-  })
+  zod
+    .object({
+      name: zod.string(),
+      forced: zod.optional(zod.string()),
+      rating: zod.optional(zod.number()),
+      gears: zod.optional(UseGearListSchema),
+      subsystem: zod.optional(zod.lazy(() => AugmentationSubsystemListSchema)),
+    })
+    .strict()
 );
 
 export const AugmentationSubsystemListSchema = zod

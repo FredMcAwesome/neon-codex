@@ -1262,72 +1262,84 @@
     },
     "cost": {
       "ratingLinked": [
-        {
-          "subnumbers": [
-            {
-              "option": "Rating"
-            },
-            {
-              "operator": "*"
-            },
-            1000
-          ]
-        },
-        {
-          "subnumbers": [
-            {
-              "option": "Rating"
-            },
-            {
-              "operator": "*"
-            },
-            1000
-          ]
-        },
-        {
-          "subnumbers": [
-            {
-              "option": "Rating"
-            },
-            {
-              "operator": "*"
-            },
-            1000
-          ]
-        },
-        {
-          "subnumbers": [
-            {
-              "option": "Rating"
-            },
-            {
-              "operator": "*"
-            },
-            2000
-          ]
-        },
-        {
-          "subnumbers": [
-            {
-              "option": "Rating"
-            },
-            {
-              "operator": "*"
-            },
-            2000
-          ]
-        },
-        {
-          "subnumbers": [
-            {
-              "option": "Rating"
-            },
-            {
-              "operator": "*"
-            },
-            2000
-          ]
-        }
+        [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "*"
+              },
+              1000
+            ]
+          }
+        ],
+        [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "*"
+              },
+              1000
+            ]
+          }
+        ],
+        [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "*"
+              },
+              1000
+            ]
+          }
+        ],
+        [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "*"
+              },
+              2000
+            ]
+          }
+        ],
+        [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "*"
+              },
+              2000
+            ]
+          }
+        ],
+        [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "*"
+              },
+              2000
+            ]
+          }
+        ]
       ]
     },
     "source": "Better Than Bad",

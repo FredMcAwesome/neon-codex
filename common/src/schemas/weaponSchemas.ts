@@ -20,6 +20,7 @@ import {
   rangeEnum,
   costWeaponEnum,
   restrictionEnum,
+  weaponExtraClassificationEnum,
 } from "../enums.js";
 import {
   AllowedGearSchema,
@@ -229,6 +230,9 @@ export const UnlinkedWeaponTypeInformationSchema = zod.discriminatedUnion(
       .object({
         type: zod.literal(weaponTypeEnum.Projectile),
         subtype: zod.nativeEnum(projectileWeaponTypeEnum),
+        extraClassification: zod.optional(
+          zod.nativeEnum(weaponExtraClassificationEnum)
+        ),
         rangeList: zod.array(zod.string()),
       })
       .strict(),
@@ -236,6 +240,9 @@ export const UnlinkedWeaponTypeInformationSchema = zod.discriminatedUnion(
       .object({
         type: zod.literal(weaponTypeEnum.Firearm),
         subtype: zod.nativeEnum(firearmWeaponTypeEnum),
+        extraClassification: zod.optional(
+          zod.nativeEnum(weaponExtraClassificationEnum)
+        ),
         firearmOptions: FirearmOptionsSchema,
         rangeList: zod.array(zod.string()),
       })

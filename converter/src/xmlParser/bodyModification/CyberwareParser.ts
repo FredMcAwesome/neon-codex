@@ -309,9 +309,9 @@ function convertCyberware(cyberware: CyberwareXmlType) {
 
   const gears =
     cyberware.gears !== undefined
-      ? convertXmlGears(cyberware.gears, cyberware.name)
+      ? convertXmlGears(cyberware.gears)
       : undefined;
-  const allowedGear = convertAllowGear(cyberware.allowgear, cyberware.name);
+  const allowedGear = convertAllowGear(cyberware.allowgear);
   const subsystemList = convertSubsystem(cyberware.subsystems);
   const allowCategoryList = convertSubsystemCategory(cyberware.allowsubsystems);
   const forceGrade =

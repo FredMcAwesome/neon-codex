@@ -216,7 +216,7 @@ function convertBioware(bioware: BiowareXmlType) {
 
   const requirements = convertRequirements(bioware.required);
   const forbidden = convertRequirements(bioware.forbidden);
-  const allowGear = convertAllowGear(bioware.allowgear, bioware.name);
+  const allowGear = convertAllowGear(bioware.allowgear);
   const allowCategory = bioware.allowsubsystems
     ? convertBiowareCategory(bioware.allowsubsystems.category)
     : undefined;

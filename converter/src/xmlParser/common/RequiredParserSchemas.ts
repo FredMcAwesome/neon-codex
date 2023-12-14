@@ -249,6 +249,62 @@ const RequiredWeaponMountDetailsXmlSchema: zod.ZodType<RequiredWeaponMountDetail
     ),
   }).strict();
 
+const GearRequiredGearDetailsPropertyStandardSchema = zod.union([
+  zod
+    .object({
+      _operation: zod.string(),
+      _NOT: zod.optional(zod.literal("")),
+      xmltext: zod.optional(zod.union([zod.literal(0), zod.string()])),
+    })
+    .strict(),
+  zod.literal(0),
+]);
+
+const GearDetailsPropertyUnionSchema = zod.union([
+  GearRequiredGearDetailsPropertyStandardSchema,
+  zod.array(GearRequiredGearDetailsPropertyStandardSchema),
+]);
+
+const NameUnionSchema = zod.union([
+  StringArrayOrStringSchema,
+  zod.array(
+    zod.union([zod.string(), GearRequiredGearDetailsPropertyStandardSchema])
+  ),
+]);
+
+const PartialGearRequiredInnerSchema = zod
+  .object({
+    category: zod.optional(StringArrayOrStringSchema),
+    attributearray: zod.optional(
+      zod
+        .object({
+          _operation: zod.string(),
+          _NOT: zod.optional(zod.literal("")),
+        })
+        .strict()
+    ),
+    name: zod.optional(NameUnionSchema),
+    NONE: zod.optional(zod.literal("")),
+    attack: zod.optional(GearDetailsPropertyUnionSchema),
+    sleaze: zod.optional(GearDetailsPropertyUnionSchema),
+    dataprocessing: zod.optional(GearDetailsPropertyUnionSchema),
+    firewall: zod.optional(GearDetailsPropertyUnionSchema),
+  })
+  .strict();
+
+type RequiredGearDetailsXmlType = zod.infer<
+  typeof PartialGearRequiredInnerSchema
+> & {
+  OR?: zod.infer<typeof RequiredGearDetailsXmlSchema> | undefined;
+  AND?: zod.infer<typeof RequiredGearDetailsXmlSchema> | undefined;
+};
+
+export const RequiredGearDetailsXmlSchema: zod.ZodType<RequiredGearDetailsXmlType> =
+  PartialGearRequiredInnerSchema.extend({
+    OR: zod.optional(zod.lazy(() => RequiredGearDetailsXmlSchema)),
+    AND: zod.optional(zod.lazy(() => RequiredGearDetailsXmlSchema)),
+  }).strict();
+
 const containsSchema = zod.union([
   zod
     .object({
@@ -331,6 +387,7 @@ export const RequiredXmlSchema = zod.union([
       weapondetails: zod.optional(RequiredWeaponDetailsXmlSchema),
       vehicledetails: zod.optional(RequiredVehicleDetailsXmlSchema),
       weaponmountdetails: zod.optional(RequiredWeaponMountDetailsXmlSchema),
+      geardetails: zod.optional(RequiredGearDetailsXmlSchema),
       oneof: zod.optional(containsSchema),
       allof: zod.optional(containsSchema),
       parentdetails: zod.optional(parentDetailsSchema),

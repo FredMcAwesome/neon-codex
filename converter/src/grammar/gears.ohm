@@ -1,0 +1,99 @@
+Program {
+  Exp = Program
+  Program = AddSub
+  AddSub = AddSub "+" MulDiv -- add
+    | AddSub "-" MulDiv -- subtract
+    | MulDiv -- base
+  MulDiv = MulDiv "*" ProgramValue -- multiply
+    | MulDiv "/" ProgramValue -- divide
+    | ProgramValue
+  ProgramValue = Number
+    | Rating
+  Rating = "{Rating}" | "Rating"
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+}
+
+Capacity {
+  Exp = Capacity "/" CapacityArray -- mixCapacity
+    | Capacity
+    | CapacityArray
+  Capacity = AddSub
+  CapacityArray = "[" AddSub "]"
+  AddSub = AddSub "+" MulDiv -- add
+    | AddSub "-" MulDiv -- subtract
+    | MulDiv -- base
+  MulDiv = MulDiv "*" CapacityValue -- multiply
+    | MulDiv "/" CapacityValue -- divide
+    | CapacityValue
+  CapacityValue = Number
+    | Rating
+  Rating = "{Rating}" | "Rating"
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+}
+
+Availability {
+  Exp = Availability
+    | "+" Availability -- addition
+    | "FixedValues(" Inner ")" -- fixed
+  Inner = Inner "," Availability -- list
+    | Availability -- available
+  Availability = AddSub Restriction -- full
+    | AddSub -- partial  
+  AddSub = AddSub "+" MulDiv -- add
+    | AddSub "-" MulDiv -- subtract
+    | MulDiv -- base
+  MulDiv = MulDiv "*" SubCalculation -- multiply
+    | MulDiv "/" SubCalculation -- divide
+    | SubCalculation
+  SubCalculation = "(" AddSub ")" -- parenthesis
+    | AvailabilityValue
+  AvailabilityValue = Number
+    | Rating
+  Rating = "{Rating}" | "Rating"
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+  Restriction = Restricted
+    | Forbidden
+  Restricted = "R"
+  Forbidden = "F"
+}
+
+Cost {
+  Exp = Cost
+    | "FixedValues(" Inner ")" -- fixed
+    | Variable -- variable
+  Inner = Inner "," Cost -- list
+    | Cost -- cost
+  Variable = "Variable(" InnerVariable ")"
+  InnerVariable = Number "-" Number
+  Cost = AddSub
+  AddSub = AddSub "+" MulDiv -- add
+    | AddSub "-" MulDiv -- subtract
+    | MulDiv -- base
+  MulDiv = MulDiv "*" SubCalculation -- multiply
+    | MulDiv "/" SubCalculation -- divide
+    | SubCalculation
+  SubCalculation = "(" AddSub ")" -- parenthesis
+    | CostValue
+  CostValue = Number
+    | Rating
+    | ParentCost
+    | ChildrenCost
+    | GearCost
+  Rating = "{Rating}" | "Rating"
+  ParentCost = "Parent Cost"
+  ChildrenCost = "Children Cost"
+  GearCost = "Gear Cost"
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+}

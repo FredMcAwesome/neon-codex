@@ -896,7 +896,7 @@
     },
     "category": "Eyeware",
     "essenceCost": {
-      "ratingLinked": [0.1, 0.1, 0.1, 0.2, 0.2, 0.2]
+      "ratingLinked": [[0.1], [0.1], [0.1], [0.2], [0.2], [0.2]]
     },
     "rating": {
       "minimum": [1],
@@ -925,7 +925,7 @@
     "source": "Shadowrun 5 Core Rulebook",
     "page": 453,
     "capacity": {
-      "ratingLinked": [1, 2, 3, 8, 10, 12]
+      "ratingLinked": [[1], [2], [3], [8], [10], [12]]
     }
   },
   {
@@ -1034,7 +1034,7 @@
     },
     "category": "Earware",
     "essenceCost": {
-      "ratingLinked": [0.1, 0.1, 0.1, 0.2, 0.2, 0.2]
+      "ratingLinked": [[0.1], [0.1], [0.1], [0.2], [0.2], [0.2]]
     },
     "rating": {
       "minimum": [1],
@@ -1063,7 +1063,7 @@
     "source": "Shadowrun 5 Core Rulebook",
     "page": 453,
     "capacity": {
-      "ratingLinked": [1, 2, 3, 8, 10, 12]
+      "ratingLinked": [[1], [2], [3], [8], [10], [12]]
     }
   },
   {
@@ -1632,7 +1632,7 @@
     "description": "",
     "category": "Bodyware",
     "essenceCost": {
-      "ratingLinked": [2, 3, 5]
+      "ratingLinked": [[2], [3], [5]]
     },
     "rating": {
       "minimum": [1],
@@ -4286,7 +4286,7 @@
     "description": "",
     "category": "Bodyware",
     "essenceCost": {
-      "ratingLinked": [3, 4, 5]
+      "ratingLinked": [[3], [4], [5]]
     },
     "rating": {
       "minimum": [1],

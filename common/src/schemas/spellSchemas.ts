@@ -28,10 +28,12 @@ export const SpellSchema = zod
         })
         .strict(),
     ]),
-    range: zod.object({
-      value: zod.nativeEnum(spellRangeEnum),
-      target: zod.nativeEnum(spellTargetEnum),
-    }),
+    range: zod
+      .object({
+        value: zod.nativeEnum(spellRangeEnum),
+        target: zod.nativeEnum(spellTargetEnum),
+      })
+      .strict(),
     type: zod.nativeEnum(spellTypeEnum),
     bonus: zod.optional(BonusSchema),
     required: zod.optional(RequirementsSchema),

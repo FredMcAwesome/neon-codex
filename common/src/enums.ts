@@ -77,9 +77,6 @@ export enum firearmWeaponTypeEnum {
   AssaultCannons = "Assault Cannons",
   GrenadeLaunchers = "Grenade Launchers",
   MissileLaunchers = "Missile Launchers",
-  LightCrossbows = "Light Crossbows",
-  MediumCrossbows = "Medium Crossbows",
-  HeavyCrossbows = "Heavy Crossbows",
   Exotic = "Exotic",
   Cyberguns = "Cyberguns",
   Flamethrowers = "Flamethrowers",
@@ -88,6 +85,29 @@ export enum firearmWeaponTypeEnum {
   WeaponAttachments = "Weapon Attachments",
   Carbines = "Carbines",
   MicroDroneWeapons = "Micro-Drone Weapons",
+}
+
+export enum weaponExtraClassificationEnum {
+  SquirtGun = "Squirt gun",
+  GasGun = "Gas gun",
+  Trackstopper = "Trackstopper",
+  HarpoonGun = "Harpoongun",
+  NetGun = "Net Gun",
+  NetGunLarge = "Net Gun Large",
+  Gyrojet = "Gyrojet",
+  Bola = "Bola",
+  TorpedoGrenadeLauncher = "Torpedo Grenade Launcher",
+  Microtorpedo = "Microtorpedo",
+  Flaregun = "Flaregun",
+  Supermach = "Supermach",
+  FirefightingCannons = "Firefighting Cannons",
+  PepperPunch = "Pepper Punch",
+  Spraypen = "Spraypen",
+  Slingshot = "Slingshot",
+  GrappleGun = "Grapple Gun",
+  DartGun = "Dart Gun",
+  Man_Catcher = "Man-Catcher",
+  Spinstorm = "Spinstorm",
 }
 
 export enum explosiveTypeEnum {
@@ -238,6 +258,9 @@ export enum costMagicalEnum {
 }
 export enum costGearEnum {
   Rating = "Rating",
+  ParentCost = "Parent Cost",
+  ChildrenCost = "Children Cost",
+  GearCost = "Gear Cost",
 }
 
 export enum costRiggerEnum {
@@ -321,6 +344,7 @@ export enum gearCategoryEnum {
   Nanogear = "Nanogear",
   Paydata = "Paydata",
   PiTac = "PI-Tac",
+  PiTacPrograms = "Pi_TacPrograms",
   Printing = "Printing",
   ReporterGear = "Reporter Gear",
   RFIDTags = "RFID Tags",
@@ -823,4 +847,24 @@ export enum vehicleModAttributeEnum {
 export enum ratingMeaningEnum {
   HourPerRating = "1 Hour per Rating Level",
   UpgradedRating = "Rating of parent is upgraded",
+  MeterPerRating = "1 Meter per Rating Level",
+  SquareMeterPerRating = "1 Square Meter per Rating Level",
+}
+
+export enum gearRatingEnum {
+  ParentRating = "Parent Rating",
+}
+
+export enum gearDeviceRatingEnum {
+  Rating = "Rating",
+  Resonance = "Resonance",
+}
+
+export enum parentGearEnum {
+  Rating = "Rating",
+}
+
+export enum personaFormEnum {
+  Self = "Self",
+  Parent = "Parent",
 }

@@ -196,7 +196,7 @@ const convertVehicle = function (vehicle: VehicleXmlType) {
   const includedGear =
     vehicle.gears !== undefined
       ? // switch gear to usegear (as it should be in xml...)
-        convertXmlGears({ usegear: vehicle.gears.gear }, vehicle.name)
+        convertXmlGears({ usegear: vehicle.gears.gear })
       : undefined;
   const includedMods =
     vehicle.mods !== undefined ? convertXmlModList(vehicle.mods) : undefined;

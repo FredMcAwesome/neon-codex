@@ -149,10 +149,7 @@ export function ParseWeaponAccessories() {
       costWeaponAccessorySemantics(match).eval();
     // console.log(`Cost: ${cost}`);
 
-    const allowGear = convertAllowGear(
-      weaponAccessory.allowgear,
-      weaponAccessory.name
-    );
+    const allowGear = convertAllowGear(weaponAccessory.allowgear);
 
     return {
       // id: weapon.id,
@@ -179,7 +176,7 @@ export function ParseWeaponAccessories() {
       accessoryCostMultiplier: weaponAccessory.accessorycostmultiplier,
       allowGear: allowGear,
       preinstalledGear: weaponAccessory.gears
-        ? convertXmlGears(weaponAccessory.gears, weaponAccessory.name)
+        ? convertXmlGears(weaponAccessory.gears)
         : undefined,
       specialModification: weaponAccessory.specialmodification === "True",
       extraAmmoSlots: weaponAccessory.ammoslots,

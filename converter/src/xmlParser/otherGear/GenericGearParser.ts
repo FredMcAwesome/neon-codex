@@ -4,11 +4,40 @@ import { XMLParser } from "fast-xml-parser";
 import path from "path";
 import { fileURLToPath } from "url";
 import * as fs from "fs";
-import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
+import {
+  GearXmlCategoryEnum,
+  sourceBookXmlEnum,
+} from "../common/ParserCommonDefines.js";
 import {
   GenericGearListXmlSchema,
   GenericGearListXmlType,
+  GenericGearXmlType,
 } from "./GenericGearParserSchemas.js";
+import {
+  convertGearCategory,
+  convertSource,
+  convertXmlGears,
+} from "../common/ParserHelper.js";
+import {
+  availabilityGearSemantics,
+  capacityGearSemantics,
+  convertAmmoForWeaponType,
+  convertDeviceAttributes,
+  convertDeviceRating,
+  convertGearAddWeapon,
+  convertGearMaxRating,
+  convertXmlWeaponBonus,
+  costGearSemantics,
+  programGearSemantics,
+} from "./GenericGearHelper.js";
+import { convertXmlBonus } from "../common/BonusHelper.js";
+import Gears from "../../grammar/gears.ohm-bundle.js";
+import { convertRequirements } from "../common/RequiredHelper.js";
+import { OtherGearSchema } from "@shadowrun/common/build/schemas/otherGearSchemas.js";
+const Program = Gears.Program;
+const Capacity = Gears.Capacity;
+const Cost = Gears.Cost;
+const Availability = Gears.Availability;
 
 export function ParseGear() {
   const currentPath = import.meta.url;
@@ -40,9 +69,9 @@ export function ParseGear() {
   }
 
   const genericGearList = genericGearListParsed.data;
-  // .filter((weapon) => {
-  //   return weapon.type === weaponTypeEnum.Melee;
-  // })
+  // .filter((gear) => {
+  //   return gear.name === "Detonating Cord, High Yield";
+  // });
   const englishGenericGearList: GenericGearListXmlType = genericGearList.filter(
     (gear) => {
       let found = false;
@@ -112,27 +141,228 @@ export function ParseGear() {
     }
   );
 
-  console.log(englishGenericGearList[0]);
-
-  // const armourListConverted = englishArmourList
-  //   // .filter((weapon) => weapon.name === "Osmium Mace")
-  //   .map((armour) => {
-  //     const convertedArmour = convertArmour(armour);
-  //     return convertedArmour;
-  //   });
-  // // console.log(armourListConverted);
-  // const jsonFilePath = fileURLToPath(
-  //   path.dirname(currentPath) + "../../../../jsonFiles/armour.json"
-  // );
-  // fs.writeFile(
-  //   jsonFilePath,
-  //   JSON.stringify(armourListConverted, null, 2),
-  //   (error) => {
-  //     if (error) {
-  //       console.error(error);
-  //     } else {
-  //       console.log(`File written! Saved to: ${jsonFilePath}`);
-  //     }
-  //   }
-  // );
+  const gearListConverted = englishGenericGearList
+    // .filter((weapon) => weapon.name === "Osmium Mace")
+    .map((gear) => {
+      const convertedGear = convertGear(gear);
+      const check = OtherGearSchema.safeParse(convertedGear);
+      if (!check.success) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        console.log(convertedGear);
+        throw new Error(check.error.message);
+      }
+      return convertedGear;
+    });
+  const jsonFilePath = fileURLToPath(
+    path.dirname(currentPath) + "../../../../jsonFiles/gears.json"
+  );
+  fs.writeFile(
+    jsonFilePath,
+    JSON.stringify(gearListConverted, null, 2),
+    (error) => {
+      if (error) {
+        console.error(error);
+      } else {
+        console.log(`File written! Saved to: ${jsonFilePath}`);
+      }
+    }
+  );
 }
+
+const convertGear = function (gear: GenericGearXmlType) {
+  const category = convertGearCategory(gear.category);
+  const maxRating =
+    gear.rating === undefined ? undefined : convertGearMaxRating(gear.rating);
+  const includedWeapon =
+    gear.addweapon === undefined
+      ? undefined
+      : convertGearAddWeapon(gear.addweapon);
+  const allowCategoryList =
+    gear.addoncategory === undefined
+      ? undefined
+      : Array.isArray(gear.addoncategory)
+      ? gear.addoncategory.map((gear) => convertGearCategory(gear))
+      : [convertGearCategory(gear.addoncategory)];
+  const bonus =
+    gear.bonus === undefined ? undefined : convertXmlBonus(gear.bonus);
+  const weaponBonus =
+    gear.weaponbonus === undefined
+      ? undefined
+      : convertXmlWeaponBonus(gear.weaponbonus);
+  const flechetteWeaponBonus =
+    gear.flechetteweaponbonus === undefined
+      ? undefined
+      : convertXmlWeaponBonus(gear.flechetteweaponbonus);
+  const ammoForWeaponType =
+    gear.ammoforweapontype === undefined
+      ? undefined
+      : convertAmmoForWeaponType(gear.ammoforweapontype);
+
+  const allowGearList =
+    gear.allowgear === undefined
+      ? undefined
+      : Array.isArray(gear.allowgear.name)
+      ? gear.allowgear.name
+      : [gear.allowgear.name];
+  const includedGearList =
+    gear.gears === undefined ? undefined : convertXmlGears(gear.gears);
+
+  const deviceRating =
+    gear.devicerating === undefined
+      ? undefined
+      : convertDeviceRating(gear.devicerating);
+
+  let programs;
+  if (gear.programs !== undefined) {
+    const match = Program.match(gear.programs.toString());
+    if (match.failed()) {
+      assert(false, match.message);
+    }
+    programs = programGearSemantics(match).eval();
+  }
+  const attributeArray =
+    gear.attributearray === undefined
+      ? undefined
+      : gear.attributearray.split(",").map((attributeString) => {
+          const attribute = Number(attributeString);
+          assert(!isNaN(attribute));
+          return attribute as number;
+        });
+  const attack =
+    gear.attack === undefined
+      ? undefined
+      : convertDeviceAttributes(gear.attack);
+  const sleaze =
+    gear.sleaze === undefined
+      ? undefined
+      : convertDeviceAttributes(gear.sleaze);
+  const dataProcessing =
+    gear.dataprocessing === undefined
+      ? undefined
+      : convertDeviceAttributes(gear.dataprocessing);
+  const firewall =
+    gear.firewall === undefined
+      ? undefined
+      : convertDeviceAttributes(gear.firewall);
+
+  let capacityInformation;
+  if (gear.capacity !== undefined) {
+    const match = Capacity.match(gear.capacity.toString());
+    if (match.failed()) {
+      assert(false, match.message);
+    }
+    capacityInformation = capacityGearSemantics(match).eval();
+  }
+
+  let armourCapacityInformation;
+  if (gear.armorcapacity !== undefined) {
+    const match = Capacity.match(gear.armorcapacity.toString());
+    if (match.failed()) {
+      assert(false, match.message);
+    }
+    armourCapacityInformation = capacityGearSemantics(match).eval();
+  }
+  const requirements = convertRequirements(gear.required);
+  const requireParent =
+    gear.requireparent === undefined
+      ? gear.category === GearXmlCategoryEnum.ArmorEnhancements
+        ? (true as const)
+        : undefined
+      : (true as const);
+  const forbidden = convertRequirements(gear.forbidden);
+
+  const modifyAttributeArray =
+    gear.modattributearray === undefined
+      ? undefined
+      : gear.modattributearray.split(",").map((attributeString) => {
+          const attribute = Number(attributeString);
+          assert(!isNaN(attribute));
+          return attribute as number;
+        });
+  const modifyAttack =
+    gear.modattack === undefined
+      ? undefined
+      : convertDeviceAttributes(gear.modattack);
+  const modifySleaze =
+    gear.modsleaze === undefined
+      ? undefined
+      : convertDeviceAttributes(gear.modsleaze);
+  const modifyDataProcessing =
+    gear.moddataprocessing === undefined
+      ? undefined
+      : convertDeviceAttributes(gear.moddataprocessing);
+  const modifyFirewall =
+    gear.modfirewall === undefined
+      ? undefined
+      : convertDeviceAttributes(gear.modfirewall);
+
+  let renameCustomLabel;
+  if (gear.allowrename !== undefined) {
+    assert(gear.bonus !== undefined && gear.bonus !== "");
+    const select =
+      gear.bonus.selecttext !== undefined ||
+      gear.bonus.selectrestricted !== undefined;
+    // if assert fail here, check if item has a different select
+    assert(select, gear.name);
+    renameCustomLabel = true as const;
+  }
+
+  let match = Cost.match(gear.cost.toString());
+  if (match.failed()) {
+    assert(false, match.message);
+  }
+  const cost = costGearSemantics(match).eval();
+
+  match = Availability.match(gear.avail.toString());
+  if (match.failed()) {
+    assert(false, match.message);
+  }
+  const availability = availabilityGearSemantics(match).eval();
+
+  const source = convertSource(gear.source);
+
+  return {
+    name: gear.name,
+    description: "",
+    category: category,
+    minRating: gear.minrating,
+    maxRating: maxRating,
+    includedWeapon: includedWeapon,
+    allowCategoryList: allowCategoryList,
+    quantity: gear.costfor,
+    bonus: bonus,
+    weaponBonus: weaponBonus,
+    isFlechetteAmmo:
+      gear.isflechetteammo !== undefined ? (true as const) : undefined,
+    flechetteWeaponBonus: flechetteWeaponBonus,
+    ammoForWeaponType: ammoForWeaponType,
+    explosiveWeight: gear.weight,
+    ...(gear.hide !== undefined && { userSelectable: false as const }),
+    allowGearList: allowGearList,
+    includedGearList: includedGearList,
+    deviceRating: deviceRating,
+    programs: programs,
+    attributeArray: attributeArray,
+    attack: attack,
+    sleaze: sleaze,
+    dataProcessing: dataProcessing,
+    firewall: firewall,
+    canFormPersona: gear.canformpersona,
+    capacityInformation: capacityInformation,
+    armourCapacityInformation: armourCapacityInformation,
+    requirements: requirements,
+    requireParent: requireParent,
+    forbidden: forbidden,
+    modifyAttributeArray: modifyAttributeArray,
+    modifyAttack: modifyAttack,
+    modifySleaze: modifySleaze,
+    modifyDataProcessing: modifyDataProcessing,
+    modifyFirewall: modifyFirewall,
+    addMatrixBoxes: gear.matrixcmbonus,
+    renameCustomLabel: renameCustomLabel,
+    cost: cost,
+    availability: availability,
+    source: source,
+    page: gear.page,
+  };
+};

@@ -59,7 +59,9 @@ export const RecursiveCostArmourModSchema: zod.ZodType<RecursiveCostArmourModTyp
   );
 export const CostArmourModSchema = zod.union([
   RecursiveCostArmourModSchema,
-  zod.object({ ratingLinked: RecursiveCostArmourModSchema }).strict(),
+  zod
+    .object({ ratingLinked: zod.array(RecursiveCostArmourModSchema) })
+    .strict(),
 ]);
 export type CostArmourModType = zod.infer<typeof CostArmourModSchema>;
 
@@ -106,9 +108,11 @@ export const ArmourModSchema = zod
     maxRating: zod.number(),
     damageReduction: zod.union([
       zod.number(),
-      zod.object({
-        option: zod.nativeEnum(availabilityEnum),
-      }),
+      zod
+        .object({
+          option: zod.nativeEnum(availabilityEnum),
+        })
+        .strict(),
     ]),
     capacityCost: CapacityArmourModSchema,
     hostArmourRequirements: zod.optional(

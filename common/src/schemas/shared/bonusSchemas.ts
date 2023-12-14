@@ -8,6 +8,7 @@ import {
   spellCategoryEnum,
   weaponTypeEnum,
 } from "../../enums.js";
+import { DamageSchema } from "../weaponSchemas.js";
 
 const SelectSkillSchema = zod.discriminatedUnion("selectSkill", [
   zod
@@ -35,52 +36,77 @@ const QualityListSchema = zod.array(
 );
 export type QualityListType = zod.infer<typeof QualityListSchema>;
 
-const AddictionResistanceSchema = zod.object({
-  physiological: zod.optional(
-    zod.object({
-      initialTest: zod.union([
-        zod.number(),
-        zod
-          .object({
-            option: zod.literal("Rating"),
-          })
-          .strict(),
-      ]),
-      progressingTest: zod.union([
-        zod.number(),
-        zod
-          .object({
-            option: zod.literal("Rating"),
-          })
-          .strict(),
-      ]),
-    })
-  ),
-  psychological: zod.optional(
-    zod.object({
-      initialTest: zod.union([
-        zod.number(),
-        zod
-          .object({
-            option: zod.literal("Rating"),
-          })
-          .strict(),
-      ]),
-      progressingTest: zod.union([
-        zod.number(),
-        zod
-          .object({
-            option: zod.literal("Rating"),
-          })
-          .strict(),
-      ]),
-    })
-  ),
-});
+const AddictionResistanceSchema = zod
+  .object({
+    physiological: zod.optional(
+      zod
+        .object({
+          initialTest: zod.union([
+            zod.number(),
+            zod
+              .object({
+                option: zod.literal("Rating"),
+              })
+              .strict(),
+          ]),
+          progressingTest: zod.union([
+            zod.number(),
+            zod
+              .object({
+                option: zod.literal("Rating"),
+              })
+              .strict(),
+          ]),
+        })
+        .strict()
+    ),
+    psychological: zod.optional(
+      zod
+        .object({
+          initialTest: zod.union([
+            zod.number(),
+            zod
+              .object({
+                option: zod.literal("Rating"),
+              })
+              .strict(),
+          ]),
+          progressingTest: zod.union([
+            zod.number(),
+            zod
+              .object({
+                option: zod.literal("Rating"),
+              })
+              .strict(),
+          ]),
+        })
+        .strict()
+    ),
+  })
+  .strict();
 
 export type AddictionResistanceType = zod.infer<
   typeof AddictionResistanceSchema
 >;
+
+const InnerEssenceCostSchema = zod.union([
+  zod.number(),
+  zod.object({ option: zod.literal("Rating") }).strict(),
+  zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
+]);
+export type EssenceCostType = Array<
+  zod.infer<typeof InnerEssenceCostSchema> | { subnumbers: EssenceCostType }
+>;
+export const EssenceCostSchema: zod.ZodType<EssenceCostType> = zod.array(
+  zod.union([
+    InnerEssenceCostSchema,
+    zod
+      .object({
+        subnumbers: zod.lazy(() => EssenceCostSchema),
+      })
+      .strict(),
+  ])
+);
 
 export const BonusSchema = zod
   .object({
@@ -256,9 +282,7 @@ export const BonusSchema = zod
         })
         .strict()
     ),
-    essenceCostTimes100: zod.optional(
-      zod.array(zod.union([zod.number(), zod.literal("Rating")]))
-    ),
+    essenceCostTimes100: zod.optional(EssenceCostSchema),
     specificWeapon: zod.optional(
       zod
         .object({
@@ -306,30 +330,34 @@ export const BonusSchema = zod
     ),
     smartlinkAccuracy: zod.optional(zod.number()),
     initiative: zod.optional(
-      zod.object({
-        bonus: zod.optional(
-          zod.union([
-            zod.object({ ratingLinked: zod.array(zod.number()) }).strict(),
-            zod.number(),
-          ])
-        ),
-        bonusDice: zod.optional(
-          zod.union([
-            zod.object({ ratingLinked: zod.array(zod.number()) }).strict(),
-            zod
-              .object({
-                option: zod.literal("Rating"),
-              })
-              .strict(),
-            zod.number(),
-          ])
-        ),
-      })
+      zod
+        .object({
+          bonus: zod.optional(
+            zod.union([
+              zod.object({ ratingLinked: zod.array(zod.number()) }).strict(),
+              zod.number(),
+            ])
+          ),
+          bonusDice: zod.optional(
+            zod.union([
+              zod.object({ ratingLinked: zod.array(zod.number()) }).strict(),
+              zod
+                .object({
+                  option: zod.literal("Rating"),
+                })
+                .strict(),
+              zod.number(),
+            ])
+          ),
+        })
+        .strict()
     ),
     matrixInitiative: zod.optional(
-      zod.object({
-        bonusDice: zod.number(),
-      })
+      zod
+        .object({
+          bonusDice: zod.number(),
+        })
+        .strict()
     ),
     toxinContactResist: zod.optional(
       zod.union([
@@ -507,9 +535,11 @@ export const BonusSchema = zod
       zod.array(
         zod.union([
           zod.number(),
-          zod.object({
-            option: zod.literal("Rating"),
-          }),
+          zod
+            .object({
+              option: zod.literal("Rating"),
+            })
+            .strict(),
           zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
         ])
       )
@@ -689,3 +719,18 @@ export type BonusType = zod.infer<typeof BonusSchema>;
 export const WirelessSchema = BonusSchema.extend({
   replaceNonWireless: zod.optional(zod.boolean()),
 });
+
+export const WeaponBonusSchema = zod
+  .object({
+    ap: zod.optional(zod.number()),
+    apReplace: zod.optional(zod.number()),
+    damage: zod.optional(DamageSchema),
+    damageReplace: zod.optional(zod.string()),
+    damageType: zod.optional(zod.string()),
+    modeReplace: zod.optional(zod.string()),
+    useRange: zod.optional(zod.string()),
+    accuracy: zod.optional(zod.number()),
+    accuracyReplace: zod.optional(zod.number()),
+  })
+  .strict();
+export type WeaponBonusType = zod.infer<typeof WeaponBonusSchema>;

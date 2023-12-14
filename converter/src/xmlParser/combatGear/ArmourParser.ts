@@ -181,9 +181,7 @@ function convertArmour(armour: ArmourXmlType) {
   if (armour.addweapon !== undefined) assert(armour.addweapon === armour.name);
 
   const gears =
-    armour.gears !== undefined
-      ? convertXmlGears(armour.gears, armour.name)
-      : undefined;
+    armour.gears !== undefined ? convertXmlGears(armour.gears) : undefined;
 
   let match = Availability.match(armour.avail.toString());
   if (match.failed()) {

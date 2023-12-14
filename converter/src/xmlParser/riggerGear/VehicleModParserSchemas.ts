@@ -22,6 +22,7 @@ export enum vehicleModXmlCategoryEnum {
   Armor = "Armor",
   Sensor = "Sensor",
 }
+
 const SubsystemXmlSchema = zod
   .object({
     subsystem: zod.union([zod.string(), zod.array(zod.string())]),

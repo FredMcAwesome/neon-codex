@@ -13,6 +13,40 @@ import {
 } from "../common/ParserCommonDefines.js";
 import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
 
+export enum weaponTypeXmlEnum {
+  Melee = "melee",
+  Exotic = "exotic",
+  Bow = "bow",
+  Crossbow = "crossbow",
+  Taser = "taser",
+  Gun = "gun",
+  Cannon = "cannon",
+  Flame = "flame",
+  Energy = "energy",
+  GLauncher = "glauncher",
+  MLauncher = "mlauncher",
+  Squirtgun = "squirtgun",
+  Gasgun = "gasgun",
+  Trackstopper = "trackstopper",
+  Harpoongun = "harpoongun",
+  Netgun = "netgun",
+  Netgunxl = "netgunxl",
+  Gyrojet = "gyrojet",
+  Bola = "bola",
+  Torpglauncher = "torpglauncher",
+  Microtorpedo = "microtorpedo",
+  Flaregun = "flaregun",
+  Supermach = "supermach",
+  FirefightingCannons = "firefighting cannons",
+  Pepperpunch = "pepperpunch",
+  Spraypen = "spraypen",
+  Slingshot = "slingshot",
+  Grapplegun = "grapplegun",
+  Dartgun = "dartgun",
+  Man_Catcher = "man-catcher",
+  Spinstorm = "spinstorm",
+}
+
 const AccessoryXmlSchema = zod
   .object({
     name: zod.string(),
@@ -170,7 +204,7 @@ const WeaponXmlSchema = zod
     // This tag indicates that there is a specific ammo in gear.xml
     // that matches this weapontype and to use this tag instead of other
     // ways to indentify the ammo type needed
-    weapontype: zod.optional(zod.string()),
+    weapontype: zod.optional(zod.nativeEnum(weaponTypeXmlEnum)),
     source: zod.union([SourceXmlSchema, zod.literal(2050)]),
     page: zod.number(),
   })

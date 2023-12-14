@@ -10,12 +10,14 @@ npx ts-node-esm src/xmlParser/parsers/bodyModification/BiowareParser.ts &&
 npx ts-node-esm src/xmlParser/parsers/bodyModification/CyberwareParser.ts &&
 npx ts-node-esm src/xmlParser/parsers/riggerGear/VehicleParser.ts
 
-So far I have only parsed:
+So far I have only parsed and saved in database:
 
-- Ranges (DB)
-- Weapons (DB)
-- WeaponAccessories (DB)
-- Skills (DB)
+- Ranges
+- Weapons
+- WeaponAccessories
+- Skills
+
+To match where I previously was, still need (stored in database, then passed through to frontend - They are already parsed):
 - Armour
 - ArmourAccessories
 - Spells
@@ -25,9 +27,6 @@ So far I have only parsed:
 - DrugComponents
 - Vehicles
 - VehicleMods (including weapon mount mods)
-
-To match where I previously was, still need (All parsed, stored in database, then passed through to frontend):
-
 - Gear
 
 Other main priorities:

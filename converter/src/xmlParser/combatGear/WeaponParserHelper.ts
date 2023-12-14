@@ -19,9 +19,14 @@ import {
   armourPenetrationEnum,
   costWeaponEnum,
   availabilityEnum,
+  weaponExtraClassificationEnum,
 } from "@shadowrun/common/build/enums.js";
 import assert from "assert";
-import { AccessoryXmlType, WeaponXmlType } from "./WeaponParserSchemas.js";
+import {
+  AccessoryXmlType,
+  weaponTypeXmlEnum,
+  WeaponXmlType,
+} from "./WeaponParserSchemas.js";
 import {
   UnlinkedAccessoryType,
   FirearmOptionsType,
@@ -43,6 +48,66 @@ const Ammo = Weapons.Ammo;
 const Availability = Weapons.Availability;
 const Cost = Weapons.Cost;
 
+export const convertExtraClassification = function (
+  weaponExtraClassification: weaponTypeXmlEnum | undefined
+) {
+  switch (weaponExtraClassification) {
+    case undefined:
+    case weaponTypeXmlEnum.Melee:
+    case weaponTypeXmlEnum.Exotic:
+    case weaponTypeXmlEnum.Bow:
+    case weaponTypeXmlEnum.Crossbow:
+    case weaponTypeXmlEnum.Taser:
+    case weaponTypeXmlEnum.Gun:
+    case weaponTypeXmlEnum.Cannon:
+    case weaponTypeXmlEnum.Flame:
+    case weaponTypeXmlEnum.Energy:
+    case weaponTypeXmlEnum.GLauncher:
+    case weaponTypeXmlEnum.MLauncher:
+      return undefined;
+    case weaponTypeXmlEnum.Squirtgun:
+      return weaponExtraClassificationEnum.SquirtGun;
+    case weaponTypeXmlEnum.Gasgun:
+      return weaponExtraClassificationEnum.GasGun;
+    case weaponTypeXmlEnum.Trackstopper:
+      return weaponExtraClassificationEnum.Trackstopper;
+    case weaponTypeXmlEnum.Harpoongun:
+      return weaponExtraClassificationEnum.HarpoonGun;
+    case weaponTypeXmlEnum.Netgun:
+      return weaponExtraClassificationEnum.NetGun;
+    case weaponTypeXmlEnum.Netgunxl:
+      return weaponExtraClassificationEnum.NetGunLarge;
+    case weaponTypeXmlEnum.Gyrojet:
+      return weaponExtraClassificationEnum.Gyrojet;
+    case weaponTypeXmlEnum.Bola:
+      return weaponExtraClassificationEnum.Bola;
+    case weaponTypeXmlEnum.Torpglauncher:
+      return weaponExtraClassificationEnum.TorpedoGrenadeLauncher;
+    case weaponTypeXmlEnum.Microtorpedo:
+      return weaponExtraClassificationEnum.Microtorpedo;
+    case weaponTypeXmlEnum.Flaregun:
+      return weaponExtraClassificationEnum.Flaregun;
+    case weaponTypeXmlEnum.Supermach:
+      return weaponExtraClassificationEnum.Supermach;
+    case weaponTypeXmlEnum.FirefightingCannons:
+      return weaponExtraClassificationEnum.FirefightingCannons;
+    case weaponTypeXmlEnum.Pepperpunch:
+      return weaponExtraClassificationEnum.PepperPunch;
+    case weaponTypeXmlEnum.Spraypen:
+      return weaponExtraClassificationEnum.Spraypen;
+    case weaponTypeXmlEnum.Slingshot:
+      return weaponExtraClassificationEnum.Slingshot;
+    case weaponTypeXmlEnum.Grapplegun:
+      return weaponExtraClassificationEnum.GrappleGun;
+    case weaponTypeXmlEnum.Dartgun:
+      return weaponExtraClassificationEnum.DartGun;
+    case weaponTypeXmlEnum.Man_Catcher:
+      return weaponExtraClassificationEnum.Man_Catcher;
+    case weaponTypeXmlEnum.Spinstorm:
+      return weaponExtraClassificationEnum.Spinstorm;
+  }
+};
+
 export const convertTypeInformation = function (
   weaponType: weaponTypeEnum,
   weaponSubtype:
@@ -50,6 +115,7 @@ export const convertTypeInformation = function (
     | projectileWeaponTypeEnum
     | firearmWeaponTypeEnum
     | explosiveTypeEnum,
+  weaponExtraClassification: weaponExtraClassificationEnum | undefined,
   meleeOptions: MeleeOptionsType,
   firearmOptions: FirearmOptionsType,
   ranges: Array<string>
@@ -79,6 +145,7 @@ export const convertTypeInformation = function (
       return {
         type: weaponTypeEnum.Projectile,
         subtype: weaponSubtype as projectileWeaponTypeEnum,
+        extraClassification: weaponExtraClassification,
         rangeList: ranges,
       };
     case weaponTypeEnum.Firearm:
@@ -91,6 +158,7 @@ export const convertTypeInformation = function (
       return {
         type: weaponTypeEnum.Firearm,
         subtype: weaponSubtype as firearmWeaponTypeEnum,
+        extraClassification: weaponExtraClassification,
         firearmOptions: firearmOptions,
         rangeList: ranges,
       };
@@ -669,10 +737,9 @@ costWeaponSemantics.addOperation("eval", {
 export const convertAccessories = function (
   xmlAccessoriesUndefined:
     | { accessory: Array<AccessoryXmlType> | AccessoryXmlType }
-    | undefined,
-  name: string
+    | undefined
 ) {
-  if (!xmlAccessoriesUndefined) {
+  if (xmlAccessoriesUndefined === undefined) {
     return undefined;
   }
   // console.log("Accessories: " + xmlAccessoriesUndefined.toString());
@@ -696,7 +763,7 @@ export const convertAccessories = function (
       gears: undefined,
     };
     if (xmlAccessory.gears) {
-      accessory.gears = convertXmlGears(xmlAccessory.gears, name);
+      accessory.gears = convertXmlGears(xmlAccessory.gears);
     }
     return accessory;
   });
@@ -725,7 +792,10 @@ export const convertWeaponSkill = function (
 ) {
   let skill = "";
   let specialisations = previousSpecialisations;
-  if (useSkillSpecialisation) specialisations = [useSkillSpecialisation];
+  if (useSkillSpecialisation) {
+    assert(specialisations === undefined || specialisations.length === 0);
+    specialisations = [useSkillSpecialisation];
+  }
   if (useSkill) {
     return { skill: useSkill, specialisations: specialisations };
   }
