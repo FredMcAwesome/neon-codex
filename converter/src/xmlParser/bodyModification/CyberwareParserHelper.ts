@@ -4,15 +4,15 @@ import {
   mountSlotEnum,
   mathOperatorEnum,
 } from "@shadowrun/common/build/enums.js";
-import {
+import type {
   cyberwareRatingType,
-  CyberwareSubsystemsRecursiveType,
   CyberwareSubsystemsXmlType,
-  mountLocationXmlEnum,
+  CyberwareSubsystemsRecursiveType,
 } from "./CyberwareParserSchemas.js";
+import { mountLocationXmlEnum } from "./CyberwareParserSchemas.js";
 import { cyberwareXmlCategoryEnum } from "./CyberwareParserSchemas.js";
 import { convertXmlGears } from "../common/ParserHelper.js";
-import { AugmentationSubsystemListType } from "@shadowrun/common/src/schemas/augmentationSchemas.js";
+import type { AugmentationSubsystemListType } from "@shadowrun/common/src/schemas/augmentationSchemas.js";
 
 export const convertCyberwareCategory = function (
   category: cyberwareXmlCategoryEnum

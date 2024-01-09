@@ -13,9 +13,9 @@ import {
   AvailabilityWeaponSchema,
   CostWeaponSchema,
   AccessoryMountSchema,
-} from "@shadowrun/common/build/schemas/weaponSchemas.js";
-import {
   WeaponUnlinkedSummaryListSchema,
+} from "@shadowrun/common/build/schemas/weaponSchemas.js";
+import type {
   WeaponUnlinkedSummaryListType,
   WeaponUnlinkedSummaryType,
 } from "@shadowrun/common/build/schemas/weaponSchemas.js";
@@ -77,6 +77,7 @@ export const WeaponSummarySchema = zod
   .object({
     name: zod.string(),
     description: zod.string(),
+    wireless: zod.optional(zod.string()),
     typeInformation: LimitedWeaponTypeInformationSchema,
     concealability: zod.number(),
     accuracy: AccuracySchema,
@@ -89,7 +90,8 @@ export const WeaponSummarySchema = zod
     gears: zod.optional(UnlinkedAccessoryListSchema),
     allowAccessories: zod.boolean(),
     isCyberware: zod.boolean(),
-    augmentationType: zod.nativeEnum(augmentationClassificationEnum),
+    userSelectable: zod.optional(zod.literal(false)),
+    augmentationClassification: zod.nativeEnum(augmentationClassificationEnum),
     addWeapons: zod.optional(zod.array(zod.string())),
     hostWeaponRequirements: zod.optional(
       zod
@@ -99,7 +101,6 @@ export const WeaponSummarySchema = zod
         })
         .strict()
     ),
-    wireless: zod.optional(zod.string()),
     relatedSkill: zod.instanceof(Skills),
     relatedSkillSpecialisations: zod.optional(zod.array(zod.string())),
     source: zod.nativeEnum(sourceBookEnum),
@@ -113,7 +114,7 @@ export type WeaponSummaryListType = zod.infer<typeof WeaponSummaryListSchema>;
 const convertWeapon = function (
   weapon: WeaponUnlinkedSummaryType,
   relatedSkill: Skills
-) {
+): WeaponSummaryType {
   const initialTypeInformation = weapon.typeInformation;
   let typeInfo;
   if ("rangeList" in initialTypeInformation) {
@@ -135,15 +136,14 @@ const convertWeapon = function (
     damage: weapon.damage,
     armourPenetration: weapon.armourPenetration,
     ammunition: weapon.ammunition,
-    availability: weapon.availability,
-    cost: weapon.cost,
     allowedGear: weapon.allowedGear,
     allowAccessories: weapon.allowAccessories,
     isCyberware: weapon.isCyberware,
-    augmentationType: weapon.augmentationType,
-    addWeapons: weapon.addWeapons,
+    augmentationClassification: weapon.augmentationClassification,
     wireless: weapon.wireless,
     relatedSkillSpecialisations: weapon.relatedSkillSpecialisations,
+    availability: weapon.availability,
+    cost: weapon.cost,
     source: weapon.source,
     page: weapon.page,
   };
@@ -154,6 +154,7 @@ export const getWeapons = function (
   stagedWeaponRanges: Array<WeaponRanges>,
   stagedWeaponAccessories: Array<WeaponAccessories>
 ): {
+  weaponsUnlinked: WeaponUnlinkedSummaryListType;
   stagedMeleeWeapons: Array<MeleeWeapons>;
   stagedFirearmWeapons: Array<FirearmWeapons>;
   stagedProjectileWeapons: Array<ProjectileWeapons>;
@@ -186,8 +187,8 @@ export const getWeapons = function (
   const stagedFirearmWeapons: Array<FirearmWeapons> = [];
   const stagedProjectileWeapons: Array<ProjectileWeapons> = [];
   const stagedExplosiveWeapons: Array<Explosives> = [];
-  let stagedAccessories: Array<Array<IncludedWeaponAccessories>> = [];
-  let stagedRanges: Array<Array<WeaponRangeLinks>> = [];
+  let stagedIncludedAccessories: Array<Array<IncludedWeaponAccessories>> = [];
+  let stagedLinkedRanges: Array<Array<WeaponRangeLinks>> = [];
 
   assert(stagedSkills.length > 0);
   assert(stagedWeaponRanges.length > 0);
@@ -246,7 +247,7 @@ export const getWeapons = function (
           accessory.rating
         );
       });
-      stagedAccessories.push(accessories);
+      stagedIncludedAccessories.push(accessories);
     }
 
     if ("rangeList" in weapon.typeInformation) {
@@ -261,17 +262,18 @@ export const getWeapons = function (
         assert("ranges" in stagedWeapon, `Assertion to type narrow`);
         return new WeaponRangeLinks(foundRange, stagedWeapon);
       });
-      stagedRanges.push(relatedRanges);
+      stagedLinkedRanges.push(relatedRanges);
     }
   });
   // console.log(stagedWeaponAccessories.map((accessory) => accessory.name));
 
   return {
+    weaponsUnlinked: weaponsUnlinked,
     stagedMeleeWeapons: stagedMeleeWeapons,
     stagedFirearmWeapons: stagedFirearmWeapons,
     stagedProjectileWeapons: stagedProjectileWeapons,
     stagedExplosiveWeapons: stagedExplosiveWeapons,
-    stagedAccessories: stagedAccessories,
-    stagedRanges: stagedRanges,
+    stagedAccessories: stagedIncludedAccessories,
+    stagedRanges: stagedLinkedRanges,
   };
 };

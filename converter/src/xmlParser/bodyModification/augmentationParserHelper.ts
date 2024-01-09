@@ -62,7 +62,7 @@ essenceCostSemantics.addOperation("eval", {
     return [str.eval()];
   },
   Rating(_) {
-    return { option: "Rating" };
+    return { option: "Rating" as const };
   },
   Number_negative(_, range) {
     return -range.eval();

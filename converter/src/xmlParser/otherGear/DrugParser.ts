@@ -5,11 +5,8 @@ import path from "path";
 import { fileURLToPath } from "url";
 import * as fs from "fs";
 import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
-import {
-  DrugListXmlSchema,
-  DrugListXmlType,
-  DrugXmlType,
-} from "./DrugParserSchemas.js";
+import { DrugListXmlSchema } from "./DrugParserSchemas.js";
+import type { DrugListXmlType, DrugXmlType } from "./DrugParserSchemas.js";
 import { convertXmlBonus } from "../common/BonusHelper.js";
 import { convertSource } from "../common/ParserHelper.js";
 import { availabilityDrugSemantics } from "./DrugHelper.js";
@@ -130,7 +127,7 @@ export function ParseDrugs() {
         console.log(convertedDrug);
         throw new Error(check.error.message);
       }
-      return convertedDrug;
+      return check.data;
     });
   // console.log(armourListConverted);
   const jsonFilePath = fileURLToPath(

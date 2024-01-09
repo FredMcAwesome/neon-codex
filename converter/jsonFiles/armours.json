@@ -99,6 +99,7 @@
     "category": "Armour",
     "damageReduction": 15,
     "capacity": 15,
+    "allowModCategory": "Full Body Armour Mods",
     "availability": {
       "rating": [14],
       "restriction": "Restricted"
@@ -135,6 +136,7 @@
         "name": "Music Player"
       }
     ],
+    "allowModCategory": "Urban Explorer Jumpsuit Accessories",
     "availability": {
       "rating": [8],
       "restriction": "Legal"
@@ -768,6 +770,7 @@
     "category": "High-Fashion Armour",
     "damageReduction": 7,
     "capacity": 2,
+    "allowModCategory": "Nightshade IR",
     "availability": {
       "rating": [10],
       "restriction": "Legal"
@@ -802,6 +805,7 @@
         "name": "Holster"
       }
     ],
+    "addModCategoryList": ["Globetrotter Jacket Liners"],
     "availability": {
       "rating": [10],
       "restriction": "Legal"
@@ -816,6 +820,7 @@
     "category": "High-Fashion Armour",
     "damageReduction": 9,
     "capacity": 10,
+    "addModCategoryList": ["Globetrotter Vest Liners"],
     "availability": {
       "rating": [7],
       "restriction": "Legal"
@@ -830,6 +835,7 @@
     "category": "High-Fashion Armour",
     "damageReduction": 7,
     "capacity": 10,
+    "addModCategoryList": ["Globetrotter Clothing Liners"],
     "availability": {
       "rating": [6],
       "restriction": "Legal"
@@ -849,6 +855,7 @@
         "name": "Holster"
       }
     ],
+    "addModCategoryList": ["Victory Liners"],
     "availability": {
       "rating": [12],
       "restriction": "Legal"
@@ -890,6 +897,7 @@
         "name": "Holster"
       }
     ],
+    "addModCategoryList": ["Victory Liners"],
     "availability": {
       "rating": [12],
       "restriction": "Legal"
@@ -904,6 +912,7 @@
     "category": "High-Fashion Armour",
     "damageReduction": 9,
     "capacity": 6,
+    "allowModCategory": "Rapid Transit Detailing",
     "availability": {
       "rating": [10],
       "restriction": "Legal"
@@ -1360,6 +1369,7 @@
     "category": "Specialty Armour",
     "damageReduction": 8,
     "capacity": 6,
+    "addModCategoryList": ["Globetrotter Jacket Liners"],
     "availability": {
       "rating": [10],
       "restriction": "Legal"

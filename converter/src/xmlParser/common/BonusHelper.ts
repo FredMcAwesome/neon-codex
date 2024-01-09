@@ -5,29 +5,30 @@ import {
   spellCategoryEnum,
   weaponTypeEnum,
 } from "@shadowrun/common/build/enums.js";
-import {
+import type {
   BonusType,
   QualityListType,
   SelectSkillType,
 } from "@shadowrun/common/build/schemas/shared/bonusSchemas.js";
 import assert from "assert";
-import {
-  attributeXMLEnum,
+import type {
   GenericNameValueListType,
   GenericNameValueType,
   SkillListType,
 } from "./ParserCommonDefines.js";
+import { attributeXMLEnum } from "./ParserCommonDefines.js";
 import Bonus from "../../grammar/bonus.ohm-bundle.js";
 import {
-  essenceCostSemantics,
   initiativeSemantics,
   skillKarmaCostSemantics,
 } from "./ParserSemanticsHelper.js";
 import { convertAttribute, convertLimbSlot } from "./ParserHelper.js";
 import type { BonusXmlType } from "./BonusParserSchemas.js";
-const EssenceCost = Bonus.EssenceCost;
 const Initiative = Bonus.Initiative;
 const SkillKarmaCost = Bonus.SkillKarmaCost;
+import Augmentation from "../../grammar/augmentation.ohm-bundle.js";
+import { essenceCostSemantics } from "../bodyModification/augmentationParserHelper.js";
+const EssenceCost = Augmentation.EssenceCost;
 
 // TODO: handle bonus correctly
 export function convertXmlBonus(bonus: BonusXmlType) {

@@ -7,8 +7,8 @@ import { z as zod } from "zod";
 import { StringOrNumberSchema } from "../common/ParserCommonDefines.js";
 import { mathOperatorEnum } from "@shadowrun/common";
 import Range from "../../grammar/range.ohm-bundle.js";
+import type { RangeIncrementType } from "@shadowrun/common/build/schemas/weaponSchemas.js";
 import {
-  RangeIncrementType,
   RangeListSchema,
   RangeSchema,
 } from "@shadowrun/common/build/schemas/weaponSchemas.js";

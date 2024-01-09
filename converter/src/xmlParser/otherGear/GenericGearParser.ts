@@ -8,8 +8,8 @@ import {
   GearXmlCategoryEnum,
   sourceBookXmlEnum,
 } from "../common/ParserCommonDefines.js";
-import {
-  GenericGearListXmlSchema,
+import { GenericGearListXmlSchema } from "./GenericGearParserSchemas.js";
+import type {
   GenericGearListXmlType,
   GenericGearXmlType,
 } from "./GenericGearParserSchemas.js";
@@ -151,7 +151,7 @@ export function ParseGear() {
         console.log(convertedGear);
         throw new Error(check.error.message);
       }
-      return convertedGear;
+      return check.data;
     });
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/gears.json"

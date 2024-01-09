@@ -232,7 +232,6 @@ export const OtherGearSchema = zod
     modifyFirewall: zod.optional(GearDeviceAttributeSchema),
     addMatrixBoxes: zod.optional(zod.number()),
     renameCustomLabel: zod.optional(zod.literal(true)),
-
     availability: AvailabilityGearSchema,
     cost: CostGearSchema,
     source: zod.nativeEnum(sourceBookEnum),

@@ -6,14 +6,16 @@ import {
   limbSlotEnum,
   sourceBookEnum,
 } from "@shadowrun/common/build/enums.js";
-import { ModListType } from "@shadowrun/common/build/schemas/shared/modSchemas.js";
+import type { ModListType } from "@shadowrun/common/build/schemas/shared/modSchemas.js";
 import assert from "assert";
-import {
-  attributeXMLEnum,
+import type {
   CategoryXmlListType,
-  augmentationXmlGradeEnum,
   AugmentationXmlLimitType,
   xmlAllowGearType,
+} from "./ParserCommonDefines.js";
+import {
+  attributeXMLEnum,
+  augmentationXmlGradeEnum,
   limbSlotXmlEnum,
   GearXmlCategoryEnum,
 } from "./ParserCommonDefines.js";
@@ -24,7 +26,7 @@ import type {
   ModXmlType,
 } from "./ParserCommonDefines.js";
 import { sourceBookXmlEnum } from "./ParserCommonDefines.js";
-import {
+import type {
   AllowedGearType,
   UseGearListType,
 } from "@shadowrun/common/build/schemas/commonSchemas.js";

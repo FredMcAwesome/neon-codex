@@ -5,6 +5,7 @@ import type {
   CostElectronicType,
   AvailabilityElectronicType,
 } from "@shadowrun/common/build/schemas/electronicSchemas.js";
+import { sourceBookEnum } from "@shadowrun/common/build/enums.js";
 
 @Entity({
   discriminatorColumn: "type",
@@ -22,6 +23,12 @@ export abstract class MatrixWareAccessories {
 
   @Property({ type: "json", nullable: true })
   rating?: RatingType;
+
+  @Enum(() => sourceBookEnum)
+  source!: sourceBookEnum;
+
+  @Property()
+  page!: number;
 
   @Property({ type: "json" })
   availability!: AvailabilityElectronicType;

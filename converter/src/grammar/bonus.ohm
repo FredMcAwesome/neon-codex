@@ -1,20 +1,3 @@
-EssenceCost {
-  Exp = AddSub
-  AddSub = AddSub "+" MulDiv -- add
-    | AddSub "-" MulDiv -- subtract
-    | MulDiv
-  MulDiv = MulDiv "*" EssenceValue -- multiply
-    | MulDiv "/" EssenceValue -- divide
-    | EssenceValue
-  EssenceValue = Rating 
-    | Number
-  Rating = "Rating"
-  Number = "-" PositiveNumber -- negative
-    | PositiveNumber
-  PositiveNumber = digit+ "." digit+ -- float
-    | digit+ -- int
-}
-
 // FixedValues(1,2,5...)
 Initiative {
   Exp = "FixedValues(" Inner ")" -- fixed

@@ -5,18 +5,17 @@ import path from "path";
 import { fileURLToPath } from "url";
 import * as fs from "fs";
 import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
+import { SpellListXmlSchema } from "./SpellParserSchemas.js";
+import type { SpellListXmlType, SpellXmlType } from "./SpellParserSchemas.js";
 import {
-  SpellListXmlSchema,
-  SpellListXmlType,
-  SpellXmlType,
-} from "./SpellParserSchemas.js";
+  convertSpellDamageType,
+  convertSpellType,
+} from "./SpellParserHelper.js";
 import {
   convertSpellCategory,
-  convertSpellDamageType,
   convertSpellDescriptors,
   convertSpellDuration,
   convertSpellRange,
-  convertSpellType,
   damageSpellSemantics,
 } from "./SpellParserHelper.js";
 import { convertXmlBonus } from "../common/BonusHelper.js";
@@ -136,7 +135,7 @@ export function ParseSpells() {
         console.log(convertedSpell);
         throw new Error(check.error.message);
       }
-      return convertedSpell;
+      return check.data;
     });
   // console.log(spellListConverted);
   const jsonFilePath = fileURLToPath(

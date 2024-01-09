@@ -7,8 +7,8 @@ import {
   spellTargetEnum,
   spellTypeEnum,
 } from "@shadowrun/common/build/enums.js";
-import {
-  spellXmlCategoryEnum,
+import { spellXmlCategoryEnum } from "./SpellParserSchemas.js";
+import type {
   SpellXmlDamageType,
   SpellXmlDurationType,
   SpellXmlRangeType,

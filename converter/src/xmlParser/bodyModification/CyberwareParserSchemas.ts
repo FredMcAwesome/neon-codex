@@ -2,7 +2,6 @@ import { z as zod } from "zod";
 import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
 import {
   GearXmlSchema,
-  GearXmlType,
   limbSlotXmlEnum,
   SourceXmlSchema,
   StringArrayOrStringSchema,
@@ -11,6 +10,7 @@ import {
   AugmentationXmlLimitSchema,
   xmlAllowGearSchema,
 } from "../common/ParserCommonDefines.js";
+import type { GearXmlType } from "../common/ParserCommonDefines.js";
 import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
 
 export enum cyberwareXmlCategoryEnum {

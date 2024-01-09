@@ -33,8 +33,8 @@ Create .env_development, .env_production, and .env_test in database/ and set the
 Create Tables:
 ```shell
 cd database &&
-NODE_ENV=test npx ts-node-esm ./src/create-schema.ts &&
-NODE_ENV=development npx ts-node-esm ./src/create-schema.ts
+NODE_ENV=test node --loader ts-node/esm ./src/create-schema.ts &&
+NODE_ENV=development node --loader ts-node/esm ./src/create-schema.ts
 ```
 Fill tables with initial data:
 ```shell
@@ -44,9 +44,11 @@ export NODE_OPTIONS="--loader ts-node/esm" &&
 export NODE_ENV=test &&
 npx mikro-orm seeder:run &&
 npx mikro-orm seeder:run --class=GearSeeder &&
+npx mikro-orm seeder:run --class=AbilitiesSeeder &&
 export NODE_ENV=development &&
 npx mikro-orm seeder:run &&
 npx mikro-orm seeder:run --class=GearSeeder &&
+npx mikro-orm seeder:run --class=AbilitiesSeeder &&
 unset NODE_ENV &&
 unset NODE_OPTIONS &&
 unset MIKRO_ORM_CLI

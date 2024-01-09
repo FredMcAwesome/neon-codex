@@ -1,7 +1,5 @@
-import {
-  SkillListType,
-  SkillListSchema,
-} from "@shadowrun/common/build/schemas/skillSchemas.js";
+import { SkillListSchema } from "@shadowrun/common/build/schemas/skillSchemas.js";
+import type { SkillListType } from "@shadowrun/common/build/schemas/skillSchemas.js";
 import assert from "assert";
 import fs from "fs";
 import path from "path";

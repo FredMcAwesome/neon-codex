@@ -2,16 +2,18 @@
 import { XMLParser } from "fast-xml-parser";
 import path from "path";
 import { fileURLToPath } from "url";
-import {
+import type {
   WeaponAccessoryXmlType,
-  WeaponAccessoryListXmlSchema,
   WeaponAccessoryListXmlType,
 } from "./WeaponAccessoryParserSchemas.js";
-import {
+import { WeaponAccessoryListXmlSchema } from "./WeaponAccessoryParserSchemas.js";
+import type {
   AmmoCapacityCalculationType,
+  WeaponAccessorySummaryType,
+} from "@shadowrun/common/build/schemas/weaponAccessorySchemas.js";
+import {
   WeaponAccessorySummaryListSchema,
   WeaponAccessorySummarySchema,
-  WeaponAccessorySummaryType,
 } from "@shadowrun/common/build/schemas/weaponAccessorySchemas.js";
 import * as fs from "fs";
 import assert from "assert";
@@ -29,7 +31,7 @@ import {
 import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
 import { convertSource } from "../common/ParserHelper.js";
 import WeaponAccessories from "../../grammar/weaponAccessories.ohm-bundle.js";
-import { MatchResult } from "ohm-js";
+import type { MatchResult } from "ohm-js";
 import type {
   AvailabilityWeaponAccessoryType,
   CostWeaponAccessoryType,
@@ -279,7 +281,7 @@ export function ParseWeaponAccessories() {
         console.log(convertedWeaponAccessory);
         throw new Error(check.error.message);
       }
-      return convertedWeaponAccessory;
+      return check.data;
     });
   // console.log(weaponAccessoryListConverted);
   const check = WeaponAccessorySummaryListSchema.safeParse(

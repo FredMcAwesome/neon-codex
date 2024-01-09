@@ -16,11 +16,10 @@ import { Weapons } from "@shadowrun/database/build/models/gear/combatGear/weapon
 import { Augmentations } from "@shadowrun/database/build/models/gear/augmentationGear/augmentationModel.js";
 import { AugmentationAccessories } from "@shadowrun/database/build/models/gear/augmentationGear/augmentationAccessoryModel.js";
 import { Armours } from "@shadowrun/database/build/models/gear/combatGear/armourModel.js";
-import { ArmourAccessories } from "@shadowrun/database/build/models/gear/combatGear/armourAccessoryModel.js";
+import { ArmourModifications } from "@shadowrun/database/build/models/gear/combatGear/armourModificationModel.js";
 import { Ammunitions } from "@shadowrun/database/build/models/gear/combatGear/ammunitionModel.js";
 import { MatrixWares } from "@shadowrun/database/build/models/gear/electronicsGear/matrixWareModel.js";
 import { MatrixWareAccessories } from "@shadowrun/database/build/models/gear/electronicsGear/matrixWareAccessoryModel.js";
-import { MagicalEquipment } from "@shadowrun/database/build/models/gear/magicGear/magicalGearEquipment.js";
 import { OtherWares } from "@shadowrun/database/build/models/gear/otherGear/otherWareModel.js";
 import { VehiclesAndDrones } from "@shadowrun/database/build/models/gear/riggerGear/vehicleAndDroneModel.js";
 
@@ -37,11 +36,10 @@ interface IDatabase {
   augmentationRespository: EntityRepository<Augmentations>;
   augmentationAccessoryRespository: EntityRepository<AugmentationAccessories>;
   armourRespository: EntityRepository<Armours>;
-  armourAccessoryRespository: EntityRepository<ArmourAccessories>;
+  armourAccessoryRespository: EntityRepository<ArmourModifications>;
   ammunitionRespository: EntityRepository<Ammunitions>;
   matrixWareRespository: EntityRepository<MatrixWares>;
   matrixWareAccessoryRespository: EntityRepository<MatrixWareAccessories>;
-  magicalEqipmentRespository: EntityRepository<MagicalEquipment>;
   otherWaresRespository: EntityRepository<OtherWares>;
   vehicleAndDroneRespository: EntityRepository<VehiclesAndDrones>;
 }
@@ -67,13 +65,12 @@ export const init = async () => {
     AugmentationAccessories
   );
   Database.armourRespository = em.getRepository(Armours);
-  Database.armourAccessoryRespository = em.getRepository(ArmourAccessories);
+  Database.armourAccessoryRespository = em.getRepository(ArmourModifications);
   Database.ammunitionRespository = em.getRepository(Ammunitions);
   Database.matrixWareRespository = em.getRepository(MatrixWares);
   Database.matrixWareAccessoryRespository = em.getRepository(
     MatrixWareAccessories
   );
-  Database.magicalEqipmentRespository = em.getRepository(MagicalEquipment);
   Database.otherWaresRespository = em.getRepository(OtherWares);
   Database.vehicleAndDroneRespository = em.getRepository(VehiclesAndDrones);
 };

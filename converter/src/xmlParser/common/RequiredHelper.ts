@@ -8,12 +8,12 @@ import {
 } from "@shadowrun/common";
 import { ammoSourceEnum } from "@shadowrun/common/build/enums.js";
 import { weaponXmlSubtypeEnum } from "@shadowrun/common/build/schemas/commonSchemas.js";
-import {
+import type {
   RequirementsType,
   WeaponDamageRequirementsType,
 } from "@shadowrun/common/build/schemas/shared/requiredSchemas.js";
 import assert from "assert";
-import {
+import type {
   containsType,
   RequiredWeaponDetailsXmlType,
   RequiredXmlType,

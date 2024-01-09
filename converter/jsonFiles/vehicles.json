@@ -2,7 +2,6 @@
   {
     "name": "Dodge Scoot (Scooter)",
     "description": "",
-    "category": "Bikes",
     "handling": {
       "onRoad": 4,
       "offRoad": 3
@@ -13,25 +12,26 @@
     "armour": 4,
     "pilot": 1,
     "sensor": 1,
+    "seats": 1,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 1
       }
     ],
-    "seats": 1,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [3000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 462
+    "page": 462,
+    "type": "Groundcraft",
+    "subtype": "Bike"
   },
   {
     "name": "Daihatsu-Caterpillar Horseman",
     "description": "",
-    "category": "Bikes",
     "handling": {
       "onRoad": 3,
       "offRoad": 1
@@ -42,25 +42,26 @@
     "armour": 3,
     "pilot": 2,
     "sensor": 2,
+    "seats": 1,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 1,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [12000],
     "source": "Rigger 5",
-    "page": 41
+    "page": 41,
+    "type": "Groundcraft",
+    "subtype": "Bike"
   },
   {
     "name": "Ares-Segway Terrier",
     "description": "",
-    "category": "Bikes",
     "handling": {
       "onRoad": 5,
       "offRoad": 2
@@ -71,25 +72,26 @@
     "armour": 2,
     "pilot": 2,
     "sensor": 2,
+    "seats": 1,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 1,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [4500],
     "source": "Rigger 5",
-    "page": 42
+    "page": 42,
+    "type": "Groundcraft",
+    "subtype": "Bike"
   },
   {
     "name": "Horizon-Doble Revolution",
     "description": "",
-    "category": "Bikes",
     "handling": {
       "onRoad": 5,
       "offRoad": 3
@@ -100,25 +102,26 @@
     "armour": 6,
     "pilot": 2,
     "sensor": 2,
+    "seats": 1,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 1,
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [8000],
     "source": "Rigger 5",
-    "page": 42
+    "page": 42,
+    "type": "Groundcraft",
+    "subtype": "Bike"
   },
   {
     "name": "Evo Falcon-EX",
     "description": "",
-    "category": "Bikes",
     "handling": {
       "onRoad": 3,
       "offRoad": 5
@@ -135,25 +138,26 @@
     "armour": 9,
     "pilot": 1,
     "sensor": 1,
+    "seats": 2,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 1
       }
     ],
-    "seats": 2,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [10000],
     "source": "Rigger 5",
-    "page": 43
+    "page": 43,
+    "type": "Groundcraft",
+    "subtype": "Bike"
   },
   {
     "name": "Entertainment Systems Cyclops",
     "description": "",
-    "category": "Bikes",
     "handling": {
       "onRoad": 4,
       "offRoad": 4
@@ -164,25 +168,26 @@
     "armour": 4,
     "pilot": 1,
     "sensor": 1,
+    "seats": 1,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 1
       }
     ],
-    "seats": 1,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [6500],
     "source": "Rigger 5",
-    "page": 42
+    "page": 42,
+    "type": "Groundcraft",
+    "subtype": "Bike"
   },
   {
     "name": "Echo Motors Zip",
     "description": "",
-    "category": "Bikes",
     "handling": {
       "onRoad": 3,
       "offRoad": 2
@@ -193,25 +198,26 @@
     "armour": 4,
     "pilot": 1,
     "sensor": 2,
+    "seats": 1,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 1,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [3500],
     "source": "Rigger 5",
-    "page": 44
+    "page": 44,
+    "type": "Groundcraft",
+    "subtype": "Bike"
   },
   {
     "name": "Yamaha Kaburaya",
     "description": "",
-    "category": "Bikes",
     "handling": {
       "onRoad": 5,
       "offRoad": 3
@@ -222,25 +228,26 @@
     "armour": 4,
     "pilot": 1,
     "sensor": 2,
+    "seats": 1,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 1,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [17000],
     "source": "Rigger 5",
-    "page": 44
+    "page": 44,
+    "type": "Groundcraft",
+    "subtype": "Bike"
   },
   {
     "name": "Buell Spartan",
     "description": "",
-    "category": "Bikes",
     "handling": {
       "onRoad": 3,
       "offRoad": 4
@@ -251,25 +258,26 @@
     "armour": 6,
     "pilot": 2,
     "sensor": 2,
+    "seats": 1,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 1,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [11500],
     "source": "Rigger 5",
-    "page": 45
+    "page": 45,
+    "type": "Groundcraft",
+    "subtype": "Bike"
   },
   {
     "name": "Harley-Davidson Nightmare",
     "description": "",
-    "category": "Bikes",
     "handling": {
       "onRoad": 4,
       "offRoad": 3
@@ -280,25 +288,26 @@
     "armour": 8,
     "pilot": 2,
     "sensor": 3,
+    "seats": 2,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 2,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [22000],
     "source": "Rigger 5",
-    "page": 45
+    "page": 45,
+    "type": "Groundcraft",
+    "subtype": "Bike"
   },
   {
     "name": "Yamaha Nodachi",
     "description": "",
-    "category": "Bikes",
     "handling": {
       "onRoad": 4,
       "offRoad": 3
@@ -309,25 +318,26 @@
     "armour": 9,
     "pilot": 2,
     "sensor": 2,
+    "seats": 2,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 2,
     "availability": {
       "rating": [12],
       "restriction": "Restricted"
     },
     "cost": [28000],
     "source": "Rigger 5",
-    "page": 45
+    "page": 45,
+    "type": "Groundcraft",
+    "subtype": "Bike"
   },
   {
     "name": "Thundercloud Mustang",
     "description": "",
-    "category": "Bikes",
     "handling": {
       "onRoad": 4,
       "offRoad": 4
@@ -338,25 +348,26 @@
     "armour": 6,
     "pilot": 1,
     "sensor": 1,
+    "seats": 2,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 1
       }
     ],
-    "seats": 2,
     "availability": {
       "rating": [3],
       "restriction": "Legal"
     },
     "cost": [11000],
     "source": "Rigger 5",
-    "page": 46
+    "page": 46,
+    "type": "Groundcraft",
+    "subtype": "Bike"
   },
   {
     "name": "Renault-Fiat Funone",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 3,
       "offRoad": 1
@@ -367,25 +378,26 @@
     "armour": 4,
     "pilot": 2,
     "sensor": 1,
+    "seats": 2,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 1
       }
     ],
-    "seats": 2,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [8500],
     "source": "Rigger 5",
-    "page": 47
+    "page": 47,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Dodge Xenon",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 3,
       "offRoad": 2
@@ -399,25 +411,26 @@
     "armour": 6,
     "pilot": 2,
     "sensor": 2,
+    "seats": 4,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 4,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [18000],
     "source": "Rigger 5",
-    "page": 47
+    "page": 47,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Echo Motors Metaway",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 4,
       "offRoad": 2
@@ -428,25 +441,26 @@
     "armour": 4,
     "pilot": 1,
     "sensor": 2,
+    "seats": 1,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 1,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [24000],
     "source": "Rigger 5",
-    "page": 47
+    "page": 47,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "GMC 442 Chameleon",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 4,
       "offRoad": 2
@@ -457,25 +471,26 @@
     "armour": 4,
     "pilot": 1,
     "sensor": 1,
+    "seats": 4,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 1
       }
     ],
-    "seats": 4,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [14000],
     "source": "Rigger 5",
-    "page": 48
+    "page": 48,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Mercury Comet",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 4,
       "offRoad": 4
@@ -486,25 +501,26 @@
     "armour": 6,
     "pilot": 2,
     "sensor": 2,
+    "seats": 4,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 4,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [20000],
     "source": "Rigger 5",
-    "page": 49
+    "page": 49,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "SAAB Gladius 998 TI",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 7,
       "offRoad": 3
@@ -515,25 +531,26 @@
     "armour": 5,
     "pilot": 3,
     "sensor": 5,
+    "seats": 2,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 5
       }
     ],
-    "seats": 2,
     "availability": {
       "rating": [14],
       "restriction": "Legal"
     },
     "cost": [154000],
     "source": "Rigger 5",
-    "page": 50
+    "page": 50,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "SAAB Dynamit",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 5,
       "offRoad": 1
@@ -544,25 +561,26 @@
     "armour": 3,
     "pilot": 2,
     "sensor": 3,
+    "seats": 2,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 2,
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [98000],
     "source": "Rigger 5",
-    "page": 50
+    "page": 50,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "GMC Phoenix",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 4,
       "offRoad": 2
@@ -573,25 +591,26 @@
     "armour": 6,
     "pilot": 2,
     "sensor": 3,
+    "seats": 4,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 4,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [32000],
     "source": "Rigger 5",
-    "page": 51
+    "page": 51,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Hyundai Equus",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -605,25 +624,26 @@
     "armour": 10,
     "pilot": 2,
     "sensor": 3,
+    "seats": 4,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 4,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [40000],
     "source": "Rigger 5",
-    "page": 52
+    "page": 52,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Chevrolet Longboard",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 4,
       "offRoad": 3
@@ -634,25 +654,26 @@
     "armour": 6,
     "pilot": 1,
     "sensor": 2,
+    "seats": 6,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 6,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [31000],
     "source": "Rigger 5",
-    "page": 52
+    "page": 52,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Rolls-Royce Phaeton",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 5,
       "offRoad": 3
@@ -666,25 +687,26 @@
     "armour": 12,
     "pilot": 3,
     "sensor": 4,
+    "seats": 10,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 4
       }
     ],
-    "seats": 10,
     "availability": {
       "rating": [18],
       "restriction": "Legal"
     },
     "cost": [350000],
     "source": "Rigger 5",
-    "page": 52
+    "page": 52,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Thundercloud Morgan",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 3,
       "offRoad": 5
@@ -710,12 +732,13 @@
     },
     "cost": [7500],
     "source": "Rigger 5",
-    "page": 52
+    "page": 52,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Tata Hotspur",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 4,
       "offRoad": 5
@@ -726,25 +749,26 @@
     "armour": 12,
     "pilot": 2,
     "sensor": 2,
+    "seats": 2,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 2,
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [60000],
     "source": "Rigger 5",
-    "page": 53
+    "page": 53,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "GMC Armadillo",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 3,
       "offRoad": 4
@@ -755,25 +779,26 @@
     "armour": 10,
     "pilot": 1,
     "sensor": 2,
+    "seats": 6,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 6,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [22000],
     "source": "Rigger 5",
-    "page": 54
+    "page": 54,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Ford Percheron",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -784,25 +809,26 @@
     "armour": 6,
     "pilot": 4,
     "sensor": 3,
+    "seats": 6,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 6,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [39000],
     "source": "Rigger 5",
-    "page": 54
+    "page": 54,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Jeep Trailblazer",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 3,
       "offRoad": 4
@@ -813,25 +839,26 @@
     "armour": 6,
     "pilot": 1,
     "sensor": 2,
+    "seats": 4,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 4,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [32000],
     "source": "Rigger 5",
-    "page": 54
+    "page": 54,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Toyota Talon",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 4,
       "offRoad": 3
@@ -842,25 +869,26 @@
     "armour": 6,
     "pilot": 2,
     "sensor": 2,
+    "seats": 5,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 5,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [30000],
     "source": "Rigger 5",
-    "page": 55
+    "page": 55,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Nissan Hauler",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -874,25 +902,26 @@
     "armour": 8,
     "pilot": 2,
     "sensor": 2,
+    "seats": 8,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 8,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [30000],
     "source": "Rigger 5",
-    "page": 56
+    "page": 56,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Eurocar Northstar",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 5,
       "offRoad": 3
@@ -903,25 +932,26 @@
     "armour": 8,
     "pilot": 3,
     "sensor": 5,
+    "seats": 4,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 5
       }
     ],
-    "seats": 4,
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [115000],
     "source": "Rigger 5",
-    "page": 56
+    "page": 56,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "GMC Escalade",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -932,25 +962,26 @@
     "armour": 10,
     "pilot": 3,
     "sensor": 4,
+    "seats": 6,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 4
       }
     ],
-    "seats": 6,
     "availability": {
       "rating": [10],
       "restriction": "Legal"
     },
     "cost": [125000],
     "source": "Rigger 5",
-    "page": 57
+    "page": 57,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Ford Econovan",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 3,
       "offRoad": 2
@@ -961,25 +992,26 @@
     "armour": 8,
     "pilot": 2,
     "sensor": 2,
+    "seats": 10,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 10,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [30000],
     "source": "Rigger 5",
-    "page": 58
+    "page": 58,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Dodge Caravaner",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 3,
       "offRoad": 2
@@ -990,25 +1022,26 @@
     "armour": 8,
     "pilot": 2,
     "sensor": 2,
+    "seats": 7,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 7,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [28000],
     "source": "Rigger 5",
-    "page": 58
+    "page": 58,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "GMC Universe",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -1022,25 +1055,26 @@
     "armour": 8,
     "pilot": 3,
     "sensor": 2,
+    "seats": 16,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 16,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [30000],
     "source": "Rigger 5",
-    "page": 59
+    "page": 59,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Ares Chuck Wagon",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 2,
       "offRoad": 2
@@ -1051,25 +1085,26 @@
     "armour": 5,
     "pilot": 2,
     "sensor": 2,
+    "seats": 2,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 2,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [40000],
     "source": "Rigger 5",
-    "page": 59
+    "page": 59,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Airstream Traveller Chinook",
     "description": "",
-    "category": "Trucks",
     "handling": {
       "onRoad": 3,
       "offRoad": 2
@@ -1083,25 +1118,26 @@
     "armour": 12,
     "pilot": 2,
     "sensor": 2,
+    "seats": 10,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 10,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [145000],
     "source": "Rigger 5",
-    "page": 59
+    "page": 59,
+    "type": "Groundcraft",
+    "subtype": "Truck/Van"
   },
   {
     "name": "Airstream Traveller Preserve",
     "description": "",
-    "category": "Trucks",
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -1115,25 +1151,26 @@
     "armour": 12,
     "pilot": 2,
     "sensor": 3,
+    "seats": 10,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 10,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [134000],
     "source": "Rigger 5",
-    "page": 59
+    "page": 59,
+    "type": "Groundcraft",
+    "subtype": "Truck/Van"
   },
   {
     "name": "Airstream Traveller Outback",
     "description": "",
-    "category": "Trucks",
     "handling": {
       "onRoad": 3,
       "offRoad": 4
@@ -1147,25 +1184,26 @@
     "armour": 12,
     "pilot": 2,
     "sensor": 4,
+    "seats": 8,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 4
       }
     ],
-    "seats": 8,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [158000],
     "source": "Rigger 5",
-    "page": 59
+    "page": 59,
+    "type": "Groundcraft",
+    "subtype": "Truck/Van"
   },
   {
     "name": "Mack Hellhound",
     "description": "",
-    "category": "Trucks",
     "handling": {
       "onRoad": 3,
       "offRoad": 2
@@ -1179,25 +1217,26 @@
     "armour": 15,
     "pilot": 3,
     "sensor": 3,
+    "seats": 2,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 2,
     "availability": {
       "rating": [16],
       "restriction": "Restricted"
     },
     "cost": [150000],
     "source": "Rigger 5",
-    "page": 60
+    "page": 60,
+    "type": "Groundcraft",
+    "subtype": "Truck/Van"
   },
   {
     "name": "Omni Motors Omnibus",
     "description": "",
-    "category": "Municipal/Construction",
     "handling": {
       "onRoad": 2,
       "offRoad": 2
@@ -1208,25 +1247,26 @@
     "armour": 10,
     "pilot": 2,
     "sensor": 2,
+    "seats": 53,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 53,
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [296000],
     "source": "Rigger 5",
-    "page": 62
+    "page": 62,
+    "type": "Groundcraft",
+    "subtype": "Municipal/Construction"
   },
   {
     "name": "GMC Commercial G-Series",
     "description": "",
-    "category": "Municipal/Construction",
     "handling": {
       "onRoad": 2,
       "offRoad": 2
@@ -1237,25 +1277,26 @@
     "armour": 12,
     "pilot": 2,
     "sensor": 3,
+    "seats": 2,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 2,
     "availability": {
       "rating": [14],
       "restriction": "Legal"
     },
     "cost": [287000],
     "source": "Rigger 5",
-    "page": 62
+    "page": 62,
+    "type": "Groundcraft",
+    "subtype": "Municipal/Construction"
   },
   {
     "name": "GMC Commercial D-Series",
     "description": "",
-    "category": "Municipal/Construction",
     "handling": {
       "onRoad": 2,
       "offRoad": 2
@@ -1266,25 +1307,26 @@
     "armour": 10,
     "pilot": 2,
     "sensor": 2,
+    "seats": 2,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 2,
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [248000],
     "source": "Rigger 5",
-    "page": 63
+    "page": 63,
+    "type": "Groundcraft",
+    "subtype": "Municipal/Construction"
   },
   {
     "name": "GMC Commercial D-Series Compact",
     "description": "",
-    "category": "Municipal/Construction",
     "handling": {
       "onRoad": 2,
       "offRoad": 2
@@ -1295,25 +1337,26 @@
     "armour": 8,
     "pilot": 2,
     "sensor": 2,
+    "seats": 2,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 2,
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [196000],
     "source": "Rigger 5",
-    "page": 63
+    "page": 63,
+    "type": "Groundcraft",
+    "subtype": "Municipal/Construction"
   },
   {
     "name": "GMC Commercial DD",
     "description": "",
-    "category": "Municipal/Construction",
     "handling": {
       "onRoad": 2,
       "offRoad": 2
@@ -1324,25 +1367,26 @@
     "armour": 12,
     "pilot": 2,
     "sensor": 2,
+    "seats": 2,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 2,
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [312000],
     "source": "Rigger 5",
-    "page": 63
+    "page": 63,
+    "type": "Groundcraft",
+    "subtype": "Municipal/Construction"
   },
   {
     "name": "Saeder-Krupp Konstructors",
     "description": "",
-    "category": "Municipal/Construction",
     "handling": {
       "onRoad": 2,
       "offRoad": 2
@@ -1353,25 +1397,26 @@
     "armour": 18,
     "pilot": 4,
     "sensor": 3,
+    "seats": 2,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 2,
     "availability": {
       "rating": [16],
       "restriction": "Legal"
     },
     "cost": [365000],
     "source": "Rigger 5",
-    "page": 64
+    "page": 64,
+    "type": "Groundcraft",
+    "subtype": "Municipal/Construction"
   },
   {
     "name": "Mostrans KVP-28",
     "description": "",
-    "category": "Municipal/Construction",
     "handling": {
       "onRoad": 2,
       "offRoad": 2
@@ -1382,25 +1427,26 @@
     "armour": 12,
     "pilot": 4,
     "sensor": 3,
+    "seats": 2,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 2,
     "availability": {
       "rating": [16],
       "restriction": "Legal"
     },
     "cost": [87000],
     "source": "Rigger 5",
-    "page": 64
+    "page": 64,
+    "type": "Groundcraft",
+    "subtype": "Municipal/Construction"
   },
   {
     "name": "Mostrans Minsk",
     "description": "",
-    "category": "Municipal/Construction",
     "handling": {
       "onRoad": 2,
       "offRoad": 2
@@ -1411,25 +1457,26 @@
     "armour": 10,
     "pilot": 4,
     "sensor": 3,
+    "seats": 2,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 2,
     "availability": {
       "rating": [16],
       "restriction": "Legal"
     },
     "cost": [77000],
     "source": "Rigger 5",
-    "page": 64
+    "page": 64,
+    "type": "Groundcraft",
+    "subtype": "Municipal/Construction"
   },
   {
     "name": "Universal Hovercraft Minnesota",
     "description": "",
-    "category": "Municipal/Construction",
     "handling": {
       "onRoad": 4,
       "offRoad": 4
@@ -1440,25 +1487,26 @@
     "armour": 9,
     "pilot": 3,
     "sensor": 3,
+    "seats": 14,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 14,
     "availability": {
       "rating": [12],
       "restriction": "Restricted"
     },
     "cost": [130000],
     "source": "Rigger 5",
-    "page": 65
+    "page": 65,
+    "type": "Groundcraft",
+    "subtype": "Municipal/Construction"
   },
   {
     "name": "Vodyanoy Assault Hovercraft",
     "description": "",
-    "category": "Municipal/Construction",
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -1469,13 +1517,13 @@
     "armour": 16,
     "pilot": 1,
     "sensor": 2,
+    "seats": 10,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 10,
     "weaponMountList": [
       {
         "control": "Manual",
@@ -1490,12 +1538,13 @@
     },
     "cost": [84000],
     "source": "Rigger 5",
-    "page": 65
+    "page": 65,
+    "type": "Groundcraft",
+    "subtype": "Municipal/Construction"
   },
   {
     "name": "BMW Blitzkrieg",
     "description": "",
-    "category": "Corpsec/Police/Military",
     "handling": {
       "onRoad": 4,
       "offRoad": 3
@@ -1506,13 +1555,13 @@
     "armour": 8,
     "pilot": 3,
     "sensor": 4,
+    "seats": 2,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 4
       }
     ],
-    "seats": 2,
     "weaponMountList": [
       {
         "control": "Remote",
@@ -1533,12 +1582,13 @@
     },
     "cost": [46000],
     "source": "Rigger 5",
-    "page": 66
+    "page": 66,
+    "type": "Groundcraft",
+    "subtype": "Corpsec/Police/Military"
   },
   {
     "name": "Dodge Charger",
     "description": "",
-    "category": "Corpsec/Police/Military",
     "handling": {
       "onRoad": 4,
       "offRoad": 3
@@ -1549,13 +1599,13 @@
     "armour": 12,
     "pilot": 4,
     "sensor": 4,
+    "seats": 5,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 4
       }
     ],
-    "seats": 5,
     "weaponMountList": [
       {
         "control": "Remote",
@@ -1588,12 +1638,13 @@
     },
     "cost": [65000],
     "source": "Rigger 5",
-    "page": 67
+    "page": 67,
+    "type": "Groundcraft",
+    "subtype": "Corpsec/Police/Military"
   },
   {
     "name": "BMW I8 Interceptor",
     "description": "",
-    "category": "Corpsec/Police/Military",
     "handling": {
       "onRoad": 5,
       "offRoad": 3
@@ -1604,13 +1655,13 @@
     "armour": 8,
     "pilot": 4,
     "sensor": 4,
+    "seats": 3,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 4
       }
     ],
-    "seats": 3,
     "weaponMountList": [
       {
         "control": "Remote",
@@ -1637,12 +1688,13 @@
     },
     "cost": [114000],
     "source": "Rigger 5",
-    "page": 68
+    "page": 68,
+    "type": "Groundcraft",
+    "subtype": "Corpsec/Police/Military"
   },
   {
     "name": "Dodge Goliath",
     "description": "",
-    "category": "Corpsec/Police/Military",
     "handling": {
       "onRoad": 3,
       "offRoad": 2
@@ -1653,25 +1705,26 @@
     "armour": 16,
     "pilot": 3,
     "sensor": 3,
+    "seats": 8,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 8,
     "availability": {
       "rating": [20],
       "restriction": "Restricted"
     },
     "cost": [120000],
     "source": "Rigger 5",
-    "page": 70
+    "page": 70,
+    "type": "Groundcraft",
+    "subtype": "Corpsec/Police/Military"
   },
   {
     "name": "BMW Teufelkatze",
     "description": "",
-    "category": "Corpsec/Police/Military",
     "handling": {
       "onRoad": 5,
       "offRoad": 4
@@ -1682,25 +1735,26 @@
     "armour": 16,
     "pilot": 3,
     "sensor": 3,
+    "seats": 7,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 7,
     "availability": {
       "rating": [16],
       "restriction": "Forbidden"
     },
     "cost": [76000],
     "source": "Rigger 5",
-    "page": 71
+    "page": 71,
+    "type": "Groundcraft",
+    "subtype": "Corpsec/Police/Military"
   },
   {
     "name": "Dodge Stallion",
     "description": "",
-    "category": "Corpsec/Police/Military",
     "handling": {
       "onRoad": 3,
       "offRoad": 4
@@ -1711,13 +1765,13 @@
     "armour": 12,
     "pilot": 3,
     "sensor": 3,
+    "seats": 4,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 4,
     "weaponMountList": [
       {
         "control": "Manual",
@@ -1744,12 +1798,13 @@
     },
     "cost": [78000],
     "source": "Rigger 5",
-    "page": 71
+    "page": 71,
+    "type": "Groundcraft",
+    "subtype": "Corpsec/Police/Military"
   },
   {
     "name": "Dodge Minotaur",
     "description": "",
-    "category": "Corpsec/Police/Military",
     "handling": {
       "onRoad": 4,
       "offRoad": 5
@@ -1760,13 +1815,13 @@
     "armour": 8,
     "pilot": 4,
     "sensor": 4,
+    "seats": 4,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 4
       }
     ],
-    "seats": 4,
     "weaponMountList": [
       {
         "control": "Manual",
@@ -1787,12 +1842,13 @@
     },
     "cost": [45000],
     "source": "Rigger 5",
-    "page": 71
+    "page": 71,
+    "type": "Groundcraft",
+    "subtype": "Corpsec/Police/Military"
   },
   {
     "name": "BMW Luxus",
     "description": "",
-    "category": "Corpsec/Police/Military",
     "handling": {
       "onRoad": 5,
       "offRoad": 5
@@ -1803,13 +1859,13 @@
     "armour": 16,
     "pilot": 5,
     "sensor": 6,
+    "seats": 8,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 6
       }
     ],
-    "seats": 8,
     "weaponMountList": [
       {
         "control": "Remote",
@@ -1824,12 +1880,13 @@
     },
     "cost": [398000],
     "source": "Rigger 5",
-    "page": 73
+    "page": 73,
+    "type": "Groundcraft",
+    "subtype": "Corpsec/Police/Military"
   },
   {
     "name": "Dodge General Command",
     "description": "",
-    "category": "Corpsec/Police/Military",
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -1840,25 +1897,26 @@
     "armour": 16,
     "pilot": 5,
     "sensor": 7,
+    "seats": 10,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 6
       }
     ],
-    "seats": 10,
     "availability": {
       "rating": [18],
       "restriction": "Restricted"
     },
     "cost": [344000],
     "source": "Rigger 5",
-    "page": 74
+    "page": 74,
+    "type": "Groundcraft",
+    "subtype": "Corpsec/Police/Military"
   },
   {
     "name": "Dodge General Trailer",
     "description": "",
-    "category": "Corpsec/Police/Military",
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -1869,25 +1927,26 @@
     "armour": 16,
     "pilot": 3,
     "sensor": 7,
+    "seats": 1,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 6
       }
     ],
-    "seats": 1,
     "availability": {
       "rating": [18],
       "restriction": "Restricted"
     },
     "cost": [54000],
     "source": "Rigger 5",
-    "page": 74
+    "page": 74,
+    "type": "Groundcraft",
+    "subtype": "Corpsec/Police/Military"
   },
   {
     "name": "BMW Sturmwagon",
     "description": "",
-    "category": "Corpsec/Police/Military",
     "handling": {
       "onRoad": 5,
       "offRoad": 4
@@ -1898,25 +1957,26 @@
     "armour": 18,
     "pilot": 4,
     "sensor": 5,
+    "seats": 10,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 5
       }
     ],
-    "seats": 10,
     "availability": {
       "rating": [20],
       "restriction": "Restricted"
     },
     "cost": [145000],
     "source": "Rigger 5",
-    "page": 75
+    "page": 75,
+    "type": "Groundcraft",
+    "subtype": "Corpsec/Police/Military"
   },
   {
     "name": "Dodge Rhino",
     "description": "",
-    "category": "Corpsec/Police/Military",
     "handling": {
       "onRoad": 4,
       "offRoad": 4
@@ -1927,13 +1987,13 @@
     "armour": 14,
     "pilot": 6,
     "sensor": 7,
+    "seats": 9,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 6
       }
     ],
-    "seats": 9,
     "weaponMountList": [
       {
         "control": "Remote",
@@ -1960,12 +2020,13 @@
     },
     "cost": [225000],
     "source": "Rigger 5",
-    "page": 77
+    "page": 77,
+    "type": "Groundcraft",
+    "subtype": "Corpsec/Police/Military"
   },
   {
     "name": "Ruhrmetal Wolf II",
     "description": "",
-    "category": "Corpsec/Police/Military",
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -1976,25 +2037,26 @@
     "armour": 12,
     "pilot": 2,
     "sensor": 2,
+    "seats": 6,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 6,
     "availability": {
       "rating": [20],
       "restriction": "Forbidden"
     },
     "cost": [330000],
     "source": "Rigger 5",
-    "page": 77
+    "page": 77,
+    "type": "Groundcraft",
+    "subtype": "Corpsec/Police/Military"
   },
   {
     "name": "Evo Waterking",
     "description": "",
-    "category": "Boats",
     "handling": 3,
     "speed": 3,
     "acceleration": 2,
@@ -2002,25 +2064,26 @@
     "armour": 8,
     "pilot": 3,
     "sensor": 2,
+    "seats": 12,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 12,
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [74000],
     "source": "Rigger 5",
-    "page": 79
+    "page": 79,
+    "type": "Watercraft",
+    "subtype": "Boat"
   },
   {
     "name": "Sea Ray Cottonmouth",
     "description": "",
-    "category": "Boats",
     "handling": 5,
     "speed": 7,
     "acceleration": 4,
@@ -2028,13 +2091,13 @@
     "armour": 4,
     "pilot": 3,
     "sensor": 3,
+    "seats": 4,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 4,
     "weaponMountList": [
       {
         "control": "Remote",
@@ -2067,12 +2130,13 @@
     },
     "cost": [120000],
     "source": "Rigger 5",
-    "page": 80
+    "page": 80,
+    "type": "Watercraft",
+    "subtype": "Boat"
   },
   {
     "name": "Kawasaki Stingray",
     "description": "",
-    "category": "Boats",
     "handling": 5,
     "speed": 5,
     "acceleration": 3,
@@ -2080,25 +2144,26 @@
     "armour": 6,
     "pilot": 1,
     "sensor": 1,
+    "seats": 2,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 1
       }
     ],
-    "seats": 2,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [13000],
     "source": "Rigger 5",
-    "page": 81
+    "page": 81,
+    "type": "Watercraft",
+    "subtype": "Boat"
   },
   {
     "name": "Kawasaki Manta Ray",
     "description": "",
-    "category": "Boats",
     "handling": 4,
     "speed": 5,
     "acceleration": 3,
@@ -2106,25 +2171,26 @@
     "armour": 6,
     "pilot": 1,
     "sensor": 1,
+    "seats": 3,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 1
       }
     ],
-    "seats": 3,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [16000],
     "source": "Rigger 5",
-    "page": 81
+    "page": 81,
+    "type": "Watercraft",
+    "subtype": "Boat"
   },
   {
     "name": "Aztechnology Nightrunner",
     "description": "",
-    "category": "Boats",
     "handling": 5,
     "speed": 6,
     "acceleration": 3,
@@ -2132,25 +2198,26 @@
     "armour": 6,
     "pilot": 3,
     "sensor": 4,
+    "seats": 6,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 4
       }
     ],
-    "seats": 6,
     "availability": {
       "rating": [10],
       "restriction": "Legal"
     },
     "cost": [56000],
     "source": "Rigger 5",
-    "page": 81
+    "page": 81,
+    "type": "Watercraft",
+    "subtype": "Boat"
   },
   {
     "name": "Zodiac Scorpio",
     "description": "",
-    "category": "Boats",
     "handling": 4,
     "speed": 4,
     "acceleration": 2,
@@ -2158,13 +2225,13 @@
     "armour": 6,
     "pilot": 1,
     "sensor": 1,
+    "seats": 8,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 1
       }
     ],
-    "seats": 8,
     "weaponMountList": [
       {
         "control": "Manual",
@@ -2191,12 +2258,13 @@
     },
     "cost": [26000],
     "source": "Rigger 5",
-    "page": 82
+    "page": 82,
+    "type": "Watercraft",
+    "subtype": "Boat"
   },
   {
     "name": "Mitsubishi Waterbug",
     "description": "",
-    "category": "Boats",
     "handling": 6,
     "speed": 3,
     "acceleration": 2,
@@ -2211,12 +2279,13 @@
     },
     "cost": [8000],
     "source": "Rigger 5",
-    "page": 83
+    "page": 83,
+    "type": "Watercraft",
+    "subtype": "Boat"
   },
   {
     "name": "Mitsubishi Waveskipper",
     "description": "",
-    "category": "Boats",
     "handling": 5,
     "speed": 3,
     "acceleration": 2,
@@ -2231,12 +2300,13 @@
     },
     "cost": [10000],
     "source": "Rigger 5",
-    "page": 83
+    "page": 83,
+    "type": "Watercraft",
+    "subtype": "Boat"
   },
   {
     "name": "Evo Water Strider",
     "description": "",
-    "category": "Boats",
     "handling": 3,
     "speed": 2,
     "acceleration": 1,
@@ -2244,25 +2314,26 @@
     "armour": 5,
     "pilot": 2,
     "sensor": 2,
+    "seats": 1,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 1,
     "availability": {
       "rating": [16],
       "restriction": "Legal"
     },
     "cost": [11000],
     "source": "Rigger 5",
-    "page": 84
+    "page": 84,
+    "type": "Watercraft",
+    "subtype": "Boat"
   },
   {
     "name": "Corsair Elysium",
     "description": "",
-    "category": "Boats",
     "handling": {
       "onRoad": 1,
       "offRoad": 3
@@ -2279,25 +2350,26 @@
     "armour": 10,
     "pilot": 2,
     "sensor": 3,
+    "seats": 6,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 6,
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [78000],
     "source": "Rigger 5",
-    "page": 85
+    "page": 85,
+    "type": "Watercraft",
+    "subtype": "Boat"
   },
   {
     "name": "Corsair Panther",
     "description": "",
-    "category": "Boats",
     "handling": {
       "onRoad": 1,
       "offRoad": 3
@@ -2314,25 +2386,26 @@
     "armour": 10,
     "pilot": 2,
     "sensor": 3,
+    "seats": 8,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 8,
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [135000],
     "source": "Rigger 5",
-    "page": 85
+    "page": 85,
+    "type": "Watercraft",
+    "subtype": "Boat"
   },
   {
     "name": "Corsair Trident",
     "description": "",
-    "category": "Boats",
     "handling": {
       "onRoad": 1,
       "offRoad": 3
@@ -2349,25 +2422,26 @@
     "armour": 10,
     "pilot": 2,
     "sensor": 3,
+    "seats": 6,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 6,
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [125000],
     "source": "Rigger 5",
-    "page": 87
+    "page": 87,
+    "type": "Watercraft",
+    "subtype": "Boat"
   },
   {
     "name": "Corsair Triton",
     "description": "",
-    "category": "Boats",
     "handling": 1,
     "speed": 6,
     "acceleration": 2,
@@ -2375,25 +2449,26 @@
     "armour": 10,
     "pilot": 2,
     "sensor": 3,
+    "seats": 6,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 6,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [104000],
     "source": "Rigger 5",
-    "page": 87
+    "page": 87,
+    "type": "Watercraft",
+    "subtype": "Boat"
   },
   {
     "name": "Blohm and Voss Classic 111",
     "description": "",
-    "category": "Boats",
     "handling": 3,
     "speed": 4,
     "acceleration": 2,
@@ -2401,25 +2476,26 @@
     "armour": 14,
     "pilot": 4,
     "sensor": 4,
+    "seats": 14,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 4
       }
     ],
-    "seats": 14,
     "availability": {
       "rating": [16],
       "restriction": "Legal"
     },
     "cost": [14870000],
     "source": "Rigger 5",
-    "page": 88
+    "page": 88,
+    "type": "Watercraft",
+    "subtype": "Boat"
   },
   {
     "name": "Lurssen Mobius",
     "description": "",
-    "category": "Boats",
     "handling": 3,
     "speed": 3,
     "acceleration": 2,
@@ -2427,25 +2503,26 @@
     "armour": 14,
     "pilot": 6,
     "sensor": 5,
+    "seats": 22,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 5
       }
     ],
-    "seats": 22,
     "availability": {
       "rating": [36],
       "restriction": "Legal"
     },
     "cost": [84985000],
     "source": "Rigger 5",
-    "page": 89
+    "page": 89,
+    "type": "Watercraft",
+    "subtype": "Boat"
   },
   {
     "name": "Sun Tracker Lake King",
     "description": "",
-    "category": "Boats",
     "handling": 2,
     "speed": 3,
     "acceleration": 2,
@@ -2453,25 +2530,26 @@
     "armour": 8,
     "pilot": 1,
     "sensor": 1,
+    "seats": 8,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 1
       }
     ],
-    "seats": 8,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [35000],
     "source": "Rigger 5",
-    "page": 90
+    "page": 90,
+    "type": "Watercraft",
+    "subtype": "Boat"
   },
   {
     "name": "Evo Aquavida 1",
     "description": "",
-    "category": "Boats",
     "handling": 2,
     "speed": 1,
     "acceleration": 2,
@@ -2479,25 +2557,26 @@
     "armour": 16,
     "pilot": 1,
     "sensor": 3,
+    "seats": 10,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 10,
     "availability": {
       "rating": [10],
       "restriction": "Legal"
     },
     "cost": [115000],
     "source": "Rigger 5",
-    "page": 90
+    "page": 90,
+    "type": "Watercraft",
+    "subtype": "Boat"
   },
   {
     "name": "Evo Aquavida 2",
     "description": "",
-    "category": "Boats",
     "handling": 2,
     "speed": 1,
     "acceleration": 2,
@@ -2505,25 +2584,26 @@
     "armour": 16,
     "pilot": 1,
     "sensor": 3,
+    "seats": 12,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 12,
     "availability": {
       "rating": [10],
       "restriction": "Legal"
     },
     "cost": [135000],
     "source": "Rigger 5",
-    "page": 90
+    "page": 90,
+    "type": "Watercraft",
+    "subtype": "Boat"
   },
   {
     "name": "Ultramarine Kingfisher",
     "description": "",
-    "category": "Boats",
     "handling": 3,
     "speed": 3,
     "acceleration": 2,
@@ -2531,25 +2611,26 @@
     "armour": 12,
     "pilot": 3,
     "sensor": 4,
+    "seats": 6,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 4
       }
     ],
-    "seats": 6,
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [61000],
     "source": "Rigger 5",
-    "page": 92
+    "page": 92,
+    "type": "Watercraft",
+    "subtype": "Boat"
   },
   {
     "name": "American Airboat AirRanger",
     "description": "",
-    "category": "Boats",
     "handling": 4,
     "speed": 4,
     "acceleration": 3,
@@ -2557,25 +2638,26 @@
     "armour": 6,
     "pilot": 1,
     "sensor": 1,
+    "seats": 6,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 1
       }
     ],
-    "seats": 6,
     "availability": {
       "rating": [6],
       "restriction": "Legal"
     },
     "cost": [25500],
     "source": "Rigger 5",
-    "page": 92
+    "page": 92,
+    "type": "Watercraft",
+    "subtype": "Boat"
   },
   {
     "name": "American Airboat AirRanger Heavy",
     "description": "",
-    "category": "Boats",
     "handling": 4,
     "speed": 4,
     "acceleration": 3,
@@ -2583,25 +2665,26 @@
     "armour": 6,
     "pilot": 1,
     "sensor": 1,
+    "seats": 5,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 1
       }
     ],
-    "seats": 5,
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [35500],
     "source": "Rigger 5",
-    "page": 92
+    "page": 92,
+    "type": "Watercraft",
+    "subtype": "Boat"
   },
   {
     "name": "GMC Riverine Security",
     "description": "",
-    "category": "Boats",
     "handling": 4,
     "speed": 5,
     "acceleration": 3,
@@ -2609,13 +2692,13 @@
     "armour": 12,
     "pilot": 4,
     "sensor": 4,
+    "seats": 8,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 4
       }
     ],
-    "seats": 8,
     "weaponMountList": [
       {
         "control": "Remote",
@@ -2654,12 +2737,13 @@
     },
     "cost": [100000],
     "source": "Rigger 5",
-    "page": 92
+    "page": 92,
+    "type": "Watercraft",
+    "subtype": "Boat"
   },
   {
     "name": "GMC Riverine Police",
     "description": "",
-    "category": "Boats",
     "handling": 4,
     "speed": 5,
     "acceleration": 3,
@@ -2667,13 +2751,13 @@
     "armour": 14,
     "pilot": 4,
     "sensor": 5,
+    "seats": 8,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 5
       }
     ],
-    "seats": 8,
     "weaponMountList": [
       {
         "control": "Remote",
@@ -2712,12 +2796,13 @@
     },
     "cost": [154000],
     "source": "Rigger 5",
-    "page": 92
+    "page": 92,
+    "type": "Watercraft",
+    "subtype": "Boat"
   },
   {
     "name": "GMC Riverine Military",
     "description": "",
-    "category": "Boats",
     "handling": 4,
     "speed": 5,
     "acceleration": 3,
@@ -2725,13 +2810,13 @@
     "armour": 20,
     "pilot": 6,
     "sensor": 6,
+    "seats": 8,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 6
       }
     ],
-    "seats": 8,
     "weaponMountList": [
       {
         "control": "Remote",
@@ -2776,12 +2861,13 @@
     },
     "cost": [225000],
     "source": "Rigger 5",
-    "page": 92
+    "page": 92,
+    "type": "Watercraft",
+    "subtype": "Boat"
   },
   {
     "name": "Hughes Stallion WK-4",
     "description": "",
-    "category": "Rotorcraft",
     "handling": 5,
     "speed": 5,
     "acceleration": 4,
@@ -2789,25 +2875,26 @@
     "armour": 16,
     "pilot": 4,
     "sensor": 4,
+    "seats": 8,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 4
       }
     ],
-    "seats": 8,
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [440000],
     "source": "Rigger 5",
-    "page": 95
+    "page": 95,
+    "type": "Aircraft",
+    "subtype": "Rotorcraft"
   },
   {
     "name": "Aztechnology Agular GX-2",
     "description": "",
-    "category": "Rotorcraft",
     "handling": 5,
     "speed": 7,
     "acceleration": 5,
@@ -2815,25 +2902,26 @@
     "armour": 16,
     "pilot": 4,
     "sensor": 5,
+    "seats": 2,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 5
       }
     ],
-    "seats": 2,
     "availability": {
       "rating": [28],
       "restriction": "Forbidden"
     },
     "cost": [500000],
     "source": "Rigger 5",
-    "page": 97
+    "page": 97,
+    "type": "Aircraft",
+    "subtype": "Rotorcraft"
   },
   {
     "name": "Aztechnology Agular GX-3AT",
     "description": "",
-    "category": "Rotorcraft",
     "handling": 4,
     "speed": 6,
     "acceleration": 4,
@@ -2841,25 +2929,26 @@
     "armour": 20,
     "pilot": 4,
     "sensor": 4,
+    "seats": 10,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 4
       }
     ],
-    "seats": 10,
     "availability": {
       "rating": [28],
       "restriction": "Forbidden"
     },
     "cost": [550000],
     "source": "Rigger 5",
-    "page": 97
+    "page": 97,
+    "type": "Aircraft",
+    "subtype": "Rotorcraft"
   },
   {
     "name": "S-K Aerospace SKA-008",
     "description": "",
-    "category": "Rotorcraft",
     "handling": 6,
     "speed": 5,
     "acceleration": 8,
@@ -2867,25 +2956,26 @@
     "armour": 18,
     "pilot": 4,
     "sensor": 4,
+    "seats": 12,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 4
       }
     ],
-    "seats": 12,
     "availability": {
       "rating": [24],
       "restriction": "Restricted"
     },
     "cost": [525000],
     "source": "Rigger 5",
-    "page": 98
+    "page": 98,
+    "type": "Aircraft",
+    "subtype": "Rotorcraft"
   },
   {
     "name": "Dassault Sea Sprite",
     "description": "",
-    "category": "Rotorcraft",
     "handling": 5,
     "speed": 4,
     "acceleration": 3,
@@ -2893,25 +2983,26 @@
     "armour": 12,
     "pilot": 3,
     "sensor": 5,
+    "seats": 14,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 4
       }
     ],
-    "seats": 14,
     "availability": {
       "rating": [18],
       "restriction": "Restricted"
     },
     "cost": [400000],
     "source": "Rigger 5",
-    "page": 98
+    "page": 98,
+    "type": "Aircraft",
+    "subtype": "Rotorcraft"
   },
   {
     "name": "Federated-Boeing PBY-70 Catalina II",
     "description": "",
-    "category": "Fixed-Wing Aircraft",
     "handling": 4,
     "speed": 3,
     "acceleration": 3,
@@ -2919,13 +3010,13 @@
     "armour": 14,
     "pilot": 3,
     "sensor": 4,
+    "seats": 16,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 4
       }
     ],
-    "seats": 16,
     "weaponMountList": [
       {
         "control": "Manual",
@@ -2952,12 +3043,13 @@
     },
     "cost": [250000],
     "source": "Rigger 5",
-    "page": 100
+    "page": 100,
+    "type": "Aircraft",
+    "subtype": "Fixed-Wing Aircraft"
   },
   {
     "name": "Airbus Lift Ticket ALS-699",
     "description": "",
-    "category": "Rotorcraft",
     "handling": 5,
     "speed": 3,
     "acceleration": 3,
@@ -2965,25 +3057,26 @@
     "armour": 12,
     "pilot": 3,
     "sensor": 4,
+    "seats": 5,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 4
       }
     ],
-    "seats": 5,
     "availability": {
       "rating": [14],
       "restriction": "Legal"
     },
     "cost": [325000],
     "source": "Rigger 5",
-    "page": 102
+    "page": 102,
+    "type": "Aircraft",
+    "subtype": "Rotorcraft"
   },
   {
     "name": "GMC Gryphon",
     "description": "",
-    "category": "VTOL/VSTOL",
     "handling": 5,
     "speed": 8,
     "acceleration": 7,
@@ -2991,13 +3084,13 @@
     "armour": 24,
     "pilot": 4,
     "sensor": 5,
+    "seats": 2,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 5
       }
     ],
-    "seats": 2,
     "weaponMountList": [
       {
         "control": "Remote",
@@ -3024,12 +3117,13 @@
     },
     "cost": [3200000],
     "source": "Rigger 5",
-    "page": 103
+    "page": 103,
+    "type": "Aircraft",
+    "subtype": "VTOL/VSTOL"
   },
   {
     "name": "Evo-Krime Krime Wing",
     "description": "",
-    "category": "VTOL/VSTOL",
     "handling": 4,
     "speed": 6,
     "acceleration": 5,
@@ -3037,25 +3131,26 @@
     "armour": 18,
     "pilot": 4,
     "sensor": 5,
+    "seats": 20,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 5
       }
     ],
-    "seats": 20,
     "availability": {
       "rating": [24],
       "restriction": "Forbidden"
     },
     "cost": [2275000],
     "source": "Rigger 5",
-    "page": 105
+    "page": 105,
+    "type": "Aircraft",
+    "subtype": "VTOL/VSTOL"
   },
   {
     "name": "Luftshiffbau Personal Zeppelin LZP-2070",
     "description": "",
-    "category": "LTAV",
     "handling": 4,
     "speed": 2,
     "acceleration": 3,
@@ -3063,25 +3158,26 @@
     "armour": 6,
     "pilot": 5,
     "sensor": 4,
+    "seats": 6,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 4
       }
     ],
-    "seats": 6,
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [85000],
     "source": "Rigger 5",
-    "page": 107
+    "page": 107,
+    "type": "Aircraft",
+    "subtype": "LTAV"
   },
   {
     "name": "Renegade Works Mothership LAVH",
     "description": "",
-    "category": "LTAV",
     "handling": 3,
     "speed": 3,
     "acceleration": 3,
@@ -3089,25 +3185,26 @@
     "armour": 5,
     "pilot": 3,
     "sensor": 4,
+    "seats": 1,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 4
       }
     ],
-    "seats": 1,
     "availability": {
       "rating": [24],
       "restriction": "Restricted"
     },
     "cost": [50000],
     "source": "Rigger 5",
-    "page": 105
+    "page": 105,
+    "type": "Aircraft",
+    "subtype": "LTAV"
   },
   {
     "name": "Horizon Noizquito (Microdrone)",
     "description": "",
-    "category": "Drones: Micro",
     "handling": 4,
     "speed": 3,
     "acceleration": 2,
@@ -3127,12 +3224,13 @@
     },
     "cost": [2000],
     "source": "Rigger 5",
-    "page": 128
+    "page": 128,
+    "type": "Drone",
+    "subtype": "Drones: Micro"
   },
   {
     "name": "Sony Goldfish (Microdrone)",
     "description": "",
-    "category": "Drones: Micro",
     "handling": {
       "onRoad": 2,
       "offRoad": 4
@@ -3155,12 +3253,13 @@
     },
     "cost": [500],
     "source": "Rigger 5",
-    "page": 129
+    "page": 129,
+    "type": "Drone",
+    "subtype": "Drones: Micro"
   },
   {
     "name": "Aerodesign Systems Condor LDSD-23 (Minidrone)",
     "description": "",
-    "category": "Drones: Mini",
     "handling": 2,
     "speed": 0,
     "acceleration": 0,
@@ -3180,12 +3279,13 @@
     },
     "cost": [4000],
     "source": "Rigger 5",
-    "page": 129
+    "page": 129,
+    "type": "Drone",
+    "subtype": "Drones: Mini"
   },
   {
     "name": "Aztechnology Hedgehog (Minidrone)",
     "description": "",
-    "category": "Drones: Mini",
     "handling": 3,
     "speed": 1,
     "acceleration": 1,
@@ -3205,12 +3305,13 @@
     },
     "cost": [8000],
     "source": "Rigger 5",
-    "page": 129
+    "page": 129,
+    "type": "Drone",
+    "subtype": "Drones: Mini"
   },
   {
     "name": "Cyberspace Designs Dragonfly (Minidrone)",
     "description": "",
-    "category": "Drones: Mini",
     "handling": 4,
     "speed": 2,
     "acceleration": 1,
@@ -3245,12 +3346,13 @@
     },
     "cost": [4000],
     "source": "Rigger 5",
-    "page": 129
+    "page": 129,
+    "type": "Drone",
+    "subtype": "Drones: Mini"
   },
   {
     "name": "Festo Pigeon 2.0 (Minidrone)",
     "description": "",
-    "category": "Drones: Mini",
     "handling": 4,
     "speed": 2,
     "acceleration": 1,
@@ -3270,12 +3372,13 @@
     },
     "cost": [3000],
     "source": "Rigger 5",
-    "page": 129
+    "page": 129,
+    "type": "Drone",
+    "subtype": "Drones: Mini"
   },
   {
     "name": "Horizon CU^3 (Minidrone)",
     "description": "",
-    "category": "Drones: Mini",
     "handling": 4,
     "speed": 1,
     "acceleration": 1,
@@ -3299,12 +3402,13 @@
     },
     "cost": [3000],
     "source": "Rigger 5",
-    "page": 130
+    "page": 130,
+    "type": "Drone",
+    "subtype": "Drones: Mini"
   },
   {
     "name": "Horizon CU^3 Professional (Minidrone)",
     "description": "",
-    "category": "Drones: Mini",
     "handling": 4,
     "speed": 1,
     "acceleration": 1,
@@ -3328,12 +3432,13 @@
     },
     "cost": [6000],
     "source": "Rigger 5",
-    "page": 130
+    "page": 130,
+    "type": "Drone",
+    "subtype": "Drones: Mini"
   },
   {
     "name": "Renraku Gerbil (Minidrone)",
     "description": "",
-    "category": "Drones: Mini",
     "handling": {
       "onRoad": 4,
       "offRoad": 2
@@ -3356,12 +3461,13 @@
     },
     "cost": [2000],
     "source": "Rigger 5",
-    "page": 130
+    "page": 130,
+    "type": "Drone",
+    "subtype": "Drones: Mini"
   },
   {
     "name": "Ares Arms Sentry V (Small)",
     "description": "",
-    "category": "Drones: Small",
     "handling": {
       "onRoad": 4,
       "offRoad": 0
@@ -3403,12 +3509,13 @@
     },
     "cost": [4000],
     "source": "Rigger 5",
-    "page": 130
+    "page": 130,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "Citron-Brouillard Smoke Generator (Small)",
     "description": "",
-    "category": "Drones: Small",
     "handling": 3,
     "speed": 1,
     "acceleration": 1,
@@ -3429,12 +3536,13 @@
     },
     "cost": [4000],
     "source": "Rigger 5",
-    "page": 131
+    "page": 131,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "Cyberspace Designs Wolfhound (Small)",
     "description": "",
-    "category": "Drones: Small",
     "handling": 3,
     "speed": 2,
     "acceleration": 1,
@@ -3455,12 +3563,13 @@
     },
     "cost": [30000],
     "source": "Rigger 5",
-    "page": 131
+    "page": 131,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "Evo Proletarian (Small)",
     "description": "",
-    "category": "Drones: Small",
     "handling": {
       "onRoad": 4,
       "offRoad": 2
@@ -3493,12 +3602,13 @@
     },
     "cost": [4000],
     "source": "Rigger 5",
-    "page": 132
+    "page": 132,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "Ferret RPD-1X (Small)",
     "description": "",
-    "category": "Drones: Small",
     "handling": {
       "onRoad": 4,
       "offRoad": 2
@@ -3535,12 +3645,13 @@
     },
     "cost": [4000],
     "source": "Rigger 5",
-    "page": 132
+    "page": 132,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "Festo Sewer Snake (Small)",
     "description": "",
-    "category": "Drones: Small",
     "handling": 3,
     "speed": {
       "onRoad": 1,
@@ -3567,12 +3678,13 @@
     },
     "cost": [6000],
     "source": "Rigger 5",
-    "page": 132
+    "page": 132,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "Horizon Mini-Zep (Small)",
     "description": "",
-    "category": "Drones: Small",
     "handling": 2,
     "speed": 0,
     "acceleration": 0,
@@ -3593,12 +3705,13 @@
     },
     "cost": [2000],
     "source": "Rigger 5",
-    "page": 132
+    "page": 132,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "Knight Errant P5 (Small)",
     "description": "",
-    "category": "Drones: Small",
     "handling": {
       "onRoad": 4,
       "offRoad": 2
@@ -3622,12 +3735,13 @@
     },
     "cost": [8000],
     "source": "Rigger 5",
-    "page": 133
+    "page": 133,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "Lone Star Castle Guard (Small)",
     "description": "",
-    "category": "Drones: Small",
     "handling": {
       "onRoad": 4,
       "offRoad": 2
@@ -3678,12 +3792,13 @@
     },
     "cost": [8000],
     "source": "Rigger 5",
-    "page": 133
+    "page": 133,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "MCT Gun Turret (Small)",
     "description": "",
-    "category": "Drones: Small",
     "handling": 0,
     "speed": 0,
     "acceleration": 0,
@@ -3712,12 +3827,13 @@
     },
     "cost": [4000],
     "source": "Rigger 5",
-    "page": 133
+    "page": 133,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "MCT Seven (Wheelie) (Small)",
     "description": "",
-    "category": "Drones: Small",
     "handling": {
       "onRoad": 4,
       "offRoad": 2
@@ -3741,12 +3857,13 @@
     },
     "cost": [2000],
     "source": "Rigger 5",
-    "page": 134
+    "page": 134,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "MCT Seven (Treads) (Small)",
     "description": "",
-    "category": "Drones: Small",
     "handling": 3,
     "speed": 2,
     "acceleration": 1,
@@ -3767,12 +3884,13 @@
     },
     "cost": [2000],
     "source": "Rigger 5",
-    "page": 134
+    "page": 134,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "MCT Seven (Dirty) (Small)",
     "description": "",
-    "category": "Drones: Small",
     "handling": {
       "onRoad": 2,
       "offRoad": 4
@@ -3796,12 +3914,13 @@
     },
     "cost": [2000],
     "source": "Rigger 5",
-    "page": 134
+    "page": 134,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "MCT Seven (Quad) (Small)",
     "description": "",
-    "category": "Drones: Small",
     "handling": 4,
     "speed": 1,
     "acceleration": 1,
@@ -3822,12 +3941,13 @@
     },
     "cost": [2000],
     "source": "Rigger 5",
-    "page": 134
+    "page": 134,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "MCT Seven (Swims) (Small)",
     "description": "",
-    "category": "Drones: Small",
     "handling": 3,
     "speed": 2,
     "acceleration": 1,
@@ -3848,12 +3968,13 @@
     },
     "cost": [1000],
     "source": "Rigger 5",
-    "page": 134
+    "page": 134,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "MCT Seven (Hovers) (Small)",
     "description": "",
-    "category": "Drones: Small",
     "handling": 3,
     "speed": 1,
     "acceleration": 1,
@@ -3874,12 +3995,13 @@
     },
     "cost": [4000],
     "source": "Rigger 5",
-    "page": 134
+    "page": 134,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "MCT Seven (Soars) (Small)",
     "description": "",
-    "category": "Drones: Small",
     "handling": 3,
     "speed": 2,
     "acceleration": 1,
@@ -3900,12 +4022,13 @@
     },
     "cost": [4000],
     "source": "Rigger 5",
-    "page": 134
+    "page": 134,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "NeoNET Prarie Dog (Small)",
     "description": "",
-    "category": "Drones: Small",
     "handling": {
       "onRoad": 2,
       "offRoad": 4
@@ -3941,12 +4064,13 @@
     },
     "cost": [8000],
     "source": "Rigger 5",
-    "page": 134
+    "page": 134,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "PW Sundowner (Small)",
     "description": "",
-    "category": "Drones: Small",
     "handling": 3,
     "speed": 4,
     "acceleration": 1,
@@ -3967,12 +4091,13 @@
     },
     "cost": [10000],
     "source": "Rigger 5",
-    "page": 134
+    "page": 134,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "Proteus Krake (Small)",
     "description": "",
-    "category": "Drones: Small",
     "handling": 5,
     "speed": 3,
     "acceleration": 4,
@@ -4013,12 +4138,13 @@
     },
     "cost": [10000],
     "source": "Rigger 5",
-    "page": 136
+    "page": 136,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "Saab-Thyssen Bloodhound (Small)",
     "description": "",
-    "category": "Drones: Small",
     "handling": 3,
     "speed": 1,
     "acceleration": 1,
@@ -4039,12 +4165,13 @@
     },
     "cost": [10000],
     "source": "Rigger 5",
-    "page": 136
+    "page": 136,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "Renraku Dove-4 (Small)",
     "description": "",
-    "category": "Drones: Small",
     "handling": 4,
     "speed": 2,
     "acceleration": 1,
@@ -4070,12 +4197,13 @@
     },
     "cost": [5000],
     "source": "Rigger 5",
-    "page": 136
+    "page": 136,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "Renraku Jardinero (Small)",
     "description": "",
-    "category": "Drones: Small",
     "handling": {
       "onRoad": 2,
       "offRoad": 4
@@ -4099,12 +4227,13 @@
     },
     "cost": [2000],
     "source": "Rigger 5",
-    "page": 136
+    "page": 136,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "Renraku Job-A-Mat (Small)",
     "description": "",
-    "category": "Drones: Small",
     "handling": 0,
     "speed": 0,
     "acceleration": 0,
@@ -4129,12 +4258,13 @@
     },
     "cost": [3000],
     "source": "Rigger 5",
-    "page": 137
+    "page": 137,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "Renraku Pelican (Small)",
     "description": "",
-    "category": "Drones: Small",
     "handling": 4,
     "speed": 2,
     "acceleration": 1,
@@ -4155,12 +4285,13 @@
     },
     "cost": [4000],
     "source": "Rigger 5",
-    "page": 137
+    "page": 137,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "Telestrian Shamus",
     "description": "",
-    "category": "Drones: Small",
     "handling": 3,
     "speed": 3,
     "acceleration": 1,
@@ -4184,12 +4315,13 @@
     },
     "cost": [30000],
     "source": "Rigger 5",
-    "page": 138
+    "page": 138,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "Ares Cheetah (Medium)",
     "description": "",
-    "category": "Drones: Medium",
     "handling": 4,
     "speed": 6,
     "acceleration": 2,
@@ -4220,12 +4352,13 @@
     },
     "cost": [14000],
     "source": "Rigger 5",
-    "page": 139
+    "page": 139,
+    "type": "Drone",
+    "subtype": "Drones: Medium"
   },
   {
     "name": "Evo Krokodil (Medium)",
     "description": "",
-    "category": "Drones: Medium",
     "handling": 3,
     "speed": {
       "onRoad": 2,
@@ -4249,12 +4382,13 @@
     },
     "cost": [12000],
     "source": "Rigger 5",
-    "page": 140
+    "page": 140,
+    "type": "Drone",
+    "subtype": "Drones: Medium"
   },
   {
     "name": "Federated-Boeing Kull (Medium)",
     "description": "",
-    "category": "Drones: Medium",
     "handling": 3,
     "speed": 4,
     "acceleration": 2,
@@ -4274,12 +4408,13 @@
     },
     "cost": [10000],
     "source": "Rigger 5",
-    "page": 140
+    "page": 140,
+    "type": "Drone",
+    "subtype": "Drones: Medium"
   },
   {
     "name": "MCT Tunneler (Medium)",
     "description": "",
-    "category": "Drones: Medium",
     "handling": 3,
     "speed": 0,
     "acceleration": 0,
@@ -4300,12 +4435,13 @@
     },
     "cost": [10000],
     "source": "Rigger 5",
-    "page": 140
+    "page": 140,
+    "type": "Drone",
+    "subtype": "Drones: Medium"
   },
   {
     "name": "Renraku LEBD-2 (Medium)",
     "description": "",
-    "category": "Drones: Medium",
     "handling": 4,
     "speed": 2,
     "acceleration": 1,
@@ -4354,12 +4490,13 @@
     },
     "cost": [20000],
     "source": "Rigger 5",
-    "page": 140
+    "page": 140,
+    "type": "Drone",
+    "subtype": "Drones: Medium"
   },
   {
     "name": "Transys Steed (Medium)",
     "description": "",
-    "category": "Drones: Medium",
     "handling": {
       "onRoad": 4,
       "offRoad": 2
@@ -4383,12 +4520,13 @@
     },
     "cost": [4000],
     "source": "Rigger 5",
-    "page": 141
+    "page": 141,
+    "type": "Drone",
+    "subtype": "Drones: Medium"
   },
   {
     "name": "Ares Matilda (Large)",
     "description": "",
-    "category": "Drones: Large",
     "handling": 1,
     "speed": 2,
     "acceleration": 1,
@@ -4440,12 +4578,13 @@
     },
     "cost": [18000],
     "source": "Rigger 5",
-    "page": 141
+    "page": 141,
+    "type": "Drone",
+    "subtype": "Drones: Large"
   },
   {
     "name": "Ares Mule (Large)",
     "description": "",
-    "category": "Drones: Large",
     "handling": 4,
     "speed": 1,
     "acceleration": 1,
@@ -4466,12 +4605,13 @@
     },
     "cost": [8000],
     "source": "Rigger 5",
-    "page": 142
+    "page": 142,
+    "type": "Drone",
+    "subtype": "Drones: Large"
   },
   {
     "name": "Ares Paladin (Large)",
     "description": "",
-    "category": "Drones: Large",
     "handling": 5,
     "speed": 4,
     "acceleration": 1,
@@ -4492,12 +4632,13 @@
     },
     "cost": [5000],
     "source": "Rigger 5",
-    "page": 142
+    "page": 142,
+    "type": "Drone",
+    "subtype": "Drones: Large"
   },
   {
     "name": "CrashCart Medicart (Large)",
     "description": "",
-    "category": "Drones: Large",
     "handling": 5,
     "speed": 5,
     "acceleration": 1,
@@ -4522,12 +4663,13 @@
     },
     "cost": [10000],
     "source": "Rigger 5",
-    "page": 143
+    "page": 143,
+    "type": "Drone",
+    "subtype": "Drones: Large"
   },
   {
     "name": "GTS Tower (Large)",
     "description": "",
-    "category": "Drones: Large",
     "handling": 2,
     "speed": 1,
     "acceleration": 1,
@@ -4547,12 +4689,13 @@
     },
     "cost": [10000],
     "source": "Rigger 5",
-    "page": 143
+    "page": 143,
+    "type": "Drone",
+    "subtype": "Drones: Large"
   },
   {
     "name": "Saeder-Krupp MK-170 Neptune (Large)",
     "description": "",
-    "category": "Drones: Large",
     "handling": 2,
     "speed": 3,
     "acceleration": 1,
@@ -4573,12 +4716,13 @@
     },
     "cost": [17500],
     "source": "Rigger 5",
-    "page": 143
+    "page": 143,
+    "type": "Drone",
+    "subtype": "Drones: Large"
   },
   {
     "name": "Mitsuhama Malakim (Large)",
     "description": "",
-    "category": "Drones: Large",
     "handling": 3,
     "speed": 6,
     "acceleration": 2,
@@ -4619,12 +4763,13 @@
     },
     "cost": [40000],
     "source": "Rigger 5",
-    "page": 143
+    "page": 143,
+    "type": "Drone",
+    "subtype": "Drones: Large"
   },
   {
     "name": "Ares KN-Y2: Deimos (Huge)",
     "description": "",
-    "category": "Drones: Huge",
     "handling": 3,
     "speed": 2,
     "acceleration": 1,
@@ -4660,12 +4805,13 @@
     },
     "cost": [220000],
     "source": "Rigger 5",
-    "page": 144
+    "page": 144,
+    "type": "Drone",
+    "subtype": "Drones: Huge"
   },
   {
     "name": "Ares KN-Y1: Phobos (Huge)",
     "description": "",
-    "category": "Drones: Huge",
     "handling": 3,
     "speed": 2,
     "acceleration": 1,
@@ -4701,12 +4847,13 @@
     },
     "cost": [250000],
     "source": "Rigger 5",
-    "page": 144
+    "page": 144,
+    "type": "Drone",
+    "subtype": "Drones: Huge"
   },
   {
     "name": "Ares KN-Y4: Eris (Huge)",
     "description": "",
-    "category": "Drones: Huge",
     "handling": 3,
     "speed": 2,
     "acceleration": 1,
@@ -4754,12 +4901,13 @@
     },
     "cost": [270000],
     "source": "Rigger 5",
-    "page": 144
+    "page": 144,
+    "type": "Drone",
+    "subtype": "Drones: Huge"
   },
   {
     "name": "Mesametric Kodiak (Huge)",
     "description": "",
-    "category": "Drones: Huge",
     "handling": {
       "onRoad": 2,
       "offRoad": 4
@@ -4788,12 +4936,13 @@
     },
     "cost": [40000],
     "source": "Rigger 5",
-    "page": 145
+    "page": 145,
+    "type": "Drone",
+    "subtype": "Drones: Huge"
   },
   {
     "name": "NeoNET Avenging Angel (Huge)",
     "description": "",
-    "category": "Drones: Huge",
     "handling": 3,
     "speed": 6,
     "acceleration": 2,
@@ -4822,12 +4971,13 @@
     },
     "cost": [1000000],
     "source": "Rigger 5",
-    "page": 145
+    "page": 145,
+    "type": "Drone",
+    "subtype": "Drones: Huge"
   },
   {
     "name": "Criado Juan",
     "description": "",
-    "category": "Drones: Anthro",
     "handling": 2,
     "speed": 2,
     "acceleration": 1,
@@ -4847,12 +4997,13 @@
     },
     "cost": [8000],
     "source": "Rigger 5",
-    "page": 146
+    "page": 146,
+    "type": "Drone",
+    "subtype": "Drones: Anthro"
   },
   {
     "name": "Horizon Little Buddy",
     "description": "",
-    "category": "Drones: Anthro",
     "handling": 2,
     "speed": 1,
     "acceleration": 1,
@@ -4877,12 +5028,13 @@
     },
     "cost": [2000],
     "source": "Rigger 5",
-    "page": 146
+    "page": 146,
+    "type": "Drone",
+    "subtype": "Drones: Anthro"
   },
   {
     "name": "MCT Kenchiku-Kikai",
     "description": "",
-    "category": "Drones: Anthro",
     "handling": 2,
     "speed": 2,
     "acceleration": 1,
@@ -4907,12 +5059,13 @@
     },
     "cost": [20000],
     "source": "Rigger 5",
-    "page": 147
+    "page": 147,
+    "type": "Drone",
+    "subtype": "Drones: Anthro"
   },
   {
     "name": "NeoNET Juggernaut",
     "description": "",
-    "category": "Drones: Anthro",
     "handling": 3,
     "speed": 4,
     "acceleration": 1,
@@ -4946,12 +5099,13 @@
     },
     "cost": [100000],
     "source": "Rigger 5",
-    "page": 147
+    "page": 147,
+    "type": "Drone",
+    "subtype": "Drones: Anthro"
   },
   {
     "name": "Saeder-Krupp Direktionssekretar",
     "description": "",
-    "category": "Drones: Anthro",
     "handling": 4,
     "speed": 4,
     "acceleration": 2,
@@ -4971,12 +5125,13 @@
     },
     "cost": [40000],
     "source": "Rigger 5",
-    "page": 148
+    "page": 148,
+    "type": "Drone",
+    "subtype": "Drones: Anthro"
   },
   {
     "name": "Shiawase i-Doll",
     "description": "",
-    "category": "Drones: Anthro",
     "handling": 3,
     "speed": 3,
     "acceleration": 1,
@@ -5001,12 +5156,13 @@
     },
     "cost": [20000],
     "source": "Rigger 5",
-    "page": 148
+    "page": 148,
+    "type": "Drone",
+    "subtype": "Drones: Anthro"
   },
   {
     "name": "Harley-Davidson Scorpion (Chopper)",
     "description": "",
-    "category": "Bikes",
     "handling": {
       "onRoad": 4,
       "offRoad": 3
@@ -5017,25 +5173,26 @@
     "armour": 9,
     "pilot": 1,
     "sensor": 2,
+    "seats": 1,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 1,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [12000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 462
+    "page": 462,
+    "type": "Groundcraft",
+    "subtype": "Bike"
   },
   {
     "name": "Yamaha Growler (Off-Road Bike)",
     "description": "",
-    "category": "Bikes",
     "handling": {
       "onRoad": 4,
       "offRoad": 5
@@ -5049,25 +5206,26 @@
     "armour": 5,
     "pilot": 1,
     "sensor": 1,
+    "seats": 1,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 1,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [5000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 462
+    "page": 462,
+    "type": "Groundcraft",
+    "subtype": "Bike"
   },
   {
     "name": "Suzuki Mirage (Racing Bike)",
     "description": "",
-    "category": "Bikes",
     "handling": {
       "onRoad": 5,
       "offRoad": 3
@@ -5078,25 +5236,26 @@
     "armour": 6,
     "pilot": 1,
     "sensor": 2,
+    "seats": 1,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 1,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [8500],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 462
+    "page": 462,
+    "type": "Groundcraft",
+    "subtype": "Bike"
   },
   {
     "name": "Chrysler-Nissan Jackrabbit (Subcompact)",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 4,
       "offRoad": 3
@@ -5107,25 +5266,26 @@
     "armour": 4,
     "pilot": 1,
     "sensor": 2,
+    "seats": 2,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 2,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [10000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 462
+    "page": 462,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Chrysler-Nissan Journey (Car)",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 4,
       "offRoad": 3
@@ -5136,25 +5296,26 @@
     "armour": 5,
     "pilot": 1,
     "sensor": 1,
+    "seats": 4,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 4,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [17000],
     "source": "Stolen Souls",
-    "page": 186
+    "page": 186,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Eurocar Westwind 3000 (Luxury Sports Car)",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 6,
       "offRoad": 4
@@ -5165,25 +5326,26 @@
     "armour": 8,
     "pilot": 3,
     "sensor": 5,
+    "seats": 2,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 5
       }
     ],
-    "seats": 2,
     "availability": {
       "rating": [13],
       "restriction": "Legal"
     },
     "cost": [110000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 463
+    "page": 463,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Honda Spirit (Subcompact)",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 3,
       "offRoad": 2
@@ -5194,25 +5356,26 @@
     "armour": 6,
     "pilot": 1,
     "sensor": 2,
+    "seats": 2,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 2,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [12000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 463
+    "page": 463,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Honda Artemis (Car)",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 4,
       "offRoad": 2
@@ -5223,25 +5386,26 @@
     "armour": 6,
     "pilot": 1,
     "sensor": 1,
+    "seats": 4,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 4,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [17000],
     "source": "Stolen Souls",
-    "page": 186
+    "page": 186,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Saeder-Krupp LT-21 (Delivery Van)",
     "description": "",
-    "category": "Trucks",
     "handling": {
       "onRoad": 2,
       "offRoad": 1
@@ -5252,25 +5416,26 @@
     "armour": 7,
     "pilot": 2,
     "sensor": 2,
+    "seats": 2,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 2,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [31000],
     "source": "Stolen Souls",
-    "page": 186
+    "page": 186,
+    "type": "Groundcraft",
+    "subtype": "Truck/Van"
   },
   {
     "name": "Hyundai Shin-Hyung (Sport Sedan)",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 5,
       "offRoad": 4
@@ -5281,6 +5446,7 @@
     "armour": 6,
     "pilot": 1,
     "sensor": 2,
+    "seats": 4,
     "includedGear": [
       {
         "name": "Sensor Array",
@@ -5288,19 +5454,19 @@
       }
     ],
     "bodyModSlots": 4,
-    "seats": 4,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [28500],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 463
+    "page": 463,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Dodge Ram Industrial (Large) (Garbage Truck)",
     "description": "",
-    "category": "Trucks",
     "handling": {
       "onRoad": 2,
       "offRoad": 1
@@ -5311,25 +5477,26 @@
     "armour": 8,
     "pilot": 2,
     "sensor": 4,
+    "seats": 4,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 4,
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [51000],
     "source": "Stolen Souls",
-    "page": 186
+    "page": 186,
+    "type": "Groundcraft",
+    "subtype": "Truck/Van"
   },
   {
     "name": "Dodge Ram Industrial (Narrow) (Garbage Truck)",
     "description": "",
-    "category": "Trucks",
     "handling": {
       "onRoad": 3,
       "offRoad": 1
@@ -5340,25 +5507,26 @@
     "armour": 8,
     "pilot": 2,
     "sensor": 4,
+    "seats": 4,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 4,
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [49000],
     "source": "Stolen Souls",
-    "page": 186
+    "page": 186,
+    "type": "Groundcraft",
+    "subtype": "Truck/Van"
   },
   {
     "name": "Esprit Industries Watcher (SUV)",
     "description": "",
-    "category": "Trucks",
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -5369,25 +5537,26 @@
     "armour": 8,
     "pilot": 1,
     "sensor": 3,
+    "seats": 5,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 5,
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [40000],
     "source": "Stolen Souls",
-    "page": 186
+    "page": 186,
+    "type": "Groundcraft",
+    "subtype": "Truck/Van"
   },
   {
     "name": "Mitsubishi Nightsky (Limousine)",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 4,
       "offRoad": 3
@@ -5398,25 +5567,26 @@
     "armour": 15,
     "pilot": 3,
     "sensor": 5,
+    "seats": 8,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 5
       }
     ],
-    "seats": 8,
     "availability": {
       "rating": [16],
       "restriction": "Legal"
     },
     "cost": [320000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 463
+    "page": 463,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Ford Americar (Sedan)",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 4,
       "offRoad": 3
@@ -5427,25 +5597,26 @@
     "armour": 6,
     "pilot": 1,
     "sensor": 2,
+    "seats": 4,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 4,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [16000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 463
+    "page": 463,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Saeder-Krupp-Bentley Concordat (Luxury Sedan)",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 5,
       "offRoad": 4
@@ -5456,25 +5627,26 @@
     "armour": 12,
     "pilot": 2,
     "sensor": 4,
+    "seats": 4,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 4
       }
     ],
-    "seats": 4,
     "availability": {
       "rating": [10],
       "restriction": "Legal"
     },
     "cost": [65000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 463
+    "page": 463,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Rover 2072 (SUV)",
     "description": "",
-    "category": "Trucks",
     "handling": {
       "onRoad": 5,
       "offRoad": 5
@@ -5485,25 +5657,26 @@
     "armour": 12,
     "pilot": 2,
     "sensor": 4,
+    "seats": 6,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 4
       }
     ],
-    "seats": 6,
     "availability": {
       "rating": [10],
       "restriction": "Legal"
     },
     "cost": [68000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 464
+    "page": 464,
+    "type": "Groundcraft",
+    "subtype": "Truck/Van"
   },
   {
     "name": "Toyota Gopher (Heavy-Duty Pickup)",
     "description": "",
-    "category": "Trucks",
     "handling": {
       "onRoad": 5,
       "offRoad": 5
@@ -5514,25 +5687,26 @@
     "armour": 10,
     "pilot": 1,
     "sensor": 2,
+    "seats": 3,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 3,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [25000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 463
+    "page": 463,
+    "type": "Groundcraft",
+    "subtype": "Truck/Van"
   },
   {
     "name": "GMC Bulldog Step-Van (Van)",
     "description": "",
-    "category": "Trucks",
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -5543,6 +5717,7 @@
     "armour": 12,
     "pilot": 1,
     "sensor": 2,
+    "seats": 6,
     "includedGear": [
       {
         "name": "Sensor Array",
@@ -5550,19 +5725,19 @@
       }
     ],
     "bodyModSlots": 4,
-    "seats": 6,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [35000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 463
+    "page": 463,
+    "type": "Groundcraft",
+    "subtype": "Truck/Van"
   },
   {
     "name": "GMC Endurance (Van)",
     "description": "",
-    "category": "Trucks",
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -5573,25 +5748,26 @@
     "armour": 6,
     "pilot": 1,
     "sensor": 2,
+    "seats": 8,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 8,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [35000],
     "source": "Stolen Souls",
-    "page": 186
+    "page": 186,
+    "type": "Groundcraft",
+    "subtype": "Truck/Van"
   },
   {
     "name": "GMC Sidewinder (SUV)",
     "description": "",
-    "category": "Trucks",
     "handling": {
       "onRoad": 4,
       "offRoad": 3
@@ -5602,25 +5778,26 @@
     "armour": 6,
     "pilot": 2,
     "sensor": 2,
+    "seats": 6,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 6,
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [33000],
     "source": "Stolen Souls",
-    "page": 186
+    "page": 186,
+    "type": "Groundcraft",
+    "subtype": "Truck/Van"
   },
   {
     "name": "Ares Roadmaster (Armored Transport)",
     "description": "",
-    "category": "Trucks",
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -5631,25 +5808,26 @@
     "armour": 18,
     "pilot": 3,
     "sensor": 3,
+    "seats": 8,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 8,
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [52000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 464
+    "page": 464,
+    "type": "Groundcraft",
+    "subtype": "Truck/Van"
   },
   {
     "name": "Conestoga Trailblazer (Moving Truck)",
     "description": "",
-    "category": "Trucks",
     "handling": {
       "onRoad": 2,
       "offRoad": 1
@@ -5660,25 +5838,26 @@
     "armour": 6,
     "pilot": 2,
     "sensor": 1,
+    "seats": 2,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 1
       }
     ],
-    "seats": 2,
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [75000],
     "source": "Stolen Souls",
-    "page": 186
+    "page": 186,
+    "type": "Groundcraft",
+    "subtype": "Truck/Van"
   },
   {
     "name": "Conestoga Trailblazer w/Trailer (Moving Truck)",
     "description": "",
-    "category": "Trucks",
     "handling": {
       "onRoad": 1,
       "offRoad": 1
@@ -5689,25 +5868,26 @@
     "armour": 6,
     "pilot": 2,
     "sensor": 1,
+    "seats": 2,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 1
       }
     ],
-    "seats": 2,
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [95000],
     "source": "Stolen Souls",
-    "page": 186
+    "page": 186,
+    "type": "Groundcraft",
+    "subtype": "Truck/Van"
   },
   {
     "name": "Samuvani Criscraft Otter (Sport Cruiser)",
     "description": "",
-    "category": "Boats",
     "handling": 4,
     "speed": 3,
     "acceleration": 2,
@@ -5715,25 +5895,26 @@
     "armour": 6,
     "pilot": 2,
     "sensor": 2,
+    "seats": 8,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 8,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [21000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 464
+    "page": 464,
+    "type": "Watercraft",
+    "subtype": "Boat"
   },
   {
     "name": "Yongkang Gala Trinity (Speedboat)",
     "description": "",
-    "category": "Boats",
     "handling": 5,
     "speed": 6,
     "acceleration": 3,
@@ -5741,25 +5922,26 @@
     "armour": 6,
     "pilot": 1,
     "sensor": 1,
+    "seats": 3,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 1
       }
     ],
-    "seats": 3,
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [37000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 464
+    "page": 464,
+    "type": "Watercraft",
+    "subtype": "Boat"
   },
   {
     "name": "Morgan Cutlass (Patrol Boat)",
     "description": "",
-    "category": "Boats",
     "handling": 5,
     "speed": 4,
     "acceleration": 2,
@@ -5767,13 +5949,13 @@
     "armour": 10,
     "pilot": 3,
     "sensor": 5,
+    "seats": 6,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 5
       }
     ],
-    "seats": 6,
     "weaponMountList": [
       {
         "control": "Armored Manual",
@@ -5794,12 +5976,13 @@
     },
     "cost": [96000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 454
+    "page": 454,
+    "type": "Watercraft",
+    "subtype": "Boat"
   },
   {
     "name": "Proteus Lamprey (Sea Sled)",
     "description": "",
-    "category": "Submarines",
     "handling": 3,
     "speed": 2,
     "acceleration": 1,
@@ -5807,25 +5990,26 @@
     "armour": 6,
     "pilot": 1,
     "sensor": 3,
+    "seats": 4,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 4,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [14000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 464
+    "page": 464,
+    "type": "Watercraft",
+    "subtype": "Submarine"
   },
   {
     "name": "Vulkan Electronaut (Mini-sub)",
     "description": "",
-    "category": "Submarines",
     "handling": 3,
     "speed": 3,
     "acceleration": 1,
@@ -5833,25 +6017,26 @@
     "armour": 10,
     "pilot": 4,
     "sensor": 4,
+    "seats": 2,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 4
       }
     ],
-    "seats": 2,
     "availability": {
       "rating": [10],
       "restriction": "Legal"
     },
     "cost": [108000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 464
+    "page": 464,
+    "type": "Watercraft",
+    "subtype": "Submarine"
   },
   {
     "name": "Artemis Industries Nightwing (Glider)",
     "description": "",
-    "category": "Fixed-Wing Aircraft",
     "handling": 6,
     "speed": 3,
     "acceleration": 1,
@@ -5859,25 +6044,26 @@
     "armour": 0,
     "pilot": 1,
     "sensor": 1,
+    "seats": 1,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 1,
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [20000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 464
+    "page": 464,
+    "type": "Aircraft",
+    "subtype": "Fixed-Wing Aircraft"
   },
   {
     "name": "Cessna C750 (Twin-Prop Airplane)",
     "description": "",
-    "category": "Fixed-Wing Aircraft",
     "handling": 3,
     "speed": 5,
     "acceleration": 3,
@@ -5885,25 +6071,26 @@
     "armour": 4,
     "pilot": 2,
     "sensor": 2,
+    "seats": 4,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 4,
     "availability": {
       "rating": [8],
       "restriction": "Legal"
     },
     "cost": [146000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 464
+    "page": 464,
+    "type": "Aircraft",
+    "subtype": "Fixed-Wing Aircraft"
   },
   {
     "name": "Renault-Fiat Fokker Tundra-9 (Amphibious Jet)",
     "description": "",
-    "category": "Fixed-Wing Aircraft",
     "handling": 2,
     "speed": 4,
     "acceleration": 3,
@@ -5911,25 +6098,26 @@
     "armour": 10,
     "pilot": 3,
     "sensor": 3,
+    "seats": 24,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 24,
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [300000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 464
+    "page": 464,
+    "type": "Aircraft",
+    "subtype": "Fixed-Wing Aircraft"
   },
   {
     "name": "Ares Dragon (Cargo Helicopter)",
     "description": "",
-    "category": "Rotorcraft",
     "handling": 4,
     "speed": 4,
     "acceleration": 3,
@@ -5937,25 +6125,26 @@
     "armour": 8,
     "pilot": 3,
     "sensor": 3,
+    "seats": 18,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 18,
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [355000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 464
+    "page": 464,
+    "type": "Aircraft",
+    "subtype": "Rotorcraft"
   },
   {
     "name": "Nissan Hound (Transport Helicopter)",
     "description": "",
-    "category": "Rotorcraft",
     "handling": 5,
     "speed": 4,
     "acceleration": 3,
@@ -5963,13 +6152,13 @@
     "armour": 16,
     "pilot": 2,
     "sensor": 4,
+    "seats": 12,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 4
       }
     ],
-    "seats": 12,
     "weaponMountList": [
       {
         "control": "Remote",
@@ -5990,12 +6179,13 @@
     },
     "cost": [425000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 464
+    "page": 464,
+    "type": "Aircraft",
+    "subtype": "Rotorcraft"
   },
   {
     "name": "Northrup Wasp (Autogyro)",
     "description": "",
-    "category": "Rotorcraft",
     "handling": 5,
     "speed": 5,
     "acceleration": 3,
@@ -6003,13 +6193,13 @@
     "armour": 8,
     "pilot": 3,
     "sensor": 3,
+    "seats": 1,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 1,
     "weaponMountList": [
       {
         "control": "Remote",
@@ -6024,12 +6214,13 @@
     },
     "cost": [86000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 465
+    "page": 465,
+    "type": "Aircraft",
+    "subtype": "Rotorcraft"
   },
   {
     "name": "Ares Venture (LAV)",
     "description": "",
-    "category": "VTOL/VSTOL",
     "handling": 5,
     "speed": 7,
     "acceleration": 4,
@@ -6037,25 +6228,26 @@
     "armour": 14,
     "pilot": 4,
     "sensor": 4,
+    "seats": 6,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 4
       }
     ],
-    "seats": 6,
     "availability": {
       "rating": [12],
       "restriction": "Forbidden"
     },
     "cost": [400000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 465
+    "page": 465,
+    "type": "Aircraft",
+    "subtype": "VTOL/VSTOL"
   },
   {
     "name": "GMC Banshee (Thunderbird)",
     "description": "",
-    "category": "VTOL/VSTOL",
     "handling": 6,
     "speed": 8,
     "acceleration": 4,
@@ -6063,25 +6255,26 @@
     "armour": 18,
     "pilot": 4,
     "sensor": 6,
+    "seats": 12,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 6
       }
     ],
-    "seats": 12,
     "availability": {
       "rating": [24],
       "restriction": "Forbidden"
     },
     "cost": [2500000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 465
+    "page": 465,
+    "type": "Aircraft",
+    "subtype": "VTOL/VSTOL"
   },
   {
     "name": "Federated Boeing Commuter (Tilt-Wing Airplane)",
     "description": "",
-    "category": "VTOL/VSTOL",
     "handling": 3,
     "speed": 3,
     "acceleration": 3,
@@ -6089,25 +6282,26 @@
     "armour": 8,
     "pilot": 3,
     "sensor": 3,
+    "seats": 30,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 30,
     "availability": {
       "rating": [10],
       "restriction": "Legal"
     },
     "cost": [350000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 465
+    "page": 465,
+    "type": "Aircraft",
+    "subtype": "VTOL/VSTOL"
   },
   {
     "name": "Shiawase Kanmushi (Microdrone)",
     "description": "",
-    "category": "Drones: Micro",
     "handling": 4,
     "speed": 2,
     "acceleration": 1,
@@ -6127,12 +6321,13 @@
     },
     "cost": [1000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 465
+    "page": 465,
+    "type": "Drone",
+    "subtype": "Drones: Micro"
   },
   {
     "name": "Sikorsky-Bell Microskimmer (Microdrone)",
     "description": "",
-    "category": "Drones: Micro",
     "handling": 3,
     "speed": 3,
     "acceleration": 1,
@@ -6152,12 +6347,13 @@
     },
     "cost": [1000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 465
+    "page": 465,
+    "type": "Drone",
+    "subtype": "Drones: Micro"
   },
   {
     "name": "Horizon Flying Eye (Minidrone)",
     "description": "",
-    "category": "Drones: Mini",
     "handling": 4,
     "speed": 3,
     "acceleration": 2,
@@ -6177,12 +6373,13 @@
     },
     "cost": [2000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 465
+    "page": 465,
+    "type": "Drone",
+    "subtype": "Drones: Mini"
   },
   {
     "name": "Horizon Flying Eye w/Flash-Pak and Grenade (Minidrone)",
     "description": "",
-    "category": "Drones: Mini",
     "handling": 4,
     "speed": 3,
     "acceleration": 2,
@@ -6208,12 +6405,13 @@
     },
     "cost": [2500],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 465
+    "page": 465,
+    "type": "Drone",
+    "subtype": "Drones: Mini"
   },
   {
     "name": "Ocular Drone",
     "description": "",
-    "category": "Drones: Mini",
     "handling": 4,
     "speed": 3,
     "acceleration": 2,
@@ -6234,12 +6432,13 @@
     },
     "cost": [0],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 453
+    "page": 453,
+    "type": "Drone",
+    "subtype": "Drones: Mini"
   },
   {
     "name": "MCT Fly-Spy (Minidrone)",
     "description": "",
-    "category": "Drones: Mini",
     "handling": 4,
     "speed": 3,
     "acceleration": 2,
@@ -6259,12 +6458,13 @@
     },
     "cost": [2000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 466
+    "page": 466,
+    "type": "Drone",
+    "subtype": "Drones: Mini"
   },
   {
     "name": "Aztechnology Crawler (Small)",
     "description": "",
-    "category": "Drones: Small",
     "handling": 4,
     "speed": 3,
     "acceleration": 1,
@@ -6284,12 +6484,13 @@
     },
     "cost": [4000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 466
+    "page": 466,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "Lockheed Optic-X2 (Small)",
     "description": "",
-    "category": "Drones: Small",
     "handling": 4,
     "speed": 4,
     "acceleration": 3,
@@ -6309,12 +6510,13 @@
     },
     "cost": [21000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 466
+    "page": 466,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "Cyberspace Designs Dragonfly (Small)",
     "description": "",
-    "category": "Drones: Small",
     "handling": 4,
     "speed": 3,
     "acceleration": 2,
@@ -6335,12 +6537,13 @@
     },
     "cost": [2500],
     "source": "Stolen Souls",
-    "page": 179
+    "page": 179,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "Ares Duelist (Medium)",
     "description": "",
-    "category": "Drones: Anthro",
     "handling": 3,
     "speed": 3,
     "acceleration": 1,
@@ -6382,12 +6585,13 @@
     },
     "cost": [4500],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 466
+    "page": 466,
+    "type": "Drone",
+    "subtype": "Drones: Anthro"
   },
   {
     "name": "Bust-A-Move (2nd Generation) (Medium)",
     "description": "",
-    "category": "Drones: Medium",
     "handling": 4,
     "speed": 3,
     "acceleration": 1,
@@ -6412,12 +6616,13 @@
       }
     },
     "source": "Stolen Souls",
-    "page": 178
+    "page": 178,
+    "type": "Drone",
+    "subtype": "Drones: Medium"
   },
   {
     "name": "Transys Office Maid (Medium)",
     "description": "",
-    "category": "Drones: Medium",
     "handling": 3,
     "speed": 3,
     "acceleration": 2,
@@ -6437,12 +6642,13 @@
     },
     "cost": [8000],
     "source": "Stolen Souls",
-    "page": 179
+    "page": 179,
+    "type": "Drone",
+    "subtype": "Drones: Medium"
   },
   {
     "name": "GM-Nissan Doberman (Medium)",
     "description": "",
-    "category": "Drones: Medium",
     "handling": 5,
     "speed": 3,
     "acceleration": 1,
@@ -6470,12 +6676,13 @@
     },
     "cost": [5000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 466
+    "page": 466,
+    "type": "Drone",
+    "subtype": "Drones: Medium"
   },
   {
     "name": "MCT-Nissan Roto-drone (Medium)",
     "description": "",
-    "category": "Drones: Medium",
     "handling": 4,
     "speed": 4,
     "acceleration": 2,
@@ -6497,12 +6704,13 @@
     },
     "cost": [5000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 466
+    "page": 466,
+    "type": "Drone",
+    "subtype": "Drones: Medium"
   },
   {
     "name": "Cyberspace Designs Dalmatian (Large)",
     "description": "",
-    "category": "Drones: Large",
     "handling": 5,
     "speed": 5,
     "acceleration": 3,
@@ -6522,12 +6730,13 @@
     },
     "cost": [10000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 466
+    "page": 466,
+    "type": "Drone",
+    "subtype": "Drones: Large"
   },
   {
     "name": "GMC Snatch'n'Grab (Large)",
     "description": "",
-    "category": "Drones: Large",
     "handling": 3,
     "speed": 4,
     "acceleration": 2,
@@ -6547,12 +6756,13 @@
     },
     "cost": [8000],
     "source": "Stolen Souls",
-    "page": 179
+    "page": 179,
+    "type": "Drone",
+    "subtype": "Drones: Large"
   },
   {
     "name": "Modified Dassault Janitorial Drone (Large)",
     "description": "",
-    "category": "Drones: Large",
     "handling": 2,
     "speed": 2,
     "acceleration": 2,
@@ -6572,12 +6782,13 @@
     },
     "cost": [10000],
     "source": "Stolen Souls",
-    "page": 179
+    "page": 179,
+    "type": "Drone",
+    "subtype": "Drones: Large"
   },
   {
     "name": "Modified Renraku Manservant-3 (Large)",
     "description": "",
-    "category": "Drones: Anthro",
     "handling": 2,
     "speed": 2,
     "acceleration": 2,
@@ -6597,12 +6808,13 @@
     },
     "cost": [9000],
     "source": "Stolen Souls",
-    "page": 180
+    "page": 180,
+    "type": "Drone",
+    "subtype": "Drones: Anthro"
   },
   {
     "name": "Steel Lynx Combat Drone (Large)",
     "description": "",
-    "category": "Drones: Large",
     "handling": 5,
     "speed": 4,
     "acceleration": 2,
@@ -6630,12 +6842,13 @@
     },
     "cost": [25000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 466
+    "page": 466,
+    "type": "Drone",
+    "subtype": "Drones: Large"
   },
   {
     "name": "Aeroquip M.E.D.-1 'Dustoff' Medical Evacuation Drone (Large)",
     "description": "",
-    "category": "Drones: Large",
     "handling": 3,
     "speed": 4,
     "acceleration": 4,
@@ -6655,12 +6868,13 @@
     },
     "cost": [12000],
     "source": "Bullets And Bandages",
-    "page": 23
+    "page": 23,
+    "type": "Drone",
+    "subtype": "Drones: Large"
   },
   {
     "name": "Shiawase Caduceus 'CAD' 7 (Medium)",
     "description": "",
-    "category": "Drones: Anthro",
     "handling": 4,
     "speed": 2,
     "acceleration": 1,
@@ -6684,12 +6898,13 @@
     },
     "cost": [16500],
     "source": "Bullets And Bandages",
-    "page": 23
+    "page": 23,
+    "type": "Drone",
+    "subtype": "Drones: Anthro"
   },
   {
     "name": "F-B Bumblebee",
     "description": "",
-    "category": "Drones: Medium",
     "handling": 3,
     "speed": 2,
     "acceleration": 1,
@@ -6724,12 +6939,13 @@
     },
     "cost": [24000],
     "source": "Nothing Personal",
-    "page": 23
+    "page": 23,
+    "type": "Drone",
+    "subtype": "Drones: Medium"
   },
   {
     "name": "Cocotaxi",
     "description": "",
-    "category": "Bikes",
     "handling": {
       "onRoad": 4,
       "offRoad": 2
@@ -6740,25 +6956,26 @@
     "armour": 4,
     "pilot": 1,
     "sensor": 1,
+    "seats": 3,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 1
       }
     ],
-    "seats": 3,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [4000],
     "source": "Hard Targets",
-    "page": 139
+    "page": 139,
+    "type": "Groundcraft",
+    "subtype": "Bike"
   },
   {
     "name": "Camellos",
     "description": "",
-    "category": "Municipal/Construction",
     "handling": {
       "onRoad": 3,
       "offRoad": 2
@@ -6769,25 +6986,26 @@
     "armour": 5,
     "pilot": 1,
     "sensor": 2,
+    "seats": 200,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 200,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [150000],
     "source": "Hard Targets",
-    "page": 139
+    "page": 139,
+    "type": "Groundcraft",
+    "subtype": "Municipal/Construction"
   },
   {
     "name": "Ares Garuda",
     "description": "",
-    "category": "Drones: Missile",
     "handling": 6,
     "speed": {
       "onRoad": 3,
@@ -6813,12 +7031,13 @@
     },
     "cost": [8500],
     "source": "Rigger 5",
-    "page": 149
+    "page": 149,
+    "type": "Drone",
+    "subtype": "Drones: Missile"
   },
   {
     "name": "Remote Cyberhand",
     "description": "",
-    "category": "Drones: Mini",
     "handling": 0,
     "speed": 0,
     "acceleration": 0,
@@ -6833,12 +7052,13 @@
     },
     "cost": [0],
     "source": "Rigger 5",
-    "page": 130
+    "page": 130,
+    "type": "Drone",
+    "subtype": "Drones: Mini"
   },
   {
     "name": "Ammo Drone (Small)",
     "description": "",
-    "category": "Drones: Small",
     "handling": 2,
     "speed": 2,
     "acceleration": 2,
@@ -6863,12 +7083,13 @@
     },
     "cost": [3000],
     "source": "Hard Targets",
-    "page": 189
+    "page": 189,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "Reloading Drone (Medium)",
     "description": "",
-    "category": "Drones: Medium",
     "handling": 4,
     "speed": 3,
     "acceleration": 2,
@@ -6888,12 +7109,13 @@
     },
     "cost": [4500],
     "source": "Hard Targets",
-    "page": 190
+    "page": 190,
+    "type": "Drone",
+    "subtype": "Drones: Medium"
   },
   {
     "name": "Mitsuhama Akiyama (Medium)",
     "description": "",
-    "category": "Drones: Anthro",
     "handling": 5,
     "speed": 3,
     "acceleration": 2,
@@ -6913,12 +7135,13 @@
     },
     "cost": [200000],
     "source": "Hard Targets",
-    "page": 190
+    "page": 190,
+    "type": "Drone",
+    "subtype": "Drones: Anthro"
   },
   {
     "name": "Sparring Drone (Large)",
     "description": "",
-    "category": "Drones: Anthro",
     "handling": 3,
     "speed": 2,
     "acceleration": 2,
@@ -6953,12 +7176,13 @@
     },
     "cost": [5000],
     "source": "Hard Targets",
-    "page": 190
+    "page": 190,
+    "type": "Drone",
+    "subtype": "Drones: Anthro"
   },
   {
     "name": "Clockwork Greyhound",
     "description": "",
-    "category": "Drones: Medium",
     "handling": 3,
     "speed": 2,
     "acceleration": 1,
@@ -6978,12 +7202,13 @@
     },
     "cost": [225000],
     "source": "The Vladivostok Gauntlet",
-    "page": 19
+    "page": 19,
+    "type": "Drone",
+    "subtype": "Drones: Medium"
   },
   {
     "name": "Holo-Conference Drone (Small)",
     "description": "",
-    "category": "Drones: Small",
     "handling": 3,
     "speed": 2,
     "acceleration": 1,
@@ -7003,12 +7228,13 @@
     },
     "cost": [18000],
     "source": "Cutting Aces",
-    "page": 147
+    "page": 147,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "Medusa Extensions (Mini)",
     "description": "",
-    "category": "Drones: Mini",
     "handling": 1,
     "speed": 0,
     "acceleration": 0,
@@ -7028,12 +7254,13 @@
     },
     "cost": [600],
     "source": "Cutting Aces",
-    "page": 147
+    "page": 147,
+    "type": "Drone",
+    "subtype": "Drones: Mini"
   },
   {
     "name": "Microweave Spider (Mini)",
     "description": "",
-    "category": "Drones: Mini",
     "handling": 4,
     "speed": 1,
     "acceleration": 1,
@@ -7062,12 +7289,13 @@
     },
     "cost": [18000],
     "source": "Cutting Aces",
-    "page": 147
+    "page": 147,
+    "type": "Drone",
+    "subtype": "Drones: Mini"
   },
   {
     "name": "BMW Trollhammer",
     "description": "",
-    "category": "Bikes",
     "handling": {
       "onRoad": 4,
       "offRoad": 3
@@ -7078,25 +7306,26 @@
     "armour": 8,
     "pilot": 1,
     "sensor": 2,
+    "seats": 1,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 1,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [12500],
     "source": "The Complete Trog",
-    "page": 184
+    "page": 184,
+    "type": "Groundcraft",
+    "subtype": "Bike"
   },
   {
     "name": "Ford Titan",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 3,
       "offRoad": 2
@@ -7107,25 +7336,26 @@
     "armour": 8,
     "pilot": 2,
     "sensor": 2,
+    "seats": 8,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 8,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [32500],
     "source": "The Complete Trog",
-    "page": 184
+    "page": 184,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Avibras-Nissan AN 822",
     "description": "",
-    "category": "Rotorcraft",
     "handling": 5,
     "speed": 6,
     "acceleration": 0,
@@ -7133,6 +7363,7 @@
     "armour": 10,
     "pilot": 3,
     "sensor": 3,
+    "seats": 5,
     "includedGear": [
       {
         "name": "Sensor Array",
@@ -7154,19 +7385,19 @@
         "rating": 2
       }
     ],
-    "seats": 5,
     "availability": {
       "rating": [10],
       "restriction": "Legal"
     },
     "cost": [221500],
     "source": "Shadows In Focus: Metropole",
-    "page": 31
+    "page": 31,
+    "type": "Aircraft",
+    "subtype": "Rotorcraft"
   },
   {
     "name": "Lone Star SecureSector Mk2",
     "description": "",
-    "category": "Drones: Small",
     "handling": 5,
     "speed": 4,
     "acceleration": 2,
@@ -7190,12 +7421,13 @@
     },
     "cost": [5000],
     "source": "The Seattle Gambit",
-    "page": 29
+    "page": 29,
+    "type": "Drone",
+    "subtype": "Drones: Small"
   },
   {
     "name": "Maersk Shipyards Wavecutter MPAC",
     "description": "",
-    "category": "Boats",
     "handling": 5,
     "speed": 5,
     "acceleration": 3,
@@ -7203,6 +7435,7 @@
     "armour": 25,
     "pilot": 4,
     "sensor": 5,
+    "seats": 12,
     "includedGear": [
       {
         "name": "Sensor Array",
@@ -7215,19 +7448,19 @@
     ],
     "weaponModSlots": 4,
     "bodyModSlots": 4,
-    "seats": 12,
     "availability": {
       "rating": [22],
       "restriction": "Forbidden"
     },
     "cost": [360000],
     "source": "Street Lethal",
-    "page": 131
+    "page": 131,
+    "type": "Watercraft",
+    "subtype": "Boat"
   },
   {
     "name": "Corporate Mobile Command Center (Ares Roadmaster)",
     "description": "",
-    "category": "Corpsec/Police/Military",
     "handling": {
       "onRoad": 5,
       "offRoad": 5
@@ -7238,25 +7471,26 @@
     "armour": 27,
     "pilot": 5,
     "sensor": 5,
+    "seats": 12,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 5
       }
     ],
-    "seats": 12,
     "availability": {
       "rating": [12],
       "restriction": "Restricted"
     },
     "cost": [78000],
     "source": "Stolen Souls",
-    "page": 187
+    "page": 187,
+    "type": "Groundcraft",
+    "subtype": "Corpsec/Police/Military"
   },
   {
     "name": "Law Enforcement Patrol Cruiser (Chrysler-Nissan Journey)",
     "description": "",
-    "category": "Corpsec/Police/Military",
     "handling": {
       "onRoad": 6,
       "offRoad": 5
@@ -7267,25 +7501,26 @@
     "armour": 8,
     "pilot": 2,
     "sensor": 2,
+    "seats": 6,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 6,
     "availability": {
       "rating": [6],
       "restriction": "Restricted"
     },
     "cost": [25500],
     "source": "Stolen Souls",
-    "page": 187
+    "page": 187,
+    "type": "Groundcraft",
+    "subtype": "Corpsec/Police/Military"
   },
   {
     "name": "Corporate Moving Truck (Conestoga Trailblazer)",
     "description": "",
-    "category": "Corpsec/Police/Military",
     "handling": {
       "onRoad": 3,
       "offRoad": 2
@@ -7296,25 +7531,26 @@
     "armour": 9,
     "pilot": 3,
     "sensor": 2,
+    "seats": 3,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 3,
     "availability": {
       "rating": [6],
       "restriction": "Restricted"
     },
     "cost": [112500],
     "source": "Stolen Souls",
-    "page": 187
+    "page": 187,
+    "type": "Groundcraft",
+    "subtype": "Corpsec/Police/Military"
   },
   {
     "name": "Corporate Moving Truck w/Trailer (Conestoga Trailblazer)",
     "description": "",
-    "category": "Corpsec/Police/Military",
     "handling": {
       "onRoad": 2,
       "offRoad": 2
@@ -7325,25 +7561,26 @@
     "armour": 9,
     "pilot": 3,
     "sensor": 2,
+    "seats": 3,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 3,
     "availability": {
       "rating": [6],
       "restriction": "Restricted"
     },
     "cost": [142500],
     "source": "Stolen Souls",
-    "page": 187
+    "page": 187,
+    "type": "Groundcraft",
+    "subtype": "Corpsec/Police/Military"
   },
   {
     "name": "Corporate Garbage Hauler (Dodge Ram Industrial: Large)",
     "description": "",
-    "category": "Corpsec/Police/Military",
     "handling": {
       "onRoad": 3,
       "offRoad": 2
@@ -7354,25 +7591,26 @@
     "armour": 12,
     "pilot": 3,
     "sensor": 6,
+    "seats": 6,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 4
       }
     ],
-    "seats": 6,
     "availability": {
       "rating": [6],
       "restriction": "Restricted"
     },
     "cost": [76500],
     "source": "Stolen Souls",
-    "page": 187
+    "page": 187,
+    "type": "Groundcraft",
+    "subtype": "Corpsec/Police/Military"
   },
   {
     "name": "Corporate Garbage Hauler (Dodge Ram Industrial: Narrow)",
     "description": "",
-    "category": "Corpsec/Police/Military",
     "handling": {
       "onRoad": 5,
       "offRoad": 2
@@ -7383,25 +7621,26 @@
     "armour": 12,
     "pilot": 3,
     "sensor": 6,
+    "seats": 6,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 4
       }
     ],
-    "seats": 6,
     "availability": {
       "rating": [6],
       "restriction": "Restricted"
     },
     "cost": [73500],
     "source": "Stolen Souls",
-    "page": 187
+    "page": 187,
+    "type": "Groundcraft",
+    "subtype": "Corpsec/Police/Military"
   },
   {
     "name": "Government Black SUV (Esprit Industries Watcher)",
     "description": "",
-    "category": "Corpsec/Police/Military",
     "handling": {
       "onRoad": 5,
       "offRoad": 5
@@ -7412,25 +7651,26 @@
     "armour": 12,
     "pilot": 2,
     "sensor": 5,
+    "seats": 8,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 4
       }
     ],
-    "seats": 8,
     "availability": {
       "rating": [6],
       "restriction": "Restricted"
     },
     "cost": [60000],
     "source": "Stolen Souls",
-    "page": 187
+    "page": 187,
+    "type": "Groundcraft",
+    "subtype": "Corpsec/Police/Military"
   },
   {
     "name": "Corporate Ambulance (GMC Endurance)",
     "description": "",
-    "category": "Corpsec/Police/Military",
     "handling": {
       "onRoad": 5,
       "offRoad": 5
@@ -7441,25 +7681,26 @@
     "armour": 9,
     "pilot": 2,
     "sensor": 3,
+    "seats": 12,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 12,
     "availability": {
       "rating": [4],
       "restriction": "Restricted"
     },
     "cost": [52500],
     "source": "Stolen Souls",
-    "page": 187
+    "page": 187,
+    "type": "Groundcraft",
+    "subtype": "Corpsec/Police/Military"
   },
   {
     "name": "Government Pursuit SUV (GMC Sidewinder)",
     "description": "",
-    "category": "Corpsec/Police/Military",
     "handling": {
       "onRoad": 6,
       "offRoad": 5
@@ -7470,25 +7711,26 @@
     "armour": 9,
     "pilot": 3,
     "sensor": 3,
+    "seats": 9,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 4
       }
     ],
-    "seats": 9,
     "availability": {
       "rating": [6],
       "restriction": "Restricted"
     },
     "cost": [49500],
     "source": "Stolen Souls",
-    "page": 187
+    "page": 187,
+    "type": "Groundcraft",
+    "subtype": "Corpsec/Police/Military"
   },
   {
     "name": "Corporate Patrol Cruiser (Honda Artemis)",
     "description": "",
-    "category": "Corpsec/Police/Military",
     "handling": {
       "onRoad": 6,
       "offRoad": 3
@@ -7499,25 +7741,26 @@
     "armour": 9,
     "pilot": 2,
     "sensor": 2,
+    "seats": 6,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 6,
     "availability": {
       "rating": [4],
       "restriction": "Restricted"
     },
     "cost": [25500],
     "source": "Stolen Souls",
-    "page": 187
+    "page": 187,
+    "type": "Groundcraft",
+    "subtype": "Corpsec/Police/Military"
   },
   {
     "name": "Municipal Ambulance (S-K LT-21)",
     "description": "",
-    "category": "Corpsec/Police/Military",
     "handling": {
       "onRoad": 3,
       "offRoad": 2
@@ -7528,25 +7771,26 @@
     "armour": 11,
     "pilot": 3,
     "sensor": 3,
+    "seats": 3,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 3,
     "availability": {
       "rating": [4],
       "restriction": "Restricted"
     },
     "cost": [46500],
     "source": "Stolen Souls",
-    "page": 187
+    "page": 187,
+    "type": "Groundcraft",
+    "subtype": "Corpsec/Police/Military"
   },
   {
     "name": "Ford Broadcast",
     "description": "",
-    "category": "Trucks",
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -7557,25 +7801,26 @@
     "armour": 12,
     "pilot": 2,
     "sensor": 4,
+    "seats": 4,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 4,
     "availability": {
       "rating": [8],
       "restriction": "Restricted"
     },
     "cost": [50000],
     "source": "No Future",
-    "page": 174
+    "page": 174,
+    "type": "Groundcraft",
+    "subtype": "Truck/Van"
   },
   {
     "name": "Sikorsky-Bell Condor",
     "description": "",
-    "category": "Rotorcraft",
     "handling": 4,
     "speed": 4,
     "acceleration": 2,
@@ -7583,25 +7828,26 @@
     "armour": 9,
     "pilot": 2,
     "sensor": 6,
+    "seats": 2,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 3
       }
     ],
-    "seats": 2,
     "availability": {
       "rating": [12],
       "restriction": "Restricted"
     },
     "cost": [120000],
     "source": "No Future",
-    "page": 174
+    "page": 174,
+    "type": "Aircraft",
+    "subtype": "Rotorcraft"
   },
   {
     "name": "Krime Runner",
     "description": "",
-    "category": "Drones: Mini",
     "handling": 1,
     "speed": 1,
     "acceleration": 1,
@@ -7621,12 +7867,13 @@
     },
     "cost": [1000],
     "source": "Krime Katalog",
-    "page": 28
+    "page": 28,
+    "type": "Drone",
+    "subtype": "Drones: Mini"
   },
   {
     "name": "Krime Wageslave PMV",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 2,
       "offRoad": 1
@@ -7637,25 +7884,26 @@
     "armour": 5,
     "pilot": 1,
     "sensor": 1,
+    "seats": 1,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 1,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [10000],
     "source": "Krime Katalog",
-    "page": 30
+    "page": 30,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Krime Bazoo Basic",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 2,
       "offRoad": 1
@@ -7666,25 +7914,26 @@
     "armour": 5,
     "pilot": 1,
     "sensor": 1,
+    "seats": 4,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 4,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
     },
     "cost": [22000],
     "source": "Krime Katalog",
-    "page": 31
+    "page": 31,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Krime Bazoo Redline",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 2,
       "offRoad": 1
@@ -7695,25 +7944,26 @@
     "armour": 5,
     "pilot": 1,
     "sensor": 1,
+    "seats": 4,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 4,
     "availability": {
       "rating": [3],
       "restriction": "Legal"
     },
     "cost": [25000],
     "source": "Krime Katalog",
-    "page": 31
+    "page": 31,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Krime Bazoo Chrome",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 2,
       "offRoad": 1
@@ -7724,25 +7974,26 @@
     "armour": 5,
     "pilot": 1,
     "sensor": 1,
+    "seats": 4,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 4,
     "availability": {
       "rating": [7],
       "restriction": "Legal"
     },
     "cost": [40000],
     "source": "Krime Katalog",
-    "page": 31
+    "page": 31,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Krime Big Bazoo Basic",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 1,
       "offRoad": 3
@@ -7753,25 +8004,26 @@
     "armour": 6,
     "pilot": 1,
     "sensor": 1,
+    "seats": 4,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 4,
     "availability": {
       "rating": [4],
       "restriction": "Legal"
     },
     "cost": [23000],
     "source": "Krime Katalog",
-    "page": 31
+    "page": 31,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Krime Big Bazoo Redline",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 1,
       "offRoad": 3
@@ -7782,25 +8034,26 @@
     "armour": 6,
     "pilot": 1,
     "sensor": 1,
+    "seats": 4,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 4,
     "availability": {
       "rating": [5],
       "restriction": "Legal"
     },
     "cost": [26000],
     "source": "Krime Katalog",
-    "page": 31
+    "page": 31,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Krime Big Bazoo Chrome",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 1,
       "offRoad": 3
@@ -7811,25 +8064,26 @@
     "armour": 6,
     "pilot": 1,
     "sensor": 1,
+    "seats": 4,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 4,
     "availability": {
       "rating": [10],
       "restriction": "Legal"
     },
     "cost": [45000],
     "source": "Krime Katalog",
-    "page": 31
+    "page": 31,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Krime SV-2 'Crashtest'",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 3,
       "offRoad": 1
@@ -7840,25 +8094,26 @@
     "armour": 9,
     "pilot": 3,
     "sensor": 3,
+    "seats": 2,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 2,
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [120000],
     "source": "Krime Katalog",
-    "page": 32
+    "page": 32,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Krime Prowler",
     "description": "",
-    "category": "Cars",
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -7869,6 +8124,7 @@
     "armour": 12,
     "pilot": 3,
     "sensor": 3,
+    "seats": 4,
     "includedGear": [
       {
         "name": "Sensor Array",
@@ -7877,19 +8133,19 @@
     ],
     "powerTrainModSlots": -14,
     "protectionModSlots": -14,
-    "seats": 4,
     "availability": {
       "rating": [21],
       "restriction": "Restricted"
     },
     "cost": [145000],
     "source": "Krime Katalog",
-    "page": 34
+    "page": 34,
+    "type": "Groundcraft",
+    "subtype": "Car"
   },
   {
     "name": "Krime DeTruck Sports Truck",
     "description": "",
-    "category": "Trucks",
     "handling": {
       "onRoad": 4,
       "offRoad": 4
@@ -7900,25 +8156,26 @@
     "armour": 7,
     "pilot": 3,
     "sensor": 2,
+    "seats": 3,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 3,
     "availability": {
       "rating": [21],
       "restriction": "Restricted"
     },
     "cost": [100000],
     "source": "Krime Katalog",
-    "page": 35
+    "page": 35,
+    "type": "Groundcraft",
+    "subtype": "Truck/Van"
   },
   {
     "name": "Krime Dix Prime Mover",
     "description": "",
-    "category": "Trucks",
     "handling": {
       "onRoad": 2,
       "offRoad": 3
@@ -7929,25 +8186,26 @@
     "armour": 15,
     "pilot": 4,
     "sensor": 4,
+    "seats": 2,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 2,
     "availability": {
       "rating": [20],
       "restriction": "Legal"
     },
     "cost": [200000],
     "source": "Krime Katalog",
-    "page": 37
+    "page": 37,
+    "type": "Groundcraft",
+    "subtype": "Truck/Van"
   },
   {
     "name": "Krime Barco de Pesca",
     "description": "",
-    "category": "Boats",
     "handling": {
       "onRoad": 2,
       "offRoad": 4
@@ -7961,25 +8219,26 @@
     "armour": 6,
     "pilot": 1,
     "sensor": 1,
+    "seats": 6,
     "includedGear": [
       {
         "name": "Sensor Array",
         "rating": 2
       }
     ],
-    "seats": 6,
     "availability": {
       "rating": [12],
       "restriction": "Legal"
     },
     "cost": [50000],
     "source": "Krime Katalog",
-    "page": 38
+    "page": 38,
+    "type": "Watercraft",
+    "subtype": "Boat"
   },
   {
     "name": "Krime Euskaldunak Tankette",
     "description": "",
-    "category": "Corpsec/Police/Military",
     "handling": 4,
     "speed": 4,
     "acceleration": 2,
@@ -7987,6 +8246,7 @@
     "armour": 20,
     "pilot": 4,
     "sensor": 4,
+    "seats": 1,
     "includedGear": [
       {
         "name": "Sensor Array",
@@ -7999,7 +8259,6 @@
     "bodyModSlots": -7,
     "electromagneticModSlots": -7,
     "cosmeticModSlots": -3,
-    "seats": 1,
     "weaponMountList": [
       {
         "control": "Remote",
@@ -8020,6 +8279,8 @@
     },
     "cost": [200000],
     "source": "Krime Katalog",
-    "page": 41
+    "page": 41,
+    "type": "Groundcraft",
+    "subtype": "Corpsec/Police/Military"
   }
 ]

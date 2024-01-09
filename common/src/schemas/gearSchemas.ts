@@ -2,7 +2,6 @@ import { z as zod } from "zod";
 import { AugmentationSchema } from "./augmentationSchemas.js";
 import { MatrixAccessorySchema, MatrixSchema } from "./electronicSchemas.js";
 import { OtherGearSchema } from "./otherGearSchemas.js";
-import { MagicGearSchema } from "./magicalSchemas.js";
 import { RiggerSchema } from "./riggerSchemas.js";
 import { WeaponLinkedListSchema } from "./weaponSchemas.js";
 
@@ -20,9 +19,6 @@ export type OtherGearListType = zod.infer<typeof OtherGearListSchema>;
 export const AugmentationListSchema = zod.array(AugmentationSchema);
 export type AugmentationListType = zod.infer<typeof AugmentationListSchema>;
 
-export const MagicGearListSchema = zod.array(MagicGearSchema);
-export type MagicGearListType = zod.infer<typeof MagicGearListSchema>;
-
 export const VehiclesAndDronesListSchema = zod.array(RiggerSchema);
 export type VehiclesAndDronesListType = zod.infer<
   typeof VehiclesAndDronesListSchema
@@ -35,7 +31,6 @@ export const GearListSchema = zod
     electronicAccessories: MatrixAccessoriesListSchema,
     otherGear: OtherGearListSchema,
     augmentations: AugmentationListSchema,
-    magicalEquipment: MagicGearListSchema,
     vehiclesAndDrones: VehiclesAndDronesListSchema,
   })
   .strict();

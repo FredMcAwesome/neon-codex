@@ -2,17 +2,17 @@ import { XMLParser } from "fast-xml-parser";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import {
+import type {
   AccuracyType,
   ArmourPenetrationType,
   DamageType,
   RecoilCompensationType,
 } from "@shadowrun/common";
-import {
+import type {
   WeaponXmlType,
-  WeaponListXmlSchema,
   WeaponListXmlType,
 } from "./WeaponParserSchemas.js";
+import { WeaponListXmlSchema } from "./WeaponParserSchemas.js";
 import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
 import { convertAllowGear, convertSource } from "../common/ParserHelper.js";
 import assert from "assert";
@@ -21,18 +21,20 @@ import {
   augmentationClassificationEnum,
 } from "@shadowrun/common/build/enums.js";
 import { weaponXmlSubtypeEnum } from "@shadowrun/common/build/schemas/commonSchemas.js";
-import {
+import type {
   WeaponUnlinkedSummaryListType,
   WeaponUnlinkedSummaryType,
   ModeType,
   AmmunitionType,
   UnlinkedAccessoryListType,
   AccessoryMountType,
-  WeaponUnlinkedSummaryListSchema,
-  WeaponUnlinkedSummarySchema,
   FirearmOptionsType,
   AvailabilityWeaponType,
   CostWeaponType,
+} from "@shadowrun/common/build/schemas/weaponSchemas.js";
+import {
+  WeaponUnlinkedSummaryListSchema,
+  WeaponUnlinkedSummarySchema,
 } from "@shadowrun/common/build/schemas/weaponSchemas.js";
 import {
   getWeaponTypeInformation,
@@ -178,7 +180,7 @@ export function ParseWeapons() {
         console.log(convertedWeapon);
         throw new Error(check.error.message);
       }
-      return convertedWeapon;
+      return check.data;
     });
   // console.log(weaponListConverted);
   const check = WeaponUnlinkedSummaryListSchema.safeParse(weaponListConverted);
@@ -205,12 +207,12 @@ function convertWeapon(weapon: WeaponXmlType) {
   // console.log(`\n${weapon.name}`);
 
   const { weaponType, weaponSubtype } = getWeaponTypeInformation(weapon);
-  let augmentationType: augmentationClassificationEnum =
+  let augmentationClassification: augmentationClassificationEnum =
     augmentationClassificationEnum.None;
   if (weapon.cyberware) {
-    augmentationType = augmentationClassificationEnum.Cyberware;
+    augmentationClassification = augmentationClassificationEnum.Cyberware;
   } else if (weapon.category === weaponXmlSubtypeEnum.BioWeapon) {
-    augmentationType = augmentationClassificationEnum.Bioware;
+    augmentationClassification = augmentationClassificationEnum.Bioware;
   }
 
   const source = convertSource(weapon.source);
@@ -266,7 +268,7 @@ function convertWeapon(weapon: WeaponXmlType) {
   );
   const accessoryMounts: AccessoryMountType | undefined =
     convertAccessoryMounts(weapon.accessorymounts);
-  const addWeapons = weapon.addweapon
+  const alternativeWeaponForms = weapon.addweapon
     ? Array.isArray(weapon.addweapon)
       ? weapon.addweapon
       : [weapon.addweapon]
@@ -402,8 +404,10 @@ function convertWeapon(weapon: WeaponXmlType) {
     allowAccessories: weapon.allowaccessory !== "False",
     isCyberware: weapon.cyberware === "True",
     ...(weapon.hide !== undefined && { userSelectable: false as const }),
-    augmentationType: augmentationType,
-    ...(addWeapons !== undefined && { addWeapons: addWeapons }),
+    augmentationClassification: augmentationClassification,
+    ...(alternativeWeaponForms !== undefined && {
+      alternativeWeaponForms: alternativeWeaponForms,
+    }),
     ...(hostWeaponRequirements !== undefined && {
       hostWeaponRequirements: hostWeaponRequirements,
     }),

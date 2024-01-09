@@ -1,18 +1,18 @@
 import { z as zod } from "zod";
 import {
-  // aircraftSubtypeEnum,
+  aircraftSubtypeEnum,
   costRiggerEnum,
-  // droneSubtypeEnum,
-  // groundcraftSubtypeEnum,
+  droneSubtypeEnum,
+  groundcraftSubtypeEnum,
   mathOperatorEnum,
   restrictionEnum,
-  vehicleCategoryEnum,
+  // vehicleCategoryEnum,
+  vehicleDroneTypeEnum,
   weaponMountControlEnum,
   weaponMountFlexibilityEnum,
   weaponMountSizeEnum,
   weaponMountVisibilityEnum,
-  // vehicleDroneTypeEnum,
-  // watercraftSubtypeEnum,
+  watercraftSubtypeEnum,
 } from "../enums.js";
 import {
   AvailabilityRatingSchema,
@@ -76,42 +76,37 @@ const WeaponMountSchema = zod
     allowedWeapon: zod.optional(zod.string()),
   })
   .strict();
+export type WeaponMountType = zod.infer<typeof WeaponMountSchema>;
 
-// TODO: make discriminated union
-export const RiggerSchema = zod
+export const WeaponMountListSchema = zod.array(WeaponMountSchema);
+export type WeaponMountListType = zod.infer<typeof WeaponMountListSchema>;
+
+const RiggerOnOffRoadSchema = zod.union([
+  zod.number(),
+  zod.object({ onRoad: zod.number(), offRoad: zod.number() }).strict(),
+]);
+
+const VehicleSeatsSchema = zod.union([
+  zod.number(),
+  zod.object({ min: zod.number(), max: zod.number() }).strict(),
+]);
+export type VehicleSeatsType = zod.infer<typeof VehicleSeatsSchema>;
+
+export type RiggerOnOffRoadType = zod.infer<typeof RiggerOnOffRoadSchema>;
+
+const RiggerPartialSchema = zod
   .object({
     name: zod.string(),
     description: zod.string(),
-    category: zod.nativeEnum(vehicleCategoryEnum),
-    // type: zod.nativeEnum(vehicleDroneTypeEnum),
-    // subtype: zod.union([
-    //   zod.nativeEnum(groundcraftSubtypeEnum),
-    //   zod.nativeEnum(watercraftSubtypeEnum),
-    //   zod.nativeEnum(aircraftSubtypeEnum),
-    //   zod.nativeEnum(droneSubtypeEnum),
-    // ]),
-    handling: zod.optional(
-      zod.union([
-        zod.number(),
-        zod.object({ onRoad: zod.number(), offRoad: zod.number() }).strict(),
-      ])
-    ),
-    speed: zod.optional(
-      zod.union([
-        zod.number(),
-        zod.object({ onRoad: zod.number(), offRoad: zod.number() }).strict(),
-      ])
-    ),
-    acceleration: zod.optional(
-      zod.union([
-        zod.number(),
-        zod.object({ onRoad: zod.number(), offRoad: zod.number() }).strict(),
-      ])
-    ),
+    // category: zod.nativeEnum(vehicleCategoryEnum),
+    handling: zod.optional(RiggerOnOffRoadSchema),
+    speed: zod.optional(RiggerOnOffRoadSchema),
+    acceleration: zod.optional(RiggerOnOffRoadSchema),
     body: zod.number(),
     armour: zod.number(),
     pilot: zod.number(),
     sensor: zod.number(),
+    seats: zod.optional(VehicleSeatsSchema),
     includedGear: zod.optional(UseGearListSchema),
     includedMods: zod.optional(ModListSchema),
     modSlots: zod.optional(zod.number()),
@@ -121,12 +116,6 @@ export const RiggerSchema = zod
     bodyModSlots: zod.optional(zod.number()),
     electromagneticModSlots: zod.optional(zod.number()),
     cosmeticModSlots: zod.optional(zod.number()),
-    seats: zod.optional(
-      zod.union([
-        zod.number(),
-        zod.object({ min: zod.number(), max: zod.number() }).strict(),
-      ])
-    ),
     weaponList: zod.optional(zod.array(zod.string())),
     weaponMountList: zod.optional(zod.array(WeaponMountSchema)),
     userSelectable: zod.optional(zod.literal(false)),
@@ -136,6 +125,25 @@ export const RiggerSchema = zod
     page: zod.number(),
   })
   .strict();
+
+export const RiggerSchema = zod.discriminatedUnion("type", [
+  RiggerPartialSchema.extend({
+    type: zod.literal(vehicleDroneTypeEnum.Groundcraft),
+    subtype: zod.nativeEnum(groundcraftSubtypeEnum),
+  }).strict(),
+  RiggerPartialSchema.extend({
+    type: zod.literal(vehicleDroneTypeEnum.Watercraft),
+    subtype: zod.nativeEnum(watercraftSubtypeEnum),
+  }).strict(),
+  RiggerPartialSchema.extend({
+    type: zod.literal(vehicleDroneTypeEnum.Aircraft),
+    subtype: zod.nativeEnum(aircraftSubtypeEnum),
+  }).strict(),
+  RiggerPartialSchema.extend({
+    type: zod.literal(vehicleDroneTypeEnum.Drone),
+    subtype: zod.nativeEnum(droneSubtypeEnum),
+  }).strict(),
+]);
 
 export type RiggerType = zod.infer<typeof RiggerSchema>;
 export const RiggerListSchema = zod.array(RiggerSchema);

@@ -5,8 +5,8 @@ import { fileURLToPath } from "url";
 import * as fs from "fs";
 import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
 import { convertXmlBonus } from "../common/BonusHelper.js";
-import {
-  ArmourModListXmlSchema,
+import { ArmourModListXmlSchema } from "./ArmourModParserSchemas.js";
+import type {
   ArmourModListXmlType,
   ArmourModXmlType,
 } from "./ArmourModParserSchemas.js";
@@ -16,8 +16,8 @@ import {
   costArmourModificationSemantics,
 } from "./ArmourModParserHelper.js";
 import { convertArmourModCategory } from "./ArmourModParserHelper.js";
-import {
-  ArmourModListSchema,
+import { ArmourModListSchema } from "@shadowrun/common/build/schemas/armourModSchemas.js";
+import type {
   AvailabilityArmourModType,
   CostArmourModType,
 } from "@shadowrun/common/build/schemas/armourModSchemas.js";

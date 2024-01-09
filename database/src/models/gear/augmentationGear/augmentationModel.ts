@@ -5,7 +5,9 @@ import type {
   CostAugmentationType,
   AvailabilityAugmentationType,
   EssenceCostType,
-} from "@shadowrun/common/src/schemas/augmentationSchemas.js";
+  AugmentationType,
+} from "@shadowrun/common/build/schemas/augmentationSchemas.js";
+import { sourceBookEnum } from "@shadowrun/common/build/enums.js";
 
 @Entity({
   discriminatorColumn: "type",
@@ -15,11 +17,11 @@ export abstract class Augmentations {
   @PrimaryKey()
   id!: number;
 
-  @Enum(() => augmentationTypeEnum)
-  type!: augmentationTypeEnum;
-
   @Property({ length: 255 })
   name!: string;
+
+  @Enum(() => augmentationTypeEnum)
+  type!: augmentationTypeEnum;
 
   @Property({ type: "json", nullable: true })
   rating?: RatingType;
@@ -39,11 +41,21 @@ export abstract class Augmentations {
   @Property({ type: "json" })
   cost!: CostAugmentationType;
 
+  @Enum(() => sourceBookEnum)
+  source!: sourceBookEnum;
+
+  @Property()
+  page!: number;
+
   @Property({ length: 5000 })
   description!: string;
 
   @Property({ length: 5000, nullable: true })
   wireless?: string;
+
+  constructor(dto: AugmentationType) {
+    this.name = dto.name;
+  }
 }
 
 @Entity({ discriminatorValue: augmentationTypeEnum.Headware })

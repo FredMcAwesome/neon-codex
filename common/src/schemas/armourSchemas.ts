@@ -6,6 +6,7 @@ import {
   armourCategoryEnum,
   availabilityEnum,
   sourceBookEnum,
+  armourModCategoryEnum,
 } from "../enums.js";
 import {
   AvailabilityRatingSchema,
@@ -67,41 +68,53 @@ export const CostArmourSchema = zod.union([
 
 export type CostArmourType = zod.infer<typeof CostArmourSchema>;
 
+export const DamageReductionArmourSchema = zod.union([
+  zod.number(),
+  zod
+    .object({
+      option: zod.nativeEnum(availabilityEnum),
+    })
+    .strict(),
+]);
+export type DamageReductionArmourType = zod.infer<
+  typeof DamageReductionArmourSchema
+>;
+
+const CapacityArmourSchema = zod.union([
+  zod.number(),
+  zod
+    .object({
+      option: zod.nativeEnum(availabilityEnum),
+    })
+    .strict(),
+]);
+export type CapacityArmourType = zod.infer<typeof CapacityArmourSchema>;
+
 export const ArmourSchema = zod
   .object({
     name: zod.string(),
     description: zod.string(),
     category: zod.nativeEnum(armourCategoryEnum),
     maxRating: zod.optional(zod.number()),
-    damageReduction: zod.union([
-      zod.number(),
-      zod
-        .object({
-          option: zod.nativeEnum(availabilityEnum),
-        })
-        .strict(),
-    ]),
+    damageReduction: DamageReductionArmourSchema,
     customFitStackDamageReduction: zod.optional(zod.number()),
-    capacity: zod.union([
-      zod.number(),
-      zod
-        .object({
-          option: zod.nativeEnum(availabilityEnum),
-        })
-        .strict(),
-    ]),
+    capacity: CapacityArmourSchema,
     isWeapon: zod.optional(zod.literal(true)),
     includedGear: zod.optional(UseGearListSchema),
     bonus: zod.optional(BonusSchema),
     wirelessBonus: zod.optional(BonusSchema),
     mods: zod.optional(ModListSchema),
-    // allowModCategory: zod.optional(),
-    // addModCategoryList: zod.optional(zod.array()),
+    allowModCategory: zod.optional(zod.nativeEnum(armourModCategoryEnum)),
+    addModCategoryList: zod.optional(
+      zod.array(zod.nativeEnum(armourModCategoryEnum))
+    ),
     availability: AvailabilityArmourSchema,
     cost: CostArmourSchema,
     source: zod.nativeEnum(sourceBookEnum),
     page: zod.number(),
   })
   .strict();
+export type ArmourType = zod.infer<typeof ArmourSchema>;
 
 export const ArmourListSchema = zod.array(ArmourSchema);
+export type ArmourListType = zod.infer<typeof ArmourListSchema>;

@@ -1,26 +1,33 @@
 import {
+  aircraftSubtypeEnum,
   augmentationTypeEnum,
-  MatrixType,
+  droneSubtypeEnum,
+  groundcraftSubtypeEnum,
   matrixWareAccessoryTypeEnum,
   matrixWareTypeEnum,
   otherWareTypeEnum,
+  vehicleDroneTypeEnum,
+  watercraftSubtypeEnum,
   weaponTypeEnum,
 } from "@shadowrun/common";
-import type { AugmentationListType, GearListType } from "@shadowrun/common";
+import type {
+  MatrixType,
+  AugmentationListType,
+  GearListType,
+} from "@shadowrun/common";
 import { Database } from "../utils/db.js";
 import * as logger from "../utils/logger.js";
-import {
+import type {
   MatrixListType,
   OtherGearListType,
 } from "@shadowrun/common/build/serverResponse.js";
-import {
-  MagicGearListType,
+import type {
   MatrixAccessoriesListType,
   VehiclesAndDronesListType,
 } from "@shadowrun/common/build/schemas/gearSchemas.js";
-import { MatrixAccessoryType } from "@shadowrun/common/build/schemas/electronicSchemas.js";
-import { RiggerType } from "@shadowrun/common/build/schemas/riggerSchemas.js";
-import {
+import type { MatrixAccessoryType } from "@shadowrun/common/build/schemas/electronicSchemas.js";
+import type { RiggerType } from "@shadowrun/common/build/schemas/riggerSchemas.js";
+import type {
   WeaponTypeInformationType,
   WeaponLinkedListType,
   WeaponLinkedType,
@@ -29,7 +36,7 @@ import {
   ProjectileTypeInformationType,
   ExplosiveTypeInformationType,
 } from "@shadowrun/common/build/schemas/weaponSchemas.js";
-import { SkillListType } from "@shadowrun/common/build/schemas/skillSchemas.js";
+import type { SkillListType } from "@shadowrun/common/build/schemas/skillSchemas.js";
 import { Cyberlimbs } from "@shadowrun/database/build/models/gear/augmentationGear/augmentationModel.js";
 import {
   MeleeWeapons,
@@ -90,7 +97,12 @@ async function getWeapons() {
         availability: weapon.availability,
         cost: weapon.cost,
         ...(weapon.allowedGear !== undefined &&
-          weapon.allowedGear.length > 0 && { allowedGear: weapon.allowedGear }),
+          ((weapon.allowedGear.gearNameList !== undefined &&
+            weapon.allowedGear.gearNameList.length > 0) ||
+            (weapon.allowedGear.gearCategoryList !== undefined &&
+              weapon.allowedGear.gearCategoryList.length > 0)) && {
+            allowedGear: weapon.allowedGear,
+          }),
         ...(weapon.accessories !== undefined &&
           weapon.accessories.length > 0 && {
             accessories: await Promise.all(
@@ -102,8 +114,8 @@ async function getWeapons() {
             ),
           }),
         allowAccessories: weapon.allowAccessories,
-        isCyberware: weapon.cyberware,
-        augmentationType: weapon.augmentationCategory,
+        isCyberware: weapon.isCyberware,
+        augmentationClassification: weapon.augmentationClassification,
         description: weapon.description,
         ...(weapon.wireless !== undefined && { wireless: weapon.wireless }),
         relatedSkill: skill.name,
@@ -114,9 +126,9 @@ async function getWeapons() {
         source: weapon.source,
         page: weapon.page,
 
-        ...(weapon.addWeapons !== undefined &&
-          weapon.addWeapons.length > 0 && {
-            addWeapons: weapon.addWeapons,
+        ...(weapon.otherWeaponForms !== undefined &&
+          weapon.otherWeaponForms.length > 0 && {
+            otherWeaponForms: weapon.otherWeaponForms,
           }),
       };
       return weaponFormatted;
@@ -424,23 +436,6 @@ async function getOtherGear() {
   return otherGearResponse;
 }
 
-async function getMagicalEquipment() {
-  const magicalEqipment = await Database.magicalEqipmentRespository.findAll();
-  const MagicalEquipmentResponse: MagicGearListType = magicalEqipment.map(
-    (magicalItem) => {
-      return {
-        type: magicalItem.type,
-        subtype: magicalItem.subtype || undefined,
-        name: magicalItem.name,
-        availability: magicalItem.availability,
-        cost: magicalItem.cost,
-        description: magicalItem.description,
-      };
-    }
-  );
-  return MagicalEquipmentResponse;
-}
-
 async function getAugmentations() {
   const augmentations = await Database.augmentationRespository.findAll();
   const augmentationsResponse: AugmentationListType = augmentations.map(
@@ -509,10 +504,9 @@ async function getVehiclesAndDrones() {
   const vehiclesAndDrones = await Database.vehicleAndDroneRespository.findAll();
   const vehiclesAndDronesResponse: VehiclesAndDronesListType =
     vehiclesAndDrones.map((vehicleOrDrone) => {
-      const vehicleOrDroneFormatted: RiggerType = {
-        type: vehicleOrDrone.type,
-        subtype: vehicleOrDrone.subtype,
+      const vehicleOrDroneRaw = {
         name: vehicleOrDrone.name,
+        description: vehicleOrDrone.description,
         handling: vehicleOrDrone.handling,
         speed: vehicleOrDrone.speed,
         acceleration: vehicleOrDrone.acceleration,
@@ -521,10 +515,70 @@ async function getVehiclesAndDrones() {
         pilot: vehicleOrDrone.pilot,
         sensor: vehicleOrDrone.sensor,
         seats: vehicleOrDrone.seats,
+        includedGear: vehicleOrDrone.includedGear,
+        includedMods: vehicleOrDrone.includedMods,
+        modSlots: vehicleOrDrone.modSlots,
+        powerTrainModSlots: vehicleOrDrone.powerTrainModSlots,
+        protectionModSlots: vehicleOrDrone.protectionModSlots,
+        weaponModSlots: vehicleOrDrone.weaponModSlots,
+        bodyModSlots: vehicleOrDrone.bodyModSlots,
+        electromagneticModSlots: vehicleOrDrone.electromagneticModSlots,
+        cosmeticModSlots: vehicleOrDrone.cosmeticModSlots,
+        weaponList: vehicleOrDrone.weaponList,
+        weaponMountList: vehicleOrDrone.weaponMountList,
+        userSelectable: vehicleOrDrone.userSelectable,
         availability: vehicleOrDrone.availability,
         cost: vehicleOrDrone.cost,
-        description: vehicleOrDrone.description,
+        source: vehicleOrDrone.source,
+        page: vehicleOrDrone.page,
       };
+      let vehicleOrDroneFormatted: RiggerType;
+      switch (vehicleOrDrone.subtype) {
+        case groundcraftSubtypeEnum.Bike:
+        case groundcraftSubtypeEnum.Car:
+        case groundcraftSubtypeEnum.Truck_Van:
+        case groundcraftSubtypeEnum.Municipal:
+        case groundcraftSubtypeEnum.Corpsec:
+          vehicleOrDroneFormatted = {
+            ...vehicleOrDroneRaw,
+            type: vehicleDroneTypeEnum.Groundcraft,
+            subtype: vehicleOrDrone.subtype,
+          };
+          break;
+        case watercraftSubtypeEnum.Boat:
+        case watercraftSubtypeEnum.Submarine:
+        case watercraftSubtypeEnum.Hovercraft:
+          vehicleOrDroneFormatted = {
+            ...vehicleOrDroneRaw,
+            type: vehicleDroneTypeEnum.Watercraft,
+            subtype: vehicleOrDrone.subtype,
+          };
+          break;
+        case aircraftSubtypeEnum.FixedWing_Aircraft:
+        case aircraftSubtypeEnum.LTAV:
+        case aircraftSubtypeEnum.Rotorcraft:
+        case aircraftSubtypeEnum.VTOL_VSTOL:
+          vehicleOrDroneFormatted = {
+            ...vehicleOrDroneRaw,
+            type: vehicleDroneTypeEnum.Aircraft,
+            subtype: vehicleOrDrone.subtype,
+          };
+          break;
+        case droneSubtypeEnum.Drones_Micro:
+        case droneSubtypeEnum.Drones_Mini:
+        case droneSubtypeEnum.Drones_Small:
+        case droneSubtypeEnum.Drones_Medium:
+        case droneSubtypeEnum.Drones_Large:
+        case droneSubtypeEnum.Drones_Huge:
+        case droneSubtypeEnum.Drones_Anthro:
+        case droneSubtypeEnum.Drones_Missile:
+          vehicleOrDroneFormatted = {
+            ...vehicleOrDroneRaw,
+            type: vehicleDroneTypeEnum.Drone,
+            subtype: vehicleOrDrone.subtype,
+          };
+          break;
+      }
       return vehicleOrDroneFormatted;
     });
   return vehiclesAndDronesResponse;
@@ -592,17 +646,6 @@ export const characterRouter = router({
       throw new Error("Database error");
     }
   }),
-  magicalEquipment: privateProcedure.query(async () => {
-    try {
-      const magicalEquipmentResponse: MagicGearListType =
-        await getMagicalEquipment();
-      logger.log(JSON.stringify(magicalEquipmentResponse, null, 2));
-      return magicalEquipmentResponse;
-    } catch (error) {
-      logger.error("Unable to connect to the database:", error);
-      throw new Error("Database error");
-    }
-  }),
   vehiclesAndDrones: privateProcedure.query(async () => {
     try {
       const vehiclesAndDronesResponse: VehiclesAndDronesListType =
@@ -623,8 +666,6 @@ export const characterRouter = router({
       const otherGearResponse: OtherGearListType = await getOtherGear();
       const augmentationsResponse: AugmentationListType =
         await getAugmentations();
-      const magicalEqipmentResponse: MagicGearListType =
-        await getMagicalEquipment();
       const vehiclesAndDronesResponse: VehiclesAndDronesListType =
         await getVehiclesAndDrones();
       const gearResponse: GearListType = {
@@ -633,7 +674,6 @@ export const characterRouter = router({
         electronicAccessories: electronicAccessoriesResponse,
         otherGear: otherGearResponse,
         augmentations: augmentationsResponse,
-        magicalEquipment: magicalEqipmentResponse,
         vehiclesAndDrones: vehiclesAndDronesResponse,
       };
       // logger.log(JSON.stringify(gearResponse, null, 2));

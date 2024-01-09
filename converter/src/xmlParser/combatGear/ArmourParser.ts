@@ -6,8 +6,8 @@ import { fileURLToPath } from "url";
 import * as fs from "fs";
 import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
 import { convertXmlBonus } from "../common/BonusHelper.js";
-import {
-  ArmourListXmlSchema,
+import { ArmourListXmlSchema } from "./ArmourParserSchemas.js";
+import type {
   ArmourListXmlType,
   ArmourXmlType,
 } from "./ArmourParserSchemas.js";
@@ -19,6 +19,8 @@ import {
 import {
   ArmourListSchema,
   ArmourSchema,
+} from "@shadowrun/common/build/schemas/armourSchemas.js";
+import type {
   AvailabilityArmourType,
   CostArmourType,
 } from "@shadowrun/common/build/schemas/armourSchemas.js";
@@ -28,6 +30,7 @@ import {
   convertXmlGears,
   convertXmlModList,
 } from "../common/ParserHelper.js";
+import { convertArmourModCategory } from "./ArmourModParserHelper.js";
 const Availability = Armours.Availability;
 const Cost = Armours.Cost;
 
@@ -204,14 +207,22 @@ function convertArmour(armour: ArmourXmlType) {
 
   const mods =
     armour.mods !== undefined ? convertXmlModList(armour.mods) : undefined;
-  // TODO: fix - what am I going to do with these?
-  // const allowModCategory = armour.addmodcategory;
-  // const addModCategoryList =
-  //   armour.selectmodsfromcategory !== undefined
-  //     ? Array.isArray(armour.selectmodsfromcategory)
-  //       ? armour.selectmodsfromcategory
-  //       : [armour.selectmodsfromcategory]
-  //     : [];
+  const allowModCategory =
+    armour.addmodcategory !== undefined
+      ? convertArmourModCategory(armour.addmodcategory)
+      : undefined;
+  const addModCategoryXmlList =
+    armour.selectmodsfromcategory !== undefined
+      ? Array.isArray(armour.selectmodsfromcategory)
+        ? armour.selectmodsfromcategory
+        : [armour.selectmodsfromcategory]
+      : [];
+  const addModCategoryList =
+    addModCategoryXmlList.length > 0
+      ? addModCategoryXmlList.map((category) => {
+          return convertArmourModCategory(category.category);
+        })
+      : undefined;
   const source = convertSource(armour.source);
 
   return {
@@ -235,8 +246,8 @@ function convertArmour(armour: ArmourXmlType) {
     ...(bonus !== undefined && { bonus: bonus }),
     ...(wirelessBonus !== undefined && { wirelessBonus: wirelessBonus }),
     ...(mods !== undefined && { mods: mods }),
-    // allowModCategory: allowModCategory,
-    // addModCategoryList: addModCategoryList,
+    allowModCategory: allowModCategory,
+    addModCategoryList: addModCategoryList,
     source: source,
     page: armour.page,
   };

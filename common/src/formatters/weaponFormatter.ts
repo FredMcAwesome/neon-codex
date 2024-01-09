@@ -1,5 +1,5 @@
 import { blastTypeEnum, damageTypeEnum } from "../enums.js";
-import { DamageAmountType, DamageType } from "../schemas/weaponSchemas.js";
+import type { DamageAmountType, DamageType } from "../schemas/weaponSchemas.js";
 
 export function formatDamage(unformattedDamage: DamageType): string {
   let damageString = "";
@@ -12,6 +12,9 @@ export function formatDamage(unformattedDamage: DamageType): string {
         break;
       case damageTypeEnum.Stun:
         damageType = "S";
+        break;
+      case damageTypeEnum.Special:
+        damageType = "Special";
         break;
       case damageTypeEnum.None:
         break;

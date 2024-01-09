@@ -552,35 +552,42 @@ export enum formulaTypeEnum {
 }
 
 export enum vehicleDroneTypeEnum {
-  Groundcrafts = "Groundcrafts",
-  Watercrafts = "Watercrafts",
-  Aircrafts = "Aircrafts",
-  Drones = "Drones",
+  Groundcraft = "Groundcraft",
+  Watercraft = "Watercraft",
+  Aircraft = "Aircraft",
+  Drone = "Drone",
 }
 
 export enum groundcraftSubtypeEnum {
-  Bikes = "Bikes",
-  Cars = "Cars",
-  TrucksAndVans = "Trucks And Vans",
+  Bike = "Bike",
+  Car = "Car",
+  Truck_Van = "Truck/Van",
+  Municipal = "Municipal/Construction",
+  Corpsec = "Corpsec/Police/Military",
 }
 
 export enum watercraftSubtypeEnum {
-  Boats = "Boats",
-  Submarines = "Submarines",
+  Boat = "Boat",
+  Submarine = "Submarine",
+  Hovercraft = "Hovercraft",
 }
 
 export enum aircraftSubtypeEnum {
-  FixedWingAircrafts = "Fixed-Wing Aircrafts",
-  Rotorcrafts = "Rotorcrafts",
-  VTOL_VSTOLs = "VTOL/VSTOLs",
+  FixedWing_Aircraft = "Fixed-Wing Aircraft",
+  LTAV = "LTAV",
+  Rotorcraft = "Rotorcraft",
+  VTOL_VSTOL = "VTOL/VSTOL",
 }
 
 export enum droneSubtypeEnum {
-  Microdrones = "Microdrones",
-  Minidrones = "Mini drones",
-  SmallDrones = "Small Drones",
-  MediumDrones = "Medium Drones",
-  LargeDrones = "Large Drones",
+  Drones_Micro = "Drones: Micro",
+  Drones_Mini = "Drones: Mini",
+  Drones_Small = "Drones: Small",
+  Drones_Medium = "Drones: Medium",
+  Drones_Anthro = "Drones: Anthro",
+  Drones_Large = "Drones: Large",
+  Drones_Huge = "Drones: Huge",
+  Drones_Missile = "Drones: Missile",
 }
 
 export enum ammoOptionEnum {
@@ -689,29 +696,6 @@ export enum cyberwareCategoryEnum {
   Nanocybernetics = "Nanocybernetics",
   SoftNanoware = "Soft Nanoware",
   SpecialBiodroneCyberware = "Special Biodrone Cyberware",
-}
-
-export enum vehicleCategoryEnum {
-  Bikes = "Bikes",
-  Cars = "Cars",
-  Trucks = "Trucks",
-  Municipal = "Municipal/Construction",
-  Corpsec = "Corpsec/Police/Military",
-  Boats = "Boats",
-  Submarines = "Submarines",
-  FixedWing_Aircraft = "Fixed-Wing Aircraft",
-  LTAV = "LTAV",
-  Rotorcraft = "Rotorcraft",
-  VTOL_VSTOL = "VTOL/VSTOL",
-  Drones_Micro = "Drones: Micro",
-  Drones_Mini = "Drones: Mini",
-  Drones_Small = "Drones: Small",
-  Drones_Medium = "Drones: Medium",
-  Drones_Anthro = "Drones: Anthro",
-  Drones_Large = "Drones: Large",
-  Drones_Huge = "Drones: Huge",
-  Drones_Missile = "Drones: Missile",
-  Hovercraft = "Hovercraft",
 }
 
 export enum augmentationGradeEnum {

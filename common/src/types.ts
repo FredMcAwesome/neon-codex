@@ -1,12 +1,8 @@
 import { z as zod } from "zod";
 
-const ExampleSchema = zod
-  .object({
-    example: zod.string(),
-  })
-  .strict();
+const RatingLiteralSchema = zod.literal("Rating");
 
-type Example = zod.infer<typeof ExampleSchema>;
+type RatingLiteralType = zod.infer<typeof RatingLiteralSchema>;
 
-export type { Example };
-export { ExampleSchema };
+export type { RatingLiteralType };
+export { RatingLiteralSchema };

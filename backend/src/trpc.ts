@@ -1,6 +1,6 @@
 import * as trpcExpress from "@trpc/server/adapters/express";
 import { TRPCError, initTRPC } from "@trpc/server";
-import { inferAsyncReturnType } from "@trpc/server";
+import type { inferAsyncReturnType } from "@trpc/server";
 import { getLoginStatus } from "./utils/login.js";
 export async function createContext({
   req,

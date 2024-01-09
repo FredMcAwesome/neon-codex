@@ -5,8 +5,8 @@ import path from "path";
 import { fileURLToPath } from "url";
 import * as fs from "fs";
 import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
-import {
-  VehicleModListXmlSchema,
+import { VehicleModListXmlSchema } from "./VehicleModParserSchemas.js";
+import type {
   VehicleModListXmlType,
   VehicleModXmlType,
 } from "./VehicleModParserSchemas.js";

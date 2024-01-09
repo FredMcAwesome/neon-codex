@@ -9,7 +9,13 @@ import {
 import type {
   AvailabilityRiggerType,
   CostRiggerType,
-} from "@shadowrun/common/src/schemas/riggerSchemas.js";
+  RiggerOnOffRoadType,
+  VehicleSeatsType,
+  WeaponMountListType,
+} from "@shadowrun/common/build/schemas/riggerSchemas.js";
+import { sourceBookEnum } from "@shadowrun/common/build/enums.js";
+import type { UseGearListType } from "@shadowrun/common/src/schemas/commonSchemas.js";
+import type { ModListType } from "@shadowrun/common/src/schemas/shared/modSchemas.js";
 
 @Entity({
   discriminatorColumn: "type",
@@ -18,6 +24,12 @@ import type {
 export abstract class VehiclesAndDrones {
   @PrimaryKey()
   id!: number;
+
+  @Property({ length: 255 })
+  name!: string;
+
+  @Property({ length: 5000 })
+  description!: string;
 
   @Enum(() => vehicleDroneTypeEnum)
   type!: vehicleDroneTypeEnum;
@@ -36,17 +48,14 @@ export abstract class VehiclesAndDrones {
     | aircraftSubtypeEnum
     | droneSubtypeEnum;
 
-  @Property({ length: 255 })
-  name!: string;
+  @Property({ type: "json" })
+  handling!: RiggerOnOffRoadType;
 
-  @Property({ type: "number[]" })
-  handling!: number[];
+  @Property({ type: "json" })
+  speed!: RiggerOnOffRoadType;
 
-  @Property({ type: "number[]" })
-  speed!: number[];
-
-  @Property()
-  acceleration!: number;
+  @Property({ type: "json" })
+  acceleration!: RiggerOnOffRoadType;
 
   @Property()
   body!: number;
@@ -60,8 +69,44 @@ export abstract class VehiclesAndDrones {
   @Property()
   sensor!: number;
 
-  @Property()
-  seats!: number;
+  @Property({ type: "json" })
+  seats!: VehicleSeatsType;
+
+  @Property({ nullable: true })
+  includedGear?: UseGearListType;
+
+  @Property({ type: "json" })
+  includedMods?: ModListType;
+
+  @Property({ nullable: true })
+  modSlots?: number;
+
+  @Property({ nullable: true })
+  powerTrainModSlots?: number;
+
+  @Property({ nullable: true })
+  protectionModSlots?: number;
+
+  @Property({ nullable: true })
+  weaponModSlots?: number;
+
+  @Property({ nullable: true })
+  bodyModSlots?: number;
+
+  @Property({ nullable: true })
+  electromagneticModSlots?: number;
+
+  @Property({ nullable: true })
+  cosmeticModSlots?: number;
+
+  @Property({ type: "string[]", nullable: true })
+  weaponList?: Array<string>;
+
+  @Property({ type: "json", nullable: true })
+  weaponMountList?: WeaponMountListType;
+
+  @Property({ nullable: true })
+  userSelectable?: false;
 
   @Property({ type: "json" })
   availability!: AvailabilityRiggerType;
@@ -69,18 +114,21 @@ export abstract class VehiclesAndDrones {
   @Property({ type: "json" })
   cost!: CostRiggerType;
 
-  @Property({ length: 5000 })
-  description!: string;
+  @Enum(() => sourceBookEnum)
+  source!: sourceBookEnum;
+
+  @Property()
+  page!: number;
 }
 
-@Entity({ discriminatorValue: vehicleDroneTypeEnum.Groundcrafts })
+@Entity({ discriminatorValue: vehicleDroneTypeEnum.Groundcraft })
 export class Groundcrafts extends VehiclesAndDrones {}
 
-@Entity({ discriminatorValue: vehicleDroneTypeEnum.Watercrafts })
+@Entity({ discriminatorValue: vehicleDroneTypeEnum.Watercraft })
 export class Watercrafts extends VehiclesAndDrones {}
 
-@Entity({ discriminatorValue: vehicleDroneTypeEnum.Aircrafts })
+@Entity({ discriminatorValue: vehicleDroneTypeEnum.Aircraft })
 export class Aircrafts extends VehiclesAndDrones {}
 
-@Entity({ discriminatorValue: vehicleDroneTypeEnum.Drones })
+@Entity({ discriminatorValue: vehicleDroneTypeEnum.Drone })
 export class Drones extends VehiclesAndDrones {}

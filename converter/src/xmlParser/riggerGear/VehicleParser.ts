@@ -5,8 +5,8 @@ import path from "path";
 import { fileURLToPath } from "url";
 import * as fs from "fs";
 import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
-import {
-  VehicleListXmlSchema,
+import { VehicleListXmlSchema } from "./VehicleParserSchemas.js";
+import type {
   VehicleListXmlType,
   VehicleXmlType,
 } from "./VehicleParserSchemas.js";
@@ -144,7 +144,7 @@ export function ParseVehicles() {
         console.log(convertedVehicle);
         throw new Error(check.error.message);
       }
-      return convertedVehicle;
+      return check.data;
     });
   // console.log(vehicleListConverted);
   const jsonFilePath = fileURLToPath(
@@ -175,7 +175,7 @@ const convertVehicle = function (vehicle: VehicleXmlType) {
   }
   const speed = speedSemantics(match).eval();
 
-  const category = convertVehicleCategory(vehicle.category);
+  const { type, subtype } = convertVehicleCategory(vehicle.category);
   match = Availability.match(vehicle.avail.toString());
   if (match.failed()) {
     assert(false, match.message);
@@ -230,7 +230,8 @@ const convertVehicle = function (vehicle: VehicleXmlType) {
   return {
     name: vehicle.name,
     description: "",
-    category: category,
+    type: type,
+    subtype: subtype,
     handling: handling,
     speed: speed,
     acceleration: acceleration,

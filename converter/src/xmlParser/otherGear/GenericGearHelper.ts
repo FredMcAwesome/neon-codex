@@ -13,14 +13,14 @@ import {
   weaponExtraClassificationEnum,
   weaponTypeEnum,
 } from "@shadowrun/common/build/enums.js";
-import {
+import type {
   AddWeaponType,
   AmmoForWeaponTypeXmlType,
   DeviceRatingXmlType,
   GearXmlRatingType,
   WeaponXmlBonusType,
 } from "./GenericGearParserSchemas.js";
-import { WeaponBonusType } from "@shadowrun/common/build/schemas/shared/bonusSchemas.js";
+import type { WeaponBonusType } from "@shadowrun/common/build/schemas/shared/bonusSchemas.js";
 import Weapons from "../../grammar/weapons.ohm-bundle.js";
 import { damageSemantics } from "../combatGear/WeaponParserHelper.js";
 import { weaponTypeXmlEnum } from "../combatGear/WeaponParserSchemas.js";

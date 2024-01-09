@@ -10,7 +10,7 @@ import {
   costWeaponAccessoryEnum,
   restrictionEnum,
 } from "@shadowrun/common/build/enums.js";
-import { AccessoryMountType } from "@shadowrun/common/src/schemas/weaponSchemas.js";
+import type { AccessoryMountType } from "@shadowrun/common/src/schemas/weaponSchemas.js";
 import assert from "assert";
 import WeaponAccessories from "../../grammar/weaponAccessories.ohm-bundle.js";
 const ModifyAmmoCapacity = WeaponAccessories.ModifyAmmoCapacity;

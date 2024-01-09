@@ -67,12 +67,6 @@ export abstract class Weapons {
   @Property({ type: "json", nullable: true })
   ammunition?: AmmunitionType;
 
-  @Property({ type: "json" })
-  availability!: AvailabilityWeaponType;
-
-  @Property({ type: "json" })
-  cost!: CostWeaponType;
-
   @Property({ type: "json", nullable: true })
   allowedGear?: AllowedGearType;
 
@@ -86,28 +80,19 @@ export abstract class Weapons {
   allowAccessories!: boolean;
 
   @Property()
-  cyberware!: boolean;
+  isCyberware!: boolean;
 
   @Property({ nullable: true })
-  hide?: boolean;
+  userSelectable?: false;
 
   @Enum(() => augmentationClassificationEnum)
-  augmentationCategory!: augmentationClassificationEnum;
+  augmentationClassification!: augmentationClassificationEnum;
 
-  @ManyToOne({ entity: () => Skills, ref: true })
-  relatedSkill!: Ref<Skills>;
-
-  @ManyToOne(() => Weapons)
-  baseWeaponForm!: Weapons;
+  @ManyToOne({ entity: () => Weapons, nullable: true })
+  baseWeaponForm?: Weapons;
 
   @OneToMany(() => Weapons, (weapon) => weapon.baseWeaponForm)
-  otherWeaponForms = new Collection<IncludedWeaponAccessories>(this);
-
-  @Property({ type: "string[]", nullable: true })
-  relatedSkillSpecialisations?: Array<string>;
-
-  @Property({ type: "string[]", nullable: true })
-  addWeapons?: Array<string>;
+  otherWeaponForms = new Collection<Weapons>(this);
 
   @Property({ type: "json", nullable: true })
   weaponRequirements?: RequirementsType;
@@ -118,6 +103,18 @@ export abstract class Weapons {
     nullable: true,
   })
   hostWeaponMountsRequired?: Array<firearmAccessoryMountLocationEnum>;
+
+  @ManyToOne({ entity: () => Skills, ref: true })
+  relatedSkill!: Ref<Skills>;
+
+  @Property({ type: "string[]", nullable: true })
+  relatedSkillSpecialisations?: Array<string>;
+
+  @Property({ type: "json" })
+  availability!: AvailabilityWeaponType;
+
+  @Property({ type: "json" })
+  cost!: CostWeaponType;
 
   @Enum(() => sourceBookEnum)
   source!: sourceBookEnum;
@@ -140,16 +137,17 @@ export abstract class Weapons {
     this.damage = dto.damage;
     this.armourPenetration = dto.armourPenetration;
     if (dto.ammunition !== undefined) this.ammunition = dto.ammunition;
-    this.availability = dto.availability;
-    this.cost = dto.cost;
     if (dto.allowedGear !== undefined) this.allowedGear = dto.allowedGear;
     this.allowAccessories = dto.allowAccessories;
-    this.cyberware = dto.isCyberware;
-    // this.hide  = dto.h;
-    this.augmentationCategory = dto.augmentationType;
+    this.isCyberware = dto.isCyberware;
+    if (dto.userSelectable !== undefined)
+      this.userSelectable = dto.userSelectable;
+    this.augmentationClassification = dto.augmentationClassification;
     this.relatedSkill = ref(Skills, dto.relatedSkill);
     if (dto.relatedSkillSpecialisations !== undefined)
       this.relatedSkillSpecialisations = dto.relatedSkillSpecialisations;
+    this.availability = dto.availability;
+    this.cost = dto.cost;
     this.source = dto.source;
     this.page = dto.page;
     this.description = dto.description;

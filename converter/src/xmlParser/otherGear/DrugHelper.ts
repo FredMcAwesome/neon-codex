@@ -1,7 +1,7 @@
 import { restrictionEnum } from "@shadowrun/common";
 
 import Drug from "../../grammar/drug.ohm-bundle.js";
-import { DrugEffectXmlListType } from "./DrugComponentParserSchemas.js";
+import type { DrugEffectXmlListType } from "./DrugComponentParserSchemas.js";
 const Availability = Drug;
 
 export const convertDrugEffects = function (effectList: DrugEffectXmlListType) {
@@ -9,13 +9,13 @@ export const convertDrugEffects = function (effectList: DrugEffectXmlListType) {
     ? effectList.effect
     : [effectList.effect];
   return effectArray.map((effect) => {
-    let attributeXmlList =
+    const attributeXmlList =
       effect.attribute === undefined
         ? undefined
         : Array.isArray(effect.attribute)
         ? effect.attribute
         : [effect.attribute];
-    let limitXmlList =
+    const limitXmlList =
       effect.limit === undefined
         ? undefined
         : Array.isArray(effect.limit)

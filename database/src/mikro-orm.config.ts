@@ -1,4 +1,4 @@
-import { Options } from "@mikro-orm/core";
+import type { Options } from "@mikro-orm/core";
 import { PostgreSqlDriver } from "@mikro-orm/postgresql";
 import {
   ActiveWeaponAccessories,
@@ -63,12 +63,6 @@ import {
   Skillsofts,
 } from "./models/gear/electronicsGear/matrixWareModel.js";
 import {
-  MagicalEquipment,
-  Foci,
-  Formulae,
-  MagicalSupplies,
-} from "./models/gear/magicGear/magicalGearEquipment.js";
-import {
   OtherWares,
   IndustrialChemicals,
   SurvivalGear,
@@ -93,6 +87,7 @@ import {
   DATABASE_PORT,
   PASSWORD,
 } from "./utils/databaseConfig.js";
+import { Spells } from "./models/abilities/spellModel.js";
 
 const dbOptions: Options<PostgreSqlDriver> = {
   entities: [
@@ -121,6 +116,8 @@ const dbOptions: Options<PostgreSqlDriver> = {
 
     WeaponRanges,
     WeaponRangeLinks,
+
+    Spells,
 
     Armours,
     ArmourModifications,
@@ -160,10 +157,6 @@ const dbOptions: Options<PostgreSqlDriver> = {
     AugmentationAccessories,
     CyberlimbAccessories,
     ImplantWeapons,
-    MagicalEquipment,
-    Foci,
-    Formulae,
-    MagicalSupplies,
     VehiclesAndDrones,
     Groundcrafts,
     Watercrafts,

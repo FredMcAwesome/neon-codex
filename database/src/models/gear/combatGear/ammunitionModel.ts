@@ -9,6 +9,7 @@ import type {
   AvailabilityAmmunitionType,
   CostAmmunitionType,
 } from "@shadowrun/common/build/schemas/ammunitionSchemas.js";
+import { sourceBookEnum } from "@shadowrun/common/build/enums.js";
 
 @Entity({
   discriminatorColumn: "type",
@@ -18,7 +19,7 @@ export abstract class Ammunitions {
   @PrimaryKey()
   id!: number;
 
-  @Enum()
+  @Enum(() => ammunitionTypeEnum)
   type!: ammunitionTypeEnum;
 
   @Property({ length: 255 })
@@ -35,6 +36,12 @@ export abstract class Ammunitions {
 
   @Property({ type: "json" })
   cost!: CostAmmunitionType;
+
+  @Enum(() => sourceBookEnum)
+  source!: sourceBookEnum;
+
+  @Property()
+  page!: number;
 
   @Property({ length: 5000 })
   description!: string;

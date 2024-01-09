@@ -3,13 +3,13 @@
     "name": "Tank",
     "description": "",
     "category": "Foundation",
+    "addictionRating": 6,
+    "addictionThreshold": 2,
     "availability": {
       "rating": 4,
       "restriction": "Restricted"
     },
     "cost": 75,
-    "addictionRating": 6,
-    "addictionThreshold": 2,
     "source": "Chrome Flesh",
     "page": 190
   },
@@ -17,13 +17,13 @@
     "name": "Defender",
     "description": "",
     "category": "Foundation",
+    "addictionRating": 6,
+    "addictionThreshold": 2,
     "availability": {
       "rating": 4,
       "restriction": "Restricted"
     },
     "cost": 75,
-    "addictionRating": 6,
-    "addictionThreshold": 2,
     "source": "Chrome Flesh",
     "page": 190
   },
@@ -31,13 +31,13 @@
     "name": "Genius",
     "description": "",
     "category": "Foundation",
+    "addictionRating": 6,
+    "addictionThreshold": 2,
     "availability": {
       "rating": 4,
       "restriction": "Restricted"
     },
     "cost": 75,
-    "addictionRating": 6,
-    "addictionThreshold": 2,
     "source": "Chrome Flesh",
     "page": 190
   },
@@ -45,13 +45,13 @@
     "name": "Charmer",
     "description": "",
     "category": "Foundation",
+    "addictionRating": 6,
+    "addictionThreshold": 2,
     "availability": {
       "rating": 4,
       "restriction": "Restricted"
     },
     "cost": 75,
-    "addictionRating": 6,
-    "addictionThreshold": 2,
     "source": "Chrome Flesh",
     "page": 190
   },
@@ -59,13 +59,13 @@
     "name": "Warrior",
     "description": "",
     "category": "Foundation",
+    "addictionRating": 6,
+    "addictionThreshold": 2,
     "availability": {
       "rating": 4,
       "restriction": "Restricted"
     },
     "cost": 75,
-    "addictionRating": 6,
-    "addictionThreshold": 2,
     "source": "Chrome Flesh",
     "page": 190
   },
@@ -229,13 +229,13 @@
     "name": "Ingestion Enhancer",
     "description": "",
     "category": "Enhancer",
+    "addictionRating": 1,
+    "addictionThreshold": 1,
     "availability": {
       "rating": 1,
       "restriction": "Legal"
     },
     "cost": 50,
-    "addictionRating": 1,
-    "addictionThreshold": 1,
     "source": "Chrome Flesh",
     "page": 191
   },
@@ -243,13 +243,13 @@
     "name": "Inhalation Enhancer",
     "description": "",
     "category": "Enhancer",
+    "addictionRating": 1,
+    "addictionThreshold": 1,
     "availability": {
       "rating": 1,
       "restriction": "Legal"
     },
     "cost": 50,
-    "addictionRating": 1,
-    "addictionThreshold": 1,
     "source": "Chrome Flesh",
     "page": 191
   },
@@ -257,14 +257,14 @@
     "name": "Speed Enhancer",
     "description": "",
     "category": "Enhancer",
+    "appliedLimit": 3,
+    "addictionRating": 1,
+    "addictionThreshold": 1,
     "availability": {
       "rating": 1,
       "restriction": "Legal"
     },
     "cost": 50,
-    "appliedLimit": 3,
-    "addictionRating": 1,
-    "addictionThreshold": 1,
     "source": "Chrome Flesh",
     "page": 191
   },
@@ -272,14 +272,14 @@
     "name": "Duration Enhancer",
     "description": "",
     "category": "Enhancer",
+    "appliedLimit": 3,
+    "addictionRating": 1,
+    "addictionThreshold": 1,
     "availability": {
       "rating": 1,
       "restriction": "Legal"
     },
     "cost": 50,
-    "appliedLimit": 3,
-    "addictionRating": 1,
-    "addictionThreshold": 1,
     "source": "Chrome Flesh",
     "page": 191
   }

@@ -6,6 +6,7 @@ import type {
   AvailabilityAugmentationType,
   EssenceCostType,
 } from "@shadowrun/common/src/schemas/augmentationSchemas.js";
+import { sourceBookEnum } from "@shadowrun/common/build/enums.js";
 
 @Entity({
   discriminatorColumn: "type",
@@ -35,6 +36,12 @@ export abstract class AugmentationAccessories {
 
   @Property({ type: "json" })
   cost!: CostAugmentationType;
+
+  @Enum(() => sourceBookEnum)
+  source!: sourceBookEnum;
+
+  @Property()
+  page!: number;
 
   @Property({ length: 5000 })
   description!: string;

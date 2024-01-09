@@ -1,13 +1,13 @@
 import { z as zod } from "zod";
 import {
   armourModCategoryEnum,
-  availabilityEnum,
   capcityArmourModEnum,
   costArmourModEnum,
   mathOperatorEnum,
   restrictionEnum,
   sourceBookEnum,
 } from "../enums.js";
+import { DamageReductionArmourSchema } from "./armourSchemas.js";
 import {
   AvailabilityRatingSchema,
   UseGearListSchema,
@@ -100,29 +100,25 @@ export const CapacityArmourModSchema = zod.union([
 ]);
 export type CapacityArmourModType = zod.infer<typeof CapacityArmourModSchema>;
 
+const HostArmourRequirementSchema = zod
+  .object({
+    requiredMod: zod.optional(zod.string()),
+    hostArmour: zod.optional(zod.string()),
+  })
+  .strict();
+export type HostArmourRequirementType = zod.infer<
+  typeof HostArmourRequirementSchema
+>;
+
 export const ArmourModSchema = zod
   .object({
     name: zod.string(),
     description: zod.string(),
     category: zod.nativeEnum(armourModCategoryEnum),
     maxRating: zod.number(),
-    damageReduction: zod.union([
-      zod.number(),
-      zod
-        .object({
-          option: zod.nativeEnum(availabilityEnum),
-        })
-        .strict(),
-    ]),
+    damageReduction: DamageReductionArmourSchema,
     capacityCost: CapacityArmourModSchema,
-    hostArmourRequirements: zod.optional(
-      zod
-        .object({
-          requiredMod: zod.optional(zod.string()),
-          hostArmour: zod.optional(zod.string()),
-        })
-        .strict()
-    ),
+    hostArmourRequirements: zod.optional(HostArmourRequirementSchema),
     includedGear: zod.optional(UseGearListSchema),
     bonus: zod.optional(BonusSchema),
     wirelessBonus: zod.optional(BonusSchema),
@@ -134,5 +130,7 @@ export const ArmourModSchema = zod
     page: zod.number(),
   })
   .strict();
+export type ArmourModType = zod.infer<typeof ArmourModSchema>;
 
 export const ArmourModListSchema = zod.array(ArmourModSchema);
+export type ArmourModListType = zod.infer<typeof ArmourModListSchema>;

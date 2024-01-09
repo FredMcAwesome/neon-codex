@@ -12,7 +12,7 @@
     "build": "tsc --build",
     "clean": "tsc --build --clean && rm -r build/",
     "prestart": "npm run build_generated && npm run build",
-    "start": "node ."
+    "start": "node . && prettier --write jsonFiles"
   },
   "author": "",
   "license": "ISC",

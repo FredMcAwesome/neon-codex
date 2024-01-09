@@ -7,8 +7,8 @@ import {
 import {
   SkillListSchema,
   SkillSchema,
-  SkillType,
 } from "@shadowrun/common/build/schemas/skillSchemas.js";
+import type { SkillType } from "@shadowrun/common/build/schemas/skillSchemas.js";
 import assert from "assert";
 import { XMLParser } from "fast-xml-parser";
 import fs from "fs";
@@ -30,7 +30,7 @@ export type GenericXmlParsingType =
 export type GenericArrayXmlParsingType = Array<GenericXmlParsingType>;
 
 const convertSkill = function (xmlSkill: SkillXmlType): SkillType {
-  let attribute = convertAttribute(xmlSkill.attribute);
+  const attribute = convertAttribute(xmlSkill.attribute);
 
   return {
     // id: xmlSkill.id,

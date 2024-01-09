@@ -19,8 +19,8 @@ import {
   CapacitySchema,
   RatingSchema,
   UseGearListSchema,
-  UseGearListType,
 } from "./commonSchemas.js";
+import type { UseGearListType } from "./commonSchemas.js";
 import { BonusSchema } from "./shared/bonusSchemas.js";
 import { RequirementsSchema } from "./shared/requiredSchemas.js";
 

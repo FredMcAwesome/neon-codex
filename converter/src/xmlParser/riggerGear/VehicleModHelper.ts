@@ -9,11 +9,11 @@ import {
   vehicleModAttributeEnum,
   projectileWeaponTypeEnum,
 } from "@shadowrun/common/build/enums.js";
-import {
+import type {
   SubsystemXmlType,
   VehicleModMaxRatingType,
-  vehicleModXmlCategoryEnum,
 } from "./VehicleModParserSchemas.js";
+import { vehicleModXmlCategoryEnum } from "./VehicleModParserSchemas.js";
 import VehicleModifications from "../../grammar/vehicleModifications.ohm-bundle.js";
 const Rating = VehicleModifications.Rating;
 const Slot = VehicleModifications.Slot;

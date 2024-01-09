@@ -850,42 +850,6 @@ const WeaponDiv = function ({
 //   );
 // };
 
-// interface IMagicalEquipmentDivProps {
-//   title: string;
-//   data: MagicGearListType;
-//   magicalGearType: magicalGearTypeEnum;
-//   addMagicalEquipment: (magicalItem: MagicGearType) => void;
-// }
-
-// const MagicalEquipmentDiv = function ({
-//   data,
-//   magicalGearType,
-//   title,
-//   addMagicalEquipment,
-// }: IMagicalEquipmentDivProps) {
-//   return (
-//     <CollapsibleDiv title={title}>
-//       <ul>
-//         {data
-//           .filter((gear) => gear.type === magicalGearType)
-//           .map((magicalItem) => {
-//             const addItem = function () {
-//               addMagicalEquipment(magicalItem);
-//             };
-//             return (
-//               <li key={magicalGearTypeEnum[magicalGearType] + magicalItem.name}>
-//                 <CollapsibleGearDiv title={magicalItem.name} addItem={addItem}>
-//                   <div>{magicalItem.description}</div>
-//                 </CollapsibleGearDiv>
-//                 {magicalItem.subtype && <div>{magicalItem.subtype}</div>}
-//               </li>
-//             );
-//           })}
-//       </ul>
-//     </CollapsibleDiv>
-//   );
-// };
-
 // interface IVehiclesAndDronesDivProps {
 //   title: string;
 //   data: VehiclesAndDronesListType;

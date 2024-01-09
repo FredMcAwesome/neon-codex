@@ -342,6 +342,7 @@ export const WeaponUnlinkedSummarySchema = zod
     // id: zod.string(),
     name: zod.string(),
     description: zod.string(),
+    wireless: zod.optional(zod.string()),
     typeInformation: UnlinkedWeaponTypeInformationSchema,
     concealability: zod.number(),
     accuracy: AccuracySchema,
@@ -353,8 +354,8 @@ export const WeaponUnlinkedSummarySchema = zod
     allowAccessories: zod.boolean(),
     isCyberware: zod.boolean(),
     userSelectable: zod.optional(zod.literal(false)),
-    augmentationType: zod.nativeEnum(augmentationClassificationEnum),
-    addWeapons: zod.optional(zod.array(zod.string())),
+    augmentationClassification: zod.nativeEnum(augmentationClassificationEnum),
+    alternativeWeaponForms: zod.optional(zod.array(zod.string())),
     hostWeaponRequirements: zod.optional(
       zod
         .object({
@@ -363,7 +364,6 @@ export const WeaponUnlinkedSummarySchema = zod
         })
         .strict()
     ),
-    wireless: zod.optional(zod.string()),
     relatedSkill: zod.string(),
     relatedSkillSpecialisations: zod.optional(zod.array(zod.string())),
     rating: zod.optional(zod.number()),
@@ -388,6 +388,7 @@ export const WeaponLinkedSchema = zod
     // id: zod.string(),
     name: zod.string(),
     description: zod.string(),
+    wireless: zod.optional(zod.string()),
     typeInformation: WeaponTypeInformationSchema,
     concealability: zod.number(),
     accuracy: AccuracySchema,
@@ -399,8 +400,8 @@ export const WeaponLinkedSchema = zod
     allowAccessories: zod.boolean(),
     isCyberware: zod.boolean(),
     userSelectable: zod.optional(zod.literal(false)),
-    augmentationType: zod.nativeEnum(augmentationClassificationEnum),
-    addWeapons: zod.optional(zod.array(zod.string())),
+    augmentationClassification: zod.nativeEnum(augmentationClassificationEnum),
+    alternativeWeaponForms: zod.optional(zod.array(zod.string())),
     hostWeaponRequirements: zod.optional(
       zod
         .object({
@@ -409,7 +410,6 @@ export const WeaponLinkedSchema = zod
         })
         .strict()
     ),
-    wireless: zod.optional(zod.string()),
     relatedSkill: zod.string(),
     relatedSkillSpecialisations: zod.optional(zod.array(zod.string())),
     availability: AvailabilityWeaponSchema,

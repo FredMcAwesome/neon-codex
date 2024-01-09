@@ -5,11 +5,11 @@ import path from "path";
 import { fileURLToPath } from "url";
 import * as fs from "fs";
 import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
-import {
-  BiowareListXmlSchema,
+import type {
   BiowareListXmlType,
   BiowareXmlType,
 } from "./BiowareParserSchemas.js";
+import { BiowareListXmlSchema } from "./BiowareParserSchemas.js";
 import { convertBiowareCategory } from "./BiowareParserHelper.js";
 import { convertXmlBonus } from "../common/BonusHelper.js";
 import { convertRequirements } from "../common/RequiredHelper.js";

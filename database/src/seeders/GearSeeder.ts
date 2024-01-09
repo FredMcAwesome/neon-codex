@@ -1,3 +1,4 @@
+import assert from "assert";
 import { EntityManager } from "@mikro-orm/core";
 import { Seeder } from "@mikro-orm/seeder";
 import { getSkills } from "../seeds/newSeeds/skillsSeed.js";
@@ -10,11 +11,16 @@ import {
   FirearmWeapons,
   ProjectileWeapons,
   Explosives,
+  Weapons,
 } from "../models/gear/combatGear/weaponModel.js";
 import { IncludedWeaponAccessories } from "../models/chummerdb/customTables/activeWeaponAccessoryModel.js";
 import { WeaponRanges } from "../models/gear/combatGear/helperTables/weaponRangeModel.js";
 import { getRanges } from "../seeds/newSeeds/rangesSeed.js";
 import { WeaponRangeLinks } from "../models/chummerdb/customTables/weaponRangeLinkModel.js";
+import { Armours } from "../models/gear/combatGear/armourModel.js";
+import { getArmours } from "../seeds/newSeeds/armoursSeed.js";
+import { ArmourModifications } from "../models/gear/combatGear/armourModificationModel.js";
+import { getArmourModifications } from "../seeds/newSeeds/armourModificationsSeed.js";
 
 export class GearSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
@@ -23,6 +29,7 @@ export class GearSeeder extends Seeder {
     const stagedWeaponAccessories: Array<WeaponAccessories> =
       getWeaponAccessories();
     const {
+      weaponsUnlinked,
       stagedMeleeWeapons,
       stagedProjectileWeapons,
       stagedFirearmWeapons,
@@ -30,6 +37,9 @@ export class GearSeeder extends Seeder {
       stagedAccessories,
       stagedRanges,
     } = getWeapons(stagedSkills, stagedWeaponRanges, stagedWeaponAccessories);
+    const stagedArmours: Array<Armours> = getArmours();
+    const stagedArmourModifications: Array<ArmourModifications> =
+      getArmourModifications();
 
     stagedSkills.forEach((skill) => {
       em.create(Skills, skill);
@@ -43,18 +53,19 @@ export class GearSeeder extends Seeder {
       em.create(WeaponAccessories, weaponAccessory);
     });
     //   // weapon related
-    stagedMeleeWeapons.forEach((meleeWeapon) => {
-      em.create(MeleeWeapons, meleeWeapon);
-    });
-    stagedProjectileWeapons.forEach((projectileWeapon) => {
-      em.create(ProjectileWeapons, projectileWeapon);
-    });
-    stagedFirearmWeapons.forEach((firearmWeapon) => {
-      em.create(FirearmWeapons, firearmWeapon);
-    });
-    stagedExplosiveWeapons.forEach((explosive) => {
-      em.create(Explosives, explosive);
-    });
+    for (const meleeWeapon of stagedMeleeWeapons) {
+      await em.persistAndFlush(em.create(MeleeWeapons, meleeWeapon));
+    }
+    for (const projectileWeapon of stagedProjectileWeapons) {
+      await em.persistAndFlush(em.create(ProjectileWeapons, projectileWeapon));
+    }
+    for (const firearmWeapon of stagedFirearmWeapons) {
+      await em.persistAndFlush(em.create(FirearmWeapons, firearmWeapon));
+    }
+    for (const explosive of stagedExplosiveWeapons) {
+      await em.persistAndFlush(em.create(Explosives, explosive));
+    }
+
     stagedAccessories.forEach((weaponAccessories) => {
       weaponAccessories.forEach((accessory) => {
         em.create(IncludedWeaponAccessories, accessory);
@@ -77,12 +88,12 @@ export class GearSeeder extends Seeder {
     //   rocketsMissilesList.forEach((rocketMissile) => {
     //     em.create(RocketsMissiles, rocketMissile);
     //   });
-    //   armoursList.forEach((armour) => {
-    //     em.create(Armours, armour);
-    //   });
-    //   armourAccessoriesList.forEach((armourAccessory) => {
-    //     em.create(ArmourAccessories, armourAccessory);
-    //   });
+    stagedArmours.forEach((armour) => {
+      em.create(Armours, armour);
+    });
+    stagedArmourModifications.forEach((armourMod) => {
+      em.create(ArmourModifications, armourMod);
+    });
     //   armourModificationsList.forEach((armourModification) => {
     //     em.create(ArmourModifications, armourModification);
     //   });
@@ -205,5 +216,33 @@ export class GearSeeder extends Seeder {
     //   dronesList.forEach((drone) => {
     //     em.create(Drones, drone);
     //   });
+
+    // Connect references that "may" need things in the database first
+    // Weapons referring to other weapons
+    for (const weapon of weaponsUnlinked) {
+      if (
+        "alternativeWeaponForms" in weapon &&
+        weapon.alternativeWeaponForms !== undefined &&
+        weapon.alternativeWeaponForms.length > 0
+      ) {
+        const relatedWeapon = await em.findOne(Weapons, { name: weapon.name });
+        assert(relatedWeapon !== null, `undefined weapon name: ${weapon.name}`);
+        for (const alternativeFormName of weapon.alternativeWeaponForms) {
+          const alternativeWeaponForm = await em.findOne(Weapons, {
+            name: alternativeFormName,
+          });
+          assert(
+            alternativeWeaponForm !== null,
+            `undefined form: ${alternativeFormName}`
+          );
+          // A weapon's alternative form shouldn't be itself
+          assert(alternativeWeaponForm.name !== relatedWeapon.name);
+          alternativeWeaponForm.baseWeaponForm = relatedWeapon;
+        }
+        // Probably don't need to flush everytime to update the db
+        // but this is offline so whatever
+        await em.flush();
+      }
+    }
   }
 }
