@@ -1,4 +1,4 @@
-import { Entity, PrimaryKey, Property, Enum } from "@mikro-orm/core";
+import { Entity, PrimaryKey, Property, Enum } from "@mikro-orm/postgresql";
 import {
   vehicleDroneTypeEnum,
   groundcraftSubtypeEnum,
@@ -33,20 +33,6 @@ export abstract class VehiclesAndDrones {
 
   @Enum(() => vehicleDroneTypeEnum)
   type!: vehicleDroneTypeEnum;
-
-  @Enum({
-    items: [
-      ...Object.values(groundcraftSubtypeEnum),
-      ...Object.values(watercraftSubtypeEnum),
-      ...Object.values(aircraftSubtypeEnum),
-      ...Object.values(droneSubtypeEnum),
-    ],
-  })
-  subtype!:
-    | groundcraftSubtypeEnum
-    | watercraftSubtypeEnum
-    | aircraftSubtypeEnum
-    | droneSubtypeEnum;
 
   @Property({ type: "json" })
   handling!: RiggerOnOffRoadType;
@@ -122,13 +108,25 @@ export abstract class VehiclesAndDrones {
 }
 
 @Entity({ discriminatorValue: vehicleDroneTypeEnum.Groundcraft })
-export class Groundcrafts extends VehiclesAndDrones {}
+export class Groundcrafts extends VehiclesAndDrones {
+  @Property()
+  subtype!: groundcraftSubtypeEnum;
+}
 
 @Entity({ discriminatorValue: vehicleDroneTypeEnum.Watercraft })
-export class Watercrafts extends VehiclesAndDrones {}
+export class Watercrafts extends VehiclesAndDrones {
+  @Property()
+  subtype!: watercraftSubtypeEnum;
+}
 
 @Entity({ discriminatorValue: vehicleDroneTypeEnum.Aircraft })
-export class Aircrafts extends VehiclesAndDrones {}
+export class Aircrafts extends VehiclesAndDrones {
+  @Property()
+  subtype!: aircraftSubtypeEnum;
+}
 
 @Entity({ discriminatorValue: vehicleDroneTypeEnum.Drone })
-export class Drones extends VehiclesAndDrones {}
+export class Drones extends VehiclesAndDrones {
+  @Property()
+  subtype!: droneSubtypeEnum;
+}

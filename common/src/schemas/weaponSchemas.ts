@@ -15,7 +15,7 @@ import {
   damageCalculationOptionEnum,
   armourPenetrationEnum,
   firearmAccessoryMountLocationEnum,
-  augmentationClassificationEnum,
+  augmentationTypeEnum,
   sourceBookEnum,
   rangeEnum,
   costWeaponEnum,
@@ -352,9 +352,8 @@ export const WeaponUnlinkedSummarySchema = zod
     allowedGear: zod.optional(AllowedGearSchema),
     accessories: zod.optional(UnlinkedAccessoryListSchema),
     allowAccessories: zod.boolean(),
-    isCyberware: zod.boolean(),
     userSelectable: zod.optional(zod.literal(false)),
-    augmentationClassification: zod.nativeEnum(augmentationClassificationEnum),
+    augmentationType: zod.optional(zod.nativeEnum(augmentationTypeEnum)),
     alternativeWeaponForms: zod.optional(zod.array(zod.string())),
     hostWeaponRequirements: zod.optional(
       zod
@@ -400,7 +399,7 @@ export const WeaponLinkedSchema = zod
     allowAccessories: zod.boolean(),
     isCyberware: zod.boolean(),
     userSelectable: zod.optional(zod.literal(false)),
-    augmentationClassification: zod.nativeEnum(augmentationClassificationEnum),
+    augmentationType: zod.nativeEnum(augmentationTypeEnum),
     alternativeWeaponForms: zod.optional(zod.array(zod.string())),
     hostWeaponRequirements: zod.optional(
       zod

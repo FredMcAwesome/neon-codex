@@ -1,5 +1,4 @@
-import type { Options } from "@mikro-orm/core";
-import { PostgreSqlDriver } from "@mikro-orm/postgresql";
+import type { Options } from "@mikro-orm/postgresql";
 import {
   ActiveWeaponAccessories,
   IncludedWeaponAccessories,
@@ -15,13 +14,8 @@ import {
 } from "./models/gear/augmentationGear/augmentationAccessoryModel.js";
 import {
   Augmentations,
-  Headwares,
-  Eyewares,
-  Earwares,
-  Bodywares,
-  Cyberlimbs,
+  Cyberwares,
   Biowares,
-  CulturedBiowares,
 } from "./models/gear/augmentationGear/augmentationModel.js";
 import {
   Ammunitions,
@@ -89,7 +83,7 @@ import {
 } from "./utils/databaseConfig.js";
 import { Spells } from "./models/abilities/spellModel.js";
 
-const dbOptions: Options<PostgreSqlDriver> = {
+const dbOptions: Options = {
   entities: [
     Users,
     Threads,
@@ -147,13 +141,8 @@ const dbOptions: Options<PostgreSqlDriver> = {
     DocWagonContract,
     SlapPatches,
     Augmentations,
-    Headwares,
-    Eyewares,
-    Earwares,
-    Bodywares,
-    Cyberlimbs,
     Biowares,
-    CulturedBiowares,
+    Cyberwares,
     AugmentationAccessories,
     CyberlimbAccessories,
     ImplantWeapons,
@@ -163,7 +152,6 @@ const dbOptions: Options<PostgreSqlDriver> = {
     Aircrafts,
     Drones,
   ],
-  type: "postgresql",
   host: HOST,
   port: DATABASE_PORT,
   dbName: DB_NAME,

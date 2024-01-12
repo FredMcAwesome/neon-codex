@@ -94,11 +94,38 @@ export type VehicleSeatsType = zod.infer<typeof VehicleSeatsSchema>;
 
 export type RiggerOnOffRoadType = zod.infer<typeof RiggerOnOffRoadSchema>;
 
-const RiggerPartialSchema = zod
+export const RiggerTypeInformationSchema = zod.discriminatedUnion("type", [
+  zod
+    .object({
+      type: zod.literal(vehicleDroneTypeEnum.Groundcraft),
+      subtype: zod.nativeEnum(groundcraftSubtypeEnum),
+    })
+    .strict(),
+  zod
+    .object({
+      type: zod.literal(vehicleDroneTypeEnum.Watercraft),
+      subtype: zod.nativeEnum(watercraftSubtypeEnum),
+    })
+    .strict(),
+  zod
+    .object({
+      type: zod.literal(vehicleDroneTypeEnum.Aircraft),
+      subtype: zod.nativeEnum(aircraftSubtypeEnum),
+    })
+    .strict(),
+  zod
+    .object({
+      type: zod.literal(vehicleDroneTypeEnum.Drone),
+      subtype: zod.nativeEnum(droneSubtypeEnum),
+    })
+    .strict(),
+]);
+
+export const RiggerSchema = zod
   .object({
     name: zod.string(),
     description: zod.string(),
-    // category: zod.nativeEnum(vehicleCategoryEnum),
+    typeInformation: RiggerTypeInformationSchema,
     handling: zod.optional(RiggerOnOffRoadSchema),
     speed: zod.optional(RiggerOnOffRoadSchema),
     acceleration: zod.optional(RiggerOnOffRoadSchema),
@@ -125,25 +152,6 @@ const RiggerPartialSchema = zod
     page: zod.number(),
   })
   .strict();
-
-export const RiggerSchema = zod.discriminatedUnion("type", [
-  RiggerPartialSchema.extend({
-    type: zod.literal(vehicleDroneTypeEnum.Groundcraft),
-    subtype: zod.nativeEnum(groundcraftSubtypeEnum),
-  }).strict(),
-  RiggerPartialSchema.extend({
-    type: zod.literal(vehicleDroneTypeEnum.Watercraft),
-    subtype: zod.nativeEnum(watercraftSubtypeEnum),
-  }).strict(),
-  RiggerPartialSchema.extend({
-    type: zod.literal(vehicleDroneTypeEnum.Aircraft),
-    subtype: zod.nativeEnum(aircraftSubtypeEnum),
-  }).strict(),
-  RiggerPartialSchema.extend({
-    type: zod.literal(vehicleDroneTypeEnum.Drone),
-    subtype: zod.nativeEnum(droneSubtypeEnum),
-  }).strict(),
-]);
 
 export type RiggerType = zod.infer<typeof RiggerSchema>;
 export const RiggerListSchema = zod.array(RiggerSchema);

@@ -1,4 +1,4 @@
-import { EntityManager } from "@mikro-orm/core";
+import { EntityManager } from "@mikro-orm/postgresql";
 import { Seeder } from "@mikro-orm/seeder";
 import { Spells } from "../models/abilities/spellModel.js";
 import { getSpells } from "../seeds/newSeeds/spellsSeed.js";

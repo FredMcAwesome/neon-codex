@@ -422,16 +422,6 @@ export enum otherWareTypeEnum {
 }
 
 export enum augmentationTypeEnum {
-  Headware = "Headware",
-  Eyeware = "Eyeware",
-  Earware = "Earware",
-  Bodyware = "Bodyware",
-  Cyberlimbs = "Cyberlimbs",
-  Bioware = "Bioware",
-  CulturedBioware = "Cultured Bioware",
-}
-export enum augmentationClassificationEnum {
-  None = "N/A",
   Cyberware = "Cyberware",
   Bioware = "Bioware",
 }
@@ -833,6 +823,7 @@ export enum ratingMeaningEnum {
   UpgradedRating = "Rating of parent is upgraded",
   MeterPerRating = "1 Meter per Rating Level",
   SquareMeterPerRating = "1 Square Meter per Rating Level",
+  TenCmPerRating = "10 Centimeter per Rating Level",
 }
 
 export enum gearRatingEnum {

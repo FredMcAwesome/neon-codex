@@ -1,5 +1,11 @@
-import { Entity, ManyToOne, PrimaryKey, Property, ref } from "@mikro-orm/core";
-import type { Ref } from "@mikro-orm/core";
+import {
+  Entity,
+  ManyToOne,
+  PrimaryKey,
+  Property,
+  ref,
+} from "@mikro-orm/postgresql";
+import type { Ref } from "@mikro-orm/postgresql";
 import { WeaponAccessories } from "../../gear/combatGear/weaponAccessoryModel.js";
 import { Weapons } from "../../models.js";
 import { CustomisedWeapons } from "./customisedWeaponModel.js";

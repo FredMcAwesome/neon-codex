@@ -27,6 +27,7 @@ import {
   essenceCostSemantics,
   mountsAugmentationSemantics,
 } from "./augmentationParserHelper.js";
+import { augmentationTypeEnum } from "@shadowrun/common";
 const EssenceCost = Augmentation.EssenceCost;
 const Cost = Augmentation.Cost;
 const Availability = Augmentation.Availability;
@@ -162,7 +163,7 @@ export function ParseBioware() {
 
 function convertBioware(bioware: BiowareXmlType) {
   const augmentationLimit = convertAugmentationLimit(bioware.limit);
-  const category = convertBiowareCategory(bioware.category);
+  const subtype = convertBiowareCategory(bioware.category);
   const unavailableGrades =
     bioware.bannedgrades !== undefined
       ? convertAugmentationGradeList(bioware.bannedgrades.grade)
@@ -191,7 +192,7 @@ function convertBioware(bioware: BiowareXmlType) {
     assert(false, match.message);
   }
   const cost = costAugmentationSemantics(match).eval();
-  let blockedMountList = [];
+  let blockedMountList: Array<string> = [];
   if (bioware.blocksmounts !== undefined) {
     match = MountList.match(bioware.blocksmounts.toString());
     if (match.failed()) {
@@ -230,11 +231,17 @@ function convertBioware(bioware: BiowareXmlType) {
   const isGeneware = bioware.isgeneware === undefined ? undefined : true;
   const source = convertSource(bioware.source);
 
+  const typeInformation = {
+    type: augmentationTypeEnum.Bioware,
+    subtype: subtype,
+    isGeneware: isGeneware,
+  };
+
   return {
     name: bioware.name,
     description: "",
     augmentationLimit: augmentationLimit,
-    category: category,
+    typeInformation: typeInformation,
     unavailableGrades: unavailableGrades,
     essenceCost: essenceCost,
     modification: biowareModification,
@@ -242,7 +249,7 @@ function convertBioware(bioware: BiowareXmlType) {
     availability: availability,
     cost: cost,
     addWeapon: bioware.addweapon,
-    blockedMountList: blockedMountList,
+    ...(blockedMountList.length > 0 && { blockedMountList: blockedMountList }),
     selectSide: selectSide,
     bonus: bonus,
     pairBonus: pairBonus,
@@ -252,7 +259,6 @@ function convertBioware(bioware: BiowareXmlType) {
     ...(allowGear !== undefined && { allowedGear: allowGear }),
     ...(bioware.hide !== undefined && { userSelectable: false as const }),
     allowCategoryList: allowCategoryList,
-    isGeneware: isGeneware,
     source: source,
     page: bioware.page,
   };

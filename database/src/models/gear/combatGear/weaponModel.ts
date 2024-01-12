@@ -7,11 +7,10 @@ import {
   PrimaryKey,
   Property,
   ref,
-} from "@mikro-orm/core";
-import type { Ref } from "@mikro-orm/core";
-
+} from "@mikro-orm/postgresql";
+import type { Ref } from "@mikro-orm/postgresql";
 import {
-  augmentationClassificationEnum,
+  augmentationTypeEnum,
   explosiveTypeEnum,
   firearmAccessoryMountLocationEnum,
   firearmModeEnum,
@@ -79,14 +78,11 @@ export abstract class Weapons {
   @Property()
   allowAccessories!: boolean;
 
-  @Property()
-  isCyberware!: boolean;
-
   @Property({ nullable: true })
   userSelectable?: false;
 
-  @Enum(() => augmentationClassificationEnum)
-  augmentationClassification!: augmentationClassificationEnum;
+  @Enum({ items: () => augmentationTypeEnum, nullable: true })
+  augmentationType?: augmentationTypeEnum;
 
   @ManyToOne({ entity: () => Weapons, nullable: true })
   baseWeaponForm?: Weapons;
@@ -95,7 +91,7 @@ export abstract class Weapons {
   otherWeaponForms = new Collection<Weapons>(this);
 
   @Property({ type: "json", nullable: true })
-  weaponRequirements?: RequirementsType;
+  requirements?: RequirementsType;
 
   @Enum({
     items: () => firearmAccessoryMountLocationEnum,
@@ -139,10 +135,10 @@ export abstract class Weapons {
     if (dto.ammunition !== undefined) this.ammunition = dto.ammunition;
     if (dto.allowedGear !== undefined) this.allowedGear = dto.allowedGear;
     this.allowAccessories = dto.allowAccessories;
-    this.isCyberware = dto.isCyberware;
     if (dto.userSelectable !== undefined)
       this.userSelectable = dto.userSelectable;
-    this.augmentationClassification = dto.augmentationClassification;
+    if (dto.augmentationType !== undefined)
+      this.augmentationType = dto.augmentationType;
     this.relatedSkill = ref(Skills, dto.relatedSkill);
     if (dto.relatedSkillSpecialisations !== undefined)
       this.relatedSkillSpecialisations = dto.relatedSkillSpecialisations;
@@ -153,7 +149,7 @@ export abstract class Weapons {
     this.description = dto.description;
 
     if (dto.hostWeaponRequirements?.weaponRequirements !== undefined)
-      this.weaponRequirements = dto.hostWeaponRequirements.weaponRequirements;
+      this.requirements = dto.hostWeaponRequirements.weaponRequirements;
     if (dto.hostWeaponRequirements?.hostWeaponMountsRequired !== undefined)
       this.hostWeaponMountsRequired =
         dto.hostWeaponRequirements.hostWeaponMountsRequired;
@@ -162,10 +158,8 @@ export abstract class Weapons {
 
 @Entity({ discriminatorValue: weaponTypeEnum.Melee })
 export class MeleeWeapons extends Weapons {
-  @Enum({
-    items: () => meleeWeaponTypeEnum,
-  })
-  subtypeMelee!: meleeWeaponTypeEnum;
+  @Property()
+  subtype!: meleeWeaponTypeEnum;
 
   @Property()
   reach!: number;
@@ -174,7 +168,7 @@ export class MeleeWeapons extends Weapons {
     super(dto);
     assert(dto.typeInformation.type === weaponTypeEnum.Melee);
     this.reach = dto.typeInformation.meleeOptions.reach;
-    this.subtypeMelee = dto.typeInformation.subtype;
+    this.subtype = dto.typeInformation.subtype;
   }
 }
 
@@ -192,23 +186,19 @@ export abstract class RangedWeapons extends Weapons {
 
 @Entity({ discriminatorValue: weaponTypeEnum.Projectile })
 export class ProjectileWeapons extends RangedWeapons {
-  @Enum({
-    items: () => projectileWeaponTypeEnum,
-  })
-  subtypeProjectile!: projectileWeaponTypeEnum;
+  @Property()
+  subtype!: projectileWeaponTypeEnum;
   constructor(dto: WeaponSummaryType) {
     super(dto);
     assert(dto.typeInformation.type === weaponTypeEnum.Projectile);
-    this.subtypeProjectile = dto.typeInformation.subtype;
+    this.subtype = dto.typeInformation.subtype;
   }
 }
 
 @Entity({ discriminatorValue: weaponTypeEnum.Firearm })
 export class FirearmWeapons extends RangedWeapons {
-  @Enum({
-    items: () => firearmWeaponTypeEnum,
-  })
-  subtypeFirearm!: firearmWeaponTypeEnum;
+  @Property()
+  subtype!: firearmWeaponTypeEnum;
 
   @Enum({ items: () => firearmModeEnum, array: true })
   mode!: Array<firearmModeEnum>;
@@ -242,7 +232,7 @@ export class FirearmWeapons extends RangedWeapons {
   constructor(dto: WeaponSummaryType) {
     super(dto);
     assert(dto.typeInformation.type === weaponTypeEnum.Firearm);
-    this.subtypeFirearm = dto.typeInformation.subtype;
+    this.subtype = dto.typeInformation.subtype;
     this.mode = dto.typeInformation.firearmOptions.mode;
     this.recoilCompensation =
       dto.typeInformation.firearmOptions.recoilCompensation;
@@ -264,14 +254,12 @@ export class FirearmWeapons extends RangedWeapons {
 
 @Entity({ discriminatorValue: weaponTypeEnum.Explosive })
 export class Explosives extends RangedWeapons {
-  @Enum({
-    items: () => explosiveTypeEnum,
-  })
-  subtypeExplosive!: explosiveTypeEnum;
+  @Property()
+  subtype!: explosiveTypeEnum;
 
   constructor(dto: WeaponSummaryType) {
     super(dto);
     assert(dto.typeInformation.type === weaponTypeEnum.Explosive);
-    this.subtypeExplosive = dto.typeInformation.subtype;
+    this.subtype = dto.typeInformation.subtype;
   }
 }

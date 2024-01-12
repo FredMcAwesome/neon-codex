@@ -2,6 +2,10 @@
   {
     "name": "Dodge Scoot (Scooter)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Bike"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 3
@@ -25,13 +29,15 @@
     },
     "cost": [3000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 462,
-    "type": "Groundcraft",
-    "subtype": "Bike"
+    "page": 462
   },
   {
     "name": "Daihatsu-Caterpillar Horseman",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Bike"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 1
@@ -55,13 +61,15 @@
     },
     "cost": [12000],
     "source": "Rigger 5",
-    "page": 41,
-    "type": "Groundcraft",
-    "subtype": "Bike"
+    "page": 41
   },
   {
     "name": "Ares-Segway Terrier",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Bike"
+    },
     "handling": {
       "onRoad": 5,
       "offRoad": 2
@@ -85,13 +93,15 @@
     },
     "cost": [4500],
     "source": "Rigger 5",
-    "page": 42,
-    "type": "Groundcraft",
-    "subtype": "Bike"
+    "page": 42
   },
   {
     "name": "Horizon-Doble Revolution",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Bike"
+    },
     "handling": {
       "onRoad": 5,
       "offRoad": 3
@@ -115,13 +125,15 @@
     },
     "cost": [8000],
     "source": "Rigger 5",
-    "page": 42,
-    "type": "Groundcraft",
-    "subtype": "Bike"
+    "page": 42
   },
   {
     "name": "Evo Falcon-EX",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Bike"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 5
@@ -151,13 +163,15 @@
     },
     "cost": [10000],
     "source": "Rigger 5",
-    "page": 43,
-    "type": "Groundcraft",
-    "subtype": "Bike"
+    "page": 43
   },
   {
     "name": "Entertainment Systems Cyclops",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Bike"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 4
@@ -181,13 +195,15 @@
     },
     "cost": [6500],
     "source": "Rigger 5",
-    "page": 42,
-    "type": "Groundcraft",
-    "subtype": "Bike"
+    "page": 42
   },
   {
     "name": "Echo Motors Zip",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Bike"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 2
@@ -211,13 +227,15 @@
     },
     "cost": [3500],
     "source": "Rigger 5",
-    "page": 44,
-    "type": "Groundcraft",
-    "subtype": "Bike"
+    "page": 44
   },
   {
     "name": "Yamaha Kaburaya",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Bike"
+    },
     "handling": {
       "onRoad": 5,
       "offRoad": 3
@@ -241,13 +259,15 @@
     },
     "cost": [17000],
     "source": "Rigger 5",
-    "page": 44,
-    "type": "Groundcraft",
-    "subtype": "Bike"
+    "page": 44
   },
   {
     "name": "Buell Spartan",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Bike"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 4
@@ -271,13 +291,15 @@
     },
     "cost": [11500],
     "source": "Rigger 5",
-    "page": 45,
-    "type": "Groundcraft",
-    "subtype": "Bike"
+    "page": 45
   },
   {
     "name": "Harley-Davidson Nightmare",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Bike"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 3
@@ -301,13 +323,15 @@
     },
     "cost": [22000],
     "source": "Rigger 5",
-    "page": 45,
-    "type": "Groundcraft",
-    "subtype": "Bike"
+    "page": 45
   },
   {
     "name": "Yamaha Nodachi",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Bike"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 3
@@ -331,13 +355,15 @@
     },
     "cost": [28000],
     "source": "Rigger 5",
-    "page": 45,
-    "type": "Groundcraft",
-    "subtype": "Bike"
+    "page": 45
   },
   {
     "name": "Thundercloud Mustang",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Bike"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 4
@@ -361,13 +387,15 @@
     },
     "cost": [11000],
     "source": "Rigger 5",
-    "page": 46,
-    "type": "Groundcraft",
-    "subtype": "Bike"
+    "page": 46
   },
   {
     "name": "Renault-Fiat Funone",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 1
@@ -391,13 +419,15 @@
     },
     "cost": [8500],
     "source": "Rigger 5",
-    "page": 47,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 47
   },
   {
     "name": "Dodge Xenon",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 2
@@ -424,13 +454,15 @@
     },
     "cost": [18000],
     "source": "Rigger 5",
-    "page": 47,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 47
   },
   {
     "name": "Echo Motors Metaway",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 2
@@ -454,13 +486,15 @@
     },
     "cost": [24000],
     "source": "Rigger 5",
-    "page": 47,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 47
   },
   {
     "name": "GMC 442 Chameleon",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 2
@@ -484,13 +518,15 @@
     },
     "cost": [14000],
     "source": "Rigger 5",
-    "page": 48,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 48
   },
   {
     "name": "Mercury Comet",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 4
@@ -514,13 +550,15 @@
     },
     "cost": [20000],
     "source": "Rigger 5",
-    "page": 49,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 49
   },
   {
     "name": "SAAB Gladius 998 TI",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 7,
       "offRoad": 3
@@ -544,13 +582,15 @@
     },
     "cost": [154000],
     "source": "Rigger 5",
-    "page": 50,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 50
   },
   {
     "name": "SAAB Dynamit",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 5,
       "offRoad": 1
@@ -574,13 +614,15 @@
     },
     "cost": [98000],
     "source": "Rigger 5",
-    "page": 50,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 50
   },
   {
     "name": "GMC Phoenix",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 2
@@ -604,13 +646,15 @@
     },
     "cost": [32000],
     "source": "Rigger 5",
-    "page": 51,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 51
   },
   {
     "name": "Hyundai Equus",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -637,13 +681,15 @@
     },
     "cost": [40000],
     "source": "Rigger 5",
-    "page": 52,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 52
   },
   {
     "name": "Chevrolet Longboard",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 3
@@ -667,13 +713,15 @@
     },
     "cost": [31000],
     "source": "Rigger 5",
-    "page": 52,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 52
   },
   {
     "name": "Rolls-Royce Phaeton",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 5,
       "offRoad": 3
@@ -700,13 +748,15 @@
     },
     "cost": [350000],
     "source": "Rigger 5",
-    "page": 52,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 52
   },
   {
     "name": "Thundercloud Morgan",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 5
@@ -732,13 +782,15 @@
     },
     "cost": [7500],
     "source": "Rigger 5",
-    "page": 52,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 52
   },
   {
     "name": "Tata Hotspur",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 5
@@ -762,13 +814,15 @@
     },
     "cost": [60000],
     "source": "Rigger 5",
-    "page": 53,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 53
   },
   {
     "name": "GMC Armadillo",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 4
@@ -792,13 +846,15 @@
     },
     "cost": [22000],
     "source": "Rigger 5",
-    "page": 54,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 54
   },
   {
     "name": "Ford Percheron",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -822,13 +878,15 @@
     },
     "cost": [39000],
     "source": "Rigger 5",
-    "page": 54,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 54
   },
   {
     "name": "Jeep Trailblazer",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 4
@@ -852,13 +910,15 @@
     },
     "cost": [32000],
     "source": "Rigger 5",
-    "page": 54,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 54
   },
   {
     "name": "Toyota Talon",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 3
@@ -882,13 +942,15 @@
     },
     "cost": [30000],
     "source": "Rigger 5",
-    "page": 55,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 55
   },
   {
     "name": "Nissan Hauler",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -915,13 +977,15 @@
     },
     "cost": [30000],
     "source": "Rigger 5",
-    "page": 56,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 56
   },
   {
     "name": "Eurocar Northstar",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 5,
       "offRoad": 3
@@ -945,13 +1009,15 @@
     },
     "cost": [115000],
     "source": "Rigger 5",
-    "page": 56,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 56
   },
   {
     "name": "GMC Escalade",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -975,13 +1041,15 @@
     },
     "cost": [125000],
     "source": "Rigger 5",
-    "page": 57,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 57
   },
   {
     "name": "Ford Econovan",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 2
@@ -1005,13 +1073,15 @@
     },
     "cost": [30000],
     "source": "Rigger 5",
-    "page": 58,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 58
   },
   {
     "name": "Dodge Caravaner",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 2
@@ -1035,13 +1105,15 @@
     },
     "cost": [28000],
     "source": "Rigger 5",
-    "page": 58,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 58
   },
   {
     "name": "GMC Universe",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -1068,13 +1140,15 @@
     },
     "cost": [30000],
     "source": "Rigger 5",
-    "page": 59,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 59
   },
   {
     "name": "Ares Chuck Wagon",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 2,
       "offRoad": 2
@@ -1098,13 +1172,15 @@
     },
     "cost": [40000],
     "source": "Rigger 5",
-    "page": 59,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 59
   },
   {
     "name": "Airstream Traveller Chinook",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Truck/Van"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 2
@@ -1131,13 +1207,15 @@
     },
     "cost": [145000],
     "source": "Rigger 5",
-    "page": 59,
-    "type": "Groundcraft",
-    "subtype": "Truck/Van"
+    "page": 59
   },
   {
     "name": "Airstream Traveller Preserve",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Truck/Van"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -1164,13 +1242,15 @@
     },
     "cost": [134000],
     "source": "Rigger 5",
-    "page": 59,
-    "type": "Groundcraft",
-    "subtype": "Truck/Van"
+    "page": 59
   },
   {
     "name": "Airstream Traveller Outback",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Truck/Van"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 4
@@ -1197,13 +1277,15 @@
     },
     "cost": [158000],
     "source": "Rigger 5",
-    "page": 59,
-    "type": "Groundcraft",
-    "subtype": "Truck/Van"
+    "page": 59
   },
   {
     "name": "Mack Hellhound",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Truck/Van"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 2
@@ -1230,13 +1312,15 @@
     },
     "cost": [150000],
     "source": "Rigger 5",
-    "page": 60,
-    "type": "Groundcraft",
-    "subtype": "Truck/Van"
+    "page": 60
   },
   {
     "name": "Omni Motors Omnibus",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Municipal/Construction"
+    },
     "handling": {
       "onRoad": 2,
       "offRoad": 2
@@ -1260,13 +1344,15 @@
     },
     "cost": [296000],
     "source": "Rigger 5",
-    "page": 62,
-    "type": "Groundcraft",
-    "subtype": "Municipal/Construction"
+    "page": 62
   },
   {
     "name": "GMC Commercial G-Series",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Municipal/Construction"
+    },
     "handling": {
       "onRoad": 2,
       "offRoad": 2
@@ -1290,13 +1376,15 @@
     },
     "cost": [287000],
     "source": "Rigger 5",
-    "page": 62,
-    "type": "Groundcraft",
-    "subtype": "Municipal/Construction"
+    "page": 62
   },
   {
     "name": "GMC Commercial D-Series",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Municipal/Construction"
+    },
     "handling": {
       "onRoad": 2,
       "offRoad": 2
@@ -1320,13 +1408,15 @@
     },
     "cost": [248000],
     "source": "Rigger 5",
-    "page": 63,
-    "type": "Groundcraft",
-    "subtype": "Municipal/Construction"
+    "page": 63
   },
   {
     "name": "GMC Commercial D-Series Compact",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Municipal/Construction"
+    },
     "handling": {
       "onRoad": 2,
       "offRoad": 2
@@ -1350,13 +1440,15 @@
     },
     "cost": [196000],
     "source": "Rigger 5",
-    "page": 63,
-    "type": "Groundcraft",
-    "subtype": "Municipal/Construction"
+    "page": 63
   },
   {
     "name": "GMC Commercial DD",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Municipal/Construction"
+    },
     "handling": {
       "onRoad": 2,
       "offRoad": 2
@@ -1380,13 +1472,15 @@
     },
     "cost": [312000],
     "source": "Rigger 5",
-    "page": 63,
-    "type": "Groundcraft",
-    "subtype": "Municipal/Construction"
+    "page": 63
   },
   {
     "name": "Saeder-Krupp Konstructors",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Municipal/Construction"
+    },
     "handling": {
       "onRoad": 2,
       "offRoad": 2
@@ -1410,13 +1504,15 @@
     },
     "cost": [365000],
     "source": "Rigger 5",
-    "page": 64,
-    "type": "Groundcraft",
-    "subtype": "Municipal/Construction"
+    "page": 64
   },
   {
     "name": "Mostrans KVP-28",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Municipal/Construction"
+    },
     "handling": {
       "onRoad": 2,
       "offRoad": 2
@@ -1440,13 +1536,15 @@
     },
     "cost": [87000],
     "source": "Rigger 5",
-    "page": 64,
-    "type": "Groundcraft",
-    "subtype": "Municipal/Construction"
+    "page": 64
   },
   {
     "name": "Mostrans Minsk",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Municipal/Construction"
+    },
     "handling": {
       "onRoad": 2,
       "offRoad": 2
@@ -1470,13 +1568,15 @@
     },
     "cost": [77000],
     "source": "Rigger 5",
-    "page": 64,
-    "type": "Groundcraft",
-    "subtype": "Municipal/Construction"
+    "page": 64
   },
   {
     "name": "Universal Hovercraft Minnesota",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Municipal/Construction"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 4
@@ -1500,13 +1600,15 @@
     },
     "cost": [130000],
     "source": "Rigger 5",
-    "page": 65,
-    "type": "Groundcraft",
-    "subtype": "Municipal/Construction"
+    "page": 65
   },
   {
     "name": "Vodyanoy Assault Hovercraft",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Municipal/Construction"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -1538,13 +1640,15 @@
     },
     "cost": [84000],
     "source": "Rigger 5",
-    "page": 65,
-    "type": "Groundcraft",
-    "subtype": "Municipal/Construction"
+    "page": 65
   },
   {
     "name": "BMW Blitzkrieg",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Corpsec/Police/Military"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 3
@@ -1582,13 +1686,15 @@
     },
     "cost": [46000],
     "source": "Rigger 5",
-    "page": 66,
-    "type": "Groundcraft",
-    "subtype": "Corpsec/Police/Military"
+    "page": 66
   },
   {
     "name": "Dodge Charger",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Corpsec/Police/Military"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 3
@@ -1638,13 +1744,15 @@
     },
     "cost": [65000],
     "source": "Rigger 5",
-    "page": 67,
-    "type": "Groundcraft",
-    "subtype": "Corpsec/Police/Military"
+    "page": 67
   },
   {
     "name": "BMW I8 Interceptor",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Corpsec/Police/Military"
+    },
     "handling": {
       "onRoad": 5,
       "offRoad": 3
@@ -1688,13 +1796,15 @@
     },
     "cost": [114000],
     "source": "Rigger 5",
-    "page": 68,
-    "type": "Groundcraft",
-    "subtype": "Corpsec/Police/Military"
+    "page": 68
   },
   {
     "name": "Dodge Goliath",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Corpsec/Police/Military"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 2
@@ -1718,13 +1828,15 @@
     },
     "cost": [120000],
     "source": "Rigger 5",
-    "page": 70,
-    "type": "Groundcraft",
-    "subtype": "Corpsec/Police/Military"
+    "page": 70
   },
   {
     "name": "BMW Teufelkatze",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Corpsec/Police/Military"
+    },
     "handling": {
       "onRoad": 5,
       "offRoad": 4
@@ -1748,13 +1860,15 @@
     },
     "cost": [76000],
     "source": "Rigger 5",
-    "page": 71,
-    "type": "Groundcraft",
-    "subtype": "Corpsec/Police/Military"
+    "page": 71
   },
   {
     "name": "Dodge Stallion",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Corpsec/Police/Military"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 4
@@ -1798,13 +1912,15 @@
     },
     "cost": [78000],
     "source": "Rigger 5",
-    "page": 71,
-    "type": "Groundcraft",
-    "subtype": "Corpsec/Police/Military"
+    "page": 71
   },
   {
     "name": "Dodge Minotaur",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Corpsec/Police/Military"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 5
@@ -1842,13 +1958,15 @@
     },
     "cost": [45000],
     "source": "Rigger 5",
-    "page": 71,
-    "type": "Groundcraft",
-    "subtype": "Corpsec/Police/Military"
+    "page": 71
   },
   {
     "name": "BMW Luxus",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Corpsec/Police/Military"
+    },
     "handling": {
       "onRoad": 5,
       "offRoad": 5
@@ -1880,13 +1998,15 @@
     },
     "cost": [398000],
     "source": "Rigger 5",
-    "page": 73,
-    "type": "Groundcraft",
-    "subtype": "Corpsec/Police/Military"
+    "page": 73
   },
   {
     "name": "Dodge General Command",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Corpsec/Police/Military"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -1910,13 +2030,15 @@
     },
     "cost": [344000],
     "source": "Rigger 5",
-    "page": 74,
-    "type": "Groundcraft",
-    "subtype": "Corpsec/Police/Military"
+    "page": 74
   },
   {
     "name": "Dodge General Trailer",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Corpsec/Police/Military"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -1940,13 +2062,15 @@
     },
     "cost": [54000],
     "source": "Rigger 5",
-    "page": 74,
-    "type": "Groundcraft",
-    "subtype": "Corpsec/Police/Military"
+    "page": 74
   },
   {
     "name": "BMW Sturmwagon",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Corpsec/Police/Military"
+    },
     "handling": {
       "onRoad": 5,
       "offRoad": 4
@@ -1970,13 +2094,15 @@
     },
     "cost": [145000],
     "source": "Rigger 5",
-    "page": 75,
-    "type": "Groundcraft",
-    "subtype": "Corpsec/Police/Military"
+    "page": 75
   },
   {
     "name": "Dodge Rhino",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Corpsec/Police/Military"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 4
@@ -2020,13 +2146,15 @@
     },
     "cost": [225000],
     "source": "Rigger 5",
-    "page": 77,
-    "type": "Groundcraft",
-    "subtype": "Corpsec/Police/Military"
+    "page": 77
   },
   {
     "name": "Ruhrmetal Wolf II",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Corpsec/Police/Military"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -2050,13 +2178,15 @@
     },
     "cost": [330000],
     "source": "Rigger 5",
-    "page": 77,
-    "type": "Groundcraft",
-    "subtype": "Corpsec/Police/Military"
+    "page": 77
   },
   {
     "name": "Evo Waterking",
     "description": "",
+    "typeInformation": {
+      "type": "Watercraft",
+      "subtype": "Boat"
+    },
     "handling": 3,
     "speed": 3,
     "acceleration": 2,
@@ -2077,13 +2207,15 @@
     },
     "cost": [74000],
     "source": "Rigger 5",
-    "page": 79,
-    "type": "Watercraft",
-    "subtype": "Boat"
+    "page": 79
   },
   {
     "name": "Sea Ray Cottonmouth",
     "description": "",
+    "typeInformation": {
+      "type": "Watercraft",
+      "subtype": "Boat"
+    },
     "handling": 5,
     "speed": 7,
     "acceleration": 4,
@@ -2130,13 +2262,15 @@
     },
     "cost": [120000],
     "source": "Rigger 5",
-    "page": 80,
-    "type": "Watercraft",
-    "subtype": "Boat"
+    "page": 80
   },
   {
     "name": "Kawasaki Stingray",
     "description": "",
+    "typeInformation": {
+      "type": "Watercraft",
+      "subtype": "Boat"
+    },
     "handling": 5,
     "speed": 5,
     "acceleration": 3,
@@ -2157,13 +2291,15 @@
     },
     "cost": [13000],
     "source": "Rigger 5",
-    "page": 81,
-    "type": "Watercraft",
-    "subtype": "Boat"
+    "page": 81
   },
   {
     "name": "Kawasaki Manta Ray",
     "description": "",
+    "typeInformation": {
+      "type": "Watercraft",
+      "subtype": "Boat"
+    },
     "handling": 4,
     "speed": 5,
     "acceleration": 3,
@@ -2184,13 +2320,15 @@
     },
     "cost": [16000],
     "source": "Rigger 5",
-    "page": 81,
-    "type": "Watercraft",
-    "subtype": "Boat"
+    "page": 81
   },
   {
     "name": "Aztechnology Nightrunner",
     "description": "",
+    "typeInformation": {
+      "type": "Watercraft",
+      "subtype": "Boat"
+    },
     "handling": 5,
     "speed": 6,
     "acceleration": 3,
@@ -2211,13 +2349,15 @@
     },
     "cost": [56000],
     "source": "Rigger 5",
-    "page": 81,
-    "type": "Watercraft",
-    "subtype": "Boat"
+    "page": 81
   },
   {
     "name": "Zodiac Scorpio",
     "description": "",
+    "typeInformation": {
+      "type": "Watercraft",
+      "subtype": "Boat"
+    },
     "handling": 4,
     "speed": 4,
     "acceleration": 2,
@@ -2258,13 +2398,15 @@
     },
     "cost": [26000],
     "source": "Rigger 5",
-    "page": 82,
-    "type": "Watercraft",
-    "subtype": "Boat"
+    "page": 82
   },
   {
     "name": "Mitsubishi Waterbug",
     "description": "",
+    "typeInformation": {
+      "type": "Watercraft",
+      "subtype": "Boat"
+    },
     "handling": 6,
     "speed": 3,
     "acceleration": 2,
@@ -2279,13 +2421,15 @@
     },
     "cost": [8000],
     "source": "Rigger 5",
-    "page": 83,
-    "type": "Watercraft",
-    "subtype": "Boat"
+    "page": 83
   },
   {
     "name": "Mitsubishi Waveskipper",
     "description": "",
+    "typeInformation": {
+      "type": "Watercraft",
+      "subtype": "Boat"
+    },
     "handling": 5,
     "speed": 3,
     "acceleration": 2,
@@ -2300,13 +2444,15 @@
     },
     "cost": [10000],
     "source": "Rigger 5",
-    "page": 83,
-    "type": "Watercraft",
-    "subtype": "Boat"
+    "page": 83
   },
   {
     "name": "Evo Water Strider",
     "description": "",
+    "typeInformation": {
+      "type": "Watercraft",
+      "subtype": "Boat"
+    },
     "handling": 3,
     "speed": 2,
     "acceleration": 1,
@@ -2327,13 +2473,15 @@
     },
     "cost": [11000],
     "source": "Rigger 5",
-    "page": 84,
-    "type": "Watercraft",
-    "subtype": "Boat"
+    "page": 84
   },
   {
     "name": "Corsair Elysium",
     "description": "",
+    "typeInformation": {
+      "type": "Watercraft",
+      "subtype": "Boat"
+    },
     "handling": {
       "onRoad": 1,
       "offRoad": 3
@@ -2363,13 +2511,15 @@
     },
     "cost": [78000],
     "source": "Rigger 5",
-    "page": 85,
-    "type": "Watercraft",
-    "subtype": "Boat"
+    "page": 85
   },
   {
     "name": "Corsair Panther",
     "description": "",
+    "typeInformation": {
+      "type": "Watercraft",
+      "subtype": "Boat"
+    },
     "handling": {
       "onRoad": 1,
       "offRoad": 3
@@ -2399,13 +2549,15 @@
     },
     "cost": [135000],
     "source": "Rigger 5",
-    "page": 85,
-    "type": "Watercraft",
-    "subtype": "Boat"
+    "page": 85
   },
   {
     "name": "Corsair Trident",
     "description": "",
+    "typeInformation": {
+      "type": "Watercraft",
+      "subtype": "Boat"
+    },
     "handling": {
       "onRoad": 1,
       "offRoad": 3
@@ -2435,13 +2587,15 @@
     },
     "cost": [125000],
     "source": "Rigger 5",
-    "page": 87,
-    "type": "Watercraft",
-    "subtype": "Boat"
+    "page": 87
   },
   {
     "name": "Corsair Triton",
     "description": "",
+    "typeInformation": {
+      "type": "Watercraft",
+      "subtype": "Boat"
+    },
     "handling": 1,
     "speed": 6,
     "acceleration": 2,
@@ -2462,13 +2616,15 @@
     },
     "cost": [104000],
     "source": "Rigger 5",
-    "page": 87,
-    "type": "Watercraft",
-    "subtype": "Boat"
+    "page": 87
   },
   {
     "name": "Blohm and Voss Classic 111",
     "description": "",
+    "typeInformation": {
+      "type": "Watercraft",
+      "subtype": "Boat"
+    },
     "handling": 3,
     "speed": 4,
     "acceleration": 2,
@@ -2489,13 +2645,15 @@
     },
     "cost": [14870000],
     "source": "Rigger 5",
-    "page": 88,
-    "type": "Watercraft",
-    "subtype": "Boat"
+    "page": 88
   },
   {
     "name": "Lurssen Mobius",
     "description": "",
+    "typeInformation": {
+      "type": "Watercraft",
+      "subtype": "Boat"
+    },
     "handling": 3,
     "speed": 3,
     "acceleration": 2,
@@ -2516,13 +2674,15 @@
     },
     "cost": [84985000],
     "source": "Rigger 5",
-    "page": 89,
-    "type": "Watercraft",
-    "subtype": "Boat"
+    "page": 89
   },
   {
     "name": "Sun Tracker Lake King",
     "description": "",
+    "typeInformation": {
+      "type": "Watercraft",
+      "subtype": "Boat"
+    },
     "handling": 2,
     "speed": 3,
     "acceleration": 2,
@@ -2543,13 +2703,15 @@
     },
     "cost": [35000],
     "source": "Rigger 5",
-    "page": 90,
-    "type": "Watercraft",
-    "subtype": "Boat"
+    "page": 90
   },
   {
     "name": "Evo Aquavida 1",
     "description": "",
+    "typeInformation": {
+      "type": "Watercraft",
+      "subtype": "Boat"
+    },
     "handling": 2,
     "speed": 1,
     "acceleration": 2,
@@ -2570,13 +2732,15 @@
     },
     "cost": [115000],
     "source": "Rigger 5",
-    "page": 90,
-    "type": "Watercraft",
-    "subtype": "Boat"
+    "page": 90
   },
   {
     "name": "Evo Aquavida 2",
     "description": "",
+    "typeInformation": {
+      "type": "Watercraft",
+      "subtype": "Boat"
+    },
     "handling": 2,
     "speed": 1,
     "acceleration": 2,
@@ -2597,13 +2761,15 @@
     },
     "cost": [135000],
     "source": "Rigger 5",
-    "page": 90,
-    "type": "Watercraft",
-    "subtype": "Boat"
+    "page": 90
   },
   {
     "name": "Ultramarine Kingfisher",
     "description": "",
+    "typeInformation": {
+      "type": "Watercraft",
+      "subtype": "Boat"
+    },
     "handling": 3,
     "speed": 3,
     "acceleration": 2,
@@ -2624,13 +2790,15 @@
     },
     "cost": [61000],
     "source": "Rigger 5",
-    "page": 92,
-    "type": "Watercraft",
-    "subtype": "Boat"
+    "page": 92
   },
   {
     "name": "American Airboat AirRanger",
     "description": "",
+    "typeInformation": {
+      "type": "Watercraft",
+      "subtype": "Boat"
+    },
     "handling": 4,
     "speed": 4,
     "acceleration": 3,
@@ -2651,13 +2819,15 @@
     },
     "cost": [25500],
     "source": "Rigger 5",
-    "page": 92,
-    "type": "Watercraft",
-    "subtype": "Boat"
+    "page": 92
   },
   {
     "name": "American Airboat AirRanger Heavy",
     "description": "",
+    "typeInformation": {
+      "type": "Watercraft",
+      "subtype": "Boat"
+    },
     "handling": 4,
     "speed": 4,
     "acceleration": 3,
@@ -2678,13 +2848,15 @@
     },
     "cost": [35500],
     "source": "Rigger 5",
-    "page": 92,
-    "type": "Watercraft",
-    "subtype": "Boat"
+    "page": 92
   },
   {
     "name": "GMC Riverine Security",
     "description": "",
+    "typeInformation": {
+      "type": "Watercraft",
+      "subtype": "Boat"
+    },
     "handling": 4,
     "speed": 5,
     "acceleration": 3,
@@ -2737,13 +2909,15 @@
     },
     "cost": [100000],
     "source": "Rigger 5",
-    "page": 92,
-    "type": "Watercraft",
-    "subtype": "Boat"
+    "page": 92
   },
   {
     "name": "GMC Riverine Police",
     "description": "",
+    "typeInformation": {
+      "type": "Watercraft",
+      "subtype": "Boat"
+    },
     "handling": 4,
     "speed": 5,
     "acceleration": 3,
@@ -2796,13 +2970,15 @@
     },
     "cost": [154000],
     "source": "Rigger 5",
-    "page": 92,
-    "type": "Watercraft",
-    "subtype": "Boat"
+    "page": 92
   },
   {
     "name": "GMC Riverine Military",
     "description": "",
+    "typeInformation": {
+      "type": "Watercraft",
+      "subtype": "Boat"
+    },
     "handling": 4,
     "speed": 5,
     "acceleration": 3,
@@ -2861,13 +3037,15 @@
     },
     "cost": [225000],
     "source": "Rigger 5",
-    "page": 92,
-    "type": "Watercraft",
-    "subtype": "Boat"
+    "page": 92
   },
   {
     "name": "Hughes Stallion WK-4",
     "description": "",
+    "typeInformation": {
+      "type": "Aircraft",
+      "subtype": "Rotorcraft"
+    },
     "handling": 5,
     "speed": 5,
     "acceleration": 4,
@@ -2888,13 +3066,15 @@
     },
     "cost": [440000],
     "source": "Rigger 5",
-    "page": 95,
-    "type": "Aircraft",
-    "subtype": "Rotorcraft"
+    "page": 95
   },
   {
     "name": "Aztechnology Agular GX-2",
     "description": "",
+    "typeInformation": {
+      "type": "Aircraft",
+      "subtype": "Rotorcraft"
+    },
     "handling": 5,
     "speed": 7,
     "acceleration": 5,
@@ -2915,13 +3095,15 @@
     },
     "cost": [500000],
     "source": "Rigger 5",
-    "page": 97,
-    "type": "Aircraft",
-    "subtype": "Rotorcraft"
+    "page": 97
   },
   {
     "name": "Aztechnology Agular GX-3AT",
     "description": "",
+    "typeInformation": {
+      "type": "Aircraft",
+      "subtype": "Rotorcraft"
+    },
     "handling": 4,
     "speed": 6,
     "acceleration": 4,
@@ -2942,13 +3124,15 @@
     },
     "cost": [550000],
     "source": "Rigger 5",
-    "page": 97,
-    "type": "Aircraft",
-    "subtype": "Rotorcraft"
+    "page": 97
   },
   {
     "name": "S-K Aerospace SKA-008",
     "description": "",
+    "typeInformation": {
+      "type": "Aircraft",
+      "subtype": "Rotorcraft"
+    },
     "handling": 6,
     "speed": 5,
     "acceleration": 8,
@@ -2969,13 +3153,15 @@
     },
     "cost": [525000],
     "source": "Rigger 5",
-    "page": 98,
-    "type": "Aircraft",
-    "subtype": "Rotorcraft"
+    "page": 98
   },
   {
     "name": "Dassault Sea Sprite",
     "description": "",
+    "typeInformation": {
+      "type": "Aircraft",
+      "subtype": "Rotorcraft"
+    },
     "handling": 5,
     "speed": 4,
     "acceleration": 3,
@@ -2996,13 +3182,15 @@
     },
     "cost": [400000],
     "source": "Rigger 5",
-    "page": 98,
-    "type": "Aircraft",
-    "subtype": "Rotorcraft"
+    "page": 98
   },
   {
     "name": "Federated-Boeing PBY-70 Catalina II",
     "description": "",
+    "typeInformation": {
+      "type": "Aircraft",
+      "subtype": "Fixed-Wing Aircraft"
+    },
     "handling": 4,
     "speed": 3,
     "acceleration": 3,
@@ -3043,13 +3231,15 @@
     },
     "cost": [250000],
     "source": "Rigger 5",
-    "page": 100,
-    "type": "Aircraft",
-    "subtype": "Fixed-Wing Aircraft"
+    "page": 100
   },
   {
     "name": "Airbus Lift Ticket ALS-699",
     "description": "",
+    "typeInformation": {
+      "type": "Aircraft",
+      "subtype": "Rotorcraft"
+    },
     "handling": 5,
     "speed": 3,
     "acceleration": 3,
@@ -3070,13 +3260,15 @@
     },
     "cost": [325000],
     "source": "Rigger 5",
-    "page": 102,
-    "type": "Aircraft",
-    "subtype": "Rotorcraft"
+    "page": 102
   },
   {
     "name": "GMC Gryphon",
     "description": "",
+    "typeInformation": {
+      "type": "Aircraft",
+      "subtype": "VTOL/VSTOL"
+    },
     "handling": 5,
     "speed": 8,
     "acceleration": 7,
@@ -3117,13 +3309,15 @@
     },
     "cost": [3200000],
     "source": "Rigger 5",
-    "page": 103,
-    "type": "Aircraft",
-    "subtype": "VTOL/VSTOL"
+    "page": 103
   },
   {
     "name": "Evo-Krime Krime Wing",
     "description": "",
+    "typeInformation": {
+      "type": "Aircraft",
+      "subtype": "VTOL/VSTOL"
+    },
     "handling": 4,
     "speed": 6,
     "acceleration": 5,
@@ -3144,13 +3338,15 @@
     },
     "cost": [2275000],
     "source": "Rigger 5",
-    "page": 105,
-    "type": "Aircraft",
-    "subtype": "VTOL/VSTOL"
+    "page": 105
   },
   {
     "name": "Luftshiffbau Personal Zeppelin LZP-2070",
     "description": "",
+    "typeInformation": {
+      "type": "Aircraft",
+      "subtype": "LTAV"
+    },
     "handling": 4,
     "speed": 2,
     "acceleration": 3,
@@ -3171,13 +3367,15 @@
     },
     "cost": [85000],
     "source": "Rigger 5",
-    "page": 107,
-    "type": "Aircraft",
-    "subtype": "LTAV"
+    "page": 107
   },
   {
     "name": "Renegade Works Mothership LAVH",
     "description": "",
+    "typeInformation": {
+      "type": "Aircraft",
+      "subtype": "LTAV"
+    },
     "handling": 3,
     "speed": 3,
     "acceleration": 3,
@@ -3198,13 +3396,15 @@
     },
     "cost": [50000],
     "source": "Rigger 5",
-    "page": 105,
-    "type": "Aircraft",
-    "subtype": "LTAV"
+    "page": 105
   },
   {
     "name": "Horizon Noizquito (Microdrone)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Micro"
+    },
     "handling": 4,
     "speed": 3,
     "acceleration": 2,
@@ -3224,13 +3424,15 @@
     },
     "cost": [2000],
     "source": "Rigger 5",
-    "page": 128,
-    "type": "Drone",
-    "subtype": "Drones: Micro"
+    "page": 128
   },
   {
     "name": "Sony Goldfish (Microdrone)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Micro"
+    },
     "handling": {
       "onRoad": 2,
       "offRoad": 4
@@ -3253,13 +3455,15 @@
     },
     "cost": [500],
     "source": "Rigger 5",
-    "page": 129,
-    "type": "Drone",
-    "subtype": "Drones: Micro"
+    "page": 129
   },
   {
     "name": "Aerodesign Systems Condor LDSD-23 (Minidrone)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Mini"
+    },
     "handling": 2,
     "speed": 0,
     "acceleration": 0,
@@ -3279,13 +3483,15 @@
     },
     "cost": [4000],
     "source": "Rigger 5",
-    "page": 129,
-    "type": "Drone",
-    "subtype": "Drones: Mini"
+    "page": 129
   },
   {
     "name": "Aztechnology Hedgehog (Minidrone)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Mini"
+    },
     "handling": 3,
     "speed": 1,
     "acceleration": 1,
@@ -3305,13 +3511,15 @@
     },
     "cost": [8000],
     "source": "Rigger 5",
-    "page": 129,
-    "type": "Drone",
-    "subtype": "Drones: Mini"
+    "page": 129
   },
   {
     "name": "Cyberspace Designs Dragonfly (Minidrone)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Mini"
+    },
     "handling": 4,
     "speed": 2,
     "acceleration": 1,
@@ -3346,13 +3554,15 @@
     },
     "cost": [4000],
     "source": "Rigger 5",
-    "page": 129,
-    "type": "Drone",
-    "subtype": "Drones: Mini"
+    "page": 129
   },
   {
     "name": "Festo Pigeon 2.0 (Minidrone)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Mini"
+    },
     "handling": 4,
     "speed": 2,
     "acceleration": 1,
@@ -3372,13 +3582,15 @@
     },
     "cost": [3000],
     "source": "Rigger 5",
-    "page": 129,
-    "type": "Drone",
-    "subtype": "Drones: Mini"
+    "page": 129
   },
   {
     "name": "Horizon CU^3 (Minidrone)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Mini"
+    },
     "handling": 4,
     "speed": 1,
     "acceleration": 1,
@@ -3402,13 +3614,15 @@
     },
     "cost": [3000],
     "source": "Rigger 5",
-    "page": 130,
-    "type": "Drone",
-    "subtype": "Drones: Mini"
+    "page": 130
   },
   {
     "name": "Horizon CU^3 Professional (Minidrone)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Mini"
+    },
     "handling": 4,
     "speed": 1,
     "acceleration": 1,
@@ -3432,13 +3646,15 @@
     },
     "cost": [6000],
     "source": "Rigger 5",
-    "page": 130,
-    "type": "Drone",
-    "subtype": "Drones: Mini"
+    "page": 130
   },
   {
     "name": "Renraku Gerbil (Minidrone)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Mini"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 2
@@ -3461,13 +3677,15 @@
     },
     "cost": [2000],
     "source": "Rigger 5",
-    "page": 130,
-    "type": "Drone",
-    "subtype": "Drones: Mini"
+    "page": 130
   },
   {
     "name": "Ares Arms Sentry V (Small)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 0
@@ -3509,13 +3727,15 @@
     },
     "cost": [4000],
     "source": "Rigger 5",
-    "page": 130,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 130
   },
   {
     "name": "Citron-Brouillard Smoke Generator (Small)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": 3,
     "speed": 1,
     "acceleration": 1,
@@ -3536,13 +3756,15 @@
     },
     "cost": [4000],
     "source": "Rigger 5",
-    "page": 131,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 131
   },
   {
     "name": "Cyberspace Designs Wolfhound (Small)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": 3,
     "speed": 2,
     "acceleration": 1,
@@ -3563,13 +3785,15 @@
     },
     "cost": [30000],
     "source": "Rigger 5",
-    "page": 131,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 131
   },
   {
     "name": "Evo Proletarian (Small)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 2
@@ -3602,13 +3826,15 @@
     },
     "cost": [4000],
     "source": "Rigger 5",
-    "page": 132,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 132
   },
   {
     "name": "Ferret RPD-1X (Small)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 2
@@ -3645,13 +3871,15 @@
     },
     "cost": [4000],
     "source": "Rigger 5",
-    "page": 132,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 132
   },
   {
     "name": "Festo Sewer Snake (Small)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": 3,
     "speed": {
       "onRoad": 1,
@@ -3678,13 +3906,15 @@
     },
     "cost": [6000],
     "source": "Rigger 5",
-    "page": 132,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 132
   },
   {
     "name": "Horizon Mini-Zep (Small)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": 2,
     "speed": 0,
     "acceleration": 0,
@@ -3705,13 +3935,15 @@
     },
     "cost": [2000],
     "source": "Rigger 5",
-    "page": 132,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 132
   },
   {
     "name": "Knight Errant P5 (Small)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 2
@@ -3735,13 +3967,15 @@
     },
     "cost": [8000],
     "source": "Rigger 5",
-    "page": 133,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 133
   },
   {
     "name": "Lone Star Castle Guard (Small)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 2
@@ -3792,13 +4026,15 @@
     },
     "cost": [8000],
     "source": "Rigger 5",
-    "page": 133,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 133
   },
   {
     "name": "MCT Gun Turret (Small)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": 0,
     "speed": 0,
     "acceleration": 0,
@@ -3827,13 +4063,15 @@
     },
     "cost": [4000],
     "source": "Rigger 5",
-    "page": 133,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 133
   },
   {
     "name": "MCT Seven (Wheelie) (Small)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 2
@@ -3857,13 +4095,15 @@
     },
     "cost": [2000],
     "source": "Rigger 5",
-    "page": 134,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 134
   },
   {
     "name": "MCT Seven (Treads) (Small)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": 3,
     "speed": 2,
     "acceleration": 1,
@@ -3884,13 +4124,15 @@
     },
     "cost": [2000],
     "source": "Rigger 5",
-    "page": 134,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 134
   },
   {
     "name": "MCT Seven (Dirty) (Small)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": {
       "onRoad": 2,
       "offRoad": 4
@@ -3914,13 +4156,15 @@
     },
     "cost": [2000],
     "source": "Rigger 5",
-    "page": 134,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 134
   },
   {
     "name": "MCT Seven (Quad) (Small)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": 4,
     "speed": 1,
     "acceleration": 1,
@@ -3941,13 +4185,15 @@
     },
     "cost": [2000],
     "source": "Rigger 5",
-    "page": 134,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 134
   },
   {
     "name": "MCT Seven (Swims) (Small)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": 3,
     "speed": 2,
     "acceleration": 1,
@@ -3968,13 +4214,15 @@
     },
     "cost": [1000],
     "source": "Rigger 5",
-    "page": 134,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 134
   },
   {
     "name": "MCT Seven (Hovers) (Small)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": 3,
     "speed": 1,
     "acceleration": 1,
@@ -3995,13 +4243,15 @@
     },
     "cost": [4000],
     "source": "Rigger 5",
-    "page": 134,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 134
   },
   {
     "name": "MCT Seven (Soars) (Small)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": 3,
     "speed": 2,
     "acceleration": 1,
@@ -4022,13 +4272,15 @@
     },
     "cost": [4000],
     "source": "Rigger 5",
-    "page": 134,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 134
   },
   {
     "name": "NeoNET Prarie Dog (Small)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": {
       "onRoad": 2,
       "offRoad": 4
@@ -4064,13 +4316,15 @@
     },
     "cost": [8000],
     "source": "Rigger 5",
-    "page": 134,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 134
   },
   {
     "name": "PW Sundowner (Small)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": 3,
     "speed": 4,
     "acceleration": 1,
@@ -4091,13 +4345,15 @@
     },
     "cost": [10000],
     "source": "Rigger 5",
-    "page": 134,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 134
   },
   {
     "name": "Proteus Krake (Small)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": 5,
     "speed": 3,
     "acceleration": 4,
@@ -4138,13 +4394,15 @@
     },
     "cost": [10000],
     "source": "Rigger 5",
-    "page": 136,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 136
   },
   {
     "name": "Saab-Thyssen Bloodhound (Small)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": 3,
     "speed": 1,
     "acceleration": 1,
@@ -4165,13 +4423,15 @@
     },
     "cost": [10000],
     "source": "Rigger 5",
-    "page": 136,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 136
   },
   {
     "name": "Renraku Dove-4 (Small)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": 4,
     "speed": 2,
     "acceleration": 1,
@@ -4197,13 +4457,15 @@
     },
     "cost": [5000],
     "source": "Rigger 5",
-    "page": 136,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 136
   },
   {
     "name": "Renraku Jardinero (Small)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": {
       "onRoad": 2,
       "offRoad": 4
@@ -4227,13 +4489,15 @@
     },
     "cost": [2000],
     "source": "Rigger 5",
-    "page": 136,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 136
   },
   {
     "name": "Renraku Job-A-Mat (Small)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": 0,
     "speed": 0,
     "acceleration": 0,
@@ -4258,13 +4522,15 @@
     },
     "cost": [3000],
     "source": "Rigger 5",
-    "page": 137,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 137
   },
   {
     "name": "Renraku Pelican (Small)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": 4,
     "speed": 2,
     "acceleration": 1,
@@ -4285,13 +4551,15 @@
     },
     "cost": [4000],
     "source": "Rigger 5",
-    "page": 137,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 137
   },
   {
     "name": "Telestrian Shamus",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": 3,
     "speed": 3,
     "acceleration": 1,
@@ -4315,13 +4583,15 @@
     },
     "cost": [30000],
     "source": "Rigger 5",
-    "page": 138,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 138
   },
   {
     "name": "Ares Cheetah (Medium)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Medium"
+    },
     "handling": 4,
     "speed": 6,
     "acceleration": 2,
@@ -4352,13 +4622,15 @@
     },
     "cost": [14000],
     "source": "Rigger 5",
-    "page": 139,
-    "type": "Drone",
-    "subtype": "Drones: Medium"
+    "page": 139
   },
   {
     "name": "Evo Krokodil (Medium)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Medium"
+    },
     "handling": 3,
     "speed": {
       "onRoad": 2,
@@ -4382,13 +4654,15 @@
     },
     "cost": [12000],
     "source": "Rigger 5",
-    "page": 140,
-    "type": "Drone",
-    "subtype": "Drones: Medium"
+    "page": 140
   },
   {
     "name": "Federated-Boeing Kull (Medium)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Medium"
+    },
     "handling": 3,
     "speed": 4,
     "acceleration": 2,
@@ -4408,13 +4682,15 @@
     },
     "cost": [10000],
     "source": "Rigger 5",
-    "page": 140,
-    "type": "Drone",
-    "subtype": "Drones: Medium"
+    "page": 140
   },
   {
     "name": "MCT Tunneler (Medium)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Medium"
+    },
     "handling": 3,
     "speed": 0,
     "acceleration": 0,
@@ -4435,13 +4711,15 @@
     },
     "cost": [10000],
     "source": "Rigger 5",
-    "page": 140,
-    "type": "Drone",
-    "subtype": "Drones: Medium"
+    "page": 140
   },
   {
     "name": "Renraku LEBD-2 (Medium)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Medium"
+    },
     "handling": 4,
     "speed": 2,
     "acceleration": 1,
@@ -4490,13 +4768,15 @@
     },
     "cost": [20000],
     "source": "Rigger 5",
-    "page": 140,
-    "type": "Drone",
-    "subtype": "Drones: Medium"
+    "page": 140
   },
   {
     "name": "Transys Steed (Medium)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Medium"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 2
@@ -4520,13 +4800,15 @@
     },
     "cost": [4000],
     "source": "Rigger 5",
-    "page": 141,
-    "type": "Drone",
-    "subtype": "Drones: Medium"
+    "page": 141
   },
   {
     "name": "Ares Matilda (Large)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Large"
+    },
     "handling": 1,
     "speed": 2,
     "acceleration": 1,
@@ -4578,13 +4860,15 @@
     },
     "cost": [18000],
     "source": "Rigger 5",
-    "page": 141,
-    "type": "Drone",
-    "subtype": "Drones: Large"
+    "page": 141
   },
   {
     "name": "Ares Mule (Large)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Large"
+    },
     "handling": 4,
     "speed": 1,
     "acceleration": 1,
@@ -4605,13 +4889,15 @@
     },
     "cost": [8000],
     "source": "Rigger 5",
-    "page": 142,
-    "type": "Drone",
-    "subtype": "Drones: Large"
+    "page": 142
   },
   {
     "name": "Ares Paladin (Large)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Large"
+    },
     "handling": 5,
     "speed": 4,
     "acceleration": 1,
@@ -4632,13 +4918,15 @@
     },
     "cost": [5000],
     "source": "Rigger 5",
-    "page": 142,
-    "type": "Drone",
-    "subtype": "Drones: Large"
+    "page": 142
   },
   {
     "name": "CrashCart Medicart (Large)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Large"
+    },
     "handling": 5,
     "speed": 5,
     "acceleration": 1,
@@ -4663,13 +4951,15 @@
     },
     "cost": [10000],
     "source": "Rigger 5",
-    "page": 143,
-    "type": "Drone",
-    "subtype": "Drones: Large"
+    "page": 143
   },
   {
     "name": "GTS Tower (Large)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Large"
+    },
     "handling": 2,
     "speed": 1,
     "acceleration": 1,
@@ -4689,13 +4979,15 @@
     },
     "cost": [10000],
     "source": "Rigger 5",
-    "page": 143,
-    "type": "Drone",
-    "subtype": "Drones: Large"
+    "page": 143
   },
   {
     "name": "Saeder-Krupp MK-170 Neptune (Large)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Large"
+    },
     "handling": 2,
     "speed": 3,
     "acceleration": 1,
@@ -4716,13 +5008,15 @@
     },
     "cost": [17500],
     "source": "Rigger 5",
-    "page": 143,
-    "type": "Drone",
-    "subtype": "Drones: Large"
+    "page": 143
   },
   {
     "name": "Mitsuhama Malakim (Large)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Large"
+    },
     "handling": 3,
     "speed": 6,
     "acceleration": 2,
@@ -4763,13 +5057,15 @@
     },
     "cost": [40000],
     "source": "Rigger 5",
-    "page": 143,
-    "type": "Drone",
-    "subtype": "Drones: Large"
+    "page": 143
   },
   {
     "name": "Ares KN-Y2: Deimos (Huge)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Huge"
+    },
     "handling": 3,
     "speed": 2,
     "acceleration": 1,
@@ -4805,13 +5101,15 @@
     },
     "cost": [220000],
     "source": "Rigger 5",
-    "page": 144,
-    "type": "Drone",
-    "subtype": "Drones: Huge"
+    "page": 144
   },
   {
     "name": "Ares KN-Y1: Phobos (Huge)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Huge"
+    },
     "handling": 3,
     "speed": 2,
     "acceleration": 1,
@@ -4847,13 +5145,15 @@
     },
     "cost": [250000],
     "source": "Rigger 5",
-    "page": 144,
-    "type": "Drone",
-    "subtype": "Drones: Huge"
+    "page": 144
   },
   {
     "name": "Ares KN-Y4: Eris (Huge)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Huge"
+    },
     "handling": 3,
     "speed": 2,
     "acceleration": 1,
@@ -4901,13 +5201,15 @@
     },
     "cost": [270000],
     "source": "Rigger 5",
-    "page": 144,
-    "type": "Drone",
-    "subtype": "Drones: Huge"
+    "page": 144
   },
   {
     "name": "Mesametric Kodiak (Huge)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Huge"
+    },
     "handling": {
       "onRoad": 2,
       "offRoad": 4
@@ -4936,13 +5238,15 @@
     },
     "cost": [40000],
     "source": "Rigger 5",
-    "page": 145,
-    "type": "Drone",
-    "subtype": "Drones: Huge"
+    "page": 145
   },
   {
     "name": "NeoNET Avenging Angel (Huge)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Huge"
+    },
     "handling": 3,
     "speed": 6,
     "acceleration": 2,
@@ -4971,13 +5275,15 @@
     },
     "cost": [1000000],
     "source": "Rigger 5",
-    "page": 145,
-    "type": "Drone",
-    "subtype": "Drones: Huge"
+    "page": 145
   },
   {
     "name": "Criado Juan",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Anthro"
+    },
     "handling": 2,
     "speed": 2,
     "acceleration": 1,
@@ -4997,13 +5303,15 @@
     },
     "cost": [8000],
     "source": "Rigger 5",
-    "page": 146,
-    "type": "Drone",
-    "subtype": "Drones: Anthro"
+    "page": 146
   },
   {
     "name": "Horizon Little Buddy",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Anthro"
+    },
     "handling": 2,
     "speed": 1,
     "acceleration": 1,
@@ -5028,13 +5336,15 @@
     },
     "cost": [2000],
     "source": "Rigger 5",
-    "page": 146,
-    "type": "Drone",
-    "subtype": "Drones: Anthro"
+    "page": 146
   },
   {
     "name": "MCT Kenchiku-Kikai",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Anthro"
+    },
     "handling": 2,
     "speed": 2,
     "acceleration": 1,
@@ -5059,13 +5369,15 @@
     },
     "cost": [20000],
     "source": "Rigger 5",
-    "page": 147,
-    "type": "Drone",
-    "subtype": "Drones: Anthro"
+    "page": 147
   },
   {
     "name": "NeoNET Juggernaut",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Anthro"
+    },
     "handling": 3,
     "speed": 4,
     "acceleration": 1,
@@ -5099,13 +5411,15 @@
     },
     "cost": [100000],
     "source": "Rigger 5",
-    "page": 147,
-    "type": "Drone",
-    "subtype": "Drones: Anthro"
+    "page": 147
   },
   {
     "name": "Saeder-Krupp Direktionssekretar",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Anthro"
+    },
     "handling": 4,
     "speed": 4,
     "acceleration": 2,
@@ -5125,13 +5439,15 @@
     },
     "cost": [40000],
     "source": "Rigger 5",
-    "page": 148,
-    "type": "Drone",
-    "subtype": "Drones: Anthro"
+    "page": 148
   },
   {
     "name": "Shiawase i-Doll",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Anthro"
+    },
     "handling": 3,
     "speed": 3,
     "acceleration": 1,
@@ -5156,13 +5472,15 @@
     },
     "cost": [20000],
     "source": "Rigger 5",
-    "page": 148,
-    "type": "Drone",
-    "subtype": "Drones: Anthro"
+    "page": 148
   },
   {
     "name": "Harley-Davidson Scorpion (Chopper)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Bike"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 3
@@ -5186,13 +5504,15 @@
     },
     "cost": [12000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 462,
-    "type": "Groundcraft",
-    "subtype": "Bike"
+    "page": 462
   },
   {
     "name": "Yamaha Growler (Off-Road Bike)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Bike"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 5
@@ -5219,13 +5539,15 @@
     },
     "cost": [5000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 462,
-    "type": "Groundcraft",
-    "subtype": "Bike"
+    "page": 462
   },
   {
     "name": "Suzuki Mirage (Racing Bike)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Bike"
+    },
     "handling": {
       "onRoad": 5,
       "offRoad": 3
@@ -5249,13 +5571,15 @@
     },
     "cost": [8500],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 462,
-    "type": "Groundcraft",
-    "subtype": "Bike"
+    "page": 462
   },
   {
     "name": "Chrysler-Nissan Jackrabbit (Subcompact)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 3
@@ -5279,13 +5603,15 @@
     },
     "cost": [10000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 462,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 462
   },
   {
     "name": "Chrysler-Nissan Journey (Car)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 3
@@ -5309,13 +5635,15 @@
     },
     "cost": [17000],
     "source": "Stolen Souls",
-    "page": 186,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 186
   },
   {
     "name": "Eurocar Westwind 3000 (Luxury Sports Car)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 6,
       "offRoad": 4
@@ -5339,13 +5667,15 @@
     },
     "cost": [110000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 463,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 463
   },
   {
     "name": "Honda Spirit (Subcompact)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 2
@@ -5369,13 +5699,15 @@
     },
     "cost": [12000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 463,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 463
   },
   {
     "name": "Honda Artemis (Car)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 2
@@ -5399,13 +5731,15 @@
     },
     "cost": [17000],
     "source": "Stolen Souls",
-    "page": 186,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 186
   },
   {
     "name": "Saeder-Krupp LT-21 (Delivery Van)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Truck/Van"
+    },
     "handling": {
       "onRoad": 2,
       "offRoad": 1
@@ -5429,13 +5763,15 @@
     },
     "cost": [31000],
     "source": "Stolen Souls",
-    "page": 186,
-    "type": "Groundcraft",
-    "subtype": "Truck/Van"
+    "page": 186
   },
   {
     "name": "Hyundai Shin-Hyung (Sport Sedan)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 5,
       "offRoad": 4
@@ -5460,13 +5796,15 @@
     },
     "cost": [28500],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 463,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 463
   },
   {
     "name": "Dodge Ram Industrial (Large) (Garbage Truck)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Truck/Van"
+    },
     "handling": {
       "onRoad": 2,
       "offRoad": 1
@@ -5490,13 +5828,15 @@
     },
     "cost": [51000],
     "source": "Stolen Souls",
-    "page": 186,
-    "type": "Groundcraft",
-    "subtype": "Truck/Van"
+    "page": 186
   },
   {
     "name": "Dodge Ram Industrial (Narrow) (Garbage Truck)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Truck/Van"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 1
@@ -5520,13 +5860,15 @@
     },
     "cost": [49000],
     "source": "Stolen Souls",
-    "page": 186,
-    "type": "Groundcraft",
-    "subtype": "Truck/Van"
+    "page": 186
   },
   {
     "name": "Esprit Industries Watcher (SUV)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Truck/Van"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -5550,13 +5892,15 @@
     },
     "cost": [40000],
     "source": "Stolen Souls",
-    "page": 186,
-    "type": "Groundcraft",
-    "subtype": "Truck/Van"
+    "page": 186
   },
   {
     "name": "Mitsubishi Nightsky (Limousine)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 3
@@ -5580,13 +5924,15 @@
     },
     "cost": [320000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 463,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 463
   },
   {
     "name": "Ford Americar (Sedan)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 3
@@ -5610,13 +5956,15 @@
     },
     "cost": [16000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 463,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 463
   },
   {
     "name": "Saeder-Krupp-Bentley Concordat (Luxury Sedan)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 5,
       "offRoad": 4
@@ -5640,13 +5988,15 @@
     },
     "cost": [65000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 463,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 463
   },
   {
     "name": "Rover 2072 (SUV)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Truck/Van"
+    },
     "handling": {
       "onRoad": 5,
       "offRoad": 5
@@ -5670,13 +6020,15 @@
     },
     "cost": [68000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 464,
-    "type": "Groundcraft",
-    "subtype": "Truck/Van"
+    "page": 464
   },
   {
     "name": "Toyota Gopher (Heavy-Duty Pickup)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Truck/Van"
+    },
     "handling": {
       "onRoad": 5,
       "offRoad": 5
@@ -5700,13 +6052,15 @@
     },
     "cost": [25000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 463,
-    "type": "Groundcraft",
-    "subtype": "Truck/Van"
+    "page": 463
   },
   {
     "name": "GMC Bulldog Step-Van (Van)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Truck/Van"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -5731,13 +6085,15 @@
     },
     "cost": [35000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 463,
-    "type": "Groundcraft",
-    "subtype": "Truck/Van"
+    "page": 463
   },
   {
     "name": "GMC Endurance (Van)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Truck/Van"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -5761,13 +6117,15 @@
     },
     "cost": [35000],
     "source": "Stolen Souls",
-    "page": 186,
-    "type": "Groundcraft",
-    "subtype": "Truck/Van"
+    "page": 186
   },
   {
     "name": "GMC Sidewinder (SUV)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Truck/Van"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 3
@@ -5791,13 +6149,15 @@
     },
     "cost": [33000],
     "source": "Stolen Souls",
-    "page": 186,
-    "type": "Groundcraft",
-    "subtype": "Truck/Van"
+    "page": 186
   },
   {
     "name": "Ares Roadmaster (Armored Transport)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Truck/Van"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -5821,13 +6181,15 @@
     },
     "cost": [52000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 464,
-    "type": "Groundcraft",
-    "subtype": "Truck/Van"
+    "page": 464
   },
   {
     "name": "Conestoga Trailblazer (Moving Truck)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Truck/Van"
+    },
     "handling": {
       "onRoad": 2,
       "offRoad": 1
@@ -5851,13 +6213,15 @@
     },
     "cost": [75000],
     "source": "Stolen Souls",
-    "page": 186,
-    "type": "Groundcraft",
-    "subtype": "Truck/Van"
+    "page": 186
   },
   {
     "name": "Conestoga Trailblazer w/Trailer (Moving Truck)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Truck/Van"
+    },
     "handling": {
       "onRoad": 1,
       "offRoad": 1
@@ -5881,13 +6245,15 @@
     },
     "cost": [95000],
     "source": "Stolen Souls",
-    "page": 186,
-    "type": "Groundcraft",
-    "subtype": "Truck/Van"
+    "page": 186
   },
   {
     "name": "Samuvani Criscraft Otter (Sport Cruiser)",
     "description": "",
+    "typeInformation": {
+      "type": "Watercraft",
+      "subtype": "Boat"
+    },
     "handling": 4,
     "speed": 3,
     "acceleration": 2,
@@ -5908,13 +6274,15 @@
     },
     "cost": [21000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 464,
-    "type": "Watercraft",
-    "subtype": "Boat"
+    "page": 464
   },
   {
     "name": "Yongkang Gala Trinity (Speedboat)",
     "description": "",
+    "typeInformation": {
+      "type": "Watercraft",
+      "subtype": "Boat"
+    },
     "handling": 5,
     "speed": 6,
     "acceleration": 3,
@@ -5935,13 +6303,15 @@
     },
     "cost": [37000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 464,
-    "type": "Watercraft",
-    "subtype": "Boat"
+    "page": 464
   },
   {
     "name": "Morgan Cutlass (Patrol Boat)",
     "description": "",
+    "typeInformation": {
+      "type": "Watercraft",
+      "subtype": "Boat"
+    },
     "handling": 5,
     "speed": 4,
     "acceleration": 2,
@@ -5976,13 +6346,15 @@
     },
     "cost": [96000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 454,
-    "type": "Watercraft",
-    "subtype": "Boat"
+    "page": 454
   },
   {
     "name": "Proteus Lamprey (Sea Sled)",
     "description": "",
+    "typeInformation": {
+      "type": "Watercraft",
+      "subtype": "Submarine"
+    },
     "handling": 3,
     "speed": 2,
     "acceleration": 1,
@@ -6003,13 +6375,15 @@
     },
     "cost": [14000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 464,
-    "type": "Watercraft",
-    "subtype": "Submarine"
+    "page": 464
   },
   {
     "name": "Vulkan Electronaut (Mini-sub)",
     "description": "",
+    "typeInformation": {
+      "type": "Watercraft",
+      "subtype": "Submarine"
+    },
     "handling": 3,
     "speed": 3,
     "acceleration": 1,
@@ -6030,13 +6404,15 @@
     },
     "cost": [108000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 464,
-    "type": "Watercraft",
-    "subtype": "Submarine"
+    "page": 464
   },
   {
     "name": "Artemis Industries Nightwing (Glider)",
     "description": "",
+    "typeInformation": {
+      "type": "Aircraft",
+      "subtype": "Fixed-Wing Aircraft"
+    },
     "handling": 6,
     "speed": 3,
     "acceleration": 1,
@@ -6057,13 +6433,15 @@
     },
     "cost": [20000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 464,
-    "type": "Aircraft",
-    "subtype": "Fixed-Wing Aircraft"
+    "page": 464
   },
   {
     "name": "Cessna C750 (Twin-Prop Airplane)",
     "description": "",
+    "typeInformation": {
+      "type": "Aircraft",
+      "subtype": "Fixed-Wing Aircraft"
+    },
     "handling": 3,
     "speed": 5,
     "acceleration": 3,
@@ -6084,13 +6462,15 @@
     },
     "cost": [146000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 464,
-    "type": "Aircraft",
-    "subtype": "Fixed-Wing Aircraft"
+    "page": 464
   },
   {
     "name": "Renault-Fiat Fokker Tundra-9 (Amphibious Jet)",
     "description": "",
+    "typeInformation": {
+      "type": "Aircraft",
+      "subtype": "Fixed-Wing Aircraft"
+    },
     "handling": 2,
     "speed": 4,
     "acceleration": 3,
@@ -6111,13 +6491,15 @@
     },
     "cost": [300000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 464,
-    "type": "Aircraft",
-    "subtype": "Fixed-Wing Aircraft"
+    "page": 464
   },
   {
     "name": "Ares Dragon (Cargo Helicopter)",
     "description": "",
+    "typeInformation": {
+      "type": "Aircraft",
+      "subtype": "Rotorcraft"
+    },
     "handling": 4,
     "speed": 4,
     "acceleration": 3,
@@ -6138,13 +6520,15 @@
     },
     "cost": [355000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 464,
-    "type": "Aircraft",
-    "subtype": "Rotorcraft"
+    "page": 464
   },
   {
     "name": "Nissan Hound (Transport Helicopter)",
     "description": "",
+    "typeInformation": {
+      "type": "Aircraft",
+      "subtype": "Rotorcraft"
+    },
     "handling": 5,
     "speed": 4,
     "acceleration": 3,
@@ -6179,13 +6563,15 @@
     },
     "cost": [425000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 464,
-    "type": "Aircraft",
-    "subtype": "Rotorcraft"
+    "page": 464
   },
   {
     "name": "Northrup Wasp (Autogyro)",
     "description": "",
+    "typeInformation": {
+      "type": "Aircraft",
+      "subtype": "Rotorcraft"
+    },
     "handling": 5,
     "speed": 5,
     "acceleration": 3,
@@ -6214,13 +6600,15 @@
     },
     "cost": [86000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 465,
-    "type": "Aircraft",
-    "subtype": "Rotorcraft"
+    "page": 465
   },
   {
     "name": "Ares Venture (LAV)",
     "description": "",
+    "typeInformation": {
+      "type": "Aircraft",
+      "subtype": "VTOL/VSTOL"
+    },
     "handling": 5,
     "speed": 7,
     "acceleration": 4,
@@ -6241,13 +6629,15 @@
     },
     "cost": [400000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 465,
-    "type": "Aircraft",
-    "subtype": "VTOL/VSTOL"
+    "page": 465
   },
   {
     "name": "GMC Banshee (Thunderbird)",
     "description": "",
+    "typeInformation": {
+      "type": "Aircraft",
+      "subtype": "VTOL/VSTOL"
+    },
     "handling": 6,
     "speed": 8,
     "acceleration": 4,
@@ -6268,13 +6658,15 @@
     },
     "cost": [2500000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 465,
-    "type": "Aircraft",
-    "subtype": "VTOL/VSTOL"
+    "page": 465
   },
   {
     "name": "Federated Boeing Commuter (Tilt-Wing Airplane)",
     "description": "",
+    "typeInformation": {
+      "type": "Aircraft",
+      "subtype": "VTOL/VSTOL"
+    },
     "handling": 3,
     "speed": 3,
     "acceleration": 3,
@@ -6295,13 +6687,15 @@
     },
     "cost": [350000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 465,
-    "type": "Aircraft",
-    "subtype": "VTOL/VSTOL"
+    "page": 465
   },
   {
     "name": "Shiawase Kanmushi (Microdrone)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Micro"
+    },
     "handling": 4,
     "speed": 2,
     "acceleration": 1,
@@ -6321,13 +6715,15 @@
     },
     "cost": [1000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 465,
-    "type": "Drone",
-    "subtype": "Drones: Micro"
+    "page": 465
   },
   {
     "name": "Sikorsky-Bell Microskimmer (Microdrone)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Micro"
+    },
     "handling": 3,
     "speed": 3,
     "acceleration": 1,
@@ -6347,13 +6743,15 @@
     },
     "cost": [1000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 465,
-    "type": "Drone",
-    "subtype": "Drones: Micro"
+    "page": 465
   },
   {
     "name": "Horizon Flying Eye (Minidrone)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Mini"
+    },
     "handling": 4,
     "speed": 3,
     "acceleration": 2,
@@ -6373,13 +6771,15 @@
     },
     "cost": [2000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 465,
-    "type": "Drone",
-    "subtype": "Drones: Mini"
+    "page": 465
   },
   {
     "name": "Horizon Flying Eye w/Flash-Pak and Grenade (Minidrone)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Mini"
+    },
     "handling": 4,
     "speed": 3,
     "acceleration": 2,
@@ -6405,13 +6805,15 @@
     },
     "cost": [2500],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 465,
-    "type": "Drone",
-    "subtype": "Drones: Mini"
+    "page": 465
   },
   {
     "name": "Ocular Drone",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Mini"
+    },
     "handling": 4,
     "speed": 3,
     "acceleration": 2,
@@ -6432,13 +6834,15 @@
     },
     "cost": [0],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 453,
-    "type": "Drone",
-    "subtype": "Drones: Mini"
+    "page": 453
   },
   {
     "name": "MCT Fly-Spy (Minidrone)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Mini"
+    },
     "handling": 4,
     "speed": 3,
     "acceleration": 2,
@@ -6458,13 +6862,15 @@
     },
     "cost": [2000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 466,
-    "type": "Drone",
-    "subtype": "Drones: Mini"
+    "page": 466
   },
   {
     "name": "Aztechnology Crawler (Small)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": 4,
     "speed": 3,
     "acceleration": 1,
@@ -6484,13 +6890,15 @@
     },
     "cost": [4000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 466,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 466
   },
   {
     "name": "Lockheed Optic-X2 (Small)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": 4,
     "speed": 4,
     "acceleration": 3,
@@ -6510,13 +6918,15 @@
     },
     "cost": [21000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 466,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 466
   },
   {
     "name": "Cyberspace Designs Dragonfly (Small)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": 4,
     "speed": 3,
     "acceleration": 2,
@@ -6537,13 +6947,15 @@
     },
     "cost": [2500],
     "source": "Stolen Souls",
-    "page": 179,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 179
   },
   {
     "name": "Ares Duelist (Medium)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Anthro"
+    },
     "handling": 3,
     "speed": 3,
     "acceleration": 1,
@@ -6585,13 +6997,15 @@
     },
     "cost": [4500],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 466,
-    "type": "Drone",
-    "subtype": "Drones: Anthro"
+    "page": 466
   },
   {
     "name": "Bust-A-Move (2nd Generation) (Medium)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Medium"
+    },
     "handling": 4,
     "speed": 3,
     "acceleration": 1,
@@ -6616,13 +7030,15 @@
       }
     },
     "source": "Stolen Souls",
-    "page": 178,
-    "type": "Drone",
-    "subtype": "Drones: Medium"
+    "page": 178
   },
   {
     "name": "Transys Office Maid (Medium)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Medium"
+    },
     "handling": 3,
     "speed": 3,
     "acceleration": 2,
@@ -6642,13 +7058,15 @@
     },
     "cost": [8000],
     "source": "Stolen Souls",
-    "page": 179,
-    "type": "Drone",
-    "subtype": "Drones: Medium"
+    "page": 179
   },
   {
     "name": "GM-Nissan Doberman (Medium)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Medium"
+    },
     "handling": 5,
     "speed": 3,
     "acceleration": 1,
@@ -6676,13 +7094,15 @@
     },
     "cost": [5000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 466,
-    "type": "Drone",
-    "subtype": "Drones: Medium"
+    "page": 466
   },
   {
     "name": "MCT-Nissan Roto-drone (Medium)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Medium"
+    },
     "handling": 4,
     "speed": 4,
     "acceleration": 2,
@@ -6704,13 +7124,15 @@
     },
     "cost": [5000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 466,
-    "type": "Drone",
-    "subtype": "Drones: Medium"
+    "page": 466
   },
   {
     "name": "Cyberspace Designs Dalmatian (Large)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Large"
+    },
     "handling": 5,
     "speed": 5,
     "acceleration": 3,
@@ -6730,13 +7152,15 @@
     },
     "cost": [10000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 466,
-    "type": "Drone",
-    "subtype": "Drones: Large"
+    "page": 466
   },
   {
     "name": "GMC Snatch'n'Grab (Large)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Large"
+    },
     "handling": 3,
     "speed": 4,
     "acceleration": 2,
@@ -6756,13 +7180,15 @@
     },
     "cost": [8000],
     "source": "Stolen Souls",
-    "page": 179,
-    "type": "Drone",
-    "subtype": "Drones: Large"
+    "page": 179
   },
   {
     "name": "Modified Dassault Janitorial Drone (Large)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Large"
+    },
     "handling": 2,
     "speed": 2,
     "acceleration": 2,
@@ -6782,13 +7208,15 @@
     },
     "cost": [10000],
     "source": "Stolen Souls",
-    "page": 179,
-    "type": "Drone",
-    "subtype": "Drones: Large"
+    "page": 179
   },
   {
     "name": "Modified Renraku Manservant-3 (Large)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Anthro"
+    },
     "handling": 2,
     "speed": 2,
     "acceleration": 2,
@@ -6808,13 +7236,15 @@
     },
     "cost": [9000],
     "source": "Stolen Souls",
-    "page": 180,
-    "type": "Drone",
-    "subtype": "Drones: Anthro"
+    "page": 180
   },
   {
     "name": "Steel Lynx Combat Drone (Large)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Large"
+    },
     "handling": 5,
     "speed": 4,
     "acceleration": 2,
@@ -6842,13 +7272,15 @@
     },
     "cost": [25000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 466,
-    "type": "Drone",
-    "subtype": "Drones: Large"
+    "page": 466
   },
   {
     "name": "Aeroquip M.E.D.-1 'Dustoff' Medical Evacuation Drone (Large)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Large"
+    },
     "handling": 3,
     "speed": 4,
     "acceleration": 4,
@@ -6868,13 +7300,15 @@
     },
     "cost": [12000],
     "source": "Bullets And Bandages",
-    "page": 23,
-    "type": "Drone",
-    "subtype": "Drones: Large"
+    "page": 23
   },
   {
     "name": "Shiawase Caduceus 'CAD' 7 (Medium)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Anthro"
+    },
     "handling": 4,
     "speed": 2,
     "acceleration": 1,
@@ -6898,13 +7332,15 @@
     },
     "cost": [16500],
     "source": "Bullets And Bandages",
-    "page": 23,
-    "type": "Drone",
-    "subtype": "Drones: Anthro"
+    "page": 23
   },
   {
     "name": "F-B Bumblebee",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Medium"
+    },
     "handling": 3,
     "speed": 2,
     "acceleration": 1,
@@ -6939,13 +7375,15 @@
     },
     "cost": [24000],
     "source": "Nothing Personal",
-    "page": 23,
-    "type": "Drone",
-    "subtype": "Drones: Medium"
+    "page": 23
   },
   {
     "name": "Cocotaxi",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Bike"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 2
@@ -6969,13 +7407,15 @@
     },
     "cost": [4000],
     "source": "Hard Targets",
-    "page": 139,
-    "type": "Groundcraft",
-    "subtype": "Bike"
+    "page": 139
   },
   {
     "name": "Camellos",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Municipal/Construction"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 2
@@ -6999,13 +7439,15 @@
     },
     "cost": [150000],
     "source": "Hard Targets",
-    "page": 139,
-    "type": "Groundcraft",
-    "subtype": "Municipal/Construction"
+    "page": 139
   },
   {
     "name": "Ares Garuda",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Missile"
+    },
     "handling": 6,
     "speed": {
       "onRoad": 3,
@@ -7031,13 +7473,15 @@
     },
     "cost": [8500],
     "source": "Rigger 5",
-    "page": 149,
-    "type": "Drone",
-    "subtype": "Drones: Missile"
+    "page": 149
   },
   {
     "name": "Remote Cyberhand",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Mini"
+    },
     "handling": 0,
     "speed": 0,
     "acceleration": 0,
@@ -7052,13 +7496,15 @@
     },
     "cost": [0],
     "source": "Rigger 5",
-    "page": 130,
-    "type": "Drone",
-    "subtype": "Drones: Mini"
+    "page": 130
   },
   {
     "name": "Ammo Drone (Small)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": 2,
     "speed": 2,
     "acceleration": 2,
@@ -7083,13 +7529,15 @@
     },
     "cost": [3000],
     "source": "Hard Targets",
-    "page": 189,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 189
   },
   {
     "name": "Reloading Drone (Medium)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Medium"
+    },
     "handling": 4,
     "speed": 3,
     "acceleration": 2,
@@ -7109,13 +7557,15 @@
     },
     "cost": [4500],
     "source": "Hard Targets",
-    "page": 190,
-    "type": "Drone",
-    "subtype": "Drones: Medium"
+    "page": 190
   },
   {
     "name": "Mitsuhama Akiyama (Medium)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Anthro"
+    },
     "handling": 5,
     "speed": 3,
     "acceleration": 2,
@@ -7135,13 +7585,15 @@
     },
     "cost": [200000],
     "source": "Hard Targets",
-    "page": 190,
-    "type": "Drone",
-    "subtype": "Drones: Anthro"
+    "page": 190
   },
   {
     "name": "Sparring Drone (Large)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Anthro"
+    },
     "handling": 3,
     "speed": 2,
     "acceleration": 2,
@@ -7176,13 +7628,15 @@
     },
     "cost": [5000],
     "source": "Hard Targets",
-    "page": 190,
-    "type": "Drone",
-    "subtype": "Drones: Anthro"
+    "page": 190
   },
   {
     "name": "Clockwork Greyhound",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Medium"
+    },
     "handling": 3,
     "speed": 2,
     "acceleration": 1,
@@ -7202,13 +7656,15 @@
     },
     "cost": [225000],
     "source": "The Vladivostok Gauntlet",
-    "page": 19,
-    "type": "Drone",
-    "subtype": "Drones: Medium"
+    "page": 19
   },
   {
     "name": "Holo-Conference Drone (Small)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": 3,
     "speed": 2,
     "acceleration": 1,
@@ -7228,13 +7684,15 @@
     },
     "cost": [18000],
     "source": "Cutting Aces",
-    "page": 147,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 147
   },
   {
     "name": "Medusa Extensions (Mini)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Mini"
+    },
     "handling": 1,
     "speed": 0,
     "acceleration": 0,
@@ -7254,13 +7712,15 @@
     },
     "cost": [600],
     "source": "Cutting Aces",
-    "page": 147,
-    "type": "Drone",
-    "subtype": "Drones: Mini"
+    "page": 147
   },
   {
     "name": "Microweave Spider (Mini)",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Mini"
+    },
     "handling": 4,
     "speed": 1,
     "acceleration": 1,
@@ -7289,13 +7749,15 @@
     },
     "cost": [18000],
     "source": "Cutting Aces",
-    "page": 147,
-    "type": "Drone",
-    "subtype": "Drones: Mini"
+    "page": 147
   },
   {
     "name": "BMW Trollhammer",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Bike"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 3
@@ -7319,13 +7781,15 @@
     },
     "cost": [12500],
     "source": "The Complete Trog",
-    "page": 184,
-    "type": "Groundcraft",
-    "subtype": "Bike"
+    "page": 184
   },
   {
     "name": "Ford Titan",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 2
@@ -7349,13 +7813,15 @@
     },
     "cost": [32500],
     "source": "The Complete Trog",
-    "page": 184,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 184
   },
   {
     "name": "Avibras-Nissan AN 822",
     "description": "",
+    "typeInformation": {
+      "type": "Aircraft",
+      "subtype": "Rotorcraft"
+    },
     "handling": 5,
     "speed": 6,
     "acceleration": 0,
@@ -7391,13 +7857,15 @@
     },
     "cost": [221500],
     "source": "Shadows In Focus: Metropole",
-    "page": 31,
-    "type": "Aircraft",
-    "subtype": "Rotorcraft"
+    "page": 31
   },
   {
     "name": "Lone Star SecureSector Mk2",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Small"
+    },
     "handling": 5,
     "speed": 4,
     "acceleration": 2,
@@ -7421,13 +7889,15 @@
     },
     "cost": [5000],
     "source": "The Seattle Gambit",
-    "page": 29,
-    "type": "Drone",
-    "subtype": "Drones: Small"
+    "page": 29
   },
   {
     "name": "Maersk Shipyards Wavecutter MPAC",
     "description": "",
+    "typeInformation": {
+      "type": "Watercraft",
+      "subtype": "Boat"
+    },
     "handling": 5,
     "speed": 5,
     "acceleration": 3,
@@ -7454,13 +7924,15 @@
     },
     "cost": [360000],
     "source": "Street Lethal",
-    "page": 131,
-    "type": "Watercraft",
-    "subtype": "Boat"
+    "page": 131
   },
   {
     "name": "Corporate Mobile Command Center (Ares Roadmaster)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Corpsec/Police/Military"
+    },
     "handling": {
       "onRoad": 5,
       "offRoad": 5
@@ -7484,13 +7956,15 @@
     },
     "cost": [78000],
     "source": "Stolen Souls",
-    "page": 187,
-    "type": "Groundcraft",
-    "subtype": "Corpsec/Police/Military"
+    "page": 187
   },
   {
     "name": "Law Enforcement Patrol Cruiser (Chrysler-Nissan Journey)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Corpsec/Police/Military"
+    },
     "handling": {
       "onRoad": 6,
       "offRoad": 5
@@ -7514,13 +7988,15 @@
     },
     "cost": [25500],
     "source": "Stolen Souls",
-    "page": 187,
-    "type": "Groundcraft",
-    "subtype": "Corpsec/Police/Military"
+    "page": 187
   },
   {
     "name": "Corporate Moving Truck (Conestoga Trailblazer)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Corpsec/Police/Military"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 2
@@ -7544,13 +8020,15 @@
     },
     "cost": [112500],
     "source": "Stolen Souls",
-    "page": 187,
-    "type": "Groundcraft",
-    "subtype": "Corpsec/Police/Military"
+    "page": 187
   },
   {
     "name": "Corporate Moving Truck w/Trailer (Conestoga Trailblazer)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Corpsec/Police/Military"
+    },
     "handling": {
       "onRoad": 2,
       "offRoad": 2
@@ -7574,13 +8052,15 @@
     },
     "cost": [142500],
     "source": "Stolen Souls",
-    "page": 187,
-    "type": "Groundcraft",
-    "subtype": "Corpsec/Police/Military"
+    "page": 187
   },
   {
     "name": "Corporate Garbage Hauler (Dodge Ram Industrial: Large)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Corpsec/Police/Military"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 2
@@ -7604,13 +8084,15 @@
     },
     "cost": [76500],
     "source": "Stolen Souls",
-    "page": 187,
-    "type": "Groundcraft",
-    "subtype": "Corpsec/Police/Military"
+    "page": 187
   },
   {
     "name": "Corporate Garbage Hauler (Dodge Ram Industrial: Narrow)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Corpsec/Police/Military"
+    },
     "handling": {
       "onRoad": 5,
       "offRoad": 2
@@ -7634,13 +8116,15 @@
     },
     "cost": [73500],
     "source": "Stolen Souls",
-    "page": 187,
-    "type": "Groundcraft",
-    "subtype": "Corpsec/Police/Military"
+    "page": 187
   },
   {
     "name": "Government Black SUV (Esprit Industries Watcher)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Corpsec/Police/Military"
+    },
     "handling": {
       "onRoad": 5,
       "offRoad": 5
@@ -7664,13 +8148,15 @@
     },
     "cost": [60000],
     "source": "Stolen Souls",
-    "page": 187,
-    "type": "Groundcraft",
-    "subtype": "Corpsec/Police/Military"
+    "page": 187
   },
   {
     "name": "Corporate Ambulance (GMC Endurance)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Corpsec/Police/Military"
+    },
     "handling": {
       "onRoad": 5,
       "offRoad": 5
@@ -7694,13 +8180,15 @@
     },
     "cost": [52500],
     "source": "Stolen Souls",
-    "page": 187,
-    "type": "Groundcraft",
-    "subtype": "Corpsec/Police/Military"
+    "page": 187
   },
   {
     "name": "Government Pursuit SUV (GMC Sidewinder)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Corpsec/Police/Military"
+    },
     "handling": {
       "onRoad": 6,
       "offRoad": 5
@@ -7724,13 +8212,15 @@
     },
     "cost": [49500],
     "source": "Stolen Souls",
-    "page": 187,
-    "type": "Groundcraft",
-    "subtype": "Corpsec/Police/Military"
+    "page": 187
   },
   {
     "name": "Corporate Patrol Cruiser (Honda Artemis)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Corpsec/Police/Military"
+    },
     "handling": {
       "onRoad": 6,
       "offRoad": 3
@@ -7754,13 +8244,15 @@
     },
     "cost": [25500],
     "source": "Stolen Souls",
-    "page": 187,
-    "type": "Groundcraft",
-    "subtype": "Corpsec/Police/Military"
+    "page": 187
   },
   {
     "name": "Municipal Ambulance (S-K LT-21)",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Corpsec/Police/Military"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 2
@@ -7784,13 +8276,15 @@
     },
     "cost": [46500],
     "source": "Stolen Souls",
-    "page": 187,
-    "type": "Groundcraft",
-    "subtype": "Corpsec/Police/Military"
+    "page": 187
   },
   {
     "name": "Ford Broadcast",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Truck/Van"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -7814,13 +8308,15 @@
     },
     "cost": [50000],
     "source": "No Future",
-    "page": 174,
-    "type": "Groundcraft",
-    "subtype": "Truck/Van"
+    "page": 174
   },
   {
     "name": "Sikorsky-Bell Condor",
     "description": "",
+    "typeInformation": {
+      "type": "Aircraft",
+      "subtype": "Rotorcraft"
+    },
     "handling": 4,
     "speed": 4,
     "acceleration": 2,
@@ -7841,13 +8337,15 @@
     },
     "cost": [120000],
     "source": "No Future",
-    "page": 174,
-    "type": "Aircraft",
-    "subtype": "Rotorcraft"
+    "page": 174
   },
   {
     "name": "Krime Runner",
     "description": "",
+    "typeInformation": {
+      "type": "Drone",
+      "subtype": "Drones: Mini"
+    },
     "handling": 1,
     "speed": 1,
     "acceleration": 1,
@@ -7867,13 +8365,15 @@
     },
     "cost": [1000],
     "source": "Krime Katalog",
-    "page": 28,
-    "type": "Drone",
-    "subtype": "Drones: Mini"
+    "page": 28
   },
   {
     "name": "Krime Wageslave PMV",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 2,
       "offRoad": 1
@@ -7897,13 +8397,15 @@
     },
     "cost": [10000],
     "source": "Krime Katalog",
-    "page": 30,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 30
   },
   {
     "name": "Krime Bazoo Basic",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 2,
       "offRoad": 1
@@ -7927,13 +8429,15 @@
     },
     "cost": [22000],
     "source": "Krime Katalog",
-    "page": 31,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 31
   },
   {
     "name": "Krime Bazoo Redline",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 2,
       "offRoad": 1
@@ -7957,13 +8461,15 @@
     },
     "cost": [25000],
     "source": "Krime Katalog",
-    "page": 31,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 31
   },
   {
     "name": "Krime Bazoo Chrome",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 2,
       "offRoad": 1
@@ -7987,13 +8493,15 @@
     },
     "cost": [40000],
     "source": "Krime Katalog",
-    "page": 31,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 31
   },
   {
     "name": "Krime Big Bazoo Basic",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 1,
       "offRoad": 3
@@ -8017,13 +8525,15 @@
     },
     "cost": [23000],
     "source": "Krime Katalog",
-    "page": 31,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 31
   },
   {
     "name": "Krime Big Bazoo Redline",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 1,
       "offRoad": 3
@@ -8047,13 +8557,15 @@
     },
     "cost": [26000],
     "source": "Krime Katalog",
-    "page": 31,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 31
   },
   {
     "name": "Krime Big Bazoo Chrome",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 1,
       "offRoad": 3
@@ -8077,13 +8589,15 @@
     },
     "cost": [45000],
     "source": "Krime Katalog",
-    "page": 31,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 31
   },
   {
     "name": "Krime SV-2 'Crashtest'",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 1
@@ -8107,13 +8621,15 @@
     },
     "cost": [120000],
     "source": "Krime Katalog",
-    "page": 32,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 32
   },
   {
     "name": "Krime Prowler",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Car"
+    },
     "handling": {
       "onRoad": 3,
       "offRoad": 3
@@ -8139,13 +8655,15 @@
     },
     "cost": [145000],
     "source": "Krime Katalog",
-    "page": 34,
-    "type": "Groundcraft",
-    "subtype": "Car"
+    "page": 34
   },
   {
     "name": "Krime DeTruck Sports Truck",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Truck/Van"
+    },
     "handling": {
       "onRoad": 4,
       "offRoad": 4
@@ -8169,13 +8687,15 @@
     },
     "cost": [100000],
     "source": "Krime Katalog",
-    "page": 35,
-    "type": "Groundcraft",
-    "subtype": "Truck/Van"
+    "page": 35
   },
   {
     "name": "Krime Dix Prime Mover",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Truck/Van"
+    },
     "handling": {
       "onRoad": 2,
       "offRoad": 3
@@ -8199,13 +8719,15 @@
     },
     "cost": [200000],
     "source": "Krime Katalog",
-    "page": 37,
-    "type": "Groundcraft",
-    "subtype": "Truck/Van"
+    "page": 37
   },
   {
     "name": "Krime Barco de Pesca",
     "description": "",
+    "typeInformation": {
+      "type": "Watercraft",
+      "subtype": "Boat"
+    },
     "handling": {
       "onRoad": 2,
       "offRoad": 4
@@ -8232,13 +8754,15 @@
     },
     "cost": [50000],
     "source": "Krime Katalog",
-    "page": 38,
-    "type": "Watercraft",
-    "subtype": "Boat"
+    "page": 38
   },
   {
     "name": "Krime Euskaldunak Tankette",
     "description": "",
+    "typeInformation": {
+      "type": "Groundcraft",
+      "subtype": "Corpsec/Police/Military"
+    },
     "handling": 4,
     "speed": 4,
     "acceleration": 2,
@@ -8279,8 +8803,6 @@
     },
     "cost": [200000],
     "source": "Krime Katalog",
-    "page": 41,
-    "type": "Groundcraft",
-    "subtype": "Corpsec/Police/Military"
+    "page": 41
   }
 ]

@@ -1,4 +1,3 @@
-import assert from "assert";
 import type { IncludedWeaponMountXmlType } from "./VehicleParserSchemas.js";
 import { vehicleXmlCategoryEnum } from "./VehicleParserSchemas.js";
 import {
@@ -8,7 +7,6 @@ import {
   droneSubtypeEnum,
   groundcraftSubtypeEnum,
   mathOperatorEnum,
-  ratingMeaningEnum,
   restrictionEnum,
   vehicleDroneTypeEnum,
   watercraftSubtypeEnum,
@@ -352,20 +350,6 @@ seatsSemantics.addOperation("eval", {
     return parseInt(range.sourceString);
   },
 });
-
-export const convertRatingMeaning = function (meaning: string | undefined) {
-  if (meaning === undefined) {
-    return undefined;
-  }
-  switch (meaning) {
-    case "String_Hours":
-      return ratingMeaningEnum.HourPerRating;
-    case "String_UpgradedRating":
-      return ratingMeaningEnum.UpgradedRating;
-    default:
-      assert(false);
-  }
-};
 
 export {
   accelerationSemantics,

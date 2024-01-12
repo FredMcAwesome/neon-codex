@@ -18,7 +18,7 @@ import { convertAllowGear, convertSource } from "../common/ParserHelper.js";
 import assert from "assert";
 import {
   ammoSourceEnum,
-  augmentationClassificationEnum,
+  augmentationTypeEnum,
 } from "@shadowrun/common/build/enums.js";
 import { weaponXmlSubtypeEnum } from "@shadowrun/common/build/schemas/commonSchemas.js";
 import type {
@@ -207,12 +207,11 @@ function convertWeapon(weapon: WeaponXmlType) {
   // console.log(`\n${weapon.name}`);
 
   const { weaponType, weaponSubtype } = getWeaponTypeInformation(weapon);
-  let augmentationClassification: augmentationClassificationEnum =
-    augmentationClassificationEnum.None;
-  if (weapon.cyberware) {
-    augmentationClassification = augmentationClassificationEnum.Cyberware;
+  let augmentationType: augmentationTypeEnum | undefined = undefined;
+  if (weapon.cyberware !== undefined) {
+    augmentationType = augmentationTypeEnum.Cyberware;
   } else if (weapon.category === weaponXmlSubtypeEnum.BioWeapon) {
-    augmentationClassification = augmentationClassificationEnum.Bioware;
+    augmentationType = augmentationTypeEnum.Bioware;
   }
 
   const source = convertSource(weapon.source);
@@ -402,9 +401,10 @@ function convertWeapon(weapon: WeaponXmlType) {
     ...(allowGear !== undefined && { allowedGear: allowGear }),
     ...(accessories !== undefined && { accessories: accessories }),
     allowAccessories: weapon.allowaccessory !== "False",
-    isCyberware: weapon.cyberware === "True",
     ...(weapon.hide !== undefined && { userSelectable: false as const }),
-    augmentationClassification: augmentationClassification,
+    ...(augmentationType !== undefined && {
+      augmentationType: augmentationType,
+    }),
     ...(alternativeWeaponForms !== undefined && {
       alternativeWeaponForms: alternativeWeaponForms,
     }),

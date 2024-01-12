@@ -2,8 +2,8 @@ import "dotenv/config";
 // import * as logger from "./logger.js";
 // import { DATABASE_URL } from "./config.js";
 import MikroORMConfig from "@shadowrun/database/build/mikro-orm.config.js";
-import { EntityManager, EntityRepository, MikroORM } from "@mikro-orm/core";
-import { PostgreSqlDriver } from "@mikro-orm/postgresql";
+import { EntityManager, EntityRepository } from "@mikro-orm/postgresql";
+import { MikroORM } from "@mikro-orm/postgresql";
 import {
   Users,
   Threads,
@@ -47,7 +47,7 @@ interface IDatabase {
 export const Database = {} as IDatabase;
 
 export const init = async () => {
-  const orm = await MikroORM.init<PostgreSqlDriver>(MikroORMConfig);
+  const orm = await MikroORM.init(MikroORMConfig);
   const em = orm.em;
   Database.orm = orm;
   Database.em = em.fork();

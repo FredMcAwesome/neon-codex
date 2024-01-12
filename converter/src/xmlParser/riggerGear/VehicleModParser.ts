@@ -27,8 +27,8 @@ import Weapons from "../../grammar/weapons.ohm-bundle.js";
 const Ammo = Weapons.Ammo;
 import type { AmmunitionType } from "@shadowrun/common/build/schemas/weaponSchemas.js";
 import { firearmWeaponTypeEnum } from "@shadowrun/common/build/enums.js";
-import { convertRatingMeaning } from "./VehicleParserHelper.js";
-import { convertSource } from "../common/ParserHelper.js";
+
+import { convertRatingMeaning, convertSource } from "../common/ParserHelper.js";
 import { RiggerModSchema } from "@shadowrun/common/build/schemas/riggerModSchemas.js";
 import VehicleModifications from "../../grammar/vehicleModifications.ohm-bundle.js";
 const Rating = VehicleModifications.Rating;

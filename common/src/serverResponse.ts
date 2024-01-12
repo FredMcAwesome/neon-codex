@@ -3,12 +3,8 @@ import type {
   GearListType,
   MatrixListType,
   OtherGearListType,
-  AugmentationListType,
 } from "./schemas/gearSchemas.js";
-import {
-  MatrixListSchema,
-  AugmentationListSchema,
-} from "./schemas/gearSchemas.js";
+import { MatrixListSchema } from "./schemas/gearSchemas.js";
 import { GearListSchema } from "./schemas/gearSchemas.js";
 
 const ThreadSummarySchema = zod
@@ -33,13 +29,6 @@ export type {
   JwtTokenType,
   MatrixListType,
   OtherGearListType,
-  AugmentationListType,
   GearListType,
 };
-export {
-  ThreadListSchema,
-  JwtTokenSchema,
-  MatrixListSchema,
-  AugmentationListSchema,
-  GearListSchema,
-};
+export { ThreadListSchema, JwtTokenSchema, MatrixListSchema, GearListSchema };

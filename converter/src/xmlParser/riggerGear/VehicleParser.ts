@@ -227,11 +227,15 @@ const convertVehicle = function (vehicle: VehicleXmlType) {
   }
   const source = convertSource(vehicle.source);
 
+  const typeInformation = {
+    type: type,
+    subtype: subtype,
+  };
+
   return {
     name: vehicle.name,
     description: "",
-    type: type,
-    subtype: subtype,
+    typeInformation: typeInformation,
     handling: handling,
     speed: speed,
     acceleration: acceleration,

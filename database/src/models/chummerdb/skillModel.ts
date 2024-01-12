@@ -1,4 +1,4 @@
-import { Entity, Enum, PrimaryKey, Property } from "@mikro-orm/core";
+import { Entity, Enum, PrimaryKey, Property } from "@mikro-orm/postgresql";
 import type { SkillType } from "@shadowrun/common";
 import {
   attributeTypeEnum,

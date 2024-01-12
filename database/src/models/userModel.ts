@@ -4,7 +4,7 @@ import {
   OneToMany,
   PrimaryKey,
   Property,
-} from "@mikro-orm/core";
+} from "@mikro-orm/postgresql";
 import { Threads, Comments } from "./models.js";
 
 @Entity()

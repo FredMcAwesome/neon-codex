@@ -5,7 +5,7 @@ import {
   ManyToOne,
   OneToMany,
   Collection,
-} from "@mikro-orm/core";
+} from "@mikro-orm/postgresql";
 import { Users, Comments } from "./models.js";
 
 @Entity()

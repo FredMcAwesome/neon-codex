@@ -1,5 +1,5 @@
 import express from "express";
-import type { Loaded } from "@mikro-orm/core";
+import type { Loaded } from "@mikro-orm/postgresql";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { LoginSchema } from "@shadowrun/common";

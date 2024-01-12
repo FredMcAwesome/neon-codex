@@ -1,4 +1,4 @@
-import { MikroORM } from "@mikro-orm/core";
+import { MikroORM } from "@mikro-orm/postgresql";
 import { DB_NAME, PASSWORD } from "./utils/databaseConfig.js";
 
 (async () => {
@@ -7,8 +7,6 @@ import { DB_NAME, PASSWORD } from "./utils/databaseConfig.js";
       // we need to disable validation for no entities
       warnWhenNoEntities: false,
     },
-
-    type: "postgresql",
     host: "localhost",
     port: 5432,
     dbName: DB_NAME,
@@ -17,7 +15,6 @@ import { DB_NAME, PASSWORD } from "./utils/databaseConfig.js";
   const generator = orm.getEntityGenerator();
   const dump = await generator.generate({
     save: true,
-    baseDir: process.cwd() + "/my-entities",
   });
   console.log(dump);
   await orm.close(true);

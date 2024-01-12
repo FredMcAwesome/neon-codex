@@ -1,4 +1,4 @@
-import { Entity, PrimaryKey, Property } from "@mikro-orm/core";
+import { Entity, PrimaryKey, Property } from "@mikro-orm/postgresql";
 import type { RangeIncrementType } from "@shadowrun/common/build/schemas/weaponSchemas.js";
 
 @Entity()

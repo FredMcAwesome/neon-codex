@@ -52,8 +52,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "availability": {
       "rating": [24],
@@ -105,8 +103,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "availability": {
       "rating": [18],
@@ -166,8 +162,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "availability": {
       "rating": [20],
@@ -219,8 +213,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "availability": {
       "rating": [20],
@@ -304,8 +296,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "availability": {
       "rating": [20],
@@ -362,8 +352,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "availability": {
       "rating": [20],
@@ -415,8 +403,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [4],
@@ -469,8 +455,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [8],
@@ -528,8 +512,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [11],
@@ -577,8 +559,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [11],
@@ -644,8 +624,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [11],
@@ -697,8 +675,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [4],
@@ -758,8 +734,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [8],
@@ -822,8 +796,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "alternativeWeaponForms": [
       "HK XM30 Grenade Launcher",
       "HK XM30 Carbine",
@@ -886,9 +858,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "relatedSkillSpecialisations": ["Grenade Launchers"],
     "availability": {
@@ -952,9 +922,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "relatedSkillSpecialisations": ["Submachine Guns"],
     "availability": {
@@ -1021,9 +989,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "relatedSkillSpecialisations": ["Machine Guns"],
     "availability": {
@@ -1087,9 +1053,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "relatedSkillSpecialisations": ["Shotguns"],
     "availability": {
@@ -1156,9 +1120,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "relatedSkillSpecialisations": ["Sniper Rifles"],
     "availability": {
@@ -1223,8 +1185,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [10],
@@ -1285,8 +1245,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [10],
@@ -1343,8 +1301,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [4],
@@ -1404,8 +1360,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [10],
@@ -1479,8 +1433,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [5],
@@ -1543,8 +1495,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [14],
@@ -1600,8 +1550,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Swords"],
     "availability": {
@@ -1658,8 +1606,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Axes"],
     "availability": {
@@ -1716,8 +1662,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Knives"],
     "availability": {
@@ -1774,8 +1718,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Swords"],
     "availability": {
@@ -1832,8 +1774,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Swords"],
     "availability": {
@@ -1890,8 +1830,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Cyber Implants"],
     "availability": {
@@ -1952,9 +1890,8 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": true,
     "userSelectable": false,
-    "augmentationClassification": "Cyberware",
+    "augmentationType": "Cyberware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisations": ["Cyber Implants"],
     "availability": {
@@ -2015,8 +1952,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisations": ["Cyber Implants"],
     "availability": {
@@ -2081,9 +2016,8 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": true,
     "userSelectable": false,
-    "augmentationClassification": "Cyberware",
+    "augmentationType": "Cyberware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisations": ["Cyber Implants"],
     "availability": {
@@ -2140,8 +2074,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Swords"],
     "availability": {
@@ -2198,8 +2130,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Swords"],
     "availability": {
@@ -2256,8 +2186,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Swords"],
     "availability": {
@@ -2314,8 +2242,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Knives"],
     "availability": {
@@ -2372,9 +2298,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Knives"],
     "availability": {
@@ -2431,8 +2355,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "availability": {
       "rating": [6],
@@ -2492,9 +2414,8 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": true,
     "userSelectable": false,
-    "augmentationClassification": "Cyberware",
+    "augmentationType": "Cyberware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisations": ["Cyber Implants"],
     "availability": {
@@ -2559,8 +2480,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Knives"],
     "availability": {
@@ -2617,8 +2536,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Swords"],
     "availability": {
@@ -2675,8 +2592,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Knives"],
     "availability": {
@@ -2733,8 +2648,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Swords"],
     "availability": {
@@ -2781,8 +2694,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Bow"],
     "availability": {
@@ -2829,8 +2740,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Bow"],
     "availability": {
@@ -2877,8 +2786,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Bow"],
     "availability": {
@@ -2925,8 +2832,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Bow"],
     "availability": {
@@ -2973,8 +2878,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Bow"],
     "availability": {
@@ -3021,8 +2924,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Bow"],
     "availability": {
@@ -3069,8 +2970,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Bow"],
     "availability": {
@@ -3117,8 +3016,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Bow"],
     "availability": {
@@ -3165,8 +3062,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Bow"],
     "availability": {
@@ -3213,8 +3108,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Bow"],
     "availability": {
@@ -3259,8 +3152,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Clubs",
     "availability": {
       "rating": [0],
@@ -3304,8 +3195,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Clubs",
     "relatedSkillSpecialisations": ["Batons"],
     "availability": {
@@ -3355,8 +3244,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Clubs",
     "relatedSkillSpecialisations": ["Staves"],
     "availability": {
@@ -3401,8 +3288,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Clubs",
     "relatedSkillSpecialisations": ["Saps"],
     "availability": {
@@ -3447,8 +3332,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Clubs",
     "relatedSkillSpecialisations": ["Staves"],
     "availability": {
@@ -3498,8 +3381,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Clubs",
     "relatedSkillSpecialisations": ["Batons"],
     "availability": {
@@ -3544,8 +3425,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Clubs",
     "relatedSkillSpecialisations": ["Staves"],
     "availability": {
@@ -3595,9 +3474,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Clubs",
     "availability": {
       "rating": [6],
@@ -3644,8 +3521,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Crossbow"],
     "availability": {
@@ -3681,8 +3556,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Slingshot"],
     "availability": {
@@ -3729,8 +3602,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Crossbow"],
     "availability": {
@@ -3777,8 +3648,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Crossbow"],
     "availability": {
@@ -3825,8 +3694,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Crossbow"],
     "availability": {
@@ -3861,8 +3728,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Crossbow"],
     "availability": {
@@ -3910,8 +3775,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Crossbow"],
     "availability": {
@@ -3956,9 +3819,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Melee Weapon",
     "relatedSkillSpecialisations": ["Shields"],
     "availability": {
@@ -4015,8 +3876,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Melee Weapon",
     "relatedSkillSpecialisations": ["Battering Ram"],
     "availability": {
@@ -4065,8 +3924,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Melee Weapon",
     "relatedSkillSpecialisations": ["Battering Ram"],
     "availability": {
@@ -4128,8 +3985,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Melee Weapon",
     "relatedSkillSpecialisations": ["Battering Ram"],
     "availability": {
@@ -4186,8 +4041,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Melee Weapon",
     "relatedSkillSpecialisations": ["Battering Ram"],
     "availability": {
@@ -4236,8 +4089,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Melee Weapon",
     "relatedSkillSpecialisations": ["Shield"],
     "availability": {
@@ -4286,8 +4137,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Melee Weapon",
     "relatedSkillSpecialisations": ["Chainsaw"],
     "availability": {
@@ -4337,9 +4186,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Melee Weapon",
     "relatedSkillSpecialisations": ["Shields"],
     "availability": {
@@ -4388,8 +4235,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Melee Weapon",
     "availability": {
       "rating": [6],
@@ -4437,8 +4282,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Melee Weapon",
     "availability": {
       "rating": [8],
@@ -4486,8 +4329,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Melee Weapon",
     "availability": {
       "rating": [2],
@@ -4535,8 +4376,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Melee Weapon",
     "availability": {
       "rating": [6],
@@ -4580,8 +4419,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Melee Weapon",
     "availability": {
       "rating": [6],
@@ -4637,8 +4474,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Melee Weapon",
     "availability": {
       "rating": [0],
@@ -4694,8 +4529,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Melee Weapon",
     "availability": {
       "rating": [18],
@@ -4743,8 +4576,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Melee Weapon",
     "availability": {
       "rating": [12],
@@ -4784,8 +4615,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Melee Weapon",
     "availability": {
       "rating": [8],
@@ -4838,9 +4667,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Melee Weapon",
     "availability": {
       "rating": [6],
@@ -4892,9 +4719,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "relatedSkillSpecialisations": ["Grapple Gun"],
     "availability": {
@@ -4950,9 +4775,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "relatedSkillSpecialisations": ["Sprayer"],
     "availability": {
@@ -5006,9 +4829,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "relatedSkillSpecialisations": ["Flare Launcher"],
     "availability": {
@@ -5066,8 +4887,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "relatedSkillSpecialisations": ["Flamethrowers"],
     "availability": {
@@ -5119,8 +4938,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "relatedSkillSpecialisations": ["Flamethrowers"],
     "availability": {
@@ -5171,8 +4988,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Aerodynamic"],
     "availability": {
@@ -5223,8 +5038,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Aerodynamic"],
     "availability": {
@@ -5287,8 +5100,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Blades", "Aerodynamic"],
     "availability": {
@@ -5343,8 +5154,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Non-Aerodynamic"],
     "availability": {
@@ -5387,8 +5196,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Non-Aerodynamic"],
     "availability": {
@@ -5432,8 +5239,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Non-Aerodynamic"],
     "availability": {
@@ -5480,8 +5285,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Non-Aerodynamic"],
     "availability": {
@@ -5536,8 +5339,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Non-Aerodynamic"],
     "availability": {
@@ -5580,8 +5381,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Non-Aerodynamic"],
     "availability": {
@@ -5624,8 +5423,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Non-Aerodynamic"],
     "availability": {
@@ -5668,8 +5465,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Non-Aerodynamic"],
     "availability": {
@@ -5712,8 +5507,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Non-Aerodynamic"],
     "availability": {
@@ -5768,8 +5561,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Aerodynamic"],
     "availability": {
@@ -5812,8 +5603,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Aerodynamic"],
     "availability": {
@@ -5857,8 +5646,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Aerodynamic"],
     "availability": {
@@ -5905,8 +5692,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Aerodynamic"],
     "availability": {
@@ -5961,8 +5746,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Aerodynamic"],
     "availability": {
@@ -6005,8 +5788,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Aerodynamic"],
     "availability": {
@@ -6049,8 +5830,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Aerodynamic"],
     "availability": {
@@ -6093,8 +5872,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Aerodynamic"],
     "availability": {
@@ -6137,8 +5914,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Aerodynamic"],
     "availability": {
@@ -6197,8 +5972,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Blades", "Non-Aerodynamic"],
     "availability": {
@@ -6257,8 +6030,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Blades", "Non-Aerodynamic"],
     "availability": {
@@ -6301,8 +6072,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "availability": {
       "rating": [6],
@@ -6360,8 +6129,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Blades"],
     "availability": {
@@ -6400,8 +6167,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Blades"],
     "availability": {
@@ -6460,8 +6225,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Blades"],
     "availability": {
@@ -6511,8 +6274,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "availability": {
       "rating": [8],
@@ -6556,8 +6317,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "availability": {
       "rating": [10],
@@ -6615,9 +6374,8 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": true,
     "userSelectable": false,
-    "augmentationClassification": "Cyberware",
+    "augmentationType": "Cyberware",
     "relatedSkill": "Heavy Weapons",
     "availability": {
       "rating": [0],
@@ -6674,8 +6432,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "relatedSkillSpecialisations": ["Machine Guns"],
     "availability": {
@@ -6739,8 +6495,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "relatedSkillSpecialisations": ["Machine Guns"],
     "availability": {
@@ -6801,8 +6555,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "relatedSkillSpecialisations": ["Machine Guns"],
     "availability": {
@@ -6860,8 +6612,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -6908,8 +6658,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -6967,8 +6715,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -7021,8 +6767,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Revolvers"],
     "availability": {
@@ -7075,8 +6819,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Revolvers"],
     "availability": {
@@ -7129,8 +6871,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -7191,9 +6931,8 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": true,
     "userSelectable": false,
-    "augmentationClassification": "Cyberware",
+    "augmentationType": "Cyberware",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -7257,8 +6996,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -7311,8 +7048,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -7365,8 +7100,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -7419,8 +7152,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Revolvers"],
     "availability": {
@@ -7478,8 +7209,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -7528,9 +7257,8 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": true,
     "userSelectable": false,
-    "augmentationClassification": "Cyberware",
+    "augmentationType": "Cyberware",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -7571,8 +7299,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "availability": {
       "rating": [5],
@@ -7611,8 +7337,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "availability": {
       "rating": [3],
@@ -7651,8 +7375,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "availability": {
       "rating": [4],
@@ -7691,8 +7413,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "availability": {
       "rating": [4],
@@ -7732,8 +7452,6 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Clubs",
     "availability": {
       "rating": [0],
@@ -7777,8 +7495,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Clubs",
     "availability": {
       "rating": [0],
@@ -7822,8 +7538,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Melee Weapon",
     "availability": {
       "rating": [0],
@@ -7867,8 +7581,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Clubs",
     "availability": {
       "rating": [0],
@@ -7912,8 +7624,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "availability": {
       "rating": [0],
@@ -7957,8 +7667,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Clubs",
     "availability": {
       "rating": [0],
@@ -8025,8 +7733,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Clubs",
     "relatedSkillSpecialisations": ["Hammers"],
     "availability": {
@@ -8071,8 +7777,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Clubs",
     "availability": {
       "rating": [0],
@@ -8112,8 +7816,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Clubs",
     "relatedSkillSpecialisations": ["Staves"],
     "availability": {
@@ -8158,8 +7860,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Clubs",
     "availability": {
       "rating": [0],
@@ -8203,8 +7903,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Clubs",
     "relatedSkillSpecialisations": ["Hammers"],
     "availability": {
@@ -8261,8 +7959,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "relatedSkillSpecialisations": ["Laser Weapons"],
     "availability": {
@@ -8319,8 +8015,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "relatedSkillSpecialisations": ["Laser Weapons"],
     "availability": {
@@ -8376,8 +8070,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "relatedSkillSpecialisations": ["Laser Weapons"],
     "availability": {
@@ -8441,8 +8133,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "relatedSkillSpecialisations": ["Machine Guns"],
     "availability": {
@@ -8506,8 +8196,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "relatedSkillSpecialisations": ["Machine Guns"],
     "availability": {
@@ -8565,8 +8253,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "relatedSkillSpecialisations": ["Machine Guns"],
     "availability": {
@@ -8633,8 +8319,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "relatedSkillSpecialisations": ["Machine Guns"],
     "availability": {
@@ -8675,8 +8359,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -8725,8 +8407,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -8772,8 +8452,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -8815,8 +8493,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -8857,8 +8533,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -8898,8 +8572,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Revolvers"],
     "availability": {
@@ -8940,8 +8612,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -8990,8 +8660,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -9040,9 +8708,8 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": true,
     "userSelectable": false,
-    "augmentationClassification": "Cyberware",
+    "augmentationType": "Cyberware",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -9088,8 +8755,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -9130,8 +8795,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -9177,8 +8840,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics", "Revolvers"],
     "availability": {
@@ -9227,8 +8888,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -9280,8 +8939,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -9327,8 +8984,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -9377,9 +9032,8 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": true,
     "userSelectable": false,
-    "augmentationClassification": "Cyberware",
+    "augmentationType": "Cyberware",
     "relatedSkill": "Automatics",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -9425,8 +9079,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -9475,8 +9127,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -9528,8 +9178,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -9587,8 +9235,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -9634,8 +9280,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -9684,8 +9328,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -9749,8 +9391,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "relatedSkillSpecialisations": ["Machine Guns"],
     "availability": {
@@ -9803,8 +9443,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "relatedSkillSpecialisations": ["Machine Guns"],
     "availability": {
@@ -9868,8 +9506,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "relatedSkillSpecialisations": ["Machine Guns"],
     "availability": {
@@ -9920,8 +9556,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "availability": {
       "rating": [10],
@@ -9976,8 +9610,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "availability": {
       "rating": [20],
@@ -10031,8 +9663,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "availability": {
       "rating": [19],
@@ -10087,8 +9717,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "availability": {
       "rating": [18],
@@ -10140,8 +9768,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [18],
@@ -10207,8 +9833,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [9],
@@ -10268,9 +9892,8 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": true,
     "userSelectable": false,
-    "augmentationClassification": "Cyberware",
+    "augmentationType": "Cyberware",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [0],
@@ -10322,8 +9945,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [4],
@@ -10375,8 +9996,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [3],
@@ -10433,8 +10052,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [12],
@@ -10494,8 +10111,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [12],
@@ -10547,8 +10162,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [11],
@@ -10605,8 +10218,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [12],
@@ -10663,8 +10274,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [9],
@@ -10724,8 +10333,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [6],
@@ -10782,8 +10389,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [4],
@@ -10835,8 +10440,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [8],
@@ -10896,8 +10499,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [6],
@@ -10949,8 +10550,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [4],
@@ -11010,8 +10609,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [10],
@@ -11074,8 +10671,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [20],
@@ -11132,8 +10727,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [13],
@@ -11190,8 +10783,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [2],
@@ -11254,8 +10845,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [16],
@@ -11312,8 +10901,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [4],
@@ -11373,8 +10960,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [4],
@@ -11426,8 +11011,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [6],
@@ -11516,8 +11099,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [14],
@@ -11562,8 +11143,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "availability": {
       "rating": [7],
@@ -11603,8 +11182,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "availability": {
       "rating": [16],
@@ -11644,8 +11221,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "availability": {
       "rating": [4],
@@ -11691,8 +11266,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "relatedSkillSpecialisations": ["Bola"],
     "availability": {
@@ -11746,8 +11319,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "availability": {
       "rating": [12],
@@ -11791,8 +11362,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "availability": {
       "rating": [11],
@@ -11832,8 +11401,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "availability": {
       "rating": [6],
@@ -11873,8 +11440,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "availability": {
       "rating": [9],
@@ -11919,8 +11484,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "availability": {
       "rating": [4],
@@ -11965,8 +11528,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "availability": {
       "rating": [6],
@@ -12006,8 +11567,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "availability": {
       "rating": [9],
@@ -12047,8 +11606,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "availability": {
       "rating": [9],
@@ -12088,8 +11645,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "availability": {
       "rating": [10],
@@ -12146,8 +11701,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [3],
@@ -12204,8 +11757,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [5],
@@ -12257,8 +11808,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [6],
@@ -12298,8 +11847,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [3],
@@ -12371,8 +11918,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [6],
@@ -12429,8 +11974,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [4],
@@ -12498,8 +12041,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [6],
@@ -12544,8 +12085,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [4],
@@ -12590,8 +12129,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [4],
@@ -12648,8 +12185,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [4],
@@ -12697,8 +12232,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [14],
@@ -12755,8 +12288,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [7],
@@ -12804,8 +12335,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [6],
@@ -12856,8 +12385,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [5],
@@ -12905,9 +12432,8 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": true,
     "userSelectable": false,
-    "augmentationClassification": "Cyberware",
+    "augmentationType": "Cyberware",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [0],
@@ -12955,8 +12481,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [11],
@@ -13007,8 +12531,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [8],
@@ -13055,8 +12577,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [16],
@@ -13107,8 +12627,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [6],
@@ -13148,8 +12666,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [6],
@@ -13197,8 +12713,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [6],
@@ -13246,8 +12760,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [4],
@@ -13305,8 +12817,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "availability": {
       "rating": [0],
@@ -13360,8 +12870,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "availability": {
       "rating": [0],
@@ -13410,9 +12918,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Clubs",
     "availability": {
       "rating": [0],
@@ -13473,8 +12979,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "availability": {
       "rating": [0],
@@ -13527,8 +13031,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "availability": {
       "rating": [0],
@@ -13576,8 +13078,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Unarmed Combat",
     "availability": {
       "rating": [2],
@@ -13630,8 +13130,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Unarmed Combat",
     "availability": {
       "rating": [6],
@@ -13684,9 +13182,8 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": true,
     "userSelectable": false,
-    "augmentationClassification": "Cyberware",
+    "augmentationType": "Cyberware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisations": ["Cyber Implants"],
     "availability": {
@@ -13731,9 +13228,7 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Unarmed Combat",
     "availability": {
       "rating": [0],
@@ -13783,9 +13278,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "hostWeaponRequirements": {
       "hostWeaponMountsRequired": ["Under"]
     },
@@ -13838,9 +13331,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "hostWeaponRequirements": {
       "hostWeaponMountsRequired": ["Under"]
     },
@@ -13893,8 +13384,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "hostWeaponRequirements": {
       "weaponRequirements": {
         "skills": ["Longarms", "Heavy Weapons"],
@@ -13946,8 +13435,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "hostWeaponRequirements": {
       "weaponRequirements": {
         "minimumHostConcealment": 0
@@ -14006,8 +13493,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "hostWeaponRequirements": {
       "weaponRequirements": {
         "minimumHostConcealment": 0
@@ -14074,9 +13559,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "hostWeaponRequirements": {
       "hostWeaponMountsRequired": ["Under"]
     },
@@ -14132,8 +13615,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -14190,8 +13671,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Knives"],
     "availability": {
@@ -14248,8 +13727,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Swords"],
     "availability": {
@@ -14294,9 +13771,7 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Unarmed Combat",
     "availability": {
       "rating": [0],
@@ -14356,9 +13831,7 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Unarmed Combat",
     "availability": {
       "rating": [0],
@@ -14418,9 +13891,7 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Unarmed Combat",
     "availability": {
       "rating": [0],
@@ -14480,9 +13951,7 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Unarmed Combat",
     "availability": {
       "rating": [0],
@@ -14530,9 +13999,7 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Unarmed Combat",
     "availability": {
       "rating": [0],
@@ -14592,9 +14059,7 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Melee Weapon",
     "availability": {
       "rating": [0],
@@ -14654,9 +14119,7 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Melee Weapon",
     "availability": {
       "rating": [0],
@@ -14704,9 +14167,7 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Unarmed Combat",
     "availability": {
       "rating": [0],
@@ -14754,9 +14215,7 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Unarmed Combat",
     "availability": {
       "rating": [0],
@@ -14804,9 +14263,7 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Unarmed Combat",
     "availability": {
       "rating": [0],
@@ -14866,9 +14323,7 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Unarmed Combat",
     "availability": {
       "rating": [0],
@@ -14928,9 +14383,7 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Unarmed Combat",
     "availability": {
       "rating": [0],
@@ -14978,9 +14431,7 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Unarmed Combat",
     "availability": {
       "rating": [0],
@@ -15054,9 +14505,7 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Unarmed Combat",
     "availability": {
       "rating": [0],
@@ -15116,9 +14565,8 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": true,
     "userSelectable": false,
-    "augmentationClassification": "Cyberware",
+    "augmentationType": "Cyberware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisations": ["Cyber Implants"],
     "availability": {
@@ -15171,9 +14619,8 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": true,
     "userSelectable": false,
-    "augmentationClassification": "Cyberware",
+    "augmentationType": "Cyberware",
     "relatedSkill": "Exotic Melee Weapon",
     "availability": {
       "rating": [12],
@@ -15224,9 +14671,8 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": true,
     "userSelectable": false,
-    "augmentationClassification": "Cyberware",
+    "augmentationType": "Cyberware",
     "relatedSkill": "Exotic Ranged Weapon",
     "availability": {
       "rating": [12],
@@ -15274,9 +14720,8 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": true,
     "userSelectable": false,
-    "augmentationClassification": "Cyberware",
+    "augmentationType": "Cyberware",
     "relatedSkill": "Unarmed Combat",
     "availability": {
       "rating": [0],
@@ -15324,9 +14769,8 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": true,
     "userSelectable": false,
-    "augmentationClassification": "Cyberware",
+    "augmentationType": "Cyberware",
     "relatedSkill": "Unarmed Combat",
     "availability": {
       "rating": [0],
@@ -15386,9 +14830,8 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": true,
     "userSelectable": false,
-    "augmentationClassification": "Cyberware",
+    "augmentationType": "Cyberware",
     "relatedSkill": "Unarmed Combat",
     "availability": {
       "rating": [0],
@@ -15448,9 +14891,8 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "Bioware",
+    "augmentationType": "Bioware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisations": ["Natural Weapons"],
     "availability": {
@@ -15511,9 +14953,8 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "Bioware",
+    "augmentationType": "Bioware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisations": ["Natural Weapons"],
     "availability": {
@@ -15570,9 +15011,8 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "Bioware",
+    "augmentationType": "Bioware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisations": ["Natural Weapons"],
     "availability": {
@@ -15629,9 +15069,8 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "Bioware",
+    "augmentationType": "Bioware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisations": ["Natural Weapons"],
     "availability": {
@@ -15688,9 +15127,8 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "Bioware",
+    "augmentationType": "Bioware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisations": ["Natural Weapons"],
     "availability": {
@@ -15747,9 +15185,8 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "Bioware",
+    "augmentationType": "Bioware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisations": ["Natural Weapons"],
     "availability": {
@@ -15810,9 +15247,8 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "Bioware",
+    "augmentationType": "Bioware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisations": ["Natural Weapons"],
     "availability": {
@@ -15873,9 +15309,8 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "Bioware",
+    "augmentationType": "Bioware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisations": ["Natural Weapons"],
     "availability": {
@@ -15928,9 +15363,8 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "Bioware",
+    "augmentationType": "Bioware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisations": ["Natural Weapons"],
     "availability": {
@@ -15987,9 +15421,8 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "Bioware",
+    "augmentationType": "Bioware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisations": ["Natural Weapons"],
     "availability": {
@@ -16054,9 +15487,7 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Unarmed Combat",
     "availability": {
       "rating": [0],
@@ -16108,9 +15539,7 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "relatedSkillSpecialisations": ["Grapple Gun"],
     "availability": {
@@ -16168,9 +15597,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "relatedSkillSpecialisations": ["Grapple Gun"],
     "availability": {
@@ -16227,8 +15654,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Knives"],
     "availability": {
@@ -16285,8 +15710,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Knives"],
     "availability": {
@@ -16335,9 +15758,8 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": true,
     "userSelectable": false,
-    "augmentationClassification": "Cyberware",
+    "augmentationType": "Cyberware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisations": ["Cyber Implants"],
     "availability": {
@@ -16386,9 +15808,8 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": true,
     "userSelectable": false,
-    "augmentationClassification": "Cyberware",
+    "augmentationType": "Cyberware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisations": ["Cyber Implants"],
     "availability": {
@@ -16437,9 +15858,8 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": true,
     "userSelectable": false,
-    "augmentationClassification": "Cyberware",
+    "augmentationType": "Cyberware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisations": ["Cyber Implants"],
     "availability": {
@@ -16488,9 +15908,8 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": true,
     "userSelectable": false,
-    "augmentationClassification": "Cyberware",
+    "augmentationType": "Cyberware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisations": ["Cyber Implants"],
     "availability": {
@@ -16547,8 +15966,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Swords"],
     "availability": {
@@ -16605,8 +16022,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Swords"],
     "availability": {
@@ -16663,8 +16078,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Axes"],
     "availability": {
@@ -16723,8 +16136,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "relatedSkillSpecialisations": ["Aerodynamic"],
     "availability": {
@@ -16793,8 +16204,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Bow"],
     "availability": {
@@ -16836,8 +16245,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -16890,8 +16297,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "availability": {
       "rating": [8],
@@ -16931,9 +16336,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "availability": {
       "rating": [14],
@@ -16988,8 +16391,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "relatedSkillSpecialisations": ["Laser Weapons"],
     "availability": {
@@ -17038,8 +16439,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Unarmed Combat",
     "availability": {
       "rating": [2],
@@ -17096,8 +16495,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -17156,8 +16553,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Revolvers"],
     "availability": {
@@ -17199,9 +16594,7 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Revolvers"],
     "availability": {
@@ -17253,8 +16646,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "hostWeaponRequirements": {
       "hostWeaponMountsRequired": ["Barrel", "Under"]
     },
@@ -17309,8 +16700,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "hostWeaponRequirements": {
       "hostWeaponMountsRequired": ["Under"]
     },
@@ -17368,8 +16757,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "hostWeaponRequirements": {
       "hostWeaponMountsRequired": ["Under", "Side"]
     },
@@ -17423,8 +16810,6 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "relatedSkillSpecialisations": ["Microwave"],
     "availability": {
@@ -17463,8 +16848,6 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "relatedSkillSpecialisations": ["Microwave"],
     "availability": {
@@ -17520,8 +16903,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "relatedSkillSpecialisations": ["Laser Weapons"],
     "availability": {
@@ -17579,8 +16960,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -17637,8 +17016,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Swords"],
     "availability": {
@@ -17687,8 +17064,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -17735,8 +17110,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -17798,8 +17171,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -17839,8 +17210,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "availability": {
       "rating": [6],
@@ -17895,8 +17264,6 @@
       "gearCategoryList": ["Drugs", "Toxins"]
     },
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Melee Weapon",
     "relatedSkillSpecialisations": ["Injector Pen"],
     "availability": {
@@ -17941,8 +17308,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "relatedSkillSpecialisations": ["Pepper Punch Pen"],
     "availability": {
@@ -17987,8 +17352,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "relatedSkillSpecialisations": ["Modified Spray Pen"],
     "availability": {
@@ -18033,8 +17396,6 @@
       }
     ],
     "allowAccessories": false,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Clubs",
     "relatedSkillSpecialisations": ["Saps"],
     "availability": {
@@ -18091,8 +17452,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Knives"],
     "availability": {
@@ -18137,9 +17496,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Melee Weapon",
     "relatedSkillSpecialisations": ["Shields"],
     "availability": {
@@ -18240,8 +17597,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Clubs",
     "relatedSkillSpecialisations": ["Hammers"],
     "availability": {
@@ -18293,8 +17648,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "relatedSkillSpecialisations": ["Flamethrowers"],
     "availability": {
@@ -18349,8 +17702,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Non-Aerodynamic"],
     "availability": {
@@ -18405,8 +17756,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Aerodynamic"],
     "availability": {
@@ -18463,8 +17812,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "availability": {
       "rating": [12],
@@ -18520,8 +17867,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "alternativeWeaponForms": ["Krime Reaver Pick", "Krime Reaver Knob"],
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Axes"],
@@ -18579,9 +17924,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "availability": {
       "rating": [0],
@@ -18637,9 +17980,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Clubs",
     "availability": {
       "rating": [0],
@@ -18695,8 +18036,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "availability": {
       "rating": [6],
@@ -18752,8 +18091,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Swords"],
     "availability": {
@@ -18810,8 +18147,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Swords"],
     "availability": {
@@ -18868,8 +18203,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Swords"],
     "availability": {
@@ -18914,8 +18247,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Clubs",
     "relatedSkillSpecialisations": ["Hammers"],
     "availability": {
@@ -18972,8 +18303,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "alternativeWeaponForms": ["Gunstock War Club (Thrown)"],
     "relatedSkill": "Clubs",
     "availability": {
@@ -19030,9 +18359,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "availability": {
       "rating": [10],
@@ -19076,8 +18403,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Clubs",
     "availability": {
       "rating": [6],
@@ -19121,8 +18446,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Clubs",
     "availability": {
       "rating": [4],
@@ -19166,8 +18489,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "alternativeWeaponForms": ["Krime Gloves: Stun Pad"],
     "relatedSkill": "Unarmed Combat",
     "availability": {
@@ -19221,9 +18542,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Unarmed Combat",
     "availability": {
       "rating": [0],
@@ -19272,8 +18591,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Melee Weapon",
     "availability": {
       "rating": [9],
@@ -19319,8 +18636,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "alternativeWeaponForms": ["Krime Trollbow Horns"],
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Bow"],
@@ -19368,8 +18683,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "alternativeWeaponForms": ["Krime Trollbow Horns"],
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Bow"],
@@ -19417,8 +18730,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "alternativeWeaponForms": ["Krime Trollbow Horns"],
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Bow"],
@@ -19466,8 +18777,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "alternativeWeaponForms": ["Krime Trollbow Horns"],
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Bow"],
@@ -19515,8 +18824,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "alternativeWeaponForms": ["Krime Trollbow Horns"],
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Bow"],
@@ -19564,8 +18871,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "alternativeWeaponForms": ["Krime Trollbow Horns"],
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Bow"],
@@ -19613,8 +18918,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "alternativeWeaponForms": ["Krime Trollbow Horns"],
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Bow"],
@@ -19672,9 +18975,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "availability": {
       "rating": [0],
@@ -19720,8 +19021,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Archery",
     "relatedSkillSpecialisations": ["Crossbow"],
     "availability": {
@@ -19775,8 +19074,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "availability": {
       "rating": [6],
@@ -19821,8 +19118,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -19869,8 +19164,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "availability": {
       "rating": [6],
@@ -19914,8 +19207,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "availability": {
       "rating": [4],
@@ -19965,8 +19256,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -20025,8 +19314,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Revolvers"],
     "availability": {
@@ -20084,8 +19371,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -20138,8 +19423,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "alternativeWeaponForms": ["Barrens Special: Bayonet"],
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Revolvers"],
@@ -20197,9 +19480,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "availability": {
       "rating": [0],
@@ -20261,8 +19542,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "availability": {
       "rating": [12],
@@ -20320,8 +19599,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "availability": {
       "rating": [8],
@@ -20381,8 +19658,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "availability": {
       "rating": [12],
@@ -20440,8 +19715,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "availability": {
       "rating": [10],
@@ -20501,8 +19774,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "availability": {
       "rating": [15],
@@ -20560,8 +19831,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -20620,8 +19889,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -20683,8 +19950,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -20741,8 +20006,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "hostWeaponRequirements": {
       "hostWeaponMountsRequired": ["Under"]
     },
@@ -20798,8 +20061,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics", "Revolvers"],
     "availability": {
@@ -20851,8 +20112,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "availability": {
       "rating": [14],
@@ -20896,8 +20155,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -20946,8 +20203,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [8],
@@ -20996,8 +20251,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -21055,8 +20308,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [6],
@@ -21125,8 +20376,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [10],
@@ -21184,8 +20433,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [8],
@@ -21246,8 +20493,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [6],
@@ -21299,8 +20544,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [6],
@@ -21361,8 +20604,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "alternativeWeaponForms": [
       "Onotari HL-13 Personal Defense Weapon",
       "Onotari HL-13 Urban Assault",
@@ -21424,9 +20665,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "relatedSkillSpecialisations": ["Submachine Guns"],
     "availability": {
@@ -21488,9 +20727,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "relatedSkillSpecialisations": ["Submachine Guns"],
     "availability": {
@@ -21552,9 +20789,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "relatedSkillSpecialisations": ["Sniper Rifles"],
     "availability": {
@@ -21617,8 +20852,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [12],
@@ -21679,8 +20912,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [12],
@@ -21732,8 +20963,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [15],
@@ -21793,8 +21022,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "alternativeWeaponForms": ["Krime Whammy (Melee)"],
     "relatedSkill": "Longarms",
     "availability": {
@@ -21839,9 +21066,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Clubs",
     "availability": {
       "rating": [12],
@@ -21901,8 +21126,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "relatedSkillSpecialisations": ["Machine Guns"],
     "availability": {
@@ -21963,8 +21186,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "relatedSkillSpecialisations": ["Machine Guns"],
     "availability": {
@@ -22013,8 +21234,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "relatedSkillSpecialisations": ["Machine Guns"],
     "availability": {
@@ -22066,8 +21285,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "relatedSkillSpecialisations": ["Grenade Launchers"],
     "availability": {
@@ -22123,8 +21340,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "availability": {
       "rating": [20],
@@ -22180,8 +21395,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "relatedSkillSpecialisations": ["Grenade Launchers"],
     "availability": {
@@ -22228,8 +21441,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "availability": {
       "rating": [8],
@@ -22276,8 +21487,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "availability": {
       "rating": [12],
@@ -22322,8 +21531,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "availability": {
       "rating": [15],
@@ -22372,8 +21579,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Clubs",
     "availability": {
       "rating": [10],
@@ -22421,8 +21626,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Non-Aerodynamic"],
     "availability": {
@@ -22471,8 +21674,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Aerodynamic"],
     "availability": {
@@ -22530,8 +21731,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "relatedSkillSpecialisations": ["Machine Guns"],
     "availability": {
@@ -22592,8 +21791,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Axes"],
     "availability": {
@@ -22633,8 +21830,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "availability": {
       "rating": [10],
@@ -22686,8 +21881,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "availability": {
       "rating": [10],
@@ -22739,8 +21932,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "availability": {
       "rating": [10],
@@ -22803,8 +21994,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [6],
@@ -22860,8 +22049,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Unarmed Combat",
     "availability": {
       "rating": [10],
@@ -22922,8 +22109,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [18],
@@ -22979,8 +22164,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Swords"],
     "availability": {
@@ -23033,8 +22216,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Blades",
     "relatedSkillSpecialisations": ["Knives"],
     "availability": {
@@ -23083,8 +22264,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Ranged Weapon",
     "availability": {
       "rating": [18],
@@ -23134,8 +22313,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "availability": {
       "rating": [18],
@@ -23179,8 +22356,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Melee Weapon",
     "availability": {
       "rating": [8],
@@ -23236,8 +22411,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Melee Weapon",
     "availability": {
       "rating": [12],
@@ -23285,8 +22458,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Melee Weapon",
     "availability": {
       "rating": [12],
@@ -23330,8 +22501,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Melee Weapon",
     "availability": {
       "rating": [8],
@@ -23387,8 +22556,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Melee Weapon",
     "availability": {
       "rating": [12],
@@ -23444,8 +22611,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Exotic Melee Weapon",
     "availability": {
       "rating": [12],
@@ -23493,8 +22658,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Clubs",
     "availability": {
       "rating": [0],
@@ -23550,8 +22713,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Clubs",
     "availability": {
       "rating": [4],
@@ -23605,8 +22766,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Non-Aerodynamic"],
     "availability": {
@@ -23661,8 +22820,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Aerodynamic"],
     "availability": {
@@ -23711,9 +22868,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Unarmed Combat",
     "availability": {
       "rating": [0],
@@ -23761,9 +22916,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Unarmed Combat",
     "availability": {
       "rating": [0],
@@ -23805,8 +22958,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Non-Aerodynamic"],
     "availability": {
@@ -23849,8 +23000,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Non-Aerodynamic"],
     "availability": {
@@ -23917,8 +23066,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Non-Aerodynamic"],
     "availability": {
@@ -23985,8 +23132,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Non-Aerodynamic"],
     "availability": {
@@ -24043,8 +23188,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "availability": {
       "rating": [7],
@@ -24101,8 +23244,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -24163,8 +23304,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -24214,8 +23353,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [9],
@@ -24270,8 +23407,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [15],
@@ -24335,8 +23470,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -24397,8 +23530,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [5],
@@ -24458,8 +23589,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "availability": {
       "rating": [5],
@@ -24515,9 +23644,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [0],
@@ -24575,8 +23702,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [6],
@@ -24633,8 +23758,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "availability": {
       "rating": [5],
@@ -24694,8 +23817,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "availability": {
       "rating": [5],
@@ -24752,8 +23873,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Pistols",
     "availability": {
       "rating": [5],
@@ -24813,8 +23932,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Automatics",
     "relatedSkillSpecialisations": ["Semi-Automatics"],
     "availability": {
@@ -24874,8 +23991,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Longarms",
     "availability": {
       "rating": [14],
@@ -24923,9 +24038,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "availability": {
       "rating": [0],
@@ -24989,8 +24102,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "relatedSkillSpecialisations": ["Machine Guns"],
     "availability": {
@@ -25048,8 +24159,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "availability": {
       "rating": [18],
@@ -25106,8 +24215,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "availability": {
       "rating": [20],
@@ -25152,8 +24259,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "availability": {
       "rating": [8],
@@ -25208,8 +24313,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Heavy Weapons",
     "availability": {
       "rating": [9],
@@ -25258,8 +24361,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Gunnery",
     "availability": {
       "rating": [9],
@@ -25302,8 +24403,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Gunnery",
     "availability": {
       "rating": [12],
@@ -25345,8 +24444,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Non-Aerodynamic"],
     "availability": {
@@ -25395,8 +24492,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Non-Aerodynamic"],
     "availability": {
@@ -25451,9 +24546,7 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
     "userSelectable": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Non-Aerodynamic"],
     "availability": {
@@ -25509,8 +24602,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Non-Aerodynamic"],
     "availability": {
@@ -25553,8 +24644,6 @@
       }
     ],
     "allowAccessories": true,
-    "isCyberware": false,
-    "augmentationClassification": "N/A",
     "relatedSkill": "Throwing Weapons",
     "relatedSkillSpecialisations": ["Non-Aerodynamic"],
     "availability": {

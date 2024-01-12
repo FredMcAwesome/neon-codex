@@ -1,4 +1,4 @@
-import { Entity, ManyToOne, PrimaryKey, Property } from "@mikro-orm/core";
+import { Entity, ManyToOne, PrimaryKey, Property } from "@mikro-orm/postgresql";
 import { Threads, Users } from "./models.js";
 
 @Entity()

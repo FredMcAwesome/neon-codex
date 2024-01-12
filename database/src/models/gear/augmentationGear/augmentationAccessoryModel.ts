@@ -1,4 +1,4 @@
-import { Entity, PrimaryKey, Property, Enum } from "@mikro-orm/core";
+import { Entity, PrimaryKey, Property, Enum } from "@mikro-orm/postgresql";
 import { augmentationAccessoryTypeEnum } from "@shadowrun/common";
 import type { RatingType } from "@shadowrun/common";
 import type {

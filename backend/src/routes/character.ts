@@ -115,7 +115,7 @@ async function getWeapons() {
           }),
         allowAccessories: weapon.allowAccessories,
         isCyberware: weapon.isCyberware,
-        augmentationClassification: weapon.augmentationClassification,
+        augmentationTypeEnum: weapon.augmentationTypeEnum,
         description: weapon.description,
         ...(weapon.wireless !== undefined && { wireless: weapon.wireless }),
         relatedSkill: skill.name,
@@ -142,7 +142,7 @@ async function getTypeInformation(weapon: Weapons) {
     const meleeWeapon = weapon as MeleeWeapons;
     const typeInformation: MeleeTypeInformationType = {
       type: weaponTypeEnum.Melee,
-      subtype: meleeWeapon.subtypeMelee,
+      subtype: meleeWeapon.subtype,
       meleeOptions: {
         reach: meleeWeapon.reach,
       },
@@ -160,7 +160,7 @@ async function getTypeInformation(weapon: Weapons) {
     const projectileWeapon = weapon as ProjectileWeapons;
     const typeInformation: ProjectileTypeInformationType = {
       type: weaponTypeEnum.Projectile,
-      subtype: projectileWeapon.subtypeProjectile,
+      subtype: projectileWeapon.subtype,
       rangeList: rangeList,
     };
     return typeInformation;
@@ -168,7 +168,7 @@ async function getTypeInformation(weapon: Weapons) {
     const firearmWeapon = weapon as FirearmWeapons;
     const typeInformation: FirearmTypeInformationType = {
       type: weaponTypeEnum.Firearm,
-      subtype: firearmWeapon.subtypeFirearm,
+      subtype: firearmWeapon.subtype,
       firearmOptions: {
         mode: firearmWeapon.mode,
         recoilCompensation: firearmWeapon.recoilCompensation,
@@ -176,11 +176,11 @@ async function getTypeInformation(weapon: Weapons) {
           ammoCategory: firearmWeapon.ammoCategory,
         }),
         ammoSlots: firearmWeapon.ammoSlots,
-        ...((firearmWeapon.weaponRequirements ||
+        ...((firearmWeapon.requirements ||
           firearmWeapon.hostWeaponMountsRequired) && {
           hostWeaponRequirements: {
-            ...(firearmWeapon.weaponRequirements !== undefined && {
-              weaponRequirements: firearmWeapon.weaponRequirements,
+            ...(firearmWeapon.requirements !== undefined && {
+              weaponRequirements: firearmWeapon.requirements,
             }),
             ...(firearmWeapon.hostWeaponMountsRequired !== undefined &&
               firearmWeapon.hostWeaponMountsRequired.length > 0 && {
@@ -209,7 +209,7 @@ async function getTypeInformation(weapon: Weapons) {
     const explosiveWeapon = weapon as Explosives;
     const typeInformation: ExplosiveTypeInformationType = {
       type: weaponTypeEnum.Explosive,
-      subtype: explosiveWeapon.subtypeExplosive,
+      subtype: explosiveWeapon.subtype,
       rangeList: rangeList,
     };
     return typeInformation;

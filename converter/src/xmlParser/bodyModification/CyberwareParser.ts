@@ -21,6 +21,7 @@ import {
   convertAugmentationLimit,
   convertSource,
   convertXmlGears,
+  convertRatingMeaning,
 } from "../common/ParserHelper.js";
 import {
   convertCyberwareCategory,
@@ -31,7 +32,10 @@ import {
 } from "./CyberwareParserHelper.js";
 import { convertXmlBonus } from "../common/BonusHelper.js";
 import { convertRequirements } from "../common/RequiredHelper.js";
-import { availabilityEnum } from "@shadowrun/common/build/enums.js";
+import {
+  augmentationTypeEnum,
+  availabilityEnum,
+} from "@shadowrun/common/build/enums.js";
 import { AugmentationSchema } from "@shadowrun/common/build/schemas/augmentationSchemas.js";
 import Augmentation from "../../grammar/augmentation.ohm-bundle.js";
 import {
@@ -179,7 +183,7 @@ export function ParseCyberware() {
 
 function convertCyberware(cyberware: CyberwareXmlType) {
   const augmentationLimit = convertAugmentationLimit(cyberware.limit);
-  const category = convertCyberwareCategory(cyberware.category);
+  const subtype = convertCyberwareCategory(cyberware.category);
   const unavailableGrades =
     cyberware.bannedgrades !== undefined
       ? convertAugmentationGradeList(cyberware.bannedgrades.grade)
@@ -206,7 +210,7 @@ function convertCyberware(cyberware: CyberwareXmlType) {
     cyberware.minrating !== undefined
       ? convertCyberwareRating(cyberware.minrating)
       : [1];
-  const ratingLabel = cyberware.ratinglabel;
+  const ratingLabel = convertRatingMeaning(cyberware.ratinglabel);
   const programs = cyberware.programs;
 
   let capacity;
@@ -265,7 +269,7 @@ function convertCyberware(cyberware: CyberwareXmlType) {
   }
   const modularMount = cyberware.modularmount === undefined ? undefined : true;
 
-  let blockedMountList = [];
+  let blockedMountList: Array<string> = [];
   if (cyberware.blocksmounts !== undefined) {
     match = MountList.match(cyberware.blocksmounts.toString());
     if (match.failed()) {
@@ -326,47 +330,52 @@ function convertCyberware(cyberware: CyberwareXmlType) {
       : { option: availabilityEnum.Rating as const };
   const source = convertSource(cyberware.source);
 
+  const typeInformation = {
+    type: augmentationTypeEnum.Cyberware,
+    subtype: subtype,
+    programs: programs,
+    capacity: capacity,
+    addToParentCapacity: addToParentCapacity,
+    addParentWeaponAccessory: addParentWeaponCapacity,
+    removalCost: cyberware.removalcost,
+    inheritAttributes: inheritAttributes,
+    limbSlot: limbSlot,
+    useBothLimbSlots: useBothLimbSlots,
+    mountsLocation: mountLocation,
+    modularMount: modularMount,
+    wirelessBonus: wirelessBonus,
+    wirelessPairBonus: wirelessPairBonus,
+    wirelessPairIncludeList: wirelessPairIncludeList,
+    gearList: gears,
+    subsystemList: subsystemList,
+    forceGrade: forceGrade,
+    deviceRating: deviceRating,
+    addVehicle: cyberware.addvehicle,
+  };
+
   return {
     name: cyberware.name,
     description: "",
     augmentationLimit: augmentationLimit,
-    category: category,
+    typeInformation: typeInformation,
     unavailableGrades: unavailableGrades,
     essenceCost: essenceCost,
     modification: cyberwareModification,
     rating: { minimum: minRating, maximum: maxRating },
     ratingLabel: ratingLabel,
-    programs: programs,
-    capacity: capacity,
-    addToParentCapacity: addToParentCapacity,
-    addParentWeaponAccessory: addParentWeaponCapacity,
-    availability: availability,
-    cost: cost,
-    removalCost: cyberware.removalcost,
-    inheritAttributes: inheritAttributes,
     addWeapon: cyberware.addweapon,
-    limbSlot: limbSlot,
-    useBothLimbSlots: useBothLimbSlots,
-    mountsLocation: mountLocation,
-    modularMount: modularMount,
-    blockedMountList: blockedMountList,
+    ...(blockedMountList.length > 0 && { blockedMountList: blockedMountList }),
     selectSide: selectSide,
     bonus: bonus,
     pairBonus: pairBonus,
     pairIncludeList: pairIncludeList,
-    wirelessBonus: wirelessBonus,
-    wirelessPairBonus: wirelessPairBonus,
-    wirelessPairIncludeList: wirelessPairIncludeList,
     requirements: requirements,
     forbidden: forbidden,
-    gearList: gears,
     allowedGear: allowedGear,
-    subsystemList: subsystemList,
     allowCategoryList: allowCategoryList,
     ...(cyberware.hide !== undefined && { userSelectable: false as const }),
-    forceGrade: forceGrade,
-    deviceRating: deviceRating,
-    addVehicle: cyberware.addvehicle,
+    availability: availability,
+    cost: cost,
     source: source,
     page: cyberware.page,
   };

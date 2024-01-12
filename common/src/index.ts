@@ -6,14 +6,12 @@ export type { RatingLiteralType } from "./types.js";
 export {
   ThreadListSchema,
   JwtTokenSchema,
-  AugmentationListSchema,
   GearListSchema,
 } from "./serverResponse.js";
 export type {
   ThreadListType,
   JwtTokenType,
   OtherGearListType,
-  AugmentationListType,
   GearListType,
 } from "./serverResponse.js";
 

@@ -1,7 +1,7 @@
 import { RangedWeapons } from "../../models.js";
 import type { RangedWeapons as RangedWeaponType } from "../../models.js";
-import { Entity, ManyToOne, PrimaryKey, ref } from "@mikro-orm/core";
-import type { Ref } from "@mikro-orm/core";
+import { Entity, ManyToOne, PrimaryKey, ref } from "@mikro-orm/postgresql";
+import type { Ref } from "@mikro-orm/postgresql";
 import { WeaponRanges } from "../../gear/combatGear/helperTables/weaponRangeModel.js";
 import type { WeaponRanges as WeaponRangeType } from "../../gear/combatGear/helperTables/weaponRangeModel.js";
 

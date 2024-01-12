@@ -1,5 +1,5 @@
 import assert from "assert";
-import { EntityManager } from "@mikro-orm/core";
+import { EntityManager } from "@mikro-orm/postgresql";
 import { Seeder } from "@mikro-orm/seeder";
 import { getSkills } from "../seeds/newSeeds/skillsSeed.js";
 import { getWeapons } from "../seeds/newSeeds/weaponsSeed.js";
@@ -21,6 +21,11 @@ import { Armours } from "../models/gear/combatGear/armourModel.js";
 import { getArmours } from "../seeds/newSeeds/armoursSeed.js";
 import { ArmourModifications } from "../models/gear/combatGear/armourModificationModel.js";
 import { getArmourModifications } from "../seeds/newSeeds/armourModificationsSeed.js";
+import {
+  Biowares,
+  Cyberwares,
+} from "../models/gear/augmentationGear/augmentationModel.js";
+import { getAugmentations } from "../seeds/newSeeds/augmentationsSeed.js";
 
 export class GearSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
@@ -40,6 +45,7 @@ export class GearSeeder extends Seeder {
     const stagedArmours: Array<Armours> = getArmours();
     const stagedArmourModifications: Array<ArmourModifications> =
       getArmourModifications();
+    const { stagedBiowares, stagedCyberwares } = getAugmentations();
 
     stagedSkills.forEach((skill) => {
       em.create(Skills, skill);
@@ -94,9 +100,6 @@ export class GearSeeder extends Seeder {
     stagedArmourModifications.forEach((armourMod) => {
       em.create(ArmourModifications, armourMod);
     });
-    //   armourModificationsList.forEach((armourModification) => {
-    //     em.create(ArmourModifications, armourModification);
-    //   });
 
     //   // electronics (matrix) stuff
     //   commlinksList.forEach((commlink) => {
@@ -168,24 +171,12 @@ export class GearSeeder extends Seeder {
     //     em.create(SlapPatches, slapPatch);
     //   });
     //   // augmentations
-    //   headwaresList.forEach((headware) => {
-    //     em.create(Headwares, headware);
-    //   });
-    //   eyewaresList.forEach((eyewear) => {
-    //     em.create(Eyewares, eyewear);
-    //   });
-    //   earwaresList.forEach((earware) => {
-    //     em.create(Earwares, earware);
-    //   });
-    //   bodywareList.forEach((bodyware) => {
-    //     em.create(Bodywares, bodyware);
-    //   });
-    //   cyberlimbsList.forEach((cyberlimb) => {
-    //     em.create(Cyberlimbs, cyberlimb);
-    //   });
-    //   biowaresList.forEach((bioware) => {
-    //     em.create(Biowares, bioware);
-    //   });
+    for (const cyberware of stagedCyberwares) {
+      await em.persistAndFlush(em.create(Cyberwares, cyberware));
+    }
+    for (const bioware of stagedBiowares) {
+      await em.persistAndFlush(em.create(Biowares, bioware));
+    }
     //   // augmentation accessories
     //   cyberlimbAccessoriesList.forEach((cyberlimbAccessory) => {
     //     em.create(CyberlimbAccessories, cyberlimbAccessory);

@@ -5,8 +5,8 @@ import {
   OneToMany,
   PrimaryKey,
   Property,
-} from "@mikro-orm/core";
-import type { Ref } from "@mikro-orm/core";
+} from "@mikro-orm/postgresql";
+import type { Ref } from "@mikro-orm/postgresql";
 import { Weapons } from "../../models.js";
 import { CustomisedWeaponAccessories } from "./activeWeaponAccessoryModel.js";
 

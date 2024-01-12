@@ -12,9 +12,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@mikro-orm/cli": "^5.6.13",
-    "@mikro-orm/entity-generator": "^5.6.13",
-    "@mikro-orm/seeder": "^5.6.13",
+    "@mikro-orm/cli": "^6.0.2",
+    "@mikro-orm/entity-generator": "^6.0.2",
+    "@mikro-orm/seeder": "^6.0.2",
     "@types/async": "^3.2.15",
     "@types/bcrypt": "^5.0.0",
     "@types/cors": "^2.8.12",
@@ -35,8 +35,8 @@
     "typescript": "^5.3.2"
   },
   "dependencies": {
-    "@mikro-orm/core": "^5.6.13",
-    "@mikro-orm/postgresql": "^5.6.13",
+    "@mikro-orm/core": "^6.0.2",
+    "@mikro-orm/postgresql": "^6.0.2",
     "@shadowrun/common": "*",
     "async": "^3.2.4",
     "bcrypt": "^5.0.1",

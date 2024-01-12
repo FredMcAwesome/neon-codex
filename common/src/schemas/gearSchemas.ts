@@ -1,5 +1,5 @@
 import { z as zod } from "zod";
-import { AugmentationSchema } from "./augmentationSchemas.js";
+import { AugmentationListSchema } from "./augmentationSchemas.js";
 import { MatrixAccessorySchema, MatrixSchema } from "./electronicSchemas.js";
 import { OtherGearSchema } from "./otherGearSchemas.js";
 import { RiggerSchema } from "./riggerSchemas.js";
@@ -15,9 +15,6 @@ export type MatrixAccessoriesListType = zod.infer<
 
 export const OtherGearListSchema = zod.array(OtherGearSchema);
 export type OtherGearListType = zod.infer<typeof OtherGearListSchema>;
-
-export const AugmentationListSchema = zod.array(AugmentationSchema);
-export type AugmentationListType = zod.infer<typeof AugmentationListSchema>;
 
 export const VehiclesAndDronesListSchema = zod.array(RiggerSchema);
 export type VehiclesAndDronesListType = zod.infer<

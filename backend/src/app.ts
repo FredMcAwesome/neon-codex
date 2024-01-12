@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import path from "path";
-import { RequestContext } from "@mikro-orm/core";
+import { RequestContext } from "@mikro-orm/postgresql";
 import * as logger from "./utils/logger.js";
 import { HOST, PORT } from "@shadowrun/database/build/utils/databaseConfig.js";
 import * as middleware from "./utils/middleware.js";

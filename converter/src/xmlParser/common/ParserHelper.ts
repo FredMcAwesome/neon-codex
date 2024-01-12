@@ -4,6 +4,7 @@ import {
   augmentationLimitEnum,
   gearCategoryEnum,
   limbSlotEnum,
+  ratingMeaningEnum,
   sourceBookEnum,
 } from "@shadowrun/common/build/enums.js";
 import type { ModListType } from "@shadowrun/common/build/schemas/shared/modSchemas.js";
@@ -283,6 +284,24 @@ export const convertGearCategory = function (category: GearXmlCategoryEnum) {
       return gearCategoryEnum.PiTacPrograms;
     case GearXmlCategoryEnum.HardNanoware:
       return gearCategoryEnum.HardNanoware;
+  }
+};
+
+export const convertRatingMeaning = function (meaning: string | undefined) {
+  if (meaning === undefined) {
+    return undefined;
+  }
+  switch (meaning) {
+    case "String_Hours":
+      return ratingMeaningEnum.HourPerRating;
+    case "String_UpgradedRating":
+      return ratingMeaningEnum.UpgradedRating;
+    case "Rating_LengthInCmBy10":
+      return ratingMeaningEnum.TenCmPerRating;
+    case "Rating_Meters":
+      return ratingMeaningEnum.MeterPerRating;
+    default:
+      assert(false);
   }
 };
 

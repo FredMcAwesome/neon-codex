@@ -1,5 +1,5 @@
-import { Entity, ManyToOne, PrimaryKey, Property } from "@mikro-orm/core";
-import type { Ref } from "@mikro-orm/core";
+import { Entity, ManyToOne, PrimaryKey, Property } from "@mikro-orm/postgresql";
+import type { Ref } from "@mikro-orm/postgresql";
 import { Skills } from "../skillModel.js";
 
 @Entity()

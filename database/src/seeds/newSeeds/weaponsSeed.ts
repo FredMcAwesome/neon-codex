@@ -31,7 +31,7 @@ import {
 } from "../../models/gear/combatGear/weaponModel.js";
 import { z as zod } from "zod";
 import {
-  augmentationClassificationEnum,
+  augmentationTypeEnum,
   sourceBookEnum,
   explosiveTypeEnum,
   firearmWeaponTypeEnum,
@@ -89,9 +89,8 @@ export const WeaponSummarySchema = zod
     allowedGear: zod.optional(AllowedGearSchema),
     gears: zod.optional(UnlinkedAccessoryListSchema),
     allowAccessories: zod.boolean(),
-    isCyberware: zod.boolean(),
     userSelectable: zod.optional(zod.literal(false)),
-    augmentationClassification: zod.nativeEnum(augmentationClassificationEnum),
+    augmentationType: zod.optional(zod.nativeEnum(augmentationTypeEnum)),
     addWeapons: zod.optional(zod.array(zod.string())),
     hostWeaponRequirements: zod.optional(
       zod
@@ -138,8 +137,7 @@ const convertWeapon = function (
     ammunition: weapon.ammunition,
     allowedGear: weapon.allowedGear,
     allowAccessories: weapon.allowAccessories,
-    isCyberware: weapon.isCyberware,
-    augmentationClassification: weapon.augmentationClassification,
+    augmentationType: weapon.augmentationType,
     wireless: weapon.wireless,
     relatedSkillSpecialisations: weapon.relatedSkillSpecialisations,
     availability: weapon.availability,
