@@ -10,7 +10,6 @@ import {
   parentGearEnum,
   personaFormEnum,
   projectileWeaponTypeEnum,
-  // otherWareTypeEnum,
   restrictionEnum,
   sourceBookEnum,
   weaponExtraClassificationEnum,
@@ -77,28 +76,7 @@ export const CostGearSchema = zod.union([
 ]);
 export type CostGearType = zod.infer<typeof CostGearSchema>;
 
-// const TypeInformationGearSchema = zod.discriminatedUnion("type", [
-//   zod
-//     .object({
-//       type: zod.literal(otherWareTypeEnum.IndustrialChemical),
-//     })
-//     .strict(),
-//   zod.object({ type: zod.literal(otherWareTypeEnum.SurvivalGear) }).strict(),
-//   zod
-//     .object({
-//       type: zod.literal(otherWareTypeEnum.GrappleGun),
-//       accessory: zod.boolean(),
-//       lengthForCost: zod.optional(zod.number()),
-//     })
-//     .strict(),
-//   zod.object({ type: zod.literal(otherWareTypeEnum.Biotech) }).strict(),
-//   zod
-//     .object({ type: zod.literal(otherWareTypeEnum.DocWagonContract) })
-//     .strict(),
-//   zod.object({ type: zod.literal(otherWareTypeEnum.SlapPatch) }).strict(),
-// ]);
-
-const ammoForWeaponTypeSchema = zod.union([
+const AmmoForWeaponTypeSchema = zod.union([
   zod
     .object({
       type: zod.literal(weaponTypeEnum.Projectile),
@@ -119,7 +97,7 @@ const ammoForWeaponTypeSchema = zod.union([
     })
     .strict(),
 ]);
-export type ammoForWeaponTypeType = zod.infer<typeof ammoForWeaponTypeSchema>;
+export type AmmoForWeaponTypeType = zod.infer<typeof AmmoForWeaponTypeSchema>;
 
 const GearProgramSchema = zod.array(
   zod.union([
@@ -198,7 +176,7 @@ export const OtherGearSchema = zod
     weaponBonus: zod.optional(WeaponBonusSchema),
     isFlechetteAmmo: zod.optional(zod.literal(true)),
     flechetteWeaponBonus: zod.optional(WeaponBonusSchema),
-    ammoForWeaponType: zod.optional(zod.array(ammoForWeaponTypeSchema)),
+    ammoForWeaponType: zod.optional(zod.array(AmmoForWeaponTypeSchema)),
     explosiveWeight: zod.optional(zod.number()),
     userSelectable: zod.optional(zod.literal(false)),
     allowGearList: zod.optional(zod.array(zod.string())),

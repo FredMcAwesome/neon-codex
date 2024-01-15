@@ -29,7 +29,7 @@ import type { AmmunitionType } from "@shadowrun/common/build/schemas/weaponSchem
 import { firearmWeaponTypeEnum } from "@shadowrun/common/build/enums.js";
 
 import { convertRatingMeaning, convertSource } from "../common/ParserHelper.js";
-import { RiggerModSchema } from "@shadowrun/common/build/schemas/riggerModSchemas.js";
+import { VehicleModSchema } from "@shadowrun/common/build/schemas/riggerModSchemas.js";
 import VehicleModifications from "../../grammar/vehicleModifications.ohm-bundle.js";
 const Rating = VehicleModifications.Rating;
 const Slot = VehicleModifications.Slot;
@@ -158,7 +158,7 @@ export function ParseVehicleMods() {
   const vehicleModListConverted = englishVehicleModList.map((vehicleMod) => {
     const convertedVehicleMod = convertVehicleMod(vehicleMod);
 
-    const check = RiggerModSchema.safeParse(convertedVehicleMod);
+    const check = VehicleModSchema.safeParse(convertedVehicleMod);
     if (!check.success) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       console.log(convertedVehicleMod);
@@ -184,8 +184,8 @@ export function ParseVehicleMods() {
 }
 
 const convertVehicleMod = function (vehicleMod: VehicleModXmlType) {
-  const category = convertVehicleModCategory(vehicleMod.category);
-  const maxRating = convertVehicleModMaxRating(vehicleMod.rating);
+  const subtype = convertVehicleModCategory(vehicleMod.category);
+  const maxRating = [convertVehicleModMaxRating(vehicleMod.rating)];
   let minRating;
   if (vehicleMod.minrating !== undefined) {
     const match = Rating.match(vehicleMod.minrating);
@@ -251,14 +251,11 @@ const convertVehicleMod = function (vehicleMod: VehicleModXmlType) {
   return {
     name: vehicleMod.name,
     description: "",
-    category: category,
+    subtype: subtype,
     maxRating: maxRating,
     minRating: minRating,
     ratingMeaning: ratingMeaning,
     bonus: bonus,
-    additionalAmmo: additionalAmmo,
-    percentageAmmoIncrease: percentageAmmoIncrease,
-    replaceAmmo: replaceAmmo,
     capacity: vehicleMod.capacity,
     addPhysicalBoxes: vehicleMod.conditionmonitor,
     isDowngrade:
@@ -268,13 +265,20 @@ const convertVehicleMod = function (vehicleMod: VehicleModXmlType) {
     requirements: requirements,
     slotCost: slotCost,
     subsystemList: subsystemList,
-    weaponMountValidCategoryList: weaponMountValidCategoryList,
     ...(vehicleMod.hide !== undefined && { userSelectable: false as const }),
     availability: availability,
     cost: cost,
     source: source,
     page: page,
-    // TODO: make this discriminated union flag
-    modType: vehicleMod.modType,
+    type: vehicleMod.modType,
+    // Weapon mount mod details
+    ...(weaponMountValidCategoryList !== undefined && {
+      weaponMountValidCategoryList: weaponMountValidCategoryList,
+    }),
+    ...(additionalAmmo !== undefined && { additionalAmmo: additionalAmmo }),
+    ...(percentageAmmoIncrease !== undefined && {
+      percentageAmmoIncrease: percentageAmmoIncrease,
+    }),
+    ...(replaceAmmo !== undefined && { replaceAmmo: replaceAmmo }),
   };
 };

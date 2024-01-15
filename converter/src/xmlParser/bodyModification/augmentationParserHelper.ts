@@ -297,10 +297,10 @@ capacityCyberwareSemantics.addOperation("eval", {
     return [capacity.eval()];
   },
   CapacityArray_base(_a, capacity, _b) {
-    return capacity.eval();
+    return { cost: capacity.eval() };
   },
   CapacityArray_all(_) {
-    return [{ option: capcityAugmentationEnum.IncludedInParent }];
+    return { cost: [{ option: capcityAugmentationEnum.IncludedInParent }] };
   },
   AddSub_add(str, _, range) {
     return str

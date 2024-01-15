@@ -31,8 +31,7 @@ import type {
 import { weaponXmlSubtypeEnum } from "@shadowrun/common/build/schemas/commonSchemas.js";
 import type { AllowedGearType } from "@shadowrun/common/build/schemas/commonSchemas.js";
 import { Skills } from "../../chummerdb/skillModel.js";
-import assert from "assert";
-import type { WeaponSummaryType } from "../../../seeds/newSeeds/weaponsSeed.js";
+import type { WeaponDBType } from "../../../seeds/newSeeds/weaponsSeed.js";
 import { IncludedWeaponAccessories } from "../../chummerdb/customTables/activeWeaponAccessoryModel.js";
 import { WeaponRangeLinks } from "../../chummerdb/customTables/weaponRangeLinkModel.js";
 import type { RequirementsType } from "@shadowrun/common/build/schemas/shared/requiredSchemas.js";
@@ -124,10 +123,10 @@ export abstract class Weapons {
   @Property({ length: 5000, nullable: true })
   wireless?: string;
 
-  constructor(dto: WeaponSummaryType) {
+  constructor(dto: WeaponDBType) {
     // this.id = dto.id;
     this.name = dto.name;
-    this.type = dto.typeInformation.type;
+    this.type = dto.type;
     this.concealability = dto.concealability;
     this.accuracy = dto.accuracy;
     this.damage = dto.damage;
@@ -156,6 +155,9 @@ export abstract class Weapons {
   }
 }
 
+type MeleeWeaponType = WeaponDBType & {
+  type: weaponTypeEnum.Melee;
+};
 @Entity({ discriminatorValue: weaponTypeEnum.Melee })
 export class MeleeWeapons extends Weapons {
   @Property()
@@ -164,11 +166,10 @@ export class MeleeWeapons extends Weapons {
   @Property()
   reach!: number;
 
-  constructor(dto: WeaponSummaryType) {
+  constructor(dto: MeleeWeaponType) {
     super(dto);
-    assert(dto.typeInformation.type === weaponTypeEnum.Melee);
-    this.reach = dto.typeInformation.meleeOptions.reach;
-    this.subtype = dto.typeInformation.subtype;
+    this.subtype = dto.subtype;
+    this.reach = dto.meleeOptions.reach;
   }
 }
 
@@ -179,22 +180,27 @@ export abstract class RangedWeapons extends Weapons {
   @OneToMany(() => WeaponRangeLinks, (linkTable) => linkTable.weapon)
   ranges = new Collection<WeaponRangeLinks>(this);
 
-  constructor(dto: WeaponSummaryType) {
+  constructor(dto: WeaponDBType) {
     super(dto);
   }
 }
 
+type ProjectileWeaponType = WeaponDBType & {
+  type: weaponTypeEnum.Projectile;
+};
 @Entity({ discriminatorValue: weaponTypeEnum.Projectile })
 export class ProjectileWeapons extends RangedWeapons {
   @Property()
   subtype!: projectileWeaponTypeEnum;
-  constructor(dto: WeaponSummaryType) {
+  constructor(dto: ProjectileWeaponType) {
     super(dto);
-    assert(dto.typeInformation.type === weaponTypeEnum.Projectile);
-    this.subtype = dto.typeInformation.subtype;
+    this.subtype = dto.subtype;
   }
 }
 
+type FirearmWeaponType = WeaponDBType & {
+  type: weaponTypeEnum.Firearm;
+};
 @Entity({ discriminatorValue: weaponTypeEnum.Firearm })
 export class FirearmWeapons extends RangedWeapons {
   @Property()
@@ -229,37 +235,34 @@ export class FirearmWeapons extends RangedWeapons {
   })
   doubleCostAccessoryMounts?: Array<firearmAccessoryMountLocationEnum>;
 
-  constructor(dto: WeaponSummaryType) {
+  constructor(dto: FirearmWeaponType) {
     super(dto);
-    assert(dto.typeInformation.type === weaponTypeEnum.Firearm);
-    this.subtype = dto.typeInformation.subtype;
-    this.mode = dto.typeInformation.firearmOptions.mode;
-    this.recoilCompensation =
-      dto.typeInformation.firearmOptions.recoilCompensation;
-    if (dto.typeInformation.firearmOptions.ammoCategory !== undefined)
-      this.ammoCategory = dto.typeInformation.firearmOptions.ammoCategory;
-    this.ammoSlots = dto.typeInformation.firearmOptions.ammoSlots;
-    if (dto.typeInformation.firearmOptions.underbarrelWeapons !== undefined)
-      this.underbarrelWeapons =
-        dto.typeInformation.firearmOptions.underbarrelWeapons;
-    if (dto.typeInformation.firearmOptions.accessoryMounts !== undefined)
-      this.accessoryMounts = dto.typeInformation.firearmOptions.accessoryMounts;
-    if (
-      dto.typeInformation.firearmOptions.doubleCostAccessoryMounts !== undefined
-    )
+    this.subtype = dto.subtype;
+    this.mode = dto.firearmOptions.mode;
+    this.recoilCompensation = dto.firearmOptions.recoilCompensation;
+    if (dto.firearmOptions.ammoCategory !== undefined)
+      this.ammoCategory = dto.firearmOptions.ammoCategory;
+    this.ammoSlots = dto.firearmOptions.ammoSlots;
+    if (dto.firearmOptions.underbarrelWeapons !== undefined)
+      this.underbarrelWeapons = dto.firearmOptions.underbarrelWeapons;
+    if (dto.firearmOptions.accessoryMounts !== undefined)
+      this.accessoryMounts = dto.firearmOptions.accessoryMounts;
+    if (dto.firearmOptions.doubleCostAccessoryMounts !== undefined)
       this.doubleCostAccessoryMounts =
-        dto.typeInformation.firearmOptions.doubleCostAccessoryMounts;
+        dto.firearmOptions.doubleCostAccessoryMounts;
   }
 }
 
+type ExplosiveWeaponType = WeaponDBType & {
+  type: weaponTypeEnum.Explosive;
+};
 @Entity({ discriminatorValue: weaponTypeEnum.Explosive })
 export class Explosives extends RangedWeapons {
   @Property()
   subtype!: explosiveTypeEnum;
 
-  constructor(dto: WeaponSummaryType) {
+  constructor(dto: ExplosiveWeaponType) {
     super(dto);
-    assert(dto.typeInformation.type === weaponTypeEnum.Explosive);
-    this.subtype = dto.typeInformation.subtype;
+    this.subtype = dto.subtype;
   }
 }

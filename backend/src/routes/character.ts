@@ -26,15 +26,15 @@ import type {
   VehiclesAndDronesListType,
 } from "@shadowrun/common/build/schemas/gearSchemas.js";
 import type { MatrixAccessoryType } from "@shadowrun/common/build/schemas/electronicSchemas.js";
-import type { RiggerType } from "@shadowrun/common/build/schemas/riggerSchemas.js";
+import type { VehicleType } from "@shadowrun/common/build/schemas/riggerSchemas.js";
 import type {
   WeaponTypeInformationType,
   WeaponLinkedListType,
   WeaponLinkedType,
-  FirearmTypeInformationType,
-  MeleeTypeInformationType,
-  ProjectileTypeInformationType,
-  ExplosiveTypeInformationType,
+  FirearmWeaponType,
+  MeleeWeaponType,
+  ProjectileWeaponType,
+  ExplosiveWeaponType,
 } from "@shadowrun/common/build/schemas/weaponSchemas.js";
 import type { SkillListType } from "@shadowrun/common/build/schemas/skillSchemas.js";
 import { Cyberlimbs } from "@shadowrun/database/build/models/gear/augmentationGear/augmentationModel.js";
@@ -63,7 +63,7 @@ import {
   RFIDTags,
   CommunicationCountermeasures,
 } from "@shadowrun/database/build/models/gear/electronicsGear/matrixWareModel.js";
-import { GrappleGun } from "@shadowrun/database/build/models/gear/otherGear/otherWareModel.js";
+import { GrappleGun } from "@shadowrun/database/build/models/gear/otherGear/DrugModel.js";
 import { router, privateProcedure } from "../trpc.js";
 
 export async function getSkills() {
@@ -76,6 +76,9 @@ export async function getSkills() {
   return skillsResponse;
 }
 
+// TODO: setup 1 main function for setting all common
+// then extra functions for children
+// Find children type like if(weapon instance of MeleeWeapon)
 async function getWeapons() {
   const weapons = await Database.weaponRespository.findAll();
   const weaponsResponse: WeaponLinkedListType = await Promise.all(
@@ -140,7 +143,7 @@ async function getWeapons() {
 async function getTypeInformation(weapon: Weapons) {
   if (weapon.type === weaponTypeEnum.Melee) {
     const meleeWeapon = weapon as MeleeWeapons;
-    const typeInformation: MeleeTypeInformationType = {
+    const typeInformation: MeleeWeaponType = {
       type: weaponTypeEnum.Melee,
       subtype: meleeWeapon.subtype,
       meleeOptions: {
@@ -158,7 +161,7 @@ async function getTypeInformation(weapon: Weapons) {
 
   if (weapon.type === weaponTypeEnum.Projectile) {
     const projectileWeapon = weapon as ProjectileWeapons;
-    const typeInformation: ProjectileTypeInformationType = {
+    const typeInformation: ProjectileWeaponType = {
       type: weaponTypeEnum.Projectile,
       subtype: projectileWeapon.subtype,
       rangeList: rangeList,
@@ -166,7 +169,7 @@ async function getTypeInformation(weapon: Weapons) {
     return typeInformation;
   } else if (weapon.type === weaponTypeEnum.Firearm) {
     const firearmWeapon = weapon as FirearmWeapons;
-    const typeInformation: FirearmTypeInformationType = {
+    const typeInformation: FirearmWeaponType = {
       type: weaponTypeEnum.Firearm,
       subtype: firearmWeapon.subtype,
       firearmOptions: {
@@ -207,7 +210,7 @@ async function getTypeInformation(weapon: Weapons) {
     return typeInformation;
   } else {
     const explosiveWeapon = weapon as Explosives;
-    const typeInformation: ExplosiveTypeInformationType = {
+    const typeInformation: ExplosiveWeaponType = {
       type: weaponTypeEnum.Explosive,
       subtype: explosiveWeapon.subtype,
       rangeList: rangeList,
@@ -383,59 +386,6 @@ async function getElectronicAccessories() {
   return matrixResponse;
 }
 
-async function getOtherGear() {
-  const otherWares = await Database.otherWaresRespository.findAll();
-  const otherGearResponse: OtherGearListType = otherWares.map((otherWare) => {
-    const grappleGun = otherWare as GrappleGun;
-    return {
-      ...(otherWare.type === otherWareTypeEnum.IndustrialChemical
-        ? {
-            typeInformation: {
-              type: otherWareTypeEnum.IndustrialChemical,
-            },
-          }
-        : otherWare.type === otherWareTypeEnum.SurvivalGear
-        ? {
-            typeInformation: {
-              type: otherWareTypeEnum.SurvivalGear,
-            },
-          }
-        : otherWare.type === otherWareTypeEnum.GrappleGun
-        ? {
-            typeInformation: {
-              type: otherWareTypeEnum.GrappleGun,
-              accessory: grappleGun.accessory,
-              lengthForCost: grappleGun.lengthForCost || undefined,
-            },
-          }
-        : otherWare.type === otherWareTypeEnum.Biotech
-        ? {
-            typeInformation: {
-              type: otherWareTypeEnum.Biotech,
-            },
-          }
-        : otherWare.type === otherWareTypeEnum.DocWagonContract
-        ? {
-            typeInformation: {
-              type: otherWareTypeEnum.DocWagonContract,
-            },
-          }
-        : {
-            typeInformation: {
-              type: otherWareTypeEnum.SlapPatch,
-            },
-          }),
-      name: otherWare.name,
-      rating: otherWare.rating || undefined,
-      availability: otherWare.availability,
-      cost: otherWare.cost,
-      description: otherWare.description,
-      wireless: otherWare.wireless || undefined,
-    };
-  });
-  return otherGearResponse;
-}
-
 async function getAugmentations() {
   const augmentations = await Database.augmentationRespository.findAll();
   const augmentationsResponse: AugmentationListType = augmentations.map(
@@ -501,7 +451,7 @@ async function getAugmentations() {
 }
 
 async function getVehiclesAndDrones() {
-  const vehiclesAndDrones = await Database.vehicleAndDroneRespository.findAll();
+  const vehiclesAndDrones = await Database.vehicleRespository.findAll();
   const vehiclesAndDronesResponse: VehiclesAndDronesListType =
     vehiclesAndDrones.map((vehicleOrDrone) => {
       const vehicleOrDroneRaw = {
@@ -532,7 +482,7 @@ async function getVehiclesAndDrones() {
         source: vehicleOrDrone.source,
         page: vehicleOrDrone.page,
       };
-      let vehicleOrDroneFormatted: RiggerType;
+      let vehicleOrDroneFormatted: VehicleType;
       switch (vehicleOrDrone.subtype) {
         case groundcraftSubtypeEnum.Bike:
         case groundcraftSubtypeEnum.Car:

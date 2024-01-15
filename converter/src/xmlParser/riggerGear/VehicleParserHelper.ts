@@ -8,7 +8,7 @@ import {
   groundcraftSubtypeEnum,
   mathOperatorEnum,
   restrictionEnum,
-  vehicleDroneTypeEnum,
+  vehicleTypeEnum,
   watercraftSubtypeEnum,
 } from "@shadowrun/common/build/enums.js";
 import Vehicles from "../../grammar/vehicles.ohm-bundle.js";
@@ -38,105 +38,105 @@ export const convertVehicleCategory = function (
     // Groundcrafts
     case vehicleXmlCategoryEnum.Bikes:
       return {
-        type: vehicleDroneTypeEnum.Groundcraft,
+        type: vehicleTypeEnum.Groundcraft,
         subtype: groundcraftSubtypeEnum.Bike,
       };
     case vehicleXmlCategoryEnum.Cars:
       return {
-        type: vehicleDroneTypeEnum.Groundcraft,
+        type: vehicleTypeEnum.Groundcraft,
         subtype: groundcraftSubtypeEnum.Car,
       };
     case vehicleXmlCategoryEnum.Trucks:
       return {
-        type: vehicleDroneTypeEnum.Groundcraft,
+        type: vehicleTypeEnum.Groundcraft,
         subtype: groundcraftSubtypeEnum.Truck_Van,
       };
     case vehicleXmlCategoryEnum.Municipal:
       return {
-        type: vehicleDroneTypeEnum.Groundcraft,
+        type: vehicleTypeEnum.Groundcraft,
         subtype: groundcraftSubtypeEnum.Municipal,
       };
     case vehicleXmlCategoryEnum.Corpsec:
       return {
-        type: vehicleDroneTypeEnum.Groundcraft,
+        type: vehicleTypeEnum.Groundcraft,
         subtype: groundcraftSubtypeEnum.Corpsec,
       };
     // Watercraft
     case vehicleXmlCategoryEnum.Boats:
       return {
-        type: vehicleDroneTypeEnum.Watercraft,
+        type: vehicleTypeEnum.Watercraft,
         subtype: watercraftSubtypeEnum.Boat,
       };
     case vehicleXmlCategoryEnum.Submarines:
       return {
-        type: vehicleDroneTypeEnum.Watercraft,
+        type: vehicleTypeEnum.Watercraft,
         subtype: watercraftSubtypeEnum.Submarine,
       };
     case vehicleXmlCategoryEnum.Hovercraft:
       return {
-        type: vehicleDroneTypeEnum.Watercraft,
+        type: vehicleTypeEnum.Watercraft,
         subtype: watercraftSubtypeEnum.Hovercraft,
       };
     // Aircrafts
     case vehicleXmlCategoryEnum.FixedWing_Aircraft:
       return {
-        type: vehicleDroneTypeEnum.Aircraft,
+        type: vehicleTypeEnum.Aircraft,
         subtype: aircraftSubtypeEnum.FixedWing_Aircraft,
       };
     case vehicleXmlCategoryEnum.LTAV:
       return {
-        type: vehicleDroneTypeEnum.Aircraft,
+        type: vehicleTypeEnum.Aircraft,
         subtype: aircraftSubtypeEnum.LTAV,
       };
     case vehicleXmlCategoryEnum.Rotorcraft:
       return {
-        type: vehicleDroneTypeEnum.Aircraft,
+        type: vehicleTypeEnum.Aircraft,
         subtype: aircraftSubtypeEnum.Rotorcraft,
       };
     case vehicleXmlCategoryEnum.VTOL_VSTOL:
       return {
-        type: vehicleDroneTypeEnum.Aircraft,
+        type: vehicleTypeEnum.Aircraft,
         subtype: aircraftSubtypeEnum.VTOL_VSTOL,
       };
     // Drones
     case vehicleXmlCategoryEnum.Drones_Micro:
       return {
-        type: vehicleDroneTypeEnum.Drone,
+        type: vehicleTypeEnum.Drone,
         subtype: droneSubtypeEnum.Drones_Micro,
       };
     case vehicleXmlCategoryEnum.Drones_Mini:
       return {
-        type: vehicleDroneTypeEnum.Drone,
+        type: vehicleTypeEnum.Drone,
         subtype: droneSubtypeEnum.Drones_Mini,
       };
     case vehicleXmlCategoryEnum.Drones_Small:
       return {
-        type: vehicleDroneTypeEnum.Drone,
+        type: vehicleTypeEnum.Drone,
         subtype: droneSubtypeEnum.Drones_Small,
       };
     case vehicleXmlCategoryEnum.Drones_Medium:
       return {
-        type: vehicleDroneTypeEnum.Drone,
+        type: vehicleTypeEnum.Drone,
         subtype: droneSubtypeEnum.Drones_Medium,
       };
     case vehicleXmlCategoryEnum.Drones_Large:
       return {
-        type: vehicleDroneTypeEnum.Drone,
+        type: vehicleTypeEnum.Drone,
         subtype: droneSubtypeEnum.Drones_Large,
       };
     case vehicleXmlCategoryEnum.Drones_Huge:
       return {
-        type: vehicleDroneTypeEnum.Drone,
+        type: vehicleTypeEnum.Drone,
         subtype: droneSubtypeEnum.Drones_Huge,
       };
     case vehicleXmlCategoryEnum.Drones_Anthro:
       return {
-        type: vehicleDroneTypeEnum.Drone,
+        type: vehicleTypeEnum.Drone,
         subtype: droneSubtypeEnum.Drones_Anthro,
       };
     case vehicleXmlCategoryEnum.Drones_Missile:
       return {
-        type: vehicleDroneTypeEnum.Drone,
+        type: vehicleTypeEnum.Drone,
         subtype: droneSubtypeEnum.Drones_Missile,
       };
   }

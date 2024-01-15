@@ -134,7 +134,7 @@ export function ParseDrugComponents() {
     });
   // console.log(armourListConverted);
   const jsonFilePath = fileURLToPath(
-    path.dirname(currentPath) + "../../../../jsonFiles/drugs.json"
+    path.dirname(currentPath) + "../../../../jsonFiles/drugComponents.json"
   );
   fs.writeFile(
     jsonFilePath,

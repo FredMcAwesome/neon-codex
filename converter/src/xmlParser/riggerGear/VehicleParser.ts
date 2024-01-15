@@ -24,7 +24,7 @@ import {
   speedSemantics,
   handlingSemantics,
 } from "./VehicleParserHelper.js";
-import { RiggerSchema } from "@shadowrun/common/build/schemas/riggerSchemas.js";
+import { VehicleSchema } from "@shadowrun/common/build/schemas/riggerSchemas.js";
 import Vehicles from "../../grammar/vehicles.ohm-bundle.js";
 const Acceleration = Vehicles.Acceleration;
 const Speed = Vehicles.Speed;
@@ -138,7 +138,7 @@ export function ParseVehicles() {
     // .filter((weapon) => weapon.name === "Osmium Mace")
     .map((vehicle) => {
       const convertedVehicle = convertVehicle(vehicle);
-      const check = RiggerSchema.safeParse(convertedVehicle);
+      const check = VehicleSchema.safeParse(convertedVehicle);
       if (!check.success) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         console.log(convertedVehicle);
@@ -235,7 +235,7 @@ const convertVehicle = function (vehicle: VehicleXmlType) {
   return {
     name: vehicle.name,
     description: "",
-    typeInformation: typeInformation,
+    ...typeInformation,
     handling: handling,
     speed: speed,
     acceleration: acceleration,
@@ -252,7 +252,7 @@ const convertVehicle = function (vehicle: VehicleXmlType) {
     bodyModSlots: vehicle.bodymodslots,
     electromagneticModSlots: vehicle.electromagneticmodslots,
     cosmeticModSlots: vehicle.cosmeticmodslots,
-    seats: vehicle.seats,
+    ...(vehicle.seats !== undefined && { seats: vehicle.seats }),
     weaponList: weaponList,
     weaponMountList: weaponMountList,
     ...(vehicle.hide !== undefined && { userSelectable: false as const }),

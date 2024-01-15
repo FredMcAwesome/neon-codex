@@ -22,8 +22,8 @@ import {
 } from "@shadowrun/common/build/enums.js";
 import { weaponXmlSubtypeEnum } from "@shadowrun/common/build/schemas/commonSchemas.js";
 import type {
-  WeaponUnlinkedSummaryListType,
-  WeaponUnlinkedSummaryType,
+  WeaponSummaryListType,
+  WeaponSummaryType,
   ModeType,
   AmmunitionType,
   UnlinkedAccessoryListType,
@@ -33,8 +33,8 @@ import type {
   CostWeaponType,
 } from "@shadowrun/common/build/schemas/weaponSchemas.js";
 import {
-  WeaponUnlinkedSummaryListSchema,
-  WeaponUnlinkedSummarySchema,
+  WeaponSummaryListSchema,
+  WeaponSummarySchema,
 } from "@shadowrun/common/build/schemas/weaponSchemas.js";
 import {
   getWeaponTypeInformation,
@@ -170,11 +170,11 @@ export function ParseWeapons() {
     );
   });
 
-  const weaponListConverted: WeaponUnlinkedSummaryListType = weaponListNoAmmo
+  const weaponListConverted: WeaponSummaryListType = weaponListNoAmmo
     // .filter((weapon) => weapon.name === "Ares Thunderstruck Gauss Rifle")
     .map((weapon: WeaponXmlType) => {
-      const convertedWeapon: WeaponUnlinkedSummaryType = convertWeapon(weapon);
-      const check = WeaponUnlinkedSummarySchema.safeParse(convertedWeapon);
+      const convertedWeapon: WeaponSummaryType = convertWeapon(weapon);
+      const check = WeaponSummarySchema.safeParse(convertedWeapon);
       if (!check.success) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         console.log(convertedWeapon);
@@ -183,7 +183,7 @@ export function ParseWeapons() {
       return check.data;
     });
   // console.log(weaponListConverted);
-  const check = WeaponUnlinkedSummaryListSchema.safeParse(weaponListConverted);
+  const check = WeaponSummaryListSchema.safeParse(weaponListConverted);
   if (!check.success) {
     throw new Error(check.error.message);
   }
@@ -390,7 +390,7 @@ function convertWeapon(weapon: WeaponXmlType) {
     // id: weapon.id,
     name: weapon.name,
     description: "",
-    typeInformation: typeInformation,
+    ...typeInformation,
     concealability: weapon.conceal,
     accuracy: accuracy,
     damage: damage,

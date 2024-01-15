@@ -26,7 +26,7 @@ import { damageSemantics } from "../combatGear/WeaponParserHelper.js";
 import { weaponTypeXmlEnum } from "../combatGear/WeaponParserSchemas.js";
 const Damage = Weapons.Damage;
 import Gears from "../../grammar/gears.ohm-bundle.js";
-import type { ammoForWeaponTypeType } from "@shadowrun/common/build/schemas/otherGearSchemas.js";
+import type { AmmoForWeaponTypeType } from "@shadowrun/common/build/schemas/otherGearSchemas.js";
 const Program = Gears.Program;
 const Capacity = Gears.Capacity;
 const Availability = Gears.Availability;
@@ -109,7 +109,7 @@ export const convertAmmoForWeaponType = function (
 
   // Convert these to the types WeaponParserHelper::getWeaponTypeInformation()
   // converts the weapon category to
-  const typeListConverted: Array<Array<ammoForWeaponTypeType>> =
+  const typeListConverted: Array<Array<AmmoForWeaponTypeType>> =
     typeListProcessing.map((type) => {
       switch (type.name) {
         case weaponTypeXmlEnum.Melee:

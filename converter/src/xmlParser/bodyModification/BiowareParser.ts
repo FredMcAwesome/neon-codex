@@ -241,7 +241,7 @@ function convertBioware(bioware: BiowareXmlType) {
     name: bioware.name,
     description: "",
     augmentationLimit: augmentationLimit,
-    typeInformation: typeInformation,
+    ...typeInformation,
     unavailableGrades: unavailableGrades,
     essenceCost: essenceCost,
     modification: biowareModification,

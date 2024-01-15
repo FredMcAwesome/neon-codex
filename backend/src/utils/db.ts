@@ -20,8 +20,8 @@ import { ArmourModifications } from "@shadowrun/database/build/models/gear/comba
 import { Ammunitions } from "@shadowrun/database/build/models/gear/combatGear/ammunitionModel.js";
 import { MatrixWares } from "@shadowrun/database/build/models/gear/electronicsGear/matrixWareModel.js";
 import { MatrixWareAccessories } from "@shadowrun/database/build/models/gear/electronicsGear/matrixWareAccessoryModel.js";
-import { OtherWares } from "@shadowrun/database/build/models/gear/otherGear/otherWareModel.js";
-import { VehiclesAndDrones } from "@shadowrun/database/build/models/gear/riggerGear/vehicleAndDroneModel.js";
+import { OtherWares } from "@shadowrun/database/build/models/gear/otherGear/DrugModel.js";
+import { Vehicles } from "@shadowrun/database/build/models/gear/riggerGear/VehicleModel.js";
 
 interface IDatabase {
   orm: MikroORM;
@@ -41,7 +41,7 @@ interface IDatabase {
   matrixWareRespository: EntityRepository<MatrixWares>;
   matrixWareAccessoryRespository: EntityRepository<MatrixWareAccessories>;
   otherWaresRespository: EntityRepository<OtherWares>;
-  vehicleAndDroneRespository: EntityRepository<VehiclesAndDrones>;
+  vehicleRespository: EntityRepository<Vehicles>;
 }
 
 export const Database = {} as IDatabase;
@@ -72,5 +72,5 @@ export const init = async () => {
     MatrixWareAccessories
   );
   Database.otherWaresRespository = em.getRepository(OtherWares);
-  Database.vehicleAndDroneRespository = em.getRepository(VehiclesAndDrones);
+  Database.vehicleRespository = em.getRepository(Vehicles);
 };

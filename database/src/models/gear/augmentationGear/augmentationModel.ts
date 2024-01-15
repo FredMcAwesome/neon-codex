@@ -1,4 +1,3 @@
-import assert from "assert";
 import {
   Entity,
   PrimaryKey,
@@ -13,6 +12,7 @@ import { augmentationTypeEnum } from "@shadowrun/common";
 import type { RatingType } from "@shadowrun/common";
 import type {
   CostAugmentationType,
+  CapacityCostAugmentationType,
   AvailabilityAugmentationType,
   EssenceCostType,
   AugmentationType,
@@ -160,6 +160,10 @@ export abstract class Augmentations {
   }
 }
 
+type CyberwareAugmentationType = AugmentationType & {
+  type: augmentationTypeEnum.Cyberware;
+};
+
 @Entity({ discriminatorValue: augmentationTypeEnum.Cyberware })
 export class Cyberwares extends Augmentations {
   @Property()
@@ -170,6 +174,9 @@ export class Cyberwares extends Augmentations {
 
   @Property({ type: "json", nullable: true })
   capacity?: CapacityAugmentationType;
+
+  @Property({ type: "json", nullable: true })
+  capacityCost?: CapacityCostAugmentationType;
 
   @Property({ nullable: true })
   addToParentCapacity?: true;
@@ -219,51 +226,41 @@ export class Cyberwares extends Augmentations {
   @Property({ nullable: true })
   addVehicle?: string;
 
-  constructor(dto: AugmentationType) {
+  constructor(dto: CyberwareAugmentationType) {
     super(dto);
-    assert(dto.typeInformation.type === augmentationTypeEnum.Cyberware);
-    this.subtype = dto.typeInformation.subtype;
-    if (dto.typeInformation.programs !== undefined)
-      this.programs = dto.typeInformation.programs;
-    if (dto.typeInformation.capacity !== undefined)
-      this.capacity = dto.typeInformation.capacity;
-    if (dto.typeInformation.addToParentCapacity !== undefined)
-      this.addToParentCapacity = dto.typeInformation.addToParentCapacity;
-    if (dto.typeInformation.addParentWeaponAccessory !== undefined)
-      this.addParentWeaponAccessory =
-        dto.typeInformation.addParentWeaponAccessory;
-    if (dto.typeInformation.removalCost !== undefined)
-      this.removalCost = dto.typeInformation.removalCost;
-    if (dto.typeInformation.inheritAttributes !== undefined)
-      this.inheritAttributes = dto.typeInformation.inheritAttributes;
-    if (dto.typeInformation.limbSlot !== undefined)
-      this.limbSlot = dto.typeInformation.limbSlot;
-    if (dto.typeInformation.useBothLimbSlots !== undefined)
-      this.useBothLimbSlots = dto.typeInformation.useBothLimbSlots;
-    if (dto.typeInformation.mountsLocation !== undefined)
-      this.mountsLocation = dto.typeInformation.mountsLocation;
-    if (dto.typeInformation.modularMount !== undefined)
-      this.modularMount = dto.typeInformation.modularMount;
-    if (dto.typeInformation.wirelessBonus !== undefined)
-      this.wirelessBonus = dto.typeInformation.wirelessBonus;
-    if (dto.typeInformation.wirelessPairBonus !== undefined)
-      this.wirelessPairBonus = dto.typeInformation.wirelessPairBonus;
-    if (dto.typeInformation.wirelessPairIncludeList !== undefined)
-      this.wirelessPairIncludeList =
-        dto.typeInformation.wirelessPairIncludeList;
-    if (dto.typeInformation.gearList !== undefined)
-      this.gearList = dto.typeInformation.gearList;
-    if (dto.typeInformation.subsystemList !== undefined)
-      this.subsystemList = dto.typeInformation.subsystemList;
-    if (dto.typeInformation.forceGrade !== undefined)
-      this.forceGrade = dto.typeInformation.forceGrade;
-    if (dto.typeInformation.deviceRating !== undefined)
-      this.deviceRating = dto.typeInformation.deviceRating;
-    if (dto.typeInformation.addVehicle !== undefined)
-      this.addVehicle = dto.typeInformation.addVehicle;
+    this.subtype = dto.subtype;
+    if (dto.programs !== undefined) this.programs = dto.programs;
+    if (dto.capacity !== undefined) this.capacity = dto.capacity;
+    if (dto.capacityCost !== undefined) this.capacityCost = dto.capacityCost;
+    if (dto.addToParentCapacity !== undefined)
+      this.addToParentCapacity = dto.addToParentCapacity;
+    if (dto.addParentWeaponAccessory !== undefined)
+      this.addParentWeaponAccessory = dto.addParentWeaponAccessory;
+    if (dto.removalCost !== undefined) this.removalCost = dto.removalCost;
+    if (dto.inheritAttributes !== undefined)
+      this.inheritAttributes = dto.inheritAttributes;
+    if (dto.limbSlot !== undefined) this.limbSlot = dto.limbSlot;
+    if (dto.useBothLimbSlots !== undefined)
+      this.useBothLimbSlots = dto.useBothLimbSlots;
+    if (dto.mountsLocation !== undefined)
+      this.mountsLocation = dto.mountsLocation;
+    if (dto.modularMount !== undefined) this.modularMount = dto.modularMount;
+    if (dto.wirelessBonus !== undefined) this.wirelessBonus = dto.wirelessBonus;
+    if (dto.wirelessPairBonus !== undefined)
+      this.wirelessPairBonus = dto.wirelessPairBonus;
+    if (dto.wirelessPairIncludeList !== undefined)
+      this.wirelessPairIncludeList = dto.wirelessPairIncludeList;
+    if (dto.gearList !== undefined) this.gearList = dto.gearList;
+    if (dto.subsystemList !== undefined) this.subsystemList = dto.subsystemList;
+    if (dto.forceGrade !== undefined) this.forceGrade = dto.forceGrade;
+    if (dto.deviceRating !== undefined) this.deviceRating = dto.deviceRating;
+    if (dto.addVehicle !== undefined) this.addVehicle = dto.addVehicle;
   }
 }
 
+type BiowareAugmentationType = AugmentationType & {
+  type: augmentationTypeEnum.Bioware;
+};
 @Entity({ discriminatorValue: augmentationTypeEnum.Bioware })
 export class Biowares extends Augmentations {
   @Property()
@@ -272,11 +269,9 @@ export class Biowares extends Augmentations {
   @Property({ nullable: true })
   isGeneware?: true;
 
-  constructor(dto: AugmentationType) {
+  constructor(dto: BiowareAugmentationType) {
     super(dto);
-    assert(dto.typeInformation.type === augmentationTypeEnum.Bioware);
-    this.subtype = dto.typeInformation.subtype;
-    if (dto.typeInformation.isGeneware !== undefined)
-      this.isGeneware = dto.typeInformation.isGeneware;
+    this.subtype = dto.subtype;
+    if (dto.isGeneware !== undefined) this.isGeneware = dto.isGeneware;
   }
 }

@@ -214,12 +214,28 @@ function convertCyberware(cyberware: CyberwareXmlType) {
   const programs = cyberware.programs;
 
   let capacity;
+  let capacityCost;
   if (cyberware.capacity !== undefined) {
     match = Capacity.match(cyberware.capacity.toString());
     if (match.failed()) {
       assert(false, match.message);
     }
     capacity = capacityCyberwareSemantics(match).eval();
+    if ("ratingLinked" in capacity && capacity.ratingLinked !== undefined) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      capacityCost = {
+        ratingLinked: capacity.ratingLinked.map(
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-explicit-any
+          (capacity: { cost: any }) => {
+            return capacity.cost;
+          }
+        ),
+      };
+      capacity = undefined;
+    } else if ("cost" in capacity && capacity.cost !== undefined) {
+      capacityCost = capacity.cost;
+      capacity = undefined;
+    }
   } else {
     capacity = [0];
   }
@@ -335,6 +351,7 @@ function convertCyberware(cyberware: CyberwareXmlType) {
     subtype: subtype,
     programs: programs,
     capacity: capacity,
+    capacityCost: capacityCost,
     addToParentCapacity: addToParentCapacity,
     addParentWeaponAccessory: addParentWeaponCapacity,
     removalCost: cyberware.removalcost,
@@ -357,7 +374,7 @@ function convertCyberware(cyberware: CyberwareXmlType) {
     name: cyberware.name,
     description: "",
     augmentationLimit: augmentationLimit,
-    typeInformation: typeInformation,
+    ...typeInformation,
     unavailableGrades: unavailableGrades,
     essenceCost: essenceCost,
     modification: cyberwareModification,

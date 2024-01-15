@@ -8,11 +8,6 @@ import { CustomisedWeapons } from "./models/chummerdb/customTables/customisedWea
 import { WeaponRangeLinks } from "./models/chummerdb/customTables/weaponRangeLinkModel.js";
 import { Skills } from "./models/chummerdb/skillModel.js";
 import {
-  AugmentationAccessories,
-  CyberlimbAccessories,
-  ImplantWeapons,
-} from "./models/gear/augmentationGear/augmentationAccessoryModel.js";
-import {
   Augmentations,
   Cyberwares,
   Biowares,
@@ -34,44 +29,15 @@ import {
   FirearmWeapons,
   Explosives,
 } from "./models/gear/combatGear/weaponModel.js";
+import { Drugs } from "./models/gear/otherGear/DrugModel.js";
 import {
-  MatrixWareAccessories,
-  CredSticks,
-  Identifications,
-  Tools,
-  OpticalDevices,
-  VisionEnhancements,
-  AudioDevices,
-  AudioEnhancements,
-  Sensors,
-  SecurityDevices,
-  BreakingAndEnteringDevices,
-} from "./models/gear/electronicsGear/matrixWareAccessoryModel.js";
-import {
-  MatrixWares,
-  Commlinks,
-  Cyberdecks,
-  RFIDTags,
-  CommunicationCountermeasures,
-  Softwares,
-  Skillsofts,
-} from "./models/gear/electronicsGear/matrixWareModel.js";
-import {
-  OtherWares,
-  IndustrialChemicals,
-  SurvivalGear,
-  GrappleGun,
-  Biotech,
-  DocWagonContract,
-  SlapPatches,
-} from "./models/gear/otherGear/otherWareModel.js";
-import {
-  VehiclesAndDrones,
+  Vehicles,
   Groundcrafts,
   Watercrafts,
   Aircrafts,
   Drones,
-} from "./models/gear/riggerGear/vehicleAndDroneModel.js";
+  MannedVehicles,
+} from "./models/gear/riggerGear/VehicleModel.js";
 import { Comments, Weapons, RangedWeapons } from "./models/models.js";
 import Threads from "./models/threadModel.js";
 import Users from "./models/userModel.js";
@@ -82,6 +48,12 @@ import {
   PASSWORD,
 } from "./utils/databaseConfig.js";
 import { Spells } from "./models/abilities/spellModel.js";
+import { DrugComponents } from "./models/gear/otherGear/DrugComponentModel.js";
+import {
+  VehicleChasisMods,
+  VehicleMods,
+  WeaponMountMods,
+} from "./models/gear/riggerGear/VehicleModificationModel.js";
 
 const dbOptions: Options = {
   entities: [
@@ -115,42 +87,23 @@ const dbOptions: Options = {
 
     Armours,
     ArmourModifications,
-    MatrixWares,
-    Commlinks,
-    Cyberdecks,
-    RFIDTags,
-    CommunicationCountermeasures,
-    Softwares,
-    Skillsofts,
-    MatrixWareAccessories,
-    CredSticks,
-    Identifications,
-    Tools,
-    OpticalDevices,
-    VisionEnhancements,
-    AudioDevices,
-    AudioEnhancements,
-    Sensors,
-    SecurityDevices,
-    BreakingAndEnteringDevices,
-    OtherWares,
-    IndustrialChemicals,
-    SurvivalGear,
-    GrappleGun,
-    Biotech,
-    DocWagonContract,
-    SlapPatches,
+
+    Drugs,
+    DrugComponents,
+
     Augmentations,
     Biowares,
     Cyberwares,
-    AugmentationAccessories,
-    CyberlimbAccessories,
-    ImplantWeapons,
-    VehiclesAndDrones,
+
+    Vehicles,
+    MannedVehicles,
     Groundcrafts,
     Watercrafts,
     Aircrafts,
     Drones,
+    VehicleMods,
+    VehicleChasisMods,
+    WeaponMountMods,
   ],
   host: HOST,
   port: DATABASE_PORT,

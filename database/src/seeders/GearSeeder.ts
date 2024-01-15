@@ -26,6 +26,21 @@ import {
   Cyberwares,
 } from "../models/gear/augmentationGear/augmentationModel.js";
 import { getAugmentations } from "../seeds/newSeeds/augmentationsSeed.js";
+import { getDrugComponents, getDrugs } from "../seeds/newSeeds/drugSeed.js";
+import { Drugs } from "../models/gear/otherGear/DrugModel.js";
+import { DrugComponents } from "../models/gear/otherGear/DrugComponentModel.js";
+import { getVehicles } from "../seeds/newSeeds/vehicleSeed.js";
+import {
+  Aircrafts,
+  Drones,
+  Groundcrafts,
+  Watercrafts,
+} from "../models/gear/riggerGear/VehicleModel.js";
+import { getVehicleModifications } from "../seeds/newSeeds/vehicleModificationSeed.js";
+import {
+  VehicleChasisMods,
+  WeaponMountMods,
+} from "../models/gear/riggerGear/VehicleModificationModel.js";
 
 export class GearSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
@@ -33,55 +48,60 @@ export class GearSeeder extends Seeder {
     const stagedWeaponRanges: Array<WeaponRanges> = getRanges();
     const stagedWeaponAccessories: Array<WeaponAccessories> =
       getWeaponAccessories();
-    const {
-      weaponsUnlinked,
-      stagedMeleeWeapons,
-      stagedProjectileWeapons,
-      stagedFirearmWeapons,
-      stagedExplosiveWeapons,
-      stagedAccessories,
-      stagedRanges,
-    } = getWeapons(stagedSkills, stagedWeaponRanges, stagedWeaponAccessories);
+    const { weaponsUnlinked, stagedWeapons, stagedAccessories, stagedRanges } =
+      getWeapons(stagedSkills, stagedWeaponRanges, stagedWeaponAccessories);
     const stagedArmours: Array<Armours> = getArmours();
     const stagedArmourModifications: Array<ArmourModifications> =
       getArmourModifications();
     const { stagedBiowares, stagedCyberwares } = getAugmentations();
+    const stagedDrugs = getDrugs();
+    const stagedDrugComponents = getDrugComponents();
+    const stagedVehicles = getVehicles();
+    const stagedVehicleModifications = getVehicleModifications();
 
     stagedSkills.forEach((skill) => {
       em.create(Skills, skill);
     });
+    console.log("Skills created");
 
     stagedWeaponRanges.forEach((range) => {
       em.create(WeaponRanges, range);
     });
+    console.log("Weapon Ranges created");
 
     stagedWeaponAccessories.forEach((weaponAccessory) => {
       em.create(WeaponAccessories, weaponAccessory);
     });
-    //   // weapon related
-    for (const meleeWeapon of stagedMeleeWeapons) {
-      await em.persistAndFlush(em.create(MeleeWeapons, meleeWeapon));
+    console.log("Weapon Accessories created");
+    // weapon related
+    for (const weapon of stagedWeapons) {
+      if (weapon instanceof MeleeWeapons) {
+        await em.persistAndFlush(em.create(MeleeWeapons, weapon));
+      } else if (weapon instanceof ProjectileWeapons) {
+        await em.persistAndFlush(em.create(ProjectileWeapons, weapon));
+      } else if (weapon instanceof FirearmWeapons) {
+        await em.persistAndFlush(em.create(FirearmWeapons, weapon));
+      } else if (weapon instanceof Explosives) {
+        await em.persistAndFlush(em.create(Explosives, weapon));
+      } else {
+        assert(false, `Unhandled weapon type: ${weapon.type}`);
+      }
     }
-    for (const projectileWeapon of stagedProjectileWeapons) {
-      await em.persistAndFlush(em.create(ProjectileWeapons, projectileWeapon));
-    }
-    for (const firearmWeapon of stagedFirearmWeapons) {
-      await em.persistAndFlush(em.create(FirearmWeapons, firearmWeapon));
-    }
-    for (const explosive of stagedExplosiveWeapons) {
-      await em.persistAndFlush(em.create(Explosives, explosive));
-    }
+    console.log("Weapons created");
 
     stagedAccessories.forEach((weaponAccessories) => {
       weaponAccessories.forEach((accessory) => {
         em.create(IncludedWeaponAccessories, accessory);
       });
     });
+    console.log("Included Weapon Accessories created");
+
     stagedRanges.forEach((weaponRanges) => {
       weaponRanges.forEach((range) => {
         em.create(WeaponRangeLinks, range);
       });
     });
+    console.log("Ranges created");
     //   ammosList.forEach((ammo) => {
     //     em.create(Ammos, ammo);
     //   });
@@ -97,116 +117,56 @@ export class GearSeeder extends Seeder {
     stagedArmours.forEach((armour) => {
       em.create(Armours, armour);
     });
+    console.log("Armours created");
     stagedArmourModifications.forEach((armourMod) => {
       em.create(ArmourModifications, armourMod);
     });
-
-    //   // electronics (matrix) stuff
-    //   commlinksList.forEach((commlink) => {
-    //     em.create(Commlinks, commlink);
-    //   });
-    //   cyberdecksList.forEach((cyberdeck) => {
-    //     em.create(Cyberdecks, cyberdeck);
-    //   });
-    //   RFIDTagsList.forEach((RFIDTag) => {
-    //     em.create(RFIDTags, RFIDTag);
-    //   });
-    //   communicationCountermeasuresList.forEach((countermeasure) => {
-    //     em.create(CommunicationCountermeasures, countermeasure);
-    //   });
-    //   softwaresList.forEach((software) => {
-    //     em.create(Softwares, software);
-    //   });
-    //   skillsoftList.forEach((skillsoft) => {
-    //     em.create(Skillsofts, skillsoft);
-    //   });
-    //   // electronics (tools) stuff
-    //   credSticksList.forEach((skillsoft) => {
-    //     em.create(CredSticks, skillsoft);
-    //   });
-    //   identiticationsList.forEach((skillsoft) => {
-    //     em.create(Identifications, skillsoft);
-    //   });
-    //   toolsList.forEach((skillsoft) => {
-    //     em.create(Tools, skillsoft);
-    //   });
-    //   opticalDevicesList.forEach((skillsoft) => {
-    //     em.create(OpticalDevices, skillsoft);
-    //   });
-    //   visionEnhancementsList.forEach((skillsoft) => {
-    //     em.create(VisionEnhancements, skillsoft);
-    //   });
-    //   audioDevicesList.forEach((skillsoft) => {
-    //     em.create(AudioDevices, skillsoft);
-    //   });
-    //   audioEnhancementsList.forEach((skillsoft) => {
-    //     em.create(AudioEnhancements, skillsoft);
-    //   });
-    //   sensorsList.forEach((skillsoft) => {
-    //     em.create(Sensors, skillsoft);
-    //   });
-    //   securityDevicesList.forEach((skillsoft) => {
-    //     em.create(SecurityDevices, skillsoft);
-    //   });
-    //   breakingAndEnteringDevicesList.forEach((skillsoft) => {
-    //     em.create(BreakingAndEnteringDevices, skillsoft);
-    //   });
-    //   // other (miscellaneous) stuff
-    //   industrialChemicalsList.forEach((industrialChemical) => {
-    //     em.create(IndustrialChemicals, industrialChemical);
-    //   });
-    //   survivalGearList.forEach((survivalItem) => {
-    //     em.create(SurvivalGear, survivalItem);
-    //   });
-    //   grappleGunList.forEach((grappleItem) => {
-    //     em.create(GrappleGun, grappleItem);
-    //   });
-    //   biotechList.forEach((biotechItem) => {
-    //     em.create(Biotech, biotechItem);
-    //   });
-    //   docWagonContractList.forEach((docWagonContract) => {
-    //     em.create(DocWagonContract, docWagonContract);
-    //   });
-    //   slapPatchesList.forEach((slapPatch) => {
-    //     em.create(SlapPatches, slapPatch);
-    //   });
-    //   // augmentations
+    console.log("Armour Modifications created");
+    stagedDrugs.forEach((drug) => {
+      em.create(Drugs, drug);
+    });
+    console.log("Drugs created");
+    stagedDrugComponents.forEach((drugComponent) => {
+      em.create(DrugComponents, drugComponent);
+    });
+    console.log("Drug Components created");
+    // augmentations
     for (const cyberware of stagedCyberwares) {
       await em.persistAndFlush(em.create(Cyberwares, cyberware));
     }
+    console.log("Cyberware created");
     for (const bioware of stagedBiowares) {
       await em.persistAndFlush(em.create(Biowares, bioware));
     }
-    //   // augmentation accessories
-    //   cyberlimbAccessoriesList.forEach((cyberlimbAccessory) => {
-    //     em.create(CyberlimbAccessories, cyberlimbAccessory);
-    //   });
-    //   implantWeaponsList.forEach((implantWeapon) => {
-    //     em.create(ImplantWeapons, implantWeapon);
-    //   });
-    //   // magical equipment
-    //   fociList.forEach((focus) => {
-    //     em.create(Foci, focus);
-    //   });
-    //   formulaeList.forEach((formula) => {
-    //     em.create(Formulae, formula);
-    //   });
-    //   magicalSuppliesList.forEach((magicalSupply) => {
-    //     em.create(MagicalSupplies, magicalSupply);
-    //   });
-    //   //vehicles
-    //   groundcraftsList.forEach((groundcraft) => {
-    //     em.create(Groundcrafts, groundcraft);
-    //   });
-    //   watercraftsList.forEach((watercraft) => {
-    //     em.create(Watercrafts, watercraft);
-    //   });
-    //   aircraftsList.forEach((aircraft) => {
-    //     em.create(Aircrafts, aircraft);
-    //   });
-    //   dronesList.forEach((drone) => {
-    //     em.create(Drones, drone);
-    //   });
+    console.log("Bioware created");
+    //vehicles
+    for (const vehicle of stagedVehicles) {
+      if (vehicle instanceof Groundcrafts) {
+        await em.persistAndFlush(em.create(Groundcrafts, vehicle));
+      } else if (vehicle instanceof Watercrafts) {
+        await em.persistAndFlush(em.create(Watercrafts, vehicle));
+      } else if (vehicle instanceof Aircrafts) {
+        await em.persistAndFlush(em.create(Aircrafts, vehicle));
+      } else if (vehicle instanceof Drones) {
+        await em.persistAndFlush(em.create(Drones, vehicle));
+      } else {
+        assert(false, `Unhandled vehicle type: ${vehicle.type}`);
+      }
+    }
+    console.log("Vehicles created");
+    for (const vehicleMod of stagedVehicleModifications) {
+      if (vehicleMod instanceof VehicleChasisMods) {
+        await em.persistAndFlush(em.create(VehicleChasisMods, vehicleMod));
+      } else if (vehicleMod instanceof WeaponMountMods) {
+        await em.persistAndFlush(em.create(WeaponMountMods, vehicleMod));
+      } else {
+        assert(
+          false,
+          `Unhandled vehicle Modification type: ${vehicleMod.type}`
+        );
+      }
+    }
+    console.log("Vehicle Modifications created");
 
     // Connect references that "may" need things in the database first
     // Weapons referring to other weapons

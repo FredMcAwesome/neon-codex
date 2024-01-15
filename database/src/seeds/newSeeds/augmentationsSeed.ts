@@ -8,6 +8,7 @@ import {
   Biowares,
   Cyberwares,
 } from "../../models/gear/augmentationGear/augmentationModel.js";
+import { augmentationTypeEnum } from "@shadowrun/common";
 
 export const getAugmentations = function () {
   const currentPath = import.meta.url;
@@ -31,6 +32,7 @@ export const getAugmentations = function () {
   }
   const stagedBiowares: Array<Biowares> = [];
   biowares.forEach((augmentation) => {
+    assert(augmentation.type === augmentationTypeEnum.Bioware);
     stagedBiowares.push(new Biowares(augmentation));
     // console.log(augmentation.name);
   });
@@ -53,6 +55,7 @@ export const getAugmentations = function () {
 
   const stagedCyberwares: Array<Cyberwares> = [];
   cyberwares.forEach((augmentation) => {
+    assert(augmentation.type === augmentationTypeEnum.Cyberware);
     stagedCyberwares.push(new Cyberwares(augmentation));
     // console.log(augmentation.name);
   });

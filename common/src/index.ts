@@ -46,14 +46,13 @@ export {
   weaponAccessoryTypeEnum,
   matrixWareTypeEnum,
   matrixWareAccessoryTypeEnum,
-  otherWareTypeEnum,
   augmentationTypeEnum,
   augmentationAccessoryTypeEnum,
   magicalGearTypeEnum,
   focusTypeEnum,
   spellCategoryEnum,
   formulaTypeEnum,
-  vehicleDroneTypeEnum,
+  vehicleTypeEnum,
   groundcraftSubtypeEnum,
   watercraftSubtypeEnum,
   aircraftSubtypeEnum,
@@ -74,7 +73,6 @@ export type {
   DamageType,
   FirearmAmmoType,
   RecoilCompensationType,
-  WeaponUnlinkedSummaryType as WeaponPreDBSummaryType,
   BlastType,
 } from "./schemas/weaponSchemas.js";
 

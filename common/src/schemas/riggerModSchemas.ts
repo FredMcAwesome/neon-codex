@@ -5,8 +5,11 @@ import {
   ratingMeaningEnum,
   restrictionEnum,
   vehicleModAttributeEnum,
-  vehicleModCategoryEnum,
+  vehicleModSubtypeEnum,
   vehicleModRatingEnum,
+  vehicleModTypeEnum,
+  cyberwareCategoryEnum,
+  sourceBookEnum,
 } from "../enums.js";
 import { z as zod } from "zod";
 import { BonusSchema } from "./shared/bonusSchemas.js";
@@ -23,6 +26,7 @@ const RiggerModRatingSchema = zod.array(
     zod.number(),
   ])
 );
+export type RiggerModRatingType = zod.infer<typeof RiggerModRatingSchema>;
 
 const ReplaceAmmoSchema = zod.array(
   zod
@@ -33,6 +37,7 @@ const ReplaceAmmoSchema = zod.array(
     })
     .strict()
 );
+export type ReplaceAmmoType = zod.infer<typeof ReplaceAmmoSchema>;
 
 const InnerSlotCostSchema = zod.union([
   zod
@@ -66,6 +71,7 @@ const SlotCostSchema = zod.union([
     })
     .strict(),
 ]);
+export type SlotCostType = zod.infer<typeof SlotCostSchema>;
 
 const InnerAvailabilityRatingRiggerModSchema = zod.union([
   zod.object({ option: zod.nativeEnum(vehicleModAttributeEnum) }).strict(),
@@ -104,6 +110,9 @@ const AvailabilityRiggerModSchema = zod.union([
     })
     .strict(),
 ]);
+export type AvailabilityRiggerModType = zod.infer<
+  typeof AvailabilityRiggerModSchema
+>;
 
 const InnerCostRiggerModSchema = zod.union([
   zod.object({ option: zod.nativeEnum(vehicleModAttributeEnum) }).strict(),
@@ -145,44 +154,49 @@ const CostRiggerModSchema = zod.union([
     })
     .strict(),
 ]);
+export type CostRiggerModType = zod.infer<typeof CostRiggerModSchema>;
 
-export const RiggerModSchema = zod
+const VehicleModPartialSchema = zod
   .object({
     name: zod.string(),
     description: zod.string(),
-    category: zod.nativeEnum(vehicleModCategoryEnum),
-    maxRating: zod.union([
-      zod.number(),
-      zod
-        .object({
-          option: zod.nativeEnum(vehicleModRatingEnum),
-        })
-        .strict(),
-    ]),
+    subtype: zod.nativeEnum(vehicleModSubtypeEnum),
+    maxRating: RiggerModRatingSchema,
     minRating: zod.optional(RiggerModRatingSchema),
     ratingMeaning: zod.optional(zod.nativeEnum(ratingMeaningEnum)),
-    bonus: zod.optional(BonusSchema),
-    additionalAmmo: zod.optional(zod.number()),
-    percentageAmmoIncrease: zod.optional(zod.number()),
-    replaceAmmo: zod.optional(ReplaceAmmoSchema),
     capacity: zod.optional(zod.number()),
     addPhysicalBoxes: zod.optional(zod.number()),
     isDowngrade: zod.optional(zod.literal(true)),
     requiresDroneParent: zod.optional(zod.literal(true)),
-    requirements: zod.optional(RequirementsSchema),
     slotCost: SlotCostSchema,
-    subsystemList: zod.optional(zod.array(zod.string())),
-    weaponMountValidCategoryList: zod.optional(
-      zod.array(zod.nativeEnum(firearmWeaponTypeEnum))
+    subsystemList: zod.optional(
+      zod.array(zod.nativeEnum(cyberwareCategoryEnum))
     ),
+    bonus: zod.optional(BonusSchema),
+    requirements: zod.optional(RequirementsSchema),
     userSelectable: zod.optional(zod.literal(false)),
     availability: AvailabilityRiggerModSchema,
     cost: CostRiggerModSchema,
-    source: zod.string(),
+    source: zod.nativeEnum(sourceBookEnum),
     page: zod.number(),
-    modType: zod.union([zod.literal("Vehicle"), zod.literal("Weapon Mount")]),
   })
   .strict();
 
-export type RiggerModType = zod.infer<typeof RiggerModSchema>;
-export const RiggerModListSchema = zod.array(RiggerModSchema);
+export const VehicleModSchema = zod.discriminatedUnion("type", [
+  VehicleModPartialSchema.extend({
+    type: zod.literal(vehicleModTypeEnum.Vehicle),
+    weaponMountValidCategoryList: zod.optional(
+      zod.array(zod.nativeEnum(firearmWeaponTypeEnum))
+    ),
+  }),
+  VehicleModPartialSchema.extend({
+    type: zod.literal(vehicleModTypeEnum.WeaponMount),
+    additionalAmmo: zod.optional(zod.number()),
+    percentageAmmoIncrease: zod.optional(zod.number()),
+    replaceAmmo: zod.optional(ReplaceAmmoSchema),
+  }),
+]);
+
+export type VehicleModType = zod.infer<typeof VehicleModSchema>;
+export const VehicleModListSchema = zod.array(VehicleModSchema);
+export type VehicleModListType = zod.infer<typeof VehicleModListSchema>;

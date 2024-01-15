@@ -29,7 +29,6 @@ import type {
   FirearmOptionsType,
   MeleeOptionsType,
   MountType,
-  UnlinkedWeaponTypeInformationType,
 } from "@shadowrun/common/build/schemas/weaponSchemas.js";
 import { weaponXmlSubtypeEnum } from "@shadowrun/common/build/schemas/commonSchemas.js";
 import type { WeaponXmlSubtypeType } from "@shadowrun/common/build/schemas/commonSchemas.js";
@@ -114,7 +113,7 @@ export const convertTypeInformation = function (
   meleeOptions: MeleeOptionsType,
   firearmOptions: FirearmOptionsType,
   ranges: Array<string>
-): UnlinkedWeaponTypeInformationType {
+) {
   let check = false;
   switch (weaponType) {
     case weaponTypeEnum.Melee:
@@ -125,7 +124,7 @@ export const convertTypeInformation = function (
       });
       assert(check, `weaponSubtype: ${weaponSubtype}`);
       return {
-        type: weaponTypeEnum.Melee,
+        type: weaponTypeEnum.Melee as const,
         subtype: weaponSubtype as meleeWeaponTypeEnum,
         meleeOptions: meleeOptions,
       };
@@ -138,7 +137,7 @@ export const convertTypeInformation = function (
       });
       assert(check, `weaponSubtype: ${weaponSubtype}`);
       return {
-        type: weaponTypeEnum.Projectile,
+        type: weaponTypeEnum.Projectile as const,
         subtype: weaponSubtype as projectileWeaponTypeEnum,
         extraClassification: weaponExtraClassification,
         rangeList: ranges,
@@ -151,7 +150,7 @@ export const convertTypeInformation = function (
       });
       assert(check, `weaponSubtype: ${weaponSubtype}`);
       return {
-        type: weaponTypeEnum.Firearm,
+        type: weaponTypeEnum.Firearm as const,
         subtype: weaponSubtype as firearmWeaponTypeEnum,
         extraClassification: weaponExtraClassification,
         firearmOptions: firearmOptions,
@@ -165,7 +164,7 @@ export const convertTypeInformation = function (
       });
       assert(check, `weaponSubtype: ${weaponSubtype}`);
       return {
-        type: weaponTypeEnum.Explosive,
+        type: weaponTypeEnum.Explosive as const,
         subtype: weaponSubtype as explosiveTypeEnum,
         rangeList: ranges,
       };

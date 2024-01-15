@@ -134,12 +134,24 @@ export type CapacityAugmentationType = zod.infer<
   typeof CapacityAugmentationSchema
 >;
 
-// export const EssenceSchema = zod
-//   .object({
-//     base: BaseOrSpecialSchema,
-//     specialCalculation: GearCalculation,
-//   })
-//   .strict();
+const SingleCapacityCostAugmentationSchema = zod.union([
+  SingleCapacityAugmentationSchema,
+  zod
+    .object({ option: zod.literal(capcityAugmentationEnum.IncludedInParent) })
+    .strict(),
+]);
+const CapacityCostAugmentationSchema = zod.union([
+  SingleCapacityCostAugmentationSchema,
+  zod
+    .object({
+      ratingLinked: zod.array(SingleCapacityAugmentationSchema),
+    })
+    .strict(),
+]);
+export type CapacityCostAugmentationType = zod.infer<
+  typeof CapacityCostAugmentationSchema
+>;
+
 // export type EssenceType = zod.infer<typeof EssenceSchema>;
 // Essence Cost is a recursive type
 export const EssenceSubnumberSchema = zod.union([
@@ -218,42 +230,6 @@ const deviceRatingSchema = zod
   .strict();
 export type deviceRatingType = zod.infer<typeof deviceRatingSchema>;
 
-const AugmentationTypeInformationSchema = zod.discriminatedUnion("type", [
-  zod
-    .object({
-      type: zod.literal(augmentationTypeEnum.Bioware),
-      subtype: zod.nativeEnum(biowareCategoryEnum),
-      isGeneware: zod.optional(zod.literal(true)),
-    })
-    .strict(),
-  zod
-    .object({
-      type: zod.literal(augmentationTypeEnum.Cyberware),
-      subtype: zod.nativeEnum(cyberwareCategoryEnum),
-      programs: zod.optional(zod.literal("Rating")),
-      capacity: zod.optional(CapacityAugmentationSchema),
-      addToParentCapacity: zod.optional(zod.literal(true)),
-      addParentWeaponAccessory: zod.optional(zod.literal(true)),
-      removalCost: zod.optional(zod.number()),
-      inheritAttributes: zod.optional(zod.literal(true)),
-      limbSlot: zod.optional(zod.nativeEnum(limbSlotEnum)),
-      useBothLimbSlots: zod.optional(zod.literal(true)),
-      mountsLocation: zod.optional(zod.nativeEnum(mountSlotEnum)),
-      modularMount: zod.optional(zod.literal(true)),
-      wirelessBonus: zod.optional(BonusSchema),
-      wirelessPairBonus: zod.optional(BonusSchema),
-      wirelessPairIncludeList: zod.optional(zod.array(zod.string())),
-      gearList: zod.optional(UseGearListSchema),
-      subsystemList: zod.optional(AugmentationSubsystemListSchema),
-      forceGrade: zod.optional(zod.nativeEnum(augmentationGradeEnum)),
-      deviceRating: zod.optional(deviceRatingSchema),
-      addVehicle: zod.optional(zod.string()),
-      // wireless description
-      wireless: zod.optional(zod.string()),
-    })
-    .strict(),
-]);
-
 const AugmentationLimitSchema = zod.union([
   zod.number(),
   zod
@@ -264,11 +240,10 @@ const AugmentationLimitSchema = zod.union([
 ]);
 export type AugmentationLimitType = zod.infer<typeof AugmentationLimitSchema>;
 
-export const AugmentationSchema = zod
+export const AugmentationPartialSchema = zod
   .object({
     name: zod.string(),
     description: zod.string(),
-    typeInformation: AugmentationTypeInformationSchema,
     augmentationLimit: zod.optional(AugmentationLimitSchema),
     unavailableGrades: zod.optional(
       zod.array(zod.nativeEnum(augmentationGradeEnum))
@@ -299,6 +274,44 @@ export const AugmentationSchema = zod
     page: zod.number(),
   })
   .strict();
+
+const CyberwareSchema = AugmentationPartialSchema.extend({
+  type: zod.literal(augmentationTypeEnum.Cyberware),
+  subtype: zod.nativeEnum(cyberwareCategoryEnum),
+  programs: zod.optional(zod.literal("Rating")),
+  capacity: zod.optional(CapacityAugmentationSchema),
+  capacityCost: zod.optional(CapacityCostAugmentationSchema),
+  addToParentCapacity: zod.optional(zod.literal(true)),
+  addParentWeaponAccessory: zod.optional(zod.literal(true)),
+  removalCost: zod.optional(zod.number()),
+  inheritAttributes: zod.optional(zod.literal(true)),
+  limbSlot: zod.optional(zod.nativeEnum(limbSlotEnum)),
+  useBothLimbSlots: zod.optional(zod.literal(true)),
+  mountsLocation: zod.optional(zod.nativeEnum(mountSlotEnum)),
+  modularMount: zod.optional(zod.literal(true)),
+  wirelessBonus: zod.optional(BonusSchema),
+  wirelessPairBonus: zod.optional(BonusSchema),
+  wirelessPairIncludeList: zod.optional(zod.array(zod.string())),
+  gearList: zod.optional(UseGearListSchema),
+  subsystemList: zod.optional(AugmentationSubsystemListSchema),
+  forceGrade: zod.optional(zod.nativeEnum(augmentationGradeEnum)),
+  deviceRating: zod.optional(deviceRatingSchema),
+  addVehicle: zod.optional(zod.string()),
+  // wireless description
+  wireless: zod.optional(zod.string()),
+}).strict();
+
+const BiowareSchema = AugmentationPartialSchema.extend({
+  type: zod.literal(augmentationTypeEnum.Bioware),
+  subtype: zod.nativeEnum(biowareCategoryEnum),
+  isGeneware: zod.optional(zod.literal(true)),
+}).strict();
+
+export const AugmentationSchema = zod.discriminatedUnion("type", [
+  CyberwareSchema,
+  BiowareSchema,
+]);
+
 export type AugmentationType = zod.infer<typeof AugmentationSchema>;
 export const AugmentationListSchema = zod.array(AugmentationSchema);
 export type AugmentationListType = zod.infer<typeof AugmentationListSchema>;

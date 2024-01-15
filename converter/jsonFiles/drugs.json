@@ -1,286 +1,860 @@
 [
   {
-    "name": "Tank",
+    "name": "Bliss",
     "description": "",
-    "category": "Foundation",
-    "addictionRating": 6,
-    "addictionThreshold": 2,
+    "category": "Drugs",
+    "speed": 1,
+    "availability": {
+      "rating": 3,
+      "restriction": "Forbidden"
+    },
+    "cost": 15,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 411
+  },
+  {
+    "name": "Cram",
+    "description": "",
+    "category": "Drugs",
+    "speed": 600,
+    "bonus": {
+      "initiative": {
+        "bonusDice": 1
+      }
+    },
+    "availability": {
+      "rating": 2,
+      "restriction": "Restricted"
+    },
+    "cost": 10,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 411
+  },
+  {
+    "name": "Deepweed",
+    "description": "",
+    "category": "Drugs",
+    "speed": 1,
+    "bonus": {
+      "initiative": {
+        "bonusDice": 1
+      }
+    },
+    "availability": {
+      "rating": 8,
+      "restriction": "Forbidden"
+    },
+    "cost": 400,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 411
+  },
+  {
+    "name": "Jazz",
+    "description": "",
+    "category": "Drugs",
+    "speed": 1,
+    "bonus": {
+      "initiative": {
+        "bonusDice": 2
+      }
+    },
+    "availability": {
+      "rating": 2,
+      "restriction": "Restricted"
+    },
+    "cost": 75,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 411
+  },
+  {
+    "name": "Kamikaze",
+    "description": "",
+    "category": "Drugs",
+    "speed": 1,
+    "bonus": {
+      "initiative": {
+        "bonusDice": 2
+      }
+    },
     "availability": {
       "rating": 4,
       "restriction": "Restricted"
     },
-    "cost": 75,
-    "source": "Chrome Flesh",
-    "page": 190
+    "cost": 100,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 412
   },
   {
-    "name": "Defender",
+    "name": "Long Haul",
     "description": "",
-    "category": "Foundation",
-    "addictionRating": 6,
-    "addictionThreshold": 2,
+    "category": "Drugs",
+    "speed": 600,
     "availability": {
-      "rating": 4,
-      "restriction": "Restricted"
-    },
-    "cost": 75,
-    "source": "Chrome Flesh",
-    "page": 190
-  },
-  {
-    "name": "Genius",
-    "description": "",
-    "category": "Foundation",
-    "addictionRating": 6,
-    "addictionThreshold": 2,
-    "availability": {
-      "rating": 4,
-      "restriction": "Restricted"
-    },
-    "cost": 75,
-    "source": "Chrome Flesh",
-    "page": 190
-  },
-  {
-    "name": "Charmer",
-    "description": "",
-    "category": "Foundation",
-    "addictionRating": 6,
-    "addictionThreshold": 2,
-    "availability": {
-      "rating": 4,
-      "restriction": "Restricted"
-    },
-    "cost": 75,
-    "source": "Chrome Flesh",
-    "page": 190
-  },
-  {
-    "name": "Warrior",
-    "description": "",
-    "category": "Foundation",
-    "addictionRating": 6,
-    "addictionThreshold": 2,
-    "availability": {
-      "rating": 4,
-      "restriction": "Restricted"
-    },
-    "cost": 75,
-    "source": "Chrome Flesh",
-    "page": 190
-  },
-  {
-    "name": "Crush",
-    "description": "",
-    "category": "Block",
-    "availability": {
-      "rating": 1,
-      "restriction": "Legal"
-    },
-    "cost": 20,
-    "source": "Chrome Flesh",
-    "page": 190
-  },
-  {
-    "name": "Brute",
-    "description": "",
-    "category": "Block",
-    "availability": {
-      "rating": 1,
-      "restriction": "Legal"
-    },
-    "cost": 20,
-    "source": "Chrome Flesh",
-    "page": 190
-  },
-  {
-    "name": "Strike",
-    "description": "",
-    "category": "Block",
-    "availability": {
-      "rating": 1,
-      "restriction": "Legal"
-    },
-    "cost": 20,
-    "source": "Chrome Flesh",
-    "page": 190
-  },
-  {
-    "name": "Lighting",
-    "description": "",
-    "category": "Block",
-    "availability": {
-      "rating": 1,
-      "restriction": "Legal"
-    },
-    "cost": 20,
-    "source": "Chrome Flesh",
-    "page": 190
-  },
-  {
-    "name": "Einstein",
-    "description": "",
-    "category": "Block",
-    "availability": {
-      "rating": 1,
-      "restriction": "Legal"
-    },
-    "cost": 20,
-    "source": "Chrome Flesh",
-    "page": 190
-  },
-  {
-    "name": "Gut Check",
-    "description": "",
-    "category": "Block",
-    "availability": {
-      "rating": 1,
-      "restriction": "Legal"
-    },
-    "cost": 20,
-    "source": "Chrome Flesh",
-    "page": 190
-  },
-  {
-    "name": "Stonewall",
-    "description": "",
-    "category": "Block",
-    "availability": {
-      "rating": 1,
-      "restriction": "Legal"
-    },
-    "cost": 20,
-    "source": "Chrome Flesh",
-    "page": 191
-  },
-  {
-    "name": "Smoothtalk",
-    "description": "",
-    "category": "Block",
-    "availability": {
-      "rating": 1,
-      "restriction": "Legal"
-    },
-    "cost": 20,
-    "source": "Chrome Flesh",
-    "page": 191
-  },
-  {
-    "name": "Shock and Awe",
-    "description": "",
-    "category": "Block",
-    "availability": {
-      "rating": 2,
-      "restriction": "Legal"
-    },
-    "cost": 40,
-    "source": "Chrome Flesh",
-    "page": 191
-  },
-  {
-    "name": "Razor Mind",
-    "description": "",
-    "category": "Block",
-    "availability": {
-      "rating": 2,
-      "restriction": "Legal"
-    },
-    "cost": 30,
-    "source": "Chrome Flesh",
-    "page": 191
-  },
-  {
-    "name": "The General",
-    "description": "",
-    "category": "Block",
-    "availability": {
-      "rating": 2,
-      "restriction": "Legal"
-    },
-    "cost": 30,
-    "source": "Chrome Flesh",
-    "page": 191
-  },
-  {
-    "name": "Resist",
-    "description": "",
-    "category": "Block",
-    "availability": {
-      "rating": 2,
-      "restriction": "Legal"
-    },
-    "cost": 30,
-    "source": "Chrome Flesh",
-    "page": 191
-  },
-  {
-    "name": "Speed Demon",
-    "description": "",
-    "category": "Block",
-    "availability": {
-      "rating": 2,
-      "restriction": "Legal"
-    },
-    "cost": 30,
-    "source": "Chrome Flesh",
-    "page": 191
-  },
-  {
-    "name": "Ingestion Enhancer",
-    "description": "",
-    "category": "Enhancer",
-    "addictionRating": 1,
-    "addictionThreshold": 1,
-    "availability": {
-      "rating": 1,
+      "rating": 0,
       "restriction": "Legal"
     },
     "cost": 50,
-    "source": "Chrome Flesh",
-    "page": 191
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 412
   },
   {
-    "name": "Inhalation Enhancer",
+    "name": "Nitro",
     "description": "",
-    "category": "Enhancer",
-    "addictionRating": 1,
-    "addictionThreshold": 1,
+    "category": "Drugs",
+    "speed": 6,
     "availability": {
-      "rating": 1,
+      "rating": 2,
+      "restriction": "Restricted"
+    },
+    "cost": 50,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 412
+  },
+  {
+    "name": "Novacoke",
+    "description": "",
+    "category": "Drugs",
+    "speed": 6,
+    "availability": {
+      "rating": 2,
+      "restriction": "Restricted"
+    },
+    "cost": 10,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 412
+  },
+  {
+    "name": "Psyche",
+    "description": "",
+    "category": "Drugs",
+    "speed": 600,
+    "availability": {
+      "rating": 0,
+      "restriction": "Legal"
+    },
+    "cost": 200,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 412
+  },
+  {
+    "name": "Zen",
+    "description": "",
+    "category": "Drugs",
+    "speed": 300,
+    "availability": {
+      "rating": 4,
+      "restriction": "Restricted"
+    },
+    "cost": 5,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 412
+  },
+  {
+    "name": "Crash",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 3,
+      "restriction": "Legal"
+    },
+    "cost": 800,
+    "source": "Bullets And Bandages",
+    "page": 19
+  },
+  {
+    "name": "Cryo",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 8,
+      "restriction": "Restricted"
+    },
+    "cost": 1000,
+    "source": "Bullets And Bandages",
+    "page": 19
+  },
+  {
+    "name": "HemoSynth",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 4,
+      "restriction": "Legal"
+    },
+    "cost": 2000,
+    "source": "Bullets And Bandages",
+    "page": 19
+  },
+  {
+    "name": "NanoScan",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 5,
+      "restriction": "Legal"
+    },
+    "cost": 500,
+    "source": "Bullets And Bandages",
+    "page": 19
+  },
+  {
+    "name": "Neostigmine",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 2,
+      "restriction": "Legal"
+    },
+    "cost": 100,
+    "source": "Bullets And Bandages",
+    "page": 19
+  },
+  {
+    "name": "Ondansetron",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 2,
       "restriction": "Legal"
     },
     "cost": 50,
-    "source": "Chrome Flesh",
-    "page": 191
+    "source": "Bullets And Bandages",
+    "page": 19
   },
   {
-    "name": "Speed Enhancer",
+    "name": "Sugammadex",
     "description": "",
-    "category": "Enhancer",
-    "appliedLimit": 3,
-    "addictionRating": 1,
-    "addictionThreshold": 1,
+    "category": "Drugs",
     "availability": {
-      "rating": 1,
+      "rating": 6,
       "restriction": "Legal"
+    },
+    "cost": 100,
+    "source": "Bullets And Bandages",
+    "page": 19
+  },
+  {
+    "name": "Evo Aphrodite Reactive Biomatter",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 8,
+      "restriction": "Legal"
+    },
+    "cost": 1000,
+    "source": "The Vladivostok Gauntlet",
+    "page": 19
+  },
+  {
+    "name": "Accelerator",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 6,
+      "restriction": "Restricted"
+    },
+    "cost": 200,
+    "source": "Lockdown",
+    "page": 205
+  },
+  {
+    "name": "Buffout",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 6,
+      "restriction": "Restricted"
+    },
+    "cost": 100,
+    "source": "Lockdown",
+    "page": 204
+  },
+  {
+    "name": "Numb",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 6,
+      "restriction": "Restricted"
+    },
+    "cost": 150,
+    "source": "Lockdown",
+    "page": 204
+  },
+  {
+    "name": "Pinpoint",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 6,
+      "restriction": "Restricted"
+    },
+    "cost": 75,
+    "source": "Lockdown",
+    "page": 204
+  },
+  {
+    "name": "Liquid Nutrients",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 4,
+      "restriction": "Restricted"
+    },
+    "cost": 75,
+    "source": "Stolen Souls",
+    "page": 189
+  },
+  {
+    "name": "Normal Saline",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 0,
+      "restriction": "Legal"
+    },
+    "cost": 30,
+    "source": "Stolen Souls",
+    "page": 189
+  },
+  {
+    "name": "Slab",
+    "description": "",
+    "category": "Toxins",
+    "availability": {
+      "rating": 8,
+      "restriction": "Restricted"
+    },
+    "cost": 250,
+    "source": "Stolen Souls",
+    "page": 189
+  },
+  {
+    "name": "AEXD",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 4,
+      "restriction": "Legal"
+    },
+    "cost": 80,
+    "source": "Chrome Flesh",
+    "page": 179
+  },
+  {
+    "name": "Aisa",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 4,
+      "restriction": "Legal"
+    },
+    "cost": 25,
+    "source": "Chrome Flesh",
+    "page": 179
+  },
+  {
+    "name": "Animal Tongue",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 6,
+      "restriction": "Restricted"
+    },
+    "cost": 1500,
+    "source": "Chrome Flesh",
+    "page": 186
+  },
+  {
+    "name": "Ayao's Will",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 14,
+      "restriction": "Forbidden"
+    },
+    "cost": 750,
+    "source": "Chrome Flesh",
+    "page": 184
+  },
+  {
+    "name": "Betameth",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 5,
+      "restriction": "Forbidden"
+    },
+    "cost": 30,
+    "source": "Chrome Flesh",
+    "page": 180
+  },
+  {
+    "name": "Betel",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 4,
+      "restriction": "Legal"
+    },
+    "cost": 5,
+    "source": "Chrome Flesh",
+    "page": 180
+  },
+  {
+    "name": "Cereprax",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 14,
+      "restriction": "Forbidden"
+    },
+    "cost": 800,
+    "source": "Chrome Flesh",
+    "page": 180
+  },
+  {
+    "name": "Crimson Orchid",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 6,
+      "restriction": "Forbidden"
+    },
+    "cost": 300,
+    "source": "Chrome Flesh",
+    "page": 184
+  },
+  {
+    "name": "Dopadrine",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 8,
+      "restriction": "Legal"
+    },
+    "cost": 45,
+    "source": "Chrome Flesh",
+    "page": 180
+  },
+  {
+    "name": "eX",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 3,
+      "restriction": "Restricted"
+    },
+    "cost": 20,
+    "source": "Chrome Flesh",
+    "page": 180
+  },
+  {
+    "name": "Forget-Me-Not",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 10,
+      "restriction": "Forbidden"
+    },
+    "cost": 400,
+    "source": "Chrome Flesh",
+    "page": 180
+  },
+  {
+    "name": "Galak",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 4,
+      "restriction": "Restricted"
+    },
+    "cost": 45,
+    "source": "Chrome Flesh",
+    "page": 180
+  },
+  {
+    "name": "G3",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 2,
+      "restriction": "Legal"
+    },
+    "cost": 15,
+    "source": "Chrome Flesh",
+    "page": 181
+  },
+  {
+    "name": "Guts",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 8,
+      "restriction": "Restricted"
+    },
+    "cost": 60,
+    "source": "Chrome Flesh",
+    "page": 181
+  },
+  {
+    "name": "Hecate's Blessing",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 12,
+      "restriction": "Forbidden"
+    },
+    "cost": 500,
+    "source": "Chrome Flesh",
+    "page": 185
+  },
+  {
+    "name": "Hurlg",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 2,
+      "restriction": "Restricted"
+    },
+    "cost": 10,
+    "source": "Chrome Flesh",
+    "page": 181
+  },
+  {
+    "name": "Immortal Flower",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 14,
+      "restriction": "Restricted"
+    },
+    "cost": 2500,
+    "source": "Chrome Flesh",
+    "page": 186
+  },
+  {
+    "name": "K-10",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 16,
+      "restriction": "Forbidden"
+    },
+    "cost": 900,
+    "source": "Chrome Flesh",
+    "page": 181
+  },
+  {
+    "name": "Laés",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 12,
+      "restriction": "Forbidden"
+    },
+    "cost": 750,
+    "source": "Chrome Flesh",
+    "page": 185
+  },
+  {
+    "name": "Leäl",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 10,
+      "restriction": "Forbidden"
+    },
+    "cost": 400,
+    "source": "Chrome Flesh",
+    "page": 185
+  },
+  {
+    "name": "Little Smoke",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 12,
+      "restriction": "Forbidden"
+    },
+    "cost": 1800,
+    "source": "Chrome Flesh",
+    "page": 187
+  },
+  {
+    "name": "Memory Fog",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 6,
+      "restriction": "Restricted"
+    },
+    "cost": 100,
+    "source": "Chrome Flesh",
+    "page": 181
+  },
+  {
+    "name": "Nightwatch",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 3,
+      "restriction": "Restricted"
+    },
+    "cost": 25,
+    "source": "Chrome Flesh",
+    "page": 182
+  },
+  {
+    "name": "NoPaint",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 3,
+      "restriction": "Legal"
+    },
+    "cost": 15,
+    "source": "Chrome Flesh",
+    "page": 182
+  },
+  {
+    "name": "Oneiro",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 6,
+      "restriction": "Forbidden"
+    },
+    "cost": 1250,
+    "source": "Chrome Flesh",
+    "page": 186
+  },
+  {
+    "name": "Overdrive",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 10,
+      "restriction": "Forbidden"
+    },
+    "cost": 800,
+    "source": "Chrome Flesh",
+    "page": 186
+  },
+  {
+    "name": "Oxygenated Fluorocarbons",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 12,
+      "restriction": "Restricted"
+    },
+    "cost": 2000,
+    "source": "Chrome Flesh",
+    "page": 182
+  },
+  {
+    "name": "Pixie Dust",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 8,
+      "restriction": "Forbidden"
+    },
+    "cost": 800,
+    "source": "Chrome Flesh",
+    "page": 186
+  },
+  {
+    "name": "Push",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 4,
+      "restriction": "Forbidden"
+    },
+    "cost": 25,
+    "source": "Chrome Flesh",
+    "page": 182
+  },
+  {
+    "name": "PsychChips (Illegal)",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 6,
+      "restriction": "Forbidden"
+    },
+    "cost": 500,
+    "source": "Chrome Flesh",
+    "page": 187
+  },
+  {
+    "name": "PsychChips (Legal)",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 4,
+      "restriction": "Restricted"
+    },
+    "cost": 350,
+    "source": "Chrome Flesh",
+    "page": 187
+  },
+  {
+    "name": "Red Mescaline",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 4,
+      "restriction": "Restricted"
     },
     "cost": 50,
     "source": "Chrome Flesh",
-    "page": 191
+    "page": 182
   },
   {
-    "name": "Duration Enhancer",
+    "name": "Ripper",
     "description": "",
-    "category": "Enhancer",
-    "appliedLimit": 3,
-    "addictionRating": 1,
-    "addictionThreshold": 1,
+    "category": "Drugs",
+    "availability": {
+      "rating": 6,
+      "restriction": "Forbidden"
+    },
+    "cost": 60,
+    "source": "Chrome Flesh",
+    "page": 182
+  },
+  {
+    "name": "Rock Lizard Blood",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 10,
+      "restriction": "Restricted"
+    },
+    "cost": 1700,
+    "source": "Chrome Flesh",
+    "page": 187
+  },
+  {
+    "name": "Shade",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 6,
+      "restriction": "Restricted"
+    },
+    "cost": 1000,
+    "source": "Chrome Flesh",
+    "page": 187
+  },
+  {
+    "name": "Slab",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 8,
+      "restriction": "Restricted"
+    },
+    "cost": 250,
+    "source": "Chrome Flesh",
+    "page": 183
+  },
+  {
+    "name": "Snuff",
+    "description": "",
+    "category": "Drugs",
     "availability": {
       "rating": 1,
-      "restriction": "Legal"
+      "restriction": "Restricted"
     },
-    "cost": 50,
+    "cost": 10,
     "source": "Chrome Flesh",
-    "page": 191
+    "page": 183
+  },
+  {
+    "name": "Sober Time",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 6,
+      "restriction": "Forbidden"
+    },
+    "cost": 125,
+    "source": "Chrome Flesh",
+    "page": 183
+  },
+  {
+    "name": "Soothsayer",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 12,
+      "restriction": "Forbidden"
+    },
+    "cost": 150,
+    "source": "Chrome Flesh",
+    "page": 184
+  },
+  {
+    "name": "Trance",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 10,
+      "restriction": "Forbidden"
+    },
+    "cost": 1100,
+    "source": "Chrome Flesh",
+    "page": 186
+  },
+  {
+    "name": "Woad",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 3,
+      "restriction": "Restricted"
+    },
+    "cost": 15,
+    "source": "Chrome Flesh",
+    "page": 184
+  },
+  {
+    "name": "Wudu'aku",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 12,
+      "restriction": "Forbidden"
+    },
+    "cost": 2350,
+    "source": "Chrome Flesh",
+    "page": 187
+  },
+  {
+    "name": "Zero",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 8,
+      "restriction": "Restricted"
+    },
+    "cost": 150,
+    "source": "Chrome Flesh",
+    "page": 184
+  },
+  {
+    "name": "Zombie Dust",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 12,
+      "restriction": "Forbidden"
+    },
+    "cost": 1500,
+    "source": "Chrome Flesh",
+    "page": 187
   }
 ]

@@ -82,8 +82,9 @@ const VehicleModXmlSchema = zod
     slots: StringOrNumberSchema,
     // Allowed augmentation subsystems (cyberware) that can be installed
     subsystems: zod.optional(SubsystemXmlSchema),
-    // This is a weapon mount mod and lists the categories
+    // This is mod adds a weapon mount and lists the categories
     // of weapon that can be mounted in it
+    // Importantly this is NOT a weapon mount mod, just a mount
     weaponmountcategories: zod.optional(zod.string()),
     // Not selectable
     hide: zod.optional(zod.literal("")),

@@ -2,10 +2,6 @@
   {
     "name": "Adrenaline Pump",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "essenceCost": [
       {
         "subnumbers": [
@@ -52,15 +48,13 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 459
+    "page": 459,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Bone Density Augmentation",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "essenceCost": [
       {
         "subnumbers": [
@@ -113,15 +107,13 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 459
+    "page": 459,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Cat's Eyes",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -132,15 +124,13 @@
     },
     "cost": [4000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 459
+    "page": 459,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Cerebral Booster",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cultured"
-    },
     "unavailableGrades": ["Used"],
     "essenceCost": [
       {
@@ -188,15 +178,13 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 460
+    "page": 460,
+    "type": "Bioware",
+    "subtype": "Cultured"
   },
   {
     "name": "Damage Compensators",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cultured"
-    },
     "unavailableGrades": ["Used"],
     "essenceCost": [
       {
@@ -249,15 +237,13 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 460
+    "page": 460,
+    "type": "Bioware",
+    "subtype": "Cultured"
   },
   {
     "name": "Enhanced Articulation",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "essenceCost": [0.3],
     "rating": {
       "maximum": [1]
@@ -271,15 +257,13 @@
     },
     "cost": [24000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 459
+    "page": 459,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Mnemonic Enhancer",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cultured"
-    },
     "unavailableGrades": ["Used"],
     "essenceCost": [
       {
@@ -367,15 +351,13 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 460
+    "page": 460,
+    "type": "Bioware",
+    "subtype": "Cultured"
   },
   {
     "name": "Muscle Augmentation",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "essenceCost": [
       {
         "subnumbers": [
@@ -429,15 +411,13 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 459
+    "page": 459,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Muscle Toner",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "essenceCost": [
       {
         "subnumbers": [
@@ -491,15 +471,13 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 459
+    "page": 459,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Orthoskin",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "essenceCost": [
       {
         "subnumbers": [
@@ -554,15 +532,13 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 459
+    "page": 459,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Pain Editor",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cultured"
-    },
     "unavailableGrades": ["Used"],
     "essenceCost": [0.3],
     "rating": {
@@ -574,15 +550,13 @@
     },
     "cost": [48000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 460
+    "page": 460,
+    "type": "Bioware",
+    "subtype": "Cultured"
   },
   {
     "name": "Pathogenic Defense",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "essenceCost": [
       {
         "subnumbers": [
@@ -643,15 +617,13 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 459
+    "page": 459,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Platelet Factories",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "essenceCost": [0.2],
     "rating": {
       "maximum": [1]
@@ -662,15 +634,13 @@
     },
     "cost": [17000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 459
+    "page": 459,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Reflex Recorder",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cultured"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -685,15 +655,13 @@
     },
     "cost": [14000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 460
+    "page": 460,
+    "type": "Bioware",
+    "subtype": "Cultured"
   },
   {
     "name": "Skin Pocket",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -707,15 +675,13 @@
     },
     "cost": [12000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 459
+    "page": 459,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Sleep Regulator",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cultured"
-    },
     "unavailableGrades": ["Used"],
     "essenceCost": [0.1],
     "rating": {
@@ -727,15 +693,13 @@
     },
     "cost": [12000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 460
+    "page": 460,
+    "type": "Bioware",
+    "subtype": "Cultured"
   },
   {
     "name": "Suprathyroid Gland",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "essenceCost": [0.7],
     "rating": {
       "maximum": [1]
@@ -749,15 +713,13 @@
     },
     "cost": [140000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 459
+    "page": 459,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Symbiotes",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "essenceCost": [
       {
         "subnumbers": [
@@ -812,15 +774,13 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 459
+    "page": 459,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Synaptic Booster",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cultured"
-    },
     "unavailableGrades": ["Used"],
     "essenceCost": [
       {
@@ -880,15 +840,13 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 461
+    "page": 461,
+    "type": "Bioware",
+    "subtype": "Cultured"
   },
   {
     "name": "Synthacardium",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "essenceCost": [
       {
         "subnumbers": [
@@ -945,15 +903,13 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 460
+    "page": 460,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Tailored Pheromones",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "essenceCost": [
       {
         "subnumbers": [
@@ -1021,15 +977,13 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 460
+    "page": 460,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Toxin Extractor",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "essenceCost": [
       {
         "subnumbers": [
@@ -1090,15 +1044,13 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 460
+    "page": 460,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Tracheal Filter",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "essenceCost": [
       {
         "subnumbers": [
@@ -1150,15 +1102,13 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 460
+    "page": 460,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Chemical Gland (Internal Release or Gradual Release)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -1206,15 +1156,13 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 112
+    "page": 112,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Chemical Gland (Exhalation Sprayer)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -1259,15 +1207,13 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 112
+    "page": 112,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Chemical Gland (Spitter)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -1312,15 +1258,13 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 112
+    "page": 112,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Chemical Gland (Weapon Reservoir)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -1365,15 +1309,13 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 112
+    "page": 112,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Chemical Gland Expanded Reservoir",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Chemical Gland Modifications"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -1417,15 +1359,13 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 112
+    "page": 112,
+    "type": "Bioware",
+    "subtype": "Chemical Gland Modifications"
   },
   {
     "name": "Chemical Repulsion",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Orthoskin Upgrades"
-    },
     "essenceCost": [0.25],
     "rating": {
       "maximum": [1]
@@ -1440,15 +1380,13 @@
     },
     "cost": [20000],
     "source": "Chrome Flesh",
-    "page": 116
+    "page": 116,
+    "type": "Bioware",
+    "subtype": "Orthoskin Upgrades"
   },
   {
     "name": "Dragon Hide",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Orthoskin Upgrades"
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -1462,15 +1400,13 @@
     },
     "cost": [2000],
     "source": "Chrome Flesh",
-    "page": 116
+    "page": 116,
+    "type": "Bioware",
+    "subtype": "Orthoskin Upgrades"
   },
   {
     "name": "Insulation",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Orthoskin Upgrades"
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -1484,15 +1420,13 @@
     },
     "cost": [8000],
     "source": "Chrome Flesh",
-    "page": 116
+    "page": 116,
+    "type": "Bioware",
+    "subtype": "Orthoskin Upgrades"
   },
   {
     "name": "Electroshock",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Orthoskin Upgrades"
-    },
     "essenceCost": [0.25],
     "rating": {
       "maximum": [1]
@@ -1506,15 +1440,13 @@
     },
     "cost": [8000],
     "source": "Chrome Flesh",
-    "page": 116
+    "page": 116,
+    "type": "Bioware",
+    "subtype": "Orthoskin Upgrades"
   },
   {
     "name": "Penguin Blubber",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Orthoskin Upgrades"
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -1528,15 +1460,13 @@
     },
     "cost": [2000],
     "source": "Chrome Flesh",
-    "page": 116
+    "page": 116,
+    "type": "Bioware",
+    "subtype": "Orthoskin Upgrades"
   },
   {
     "name": "Sealskin",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Orthoskin Upgrades"
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -1547,15 +1477,13 @@
     },
     "cost": [2000],
     "source": "Chrome Flesh",
-    "page": 116
+    "page": 116,
+    "type": "Bioware",
+    "subtype": "Orthoskin Upgrades"
   },
   {
     "name": "Sharkskin",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Orthoskin Upgrades"
-    },
     "essenceCost": [0.25],
     "rating": {
       "maximum": [1]
@@ -1569,15 +1497,13 @@
     },
     "cost": [8000],
     "source": "Chrome Flesh",
-    "page": 116
+    "page": 116,
+    "type": "Bioware",
+    "subtype": "Orthoskin Upgrades"
   },
   {
     "name": "Elastic Joints",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "essenceCost": [0.2],
     "rating": {
       "maximum": [1]
@@ -1588,15 +1514,13 @@
     },
     "cost": [8000],
     "source": "Chrome Flesh",
-    "page": 112
+    "page": 112,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Gills",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "essenceCost": [0.2],
     "rating": {
       "maximum": [1]
@@ -1610,15 +1534,13 @@
     },
     "cost": [8000],
     "source": "Chrome Flesh",
-    "page": 113
+    "page": 113,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Hand and Foot Webbing (Hands)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "augmentationLimit": {
       "option": "Arm"
     },
@@ -1636,15 +1558,13 @@
     },
     "cost": [1000],
     "source": "Chrome Flesh",
-    "page": 113
+    "page": 113,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Hand and Foot Webbing (Feet)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "augmentationLimit": {
       "option": "Leg"
     },
@@ -1662,15 +1582,13 @@
     },
     "cost": [1000],
     "source": "Chrome Flesh",
-    "page": 113
+    "page": 113,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Hearing Enhancement",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -1681,15 +1599,13 @@
     },
     "cost": [4000],
     "source": "Chrome Flesh",
-    "page": 113
+    "page": 113,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Hearing Expansion",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -1700,15 +1616,13 @@
     },
     "cost": [4000],
     "source": "Chrome Flesh",
-    "page": 113
+    "page": 113,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Joint Replacement",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -1722,15 +1636,13 @@
     },
     "cost": [1000],
     "source": "Chrome Flesh",
-    "page": 113
+    "page": 113,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Spidersilk Gland",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -1744,15 +1656,13 @@
     },
     "cost": [35000],
     "source": "Chrome Flesh",
-    "page": 114
+    "page": 114,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Spinal Realignment",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -1766,15 +1676,13 @@
     },
     "cost": [4000],
     "source": "Chrome Flesh",
-    "page": 114
+    "page": 114,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Tactile Sensitivity",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -1785,15 +1693,13 @@
     },
     "cost": [8000],
     "source": "Chrome Flesh",
-    "page": 114
+    "page": 114,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Tail",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -1807,15 +1713,13 @@
     },
     "cost": [2000],
     "source": "Chrome Flesh",
-    "page": 115
+    "page": 115,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Tail, Prehensile",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -1829,15 +1733,13 @@
     },
     "cost": [8000],
     "source": "Chrome Flesh",
-    "page": 115
+    "page": 115,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Troll Eyes",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "essenceCost": [0.2],
     "rating": {
       "maximum": [1]
@@ -1848,15 +1750,13 @@
     },
     "cost": [10000],
     "source": "Chrome Flesh",
-    "page": 115
+    "page": 115,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Vocal Range Enhancer",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -1867,15 +1767,13 @@
     },
     "cost": [10000],
     "source": "Chrome Flesh",
-    "page": 115
+    "page": 115,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Vocal Range Expander",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "essenceCost": [0.2],
     "rating": {
       "maximum": [1]
@@ -1886,15 +1784,13 @@
     },
     "cost": [30000],
     "source": "Chrome Flesh",
-    "page": 115
+    "page": 115,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Nephritic screen",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "essenceCost": [
       {
         "subnumbers": [
@@ -1985,15 +1881,13 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 113
+    "page": 113,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Nictitating Membranes",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "essenceCost": [0.05],
     "rating": {
       "maximum": [1]
@@ -2004,15 +1898,13 @@
     },
     "cost": [1000],
     "source": "Chrome Flesh",
-    "page": 113
+    "page": 113,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Tailored Critter Pheromones",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "essenceCost": [
       {
         "subnumbers": [
@@ -2062,15 +1954,13 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 115
+    "page": 115,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Expanded Volume",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "essenceCost": [
       {
         "subnumbers": [
@@ -2122,15 +2012,13 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 112
+    "page": 112,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Amplified Immune System",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "essenceCost": [
       {
         "subnumbers": [
@@ -2191,15 +2079,13 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 111
+    "page": 111,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Minor Biosculpting Modification",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Biosculpting"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -2221,15 +2107,13 @@
       }
     },
     "source": "Chrome Flesh",
-    "page": 108
+    "page": 108,
+    "type": "Bioware",
+    "subtype": "Biosculpting"
   },
   {
     "name": "Moderate Biosculpting Modification",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Biosculpting"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -2251,15 +2135,13 @@
       }
     },
     "source": "Chrome Flesh",
-    "page": 108
+    "page": 108,
+    "type": "Bioware",
+    "subtype": "Biosculpting"
   },
   {
     "name": "Severe Biosculpting Modification",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Biosculpting"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -2281,15 +2163,13 @@
       }
     },
     "source": "Chrome Flesh",
-    "page": 108
+    "page": 108,
+    "type": "Bioware",
+    "subtype": "Biosculpting"
   },
   {
     "name": "Troll Reduction",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Biosculpting"
-    },
     "essenceCost": {
       "ratingLinked": [[0.2], [0.5]]
     },
@@ -2317,15 +2197,13 @@
       "ratingLinked": [[15000], [25000]]
     },
     "source": "Chrome Flesh",
-    "page": 108
+    "page": 108,
+    "type": "Bioware",
+    "subtype": "Biosculpting"
   },
   {
     "name": "Troll Reduction (Ork)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Biosculpting"
-    },
     "essenceCost": [0.2],
     "rating": {
       "maximum": [1]
@@ -2336,15 +2214,13 @@
     },
     "cost": [15000],
     "source": "Chrome Flesh",
-    "page": 108
+    "page": 108,
+    "type": "Bioware",
+    "subtype": "Biosculpting"
   },
   {
     "name": "Ethnicity/Sex Change",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Biosculpting"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -2361,15 +2237,13 @@
     },
     "cost": [10000],
     "source": "Chrome Flesh",
-    "page": 108
+    "page": 108,
+    "type": "Bioware",
+    "subtype": "Biosculpting"
   },
   {
     "name": "Metatype Modification",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Biosculpting"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -2386,15 +2260,13 @@
     },
     "cost": [20000],
     "source": "Chrome Flesh",
-    "page": 108
+    "page": 108,
+    "type": "Bioware",
+    "subtype": "Biosculpting"
   },
   {
     "name": "Claws",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Bio-Weapons"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -2422,15 +2294,13 @@
     },
     "cost": [500],
     "source": "Chrome Flesh",
-    "page": 120
+    "page": 120,
+    "type": "Bioware",
+    "subtype": "Bio-Weapons"
   },
   {
     "name": "Claws (Retractable)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Bio-Weapons"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -2470,15 +2340,13 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 120
+    "page": 120,
+    "type": "Bioware",
+    "subtype": "Bio-Weapons"
   },
   {
     "name": "Striking Callus",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Bio-Weapons"
-    },
     "essenceCost": [
       {
         "subnumbers": [
@@ -2517,15 +2385,13 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 121
+    "page": 121,
+    "type": "Bioware",
+    "subtype": "Bio-Weapons"
   },
   {
     "name": "Tusk(s), Small",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Bio-Weapons"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -2552,15 +2418,13 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 121
+    "page": 121,
+    "type": "Bioware",
+    "subtype": "Bio-Weapons"
   },
   {
     "name": "Tusk(s), Medium",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Bio-Weapons"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -2600,15 +2464,13 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 121
+    "page": 121,
+    "type": "Bioware",
+    "subtype": "Bio-Weapons"
   },
   {
     "name": "Tusk(s), Large",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Bio-Weapons"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -2648,15 +2510,13 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 121
+    "page": 121,
+    "type": "Bioware",
+    "subtype": "Bio-Weapons"
   },
   {
     "name": "Claws, Fixed (Hands)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Bio-Weapons"
-    },
     "augmentationLimit": {
       "option": "Arm"
     },
@@ -2676,15 +2536,13 @@
     },
     "cost": [500],
     "source": "Chrome Flesh",
-    "page": 120
+    "page": 120,
+    "type": "Bioware",
+    "subtype": "Bio-Weapons"
   },
   {
     "name": "Claws, Retractable (Hands)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Bio-Weapons"
-    },
     "augmentationLimit": {
       "option": "Arm"
     },
@@ -2701,15 +2559,13 @@
     },
     "cost": [1000],
     "source": "Chrome Flesh",
-    "page": 120
+    "page": 120,
+    "type": "Bioware",
+    "subtype": "Bio-Weapons"
   },
   {
     "name": "Claws, Fixed (Feet)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Bio-Weapons"
-    },
     "augmentationLimit": {
       "option": "Leg"
     },
@@ -2726,15 +2582,13 @@
     },
     "cost": [500],
     "source": "Chrome Flesh",
-    "page": 120
+    "page": 120,
+    "type": "Bioware",
+    "subtype": "Bio-Weapons"
   },
   {
     "name": "Claws, Retractable (Feet)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Bio-Weapons"
-    },
     "augmentationLimit": {
       "option": "Leg"
     },
@@ -2751,15 +2605,13 @@
     },
     "cost": [1000],
     "source": "Chrome Flesh",
-    "page": 120
+    "page": 120,
+    "type": "Bioware",
+    "subtype": "Bio-Weapons"
   },
   {
     "name": "Striking Callus (Hands)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Bio-Weapons"
-    },
     "augmentationLimit": {
       "option": "Arm"
     },
@@ -2779,15 +2631,13 @@
     },
     "cost": [250],
     "source": "Chrome Flesh",
-    "page": 121
+    "page": 121,
+    "type": "Bioware",
+    "subtype": "Bio-Weapons"
   },
   {
     "name": "Striking Callus (Feet)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Bio-Weapons"
-    },
     "augmentationLimit": {
       "option": "Leg"
     },
@@ -2807,15 +2657,13 @@
     },
     "cost": [250],
     "source": "Chrome Flesh",
-    "page": 121
+    "page": 121,
+    "type": "Bioware",
+    "subtype": "Bio-Weapons"
   },
   {
     "name": "Tusk(s), Small",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Bio-Weapons"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -2829,15 +2677,13 @@
     },
     "cost": [100],
     "source": "Chrome Flesh",
-    "page": 121
+    "page": 121,
+    "type": "Bioware",
+    "subtype": "Bio-Weapons"
   },
   {
     "name": "Tusk(s), Medium",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Bio-Weapons"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -2852,15 +2698,13 @@
     },
     "cost": [500],
     "source": "Chrome Flesh",
-    "page": 121
+    "page": 121,
+    "type": "Bioware",
+    "subtype": "Bio-Weapons"
   },
   {
     "name": "Tusk(s), Large",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Bio-Weapons"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -2875,15 +2719,13 @@
     },
     "cost": [1000],
     "source": "Chrome Flesh",
-    "page": 121
+    "page": 121,
+    "type": "Bioware",
+    "subtype": "Bio-Weapons"
   },
   {
     "name": "Replacement Tusk(s), Small",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Bio-Weapons"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -2897,15 +2739,13 @@
     },
     "cost": [100],
     "source": "Chrome Flesh",
-    "page": 121
+    "page": 121,
+    "type": "Bioware",
+    "subtype": "Bio-Weapons"
   },
   {
     "name": "Replacement Tusk(s), Medium",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Bio-Weapons"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -2920,15 +2760,13 @@
     },
     "cost": [500],
     "source": "Chrome Flesh",
-    "page": 121
+    "page": 121,
+    "type": "Bioware",
+    "subtype": "Bio-Weapons"
   },
   {
     "name": "Electrical Discharge",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Bio-Weapons"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -2943,15 +2781,13 @@
     },
     "cost": [10000],
     "source": "Chrome Flesh",
-    "page": 120
+    "page": 120,
+    "type": "Bioware",
+    "subtype": "Bio-Weapons"
   },
   {
     "name": "Fangs",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Bio-Weapons"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -2966,15 +2802,13 @@
     },
     "cost": [500],
     "source": "Chrome Flesh",
-    "page": 120
+    "page": 120,
+    "type": "Bioware",
+    "subtype": "Bio-Weapons"
   },
   {
     "name": "Fangs (Retractable)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Bio-Weapons"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -2989,15 +2823,13 @@
     },
     "cost": [1000],
     "source": "Chrome Flesh",
-    "page": 120
+    "page": 120,
+    "type": "Bioware",
+    "subtype": "Bio-Weapons"
   },
   {
     "name": "Horns",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Bio-Weapons"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -3012,15 +2844,13 @@
     },
     "cost": [500],
     "source": "Chrome Flesh",
-    "page": 120
+    "page": 120,
+    "type": "Bioware",
+    "subtype": "Bio-Weapons"
   },
   {
     "name": "Muzzle",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Bio-Weapons"
-    },
     "essenceCost": [0.3],
     "rating": {
       "maximum": [1]
@@ -3037,15 +2867,13 @@
     },
     "cost": [2000],
     "source": "Chrome Flesh",
-    "page": 121
+    "page": 121,
+    "type": "Bioware",
+    "subtype": "Bio-Weapons"
   },
   {
     "name": "Sprayer",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Bio-Weapons"
-    },
     "essenceCost": [0.25],
     "rating": {
       "maximum": [1]
@@ -3057,15 +2885,13 @@
     },
     "cost": [4000],
     "source": "Chrome Flesh",
-    "page": 121
+    "page": 121,
+    "type": "Bioware",
+    "subtype": "Bio-Weapons"
   },
   {
     "name": "Stinger, Tiny",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Bio-Weapons"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -3079,15 +2905,13 @@
     },
     "cost": [100],
     "source": "Chrome Flesh",
-    "page": 121
+    "page": 121,
+    "type": "Bioware",
+    "subtype": "Bio-Weapons"
   },
   {
     "name": "Stinger, Medium",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Bio-Weapons"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -3102,15 +2926,13 @@
     },
     "cost": [2000],
     "source": "Chrome Flesh",
-    "page": 121
+    "page": 121,
+    "type": "Bioware",
+    "subtype": "Bio-Weapons"
   },
   {
     "name": "Stinger, Large",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Bio-Weapons"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -3125,15 +2947,13 @@
     },
     "cost": [8000],
     "source": "Chrome Flesh",
-    "page": 121
+    "page": 121,
+    "type": "Bioware",
+    "subtype": "Bio-Weapons"
   },
   {
     "name": "Bio-Tattoos",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cosmetic Bioware"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -3166,15 +2986,13 @@
       "ratingLinked": [[500], [1000], [1500]]
     },
     "source": "Chrome Flesh",
-    "page": 109
+    "page": 109,
+    "type": "Bioware",
+    "subtype": "Cosmetic Bioware"
   },
   {
     "name": "Chameleon Skin",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cosmetic Bioware"
-    },
     "essenceCost": [0.2],
     "rating": {
       "maximum": [1]
@@ -3185,15 +3003,13 @@
     },
     "cost": [2000],
     "source": "Chrome Flesh",
-    "page": 109
+    "page": 109,
+    "type": "Bioware",
+    "subtype": "Cosmetic Bioware"
   },
   {
     "name": "Chameleon Skin (Dynamic)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cosmetic Bioware"
-    },
     "essenceCost": [0.3],
     "rating": {
       "maximum": [1]
@@ -3204,15 +3020,13 @@
     },
     "cost": [4000],
     "source": "Chrome Flesh",
-    "page": 109
+    "page": 109,
+    "type": "Bioware",
+    "subtype": "Cosmetic Bioware"
   },
   {
     "name": "Clean Metabolism",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cosmetic Bioware"
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -3223,15 +3037,13 @@
     },
     "cost": [1000],
     "source": "Chrome Flesh",
-    "page": 109
+    "page": 109,
+    "type": "Bioware",
+    "subtype": "Cosmetic Bioware"
   },
   {
     "name": "Chloroplast Skin",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cosmetic Bioware"
-    },
     "essenceCost": [0.2],
     "rating": {
       "maximum": [1]
@@ -3242,15 +3054,13 @@
     },
     "cost": [2000],
     "source": "Chrome Flesh",
-    "page": 109
+    "page": 109,
+    "type": "Bioware",
+    "subtype": "Cosmetic Bioware"
   },
   {
     "name": "Dietware",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cosmetic Bioware"
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -3261,15 +3071,13 @@
     },
     "cost": [1000],
     "source": "Chrome Flesh",
-    "page": 109
+    "page": 109,
+    "type": "Bioware",
+    "subtype": "Cosmetic Bioware"
   },
   {
     "name": "Hair Growth",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cosmetic Bioware"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -3286,15 +3094,13 @@
     },
     "cost": [200],
     "source": "Chrome Flesh",
-    "page": 109
+    "page": 109,
+    "type": "Bioware",
+    "subtype": "Cosmetic Bioware"
   },
   {
     "name": "Hair Growth (Full-Body)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cosmetic Bioware"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -3308,15 +3114,13 @@
     },
     "cost": [500],
     "source": "Chrome Flesh",
-    "page": 109
+    "page": 109,
+    "type": "Bioware",
+    "subtype": "Cosmetic Bioware"
   },
   {
     "name": "Perfect Eyes",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cosmetic Bioware"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -3330,15 +3134,13 @@
     },
     "cost": [1000],
     "source": "Chrome Flesh",
-    "page": 109
+    "page": 109,
+    "type": "Bioware",
+    "subtype": "Cosmetic Bioware"
   },
   {
     "name": "Sensitive Skin",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cosmetic Bioware"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -3367,15 +3169,13 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 110
+    "page": 110,
+    "type": "Bioware",
+    "subtype": "Cosmetic Bioware"
   },
   {
     "name": "Silky Skin",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cosmetic Bioware"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -3389,15 +3189,13 @@
     },
     "cost": [500],
     "source": "Chrome Flesh",
-    "page": 110
+    "page": 110,
+    "type": "Bioware",
+    "subtype": "Cosmetic Bioware"
   },
   {
     "name": "Skin Pigmentation",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cosmetic Bioware"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -3414,15 +3212,13 @@
     },
     "cost": [200],
     "source": "Chrome Flesh",
-    "page": 111
+    "page": 111,
+    "type": "Bioware",
+    "subtype": "Cosmetic Bioware"
   },
   {
     "name": "Skin Pigmentation (Permanent)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cosmetic Bioware"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -3439,15 +3235,13 @@
     },
     "cost": [1000],
     "source": "Chrome Flesh",
-    "page": 111
+    "page": 111,
+    "type": "Bioware",
+    "subtype": "Cosmetic Bioware"
   },
   {
     "name": "Cerebellum Booster",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cultured"
-    },
     "unavailableGrades": ["Used"],
     "essenceCost": [
       {
@@ -3495,15 +3289,13 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 118
+    "page": 118,
+    "type": "Bioware",
+    "subtype": "Cultured"
   },
   {
     "name": "Boosted Reflexes",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cultured"
-    },
     "unavailableGrades": ["Used"],
     "essenceCost": [1],
     "rating": {
@@ -3525,15 +3317,13 @@
     },
     "cost": [10000],
     "source": "Chrome Flesh",
-    "page": 118
+    "page": 118,
+    "type": "Bioware",
+    "subtype": "Cultured"
   },
   {
     "name": "Knowledge Infusion",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cultured"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -3548,15 +3338,13 @@
     },
     "cost": [2000],
     "source": "Chrome Flesh",
-    "page": 118
+    "page": 118,
+    "type": "Bioware",
+    "subtype": "Cultured"
   },
   {
     "name": "Limb replacement (Finger/Toe)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cultured"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -3572,15 +3360,13 @@
     },
     "cost": [2000],
     "source": "Chrome Flesh",
-    "page": 118
+    "page": 118,
+    "type": "Bioware",
+    "subtype": "Cultured"
   },
   {
     "name": "Limb replacement (Hand/foot)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cultured"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -3596,15 +3382,13 @@
     },
     "cost": [20000],
     "source": "Chrome Flesh",
-    "page": 118
+    "page": 118,
+    "type": "Bioware",
+    "subtype": "Cultured"
   },
   {
     "name": "Limb replacement (Half arm/leg)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cultured"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -3620,15 +3404,13 @@
     },
     "cost": [40000],
     "source": "Chrome Flesh",
-    "page": 118
+    "page": 118,
+    "type": "Bioware",
+    "subtype": "Cultured"
   },
   {
     "name": "Limb replacement (Full arm/leg)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cultured"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -3644,15 +3426,13 @@
     },
     "cost": [80000],
     "source": "Chrome Flesh",
-    "page": 118
+    "page": 118,
+    "type": "Bioware",
+    "subtype": "Cultured"
   },
   {
     "name": "Neuro Retention Amplification",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cultured"
-    },
     "unavailableGrades": ["Used"],
     "essenceCost": [0.1],
     "rating": {
@@ -3664,15 +3444,13 @@
     },
     "cost": [10000],
     "source": "Chrome Flesh",
-    "page": 118
+    "page": 118,
+    "type": "Bioware",
+    "subtype": "Cultured"
   },
   {
     "name": "Reproductive Replacement, Male",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cultured"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -3687,15 +3465,13 @@
     },
     "cost": [8000],
     "source": "Chrome Flesh",
-    "page": 118
+    "page": 118,
+    "type": "Bioware",
+    "subtype": "Cultured"
   },
   {
     "name": "Reproductive Replacement, Female",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cultured"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -3710,15 +3486,13 @@
     },
     "cost": [20000],
     "source": "Chrome Flesh",
-    "page": 118
+    "page": 118,
+    "type": "Bioware",
+    "subtype": "Cultured"
   },
   {
     "name": "Trauma Damper",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cultured"
-    },
     "unavailableGrades": ["Used"],
     "essenceCost": [
       {
@@ -3766,15 +3540,13 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 119
+    "page": 119,
+    "type": "Bioware",
+    "subtype": "Cultured"
   },
   {
     "name": "Tremor Reducer",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cultured"
-    },
     "unavailableGrades": ["Used"],
     "essenceCost": [
       {
@@ -3822,15 +3594,13 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 119
+    "page": 119,
+    "type": "Bioware",
+    "subtype": "Cultured"
   },
   {
     "name": "Reception Enhancer",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cultured"
-    },
     "unavailableGrades": ["Used"],
     "essenceCost": [0.2],
     "rating": {
@@ -3842,16 +3612,13 @@
     },
     "cost": [10000],
     "source": "Chrome Flesh",
-    "page": 118
+    "page": 118,
+    "type": "Bioware",
+    "subtype": "Cultured"
   },
   {
     "name": "Genewipe",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Phenotype Adjustment",
-      "isGeneware": true
-    },
     "essenceCost": [0.2],
     "rating": {
       "maximum": [1]
@@ -3862,16 +3629,14 @@
     },
     "cost": [57000],
     "source": "Chrome Flesh",
-    "page": 157
+    "page": 157,
+    "type": "Bioware",
+    "subtype": "Phenotype Adjustment",
+    "isGeneware": true
   },
   {
     "name": "Masque",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Phenotype Adjustment",
-      "isGeneware": true
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -3882,16 +3647,14 @@
     },
     "cost": [40000],
     "source": "Chrome Flesh",
-    "page": 157
+    "page": 157,
+    "type": "Bioware",
+    "subtype": "Phenotype Adjustment",
+    "isGeneware": true
   },
   {
     "name": "Reprint",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Phenotype Adjustment",
-      "isGeneware": true
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -3905,16 +3668,14 @@
     },
     "cost": [30000],
     "source": "Chrome Flesh",
-    "page": 157
+    "page": 157,
+    "type": "Bioware",
+    "subtype": "Phenotype Adjustment",
+    "isGeneware": true
   },
   {
     "name": "Shuffle",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Phenotype Adjustment",
-      "isGeneware": true
-    },
     "essenceCost": [0.2],
     "rating": {
       "maximum": [1]
@@ -3925,16 +3686,14 @@
     },
     "cost": [20000],
     "source": "Chrome Flesh",
-    "page": 157
+    "page": 157,
+    "type": "Bioware",
+    "subtype": "Phenotype Adjustment",
+    "isGeneware": true
   },
   {
     "name": "Elastic Stomach",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Exotic Metagenetics",
-      "isGeneware": true
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -3945,16 +3704,14 @@
     },
     "cost": [10000],
     "source": "Chrome Flesh",
-    "page": 159
+    "page": 159,
+    "type": "Bioware",
+    "subtype": "Exotic Metagenetics",
+    "isGeneware": true
   },
   {
     "name": "Hyperthymesia",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Exotic Metagenetics",
-      "isGeneware": true
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -3968,16 +3725,14 @@
     },
     "cost": [15000],
     "source": "Chrome Flesh",
-    "page": 159
+    "page": 159,
+    "type": "Bioware",
+    "subtype": "Exotic Metagenetics",
+    "isGeneware": true
   },
   {
     "name": "Lung Expansion",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Exotic Metagenetics",
-      "isGeneware": true
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -3991,16 +3746,14 @@
     },
     "cost": [16500],
     "source": "Chrome Flesh",
-    "page": 159
+    "page": 159,
+    "type": "Bioware",
+    "subtype": "Exotic Metagenetics",
+    "isGeneware": true
   },
   {
     "name": "Increased Myelination",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Exotic Metagenetics",
-      "isGeneware": true
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -4014,16 +3767,14 @@
     },
     "cost": [12000],
     "source": "Chrome Flesh",
-    "page": 159
+    "page": 159,
+    "type": "Bioware",
+    "subtype": "Exotic Metagenetics",
+    "isGeneware": true
   },
   {
     "name": "Myostatin Inhibitor",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Exotic Metagenetics",
-      "isGeneware": true
-    },
     "essenceCost": [0.3],
     "rating": {
       "maximum": [1]
@@ -4042,16 +3793,14 @@
     },
     "cost": [30500],
     "source": "Chrome Flesh",
-    "page": 159
+    "page": 159,
+    "type": "Bioware",
+    "subtype": "Exotic Metagenetics",
+    "isGeneware": true
   },
   {
     "name": "Narco",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Exotic Metagenetics",
-      "isGeneware": true
-    },
     "essenceCost": [0.2],
     "rating": {
       "maximum": [1]
@@ -4074,16 +3823,14 @@
     },
     "cost": [16420],
     "source": "Chrome Flesh",
-    "page": 159
+    "page": 159,
+    "type": "Bioware",
+    "subtype": "Exotic Metagenetics",
+    "isGeneware": true
   },
   {
     "name": "Selective Hearing",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Exotic Metagenetics",
-      "isGeneware": true
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -4094,16 +3841,14 @@
     },
     "cost": [17000],
     "source": "Chrome Flesh",
-    "page": 160
+    "page": 160,
+    "type": "Bioware",
+    "subtype": "Exotic Metagenetics",
+    "isGeneware": true
   },
   {
     "name": "Thickened Digestive Tract Lining",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Exotic Metagenetics",
-      "isGeneware": true
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -4121,16 +3866,14 @@
     },
     "cost": [8000],
     "source": "Chrome Flesh",
-    "page": 160
+    "page": 160,
+    "type": "Bioware",
+    "subtype": "Exotic Metagenetics",
+    "isGeneware": true
   },
   {
     "name": "Adapsin",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Transgenics",
-      "isGeneware": true
-    },
     "essenceCost": [0.2],
     "rating": {
       "maximum": [1]
@@ -4144,16 +3887,14 @@
     },
     "cost": [30000],
     "source": "Chrome Flesh",
-    "page": 160
+    "page": 160,
+    "type": "Bioware",
+    "subtype": "Transgenics",
+    "isGeneware": true
   },
   {
     "name": "Dareadrenaline",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Transgenics",
-      "isGeneware": true
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -4192,16 +3933,14 @@
     },
     "cost": [61000],
     "source": "Chrome Flesh",
-    "page": 160
+    "page": 160,
+    "type": "Bioware",
+    "subtype": "Transgenics",
+    "isGeneware": true
   },
   {
     "name": "Double Elastin",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Transgenics",
-      "isGeneware": true
-    },
     "essenceCost": [0.2],
     "rating": {
       "maximum": [1]
@@ -4215,16 +3954,14 @@
     },
     "cost": [18000],
     "source": "Chrome Flesh",
-    "page": 160
+    "page": 160,
+    "type": "Bioware",
+    "subtype": "Transgenics",
+    "isGeneware": true
   },
   {
     "name": "Hyper-Glucagon",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Transgenics",
-      "isGeneware": true
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -4238,16 +3975,14 @@
     },
     "cost": [8000],
     "source": "Chrome Flesh",
-    "page": 160
+    "page": 160,
+    "type": "Bioware",
+    "subtype": "Transgenics",
+    "isGeneware": true
   },
   {
     "name": "Magnesense",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Transgenics",
-      "isGeneware": true
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -4258,16 +3993,14 @@
     },
     "cost": [7000],
     "source": "Chrome Flesh",
-    "page": 160
+    "page": 160,
+    "type": "Bioware",
+    "subtype": "Transgenics",
+    "isGeneware": true
   },
   {
     "name": "Neo-EPO",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Transgenics",
-      "isGeneware": true
-    },
     "essenceCost": [0.2],
     "rating": {
       "maximum": [1]
@@ -4290,16 +4023,14 @@
     },
     "cost": [38000],
     "source": "Chrome Flesh",
-    "page": 160
+    "page": 160,
+    "type": "Bioware",
+    "subtype": "Transgenics",
+    "isGeneware": true
   },
   {
     "name": "PuSHed",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Transgenics",
-      "isGeneware": true
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -4310,16 +4041,14 @@
     },
     "cost": [62000],
     "source": "Chrome Flesh",
-    "page": 160
+    "page": 160,
+    "type": "Bioware",
+    "subtype": "Transgenics",
+    "isGeneware": true
   },
   {
     "name": "Qualia",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Transgenics",
-      "isGeneware": true
-    },
     "essenceCost": [0.4],
     "rating": {
       "maximum": [1]
@@ -4330,16 +4059,14 @@
     },
     "cost": [65000],
     "source": "Chrome Flesh",
-    "page": 161
+    "page": 161,
+    "type": "Bioware",
+    "subtype": "Transgenics",
+    "isGeneware": true
   },
   {
     "name": "Reakt",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Transgenics",
-      "isGeneware": true
-    },
     "essenceCost": [0.4],
     "rating": {
       "maximum": [1]
@@ -4353,16 +4080,14 @@
     },
     "cost": [73000],
     "source": "Chrome Flesh",
-    "page": 161
+    "page": 161,
+    "type": "Bioware",
+    "subtype": "Transgenics",
+    "isGeneware": true
   },
   {
     "name": "Skeletal Pneumaticity",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Transgenics",
-      "isGeneware": true
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -4373,16 +4098,14 @@
     },
     "cost": [9000],
     "source": "Chrome Flesh",
-    "page": 161
+    "page": 161,
+    "type": "Bioware",
+    "subtype": "Transgenics",
+    "isGeneware": true
   },
   {
     "name": "Solus",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Transgenics",
-      "isGeneware": true
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -4396,16 +4119,14 @@
     },
     "cost": [8000],
     "source": "Chrome Flesh",
-    "page": 161
+    "page": 161,
+    "type": "Bioware",
+    "subtype": "Transgenics",
+    "isGeneware": true
   },
   {
     "name": "Synaptic Acceleration",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Transgenics",
-      "isGeneware": true
-    },
     "essenceCost": [0.4],
     "rating": {
       "maximum": [1]
@@ -4427,16 +4148,14 @@
     },
     "cost": [78000],
     "source": "Chrome Flesh",
-    "page": 162
+    "page": 162,
+    "type": "Bioware",
+    "subtype": "Transgenics",
+    "isGeneware": true
   },
   {
     "name": "Synch",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Transgenics",
-      "isGeneware": true
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -4447,16 +4166,14 @@
     },
     "cost": [14000],
     "source": "Chrome Flesh",
-    "page": 162
+    "page": 162,
+    "type": "Bioware",
+    "subtype": "Transgenics",
+    "isGeneware": true
   },
   {
     "name": "Tetrachromacy",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Transgenics",
-      "isGeneware": true
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -4467,16 +4184,14 @@
     },
     "cost": [8000],
     "source": "Chrome Flesh",
-    "page": 161
+    "page": 161,
+    "type": "Bioware",
+    "subtype": "Transgenics",
+    "isGeneware": true
   },
   {
     "name": "Vasocon",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Transgenics",
-      "isGeneware": true
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -4487,16 +4202,14 @@
     },
     "cost": [15000],
     "source": "Chrome Flesh",
-    "page": 161
+    "page": 161,
+    "type": "Bioware",
+    "subtype": "Transgenics",
+    "isGeneware": true
   },
   {
     "name": "Allergen Tolerance",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Environmental Microadaptation",
-      "isGeneware": true
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -4507,16 +4220,14 @@
     },
     "cost": [20000],
     "source": "Chrome Flesh",
-    "page": 163
+    "page": 163,
+    "type": "Bioware",
+    "subtype": "Environmental Microadaptation",
+    "isGeneware": true
   },
   {
     "name": "Cold Adaptation",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Environmental Microadaptation",
-      "isGeneware": true
-    },
     "essenceCost": [0.5],
     "rating": {
       "maximum": [1]
@@ -4530,16 +4241,14 @@
     },
     "cost": [8000],
     "source": "Chrome Flesh",
-    "page": 163
+    "page": 163,
+    "type": "Bioware",
+    "subtype": "Environmental Microadaptation",
+    "isGeneware": true
   },
   {
     "name": "Cryo Tolerance",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Environmental Microadaptation",
-      "isGeneware": true
-    },
     "essenceCost": [0.5],
     "rating": {
       "maximum": [1]
@@ -4550,16 +4259,14 @@
     },
     "cost": [50000],
     "source": "Chrome Flesh",
-    "page": 163
+    "page": 163,
+    "type": "Bioware",
+    "subtype": "Environmental Microadaptation",
+    "isGeneware": true
   },
   {
     "name": "Heat Adaptation",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Environmental Microadaptation",
-      "isGeneware": true
-    },
     "essenceCost": [0.5],
     "rating": {
       "maximum": [1]
@@ -4573,16 +4280,14 @@
     },
     "cost": [8000],
     "source": "Chrome Flesh",
-    "page": 163
+    "page": 163,
+    "type": "Bioware",
+    "subtype": "Environmental Microadaptation",
+    "isGeneware": true
   },
   {
     "name": "Low Oxygen Adaptation",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Environmental Microadaptation",
-      "isGeneware": true
-    },
     "essenceCost": [0.5],
     "rating": {
       "maximum": [1]
@@ -4596,16 +4301,14 @@
     },
     "cost": [8000],
     "source": "Chrome Flesh",
-    "page": 163
+    "page": 163,
+    "type": "Bioware",
+    "subtype": "Environmental Microadaptation",
+    "isGeneware": true
   },
   {
     "name": "Microgravity Adaptation",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Environmental Microadaptation",
-      "isGeneware": true
-    },
     "essenceCost": [0.5],
     "rating": {
       "maximum": [1]
@@ -4616,16 +4319,14 @@
     },
     "cost": [30000],
     "source": "Chrome Flesh",
-    "page": 163
+    "page": 163,
+    "type": "Bioware",
+    "subtype": "Environmental Microadaptation",
+    "isGeneware": true
   },
   {
     "name": "Pollution Tolerance",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Environmental Microadaptation",
-      "isGeneware": true
-    },
     "essenceCost": [0.5],
     "rating": {
       "maximum": [1]
@@ -4641,16 +4342,14 @@
     },
     "cost": [15000],
     "source": "Chrome Flesh",
-    "page": 163
+    "page": 163,
+    "type": "Bioware",
+    "subtype": "Environmental Microadaptation",
+    "isGeneware": true
   },
   {
     "name": "Radiation Tolerance",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Environmental Microadaptation",
-      "isGeneware": true
-    },
     "essenceCost": [0.5],
     "rating": {
       "maximum": [1]
@@ -4664,16 +4363,14 @@
     },
     "cost": [15000],
     "source": "Chrome Flesh",
-    "page": 164
+    "page": 164,
+    "type": "Bioware",
+    "subtype": "Environmental Microadaptation",
+    "isGeneware": true
   },
   {
     "name": "Transgenic Alteration",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Transgenic Alteration",
-      "isGeneware": true
-    },
     "essenceCost": [0.3],
     "rating": {
       "maximum": [1]
@@ -4692,16 +4389,14 @@
       }
     },
     "source": "Chrome Flesh",
-    "page": 164
+    "page": 164,
+    "type": "Bioware",
+    "subtype": "Transgenic Alteration",
+    "isGeneware": true
   },
   {
     "name": "Control Rig Optimization",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Complimentary Genetics",
-      "isGeneware": true
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -4712,16 +4407,14 @@
     },
     "cost": [4600],
     "source": "Chrome Flesh",
-    "page": 165
+    "page": 165,
+    "type": "Bioware",
+    "subtype": "Complimentary Genetics",
+    "isGeneware": true
   },
   {
     "name": "Reaction Optimization",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Complimentary Genetics",
-      "isGeneware": true
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -4737,16 +4430,14 @@
     },
     "cost": [6600],
     "source": "Chrome Flesh",
-    "page": 165
+    "page": 165,
+    "type": "Bioware",
+    "subtype": "Complimentary Genetics",
+    "isGeneware": true
   },
   {
     "name": "Reflex Recorder Optimization",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Complimentary Genetics",
-      "isGeneware": true
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -4757,16 +4448,14 @@
     },
     "cost": [3800],
     "source": "Chrome Flesh",
-    "page": 165
+    "page": 165,
+    "type": "Bioware",
+    "subtype": "Complimentary Genetics",
+    "isGeneware": true
   },
   {
     "name": "Wired Reflex Optimization",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Complimentary Genetics",
-      "isGeneware": true
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -4777,16 +4466,14 @@
     },
     "cost": [9000],
     "source": "Chrome Flesh",
-    "page": 165
+    "page": 165,
+    "type": "Bioware",
+    "subtype": "Complimentary Genetics",
+    "isGeneware": true
   },
   {
     "name": "Adrenaline Pump Optimization",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Complimentary Genetics",
-      "isGeneware": true
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -4797,16 +4484,14 @@
     },
     "cost": [6000],
     "source": "Chrome Flesh",
-    "page": 165
+    "page": 165,
+    "type": "Bioware",
+    "subtype": "Complimentary Genetics",
+    "isGeneware": true
   },
   {
     "name": "Enhanced Symbiosis",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Complimentary Genetics",
-      "isGeneware": true
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -4817,16 +4502,14 @@
     },
     "cost": [4000],
     "source": "Chrome Flesh",
-    "page": 165
+    "page": 165,
+    "type": "Bioware",
+    "subtype": "Complimentary Genetics",
+    "isGeneware": true
   },
   {
     "name": "Genetic Optimization (Body)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Phenotype Adjustment",
-      "isGeneware": true
-    },
     "essenceCost": [0.3],
     "rating": {
       "maximum": [1]
@@ -4837,16 +4520,14 @@
     },
     "cost": [47000],
     "source": "Chrome Flesh",
-    "page": 157
+    "page": 157,
+    "type": "Bioware",
+    "subtype": "Phenotype Adjustment",
+    "isGeneware": true
   },
   {
     "name": "Genetic Optimization (Agility)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Phenotype Adjustment",
-      "isGeneware": true
-    },
     "essenceCost": [0.3],
     "rating": {
       "maximum": [1]
@@ -4857,16 +4538,14 @@
     },
     "cost": [47000],
     "source": "Chrome Flesh",
-    "page": 157
+    "page": 157,
+    "type": "Bioware",
+    "subtype": "Phenotype Adjustment",
+    "isGeneware": true
   },
   {
     "name": "Genetic Optimization (Reaction)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Phenotype Adjustment",
-      "isGeneware": true
-    },
     "essenceCost": [0.3],
     "rating": {
       "maximum": [1]
@@ -4877,16 +4556,14 @@
     },
     "cost": [47000],
     "source": "Chrome Flesh",
-    "page": 157
+    "page": 157,
+    "type": "Bioware",
+    "subtype": "Phenotype Adjustment",
+    "isGeneware": true
   },
   {
     "name": "Genetic Optimization (Strength)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Phenotype Adjustment",
-      "isGeneware": true
-    },
     "essenceCost": [0.3],
     "rating": {
       "maximum": [1]
@@ -4897,16 +4574,14 @@
     },
     "cost": [47000],
     "source": "Chrome Flesh",
-    "page": 157
+    "page": 157,
+    "type": "Bioware",
+    "subtype": "Phenotype Adjustment",
+    "isGeneware": true
   },
   {
     "name": "Genetic Optimization (Charisma)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Phenotype Adjustment",
-      "isGeneware": true
-    },
     "essenceCost": [0.3],
     "rating": {
       "maximum": [1]
@@ -4917,16 +4592,14 @@
     },
     "cost": [47000],
     "source": "Chrome Flesh",
-    "page": 157
+    "page": 157,
+    "type": "Bioware",
+    "subtype": "Phenotype Adjustment",
+    "isGeneware": true
   },
   {
     "name": "Genetic Optimization (Intuition)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Phenotype Adjustment",
-      "isGeneware": true
-    },
     "essenceCost": [0.3],
     "rating": {
       "maximum": [1]
@@ -4937,16 +4610,14 @@
     },
     "cost": [47000],
     "source": "Chrome Flesh",
-    "page": 157
+    "page": 157,
+    "type": "Bioware",
+    "subtype": "Phenotype Adjustment",
+    "isGeneware": true
   },
   {
     "name": "Genetic Optimization (Logic)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Phenotype Adjustment",
-      "isGeneware": true
-    },
     "essenceCost": [0.3],
     "rating": {
       "maximum": [1]
@@ -4957,16 +4628,14 @@
     },
     "cost": [47000],
     "source": "Chrome Flesh",
-    "page": 157
+    "page": 157,
+    "type": "Bioware",
+    "subtype": "Phenotype Adjustment",
+    "isGeneware": true
   },
   {
     "name": "Genetic Optimization (Willpower)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Phenotype Adjustment",
-      "isGeneware": true
-    },
     "essenceCost": [0.3],
     "rating": {
       "maximum": [1]
@@ -4977,16 +4646,14 @@
     },
     "cost": [47000],
     "source": "Chrome Flesh",
-    "page": 157
+    "page": 157,
+    "type": "Bioware",
+    "subtype": "Phenotype Adjustment",
+    "isGeneware": true
   },
   {
     "name": "Cosmetic Alteration",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Phenotype Adjustment",
-      "isGeneware": true
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -5003,16 +4670,14 @@
     },
     "cost": [35000],
     "source": "Chrome Flesh",
-    "page": 158
+    "page": 158,
+    "type": "Bioware",
+    "subtype": "Phenotype Adjustment",
+    "isGeneware": true
   },
   {
     "name": "Print Removal",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Phenotype Adjustment",
-      "isGeneware": true
-    },
     "essenceCost": [0.1],
     "rating": {
       "maximum": [1]
@@ -5023,16 +4688,14 @@
     },
     "cost": [18000],
     "source": "Chrome Flesh",
-    "page": 158
+    "page": 158,
+    "type": "Bioware",
+    "subtype": "Phenotype Adjustment",
+    "isGeneware": true
   },
   {
     "name": "Metaposeur",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Phenotype Adjustment",
-      "isGeneware": true
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -5046,16 +4709,14 @@
     },
     "cost": [38000],
     "source": "Chrome Flesh",
-    "page": 158
+    "page": 158,
+    "type": "Bioware",
+    "subtype": "Phenotype Adjustment",
+    "isGeneware": true
   },
   {
     "name": "Immunization",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Immunisation",
-      "isGeneware": true
-    },
     "augmentationLimit": {
       "option": "Unaugmented Body Score"
     },
@@ -5072,16 +4733,14 @@
     },
     "cost": [20000],
     "source": "Chrome Flesh",
-    "page": 164
+    "page": 164,
+    "type": "Bioware",
+    "subtype": "Immunisation",
+    "isGeneware": true
   },
   {
     "name": "Therapeutic Genetics",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Genetic Restoration",
-      "isGeneware": true
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -5098,16 +4757,14 @@
     },
     "cost": [90000],
     "source": "Chrome Flesh",
-    "page": 156
+    "page": 156,
+    "type": "Bioware",
+    "subtype": "Genetic Restoration",
+    "isGeneware": true
   },
   {
     "name": "Leónization",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Genetic Restoration",
-      "isGeneware": true
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -5121,16 +4778,14 @@
     },
     "cost": [2000000],
     "source": "Chrome Flesh",
-    "page": 156
+    "page": 156,
+    "type": "Bioware",
+    "subtype": "Genetic Restoration",
+    "isGeneware": true
   },
   {
     "name": "Lifespan Extension",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Genetic Restoration",
-      "isGeneware": true
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -5144,16 +4799,14 @@
     },
     "cost": [300000],
     "source": "Chrome Flesh",
-    "page": 157
+    "page": 157,
+    "type": "Bioware",
+    "subtype": "Genetic Restoration",
+    "isGeneware": true
   },
   {
     "name": "Physical Vigor",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Genetic Restoration",
-      "isGeneware": true
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -5167,16 +4820,14 @@
     },
     "cost": [250000],
     "source": "Chrome Flesh",
-    "page": 156
+    "page": 156,
+    "type": "Bioware",
+    "subtype": "Genetic Restoration",
+    "isGeneware": true
   },
   {
     "name": "Augmented Healing",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Genetic Restoration",
-      "isGeneware": true
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -5190,16 +4841,14 @@
     },
     "cost": [35000],
     "source": "Chrome Flesh",
-    "page": 156
+    "page": 156,
+    "type": "Bioware",
+    "subtype": "Genetic Restoration",
+    "isGeneware": true
   },
   {
     "name": "Cellular Repair",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Genetic Restoration",
-      "isGeneware": true
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -5213,16 +4862,14 @@
     },
     "cost": [65000],
     "source": "Chrome Flesh",
-    "page": 156
+    "page": 156,
+    "type": "Bioware",
+    "subtype": "Genetic Restoration",
+    "isGeneware": true
   },
   {
     "name": "Revitilization",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Genetic Restoration",
-      "isGeneware": true
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -5236,15 +4883,14 @@
     },
     "cost": [110000],
     "source": "Chrome Flesh",
-    "page": 157
+    "page": 157,
+    "type": "Bioware",
+    "subtype": "Genetic Restoration",
+    "isGeneware": true
   },
   {
     "name": "Cleaner Leech",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Symbionts"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -5262,15 +4908,13 @@
     },
     "cost": [100],
     "source": "Chrome Flesh",
-    "page": 123
+    "page": 123,
+    "type": "Bioware",
+    "subtype": "Symbionts"
   },
   {
     "name": "Booster Endosont",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Symbionts"
-    },
     "essenceCost": [0.2],
     "rating": {
       "maximum": [1]
@@ -5281,15 +4925,13 @@
     },
     "cost": [10000],
     "source": "Chrome Flesh",
-    "page": 123
+    "page": 123,
+    "type": "Bioware",
+    "subtype": "Symbionts"
   },
   {
     "name": "Digester Endosont",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Symbionts"
-    },
     "essenceCost": [0.2],
     "rating": {
       "maximum": [1]
@@ -5303,15 +4945,13 @@
     },
     "cost": [10000],
     "source": "Chrome Flesh",
-    "page": 123
+    "page": 123,
+    "type": "Bioware",
+    "subtype": "Symbionts"
   },
   {
     "name": "Electroreceptor Endosont",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Symbionts"
-    },
     "essenceCost": [0.2],
     "rating": {
       "maximum": [1]
@@ -5322,15 +4962,13 @@
     },
     "cost": [10000],
     "source": "Chrome Flesh",
-    "page": 123
+    "page": 123,
+    "type": "Bioware",
+    "subtype": "Symbionts"
   },
   {
     "name": "Mild Allergy Resistance",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Symbionts"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -5344,15 +4982,13 @@
     },
     "cost": [10000],
     "source": "Chrome Flesh",
-    "page": 123
+    "page": 123,
+    "type": "Bioware",
+    "subtype": "Symbionts"
   },
   {
     "name": "Moderate Allergy Resistance",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Symbionts"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -5366,15 +5002,13 @@
     },
     "cost": [30000],
     "source": "Chrome Flesh",
-    "page": 123
+    "page": 123,
+    "type": "Bioware",
+    "subtype": "Symbionts"
   },
   {
     "name": "Severe Allergy Resistance",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Symbionts"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -5388,15 +5022,13 @@
     },
     "cost": [50000],
     "source": "Chrome Flesh",
-    "page": 123
+    "page": 123,
+    "type": "Bioware",
+    "subtype": "Symbionts"
   },
   {
     "name": "Lactose Tolerance",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Symbionts"
-    },
     "essenceCost": [0],
     "rating": {
       "maximum": [1]
@@ -5407,15 +5039,13 @@
     },
     "cost": [50],
     "source": "Chrome Flesh",
-    "page": 123
+    "page": 123,
+    "type": "Bioware",
+    "subtype": "Symbionts"
   },
   {
     "name": "Mender Endosont",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Symbionts"
-    },
     "essenceCost": [0.2],
     "rating": {
       "maximum": [1]
@@ -5430,15 +5060,13 @@
     },
     "cost": [30000],
     "source": "Chrome Flesh",
-    "page": 124
+    "page": 124,
+    "type": "Bioware",
+    "subtype": "Symbionts"
   },
   {
     "name": "Slimworm",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Symbionts"
-    },
     "essenceCost": [0.2],
     "rating": {
       "maximum": [1]
@@ -5452,15 +5080,13 @@
     },
     "cost": [1000],
     "source": "Chrome Flesh",
-    "page": 124
+    "page": 124,
+    "type": "Bioware",
+    "subtype": "Symbionts"
   },
   {
     "name": "Stalwart Endosont",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Symbionts"
-    },
     "essenceCost": [0.2],
     "rating": {
       "maximum": [1]
@@ -5471,15 +5097,13 @@
     },
     "cost": [10000],
     "source": "Chrome Flesh",
-    "page": 124
+    "page": 124,
+    "type": "Bioware",
+    "subtype": "Symbionts"
   },
   {
     "name": "Bilateral Coordination Co-processor",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "essenceCost": [0.2],
     "rating": {
       "maximum": [1]
@@ -5493,15 +5117,13 @@
     },
     "cost": [4500],
     "source": "Hard Targets",
-    "page": 185
+    "page": 185,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Bone Spike (No Bone Density)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Bio-Weapons"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -5516,15 +5138,13 @@
     },
     "cost": [20000],
     "source": "Hard Targets",
-    "page": 185
+    "page": 185,
+    "type": "Bioware",
+    "subtype": "Bio-Weapons"
   },
   {
     "name": "Bone Spike (Bone Density 2-3)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Bio-Weapons"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -5539,15 +5159,13 @@
     },
     "cost": [20000],
     "source": "Hard Targets",
-    "page": 185
+    "page": 185,
+    "type": "Bioware",
+    "subtype": "Bio-Weapons"
   },
   {
     "name": "Bone Spike (Bone Density 4)",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Bio-Weapons"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -5562,15 +5180,13 @@
     },
     "cost": [20000],
     "source": "Hard Targets",
-    "page": 185
+    "page": 185,
+    "type": "Bioware",
+    "subtype": "Bio-Weapons"
   },
   {
     "name": "Spur Pocket",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Cultured"
-    },
     "augmentationLimit": {
       "option": "N/A"
     },
@@ -5585,15 +5201,13 @@
     },
     "cost": [8000],
     "source": "Hard Targets",
-    "page": 185
+    "page": 185,
+    "type": "Bioware",
+    "subtype": "Cultured"
   },
   {
     "name": "MCT BioLink",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "essenceCost": [0.5],
     "rating": {
       "maximum": [1]
@@ -5604,15 +5218,13 @@
     },
     "cost": [15000],
     "source": "Kill Code",
-    "page": 67
+    "page": 67,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Vocal Expansion",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "augmentationLimit": 1,
     "unavailableGrades": ["Used", "Standard", "Alphaware", "Omegaware"],
     "essenceCost": [0.1],
@@ -5649,15 +5261,13 @@
       }
     ],
     "source": "No Future",
-    "page": 175
+    "page": 175,
+    "type": "Bioware",
+    "subtype": "Basic"
   },
   {
     "name": "Adrenaline Filter",
     "description": "",
-    "typeInformation": {
-      "type": "Bioware",
-      "subtype": "Basic"
-    },
     "augmentationLimit": 1,
     "essenceCost": [
       {
@@ -5705,6 +5315,8 @@
       }
     ],
     "source": "Dark Terrors",
-    "page": 163
+    "page": 163,
+    "type": "Bioware",
+    "subtype": "Basic"
   }
 ]

@@ -35,7 +35,7 @@ export enum gearTypeEnum {
   OtherGear = "Other Gear",
   Augmentations = "Augmentations",
   MagicalEquipment = "Magical Equipment",
-  VehiclesAndDrones = "Vehicles and Drones",
+  Vehicles = "Vehicles",
 }
 
 export enum weaponTypeEnum {
@@ -412,15 +412,6 @@ export enum matrixWareAccessoryTypeEnum {
   BreakingAndEnteringDevice = "Breaking And Entering Device",
 }
 
-export enum otherWareTypeEnum {
-  IndustrialChemical = "Industrial Chemical",
-  SurvivalGear = "Survival Gear",
-  GrappleGun = "Grapple Gun",
-  Biotech = "Biotech",
-  DocWagonContract = "DocWagon Contract",
-  SlapPatch = "Slap Patch",
-}
-
 export enum augmentationTypeEnum {
   Cyberware = "Cyberware",
   Bioware = "Bioware",
@@ -541,7 +532,7 @@ export enum formulaTypeEnum {
   Spell = "Spell",
 }
 
-export enum vehicleDroneTypeEnum {
+export enum vehicleTypeEnum {
   Groundcraft = "Groundcraft",
   Watercraft = "Watercraft",
   Aircraft = "Aircraft",
@@ -776,7 +767,12 @@ export enum weaponMountControlEnum {
   ArmoredManual = "Armored Manual",
 }
 
-export enum vehicleModCategoryEnum {
+export enum vehicleModTypeEnum {
+  Vehicle = "Vehicle",
+  WeaponMount = "Weapon Mount",
+}
+
+export enum vehicleModSubtypeEnum {
   Body = "Body",
   Cosmetic = "Cosmetic",
   Electromagnetic = "Electromagnetic",
