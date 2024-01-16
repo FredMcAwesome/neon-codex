@@ -27,20 +27,22 @@ import {
 } from "../models/gear/augmentationGear/augmentationModel.js";
 import { getAugmentations } from "../seeds/newSeeds/augmentationsSeed.js";
 import { getDrugComponents, getDrugs } from "../seeds/newSeeds/drugSeed.js";
-import { Drugs } from "../models/gear/otherGear/DrugModel.js";
-import { DrugComponents } from "../models/gear/otherGear/DrugComponentModel.js";
+import { Drugs } from "../models/gear/otherGear/drugModel.js";
+import { DrugComponents } from "../models/gear/otherGear/drugComponentModel.js";
 import { getVehicles } from "../seeds/newSeeds/vehicleSeed.js";
 import {
   Aircrafts,
   Drones,
   Groundcrafts,
   Watercrafts,
-} from "../models/gear/riggerGear/VehicleModel.js";
+} from "../models/gear/riggerGear/vehicleModel.js";
 import { getVehicleModifications } from "../seeds/newSeeds/vehicleModificationSeed.js";
 import {
   VehicleChasisMods,
   WeaponMountMods,
-} from "../models/gear/riggerGear/VehicleModificationModel.js";
+} from "../models/gear/riggerGear/vehicleModificationModel.js";
+import { Gears } from "../models/gear/otherGear/gearModel.js";
+import { getGears } from "../seeds/newSeeds/gearSeed.js";
 
 export class GearSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
@@ -58,6 +60,7 @@ export class GearSeeder extends Seeder {
     const stagedDrugComponents = getDrugComponents();
     const stagedVehicles = getVehicles();
     const stagedVehicleModifications = getVehicleModifications();
+    const stagedGears = getGears();
 
     stagedSkills.forEach((skill) => {
       em.create(Skills, skill);
@@ -167,6 +170,11 @@ export class GearSeeder extends Seeder {
       }
     }
     console.log("Vehicle Modifications created");
+
+    for (const gear of stagedGears) {
+      em.create(Gears, gear);
+    }
+    console.log("Gears created");
 
     // Connect references that "may" need things in the database first
     // Weapons referring to other weapons

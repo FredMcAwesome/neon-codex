@@ -160,15 +160,7 @@ export function ParseWeapons() {
       return found;
     }
   );
-  const weaponListNoAmmo = englishWeaponList.filter((weapon) => {
-    return (
-      // don't include minigrenades, torpedos, missiles, or rockets. These are ammo
-      !weapon.name.toLowerCase().includes("minigrenade") &&
-      !weapon.name.toLowerCase().includes("torpedo") &&
-      !weapon.name.toLowerCase().includes("missile") &&
-      !weapon.name.toLowerCase().includes("rocket")
-    );
-  });
+  const weaponListNoAmmo = englishWeaponList;
 
   const weaponListConverted: WeaponSummaryListType = weaponListNoAmmo
     // .filter((weapon) => weapon.name === "Ares Thunderstruck Gauss Rifle")
@@ -286,6 +278,9 @@ function convertWeapon(weapon: WeaponXmlType) {
   const ranges = unfilteredRanges.map((range) => {
     if (range === "Heavy Machine Guns" || range === "Medium Machine Guns") {
       return "Medium/Heavy Machinegun";
+    }
+    if (range === "Gear") {
+      return "Grenade Launchers";
     }
     return range;
   });

@@ -10,7 +10,7 @@ import {
   Groundcrafts,
   Vehicles,
   Watercrafts,
-} from "../../models/gear/riggerGear/VehicleModel.js";
+} from "../../models/gear/riggerGear/vehicleModel.js";
 import { vehicleTypeEnum } from "@shadowrun/common";
 
 export const getVehicles = function () {

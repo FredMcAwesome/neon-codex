@@ -790,7 +790,7 @@ export const convertWeaponSkill = function (
     assert(specialisations === undefined || specialisations.length === 0);
     specialisations = [useSkillSpecialisation];
   }
-  if (useSkill) {
+  if (useSkill !== undefined) {
     return { skill: useSkill, specialisations: specialisations };
   }
   switch (category) {
@@ -833,6 +833,8 @@ export const convertWeaponSkill = function (
       specialisations = ["Laser Weapons"];
       break;
 
+    // Explosive Ammo skill defaults here though unused
+    case weaponXmlSubtypeEnum.Gear:
     case weaponXmlSubtypeEnum.AssaultCannons:
     case weaponXmlSubtypeEnum.GrenadeLaunchers:
     case weaponXmlSubtypeEnum.MissileLaunchers:
@@ -911,11 +913,15 @@ export const getWeaponTypeInformation = function (weapon: WeaponXmlType) {
       weaponSubtype = firearmWeaponTypeEnum.Flamethrowers;
       break;
     case weaponXmlSubtypeEnum.Gear:
-      assert(
-        !weapon.name.toLowerCase().includes("missile") &&
-          !weapon.name.toLowerCase().includes("rocket")
-      );
-      if (weapon.name.toLowerCase().includes("grenade")) {
+      if (
+        weapon.name.toLowerCase().includes("missile") ||
+        weapon.name.toLowerCase().includes("rocket") ||
+        weapon.name.toLowerCase().includes("torpedo") ||
+        weapon.name.toLowerCase().includes("minigrenade")
+      ) {
+        weaponType = weaponTypeEnum.Explosive;
+        weaponSubtype = explosiveTypeEnum.Rocket;
+      } else if (weapon.name.toLowerCase().includes("grenade")) {
         weaponType = weaponTypeEnum.Explosive;
         weaponSubtype = explosiveTypeEnum.Grenade;
       } else {

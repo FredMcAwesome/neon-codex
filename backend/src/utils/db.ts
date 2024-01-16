@@ -20,8 +20,8 @@ import { ArmourModifications } from "@shadowrun/database/build/models/gear/comba
 import { Ammunitions } from "@shadowrun/database/build/models/gear/combatGear/ammunitionModel.js";
 import { MatrixWares } from "@shadowrun/database/build/models/gear/electronicsGear/matrixWareModel.js";
 import { MatrixWareAccessories } from "@shadowrun/database/build/models/gear/electronicsGear/matrixWareAccessoryModel.js";
-import { OtherWares } from "@shadowrun/database/build/models/gear/otherGear/DrugModel.js";
-import { Vehicles } from "@shadowrun/database/build/models/gear/riggerGear/VehicleModel.js";
+import { OtherWares } from "@shadowrun/database/build/models/gear/otherGear/drugModel.js";
+import { Vehicles } from "@shadowrun/database/build/models/gear/riggerGear/vehicleModel.js";
 
 interface IDatabase {
   orm: MikroORM;

@@ -7,7 +7,6 @@
     "includedWeapon": {
       "name": "Throwing Syringe"
     },
-    "quantity": 1,
     "availability": {
       "rating": [6],
       "restriction": "Forbidden"
@@ -21,7 +20,6 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 1,
     "ammoForWeaponType": [
       {
         "type": "Projectile",
@@ -41,7 +39,6 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 12,
-    "quantity": 1,
     "weaponBonus": {
       "ap": -2
     },
@@ -1729,7 +1726,6 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 12,
-    "quantity": 1,
     "ammoForWeaponType": [
       {
         "type": "Projectile",
@@ -1765,7 +1761,6 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 12,
-    "quantity": 1,
     "ammoForWeaponType": [
       {
         "type": "Projectile",
@@ -1809,7 +1804,6 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 1,
     "ammoForWeaponType": [
       {
         "type": "Projectile",
@@ -1829,7 +1823,6 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 1,
     "ammoForWeaponType": [
       {
         "type": "Projectile",
@@ -1852,7 +1845,6 @@
     "includedWeapon": {
       "name": "Throwing Knife"
     },
-    "quantity": 1,
     "availability": {
       "rating": [4],
       "restriction": "Restricted"
@@ -1869,7 +1861,6 @@
     "includedWeapon": {
       "name": "Shuriken"
     },
-    "quantity": 1,
     "availability": {
       "rating": [4],
       "restriction": "Restricted"
@@ -1883,7 +1874,6 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 12,
-    "quantity": 1,
     "weaponBonus": {
       "damage": [
         {
@@ -1939,7 +1929,6 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 12,
-    "quantity": 1,
     "weaponBonus": {
       "ap": -1,
       "damage": [
@@ -1997,7 +1986,6 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 12,
-    "quantity": 1,
     "weaponBonus": {
       "ap": 2,
       "damage": [
@@ -2052,7 +2040,6 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 12,
-    "quantity": 1,
     "weaponBonus": {
       "apReplace": -6,
       "damageReplace": "8P",
@@ -2097,7 +2084,6 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 12,
-    "quantity": 1,
     "weaponBonus": {
       "ap": 6,
       "damage": [
@@ -2152,7 +2138,6 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 12,
-    "quantity": 1,
     "weaponBonus": {
       "ap": -5,
       "damageReplace": "8S(e)",
@@ -2205,7 +2190,6 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 12,
-    "quantity": 1,
     "weaponBonus": {
       "ap": -5,
       "damageReplace": "12S(e)",
@@ -2250,7 +2234,6 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 1,
     "weaponBonus": {
       "damage": [
         {
@@ -2278,7 +2261,6 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 1,
     "weaponBonus": {
       "ap": -1,
       "damage": [
@@ -2308,7 +2290,6 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 1,
     "weaponBonus": {
       "ap": 2,
       "damage": [
@@ -2338,7 +2319,6 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 1,
     "weaponBonus": {
       "accuracy": -1
     },
@@ -2361,7 +2341,6 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 1,
     "weaponBonus": {
       "ap": 6,
       "damage": [
@@ -2391,7 +2370,6 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 1,
     "weaponBonus": {
       "ap": -5,
       "damageReplace": "8S(e)"
@@ -2415,7 +2393,6 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 1,
     "weaponBonus": {
       "ap": -5,
       "damageReplace": "12S(e)"
@@ -2442,7 +2419,6 @@
     "includedWeapon": {
       "name": "Boomerang"
     },
-    "quantity": 1,
     "availability": {
       "rating": [4],
       "restriction": "Legal"
@@ -2459,7 +2435,6 @@
     "includedWeapon": {
       "name": "Horizon BoomerEye"
     },
-    "quantity": 1,
     "availability": {
       "rating": [4],
       "restriction": "Legal"
@@ -2476,7 +2451,6 @@
     "includedWeapon": {
       "name": "Harpoon"
     },
-    "quantity": 1,
     "ammoForWeaponType": [
       {
         "extraClassification": "Harpoongun"
@@ -2498,7 +2472,6 @@
     "includedWeapon": {
       "name": "Javelin"
     },
-    "quantity": 1,
     "availability": {
       "rating": [6],
       "restriction": "Legal"
@@ -2515,7 +2488,6 @@
     "includedWeapon": {
       "name": "Net"
     },
-    "quantity": 1,
     "availability": {
       "rating": [6],
       "restriction": "Legal"
@@ -2752,7 +2724,6 @@
     "includedWeapon": {
       "name": "Urban Tribe Tomahawk"
     },
-    "quantity": 1,
     "availability": {
       "rating": [4],
       "restriction": "Legal"
@@ -2769,7 +2740,6 @@
     "includedWeapon": {
       "name": "Bola"
     },
-    "quantity": 1,
     "ammoForWeaponType": [
       {
         "extraClassification": "Bola"
@@ -2791,7 +2761,6 @@
     "includedWeapon": {
       "name": "Monofilament Bola"
     },
-    "quantity": 1,
     "ammoForWeaponType": [
       {
         "extraClassification": "Bola"
@@ -2813,7 +2782,6 @@
     "includedWeapon": {
       "name": "Grenade: Flash-Bang"
     },
-    "quantity": 1,
     "availability": {
       "rating": [6],
       "restriction": "Restricted"
@@ -3114,7 +3082,6 @@
     "includedWeapon": {
       "name": "Grenade: Flash-Bang, Aerodynamic"
     },
-    "quantity": 1,
     "availability": {
       "rating": [6],
       "restriction": "Restricted"
@@ -31189,7 +31156,6 @@
     "includedWeapon": {
       "name": "Grenade: Molotov Cocktail"
     },
-    "quantity": 1,
     "availability": {
       "rating": [6],
       "restriction": "Forbidden"
@@ -31206,7 +31172,6 @@
     "includedWeapon": {
       "name": "Grenade: Molotov Cocktail, Aerodynamic"
     },
-    "quantity": 1,
     "availability": {
       "rating": [6],
       "restriction": "Forbidden"

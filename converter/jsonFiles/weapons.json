@@ -5809,6 +5809,428 @@
     "rangeList": ["Aerodynamic Grenade"]
   },
   {
+    "name": "Minigrenade: Flash-Bang",
+    "description": "",
+    "concealability": -2,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [10],
+        "type": "Stun",
+        "blast": {
+          "type": "Radius",
+          "value": 10
+        }
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            4
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 0,
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "relatedSkillSpecialisations": ["Grenade Launcher"],
+    "availability": {
+      "rating": [6],
+      "restriction": "Restricted"
+    },
+    "cost": [100],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 435,
+    "type": "Explosive",
+    "subtype": "Rocket",
+    "rangeList": ["Grenade Launchers"]
+  },
+  {
+    "name": "Minigrenade: Flash-Pak",
+    "description": "",
+    "concealability": -2,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Special"
+          }
+        ],
+        "type": "N/A"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 0,
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "relatedSkillSpecialisations": ["Grenade Launcher"],
+    "availability": {
+      "rating": [4],
+      "restriction": "Legal"
+    },
+    "cost": [125],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 435,
+    "type": "Explosive",
+    "subtype": "Rocket",
+    "rangeList": ["Grenade Launchers"]
+  },
+  {
+    "name": "Minigrenade: Fragmentation",
+    "description": "",
+    "concealability": -2,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [18],
+        "type": "Physical",
+        "annotation": "Flechette",
+        "blast": {
+          "type": "Reducing",
+          "value": -1
+        }
+      }
+    ],
+    "armourPenetration": [[5]],
+    "ammunition": [
+      {
+        "capacity": 0,
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "relatedSkillSpecialisations": ["Grenade Launcher"],
+    "availability": {
+      "rating": [11],
+      "restriction": "Forbidden"
+    },
+    "cost": [100],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 435,
+    "type": "Explosive",
+    "subtype": "Rocket",
+    "rangeList": ["Grenade Launchers"]
+  },
+  {
+    "name": "Minigrenade: Gas",
+    "description": "",
+    "concealability": -2,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Chemical"
+          }
+        ],
+        "type": "N/A",
+        "blast": {
+          "type": "Radius",
+          "value": 10
+        }
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 0,
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "relatedSkillSpecialisations": ["Grenade Launcher"],
+    "availability": {
+      "rating": [4],
+      "restriction": "Restricted"
+    },
+    "cost": [40],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 435,
+    "type": "Explosive",
+    "subtype": "Rocket",
+    "rangeList": ["Grenade Launchers"]
+  },
+  {
+    "name": "Minigrenade: High Explosive",
+    "description": "",
+    "concealability": -2,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [16],
+        "type": "Physical",
+        "blast": {
+          "type": "Reducing",
+          "value": -2
+        }
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 0,
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "relatedSkillSpecialisations": ["Grenade Launcher"],
+    "availability": {
+      "rating": [11],
+      "restriction": "Forbidden"
+    },
+    "cost": [100],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 435,
+    "type": "Explosive",
+    "subtype": "Rocket",
+    "rangeList": ["Grenade Launchers"]
+  },
+  {
+    "name": "Minigrenade: Smoke",
+    "description": "",
+    "concealability": -2,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [0],
+        "type": "N/A",
+        "blast": {
+          "type": "Radius",
+          "value": 10
+        }
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 0,
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "relatedSkillSpecialisations": ["Grenade Launcher"],
+    "availability": {
+      "rating": [4],
+      "restriction": "Restricted"
+    },
+    "cost": [40],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 435,
+    "type": "Explosive",
+    "subtype": "Rocket",
+    "rangeList": ["Grenade Launchers"]
+  },
+  {
+    "name": "Minigrenade: Thermal Smoke",
+    "description": "",
+    "concealability": -2,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [0],
+        "type": "N/A",
+        "blast": {
+          "type": "Radius",
+          "value": 10
+        }
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 0,
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "relatedSkillSpecialisations": ["Grenade Launcher"],
+    "availability": {
+      "rating": [6],
+      "restriction": "Restricted"
+    },
+    "cost": [60],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 435,
+    "type": "Explosive",
+    "subtype": "Rocket",
+    "rangeList": ["Grenade Launchers"]
+  },
+  {
+    "name": "Missile: Anti-Vehicle",
+    "description": "",
+    "concealability": 10,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [24],
+        "type": "Physical",
+        "blast": {
+          "type": "Reducing",
+          "value": -4
+        }
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            4
+          ]
+        }
+      ],
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            10
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 0,
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "availability": {
+      "rating": [22],
+      "restriction": "Forbidden"
+    },
+    "cost": [2800],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 436,
+    "type": "Explosive",
+    "subtype": "Rocket",
+    "rangeList": ["Grenade Launchers"]
+  },
+  {
+    "name": "Missile: Fragmentation",
+    "description": "",
+    "concealability": 10,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [23],
+        "type": "Physical",
+        "annotation": "Flechette",
+        "blast": {
+          "type": "Reducing",
+          "value": -1
+        }
+      }
+    ],
+    "armourPenetration": [[5]],
+    "ammunition": [
+      {
+        "capacity": 0,
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "availability": {
+      "rating": [16],
+      "restriction": "Forbidden"
+    },
+    "cost": [2000],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 436,
+    "type": "Explosive",
+    "subtype": "Rocket",
+    "rangeList": ["Grenade Launchers"]
+  },
+  {
+    "name": "Missile: High Explosive",
+    "description": "",
+    "concealability": 10,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [21],
+        "type": "Physical",
+        "blast": {
+          "type": "Reducing",
+          "value": -2
+        }
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 0,
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "availability": {
+      "rating": [22],
+      "restriction": "Forbidden"
+    },
+    "cost": [2100],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 436,
+    "type": "Explosive",
+    "subtype": "Rocket",
+    "rangeList": ["Grenade Launchers"]
+  },
+  {
     "name": "Net",
     "description": "",
     "concealability": -2,
@@ -5846,6 +6268,147 @@
     "type": "Projectile",
     "subtype": "Throwing Weapons",
     "rangeList": ["Thrown Knife"]
+  },
+  {
+    "name": "Rocket: Anti-Vehicle",
+    "description": "",
+    "concealability": 10,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [24],
+        "type": "Physical",
+        "blast": {
+          "type": "Reducing",
+          "value": -4
+        }
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            4
+          ]
+        }
+      ],
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            10
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 0,
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "availability": {
+      "rating": [18],
+      "restriction": "Forbidden"
+    },
+    "cost": [2800],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 436,
+    "type": "Explosive",
+    "subtype": "Rocket",
+    "rangeList": ["Grenade Launchers"]
+  },
+  {
+    "name": "Rocket: Fragmentation",
+    "description": "",
+    "concealability": 10,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [23],
+        "type": "Physical",
+        "annotation": "Flechette",
+        "blast": {
+          "type": "Reducing",
+          "value": -1
+        }
+      }
+    ],
+    "armourPenetration": [[5]],
+    "ammunition": [
+      {
+        "capacity": 0,
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "availability": {
+      "rating": [12],
+      "restriction": "Forbidden"
+    },
+    "cost": [2000],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 436,
+    "type": "Explosive",
+    "subtype": "Rocket",
+    "rangeList": ["Grenade Launchers"]
+  },
+  {
+    "name": "Rocket: High Explosive",
+    "description": "",
+    "concealability": 10,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [21],
+        "type": "Physical",
+        "blast": {
+          "type": "Reducing",
+          "value": -2
+        }
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 0,
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "availability": {
+      "rating": [18],
+      "restriction": "Forbidden"
+    },
+    "cost": [2100],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 436,
+    "type": "Explosive",
+    "subtype": "Rocket",
+    "rangeList": ["Grenade Launchers"]
   },
   {
     "name": "Shuriken",
@@ -10260,6 +10823,63 @@
     "subtype": "Sniper Rifles",
     "firearmOptions": {
       "mode": ["Semi Automatic"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Sniper Rifles"]
+  },
+  {
+    "name": "Cavalier Arms Crockett EBR",
+    "description": "",
+    "concealability": 8,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [12],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            3
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 20,
+        "reloadMethod": "Clip"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Shock Pad"
+      },
+      {
+        "name": "Imaging Scope"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Longarms",
+    "availability": {
+      "rating": [12],
+      "restriction": "Forbidden"
+    },
+    "cost": [10300],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 428,
+    "type": "Firearm",
+    "subtype": "Sniper Rifles",
+    "firearmOptions": {
+      "mode": ["Semi Automatic", "Burst Fire"],
       "recoilCompensation": 0,
       "ammoSlots": 1,
       "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
@@ -17085,6 +17705,53 @@
     "rangeList": ["Aerodynamic Grenade"]
   },
   {
+    "name": "Rocket: Incendiary",
+    "description": "",
+    "concealability": 10,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [10],
+        "type": "Physical",
+        "blast": {
+          "type": "Reducing",
+          "value": -1
+        }
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            6
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 0,
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "availability": {
+      "rating": [12],
+      "restriction": "Forbidden"
+    },
+    "cost": [1900],
+    "source": "The Seattle Gambit",
+    "page": 29,
+    "type": "Explosive",
+    "subtype": "Rocket",
+    "rangeList": ["Grenade Launchers"]
+  },
+  {
     "name": "Krime Bill",
     "description": "",
     "concealability": 4,
@@ -20482,6 +21149,53 @@
     "rangeList": ["Grenade Launchers"]
   },
   {
+    "name": "M79B1 LAW Rocket",
+    "description": "",
+    "concealability": 10,
+    "accuracy": [4],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Missile"
+          }
+        ],
+        "type": "N/A"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "option": "Missile"
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 1,
+        "reloadMethod": "Muzzle Loader"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "availability": {
+      "rating": [9],
+      "restriction": "Forbidden"
+    },
+    "cost": [750],
+    "source": "Street Lethal",
+    "page": 42,
+    "type": "Firearm",
+    "subtype": "Missile Launchers",
+    "firearmOptions": {
+      "mode": ["Single Shot"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Top", "Under"]
+    },
+    "rangeList": ["Missile Launchers"]
+  },
+  {
     "name": "Phalanx Systems Vogeljager II",
     "description": "",
     "concealability": 10,
@@ -20855,6 +21569,47 @@
     "rangeList": ["Aerodynamic Grenade"]
   },
   {
+    "name": "Missile: Maker",
+    "description": "",
+    "concealability": 10,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Special"
+          }
+        ],
+        "type": "N/A"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "option": "Special"
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 0,
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "availability": {
+      "rating": [24],
+      "restriction": "Forbidden"
+    },
+    "cost": [5000],
+    "source": "Street Lethal",
+    "page": 76,
+    "type": "Explosive",
+    "subtype": "Rocket",
+    "rangeList": ["Grenade Launchers"]
+  },
+  {
     "name": "Stoner-Ares M-22A1",
     "description": "",
     "concealability": 10,
@@ -21215,6 +21970,50 @@
     }
   },
   {
+    "name": "Minigrenade: Winchester-Howe Hornet Direct-Fire",
+    "description": "",
+    "concealability": -2,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [12],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 0,
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "relatedSkillSpecialisations": ["Grenade Launcher"],
+    "availability": {
+      "rating": [16],
+      "restriction": "Forbidden"
+    },
+    "cost": [400],
+    "source": "Street Lethal",
+    "page": 132,
+    "type": "Explosive",
+    "subtype": "Rocket",
+    "rangeList": ["Grenade Launchers"]
+  },
+  {
     "name": "Ingram Supermach 200",
     "description": "",
     "concealability": 2,
@@ -21466,6 +22265,102 @@
       "recoilCompensation": 0,
       "ammoSlots": 1
     },
+    "rangeList": ["Grenade Launchers"]
+  },
+  {
+    "name": "Torpedo Grenade: HEAP",
+    "description": "",
+    "concealability": -2,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [14],
+        "type": "Physical",
+        "blast": {
+          "type": "Reducing",
+          "value": -2
+        }
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            4
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 0,
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "relatedSkillSpecialisations": ["Grenade Launcher"],
+    "availability": {
+      "rating": [14],
+      "restriction": "Forbidden"
+    },
+    "cost": [300],
+    "source": "Street Lethal",
+    "page": 133,
+    "type": "Explosive",
+    "subtype": "Rocket",
+    "rangeList": ["Grenade Launchers"]
+  },
+  {
+    "name": "Torpedo Grenade: Depth Charge",
+    "description": "",
+    "concealability": -2,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [12],
+        "type": "Stun",
+        "blast": {
+          "type": "Radius",
+          "value": 10
+        }
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            4
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 0,
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "relatedSkillSpecialisations": ["Grenade Launcher"],
+    "availability": {
+      "rating": [12],
+      "restriction": "Forbidden"
+    },
+    "cost": [175],
+    "source": "Street Lethal",
+    "page": 133,
+    "type": "Explosive",
+    "subtype": "Rocket",
     "rangeList": ["Grenade Launchers"]
   },
   {
@@ -22047,6 +22942,152 @@
     "meleeOptions": {
       "reach": 0
     }
+  },
+  {
+    "name": "Micro-Torpedo Launcher",
+    "description": "",
+    "concealability": 10,
+    "accuracy": [3],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Missile"
+          }
+        ],
+        "type": "N/A"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 3,
+        "reloadMethod": "Muzzle Loader"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "relatedSkill": "Heavy Weapons",
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Rigger 5",
+    "page": 136,
+    "type": "Firearm",
+    "subtype": "Missile Launchers",
+    "firearmOptions": {
+      "mode": ["Single Shot"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1
+    },
+    "rangeList": ["Missile Launchers"]
+  },
+  {
+    "name": "Micro-Torpedo: Chemical",
+    "description": "",
+    "concealability": 10,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [6],
+        "type": "Physical",
+        "blast": {
+          "type": "Radius",
+          "value": 6
+        }
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            4
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 0,
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "availability": {
+      "rating": [18],
+      "restriction": "Forbidden"
+    },
+    "cost": [3000],
+    "source": "Rigger 5",
+    "page": 136,
+    "type": "Explosive",
+    "subtype": "Rocket",
+    "rangeList": ["Grenade Launchers"]
+  },
+  {
+    "name": "Micro-Torpedo: Explosive",
+    "description": "",
+    "concealability": 10,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [18],
+        "type": "Physical",
+        "blast": {
+          "type": "Reducing",
+          "value": -6
+        }
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            4
+          ]
+        }
+      ],
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            10
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 0,
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "availability": {
+      "rating": [18],
+      "restriction": "Forbidden"
+    },
+    "cost": [2500],
+    "source": "Rigger 5",
+    "page": 136,
+    "type": "Explosive",
+    "subtype": "Rocket",
+    "rangeList": ["Grenade Launchers"]
   },
   {
     "name": "Grenade: COS",

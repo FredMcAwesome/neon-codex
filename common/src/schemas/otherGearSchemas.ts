@@ -99,6 +99,16 @@ const AmmoForWeaponTypeSchema = zod.union([
 ]);
 export type AmmoForWeaponTypeType = zod.infer<typeof AmmoForWeaponTypeSchema>;
 
+const GearDeviceRatingSchema = zod.union([
+  zod
+    .object({
+      option: zod.nativeEnum(gearDeviceRatingEnum),
+    })
+    .strict(),
+  zod.number(),
+]);
+export type GearDeviceRatingType = zod.infer<typeof GearDeviceRatingSchema>;
+
 const GearProgramSchema = zod.array(
   zod.union([
     zod.number(),
@@ -110,6 +120,7 @@ const GearProgramSchema = zod.array(
     zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
   ])
 );
+export type GearProgramType = zod.infer<typeof GearProgramSchema>;
 
 const GearDeviceAttributeSchema = zod.union([
   zod
@@ -122,6 +133,9 @@ const GearDeviceAttributeSchema = zod.union([
     .strict(),
   zod.number(),
 ]);
+export type GearDeviceAttributeType = zod.infer<
+  typeof GearDeviceAttributeSchema
+>;
 
 const GearCapacitySchema = zod.array(
   zod.union([
@@ -145,19 +159,23 @@ const GearCapacityInformationSchema = zod
     capacityCost: zod.optional(GearCapacitySchema),
   })
   .strict();
+export type GearCapacityInformationType = zod.infer<
+  typeof GearCapacityInformationSchema
+>;
+
+const GearRatingSchema = zod.union([
+  zod.number(),
+  zod.object({ option: zod.nativeEnum(gearRatingEnum) }).strict(),
+]);
+export type GearRatingType = zod.infer<typeof GearRatingSchema>;
 
 export const OtherGearSchema = zod
   .object({
     name: zod.string(),
     description: zod.string(),
     category: zod.nativeEnum(gearCategoryEnum),
-    minRating: zod.optional(zod.number()),
-    maxRating: zod.optional(
-      zod.union([
-        zod.number(),
-        zod.object({ option: zod.nativeEnum(gearRatingEnum) }).strict(),
-      ])
-    ),
+    minRating: zod.optional(GearRatingSchema),
+    maxRating: zod.optional(GearRatingSchema),
     includedWeapon: zod.optional(
       zod
         .object({
@@ -181,16 +199,7 @@ export const OtherGearSchema = zod
     userSelectable: zod.optional(zod.literal(false)),
     allowGearList: zod.optional(zod.array(zod.string())),
     includedGearList: zod.optional(UseGearListSchema),
-    deviceRating: zod.optional(
-      zod.union([
-        zod
-          .object({
-            option: zod.nativeEnum(gearDeviceRatingEnum),
-          })
-          .strict(),
-        zod.number(),
-      ])
-    ),
+    deviceRating: zod.optional(GearDeviceRatingSchema),
     programs: zod.optional(GearProgramSchema),
     attributeArray: zod.optional(zod.array(zod.number())),
     attack: zod.optional(GearDeviceAttributeSchema),
@@ -214,11 +223,8 @@ export const OtherGearSchema = zod
     cost: CostGearSchema,
     source: zod.nativeEnum(sourceBookEnum),
     page: zod.number(),
-    // typeInformation: TypeInformationGearSchema,
-    // rating: zod.optional(RatingSchema),
-    // availability: AvailabilityGearSchema,
-    // cost: CostGearSchema,
-    // wireless: zod.optional(zod.string()),
   })
   .strict();
 export type OtherGearType = zod.infer<typeof OtherGearSchema>;
+export const OtherGearListSchema = zod.array(OtherGearSchema);
+export type OtherGearListType = zod.infer<typeof OtherGearListSchema>;

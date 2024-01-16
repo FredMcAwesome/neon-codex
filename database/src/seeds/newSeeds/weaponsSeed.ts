@@ -100,7 +100,7 @@ export const getWeapons = function (
     );
     assert(
       relatedSkill !== undefined,
-      `undefined name: ${weapon.relatedSkill}`
+      `undefined relatedSkill: ${weapon.relatedSkill}`
     );
 
     let stagedWeapon: Weapons;
@@ -132,7 +132,7 @@ export const getWeapons = function (
         );
         assert(
           relatedAccessory !== undefined,
-          `undefined name: ${accessory.name}`
+          `undefined accessory name: ${accessory.name}`
         );
         return new IncludedWeaponAccessories(
           // used to have an 'as Weapons' which we wanted until polymorphic relationships are added to mikro-orm
@@ -153,7 +153,7 @@ export const getWeapons = function (
         const foundRange = stagedWeaponRanges.find(
           (range) => range.name == currentRange
         );
-        assert(foundRange !== undefined, `undefined name: ${currentRange}`);
+        assert(foundRange !== undefined, `undefined range: ${currentRange}`);
         assert(
           stagedWeapon instanceof RangedWeapons,
           `Assertion to type narrow`

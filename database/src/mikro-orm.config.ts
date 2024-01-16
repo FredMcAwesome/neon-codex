@@ -12,13 +12,6 @@ import {
   Cyberwares,
   Biowares,
 } from "./models/gear/augmentationGear/augmentationModel.js";
-import {
-  Ammunitions,
-  Ammos,
-  ProjectilesAmmos,
-  GrenadesTorpedoes,
-  RocketsMissiles,
-} from "./models/gear/combatGear/ammunitionModel.js";
 import { ArmourModifications } from "./models/gear/combatGear/armourModificationModel.js";
 import { Armours } from "./models/gear/combatGear/armourModel.js";
 import { WeaponRanges } from "./models/gear/combatGear/helperTables/weaponRangeModel.js";
@@ -29,7 +22,7 @@ import {
   FirearmWeapons,
   Explosives,
 } from "./models/gear/combatGear/weaponModel.js";
-import { Drugs } from "./models/gear/otherGear/DrugModel.js";
+import { Drugs } from "./models/gear/otherGear/drugModel.js";
 import {
   Vehicles,
   Groundcrafts,
@@ -37,7 +30,7 @@ import {
   Aircrafts,
   Drones,
   MannedVehicles,
-} from "./models/gear/riggerGear/VehicleModel.js";
+} from "./models/gear/riggerGear/vehicleModel.js";
 import { Comments, Weapons, RangedWeapons } from "./models/models.js";
 import Threads from "./models/threadModel.js";
 import Users from "./models/userModel.js";
@@ -48,12 +41,13 @@ import {
   PASSWORD,
 } from "./utils/databaseConfig.js";
 import { Spells } from "./models/abilities/spellModel.js";
-import { DrugComponents } from "./models/gear/otherGear/DrugComponentModel.js";
+import { DrugComponents } from "./models/gear/otherGear/drugComponentModel.js";
 import {
   VehicleChasisMods,
   VehicleMods,
   WeaponMountMods,
-} from "./models/gear/riggerGear/VehicleModificationModel.js";
+} from "./models/gear/riggerGear/vehicleModificationModel.js";
+import { Gears } from "./models/gear/otherGear/gearModel.js";
 
 const dbOptions: Options = {
   entities: [
@@ -69,11 +63,6 @@ const dbOptions: Options = {
     FirearmWeapons,
     Explosives,
     WeaponAccessories,
-    Ammunitions,
-    Ammos,
-    ProjectilesAmmos,
-    GrenadesTorpedoes,
-    RocketsMissiles,
 
     CustomisedWeapons,
     ActiveWeaponAccessories,
@@ -82,8 +71,6 @@ const dbOptions: Options = {
 
     WeaponRanges,
     WeaponRangeLinks,
-
-    Spells,
 
     Armours,
     ArmourModifications,
@@ -104,6 +91,10 @@ const dbOptions: Options = {
     VehicleMods,
     VehicleChasisMods,
     WeaponMountMods,
+
+    Gears,
+
+    Spells,
   ],
   host: HOST,
   port: DATABASE_PORT,

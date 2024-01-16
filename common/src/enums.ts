@@ -112,6 +112,8 @@ export enum weaponExtraClassificationEnum {
 
 export enum explosiveTypeEnum {
   Grenade = "Grenade",
+  // Rocket includes Rockets, Missiles, and Torpedos
+  Rocket = "Rocket",
   Standard = "Standard",
 }
 

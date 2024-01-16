@@ -21,12 +21,12 @@ To match where I previously was, still need (passed through to frontend - They a
 - Armour
 - ArmourAccessories
 - Spells
+Need to finish DB relations:
 - Augmentations
 - Drugs
 - DrugComponents
 - Vehicles
 - VehicleMods (including weapon mount mods)
-In addition to above todo, these need to be stored in database:
 - Gear
 
 Other main priorities:

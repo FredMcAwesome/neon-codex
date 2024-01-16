@@ -145,6 +145,9 @@ export function ParseGear() {
     // .filter((weapon) => weapon.name === "Osmium Mace")
     .map((gear) => {
       const convertedGear = convertGear(gear);
+      if (convertedGear === undefined) {
+        return undefined;
+      }
       const check = OtherGearSchema.safeParse(convertedGear);
       if (!check.success) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
@@ -152,7 +155,8 @@ export function ParseGear() {
         throw new Error(check.error.message);
       }
       return check.data;
-    });
+    })
+    .filter((gear) => gear !== undefined);
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/gears.json"
   );
@@ -183,12 +187,16 @@ const convertGear = function (gear: GenericGearXmlType) {
       : Array.isArray(gear.addoncategory)
       ? gear.addoncategory.map((gear) => convertGearCategory(gear))
       : [convertGearCategory(gear.addoncategory)];
+  const quantity =
+    gear.costfor !== undefined && gear.costfor !== 1 ? gear.costfor : undefined;
   const bonus =
     gear.bonus === undefined ? undefined : convertXmlBonus(gear.bonus);
   const weaponBonus =
     gear.weaponbonus === undefined
       ? undefined
       : convertXmlWeaponBonus(gear.weaponbonus);
+  const isFlechetteAmmo =
+    gear.isflechetteammo !== undefined ? (true as const) : undefined;
   const flechetteWeaponBonus =
     gear.flechetteweaponbonus === undefined
       ? undefined
@@ -197,6 +205,10 @@ const convertGear = function (gear: GenericGearXmlType) {
     gear.ammoforweapontype === undefined
       ? undefined
       : convertAmmoForWeaponType(gear.ammoforweapontype);
+  assert(
+    isFlechetteAmmo === undefined || ammoForWeaponType !== undefined,
+    gear.name
+  );
 
   const allowGearList =
     gear.allowgear === undefined
@@ -329,11 +341,10 @@ const convertGear = function (gear: GenericGearXmlType) {
     maxRating: maxRating,
     includedWeapon: includedWeapon,
     allowCategoryList: allowCategoryList,
-    quantity: gear.costfor,
+    quantity: quantity,
     bonus: bonus,
     weaponBonus: weaponBonus,
-    isFlechetteAmmo:
-      gear.isflechetteammo !== undefined ? (true as const) : undefined,
+    isFlechetteAmmo: isFlechetteAmmo,
     flechetteWeaponBonus: flechetteWeaponBonus,
     ammoForWeaponType: ammoForWeaponType,
     explosiveWeight: gear.weight,

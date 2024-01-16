@@ -63,7 +63,7 @@ import {
   RFIDTags,
   CommunicationCountermeasures,
 } from "@shadowrun/database/build/models/gear/electronicsGear/matrixWareModel.js";
-import { GrappleGun } from "@shadowrun/database/build/models/gear/otherGear/DrugModel.js";
+import { GrappleGun } from "@shadowrun/database/build/models/gear/otherGear/drugModel.js";
 import { router, privateProcedure } from "../trpc.js";
 
 export async function getSkills() {

@@ -10,8 +10,8 @@ import assert from "assert";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { Drugs } from "../../models/gear/otherGear/DrugModel.js";
-import { DrugComponents } from "../../models/gear/otherGear/DrugComponentModel.js";
+import { Drugs } from "../../models/gear/otherGear/drugModel.js";
+import { DrugComponents } from "../../models/gear/otherGear/drugComponentModel.js";
 
 export const getDrugs = function () {
   const currentPath = import.meta.url;

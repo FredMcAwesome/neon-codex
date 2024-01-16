@@ -8,7 +8,7 @@ import {
   VehicleMods,
   VehicleChasisMods,
   WeaponMountMods,
-} from "../../models/gear/riggerGear/VehicleModificationModel.js";
+} from "../../models/gear/riggerGear/vehicleModificationModel.js";
 import { vehicleModTypeEnum } from "@shadowrun/common/build/enums.js";
 
 export const getVehicleModifications = function () {
