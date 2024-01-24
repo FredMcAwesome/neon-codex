@@ -1989,7 +1989,7 @@
       <source>SG</source>
       <category>Health</category>
       <damage>0</damage>
-      <descriptor>Negative</descriptor>
+      <descriptor>Essence</descriptor>
       <duration>P</duration>
       <dv>F-2</dv>
       <range>T</range>
@@ -2002,7 +2002,7 @@
       <source>SG</source>
       <category>Health</category>
       <damage>0</damage>
-      <descriptor>Negative</descriptor>
+      <descriptor>Essence</descriptor>
       <duration>S</duration>
       <dv>F-3</dv>
       <range>T</range>
@@ -2054,7 +2054,7 @@
       <source>SG</source>
       <category>Health</category>
       <damage>0</damage>
-      <descriptor>Negative</descriptor>
+      <descriptor>Essence</descriptor>
       <duration>S</duration>
       <dv>F-1</dv>
       <range>T</range>
@@ -2714,7 +2714,7 @@
     </spell>
     <spell>
       <id>02b38262-db06-4698-b4b2-7a9e7f2452a9</id>
-      <name>Pulse</name>
+      <name>Pulse (Alternative)</name>
       <page>118</page>
       <source>SG</source>
       <category>Manipulation</category>
@@ -3723,7 +3723,7 @@
     </spell>
     <spell>
       <id>547c0959-7a9b-487c-adec-54f639585695</id>
-      <name>Fashion</name>
+      <name>Fashion (Alternative)</name>
       <page>190</page>
       <source>SS</source>
       <category>Manipulation</category>
@@ -3749,7 +3749,7 @@
     </spell>
     <spell>
       <id>ffc5309a-9ae8-4770-aabd-2abe8246c0ec</id>
-      <name>Interference</name>
+      <name>Interference (Alternative)</name>
       <page>190</page>
       <source>SS</source>
       <category>Manipulation</category>
@@ -3788,7 +3788,7 @@
     </spell>
     <spell>
       <id>8b3edb22-35ab-44a3-aa9d-0553a1af4da4</id>
-      <name>Sound Barrier</name>
+      <name>Sound Barrier (Alternative)</name>
       <page>190</page>
       <source>SS</source>
       <category>Illusion</category>
@@ -3801,7 +3801,7 @@
     </spell>
     <spell>
       <id>58331f62-e907-4a4a-a59c-f9303d16dcbe</id>
-      <name>Vehicle Mask</name>
+      <name>Vehicle Mask (Alternative)</name>
       <page>190</page>
       <source>SS</source>
       <category>Illusion</category>

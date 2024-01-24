@@ -219,10 +219,19 @@ costAugmentationSemantics.addOperation("eval", {
       },
     ];
   },
-  Parenthesis(_a, inner, _b) {
+  SubCalculation_parenthesis(_a, inner, _b) {
     return [
       {
         subnumbers: inner.eval(),
+      },
+    ];
+  },
+  SubCalculation_numberCalc(_a, damage1, _b, damage2, _c) {
+    return [
+      {
+        subnumbers: damage1
+          .eval()
+          .concat([{ operator: mathOperatorEnum.GreaterThan }], damage2.eval()),
       },
     ];
   },

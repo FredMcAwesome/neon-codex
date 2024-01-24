@@ -8,7 +8,7 @@ import { WeaponRanges } from "../../models/gear/combatGear/helperTables/weaponRa
 
 export const getRanges = function () {
   const currentPath = import.meta.url;
-  let ranges: RangeListType | undefined = undefined;
+  let ranges: RangeListType;
   const relativeConverterPath = "converter/jsonFiles/ranges.json";
   const rootPath = "../../../../../";
   const jsonString = fs.readFileSync(
@@ -23,9 +23,7 @@ export const getRanges = function () {
     ranges = rangeListParsed.data;
   } else {
     console.log(rangeListParsed.error.errors[0]);
-  }
-  if (ranges === undefined) {
-    assert(false);
+    assert(false, "ranges is undefined");
   }
   const stagedRanges: Array<WeaponRanges> = [];
   ranges.forEach((range) => {

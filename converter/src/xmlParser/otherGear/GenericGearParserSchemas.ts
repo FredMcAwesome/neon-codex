@@ -40,6 +40,7 @@ const WeaponXmlBonusSchema = zod
     userange: zod.optional(zod.string()),
     accuracy: zod.optional(zod.number()),
     accuracyreplace: zod.optional(zod.number()),
+    smartlinkpool: zod.optional(zod.number()),
   })
   .strict();
 export type WeaponXmlBonusType = zod.infer<typeof WeaponXmlBonusSchema>;
@@ -75,6 +76,10 @@ const GenericGearXmlSchema = zod
     rating: zod.optional(GearXmlRatingSchema),
     // Min rating
     minrating: zod.optional(zod.number()),
+    // Label linked to what rating does for this gear
+    ratinglabel: zod.optional(
+      zod.union([zod.literal("Rating_SqMeters"), zod.literal("Rating_Meters")])
+    ),
     // Add a weapon, this doesn't have to have the same name
     // as the gear name e.g. Survival Kit adds a Knife
     addweapon: zod.optional(AddWeaponSchema),
@@ -110,7 +115,7 @@ const GenericGearXmlSchema = zod
     ammoforweapontype: zod.optional(AmmoForWeaponTypeXmlSchema),
     // Weight of item, only seems to be listed for explosives
     // Not sure why every item doesn't have this
-    weight: zod.optional(zod.number()),
+    weight: zod.optional(zod.union([zod.number(), zod.literal("Rating")])),
     // Not selectable
     hide: zod.optional(zod.literal("")),
     // Gear that can be added to this gear

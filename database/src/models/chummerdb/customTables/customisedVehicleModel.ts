@@ -7,24 +7,23 @@ import {
   Property,
 } from "@mikro-orm/postgresql";
 import type { Ref } from "@mikro-orm/postgresql";
-import { CustomisedWeaponAccessories } from "./activeWeaponAccessoryModel.js";
 import { Weapons } from "../../gear/combatGear/weaponModel.js";
+import { Vehicles } from "../../gear/riggerGear/vehicleModel.js";
+import { CustomisedVehicleModifications } from "./activeVehicleModificationModel.js";
 
-// Only custom weapons not included
-// This assumes weapons included in weapon mounts have no accessories
 @Entity()
-export class CustomisedWeapons {
+export class CustomisedVehicles {
   @PrimaryKey()
   id!: number;
 
   @ManyToOne({ entity: () => Weapons, ref: true })
-  weapon!: Ref<Weapons>;
+  vehicle!: Ref<Vehicles>;
 
   @OneToMany(
-    () => CustomisedWeaponAccessories,
-    (weaponAccessories) => weaponAccessories.customisedWeapon
+    () => CustomisedVehicleModifications,
+    (vehicleModification) => vehicleModification.customisedVehicle
   )
-  accessories = new Collection<CustomisedWeaponAccessories>(this);
+  accessories = new Collection<CustomisedVehicleModifications>(this);
 
   // rating is only used in a few weapons
   @Property({ nullable: true })
@@ -33,7 +32,7 @@ export class CustomisedWeapons {
   @Property({ nullable: true })
   customName?: string;
 
-  constructor(weapon: Ref<Weapons>) {
-    this.weapon = weapon;
+  constructor(vehicle: Ref<Vehicles>) {
+    this.vehicle = vehicle;
   }
 }

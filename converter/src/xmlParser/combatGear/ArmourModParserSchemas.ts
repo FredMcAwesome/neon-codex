@@ -12,6 +12,7 @@ import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
 
 export enum armourModXmlCategoryEnum {
   FullBodyArmorMods = "Full Body Armor Mods",
+  CustomizedBallisticMask = "Customized Ballistic Mask",
   General = "General",
   GlobetrotterClothingLiners = "Globetrotter Clothing Liners",
   GlobetrotterJacketLiners = "Globetrotter Jacket Liners",

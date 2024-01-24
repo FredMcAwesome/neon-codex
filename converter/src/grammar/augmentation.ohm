@@ -65,11 +65,12 @@ Cost {
   AddSub = AddSub "+" MulDiv -- add
     | AddSub "-" MulDiv -- subtract
     | MulDiv -- base
-  MulDiv = MulDiv "*" CostValue -- multiply
-    | MulDiv "/" CostValue -- divide
+  MulDiv = MulDiv "*" SubCalculation -- multiply
+    | MulDiv "/" SubCalculation -- divide
+    | SubCalculation
+  SubCalculation = "(" AddSub ")" -- parenthesis
+    | "number(" AddSub ">" AddSub ")" -- numberCalc
     | CostValue
-    | Parenthesis
-  Parenthesis = "(" AddSub ")"
   CostValue = Number
     | Rating
     | MinRating
@@ -113,7 +114,7 @@ Capacity {
   MulDiv = MulDiv "*" SubCalculation -- multiply
   // mod is used instead of '/' in the xml for some reason
     | MulDiv "mod" SubCalculation -- divide
-    | SubCalculation  
+    | SubCalculation
   SubCalculation = "-(" AddSub ")" -- negativeParenthesis
     | "(" AddSub ")" -- parenthesis
     | "number(" AddSub "=" AddSub ")" -- numberCalc

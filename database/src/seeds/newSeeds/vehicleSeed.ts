@@ -12,10 +12,17 @@ import {
   Watercrafts,
 } from "../../models/gear/riggerGear/vehicleModel.js";
 import { vehicleTypeEnum } from "@shadowrun/common";
+import { WeaponMounts } from "../../models/gear/riggerGear/weaponMountModel.js";
+import {
+  weaponMountControlEnum,
+  weaponMountFlexibilityEnum,
+  weaponMountSizeEnum,
+  weaponMountVisibilityEnum,
+} from "@shadowrun/common/build/enums.js";
 
 export const getVehicles = function () {
   const currentPath = import.meta.url;
-  let vehicles: VehicleListType | undefined = undefined;
+  let unlinkedVehicles: VehicleListType;
   let relativeConverterPath = "converter/jsonFiles/vehicles.json";
   const rootPath = "../../../../../";
   let jsonString = fs.readFileSync(
@@ -27,13 +34,13 @@ export const getVehicles = function () {
   const vehicleListParsed = VehicleListSchema.safeParse(rawJson);
   if (vehicleListParsed.success) {
     console.log("vehicles all g");
-    vehicles = vehicleListParsed.data;
+    unlinkedVehicles = vehicleListParsed.data;
   } else {
     console.log(vehicleListParsed.error.errors[0]);
-    assert(false);
+    assert(false, "vehicles is undefined");
   }
   const stagedVehicles: Array<Vehicles> = [];
-  vehicles.forEach((vehicle) => {
+  unlinkedVehicles.forEach((vehicle) => {
     switch (vehicle.type) {
       case vehicleTypeEnum.Groundcraft:
         stagedVehicles.push(new Groundcrafts(vehicle));
@@ -50,5 +57,29 @@ export const getVehicles = function () {
     }
     // console.log(vehicle.name);
   });
-  return stagedVehicles;
+  return { unlinkedVehicles, stagedVehicles };
+};
+
+export const createVehicleWeaponMounts = function () {
+  const WeaponMountList = [];
+
+  for (const control of Object.values(weaponMountControlEnum)) {
+    for (const flexibility of Object.values(weaponMountFlexibilityEnum)) {
+      for (const size of Object.values(weaponMountSizeEnum)) {
+        for (const visibility of Object.values(weaponMountVisibilityEnum)) {
+          const weaponMount = {
+            control: control,
+            flexibility: flexibility,
+            size: size,
+            visibility: visibility,
+          };
+          WeaponMountList.push(new WeaponMounts(weaponMount));
+        }
+      }
+    }
+  }
+  console.log(
+    `Number of weapon mount combinations = ${WeaponMountList.length}`
+  );
+  return WeaponMountList;
 };

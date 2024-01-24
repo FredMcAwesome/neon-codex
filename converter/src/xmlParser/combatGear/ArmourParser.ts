@@ -28,7 +28,7 @@ import Armours from "../../grammar/armours.ohm-bundle.js";
 import {
   convertSource,
   convertXmlGears,
-  convertXmlModList,
+  convertXmlModObject,
 } from "../common/ParserHelper.js";
 import { convertArmourModCategory } from "./ArmourModParserHelper.js";
 const Availability = Armours.Availability;
@@ -205,23 +205,15 @@ function convertArmour(armour: ArmourXmlType) {
       ? convertXmlBonus(armour.wirelessbonus)
       : undefined;
 
-  const mods =
-    armour.mods !== undefined ? convertXmlModList(armour.mods) : undefined;
+  const includedMods =
+    armour.mods !== undefined ? convertXmlModObject(armour.mods) : undefined;
   const allowModCategory =
     armour.addmodcategory !== undefined
       ? convertArmourModCategory(armour.addmodcategory)
       : undefined;
-  const addModCategoryXmlList =
+  const addModFromXmlCategory =
     armour.selectmodsfromcategory !== undefined
-      ? Array.isArray(armour.selectmodsfromcategory)
-        ? armour.selectmodsfromcategory
-        : [armour.selectmodsfromcategory]
-      : [];
-  const addModCategoryList =
-    addModCategoryXmlList.length > 0
-      ? addModCategoryXmlList.map((category) => {
-          return convertArmourModCategory(category.category);
-        })
+      ? armour.selectmodsfromcategory.category
       : undefined;
   const source = convertSource(armour.source);
 
@@ -241,13 +233,13 @@ function convertArmour(armour: ArmourXmlType) {
     availability: availability,
     cost: cost,
     ...(gears !== undefined && {
-      includedGear: gears,
+      includedGearList: gears,
     }),
     ...(bonus !== undefined && { bonus: bonus }),
     ...(wirelessBonus !== undefined && { wirelessBonus: wirelessBonus }),
-    ...(mods !== undefined && { mods: mods }),
+    ...(includedMods !== undefined && { includedMods: includedMods }),
     allowModCategory: allowModCategory,
-    addModCategoryList: addModCategoryList,
+    includeModFromCategory: addModFromXmlCategory,
     source: source,
     page: armour.page,
   };

@@ -4,8 +4,10 @@ import {
   OneToMany,
   PrimaryKey,
   Property,
+  Unique,
 } from "@mikro-orm/postgresql";
-import { Threads, Comments } from "./models.js";
+import Comments from "./commentModel.js";
+import Threads from "./threadModel.js";
 
 @Entity()
 export default class Users {
@@ -13,6 +15,7 @@ export default class Users {
   id!: number;
 
   @Property({ length: 255 })
+  @Unique()
   username!: string;
 
   @Property({ length: 3000 })

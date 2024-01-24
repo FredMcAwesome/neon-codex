@@ -2473,6 +2473,27 @@
       <useskill>Throwing Weapons</useskill>
     </weapon>
     <weapon>
+      <id>5163597c-e37e-4cac-87e9-d2d7f00f9b68</id>
+      <name>Grenade: Paint (Radioactive Tracking Dye)</name>
+      <category>Gear</category>
+      <type>Ranged</type>
+      <conceal>0</conceal>
+      <accuracy>Physical</accuracy>
+      <reach>0</reach>
+      <damage>(10m Radius)</damage>
+      <ap>-</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>8R</avail>
+      <cost>150</cost>
+      <source>RG</source>
+      <page>102</page>
+      <range>Standard Grenade</range>
+      <spec>Non-Aerodynamic</spec>
+      <useskill>Throwing Weapons</useskill>
+    </weapon>
+    <weapon>
       <id>bb4e9274-2cf0-4c73-a312-f1b51649d1bc</id>
       <name>Grenade: Smokebomb</name>
       <category>Gear</category>
@@ -2655,6 +2676,27 @@
       <ammo>0</ammo>
       <avail>8R</avail>
       <cost>100</cost>
+      <source>RG</source>
+      <page>102</page>
+      <range>Aerodynamic Grenade</range>
+      <spec>Aerodynamic</spec>
+      <useskill>Throwing Weapons</useskill>
+    </weapon>
+    <weapon>
+      <id>2dfc166e-6a11-4046-8d93-34545008a8f6</id>
+      <name>Grenade: Paint (Radioactive Tracking Dye), Aerodynamic</name>
+      <category>Gear</category>
+      <type>Ranged</type>
+      <conceal>0</conceal>
+      <accuracy>Physical</accuracy>
+      <reach>0</reach>
+      <damage>(10m Radius)</damage>
+      <ap>-</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>8R</avail>
+      <cost>150</cost>
       <source>RG</source>
       <page>102</page>
       <range>Aerodynamic Grenade</range>
@@ -3703,6 +3745,8 @@
       <cost>120</cost>
       <source>SR5</source>
       <page>425</page>
+      <spec>Holdouts</spec>
+      <spec2>Semi-Automatics</spec2>
     </weapon>
     <weapon>
       <id>0b4c00be-d7bb-4480-b9f4-6300abde27c4</id>
@@ -5967,6 +6011,27 @@
       <weapontype>gun</weapontype>
     </weapon>
     <weapon>
+      <id>04fd6c88-6d3c-4e5e-8490-4cf422f3e02e</id>
+      <name>Monofilament Bola</name>
+      <category>Gear</category>
+      <type>Ranged</type>
+      <conceal>-2</conceal>
+      <accuracy>Physical</accuracy>
+      <reach>0</reach>
+      <damage>({STR}+3)S/12P</damage>
+      <ap>+4//-8</ap>
+      <mode>SS</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>18F</avail>
+      <cost>4000</cost>
+      <source>RG</source>
+      <page>26</page>
+      <range>Shuriken</range>
+      <useskill>Exotic Ranged Weapon</useskill>
+      <useskillspec>Monofilament Bola</useskillspec>
+    </weapon>
+    <weapon>
       <id>eb9c657d-d98d-476e-8a86-40d83d8cb821</id>
       <name>Mortimer of London 'Trafalger' Gun Cane</name>
       <category>Exotic Ranged Weapons</category>
@@ -7168,6 +7233,7 @@
         </weapondetails>
       </required>
       <sizecategory>Light Crossbows</sizecategory>
+      <spec>Grapple Gun</spec>
       <useskill>Exotic Ranged Weapon</useskill>
       <useskillspec>Grapple Gun</useskillspec>
       <weapontype>grapplegun</weapontype>
@@ -7204,6 +7270,7 @@
       <ammocategory>Shotguns</ammocategory>
       <hide />
       <range>Shotguns</range>
+      <spec>Shotguns</spec>
       <useskill>Longarms</useskill>
       <useskillspec>Shotguns</useskillspec>
     </weapon>
@@ -7971,6 +8038,7 @@
       <allowaccessory>False</allowaccessory>
       <hide />
       <range>Light Crossbows</range>
+      <spec>Grapple Gun</spec>
       <useskill>Exotic Ranged Weapon</useskill>
       <useskillspec>Grapple Gun</useskillspec>
       <weapontype>grapplegun</weapontype>
@@ -8984,7 +9052,7 @@
     <!-- Region Cutting Aces -->
     <weapon>
       <id>dfec9209-7bf7-49fa-b816-da173fad9963</id>
-      <name>Mortimer of London ‘Belgrave’ Sword Cane</name>
+      <name>Mortimer of London 'Belgrave' Sword Cane</name>
       <category>Blades</category>
       <type>Melee</type>
       <conceal>0</conceal>
@@ -12054,7 +12122,7 @@
       <category>Clubs</category>
       <type>Melee</type>
       <conceal>0</conceal>
-      <accuracy>3</accuracy> <!-- need to revert this later-->
+      <accuracy>3+number({STR} >= 5)+number({STR} >= 7)</accuracy>
       <reach>2</reach>
       <damage>({STR}+2+(2*number({STR} >= 5))+(2*number({STR} >= 7)))P</damage>
       <ap>-1</ap>
@@ -12632,7 +12700,7 @@
         <mount>Side</mount>
         <mount>Stock</mount>
         <mount>Top</mount>
-        <mount>Under</mount>        
+        <mount>Under</mount>
       </accessorymounts>
       <range>Medium Crossbows</range>
       <spec>Crossbow</spec>
@@ -13123,6 +13191,27 @@
     <weapon>
       <id>some_id_here</id>
       <name>Bayonet</name>
+      <category>Underbarrel Weapons</category>
+      <type>Melee</type>
+      <conceal>0</conceal>
+      <accuracy>5</accuracy>
+      <reach>2</reach>
+      <damage>({STR}+1)P</damage>
+      <ap>-1</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <mount>Under</mount>
+      <avail>4R</avail>
+      <cost>50</cost>
+      <source>RG</source>
+      <page>50</page>
+      <spec>Blades</spec>
+      <useskill>Blades</useskill>
+    </weapon>
+    <weapon>
+      <id>some_id_here</id>
+      <name>Retractable Bayonet</name>
       <category>Underbarrel Weapons</category>
       <type>Melee</type>
       <conceal>0</conceal>
@@ -14137,6 +14226,7 @@
         <mount>Top</mount>
         <mount>Under</mount>
       </accessorymounts>
+      <range>Medium/Heavy Machinegun</range>
       <spec>Machine Guns</spec>
     </weapon>
     <weapon>
@@ -14994,18 +15084,18 @@
       <ammo>10(m)</ammo>
       <avail>0</avail>
       <mount>Under</mount>
-	    <range>Shuriken</range>
+      <range>Shuriken</range>
       <cost>150</cost>
       <source>SOTG</source>
       <page>13</page>
       <useskill>Archery</useskill>
-	  <required>
-		<weapondetails>
-			<conceal operation="greaterthan">0</conceal>
-		</weapondetails>
-	  </required>
-	  <weapontype>slingshot</weapontype>
-	  <spec>Slingshots</spec>
+      <required>
+        <weapondetails>
+          <conceal operation="greaterthan">0</conceal>
+        </weapondetails>
+      </required>
+      <weapontype>slingshot</weapontype>
+      <spec>Slingshots</spec>
     </weapon>
     <!-- End Region -->
     <!-- Region Datapuls Verschlusssache (German) -->
@@ -15091,6 +15181,26 @@
       <page>136</page>
       <hide />
       <requireammo>microtorpedo</requireammo>
+    </weapon>
+    <weapon>
+      <id>some_id_here</id>
+      <name>Ink Pouch</name>
+      <category>Gear</category>
+      <type>Ranged</type>
+      <conceal>0</conceal>
+      <accuracy>0</accuracy>
+      <reach>0</reach>
+      <damage>(5m Radius)</damage>
+      <ap>-</ap>
+      <mode>SA</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>0</avail>
+      <cost>0</cost>
+      <source>R5</source>
+      <page>136</page>
+      <hide />
+      <range>Net</range>
     </weapon>
     <weapon>
       <id>160389be-8ded-48d5-be10-2f201446cc29</id>
@@ -15909,6 +16019,55 @@
         <mount>Under</mount>
       </accessorymounts>
       <useskill>Gunnery</useskill>
+    </weapon>
+    <weapon>
+      <id>7fffffff-a7c4-4acf-9193-7fffffff0537</id>
+      <name>Krime Ripper</name>
+      <category>Light Machine Guns</category>
+      <type>Ranged</type>
+      <conceal>10</conceal>
+      <accuracy>5</accuracy>
+      <reach>0</reach>
+      <damage>10Px2</damage>
+      <ap>-2</ap>
+      <mode>FA</mode>
+      <rc>-5</rc>
+      <ammo>100(belt)x2</ammo>
+      <avail>20F</avail>
+      <cost>10000</cost>
+      <source>KK</source>
+      <page>20</page>
+      <accessories>
+        <accessory>
+          <name>Smart Firing Platform</name>
+          <gears>
+            <usegear>
+              <name>Clearsight Autosoft</name>
+              <category>Autosofts</category>
+              <rating>1</rating>
+            </usegear>
+            <usegear>
+              <name select="Krime Ripper">[Weapon] Targeting Autosoft</name>
+              <category>Autosofts</category>
+              <rating>2</rating>
+            </usegear>
+            <usegear>
+              <name>Krime Ripper Sensor Array</name>
+              <category>Sensors</category>
+              <rating>3</rating>
+            </usegear>
+          </gears>
+        </accessory>
+      </accessories>
+      <accessorymounts>
+        <mount>Stock</mount>
+        <mount>Side</mount>
+        <mount>Barrel</mount>
+        <mount>Top</mount>
+        <mount>Under</mount>
+      </accessorymounts>
+      <range>Light Machine Guns</range>
+      <spec>Machine Guns</spec>
     </weapon>
     <weapon>
       <id>7fffffff-a8d1-4932-92db-7fffffff48e6</id>
@@ -17226,6 +17385,7 @@
       </required>
       <hide />
     </accessory>
+    <!-- TK-TODO: Chainsaw and flamethrower need to select weapon -->
     <accessory>
       <id>2ce42c74-5129-4b33-b829-aa392c8eb392</id>
       <name>Underbarrel Chainsaw</name>

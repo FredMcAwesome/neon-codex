@@ -1,4 +1,4 @@
-import { Entity, PrimaryKey, Property } from "@mikro-orm/postgresql";
+import { Entity, PrimaryKey, Property, Unique } from "@mikro-orm/postgresql";
 import type { RangeIncrementType } from "@shadowrun/common/build/schemas/weaponSchemas.js";
 
 @Entity()
@@ -7,6 +7,7 @@ export class WeaponRanges {
   id!: number;
 
   @Property({ length: 255 })
+  @Unique()
   name!: string;
 
   @Property({ type: "json" })

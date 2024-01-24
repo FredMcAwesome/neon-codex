@@ -1119,15 +1119,13 @@
     "bonus": {
       "enterName": true
     },
-    "allowedGear": {
-      "gearCategoryList": [
-        "Chemicals",
-        "Custom Drug",
-        "Drugs",
-        "Toxins",
-        "Custom"
-      ]
-    },
+    "allowedGearCategories": [
+      "Chemicals",
+      "Custom Drug",
+      "Drugs",
+      "Toxins",
+      "Custom"
+    ],
     "allowCategoryList": ["Chemical Gland Modifications"],
     "availability": {
       "rating": [12],
@@ -1170,15 +1168,13 @@
     "rating": {
       "maximum": [1]
     },
-    "allowedGear": {
-      "gearCategoryList": [
-        "Chemicals",
-        "Custom Drug",
-        "Drugs",
-        "Toxins",
-        "Custom"
-      ]
-    },
+    "allowedGearCategories": [
+      "Chemicals",
+      "Custom Drug",
+      "Drugs",
+      "Toxins",
+      "Custom"
+    ],
     "allowCategoryList": ["Chemical Gland Modifications"],
     "availability": {
       "rating": [12],
@@ -1221,15 +1217,13 @@
     "rating": {
       "maximum": [1]
     },
-    "allowedGear": {
-      "gearCategoryList": [
-        "Chemicals",
-        "Custom Drug",
-        "Drugs",
-        "Toxins",
-        "Custom"
-      ]
-    },
+    "allowedGearCategories": [
+      "Chemicals",
+      "Custom Drug",
+      "Drugs",
+      "Toxins",
+      "Custom"
+    ],
     "allowCategoryList": ["Chemical Gland Modifications"],
     "availability": {
       "rating": [12],
@@ -1272,15 +1266,13 @@
     "rating": {
       "maximum": [1]
     },
-    "allowedGear": {
-      "gearCategoryList": [
-        "Chemicals",
-        "Custom Drug",
-        "Drugs",
-        "Toxins",
-        "Custom"
-      ]
-    },
+    "allowedGearCategories": [
+      "Chemicals",
+      "Custom Drug",
+      "Drugs",
+      "Toxins",
+      "Custom"
+    ],
     "allowCategoryList": ["Chemical Gland Modifications"],
     "availability": {
       "rating": [12],
@@ -1324,15 +1316,13 @@
     "rating": {
       "maximum": [1]
     },
-    "allowedGear": {
-      "gearCategoryList": [
-        "Chemicals",
-        "Custom Drug",
-        "Drugs",
-        "Toxins",
-        "Custom"
-      ]
-    },
+    "allowedGearCategories": [
+      "Chemicals",
+      "Custom Drug",
+      "Drugs",
+      "Toxins",
+      "Custom"
+    ],
     "availability": {
       "rating": [12],
       "restriction": "Legal"
@@ -2265,256 +2255,6 @@
     "subtype": "Biosculpting"
   },
   {
-    "name": "Claws",
-    "description": "",
-    "augmentationLimit": {
-      "option": "N/A"
-    },
-    "essenceCost": [
-      {
-        "subnumbers": [
-          0.1,
-          {
-            "operator": "*"
-          },
-          {
-            "option": "Rating"
-          }
-        ]
-      }
-    ],
-    "rating": {
-      "maximum": [2]
-    },
-    "addWeapon": "Claws (Bio-Weapon)",
-    "userSelectable": false,
-    "availability": {
-      "rating": [4],
-      "restriction": "Restricted"
-    },
-    "cost": [500],
-    "source": "Chrome Flesh",
-    "page": 120,
-    "type": "Bioware",
-    "subtype": "Bio-Weapons"
-  },
-  {
-    "name": "Claws (Retractable)",
-    "description": "",
-    "augmentationLimit": {
-      "option": "N/A"
-    },
-    "essenceCost": [
-      {
-        "subnumbers": [
-          0.15,
-          {
-            "operator": "*"
-          },
-          {
-            "option": "Rating"
-          }
-        ]
-      }
-    ],
-    "rating": {
-      "maximum": [2]
-    },
-    "addWeapon": "Retractable Claws (Bio-Weapon)",
-    "userSelectable": false,
-    "availability": {
-      "rating": [6],
-      "restriction": "Restricted"
-    },
-    "cost": [
-      {
-        "subnumbers": [
-          {
-            "option": "Rating"
-          },
-          {
-            "operator": "*"
-          },
-          1000
-        ]
-      }
-    ],
-    "source": "Chrome Flesh",
-    "page": 120,
-    "type": "Bioware",
-    "subtype": "Bio-Weapons"
-  },
-  {
-    "name": "Striking Callus",
-    "description": "",
-    "essenceCost": [
-      {
-        "subnumbers": [
-          0.05,
-          {
-            "operator": "*"
-          },
-          {
-            "option": "Rating"
-          }
-        ]
-      }
-    ],
-    "rating": {
-      "maximum": [4]
-    },
-    "bonus": {
-      "unarmedDamageType": "Physical"
-    },
-    "userSelectable": false,
-    "availability": {
-      "rating": [2],
-      "restriction": "Legal"
-    },
-    "cost": [
-      {
-        "subnumbers": [
-          {
-            "option": "Rating"
-          },
-          {
-            "operator": "*"
-          },
-          250
-        ]
-      }
-    ],
-    "source": "Chrome Flesh",
-    "page": 121,
-    "type": "Bioware",
-    "subtype": "Bio-Weapons"
-  },
-  {
-    "name": "Tusk(s), Small",
-    "description": "",
-    "augmentationLimit": {
-      "option": "N/A"
-    },
-    "essenceCost": [0],
-    "rating": {
-      "maximum": [2]
-    },
-    "userSelectable": false,
-    "availability": {
-      "rating": [2],
-      "restriction": "Legal"
-    },
-    "cost": [
-      {
-        "subnumbers": [
-          {
-            "option": "Rating"
-          },
-          {
-            "operator": "*"
-          },
-          100
-        ]
-      }
-    ],
-    "source": "Chrome Flesh",
-    "page": 121,
-    "type": "Bioware",
-    "subtype": "Bio-Weapons"
-  },
-  {
-    "name": "Tusk(s), Medium",
-    "description": "",
-    "augmentationLimit": {
-      "option": "N/A"
-    },
-    "essenceCost": [
-      {
-        "subnumbers": [
-          0.1,
-          {
-            "operator": "*"
-          },
-          {
-            "option": "Rating"
-          }
-        ]
-      }
-    ],
-    "rating": {
-      "maximum": [2]
-    },
-    "addWeapon": "Medium Tusk(s)",
-    "userSelectable": false,
-    "availability": {
-      "rating": [2],
-      "restriction": "Legal"
-    },
-    "cost": [
-      {
-        "subnumbers": [
-          {
-            "option": "Rating"
-          },
-          {
-            "operator": "*"
-          },
-          500
-        ]
-      }
-    ],
-    "source": "Chrome Flesh",
-    "page": 121,
-    "type": "Bioware",
-    "subtype": "Bio-Weapons"
-  },
-  {
-    "name": "Tusk(s), Large",
-    "description": "",
-    "augmentationLimit": {
-      "option": "N/A"
-    },
-    "essenceCost": [
-      {
-        "subnumbers": [
-          0.2,
-          {
-            "operator": "*"
-          },
-          {
-            "option": "Rating"
-          }
-        ]
-      }
-    ],
-    "rating": {
-      "maximum": [2]
-    },
-    "addWeapon": "Large Tusk(s)",
-    "userSelectable": false,
-    "availability": {
-      "rating": [8],
-      "restriction": "Restricted"
-    },
-    "cost": [
-      {
-        "subnumbers": [
-          {
-            "option": "Rating"
-          },
-          {
-            "operator": "*"
-          },
-          1000
-        ]
-      }
-    ],
-    "source": "Chrome Flesh",
-    "page": 121,
-    "type": "Bioware",
-    "subtype": "Bio-Weapons"
-  },
-  {
     "name": "Claws, Fixed (Hands)",
     "description": "",
     "augmentationLimit": {
@@ -2878,7 +2618,6 @@
     "rating": {
       "maximum": [1]
     },
-    "addWeapon": "",
     "availability": {
       "rating": [8],
       "restriction": "Legal"
@@ -5273,7 +5012,11 @@
       {
         "subnumbers": [
           {
-            "option": "Rating"
+            "subnumbers": [
+              {
+                "option": "Rating"
+              }
+            ]
           },
           {
             "operator": "*"

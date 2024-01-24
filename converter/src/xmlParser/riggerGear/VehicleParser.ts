@@ -13,7 +13,7 @@ import type {
 import {
   convertSource,
   convertXmlGears,
-  convertXmlModList,
+  convertXmlVehicleModList,
 } from "../common/ParserHelper.js";
 import {
   accelerationSemantics,
@@ -97,7 +97,7 @@ export function ParseVehicles() {
         case 2050:
         case sourceBookXmlEnum.GrimmesErwachen:
           break;
-        // Not containing Cyberware
+        // Not containing Vehicles
         case sourceBookXmlEnum.KillCode:
         case sourceBookXmlEnum.ChromeFlesh:
         case sourceBookXmlEnum.Lockdown:
@@ -193,13 +193,15 @@ const convertVehicle = function (vehicle: VehicleXmlType) {
   }
   const handling = handlingSemantics(match).eval();
 
-  const includedGear =
+  const includedGearList =
     vehicle.gears !== undefined
       ? // switch gear to usegear (as it should be in xml...)
         convertXmlGears({ usegear: vehicle.gears.gear })
       : undefined;
   const includedMods =
-    vehicle.mods !== undefined ? convertXmlModList(vehicle.mods) : undefined;
+    vehicle.mods !== undefined
+      ? convertXmlVehicleModList(vehicle.mods)
+      : undefined;
 
   const weaponXmlList =
     vehicle.weapons !== undefined
@@ -243,7 +245,7 @@ const convertVehicle = function (vehicle: VehicleXmlType) {
     armour: vehicle.armor,
     pilot: vehicle.pilot,
     sensor: vehicle.sensor,
-    includedGear: includedGear,
+    includedGearList: includedGearList,
     includedMods: includedMods,
     modSlots: vehicle.modslots,
     powerTrainModSlots: vehicle.powertrainmodslots,

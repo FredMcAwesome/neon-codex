@@ -1,4 +1,10 @@
-import { Entity, Enum, PrimaryKey, Property } from "@mikro-orm/postgresql";
+import {
+  Entity,
+  Enum,
+  PrimaryKey,
+  Property,
+  Unique,
+} from "@mikro-orm/postgresql";
 import type { SkillType } from "@shadowrun/common";
 import {
   attributeTypeEnum,
@@ -11,6 +17,7 @@ export class Skills {
   id!: number;
 
   @Property({ length: 255 })
+  @Unique()
   name!: string;
 
   @Enum(() => attributeTypeEnum)
@@ -29,7 +36,7 @@ export class Skills {
   skillGroup?: string;
 
   @Property({ type: "string[]", nullable: true })
-  specialisations?: Array<string>;
+  defaultSpecialisations?: Array<string>;
 
   @Property()
   source!: string;
@@ -48,7 +55,7 @@ export class Skills {
     this.exotic = dto.exotic;
     if (dto.skillGroup !== undefined) this.skillGroup = dto.skillGroup;
     if (dto.specialisations !== undefined)
-      this.specialisations = dto.specialisations;
+      this.defaultSpecialisations = dto.specialisations;
     this.source = dto.source;
     this.page = dto.page;
     this.description = dto.description;

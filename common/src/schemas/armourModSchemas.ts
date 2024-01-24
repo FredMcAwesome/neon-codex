@@ -13,7 +13,6 @@ import {
   UseGearListSchema,
 } from "./commonSchemas.js";
 import { BonusSchema } from "./shared/bonusSchemas.js";
-import { ModListSchema } from "./shared/modSchemas.js";
 
 const InnerAvailabilityArmourModSchema = zod
   .object({
@@ -119,10 +118,9 @@ export const ArmourModSchema = zod
     damageReduction: DamageReductionArmourSchema,
     capacityCost: CapacityArmourModSchema,
     hostArmourRequirements: zod.optional(HostArmourRequirementSchema),
-    includedGear: zod.optional(UseGearListSchema),
+    includedGearList: zod.optional(UseGearListSchema),
     bonus: zod.optional(BonusSchema),
     wirelessBonus: zod.optional(BonusSchema),
-    mods: zod.optional(ModListSchema),
     userSelectable: zod.optional(zod.literal(false)),
     availability: AvailabilityArmourModSchema,
     cost: CostArmourModSchema,

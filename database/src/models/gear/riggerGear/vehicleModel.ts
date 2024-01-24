@@ -1,4 +1,12 @@
-import { Entity, PrimaryKey, Property, Enum } from "@mikro-orm/postgresql";
+import {
+  Entity,
+  PrimaryKey,
+  Property,
+  Enum,
+  Collection,
+  OneToMany,
+  Unique,
+} from "@mikro-orm/postgresql";
 import {
   vehicleTypeEnum,
   groundcraftSubtypeEnum,
@@ -16,11 +24,11 @@ import type {
   VehicleSeatsType,
   VehicleType,
   WatercraftVehicleType,
-  WeaponMountListType,
 } from "@shadowrun/common/build/schemas/riggerSchemas.js";
 import { sourceBookEnum } from "@shadowrun/common/build/enums.js";
-import type { UseGearListType } from "@shadowrun/common/src/schemas/commonSchemas.js";
-import type { ModListType } from "@shadowrun/common/src/schemas/shared/modSchemas.js";
+import { VehicleIncludedGears } from "../../chummerdb/customTables/activeGearModel.js";
+import { IncludedVehicleModifications } from "../../chummerdb/customTables/activeVehicleModificationModel.js";
+import { IncludedWeaponMounts } from "../../chummerdb/customTables/activeWeaponMountModel.js";
 
 @Entity({
   discriminatorColumn: "type",
@@ -31,6 +39,7 @@ export abstract class Vehicles {
   id!: number;
 
   @Property({ length: 255 })
+  @Unique()
   name!: string;
 
   @Property({ length: 5000 })
@@ -60,11 +69,17 @@ export abstract class Vehicles {
   @Property()
   sensor!: number;
 
-  @Property({ type: "json", nullable: true })
-  includedGear?: UseGearListType;
+  @OneToMany(
+    () => VehicleIncludedGears,
+    (vehicleIncludedGear) => vehicleIncludedGear.vehicle
+  )
+  includedGearList = new Collection<VehicleIncludedGears>(this);
 
-  @Property({ type: "json", nullable: true })
-  includedMods?: ModListType;
+  @OneToMany(
+    () => IncludedVehicleModifications,
+    (vehicleIncludedMods) => vehicleIncludedMods.standardVehicle
+  )
+  includedMods = new Collection<IncludedVehicleModifications>(this);
 
   @Property({ nullable: true })
   modSlots?: number;
@@ -87,11 +102,11 @@ export abstract class Vehicles {
   @Property({ nullable: true })
   cosmeticModSlots?: number;
 
-  @Property({ type: "string[]", nullable: true })
-  weaponList?: Array<string>;
-
-  @Property({ type: "json", nullable: true })
-  weaponMountList?: WeaponMountListType;
+  @OneToMany(
+    () => IncludedWeaponMounts,
+    (weaponMount) => weaponMount.standardVehicle
+  )
+  weaponMountList = new Collection<IncludedWeaponMounts>(this);
 
   @Property({ nullable: true })
   userSelectable?: false;
@@ -125,12 +140,12 @@ export abstract class Vehicles {
     this.armour = dto.armour;
     this.pilot = dto.pilot;
     this.sensor = dto.sensor;
-    if (dto.includedGear !== undefined) {
-      this.includedGear = dto.includedGear;
-    }
-    if (dto.includedMods !== undefined) {
-      this.includedMods = dto.includedMods;
-    }
+    // if (dto.includedGearList !== undefined) {
+    //   this.includedGearList = dto.includedGearList;
+    // }
+    // if (dto.includedMods !== undefined) {
+    //   this.includedMods = dto.includedMods;
+    // }
     if (dto.modSlots !== undefined) {
       this.modSlots = dto.modSlots;
     }
@@ -152,12 +167,9 @@ export abstract class Vehicles {
     if (dto.cosmeticModSlots !== undefined) {
       this.cosmeticModSlots = dto.cosmeticModSlots;
     }
-    if (dto.weaponList !== undefined) {
-      this.weaponList = dto.weaponList;
-    }
-    if (dto.weaponMountList !== undefined) {
-      this.weaponMountList = dto.weaponMountList;
-    }
+    // if (dto.weaponMountList !== undefined) {
+    //   this.weaponMountList = dto.weaponMountList;
+    // }
     if (dto.userSelectable !== undefined) {
       this.userSelectable = dto.userSelectable;
     }

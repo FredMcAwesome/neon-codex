@@ -5,9 +5,9 @@ import {
   Enum,
   OneToOne,
   Collection,
-  OneToMany,
-  ManyToOne,
+  ManyToMany,
 } from "@mikro-orm/postgresql";
+import type { Ref } from "@mikro-orm/postgresql";
 import {
   gearCategoryEnum,
   personaFormEnum,
@@ -27,6 +27,7 @@ import type {
   GearProgramType,
   GearRatingType,
   OtherGearType,
+  WeightType,
 } from "@shadowrun/common/build/schemas/otherGearSchemas.js";
 import { CustomisedWeapons } from "../../chummerdb/customTables/customisedWeaponModel.js";
 import type { RequirementsType } from "@shadowrun/common/src/schemas/shared/requiredSchemas.js";
@@ -36,6 +37,7 @@ export class Gears {
   @PrimaryKey()
   id!: number;
 
+  // Not unique as many things may have the same name
   @Property({ length: 255 })
   name!: string;
 
@@ -48,8 +50,8 @@ export class Gears {
   @Property({ type: "json", nullable: true })
   maxRating?: GearRatingType;
 
-  @OneToOne({ entity: () => CustomisedWeapons, nullable: true })
-  includedWeapon?: CustomisedWeapons;
+  @OneToOne({ entity: () => CustomisedWeapons, nullable: true, ref: true })
+  includedWeapon?: Ref<CustomisedWeapons>;
 
   @Enum({ items: () => gearCategoryEnum, array: true, nullable: true })
   allowCategoryList?: Array<gearCategoryEnum>;
@@ -72,22 +74,16 @@ export class Gears {
   @Property({ type: "json", nullable: true })
   ammoForWeaponType?: Array<AmmoForWeaponTypeType>;
 
-  @Property({ nullable: true })
-  explosiveWeight?: number;
+  @Property({ type: "json", nullable: true })
+  explosiveWeight?: WeightType;
 
   @Property({ nullable: true })
   userSelectable?: false;
 
-  @ManyToOne({ entity: () => Gears, nullable: true })
-  allowedGearItem?: Gears;
+  @ManyToMany({ entity: () => Gears, owner: true })
+  allowedGearList = new Collection<Gears>(this);
 
-  @OneToMany(() => Gears, (gear) => gear.allowedGearItem)
-  allowGearList = new Collection<Gears>(this);
-
-  @ManyToOne({ entity: () => Gears, nullable: true })
-  includedGearItem?: Gears;
-
-  @OneToMany(() => Gears, (gear) => gear.includedGearItem)
+  @ManyToMany({ entity: () => Gears, owner: true })
   includedGearList = new Collection<Gears>(this);
 
   @Property({ type: "json", nullable: true })
@@ -205,8 +201,8 @@ export class Gears {
     if (dto.userSelectable !== undefined) {
       this.userSelectable = dto.userSelectable;
     }
-    // if (dto.allowGearList !== undefined) {
-    //   this.allowGearList = dto.allowGearList;
+    // if (dto.allowedGearList !== undefined) {
+    //   this.allowedGearList = dto.allowedGearList;
     // }
     // if (dto.includedGearList !== undefined) {
     //   this.includedGearList = dto.includedGearList;

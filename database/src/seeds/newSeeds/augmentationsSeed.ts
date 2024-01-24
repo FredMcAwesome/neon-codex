@@ -5,6 +5,7 @@ import { fileURLToPath } from "url";
 import { AugmentationListSchema } from "@shadowrun/common/build/schemas/augmentationSchemas.js";
 import type { AugmentationListType } from "@shadowrun/common/build/schemas/augmentationSchemas.js";
 import {
+  Augmentations,
   Biowares,
   Cyberwares,
 } from "../../models/gear/augmentationGear/augmentationModel.js";
@@ -12,8 +13,8 @@ import { augmentationTypeEnum } from "@shadowrun/common";
 
 export const getAugmentations = function () {
   const currentPath = import.meta.url;
-  let cyberwares: AugmentationListType | undefined = undefined;
-  let biowares: AugmentationListType | undefined = undefined;
+  let cyberwares: AugmentationListType;
+  let biowares: AugmentationListType;
   let relativeConverterPath = "converter/jsonFiles/biowares.json";
   const rootPath = "../../../../../";
   let jsonString = fs.readFileSync(
@@ -28,12 +29,12 @@ export const getAugmentations = function () {
     biowares = biowareListParsed.data;
   } else {
     console.log(biowareListParsed.error.errors[0]);
-    assert(false);
+    assert(false, "biowares is undefined");
   }
-  const stagedBiowares: Array<Biowares> = [];
+  const stagedAugmentations: Array<Augmentations> = [];
   biowares.forEach((augmentation) => {
     assert(augmentation.type === augmentationTypeEnum.Bioware);
-    stagedBiowares.push(new Biowares(augmentation));
+    stagedAugmentations.push(new Biowares(augmentation));
     // console.log(augmentation.name);
   });
 
@@ -50,14 +51,14 @@ export const getAugmentations = function () {
     cyberwares = cyberwareListParsed.data;
   } else {
     console.log(cyberwareListParsed.error.errors[0]);
-    assert(false);
+    assert(false, "cyberwares is undefined");
   }
 
-  const stagedCyberwares: Array<Cyberwares> = [];
   cyberwares.forEach((augmentation) => {
     assert(augmentation.type === augmentationTypeEnum.Cyberware);
-    stagedCyberwares.push(new Cyberwares(augmentation));
+    stagedAugmentations.push(new Cyberwares(augmentation));
     // console.log(augmentation.name);
   });
-  return { stagedBiowares, stagedCyberwares };
+  const unlinkedAugmentations = biowares.concat(cyberwares);
+  return { unlinkedAugmentations, stagedAugmentations };
 };

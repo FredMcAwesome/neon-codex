@@ -8,6 +8,7 @@ import {
   capcityAugmentationEnum,
   costAugmentationEnum,
   cyberwareCategoryEnum,
+  gearCategoryEnum,
   limbSlotEnum,
   mathOperatorEnum,
   mountSlotEnum,
@@ -16,7 +17,6 @@ import {
   sourceBookEnum,
 } from "../enums.js";
 import {
-  AllowedGearSchema,
   AvailabilityRatingSchema,
   RatingSchema,
   UseGearListSchema,
@@ -260,7 +260,10 @@ export const AugmentationPartialSchema = zod
     pairIncludeList: zod.optional(zod.array(zod.string())),
     requirements: zod.optional(RequirementsSchema),
     forbidden: zod.optional(RequirementsSchema),
-    allowedGear: zod.optional(AllowedGearSchema),
+    allowedGearList: zod.optional(zod.array(zod.string())),
+    allowedGearCategories: zod.optional(
+      zod.array(zod.nativeEnum(gearCategoryEnum))
+    ),
     userSelectable: zod.optional(zod.literal(false)),
     allowCategoryList: zod.optional(
       zod.union([
@@ -291,7 +294,7 @@ const CyberwareSchema = AugmentationPartialSchema.extend({
   modularMount: zod.optional(zod.literal(true)),
   wirelessBonus: zod.optional(BonusSchema),
   wirelessPairBonus: zod.optional(BonusSchema),
-  wirelessPairIncludeList: zod.optional(zod.array(zod.string())),
+  wirelessPairInclude: zod.optional(zod.string()),
   gearList: zod.optional(UseGearListSchema),
   subsystemList: zod.optional(AugmentationSubsystemListSchema),
   forceGrade: zod.optional(zod.nativeEnum(augmentationGradeEnum)),

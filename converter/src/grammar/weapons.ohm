@@ -4,14 +4,19 @@ Accuracy {
   AddSub = AddSub "+" MulDiv -- add
     | AddSub "-" MulDiv -- subtract
     | MulDiv
-  MulDiv = MulDiv "*" AccuracyValue -- multiply
-    | MulDiv "/" AccuracyValue -- divide
+  MulDiv = MulDiv "*" SubCalculation -- multiply
+    | MulDiv "/" SubCalculation -- divide
+    | SubCalculation
+  SubCalculation = "(" Accuracy ")" -- parenthesis
+    | "number(" Accuracy ">=" Accuracy ")" -- numberCalc
     | AccuracyValue
   AccuracyValue = Physical
     | Missile
+    | Strength
     | Number
   Physical = "Physical"
   Missile = "Missile"
+  Strength = "{STR}" | "({STR})"
   Number = "-" PositiveNumber -- negative
     | PositiveNumber
   PositiveNumber = digit+ "." digit+ -- float
@@ -22,6 +27,7 @@ Damage {
   Exp = Total "/" Total -- multipleDamage
     | Total "+" Total -- splitDamage
     | Total "(" Special ")" -- special
+    | Total "x" Number -- multipleBarrels
     | Total -- base
   Total = Overall Annotation Radius -- annotationRadius
     | Overall Annotation Range -- annotationRange
@@ -107,6 +113,7 @@ ArmourPenetration {
   Magic = "Mag" | "{MAG}"
   Nil = "-"
   Number = "-" PositiveNumber -- negative
+    | "+" PositiveNumber -- positive
     | PositiveNumber
   PositiveNumber = digit+ "." digit+ -- float
     | digit+ -- int

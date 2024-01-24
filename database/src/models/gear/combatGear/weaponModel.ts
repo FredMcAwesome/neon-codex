@@ -2,11 +2,12 @@ import {
   Collection,
   Entity,
   Enum,
+  ManyToMany,
   ManyToOne,
   OneToMany,
   PrimaryKey,
   Property,
-  ref,
+  Unique,
 } from "@mikro-orm/postgresql";
 import type { Ref } from "@mikro-orm/postgresql";
 import {
@@ -15,9 +16,11 @@ import {
   firearmAccessoryMountLocationEnum,
   firearmModeEnum,
   firearmWeaponTypeEnum,
+  gearCategoryEnum,
   meleeWeaponTypeEnum,
   projectileWeaponTypeEnum,
   sourceBookEnum,
+  weaponExtraClassificationEnum,
   weaponTypeEnum,
 } from "@shadowrun/common/build/enums.js";
 import type {
@@ -27,14 +30,14 @@ import type {
   AvailabilityWeaponType,
   CostWeaponType,
   DamageType,
+  WeaponSummaryType,
 } from "@shadowrun/common/build/schemas/weaponSchemas.js";
 import { weaponXmlSubtypeEnum } from "@shadowrun/common/build/schemas/commonSchemas.js";
-import type { AllowedGearType } from "@shadowrun/common/build/schemas/commonSchemas.js";
 import { Skills } from "../../chummerdb/skillModel.js";
-import type { WeaponDBType } from "../../../seeds/newSeeds/weaponsSeed.js";
 import { IncludedWeaponAccessories } from "../../chummerdb/customTables/activeWeaponAccessoryModel.js";
-import { WeaponRangeLinks } from "../../chummerdb/customTables/weaponRangeLinkModel.js";
 import type { RequirementsType } from "@shadowrun/common/build/schemas/shared/requiredSchemas.js";
+import { Gears } from "../otherGear/gearModel.js";
+import { WeaponRanges } from "./helperTables/weaponRangeModel.js";
 
 @Entity({
   discriminatorColumn: "type",
@@ -45,6 +48,7 @@ export abstract class Weapons {
   id!: number;
 
   @Property({ length: 255 })
+  @Unique()
   name!: string;
 
   @Enum(() => weaponTypeEnum)
@@ -65,14 +69,17 @@ export abstract class Weapons {
   @Property({ type: "json", nullable: true })
   ammunition?: AmmunitionType;
 
-  @Property({ type: "json", nullable: true })
-  allowedGear?: AllowedGearType;
+  @ManyToMany({ entity: () => Gears, owner: true })
+  allowedGearList = new Collection<Gears>(this);
+
+  @Enum({ items: () => gearCategoryEnum, nullable: true, array: true })
+  allowedGearCategories?: Array<gearCategoryEnum>;
 
   @OneToMany(
     () => IncludedWeaponAccessories,
     (accessory) => accessory.standardWeapon
   )
-  accessories = new Collection<IncludedWeaponAccessories>(this);
+  includedAccessories = new Collection<IncludedWeaponAccessories>(this);
 
   @Property()
   allowAccessories!: boolean;
@@ -123,7 +130,7 @@ export abstract class Weapons {
   @Property({ length: 5000, nullable: true })
   wireless?: string;
 
-  constructor(dto: WeaponDBType) {
+  constructor(dto: WeaponSummaryType, relatedSkill: Ref<Skills>) {
     // this.id = dto.id;
     this.name = dto.name;
     this.type = dto.type;
@@ -132,13 +139,15 @@ export abstract class Weapons {
     this.damage = dto.damage;
     this.armourPenetration = dto.armourPenetration;
     if (dto.ammunition !== undefined) this.ammunition = dto.ammunition;
-    if (dto.allowedGear !== undefined) this.allowedGear = dto.allowedGear;
+    // if (dto.allowedGearList !== undefined) this.allowedGearList = dto.allowedGearList;
+    if (dto.allowedGearCategories !== undefined)
+      this.allowedGearCategories = dto.allowedGearCategories;
     this.allowAccessories = dto.allowAccessories;
     if (dto.userSelectable !== undefined)
       this.userSelectable = dto.userSelectable;
     if (dto.augmentationType !== undefined)
       this.augmentationType = dto.augmentationType;
-    this.relatedSkill = ref(Skills, dto.relatedSkill);
+    this.relatedSkill = relatedSkill;
     if (dto.relatedSkillSpecialisations !== undefined)
       this.relatedSkillSpecialisations = dto.relatedSkillSpecialisations;
     this.availability = dto.availability;
@@ -155,7 +164,7 @@ export abstract class Weapons {
   }
 }
 
-type MeleeWeaponType = WeaponDBType & {
+type MeleeWeaponType = WeaponSummaryType & {
   type: weaponTypeEnum.Melee;
 };
 @Entity({ discriminatorValue: weaponTypeEnum.Melee })
@@ -166,8 +175,8 @@ export class MeleeWeapons extends Weapons {
   @Property()
   reach!: number;
 
-  constructor(dto: MeleeWeaponType) {
-    super(dto);
+  constructor(dto: MeleeWeaponType, relatedSkill: Ref<Skills>) {
+    super(dto, relatedSkill);
     this.subtype = dto.subtype;
     this.reach = dto.meleeOptions.reach;
   }
@@ -177,28 +186,43 @@ export class MeleeWeapons extends Weapons {
 // just leaving as partially abstract for now... TODO: fix
 @Entity()
 export abstract class RangedWeapons extends Weapons {
-  @OneToMany(() => WeaponRangeLinks, (linkTable) => linkTable.weapon)
-  ranges = new Collection<WeaponRangeLinks>(this);
+  @ManyToMany({
+    entity: () => WeaponRanges,
+    owner: true,
+    joinColumn: "join_id",
+  })
+  ranges = new Collection<WeaponRanges>(this);
 
-  constructor(dto: WeaponDBType) {
-    super(dto);
+  @Enum({ items: () => weaponExtraClassificationEnum, nullable: true })
+  extraClassification?: weaponExtraClassificationEnum;
+
+  constructor(
+    dto: WeaponSummaryType,
+    relatedSkill: Ref<Skills>,
+    extraClassification?: weaponExtraClassificationEnum
+  ) {
+    super(dto, relatedSkill);
+    if (extraClassification !== undefined) {
+      this.extraClassification = extraClassification;
+    }
   }
 }
 
-type ProjectileWeaponType = WeaponDBType & {
+type ProjectileWeaponType = WeaponSummaryType & {
   type: weaponTypeEnum.Projectile;
 };
 @Entity({ discriminatorValue: weaponTypeEnum.Projectile })
 export class ProjectileWeapons extends RangedWeapons {
   @Property()
   subtype!: projectileWeaponTypeEnum;
-  constructor(dto: ProjectileWeaponType) {
-    super(dto);
+
+  constructor(dto: ProjectileWeaponType, relatedSkill: Ref<Skills>) {
+    super(dto, relatedSkill, dto.extraClassification);
     this.subtype = dto.subtype;
   }
 }
 
-type FirearmWeaponType = WeaponDBType & {
+type FirearmWeaponType = WeaponSummaryType & {
   type: weaponTypeEnum.Firearm;
 };
 @Entity({ discriminatorValue: weaponTypeEnum.Firearm })
@@ -218,8 +242,10 @@ export class FirearmWeapons extends RangedWeapons {
   @Property()
   ammoSlots!: number;
 
-  @Property({ type: "string[]", nullable: true })
-  underbarrelWeapons?: Array<string>;
+  // join column needs to be manually set as Mikro orm
+  // doesn't create a valid join column otherwise
+  @ManyToMany({ entity: () => Weapons, owner: true, joinColumn: "join_id" })
+  underbarrelWeapons = new Collection<Weapons>(this);
 
   @Enum({
     items: () => firearmAccessoryMountLocationEnum,
@@ -235,16 +261,16 @@ export class FirearmWeapons extends RangedWeapons {
   })
   doubleCostAccessoryMounts?: Array<firearmAccessoryMountLocationEnum>;
 
-  constructor(dto: FirearmWeaponType) {
-    super(dto);
+  constructor(dto: FirearmWeaponType, relatedSkill: Ref<Skills>) {
+    super(dto, relatedSkill, dto.extraClassification);
     this.subtype = dto.subtype;
     this.mode = dto.firearmOptions.mode;
     this.recoilCompensation = dto.firearmOptions.recoilCompensation;
     if (dto.firearmOptions.ammoCategory !== undefined)
       this.ammoCategory = dto.firearmOptions.ammoCategory;
     this.ammoSlots = dto.firearmOptions.ammoSlots;
-    if (dto.firearmOptions.underbarrelWeapons !== undefined)
-      this.underbarrelWeapons = dto.firearmOptions.underbarrelWeapons;
+    // if (dto.firearmOptions.underbarrelWeapons !== undefined)
+    //   this.underbarrelWeapons = dto.firearmOptions.underbarrelWeapons;
     if (dto.firearmOptions.accessoryMounts !== undefined)
       this.accessoryMounts = dto.firearmOptions.accessoryMounts;
     if (dto.firearmOptions.doubleCostAccessoryMounts !== undefined)
@@ -253,7 +279,7 @@ export class FirearmWeapons extends RangedWeapons {
   }
 }
 
-type ExplosiveWeaponType = WeaponDBType & {
+type ExplosiveWeaponType = WeaponSummaryType & {
   type: weaponTypeEnum.Explosive;
 };
 @Entity({ discriminatorValue: weaponTypeEnum.Explosive })
@@ -261,8 +287,8 @@ export class Explosives extends RangedWeapons {
   @Property()
   subtype!: explosiveTypeEnum;
 
-  constructor(dto: ExplosiveWeaponType) {
-    super(dto);
+  constructor(dto: ExplosiveWeaponType, relatedSkill: Ref<Skills>) {
+    super(dto, relatedSkill);
     this.subtype = dto.subtype;
   }
 }

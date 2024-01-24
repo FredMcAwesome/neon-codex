@@ -16,16 +16,15 @@
     "page": 183
   },
   {
-    "name": "Arrow: Seeker Shaft",
+    "name": "Seeker Shaft",
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "ammoForWeaponType": [
-      {
-        "type": "Projectile",
-        "subtype": "Bows"
-      }
-    ],
+    "weaponBonus": {
+      "extraDiceIfSmartlinkEnabled": 1
+    },
+    "requirements": {},
+    "requireParent": true,
     "availability": {
       "rating": [12],
       "restriction": "Forbidden"
@@ -3059,6 +3058,22 @@
     "page": 102
   },
   {
+    "name": "Grenade: Paint (Radioactive Tracking Dye)",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 0,
+    "includedWeapon": {
+      "name": "Grenade: Paint (Radioactive Tracking Dye)"
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Restricted"
+    },
+    "cost": [150],
+    "source": "Run And Gun",
+    "page": 102
+  },
+  {
     "name": "Grenade: Smokebomb",
     "description": "",
     "category": "Ammunition",
@@ -3200,6 +3215,22 @@
       "restriction": "Restricted"
     },
     "cost": [100],
+    "source": "Run And Gun",
+    "page": 102
+  },
+  {
+    "name": "Grenade: Paint (Radioactive Tracking Dye),  Aerodynamic",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 0,
+    "includedWeapon": {
+      "name": "Grenade: Paint (Radioactive Tracking Dye), Aerodynamic"
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "Restricted"
+    },
+    "cost": [150],
     "source": "Run And Gun",
     "page": 102
   },
@@ -4997,6 +5028,22 @@
     "page": 29
   },
   {
+    "name": "Ink Pouch",
+    "description": "",
+    "category": "Custom",
+    "maxRating": 0,
+    "includedWeapon": {
+      "name": "Ink Pouch"
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Rigger 5",
+    "page": 136
+  },
+  {
     "name": "Micro-Torpedo: Chemical",
     "description": "",
     "category": "Ammunition",
@@ -5183,12 +5230,14 @@
     "page": 193
   },
   {
-    "name": "Detonating Cord, Low Yield (meter)",
+    "name": "Detonating Cord, Low Yield",
     "description": "",
     "category": "Explosives",
-    "minRating": 3,
-    "maxRating": 3,
-    "explosiveWeight": 1,
+    "maxRating": 20000,
+    "ratingMeaning": "1 Meter per Rating Level",
+    "explosiveWeight": {
+      "option": "Rating"
+    },
     "availability": {
       "rating": [10],
       "restriction": "Restricted"
@@ -5198,12 +5247,14 @@
     "page": 193
   },
   {
-    "name": "Detonating Cord, High Yield (meter)",
+    "name": "Detonating Cord, High Yield",
     "description": "",
     "category": "Explosives",
-    "minRating": 6,
-    "maxRating": 6,
-    "explosiveWeight": 1,
+    "maxRating": 20000,
+    "ratingMeaning": "1 Meter per Rating Level",
+    "explosiveWeight": {
+      "option": "Rating"
+    },
     "availability": {
       "rating": [14],
       "restriction": "Restricted"
@@ -5598,10 +5649,11 @@
     "page": 196
   },
   {
-    "name": "Safety Fuse (meter)",
+    "name": "Safety Fuse",
     "description": "",
     "category": "Explosives",
-    "maxRating": 0,
+    "maxRating": 20000,
+    "ratingMeaning": "1 Meter per Rating Level",
     "availability": {
       "rating": [8],
       "restriction": "Restricted"
@@ -6486,7 +6538,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -6520,7 +6573,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -6554,7 +6608,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -6588,7 +6643,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -6622,7 +6678,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -6656,7 +6713,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -6690,7 +6748,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -6739,7 +6798,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -6773,7 +6833,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -6807,7 +6868,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -6870,7 +6932,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -7226,7 +7289,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -7271,7 +7335,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -7320,7 +7385,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -7373,7 +7439,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -7422,7 +7489,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -7475,7 +7543,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -7532,7 +7601,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -7597,7 +7667,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -7634,7 +7705,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -7668,7 +7740,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -7706,7 +7779,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -7740,7 +7814,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -7774,7 +7849,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -8552,7 +8628,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -8589,7 +8666,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -8627,7 +8705,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -8664,7 +8743,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -8698,7 +8778,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -8735,7 +8816,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -8769,7 +8851,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -8806,7 +8889,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -8843,7 +8927,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -8877,7 +8962,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -8911,7 +8997,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -8948,7 +9035,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -8982,7 +9070,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       },
       {
@@ -9016,7 +9105,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       }
     ],
@@ -9045,7 +9135,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       }
     ],
@@ -9074,7 +9165,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       }
     ],
@@ -9103,7 +9195,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       }
     ],
@@ -9132,7 +9225,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       }
     ],
@@ -9161,7 +9255,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       }
     ],
@@ -9190,7 +9285,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       }
     ],
@@ -9219,7 +9315,8 @@
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       }
     ],
@@ -14778,6 +14875,20 @@
     "cost": [80],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 448
+  },
+  {
+    "name": "Plasma Torch",
+    "description": "",
+    "category": "Breaking and Entering Gear",
+    "maxRating": 0,
+    "userSelectable": false,
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Rigger 5",
+    "page": 136
   },
   {
     "name": "Monofilament Chainsaw",
@@ -25542,7 +25653,8 @@
     "allowCategoryList": ["Common Programs", "Hacking Programs"],
     "includedGearList": [
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       }
     ],
@@ -28164,10 +28276,11 @@
     "page": 253
   },
   {
-    "name": "Universal Connector Cord (Meter)",
+    "name": "Universal Connector Cord",
     "description": "",
     "category": "Tools",
-    "maxRating": 0,
+    "maxRating": 20000,
+    "ratingMeaning": "1 Meter per Rating Level",
     "availability": {
       "rating": [0],
       "restriction": "Legal"
@@ -28443,10 +28556,11 @@
     "page": 254
   },
   {
-    "name": "Folding Ladder (Meter)",
+    "name": "Folding Ladder",
     "description": "",
     "category": "Tools",
-    "maxRating": 0,
+    "maxRating": 20,
+    "ratingMeaning": "1 Meter per Rating Level",
     "availability": {
       "rating": [0],
       "restriction": "Legal"
@@ -28671,10 +28785,11 @@
     "page": 254
   },
   {
-    "name": "Solar Panel (Square Meter)",
+    "name": "Solar Panel",
     "description": "",
     "category": "Tools",
-    "maxRating": 0,
+    "maxRating": 10,
+    "ratingMeaning": "1 Square Meter per Rating Level",
     "availability": {
       "rating": [0],
       "restriction": "Legal"
@@ -29217,6 +29332,7 @@
     "description": "",
     "category": "Miscellany",
     "maxRating": 0,
+    "explosiveWeight": 1,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
@@ -31052,7 +31168,7 @@
     "bonus": {
       "enterName": true
     },
-    "allowGearList": ["Internal Synthlink", "External Synthlink"],
+    "allowedGearList": ["Internal Synthlink", "External Synthlink"],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
@@ -31069,7 +31185,7 @@
     "bonus": {
       "enterName": true
     },
-    "allowGearList": ["Internal Synthlink", "External Synthlink"],
+    "allowedGearList": ["Internal Synthlink", "External Synthlink"],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
@@ -31086,7 +31202,7 @@
     "bonus": {
       "enterName": true
     },
-    "allowGearList": ["Internal Synthlink", "External Synthlink"],
+    "allowedGearList": ["Internal Synthlink", "External Synthlink"],
     "availability": {
       "rating": [6],
       "restriction": "Legal"
@@ -31103,7 +31219,7 @@
     "bonus": {
       "enterName": true
     },
-    "allowGearList": ["Internal Synthlink", "External Synthlink"],
+    "allowedGearList": ["Internal Synthlink", "External Synthlink"],
     "availability": {
       "rating": [12],
       "restriction": "Legal"

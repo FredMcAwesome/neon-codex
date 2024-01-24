@@ -1,4 +1,10 @@
-import { Entity, Enum, PrimaryKey, Property } from "@mikro-orm/postgresql";
+import {
+  Entity,
+  Enum,
+  PrimaryKey,
+  Property,
+  Unique,
+} from "@mikro-orm/postgresql";
 import {
   spellCategoryEnum,
   damageTypeEnum,
@@ -20,6 +26,7 @@ export class Spells {
   id!: number;
 
   @Property({ length: 255 })
+  @Unique()
   name!: string;
 
   @Enum(() => spellCategoryEnum)

@@ -23,11 +23,6 @@ const ModCategoryXmlSchema = zod
   })
   .strict();
 
-export const ModCategoryListXmlSchema = zod.union([
-  zod.array(ModCategoryXmlSchema),
-  ModCategoryXmlSchema,
-]);
-
 const ArmourXmlSchema = zod
   .object({
     id: zod.string(),
@@ -60,8 +55,8 @@ const ArmourXmlSchema = zod
     mods: zod.optional(ModListXmlSchema),
     // Allow mods outside the "General" category
     addmodcategory: zod.optional(zod.nativeEnum(armourModXmlCategoryEnum)),
-    // Select one mod from this category to be preinstalled
-    selectmodsfromcategory: zod.optional(ModCategoryListXmlSchema),
+    // Select one mod from this category to be included
+    selectmodsfromcategory: zod.optional(ModCategoryXmlSchema),
     source: zod.union([SourceXmlSchema, zod.literal(2050)]),
     page: zod.number(),
   })

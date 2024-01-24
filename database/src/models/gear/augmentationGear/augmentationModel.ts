@@ -6,6 +6,8 @@ import {
   ManyToOne,
   ManyToMany,
   Collection,
+  OneToOne,
+  Unique,
 } from "@mikro-orm/postgresql";
 import type { Ref } from "@mikro-orm/postgresql";
 import { augmentationTypeEnum } from "@shadowrun/common";
@@ -25,6 +27,7 @@ import {
   augmentationGradeEnum,
   biowareCategoryEnum,
   cyberwareCategoryEnum,
+  gearCategoryEnum,
   limbSlotEnum,
   mountSlotEnum,
   ratingMeaningEnum,
@@ -33,10 +36,9 @@ import {
 import { Weapons } from "../combatGear/weaponModel.js";
 import type { BonusType } from "@shadowrun/common/build/schemas/shared/bonusSchemas.js";
 import type { RequirementsType } from "@shadowrun/common/build/schemas/shared/requiredSchemas.js";
-import type {
-  AllowedGearType,
-  UseGearListType,
-} from "@shadowrun/common/build/schemas/commonSchemas.js";
+import type { UseGearListType } from "@shadowrun/common/build/schemas/commonSchemas.js";
+import { Gears } from "../otherGear/gearModel.js";
+import { Vehicles } from "../riggerGear/vehicleModel.js";
 
 @Entity({
   discriminatorColumn: "type",
@@ -47,6 +49,7 @@ export abstract class Augmentations {
   id!: number;
 
   @Property({ length: 255 })
+  @Unique()
   name!: string;
 
   @Enum(() => augmentationTypeEnum)
@@ -85,10 +88,14 @@ export abstract class Augmentations {
   @Property({ type: "json", nullable: true })
   pairBonus?: BonusType;
 
-  @ManyToMany(() => Augmentations)
-  pairIncludeList: Collection<Augmentations> = new Collection<Augmentations>(
-    this
-  );
+  // join column needs to be manually set as Mikro orm
+  // doesn't create a valid join column otherwise
+  @ManyToMany({
+    entity: () => Augmentations,
+    owner: true,
+    joinColumn: "join_id",
+  })
+  pairIncludeList = new Collection<Augmentations>(this);
 
   @Property({ type: "json", nullable: true })
   requirements?: RequirementsType;
@@ -96,8 +103,11 @@ export abstract class Augmentations {
   @Property({ type: "json", nullable: true })
   restrictions?: RequirementsType;
 
-  @Property({ type: "json", nullable: true })
-  allowedGear?: AllowedGearType;
+  @ManyToMany({ entity: () => Gears, owner: true })
+  allowedGearList = new Collection<Gears>(this);
+
+  @Enum({ items: () => gearCategoryEnum, nullable: true, array: true })
+  allowedGearCategories?: Array<gearCategoryEnum>;
 
   @Property({ nullable: true })
   userSelectable?: false;
@@ -147,7 +157,9 @@ export abstract class Augmentations {
     //   this.pairIncludeList = dto.pairIncludeList;
     if (dto.requirements !== undefined) this.requirements = dto.requirements;
     if (dto.forbidden !== undefined) this.restrictions = dto.forbidden;
-    if (dto.allowedGear !== undefined) this.allowedGear = dto.allowedGear;
+    // if (dto.allowedGearList !== undefined) this.allowedGearList = dto.allowedGearList;
+    if (dto.allowedGearCategories !== undefined)
+      this.allowedGearCategories = dto.allowedGearCategories;
     if (dto.userSelectable !== undefined)
       this.userSelectable = dto.userSelectable;
     if (dto.allowCategoryList !== undefined)
@@ -208,8 +220,8 @@ export class Cyberwares extends Augmentations {
   @Property({ type: "json", nullable: true })
   wirelessPairBonus?: BonusType;
 
-  @Property({ type: "string[]", nullable: true })
-  wirelessPairIncludeList?: Array<String>;
+  @OneToOne({ entity: () => Cyberwares, nullable: true })
+  wirelessPairLinkedCyberware?: Cyberwares;
 
   @Property({ type: "json", nullable: true })
   gearList?: UseGearListType;
@@ -223,8 +235,8 @@ export class Cyberwares extends Augmentations {
   @Property({ type: "json", nullable: true })
   deviceRating?: deviceRatingType;
 
-  @Property({ nullable: true })
-  addVehicle?: string;
+  @OneToOne({ entity: () => Vehicles, nullable: true, ref: true })
+  linkedVehicle?: Ref<Vehicles>;
 
   constructor(dto: CyberwareAugmentationType) {
     super(dto);
@@ -248,13 +260,13 @@ export class Cyberwares extends Augmentations {
     if (dto.wirelessBonus !== undefined) this.wirelessBonus = dto.wirelessBonus;
     if (dto.wirelessPairBonus !== undefined)
       this.wirelessPairBonus = dto.wirelessPairBonus;
-    if (dto.wirelessPairIncludeList !== undefined)
-      this.wirelessPairIncludeList = dto.wirelessPairIncludeList;
+    // if (dto.wirelessPairInclude !== undefined)
+    //   this.wirelessPairInclude = dto.wirelessPairInclude;
     if (dto.gearList !== undefined) this.gearList = dto.gearList;
     if (dto.subsystemList !== undefined) this.subsystemList = dto.subsystemList;
     if (dto.forceGrade !== undefined) this.forceGrade = dto.forceGrade;
     if (dto.deviceRating !== undefined) this.deviceRating = dto.deviceRating;
-    if (dto.addVehicle !== undefined) this.addVehicle = dto.addVehicle;
+    // if (dto.addVehicle !== undefined) this.addVehicle = dto.addVehicle;
   }
 }
 

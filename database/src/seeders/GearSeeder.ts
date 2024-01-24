@@ -1,5 +1,5 @@
 import assert from "assert";
-import { EntityManager } from "@mikro-orm/postgresql";
+import { EntityManager, ref } from "@mikro-orm/postgresql";
 import { Seeder } from "@mikro-orm/seeder";
 import { getSkills } from "../seeds/newSeeds/skillsSeed.js";
 import { getWeapons } from "../seeds/newSeeds/weaponsSeed.js";
@@ -12,16 +12,17 @@ import {
   ProjectileWeapons,
   Explosives,
   Weapons,
+  RangedWeapons,
 } from "../models/gear/combatGear/weaponModel.js";
 import { IncludedWeaponAccessories } from "../models/chummerdb/customTables/activeWeaponAccessoryModel.js";
 import { WeaponRanges } from "../models/gear/combatGear/helperTables/weaponRangeModel.js";
 import { getRanges } from "../seeds/newSeeds/rangesSeed.js";
-import { WeaponRangeLinks } from "../models/chummerdb/customTables/weaponRangeLinkModel.js";
 import { Armours } from "../models/gear/combatGear/armourModel.js";
 import { getArmours } from "../seeds/newSeeds/armoursSeed.js";
 import { ArmourModifications } from "../models/gear/combatGear/armourModificationModel.js";
 import { getArmourModifications } from "../seeds/newSeeds/armourModificationsSeed.js";
 import {
+  Augmentations,
   Biowares,
   Cyberwares,
 } from "../models/gear/augmentationGear/augmentationModel.js";
@@ -29,38 +30,58 @@ import { getAugmentations } from "../seeds/newSeeds/augmentationsSeed.js";
 import { getDrugComponents, getDrugs } from "../seeds/newSeeds/drugSeed.js";
 import { Drugs } from "../models/gear/otherGear/drugModel.js";
 import { DrugComponents } from "../models/gear/otherGear/drugComponentModel.js";
-import { getVehicles } from "../seeds/newSeeds/vehicleSeed.js";
+import {
+  createVehicleWeaponMounts,
+  getVehicles,
+} from "../seeds/newSeeds/vehicleSeed.js";
 import {
   Aircrafts,
   Drones,
   Groundcrafts,
+  Vehicles,
   Watercrafts,
 } from "../models/gear/riggerGear/vehicleModel.js";
 import { getVehicleModifications } from "../seeds/newSeeds/vehicleModificationSeed.js";
 import {
-  VehicleChasisMods,
-  WeaponMountMods,
+  VehicleChasisModifications,
+  WeaponMountModifications,
 } from "../models/gear/riggerGear/vehicleModificationModel.js";
 import { Gears } from "../models/gear/otherGear/gearModel.js";
 import { getGears } from "../seeds/newSeeds/gearSeed.js";
+import {
+  ActiveWeaponAccessoryGears,
+  ArmourIncludedGears,
+  ArmourModificationIncludedGears,
+  GearIncludedGears,
+  VehicleIncludedGears,
+  WeaponAccessoryIncludedGears,
+} from "../models/chummerdb/customTables/activeGearModel.js";
+import { IncludedArmourModifications } from "../models/chummerdb/customTables/activeArmourModificationModel.js";
+import { augmentationTypeEnum } from "@shadowrun/common";
+import { WeaponMounts } from "../models/gear/riggerGear/weaponMountModel.js";
+import { IncludedWeaponMounts } from "../models/chummerdb/customTables/activeWeaponMountModel.js";
+import { IncludedVehicleModifications } from "../models/chummerdb/customTables/activeVehicleModificationModel.js";
 
 export class GearSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
     const stagedSkills: Array<Skills> = getSkills();
     const stagedWeaponRanges: Array<WeaponRanges> = getRanges();
-    const stagedWeaponAccessories: Array<WeaponAccessories> =
+    const { unlinkedWeaponAccessories, stagedWeaponAccessories } =
       getWeaponAccessories();
-    const { weaponsUnlinked, stagedWeapons, stagedAccessories, stagedRanges } =
-      getWeapons(stagedSkills, stagedWeaponRanges, stagedWeaponAccessories);
-    const stagedArmours: Array<Armours> = getArmours();
-    const stagedArmourModifications: Array<ArmourModifications> =
+    const { unlinkedWeapons, stagedWeapons } = getWeapons(
+      stagedSkills,
+      stagedWeaponRanges
+    );
+    const { unlinkedArmours, stagedArmours } = getArmours();
+    const { unlinkedArmourMods, stagedArmourModifications } =
       getArmourModifications();
-    const { stagedBiowares, stagedCyberwares } = getAugmentations();
+    const { unlinkedAugmentations, stagedAugmentations } = getAugmentations();
     const stagedDrugs = getDrugs();
     const stagedDrugComponents = getDrugComponents();
-    const stagedVehicles = getVehicles();
+    const { unlinkedVehicles, stagedVehicles } = getVehicles();
+    const stagedVehicleWeaponMounts = createVehicleWeaponMounts();
     const stagedVehicleModifications = getVehicleModifications();
-    const stagedGears = getGears();
+    const { unlinkedGears, stagedGears } = getGears();
 
     stagedSkills.forEach((skill) => {
       em.create(Skills, skill);
@@ -76,92 +97,81 @@ export class GearSeeder extends Seeder {
       em.create(WeaponAccessories, weaponAccessory);
     });
     console.log("Weapon Accessories created");
+
     // weapon related
     for (const weapon of stagedWeapons) {
       if (weapon instanceof MeleeWeapons) {
-        await em.persistAndFlush(em.create(MeleeWeapons, weapon));
+        em.create(MeleeWeapons, weapon);
       } else if (weapon instanceof ProjectileWeapons) {
-        await em.persistAndFlush(em.create(ProjectileWeapons, weapon));
+        em.create(ProjectileWeapons, weapon);
       } else if (weapon instanceof FirearmWeapons) {
-        await em.persistAndFlush(em.create(FirearmWeapons, weapon));
+        em.create(FirearmWeapons, weapon);
       } else if (weapon instanceof Explosives) {
-        await em.persistAndFlush(em.create(Explosives, weapon));
+        em.create(Explosives, weapon);
       } else {
         assert(false, `Unhandled weapon type: ${weapon.type}`);
       }
     }
     console.log("Weapons created");
 
-    stagedAccessories.forEach((weaponAccessories) => {
-      weaponAccessories.forEach((accessory) => {
-        em.create(IncludedWeaponAccessories, accessory);
-      });
-    });
-    console.log("Included Weapon Accessories created");
-
-    stagedRanges.forEach((weaponRanges) => {
-      weaponRanges.forEach((range) => {
-        em.create(WeaponRangeLinks, range);
-      });
-    });
-    console.log("Ranges created");
-    //   ammosList.forEach((ammo) => {
-    //     em.create(Ammos, ammo);
-    //   });
-    //   projectileAmmosList.forEach((projectileAmmo) => {
-    //     em.create(ProjectilesAmmos, projectileAmmo);
-    //   });
-    //   grenadesList.forEach((grenade) => {
-    //     em.create(Grenades, grenade);
-    //   });
-    //   rocketsMissilesList.forEach((rocketMissile) => {
-    //     em.create(RocketsMissiles, rocketMissile);
-    //   });
     stagedArmours.forEach((armour) => {
       em.create(Armours, armour);
     });
     console.log("Armours created");
+
     stagedArmourModifications.forEach((armourMod) => {
       em.create(ArmourModifications, armourMod);
     });
     console.log("Armour Modifications created");
+
+    // augmentations
+    for (const augmentation of stagedAugmentations) {
+      if (augmentation instanceof Cyberwares) {
+        em.create(Cyberwares, augmentation);
+      } else if (augmentation instanceof Biowares) {
+        em.create(Biowares, augmentation);
+      } else {
+        assert(false, `Unhandled augmentation type: ${augmentation.type}`);
+      }
+    }
+    console.log("Augmentations created");
+
     stagedDrugs.forEach((drug) => {
       em.create(Drugs, drug);
     });
     console.log("Drugs created");
+
     stagedDrugComponents.forEach((drugComponent) => {
       em.create(DrugComponents, drugComponent);
     });
     console.log("Drug Components created");
-    // augmentations
-    for (const cyberware of stagedCyberwares) {
-      await em.persistAndFlush(em.create(Cyberwares, cyberware));
-    }
-    console.log("Cyberware created");
-    for (const bioware of stagedBiowares) {
-      await em.persistAndFlush(em.create(Biowares, bioware));
-    }
-    console.log("Bioware created");
+
     //vehicles
     for (const vehicle of stagedVehicles) {
       if (vehicle instanceof Groundcrafts) {
-        await em.persistAndFlush(em.create(Groundcrafts, vehicle));
+        em.create(Groundcrafts, vehicle);
       } else if (vehicle instanceof Watercrafts) {
-        await em.persistAndFlush(em.create(Watercrafts, vehicle));
+        em.create(Watercrafts, vehicle);
       } else if (vehicle instanceof Aircrafts) {
-        await em.persistAndFlush(em.create(Aircrafts, vehicle));
+        em.create(Aircrafts, vehicle);
       } else if (vehicle instanceof Drones) {
-        await em.persistAndFlush(em.create(Drones, vehicle));
+        em.create(Drones, vehicle);
       } else {
         assert(false, `Unhandled vehicle type: ${vehicle.type}`);
       }
     }
     console.log("Vehicles created");
+
+    for (const weaponMount of stagedVehicleWeaponMounts) {
+      em.create(WeaponMounts, weaponMount);
+    }
+    console.log("Vehicle Weapon Mounts created");
+
     for (const vehicleMod of stagedVehicleModifications) {
-      if (vehicleMod instanceof VehicleChasisMods) {
-        await em.persistAndFlush(em.create(VehicleChasisMods, vehicleMod));
-      } else if (vehicleMod instanceof WeaponMountMods) {
-        await em.persistAndFlush(em.create(WeaponMountMods, vehicleMod));
+      if (vehicleMod instanceof VehicleChasisModifications) {
+        em.create(VehicleChasisModifications, vehicleMod);
+      } else if (vehicleMod instanceof WeaponMountModifications) {
+        em.create(WeaponMountModifications, vehicleMod);
       } else {
         assert(
           false,
@@ -176,9 +186,164 @@ export class GearSeeder extends Seeder {
     }
     console.log("Gears created");
 
+    await em.flush();
+
+    // -----------------------------------------------------------------
     // Connect references that "may" need things in the database first
+    // -----------------------------------------------------------------
+
+    // Weapon Accessories that are weapons
+    for (const weaponAccessory of unlinkedWeaponAccessories) {
+      if (weaponAccessory.isWeapon) {
+        const relatedWeaponAccessory = await em.findOne(WeaponAccessories, {
+          name: weaponAccessory.name,
+        });
+        assert(
+          relatedWeaponAccessory !== null,
+          `undefined weapon Accessory name: ${weaponAccessory.name}`
+        );
+        const linkedWeapon = await em.findOne(Weapons, {
+          name: weaponAccessory.name,
+        });
+        assert(
+          linkedWeapon !== null,
+          `undefined weapon name: ${weaponAccessory.name}`
+        );
+
+        relatedWeaponAccessory.linkedWeapon = ref(Weapons, linkedWeapon);
+      }
+    }
+    // Weapon Accessories that allow certain gear to be added
+    for (const weaponAccessory of unlinkedWeaponAccessories) {
+      if (weaponAccessory.allowedGearList !== undefined) {
+        const relatedWeaponAccessory = await em.findOne(WeaponAccessories, {
+          name: weaponAccessory.name,
+        });
+        assert(
+          relatedWeaponAccessory !== null,
+          `undefined weapon Accessory name: ${weaponAccessory.name}`
+        );
+
+        for (const gear of weaponAccessory.allowedGearList) {
+          const allowedGear = await em.findOne(Gears, {
+            name: gear,
+          });
+          assert(allowedGear !== null, `undefined allowed gear: ${gear}`);
+          const referencedGear = ref(Gears, allowedGear);
+          relatedWeaponAccessory.allowedGearList.add(referencedGear);
+        }
+      }
+    }
+    // Weapon Accessories that include certain gear
+    for (const weaponAccessory of unlinkedWeaponAccessories) {
+      if (weaponAccessory.includedGearList !== undefined) {
+        const relatedWeaponAccessory = await em.findOne(WeaponAccessories, {
+          name: weaponAccessory.name,
+        });
+        assert(
+          relatedWeaponAccessory !== null,
+          `undefined weapon Accessory name: ${weaponAccessory.name}`
+        );
+        const referencedWeaponAccessory = ref(
+          WeaponAccessories,
+          relatedWeaponAccessory
+        );
+        for (const gear of weaponAccessory.includedGearList) {
+          const includedGear = await em.findOne(Gears, {
+            name: gear.name,
+          });
+          assert(
+            includedGear !== null,
+            `undefined included gear: ${gear.name}`
+          );
+          const referencedGear = ref(Gears, includedGear);
+          const stagedIncludedGear = new WeaponAccessoryIncludedGears(
+            referencedGear,
+            referencedWeaponAccessory,
+            gear.specificOption,
+            gear.rating,
+            gear.consumeCapacity,
+            gear.quantity
+          );
+          // this creates the link to weapon accessory
+          em.create(WeaponAccessoryIncludedGears, stagedIncludedGear);
+        }
+      }
+    }
+
+    // Weapons that allow certain gear to be added
+    for (const weapon of unlinkedWeapons) {
+      if (weapon.allowedGearList !== undefined) {
+        const relatedWeapon = await em.findOne(Weapons, {
+          name: weapon.name,
+        });
+        assert(relatedWeapon !== null, `undefined weapon name: ${weapon.name}`);
+
+        for (const gear of weapon.allowedGearList) {
+          const allowedGear = await em.findOne(Gears, {
+            name: gear,
+          });
+          assert(allowedGear !== null, `undefined allowed gear: ${gear}`);
+          const referencedGear = ref(Gears, allowedGear);
+          relatedWeapon.allowedGearList.add(referencedGear);
+        }
+      }
+    }
+    // Weapons that include certain Accessories
+    for (const weapon of unlinkedWeapons) {
+      if (weapon.accessories !== undefined) {
+        const relatedWeapon = await em.findOne(Weapons, {
+          name: weapon.name,
+        });
+        assert(relatedWeapon !== null, `undefined weapon name: ${weapon.name}`);
+        const referencedWeapon = ref(Weapons, relatedWeapon);
+        for (const accessory of weapon.accessories) {
+          const includeWeaponAccessory = await em.findOne(WeaponAccessories, {
+            name: accessory.name,
+          });
+          assert(
+            includeWeaponAccessory !== null,
+            `undefined weapon accessory: ${accessory.name}`
+          );
+          const referencedWeaponAccessory = ref(
+            WeaponAccessories,
+            includeWeaponAccessory
+          );
+          const stagedIncludedWeaponAccessory = new IncludedWeaponAccessories(
+            referencedWeapon,
+            referencedWeaponAccessory,
+            accessory.rating,
+            accessory.mount
+          );
+          // this creates the link to weapon accessory
+          em.create(IncludedWeaponAccessories, stagedIncludedWeaponAccessory);
+          const referencedIncludedWeaponAccessory = ref(
+            IncludedWeaponAccessories,
+            stagedIncludedWeaponAccessory
+          );
+          if (accessory.gears !== undefined) {
+            for (const gear of accessory.gears) {
+              const includedGear = await em.findOne(Gears, {
+                name: gear.name,
+              });
+              assert(includedGear !== null, `undefined gear: ${gear.name}`);
+              const referencedGear = ref(Gears, includedGear);
+              const stagedIncludedGear = new ActiveWeaponAccessoryGears(
+                referencedGear,
+                referencedIncludedWeaponAccessory,
+                gear.specificOption,
+                gear.rating,
+                gear.consumeCapacity,
+                gear.quantity
+              );
+              em.create(ActiveWeaponAccessoryGears, stagedIncludedGear);
+            }
+          }
+        }
+      }
+    }
     // Weapons referring to other weapons
-    for (const weapon of weaponsUnlinked) {
+    for (const weapon of unlinkedWeapons) {
       if (
         "alternativeWeaponForms" in weapon &&
         weapon.alternativeWeaponForms !== undefined &&
@@ -198,10 +363,432 @@ export class GearSeeder extends Seeder {
           assert(alternativeWeaponForm.name !== relatedWeapon.name);
           alternativeWeaponForm.baseWeaponForm = relatedWeapon;
         }
-        // Probably don't need to flush everytime to update the db
-        // but this is offline so whatever
-        await em.flush();
       }
     }
+    // Weapons link to ranges
+    for (const weapon of unlinkedWeapons) {
+      if ("rangeList" in weapon) {
+        const relatedWeapon = await em.findOne(Weapons, { name: weapon.name });
+        assert(relatedWeapon !== null, `undefined weapon name: ${weapon.name}`);
+        const rangeList = weapon.rangeList;
+        assert(rangeList.length > 0, "rangeList.length = 0");
+        for (const currentRange of rangeList) {
+          // console.log(`Range: ${currentRange}`);
+          const foundRange = await em.findOne(WeaponRanges, {
+            name: currentRange,
+          });
+          assert(foundRange !== null, `undefined range: ${currentRange}`);
+          assert(
+            relatedWeapon instanceof RangedWeapons,
+            `Assertion to type narrow`
+          );
+          relatedWeapon.ranges.add(foundRange);
+        }
+      }
+    }
+    console.log("Weapon relationships associated");
+
+    // Armours that add weapons
+    for (const armour of unlinkedArmours) {
+      if (armour.isWeapon !== undefined) {
+        const relatedArmour = await em.findOne(Armours, {
+          name: armour.name,
+        });
+        assert(relatedArmour !== null, `undefined armour name: ${armour.name}`);
+        const linkedWeapon = await em.findOne(Weapons, {
+          name: armour.name,
+        });
+        assert(
+          linkedWeapon !== null,
+          `undefined linked weapon: ${armour.name}`
+        );
+        relatedArmour.linkedWeapon = ref(Weapons, linkedWeapon);
+      }
+    }
+    // Armours that include certain gear
+    for (const armour of unlinkedArmours) {
+      if (armour.includedGearList !== undefined) {
+        const relatedArmour = await em.findOne(Armours, {
+          name: armour.name,
+        });
+        assert(relatedArmour !== null, `undefined armour name: ${armour.name}`);
+        const referencedArmour = ref(Armours, relatedArmour);
+        for (const gear of armour.includedGearList) {
+          const includedGear = await em.findOne(Gears, {
+            name: gear.name,
+          });
+          assert(includedGear !== null, `undefined gear: ${gear.name}`);
+          const referencedGear = ref(Gears, includedGear);
+          const stagedIncludedGear = new ArmourIncludedGears(
+            referencedGear,
+            referencedArmour,
+            gear.specificOption,
+            gear.rating,
+            gear.consumeCapacity,
+            gear.quantity
+          );
+          // this creates the link to weapon accessory
+          em.create(ArmourIncludedGears, stagedIncludedGear);
+        }
+      }
+    }
+    // Armours that include certain mods
+    for (const armour of unlinkedArmours) {
+      if (armour.includedMods !== undefined) {
+        const relatedArmour = await em.findOne(Armours, {
+          name: armour.name,
+        });
+        assert(relatedArmour !== null, `undefined armour name: ${armour.name}`);
+        const referencedArmour = ref(Armours, relatedArmour);
+        for (const mod of armour.includedMods) {
+          const includedMod = await em.findOne(ArmourModifications, {
+            name: mod.name,
+          });
+          assert(includedMod !== null, `undefined mod: ${mod.name}`);
+          const referencedMod = ref(ArmourModifications, includedMod);
+          const stagedIncludedGear = new IncludedArmourModifications(
+            referencedArmour,
+            referencedMod,
+            mod.rating
+          );
+          // this creates the link to armour
+          em.create(IncludedArmourModifications, stagedIncludedGear);
+        }
+      }
+    }
+    console.log("Armour relationships associated");
+
+    // Armour Modifications that include certain gear
+    for (const armourMod of unlinkedArmourMods) {
+      if (armourMod.includedGearList !== undefined) {
+        const relatedArmourMod = await em.findOne(ArmourModifications, {
+          name: armourMod.name,
+        });
+        assert(
+          relatedArmourMod !== null,
+          `undefined armour Mod name: ${armourMod.name}`
+        );
+        const referencedArmourMod = ref(ArmourModifications, relatedArmourMod);
+        for (const gear of armourMod.includedGearList) {
+          const includedGear = await em.findOne(Gears, {
+            name: gear.name,
+          });
+          assert(includedGear !== null, `undefined gear: ${gear.name}`);
+          const referencedGear = ref(Gears, includedGear);
+          const stagedIncludedGear = new ArmourModificationIncludedGears(
+            referencedGear,
+            referencedArmourMod,
+            gear.specificOption,
+            gear.rating,
+            gear.consumeCapacity,
+            gear.quantity
+          );
+          // this creates the link to armour modification
+          em.create(ArmourModificationIncludedGears, stagedIncludedGear);
+        }
+      }
+    }
+    console.log("Armour Modification relationships associated");
+
+    // Augmentations that add weapons
+    for (const augmentation of unlinkedAugmentations) {
+      if (augmentation.addWeapon !== undefined) {
+        const relatedAugmentation = await em.findOne(Augmentations, {
+          name: augmentation.name,
+        });
+        assert(
+          relatedAugmentation !== null,
+          `undefined augmentation name: ${augmentation.name}`
+        );
+        const linkedWeapon = await em.findOne(Weapons, {
+          name: augmentation.addWeapon,
+        });
+        assert(
+          linkedWeapon !== null,
+          `undefined linked weapon: ${augmentation.addWeapon}`
+        );
+        relatedAugmentation.addWeapon = ref(Weapons, linkedWeapon);
+      }
+    }
+    // Augmentations that provide a bonus when linked to another augmentation
+    for (const augmentation of unlinkedAugmentations) {
+      if (augmentation.pairIncludeList !== undefined) {
+        const relatedAugmentation = await em.findOne(Augmentations, {
+          name: augmentation.name,
+        });
+        assert(
+          relatedAugmentation !== null,
+          `undefined augmentation name: ${augmentation.name}`
+        );
+        const linkedAugmentation = await em.findOne(Augmentations, {
+          name: augmentation.pairIncludeList,
+        });
+        assert(
+          linkedAugmentation !== null,
+          `undefined linked augmentation: ${augmentation.pairIncludeList}`
+        );
+        relatedAugmentation.pairIncludeList.add(linkedAugmentation);
+      }
+    }
+    // Augmentations that allow certain gear to be added
+    for (const augmentation of unlinkedAugmentations) {
+      if (augmentation.allowedGearList !== undefined) {
+        const relatedAugmentation = await em.findOne(Augmentations, {
+          name: augmentation.name,
+        });
+        assert(
+          relatedAugmentation !== null,
+          `undefined augmentation name: ${augmentation.name}`
+        );
+
+        for (const gear of augmentation.allowedGearList) {
+          // TODO: add 2050 stuff
+          if (gear.includes("2050")) {
+            continue;
+          }
+          const allowedGear = await em.findOne(Gears, {
+            name: gear,
+          });
+          assert(allowedGear !== null, `undefined allowed gear: ${gear}`);
+          const referencedGear = ref(Gears, allowedGear);
+          relatedAugmentation.allowedGearList.add(referencedGear);
+        }
+      }
+    }
+    // Augmentations that provide a wireless bonus when linked to another augmentation
+    for (const augmentation of unlinkedAugmentations) {
+      if (augmentation.type === augmentationTypeEnum.Cyberware) {
+        if (augmentation.wirelessPairInclude !== undefined) {
+          const relatedAugmentation = await em.findOne(Cyberwares, {
+            name: augmentation.name,
+          });
+          assert(
+            relatedAugmentation !== null,
+            `undefined augmentation name: ${augmentation.name}`
+          );
+          const linkedAugmentation = await em.findOne(Cyberwares, {
+            name: augmentation.wirelessPairInclude,
+          });
+          assert(
+            linkedAugmentation !== null,
+            `undefined linked augmentation: ${augmentation.wirelessPairInclude}`
+          );
+          relatedAugmentation.wirelessPairLinkedCyberware = linkedAugmentation;
+        }
+      }
+    }
+    // Augmentations that are a vehicle
+    for (const augmentation of unlinkedAugmentations) {
+      if (augmentation.type === augmentationTypeEnum.Cyberware) {
+        if (augmentation.addVehicle !== undefined) {
+          const relatedAugmentation = await em.findOne(Cyberwares, {
+            name: augmentation.name,
+          });
+          assert(
+            relatedAugmentation !== null,
+            `undefined augmentation name: ${augmentation.name}`
+          );
+          const linkedVehicle = await em.findOne(Vehicles, {
+            name: augmentation.addVehicle,
+          });
+          assert(
+            linkedVehicle !== null,
+            `undefined vehicle: ${augmentation.addVehicle}`
+          );
+          const referencedVehicle = ref(Vehicles, linkedVehicle);
+          relatedAugmentation.linkedVehicle = referencedVehicle;
+        }
+      }
+    }
+    console.log("Augmentation relationships associated");
+
+    // Vehicles that include certain gear
+    for (const vehicle of unlinkedVehicles) {
+      if (vehicle.includedGearList !== undefined) {
+        const relatedVehicle = await em.findOne(Vehicles, {
+          name: vehicle.name,
+        });
+        assert(
+          relatedVehicle !== null,
+          `undefined vehicle name: ${vehicle.name}`
+        );
+        const referencedVehicle = ref(Vehicles, relatedVehicle);
+        for (const gear of vehicle.includedGearList) {
+          const includedGear = await em.findOne(Gears, {
+            name: gear.name,
+          });
+          assert(includedGear !== null, `undefined gear: ${gear.name}`);
+          const referencedGear = ref(Gears, includedGear);
+          const stagedIncludedGear = new VehicleIncludedGears(
+            referencedGear,
+            referencedVehicle,
+            gear.specificOption,
+            gear.rating,
+            gear.consumeCapacity,
+            gear.quantity
+          );
+          // this creates the link to vehicle
+          em.create(VehicleIncludedGears, stagedIncludedGear);
+        }
+      }
+    }
+    // Vehicles that include certain mods
+    for (const vehicle of unlinkedVehicles) {
+      if (vehicle.includedMods !== undefined) {
+        const relatedVehicle = await em.findOne(Vehicles, {
+          name: vehicle.name,
+        });
+        assert(
+          relatedVehicle !== null,
+          `undefined vehicle name: ${vehicle.name}`
+        );
+        const referencedVehicle = ref(Vehicles, relatedVehicle);
+        for (const mod of vehicle.includedMods) {
+          const includedMod = await em.findOne(VehicleChasisModifications, {
+            name: mod.name,
+          });
+          assert(includedMod !== null, `undefined mod: ${mod.name}`);
+          const referencedMod = ref(VehicleChasisModifications, includedMod);
+          const stagedIncludedGear = new IncludedVehicleModifications(
+            referencedVehicle,
+            referencedMod,
+            mod.specificOption,
+            mod.rating
+          );
+          if (mod.addCyberware !== undefined) {
+            const includedCyberware = await em.findOne(Cyberwares, {
+              name: mod.addCyberware,
+            });
+            assert(
+              includedCyberware !== null,
+              `undefined mod cyberware: ${mod.addCyberware}`
+            );
+            stagedIncludedGear.actsAsCyberarm = true;
+            stagedIncludedGear.associatedCyberwareList.add(includedCyberware);
+          }
+          // this creates the link to armour
+          em.create(IncludedVehicleModifications, stagedIncludedGear);
+        }
+      }
+    }
+    // Vehicles including weapon mounts
+    // Each mount may also include a weapon
+    // Each mount may also include mods
+    for (const vehicle of unlinkedVehicles) {
+      if (
+        vehicle.weaponMountList !== undefined &&
+        vehicle.weaponMountList.length > 0
+      ) {
+        const relatedVehicle = await em.findOne(Vehicles, {
+          name: vehicle.name,
+        });
+        assert(
+          relatedVehicle !== null,
+          `undefined vehicle name: ${vehicle.name}`
+        );
+        for (const weaponMount of vehicle.weaponMountList) {
+          let relatedWeaponMount = await em.findOne(WeaponMounts, {
+            control: weaponMount.control,
+            flexibility: weaponMount.flexibility,
+            size: weaponMount.size,
+            visibility: weaponMount.visibility,
+          });
+          assert(
+            relatedWeaponMount !== null,
+            `undefined weapon mount: ${weaponMount}`
+          );
+
+          let referencedWeapon = undefined;
+          if (weaponMount.includedWeapon !== undefined) {
+            const relatedWeapon = await em.findOne(Weapons, {
+              name: weaponMount.includedWeapon,
+            });
+            assert(
+              relatedWeapon !== null,
+              `undefined weapon name: ${weaponMount.includedWeapon}`
+            );
+            referencedWeapon = ref(Weapons, relatedWeapon);
+          }
+          const referencedVehicle = ref(Vehicles, relatedVehicle);
+          const referencedWeaponMount = ref(WeaponMounts, relatedWeaponMount);
+
+          const stagedIncludedWeaponMount = new IncludedWeaponMounts(
+            referencedVehicle,
+            referencedWeaponMount,
+            referencedWeapon !== undefined,
+            undefined,
+            referencedWeapon
+          );
+          if (weaponMount.includedMountMod !== undefined) {
+            const relatedVehicleMountMod = await em.findOne(
+              WeaponMountModifications,
+              {
+                name: weaponMount.includedMountMod,
+              }
+            );
+            assert(
+              relatedVehicleMountMod !== null,
+              `undefined weapon name: ${weaponMount.includedMountMod}`
+            );
+            stagedIncludedWeaponMount.mountMods.add(relatedVehicleMountMod);
+          }
+          em.create(IncludedWeaponMounts, stagedIncludedWeaponMount);
+        }
+      }
+    }
+    console.log("Vehicle relationships associated");
+
+    // Gear that includes certain gear
+    for (const gear of unlinkedGears) {
+      if (gear.includedGearList !== undefined) {
+        const relatedGear = await em.findOne(Gears, {
+          name: gear.name,
+        });
+        assert(relatedGear !== null, `undefined gear name: ${gear.name}`);
+        const referencedLinkedGear = ref(Gears, relatedGear);
+        for (const unlinkedIncludedGear of gear.includedGearList) {
+          const includedGear = await em.findOne(Gears, {
+            name: unlinkedIncludedGear.name,
+          });
+          assert(
+            includedGear !== null,
+            `undefined included gear: ${unlinkedIncludedGear.name}`
+          );
+          const referencedIncludedGear = ref(Gears, includedGear);
+          const stagedIncludedGear = new GearIncludedGears(
+            referencedIncludedGear,
+            referencedLinkedGear,
+            unlinkedIncludedGear.specificOption,
+            unlinkedIncludedGear.rating,
+            unlinkedIncludedGear.consumeCapacity,
+            unlinkedIncludedGear.quantity
+          );
+          // this creates the link to weapon accessory
+          em.create(GearIncludedGears, stagedIncludedGear);
+        }
+      }
+    }
+    // Gear that allow certain gear to be added
+    for (const gear of unlinkedGears) {
+      if (gear.allowedGearList !== undefined) {
+        const relatedGear = await em.findOne(Gears, {
+          name: gear.name,
+        });
+        assert(relatedGear !== null, `undefined gear name: ${gear.name}`);
+
+        for (const unlinkedAllowedGear of gear.allowedGearList) {
+          const allowedGear = await em.findOne(Gears, {
+            name: unlinkedAllowedGear,
+          });
+          assert(
+            allowedGear !== null,
+            `undefined allowed gear: ${unlinkedAllowedGear}`
+          );
+          const referencedGear = ref(Gears, allowedGear);
+          relatedGear.allowedGearList.add(referencedGear);
+        }
+      }
+    }
+    console.log("Gear relationships associated");
   }
 }

@@ -84,7 +84,7 @@ async function getWeapons() {
   const weaponsResponse: WeaponLinkedListType = await Promise.all(
     weapons.map(async (weapon) => {
       const skill = await weapon.relatedSkill.load();
-      const accessories = await weapon.accessories.loadItems();
+      const accessories = await weapon.includedAccessories.loadItems();
       const typeInformation: WeaponTypeInformationType =
         await getTypeInformation(weapon);
       const weaponFormatted: WeaponLinkedType = {
@@ -99,15 +99,15 @@ async function getWeapons() {
           weapon.ammunition.length > 0 && { ammunition: weapon.ammunition }),
         availability: weapon.availability,
         cost: weapon.cost,
-        ...(weapon.allowedGear !== undefined &&
-          ((weapon.allowedGear.gearNameList !== undefined &&
-            weapon.allowedGear.gearNameList.length > 0) ||
-            (weapon.allowedGear.gearCategoryList !== undefined &&
-              weapon.allowedGear.gearCategoryList.length > 0)) && {
-            allowedGear: weapon.allowedGear,
+        ...(weapon.allowedGearList !== undefined &&
+          ((weapon.allowedGearList.gearNameList !== undefined &&
+            weapon.allowedGearList.gearNameList.length > 0) ||
+            (weapon.allowedGearList.gearCategoryList !== undefined &&
+              weapon.allowedGearList.gearCategoryList.length > 0)) && {
+            allowedGear: weapon.allowedGearList,
           }),
-        ...(weapon.accessories !== undefined &&
-          weapon.accessories.length > 0 && {
+        ...(weapon.includedAccessories !== undefined &&
+          weapon.includedAccessories.length > 0 && {
             accessories: await Promise.all(
               accessories.map(async (accessory) => {
                 const originalAccessory =
@@ -465,7 +465,7 @@ async function getVehiclesAndDrones() {
         pilot: vehicleOrDrone.pilot,
         sensor: vehicleOrDrone.sensor,
         seats: vehicleOrDrone.seats,
-        includedGear: vehicleOrDrone.includedGear,
+        includedGear: vehicleOrDrone.includedGearList,
         includedMods: vehicleOrDrone.includedMods,
         modSlots: vehicleOrDrone.modSlots,
         powerTrainModSlots: vehicleOrDrone.powerTrainModSlots,

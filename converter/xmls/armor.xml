@@ -48,6 +48,7 @@
     <category blackmarket="Armor">Specialty Armor</category>
   </categories>
   <modcategories>
+    <category blackmarket="Armor">Customized Ballistic Mask</category>
     <category blackmarket="Armor">Full Body Armor Mods</category>
     <category blackmarket="Armor,Electronics,Magic,Software">General</category>
     <category blackmarket="Armor">Globetrotter Clothing Liners</category>
@@ -1614,6 +1615,7 @@
           <condition>LimitCondition_IntimidationVisible</condition>
         </limitmodifier>
       </bonus>
+      <addmodcategory>Customized Ballistic Mask</addmodcategory>
       <source>RG</source>
       <page>74</page>
     </armor>
@@ -1632,6 +1634,7 @@
           <condition>LimitCondition_IntimidationVisible</condition>
         </limitmodifier>
       </bonus>
+      <addmodcategory>Customized Ballistic Mask</addmodcategory>
       <source>RG</source>
       <page>74</page>
     </armor>
@@ -2741,7 +2744,7 @@
       <avail>14R</avail>
       <cost>1800</cost>
       <source>CA</source>
-      <page>137</page>
+      <page>136</page>
     </armor>
     <armor>
       <id>c9424dfb-1e01-4073-995a-7935efc1894d</id>
@@ -2752,7 +2755,7 @@
       <avail>6</avail>
       <cost>900</cost>
       <source>CA</source>
-      <page>137</page>
+      <page>136</page>
     </armor>
     <armor>
       <id>f22a86ba-e660-4c32-a998-d04def23d287</id>
@@ -2982,7 +2985,7 @@
     </armor>
     <armor>
       <id>7418141b-ec31-4334-a642-6acf469c0e5f</id>
-      <name>E'lyzée Elio: Bra's Cloak</name>
+      <name>E'lyzée Elio: Bra's Cape</name>
       <category>High-Fashion Armor Clothing</category>
       <armor>10</armor>
       <armoroverride>+2</armoroverride>
@@ -2997,7 +3000,7 @@
     </armor>
     <armor>
       <id>7cc0ee32-7f67-495c-91d1-2ab9e19ec54b</id>
-      <name>E'lyzée Elio: Tha'il Cloak</name>
+      <name>E'lyzée Elio: Tha'il Cape</name>
       <category>High-Fashion Armor Clothing</category>
       <armor>8</armor>
       <armoroverride>+2</armoroverride>
@@ -3233,8 +3236,10 @@
       <mods>
         <name>Custom Fit</name>
         <name>Gear Access</name>
-        <name>Holster</name>
       </mods>
+      <gears>
+        <usegear>Holster</usegear>
+      </gears>
       <source>SL</source>
       <page>130</page>
     </armor>
@@ -3374,7 +3379,7 @@
     </armor>
     <armor>
       <id>b91be09d-b428-495c-a334-31b316a4ef79</id>
-      <name>Hornburg</name>
+      <name>Homburg</name>
       <category>Clothing</category>
       <armor>0</armor>
       <armorcapacity>0</armorcapacity>
@@ -3474,7 +3479,7 @@
       <category>General</category>
       <armor>0</armor>
       <maxrating>6</maxrating>
-      <armorcapacity>FixedValues([1],[2],[3],[4],[5],[6])</armorcapacity>
+      <armorcapacity>FixedValues([1],[2],[3],[4],[5],[6],[6],[6])</armorcapacity> <!-- maxrating override of 8  -->
       <avail>6</avail>
       <cost>Rating * 250</cost>
       <bonus unique="fireresistance">
@@ -3858,7 +3863,6 @@
       <name>Illuminating</name>
       <category>General</category>
       <armor>0</armor>
-      <hide />
       <maxrating>0</maxrating>
       <armorcapacity>[0]</armorcapacity>
       <avail>0</avail>
@@ -3975,6 +3979,18 @@
       <page>62</page>
     </mod>
     <mod>
+      <id>8b1bc34c-4de9-4111-a5f6-bae7fa35b8af</id>
+      <name>Ballistic Mask</name>
+      <category>Customized Ballistic Mask</category>
+      <armor>0</armor>
+      <maxrating>1</maxrating>
+      <armorcapacity>[0]</armorcapacity>
+      <avail>0</avail>
+      <cost>150</cost>
+      <source>RG</source>
+      <page>62</page>
+    </mod>
+    <mod>
       <id>5a0965bd-759c-4e41-8c47-2b87c9de06d6</id>
       <name>Auto-Injector</name>
       <category>General</category>
@@ -4012,7 +4028,7 @@
       <name>Pulse Weave</name>
       <category>General</category>
       <armor>0</armor>
-      <maxrating>1</maxrating>
+      <maxrating>6</maxrating>
       <armorcapacity>[3]</armorcapacity>
       <avail>+8R</avail>
       <cost>Rating * 3000</cost>

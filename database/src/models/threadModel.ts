@@ -6,7 +6,9 @@ import {
   OneToMany,
   Collection,
 } from "@mikro-orm/postgresql";
-import { Users, Comments } from "./models.js";
+import type { Ref } from "@mikro-orm/postgresql";
+import Users from "./userModel.js";
+import Comments from "./commentModel.js";
 
 @Entity()
 export default class Threads {
@@ -16,8 +18,8 @@ export default class Threads {
   @Property({ length: 1000 })
   title!: string;
 
-  @ManyToOne(() => Users)
-  user!: Users;
+  @ManyToOne({ entity: () => Users, ref: true })
+  user!: Ref<Users>;
 
   @OneToMany(() => Comments, (comment) => comment.thread)
   comments = new Collection<Comments>(this);

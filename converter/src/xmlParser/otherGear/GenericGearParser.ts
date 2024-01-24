@@ -15,6 +15,7 @@ import type {
 } from "./GenericGearParserSchemas.js";
 import {
   convertGearCategory,
+  convertRatingMeaning,
   convertSource,
   convertXmlGears,
 } from "../common/ParserHelper.js";
@@ -26,6 +27,7 @@ import {
   convertDeviceRating,
   convertGearAddWeapon,
   convertGearMaxRating,
+  convertWeight,
   convertXmlWeaponBonus,
   costGearSemantics,
   programGearSemantics,
@@ -177,6 +179,7 @@ const convertGear = function (gear: GenericGearXmlType) {
   const category = convertGearCategory(gear.category);
   const maxRating =
     gear.rating === undefined ? undefined : convertGearMaxRating(gear.rating);
+  const ratingMeaning = convertRatingMeaning(gear.ratinglabel);
   const includedWeapon =
     gear.addweapon === undefined
       ? undefined
@@ -210,7 +213,10 @@ const convertGear = function (gear: GenericGearXmlType) {
     gear.name
   );
 
-  const allowGearList =
+  const weight =
+    gear.weight === undefined ? undefined : convertWeight(gear.weight);
+
+  const allowedGearList =
     gear.allowgear === undefined
       ? undefined
       : Array.isArray(gear.allowgear.name)
@@ -339,6 +345,7 @@ const convertGear = function (gear: GenericGearXmlType) {
     category: category,
     minRating: gear.minrating,
     maxRating: maxRating,
+    ratingMeaning: ratingMeaning,
     includedWeapon: includedWeapon,
     allowCategoryList: allowCategoryList,
     quantity: quantity,
@@ -347,9 +354,9 @@ const convertGear = function (gear: GenericGearXmlType) {
     isFlechetteAmmo: isFlechetteAmmo,
     flechetteWeaponBonus: flechetteWeaponBonus,
     ammoForWeaponType: ammoForWeaponType,
-    explosiveWeight: gear.weight,
+    explosiveWeight: weight,
     ...(gear.hide !== undefined && { userSelectable: false as const }),
-    allowGearList: allowGearList,
+    allowedGearList: allowedGearList,
     includedGearList: includedGearList,
     deviceRating: deviceRating,
     programs: programs,

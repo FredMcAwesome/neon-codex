@@ -2333,7 +2333,7 @@
     "category": "Health",
     "type": "Physical",
     "damageType": "N/A",
-    "descriptorList": ["Negative"],
+    "descriptorList": ["Essence"],
     "duration": "Permanent",
     "damage": 2,
     "range": {
@@ -2349,7 +2349,7 @@
     "category": "Health",
     "type": "Mana",
     "damageType": "N/A",
-    "descriptorList": ["Negative"],
+    "descriptorList": ["Essence"],
     "duration": "Sustained",
     "damage": 3,
     "range": {
@@ -2413,7 +2413,7 @@
     "category": "Health",
     "type": "Physical",
     "damageType": "N/A",
-    "descriptorList": ["Negative"],
+    "descriptorList": ["Essence"],
     "duration": "Sustained",
     "damage": 1,
     "range": {
@@ -3223,7 +3223,7 @@
     "page": 117
   },
   {
-    "name": "Pulse",
+    "name": "Pulse (Alternative)",
     "description": "",
     "category": "Manipulation",
     "type": "Physical",
@@ -4307,7 +4307,7 @@
     "page": 189
   },
   {
-    "name": "Fashion",
+    "name": "Fashion (Alternative)",
     "description": "",
     "category": "Manipulation",
     "type": "Physical",
@@ -4339,7 +4339,7 @@
     "page": 190
   },
   {
-    "name": "Interference",
+    "name": "Interference (Alternative)",
     "description": "",
     "category": "Manipulation",
     "type": "Physical",
@@ -4387,7 +4387,7 @@
     "page": 190
   },
   {
-    "name": "Sound Barrier",
+    "name": "Sound Barrier (Alternative)",
     "description": "",
     "category": "Illusion",
     "type": "Physical",
@@ -4403,7 +4403,7 @@
     "page": 190
   },
   {
-    "name": "Vehicle Mask",
+    "name": "Vehicle Mask (Alternative)",
     "description": "",
     "category": "Illusion",
     "type": "Physical",

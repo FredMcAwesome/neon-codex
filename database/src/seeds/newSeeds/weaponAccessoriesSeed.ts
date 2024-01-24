@@ -8,7 +8,7 @@ import { WeaponAccessories } from "../../models/gear/combatGear/weaponAccessoryM
 
 export const getWeaponAccessories = function () {
   const currentPath = import.meta.url;
-  let weaponAccessories: WeaponAccessorySummaryListType | undefined = undefined;
+  let unlinkedWeaponAccessories: WeaponAccessorySummaryListType;
   const relativeConverterPath = "converter/jsonFiles/weaponAccessories.json";
   const rootPath = "../../../../../";
   const jsonString = fs.readFileSync(
@@ -21,17 +21,18 @@ export const getWeaponAccessories = function () {
     WeaponAccessorySummaryListSchema.safeParse(rawJson);
   if (weaponAccessoryListParsed.success) {
     console.log("weapon accessories all g");
-    weaponAccessories = weaponAccessoryListParsed.data;
+    unlinkedWeaponAccessories = weaponAccessoryListParsed.data;
   } else {
     console.log(weaponAccessoryListParsed.error.errors[0]);
-  }
-  if (weaponAccessories === undefined) {
-    assert(false);
+    assert(false, "weaponAccessories is undefined");
   }
   const stagedWeaponAccessories: Array<WeaponAccessories> = [];
-  weaponAccessories.forEach((weaponAccessory) => {
+  unlinkedWeaponAccessories.forEach((weaponAccessory) => {
     stagedWeaponAccessories.push(new WeaponAccessories(weaponAccessory));
     // console.log(weaponAccessory.name);
   });
-  return stagedWeaponAccessories;
+  return {
+    unlinkedWeaponAccessories,
+    stagedWeaponAccessories,
+  };
 };

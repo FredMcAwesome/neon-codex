@@ -109,7 +109,7 @@
     "maxRating": 6,
     "damageReduction": 0,
     "capacityCost": {
-      "ratingLinked": [1, 2, 3, 4, 5, 6]
+      "ratingLinked": [1, 2, 3, 4, 5, 6, 6, 6]
     },
     "bonus": {
       "fireArmour": {
@@ -614,7 +614,6 @@
     "maxRating": 0,
     "damageReduction": 0,
     "capacityCost": [0],
-    "userSelectable": false,
     "availability": {
       "rating": [0],
       "restriction": "Legal"
@@ -732,6 +731,21 @@
     "page": 62
   },
   {
+    "name": "Ballistic Mask",
+    "description": "",
+    "category": "Customized Ballistic Mask",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacityCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [150],
+    "source": "Run And Gun",
+    "page": 62
+  },
+  {
     "name": "Auto-Injector",
     "description": "",
     "category": "General",
@@ -777,7 +791,7 @@
     "name": "Pulse Weave",
     "description": "",
     "category": "General",
-    "maxRating": 1,
+    "maxRating": 6,
     "damageReduction": 0,
     "capacityCost": [3],
     "availability": {

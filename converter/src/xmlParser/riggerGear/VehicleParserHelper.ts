@@ -22,12 +22,17 @@ const Seats = Vehicles.Seats;
 export const convertWeaponMount = function (
   weaponMount: IncludedWeaponMountXmlType
 ) {
+  let mod;
+  if (weaponMount.mods !== undefined) {
+    mod = weaponMount.mods.mod;
+  }
   return {
     control: weaponMount.control,
     flexibility: weaponMount.flexibility,
     size: weaponMount.size,
     visibility: weaponMount.visibility,
-    allowedWeapon: weaponMount.allowedweapons,
+    includedWeapon: weaponMount.allowedweapons,
+    includedMountMod: mod,
   };
 };
 

@@ -21,9 +21,9 @@ import {
   costWeaponEnum,
   restrictionEnum,
   weaponExtraClassificationEnum,
+  gearCategoryEnum,
 } from "../enums.js";
 import {
-  AllowedGearSchema,
   AvailabilityRatingSchema,
   UseGearListSchema,
   WeaponXmlSubtypeSchema,
@@ -146,6 +146,7 @@ export const DamageSchema = zod.array(
       type: zod.nativeEnum(damageTypeEnum),
       annotation: zod.optional(zod.nativeEnum(damageAnnotationEnum)),
       blast: zod.optional(BlastSchema),
+      barrels: zod.optional(zod.number()),
     })
     .strict()
 );
@@ -219,7 +220,7 @@ export type ArmourPenetrationType = zod.infer<typeof ArmourPenetrationSchema>;
 const UnlinkedAccessorySchema = zod
   .object({
     name: zod.string(),
-    mount: zod.optional(zod.array(MountSchema)),
+    mount: zod.optional(AccessoryMountSchema),
     rating: zod.optional(zod.number()),
     gears: zod.optional(UseGearListSchema),
   })
@@ -252,7 +253,10 @@ const WeaponSummaryPartialSchema = zod
     damage: DamageSchema,
     armourPenetration: ArmourPenetrationSchema,
     ammunition: zod.optional(AmmunitionSchema),
-    allowedGear: zod.optional(AllowedGearSchema),
+    allowedGearList: zod.optional(zod.array(zod.string())),
+    allowedGearCategories: zod.optional(
+      zod.array(zod.nativeEnum(gearCategoryEnum))
+    ),
     accessories: zod.optional(UnlinkedAccessoryListSchema),
     allowAccessories: zod.boolean(),
     userSelectable: zod.optional(zod.literal(false)),
@@ -268,7 +272,6 @@ const WeaponSummaryPartialSchema = zod
     ),
     relatedSkill: zod.string(),
     relatedSkillSpecialisations: zod.optional(zod.array(zod.string())),
-    rating: zod.optional(zod.number()),
     availability: AvailabilityWeaponSchema,
     cost: CostWeaponSchema,
     source: zod.nativeEnum(sourceBookEnum),

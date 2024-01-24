@@ -731,6 +731,7 @@ export const WeaponBonusSchema = zod
     useRange: zod.optional(zod.string()),
     accuracy: zod.optional(zod.number()),
     accuracyReplace: zod.optional(zod.number()),
+    extraDiceIfSmartlinkEnabled: zod.optional(zod.number()),
   })
   .strict();
 export type WeaponBonusType = zod.infer<typeof WeaponBonusSchema>;

@@ -191,10 +191,8 @@
     "maxRating": 0,
     "isWeapon": false,
     "deploymentRequired": false,
-    "allowGear": {
-      "gearCategoryList": ["Vision Enhancements", "Custom"]
-    },
-    "preinstalledGear": [
+    "allowedGearCategories": ["Vision Enhancements", "Custom"],
+    "includedGearList": [
       {
         "name": "Camera, Micro",
         "category": "Vision Devices"
@@ -370,9 +368,7 @@
     "maxRating": 0,
     "isWeapon": false,
     "deploymentRequired": false,
-    "allowGear": {
-      "gearCategoryList": ["Autosofts", "Custom"]
-    },
+    "allowedGearCategories": ["Autosofts", "Custom"],
     "specialModification": false,
     "hostWeaponMountsRequired": ["Under"],
     "hostWeaponRestrictions": {
@@ -393,7 +389,7 @@
     "isWeapon": false,
     "accuracyIncrease": 2,
     "deploymentRequired": false,
-    "preinstalledGear": [
+    "includedGearList": [
       {
         "name": "Laser Range Finder",
         "category": "Sensor Functions"
@@ -431,7 +427,7 @@
     "isWeapon": false,
     "accuracyIncrease": 2,
     "deploymentRequired": false,
-    "preinstalledGear": [
+    "includedGearList": [
       {
         "name": "Laser Range Finder",
         "category": "Sensor Functions"
@@ -1450,9 +1446,7 @@
     "maxRating": 0,
     "isWeapon": false,
     "deploymentRequired": false,
-    "allowGear": {
-      "gearCategoryList": ["Commlinks", "Custom"]
-    },
+    "allowedGearCategories": ["Commlinks", "Custom"],
     "specialModification": false,
     "hostWeaponRestrictions": {
       "accessories": ["Vintage"]
@@ -1920,7 +1914,7 @@
     "name": "Retractable Bayonet",
     "description": "",
     "maxRating": 0,
-    "isWeapon": false,
+    "isWeapon": true,
     "deploymentRequired": false,
     "specialModification": false,
     "hostWeaponMountsRequired": ["Under"],
@@ -2124,7 +2118,7 @@
     "maxRating": 0,
     "isWeapon": false,
     "deploymentRequired": false,
-    "preinstalledGear": [
+    "includedGearList": [
       {
         "name": "GPS Monitor",
         "category": "Survival Gear"
@@ -2162,7 +2156,7 @@
     "maxRating": 0,
     "isWeapon": false,
     "deploymentRequired": false,
-    "preinstalledGear": [
+    "includedGearList": [
       {
         "name": "ARO of Local Maps",
         "category": "Software"
@@ -2661,7 +2655,7 @@
     "maxRating": 0,
     "isWeapon": false,
     "deploymentRequired": false,
-    "preinstalledGear": [
+    "includedGearList": [
       {
         "name": "Radio Signal Scanner",
         "category": "Sensor Functions"
@@ -2684,7 +2678,7 @@
     "isWeapon": false,
     "accuracyIncrease": 2,
     "deploymentRequired": false,
-    "preinstalledGear": [
+    "includedGearList": [
       {
         "name": "Laser Range Finder",
         "category": "Sensor Functions"

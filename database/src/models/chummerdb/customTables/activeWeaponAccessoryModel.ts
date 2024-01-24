@@ -1,14 +1,19 @@
 import {
+  Collection,
   Entity,
+  Enum,
   ManyToOne,
+  OneToMany,
   PrimaryKey,
   Property,
-  ref,
 } from "@mikro-orm/postgresql";
 import type { Ref } from "@mikro-orm/postgresql";
 import { WeaponAccessories } from "../../gear/combatGear/weaponAccessoryModel.js";
-import { Weapons } from "../../models.js";
 import { CustomisedWeapons } from "./customisedWeaponModel.js";
+import { Weapons } from "../../gear/combatGear/weaponModel.js";
+import { ActiveWeaponAccessoryGears } from "./activeGearModel.js";
+import { firearmAccessoryMountLocationEnum } from "@shadowrun/common/build/enums.js";
+import type { AccessoryMountType } from "@shadowrun/common/build/schemas/weaponSchemas.js";
 
 // Links to either a custom weapon, or a weapon in the table.
 // When we create a custom weapon that already has an accessory
@@ -27,12 +32,31 @@ export abstract class ActiveWeaponAccessories {
   @ManyToOne({ entity: () => WeaponAccessories, ref: true })
   weaponAccessory: Ref<WeaponAccessories>;
 
+  @OneToMany(
+    () => ActiveWeaponAccessoryGears,
+    (weaponAccessoryIncludedGear) =>
+      weaponAccessoryIncludedGear.activeWeaponAccessory
+  )
+  includedGearList = new Collection<ActiveWeaponAccessoryGears>(this);
+
+  @Enum({
+    items: () => firearmAccessoryMountLocationEnum,
+    array: true,
+    nullable: true,
+  })
+  weaponMountsUsed?: Array<firearmAccessoryMountLocationEnum>;
+
   @Property({ nullable: true })
   rating?: number;
 
-  constructor(weaponAccessory: WeaponAccessories, rating: number | undefined) {
-    this.weaponAccessory = ref(WeaponAccessories, weaponAccessory);
+  constructor(
+    weaponAccessory: Ref<WeaponAccessories>,
+    rating?: number,
+    weaponMountsUsed?: AccessoryMountType
+  ) {
+    this.weaponAccessory = weaponAccessory;
     if (rating) this.rating = rating;
+    if (weaponMountsUsed) this.weaponMountsUsed = weaponMountsUsed;
   }
 }
 
@@ -42,12 +66,13 @@ export class IncludedWeaponAccessories extends ActiveWeaponAccessories {
   standardWeapon: Ref<Weapons>;
 
   constructor(
-    weapon: Weapons,
-    weaponAccessory: WeaponAccessories,
-    rating: number | undefined
+    weapon: Ref<Weapons>,
+    weaponAccessory: Ref<WeaponAccessories>,
+    rating?: number,
+    weaponMountsUsed?: AccessoryMountType
   ) {
-    super(weaponAccessory, rating);
-    this.standardWeapon = ref(Weapons, weapon);
+    super(weaponAccessory, rating, weaponMountsUsed);
+    this.standardWeapon = weapon;
   }
 }
 
@@ -57,11 +82,12 @@ export class CustomisedWeaponAccessories extends ActiveWeaponAccessories {
   customisedWeapon: Ref<CustomisedWeapons>;
 
   constructor(
-    weapon: CustomisedWeapons,
-    weaponAccessory: WeaponAccessories,
-    rating: number | undefined
+    weapon: Ref<CustomisedWeapons>,
+    weaponAccessory: Ref<WeaponAccessories>,
+    rating?: number,
+    weaponMountsUsed?: AccessoryMountType
   ) {
-    super(weaponAccessory, rating);
-    this.customisedWeapon = ref(CustomisedWeapons, weapon);
+    super(weaponAccessory, rating, weaponMountsUsed);
+    this.customisedWeapon = weapon;
   }
 }

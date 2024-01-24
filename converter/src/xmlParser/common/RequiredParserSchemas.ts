@@ -378,6 +378,7 @@ const parentDetailsSchema = zod
     ),
     category: zod.optional(zod.string()),
     name: zod.optional(zod.string()),
+    ammoforweapontype: zod.optional(zod.literal("bow")),
   })
   .strict();
 

@@ -7,9 +7,9 @@ import {
   ammoOptionEnum,
   costWeaponAccessoryEnum,
   restrictionEnum,
+  gearCategoryEnum,
 } from "../enums.js";
 import {
-  AllowedGearSchema,
   AvailabilityRatingSchema,
   UseGearListSchema,
 } from "./commonSchemas.js";
@@ -104,8 +104,11 @@ export const WeaponAccessorySummarySchema = zod
     recoilCompensationType: zod.optional(zod.number()), // items from the same recoilCompensationType are incompatible with each other
     deploymentRequired: zod.boolean(),
     accessoryCostMultiplier: zod.optional(zod.number()),
-    allowGear: zod.optional(AllowedGearSchema),
-    preinstalledGear: zod.optional(UseGearListSchema),
+    allowedGearList: zod.optional(zod.array(zod.string())),
+    allowedGearCategories: zod.optional(
+      zod.array(zod.nativeEnum(gearCategoryEnum))
+    ),
+    includedGearList: zod.optional(UseGearListSchema),
     specialModification: zod.boolean(),
     extraAmmoSlots: zod.optional(zod.number()),
     ammoCapacityCalculation: zod.optional(AmmoCapacityCalculationSchema),

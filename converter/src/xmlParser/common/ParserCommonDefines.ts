@@ -135,6 +135,8 @@ export enum GearXmlCategoryEnum {
 const GearsGearsSchema = zod
   .object({
     xmltext: zod.string(),
+    // this gear has some specific option that it needs to select
+    // e.g. Tutorsoft selects the "Automotive Mechanic" skill
     _select: zod.optional(zod.string()),
     _rating: zod.optional(zod.string()),
     _consumecapacity: zod.optional(zod.string()),
@@ -158,6 +160,7 @@ const PartialInnerUseGearXmlSchema = zod
       zod.string(),
       zod.object({ xmltext: zod.string(), _select: zod.string() }).strict(),
     ]),
+    // I think this is redundant as we are always have a name anyway
     category: zod.optional(zod.nativeEnum(GearXmlCategoryEnum)),
     rating: zod.optional(zod.number()),
     maxrating: zod.optional(zod.number()),
@@ -210,6 +213,7 @@ export enum limbSlotXmlEnum {
   LEG = "leg",
   TORSO = "torso",
   SKULL = "skull",
+  ALL = "all",
 }
 
 export const StringOrNumberSchema = zod.union([zod.number(), zod.string()]);
@@ -349,6 +353,8 @@ const ModXmlSchema = zod.union([
       _rating: zod.optional(zod.string()),
       // used when the mod rating exceeds the item rating
       _maxrating: zod.optional(zod.string()),
+      // This is only used to override a mod cost
+      // I won't use this...
       _cost: zod.optional(zod.string()),
     })
     .strict(),
@@ -358,24 +364,28 @@ export type ModXmlType = zod.infer<typeof ModXmlSchema>;
 export const ModListXmlSchema = zod
   .object({
     name: zod.union([zod.array(ModXmlSchema), ModXmlSchema]),
-    addslots: zod.optional(zod.number()),
-    subsystems: zod.optional(
-      zod
-        .object({
-          cyberware: zod
-            .object({
-              name: zod.string(),
-            })
-            .strict(),
-        })
-        .strict()
-    ),
   })
   .strict();
 export type ModListXmlType = zod.infer<typeof ModListXmlSchema>;
 
-export const ModRecursiveXmlSchema = ModListXmlSchema.extend({
-  mod: zod.optional(zod.union([ModListXmlSchema, zod.array(ModListXmlSchema)])),
+const VehicleModListXmlSchema = ModListXmlSchema.extend({
+  subsystems: zod.optional(
+    zod
+      .object({
+        cyberware: zod
+          .object({
+            name: zod.string(),
+          })
+          .strict(),
+      })
+      .strict()
+  ),
+}).strict();
+
+export const ModRecursiveXmlSchema = VehicleModListXmlSchema.extend({
+  mod: zod.optional(
+    zod.union([VehicleModListXmlSchema, zod.array(VehicleModListXmlSchema)])
+  ),
 }).strict();
 
 export type ModRecursiveXmlType = zod.infer<typeof ModRecursiveXmlSchema>;

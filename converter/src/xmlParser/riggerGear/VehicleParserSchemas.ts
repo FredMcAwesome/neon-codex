@@ -91,6 +91,7 @@ const VehicleXmlSchema = zod
     // Vehicle Mods included
     mods: zod.optional(ModRecursiveXmlSchema),
     // Number of mod slots of each category
+    // This can be overriden for any specific slot type
     modslots: zod.optional(zod.number()),
     // Mod slot category modification
     // Power Train mod slots modification
@@ -108,6 +109,7 @@ const VehicleXmlSchema = zod
     // Number of seats, only for vehicles I assume?
     seats: zod.optional(StringOrNumberSchema),
     // Included weapons
+    // These weapons use a weapon mount
     weapons: zod.optional(
       zod
         .object({
@@ -129,6 +131,8 @@ const VehicleXmlSchema = zod
         .strict()
     ),
     // Included weapon mounts
+    // Generally (currently always) included weapons
+    // are the only weapon/s useable in the included weapon mounts
     weaponmounts: zod.optional(
       zod
         .object({

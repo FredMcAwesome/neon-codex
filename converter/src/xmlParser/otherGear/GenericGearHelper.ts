@@ -84,6 +84,9 @@ export const convertXmlWeaponBonus = function (bonus: WeaponXmlBonusType) {
   if (bonus.accuracyreplace !== undefined) {
     bonusObject.accuracyReplace = bonus.accuracyreplace;
   }
+  if (bonus.smartlinkpool !== undefined) {
+    bonusObject.extraDiceIfSmartlinkEnabled = bonus.smartlinkpool;
+  }
   if (Object.keys(bonusObject).length === 0) {
     return undefined;
   }
@@ -358,6 +361,14 @@ export const convertAmmoForWeaponType = function (
   return typeListConverted.reduce((prev, next) => {
     return prev.concat(next);
   });
+};
+
+export const convertWeight = function (weight: number | "Rating") {
+  if (typeof weight === "string") {
+    return { option: "Rating" };
+  } else {
+    return weight;
+  }
 };
 
 export const convertDeviceRating = function (rating: DeviceRatingXmlType) {

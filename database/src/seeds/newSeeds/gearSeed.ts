@@ -8,7 +8,7 @@ import { Gears } from "../../models/gear/otherGear/gearModel.js";
 
 export const getGears = function () {
   const currentPath = import.meta.url;
-  let gears: OtherGearListType | undefined = undefined;
+  let unlinkedGears: OtherGearListType;
   let relativeConverterPath = "converter/jsonFiles/gears.json";
   const rootPath = "../../../../../";
   let jsonString = fs.readFileSync(
@@ -20,15 +20,15 @@ export const getGears = function () {
   const gearListParsed = OtherGearListSchema.safeParse(rawJson);
   if (gearListParsed.success) {
     console.log("Gears all g");
-    gears = gearListParsed.data;
+    unlinkedGears = gearListParsed.data;
   } else {
     console.log(gearListParsed.error.errors[0]);
-    assert(false);
+    assert(false, "gears is undefined");
   }
   const stagedGears: Array<Gears> = [];
-  gears.forEach((gear) => {
+  unlinkedGears.forEach((gear) => {
     stagedGears.push(new Gears(gear));
     // console.log(gear.name);
   });
-  return stagedGears;
+  return { unlinkedGears, stagedGears };
 };

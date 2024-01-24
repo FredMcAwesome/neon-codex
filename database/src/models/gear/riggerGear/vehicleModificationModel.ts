@@ -1,4 +1,10 @@
-import { Entity, PrimaryKey, Property, Enum } from "@mikro-orm/postgresql";
+import {
+  Entity,
+  PrimaryKey,
+  Property,
+  Enum,
+  Unique,
+} from "@mikro-orm/postgresql";
 import {
   cyberwareCategoryEnum,
   firearmWeaponTypeEnum,
@@ -22,11 +28,12 @@ import type {
   discriminatorColumn: "type",
   abstract: true,
 })
-export abstract class VehicleMods {
+export abstract class VehicleModifications {
   @PrimaryKey()
   id!: number;
 
   @Property({ length: 255 })
+  @Unique()
   name!: string;
 
   @Property({ length: 5000 })
@@ -135,7 +142,7 @@ type VehicleSpecificModType = VehicleModType & {
 };
 
 @Entity({ discriminatorValue: vehicleModTypeEnum.Vehicle })
-export class VehicleChasisMods extends VehicleMods {
+export class VehicleChasisModifications extends VehicleModifications {
   @Enum({ items: () => firearmWeaponTypeEnum, nullable: true, array: true })
   weaponMountValidCategoryList?: Array<firearmWeaponTypeEnum>;
 
@@ -152,7 +159,7 @@ type WeaponMountModType = VehicleModType & {
 };
 
 @Entity({ discriminatorValue: vehicleModTypeEnum.WeaponMount })
-export class WeaponMountMods extends VehicleMods {
+export class WeaponMountModifications extends VehicleModifications {
   @Property({ nullable: true })
   additionalAmmo?: number;
 

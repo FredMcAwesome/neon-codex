@@ -264,7 +264,9 @@ function convertWeapon(weapon: WeaponXmlType) {
       ? weapon.addweapon
       : [weapon.addweapon]
     : undefined;
-  const allowGear = convertAllowGear(weapon.allowgear);
+  const { allowedGearList, allowedGearCategories } = convertAllowGear(
+    weapon.allowgear
+  );
   const doubleCostAccessoryMounts = convertAccessoryMounts(
     weapon.doubledcostaccessorymounts
   );
@@ -393,7 +395,10 @@ function convertWeapon(weapon: WeaponXmlType) {
     ...(ammo !== undefined && { ammunition: ammo }),
     availability: availability,
     cost: cost,
-    ...(allowGear !== undefined && { allowedGear: allowGear }),
+    ...(allowedGearList !== undefined && { allowedGearList: allowedGearList }),
+    ...(allowedGearCategories !== undefined && {
+      allowedGearCategories: allowedGearCategories,
+    }),
     ...(accessories !== undefined && { accessories: accessories }),
     allowAccessories: weapon.allowaccessory !== "False",
     ...(weapon.hide !== undefined && { userSelectable: false as const }),

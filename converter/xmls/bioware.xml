@@ -461,7 +461,7 @@
           <name>AGI</name>
           <val>1</val>
         </specificattribute>
-        <specificattribute precedence="0">
+        <specificattribute>
           <name>REA</name>
           <val>1</val>
         </specificattribute>
@@ -1311,7 +1311,7 @@
     <!-- End Region -->
     <!-- Region Bio-Weapons -->
     <!-- Kept for legacy Region -->
-    <bioware>
+    <!-- <bioware> This is uncommented in chummer repo for legacy reasons
       <id>dfd48ff5-3ecf-47b4-81fd-62b1ff3f74e4</id>
       <name>Claws</name>
       <limit>False</limit>
@@ -1407,7 +1407,7 @@
       <source>CF</source>
       <page>121</page>
       <hide />
-    </bioware>
+    </bioware> -->
     <!-- End Region -->
     <bioware>
       <id>c0dedc5f-2c75-4dcb-9fc3-86fc44adea58</id>
@@ -3523,7 +3523,7 @@
           <name>AGI</name>
           <val>1</val>
         </specificattribute>
-        <specificattribute precedence="0">
+        <specificattribute>
           <name>REA</name>
           <val>1</val>
         </specificattribute>
@@ -3908,7 +3908,7 @@
       <name>Adrenaline Filter</name>
       <limit>1</limit>
       <category>Basic</category>
-      <ess>Rating*0.5</ess>
+      <ess>(Rating)*0.5</ess>
       <rating>3</rating>
       <capacity>0</capacity>
       <avail>(Rating*3)R</avail>

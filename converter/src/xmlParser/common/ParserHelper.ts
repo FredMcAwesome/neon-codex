@@ -7,7 +7,10 @@ import {
   ratingMeaningEnum,
   sourceBookEnum,
 } from "@shadowrun/common/build/enums.js";
-import type { ModListType } from "@shadowrun/common/build/schemas/shared/modSchemas.js";
+import type {
+  GenericModListType,
+  GenericVehicleModListType,
+} from "@shadowrun/common/build/schemas/shared/modSchemas.js";
 import assert from "assert";
 import type {
   CategoryXmlListType,
@@ -27,10 +30,7 @@ import type {
   ModXmlType,
 } from "./ParserCommonDefines.js";
 import { sourceBookXmlEnum } from "./ParserCommonDefines.js";
-import type {
-  AllowedGearType,
-  UseGearListType,
-} from "@shadowrun/common/build/schemas/commonSchemas.js";
+import type { UseGearListType } from "@shadowrun/common/build/schemas/commonSchemas.js";
 
 export const convertSource = function (source: sourceBookXmlEnum | 2050) {
   const xmlSource = source === 2050 ? sourceBookXmlEnum.Shadowrun2050 : source;
@@ -300,6 +300,8 @@ export const convertRatingMeaning = function (meaning: string | undefined) {
       return ratingMeaningEnum.TenCmPerRating;
     case "Rating_Meters":
       return ratingMeaningEnum.MeterPerRating;
+    case "Rating_SqMeters":
+      return ratingMeaningEnum.SquareMeterPerRating;
     default:
       assert(false);
   }
@@ -307,12 +309,15 @@ export const convertRatingMeaning = function (meaning: string | undefined) {
 
 export const convertAllowGear = function (
   xmlAllowGear: xmlAllowGearType | undefined
-): AllowedGearType | undefined {
+): {
+  allowedGearList?: Array<string> | undefined;
+  allowedGearCategories?: Array<gearCategoryEnum> | undefined;
+} {
   if (!xmlAllowGear) {
-    return undefined;
+    return { allowedGearList: undefined };
   }
   if (typeof xmlAllowGear === "string") {
-    return { gearNameList: [xmlAllowGear] };
+    return { allowedGearList: [xmlAllowGear] };
   }
   // console.log("Allow Gear: " + xmlAllowGear.toString());
   const gearXmlCategories =
@@ -335,7 +340,7 @@ export const convertAllowGear = function (
       ? xmlAllowGear.gearname
       : [xmlAllowGear.gearname];
   assert(!(gearNames === undefined && gearCategories === undefined));
-  return { gearNameList: gearNames, gearCategoryList: gearCategories };
+  return { allowedGearList: gearNames, allowedGearCategories: gearCategories };
 };
 
 // TODO: handle gear correctly
@@ -349,12 +354,10 @@ export function convertXmlGears(gears: GearXmlType): UseGearListType {
         name: useGear,
       };
     } else if ("xmltext" in useGear) {
-      const enterName =
-        useGear._select !== undefined
-          ? useGear._select === ""
-            ? (true as const)
-            : useGear._select
-          : undefined;
+      if (useGear._select !== undefined) {
+        assert(useGear._select !== "");
+      }
+      const specificOption = useGear._select;
       const rating =
         useGear._rating !== undefined ? parseInt(useGear._rating) : undefined;
       const consumeCapacity =
@@ -364,7 +367,7 @@ export function convertXmlGears(gears: GearXmlType): UseGearListType {
 
       return {
         name: useGear.xmltext,
-        enterName: enterName,
+        specificOption: specificOption,
         rating: rating,
         consumeCapacity: consumeCapacity,
         quantity: quantity,
@@ -425,14 +428,28 @@ export function convertAttribute(attribute: attributeXMLEnum) {
   }
 }
 
-export const convertXmlModList = function (
+export const convertXmlVehicleModList = function (
   modList: ModRecursiveXmlType
-): ModListType | undefined {
-  const mods: ModListType = [];
+): GenericVehicleModListType | undefined {
+  const mods: GenericVehicleModListType = [];
   if ("mod" in modList && modList.mod !== undefined) {
     const nameList = Array.isArray(modList.mod) ? modList.mod : [modList.mod];
     nameList.forEach((name) => {
-      mods.concat(convertXmlModObject(name));
+      const initialModObject = convertXmlModObject(name);
+      let modObject;
+      if (name.subsystems !== undefined) {
+        // technically this could also be bioware but no examples yet
+        assert("cyberware" in name.subsystems);
+        const subsystem = name.subsystems.cyberware.name;
+        modObject = {
+          addCyberware: subsystem,
+          ...initialModObject,
+        };
+      } else {
+        modObject = initialModObject;
+      }
+
+      mods.concat(modObject);
     });
   }
   mods.concat(convertXmlModObject(modList));
@@ -442,56 +459,38 @@ export const convertXmlModList = function (
   return mods;
 };
 
-const convertXmlModObject = function (modList: ModListXmlType): ModListType {
-  const mods: ModListType = [];
+export const convertXmlModObject = function (
+  modList: ModListXmlType
+): GenericModListType {
+  const mods: GenericModListType = [];
   if (Array.isArray(modList.name)) {
-    // related to a specific mod, doesn't make sense for array
-    assert(modList.subsystems === undefined);
     modList.name.forEach((name) => {
-      const mod = convertXmlModInner(name, undefined);
-      mods.concat(mod);
+      const mod = convertXmlModInner(name);
+      mods.push(mod);
     });
   } else {
-    let subsystem;
-    if (modList.subsystems !== undefined) {
-      // technically this could also be bioware but no examples yet
-      assert("cyberware" in modList.subsystems);
-      subsystem = modList.subsystems.cyberware.name;
-    }
-    const mod = convertXmlModInner(modList.name, subsystem);
-    mods.concat(mod);
+    const mod = convertXmlModInner(modList.name);
+    mods.push(mod);
   }
 
-  if (modList.addslots !== undefined) {
-    mods.concat({ additionalSlots: modList.addslots });
-  }
   return mods;
 };
 
-const convertXmlModInner = function (
-  mod: ModXmlType,
-  subsystem: string | undefined
-) {
+const convertXmlModInner = function (mod: ModXmlType) {
   if (typeof mod === "string") {
     return { name: mod };
   }
 
-  let rating, cost;
+  let rating;
   if (mod._rating !== undefined) {
     rating = Number(mod._rating);
     assert(!isNaN(rating));
-  }
-  if (mod._cost !== undefined) {
-    cost = Number(mod._cost);
-    assert(!isNaN(cost));
   }
 
   return {
     name: mod.xmltext,
     ...(mod._select !== undefined && { specificOption: mod._select }),
     ...(rating !== undefined && { rating: rating }),
-    ...(cost !== undefined && { cost: cost }),
-    ...(subsystem !== undefined && { addCyberware: subsystem }),
   };
 };
 
@@ -620,6 +619,8 @@ export const convertLimbSlot = function (slot: limbSlotXmlEnum) {
       return limbSlotEnum.Skull;
     case limbSlotXmlEnum.TORSO:
       return limbSlotEnum.Torso;
+    case limbSlotXmlEnum.ALL:
+      return limbSlotEnum.All;
     default:
       assert(false);
   }

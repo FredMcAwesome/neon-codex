@@ -19,6 +19,8 @@ export const convertArmourModCategory = function (
     case armourModXmlCategoryEnum.FullBodyArmorMods:
       return armourModCategoryEnum.FullBodyArmourMods;
       break;
+    case armourModXmlCategoryEnum.CustomizedBallisticMask:
+      return armourModCategoryEnum.CustomisedBallisticMask;
     case armourModXmlCategoryEnum.General:
       return armourModCategoryEnum.General;
       break;

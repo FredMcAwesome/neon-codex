@@ -5188,6 +5188,46 @@
     "rangeList": ["Standard Grenade"]
   },
   {
+    "name": "Grenade: Paint (Radioactive Tracking Dye)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [0],
+        "type": "N/A",
+        "blast": {
+          "type": "Radius",
+          "value": 10
+        }
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 0,
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Throwing Weapons",
+    "relatedSkillSpecialisations": ["Non-Aerodynamic"],
+    "availability": {
+      "rating": [8],
+      "restriction": "Restricted"
+    },
+    "cost": [150],
+    "source": "Run And Gun",
+    "page": 102,
+    "type": "Explosive",
+    "subtype": "Grenade",
+    "rangeList": ["Standard Grenade"]
+  },
+  {
     "name": "Grenade: Smokebomb",
     "description": "",
     "concealability": 0,
@@ -5570,6 +5610,46 @@
       "restriction": "Restricted"
     },
     "cost": [100],
+    "source": "Run And Gun",
+    "page": 102,
+    "type": "Explosive",
+    "subtype": "Grenade",
+    "rangeList": ["Aerodynamic Grenade"]
+  },
+  {
+    "name": "Grenade: Paint (Radioactive Tracking Dye), Aerodynamic",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [0],
+        "type": "N/A",
+        "blast": {
+          "type": "Radius",
+          "value": 10
+        }
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 0,
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Throwing Weapons",
+    "relatedSkillSpecialisations": ["Aerodynamic"],
+    "availability": {
+      "rating": [8],
+      "restriction": "Restricted"
+    },
+    "cost": [150],
     "source": "Run And Gun",
     "page": 102,
     "type": "Explosive",
@@ -7647,6 +7727,7 @@
     ],
     "allowAccessories": true,
     "relatedSkill": "Pistols",
+    "relatedSkillSpecialisations": ["Holdouts", "Semi-Automatics"],
     "availability": {
       "rating": [4],
       "restriction": "Restricted"
@@ -11587,6 +11668,67 @@
       "ammoSlots": 1
     },
     "rangeList": ["Tasers"]
+  },
+  {
+    "name": "Monofilament Bola",
+    "description": "",
+    "concealability": -2,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          3
+        ],
+        "type": "Stun"
+      },
+      {
+        "damageAmount": [12],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [4],
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            8
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 0,
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Exotic Ranged Weapon",
+    "relatedSkillSpecialisations": ["Monofilament Bola"],
+    "availability": {
+      "rating": [18],
+      "restriction": "Forbidden"
+    },
+    "cost": [4000],
+    "source": "Run And Gun",
+    "page": 26,
+    "type": "Projectile",
+    "subtype": "Throwing Weapons",
+    "rangeList": ["Shuriken"]
   },
   {
     "name": "Mortimer of London 'Trafalger' Gun Cane",
@@ -16939,7 +17081,7 @@
     "rangeList": ["Heavy Pistols"]
   },
   {
-    "name": "Mortimer of London ‘Belgrave’ Sword Cane",
+    "name": "Mortimer of London 'Belgrave' Sword Cane",
     "description": "",
     "concealability": 0,
     "accuracy": [5],
@@ -17211,9 +17353,7 @@
         "reloadMethod": "Special"
       }
     ],
-    "allowedGear": {
-      "gearCategoryList": ["Drugs", "Toxins"]
-    },
+    "allowedGearCategories": ["Drugs", "Toxins"],
     "allowAccessories": true,
     "relatedSkill": "Exotic Melee Weapon",
     "relatedSkillSpecialisations": ["Injector Pen"],
@@ -17457,7 +17597,37 @@
     "name": "Osmium Mace",
     "description": "",
     "concealability": 0,
-    "accuracy": [3],
+    "accuracy": [
+      3,
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": ">="
+          },
+          5
+        ]
+      },
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": ">="
+          },
+          7
+        ]
+      }
+    ],
     "damage": [
       {
         "damageAmount": [
@@ -19863,6 +20033,63 @@
   },
   {
     "name": "Bayonet",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [5],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          1
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 0,
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "hostWeaponRequirements": {
+      "hostWeaponMountsRequired": ["Under"]
+    },
+    "relatedSkill": "Blades",
+    "relatedSkillSpecialisations": ["Blades"],
+    "availability": {
+      "rating": [4],
+      "restriction": "Restricted"
+    },
+    "cost": [50],
+    "source": "Run And Gun",
+    "page": 50,
+    "type": "Melee",
+    "subtype": "Weapon Attachments",
+    "meleeOptions": {
+      "reach": 2
+    }
+  },
+  {
+    "name": "Retractable Bayonet",
     "description": "",
     "concealability": 0,
     "accuracy": [5],
@@ -22985,6 +23212,42 @@
     "rangeList": ["Missile Launchers"]
   },
   {
+    "name": "Ink Pouch",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [0],
+        "type": "N/A",
+        "blast": {
+          "type": "Radius",
+          "value": 5
+        }
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 0,
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "relatedSkill": "Heavy Weapons",
+    "availability": {
+      "rating": [0],
+      "restriction": "Legal"
+    },
+    "cost": [0],
+    "source": "Rigger 5",
+    "page": 136,
+    "type": "Projectile",
+    "subtype": "Throwing Weapons",
+    "rangeList": ["Net"]
+  },
+  {
     "name": "Micro-Torpedo: Chemical",
     "description": "",
     "concealability": 10,
@@ -24480,6 +24743,80 @@
       "accessoryMounts": ["Stock", "Side", "Top", "Under"]
     },
     "rangeList": ["Missile Launchers"]
+  },
+  {
+    "name": "Krime Ripper",
+    "description": "",
+    "concealability": 10,
+    "accuracy": [5],
+    "damage": [
+      {
+        "damageAmount": [10],
+        "type": "Physical",
+        "barrels": 2
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 100,
+        "numberOfAmmunitionHolders": 2,
+        "reloadMethod": "Belt Fed"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Smart Firing Platform",
+        "gears": [
+          {
+            "name": "Clearsight Autosoft",
+            "rating": 1,
+            "category": "Autosofts"
+          },
+          {
+            "name": "[Weapon] Targeting Autosoft",
+            "rating": 2,
+            "category": "Autosofts"
+          },
+          {
+            "name": "Krime Ripper Sensor Array",
+            "rating": 3,
+            "category": "Sensors"
+          }
+        ]
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "relatedSkillSpecialisations": ["Machine Guns"],
+    "availability": {
+      "rating": [20],
+      "restriction": "Forbidden"
+    },
+    "cost": [10000],
+    "source": "Krime Katalog",
+    "page": 20,
+    "type": "Firearm",
+    "subtype": "Light Machineguns",
+    "firearmOptions": {
+      "mode": ["Full Automatic"],
+      "recoilCompensation": -5,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Light Machine Guns"]
   },
   {
     "name": "Krime Carpet",

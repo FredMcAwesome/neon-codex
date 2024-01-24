@@ -1,4 +1,14 @@
-import { Entity, Enum, PrimaryKey, Property } from "@mikro-orm/postgresql";
+import {
+  Collection,
+  Entity,
+  Enum,
+  OneToMany,
+  OneToOne,
+  PrimaryKey,
+  Property,
+  Unique,
+} from "@mikro-orm/postgresql";
+import type { Ref } from "@mikro-orm/postgresql";
 import type {
   ArmourType,
   AvailabilityArmourType,
@@ -11,9 +21,10 @@ import {
   armourModCategoryEnum,
   sourceBookEnum,
 } from "@shadowrun/common/build/enums.js";
-import type { UseGearListType } from "@shadowrun/common/build/schemas/commonSchemas.js";
 import type { BonusType } from "@shadowrun/common/build/schemas/shared/bonusSchemas.js";
-import type { ModListType } from "@shadowrun/common/build/schemas/shared/modSchemas.js";
+import { Weapons } from "./weaponModel.js";
+import { ArmourIncludedGears } from "../../chummerdb/customTables/activeGearModel.js";
+import { IncludedArmourModifications } from "../../chummerdb/customTables/activeArmourModificationModel.js";
 
 @Entity()
 export class Armours {
@@ -21,6 +32,7 @@ export class Armours {
   id!: number;
 
   @Property({ length: 255 })
+  @Unique()
   name!: string;
 
   @Enum(() => armourCategoryEnum)
@@ -38,11 +50,14 @@ export class Armours {
   @Property({ type: "json" })
   capacity!: CapacityArmourType;
 
-  @Property({ nullable: true })
-  isWeapon?: true;
+  @OneToOne({ entity: () => Weapons, nullable: true, ref: true })
+  linkedWeapon?: Ref<Weapons>;
 
-  @Property({ type: "json", nullable: true })
-  includedGear?: UseGearListType;
+  @OneToMany(
+    () => ArmourIncludedGears,
+    (armourIncludedGear) => armourIncludedGear.armour
+  )
+  includedGearList = new Collection<ArmourIncludedGears>(this);
 
   @Property({ type: "json", nullable: true })
   bonus?: BonusType;
@@ -50,21 +65,23 @@ export class Armours {
   @Property({ type: "json", nullable: true })
   wirelessBonus?: BonusType;
 
-  @Property({ type: "json", nullable: true })
-  mods?: ModListType;
+  @OneToMany(
+    () => IncludedArmourModifications,
+    (armourIncludedMods) => armourIncludedMods.standardArmour
+  )
+  includedMods = new Collection<IncludedArmourModifications>(this);
 
   @Enum({
     items: () => armourModCategoryEnum,
     nullable: true,
   })
-  allowModCategory?: armourModCategoryEnum;
+  allowModsFromCategory?: armourModCategoryEnum;
 
   @Enum({
     items: () => armourModCategoryEnum,
-    array: true,
     nullable: true,
   })
-  addModCategoryList?: Array<armourModCategoryEnum>;
+  addModFromCategory?: armourModCategoryEnum;
 
   @Property({ type: "json" })
   availability!: AvailabilityArmourType;
@@ -96,27 +113,27 @@ export class Armours {
       this.customFitStackDamageReduction = dto.customFitStackDamageReduction;
     }
     this.capacity = dto.capacity;
-    if (dto.isWeapon !== undefined) {
-      this.isWeapon = dto.isWeapon;
-    }
-    if (dto.includedGear !== undefined) {
-      this.includedGear = dto.includedGear;
-    }
+    // if (dto.isWeapon !== undefined) {
+    //   this.isWeapon = dto.isWeapon;
+    // }
+    // if (dto.armourIncludedGear !== undefined) {
+    //   this.armourIncludedGear = dto.armourIncludedGear;
+    // }
     if (dto.bonus !== undefined) {
       this.bonus = dto.bonus;
     }
     if (dto.wirelessBonus !== undefined) {
       this.wirelessBonus = dto.wirelessBonus;
     }
-    if (dto.mods !== undefined) {
-      this.mods = dto.mods;
-    }
-    if (dto.allowModCategory !== undefined) {
-      this.allowModCategory = dto.allowModCategory;
-    }
-    if (dto.addModCategoryList !== undefined) {
-      this.addModCategoryList = dto.addModCategoryList;
-    }
+    // if (dto.includedMods !== undefined) {
+    //   this.includedMods = dto.includedMods;
+    // }
+    // if (dto.allowModCategory !== undefined) {
+    //   this.allowModCategory = dto.allowModCategory;
+    // }
+    // if (dto.addModFromCategoryList !== undefined) {
+    //   this.addModFromCategoryList = dto.addModFromCategoryList;
+    // }
     this.availability = dto.availability;
     this.cost = dto.cost;
     this.source = dto.source;

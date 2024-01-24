@@ -5,6 +5,8 @@ export function formatDamage(unformattedDamage: DamageType): string {
   let damageString = "";
   for (const damage of unformattedDamage) {
     const damageAmount = formatDamageAmount(damage.damageAmount);
+    const multipleBarrels =
+      damage.barrels !== undefined ? `X${damage.barrels}` : "";
     let damageType = "";
     switch (damage.type) {
       case damageTypeEnum.Physical:
@@ -19,7 +21,7 @@ export function formatDamage(unformattedDamage: DamageType): string {
       case damageTypeEnum.None:
         break;
     }
-    damageString += `(${damageAmount})` + damageType;
+    damageString += `(${damageAmount})` + damageType + multipleBarrels;
     if (damage.annotation !== undefined) {
       const damageAnnotation = damage.annotation;
       damageString += ` (${damageAnnotation})`;

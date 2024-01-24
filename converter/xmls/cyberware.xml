@@ -401,8 +401,9 @@
       <cost>1000</cost>
       <gears>
         <usegear>
-          <name>Universal Connector Cord (Meter)</name>
+          <name>Universal Connector Cord</name>
           <category>Tools</category>
+          <rating>1</rating>
         </usegear>
       </gears>
       <!--<wirelessbonus>
@@ -538,7 +539,7 @@
       <ess>(Rating * 0.1) + 0.1</ess>
       <capacity>(Rating * 4)</capacity>
       <avail>(Rating * 3)</avail>
-      <cost>FixedValues(4000,6000,10000,14000,18000,22000)</cost>
+      <cost>4000 * Rating - 2000 * number(Rating > 1)</cost>
       <source>SR5</source>
       <page>453</page>
       <allowgear>
@@ -558,7 +559,7 @@
         <disablequality>4390735f-54fa-44a5-bce7-d23a67427f25</disablequality>
       </bonus>
       <minrating>1</minrating>
-      <rating>6</rating>
+      <rating>4</rating>
       <subsystems>
         <cyberware>
           <name>Image Link</name>
@@ -660,10 +661,10 @@
       <name>Vision Enhancement</name>
       <limit>False</limit>
       <category>Eyeware</category>
-      <ess>FixedValues(0.1,0.1,0.1,0.2,0.2,0.2)</ess>
-      <capacity>FixedValues([1],[2],[3],[8],[10],[12])</capacity>
+      <ess>0.1</ess>
+      <capacity>[Rating]</capacity>
       <avail>Rating * 3</avail>
-      <cost>FixedValues(4000,8000,12000,20000,25000,30000)</cost>
+      <cost>Rating * 4000</cost>
       <source>SR5</source>
       <page>453</page>
       <bonus>
@@ -673,7 +674,7 @@
           <condition>LimitCondition_SkillsActivePerceptionVisual</condition>
         </limitmodifier>
       </bonus>
-      <rating>6</rating>
+      <rating>3</rating>
     </cyberware>
     <cyberware>
       <id>2c578376-1219-468d-b76b-4c0da44dfca2</id>
@@ -694,7 +695,7 @@
       <ess>(Rating * 0.1) + 0.1</ess>
       <capacity>Rating * 4</capacity>
       <avail>Rating * 3</avail>
-      <cost>FixedValues(3000,4500,7500,11000,15500,21000)</cost>
+      <cost>3000 + 500 * ((Rating - 1) * (Rating + 1) + number(Rating > 2))</cost>
       <source>SR5</source>
       <page>453</page>
       <allowgear>
@@ -705,7 +706,7 @@
         <category>Earware</category>
       </allowsubsystems>
       <minrating>1</minrating>
-      <rating>6</rating>
+      <rating>4</rating>
       <subsystems>
         <cyberware>
           <name>Sound Link</name>
@@ -717,10 +718,10 @@
       <name>Audio Enhancement</name>
       <limit>False</limit>
       <category>Earware</category>
-      <ess>FixedValues(0.1,0.1,0.1,0.2,0.2,0.2)</ess>
-      <capacity>FixedValues([1],[2],[3],[8],[10],[12])</capacity>
+      <ess>0.1</ess>
+      <capacity>[Rating]</capacity>
       <avail>Rating * 3</avail>
-      <cost>FixedValues(4000,8000,12000,20000,25000,30000)</cost>
+      <cost>Rating * 4000</cost>
       <source>SR5</source>
       <page>453</page>
       <bonus>
@@ -730,7 +731,7 @@
           <condition>LimitCondition_SkillsActivePerceptionHearing</condition>
         </limitmodifier>
       </bonus>
-      <rating>6</rating>
+      <rating>3</rating>
     </cyberware>
     <cyberware>
       <id>31d82330-4650-4550-aa90-c314a189f897</id>
@@ -2362,7 +2363,7 @@
     <cyberware>
       <!-- Yes, I know duplicating Additional Eye Mount as Bodyware just so it can work with cyberlimbs is stupid, but if it's stupid and it works, it ain't stupid -->
       <id>3bfb8c0e-87a6-49ba-9b33-f2a991ed26ea</id>
-      <name>Additional Eye Mount</name>
+      <name>Additional Eye Mount (Duplicated)</name>
       <limit>False</limit>
       <category>Bodyware</category>
       <ess>0.2</ess>
@@ -5460,7 +5461,7 @@
     </cyberware>
     <cyberware>
       <id>dac0f054-1594-493b-8a2d-a4c7145eb02e</id>
-      <name>Nanotattoos</name>
+      <name>Nanotattoos (Nanoware - Hard)</name>
       <limit>False</limit>
       <category>Hard Nanoware</category>
       <ess>0</ess>
@@ -5717,6 +5718,7 @@
       <id>92a3677e-cd4c-4ce1-9295-612281946709</id>
       <name>Aztechnology Cuanmiztli A</name>
       <category>Cybersuite</category>
+      <inheritattributes />
       <ess>3.06</ess>
       <capacity>0</capacity>
       <avail>8R</avail>
@@ -5753,6 +5755,7 @@
       <id>1a112bdd-df4c-4f9f-94cd-f940fa597dda</id>
       <name>Aztechnology Cuanmiztli B</name>
       <category>Cybersuite</category>
+      <inheritattributes />
       <ess>5.31</ess>
       <capacity>0</capacity>
       <avail>12F</avail>
@@ -5794,6 +5797,7 @@
       <id>42c65dfa-8135-4757-ac6e-d2ecbcf10c60</id>
       <name>Evo Atlantis</name>
       <category>Cybersuite</category>
+      <inheritattributes />
       <ess>0.72</ess>
       <capacity>0</capacity>
       <avail>8</avail>
@@ -5833,6 +5837,7 @@
       <id>188068fe-fe38-4d67-afef-0fc3967e5ae1</id>
       <name>Horizon Experience!</name>
       <category>Cybersuite</category>
+      <inheritattributes />
       <ess>1.08</ess>
       <capacity>0</capacity>
       <avail>12R</avail>
@@ -5883,6 +5888,7 @@
       <id>7e341285-c2db-4399-a592-68ab427d2b2e</id>
       <name>Renraku Tradejack</name>
       <category>Cybersuite</category>
+      <inheritattributes />
       <ess>0.9</ess>
       <capacity>0</capacity>
       <avail>12</avail>
@@ -5919,6 +5925,7 @@
       <id>eee58e0b-acaf-4c7b-a59d-3667dcbcc95d</id>
       <name>Saeder-Krupp Cyberlogician</name>
       <category>Cybersuite</category>
+      <inheritattributes />
       <ess>0.81</ess>
       <capacity>0</capacity>
       <avail>12</avail>
@@ -5961,6 +5968,7 @@
       <id>bd5ef116-0e9b-47c0-8285-231a2e3de4b5</id>
       <name>Shiawase Kacho</name>
       <category>Cybersuite</category>
+      <inheritattributes />
       <ess>0.45</ess>
       <capacity>0</capacity>
       <avail>4</avail>
@@ -6235,6 +6243,7 @@
       <id>c1eea4ca-e536-45dc-8919-f18a716d47cc</id>
       <name>Spinrad Just a Little Edge</name>
       <category>Cybersuite</category>
+      <inheritattributes />
       <ess>3.5</ess>
       <capacity>0</capacity>
       <avail>10R</avail>
@@ -6285,6 +6294,7 @@
       <id>27a86814-3486-446e-acf0-10ad3ca2ddc1</id>
       <name>Spinrad Peak Performance</name>
       <category>Cybersuite</category>
+      <inheritattributes />
       <ess>5.0</ess>
       <capacity>0</capacity>
       <avail>14R</avail>
@@ -6340,6 +6350,7 @@
       <id>d245d0f4-191f-4b10-9662-75c27aac41f3</id>
       <name>Spinrad Super Athlete</name>
       <category>Cybersuite</category>
+      <inheritattributes />
       <ess>4.5</ess>
       <capacity>0</capacity>
       <avail>14R</avail>
@@ -6395,6 +6406,7 @@
       <id>d6286a7d-e5a5-4277-b1a7-772c23fbeee1</id>
       <name>Evo Freak</name>
       <category>Cybersuite</category>
+      <inheritattributes />
       <ess>4.5</ess>
       <capacity>0</capacity>
       <avail>18R</avail>
@@ -6481,6 +6493,7 @@
     </cyberware>
     <cyberware>
       <id>b5406b3c-44a5-4727-bafc-58ed4cda84b5</id>
+      <inheritattributes />
       <name>Evo Better Than Human</name>
       <category>Cybersuite</category>
       <ess>4.5</ess>
@@ -6489,6 +6502,7 @@
       <cost>275000</cost>
       <source>LCD</source>
       <page>206</page>
+      <limbslot>all</limbslot>
       <blocksmounts>ankle,knee,wrist,elbow,hip,shoulder</blocksmounts>
       <subsystems>
         <cyberware>
@@ -6573,6 +6587,7 @@
       <id>5eb13cce-2c2a-41d0-bd5c-5bdc25e5afbd</id>
       <name>Evo InHuman</name>
       <category>Cybersuite</category>
+      <inheritattributes />
       <ess>5</ess>
       <capacity>0</capacity>
       <avail>18R</avail>
@@ -6662,6 +6677,7 @@
       <id>c34d37ff-8bc4-4b8f-809a-c1ad61452a75</id>
       <name>Transys-Erika Mind Boost</name>
       <category>Cybersuite</category>
+      <inheritattributes />
       <ess>1</ess>
       <capacity>0</capacity>
       <avail>10</avail>
@@ -6730,6 +6746,7 @@
       <id>8c156d89-e919-48f9-997e-8d7271c76818</id>
       <name>Transys-Erika Mental Gymnast</name>
       <category>Cybersuite</category>
+      <inheritattributes />
       <ess>2</ess>
       <capacity>0</capacity>
       <avail>20</avail>
@@ -6798,6 +6815,7 @@
       <id>63d7f3e9-058e-49c6-96fd-02e16a28d550</id>
       <name>Transys-Erika Front Line Mind</name>
       <category>Cybersuite</category>
+      <inheritattributes />
       <ess>4.5</ess>
       <capacity>0</capacity>
       <avail>14</avail>
@@ -6881,6 +6899,7 @@
       <id>77d5df71-6e69-495d-b51f-98036d01edc4</id>
       <name>Sony Cybersystems Infiltrator</name>
       <category>Cybersuite</category>
+      <inheritattributes />
       <ess>3</ess>
       <capacity>0</capacity>
       <avail>14R</avail>
@@ -6950,6 +6969,7 @@
       <id>2a7e2b70-d6c4-415c-bf57-23678e2d104e</id>
       <name>Sony Cybersystems Field Operative</name>
       <category>Cybersuite</category>
+      <inheritattributes />
       <ess>2.5</ess>
       <capacity>0</capacity>
       <avail>10R</avail>
@@ -7005,6 +7025,7 @@
       <id>d565a072-af08-47dd-85fb-9ca22eab2bec</id>
       <name>Sony Cybersystems Ultimate Warrior</name>
       <category>Cybersuite</category>
+      <inheritattributes />
       <ess>5.0</ess>
       <capacity>0</capacity>
       <avail>22R</avail>
@@ -7078,6 +7099,7 @@
       <id>7143a27a-6544-4dea-a6dc-e9e350e9d306</id>
       <name>MCT Kaisatsu</name>
       <category>Cybersuite</category>
+      <inheritattributes />
       <ess>2.0</ess>
       <capacity>0</capacity>
       <avail>10R</avail>
@@ -7133,6 +7155,7 @@
       <id>92c835be-2152-4623-aa2f-a7967e456fe7</id>
       <name>MCT Abunai</name>
       <category>Cybersuite</category>
+      <inheritattributes />
       <ess>3.5</ess>
       <capacity>0</capacity>
       <avail>14R</avail>
@@ -7176,6 +7199,7 @@
       <id>6796a057-b452-4a74-96be-eb710a38977e</id>
       <name>MCT Kuro</name>
       <category>Cybersuite</category>
+      <inheritattributes />
       <ess>5.25</ess>
       <capacity>0</capacity>
       <avail>22R</avail>
@@ -8221,6 +8245,7 @@
       <id>a77094da-bc4c-4856-a8a0-53d4e6b9a50c</id>
       <name>Siemens Cyberspine</name>
       <category>Cybersuite</category>
+      <inheritattributes />
       <ess>2.09</ess>
       <capacity>0</capacity>
       <avail>10R</avail>
@@ -8259,6 +8284,7 @@
       <id>6dd9013a-52c4-45be-a4a2-7210f5caa53b</id>
       <name>Siemens Cyberspine Upgrade (Elite Athletic)</name>
       <category>Cybersuite</category>
+      <inheritattributes />
       <ess>0.22</ess>
       <capacity>0</capacity>
       <avail>12R</avail>
@@ -8282,6 +8308,7 @@
       <id>0f53caba-37ea-4676-8c6e-68b2d826ecd0</id>
       <name>Siemens Cyberspine Upgrade (Celestial Athletic)</name>
       <category>Cybersuite</category>
+      <inheritattributes />
       <ess>0.22</ess>
       <capacity>0</capacity>
       <avail>17R</avail>
@@ -8306,6 +8333,7 @@
       <id>70d15d2b-739d-418b-a7fe-3f03dee79546</id>
       <name>Siemens Cyberspine Upgrade (Elite Warrior)</name>
       <category>Cybersuite</category>
+      <inheritattributes />
       <ess>0.72</ess>
       <capacity>0</capacity>
       <avail>14R</avail>
@@ -8329,6 +8357,7 @@
       <id>6a4ba6e2-0473-47dc-81f5-fd3a95e4b714</id>
       <name>Siemens Cyberspine Upgrade (Celestial Warrior)</name>
       <category>Cybersuite</category>
+      <inheritattributes />
       <ess>1.44</ess>
       <capacity>0</capacity>
       <avail>22R</avail>
@@ -8353,6 +8382,7 @@
       <id>a8cff88e-9ea2-41da-9f72-9c45a438a418</id>
       <name>Zeiss Consortium MET2000 Elitepilot</name>
       <category>Cybersuite</category>
+      <inheritattributes />
       <ess>2.23</ess>
       <capacity>0</capacity>
       <avail>12R</avail>
@@ -8386,6 +8416,7 @@
       <id>1d574ac6-b07f-46dd-ba06-c896ed2de5e8</id>
       <name>Zeiss Consortium MET2000 Fernspäher</name>
       <category>Cybersuite</category>
+      <inheritattributes />
       <ess>1.22</ess>
       <capacity>0</capacity>
       <avail>11R</avail>
@@ -8454,6 +8485,7 @@
       <id>011bedb4-1145-4934-9bd9-dcd92cf296b5</id>
       <name>Zeiss Consortium MET2000 Sturmpionier</name>
       <category>Cybersuite</category>
+      <inheritattributes />
       <ess>1.4</ess>
       <capacity>0</capacity>
       <avail>11R</avail>
@@ -8515,6 +8547,7 @@
       <id>78cfabfa-cf45-4ea0-830d-f092fa9b3a5f</id>
       <name>Zeiss Consortium MET2000 Sturmpionier - Trench Wires</name>
       <category>Cybersuite</category>
+      <inheritattributes />
       <ess>1.69</ess>
       <capacity>0</capacity>
       <avail>14R</avail>
@@ -8648,8 +8681,9 @@
       <programs>Rating</programs>
       <gears>
         <usegear>
-          <name>Universal Connector Cord (Meter)</name>
+          <name>Universal Connector Cord</name>
           <category>Tools</category>
+          <rating>1</rating>
         </usegear>
       </gears>
       <allowgear>

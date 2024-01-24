@@ -13,7 +13,7 @@ import {
   UseGearListSchema,
 } from "./commonSchemas.js";
 import { BonusSchema } from "./shared/bonusSchemas.js";
-import { ModListSchema } from "./shared/modSchemas.js";
+import { GenericModListSchema } from "./shared/modSchemas.js";
 
 export const AvailabilityArmourSchema = zod
   .object({
@@ -100,14 +100,12 @@ export const ArmourSchema = zod
     customFitStackDamageReduction: zod.optional(zod.number()),
     capacity: CapacityArmourSchema,
     isWeapon: zod.optional(zod.literal(true)),
-    includedGear: zod.optional(UseGearListSchema),
+    includedGearList: zod.optional(UseGearListSchema),
     bonus: zod.optional(BonusSchema),
     wirelessBonus: zod.optional(BonusSchema),
-    mods: zod.optional(ModListSchema),
+    includedMods: zod.optional(GenericModListSchema),
     allowModCategory: zod.optional(zod.nativeEnum(armourModCategoryEnum)),
-    addModCategoryList: zod.optional(
-      zod.array(zod.nativeEnum(armourModCategoryEnum))
-    ),
+    includeModFromCategory: zod.optional(zod.nativeEnum(armourModCategoryEnum)),
     availability: AvailabilityArmourSchema,
     cost: CostArmourSchema,
     source: zod.nativeEnum(sourceBookEnum),

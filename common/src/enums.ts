@@ -120,6 +120,7 @@ export enum explosiveTypeEnum {
 export enum accuracyEnum {
   Physical = "Physical",
   Missile = "Missile",
+  Strength = "Strength",
 }
 
 export enum damageTypeEnum {
@@ -633,6 +634,7 @@ export enum armourCategoryEnum {
 
 export enum armourModCategoryEnum {
   FullBodyArmourMods = "Full Body Armour Mods",
+  CustomisedBallisticMask = "Customized Ballistic Mask",
   General = "General",
   GlobetrotterClothingLiners = "Globetrotter Clothing Liners",
   GlobetrotterJacketLiners = "Globetrotter Jacket Liners",
@@ -704,6 +706,7 @@ export enum limbSlotEnum {
   Leg = "Leg",
   Skull = "Skull",
   Torso = "Torso",
+  All = "All",
 }
 
 // Maximum number of cyberware/bioware that can be used

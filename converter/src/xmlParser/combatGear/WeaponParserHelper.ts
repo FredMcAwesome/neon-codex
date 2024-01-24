@@ -201,6 +201,24 @@ accuracySemantics.addOperation("eval", {
       },
     ];
   },
+  SubCalculation_numberCalc(_a, accuracy1, _b, accuracy2, _c) {
+    return [
+      {
+        subnumbers: accuracy1
+          .eval()
+          .concat(
+            [{ operator: mathOperatorEnum.GreaterThanOrEqual }],
+            accuracy2.eval()
+          ),
+      },
+    ];
+  },
+  // TODO: is this array check needed anymore with subnumbers implemented?
+  SubCalculation_parenthesis(_a, accuracy, _b) {
+    let inner = accuracy.eval();
+    if (!Array.isArray(inner)) inner = [inner];
+    return inner;
+  },
   AccuracyValue(str) {
     return [str.eval()];
   },
@@ -209,6 +227,9 @@ accuracySemantics.addOperation("eval", {
   },
   Missile(_) {
     return { option: accuracyEnum.Missile };
+  },
+  Strength(_) {
+    return { option: accuracyEnum.Strength };
   },
   Number_negative(_, range) {
     return -range.eval();
@@ -234,6 +255,14 @@ damageSemantics.addOperation("eval", {
       {
         damageAmount: [{ option: damageCalculationOptionEnum.Special }],
         type: damageTypeEnum.None,
+      },
+    ];
+  },
+  Exp_multipleBarrels(damage, _, barrels) {
+    return [
+      {
+        ...damage.eval(),
+        barrels: barrels.eval(),
       },
     ];
   },
@@ -457,6 +486,9 @@ armourPenetrationSemantics.addOperation("eval", {
   },
   Number_negative(_, range) {
     return -range.eval();
+  },
+  Number_positive(_, range) {
+    return range.eval();
   },
   PositiveNumber_float(rangeInt, _, rangeDecimal) {
     return parseFloat(rangeInt.sourceString + "." + rangeDecimal.sourceString);
@@ -786,9 +818,18 @@ export const convertWeaponSkill = function (
 ) {
   let skill = "";
   let specialisations = previousSpecialisations;
-  if (useSkillSpecialisation) {
-    assert(specialisations === undefined || specialisations.length === 0);
-    specialisations = [useSkillSpecialisation];
+  if (useSkillSpecialisation !== undefined) {
+    if (specialisations !== undefined && specialisations.length > 0) {
+      let check = false;
+      for (const specialisation of specialisations) {
+        if (specialisation === useSkillSpecialisation) {
+          check = true;
+        }
+      }
+      assert(check, `Specialisation not included: ${useSkillSpecialisation}`);
+    } else {
+      specialisations = [useSkillSpecialisation];
+    }
   }
   if (useSkill !== undefined) {
     return { skill: useSkill, specialisations: specialisations };

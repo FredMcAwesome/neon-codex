@@ -8,7 +8,7 @@ import { Spells } from "../../models/abilities/spellModel.js";
 
 export const getSpells = function () {
   const currentPath = import.meta.url;
-  let spells: SpellListType | undefined = undefined;
+  let spells: SpellListType;
   const relativeConverterPath = "converter/jsonFiles/spells.json";
   const rootPath = "../../../../../";
   const jsonString = fs.readFileSync(
@@ -23,9 +23,7 @@ export const getSpells = function () {
     spells = armourModListParsed.data;
   } else {
     console.log(armourModListParsed.error.errors[0]);
-  }
-  if (spells === undefined) {
-    assert(false);
+    assert(false, "spells is undefined");
   }
   const stagedArmourMods: Array<Spells> = [];
   spells.forEach((armourMod) => {

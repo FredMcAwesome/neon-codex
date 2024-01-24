@@ -211,6 +211,14 @@ function convertCyberware(cyberware: CyberwareXmlType) {
       ? convertCyberwareRating(cyberware.minrating)
       : [1];
   const ratingLabel = convertRatingMeaning(cyberware.ratinglabel);
+
+  const addWeapon =
+    cyberware.addweapon === undefined
+      ? undefined
+      : cyberware.addweapon === ""
+      ? undefined
+      : cyberware.addweapon;
+
   const programs = cyberware.programs;
 
   let capacity;
@@ -319,9 +327,9 @@ function convertCyberware(cyberware: CyberwareXmlType) {
     cyberware.wirelesspairbonus !== undefined
       ? convertXmlBonus(cyberware.wirelesspairbonus)
       : undefined;
-  const wirelessPairIncludeList =
+  const wirelessPairInclude =
     cyberware.wirelesspairinclude !== undefined
-      ? [cyberware.wirelesspairinclude.name]
+      ? cyberware.wirelesspairinclude.name
       : undefined;
 
   const requirements = convertRequirements(cyberware.required);
@@ -331,7 +339,9 @@ function convertCyberware(cyberware: CyberwareXmlType) {
     cyberware.gears !== undefined
       ? convertXmlGears(cyberware.gears)
       : undefined;
-  const allowedGear = convertAllowGear(cyberware.allowgear);
+  const { allowedGearList, allowedGearCategories } = convertAllowGear(
+    cyberware.allowgear
+  );
   const subsystemList = convertSubsystem(cyberware.subsystems);
   const allowCategoryList = convertSubsystemCategory(cyberware.allowsubsystems);
   const forceGrade =
@@ -362,7 +372,7 @@ function convertCyberware(cyberware: CyberwareXmlType) {
     modularMount: modularMount,
     wirelessBonus: wirelessBonus,
     wirelessPairBonus: wirelessPairBonus,
-    wirelessPairIncludeList: wirelessPairIncludeList,
+    wirelessPairInclude: wirelessPairInclude,
     gearList: gears,
     subsystemList: subsystemList,
     forceGrade: forceGrade,
@@ -380,7 +390,7 @@ function convertCyberware(cyberware: CyberwareXmlType) {
     modification: cyberwareModification,
     rating: { minimum: minRating, maximum: maxRating },
     ratingLabel: ratingLabel,
-    addWeapon: cyberware.addweapon,
+    addWeapon: addWeapon,
     ...(blockedMountList.length > 0 && { blockedMountList: blockedMountList }),
     selectSide: selectSide,
     bonus: bonus,
@@ -388,7 +398,8 @@ function convertCyberware(cyberware: CyberwareXmlType) {
     pairIncludeList: pairIncludeList,
     requirements: requirements,
     forbidden: forbidden,
-    allowedGear: allowedGear,
+    allowedGearList: allowedGearList,
+    allowedGearCategories: allowedGearCategories,
     allowCategoryList: allowCategoryList,
     ...(cyberware.hide !== undefined && { userSelectable: false as const }),
     availability: availability,

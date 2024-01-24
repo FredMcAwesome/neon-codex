@@ -21,11 +21,10 @@ To match where I previously was, still need (passed through to frontend - They a
 - Armour
 - ArmourAccessories
 - Spells
-Need to finish DB relations:
 - Augmentations
 - Drugs
 - DrugComponents
-- Vehicles
+- Vehicles (including weapon mounts)
 - VehicleMods (including weapon mount mods)
 - Gear
 

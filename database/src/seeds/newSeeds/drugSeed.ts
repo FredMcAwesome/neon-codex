@@ -15,7 +15,7 @@ import { DrugComponents } from "../../models/gear/otherGear/drugComponentModel.j
 
 export const getDrugs = function () {
   const currentPath = import.meta.url;
-  let drugs: DrugListType | undefined = undefined;
+  let drugs: DrugListType;
   let relativeConverterPath = "converter/jsonFiles/drugs.json";
   const rootPath = "../../../../../";
   let jsonString = fs.readFileSync(
@@ -30,7 +30,7 @@ export const getDrugs = function () {
     drugs = drugListParsed.data;
   } else {
     console.log(drugListParsed.error.errors[0]);
-    assert(false);
+    assert(false, "drugs is undefined");
   }
   const stagedDrugs: Array<Drugs> = [];
   drugs.forEach((drug) => {
@@ -42,7 +42,7 @@ export const getDrugs = function () {
 
 export const getDrugComponents = function () {
   const currentPath = import.meta.url;
-  let drugComponents: DrugComponentListType | undefined = undefined;
+  let drugComponents: DrugComponentListType;
   let relativeConverterPath = "converter/jsonFiles/drugComponents.json";
   const rootPath = "../../../../../";
   let jsonString = fs.readFileSync(
@@ -57,7 +57,7 @@ export const getDrugComponents = function () {
     drugComponents = drugComponentListParsed.data;
   } else {
     console.log(drugComponentListParsed.error.errors[0]);
-    assert(false);
+    assert(false, "drugComponents is undefined");
   }
   const stagedDrugComponents: Array<DrugComponents> = [];
   drugComponents.forEach((drugComponent) => {

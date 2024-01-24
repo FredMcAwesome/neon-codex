@@ -10,6 +10,7 @@ import {
   parentGearEnum,
   personaFormEnum,
   projectileWeaponTypeEnum,
+  ratingMeaningEnum,
   restrictionEnum,
   sourceBookEnum,
   weaponExtraClassificationEnum,
@@ -169,6 +170,12 @@ const GearRatingSchema = zod.union([
 ]);
 export type GearRatingType = zod.infer<typeof GearRatingSchema>;
 
+const WeightSchema = zod.union([
+  zod.object({ option: zod.literal("Rating") }).strict(),
+  zod.number(),
+]);
+export type WeightType = zod.infer<typeof WeightSchema>;
+
 export const OtherGearSchema = zod
   .object({
     name: zod.string(),
@@ -176,6 +183,7 @@ export const OtherGearSchema = zod
     category: zod.nativeEnum(gearCategoryEnum),
     minRating: zod.optional(GearRatingSchema),
     maxRating: zod.optional(GearRatingSchema),
+    ratingMeaning: zod.optional(zod.nativeEnum(ratingMeaningEnum)),
     includedWeapon: zod.optional(
       zod
         .object({
@@ -195,9 +203,9 @@ export const OtherGearSchema = zod
     isFlechetteAmmo: zod.optional(zod.literal(true)),
     flechetteWeaponBonus: zod.optional(WeaponBonusSchema),
     ammoForWeaponType: zod.optional(zod.array(AmmoForWeaponTypeSchema)),
-    explosiveWeight: zod.optional(zod.number()),
+    explosiveWeight: zod.optional(WeightSchema),
     userSelectable: zod.optional(zod.literal(false)),
-    allowGearList: zod.optional(zod.array(zod.string())),
+    allowedGearList: zod.optional(zod.array(zod.string())),
     includedGearList: zod.optional(UseGearListSchema),
     deviceRating: zod.optional(GearDeviceRatingSchema),
     programs: zod.optional(GearProgramSchema),

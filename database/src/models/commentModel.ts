@@ -1,5 +1,7 @@
 import { Entity, ManyToOne, PrimaryKey, Property } from "@mikro-orm/postgresql";
-import { Threads, Users } from "./models.js";
+import type { Ref } from "@mikro-orm/postgresql";
+import Threads from "./threadModel.js";
+import Users from "./userModel.js";
 
 @Entity()
 export default class Comments {
@@ -13,8 +15,8 @@ export default class Comments {
   content!: string;
 
   @ManyToOne(() => Users)
-  user!: Users;
+  user!: Ref<Users>;
 
-  @ManyToOne(() => Threads)
-  thread!: Threads;
+  @ManyToOne({ entity: () => Threads, ref: true })
+  thread!: Ref<Threads>;
 }

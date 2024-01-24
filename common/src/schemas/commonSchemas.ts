@@ -132,18 +132,10 @@ export enum weaponXmlSubtypeEnum {
 export const WeaponXmlSubtypeSchema = zod.nativeEnum(weaponXmlSubtypeEnum);
 export type WeaponXmlSubtypeType = zod.infer<typeof WeaponXmlSubtypeSchema>;
 
-export const AllowedGearSchema = zod
-  .object({
-    gearNameList: zod.optional(zod.array(zod.string())),
-    gearCategoryList: zod.optional(zod.array(zod.nativeEnum(gearCategoryEnum))),
-  })
-  .strict();
-export type AllowedGearType = zod.infer<typeof AllowedGearSchema>;
-
 const UseGearSchema = zod
   .object({
     name: zod.string(),
-    enterName: zod.optional(zod.union([zod.literal(true), zod.string()])),
+    specificOption: zod.optional(zod.string()),
     rating: zod.optional(zod.number()),
     consumeCapacity: zod.optional(zod.literal(true)),
     quantity: zod.optional(zod.number()),

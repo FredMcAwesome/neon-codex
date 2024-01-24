@@ -83,9 +83,7 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "allowedGear": {
-      "gearCategoryList": ["Commlinks"]
-    },
+    "allowedGearCategories": ["Commlinks"],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
@@ -233,9 +231,7 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "allowedGear": {
-      "gearCategoryList": ["Cyberdecks"]
-    },
+    "allowedGearCategories": ["Cyberdecks"],
     "availability": {
       "rating": [5],
       "restriction": "Restricted"
@@ -270,7 +266,8 @@
     "capacity": [0],
     "gearList": [
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       }
     ]
@@ -635,7 +632,7 @@
     ],
     "rating": {
       "minimum": [1],
-      "maximum": [6]
+      "maximum": [4]
     },
     "bonus": {
       "disableQualities": [
@@ -662,9 +659,7 @@
         }
       ]
     },
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": ["Eyeware"],
     "availability": {
       "rating": [
@@ -682,9 +677,41 @@
       ],
       "restriction": "Legal"
     },
-    "cost": {
-      "ratingLinked": [[4000], [6000], [10000], [14000], [18000], [22000]]
-    },
+    "cost": [
+      {
+        "subnumbers": [
+          4000,
+          {
+            "operator": "*"
+          },
+          {
+            "option": "Rating"
+          }
+        ]
+      },
+      {
+        "operator": "-"
+      },
+      {
+        "subnumbers": [
+          2000,
+          {
+            "operator": "*"
+          },
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": ">"
+              },
+              1
+            ]
+          }
+        ]
+      }
+    ],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 453,
     "type": "Cyberware",
@@ -894,12 +921,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "essenceCost": {
-      "ratingLinked": [[0.1], [0.1], [0.1], [0.2], [0.2], [0.2]]
-    },
+    "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
-      "maximum": [6]
+      "maximum": [3]
     },
     "availability": {
       "rating": [
@@ -917,16 +942,28 @@
       ],
       "restriction": "Legal"
     },
-    "cost": {
-      "ratingLinked": [[4000], [8000], [12000], [20000], [25000], [30000]]
-    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          4000
+        ]
+      }
+    ],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 453,
     "type": "Cyberware",
     "subtype": "Eyeware",
-    "capacityCost": {
-      "ratingLinked": [[1], [2], [3], [8], [10], [12]]
-    }
+    "capacityCost": [
+      {
+        "option": "Rating"
+      }
+    ]
   },
   {
     "name": "Vision Magnification",
@@ -976,11 +1013,9 @@
     ],
     "rating": {
       "minimum": [1],
-      "maximum": [6]
+      "maximum": [4]
     },
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": ["Earware"],
     "availability": {
       "rating": [
@@ -998,9 +1033,67 @@
       ],
       "restriction": "Legal"
     },
-    "cost": {
-      "ratingLinked": [[3000], [4500], [7500], [11000], [15500], [21000]]
-    },
+    "cost": [
+      3000,
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          500,
+          {
+            "operator": "*"
+          },
+          {
+            "subnumbers": [
+              {
+                "subnumbers": [
+                  {
+                    "subnumbers": [
+                      {
+                        "option": "Rating"
+                      },
+                      {
+                        "operator": "-"
+                      },
+                      1
+                    ]
+                  },
+                  {
+                    "operator": "*"
+                  },
+                  {
+                    "subnumbers": [
+                      {
+                        "option": "Rating"
+                      },
+                      {
+                        "operator": "+"
+                      },
+                      1
+                    ]
+                  }
+                ]
+              },
+              {
+                "operator": "+"
+              },
+              {
+                "subnumbers": [
+                  {
+                    "option": "Rating"
+                  },
+                  {
+                    "operator": ">"
+                  },
+                  2
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 453,
     "type": "Cyberware",
@@ -1032,12 +1125,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "essenceCost": {
-      "ratingLinked": [[0.1], [0.1], [0.1], [0.2], [0.2], [0.2]]
-    },
+    "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
-      "maximum": [6]
+      "maximum": [3]
     },
     "availability": {
       "rating": [
@@ -1055,16 +1146,28 @@
       ],
       "restriction": "Legal"
     },
-    "cost": {
-      "ratingLinked": [[4000], [8000], [12000], [20000], [25000], [30000]]
-    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          4000
+        ]
+      }
+    ],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 453,
     "type": "Cyberware",
     "subtype": "Earware",
-    "capacityCost": {
-      "ratingLinked": [[1], [2], [3], [8], [10], [12]]
-    }
+    "capacityCost": [
+      {
+        "option": "Rating"
+      }
+    ]
   },
   {
     "name": "Balance Augmenter",
@@ -1548,7 +1651,7 @@
     "type": "Cyberware",
     "subtype": "Bodyware",
     "capacity": [0],
-    "wirelessPairIncludeList": ["Wired Reflexes"]
+    "wirelessPairInclude": "Wired Reflexes"
   },
   {
     "name": "Skillwires",
@@ -1685,7 +1788,7 @@
         }
       ]
     },
-    "wirelessPairIncludeList": ["Reaction Enhancers"]
+    "wirelessPairInclude": "Reaction Enhancers"
   },
   {
     "name": "Obvious Full Arm",
@@ -1703,9 +1806,7 @@
     "bonus": {
       "addPhysicalBoxes": 1
     },
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
@@ -1749,9 +1850,7 @@
       ],
       "addPhysicalBoxes": 1
     },
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
@@ -1794,9 +1893,7 @@
         }
       ]
     },
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
@@ -1831,9 +1928,7 @@
     },
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
@@ -1880,9 +1975,7 @@
       "Synthetic Lower Arm, Modular",
       "Synthetic Lower Leg, Modular"
     ],
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
@@ -1936,9 +2029,7 @@
       "Synthetic Lower Arm, Modular",
       "Synthetic Lower Leg, Modular"
     ],
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
@@ -1974,9 +2065,7 @@
     "bonus": {
       "addPhysicalBoxes": 1
     },
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
@@ -2013,9 +2102,7 @@
     "bonus": {
       "addPhysicalBoxes": 1
     },
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
@@ -2054,9 +2141,7 @@
     "bonus": {
       "addPhysicalBoxes": 1
     },
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
@@ -2100,9 +2185,7 @@
       ],
       "addPhysicalBoxes": 1
     },
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
@@ -2145,9 +2228,7 @@
         }
       ]
     },
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
@@ -2182,9 +2263,7 @@
     },
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
@@ -2231,9 +2310,7 @@
       "Synthetic Lower Arm, Modular",
       "Synthetic Lower Leg, Modular"
     ],
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
@@ -2287,9 +2364,7 @@
       "Synthetic Lower Arm, Modular",
       "Synthetic Lower Leg, Modular"
     ],
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
@@ -2325,9 +2400,7 @@
     "bonus": {
       "addPhysicalBoxes": 1
     },
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
@@ -2364,9 +2437,7 @@
     "bonus": {
       "addPhysicalBoxes": 1
     },
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": [
       "Headware",
       "Cosmetic Enhancement",
@@ -3536,7 +3607,7 @@
     "capacityCost": [2]
   },
   {
-    "name": "Additional Eye Mount",
+    "name": "Additional Eye Mount (Duplicated)",
     "description": "",
     "augmentationLimit": {
       "option": "N/A"
@@ -3858,9 +3929,7 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "allowedGear": {
-      "gearCategoryList": ["Drugs", "Toxins"]
-    },
+    "allowedGearCategories": ["Drugs", "Toxins"],
     "allowCategoryList": ["Auto Injector Mods"],
     "availability": {
       "rating": [2],
@@ -4809,9 +4878,7 @@
       "maximum": [1]
     },
     "selectSide": true,
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
@@ -4836,9 +4903,7 @@
       "maximum": [1]
     },
     "selectSide": true,
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
@@ -4862,9 +4927,7 @@
       "maximum": [1]
     },
     "selectSide": true,
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
@@ -4897,9 +4960,7 @@
       "walkSpeedPercentageModifier": -50,
       "runSpeedPercentageModifier": -100
     },
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
@@ -4933,9 +4994,7 @@
       "walkSpeedPercentageModifier": -50,
       "runSpeedPercentageModifier": -100
     },
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
@@ -4968,9 +5027,7 @@
       "walkSpeedPercentageModifier": -50,
       "runSpeedPercentageModifier": -100
     },
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "availability": {
       "rating": [0],
       "restriction": "Legal"
@@ -4993,14 +5050,12 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "allowedGear": {
-      "gearNameList": [
-        "Medkit",
-        "Medkit (Bullets & Bandages)",
-        "Medkit (2050)",
-        "Savior Medkit"
-      ]
-    },
+    "allowedGearList": [
+      "Medkit",
+      "Medkit (Bullets & Bandages)",
+      "Medkit (2050)",
+      "Savior Medkit"
+    ],
     "availability": {
       "rating": [8],
       "restriction": "Legal"
@@ -5126,9 +5181,7 @@
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
     "requirements": {},
-    "allowedGear": {
-      "gearCategoryList": ["Ammunition"]
-    },
+    "allowedGearCategories": ["Ammunition"],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
@@ -5398,9 +5451,7 @@
       "maximum": [1]
     },
     "selectSide": true,
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
@@ -5435,9 +5486,7 @@
       "maximum": [1]
     },
     "selectSide": true,
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
@@ -5472,9 +5521,7 @@
       "maximum": [1]
     },
     "selectSide": true,
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
@@ -5509,9 +5556,7 @@
       "maximum": [1]
     },
     "selectSide": true,
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
@@ -5559,9 +5604,7 @@
       "Synthetic Lower Arm, Modular",
       "Synthetic Lower Leg, Modular"
     ],
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
@@ -5609,9 +5652,7 @@
       "Synthetic Lower Arm, Modular",
       "Synthetic Lower Leg, Modular"
     ],
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
@@ -5659,9 +5700,7 @@
       "Synthetic Lower Arm, Modular",
       "Synthetic Lower Leg, Modular"
     ],
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
@@ -5709,9 +5748,7 @@
       "Synthetic Lower Arm, Modular",
       "Synthetic Lower Leg, Modular"
     ],
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
@@ -5749,9 +5786,7 @@
     "bonus": {
       "addPhysicalBoxes": 1
     },
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
@@ -5789,9 +5824,7 @@
     "bonus": {
       "addPhysicalBoxes": 1
     },
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
@@ -5829,9 +5862,7 @@
     "bonus": {
       "addPhysicalBoxes": 1
     },
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
@@ -5869,9 +5900,7 @@
     "bonus": {
       "addPhysicalBoxes": 1
     },
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
@@ -6329,9 +6358,7 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": [
       "Bodyware",
       "Headware",
@@ -6479,9 +6506,7 @@
     "bonus": {
       "addPhysicalBoxes": 1
     },
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "userSelectable": false,
     "allowCategoryList": [
       "Bodyware",
@@ -6516,9 +6541,7 @@
     "bonus": {
       "addPhysicalBoxes": 1
     },
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "userSelectable": false,
     "allowCategoryList": [
       "Bodyware",
@@ -6558,9 +6581,7 @@
       ],
       "runSpeedPercentageModifier": 100
     },
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": [
       "Headware",
       "Bodyware",
@@ -6599,9 +6620,7 @@
         }
       ]
     },
-    "allowedGear": {
-      "gearCategoryList": ["Custom", "Sensors"]
-    },
+    "allowedGearCategories": ["Custom", "Sensors"],
     "allowCategoryList": [
       "Headware",
       "Bodyware",
@@ -7324,9 +7343,7 @@
       "minimum": [1],
       "maximum": [6]
     },
-    "allowedGear": {
-      "gearCategoryList": ["Hard Nanoware"]
-    },
+    "allowedGearCategories": ["Hard Nanoware"],
     "availability": {
       "rating": [
         {
@@ -7689,7 +7706,7 @@
     "forceGrade": "None"
   },
   {
-    "name": "Nanotattoos",
+    "name": "Nanotattoos (Nanoware - Hard)",
     "description": "",
     "augmentationLimit": {
       "option": "N/A"
@@ -8244,6 +8261,7 @@
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
+    "inheritAttributes": true,
     "subsystemList": {
       "cyberwareList": [
         {
@@ -8282,6 +8300,7 @@
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
+    "inheritAttributes": true,
     "subsystemList": {
       "cyberwareList": [
         {
@@ -8324,6 +8343,7 @@
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
+    "inheritAttributes": true,
     "subsystemList": {
       "cyberwareList": [
         {
@@ -8370,6 +8390,7 @@
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
+    "inheritAttributes": true,
     "subsystemList": {
       "cyberwareList": [
         {
@@ -8419,6 +8440,7 @@
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
+    "inheritAttributes": true,
     "subsystemList": {
       "cyberwareList": [
         {
@@ -8455,6 +8477,7 @@
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
+    "inheritAttributes": true,
     "subsystemList": {
       "cyberwareList": [
         {
@@ -8504,6 +8527,7 @@
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
+    "inheritAttributes": true,
     "subsystemList": {
       "cyberwareList": [
         {
@@ -8789,9 +8813,7 @@
     },
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "requirements": {},
-    "allowedGear": {
-      "gearCategoryList": ["Drugs", "Toxins"]
-    },
+    "allowedGearCategories": ["Drugs", "Toxins"],
     "availability": {
       "rating": [8],
       "restriction": "Forbidden"
@@ -8870,6 +8892,7 @@
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
+    "inheritAttributes": true,
     "subsystemList": {
       "cyberwareList": [
         {
@@ -8913,6 +8936,7 @@
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
+    "inheritAttributes": true,
     "subsystemList": {
       "cyberwareList": [
         {
@@ -8960,6 +8984,7 @@
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
+    "inheritAttributes": true,
     "subsystemList": {
       "cyberwareList": [
         {
@@ -9008,6 +9033,7 @@
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
+    "inheritAttributes": true,
     "subsystemList": {
       "cyberwareList": [
         {
@@ -9068,6 +9094,8 @@
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
+    "inheritAttributes": true,
+    "limbSlot": "All",
     "subsystemList": {
       "cyberwareList": [
         {
@@ -9131,6 +9159,7 @@
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
+    "inheritAttributes": true,
     "subsystemList": {
       "cyberwareList": [
         {
@@ -9189,6 +9218,7 @@
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
+    "inheritAttributes": true,
     "subsystemList": {
       "cyberwareList": [
         {
@@ -9254,6 +9284,7 @@
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
+    "inheritAttributes": true,
     "subsystemList": {
       "cyberwareList": [
         {
@@ -9319,6 +9350,7 @@
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
+    "inheritAttributes": true,
     "subsystemList": {
       "cyberwareList": [
         {
@@ -9397,6 +9429,7 @@
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
+    "inheritAttributes": true,
     "subsystemList": {
       "cyberwareList": [
         {
@@ -9455,6 +9488,7 @@
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
+    "inheritAttributes": true,
     "subsystemList": {
       "cyberwareList": [
         {
@@ -9510,6 +9544,7 @@
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
+    "inheritAttributes": true,
     "subsystemList": {
       "cyberwareList": [
         {
@@ -9579,6 +9614,7 @@
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
+    "inheritAttributes": true,
     "subsystemList": {
       "cyberwareList": [
         {
@@ -9631,6 +9667,7 @@
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
+    "inheritAttributes": true,
     "subsystemList": {
       "cyberwareList": [
         {
@@ -9673,6 +9710,7 @@
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
+    "inheritAttributes": true,
     "subsystemList": {
       "cyberwareList": [
         {
@@ -10033,9 +10071,7 @@
       "minimum": [1],
       "maximum": [3]
     },
-    "allowedGear": {
-      "gearCategoryList": ["Common Programs", "Hacking Programs"]
-    },
+    "allowedGearCategories": ["Common Programs", "Hacking Programs"],
     "availability": {
       "rating": [4],
       "restriction": "Legal"
@@ -10061,7 +10097,8 @@
     "capacity": [0],
     "gearList": [
       {
-        "name": "Universal Connector Cord (Meter)",
+        "name": "Universal Connector Cord",
+        "rating": 1,
         "category": "Tools"
       }
     ]

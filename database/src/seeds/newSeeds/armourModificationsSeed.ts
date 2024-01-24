@@ -8,7 +8,7 @@ import { ArmourModifications } from "../../models/gear/combatGear/armourModifica
 
 export const getArmourModifications = function () {
   const currentPath = import.meta.url;
-  let armourMods: ArmourModListType | undefined = undefined;
+  let unlinkedArmourMods: ArmourModListType;
   const relativeConverterPath = "converter/jsonFiles/armourMods.json";
   const rootPath = "../../../../../";
   const jsonString = fs.readFileSync(
@@ -20,17 +20,15 @@ export const getArmourModifications = function () {
   const armourModListParsed = ArmourModListSchema.safeParse(rawJson);
   if (armourModListParsed.success) {
     console.log("armour mods all g");
-    armourMods = armourModListParsed.data;
+    unlinkedArmourMods = armourModListParsed.data;
   } else {
     console.log(armourModListParsed.error.errors[0]);
+    assert(false, "armourMods is undefined");
   }
-  if (armourMods === undefined) {
-    assert(false);
-  }
-  const stagedArmourMods: Array<ArmourModifications> = [];
-  armourMods.forEach((armourMod) => {
-    stagedArmourMods.push(new ArmourModifications(armourMod));
+  const stagedArmourModifications: Array<ArmourModifications> = [];
+  unlinkedArmourMods.forEach((armourMod) => {
+    stagedArmourModifications.push(new ArmourModifications(armourMod));
     // console.log(armourMod.name);
   });
-  return stagedArmourMods;
+  return { unlinkedArmourMods, stagedArmourModifications };
 };

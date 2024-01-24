@@ -1357,7 +1357,7 @@
     </vehicle>
     <vehicle>
       <id>4b64e3b8-bc1f-4dea-8d53-d90cf35f4315</id>
-      <name>Airstream Traveller Chinook</name>
+      <name>Airstream Traveler Chinook</name>
       <page>59</page>
       <source>R5</source>
       <accel>1</accel>
@@ -1387,7 +1387,7 @@
     </vehicle>
     <vehicle>
       <id>cb970581-0a0d-47a3-b334-9d3feea05b7d</id>
-      <name>Airstream Traveller Preserve</name>
+      <name>Airstream Traveler Preserve</name>
       <page>59</page>
       <source>R5</source>
       <accel>1</accel>
@@ -1417,7 +1417,7 @@
     </vehicle>
     <vehicle>
       <id>732a042d-631c-485a-b8c4-ce010de0b8af</id>
-      <name>Airstream Traveller Outback</name>
+      <name>Airstream Traveler Outback</name>
       <page>59</page>
       <source>R5</source>
       <accel>1</accel>
@@ -6661,11 +6661,9 @@
         </gear>
       </gears>
       <mods>
-        <addslots>3</addslots>
         <name>Rigger Interface</name>
       </mods>
-      <modslots>7</modslots>
-      <weaponmodslots>3</weaponmodslots>
+      <weaponmodslots>7</weaponmodslots>
     </vehicle>
     <vehicle>
       <id>6c6893fd-a69f-4346-885b-c6ae85679d35</id>
@@ -12537,7 +12535,7 @@
     </mod>
     <mod>
       <id>d36e13b2-205a-48b6-b423-64a272df3eab</id>
-      <name>Spoof Chips</name>
+      <name>Spoof Chips (Alternative)</name> <!-- This change should only be on TK's repo -->
       <page>177</page>
       <source>SS</source>
       <avail>8F</avail>
@@ -12729,7 +12727,7 @@
     </mod>
     <mod>
       <id>6a8805ee-2e3b-4010-8671-c196a1c44b51</id>
-      <name>Chameleon Coating</name>
+      <name>Chameleon Coating (Alternative)</name>
       <page>174</page>
       <source>SS</source>
       <avail>12R</avail>
@@ -12762,7 +12760,7 @@
     </mod>
     <mod>
       <id>290ca406-2bd8-496a-9c1e-2b46eb7df4f8</id>
-      <name>Morphing License Plate</name>
+      <name>Morphing License Plate (Alternative)</name>
       <page>186</page>
       <source>SS</source>
       <avail>8F</avail>

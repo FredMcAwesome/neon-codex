@@ -192,6 +192,15 @@ function convertBioware(bioware: BiowareXmlType) {
     assert(false, match.message);
   }
   const cost = costAugmentationSemantics(match).eval();
+
+  const addWeapon =
+    bioware.addweapon === undefined
+      ? undefined
+      : // TODO: shouldn't need this need to update xml (same for cyberware)
+      bioware.addweapon === ""
+      ? undefined
+      : bioware.addweapon;
+
   let blockedMountList: Array<string> = [];
   if (bioware.blocksmounts !== undefined) {
     match = MountList.match(bioware.blocksmounts.toString());
@@ -217,7 +226,9 @@ function convertBioware(bioware: BiowareXmlType) {
 
   const requirements = convertRequirements(bioware.required);
   const forbidden = convertRequirements(bioware.forbidden);
-  const allowGear = convertAllowGear(bioware.allowgear);
+  const { allowedGearList, allowedGearCategories } = convertAllowGear(
+    bioware.allowgear
+  );
   const allowCategory = bioware.allowsubsystems
     ? convertBiowareCategory(bioware.allowsubsystems.category)
     : undefined;
@@ -248,7 +259,7 @@ function convertBioware(bioware: BiowareXmlType) {
     rating: { maximum: [maxRating] },
     availability: availability,
     cost: cost,
-    addWeapon: bioware.addweapon,
+    addWeapon: addWeapon,
     ...(blockedMountList.length > 0 && { blockedMountList: blockedMountList }),
     selectSide: selectSide,
     bonus: bonus,
@@ -256,7 +267,10 @@ function convertBioware(bioware: BiowareXmlType) {
     pairIncludeList: pairIncludeList,
     requirements: requirements,
     forbidden: forbidden,
-    ...(allowGear !== undefined && { allowedGear: allowGear }),
+    ...(allowedGearList !== undefined && { allowedGearList: allowedGearList }),
+    ...(allowedGearCategories !== undefined && {
+      allowedGearCategories: allowedGearCategories,
+    }),
     ...(bioware.hide !== undefined && { userSelectable: false as const }),
     allowCategoryList: allowCategoryList,
     source: source,

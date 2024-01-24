@@ -19,7 +19,7 @@ import {
   AvailabilityRatingSchema,
   UseGearListSchema,
 } from "./commonSchemas.js";
-import { ModListSchema } from "./shared/modSchemas.js";
+import { GenericVehicleModListSchema } from "./shared/modSchemas.js";
 
 export const AvailabilityRiggerSchema = zod
   .object({
@@ -74,7 +74,8 @@ const WeaponMountSchema = zod
     flexibility: zod.nativeEnum(weaponMountFlexibilityEnum),
     size: zod.nativeEnum(weaponMountSizeEnum),
     visibility: zod.nativeEnum(weaponMountVisibilityEnum),
-    allowedWeapon: zod.optional(zod.string()),
+    includedWeapon: zod.optional(zod.string()),
+    includedMountMod: zod.optional(zod.string()),
   })
   .strict();
 export type WeaponMountType = zod.infer<typeof WeaponMountSchema>;
@@ -106,8 +107,8 @@ const VehiclePartialSchema = zod
     armour: zod.number(),
     pilot: zod.number(),
     sensor: zod.number(),
-    includedGear: zod.optional(UseGearListSchema),
-    includedMods: zod.optional(ModListSchema),
+    includedGearList: zod.optional(UseGearListSchema),
+    includedMods: zod.optional(GenericVehicleModListSchema),
     modSlots: zod.optional(zod.number()),
     powerTrainModSlots: zod.optional(zod.number()),
     protectionModSlots: zod.optional(zod.number()),

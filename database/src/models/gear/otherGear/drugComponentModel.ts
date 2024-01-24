@@ -1,4 +1,10 @@
-import { Entity, PrimaryKey, Property, Enum } from "@mikro-orm/postgresql";
+import {
+  Entity,
+  PrimaryKey,
+  Property,
+  Enum,
+  Unique,
+} from "@mikro-orm/postgresql";
 import {
   drugComponentCategoryEnum,
   sourceBookEnum,
@@ -14,6 +20,7 @@ export class DrugComponents {
   id!: number;
 
   @Property({ length: 255 })
+  @Unique()
   name!: string;
 
   @Enum(() => drugComponentCategoryEnum)

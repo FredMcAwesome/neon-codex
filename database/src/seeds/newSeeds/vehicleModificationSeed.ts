@@ -5,15 +5,15 @@ import { fileURLToPath } from "url";
 import { VehicleModListSchema } from "@shadowrun/common/build/schemas/riggerModSchemas.js";
 import type { VehicleModListType } from "@shadowrun/common/build/schemas/riggerModSchemas.js";
 import {
-  VehicleMods,
-  VehicleChasisMods,
-  WeaponMountMods,
+  VehicleModifications,
+  VehicleChasisModifications,
+  WeaponMountModifications,
 } from "../../models/gear/riggerGear/vehicleModificationModel.js";
 import { vehicleModTypeEnum } from "@shadowrun/common/build/enums.js";
 
 export const getVehicleModifications = function () {
   const currentPath = import.meta.url;
-  let vehicleMods: VehicleModListType | undefined = undefined;
+  let vehicleMods: VehicleModListType;
   let relativeConverterPath = "converter/jsonFiles/vehicleMods.json";
   const rootPath = "../../../../../";
   let jsonString = fs.readFileSync(
@@ -28,16 +28,16 @@ export const getVehicleModifications = function () {
     vehicleMods = vehicleListParsed.data;
   } else {
     console.log(vehicleListParsed.error.errors[0]);
-    assert(false);
+    assert(false, "vehicleMods is undefined");
   }
-  const stagedVehicleMods: Array<VehicleMods> = [];
+  const stagedVehicleMods: Array<VehicleModifications> = [];
   vehicleMods.forEach((vehicleMod) => {
     switch (vehicleMod.type) {
       case vehicleModTypeEnum.Vehicle:
-        stagedVehicleMods.push(new VehicleChasisMods(vehicleMod));
+        stagedVehicleMods.push(new VehicleChasisModifications(vehicleMod));
         break;
       case vehicleModTypeEnum.WeaponMount:
-        stagedVehicleMods.push(new WeaponMountMods(vehicleMod));
+        stagedVehicleMods.push(new WeaponMountModifications(vehicleMod));
         break;
     }
     // console.log(vehicleMod.name);

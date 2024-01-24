@@ -1,4 +1,12 @@
-import { Entity, Enum, PrimaryKey, Property } from "@mikro-orm/postgresql";
+import {
+  Collection,
+  Entity,
+  Enum,
+  OneToMany,
+  PrimaryKey,
+  Property,
+  Unique,
+} from "@mikro-orm/postgresql";
 import type {
   ArmourModType,
   AvailabilityArmourModType,
@@ -11,9 +19,8 @@ import {
   sourceBookEnum,
 } from "@shadowrun/common/build/enums.js";
 import type { DamageReductionArmourType } from "@shadowrun/common/build/schemas/armourSchemas.js";
-import type { UseGearListType } from "@shadowrun/common/build/schemas/commonSchemas.js";
 import type { BonusType } from "@shadowrun/common/build/schemas/shared/bonusSchemas.js";
-import type { ModListType } from "@shadowrun/common/build/schemas/shared/modSchemas.js";
+import { ArmourModificationIncludedGears } from "../../chummerdb/customTables/activeGearModel.js";
 
 @Entity()
 export class ArmourModifications {
@@ -21,6 +28,7 @@ export class ArmourModifications {
   id!: number;
 
   @Property({ length: 255 })
+  @Unique()
   name!: string;
 
   @Enum(() => armourModCategoryEnum)
@@ -38,17 +46,17 @@ export class ArmourModifications {
   @Property({ type: "json", nullable: true })
   hostArmourRequirements?: HostArmourRequirementType;
 
-  @Property({ type: "json", nullable: true })
-  includedGear?: UseGearListType;
+  @OneToMany(
+    () => ArmourModificationIncludedGears,
+    (armourModIncludedGear) => armourModIncludedGear.armourModification
+  )
+  includedGearList = new Collection<ArmourModificationIncludedGears>(this);
 
   @Property({ type: "json", nullable: true })
   bonus?: BonusType;
 
   @Property({ type: "json", nullable: true })
   wirelessBonus?: BonusType;
-
-  @Property({ type: "json", nullable: true })
-  mods?: ModListType;
 
   @Property({ nullable: true })
   userSelectable?: false;
@@ -79,10 +87,10 @@ export class ArmourModifications {
     this.capacityCost = dto.capacityCost;
     if (dto.hostArmourRequirements !== undefined)
       this.hostArmourRequirements = dto.hostArmourRequirements;
-    if (dto.includedGear !== undefined) this.includedGear = dto.includedGear;
+    // if (dto.includedGearList !== undefined)
+    //   this.includedGearList = dto.includedGearList;
     if (dto.bonus !== undefined) this.bonus = dto.bonus;
     if (dto.wirelessBonus !== undefined) this.wirelessBonus = dto.wirelessBonus;
-    if (dto.mods !== undefined) this.mods = dto.mods;
     if (dto.userSelectable !== undefined)
       this.userSelectable = dto.userSelectable;
     this.availability = dto.availability;
