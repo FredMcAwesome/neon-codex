@@ -1,83 +1,84 @@
 import type { Options } from "@mikro-orm/postgresql";
-import {
-  ActiveWeaponAccessories,
-  IncludedWeaponAccessories,
-  CustomisedWeaponAccessories,
-} from "./models/chummerdb/customTables/activeWeaponAccessoryModel.js";
-import { CustomisedWeapons } from "./models/chummerdb/customTables/customisedWeaponModel.js";
-import { Skills } from "./models/chummerdb/skillModel.js";
-import {
-  Augmentations,
-  Cyberwares,
-  Biowares,
-} from "./models/gear/augmentationGear/augmentationModel.js";
-import { ArmourModifications } from "./models/gear/combatGear/armourModificationModel.js";
-import { Armours } from "./models/gear/combatGear/armourModel.js";
-import { WeaponRanges } from "./models/gear/combatGear/helperTables/weaponRangeModel.js";
-import { WeaponAccessories } from "./models/gear/combatGear/weaponAccessoryModel.js";
-import {
-  MeleeWeapons,
-  ProjectileWeapons,
-  FirearmWeapons,
-  Explosives,
-  Weapons,
-  RangedWeapons,
-} from "./models/gear/combatGear/weaponModel.js";
-import { Drugs } from "./models/gear/otherGear/drugModel.js";
-import {
-  Vehicles,
-  Groundcrafts,
-  Watercrafts,
-  Aircrafts,
-  Drones,
-  MannedVehicles,
-} from "./models/gear/riggerGear/vehicleModel.js";
-import Threads from "./models/threadModel.js";
-import Users from "./models/userModel.js";
-import {
-  DB_NAME,
-  HOST,
-  DATABASE_PORT,
-  PASSWORD,
-} from "./utils/databaseConfig.js";
-import { Spells } from "./models/abilities/spellModel.js";
-import { DrugComponents } from "./models/gear/otherGear/drugComponentModel.js";
-import {
-  VehicleChasisModifications,
-  VehicleModifications,
-  WeaponMountModifications,
-} from "./models/gear/riggerGear/vehicleModificationModel.js";
-import { Gears } from "./models/gear/otherGear/gearModel.js";
-import Comments from "./models/commentModel.js";
-import { CustomisedArmours } from "./models/chummerdb/customTables/customisedArmourModel.js";
+import { PostgreSqlDriver } from "@mikro-orm/postgresql";
+import Users from "./models/accounts/userModel.js";
+import Comments from "./models/forum/commentModel.js";
+import Threads from "./models/forum/threadModel.js";
+import { Skills } from "./models/rpg/abilities/skillModel.js";
+import { Spells } from "./models/rpg/abilities/spellModel.js";
 import {
   ActiveArmourModifications,
-  CustomisedArmourModifications,
   IncludedArmourModifications,
-} from "./models/chummerdb/customTables/activeArmourModificationModel.js";
-import { CustomisedSkills } from "./models/chummerdb/customTables/customisedSkillModel.js";
-import { CustomisedVehicles } from "./models/chummerdb/customTables/customisedVehicleModel.js";
-import {
-  ActiveVehicleModifications,
-  CustomisedVehicleModifications,
-  IncludedVehicleModifications,
-} from "./models/chummerdb/customTables/activeVehicleModificationModel.js";
+  CustomisedArmourModifications,
+} from "./models/rpg/activeTables/activeArmourModificationModel.js";
 import {
   ActiveGears,
+  WeaponAccessoryIncludedGears,
   ActiveWeaponAccessoryGears,
   ArmourIncludedGears,
   ArmourModificationIncludedGears,
   AugmentationIncludedGears,
-  GearIncludedGears,
   VehicleIncludedGears,
-  WeaponAccessoryIncludedGears,
-} from "./models/chummerdb/customTables/activeGearModel.js";
+  GearIncludedGears,
+} from "./models/rpg/activeTables/activeGearModel.js";
+import {
+  ActiveVehicleModifications,
+  IncludedVehicleModifications,
+  CustomisedVehicleModifications,
+} from "./models/rpg/activeTables/activeVehicleModificationModel.js";
+import {
+  ActiveWeaponAccessories,
+  IncludedWeaponAccessories,
+  CustomisedWeaponAccessories,
+} from "./models/rpg/activeTables/activeWeaponAccessoryModel.js";
 import {
   ActiveWeaponMounts,
   IncludedWeaponMounts,
   CustomisedWeaponMounts,
-} from "./models/chummerdb/customTables/activeWeaponMountModel.js";
-import { WeaponMounts } from "./models/gear/riggerGear/weaponMountModel.js";
+} from "./models/rpg/activeTables/activeWeaponMountModel.js";
+import { CustomisedArmours } from "./models/rpg/activeTables/customisedArmourModel.js";
+import { CustomisedSkills } from "./models/rpg/activeTables/customisedSkillModel.js";
+import { CustomisedVehicles } from "./models/rpg/activeTables/customisedVehicleModel.js";
+import { CustomisedWeapons } from "./models/rpg/activeTables/customisedWeaponModel.js";
+import {
+  Augmentations,
+  Biowares,
+  Cyberwares,
+} from "./models/rpg/gear/augmentationGear/augmentationModel.js";
+import { Armours } from "./models/rpg/gear/combatGear/armourModel.js";
+import { ArmourModifications } from "./models/rpg/gear/combatGear/armourModificationModel.js";
+import { WeaponRanges } from "./models/rpg/gear/combatGear/helperTables/weaponRangeModel.js";
+import { WeaponAccessories } from "./models/rpg/gear/combatGear/weaponAccessoryModel.js";
+import {
+  Weapons,
+  MeleeWeapons,
+  RangedWeapons,
+  ProjectileWeapons,
+  FirearmWeapons,
+  Explosives,
+} from "./models/rpg/gear/combatGear/weaponModel.js";
+import { DrugComponents } from "./models/rpg/gear/otherGear/drugComponentModel.js";
+import { Drugs } from "./models/rpg/gear/otherGear/drugModel.js";
+import { Gears } from "./models/rpg/gear/otherGear/gearModel.js";
+import {
+  Vehicles,
+  MannedVehicles,
+  Groundcrafts,
+  Watercrafts,
+  Aircrafts,
+  Drones,
+} from "./models/rpg/gear/riggerGear/vehicleModel.js";
+import {
+  VehicleModifications,
+  VehicleChasisModifications,
+  WeaponMountModifications,
+} from "./models/rpg/gear/riggerGear/vehicleModificationModel.js";
+import { WeaponMounts } from "./models/rpg/gear/riggerGear/weaponMountModel.js";
+import {
+  HOST,
+  DATABASE_PORT,
+  DB_NAME,
+  PASSWORD,
+} from "./utils/databaseConfig.js";
 
 const dbOptions: Options = {
   entities: [
@@ -159,6 +160,7 @@ const dbOptions: Options = {
   dbName: DB_NAME,
   password: PASSWORD,
   forceUndefined: true,
+  driver: PostgreSqlDriver,
 };
 
 export default dbOptions;

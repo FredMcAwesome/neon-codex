@@ -9,9 +9,9 @@ import {
   Threads,
   Comments,
 } from "@shadowrun/database/build/models/models.js";
-import { Skills } from "@shadowrun/database/build/models/chummerdb/skillModel.js";
+import { Skills } from "@shadowrun/database/build/models/abilities/skillModel.js";
 import { WeaponAccessories } from "@shadowrun/database/build/models/gear/combatGear/weaponAccessoryModel.js";
-import { ActiveWeaponAccessories } from "@shadowrun/database/build/models/chummerdb/customTables/activeWeaponAccessoryModel.js";
+import { ActiveWeaponAccessories } from "@shadowrun/database/src/models/chummerdb/activeTables/activeWeaponAccessoryModel.js";
 import { Weapons } from "@shadowrun/database/build/models/gear/combatGear/weaponModel.js";
 import { Augmentations } from "@shadowrun/database/build/models/gear/augmentationGear/augmentationModel.js";
 import { AugmentationAccessories } from "@shadowrun/database/build/models/gear/augmentationGear/augmentationAccessoryModel.js";

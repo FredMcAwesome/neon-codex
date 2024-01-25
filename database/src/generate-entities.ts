@@ -18,4 +18,6 @@ import { DB_NAME, PASSWORD } from "./utils/databaseConfig.js";
   });
   console.log(dump);
   await orm.close(true);
-})();
+})().catch((e) => {
+  console.log(e);
+});

@@ -14,7 +14,6 @@
   "devDependencies": {
     "@mikro-orm/cli": "^6.0.2",
     "@mikro-orm/entity-generator": "^6.0.2",
-    "@mikro-orm/seeder": "^6.0.2",
     "@types/async": "^3.2.15",
     "@types/bcrypt": "^5.0.0",
     "@types/cors": "^2.8.12",
@@ -37,6 +36,7 @@
   "dependencies": {
     "@mikro-orm/core": "^6.0.2",
     "@mikro-orm/postgresql": "^6.0.2",
+    "@mikro-orm/seeder": "^6.0.2",
     "@shadowrun/common": "*",
     "async": "^3.2.4",
     "bcrypt": "^5.0.1",

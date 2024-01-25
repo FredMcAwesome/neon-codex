@@ -81,6 +81,7 @@ export const RangeSchema = zod
     extreme: RangeIncrementSchema,
   })
   .strict();
+export type RangeType = zod.infer<typeof RangeSchema>;
 
 export const RangeListSchema = zod.array(RangeSchema);
 export type RangeListType = zod.infer<typeof RangeListSchema>;

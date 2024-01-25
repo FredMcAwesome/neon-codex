@@ -1,66 +1,66 @@
 import assert from "assert";
 import { EntityManager, ref } from "@mikro-orm/postgresql";
 import { Seeder } from "@mikro-orm/seeder";
-import { getSkills } from "../seeds/newSeeds/skillsSeed.js";
-import { getWeapons } from "../seeds/newSeeds/weaponsSeed.js";
-import { getWeaponAccessories } from "../seeds/newSeeds/weaponAccessoriesSeed.js";
-import { Skills } from "../models/chummerdb/skillModel.js";
-import { WeaponAccessories } from "../models/gear/combatGear/weaponAccessoryModel.js";
+import { getSkills } from "../seeds/rpgSeeds/skillsSeed.js";
+import { getWeapons } from "../seeds/rpgSeeds/weaponsSeed.js";
+import { getWeaponAccessories } from "../seeds/rpgSeeds/weaponAccessoriesSeed.js";
+import { getArmourModifications } from "../seeds/rpgSeeds/armourModificationsSeed.js";
+import { getArmours } from "../seeds/rpgSeeds/armoursSeed.js";
+import { getAugmentations } from "../seeds/rpgSeeds/augmentationsSeed.js";
+import { getDrugs, getDrugComponents } from "../seeds/rpgSeeds/drugSeed.js";
+import { getGears } from "../seeds/rpgSeeds/gearSeed.js";
+import { getRanges } from "../seeds/rpgSeeds/rangesSeed.js";
+import { getVehicleModifications } from "../seeds/rpgSeeds/vehicleModificationSeed.js";
 import {
-  MeleeWeapons,
-  FirearmWeapons,
-  ProjectileWeapons,
-  Explosives,
-  Weapons,
-  RangedWeapons,
-} from "../models/gear/combatGear/weaponModel.js";
-import { IncludedWeaponAccessories } from "../models/chummerdb/customTables/activeWeaponAccessoryModel.js";
-import { WeaponRanges } from "../models/gear/combatGear/helperTables/weaponRangeModel.js";
-import { getRanges } from "../seeds/newSeeds/rangesSeed.js";
-import { Armours } from "../models/gear/combatGear/armourModel.js";
-import { getArmours } from "../seeds/newSeeds/armoursSeed.js";
-import { ArmourModifications } from "../models/gear/combatGear/armourModificationModel.js";
-import { getArmourModifications } from "../seeds/newSeeds/armourModificationsSeed.js";
-import {
-  Augmentations,
-  Biowares,
-  Cyberwares,
-} from "../models/gear/augmentationGear/augmentationModel.js";
-import { getAugmentations } from "../seeds/newSeeds/augmentationsSeed.js";
-import { getDrugComponents, getDrugs } from "../seeds/newSeeds/drugSeed.js";
-import { Drugs } from "../models/gear/otherGear/drugModel.js";
-import { DrugComponents } from "../models/gear/otherGear/drugComponentModel.js";
-import {
-  createVehicleWeaponMounts,
   getVehicles,
-} from "../seeds/newSeeds/vehicleSeed.js";
+  createVehicleWeaponMounts,
+} from "../seeds/rpgSeeds/vehicleSeed.js";
+import { Skills } from "../models/rpg/abilities/skillModel.js";
+import { IncludedArmourModifications } from "../models/rpg/activeTables/activeArmourModificationModel.js";
 import {
-  Aircrafts,
-  Drones,
-  Groundcrafts,
-  Vehicles,
-  Watercrafts,
-} from "../models/gear/riggerGear/vehicleModel.js";
-import { getVehicleModifications } from "../seeds/newSeeds/vehicleModificationSeed.js";
-import {
-  VehicleChasisModifications,
-  WeaponMountModifications,
-} from "../models/gear/riggerGear/vehicleModificationModel.js";
-import { Gears } from "../models/gear/otherGear/gearModel.js";
-import { getGears } from "../seeds/newSeeds/gearSeed.js";
-import {
+  WeaponAccessoryIncludedGears,
   ActiveWeaponAccessoryGears,
   ArmourIncludedGears,
   ArmourModificationIncludedGears,
-  GearIncludedGears,
   VehicleIncludedGears,
-  WeaponAccessoryIncludedGears,
-} from "../models/chummerdb/customTables/activeGearModel.js";
-import { IncludedArmourModifications } from "../models/chummerdb/customTables/activeArmourModificationModel.js";
-import { augmentationTypeEnum } from "@shadowrun/common";
-import { WeaponMounts } from "../models/gear/riggerGear/weaponMountModel.js";
-import { IncludedWeaponMounts } from "../models/chummerdb/customTables/activeWeaponMountModel.js";
-import { IncludedVehicleModifications } from "../models/chummerdb/customTables/activeVehicleModificationModel.js";
+  GearIncludedGears,
+} from "../models/rpg/activeTables/activeGearModel.js";
+import { IncludedVehicleModifications } from "../models/rpg/activeTables/activeVehicleModificationModel.js";
+import { IncludedWeaponAccessories } from "../models/rpg/activeTables/activeWeaponAccessoryModel.js";
+import { IncludedWeaponMounts } from "../models/rpg/activeTables/activeWeaponMountModel.js";
+import {
+  Cyberwares,
+  Biowares,
+  Augmentations,
+} from "../models/rpg/gear/augmentationGear/augmentationModel.js";
+import { Armours } from "../models/rpg/gear/combatGear/armourModel.js";
+import { ArmourModifications } from "../models/rpg/gear/combatGear/armourModificationModel.js";
+import { WeaponRanges } from "../models/rpg/gear/combatGear/helperTables/weaponRangeModel.js";
+import { WeaponAccessories } from "../models/rpg/gear/combatGear/weaponAccessoryModel.js";
+import {
+  MeleeWeapons,
+  ProjectileWeapons,
+  FirearmWeapons,
+  Explosives,
+  Weapons,
+  RangedWeapons,
+} from "../models/rpg/gear/combatGear/weaponModel.js";
+import { DrugComponents } from "../models/rpg/gear/otherGear/drugComponentModel.js";
+import { Drugs } from "../models/rpg/gear/otherGear/drugModel.js";
+import { Gears } from "../models/rpg/gear/otherGear/gearModel.js";
+import {
+  Groundcrafts,
+  Watercrafts,
+  Aircrafts,
+  Drones,
+  Vehicles,
+} from "../models/rpg/gear/riggerGear/vehicleModel.js";
+import {
+  VehicleChasisModifications,
+  WeaponMountModifications,
+} from "../models/rpg/gear/riggerGear/vehicleModificationModel.js";
+import { WeaponMounts } from "../models/rpg/gear/riggerGear/weaponMountModel.js";
+import { augmentationTypeEnum } from "@shadowrun/common/build/enums.js";
 
 export class GearSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
@@ -210,7 +210,7 @@ export class GearSeeder extends Seeder {
           `undefined weapon name: ${weaponAccessory.name}`
         );
 
-        relatedWeaponAccessory.linkedWeapon = ref(Weapons, linkedWeapon);
+        relatedWeaponAccessory.linkedWeapon = ref(linkedWeapon);
       }
     }
     // Weapon Accessories that allow certain gear to be added
@@ -229,7 +229,7 @@ export class GearSeeder extends Seeder {
             name: gear,
           });
           assert(allowedGear !== null, `undefined allowed gear: ${gear}`);
-          const referencedGear = ref(Gears, allowedGear);
+          const referencedGear = ref(allowedGear);
           relatedWeaponAccessory.allowedGearList.add(referencedGear);
         }
       }
@@ -244,10 +244,7 @@ export class GearSeeder extends Seeder {
           relatedWeaponAccessory !== null,
           `undefined weapon Accessory name: ${weaponAccessory.name}`
         );
-        const referencedWeaponAccessory = ref(
-          WeaponAccessories,
-          relatedWeaponAccessory
-        );
+        const referencedWeaponAccessory = ref(relatedWeaponAccessory);
         for (const gear of weaponAccessory.includedGearList) {
           const includedGear = await em.findOne(Gears, {
             name: gear.name,
@@ -256,7 +253,7 @@ export class GearSeeder extends Seeder {
             includedGear !== null,
             `undefined included gear: ${gear.name}`
           );
-          const referencedGear = ref(Gears, includedGear);
+          const referencedGear = ref(includedGear);
           const stagedIncludedGear = new WeaponAccessoryIncludedGears(
             referencedGear,
             referencedWeaponAccessory,
@@ -284,7 +281,7 @@ export class GearSeeder extends Seeder {
             name: gear,
           });
           assert(allowedGear !== null, `undefined allowed gear: ${gear}`);
-          const referencedGear = ref(Gears, allowedGear);
+          const referencedGear = ref(allowedGear);
           relatedWeapon.allowedGearList.add(referencedGear);
         }
       }
@@ -296,7 +293,7 @@ export class GearSeeder extends Seeder {
           name: weapon.name,
         });
         assert(relatedWeapon !== null, `undefined weapon name: ${weapon.name}`);
-        const referencedWeapon = ref(Weapons, relatedWeapon);
+        const referencedWeapon = ref(relatedWeapon);
         for (const accessory of weapon.accessories) {
           const includeWeaponAccessory = await em.findOne(WeaponAccessories, {
             name: accessory.name,
@@ -305,10 +302,7 @@ export class GearSeeder extends Seeder {
             includeWeaponAccessory !== null,
             `undefined weapon accessory: ${accessory.name}`
           );
-          const referencedWeaponAccessory = ref(
-            WeaponAccessories,
-            includeWeaponAccessory
-          );
+          const referencedWeaponAccessory = ref(includeWeaponAccessory);
           const stagedIncludedWeaponAccessory = new IncludedWeaponAccessories(
             referencedWeapon,
             referencedWeaponAccessory,
@@ -318,7 +312,6 @@ export class GearSeeder extends Seeder {
           // this creates the link to weapon accessory
           em.create(IncludedWeaponAccessories, stagedIncludedWeaponAccessory);
           const referencedIncludedWeaponAccessory = ref(
-            IncludedWeaponAccessories,
             stagedIncludedWeaponAccessory
           );
           if (accessory.gears !== undefined) {
@@ -327,7 +320,7 @@ export class GearSeeder extends Seeder {
                 name: gear.name,
               });
               assert(includedGear !== null, `undefined gear: ${gear.name}`);
-              const referencedGear = ref(Gears, includedGear);
+              const referencedGear = ref(includedGear);
               const stagedIncludedGear = new ActiveWeaponAccessoryGears(
                 referencedGear,
                 referencedIncludedWeaponAccessory,
@@ -402,7 +395,7 @@ export class GearSeeder extends Seeder {
           linkedWeapon !== null,
           `undefined linked weapon: ${armour.name}`
         );
-        relatedArmour.linkedWeapon = ref(Weapons, linkedWeapon);
+        relatedArmour.linkedWeapon = ref(linkedWeapon);
       }
     }
     // Armours that include certain gear
@@ -412,13 +405,13 @@ export class GearSeeder extends Seeder {
           name: armour.name,
         });
         assert(relatedArmour !== null, `undefined armour name: ${armour.name}`);
-        const referencedArmour = ref(Armours, relatedArmour);
+        const referencedArmour = ref(relatedArmour);
         for (const gear of armour.includedGearList) {
           const includedGear = await em.findOne(Gears, {
             name: gear.name,
           });
           assert(includedGear !== null, `undefined gear: ${gear.name}`);
-          const referencedGear = ref(Gears, includedGear);
+          const referencedGear = ref(includedGear);
           const stagedIncludedGear = new ArmourIncludedGears(
             referencedGear,
             referencedArmour,
@@ -439,13 +432,13 @@ export class GearSeeder extends Seeder {
           name: armour.name,
         });
         assert(relatedArmour !== null, `undefined armour name: ${armour.name}`);
-        const referencedArmour = ref(Armours, relatedArmour);
+        const referencedArmour = ref(relatedArmour);
         for (const mod of armour.includedMods) {
           const includedMod = await em.findOne(ArmourModifications, {
             name: mod.name,
           });
           assert(includedMod !== null, `undefined mod: ${mod.name}`);
-          const referencedMod = ref(ArmourModifications, includedMod);
+          const referencedMod = ref(includedMod);
           const stagedIncludedGear = new IncludedArmourModifications(
             referencedArmour,
             referencedMod,
@@ -468,13 +461,13 @@ export class GearSeeder extends Seeder {
           relatedArmourMod !== null,
           `undefined armour Mod name: ${armourMod.name}`
         );
-        const referencedArmourMod = ref(ArmourModifications, relatedArmourMod);
+        const referencedArmourMod = ref(relatedArmourMod);
         for (const gear of armourMod.includedGearList) {
           const includedGear = await em.findOne(Gears, {
             name: gear.name,
           });
           assert(includedGear !== null, `undefined gear: ${gear.name}`);
-          const referencedGear = ref(Gears, includedGear);
+          const referencedGear = ref(includedGear);
           const stagedIncludedGear = new ArmourModificationIncludedGears(
             referencedGear,
             referencedArmourMod,
@@ -507,7 +500,7 @@ export class GearSeeder extends Seeder {
           linkedWeapon !== null,
           `undefined linked weapon: ${augmentation.addWeapon}`
         );
-        relatedAugmentation.addWeapon = ref(Weapons, linkedWeapon);
+        relatedAugmentation.addWeapon = ref(linkedWeapon);
       }
     }
     // Augmentations that provide a bonus when linked to another augmentation
@@ -520,14 +513,17 @@ export class GearSeeder extends Seeder {
           relatedAugmentation !== null,
           `undefined augmentation name: ${augmentation.name}`
         );
-        const linkedAugmentation = await em.findOne(Augmentations, {
-          name: augmentation.pairIncludeList,
-        });
-        assert(
-          linkedAugmentation !== null,
-          `undefined linked augmentation: ${augmentation.pairIncludeList}`
-        );
-        relatedAugmentation.pairIncludeList.add(linkedAugmentation);
+        for (const pairInclude of augmentation.pairIncludeList) {
+          const linkedAugmentation = await em.findOne(Augmentations, {
+            name: pairInclude,
+          });
+          assert(
+            linkedAugmentation !== null,
+            `undefined linked augmentation: ${pairInclude}`
+          );
+          console.log(linkedAugmentation.name);
+          relatedAugmentation.pairIncludeList.add(linkedAugmentation);
+        }
       }
     }
     // Augmentations that allow certain gear to be added
@@ -550,7 +546,7 @@ export class GearSeeder extends Seeder {
             name: gear,
           });
           assert(allowedGear !== null, `undefined allowed gear: ${gear}`);
-          const referencedGear = ref(Gears, allowedGear);
+          const referencedGear = ref(allowedGear);
           relatedAugmentation.allowedGearList.add(referencedGear);
         }
       }
@@ -595,7 +591,7 @@ export class GearSeeder extends Seeder {
             linkedVehicle !== null,
             `undefined vehicle: ${augmentation.addVehicle}`
           );
-          const referencedVehicle = ref(Vehicles, linkedVehicle);
+          const referencedVehicle = ref(linkedVehicle);
           relatedAugmentation.linkedVehicle = referencedVehicle;
         }
       }
@@ -612,13 +608,13 @@ export class GearSeeder extends Seeder {
           relatedVehicle !== null,
           `undefined vehicle name: ${vehicle.name}`
         );
-        const referencedVehicle = ref(Vehicles, relatedVehicle);
+        const referencedVehicle = ref(relatedVehicle);
         for (const gear of vehicle.includedGearList) {
           const includedGear = await em.findOne(Gears, {
             name: gear.name,
           });
           assert(includedGear !== null, `undefined gear: ${gear.name}`);
-          const referencedGear = ref(Gears, includedGear);
+          const referencedGear = ref(includedGear);
           const stagedIncludedGear = new VehicleIncludedGears(
             referencedGear,
             referencedVehicle,
@@ -642,13 +638,13 @@ export class GearSeeder extends Seeder {
           relatedVehicle !== null,
           `undefined vehicle name: ${vehicle.name}`
         );
-        const referencedVehicle = ref(Vehicles, relatedVehicle);
+        const referencedVehicle = ref(relatedVehicle);
         for (const mod of vehicle.includedMods) {
           const includedMod = await em.findOne(VehicleChasisModifications, {
             name: mod.name,
           });
           assert(includedMod !== null, `undefined mod: ${mod.name}`);
-          const referencedMod = ref(VehicleChasisModifications, includedMod);
+          const referencedMod = ref(includedMod);
           const stagedIncludedGear = new IncludedVehicleModifications(
             referencedVehicle,
             referencedMod,
@@ -687,7 +683,7 @@ export class GearSeeder extends Seeder {
           `undefined vehicle name: ${vehicle.name}`
         );
         for (const weaponMount of vehicle.weaponMountList) {
-          let relatedWeaponMount = await em.findOne(WeaponMounts, {
+          const relatedWeaponMount = await em.findOne(WeaponMounts, {
             control: weaponMount.control,
             flexibility: weaponMount.flexibility,
             size: weaponMount.size,
@@ -695,7 +691,7 @@ export class GearSeeder extends Seeder {
           });
           assert(
             relatedWeaponMount !== null,
-            `undefined weapon mount: ${weaponMount}`
+            `undefined weapon mount: ${JSON.stringify(weaponMount)}`
           );
 
           let referencedWeapon = undefined;
@@ -707,10 +703,10 @@ export class GearSeeder extends Seeder {
               relatedWeapon !== null,
               `undefined weapon name: ${weaponMount.includedWeapon}`
             );
-            referencedWeapon = ref(Weapons, relatedWeapon);
+            referencedWeapon = ref(relatedWeapon);
           }
-          const referencedVehicle = ref(Vehicles, relatedVehicle);
-          const referencedWeaponMount = ref(WeaponMounts, relatedWeaponMount);
+          const referencedVehicle = ref(relatedVehicle);
+          const referencedWeaponMount = ref(relatedWeaponMount);
 
           const stagedIncludedWeaponMount = new IncludedWeaponMounts(
             referencedVehicle,
@@ -745,7 +741,7 @@ export class GearSeeder extends Seeder {
           name: gear.name,
         });
         assert(relatedGear !== null, `undefined gear name: ${gear.name}`);
-        const referencedLinkedGear = ref(Gears, relatedGear);
+        const referencedLinkedGear = ref(relatedGear);
         for (const unlinkedIncludedGear of gear.includedGearList) {
           const includedGear = await em.findOne(Gears, {
             name: unlinkedIncludedGear.name,
@@ -754,7 +750,7 @@ export class GearSeeder extends Seeder {
             includedGear !== null,
             `undefined included gear: ${unlinkedIncludedGear.name}`
           );
-          const referencedIncludedGear = ref(Gears, includedGear);
+          const referencedIncludedGear = ref(includedGear);
           const stagedIncludedGear = new GearIncludedGears(
             referencedIncludedGear,
             referencedLinkedGear,
@@ -784,7 +780,7 @@ export class GearSeeder extends Seeder {
             allowedGear !== null,
             `undefined allowed gear: ${unlinkedAllowedGear}`
           );
-          const referencedGear = ref(Gears, allowedGear);
+          const referencedGear = ref(allowedGear);
           relatedGear.allowedGearList.add(referencedGear);
         }
       }
