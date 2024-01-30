@@ -41,17 +41,15 @@ Fill tables with initial data:
 ```shell
 export MIKRO_ORM_CLI_CONFIG='./src/mikro-orm_seeder.config.ts' && 
 export MIKRO_ORM_SEEDER_PATH='./src/seeders/' &&
-export NODE_OPTIONS="--loader ts-node/esm" &&
 export NODE_ENV=test &&
-npx mikro-orm seeder:run &&
-npx mikro-orm seeder:run --class=GearSeeder &&
-npx mikro-orm seeder:run --class=AbilitiesSeeder &&
+npx mikro-orm-esm seeder:run &&
+npx mikro-orm-esm seeder:run --class=GearSeeder &&
+npx mikro-orm-esm seeder:run --class=AbilitiesSeeder &&
 export NODE_ENV=development &&
-npx mikro-orm seeder:run &&
-npx mikro-orm seeder:run --class=GearSeeder &&
-npx mikro-orm seeder:run --class=AbilitiesSeeder &&
+npx mikro-orm-esm seeder:run &&
+npx mikro-orm-esm seeder:run --class=GearSeeder &&
+npx mikro-orm-esm seeder:run --class=AbilitiesSeeder &&
 unset NODE_ENV &&
-unset NODE_OPTIONS &&
 unset MIKRO_ORM_CLI_CONFIG
 ```
 

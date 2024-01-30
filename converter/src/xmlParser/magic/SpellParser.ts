@@ -18,9 +18,9 @@ import {
   convertSpellRange,
   damageSpellSemantics,
 } from "./SpellParserHelper.js";
-import { convertXmlBonus } from "../common/BonusHelper.js";
+import { convertXmlBonus } from "../common/BonusParserHelper.js";
 import { convertSource } from "../common/ParserHelper.js";
-import { convertRequirements } from "../common/RequiredHelper.js";
+import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { SpellSchema } from "@shadowrun/common/build/schemas/spellSchemas.js";
 import Spells from "../../grammar/spells.ohm-bundle.js";
 const Damage = Spells.Damage;

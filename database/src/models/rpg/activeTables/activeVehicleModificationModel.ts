@@ -7,9 +7,9 @@ import {
   Property,
 } from "@mikro-orm/postgresql";
 import type { Ref } from "@mikro-orm/postgresql";
-import { Cyberwares } from "../gear/augmentationGear/augmentationModel.js";
-import { Vehicles } from "../gear/riggerGear/vehicleModel.js";
-import { VehicleModifications } from "../gear/riggerGear/vehicleModificationModel.js";
+import { Cyberwares } from "../equipment/bodyModification/augmentationModel.js";
+import { Vehicles } from "../equipment/rigger/vehicleModel.js";
+import { VehicleModifications } from "../equipment/rigger/vehicleModificationModel.js";
 import { CustomisedVehicles } from "./customisedVehicleModel.js";
 
 // Links to either a custom vehicle, or a vehicle in the table.

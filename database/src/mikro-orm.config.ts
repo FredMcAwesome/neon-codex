@@ -43,11 +43,11 @@ import {
   Augmentations,
   Biowares,
   Cyberwares,
-} from "./models/rpg/gear/augmentationGear/augmentationModel.js";
-import { Armours } from "./models/rpg/gear/combatGear/armourModel.js";
-import { ArmourModifications } from "./models/rpg/gear/combatGear/armourModificationModel.js";
-import { WeaponRanges } from "./models/rpg/gear/combatGear/helperTables/weaponRangeModel.js";
-import { WeaponAccessories } from "./models/rpg/gear/combatGear/weaponAccessoryModel.js";
+} from "./models/rpg/equipment/bodyModification/augmentationModel.js";
+import { Armours } from "./models/rpg/equipment/combat/armourModel.js";
+import { ArmourModifications } from "./models/rpg/equipment/combat/armourModificationModel.js";
+import { WeaponRanges } from "./models/rpg/equipment/combat/helperTables/weaponRangeModel.js";
+import { WeaponAccessories } from "./models/rpg/equipment/combat/weaponAccessoryModel.js";
 import {
   Weapons,
   MeleeWeapons,
@@ -55,10 +55,10 @@ import {
   ProjectileWeapons,
   FirearmWeapons,
   Explosives,
-} from "./models/rpg/gear/combatGear/weaponModel.js";
-import { DrugComponents } from "./models/rpg/gear/otherGear/drugComponentModel.js";
-import { Drugs } from "./models/rpg/gear/otherGear/drugModel.js";
-import { Gears } from "./models/rpg/gear/otherGear/gearModel.js";
+} from "./models/rpg/equipment/combat/weaponModel.js";
+import { DrugComponents } from "./models/rpg/equipment/other/drugComponentModel.js";
+import { Drugs } from "./models/rpg/equipment/other/drugModel.js";
+import { Gears } from "./models/rpg/equipment/other/gearModel.js";
 import {
   Vehicles,
   MannedVehicles,
@@ -66,13 +66,13 @@ import {
   Watercrafts,
   Aircrafts,
   Drones,
-} from "./models/rpg/gear/riggerGear/vehicleModel.js";
+} from "./models/rpg/equipment/rigger/vehicleModel.js";
 import {
   VehicleModifications,
   VehicleChasisModifications,
   WeaponMountModifications,
-} from "./models/rpg/gear/riggerGear/vehicleModificationModel.js";
-import { WeaponMounts } from "./models/rpg/gear/riggerGear/weaponMountModel.js";
+} from "./models/rpg/equipment/rigger/vehicleModificationModel.js";
+import { WeaponMounts } from "./models/rpg/equipment/rigger/weaponMountModel.js";
 import {
   HOST,
   DATABASE_PORT,

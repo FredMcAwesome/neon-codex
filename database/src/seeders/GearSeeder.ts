@@ -24,6 +24,7 @@ import {
   ArmourModificationIncludedGears,
   VehicleIncludedGears,
   GearIncludedGears,
+  AugmentationIncludedGears,
 } from "../models/rpg/activeTables/activeGearModel.js";
 import { IncludedVehicleModifications } from "../models/rpg/activeTables/activeVehicleModificationModel.js";
 import { IncludedWeaponAccessories } from "../models/rpg/activeTables/activeWeaponAccessoryModel.js";
@@ -32,11 +33,11 @@ import {
   Cyberwares,
   Biowares,
   Augmentations,
-} from "../models/rpg/gear/augmentationGear/augmentationModel.js";
-import { Armours } from "../models/rpg/gear/combatGear/armourModel.js";
-import { ArmourModifications } from "../models/rpg/gear/combatGear/armourModificationModel.js";
-import { WeaponRanges } from "../models/rpg/gear/combatGear/helperTables/weaponRangeModel.js";
-import { WeaponAccessories } from "../models/rpg/gear/combatGear/weaponAccessoryModel.js";
+} from "../models/rpg/equipment/bodyModification/augmentationModel.js";
+import { Armours } from "../models/rpg/equipment/combat/armourModel.js";
+import { ArmourModifications } from "../models/rpg/equipment/combat/armourModificationModel.js";
+import { WeaponRanges } from "../models/rpg/equipment/combat/helperTables/weaponRangeModel.js";
+import { WeaponAccessories } from "../models/rpg/equipment/combat/weaponAccessoryModel.js";
 import {
   MeleeWeapons,
   ProjectileWeapons,
@@ -44,22 +45,22 @@ import {
   Explosives,
   Weapons,
   RangedWeapons,
-} from "../models/rpg/gear/combatGear/weaponModel.js";
-import { DrugComponents } from "../models/rpg/gear/otherGear/drugComponentModel.js";
-import { Drugs } from "../models/rpg/gear/otherGear/drugModel.js";
-import { Gears } from "../models/rpg/gear/otherGear/gearModel.js";
+} from "../models/rpg/equipment/combat/weaponModel.js";
+import { DrugComponents } from "../models/rpg/equipment/other/drugComponentModel.js";
+import { Drugs } from "../models/rpg/equipment/other/drugModel.js";
+import { Gears } from "../models/rpg/equipment/other/gearModel.js";
 import {
   Groundcrafts,
   Watercrafts,
   Aircrafts,
   Drones,
   Vehicles,
-} from "../models/rpg/gear/riggerGear/vehicleModel.js";
+} from "../models/rpg/equipment/rigger/vehicleModel.js";
 import {
   VehicleChasisModifications,
   WeaponMountModifications,
-} from "../models/rpg/gear/riggerGear/vehicleModificationModel.js";
-import { WeaponMounts } from "../models/rpg/gear/riggerGear/weaponMountModel.js";
+} from "../models/rpg/equipment/rigger/vehicleModificationModel.js";
+import { WeaponMounts } from "../models/rpg/equipment/rigger/weaponMountModel.js";
 import { augmentationTypeEnum } from "@shadowrun/common/build/enums.js";
 
 export class GearSeeder extends Seeder {
@@ -521,7 +522,6 @@ export class GearSeeder extends Seeder {
             linkedAugmentation !== null,
             `undefined linked augmentation: ${pairInclude}`
           );
-          console.log(linkedAugmentation.name);
           relatedAugmentation.pairIncludeList.add(linkedAugmentation);
         }
       }
@@ -548,6 +548,36 @@ export class GearSeeder extends Seeder {
           assert(allowedGear !== null, `undefined allowed gear: ${gear}`);
           const referencedGear = ref(allowedGear);
           relatedAugmentation.allowedGearList.add(referencedGear);
+        }
+      }
+    }
+    // Augmentations that include certain gear
+    for (const augmentation of unlinkedAugmentations) {
+      if (augmentation.includedGearList !== undefined) {
+        const relatedAugmentation = await em.findOne(Augmentations, {
+          name: augmentation.name,
+        });
+        assert(
+          relatedAugmentation !== null,
+          `undefined augmentation name: ${augmentation.name}`
+        );
+        const referencedAugmentation = ref(relatedAugmentation);
+        for (const gear of augmentation.includedGearList) {
+          const includedGear = await em.findOne(Gears, {
+            name: gear.name,
+          });
+          assert(includedGear !== null, `undefined gear: ${gear.name}`);
+          const referencedGear = ref(includedGear);
+          const stagedIncludedGear = new AugmentationIncludedGears(
+            referencedGear,
+            referencedAugmentation,
+            gear.specificOption,
+            gear.rating,
+            gear.consumeCapacity,
+            gear.quantity
+          );
+          // this creates the link to armour modification
+          em.create(AugmentationIncludedGears, stagedIncludedGear);
         }
       }
     }

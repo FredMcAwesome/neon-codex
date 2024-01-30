@@ -14,14 +14,14 @@ import { z as zod } from "zod";
 import { weaponTypeEnum } from "@shadowrun/common/build/enums.js";
 import { ref } from "@mikro-orm/postgresql";
 import { Skills } from "../../models/rpg/abilities/skillModel.js";
-import { WeaponRanges } from "../../models/rpg/gear/combatGear/helperTables/weaponRangeModel.js";
+import { WeaponRanges } from "../../models/rpg/equipment/combat/helperTables/weaponRangeModel.js";
 import {
   Weapons,
   MeleeWeapons,
   FirearmWeapons,
   ProjectileWeapons,
   Explosives,
-} from "../../models/rpg/gear/combatGear/weaponModel.js";
+} from "../../models/rpg/equipment/combat/weaponModel.js";
 export const WeaponDBSchema = zod
   .discriminatedUnion("type", [
     FirearmWeaponSchema.omit({ relatedSkill: true }),

@@ -5,7 +5,7 @@ import {
   firearmWeaponTypeEnum,
   projectileWeaponTypeEnum,
   weaponTypeEnum,
-  firearmAccessoryMountLocationEnum,
+  weaponAccessoryMountLocationEnum,
   damageAnnotationEnum,
   damageTypeEnum,
 } from "../../enums.js";
@@ -47,7 +47,7 @@ export const RequirementsSchema = zod
       )
     ),
     accessoryMounts: zod.optional(
-      zod.array(zod.nativeEnum(firearmAccessoryMountLocationEnum))
+      zod.array(zod.nativeEnum(weaponAccessoryMountLocationEnum))
     ),
     requiredDamage: zod.optional(WeaponDamageRequirementsSchema),
     hostArmour: zod.optional(zod.string()),

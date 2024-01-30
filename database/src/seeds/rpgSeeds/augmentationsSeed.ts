@@ -8,8 +8,8 @@ import {
   Augmentations,
   Biowares,
   Cyberwares,
-} from "../../models/rpg/gear/augmentationGear/augmentationModel.js";
-import { augmentationTypeEnum } from "@shadowrun/common/src/enums.js";
+} from "../../models/rpg/equipment/bodyModification/augmentationModel.js";
+import { augmentationTypeEnum } from "@shadowrun/common/build/enums.js";
 
 export const getAugmentations = function () {
   const currentPath = import.meta.url;

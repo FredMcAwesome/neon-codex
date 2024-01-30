@@ -30,8 +30,8 @@ import {
   convertSubsystemCategory,
   convertCyberwareRating,
 } from "./CyberwareParserHelper.js";
-import { convertXmlBonus } from "../common/BonusHelper.js";
-import { convertRequirements } from "../common/RequiredHelper.js";
+import { convertXmlBonus } from "../common/BonusParserHelper.js";
+import { convertRequirements } from "../common/RequiredParserHelper.js";
 import {
   augmentationTypeEnum,
   availabilityEnum,
@@ -210,7 +210,7 @@ function convertCyberware(cyberware: CyberwareXmlType) {
     cyberware.minrating !== undefined
       ? convertCyberwareRating(cyberware.minrating)
       : [1];
-  const ratingLabel = convertRatingMeaning(cyberware.ratinglabel);
+  const ratingMeaning = convertRatingMeaning(cyberware.ratinglabel);
 
   const addWeapon =
     cyberware.addweapon === undefined
@@ -373,7 +373,7 @@ function convertCyberware(cyberware: CyberwareXmlType) {
     wirelessBonus: wirelessBonus,
     wirelessPairBonus: wirelessPairBonus,
     wirelessPairInclude: wirelessPairInclude,
-    gearList: gears,
+    includedGearList: gears,
     subsystemList: subsystemList,
     forceGrade: forceGrade,
     deviceRating: deviceRating,
@@ -389,7 +389,7 @@ function convertCyberware(cyberware: CyberwareXmlType) {
     essenceCost: essenceCost,
     modification: cyberwareModification,
     rating: { minimum: minRating, maximum: maxRating },
-    ratingLabel: ratingLabel,
+    ratingMeaning: ratingMeaning,
     addWeapon: addWeapon,
     ...(blockedMountList.length > 0 && { blockedMountList: blockedMountList }),
     selectSide: selectSide,

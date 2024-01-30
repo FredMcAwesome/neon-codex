@@ -4,7 +4,7 @@ import assert from "assert";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { WeaponAccessories } from "../../models/rpg/gear/combatGear/weaponAccessoryModel.js";
+import { WeaponAccessories } from "../../models/rpg/equipment/combat/weaponAccessoryModel.js";
 
 export const getWeaponAccessories = function () {
   const currentPath = import.meta.url;

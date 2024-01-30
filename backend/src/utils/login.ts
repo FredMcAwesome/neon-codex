@@ -2,8 +2,9 @@ import { z as zod } from "zod";
 import * as trpcExpress from "@trpc/server/adapters/express";
 import jwt from "jsonwebtoken";
 import { TOKEN_SECRET } from "@shadowrun/database/build/utils/databaseConfig.js";
-import { Database } from "../utils/db.js";
 import * as logger from "../utils/logger.js";
+import { init } from "./db.js";
+import Users from "@shadowrun/database/build/models/accounts/userModel.js";
 export interface jwtUsername extends jwt.JwtPayload {
   username: string;
 }
@@ -38,6 +39,8 @@ type LoginStatusType = zod.infer<typeof LoginStatus>;
 export async function getLoginStatus({
   req,
 }: trpcExpress.CreateExpressContextOptions): Promise<LoginStatusType> {
+  const db = await init();
+
   // Get auth header value
   const bearerHeader = req.headers["authorization"];
   // Check if bearer is undefined
@@ -51,7 +54,7 @@ export async function getLoginStatus({
         if (e instanceof Error) console.log(e.message);
       }
       if (decoded !== undefined && decoded.username) {
-        const user = await Database.userRepository.findOne({
+        const user = await db.em.findOne(Users, {
           username: decoded.username,
         });
         if (user !== null) {

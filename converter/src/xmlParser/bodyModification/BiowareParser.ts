@@ -11,8 +11,8 @@ import type {
 } from "./BiowareParserSchemas.js";
 import { BiowareListXmlSchema } from "./BiowareParserSchemas.js";
 import { convertBiowareCategory } from "./BiowareParserHelper.js";
-import { convertXmlBonus } from "../common/BonusHelper.js";
-import { convertRequirements } from "../common/RequiredHelper.js";
+import { convertXmlBonus } from "../common/BonusParserHelper.js";
+import { convertRequirements } from "../common/RequiredParserHelper.js";
 import {
   convertAllowGear,
   convertAugmentationGradeList,
@@ -27,7 +27,7 @@ import {
   essenceCostSemantics,
   mountsAugmentationSemantics,
 } from "./augmentationParserHelper.js";
-import { augmentationTypeEnum } from "@shadowrun/common";
+import { augmentationTypeEnum } from "@shadowrun/common/build/enums.js";
 const EssenceCost = Augmentation.EssenceCost;
 const Cost = Augmentation.Cost;
 const Availability = Augmentation.Availability;

@@ -18,7 +18,7 @@ import type {
   spellRangeType,
   SpellType,
 } from "@shadowrun/common/build/schemas/spellSchemas.js";
-import type { RequirementsType } from "@shadowrun/common/src/schemas/shared/requiredSchemas.js";
+import type { RequirementsType } from "@shadowrun/common/build/schemas/shared/requiredSchemas.js";
 
 @Entity()
 export class Spells {

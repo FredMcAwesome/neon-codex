@@ -8,8 +8,8 @@ import {
 } from "@mikro-orm/postgresql";
 import type { Ref } from "@mikro-orm/postgresql";
 import { CustomisedVehicleModifications } from "./activeVehicleModificationModel.js";
-import { Weapons } from "../gear/combatGear/weaponModel.js";
-import { Vehicles } from "../gear/riggerGear/vehicleModel.js";
+import { Weapons } from "../equipment/combat/weaponModel.js";
+import { Vehicles } from "../equipment/rigger/vehicleModel.js";
 
 @Entity()
 export class CustomisedVehicles {

@@ -1,11 +1,4 @@
 import { z as zod } from "zod";
-import type {
-  GearListType,
-  MatrixListType,
-  OtherGearListType,
-} from "./schemas/gearSchemas.js";
-import { MatrixListSchema } from "./schemas/gearSchemas.js";
-import { GearListSchema } from "./schemas/gearSchemas.js";
 
 const ThreadSummarySchema = zod
   .object({
@@ -24,11 +17,5 @@ const JwtTokenSchema = zod
   .strict();
 type JwtTokenType = zod.infer<typeof JwtTokenSchema>;
 
-export type {
-  ThreadListType,
-  JwtTokenType,
-  MatrixListType,
-  OtherGearListType,
-  GearListType,
-};
-export { ThreadListSchema, JwtTokenSchema, MatrixListSchema, GearListSchema };
+export type { ThreadListType, JwtTokenType };
+export { ThreadListSchema, JwtTokenSchema };

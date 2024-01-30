@@ -1,8 +1,8 @@
 import { Entity, ManyToOne, PrimaryKey, Property } from "@mikro-orm/postgresql";
 import type { Ref } from "@mikro-orm/postgresql";
 import { CustomisedArmours } from "./customisedArmourModel.js";
-import { Armours } from "../gear/combatGear/armourModel.js";
-import { ArmourModifications } from "../gear/combatGear/armourModificationModel.js";
+import { Armours } from "../equipment/combat/armourModel.js";
+import { ArmourModifications } from "../equipment/combat/armourModificationModel.js";
 
 // Links to either a custom armour, or a armour in the table.
 // When we create a custom armour that already has a modification

@@ -1,11 +1,11 @@
 import {
-  getThreadListAPI,
-  postLoginAPI,
-  getLoginStatusAPI,
-  getWeaponListAPI,
   getGearListAPI,
-} from "@shadowrun/common";
-import { getSkillListAPI } from "@shadowrun/common/build/api.js";
+  getLoginStatusAPI,
+  getSkillListAPI,
+  getThreadListAPI,
+  getWeaponListAPI,
+  postLoginAPI,
+} from "@shadowrun/common/build/api.js";
 import { SERVER } from "./config.js";
 
 const getThreadList = SERVER + getThreadListAPI;

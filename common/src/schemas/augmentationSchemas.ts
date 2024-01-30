@@ -244,6 +244,7 @@ export const AugmentationPartialSchema = zod
   .object({
     name: zod.string(),
     description: zod.string(),
+    wireless: zod.optional(zod.string()),
     augmentationLimit: zod.optional(AugmentationLimitSchema),
     unavailableGrades: zod.optional(
       zod.array(zod.nativeEnum(augmentationGradeEnum))
@@ -251,7 +252,7 @@ export const AugmentationPartialSchema = zod
     essenceCost: EssenceCostSchema,
     modification: zod.optional(zod.literal(true)),
     rating: RatingSchema,
-    ratingLabel: zod.optional(zod.nativeEnum(ratingMeaningEnum)),
+    ratingMeaning: zod.optional(zod.nativeEnum(ratingMeaningEnum)),
     addWeapon: zod.optional(zod.string()),
     blockedMountList: zod.optional(zod.array(zod.nativeEnum(mountSlotEnum))),
     selectSide: zod.optional(zod.literal(true)),
@@ -261,15 +262,18 @@ export const AugmentationPartialSchema = zod
     requirements: zod.optional(RequirementsSchema),
     forbidden: zod.optional(RequirementsSchema),
     allowedGearList: zod.optional(zod.array(zod.string())),
+    includedGearList: zod.optional(UseGearListSchema),
     allowedGearCategories: zod.optional(
       zod.array(zod.nativeEnum(gearCategoryEnum))
     ),
     userSelectable: zod.optional(zod.literal(false)),
     allowCategoryList: zod.optional(
-      zod.union([
-        zod.array(zod.nativeEnum(cyberwareCategoryEnum)),
-        zod.array(zod.nativeEnum(biowareCategoryEnum)),
-      ])
+      zod.array(
+        zod.union([
+          zod.nativeEnum(cyberwareCategoryEnum),
+          zod.nativeEnum(biowareCategoryEnum),
+        ])
+      )
     ),
     availability: AvailabilityAugmentationSchema,
     cost: CostAugmentationSchema,
@@ -295,7 +299,6 @@ const CyberwareSchema = AugmentationPartialSchema.extend({
   wirelessBonus: zod.optional(BonusSchema),
   wirelessPairBonus: zod.optional(BonusSchema),
   wirelessPairInclude: zod.optional(zod.string()),
-  gearList: zod.optional(UseGearListSchema),
   subsystemList: zod.optional(AugmentationSubsystemListSchema),
   forceGrade: zod.optional(zod.nativeEnum(augmentationGradeEnum)),
   deviceRating: zod.optional(deviceRatingSchema),

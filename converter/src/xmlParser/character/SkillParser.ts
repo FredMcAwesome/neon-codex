@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { mathOperatorEnum } from "@shadowrun/common";
 import {
+  mathOperatorEnum,
   skillCategoryEnum,
   standardCalculationEnum,
 } from "@shadowrun/common/build/enums.js";

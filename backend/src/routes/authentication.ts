@@ -2,17 +2,18 @@ import express from "express";
 import type { Loaded } from "@mikro-orm/postgresql";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { LoginSchema } from "@shadowrun/common";
-import { Users } from "@shadowrun/database/build/models/models.js";
-import { Database } from "../utils/db.js";
+import { LoginSchema } from "@shadowrun/common/build/clientRequest.js";
+import Users from "@shadowrun/database/build/models/accounts/userModel.js";
 import * as logger from "../utils/logger.js";
 import { TOKEN_SECRET } from "@shadowrun/database/build/utils/databaseConfig.js";
 import { router, publicProcedure, adminProcedure } from "../trpc.js";
+import { init } from "../utils/db.js";
 
 export const authenticationRouter = router({
   login: publicProcedure.input(LoginSchema).mutation(async (opts) => {
+    const db = await init();
     const userCredentials = opts.input;
-    const user = await Database.userRepository.findOne({
+    const user = await db.em.findOne(Users, {
       username: userCredentials.username,
     });
     if (user === null) {
@@ -21,7 +22,8 @@ export const authenticationRouter = router({
     return await processPassword(userCredentials.password, user);
   }),
   signup: adminProcedure.input(LoginSchema).mutation(async (opts) => {
-    const user = Database.userRepository.findOne({
+    const db = await init();
+    const user = db.em.findOne(Users, {
       username: opts.input.username,
     });
     if (user !== null) {
@@ -37,13 +39,14 @@ export const authenticationRouter = router({
   }),
 });
 
-function createUser(username: string, password: string) {
+async function createUser(username: string, password: string) {
+  const db = await init();
   const saltRounds = 10;
   return bcrypt
     .hash(password, saltRounds)
     .then((passwordHash) => {
-      return Database.userRepository
-        .findAll()
+      return db.em
+        .findAll(Users)
         .then(async (existingUsers) => {
           if (existingUsers.length !== 0) {
             logger.error(
@@ -53,9 +56,9 @@ function createUser(username: string, password: string) {
           }
           // become admin by manually editting database
           const newUser = new Users(username, passwordHash, false);
-          Database.userRepository.persist(newUser);
+          db.em.persist(newUser);
 
-          await Database.userRepository.flush();
+          await db.em.flush();
           return true;
         })
         .catch((err) => {
@@ -74,7 +77,7 @@ async function processPassword(password: string, user: Loaded<Users, never>) {
   if (correctPW) {
     return createAndSendJWT(user.username);
   } else {
-    throw new Error("Failed to created JWT");
+    throw new Error("Password is incorrect");
   }
 }
 

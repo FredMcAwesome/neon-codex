@@ -1,12 +1,12 @@
 import React from "react";
 import Dropdown from "react-dropdown";
-import { ISkillPoints as ISkillPointItems } from "./PriorityImports.js";
 import { CollapsibleDiv } from "../../utils/CollapsibleDiv.js";
-import {
+import { skillCategoryEnum } from "@shadowrun/common/build/enums.js";
+import type {
   CustomSkillListType,
   CustomSkillType,
 } from "@shadowrun/common/build/schemas/skillSchemas.js";
-import { skillCategoryEnum } from "@shadowrun/common/build/enums.js";
+import type { ISkillPoints } from "./PriorityImports.js";
 
 // first rating empty for no points in skill
 const skillRating = [
@@ -26,8 +26,8 @@ const skillRating = [
 ];
 
 interface IProps {
-  skillPointItems: ISkillPointItems;
-  setSkillPoints: (loadingSkillPoints: ISkillPointItems) => void;
+  skillPointItems: ISkillPoints;
+  setSkillPoints: (loadingSkillPoints: ISkillPoints) => void;
   skillSelections: CustomSkillListType;
   setSkillSelections: (loadingSkillPoints: CustomSkillListType) => void;
 }
@@ -187,7 +187,7 @@ interface ISkillListProp {
     skillGroupPoints: number
   ) => void;
   skillType: skillCategoryEnum;
-  skillPointItems: ISkillPointItems;
+  skillPointItems: ISkillPoints;
 }
 
 const SkillList = function ({

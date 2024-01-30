@@ -1,7 +1,8 @@
 import assert from "assert";
-import { damageTypeEnum, spellCategoryEnum } from "@shadowrun/common";
 import {
+  damageTypeEnum,
   durationEnum,
+  spellCategoryEnum,
   spellDescriptorEnum,
   spellRangeEnum,
   spellTargetEnum,

@@ -2,7 +2,7 @@ import assert from "assert";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { ArmourModifications } from "../../models/rpg/gear/combatGear/armourModificationModel.js";
+import { ArmourModifications } from "../../models/rpg/equipment/combat/armourModificationModel.js";
 import { ArmourModListSchema } from "@shadowrun/common/build/schemas/armourModSchemas.js";
 import type { ArmourModListType } from "@shadowrun/common/build/schemas/armourModSchemas.js";
 

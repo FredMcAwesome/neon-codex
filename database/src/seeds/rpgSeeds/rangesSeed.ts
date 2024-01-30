@@ -4,7 +4,7 @@ import assert from "assert";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { WeaponRanges } from "../../models/rpg/gear/combatGear/helperTables/weaponRangeModel.js";
+import { WeaponRanges } from "../../models/rpg/equipment/combat/helperTables/weaponRangeModel.js";
 
 export const getRanges = function () {
   const currentPath = import.meta.url;

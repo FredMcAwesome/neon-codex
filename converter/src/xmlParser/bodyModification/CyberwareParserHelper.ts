@@ -12,7 +12,7 @@ import type {
 import { mountLocationXmlEnum } from "./CyberwareParserSchemas.js";
 import { cyberwareXmlCategoryEnum } from "./CyberwareParserSchemas.js";
 import { convertXmlGears } from "../common/ParserHelper.js";
-import type { AugmentationSubsystemListType } from "@shadowrun/common/src/schemas/augmentationSchemas.js";
+import type { AugmentationSubsystemListType } from "@shadowrun/common/build/schemas/augmentationSchemas.js";
 
 export const convertCyberwareCategory = function (
   category: cyberwareXmlCategoryEnum

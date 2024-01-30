@@ -1,12 +1,12 @@
 import { Entity, ManyToOne, PrimaryKey, Property } from "@mikro-orm/postgresql";
 import type { Ref } from "@mikro-orm/postgresql";
 import { ActiveWeaponAccessories } from "./activeWeaponAccessoryModel.js";
-import { Augmentations } from "../gear/augmentationGear/augmentationModel.js";
-import { Armours } from "../gear/combatGear/armourModel.js";
-import { ArmourModifications } from "../gear/combatGear/armourModificationModel.js";
-import { WeaponAccessories } from "../gear/combatGear/weaponAccessoryModel.js";
-import { Gears } from "../gear/otherGear/gearModel.js";
-import { Vehicles } from "../gear/riggerGear/vehicleModel.js";
+import { Augmentations } from "../equipment/bodyModification/augmentationModel.js";
+import { Armours } from "../equipment/combat/armourModel.js";
+import { ArmourModifications } from "../equipment/combat/armourModificationModel.js";
+import { WeaponAccessories } from "../equipment/combat/weaponAccessoryModel.js";
+import { Gears } from "../equipment/other/gearModel.js";
+import { Vehicles } from "../equipment/rigger/vehicleModel.js";
 
 @Entity({
   discriminatorColumn: "discr",

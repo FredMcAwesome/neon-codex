@@ -2,10 +2,9 @@ import assert from "assert";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { VehicleListSchema } from "@shadowrun/common/build/schemas/riggerSchemas.js";
-import type { VehicleListType } from "@shadowrun/common/build/schemas/riggerSchemas.js";
-import { vehicleTypeEnum } from "@shadowrun/common";
+
 import {
+  vehicleTypeEnum,
   weaponMountControlEnum,
   weaponMountFlexibilityEnum,
   weaponMountSizeEnum,
@@ -17,8 +16,12 @@ import {
   Watercrafts,
   Aircrafts,
   Drones,
-} from "../../models/rpg/gear/riggerGear/vehicleModel.js";
-import { WeaponMounts } from "../../models/rpg/gear/riggerGear/weaponMountModel.js";
+} from "../../models/rpg/equipment/rigger/vehicleModel.js";
+import { WeaponMounts } from "../../models/rpg/equipment/rigger/weaponMountModel.js";
+import {
+  type VehicleListType,
+  VehicleListSchema,
+} from "@shadowrun/common/build/schemas/vehicleSchemas.js";
 
 export const getVehicles = function () {
   const currentPath = import.meta.url;

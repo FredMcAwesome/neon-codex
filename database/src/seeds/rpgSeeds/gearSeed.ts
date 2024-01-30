@@ -2,13 +2,13 @@ import assert from "assert";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { OtherGearListSchema } from "@shadowrun/common/build/schemas/otherGearSchemas.js";
-import type { OtherGearListType } from "@shadowrun/common/build/schemas/otherGearSchemas.js";
-import { Gears } from "../../models/rpg/gear/otherGear/gearModel.js";
+import { GearListSchema } from "@shadowrun/common/build/schemas/gearSchemas.js";
+import type { GearListType } from "@shadowrun/common/build/schemas/gearSchemas.js";
+import { Gears } from "../../models/rpg/equipment/other/gearModel.js";
 
 export const getGears = function () {
   const currentPath = import.meta.url;
-  let unlinkedGears: OtherGearListType;
+  let unlinkedGears: GearListType;
   const relativeConverterPath = "converter/jsonFiles/gears.json";
   const rootPath = "../../../../../";
   const jsonString = fs.readFileSync(
@@ -18,7 +18,7 @@ export const getGears = function () {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const rawJson = JSON.parse(jsonString);
-  const gearListParsed = OtherGearListSchema.safeParse(rawJson);
+  const gearListParsed = GearListSchema.safeParse(rawJson);
   if (gearListParsed.success) {
     console.log("Gears all g");
     unlinkedGears = gearListParsed.data;

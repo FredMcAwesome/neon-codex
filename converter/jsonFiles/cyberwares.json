@@ -115,6 +115,12 @@
       "minimum": [1],
       "maximum": [3]
     },
+    "includedGearList": [
+      {
+        "name": "Sim Module, Hot",
+        "category": "Commlink Accessories"
+      }
+    ],
     "availability": {
       "rating": [
         {
@@ -139,12 +145,6 @@
     "type": "Cyberware",
     "subtype": "Headware",
     "capacity": [0],
-    "gearList": [
-      {
-        "name": "Sim Module, Hot",
-        "category": "Commlink Accessories"
-      }
-    ],
     "subsystemList": {
       "cyberwareList": [
         {
@@ -254,6 +254,13 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "includedGearList": [
+      {
+        "name": "Universal Connector Cord",
+        "rating": 1,
+        "category": "Tools"
+      }
+    ],
     "availability": {
       "rating": [2],
       "restriction": "Legal"
@@ -263,14 +270,7 @@
     "page": 452,
     "type": "Cyberware",
     "subtype": "Headware",
-    "capacity": [0],
-    "gearList": [
-      {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
-      }
-    ]
+    "capacity": [0]
   },
   {
     "name": "Data Lock",
@@ -4582,7 +4582,7 @@
       "minimum": [1],
       "maximum": [10]
     },
-    "ratingLabel": "10 Centimeter per Rating Level",
+    "ratingMeaning": "10 Centimeter per Rating Level",
     "availability": {
       "rating": [0],
       "restriction": "Legal"
@@ -6084,7 +6084,7 @@
       "minimum": [1],
       "maximum": [2]
     },
-    "ratingLabel": "1 Meter per Rating Level",
+    "ratingMeaning": "1 Meter per Rating Level",
     "blockedMountList": ["Elbow", "Knee"],
     "requirements": {},
     "availability": {
@@ -10071,6 +10071,13 @@
       "minimum": [1],
       "maximum": [3]
     },
+    "includedGearList": [
+      {
+        "name": "Universal Connector Cord",
+        "rating": 1,
+        "category": "Tools"
+      }
+    ],
     "allowedGearCategories": ["Common Programs", "Hacking Programs"],
     "availability": {
       "rating": [4],
@@ -10094,14 +10101,7 @@
     "type": "Cyberware",
     "subtype": "Headware",
     "programs": "Rating",
-    "capacity": [0],
-    "gearList": [
-      {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
-      }
-    ]
+    "capacity": [0]
   },
   {
     "name": "Enhanced Augmented Reality Reflex System",

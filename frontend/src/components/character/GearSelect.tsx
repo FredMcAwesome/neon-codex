@@ -1,56 +1,28 @@
-import {
-  // AugmentationType,
-  // augmentationTypeEnum,
-  // magicalGearTypeEnum,
-  // matrixWareAccessoryTypeEnum,
-  // matrixWareTypeEnum,
-  // otherWareTypeEnum,
-  // vehicleDroneTypeEnum,
-  weaponTypeEnum,
-} from "@shadowrun/common";
-import type {
-  GearListType,
-  // MatrixType
-} from "@shadowrun/common";
 import { CollapsibleDiv } from "../../utils/CollapsibleDiv.js";
-// import {
-//   AudioDeviceTypeInformationSchema,
-//   AudioEnhancementTypeInformationSchema,
-//   IdentificationTypeInformationSchema,
-//   MatrixAccessoryType,
-//   electronicTypeInformationType,
-//   OpticalDeviceTypeInformationSchema,
-//   RFIDTypeInformationSchema,
-//   SecurityDeviceTypeInformationSchema,
-//   ToolTypeInformationSchema,
-//   VisionEnhancementTypeInformationSchema,
-//   electronicAccessoryTypeInformationType,
-// } from "@shadowrun/common/build/schemas/electronicSchemas.js";
-// import { OtherGearType } from "@shadowrun/common/build/schemas/otherGearSchema.js";
-// import { MagicGearType } from "@shadowrun/common/build/schemas/magicalSchemas.js";
-// import { VehiclesAndDronesType } from "@shadowrun/common/build/schemas/riggerSchema.js";
 import { CollapsibleGearDiv } from "./GearHelper.js";
 import { costCalculation } from "../../utils/calculations.js";
 import type {
   CostWeaponType,
-  WeaponLinkedListType,
-  WeaponLinkedType,
+  WeaponSummaryListType,
+  WeaponSummaryType,
 } from "@shadowrun/common/build/schemas/weaponSchemas.js";
 import { formatDamage } from "@shadowrun/common/build/formatters/weaponFormatter.js";
 import { trpc } from "../../utils/trpc.js";
 import uniqid from "uniqid";
+import { weaponTypeEnum } from "@shadowrun/common/build/enums.js";
+import type { EquipmentListType } from "@shadowrun/common/build/schemas/equipmentSchemas.js";
 
 interface IProps {
-  gearSelected: GearListType;
-  setGearSelected: (loadingGearSelected: GearListType) => void;
+  equipmentSelected: EquipmentListType;
+  setEquipmentSelected: (loadingEquipmentSelected: EquipmentListType) => void;
   nuyen: number;
   setNuyen: (nuyen: number) => void;
 }
 
-export const GearSelect = function (props: IProps) {
+export const EquipmentSelect = function (props: IProps) {
   const { data, error, isError, isLoading } = trpc.character.all.useQuery();
   if (isLoading) {
-    return <div>Loading gear...</div>;
+    return <div>Loading equipment...</div>;
   }
 
   if (isError) {
@@ -62,88 +34,36 @@ export const GearSelect = function (props: IProps) {
     }
   }
 
-  const gearSelected = props.gearSelected;
+  const equipmentSelected = props.equipmentSelected;
 
-  const addWeapon = function (weapon: WeaponLinkedType) {
-    const gear = { ...gearSelected };
-    gear.weapons.push(weapon);
-    props.setGearSelected(gear);
+  const addWeapon = function (weapon: WeaponSummaryType) {
+    const equipment = { ...equipmentSelected };
+    equipment.weapons.push(weapon);
+    props.setEquipmentSelected(equipment);
     props.setNuyen(
-      props.nuyen -
-        costCalculation<CostWeaponType>(
-          weapon.cost,
-          weapon.rating !== undefined
-            ? {
-                rating: weapon.rating,
-              }
-            : {}
-        )
+      props.nuyen - costCalculation<CostWeaponType>(weapon.cost, {})
     );
   };
-  const removeWeapon = function (weapon: WeaponLinkedType, index: number) {
-    const gear = { ...gearSelected };
-    if (gear.weapons[index] === weapon) {
-      gear.weapons.splice(index, 1);
-      props.setGearSelected(gear);
+  const removeWeapon = function (weapon: WeaponSummaryType, index: number) {
+    const equipment = { ...equipmentSelected };
+    if (equipment.weapons[index] === weapon) {
+      equipment.weapons.splice(index, 1);
+      props.setEquipmentSelected(equipment);
       props.setNuyen(
-        props.nuyen +
-          costCalculation<CostWeaponType>(
-            weapon.cost,
-            weapon.rating !== undefined
-              ? {
-                  rating: weapon.rating,
-                }
-              : {}
-          )
+        props.nuyen + costCalculation<CostWeaponType>(weapon.cost, {})
       );
     } else {
       console.error("No weapon at index: " + index);
     }
   };
-  // const addElectronics = function (electronic: MatrixType) {
-  //   const gear = Object.assign({}, gearSelected);
-  //   gear.electronics.push(electronic);
-  //   props.setGearSelected(gear);
-  //   props.setNuyen(props.nuyen - costCalculation(electronic.cost));
-  // };
-  // const removeElectronics = function (electronic: MatrixType, index: number) {
-  //   const gear = Object.assign({}, gearSelected);
-  //   if (gear.electronics[index] === electronic) {
-  //     gear.electronics.splice(index, 1);
-  //     props.setGearSelected(gear);
-  //     props.setNuyen(props.nuyen + costCalculation(electronic.cost));
-  //   } else {
-  //     console.error("No electronic at index: " + index);
-  //   }
-  // };
-  // const addElectronicAccessories = function (
-  //   electronicAccessory: MatrixAccessoryType
-  // ) {
-  //   const gear = Object.assign({}, gearSelected);
-  //   gear.electronicAccessories.push(electronicAccessory);
-  //   props.setGearSelected(gear);
-  //   props.setNuyen(props.nuyen - costCalculation(electronicAccessory.cost));
-  // };
-  // const removeElectronicAccessories = function (
-  //   electronicAccessory: MatrixAccessoryType,
-  //   index: number
-  // ) {
-  //   const gear = Object.assign({}, gearSelected);
-  //   if (gear.electronicAccessories[index] === electronicAccessory) {
-  //     gear.electronicAccessories.splice(index, 1);
-  //     props.setGearSelected(gear);
-  //     props.setNuyen(props.nuyen + costCalculation(electronicAccessory.cost));
-  //   } else {
-  //     console.error("No electronic accessory at index: " + index);
-  //   }
-  // };
-  // const addOtherGear = function (other: OtherGearType) {
+
+  // const addGear = function (other: GearType) {
   //   const gear = Object.assign({}, gearSelected);
   //   gear.otherGear.push(other);
   //   props.setGearSelected(gear);
   //   props.setNuyen(props.nuyen - costCalculation(other.cost));
   // };
-  // const removeOtherGear = function (other: OtherGearType, index: number) {
+  // const removeGear = function (other: GearType, index: number) {
   //   const gear = Object.assign({}, gearSelected);
   //   if (gear.otherGear[index] === other) {
   //     gear.otherGear.splice(index, 1);
@@ -172,42 +92,23 @@ export const GearSelect = function (props: IProps) {
   //     console.error("No augmentation at index: " + index);
   //   }
   // };
-  // const addMagicalEquipment = function (magicalItem: MagicGearType) {
+  // const addVehicles = function (
+  //   vehicle: VehiclesType
+  // ) {
   //   const gear = Object.assign({}, gearSelected);
-  //   gear.magicalEquipment.push(magicalItem);
+  //   gear.vehicles.push(vehicle);
   //   props.setGearSelected(gear);
-  //   props.setNuyen(props.nuyen - costCalculation(magicalItem.cost));
+  //   props.setNuyen(props.nuyen - costCalculation(vehicle.cost));
   // };
-  // const removeMagicalEquipment = function (
-  //   magicalItem: MagicGearType,
+  // const removeVehicles = function (
+  //   vehicle: VehiclesType,
   //   index: number
   // ) {
   //   const gear = Object.assign({}, gearSelected);
-  //   if (gear.magicalEquipment[index] === magicalItem) {
-  //     gear.magicalEquipment.splice(index, 1);
+  //   if (gear.vehicles[index] === vehicle) {
+  //     gear.vehicles.splice(index, 1);
   //     props.setGearSelected(gear);
-  //     props.setNuyen(props.nuyen + costCalculation(magicalItem.cost));
-  //   } else {
-  //     console.error("No magical equipment at index: " + index);
-  //   }
-  // };
-  // const addVehiclesAndDrones = function (
-  //   vehicleOrDrone: VehiclesAndDronesType
-  // ) {
-  //   const gear = Object.assign({}, gearSelected);
-  //   gear.vehiclesAndDrones.push(vehicleOrDrone);
-  //   props.setGearSelected(gear);
-  //   props.setNuyen(props.nuyen - costCalculation(vehicleOrDrone.cost));
-  // };
-  // const removeVehiclesAndDrones = function (
-  //   vehicleOrDrone: VehiclesAndDronesType,
-  //   index: number
-  // ) {
-  //   const gear = Object.assign({}, gearSelected);
-  //   if (gear.vehiclesAndDrones[index] === vehicleOrDrone) {
-  //     gear.vehiclesAndDrones.splice(index, 1);
-  //     props.setGearSelected(gear);
-  //     props.setNuyen(props.nuyen + costCalculation(vehicleOrDrone.cost));
+  //     props.setNuyen(props.nuyen + costCalculation(vehicle.cost));
   //   } else {
   //     console.error("No vehicle/drone at index: " + index);
   //   }
@@ -244,186 +145,22 @@ export const GearSelect = function (props: IProps) {
           />
         </div>
       </CollapsibleDiv>
-      {/* <CollapsibleDiv title="Electronics">
-        <div id="Matrix_Div">
-          <MatrixDiv
-            title={"Commlinks"}
-            data={data.electronics}
-            matrixWareType={matrixWareTypeEnum.Commlink}
-            addElectronics={addElectronics}
-          />
-          <MatrixDiv
-            title={"Cyberdecks"}
-            data={data.electronics}
-            matrixWareType={matrixWareTypeEnum.Cyberdeck}
-            addElectronics={addElectronics}
-          />
-          <MatrixDiv
-            title={"RFID Tags"}
-            data={data.electronics}
-            matrixWareType={matrixWareTypeEnum.RFIDTag}
-            addElectronics={addElectronics}
-          />
-          <MatrixDiv
-            title={"Communication and Countermeasures"}
-            data={data.electronics}
-            matrixWareType={matrixWareTypeEnum.CommunicationCountermeasure}
-            addElectronics={addElectronics}
-          />
-          <MatrixDiv
-            title={"Software"}
-            data={data.electronics}
-            matrixWareType={matrixWareTypeEnum.Software}
-            addElectronics={addElectronics}
-          />
-          <MatrixDiv
-            title={"Skillsofts"}
-            data={data.electronics}
-            matrixWareType={matrixWareTypeEnum.Skillsoft}
-            addElectronics={addElectronics}
-          />
-        </div>
-      </CollapsibleDiv>
-      <CollapsibleDiv title="Electronic Accessories">
-        <div id="Matrix_Accessories_Div">
-          <MatrixAccessoriesDiv
-            title={"Cred Sticks"}
-            data={data.electronicAccessories}
-            matrixWareAccessoryType={matrixWareAccessoryTypeEnum.CredStick}
-            addElectronicAccessories={addElectronicAccessories}
-          />
-          <MatrixAccessoriesDiv
-            title={"Identification"}
-            data={data.electronicAccessories}
-            matrixWareAccessoryType={matrixWareAccessoryTypeEnum.Identification}
-            addElectronicAccessories={addElectronicAccessories}
-          />
-          <MatrixAccessoriesDiv
-            title={"Tools"}
-            data={data.electronicAccessories}
-            matrixWareAccessoryType={matrixWareAccessoryTypeEnum.Tool}
-            addElectronicAccessories={addElectronicAccessories}
-          />
-          <MatrixAccessoriesDiv
-            title={"Optical and Imaging Devices"}
-            data={data.electronicAccessories}
-            matrixWareAccessoryType={matrixWareAccessoryTypeEnum.OpticalDevice}
-            addElectronicAccessories={addElectronicAccessories}
-          />
-          <MatrixAccessoriesDiv
-            title={"Vision Enhancements"}
-            data={data.electronicAccessories}
-            matrixWareAccessoryType={
-              matrixWareAccessoryTypeEnum.VisionEnhancement
-            }
-            addElectronicAccessories={addElectronicAccessories}
-          />
-          <MatrixAccessoriesDiv
-            title={"Audio Devices"}
-            data={data.electronicAccessories}
-            matrixWareAccessoryType={matrixWareAccessoryTypeEnum.AudioDevice}
-            addElectronicAccessories={addElectronicAccessories}
-          />
-          <MatrixAccessoriesDiv
-            title={"Audio Enhancements"}
-            data={data.electronicAccessories}
-            matrixWareAccessoryType={
-              matrixWareAccessoryTypeEnum.AudioEnhancement
-            }
-            addElectronicAccessories={addElectronicAccessories}
-          />
-          <MatrixAccessoriesDiv
-            title={"Sensors"}
-            data={data.electronicAccessories}
-            matrixWareAccessoryType={matrixWareAccessoryTypeEnum.Sensor}
-            addElectronicAccessories={addElectronicAccessories}
-          />
-          <MatrixAccessoriesDiv
-            title={"Security Devices"}
-            data={data.electronicAccessories}
-            matrixWareAccessoryType={matrixWareAccessoryTypeEnum.SecurityDevice}
-            addElectronicAccessories={addElectronicAccessories}
-          />
-          <MatrixAccessoriesDiv
-            title={"Breaking and Entering"}
-            data={data.electronicAccessories}
-            matrixWareAccessoryType={
-              matrixWareAccessoryTypeEnum.BreakingAndEnteringDevice
-            }
-            addElectronicAccessories={addElectronicAccessories}
-          />
-        </div>
-      </CollapsibleDiv>
-      <CollapsibleDiv title="Other Gear">
-        <div id="OtherGear_Div">
-          <OtherGearDiv
+      {/* <CollapsibleDiv title="Gear">
+        <div id="Gear_Div">
+          <GearDiv
             title={"Industrial Chemicals"}
             data={data.otherGear}
             otherWareType={otherWareTypeEnum.IndustrialChemical}
-            addOtherGear={addOtherGear}
-          />
-          <OtherGearDiv
-            title={"Survival Gear"}
-            data={data.otherGear}
-            otherWareType={otherWareTypeEnum.SurvivalGear}
-            addOtherGear={addOtherGear}
-          />
-          <OtherGearDiv
-            title={"Grapple Gun"}
-            data={data.otherGear}
-            otherWareType={otherWareTypeEnum.GrappleGun}
-            addOtherGear={addOtherGear}
-          />
-          <OtherGearDiv
-            title={"Biotech"}
-            data={data.otherGear}
-            otherWareType={otherWareTypeEnum.Biotech}
-            addOtherGear={addOtherGear}
-          />
-          <OtherGearDiv
-            title={"DocWagon Contract"}
-            data={data.otherGear}
-            otherWareType={otherWareTypeEnum.DocWagonContract}
-            addOtherGear={addOtherGear}
-          />
-          <OtherGearDiv
-            title={"Slap Patches"}
-            data={data.otherGear}
-            otherWareType={otherWareTypeEnum.SlapPatch}
-            addOtherGear={addOtherGear}
+            addGear={addGear}
           />
         </div>
       </CollapsibleDiv>
       <CollapsibleDiv title="Augmentations">
         <div id="Augmentations_Div">
           <AugmentationsDiv
-            title={"Headware"}
+            title={"Cyberware"}
             data={data.augmentations}
-            augmentationType={augmentationTypeEnum.Headware}
-            addAugmentations={addAugmentations}
-          />
-          <AugmentationsDiv
-            title={"Eyeware"}
-            data={data.augmentations}
-            augmentationType={augmentationTypeEnum.Eyeware}
-            addAugmentations={addAugmentations}
-          />
-          <AugmentationsDiv
-            title={"Earware"}
-            data={data.augmentations}
-            augmentationType={augmentationTypeEnum.Earware}
-            addAugmentations={addAugmentations}
-          />
-          <AugmentationsDiv
-            title={"Bodyware"}
-            data={data.augmentations}
-            augmentationType={augmentationTypeEnum.Bodyware}
-            addAugmentations={addAugmentations}
-          />
-          <AugmentationsDiv
-            title={"Cyberlimbs"}
-            data={data.augmentations}
-            augmentationType={augmentationTypeEnum.Cyberlimbs}
+            augmentationType={augmentationTypeEnum.Cyberware}
             addAugmentations={addAugmentations}
           />
           <AugmentationsDiv
@@ -432,61 +169,33 @@ export const GearSelect = function (props: IProps) {
             augmentationType={augmentationTypeEnum.Bioware}
             addAugmentations={addAugmentations}
           />
-          <AugmentationsDiv
-            title={"Cultured Bioware"}
-            data={data.augmentations}
-            augmentationType={augmentationTypeEnum.CulturedBioware}
-            addAugmentations={addAugmentations}
-          />
-        </div>
-      </CollapsibleDiv>
-      <CollapsibleDiv title="Magical Equipment">
-        <div id="Magical_Equipment_Div">
-          <MagicalEquipmentDiv
-            title={"Foci"}
-            data={data.magicalEquipment}
-            magicalGearType={magicalGearTypeEnum.Focus}
-            addMagicalEquipment={addMagicalEquipment}
-          />
-          <MagicalEquipmentDiv
-            title={"Formulae"}
-            data={data.magicalEquipment}
-            magicalGearType={magicalGearTypeEnum.Formula}
-            addMagicalEquipment={addMagicalEquipment}
-          />
-          <MagicalEquipmentDiv
-            title={"Magical Supply"}
-            data={data.magicalEquipment}
-            magicalGearType={magicalGearTypeEnum.Supply}
-            addMagicalEquipment={addMagicalEquipment}
-          />
         </div>
       </CollapsibleDiv>
       <CollapsibleDiv title="Vehicles and Drones">
-        <div id="Vehicles_and_Drones">
-          <VehiclesAndDronesDiv
+        <div id="Vehicles">
+          <VehiclesDiv
             title={"Groundcraft"}
-            data={data.vehiclesAndDrones}
-            vehicleAndDroneType={vehicleDroneTypeEnum.Groundcrafts}
-            addVehiclesAndDrones={addVehiclesAndDrones}
+            data={data.vehicles}
+            vehicleType={vehicleTypeEnum.Groundcrafts}
+            addVehicles={addVehicles}
           />
-          <VehiclesAndDronesDiv
+          <VehiclesDiv
             title={"Watercraft"}
-            data={data.vehiclesAndDrones}
-            vehicleAndDroneType={vehicleDroneTypeEnum.Watercrafts}
-            addVehiclesAndDrones={addVehiclesAndDrones}
+            data={data.vehicles}
+            vehicleType={vehicleTypeEnum.Watercrafts}
+            addVehicles={addVehicles}
           />
-          <VehiclesAndDronesDiv
+          <VehiclesDiv
             title={"Aircraft"}
-            data={data.vehiclesAndDrones}
-            vehicleAndDroneType={vehicleDroneTypeEnum.Aircrafts}
-            addVehiclesAndDrones={addVehiclesAndDrones}
+            data={data.vehicles}
+            vehicleType={vehicleTypeEnum.Aircrafts}
+            addVehicles={addVehicles}
           />
-          <VehiclesAndDronesDiv
+          <VehiclesDiv
             title={"Drones"}
-            data={data.vehiclesAndDrones}
-            vehicleAndDroneType={vehicleDroneTypeEnum.Drones}
-            addVehiclesAndDrones={addVehiclesAndDrones}
+            data={data.vehicles}
+            vehicleType={vehicleTypeEnum.Drones}
+            addVehicles={addVehicles}
           />
         </div>
       </CollapsibleDiv> */}
@@ -497,7 +206,7 @@ export const GearSelect = function (props: IProps) {
       <div>
         <h3>Weapons</h3>
         <div>
-          {gearSelected.weapons.map((weapon, index) => {
+          {equipmentSelected.weapons.map((weapon, index) => {
             const addItem = function () {
               addWeapon(weapon);
             };
@@ -526,54 +235,7 @@ export const GearSelect = function (props: IProps) {
             );
           })}
         </div>
-        {/* <h3>Electronics</h3>
-        <div>
-          {gearSelected.electronics.map((electronic, index) => {
-            const addItem = function () {
-              addElectronics(electronic);
-            };
-            const removeItem = function () {
-              removeElectronics(electronic, index);
-            };
-            const description = checkForElectronicDescription(
-              electronic.typeInformation
-            );
-            return (
-              <CollapsibleGearDiv
-                title={electronic.name}
-                addItem={addItem}
-                removeItem={removeItem}
-              >
-                {description && <div>{description}</div>}
-              </CollapsibleGearDiv>
-            );
-          })}
-        </div>
-        <h3>Electronic Accessories</h3>
-        <div>
-          {gearSelected.electronicAccessories.map(
-            (electronicAccessory, index) => {
-              const addItem = function () {
-                addElectronicAccessories(electronicAccessory);
-              };
-              const removeItem = function () {
-                removeElectronicAccessories(electronicAccessory, index);
-              };
-              const description = checkForElectronicAccessoryDescription(
-                electronicAccessory.typeInformation
-              );
-              return (
-                <CollapsibleGearDiv
-                  title={electronicAccessory.name}
-                  addItem={addItem}
-                  removeItem={removeItem}
-                >
-                  {description && <div>{description}</div>}
-                </CollapsibleGearDiv>
-              );
-            }
-          )}
-        </div>
+        {/* 
         <h3>Other Gear</h3>
         <div>
           {gearSelected.otherGear.map((otherGear, index) => {
@@ -614,42 +276,22 @@ export const GearSelect = function (props: IProps) {
             );
           })}
         </div>
-        <h3>Magical Equipment</h3>
+        <h3>Vehicles</h3>
         <div>
-          {gearSelected.magicalEquipment.map((magicalEquipment, index) => {
+          {gearSelected.vehicles.map((vehicles, index) => {
             const addItem = function () {
-              addMagicalEquipment(magicalEquipment);
+              addVehicles(vehicles);
             };
             const removeItem = function () {
-              removeMagicalEquipment(magicalEquipment, index);
+              removeVehicles(vehicles, index);
             };
             return (
               <CollapsibleGearDiv
-                title={magicalEquipment.name}
+                title={vehicles.name}
                 addItem={addItem}
                 removeItem={removeItem}
               >
-                <div>{magicalEquipment.description}</div>
-              </CollapsibleGearDiv>
-            );
-          })}
-        </div>
-        <h3>Vehicles And Drones</h3>
-        <div>
-          {gearSelected.vehiclesAndDrones.map((vehiclesAndDrones, index) => {
-            const addItem = function () {
-              addVehiclesAndDrones(vehiclesAndDrones);
-            };
-            const removeItem = function () {
-              removeVehiclesAndDrones(vehiclesAndDrones, index);
-            };
-            return (
-              <CollapsibleGearDiv
-                title={vehiclesAndDrones.name}
-                addItem={addItem}
-                removeItem={removeItem}
-              >
-                <div>{vehiclesAndDrones.description}</div>
+                <div>{vehicles.description}</div>
               </CollapsibleGearDiv>
             );
           })}
@@ -661,9 +303,9 @@ export const GearSelect = function (props: IProps) {
 
 interface IWeaponDivProps {
   title: string;
-  data: WeaponLinkedListType;
+  data: WeaponSummaryListType;
   weaponType: weaponTypeEnum;
-  addWeapon: (weapon: WeaponLinkedType) => void;
+  addWeapon: (weapon: WeaponSummaryType) => void;
 }
 
 const WeaponDiv = function ({
@@ -676,7 +318,7 @@ const WeaponDiv = function ({
     <CollapsibleDiv title={title}>
       <ul>
         {data
-          .filter((gear) => gear.typeInformation.type === weaponType)
+          .filter((gear) => gear.type === weaponType)
           .map((weapon) => {
             const addItem = function () {
               addWeapon(weapon);
@@ -689,7 +331,7 @@ const WeaponDiv = function ({
                     <div>Damage: {formatDamage(weapon.damage)}</div>
                   </div>
                 </CollapsibleGearDiv>
-                <div>{weapon.typeInformation.subtype}</div>
+                <div>{weapon.subtype}</div>
               </li>
             );
           })}

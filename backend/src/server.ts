@@ -1,9 +1,12 @@
-import app, { dbInitialised } from "./app.js";
+import { bootstrap } from "./app.js";
 import { PORT } from "@shadowrun/database/build/utils/databaseConfig.js";
 import * as logger from "./utils/logger.js";
 
-await dbInitialised;
+const { app, appRouter } = await bootstrap();
 
 app.listen(PORT, () => {
   logger.log(`Server running on port ${PORT}`);
 });
+
+export default app;
+export type AppRouter = typeof appRouter;

@@ -20,16 +20,16 @@ import {
   slotSemantics,
   weaponMountCategoriesSemantics,
 } from "./VehicleModHelper.js";
-import { convertXmlBonus } from "../common/BonusHelper.js";
-import { convertRequirements } from "../common/RequiredHelper.js";
-import { ammoSemantics } from "../combatGear/WeaponParserHelper.js";
+import { convertXmlBonus } from "../common/BonusParserHelper.js";
+import { convertRequirements } from "../common/RequiredParserHelper.js";
+import { ammoSemantics } from "../combat/WeaponParserHelper.js";
 import Weapons from "../../grammar/weapons.ohm-bundle.js";
 const Ammo = Weapons.Ammo;
 import type { AmmunitionType } from "@shadowrun/common/build/schemas/weaponSchemas.js";
 import { firearmWeaponTypeEnum } from "@shadowrun/common/build/enums.js";
 
 import { convertRatingMeaning, convertSource } from "../common/ParserHelper.js";
-import { VehicleModSchema } from "@shadowrun/common/build/schemas/riggerModSchemas.js";
+import { VehicleModSchema } from "@shadowrun/common/build/schemas/vehicleModSchemas.js";
 import VehicleModifications from "../../grammar/vehicleModifications.ohm-bundle.js";
 const Rating = VehicleModifications.Rating;
 const Slot = VehicleModifications.Slot;

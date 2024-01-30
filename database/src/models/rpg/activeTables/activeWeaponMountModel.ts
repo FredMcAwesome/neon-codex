@@ -7,10 +7,10 @@ import {
   Property,
 } from "@mikro-orm/postgresql";
 import type { Ref } from "@mikro-orm/postgresql";
-import { Weapons } from "../gear/combatGear/weaponModel.js";
-import { Vehicles } from "../gear/riggerGear/vehicleModel.js";
-import { WeaponMountModifications } from "../gear/riggerGear/vehicleModificationModel.js";
-import { WeaponMounts } from "../gear/riggerGear/weaponMountModel.js";
+import { Weapons } from "../equipment/combat/weaponModel.js";
+import { Vehicles } from "../equipment/rigger/vehicleModel.js";
+import { WeaponMountModifications } from "../equipment/rigger/vehicleModificationModel.js";
+import { WeaponMounts } from "../equipment/rigger/weaponMountModel.js";
 import { CustomisedVehicles } from "./customisedVehicleModel.js";
 import { CustomisedWeapons } from "./customisedWeaponModel.js";
 

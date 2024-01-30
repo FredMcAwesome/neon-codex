@@ -201,7 +201,7 @@ export enum ammoSourceEnum {
   Special = "Special",
 }
 
-export enum firearmAccessoryMountLocationEnum {
+export enum weaponAccessoryMountLocationEnum {
   Underbarrel = "Under",
   Barrel = "Barrel",
   Top = "Top",
@@ -252,22 +252,11 @@ export enum costArmourModEnum {
   Armour = "Armour",
 }
 
-export enum costElectronicEnum {
-  Rating = "Rating",
-}
-
-export enum costMagicalEnum {
-  Rating = "Rating",
-}
 export enum costGearEnum {
   Rating = "Rating",
   ParentCost = "Parent Cost",
   ChildrenCost = "Children Cost",
   GearCost = "Gear Cost",
-}
-
-export enum costRiggerEnum {
-  Rating = "Rating",
 }
 
 export enum costWeaponEnum {

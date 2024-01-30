@@ -9,10 +9,10 @@ import {
 } from "@mikro-orm/postgresql";
 import type { Ref } from "@mikro-orm/postgresql";
 import { ActiveWeaponAccessoryGears } from "./activeGearModel.js";
-import { firearmAccessoryMountLocationEnum } from "@shadowrun/common/build/enums.js";
+import { weaponAccessoryMountLocationEnum } from "@shadowrun/common/build/enums.js";
 import type { AccessoryMountType } from "@shadowrun/common/build/schemas/weaponSchemas.js";
-import { WeaponAccessories } from "../gear/combatGear/weaponAccessoryModel.js";
-import { Weapons } from "../gear/combatGear/weaponModel.js";
+import { WeaponAccessories } from "../equipment/combat/weaponAccessoryModel.js";
+import { Weapons } from "../equipment/combat/weaponModel.js";
 import { CustomisedWeapons } from "./customisedWeaponModel.js";
 
 // Links to either a custom weapon, or a weapon in the table.
@@ -40,11 +40,11 @@ export abstract class ActiveWeaponAccessories {
   includedGearList = new Collection<ActiveWeaponAccessoryGears>(this);
 
   @Enum({
-    items: () => firearmAccessoryMountLocationEnum,
+    items: () => weaponAccessoryMountLocationEnum,
     array: true,
     nullable: true,
   })
-  weaponMountsUsed?: Array<firearmAccessoryMountLocationEnum>;
+  weaponMountsUsed?: Array<weaponAccessoryMountLocationEnum>;
 
   @Property({ nullable: true })
   rating?: number;

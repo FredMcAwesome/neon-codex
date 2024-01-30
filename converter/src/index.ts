@@ -1,17 +1,17 @@
-import { ParseRanges } from "./xmlParser/combatGear/RangeParser.js";
+import { ParseRanges } from "./xmlParser/combat/RangeParser.js";
 ParseRanges();
 
-import { ParseWeapons } from "./xmlParser/combatGear/WeaponParser.js";
+import { ParseWeapons } from "./xmlParser/combat/WeaponParser.js";
 ParseWeapons();
-import { ParseWeaponAccessories } from "./xmlParser/combatGear/WeaponAccessoryParser.js";
+import { ParseWeaponAccessories } from "./xmlParser/combat/WeaponAccessoryParser.js";
 ParseWeaponAccessories();
 
 import { ParseSkills } from "./xmlParser/character/SkillParser.js";
 ParseSkills();
 
-import { ParseArmour } from "./xmlParser/combatGear/ArmourParser.js";
+import { ParseArmour } from "./xmlParser/combat/ArmourParser.js";
 ParseArmour();
-import { ParseArmourMods } from "./xmlParser/combatGear/ArmourModParser.js";
+import { ParseArmourMods } from "./xmlParser/combat/ArmourModParser.js";
 ParseArmourMods();
 
 import { ParseSpells } from "./xmlParser/magic/SpellParser.js";
@@ -22,9 +22,9 @@ ParseBioware();
 import { ParseCyberware } from "./xmlParser/bodyModification/CyberwareParser.js";
 ParseCyberware();
 
-import { ParseDrugs } from "./xmlParser/otherGear/DrugParser.js";
+import { ParseDrugs } from "./xmlParser/other/DrugParser.js";
 ParseDrugs();
-import { ParseDrugComponents } from "./xmlParser/otherGear/DrugComponentParser.js";
+import { ParseDrugComponents } from "./xmlParser/other/DrugComponentParser.js";
 ParseDrugComponents();
 
 import { ParseVehicles } from "./xmlParser/riggerGear/VehicleParser.js";
@@ -32,5 +32,5 @@ ParseVehicles();
 import { ParseVehicleMods } from "./xmlParser/riggerGear/VehicleModParser.js";
 ParseVehicleMods();
 
-import { ParseGear } from "./xmlParser/otherGear/GenericGearParser.js";
+import { ParseGear } from "./xmlParser/other/GearParser.js";
 ParseGear();

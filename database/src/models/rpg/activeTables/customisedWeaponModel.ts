@@ -8,7 +8,7 @@ import {
 } from "@mikro-orm/postgresql";
 import type { Ref } from "@mikro-orm/postgresql";
 import { CustomisedWeaponAccessories } from "./activeWeaponAccessoryModel.js";
-import { Weapons } from "../gear/combatGear/weaponModel.js";
+import { Weapons } from "../equipment/combat/weaponModel.js";
 
 // Only custom weapons not included
 // This assumes weapons included in weapon mounts have no accessories

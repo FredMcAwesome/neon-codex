@@ -9,7 +9,7 @@ import {
 import type { Ref } from "@mikro-orm/postgresql";
 import { CustomisedWeaponAccessories } from "./activeWeaponAccessoryModel.js";
 import { CustomisedArmourModifications } from "./activeArmourModificationModel.js";
-import { Armours } from "../gear/combatGear/armourModel.js";
+import { Armours } from "../equipment/combat/armourModel.js";
 
 @Entity()
 export class CustomisedArmours {

@@ -14,10 +14,10 @@ import React from "react";
 import { QualitiesSelect } from "./QualitiesSelect.js";
 import type { ISelectedQuality } from "./QualitiesSelect.js";
 import { SkillSelectList } from "./SkillsSelect.js";
-import { GearSelect } from "./GearSelect.js";
-import { GearListType } from "@shadowrun/common";
-import { CustomSkillListType } from "@shadowrun/common/build/schemas/skillSchemas.js";
+import { EquipmentSelect } from "./GearSelect.js";
 import { trpc } from "../../utils/trpc.js";
+import type { CustomSkillListType } from "@shadowrun/common/build/schemas/skillSchemas.js";
+import type { EquipmentListType } from "@shadowrun/common/build/schemas/equipmentSchemas.js";
 
 const characterCreatorPath = "/character_creator";
 const CharacterCreator = function () {
@@ -77,15 +77,14 @@ const CharacterCreator = function () {
       })
     );
   }, [data]);
-  const [gearSelected, setGearSelected] = useState<GearListType>({
-    weapons: [],
-    electronics: [],
-    electronicAccessories: [],
-    otherGear: [],
-    augmentations: [],
-    magicalEquipment: [],
-    vehiclesAndDrones: [],
-  });
+  const [equipmentSelected, setEquipmentSelected] = useState<EquipmentListType>(
+    {
+      weapons: [],
+      gears: [],
+      augmentations: [],
+      vehicles: [],
+    }
+  );
   const [nuyen, setNuyen] = useState(
     priorityOptions[priorityInfo.ResourcesPriority].resources
   );
@@ -124,8 +123,10 @@ const CharacterCreator = function () {
   ) {
     setSkillSelections(loadingSkillSelection);
   };
-  const onGearSelectedChanged = function (gearSelected: GearListType) {
-    setGearSelected(gearSelected);
+  const onEquipmentSelectedChanged = function (
+    equipmentSelected: EquipmentListType
+  ) {
+    setEquipmentSelected(equipmentSelected);
   };
   const onNuyenChanged = function (nuyen: number) {
     setNuyen(nuyen);
@@ -205,9 +206,9 @@ const CharacterCreator = function () {
       break;
     case lastPage:
       currentStage = (
-        <GearSelect
-          gearSelected={gearSelected}
-          setGearSelected={onGearSelectedChanged}
+        <EquipmentSelect
+          equipmentSelected={equipmentSelected}
+          setEquipmentSelected={onEquipmentSelectedChanged}
           nuyen={nuyen}
           setNuyen={onNuyenChanged}
         />

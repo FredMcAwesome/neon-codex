@@ -1,6 +1,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { render, RenderOptions } from "@testing-library/react";
-import { PropsWithChildren } from "react";
+import { render } from "@testing-library/react";
+import type { RenderOptions } from "@testing-library/react";
+import type { PropsWithChildren } from "react";
 import "cross-fetch/polyfill";
 import { BrowserRouter } from "react-router-dom";
 

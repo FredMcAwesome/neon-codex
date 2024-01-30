@@ -6,6 +6,7 @@ import { fileURLToPath } from "url";
 import * as fs from "fs";
 import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
 import { VehicleListXmlSchema } from "./VehicleParserSchemas.js";
+import { VehicleSchema } from "@shadowrun/common/build/schemas/vehicleSchemas.js";
 import type {
   VehicleListXmlType,
   VehicleXmlType,
@@ -24,7 +25,6 @@ import {
   speedSemantics,
   handlingSemantics,
 } from "./VehicleParserHelper.js";
-import { VehicleSchema } from "@shadowrun/common/build/schemas/riggerSchemas.js";
 import Vehicles from "../../grammar/vehicles.ohm-bundle.js";
 const Acceleration = Vehicles.Acceleration;
 const Speed = Vehicles.Speed;

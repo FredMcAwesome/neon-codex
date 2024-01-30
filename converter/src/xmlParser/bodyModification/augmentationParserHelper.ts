@@ -1,9 +1,10 @@
-import { mathOperatorEnum, restrictionEnum } from "@shadowrun/common";
 import {
   availabilityEnum,
   capcityAugmentationEnum,
   costAugmentationEnum,
+  mathOperatorEnum,
   mountSlotEnum,
+  restrictionEnum,
 } from "@shadowrun/common/build/enums.js";
 import assert from "assert";
 import { mountLocationXmlEnum } from "./CyberwareParserSchemas.js";

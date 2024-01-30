@@ -14,7 +14,7 @@ import {
   mathOperatorEnum,
   damageCalculationOptionEnum,
   armourPenetrationEnum,
-  firearmAccessoryMountLocationEnum,
+  weaponAccessoryMountLocationEnum,
   augmentationTypeEnum,
   sourceBookEnum,
   rangeEnum,
@@ -164,7 +164,7 @@ export const FirearmAmmoSchema = zod
   .strict();
 export type FirearmAmmoType = zod.infer<typeof FirearmAmmoSchema>;
 
-export const MountSchema = zod.nativeEnum(firearmAccessoryMountLocationEnum);
+export const MountSchema = zod.nativeEnum(weaponAccessoryMountLocationEnum);
 export type MountType = zod.infer<typeof MountSchema>;
 export const AccessoryMountSchema = zod.array(MountSchema);
 export type AccessoryMountType = zod.infer<typeof AccessoryMountSchema>;
