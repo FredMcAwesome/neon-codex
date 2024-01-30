@@ -61,34 +61,20 @@ export async function getSkills() {
 
 async function getWeapons(): Promise<WeaponSummaryListType> {
   const db = await init();
-  const weapons = await db.em.findAll(Weapons);
-  const weaponsResponse = await Promise.all(
+  const weapons = await db.em.findAll(Weapons, {
+    populate: ["*", "includedAccessories.weaponAccessory"],
+  });
+  const weaponsResponse = Promise.all(
     weapons.map(async (weapon) => {
-      const skill = await weapon.relatedSkill.load();
-      if (skill === null) {
-        throw new Error(
-          `Weapon Skill not associated: ${weapon.relatedSkill.id}`
-        );
-      }
-      const dbAccessories = await weapon.includedAccessories.loadItems();
-      const accessories = await Promise.all(
-        dbAccessories.map(async (accessory) => {
-          const originalAccessory = await accessory.weaponAccessory.load();
-          if (originalAccessory === null) {
-            throw new Error(
-              `Accessory not associated: ${accessory.weaponAccessory.id} to accessory: ${accessory.id}`
-            );
-          }
-
-          return { name: originalAccessory.name };
-        })
-      );
-
-      const gearList = await weapon.allowedGearList.loadItems();
+      const skill = weapon.relatedSkill.$.name;
+      const dbAccessories = weapon.includedAccessories;
+      const accessories = dbAccessories.$.map((accessory) => {
+        const originalAccessory = accessory.weaponAccessory.$.name;
+        return { name: originalAccessory };
+      });
+      const gearList = weapon.allowedGearList.$;
       const gearNameList = gearList.map((gear) => gear.name);
-      const alternativeWeaponForms =
-        await weapon.alternativeWeaponForms.loadItems();
-      const alternativeWeaponNameForms = alternativeWeaponForms.map(
+      const alternativeWeaponNameForms = weapon.alternativeWeaponForms.$.map(
         (weapon) => weapon.name
       );
 
@@ -128,7 +114,7 @@ async function getWeapons(): Promise<WeaponSummaryListType> {
         ...(alternativeWeaponNameForms.length > 0 && {
           alternativeWeaponForms: alternativeWeaponNameForms,
         }),
-        relatedSkill: skill.name,
+        relatedSkill: skill,
         ...(weapon.relatedSkillSpecialisations !== undefined &&
           weapon.relatedSkillSpecialisations.length > 0 && {
             relatedSkillSpecialisations: weapon.relatedSkillSpecialisations,
@@ -221,7 +207,9 @@ async function getWeaponTypeInformation(weapon: Weapons) {
 
 async function getAugmentations() {
   const db = await init();
-  const augmentations = await db.em.findAll(Augmentations);
+  const augmentations = await db.em.findAll(Augmentations, {
+    populate: ["*", "includedGearList.gear"],
+  });
   const augmentationsResponse: AugmentationListType = await Promise.all(
     augmentations.map(async (augmentation) => {
       let weaponName;
@@ -240,17 +228,11 @@ async function getAugmentations() {
       );
       const allowedGearList = await augmentation.allowedGearList.loadItems();
       const allowedGearNameList = allowedGearList.map((gear) => gear.name);
-      const includedGearList = await augmentation.includedGearList.loadItems();
-      const includedGearNameList = await Promise.all(
-        includedGearList.map(async (activeGear) => {
-          const gear = await activeGear.gear.load();
-          if (gear === null) {
-            throw new Error(
-              `Included Augmentation gear: ${activeGear.gear.id} not found`
-            );
-          }
-          return { name: gear.name };
-        })
+      const includedGearNameList = augmentation.includedGearList.$.map(
+        (activeGear) => {
+          const gear = activeGear.gear.$.name;
+          return { name: gear };
+        }
       );
 
       const typeInformation = getAugmentationTypeInformation(augmentation);
@@ -323,82 +305,58 @@ function getAugmentationTypeInformation(augmentation: Augmentations) {
 
 async function getVehicles() {
   const db = await init();
-  const vehicles = await db.em.findAll(Vehicles);
-  const vehiclesResponse: VehicleListType = await Promise.all(
-    vehicles.map(async (vehicle) => {
-      const includedGearList = await vehicle.includedGearList.loadItems();
-      const includedGearNameList = await Promise.all(
-        includedGearList.map(async (activeGear) => {
-          const gear = await activeGear.gear.load();
-          if (gear === null) {
-            throw new Error(
-              `Included Vehicle gear: ${activeGear.gear.id} not found`
-            );
-          }
-          return { name: gear.name };
-        })
-      );
-      const includedMods = await vehicle.includedModList.loadItems();
-      const includedModNames = await Promise.all(
-        includedMods.map(async (mod) => {
-          const loadedMod = await mod.vehicleModification.load();
-          if (loadedMod === null) {
-            throw new Error(
-              `Included Vehicle mod: ${mod.vehicleModification.id} not found`
-            );
-          }
-          return { name: loadedMod.name };
-        })
-      );
-      const includedWeaponMountList =
-        await vehicle.includedWeaponMountList.loadItems();
-      const includedWeaponMountNameList = await Promise.all(
-        includedWeaponMountList.map(async (includedMount) => {
-          const loadedMount = await includedMount.weaponMount.load();
-          if (loadedMount === null) {
-            throw new Error(
-              `Included Weapon mount: ${includedMount.weaponMount.id} not found`
-            );
-          }
-          return {
-            control: loadedMount.control,
-            flexibility: loadedMount.flexibility,
-            size: loadedMount.size,
-            visibility: loadedMount.visibility,
-          };
-        })
-      );
-      const vehicleTypeInformation = getVehicleTypeInformation(vehicle);
-      const vehicleFormatted: VehicleType = {
-        name: vehicle.name,
-        description: vehicle.description,
-        ...vehicleTypeInformation,
-        handling: vehicle.handling,
-        speed: vehicle.speed,
-        acceleration: vehicle.acceleration,
-        body: vehicle.body,
-        armour: vehicle.armour,
-        pilot: vehicle.pilot,
-        sensor: vehicle.sensor,
-        includedGearList: includedGearNameList,
-        includedMods: includedModNames,
-        modSlots: vehicle.modSlots,
-        powerTrainModSlots: vehicle.powerTrainModSlots,
-        protectionModSlots: vehicle.protectionModSlots,
-        weaponModSlots: vehicle.weaponModSlots,
-        bodyModSlots: vehicle.bodyModSlots,
-        electromagneticModSlots: vehicle.electromagneticModSlots,
-        cosmeticModSlots: vehicle.cosmeticModSlots,
-        weaponMountList: includedWeaponMountNameList,
-        userSelectable: vehicle.userSelectable,
-        availability: vehicle.availability,
-        cost: vehicle.cost,
-        source: vehicle.source,
-        page: vehicle.page,
-      };
-      return vehicleFormatted;
-    })
-  );
+  const vehicles = await db.em.findAll(Vehicles, { populate: ["*"] });
+  const vehiclesResponse: VehicleListType = vehicles.map((vehicle) => {
+    const includedGearList = vehicle.includedGearList.$;
+    const includedGearNameList = includedGearList.map((activeGear) => {
+      const gear = activeGear.gear.$.name;
+      return { name: gear };
+    });
+    const includedModNames = vehicle.includedModList.$.map((mod) => {
+      const loadedMod = mod.vehicleModification.$.name;
+      return { name: loadedMod };
+    });
+    const includedWeaponMountNameList = vehicle.includedWeaponMountList.$.map(
+      (includedMount) => {
+        const loadedMount = includedMount.weaponMount.$;
+        return {
+          control: loadedMount.control,
+          flexibility: loadedMount.flexibility,
+          size: loadedMount.size,
+          visibility: loadedMount.visibility,
+        };
+      }
+    );
+    const vehicleTypeInformation = getVehicleTypeInformation(vehicle);
+    const vehicleFormatted: VehicleType = {
+      name: vehicle.name,
+      description: vehicle.description,
+      ...vehicleTypeInformation,
+      handling: vehicle.handling,
+      speed: vehicle.speed,
+      acceleration: vehicle.acceleration,
+      body: vehicle.body,
+      armour: vehicle.armour,
+      pilot: vehicle.pilot,
+      sensor: vehicle.sensor,
+      includedGearList: includedGearNameList,
+      includedMods: includedModNames,
+      modSlots: vehicle.modSlots,
+      powerTrainModSlots: vehicle.powerTrainModSlots,
+      protectionModSlots: vehicle.protectionModSlots,
+      weaponModSlots: vehicle.weaponModSlots,
+      bodyModSlots: vehicle.bodyModSlots,
+      electromagneticModSlots: vehicle.electromagneticModSlots,
+      cosmeticModSlots: vehicle.cosmeticModSlots,
+      weaponMountList: includedWeaponMountNameList,
+      userSelectable: vehicle.userSelectable,
+      availability: vehicle.availability,
+      cost: vehicle.cost,
+      source: vehicle.source,
+      page: vehicle.page,
+    };
+    return vehicleFormatted;
+  });
   return vehiclesResponse;
 }
 
@@ -435,78 +393,68 @@ function getVehicleTypeInformation(vehicle: Vehicles) {
 
 export async function getGears() {
   const db = await init();
-  const gears = await db.em.findAll(Gears);
-  const gearsResponse: GearListType = await Promise.all(
-    gears.map(async (gear) => {
-      const gearList = await gear.allowedGearList.loadItems();
-      const gearNameList = gearList.map((linkedGear) => linkedGear.name);
-      const includedGearList = await gear.includedGearList.loadItems();
-      const includedGearNameList = includedGearList.map((activeGear) => {
-        return { name: activeGear.name };
-      });
-      let includedWeapon;
-      if (gear.includedWeapon !== undefined) {
-        const weaponLink = await gear.includedWeapon.load();
-        if (weaponLink === null) {
-          throw new Error(
-            `Included Weapon: ${gear.includedWeapon.id} not found`
-          );
-        }
-        const weapon = await weaponLink.weapon.load();
-        if (weapon === null) {
-          throw new Error(`Included Weapon: ${weaponLink.weapon.id} not found`);
-        }
+  const gears = await db.em.findAll(Gears, {
+    populate: ["*", "includedWeapon.weapon"],
+  });
+  const gearsResponse: GearListType = gears.map((gear) => {
+    const gearList = gear.allowedGearList.$;
+    const gearNameList = gearList.map((linkedGear) => linkedGear.name);
+    const includedGearList = gear.includedGearList.$;
+    const includedGearNameList = includedGearList.map((activeGear) => {
+      return { name: activeGear.name };
+    });
+    let includedWeapon;
+    if (gear.includedWeapon !== undefined) {
+      const weaponLink = gear.includedWeapon.$.weapon.$.name;
+      includedWeapon = { name: weaponLink };
+    }
 
-        includedWeapon = { name: weapon.name };
-      }
-
-      const gearFormatted: GearType = {
-        name: gear.name,
-        description: gear.description,
-        category: gear.category,
-        minRating: gear.minRating,
-        maxRating: gear.maxRating,
-        ratingMeaning: gear.ratingMeaning,
-        includedWeapon: includedWeapon,
-        allowCategoryList: gear.allowCategoryList,
-        quantity: gear.quantity,
-        bonus: gear.bonus,
-        weaponBonus: gear.weaponBonus,
-        isFlechetteAmmo: gear.isFlechetteAmmo,
-        flechetteWeaponBonus: gear.flechetteWeaponBonus,
-        ammoForWeaponType: gear.ammoForWeaponType,
-        explosiveWeight: gear.explosiveWeight,
-        userSelectable: gear.userSelectable,
-        allowedGearList: gearNameList,
-        includedGearList: includedGearNameList,
-        deviceRating: gear.deviceRating,
-        programs: gear.programs,
-        attributeArray: gear.attributeArray,
-        attack: gear.attack,
-        sleaze: gear.sleaze,
-        dataProcessing: gear.dataProcessing,
-        firewall: gear.firewall,
-        canFormPersona: gear.canFormPersona,
-        capacityInformation: gear.capacityInformation,
-        armourCapacityInformation: gear.armourCapacityInformation,
-        requirements: gear.requirements,
-        requireParent: gear.requireParent,
-        forbidden: gear.forbidden,
-        modifyAttributeArray: gear.modifyAttributeArray,
-        modifyAttack: gear.modifyAttack,
-        modifySleaze: gear.modifySleaze,
-        modifyDataProcessing: gear.modifyDataProcessing,
-        modifyFirewall: gear.modifyFirewall,
-        addMatrixBoxes: gear.addMatrixBoxes,
-        renameCustomLabel: gear.renameCustomLabel,
-        availability: gear.availability,
-        cost: gear.cost,
-        source: gear.source,
-        page: gear.page,
-      };
-      return gearFormatted;
-    })
-  );
+    const gearFormatted: GearType = {
+      name: gear.name,
+      description: gear.description,
+      category: gear.category,
+      minRating: gear.minRating,
+      maxRating: gear.maxRating,
+      ratingMeaning: gear.ratingMeaning,
+      includedWeapon: includedWeapon,
+      allowCategoryList: gear.allowCategoryList,
+      quantity: gear.quantity,
+      bonus: gear.bonus,
+      weaponBonus: gear.weaponBonus,
+      isFlechetteAmmo: gear.isFlechetteAmmo,
+      flechetteWeaponBonus: gear.flechetteWeaponBonus,
+      ammoForWeaponType: gear.ammoForWeaponType,
+      explosiveWeight: gear.explosiveWeight,
+      userSelectable: gear.userSelectable,
+      allowedGearList: gearNameList,
+      includedGearList: includedGearNameList,
+      deviceRating: gear.deviceRating,
+      programs: gear.programs,
+      attributeArray: gear.attributeArray,
+      attack: gear.attack,
+      sleaze: gear.sleaze,
+      dataProcessing: gear.dataProcessing,
+      firewall: gear.firewall,
+      canFormPersona: gear.canFormPersona,
+      capacityInformation: gear.capacityInformation,
+      armourCapacityInformation: gear.armourCapacityInformation,
+      requirements: gear.requirements,
+      requireParent: gear.requireParent,
+      forbidden: gear.forbidden,
+      modifyAttributeArray: gear.modifyAttributeArray,
+      modifyAttack: gear.modifyAttack,
+      modifySleaze: gear.modifySleaze,
+      modifyDataProcessing: gear.modifyDataProcessing,
+      modifyFirewall: gear.modifyFirewall,
+      addMatrixBoxes: gear.addMatrixBoxes,
+      renameCustomLabel: gear.renameCustomLabel,
+      availability: gear.availability,
+      cost: gear.cost,
+      source: gear.source,
+      page: gear.page,
+    };
+    return gearFormatted;
+  });
   return gearsResponse;
 }
 
@@ -563,17 +511,32 @@ export const characterRouter = router({
   }),
   all: privateProcedure.query(async () => {
     try {
+      const start = Date.now();
+
       const weaponsResponse: WeaponSummaryListType = await getWeapons();
+      let end = Date.now();
+      console.log(`Execution time 1: ${end - start} ms`);
+      let start1 = Date.now();
       const gearsResponse: GearListType = await getGears();
+      end = Date.now();
+      console.log(`Execution time 2: ${end - start1} ms`);
+      start1 = Date.now();
       const augmentationsResponse: AugmentationListType =
         await getAugmentations();
+      end = Date.now();
+      console.log(`Execution time 3: ${end - start1} ms`);
+      start1 = Date.now();
       const vehiclesResponse: VehicleListType = await getVehicles();
+      end = Date.now();
+      console.log(`Execution time 4: ${end - start1} ms`);
       const equipmentResponse: EquipmentListType = {
         weapons: weaponsResponse,
         gears: gearsResponse,
         augmentations: augmentationsResponse,
         vehicles: vehiclesResponse,
       };
+      end = Date.now();
+      console.log(`Execution time: ${end - start} ms`);
       // logger.log(JSON.stringify(equipmentResponse, null, 2));
       return equipmentResponse;
     } catch (error) {
