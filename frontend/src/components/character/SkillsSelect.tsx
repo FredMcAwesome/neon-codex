@@ -1,11 +1,11 @@
 import React from "react";
 import Dropdown from "react-dropdown";
 import { CollapsibleDiv } from "../../utils/CollapsibleDiv.js";
-import { skillCategoryEnum } from "@shadowrun/common/build/enums.js";
+import { skillCategoryEnum } from "@neon-codex/common/build/enums.js";
 import type {
   CustomSkillListType,
   CustomSkillType,
-} from "@shadowrun/common/build/schemas/skillSchemas.js";
+} from "@neon-codex/common/build/schemas/skillSchemas.js";
 import type { ISkillPoints } from "./PriorityImports.js";
 
 // first rating empty for no points in skill

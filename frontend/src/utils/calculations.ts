@@ -1,13 +1,13 @@
-import type { GearCalculationType } from "@shadowrun/common/build/schemas/commonSchemas.js";
-import type { CostWeaponAccessoryType } from "@shadowrun/common/build/schemas/weaponAccessorySchemas.js";
-import type { CostAmmunitionType } from "@shadowrun/common/build/schemas/ammunitionSchemas.js";
-import type { CostArmourType } from "@shadowrun/common/build/schemas/armourSchemas.js";
-import type { CostArmourModType } from "@shadowrun/common/build/schemas/armourModSchemas.js";
-import type { CostAugmentationType } from "@shadowrun/common/build/schemas/augmentationSchemas.js";
-import type { CostGearType } from "@shadowrun/common/build/schemas/gearSchemas.js";
-import type { CostWeaponType } from "@shadowrun/common/build/schemas/weaponSchemas.js";
-import { mathOperatorEnum } from "@shadowrun/common/build/enums.js";
-import type { CostVehicleType } from "@shadowrun/common/build/schemas/vehicleSchemas.js";
+import type { GearCalculationType } from "@neon-codex/common/build/schemas/commonSchemas.js";
+import type { CostWeaponAccessoryType } from "@neon-codex/common/build/schemas/weaponAccessorySchemas.js";
+import type { CostAmmunitionType } from "@neon-codex/common/build/schemas/ammunitionSchemas.js";
+import type { CostArmourType } from "@neon-codex/common/build/schemas/armourSchemas.js";
+import type { CostArmourModType } from "@neon-codex/common/build/schemas/armourModSchemas.js";
+import type { CostAugmentationType } from "@neon-codex/common/build/schemas/augmentationSchemas.js";
+import type { CostGearType } from "@neon-codex/common/build/schemas/gearSchemas.js";
+import type { CostWeaponType } from "@neon-codex/common/build/schemas/weaponSchemas.js";
+import { mathOperatorEnum } from "@neon-codex/common/build/enums.js";
+import type { CostVehicleType } from "@neon-codex/common/build/schemas/vehicleSchemas.js";
 
 export const genericListCalculation = function (
   genericList: GearCalculationType,

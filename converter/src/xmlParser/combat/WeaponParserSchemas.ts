@@ -1,8 +1,8 @@
 import {
   weaponXmlSubtypeEnum,
   WeaponXmlSubtypeSchema,
-} from "@shadowrun/common/build/schemas/commonSchemas.js";
-import { MountSchema } from "@shadowrun/common/build/schemas/weaponSchemas.js";
+} from "@neon-codex/common/build/schemas/commonSchemas.js";
+import { MountSchema } from "@neon-codex/common/build/schemas/weaponSchemas.js";
 import { z as zod } from "zod";
 import {
   xmlAllowGearSchema,

@@ -5,12 +5,12 @@ import type {
   CostWeaponType,
   WeaponSummaryListType,
   WeaponSummaryType,
-} from "@shadowrun/common/build/schemas/weaponSchemas.js";
-import { formatDamage } from "@shadowrun/common/build/formatters/weaponFormatter.js";
+} from "@neon-codex/common/build/schemas/weaponSchemas.js";
+import { formatDamage } from "@neon-codex/common/build/formatters/weaponFormatter.js";
 import { trpc } from "../../utils/trpc.js";
 import uniqid from "uniqid";
-import { weaponTypeEnum } from "@shadowrun/common/build/enums.js";
-import type { EquipmentListType } from "@shadowrun/common/build/schemas/equipmentSchemas.js";
+import { weaponTypeEnum } from "@neon-codex/common/build/enums.js";
+import type { EquipmentListType } from "@neon-codex/common/build/schemas/equipmentSchemas.js";
 
 interface IProps {
   equipmentSelected: EquipmentListType;

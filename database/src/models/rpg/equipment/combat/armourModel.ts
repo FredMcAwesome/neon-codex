@@ -15,13 +15,13 @@ import type {
   CapacityArmourType,
   CostArmourType,
   DamageReductionArmourType,
-} from "@shadowrun/common/build/schemas/armourSchemas.js";
+} from "@neon-codex/common/build/schemas/armourSchemas.js";
 import {
   armourCategoryEnum,
   armourModCategoryEnum,
   sourceBookEnum,
-} from "@shadowrun/common/build/enums.js";
-import type { BonusType } from "@shadowrun/common/build/schemas/shared/bonusSchemas.js";
+} from "@neon-codex/common/build/enums.js";
+import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 import { Weapons } from "./weaponModel.js";
 import { IncludedArmourModifications } from "../../activeTables/activeArmourModificationModel.js";
 import { ArmourIncludedGears } from "../../activeTables/activeGearModel.js";

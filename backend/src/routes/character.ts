@@ -1,35 +1,35 @@
 import * as logger from "../utils/logger.js";
 import { router, privateProcedure } from "../trpc.js";
-import { Skills } from "@shadowrun/database/build/models/rpg/abilities/skillModel.js";
+import { Skills } from "@neon-codex/database/build/models/rpg/abilities/skillModel.js";
 import { init } from "../utils/db.js";
-import type { SkillListType } from "@shadowrun/common/build/schemas/skillSchemas.js";
+import type { SkillListType } from "@neon-codex/common/build/schemas/skillSchemas.js";
 import type {
   VehicleListType,
   VehicleType,
-} from "@shadowrun/common/build/schemas/vehicleSchemas.js";
+} from "@neon-codex/common/build/schemas/vehicleSchemas.js";
 import {
   weaponTypeEnum,
   augmentationTypeEnum,
   vehicleTypeEnum,
-} from "@shadowrun/common/build/enums.js";
+} from "@neon-codex/common/build/enums.js";
 import type {
   AugmentationListType,
   AugmentationType,
-} from "@shadowrun/common/build/schemas/augmentationSchemas.js";
+} from "@neon-codex/common/build/schemas/augmentationSchemas.js";
 import type {
   GearListType,
   GearType,
-} from "@shadowrun/common/build/schemas/gearSchemas.js";
+} from "@neon-codex/common/build/schemas/gearSchemas.js";
 import type {
   WeaponSummaryListType,
   WeaponSummaryType,
-} from "@shadowrun/common/build/schemas/weaponSchemas.js";
-import type { EquipmentListType } from "@shadowrun/common/build/schemas/equipmentSchemas.js";
+} from "@neon-codex/common/build/schemas/weaponSchemas.js";
+import type { EquipmentListType } from "@neon-codex/common/build/schemas/equipmentSchemas.js";
 import {
   Augmentations,
   Cyberwares,
   Biowares,
-} from "@shadowrun/database/build/models/rpg/equipment/bodyModification/augmentationModel.js";
+} from "@neon-codex/database/build/models/rpg/equipment/bodyModification/augmentationModel.js";
 import {
   Weapons,
   MeleeWeapons,
@@ -37,7 +37,7 @@ import {
   ProjectileWeapons,
   FirearmWeapons,
   Explosives,
-} from "@shadowrun/database/build/models/rpg/equipment/combat/weaponModel.js";
+} from "@neon-codex/database/build/models/rpg/equipment/combat/weaponModel.js";
 import {
   Vehicles,
   MannedVehicles,
@@ -45,8 +45,8 @@ import {
   Watercrafts,
   Aircrafts,
   Drones,
-} from "@shadowrun/database/build/models/rpg/equipment/rigger/vehicleModel.js";
-import { Gears } from "@shadowrun/database/build/models/rpg/equipment/other/gearModel.js";
+} from "@neon-codex/database/build/models/rpg/equipment/rigger/vehicleModel.js";
+import { Gears } from "@neon-codex/database/build/models/rpg/equipment/other/gearModel.js";
 
 export async function getSkills() {
   const db = await init();

@@ -19,7 +19,7 @@ import {
   convertAugmentationLimit,
   convertSource,
 } from "../common/ParserHelper.js";
-import { AugmentationSchema } from "@shadowrun/common/build/schemas/augmentationSchemas.js";
+import { AugmentationSchema } from "@neon-codex/common/build/schemas/augmentationSchemas.js";
 import Augmentation from "../../grammar/augmentation.ohm-bundle.js";
 import {
   availabilityAugmentationSemantics,
@@ -27,7 +27,7 @@ import {
   essenceCostSemantics,
   mountsAugmentationSemantics,
 } from "./augmentationParserHelper.js";
-import { augmentationTypeEnum } from "@shadowrun/common/build/enums.js";
+import { augmentationTypeEnum } from "@neon-codex/common/build/enums.js";
 const EssenceCost = Augmentation.EssenceCost;
 const Cost = Augmentation.Cost;
 const Availability = Augmentation.Availability;

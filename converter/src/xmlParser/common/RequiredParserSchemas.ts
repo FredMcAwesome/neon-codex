@@ -3,8 +3,8 @@ import {
   StringArrayOrStringSchema,
   StringOrNumberSchema,
 } from "../common/ParserCommonDefines.js";
-import { WeaponXmlSubtypeSchema } from "@shadowrun/common/build/schemas/commonSchemas.js";
-import { metamagicArtEnum } from "@shadowrun/common/build/enums.js";
+import { WeaponXmlSubtypeSchema } from "@neon-codex/common/build/schemas/commonSchemas.js";
+import { metamagicArtEnum } from "@neon-codex/common/build/enums.js";
 
 const ConcealXmlSchema = zod
   .object({

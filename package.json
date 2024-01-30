@@ -1,5 +1,5 @@
 {
-  "name": "shadowrunwebsite",
+  "name": "neon-codex",
   "workspaces": [
     "frontend",
     "backend",

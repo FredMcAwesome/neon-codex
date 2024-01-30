@@ -2,10 +2,10 @@ import express from "express";
 import type { Loaded } from "@mikro-orm/postgresql";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { LoginSchema } from "@shadowrun/common/build/clientRequest.js";
-import Users from "@shadowrun/database/build/models/accounts/userModel.js";
+import { LoginSchema } from "@neon-codex/common/build/clientRequest.js";
+import Users from "@neon-codex/database/build/models/accounts/userModel.js";
 import * as logger from "../utils/logger.js";
-import { TOKEN_SECRET } from "@shadowrun/database/build/utils/databaseConfig.js";
+import { TOKEN_SECRET } from "@neon-codex/database/build/utils/databaseConfig.js";
 import { router, publicProcedure, adminProcedure } from "../trpc.js";
 import { init } from "../utils/db.js";
 

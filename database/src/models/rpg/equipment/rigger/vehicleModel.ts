@@ -14,7 +14,7 @@ import {
   sourceBookEnum,
   vehicleTypeEnum,
   watercraftSubtypeEnum,
-} from "@shadowrun/common/build/enums.js";
+} from "@neon-codex/common/build/enums.js";
 import { VehicleIncludedGears } from "../../activeTables/activeGearModel.js";
 import { IncludedVehicleModifications } from "../../activeTables/activeVehicleModificationModel.js";
 import { IncludedWeaponMounts } from "../../activeTables/activeWeaponMountModel.js";
@@ -28,7 +28,7 @@ import type {
   WatercraftVehicleType,
   AircraftVehicleType,
   DroneVehicleType,
-} from "@shadowrun/common/build/schemas/vehicleSchemas.js";
+} from "@neon-codex/common/build/schemas/vehicleSchemas.js";
 
 @Entity({
   discriminatorColumn: "type",

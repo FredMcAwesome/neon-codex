@@ -3,7 +3,7 @@ import {
   weaponMountFlexibilityEnum,
   weaponMountSizeEnum,
   weaponMountVisibilityEnum,
-} from "@shadowrun/common/build/enums.js";
+} from "@neon-codex/common/build/enums.js";
 import { z as zod } from "zod";
 import {
   ModRecursiveXmlSchema,

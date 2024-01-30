@@ -1,5 +1,5 @@
 {
-  "name": "@shadowrun/common",
+  "name": "@neon-codex/common",
   "main": "build/index.js",
   "private": true,
   "type": "module",

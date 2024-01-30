@@ -8,10 +8,10 @@ import {
   MeleeWeaponSchema,
   ProjectileWeaponSchema,
   WeaponSummaryListSchema,
-} from "@shadowrun/common/build/schemas/weaponSchemas.js";
-import type { WeaponSummaryListType } from "@shadowrun/common/build/schemas/weaponSchemas.js";
+} from "@neon-codex/common/build/schemas/weaponSchemas.js";
+import type { WeaponSummaryListType } from "@neon-codex/common/build/schemas/weaponSchemas.js";
 import { z as zod } from "zod";
-import { weaponTypeEnum } from "@shadowrun/common/build/enums.js";
+import { weaponTypeEnum } from "@neon-codex/common/build/enums.js";
 import { ref } from "@mikro-orm/postgresql";
 import { Skills } from "../../models/rpg/abilities/skillModel.js";
 import { WeaponRanges } from "../../models/rpg/equipment/combat/helperTables/weaponRangeModel.js";

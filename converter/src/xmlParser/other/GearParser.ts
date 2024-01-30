@@ -32,7 +32,7 @@ import {
 import { convertXmlBonus } from "../common/BonusParserHelper.js";
 import Gears from "../../grammar/gears.ohm-bundle.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
-import { GearSchema } from "@shadowrun/common/build/schemas/gearSchemas.js";
+import { GearSchema } from "@neon-codex/common/build/schemas/gearSchemas.js";
 const Program = Gears.Program;
 const Capacity = Gears.Capacity;
 const Cost = Gears.Cost;

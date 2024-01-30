@@ -2,14 +2,14 @@ import assert from "assert";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { VehicleModListSchema } from "@shadowrun/common/build/schemas/vehicleModSchemas.js";
-import type { VehicleModListType } from "@shadowrun/common/build/schemas/vehicleModSchemas.js";
+import { VehicleModListSchema } from "@neon-codex/common/build/schemas/vehicleModSchemas.js";
+import type { VehicleModListType } from "@neon-codex/common/build/schemas/vehicleModSchemas.js";
 import {
   VehicleChasisModifications,
   VehicleModifications,
   WeaponMountModifications,
 } from "../../models/rpg/equipment/rigger/vehicleModificationModel.js";
-import { vehicleModTypeEnum } from "@shadowrun/common/build/enums.js";
+import { vehicleModTypeEnum } from "@neon-codex/common/build/enums.js";
 
 export const getVehicleModifications = function () {
   const currentPath = import.meta.url;

@@ -13,8 +13,8 @@ import assert from "assert";
 import {
   ammoSourceEnum,
   augmentationTypeEnum,
-} from "@shadowrun/common/build/enums.js";
-import { weaponXmlSubtypeEnum } from "@shadowrun/common/build/schemas/commonSchemas.js";
+} from "@neon-codex/common/build/enums.js";
+import { weaponXmlSubtypeEnum } from "@neon-codex/common/build/schemas/commonSchemas.js";
 import type {
   WeaponSummaryListType,
   WeaponSummaryType,
@@ -29,11 +29,11 @@ import type {
   ArmourPenetrationType,
   RecoilCompensationType,
   DamageType,
-} from "@shadowrun/common/build/schemas/weaponSchemas.js";
+} from "@neon-codex/common/build/schemas/weaponSchemas.js";
 import {
   WeaponSummaryListSchema,
   WeaponSummarySchema,
-} from "@shadowrun/common/build/schemas/weaponSchemas.js";
+} from "@neon-codex/common/build/schemas/weaponSchemas.js";
 import {
   getWeaponTypeInformation,
   accuracySemantics,

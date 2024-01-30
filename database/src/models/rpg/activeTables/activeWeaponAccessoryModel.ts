@@ -9,8 +9,8 @@ import {
 } from "@mikro-orm/postgresql";
 import type { Ref } from "@mikro-orm/postgresql";
 import { ActiveWeaponAccessoryGears } from "./activeGearModel.js";
-import { weaponAccessoryMountLocationEnum } from "@shadowrun/common/build/enums.js";
-import type { AccessoryMountType } from "@shadowrun/common/build/schemas/weaponSchemas.js";
+import { weaponAccessoryMountLocationEnum } from "@neon-codex/common/build/enums.js";
+import type { AccessoryMountType } from "@neon-codex/common/build/schemas/weaponSchemas.js";
 import { WeaponAccessories } from "../equipment/combat/weaponAccessoryModel.js";
 import { Weapons } from "../equipment/combat/weaponModel.js";
 import { CustomisedWeapons } from "./customisedWeaponModel.js";

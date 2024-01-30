@@ -1,5 +1,5 @@
 import supertest from "supertest";
-import { postLoginAPI } from "@shadowrun/common";
+import { postLoginAPI } from "@neon-codex/common";
 import app from "../app.js";
 
 const api = supertest(app);

@@ -7,7 +7,7 @@ import {
   spellRangeEnum,
   spellTargetEnum,
   spellTypeEnum,
-} from "@shadowrun/common/build/enums.js";
+} from "@neon-codex/common/build/enums.js";
 import { spellXmlCategoryEnum } from "./SpellParserSchemas.js";
 import type {
   SpellXmlDamageType,

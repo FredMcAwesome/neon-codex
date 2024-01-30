@@ -13,11 +13,11 @@ import {
   personaFormEnum,
   ratingMeaningEnum,
   sourceBookEnum,
-} from "@shadowrun/common/build/enums.js";
+} from "@neon-codex/common/build/enums.js";
 import type {
   BonusType,
   WeaponBonusType,
-} from "@shadowrun/common/build/schemas/shared/bonusSchemas.js";
+} from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 import type {
   AmmoForWeaponTypeType,
   AvailabilityGearType,
@@ -29,8 +29,8 @@ import type {
   GearRatingType,
   GearType,
   WeightType,
-} from "@shadowrun/common/build/schemas/gearSchemas.js";
-import type { RequirementsType } from "@shadowrun/common/build/schemas/shared/requiredSchemas.js";
+} from "@neon-codex/common/build/schemas/gearSchemas.js";
+import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
 import { CustomisedWeapons } from "../../activeTables/customisedWeaponModel.js";
 
 @Entity()

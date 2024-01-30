@@ -2,8 +2,8 @@ import assert from "assert";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { ArmourListSchema } from "@shadowrun/common/build/schemas/armourSchemas.js";
-import type { ArmourListType } from "@shadowrun/common/build/schemas/armourSchemas.js";
+import { ArmourListSchema } from "@neon-codex/common/build/schemas/armourSchemas.js";
+import type { ArmourListType } from "@neon-codex/common/build/schemas/armourSchemas.js";
 import { Armours } from "../../models/rpg/equipment/combat/armourModel.js";
 
 export const getArmours = function () {

@@ -19,11 +19,11 @@ import {
 import {
   ArmourListSchema,
   ArmourSchema,
-} from "@shadowrun/common/build/schemas/armourSchemas.js";
+} from "@neon-codex/common/build/schemas/armourSchemas.js";
 import type {
   AvailabilityArmourType,
   CostArmourType,
-} from "@shadowrun/common/build/schemas/armourSchemas.js";
+} from "@neon-codex/common/build/schemas/armourSchemas.js";
 import Armours from "../../grammar/armours.ohm-bundle.js";
 import {
   convertSource,

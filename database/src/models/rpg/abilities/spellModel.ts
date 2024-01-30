@@ -12,13 +12,13 @@ import {
   durationEnum,
   spellTypeEnum,
   sourceBookEnum,
-} from "@shadowrun/common/build/enums.js";
-import type { BonusType } from "@shadowrun/common/build/schemas/shared/bonusSchemas.js";
+} from "@neon-codex/common/build/enums.js";
+import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 import type {
   spellRangeType,
   SpellType,
-} from "@shadowrun/common/build/schemas/spellSchemas.js";
-import type { RequirementsType } from "@shadowrun/common/build/schemas/shared/requiredSchemas.js";
+} from "@neon-codex/common/build/schemas/spellSchemas.js";
+import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
 
 @Entity()
 export class Spells {

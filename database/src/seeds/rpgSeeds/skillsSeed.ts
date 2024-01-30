@@ -3,8 +3,8 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { Skills } from "../../models/rpg/abilities/skillModel.js";
-import { SkillListSchema } from "@shadowrun/common/build/schemas/skillSchemas.js";
-import type { SkillListType } from "@shadowrun/common/build/schemas/skillSchemas.js";
+import { SkillListSchema } from "@neon-codex/common/build/schemas/skillSchemas.js";
+import type { SkillListType } from "@neon-codex/common/build/schemas/skillSchemas.js";
 
 export const getSkills = function () {
   const currentPath = import.meta.url;

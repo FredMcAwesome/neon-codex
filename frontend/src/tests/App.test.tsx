@@ -5,7 +5,7 @@ import {
 } from "@testing-library/react";
 import { rest } from "msw";
 import { MemoryRouter } from "react-router-dom";
-import { JwtTokenType } from "@shadowrun/common";
+import { JwtTokenType } from "@neon-codex/common";
 import App from "../App.js";
 import { rootRender } from "../utils/TestingUtils.js";
 import { getLoginStatus, postLogin } from "../utils/api.js";

@@ -13,7 +13,7 @@ import type {
 import { availabilityDrugSemantics } from "./DrugParserHelper.js";
 import Drug from "../../grammar/drug.ohm-bundle.js";
 import { convertSource } from "../common/ParserHelper.js";
-import { DrugComponentSchema } from "@shadowrun/common/build/schemas/drugSchemas.js";
+import { DrugComponentSchema } from "@neon-codex/common/build/schemas/drugSchemas.js";
 const Availability = Drug;
 
 export function ParseDrugComponents() {

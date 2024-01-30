@@ -22,7 +22,7 @@ import {
   sourceBookEnum,
   weaponExtraClassificationEnum,
   weaponTypeEnum,
-} from "@shadowrun/common/build/enums.js";
+} from "@neon-codex/common/build/enums.js";
 import type {
   AccuracyType,
   AmmunitionType,
@@ -31,10 +31,10 @@ import type {
   CostWeaponType,
   DamageType,
   WeaponSummaryType,
-} from "@shadowrun/common/build/schemas/weaponSchemas.js";
-import { weaponXmlSubtypeEnum } from "@shadowrun/common/build/schemas/commonSchemas.js";
+} from "@neon-codex/common/build/schemas/weaponSchemas.js";
+import { weaponXmlSubtypeEnum } from "@neon-codex/common/build/schemas/commonSchemas.js";
 import { Skills } from "../../abilities/skillModel.js";
-import type { RequirementsType } from "@shadowrun/common/build/schemas/shared/requiredSchemas.js";
+import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
 import { Gears } from "../other/gearModel.js";
 import { WeaponRanges } from "./helperTables/weaponRangeModel.js";
 import { IncludedWeaponAccessories } from "../../activeTables/activeWeaponAccessoryModel.js";

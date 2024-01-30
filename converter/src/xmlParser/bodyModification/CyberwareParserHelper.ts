@@ -3,7 +3,7 @@ import {
   cyberwareCategoryEnum,
   mountSlotEnum,
   mathOperatorEnum,
-} from "@shadowrun/common/build/enums.js";
+} from "@neon-codex/common/build/enums.js";
 import type {
   cyberwareRatingType,
   CyberwareSubsystemsXmlType,
@@ -12,7 +12,7 @@ import type {
 import { mountLocationXmlEnum } from "./CyberwareParserSchemas.js";
 import { cyberwareXmlCategoryEnum } from "./CyberwareParserSchemas.js";
 import { convertXmlGears } from "../common/ParserHelper.js";
-import type { AugmentationSubsystemListType } from "@shadowrun/common/build/schemas/augmentationSchemas.js";
+import type { AugmentationSubsystemListType } from "@neon-codex/common/build/schemas/augmentationSchemas.js";
 
 export const convertCyberwareCategory = function (
   category: cyberwareXmlCategoryEnum

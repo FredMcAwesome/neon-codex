@@ -6,12 +6,12 @@ import { fileURLToPath } from "url";
 import { z as zod } from "zod";
 import { StringOrNumberSchema } from "../common/ParserCommonDefines.js";
 import Range from "../../grammar/range.ohm-bundle.js";
-import type { RangeIncrementType } from "@shadowrun/common/build/schemas/weaponSchemas.js";
+import type { RangeIncrementType } from "@neon-codex/common/build/schemas/weaponSchemas.js";
 import {
   RangeListSchema,
   RangeSchema,
-} from "@shadowrun/common/build/schemas/weaponSchemas.js";
-import { mathOperatorEnum, rangeEnum } from "@shadowrun/common/build/enums.js";
+} from "@neon-codex/common/build/schemas/weaponSchemas.js";
+import { mathOperatorEnum, rangeEnum } from "@neon-codex/common/build/enums.js";
 
 const RangeXmlSchema = zod
   .object({

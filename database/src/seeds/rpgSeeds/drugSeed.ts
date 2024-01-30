@@ -1,11 +1,11 @@
 import {
   DrugComponentListSchema,
   DrugListSchema,
-} from "@shadowrun/common/build/schemas/drugSchemas.js";
+} from "@neon-codex/common/build/schemas/drugSchemas.js";
 import type {
   DrugComponentListType,
   DrugListType,
-} from "@shadowrun/common/build/schemas/drugSchemas.js";
+} from "@neon-codex/common/build/schemas/drugSchemas.js";
 import assert from "assert";
 import fs from "fs";
 import path from "path";

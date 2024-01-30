@@ -1,5 +1,5 @@
 {
-  "name": "@shadowrun/frontend",
+  "name": "@neon-codex/frontend",
   "version": "1.0.0",
   "description": "",
   "main": "build/index.js",
@@ -18,7 +18,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@shadowrun/common": "*",
+    "@neon-codex/common": "*",
     "@tanstack/react-query": "^4.19.0",
     "@tanstack/react-table": "^8.7.0",
     "@trpc/client": "^10.19.0",

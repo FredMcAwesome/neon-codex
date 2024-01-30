@@ -1,7 +1,7 @@
 import "dotenv/config";
 // import * as logger from "./logger.js";
 // import { DATABASE_URL } from "./config.js";
-import MikroORMConfig from "@shadowrun/database/build/mikro-orm.config.js";
+import MikroORMConfig from "@neon-codex/database/build/mikro-orm.config.js";
 import { MikroORM } from "@mikro-orm/postgresql";
 
 // Create a singleton equivilant orm creator

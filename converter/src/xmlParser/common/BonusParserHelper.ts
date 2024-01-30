@@ -4,12 +4,12 @@ import {
   mathOperatorEnum,
   spellCategoryEnum,
   weaponTypeEnum,
-} from "@shadowrun/common/build/enums.js";
+} from "@neon-codex/common/build/enums.js";
 import type {
   BonusType,
   QualityListType,
   SelectSkillType,
-} from "@shadowrun/common/build/schemas/shared/bonusSchemas.js";
+} from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 import assert from "assert";
 import type {
   GenericNameValueListType,

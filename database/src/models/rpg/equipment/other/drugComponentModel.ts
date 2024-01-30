@@ -8,11 +8,11 @@ import {
 import {
   drugComponentCategoryEnum,
   sourceBookEnum,
-} from "@shadowrun/common/build/enums.js";
+} from "@neon-codex/common/build/enums.js";
 import type {
   DrugComponentType,
   AvailabilityDrugType,
-} from "@shadowrun/common/build/schemas/drugSchemas.js";
+} from "@neon-codex/common/build/schemas/drugSchemas.js";
 
 @Entity()
 export class DrugComponents {

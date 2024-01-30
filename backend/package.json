@@ -1,5 +1,5 @@
 {
-  "name": "@shadowrun/backend",
+  "name": "@neon-codex/backend",
   "version": "1.0.0",
   "description": "",
   "main": "build/server.js",
@@ -41,8 +41,8 @@
   "dependencies": {
     "@mikro-orm/core": "^6.0.2",
     "@mikro-orm/postgresql": "^6.0.2",
-    "@shadowrun/common": "*",
-    "@shadowrun/database": "*",
+    "@neon-codex/common": "*",
+    "@neon-codex/database": "*",
     "@trpc/server": "^10.19.0",
     "async": "^3.2.4",
     "bcrypt": "^5.0.1",

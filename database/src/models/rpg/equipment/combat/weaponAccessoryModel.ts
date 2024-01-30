@@ -10,22 +10,22 @@ import {
   Unique,
 } from "@mikro-orm/postgresql";
 import type { Ref } from "@mikro-orm/postgresql";
-import type { AmmunitionSingleType } from "@shadowrun/common/build/schemas/weaponSchemas.js";
+import type { AmmunitionSingleType } from "@neon-codex/common/build/schemas/weaponSchemas.js";
 import type {
   AmmoCapacityCalculationType,
   ConcealabilityModificationType,
   WeaponAccessorySummaryType,
   AvailabilityWeaponAccessoryType,
   CostWeaponAccessoryType,
-} from "@shadowrun/common/build/schemas/weaponAccessorySchemas.js";
-import type { RequirementsType } from "@shadowrun/common/build/schemas/shared/requiredSchemas.js";
+} from "@neon-codex/common/build/schemas/weaponAccessorySchemas.js";
+import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
 import { Weapons } from "./weaponModel.js";
 import { Gears } from "../other/gearModel.js";
 import {
   damageTypeEnum,
   gearCategoryEnum,
   weaponAccessoryMountLocationEnum,
-} from "@shadowrun/common/build/enums.js";
+} from "@neon-codex/common/build/enums.js";
 import { WeaponAccessoryIncludedGears } from "../../activeTables/activeGearModel.js";
 
 @Entity()

@@ -2,12 +2,12 @@ import {
   mathOperatorEnum,
   skillCategoryEnum,
   standardCalculationEnum,
-} from "@shadowrun/common/build/enums.js";
+} from "@neon-codex/common/build/enums.js";
 import {
   SkillListSchema,
   SkillSchema,
-} from "@shadowrun/common/build/schemas/skillSchemas.js";
-import type { SkillType } from "@shadowrun/common/build/schemas/skillSchemas.js";
+} from "@neon-codex/common/build/schemas/skillSchemas.js";
+import type { SkillType } from "@neon-codex/common/build/schemas/skillSchemas.js";
 import assert from "assert";
 import { XMLParser } from "fast-xml-parser";
 import fs from "fs";

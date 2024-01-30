@@ -2,8 +2,8 @@ import assert from "assert";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { GearListSchema } from "@shadowrun/common/build/schemas/gearSchemas.js";
-import type { GearListType } from "@shadowrun/common/build/schemas/gearSchemas.js";
+import { GearListSchema } from "@neon-codex/common/build/schemas/gearSchemas.js";
+import type { GearListType } from "@neon-codex/common/build/schemas/gearSchemas.js";
 import { Gears } from "../../models/rpg/equipment/other/gearModel.js";
 
 export const getGears = function () {

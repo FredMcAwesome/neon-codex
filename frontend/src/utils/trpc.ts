@@ -1,4 +1,4 @@
-import type { AppRouter } from "@shadowrun/backend/build/app.js";
+import type { AppRouter } from "@neon-codex/backend/build/app.js";
 import { createTRPCReact } from "@trpc/react-query";
 import type { CreateTRPCReact } from "@trpc/react-query";
 const trpc: CreateTRPCReact<AppRouter, unknown, null> =

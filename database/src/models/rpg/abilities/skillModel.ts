@@ -5,11 +5,11 @@ import {
   Property,
   Unique,
 } from "@mikro-orm/postgresql";
-import type { SkillType } from "@shadowrun/common/build/schemas/skillSchemas.js";
+import type { SkillType } from "@neon-codex/common/build/schemas/skillSchemas.js";
 import {
   attributeTypeEnum,
   skillCategoryEnum,
-} from "@shadowrun/common/build/enums.js";
+} from "@neon-codex/common/build/enums.js";
 
 @Entity()
 export class Skills {

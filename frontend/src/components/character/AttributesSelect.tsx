@@ -8,7 +8,7 @@ import {
   SpecialAttributesEnum,
   EdgeBaseAttributeIndex,
   SpecialAttributesLength,
-} from "@shadowrun/common/build/data/Skills.js";
+} from "@neon-codex/common/build/data/Skills.js";
 interface IAttributeRange {
   minimum: number;
   maximum: number;

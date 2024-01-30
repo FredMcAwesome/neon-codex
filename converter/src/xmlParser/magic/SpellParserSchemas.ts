@@ -1,4 +1,4 @@
-// import { standardCalculationEnum } from "@shadowrun/common/build/enums.js";
+// import { standardCalculationEnum } from "@neon-codex/common/build/enums.js";
 import { z as zod } from "zod";
 import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
 import { SourceXmlSchema } from "../common/ParserCommonDefines.js";

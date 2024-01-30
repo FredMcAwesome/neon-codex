@@ -1,5 +1,5 @@
 {
-  "name": "@shadowrun/converter",
+  "name": "@neon-codex/converter",
   "version": "1.0.0",
   "description": "This project converts xml files from the chummer5 project to formats understood in this project.",
   "main": "build/index.js",
@@ -17,7 +17,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@shadowrun/common": "*",
+    "@neon-codex/common": "*",
     "ohm-js": "^17.1.0"
   },
   "devDependencies": {

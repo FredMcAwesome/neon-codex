@@ -13,13 +13,13 @@ import type {
   CapacityArmourModType,
   CostArmourModType,
   HostArmourRequirementType,
-} from "@shadowrun/common/build/schemas/armourModSchemas.js";
+} from "@neon-codex/common/build/schemas/armourModSchemas.js";
 import {
   armourModCategoryEnum,
   sourceBookEnum,
-} from "@shadowrun/common/build/enums.js";
-import type { DamageReductionArmourType } from "@shadowrun/common/build/schemas/armourSchemas.js";
-import type { BonusType } from "@shadowrun/common/build/schemas/shared/bonusSchemas.js";
+} from "@neon-codex/common/build/enums.js";
+import type { DamageReductionArmourType } from "@neon-codex/common/build/schemas/armourSchemas.js";
+import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 import { ArmourModificationIncludedGears } from "../../activeTables/activeGearModel.js";
 
 @Entity()

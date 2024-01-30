@@ -21,7 +21,7 @@ import type {
   CapacityAugmentationType,
   AugmentationSubsystemListType,
   deviceRatingType,
-} from "@shadowrun/common/build/schemas/augmentationSchemas.js";
+} from "@neon-codex/common/build/schemas/augmentationSchemas.js";
 import {
   augmentationGradeEnum,
   augmentationTypeEnum,
@@ -32,14 +32,14 @@ import {
   mountSlotEnum,
   ratingMeaningEnum,
   sourceBookEnum,
-} from "@shadowrun/common/build/enums.js";
+} from "@neon-codex/common/build/enums.js";
 import { Weapons } from "../combat/weaponModel.js";
-import type { BonusType } from "@shadowrun/common/build/schemas/shared/bonusSchemas.js";
-import type { RequirementsType } from "@shadowrun/common/build/schemas/shared/requiredSchemas.js";
+import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
+import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
 import { Gears } from "../other/gearModel.js";
 import { Vehicles } from "../rigger/vehicleModel.js";
 import { AugmentationIncludedGears } from "../../activeTables/activeGearModel.js";
-import type { RatingType } from "@shadowrun/common/build/schemas/commonSchemas.js";
+import type { RatingType } from "@neon-codex/common/build/schemas/commonSchemas.js";
 
 @Entity({
   discriminatorColumn: "type",

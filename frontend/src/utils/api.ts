@@ -5,7 +5,7 @@ import {
   getThreadListAPI,
   getWeaponListAPI,
   postLoginAPI,
-} from "@shadowrun/common/build/api.js";
+} from "@neon-codex/common/build/api.js";
 import { SERVER } from "./config.js";
 
 const getThreadList = SERVER + getThreadListAPI;

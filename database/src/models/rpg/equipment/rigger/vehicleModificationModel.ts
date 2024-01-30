@@ -12,9 +12,9 @@ import {
   sourceBookEnum,
   vehicleModSubtypeEnum,
   vehicleModTypeEnum,
-} from "@shadowrun/common/build/enums.js";
-import type { BonusType } from "@shadowrun/common/build/schemas/shared/bonusSchemas.js";
-import type { RequirementsType } from "@shadowrun/common/build/schemas/shared/requiredSchemas.js";
+} from "@neon-codex/common/build/enums.js";
+import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
+import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
 import type {
   AvailabilityVehicleModType,
   CostVehicleModType,
@@ -22,7 +22,7 @@ import type {
   VehicleModRatingType,
   SlotCostType,
   VehicleModType,
-} from "@shadowrun/common/build/schemas/vehicleModSchemas.js";
+} from "@neon-codex/common/build/schemas/vehicleModSchemas.js";
 
 @Entity({
   discriminatorColumn: "type",

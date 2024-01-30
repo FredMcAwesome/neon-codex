@@ -6,12 +6,12 @@ import {
   projectileWeaponTypeEnum,
   weaponAccessoryMountLocationEnum,
   weaponTypeEnum,
-} from "@shadowrun/common/build/enums.js";
-import { weaponXmlSubtypeEnum } from "@shadowrun/common/build/schemas/commonSchemas.js";
+} from "@neon-codex/common/build/enums.js";
+import { weaponXmlSubtypeEnum } from "@neon-codex/common/build/schemas/commonSchemas.js";
 import type {
   RequirementsType,
   WeaponDamageRequirementsType,
-} from "@shadowrun/common/build/schemas/shared/requiredSchemas.js";
+} from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
 import assert from "assert";
 import type {
   containsType,

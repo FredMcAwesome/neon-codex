@@ -5,7 +5,7 @@
 // import {
 //   IActiveSkillSelection,
 //   skillList,
-// } from "@shadowrun/common/build/Skills.js";
+// } from "@neon-codex/common/build/Skills.js";
 // import { renderWithProviders } from "../../utils/TestingUtils.js";
 
 // test("Skills increase", () => {

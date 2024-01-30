@@ -6,11 +6,11 @@ import {
   limbSlotEnum,
   ratingMeaningEnum,
   sourceBookEnum,
-} from "@shadowrun/common/build/enums.js";
+} from "@neon-codex/common/build/enums.js";
 import type {
   GenericModListType,
   GenericVehicleModListType,
-} from "@shadowrun/common/build/schemas/shared/modSchemas.js";
+} from "@neon-codex/common/build/schemas/shared/modSchemas.js";
 import assert from "assert";
 import type {
   CategoryXmlListType,
@@ -30,7 +30,7 @@ import type {
   ModXmlType,
 } from "./ParserCommonDefines.js";
 import { sourceBookXmlEnum } from "./ParserCommonDefines.js";
-import type { UseGearListType } from "@shadowrun/common/build/schemas/commonSchemas.js";
+import type { UseGearListType } from "@neon-codex/common/build/schemas/commonSchemas.js";
 
 export const convertSource = function (source: sourceBookXmlEnum | 2050) {
   const xmlSource = source === 2050 ? sourceBookXmlEnum.Shadowrun2050 : source;

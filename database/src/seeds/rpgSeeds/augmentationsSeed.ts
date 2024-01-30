@@ -2,14 +2,14 @@ import assert from "assert";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { AugmentationListSchema } from "@shadowrun/common/build/schemas/augmentationSchemas.js";
-import type { AugmentationListType } from "@shadowrun/common/build/schemas/augmentationSchemas.js";
+import { AugmentationListSchema } from "@neon-codex/common/build/schemas/augmentationSchemas.js";
+import type { AugmentationListType } from "@neon-codex/common/build/schemas/augmentationSchemas.js";
 import {
   Augmentations,
   Biowares,
   Cyberwares,
 } from "../../models/rpg/equipment/bodyModification/augmentationModel.js";
-import { augmentationTypeEnum } from "@shadowrun/common/build/enums.js";
+import { augmentationTypeEnum } from "@neon-codex/common/build/enums.js";
 
 export const getAugmentations = function () {
   const currentPath = import.meta.url;

@@ -2,9 +2,9 @@ import { init } from "../utils/db.js";
 import * as logger from "../utils/logger.js";
 import { router, privateProcedure } from "../trpc.js";
 import { z as zod } from "zod";
-import Threads from "@shadowrun/database/build/models/forum/threadModel.js";
-import Users from "@shadowrun/database/build/models/accounts/userModel.js";
-import type { ThreadListType } from "@shadowrun/common/build/serverResponse.js";
+import Threads from "@neon-codex/database/build/models/forum/threadModel.js";
+import Users from "@neon-codex/database/build/models/accounts/userModel.js";
+import type { ThreadListType } from "@neon-codex/common/build/serverResponse.js";
 
 export const forumRouter = router({
   getThreads: privateProcedure.query(async () => {

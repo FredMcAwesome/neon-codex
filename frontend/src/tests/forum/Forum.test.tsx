@@ -2,7 +2,7 @@ import { rest } from "msw";
 import { screen } from "@testing-library/react";
 import Forum from "../../components/forum/Forum.js";
 import { server } from "../mocks/server.js";
-import { ThreadListType } from "@shadowrun/common";
+import { ThreadListType } from "@neon-codex/common";
 import { renderWithProviders } from "../../utils/TestingUtils.js";
 import { getThreadList } from "../../utils/api.js";
 

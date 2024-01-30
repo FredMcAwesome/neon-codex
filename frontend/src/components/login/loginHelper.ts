@@ -1,9 +1,9 @@
 // Session details are only read and written on app startup and login/logout
-import type { LoginType } from "@shadowrun/common/build/clientRequest.js";
+import type { LoginType } from "@neon-codex/common/build/clientRequest.js";
 import {
   type JwtTokenType,
   JwtTokenSchema,
-} from "@shadowrun/common/build/serverResponse.js";
+} from "@neon-codex/common/build/serverResponse.js";
 import { postLogin } from "../../utils/api.js";
 
 // otherwise use store values

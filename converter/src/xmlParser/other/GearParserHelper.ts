@@ -12,8 +12,8 @@ import {
   restrictionEnum,
   weaponExtraClassificationEnum,
   weaponTypeEnum,
-} from "@shadowrun/common/build/enums.js";
-import type { AmmoForWeaponTypeType } from "@shadowrun/common/build/schemas/gearSchemas.js";
+} from "@neon-codex/common/build/enums.js";
+import type { AmmoForWeaponTypeType } from "@neon-codex/common/build/schemas/gearSchemas.js";
 import type {
   AddWeaponType,
   AmmoForWeaponTypeXmlType,
@@ -21,7 +21,7 @@ import type {
   GearXmlRatingType,
   WeaponXmlBonusType,
 } from "./GearParserSchemas.js";
-import type { WeaponBonusType } from "@shadowrun/common/build/schemas/shared/bonusSchemas.js";
+import type { WeaponBonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 import Weapons from "../../grammar/weapons.ohm-bundle.js";
 import { damageSemantics } from "../combat/WeaponParserHelper.js";
 import { weaponTypeXmlEnum } from "../combat/WeaponParserSchemas.js";

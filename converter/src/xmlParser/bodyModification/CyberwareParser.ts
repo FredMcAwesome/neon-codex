@@ -35,8 +35,8 @@ import { convertRequirements } from "../common/RequiredParserHelper.js";
 import {
   augmentationTypeEnum,
   availabilityEnum,
-} from "@shadowrun/common/build/enums.js";
-import { AugmentationSchema } from "@shadowrun/common/build/schemas/augmentationSchemas.js";
+} from "@neon-codex/common/build/enums.js";
+import { AugmentationSchema } from "@neon-codex/common/build/schemas/augmentationSchemas.js";
 import Augmentation from "../../grammar/augmentation.ohm-bundle.js";
 import {
   availabilityAugmentationSemantics,

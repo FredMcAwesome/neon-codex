@@ -1,5 +1,5 @@
 import supertest from "supertest";
-import { getLoginStatusAPI, getThreadListAPI } from "@shadowrun/common/";
+import { getLoginStatusAPI, getThreadListAPI } from "@neon-codex/common/";
 import app from "../app.js";
 
 const api = supertest(app);

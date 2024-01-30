@@ -9,7 +9,7 @@ import {
   weaponMountFlexibilityEnum,
   weaponMountSizeEnum,
   weaponMountVisibilityEnum,
-} from "@shadowrun/common/build/enums.js";
+} from "@neon-codex/common/build/enums.js";
 import {
   Vehicles,
   Groundcrafts,
@@ -21,7 +21,7 @@ import { WeaponMounts } from "../../models/rpg/equipment/rigger/weaponMountModel
 import {
   type VehicleListType,
   VehicleListSchema,
-} from "@shadowrun/common/build/schemas/vehicleSchemas.js";
+} from "@neon-codex/common/build/schemas/vehicleSchemas.js";
 
 export const getVehicles = function () {
   const currentPath = import.meta.url;

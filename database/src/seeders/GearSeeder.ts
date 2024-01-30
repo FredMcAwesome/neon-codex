@@ -61,7 +61,7 @@ import {
   WeaponMountModifications,
 } from "../models/rpg/equipment/rigger/vehicleModificationModel.js";
 import { WeaponMounts } from "../models/rpg/equipment/rigger/weaponMountModel.js";
-import { augmentationTypeEnum } from "@shadowrun/common/build/enums.js";
+import { augmentationTypeEnum } from "@neon-codex/common/build/enums.js";
 
 export class GearSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {

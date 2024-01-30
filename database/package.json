@@ -1,5 +1,5 @@
 {
-  "name": "@shadowrun/database",
+  "name": "@neon-codex/database",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -15,7 +15,7 @@
     "@mikro-orm/core": "^6.0.2",
     "@mikro-orm/postgresql": "^6.0.2",
     "@mikro-orm/seeder": "^6.0.2",
-    "@shadowrun/common": "*",
+    "@neon-codex/common": "*",
     "async": "^3.2.4",
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",

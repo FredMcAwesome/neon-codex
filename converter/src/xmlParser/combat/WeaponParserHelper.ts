@@ -17,7 +17,7 @@ import {
   meleeWeaponTypeEnum,
   projectileWeaponTypeEnum,
   weaponTypeEnum,
-} from "@shadowrun/common/build/enums.js";
+} from "@neon-codex/common/build/enums.js";
 import assert from "assert";
 import type { AccessoryXmlType, WeaponXmlType } from "./WeaponParserSchemas.js";
 import { weaponTypeXmlEnum } from "./WeaponParserSchemas.js";
@@ -26,9 +26,9 @@ import type {
   FirearmOptionsType,
   MeleeOptionsType,
   MountType,
-} from "@shadowrun/common/build/schemas/weaponSchemas.js";
-import { weaponXmlSubtypeEnum } from "@shadowrun/common/build/schemas/commonSchemas.js";
-import type { WeaponXmlSubtypeType } from "@shadowrun/common/build/schemas/commonSchemas.js";
+} from "@neon-codex/common/build/schemas/weaponSchemas.js";
+import { weaponXmlSubtypeEnum } from "@neon-codex/common/build/schemas/commonSchemas.js";
+import type { WeaponXmlSubtypeType } from "@neon-codex/common/build/schemas/commonSchemas.js";
 import Weapons from "../../grammar/weapons.ohm-bundle.js";
 import { convertXmlGears } from "../common/ParserHelper.js";
 const Accuracy = Weapons.Accuracy;

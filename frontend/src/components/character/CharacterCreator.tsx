@@ -16,8 +16,8 @@ import type { ISelectedQuality } from "./QualitiesSelect.js";
 import { SkillSelectList } from "./SkillsSelect.js";
 import { EquipmentSelect } from "./GearSelect.js";
 import { trpc } from "../../utils/trpc.js";
-import type { CustomSkillListType } from "@shadowrun/common/build/schemas/skillSchemas.js";
-import type { EquipmentListType } from "@shadowrun/common/build/schemas/equipmentSchemas.js";
+import type { CustomSkillListType } from "@neon-codex/common/build/schemas/skillSchemas.js";
+import type { EquipmentListType } from "@neon-codex/common/build/schemas/equipmentSchemas.js";
 
 const characterCreatorPath = "/character_creator";
 const CharacterCreator = function () {

@@ -1,4 +1,4 @@
-import { personaFormEnum } from "@shadowrun/common/build/enums.js";
+import { personaFormEnum } from "@neon-codex/common/build/enums.js";
 import { z as zod } from "zod";
 import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
 import {

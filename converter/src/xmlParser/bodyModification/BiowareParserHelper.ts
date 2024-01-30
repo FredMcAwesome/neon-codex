@@ -1,4 +1,4 @@
-import { biowareCategoryEnum } from "@shadowrun/common/build/enums.js";
+import { biowareCategoryEnum } from "@neon-codex/common/build/enums.js";
 import { biowareXmlCategoryEnum } from "./BiowareParserSchemas.js";
 
 export const convertBiowareCategory = function (
