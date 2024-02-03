@@ -9,6 +9,7 @@ import {
   weaponTypeEnum,
 } from "../../enums.js";
 import { DamageSchema } from "../weaponSchemas.js";
+import { EssenceCostSchema } from "../commonSchemas.js";
 
 const SelectSkillSchema = zod.discriminatedUnion("selectSkill", [
   zod
@@ -88,26 +89,6 @@ const AddictionResistanceSchema = zod
 export type AddictionResistanceType = zod.infer<
   typeof AddictionResistanceSchema
 >;
-
-const InnerEssenceCostSchema = zod.union([
-  zod.number(),
-  zod.object({ option: zod.literal("Rating") }).strict(),
-  zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
-]);
-export type EssenceCostType = Array<
-  zod.infer<typeof InnerEssenceCostSchema> | { subnumbers: EssenceCostType }
->;
-export const EssenceCostSchema: zod.ZodType<EssenceCostType> = zod.array(
-  zod.union([
-    InnerEssenceCostSchema,
-    zod
-      .object({
-        subnumbers: zod.lazy(() => EssenceCostSchema),
-      })
-      .strict(),
-  ])
-);
-
 export const BonusSchema = zod
   .object({
     enterName: zod.optional(zod.boolean()),

@@ -1,9 +1,9 @@
 import {
   availabilityEnum,
-  capcityAugmentationEnum,
-  costAugmentationEnum,
+  capacityEnum,
+  costEnum,
   mathOperatorEnum,
-  mountSlotEnum,
+  augmentationMountSlotEnum,
   restrictionEnum,
 } from "@neon-codex/common/build/enums.js";
 import assert from "assert";
@@ -240,16 +240,16 @@ costAugmentationSemantics.addOperation("eval", {
     return [cost.eval()];
   },
   Rating(_) {
-    return { option: costAugmentationEnum.Rating };
+    return { option: costEnum.Rating };
   },
   MinRating(_) {
-    return { option: costAugmentationEnum.MinimumRating };
+    return { option: costEnum.MinimumRating };
   },
   Parent(_) {
-    return { option: costAugmentationEnum.Parent };
+    return { option: costEnum.ParentCost };
   },
   Gear(_) {
-    return { option: costAugmentationEnum.Gear };
+    return { option: costEnum.GearCost };
   },
   Number(availability) {
     return availability.eval();
@@ -276,17 +276,17 @@ mountsAugmentationSemantics.addOperation("eval", {
   MountValue(mount) {
     switch (mount.sourceString) {
       case mountLocationXmlEnum.WRIST:
-        return mountSlotEnum.Wrist;
+        return augmentationMountSlotEnum.Wrist;
       case mountLocationXmlEnum.ANKLE:
-        return mountSlotEnum.Ankle;
+        return augmentationMountSlotEnum.Ankle;
       case mountLocationXmlEnum.ELBOW:
-        return mountSlotEnum.Elbow;
+        return augmentationMountSlotEnum.Elbow;
       case mountLocationXmlEnum.KNEE:
-        return mountSlotEnum.Knee;
+        return augmentationMountSlotEnum.Knee;
       case mountLocationXmlEnum.SHOULDER:
-        return mountSlotEnum.Shoulder;
+        return augmentationMountSlotEnum.Shoulder;
       case mountLocationXmlEnum.HIP:
-        return mountSlotEnum.Hip;
+        return augmentationMountSlotEnum.Hip;
       default:
         assert(false, mount.sourceString);
     }
@@ -310,7 +310,7 @@ capacityCyberwareSemantics.addOperation("eval", {
     return { cost: capacity.eval() };
   },
   CapacityArray_all(_) {
-    return { cost: [{ option: capcityAugmentationEnum.IncludedInParent }] };
+    return { cost: [{ option: capacityEnum.IncludedInParent }] };
   },
   AddSub_add(str, _, range) {
     return str
@@ -369,13 +369,10 @@ capacityCyberwareSemantics.addOperation("eval", {
     return capacity.eval();
   },
   Rating_base(_) {
-    return [{ option: capcityAugmentationEnum.Rating }];
+    return [{ option: capacityEnum.Rating }];
   },
   Rating_negative(_, rating) {
     return [-1, { operator: mathOperatorEnum.Multiply }].concat(rating.eval());
-  },
-  Capacity(_) {
-    return [{ option: capcityAugmentationEnum.Capacity }];
   },
   Number(availability) {
     return [availability.eval()];

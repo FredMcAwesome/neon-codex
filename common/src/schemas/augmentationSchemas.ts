@@ -5,19 +5,20 @@ import {
   augmentationTypeEnum,
   availabilityEnum,
   biowareCategoryEnum,
-  capcityAugmentationEnum,
-  costAugmentationEnum,
+  capacityEnum,
+  costEnum,
   cyberwareCategoryEnum,
   gearCategoryEnum,
   limbSlotEnum,
   mathOperatorEnum,
-  mountSlotEnum,
+  augmentationMountSlotEnum,
   ratingMeaningEnum,
   restrictionEnum,
   sourceBookEnum,
 } from "../enums.js";
 import {
   AvailabilityRatingSchema,
+  EssenceCostSchema,
   RatingSchema,
   UseGearListSchema,
 } from "./commonSchemas.js";
@@ -55,7 +56,7 @@ const InnerCostAugmentationSchema = zod.union([
   zod.number(),
   zod
     .object({
-      option: zod.nativeEnum(costAugmentationEnum),
+      option: zod.nativeEnum(costEnum),
     })
     .strict(),
   zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
@@ -101,7 +102,7 @@ const InnerCapacityAugmentationSchema = zod.union([
   zod.number(),
   zod
     .object({
-      option: zod.nativeEnum(capcityAugmentationEnum),
+      option: zod.nativeEnum(capacityEnum),
     })
     .strict(),
   zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
@@ -133,65 +134,6 @@ export const CapacityAugmentationSchema = zod.union([
 export type CapacityAugmentationType = zod.infer<
   typeof CapacityAugmentationSchema
 >;
-
-const SingleCapacityCostAugmentationSchema = zod.union([
-  SingleCapacityAugmentationSchema,
-  zod
-    .object({ option: zod.literal(capcityAugmentationEnum.IncludedInParent) })
-    .strict(),
-]);
-const CapacityCostAugmentationSchema = zod.union([
-  SingleCapacityCostAugmentationSchema,
-  zod
-    .object({
-      ratingLinked: zod.array(SingleCapacityAugmentationSchema),
-    })
-    .strict(),
-]);
-export type CapacityCostAugmentationType = zod.infer<
-  typeof CapacityCostAugmentationSchema
->;
-
-// export type EssenceType = zod.infer<typeof EssenceSchema>;
-// Essence Cost is a recursive type
-export const EssenceSubnumberSchema = zod.union([
-  zod.number(),
-  zod
-    .object({
-      option: zod.literal("Rating"),
-    })
-    .strict(),
-  zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
-]);
-
-type EssenceRecursiveCostType = Array<
-  | zod.infer<typeof EssenceSubnumberSchema>
-  | {
-      subnumbers: EssenceRecursiveCostType;
-    }
->;
-export const EssenceCostRecursiveSchema: zod.ZodType<EssenceRecursiveCostType> =
-  zod.array(
-    zod.union([
-      EssenceSubnumberSchema,
-      zod
-        .object({
-          subnumbers: zod.lazy(() => EssenceCostRecursiveSchema),
-        })
-        .strict(),
-    ])
-  );
-
-export const EssenceCostSchema = zod.union([
-  zod
-    .object({
-      ratingLinked: zod.array(EssenceCostRecursiveSchema),
-    })
-    .strict(),
-  EssenceCostRecursiveSchema,
-]);
-
-export type EssenceCostType = zod.infer<typeof EssenceCostSchema>;
 
 export type CyberwareSubsystemsRecursiveType = {
   name: string;
@@ -254,7 +196,9 @@ export const AugmentationPartialSchema = zod
     rating: RatingSchema,
     ratingMeaning: zod.optional(zod.nativeEnum(ratingMeaningEnum)),
     addWeapon: zod.optional(zod.string()),
-    blockedMountList: zod.optional(zod.array(zod.nativeEnum(mountSlotEnum))),
+    blockedMountList: zod.optional(
+      zod.array(zod.nativeEnum(augmentationMountSlotEnum))
+    ),
     selectSide: zod.optional(zod.literal(true)),
     bonus: zod.optional(BonusSchema),
     pairBonus: zod.optional(BonusSchema),
@@ -287,14 +231,14 @@ const CyberwareSchema = AugmentationPartialSchema.extend({
   subtype: zod.nativeEnum(cyberwareCategoryEnum),
   programs: zod.optional(zod.literal("Rating")),
   capacity: zod.optional(CapacityAugmentationSchema),
-  capacityCost: zod.optional(CapacityCostAugmentationSchema),
+  capacityCost: zod.optional(CapacityAugmentationSchema),
   addToParentCapacity: zod.optional(zod.literal(true)),
   addParentWeaponAccessory: zod.optional(zod.literal(true)),
   removalCost: zod.optional(zod.number()),
   inheritAttributes: zod.optional(zod.literal(true)),
   limbSlot: zod.optional(zod.nativeEnum(limbSlotEnum)),
   useBothLimbSlots: zod.optional(zod.literal(true)),
-  mountsLocation: zod.optional(zod.nativeEnum(mountSlotEnum)),
+  mountsLocation: zod.optional(zod.nativeEnum(augmentationMountSlotEnum)),
   modularMount: zod.optional(zod.literal(true)),
   wirelessBonus: zod.optional(BonusSchema),
   wirelessPairBonus: zod.optional(BonusSchema),

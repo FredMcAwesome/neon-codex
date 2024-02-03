@@ -5,7 +5,7 @@ import {
   standardCalculationEnum,
   sourceBookEnum,
   ammoOptionEnum,
-  costWeaponAccessoryEnum,
+  costEnum,
   restrictionEnum,
   gearCategoryEnum,
 } from "../enums.js";
@@ -34,7 +34,7 @@ const InnerCostWeaponAccessorySchema = zod.union([
   zod.number(),
   zod
     .object({
-      option: zod.nativeEnum(costWeaponAccessoryEnum),
+      option: zod.nativeEnum(costEnum),
     })
     .strict(),
   zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),

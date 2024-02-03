@@ -2,7 +2,7 @@ import { z as zod } from "zod";
 import {
   restrictionEnum,
   mathOperatorEnum,
-  costArmourEnum,
+  costEnum,
   armourCategoryEnum,
   availabilityEnum,
   sourceBookEnum,
@@ -10,6 +10,7 @@ import {
 } from "../enums.js";
 import {
   AvailabilityRatingSchema,
+  RangeCostSchema,
   UseGearListSchema,
 } from "./commonSchemas.js";
 import { BonusSchema } from "./shared/bonusSchemas.js";
@@ -28,27 +29,15 @@ const InnerCostArmourSchema = zod.union([
   zod.number(),
   zod
     .object({
-      option: zod.nativeEnum(costArmourEnum),
+      option: zod.nativeEnum(costEnum),
     })
     .strict(),
   zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
 ]);
 
-const RangeCostArmourSchema = zod
-  .object({
-    range: zod
-      .object({
-        min: zod.number(),
-        max: zod.number(),
-      })
-      .strict(),
-  })
-  .strict();
-
 type PartialCostArmourType = Array<
   | zod.infer<typeof InnerCostArmourSchema>
   | { subnumbers: PartialCostArmourType }
-  | zod.infer<typeof RangeCostArmourSchema>
 >;
 const PartialCostArmourSchema: zod.ZodType<PartialCostArmourType> = zod.array(
   zod.union([
@@ -62,7 +51,7 @@ const PartialCostArmourSchema: zod.ZodType<PartialCostArmourType> = zod.array(
 );
 
 export const CostArmourSchema = zod.union([
-  RangeCostArmourSchema,
+  RangeCostSchema,
   PartialCostArmourSchema,
 ]);
 
@@ -104,8 +93,8 @@ export const ArmourSchema = zod
     bonus: zod.optional(BonusSchema),
     wirelessBonus: zod.optional(BonusSchema),
     includedMods: zod.optional(GenericModListSchema),
-    allowModCategory: zod.optional(zod.nativeEnum(armourModCategoryEnum)),
-    includeModFromCategory: zod.optional(zod.nativeEnum(armourModCategoryEnum)),
+    allowModsFromCategory: zod.optional(zod.nativeEnum(armourModCategoryEnum)),
+    addModFromCategory: zod.optional(zod.nativeEnum(armourModCategoryEnum)),
     availability: AvailabilityArmourSchema,
     cost: CostArmourSchema,
     source: zod.nativeEnum(sourceBookEnum),

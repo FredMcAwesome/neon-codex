@@ -8,7 +8,7 @@ interface IProps {
   removeItem?: () => void;
 }
 
-export const CollapsibleGearDiv = function (props: IProps) {
+export const CollapsibleEquipmentDiv = function (props: IProps) {
   const [isOpened, setIsOpened] = useState<boolean>(false);
   const toggleIsOpened = function () {
     setIsOpened(!isOpened);

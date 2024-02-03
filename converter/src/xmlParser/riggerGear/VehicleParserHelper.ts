@@ -3,7 +3,7 @@ import { vehicleXmlCategoryEnum } from "./VehicleParserSchemas.js";
 import {
   aircraftSubtypeEnum,
   availabilityEnum,
-  costVehicleEnum,
+  costEnum,
   droneSubtypeEnum,
   groundcraftSubtypeEnum,
   mathOperatorEnum,
@@ -302,7 +302,7 @@ costSemantics.addOperation("eval", {
     return [cost.eval()];
   },
   Rating(_) {
-    return { option: costVehicleEnum.Rating };
+    return { option: costEnum.Rating };
   },
   Number(availability) {
     return availability.eval();

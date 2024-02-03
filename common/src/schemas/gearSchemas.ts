@@ -1,7 +1,7 @@
 import { z as zod } from "zod";
 import {
   attributeTypeEnum,
-  costGearEnum,
+  costEnum,
   firearmWeaponTypeEnum,
   gearCategoryEnum,
   gearDeviceRatingEnum,
@@ -18,6 +18,7 @@ import {
 } from "../enums.js";
 import {
   AvailabilityRatingSchema,
+  RangeCostSchema,
   UseGearListSchema,
   // RatingSchema
 } from "./commonSchemas.js";
@@ -45,7 +46,7 @@ const InnerCostGearSchema = zod.union([
   zod.number(),
   zod
     .object({
-      option: zod.nativeEnum(costGearEnum),
+      option: zod.nativeEnum(costEnum),
     })
     .strict(),
   zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
@@ -67,13 +68,9 @@ export const RecursiveCostGearSchema: zod.ZodType<RecursiveCostGearType> =
   );
 
 export const CostGearSchema = zod.union([
+  RangeCostSchema,
   RecursiveCostGearSchema,
   zod.object({ ratingLinked: zod.array(RecursiveCostGearSchema) }).strict(),
-  zod
-    .object({
-      range: zod.object({ min: zod.number(), max: zod.number() }).strict(),
-    })
-    .strict(),
 ]);
 export type CostGearType = zod.infer<typeof CostGearSchema>;
 

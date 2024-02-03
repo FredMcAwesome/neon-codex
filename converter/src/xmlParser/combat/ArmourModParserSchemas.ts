@@ -1,7 +1,4 @@
-import {
-  costArmourEnum,
-  gearCategoryEnum,
-} from "@neon-codex/common/build/enums.js";
+import { costEnum, gearCategoryEnum } from "@neon-codex/common/build/enums.js";
 import { z as zod } from "zod";
 import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
 import {
@@ -30,7 +27,7 @@ const ArmourModXmlSchema = zod
     // Category of mod, if not "General" then the host armour must have the
     // matching addmodcategory in order to use this
     category: zod.nativeEnum(armourModXmlCategoryEnum),
-    armor: zod.union([zod.number(), zod.nativeEnum(costArmourEnum)]),
+    armor: zod.union([zod.number(), zod.nativeEnum(costEnum)]),
     // Maximum rating for armour mod
     // this should be 1 for items without rating variable effects
     maxrating: zod.number(),

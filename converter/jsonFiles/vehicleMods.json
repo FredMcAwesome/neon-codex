@@ -7,7 +7,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Rigger 5",
@@ -22,7 +22,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Rigger 5",
@@ -37,7 +37,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Rigger 5",
@@ -52,7 +52,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Rigger 5",
@@ -67,7 +67,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Rigger 5",
@@ -82,7 +82,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Rigger 5",
@@ -101,7 +101,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Rigger 5",
@@ -116,7 +116,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Bullets And Bandages",
@@ -131,7 +131,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [250],
     "source": "Hard Targets",
@@ -146,7 +146,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Shadows In Focus: Metropole",
@@ -161,7 +161,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Rigger 5",
@@ -176,7 +176,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Street Lethal",
@@ -192,7 +192,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Rigger 5",
@@ -208,7 +208,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Rigger 5",
@@ -225,7 +225,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": {
       "ratingLinked": [
@@ -337,7 +337,7 @@
     ],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       1000,
@@ -428,7 +428,7 @@
           ]
         }
       ],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [
       {
@@ -517,15 +517,15 @@
       "ratingLinked": [
         {
           "rating": [6],
-          "restriction": "Legal"
+          "restriction": ""
         },
         {
           "rating": [8],
-          "restriction": "Legal"
+          "restriction": ""
         },
         {
           "rating": [10],
-          "restriction": "Legal"
+          "restriction": ""
         }
       ]
     },
@@ -650,7 +650,7 @@
     "slotCost": [2],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [7500],
     "source": "Rigger 5",
@@ -665,7 +665,7 @@
     "slotCost": [1],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [500],
     "source": "Rigger 5",
@@ -680,7 +680,7 @@
     "slotCost": [4],
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -729,7 +729,7 @@
     "slotCost": [2],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -756,7 +756,7 @@
     "slotCost": [2],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1500],
     "source": "Rigger 5",
@@ -771,7 +771,7 @@
     "slotCost": [1],
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [200],
     "source": "Rigger 5",
@@ -786,7 +786,7 @@
     "slotCost": [10],
     "availability": {
       "rating": [16],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [
       {
@@ -835,7 +835,7 @@
     "slotCost": [2],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Rigger 5",
@@ -850,7 +850,7 @@
     "slotCost": [4],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -899,7 +899,7 @@
     "slotCost": [8],
     "availability": {
       "rating": [12],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [
       {
@@ -948,7 +948,7 @@
     "slotCost": [8],
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -997,7 +997,7 @@
     "slotCost": [10],
     "availability": {
       "rating": [12],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [
       {
@@ -1046,7 +1046,7 @@
     "slotCost": [6],
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -1095,7 +1095,7 @@
     "slotCost": [8],
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -1148,15 +1148,15 @@
       "ratingLinked": [
         {
           "rating": [6],
-          "restriction": "Legal"
+          "restriction": ""
         },
         {
           "rating": [8],
-          "restriction": "Legal"
+          "restriction": ""
         },
         {
           "rating": [12],
-          "restriction": "Legal"
+          "restriction": ""
         }
       ]
     },
@@ -1285,19 +1285,19 @@
       "ratingLinked": [
         {
           "rating": [4],
-          "restriction": "Legal"
+          "restriction": ""
         },
         {
           "rating": [6],
-          "restriction": "Legal"
+          "restriction": ""
         },
         {
           "rating": [8],
-          "restriction": "Restricted"
+          "restriction": "R"
         },
         {
           "rating": [12],
-          "restriction": "Forbidden"
+          "restriction": "F"
         }
       ]
     },
@@ -1339,7 +1339,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [
       {
@@ -1389,7 +1389,7 @@
     },
     "availability": {
       "rating": [12],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [
       {
@@ -1416,7 +1416,7 @@
     "slotCost": [2],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -1451,7 +1451,7 @@
           ]
         }
       ],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [
       {
@@ -1478,7 +1478,7 @@
     "slotCost": [2],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -1505,7 +1505,7 @@
     "slotCost": [2],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -1532,7 +1532,7 @@
     "slotCost": [2],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -1559,7 +1559,7 @@
     "slotCost": [2],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -1602,7 +1602,7 @@
           ]
         }
       ],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -1629,7 +1629,7 @@
     "slotCost": [2],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -1656,7 +1656,7 @@
     "slotCost": [1],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [350],
     "source": "Rigger 5",
@@ -1671,7 +1671,7 @@
     "slotCost": [1],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [500],
     "source": "Rigger 5",
@@ -1686,7 +1686,7 @@
     "slotCost": [2],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Rigger 5",
@@ -1701,7 +1701,7 @@
     "slotCost": [3],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Rigger 5",
@@ -1716,7 +1716,7 @@
     "slotCost": [4],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [4000],
     "source": "Rigger 5",
@@ -1731,7 +1731,7 @@
     "slotCost": [2],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [750],
     "source": "Rigger 5",
@@ -1746,7 +1746,7 @@
     "slotCost": [2],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Rigger 5",
@@ -1761,7 +1761,7 @@
     "slotCost": [3],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [4000],
     "source": "Rigger 5",
@@ -1776,7 +1776,7 @@
     "slotCost": [4],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10000],
     "source": "Rigger 5",
@@ -1791,7 +1791,7 @@
     "slotCost": [5],
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [20000],
     "source": "Rigger 5",
@@ -1806,7 +1806,7 @@
     "slotCost": [1],
     "availability": {
       "rating": [6],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [500],
     "source": "Rigger 5",
@@ -1821,7 +1821,7 @@
     "slotCost": [3],
     "availability": {
       "rating": [12],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [15000],
     "source": "Rigger 5",
@@ -1836,7 +1836,7 @@
     "slotCost": [2],
     "availability": {
       "rating": [8],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [500],
     "source": "Rigger 5",
@@ -1851,7 +1851,7 @@
     "slotCost": [1],
     "availability": {
       "rating": [6],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [
       {
@@ -1900,7 +1900,7 @@
     "slotCost": [2],
     "availability": {
       "rating": [6],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [750],
     "source": "Rigger 5",
@@ -1915,7 +1915,7 @@
     "slotCost": [2],
     "availability": {
       "rating": [6],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [850],
     "source": "Rigger 5",
@@ -1930,7 +1930,7 @@
     "slotCost": [2],
     "availability": {
       "rating": [10],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [800],
     "source": "Rigger 5",
@@ -1945,7 +1945,7 @@
     "slotCost": [2],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Rigger 5",
@@ -1960,7 +1960,7 @@
     "slotCost": [2],
     "availability": {
       "rating": [12],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [
       {
@@ -2009,7 +2009,7 @@
     "slotCost": [1],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2500],
     "source": "Rigger 5",
@@ -2024,7 +2024,7 @@
     "slotCost": [2],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Rigger 5",
@@ -2039,7 +2039,7 @@
     "slotCost": [2],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Rigger 5",
@@ -2054,7 +2054,7 @@
     "slotCost": [2],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": {
       "ratingLinked": [
@@ -2142,7 +2142,7 @@
     "slotCost": [2],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Rigger 5",
@@ -2157,7 +2157,7 @@
     "slotCost": [3],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [5000],
     "source": "Rigger 5",
@@ -2192,7 +2192,7 @@
           ]
         }
       ],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [
       {
@@ -2239,7 +2239,7 @@
           ]
         }
       ],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [
       {
@@ -2302,7 +2302,7 @@
     "slotCost": [3],
     "availability": {
       "rating": [8],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [1500],
     "source": "Rigger 5",
@@ -2320,7 +2320,7 @@
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Rigger 5",
@@ -2338,7 +2338,7 @@
     },
     "availability": {
       "rating": [12],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [3000],
     "source": "Rigger 5",
@@ -2353,7 +2353,7 @@
     "slotCost": [4],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Rigger 5",
@@ -2368,7 +2368,7 @@
     "slotCost": [1],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [750],
     "source": "Rigger 5",
@@ -2383,7 +2383,7 @@
     "slotCost": [2],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [4000],
     "source": "Rigger 5",
@@ -2398,7 +2398,7 @@
     "slotCost": [6],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [5000],
     "source": "Rigger 5",
@@ -2413,7 +2413,7 @@
     "slotCost": [2],
     "availability": {
       "rating": [6],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [
       {
@@ -2478,7 +2478,7 @@
           ]
         }
       ],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [
       {
@@ -2505,7 +2505,7 @@
     "slotCost": [2],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [750],
     "source": "Rigger 5",
@@ -2520,7 +2520,7 @@
     "slotCost": [1],
     "availability": {
       "rating": [8],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [1000],
     "source": "Rigger 5",
@@ -2535,7 +2535,7 @@
     "slotCost": [2],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [4000],
     "source": "Rigger 5",
@@ -2550,7 +2550,7 @@
     "slotCost": [1],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [500],
     "source": "Rigger 5",
@@ -2583,7 +2583,7 @@
               ]
             }
           ],
-          "restriction": "Legal"
+          "restriction": ""
         },
         {
           "rating": [
@@ -2599,7 +2599,7 @@
               ]
             }
           ],
-          "restriction": "Legal"
+          "restriction": ""
         },
         {
           "rating": [
@@ -2615,7 +2615,7 @@
               ]
             }
           ],
-          "restriction": "Legal"
+          "restriction": ""
         },
         {
           "rating": [
@@ -2631,7 +2631,7 @@
               ]
             }
           ],
-          "restriction": "Legal"
+          "restriction": ""
         },
         {
           "rating": [
@@ -2647,7 +2647,7 @@
               ]
             }
           ],
-          "restriction": "Legal"
+          "restriction": ""
         },
         {
           "rating": [
@@ -2663,7 +2663,7 @@
               ]
             }
           ],
-          "restriction": "Legal"
+          "restriction": ""
         }
       ]
     },
@@ -2779,7 +2779,7 @@
               ]
             }
           ],
-          "restriction": "Legal"
+          "restriction": ""
         },
         {
           "rating": [
@@ -2795,7 +2795,7 @@
               ]
             }
           ],
-          "restriction": "Legal"
+          "restriction": ""
         },
         {
           "rating": [
@@ -2811,7 +2811,7 @@
               ]
             }
           ],
-          "restriction": "Legal"
+          "restriction": ""
         },
         {
           "rating": [
@@ -2827,7 +2827,7 @@
               ]
             }
           ],
-          "restriction": "Legal"
+          "restriction": ""
         },
         {
           "rating": [
@@ -2843,7 +2843,7 @@
               ]
             }
           ],
-          "restriction": "Legal"
+          "restriction": ""
         },
         {
           "rating": [
@@ -2859,7 +2859,7 @@
               ]
             }
           ],
-          "restriction": "Legal"
+          "restriction": ""
         }
       ]
     },
@@ -2961,7 +2961,7 @@
     ],
     "availability": {
       "rating": [14],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [
       {
@@ -2988,7 +2988,7 @@
     "slotCost": [2],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -3037,7 +3037,7 @@
     "slotCost": [3],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -3086,7 +3086,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [100],
     "source": "Rigger 5",
@@ -3101,7 +3101,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Rigger 5",
@@ -3116,7 +3116,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [500],
     "source": "Rigger 5",
@@ -3131,7 +3131,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Rigger 5",
@@ -3146,7 +3146,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [16],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10000],
     "source": "Rigger 5",
@@ -3161,7 +3161,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [5000],
     "source": "Rigger 5",
@@ -3176,7 +3176,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -3207,7 +3207,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -3234,7 +3234,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [1],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [500],
     "source": "Shadowrun 5 Core Rulebook",
@@ -3249,7 +3249,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -3264,7 +3264,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Rigger 5",
@@ -3279,7 +3279,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [800],
     "source": "Rigger 5",
@@ -3294,7 +3294,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [6],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [750],
     "source": "Rigger 5",
@@ -3309,7 +3309,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [500],
     "source": "The Complete Trog",
@@ -3336,7 +3336,7 @@
           ]
         }
       ],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -3365,7 +3365,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [8],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [400],
     "source": "Rigger 5",
@@ -3383,7 +3383,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [4],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [800],
     "source": "Rigger 5",
@@ -3399,7 +3399,7 @@
     "slotCost": [1],
     "availability": {
       "rating": [4],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [
       {
@@ -3450,7 +3450,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [8],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [1600],
     "source": "Rigger 5",
@@ -3467,7 +3467,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [10],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [2400],
     "source": "Rigger 5",
@@ -3484,7 +3484,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [12],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [3200],
     "source": "Rigger 5",
@@ -3502,7 +3502,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [16],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [4000],
     "source": "Rigger 5",
@@ -3520,7 +3520,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [20],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [4800],
     "source": "Rigger 5",
@@ -3538,19 +3538,19 @@
       "ratingLinked": [
         {
           "rating": [2],
-          "restriction": "Legal"
+          "restriction": ""
         },
         {
           "rating": [4],
-          "restriction": "Legal"
+          "restriction": ""
         },
         {
           "rating": [8],
-          "restriction": "Legal"
+          "restriction": ""
         },
         {
           "rating": [12],
-          "restriction": "Restricted"
+          "restriction": "R"
         }
       ]
     },
@@ -3751,7 +3751,7 @@
     "slotCost": [1],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -3811,7 +3811,7 @@
     "slotCost": [2],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -3871,7 +3871,7 @@
     "slotCost": [1],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -3921,7 +3921,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": {
       "range": {
@@ -3953,7 +3953,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [7500],
     "source": "Rigger 5",
@@ -3980,7 +3980,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10000],
     "source": "Rigger 5",
@@ -4007,7 +4007,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1500],
     "source": "Rigger 5",
@@ -4033,7 +4033,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [7500],
     "source": "Rigger 5",
@@ -4059,7 +4059,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10000],
     "source": "Rigger 5",
@@ -4075,7 +4075,7 @@
     "slotCost": [-2],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Rigger 5",
@@ -4091,7 +4091,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [5],
     "source": "Rigger 5",
@@ -4107,7 +4107,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [50],
     "source": "Rigger 5",
@@ -4123,7 +4123,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -4173,7 +4173,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -4225,27 +4225,27 @@
       "ratingLinked": [
         {
           "rating": [4],
-          "restriction": "Legal"
+          "restriction": ""
         },
         {
           "rating": [0],
-          "restriction": "Legal"
+          "restriction": ""
         },
         {
           "rating": [8],
-          "restriction": "Restricted"
+          "restriction": "R"
         },
         {
           "rating": [12],
-          "restriction": "Restricted"
+          "restriction": "R"
         },
         {
           "rating": [16],
-          "restriction": "Forbidden"
+          "restriction": "F"
         },
         {
           "rating": [24],
-          "restriction": "Forbidden"
+          "restriction": "F"
         }
       ]
     },
@@ -4264,7 +4264,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [8],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [500],
     "source": "Stolen Souls",
@@ -4279,7 +4279,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [8],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [500],
     "source": "Rigger 5",
@@ -4323,7 +4323,7 @@
           ]
         }
       ],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Rigger 5",
@@ -4358,7 +4358,7 @@
           ]
         }
       ],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -4385,7 +4385,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -4412,7 +4412,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [6000],
     "source": "Rigger 5",
@@ -4427,7 +4427,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [6000],
     "source": "Rigger 5",
@@ -4442,7 +4442,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [5000],
     "source": "Rigger 5",
@@ -4457,7 +4457,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [4000],
     "source": "Rigger 5",
@@ -4472,7 +4472,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [5500],
     "source": "Rigger 5",
@@ -4488,7 +4488,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [12],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [
       {
@@ -4537,7 +4537,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [15],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [3500],
     "source": "Stolen Souls",
@@ -4552,7 +4552,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [15],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [5000],
     "source": "Stolen Souls",
@@ -4567,7 +4567,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [8],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [1000],
     "source": "Stolen Souls",
@@ -4582,7 +4582,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [8],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [1000],
     "source": "Rigger 5",
@@ -4597,7 +4597,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [8],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [200],
     "source": "Rigger 5",
@@ -4612,7 +4612,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [12],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [2500],
     "source": "Rigger 5",
@@ -4627,7 +4627,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [8],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [600],
     "source": "Rigger 5",
@@ -4646,7 +4646,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -4677,7 +4677,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -4708,7 +4708,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -4735,7 +4735,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [15],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [1400],
     "source": "Stolen Souls",
@@ -4750,7 +4750,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [12],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [3500],
     "source": "Stolen Souls",
@@ -4765,7 +4765,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [12],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [7000],
     "source": "Stolen Souls",
@@ -4781,7 +4781,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [500],
     "source": "Stolen Souls",
@@ -4797,7 +4797,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Rigger 5",
@@ -4813,7 +4813,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Rigger 5",
@@ -4829,7 +4829,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Rigger 5",
@@ -4845,7 +4845,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Rigger 5",
@@ -4861,7 +4861,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Rigger 5",
@@ -4877,7 +4877,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Rigger 5",
@@ -4892,7 +4892,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": {
       "range": {
@@ -4912,7 +4912,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": {
       "range": {
@@ -4932,7 +4932,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": {
       "range": {
@@ -4952,7 +4952,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": {
       "range": {
@@ -4972,7 +4972,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": {
       "range": {
@@ -4992,7 +4992,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [350],
     "source": "Rigger 5",
@@ -5007,7 +5007,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [500],
     "source": "Rigger 5",
@@ -5022,7 +5022,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Rigger 5",
@@ -5037,7 +5037,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Rigger 5",
@@ -5052,7 +5052,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [4000],
     "source": "Rigger 5",
@@ -5067,7 +5067,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [750],
     "source": "Rigger 5",
@@ -5082,7 +5082,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Rigger 5",
@@ -5097,7 +5097,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [4000],
     "source": "Rigger 5",
@@ -5112,7 +5112,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10000],
     "source": "Rigger 5",
@@ -5127,7 +5127,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [20000],
     "source": "Rigger 5",
@@ -5142,7 +5142,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [5000],
     "source": "Rigger 5",
@@ -5157,7 +5157,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1500],
     "source": "Rigger 5",
@@ -5175,7 +5175,7 @@
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": {
       "range": {
@@ -5262,7 +5262,7 @@
           ]
         }
       ],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -5392,7 +5392,7 @@
           ]
         }
       ],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -5522,7 +5522,7 @@
           ]
         }
       ],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -5649,51 +5649,51 @@
       "ratingLinked": [
         {
           "rating": [1],
-          "restriction": "Legal"
+          "restriction": ""
         },
         {
           "rating": [2],
-          "restriction": "Legal"
+          "restriction": ""
         },
         {
           "rating": [3],
-          "restriction": "Legal"
+          "restriction": ""
         },
         {
           "rating": [4],
-          "restriction": "Legal"
+          "restriction": ""
         },
         {
           "rating": [5],
-          "restriction": "Legal"
+          "restriction": ""
         },
         {
           "rating": [6],
-          "restriction": "Legal"
+          "restriction": ""
         },
         {
           "rating": [7],
-          "restriction": "Restricted"
+          "restriction": "R"
         },
         {
           "rating": [8],
-          "restriction": "Restricted"
+          "restriction": "R"
         },
         {
           "rating": [9],
-          "restriction": "Restricted"
+          "restriction": "R"
         },
         {
           "rating": [10],
-          "restriction": "Restricted"
+          "restriction": "R"
         },
         {
           "rating": [11],
-          "restriction": "Restricted"
+          "restriction": "R"
         },
         {
           "rating": [12],
-          "restriction": "Restricted"
+          "restriction": "R"
         },
         {
           "rating": [
@@ -5701,7 +5701,7 @@
               "option": "Rating"
             }
           ],
-          "restriction": "Forbidden"
+          "restriction": "F"
         }
       ]
     },
@@ -5833,7 +5833,7 @@
           ]
         }
       ],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -5862,7 +5862,7 @@
     "slotCost": [-1],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Rigger 5",
@@ -5879,7 +5879,7 @@
     "slotCost": [-1],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Rigger 5",
@@ -5896,7 +5896,7 @@
     "slotCost": [-1],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Rigger 5",
@@ -5913,7 +5913,7 @@
     "slotCost": [-1],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Rigger 5",
@@ -5935,7 +5935,7 @@
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Rigger 5",
@@ -5952,7 +5952,7 @@
     "slotCost": [-1],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Rigger 5",
@@ -5968,7 +5968,7 @@
     "slotCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [25],
     "source": "Rigger 5",
@@ -5984,7 +5984,7 @@
     "slotCost": [1],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -6012,7 +6012,7 @@
     "slotCost": [1],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [50],
     "source": "Rigger 5",
@@ -6028,7 +6028,7 @@
     "slotCost": [2],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [500],
     "source": "Rigger 5",
@@ -6036,7 +6036,7 @@
     "type": "Weapon Mount",
     "replaceAmmo": [
       {
-        "reloadMethod": "Belt Fed",
+        "reloadMethod": "(belt)",
         "capacity": 100
       }
     ]
@@ -6049,7 +6049,7 @@
     "slotCost": [1],
     "availability": {
       "rating": [6],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [200],
     "source": "Rigger 5",

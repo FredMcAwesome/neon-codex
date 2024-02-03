@@ -47,6 +47,11 @@ import {
   Drones,
 } from "@neon-codex/database/build/models/rpg/equipment/rigger/vehicleModel.js";
 import { Gears } from "@neon-codex/database/build/models/rpg/equipment/other/gearModel.js";
+import type {
+  ArmourListType,
+  ArmourType,
+} from "@neon-codex/common/build/schemas/armourSchemas.js";
+import { Armours } from "@neon-codex/database/build/models/rpg/equipment/combat/armourModel.js";
 
 export async function getSkills() {
   const db = await init();
@@ -205,6 +210,48 @@ async function getWeaponTypeInformation(weapon: Weapons) {
   throw new Error(`Weapon type unexpected: ${weapon.type}`);
 }
 
+async function getArmours() {
+  const db = await init();
+  const armours = await db.em.findAll(Armours, {
+    populate: ["*"],
+  });
+  const armoursResponse: ArmourListType = armours.map((armour) => {
+    const isWeapon = armour.linkedWeapon !== undefined ? true : undefined;
+    const includedGearNameList = armour.includedGearList.$.map((activeGear) => {
+      const gear = activeGear.gear.$.name;
+      return { name: gear };
+    });
+    const includedMods = armour.includedMods.$.map((activeMod) => {
+      const mod = activeMod.armourModification.$.name;
+      return { name: mod };
+    });
+
+    const armourFormatted: ArmourType = {
+      name: armour.name,
+      description: armour.description,
+      category: armour.category,
+      maxRating: armour.maxRating,
+      damageReduction: armour.damageReduction,
+      customFitStackDamageReduction: armour.customFitStackDamageReduction,
+      capacity: armour.capacity,
+      isWeapon: isWeapon,
+      includedGearList: includedGearNameList,
+      bonus: armour.bonus,
+      wirelessBonus: armour.wirelessBonus,
+      includedMods: includedMods,
+      allowModsFromCategory: armour.allowModsFromCategory,
+      addModFromCategory: armour.addModFromCategory,
+      availability: armour.availability,
+      cost: armour.cost,
+      source: armour.source,
+      page: armour.page,
+    };
+    return armourFormatted;
+  });
+
+  return armoursResponse;
+}
+
 async function getAugmentations() {
   const db = await init();
   const augmentations = await db.em.findAll(Augmentations, {
@@ -214,12 +261,7 @@ async function getAugmentations() {
     augmentations.map(async (augmentation) => {
       let weaponName;
       if (augmentation.addWeapon !== undefined) {
-        const addWeapon = await augmentation.addWeapon.load();
-        if (addWeapon == null) {
-          throw new Error(
-            `Augmentation weapon not linked: ${augmentation.addWeapon.id}`
-          );
-        }
+        const addWeapon = augmentation.addWeapon.$;
         weaponName = addWeapon.name;
       }
       const pairIncludeList = await augmentation.pairIncludeList.loadItems();
@@ -391,7 +433,7 @@ function getVehicleTypeInformation(vehicle: Vehicles) {
   throw new Error(`Vehicle type unexpected: ${vehicle.type}`);
 }
 
-export async function getGears() {
+export async function getGears(): Promise<GearListType> {
   const db = await init();
   const gears = await db.em.findAll(Gears, {
     populate: ["*", "includedWeapon.weapon"],
@@ -478,6 +520,16 @@ export const characterRouter = router({
       throw new Error("Database error");
     }
   }),
+  armours: privateProcedure.query(async () => {
+    try {
+      const armoursResponse: ArmourListType = await getArmours();
+      logger.log(JSON.stringify(armoursResponse, null, 2));
+      return armoursResponse;
+    } catch (error) {
+      logger.error("Unable to connect to the database:", error);
+      throw new Error("Database error");
+    }
+  }),
   gear: privateProcedure.query(async () => {
     try {
       const gearResponse = await getGears();
@@ -515,8 +567,12 @@ export const characterRouter = router({
 
       const weaponsResponse: WeaponSummaryListType = await getWeapons();
       let end = Date.now();
-      console.log(`Execution time 1: ${end - start} ms`);
+      console.log(`Execution time 0: ${end - start} ms`);
       let start1 = Date.now();
+      const armoursResponse: ArmourListType = await getArmours();
+      end = Date.now();
+      console.log(`Execution time 1: ${end - start1} ms`);
+      start1 = Date.now();
       const gearsResponse: GearListType = await getGears();
       end = Date.now();
       console.log(`Execution time 2: ${end - start1} ms`);
@@ -531,6 +587,7 @@ export const characterRouter = router({
       console.log(`Execution time 4: ${end - start1} ms`);
       const equipmentResponse: EquipmentListType = {
         weapons: weaponsResponse,
+        armours: armoursResponse,
         gears: gearsResponse,
         augmentations: augmentationsResponse,
         vehicles: vehiclesResponse,

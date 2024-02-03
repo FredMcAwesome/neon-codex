@@ -1,7 +1,7 @@
 import { z as zod } from "zod";
 import {
   aircraftSubtypeEnum,
-  costVehicleEnum as costVehicleEnum,
+  costEnum as costEnum,
   droneSubtypeEnum,
   groundcraftSubtypeEnum,
   mathOperatorEnum,
@@ -17,6 +17,7 @@ import {
 } from "../enums.js";
 import {
   AvailabilityRatingSchema,
+  RangeCostSchema,
   UseGearListSchema,
 } from "./commonSchemas.js";
 import { GenericVehicleModListSchema } from "./shared/modSchemas.js";
@@ -36,39 +37,32 @@ const InnerCostVehicleSchema = zod.union([
   zod.number(),
   zod
     .object({
-      option: zod.nativeEnum(costVehicleEnum),
+      option: zod.nativeEnum(costEnum),
     })
     .strict(),
   zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
 ]);
 
-export type CostVehicleType =
-  | Array<
-      zod.infer<typeof InnerCostVehicleSchema> | { subnumbers: CostVehicleType }
-    >
-  | { range: { min: number; max: number } };
-export const CostVehicleSchema: zod.ZodType<CostVehicleType> = zod.union([
-  zod.array(
-    zod.union([
-      InnerCostVehicleSchema,
-      zod
-        .object({
-          subnumbers: zod.lazy(() => CostVehicleSchema),
-        })
-        .strict(),
-    ])
-  ),
-  zod
-    .object({
-      range: zod
-        .object({
-          min: zod.number(),
-          max: zod.number(),
-        })
-        .strict(),
-    })
-    .strict(),
+type PartialCostVehicleType = Array<
+  | zod.infer<typeof InnerCostVehicleSchema>
+  | { subnumbers: PartialCostVehicleType }
+>;
+const PartialCostVehicleSchema: zod.ZodType<PartialCostVehicleType> = zod.array(
+  zod.union([
+    InnerCostVehicleSchema,
+    zod
+      .object({
+        subnumbers: zod.lazy(() => PartialCostVehicleSchema),
+      })
+      .strict(),
+  ])
+);
+
+export const CostVehicleSchema = zod.union([
+  RangeCostSchema,
+  PartialCostVehicleSchema,
 ]);
+export type CostVehicleType = zod.infer<typeof CostVehicleSchema>;
 
 const WeaponMountSchema = zod
   .object({

@@ -14,7 +14,7 @@ import React from "react";
 import { QualitiesSelect } from "./QualitiesSelect.js";
 import type { ISelectedQuality } from "./QualitiesSelect.js";
 import { SkillSelectList } from "./SkillsSelect.js";
-import { EquipmentSelect } from "./GearSelect.js";
+import { EquipmentSelect } from "./EquipmentSelect.js";
 import { trpc } from "../../utils/trpc.js";
 import type { CustomSkillListType } from "@neon-codex/common/build/schemas/skillSchemas.js";
 import type { EquipmentListType } from "@neon-codex/common/build/schemas/equipmentSchemas.js";
@@ -81,6 +81,7 @@ const CharacterCreator = function () {
     {
       weapons: [],
       gears: [],
+      armours: [],
       augmentations: [],
       vehicles: [],
     }
@@ -147,7 +148,7 @@ const CharacterCreator = function () {
     }
   }
   const firstPage = 0;
-  const lastPage = 4;
+  const lastPage = 5;
   let currentStage;
   switch (page) {
     case firstPage:
@@ -204,7 +205,7 @@ const CharacterCreator = function () {
         />
       );
       break;
-    case lastPage:
+    case 4:
       currentStage = (
         <EquipmentSelect
           equipmentSelected={equipmentSelected}
@@ -214,6 +215,8 @@ const CharacterCreator = function () {
         />
       );
       break;
+    case lastPage:
+
     default:
       currentStage = (
         <PrioritySelect

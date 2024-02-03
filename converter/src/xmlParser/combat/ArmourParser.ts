@@ -238,8 +238,8 @@ function convertArmour(armour: ArmourXmlType) {
     ...(bonus !== undefined && { bonus: bonus }),
     ...(wirelessBonus !== undefined && { wirelessBonus: wirelessBonus }),
     ...(includedMods !== undefined && { includedMods: includedMods }),
-    allowModCategory: allowModCategory,
-    includeModFromCategory: addModFromXmlCategory,
+    allowModsFromCategory: allowModCategory,
+    addModFromCategory: addModFromXmlCategory,
     source: source,
     page: armour.page,
   };

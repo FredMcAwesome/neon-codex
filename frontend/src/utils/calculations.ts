@@ -1,13 +1,12 @@
 import type { GearCalculationType } from "@neon-codex/common/build/schemas/commonSchemas.js";
 import type { CostWeaponAccessoryType } from "@neon-codex/common/build/schemas/weaponAccessorySchemas.js";
-import type { CostAmmunitionType } from "@neon-codex/common/build/schemas/ammunitionSchemas.js";
 import type { CostArmourType } from "@neon-codex/common/build/schemas/armourSchemas.js";
 import type { CostArmourModType } from "@neon-codex/common/build/schemas/armourModSchemas.js";
 import type { CostAugmentationType } from "@neon-codex/common/build/schemas/augmentationSchemas.js";
 import type { CostGearType } from "@neon-codex/common/build/schemas/gearSchemas.js";
 import type { CostWeaponType } from "@neon-codex/common/build/schemas/weaponSchemas.js";
-import { mathOperatorEnum } from "@neon-codex/common/build/enums.js";
 import type { CostVehicleType } from "@neon-codex/common/build/schemas/vehicleSchemas.js";
+import { costEnum, mathOperatorEnum } from "@neon-codex/common/build/enums.js";
 
 export const genericListCalculation = function (
   genericList: GearCalculationType,
@@ -72,7 +71,6 @@ export const genericListCalculation = function (
 
 export const costCalculation = function <
   CostType extends
-    | CostAmmunitionType
     | CostArmourType
     | CostArmourModType
     | CostAugmentationType
@@ -84,11 +82,11 @@ export const costCalculation = function <
   costArray: CostType,
   options: {
     rating?: number;
-    weapon?: number;
-    chemical?: number;
-    sensor?: number;
-    capacity?: number;
-    force?: number;
+    minimumRating?: number;
+    parentCost?: number;
+    childrenCost?: number;
+    gearCost?: number;
+    weaponCost?: number;
   }
 ) {
   let finalCost = 0;
@@ -103,36 +101,53 @@ export const costCalculation = function <
           nextValue = costItem;
         } else {
           if (typeof costItem === "object" && "subnumbers" in costItem) {
-            // typescript isn't realising the recursive nature of these types
-            // means subnumbers will always be the same type as costItem
-            nextValue = costCalculation<CostType>(
-              costItem.subnumbers as CostType,
-              options
-            );
+            nextValue = costCalculation(costItem.subnumbers, options);
           } else {
             if ("option" in costItem) {
               switch (costItem.option) {
-                case "Rating":
-                  nextValue = options.rating || 0;
+                case costEnum.Rating:
+                  if (options.rating === undefined) {
+                    console.error("Rating is undefined for this cost");
+                    options.rating = 0;
+                  }
+                  nextValue = options.rating;
                   break;
-                case "Weapon":
-                  nextValue = options.weapon || 0;
+                case costEnum.MinimumRating:
+                  if (options.minimumRating === undefined) {
+                    console.error("Minimum Rating is undefined for this cost");
+                    options.minimumRating = 0;
+                  }
+                  nextValue = options.minimumRating;
                   break;
-                // case "Chemical":
-                //   nextValue = options.chemical || 0;
-                //   break;
-                // case "Sensor":
-                //   nextValue = options.sensor || 0;
-                //   break;
-                // case "Capacity":
-                //   nextValue = options.capacity || 0;
-                //   break;
-                // case "Force":
-                //   nextValue = options.force || 0;
-                //   break;
+                case costEnum.ParentCost:
+                  if (options.parentCost === undefined) {
+                    console.error("Parent Cost is undefined for this cost");
+                    options.parentCost = 0;
+                  }
+                  nextValue = options.parentCost;
+                  break;
+                case costEnum.ChildrenCost:
+                  if (options.childrenCost === undefined) {
+                    console.error("Children Cost is undefined for this cost");
+                    options.childrenCost = 0;
+                  }
+                  nextValue = options.childrenCost;
+                  break;
+                case costEnum.GearCost:
+                  if (options.gearCost === undefined) {
+                    console.error("Gear Cost is undefined for this cost");
+                    options.gearCost = 0;
+                  }
+                  nextValue = options.gearCost;
+                  break;
+                case costEnum.WeaponCost:
+                  if (options.weaponCost === undefined) {
+                    console.error("Weapon Cost is undefined for this cost");
+                    options.weaponCost = 0;
+                  }
+                  nextValue = options.weaponCost;
+                  break;
               }
-            } else {
-              costItem.range.min;
             }
           }
         }

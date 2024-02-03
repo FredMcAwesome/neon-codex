@@ -1,8 +1,8 @@
 import {
   armourModCategoryEnum,
   availabilityEnum,
-  capcityArmourModEnum,
-  costArmourModEnum,
+  capacityEnum,
+  costEnum,
   mathOperatorEnum,
   restrictionEnum,
 } from "@neon-codex/common/build/enums.js";
@@ -175,10 +175,10 @@ costArmourModificationSemantics.addOperation("eval", {
     return [cost.eval()];
   },
   Rating(_) {
-    return { option: costArmourModEnum.Rating };
+    return { option: costEnum.Rating };
   },
   Armour(_) {
-    return { option: costArmourModEnum.Armour };
+    return { option: costEnum.ParentCost };
   },
   Number(availability) {
     return availability.eval();
@@ -267,10 +267,10 @@ capacityArmourModificationSemantics.addOperation("eval", {
     return [capacity.eval()];
   },
   Rating(_) {
-    return { option: capcityArmourModEnum.Rating };
+    return { option: capacityEnum.Rating };
   },
   Capacity(_) {
-    return { option: capcityArmourModEnum.Capacity };
+    return { option: capacityEnum.ParentCapacity };
   },
   Number(availability) {
     return availability.eval();

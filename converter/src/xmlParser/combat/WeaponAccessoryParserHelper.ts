@@ -2,7 +2,7 @@ import {
   ammoOptionEnum,
   ammoSourceEnum,
   availabilityEnum,
-  costWeaponAccessoryEnum,
+  costEnum,
   mathOperatorEnum,
   restrictionEnum,
   weaponAccessoryMountLocationEnum,
@@ -269,10 +269,10 @@ costWeaponAccessorySemantics.addOperation("eval", {
     return [cost.eval()];
   },
   Rating(_) {
-    return { option: costWeaponAccessoryEnum.Rating };
+    return { option: costEnum.Rating };
   },
   Weapon(_) {
-    return { option: costWeaponAccessoryEnum.Weapon };
+    return { option: costEnum.WeaponCost };
   },
   Number(availability) {
     return availability.eval();

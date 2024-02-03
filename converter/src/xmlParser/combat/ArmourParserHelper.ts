@@ -1,7 +1,7 @@
 import {
   armourCategoryEnum,
   availabilityEnum,
-  costArmourEnum,
+  costEnum,
   mathOperatorEnum,
   restrictionEnum,
 } from "@neon-codex/common/build/enums.js";
@@ -143,7 +143,7 @@ costArmourSemantics.addOperation("eval", {
     return [cost.eval()];
   },
   Rating(_) {
-    return { option: costArmourEnum.Rating };
+    return { option: costEnum.Rating };
   },
   Number(availability) {
     return availability.eval();

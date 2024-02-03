@@ -20,7 +20,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [3000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -50,7 +50,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [12000],
     "source": "Rigger 5",
@@ -80,7 +80,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [4500],
     "source": "Rigger 5",
@@ -110,7 +110,7 @@
     ],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [8000],
     "source": "Rigger 5",
@@ -146,7 +146,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10000],
     "source": "Rigger 5",
@@ -176,7 +176,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [6500],
     "source": "Rigger 5",
@@ -206,7 +206,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [3500],
     "source": "Rigger 5",
@@ -236,7 +236,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [17000],
     "source": "Rigger 5",
@@ -266,7 +266,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [11500],
     "source": "Rigger 5",
@@ -296,7 +296,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [22000],
     "source": "Rigger 5",
@@ -326,7 +326,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [28000],
     "source": "Rigger 5",
@@ -356,7 +356,7 @@
     ],
     "availability": {
       "rating": [3],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [11000],
     "source": "Rigger 5",
@@ -386,7 +386,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [8500],
     "source": "Rigger 5",
@@ -419,7 +419,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [18000],
     "source": "Rigger 5",
@@ -449,7 +449,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [24000],
     "source": "Rigger 5",
@@ -479,7 +479,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [14000],
     "source": "Rigger 5",
@@ -509,7 +509,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [20000],
     "source": "Rigger 5",
@@ -539,7 +539,7 @@
     ],
     "availability": {
       "rating": [14],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [154000],
     "source": "Rigger 5",
@@ -569,7 +569,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [98000],
     "source": "Rigger 5",
@@ -599,7 +599,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [32000],
     "source": "Rigger 5",
@@ -632,7 +632,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [40000],
     "source": "Rigger 5",
@@ -662,7 +662,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [31000],
     "source": "Rigger 5",
@@ -695,7 +695,7 @@
     ],
     "availability": {
       "rating": [18],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [350000],
     "source": "Rigger 5",
@@ -727,7 +727,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [7500],
     "source": "Rigger 5",
@@ -757,7 +757,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [60000],
     "source": "Rigger 5",
@@ -787,7 +787,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [22000],
     "source": "Rigger 5",
@@ -817,7 +817,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [39000],
     "source": "Rigger 5",
@@ -847,7 +847,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [32000],
     "source": "Rigger 5",
@@ -877,7 +877,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [30000],
     "source": "Rigger 5",
@@ -910,7 +910,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [30000],
     "source": "Rigger 5",
@@ -940,7 +940,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [115000],
     "source": "Rigger 5",
@@ -970,7 +970,7 @@
     ],
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [125000],
     "source": "Rigger 5",
@@ -1000,7 +1000,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [30000],
     "source": "Rigger 5",
@@ -1030,7 +1030,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [28000],
     "source": "Rigger 5",
@@ -1063,7 +1063,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [30000],
     "source": "Rigger 5",
@@ -1093,7 +1093,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [40000],
     "source": "Rigger 5",
@@ -1126,7 +1126,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [145000],
     "source": "Rigger 5",
@@ -1159,7 +1159,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [134000],
     "source": "Rigger 5",
@@ -1192,7 +1192,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [158000],
     "source": "Rigger 5",
@@ -1225,7 +1225,7 @@
     ],
     "availability": {
       "rating": [16],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [150000],
     "source": "Rigger 5",
@@ -1255,7 +1255,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [296000],
     "source": "Rigger 5",
@@ -1285,7 +1285,7 @@
     ],
     "availability": {
       "rating": [14],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [287000],
     "source": "Rigger 5",
@@ -1315,7 +1315,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [248000],
     "source": "Rigger 5",
@@ -1345,7 +1345,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [196000],
     "source": "Rigger 5",
@@ -1375,7 +1375,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [312000],
     "source": "Rigger 5",
@@ -1405,7 +1405,7 @@
     ],
     "availability": {
       "rating": [16],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [365000],
     "source": "Rigger 5",
@@ -1435,7 +1435,7 @@
     ],
     "availability": {
       "rating": [16],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [87000],
     "source": "Rigger 5",
@@ -1465,7 +1465,7 @@
     ],
     "availability": {
       "rating": [16],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [77000],
     "source": "Rigger 5",
@@ -1495,7 +1495,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [130000],
     "source": "Rigger 5",
@@ -1533,7 +1533,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [84000],
     "source": "Rigger 5",
@@ -1577,7 +1577,7 @@
     ],
     "availability": {
       "rating": [14],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [46000],
     "source": "Rigger 5",
@@ -1633,7 +1633,7 @@
     ],
     "availability": {
       "rating": [16],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [65000],
     "source": "Rigger 5",
@@ -1683,7 +1683,7 @@
     ],
     "availability": {
       "rating": [20],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [114000],
     "source": "Rigger 5",
@@ -1713,7 +1713,7 @@
     ],
     "availability": {
       "rating": [20],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [120000],
     "source": "Rigger 5",
@@ -1743,7 +1743,7 @@
     ],
     "availability": {
       "rating": [16],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [76000],
     "source": "Rigger 5",
@@ -1793,7 +1793,7 @@
     ],
     "availability": {
       "rating": [16],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [78000],
     "source": "Rigger 5",
@@ -1837,7 +1837,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [45000],
     "source": "Rigger 5",
@@ -1875,7 +1875,7 @@
     ],
     "availability": {
       "rating": [14],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [398000],
     "source": "Rigger 5",
@@ -1905,7 +1905,7 @@
     ],
     "availability": {
       "rating": [18],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [344000],
     "source": "Rigger 5",
@@ -1935,7 +1935,7 @@
     ],
     "availability": {
       "rating": [18],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [54000],
     "source": "Rigger 5",
@@ -1965,7 +1965,7 @@
     ],
     "availability": {
       "rating": [20],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [145000],
     "source": "Rigger 5",
@@ -2015,7 +2015,7 @@
     ],
     "availability": {
       "rating": [18],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [225000],
     "source": "Rigger 5",
@@ -2045,7 +2045,7 @@
     ],
     "availability": {
       "rating": [20],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [330000],
     "source": "Rigger 5",
@@ -2072,7 +2072,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [74000],
     "source": "Rigger 5",
@@ -2125,7 +2125,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [120000],
     "source": "Rigger 5",
@@ -2152,7 +2152,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [13000],
     "source": "Rigger 5",
@@ -2179,7 +2179,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [16000],
     "source": "Rigger 5",
@@ -2206,7 +2206,7 @@
     ],
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [56000],
     "source": "Rigger 5",
@@ -2253,7 +2253,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [26000],
     "source": "Rigger 5",
@@ -2274,7 +2274,7 @@
     "sensor": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [8000],
     "source": "Rigger 5",
@@ -2295,7 +2295,7 @@
     "sensor": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10000],
     "source": "Rigger 5",
@@ -2322,7 +2322,7 @@
     ],
     "availability": {
       "rating": [16],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [11000],
     "source": "Rigger 5",
@@ -2358,7 +2358,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [78000],
     "source": "Rigger 5",
@@ -2394,7 +2394,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [135000],
     "source": "Rigger 5",
@@ -2430,7 +2430,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [125000],
     "source": "Rigger 5",
@@ -2457,7 +2457,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [104000],
     "source": "Rigger 5",
@@ -2484,7 +2484,7 @@
     ],
     "availability": {
       "rating": [16],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [14870000],
     "source": "Rigger 5",
@@ -2511,7 +2511,7 @@
     ],
     "availability": {
       "rating": [36],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [84985000],
     "source": "Rigger 5",
@@ -2538,7 +2538,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [35000],
     "source": "Rigger 5",
@@ -2565,7 +2565,7 @@
     ],
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [115000],
     "source": "Rigger 5",
@@ -2592,7 +2592,7 @@
     ],
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [135000],
     "source": "Rigger 5",
@@ -2619,7 +2619,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [61000],
     "source": "Rigger 5",
@@ -2646,7 +2646,7 @@
     ],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [25500],
     "source": "Rigger 5",
@@ -2673,7 +2673,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [35500],
     "source": "Rigger 5",
@@ -2732,7 +2732,7 @@
     ],
     "availability": {
       "rating": [15],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [100000],
     "source": "Rigger 5",
@@ -2791,7 +2791,7 @@
     ],
     "availability": {
       "rating": [15],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [154000],
     "source": "Rigger 5",
@@ -2856,7 +2856,7 @@
     ],
     "availability": {
       "rating": [20],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [225000],
     "source": "Rigger 5",
@@ -2883,7 +2883,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [440000],
     "source": "Rigger 5",
@@ -2910,7 +2910,7 @@
     ],
     "availability": {
       "rating": [28],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [500000],
     "source": "Rigger 5",
@@ -2937,7 +2937,7 @@
     ],
     "availability": {
       "rating": [28],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [550000],
     "source": "Rigger 5",
@@ -2964,7 +2964,7 @@
     ],
     "availability": {
       "rating": [24],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [525000],
     "source": "Rigger 5",
@@ -2991,7 +2991,7 @@
     ],
     "availability": {
       "rating": [18],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [400000],
     "source": "Rigger 5",
@@ -3038,7 +3038,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [250000],
     "source": "Rigger 5",
@@ -3065,7 +3065,7 @@
     ],
     "availability": {
       "rating": [14],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [325000],
     "source": "Rigger 5",
@@ -3112,7 +3112,7 @@
     ],
     "availability": {
       "rating": [28],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [3200000],
     "source": "Rigger 5",
@@ -3139,7 +3139,7 @@
     ],
     "availability": {
       "rating": [24],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [2275000],
     "source": "Rigger 5",
@@ -3166,7 +3166,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [85000],
     "source": "Rigger 5",
@@ -3193,7 +3193,7 @@
     ],
     "availability": {
       "rating": [24],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [50000],
     "source": "Rigger 5",
@@ -3220,7 +3220,7 @@
     ],
     "availability": {
       "rating": [10],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [2000],
     "source": "Rigger 5",
@@ -3249,7 +3249,7 @@
     ],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [500],
     "source": "Rigger 5",
@@ -3275,7 +3275,7 @@
     ],
     "availability": {
       "rating": [6],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [4000],
     "source": "Rigger 5",
@@ -3301,7 +3301,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [8000],
     "source": "Rigger 5",
@@ -3342,7 +3342,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [4000],
     "source": "Rigger 5",
@@ -3368,7 +3368,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [3000],
     "source": "Rigger 5",
@@ -3398,7 +3398,7 @@
     ],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [3000],
     "source": "Rigger 5",
@@ -3428,7 +3428,7 @@
     ],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [6000],
     "source": "Rigger 5",
@@ -3457,7 +3457,7 @@
     ],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Rigger 5",
@@ -3505,7 +3505,7 @@
     ],
     "availability": {
       "rating": [4],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [4000],
     "source": "Rigger 5",
@@ -3532,7 +3532,7 @@
     "modSlots": 0,
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [4000],
     "source": "Rigger 5",
@@ -3559,7 +3559,7 @@
     "modSlots": 1,
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [30000],
     "source": "Rigger 5",
@@ -3598,7 +3598,7 @@
     "modSlots": 1,
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [4000],
     "source": "Rigger 5",
@@ -3641,7 +3641,7 @@
     ],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [4000],
     "source": "Rigger 5",
@@ -3674,7 +3674,7 @@
     "modSlots": 1,
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [6000],
     "source": "Rigger 5",
@@ -3701,7 +3701,7 @@
     "modSlots": 4,
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Rigger 5",
@@ -3731,7 +3731,7 @@
     "modSlots": 1,
     "availability": {
       "rating": [10],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [8000],
     "source": "Rigger 5",
@@ -3788,7 +3788,7 @@
     ],
     "availability": {
       "rating": [10],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [8000],
     "source": "Rigger 5",
@@ -3823,7 +3823,7 @@
     ],
     "availability": {
       "rating": [4],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [4000],
     "source": "Rigger 5",
@@ -3853,7 +3853,7 @@
     "modSlots": 3,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Rigger 5",
@@ -3880,7 +3880,7 @@
     "modSlots": 3,
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Rigger 5",
@@ -3910,7 +3910,7 @@
     "modSlots": 3,
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Rigger 5",
@@ -3937,7 +3937,7 @@
     "modSlots": 3,
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Rigger 5",
@@ -3964,7 +3964,7 @@
     "modSlots": 3,
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Rigger 5",
@@ -3991,7 +3991,7 @@
     "modSlots": 3,
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [4000],
     "source": "Rigger 5",
@@ -4018,7 +4018,7 @@
     "modSlots": 3,
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [4000],
     "source": "Rigger 5",
@@ -4060,7 +4060,7 @@
     "modSlots": 0,
     "availability": {
       "rating": [12],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [8000],
     "source": "Rigger 5",
@@ -4087,7 +4087,7 @@
     "modSlots": 0,
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10000],
     "source": "Rigger 5",
@@ -4134,7 +4134,7 @@
     ],
     "availability": {
       "rating": [18],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [10000],
     "source": "Rigger 5",
@@ -4161,7 +4161,7 @@
     "modSlots": 0,
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10000],
     "source": "Rigger 5",
@@ -4193,7 +4193,7 @@
     "modSlots": 1,
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [5000],
     "source": "Rigger 5",
@@ -4223,7 +4223,7 @@
     "modSlots": 1,
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Rigger 5",
@@ -4254,7 +4254,7 @@
     ],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [3000],
     "source": "Rigger 5",
@@ -4281,7 +4281,7 @@
     "modSlots": 1,
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [4000],
     "source": "Rigger 5",
@@ -4311,7 +4311,7 @@
     "modSlots": 0,
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [30000],
     "source": "Rigger 5",
@@ -4348,7 +4348,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [14000],
     "source": "Rigger 5",
@@ -4378,7 +4378,7 @@
     "modSlots": 1,
     "availability": {
       "rating": [8],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [12000],
     "source": "Rigger 5",
@@ -4404,7 +4404,7 @@
     ],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10000],
     "source": "Rigger 5",
@@ -4431,7 +4431,7 @@
     "modSlots": 2,
     "availability": {
       "rating": [8],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [10000],
     "source": "Rigger 5",
@@ -4486,7 +4486,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [20000],
     "source": "Rigger 5",
@@ -4516,7 +4516,7 @@
     "modSlots": 1,
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [4000],
     "source": "Rigger 5",
@@ -4574,7 +4574,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [18000],
     "source": "Rigger 5",
@@ -4601,7 +4601,7 @@
     "modSlots": 3,
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [8000],
     "source": "Rigger 5",
@@ -4628,7 +4628,7 @@
     "modSlots": 0,
     "availability": {
       "rating": [8],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [5000],
     "source": "Rigger 5",
@@ -4659,7 +4659,7 @@
     "modSlots": 2,
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10000],
     "source": "Rigger 5",
@@ -4685,7 +4685,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10000],
     "source": "Rigger 5",
@@ -4712,7 +4712,7 @@
     "modSlots": 0,
     "availability": {
       "rating": [10],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [17500],
     "source": "Rigger 5",
@@ -4759,7 +4759,7 @@
     ],
     "availability": {
       "rating": [20],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [40000],
     "source": "Rigger 5",
@@ -4801,7 +4801,7 @@
     ],
     "availability": {
       "rating": [20],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [220000],
     "source": "Rigger 5",
@@ -4843,7 +4843,7 @@
     ],
     "availability": {
       "rating": [16],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [250000],
     "source": "Rigger 5",
@@ -4897,7 +4897,7 @@
     ],
     "availability": {
       "rating": [24],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [270000],
     "source": "Rigger 5",
@@ -4932,7 +4932,7 @@
     "modSlots": 2,
     "availability": {
       "rating": [12],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [40000],
     "source": "Rigger 5",
@@ -4967,7 +4967,7 @@
     ],
     "availability": {
       "rating": [40],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [1000000],
     "source": "Rigger 5",
@@ -4993,7 +4993,7 @@
     ],
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [8000],
     "source": "Rigger 5",
@@ -5024,7 +5024,7 @@
     ],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Rigger 5",
@@ -5055,7 +5055,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [20000],
     "source": "Rigger 5",
@@ -5095,7 +5095,7 @@
     ],
     "availability": {
       "rating": [14],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [100000],
     "source": "Rigger 5",
@@ -5121,7 +5121,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [40000],
     "source": "Rigger 5",
@@ -5152,7 +5152,7 @@
     ],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [20000],
     "source": "Rigger 5",
@@ -5181,7 +5181,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [12000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -5214,7 +5214,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [5000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -5244,7 +5244,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [8500],
     "source": "Shadowrun 5 Core Rulebook",
@@ -5274,7 +5274,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -5304,7 +5304,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [17000],
     "source": "Stolen Souls",
@@ -5334,7 +5334,7 @@
     ],
     "availability": {
       "rating": [13],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [110000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -5364,7 +5364,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [12000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -5394,7 +5394,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [17000],
     "source": "Stolen Souls",
@@ -5424,7 +5424,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [31000],
     "source": "Stolen Souls",
@@ -5455,7 +5455,7 @@
     "bodyModSlots": 4,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [28500],
     "source": "Shadowrun 5 Core Rulebook",
@@ -5485,7 +5485,7 @@
     ],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [51000],
     "source": "Stolen Souls",
@@ -5515,7 +5515,7 @@
     ],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [49000],
     "source": "Stolen Souls",
@@ -5545,7 +5545,7 @@
     ],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [40000],
     "source": "Stolen Souls",
@@ -5575,7 +5575,7 @@
     ],
     "availability": {
       "rating": [16],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [320000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -5605,7 +5605,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [16000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -5635,7 +5635,7 @@
     ],
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [65000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -5665,7 +5665,7 @@
     ],
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [68000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -5695,7 +5695,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [25000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -5726,7 +5726,7 @@
     "bodyModSlots": 4,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [35000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -5756,7 +5756,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [35000],
     "source": "Stolen Souls",
@@ -5786,7 +5786,7 @@
     ],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [33000],
     "source": "Stolen Souls",
@@ -5816,7 +5816,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [52000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -5846,7 +5846,7 @@
     ],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [75000],
     "source": "Stolen Souls",
@@ -5876,7 +5876,7 @@
     ],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [95000],
     "source": "Stolen Souls",
@@ -5903,7 +5903,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [21000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -5930,7 +5930,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [37000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -5971,7 +5971,7 @@
     ],
     "availability": {
       "rating": [14],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [96000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -5998,7 +5998,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [14000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -6025,7 +6025,7 @@
     ],
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [108000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -6052,7 +6052,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [20000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -6079,7 +6079,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [146000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -6106,7 +6106,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [300000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -6133,7 +6133,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [355000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -6174,7 +6174,7 @@
     ],
     "availability": {
       "rating": [13],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [425000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -6209,7 +6209,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [86000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -6236,7 +6236,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [400000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -6263,7 +6263,7 @@
     ],
     "availability": {
       "rating": [24],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [2500000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -6290,7 +6290,7 @@
     ],
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [350000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -6317,7 +6317,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -6343,7 +6343,7 @@
     ],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -6369,7 +6369,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -6401,7 +6401,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2500],
     "source": "Shadowrun 5 Core Rulebook",
@@ -6428,7 +6428,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Shadowrun 5 Core Rulebook",
@@ -6454,7 +6454,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -6480,7 +6480,7 @@
     ],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [4000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -6506,7 +6506,7 @@
     ],
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [21000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -6533,7 +6533,7 @@
     "modSlots": 0,
     "availability": {
       "rating": [12],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [2500],
     "source": "Stolen Souls",
@@ -6581,7 +6581,7 @@
     ],
     "availability": {
       "rating": [5],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [4500],
     "source": "Shadowrun 5 Core Rulebook",
@@ -6607,7 +6607,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": {
       "range": {
@@ -6638,7 +6638,7 @@
     ],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [8000],
     "source": "Stolen Souls",
@@ -6672,7 +6672,7 @@
     ],
     "availability": {
       "rating": [4],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [5000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -6699,7 +6699,7 @@
     "weaponModSlots": 7,
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [5000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -6725,7 +6725,7 @@
     ],
     "availability": {
       "rating": [6],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [10000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -6751,7 +6751,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [8000],
     "source": "Stolen Souls",
@@ -6777,7 +6777,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10000],
     "source": "Stolen Souls",
@@ -6803,7 +6803,7 @@
     ],
     "availability": {
       "rating": [14],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [9000],
     "source": "Stolen Souls",
@@ -6837,7 +6837,7 @@
     ],
     "availability": {
       "rating": [10],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [25000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -6863,7 +6863,7 @@
     ],
     "availability": {
       "rating": [10],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [12000],
     "source": "Bullets And Bandages",
@@ -6893,7 +6893,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [16500],
     "source": "Bullets And Bandages",
@@ -6934,7 +6934,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [24000],
     "source": "Nothing Personal",
@@ -6963,7 +6963,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [4000],
     "source": "Hard Targets",
@@ -6993,7 +6993,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [150000],
     "source": "Hard Targets",
@@ -7026,7 +7026,7 @@
     ],
     "availability": {
       "rating": [20],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [8500],
     "source": "Rigger 5",
@@ -7047,7 +7047,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Rigger 5",
@@ -7078,7 +7078,7 @@
     ],
     "availability": {
       "rating": [5],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [3000],
     "source": "Hard Targets",
@@ -7104,7 +7104,7 @@
     ],
     "availability": {
       "rating": [6],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [4500],
     "source": "Hard Targets",
@@ -7130,7 +7130,7 @@
     ],
     "availability": {
       "rating": [24],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [200000],
     "source": "Hard Targets",
@@ -7171,7 +7171,7 @@
     ],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [5000],
     "source": "Hard Targets",
@@ -7197,7 +7197,7 @@
     ],
     "availability": {
       "rating": [16],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [225000],
     "source": "The Vladivostok Gauntlet",
@@ -7223,7 +7223,7 @@
     ],
     "availability": {
       "rating": [11],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [18000],
     "source": "Cutting Aces",
@@ -7249,7 +7249,7 @@
     ],
     "availability": {
       "rating": [7],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [600],
     "source": "Cutting Aces",
@@ -7284,7 +7284,7 @@
     ],
     "availability": {
       "rating": [11],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [18000],
     "source": "Cutting Aces",
@@ -7313,7 +7313,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [12500],
     "source": "The Complete Trog",
@@ -7343,7 +7343,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [32500],
     "source": "The Complete Trog",
@@ -7385,7 +7385,7 @@
     ],
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [221500],
     "source": "Shadows In Focus: Metropole",
@@ -7416,7 +7416,7 @@
     ],
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [5000],
     "source": "The Seattle Gambit",
@@ -7448,7 +7448,7 @@
     "bodyModSlots": 4,
     "availability": {
       "rating": [22],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [360000],
     "source": "Street Lethal",
@@ -7478,7 +7478,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [78000],
     "source": "Stolen Souls",
@@ -7508,7 +7508,7 @@
     ],
     "availability": {
       "rating": [6],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [25500],
     "source": "Stolen Souls",
@@ -7538,7 +7538,7 @@
     ],
     "availability": {
       "rating": [6],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [112500],
     "source": "Stolen Souls",
@@ -7568,7 +7568,7 @@
     ],
     "availability": {
       "rating": [6],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [142500],
     "source": "Stolen Souls",
@@ -7598,7 +7598,7 @@
     ],
     "availability": {
       "rating": [6],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [76500],
     "source": "Stolen Souls",
@@ -7628,7 +7628,7 @@
     ],
     "availability": {
       "rating": [6],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [73500],
     "source": "Stolen Souls",
@@ -7658,7 +7658,7 @@
     ],
     "availability": {
       "rating": [6],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [60000],
     "source": "Stolen Souls",
@@ -7688,7 +7688,7 @@
     ],
     "availability": {
       "rating": [4],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [52500],
     "source": "Stolen Souls",
@@ -7718,7 +7718,7 @@
     ],
     "availability": {
       "rating": [6],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [49500],
     "source": "Stolen Souls",
@@ -7748,7 +7748,7 @@
     ],
     "availability": {
       "rating": [4],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [25500],
     "source": "Stolen Souls",
@@ -7778,7 +7778,7 @@
     ],
     "availability": {
       "rating": [4],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [46500],
     "source": "Stolen Souls",
@@ -7808,7 +7808,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [50000],
     "source": "No Future",
@@ -7835,7 +7835,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [120000],
     "source": "No Future",
@@ -7862,7 +7862,7 @@
     ],
     "availability": {
       "rating": [9],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [1000],
     "source": "Krime Katalog",
@@ -7891,7 +7891,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10000],
     "source": "Krime Katalog",
@@ -7921,7 +7921,7 @@
     ],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [22000],
     "source": "Krime Katalog",
@@ -7951,7 +7951,7 @@
     ],
     "availability": {
       "rating": [3],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [25000],
     "source": "Krime Katalog",
@@ -7981,7 +7981,7 @@
     ],
     "availability": {
       "rating": [7],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [40000],
     "source": "Krime Katalog",
@@ -8011,7 +8011,7 @@
     ],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [23000],
     "source": "Krime Katalog",
@@ -8041,7 +8041,7 @@
     ],
     "availability": {
       "rating": [5],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [26000],
     "source": "Krime Katalog",
@@ -8071,7 +8071,7 @@
     ],
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [45000],
     "source": "Krime Katalog",
@@ -8101,7 +8101,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [120000],
     "source": "Krime Katalog",
@@ -8133,7 +8133,7 @@
     "protectionModSlots": -14,
     "availability": {
       "rating": [21],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [145000],
     "source": "Krime Katalog",
@@ -8163,7 +8163,7 @@
     ],
     "availability": {
       "rating": [21],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [100000],
     "source": "Krime Katalog",
@@ -8193,7 +8193,7 @@
     ],
     "availability": {
       "rating": [20],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [200000],
     "source": "Krime Katalog",
@@ -8226,7 +8226,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [50000],
     "source": "Krime Katalog",
@@ -8273,7 +8273,7 @@
     ],
     "availability": {
       "rating": [24],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [200000],
     "source": "Krime Katalog",

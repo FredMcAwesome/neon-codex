@@ -1,8 +1,8 @@
 import { z as zod } from "zod";
 import {
   armourModCategoryEnum,
-  capcityArmourModEnum,
-  costArmourModEnum,
+  capacityEnum,
+  costEnum,
   mathOperatorEnum,
   restrictionEnum,
   sourceBookEnum,
@@ -35,7 +35,7 @@ const InnerCostArmourModSchema = zod.union([
   zod.number(),
   zod
     .object({
-      option: zod.nativeEnum(costArmourModEnum),
+      option: zod.nativeEnum(costEnum),
     })
     .strict(),
   zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
@@ -68,7 +68,7 @@ const InnerCapacityArmourModSchema = zod.union([
   zod.number(),
   zod
     .object({
-      option: zod.nativeEnum(capcityArmourModEnum),
+      option: zod.nativeEnum(capacityEnum),
     })
     .strict(),
   zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),

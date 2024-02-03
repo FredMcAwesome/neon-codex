@@ -32,7 +32,7 @@
           ]
         }
       ],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [
       {
@@ -91,7 +91,7 @@
           ]
         }
       ],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -120,7 +120,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [4000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -162,7 +162,7 @@
           ]
         }
       ],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -221,7 +221,7 @@
           ]
         }
       ],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [
       {
@@ -253,7 +253,7 @@
     },
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [24000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -335,7 +335,7 @@
           ]
         }
       ],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -395,7 +395,7 @@
           ]
         }
       ],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [
       {
@@ -455,7 +455,7 @@
           ]
         }
       ],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [
       {
@@ -516,7 +516,7 @@
           ]
         }
       ],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [
       {
@@ -546,7 +546,7 @@
     },
     "availability": {
       "rating": [18],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [48000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -601,7 +601,7 @@
           ]
         }
       ],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -630,7 +630,7 @@
     },
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [17000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -651,7 +651,7 @@
     },
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [14000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -671,7 +671,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [12000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -689,7 +689,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [12000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -709,7 +709,7 @@
     },
     "availability": {
       "rating": [20],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [140000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -758,7 +758,7 @@
           ]
         }
       ],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -824,7 +824,7 @@
           ]
         }
       ],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [
       {
@@ -887,7 +887,7 @@
           ]
         }
       ],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -961,7 +961,7 @@
           ]
         }
       ],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [
       {
@@ -1028,7 +1028,7 @@
           ]
         }
       ],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -1086,7 +1086,7 @@
           ]
         }
       ],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -1129,7 +1129,7 @@
     "allowCategoryList": ["Chemical Gland Modifications"],
     "availability": {
       "rating": [12],
-      "restriction": "Restricted",
+      "restriction": "R",
       "modifier": "Gear"
     },
     "cost": [
@@ -1146,7 +1146,7 @@
                 "operator": "*"
               },
               {
-                "option": "Gear"
+                "option": "Gear Cost"
               }
             ]
           }
@@ -1178,7 +1178,7 @@
     "allowCategoryList": ["Chemical Gland Modifications"],
     "availability": {
       "rating": [12],
-      "restriction": "Restricted",
+      "restriction": "R",
       "modifier": "Gear"
     },
     "cost": [
@@ -1195,7 +1195,7 @@
                 "operator": "*"
               },
               {
-                "option": "Gear"
+                "option": "Gear Cost"
               }
             ]
           }
@@ -1227,7 +1227,7 @@
     "allowCategoryList": ["Chemical Gland Modifications"],
     "availability": {
       "rating": [12],
-      "restriction": "Restricted",
+      "restriction": "R",
       "modifier": "Gear"
     },
     "cost": [
@@ -1244,7 +1244,7 @@
                 "operator": "*"
               },
               {
-                "option": "Gear"
+                "option": "Gear Cost"
               }
             ]
           }
@@ -1276,7 +1276,7 @@
     "allowCategoryList": ["Chemical Gland Modifications"],
     "availability": {
       "rating": [12],
-      "restriction": "Forbidden",
+      "restriction": "F",
       "modifier": "Gear"
     },
     "cost": [
@@ -1293,7 +1293,7 @@
                 "operator": "*"
               },
               {
-                "option": "Gear"
+                "option": "Gear Cost"
               }
             ]
           }
@@ -1325,7 +1325,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       2000,
@@ -1341,7 +1341,7 @@
                 "operator": "*"
               },
               {
-                "option": "Parent"
+                "option": "Parent Cost"
               }
             ]
           }
@@ -1366,7 +1366,7 @@
     },
     "availability": {
       "rating": [12],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [20000],
     "source": "Chrome Flesh",
@@ -1386,7 +1386,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Chrome Flesh",
@@ -1406,7 +1406,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [8000],
     "source": "Chrome Flesh",
@@ -1426,7 +1426,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [8000],
     "source": "Chrome Flesh",
@@ -1446,7 +1446,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Chrome Flesh",
@@ -1463,7 +1463,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Chrome Flesh",
@@ -1483,7 +1483,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [8000],
     "source": "Chrome Flesh",
@@ -1500,7 +1500,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [8000],
     "source": "Chrome Flesh",
@@ -1520,7 +1520,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [8000],
     "source": "Chrome Flesh",
@@ -1544,7 +1544,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Chrome Flesh",
@@ -1568,7 +1568,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Chrome Flesh",
@@ -1585,7 +1585,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [4000],
     "source": "Chrome Flesh",
@@ -1602,7 +1602,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [4000],
     "source": "Chrome Flesh",
@@ -1622,7 +1622,7 @@
     },
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Chrome Flesh",
@@ -1642,7 +1642,7 @@
     },
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [35000],
     "source": "Chrome Flesh",
@@ -1662,7 +1662,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [4000],
     "source": "Chrome Flesh",
@@ -1679,7 +1679,7 @@
     },
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [8000],
     "source": "Chrome Flesh",
@@ -1699,7 +1699,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Chrome Flesh",
@@ -1719,7 +1719,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [8000],
     "source": "Chrome Flesh",
@@ -1736,7 +1736,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10000],
     "source": "Chrome Flesh",
@@ -1753,7 +1753,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10000],
     "source": "Chrome Flesh",
@@ -1770,7 +1770,7 @@
     },
     "availability": {
       "rating": [12],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [30000],
     "source": "Chrome Flesh",
@@ -1855,7 +1855,7 @@
           ]
         }
       ],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -1884,7 +1884,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Chrome Flesh",
@@ -1928,7 +1928,7 @@
           ]
         }
       ],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -1986,7 +1986,7 @@
           ]
         }
       ],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -2053,7 +2053,7 @@
           ]
         }
       ],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -2088,7 +2088,7 @@
     },
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": {
       "range": {
@@ -2116,7 +2116,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": {
       "range": {
@@ -2144,7 +2144,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": {
       "range": {
@@ -2175,11 +2175,11 @@
       "ratingLinked": [
         {
           "rating": [8],
-          "restriction": "Legal"
+          "restriction": ""
         },
         {
           "rating": [12],
-          "restriction": "Legal"
+          "restriction": ""
         }
       ]
     },
@@ -2200,7 +2200,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [15000],
     "source": "Chrome Flesh",
@@ -2223,7 +2223,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10000],
     "source": "Chrome Flesh",
@@ -2246,7 +2246,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [20000],
     "source": "Chrome Flesh",
@@ -2272,7 +2272,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [500],
     "source": "Chrome Flesh",
@@ -2295,7 +2295,7 @@
     "selectSide": true,
     "availability": {
       "rating": [6],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [1000],
     "source": "Chrome Flesh",
@@ -2318,7 +2318,7 @@
     "selectSide": true,
     "availability": {
       "rating": [4],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [500],
     "source": "Chrome Flesh",
@@ -2341,7 +2341,7 @@
     "selectSide": true,
     "availability": {
       "rating": [6],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [1000],
     "source": "Chrome Flesh",
@@ -2367,7 +2367,7 @@
     "pairIncludeList": ["Striking Callus (Feet)"],
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [250],
     "source": "Chrome Flesh",
@@ -2393,7 +2393,7 @@
     "pairIncludeList": ["Striking Callus (Hands)"],
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [250],
     "source": "Chrome Flesh",
@@ -2413,7 +2413,7 @@
     },
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [100],
     "source": "Chrome Flesh",
@@ -2434,7 +2434,7 @@
     "addWeapon": "Medium Tusk(s)",
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [500],
     "source": "Chrome Flesh",
@@ -2455,7 +2455,7 @@
     "addWeapon": "Large Tusk(s)",
     "availability": {
       "rating": [8],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [1000],
     "source": "Chrome Flesh",
@@ -2475,7 +2475,7 @@
     },
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [100],
     "source": "Chrome Flesh",
@@ -2496,7 +2496,7 @@
     "addWeapon": "Medium Tusk(s)",
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [500],
     "source": "Chrome Flesh",
@@ -2517,7 +2517,7 @@
     "addWeapon": "Electrical Discharge",
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10000],
     "source": "Chrome Flesh",
@@ -2538,7 +2538,7 @@
     "addWeapon": "Fangs (Bio-Weapon)",
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [500],
     "source": "Chrome Flesh",
@@ -2559,7 +2559,7 @@
     "addWeapon": "Retractable Fangs (Bio-Weapon)",
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Chrome Flesh",
@@ -2580,7 +2580,7 @@
     "addWeapon": "Horns (Bio-Weapon)",
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [500],
     "source": "Chrome Flesh",
@@ -2603,7 +2603,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [2000],
     "source": "Chrome Flesh",
@@ -2620,7 +2620,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [4000],
     "source": "Chrome Flesh",
@@ -2640,7 +2640,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [100],
     "source": "Chrome Flesh",
@@ -2661,7 +2661,7 @@
     "addWeapon": "Medium Stinger",
     "availability": {
       "rating": [8],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [2000],
     "source": "Chrome Flesh",
@@ -2682,7 +2682,7 @@
     "addWeapon": "Large Stinger",
     "availability": {
       "rating": [12],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [8000],
     "source": "Chrome Flesh",
@@ -2709,15 +2709,15 @@
       "ratingLinked": [
         {
           "rating": [4],
-          "restriction": "Legal"
+          "restriction": ""
         },
         {
           "rating": [5],
-          "restriction": "Legal"
+          "restriction": ""
         },
         {
           "rating": [6],
-          "restriction": "Legal"
+          "restriction": ""
         }
       ]
     },
@@ -2738,7 +2738,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Chrome Flesh",
@@ -2755,7 +2755,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [4000],
     "source": "Chrome Flesh",
@@ -2772,7 +2772,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Chrome Flesh",
@@ -2789,7 +2789,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Chrome Flesh",
@@ -2806,7 +2806,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Chrome Flesh",
@@ -2829,7 +2829,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [200],
     "source": "Chrome Flesh",
@@ -2849,7 +2849,7 @@
     },
     "availability": {
       "rating": [5],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [500],
     "source": "Chrome Flesh",
@@ -2869,7 +2869,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Chrome Flesh",
@@ -2892,7 +2892,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -2924,7 +2924,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [500],
     "source": "Chrome Flesh",
@@ -2947,7 +2947,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [200],
     "source": "Chrome Flesh",
@@ -2970,7 +2970,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Chrome Flesh",
@@ -3012,7 +3012,7 @@
           ]
         }
       ],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -3052,7 +3052,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [10000],
     "source": "Chrome Flesh",
@@ -3073,7 +3073,7 @@
     },
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Chrome Flesh",
@@ -3095,7 +3095,7 @@
     "selectSide": true,
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Chrome Flesh",
@@ -3117,7 +3117,7 @@
     "selectSide": true,
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [20000],
     "source": "Chrome Flesh",
@@ -3139,7 +3139,7 @@
     "selectSide": true,
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [40000],
     "source": "Chrome Flesh",
@@ -3161,7 +3161,7 @@
     "selectSide": true,
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [80000],
     "source": "Chrome Flesh",
@@ -3179,7 +3179,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10000],
     "source": "Chrome Flesh",
@@ -3200,7 +3200,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [8000],
     "source": "Chrome Flesh",
@@ -3221,7 +3221,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [20000],
     "source": "Chrome Flesh",
@@ -3263,7 +3263,7 @@
           ]
         }
       ],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [
       {
@@ -3317,7 +3317,7 @@
           ]
         }
       ],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -3347,7 +3347,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10000],
     "source": "Chrome Flesh",
@@ -3364,7 +3364,7 @@
     },
     "availability": {
       "rating": [16],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [57000],
     "source": "Chrome Flesh",
@@ -3382,7 +3382,7 @@
     },
     "availability": {
       "rating": [10],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [40000],
     "source": "Chrome Flesh",
@@ -3403,7 +3403,7 @@
     },
     "availability": {
       "rating": [12],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [30000],
     "source": "Chrome Flesh",
@@ -3421,7 +3421,7 @@
     },
     "availability": {
       "rating": [12],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [20000],
     "source": "Chrome Flesh",
@@ -3439,7 +3439,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10000],
     "source": "Chrome Flesh",
@@ -3460,7 +3460,7 @@
     },
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [15000],
     "source": "Chrome Flesh",
@@ -3481,7 +3481,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [16500],
     "source": "Chrome Flesh",
@@ -3502,7 +3502,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [12000],
     "source": "Chrome Flesh",
@@ -3528,7 +3528,7 @@
     },
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [30500],
     "source": "Chrome Flesh",
@@ -3558,7 +3558,7 @@
     },
     "availability": {
       "rating": [12],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [16420],
     "source": "Chrome Flesh",
@@ -3576,7 +3576,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [17000],
     "source": "Chrome Flesh",
@@ -3601,7 +3601,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [8000],
     "source": "Chrome Flesh",
@@ -3622,7 +3622,7 @@
     },
     "availability": {
       "rating": [16],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [30000],
     "source": "Chrome Flesh",
@@ -3668,7 +3668,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [61000],
     "source": "Chrome Flesh",
@@ -3689,7 +3689,7 @@
     },
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [18000],
     "source": "Chrome Flesh",
@@ -3710,7 +3710,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [8000],
     "source": "Chrome Flesh",
@@ -3728,7 +3728,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [7000],
     "source": "Chrome Flesh",
@@ -3758,7 +3758,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [38000],
     "source": "Chrome Flesh",
@@ -3776,7 +3776,7 @@
     },
     "availability": {
       "rating": [14],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [62000],
     "source": "Chrome Flesh",
@@ -3794,7 +3794,7 @@
     },
     "availability": {
       "rating": [14],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [65000],
     "source": "Chrome Flesh",
@@ -3815,7 +3815,7 @@
     },
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [73000],
     "source": "Chrome Flesh",
@@ -3833,7 +3833,7 @@
     },
     "availability": {
       "rating": [5],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [9000],
     "source": "Chrome Flesh",
@@ -3854,7 +3854,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [8000],
     "source": "Chrome Flesh",
@@ -3883,7 +3883,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [78000],
     "source": "Chrome Flesh",
@@ -3901,7 +3901,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [14000],
     "source": "Chrome Flesh",
@@ -3919,7 +3919,7 @@
     },
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [8000],
     "source": "Chrome Flesh",
@@ -3937,7 +3937,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [15000],
     "source": "Chrome Flesh",
@@ -3955,7 +3955,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [20000],
     "source": "Chrome Flesh",
@@ -3976,7 +3976,7 @@
     },
     "availability": {
       "rating": [5],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [8000],
     "source": "Chrome Flesh",
@@ -3994,7 +3994,7 @@
     },
     "availability": {
       "rating": [18],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [50000],
     "source": "Chrome Flesh",
@@ -4015,7 +4015,7 @@
     },
     "availability": {
       "rating": [5],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [8000],
     "source": "Chrome Flesh",
@@ -4036,7 +4036,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [8000],
     "source": "Chrome Flesh",
@@ -4054,7 +4054,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [30000],
     "source": "Chrome Flesh",
@@ -4077,7 +4077,7 @@
     },
     "availability": {
       "rating": [5],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [15000],
     "source": "Chrome Flesh",
@@ -4098,7 +4098,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [15000],
     "source": "Chrome Flesh",
@@ -4119,7 +4119,7 @@
     },
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": {
       "range": {
@@ -4142,7 +4142,7 @@
     },
     "availability": {
       "rating": [7],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [4600],
     "source": "Chrome Flesh",
@@ -4165,7 +4165,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [6600],
     "source": "Chrome Flesh",
@@ -4183,7 +4183,7 @@
     },
     "availability": {
       "rating": [11],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [3800],
     "source": "Chrome Flesh",
@@ -4201,7 +4201,7 @@
     },
     "availability": {
       "rating": [9],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [9000],
     "source": "Chrome Flesh",
@@ -4219,7 +4219,7 @@
     },
     "availability": {
       "rating": [7],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [6000],
     "source": "Chrome Flesh",
@@ -4237,7 +4237,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [4000],
     "source": "Chrome Flesh",
@@ -4255,7 +4255,7 @@
     },
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [47000],
     "source": "Chrome Flesh",
@@ -4273,7 +4273,7 @@
     },
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [47000],
     "source": "Chrome Flesh",
@@ -4291,7 +4291,7 @@
     },
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [47000],
     "source": "Chrome Flesh",
@@ -4309,7 +4309,7 @@
     },
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [47000],
     "source": "Chrome Flesh",
@@ -4327,7 +4327,7 @@
     },
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [47000],
     "source": "Chrome Flesh",
@@ -4345,7 +4345,7 @@
     },
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [47000],
     "source": "Chrome Flesh",
@@ -4363,7 +4363,7 @@
     },
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [47000],
     "source": "Chrome Flesh",
@@ -4381,7 +4381,7 @@
     },
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [47000],
     "source": "Chrome Flesh",
@@ -4405,7 +4405,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [35000],
     "source": "Chrome Flesh",
@@ -4423,7 +4423,7 @@
     },
     "availability": {
       "rating": [10],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [18000],
     "source": "Chrome Flesh",
@@ -4444,7 +4444,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [38000],
     "source": "Chrome Flesh",
@@ -4468,7 +4468,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [20000],
     "source": "Chrome Flesh",
@@ -4492,7 +4492,7 @@
     },
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [90000],
     "source": "Chrome Flesh",
@@ -4513,7 +4513,7 @@
     },
     "availability": {
       "rating": [15],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000000],
     "source": "Chrome Flesh",
@@ -4534,7 +4534,7 @@
     },
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [300000],
     "source": "Chrome Flesh",
@@ -4555,7 +4555,7 @@
     },
     "availability": {
       "rating": [13],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [250000],
     "source": "Chrome Flesh",
@@ -4576,7 +4576,7 @@
     },
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [35000],
     "source": "Chrome Flesh",
@@ -4597,7 +4597,7 @@
     },
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [65000],
     "source": "Chrome Flesh",
@@ -4618,7 +4618,7 @@
     },
     "availability": {
       "rating": [14],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [110000],
     "source": "Chrome Flesh",
@@ -4643,7 +4643,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [100],
     "source": "Chrome Flesh",
@@ -4660,7 +4660,7 @@
     },
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10000],
     "source": "Chrome Flesh",
@@ -4680,7 +4680,7 @@
     },
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10000],
     "source": "Chrome Flesh",
@@ -4697,7 +4697,7 @@
     },
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10000],
     "source": "Chrome Flesh",
@@ -4717,7 +4717,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10000],
     "source": "Chrome Flesh",
@@ -4737,7 +4737,7 @@
     },
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [30000],
     "source": "Chrome Flesh",
@@ -4757,7 +4757,7 @@
     },
     "availability": {
       "rating": [16],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [50000],
     "source": "Chrome Flesh",
@@ -4774,7 +4774,7 @@
     },
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [50],
     "source": "Chrome Flesh",
@@ -4795,7 +4795,7 @@
     },
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [30000],
     "source": "Chrome Flesh",
@@ -4815,7 +4815,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Chrome Flesh",
@@ -4832,7 +4832,7 @@
     },
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10000],
     "source": "Chrome Flesh",
@@ -4852,7 +4852,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [4500],
     "source": "Hard Targets",
@@ -4873,7 +4873,7 @@
     "addWeapon": "Bone Spike I",
     "availability": {
       "rating": [14],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [20000],
     "source": "Hard Targets",
@@ -4894,7 +4894,7 @@
     "addWeapon": "Bone Spike II",
     "availability": {
       "rating": [14],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [20000],
     "source": "Hard Targets",
@@ -4915,7 +4915,7 @@
     "addWeapon": "Bone Spike III",
     "availability": {
       "rating": [14],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [20000],
     "source": "Hard Targets",
@@ -4936,7 +4936,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [8000],
     "source": "Hard Targets",
@@ -4953,7 +4953,7 @@
     },
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [15000],
     "source": "Kill Code",
@@ -4984,7 +4984,7 @@
           ]
         }
       ],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -5042,7 +5042,7 @@
           ]
         }
       ],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [
       {

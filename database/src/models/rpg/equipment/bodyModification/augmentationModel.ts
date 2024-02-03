@@ -13,9 +13,7 @@ import {
 import type { Ref } from "@mikro-orm/postgresql";
 import type {
   CostAugmentationType,
-  CapacityCostAugmentationType,
   AvailabilityAugmentationType,
-  EssenceCostType,
   AugmentationType,
   AugmentationLimitType,
   CapacityAugmentationType,
@@ -29,7 +27,7 @@ import {
   cyberwareCategoryEnum,
   gearCategoryEnum,
   limbSlotEnum,
-  mountSlotEnum,
+  augmentationMountSlotEnum,
   ratingMeaningEnum,
   sourceBookEnum,
 } from "@neon-codex/common/build/enums.js";
@@ -39,7 +37,10 @@ import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/r
 import { Gears } from "../other/gearModel.js";
 import { Vehicles } from "../rigger/vehicleModel.js";
 import { AugmentationIncludedGears } from "../../activeTables/activeGearModel.js";
-import type { RatingType } from "@neon-codex/common/build/schemas/commonSchemas.js";
+import type {
+  EssenceCostType,
+  RatingType,
+} from "@neon-codex/common/build/schemas/commonSchemas.js";
 
 @Entity({
   discriminatorColumn: "type",
@@ -77,8 +78,8 @@ export abstract class Augmentations {
   @ManyToOne({ entity: () => Weapons, ref: true, nullable: true })
   addWeapon?: Ref<Weapons>;
 
-  @Enum({ items: () => mountSlotEnum, array: true, nullable: true })
-  blockedMountList?: Array<mountSlotEnum>;
+  @Enum({ items: () => augmentationMountSlotEnum, array: true, nullable: true })
+  blockedMountList?: Array<augmentationMountSlotEnum>;
 
   @Property({ nullable: true })
   selectSide?: true;
@@ -196,7 +197,7 @@ export class Cyberwares extends Augmentations {
   capacity?: CapacityAugmentationType;
 
   @Property({ type: "json", nullable: true })
-  capacityCost?: CapacityCostAugmentationType;
+  capacityCost?: CapacityAugmentationType;
 
   @Property({ nullable: true })
   addToParentCapacity?: true;
@@ -216,8 +217,8 @@ export class Cyberwares extends Augmentations {
   @Property({ nullable: true })
   useBothLimbSlots?: true;
 
-  @Enum({ items: () => mountSlotEnum, nullable: true })
-  mountsLocation?: mountSlotEnum;
+  @Enum({ items: () => augmentationMountSlotEnum, nullable: true })
+  mountsLocation?: augmentationMountSlotEnum;
 
   @Property({ nullable: true })
   modularMount?: true;

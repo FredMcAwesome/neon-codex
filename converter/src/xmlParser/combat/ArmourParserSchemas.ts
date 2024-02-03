@@ -1,4 +1,4 @@
-import { costArmourEnum } from "@neon-codex/common/build/enums.js";
+import { costEnum } from "@neon-codex/common/build/enums.js";
 import { z as zod } from "zod";
 import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
 import {
@@ -32,13 +32,13 @@ const ArmourXmlSchema = zod
     // Maximum rating of armour
     rating: zod.optional(zod.number()),
     // Damage reduction of armour
-    armor: zod.union([zod.number(), zod.nativeEnum(costArmourEnum)]),
+    armor: zod.union([zod.number(), zod.nativeEnum(costEnum)]),
     // This item has the Custom Fit (Stack) feature which gives the option of
     // allowing it to increase other Custom Fit armour by this amount instead
     // of uses its own armour value
     armoroverride: zod.optional(zod.number()),
     // Capacity of the armour
-    armorcapacity: zod.union([zod.number(), zod.nativeEnum(costArmourEnum)]),
+    armorcapacity: zod.union([zod.number(), zod.nativeEnum(costEnum)]),
     // This item is a weapon, this should always match the name
     addweapon: zod.optional(zod.string()),
     // Availability

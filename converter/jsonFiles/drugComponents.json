@@ -7,7 +7,7 @@
     "addictionThreshold": 2,
     "availability": {
       "rating": 4,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 75,
     "source": "Chrome Flesh",
@@ -21,7 +21,7 @@
     "addictionThreshold": 2,
     "availability": {
       "rating": 4,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 75,
     "source": "Chrome Flesh",
@@ -35,7 +35,7 @@
     "addictionThreshold": 2,
     "availability": {
       "rating": 4,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 75,
     "source": "Chrome Flesh",
@@ -49,7 +49,7 @@
     "addictionThreshold": 2,
     "availability": {
       "rating": 4,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 75,
     "source": "Chrome Flesh",
@@ -63,7 +63,7 @@
     "addictionThreshold": 2,
     "availability": {
       "rating": 4,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 75,
     "source": "Chrome Flesh",
@@ -75,7 +75,7 @@
     "category": "Block",
     "availability": {
       "rating": 1,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 20,
     "source": "Chrome Flesh",
@@ -87,7 +87,7 @@
     "category": "Block",
     "availability": {
       "rating": 1,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 20,
     "source": "Chrome Flesh",
@@ -99,7 +99,7 @@
     "category": "Block",
     "availability": {
       "rating": 1,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 20,
     "source": "Chrome Flesh",
@@ -111,7 +111,7 @@
     "category": "Block",
     "availability": {
       "rating": 1,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 20,
     "source": "Chrome Flesh",
@@ -123,7 +123,7 @@
     "category": "Block",
     "availability": {
       "rating": 1,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 20,
     "source": "Chrome Flesh",
@@ -135,7 +135,7 @@
     "category": "Block",
     "availability": {
       "rating": 1,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 20,
     "source": "Chrome Flesh",
@@ -147,7 +147,7 @@
     "category": "Block",
     "availability": {
       "rating": 1,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 20,
     "source": "Chrome Flesh",
@@ -159,7 +159,7 @@
     "category": "Block",
     "availability": {
       "rating": 1,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 20,
     "source": "Chrome Flesh",
@@ -171,7 +171,7 @@
     "category": "Block",
     "availability": {
       "rating": 2,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 40,
     "source": "Chrome Flesh",
@@ -183,7 +183,7 @@
     "category": "Block",
     "availability": {
       "rating": 2,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 30,
     "source": "Chrome Flesh",
@@ -195,7 +195,7 @@
     "category": "Block",
     "availability": {
       "rating": 2,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 30,
     "source": "Chrome Flesh",
@@ -207,7 +207,7 @@
     "category": "Block",
     "availability": {
       "rating": 2,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 30,
     "source": "Chrome Flesh",
@@ -219,7 +219,7 @@
     "category": "Block",
     "availability": {
       "rating": 2,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 30,
     "source": "Chrome Flesh",
@@ -233,7 +233,7 @@
     "addictionThreshold": 1,
     "availability": {
       "rating": 1,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 50,
     "source": "Chrome Flesh",
@@ -247,7 +247,7 @@
     "addictionThreshold": 1,
     "availability": {
       "rating": 1,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 50,
     "source": "Chrome Flesh",
@@ -262,7 +262,7 @@
     "addictionThreshold": 1,
     "availability": {
       "rating": 1,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 50,
     "source": "Chrome Flesh",
@@ -277,7 +277,7 @@
     "addictionThreshold": 1,
     "availability": {
       "rating": 1,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 50,
     "source": "Chrome Flesh",

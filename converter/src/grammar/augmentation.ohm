@@ -121,10 +121,8 @@ Capacity {
     | CapacityValue
   CapacityValue = Number
     | Rating
-    | Capacity
   Rating = "{Rating}" | "Rating" -- base
     | "-" Rating -- negative
-  Capacity = "Capacity"
   Included = "*"
   Number = "-" PositiveNumber -- negative
     | PositiveNumber

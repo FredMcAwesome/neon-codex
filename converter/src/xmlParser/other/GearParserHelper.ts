@@ -2,7 +2,7 @@ import assert from "assert";
 import {
   attributeTypeEnum,
   availabilityEnum,
-  costGearEnum,
+  costEnum,
   firearmWeaponTypeEnum,
   gearDeviceRatingEnum,
   gearRatingEnum,
@@ -675,16 +675,16 @@ costGearSemantics.addOperation("eval", {
     return [cost.eval()];
   },
   Rating(_) {
-    return { option: costGearEnum.Rating };
+    return { option: costEnum.Rating };
   },
   ParentCost(_) {
-    return { option: costGearEnum.ParentCost };
+    return { option: costEnum.ParentCost };
   },
   ChildrenCost(_) {
-    return { option: costGearEnum.ChildrenCost };
+    return { option: costEnum.ChildrenCost };
   },
   GearCost(_) {
-    return { option: costGearEnum.GearCost };
+    return { option: costEnum.GearCost };
   },
   Number(availability) {
     return availability.eval();

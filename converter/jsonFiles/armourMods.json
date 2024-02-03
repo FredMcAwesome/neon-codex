@@ -8,7 +8,7 @@
     "capacityCost": [0],
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [500],
     "source": "Shadowrun 5 Core Rulebook",
@@ -23,7 +23,7 @@
     "capacityCost": [3],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [500],
     "source": "Shadowrun 5 Core Rulebook",
@@ -38,7 +38,7 @@
     "capacityCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [200],
     "source": "Shadowrun 5 Core Rulebook",
@@ -63,7 +63,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -96,7 +96,7 @@
     },
     "availability": {
       "rating": [12],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [3000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -118,7 +118,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -152,7 +152,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -186,7 +186,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -215,7 +215,7 @@
     },
     "availability": {
       "rating": [10],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [
       {
@@ -245,7 +245,7 @@
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [500],
     "source": "Shadowrun 5 Core Rulebook",
@@ -269,7 +269,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [6000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -287,7 +287,7 @@
     },
     "availability": {
       "rating": [3],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -302,7 +302,7 @@
     "capacityCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [100],
     "source": "Shadowrun 5 Core Rulebook",
@@ -317,7 +317,7 @@
     "capacityCost": [2],
     "availability": {
       "rating": [6],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [250],
     "source": "Shadowrun 5 Core Rulebook",
@@ -335,7 +335,7 @@
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Shadowrun 5 Core Rulebook",
@@ -354,7 +354,7 @@
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Shadowrun 5 Core Rulebook",
@@ -372,7 +372,7 @@
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Shadowrun 5 Core Rulebook",
@@ -387,7 +387,7 @@
     "capacityCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Shadowrun 5 Core Rulebook",
@@ -406,7 +406,7 @@
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Shadowrun 5 Core Rulebook",
@@ -424,7 +424,7 @@
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Shadowrun 5 Core Rulebook",
@@ -442,7 +442,7 @@
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Shadowrun 5 Core Rulebook",
@@ -461,7 +461,7 @@
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Shadowrun 5 Core Rulebook",
@@ -479,7 +479,7 @@
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Shadowrun 5 Core Rulebook",
@@ -497,7 +497,7 @@
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Shadowrun 5 Core Rulebook",
@@ -516,7 +516,7 @@
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Shadowrun 5 Core Rulebook",
@@ -534,7 +534,7 @@
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Shadowrun 5 Core Rulebook",
@@ -550,7 +550,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Run And Gun",
@@ -569,7 +569,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Run And Gun",
@@ -585,7 +585,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Run And Gun",
@@ -601,7 +601,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Run And Gun",
@@ -616,7 +616,7 @@
     "capacityCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Run And Gun",
@@ -632,7 +632,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Run And Gun",
@@ -648,7 +648,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Run And Gun",
@@ -664,7 +664,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Run And Gun",
@@ -679,7 +679,7 @@
     "capacityCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [600],
     "source": "Run And Gun",
@@ -694,7 +694,7 @@
     "capacityCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1100],
     "source": "Run And Gun",
@@ -709,7 +709,7 @@
     "capacityCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2400],
     "source": "Run And Gun",
@@ -724,7 +724,7 @@
     "capacityCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1500],
     "source": "Run And Gun",
@@ -739,7 +739,7 @@
     "capacityCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [150],
     "source": "Run And Gun",
@@ -754,7 +754,7 @@
     "capacityCost": [2],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1500],
     "source": "Run And Gun",
@@ -769,7 +769,7 @@
     "capacityCost": [2],
     "availability": {
       "rating": [14],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [
       {
@@ -796,7 +796,7 @@
     "capacityCost": [3],
     "availability": {
       "rating": [8],
-      "restriction": "Restricted",
+      "restriction": "R",
       "modifier": "+"
     },
     "cost": [
@@ -824,7 +824,7 @@
     "capacityCost": [3],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Run And Gun",
@@ -839,7 +839,7 @@
     "capacityCost": [3],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -920,11 +920,11 @@
     ],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
-        "option": "Armour"
+        "option": "Parent Cost"
       }
     ],
     "source": "Run And Gun",
@@ -939,7 +939,7 @@
     "capacityCost": [4],
     "availability": {
       "rating": [16],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [
       {
@@ -985,7 +985,7 @@
           ]
         }
       ],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -1012,7 +1012,7 @@
     "capacityCost": [0],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1500],
     "source": "Run And Gun",
@@ -1027,7 +1027,7 @@
     "capacityCost": [4],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2500],
     "source": "Run And Gun",
@@ -1045,7 +1045,7 @@
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Run And Gun",
@@ -1060,7 +1060,7 @@
     "capacityCost": [6],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [500],
     "source": "Bullets And Bandages",
@@ -1075,7 +1075,7 @@
     "capacityCost": [1],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [50],
     "source": "Bullets And Bandages",
@@ -1090,7 +1090,7 @@
     "capacityCost": [1],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [40],
     "source": "Hard Targets",
@@ -1105,7 +1105,7 @@
     "capacityCost": [4],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [150],
     "source": "Hard Targets",
@@ -1120,7 +1120,7 @@
     "capacityCost": [1],
     "availability": {
       "rating": [7],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [50],
     "source": "Hard Targets",
@@ -1135,7 +1135,7 @@
     "capacityCost": [2],
     "availability": {
       "rating": [10],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [700],
     "source": "Hard Targets",
@@ -1150,7 +1150,7 @@
     "capacityCost": [6],
     "availability": {
       "rating": [14],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [3000],
     "source": "Cutting Aces",
@@ -1165,7 +1165,7 @@
     "capacityCost": [0],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [50],
     "source": "Cutting Aces",
@@ -1181,7 +1181,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Street Lethal",
@@ -1197,7 +1197,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Kill Code",
@@ -1213,7 +1213,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Kill Code",
@@ -1229,7 +1229,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Kill Code",
@@ -1250,27 +1250,27 @@
       "ratingLinked": [
         {
           "rating": [6],
-          "restriction": "Forbidden"
+          "restriction": "F"
         },
         {
           "rating": [6],
-          "restriction": "Forbidden"
+          "restriction": "F"
         },
         {
           "rating": [6],
-          "restriction": "Forbidden"
+          "restriction": "F"
         },
         {
           "rating": [9],
-          "restriction": "Forbidden"
+          "restriction": "F"
         },
         {
           "rating": [9],
-          "restriction": "Forbidden"
+          "restriction": "F"
         },
         {
           "rating": [9],
-          "restriction": "Forbidden"
+          "restriction": "F"
         }
       ]
     },

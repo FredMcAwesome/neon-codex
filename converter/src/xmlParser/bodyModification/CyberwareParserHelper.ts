@@ -1,7 +1,7 @@
 import assert from "assert";
 import {
   cyberwareCategoryEnum,
-  mountSlotEnum,
+  augmentationMountSlotEnum,
   mathOperatorEnum,
 } from "@neon-codex/common/build/enums.js";
 import type {
@@ -82,17 +82,17 @@ export const convertMountLocation = function (
 ) {
   switch (mountLocation) {
     case "wrist":
-      return mountSlotEnum.Wrist;
+      return augmentationMountSlotEnum.Wrist;
     case "elbow":
-      return mountSlotEnum.Elbow;
+      return augmentationMountSlotEnum.Elbow;
     case "shoulder":
-      return mountSlotEnum.Shoulder;
+      return augmentationMountSlotEnum.Shoulder;
     case "ankle":
-      return mountSlotEnum.Ankle;
+      return augmentationMountSlotEnum.Ankle;
     case "knee":
-      return mountSlotEnum.Knee;
+      return augmentationMountSlotEnum.Knee;
     case "hip":
-      return mountSlotEnum.Hip;
+      return augmentationMountSlotEnum.Hip;
     default:
       assert(false, mountLocation);
   }

@@ -6,14 +6,16 @@ So far I have only passed to the frontend:
   - Augmentations
   - Vehicles (including weapon mounts)
   - Gear
-
-To match where I previously was, still need (passed through to frontend - They are already parsed):
   - Armour
+
+Still need passed through to frontend):
   - ArmourAccessories
   - Spells
   - Drugs
   - DrugComponents
   - VehicleMods (including weapon mount mods)
+
+I need to parse, store in DB, and pass to frontend:
 
 Other main priorities:
   - Complex Forms

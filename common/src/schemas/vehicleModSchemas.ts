@@ -14,6 +14,7 @@ import {
 import { z as zod } from "zod";
 import { BonusSchema } from "./shared/bonusSchemas.js";
 import { RequirementsSchema } from "./shared/requiredSchemas.js";
+import { RangeCostSchema } from "./commonSchemas.js";
 
 const VehicleModRatingSchema = zod.array(
   zod.union([
@@ -137,20 +138,11 @@ const PartialCostVehicleModSchema: zod.ZodType<PartialCostVehicleModType> =
   );
 
 const CostVehicleModSchema = zod.union([
+  RangeCostSchema,
   PartialCostVehicleModSchema,
   zod
     .object({
       ratingLinked: zod.array(PartialCostVehicleModSchema),
-    })
-    .strict(),
-  zod
-    .object({
-      range: zod
-        .object({
-          min: zod.number(),
-          max: zod.number(),
-        })
-        .strict(),
     })
     .strict(),
 ]);

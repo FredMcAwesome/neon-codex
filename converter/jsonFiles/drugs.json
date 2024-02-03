@@ -6,7 +6,7 @@
     "speed": 1,
     "availability": {
       "rating": 3,
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": 15,
     "source": "Shadowrun 5 Core Rulebook",
@@ -24,7 +24,7 @@
     },
     "availability": {
       "rating": 2,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 10,
     "source": "Shadowrun 5 Core Rulebook",
@@ -42,7 +42,7 @@
     },
     "availability": {
       "rating": 8,
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": 400,
     "source": "Shadowrun 5 Core Rulebook",
@@ -60,7 +60,7 @@
     },
     "availability": {
       "rating": 2,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 75,
     "source": "Shadowrun 5 Core Rulebook",
@@ -78,7 +78,7 @@
     },
     "availability": {
       "rating": 4,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 100,
     "source": "Shadowrun 5 Core Rulebook",
@@ -91,7 +91,7 @@
     "speed": 600,
     "availability": {
       "rating": 0,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 50,
     "source": "Shadowrun 5 Core Rulebook",
@@ -104,7 +104,7 @@
     "speed": 6,
     "availability": {
       "rating": 2,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 50,
     "source": "Shadowrun 5 Core Rulebook",
@@ -117,7 +117,7 @@
     "speed": 6,
     "availability": {
       "rating": 2,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 10,
     "source": "Shadowrun 5 Core Rulebook",
@@ -130,7 +130,7 @@
     "speed": 600,
     "availability": {
       "rating": 0,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 200,
     "source": "Shadowrun 5 Core Rulebook",
@@ -143,7 +143,7 @@
     "speed": 300,
     "availability": {
       "rating": 4,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 5,
     "source": "Shadowrun 5 Core Rulebook",
@@ -155,7 +155,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 3,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 800,
     "source": "Bullets And Bandages",
@@ -167,7 +167,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 8,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 1000,
     "source": "Bullets And Bandages",
@@ -179,7 +179,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 4,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 2000,
     "source": "Bullets And Bandages",
@@ -191,7 +191,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 5,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 500,
     "source": "Bullets And Bandages",
@@ -203,7 +203,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 2,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 100,
     "source": "Bullets And Bandages",
@@ -215,7 +215,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 2,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 50,
     "source": "Bullets And Bandages",
@@ -227,7 +227,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 6,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 100,
     "source": "Bullets And Bandages",
@@ -239,7 +239,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 8,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 1000,
     "source": "The Vladivostok Gauntlet",
@@ -251,7 +251,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 6,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 200,
     "source": "Lockdown",
@@ -263,7 +263,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 6,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 100,
     "source": "Lockdown",
@@ -275,7 +275,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 6,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 150,
     "source": "Lockdown",
@@ -287,7 +287,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 6,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 75,
     "source": "Lockdown",
@@ -299,7 +299,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 4,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 75,
     "source": "Stolen Souls",
@@ -311,7 +311,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 0,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 30,
     "source": "Stolen Souls",
@@ -323,7 +323,7 @@
     "category": "Toxins",
     "availability": {
       "rating": 8,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 250,
     "source": "Stolen Souls",
@@ -335,7 +335,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 4,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 80,
     "source": "Chrome Flesh",
@@ -347,7 +347,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 4,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 25,
     "source": "Chrome Flesh",
@@ -359,7 +359,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 6,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 1500,
     "source": "Chrome Flesh",
@@ -371,7 +371,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 14,
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": 750,
     "source": "Chrome Flesh",
@@ -383,7 +383,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 5,
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": 30,
     "source": "Chrome Flesh",
@@ -395,7 +395,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 4,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 5,
     "source": "Chrome Flesh",
@@ -407,7 +407,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 14,
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": 800,
     "source": "Chrome Flesh",
@@ -419,7 +419,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 6,
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": 300,
     "source": "Chrome Flesh",
@@ -431,7 +431,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 8,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 45,
     "source": "Chrome Flesh",
@@ -443,7 +443,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 3,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 20,
     "source": "Chrome Flesh",
@@ -455,7 +455,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 10,
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": 400,
     "source": "Chrome Flesh",
@@ -467,7 +467,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 4,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 45,
     "source": "Chrome Flesh",
@@ -479,7 +479,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 2,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 15,
     "source": "Chrome Flesh",
@@ -491,7 +491,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 8,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 60,
     "source": "Chrome Flesh",
@@ -503,7 +503,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 12,
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": 500,
     "source": "Chrome Flesh",
@@ -515,7 +515,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 2,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 10,
     "source": "Chrome Flesh",
@@ -527,7 +527,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 14,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 2500,
     "source": "Chrome Flesh",
@@ -539,7 +539,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 16,
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": 900,
     "source": "Chrome Flesh",
@@ -551,7 +551,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 12,
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": 750,
     "source": "Chrome Flesh",
@@ -563,7 +563,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 10,
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": 400,
     "source": "Chrome Flesh",
@@ -575,7 +575,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 12,
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": 1800,
     "source": "Chrome Flesh",
@@ -587,7 +587,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 6,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 100,
     "source": "Chrome Flesh",
@@ -599,7 +599,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 3,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 25,
     "source": "Chrome Flesh",
@@ -611,7 +611,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 3,
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": 15,
     "source": "Chrome Flesh",
@@ -623,7 +623,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 6,
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": 1250,
     "source": "Chrome Flesh",
@@ -635,7 +635,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 10,
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": 800,
     "source": "Chrome Flesh",
@@ -647,7 +647,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 12,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 2000,
     "source": "Chrome Flesh",
@@ -659,7 +659,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 8,
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": 800,
     "source": "Chrome Flesh",
@@ -671,7 +671,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 4,
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": 25,
     "source": "Chrome Flesh",
@@ -683,7 +683,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 6,
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": 500,
     "source": "Chrome Flesh",
@@ -695,7 +695,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 4,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 350,
     "source": "Chrome Flesh",
@@ -707,7 +707,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 4,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 50,
     "source": "Chrome Flesh",
@@ -719,7 +719,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 6,
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": 60,
     "source": "Chrome Flesh",
@@ -731,7 +731,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 10,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 1700,
     "source": "Chrome Flesh",
@@ -743,7 +743,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 6,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 1000,
     "source": "Chrome Flesh",
@@ -755,7 +755,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 8,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 250,
     "source": "Chrome Flesh",
@@ -767,7 +767,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 1,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 10,
     "source": "Chrome Flesh",
@@ -779,7 +779,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 6,
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": 125,
     "source": "Chrome Flesh",
@@ -791,7 +791,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 12,
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": 150,
     "source": "Chrome Flesh",
@@ -803,7 +803,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 10,
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": 1100,
     "source": "Chrome Flesh",
@@ -815,7 +815,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 3,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 15,
     "source": "Chrome Flesh",
@@ -827,7 +827,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 12,
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": 2350,
     "source": "Chrome Flesh",
@@ -839,7 +839,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 8,
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": 150,
     "source": "Chrome Flesh",
@@ -851,7 +851,7 @@
     "category": "Drugs",
     "availability": {
       "rating": 12,
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": 1500,
     "source": "Chrome Flesh",

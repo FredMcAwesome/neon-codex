@@ -12,7 +12,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [750],
     "source": "Shadowrun 5 Core Rulebook",
@@ -31,7 +31,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [0],
     "source": "Shadowrun 5 Core Rulebook",
@@ -53,7 +53,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [600],
     "source": "Shadowrun 5 Core Rulebook",
@@ -71,7 +71,7 @@
     "hostWeaponMountsRequired": ["Under"],
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [200],
     "source": "Shadowrun 5 Core Rulebook",
@@ -90,7 +90,7 @@
     "concealabilityModification": -1,
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [150],
     "source": "Shadowrun 5 Core Rulebook",
@@ -107,7 +107,7 @@
     "hostWeaponMountsRequired": ["Barrel"],
     "availability": {
       "rating": [3],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [200],
     "source": "Shadowrun 5 Core Rulebook",
@@ -124,7 +124,7 @@
     "hostWeaponMountsRequired": ["Barrel"],
     "availability": {
       "rating": [6],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [400],
     "source": "Shadowrun 5 Core Rulebook",
@@ -141,7 +141,7 @@
     "hostWeaponMountsRequired": ["Barrel"],
     "availability": {
       "rating": [9],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [600],
     "source": "Shadowrun 5 Core Rulebook",
@@ -159,7 +159,7 @@
     "hostWeaponMountsRequired": ["Under"],
     "availability": {
       "rating": [7],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1400],
     "source": "Shadowrun 5 Core Rulebook",
@@ -179,7 +179,7 @@
     "concealabilityModification": -1,
     "availability": {
       "rating": [4],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [350],
     "source": "Shadowrun 5 Core Rulebook",
@@ -206,7 +206,7 @@
     "hostWeaponMountsRequired": ["Top"],
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [300],
     "source": "Shadowrun 5 Core Rulebook",
@@ -223,7 +223,7 @@
     "hostWeaponMountsRequired": ["Top", "Under"],
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [125],
     "source": "Shadowrun 5 Core Rulebook",
@@ -239,7 +239,7 @@
     "hostWeaponMountsRequired": ["Top"],
     "availability": {
       "rating": [3],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [70],
     "source": "Shadowrun 5 Core Rulebook",
@@ -257,7 +257,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [175],
     "source": "Shadowrun 5 Core Rulebook",
@@ -297,7 +297,7 @@
     },
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [50],
     "source": "Shadowrun 5 Core Rulebook",
@@ -313,12 +313,12 @@
     "hostWeaponMountsRequired": ["Barrel"],
     "hostWeaponRestrictions": {
       "weaponNames": ["PSK-3 Collapsible Heavy Pistol"],
-      "ammunitionDetails": ["Cylinder", "Shotguns"],
+      "ammunitionDetails": ["(cy)", "Shotguns"],
       "categories": ["Shotguns"]
     },
     "availability": {
       "rating": [9],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [500],
     "source": "Shadowrun 5 Core Rulebook",
@@ -334,13 +334,13 @@
     "hostWeaponMountsRequired": ["Barrel"],
     "hostWeaponRestrictions": {
       "weaponNames": ["PSK-3 Collapsible Heavy Pistol"],
-      "ammunitionDetails": ["Cylinder", "Shotguns"],
+      "ammunitionDetails": ["(cy)", "Shotguns"],
       "categories": ["Shotguns"]
     },
     "userSelectable": false,
     "availability": {
       "rating": [9],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [500],
     "source": "Shadowrun 5 Core Rulebook",
@@ -356,7 +356,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -376,7 +376,7 @@
     },
     "availability": {
       "rating": [12],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [2000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -409,12 +409,12 @@
     },
     "availability": {
       "rating": [2],
-      "restriction": "Restricted",
+      "restriction": "R",
       "modifier": "+"
     },
     "cost": [
       {
-        "option": "Weapon"
+        "option": "Weapon Cost"
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
@@ -448,7 +448,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [200],
     "source": "Shadowrun 5 Core Rulebook",
@@ -463,14 +463,14 @@
     "specialModification": false,
     "extraAmmoSlots": 1,
     "hostWeaponRequirements": {
-      "ammunitionDetails": ["Clip", "Drum"]
+      "ammunitionDetails": ["(c)", "(d)"]
     },
     "hostWeaponRestrictions": {
       "weaponNames": ["HK Urban Fighter"]
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [5],
     "source": "Shadowrun 5 Core Rulebook",
@@ -486,7 +486,7 @@
     "extraAmmoSlots": 1,
     "newAmmoType": {
       "capacity": 100,
-      "reloadMethod": "Belt Fed"
+      "reloadMethod": "(belt)"
     },
     "hostWeaponRequirements": {
       "weaponNames": [
@@ -503,7 +503,7 @@
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Shadowrun 5 Core Rulebook",
@@ -519,14 +519,14 @@
     "extraAmmoSlots": 1,
     "newAmmoType": {
       "capacity": 24,
-      "reloadMethod": "Drum"
+      "reloadMethod": "(d)"
     },
     "hostWeaponRequirements": {
       "weaponNames": ["Enfield AS-7"]
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Shadowrun 5 Core Rulebook",
@@ -542,14 +542,14 @@
     "extraAmmoSlots": 1,
     "newAmmoType": {
       "capacity": 32,
-      "reloadMethod": "Drum"
+      "reloadMethod": "(d)"
     },
     "hostWeaponRequirements": {
       "weaponNames": ["Auto-Assault 16"]
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Shadowrun 5 Core Rulebook",
@@ -564,7 +564,7 @@
     "specialModification": false,
     "extraAmmoSlots": 1,
     "newAmmoType": {
-      "reloadMethod": "External"
+      "reloadMethod": "External Source"
     },
     "hostWeaponRequirements": {
       "weaponNames": [
@@ -576,7 +576,7 @@
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Shadowrun 5 Core Rulebook",
@@ -591,11 +591,11 @@
     "specialModification": false,
     "extraAmmoSlots": 1,
     "hostWeaponRequirements": {
-      "ammunitionDetails": ["Cylinder"]
+      "ammunitionDetails": ["(cy)"]
     },
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [25],
     "source": "Shadowrun 5 Core Rulebook",
@@ -613,7 +613,7 @@
     "hostWeaponMountsRequired": ["Under"],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [500],
     "source": "Shadowrun 5 Core Rulebook",
@@ -644,7 +644,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [600],
     "source": "Run And Gun",
@@ -663,7 +663,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [700],
     "source": "Run And Gun",
@@ -682,7 +682,7 @@
     "concealabilityModification": -6,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Run And Gun",
@@ -700,7 +700,7 @@
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [400],
     "source": "Run And Gun",
@@ -719,7 +719,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [100],
     "source": "Run And Gun",
@@ -749,7 +749,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [700],
     "source": "Run And Gun",
@@ -779,7 +779,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [800],
     "source": "Run And Gun",
@@ -809,7 +809,7 @@
     },
     "availability": {
       "rating": [11],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [1000],
     "source": "Run And Gun",
@@ -839,7 +839,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [950],
     "source": "Run And Gun",
@@ -858,7 +858,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [50],
     "source": "Run And Gun",
@@ -880,7 +880,7 @@
     "concealabilityModification": -1,
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [275],
     "source": "Run And Gun",
@@ -898,7 +898,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -926,7 +926,7 @@
     "hostWeaponMountsRequired": ["Top", "Under", "Side"],
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [50],
     "source": "Run And Gun",
@@ -942,7 +942,7 @@
     "hostWeaponMountsRequired": ["Top", "Under", "Side"],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [200],
     "source": "Run And Gun",
@@ -958,7 +958,7 @@
     "hostWeaponMountsRequired": ["Top", "Under", "Side"],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [400],
     "source": "Run And Gun",
@@ -976,7 +976,7 @@
     "hostWeaponMountsRequired": ["Stock"],
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [30],
     "source": "Run And Gun",
@@ -995,7 +995,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [30],
     "source": "Run And Gun",
@@ -1019,7 +1019,7 @@
     "concealabilityModification": 1,
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [100],
     "source": "Run And Gun",
@@ -1038,7 +1038,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [100],
     "source": "Run And Gun",
@@ -1057,7 +1057,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [100],
     "source": "Run And Gun",
@@ -1073,7 +1073,7 @@
     "hostWeaponMountsRequired": ["Top", "Under", "Barrel", "Side", "Internal"],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [350],
     "source": "Run And Gun",
@@ -1091,7 +1091,7 @@
     "hostWeaponMountsRequired": ["Stock"],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [250],
     "source": "Run And Gun",
@@ -1115,7 +1115,7 @@
     "rangePenaltyDecrease": 1,
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Run And Gun",
@@ -1134,11 +1134,11 @@
       "reloadMethod": "Special"
     },
     "hostWeaponRequirements": {
-      "ammunitionDetails": ["External", "Energy"]
+      "ammunitionDetails": ["External Source", "Energy"]
     },
     "availability": {
       "rating": [14],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [400],
     "source": "Run And Gun",
@@ -1157,11 +1157,11 @@
       "reloadMethod": "Special"
     },
     "hostWeaponRequirements": {
-      "ammunitionDetails": ["External", "Energy"]
+      "ammunitionDetails": ["External Source", "Energy"]
     },
     "availability": {
       "rating": [16],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [900],
     "source": "Run And Gun",
@@ -1180,11 +1180,11 @@
       "reloadMethod": "Special"
     },
     "hostWeaponRequirements": {
-      "ammunitionDetails": ["External", "Energy"]
+      "ammunitionDetails": ["External Source", "Energy"]
     },
     "availability": {
       "rating": [20],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [2500],
     "source": "Run And Gun",
@@ -1203,7 +1203,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [750],
     "source": "Run And Gun",
@@ -1224,7 +1224,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [25],
     "source": "Run And Gun",
@@ -1245,7 +1245,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [300],
     "source": "Run And Gun",
@@ -1266,7 +1266,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [25],
     "source": "Run And Gun",
@@ -1282,7 +1282,7 @@
     "hostWeaponMountsRequired": ["Top", "Under", "Side"],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [500],
     "source": "Run And Gun",
@@ -1300,7 +1300,7 @@
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [15],
     "source": "Run And Gun",
@@ -1318,7 +1318,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [150],
     "source": "Run And Gun",
@@ -1338,7 +1338,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [8],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [350],
     "source": "Run And Gun",
@@ -1357,7 +1357,7 @@
     },
     "availability": {
       "rating": [10],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [500],
     "source": "Run And Gun",
@@ -1376,7 +1376,7 @@
     },
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [200],
     "source": "Run And Gun",
@@ -1396,7 +1396,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [8],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [600],
     "source": "Run And Gun",
@@ -1416,7 +1416,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [10],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [3500],
     "source": "Run And Gun",
@@ -1434,7 +1434,7 @@
     "hostWeaponMountsRequired": ["Under"],
     "availability": {
       "rating": [4],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [50],
     "source": "Run And Gun",
@@ -1453,7 +1453,7 @@
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [200],
     "source": "Run And Gun",
@@ -1471,7 +1471,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [250],
     "source": "Run And Gun",
@@ -1505,7 +1505,7 @@
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "GunHeaven 3",
@@ -1523,7 +1523,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Chrome Flesh",
@@ -1545,7 +1545,7 @@
     },
     "availability": {
       "rating": [8],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [250],
     "source": "Hard Targets",
@@ -1560,11 +1560,11 @@
     "specialModification": false,
     "extraAmmoSlots": 1,
     "hostWeaponRequirements": {
-      "ammunitionDetails": ["Clip", "Drum"]
+      "ammunitionDetails": ["(c)", "(d)"]
     },
     "availability": {
       "rating": [2],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [20],
     "source": "Hard Targets",
@@ -1578,7 +1578,7 @@
     "deploymentRequired": false,
     "specialModification": false,
     "hostWeaponRequirements": {
-      "ammunitionDetails": ["Belt Fed", "Clip", "Drum"]
+      "ammunitionDetails": ["(belt)", "(c)", "(d)"]
     },
     "hostWeaponRestrictions": {
       "weaponNames": [
@@ -1593,7 +1593,7 @@
     "concealabilityModification": "Rating",
     "availability": {
       "rating": [6],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [35],
     "source": "Hard Targets",
@@ -1620,7 +1620,7 @@
     "concealabilityModification": 2,
     "availability": {
       "rating": [6],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [35],
     "source": "Hard Targets",
@@ -1652,13 +1652,13 @@
           "option": "Rating"
         }
       ],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
         "subnumbers": [
           {
-            "option": "Weapon"
+            "option": "Weapon Cost"
           },
           {
             "operator": "*"
@@ -1690,7 +1690,7 @@
     "concealabilityModification": -2,
     "availability": {
       "rating": [10],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [1000],
     "source": "Hard Targets",
@@ -1714,7 +1714,7 @@
     "concealabilityModification": -1,
     "availability": {
       "rating": [10],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [1000],
     "source": "Hard Targets",
@@ -1731,7 +1731,7 @@
     "hostWeaponMountsRequired": ["Top"],
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [125],
     "source": "Hard Targets",
@@ -1749,11 +1749,11 @@
     "concealabilityModification": 1,
     "availability": {
       "rating": [8],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [
       {
-        "option": "Weapon"
+        "option": "Weapon Cost"
       }
     ],
     "source": "Hard Targets",
@@ -1771,7 +1771,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [500],
     "source": "Hard Targets",
@@ -1787,7 +1787,7 @@
     "hostWeaponMountsRequired": ["Side"],
     "availability": {
       "rating": [8],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [750],
     "source": "Hard Targets",
@@ -1806,7 +1806,7 @@
     },
     "availability": {
       "rating": [10],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [1250],
     "source": "Hard Targets",
@@ -1826,7 +1826,7 @@
     },
     "availability": {
       "rating": [10],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [1000],
     "source": "Hard Targets",
@@ -1843,7 +1843,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [8],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [1000],
     "source": "Hard Targets",
@@ -1860,7 +1860,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [16],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [22000],
     "source": "Hard Targets",
@@ -1877,7 +1877,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [5],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [600],
     "source": "Hard Targets",
@@ -1904,7 +1904,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [200],
     "source": "Hard Targets",
@@ -1920,7 +1920,7 @@
     "hostWeaponMountsRequired": ["Under"],
     "availability": {
       "rating": [6],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [200],
     "source": "Hard Targets",
@@ -1938,7 +1938,7 @@
     },
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [300],
     "source": "Hard Targets",
@@ -1972,7 +1972,7 @@
     "concealabilityModification": -1,
     "availability": {
       "rating": [4],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [20],
     "source": "Hard Targets",
@@ -1998,7 +1998,7 @@
     "concealabilityModification": -1,
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [20],
     "source": "Hard Targets",
@@ -2024,7 +2024,7 @@
     "concealabilityModification": -2,
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [20],
     "source": "Hard Targets",
@@ -2050,7 +2050,7 @@
     },
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [50],
     "source": "Hard Targets",
@@ -2069,7 +2069,7 @@
     },
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [100],
     "source": "Hard Targets",
@@ -2094,7 +2094,7 @@
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -2144,7 +2144,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Shadowrun 5 Core Rulebook",
@@ -2170,7 +2170,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Shadowrun 5 Core Rulebook",
@@ -2191,7 +2191,7 @@
     },
     "availability": {
       "rating": [2],
-      "restriction": "Forbidden",
+      "restriction": "F",
       "modifier": "+"
     },
     "cost": [400],
@@ -2211,7 +2211,7 @@
     },
     "availability": {
       "rating": [10],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [100],
     "source": "Street Lethal",
@@ -2227,7 +2227,7 @@
     "extraAmmoSlots": 1,
     "hostWeaponMountsRequired": ["Side"],
     "hostWeaponRequirements": {
-      "ammunitionDetails": ["Clip", "Internal Magazine"]
+      "ammunitionDetails": ["(c)", "(m)"]
     },
     "hostWeaponRestrictions": {
       "categories": [
@@ -2240,11 +2240,11 @@
     "concealabilityModification": 2,
     "availability": {
       "rating": [10],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [
       {
-        "option": "Weapon"
+        "option": "Weapon Cost"
       }
     ],
     "source": "Street Lethal",
@@ -2270,16 +2270,16 @@
     ],
     "hostWeaponMountsRequired": ["Side"],
     "hostWeaponRequirements": {
-      "ammunitionDetails": ["Clip", "Internal Magazine"]
+      "ammunitionDetails": ["(c)", "(m)"]
     },
     "concealabilityModification": 2,
     "availability": {
       "rating": [10],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [
       {
-        "option": "Weapon"
+        "option": "Weapon Cost"
       }
     ],
     "source": "Street Lethal",
@@ -2295,14 +2295,14 @@
     "extraAmmoSlots": 1,
     "newAmmoType": {
       "capacity": 2500,
-      "reloadMethod": "Belt Fed"
+      "reloadMethod": "(belt)"
     },
     "hostWeaponRequirements": {
-      "ammunitionDetails": ["Belt Fed"]
+      "ammunitionDetails": ["(belt)"]
     },
     "availability": {
       "rating": [14],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [500],
     "source": "Street Lethal",
@@ -2322,7 +2322,7 @@
     },
     "availability": {
       "rating": [10],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [800],
     "source": "Street Lethal",
@@ -2341,7 +2341,7 @@
     },
     "availability": {
       "rating": [15],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [1000],
     "source": "Street Lethal",
@@ -2357,7 +2357,7 @@
     "hostWeaponMountsRequired": ["Top"],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [75],
     "source": "Street Lethal",
@@ -2372,14 +2372,14 @@
     "specialModification": false,
     "extraAmmoSlots": 1,
     "hostWeaponRequirements": {
-      "ammunitionDetails": ["Clip", "Drum"]
+      "ammunitionDetails": ["(c)", "(d)"]
     },
     "hostWeaponRestrictions": {
       "weaponNames": ["HK Urban Fighter"]
     },
     "availability": {
       "rating": [18],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [
       {
@@ -2406,7 +2406,7 @@
     "specialModification": false,
     "extraAmmoSlots": 1,
     "hostWeaponRequirements": {
-      "ammunitionDetails": ["Clip", "Drum"]
+      "ammunitionDetails": ["(c)", "(d)"]
     },
     "hostWeaponRestrictions": {
       "weaponNames": ["HK Urban Fighter"]
@@ -2414,7 +2414,7 @@
     "concealabilityModification": 1,
     "availability": {
       "rating": [18],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [
       {
@@ -2442,7 +2442,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Street Lethal",
@@ -2458,7 +2458,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Street Lethal",
@@ -2480,7 +2480,7 @@
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Better Than Bad",
@@ -2502,7 +2502,7 @@
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Better Than Bad",
@@ -2539,7 +2539,7 @@
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Better Than Bad",
@@ -2561,7 +2561,7 @@
     "concealabilityModification": -1,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Better Than Bad",
@@ -2583,7 +2583,7 @@
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Better Than Bad",
@@ -2605,7 +2605,7 @@
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Better Than Bad",
@@ -2627,7 +2627,7 @@
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Better Than Bad",
@@ -2643,7 +2643,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Krime Katalog",
@@ -2665,7 +2665,7 @@
     "userSelectable": false,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [0],
     "source": "Krime Katalog",
@@ -2699,7 +2699,7 @@
     },
     "availability": {
       "rating": [7],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [500],
     "source": "Krime Katalog",
@@ -2717,7 +2717,7 @@
     "hostWeaponMountsRequired": ["Under"],
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Krime Katalog",
@@ -2735,7 +2735,7 @@
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [25],
     "source": "Krime Katalog",
@@ -2752,7 +2752,7 @@
     "hostWeaponMountsRequired": ["Barrel"],
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [250],
     "source": "Krime Katalog",
@@ -2770,7 +2770,7 @@
     },
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [50],
     "source": "Krime Katalog",

@@ -18,7 +18,7 @@ import {
   augmentationTypeEnum,
   sourceBookEnum,
   rangeEnum,
-  costWeaponEnum,
+  costEnum,
   restrictionEnum,
   weaponExtraClassificationEnum,
   gearCategoryEnum,
@@ -43,7 +43,7 @@ const InnerCostWeaponSchema = zod.union([
   zod.number(),
   zod
     .object({
-      option: zod.nativeEnum(costWeaponEnum),
+      option: zod.nativeEnum(costEnum),
     })
     .strict(),
   zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),

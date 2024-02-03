@@ -8,7 +8,7 @@ import {
   ammoSourceEnum,
   restrictionEnum,
   armourPenetrationEnum,
-  costWeaponEnum,
+  costEnum,
   availabilityEnum,
   weaponExtraClassificationEnum,
   explosiveTypeEnum,
@@ -558,14 +558,16 @@ ammoSemantics.addOperation("eval", {
     return [ammo.eval()];
   },
   Ammo_base(ammo, reloadMethod) {
+    const capacity = ammo.eval();
     return {
-      capacity: ammo.eval(),
+      ...(capacity !== 0 && { capacity: capacity }),
       ...reloadMethod.eval(),
     };
   },
   Ammo_noReload(ammo) {
+    const capacity = ammo.eval();
     return {
-      capacity: ammo.eval(),
+      ...(capacity !== 0 && { capacity: capacity }),
       reloadMethod: ammoSourceEnum.Special,
     };
   },
@@ -741,7 +743,7 @@ costWeaponSemantics.addOperation("eval", {
     return [cost.eval()];
   },
   Rating(_) {
-    return { option: costWeaponEnum.Rating };
+    return { option: costEnum.Rating };
   },
   Number(availability) {
     return availability.eval();

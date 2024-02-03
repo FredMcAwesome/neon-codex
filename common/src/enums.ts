@@ -28,16 +28,6 @@ export enum attributeTypeEnum {
   Edge = "Edge",
 }
 
-export enum gearTypeEnum {
-  Weapons = "Weapons",
-  Electronics = "Electronics",
-  ElectronicAccessories = "Electronic Accessories",
-  OtherGear = "Other Gear",
-  Augmentations = "Augmentations",
-  MagicalEquipment = "Magical Equipment",
-  Vehicles = "Vehicles",
-}
-
 export enum weaponTypeEnum {
   Melee = "Melee",
   Projectile = "Projectile",
@@ -173,31 +163,31 @@ export enum standardCalculationEnum {
 }
 
 export enum restrictionEnum {
-  Legal = "Legal",
-  Restricted = "Restricted",
-  Forbidden = "Forbidden",
+  Legal = "",
+  Restricted = "R",
+  Forbidden = "F",
 }
 
 export enum firearmModeEnum {
-  SingleShot = "Single Shot",
-  SemiAutomatic = "Semi Automatic",
-  BurstFire = "Burst Fire",
-  FullAutomatic = "Full Automatic",
-  None = "N/A",
+  SingleShot = "SS",
+  SemiAutomatic = "SA",
+  BurstFire = "BF",
+  FullAutomatic = "FA",
+  None = "",
 }
 
 export enum ammoSourceEnum {
-  BreakAction = "Break Action",
-  Clip = "Clip",
-  Drum = "Drum",
-  MuzzleLoader = "Muzzle Loader",
-  InternalMagazine = "Internal Magazine",
-  Cylinder = "Cylinder",
-  BeltFed = "Belt Fed",
-  Tank = "Tank",
-  External = "External",
+  BreakAction = "(b)",
+  Clip = "(c)",
+  Drum = "(d)",
+  MuzzleLoader = "(ml)",
+  InternalMagazine = "(m)",
+  Cylinder = "(cy)",
+  BeltFed = "(belt)",
+  Tank = "(tank)",
+  External = "External Source",
   Energy = "Energy",
-  CapAndBall = "Cap and Ball",
+  CapAndBall = "(cb)",
   Special = "Special",
 }
 
@@ -228,55 +218,19 @@ export enum availabilityEnum {
   Gear = "Gear",
 }
 
-export enum capcityArmourModEnum {
+export enum capacityEnum {
   Rating = "Rating",
-  Capacity = "Capacity",
-}
-
-export enum capcityAugmentationEnum {
-  Rating = "Rating",
-  Capacity = "Capacity",
+  ParentCapacity = "Capacity",
   IncludedInParent = "Included",
 }
 
-export enum costAmmunitionEnum {
-  Rating = "Rating",
-}
-
-export enum costArmourEnum {
-  Rating = "Rating",
-}
-
-export enum costArmourModEnum {
-  Rating = "Rating",
-  Armour = "Armour",
-}
-
-export enum costGearEnum {
+export enum costEnum {
   Rating = "Rating",
   ParentCost = "Parent Cost",
   ChildrenCost = "Children Cost",
   GearCost = "Gear Cost",
-}
-
-export enum costWeaponEnum {
-  Rating = "Rating",
-}
-
-export enum costWeaponAccessoryEnum {
-  Rating = "Rating",
-  Weapon = "Weapon",
-}
-
-export enum costAugmentationEnum {
-  Rating = "Rating",
+  WeaponCost = "Weapon Cost",
   MinimumRating = "Minimum Rating",
-  Parent = "Parent",
-  Gear = "Gear",
-}
-
-export enum costVehicleEnum {
-  Rating = "Rating",
 }
 
 export enum ratingAugmentationEnum {
@@ -710,7 +664,7 @@ export enum augmentationLimitEnum {
   None = "N/A",
 }
 
-export enum mountSlotEnum {
+export enum augmentationMountSlotEnum {
   Wrist = "Wrist",
   Elbow = "Elbow",
   Shoulder = "Shoulder",

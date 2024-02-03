@@ -146,3 +146,55 @@ export type useGearType = zod.infer<typeof UseGearSchema>;
 
 export const UseGearListSchema = zod.array(UseGearSchema);
 export type UseGearListType = zod.infer<typeof UseGearListSchema>;
+
+export const RangeCostSchema = zod
+  .object({
+    range: zod
+      .object({
+        min: zod.number(),
+        max: zod.number(),
+      })
+      .strict(),
+  })
+  .strict();
+
+// export type EssenceType = zod.infer<typeof EssenceSchema>;
+// Essence Cost is a recursive type
+export const EssenceSubnumberSchema = zod.union([
+  zod.number(),
+  zod
+    .object({
+      option: zod.literal("Rating"),
+    })
+    .strict(),
+  zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
+]);
+
+type EssenceRecursiveCostType = Array<
+  | zod.infer<typeof EssenceSubnumberSchema>
+  | {
+      subnumbers: EssenceRecursiveCostType;
+    }
+>;
+export const EssenceCostRecursiveSchema: zod.ZodType<EssenceRecursiveCostType> =
+  zod.array(
+    zod.union([
+      EssenceSubnumberSchema,
+      zod
+        .object({
+          subnumbers: zod.lazy(() => EssenceCostRecursiveSchema),
+        })
+        .strict(),
+    ])
+  );
+
+export const EssenceCostSchema = zod.union([
+  zod
+    .object({
+      ratingLinked: zod.array(EssenceCostRecursiveSchema),
+    })
+    .strict(),
+  EssenceCostRecursiveSchema,
+]);
+
+export type EssenceCostType = zod.infer<typeof EssenceCostSchema>;

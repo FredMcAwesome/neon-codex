@@ -7,7 +7,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": {
       "range": {
@@ -31,7 +31,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1500],
     "source": "Shadowrun 5 Core Rulebook",
@@ -45,7 +45,7 @@
     "capacity": 6,
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [450],
     "source": "Shadowrun 5 Core Rulebook",
@@ -59,7 +59,7 @@
     "capacity": 12,
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -73,7 +73,7 @@
     "capacity": 9,
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [500],
     "source": "Shadowrun 5 Core Rulebook",
@@ -87,7 +87,7 @@
     "capacity": 9,
     "availability": {
       "rating": [10],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [1700],
     "source": "Shadowrun 5 Core Rulebook",
@@ -99,10 +99,10 @@
     "category": "Armour",
     "damageReduction": 15,
     "capacity": 15,
-    "allowModCategory": "Full Body Armour Mods",
+    "allowModsFromCategory": "Full Body Armour Mods",
     "availability": {
       "rating": [14],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [2000],
     "source": "Shadowrun 5 Core Rulebook",
@@ -116,7 +116,7 @@
     "capacity": 9,
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [900],
     "source": "Shadowrun 5 Core Rulebook",
@@ -136,10 +136,10 @@
         "name": "Music Player"
       }
     ],
-    "allowModCategory": "Urban Explorer Jumpsuit Accessories",
+    "allowModsFromCategory": "Urban Explorer Jumpsuit Accessories",
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [650],
     "source": "Shadowrun 5 Core Rulebook",
@@ -153,7 +153,7 @@
     "capacity": 6,
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [100],
     "source": "Shadowrun 5 Core Rulebook",
@@ -168,7 +168,7 @@
     "isWeapon": true,
     "availability": {
       "rating": [12],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [1200],
     "source": "Shadowrun 5 Core Rulebook",
@@ -183,7 +183,7 @@
     "isWeapon": true,
     "availability": {
       "rating": [10],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [1500],
     "source": "Shadowrun 5 Core Rulebook",
@@ -205,7 +205,7 @@
     },
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2500],
     "source": "Run And Gun",
@@ -227,7 +227,7 @@
     },
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2500],
     "source": "Run And Gun",
@@ -257,7 +257,7 @@
     ],
     "availability": {
       "rating": [9],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2600],
     "source": "Run And Gun",
@@ -287,7 +287,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2300],
     "source": "Run And Gun",
@@ -317,7 +317,7 @@
     ],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2400],
     "source": "Run And Gun",
@@ -347,7 +347,7 @@
     ],
     "availability": {
       "rating": [7],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2500],
     "source": "Run And Gun",
@@ -377,7 +377,7 @@
     ],
     "availability": {
       "rating": [7],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2200],
     "source": "Run And Gun",
@@ -408,7 +408,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [3000],
     "source": "Run And Gun",
@@ -439,7 +439,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [3100],
     "source": "Run And Gun",
@@ -470,7 +470,7 @@
     ],
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [3600],
     "source": "Run And Gun",
@@ -492,7 +492,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1600],
     "source": "Run And Gun",
@@ -519,7 +519,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1300],
     "source": "Run And Gun",
@@ -546,7 +546,7 @@
     ],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1200],
     "source": "Run And Gun",
@@ -568,7 +568,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2100],
     "source": "Run And Gun",
@@ -595,7 +595,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Run And Gun",
@@ -622,7 +622,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Run And Gun",
@@ -649,7 +649,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Run And Gun",
@@ -676,7 +676,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1400],
     "source": "Run And Gun",
@@ -695,7 +695,7 @@
     ],
     "availability": {
       "rating": [7],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2250],
     "source": "Run And Gun",
@@ -719,7 +719,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1500],
     "source": "Run And Gun",
@@ -744,7 +744,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2300],
     "source": "Run And Gun",
@@ -775,7 +775,7 @@
     ],
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [13500],
     "source": "Run And Gun",
@@ -797,7 +797,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Run And Gun",
@@ -819,7 +819,7 @@
     ],
     "availability": {
       "rating": [16],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [4000],
     "source": "Run And Gun",
@@ -841,7 +841,7 @@
     ],
     "availability": {
       "rating": [16],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [5000],
     "source": "Run And Gun",
@@ -863,7 +863,7 @@
     ],
     "availability": {
       "rating": [16],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [6000],
     "source": "Run And Gun",
@@ -885,7 +885,7 @@
     ],
     "availability": {
       "rating": [16],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [7000],
     "source": "Run And Gun",
@@ -907,7 +907,7 @@
     ],
     "availability": {
       "rating": [16],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [8000],
     "source": "Run And Gun",
@@ -924,10 +924,10 @@
         "name": "Custom Fit"
       }
     ],
-    "allowModCategory": "Nightshade IR",
+    "allowModsFromCategory": "Nightshade IR",
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [8500],
     "source": "Run And Gun",
@@ -954,7 +954,7 @@
     ],
     "availability": {
       "rating": [14],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [12000],
     "source": "Run And Gun",
@@ -971,10 +971,10 @@
         "name": "Holster"
       }
     ],
-    "includeModFromCategory": "Globetrotter Jacket Liners",
+    "addModFromCategory": "Globetrotter Jacket Liners",
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1300],
     "source": "Run And Gun",
@@ -986,10 +986,10 @@
     "category": "High-Fashion Armour",
     "damageReduction": 9,
     "capacity": 10,
-    "includeModFromCategory": "Globetrotter Vest Liners",
+    "addModFromCategory": "Globetrotter Vest Liners",
     "availability": {
       "rating": [7],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [900],
     "source": "Run And Gun",
@@ -1006,10 +1006,10 @@
         "name": "Gear Access"
       }
     ],
-    "includeModFromCategory": "Globetrotter Clothing Liners",
+    "addModFromCategory": "Globetrotter Clothing Liners",
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [600],
     "source": "Run And Gun",
@@ -1031,10 +1031,10 @@
         "name": "Gear Access"
       }
     ],
-    "includeModFromCategory": "Victory Liners",
+    "addModFromCategory": "Victory Liners",
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [3000],
     "source": "Run And Gun",
@@ -1061,7 +1061,7 @@
     ],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1100],
     "source": "Run And Gun",
@@ -1086,10 +1086,10 @@
         "name": "Gear Access"
       }
     ],
-    "includeModFromCategory": "Victory Liners",
+    "addModFromCategory": "Victory Liners",
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [5000],
     "source": "Run And Gun",
@@ -1101,10 +1101,10 @@
     "category": "High-Fashion Armour",
     "damageReduction": 9,
     "capacity": 6,
-    "allowModCategory": "Rapid Transit Detailing",
+    "allowModsFromCategory": "Rapid Transit Detailing",
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [400],
     "source": "Run And Gun",
@@ -1126,7 +1126,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1300],
     "source": "Run And Gun",
@@ -1151,7 +1151,7 @@
     ],
     "availability": {
       "rating": [16],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [15000],
     "source": "Run And Gun",
@@ -1176,7 +1176,7 @@
     ],
     "availability": {
       "rating": [18],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [20000],
     "source": "Run And Gun",
@@ -1201,7 +1201,7 @@
     ],
     "availability": {
       "rating": [22],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [25000],
     "source": "Run And Gun",
@@ -1215,7 +1215,7 @@
     "capacity": 8,
     "availability": {
       "rating": [8],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [10000],
     "source": "Run And Gun",
@@ -1245,7 +1245,7 @@
     ],
     "availability": {
       "rating": [14],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [8000],
     "source": "Run And Gun",
@@ -1275,7 +1275,7 @@
     ],
     "availability": {
       "rating": [16],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [14000],
     "source": "Run And Gun",
@@ -1305,7 +1305,7 @@
     ],
     "availability": {
       "rating": [18],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [20000],
     "source": "Run And Gun",
@@ -1319,7 +1319,7 @@
     "capacity": 5,
     "availability": {
       "rating": [8],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [5000],
     "source": "Run And Gun",
@@ -1333,7 +1333,7 @@
     "capacity": 8,
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [500],
     "source": "Run And Gun",
@@ -1347,7 +1347,7 @@
     "capacity": 6,
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [200],
     "source": "Run And Gun",
@@ -1378,7 +1378,7 @@
     ],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [3000],
     "source": "Run And Gun",
@@ -1392,7 +1392,7 @@
     "capacity": 3,
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [750],
     "source": "Run And Gun",
@@ -1414,7 +1414,7 @@
     ],
     "availability": {
       "rating": [10],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [5000],
     "source": "Run And Gun",
@@ -1428,7 +1428,7 @@
     "capacity": 6,
     "availability": {
       "rating": [6],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [1000],
     "source": "Run And Gun",
@@ -1447,7 +1447,7 @@
     ],
     "availability": {
       "rating": [16],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [8000],
     "source": "Run And Gun",
@@ -1461,7 +1461,7 @@
     "capacity": 8,
     "availability": {
       "rating": [10],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [1500],
     "source": "Run And Gun",
@@ -1475,7 +1475,7 @@
     "capacity": 1,
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [250],
     "source": "Run And Gun",
@@ -1489,7 +1489,7 @@
     "capacity": 1,
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [300],
     "source": "Run And Gun",
@@ -1503,7 +1503,7 @@
     "capacity": 1,
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [350],
     "source": "Run And Gun",
@@ -1525,7 +1525,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [750],
     "source": "Run And Gun",
@@ -1539,7 +1539,7 @@
     "capacity": 2,
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [900],
     "source": "Run And Gun",
@@ -1561,7 +1561,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [600],
     "source": "Run And Gun",
@@ -1580,7 +1580,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [4000],
     "source": "Run And Gun",
@@ -1607,7 +1607,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [5000],
     "source": "Run And Gun",
@@ -1621,7 +1621,7 @@
     "capacity": 3,
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [300],
     "source": "Run And Gun",
@@ -1633,10 +1633,10 @@
     "category": "Specialty Armour",
     "damageReduction": 2,
     "capacity": 8,
-    "allowModCategory": "Customized Ballistic Mask",
+    "allowModsFromCategory": "Customized Ballistic Mask",
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [150],
     "source": "Run And Gun",
@@ -1648,10 +1648,10 @@
     "category": "Specialty Armour",
     "damageReduction": 2,
     "capacity": 8,
-    "allowModCategory": "Customized Ballistic Mask",
+    "allowModsFromCategory": "Customized Ballistic Mask",
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [300],
     "source": "Run And Gun",
@@ -1670,7 +1670,7 @@
     ],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [600],
     "source": "Run And Gun",
@@ -1682,10 +1682,10 @@
     "category": "Specialty Armour",
     "damageReduction": 8,
     "capacity": 6,
-    "includeModFromCategory": "Globetrotter Jacket Liners",
+    "addModFromCategory": "Globetrotter Jacket Liners",
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1500],
     "source": "Run And Gun",
@@ -1709,7 +1709,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Run And Gun",
@@ -1723,7 +1723,7 @@
     "capacity": 0,
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [50],
     "source": "Run And Gun",
@@ -1748,7 +1748,7 @@
     ],
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [800],
     "source": "Run And Gun",
@@ -1777,7 +1777,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Run And Gun",
@@ -1815,7 +1815,7 @@
     ],
     "availability": {
       "rating": [16],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [11000],
     "source": "Run And Gun",
@@ -1849,7 +1849,7 @@
     ],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1200],
     "source": "Run And Gun",
@@ -1877,7 +1877,7 @@
     ],
     "availability": {
       "rating": [16],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [10000],
     "source": "Run And Gun",
@@ -1896,7 +1896,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [900],
     "source": "Run And Gun",
@@ -1915,7 +1915,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [300],
     "source": "Run And Gun",
@@ -1938,7 +1938,7 @@
     ],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2500],
     "source": "Run And Gun",
@@ -1958,7 +1958,7 @@
     ],
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1750],
     "source": "Run And Gun",
@@ -1978,7 +1978,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [3000],
     "source": "Run And Gun",
@@ -2018,7 +2018,7 @@
     ],
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [3000],
     "source": "Run And Gun",
@@ -2059,7 +2059,7 @@
     ],
     "availability": {
       "rating": [16],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [12000],
     "source": "Run And Gun",
@@ -2100,7 +2100,7 @@
     ],
     "availability": {
       "rating": [24],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [25000],
     "source": "Run And Gun",
@@ -2142,7 +2142,7 @@
     ],
     "availability": {
       "rating": [24],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [35000],
     "source": "Run And Gun",
@@ -2161,7 +2161,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2500],
     "source": "Run And Gun",
@@ -2175,7 +2175,7 @@
     "capacity": 4,
     "availability": {
       "rating": [3],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Run And Gun",
@@ -2189,7 +2189,7 @@
     "capacity": 4,
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Run And Gun",
@@ -2203,7 +2203,7 @@
     "capacity": 4,
     "availability": {
       "rating": [9],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Run And Gun",
@@ -2217,7 +2217,7 @@
     "capacity": 4,
     "availability": {
       "rating": [12],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Run And Gun",
@@ -2231,7 +2231,7 @@
     "capacity": 4,
     "availability": {
       "rating": [15],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Run And Gun",
@@ -2245,7 +2245,7 @@
     "capacity": 4,
     "availability": {
       "rating": [18],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Run And Gun",
@@ -2272,7 +2272,7 @@
     ],
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2500],
     "source": "Run And Gun",
@@ -2286,7 +2286,7 @@
     "capacity": 4,
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [500],
     "source": "Bullets And Bandages",
@@ -2301,7 +2301,7 @@
     "isWeapon": true,
     "availability": {
       "rating": [14],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [1500],
     "source": "Hard Targets",
@@ -2318,7 +2318,7 @@
     },
     "availability": {
       "rating": [1],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -2347,7 +2347,7 @@
     },
     "availability": {
       "rating": [1],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -2378,7 +2378,7 @@
     "capacity": 0,
     "availability": {
       "rating": [14],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [
       {
@@ -2404,7 +2404,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2],
     "source": "Run Faster",
@@ -2418,7 +2418,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2],
     "source": "Run Faster",
@@ -2432,7 +2432,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2],
     "source": "Run Faster",
@@ -2446,7 +2446,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2],
     "source": "Run Faster",
@@ -2460,7 +2460,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10],
     "source": "Run Faster",
@@ -2474,7 +2474,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10],
     "source": "Run Faster",
@@ -2488,7 +2488,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10],
     "source": "Run Faster",
@@ -2502,7 +2502,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10],
     "source": "Run Faster",
@@ -2516,7 +2516,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [50],
     "source": "Run Faster",
@@ -2530,7 +2530,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [50],
     "source": "Run Faster",
@@ -2544,7 +2544,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [50],
     "source": "Run Faster",
@@ -2558,7 +2558,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [50],
     "source": "Run Faster",
@@ -2572,7 +2572,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [200],
     "source": "Run Faster",
@@ -2586,7 +2586,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [200],
     "source": "Run Faster",
@@ -2600,7 +2600,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [200],
     "source": "Run Faster",
@@ -2614,7 +2614,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [200],
     "source": "Run Faster",
@@ -2628,7 +2628,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [200],
     "source": "Run Faster",
@@ -2642,7 +2642,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [200],
     "source": "Run Faster",
@@ -2656,7 +2656,7 @@
     "capacity": 0,
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Run Faster",
@@ -2670,7 +2670,7 @@
     "capacity": 0,
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Run Faster",
@@ -2684,7 +2684,7 @@
     "capacity": 0,
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10000],
     "source": "Run Faster",
@@ -2698,7 +2698,7 @@
     "capacity": 0,
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10000],
     "source": "Run Faster",
@@ -2712,7 +2712,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [75],
     "source": "Run Faster",
@@ -2726,7 +2726,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [20],
     "source": "Run Faster",
@@ -2740,7 +2740,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [5],
     "source": "Run Faster",
@@ -2754,7 +2754,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [50],
     "source": "Run Faster",
@@ -2768,7 +2768,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2],
     "source": "Run Faster",
@@ -2782,7 +2782,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2],
     "source": "Run Faster",
@@ -2796,7 +2796,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10],
     "source": "Run Faster",
@@ -2810,7 +2810,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10],
     "source": "Run Faster",
@@ -2824,7 +2824,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [50],
     "source": "Run Faster",
@@ -2838,7 +2838,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [50],
     "source": "Run Faster",
@@ -2852,7 +2852,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2],
     "source": "Run Faster",
@@ -2866,7 +2866,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10],
     "source": "Run Faster",
@@ -2880,7 +2880,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10],
     "source": "Run Faster",
@@ -2894,7 +2894,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10],
     "source": "Run Faster",
@@ -2908,7 +2908,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [50],
     "source": "Run Faster",
@@ -2922,7 +2922,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [50],
     "source": "Run Faster",
@@ -2936,7 +2936,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [50],
     "source": "Run Faster",
@@ -2950,7 +2950,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [200],
     "source": "Run Faster",
@@ -2964,7 +2964,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [200],
     "source": "Run Faster",
@@ -2978,7 +2978,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [200],
     "source": "Run Faster",
@@ -2992,7 +2992,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [500],
     "source": "Run Faster",
@@ -3006,7 +3006,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [5000],
     "source": "Run Faster",
@@ -3032,7 +3032,7 @@
     ],
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [200],
     "source": "Howling Shadows",
@@ -3051,7 +3051,7 @@
     },
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [
       {
@@ -3080,7 +3080,7 @@
     },
     "availability": {
       "rating": [4],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [750],
     "source": "Cutting Aces",
@@ -3097,7 +3097,7 @@
     },
     "availability": {
       "rating": [2],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [500],
     "source": "Cutting Aces",
@@ -3112,7 +3112,7 @@
     "isWeapon": true,
     "availability": {
       "rating": [14],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [1800],
     "source": "Cutting Aces",
@@ -3126,7 +3126,7 @@
     "capacity": 10,
     "availability": {
       "rating": [6],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [900],
     "source": "Cutting Aces",
@@ -3143,7 +3143,7 @@
     },
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [2000],
     "source": "Cutting Aces",
@@ -3157,7 +3157,7 @@
     "capacity": 10,
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1900],
     "source": "The Complete Trog",
@@ -3171,7 +3171,7 @@
     "capacity": 4,
     "availability": {
       "rating": [14],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [800],
     "source": "The Complete Trog",
@@ -3190,7 +3190,7 @@
     ],
     "availability": {
       "rating": [8],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [3200],
     "source": "Street Lethal",
@@ -3204,7 +3204,7 @@
     "capacity": 6,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [100],
     "source": "Street Lethal",
@@ -3231,7 +3231,7 @@
     ],
     "availability": {
       "rating": [30],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [35000],
     "source": "Street Lethal",
@@ -3245,7 +3245,7 @@
     "capacity": 10,
     "availability": {
       "rating": [12],
-      "restriction": "Forbidden"
+      "restriction": "F"
     },
     "cost": [3000],
     "source": "Street Lethal",
@@ -3284,7 +3284,7 @@
     ],
     "availability": {
       "rating": [12],
-      "restriction": "Restricted"
+      "restriction": "R"
     },
     "cost": [1700],
     "source": "Kill Code",
@@ -3315,7 +3315,7 @@
     ],
     "availability": {
       "rating": [10],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [1000],
     "source": "Kill Code",
@@ -3329,7 +3329,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [100],
     "source": "No Future",
@@ -3343,7 +3343,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [30],
     "source": "No Future",
@@ -3357,7 +3357,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [20],
     "source": "No Future",
@@ -3371,7 +3371,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [40],
     "source": "No Future",
@@ -3385,7 +3385,7 @@
     "capacity": 0,
     "availability": {
       "rating": [0],
-      "restriction": "Legal"
+      "restriction": ""
     },
     "cost": [10],
     "source": "No Future",

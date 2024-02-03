@@ -1,0 +1,706 @@
+import { CollapsibleDiv } from "../../utils/CollapsibleDiv.js";
+import { CollapsibleEquipmentDiv } from "./EquipmentHelper.js";
+import { costCalculation } from "../../utils/calculations.js";
+import type {
+  CostWeaponType,
+  WeaponSummaryListType,
+  WeaponSummaryType,
+} from "@neon-codex/common/build/schemas/weaponSchemas.js";
+import {
+  formatAccuracy,
+  formatAmmunition,
+  formatArmourPenetration,
+  formatWeaponAvailability,
+  formatDamage,
+  formatWeaponCost,
+} from "@neon-codex/common/build/formatters/weaponFormatter.js";
+import {
+  formatArmourAvailability,
+  formatArmourCost,
+  formatArmourDamageReduction,
+} from "@neon-codex/common/build/formatters/armourFormatter.js";
+import {
+  formatGearAvailability,
+  formatGearCost,
+} from "@neon-codex/common/build/formatters/gearFormatter.js";
+import {
+  formatOnOffRoad,
+  formatVehicleAvailability,
+  formatVehicleCost,
+} from "@neon-codex/common/build/formatters/vehicleFormatter.js";
+import {
+  formatEssenceCost,
+  formatAugmentationCapacity,
+  formatAugmentationCost,
+  formatAugmentationAvailability,
+} from "@neon-codex/common/build/formatters/augmentationFormatter.js";
+import { trpc } from "../../utils/trpc.js";
+import uniqid from "uniqid";
+import {
+  armourCategoryEnum,
+  augmentationTypeEnum,
+  gearCategoryEnum,
+  vehicleTypeEnum,
+  weaponTypeEnum,
+} from "@neon-codex/common/build/enums.js";
+import type { EquipmentListType } from "@neon-codex/common/build/schemas/equipmentSchemas.js";
+import type {
+  GearListType,
+  GearType,
+} from "@neon-codex/common/build/schemas/gearSchemas.js";
+import type {
+  AugmentationType,
+  AugmentationListType,
+} from "@neon-codex/common/build/schemas/augmentationSchemas.js";
+import type {
+  VehicleListType,
+  VehicleType,
+} from "@neon-codex/common/build/schemas/vehicleSchemas.js";
+import type {
+  ArmourListType,
+  ArmourType,
+} from "@neon-codex/common/build/schemas/armourSchemas.js";
+import React from "react";
+
+interface IProps {
+  equipmentSelected: EquipmentListType;
+  setEquipmentSelected: (loadingEquipmentSelected: EquipmentListType) => void;
+  nuyen: number;
+  setNuyen: (nuyen: number) => void;
+}
+
+export const EquipmentSelect = function (props: IProps) {
+  const { data, error, isError, isLoading } = trpc.character.all.useQuery();
+  if (isLoading) {
+    return <div>Loading equipment...</div>;
+  }
+
+  if (isError) {
+    // https://tanstack.com/query/v4/docs/typescript#typing-the-error-field
+    if (error instanceof Error) {
+      return <div>Error! {error.message}</div>;
+    } else {
+      return <div>Error!</div>;
+    }
+  }
+
+  const equipmentSelected = props.equipmentSelected;
+
+  const addWeapon = function (weapon: WeaponSummaryType) {
+    const equipment = { ...equipmentSelected };
+    equipment.weapons.push(weapon);
+    props.setEquipmentSelected(equipment);
+    props.setNuyen(
+      props.nuyen - costCalculation<CostWeaponType>(weapon.cost, {})
+    );
+  };
+  const removeWeapon = function (weapon: WeaponSummaryType, index: number) {
+    const equipment = { ...equipmentSelected };
+    if (equipment.weapons[index] === weapon) {
+      equipment.weapons.splice(index, 1);
+      props.setEquipmentSelected(equipment);
+      props.setNuyen(
+        props.nuyen + costCalculation<CostWeaponType>(weapon.cost, {})
+      );
+    } else {
+      console.error("No weapon at index: " + index);
+    }
+  };
+  const addArmour = function (armour: ArmourType) {
+    const equipment = { ...equipmentSelected };
+    equipment.armours.push(armour);
+    props.setEquipmentSelected(equipment);
+    props.setNuyen(props.nuyen - costCalculation(armour.cost, {}));
+  };
+  const removeArmour = function (armour: ArmourType, index: number) {
+    const equipment = { ...equipmentSelected };
+    if (equipment.armours[index] === armour) {
+      equipment.armours.splice(index, 1);
+      props.setEquipmentSelected(equipment);
+      props.setNuyen(props.nuyen + costCalculation(armour.cost, {}));
+    } else {
+      console.error("No armour at index: " + index);
+    }
+  };
+  const addGear = function (gear: GearType) {
+    const equipment = Object.assign({}, equipmentSelected);
+    equipment.gears.push(gear);
+    props.setEquipmentSelected(equipment);
+    props.setNuyen(props.nuyen - costCalculation(gear.cost, {}));
+  };
+  const removeGear = function (other: GearType, index: number) {
+    const equipment = Object.assign({}, equipmentSelected);
+    if (equipment.gears[index] === other) {
+      equipment.gears.splice(index, 1);
+      props.setEquipmentSelected(equipment);
+      props.setNuyen(props.nuyen + costCalculation(other.cost, {}));
+    } else {
+      console.error("No gear at index: " + index);
+    }
+  };
+  const addAugmentations = function (augmentation: AugmentationType) {
+    const equipment = Object.assign({}, equipmentSelected);
+    equipment.augmentations.push(augmentation);
+    props.setEquipmentSelected(equipment);
+    props.setNuyen(props.nuyen - costCalculation(augmentation.cost, {}));
+  };
+  const removeAugmentations = function (
+    augmentation: AugmentationType,
+    index: number
+  ) {
+    const equipment = Object.assign({}, equipmentSelected);
+    if (equipment.augmentations[index] === augmentation) {
+      equipment.augmentations.splice(index, 1);
+      props.setEquipmentSelected(equipment);
+      props.setNuyen(props.nuyen + costCalculation(augmentation.cost, {}));
+    } else {
+      console.error("No augmentation at index: " + index);
+    }
+  };
+  const addVehicles = function (vehicle: VehicleType) {
+    const equipment = Object.assign({}, equipmentSelected);
+    equipment.vehicles.push(vehicle);
+    props.setEquipmentSelected(equipment);
+    props.setNuyen(props.nuyen - costCalculation(vehicle.cost, {}));
+  };
+  const removeVehicles = function (vehicle: VehicleType, index: number) {
+    const equipment = Object.assign({}, equipmentSelected);
+    if (equipment.vehicles[index] === vehicle) {
+      equipment.vehicles.splice(index, 1);
+      props.setEquipmentSelected(equipment);
+      props.setNuyen(props.nuyen + costCalculation(vehicle.cost, {}));
+    } else {
+      console.error("No vehicle/drone at index: " + index);
+    }
+  };
+
+  return (
+    <div>
+      <h1>Equipment Selection</h1>
+      <CollapsibleDiv title="Weapons">
+        <div id="Weapons_Div">
+          <WeaponDiv
+            title={"Melee Weapons"}
+            data={data.weapons}
+            weaponType={weaponTypeEnum.Melee}
+            addWeapon={addWeapon}
+          />
+          <WeaponDiv
+            title={"Projectile Weapons"}
+            data={data.weapons}
+            weaponType={weaponTypeEnum.Projectile}
+            addWeapon={addWeapon}
+          />
+          <WeaponDiv
+            title={"Firearms"}
+            data={data.weapons}
+            weaponType={weaponTypeEnum.Firearm}
+            addWeapon={addWeapon}
+          />
+          <WeaponDiv
+            title={"Explosives"}
+            data={data.weapons}
+            weaponType={weaponTypeEnum.Explosive}
+            addWeapon={addWeapon}
+          />
+        </div>
+      </CollapsibleDiv>
+      <CollapsibleDiv title="Armour">
+        <div id="Armour_Div">
+          <ArmourDiv
+            title={"Armour"}
+            data={data.armours}
+            armourType={armourCategoryEnum.Armour}
+            addArmour={addArmour}
+          />
+        </div>
+      </CollapsibleDiv>
+      <CollapsibleDiv title="Gear">
+        <div id="Gear_Div">
+          <GearDiv
+            title={"Industrial Chemicals"}
+            data={data.gears}
+            gearCategory={gearCategoryEnum.Ammunition}
+            addGear={addGear}
+          />
+        </div>
+      </CollapsibleDiv>
+      <CollapsibleDiv title="Augmentations">
+        <div id="Augmentations_Div">
+          <AugmentationsDiv
+            title={"Cyberware"}
+            data={data.augmentations}
+            augmentationType={augmentationTypeEnum.Cyberware}
+            addAugmentations={addAugmentations}
+          />
+          <AugmentationsDiv
+            title={"Bioware"}
+            data={data.augmentations}
+            augmentationType={augmentationTypeEnum.Bioware}
+            addAugmentations={addAugmentations}
+          />
+        </div>
+      </CollapsibleDiv>
+      <CollapsibleDiv title="Vehicles and Drones">
+        <div id="Vehicles">
+          <VehiclesDiv
+            title={"Groundcraft"}
+            data={data.vehicles}
+            vehicleType={vehicleTypeEnum.Groundcraft}
+            addVehicles={addVehicles}
+          />
+          <VehiclesDiv
+            title={"Watercraft"}
+            data={data.vehicles}
+            vehicleType={vehicleTypeEnum.Watercraft}
+            addVehicles={addVehicles}
+          />
+          <VehiclesDiv
+            title={"Aircraft"}
+            data={data.vehicles}
+            vehicleType={vehicleTypeEnum.Aircraft}
+            addVehicles={addVehicles}
+          />
+          <VehiclesDiv
+            title={"Drones"}
+            data={data.vehicles}
+            vehicleType={vehicleTypeEnum.Drone}
+            addVehicles={addVehicles}
+          />
+        </div>
+      </CollapsibleDiv>
+      <h2>Gear Selected</h2>
+      <h3>
+        Nuyen Remaining: <span>{props.nuyen}</span>
+      </h3>
+      <div>
+        <h3>Weapons</h3>
+        <div>
+          {equipmentSelected.weapons.map((weapon, index) => {
+            const addItem = function () {
+              addWeapon(weapon);
+            };
+            const removeItem = function () {
+              removeWeapon(weapon, index);
+            };
+            return (
+              <CollapsibleEquipmentDiv
+                title={weapon.name}
+                addItem={addItem}
+                removeItem={removeItem}
+                key={uniqid()}
+              >
+                <div>{weapon.description}</div>
+                {weapon.accessories && (
+                  <div>
+                    <span>Accessories:</span>
+                    <ul>
+                      {weapon.accessories.map((accessory) => {
+                        return <li key={uniqid()}>{accessory.name}</li>;
+                      })}
+                    </ul>
+                  </div>
+                )}
+              </CollapsibleEquipmentDiv>
+            );
+          })}
+        </div>
+        <h3>Armour</h3>
+        <div>
+          {equipmentSelected.armours.map((armour, index) => {
+            const addItem = function () {
+              addArmour(armour);
+            };
+            const removeItem = function () {
+              removeArmour(armour, index);
+            };
+            return (
+              <CollapsibleEquipmentDiv
+                title={armour.name}
+                addItem={addItem}
+                removeItem={removeItem}
+              >
+                <div>{armour.description}</div>
+              </CollapsibleEquipmentDiv>
+            );
+          })}
+        </div>
+        <h3>Gear</h3>
+        <div>
+          {equipmentSelected.gears.map((gear, index) => {
+            const addItem = function () {
+              addGear(gear);
+            };
+            const removeItem = function () {
+              removeGear(gear, index);
+            };
+            return (
+              <CollapsibleEquipmentDiv
+                title={gear.name}
+                addItem={addItem}
+                removeItem={removeItem}
+              >
+                <div>{gear.description}</div>
+              </CollapsibleEquipmentDiv>
+            );
+          })}
+        </div>
+        <h3>Augmentation</h3>
+        <div>
+          {equipmentSelected.augmentations.map((augmentations, index) => {
+            const addItem = function () {
+              addAugmentations(augmentations);
+            };
+            const removeItem = function () {
+              removeAugmentations(augmentations, index);
+            };
+            return (
+              <CollapsibleEquipmentDiv
+                title={augmentations.name}
+                addItem={addItem}
+                removeItem={removeItem}
+              >
+                <div>{augmentations.description}</div>
+              </CollapsibleEquipmentDiv>
+            );
+          })}
+        </div>
+        <h3>Vehicles</h3>
+        <div>
+          {equipmentSelected.vehicles.map((vehicles, index) => {
+            const addItem = function () {
+              addVehicles(vehicles);
+            };
+            const removeItem = function () {
+              removeVehicles(vehicles, index);
+            };
+            return (
+              <CollapsibleEquipmentDiv
+                title={vehicles.name}
+                addItem={addItem}
+                removeItem={removeItem}
+              >
+                <div>{vehicles.description}</div>
+              </CollapsibleEquipmentDiv>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+interface IWeaponDivProps {
+  title: string;
+  data: WeaponSummaryListType;
+  weaponType: weaponTypeEnum;
+  addWeapon: (weapon: WeaponSummaryType) => void;
+}
+
+const WeaponDiv = function ({
+  data,
+  weaponType,
+  title,
+  addWeapon,
+}: IWeaponDivProps) {
+  return (
+    <CollapsibleDiv title={title}>
+      <ul>
+        {data
+          .filter((gear) => gear.type === weaponType)
+          .map((weapon) => {
+            return (
+              <li key={uniqid()}>
+                <FormattedWeaponDiv weapon={weapon} addWeapon={addWeapon} />
+              </li>
+            );
+          })}
+      </ul>
+    </CollapsibleDiv>
+  );
+};
+
+interface IWeaponDescriptionDivProps {
+  weapon: WeaponSummaryType;
+  addWeapon: (weapon: WeaponSummaryType) => void;
+}
+
+const FormattedWeaponDiv = function ({
+  weapon,
+  addWeapon,
+}: IWeaponDescriptionDivProps) {
+  const addItem = function () {
+    addWeapon(weapon);
+  };
+  return (
+    <div>
+      <CollapsibleEquipmentDiv title={weapon.name} addItem={addItem}>
+        <div>
+          <div>{weapon.description}</div>
+          <div>Acc: {formatAccuracy(weapon.accuracy)}</div>
+          <div>Damage: {formatDamage(weapon.damage)}</div>
+          <div>AP: {formatArmourPenetration(weapon.armourPenetration)}</div>
+          <FormattedWeaponTypeInformation weapon={weapon} />
+          {weapon.ammunition !== undefined && (
+            <div>Ammo: {formatAmmunition(weapon.ammunition)}</div>
+          )}
+          <div>Avail: {formatWeaponAvailability(weapon.availability)}</div>
+          <div>Cost: {formatWeaponCost(weapon.cost)}</div>
+        </div>
+      </CollapsibleEquipmentDiv>
+      <div>{weapon.subtype}</div>
+    </div>
+  );
+};
+
+const FormattedWeaponTypeInformation = function ({
+  weapon: weapon,
+}: {
+  weapon: WeaponSummaryType;
+}) {
+  switch (weapon.type) {
+    case weaponTypeEnum.Melee:
+      return <div>Reach: {weapon.meleeOptions.reach}</div>;
+    case weaponTypeEnum.Projectile:
+      return <></>;
+    case weaponTypeEnum.Firearm:
+      const recoilCompensation =
+        weapon.firearmOptions.recoilCompensation == 0
+          ? "-"
+          : weapon.firearmOptions.recoilCompensation;
+      return (
+        <React.Fragment>
+          <div>Mode: {weapon.firearmOptions.mode}</div>
+          <div>RC: {recoilCompensation}</div>
+        </React.Fragment>
+      );
+    case weaponTypeEnum.Explosive:
+      return <></>;
+  }
+};
+
+interface IArmourDivProps {
+  title: string;
+  data: ArmourListType;
+  armourType: armourCategoryEnum;
+  addArmour: (armour: ArmourType) => void;
+}
+
+const ArmourDiv = function ({
+  data,
+  armourType,
+  title,
+  addArmour,
+}: IArmourDivProps) {
+  return (
+    <CollapsibleDiv title={title}>
+      <ul>
+        {data
+          .filter((armour) => armour.category === armourType)
+          .map((armour) => {
+            const addItem = function () {
+              addArmour(armour);
+            };
+            return (
+              <li key={uniqid()}>
+                <CollapsibleEquipmentDiv title={armour.name} addItem={addItem}>
+                  <div>
+                    <div>{armour.description}</div>
+                    <div>
+                      Armour Rating:
+                      {formatArmourDamageReduction(armour.damageReduction)}
+                    </div>
+                    <div>
+                      Avail:
+                      {formatArmourAvailability(armour.availability)}
+                    </div>
+                    <div>Cost: {formatArmourCost(armour.cost)}</div>
+                  </div>
+                </CollapsibleEquipmentDiv>
+              </li>
+            );
+          })}
+      </ul>
+    </CollapsibleDiv>
+  );
+};
+
+interface IGearDivProps {
+  title: string;
+  data: GearListType;
+  gearCategory: gearCategoryEnum;
+  addGear: (gear: GearType) => void;
+}
+
+const GearDiv = function ({
+  data,
+  gearCategory,
+  title,
+  addGear,
+}: IGearDivProps) {
+  return (
+    <CollapsibleDiv title={title}>
+      <ul>
+        {data
+          .filter((gear) => gear.category === gearCategory)
+          .map((gear) => {
+            const addItem = function () {
+              addGear(gear);
+            };
+            const ratingDiv =
+              typeof gear.maxRating === "number" ? (
+                <div>Rating: {gear.maxRating}</div>
+              ) : (
+                <></>
+              );
+            return (
+              <li key={gearCategory + gear.name}>
+                <CollapsibleEquipmentDiv title={gear.name} addItem={addItem}>
+                  <div>{gear.description}</div>
+                  {ratingDiv}
+                  <div>
+                    Avail:
+                    {formatGearAvailability(gear.availability)}
+                  </div>
+                  <div>Cost: {formatGearCost(gear.cost)}</div>
+                </CollapsibleEquipmentDiv>
+              </li>
+            );
+          })}
+      </ul>
+    </CollapsibleDiv>
+  );
+};
+
+interface IAugmentationsDivProps {
+  title: string;
+  data: AugmentationListType;
+  augmentationType: augmentationTypeEnum;
+  addAugmentations: (augmentation: AugmentationType) => void;
+}
+
+const AugmentationsDiv = function ({
+  data,
+  augmentationType,
+  title,
+  addAugmentations,
+}: IAugmentationsDivProps) {
+  return (
+    <CollapsibleDiv title={title}>
+      <ul>
+        {data
+          .filter((augmentation) => augmentation.type === augmentationType)
+          .map((augmentation) => {
+            const addItem = function () {
+              addAugmentations(augmentation);
+            };
+            return (
+              <li key={augmentationType + augmentation.name}>
+                <CollapsibleEquipmentDiv
+                  title={augmentation.name}
+                  addItem={addItem}
+                >
+                  <div>{augmentation.description}</div>
+                  <div>
+                    Essence: {formatEssenceCost(augmentation.essenceCost)}
+                  </div>
+                  <FormattedAugmentationTypeInformation
+                    augmentation={augmentation}
+                  />
+                  <div>
+                    Avail:
+                    {formatAugmentationAvailability(augmentation.availability)}
+                  </div>
+                  <div>Cost: {formatAugmentationCost(augmentation.cost)}</div>
+                </CollapsibleEquipmentDiv>
+              </li>
+            );
+          })}
+      </ul>
+    </CollapsibleDiv>
+  );
+};
+
+const FormattedAugmentationTypeInformation = function ({
+  augmentation: augmentation,
+}: {
+  augmentation: AugmentationType;
+}) {
+  switch (augmentation.type) {
+    case augmentationTypeEnum.Bioware:
+      return <></>;
+    case augmentationTypeEnum.Cyberware:
+      let capacityFormatted = "";
+      // these 2 are theoretically mutually exclusive but hey
+      // lets handle the case of both of them just in case
+      if (augmentation.capacity !== undefined) {
+        capacityFormatted += formatAugmentationCapacity(augmentation.capacity);
+      }
+      if (augmentation.capacityCost !== undefined)
+        capacityFormatted +=
+          "[" + formatAugmentationCapacity(augmentation.capacityCost) + "]";
+      if (capacityFormatted === "") {
+        capacityFormatted = "-";
+      }
+      return <div>Capacity: {capacityFormatted}</div>;
+  }
+};
+
+interface IVehiclesDivProps {
+  title: string;
+  data: VehicleListType;
+  vehicleType: vehicleTypeEnum;
+  addVehicles: (vehicle: VehicleType) => void;
+}
+
+const VehiclesDiv = function ({
+  data,
+  vehicleType,
+  title,
+  addVehicles,
+}: IVehiclesDivProps) {
+  return (
+    <CollapsibleDiv title={title}>
+      <ul>
+        {data
+          .filter((gear) => gear.type === vehicleType)
+          .map((vehicles) => {
+            const addItem = function () {
+              addVehicles(vehicles);
+            };
+            let seats = "-";
+            if ("seats" in vehicles && vehicles.seats !== undefined) {
+              if (typeof vehicles.seats === "object") {
+                seats = vehicles.seats.max.toString();
+              } else {
+                seats = vehicles.seats.toString();
+              }
+            }
+            return (
+              <li key={vehicleTypeEnum[vehicleType] + vehicles.name}>
+                <CollapsibleEquipmentDiv
+                  title={vehicles.name}
+                  addItem={addItem}
+                >
+                  <div>{vehicles.description}</div>
+                  <div>Handl: {formatOnOffRoad(vehicles.handling)}</div>
+                  <div>Speed: {formatOnOffRoad(vehicles.speed)}</div>
+                  <div>Accel: {formatOnOffRoad(vehicles.acceleration)}</div>
+                  <div>Bod: {vehicles.body}</div>
+                  <div>Armour: {vehicles.armour}</div>
+                  <div>Pilot: {vehicles.pilot}</div>
+                  <div>Sensor: {vehicles.sensor}</div>
+                  <div>Seats: {seats}</div>
+                  <div>
+                    Avail: {formatVehicleAvailability(vehicles.availability)}
+                  </div>
+                  <div>Cost: {formatVehicleCost(vehicles.cost)}</div>
+                </CollapsibleEquipmentDiv>
+                <div>{vehicles.subtype}</div>
+              </li>
+            );
+          })}
+      </ul>
+    </CollapsibleDiv>
+  );
+};
