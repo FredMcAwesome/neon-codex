@@ -1,5 +1,4 @@
-import { MetatypeEnum } from "./PriorityImports.js";
-import type { IMagicInfo, IPriorities } from "./PriorityImports.js";
+import type { IMagicInfo } from "./PriorityImports.js";
 import { Fragment, useEffect, useState } from "react";
 import Dropdown from "react-dropdown";
 import {
@@ -9,6 +8,12 @@ import {
   EdgeBaseAttributeIndex,
   SpecialAttributesLength,
 } from "@neon-codex/common/build/data/Skills.js";
+import {
+  MetatypeEnum,
+  type AttributesType,
+  type SpecialAttributesType,
+  type PrioritiesType,
+} from "@neon-codex/common/build/schemas/characterSchemas.js";
 interface IAttributeRange {
   minimum: number;
   maximum: number;
@@ -30,264 +35,255 @@ type MetaypeSpecialAttributesType = [IAttributeRange, IAttributeRange];
 
 type MetatypesAttributesListType = Array<MetaypeBaseAttributesType>;
 
-const metatypeBaseAttributes: MetatypesAttributesListType = [
-  [
-    // race: MetatypeEnum.Human,
-    // body:
-    {
-      minimum: 1,
-      maximum: 6,
-    },
-    // agility:
-    {
-      minimum: 1,
-      maximum: 6,
-    },
-    // reaction:
-    {
-      minimum: 1,
-      maximum: 6,
-    },
-    // strength:
-    {
-      minimum: 1,
-      maximum: 6,
-    },
-    // willpower:
-    {
-      minimum: 1,
-      maximum: 6,
-    },
-    // logic:
-    {
-      minimum: 1,
-      maximum: 6,
-    },
-    // intuition:
-    {
-      minimum: 1,
-      maximum: 6,
-    },
-    // charisma:
-    {
-      minimum: 1,
-      maximum: 6,
-    },
-    // edge:
-    {
-      minimum: 2,
-      maximum: 7,
-    },
-  ],
-  [
-    // race: MetatypeEnum.Elf,
-    // body:
-    {
-      minimum: 1,
-      maximum: 6,
-    },
-    // agility:
-    {
-      minimum: 2,
-      maximum: 7,
-    },
-    // reaction:
-    {
-      minimum: 1,
-      maximum: 6,
-    },
-    // strength:
-    {
-      minimum: 1,
-      maximum: 6,
-    },
-    // willpower:
-    {
-      minimum: 1,
-      maximum: 6,
-    },
-    // logic:
-    {
-      minimum: 1,
-      maximum: 6,
-    },
-    // intuition:
-    {
-      minimum: 1,
-      maximum: 6,
-    },
-    // charisma:
-    {
-      minimum: 3,
-      maximum: 8,
-    },
-    // edge:
-    {
-      minimum: 1,
-      maximum: 6,
-    },
-  ],
-  [
-    // race: MetatypeEnum.Dwarf,
-    // body:
-    {
-      minimum: 3,
-      maximum: 8,
-    },
-    // agility:
-    {
-      minimum: 1,
-      maximum: 6,
-    },
-    // reaction:
-    {
-      minimum: 1,
-      maximum: 5,
-    },
-    // strength:
-    {
-      minimum: 3,
-      maximum: 8,
-    },
-    // willpower:
-    {
-      minimum: 2,
-      maximum: 7,
-    },
-    // logic:
-    {
-      minimum: 1,
-      maximum: 6,
-    },
-    // intuition:
-    {
-      minimum: 1,
-      maximum: 6,
-    },
-    // charisma:
-    {
-      minimum: 1,
-      maximum: 6,
-    },
-    // edge:
-    {
-      minimum: 1,
-      maximum: 6,
-    },
-  ],
-  [
-    // race: MetatypeEnum.Ork,
-    // body:
-    {
-      minimum: 4,
-      maximum: 9,
-    },
-    // agility:
-    {
-      minimum: 1,
-      maximum: 6,
-    },
-    // reaction:
-    {
-      minimum: 1,
-      maximum: 6,
-    },
-    // strength:
-    {
-      minimum: 3,
-      maximum: 8,
-    },
-    // willpower:
-    {
-      minimum: 1,
-      maximum: 6,
-    },
-    // logic:
-    {
-      minimum: 1,
-      maximum: 5,
-    },
-    // intuition:
-    {
-      minimum: 1,
-      maximum: 6,
-    },
-    // charisma:
-    {
-      minimum: 1,
-      maximum: 5,
-    },
-    // edge:
-    {
-      minimum: 1,
-      maximum: 6,
-    },
-  ],
-  [
-    // race: MetatypeEnum.Troll,
-    // body:
-    {
-      minimum: 5,
-      maximum: 10,
-    },
-    // agility:
-    {
-      minimum: 1,
-      maximum: 5,
-    },
-    // reaction:
-    {
-      minimum: 1,
-      maximum: 6,
-    },
-    // strength:
-    {
-      minimum: 5,
-      maximum: 10,
-    },
-    // willpower:
-    {
-      minimum: 1,
-      maximum: 6,
-    },
-    // logic:
-    {
-      minimum: 1,
-      maximum: 5,
-    },
-    // intuition:
-    {
-      minimum: 1,
-      maximum: 5,
-    },
-    // charisma:
-    {
-      minimum: 1,
-      maximum: 4,
-    },
-    // edge:
-    {
-      minimum: 1,
-      maximum: 6,
-    },
-  ],
+const humanMetatypeBaseAttributes: MetaypeBaseAttributesType = [
+  // race: MetatypeEnum.Human,
+  // body:
+  {
+    minimum: 1,
+    maximum: 6,
+  },
+  // agility:
+  {
+    minimum: 1,
+    maximum: 6,
+  },
+  // reaction:
+  {
+    minimum: 1,
+    maximum: 6,
+  },
+  // strength:
+  {
+    minimum: 1,
+    maximum: 6,
+  },
+  // willpower:
+  {
+    minimum: 1,
+    maximum: 6,
+  },
+  // logic:
+  {
+    minimum: 1,
+    maximum: 6,
+  },
+  // intuition:
+  {
+    minimum: 1,
+    maximum: 6,
+  },
+  // charisma:
+  {
+    minimum: 1,
+    maximum: 6,
+  },
+  // edge:
+  {
+    minimum: 2,
+    maximum: 7,
+  },
 ];
 
-export interface IAttributes {
-  body: number;
-  agility: number;
-  reaction: number;
-  strength: number;
-  willpower: number;
-  logic: number;
-  intuition: number;
-  charisma: number;
-}
+const elfMetatypeBaseAttributes: MetaypeBaseAttributesType = [
+  // race: MetatypeEnum.Elf,
+  // body:
+  {
+    minimum: 1,
+    maximum: 6,
+  },
+  // agility:
+  {
+    minimum: 2,
+    maximum: 7,
+  },
+  // reaction:
+  {
+    minimum: 1,
+    maximum: 6,
+  },
+  // strength:
+  {
+    minimum: 1,
+    maximum: 6,
+  },
+  // willpower:
+  {
+    minimum: 1,
+    maximum: 6,
+  },
+  // logic:
+  {
+    minimum: 1,
+    maximum: 6,
+  },
+  // intuition:
+  {
+    minimum: 1,
+    maximum: 6,
+  },
+  // charisma:
+  {
+    minimum: 3,
+    maximum: 8,
+  },
+  // edge:
+  {
+    minimum: 1,
+    maximum: 6,
+  },
+];
+const dwarfMetatypeBaseAttributes: MetaypeBaseAttributesType = [
+  // race: MetatypeEnum.Dwarf,
+  // body:
+  {
+    minimum: 3,
+    maximum: 8,
+  },
+  // agility:
+  {
+    minimum: 1,
+    maximum: 6,
+  },
+  // reaction:
+  {
+    minimum: 1,
+    maximum: 5,
+  },
+  // strength:
+  {
+    minimum: 3,
+    maximum: 8,
+  },
+  // willpower:
+  {
+    minimum: 2,
+    maximum: 7,
+  },
+  // logic:
+  {
+    minimum: 1,
+    maximum: 6,
+  },
+  // intuition:
+  {
+    minimum: 1,
+    maximum: 6,
+  },
+  // charisma:
+  {
+    minimum: 1,
+    maximum: 6,
+  },
+  // edge:
+  {
+    minimum: 1,
+    maximum: 6,
+  },
+];
+const orkMetatypeBaseAttributes: MetaypeBaseAttributesType = [
+  // race: MetatypeEnum.Ork,
+  // body:
+  {
+    minimum: 4,
+    maximum: 9,
+  },
+  // agility:
+  {
+    minimum: 1,
+    maximum: 6,
+  },
+  // reaction:
+  {
+    minimum: 1,
+    maximum: 6,
+  },
+  // strength:
+  {
+    minimum: 3,
+    maximum: 8,
+  },
+  // willpower:
+  {
+    minimum: 1,
+    maximum: 6,
+  },
+  // logic:
+  {
+    minimum: 1,
+    maximum: 5,
+  },
+  // intuition:
+  {
+    minimum: 1,
+    maximum: 6,
+  },
+  // charisma:
+  {
+    minimum: 1,
+    maximum: 5,
+  },
+  // edge:
+  {
+    minimum: 1,
+    maximum: 6,
+  },
+];
+const trollMetatypeBaseAttributes: MetaypeBaseAttributesType = [
+  // race: MetatypeEnum.Troll,
+  // body:
+  {
+    minimum: 5,
+    maximum: 10,
+  },
+  // agility:
+  {
+    minimum: 1,
+    maximum: 5,
+  },
+  // reaction:
+  {
+    minimum: 1,
+    maximum: 6,
+  },
+  // strength:
+  {
+    minimum: 5,
+    maximum: 10,
+  },
+  // willpower:
+  {
+    minimum: 1,
+    maximum: 6,
+  },
+  // logic:
+  {
+    minimum: 1,
+    maximum: 5,
+  },
+  // intuition:
+  {
+    minimum: 1,
+    maximum: 5,
+  },
+  // charisma:
+  {
+    minimum: 1,
+    maximum: 4,
+  },
+  // edge:
+  {
+    minimum: 1,
+    maximum: 6,
+  },
+];
 
-export interface ISpecialAttributes {
-  edge: number;
-  magic: number;
-}
+const metatypeBaseAttributes: MetatypesAttributesListType = [
+  humanMetatypeBaseAttributes,
+  elfMetatypeBaseAttributes,
+  dwarfMetatypeBaseAttributes,
+  orkMetatypeBaseAttributes,
+  trollMetatypeBaseAttributes,
+];
 
 function checkMinimums(
   attributes: Array<number>,
@@ -347,12 +343,12 @@ function checkSpecialMaximums(
 }
 
 interface IProps {
-  priorityInfo: IPriorities;
-  attributeInfo: IAttributes;
-  setAttributeInfo: (loadingAttributes: IAttributes) => void;
-  specialAttributeInfo: ISpecialAttributes;
+  priorityInfo: PrioritiesType;
+  attributeInfo: AttributesType;
+  setAttributeInfo: (loadingAttributes: AttributesType) => void;
+  specialAttributeInfo: SpecialAttributesType;
   setSpecialAttributeInfo: (
-    loadingSpecialAttributes: ISpecialAttributes
+    loadingSpecialAttributes: SpecialAttributesType
   ) => void;
   maxAttributePoints: number;
   maxSpecialAttributePoints: number;

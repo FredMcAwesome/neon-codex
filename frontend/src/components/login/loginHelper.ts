@@ -47,7 +47,6 @@ export const attemptLogin = async function (userinfo: IUserInfo) {
     const res: unknown | JwtTokenType = await response.json();
     const parsedRes = JwtTokenSchema.safeParse(res);
     if (parsedRes.success) {
-      console.log("parsed correctly");
       saveUserSession(parsedRes.data.token, userinfo.username);
       return {
         success: true,

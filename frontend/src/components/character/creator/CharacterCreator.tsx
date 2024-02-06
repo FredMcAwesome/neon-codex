@@ -1,30 +1,37 @@
 import { useEffect, useState } from "react";
 import AttributesSelect from "./AttributesSelect.js";
-import type { IAttributes, ISpecialAttributes } from "./AttributesSelect.js";
 import PrioritySelect from "./PrioritySelect.js";
+import { priorityOptions } from "./PriorityImports.js";
+import type { ISkillPoints } from "./PriorityImports.js";
+import "./CharacterCreator.css";
+import React from "react";
+import { QualitiesSelect } from "./QualitiesSelect.js";
+import { SkillSelectList } from "./SkillsSelect.js";
+import { EquipmentSelect } from "./EquipmentSelect.js";
+import { trpc } from "../../../utils/trpc.js";
+import type { CustomSkillListType } from "@neon-codex/common/build/schemas/skillSchemas.js";
+import type { EquipmentListType } from "@neon-codex/common/build/schemas/equipmentSchemas.js";
 import {
   PriorityLevelEnum,
   MetatypeEnum,
   MagicTypeEnum,
-  priorityOptions,
-} from "./PriorityImports.js";
-import type { IPriorities, ISkillPoints } from "./PriorityImports.js";
-import "./CharacterCreator.css";
-import React from "react";
-import { QualitiesSelect } from "./QualitiesSelect.js";
-import type { ISelectedQuality } from "./QualitiesSelect.js";
-import { SkillSelectList } from "./SkillsSelect.js";
-import { EquipmentSelect } from "./EquipmentSelect.js";
-import { trpc } from "../../utils/trpc.js";
-import type { CustomSkillListType } from "@neon-codex/common/build/schemas/skillSchemas.js";
-import type { EquipmentListType } from "@neon-codex/common/build/schemas/equipmentSchemas.js";
+} from "@neon-codex/common/build/schemas/characterSchemas.js";
+import type {
+  AttributesType,
+  SpecialAttributesType,
+  PrioritiesType,
+  SelectedQualityType,
+} from "@neon-codex/common/build/schemas/characterSchemas.js";
+import { CreatorSummary } from "./CreatorSummary.js";
+import { useNavigate } from "react-router-dom";
 
 const characterCreatorPath = "/character_creator";
 const CharacterCreator = function () {
-  const { data, error, isError, isLoading } = trpc.character.skills.useQuery();
-
+  const navigate = useNavigate();
+  const skills = trpc.character.skills.useQuery();
+  const character = trpc.character.createCharacter.useMutation();
   // Character creator holds values of all sub components
-  const [priorityInfo, setPriorityInfo] = useState<IPriorities>({
+  const [priorityInfo, setPriorityInfo] = useState<PrioritiesType>({
     MetatypePriority: PriorityLevelEnum.A,
     MetatypeSubselection: MetatypeEnum.Human,
     AttributesPriority: PriorityLevelEnum.B,
@@ -33,7 +40,7 @@ const CharacterCreator = function () {
     SkillsPriority: PriorityLevelEnum.D,
     ResourcesPriority: PriorityLevelEnum.E,
   });
-  const [attributeInfo, setAttributeInfo] = useState<IAttributes>({
+  const [attributeInfo, setAttributeInfo] = useState<AttributesType>({
     body: 1,
     agility: 1,
     reaction: 1,
@@ -44,16 +51,16 @@ const CharacterCreator = function () {
     charisma: 1,
   });
   const [specialAttributeInfo, setSpecialAttributeInfo] =
-    useState<ISpecialAttributes>({
+    useState<SpecialAttributesType>({
       edge: 0,
       magic: 0,
     });
   const [karmaPoints, setKarmaPoints] = useState(25);
   const [positiveQualitiesSelected, setPositiveQualitiesSelected] = useState<
-    Array<ISelectedQuality>
+    Array<SelectedQualityType>
   >([]);
   const [negativeQualitiesSelected, setNegativeQualitiesSelected] = useState<
-    Array<ISelectedQuality>
+    Array<SelectedQualityType>
   >([]);
   const [skillPoints, setSkillPoints] = useState<ISkillPoints>(
     priorityOptions[priorityInfo.SkillsPriority].skills
@@ -64,10 +71,9 @@ const CharacterCreator = function () {
     []
   );
   useEffect(() => {
-    if (data === undefined) return;
+    if (skills.data === undefined) return;
     setSkillSelections(
-      data.map((skill) => {
-        // console.log(skill.name);
+      skills.data.map((skill) => {
         return {
           ...skill,
           skillGroupPoints: 0,
@@ -76,7 +82,7 @@ const CharacterCreator = function () {
         };
       })
     );
-  }, [data]);
+  }, [skills.data]);
   const [equipmentSelected, setEquipmentSelected] = useState<EquipmentListType>(
     {
       weapons: [],
@@ -90,16 +96,16 @@ const CharacterCreator = function () {
     priorityOptions[priorityInfo.ResourcesPriority].resources
   );
 
-  const onPriorityInfoChanged = function (loadingPriorities: IPriorities) {
+  const onPriorityInfoChanged = function (loadingPriorities: PrioritiesType) {
     setPriorityInfo(loadingPriorities);
     setSkillPoints(priorityOptions[loadingPriorities.SkillsPriority].skills);
     setNuyen(priorityOptions[loadingPriorities.ResourcesPriority].resources);
   };
-  const onAttributeInfoChanged = function (loadingAttributes: IAttributes) {
+  const onAttributeInfoChanged = function (loadingAttributes: AttributesType) {
     setAttributeInfo(loadingAttributes);
   };
   const onSpecialAttributeInfoChanged = function (
-    loadingSpecialAttributes: ISpecialAttributes
+    loadingSpecialAttributes: SpecialAttributesType
   ) {
     setSpecialAttributeInfo(loadingSpecialAttributes);
   };
@@ -107,12 +113,12 @@ const CharacterCreator = function () {
     setKarmaPoints(loadingKarma);
   };
   const onPositiveQualitiesSelectedChanged = function (
-    loadingPositiveQualities: Array<ISelectedQuality>
+    loadingPositiveQualities: Array<SelectedQualityType>
   ) {
     setPositiveQualitiesSelected(loadingPositiveQualities);
   };
   const onNegativeQualitiesSelectedChanged = function (
-    loadingNegativeQualities: Array<ISelectedQuality>
+    loadingNegativeQualities: Array<SelectedQualityType>
   ) {
     setNegativeQualitiesSelected(loadingNegativeQualities);
   };
@@ -135,14 +141,14 @@ const CharacterCreator = function () {
 
   const [page, setPage] = useState(0);
 
-  if (isLoading) {
+  if (skills.isLoading) {
     return <div>Loading...</div>;
   }
 
-  if (isError) {
+  if (skills.isError) {
     // https://tanstack.com/query/v4/docs/typescript#typing-the-error-field
-    if (error instanceof Error) {
-      return <div>Error! {error.message}</div>;
+    if (skills.error instanceof Error) {
+      return <div>Error! {skills.error.message}</div>;
     } else {
       return <div>Error!</div>;
     }
@@ -216,6 +222,21 @@ const CharacterCreator = function () {
       );
       break;
     case lastPage:
+      currentStage = (
+        <CreatorSummary
+          priorityInfo={priorityInfo}
+          attributeInfo={attributeInfo}
+          specialAttributeInfo={specialAttributeInfo}
+          karmaPoints={karmaPoints}
+          positiveQualitiesSelected={positiveQualitiesSelected}
+          negativeQualitiesSelected={negativeQualitiesSelected}
+          skillPoints={skillPoints}
+          skillSelections={skillSelections}
+          equipmentSelected={equipmentSelected}
+          nuyen={nuyen}
+        />
+      );
+      break;
 
     default:
       currentStage = (
@@ -240,12 +261,32 @@ const CharacterCreator = function () {
         onClick={() => {
           setPage(page < lastPage ? page + 1 : lastPage);
         }}
-        disabled={page == lastPage}
+        hidden={page === lastPage}
       >
         Next
+      </button>
+      <button
+        onClick={async () => {
+          const characterId = await character.mutateAsync({
+            priorityInfo: priorityInfo,
+            attributeInfo: attributeInfo,
+            specialAttributeInfo: specialAttributeInfo,
+            positiveQualitiesSelected: positiveQualitiesSelected,
+            negativeQualitiesSelected: negativeQualitiesSelected,
+            skillSelections: skillSelections,
+            equipmentSelected: equipmentSelected,
+            karmaPoints: karmaPoints,
+            nuyen: nuyen,
+          });
+          navigate(`/characters/${characterId}`);
+        }}
+        hidden={page !== lastPage}
+      >
+        Submit
       </button>
     </React.Fragment>
   );
 };
+
 export { characterCreatorPath };
 export default CharacterCreator;

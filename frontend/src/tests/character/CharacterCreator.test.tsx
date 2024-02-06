@@ -1,6 +1,6 @@
 import { fireEvent, screen } from "@testing-library/react";
 import { renderWithProviders } from "../../utils/TestingUtils.js";
-import CharacterCreator from "../../components/character/CharacterCreator.js";
+import CharacterCreator from "../../components/character/creator/CharacterCreator.js";
 
 const mockedUsedNavigate = jest.fn();
 

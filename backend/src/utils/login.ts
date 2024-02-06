@@ -51,7 +51,9 @@ export async function getLoginStatus({
       try {
         decoded = jwt.verify(token, TOKEN_SECRET) as jwtUsername;
       } catch (e) {
-        if (e instanceof Error) console.log(e.message);
+        if (e instanceof Error) {
+          logger.error(e.message);
+        }
       }
       if (decoded !== undefined && decoded.username) {
         const user = await db.em.findOne(Users, {

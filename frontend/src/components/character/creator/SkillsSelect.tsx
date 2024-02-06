@@ -1,6 +1,6 @@
 import React from "react";
 import Dropdown from "react-dropdown";
-import { CollapsibleDiv } from "../../utils/CollapsibleDiv.js";
+import { CollapsibleDiv } from "../../../utils/CollapsibleDiv.js";
 import { skillCategoryEnum } from "@neon-codex/common/build/enums.js";
 import type {
   CustomSkillListType,

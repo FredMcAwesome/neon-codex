@@ -9,6 +9,7 @@ import {
 import type { Ref } from "@mikro-orm/postgresql";
 import { CustomisedWeaponAccessories } from "./activeWeaponAccessoryModel.js";
 import { Weapons } from "../equipment/combat/weaponModel.js";
+import { Characters } from "../characters/characterModel.js";
 
 // Only custom weapons not included
 // This assumes weapons included in weapon mounts have no accessories
@@ -16,6 +17,9 @@ import { Weapons } from "../equipment/combat/weaponModel.js";
 export class CustomisedWeapons {
   @PrimaryKey()
   id!: number;
+
+  @ManyToOne({ entity: () => Characters, ref: true })
+  character!: Ref<Characters>;
 
   @ManyToOne({ entity: () => Weapons, ref: true })
   weapon!: Ref<Weapons>;

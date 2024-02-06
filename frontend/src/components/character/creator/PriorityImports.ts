@@ -1,26 +1,11 @@
-export enum PrioritiesEnum {
-  Metatype,
-  Attributes,
-  Magic,
-  Skills,
-  Resources,
-}
-export enum PriorityLevelEnum {
-  A,
-  B,
-  C,
-  D,
-  E,
-}
+import {
+  PriorityLevelEnum,
+  MetatypeEnum,
+  MagicTypeEnum,
+} from "@neon-codex/common/build/schemas/characterSchemas.js";
+
 export type PriorityLevelKey = keyof typeof PriorityLevelEnum;
 
-export enum MetatypeEnum {
-  Human,
-  Elf,
-  Dwarf,
-  Ork,
-  Troll,
-}
 type MetatypeKey = keyof typeof MetatypeEnum;
 const Metatypes: Array<MetatypeKey> = ["Human", "Elf", "Dwarf", "Ork", "Troll"];
 type SpecialAttributes = number;
@@ -29,14 +14,6 @@ interface IMetatypeInfo {
   specialAttributes: SpecialAttributes;
 }
 
-export enum MagicTypeEnum {
-  Adept,
-  AspectedMagician,
-  Magician,
-  MysticAdept,
-  NotAwakened,
-  Technomancer,
-}
 type MagicTypeKey = keyof typeof MagicTypeEnum;
 export const MagicTypes: Array<MagicTypeKey> = [
   "Adept",
@@ -58,16 +35,6 @@ export interface IMagicInfo {
 export interface ISkillPoints {
   skillPoints: number;
   skillGroupPoints: number;
-}
-
-export interface IPriorities {
-  MetatypePriority: PriorityLevelEnum;
-  MetatypeSubselection: MetatypeEnum;
-  AttributesPriority: PriorityLevelEnum;
-  MagicPriority: PriorityLevelEnum;
-  MagicSubselection: MagicTypeEnum;
-  SkillsPriority: PriorityLevelEnum;
-  ResourcesPriority: PriorityLevelEnum;
 }
 
 export interface IPriorityRow {

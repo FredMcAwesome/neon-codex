@@ -79,6 +79,7 @@ import {
   DB_NAME,
   PASSWORD,
 } from "./utils/databaseConfig.js";
+import { Characters } from "./models/rpg/characters/characterModel.js";
 
 const dbOptions: Options = {
   entities: [
@@ -154,6 +155,8 @@ const dbOptions: Options = {
     GearIncludedGears,
 
     Spells,
+
+    Characters,
   ],
   host: HOST,
   port: DATABASE_PORT,

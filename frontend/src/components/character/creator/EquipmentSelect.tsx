@@ -1,6 +1,6 @@
-import { CollapsibleDiv } from "../../utils/CollapsibleDiv.js";
+import { CollapsibleDiv } from "../../../utils/CollapsibleDiv.js";
 import { CollapsibleEquipmentDiv } from "./EquipmentHelper.js";
-import { costCalculation } from "../../utils/calculations.js";
+import { costCalculation } from "../../../utils/calculations.js";
 import type {
   CostWeaponType,
   WeaponSummaryListType,
@@ -34,7 +34,7 @@ import {
   formatAugmentationCost,
   formatAugmentationAvailability,
 } from "@neon-codex/common/build/formatters/augmentationFormatter.js";
-import { trpc } from "../../utils/trpc.js";
+import { trpc } from "../../../utils/trpc.js";
 import uniqid from "uniqid";
 import {
   armourCategoryEnum,

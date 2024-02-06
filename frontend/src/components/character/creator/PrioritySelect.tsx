@@ -8,21 +8,20 @@ import React, { useState } from "react";
 import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
 import uniqid from "uniqid";
-import {
-  PrioritiesEnum,
-  MagicTypeEnum,
-  MagicTypes,
-  MetatypeEnum,
-  PriorityLevelEnum,
-  priorityOptions,
-} from "./PriorityImports.js";
+import { MagicTypes, priorityOptions } from "./PriorityImports.js";
 import type {
   IMagicInfo,
-  IPriorities,
   IPriorityRow,
   ISkillPoints,
   PriorityLevelKey,
 } from "./PriorityImports.js";
+import {
+  PriorityLevelEnum,
+  PrioritiesEnum,
+  MetatypeEnum,
+  MagicTypeEnum,
+  type PrioritiesType,
+} from "@neon-codex/common/build/schemas/characterSchemas.js";
 
 const columnHelper = createColumnHelper<IPriorityRow>();
 
@@ -162,8 +161,8 @@ type PrioritiesListType = [
 ];
 
 interface IProps {
-  priorityInfo: IPriorities;
-  setPriorityInfo: (loadingPriorities: IPriorities) => void;
+  priorityInfo: PrioritiesType;
+  setPriorityInfo: (loadingPriorities: PrioritiesType) => void;
 }
 
 const PrioritySelect = function (props: IProps) {

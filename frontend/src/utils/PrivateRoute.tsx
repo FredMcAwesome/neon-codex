@@ -29,7 +29,7 @@ const Login = function () {
 
   /* Direct any login requests to dashboard if already logged in */
   if (token && token.length !== 0) {
-    console.log("already logged in");
+    console.log("Already logged in");
     return <Navigate to={{ pathname: dashboardPath }} />;
   } else {
     return <LoginRoute />;

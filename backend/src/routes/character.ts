@@ -1,8 +1,12 @@
+import { z as zod } from "zod";
 import * as logger from "../utils/logger.js";
 import { router, privateProcedure } from "../trpc.js";
 import { Skills } from "@neon-codex/database/build/models/rpg/abilities/skillModel.js";
 import { init } from "../utils/db.js";
-import type { SkillListType } from "@neon-codex/common/build/schemas/skillSchemas.js";
+import {
+  CustomSkillListSchema,
+  type SkillListType,
+} from "@neon-codex/common/build/schemas/skillSchemas.js";
 import type {
   VehicleListType,
   VehicleType,
@@ -24,7 +28,10 @@ import type {
   WeaponSummaryListType,
   WeaponSummaryType,
 } from "@neon-codex/common/build/schemas/weaponSchemas.js";
-import type { EquipmentListType } from "@neon-codex/common/build/schemas/equipmentSchemas.js";
+import {
+  EquipmentListSchema,
+  type EquipmentListType,
+} from "@neon-codex/common/build/schemas/equipmentSchemas.js";
 import {
   Augmentations,
   Cyberwares,
@@ -51,15 +58,31 @@ import type {
   ArmourListType,
   ArmourType,
 } from "@neon-codex/common/build/schemas/armourSchemas.js";
+import {
+  AttributesSchema,
+  SpecialAttributesSchema,
+  PrioritiesSchema,
+  SelectedQualitySchema,
+} from "@neon-codex/common/build/schemas/characterSchemas.js";
 import { Armours } from "@neon-codex/database/build/models/rpg/equipment/combat/armourModel.js";
+import { Characters } from "@neon-codex/database/build/models/rpg/characters/characterModel.js";
 
 export async function getSkills() {
   const db = await init();
   const skills = await db.em.findAll(Skills);
   const skillsResponse: SkillListType = skills.map((skill) => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { id, ...noIdSkill } = skill;
-    return noIdSkill;
+    return {
+      name: skill.name,
+      description: skill.description,
+      category: skill.category,
+      attribute: skill.attribute,
+      default: skill.default,
+      exotic: skill.exotic,
+      skillGroup: skill.skillGroup,
+      specialisations: skill.defaultSpecialisations,
+      source: skill.source,
+      page: skill.page,
+    };
   });
   return skillsResponse;
 }
@@ -500,105 +523,166 @@ export async function getGears(): Promise<GearListType> {
   return gearsResponse;
 }
 
-export const characterRouter = router({
-  skills: privateProcedure.query(async () => {
-    try {
-      const skillsResponse = await getSkills();
-      return skillsResponse;
-    } catch (error) {
-      logger.error("Unable to connect to the database:", error);
-      throw new Error("Database error");
-    }
-  }),
-  weapons: privateProcedure.query(async () => {
-    try {
-      const weaponsResponse: WeaponSummaryListType = await getWeapons();
-      logger.log(JSON.stringify(weaponsResponse, null, 2));
-      return weaponsResponse;
-    } catch (error) {
-      logger.error("Unable to connect to the database:", error);
-      throw new Error("Database error");
-    }
-  }),
-  armours: privateProcedure.query(async () => {
-    try {
-      const armoursResponse: ArmourListType = await getArmours();
-      logger.log(JSON.stringify(armoursResponse, null, 2));
-      return armoursResponse;
-    } catch (error) {
-      logger.error("Unable to connect to the database:", error);
-      throw new Error("Database error");
-    }
-  }),
-  gear: privateProcedure.query(async () => {
-    try {
-      const gearResponse = await getGears();
-      logger.log(JSON.stringify(gearResponse, null, 2));
-      return gearResponse;
-    } catch (error) {
-      logger.error("Unable to connect to the database:", error);
-      throw new Error("Database error");
-    }
-  }),
-  augmentations: privateProcedure.query(async () => {
-    try {
-      const augmentationsResponse: AugmentationListType =
-        await getAugmentations();
-      logger.log(JSON.stringify(augmentationsResponse, null, 2));
-      return augmentationsResponse;
-    } catch (error) {
-      logger.error("Unable to connect to the database:", error);
-      throw new Error("Database error");
-    }
-  }),
-  vehiclesAndDrones: privateProcedure.query(async () => {
-    try {
-      const vehiclesAndDronesResponse: VehicleListType = await getVehicles();
-      logger.log(JSON.stringify(vehiclesAndDronesResponse, null, 2));
-      return vehiclesAndDronesResponse;
-    } catch (error) {
-      logger.error("Unable to connect to the database:", error);
-      throw new Error("Database error");
-    }
-  }),
-  all: privateProcedure.query(async () => {
-    try {
-      const start = Date.now();
+const skills = privateProcedure.query(async () => {
+  try {
+    const skillsResponse = await getSkills();
+    return skillsResponse;
+  } catch (error) {
+    logger.error("Unable to connect to the database:", error);
+    throw new Error("Database error");
+  }
+});
 
-      const weaponsResponse: WeaponSummaryListType = await getWeapons();
-      let end = Date.now();
-      console.log(`Execution time 0: ${end - start} ms`);
-      let start1 = Date.now();
-      const armoursResponse: ArmourListType = await getArmours();
-      end = Date.now();
-      console.log(`Execution time 1: ${end - start1} ms`);
-      start1 = Date.now();
-      const gearsResponse: GearListType = await getGears();
-      end = Date.now();
-      console.log(`Execution time 2: ${end - start1} ms`);
-      start1 = Date.now();
-      const augmentationsResponse: AugmentationListType =
-        await getAugmentations();
-      end = Date.now();
-      console.log(`Execution time 3: ${end - start1} ms`);
-      start1 = Date.now();
-      const vehiclesResponse: VehicleListType = await getVehicles();
-      end = Date.now();
-      console.log(`Execution time 4: ${end - start1} ms`);
-      const equipmentResponse: EquipmentListType = {
-        weapons: weaponsResponse,
-        armours: armoursResponse,
-        gears: gearsResponse,
-        augmentations: augmentationsResponse,
-        vehicles: vehiclesResponse,
-      };
-      end = Date.now();
-      console.log(`Execution time: ${end - start} ms`);
-      // logger.log(JSON.stringify(equipmentResponse, null, 2));
-      return equipmentResponse;
+const weapons = privateProcedure.query(async () => {
+  try {
+    const weaponsResponse: WeaponSummaryListType = await getWeapons();
+    logger.log(JSON.stringify(weaponsResponse, null, 2));
+    return weaponsResponse;
+  } catch (error) {
+    logger.error("Unable to connect to the database:", error);
+    throw new Error("Database error");
+  }
+});
+
+const armours = privateProcedure.query(async () => {
+  try {
+    const armoursResponse: ArmourListType = await getArmours();
+    logger.log(JSON.stringify(armoursResponse, null, 2));
+    return armoursResponse;
+  } catch (error) {
+    logger.error("Unable to connect to the database:", error);
+    throw new Error("Database error");
+  }
+});
+
+const gears = privateProcedure.query(async () => {
+  try {
+    const gearResponse = await getGears();
+    logger.log(JSON.stringify(gearResponse, null, 2));
+    return gearResponse;
+  } catch (error) {
+    logger.error("Unable to connect to the database:", error);
+    throw new Error("Database error");
+  }
+});
+
+const augmentations = privateProcedure.query(async () => {
+  try {
+    const augmentationsResponse: AugmentationListType =
+      await getAugmentations();
+    logger.log(JSON.stringify(augmentationsResponse, null, 2));
+    return augmentationsResponse;
+  } catch (error) {
+    logger.error("Unable to connect to the database:", error);
+    throw new Error("Database error");
+  }
+});
+
+const vehiclesAndDrones = privateProcedure.query(async () => {
+  try {
+    const vehiclesAndDronesResponse: VehicleListType = await getVehicles();
+    logger.log(JSON.stringify(vehiclesAndDronesResponse, null, 2));
+    return vehiclesAndDronesResponse;
+  } catch (error) {
+    logger.error("Unable to connect to the database:", error);
+    throw new Error("Database error");
+  }
+});
+
+const all = privateProcedure.query(async () => {
+  try {
+    const [
+      weaponsResponse,
+      armoursResponse,
+      gearsResponse,
+      augmentationsResponse,
+      vehiclesResponse,
+    ] = await Promise.all([
+      getWeapons(),
+      getArmours(),
+      getGears(),
+      getAugmentations(),
+      getVehicles(),
+    ]);
+    const equipmentResponse: EquipmentListType = {
+      weapons: weaponsResponse,
+      armours: armoursResponse,
+      gears: gearsResponse,
+      augmentations: augmentationsResponse,
+      vehicles: vehiclesResponse,
+    };
+    // logger.log(JSON.stringify(equipmentResponse, null, 2));
+    return equipmentResponse;
+  } catch (error) {
+    logger.error("Unable to connect to the database:", error);
+    throw new Error("Database error");
+  }
+});
+const CharacterInformationSchema = zod
+  .object({
+    priorityInfo: PrioritiesSchema,
+    attributeInfo: AttributesSchema,
+    specialAttributeInfo: SpecialAttributesSchema,
+    positiveQualitiesSelected: zod.array(SelectedQualitySchema),
+    negativeQualitiesSelected: zod.array(SelectedQualitySchema),
+    skillSelections: CustomSkillListSchema,
+    equipmentSelected: EquipmentListSchema,
+    karmaPoints: zod.number(),
+    nuyen: zod.number(),
+  })
+  .strict();
+
+const createCharacter = privateProcedure
+  .input(CharacterInformationSchema)
+  .mutation(async (opts) => {
+    const db = await init();
+    const character = new Characters({
+      name: "",
+      metatype: "",
+      priorities: "opts.input.priorityInfo",
+      attributes: opts.input.attributeInfo,
+      specialAttributes: opts.input.specialAttributeInfo,
+      qualities: "",
+      nuyen: opts.input.nuyen,
+      karmaPoints: opts.input.karmaPoints,
+    });
+    await db.em.persistAndFlush(character);
+    logger.log(JSON.stringify(character, null, 2));
+    return character.id;
+  });
+
+const getCharacter = privateProcedure
+  .input(zod.string())
+  .query(async (opts) => {
+    try {
+      const { input } = opts;
+      const id = Number(input);
+      if (isNaN(id)) {
+        throw new Error("Invalid Character ID");
+      }
+      const db = await init();
+      const character = await db.em.findOne(Characters, id, {
+        populate: ["*"],
+      });
+      if (character === null) {
+        throw new Error("Character does not exist");
+      }
+      logger.log(JSON.stringify(character, null, 2));
+      return character;
     } catch (error) {
       logger.error("Unable to connect to the database:", error);
       throw new Error("Database error");
     }
-  }),
+  });
+
+export const characterRouter = router({
+  skills: skills,
+  weapons: weapons,
+  armours: armours,
+  gear: gears,
+  augmentations: augmentations,
+  vehiclesAndDrones: vehiclesAndDrones,
+  all: all,
+  createCharacter: createCharacter,
+  getCharacter: getCharacter,
 });

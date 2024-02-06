@@ -5,13 +5,13 @@ import {
   MetatypeEnum,
   MagicTypeEnum,
   priorityOptions,
-} from "../../components/character/PriorityImports.js";
-import type { IMagicInfo } from "../../components/character/PriorityImports.js";
-import AttributesSelect from "../../components/character/AttributesSelect.js";
+} from "../../components/character/creator/PriorityImports.js";
+import type { IMagicInfo } from "../../components/character/creator/PriorityImports.js";
+import AttributesSelect from "../../components/character/creator/AttributesSelect.js";
 import type {
   IAttributes,
   ISpecialAttributes,
-} from "../../components/character/AttributesSelect.js";
+} from "../../components/character/creator/AttributesSelect.js";
 
 const priorityInfo = {
   MetatypePriority: PriorityLevelEnum.A,

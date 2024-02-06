@@ -1,24 +1,21 @@
-import { Qualities, QualityEnum } from "../../data/Qualities.js";
-import type { IQuality, ISubquality } from "../../data/Qualities.js";
+import {
+  QualityEnum,
+  type SelectedQualityType,
+} from "@neon-codex/common/build/schemas/characterSchemas.js";
+import { Qualities } from "../../../data/Qualities.js";
 import React, { useEffect, useState } from "react";
 import Dropdown from "react-dropdown";
-
-export interface ISelectedQuality extends IQuality {
-  costSelected?: number;
-  ratingSelected?: number;
-  subqualitySelected?: ISubquality;
-}
 
 interface IProps {
   karmaPoints: number;
   setKarmaPoints: (loadingKarma: number) => void;
-  positiveQualitiesSelected: Array<ISelectedQuality>;
+  positiveQualitiesSelected: Array<SelectedQualityType>;
   setPositiveQualitiesSelected: (
-    loadingPositiveQualities: Array<ISelectedQuality>
+    loadingPositiveQualities: Array<SelectedQualityType>
   ) => void;
-  negativeQualitiesSelected: Array<ISelectedQuality>;
+  negativeQualitiesSelected: Array<SelectedQualityType>;
   setNegativeQualitiesSelected: (
-    loadingNegativeQualities: Array<ISelectedQuality>
+    loadingNegativeQualities: Array<SelectedQualityType>
   ) => void;
 }
 
@@ -74,11 +71,11 @@ export const QualitiesSelect = function (props: IProps) {
 };
 
 interface ISubqualityProps {
-  quality: ISelectedQuality;
-  qualitiesList: ISelectedQuality[];
+  quality: SelectedQualityType;
+  qualitiesList: SelectedQualityType[];
   index: number;
   setKarma: (removeKarma: boolean, difference: number) => void;
-  setQualities: (loadingQualities: Array<ISelectedQuality>) => void;
+  setQualities: (loadingQualities: Array<SelectedQualityType>) => void;
 }
 
 const SubqualitiesComponent = function ({
@@ -134,11 +131,11 @@ const SubqualitiesComponent = function ({
 };
 
 interface IKarmaProps {
-  quality: ISelectedQuality;
-  qualitiesList: ISelectedQuality[];
+  quality: SelectedQualityType;
+  qualitiesList: SelectedQualityType[];
   index: number;
   setKarma: (removeKarma: boolean, difference: number) => void;
-  setQualities: (loadingQualities: Array<ISelectedQuality>) => void;
+  setQualities: (loadingQualities: Array<SelectedQualityType>) => void;
 }
 
 const KarmaComponent = function ({
@@ -193,11 +190,11 @@ const KarmaComponent = function ({
 };
 
 interface IRatingProps {
-  quality: ISelectedQuality;
-  qualitiesList: ISelectedQuality[];
+  quality: SelectedQualityType;
+  qualitiesList: SelectedQualityType[];
   index: number;
   setKarma: (removeKarma: boolean, difference: number) => void;
-  setQualities: (loadingQualities: Array<ISelectedQuality>) => void;
+  setQualities: (loadingQualities: Array<SelectedQualityType>) => void;
 }
 
 const RatingComponent = function ({
@@ -247,8 +244,8 @@ const RatingComponent = function ({
 interface IQualityDropdownProps {
   positive: boolean;
   currentValue: string;
-  qualitiesList: ISelectedQuality[];
-  setQualities: (loadingQualities: Array<ISelectedQuality>) => void;
+  qualitiesList: SelectedQualityType[];
+  setQualities: (loadingQualities: Array<SelectedQualityType>) => void;
   setKarma: (removeKarma: boolean, difference: number) => void;
   index: number;
 }
@@ -331,8 +328,8 @@ function QualityDropdownComponent({
 
 interface IQualitySelectionProps {
   positive: boolean;
-  qualitiesList: ISelectedQuality[];
-  setQualities: (loadingQualities: Array<ISelectedQuality>) => void;
+  qualitiesList: SelectedQualityType[];
+  setQualities: (loadingQualities: Array<SelectedQualityType>) => void;
   setKarma: (removeKarma: boolean, difference: number) => void;
   newQualityPlaceholder: { text: string; extra: string };
 }
