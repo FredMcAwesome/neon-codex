@@ -9,10 +9,10 @@ import NavigationBar from "./components/navigation/NavigationBar.js";
 import CharacterCreator, {
   characterCreatorPath,
 } from "./components/character/creator/CharacterCreator.js";
-import {
-  CharacterSheet,
+import CharacterSheet, {
   characterSheetPath,
 } from "./components/character/CharacterSheet.js";
+import { NoMatch } from "./components/NoMatch.js";
 
 function App() {
   const { isLoading } = useQuery(["authenticationStatus"], isAuthenticated);
@@ -41,8 +41,9 @@ function App() {
           />
 
           <Route path={loginPath} element={<Login />} />
-          <Route path={characterCreatorPath} element={<CharacterCreator />} />
           <Route path={characterSheetPath} element={<CharacterSheet />} />
+          <Route path={characterCreatorPath} element={<CharacterCreator />} />
+          <Route path="*" element={<NoMatch />} />
         </Routes>
       </>
     );

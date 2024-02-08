@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { trpc } from "../../utils/trpc.js";
 
 const characterSheetPath = "/characters/:id";
-export const CharacterSheet = function () {
+const CharacterSheet = function () {
   const { id } = useParams();
   const { data, error, isError, isLoading } =
     trpc.character.getCharacter.useQuery(id || "");
@@ -38,3 +38,4 @@ export const CharacterSheet = function () {
   );
 };
 export { characterSheetPath };
+export default CharacterSheet;
