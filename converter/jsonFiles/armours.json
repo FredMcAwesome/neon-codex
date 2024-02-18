@@ -199,7 +199,7 @@
       "skillCategories": [
         {
           "category": "Social Active",
-          "bonus": 1
+          "bonus": [1]
         }
       ]
     },
@@ -221,7 +221,7 @@
       "skillCategories": [
         {
           "category": "Social Active",
-          "bonus": 1
+          "bonus": [1]
         }
       ]
     },
@@ -243,7 +243,7 @@
       "skillCategories": [
         {
           "category": "Social Active",
-          "bonus": 1
+          "bonus": [1]
         }
       ]
     },
@@ -273,7 +273,7 @@
       "skillCategories": [
         {
           "category": "Social Active",
-          "bonus": 1
+          "bonus": [1]
         }
       ]
     },
@@ -303,7 +303,7 @@
       "skillCategories": [
         {
           "category": "Social Active",
-          "bonus": 1
+          "bonus": [1]
         }
       ]
     },
@@ -333,7 +333,7 @@
       "skillCategories": [
         {
           "category": "Social Active",
-          "bonus": 1
+          "bonus": [1]
         }
       ]
     },
@@ -363,7 +363,7 @@
       "skillCategories": [
         {
           "category": "Social Active",
-          "bonus": 1
+          "bonus": [1]
         }
       ]
     },
@@ -394,7 +394,7 @@
       "skillCategories": [
         {
           "category": "Social Active",
-          "bonus": 1
+          "bonus": [1]
         }
       ]
     },
@@ -425,7 +425,7 @@
       "skillCategories": [
         {
           "category": "Social Active",
-          "bonus": 1
+          "bonus": [1]
         }
       ]
     },
@@ -456,7 +456,7 @@
       "skillCategories": [
         {
           "category": "Social Active",
-          "bonus": 1
+          "bonus": [1]
         }
       ]
     },
@@ -486,7 +486,7 @@
       "skillCategories": [
         {
           "category": "Social Active",
-          "bonus": 1
+          "bonus": [1]
         }
       ]
     },
@@ -513,7 +513,7 @@
       "skillCategories": [
         {
           "category": "Social Active",
-          "bonus": 1
+          "bonus": [1]
         }
       ]
     },
@@ -535,7 +535,7 @@
       "skillCategories": [
         {
           "category": "Social Active",
-          "bonus": 1
+          "bonus": [1]
         }
       ]
     },
@@ -562,7 +562,7 @@
       "skillCategories": [
         {
           "category": "Social Active",
-          "bonus": 1
+          "bonus": [1]
         }
       ]
     },
@@ -589,7 +589,7 @@
       "skillCategories": [
         {
           "category": "Social Active",
-          "bonus": 1
+          "bonus": [1]
         }
       ]
     },
@@ -616,7 +616,7 @@
       "skillCategories": [
         {
           "category": "Social Active",
-          "bonus": 1
+          "bonus": [1]
         }
       ]
     },
@@ -643,7 +643,7 @@
       "skillCategories": [
         {
           "category": "Social Active",
-          "bonus": 1
+          "bonus": [1]
         }
       ]
     },
@@ -665,7 +665,7 @@
       "skillCategories": [
         {
           "category": "Social Active",
-          "bonus": 1
+          "bonus": [1]
         }
       ]
     },
@@ -1050,7 +1050,7 @@
       "skillCategories": [
         {
           "category": "Social Active",
-          "bonus": 1
+          "bonus": [1]
         }
       ]
     },
@@ -1363,7 +1363,7 @@
       "skillCategories": [
         {
           "category": "Social",
-          "bonus": 1
+          "bonus": [1]
         }
       ]
     },

@@ -14370,7 +14370,7 @@
     }
   },
   {
-    "name": "Bite (Infected)",
+    "name": "Bite (Infected) +1",
     "description": "",
     "concealability": 0,
     "accuracy": [
@@ -14424,6 +14424,234 @@
     "subtype": "Mutagenic Quality",
     "meleeOptions": {
       "reach": -1
+    }
+  },
+  {
+    "name": "Bite (Infected) +2",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          1
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": false,
+    "userSelectable": false,
+    "relatedSkill": "Unarmed Combat",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Run Faster",
+    "page": 137,
+    "type": "Melee",
+    "subtype": "Mutagenic Quality",
+    "meleeOptions": {
+      "reach": -1
+    }
+  },
+  {
+    "name": "Claws (Infected) +1",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          2
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": false,
+    "userSelectable": false,
+    "relatedSkill": "Unarmed Combat",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Run Faster",
+    "page": 137,
+    "type": "Melee",
+    "subtype": "Mutagenic Quality",
+    "meleeOptions": {
+      "reach": 0
+    }
+  },
+  {
+    "name": "Claws (Infected) +2",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          2
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": false,
+    "userSelectable": false,
+    "relatedSkill": "Unarmed Combat",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Run Faster",
+    "page": 137,
+    "type": "Melee",
+    "subtype": "Mutagenic Quality",
+    "meleeOptions": {
+      "reach": 0
+    }
+  },
+  {
+    "name": "Claws (Infected) +3",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          2
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": false,
+    "userSelectable": false,
+    "relatedSkill": "Unarmed Combat",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Run Faster",
+    "page": 137,
+    "type": "Melee",
+    "subtype": "Mutagenic Quality",
+    "meleeOptions": {
+      "reach": 0
     }
   },
   {
@@ -14526,6 +14754,450 @@
     "subtype": "Mutagenic Quality",
     "meleeOptions": {
       "reach": 1
+    }
+  },
+  {
+    "name": "Dracoform Claws",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          1
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": false,
+    "userSelectable": false,
+    "relatedSkill": "Unarmed Combat",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Howling Shadows",
+    "page": 163,
+    "type": "Melee",
+    "subtype": "Mutagenic Quality",
+    "meleeOptions": {
+      "reach": 0
+    }
+  },
+  {
+    "name": "Dracoform Horns",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          2
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": false,
+    "userSelectable": false,
+    "relatedSkill": "Unarmed Combat",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Howling Shadows",
+    "page": 163,
+    "type": "Melee",
+    "subtype": "Mutagenic Quality",
+    "meleeOptions": {
+      "reach": 0
+    }
+  },
+  {
+    "name": "Dracoform Tail",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          3
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": false,
+    "userSelectable": false,
+    "relatedSkill": "Unarmed Combat",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Howling Shadows",
+    "page": 163,
+    "type": "Melee",
+    "subtype": "Mutagenic Quality",
+    "meleeOptions": {
+      "reach": 1
+    }
+  },
+  {
+    "name": "Dracoform Fangs",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          1
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": false,
+    "userSelectable": false,
+    "relatedSkill": "Unarmed Combat",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Howling Shadows",
+    "page": 163,
+    "type": "Melee",
+    "subtype": "Mutagenic Quality",
+    "meleeOptions": {
+      "reach": 0
+    }
+  },
+  {
+    "name": "Crystal Jaw",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          2
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            4
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": false,
+    "userSelectable": false,
+    "relatedSkill": "Unarmed Combat",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Forbidden Arcana",
+    "page": 133,
+    "type": "Melee",
+    "subtype": "Mutagenic Quality",
+    "meleeOptions": {
+      "reach": -1
+    }
+  },
+  {
+    "name": "Crystalline Blade",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          3
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": false,
+    "userSelectable": false,
+    "relatedSkill": "Unarmed Combat",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Forbidden Arcana",
+    "page": 133,
+    "type": "Melee",
+    "subtype": "Mutagenic Quality",
+    "meleeOptions": {
+      "reach": 1
+    }
+  },
+  {
+    "name": "Crystal Claw",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          1
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": false,
+    "userSelectable": false,
+    "relatedSkill": "Unarmed Combat",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Forbidden Arcana",
+    "page": 133,
+    "type": "Melee",
+    "subtype": "Mutagenic Quality",
+    "meleeOptions": {
+      "reach": 0
+    }
+  },
+  {
+    "name": "Crystalline Shards",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          3
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[4]],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": false,
+    "userSelectable": false,
+    "relatedSkill": "Throwing Weapons",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Forbidden Arcana",
+    "page": 133,
+    "type": "Melee",
+    "subtype": "Mutagenic Quality",
+    "meleeOptions": {
+      "reach": 0
     }
   },
   {
@@ -16618,6 +17290,7 @@
     ],
     "allowAccessories": true,
     "hostWeaponRequirements": {
+      "weaponRequirements": {},
       "hostWeaponMountsRequired": ["Barrel", "Under"]
     },
     "relatedSkill": "Archery",
@@ -16670,6 +17343,7 @@
     ],
     "allowAccessories": true,
     "hostWeaponRequirements": {
+      "weaponRequirements": {},
       "hostWeaponMountsRequired": ["Under"]
     },
     "relatedSkill": "Longarms",
@@ -16725,6 +17399,7 @@
     ],
     "allowAccessories": true,
     "hostWeaponRequirements": {
+      "weaponRequirements": {},
       "hostWeaponMountsRequired": ["Under", "Side"]
     },
     "relatedSkill": "Exotic Ranged Weapon",

@@ -7,13 +7,14 @@ import {
 } from "@neon-codex/common/build/enums.js";
 import type {
   BonusType,
-  QualityListType,
+  BonusQualityListType,
   SelectSkillType,
 } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 import assert from "assert";
 import type {
   GenericNameValueListType,
   GenericNameValueType,
+  NumberOrAnyRatingType,
   SkillListType,
 } from "./ParserCommonDefines.js";
 import { attributeXMLEnum } from "./ParserCommonDefines.js";
@@ -111,13 +112,9 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       ? bonus.skillcategory
       : [bonus.skillcategory];
     bonusObject.skillCategories = skillCategoryList.map((category) => {
-      const bonus =
-        typeof category.bonus === "number"
-          ? category.bonus
-          : { option: category.bonus };
       return {
         category: category.name,
-        bonus: bonus,
+        bonus: convertRatingUnion(category.bonus),
       };
     });
   }
@@ -126,11 +123,9 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       ? bonus.skillgroup
       : [bonus.skillgroup];
     bonusObject.skillGroups = skillGroupList.map((group) => {
-      const bonus =
-        typeof group.bonus === "number" ? group.bonus : { option: group.bonus };
       return {
         group: group.name,
-        bonus: bonus,
+        bonus: convertRatingUnion(group.bonus),
       };
     });
   }
@@ -224,16 +219,27 @@ export function convertXmlBonus(bonus: BonusXmlType) {
   }
   if ("spellcategory" in bonus && bonus.spellcategory !== undefined) {
     const spellCategory = bonus.spellcategory;
-    const category = spellCategoryConversion(spellCategory.name);
+    let category, value;
+    if (spellCategory.name === undefined) {
+      // TODO: better way to do this?
+      category = { option: "SelectCategory" as const };
+    } else {
+      category = spellCategoryConversion(spellCategory.name);
+    }
+    if (typeof spellCategory.val === "number") {
+      value = spellCategory.val;
+    } else {
+      value = {
+        option: "Rating" as const,
+      };
+    }
     bonusObject.spellCategory = {
       limitCategory: category,
-      bonus: {
-        option: "Rating",
-      },
+      bonus: value,
     };
   }
   if ("essencepenaltyt100" in bonus && bonus.essencepenaltyt100 !== undefined) {
-    const match = EssenceCost.match(bonus.essencepenaltyt100);
+    const match = EssenceCost.match(bonus.essencepenaltyt100.toString());
     if (match.failed()) {
       assert(false, match.message);
     }
@@ -475,22 +481,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     bonusObject.fatigueResist = fatigueResist;
   }
   if ("sociallimit" in bonus && bonus.sociallimit !== undefined) {
-    // fix this weird type error... Also create an enum for rating
-    const temp = "Rating" as const;
-    let socialLimit;
-    if (typeof bonus.sociallimit === "number") {
-      socialLimit = [bonus.sociallimit];
-    } else if (bonus.sociallimit === "Rating") {
-      socialLimit = [{ option: temp }];
-    } else {
-      assert(bonus.sociallimit === "-Rating");
-      socialLimit = [
-        -1,
-        { operator: mathOperatorEnum.Multiply },
-        { option: temp },
-      ];
-    }
-    bonusObject.socialLimit = socialLimit;
+    bonusObject.socialLimit = convertRatingUnion(bonus.sociallimit);
   }
   if ("physicallimit" in bonus && bonus.physicallimit !== undefined) {
     const physicalLimit =
@@ -508,19 +499,26 @@ export function convertXmlBonus(bonus: BonusXmlType) {
   }
   {
     // qualities scope
-    const qualities: QualityListType = [];
+    const qualities: BonusQualityListType = [];
     if ("quality" in bonus && bonus.quality !== undefined) {
       const rating = Number(bonus.quality._rating);
       assert(!isNaN(rating));
       qualities.concat([{ name: bonus.quality.xmltext, rating: rating }]);
     }
     if ("addqualities" in bonus && bonus.addqualities !== undefined) {
-      const qualityArray =
-        typeof bonus.addqualities.addquality === "string"
-          ? [{ name: bonus.addqualities.addquality }]
-          : bonus.addqualities.addquality.map((quality) => {
-              return { name: quality };
-            });
+      const addQuality = bonus.addqualities.addquality;
+      const addQualityArray = Array.isArray(addQuality)
+        ? addQuality
+        : [addQuality];
+
+      const qualityArray = addQualityArray.map((quality) => {
+        if (typeof quality === "string") {
+          return { name: quality };
+        } else {
+          // TODO: handle forced
+          return { name: quality.xmltext };
+        }
+      });
       qualities.concat(qualityArray);
     }
     if (qualities.length > 0) {
@@ -624,20 +622,53 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     }
   }
   if ("walkmultiplier" in bonus && bonus.walkmultiplier !== undefined) {
-    let percentage: number;
-    if (bonus.walkmultiplier.percent) {
-      assert(bonus.walkmultiplier.val === undefined);
-      percentage = bonus.walkmultiplier.percent;
-    } else {
-      assert(bonus.walkmultiplier.val !== undefined);
-      assert(bonus.walkmultiplier.percent === undefined);
-      percentage = bonus.walkmultiplier.val * 100;
-    }
+    if (Array.isArray(bonus.walkmultiplier)) {
+      assert(bonus.walkmultiplier.length === 2);
 
-    if (bonus.walkmultiplier.category === "Swim") {
-      bonusObject.swimSpeedPercentageModifier = percentage;
+      let percentage: number;
+      if (bonus.walkmultiplier[0].percent) {
+        assert(bonus.walkmultiplier[0].val === undefined);
+        percentage = bonus.walkmultiplier[0].percent;
+      } else {
+        assert(bonus.walkmultiplier[0].val !== undefined);
+        assert(bonus.walkmultiplier[0].percent === undefined);
+        percentage = bonus.walkmultiplier[0].val * 100;
+      }
+      if (bonus.walkmultiplier[0].category === "Swim") {
+        bonusObject.swimSpeedPercentageModifier = percentage;
+      } else {
+        bonusObject.walkSpeedPercentageModifier = percentage;
+      }
+
+      // second multiplier
+      if (bonus.walkmultiplier[1].percent) {
+        assert(bonus.walkmultiplier[1].val === undefined);
+        percentage = bonus.walkmultiplier[1].percent;
+      } else {
+        assert(bonus.walkmultiplier[1].val !== undefined);
+        assert(bonus.walkmultiplier[1].percent === undefined);
+        percentage = bonus.walkmultiplier[1].val * 100;
+      }
+      if (bonus.walkmultiplier[1].category === "Swim") {
+        bonusObject.swimSpeedPercentageModifier = percentage;
+      } else {
+        bonusObject.walkSpeedPercentageModifier = percentage;
+      }
     } else {
-      bonusObject.walkSpeedPercentageModifier = percentage;
+      let percentage: number;
+      if (bonus.walkmultiplier.percent) {
+        assert(bonus.walkmultiplier.val === undefined);
+        percentage = bonus.walkmultiplier.percent;
+      } else {
+        assert(bonus.walkmultiplier.val !== undefined);
+        assert(bonus.walkmultiplier.percent === undefined);
+        percentage = bonus.walkmultiplier.val * 100;
+      }
+      if (bonus.walkmultiplier.category === "Swim") {
+        bonusObject.swimSpeedPercentageModifier = percentage;
+      } else {
+        bonusObject.walkSpeedPercentageModifier = percentage;
+      }
     }
   }
   if ("runmultiplier" in bonus && bonus.runmultiplier !== undefined) {
@@ -665,7 +696,21 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     bonusObject.sprintSpeedPercentageModifier = percentage;
   }
   if ("lifestylecost" in bonus && bonus.lifestylecost !== undefined) {
-    bonusObject.lifestyleCostModifier = bonus.lifestylecost;
+    const lifestyleCostArray = Array.isArray(bonus.lifestylecost)
+      ? bonus.lifestylecost
+      : [bonus.lifestylecost];
+    bonusObject.lifestyleCostModifier = lifestyleCostArray.map(
+      (lifestyleCost) => {
+        if (typeof lifestyleCost === "object") {
+          return {
+            lifestyle: lifestyleCost._lifestyle,
+            cost: lifestyleCost.xmltext,
+          };
+        } else {
+          return { cost: lifestyleCost };
+        }
+      }
+    );
   }
   if ("stuncmrecovery" in bonus && bonus.stuncmrecovery !== undefined) {
     const stunHealing =
@@ -687,6 +732,8 @@ export function convertXmlBonus(bonus: BonusXmlType) {
         ? bonus.armor
         : typeof bonus.armor === "string"
         ? { option: "Rating" as const }
+        : typeof bonus.armor.xmltext === "number"
+        ? bonus.armor.xmltext
         : { option: bonus.armor.xmltext };
 
     bonusObject.armour = {
@@ -716,7 +763,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     bonusObject.coldArmour = coldArmour;
   }
   if ("dodge" in bonus && bonus.dodge !== undefined) {
-    bonusObject.dodge = bonus.dodge;
+    bonusObject.dodge = convertRatingUnion(bonus.dodge);
   }
   if ("unarmedreach" in bonus && bonus.unarmedreach !== undefined) {
     bonusObject.unarmedReach = bonus.unarmedreach;
@@ -730,30 +777,28 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       "physiologicaladdictionfirsttime" in bonus &&
       bonus.physiologicaladdictionfirsttime !== undefined
     ) {
-      physiologicalInitial =
-        typeof bonus.physiologicaladdictionfirsttime === "number"
-          ? bonus.physiologicaladdictionfirsttime
-          : { option: bonus.physiologicaladdictionfirsttime };
+      physiologicalInitial = convertRatingUnion(
+        bonus.physiologicaladdictionfirsttime
+      );
     }
     if (
       "physiologicaladdictionalreadyaddicted" in bonus &&
       bonus.physiologicaladdictionalreadyaddicted !== undefined
     ) {
-      physiologicalProgressing =
-        typeof bonus.physiologicaladdictionalreadyaddicted === "number"
-          ? bonus.physiologicaladdictionalreadyaddicted
-          : { option: bonus.physiologicaladdictionalreadyaddicted };
+      physiologicalProgressing = convertRatingUnion(
+        bonus.physiologicaladdictionalreadyaddicted
+      );
     }
     const physiological =
       physiologicalInitial !== undefined ||
       physiologicalProgressing !== undefined
         ? {
             initialTest:
-              physiologicalInitial !== undefined ? physiologicalInitial : 0,
+              physiologicalInitial !== undefined ? physiologicalInitial : [0],
             progressingTest:
               physiologicalProgressing !== undefined
                 ? physiologicalProgressing
-                : 0,
+                : [0],
           }
         : undefined;
 
@@ -761,30 +806,25 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       "psychologicaladdictionfirsttime" in bonus &&
       bonus.psychologicaladdictionfirsttime !== undefined
     ) {
-      psychologicalInitial =
-        typeof bonus.psychologicaladdictionfirsttime === "number"
-          ? bonus.psychologicaladdictionfirsttime
-          : { option: bonus.psychologicaladdictionfirsttime };
+      psychologicalInitial = convertRatingUnion(
+        bonus.psychologicaladdictionfirsttime
+      );
     }
     if (
       "psychologicaladdictionalreadyaddicted" in bonus &&
       bonus.psychologicaladdictionalreadyaddicted !== undefined
     ) {
-      psychologicalProgressing =
-        typeof bonus.psychologicaladdictionalreadyaddicted === "number"
-          ? bonus.psychologicaladdictionalreadyaddicted
-          : { option: bonus.psychologicaladdictionalreadyaddicted };
     }
     const psychological =
       psychologicalInitial !== undefined ||
       psychologicalProgressing !== undefined
         ? {
             initialTest:
-              psychologicalInitial !== undefined ? psychologicalInitial : 0,
+              psychologicalInitial !== undefined ? psychologicalInitial : [0],
             progressingTest:
               psychologicalProgressing !== undefined
                 ? psychologicalProgressing
-                : 0,
+                : [0],
           }
         : undefined;
 
@@ -802,65 +842,89 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     "judgeintentionsdefense" in bonus &&
     bonus.judgeintentionsdefense !== undefined
   ) {
-    bonusObject.judgeIntentionsDefense = bonus.judgeintentionsdefense;
+    bonusObject.judgeIntentionsDefense = convertRatingUnion(
+      bonus.judgeintentionsdefense
+    );
   }
   if ("memory" in bonus && bonus.memory !== undefined) {
-    const memory =
-      typeof bonus.memory === "number"
-        ? bonus.memory
-        : { option: bonus.memory };
-    bonusObject.memory = memory;
+    bonusObject.memory = convertRatingUnion(bonus.memory);
   }
   if ("drainresist" in bonus && bonus.drainresist !== undefined) {
-    bonusObject.drainResist = bonus.drainresist;
+    bonusObject.drainResist = convertRatingUnion(bonus.drainresist);
   }
   if ("fadingresist" in bonus && bonus.fadingresist !== undefined) {
-    bonusObject.fadingResist = bonus.fadingresist;
+    bonusObject.fadingResist = convertRatingUnion(bonus.fadingresist);
   }
   if (
     "directmanaspellresist" in bonus &&
     bonus.directmanaspellresist !== undefined
   ) {
-    bonusObject.directManaResist = bonus.directmanaspellresist;
+    bonusObject.directManaResist = convertRatingUnion(
+      bonus.directmanaspellresist
+    );
   }
   if (
     "detectionspellresist" in bonus &&
     bonus.detectionspellresist !== undefined
   ) {
-    bonusObject.detectionResist = bonus.detectionspellresist;
+    bonusObject.detectionResist = convertRatingUnion(
+      bonus.detectionspellresist
+    );
+    bonus.detectionspellresist;
   }
   if ("manaillusionresist" in bonus && bonus.manaillusionresist !== undefined) {
-    bonusObject.manaIllusionResist = bonus.manaillusionresist;
+    bonusObject.manaIllusionResist = convertRatingUnion(
+      bonus.manaillusionresist
+    );
+    bonus.manaillusionresist;
   }
   if (
     "mentalmanipulationresist" in bonus &&
     bonus.mentalmanipulationresist !== undefined
   ) {
-    bonusObject.mentalManipulationResist = bonus.mentalmanipulationresist;
+    bonusObject.mentalManipulationResist = convertRatingUnion(
+      bonus.mentalmanipulationresist
+    );
   }
   if ("decreasebodresist" in bonus && bonus.decreasebodresist !== undefined) {
-    bonusObject.decreaseBodyResist = bonus.decreasebodresist;
+    bonusObject.decreaseBodyResist = convertRatingUnion(
+      bonus.decreasebodresist
+    );
   }
   if ("decreaseagiresist" in bonus && bonus.decreaseagiresist !== undefined) {
-    bonusObject.decreaseAgilityResist = bonus.decreaseagiresist;
+    bonusObject.decreaseAgilityResist = convertRatingUnion(
+      bonus.decreaseagiresist
+    );
   }
   if ("decreaserearesist" in bonus && bonus.decreaserearesist !== undefined) {
-    bonusObject.decreaseReasonanceResist = bonus.decreaserearesist;
+    bonusObject.decreaseReasonanceResist = convertRatingUnion(
+      bonus.decreaserearesist
+    );
   }
   if ("decreasestrresist" in bonus && bonus.decreasestrresist !== undefined) {
-    bonusObject.decreaseStrengthResist = bonus.decreasestrresist;
+    bonusObject.decreaseStrengthResist = convertRatingUnion(
+      bonus.decreasestrresist
+    );
   }
   if ("decreasecharesist" in bonus && bonus.decreasecharesist !== undefined) {
-    bonusObject.decreaseCharismaResist = bonus.decreasecharesist;
+    bonusObject.decreaseCharismaResist = convertRatingUnion(
+      bonus.decreasecharesist
+    );
   }
   if ("decreaseintresist" in bonus && bonus.decreaseintresist !== undefined) {
-    bonusObject.decreaseIntuitionResist = bonus.decreaseintresist;
+    bonusObject.decreaseIntuitionResist = convertRatingUnion(
+      bonus.decreaseintresist
+    );
   }
   if ("decreaselogresist" in bonus && bonus.decreaselogresist !== undefined) {
-    bonusObject.decreaseLogicResist = bonus.decreaselogresist;
+    bonusObject.decreaseLogicResist = convertRatingUnion(
+      bonus.decreaselogresist
+    );
   }
   if ("decreasewilresist" in bonus && bonus.decreasewilresist !== undefined) {
-    bonusObject.decreaseWillpowerResist = bonus.decreasewilresist;
+    bonusObject.decreaseWillpowerResist = convertRatingUnion(
+      bonus.decreasewilresist
+    );
   }
   if ("addlimb" in bonus && bonus.addlimb !== undefined) {
     const limbSlot = convertLimbSlot(bonus.addlimb.limbslot);
@@ -940,6 +1004,22 @@ export const convertKarmaCost = function (karmaCost: GenericNameValueType) {
     name: convertAttribute(name),
     bonus: karmaCost.val,
   };
+};
+
+const convertRatingUnion = function (unionObject: NumberOrAnyRatingType) {
+  if (typeof unionObject === "number") {
+    return [unionObject];
+  } else {
+    if (unionObject === "-Rating") {
+      return [
+        -1,
+        { operator: mathOperatorEnum.Multiply },
+        { option: "Rating" as const },
+      ];
+    } else {
+      return [{ option: unionObject }];
+    }
+  }
 };
 
 // const getListFromOtherFile = function (fileName: string, xmlNodePath: string) {

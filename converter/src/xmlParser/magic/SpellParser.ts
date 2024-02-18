@@ -171,7 +171,7 @@ function convertSpell(spell: SpellXmlType) {
 
   const bonus =
     spell.bonus !== undefined ? convertXmlBonus(spell.bonus) : undefined;
-  const required =
+  const requirements =
     spell.required !== undefined
       ? convertRequirements(spell.required)
       : undefined;
@@ -188,7 +188,7 @@ function convertSpell(spell: SpellXmlType) {
     range: range,
     type: type,
     ...(bonus !== undefined && { bonus: bonus }),
-    ...(required !== undefined && { required: required }),
+    ...(requirements !== undefined && { requirements: requirements }),
     source: source,
     page: spell.page,
   };

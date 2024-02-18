@@ -6,6 +6,22 @@ import {
 import { WeaponXmlSubtypeSchema } from "@neon-codex/common/build/schemas/commonSchemas.js";
 import { metamagicArtEnum } from "@neon-codex/common/build/enums.js";
 
+const SkillSchema = zod
+  .object({
+    name: zod.string(),
+    val: zod.number(),
+    spec: zod.optional(zod.string()),
+    type: zod.optional(zod.string()),
+  })
+  .strict();
+
+const SpellCategorySchema = zod
+  .object({
+    name: zod.string(),
+    count: zod.number(),
+  })
+  .strict();
+
 const ConcealXmlSchema = zod
   .object({
     xmltext: zod.number(),
@@ -305,6 +321,90 @@ export const RequiredGearDetailsXmlSchema: zod.ZodType<RequiredGearDetailsXmlTyp
     AND: zod.optional(zod.lazy(() => RequiredGearDetailsXmlSchema)),
   }).strict();
 
+const RequiredSubSchema = zod
+  .object({
+    tradition: zod.optional(StringArrayOrStringSchema),
+    quality: zod.optional(StringArrayOrStringSchema),
+    martialtechnique: zod.optional(zod.string()),
+    // this should probably self-referential...
+    initiategrade: zod.optional(zod.number()),
+    metamagic: zod.optional(zod.string()),
+    metamagicart: zod.optional(zod.nativeEnum(metamagicArtEnum)),
+    spell: zod.optional(StringArrayOrStringSchema),
+    spellcategory: zod.optional(
+      zod.union([zod.array(SpellCategorySchema), SpellCategorySchema])
+    ),
+    spelldescriptor: zod.optional(
+      zod
+        .object({
+          name: zod.string(),
+          count: zod.number(),
+        })
+        .strict()
+    ),
+    bioware: zod.optional(StringArrayOrStringSchema),
+    cyberware: zod.optional(StringArrayOrStringSchema),
+    cyberwarecontains: zod.optional(zod.string()),
+    metatype: zod.optional(StringArrayOrStringSchema),
+    metatypecategory: zod.optional(StringArrayOrStringSchema),
+    power: zod.optional(StringArrayOrStringSchema),
+    critterpower: zod.optional(zod.string()),
+    magenabled: zod.optional(zod.literal("")),
+    resenabled: zod.optional(zod.literal("")),
+    depenabled: zod.optional(zod.literal("")),
+    submersiongrade: zod.optional(zod.number()),
+    ess: zod.optional(
+      zod.union([
+        zod.array(
+          zod.union([
+            zod
+              .object({
+                _grade: zod.string(),
+                xmltext: zod.number(),
+              })
+              .strict(),
+            StringOrNumberSchema,
+          ])
+        ),
+        zod.union([
+          zod
+            .object({
+              _grade: zod.string(),
+              xmltext: zod.number(),
+            })
+            .strict(),
+          StringOrNumberSchema,
+        ]),
+      ])
+    ),
+    gear: zod.optional(
+      zod
+        .object({
+          _minrating: zod.string(),
+          xmltext: zod.string(),
+        })
+        .strict()
+    ),
+    skill: zod.optional(zod.union([zod.array(SkillSchema), SkillSchema])),
+    gameplayoption: zod.optional(zod.string()),
+  })
+  .strict();
+
+const RequiredRecursiveSubSchema = RequiredSubSchema.extend({
+  grouponeof: zod.optional(
+    zod.union([zod.array(RequiredSubSchema), RequiredSubSchema])
+  ),
+}).strict();
+
+const RequiredRecursiveSchema = RequiredRecursiveSubSchema.extend({
+  group: zod.optional(
+    zod.union([
+      zod.array(RequiredRecursiveSubSchema),
+      RequiredRecursiveSubSchema,
+    ])
+  ),
+}).strict();
+
 const containsSchema = zod.union([
   zod
     .object({
@@ -326,31 +426,7 @@ const containsSchema = zod.union([
         .strict(),
     })
     .strict(),
-  zod
-    .object({
-      quality: zod.optional(StringArrayOrStringSchema),
-      group: zod.optional(
-        zod
-          .object({
-            initiategrade: zod.number(),
-            tradition: zod.string(),
-          })
-          .strict()
-      ),
-      metamagic: zod.optional(zod.string()),
-      metamagicart: zod.optional(zod.nativeEnum(metamagicArtEnum)),
-      spell: zod.optional(zod.string()),
-    })
-    .strict(),
-  zod
-    .object({
-      quality: zod.optional(zod.string()),
-      bioware: zod.optional(StringArrayOrStringSchema),
-      cyberware: zod.optional(StringArrayOrStringSchema),
-      cyberwarecontains: zod.optional(zod.string()),
-      metatype: zod.optional(zod.string()),
-    })
-    .strict(),
+  RequiredRecursiveSchema,
 ]);
 
 export type containsType = zod.infer<typeof containsSchema>;

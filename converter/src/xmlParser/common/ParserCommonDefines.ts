@@ -225,6 +225,12 @@ export const NumberOrRatingSchema = zod.union([
   zod.number(),
   zod.literal("Rating"),
 ]);
+export const NumberOrAnyRatingSchema = zod.union([
+  zod.number(),
+  zod.literal("Rating"),
+  zod.literal("-Rating"),
+]);
+export type NumberOrAnyRatingType = zod.infer<typeof NumberOrAnyRatingSchema>;
 
 export const LimitModifierSchema = zod
   .object({
@@ -300,23 +306,27 @@ export const LimitModifierSchema = zod
 export const SkillSchema = zod
   .object({
     name: zod.string(),
-    bonus: NumberOrRatingSchema,
+    bonus: NumberOrAnyRatingSchema,
     _precedence: zod.optional(zod.literal("0")),
     condition: zod.optional(zod.string()),
+    exclude: zod.optional(zod.string()),
   })
   .strict();
 
 const SkillListSchema = zod.union([zod.array(SkillSchema), SkillSchema]);
 export type SkillListType = zod.infer<typeof SkillListSchema>;
 
-export const SpiritSchema = zod
-  .object({
-    spirit: StringArrayOrStringSchema,
-    addtoselected: zod.optional(
-      zod.union([zod.literal("False"), zod.literal("True")])
-    ),
-  })
-  .strict();
+export const SpiritSchema = zod.union([
+  zod
+    .object({
+      spirit: StringArrayOrStringSchema,
+      addtoselected: zod.optional(
+        zod.union([zod.literal("False"), zod.literal("True")])
+      ),
+    })
+    .strict(),
+  zod.literal(""),
+]);
 
 export const GenericNameValueSchema = zod
   .object({
@@ -326,7 +336,7 @@ export const GenericNameValueSchema = zod
     val: zod.optional(StringOrNumberSchema),
     min: zod.optional(StringOrNumberSchema),
     max: zod.optional(StringOrNumberSchema),
-    aug: zod.optional(zod.string()),
+    aug: zod.optional(StringOrNumberSchema),
     _precedence: zod.optional(zod.string()),
     xmltext: zod.optional(StringOrNumberSchema),
   })

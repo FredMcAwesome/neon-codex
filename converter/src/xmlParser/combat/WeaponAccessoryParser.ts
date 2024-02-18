@@ -135,8 +135,14 @@ export function ParseWeaponAccessories() {
         ? standardCalculationEnum.Rating
         : weaponAccessory.conceal
       : undefined;
-    const required = convertRequirements(weaponAccessory.required);
-    const forbidden = convertRequirements(weaponAccessory.forbidden);
+    let requirements;
+    if (weaponAccessory.required) {
+      requirements = convertRequirements(weaponAccessory.required);
+    }
+    let forbidden;
+    if (weaponAccessory.forbidden) {
+      forbidden = convertRequirements(weaponAccessory.forbidden);
+    }
     match = Availability.match(weaponAccessory.avail.toString());
     if (match.failed()) {
       assert(false, match.message);
@@ -190,7 +196,7 @@ export function ParseWeaponAccessories() {
       ammoCapacityCalculation: ammoCapacityCalculation,
       newAmmoType: newAmmoType,
       hostWeaponMountsRequired: mountLocationsOnHostWeapon,
-      hostWeaponRequirements: required,
+      hostWeaponRequirements: requirements,
       hostWeaponRestrictions: forbidden,
       ...(weaponAccessory.hide !== undefined && {
         userSelectable: false as const,

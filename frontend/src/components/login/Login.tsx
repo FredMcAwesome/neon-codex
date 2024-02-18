@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { dashboardPath } from "../dashboard/Dashboard.js";
 import { saveUserSession } from "./loginHelper.js";
@@ -18,11 +18,9 @@ const LoginRoute = function () {
     });
   const navigate = useNavigate();
 
-  const handleSubmit = async function (
-    event: React.FormEvent<HTMLFormElement>
-  ) {
+  const handleSubmit = async function (event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    mutateAsync({ username, password });
+    await mutateAsync({ username, password });
   };
 
   return (

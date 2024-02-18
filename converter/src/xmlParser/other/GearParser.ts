@@ -275,14 +275,20 @@ const convertGear = function (gear: GearXmlType) {
     }
     armourCapacityInformation = capacityGearSemantics(match).eval();
   }
-  const requirements = convertRequirements(gear.required);
+  let requirements;
+  if (gear.required) {
+    requirements = convertRequirements(gear.required);
+  }
+  let forbidden;
+  if (gear.forbidden) {
+    forbidden = convertRequirements(gear.forbidden);
+  }
   const requireParent =
     gear.requireparent === undefined
       ? gear.category === GearXmlCategoryEnum.ArmorEnhancements
         ? (true as const)
         : undefined
       : (true as const);
-  const forbidden = convertRequirements(gear.forbidden);
 
   const modifyAttributeArray =
     gear.modattributearray === undefined

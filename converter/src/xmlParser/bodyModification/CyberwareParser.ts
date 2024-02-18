@@ -332,8 +332,14 @@ function convertCyberware(cyberware: CyberwareXmlType) {
       ? cyberware.wirelesspairinclude.name
       : undefined;
 
-  const requirements = convertRequirements(cyberware.required);
-  const forbidden = convertRequirements(cyberware.forbidden);
+  let requirements;
+  if (cyberware.required) {
+    requirements = convertRequirements(cyberware.required);
+  }
+  let forbidden;
+  if (cyberware.forbidden) {
+    forbidden = convertRequirements(cyberware.forbidden);
+  }
 
   const gears =
     cyberware.gears !== undefined

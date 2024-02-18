@@ -13,6 +13,7 @@ import CharacterSheet, {
   characterSheetPath,
 } from "./components/character/CharacterSheet.js";
 import { NoMatch } from "./components/NoMatch.js";
+import { Fragment } from "react";
 
 function App() {
   const { isLoading } = useQuery(["authenticationStatus"], isAuthenticated);
@@ -26,7 +27,7 @@ function App() {
     );
   } else {
     return (
-      <>
+      <Fragment>
         <NavigationBar />
         <Routes>
           {/* Children of Routes need to be Route component so need to have
@@ -45,7 +46,7 @@ function App() {
           <Route path={characterCreatorPath} element={<CharacterCreator />} />
           <Route path="*" element={<NoMatch />} />
         </Routes>
-      </>
+      </Fragment>
     );
   }
 }

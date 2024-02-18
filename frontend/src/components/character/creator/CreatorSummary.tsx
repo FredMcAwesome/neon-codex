@@ -5,16 +5,16 @@ import type {
   PrioritiesType,
   AttributesType,
   SpecialAttributesType,
-  SelectedQualityType,
 } from "@neon-codex/common/build/schemas/characterSchemas.js";
+import type { QualityListType } from "@neon-codex/common/build/schemas/qualitySchemas.js";
 
 interface IProps {
   priorityInfo: PrioritiesType;
   attributeInfo: AttributesType;
   specialAttributeInfo: SpecialAttributesType;
   karmaPoints: number;
-  positiveQualitiesSelected: Array<SelectedQualityType>;
-  negativeQualitiesSelected: Array<SelectedQualityType>;
+  positiveQualitiesSelected: QualityListType;
+  negativeQualitiesSelected: QualityListType;
   skillPoints: ISkillPoints;
   skillSelections: CustomSkillListType;
   equipmentSelected: EquipmentListType;
@@ -53,7 +53,7 @@ export const CreatorSummary = function (props: IProps) {
         Positive Qualities:
         <ul>
           {props.positiveQualitiesSelected.map((quality) => {
-            return <li>{quality.name}</li>;
+            return <li key={quality.name}>{quality.name}</li>;
           })}
         </ul>
       </div>
@@ -61,7 +61,7 @@ export const CreatorSummary = function (props: IProps) {
         Negative Qualities:
         <ul>
           {props.negativeQualitiesSelected.map((quality) => {
-            return <li>{quality.name}</li>;
+            return <li key={quality.name}>{quality.name}</li>;
           })}
         </ul>
       </div>
@@ -70,7 +70,7 @@ export const CreatorSummary = function (props: IProps) {
         <ul>
           {props.skillSelections.map((skill) => {
             return (
-              <li>
+              <li key={skill.name}>
                 {skill.name} : {skill.skillPoints}
               </li>
             );
@@ -83,7 +83,7 @@ export const CreatorSummary = function (props: IProps) {
           Weapons:
           <ul>
             {props.equipmentSelected.weapons.map((weapon) => {
-              return <li>{weapon.name}</li>;
+              return <li key={weapon.name}>{weapon.name}</li>;
             })}
           </ul>
         </div>
@@ -91,7 +91,7 @@ export const CreatorSummary = function (props: IProps) {
           Armours:
           <ul>
             {props.equipmentSelected.armours.map((armour) => {
-              return <li>{armour.name}</li>;
+              return <li key={armour.name}>{armour.name}</li>;
             })}
           </ul>
         </div>
@@ -99,7 +99,7 @@ export const CreatorSummary = function (props: IProps) {
           Gears:
           <ul>
             {props.equipmentSelected.gears.map((gear) => {
-              return <li>{gear.name}</li>;
+              return <li key={gear.name}>{gear.name}</li>;
             })}
           </ul>
         </div>
@@ -107,7 +107,7 @@ export const CreatorSummary = function (props: IProps) {
           Augmentations:
           <ul>
             {props.equipmentSelected.augmentations.map((augmentation) => {
-              return <li>{augmentation.name}</li>;
+              return <li key={augmentation.name}>{augmentation.name}</li>;
             })}
           </ul>
         </div>
@@ -115,7 +115,7 @@ export const CreatorSummary = function (props: IProps) {
           Vehicles/Drones:
           <ul>
             {props.equipmentSelected.vehicles.map((vehicle) => {
-              return <li>{vehicle.name}</li>;
+              return <li key={vehicle.name}>{vehicle.name}</li>;
             })}
           </ul>
         </div>

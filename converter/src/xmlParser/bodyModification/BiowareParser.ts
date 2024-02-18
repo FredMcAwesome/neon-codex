@@ -224,8 +224,14 @@ function convertBioware(bioware: BiowareXmlType) {
         : [bioware.pairinclude.name]
       : undefined;
 
-  const requirements = convertRequirements(bioware.required);
-  const forbidden = convertRequirements(bioware.forbidden);
+  let requirements;
+  if (bioware.required) {
+    requirements = convertRequirements(bioware.required);
+  }
+  let forbidden;
+  if (bioware.forbidden) {
+    forbidden = convertRequirements(bioware.forbidden);
+  }
   const { allowedGearList, allowedGearCategories } = convertAllowGear(
     bioware.allowgear
   );

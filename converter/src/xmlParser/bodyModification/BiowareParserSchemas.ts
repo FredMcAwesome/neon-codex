@@ -1,5 +1,8 @@
 import { z as zod } from "zod";
-import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
+import {
+  BonusXmlSchema,
+  type BonusXmlType,
+} from "../common/BonusParserSchemas.js";
 import {
   SourceXmlSchema,
   StringOrNumberSchema,
@@ -7,7 +10,10 @@ import {
   AugmentationXmlLimitSchema,
   xmlAllowGearSchema,
 } from "../common/ParserCommonDefines.js";
-import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
+import {
+  RequiredXmlSchema,
+  type RequiredXmlType,
+} from "../common/RequiredParserSchemas.js";
 
 export enum biowareXmlCategoryEnum {
   Basic = "Basic",
@@ -28,7 +34,7 @@ export enum biowareXmlCategoryEnum {
   ComplimentaryGenetics = "Complimentary Genetics",
 }
 
-const BiowareXmlSchema = zod
+const BiowareSubBonusXmlSchema = zod
   .object({
     id: zod.string(),
     name: zod.string(),
@@ -68,10 +74,6 @@ const BiowareXmlSchema = zod
     blocksmounts: zod.optional(zod.string()),
     // Select left or right used for example, in hand replacement
     selectside: zod.optional(zod.literal("")),
-    // Bonus applied by bioware
-    bonus: zod.optional(BonusXmlSchema),
-    // Bonus applied when 2 are equipped e.g. 2 feet = different run speed
-    pairbonus: zod.optional(BonusXmlSchema),
     // pairbonus applies when there is 2 of this or 1 of this and 1 of
     // the bioware here
     pairinclude: zod.optional(
@@ -81,10 +83,6 @@ const BiowareXmlSchema = zod
         })
         .strict()
     ),
-    // Required
-    required: zod.optional(RequiredXmlSchema),
-    // Forbidden
-    forbidden: zod.optional(RequiredXmlSchema),
     // Allow certain gear categories
     // used for example, to allow chemical release from a gland
     allowgear: zod.optional(xmlAllowGearSchema),
@@ -108,6 +106,26 @@ const BiowareXmlSchema = zod
     page: zod.number(),
   })
   .strict();
-export type BiowareXmlType = zod.infer<typeof BiowareXmlSchema>;
+
+type BiowareSubBonusXmlType = zod.infer<typeof BiowareSubBonusXmlSchema>;
+
+// Need to split up type/annotate schema to avoid TS7056 error
+export type BiowareXmlType = BiowareSubBonusXmlType & {
+  bonus?: BonusXmlType | undefined;
+  pairbonus?: BonusXmlType | undefined;
+  required?: RequiredXmlType | undefined;
+  forbidden?: RequiredXmlType | undefined;
+};
+const BiowareXmlSchema: zod.ZodSchema<BiowareXmlType> =
+  BiowareSubBonusXmlSchema.extend({
+    // Bonus applied by Cyberware
+    bonus: zod.optional(BonusXmlSchema),
+    // // Bonus applied when 2 are equipped e.g. 2 feet = different run speed
+    pairbonus: zod.optional(BonusXmlSchema),
+    // Required
+    required: zod.optional(RequiredXmlSchema),
+    // Forbidden
+    forbidden: zod.optional(RequiredXmlSchema),
+  });
 export const BiowareListXmlSchema = zod.array(BiowareXmlSchema);
 export type BiowareListXmlType = zod.infer<typeof BiowareListXmlSchema>;

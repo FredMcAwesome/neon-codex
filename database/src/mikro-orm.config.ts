@@ -80,6 +80,7 @@ import {
   PASSWORD,
 } from "./utils/databaseConfig.js";
 import { Characters } from "./models/rpg/characters/characterModel.js";
+import { Qualities } from "./models/rpg/abilities/qualityModel.js";
 
 const dbOptions: Options = {
   entities: [
@@ -88,8 +89,8 @@ const dbOptions: Options = {
     Comments,
 
     Skills,
-
     CustomisedSkills,
+    Qualities,
 
     WeaponRanges,
 

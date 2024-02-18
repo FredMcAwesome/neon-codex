@@ -82,7 +82,7 @@ const SkillXmlSchema = zod
     page: zod.number(),
   })
   .strict();
-const SkillListXmlSchema = zod.array(SkillXmlSchema);
+export const SkillListXmlSchema = zod.array(SkillXmlSchema);
 type SkillXmlType = zod.infer<typeof SkillXmlSchema>;
 
 export function ParseSkills() {

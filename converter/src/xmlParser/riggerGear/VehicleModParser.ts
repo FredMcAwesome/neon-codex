@@ -211,8 +211,10 @@ const convertVehicleMod = function (vehicleMod: VehicleModXmlType) {
     }
     replaceAmmo = ammoSemantics(match).eval();
   }
-
-  const requirements = convertRequirements(vehicleMod.required);
+  let requirements;
+  if (vehicleMod.required) {
+    requirements = convertRequirements(vehicleMod.required);
+  }
   let match = Slot.match(vehicleMod.slots.toString());
   if (match.failed()) {
     assert(false, match.message);

@@ -27,7 +27,7 @@ const SelectSkillSchema = zod.discriminatedUnion("selectSkill", [
 ]);
 export type SelectSkillType = zod.infer<typeof SelectSkillSchema>;
 
-const QualityListSchema = zod.array(
+const BonusQualityListSchema = zod.array(
   zod
     .object({
       name: zod.string(),
@@ -35,51 +35,79 @@ const QualityListSchema = zod.array(
     })
     .strict()
 );
-export type QualityListType = zod.infer<typeof QualityListSchema>;
+export type BonusQualityListType = zod.infer<typeof BonusQualityListSchema>;
 
 const AddictionResistanceSchema = zod
   .object({
     physiological: zod.optional(
       zod
         .object({
-          initialTest: zod.union([
-            zod.number(),
-            zod
-              .object({
-                option: zod.literal("Rating"),
-              })
-              .strict(),
-          ]),
-          progressingTest: zod.union([
-            zod.number(),
-            zod
-              .object({
-                option: zod.literal("Rating"),
-              })
-              .strict(),
-          ]),
+          initialTest: zod.array(
+            zod.union([
+              zod.number(),
+              zod
+                .object({
+                  option: zod.literal("Rating"),
+                })
+                .strict(),
+              zod
+                .object({
+                  operator: zod.nativeEnum(mathOperatorEnum),
+                })
+                .strict(),
+            ])
+          ),
+          progressingTest: zod.array(
+            zod.union([
+              zod.number(),
+              zod
+                .object({
+                  option: zod.literal("Rating"),
+                })
+                .strict(),
+              zod
+                .object({
+                  operator: zod.nativeEnum(mathOperatorEnum),
+                })
+                .strict(),
+            ])
+          ),
         })
         .strict()
     ),
     psychological: zod.optional(
       zod
         .object({
-          initialTest: zod.union([
-            zod.number(),
-            zod
-              .object({
-                option: zod.literal("Rating"),
-              })
-              .strict(),
-          ]),
-          progressingTest: zod.union([
-            zod.number(),
-            zod
-              .object({
-                option: zod.literal("Rating"),
-              })
-              .strict(),
-          ]),
+          initialTest: zod.array(
+            zod.union([
+              zod.number(),
+              zod
+                .object({
+                  option: zod.literal("Rating"),
+                })
+                .strict(),
+              zod
+                .object({
+                  operator: zod.nativeEnum(mathOperatorEnum),
+                })
+                .strict(),
+            ])
+          ),
+          progressingTest: zod.array(
+            zod.union([
+              zod.number(),
+              zod
+                .object({
+                  option: zod.literal("Rating"),
+                })
+                .strict(),
+              zod
+                .object({
+                  operator: zod.nativeEnum(mathOperatorEnum),
+                })
+                .strict(),
+            ])
+          ),
         })
         .strict()
     ),
@@ -111,14 +139,21 @@ export const BonusSchema = zod
         zod
           .object({
             category: zod.string(),
-            bonus: zod.union([
-              zod.number(),
-              zod
-                .object({
-                  option: zod.literal("Rating"),
-                })
-                .strict(),
-            ]),
+            bonus: zod.array(
+              zod.union([
+                zod.number(),
+                zod
+                  .object({
+                    option: zod.literal("Rating"),
+                  })
+                  .strict(),
+                zod
+                  .object({
+                    operator: zod.nativeEnum(mathOperatorEnum),
+                  })
+                  .strict(),
+              ])
+            ),
           })
           .strict()
       )
@@ -128,14 +163,21 @@ export const BonusSchema = zod
         zod
           .object({
             group: zod.string(),
-            bonus: zod.union([
-              zod.number(),
-              zod
-                .object({
-                  option: zod.literal("Rating"),
-                })
-                .strict(),
-            ]),
+            bonus: zod.array(
+              zod.union([
+                zod.number(),
+                zod
+                  .object({
+                    option: zod.literal("Rating"),
+                  })
+                  .strict(),
+                zod
+                  .object({
+                    operator: zod.nativeEnum(mathOperatorEnum),
+                  })
+                  .strict(),
+              ])
+            ),
           })
           .strict()
       )
@@ -251,7 +293,10 @@ export const BonusSchema = zod
     spellCategory: zod.optional(
       zod
         .object({
-          limitCategory: zod.nativeEnum(spellCategoryEnum),
+          limitCategory: zod.union([
+            zod.nativeEnum(spellCategoryEnum),
+            zod.object({ option: zod.literal("SelectCategory") }).strict(),
+          ]),
           bonus: zod.union([
             zod.number(),
             zod
@@ -472,7 +517,7 @@ export const BonusSchema = zod
       ])
     ),
     // TODO: needs to be linked to a quality
-    qualities: zod.optional(QualityListSchema),
+    qualities: zod.optional(BonusQualityListSchema),
     disableQualities: zod.optional(
       zod.array(
         zod
@@ -587,7 +632,16 @@ export const BonusSchema = zod
     walkSpeedPercentageModifier: zod.optional(zod.number()),
     runSpeedPercentageModifier: zod.optional(zod.number()),
     sprintSpeedPercentageModifier: zod.optional(zod.number()),
-    lifestyleCostModifier: zod.optional(zod.number()),
+    lifestyleCostModifier: zod.optional(
+      zod.array(
+        zod
+          .object({
+            lifestyle: zod.optional(zod.string()),
+            cost: zod.number(),
+          })
+          .strict()
+      )
+    ),
     stunHealing: zod.optional(
       zod.union([
         zod.number(),
@@ -653,35 +707,298 @@ export const BonusSchema = zod
           .strict(),
       ])
     ),
-    dodge: zod.optional(zod.number()),
+    dodge: zod.optional(
+      zod.array(
+        zod.union([
+          zod.number(),
+          zod
+            .object({
+              option: zod.literal("Rating"),
+            })
+            .strict(),
+          zod
+            .object({
+              operator: zod.nativeEnum(mathOperatorEnum),
+            })
+            .strict(),
+        ])
+      )
+    ),
     unarmedReach: zod.optional(zod.number()),
     addictionResistance: zod.optional(AddictionResistanceSchema),
     composure: zod.optional(zod.number()),
-    judgeIntentionsDefense: zod.optional(zod.number()),
-    memory: zod.optional(
-      zod.union([
-        zod.number(),
-        zod
-          .object({
-            option: zod.literal("Rating"),
-          })
-          .strict(),
-      ])
+    judgeIntentionsDefense: zod.optional(
+      zod.array(
+        zod.union([
+          zod.number(),
+          zod
+            .object({
+              option: zod.literal("Rating"),
+            })
+            .strict(),
+          zod
+            .object({
+              operator: zod.nativeEnum(mathOperatorEnum),
+            })
+            .strict(),
+        ])
+      )
     ),
-    drainResist: zod.optional(zod.number()),
-    fadingResist: zod.optional(zod.number()),
-    directManaResist: zod.optional(zod.number()),
-    detectionResist: zod.optional(zod.number()),
-    manaIllusionResist: zod.optional(zod.number()),
-    mentalManipulationResist: zod.optional(zod.number()),
-    decreaseBodyResist: zod.optional(zod.number()),
-    decreaseAgilityResist: zod.optional(zod.number()),
-    decreaseReasonanceResist: zod.optional(zod.number()),
-    decreaseStrengthResist: zod.optional(zod.number()),
-    decreaseCharismaResist: zod.optional(zod.number()),
-    decreaseIntuitionResist: zod.optional(zod.number()),
-    decreaseLogicResist: zod.optional(zod.number()),
-    decreaseWillpowerResist: zod.optional(zod.number()),
+    memory: zod.optional(
+      zod.array(
+        zod.union([
+          zod.number(),
+          zod
+            .object({
+              option: zod.literal("Rating"),
+            })
+            .strict(),
+          zod
+            .object({
+              operator: zod.nativeEnum(mathOperatorEnum),
+            })
+            .strict(),
+        ])
+      )
+    ),
+    drainResist: zod.optional(
+      zod.array(
+        zod.union([
+          zod.number(),
+          zod
+            .object({
+              option: zod.literal("Rating"),
+            })
+            .strict(),
+          zod
+            .object({
+              operator: zod.nativeEnum(mathOperatorEnum),
+            })
+            .strict(),
+        ])
+      )
+    ),
+    fadingResist: zod.optional(
+      zod.array(
+        zod.union([
+          zod.number(),
+          zod
+            .object({
+              option: zod.literal("Rating"),
+            })
+            .strict(),
+          zod
+            .object({
+              operator: zod.nativeEnum(mathOperatorEnum),
+            })
+            .strict(),
+        ])
+      )
+    ),
+    directManaResist: zod.optional(
+      zod.array(
+        zod.union([
+          zod.number(),
+          zod
+            .object({
+              option: zod.literal("Rating"),
+            })
+            .strict(),
+          zod
+            .object({
+              operator: zod.nativeEnum(mathOperatorEnum),
+            })
+            .strict(),
+        ])
+      )
+    ),
+    detectionResist: zod.optional(
+      zod.array(
+        zod.union([
+          zod.number(),
+          zod
+            .object({
+              option: zod.literal("Rating"),
+            })
+            .strict(),
+          zod
+            .object({
+              operator: zod.nativeEnum(mathOperatorEnum),
+            })
+            .strict(),
+        ])
+      )
+    ),
+    manaIllusionResist: zod.optional(
+      zod.array(
+        zod.union([
+          zod.number(),
+          zod
+            .object({
+              option: zod.literal("Rating"),
+            })
+            .strict(),
+          zod
+            .object({
+              operator: zod.nativeEnum(mathOperatorEnum),
+            })
+            .strict(),
+        ])
+      )
+    ),
+    mentalManipulationResist: zod.optional(
+      zod.array(
+        zod.union([
+          zod.number(),
+          zod
+            .object({
+              option: zod.literal("Rating"),
+            })
+            .strict(),
+          zod
+            .object({
+              operator: zod.nativeEnum(mathOperatorEnum),
+            })
+            .strict(),
+        ])
+      )
+    ),
+    decreaseBodyResist: zod.optional(
+      zod.array(
+        zod.union([
+          zod.number(),
+          zod
+            .object({
+              option: zod.literal("Rating"),
+            })
+            .strict(),
+          zod
+            .object({
+              operator: zod.nativeEnum(mathOperatorEnum),
+            })
+            .strict(),
+        ])
+      )
+    ),
+    decreaseAgilityResist: zod.optional(
+      zod.array(
+        zod.union([
+          zod.number(),
+          zod
+            .object({
+              option: zod.literal("Rating"),
+            })
+            .strict(),
+          zod
+            .object({
+              operator: zod.nativeEnum(mathOperatorEnum),
+            })
+            .strict(),
+        ])
+      )
+    ),
+    decreaseReasonanceResist: zod.optional(
+      zod.array(
+        zod.union([
+          zod.number(),
+          zod
+            .object({
+              option: zod.literal("Rating"),
+            })
+            .strict(),
+          zod
+            .object({
+              operator: zod.nativeEnum(mathOperatorEnum),
+            })
+            .strict(),
+        ])
+      )
+    ),
+    decreaseStrengthResist: zod.optional(
+      zod.array(
+        zod.union([
+          zod.number(),
+          zod
+            .object({
+              option: zod.literal("Rating"),
+            })
+            .strict(),
+          zod
+            .object({
+              operator: zod.nativeEnum(mathOperatorEnum),
+            })
+            .strict(),
+        ])
+      )
+    ),
+    decreaseCharismaResist: zod.optional(
+      zod.array(
+        zod.union([
+          zod.number(),
+          zod
+            .object({
+              option: zod.literal("Rating"),
+            })
+            .strict(),
+          zod
+            .object({
+              operator: zod.nativeEnum(mathOperatorEnum),
+            })
+            .strict(),
+        ])
+      )
+    ),
+    decreaseIntuitionResist: zod.optional(
+      zod.array(
+        zod.union([
+          zod.number(),
+          zod
+            .object({
+              option: zod.literal("Rating"),
+            })
+            .strict(),
+          zod
+            .object({
+              operator: zod.nativeEnum(mathOperatorEnum),
+            })
+            .strict(),
+        ])
+      )
+    ),
+    decreaseLogicResist: zod.optional(
+      zod.array(
+        zod.union([
+          zod.number(),
+          zod
+            .object({
+              option: zod.literal("Rating"),
+            })
+            .strict(),
+          zod
+            .object({
+              operator: zod.nativeEnum(mathOperatorEnum),
+            })
+            .strict(),
+        ])
+      )
+    ),
+    decreaseWillpowerResist: zod.optional(
+      zod.array(
+        zod.union([
+          zod.number(),
+          zod
+            .object({
+              option: zod.literal("Rating"),
+            })
+            .strict(),
+          zod
+            .object({
+              operator: zod.nativeEnum(mathOperatorEnum),
+            })
+            .strict(),
+        ])
+      )
+    ),
     addLimb: zod.optional(
       zod
         .object({

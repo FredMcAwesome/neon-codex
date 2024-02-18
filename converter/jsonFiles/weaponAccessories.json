@@ -1840,6 +1840,7 @@
     "deploymentRequired": false,
     "specialModification": false,
     "hostWeaponMountsRequired": ["Barrel", "Under"],
+    "hostWeaponRequirements": {},
     "userSelectable": false,
     "availability": {
       "rating": [8],
@@ -1874,6 +1875,7 @@
     "deploymentRequired": false,
     "specialModification": false,
     "hostWeaponMountsRequired": ["Under"],
+    "hostWeaponRequirements": {},
     "userSelectable": false,
     "availability": {
       "rating": [5],

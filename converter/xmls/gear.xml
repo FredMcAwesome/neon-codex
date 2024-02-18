@@ -2115,7 +2115,7 @@
       <addweapon>Grenade: Krime Stinger</addweapon>
     </gear>
     <gear>
-      <id>some_id_here</id>
+      <id>eba4ebc2-f17e-471e-aa1b-4416daba9488</id>
       <name>Ink Pouch</name>
       <category>Custom</category>
       <rating>0</rating>
@@ -8849,7 +8849,7 @@
       <cost>80</cost>
     </gear>
     <gear>
-      <id>some_id_here</id>
+      <id>9764931f-5d2f-4d2f-a3cc-c3858e95abd1</id>
       <name>Plasma Torch</name>
       <category>Breaking and Entering Gear</category>
       <hide />

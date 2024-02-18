@@ -14,6 +14,11 @@ export enum skillCategoryEnum {
   Street = "Street",
 }
 
+export enum qualityCategoryEnum {
+  Positive = "Positive",
+  Negative = "Negative",
+}
+
 export enum attributeTypeEnum {
   Body = "Body",
   Agility = "Agility",
@@ -390,6 +395,8 @@ export enum spellCategoryEnum {
   Illusion = "Illusion",
   Health = "Health",
   Manipulation = "Manipulation",
+  // TODO: these aren't true spell categories
+  // is there a way to split them off?
   Enchantment = "Enchantment",
   Ritual = "Ritual",
 }
@@ -786,4 +793,9 @@ export enum parentGearEnum {
 export enum personaFormEnum {
   Self = "Self",
   Parent = "Parent",
+}
+
+export enum qualityLimitEnum {
+  ArmCountSubOne = "Number of arms - 1",
+  False = "False",
 }

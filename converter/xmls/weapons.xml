@@ -7552,15 +7552,100 @@
       <hide />
       <useskill>Unarmed Combat</useskill>
     </weapon>
+    <!-- These are in naturalweapons in qualities in chummer-->
     <weapon>
       <id>e9dd389a-df19-4b1f-981f-342d23f2e506</id>
-      <name>Bite (Infected)</name>
+      <name>Bite (Infected) +1</name>
       <category>Quality</category>
       <type>Melee</type>
       <conceal>0</conceal>
       <accuracy>Physical</accuracy>
       <reach>-1</reach>
       <damage>({STR}+1)P</damage>
+      <ap>-1</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>0</avail>
+      <cost>0</cost>
+      <source>RF</source>
+      <page>137</page>
+      <allowaccessory>False</allowaccessory>
+      <hide />
+      <useskill>Unarmed Combat</useskill>
+    </weapon>
+    <weapon>
+      <id>b7cc5709-c0f4-4fed-9e8b-c1a7a129e87c</id>
+      <name>Bite (Infected) +2</name>
+      <category>Quality</category>
+      <type>Melee</type>
+      <conceal>0</conceal>
+      <accuracy>Physical</accuracy>
+      <reach>-1</reach>
+      <damage>({STR}+1)P</damage>
+      <ap>-1</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>0</avail>
+      <cost>0</cost>
+      <source>RF</source>
+      <page>137</page>
+      <allowaccessory>False</allowaccessory>
+      <hide />
+      <useskill>Unarmed Combat</useskill>
+    </weapon>
+    <weapon>
+      <id>904c86eb-1d45-4c6b-94e4-191a5eb2ac14</id>
+      <name>Claws (Infected) +1</name>
+      <category>Quality</category>
+      <type>Melee</type>
+      <conceal>0</conceal>
+      <accuracy>Physical</accuracy>
+      <reach>0</reach>
+      <damage>({STR}+2)P</damage>
+      <ap>-1</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>0</avail>
+      <cost>0</cost>
+      <source>RF</source>
+      <page>137</page>
+      <allowaccessory>False</allowaccessory>
+      <hide />
+      <useskill>Unarmed Combat</useskill>
+    </weapon>
+    <weapon>
+      <id>76ec7c7b-56a5-4285-80cf-b1a89e9952b1</id>
+      <name>Claws (Infected) +2</name>
+      <category>Quality</category>
+      <type>Melee</type>
+      <conceal>0</conceal>
+      <accuracy>Physical</accuracy>
+      <reach>0</reach>
+      <damage>({STR}+2)P</damage>
+      <ap>-1</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>0</avail>
+      <cost>0</cost>
+      <source>RF</source>
+      <page>137</page>
+      <allowaccessory>False</allowaccessory>
+      <hide />
+      <useskill>Unarmed Combat</useskill>
+    </weapon>
+    <weapon>
+      <id>1403a1e9-c957-4806-9349-64d3d0835630</id>
+      <name>Claws (Infected) +3</name>
+      <category>Quality</category>
+      <type>Melee</type>
+      <conceal>0</conceal>
+      <accuracy>Physical</accuracy>
+      <reach>0</reach>
+      <damage>({STR}+2)P</damage>
       <ap>-1</ap>
       <mode>0</mode>
       <rc>0</rc>
@@ -7616,6 +7701,178 @@
       <useskill>Unarmed Combat</useskill>
     </weapon>
     <!--End Region -->
+    <!--End Region -->
+    <!-- Region Howling Shadows -->
+    <weapon>
+      <id>1c335dab-e325-4226-9410-4af610fcf780</id>
+      <name>Dracoform Claws</name>
+      <category>Quality</category>
+      <type>Melee</type>
+      <conceal>0</conceal>
+      <accuracy>Physical</accuracy>
+      <reach>0</reach>
+      <damage>({STR}+1)P</damage>
+      <ap>-1</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>0</avail>
+      <cost>0</cost>
+      <source>HS</source>
+      <page>163</page>
+      <allowaccessory>False</allowaccessory>
+      <hide />
+      <useskill>Unarmed Combat</useskill>
+    </weapon>
+    <weapon>
+      <id>25534a08-2c90-40d2-99b4-b6ebca595e98</id>
+      <name>Dracoform Horns</name>
+      <category>Quality</category>
+      <type>Melee</type>
+      <conceal>0</conceal>
+      <accuracy>Physical</accuracy>
+      <reach>0</reach>
+      <damage>({STR}+2)P</damage>
+      <ap>-1</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>0</avail>
+      <cost>0</cost>
+      <source>HS</source>
+      <page>163</page>
+      <allowaccessory>False</allowaccessory>
+      <hide />
+      <useskill>Unarmed Combat</useskill>
+    </weapon>
+    <weapon>
+      <id>42a36ac2-12f0-4d33-88cf-909ff40adf35</id>
+      <name>Dracoform Tail</name>
+      <category>Quality</category>
+      <type>Melee</type>
+      <conceal>0</conceal>
+      <accuracy>Physical</accuracy>
+      <reach>1</reach>
+      <damage>({STR}+3)P</damage>
+      <ap>-1</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>0</avail>
+      <cost>0</cost>
+      <source>HS</source>
+      <page>163</page>
+      <allowaccessory>False</allowaccessory>
+      <hide />
+      <useskill>Unarmed Combat</useskill>
+    </weapon>
+    <weapon>
+      <id>d25b7b81-c057-419e-a479-564ead58d007</id>
+      <name>Dracoform Fangs</name>
+      <category>Quality</category>
+      <type>Melee</type>
+      <conceal>0</conceal>
+      <accuracy>Physical</accuracy>
+      <reach>0</reach>
+      <damage>({STR}+1)P</damage>
+      <ap>-2</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>0</avail>
+      <cost>0</cost>
+      <source>HS</source>
+      <page>163</page>
+      <allowaccessory>False</allowaccessory>
+      <hide />
+      <useskill>Unarmed Combat</useskill>
+    </weapon>
+    <!--End Region -->
+    <!-- Region Forbidden Arcana -->
+    <weapon>
+      <id>7ebb2b2e-651d-461e-8944-e0a8910b58a3</id>
+      <name>Crystal Jaw</name>
+      <category>Quality</category>
+      <type>Melee</type>
+      <conceal>0</conceal>
+      <accuracy>Physical</accuracy>
+      <reach>-1</reach>
+      <damage>({STR}+2)P</damage>
+      <ap>-4</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>0</avail>
+      <cost>0</cost>
+      <source>FA</source>
+      <page>133</page>
+      <allowaccessory>False</allowaccessory>
+      <hide />
+      <useskill>Unarmed Combat</useskill>
+    </weapon>
+    <weapon>
+      <id>71f4dea8-7f45-4de7-82b5-66e9ae79576e</id>
+      <name>Crystalline Blade</name>
+      <category>Quality</category>
+      <type>Melee</type>
+      <conceal>0</conceal>
+      <accuracy>Physical</accuracy>
+      <reach>1</reach>
+      <damage>({STR}+3)P</damage>
+      <ap>-2</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>0</avail>
+      <cost>0</cost>
+      <source>FA</source>
+      <page>133</page>
+      <allowaccessory>False</allowaccessory>
+      <hide />
+      <useskill>Unarmed Combat</useskill>
+    </weapon>
+    <weapon>
+      <id>03f9df98-d2b0-4120-bcad-4934b630c022</id>
+      <name>Crystal Claw</name>
+      <category>Quality</category>
+      <type>Melee</type>
+      <conceal>0</conceal>
+      <accuracy>Physical</accuracy>
+      <reach>0</reach>
+      <damage>({STR}+1)P</damage>
+      <ap>-1</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>0</avail>
+      <cost>0</cost>
+      <source>FA</source>
+      <page>133</page>
+      <allowaccessory>False</allowaccessory>
+      <hide />
+      <useskill>Unarmed Combat</useskill>
+    </weapon>
+    <weapon>
+      <id>3d6df016-7e88-4c8f-827b-1bfe6d77f4cd</id>
+      <name>Crystalline Shards</name>
+      <category>Quality</category>
+      <type>Melee</type>
+      <conceal>0</conceal>
+      <accuracy>Physical</accuracy>
+      <reach>0</reach>
+      <damage>({STR}+3)P</damage>
+      <ap>4</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>0</avail>
+      <cost>0</cost>
+      <source>FA</source>
+      <page>133</page>
+      <allowaccessory>False</allowaccessory>
+      <hide />
+      <useskill>Throwing Weapons</useskill>
+    </weapon>
     <!--End Region -->
     <!-- Region Street Grimoire -->
     <weapon>
@@ -13189,7 +13446,7 @@
       <spec>Semi-Automatics</spec>
     </weapon>
     <weapon>
-      <id>some_id_here</id>
+      <id>f42e52ce-9bcd-4e24-8b98-2ec695bd5af2</id>
       <name>Bayonet</name>
       <category>Underbarrel Weapons</category>
       <type>Melee</type>
@@ -13210,7 +13467,7 @@
       <useskill>Blades</useskill>
     </weapon>
     <weapon>
-      <id>some_id_here</id>
+      <id>5d845f48-41dc-4944-9d19-f9ab86bcfd94</id>
       <name>Retractable Bayonet</name>
       <category>Underbarrel Weapons</category>
       <type>Melee</type>
@@ -15183,7 +15440,7 @@
       <requireammo>microtorpedo</requireammo>
     </weapon>
     <weapon>
-      <id>some_id_here</id>
+      <id>c16aff73-6209-4cb0-8188-1ba6f1e2ee8f</id>
       <name>Ink Pouch</name>
       <category>Gear</category>
       <type>Ranged</type>

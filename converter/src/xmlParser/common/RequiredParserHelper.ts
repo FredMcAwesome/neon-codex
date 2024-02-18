@@ -23,11 +23,8 @@ import type {
 // This function does NOT handle requirements properly
 // TODO: put in lots of work here, after seeing what frontend needs
 export const convertRequirements = function (
-  xmlRequirements: RequiredXmlType | undefined
-): RequirementsType | undefined {
-  if (typeof xmlRequirements === "undefined") {
-    return undefined;
-  }
+  xmlRequirements: RequiredXmlType
+): RequirementsType {
   // console.log("Requirements: " + JSON.stringify(xmlRequirements));
   let requirements: RequirementsType = {};
   // if (Object.hasOwn(xmlRequirements, "weapondetails")){  //typescript doesn't yet support the type narrowing for this
@@ -80,7 +77,8 @@ export const convertRequirements = function (
   }
 
   if (Object.keys(requirements).length === 0) {
-    return undefined;
+    // TODO: enable this assert
+    // assert(false, "Requirements is empty!")
   }
   return requirements;
 };

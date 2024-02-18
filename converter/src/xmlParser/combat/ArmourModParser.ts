@@ -184,7 +184,10 @@ function convertArmourMod(armourMod: ArmourModXmlType) {
   const capacityCost = capacityArmourModificationSemantics(match).eval();
   // console.log(`Capacity: ${capacity}`);
 
-  const requirements = convertRequirements(armourMod.required);
+  let requirements;
+  if (armourMod.required) {
+    requirements = convertRequirements(armourMod.required);
+  }
 
   match = Availability.match(armourMod.avail.toString());
   if (match.failed()) {

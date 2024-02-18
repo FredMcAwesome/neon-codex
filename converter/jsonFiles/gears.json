@@ -6502,6 +6502,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -6519,6 +6520,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "availability": {
       "rating": [4],
       "restriction": "F"
@@ -7003,6 +7005,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifyAttack": {
       "option": "Rating"
     },
@@ -7060,6 +7063,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifySleaze": {
       "option": "Rating"
     },
@@ -7107,6 +7111,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifyDataProcessing": {
       "option": "Rating"
     },
@@ -7154,6 +7159,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifyFirewall": {
       "option": "Rating"
     },
@@ -7227,6 +7233,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifyFirewall": {
       "option": "Rating"
     },
@@ -12576,6 +12583,7 @@
     "bonus": {
       "linkLicense": true
     },
+    "requirements": {},
     "renameCustomLabel": true,
     "availability": {
       "rating": [
@@ -12622,6 +12630,7 @@
     "bonus": {
       "enterName": true
     },
+    "forbidden": {},
     "renameCustomLabel": true,
     "availability": {
       "rating": [
@@ -13514,6 +13523,7 @@
       "capacityCost": [2]
     },
     "requireParent": true,
+    "forbidden": {},
     "availability": {
       "rating": [4],
       "restriction": ""
@@ -13553,6 +13563,7 @@
     "armourCapacityInformation": {
       "capacityCost": [1]
     },
+    "requirements": {},
     "availability": {
       "rating": [8],
       "restriction": "R",
@@ -13574,6 +13585,7 @@
     "armourCapacityInformation": {
       "capacityCost": [1]
     },
+    "requirements": {},
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -13729,6 +13741,7 @@
     "armourCapacityInformation": {
       "capacityCost": [1]
     },
+    "requirements": {},
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -13760,6 +13773,7 @@
       ],
       "capacityCost": [1]
     },
+    "requirements": {},
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -13779,6 +13793,7 @@
     "armourCapacityInformation": {
       "capacityCost": [1]
     },
+    "requirements": {},
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -13810,6 +13825,7 @@
       ],
       "capacityCost": [1]
     },
+    "requirements": {},
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -13829,6 +13845,7 @@
     "armourCapacityInformation": {
       "capacityCost": [1]
     },
+    "requirements": {},
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -13860,6 +13877,7 @@
       ],
       "capacityCost": [1]
     },
+    "requirements": {},
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -13879,6 +13897,7 @@
     "armourCapacityInformation": {
       "capacityCost": [1]
     },
+    "requirements": {},
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -13898,6 +13917,7 @@
     "armourCapacityInformation": {
       "capacityCost": [1]
     },
+    "requirements": {},
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -13917,6 +13937,7 @@
     "armourCapacityInformation": {
       "capacityCost": [1]
     },
+    "requirements": {},
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -13936,6 +13957,7 @@
     "armourCapacityInformation": {
       "capacityCost": [1]
     },
+    "requirements": {},
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -13967,6 +13989,7 @@
       ],
       "capacityCost": [1]
     },
+    "requirements": {},
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -13986,6 +14009,7 @@
     "armourCapacityInformation": {
       "capacityCost": [1]
     },
+    "requirements": {},
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -14005,6 +14029,7 @@
     "armourCapacityInformation": {
       "capacityCost": [1]
     },
+    "requirements": {},
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -14024,6 +14049,7 @@
     "armourCapacityInformation": {
       "capacityCost": [1]
     },
+    "requirements": {},
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -14043,6 +14069,7 @@
     "armourCapacityInformation": {
       "capacityCost": [1]
     },
+    "requirements": {},
     "availability": {
       "rating": [8],
       "restriction": ""
@@ -14063,6 +14090,7 @@
     "armourCapacityInformation": {
       "capacityCost": [1]
     },
+    "requirements": {},
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -14184,6 +14212,7 @@
     "armourCapacityInformation": {
       "capacityCost": [1]
     },
+    "requirements": {},
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -18111,6 +18140,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -18155,6 +18185,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -18199,6 +18230,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -18243,6 +18275,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -18287,6 +18320,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -18331,6 +18365,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -18375,6 +18410,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -18416,6 +18452,7 @@
     "description": "",
     "category": "Foci",
     "maxRating": 18,
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -18460,6 +18497,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -18504,6 +18542,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -18554,6 +18593,7 @@
         }
       }
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -18598,6 +18638,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -18642,6 +18683,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -18686,6 +18728,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -18736,6 +18779,7 @@
         }
       }
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -18780,6 +18824,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -18824,6 +18869,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -18868,6 +18914,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -18918,6 +18965,7 @@
         }
       }
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -18962,6 +19010,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -19006,6 +19055,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -19050,6 +19100,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -19100,6 +19151,7 @@
         }
       }
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -19144,6 +19196,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -19188,6 +19241,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -19232,6 +19286,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -19282,6 +19337,7 @@
         }
       }
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -19326,6 +19382,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -19367,6 +19424,7 @@
     "description": "",
     "category": "Foci",
     "maxRating": 18,
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -19408,6 +19466,7 @@
     "description": "",
     "category": "Foci",
     "maxRating": 18,
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -19449,6 +19508,7 @@
     "description": "",
     "category": "Foci",
     "maxRating": 18,
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -19498,6 +19558,7 @@
         }
       }
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -19542,6 +19603,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -19586,6 +19648,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -19630,6 +19693,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -19674,6 +19738,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -19718,6 +19783,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -19762,6 +19828,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -19806,6 +19873,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -19847,6 +19915,7 @@
     "description": "",
     "category": "Foci",
     "maxRating": 18,
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -19891,6 +19960,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -19935,6 +20005,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -19985,6 +20056,7 @@
         }
       }
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -20029,6 +20101,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -20073,6 +20146,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -20117,6 +20191,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -20167,6 +20242,7 @@
         }
       }
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -20211,6 +20287,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -20255,6 +20332,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -20299,6 +20377,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -20349,6 +20428,7 @@
         }
       }
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -20393,6 +20473,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -20437,6 +20518,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -20481,6 +20563,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -20531,6 +20614,7 @@
         }
       }
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -20575,6 +20659,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -20619,6 +20704,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -20663,6 +20749,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -20713,6 +20800,7 @@
         }
       }
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -20757,6 +20845,7 @@
     "bonus": {
       "linkTradition": true
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -20798,6 +20887,7 @@
     "description": "",
     "category": "Foci",
     "maxRating": 18,
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -20839,6 +20929,7 @@
     "description": "",
     "category": "Foci",
     "maxRating": 18,
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -20880,6 +20971,7 @@
     "description": "",
     "category": "Foci",
     "maxRating": 18,
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -20929,6 +21021,7 @@
         }
       }
     },
+    "requirements": {},
     "availability": {
       "rating": [
         {
@@ -25258,6 +25351,7 @@
     "capacityInformation": {
       "capacity": [0]
     },
+    "requirements": {},
     "requireParent": true,
     "availability": {
       "rating": [0],
@@ -25287,6 +25381,7 @@
     "capacityInformation": {
       "capacity": [0]
     },
+    "requirements": {},
     "requireParent": true,
     "availability": {
       "rating": [0],
@@ -25308,6 +25403,7 @@
     "capacityInformation": {
       "capacity": [0]
     },
+    "requirements": {},
     "requireParent": true,
     "availability": {
       "rating": [0],
@@ -25337,6 +25433,7 @@
     "armourCapacityInformation": {
       "capacityCost": [4]
     },
+    "requirements": {},
     "requireParent": true,
     "availability": {
       "rating": [2],
@@ -25354,6 +25451,7 @@
     "armourCapacityInformation": {
       "capacityCost": [3]
     },
+    "requirements": {},
     "requireParent": true,
     "availability": {
       "rating": [2],
@@ -25371,6 +25469,7 @@
     "armourCapacityInformation": {
       "capacityCost": [4]
     },
+    "requirements": {},
     "requireParent": true,
     "availability": {
       "rating": [4],
@@ -25388,6 +25487,7 @@
     "armourCapacityInformation": {
       "capacityCost": [4]
     },
+    "requirements": {},
     "requireParent": true,
     "availability": {
       "rating": [6],
@@ -25408,6 +25508,7 @@
     "armourCapacityInformation": {
       "capacityCost": [1]
     },
+    "requirements": {},
     "requireParent": true,
     "availability": {
       "rating": [0],
@@ -25426,6 +25527,7 @@
     "armourCapacityInformation": {
       "capacityCost": [6]
     },
+    "requirements": {},
     "requireParent": true,
     "availability": {
       "rating": [2],
@@ -25476,6 +25578,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifyAttack": {
       "option": "Rating"
     },
@@ -25538,6 +25641,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifySleaze": {
       "option": "Rating"
     },
@@ -25600,6 +25704,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "availability": {
       "rating": [8],
       "restriction": "R"
@@ -25620,6 +25725,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "availability": {
       "rating": [6],
       "restriction": "R"
@@ -25637,6 +25743,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "availability": {
       "rating": [3],
       "restriction": ""
@@ -25667,6 +25774,7 @@
     "armourCapacityInformation": {
       "capacityCost": [0]
     },
+    "requirements": {},
     "availability": {
       "rating": [6],
       "restriction": ""
@@ -25695,6 +25803,7 @@
     "bonus": {
       "enterName": true
     },
+    "requirements": {},
     "renameCustomLabel": true,
     "availability": {
       "rating": [2],
@@ -25721,6 +25830,7 @@
     "description": "",
     "category": "Commlink/Cyberdeck Form Factors",
     "maxRating": 0,
+    "requirements": {},
     "availability": {
       "rating": [4],
       "restriction": "R",
@@ -25747,6 +25857,7 @@
     "description": "",
     "category": "Commlink/Cyberdeck Form Factors",
     "maxRating": 0,
+    "requirements": {},
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -25763,6 +25874,7 @@
     "bonus": {
       "enterName": true
     },
+    "requirements": {},
     "renameCustomLabel": true,
     "availability": {
       "rating": [3],
@@ -25789,6 +25901,7 @@
     "description": "",
     "category": "Commlink/Cyberdeck Form Factors",
     "maxRating": 0,
+    "requirements": {},
     "availability": {
       "rating": [6],
       "restriction": "R",
@@ -26114,6 +26227,8 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
+    "forbidden": {},
     "modifyAttack": 1,
     "availability": {
       "rating": [0],
@@ -26132,6 +26247,8 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
+    "forbidden": {},
     "modifySleaze": 1,
     "availability": {
       "rating": [0],
@@ -26167,6 +26284,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifySleaze": 1,
     "addMatrixBoxes": -2,
     "availability": {
@@ -26185,6 +26303,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifyAttack": 1,
     "addMatrixBoxes": -2,
     "availability": {
@@ -26203,6 +26322,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifyDataProcessing": 1,
     "addMatrixBoxes": -2,
     "availability": {
@@ -26221,6 +26341,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifyFirewall": 1,
     "addMatrixBoxes": -2,
     "availability": {
@@ -26240,6 +26361,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifySleaze": -1,
     "addMatrixBoxes": 2,
     "availability": {
@@ -26259,6 +26381,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifyAttack": -1,
     "addMatrixBoxes": 2,
     "availability": {
@@ -26278,6 +26401,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifyDataProcessing": -1,
     "addMatrixBoxes": 2,
     "availability": {
@@ -26297,6 +26421,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifyFirewall": -1,
     "addMatrixBoxes": 2,
     "availability": {
@@ -26315,6 +26440,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifyAttack": 1,
     "modifySleaze": -1,
     "availability": {
@@ -26333,6 +26459,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifyAttack": 1,
     "modifyDataProcessing": -1,
     "availability": {
@@ -26351,6 +26478,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifyAttack": 1,
     "modifyFirewall": -1,
     "availability": {
@@ -26369,6 +26497,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifyAttack": -1,
     "modifySleaze": 1,
     "availability": {
@@ -26387,6 +26516,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifySleaze": 1,
     "modifyDataProcessing": -1,
     "availability": {
@@ -26405,6 +26535,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifySleaze": 1,
     "modifyFirewall": -1,
     "availability": {
@@ -26423,6 +26554,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifyAttack": -1,
     "modifyDataProcessing": 1,
     "availability": {
@@ -26441,6 +26573,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifySleaze": -1,
     "modifyDataProcessing": 1,
     "availability": {
@@ -26459,6 +26592,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifyDataProcessing": 1,
     "modifyFirewall": -1,
     "availability": {
@@ -26477,6 +26611,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifyAttack": -1,
     "modifyFirewall": 1,
     "availability": {
@@ -26495,6 +26630,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifySleaze": -1,
     "modifyFirewall": 1,
     "availability": {
@@ -26513,6 +26649,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifyDataProcessing": -1,
     "modifyFirewall": 1,
     "availability": {
@@ -26531,6 +26668,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifyAttributeArray": [1, -1, 0, 0],
     "availability": {
       "rating": [0],
@@ -26548,6 +26686,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifyAttributeArray": [1, 0, -1, 0],
     "availability": {
       "rating": [0],
@@ -26565,6 +26704,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifyAttributeArray": [1, 0, 0, -1],
     "availability": {
       "rating": [0],
@@ -26582,6 +26722,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifyAttributeArray": [-1, 1, 0, 0],
     "availability": {
       "rating": [0],
@@ -26599,6 +26740,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifyAttributeArray": [0, 1, -1, 0],
     "availability": {
       "rating": [0],
@@ -26616,6 +26758,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifyAttributeArray": [0, 1, 0, -1],
     "availability": {
       "rating": [0],
@@ -26633,6 +26776,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifyAttributeArray": [-1, 0, 1, 0],
     "availability": {
       "rating": [0],
@@ -26650,6 +26794,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifyAttributeArray": [0, -1, 1, 0],
     "availability": {
       "rating": [0],
@@ -26667,6 +26812,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifyAttributeArray": [0, 0, 1, -1],
     "availability": {
       "rating": [0],
@@ -26684,6 +26830,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifyAttributeArray": [-1, 0, 0, 1],
     "availability": {
       "rating": [0],
@@ -26701,6 +26848,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifyAttributeArray": [0, -1, 0, 1],
     "availability": {
       "rating": [0],
@@ -26718,6 +26866,7 @@
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
+    "requirements": {},
     "modifyAttributeArray": [0, 0, -1, 1],
     "availability": {
       "rating": [0],
@@ -29781,6 +29930,7 @@
     "description": "",
     "category": "Nanogear",
     "maxRating": 0,
+    "requirements": {},
     "availability": {
       "rating": [3],
       "restriction": ""
@@ -29794,6 +29944,7 @@
     "description": "",
     "category": "Nanogear",
     "maxRating": 0,
+    "requirements": {},
     "availability": {
       "rating": [2],
       "restriction": ""
@@ -29807,6 +29958,7 @@
     "description": "",
     "category": "Nanogear",
     "maxRating": 6,
+    "requirements": {},
     "availability": {
       "rating": [4],
       "restriction": "F",
@@ -29833,6 +29985,7 @@
     "description": "",
     "category": "Nanogear",
     "maxRating": 0,
+    "requirements": {},
     "availability": {
       "rating": [1],
       "restriction": ""
@@ -29846,6 +29999,7 @@
     "description": "",
     "category": "Nanogear",
     "maxRating": 0,
+    "requirements": {},
     "availability": {
       "rating": [2],
       "restriction": ""
@@ -31390,6 +31544,7 @@
     "description": "",
     "category": "Sensors",
     "maxRating": 0,
+    "requirements": {},
     "requireParent": true,
     "availability": {
       "rating": [8],

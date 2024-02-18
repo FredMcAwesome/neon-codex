@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { render } from "@testing-library/react";
 import type { RenderOptions } from "@testing-library/react";
-import type { PropsWithChildren } from "react";
+import type { PropsWithChildren, ReactElement } from "react";
 import "cross-fetch/polyfill";
 import { BrowserRouter } from "react-router-dom";
 
@@ -33,7 +33,7 @@ function RootWrapper({ children }: PropsWithChildren<unknown>): JSX.Element {
 }
 
 export function renderWithProviders(
-  ui: React.ReactElement,
+  ui: ReactElement,
   { ...renderOptions }: ExtendedRenderOptions = {}
 ) {
   // Return an object with the store and all of RTL's query functions
@@ -41,7 +41,7 @@ export function renderWithProviders(
 }
 
 export function rootRender(
-  ui: React.ReactElement,
+  ui: ReactElement,
   { ...renderOptions }: ExtendedRenderOptions = {}
 ) {
   return { ...render(ui, { wrapper: RootWrapper, ...renderOptions }) };

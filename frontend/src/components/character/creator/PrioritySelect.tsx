@@ -4,10 +4,9 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import React, { useState } from "react";
+import { Fragment, useState } from "react";
 import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
-import uniqid from "uniqid";
 import { MagicTypes, priorityOptions } from "./PriorityImports.js";
 import type {
   IMagicInfo,
@@ -34,11 +33,9 @@ const columns = [
     header: "Metatype",
     cell: (info) => {
       const metatypes = info.getValue().map((line) => {
-        return (
-          <li key={uniqid()}>
-            {line.metatype + " (" + line.specialAttributes + ")"}
-          </li>
-        );
+        const metatypeOutput =
+          line.metatype + " (" + line.specialAttributes + ")";
+        return <li key={metatypeOutput}>{metatypeOutput}</li>;
       });
       return <ul>{metatypes}</ul>;
     },
@@ -53,7 +50,7 @@ const columns = [
     cell: (info) => {
       const magics = info.getValue().map((line) => {
         const magicianLine = formatMagic(line);
-        return <li key={uniqid()}>{magicianLine}</li>;
+        return <li key={magicianLine}>{magicianLine}</li>;
       });
       return <ul>{magics}</ul>;
     },
@@ -260,7 +257,7 @@ const PrioritySelect = function (props: IProps) {
   }
 
   return (
-    <React.Fragment>
+    <Fragment>
       <h1>Priority Selection</h1>
       <PrioritiesTable />
       <div>
@@ -364,7 +361,7 @@ const PrioritySelect = function (props: IProps) {
           />
         </div>
       </div>
-    </React.Fragment>
+    </Fragment>
   );
 };
 

@@ -77,6 +77,7 @@
       },
       "unarmedDamageType": "Physical"
     },
+    "forbidden": {},
     "availability": {
       "rating": [
         {
@@ -207,6 +208,7 @@
         "option": "Rating"
       }
     },
+    "forbidden": {},
     "availability": {
       "rating": [
         {
@@ -251,6 +253,7 @@
     "bonus": {
       "physicalLimit": 1
     },
+    "forbidden": {},
     "availability": {
       "rating": [12],
       "restriction": ""
@@ -285,41 +288,53 @@
       "skillCategories": [
         {
           "category": "Academic",
-          "bonus": {
-            "option": "Rating"
-          }
+          "bonus": [
+            {
+              "option": "Rating"
+            }
+          ]
         },
         {
           "category": "Interest",
-          "bonus": {
-            "option": "Rating"
-          }
+          "bonus": [
+            {
+              "option": "Rating"
+            }
+          ]
         },
         {
           "category": "Language",
-          "bonus": {
-            "option": "Rating"
-          }
+          "bonus": [
+            {
+              "option": "Rating"
+            }
+          ]
         },
         {
           "category": "Professional",
-          "bonus": {
-            "option": "Rating"
-          }
+          "bonus": [
+            {
+              "option": "Rating"
+            }
+          ]
         },
         {
           "category": "Street",
-          "bonus": {
-            "option": "Rating"
-          }
+          "bonus": [
+            {
+              "option": "Rating"
+            }
+          ]
         }
       ],
       "mentalLimit": {
         "option": "Rating"
       },
-      "memory": {
-        "option": "Rating"
-      }
+      "memory": [
+        {
+          "option": "Rating"
+        }
+      ]
     },
     "availability": {
       "rating": [
@@ -502,6 +517,7 @@
         }
       }
     },
+    "forbidden": {},
     "availability": {
       "rating": [
         {
@@ -705,7 +721,11 @@
       "maximum": [1]
     },
     "bonus": {
-      "lifestyleCostModifier": 25
+      "lifestyleCostModifier": [
+        {
+          "cost": 25
+        }
+      ]
     },
     "availability": {
       "rating": [20],
@@ -867,9 +887,11 @@
       "skillGroups": [
         {
           "group": "Athletics",
-          "bonus": {
-            "option": "Rating"
-          }
+          "bonus": [
+            {
+              "option": "Rating"
+            }
+          ]
         }
       ]
     },
@@ -930,15 +952,19 @@
       "skillGroups": [
         {
           "group": "Acting",
-          "bonus": {
-            "option": "Rating"
-          }
+          "bonus": [
+            {
+              "option": "Rating"
+            }
+          ]
         },
         {
           "group": "Influence",
-          "bonus": {
-            "option": "Rating"
-          }
+          "bonus": [
+            {
+              "option": "Rating"
+            }
+          ]
         }
       ],
       "socialLimit": [
@@ -1217,6 +1243,7 @@
     "rating": {
       "maximum": [1]
     },
+    "forbidden": {},
     "allowedGearCategories": [
       "Chemicals",
       "Custom Drug",
@@ -1316,6 +1343,7 @@
     "rating": {
       "maximum": [1]
     },
+    "requirements": {},
     "allowedGearCategories": [
       "Chemicals",
       "Custom Drug",
@@ -1364,6 +1392,7 @@
       "toxinContactResist": 2,
       "fatigueResist": -2
     },
+    "requirements": {},
     "availability": {
       "rating": [12],
       "restriction": "R"
@@ -1384,6 +1413,7 @@
     "bonus": {
       "fireArmour": 2
     },
+    "requirements": {},
     "availability": {
       "rating": [4],
       "restriction": ""
@@ -1404,6 +1434,8 @@
     "bonus": {
       "electricityArmour": 2
     },
+    "requirements": {},
+    "forbidden": {},
     "availability": {
       "rating": [8],
       "restriction": ""
@@ -1424,6 +1456,8 @@
     "bonus": {
       "electricityArmour": -2
     },
+    "requirements": {},
+    "forbidden": {},
     "availability": {
       "rating": [8],
       "restriction": ""
@@ -1444,6 +1478,7 @@
     "bonus": {
       "coldArmour": 2
     },
+    "requirements": {},
     "availability": {
       "rating": [4],
       "restriction": ""
@@ -1461,6 +1496,7 @@
     "rating": {
       "maximum": [1]
     },
+    "requirements": {},
     "availability": {
       "rating": [4],
       "restriction": ""
@@ -1481,6 +1517,7 @@
     "bonus": {
       "unarmedReach": 1
     },
+    "requirements": {},
     "availability": {
       "rating": [8],
       "restriction": ""
@@ -1498,6 +1535,7 @@
     "rating": {
       "maximum": [1]
     },
+    "forbidden": {},
     "availability": {
       "rating": [8],
       "restriction": ""
@@ -1824,20 +1862,24 @@
       },
       "addictionResistance": {
         "physiological": {
-          "initialTest": {
-            "option": "Rating"
-          },
-          "progressingTest": {
-            "option": "Rating"
-          }
+          "initialTest": [
+            {
+              "option": "Rating"
+            }
+          ],
+          "progressingTest": [
+            {
+              "option": "Rating"
+            }
+          ]
         },
         "psychological": {
-          "initialTest": {
-            "option": "Rating"
-          },
-          "progressingTest": {
-            "option": "Rating"
-          }
+          "initialTest": [
+            {
+              "option": "Rating"
+            }
+          ],
+          "progressingTest": [0]
         }
       }
     },
@@ -2171,6 +2213,7 @@
         "bonus": -1
       }
     },
+    "requirements": {},
     "availability": {
       "ratingLinked": [
         {
@@ -2198,6 +2241,7 @@
     "rating": {
       "maximum": [1]
     },
+    "requirements": {},
     "availability": {
       "rating": [8],
       "restriction": ""
@@ -2473,6 +2517,7 @@
     "rating": {
       "maximum": [1]
     },
+    "requirements": {},
     "availability": {
       "rating": [2],
       "restriction": ""
@@ -2494,6 +2539,7 @@
       "maximum": [1]
     },
     "addWeapon": "Medium Tusk(s)",
+    "requirements": {},
     "availability": {
       "rating": [4],
       "restriction": ""
@@ -3456,7 +3502,7 @@
       "maximum": [1]
     },
     "bonus": {
-      "memory": 2
+      "memory": [2]
     },
     "availability": {
       "rating": [10],
@@ -3547,12 +3593,12 @@
     "bonus": {
       "addictionResistance": {
         "physiological": {
-          "initialTest": -2,
-          "progressingTest": 2
+          "initialTest": [-2],
+          "progressingTest": [2]
         },
         "psychological": {
-          "initialTest": -2,
-          "progressingTest": 2
+          "initialTest": [-2],
+          "progressingTest": [0]
         }
       }
     },
@@ -3597,7 +3643,11 @@
       "toxinInhalationResist": 1,
       "toxinIngestionResist": 1,
       "toxinInjectionResist": 1,
-      "lifestyleCostModifier": -10
+      "lifestyleCostModifier": [
+        {
+          "cost": -10
+        }
+      ]
     },
     "availability": {
       "rating": [6],
@@ -3641,30 +3691,30 @@
     "bonus": {
       "addictionResistance": {
         "physiological": {
-          "initialTest": 1,
-          "progressingTest": 1
+          "initialTest": [1],
+          "progressingTest": [1]
         },
         "psychological": {
-          "initialTest": 1,
-          "progressingTest": 1
+          "initialTest": [1],
+          "progressingTest": [0]
         }
       },
       "composure": 1,
-      "judgeIntentionsDefense": 1,
-      "drainResist": 1,
-      "fadingResist": 1,
-      "directManaResist": 1,
-      "detectionResist": 1,
-      "manaIllusionResist": 1,
-      "mentalManipulationResist": 1,
-      "decreaseBodyResist": 1,
-      "decreaseAgilityResist": 1,
-      "decreaseReasonanceResist": 1,
-      "decreaseStrengthResist": 1,
-      "decreaseCharismaResist": 1,
-      "decreaseIntuitionResist": 1,
-      "decreaseLogicResist": 1,
-      "decreaseWillpowerResist": 1
+      "judgeIntentionsDefense": [1],
+      "drainResist": [1],
+      "fadingResist": [1],
+      "directManaResist": [1],
+      "detectionResist": [1],
+      "manaIllusionResist": [1],
+      "mentalManipulationResist": [1],
+      "decreaseBodyResist": [1],
+      "decreaseAgilityResist": [1],
+      "decreaseReasonanceResist": [1],
+      "decreaseStrengthResist": [1],
+      "decreaseCharismaResist": [1],
+      "decreaseIntuitionResist": [1],
+      "decreaseLogicResist": [1],
+      "decreaseWillpowerResist": [1]
     },
     "availability": {
       "rating": [6],
@@ -3706,7 +3756,11 @@
       "maximum": [1]
     },
     "bonus": {
-      "lifestyleCostModifier": 10
+      "lifestyleCostModifier": [
+        {
+          "cost": 10
+        }
+      ]
     },
     "availability": {
       "rating": [6],
@@ -3748,7 +3802,7 @@
       "skillGroups": [
         {
           "group": "Athletics",
-          "bonus": 1
+          "bonus": [1]
         }
       ],
       "fatigueResist": 1,
@@ -3811,7 +3865,7 @@
       "maximum": [1]
     },
     "bonus": {
-      "dodge": 2
+      "dodge": [2]
     },
     "availability": {
       "rating": [10],
@@ -3850,7 +3904,11 @@
       "maximum": [1]
     },
     "bonus": {
-      "lifestyleCostModifier": -10
+      "lifestyleCostModifier": [
+        {
+          "cost": -10
+        }
+      ]
     },
     "availability": {
       "rating": [8],
@@ -3879,7 +3937,7 @@
           "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
         }
       ],
-      "dodge": 1
+      "dodge": [1]
     },
     "availability": {
       "rating": [8],
@@ -3974,6 +4032,7 @@
     "bonus": {
       "coldArmour": 2
     },
+    "forbidden": {},
     "availability": {
       "rating": [5],
       "restriction": ""
@@ -4013,6 +4072,7 @@
     "bonus": {
       "fireArmour": 2
     },
+    "forbidden": {},
     "availability": {
       "rating": [5],
       "restriction": ""
@@ -4032,7 +4092,11 @@
       "maximum": [1]
     },
     "bonus": {
-      "lifestyleCostModifier": 10
+      "lifestyleCostModifier": [
+        {
+          "cost": 10
+        }
+      ]
     },
     "availability": {
       "rating": [4],
@@ -4140,6 +4204,7 @@
     "rating": {
       "maximum": [1]
     },
+    "requirements": {},
     "availability": {
       "rating": [7],
       "restriction": ""
@@ -4163,6 +4228,7 @@
         "bonus": 1
       }
     },
+    "requirements": {},
     "availability": {
       "rating": [6],
       "restriction": ""
@@ -4181,6 +4247,7 @@
     "rating": {
       "maximum": [1]
     },
+    "requirements": {},
     "availability": {
       "rating": [11],
       "restriction": ""
@@ -4199,6 +4266,7 @@
     "rating": {
       "maximum": [1]
     },
+    "requirements": {},
     "availability": {
       "rating": [9],
       "restriction": "R"
@@ -4217,6 +4285,7 @@
     "rating": {
       "maximum": [1]
     },
+    "requirements": {},
     "availability": {
       "rating": [7],
       "restriction": "F"
@@ -4235,6 +4304,7 @@
     "rating": {
       "maximum": [1]
     },
+    "requirements": {},
     "availability": {
       "rating": [6],
       "restriction": ""
@@ -4253,6 +4323,7 @@
     "rating": {
       "maximum": [1]
     },
+    "forbidden": {},
     "availability": {
       "rating": [10],
       "restriction": ""
@@ -4271,6 +4342,7 @@
     "rating": {
       "maximum": [1]
     },
+    "forbidden": {},
     "availability": {
       "rating": [10],
       "restriction": ""
@@ -4289,6 +4361,7 @@
     "rating": {
       "maximum": [1]
     },
+    "forbidden": {},
     "availability": {
       "rating": [10],
       "restriction": ""
@@ -4307,6 +4380,7 @@
     "rating": {
       "maximum": [1]
     },
+    "forbidden": {},
     "availability": {
       "rating": [10],
       "restriction": ""
@@ -4325,6 +4399,7 @@
     "rating": {
       "maximum": [1]
     },
+    "forbidden": {},
     "availability": {
       "rating": [10],
       "restriction": ""
@@ -4343,6 +4418,7 @@
     "rating": {
       "maximum": [1]
     },
+    "forbidden": {},
     "availability": {
       "rating": [10],
       "restriction": ""
@@ -4361,6 +4437,7 @@
     "rating": {
       "maximum": [1]
     },
+    "forbidden": {},
     "availability": {
       "rating": [10],
       "restriction": ""
@@ -4379,6 +4456,7 @@
     "rating": {
       "maximum": [1]
     },
+    "forbidden": {},
     "availability": {
       "rating": [10],
       "restriction": ""
@@ -4676,7 +4754,11 @@
       "maximum": [1]
     },
     "bonus": {
-      "lifestyleCostModifier": -10
+      "lifestyleCostModifier": [
+        {
+          "cost": -10
+        }
+      ]
     },
     "availability": {
       "rating": [12],
@@ -4871,6 +4953,7 @@
       "maximum": [1]
     },
     "addWeapon": "Bone Spike I",
+    "forbidden": {},
     "availability": {
       "rating": [14],
       "restriction": "F"
@@ -4892,6 +4975,7 @@
       "maximum": [1]
     },
     "addWeapon": "Bone Spike II",
+    "requirements": {},
     "availability": {
       "rating": [14],
       "restriction": "F"
@@ -4913,6 +4997,7 @@
       "maximum": [1]
     },
     "addWeapon": "Bone Spike III",
+    "requirements": {},
     "availability": {
       "rating": [14],
       "restriction": "F"

@@ -1,3 +1,5 @@
+CheckGUIDs();
+
 import { ParseRanges } from "./xmlParser/combat/RangeParser.js";
 ParseRanges();
 
@@ -34,3 +36,7 @@ ParseVehicleMods();
 
 import { ParseGear } from "./xmlParser/other/GearParser.js";
 ParseGear();
+
+import { ParseQuality } from "./xmlParser/character/QualityParser.js";
+import { CheckGUIDs } from "./xmlParser/utilities.js";
+ParseQuality();

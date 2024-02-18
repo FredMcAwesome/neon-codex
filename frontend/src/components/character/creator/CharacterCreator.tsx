@@ -4,7 +4,7 @@ import PrioritySelect from "./PrioritySelect.js";
 import { priorityOptions } from "./PriorityImports.js";
 import type { ISkillPoints } from "./PriorityImports.js";
 import "./CharacterCreator.css";
-import React from "react";
+import { Fragment } from "react";
 import { QualitiesSelect } from "./QualitiesSelect.js";
 import { SkillSelectList } from "./SkillsSelect.js";
 import { EquipmentSelect } from "./EquipmentSelect.js";
@@ -20,10 +20,10 @@ import type {
   AttributesType,
   SpecialAttributesType,
   PrioritiesType,
-  SelectedQualityType,
 } from "@neon-codex/common/build/schemas/characterSchemas.js";
 import { CreatorSummary } from "./CreatorSummary.js";
 import { useNavigate } from "react-router-dom";
+import type { QualityListType } from "@neon-codex/common/build/schemas/qualitySchemas.js";
 
 const characterCreatorPath = "/character_creator";
 const CharacterCreator = function () {
@@ -56,12 +56,10 @@ const CharacterCreator = function () {
       magic: 0,
     });
   const [karmaPoints, setKarmaPoints] = useState(25);
-  const [positiveQualitiesSelected, setPositiveQualitiesSelected] = useState<
-    Array<SelectedQualityType>
-  >([]);
-  const [negativeQualitiesSelected, setNegativeQualitiesSelected] = useState<
-    Array<SelectedQualityType>
-  >([]);
+  const [positiveQualitiesSelected, setPositiveQualitiesSelected] =
+    useState<QualityListType>([]);
+  const [negativeQualitiesSelected, setNegativeQualitiesSelected] =
+    useState<QualityListType>([]);
   const [skillPoints, setSkillPoints] = useState<ISkillPoints>(
     priorityOptions[priorityInfo.SkillsPriority].skills
   );
@@ -113,12 +111,12 @@ const CharacterCreator = function () {
     setKarmaPoints(loadingKarma);
   };
   const onPositiveQualitiesSelectedChanged = function (
-    loadingPositiveQualities: Array<SelectedQualityType>
+    loadingPositiveQualities: QualityListType
   ) {
     setPositiveQualitiesSelected(loadingPositiveQualities);
   };
   const onNegativeQualitiesSelectedChanged = function (
-    loadingNegativeQualities: Array<SelectedQualityType>
+    loadingNegativeQualities: QualityListType
   ) {
     setNegativeQualitiesSelected(loadingNegativeQualities);
   };
@@ -153,6 +151,7 @@ const CharacterCreator = function () {
       return <div>Error!</div>;
     }
   }
+
   const firstPage = 0;
   const lastPage = 5;
   let currentStage;
@@ -247,7 +246,7 @@ const CharacterCreator = function () {
       );
   }
   return (
-    <React.Fragment>
+    <Fragment>
       <button
         onClick={() => {
           setPage(page > firstPage ? page - 1 : firstPage);
@@ -284,7 +283,7 @@ const CharacterCreator = function () {
       >
         Submit
       </button>
-    </React.Fragment>
+    </Fragment>
   );
 };
 

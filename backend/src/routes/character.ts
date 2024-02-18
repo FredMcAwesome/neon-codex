@@ -62,10 +62,15 @@ import {
   AttributesSchema,
   SpecialAttributesSchema,
   PrioritiesSchema,
-  SelectedQualitySchema,
 } from "@neon-codex/common/build/schemas/characterSchemas.js";
 import { Armours } from "@neon-codex/database/build/models/rpg/equipment/combat/armourModel.js";
 import { Characters } from "@neon-codex/database/build/models/rpg/characters/characterModel.js";
+import {
+  QualityListSchema,
+  type QualityListType,
+  type QualityType,
+} from "@neon-codex/common/build/schemas/qualitySchemas.js";
+import { Qualities } from "@neon-codex/database/build/models/rpg/abilities/qualityModel.js";
 
 export async function getSkills() {
   const db = await init();
@@ -523,6 +528,54 @@ export async function getGears(): Promise<GearListType> {
   return gearsResponse;
 }
 
+async function getQualities() {
+  const db = await init();
+  const qualities = await db.em.findAll(Qualities, {
+    populate: ["*", "includedWeaponList", "sharedLimitQualityList"],
+  });
+  const qualitiesResponse: QualityListType = qualities.map((quality) => {
+    const includedWeapons = quality.includedWeaponList.$;
+    const includedWeaponsNameList = includedWeapons.map((weapon) => {
+      return weapon.name;
+    });
+    const sharedLimitQualityList = quality.sharedLimitQualityList.$;
+    const includedQualitiesNameList = sharedLimitQualityList.map((quality) => {
+      return quality.name;
+    });
+    const qualityFormatted: QualityType = {
+      name: quality.name,
+      description: quality.description,
+      category: quality.category,
+      karma: quality.karma,
+      charGenOnly: quality.charGenOnly,
+      charGenLimit: quality.charGenLimit,
+      charGenDoNotContributeToKarmaLimit:
+        quality.charGenDoNotContributeToKarmaLimit,
+      charGenNoKarma: quality.charGenNoKarma,
+      chargenQualityOnly_NotSelectableIfPriorityChargen:
+        quality.chargenQualityOnly_NotSelectableIfPriorityChargen,
+      careerOnly: quality.careerOnly,
+      charGenCostInCareer: quality.charGenCostInCareer,
+      limit: quality.limit,
+      sharedLimitQualityList: includedQualitiesNameList,
+      karmaDiscount: quality.karmaDiscount,
+      noLevels: quality.noLevels,
+      firstLevelBonus: quality.firstLevelBonus,
+      addWeapons: includedWeaponsNameList,
+      isMetagenic: quality.isMetagenic,
+      canBuyWithSpellPoints: quality.canBuyWithSpellPoints,
+      userSelectable: quality.userSelectable,
+      bonus: quality.bonus,
+      requirements: quality.requirements,
+      forbidden: quality.forbidden,
+      source: quality.source,
+      page: quality.page,
+    };
+    return qualityFormatted;
+  });
+  return qualitiesResponse;
+}
+
 const skills = privateProcedure.query(async () => {
   try {
     const skillsResponse = await getSkills();
@@ -589,6 +642,17 @@ const vehiclesAndDrones = privateProcedure.query(async () => {
   }
 });
 
+const qualities = privateProcedure.query(async () => {
+  try {
+    const qualitiesResponse: QualityListType = await getQualities();
+    logger.log(JSON.stringify(qualitiesResponse, null, 2));
+    return qualitiesResponse;
+  } catch (error) {
+    logger.error("Unable to connect to the database:", error);
+    throw new Error("Database error");
+  }
+});
+
 const all = privateProcedure.query(async () => {
   try {
     const [
@@ -623,8 +687,8 @@ const CharacterInformationSchema = zod
     priorityInfo: PrioritiesSchema,
     attributeInfo: AttributesSchema,
     specialAttributeInfo: SpecialAttributesSchema,
-    positiveQualitiesSelected: zod.array(SelectedQualitySchema),
-    negativeQualitiesSelected: zod.array(SelectedQualitySchema),
+    positiveQualitiesSelected: QualityListSchema,
+    negativeQualitiesSelected: QualityListSchema,
     skillSelections: CustomSkillListSchema,
     equipmentSelected: EquipmentListSchema,
     karmaPoints: zod.number(),
@@ -677,6 +741,7 @@ const getCharacter = privateProcedure
 
 export const characterRouter = router({
   skills: skills,
+  qualities: qualities,
   weapons: weapons,
   armours: armours,
   gear: gears,

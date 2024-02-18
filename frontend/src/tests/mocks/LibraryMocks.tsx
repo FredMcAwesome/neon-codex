@@ -20,7 +20,7 @@ jest.mock(
           return option as string | Option;
         }
       });
-      function handleChange(event: React.FormEvent<HTMLSelectElement>) {
+      function handleChange(event: FormEvent<HTMLSelectElement>) {
         const newOption = parsedOptions.find((option) => {
           if (option.hasOwnProperty("value")) {
             return (option as Option).value === event.currentTarget.value;

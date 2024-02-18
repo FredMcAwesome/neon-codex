@@ -1,4 +1,4 @@
-import React from "react";
+import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import {
@@ -45,7 +45,7 @@ const trpcClient = trpc.createClient({
 });
 
 root.render(
-  <React.StrictMode>
+  <StrictMode>
     <trpc.Provider client={trpcClient} queryClient={queryClient}>
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
@@ -53,5 +53,5 @@ root.render(
         </BrowserRouter>
       </QueryClientProvider>
     </trpc.Provider>
-  </React.StrictMode>
+  </StrictMode>
 );

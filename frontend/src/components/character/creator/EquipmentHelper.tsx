@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { Collapse } from "react-collapse";
 
 interface IProps {
   title: string;
-  children: React.ReactNode;
+  children: ReactNode;
   addItem: () => void;
   removeItem?: () => void;
 }

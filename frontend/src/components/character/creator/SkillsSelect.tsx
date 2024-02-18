@@ -1,4 +1,4 @@
-import React from "react";
+import { Fragment } from "react";
 import Dropdown from "react-dropdown";
 import { CollapsibleDiv } from "../../../utils/CollapsibleDiv.js";
 import { skillCategoryEnum } from "@neon-codex/common/build/enums.js";
@@ -39,10 +39,10 @@ export const SkillSelectList = function (props: IProps) {
     skillGroupPoints: number
   ) {
     const newSkillSelections = [...props.skillSelections];
-    let skillPointItems = props.skillPointItems;
+    const skillPointItems = props.skillPointItems;
     const foundSkillIndex = newSkillSelections.findIndex(
       (listSkill) => listSkill.name == skill.name
-    )!;
+    );
     const foundSkill = newSkillSelections[foundSkillIndex];
     skillPointItems.skillPoints -= skillPoints - foundSkill.skillPoints;
     skillPointItems.skillGroupPoints -=
@@ -54,7 +54,7 @@ export const SkillSelectList = function (props: IProps) {
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       <h1>Skills Selection</h1>
       <div>
         Skill Points Remaining:
@@ -121,7 +121,7 @@ export const SkillSelectList = function (props: IProps) {
           skillPointItems={props.skillPointItems}
         />
       </CollapsibleDiv>
-    </React.Fragment>
+    </Fragment>
   );
 };
 
@@ -208,7 +208,7 @@ const SkillList = function ({
           skillGroupPointOptions: skillRating,
         };
       }
-      let attributeArray: Array<string> = [];
+      const attributeArray: Array<string> = [];
       const maxRating = Math.min(
         skillPointItems.skillGroupPoints + groupPointsInvested,
         12
@@ -227,7 +227,7 @@ const SkillList = function ({
           skillGroupPointOptions: skillRating,
         };
       }
-      let attributeArray: Array<string> = [];
+      const attributeArray: Array<string> = [];
       const maxRating = Math.min(
         skillPointItems.skillPoints + pointsInvested,
         12
@@ -240,8 +240,8 @@ const SkillList = function ({
         skillGroupPointOptions: ["0"],
       };
     } else {
-      let pointAttributeArray: Array<string> = [];
-      let groupAttributeArray: Array<string> = [];
+      const pointAttributeArray: Array<string> = [];
+      const groupAttributeArray: Array<string> = [];
       let maxRating = Math.min(skillPointItems.skillPoints, 12);
       for (let rating = 0; rating <= maxRating; rating++) {
         pointAttributeArray.push(rating.toString());
@@ -258,7 +258,7 @@ const SkillList = function ({
   };
 
   return (
-    <React.Fragment>
+    <Fragment>
       {skillSelections
         .filter((skill) => skill.category === skillCategory)
         .map((skill) => {
@@ -275,6 +275,6 @@ const SkillList = function ({
             />
           );
         })}
-    </React.Fragment>
+    </Fragment>
   );
 };

@@ -1,5 +1,8 @@
 import { z as zod } from "zod";
-import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
+import {
+  BonusXmlSchema,
+  type BonusXmlType,
+} from "../common/BonusParserSchemas.js";
 import {
   GearXmlSchema,
   limbSlotXmlEnum,
@@ -11,7 +14,10 @@ import {
   xmlAllowGearSchema,
 } from "../common/ParserCommonDefines.js";
 import type { GearXmlType } from "../common/ParserCommonDefines.js";
-import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
+import {
+  RequiredXmlSchema,
+  type RequiredXmlType,
+} from "../common/RequiredParserSchemas.js";
 
 export enum cyberwareXmlCategoryEnum {
   AutoInjectorMods = "Auto Injector Mods",
@@ -84,7 +90,7 @@ const cyberwareRatingSchema = zod.union([
 ]);
 export type cyberwareRatingType = zod.infer<typeof cyberwareRatingSchema>;
 
-const CyberwareXmlSchema = zod
+const CyberwareSubBonusXmlSchema = zod
   .object({
     id: zod.string(),
     name: zod.string(),
@@ -151,10 +157,6 @@ const CyberwareXmlSchema = zod
     blocksmounts: zod.optional(zod.string()),
     // Select which side it is installed on
     selectside: zod.optional(zod.literal("")),
-    // Bonus applied by Cyberware
-    bonus: zod.optional(BonusXmlSchema),
-    // Bonus applied when 2 are equipped e.g. 2 feet = different run speed
-    pairbonus: zod.optional(BonusXmlSchema),
     // pairbonus applies when there is 2 of this or 1 of this and 1 of
     // the cyberware here
     pairinclude: zod.optional(
@@ -177,10 +179,6 @@ const CyberwareXmlSchema = zod
         })
         .strict()
     ),
-    // Required
-    required: zod.optional(RequiredXmlSchema),
-    // Forbidden
-    forbidden: zod.optional(RequiredXmlSchema),
     // Included gear
     gears: zod.optional(GearXmlSchema),
     // Allow certain gear categories
@@ -213,6 +211,25 @@ const CyberwareXmlSchema = zod
     page: zod.number(),
   })
   .strict();
-export type CyberwareXmlType = zod.infer<typeof CyberwareXmlSchema>;
+type CyberwareSubBonusXmlType = zod.infer<typeof CyberwareSubBonusXmlSchema>;
+
+// Need to split up type/annotate schema to avoid TS7056 error
+export type CyberwareXmlType = CyberwareSubBonusXmlType & {
+  bonus?: BonusXmlType | undefined;
+  pairbonus?: BonusXmlType | undefined;
+  required?: RequiredXmlType | undefined;
+  forbidden?: RequiredXmlType | undefined;
+};
+const CyberwareXmlSchema: zod.ZodSchema<CyberwareXmlType> =
+  CyberwareSubBonusXmlSchema.extend({
+    // Bonus applied by Cyberware
+    bonus: zod.optional(BonusXmlSchema),
+    // // Bonus applied when 2 are equipped e.g. 2 feet = different run speed
+    pairbonus: zod.optional(BonusXmlSchema),
+    // Required
+    required: zod.optional(RequiredXmlSchema),
+    // Forbidden
+    forbidden: zod.optional(RequiredXmlSchema),
+  });
 export const CyberwareListXmlSchema = zod.array(CyberwareXmlSchema);
 export type CyberwareListXmlType = zod.infer<typeof CyberwareListXmlSchema>;

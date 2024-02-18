@@ -1,0 +1,9124 @@
+[
+  {
+    "name": "Ambidextrous",
+    "category": "Positive",
+    "karma": 4,
+    "limit": {
+      "option": "Number of arms - 1"
+    },
+    "bonus": {
+      "ambidextrous": true
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 71
+  },
+  {
+    "name": "Analytical Mind",
+    "category": "Positive",
+    "karma": 5,
+    "description": "",
+    "source": "SR5",
+    "page": 72
+  },
+  {
+    "name": "Aptitude",
+    "category": "Positive",
+    "karma": 14,
+    "description": "",
+    "source": "SR5",
+    "page": 72
+  },
+  {
+    "name": "Astral Chameleon",
+    "category": "Positive",
+    "karma": 10,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "SR5",
+    "page": 72
+  },
+  {
+    "name": "Bilingual",
+    "category": "Positive",
+    "karma": 5,
+    "charGenOnly": true,
+    "description": "",
+    "source": "SR5",
+    "page": 72
+  },
+  {
+    "name": "Blandness",
+    "category": "Positive",
+    "karma": 8,
+    "forbidden": {},
+    "description": "",
+    "source": "SR5",
+    "page": 72
+  },
+  {
+    "name": "Catlike",
+    "category": "Positive",
+    "karma": 7,
+    "description": "",
+    "source": "SR5",
+    "page": 72
+  },
+  {
+    "name": "Codeslinger",
+    "category": "Positive",
+    "karma": 10,
+    "limit": {
+      "option": "False"
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 72
+  },
+  {
+    "name": "Double Jointed",
+    "category": "Positive",
+    "karma": 6,
+    "description": "",
+    "source": "SR5",
+    "page": 72
+  },
+  {
+    "name": "Exceptional Attribute",
+    "category": "Positive",
+    "karma": 14,
+    "forbidden": {},
+    "description": "",
+    "source": "SR5",
+    "page": 72
+  },
+  {
+    "name": "First Impression",
+    "category": "Positive",
+    "karma": 11,
+    "bonus": {
+      "skillCategories": [
+        {
+          "category": "Social Active",
+          "bonus": [2]
+        }
+      ]
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 74
+  },
+  {
+    "name": "Focused Concentration",
+    "category": "Positive",
+    "karma": 4,
+    "limit": 6,
+    "requirements": {},
+    "description": "",
+    "source": "SR5",
+    "page": 74
+  },
+  {
+    "name": "Gearhead",
+    "category": "Positive",
+    "karma": 11,
+    "description": "",
+    "source": "SR5",
+    "page": 74
+  },
+  {
+    "name": "Guts",
+    "category": "Positive",
+    "karma": 10,
+    "description": "",
+    "source": "SR5",
+    "page": 74
+  },
+  {
+    "name": "High Pain Tolerance",
+    "category": "Positive",
+    "karma": 7,
+    "limit": 3,
+    "forbidden": {},
+    "description": "",
+    "source": "SR5",
+    "page": 74
+  },
+  {
+    "name": "Home Ground",
+    "category": "Positive",
+    "karma": 10,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 74
+  },
+  {
+    "name": "Human-Looking",
+    "category": "Positive",
+    "karma": 6,
+    "requirements": {},
+    "description": "",
+    "source": "SR5",
+    "page": 75
+  },
+  {
+    "name": "Indomitable (Mental)",
+    "category": "Positive",
+    "karma": 8,
+    "limit": 3,
+    "sharedLimitQualityList": [
+      "Indomitable (Physical)",
+      "Indomitable (Social)"
+    ],
+    "bonus": {
+      "mentalLimit": 1
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 75
+  },
+  {
+    "name": "Indomitable (Physical)",
+    "category": "Positive",
+    "karma": 8,
+    "limit": 3,
+    "sharedLimitQualityList": ["Indomitable (Mental)", "Indomitable (Social)"],
+    "bonus": {
+      "physicalLimit": 1
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 75
+  },
+  {
+    "name": "Indomitable (Social)",
+    "category": "Positive",
+    "karma": 8,
+    "limit": 3,
+    "sharedLimitQualityList": [
+      "Indomitable (Physical)",
+      "Indomitable (Mental)"
+    ],
+    "bonus": {
+      "socialLimit": [1]
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 75
+  },
+  {
+    "name": "Juryrigger",
+    "category": "Positive",
+    "karma": 10,
+    "description": "",
+    "source": "SR5",
+    "page": 75
+  },
+  {
+    "name": "Lucky",
+    "category": "Positive",
+    "karma": 12,
+    "forbidden": {},
+    "description": "",
+    "source": "SR5",
+    "page": 76
+  },
+  {
+    "name": "Magic Resistance",
+    "category": "Positive",
+    "karma": 6,
+    "limit": 4,
+    "forbidden": {},
+    "description": "",
+    "source": "SR5",
+    "page": 76
+  },
+  {
+    "name": "Mentor Spirit",
+    "category": "Positive",
+    "karma": 5,
+    "requirements": {},
+    "description": "",
+    "source": "SR5",
+    "page": 76
+  },
+  {
+    "name": "Natural Athlete",
+    "category": "Positive",
+    "karma": 7,
+    "description": "",
+    "source": "SR5",
+    "page": 76
+  },
+  {
+    "name": "Natural Hardening",
+    "category": "Positive",
+    "karma": 10,
+    "description": "",
+    "source": "SR5",
+    "page": 76
+  },
+  {
+    "name": "Natural Immunity (Natural)",
+    "category": "Positive",
+    "karma": 4,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "forbidden": {},
+    "description": "",
+    "source": "SR5",
+    "page": 76
+  },
+  {
+    "name": "Natural Immunity (Synthetic)",
+    "category": "Positive",
+    "karma": 10,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "forbidden": {},
+    "description": "",
+    "source": "SR5",
+    "page": 76
+  },
+  {
+    "name": "Photographic Memory",
+    "category": "Positive",
+    "karma": 6,
+    "bonus": {
+      "memory": [2]
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 76
+  },
+  {
+    "name": "Quick Healer",
+    "category": "Positive",
+    "karma": 3,
+    "bonus": {
+      "stunHealing": 2,
+      "physicalHealing": 2
+    },
+    "forbidden": {},
+    "description": "",
+    "source": "SR5",
+    "page": 77
+  },
+  {
+    "name": "Resistance to Pathogens",
+    "category": "Positive",
+    "karma": 4,
+    "bonus": {
+      "pathogenContactResist": 1,
+      "pathogenInhalationResist": 1,
+      "pathogenIngestionResist": 1,
+      "pathogenInjectionResist": 1
+    },
+    "forbidden": {},
+    "description": "",
+    "source": "SR5",
+    "page": 77
+  },
+  {
+    "name": "Resistance to Toxins",
+    "category": "Positive",
+    "karma": 4,
+    "bonus": {
+      "toxinContactResist": 1,
+      "toxinInhalationResist": 1,
+      "toxinIngestionResist": 1,
+      "toxinInjectionResist": 1
+    },
+    "forbidden": {},
+    "description": "",
+    "source": "SR5",
+    "page": 77
+  },
+  {
+    "name": "Resistance to Pathogens/Toxins",
+    "category": "Positive",
+    "karma": 8,
+    "userSelectable": false,
+    "bonus": {
+      "toxinContactResist": 2,
+      "pathogenContactResist": 2,
+      "toxinInhalationResist": 2,
+      "pathogenInhalationResist": 2,
+      "toxinIngestionResist": 2,
+      "pathogenIngestionResist": 2,
+      "toxinInjectionResist": 2,
+      "pathogenInjectionResist": 2
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 77
+  },
+  {
+    "name": "Resistance to Pathogens and Toxins",
+    "category": "Positive",
+    "karma": 8,
+    "bonus": {
+      "toxinContactResist": 1,
+      "pathogenContactResist": 1,
+      "toxinInhalationResist": 1,
+      "pathogenInhalationResist": 1,
+      "toxinIngestionResist": 1,
+      "pathogenIngestionResist": 1,
+      "toxinInjectionResist": 1,
+      "pathogenInjectionResist": 1
+    },
+    "forbidden": {},
+    "description": "",
+    "source": "SR5",
+    "page": 77
+  },
+  {
+    "name": "Spirit Affinity",
+    "category": "Positive",
+    "karma": 7,
+    "limit": {
+      "option": "False"
+    },
+    "requirements": {},
+    "description": "",
+    "source": "SR5",
+    "page": 77
+  },
+  {
+    "name": "Toughness",
+    "category": "Positive",
+    "karma": 9,
+    "bonus": {
+      "damageResistance": 1
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 77
+  },
+  {
+    "name": "Will to Live",
+    "category": "Positive",
+    "karma": 3,
+    "limit": 3,
+    "description": "",
+    "source": "SR5",
+    "page": 77
+  },
+  {
+    "name": "Deus Vult!",
+    "category": "Positive",
+    "karma": 4,
+    "description": "",
+    "source": "AP",
+    "page": 16
+  },
+  {
+    "name": "My Country, Right or Wrong",
+    "category": "Positive",
+    "karma": 4,
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "AP",
+    "page": 17
+  },
+  {
+    "name": "Out For Myself",
+    "category": "Positive",
+    "karma": 4,
+    "description": "",
+    "source": "AP",
+    "page": 17
+  },
+  {
+    "name": "Strive For Perfection",
+    "category": "Positive",
+    "karma": 12,
+    "description": "",
+    "source": "AP",
+    "page": 17
+  },
+  {
+    "name": "Acrobatic Defender",
+    "category": "Positive",
+    "karma": 4,
+    "description": "",
+    "source": "RG",
+    "page": 127
+  },
+  {
+    "name": "Agile Defender",
+    "category": "Positive",
+    "karma": 3,
+    "description": "",
+    "source": "RG",
+    "page": 127
+  },
+  {
+    "name": "Brand Loyalty (Manufacturer)",
+    "category": "Positive",
+    "karma": 3,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RG",
+    "page": 127
+  },
+  {
+    "name": "Brand Loyalty (Product)",
+    "category": "Positive",
+    "karma": 3,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RG",
+    "page": 127
+  },
+  {
+    "name": "One Trick Pony",
+    "category": "Positive",
+    "karma": 7,
+    "description": "",
+    "source": "RG",
+    "page": 127
+  },
+  {
+    "name": "Perceptive Defender",
+    "category": "Positive",
+    "karma": 4,
+    "description": "",
+    "source": "RG",
+    "page": 127
+  },
+  {
+    "name": "Sharpshooter",
+    "category": "Positive",
+    "karma": 4,
+    "description": "",
+    "source": "RG",
+    "page": 127
+  },
+  {
+    "name": "Too Pretty To Hit",
+    "category": "Positive",
+    "karma": 3,
+    "description": "",
+    "source": "RG",
+    "page": 127
+  },
+  {
+    "name": "Radiation Sponge",
+    "category": "Positive",
+    "karma": 5,
+    "forbidden": {},
+    "description": "",
+    "source": "RG",
+    "page": 169
+  },
+  {
+    "name": "Rad-Tolerant",
+    "category": "Positive",
+    "karma": 3,
+    "forbidden": {},
+    "description": "",
+    "source": "RG",
+    "page": 169
+  },
+  {
+    "name": "Spacer",
+    "category": "Positive",
+    "karma": 3,
+    "description": "",
+    "source": "RG",
+    "page": 169
+  },
+  {
+    "name": "Low-Light Vision",
+    "category": "Positive",
+    "karma": 4,
+    "userSelectable": false,
+    "description": "",
+    "source": "SR5",
+    "page": 66
+  },
+  {
+    "name": "Thermographic Vision",
+    "category": "Positive",
+    "karma": 3,
+    "userSelectable": false,
+    "description": "",
+    "source": "SR5",
+    "page": 66
+  },
+  {
+    "name": "Magician",
+    "category": "Positive",
+    "karma": 30,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "chargenQualityOnly_NotSelectableIfPriorityChargen": true,
+    "forbidden": {},
+    "description": "",
+    "source": "SR5",
+    "page": 69
+  },
+  {
+    "name": "Adept",
+    "category": "Positive",
+    "karma": 20,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "chargenQualityOnly_NotSelectableIfPriorityChargen": true,
+    "forbidden": {},
+    "description": "",
+    "source": "SR5",
+    "page": 69
+  },
+  {
+    "name": "Mystic Adept",
+    "category": "Positive",
+    "karma": 35,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "chargenQualityOnly_NotSelectableIfPriorityChargen": true,
+    "forbidden": {},
+    "description": "",
+    "source": "SR5",
+    "page": 69
+  },
+  {
+    "name": "Technomancer",
+    "category": "Positive",
+    "karma": 15,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "chargenQualityOnly_NotSelectableIfPriorityChargen": true,
+    "forbidden": {},
+    "description": "",
+    "source": "SR5",
+    "page": 69
+  },
+  {
+    "name": "Aspected Magician",
+    "category": "Positive",
+    "karma": 15,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "chargenQualityOnly_NotSelectableIfPriorityChargen": true,
+    "forbidden": {},
+    "description": "",
+    "source": "SR5",
+    "page": 69
+  },
+  {
+    "name": "Aware",
+    "category": "Positive",
+    "karma": 15,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "chargenQualityOnly_NotSelectableIfPriorityChargen": true,
+    "forbidden": {},
+    "description": "",
+    "source": "FA",
+    "page": 49
+  },
+  {
+    "name": "Addiction (Mild)",
+    "category": "Negative",
+    "karma": -4,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 77
+  },
+  {
+    "name": "Addiction (Moderate)",
+    "category": "Negative",
+    "karma": -9,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 78
+  },
+  {
+    "name": "Addiction (Severe)",
+    "category": "Negative",
+    "karma": -20,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 78
+  },
+  {
+    "name": "Addiction (Burnout)",
+    "category": "Negative",
+    "karma": -25,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true,
+      "skillCategories": [
+        {
+          "category": "Social Active",
+          "bonus": [-3]
+        }
+      ]
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 78
+  },
+  {
+    "name": "Allergy (Uncommon, Mild)",
+    "category": "Negative",
+    "karma": -5,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 78
+  },
+  {
+    "name": "Allergy (Uncommon, Moderate)",
+    "category": "Negative",
+    "karma": -10,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 78
+  },
+  {
+    "name": "Allergy (Uncommon, Severe)",
+    "category": "Negative",
+    "karma": -15,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 78
+  },
+  {
+    "name": "Allergy (Uncommon, Extreme)",
+    "category": "Negative",
+    "karma": -20,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 78
+  },
+  {
+    "name": "Allergy (Common, Mild)",
+    "category": "Negative",
+    "karma": -10,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 78
+  },
+  {
+    "name": "Allergy (Common, Moderate)",
+    "category": "Negative",
+    "karma": -15,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 78
+  },
+  {
+    "name": "Allergy (Common, Severe)",
+    "category": "Negative",
+    "karma": -20,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 78
+  },
+  {
+    "name": "Allergy (Common, Extreme)",
+    "category": "Negative",
+    "karma": -25,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 78
+  },
+  {
+    "name": "Astral Beacon",
+    "category": "Negative",
+    "karma": -10,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "SR5",
+    "page": 78
+  },
+  {
+    "name": "Bad Luck",
+    "category": "Negative",
+    "karma": -12,
+    "description": "",
+    "source": "SR5",
+    "page": 79
+  },
+  {
+    "name": "Bad Rep",
+    "category": "Negative",
+    "karma": -7,
+    "description": "",
+    "source": "SR5",
+    "page": 79
+  },
+  {
+    "name": "Code of Honor",
+    "category": "Negative",
+    "karma": -15,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 79
+  },
+  {
+    "name": "Codeblock",
+    "category": "Negative",
+    "karma": -10,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 80
+  },
+  {
+    "name": "Combat Paralysis",
+    "category": "Negative",
+    "karma": -12,
+    "description": "",
+    "source": "SR5",
+    "page": 80
+  },
+  {
+    "name": "Dependent (Nuisance)",
+    "category": "Negative",
+    "karma": -3,
+    "bonus": {
+      "lifestyleCostModifier": [
+        {
+          "cost": 10
+        }
+      ]
+    },
+    "forbidden": {},
+    "description": "",
+    "source": "SR5",
+    "page": 80
+  },
+  {
+    "name": "Dependent (Inconvenience)",
+    "category": "Negative",
+    "karma": -6,
+    "bonus": {
+      "lifestyleCostModifier": [
+        {
+          "cost": 20
+        }
+      ]
+    },
+    "forbidden": {},
+    "description": "",
+    "source": "SR5",
+    "page": 80
+  },
+  {
+    "name": "Dependent (Demanding)",
+    "category": "Negative",
+    "karma": -9,
+    "bonus": {
+      "lifestyleCostModifier": [
+        {
+          "cost": 30
+        }
+      ]
+    },
+    "forbidden": {},
+    "description": "",
+    "source": "SR5",
+    "page": 80
+  },
+  {
+    "name": "Distinctive Style",
+    "category": "Negative",
+    "karma": -5,
+    "forbidden": {},
+    "description": "",
+    "source": "SR5",
+    "page": 80
+  },
+  {
+    "name": "Elf Poser",
+    "category": "Negative",
+    "karma": -6,
+    "requirements": {},
+    "description": "",
+    "source": "SR5",
+    "page": 81
+  },
+  {
+    "name": "Gremlins",
+    "category": "Negative",
+    "karma": -4,
+    "limit": 4,
+    "firstLevelBonus": {
+      "notoriety": 1
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 81
+  },
+  {
+    "name": "Incompetent",
+    "category": "Negative",
+    "karma": -5,
+    "description": "",
+    "source": "SR5",
+    "page": 81
+  },
+  {
+    "name": "Insomnia (Basic)",
+    "category": "Negative",
+    "karma": -10,
+    "forbidden": {},
+    "description": "",
+    "source": "SR5",
+    "page": 81
+  },
+  {
+    "name": "Insomnia (Full)",
+    "category": "Negative",
+    "karma": -15,
+    "forbidden": {},
+    "description": "",
+    "source": "SR5",
+    "page": 81
+  },
+  {
+    "name": "Loss of Confidence",
+    "category": "Negative",
+    "karma": -10,
+    "limit": {
+      "option": "False"
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 82
+  },
+  {
+    "name": "Low Pain Tolerance",
+    "category": "Negative",
+    "karma": -9,
+    "description": "",
+    "source": "SR5",
+    "page": 82
+  },
+  {
+    "name": "Ork Poser",
+    "category": "Negative",
+    "karma": -6,
+    "requirements": {},
+    "description": "",
+    "source": "SR5",
+    "page": 82
+  },
+  {
+    "name": "Prejudiced (Common, Biased)",
+    "category": "Negative",
+    "karma": -5,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 82
+  },
+  {
+    "name": "Prejudiced (Common, Outspoken)",
+    "category": "Negative",
+    "karma": -7,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 82
+  },
+  {
+    "name": "Prejudiced (Common, Radical)",
+    "category": "Negative",
+    "karma": -10,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 82
+  },
+  {
+    "name": "Prejudiced (Specific, Biased)",
+    "category": "Negative",
+    "karma": -3,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 82
+  },
+  {
+    "name": "Prejudiced (Specific, Outspoken)",
+    "category": "Negative",
+    "karma": -5,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 82
+  },
+  {
+    "name": "Prejudiced (Specific, Radical)",
+    "category": "Negative",
+    "karma": -8,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 82
+  },
+  {
+    "name": "Scorched",
+    "category": "Negative",
+    "karma": -10,
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 83
+  },
+  {
+    "name": "Sensitive System",
+    "category": "Negative",
+    "karma": -12,
+    "description": "",
+    "source": "SR5",
+    "page": 83
+  },
+  {
+    "name": "Simsense Vertigo",
+    "category": "Negative",
+    "karma": -5,
+    "description": "",
+    "source": "SR5",
+    "page": 83
+  },
+  {
+    "name": "SINner (Corporate)",
+    "category": "Negative",
+    "karma": -25,
+    "forbidden": {},
+    "description": "",
+    "source": "SR5",
+    "page": 85
+  },
+  {
+    "name": "SINner (National)",
+    "category": "Negative",
+    "karma": -5,
+    "bonus": {
+      "enterName": true
+    },
+    "forbidden": {},
+    "description": "",
+    "source": "SR5",
+    "page": 84
+  },
+  {
+    "name": "SINner (Corporate Limited)",
+    "category": "Negative",
+    "karma": -15,
+    "forbidden": {},
+    "description": "",
+    "source": "SR5",
+    "page": 84
+  },
+  {
+    "name": "SINner (Criminal)",
+    "category": "Negative",
+    "karma": -10,
+    "bonus": {
+      "enterName": true
+    },
+    "forbidden": {},
+    "description": "",
+    "source": "SR5",
+    "page": 84
+  },
+  {
+    "name": "Social Stress",
+    "category": "Negative",
+    "karma": -8,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "SR5",
+    "page": 85
+  },
+  {
+    "name": "Spirit Bane",
+    "category": "Negative",
+    "karma": -7,
+    "limit": {
+      "option": "False"
+    },
+    "requirements": {},
+    "description": "",
+    "source": "SR5",
+    "page": 85
+  },
+  {
+    "name": "Uncouth",
+    "category": "Negative",
+    "karma": -14,
+    "description": "",
+    "source": "SR5",
+    "page": 85
+  },
+  {
+    "name": "Consummate Professional",
+    "category": "Negative",
+    "karma": -3,
+    "description": "",
+    "source": "AP",
+    "page": 17
+  },
+  {
+    "name": "Combat Junkie",
+    "category": "Negative",
+    "karma": -7,
+    "description": "",
+    "source": "RG",
+    "page": 127
+  },
+  {
+    "name": "Blighted (6 Months)",
+    "category": "Negative",
+    "karma": -5,
+    "description": "",
+    "source": "RG",
+    "page": 169
+  },
+  {
+    "name": "Blighted (12 Months)",
+    "category": "Negative",
+    "karma": -10,
+    "description": "",
+    "source": "RG",
+    "page": 169
+  },
+  {
+    "name": "Blighted (24 Months)",
+    "category": "Negative",
+    "karma": -15,
+    "description": "",
+    "source": "RG",
+    "page": 169
+  },
+  {
+    "name": "Earther",
+    "category": "Negative",
+    "karma": -3,
+    "description": "",
+    "source": "RG",
+    "page": 169
+  },
+  {
+    "name": "Uneducated",
+    "category": "Negative",
+    "karma": -8,
+    "description": "",
+    "source": "SR5",
+    "page": 87
+  },
+  {
+    "name": "Unsteady Hands",
+    "category": "Negative",
+    "karma": -7,
+    "description": "",
+    "source": "SR5",
+    "page": 87
+  },
+  {
+    "name": "Weak Immune System",
+    "category": "Negative",
+    "karma": -10,
+    "forbidden": {},
+    "description": "",
+    "source": "SR5",
+    "page": 87
+  },
+  {
+    "name": "Tattoo Magic",
+    "category": "Positive",
+    "karma": 5,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "description": "",
+    "source": "SG",
+    "page": 131
+  },
+  {
+    "name": "Spirit Champion",
+    "category": "Positive",
+    "karma": 14,
+    "description": "",
+    "source": "SG",
+    "page": 199
+  },
+  {
+    "name": "The Artisan's Way",
+    "category": "Positive",
+    "karma": 20,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "SG",
+    "page": 176
+  },
+  {
+    "name": "The Artist's Way",
+    "category": "Positive",
+    "karma": 20,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "SG",
+    "page": 176
+  },
+  {
+    "name": "The Athlete's Way",
+    "category": "Positive",
+    "karma": 20,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "SG",
+    "page": 176
+  },
+  {
+    "name": "The Beast's Way",
+    "category": "Positive",
+    "karma": 20,
+    "charGenCostInCareer": true,
+    "karmaDiscount": {
+      "requirements": {},
+      "value": -3
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "SG",
+    "page": 176
+  },
+  {
+    "name": "The Burnout's Way",
+    "category": "Positive",
+    "karma": 15,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "SG",
+    "page": 177
+  },
+  {
+    "name": "The Invisible Way",
+    "category": "Positive",
+    "karma": 20,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "SG",
+    "page": 177
+  },
+  {
+    "name": "The Magician's Way",
+    "category": "Positive",
+    "karma": 20,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "SG",
+    "page": 178
+  },
+  {
+    "name": "The Speaker's Way",
+    "category": "Positive",
+    "karma": 20,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "SG",
+    "page": 178
+  },
+  {
+    "name": "The Spiritual Way",
+    "category": "Positive",
+    "karma": 20,
+    "charGenCostInCareer": true,
+    "bonus": {
+      "skillGroups": [
+        {
+          "group": "Conjuring",
+          "bonus": [1]
+        }
+      ]
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "SG",
+    "page": 178
+  },
+  {
+    "name": "The Twisted Way",
+    "category": "Positive",
+    "karma": 20,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "SG",
+    "page": 85
+  },
+  {
+    "name": "The Warrior's Way",
+    "category": "Positive",
+    "karma": 20,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "SG",
+    "page": 178
+  },
+  {
+    "name": "Spirit Pariah",
+    "category": "Negative",
+    "karma": -14,
+    "description": "",
+    "source": "SG",
+    "page": 199
+  },
+  {
+    "name": "Conjuring Geas",
+    "category": "Negative",
+    "karma": -5,
+    "careerOnly": true,
+    "description": "",
+    "source": "SG",
+    "page": 199
+  },
+  {
+    "name": "Gifted Healer",
+    "category": "Positive",
+    "karma": 2,
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "BB",
+    "page": 11
+  },
+  {
+    "name": "Aged",
+    "category": "Negative",
+    "karma": -7,
+    "limit": 3,
+    "description": "",
+    "source": "BB",
+    "page": 12
+  },
+  {
+    "name": "Illness",
+    "category": "Negative",
+    "karma": -5,
+    "limit": 3,
+    "description": "",
+    "source": "BB",
+    "page": 12
+  },
+  {
+    "name": "Pregnant",
+    "category": "Negative",
+    "karma": -9,
+    "description": "",
+    "source": "BB",
+    "page": 12
+  },
+  {
+    "name": "College Education (SASS)",
+    "category": "Positive",
+    "karma": 2,
+    "description": "",
+    "source": "SASS",
+    "page": 31
+  },
+  {
+    "name": "Inspired (SASS)",
+    "category": "Positive",
+    "karma": 4,
+    "description": "",
+    "source": "SASS",
+    "page": 31
+  },
+  {
+    "name": "Changeling (Class I SURGE)",
+    "category": "Positive",
+    "karma": 10,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 103
+  },
+  {
+    "name": "Changeling (Class II SURGE)",
+    "category": "Positive",
+    "karma": 15,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 103
+  },
+  {
+    "name": "Changeling (Class III SURGE)",
+    "category": "Positive",
+    "karma": 30,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 103
+  },
+  {
+    "name": "Adrenaline Surge",
+    "category": "Positive",
+    "karma": 12,
+    "description": "",
+    "source": "RF",
+    "page": 145
+  },
+  {
+    "name": "Animal Empathy",
+    "category": "Positive",
+    "karma": 3,
+    "description": "",
+    "source": "RF",
+    "page": 145
+  },
+  {
+    "name": "Black Market Pipeline",
+    "category": "Positive",
+    "karma": 10,
+    "charGenOnly": true,
+    "description": "",
+    "source": "RF",
+    "page": 145
+  },
+  {
+    "name": "Born Rich",
+    "category": "Positive",
+    "karma": 5,
+    "charGenOnly": true,
+    "description": "",
+    "source": "RF",
+    "page": 145
+  },
+  {
+    "name": "City Slicker",
+    "category": "Positive",
+    "karma": 7,
+    "bonus": {
+      "skillGroups": [
+        {
+          "group": "Outdoors",
+          "bonus": [1]
+        }
+      ]
+    },
+    "description": "",
+    "source": "RF",
+    "page": 145
+  },
+  {
+    "name": "College Education",
+    "category": "Positive",
+    "karma": 4,
+    "description": "",
+    "source": "RF",
+    "page": 145
+  },
+  {
+    "name": "Common Sense",
+    "category": "Positive",
+    "karma": 3,
+    "description": "",
+    "source": "RF",
+    "page": 145
+  },
+  {
+    "name": "Daredevil",
+    "category": "Positive",
+    "karma": 6,
+    "description": "",
+    "source": "RF",
+    "page": 146
+  },
+  {
+    "name": "Digital Doppelganger",
+    "category": "Positive",
+    "karma": 7,
+    "bonus": {
+      "enterName": true
+    },
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 146
+  },
+  {
+    "name": "Disgraced",
+    "category": "Positive",
+    "karma": 2,
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 146
+  },
+  {
+    "name": "Erased",
+    "category": "Positive",
+    "karma": 8,
+    "description": "",
+    "source": "RF",
+    "page": 146
+  },
+  {
+    "name": "Fame: Local",
+    "category": "Positive",
+    "karma": 4,
+    "bonus": {
+      "skillCategories": [
+        {
+          "category": "Social Active",
+          "bonus": [1]
+        }
+      ]
+    },
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 146
+  },
+  {
+    "name": "Fame: National",
+    "category": "Positive",
+    "karma": 8,
+    "bonus": {
+      "skillCategories": [
+        {
+          "category": "Social Active",
+          "bonus": [2]
+        }
+      ]
+    },
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 146
+  },
+  {
+    "name": "Fame: Megacorporate",
+    "category": "Positive",
+    "karma": 12,
+    "bonus": {
+      "skillCategories": [
+        {
+          "category": "Social Active",
+          "bonus": [2]
+        }
+      ]
+    },
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 147
+  },
+  {
+    "name": "Fame: Global",
+    "category": "Positive",
+    "karma": 16,
+    "bonus": {
+      "skillCategories": [
+        {
+          "category": "Social Active",
+          "bonus": [3]
+        }
+      ]
+    },
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 147
+  },
+  {
+    "name": "Friends in High Places",
+    "category": "Positive",
+    "karma": 8,
+    "description": "",
+    "source": "RF",
+    "page": 147
+  },
+  {
+    "name": "Hawk Eye",
+    "category": "Positive",
+    "karma": 3,
+    "description": "",
+    "source": "RF",
+    "page": 147
+  },
+  {
+    "name": "Inspired",
+    "category": "Positive",
+    "karma": 4,
+    "description": "",
+    "source": "RF",
+    "page": 147
+  },
+  {
+    "name": "Jack of All Trades Master of None",
+    "category": "Positive",
+    "karma": 2,
+    "bonus": {
+      "modifySkillImprovementKarmaCost": [
+        {
+          "skillRating": {
+            "maximum": 5
+          },
+          "conditionalBonus": -1
+        },
+        {
+          "skillRating": {
+            "minimum": 6
+          },
+          "conditionalBonus": 2
+        }
+      ]
+    },
+    "description": "",
+    "source": "RF",
+    "page": 147
+  },
+  {
+    "name": "Lightning Reflexes",
+    "category": "Positive",
+    "karma": 20,
+    "bonus": {
+      "initiative": {
+        "bonusDice": 1
+      },
+      "dodge": [1]
+    },
+    "description": "",
+    "source": "RF",
+    "page": 148
+  },
+  {
+    "name": "Linguist",
+    "category": "Positive",
+    "karma": 4,
+    "bonus": {
+      "skillCategories": [
+        {
+          "category": "Language",
+          "bonus": [1]
+        }
+      ]
+    },
+    "description": "",
+    "source": "RF",
+    "page": 148
+  },
+  {
+    "name": "Made Man",
+    "category": "Positive",
+    "karma": 5,
+    "description": "",
+    "source": "RF",
+    "page": 148
+  },
+  {
+    "name": "Night Vision",
+    "category": "Positive",
+    "karma": 2,
+    "description": "",
+    "source": "RF",
+    "page": 148
+  },
+  {
+    "name": "Outdoorsman",
+    "category": "Positive",
+    "karma": 3,
+    "bonus": {
+      "skillGroups": [
+        {
+          "group": "Outdoors",
+          "bonus": [2]
+        },
+        {
+          "group": "Outdoors",
+          "bonus": [2]
+        },
+        {
+          "group": "Outdoors",
+          "bonus": [2]
+        },
+        {
+          "group": "Outdoors",
+          "bonus": [2]
+        },
+        {
+          "group": "Outdoors",
+          "bonus": [2]
+        },
+        {
+          "group": "Outdoors",
+          "bonus": [2]
+        }
+      ]
+    },
+    "description": "",
+    "source": "RF",
+    "page": 148
+  },
+  {
+    "name": "Overclocker",
+    "category": "Positive",
+    "karma": 5,
+    "description": "",
+    "source": "RF",
+    "page": 148
+  },
+  {
+    "name": "Perceptive",
+    "category": "Positive",
+    "karma": 5,
+    "limit": 2,
+    "description": "",
+    "source": "RF",
+    "page": 148
+  },
+  {
+    "name": "Perfect Time",
+    "category": "Positive",
+    "karma": 5,
+    "description": "",
+    "source": "RF",
+    "page": 148
+  },
+  {
+    "name": "Poor Link",
+    "category": "Positive",
+    "karma": 8,
+    "description": "",
+    "source": "RF",
+    "page": 148
+  },
+  {
+    "name": "Privileged Family Name",
+    "category": "Positive",
+    "karma": 7,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 149
+  },
+  {
+    "name": "Rank (Neither Military nor Law Enforcement) I",
+    "category": "Positive",
+    "karma": 5,
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 86
+  },
+  {
+    "name": "Rank (Neither Military nor Law Enforcement) II",
+    "category": "Positive",
+    "karma": 10,
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 86
+  },
+  {
+    "name": "Rank (Neither Military nor Law Enforcement) III",
+    "category": "Positive",
+    "karma": 15,
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 86
+  },
+  {
+    "name": "Rank (Military or Law Enforcement) I",
+    "category": "Positive",
+    "karma": 20,
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 86
+  },
+  {
+    "name": "Rank (Military or Law Enforcement) II",
+    "category": "Positive",
+    "karma": 25,
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 86
+  },
+  {
+    "name": "Rank (Military or Law Enforcement) III",
+    "category": "Positive",
+    "karma": 30,
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 86
+  },
+  {
+    "name": "Restricted Gear",
+    "category": "Positive",
+    "karma": 10,
+    "charGenLimit": 1,
+    "limit": 3,
+    "noLevels": true,
+    "description": "",
+    "source": "RF",
+    "page": 149
+  },
+  {
+    "name": "School of Hard Knocks",
+    "category": "Positive",
+    "karma": 4,
+    "description": "",
+    "source": "RF",
+    "page": 149
+  },
+  {
+    "name": "Sense of Direction",
+    "category": "Positive",
+    "karma": 3,
+    "description": "",
+    "source": "RF",
+    "page": 149
+  },
+  {
+    "name": "Sensei",
+    "category": "Positive",
+    "karma": 5,
+    "limit": {
+      "option": "False"
+    },
+    "description": "",
+    "source": "RF",
+    "page": 149
+  },
+  {
+    "name": "Solid Rep",
+    "category": "Positive",
+    "karma": 2,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 149
+  },
+  {
+    "name": "Legendary Rep",
+    "category": "Positive",
+    "karma": 4,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 149
+  },
+  {
+    "name": "Speed Reading",
+    "category": "Positive",
+    "karma": 2,
+    "description": "",
+    "source": "RF",
+    "page": 149
+  },
+  {
+    "name": "Spike Resistance",
+    "category": "Positive",
+    "karma": 10,
+    "limit": 3,
+    "description": "",
+    "source": "RF",
+    "page": 150
+  },
+  {
+    "name": "Spirit Whisperer",
+    "category": "Positive",
+    "karma": 8,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 150
+  },
+  {
+    "name": "Steely Eyed Wheelman",
+    "category": "Positive",
+    "karma": 2,
+    "description": "",
+    "source": "RF",
+    "page": 150
+  },
+  {
+    "name": "Technical School Education",
+    "category": "Positive",
+    "karma": 4,
+    "description": "",
+    "source": "RF",
+    "page": 150
+  },
+  {
+    "name": "Tough as Nails (Physical)",
+    "category": "Positive",
+    "karma": 5,
+    "limit": 3,
+    "sharedLimitQualityList": ["Tough as Nails (Stun)"],
+    "bonus": {
+      "addPhysicalBoxes": 1
+    },
+    "description": "",
+    "source": "RF",
+    "page": 150
+  },
+  {
+    "name": "Tough as Nails (Stun)",
+    "category": "Positive",
+    "karma": 5,
+    "limit": 3,
+    "sharedLimitQualityList": ["Tough as Nails (Physical)"],
+    "description": "",
+    "source": "RF",
+    "page": 150
+  },
+  {
+    "name": "Trust Fund I",
+    "category": "Positive",
+    "karma": 5,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 151
+  },
+  {
+    "name": "Trust Fund II",
+    "category": "Positive",
+    "karma": 10,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 151
+  },
+  {
+    "name": "Trust Fund III",
+    "category": "Positive",
+    "karma": 15,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 151
+  },
+  {
+    "name": "Trust Fund IV",
+    "category": "Positive",
+    "karma": 20,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 151
+  },
+  {
+    "name": "Trustworthy",
+    "category": "Positive",
+    "karma": 15,
+    "bonus": {
+      "skillGroups": [
+        {
+          "group": "Influence",
+          "bonus": [1]
+        }
+      ]
+    },
+    "description": "",
+    "source": "RF",
+    "page": 151
+  },
+  {
+    "name": "Vehicle Empathy",
+    "category": "Positive",
+    "karma": 7,
+    "bonus": {
+      "skillCategories": [
+        {
+          "category": "Vehicle Active",
+          "bonus": [1]
+        }
+      ]
+    },
+    "description": "",
+    "source": "RF",
+    "page": 151
+  },
+  {
+    "name": "Water Sprite",
+    "category": "Positive",
+    "karma": 6,
+    "description": "",
+    "source": "RF",
+    "page": 151
+  },
+  {
+    "name": "Witness My Hate",
+    "category": "Positive",
+    "karma": 7,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 151
+  },
+  {
+    "name": "Albinism I",
+    "category": "Negative",
+    "karma": -4,
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 151
+  },
+  {
+    "name": "Albinism II",
+    "category": "Negative",
+    "karma": -8,
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 151
+  },
+  {
+    "name": "Amnesia (Surface Loss)",
+    "category": "Negative",
+    "karma": -4,
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 152
+  },
+  {
+    "name": "Amnesia (Neural Deletion)",
+    "category": "Negative",
+    "karma": -8,
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 152
+  },
+  {
+    "name": "Asthma",
+    "category": "Negative",
+    "karma": -8,
+    "description": "",
+    "source": "RF",
+    "page": 152
+  },
+  {
+    "name": "Bi-Polar",
+    "category": "Negative",
+    "karma": -7,
+    "description": "",
+    "source": "RF",
+    "page": 152
+  },
+  {
+    "name": "Big Regret",
+    "category": "Negative",
+    "karma": -5,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 153
+  },
+  {
+    "name": "Blind",
+    "category": "Negative",
+    "karma": -15,
+    "karmaDiscount": {
+      "requirements": {},
+      "value": -10
+    },
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 153
+  },
+  {
+    "name": "Borrowed Time",
+    "category": "Negative",
+    "karma": -20,
+    "description": "",
+    "source": "RF",
+    "page": 153
+  },
+  {
+    "name": "Carrier (HMHVV Strain II)",
+    "category": "Negative",
+    "karma": -10,
+    "description": "",
+    "source": "RF",
+    "page": 141
+  },
+  {
+    "name": "Carrier (HMHVV Strain III)",
+    "category": "Negative",
+    "karma": -10,
+    "description": "",
+    "source": "RF",
+    "page": 141
+  },
+  {
+    "name": "Computer Illiterate",
+    "category": "Negative",
+    "karma": -7,
+    "bonus": {
+      "skillGroups": [
+        {
+          "group": "Electronics",
+          "bonus": [-4]
+        }
+      ]
+    },
+    "description": "",
+    "source": "RF",
+    "page": 153
+  },
+  {
+    "name": "Creature of Comfort (Middle)",
+    "category": "Negative",
+    "karma": -10,
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 153
+  },
+  {
+    "name": "Creature of Comfort (High)",
+    "category": "Negative",
+    "karma": -17,
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 153
+  },
+  {
+    "name": "Creature of Comfort (Luxury)",
+    "category": "Negative",
+    "karma": -25,
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 153
+  },
+  {
+    "name": "Day Job (10 hrs)",
+    "category": "Negative",
+    "karma": -5,
+    "bonus": {
+      "enterName": true
+    },
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 154
+  },
+  {
+    "name": "Day Job (20 hrs)",
+    "category": "Negative",
+    "karma": -10,
+    "bonus": {
+      "enterName": true
+    },
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 154
+  },
+  {
+    "name": "Day Job (40 hrs)",
+    "category": "Negative",
+    "karma": -15,
+    "bonus": {
+      "enterName": true
+    },
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 154
+  },
+  {
+    "name": "Deaf",
+    "category": "Negative",
+    "karma": -15,
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 154
+  },
+  {
+    "name": "Did You Just Call Me Dumb?",
+    "category": "Negative",
+    "karma": -3,
+    "description": "",
+    "source": "RF",
+    "page": 154
+  },
+  {
+    "name": "Dimmer Bulb",
+    "category": "Negative",
+    "karma": -5,
+    "limit": 3,
+    "bonus": {
+      "dodge": [
+        -1,
+        {
+          "operator": "*"
+        },
+        {
+          "option": "Rating"
+        }
+      ],
+      "addictionResistance": {
+        "physiological": {
+          "initialTest": [
+            -1,
+            {
+              "operator": "*"
+            },
+            {
+              "option": "Rating"
+            }
+          ],
+          "progressingTest": [
+            -1,
+            {
+              "operator": "*"
+            },
+            {
+              "option": "Rating"
+            }
+          ]
+        }
+      },
+      "memory": [
+        -1,
+        {
+          "operator": "*"
+        },
+        {
+          "option": "Rating"
+        }
+      ],
+      "detectionResist": [
+        -1,
+        {
+          "operator": "*"
+        },
+        {
+          "option": "Rating"
+        }
+      ],
+      "manaIllusionResist": [
+        -1,
+        {
+          "operator": "*"
+        },
+        {
+          "option": "Rating"
+        }
+      ],
+      "mentalManipulationResist": [
+        -1,
+        {
+          "operator": "*"
+        },
+        {
+          "option": "Rating"
+        }
+      ],
+      "decreaseIntuitionResist": [
+        -1,
+        {
+          "operator": "*"
+        },
+        {
+          "option": "Rating"
+        }
+      ],
+      "decreaseLogicResist": [
+        -1,
+        {
+          "operator": "*"
+        },
+        {
+          "option": "Rating"
+        }
+      ]
+    },
+    "description": "",
+    "source": "RF",
+    "page": 154
+  },
+  {
+    "name": "Driven",
+    "category": "Negative",
+    "karma": -2,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 154
+  },
+  {
+    "name": "Emotional Attachment",
+    "category": "Negative",
+    "karma": -5,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 154
+  },
+  {
+    "name": "Ex-Con",
+    "category": "Negative",
+    "karma": -15,
+    "description": "",
+    "source": "RF",
+    "page": 155
+  },
+  {
+    "name": "Flashbacks I",
+    "category": "Negative",
+    "karma": -7,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 155
+  },
+  {
+    "name": "Flashbacks II",
+    "category": "Negative",
+    "karma": -15,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 155
+  },
+  {
+    "name": "Hobo with a Shotgun",
+    "category": "Negative",
+    "karma": -10,
+    "description": "",
+    "source": "RF",
+    "page": 155
+  },
+  {
+    "name": "Hung Out to Dry",
+    "category": "Negative",
+    "karma": -8,
+    "description": "",
+    "source": "RF",
+    "page": 155
+  },
+  {
+    "name": "Illiterate",
+    "category": "Negative",
+    "karma": -5,
+    "description": "",
+    "source": "RF",
+    "page": 155
+  },
+  {
+    "name": "In Debt",
+    "category": "Negative",
+    "karma": -1,
+    "limit": 15,
+    "description": "",
+    "source": "RF",
+    "page": 156
+  },
+  {
+    "name": "Incomplete Deprogramming",
+    "category": "Negative",
+    "karma": -10,
+    "description": "",
+    "source": "RF",
+    "page": 156
+  },
+  {
+    "name": "Infirm",
+    "category": "Negative",
+    "karma": -5,
+    "limit": 5,
+    "firstLevelBonus": {
+      "attributeMaxClamp": ["AGI", "BOD", "REA", "STR"]
+    },
+    "description": "",
+    "source": "RF",
+    "page": 156
+  },
+  {
+    "name": "Liar",
+    "category": "Negative",
+    "karma": -7,
+    "description": "",
+    "source": "RF",
+    "page": 156
+  },
+  {
+    "name": "Night Blindness",
+    "category": "Negative",
+    "karma": -6,
+    "description": "",
+    "source": "RF",
+    "page": 156
+  },
+  {
+    "name": "Oblivious I",
+    "category": "Negative",
+    "karma": -6,
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 157
+  },
+  {
+    "name": "Oblivious II",
+    "category": "Negative",
+    "karma": -10,
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 157
+  },
+  {
+    "name": "Pacifist I",
+    "category": "Negative",
+    "karma": -10,
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 157
+  },
+  {
+    "name": "Pacifist II",
+    "category": "Negative",
+    "karma": -15,
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 157
+  },
+  {
+    "name": "Paranoia",
+    "category": "Negative",
+    "karma": -7,
+    "description": "",
+    "source": "RF",
+    "page": 157
+  },
+  {
+    "name": "Paraplegic",
+    "category": "Negative",
+    "karma": -10,
+    "bonus": {
+      "lifestyleCostModifier": [
+        {
+          "cost": 10
+        }
+      ]
+    },
+    "description": "",
+    "source": "RF",
+    "page": 157
+  },
+  {
+    "name": "Phobia (Uncommon, Mild)",
+    "category": "Negative",
+    "karma": -5,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 157
+  },
+  {
+    "name": "Phobia (Uncommon, Moderate)",
+    "category": "Negative",
+    "karma": -7,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 157
+  },
+  {
+    "name": "Phobia (Uncommon, Severe)",
+    "category": "Negative",
+    "karma": -12,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 157
+  },
+  {
+    "name": "Phobia (Common, Mild)",
+    "category": "Negative",
+    "karma": -8,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 157
+  },
+  {
+    "name": "Phobia (Common, Moderate)",
+    "category": "Negative",
+    "karma": -10,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 157
+  },
+  {
+    "name": "Phobia (Common, Severe)",
+    "category": "Negative",
+    "karma": -15,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 157
+  },
+  {
+    "name": "Pie Iesu Domine. Dona Eis Requiem.",
+    "category": "Negative",
+    "karma": -2,
+    "description": "",
+    "source": "RF",
+    "page": 158
+  },
+  {
+    "name": "Poor Self Control (Braggart)",
+    "category": "Negative",
+    "karma": -5,
+    "description": "",
+    "source": "RF",
+    "page": 158
+  },
+  {
+    "name": "Poor Self Control (Compulsive I, Personal)",
+    "category": "Negative",
+    "karma": -4,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 158
+  },
+  {
+    "name": "Poor Self Control (Compulsive II, Personal)",
+    "category": "Negative",
+    "karma": -6,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 158
+  },
+  {
+    "name": "Poor Self Control (Compulsive III, Personal)",
+    "category": "Negative",
+    "karma": -8,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 158
+  },
+  {
+    "name": "Poor Self Control (Compulsive IV, Personal)",
+    "category": "Negative",
+    "karma": -10,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 158
+  },
+  {
+    "name": "Poor Self Control (Compulsive I, Public Single Aspect)",
+    "category": "Negative",
+    "karma": -5,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 158
+  },
+  {
+    "name": "Poor Self Control (Compulsive II, Public Single Aspect)",
+    "category": "Negative",
+    "karma": -7,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 158
+  },
+  {
+    "name": "Poor Self Control (Compulsive III, Public Single Aspect)",
+    "category": "Negative",
+    "karma": -9,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 158
+  },
+  {
+    "name": "Poor Self Control (Compulsive IV, Public Single Aspect)",
+    "category": "Negative",
+    "karma": -11,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 158
+  },
+  {
+    "name": "Poor Self Control (Compulsive I, Public Broad Aspect)",
+    "category": "Negative",
+    "karma": -6,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 158
+  },
+  {
+    "name": "Poor Self Control (Compulsive II, Public Broad Aspect)",
+    "category": "Negative",
+    "karma": -8,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 158
+  },
+  {
+    "name": "Poor Self Control (Compulsive III, Public Broad Aspect)",
+    "category": "Negative",
+    "karma": -10,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 158
+  },
+  {
+    "name": "Poor Self Control (Compulsive IV, Public Broad Aspect)",
+    "category": "Negative",
+    "karma": -12,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 158
+  },
+  {
+    "name": "Poor Self Control (Thrill Seeker)",
+    "category": "Negative",
+    "karma": -4,
+    "description": "",
+    "source": "RF",
+    "page": 158
+  },
+  {
+    "name": "Poor Self Control (Thrill Seeker) (Dareadrenaline)",
+    "category": "Negative",
+    "karma": 0,
+    "userSelectable": false,
+    "description": "",
+    "source": "CF",
+    "page": 160
+  },
+  {
+    "name": "Poor Self Control (Vindictive)",
+    "category": "Negative",
+    "karma": -5,
+    "description": "",
+    "source": "RF",
+    "page": 158
+  },
+  {
+    "name": "Poor Self Control (Combat Monster)",
+    "category": "Negative",
+    "karma": -10,
+    "description": "",
+    "source": "RF",
+    "page": 158
+  },
+  {
+    "name": "Records on File",
+    "category": "Negative",
+    "karma": -1,
+    "limit": 10,
+    "noLevels": true,
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 158
+  },
+  {
+    "name": "Reduced Sense (Smell)",
+    "category": "Negative",
+    "karma": -2,
+    "description": "",
+    "source": "RF",
+    "page": 159
+  },
+  {
+    "name": "Reduced Sense (Taste)",
+    "category": "Negative",
+    "karma": -2,
+    "description": "",
+    "source": "RF",
+    "page": 159
+  },
+  {
+    "name": "Reduced Sense (Touch)",
+    "category": "Negative",
+    "karma": -10,
+    "description": "",
+    "source": "RF",
+    "page": 159
+  },
+  {
+    "name": "Reduced Sense (Hearing)",
+    "category": "Negative",
+    "karma": -5,
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 159
+  },
+  {
+    "name": "Reduced Sense (Sight)",
+    "category": "Negative",
+    "karma": -5,
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 159
+  },
+  {
+    "name": "Reduced Sense (Astral Sight)",
+    "category": "Negative",
+    "karma": -5,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 159
+  },
+  {
+    "name": "Sensory Overload Syndrome",
+    "category": "Negative",
+    "karma": -15,
+    "description": "",
+    "source": "RF",
+    "page": 159
+  },
+  {
+    "name": "Signature",
+    "category": "Negative",
+    "karma": -10,
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 159
+  },
+  {
+    "name": "Vendetta",
+    "category": "Negative",
+    "karma": -7,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 159
+  },
+  {
+    "name": "Wanted",
+    "category": "Negative",
+    "karma": -10,
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "RF",
+    "page": 159
+  },
+  {
+    "name": "Natural Weapon: Kick (Centaur)",
+    "category": "Positive",
+    "karma": 0,
+    "addWeapons": ["Kick (Centaur)"],
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 105
+  },
+  {
+    "name": "Centaur Body",
+    "category": "Positive",
+    "karma": 0,
+    "userSelectable": false,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 105
+  },
+  {
+    "name": "Natural Weapon: Bite (Naga)",
+    "category": "Positive",
+    "karma": 0,
+    "addWeapons": ["Bite (Naga)"],
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 105
+  },
+  {
+    "name": "Astral Perception",
+    "category": "Positive",
+    "karma": 0,
+    "userSelectable": false,
+    "requirements": {},
+    "description": "",
+    "source": "SR5",
+    "page": 309
+  },
+  {
+    "name": "360-degree Eyesight",
+    "category": "Positive",
+    "karma": 4,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 111
+  },
+  {
+    "name": "Animal Pelage (Quills)",
+    "category": "Positive",
+    "karma": 5,
+    "isMetagenic": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 111
+  },
+  {
+    "name": "Animal Pelage (Insulating Pelt)",
+    "category": "Positive",
+    "karma": 4,
+    "isMetagenic": true,
+    "bonus": {
+      "coldArmour": 4
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 111
+  },
+  {
+    "name": "Animal Pelage (Camo Fur)",
+    "category": "Positive",
+    "karma": 3,
+    "isMetagenic": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 111
+  },
+  {
+    "name": "Arcane Arrester",
+    "category": "Positive",
+    "karma": 10,
+    "limit": 2,
+    "isMetagenic": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 111
+  },
+  {
+    "name": "Balance Receptor",
+    "category": "Positive",
+    "karma": 6,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 112
+  },
+  {
+    "name": "Beak",
+    "category": "Positive",
+    "karma": 3,
+    "isMetagenic": true,
+    "bonus": {
+      "toxinIngestionResist": 1,
+      "lifestyleCostModifier": [
+        {
+          "cost": -10
+        }
+      ]
+    },
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 112
+  },
+  {
+    "name": "Raptor Beak",
+    "category": "Positive",
+    "karma": 5,
+    "addWeapons": ["Raptor Beak"],
+    "isMetagenic": true,
+    "bonus": {
+      "toxinIngestionResist": 1,
+      "lifestyleCostModifier": [
+        {
+          "cost": -10
+        }
+      ]
+    },
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 112
+  },
+  {
+    "name": "Bicardiac",
+    "category": "Positive",
+    "karma": 4,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 112
+  },
+  {
+    "name": "Biosonar",
+    "category": "Positive",
+    "karma": 4,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 112
+  },
+  {
+    "name": "Bone Spikes",
+    "category": "Positive",
+    "karma": 5,
+    "isMetagenic": true,
+    "bonus": {
+      "unarmedDamageType": "Physical"
+    },
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 112
+  },
+  {
+    "name": "Broadened Auditory System (Infrasound)",
+    "category": "Positive",
+    "karma": 4,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 111
+  },
+  {
+    "name": "Broadened Auditory System (Ultrasound)",
+    "category": "Positive",
+    "karma": 4,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 112
+  },
+  {
+    "name": "Camouflage",
+    "category": "Positive",
+    "karma": 4,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 113
+  },
+  {
+    "name": "Dynamic Coloration",
+    "category": "Positive",
+    "karma": 8,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 113
+  },
+  {
+    "name": "Celerity",
+    "category": "Positive",
+    "karma": 6,
+    "isMetagenic": true,
+    "bonus": {
+      "sprintSpeedPercentageModifier": 10000
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 113
+  },
+  {
+    "name": "Claws",
+    "category": "Positive",
+    "karma": 3,
+    "addWeapons": ["Digging Claws"],
+    "isMetagenic": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 113
+  },
+  {
+    "name": "Razor Claws",
+    "category": "Positive",
+    "karma": 5,
+    "addWeapons": ["Razor Claws"],
+    "isMetagenic": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 113
+  },
+  {
+    "name": "Retractable Claws",
+    "category": "Positive",
+    "karma": 7,
+    "addWeapons": ["Retractable Claws"],
+    "isMetagenic": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 113
+  },
+  {
+    "name": "Climate Adaptation (Arctic)",
+    "category": "Positive",
+    "karma": 4,
+    "isMetagenic": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 113
+  },
+  {
+    "name": "Climate Adaptation (Desert)",
+    "category": "Positive",
+    "karma": 4,
+    "isMetagenic": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 113
+  },
+  {
+    "name": "Corrosive Spit",
+    "category": "Positive",
+    "karma": 5,
+    "isMetagenic": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 113
+  },
+  {
+    "name": "Dermal Alteration (Bark Skin)",
+    "category": "Positive",
+    "karma": 5,
+    "isMetagenic": true,
+    "bonus": {
+      "armour": {
+        "bonus": 2,
+        "nonStacking": true
+      }
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 113
+  },
+  {
+    "name": "Dermal Alteration (Blubber)",
+    "category": "Positive",
+    "karma": 3,
+    "isMetagenic": true,
+    "bonus": {
+      "coldArmour": 2
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 112
+  },
+  {
+    "name": "Dermal Alteration (Dragon Skin)",
+    "category": "Positive",
+    "karma": 3,
+    "isMetagenic": true,
+    "bonus": {
+      "fireArmour": 2
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 113
+  },
+  {
+    "name": "Dermal Alteration (Granite Shell)",
+    "category": "Positive",
+    "karma": 15,
+    "isMetagenic": true,
+    "bonus": {
+      "armour": {
+        "bonus": 4,
+        "nonStacking": true
+      }
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 113
+  },
+  {
+    "name": "Dermal Alteration (Rhino Hide)",
+    "category": "Positive",
+    "karma": 8,
+    "isMetagenic": true,
+    "bonus": {
+      "armour": {
+        "bonus": 3,
+        "nonStacking": true
+      }
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 113
+  },
+  {
+    "name": "Dermal Deposits",
+    "category": "Positive",
+    "karma": 3,
+    "isMetagenic": true,
+    "bonus": {
+      "armour": {
+        "bonus": 1
+      }
+    },
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 114
+  },
+  {
+    "name": "Defensive Secretion",
+    "category": "Positive",
+    "karma": 4,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 114
+  },
+  {
+    "name": "Electroception (Electrosense)",
+    "category": "Positive",
+    "karma": 4,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 114
+  },
+  {
+    "name": "Electroception (Technosense)",
+    "category": "Positive",
+    "karma": 7,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 114
+  },
+  {
+    "name": "Elongated Limbs",
+    "category": "Positive",
+    "karma": 4,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 113
+  },
+  {
+    "name": "Fangs",
+    "category": "Positive",
+    "karma": 4,
+    "addWeapons": ["Fangs"],
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 115
+  },
+  {
+    "name": "Frog Tongue",
+    "category": "Positive",
+    "karma": 4,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 115
+  },
+  {
+    "name": "Functional Tail (Balance)",
+    "category": "Positive",
+    "karma": 6,
+    "isMetagenic": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 115
+  },
+  {
+    "name": "Functional Tail (Paddle)",
+    "category": "Positive",
+    "karma": 4,
+    "isMetagenic": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 115
+  },
+  {
+    "name": "Functional Tail (Prehensile)",
+    "category": "Positive",
+    "karma": 6,
+    "isMetagenic": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 115
+  },
+  {
+    "name": "Functional Tail (Thagomizer)",
+    "category": "Positive",
+    "karma": 5,
+    "addWeapons": ["Functional Tail (Thagomizer)"],
+    "isMetagenic": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 115
+  },
+  {
+    "name": "Gills (Air)",
+    "category": "Positive",
+    "karma": 4,
+    "isMetagenic": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 115
+  },
+  {
+    "name": "Gills (Aqua)",
+    "category": "Positive",
+    "karma": 4,
+    "isMetagenic": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 115
+  },
+  {
+    "name": "Gills (Full)",
+    "category": "Positive",
+    "karma": 6,
+    "isMetagenic": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 115
+  },
+  {
+    "name": "Glamour",
+    "category": "Positive",
+    "karma": 12,
+    "isMetagenic": true,
+    "bonus": {
+      "skillCategories": [
+        {
+          "category": "Social Active",
+          "bonus": [1]
+        }
+      ],
+      "socialLimit": [2]
+    },
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 115
+  },
+  {
+    "name": "Greasy Skin",
+    "category": "Positive",
+    "karma": 3,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 116
+  },
+  {
+    "name": "Goring Horns",
+    "category": "Positive",
+    "karma": 5,
+    "addWeapons": ["Goring Horns"],
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 115
+  },
+  {
+    "name": "Keen-Eared",
+    "category": "Positive",
+    "karma": 3,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 116
+  },
+  {
+    "name": "Larger Tusks",
+    "category": "Positive",
+    "karma": 5,
+    "addWeapons": ["Larger Tusks"],
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 116
+  },
+  {
+    "name": "Low-Light Vision (Changeling)",
+    "category": "Positive",
+    "karma": 4,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 116
+  },
+  {
+    "name": "Low-Light Vision (Feline)",
+    "category": "Positive",
+    "karma": 2,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 116
+  },
+  {
+    "name": "Magic Sense",
+    "category": "Positive",
+    "karma": 7,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 116
+  },
+  {
+    "name": "Magnetoception",
+    "category": "Positive",
+    "karma": 4,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 116
+  },
+  {
+    "name": "Marsupial Pouch",
+    "category": "Positive",
+    "karma": 3,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 116
+  },
+  {
+    "name": "Metagenic Improvement (Body)",
+    "category": "Positive",
+    "karma": 15,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 116
+  },
+  {
+    "name": "Metagenic Improvement (Agility)",
+    "category": "Positive",
+    "karma": 15,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 116
+  },
+  {
+    "name": "Metagenic Improvement (Reaction)",
+    "category": "Positive",
+    "karma": 15,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 116
+  },
+  {
+    "name": "Metagenic Improvement (Strength)",
+    "category": "Positive",
+    "karma": 15,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 116
+  },
+  {
+    "name": "Metagenic Improvement (Charisma)",
+    "category": "Positive",
+    "karma": 15,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 116
+  },
+  {
+    "name": "Metagenic Improvement (Intuition)",
+    "category": "Positive",
+    "karma": 15,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 116
+  },
+  {
+    "name": "Metagenic Improvement (Logic)",
+    "category": "Positive",
+    "karma": 15,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 116
+  },
+  {
+    "name": "Metagenic Improvement (Willpower)",
+    "category": "Positive",
+    "karma": 15,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 116
+  },
+  {
+    "name": "Metahuman Traits",
+    "category": "Positive",
+    "karma": 2,
+    "limit": {
+      "option": "False"
+    },
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 116
+  },
+  {
+    "name": "Monkey Paws",
+    "category": "Positive",
+    "karma": 4,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 116
+  },
+  {
+    "name": "Nasty Vibe",
+    "category": "Positive",
+    "karma": 5,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 117
+  },
+  {
+    "name": "Natural Venom (Exhaled, Mild)",
+    "category": "Positive",
+    "karma": 6,
+    "isMetagenic": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 117
+  },
+  {
+    "name": "Natural Venom (Exhaled, Moderate)",
+    "category": "Positive",
+    "karma": 8,
+    "isMetagenic": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 117
+  },
+  {
+    "name": "Natural Venom (Exhaled, Serious)",
+    "category": "Positive",
+    "karma": 13,
+    "isMetagenic": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 117
+  },
+  {
+    "name": "Natural Venom (Exhaled, Deadly)",
+    "category": "Positive",
+    "karma": 18,
+    "isMetagenic": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 117
+  },
+  {
+    "name": "Natural Venom (Spat, Mild)",
+    "category": "Positive",
+    "karma": 8,
+    "isMetagenic": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 117
+  },
+  {
+    "name": "Natural Venom (Spat, Moderate)",
+    "category": "Positive",
+    "karma": 10,
+    "isMetagenic": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 117
+  },
+  {
+    "name": "Natural Venom (Spat, Serious)",
+    "category": "Positive",
+    "karma": 15,
+    "isMetagenic": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 117
+  },
+  {
+    "name": "Natural Venom (Spat, Deadly)",
+    "category": "Positive",
+    "karma": 20,
+    "isMetagenic": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 117
+  },
+  {
+    "name": "Natural Venom (Injected, Mild)",
+    "category": "Positive",
+    "karma": 3,
+    "isMetagenic": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 117
+  },
+  {
+    "name": "Natural Venom (Injected, Moderate)",
+    "category": "Positive",
+    "karma": 5,
+    "isMetagenic": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 117
+  },
+  {
+    "name": "Natural Venom (Injected, Serious)",
+    "category": "Positive",
+    "karma": 10,
+    "isMetagenic": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 117
+  },
+  {
+    "name": "Natural Venom (Injected, Deadly)",
+    "category": "Positive",
+    "karma": 15,
+    "isMetagenic": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 117
+  },
+  {
+    "name": "Ogre Stomach",
+    "category": "Positive",
+    "karma": 8,
+    "isMetagenic": true,
+    "bonus": {
+      "toxinIngestionResist": 2,
+      "lifestyleCostModifier": [
+        {
+          "cost": -20
+        }
+      ]
+    },
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 117
+  },
+  {
+    "name": "Photometabolism",
+    "category": "Positive",
+    "karma": 4,
+    "isMetagenic": true,
+    "bonus": {
+      "lifestyleCostModifier": [
+        {
+          "cost": -10
+        }
+      ]
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 117
+  },
+  {
+    "name": "Proboscis",
+    "category": "Positive",
+    "karma": 5,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 117
+  },
+  {
+    "name": "Satyr Legs",
+    "category": "Positive",
+    "karma": 10,
+    "isMetagenic": true,
+    "bonus": {
+      "sprintSpeedPercentageModifier": 10000
+    },
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 118
+  },
+  {
+    "name": "Setae",
+    "category": "Positive",
+    "karma": 4,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 118
+  },
+  {
+    "name": "Shiva Arms (Pair)",
+    "category": "Positive",
+    "karma": 8,
+    "limit": 2,
+    "isMetagenic": true,
+    "bonus": {
+      "addLimb": {
+        "limbSlot": "Arm",
+        "numberOfLimbs": 2
+      }
+    },
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 118
+  },
+  {
+    "name": "Thermal Sensitivity",
+    "category": "Positive",
+    "karma": 4,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 118
+  },
+  {
+    "name": "Thermographic Vision (SURGE)",
+    "category": "Positive",
+    "karma": 3,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 118
+  },
+  {
+    "name": "Thorns",
+    "category": "Positive",
+    "karma": 2,
+    "isMetagenic": true,
+    "bonus": {
+      "skillCategories": [
+        {
+          "category": "Physical Active",
+          "bonus": [-1]
+        }
+      ]
+    },
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 118
+  },
+  {
+    "name": "Underwater Vision",
+    "category": "Positive",
+    "karma": 3,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 118
+  },
+  {
+    "name": "Vomeronasal Organ",
+    "category": "Positive",
+    "karma": 3,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 118
+  },
+  {
+    "name": "Webbed Digits",
+    "category": "Positive",
+    "karma": 4,
+    "isMetagenic": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 119
+  },
+  {
+    "name": "Adiposis",
+    "category": "Negative",
+    "karma": -10,
+    "isMetagenic": true,
+    "bonus": {
+      "skillCategories": [
+        {
+          "category": "Physical Active",
+          "bonus": [-1]
+        }
+      ]
+    },
+    "description": "",
+    "source": "RF",
+    "page": 119
+  },
+  {
+    "name": "Astral Hazing",
+    "category": "Negative",
+    "karma": -5,
+    "karmaDiscount": {
+      "requirements": {},
+      "value": 10
+    },
+    "isMetagenic": true,
+    "description": "",
+    "source": "RF",
+    "page": 119
+  },
+  {
+    "name": "Berserker",
+    "category": "Negative",
+    "karma": -6,
+    "isMetagenic": true,
+    "description": "",
+    "source": "RF",
+    "page": 119
+  },
+  {
+    "name": "Bioluminescence",
+    "category": "Negative",
+    "karma": -5,
+    "isMetagenic": true,
+    "description": "",
+    "source": "RF",
+    "page": 119
+  },
+  {
+    "name": "Cephalopod Skull",
+    "category": "Negative",
+    "karma": -6,
+    "isMetagenic": true,
+    "description": "",
+    "source": "RF",
+    "page": 120
+  },
+  {
+    "name": "Cold-Blooded",
+    "category": "Negative",
+    "karma": -5,
+    "isMetagenic": true,
+    "description": "",
+    "source": "RF",
+    "page": 120
+  },
+  {
+    "name": "Critter Spook",
+    "category": "Negative",
+    "karma": -5,
+    "isMetagenic": true,
+    "description": "",
+    "source": "RF",
+    "page": 120
+  },
+  {
+    "name": "Cyclopean Eye",
+    "category": "Negative",
+    "karma": -6,
+    "isMetagenic": true,
+    "bonus": {
+      "skillCategories": [
+        {
+          "category": "Combat Active",
+          "bonus": [-1]
+        }
+      ]
+    },
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 120
+  },
+  {
+    "name": "Deformity (Picasso)",
+    "category": "Negative",
+    "karma": -5,
+    "isMetagenic": true,
+    "description": "",
+    "source": "RF",
+    "page": 120
+  },
+  {
+    "name": "Deformity (Quasimodo)",
+    "category": "Negative",
+    "karma": -15,
+    "isMetagenic": true,
+    "bonus": {
+      "skillCategories": [
+        {
+          "category": "Physical Active",
+          "bonus": [-2]
+        }
+      ]
+    },
+    "description": "",
+    "source": "RF",
+    "page": 120
+  },
+  {
+    "name": "Feathers",
+    "category": "Negative",
+    "karma": -3,
+    "isMetagenic": true,
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 120
+  },
+  {
+    "name": "Impaired Attribute (Body)",
+    "category": "Negative",
+    "karma": -8,
+    "isMetagenic": true,
+    "description": "",
+    "source": "RF",
+    "page": 120
+  },
+  {
+    "name": "Impaired Attribute (Agility)",
+    "category": "Negative",
+    "karma": -8,
+    "isMetagenic": true,
+    "description": "",
+    "source": "RF",
+    "page": 120
+  },
+  {
+    "name": "Impaired Attribute (Reaction)",
+    "category": "Negative",
+    "karma": -8,
+    "isMetagenic": true,
+    "description": "",
+    "source": "RF",
+    "page": 120
+  },
+  {
+    "name": "Impaired Attribute (Strength)",
+    "category": "Negative",
+    "karma": -8,
+    "isMetagenic": true,
+    "description": "",
+    "source": "RF",
+    "page": 120
+  },
+  {
+    "name": "Impaired Attribute (Charisma)",
+    "category": "Negative",
+    "karma": -8,
+    "isMetagenic": true,
+    "description": "",
+    "source": "RF",
+    "page": 120
+  },
+  {
+    "name": "Impaired Attribute (Intuition)",
+    "category": "Negative",
+    "karma": -8,
+    "isMetagenic": true,
+    "description": "",
+    "source": "RF",
+    "page": 120
+  },
+  {
+    "name": "Impaired Attribute (Logic)",
+    "category": "Negative",
+    "karma": -8,
+    "isMetagenic": true,
+    "description": "",
+    "source": "RF",
+    "page": 120
+  },
+  {
+    "name": "Impaired Attribute (Willpower)",
+    "category": "Negative",
+    "karma": -8,
+    "isMetagenic": true,
+    "description": "",
+    "source": "RF",
+    "page": 120
+  },
+  {
+    "name": "Insectoid Features",
+    "category": "Negative",
+    "karma": -6,
+    "isMetagenic": true,
+    "description": "",
+    "source": "RF",
+    "page": 121
+  },
+  {
+    "name": "Mood Hair",
+    "category": "Negative",
+    "karma": -4,
+    "isMetagenic": true,
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 121
+  },
+  {
+    "name": "Neoteny",
+    "category": "Negative",
+    "karma": -6,
+    "isMetagenic": true,
+    "bonus": {
+      "addPhysicalBoxes": -2,
+      "lifestyleCostModifier": [
+        {
+          "cost": 10
+        }
+      ]
+    },
+    "description": "",
+    "source": "RF",
+    "page": 121
+  },
+  {
+    "name": "Nocturnal",
+    "category": "Negative",
+    "karma": -4,
+    "isMetagenic": true,
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 121
+  },
+  {
+    "name": "Progeria",
+    "category": "Negative",
+    "karma": -9,
+    "isMetagenic": true,
+    "bonus": {
+      "skillCategories": [
+        {
+          "category": "Physical Active",
+          "bonus": [-2]
+        }
+      ]
+    },
+    "description": "",
+    "source": "RF",
+    "page": 121
+  },
+  {
+    "name": "Scales",
+    "category": "Negative",
+    "karma": -5,
+    "isMetagenic": true,
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 121
+  },
+  {
+    "name": "Scent Glands",
+    "category": "Negative",
+    "karma": -4,
+    "isMetagenic": true,
+    "description": "",
+    "source": "RF",
+    "page": 121
+  },
+  {
+    "name": "Slow Healer",
+    "category": "Negative",
+    "karma": -3,
+    "isMetagenic": true,
+    "bonus": {
+      "stunHealing": -2,
+      "physicalHealing": -2
+    },
+    "description": "",
+    "source": "RF",
+    "page": 122
+  },
+  {
+    "name": "Striking Skin Pigmentation",
+    "category": "Negative",
+    "karma": -4,
+    "isMetagenic": true,
+    "description": "",
+    "source": "RF",
+    "page": 122
+  },
+  {
+    "name": "Stubby Arms",
+    "category": "Negative",
+    "karma": -10,
+    "isMetagenic": true,
+    "description": "",
+    "source": "RF",
+    "page": 122
+  },
+  {
+    "name": "Symbiosis",
+    "category": "Negative",
+    "karma": -5,
+    "isMetagenic": true,
+    "description": "",
+    "source": "RF",
+    "page": 122
+  },
+  {
+    "name": "Third Eye",
+    "category": "Negative",
+    "karma": -3,
+    "isMetagenic": true,
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 122
+  },
+  {
+    "name": "Unusual Hair",
+    "category": "Negative",
+    "karma": -3,
+    "isMetagenic": true,
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 122
+  },
+  {
+    "name": "Vestigial Tail",
+    "category": "Negative",
+    "karma": -6,
+    "isMetagenic": true,
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 123
+  },
+  {
+    "name": "Infected: Bandersnatch",
+    "category": "Positive",
+    "karma": 22,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "addWeapons": ["Bite (Infected) +1", "Claws (Infected) +2"],
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 136
+  },
+  {
+    "name": "Infected: Banshee",
+    "category": "Positive",
+    "karma": 32,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "addWeapons": ["Bite (Infected) +1"],
+    "bonus": {
+      "initiative": {
+        "bonusDice": 1
+      },
+      "walkSpeedPercentageModifier": 100,
+      "swimSpeedPercentageModifier": 100,
+      "runSpeedPercentageModifier": 100
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 136
+  },
+  {
+    "name": "Infected: Dzoo-Noo-Qua",
+    "category": "Positive",
+    "karma": 43,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "addWeapons": ["Bite (Infected) +1", "Claws (Infected) +2"],
+    "bonus": {
+      "initiative": {
+        "bonusDice": 1
+      },
+      "walkSpeedPercentageModifier": 100,
+      "swimSpeedPercentageModifier": 100,
+      "runSpeedPercentageModifier": 100,
+      "armour": {
+        "bonus": 1
+      }
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 137
+  },
+  {
+    "name": "Infected: Fomoraig",
+    "category": "Positive",
+    "karma": 22,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "addWeapons": ["Bite (Infected) +1", "Claws (Infected) +2"],
+    "bonus": {
+      "armour": {
+        "bonus": 1
+      }
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 138
+  },
+  {
+    "name": "Infected: Ghoul (Dwarf)",
+    "category": "Positive",
+    "karma": 29,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "addWeapons": ["Bite (Infected) +1", "Claws (Infected) +2"],
+    "bonus": {
+      "armour": {
+        "bonus": 1
+      }
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 138
+  },
+  {
+    "name": "Infected: Ghoul (Elf)",
+    "category": "Positive",
+    "karma": 29,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "addWeapons": ["Bite (Infected) +1", "Claws (Infected) +2"],
+    "bonus": {
+      "armour": {
+        "bonus": 1
+      }
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 138
+  },
+  {
+    "name": "Infected: Ghoul (Human)",
+    "category": "Positive",
+    "karma": 29,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "addWeapons": ["Bite (Infected) +1", "Claws (Infected) +2"],
+    "bonus": {
+      "armour": {
+        "bonus": 1
+      }
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 138
+  },
+  {
+    "name": "Infected: Ghoul (Ork)",
+    "category": "Positive",
+    "karma": 29,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "addWeapons": ["Bite (Infected) +1", "Claws (Infected) +2"],
+    "bonus": {
+      "armour": {
+        "bonus": 1
+      }
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 138
+  },
+  {
+    "name": "Infected: Ghoul (Sasquatch)",
+    "category": "Positive",
+    "karma": 29,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "addWeapons": ["Bite (Infected) +1", "Claws (Infected) +2"],
+    "bonus": {
+      "armour": {
+        "bonus": 1
+      }
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 138
+  },
+  {
+    "name": "Infected: Ghoul (Troll)",
+    "category": "Positive",
+    "karma": 29,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "addWeapons": ["Bite (Infected) +1", "Claws (Infected) +2"],
+    "bonus": {
+      "armour": {
+        "bonus": 1
+      }
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 138
+  },
+  {
+    "name": "Infected: Gnawer",
+    "category": "Positive",
+    "karma": 35,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "addWeapons": ["Bite (Infected) +1"],
+    "bonus": {
+      "armour": {
+        "bonus": 1
+      }
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 138
+  },
+  {
+    "name": "Infected: Goblin",
+    "category": "Positive",
+    "karma": 27,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "addWeapons": ["Bite (Infected) +1", "Claws (Infected) +2"],
+    "bonus": {
+      "initiative": {
+        "bonusDice": 1
+      },
+      "swimSpeedPercentageModifier": 100,
+      "walkSpeedPercentageModifier": 100,
+      "runSpeedPercentageModifier": 100,
+      "armour": {
+        "bonus": 1
+      }
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 138
+  },
+  {
+    "name": "Infected: Grendel",
+    "category": "Positive",
+    "karma": 32,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "addWeapons": ["Bite (Infected) +1", "Claws (Infected) +1"],
+    "bonus": {
+      "initiative": {
+        "bonus": 1
+      },
+      "armour": {
+        "bonus": 1
+      }
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 139
+  },
+  {
+    "name": "Infected: Harvester",
+    "category": "Positive",
+    "karma": 29,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "addWeapons": ["Bite (Infected) +1", "Claws (Infected) +3"],
+    "bonus": {
+      "initiative": {
+        "bonusDice": 1
+      },
+      "walkSpeedPercentageModifier": 100,
+      "swimSpeedPercentageModifier": 100,
+      "runSpeedPercentageModifier": 100,
+      "armour": {
+        "bonus": 2
+      }
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 139
+  },
+  {
+    "name": "Infected: Loup-Garou",
+    "category": "Positive",
+    "karma": 30,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "addWeapons": ["Bite (Infected) +2", "Claws (Infected) +3"],
+    "bonus": {
+      "initiative": {
+        "bonusDice": 1
+      },
+      "walkSpeedPercentageModifier": 100,
+      "swimSpeedPercentageModifier": 100,
+      "runSpeedPercentageModifier": 100,
+      "armour": {
+        "bonus": 2
+      }
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 139
+  },
+  {
+    "name": "Infected: Mutaqua",
+    "category": "Positive",
+    "karma": 54,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "karmaDiscount": {
+      "requirements": {},
+      "value": -10
+    },
+    "addWeapons": ["Bite (Infected) +1", "Claws (Infected) +2"],
+    "bonus": {
+      "initiative": {
+        "bonusDice": 1
+      },
+      "walkSpeedPercentageModifier": 100,
+      "swimSpeedPercentageModifier": 100,
+      "runSpeedPercentageModifier": 100,
+      "armour": {
+        "bonus": 1
+      }
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 139
+  },
+  {
+    "name": "Infected: Nosferatu",
+    "category": "Positive",
+    "karma": 48,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "karmaDiscount": {
+      "requirements": {},
+      "value": -10
+    },
+    "addWeapons": ["Bite (Infected) +1"],
+    "bonus": {
+      "initiative": {
+        "bonusDice": 1
+      },
+      "walkSpeedPercentageModifier": 100,
+      "swimSpeedPercentageModifier": 100,
+      "runSpeedPercentageModifier": 100
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 139
+  },
+  {
+    "name": "Infected: Vampire (Human)",
+    "category": "Positive",
+    "karma": 27,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "addWeapons": ["Bite (Infected) +1"],
+    "bonus": {
+      "initiative": {
+        "bonusDice": 1
+      },
+      "walkSpeedPercentageModifier": 100,
+      "swimSpeedPercentageModifier": 100,
+      "runSpeedPercentageModifier": 100
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 140
+  },
+  {
+    "name": "Infected: Vampire (Non-Human)",
+    "category": "Positive",
+    "karma": 37,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "addWeapons": ["Bite (Infected) +1"],
+    "bonus": {
+      "initiative": {
+        "bonusDice": 1
+      },
+      "walkSpeedPercentageModifier": 100,
+      "swimSpeedPercentageModifier": 100,
+      "runSpeedPercentageModifier": 100
+    },
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 140
+  },
+  {
+    "name": "Infected: Sukuyan (Human)",
+    "category": "Positive",
+    "karma": 27,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "addWeapons": ["Bite (Infected) +1"],
+    "bonus": {
+      "initiative": {
+        "bonusDice": 1
+      },
+      "walkSpeedPercentageModifier": 100,
+      "swimSpeedPercentageModifier": 100,
+      "runSpeedPercentageModifier": 100
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "HT",
+    "page": 127
+  },
+  {
+    "name": "Infected: Sukuyan (Non-Human)",
+    "category": "Positive",
+    "karma": 37,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "addWeapons": ["Bite (Infected) +1"],
+    "bonus": {
+      "initiative": {
+        "bonusDice": 1
+      },
+      "walkSpeedPercentageModifier": 100,
+      "swimSpeedPercentageModifier": 100,
+      "runSpeedPercentageModifier": 100
+    },
+    "forbidden": {},
+    "description": "",
+    "source": "HT",
+    "page": 127
+  },
+  {
+    "name": "Infected: Wendigo",
+    "category": "Positive",
+    "karma": 47,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "karmaDiscount": {
+      "requirements": {},
+      "value": -10
+    },
+    "addWeapons": ["Bite (Infected) +1", "Claws (Infected) +2"],
+    "bonus": {
+      "initiative": {
+        "bonusDice": 1
+      },
+      "walkSpeedPercentageModifier": 100,
+      "swimSpeedPercentageModifier": 100,
+      "runSpeedPercentageModifier": 100
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 140
+  },
+  {
+    "name": "Infected Optional Power: Armor",
+    "category": "Positive",
+    "karma": 6,
+    "charGenCostInCareer": true,
+    "limit": {
+      "option": "False"
+    },
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 136
+  },
+  {
+    "name": "Infected Optional Power: Compulsion",
+    "category": "Positive",
+    "karma": 9,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 136
+  },
+  {
+    "name": "Infected Optional Power: Enhanced Sense (Hearing)",
+    "category": "Positive",
+    "karma": 3,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 136
+  },
+  {
+    "name": "Infected Optional Power: Enhanced Sense (Low-Light Vision)",
+    "category": "Positive",
+    "karma": 3,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 136
+  },
+  {
+    "name": "Infected Optional Power: Enhanced Sense (Smell)",
+    "category": "Positive",
+    "karma": 3,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 136
+  },
+  {
+    "name": "Infected Optional Power: Enhanced Sense (Taste)",
+    "category": "Positive",
+    "karma": 3,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 136
+  },
+  {
+    "name": "Infected Optional Power: Enhanced Sense (Thermographic Vision)",
+    "category": "Positive",
+    "karma": 3,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 136
+  },
+  {
+    "name": "Infected Optional Power: Enhanced Sense (Visual Acuity)",
+    "category": "Positive",
+    "karma": 3,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 136
+  },
+  {
+    "name": "Infected Optional Power: Fear",
+    "category": "Positive",
+    "karma": 9,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 136
+  },
+  {
+    "name": "Infected Optional Power: Immunity (Fire)",
+    "category": "Positive",
+    "karma": 6,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 136
+  },
+  {
+    "name": "Infected Optional Power: Immunity (Pathogens)",
+    "category": "Positive",
+    "karma": 6,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 136
+  },
+  {
+    "name": "Infected Optional Power: Immunity (Toxins)",
+    "category": "Positive",
+    "karma": 6,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 136
+  },
+  {
+    "name": "Infected Optional Power: Influence",
+    "category": "Positive",
+    "karma": 9,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 136
+  },
+  {
+    "name": "Infected Optional Power: Magical Guard",
+    "category": "Positive",
+    "karma": 9,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 136
+  },
+  {
+    "name": "Infected Advanced Optional Power: Mimicry",
+    "category": "Positive",
+    "karma": 9,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "SR5",
+    "page": 398
+  },
+  {
+    "name": "Infected Optional Power: Mist Form",
+    "category": "Positive",
+    "karma": 12,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "description": "",
+    "source": "RF",
+    "page": 136
+  },
+  {
+    "name": "Infected Optional Power: Paralyzing Howl",
+    "category": "Positive",
+    "karma": 9,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 136
+  },
+  {
+    "name": "Infected Advanced Optional Power: Psychokinesis",
+    "category": "Positive",
+    "karma": 9,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "SR5",
+    "page": 400
+  },
+  {
+    "name": "Infected Optional Power: Regeneration",
+    "category": "Positive",
+    "karma": 12,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "RF",
+    "page": 136
+  },
+  {
+    "name": "Data Anomaly",
+    "category": "Positive",
+    "karma": 3,
+    "description": "",
+    "source": "DT",
+    "page": 44
+  },
+  {
+    "name": "Fade to Black",
+    "category": "Positive",
+    "karma": 7,
+    "description": "",
+    "source": "DT",
+    "page": 44
+  },
+  {
+    "name": "Go Big or Go Home",
+    "category": "Positive",
+    "karma": 6,
+    "description": "",
+    "source": "DT",
+    "page": 44
+  },
+  {
+    "name": "Golden Screwdriver",
+    "category": "Positive",
+    "karma": 8,
+    "description": "",
+    "source": "DT",
+    "page": 44
+  },
+  {
+    "name": "I C U",
+    "category": "Positive",
+    "karma": 6,
+    "description": "",
+    "source": "DT",
+    "page": 44
+  },
+  {
+    "name": "Ninja Vanish",
+    "category": "Positive",
+    "karma": 5,
+    "description": "",
+    "source": "DT",
+    "page": 44
+  },
+  {
+    "name": "Online Fame",
+    "category": "Positive",
+    "karma": 4,
+    "description": "",
+    "source": "DT",
+    "page": 45
+  },
+  {
+    "name": "Otaku to Technomancer",
+    "category": "Positive",
+    "karma": 10,
+    "bonus": {
+      "fadingResist": [2]
+    },
+    "requirements": {},
+    "description": "",
+    "source": "DT",
+    "page": 45
+  },
+  {
+    "name": "Pain is Gain",
+    "category": "Positive",
+    "karma": 5,
+    "description": "",
+    "source": "DT",
+    "page": 45
+  },
+  {
+    "name": "Prime Datahaven Membership",
+    "category": "Positive",
+    "karma": 7,
+    "description": "",
+    "source": "DT",
+    "page": 45
+  },
+  {
+    "name": "Profiler",
+    "category": "Positive",
+    "karma": 3,
+    "description": "",
+    "source": "DT",
+    "page": 46
+  },
+  {
+    "name": "Quick Config",
+    "category": "Positive",
+    "karma": 5,
+    "description": "",
+    "source": "DT",
+    "page": 46
+  },
+  {
+    "name": "Wildcard Chimera",
+    "category": "Positive",
+    "karma": 0,
+    "description": "",
+    "source": "DTR",
+    "page": 163
+  },
+  {
+    "name": "It Works If You Work It",
+    "category": "Positive",
+    "karma": 5,
+    "description": "",
+    "source": "DTR",
+    "page": 164
+  },
+  {
+    "name": "Soul Swallower",
+    "category": "Positive",
+    "karma": 7,
+    "requirements": {},
+    "description": "",
+    "source": "DTR",
+    "page": 164
+  },
+  {
+    "name": "Metaviral Attunement",
+    "category": "Positive",
+    "karma": 5,
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "DTR",
+    "page": 164
+  },
+  {
+    "name": "Code of Honor: Like a Boss",
+    "category": "Negative",
+    "karma": -15,
+    "requirements": {},
+    "description": "",
+    "source": "DT",
+    "page": 46
+  },
+  {
+    "name": "Curiosity Killed the Cat",
+    "category": "Negative",
+    "karma": -7,
+    "requirements": {},
+    "description": "",
+    "source": "DT",
+    "page": 46
+  },
+  {
+    "name": "Data Liberator",
+    "category": "Negative",
+    "karma": -12,
+    "description": "",
+    "source": "DT",
+    "page": 46
+  },
+  {
+    "name": "Decaying Dissonance",
+    "category": "Negative",
+    "karma": -25,
+    "requirements": {},
+    "description": "",
+    "source": "DT",
+    "page": 47
+  },
+  {
+    "name": "Electronic Witness",
+    "category": "Negative",
+    "karma": -5,
+    "description": "",
+    "source": "DT",
+    "page": 48
+  },
+  {
+    "name": "Faraday Himself",
+    "category": "Negative",
+    "karma": -7,
+    "description": "",
+    "source": "DT",
+    "page": 48
+  },
+  {
+    "name": "Latest and Greatest",
+    "category": "Negative",
+    "karma": -5,
+    "description": "",
+    "source": "DT",
+    "page": 48
+  },
+  {
+    "name": "Leeeeeeeroy Jenkins",
+    "category": "Negative",
+    "karma": -20,
+    "description": "",
+    "source": "DT",
+    "page": 48
+  },
+  {
+    "name": "Nerdrage",
+    "category": "Negative",
+    "karma": -8,
+    "description": "",
+    "source": "DT",
+    "page": 48
+  },
+  {
+    "name": "Prank Warrior",
+    "category": "Negative",
+    "karma": -15,
+    "description": "",
+    "source": "DT",
+    "page": 49
+  },
+  {
+    "name": "Wanted by GOD",
+    "category": "Negative",
+    "karma": -12,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "DT",
+    "page": 49
+  },
+  {
+    "name": "Chatty",
+    "category": "Positive",
+    "karma": 5,
+    "requirements": {},
+    "description": "",
+    "source": "DT",
+    "page": 146
+  },
+  {
+    "name": "Designer",
+    "category": "Positive",
+    "karma": 6,
+    "requirements": {},
+    "description": "",
+    "source": "DT",
+    "page": 146
+  },
+  {
+    "name": "Exceptional Entity",
+    "category": "Positive",
+    "karma": 25,
+    "requirements": {},
+    "description": "",
+    "source": "DT",
+    "page": 147
+  },
+  {
+    "name": "Hello World!",
+    "category": "Positive",
+    "karma": 8,
+    "limit": 3,
+    "requirements": {},
+    "description": "",
+    "source": "DT",
+    "page": 147
+  },
+  {
+    "name": "Inherent Program",
+    "category": "Positive",
+    "karma": 7,
+    "requirements": {},
+    "description": "",
+    "source": "DT",
+    "page": 148
+  },
+  {
+    "name": "Improved Restoration",
+    "category": "Positive",
+    "karma": 3,
+    "requirements": {},
+    "description": "",
+    "source": "DT",
+    "page": 149
+  },
+  {
+    "name": "Low Profile",
+    "category": "Positive",
+    "karma": 15,
+    "requirements": {},
+    "description": "",
+    "source": "DT",
+    "page": 149
+  },
+  {
+    "name": "Munge",
+    "category": "Positive",
+    "karma": 15,
+    "requirements": {},
+    "description": "",
+    "source": "DT",
+    "page": 149
+  },
+  {
+    "name": "Multiprocessing",
+    "category": "Positive",
+    "karma": 8,
+    "requirements": {},
+    "description": "",
+    "source": "DT",
+    "page": 150
+  },
+  {
+    "name": "Pilot Origins",
+    "category": "Positive",
+    "karma": 8,
+    "limit": 3,
+    "bonus": {
+      "enterName": true
+    },
+    "requirements": {},
+    "description": "",
+    "source": "DT",
+    "page": 150
+  },
+  {
+    "name": "Redundancy",
+    "category": "Positive",
+    "karma": 12,
+    "bonus": {
+      "addPhysicalBoxes": 2
+    },
+    "requirements": {},
+    "description": "",
+    "source": "DT",
+    "page": 151
+  },
+  {
+    "name": "Sapper",
+    "category": "Positive",
+    "karma": 7,
+    "requirements": {},
+    "description": "",
+    "source": "DT",
+    "page": 151
+  },
+  {
+    "name": "Sensor Upgrade",
+    "category": "Positive",
+    "karma": 5,
+    "requirements": {},
+    "description": "",
+    "source": "DT",
+    "page": 151
+  },
+  {
+    "name": "Snooper",
+    "category": "Positive",
+    "karma": 7,
+    "requirements": {},
+    "description": "",
+    "source": "DT",
+    "page": 151
+  },
+  {
+    "name": "Virtual Stability",
+    "category": "Positive",
+    "karma": 5,
+    "requirements": {},
+    "description": "",
+    "source": "DT",
+    "page": 151
+  },
+  {
+    "name": "Corrupter",
+    "category": "Negative",
+    "karma": -10,
+    "requirements": {},
+    "description": "",
+    "source": "DT",
+    "page": 151
+  },
+  {
+    "name": "Easily Exploitable",
+    "category": "Negative",
+    "karma": -8,
+    "requirements": {},
+    "description": "",
+    "source": "DT",
+    "page": 151
+  },
+  {
+    "name": "Fragmentation",
+    "category": "Negative",
+    "karma": -18,
+    "requirements": {},
+    "description": "",
+    "source": "DT",
+    "page": 151
+  },
+  {
+    "name": "Persnickety Renter",
+    "category": "Negative",
+    "karma": -6,
+    "bonus": {
+      "enterName": true
+    },
+    "requirements": {},
+    "description": "",
+    "source": "DT",
+    "page": 152
+  },
+  {
+    "name": "Real World Naiveté",
+    "category": "Negative",
+    "karma": -8,
+    "requirements": {},
+    "description": "",
+    "source": "DT",
+    "page": 152
+  },
+  {
+    "name": "Biocompatibility (Cyberware)",
+    "category": "Positive",
+    "karma": 5,
+    "forbidden": {},
+    "description": "",
+    "source": "CF",
+    "page": 54
+  },
+  {
+    "name": "Biocompatibility (Bioware)",
+    "category": "Positive",
+    "karma": 5,
+    "forbidden": {},
+    "description": "",
+    "source": "CF",
+    "page": 54
+  },
+  {
+    "name": "Better to be Feared Than Loved",
+    "category": "Positive",
+    "karma": 5,
+    "description": "",
+    "source": "CF",
+    "page": 54
+  },
+  {
+    "name": "Cyber-Singularity Seeker",
+    "category": "Positive",
+    "karma": 12,
+    "description": "",
+    "source": "CF",
+    "page": 54
+  },
+  {
+    "name": "Drug Tolerant",
+    "category": "Positive",
+    "karma": 6,
+    "bonus": {
+      "addictionResistance": {
+        "physiological": {
+          "initialTest": [2],
+          "progressingTest": [0]
+        },
+        "psychological": {
+          "initialTest": [2],
+          "progressingTest": [0]
+        }
+      }
+    },
+    "description": "",
+    "source": "CF",
+    "page": 54
+  },
+  {
+    "name": "Prototype Transhuman",
+    "category": "Positive",
+    "karma": 10,
+    "charGenOnly": true,
+    "description": "",
+    "source": "CF",
+    "page": 54
+  },
+  {
+    "name": "Redliner",
+    "category": "Positive",
+    "karma": 10,
+    "description": "",
+    "source": "CF",
+    "page": 55
+  },
+  {
+    "name": "Revels in Murder",
+    "category": "Positive",
+    "karma": 8,
+    "description": "",
+    "source": "CF",
+    "page": 56
+  },
+  {
+    "name": "Uncanny Healer",
+    "category": "Positive",
+    "karma": 12,
+    "forbidden": {},
+    "description": "",
+    "source": "CF",
+    "page": 56
+  },
+  {
+    "name": "Phenotypic Variation - Genewipe",
+    "category": "Positive",
+    "karma": 32,
+    "charGenOnly": true,
+    "description": "",
+    "source": "CF",
+    "page": 157
+  },
+  {
+    "name": "Phenotypic Variation - Masque",
+    "category": "Positive",
+    "karma": 23,
+    "charGenOnly": true,
+    "description": "",
+    "source": "CF",
+    "page": 157
+  },
+  {
+    "name": "Phenotypic Variation - Reprint",
+    "category": "Positive",
+    "karma": 18,
+    "charGenOnly": true,
+    "description": "",
+    "source": "CF",
+    "page": 157
+  },
+  {
+    "name": "Phenotypic Variation - Shuffle",
+    "category": "Positive",
+    "karma": 13,
+    "charGenOnly": true,
+    "description": "",
+    "source": "CF",
+    "page": 157
+  },
+  {
+    "name": "Phenotypic Variation - Genetic Optimization (Body)",
+    "category": "Positive",
+    "karma": 27,
+    "charGenOnly": true,
+    "forbidden": {},
+    "description": "",
+    "source": "CF",
+    "page": 157
+  },
+  {
+    "name": "Phenotypic Variation - Genetic Optimization (Agility)",
+    "category": "Positive",
+    "karma": 27,
+    "charGenOnly": true,
+    "forbidden": {},
+    "description": "",
+    "source": "CF",
+    "page": 157
+  },
+  {
+    "name": "Phenotypic Variation - Genetic Optimization (Reaction)",
+    "category": "Positive",
+    "karma": 27,
+    "charGenOnly": true,
+    "forbidden": {},
+    "description": "",
+    "source": "CF",
+    "page": 157
+  },
+  {
+    "name": "Phenotypic Variation - Genetic Optimization (Strength)",
+    "category": "Positive",
+    "karma": 27,
+    "charGenOnly": true,
+    "forbidden": {},
+    "description": "",
+    "source": "CF",
+    "page": 157
+  },
+  {
+    "name": "Phenotypic Variation - Genetic Optimization (Charisma)",
+    "category": "Positive",
+    "karma": 27,
+    "charGenOnly": true,
+    "forbidden": {},
+    "description": "",
+    "source": "CF",
+    "page": 157
+  },
+  {
+    "name": "Phenotypic Variation - Genetic Optimization (Intuition)",
+    "category": "Positive",
+    "karma": 27,
+    "charGenOnly": true,
+    "forbidden": {},
+    "description": "",
+    "source": "CF",
+    "page": 157
+  },
+  {
+    "name": "Phenotypic Variation - Genetic Optimization (Logic)",
+    "category": "Positive",
+    "karma": 27,
+    "charGenOnly": true,
+    "forbidden": {},
+    "description": "",
+    "source": "CF",
+    "page": 157
+  },
+  {
+    "name": "Phenotypic Variation - Genetic Optimization (Willpower)",
+    "category": "Positive",
+    "karma": 27,
+    "charGenOnly": true,
+    "forbidden": {},
+    "description": "",
+    "source": "CF",
+    "page": 157
+  },
+  {
+    "name": "Phenotypic Variation - Cosmetic Alteration",
+    "category": "Positive",
+    "karma": 21,
+    "charGenOnly": true,
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "CF",
+    "page": 158
+  },
+  {
+    "name": "Phenotypic Variation - Print Removal",
+    "category": "Positive",
+    "karma": 12,
+    "charGenOnly": true,
+    "description": "",
+    "source": "CF",
+    "page": 158
+  },
+  {
+    "name": "Phenotypic Variation - Metaposeur",
+    "category": "Positive",
+    "karma": 22,
+    "charGenOnly": true,
+    "description": "",
+    "source": "CF",
+    "page": 158
+  },
+  {
+    "name": "Antipathy",
+    "category": "Negative",
+    "karma": -8,
+    "description": "",
+    "source": "CF",
+    "page": 57
+  },
+  {
+    "name": "AIPS",
+    "category": "Negative",
+    "karma": -10,
+    "description": "",
+    "source": "CF",
+    "page": 57
+  },
+  {
+    "name": "Blank Slate",
+    "category": "Negative",
+    "karma": -15,
+    "description": "",
+    "source": "CF",
+    "page": 57
+  },
+  {
+    "name": "Cyberpsychosis",
+    "category": "Negative",
+    "karma": -10,
+    "description": "",
+    "source": "CF",
+    "page": 57
+  },
+  {
+    "name": "Cyber-snob",
+    "category": "Negative",
+    "karma": -12,
+    "requirements": {},
+    "description": "",
+    "source": "CF",
+    "page": 57
+  },
+  {
+    "name": "Dead Emotion",
+    "category": "Negative",
+    "karma": -5,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "CF",
+    "page": 57
+  },
+  {
+    "name": "Dry Addict (Mild)",
+    "category": "Negative",
+    "karma": -2,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "CF",
+    "page": 57
+  },
+  {
+    "name": "Dry Addict (Moderate)",
+    "category": "Negative",
+    "karma": -5,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "CF",
+    "page": 57
+  },
+  {
+    "name": "Dry Addict (Severe)",
+    "category": "Negative",
+    "karma": -10,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "CF",
+    "page": 57
+  },
+  {
+    "name": "Dry Addict (Burnout)",
+    "category": "Negative",
+    "karma": -13,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "CF",
+    "page": 57
+  },
+  {
+    "name": "Family Curse",
+    "category": "Negative",
+    "karma": -5,
+    "bonus": {
+      "addictionResistance": {
+        "physiological": {
+          "initialTest": [-2],
+          "progressingTest": [-2]
+        },
+        "psychological": {
+          "initialTest": [-2],
+          "progressingTest": [0]
+        }
+      }
+    },
+    "description": "",
+    "source": "CF",
+    "page": 58
+  },
+  {
+    "name": "Implant-induced Immune Deficiency",
+    "category": "Negative",
+    "karma": -5,
+    "bonus": {
+      "toxinContactResist": -2,
+      "pathogenContactResist": -2,
+      "toxinInhalationResist": -2,
+      "pathogenInhalationResist": -2,
+      "toxinIngestionResist": -2,
+      "pathogenIngestionResist": -2,
+      "toxinInjectionResist": -2,
+      "pathogenInjectionResist": -2,
+      "addictionResistance": {
+        "physiological": {
+          "initialTest": [-2],
+          "progressingTest": [-2]
+        }
+      }
+    },
+    "requirements": {},
+    "description": "",
+    "source": "CF",
+    "page": 58
+  },
+  {
+    "name": "Lack of Focus",
+    "category": "Negative",
+    "karma": -6,
+    "description": "",
+    "source": "CF",
+    "page": 58
+  },
+  {
+    "name": "Lightweight",
+    "category": "Negative",
+    "karma": -6,
+    "description": "",
+    "source": "CF",
+    "page": 58
+  },
+  {
+    "name": "One of Them",
+    "category": "Negative",
+    "karma": -7,
+    "description": "",
+    "source": "CF",
+    "page": 58
+  },
+  {
+    "name": "Poor Self Control (Attention-Seeking)",
+    "category": "Negative",
+    "karma": -5,
+    "description": "",
+    "source": "CF",
+    "page": 58
+  },
+  {
+    "name": "Poor Self Control (Sadistic)",
+    "category": "Negative",
+    "karma": -8,
+    "description": "",
+    "source": "CF",
+    "page": 58
+  },
+  {
+    "name": "Quasimodo",
+    "category": "Negative",
+    "karma": -5,
+    "bonus": {
+      "skillCategories": [
+        {
+          "category": "Social Active",
+          "bonus": [-3]
+        }
+      ]
+    },
+    "description": "",
+    "source": "CF",
+    "page": 59
+  },
+  {
+    "name": "So Jacked Up",
+    "category": "Negative",
+    "karma": -10,
+    "description": "",
+    "source": "CF",
+    "page": 59
+  },
+  {
+    "name": "Superhuman Psychosis",
+    "category": "Negative",
+    "karma": -2,
+    "bonus": {
+      "skillGroups": [
+        {
+          "group": "Close Combat",
+          "bonus": [1]
+        }
+      ]
+    },
+    "description": "",
+    "source": "CF",
+    "page": 59
+  },
+  {
+    "name": "TLE-X",
+    "category": "Negative",
+    "karma": -15,
+    "description": "",
+    "source": "CF",
+    "page": 59
+  },
+  {
+    "name": "Tough and Targeted",
+    "category": "Negative",
+    "karma": -10,
+    "description": "",
+    "source": "CF",
+    "page": 60
+  },
+  {
+    "name": "Barrens Rat",
+    "category": "Positive",
+    "karma": 5,
+    "description": "",
+    "source": "HT",
+    "page": 191
+  },
+  {
+    "name": "Elemental Focus",
+    "category": "Positive",
+    "karma": 10,
+    "limit": {
+      "option": "False"
+    },
+    "description": "",
+    "source": "HT",
+    "page": 191
+  },
+  {
+    "name": "Poisoner",
+    "category": "Positive",
+    "karma": 5,
+    "description": "",
+    "source": "HT",
+    "page": 191
+  },
+  {
+    "name": "Practice, Practice, Practice",
+    "category": "Positive",
+    "karma": 2,
+    "bonus": {
+      "weaponSkillAccuracy": {
+        "skill": {
+          "selectSkill": true,
+          "exceptions": []
+        },
+        "bonus": 1
+      }
+    },
+    "description": "",
+    "source": "HT",
+    "page": 191
+  },
+  {
+    "name": "Code of Honor: Avenging Angel",
+    "category": "Negative",
+    "karma": -8,
+    "description": "",
+    "source": "HT",
+    "page": 191
+  },
+  {
+    "name": "Impassive",
+    "category": "Negative",
+    "karma": -7,
+    "description": "",
+    "source": "HT",
+    "page": 191
+  },
+  {
+    "name": "Faceless",
+    "category": "Negative",
+    "karma": -6,
+    "description": "",
+    "source": "HT",
+    "page": 191
+  },
+  {
+    "name": "Chaser",
+    "category": "Positive",
+    "karma": 4,
+    "description": "",
+    "source": "R5",
+    "page": 33
+  },
+  {
+    "name": "Dealer Connection",
+    "category": "Positive",
+    "karma": 3,
+    "limit": 4,
+    "noLevels": true,
+    "description": "",
+    "source": "R5",
+    "page": 33
+  },
+  {
+    "name": "Grease Monkey",
+    "category": "Positive",
+    "karma": 8,
+    "bonus": {
+      "skillGroups": [
+        {
+          "group": "Engineering",
+          "bonus": [1]
+        }
+      ]
+    },
+    "description": "",
+    "source": "R5",
+    "page": 33
+  },
+  {
+    "name": "Speed Demon",
+    "category": "Positive",
+    "karma": 3,
+    "description": "",
+    "source": "R5",
+    "page": 33
+  },
+  {
+    "name": "Stunt Driver",
+    "category": "Positive",
+    "karma": 4,
+    "description": "",
+    "source": "R5",
+    "page": 33
+  },
+  {
+    "name": "Subtle Pilot",
+    "category": "Positive",
+    "karma": 4,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "R5",
+    "page": 33
+  },
+  {
+    "name": "Accident Prone",
+    "category": "Negative",
+    "karma": -4,
+    "description": "",
+    "source": "R5",
+    "page": 33
+  },
+  {
+    "name": "Motion Sickness",
+    "category": "Negative",
+    "karma": -4,
+    "description": "",
+    "source": "R5",
+    "page": 33
+  },
+  {
+    "name": "Too Much Data",
+    "category": "Negative",
+    "karma": -3,
+    "description": "",
+    "source": "R5",
+    "page": 34
+  },
+  {
+    "name": "Latent Dracomorphosis",
+    "category": "Positive",
+    "karma": 5,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "forbidden": {},
+    "description": "",
+    "source": "HS",
+    "page": 164
+  },
+  {
+    "name": "Dracoform (Eastern Drake)",
+    "category": "Positive",
+    "karma": 75,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "addWeapons": ["Dracoform Claws"],
+    "forbidden": {},
+    "description": "",
+    "source": "HS",
+    "page": 163
+  },
+  {
+    "name": "Dracoform (Western Drake)",
+    "category": "Positive",
+    "karma": 75,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "addWeapons": ["Dracoform Horns"],
+    "forbidden": {},
+    "description": "",
+    "source": "HS",
+    "page": 163
+  },
+  {
+    "name": "Dracoform (Feathered Drake)",
+    "category": "Positive",
+    "karma": 75,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "addWeapons": ["Dracoform Tail"],
+    "forbidden": {},
+    "description": "",
+    "source": "HS",
+    "page": 163
+  },
+  {
+    "name": "Dracoform (Sea Drake)",
+    "category": "Positive",
+    "karma": 75,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "addWeapons": ["Dracoform Fangs"],
+    "forbidden": {},
+    "description": "",
+    "source": "HS",
+    "page": 163
+  },
+  {
+    "name": "Alibi",
+    "category": "Positive",
+    "karma": 4,
+    "description": "",
+    "source": "CA",
+    "page": 150
+  },
+  {
+    "name": "Closer",
+    "category": "Positive",
+    "karma": 4,
+    "description": "",
+    "source": "CA",
+    "page": 150
+  },
+  {
+    "name": "Cynic",
+    "category": "Positive",
+    "karma": 6,
+    "description": "",
+    "source": "CA",
+    "page": 150
+  },
+  {
+    "name": "Empathic Listener",
+    "category": "Positive",
+    "karma": 10,
+    "description": "",
+    "source": "CA",
+    "page": 150
+  },
+  {
+    "name": "Good Looking and Knows It",
+    "category": "Positive",
+    "karma": 10,
+    "description": "",
+    "source": "CA",
+    "page": 150
+  },
+  {
+    "name": "Groupthink",
+    "category": "Positive",
+    "karma": 5,
+    "description": "",
+    "source": "CA",
+    "page": 150
+  },
+  {
+    "name": "Honest Face",
+    "category": "Positive",
+    "karma": 5,
+    "bonus": {
+      "judgeIntentionsDefense": [2]
+    },
+    "description": "",
+    "source": "CA",
+    "page": 151
+  },
+  {
+    "name": "Innocuous",
+    "category": "Positive",
+    "karma": 5,
+    "description": "",
+    "source": "CA",
+    "page": 151
+  },
+  {
+    "name": "Master Debater",
+    "category": "Positive",
+    "karma": 10,
+    "description": "",
+    "source": "CA",
+    "page": 151
+  },
+  {
+    "name": "Memory Palace",
+    "category": "Positive",
+    "karma": 6,
+    "bonus": {
+      "memory": [1]
+    },
+    "description": "",
+    "source": "CA",
+    "page": 151
+  },
+  {
+    "name": "Method Actor",
+    "category": "Positive",
+    "karma": 7,
+    "description": "",
+    "source": "CA",
+    "page": 151
+  },
+  {
+    "name": "Mnemonic Vault",
+    "category": "Positive",
+    "karma": 8,
+    "requirements": {},
+    "description": "",
+    "source": "CA",
+    "page": 151
+  },
+  {
+    "name": "Watch the Suit",
+    "category": "Positive",
+    "karma": 3,
+    "description": "",
+    "source": "CA",
+    "page": 151
+  },
+  {
+    "name": "Alpha Junkie",
+    "category": "Negative",
+    "karma": -12,
+    "description": "",
+    "source": "CA",
+    "page": 151
+  },
+  {
+    "name": "Designated Omega",
+    "category": "Negative",
+    "karma": -5,
+    "description": "",
+    "source": "CA",
+    "page": 152
+  },
+  {
+    "name": "Disheveled",
+    "category": "Negative",
+    "karma": -5,
+    "description": "",
+    "source": "CA",
+    "page": 152
+  },
+  {
+    "name": "Favored (Common Target, Biased)",
+    "category": "Negative",
+    "karma": -5,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "CA",
+    "page": 152
+  },
+  {
+    "name": "Favored (Common Target, Outspoken)",
+    "category": "Negative",
+    "karma": -7,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "CA",
+    "page": 152
+  },
+  {
+    "name": "Favored (Common Target, Fanatic)",
+    "category": "Negative",
+    "karma": -10,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "CA",
+    "page": 152
+  },
+  {
+    "name": "Favored (Specific Target, Biased)",
+    "category": "Negative",
+    "karma": -3,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "CA",
+    "page": 152
+  },
+  {
+    "name": "Favored (Specific Target, Outspoken)",
+    "category": "Negative",
+    "karma": -5,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "CA",
+    "page": 152
+  },
+  {
+    "name": "Favored (Specific Target, Fanatic)",
+    "category": "Negative",
+    "karma": -8,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "CA",
+    "page": 152
+  },
+  {
+    "name": "One Born Every Minute",
+    "category": "Negative",
+    "karma": -5,
+    "description": "",
+    "source": "CA",
+    "page": 152
+  },
+  {
+    "name": "Social Appearance Anxiety",
+    "category": "Negative",
+    "karma": -3,
+    "limit": 3,
+    "bonus": {
+      "skillCategories": [
+        {
+          "category": "Social Active",
+          "bonus": [
+            -1,
+            {
+              "operator": "*"
+            },
+            {
+              "option": "Rating"
+            }
+          ]
+        }
+      ]
+    },
+    "description": "",
+    "source": "CA",
+    "page": 152
+  },
+  {
+    "name": "The Goat",
+    "category": "Negative",
+    "karma": -8,
+    "description": "",
+    "source": "CA",
+    "page": 152
+  },
+  {
+    "name": "Ugly And Doesn't Care",
+    "category": "Negative",
+    "karma": -10,
+    "description": "",
+    "source": "CA",
+    "page": 152
+  },
+  {
+    "name": "Free Insect Spirit: Cutter Ant",
+    "category": "Positive",
+    "karma": 42,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "DTR",
+    "page": 151
+  },
+  {
+    "name": "Free Insect Spirit: Fire Ant",
+    "category": "Positive",
+    "karma": 42,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "DTR",
+    "page": 151
+  },
+  {
+    "name": "Free Insect Spirit: Desert Locust",
+    "category": "Positive",
+    "karma": 42,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "DTR",
+    "page": 151
+  },
+  {
+    "name": "Free Insect Spirit: Mole Cricket",
+    "category": "Positive",
+    "karma": 42,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "DTR",
+    "page": 151
+  },
+  {
+    "name": "Free Insect Spirit: Subterranean Termite",
+    "category": "Positive",
+    "karma": 42,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "bonus": {
+      "damageResistance": 2
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "DTR",
+    "page": 151
+  },
+  {
+    "name": "Free Insect Spirit: Hunter Wasp",
+    "category": "Positive",
+    "karma": 42,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "DTR",
+    "page": 151
+  },
+  {
+    "name": "Free Insect Spirit: Bee",
+    "category": "Positive",
+    "karma": 42,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "DTR",
+    "page": 151
+  },
+  {
+    "name": "Free Insect Spirit: Goliath Beetle",
+    "category": "Positive",
+    "karma": 42,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "bonus": {
+      "damageResistance": 4
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "DTR",
+    "page": 151
+  },
+  {
+    "name": "Free Insect Spirit: Water Beetle",
+    "category": "Positive",
+    "karma": 42,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "DTR",
+    "page": 151
+  },
+  {
+    "name": "Free Insect Spirit: House Centipede",
+    "category": "Positive",
+    "karma": 42,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "DTR",
+    "page": 151
+  },
+  {
+    "name": "Free Insect Spirit: Tropical Centipede",
+    "category": "Positive",
+    "karma": 42,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "DTR",
+    "page": 151
+  },
+  {
+    "name": "Free Insect Spirit: Century Cicada",
+    "category": "Positive",
+    "karma": 42,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "DTR",
+    "page": 151
+  },
+  {
+    "name": "Free Insect Spirit: Trapdoor Spider",
+    "category": "Positive",
+    "karma": 42,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "DTR",
+    "page": 151
+  },
+  {
+    "name": "Free Insect Spirit: Black Widow",
+    "category": "Positive",
+    "karma": 42,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "DTR",
+    "page": 151
+  },
+  {
+    "name": "Free Insect Spirit: Burster Firefly",
+    "category": "Positive",
+    "karma": 42,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "DTR",
+    "page": 151
+  },
+  {
+    "name": "Free Insect Spirit: Botfly",
+    "category": "Positive",
+    "karma": 42,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "DTR",
+    "page": 151
+  },
+  {
+    "name": "Free Insect Spirit: Dragonfly",
+    "category": "Positive",
+    "karma": 42,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "DTR",
+    "page": 151
+  },
+  {
+    "name": "Free Insect Spirit: Mimic Mantis",
+    "category": "Positive",
+    "karma": 42,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "DTR",
+    "page": 151
+  },
+  {
+    "name": "Free Insect Spirit: Orchid Mantis",
+    "category": "Positive",
+    "karma": 42,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "DTR",
+    "page": 151
+  },
+  {
+    "name": "Free Insect Spirit: Vampire Mosquito",
+    "category": "Positive",
+    "karma": 42,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "DTR",
+    "page": 151
+  },
+  {
+    "name": "Free Insect Spirit: Tick",
+    "category": "Positive",
+    "karma": 42,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "DTR",
+    "page": 151
+  },
+  {
+    "name": "Free Insect Spirit: Death's Head Moth",
+    "category": "Positive",
+    "karma": 42,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "DTR",
+    "page": 151
+  },
+  {
+    "name": "Free Insect Spirit: Cryptid Moth",
+    "category": "Positive",
+    "karma": 42,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "DTR",
+    "page": 151
+  },
+  {
+    "name": "Free Insect Spirit: Cave Roach",
+    "category": "Positive",
+    "karma": 42,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "DTR",
+    "page": 151
+  },
+  {
+    "name": "Free Insect Spirit: Silverfish",
+    "category": "Positive",
+    "karma": 42,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "DTR",
+    "page": 151
+  },
+  {
+    "name": "Adept Healer",
+    "category": "Positive",
+    "karma": 10,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 31
+  },
+  {
+    "name": "Alchemical Armorer",
+    "category": "Positive",
+    "karma": 15,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 31
+  },
+  {
+    "name": "Alchemical Bomb Maker",
+    "category": "Positive",
+    "karma": 10,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 31
+  },
+  {
+    "name": "Animal Familiar",
+    "category": "Positive",
+    "karma": 5,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 31
+  },
+  {
+    "name": "Apt Pupil",
+    "category": "Positive",
+    "karma": 5,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 32
+  },
+  {
+    "name": "Arcane Bodyguard",
+    "category": "Positive",
+    "karma": 20,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 32
+  },
+  {
+    "name": "Arcane Improviser",
+    "category": "Positive",
+    "karma": 5,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 32
+  },
+  {
+    "name": "Archivist",
+    "category": "Positive",
+    "karma": 10,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 32
+  },
+  {
+    "name": "Astral Bouncer",
+    "category": "Positive",
+    "karma": 10,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 32
+  },
+  {
+    "name": "Astral Infiltrator",
+    "category": "Positive",
+    "karma": 15,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 32
+  },
+  {
+    "name": "Barehanded Adept",
+    "category": "Positive",
+    "karma": 10,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 33
+  },
+  {
+    "name": "Blood Necromancer",
+    "category": "Positive",
+    "karma": 15,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 33
+  },
+  {
+    "name": "Chain Breaker",
+    "category": "Positive",
+    "karma": 10,
+    "charGenCostInCareer": true,
+    "karmaDiscount": {
+      "requirements": {},
+      "value": -5
+    },
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 33
+  },
+  {
+    "name": "Chakra Interrupter",
+    "category": "Positive",
+    "karma": 10,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 34
+  },
+  {
+    "name": "Charlatan",
+    "category": "Positive",
+    "karma": 10,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 34
+  },
+  {
+    "name": "Chosen Follower",
+    "category": "Positive",
+    "karma": 10,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 35
+  },
+  {
+    "name": "Close Combat Mage",
+    "category": "Positive",
+    "karma": 5,
+    "charGenCostInCareer": true,
+    "limit": 3,
+    "noLevels": true,
+    "canBuyWithSpellPoints": true,
+    "bonus": {
+      "enterName": true
+    },
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 35
+  },
+  {
+    "name": "Dark Ally",
+    "category": "Positive",
+    "karma": 10,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 35
+  },
+  {
+    "name": "Death Dealer",
+    "category": "Positive",
+    "karma": 15,
+    "charGenCostInCareer": true,
+    "limit": 3,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "FA",
+    "page": 35
+  },
+  {
+    "name": "Death Dealer (Adept)",
+    "category": "Positive",
+    "karma": 15,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 35
+  },
+  {
+    "name": "Dedicated Conjurer",
+    "category": "Positive",
+    "karma": 10,
+    "charGenCostInCareer": true,
+    "karmaDiscount": {
+      "requirements": {},
+      "value": -5
+    },
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 36
+  },
+  {
+    "name": "Dedicated Spellslinger",
+    "category": "Positive",
+    "karma": 10,
+    "charGenCostInCareer": true,
+    "karmaDiscount": {
+      "requirements": {},
+      "value": -5
+    },
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 36
+  },
+  {
+    "name": "Dual-Natured Defender",
+    "category": "Positive",
+    "karma": 5,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 36
+  },
+  {
+    "name": "Durable Preparations",
+    "category": "Positive",
+    "karma": 5,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 36
+  },
+  {
+    "name": "Elemental Master",
+    "category": "Positive",
+    "karma": 20,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 36
+  },
+  {
+    "name": "Flesh Sculpter",
+    "category": "Positive",
+    "karma": 10,
+    "charGenCostInCareer": true,
+    "limit": 3,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 37
+  },
+  {
+    "name": "Healer",
+    "category": "Positive",
+    "karma": 10,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 37
+  },
+  {
+    "name": "Illusionist",
+    "category": "Positive",
+    "karma": 10,
+    "charGenCostInCareer": true,
+    "limit": 3,
+    "canBuyWithSpellPoints": true,
+    "bonus": {
+      "enterName": true
+    },
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 37
+  },
+  {
+    "name": "Items of Power",
+    "category": "Positive",
+    "karma": 25,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 38
+  },
+  {
+    "name": "Mage Hunter I",
+    "category": "Positive",
+    "karma": 15,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 38
+  },
+  {
+    "name": "Mage Hunter II",
+    "category": "Positive",
+    "karma": 15,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 38
+  },
+  {
+    "name": "Mage Hunter III",
+    "category": "Positive",
+    "karma": 15,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 38
+  },
+  {
+    "name": "Missile Deflector",
+    "category": "Positive",
+    "karma": 10,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 38
+  },
+  {
+    "name": "Mystic Foreman",
+    "category": "Positive",
+    "karma": 10,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 38
+  },
+  {
+    "name": "Mystic Pitcher",
+    "category": "Positive",
+    "karma": 10,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 38
+  },
+  {
+    "name": "Pacifist Adept",
+    "category": "Positive",
+    "karma": 5,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 39
+  },
+  {
+    "name": "Potion Maker",
+    "category": "Positive",
+    "karma": 15,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 39
+  },
+  {
+    "name": "Practiced Alchemist",
+    "category": "Positive",
+    "karma": 5,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 39
+  },
+  {
+    "name": "Puppet Master",
+    "category": "Positive",
+    "karma": 10,
+    "charGenCostInCareer": true,
+    "limit": 3,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 39
+  },
+  {
+    "name": "Reckless Spell Master",
+    "category": "Positive",
+    "karma": 10,
+    "charGenCostInCareer": true,
+    "limit": 6,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 39
+  },
+  {
+    "name": "Renaissance Ritualist",
+    "category": "Positive",
+    "karma": 8,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 40
+  },
+  {
+    "name": "Revenant Adept",
+    "category": "Positive",
+    "karma": 5,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 40
+  },
+  {
+    "name": "Shock Mage",
+    "category": "Positive",
+    "karma": 15,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 40
+  },
+  {
+    "name": "Skinwalker",
+    "category": "Positive",
+    "karma": 5,
+    "charGenCostInCareer": true,
+    "limit": 3,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 40
+  },
+  {
+    "name": "Spectral Warden",
+    "category": "Positive",
+    "karma": 15,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 40
+  },
+  {
+    "name": "Spell Jammer",
+    "category": "Positive",
+    "karma": 20,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 40
+  },
+  {
+    "name": "Spirit Hunter I",
+    "category": "Positive",
+    "karma": 20,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 40
+  },
+  {
+    "name": "Spirit Hunter II",
+    "category": "Positive",
+    "karma": 20,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 40
+  },
+  {
+    "name": "Spirit Hunter III",
+    "category": "Positive",
+    "karma": 20,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 40
+  },
+  {
+    "name": "Spiritual Lodge",
+    "category": "Positive",
+    "karma": 5,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 41
+  },
+  {
+    "name": "Spiritual Pilgrim",
+    "category": "Positive",
+    "karma": 5,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 41
+  },
+  {
+    "name": "Sprawl Tamer",
+    "category": "Positive",
+    "karma": 10,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 41
+  },
+  {
+    "name": "Stalwart Ally",
+    "category": "Positive",
+    "karma": 15,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 42
+  },
+  {
+    "name": "Taboo Transformer",
+    "category": "Positive",
+    "karma": 15,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 42
+  },
+  {
+    "name": "Vexcraft",
+    "category": "Positive",
+    "karma": 7,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 42
+  },
+  {
+    "name": "Worship Leader",
+    "category": "Positive",
+    "karma": 5,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 42
+  },
+  {
+    "name": "Crystal Breath",
+    "category": "Positive",
+    "karma": 5,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
+    "bonus": {
+      "essenceCostTimes100": [-100],
+      "toxinInhalationResist": 2,
+      "fatigueResist": 1,
+      "addPhysicalBoxes": -1
+    },
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 132
+  },
+  {
+    "name": "Crystal Eye (One Eye)",
+    "category": "Positive",
+    "karma": 10,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "essenceCostTimes100": [-100],
+      "addPhysicalBoxes": -1
+    },
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 132
+  },
+  {
+    "name": "Crystal Eye (Two Eyes)",
+    "category": "Positive",
+    "karma": 10,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "essenceCostTimes100": [-100],
+      "addPhysicalBoxes": -1
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "FA",
+    "page": 132
+  },
+  {
+    "name": "Crystal Gut (Liver)",
+    "category": "Positive",
+    "karma": 5,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
+    "bonus": {
+      "essenceCostTimes100": [-50],
+      "toxinIngestionResist": 2,
+      "fatigueResist": 1,
+      "addPhysicalBoxes": -1
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "FA",
+    "page": 133
+  },
+  {
+    "name": "Crystal Gut (Kidneys)",
+    "category": "Positive",
+    "karma": 5,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
+    "bonus": {
+      "essenceCostTimes100": [-50],
+      "toxinInjectionResist": 2,
+      "fatigueResist": 1,
+      "addPhysicalBoxes": -1
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "FA",
+    "page": 133
+  },
+  {
+    "name": "Crystal Gut (Stomach)",
+    "category": "Positive",
+    "karma": 5,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
+    "bonus": {
+      "essenceCostTimes100": [-50],
+      "fatigueResist": 1,
+      "addPhysicalBoxes": -1,
+      "lifestyleCostModifier": [
+        {
+          "cost": -10
+        }
+      ]
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "FA",
+    "page": 133
+  },
+  {
+    "name": "Crystal Gut (Intestines)",
+    "category": "Positive",
+    "karma": 5,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
+    "bonus": {
+      "essenceCostTimes100": [-50],
+      "fatigueResist": 1,
+      "addPhysicalBoxes": -1
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "FA",
+    "page": 133
+  },
+  {
+    "name": "Crystal Gut (Liver, Kidneys)",
+    "category": "Positive",
+    "karma": 10,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
+    "bonus": {
+      "essenceCostTimes100": [-100],
+      "toxinIngestionResist": 2,
+      "toxinInjectionResist": 2,
+      "fatigueResist": 2,
+      "addPhysicalBoxes": -1
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "FA",
+    "page": 133
+  },
+  {
+    "name": "Crystal Gut (Liver, Stomach)",
+    "category": "Positive",
+    "karma": 10,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
+    "bonus": {
+      "essenceCostTimes100": [-100],
+      "toxinIngestionResist": 2,
+      "fatigueResist": 2,
+      "addPhysicalBoxes": -1,
+      "lifestyleCostModifier": [
+        {
+          "cost": -10
+        }
+      ]
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "FA",
+    "page": 133
+  },
+  {
+    "name": "Crystal Gut (Liver, Intestines)",
+    "category": "Positive",
+    "karma": 10,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
+    "bonus": {
+      "essenceCostTimes100": [-100],
+      "toxinIngestionResist": 2,
+      "fatigueResist": 2,
+      "addPhysicalBoxes": -1
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "FA",
+    "page": 133
+  },
+  {
+    "name": "Crystal Gut (Kidneys, Stomach)",
+    "category": "Positive",
+    "karma": 10,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
+    "bonus": {
+      "essenceCostTimes100": [-100],
+      "toxinInjectionResist": 2,
+      "fatigueResist": 2,
+      "addPhysicalBoxes": -1,
+      "lifestyleCostModifier": [
+        {
+          "cost": -10
+        }
+      ]
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "FA",
+    "page": 133
+  },
+  {
+    "name": "Crystal Gut (Kidneys, Intestines)",
+    "category": "Positive",
+    "karma": 10,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
+    "bonus": {
+      "essenceCostTimes100": [-100],
+      "toxinInjectionResist": 2,
+      "fatigueResist": 2,
+      "addPhysicalBoxes": -1
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "FA",
+    "page": 133
+  },
+  {
+    "name": "Crystal Gut (Stomach, Intestines)",
+    "category": "Positive",
+    "karma": 10,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
+    "bonus": {
+      "essenceCostTimes100": [-100],
+      "fatigueResist": 2,
+      "addPhysicalBoxes": -1,
+      "lifestyleCostModifier": [
+        {
+          "cost": -10
+        }
+      ]
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "FA",
+    "page": 133
+  },
+  {
+    "name": "Crystal Gut (Liver, Kidneys, Stomach)",
+    "category": "Positive",
+    "karma": 15,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
+    "bonus": {
+      "essenceCostTimes100": [-150],
+      "toxinIngestionResist": 2,
+      "toxinInjectionResist": 2,
+      "fatigueResist": 3,
+      "addPhysicalBoxes": -1,
+      "lifestyleCostModifier": [
+        {
+          "cost": -10
+        }
+      ]
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "FA",
+    "page": 133
+  },
+  {
+    "name": "Crystal Gut (Liver, Kidneys, Intestines)",
+    "category": "Positive",
+    "karma": 15,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
+    "bonus": {
+      "essenceCostTimes100": [-150],
+      "toxinIngestionResist": 2,
+      "toxinInjectionResist": 2,
+      "fatigueResist": 3,
+      "addPhysicalBoxes": -1
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "FA",
+    "page": 133
+  },
+  {
+    "name": "Crystal Gut (Liver, Stomach, Intestines)",
+    "category": "Positive",
+    "karma": 15,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
+    "bonus": {
+      "essenceCostTimes100": [-150],
+      "toxinIngestionResist": 2,
+      "fatigueResist": 3,
+      "addPhysicalBoxes": -1,
+      "lifestyleCostModifier": [
+        {
+          "cost": -10
+        }
+      ]
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "FA",
+    "page": 133
+  },
+  {
+    "name": "Crystal Gut (Kidneys, Stomach, Intestines)",
+    "category": "Positive",
+    "karma": 15,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
+    "bonus": {
+      "essenceCostTimes100": [-150],
+      "toxinInjectionResist": 2,
+      "fatigueResist": 3,
+      "addPhysicalBoxes": -1,
+      "lifestyleCostModifier": [
+        {
+          "cost": -10
+        }
+      ]
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "FA",
+    "page": 133
+  },
+  {
+    "name": "Crystal Gut (Liver, Kidneys, Stomach, Intestines)",
+    "category": "Positive",
+    "karma": 20,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
+    "bonus": {
+      "essenceCostTimes100": [-200],
+      "toxinIngestionResist": 2,
+      "toxinInjectionResist": 2,
+      "fatigueResist": 4,
+      "addPhysicalBoxes": -1,
+      "lifestyleCostModifier": [
+        {
+          "cost": -10
+        }
+      ]
+    },
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "FA",
+    "page": 133
+  },
+  {
+    "name": "Crystal Jaw",
+    "category": "Positive",
+    "karma": 10,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
+    "addWeapons": ["Crystal Jaw"],
+    "bonus": {
+      "essenceCostTimes100": [-100],
+      "addPhysicalBoxes": -1
+    },
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 133
+  },
+  {
+    "name": "Crystal Limb (Arm)",
+    "category": "Positive",
+    "karma": 10,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "essenceCostTimes100": [-100],
+      "addPhysicalBoxes": -1,
+      "armour": {
+        "bonus": 1
+      }
+    },
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 133
+  },
+  {
+    "name": "Crystal Limb (Leg)",
+    "category": "Positive",
+    "karma": 10,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "essenceCostTimes100": [-100],
+      "addPhysicalBoxes": -1,
+      "armour": {
+        "bonus": 1
+      }
+    },
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 133
+  },
+  {
+    "name": "Crystal Spine",
+    "category": "Positive",
+    "karma": 10,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
+    "bonus": {
+      "essenceCostTimes100": [-100],
+      "initiative": {
+        "bonus": 2
+      },
+      "addPhysicalBoxes": -1,
+      "armour": {
+        "bonus": 1
+      }
+    },
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 133
+  },
+  {
+    "name": "Crystalline Blade",
+    "category": "Positive",
+    "karma": 10,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
+    "addWeapons": ["Crystalline Blade"],
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 133
+  },
+  {
+    "name": "Crystalline Claws",
+    "category": "Positive",
+    "karma": 5,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
+    "addWeapons": ["Crystal Claw"],
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 133
+  },
+  {
+    "name": "Crystalline Diver",
+    "category": "Positive",
+    "karma": 10,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 133
+  },
+  {
+    "name": "Crystalline Grace",
+    "category": "Positive",
+    "karma": 10,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 134
+  },
+  {
+    "name": "Crystalline Reflexes",
+    "category": "Positive",
+    "karma": 15,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
+    "bonus": {
+      "dodge": [2]
+    },
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 134
+  },
+  {
+    "name": "Crystalline Shards",
+    "category": "Positive",
+    "karma": 10,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
+    "addWeapons": ["Crystalline Shards"],
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 134
+  },
+  {
+    "name": "Crystalline Vision",
+    "category": "Positive",
+    "karma": 15,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 134
+  },
+  {
+    "name": "Apprentice",
+    "category": "Positive",
+    "karma": 15,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "chargenQualityOnly_NotSelectableIfPriorityChargen": true,
+    "forbidden": {},
+    "description": "",
+    "source": "FA",
+    "page": 47
+  },
+  {
+    "name": "Enchanter",
+    "category": "Positive",
+    "karma": 15,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "chargenQualityOnly_NotSelectableIfPriorityChargen": true,
+    "forbidden": {},
+    "description": "",
+    "source": "FA",
+    "page": 47
+  },
+  {
+    "name": "Explorer",
+    "category": "Positive",
+    "karma": 15,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "chargenQualityOnly_NotSelectableIfPriorityChargen": true,
+    "forbidden": {},
+    "description": "",
+    "source": "FA",
+    "page": 47
+  },
+  {
+    "name": "Elementalist (Air)",
+    "category": "Positive",
+    "karma": 0,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 43
+  },
+  {
+    "name": "Elementalist (Earth)",
+    "category": "Positive",
+    "karma": 0,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 43
+  },
+  {
+    "name": "Elementalist (Fire)",
+    "category": "Positive",
+    "karma": 0,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 43
+  },
+  {
+    "name": "Elementalist (Water)",
+    "category": "Positive",
+    "karma": 0,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 43
+  },
+  {
+    "name": "Hedge Witch/Wizard",
+    "category": "Positive",
+    "karma": 0,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 43
+  },
+  {
+    "name": "Seer",
+    "category": "Positive",
+    "karma": 0,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 43
+  },
+  {
+    "name": "Null Wizard",
+    "category": "Positive",
+    "karma": 0,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 43
+  },
+  {
+    "name": "Mentor's Mask",
+    "category": "Positive",
+    "karma": 0,
+    "charGenDoNotContributeToKarmaLimit": true,
+    "requirements": {},
+    "description": "",
+    "source": "FA",
+    "page": 182
+  },
+  {
+    "name": "Arcology Tantrum",
+    "category": "Negative",
+    "karma": -10,
+    "description": "",
+    "source": "SAG",
+    "page": 147
+  },
+  {
+    "name": "People's SIN",
+    "category": "Negative",
+    "karma": -3,
+    "forbidden": {},
+    "description": "",
+    "source": "SAG",
+    "page": 148
+  },
+  {
+    "name": "People's SIN (Criminal)",
+    "category": "Negative",
+    "karma": -10,
+    "forbidden": {},
+    "description": "",
+    "source": "SAG",
+    "page": 148
+  },
+  {
+    "name": "Black Forest Native",
+    "category": "Positive",
+    "karma": 22,
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "TCT",
+    "page": 188
+  },
+  {
+    "name": "Community Connection",
+    "category": "Positive",
+    "karma": 5,
+    "bonus": {
+      "lifestyleCostModifier": [
+        {
+          "lifestyle": "Low",
+          "cost": -50
+        },
+        {
+          "lifestyle": "Squatter",
+          "cost": -100
+        }
+      ]
+    },
+    "requirements": {},
+    "description": "",
+    "source": "TCT",
+    "page": 188
+  },
+  {
+    "name": "Delicate Fingers",
+    "category": "Positive",
+    "karma": 5,
+    "requirements": {},
+    "description": "",
+    "source": "TCT",
+    "page": 188
+  },
+  {
+    "name": "Human Lifespan",
+    "category": "Positive",
+    "karma": 10,
+    "description": "",
+    "source": "TCT",
+    "page": 188
+  },
+  {
+    "name": "Nasty Trog",
+    "category": "Positive",
+    "karma": 5,
+    "description": "",
+    "source": "TCT",
+    "page": 188
+  },
+  {
+    "name": "Trog Artisan",
+    "category": "Positive",
+    "karma": 8,
+    "description": "",
+    "source": "TCT",
+    "page": 188
+  },
+  {
+    "name": "Trog Historian",
+    "category": "Positive",
+    "karma": 4,
+    "description": "",
+    "source": "TCT",
+    "page": 188
+  },
+  {
+    "name": "Trog Leader",
+    "category": "Positive",
+    "karma": 7,
+    "requirements": {},
+    "description": "",
+    "source": "TCT",
+    "page": 188
+  },
+  {
+    "name": "Trog Networker",
+    "category": "Positive",
+    "karma": 12,
+    "requirements": {},
+    "description": "",
+    "source": "TCT",
+    "page": 189
+  },
+  {
+    "name": "Bad Credit",
+    "category": "Negative",
+    "karma": -8,
+    "bonus": {
+      "lifestyleCostModifier": [
+        {
+          "cost": 10
+        }
+      ]
+    },
+    "description": "",
+    "source": "TCT",
+    "page": 189
+  },
+  {
+    "name": "Elevated Stress",
+    "category": "Negative",
+    "karma": -8,
+    "bonus": {
+      "toxinContactResist": -1,
+      "toxinInhalationResist": -1,
+      "toxinIngestionResist": -1,
+      "toxinInjectionResist": -1,
+      "addictionResistance": {
+        "physiological": {
+          "initialTest": [-1],
+          "progressingTest": [-1]
+        },
+        "psychological": {
+          "initialTest": [-1],
+          "progressingTest": [0]
+        }
+      }
+    },
+    "description": "",
+    "source": "TCT",
+    "page": 189
+  },
+  {
+    "name": "Force of Chaos",
+    "category": "Negative",
+    "karma": -4,
+    "description": "",
+    "source": "TCT",
+    "page": 189
+  },
+  {
+    "name": "Trog Traitor",
+    "category": "Negative",
+    "karma": -5,
+    "description": "",
+    "source": "TCT",
+    "page": 189
+  },
+  {
+    "name": "Busted Cyberware",
+    "category": "Negative",
+    "karma": -4,
+    "charGenOnly": true,
+    "limit": 11,
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "TSG",
+    "page": 30
+  },
+  {
+    "name": "Corporate Loyalist",
+    "category": "Positive",
+    "karma": 7,
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "SL",
+    "page": 126
+  },
+  {
+    "name": "Location Attunement I",
+    "category": "Positive",
+    "karma": 5,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "SL",
+    "page": 126
+  },
+  {
+    "name": "Location Attunement II",
+    "category": "Positive",
+    "karma": 7,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "SL",
+    "page": 126
+  },
+  {
+    "name": "Location Attunement III",
+    "category": "Positive",
+    "karma": 9,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "description": "",
+    "source": "SL",
+    "page": 126
+  },
+  {
+    "name": "Natural Leader",
+    "category": "Positive",
+    "karma": 5,
+    "description": "",
+    "source": "SL",
+    "page": 127
+  },
+  {
+    "name": "Observant",
+    "category": "Positive",
+    "karma": 5,
+    "description": "",
+    "source": "SL",
+    "page": 127
+  },
+  {
+    "name": "Battle Hardened",
+    "category": "Positive",
+    "karma": 2,
+    "limit": 3,
+    "description": "",
+    "source": "SL",
+    "page": 181
+  },
+  {
+    "name": "Corporate Pariah I",
+    "category": "Negative",
+    "karma": -7,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true,
+      "skillCategories": [
+        {
+          "category": "Social Active",
+          "bonus": [-2]
+        }
+      ]
+    },
+    "description": "",
+    "source": "SL",
+    "page": 127
+  },
+  {
+    "name": "Corporate Pariah II",
+    "category": "Negative",
+    "karma": -10,
+    "limit": {
+      "option": "False"
+    },
+    "bonus": {
+      "enterName": true,
+      "skillCategories": [
+        {
+          "category": "Social Active",
+          "bonus": [-3]
+        }
+      ]
+    },
+    "description": "",
+    "source": "SL",
+    "page": 127
+  },
+  {
+    "name": "Every Man For Himself",
+    "category": "Negative",
+    "karma": -5,
+    "description": "",
+    "source": "SL",
+    "page": 181
+  },
+  {
+    "name": "No Man Left Behind",
+    "category": "Negative",
+    "karma": -7,
+    "description": "",
+    "source": "SL",
+    "page": 181
+  },
+  {
+    "name": "Stay Out of My Way",
+    "category": "Negative",
+    "karma": -9,
+    "description": "",
+    "source": "SL",
+    "page": 127
+  },
+  {
+    "name": "This Is Your Last Chance",
+    "category": "Negative",
+    "karma": -3,
+    "description": "",
+    "source": "SL",
+    "page": 127
+  },
+  {
+    "name": "Thousand-Yard Stare",
+    "category": "Negative",
+    "karma": -3,
+    "limit": 3,
+    "bonus": {
+      "skillCategories": [
+        {
+          "category": "Social Active",
+          "bonus": [
+            -1,
+            {
+              "operator": "*"
+            },
+            {
+              "option": "Rating"
+            }
+          ]
+        }
+      ]
+    },
+    "description": "",
+    "source": "SL",
+    "page": 181
+  },
+  {
+    "name": "Deck Builder",
+    "category": "Positive",
+    "karma": 4,
+    "description": "",
+    "source": "KC",
+    "page": 76
+  },
+  {
+    "name": "Impenetrable Logic",
+    "category": "Positive",
+    "karma": 3,
+    "description": "",
+    "source": "KC",
+    "page": 76
+  },
+  {
+    "name": "Rootkit",
+    "category": "Positive",
+    "karma": 8,
+    "description": "",
+    "source": "KC",
+    "page": 76
+  },
+  {
+    "name": "Silence is Golden",
+    "category": "Positive",
+    "karma": 9,
+    "description": "",
+    "source": "KC",
+    "page": 76
+  },
+  {
+    "name": "AVRse",
+    "category": "Negative",
+    "karma": -9,
+    "description": "",
+    "source": "KC",
+    "page": 76
+  },
+  {
+    "name": "Basement Dweller",
+    "category": "Negative",
+    "karma": -8,
+    "bonus": {
+      "skillCategories": [
+        {
+          "category": "Social Active",
+          "bonus": [-2]
+        }
+      ]
+    },
+    "description": "",
+    "source": "KC",
+    "page": 77
+  },
+  {
+    "name": "Big Baby",
+    "category": "Negative",
+    "karma": -4,
+    "description": "",
+    "source": "KC",
+    "page": 77
+  },
+  {
+    "name": "Buddy System",
+    "category": "Negative",
+    "karma": -9,
+    "description": "",
+    "source": "KC",
+    "page": 77
+  },
+  {
+    "name": "Discombobulated",
+    "category": "Negative",
+    "karma": -12,
+    "description": "",
+    "source": "KC",
+    "page": 77
+  },
+  {
+    "name": "Down the Rabbit Hole",
+    "category": "Negative",
+    "karma": -2,
+    "limit": 4,
+    "description": "",
+    "source": "KC",
+    "page": 77
+  },
+  {
+    "name": "Echo Chamber",
+    "category": "Negative",
+    "karma": -10,
+    "description": "",
+    "source": "KC",
+    "page": 78
+  },
+  {
+    "name": "Frostbite",
+    "category": "Negative",
+    "karma": -3,
+    "description": "",
+    "source": "KC",
+    "page": 78
+  },
+  {
+    "name": "Information Auctioneer",
+    "category": "Negative",
+    "karma": -4,
+    "description": "",
+    "source": "KC",
+    "page": 78
+  },
+  {
+    "name": "Lazy Fingers",
+    "category": "Negative",
+    "karma": -10,
+    "description": "",
+    "source": "KC",
+    "page": 79
+  },
+  {
+    "name": "Malware Infection",
+    "category": "Negative",
+    "karma": -5,
+    "description": "",
+    "source": "KC",
+    "page": 79
+  },
+  {
+    "name": "Matrix Troll",
+    "category": "Negative",
+    "karma": -7,
+    "description": "",
+    "source": "KC",
+    "page": 79
+  },
+  {
+    "name": "Sloppy Code",
+    "category": "Negative",
+    "karma": -3,
+    "bonus": {
+      "skillGroups": [
+        {
+          "group": "Stealth",
+          "bonus": [-2]
+        }
+      ]
+    },
+    "description": "",
+    "source": "KC",
+    "page": 79
+  },
+  {
+    "name": "Well, Actually...",
+    "category": "Negative",
+    "karma": -12,
+    "description": "",
+    "source": "KC",
+    "page": 79
+  },
+  {
+    "name": "Better on the Net [Attack]",
+    "category": "Positive",
+    "karma": 9,
+    "requirements": {},
+    "description": "",
+    "source": "KC",
+    "page": 96
+  },
+  {
+    "name": "Better on the Net [Data Processing]",
+    "category": "Positive",
+    "karma": 9,
+    "requirements": {},
+    "description": "",
+    "source": "KC",
+    "page": 96
+  },
+  {
+    "name": "Better on the Net [Firewall]",
+    "category": "Positive",
+    "karma": 9,
+    "requirements": {},
+    "description": "",
+    "source": "KC",
+    "page": 96
+  },
+  {
+    "name": "Better on the Net [Sleaze]",
+    "category": "Positive",
+    "karma": 9,
+    "requirements": {},
+    "description": "",
+    "source": "KC",
+    "page": 96
+  },
+  {
+    "name": "Brilliant Heuristics",
+    "category": "Positive",
+    "karma": 5,
+    "requirements": {},
+    "description": "",
+    "source": "KC",
+    "page": 96
+  },
+  {
+    "name": "Groveler",
+    "category": "Positive",
+    "karma": 10,
+    "requirements": {},
+    "description": "",
+    "source": "KC",
+    "page": 96
+  },
+  {
+    "name": "Hold the Door",
+    "category": "Positive",
+    "karma": 7,
+    "requirements": {},
+    "description": "",
+    "source": "KC",
+    "page": 96
+  },
+  {
+    "name": "Fractal Punch",
+    "category": "Positive",
+    "karma": 5,
+    "requirements": {},
+    "description": "",
+    "source": "KC",
+    "page": 96
+  },
+  {
+    "name": "Lone Wolf",
+    "category": "Positive",
+    "karma": 5,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "KC",
+    "page": 96
+  },
+  {
+    "name": "Natural Hacker",
+    "category": "Positive",
+    "karma": 14,
+    "requirements": {},
+    "description": "",
+    "source": "KC",
+    "page": 97
+  },
+  {
+    "name": "One With the Matrix I",
+    "category": "Positive",
+    "karma": 2,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "KC",
+    "page": 97
+  },
+  {
+    "name": "One With the Matrix II",
+    "category": "Positive",
+    "karma": 8,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "KC",
+    "page": 97
+  },
+  {
+    "name": "One With the Matrix III",
+    "category": "Positive",
+    "karma": 10,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "KC",
+    "page": 97
+  },
+  {
+    "name": "Reverberant",
+    "category": "Positive",
+    "karma": 5,
+    "forbidden": {},
+    "description": "",
+    "source": "KC",
+    "page": 97
+  },
+  {
+    "name": "Sprite Affinity",
+    "category": "Positive",
+    "karma": 7,
+    "limit": {
+      "option": "False"
+    },
+    "requirements": {},
+    "description": "",
+    "source": "KC",
+    "page": 97
+  },
+  {
+    "name": "Team Player",
+    "category": "Positive",
+    "karma": 5,
+    "requirements": {},
+    "description": "",
+    "source": "KC",
+    "page": 97
+  },
+  {
+    "name": "Trust Data, Not Lore",
+    "category": "Positive",
+    "karma": 5,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "KC",
+    "page": 97
+  },
+  {
+    "name": "Trust Lore, Not Data",
+    "category": "Positive",
+    "karma": 5,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "KC",
+    "page": 97
+  },
+  {
+    "name": "Unique Avatar",
+    "category": "Positive",
+    "karma": 5,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "KC",
+    "page": 98
+  },
+  {
+    "name": "Paragon",
+    "category": "Positive",
+    "karma": 0,
+    "requirements": {},
+    "description": "",
+    "source": "KC",
+    "page": 102
+  },
+  {
+    "name": "Brittle [Attack]",
+    "category": "Negative",
+    "karma": -5,
+    "requirements": {},
+    "description": "",
+    "source": "KC",
+    "page": 99
+  },
+  {
+    "name": "Brittle [Sleaze]",
+    "category": "Negative",
+    "karma": -5,
+    "requirements": {},
+    "description": "",
+    "source": "KC",
+    "page": 99
+  },
+  {
+    "name": "Brittle [Data Processing]",
+    "category": "Negative",
+    "karma": -5,
+    "requirements": {},
+    "description": "",
+    "source": "KC",
+    "page": 99
+  },
+  {
+    "name": "Brittle [Firewall]",
+    "category": "Negative",
+    "karma": -5,
+    "requirements": {},
+    "description": "",
+    "source": "KC",
+    "page": 99
+  },
+  {
+    "name": "Code of Honor: Black Hat",
+    "category": "Negative",
+    "karma": -15,
+    "requirements": {},
+    "description": "",
+    "source": "KC",
+    "page": 99
+  },
+  {
+    "name": "Data Hog",
+    "category": "Negative",
+    "karma": -10,
+    "requirements": {},
+    "description": "",
+    "source": "KC",
+    "page": 99
+  },
+  {
+    "name": "Escaped Custody",
+    "category": "Negative",
+    "karma": -5,
+    "bonus": {
+      "enterName": true
+    },
+    "requirements": {},
+    "description": "",
+    "source": "KC",
+    "page": 99
+  },
+  {
+    "name": "Know Your Limit",
+    "category": "Negative",
+    "karma": -4,
+    "requirements": {},
+    "description": "",
+    "source": "KC",
+    "page": 99
+  },
+  {
+    "name": "On the Wagon",
+    "category": "Negative",
+    "karma": -5,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "KC",
+    "page": 99
+  },
+  {
+    "name": "Resonant Burnout",
+    "category": "Negative",
+    "karma": -15,
+    "requirements": {},
+    "description": "",
+    "source": "KC",
+    "page": 99
+  },
+  {
+    "name": "Sprite Combustion",
+    "category": "Negative",
+    "karma": -13,
+    "requirements": {},
+    "description": "",
+    "source": "KC",
+    "page": 99
+  },
+  {
+    "name": "Taint of Dissonance",
+    "category": "Negative",
+    "karma": -5,
+    "requirements": {},
+    "description": "",
+    "source": "KC",
+    "page": 100
+  },
+  {
+    "name": "'Ware Intolerance",
+    "category": "Negative",
+    "karma": -15,
+    "description": "",
+    "source": "KC",
+    "page": 100
+  },
+  {
+    "name": "Wired User",
+    "category": "Negative",
+    "karma": -5,
+    "requirements": {},
+    "description": "",
+    "source": "KC",
+    "page": 100
+  },
+  {
+    "name": "Resonant Stream: Cyberadept",
+    "category": "Positive",
+    "karma": 20,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "KC",
+    "page": 89
+  },
+  {
+    "name": "Resonant Stream: Machinist",
+    "category": "Positive",
+    "karma": 20,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "KC",
+    "page": 90
+  },
+  {
+    "name": "Resonant Stream: Sourceror",
+    "category": "Positive",
+    "karma": 20,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "KC",
+    "page": 91
+  },
+  {
+    "name": "Resonant Stream: Technoshaman",
+    "category": "Positive",
+    "karma": 20,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "KC",
+    "page": 91
+  },
+  {
+    "name": "Dissonant Stream: Apophenian",
+    "category": "Positive",
+    "karma": 20,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "KC",
+    "page": 133
+  },
+  {
+    "name": "Dissonant Stream: Erisian",
+    "category": "Positive",
+    "karma": 20,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "KC",
+    "page": 134
+  },
+  {
+    "name": "Dissonant Stream: Morphinae",
+    "category": "Positive",
+    "karma": 20,
+    "charGenCostInCareer": true,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "KC",
+    "page": 132
+  },
+  {
+    "name": "Dead SIN",
+    "category": "Negative",
+    "karma": -20,
+    "forbidden": {},
+    "description": "",
+    "source": "BTB",
+    "page": 162
+  },
+  {
+    "name": "Hard Luck",
+    "category": "Negative",
+    "karma": -5,
+    "description": "",
+    "source": "BTB",
+    "page": 162
+  },
+  {
+    "name": "Quadriplegic",
+    "category": "Negative",
+    "karma": -25,
+    "bonus": {
+      "lifestyleCostModifier": [
+        {
+          "cost": 30
+        }
+      ]
+    },
+    "description": "",
+    "source": "BTB",
+    "page": 139
+  },
+  {
+    "name": "Hair Trigger",
+    "category": "Positive",
+    "karma": 2,
+    "requirements": {},
+    "description": "",
+    "source": "BTB",
+    "page": 160
+  },
+  {
+    "name": "Hi-Rez",
+    "category": "Positive",
+    "karma": 4,
+    "requirements": {},
+    "description": "",
+    "source": "BTB",
+    "page": 160
+  },
+  {
+    "name": "Instinctive Hack",
+    "category": "Positive",
+    "karma": 2,
+    "description": "",
+    "source": "BTB",
+    "page": 160
+  },
+  {
+    "name": "Rabble Rouser",
+    "category": "Positive",
+    "karma": 6,
+    "bonus": {
+      "skillCategories": [
+        {
+          "category": "Social Active",
+          "bonus": [2]
+        }
+      ]
+    },
+    "description": "",
+    "source": "BTB",
+    "page": 161
+  },
+  {
+    "name": "Social Chameleon",
+    "category": "Positive",
+    "karma": 7,
+    "description": "",
+    "source": "BTB",
+    "page": 139
+  },
+  {
+    "name": "Resonant Discordance",
+    "category": "Positive",
+    "karma": 13,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "BTB",
+    "page": 161
+  },
+  {
+    "name": "Prototype Materials",
+    "category": "Positive",
+    "karma": 5,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "BTB",
+    "page": 160
+  },
+  {
+    "name": "Shoot First, Don't Ask",
+    "category": "Positive",
+    "karma": 2,
+    "description": "",
+    "source": "BTB",
+    "page": 161
+  },
+  {
+    "name": "Special Modifications",
+    "category": "Positive",
+    "karma": 5,
+    "limit": 2,
+    "forbidden": {},
+    "description": "",
+    "source": "BTB",
+    "page": 161
+  },
+  {
+    "name": "Special Modifications (Prototype Materials)",
+    "category": "Positive",
+    "karma": 5,
+    "requirements": {},
+    "forbidden": {},
+    "description": "",
+    "source": "BTB",
+    "page": 161
+  },
+  {
+    "name": "Elemental Attunement",
+    "category": "Positive",
+    "karma": 5,
+    "charGenCostInCareer": true,
+    "canBuyWithSpellPoints": true,
+    "requirements": {},
+    "description": "",
+    "source": "BTB",
+    "page": 161
+  },
+  {
+    "name": "Candle in the Darkness",
+    "category": "Positive",
+    "karma": 5,
+    "requirements": {},
+    "description": "",
+    "source": "NF",
+    "page": 177
+  },
+  {
+    "name": "Massive Network",
+    "category": "Positive",
+    "karma": 20,
+    "forbidden": {},
+    "description": "",
+    "source": "NF",
+    "page": 177
+  },
+  {
+    "name": "Networker",
+    "category": "Positive",
+    "karma": 5,
+    "forbidden": {},
+    "description": "",
+    "source": "NF",
+    "page": 177
+  },
+  {
+    "name": "Stolen Gear",
+    "category": "Negative",
+    "karma": -1,
+    "charGenNoKarma": true,
+    "limit": 20,
+    "description": "",
+    "source": "NF",
+    "page": 177
+  }
+]

@@ -115,6 +115,8 @@ export function ParseWeapons() {
         case sourceBookXmlEnum.StreetLethal:
         case sourceBookXmlEnum.TheCompleteTrog:
         case sourceBookXmlEnum.TheSeattleGambit:
+        case sourceBookXmlEnum.ForbiddenArcana:
+        case sourceBookXmlEnum.HowlingShadows:
           found = true;
           break;
         // Not in english
@@ -136,14 +138,12 @@ export function ParseWeapons() {
         case sourceBookXmlEnum.NothingPersonal:
         case sourceBookXmlEnum.BloodyBusiness:
         case sourceBookXmlEnum.DataTrailsDissonantEchoes:
-        case sourceBookXmlEnum.HowlingShadows:
         case sourceBookXmlEnum.TheVladivostokGauntlet:
         case sourceBookXmlEnum.SplinteredState:
         case sourceBookXmlEnum.ShadowsInFocus_Butte:
         case sourceBookXmlEnum.HongKongSourcebook:
         case sourceBookXmlEnum.ShadowsInFocus_Metropole:
         case sourceBookXmlEnum.BookOfTheLost:
-        case sourceBookXmlEnum.ForbiddenArcana:
         case sourceBookXmlEnum.ShadowsInFocus_SiouxNation_CountingCoup:
         case sourceBookXmlEnum.DarkTerrors:
         case sourceBookXmlEnum.BetterThanBad:
@@ -284,7 +284,10 @@ function convertWeapon(weapon: WeaponXmlType) {
     }
     return range;
   });
-  const weaponRequirements = convertRequirements(weapon.required);
+  let requirements;
+  if (weapon.required) {
+    requirements = convertRequirements(weapon.required);
+  }
   const mountLocationsOnHostWeapon = weapon.mount
     ? weapon.extramount
       ? [weapon.mount, weapon.extramount]
@@ -292,10 +295,7 @@ function convertWeapon(weapon: WeaponXmlType) {
     : weapon.extramount
     ? [weapon.extramount]
     : undefined;
-  if (
-    weaponRequirements !== undefined ||
-    mountLocationsOnHostWeapon !== undefined
-  ) {
+  if (requirements !== undefined || mountLocationsOnHostWeapon !== undefined) {
     assert(
       weapon.category === weaponXmlSubtypeEnum.UnderbarrelWeapons,
       `Weapon underbarrel error: ${weapon.name}`
@@ -304,7 +304,7 @@ function convertWeapon(weapon: WeaponXmlType) {
   const hostWeaponRequirements =
     weapon.category === weaponXmlSubtypeEnum.UnderbarrelWeapons
       ? {
-          weaponRequirements: weaponRequirements,
+          weaponRequirements: requirements,
           hostWeaponMountsRequired: mountLocationsOnHostWeapon,
         }
       : undefined;
@@ -322,8 +322,7 @@ function convertWeapon(weapon: WeaponXmlType) {
     }
   } else {
     assert(
-      weaponRequirements === undefined &&
-        mountLocationsOnHostWeapon === undefined,
+      requirements === undefined && mountLocationsOnHostWeapon === undefined,
       weapon.name
     );
   }

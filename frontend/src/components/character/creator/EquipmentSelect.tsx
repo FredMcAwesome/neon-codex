@@ -35,7 +35,6 @@ import {
   formatAugmentationAvailability,
 } from "@neon-codex/common/build/formatters/augmentationFormatter.js";
 import { trpc } from "../../../utils/trpc.js";
-import uniqid from "uniqid";
 import {
   armourCategoryEnum,
   augmentationTypeEnum,
@@ -60,7 +59,7 @@ import type {
   ArmourListType,
   ArmourType,
 } from "@neon-codex/common/build/schemas/armourSchemas.js";
-import React from "react";
+import { Fragment } from "react";
 
 interface IProps {
   equipmentSelected: EquipmentListType;
@@ -288,7 +287,7 @@ export const EquipmentSelect = function (props: IProps) {
                 title={weapon.name}
                 addItem={addItem}
                 removeItem={removeItem}
-                key={uniqid()}
+                key={weapon.name + index}
               >
                 <div>{weapon.description}</div>
                 {weapon.accessories && (
@@ -296,7 +295,11 @@ export const EquipmentSelect = function (props: IProps) {
                     <span>Accessories:</span>
                     <ul>
                       {weapon.accessories.map((accessory) => {
-                        return <li key={uniqid()}>{accessory.name}</li>;
+                        return (
+                          <li key={weapon.name + accessory.name}>
+                            {accessory.name}
+                          </li>
+                        );
                       })}
                     </ul>
                   </div>
@@ -319,6 +322,7 @@ export const EquipmentSelect = function (props: IProps) {
                 title={armour.name}
                 addItem={addItem}
                 removeItem={removeItem}
+                key={armour.name + index}
               >
                 <div>{armour.description}</div>
               </CollapsibleEquipmentDiv>
@@ -339,6 +343,7 @@ export const EquipmentSelect = function (props: IProps) {
                 title={gear.name}
                 addItem={addItem}
                 removeItem={removeItem}
+                key={gear.name + index}
               >
                 <div>{gear.description}</div>
               </CollapsibleEquipmentDiv>
@@ -359,6 +364,7 @@ export const EquipmentSelect = function (props: IProps) {
                 title={augmentations.name}
                 addItem={addItem}
                 removeItem={removeItem}
+                key={augmentations.name + index}
               >
                 <div>{augmentations.description}</div>
               </CollapsibleEquipmentDiv>
@@ -379,6 +385,7 @@ export const EquipmentSelect = function (props: IProps) {
                 title={vehicles.name}
                 addItem={addItem}
                 removeItem={removeItem}
+                key={vehicles.name + index}
               >
                 <div>{vehicles.description}</div>
               </CollapsibleEquipmentDiv>
@@ -410,7 +417,7 @@ const WeaponDiv = function ({
           .filter((gear) => gear.type === weaponType)
           .map((weapon) => {
             return (
-              <li key={uniqid()}>
+              <li key={weapon.name}>
                 <FormattedWeaponDiv weapon={weapon} addWeapon={addWeapon} />
               </li>
             );
@@ -462,20 +469,21 @@ const FormattedWeaponTypeInformation = function ({
     case weaponTypeEnum.Melee:
       return <div>Reach: {weapon.meleeOptions.reach}</div>;
     case weaponTypeEnum.Projectile:
-      return <></>;
-    case weaponTypeEnum.Firearm:
+      return <Fragment></Fragment>;
+    case weaponTypeEnum.Firearm: {
       const recoilCompensation =
         weapon.firearmOptions.recoilCompensation == 0
           ? "-"
           : weapon.firearmOptions.recoilCompensation;
       return (
-        <React.Fragment>
+        <Fragment>
           <div>Mode: {weapon.firearmOptions.mode}</div>
           <div>RC: {recoilCompensation}</div>
-        </React.Fragment>
+        </Fragment>
       );
+    }
     case weaponTypeEnum.Explosive:
-      return <></>;
+      return <Fragment></Fragment>;
   }
 };
 
@@ -502,7 +510,7 @@ const ArmourDiv = function ({
               addArmour(armour);
             };
             return (
-              <li key={uniqid()}>
+              <li key={armour.name}>
                 <CollapsibleEquipmentDiv title={armour.name} addItem={addItem}>
                   <div>
                     <div>{armour.description}</div>
@@ -551,7 +559,7 @@ const GearDiv = function ({
               typeof gear.maxRating === "number" ? (
                 <div>Rating: {gear.maxRating}</div>
               ) : (
-                <></>
+                <Fragment></Fragment>
               );
             return (
               <li key={gearCategory + gear.name}>
@@ -628,8 +636,8 @@ const FormattedAugmentationTypeInformation = function ({
 }) {
   switch (augmentation.type) {
     case augmentationTypeEnum.Bioware:
-      return <></>;
-    case augmentationTypeEnum.Cyberware:
+      return <Fragment></Fragment>;
+    case augmentationTypeEnum.Cyberware: {
       let capacityFormatted = "";
       // these 2 are theoretically mutually exclusive but hey
       // lets handle the case of both of them just in case
@@ -643,6 +651,7 @@ const FormattedAugmentationTypeInformation = function ({
         capacityFormatted = "-";
       }
       return <div>Capacity: {capacityFormatted}</div>;
+    }
   }
 };
 
