@@ -12,7 +12,7 @@ import {
 import type {
   DrugType,
   AvailabilityDrugType,
-} from "@neon-codex/common/build/schemas/drugSchemas.js";
+} from "@neon-codex/common/build/schemas/equipment/other/drugSchemas.js";
 import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 
 @Entity()

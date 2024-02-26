@@ -9,21 +9,21 @@ import { QualitiesSelect } from "./QualitiesSelect.js";
 import { SkillSelectList } from "./SkillsSelect.js";
 import { EquipmentSelect } from "./EquipmentSelect.js";
 import { trpc } from "../../../utils/trpc.js";
-import type { CustomSkillListType } from "@neon-codex/common/build/schemas/skillSchemas.js";
-import type { EquipmentListType } from "@neon-codex/common/build/schemas/equipmentSchemas.js";
+import type { CustomSkillListType } from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
+import type { EquipmentListType } from "@neon-codex/common/build/schemas/equipment/other/equipmentSchemas.js";
 import {
   PriorityLevelEnum,
   MetatypeEnum,
   MagicTypeEnum,
-} from "@neon-codex/common/build/schemas/characterSchemas.js";
+} from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
 import type {
   AttributesType,
   SpecialAttributesType,
   PrioritiesType,
-} from "@neon-codex/common/build/schemas/characterSchemas.js";
+} from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
 import { CreatorSummary } from "./CreatorSummary.js";
 import { useNavigate } from "react-router-dom";
-import type { QualityListType } from "@neon-codex/common/build/schemas/qualitySchemas.js";
+import type { QualityListType } from "@neon-codex/common/build/schemas/abilities/qualitySchemas.js";
 
 const characterCreatorPath = "/character_creator";
 const CharacterCreator = function () {

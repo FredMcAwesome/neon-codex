@@ -17,6 +17,7 @@ import { DrugListXmlSchema } from "./other/DrugParserSchemas.js";
 import { GearListXmlSchema } from "./other/GearParserSchemas.js";
 import { VehicleModListXmlSchema } from "./riggerGear/VehicleModParserSchemas.js";
 import { VehicleListXmlSchema } from "./riggerGear/VehicleParserSchemas.js";
+import { MetatypeListXmlSchema } from "./character/MetatypeParserSchemas.js";
 
 export const CheckGUIDs = function () {
   const currentPath = import.meta.url;
@@ -75,6 +76,22 @@ export const CheckGUIDs = function () {
 
   if (!qualityListParsed.success) {
     console.log(qualityListParsed.error.errors[0]);
+    assert(false);
+  }
+
+  // --- Metatype --- //
+  xml_string = fs.readFileSync(
+    fileURLToPath(path.dirname(currentPath) + "../../../xmls/metatypes.xml"),
+    "utf8"
+  );
+  jObj = parser.parse(xml_string);
+  const metatypeListParsed = MetatypeListXmlSchema.safeParse(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    jObj.chummer.metatypes.metatype
+  );
+
+  if (!metatypeListParsed.success) {
+    console.log(metatypeListParsed.error.errors[0]);
     assert(false);
   }
 

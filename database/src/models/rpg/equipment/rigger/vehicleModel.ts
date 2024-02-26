@@ -28,7 +28,7 @@ import type {
   WatercraftVehicleType,
   AircraftVehicleType,
   DroneVehicleType,
-} from "@neon-codex/common/build/schemas/vehicleSchemas.js";
+} from "@neon-codex/common/build/schemas/equipment/rigger/vehicleSchemas.js";
 
 @Entity({
   discriminatorColumn: "type",

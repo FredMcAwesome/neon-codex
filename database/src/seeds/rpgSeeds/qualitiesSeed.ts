@@ -2,11 +2,11 @@ import assert from "assert";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { Qualities } from "../../models/rpg/abilities/qualityModel.js";
+import { Qualities } from "../../models/rpg/traits/qualityModel.js";
 import {
   type QualityListType,
   QualityListSchema,
-} from "@neon-codex/common/build/schemas/qualitySchemas.js";
+} from "@neon-codex/common/build/schemas/abilities/qualitySchemas.js";
 
 export const getQualities = function () {
   const currentPath = import.meta.url;

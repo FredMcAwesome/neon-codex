@@ -2,8 +2,8 @@ import assert from "assert";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { VehicleModListSchema } from "@neon-codex/common/build/schemas/vehicleModSchemas.js";
-import type { VehicleModListType } from "@neon-codex/common/build/schemas/vehicleModSchemas.js";
+import { VehicleModListSchema } from "@neon-codex/common/build/schemas/equipment/rigger/vehicleModSchemas.js";
+import type { VehicleModListType } from "@neon-codex/common/build/schemas/equipment/rigger/vehicleModSchemas.js";
 import {
   VehicleChasisModifications,
   VehicleModifications,

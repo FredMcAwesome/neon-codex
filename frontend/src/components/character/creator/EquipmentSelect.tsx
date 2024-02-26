@@ -5,7 +5,7 @@ import type {
   CostWeaponType,
   WeaponSummaryListType,
   WeaponSummaryType,
-} from "@neon-codex/common/build/schemas/weaponSchemas.js";
+} from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
 import {
   formatAccuracy,
   formatAmmunition,
@@ -42,23 +42,23 @@ import {
   vehicleTypeEnum,
   weaponTypeEnum,
 } from "@neon-codex/common/build/enums.js";
-import type { EquipmentListType } from "@neon-codex/common/build/schemas/equipmentSchemas.js";
+import type { EquipmentListType } from "@neon-codex/common/build/schemas/equipment/other/equipmentSchemas.js";
 import type {
   GearListType,
   GearType,
-} from "@neon-codex/common/build/schemas/gearSchemas.js";
+} from "@neon-codex/common/build/schemas/equipment/other/gearSchemas.js";
 import type {
   AugmentationType,
   AugmentationListType,
-} from "@neon-codex/common/build/schemas/augmentationSchemas.js";
+} from "@neon-codex/common/build/schemas/equipment/bodyModification/augmentationSchemas.js";
 import type {
   VehicleListType,
   VehicleType,
-} from "@neon-codex/common/build/schemas/vehicleSchemas.js";
+} from "@neon-codex/common/build/schemas/equipment/rigger/vehicleSchemas.js";
 import type {
   ArmourListType,
   ArmourType,
-} from "@neon-codex/common/build/schemas/armourSchemas.js";
+} from "@neon-codex/common/build/schemas/equipment/combat/armourSchemas.js";
 import { Fragment } from "react";
 
 interface IProps {

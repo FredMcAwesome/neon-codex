@@ -14,9 +14,52 @@ export enum skillCategoryEnum {
   Street = "Street",
 }
 
+export enum skillTalentSourceEnum {
+  Resonance = "Resonance",
+  Matrix = "Matrix",
+  Magic = "Magic",
+  Adept = "Adept",
+}
+
 export enum qualityCategoryEnum {
   Positive = "Positive",
   Negative = "Negative",
+}
+
+export enum metatypeCategoryEnum {
+  Metahuman = "Metahuman",
+  Metavariant = "Metavariant",
+  Metasapient = "Metasapient",
+  Shapeshifter = "Shapeshifter",
+}
+
+export enum priorityCategoryEnum {
+  Heritage = "Heritage",
+  Talent = "Talent",
+  Attributes = "Attributes",
+  Skills = "Skills",
+  Resources = "Resources",
+}
+
+export enum talentCategoryEnum {
+  Magic = "Magic",
+  Resonance = "Resonance",
+  Depth = "Depth",
+  Mundane = "Mundane",
+}
+
+export enum priorityTableRunnerLevelEnum {
+  StreetLevel = "Street Level",
+  Standard = "Standard",
+  PrimeRunner = "Prime Runner",
+}
+
+export enum priorityLetterEnum {
+  A = "A",
+  B = "B",
+  C = "C",
+  D = "D",
+  E = "E",
 }
 
 export enum attributeTypeEnum {

@@ -13,7 +13,7 @@ import type {
   DamageAmountType,
   DamageType,
   SingleArmourPenetrationType,
-} from "../schemas/weaponSchemas.js";
+} from "../schemas/equipment/combat/weaponSchemas.js";
 import { formatRating } from "./commonFormatter.js";
 
 export function formatDamage(unformattedDamage: DamageType): string {

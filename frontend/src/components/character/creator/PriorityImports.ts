@@ -2,7 +2,7 @@ import {
   PriorityLevelEnum,
   MetatypeEnum,
   MagicTypeEnum,
-} from "@neon-codex/common/build/schemas/characterSchemas.js";
+} from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
 
 export type PriorityLevelKey = keyof typeof PriorityLevelEnum;
 

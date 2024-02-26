@@ -3,13 +3,16 @@ import {
   Enum,
   PrimaryKey,
   Property,
+  ManyToOne,
   Unique,
+  type Ref,
 } from "@mikro-orm/postgresql";
-import type { SkillType } from "@neon-codex/common/build/schemas/skillSchemas.js";
+import type { SkillType } from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
 import {
   attributeTypeEnum,
   skillCategoryEnum,
 } from "@neon-codex/common/build/enums.js";
+import { SkillGroups } from "./skillGroupModel.js";
 
 @Entity()
 export class Skills {
@@ -32,8 +35,8 @@ export class Skills {
   @Property()
   exotic!: boolean;
 
-  @Property({ nullable: true })
-  skillGroup?: string;
+  @ManyToOne({ entity: () => SkillGroups, ref: true, nullable: true })
+  skillGroup?: Ref<SkillGroups>;
 
   @Property({ type: "string[]", nullable: true })
   defaultSpecialisations?: Array<string>;
@@ -53,7 +56,7 @@ export class Skills {
     this.category = dto.category;
     this.default = dto.default;
     this.exotic = dto.exotic;
-    if (dto.skillGroup !== undefined) this.skillGroup = dto.skillGroup;
+    // if (dto.skillGroup !== undefined) this.skillGroup = dto.skillGroup;
     if (dto.specialisations !== undefined)
       this.defaultSpecialisations = dto.specialisations;
     this.source = dto.source;

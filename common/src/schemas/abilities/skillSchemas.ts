@@ -1,5 +1,5 @@
 import { z as zod } from "zod";
-import { attributeTypeEnum, skillCategoryEnum } from "../enums.js";
+import { attributeTypeEnum, skillCategoryEnum } from "../../enums.js";
 export const SkillSchema = zod
   .object({
     // id: zod.string(),

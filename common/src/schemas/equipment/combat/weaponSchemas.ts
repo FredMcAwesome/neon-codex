@@ -22,13 +22,13 @@ import {
   restrictionEnum,
   weaponExtraClassificationEnum,
   gearCategoryEnum,
-} from "../enums.js";
+} from "../../../enums.js";
 import {
   AvailabilityRatingSchema,
   UseGearListSchema,
   WeaponXmlSubtypeSchema,
-} from "./commonSchemas.js";
-import { RequirementsSchema } from "./shared/requiredSchemas.js";
+} from "../../shared/commonSchemas.js";
+import { RequirementsSchema } from "../../shared/requiredSchemas.js";
 
 export const AvailabilityWeaponSchema = zod
   .object({

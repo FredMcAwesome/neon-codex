@@ -8,8 +8,8 @@ import {
   spellCategoryEnum,
   weaponTypeEnum,
 } from "../../enums.js";
-import { DamageSchema } from "../weaponSchemas.js";
-import { EssenceCostSchema } from "../commonSchemas.js";
+import { DamageSchema } from "../equipment/combat/weaponSchemas.js";
+import { EssenceCostSchema } from "./commonSchemas.js";
 
 const SelectSkillSchema = zod.discriminatedUnion("selectSkill", [
   zod
@@ -27,7 +27,7 @@ const SelectSkillSchema = zod.discriminatedUnion("selectSkill", [
 ]);
 export type SelectSkillType = zod.infer<typeof SelectSkillSchema>;
 
-const BonusQualityListSchema = zod.array(
+export const BonusQualityListSchema = zod.array(
   zod
     .object({
       name: zod.string(),
@@ -117,6 +117,30 @@ const AddictionResistanceSchema = zod
 export type AddictionResistanceType = zod.infer<
   typeof AddictionResistanceSchema
 >;
+
+export const InitiativeSchema = zod
+  .object({
+    bonus: zod.optional(
+      zod.union([
+        zod.object({ ratingLinked: zod.array(zod.number()) }).strict(),
+        zod.number(),
+      ])
+    ),
+    bonusDice: zod.optional(
+      zod.union([
+        zod.object({ ratingLinked: zod.array(zod.number()) }).strict(),
+        zod
+          .object({
+            option: zod.literal("Rating"),
+          })
+          .strict(),
+        zod.number(),
+      ])
+    ),
+  })
+  .strict();
+export type InitiativeType = zod.infer<typeof InitiativeSchema>;
+
 export const BonusSchema = zod
   .object({
     enterName: zod.optional(zod.boolean()),
@@ -355,29 +379,7 @@ export const BonusSchema = zod
         .strict()
     ),
     smartlinkAccuracy: zod.optional(zod.number()),
-    initiative: zod.optional(
-      zod
-        .object({
-          bonus: zod.optional(
-            zod.union([
-              zod.object({ ratingLinked: zod.array(zod.number()) }).strict(),
-              zod.number(),
-            ])
-          ),
-          bonusDice: zod.optional(
-            zod.union([
-              zod.object({ ratingLinked: zod.array(zod.number()) }).strict(),
-              zod
-                .object({
-                  option: zod.literal("Rating"),
-                })
-                .strict(),
-              zod.number(),
-            ])
-          ),
-        })
-        .strict()
-    ),
+    initiative: zod.optional(InitiativeSchema),
     matrixInitiative: zod.optional(
       zod
         .object({

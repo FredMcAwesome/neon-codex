@@ -5,7 +5,7 @@ import { skillCategoryEnum } from "@neon-codex/common/build/enums.js";
 import type {
   CustomSkillListType,
   CustomSkillType,
-} from "@neon-codex/common/build/schemas/skillSchemas.js";
+} from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
 import type { ISkillPoints } from "./PriorityImports.js";
 
 // first rating empty for no points in skill

@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import Dropdown from "react-dropdown";
 import { trpc } from "../../../utils/trpc.js";
-import type { QualityListType } from "@neon-codex/common/build/schemas/qualitySchemas.js";
+import type { QualityListType } from "@neon-codex/common/build/schemas/abilities/qualitySchemas.js";
 import { qualityCategoryEnum } from "@neon-codex/common/build/enums.js";
 
 interface IProps {

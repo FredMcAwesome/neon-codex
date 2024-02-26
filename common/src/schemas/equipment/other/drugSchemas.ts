@@ -4,8 +4,8 @@ import {
   gearCategoryEnum,
   restrictionEnum,
   sourceBookEnum,
-} from "../enums.js";
-import { BonusSchema } from "./shared/bonusSchemas.js";
+} from "../../../enums.js";
+import { BonusSchema } from "../../shared/bonusSchemas.js";
 
 export const AvailabilityDrugSchema = zod
   .object({

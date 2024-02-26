@@ -9,7 +9,7 @@ import { CustomisedWeapons } from "../activeTables/customisedWeaponModel.js";
 import type {
   AttributesType,
   SpecialAttributesType,
-} from "@neon-codex/common/build/schemas/characterSchemas.js";
+} from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
 
 @Entity()
 export class Characters {

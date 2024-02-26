@@ -14757,6 +14757,654 @@
     }
   },
   {
+    "name": "Claws +1",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          1
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "relatedSkill": "Unarmed Combat",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Run Faster",
+    "page": 105,
+    "type": "Melee",
+    "subtype": "Exotic",
+    "meleeOptions": {
+      "reach": 1
+    }
+  },
+  {
+    "name": "Claws +1 (reach)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          1
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "relatedSkill": "Unarmed Combat",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Run Faster",
+    "page": 105,
+    "type": "Melee",
+    "subtype": "Exotic",
+    "meleeOptions": {
+      "reach": 1
+    }
+  },
+  {
+    "name": "Claws +2",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          2
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "relatedSkill": "Unarmed Combat",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Run Faster",
+    "page": 105,
+    "type": "Melee",
+    "subtype": "Exotic",
+    "meleeOptions": {
+      "reach": 0
+    }
+  },
+  {
+    "name": "Claws +3 (reach)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          3
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "relatedSkill": "Unarmed Combat",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Run Faster",
+    "page": 105,
+    "type": "Melee",
+    "subtype": "Exotic",
+    "meleeOptions": {
+      "reach": 1
+    }
+  },
+  {
+    "name": "Bite (Lupine Form)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          2
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "relatedSkill": "Unarmed Combat",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Run Faster",
+    "page": 105,
+    "type": "Melee",
+    "subtype": "Exotic",
+    "meleeOptions": {
+      "reach": 0
+    }
+  },
+  {
+    "name": "Bite (Pantherine Form)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          2
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            3
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "relatedSkill": "Unarmed Combat",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Run Faster",
+    "page": 105,
+    "type": "Melee",
+    "subtype": "Exotic",
+    "meleeOptions": {
+      "reach": 0
+    }
+  },
+  {
+    "name": "Bite (Tigrine Form)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          2
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "relatedSkill": "Unarmed Combat",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Run Faster",
+    "page": 105,
+    "type": "Melee",
+    "subtype": "Exotic",
+    "meleeOptions": {
+      "reach": 0
+    }
+  },
+  {
+    "name": "Bite (Ursine Form)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          2
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "relatedSkill": "Unarmed Combat",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Run Faster",
+    "page": 105,
+    "type": "Melee",
+    "subtype": "Exotic",
+    "meleeOptions": {
+      "reach": 0
+    }
+  },
+  {
+    "name": "Bite (Canine Form)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          1
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "relatedSkill": "Unarmed Combat",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Run Faster",
+    "page": 104,
+    "type": "Melee",
+    "subtype": "Exotic",
+    "meleeOptions": {
+      "reach": 0
+    }
+  },
+  {
+    "name": "Bite (Falconine Form)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          2
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "relatedSkill": "Unarmed Combat",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Run Faster",
+    "page": 105,
+    "type": "Melee",
+    "subtype": "Exotic",
+    "meleeOptions": {
+      "reach": 0
+    }
+  },
+  {
+    "name": "Bite (Leonine Form)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          2
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "relatedSkill": "Unarmed Combat",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Run Faster",
+    "page": 105,
+    "type": "Melee",
+    "subtype": "Exotic",
+    "meleeOptions": {
+      "reach": 0
+    }
+  },
+  {
+    "name": "Bite (Vulpine Form)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          1
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "relatedSkill": "Unarmed Combat",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Run Faster",
+    "page": 105,
+    "type": "Melee",
+    "subtype": "Exotic",
+    "meleeOptions": {
+      "reach": 0
+    }
+  },
+  {
     "name": "Dracoform Claws",
     "description": "",
     "concealability": 0,

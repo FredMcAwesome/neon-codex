@@ -7,14 +7,14 @@ import {
   availabilityEnum,
   sourceBookEnum,
   armourModCategoryEnum,
-} from "../enums.js";
+} from "../../../enums.js";
 import {
   AvailabilityRatingSchema,
   RangeCostSchema,
   UseGearListSchema,
-} from "./commonSchemas.js";
-import { BonusSchema } from "./shared/bonusSchemas.js";
-import { GenericModListSchema } from "./shared/modSchemas.js";
+} from "../../shared/commonSchemas.js";
+import { BonusSchema } from "../../shared/bonusSchemas.js";
+import { GenericModListSchema } from "../../shared/modSchemas.js";
 
 export const AvailabilityArmourSchema = zod
   .object({

@@ -8,12 +8,12 @@ import {
   costEnum,
   restrictionEnum,
   gearCategoryEnum,
-} from "../enums.js";
+} from "../../../enums.js";
 import {
   AvailabilityRatingSchema,
   UseGearListSchema,
-} from "./commonSchemas.js";
-import { RequirementsSchema } from "./shared/requiredSchemas.js";
+} from "../../shared/commonSchemas.js";
+import { RequirementsSchema } from "../../shared/requiredSchemas.js";
 import {
   AccessoryMountSchema,
   AmmunitionSingleSchema,

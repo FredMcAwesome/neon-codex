@@ -10,11 +10,11 @@ import { WeaponAccessoryListXmlSchema } from "./WeaponAccessoryParserSchemas.js"
 import type {
   AmmoCapacityCalculationType,
   WeaponAccessorySummaryType,
-} from "@neon-codex/common/build/schemas/weaponAccessorySchemas.js";
+} from "@neon-codex/common/build/schemas/equipment/combat/weaponAccessorySchemas.js";
 import {
   WeaponAccessorySummaryListSchema,
   WeaponAccessorySummarySchema,
-} from "@neon-codex/common/build/schemas/weaponAccessorySchemas.js";
+} from "@neon-codex/common/build/schemas/equipment/combat/weaponAccessorySchemas.js";
 import * as fs from "fs";
 import assert from "assert";
 import { WeaponListXmlSchema } from "./WeaponParserSchemas.js";
@@ -37,7 +37,7 @@ import type { MatchResult } from "ohm-js";
 import type {
   AvailabilityWeaponAccessoryType,
   CostWeaponAccessoryType,
-} from "@neon-codex/common/build/schemas/weaponAccessorySchemas.js";
+} from "@neon-codex/common/build/schemas/equipment/combat/weaponAccessorySchemas.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
 const Availability = WeaponAccessories.Availability;
 const Cost = WeaponAccessories.Cost;

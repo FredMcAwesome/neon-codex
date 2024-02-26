@@ -1,0 +1,4931 @@
+[
+  {
+    "name": "A - Any metatype",
+    "category": "Heritage",
+    "rowLetter": "A",
+    "metatypeList": [
+      {
+        "name": "A.I.",
+        "specialAttributePoints": 4,
+        "karmaCost": 0,
+        "metavariantList": [
+          {
+            "name": "E-Ghost",
+            "specialAttributePoints": 4,
+            "karmaCost": 0
+          },
+          {
+            "name": "Xenosapient",
+            "specialAttributePoints": 4,
+            "karmaCost": 0
+          },
+          {
+            "name": "Protosapient",
+            "specialAttributePoints": 4,
+            "karmaCost": 0
+          }
+        ]
+      },
+      {
+        "name": "Human",
+        "specialAttributePoints": 9,
+        "karmaCost": 0,
+        "metavariantList": [
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 8,
+            "karmaCost": 0
+          }
+        ]
+      },
+      {
+        "name": "Elf",
+        "specialAttributePoints": 8,
+        "karmaCost": 0,
+        "metavariantList": [
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 8,
+            "karmaCost": 0
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 8,
+            "karmaCost": 0
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 8,
+            "karmaCost": 12
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 8,
+            "karmaCost": 0
+          }
+        ]
+      },
+      {
+        "name": "Dwarf",
+        "specialAttributePoints": 7,
+        "karmaCost": 0,
+        "metavariantList": [
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 7,
+            "karmaCost": 7
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 7,
+            "karmaCost": 5
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 7,
+            "karmaCost": 0
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 7,
+            "karmaCost": 2
+          }
+        ]
+      },
+      {
+        "name": "Ork",
+        "specialAttributePoints": 7,
+        "karmaCost": 0,
+        "metavariantList": [
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 7,
+            "karmaCost": 5
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 7,
+            "karmaCost": 8
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 7,
+            "karmaCost": 4
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 7,
+            "karmaCost": 10
+          }
+        ]
+      },
+      {
+        "name": "Troll",
+        "specialAttributePoints": 5,
+        "karmaCost": 0,
+        "metavariantList": [
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 5,
+            "karmaCost": 2
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 5,
+            "karmaCost": 12
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 5,
+            "karmaCost": 2
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 5,
+            "karmaCost": 2
+          }
+        ]
+      },
+      {
+        "name": "Centaur",
+        "specialAttributePoints": 6,
+        "karmaCost": 25
+      },
+      {
+        "name": "Naga",
+        "specialAttributePoints": 4,
+        "karmaCost": 25
+      },
+      {
+        "name": "Pixie",
+        "specialAttributePoints": 6,
+        "karmaCost": 15
+      },
+      {
+        "name": "Sasquatch",
+        "specialAttributePoints": 5,
+        "karmaCost": 20
+      },
+      {
+        "name": "Shapeshifter: Bovine",
+        "specialAttributePoints": 8,
+        "karmaCost": 5,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 8,
+            "karmaCost": 5
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 8,
+            "karmaCost": 5
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 8,
+            "karmaCost": 10
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 8,
+            "karmaCost": 7
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 8,
+            "karmaCost": 10
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 8,
+            "karmaCost": 20
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 8,
+            "karmaCost": 8
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 8,
+            "karmaCost": 13
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 8,
+            "karmaCost": 5
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 8,
+            "karmaCost": 18
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 8,
+            "karmaCost": 13
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 8,
+            "karmaCost": 15
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 8,
+            "karmaCost": 15
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 8,
+            "karmaCost": 15
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 8,
+            "karmaCost": 18
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 8,
+            "karmaCost": 15
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 8,
+            "karmaCost": 25
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 8,
+            "karmaCost": 25
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 8,
+            "karmaCost": 20
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 8,
+            "karmaCost": 23
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 8,
+            "karmaCost": 25
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 8,
+            "karmaCost": 25
+          }
+        ]
+      },
+      {
+        "name": "Shapeshifter: Vulpine",
+        "specialAttributePoints": 8,
+        "karmaCost": 5,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 8,
+            "karmaCost": 5
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 8,
+            "karmaCost": 5
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 8,
+            "karmaCost": 10
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 8,
+            "karmaCost": 7
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 8,
+            "karmaCost": 10
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 8,
+            "karmaCost": 20
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 8,
+            "karmaCost": 8
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 8,
+            "karmaCost": 13
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 8,
+            "karmaCost": 5
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 8,
+            "karmaCost": 18
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 8,
+            "karmaCost": 13
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 8,
+            "karmaCost": 15
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 8,
+            "karmaCost": 15
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 8,
+            "karmaCost": 15
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 8,
+            "karmaCost": 18
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 8,
+            "karmaCost": 15
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 8,
+            "karmaCost": 25
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 8,
+            "karmaCost": 25
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 8,
+            "karmaCost": 20
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 8,
+            "karmaCost": 23
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 8,
+            "karmaCost": 25
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 8,
+            "karmaCost": 25
+          }
+        ]
+      },
+      {
+        "name": "Shapeshifter: Canine",
+        "specialAttributePoints": 7,
+        "karmaCost": 10,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 7,
+            "karmaCost": 10
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 7,
+            "karmaCost": 10
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 7,
+            "karmaCost": 15
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 7,
+            "karmaCost": 12
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 7,
+            "karmaCost": 15
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 7,
+            "karmaCost": 25
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 7,
+            "karmaCost": 13
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 7,
+            "karmaCost": 18
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 7,
+            "karmaCost": 10
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 7,
+            "karmaCost": 23
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 7,
+            "karmaCost": 18
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 7,
+            "karmaCost": 20
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 7,
+            "karmaCost": 20
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 7,
+            "karmaCost": 20
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 7,
+            "karmaCost": 23
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 7,
+            "karmaCost": 20
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 7,
+            "karmaCost": 30
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 7,
+            "karmaCost": 30
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 7,
+            "karmaCost": 25
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 7,
+            "karmaCost": 28
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 7,
+            "karmaCost": 30
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 7,
+            "karmaCost": 30
+          }
+        ]
+      },
+      {
+        "name": "Shapeshifter: Falconine",
+        "specialAttributePoints": 7,
+        "karmaCost": 10,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 7,
+            "karmaCost": 10
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 7,
+            "karmaCost": 10
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 7,
+            "karmaCost": 15
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 7,
+            "karmaCost": 12
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 7,
+            "karmaCost": 15
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 7,
+            "karmaCost": 25
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 7,
+            "karmaCost": 13
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 7,
+            "karmaCost": 18
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 7,
+            "karmaCost": 10
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 7,
+            "karmaCost": 23
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 7,
+            "karmaCost": 18
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 7,
+            "karmaCost": 20
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 7,
+            "karmaCost": 20
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 7,
+            "karmaCost": 20
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 7,
+            "karmaCost": 23
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 7,
+            "karmaCost": 20
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 7,
+            "karmaCost": 30
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 7,
+            "karmaCost": 30
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 7,
+            "karmaCost": 25
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 7,
+            "karmaCost": 28
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 7,
+            "karmaCost": 30
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 7,
+            "karmaCost": 30
+          }
+        ]
+      },
+      {
+        "name": "Shapeshifter: Lupine",
+        "specialAttributePoints": 6,
+        "karmaCost": 15,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 6,
+            "karmaCost": 15
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 6,
+            "karmaCost": 15
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 6,
+            "karmaCost": 20
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 6,
+            "karmaCost": 17
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 6,
+            "karmaCost": 20
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 6,
+            "karmaCost": 30
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 6,
+            "karmaCost": 18
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 6,
+            "karmaCost": 23
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 6,
+            "karmaCost": 15
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 6,
+            "karmaCost": 28
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 6,
+            "karmaCost": 23
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 6,
+            "karmaCost": 25
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 6,
+            "karmaCost": 25
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 6,
+            "karmaCost": 25
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 6,
+            "karmaCost": 28
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 6,
+            "karmaCost": 25
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 6,
+            "karmaCost": 35
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 6,
+            "karmaCost": 35
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 6,
+            "karmaCost": 30
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 6,
+            "karmaCost": 33
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 6,
+            "karmaCost": 35
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 6,
+            "karmaCost": 35
+          }
+        ]
+      },
+      {
+        "name": "Shapeshifter: Equine",
+        "specialAttributePoints": 6,
+        "karmaCost": 15,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 6,
+            "karmaCost": 15
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 6,
+            "karmaCost": 15
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 6,
+            "karmaCost": 20
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 6,
+            "karmaCost": 17
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 6,
+            "karmaCost": 20
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 6,
+            "karmaCost": 30
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 6,
+            "karmaCost": 18
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 6,
+            "karmaCost": 23
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 6,
+            "karmaCost": 15
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 6,
+            "karmaCost": 28
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 6,
+            "karmaCost": 23
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 6,
+            "karmaCost": 25
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 6,
+            "karmaCost": 25
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 6,
+            "karmaCost": 25
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 6,
+            "karmaCost": 28
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 6,
+            "karmaCost": 25
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 6,
+            "karmaCost": 35
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 6,
+            "karmaCost": 35
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 6,
+            "karmaCost": 30
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 6,
+            "karmaCost": 33
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 6,
+            "karmaCost": 35
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 6,
+            "karmaCost": 35
+          }
+        ]
+      },
+      {
+        "name": "Shapeshifter: Leonine",
+        "specialAttributePoints": 4,
+        "karmaCost": 20,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 4,
+            "karmaCost": 20
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 4,
+            "karmaCost": 20
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 4,
+            "karmaCost": 25
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 4,
+            "karmaCost": 22
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 4,
+            "karmaCost": 25
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 4,
+            "karmaCost": 35
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 4,
+            "karmaCost": 23
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 4,
+            "karmaCost": 28
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 4,
+            "karmaCost": 20
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 4,
+            "karmaCost": 33
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 4,
+            "karmaCost": 28
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 4,
+            "karmaCost": 30
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 4,
+            "karmaCost": 30
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 4,
+            "karmaCost": 30
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 4,
+            "karmaCost": 33
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 4,
+            "karmaCost": 30
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 4,
+            "karmaCost": 40
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 4,
+            "karmaCost": 40
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 4,
+            "karmaCost": 35
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 4,
+            "karmaCost": 38
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 4,
+            "karmaCost": 40
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 4,
+            "karmaCost": 40
+          }
+        ]
+      },
+      {
+        "name": "Shapeshifter: Phocine",
+        "specialAttributePoints": 6,
+        "karmaCost": 20,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 6,
+            "karmaCost": 20
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 6,
+            "karmaCost": 20
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 6,
+            "karmaCost": 25
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 6,
+            "karmaCost": 22
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 6,
+            "karmaCost": 25
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 6,
+            "karmaCost": 35
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 6,
+            "karmaCost": 23
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 6,
+            "karmaCost": 28
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 6,
+            "karmaCost": 20
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 6,
+            "karmaCost": 33
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 6,
+            "karmaCost": 28
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 6,
+            "karmaCost": 30
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 6,
+            "karmaCost": 30
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 6,
+            "karmaCost": 30
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 6,
+            "karmaCost": 33
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 6,
+            "karmaCost": 30
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 6,
+            "karmaCost": 60
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 6,
+            "karmaCost": 60
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 6,
+            "karmaCost": 35
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 6,
+            "karmaCost": 38
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 6,
+            "karmaCost": 60
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 6,
+            "karmaCost": 60
+          }
+        ]
+      },
+      {
+        "name": "Shapeshifter: Ursine",
+        "specialAttributePoints": 4,
+        "karmaCost": 20,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 4,
+            "karmaCost": 20
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 4,
+            "karmaCost": 20
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 4,
+            "karmaCost": 25
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 4,
+            "karmaCost": 22
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 4,
+            "karmaCost": 25
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 4,
+            "karmaCost": 35
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 4,
+            "karmaCost": 23
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 4,
+            "karmaCost": 28
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 4,
+            "karmaCost": 20
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 4,
+            "karmaCost": 33
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 4,
+            "karmaCost": 28
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 4,
+            "karmaCost": 30
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 4,
+            "karmaCost": 30
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 4,
+            "karmaCost": 30
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 4,
+            "karmaCost": 33
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 4,
+            "karmaCost": 30
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 4,
+            "karmaCost": 40
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 4,
+            "karmaCost": 40
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 4,
+            "karmaCost": 35
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 4,
+            "karmaCost": 38
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 4,
+            "karmaCost": 40
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 4,
+            "karmaCost": 40
+          }
+        ]
+      },
+      {
+        "name": "Shapeshifter: Pantherine",
+        "specialAttributePoints": 4,
+        "karmaCost": 25,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 4,
+            "karmaCost": 25
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 4,
+            "karmaCost": 25
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 4,
+            "karmaCost": 30
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 4,
+            "karmaCost": 27
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 4,
+            "karmaCost": 30
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 4,
+            "karmaCost": 40
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 4,
+            "karmaCost": 28
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 4,
+            "karmaCost": 33
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 4,
+            "karmaCost": 25
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 4,
+            "karmaCost": 38
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 4,
+            "karmaCost": 33
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 4,
+            "karmaCost": 35
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 4,
+            "karmaCost": 35
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 4,
+            "karmaCost": 35
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 4,
+            "karmaCost": 38
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 4,
+            "karmaCost": 35
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 4,
+            "karmaCost": 45
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 4,
+            "karmaCost": 45
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 4,
+            "karmaCost": 40
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 4,
+            "karmaCost": 43
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 4,
+            "karmaCost": 45
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 4,
+            "karmaCost": 45
+          }
+        ]
+      },
+      {
+        "name": "Shapeshifter: Tigrine",
+        "specialAttributePoints": 4,
+        "karmaCost": 25,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 4,
+            "karmaCost": 25
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 4,
+            "karmaCost": 25
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 4,
+            "karmaCost": 30
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 4,
+            "karmaCost": 27
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 4,
+            "karmaCost": 30
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 4,
+            "karmaCost": 40
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 4,
+            "karmaCost": 28
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 4,
+            "karmaCost": 33
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 4,
+            "karmaCost": 25
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 4,
+            "karmaCost": 38
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 4,
+            "karmaCost": 33
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 4,
+            "karmaCost": 35
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 4,
+            "karmaCost": 35
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 4,
+            "karmaCost": 35
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 4,
+            "karmaCost": 38
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 4,
+            "karmaCost": 35
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 4,
+            "karmaCost": 45
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 4,
+            "karmaCost": 45
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 4,
+            "karmaCost": 40
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 4,
+            "karmaCost": 43
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 4,
+            "karmaCost": 45
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 4,
+            "karmaCost": 45
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "B - Any metatype",
+    "category": "Heritage",
+    "rowLetter": "B",
+    "metatypeList": [
+      {
+        "name": "A.I.",
+        "specialAttributePoints": 2,
+        "karmaCost": 0,
+        "metavariantList": [
+          {
+            "name": "E-Ghost",
+            "specialAttributePoints": 2,
+            "karmaCost": 0
+          },
+          {
+            "name": "Xenosapient",
+            "specialAttributePoints": 2,
+            "karmaCost": 0
+          },
+          {
+            "name": "Protosapient",
+            "specialAttributePoints": 2,
+            "karmaCost": 0
+          }
+        ]
+      },
+      {
+        "name": "Human",
+        "specialAttributePoints": 7,
+        "karmaCost": 0,
+        "metavariantList": [
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 6,
+            "karmaCost": 0
+          }
+        ]
+      },
+      {
+        "name": "Elf",
+        "specialAttributePoints": 6,
+        "karmaCost": 0,
+        "metavariantList": [
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 6,
+            "karmaCost": 0
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 6,
+            "karmaCost": 12
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 6,
+            "karmaCost": 0
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 6,
+            "karmaCost": 0
+          }
+        ]
+      },
+      {
+        "name": "Dwarf",
+        "specialAttributePoints": 4,
+        "karmaCost": 0,
+        "metavariantList": [
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 4,
+            "karmaCost": 7
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 4,
+            "karmaCost": 5
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 4,
+            "karmaCost": 0
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 4,
+            "karmaCost": 2
+          }
+        ]
+      },
+      {
+        "name": "Ork",
+        "specialAttributePoints": 4,
+        "karmaCost": 0,
+        "metavariantList": [
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 4,
+            "karmaCost": 8
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 4,
+            "karmaCost": 4
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 4,
+            "karmaCost": 10
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 4,
+            "karmaCost": 5
+          }
+        ]
+      },
+      {
+        "name": "Troll",
+        "specialAttributePoints": 0,
+        "karmaCost": 0,
+        "metavariantList": [
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 0,
+            "karmaCost": 2
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 0,
+            "karmaCost": 12
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 0,
+            "karmaCost": 2
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 0,
+            "karmaCost": 2
+          }
+        ]
+      },
+      {
+        "name": "Centaur",
+        "specialAttributePoints": 3,
+        "karmaCost": 25
+      },
+      {
+        "name": "Naga",
+        "specialAttributePoints": 2,
+        "karmaCost": 25
+      },
+      {
+        "name": "Pixie",
+        "specialAttributePoints": 3,
+        "karmaCost": 15
+      },
+      {
+        "name": "Sasquatch",
+        "specialAttributePoints": 2,
+        "karmaCost": 20
+      },
+      {
+        "name": "Shapeshifter: Bovine",
+        "specialAttributePoints": 6,
+        "karmaCost": 5,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 6,
+            "karmaCost": 5
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 6,
+            "karmaCost": 5
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 6,
+            "karmaCost": 10
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 6,
+            "karmaCost": 7
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 6,
+            "karmaCost": 5
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 6,
+            "karmaCost": 20
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 6,
+            "karmaCost": 3
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 6,
+            "karmaCost": 13
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 6,
+            "karmaCost": 5
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 6,
+            "karmaCost": 18
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 6,
+            "karmaCost": 13
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 6,
+            "karmaCost": 15
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 6,
+            "karmaCost": 15
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 6,
+            "karmaCost": 15
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 6,
+            "karmaCost": 18
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 6,
+            "karmaCost": 15
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 6,
+            "karmaCost": 25
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 6,
+            "karmaCost": 25
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 6,
+            "karmaCost": 20
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 6,
+            "karmaCost": 23
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 6,
+            "karmaCost": 25
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 6,
+            "karmaCost": 25
+          }
+        ]
+      },
+      {
+        "name": "Shapeshifter: Vulpine",
+        "specialAttributePoints": 6,
+        "karmaCost": 5,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 6,
+            "karmaCost": 5
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 6,
+            "karmaCost": 5
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 6,
+            "karmaCost": 10
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 6,
+            "karmaCost": 7
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 6,
+            "karmaCost": 5
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 6,
+            "karmaCost": 20
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 6,
+            "karmaCost": 3
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 6,
+            "karmaCost": 13
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 6,
+            "karmaCost": 5
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 6,
+            "karmaCost": 18
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 6,
+            "karmaCost": 13
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 6,
+            "karmaCost": 15
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 6,
+            "karmaCost": 15
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 6,
+            "karmaCost": 15
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 6,
+            "karmaCost": 18
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 6,
+            "karmaCost": 15
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 6,
+            "karmaCost": 25
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 6,
+            "karmaCost": 25
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 6,
+            "karmaCost": 20
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 6,
+            "karmaCost": 23
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 6,
+            "karmaCost": 25
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 6,
+            "karmaCost": 25
+          }
+        ]
+      },
+      {
+        "name": "Shapeshifter: Canine",
+        "specialAttributePoints": 5,
+        "karmaCost": 10,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 5,
+            "karmaCost": 10
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 5,
+            "karmaCost": 10
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 5,
+            "karmaCost": 15
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 5,
+            "karmaCost": 12
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 5,
+            "karmaCost": 15
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 5,
+            "karmaCost": 25
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 5,
+            "karmaCost": 13
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 5,
+            "karmaCost": 18
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 5,
+            "karmaCost": 10
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 5,
+            "karmaCost": 23
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 5,
+            "karmaCost": 18
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 5,
+            "karmaCost": 20
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 5,
+            "karmaCost": 20
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 5,
+            "karmaCost": 20
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 5,
+            "karmaCost": 23
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 5,
+            "karmaCost": 20
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 5,
+            "karmaCost": 30
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 5,
+            "karmaCost": 30
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 5,
+            "karmaCost": 25
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 5,
+            "karmaCost": 28
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 5,
+            "karmaCost": 30
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 5,
+            "karmaCost": 30
+          }
+        ]
+      },
+      {
+        "name": "Shapeshifter: Falconine",
+        "specialAttributePoints": 5,
+        "karmaCost": 10,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 5,
+            "karmaCost": 10
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 5,
+            "karmaCost": 10
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 5,
+            "karmaCost": 15
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 5,
+            "karmaCost": 12
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 5,
+            "karmaCost": 15
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 5,
+            "karmaCost": 25
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 5,
+            "karmaCost": 13
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 5,
+            "karmaCost": 18
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 5,
+            "karmaCost": 10
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 5,
+            "karmaCost": 23
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 5,
+            "karmaCost": 18
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 5,
+            "karmaCost": 20
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 5,
+            "karmaCost": 20
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 5,
+            "karmaCost": 20
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 5,
+            "karmaCost": 23
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 5,
+            "karmaCost": 20
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 5,
+            "karmaCost": 30
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 5,
+            "karmaCost": 30
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 5,
+            "karmaCost": 25
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 5,
+            "karmaCost": 28
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 5,
+            "karmaCost": 30
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 5,
+            "karmaCost": 30
+          }
+        ]
+      },
+      {
+        "name": "Shapeshifter: Lupine",
+        "specialAttributePoints": 4,
+        "karmaCost": 15,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 4,
+            "karmaCost": 15
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 4,
+            "karmaCost": 15
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 4,
+            "karmaCost": 20
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 4,
+            "karmaCost": 17
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 4,
+            "karmaCost": 20
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 4,
+            "karmaCost": 30
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 4,
+            "karmaCost": 18
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 4,
+            "karmaCost": 23
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 4,
+            "karmaCost": 15
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 4,
+            "karmaCost": 28
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 4,
+            "karmaCost": 23
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 4,
+            "karmaCost": 25
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 4,
+            "karmaCost": 25
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 4,
+            "karmaCost": 25
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 4,
+            "karmaCost": 28
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 4,
+            "karmaCost": 25
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 4,
+            "karmaCost": 35
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 4,
+            "karmaCost": 35
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 4,
+            "karmaCost": 30
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 4,
+            "karmaCost": 33
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 4,
+            "karmaCost": 35
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 4,
+            "karmaCost": 35
+          }
+        ]
+      },
+      {
+        "name": "Shapeshifter: Equine",
+        "specialAttributePoints": 4,
+        "karmaCost": 15,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 4,
+            "karmaCost": 15
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 4,
+            "karmaCost": 15
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 4,
+            "karmaCost": 20
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 4,
+            "karmaCost": 17
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 4,
+            "karmaCost": 20
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 4,
+            "karmaCost": 30
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 4,
+            "karmaCost": 18
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 4,
+            "karmaCost": 23
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 4,
+            "karmaCost": 15
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 4,
+            "karmaCost": 28
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 4,
+            "karmaCost": 23
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 4,
+            "karmaCost": 25
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 4,
+            "karmaCost": 25
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 4,
+            "karmaCost": 25
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 4,
+            "karmaCost": 28
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 4,
+            "karmaCost": 25
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 4,
+            "karmaCost": 35
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 4,
+            "karmaCost": 35
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 4,
+            "karmaCost": 30
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 4,
+            "karmaCost": 33
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 4,
+            "karmaCost": 35
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 4,
+            "karmaCost": 35
+          }
+        ]
+      },
+      {
+        "name": "Shapeshifter: Leonine",
+        "specialAttributePoints": 2,
+        "karmaCost": 20,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 2,
+            "karmaCost": 20
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 2,
+            "karmaCost": 20
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 2,
+            "karmaCost": 25
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 2,
+            "karmaCost": 22
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 2,
+            "karmaCost": 25
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 2,
+            "karmaCost": 35
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 2,
+            "karmaCost": 23
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 2,
+            "karmaCost": 28
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 2,
+            "karmaCost": 20
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 2,
+            "karmaCost": 33
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 2,
+            "karmaCost": 28
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 2,
+            "karmaCost": 30
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 2,
+            "karmaCost": 30
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 2,
+            "karmaCost": 30
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 2,
+            "karmaCost": 33
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 2,
+            "karmaCost": 30
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 2,
+            "karmaCost": 40
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 2,
+            "karmaCost": 40
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 2,
+            "karmaCost": 35
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 2,
+            "karmaCost": 38
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 2,
+            "karmaCost": 40
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 2,
+            "karmaCost": 40
+          }
+        ]
+      },
+      {
+        "name": "Shapeshifter: Phocine",
+        "specialAttributePoints": 4,
+        "karmaCost": 20,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 4,
+            "karmaCost": 20
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 4,
+            "karmaCost": 20
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 4,
+            "karmaCost": 25
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 4,
+            "karmaCost": 22
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 4,
+            "karmaCost": 25
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 4,
+            "karmaCost": 35
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 4,
+            "karmaCost": 23
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 4,
+            "karmaCost": 28
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 4,
+            "karmaCost": 20
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 4,
+            "karmaCost": 33
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 4,
+            "karmaCost": 28
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 4,
+            "karmaCost": 30
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 4,
+            "karmaCost": 30
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 4,
+            "karmaCost": 30
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 4,
+            "karmaCost": 33
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 4,
+            "karmaCost": 30
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 4,
+            "karmaCost": 40
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 4,
+            "karmaCost": 40
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 4,
+            "karmaCost": 35
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 4,
+            "karmaCost": 38
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 4,
+            "karmaCost": 40
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 4,
+            "karmaCost": 40
+          }
+        ]
+      },
+      {
+        "name": "Shapeshifter: Ursine",
+        "specialAttributePoints": 2,
+        "karmaCost": 20,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 2,
+            "karmaCost": 20
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 2,
+            "karmaCost": 20
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 2,
+            "karmaCost": 25
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 2,
+            "karmaCost": 22
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 2,
+            "karmaCost": 25
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 2,
+            "karmaCost": 35
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 2,
+            "karmaCost": 23
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 2,
+            "karmaCost": 28
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 2,
+            "karmaCost": 20
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 2,
+            "karmaCost": 33
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 2,
+            "karmaCost": 28
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 2,
+            "karmaCost": 30
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 2,
+            "karmaCost": 30
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 2,
+            "karmaCost": 30
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 2,
+            "karmaCost": 33
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 2,
+            "karmaCost": 30
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 2,
+            "karmaCost": 40
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 2,
+            "karmaCost": 40
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 2,
+            "karmaCost": 35
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 2,
+            "karmaCost": 38
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 2,
+            "karmaCost": 40
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 2,
+            "karmaCost": 40
+          }
+        ]
+      },
+      {
+        "name": "Shapeshifter: Pantherine",
+        "specialAttributePoints": 2,
+        "karmaCost": 25,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 2,
+            "karmaCost": 25
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 2,
+            "karmaCost": 25
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 2,
+            "karmaCost": 30
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 2,
+            "karmaCost": 27
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 2,
+            "karmaCost": 30
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 2,
+            "karmaCost": 40
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 2,
+            "karmaCost": 28
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 2,
+            "karmaCost": 33
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 2,
+            "karmaCost": 25
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 2,
+            "karmaCost": 38
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 2,
+            "karmaCost": 33
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 2,
+            "karmaCost": 35
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 2,
+            "karmaCost": 35
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 2,
+            "karmaCost": 35
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 2,
+            "karmaCost": 38
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 2,
+            "karmaCost": 35
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 2,
+            "karmaCost": 45
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 2,
+            "karmaCost": 45
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 2,
+            "karmaCost": 40
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 2,
+            "karmaCost": 43
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 2,
+            "karmaCost": 45
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 2,
+            "karmaCost": 45
+          }
+        ]
+      },
+      {
+        "name": "Shapeshifter: Tigrine",
+        "specialAttributePoints": 2,
+        "karmaCost": 25,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 2,
+            "karmaCost": 25
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 2,
+            "karmaCost": 25
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 2,
+            "karmaCost": 30
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 2,
+            "karmaCost": 27
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 2,
+            "karmaCost": 30
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 2,
+            "karmaCost": 40
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 2,
+            "karmaCost": 28
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 2,
+            "karmaCost": 33
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 2,
+            "karmaCost": 25
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 2,
+            "karmaCost": 38
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 2,
+            "karmaCost": 33
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 2,
+            "karmaCost": 35
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 2,
+            "karmaCost": 35
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 2,
+            "karmaCost": 35
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 2,
+            "karmaCost": 38
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 2,
+            "karmaCost": 35
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 2,
+            "karmaCost": 45
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 2,
+            "karmaCost": 45
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 2,
+            "karmaCost": 40
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 2,
+            "karmaCost": 43
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 2,
+            "karmaCost": 45
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 2,
+            "karmaCost": 45
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "C - Human, Dwarf, Elf, Ork, or A.I.",
+    "category": "Heritage",
+    "rowLetter": "C",
+    "metatypeList": [
+      {
+        "name": "A.I.",
+        "specialAttributePoints": 0,
+        "karmaCost": 0,
+        "metavariantList": [
+          {
+            "name": "E-Ghost",
+            "specialAttributePoints": 0,
+            "karmaCost": 0
+          },
+          {
+            "name": "Xenosapient",
+            "specialAttributePoints": 0,
+            "karmaCost": 0
+          },
+          {
+            "name": "Protosapient",
+            "specialAttributePoints": 0,
+            "karmaCost": 0
+          }
+        ]
+      },
+      {
+        "name": "Human",
+        "specialAttributePoints": 5,
+        "karmaCost": 0,
+        "metavariantList": [
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 4,
+            "karmaCost": 0
+          }
+        ]
+      },
+      {
+        "name": "Elf",
+        "specialAttributePoints": 3,
+        "karmaCost": 0,
+        "metavariantList": [
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 3,
+            "karmaCost": 0
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 3,
+            "karmaCost": 12
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 3,
+            "karmaCost": 0
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 3,
+            "karmaCost": 0
+          }
+        ]
+      },
+      {
+        "name": "Dwarf",
+        "specialAttributePoints": 1,
+        "karmaCost": 0,
+        "metavariantList": [
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 1,
+            "karmaCost": 7
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 1,
+            "karmaCost": 5
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 1,
+            "karmaCost": 0
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 1,
+            "karmaCost": 2
+          },
+          {
+            "name": "Goblin",
+            "specialAttributePoints": 1,
+            "karmaCost": 27
+          }
+        ]
+      },
+      {
+        "name": "Ork",
+        "specialAttributePoints": 0,
+        "karmaCost": 0,
+        "metavariantList": [
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 0,
+            "karmaCost": 8
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 0,
+            "karmaCost": -4
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 0,
+            "karmaCost": 10
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 0,
+            "karmaCost": -5
+          }
+        ]
+      },
+      {
+        "name": "Centaur",
+        "specialAttributePoints": 0,
+        "karmaCost": 25
+      },
+      {
+        "name": "Naga",
+        "specialAttributePoints": 0,
+        "karmaCost": 25
+      },
+      {
+        "name": "Pixie",
+        "specialAttributePoints": 0,
+        "karmaCost": 15
+      },
+      {
+        "name": "Sasquatch",
+        "specialAttributePoints": 0,
+        "karmaCost": 20
+      },
+      {
+        "name": "Shapeshifter: Bovine",
+        "specialAttributePoints": 4,
+        "karmaCost": 5,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 4,
+            "karmaCost": 5
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 4,
+            "karmaCost": 5
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 4,
+            "karmaCost": 10
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 4,
+            "karmaCost": 7
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 4,
+            "karmaCost": 10
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 4,
+            "karmaCost": 20
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 4,
+            "karmaCost": 8
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 4,
+            "karmaCost": 13
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 4,
+            "karmaCost": 5
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 4,
+            "karmaCost": 18
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 4,
+            "karmaCost": 13
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 4,
+            "karmaCost": 15
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 4,
+            "karmaCost": 15
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 4,
+            "karmaCost": 15
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 4,
+            "karmaCost": 18
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 4,
+            "karmaCost": 15
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 4,
+            "karmaCost": 25
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 4,
+            "karmaCost": 25
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 4,
+            "karmaCost": 20
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 4,
+            "karmaCost": 23
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 4,
+            "karmaCost": 25
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 4,
+            "karmaCost": 25
+          }
+        ]
+      },
+      {
+        "name": "Shapeshifter: Vulpine",
+        "specialAttributePoints": 4,
+        "karmaCost": 5,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 4,
+            "karmaCost": 5
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 4,
+            "karmaCost": 5
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 4,
+            "karmaCost": 10
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 4,
+            "karmaCost": 7
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 4,
+            "karmaCost": 10
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 4,
+            "karmaCost": 20
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 4,
+            "karmaCost": 8
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 4,
+            "karmaCost": 13
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 4,
+            "karmaCost": 5
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 4,
+            "karmaCost": 18
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 4,
+            "karmaCost": 13
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 4,
+            "karmaCost": 15
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 4,
+            "karmaCost": 15
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 4,
+            "karmaCost": 15
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 4,
+            "karmaCost": 18
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 4,
+            "karmaCost": 15
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 4,
+            "karmaCost": 25
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 4,
+            "karmaCost": 25
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 4,
+            "karmaCost": 20
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 4,
+            "karmaCost": 23
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 4,
+            "karmaCost": 25
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 4,
+            "karmaCost": 25
+          }
+        ]
+      },
+      {
+        "name": "Shapeshifter: Canine",
+        "specialAttributePoints": 3,
+        "karmaCost": 10,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 3,
+            "karmaCost": 10
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 3,
+            "karmaCost": 10
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 3,
+            "karmaCost": 15
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 3,
+            "karmaCost": 12
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 3,
+            "karmaCost": 15
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 3,
+            "karmaCost": 25
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 3,
+            "karmaCost": 13
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 3,
+            "karmaCost": 18
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 3,
+            "karmaCost": 10
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 3,
+            "karmaCost": 23
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 3,
+            "karmaCost": 18
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 3,
+            "karmaCost": 20
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 3,
+            "karmaCost": 20
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 3,
+            "karmaCost": 20
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 3,
+            "karmaCost": 23
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 3,
+            "karmaCost": 20
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 3,
+            "karmaCost": 30
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 3,
+            "karmaCost": 30
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 3,
+            "karmaCost": 25
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 3,
+            "karmaCost": 28
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 3,
+            "karmaCost": 30
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 3,
+            "karmaCost": 30
+          }
+        ]
+      },
+      {
+        "name": "Shapeshifter: Falconine",
+        "specialAttributePoints": 3,
+        "karmaCost": 10,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 3,
+            "karmaCost": 10
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 3,
+            "karmaCost": 10
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 3,
+            "karmaCost": 15
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 3,
+            "karmaCost": 12
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 3,
+            "karmaCost": 15
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 3,
+            "karmaCost": 25
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 3,
+            "karmaCost": 13
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 3,
+            "karmaCost": 18
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 3,
+            "karmaCost": 10
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 3,
+            "karmaCost": 23
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 3,
+            "karmaCost": 18
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 3,
+            "karmaCost": 20
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 3,
+            "karmaCost": 20
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 3,
+            "karmaCost": 20
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 3,
+            "karmaCost": 23
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 3,
+            "karmaCost": 20
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 3,
+            "karmaCost": 30
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 3,
+            "karmaCost": 30
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 3,
+            "karmaCost": 25
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 3,
+            "karmaCost": 28
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 3,
+            "karmaCost": 30
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 3,
+            "karmaCost": 30
+          }
+        ]
+      },
+      {
+        "name": "Shapeshifter: Lupine",
+        "specialAttributePoints": 2,
+        "karmaCost": 15,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 2,
+            "karmaCost": 15
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 2,
+            "karmaCost": 15
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 2,
+            "karmaCost": 20
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 2,
+            "karmaCost": 17
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 2,
+            "karmaCost": 20
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 2,
+            "karmaCost": 30
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 2,
+            "karmaCost": 18
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 2,
+            "karmaCost": 23
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 2,
+            "karmaCost": 15
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 2,
+            "karmaCost": 28
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 2,
+            "karmaCost": 23
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 2,
+            "karmaCost": 25
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 2,
+            "karmaCost": 25
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 2,
+            "karmaCost": 25
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 2,
+            "karmaCost": 28
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 2,
+            "karmaCost": 25
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 2,
+            "karmaCost": 35
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 2,
+            "karmaCost": 35
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 2,
+            "karmaCost": 30
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 2,
+            "karmaCost": 33
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 2,
+            "karmaCost": 35
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 2,
+            "karmaCost": 35
+          }
+        ]
+      },
+      {
+        "name": "Shapeshifter: Equine",
+        "specialAttributePoints": 2,
+        "karmaCost": 15,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 2,
+            "karmaCost": 15
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 2,
+            "karmaCost": 15
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 2,
+            "karmaCost": 20
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 2,
+            "karmaCost": 17
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 2,
+            "karmaCost": 20
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 2,
+            "karmaCost": 30
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 2,
+            "karmaCost": 18
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 2,
+            "karmaCost": 23
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 2,
+            "karmaCost": 15
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 2,
+            "karmaCost": 28
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 2,
+            "karmaCost": 23
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 2,
+            "karmaCost": 25
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 2,
+            "karmaCost": 25
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 2,
+            "karmaCost": 25
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 2,
+            "karmaCost": 28
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 2,
+            "karmaCost": 25
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 2,
+            "karmaCost": 35
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 2,
+            "karmaCost": 35
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 2,
+            "karmaCost": 30
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 2,
+            "karmaCost": 33
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 2,
+            "karmaCost": 35
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 2,
+            "karmaCost": 35
+          }
+        ]
+      },
+      {
+        "name": "Shapeshifter: Leonine",
+        "specialAttributePoints": 0,
+        "karmaCost": 20,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 0,
+            "karmaCost": 20
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 0,
+            "karmaCost": 20
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 0,
+            "karmaCost": 25
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 0,
+            "karmaCost": 22
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 0,
+            "karmaCost": 25
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 0,
+            "karmaCost": 35
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 0,
+            "karmaCost": 23
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 0,
+            "karmaCost": 28
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 0,
+            "karmaCost": 20
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 0,
+            "karmaCost": 33
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 0,
+            "karmaCost": 28
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 0,
+            "karmaCost": 30
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 0,
+            "karmaCost": 30
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 0,
+            "karmaCost": 30
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 0,
+            "karmaCost": 33
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 0,
+            "karmaCost": 30
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 0,
+            "karmaCost": 40
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 0,
+            "karmaCost": 40
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 0,
+            "karmaCost": 35
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 0,
+            "karmaCost": 38
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 0,
+            "karmaCost": 40
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 0,
+            "karmaCost": 40
+          }
+        ]
+      },
+      {
+        "name": "Shapeshifter: Phocine",
+        "specialAttributePoints": 2,
+        "karmaCost": 20,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 2,
+            "karmaCost": 20
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 2,
+            "karmaCost": 20
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 2,
+            "karmaCost": 25
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 2,
+            "karmaCost": 22
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 2,
+            "karmaCost": 25
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 2,
+            "karmaCost": 35
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 2,
+            "karmaCost": 23
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 2,
+            "karmaCost": 28
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 2,
+            "karmaCost": 20
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 2,
+            "karmaCost": 33
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 2,
+            "karmaCost": 28
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 2,
+            "karmaCost": 30
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 2,
+            "karmaCost": 30
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 2,
+            "karmaCost": 30
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 2,
+            "karmaCost": 33
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 2,
+            "karmaCost": 30
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 2,
+            "karmaCost": 20
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 2,
+            "karmaCost": 20
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 2,
+            "karmaCost": 35
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 2,
+            "karmaCost": 38
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 2,
+            "karmaCost": 20
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 2,
+            "karmaCost": 20
+          }
+        ]
+      },
+      {
+        "name": "Shapeshifter: Ursine",
+        "specialAttributePoints": 0,
+        "karmaCost": 20,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 0,
+            "karmaCost": 20
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 0,
+            "karmaCost": 20
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 0,
+            "karmaCost": 25
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 0,
+            "karmaCost": 22
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 0,
+            "karmaCost": 25
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 0,
+            "karmaCost": 35
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 0,
+            "karmaCost": 23
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 0,
+            "karmaCost": 28
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 0,
+            "karmaCost": 20
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 0,
+            "karmaCost": 33
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 0,
+            "karmaCost": 28
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 0,
+            "karmaCost": 30
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 0,
+            "karmaCost": 30
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 0,
+            "karmaCost": 30
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 0,
+            "karmaCost": 33
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 0,
+            "karmaCost": 30
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 0,
+            "karmaCost": 40
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 0,
+            "karmaCost": 40
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 0,
+            "karmaCost": 35
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 0,
+            "karmaCost": 38
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 0,
+            "karmaCost": 40
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 0,
+            "karmaCost": 40
+          }
+        ]
+      },
+      {
+        "name": "Shapeshifter: Pantherine",
+        "specialAttributePoints": 0,
+        "karmaCost": 25,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 0,
+            "karmaCost": 25
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 0,
+            "karmaCost": 25
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 0,
+            "karmaCost": 30
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 0,
+            "karmaCost": 27
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 0,
+            "karmaCost": 30
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 0,
+            "karmaCost": 40
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 0,
+            "karmaCost": 28
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 0,
+            "karmaCost": 33
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 0,
+            "karmaCost": 25
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 0,
+            "karmaCost": 38
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 0,
+            "karmaCost": 33
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 0,
+            "karmaCost": 35
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 0,
+            "karmaCost": 35
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 0,
+            "karmaCost": 35
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 0,
+            "karmaCost": 38
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 0,
+            "karmaCost": 35
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 0,
+            "karmaCost": 45
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 0,
+            "karmaCost": 45
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 0,
+            "karmaCost": 40
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 0,
+            "karmaCost": 43
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 0,
+            "karmaCost": 45
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 0,
+            "karmaCost": 45
+          }
+        ]
+      },
+      {
+        "name": "Shapeshifter: Tigrine",
+        "specialAttributePoints": 0,
+        "karmaCost": 25,
+        "metavariantList": [
+          {
+            "name": "Human",
+            "specialAttributePoints": 0,
+            "karmaCost": 25
+          },
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 0,
+            "karmaCost": 25
+          },
+          {
+            "name": "Elf",
+            "specialAttributePoints": 0,
+            "karmaCost": 30
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 0,
+            "karmaCost": 27
+          },
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 0,
+            "karmaCost": 30
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 0,
+            "karmaCost": 40
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 0,
+            "karmaCost": 28
+          },
+          {
+            "name": "Dwarf",
+            "specialAttributePoints": 0,
+            "karmaCost": 33
+          },
+          {
+            "name": "Gnome",
+            "specialAttributePoints": 0,
+            "karmaCost": 25
+          },
+          {
+            "name": "Hanuman",
+            "specialAttributePoints": 0,
+            "karmaCost": 38
+          },
+          {
+            "name": "Koborokuru",
+            "specialAttributePoints": 0,
+            "karmaCost": 33
+          },
+          {
+            "name": "Menehune",
+            "specialAttributePoints": 0,
+            "karmaCost": 35
+          },
+          {
+            "name": "Ork",
+            "specialAttributePoints": 0,
+            "karmaCost": 35
+          },
+          {
+            "name": "Hobgoblin",
+            "specialAttributePoints": 0,
+            "karmaCost": 35
+          },
+          {
+            "name": "Ogre",
+            "specialAttributePoints": 0,
+            "karmaCost": 38
+          },
+          {
+            "name": "Oni",
+            "specialAttributePoints": 0,
+            "karmaCost": 35
+          },
+          {
+            "name": "Satyr",
+            "specialAttributePoints": 0,
+            "karmaCost": 45
+          },
+          {
+            "name": "Troll",
+            "specialAttributePoints": 0,
+            "karmaCost": 45
+          },
+          {
+            "name": "Cyclops",
+            "specialAttributePoints": 0,
+            "karmaCost": 40
+          },
+          {
+            "name": "Fomorian",
+            "specialAttributePoints": 0,
+            "karmaCost": 43
+          },
+          {
+            "name": "Giant",
+            "specialAttributePoints": 0,
+            "karmaCost": 45
+          },
+          {
+            "name": "Minotaur",
+            "specialAttributePoints": 0,
+            "karmaCost": 45
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "D - Human or Elf",
+    "category": "Heritage",
+    "rowLetter": "D",
+    "metatypeList": [
+      {
+        "name": "Human",
+        "specialAttributePoints": 3,
+        "karmaCost": 0,
+        "metavariantList": [
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 2,
+            "karmaCost": 0
+          }
+        ]
+      },
+      {
+        "name": "Elf",
+        "specialAttributePoints": 0,
+        "karmaCost": 0,
+        "metavariantList": [
+          {
+            "name": "Nocturna",
+            "specialAttributePoints": 0,
+            "karmaCost": 0
+          },
+          {
+            "name": "Wakyambi",
+            "specialAttributePoints": 0,
+            "karmaCost": 12
+          },
+          {
+            "name": "Xapiri Thëpë",
+            "specialAttributePoints": 0,
+            "karmaCost": 0
+          },
+          {
+            "name": "Dryad",
+            "specialAttributePoints": 0,
+            "karmaCost": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "E - Human",
+    "category": "Heritage",
+    "rowLetter": "E",
+    "metatypeList": [
+      {
+        "name": "Human",
+        "specialAttributePoints": 1,
+        "karmaCost": 0,
+        "metavariantList": [
+          {
+            "name": "Nartaki",
+            "specialAttributePoints": 1,
+            "karmaCost": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "A - Magician or Technomancer",
+    "category": "Talent",
+    "rowLetter": "A",
+    "talentList": [
+      {
+        "name": "Magician",
+        "label": "Magician - 6 Magic/10 Spells",
+        "magic": 6,
+        "spells": 10,
+        "category": "Magic",
+        "includedQuality": "Magician",
+        "includedSkills": {
+          "points": 2,
+          "rating": 5,
+          "source": "Magic"
+        },
+        "forbidden": {}
+      },
+      {
+        "name": "Mystic Adept",
+        "label": "Mystic Adept - 6 Magic/10 Spells",
+        "magic": 6,
+        "spells": 10,
+        "category": "Magic",
+        "includedQuality": "Mystic Adept",
+        "includedSkills": {
+          "points": 2,
+          "rating": 5,
+          "source": "Magic"
+        },
+        "forbidden": {}
+      },
+      {
+        "name": "Technomancer",
+        "label": "Technomancer - 6 Resonance/7 Complex Forms",
+        "resonance": 6,
+        "complexForms": 7,
+        "category": "Resonance",
+        "includedQuality": "Technomancer",
+        "includedSkills": {
+          "points": 3,
+          "rating": 5,
+          "source": "Resonance"
+        },
+        "required": {}
+      },
+      {
+        "name": "A.I.",
+        "label": "A.I. - 6 Depth",
+        "depth": 6,
+        "category": "Depth",
+        "includedSkills": {
+          "points": 2,
+          "rating": 5,
+          "source": "Matrix"
+        },
+        "required": {}
+      }
+    ]
+  },
+  {
+    "name": "B - Adept, Magician, or Technomancer",
+    "category": "Talent",
+    "rowLetter": "B",
+    "talentList": [
+      {
+        "name": "Adept",
+        "label": "Adept - 6 Magic",
+        "magic": 6,
+        "category": "Magic",
+        "includedQuality": "Adept",
+        "includedSkills": {
+          "points": 1,
+          "rating": 4,
+          "source": "Adept"
+        },
+        "forbidden": {}
+      },
+      {
+        "name": "Magician",
+        "label": "Magician - 4 Magic/7 Spells",
+        "magic": 4,
+        "spells": 7,
+        "category": "Magic",
+        "includedQuality": "Magician",
+        "includedSkills": {
+          "points": 2,
+          "rating": 4,
+          "source": "Magic"
+        },
+        "forbidden": {}
+      },
+      {
+        "name": "Mystic Adept",
+        "label": "Mystic Adept - 4 Magic/7 Spells",
+        "magic": 4,
+        "spells": 7,
+        "category": "Magic",
+        "includedQuality": "Mystic Adept",
+        "includedSkills": {
+          "points": 2,
+          "rating": 4,
+          "source": "Magic"
+        },
+        "forbidden": {}
+      },
+      {
+        "name": "Aspected Magician",
+        "label": "Aspected Magician - 5 Magic",
+        "magic": 5,
+        "category": "Magic",
+        "includedQuality": "Aspected Magician",
+        "includedSkillGroups": {
+          "points": 1,
+          "rating": 4,
+          "groupList": ["Conjuring", "Enchanting", "Sorcery"]
+        },
+        "forbidden": {}
+      },
+      {
+        "name": "Apprentice",
+        "label": "Apprentice - 5 Magic",
+        "magic": 5,
+        "category": "Magic",
+        "includedQuality": "Apprentice",
+        "includedSkillGroups": {
+          "points": 1,
+          "rating": 4,
+          "groupList": ["Conjuring", "Sorcery"]
+        },
+        "forbidden": {}
+      },
+      {
+        "name": "Technomancer",
+        "label": "Technomancer - 4 Resonance/4 Complex Forms",
+        "resonance": 4,
+        "complexForms": 4,
+        "category": "Resonance",
+        "includedQuality": "Technomancer",
+        "includedSkills": {
+          "points": 3,
+          "rating": 4,
+          "source": "Resonance"
+        },
+        "required": {}
+      },
+      {
+        "name": "A.I.",
+        "label": "A.I. - 4 Depth",
+        "depth": 4,
+        "category": "Depth",
+        "includedSkills": {
+          "points": 2,
+          "rating": 4,
+          "source": "Matrix"
+        },
+        "required": {}
+      }
+    ]
+  },
+  {
+    "name": "C - Adept, Magician, or Technomancer",
+    "category": "Talent",
+    "rowLetter": "C",
+    "talentList": [
+      {
+        "name": "Adept",
+        "label": "Adept - 4 Magic",
+        "magic": 4,
+        "category": "Magic",
+        "includedQuality": "Adept",
+        "includedSkills": {
+          "points": 1,
+          "rating": 2,
+          "source": "Adept"
+        },
+        "forbidden": {}
+      },
+      {
+        "name": "Magician",
+        "label": "Magician - 3 Magic/5 Spells",
+        "magic": 3,
+        "spells": 5,
+        "category": "Magic",
+        "includedQuality": "Magician",
+        "forbidden": {}
+      },
+      {
+        "name": "Mystic Adept",
+        "label": "Mystic Adept - 3 Magic/5 Spells",
+        "magic": 3,
+        "spells": 5,
+        "category": "Magic",
+        "includedQuality": "Mystic Adept",
+        "forbidden": {}
+      },
+      {
+        "name": "Aspected Magician",
+        "label": "Aspected Magician - 3 Magic",
+        "magic": 3,
+        "category": "Magic",
+        "includedQuality": "Aspected Magician",
+        "includedSkillGroups": {
+          "points": 1,
+          "rating": 2,
+          "groupList": ["Conjuring", "Enchanting", "Sorcery"]
+        },
+        "forbidden": {}
+      },
+      {
+        "name": "Explorer",
+        "label": "Explorer - 5 Magic",
+        "magic": 5,
+        "category": "Magic",
+        "includedQuality": "Explorer",
+        "includedSkills": {
+          "points": 2,
+          "rating": 6,
+          "skillList": ["Arcana", "Assensing", "Astral Combat"]
+        },
+        "forbidden": {}
+      },
+      {
+        "name": "Enchanter",
+        "label": "Enchanter - 5 Magic",
+        "magic": 5,
+        "category": "Magic",
+        "includedQuality": "Enchanter",
+        "includedSkillGroups": {
+          "points": 1,
+          "rating": 4,
+          "groupList": ["Enchanting"]
+        },
+        "forbidden": {}
+      },
+      {
+        "name": "Apprentice",
+        "label": "Apprentice - 3 Magic",
+        "magic": 3,
+        "category": "Magic",
+        "includedQuality": "Apprentice",
+        "includedSkillGroups": {
+          "points": 1,
+          "rating": 2,
+          "groupList": ["Conjuring", "Sorcery"]
+        },
+        "forbidden": {}
+      },
+      {
+        "name": "Technomancer",
+        "label": "Technomancer - 3 Resonance/3 Complex Forms",
+        "resonance": 3,
+        "complexForms": 3,
+        "category": "Resonance",
+        "includedQuality": "Technomancer",
+        "includedSkills": {
+          "points": 3,
+          "rating": 2,
+          "source": "Resonance"
+        },
+        "required": {}
+      },
+      {
+        "name": "A.I.",
+        "label": "A.I. - 3 Depth",
+        "depth": 3,
+        "category": "Depth",
+        "includedSkills": {
+          "points": 1,
+          "rating": 2,
+          "source": "Matrix"
+        },
+        "required": {}
+      }
+    ]
+  },
+  {
+    "name": "D - Adept or Aspected Magician",
+    "category": "Talent",
+    "rowLetter": "D",
+    "talentList": [
+      {
+        "name": "Adept",
+        "label": "Adept - 2 Magic",
+        "magic": 2,
+        "category": "Magic",
+        "includedQuality": "Adept",
+        "forbidden": {}
+      },
+      {
+        "name": "Aspected Magician",
+        "label": "Aspected Magician - 2 Magic",
+        "magic": 2,
+        "category": "Magic",
+        "includedQuality": "Aspected Magician",
+        "forbidden": {}
+      },
+      {
+        "name": "Aware",
+        "label": "Aware - 3 Magic",
+        "magic": 3,
+        "category": "Magic",
+        "includedQuality": "Aware",
+        "includedSkills": {
+          "points": 1,
+          "rating": 4,
+          "skillList": ["Arcana", "Assensing", "Astral Combat"]
+        },
+        "forbidden": {}
+      },
+      {
+        "name": "Apprentice",
+        "label": "Apprentice - 2 Magic",
+        "magic": 2,
+        "category": "Magic",
+        "includedQuality": "Apprentice",
+        "forbidden": {}
+      },
+      {
+        "name": "A.I.",
+        "label": "A.I. - 2 Depth",
+        "depth": 2,
+        "category": "Depth",
+        "required": {}
+      }
+    ]
+  },
+  {
+    "name": "E - Mundane",
+    "category": "Talent",
+    "rowLetter": "E",
+    "talentList": [
+      {
+        "name": "Mundane",
+        "label": "Mundane",
+        "category": "Mundane",
+        "forbidden": {}
+      },
+      {
+        "name": "A.I.",
+        "label": "A.I. - 1 Depth",
+        "depth": 1,
+        "category": "Depth",
+        "required": {}
+      }
+    ]
+  },
+  {
+    "name": "A - 24 (12) Attributes",
+    "category": "Attributes",
+    "rowLetter": "A",
+    "attributes": 24
+  },
+  {
+    "name": "B - 20 (10) Attributes",
+    "category": "Attributes",
+    "rowLetter": "B",
+    "attributes": 20
+  },
+  {
+    "name": "C - 16 (8) Attributes",
+    "category": "Attributes",
+    "rowLetter": "C",
+    "attributes": 16
+  },
+  {
+    "name": "D - 14 (7) Attributes",
+    "category": "Attributes",
+    "rowLetter": "D",
+    "attributes": 14
+  },
+  {
+    "name": "E - 12 (6) Attributes",
+    "category": "Attributes",
+    "rowLetter": "E",
+    "attributes": 12
+  },
+  {
+    "name": "A - 46 Skills/10 Skill Groups",
+    "category": "Skills",
+    "rowLetter": "A",
+    "skillPoints": 46,
+    "skillGroupPoints": 10
+  },
+  {
+    "name": "B - 36 Skills/5 Skill Groups",
+    "category": "Skills",
+    "rowLetter": "B",
+    "skillPoints": 36,
+    "skillGroupPoints": 5
+  },
+  {
+    "name": "C - 28 Skills/2 Skill Groups",
+    "category": "Skills",
+    "rowLetter": "C",
+    "skillPoints": 28,
+    "skillGroupPoints": 2
+  },
+  {
+    "name": "D - 22 Skills/0 Skill Groups",
+    "category": "Skills",
+    "rowLetter": "D",
+    "skillPoints": 22,
+    "skillGroupPoints": 0
+  },
+  {
+    "name": "E - 18 Skills/0 Skill Groups",
+    "category": "Skills",
+    "rowLetter": "E",
+    "skillPoints": 18,
+    "skillGroupPoints": 0
+  },
+  {
+    "name": "A - 450,000¥",
+    "category": "Resources",
+    "rowLetter": "A",
+    "priorityTable": "Standard",
+    "resources": 450000
+  },
+  {
+    "name": "B - 275,000¥",
+    "category": "Resources",
+    "rowLetter": "B",
+    "priorityTable": "Standard",
+    "resources": 275000
+  },
+  {
+    "name": "C - 140,000¥",
+    "category": "Resources",
+    "rowLetter": "C",
+    "priorityTable": "Standard",
+    "resources": 140000
+  },
+  {
+    "name": "D - 50,000¥",
+    "category": "Resources",
+    "rowLetter": "D",
+    "priorityTable": "Standard",
+    "resources": 50000
+  },
+  {
+    "name": "E - 6,000¥",
+    "category": "Resources",
+    "rowLetter": "E",
+    "priorityTable": "Standard",
+    "resources": 6000
+  },
+  {
+    "name": "A - 500,000¥",
+    "category": "Resources",
+    "rowLetter": "A",
+    "priorityTable": "Prime Runner",
+    "resources": 500000
+  },
+  {
+    "name": "B - 325,000¥",
+    "category": "Resources",
+    "rowLetter": "B",
+    "priorityTable": "Prime Runner",
+    "resources": 325000
+  },
+  {
+    "name": "C - 210,000¥",
+    "category": "Resources",
+    "rowLetter": "C",
+    "priorityTable": "Prime Runner",
+    "resources": 210000
+  },
+  {
+    "name": "D - 150,000¥",
+    "category": "Resources",
+    "rowLetter": "D",
+    "priorityTable": "Prime Runner",
+    "resources": 150000
+  },
+  {
+    "name": "E - 100,000¥",
+    "category": "Resources",
+    "rowLetter": "E",
+    "priorityTable": "Prime Runner",
+    "resources": 100000
+  },
+  {
+    "name": "A - 75,000¥",
+    "category": "Resources",
+    "rowLetter": "A",
+    "priorityTable": "Street Level",
+    "resources": 75000
+  },
+  {
+    "name": "B - 50,000¥",
+    "category": "Resources",
+    "rowLetter": "B",
+    "priorityTable": "Street Level",
+    "resources": 50000
+  },
+  {
+    "name": "C - 25,000¥",
+    "category": "Resources",
+    "rowLetter": "C",
+    "priorityTable": "Street Level",
+    "resources": 25000
+  },
+  {
+    "name": "D - 15,000¥",
+    "category": "Resources",
+    "rowLetter": "D",
+    "priorityTable": "Street Level",
+    "resources": 15000
+  },
+  {
+    "name": "E - 6,000¥",
+    "category": "Resources",
+    "rowLetter": "E",
+    "priorityTable": "Street Level",
+    "resources": 6000
+  }
+]

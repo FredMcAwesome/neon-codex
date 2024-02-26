@@ -21,7 +21,7 @@ import { WeaponMounts } from "../../models/rpg/equipment/rigger/weaponMountModel
 import {
   type VehicleListType,
   VehicleListSchema,
-} from "@neon-codex/common/build/schemas/vehicleSchemas.js";
+} from "@neon-codex/common/build/schemas/equipment/rigger/vehicleSchemas.js";
 
 export const getVehicles = function () {
   const currentPath = import.meta.url;

@@ -5,7 +5,7 @@ import {
   weaponMountSizeEnum,
   weaponMountVisibilityEnum,
 } from "@neon-codex/common/build/enums.js";
-import type { WeaponMountType } from "@neon-codex/common/build/schemas/vehicleSchemas.js";
+import type { WeaponMountType } from "@neon-codex/common/build/schemas/equipment/rigger/vehicleSchemas.js";
 
 // Each combination should only appear in the table once
 // Whenever we create should check to see if combination exists

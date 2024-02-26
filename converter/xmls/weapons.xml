@@ -7700,6 +7700,287 @@
       <hide />
       <useskill>Unarmed Combat</useskill>
     </weapon>
+    <!-- Natural weapons from metatypes -->
+    <weapon>
+      <id>09cc10b5-b0f4-4e9d-af03-d342893efc3d</id>
+      <name>Claws +1</name>
+      <category>Exotic Melee Weapons</category>
+      <type>Melee</type>
+      <conceal>0</conceal>
+      <reach>1</reach>
+      <damage>({STR}+1)P</damage>
+      <ap>-1</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>0</avail>
+      <cost>0</cost>
+      <hide />
+      <useskill>Unarmed Combat</useskill>
+      <accuracy>Physical</accuracy>
+      <source>RF</source>
+      <page>105</page>
+    </weapon>
+    <weapon>
+      <id>6a91b351-8e44-453a-8637-236787be6376</id>
+      <name>Claws +1 (reach)</name>
+      <category>Exotic Melee Weapons</category>
+      <type>Melee</type>
+      <conceal>0</conceal>
+      <reach>1</reach>
+      <damage>({STR}+1)P</damage>
+      <ap>0</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>0</avail>
+      <cost>0</cost>
+      <hide />
+      <useskill>Unarmed Combat</useskill>
+      <accuracy>Physical</accuracy>
+      <source>RF</source>
+      <page>105</page>
+    </weapon>
+    <weapon>
+      <id>2da069bb-0830-4e6f-965d-a5128d4c9c14</id>
+      <name>Claws +2</name>
+      <category>Exotic Melee Weapons</category>
+      <type>Melee</type>
+      <conceal>0</conceal>
+      <reach>0</reach>
+      <damage>({STR}+2)P</damage>
+      <ap>0</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>0</avail>
+      <cost>0</cost>
+      <hide />
+      <useskill>Unarmed Combat</useskill>
+      <accuracy>Physical</accuracy>
+      <source>RF</source>
+      <page>105</page>
+    </weapon>
+    <weapon>
+      <id>71a0b088-9650-4628-b699-7827f78f2a74</id>
+      <name>Claws +3 (reach)</name>
+      <category>Exotic Melee Weapons</category>
+      <type>Melee</type>
+      <conceal>0</conceal>
+      <reach>1</reach>
+      <damage>({STR}+3)P</damage>
+      <ap>-1</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>0</avail>
+      <cost>0</cost>
+      <hide />
+      <useskill>Unarmed Combat</useskill>
+      <accuracy>Physical</accuracy>
+      <source>RF</source>
+      <page>105</page>
+    </weapon>
+    <weapon>
+      <id>e6ccba40-4b21-46a3-9b5f-738de0db1fdf</id>
+      <name>Bite (Lupine Form)</name>
+      <category>Exotic Melee Weapons</category>
+      <type>Melee</type>
+      <conceal>0</conceal>
+      <reach>0</reach>
+      <damage>({STR}+2)P</damage>
+      <ap>-1</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>0</avail>
+      <cost>0</cost>
+      <hide />
+      <useskill>Unarmed Combat</useskill>
+      <accuracy>Physical</accuracy>
+      <source>RF</source>
+      <page>105</page>
+    </weapon>
+    <weapon>
+      <id>f593eee1-7119-4d3c-8d49-a0eb1c526b8d</id>
+      <name>Bite (Pantherine Form)</name>
+      <category>Exotic Melee Weapons</category>
+      <type>Melee</type>
+      <conceal>0</conceal>
+      <reach>0</reach>
+      <damage>({STR}+2)P</damage>
+      <ap>-3</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>0</avail>
+      <cost>0</cost>
+      <hide />
+      <useskill>Unarmed Combat</useskill>
+      <accuracy>Physical</accuracy>
+      <source>RF</source>
+      <page>105</page>
+    </weapon>
+    <weapon>
+      <id>ed2c6bf1-68ba-4f85-a6a4-3e1806840933</id>
+      <name>Bite (Tigrine Form)</name>
+      <category>Exotic Melee Weapons</category>
+      <type>Melee</type>
+      <conceal>0</conceal>
+      <reach>0</reach>
+      <damage>({STR}+2)P</damage>
+      <ap>-2</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>0</avail>
+      <cost>0</cost>
+      <hide />
+      <useskill>Unarmed Combat</useskill>
+      <accuracy>Physical</accuracy>
+      <source>RF</source>
+      <page>105</page>
+    </weapon>
+    <weapon>
+      <id>5b950120-6f52-486a-b91e-93988771de80</id>
+      <name>Bite (Ursine Form)</name>
+      <category>Exotic Melee Weapons</category>
+      <type>Melee</type>
+      <conceal>0</conceal>
+      <reach>0</reach>
+      <damage>({STR}+2)P</damage>
+      <ap>-2</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>0</avail>
+      <cost>0</cost>
+      <hide />
+      <useskill>Unarmed Combat</useskill>
+      <accuracy>Physical</accuracy>
+      <source>RF</source>
+      <page>105</page>
+    </weapon>
+    <weapon>
+      <id>5ee028da-c166-4d97-9e46-20396fd7479a</id>
+      <name>Bite (Canine Form)</name>
+      <category>Exotic Melee Weapons</category>
+      <type>Melee</type>
+      <conceal>0</conceal>
+      <reach>0</reach>
+      <damage>({STR}+1)P</damage>
+      <ap>-1</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>0</avail>
+      <cost>0</cost>
+      <hide />
+      <useskill>Unarmed Combat</useskill>
+      <accuracy>Physical</accuracy>
+      <source>RF</source>
+      <page>104</page>
+    </weapon>
+    <weapon>
+      <id>994cca16-39bd-48e5-bc7f-21d8c4ba09ef</id>
+      <name>Bite (Falconine Form)</name>
+      <category>Exotic Melee Weapons</category>
+      <type>Melee</type>
+      <conceal>0</conceal>
+      <reach>0</reach>
+      <damage>({STR}+2)P</damage>
+      <ap>-1</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>0</avail>
+      <cost>0</cost>
+      <hide />
+      <useskill>Unarmed Combat</useskill>
+      <accuracy>Physical</accuracy>
+      <source>RF</source>
+      <page>105</page>
+    </weapon>
+    <weapon>
+      <id>81bb33cf-f9d9-4696-bb38-fa999a15c43e</id>
+      <name>Bite (Leonine Form)</name>
+      <category>Exotic Melee Weapons</category>
+      <type>Melee</type>
+      <conceal>0</conceal>
+      <reach>0</reach>
+      <damage>({STR}+2)P</damage>
+      <ap>-1</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>0</avail>
+      <cost>0</cost>
+      <hide />
+      <useskill>Unarmed Combat</useskill>
+      <accuracy>Physical</accuracy>
+      <source>RF</source>
+      <page>105</page>
+    </weapon>
+    <weapon>
+      <id>5898a2f8-bc75-402f-95df-50e576383fc5</id>
+      <name>Bite (Vulpine Form)</name>
+      <category>Exotic Melee Weapons</category>
+      <type>Melee</type>
+      <conceal>0</conceal>
+      <reach>0</reach>
+      <damage>({STR}+1)P</damage>
+      <ap>-</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>0</avail>
+      <cost>0</cost>
+      <hide />
+      <useskill>Unarmed Combat</useskill>
+      <accuracy>Physical</accuracy>
+      <source>RF</source>
+      <page>105</page>
+    </weapon>
+    <weapon>
+      <id>2ee6ef7b-a6ff-4633-a12c-370ebc09b2c6</id>
+      <name>Bite (Phocine Form)</name>
+      <category>Exotic Melee Weapons</category>
+      <type>Melee</type>
+      <conceal>0</conceal>
+      <reach>-1</reach>
+      <damage>({STR}+1)P</damage>
+      <ap>-1</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>0</avail>
+      <cost>0</cost>
+      <hide />
+      <useskill>Unarmed Combat</useskill>
+      <accuracy>Physical</accuracy>
+      <source>SAG</source>
+      <page>147</page>
+    </weapon>
+    <weapon>
+      <id>e0f7cfca-ec63-4693-9c68-2c94b736eb69</id>
+      <name>Bite (Seal Form)</name>
+      <category>Exotic Melee Weapons</category>
+      <type>Melee</type>
+      <conceal>0</conceal>
+      <reach>-1</reach>
+      <damage>({STR}+1)P</damage>
+      <ap>-1</ap>
+      <mode>0</mode>
+      <rc>0</rc>
+      <ammo>0</ammo>
+      <avail>0</avail>
+      <cost>0</cost>
+      <hide />
+      <useskill>Unarmed Combat</useskill>
+      <accuracy>Physical</accuracy>
+      <source>SAG</source>
+      <page>147</page>
+    </weapon>
     <!--End Region -->
     <!--End Region -->
     <!-- Region Howling Shadows -->

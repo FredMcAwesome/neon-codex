@@ -10,11 +10,11 @@ import {
   vehicleModTypeEnum,
   cyberwareCategoryEnum,
   sourceBookEnum,
-} from "../enums.js";
+} from "../../../enums.js";
 import { z as zod } from "zod";
-import { BonusSchema } from "./shared/bonusSchemas.js";
-import { RequirementsSchema } from "./shared/requiredSchemas.js";
-import { RangeCostSchema } from "./commonSchemas.js";
+import { BonusSchema } from "../../shared/bonusSchemas.js";
+import { RequirementsSchema } from "../../shared/requiredSchemas.js";
+import { RangeCostSchema } from "../../shared/commonSchemas.js";
 
 const VehicleModRatingSchema = zod.array(
   zod.union([

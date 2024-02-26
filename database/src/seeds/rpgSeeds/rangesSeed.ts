@@ -1,5 +1,5 @@
-import { RangeListSchema } from "@neon-codex/common/build/schemas/weaponSchemas.js";
-import type { RangeListType } from "@neon-codex/common/build/schemas/weaponSchemas.js";
+import { RangeListSchema } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
+import type { RangeListType } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
 import assert from "assert";
 import fs from "fs";
 import path from "path";

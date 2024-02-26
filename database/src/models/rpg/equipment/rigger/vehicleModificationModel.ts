@@ -22,7 +22,7 @@ import type {
   VehicleModRatingType,
   SlotCostType,
   VehicleModType,
-} from "@neon-codex/common/build/schemas/vehicleModSchemas.js";
+} from "@neon-codex/common/build/schemas/equipment/rigger/vehicleModSchemas.js";
 
 @Entity({
   discriminatorColumn: "type",

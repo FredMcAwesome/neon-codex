@@ -20,7 +20,7 @@ import {
   MetatypeEnum,
   MagicTypeEnum,
   type PrioritiesType,
-} from "@neon-codex/common/build/schemas/characterSchemas.js";
+} from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
 
 const columnHelper = createColumnHelper<IPriorityRow>();
 

@@ -7,6 +7,7 @@ So far I have only passed to the frontend:
   - Vehicles (including weapon mounts)
   - Gear
   - Armour
+  - Qualities
 
 Still need passed through to frontend):
   - ArmourAccessories
@@ -14,8 +15,11 @@ Still need passed through to frontend):
   - Drugs
   - DrugComponents
   - VehicleMods (including weapon mount mods)
+  - Metatypes
+  - Priorities
 
 I need to parse, store in DB, and pass to frontend:
+  - Powers
 
 Other main priorities:
   - Complex Forms
@@ -25,7 +29,6 @@ Other main priorities:
   - Marital Arts
   - Mentors
   - Metamagic
-  - Powers
   - Programs
   - Spirit Powers
   - Streams
@@ -35,11 +38,8 @@ Other xmls to maybe implement:
   - Contacts
   - Life modules
   - Lifestyles
-  - Metatypes
   - Packs
   - Paragons
-  - Priorities
-  - Qualities
   - References
   - Settings
   - Traditions

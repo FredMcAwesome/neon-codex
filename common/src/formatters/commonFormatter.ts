@@ -1,5 +1,5 @@
 import { restrictionEnum } from "../enums.js";
-import type { AvailabilityRatingType } from "../schemas/commonSchemas.js";
+import type { AvailabilityRatingType } from "../schemas/shared/commonSchemas.js";
 
 export function formatRating(
   unformattedRating: AvailabilityRatingType

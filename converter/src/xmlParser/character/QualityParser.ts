@@ -2,7 +2,7 @@ import {
   QualityListSchema,
   QualitySchema,
   type QualityType,
-} from "@neon-codex/common/build/schemas/qualitySchemas.js";
+} from "@neon-codex/common/build/schemas/abilities/qualitySchemas.js";
 import assert from "assert";
 import { XMLParser } from "fast-xml-parser";
 import fs from "fs";

@@ -1,5 +1,5 @@
-import { WeaponAccessorySummaryListSchema } from "@neon-codex/common/build/schemas/weaponAccessorySchemas.js";
-import type { WeaponAccessorySummaryListType } from "@neon-codex/common/build/schemas/weaponAccessorySchemas.js";
+import { WeaponAccessorySummaryListSchema } from "@neon-codex/common/build/schemas/equipment/combat/weaponAccessorySchemas.js";
+import type { WeaponAccessorySummaryListType } from "@neon-codex/common/build/schemas/equipment/combat/weaponAccessorySchemas.js";
 import assert from "assert";
 import fs from "fs";
 import path from "path";

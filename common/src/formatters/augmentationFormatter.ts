@@ -2,8 +2,8 @@ import type {
   AvailabilityAugmentationType,
   CapacityAugmentationType,
   CostAugmentationType,
-} from "../schemas/augmentationSchemas.js";
-import type { EssenceCostType } from "../schemas/commonSchemas.js";
+} from "../schemas/equipment/bodyModification/augmentationSchemas.js";
+import type { EssenceCostType } from "../schemas/shared/commonSchemas.js";
 import { formatRating } from "./commonFormatter.js";
 
 export function formatEssenceCost(unformattedCost: EssenceCostType): string {

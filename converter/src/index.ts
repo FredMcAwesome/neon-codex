@@ -1,5 +1,3 @@
-CheckGUIDs();
-
 import { ParseRanges } from "./xmlParser/combat/RangeParser.js";
 ParseRanges();
 
@@ -38,5 +36,13 @@ import { ParseGear } from "./xmlParser/other/GearParser.js";
 ParseGear();
 
 import { ParseQuality } from "./xmlParser/character/QualityParser.js";
-import { CheckGUIDs } from "./xmlParser/utilities.js";
 ParseQuality();
+
+import { ParseMetatypes } from "./xmlParser/character/MetatypeParser.js";
+ParseMetatypes();
+
+import { ParsePriorites } from "./xmlParser/character/PriorityParser.js";
+ParsePriorites();
+
+import { CheckGUIDs } from "./xmlParser/utilities.js";
+CheckGUIDs();

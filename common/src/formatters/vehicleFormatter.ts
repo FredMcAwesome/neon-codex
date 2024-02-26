@@ -2,7 +2,7 @@ import type {
   AvailabilityVehicleType,
   CostVehicleType,
   VehicleOnOffRoadType,
-} from "../schemas/vehicleSchemas.js";
+} from "../schemas/equipment/rigger/vehicleSchemas.js";
 import { formatRating } from "./commonFormatter.js";
 
 export function formatOnOffRoad(onOffRoad: VehicleOnOffRoadType | undefined) {

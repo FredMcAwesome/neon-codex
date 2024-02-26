@@ -6,13 +6,13 @@ import {
   mathOperatorEnum,
   restrictionEnum,
   sourceBookEnum,
-} from "../enums.js";
+} from "../../../enums.js";
 import { DamageReductionArmourSchema } from "./armourSchemas.js";
 import {
   AvailabilityRatingSchema,
   UseGearListSchema,
-} from "./commonSchemas.js";
-import { BonusSchema } from "./shared/bonusSchemas.js";
+} from "../../shared/commonSchemas.js";
+import { BonusSchema } from "../../shared/bonusSchemas.js";
 
 const InnerAvailabilityArmourModSchema = zod
   .object({

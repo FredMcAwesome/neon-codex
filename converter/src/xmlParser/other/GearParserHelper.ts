@@ -13,7 +13,7 @@ import {
   weaponExtraClassificationEnum,
   weaponTypeEnum,
 } from "@neon-codex/common/build/enums.js";
-import type { AmmoForWeaponTypeType } from "@neon-codex/common/build/schemas/gearSchemas.js";
+import type { AmmoForWeaponTypeType } from "@neon-codex/common/build/schemas/equipment/other/gearSchemas.js";
 import type {
   AddWeaponType,
   AmmoForWeaponTypeXmlType,

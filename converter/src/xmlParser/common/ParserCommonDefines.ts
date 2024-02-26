@@ -204,8 +204,14 @@ export enum attributeXMLEnum {
   MAG = "MAG",
   RES = "RES",
   INI = "INI",
-  DEP = "DEP",
+  DEP = "DEP", // Depth
   EDG = "EDG",
+}
+
+export enum lockedAttributeXmlEnum {
+  MAG = "MAG",
+  RES = "RES",
+  DEP = "DEP",
 }
 
 export enum limbSlotXmlEnum {

@@ -4,7 +4,7 @@ import {
   gearCategoryEnum,
   mathOperatorEnum,
   ratingAugmentationEnum,
-} from "../enums.js";
+} from "../../enums.js";
 
 export const GearCalculation = zod.array(
   zod.union([

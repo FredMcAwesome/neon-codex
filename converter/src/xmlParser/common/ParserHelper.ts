@@ -30,7 +30,7 @@ import type {
   ModXmlType,
 } from "./ParserCommonDefines.js";
 import { sourceBookXmlEnum } from "./ParserCommonDefines.js";
-import type { UseGearListType } from "@neon-codex/common/build/schemas/commonSchemas.js";
+import type { UseGearListType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 
 export const convertSource = function (source: sourceBookXmlEnum | 2050) {
   const xmlSource = source === 2050 ? sourceBookXmlEnum.Shadowrun2050 : source;
@@ -313,7 +313,7 @@ export const convertAllowGear = function (
   allowedGearList?: Array<string> | undefined;
   allowedGearCategories?: Array<gearCategoryEnum> | undefined;
 } {
-  if (!xmlAllowGear) {
+  if (xmlAllowGear === undefined) {
     return { allowedGearList: undefined };
   }
   if (typeof xmlAllowGear === "string") {

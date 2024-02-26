@@ -33,7 +33,7 @@ export abstract class ActiveVehicleModifications {
   actsAsCyberarm?: true;
 
   // TODO: should this be limited to only 1 cyberware?
-  @ManyToMany({ entity: () => Cyberwares, owner: true })
+  @ManyToMany({ entity: () => Cyberwares, owner: true, joinColumn: "join_id" })
   associatedCyberwareList = new Collection<Cyberwares>(this);
 
   @Property({ nullable: true })

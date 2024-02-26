@@ -13,7 +13,7 @@ import {
   type AttributesType,
   type SpecialAttributesType,
   type PrioritiesType,
-} from "@neon-codex/common/build/schemas/characterSchemas.js";
+} from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
 interface IAttributeRange {
   minimum: number;
   maximum: number;

@@ -14,7 +14,7 @@ import {
   ammoSourceEnum,
   augmentationTypeEnum,
 } from "@neon-codex/common/build/enums.js";
-import { weaponXmlSubtypeEnum } from "@neon-codex/common/build/schemas/commonSchemas.js";
+import { weaponXmlSubtypeEnum } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 import type {
   WeaponSummaryListType,
   WeaponSummaryType,
@@ -29,11 +29,11 @@ import type {
   ArmourPenetrationType,
   RecoilCompensationType,
   DamageType,
-} from "@neon-codex/common/build/schemas/weaponSchemas.js";
+} from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
 import {
   WeaponSummaryListSchema,
   WeaponSummarySchema,
-} from "@neon-codex/common/build/schemas/weaponSchemas.js";
+} from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
 import {
   getWeaponTypeInformation,
   accuracySemantics,

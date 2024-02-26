@@ -1,7 +1,7 @@
 import type {
   AvailabilityGearType,
   CostGearType,
-} from "../schemas/gearSchemas.js";
+} from "../schemas/equipment/other/gearSchemas.js";
 import { formatRating } from "./commonFormatter.js";
 
 export function formatGearAvailability(

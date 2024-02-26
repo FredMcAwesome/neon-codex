@@ -15,15 +15,15 @@ import {
   sourceBookEnum,
   weaponExtraClassificationEnum,
   weaponTypeEnum,
-} from "../enums.js";
+} from "../../../enums.js";
 import {
   AvailabilityRatingSchema,
   RangeCostSchema,
   UseGearListSchema,
   // RatingSchema
-} from "./commonSchemas.js";
-import { BonusSchema, WeaponBonusSchema } from "./shared/bonusSchemas.js";
-import { RequirementsSchema } from "./shared/requiredSchemas.js";
+} from "../../shared/commonSchemas.js";
+import { BonusSchema, WeaponBonusSchema } from "../../shared/bonusSchemas.js";
+import { RequirementsSchema } from "../../shared/requiredSchemas.js";
 
 export const PartialAvailabilityGearSchema = zod
   .object({

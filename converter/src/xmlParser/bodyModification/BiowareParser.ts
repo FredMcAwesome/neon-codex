@@ -19,7 +19,7 @@ import {
   convertAugmentationLimit,
   convertSource,
 } from "../common/ParserHelper.js";
-import { AugmentationSchema } from "@neon-codex/common/build/schemas/augmentationSchemas.js";
+import { AugmentationSchema } from "@neon-codex/common/build/schemas/equipment/bodyModification/augmentationSchemas.js";
 import Augmentation from "../../grammar/augmentation.ohm-bundle.js";
 import {
   availabilityAugmentationSemantics,

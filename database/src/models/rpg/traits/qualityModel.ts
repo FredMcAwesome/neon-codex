@@ -13,7 +13,7 @@ import type {
   QualityKarmaDiscountType,
   QualityLimitType,
   QualityType,
-} from "@neon-codex/common/build/schemas/qualitySchemas.js";
+} from "@neon-codex/common/build/schemas/abilities/qualitySchemas.js";
 import { Weapons } from "../equipment/combat/weaponModel.js";
 import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";

@@ -6,11 +6,11 @@ import { init } from "../utils/db.js";
 import {
   CustomSkillListSchema,
   type SkillListType,
-} from "@neon-codex/common/build/schemas/skillSchemas.js";
+} from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
 import type {
   VehicleListType,
   VehicleType,
-} from "@neon-codex/common/build/schemas/vehicleSchemas.js";
+} from "@neon-codex/common/build/schemas/equipment/rigger/vehicleSchemas.js";
 import {
   weaponTypeEnum,
   augmentationTypeEnum,
@@ -19,19 +19,19 @@ import {
 import type {
   AugmentationListType,
   AugmentationType,
-} from "@neon-codex/common/build/schemas/augmentationSchemas.js";
+} from "@neon-codex/common/build/schemas/equipment/bodyModification/augmentationSchemas.js";
 import type {
   GearListType,
   GearType,
-} from "@neon-codex/common/build/schemas/gearSchemas.js";
+} from "@neon-codex/common/build/schemas/equipment/other/gearSchemas.js";
 import type {
   WeaponSummaryListType,
   WeaponSummaryType,
-} from "@neon-codex/common/build/schemas/weaponSchemas.js";
+} from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
 import {
   EquipmentListSchema,
   type EquipmentListType,
-} from "@neon-codex/common/build/schemas/equipmentSchemas.js";
+} from "@neon-codex/common/build/schemas/equipment/other/equipmentSchemas.js";
 import {
   Augmentations,
   Cyberwares,
@@ -57,25 +57,29 @@ import { Gears } from "@neon-codex/database/build/models/rpg/equipment/other/gea
 import type {
   ArmourListType,
   ArmourType,
-} from "@neon-codex/common/build/schemas/armourSchemas.js";
+} from "@neon-codex/common/build/schemas/equipment/combat/armourSchemas.js";
 import {
   AttributesSchema,
   SpecialAttributesSchema,
   PrioritiesSchema,
-} from "@neon-codex/common/build/schemas/characterSchemas.js";
+} from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
 import { Armours } from "@neon-codex/database/build/models/rpg/equipment/combat/armourModel.js";
 import { Characters } from "@neon-codex/database/build/models/rpg/characters/characterModel.js";
 import {
   QualityListSchema,
   type QualityListType,
   type QualityType,
-} from "@neon-codex/common/build/schemas/qualitySchemas.js";
-import { Qualities } from "@neon-codex/database/build/models/rpg/abilities/qualityModel.js";
+} from "@neon-codex/common/build/schemas/abilities/qualitySchemas.js";
+import { Qualities } from "@neon-codex/database/build/models/rpg/traits/qualityModel.js";
 
 export async function getSkills() {
   const db = await init();
-  const skills = await db.em.findAll(Skills);
+  const skills = await db.em.findAll(Skills, {
+    populate: ["*"],
+  });
   const skillsResponse: SkillListType = skills.map((skill) => {
+    const skillGroup =
+      skill.skillGroup === undefined ? undefined : skill.skillGroup.$.name;
     return {
       name: skill.name,
       description: skill.description,
@@ -83,7 +87,7 @@ export async function getSkills() {
       attribute: skill.attribute,
       default: skill.default,
       exotic: skill.exotic,
-      skillGroup: skill.skillGroup,
+      skillGroup: skillGroup,
       specialisations: skill.defaultSpecialisations,
       source: skill.source,
       page: skill.page,

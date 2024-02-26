@@ -1,7 +1,7 @@
 import { z as zod } from "zod";
-import { qualityCategoryEnum, qualityLimitEnum } from "../enums.js";
-import { BonusSchema } from "./shared/bonusSchemas.js";
-import { RequirementsSchema } from "./shared/requiredSchemas.js";
+import { qualityCategoryEnum, qualityLimitEnum } from "../../enums.js";
+import { BonusSchema } from "../shared/bonusSchemas.js";
+import { RequirementsSchema } from "../shared/requiredSchemas.js";
 
 const QualityLimitSchema = zod.union([
   zod

@@ -19,7 +19,7 @@ import type {
   CapacityAugmentationType,
   AugmentationSubsystemListType,
   deviceRatingType,
-} from "@neon-codex/common/build/schemas/augmentationSchemas.js";
+} from "@neon-codex/common/build/schemas/equipment/bodyModification/augmentationSchemas.js";
 import {
   augmentationGradeEnum,
   augmentationTypeEnum,
@@ -40,7 +40,7 @@ import { AugmentationIncludedGears } from "../../activeTables/activeGearModel.js
 import type {
   EssenceCostType,
   RatingType,
-} from "@neon-codex/common/build/schemas/commonSchemas.js";
+} from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 
 @Entity({
   discriminatorColumn: "type",
@@ -105,7 +105,7 @@ export abstract class Augmentations {
   @Property({ type: "json", nullable: true })
   forbidden?: RequirementsType;
 
-  @ManyToMany({ entity: () => Gears, owner: true })
+  @ManyToMany({ entity: () => Gears, owner: true, joinColumn: "join_id" })
   allowedGearList = new Collection<Gears>(this);
 
   @OneToMany(

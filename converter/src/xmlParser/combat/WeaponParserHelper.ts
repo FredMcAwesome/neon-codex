@@ -26,9 +26,9 @@ import type {
   FirearmOptionsType,
   MeleeOptionsType,
   MountType,
-} from "@neon-codex/common/build/schemas/weaponSchemas.js";
-import { weaponXmlSubtypeEnum } from "@neon-codex/common/build/schemas/commonSchemas.js";
-import type { WeaponXmlSubtypeType } from "@neon-codex/common/build/schemas/commonSchemas.js";
+} from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
+import { weaponXmlSubtypeEnum } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
+import type { WeaponXmlSubtypeType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 import Weapons from "../../grammar/weapons.ohm-bundle.js";
 import { convertXmlGears } from "../common/ParserHelper.js";
 const Accuracy = Weapons.Accuracy;

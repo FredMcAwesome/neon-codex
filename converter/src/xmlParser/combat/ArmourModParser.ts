@@ -16,12 +16,12 @@ import {
   costArmourModificationSemantics,
 } from "./ArmourModParserHelper.js";
 import { convertArmourModCategory } from "./ArmourModParserHelper.js";
-import { ArmourModListSchema } from "@neon-codex/common/build/schemas/armourModSchemas.js";
+import { ArmourModListSchema } from "@neon-codex/common/build/schemas/equipment/combat/armourModSchemas.js";
 import type {
   AvailabilityArmourModType,
   CostArmourModType,
-} from "@neon-codex/common/build/schemas/armourModSchemas.js";
-import { ArmourModSchema } from "@neon-codex/common/build/schemas/armourModSchemas.js";
+} from "@neon-codex/common/build/schemas/equipment/combat/armourModSchemas.js";
+import { ArmourModSchema } from "@neon-codex/common/build/schemas/equipment/combat/armourModSchemas.js";
 import ArmourModifications from "../../grammar/armourModifications.ohm-bundle.js";
 import { convertSource } from "../common/ParserHelper.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";

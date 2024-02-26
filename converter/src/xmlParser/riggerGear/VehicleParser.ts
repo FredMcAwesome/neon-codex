@@ -6,7 +6,7 @@ import { fileURLToPath } from "url";
 import * as fs from "fs";
 import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
 import { VehicleListXmlSchema } from "./VehicleParserSchemas.js";
-import { VehicleSchema } from "@neon-codex/common/build/schemas/vehicleSchemas.js";
+import { VehicleSchema } from "@neon-codex/common/build/schemas/equipment/rigger/vehicleSchemas.js";
 import type {
   VehicleListXmlType,
   VehicleXmlType,

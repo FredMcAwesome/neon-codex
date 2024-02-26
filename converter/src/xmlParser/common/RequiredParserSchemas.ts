@@ -3,7 +3,7 @@ import {
   StringArrayOrStringSchema,
   StringOrNumberSchema,
 } from "../common/ParserCommonDefines.js";
-import { WeaponXmlSubtypeSchema } from "@neon-codex/common/build/schemas/commonSchemas.js";
+import { WeaponXmlSubtypeSchema } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 import { metamagicArtEnum } from "@neon-codex/common/build/enums.js";
 
 const SkillSchema = zod

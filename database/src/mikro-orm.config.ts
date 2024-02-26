@@ -80,7 +80,38 @@ import {
   PASSWORD,
 } from "./utils/databaseConfig.js";
 import { Characters } from "./models/rpg/characters/characterModel.js";
-import { Qualities } from "./models/rpg/abilities/qualityModel.js";
+import { Qualities } from "./models/rpg/traits/qualityModel.js";
+import {
+  Metahumans,
+  Metasapients,
+  Metatypes,
+  Metavariants,
+  Shapeshifters,
+} from "./models/rpg/traits/metatypeModel.js";
+import { HeritagePriorityDetails } from "./models/rpg/otherData/heritagePriorityDetailModel.js";
+import {
+  Priorities,
+  HeritagePriorities,
+  TalentPriorities,
+  AttributePriorities,
+  SkillPriorities,
+  ResourcePriorities,
+} from "./models/rpg/otherData/priorityModel.js";
+import {
+  SkillBasePriorityDetails,
+  SkillSpecificityPriorityDetails,
+  SkillPriorityDetails,
+  SkillSourcePriorityDetails,
+  SkillGroupPriorityDetails,
+} from "./models/rpg/otherData/skillPriorityDetailModel.js";
+import {
+  TalentPriorityDetails,
+  MagicTalentPriorityDetails,
+  ResonanceTalentPriorityDetails,
+  DepthTalentPriorityDetails,
+  MundaneTalentPriorityDetails,
+} from "./models/rpg/otherData/talentPriorityDetailModel.js";
+import { SkillGroups } from "./models/rpg/abilities/skillGroupModel.js";
 
 const dbOptions: Options = {
   entities: [
@@ -89,8 +120,34 @@ const dbOptions: Options = {
     Comments,
 
     Skills,
+    SkillGroups,
     CustomisedSkills,
     Qualities,
+
+    Metatypes,
+    Metahumans,
+    Metavariants,
+    Metasapients,
+    Shapeshifters,
+
+    Priorities,
+    HeritagePriorities,
+    TalentPriorities,
+    AttributePriorities,
+    SkillPriorities,
+    ResourcePriorities,
+
+    HeritagePriorityDetails,
+    TalentPriorityDetails,
+    SkillBasePriorityDetails,
+    SkillSpecificityPriorityDetails,
+    SkillPriorityDetails,
+    SkillSourcePriorityDetails,
+    SkillGroupPriorityDetails,
+    MagicTalentPriorityDetails,
+    ResonanceTalentPriorityDetails,
+    DepthTalentPriorityDetails,
+    MundaneTalentPriorityDetails,
 
     WeaponRanges,
 

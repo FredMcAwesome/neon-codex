@@ -4,6 +4,7 @@ import {
   GenericNameValueSchema,
   limbSlotXmlEnum,
   LimitModifierSchema,
+  lockedAttributeXmlEnum,
   NumberOrAnyRatingSchema,
   NumberOrRatingSchema,
   SkillSchema,
@@ -351,7 +352,7 @@ export const BonusXmlSchema = zod.union([
       enableattribute: zod.optional(
         zod
           .object({
-            name: zod.union([zod.literal("MAG"), zod.literal("RES")]),
+            name: zod.nativeEnum(lockedAttributeXmlEnum),
           })
           .strict()
       ),
@@ -1190,4 +1191,10 @@ export const BonusXmlSchema = zod.union([
   zod.literal(""),
 ]);
 
+export const BonusXmlWrappedSchema = zod
+  .object({
+    // Bonus applied by Metatype
+    bonus: zod.optional(BonusXmlSchema),
+  })
+  .strict();
 export type BonusXmlType = zod.infer<typeof BonusXmlSchema>;

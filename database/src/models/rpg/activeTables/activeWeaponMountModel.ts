@@ -31,7 +31,11 @@ export abstract class ActiveWeaponMounts {
   @ManyToOne({ entity: () => WeaponMounts, ref: true })
   weaponMount: Ref<WeaponMounts>;
 
-  @ManyToMany({ entity: () => WeaponMountModifications, owner: true })
+  @ManyToMany({
+    entity: () => WeaponMountModifications,
+    owner: true,
+    joinColumn: "join_id",
+  })
   mountMods = new Collection<WeaponMountModifications>(this);
 
   @Property()

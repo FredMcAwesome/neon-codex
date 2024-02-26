@@ -36,7 +36,7 @@ import {
   augmentationTypeEnum,
   availabilityEnum,
 } from "@neon-codex/common/build/enums.js";
-import { AugmentationSchema } from "@neon-codex/common/build/schemas/augmentationSchemas.js";
+import { AugmentationSchema } from "@neon-codex/common/build/schemas/equipment/bodyModification/augmentationSchemas.js";
 import Augmentation from "../../grammar/augmentation.ohm-bundle.js";
 import {
   availabilityAugmentationSemantics,

@@ -15,7 +15,7 @@ import type {
   CapacityArmourType,
   CostArmourType,
   DamageReductionArmourType,
-} from "@neon-codex/common/build/schemas/armourSchemas.js";
+} from "@neon-codex/common/build/schemas/equipment/combat/armourSchemas.js";
 import {
   armourCategoryEnum,
   armourModCategoryEnum,

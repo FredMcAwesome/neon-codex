@@ -2,8 +2,8 @@ import assert from "assert";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { AugmentationListSchema } from "@neon-codex/common/build/schemas/augmentationSchemas.js";
-import type { AugmentationListType } from "@neon-codex/common/build/schemas/augmentationSchemas.js";
+import { AugmentationListSchema } from "@neon-codex/common/build/schemas/equipment/bodyModification/augmentationSchemas.js";
+import type { AugmentationListType } from "@neon-codex/common/build/schemas/equipment/bodyModification/augmentationSchemas.js";
 import {
   Augmentations,
   Biowares,

@@ -6,8 +6,8 @@ import {
 import {
   SkillListSchema,
   SkillSchema,
-} from "@neon-codex/common/build/schemas/skillSchemas.js";
-import type { SkillType } from "@neon-codex/common/build/schemas/skillSchemas.js";
+} from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
+import type { SkillType } from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
 import assert from "assert";
 import { XMLParser } from "fast-xml-parser";
 import fs from "fs";

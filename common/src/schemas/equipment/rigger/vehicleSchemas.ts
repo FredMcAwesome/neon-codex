@@ -14,13 +14,13 @@ import {
   weaponMountVisibilityEnum,
   watercraftSubtypeEnum,
   sourceBookEnum,
-} from "../enums.js";
+} from "../../../enums.js";
 import {
   AvailabilityRatingSchema,
   RangeCostSchema,
   UseGearListSchema,
-} from "./commonSchemas.js";
-import { GenericVehicleModListSchema } from "./shared/modSchemas.js";
+} from "../../shared/commonSchemas.js";
+import { GenericVehicleModListSchema } from "../../shared/modSchemas.js";
 
 export const AvailabilityVehicleSchema = zod
   .object({

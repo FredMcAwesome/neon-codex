@@ -7,7 +7,7 @@ import {
   weaponAccessoryMountLocationEnum,
   weaponTypeEnum,
 } from "@neon-codex/common/build/enums.js";
-import { weaponXmlSubtypeEnum } from "@neon-codex/common/build/schemas/commonSchemas.js";
+import { weaponXmlSubtypeEnum } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 import type {
   RequirementsType,
   WeaponDamageRequirementsType,

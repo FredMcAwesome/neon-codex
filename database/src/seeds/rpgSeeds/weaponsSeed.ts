@@ -8,8 +8,8 @@ import {
   MeleeWeaponSchema,
   ProjectileWeaponSchema,
   WeaponSummaryListSchema,
-} from "@neon-codex/common/build/schemas/weaponSchemas.js";
-import type { WeaponSummaryListType } from "@neon-codex/common/build/schemas/weaponSchemas.js";
+} from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
+import type { WeaponSummaryListType } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
 import { z as zod } from "zod";
 import { weaponTypeEnum } from "@neon-codex/common/build/enums.js";
 import { ref } from "@mikro-orm/postgresql";

@@ -10,14 +10,14 @@ import {
   Unique,
 } from "@mikro-orm/postgresql";
 import type { Ref } from "@mikro-orm/postgresql";
-import type { AmmunitionSingleType } from "@neon-codex/common/build/schemas/weaponSchemas.js";
+import type { AmmunitionSingleType } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
 import type {
   AmmoCapacityCalculationType,
   ConcealabilityModificationType,
   WeaponAccessorySummaryType,
   AvailabilityWeaponAccessoryType,
   CostWeaponAccessoryType,
-} from "@neon-codex/common/build/schemas/weaponAccessorySchemas.js";
+} from "@neon-codex/common/build/schemas/equipment/combat/weaponAccessorySchemas.js";
 import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
 import { Weapons } from "./weaponModel.js";
 import { Gears } from "../other/gearModel.js";

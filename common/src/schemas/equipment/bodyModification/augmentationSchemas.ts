@@ -15,16 +15,16 @@ import {
   ratingMeaningEnum,
   restrictionEnum,
   sourceBookEnum,
-} from "../enums.js";
+} from "../../../enums.js";
 import {
   AvailabilityRatingSchema,
   EssenceCostSchema,
   RatingSchema,
   UseGearListSchema,
-} from "./commonSchemas.js";
-import type { UseGearListType } from "./commonSchemas.js";
-import { BonusSchema } from "./shared/bonusSchemas.js";
-import { RequirementsSchema } from "./shared/requiredSchemas.js";
+} from "../../shared/commonSchemas.js";
+import type { UseGearListType } from "../../shared/commonSchemas.js";
+import { BonusSchema } from "../../shared/bonusSchemas.js";
+import { RequirementsSchema } from "../../shared/requiredSchemas.js";
 
 export const InnerAvailabilityAugmentationSchema = zod
   .object({

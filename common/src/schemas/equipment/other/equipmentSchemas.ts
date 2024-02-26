@@ -2,14 +2,20 @@ import { z as zod } from "zod";
 import {
   AugmentationListSchema,
   type AugmentationListType,
-} from "./augmentationSchemas.js";
+} from "../bodyModification/augmentationSchemas.js";
 import { GearListSchema, type GearListType } from "./gearSchemas.js";
-import { VehicleListSchema, type VehicleListType } from "./vehicleSchemas.js";
+import {
+  VehicleListSchema,
+  type VehicleListType,
+} from "../rigger/vehicleSchemas.js";
 import {
   WeaponSummaryListSchema,
   type WeaponSummaryListType,
-} from "./weaponSchemas.js";
-import { ArmourListSchema, type ArmourListType } from "./armourSchemas.js";
+} from "../combat/weaponSchemas.js";
+import {
+  ArmourListSchema,
+  type ArmourListType,
+} from "../combat/armourSchemas.js";
 
 export type EquipmentListType = {
   weapons: WeaponSummaryListType;

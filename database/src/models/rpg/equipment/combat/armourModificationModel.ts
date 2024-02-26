@@ -13,12 +13,12 @@ import type {
   CapacityArmourModType,
   CostArmourModType,
   HostArmourRequirementType,
-} from "@neon-codex/common/build/schemas/armourModSchemas.js";
+} from "@neon-codex/common/build/schemas/equipment/combat/armourModSchemas.js";
 import {
   armourModCategoryEnum,
   sourceBookEnum,
 } from "@neon-codex/common/build/enums.js";
-import type { DamageReductionArmourType } from "@neon-codex/common/build/schemas/armourSchemas.js";
+import type { DamageReductionArmourType } from "@neon-codex/common/build/schemas/equipment/combat/armourSchemas.js";
 import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 import { ArmourModificationIncludedGears } from "../../activeTables/activeGearModel.js";
 

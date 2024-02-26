@@ -1,12 +1,12 @@
-import type { EquipmentListType } from "@neon-codex/common/build/schemas/equipmentSchemas.js";
-import type { CustomSkillListType } from "@neon-codex/common/build/schemas/skillSchemas.js";
+import type { EquipmentListType } from "@neon-codex/common/build/schemas/equipment/other/equipmentSchemas.js";
+import type { CustomSkillListType } from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
 import type { ISkillPoints } from "./PriorityImports.js";
 import type {
   PrioritiesType,
   AttributesType,
   SpecialAttributesType,
-} from "@neon-codex/common/build/schemas/characterSchemas.js";
-import type { QualityListType } from "@neon-codex/common/build/schemas/qualitySchemas.js";
+} from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
+import type { QualityListType } from "@neon-codex/common/build/schemas/abilities/qualitySchemas.js";
 
 interface IProps {
   priorityInfo: PrioritiesType;

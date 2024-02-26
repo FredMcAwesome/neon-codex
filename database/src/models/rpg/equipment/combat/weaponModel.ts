@@ -31,8 +31,8 @@ import type {
   CostWeaponType,
   DamageType,
   WeaponSummaryType,
-} from "@neon-codex/common/build/schemas/weaponSchemas.js";
-import { weaponXmlSubtypeEnum } from "@neon-codex/common/build/schemas/commonSchemas.js";
+} from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
+import { weaponXmlSubtypeEnum } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 import { Skills } from "../../abilities/skillModel.js";
 import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
 import { Gears } from "../other/gearModel.js";
@@ -69,7 +69,8 @@ export abstract class Weapons {
   @Property({ type: "json", nullable: true })
   ammunition?: AmmunitionType;
 
-  @ManyToMany({ entity: () => Gears, owner: true })
+  // TODO: this can be removed? Check xml/json
+  @ManyToMany({ entity: () => Gears, owner: true, joinColumn: "join_id" })
   allowedGearList = new Collection<Gears>(this);
 
   @Enum({ items: () => gearCategoryEnum, nullable: true, array: true })
