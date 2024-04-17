@@ -1,4 +1,4 @@
-import { Group, Option } from "react-dropdown";
+import type { Group, Option } from "react-dropdown";
 
 interface IProps {
   options: Array<Group | Option | string>;

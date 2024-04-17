@@ -18,18 +18,18 @@ export const getSpells = function () {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const rawJson = JSON.parse(jsonString);
-  const armourModListParsed = SpellListSchema.safeParse(rawJson);
-  if (armourModListParsed.success) {
+  const spellListParsed = SpellListSchema.safeParse(rawJson);
+  if (spellListParsed.success) {
     console.log("spells all g");
-    spells = armourModListParsed.data;
+    spells = spellListParsed.data;
   } else {
-    console.log(armourModListParsed.error.errors[0]);
+    console.log(spellListParsed.error.errors[0]);
     assert(false, "spells is undefined");
   }
-  const stagedArmourMods: Array<Spells> = [];
-  spells.forEach((armourMod) => {
-    stagedArmourMods.push(new Spells(armourMod));
+  const stagedSpells: Array<Spells> = [];
+  spells.forEach((spell) => {
+    stagedSpells.push(new Spells(spell));
     // console.log(armourMod.name);
   });
-  return stagedArmourMods;
+  return stagedSpells;
 };

@@ -1,349 +1,77 @@
-import type { IMagicInfo } from "./PriorityImports.js";
-import { Fragment, useEffect, useState } from "react";
+import { z as zod } from "zod";
+import { Fragment, useState } from "react";
 import Dropdown from "react-dropdown";
 import {
-  AttributesEnum,
-  AttributesEnumLength,
-  SpecialAttributesEnum,
-  EdgeBaseAttributeIndex,
-  SpecialAttributesLength,
-} from "@neon-codex/common/build/data/Skills.js";
-import {
-  MetatypeEnum,
   type AttributesType,
   type SpecialAttributesType,
-  type PrioritiesType,
+  type PriorityLevelsType,
+  type HeritagePrioritySelectedType,
+  type AttributeRangesType,
 } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
-interface IAttributeRange {
-  minimum: number;
-  maximum: number;
-}
+import { trpc } from "../../../utils/trpc.js";
+import {
+  baseAttributeTypeEnum,
+  heritageCategoryEnum,
+  specialAttributeTypeEnum,
+  talentCategoryEnum,
+} from "@neon-codex/common/build/enums.js";
+import type {
+  AttributeRangeType,
+  HeritageListType,
+} from "@neon-codex/common/build/schemas/abilities/heritageSchemas.js";
+import type { TalentPriorityType } from "@neon-codex/common/build/schemas/otherData/prioritySchemas.js";
 
-type MetaypeBaseAttributesType = [
-  IAttributeRange,
-  IAttributeRange,
-  IAttributeRange,
-  IAttributeRange,
-  IAttributeRange,
-  IAttributeRange,
-  IAttributeRange,
-  IAttributeRange,
-  IAttributeRange
-];
+const AttributeOptionsSchema = zod
+  .object({
+    body: zod.array(zod.string()),
+    agility: zod.array(zod.string()),
+    reaction: zod.array(zod.string()),
+    strength: zod.array(zod.string()),
+    willpower: zod.array(zod.string()),
+    logic: zod.array(zod.string()),
+    intuition: zod.array(zod.string()),
+    charisma: zod.array(zod.string()),
+  })
+  .strict();
+type AttributesOptionsType = zod.infer<typeof AttributeOptionsSchema>;
 
-type MetaypeSpecialAttributesType = [IAttributeRange, IAttributeRange];
-
-type MetatypesAttributesListType = Array<MetaypeBaseAttributesType>;
-
-const humanMetatypeBaseAttributes: MetaypeBaseAttributesType = [
-  // race: MetatypeEnum.Human,
-  // body:
-  {
-    minimum: 1,
-    maximum: 6,
-  },
-  // agility:
-  {
-    minimum: 1,
-    maximum: 6,
-  },
-  // reaction:
-  {
-    minimum: 1,
-    maximum: 6,
-  },
-  // strength:
-  {
-    minimum: 1,
-    maximum: 6,
-  },
-  // willpower:
-  {
-    minimum: 1,
-    maximum: 6,
-  },
-  // logic:
-  {
-    minimum: 1,
-    maximum: 6,
-  },
-  // intuition:
-  {
-    minimum: 1,
-    maximum: 6,
-  },
-  // charisma:
-  {
-    minimum: 1,
-    maximum: 6,
-  },
-  // edge:
-  {
-    minimum: 2,
-    maximum: 7,
-  },
-];
-
-const elfMetatypeBaseAttributes: MetaypeBaseAttributesType = [
-  // race: MetatypeEnum.Elf,
-  // body:
-  {
-    minimum: 1,
-    maximum: 6,
-  },
-  // agility:
-  {
-    minimum: 2,
-    maximum: 7,
-  },
-  // reaction:
-  {
-    minimum: 1,
-    maximum: 6,
-  },
-  // strength:
-  {
-    minimum: 1,
-    maximum: 6,
-  },
-  // willpower:
-  {
-    minimum: 1,
-    maximum: 6,
-  },
-  // logic:
-  {
-    minimum: 1,
-    maximum: 6,
-  },
-  // intuition:
-  {
-    minimum: 1,
-    maximum: 6,
-  },
-  // charisma:
-  {
-    minimum: 3,
-    maximum: 8,
-  },
-  // edge:
-  {
-    minimum: 1,
-    maximum: 6,
-  },
-];
-const dwarfMetatypeBaseAttributes: MetaypeBaseAttributesType = [
-  // race: MetatypeEnum.Dwarf,
-  // body:
-  {
-    minimum: 3,
-    maximum: 8,
-  },
-  // agility:
-  {
-    minimum: 1,
-    maximum: 6,
-  },
-  // reaction:
-  {
-    minimum: 1,
-    maximum: 5,
-  },
-  // strength:
-  {
-    minimum: 3,
-    maximum: 8,
-  },
-  // willpower:
-  {
-    minimum: 2,
-    maximum: 7,
-  },
-  // logic:
-  {
-    minimum: 1,
-    maximum: 6,
-  },
-  // intuition:
-  {
-    minimum: 1,
-    maximum: 6,
-  },
-  // charisma:
-  {
-    minimum: 1,
-    maximum: 6,
-  },
-  // edge:
-  {
-    minimum: 1,
-    maximum: 6,
-  },
-];
-const orkMetatypeBaseAttributes: MetaypeBaseAttributesType = [
-  // race: MetatypeEnum.Ork,
-  // body:
-  {
-    minimum: 4,
-    maximum: 9,
-  },
-  // agility:
-  {
-    minimum: 1,
-    maximum: 6,
-  },
-  // reaction:
-  {
-    minimum: 1,
-    maximum: 6,
-  },
-  // strength:
-  {
-    minimum: 3,
-    maximum: 8,
-  },
-  // willpower:
-  {
-    minimum: 1,
-    maximum: 6,
-  },
-  // logic:
-  {
-    minimum: 1,
-    maximum: 5,
-  },
-  // intuition:
-  {
-    minimum: 1,
-    maximum: 6,
-  },
-  // charisma:
-  {
-    minimum: 1,
-    maximum: 5,
-  },
-  // edge:
-  {
-    minimum: 1,
-    maximum: 6,
-  },
-];
-const trollMetatypeBaseAttributes: MetaypeBaseAttributesType = [
-  // race: MetatypeEnum.Troll,
-  // body:
-  {
-    minimum: 5,
-    maximum: 10,
-  },
-  // agility:
-  {
-    minimum: 1,
-    maximum: 5,
-  },
-  // reaction:
-  {
-    minimum: 1,
-    maximum: 6,
-  },
-  // strength:
-  {
-    minimum: 5,
-    maximum: 10,
-  },
-  // willpower:
-  {
-    minimum: 1,
-    maximum: 6,
-  },
-  // logic:
-  {
-    minimum: 1,
-    maximum: 5,
-  },
-  // intuition:
-  {
-    minimum: 1,
-    maximum: 5,
-  },
-  // charisma:
-  {
-    minimum: 1,
-    maximum: 4,
-  },
-  // edge:
-  {
-    minimum: 1,
-    maximum: 6,
-  },
-];
-
-const metatypeBaseAttributes: MetatypesAttributesListType = [
-  humanMetatypeBaseAttributes,
-  elfMetatypeBaseAttributes,
-  dwarfMetatypeBaseAttributes,
-  orkMetatypeBaseAttributes,
-  trollMetatypeBaseAttributes,
-];
-
-function checkMinimums(
-  attributes: Array<number>,
-  attributeRanges: Array<IAttributeRange>,
-  attributeType: AttributesEnum
-) {
-  if (attributes[attributeType] < attributeRanges[attributeType].minimum)
-    attributes[attributeType] = attributeRanges[attributeType].minimum;
-  return attributes;
-}
-
-function checkMaximums(
-  attributes: Array<number>,
-  attributeRanges: Array<IAttributeRange>,
-  attributeType: AttributesEnum
-) {
-  if (attributes[attributeType] > attributeRanges[attributeType].maximum)
-    attributes[attributeType] = attributeRanges[attributeType].maximum;
-
-  for (
-    let otherAttributeType = 0;
-    otherAttributeType < AttributesEnumLength;
-    otherAttributeType++
-  ) {
-    if (attributeType !== otherAttributeType) {
-      if (
-        attributes[otherAttributeType] ===
-          attributeRanges[otherAttributeType].maximum &&
-        attributes[attributeType] === attributeRanges[attributeType].maximum
-      ) {
-        attributes[attributeType]--;
-        break;
-      }
-    }
-  }
-  return attributes;
-}
-
-function checkSpecialMinimums(
-  attributes: Array<number>,
-  attributeRanges: Array<IAttributeRange>,
-  attributeType: SpecialAttributesEnum
-) {
-  if (attributes[attributeType] < attributeRanges[attributeType].minimum)
-    attributes[attributeType] = attributeRanges[attributeType].minimum;
-  return attributes;
-}
-
-function checkSpecialMaximums(
-  attributes: Array<number>,
-  attributeRanges: Array<IAttributeRange>,
-  attributeType: SpecialAttributesEnum
-) {
-  if (attributes[attributeType] > attributeRanges[attributeType].maximum)
-    attributes[attributeType] = attributeRanges[attributeType].maximum;
-  return attributes;
-}
+const SpecialAttributeOptionsSchema = zod
+  .object({
+    edge: zod.array(zod.string()),
+    talent: zod.discriminatedUnion("type", [
+      zod
+        .object({
+          type: zod.literal(talentCategoryEnum.Magic),
+          magic: zod.array(zod.string()),
+        })
+        .strict(),
+      zod
+        .object({
+          type: zod.literal(talentCategoryEnum.Resonance),
+          resonance: zod.array(zod.string()),
+        })
+        .strict(),
+      zod
+        .object({
+          type: zod.literal(talentCategoryEnum.Depth),
+          depth: zod.array(zod.string()),
+        })
+        .strict(),
+      zod
+        .object({
+          type: zod.literal(talentCategoryEnum.Mundane),
+        })
+        .strict(),
+    ]),
+  })
+  .strict();
+type SpecialAttributeOptionsType = zod.infer<
+  typeof SpecialAttributeOptionsSchema
+>;
 
 interface IProps {
-  priorityInfo: PrioritiesType;
+  priorityInfo: PriorityLevelsType;
+  heritageInfo: HeritagePrioritySelectedType;
   attributeInfo: AttributesType;
   setAttributeInfo: (loadingAttributes: AttributesType) => void;
   specialAttributeInfo: SpecialAttributesType;
@@ -351,289 +79,259 @@ interface IProps {
     loadingSpecialAttributes: SpecialAttributesType
   ) => void;
   maxAttributePoints: number;
-  maxSpecialAttributePoints: number;
-  magicInfo: IMagicInfo;
+  talentInfo: TalentPriorityType;
 }
 
 const AttributesSelect = function (props: IProps) {
-  const metatype = props.priorityInfo.MetatypeSubselection;
-  const baseAttributes: MetaypeBaseAttributesType =
-    metatypeBaseAttributes[metatype];
-  const baseSpecialAttributes: MetaypeSpecialAttributesType = [
-    metatypeBaseAttributes[metatype][EdgeBaseAttributeIndex],
-    {
-      minimum: props.magicInfo.magicRating,
-      maximum: props.magicInfo.magicRating > 0 ? 6 : 0,
-    },
-  ];
+  const heritages = trpc.character.heritages.useQuery();
+
+  if (heritages.isError) {
+    return <>{heritages.error}</>;
+  }
+
+  if (heritages.data === undefined) {
+    return <></>;
+  }
+
+  return (
+    <AttributesSelectLoaded
+      heritages={heritages.data}
+      priorityInfo={props.priorityInfo}
+      heritageInfo={props.heritageInfo}
+      attributeInfo={props.attributeInfo}
+      setAttributeInfo={props.setAttributeInfo}
+      specialAttributeInfo={props.specialAttributeInfo}
+      setSpecialAttributeInfo={props.setSpecialAttributeInfo}
+      maxAttributePoints={props.maxAttributePoints}
+      talentInfo={props.talentInfo}
+    />
+  );
+};
+export default AttributesSelect;
+
+const AttributesSelectLoaded = function (
+  props: IProps & { heritages: HeritageListType }
+) {
+  const selectedHeritage: { base: string; metavariant?: string } = {
+    base: props.heritageInfo.heritage,
+  };
+  if (props.heritageInfo.metavariant !== undefined) {
+    selectedHeritage.metavariant = props.heritageInfo.metavariant;
+  }
+
+  const foundHeritage = props.heritages.find((heritage) => {
+    if (
+      selectedHeritage.metavariant !== undefined &&
+      heritage.category === heritageCategoryEnum.Metavariant
+    ) {
+      return (
+        heritage.name === selectedHeritage.metavariant &&
+        heritage.baseHeritage === selectedHeritage.base
+      );
+    } else {
+      return heritage.name === selectedHeritage.base;
+    }
+  });
+  if (foundHeritage === undefined) {
+    throw Error(
+      `foundHeritage: ${selectedHeritage.base} ${selectedHeritage.metavariant} is undefined`
+    );
+  }
+
+  const attributeRanges: AttributeRangesType = {
+    body: foundHeritage.bodyAttributeRange,
+    agility: foundHeritage.agilityAttributeRange,
+    reaction: foundHeritage.reactionAttributeRange,
+    strength: foundHeritage.strengthAttributeRange,
+    willpower: foundHeritage.willpowerAttributeRange,
+    logic: foundHeritage.logicAttributeRange,
+    intuition: foundHeritage.intuitionAttributeRange,
+    charisma: foundHeritage.charismaAttributeRange,
+    edge: foundHeritage.edgeAttributeRange,
+    magic: foundHeritage.magicAttributeRange,
+    resonance: foundHeritage.resonanceAttributeRange,
+    depth: foundHeritage.depthAttributeRange,
+  };
+
   const [attributePoints, setAttributePoints] = useState(
     props.maxAttributePoints
   );
   const [specialAttributePoints, setSpecialAttributePoints] = useState(
-    props.maxSpecialAttributePoints
+    props.heritageInfo.specialAttributePoints
   );
-  const [attributes, setAttributes] = useState<Array<number>>(() => {
-    // convert attributes into array for easier iterating
-    let attributeArray = [
-      props.attributeInfo.body,
-      props.attributeInfo.agility,
-      props.attributeInfo.reaction,
-      props.attributeInfo.strength,
-      props.attributeInfo.willpower,
-      props.attributeInfo.logic,
-      props.attributeInfo.intuition,
-      props.attributeInfo.charisma,
-    ];
-    let tempAttributePoints = attributePoints;
-    // check attribute values in case new changes have been made
-    // restrict to min/max values and set attribute points if different
-    for (let attribute = 0; attribute < AttributesEnumLength; attribute++) {
-      attributeArray = checkMinimums(attributeArray, baseAttributes, attribute);
-      attributeArray = checkMaximums(attributeArray, baseAttributes, attribute);
-      let difference =
-        attributeArray[attribute] - baseAttributes[attribute].minimum;
-      if (difference <= tempAttributePoints) {
-        tempAttributePoints = tempAttributePoints - difference;
-      } else {
-        difference = tempAttributePoints;
-        attributeArray[attribute] =
-          baseAttributes[attribute].minimum + difference;
-        tempAttributePoints = 0;
-      }
-    }
-    setAttributePoints(tempAttributePoints);
-    return attributeArray;
-  });
-  const [specialAttributes, setSpecialAttributes] = useState<Array<number>>(
-    () => {
-      let attributeArray = [
-        props.specialAttributeInfo.edge,
-        props.specialAttributeInfo.magic,
-      ];
-      let tempAttributePoints = specialAttributePoints;
-      for (
-        let attribute = 0;
-        attribute < SpecialAttributesLength;
-        attribute++
-      ) {
-        attributeArray = checkSpecialMinimums(
-          attributeArray,
-          baseSpecialAttributes,
-          attribute
-        );
-        attributeArray = checkSpecialMaximums(
-          attributeArray,
-          baseSpecialAttributes,
-          attribute
-        );
-        let difference =
-          attributeArray[attribute] - baseSpecialAttributes[attribute].minimum;
-        if (difference <= tempAttributePoints) {
-          tempAttributePoints = tempAttributePoints - difference;
-        } else {
-          difference = tempAttributePoints;
-          attributeArray[attribute] =
-            baseSpecialAttributes[attribute].minimum + difference;
-          tempAttributePoints = 0;
-        }
-      }
+  const attributeOptions: AttributesOptionsType = getAttributeListOptions();
 
-      setSpecialAttributePoints(tempAttributePoints);
-      return attributeArray;
-    }
-  );
-  const [attributeOptions, setAttributeOptions] = useState<
-    Array<Array<string>>
-  >(() => {
-    let totalArray: Array<Array<string>> = getAttributeOptions(
-      baseAttributes,
-      AttributesEnumLength
-    );
-    return totalArray;
-  });
+  const specialAttributeOptions: SpecialAttributeOptionsType =
+    getSpecialAttributeListOptions();
 
-  const [specialAttributeOptions, setSpecialAttributeOptions] = useState<
-    Array<Array<string>>
-  >(() => {
-    let totalArray: Array<Array<string>> = getSpecialAttributeOptions(
-      baseSpecialAttributes,
-      SpecialAttributesLength
-    );
-    return totalArray;
-  });
-
-  function getAttributeOptions(
-    baseAttributeRanges: Array<IAttributeRange>,
-    attributeEnumMax: number
-  ) {
-    let maxAttribute: Array<boolean> = [];
-    let totalArray: Array<Array<string>> = [];
-    for (let attribute = 0; attribute < attributeEnumMax; attribute++) {
-      if (attributes[attribute] === baseAttributeRanges[attribute].maximum)
-        maxAttribute.push(true);
-      else maxAttribute.push(false);
-    }
-    const anyMax = maxAttribute.reduce(
-      (anyPreviousMax, currrentMax) => anyPreviousMax || currrentMax,
-      false
-    );
-    for (let attribute = 0; attribute < attributeEnumMax; attribute++) {
-      let attributeArray: Array<string> = [];
-      for (
-        let value = baseAttributeRanges[attribute].minimum;
-        value < baseAttributeRanges[attribute].maximum;
-        value++
-      ) {
-        const difference = value - attributes[attribute];
-        if (attributePoints - difference >= 0) {
-          attributeArray.push(value.toString());
-        }
-      }
-      if (!anyMax || maxAttribute[attribute]) {
-        const difference =
-          baseAttributeRanges[attribute].maximum - attributes[attribute];
-        if (attributePoints - difference >= 0) {
-          attributeArray.push(
-            baseAttributeRanges[attribute].maximum.toString()
-          );
-        }
-      }
-      totalArray.push(attributeArray);
-    }
-    return totalArray;
+  function getAttributeListOptions() {
+    const newOptions: AttributesOptionsType = {
+      body: [],
+      agility: [],
+      reaction: [],
+      strength: [],
+      willpower: [],
+      logic: [],
+      intuition: [],
+      charisma: [],
+    };
+    newOptions.body = getAttributeOptions(attributeRanges.body);
+    newOptions.agility = getAttributeOptions(attributeRanges.agility);
+    newOptions.reaction = getAttributeOptions(attributeRanges.reaction);
+    newOptions.strength = getAttributeOptions(attributeRanges.strength);
+    newOptions.willpower = getAttributeOptions(attributeRanges.willpower);
+    newOptions.logic = getAttributeOptions(attributeRanges.logic);
+    newOptions.intuition = getAttributeOptions(attributeRanges.intuition);
+    newOptions.charisma = getAttributeOptions(attributeRanges.charisma);
+    return newOptions;
   }
 
-  function getSpecialAttributeOptions(
-    baseAttributeRanges: Array<IAttributeRange>,
-    attributeEnumMax: number
-  ) {
-    let totalArray: Array<Array<string>> = [];
-    for (let attribute = 0; attribute < attributeEnumMax; attribute++) {
-      let attributeArray: Array<string> = [];
-      for (
-        let value = baseAttributeRanges[attribute].minimum;
-        value < baseAttributeRanges[attribute].maximum;
-        value++
-      ) {
-        const difference = value - specialAttributes[attribute];
-        if (specialAttributePoints - difference >= 0) {
-          attributeArray.push(value.toString());
-        }
-      }
-      const difference =
-        baseAttributeRanges[attribute].maximum - specialAttributes[attribute];
-      if (specialAttributePoints - difference >= 0) {
-        attributeArray.push(baseAttributeRanges[attribute].maximum.toString());
-      }
-
-      totalArray.push(attributeArray);
+  function getAttributeOptions(attribute: AttributeRangeType) {
+    const options: Array<string> = [];
+    // Don't do any checks here, only check for valid attributes
+    // when trying to go to the next page/step
+    for (let value = attribute.min; value <= attribute.max; value++) {
+      options.push(value.toString());
     }
-    return totalArray;
+    return options;
+  }
+
+  function getSpecialAttributeListOptions() {
+    const newOptions: SpecialAttributeOptionsType = {
+      edge: [],
+      talent: { type: talentCategoryEnum.Mundane },
+    };
+
+    newOptions.edge = getAttributeOptions(attributeRanges.edge);
+
+    switch (props.talentInfo.category) {
+      case talentCategoryEnum.Magic:
+        newOptions.talent = {
+          type: talentCategoryEnum.Magic,
+          magic: getAttributeOptions(attributeRanges.magic),
+        };
+        break;
+      case talentCategoryEnum.Resonance:
+        newOptions.talent = {
+          type: talentCategoryEnum.Resonance,
+          resonance: getAttributeOptions(attributeRanges.resonance),
+        };
+        break;
+      case talentCategoryEnum.Depth:
+        newOptions.talent = {
+          type: talentCategoryEnum.Depth,
+          depth: getAttributeOptions(attributeRanges.depth),
+        };
+        break;
+      case talentCategoryEnum.Mundane:
+        break;
+    }
+
+    return newOptions;
   }
 
   function changeAttribute(
-    attributeType: AttributesEnum,
+    attributeType: baseAttributeTypeEnum,
     attributeStr: string
   ) {
     let attributeParsed = attributeStr.replace(/\D/g, "");
     if (attributeParsed.length === 0) attributeParsed = "0";
     const attributeValue = parseInt(attributeParsed);
-    const newAttributes = [...attributes];
-    newAttributes[attributeType] = attributeValue;
-    changeIfValid(newAttributes, attributeType);
+    if (isNaN(attributeValue)) {
+      throw Error("attributeValue is NaN");
+    }
+    const newAttributes = props.attributeInfo;
+    let difference = 0;
+    switch (attributeType) {
+      case baseAttributeTypeEnum.Body:
+        difference = newAttributes.body - attributeValue;
+        newAttributes.body = attributeValue;
+        break;
+      case baseAttributeTypeEnum.Agility:
+        difference = newAttributes.agility - attributeValue;
+        newAttributes.agility = attributeValue;
+        break;
+      case baseAttributeTypeEnum.Reaction:
+        difference = newAttributes.reaction - attributeValue;
+        newAttributes.reaction = attributeValue;
+        break;
+      case baseAttributeTypeEnum.Strength:
+        difference = newAttributes.strength - attributeValue;
+        newAttributes.strength = attributeValue;
+        break;
+      case baseAttributeTypeEnum.Willpower:
+        difference = newAttributes.willpower - attributeValue;
+        newAttributes.willpower = attributeValue;
+        break;
+      case baseAttributeTypeEnum.Logic:
+        difference = newAttributes.logic - attributeValue;
+        newAttributes.logic = attributeValue;
+        break;
+      case baseAttributeTypeEnum.Intuition:
+        difference = newAttributes.intuition - attributeValue;
+        newAttributes.intuition = attributeValue;
+        break;
+      case baseAttributeTypeEnum.Charisma:
+        difference = newAttributes.charisma - attributeValue;
+        newAttributes.charisma = attributeValue;
+        break;
+    }
+    props.setAttributeInfo(newAttributes);
+    setAttributePoints(attributePoints + difference);
   }
 
   function changeSpecialAttribute(
-    attributeType: SpecialAttributesEnum,
+    attributeType: specialAttributeTypeEnum,
     attributeStr: string
   ) {
     let attributeParsed = attributeStr.replace(/\D/g, "");
     if (attributeParsed.length === 0) attributeParsed = "0";
     const attributeValue = parseInt(attributeParsed);
-    const newAttributes = [...specialAttributes];
-    newAttributes[attributeType] = attributeValue;
-    changeSpecialIfValid(newAttributes, attributeType);
+    if (isNaN(attributeValue)) {
+      throw Error("attributeValue is NaN");
+    }
+    const newAttributes = props.specialAttributeInfo;
+    let difference = 0;
+    switch (attributeType) {
+      case specialAttributeTypeEnum.Edge:
+        difference = newAttributes.edge - attributeValue;
+        newAttributes.edge = attributeValue;
+        break;
+      case specialAttributeTypeEnum.Magic:
+        if (newAttributes.talent.type !== talentCategoryEnum.Magic) {
+          throw Error("Invalid special attribute type");
+        }
+        difference = newAttributes.talent.magic - attributeValue;
+        newAttributes.talent.magic = attributeValue;
+        break;
+      case specialAttributeTypeEnum.Depth:
+        if (newAttributes.talent.type !== talentCategoryEnum.Depth) {
+          throw Error("Invalid special attribute type");
+        }
+        difference = newAttributes.talent.depth - attributeValue;
+        newAttributes.talent.depth = attributeValue;
+        break;
+      case specialAttributeTypeEnum.Resonance:
+        if (newAttributes.talent.type !== talentCategoryEnum.Resonance) {
+          throw Error("Invalid special attribute type");
+        }
+        difference = newAttributes.talent.resonance - attributeValue;
+        newAttributes.talent.resonance = attributeValue;
+        break;
+    }
+    props.setSpecialAttributeInfo(newAttributes);
+    setSpecialAttributePoints(specialAttributePoints + difference);
   }
-
-  function changeIfValid(
-    newAttributes: Array<number>,
-    attributeType: AttributesEnum
-  ) {
-    newAttributes = checkMinimums(newAttributes, baseAttributes, attributeType);
-    newAttributes = checkMaximums(newAttributes, baseAttributes, attributeType);
-    const newAttributePoints =
-      attributePoints -
-      (newAttributes[attributeType] - attributes[attributeType]);
-    setAttributes(newAttributes);
-    props.setAttributeInfo({
-      body: newAttributes[AttributesEnum.Body],
-      agility: newAttributes[AttributesEnum.Agility],
-      reaction: newAttributes[AttributesEnum.Reaction],
-      strength: newAttributes[AttributesEnum.Strength],
-      willpower: newAttributes[AttributesEnum.Willpower],
-      logic: newAttributes[AttributesEnum.Logic],
-      intuition: newAttributes[AttributesEnum.Intuition],
-      charisma: newAttributes[AttributesEnum.Charisma],
-    });
-    setAttributePoints(newAttributePoints);
-  }
-
-  function changeSpecialIfValid(
-    newAttributes: Array<number>,
-    attributeType: SpecialAttributesEnum
-  ) {
-    newAttributes = checkSpecialMinimums(
-      newAttributes,
-      baseSpecialAttributes,
-      attributeType
-    );
-    newAttributes = checkSpecialMaximums(
-      newAttributes,
-      baseSpecialAttributes,
-      attributeType
-    );
-    const newAttributePoints =
-      specialAttributePoints -
-      (newAttributes[attributeType] - specialAttributes[attributeType]);
-    setSpecialAttributes(newAttributes);
-    props.setSpecialAttributeInfo({
-      edge: newAttributes[SpecialAttributesEnum.Edge],
-      magic: newAttributes[SpecialAttributesEnum.Magic],
-    });
-    setSpecialAttributePoints(newAttributePoints);
-  }
-
-  useEffect(() => {
-    props.setAttributeInfo({
-      body: attributes[AttributesEnum.Body],
-      agility: attributes[AttributesEnum.Agility],
-      reaction: attributes[AttributesEnum.Reaction],
-      strength: attributes[AttributesEnum.Strength],
-      willpower: attributes[AttributesEnum.Willpower],
-      logic: attributes[AttributesEnum.Logic],
-      intuition: attributes[AttributesEnum.Intuition],
-      charisma: attributes[AttributesEnum.Charisma],
-    });
-  }, []);
-
-  useEffect(() => {
-    setAttributeOptions(
-      getAttributeOptions(baseAttributes, AttributesEnumLength)
-    );
-  }, [attributes]);
-
-  useEffect(() => {
-    setSpecialAttributeOptions(
-      getSpecialAttributeOptions(baseSpecialAttributes, SpecialAttributesLength)
-    );
-  }, [specialAttributes]);
 
   return (
     <div>
       <h1>Attribute Selection</h1>
       <div>
         <p>
-          Race: <span id="race">{MetatypeEnum[metatype]}</span>
+          Heritage: <span id="heritage">{props.heritageInfo.heritage}</span>
+          {props.heritageInfo.metavariant !== undefined && (
+            <span id="metavariant">({props.heritageInfo.metavariant})</span>
+          )}
         </p>
       </div>
       <div>
@@ -646,15 +344,15 @@ const AttributesSelect = function (props: IProps) {
           <label htmlFor="body">Body - Resisting physical damage</label>
           <div>
             {"Min/Max: " +
-              baseAttributes[AttributesEnum.Body].minimum +
+              attributeRanges.body.min +
               "/" +
-              baseAttributes[AttributesEnum.Body].maximum}
+              attributeRanges.body.max}
           </div>
           <Dropdown
-            options={attributeOptions[AttributesEnum.Body]}
-            value={attributes[AttributesEnum.Body].toString()}
+            options={attributeOptions.body}
+            value={props.attributeInfo.body.toString()}
             onChange={(event) => {
-              changeAttribute(AttributesEnum.Body, event.value);
+              changeAttribute(baseAttributeTypeEnum.Body, event.value);
             }}
             placeholder={"Select an option"}
             className="body"
@@ -664,15 +362,15 @@ const AttributesSelect = function (props: IProps) {
           <label htmlFor="agility">Agility - Attack accuracy</label>
           <div>
             {"Min/Max: " +
-              baseAttributes[AttributesEnum.Agility].minimum +
+              attributeRanges.agility.min +
               "/" +
-              baseAttributes[AttributesEnum.Agility].maximum}
+              attributeRanges.agility.max}
           </div>
           <Dropdown
-            options={attributeOptions[AttributesEnum.Agility]}
-            value={attributes[AttributesEnum.Agility].toString()}
+            options={attributeOptions.agility}
+            value={props.attributeInfo.agility.toString()}
             onChange={(event) => {
-              changeAttribute(AttributesEnum.Agility, event.value);
+              changeAttribute(baseAttributeTypeEnum.Agility, event.value);
             }}
             placeholder={"Select an option"}
             className="agility"
@@ -682,15 +380,15 @@ const AttributesSelect = function (props: IProps) {
           <label htmlFor="reaction">Reaction - Initiative, Dodging</label>
           <div>
             {"Min/Max: " +
-              baseAttributes[AttributesEnum.Reaction].minimum +
+              attributeRanges.reaction.min +
               "/" +
-              baseAttributes[AttributesEnum.Reaction].maximum}
+              attributeRanges.reaction.max}
           </div>
           <Dropdown
-            options={attributeOptions[AttributesEnum.Reaction]}
-            value={attributes[AttributesEnum.Reaction].toString()}
+            options={attributeOptions.reaction}
+            value={props.attributeInfo.reaction.toString()}
             onChange={(event) => {
-              changeAttribute(AttributesEnum.Reaction, event.value);
+              changeAttribute(baseAttributeTypeEnum.Reaction, event.value);
             }}
             placeholder={"Select an option"}
             className="reaction"
@@ -700,15 +398,15 @@ const AttributesSelect = function (props: IProps) {
           <label htmlFor="strength">Strength - Melee damage</label>
           <div>
             {"Min/Max: " +
-              baseAttributes[AttributesEnum.Strength].minimum +
+              attributeRanges.strength.min +
               "/" +
-              baseAttributes[AttributesEnum.Strength].maximum}
+              attributeRanges.strength.max}
           </div>
           <Dropdown
-            options={attributeOptions[AttributesEnum.Strength]}
-            value={attributes[AttributesEnum.Strength].toString()}
+            options={attributeOptions.strength}
+            value={props.attributeInfo.strength.toString()}
             onChange={(event) => {
-              changeAttribute(AttributesEnum.Strength, event.value);
+              changeAttribute(baseAttributeTypeEnum.Strength, event.value);
             }}
             placeholder={"Select an option"}
             className="strength"
@@ -720,15 +418,15 @@ const AttributesSelect = function (props: IProps) {
           </label>
           <div>
             {"Min/Max: " +
-              baseAttributes[AttributesEnum.Willpower].minimum +
+              attributeRanges.willpower.min +
               "/" +
-              baseAttributes[AttributesEnum.Willpower].maximum}
+              attributeRanges.willpower.max}
           </div>
           <Dropdown
-            options={attributeOptions[AttributesEnum.Willpower]}
-            value={attributes[AttributesEnum.Willpower].toString()}
+            options={attributeOptions.willpower}
+            value={props.attributeInfo.willpower.toString()}
             onChange={(event) => {
-              changeAttribute(AttributesEnum.Willpower, event.value);
+              changeAttribute(baseAttributeTypeEnum.Willpower, event.value);
             }}
             placeholder={"Select an option"}
             className="willpower"
@@ -738,15 +436,15 @@ const AttributesSelect = function (props: IProps) {
           <label htmlFor="logic">Logic - Hermetic spell drain</label>
           <div>
             {"Min/Max: " +
-              baseAttributes[AttributesEnum.Logic].minimum +
+              attributeRanges.logic.min +
               "/" +
-              baseAttributes[AttributesEnum.Logic].maximum}
+              attributeRanges.logic.max}
           </div>
           <Dropdown
-            options={attributeOptions[AttributesEnum.Logic]}
-            value={attributes[AttributesEnum.Logic].toString()}
+            options={attributeOptions.logic}
+            value={props.attributeInfo.logic.toString()}
             onChange={(event) => {
-              changeAttribute(AttributesEnum.Logic, event.value);
+              changeAttribute(baseAttributeTypeEnum.Logic, event.value);
             }}
             placeholder={"Select an option"}
             className="logic"
@@ -756,15 +454,15 @@ const AttributesSelect = function (props: IProps) {
           <label htmlFor="intuition">Intuition - Initiative, Dodging</label>
           <div>
             {"Min/Max: " +
-              baseAttributes[AttributesEnum.Intuition].minimum +
+              attributeRanges.intuition.min +
               "/" +
-              baseAttributes[AttributesEnum.Intuition].maximum}
+              attributeRanges.intuition.max}
           </div>
           <Dropdown
-            options={attributeOptions[AttributesEnum.Intuition]}
-            value={attributes[AttributesEnum.Intuition].toString()}
+            options={attributeOptions.intuition}
+            value={props.attributeInfo.intuition.toString()}
             onChange={(event) => {
-              changeAttribute(AttributesEnum.Intuition, event.value);
+              changeAttribute(baseAttributeTypeEnum.Intuition, event.value);
             }}
             placeholder={"Select an option"}
             className="intuition"
@@ -774,15 +472,15 @@ const AttributesSelect = function (props: IProps) {
           <label htmlFor="charisma">Charisma - Shaman spell drain</label>
           <div>
             {"Min/Max: " +
-              baseAttributes[AttributesEnum.Charisma].minimum +
+              attributeRanges.charisma.min +
               "/" +
-              baseAttributes[AttributesEnum.Charisma].maximum}
+              attributeRanges.charisma.max}
           </div>
           <Dropdown
-            options={attributeOptions[AttributesEnum.Charisma]}
-            value={attributes[AttributesEnum.Charisma].toString()}
+            options={attributeOptions.charisma}
+            value={props.attributeInfo.charisma.toString()}
             onChange={(event) => {
-              changeAttribute(AttributesEnum.Charisma, event.value);
+              changeAttribute(baseAttributeTypeEnum.Charisma, event.value);
             }}
             placeholder={"Select an option"}
             className="charisma"
@@ -793,8 +491,7 @@ const AttributesSelect = function (props: IProps) {
             Initiative - (Reaction + Intuition)
           </label>
           <p id="initiative">
-            {attributes[AttributesEnum.Reaction] +
-              attributes[AttributesEnum.Intuition]}
+            {props.attributeInfo.reaction + props.attributeInfo.intuition}
           </p>
         </div>
       </div>
@@ -807,51 +504,151 @@ const AttributesSelect = function (props: IProps) {
           <label htmlFor="edge">Edge - Luck</label>
           <div>
             {"Min/Max: " +
-              baseSpecialAttributes[SpecialAttributesEnum.Edge].minimum +
+              attributeRanges.edge.min +
               "/" +
-              baseSpecialAttributes[SpecialAttributesEnum.Edge].maximum}
+              attributeRanges.edge.max}
           </div>
           <Dropdown
-            options={specialAttributeOptions[SpecialAttributesEnum.Edge]}
-            value={specialAttributes[SpecialAttributesEnum.Edge].toString()}
+            options={specialAttributeOptions.edge}
+            value={props.specialAttributeInfo.edge.toString()}
             onChange={(event) => {
-              changeSpecialAttribute(SpecialAttributesEnum.Edge, event.value);
+              changeSpecialAttribute(
+                specialAttributeTypeEnum.Edge,
+                event.value
+              );
             }}
             placeholder={"Select an option"}
             className="edge"
           />
         </div>
-        <div id="magic_div">
-          <label htmlFor="magic">Magic or Resonance - </label>
-          {props.magicInfo.magicRating > 0 ? (
-            <Fragment>
-              <div>
-                {"Min/Max: " +
-                  baseSpecialAttributes[SpecialAttributesEnum.Magic].minimum +
-                  "/" +
-                  baseSpecialAttributes[SpecialAttributesEnum.Magic].maximum}
-              </div>
-              <Dropdown
-                options={specialAttributeOptions[SpecialAttributesEnum.Magic]}
-                value={specialAttributes[
-                  SpecialAttributesEnum.Magic
-                ].toString()}
-                onChange={(event) => {
-                  changeSpecialAttribute(
-                    SpecialAttributesEnum.Magic,
-                    event.value
-                  );
-                }}
-                placeholder={"Select an option"}
-                className="magic"
-              />
-            </Fragment>
-          ) : (
-            <p>N/A (Not Awakened)</p>
-          )}
-        </div>
+        <SpecialAttributeSelect
+          attributeRanges={attributeRanges}
+          specialAttributeInfo={props.specialAttributeInfo}
+          specialAttributeOptions={specialAttributeOptions}
+          talentInfo={props.talentInfo}
+          changeSpecialAttribute={changeSpecialAttribute}
+        />
       </div>
     </div>
   );
 };
-export default AttributesSelect;
+
+interface ISpecialAttributeProps {
+  attributeRanges: AttributeRangesType;
+  specialAttributeInfo: SpecialAttributesType;
+  specialAttributeOptions: SpecialAttributeOptionsType;
+  talentInfo: TalentPriorityType;
+  changeSpecialAttribute: (
+    attributeType: specialAttributeTypeEnum,
+    attributeStr: string
+  ) => void;
+}
+
+const SpecialAttributeSelect = function (props: ISpecialAttributeProps) {
+  const talentOptions = props.specialAttributeOptions.talent;
+  const talentAttributePoints = props.specialAttributeInfo.talent;
+  let frag;
+
+  switch (props.talentInfo.category) {
+    case talentCategoryEnum.Magic:
+      if (talentOptions.type !== talentCategoryEnum.Magic) {
+        throw Error("talentCategoryEnum is wrong");
+      }
+      if (talentAttributePoints.type !== talentCategoryEnum.Magic) {
+        throw Error("talentCategoryEnum is wrong");
+      }
+      frag = (
+        <Fragment>
+          <div>
+            {"Min/Max: " +
+              props.attributeRanges.magic.min +
+              "/" +
+              props.attributeRanges.magic.max}
+          </div>
+          <Dropdown
+            options={talentOptions.magic}
+            value={talentAttributePoints.magic.toString()}
+            onChange={(event) => {
+              props.changeSpecialAttribute(
+                specialAttributeTypeEnum.Magic,
+                event.value
+              );
+            }}
+            placeholder={"Select an option"}
+            className="magic"
+          />
+        </Fragment>
+      );
+      break;
+    case talentCategoryEnum.Resonance:
+      if (talentOptions.type !== talentCategoryEnum.Resonance) {
+        throw Error("talentCategoryEnum is wrong");
+      }
+      if (talentAttributePoints.type !== talentCategoryEnum.Resonance) {
+        throw Error("talentCategoryEnum is wrong");
+      }
+      frag = (
+        <Fragment>
+          <div>
+            {"Min/Max: " +
+              props.attributeRanges.resonance.min +
+              "/" +
+              props.attributeRanges.resonance.max}
+          </div>
+          <Dropdown
+            options={talentOptions.resonance}
+            value={talentAttributePoints.resonance.toString()}
+            onChange={(event) => {
+              props.changeSpecialAttribute(
+                specialAttributeTypeEnum.Resonance,
+                event.value
+              );
+            }}
+            placeholder={"Select an option"}
+            className="resonance"
+          />
+        </Fragment>
+      );
+      break;
+    case talentCategoryEnum.Depth:
+      if (talentOptions.type !== talentCategoryEnum.Depth) {
+        throw Error("talentCategoryEnum is wrong");
+      }
+      if (talentAttributePoints.type !== talentCategoryEnum.Depth) {
+        throw Error("talentCategoryEnum is wrong");
+      }
+      frag = (
+        <Fragment>
+          <div>
+            {"Min/Max: " +
+              props.attributeRanges.depth.min +
+              "/" +
+              props.attributeRanges.depth.max}
+          </div>
+          <Dropdown
+            options={talentOptions.depth}
+            value={talentAttributePoints.depth.toString()}
+            onChange={(event) => {
+              props.changeSpecialAttribute(
+                specialAttributeTypeEnum.Depth,
+                event.value
+              );
+            }}
+            placeholder={"Select an option"}
+            className="depth"
+          />
+        </Fragment>
+      );
+      break;
+    case talentCategoryEnum.Mundane:
+      frag = <p>N/A (Not Awakened)</p>;
+      break;
+  }
+
+  return (
+    <div id="magic_div">
+      <label htmlFor="magic">Magic or Resonance - </label>
+      {frag}
+    </div>
+  );
+};

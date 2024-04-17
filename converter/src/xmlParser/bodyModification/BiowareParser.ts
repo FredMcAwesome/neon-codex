@@ -4,11 +4,7 @@ import { XMLParser } from "fast-xml-parser";
 import path from "path";
 import { fileURLToPath } from "url";
 import * as fs from "fs";
-import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
-import type {
-  BiowareListXmlType,
-  BiowareXmlType,
-} from "./BiowareParserSchemas.js";
+import type { BiowareXmlType } from "./BiowareParserSchemas.js";
 import { BiowareListXmlSchema } from "./BiowareParserSchemas.js";
 import { convertBiowareCategory } from "./BiowareParserHelper.js";
 import { convertXmlBonus } from "../common/BonusParserHelper.js";
@@ -66,76 +62,8 @@ export function ParseBioware() {
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
   // })
-  const englishBiowareList: BiowareListXmlType = biowareList.filter(
-    (bioware) => {
-      let found = false;
-      switch (bioware.source) {
-        case sourceBookXmlEnum.HardTargets:
-        case sourceBookXmlEnum.Shadowrun5:
-        case sourceBookXmlEnum.ChromeFlesh:
-        case sourceBookXmlEnum.KillCode:
-        case sourceBookXmlEnum.NoFuture:
-        case sourceBookXmlEnum.DarkTerrors:
-          found = true;
-          break;
-        // Not in english
-        case sourceBookXmlEnum.StateOfTheArtADL:
-        case sourceBookXmlEnum.Schattenhandbuch:
-        case sourceBookXmlEnum.Schattenhandbuch2:
-        case sourceBookXmlEnum.Schattenhandbuch3:
-        case sourceBookXmlEnum.Hamburg:
-        case sourceBookXmlEnum.DatapulsSOTA2080:
-        case sourceBookXmlEnum.DatapulsVerschlusssache:
-        case sourceBookXmlEnum.Shadowrun2050:
-        case 2050:
-        case sourceBookXmlEnum.GrimmesErwachen:
-          break;
-        // Not containing Bioware
-        case sourceBookXmlEnum.TheVladivostokGauntlet:
-        case sourceBookXmlEnum.BulletsAndBandages:
-        case sourceBookXmlEnum.Lockdown:
-        case sourceBookXmlEnum.StolenSouls:
-        case sourceBookXmlEnum.RunAndGun:
-        case sourceBookXmlEnum.RunFaster:
-        case sourceBookXmlEnum.HowlingShadows:
-        case sourceBookXmlEnum.CuttingAces:
-        case sourceBookXmlEnum.TheCompleteTrog:
-        case sourceBookXmlEnum.StreetLethal:
-        case sourceBookXmlEnum.AssassinPrimer:
-        case sourceBookXmlEnum.DataTrails:
-        case sourceBookXmlEnum.GunHeaven3:
-        case sourceBookXmlEnum.KrimeKatalog:
-        case sourceBookXmlEnum.Rigger5:
-        case sourceBookXmlEnum.SailAwaySweetSister:
-        case sourceBookXmlEnum.ShadowsInFocus_SanFranciscoMetroplex:
-        case sourceBookXmlEnum.StreetGrimoire:
-        case sourceBookXmlEnum.TheSeattleGambit:
-        case sourceBookXmlEnum.StreetGrimoireErrata:
-        case sourceBookXmlEnum.ShadowSpells:
-        case sourceBookXmlEnum.NothingPersonal:
-        case sourceBookXmlEnum.BloodyBusiness:
-        case sourceBookXmlEnum.DataTrailsDissonantEchoes:
-        case sourceBookXmlEnum.SplinteredState:
-        case sourceBookXmlEnum.ShadowsInFocus_Butte:
-        case sourceBookXmlEnum.HongKongSourcebook:
-        case sourceBookXmlEnum.ShadowsInFocus_Metropole:
-        case sourceBookXmlEnum.BookOfTheLost:
-        case sourceBookXmlEnum.ForbiddenArcana:
-        case sourceBookXmlEnum.ShadowsInFocus_SiouxNation_CountingCoup:
-        case sourceBookXmlEnum.BetterThanBad:
-        case sourceBookXmlEnum.Aetherology:
-        case sourceBookXmlEnum.ShadowrunMissions0803_10BlockTango:
-        case sourceBookXmlEnum.ShadowrunMissions0804_DirtyLaundry:
-        case sourceBookXmlEnum.ShadowrunQuickStartRules:
-        case sourceBookXmlEnum.SprawlWilds:
-          assert(false, bioware.source);
-          break;
-      }
-      return found;
-    }
-  );
 
-  const biowareListConverted = englishBiowareList.map((bioware) => {
+  const biowareListConverted = biowareList.map((bioware) => {
     const convertedBioware = convertBioware(bioware);
     const check = AugmentationSchema.safeParse(convertedBioware);
     if (!check.success) {

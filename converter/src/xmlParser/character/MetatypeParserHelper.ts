@@ -5,20 +5,20 @@ import type {
   MetatypeXmlQualitiesType,
 } from "./MetatypeParserSchemas.js";
 import assert from "assert";
-import { metatypeCategoryEnum } from "@neon-codex/common/build/enums.js";
+import { heritageCategoryEnum } from "@neon-codex/common/build/enums.js";
 
 export const convertMetatypeCategory = function (category: string | undefined) {
   switch (category) {
     case "Metahuman":
-      return metatypeCategoryEnum.Metahuman;
+      return heritageCategoryEnum.Metahuman;
     case "Metavariant":
-      return metatypeCategoryEnum.Metavariant;
+      return heritageCategoryEnum.Metavariant;
     case "Metasapient":
-      return metatypeCategoryEnum.Metasapient;
+      return heritageCategoryEnum.Metasapient;
     case "Shapeshifter":
-      return metatypeCategoryEnum.Shapeshifter;
+      return heritageCategoryEnum.Shapeshifter;
     case undefined:
-      return metatypeCategoryEnum.Metavariant;
+      return heritageCategoryEnum.Metavariant;
     default:
       assert(false);
   }

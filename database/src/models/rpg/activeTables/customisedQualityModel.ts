@@ -13,7 +13,10 @@ export class CustomisedQualities {
   @Property()
   rating = 0;
 
-  constructor(quality: Ref<Qualities>) {
+  constructor(quality: Ref<Qualities>, rating?: number) {
     this.quality = quality;
+    if (rating !== undefined) {
+      this.rating = rating;
+    }
   }
 }

@@ -5,20 +5,29 @@ import path from "path";
 import { fileURLToPath } from "url";
 import {
   PriorityListXmlSchema,
-  type HeritageType,
+  type HeritageXmlType,
   type PriorityXmlType,
-  type AttributeType,
+  type AttributeXmlType,
   type ResourceXmlType,
   type SkillXmlType,
-  type TalentType,
+  type TalentXmlType,
+  type PriorityUnionListType,
+  type PriorityUnionType,
 } from "./PriorityParserSchemas.js";
 import {
-  PriorityListSchema,
-  PrioritySchema,
+  PriorityTableSchema,
+  type HeritageOptionsPriorityType,
   type PriorityType,
+  type TalentOptionsPriorityType,
+  type AttributePriorityType,
+  type SkillPriorityType,
+  type ResourcePriorityType,
+  type PriorityTableType,
 } from "@neon-codex/common/build/schemas/otherData/prioritySchemas.js";
 import {
   priorityCategoryEnum,
+  priorityLetterEnum,
+  priorityTableRunnerLevelEnum,
   skillTalentSourceEnum,
   talentCategoryEnum,
 } from "@neon-codex/common/build/enums.js";
@@ -55,20 +64,14 @@ export function ParsePriorites() {
   }
 
   const priorityList = priorityListParsed.data;
-  const priorityListConverted = priorityList.map(
+  const priorityCellListConverted = priorityList.map(
     (priority: PriorityXmlType) => {
-      const convertedPriority = convertPriority(priority);
-      const check = PrioritySchema.safeParse(convertedPriority);
-      if (!check.success) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.log(convertedPriority);
-        throw new Error(check.error.message);
-      }
-      return convertedPriority;
+      return convertPriorityCell(priority);
     }
   );
+  const priorityTable = convertPriorityTable(priorityCellListConverted);
   // console.log(priorityListConverted);
-  const check = PriorityListSchema.safeParse(priorityListConverted);
+  const check = PriorityTableSchema.safeParse(priorityTable);
   if (!check.success) {
     throw new Error(check.error.message);
   }
@@ -77,7 +80,7 @@ export function ParsePriorites() {
   );
   fs.writeFile(
     jsonFilePath,
-    JSON.stringify(priorityListConverted, null, 2),
+    JSON.stringify(priorityTable, null, 2),
     (error) => {
       if (error) {
         console.error(error);
@@ -88,7 +91,125 @@ export function ParsePriorites() {
   );
 }
 
-const convertPriority = function (xmlPriority: PriorityXmlType): PriorityType {
+const convertPriorityTable = function (
+  priorityCellList: PriorityUnionListType
+): PriorityTableType {
+  const rowA = priorityCellList.filter(
+    (cell) => cell.rowLetter === priorityLetterEnum.A
+  );
+  const rowB = priorityCellList.filter(
+    (cell) => cell.rowLetter === priorityLetterEnum.B
+  );
+  const rowC = priorityCellList.filter(
+    (cell) => cell.rowLetter === priorityLetterEnum.C
+  );
+  const rowD = priorityCellList.filter(
+    (cell) => cell.rowLetter === priorityLetterEnum.D
+  );
+  const rowE = priorityCellList.filter(
+    (cell) => cell.rowLetter === priorityLetterEnum.E
+  );
+  return {
+    A: convertPriorityRow(rowA),
+    B: convertPriorityRow(rowB),
+    C: convertPriorityRow(rowC),
+    D: convertPriorityRow(rowD),
+    E: convertPriorityRow(rowE),
+  };
+};
+
+const convertPriorityRow = function (
+  priorityRow: PriorityUnionListType
+): PriorityType {
+  const priorityRowNoLetter = priorityRow.map((row) => {
+    const { rowLetter: _a, ...rest } = row;
+    return rest;
+  });
+  const heritageCategory = priorityRowNoLetter.find(
+    (
+      row
+    ): row is {
+      category: priorityCategoryEnum.Heritage;
+    } & HeritageOptionsPriorityType => {
+      return row.category === priorityCategoryEnum.Heritage;
+    }
+  );
+  assert(heritageCategory !== undefined);
+  const { category: _, ...heritage } = heritageCategory;
+
+  const talentCategory = priorityRowNoLetter.find(
+    (
+      row
+    ): row is {
+      category: priorityCategoryEnum.Talent;
+    } & TalentOptionsPriorityType =>
+      row.category === priorityCategoryEnum.Talent
+  );
+  assert(talentCategory !== undefined);
+  const { category: _b, ...talent } = talentCategory;
+
+  const attributeCategory = priorityRowNoLetter.find(
+    (
+      row
+    ): row is {
+      category: priorityCategoryEnum.Attributes;
+    } & AttributePriorityType =>
+      row.category === priorityCategoryEnum.Attributes
+  );
+  assert(attributeCategory !== undefined);
+  const { category: _c, ...attributes } = attributeCategory;
+
+  const skillCategory = priorityRowNoLetter.find(
+    (
+      row
+    ): row is {
+      category: priorityCategoryEnum.Skills;
+    } & SkillPriorityType => row.category === priorityCategoryEnum.Skills
+  );
+  assert(skillCategory !== undefined);
+  const { category: _d, ...skills } = skillCategory;
+
+  const resourceCategories = priorityRowNoLetter.filter(
+    (
+      row
+    ): row is {
+      category: priorityCategoryEnum.Resources;
+      priorityTable: priorityTableRunnerLevelEnum;
+    } & ResourcePriorityType => row.category === priorityCategoryEnum.Resources
+  );
+  assert(resourceCategories !== undefined);
+  const resourceList = resourceCategories.map((resourceCategory) => {
+    const { category: _, ...resource } = resourceCategory;
+    return resource;
+  });
+  const resourceStreetLevel = convertResourceRunnerPriority(
+    resourceList,
+    priorityTableRunnerLevelEnum.StreetLevel
+  );
+  const resourceStandard = convertResourceRunnerPriority(
+    resourceList,
+    priorityTableRunnerLevelEnum.Standard
+  );
+  const resourcePrimeRunner = convertResourceRunnerPriority(
+    resourceList,
+    priorityTableRunnerLevelEnum.PrimeRunner
+  );
+  return {
+    heritages: heritage,
+    talents: talent,
+    attributes: attributes,
+    skills: skills,
+    resources: {
+      streetLevel: resourceStreetLevel,
+      standard: resourceStandard,
+      primeRunner: resourcePrimeRunner,
+    },
+  };
+};
+
+const convertPriorityCell = function (
+  xmlPriority: PriorityXmlType
+): PriorityUnionType {
   switch (xmlPriority.category) {
     case priorityCategoryEnum.Heritage:
       return convertHeritage(xmlPriority);
@@ -103,11 +224,11 @@ const convertPriority = function (xmlPriority: PriorityXmlType): PriorityType {
   }
 };
 
-const convertHeritage = function (xmlHeritage: HeritageType): PriorityType {
+const convertHeritage = function (xmlHeritage: HeritageXmlType) {
   const metatypeXmlList = Array.isArray(xmlHeritage.metatypes.metatype)
     ? xmlHeritage.metatypes.metatype
     : [xmlHeritage.metatypes.metatype];
-  const metatypeList = metatypeXmlList.map((metatype) => {
+  const heritageList = metatypeXmlList.map((metatype) => {
     const metavariantXmlList =
       metatype.metavariants === undefined
         ? undefined
@@ -133,15 +254,22 @@ const convertHeritage = function (xmlHeritage: HeritageType): PriorityType {
       metavariantList: metavariantList,
     };
   });
+  assert(
+    xmlHeritage.name.startsWith("A - ") ||
+      xmlHeritage.name.startsWith("B - ") ||
+      xmlHeritage.name.startsWith("C - ") ||
+      xmlHeritage.name.startsWith("D - ") ||
+      xmlHeritage.name.startsWith("E - ")
+  );
   return {
-    name: xmlHeritage.name,
+    name: xmlHeritage.name.substring(4),
     category: xmlHeritage.category,
     rowLetter: xmlHeritage.value,
-    metatypeList: metatypeList,
+    heritageList: heritageList,
   };
 };
 
-const convertTalent = function (xmlTalent: TalentType): PriorityType {
+const convertTalent = function (xmlTalent: TalentXmlType) {
   const talentList = xmlTalent.talents.talent.map((talent) => {
     const quality =
       talent.qualities === undefined ? undefined : talent.qualities.quality;
@@ -262,17 +390,31 @@ const convertTalent = function (xmlTalent: TalentType): PriorityType {
       }),
     };
   });
+  assert(
+    xmlTalent.name.startsWith("A - ") ||
+      xmlTalent.name.startsWith("B - ") ||
+      xmlTalent.name.startsWith("C - ") ||
+      xmlTalent.name.startsWith("D - ") ||
+      xmlTalent.name.startsWith("E - ")
+  );
   return {
-    name: xmlTalent.name,
+    name: xmlTalent.name.substring(4),
     category: xmlTalent.category,
     rowLetter: xmlTalent.value,
     talentList: talentList,
   };
 };
 
-const convertAttribute = function (xmlAttribute: AttributeType) {
+const convertAttribute = function (xmlAttribute: AttributeXmlType) {
+  assert(
+    xmlAttribute.name.startsWith("A - ") ||
+      xmlAttribute.name.startsWith("B - ") ||
+      xmlAttribute.name.startsWith("C - ") ||
+      xmlAttribute.name.startsWith("D - ") ||
+      xmlAttribute.name.startsWith("E - ")
+  );
   return {
-    name: xmlAttribute.name,
+    name: xmlAttribute.name.substring(4),
     category: xmlAttribute.category,
     rowLetter: xmlAttribute.value,
     attributes: xmlAttribute.attributes,
@@ -280,8 +422,15 @@ const convertAttribute = function (xmlAttribute: AttributeType) {
 };
 
 const convertSkill = function (xmlSkill: SkillXmlType) {
+  assert(
+    xmlSkill.name.startsWith("A - ") ||
+      xmlSkill.name.startsWith("B - ") ||
+      xmlSkill.name.startsWith("C - ") ||
+      xmlSkill.name.startsWith("D - ") ||
+      xmlSkill.name.startsWith("E - ")
+  );
   return {
-    name: xmlSkill.name,
+    name: xmlSkill.name.substring(4),
     category: xmlSkill.category,
     rowLetter: xmlSkill.value,
     skillPoints: xmlSkill.skills,
@@ -290,11 +439,39 @@ const convertSkill = function (xmlSkill: SkillXmlType) {
 };
 
 const convertResource = function (xmlResource: ResourceXmlType) {
+  assert(
+    xmlResource.name.startsWith("A - ") ||
+      xmlResource.name.startsWith("B - ") ||
+      xmlResource.name.startsWith("C - ") ||
+      xmlResource.name.startsWith("D - ") ||
+      xmlResource.name.startsWith("E - ")
+  );
   return {
-    name: xmlResource.name,
+    name: xmlResource.name.substring(4),
     category: xmlResource.category,
     rowLetter: xmlResource.value,
     priorityTable: xmlResource.prioritytable,
     resources: xmlResource.resources,
   };
 };
+function convertResourceRunnerPriority(
+  resourceList: Array<
+    {
+      priorityTable: priorityTableRunnerLevelEnum;
+    } & ResourcePriorityType
+  >,
+  runnerLevel: priorityTableRunnerLevelEnum
+): ResourcePriorityType {
+  const resourcePriorityTable = resourceList.find(
+    (
+      resource
+    ): resource is {
+      priorityTable: priorityTableRunnerLevelEnum;
+    } & ResourcePriorityType => {
+      return resource.priorityTable === runnerLevel;
+    }
+  );
+  assert(resourcePriorityTable !== undefined);
+  const { priorityTable: _, ...resource } = resourcePriorityTable;
+  return resource;
+}

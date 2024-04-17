@@ -63,22 +63,21 @@ import {
 import { WeaponMounts } from "../models/rpg/equipment/rigger/weaponMountModel.js";
 import {
   augmentationTypeEnum,
-  priorityCategoryEnum,
+  heritageCategoryEnum,
+  priorityLetterEnum,
   talentCategoryEnum,
   weaponTypeEnum,
 } from "@neon-codex/common/build/enums.js";
 import { Qualities } from "../models/rpg/traits/qualityModel.js";
 import { getQualities } from "../seeds/rpgSeeds/qualitiesSeed.js";
-import { getMetatypes } from "../seeds/rpgSeeds/metatypesSeed.js";
-import { Metatypes } from "../models/rpg/traits/metatypeModel.js";
-import { getPriorities } from "../seeds/rpgSeeds/prioritySeed.js";
+import { getHeritages } from "../seeds/rpgSeeds/heritagesSeed.js";
 import {
-  HeritagePriorities,
-  TalentPriorities,
-  AttributePriorities,
-  SkillPriorities,
-  ResourcePriorities,
-} from "../models/rpg/otherData/priorityModel.js";
+  Heritages,
+  BaseHeritages,
+  Metavariants,
+} from "../models/rpg/traits/heritageModel.js";
+import { getPriorities } from "../seeds/rpgSeeds/prioritySeed.js";
+import { Priorities } from "../models/rpg/otherData/priorityModel.js";
 import { HeritagePriorityDetails } from "../models/rpg/otherData/heritagePriorityDetailModel.js";
 import {
   DepthTalentPriorityDetails,
@@ -93,12 +92,17 @@ import {
   SkillSourcePriorityDetails,
 } from "../models/rpg/otherData/skillPriorityDetailModel.js";
 import { SkillGroups } from "../models/rpg/abilities/skillGroupModel.js";
+import type {
+  HeritageOptionsPriorityType,
+  TalentOptionsPriorityType,
+} from "@neon-codex/common/build/schemas/otherData/prioritySchemas.js";
+import { CustomisedQualities } from "../models/rpg/activeTables/customisedQualityModel.js";
 
 export class GearSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
     const { stagedSkills, stagedSkillGroups } = getSkills();
     const { unlinkedQualities, stagedQualities } = getQualities();
-    const { unlinkedMetatypes, stagedMetatypes } = getMetatypes();
+    const { unlinkedHeritages, stagedHeritages } = getHeritages();
     const { unlinkedPriorities, stagedPriorities } = getPriorities();
     const stagedWeaponRanges: Array<WeaponRanges> = getRanges();
     // Gear
@@ -133,26 +137,13 @@ export class GearSeeder extends Seeder {
     });
     console.log("Qualities created");
 
-    stagedMetatypes.forEach((metatype) => {
-      em.create(Metatypes, metatype);
+    stagedHeritages.forEach((heritage) => {
+      em.create(Heritages, heritage);
     });
-    console.log("Metatypes created");
+    console.log("Heritages created");
 
     for (const priority of stagedPriorities) {
-      if (priority instanceof HeritagePriorities) {
-        em.create(HeritagePriorities, priority);
-      } else if (priority instanceof TalentPriorities) {
-        em.create(TalentPriorities, priority);
-      } else if (priority instanceof AttributePriorities) {
-        em.create(AttributePriorities, priority);
-      } else if (priority instanceof SkillPriorities) {
-        em.create(SkillPriorities, priority);
-      } else if (priority instanceof ResourcePriorities) {
-        em.create(ResourcePriorities, priority);
-      } else {
-        assert(false, `Unhandled priority type: ${priority.type}`);
-      }
-      await em.flush();
+      em.create(Priorities, priority);
     }
     console.log("Priorities created");
 
@@ -275,7 +266,7 @@ export class GearSeeder extends Seeder {
           const linkedWeapon = await em.findOne(Weapons, {
             name: weapon,
           });
-          assert(linkedWeapon !== null, `undefined Weapon name: ${weapon}`);
+          assert(linkedWeapon !== null, `undefined Weapon name 1: ${weapon}`);
           const referencedWeapon = ref(linkedWeapon);
           relatedQuality.includedWeaponList.add(referencedWeapon);
         }
@@ -309,199 +300,148 @@ export class GearSeeder extends Seeder {
       }
     }
 
-    // Metatypes that have natural weapons
-    for (const metatype of unlinkedMetatypes) {
-      if (metatype.addWeaponList !== undefined) {
-        assert(metatype.addWeaponList.length > 0, "Add weapon list is empty");
-        const relatedMetatype = await em.findOne(Metatypes, {
-          name: metatype.name,
+    // Heritage metavariants
+    for (const heritage of unlinkedHeritages) {
+      if (
+        heritage.category !== heritageCategoryEnum.Metavariant &&
+        heritage.metavariantList !== undefined
+      ) {
+        const relatedHeritage = await em.findOne(Heritages, {
+          name: heritage.name,
         });
         assert(
-          relatedMetatype !== null,
-          `undefined Metatype name: ${metatype.name}`
+          relatedHeritage !== null,
+          `undefined Heritage name 1: ${heritage.name}`
         );
-        for (const weapon of metatype.addWeaponList) {
+        assert(
+          !(relatedHeritage instanceof Metavariants),
+          `relatedHeritage should not be a metavariant ${relatedHeritage.name}`
+        );
+        heritage.metavariantList.forEach((metavariant) => {
+          const loadedMetavariant = unlinkedHeritages.find((heritageLocal) => {
+            return (
+              metavariant === heritageLocal.name &&
+              heritageLocal.category === heritageCategoryEnum.Metavariant &&
+              heritageLocal.baseHeritage === heritage.name
+            );
+          });
+          assert(
+            loadedMetavariant !== undefined,
+            `undefined metavariant name: ${metavariant}`
+          );
+          assert(
+            loadedMetavariant.category === heritageCategoryEnum.Metavariant,
+            `undefined metavariant category is wrong: ${loadedMetavariant.category}`
+          );
+          const stagedMetavariant = new Metavariants({
+            heritage: loadedMetavariant,
+            baseHeritage: ref(relatedHeritage as BaseHeritages),
+          });
+          em.create(Metavariants, stagedMetavariant);
+        });
+      }
+    }
+    // Need to flush here to ensure all metavariants are handled by following loops
+    await em.flush();
+
+    // Heritages that have natural weapons
+    for (const heritage of unlinkedHeritages) {
+      if (heritage.addWeaponList !== undefined) {
+        assert(heritage.addWeaponList.length > 0, "Add weapon list is empty");
+        const relatedHeritage = await em.findOne(Heritages, {
+          name: heritage.name,
+        });
+        assert(
+          relatedHeritage !== null,
+          `undefined Heritage name 2: ${heritage.name}`
+        );
+        for (const weapon of heritage.addWeaponList) {
           const linkedWeapon = await em.findOne(Weapons, {
             name: weapon,
           });
-          assert(linkedWeapon !== null, `undefined Weapon name: ${weapon}`);
+          assert(linkedWeapon !== null, `undefined Weapon name 2: ${weapon}`);
           const referencedWeapon = ref(linkedWeapon);
-          relatedMetatype.includedWeaponList.add(referencedWeapon);
+          relatedHeritage.includedWeaponList.add(referencedWeapon);
         }
       }
     }
-    // Metatypes that give qualities
-    for (const metatype of unlinkedMetatypes) {
-      if (metatype.addQualityList !== undefined) {
-        assert(metatype.addQualityList.length > 0, "Add quality list is empty");
-        const relatedMetatype = await em.findOne(Metatypes, {
-          name: metatype.name,
+    // Heritages that give qualities
+    for (const heritage of unlinkedHeritages) {
+      if (heritage.addQualityList !== undefined) {
+        assert(heritage.addQualityList.length > 0, "Add quality list is empty");
+        const relatedHeritage = await em.findOne(Heritages, {
+          name: heritage.name,
         });
         assert(
-          relatedMetatype !== null,
-          `undefined Metatype name: ${metatype.name}`
+          relatedHeritage !== null,
+          `undefined Heritage name 3: ${heritage.name}`
         );
-        for (const quality of metatype.addQualityList) {
+        for (const quality of heritage.addQualityList) {
           const linkedQuality = await em.findOne(Qualities, {
             name: quality.name,
           });
           assert(linkedQuality !== null, `undefined Quality: ${quality.name}`);
           const referencedQuality = ref(linkedQuality);
-          relatedMetatype.includedQualityList.add(referencedQuality);
+          const customisedQuality = new CustomisedQualities(
+            referencedQuality,
+            quality.rating
+          );
+          em.create(CustomisedQualities, customisedQuality);
+          relatedHeritage.includedQualityList.add(customisedQuality);
         }
       }
     }
-    // Metatypes that forbid qualities
-    for (const metatype of unlinkedMetatypes) {
-      if (metatype.forbiddenQualityList !== undefined) {
+    // Heritages that forbid qualities
+    for (const heritage of unlinkedHeritages) {
+      if (heritage.forbiddenQualityList !== undefined) {
         assert(
-          metatype.forbiddenQualityList.length > 0,
+          heritage.forbiddenQualityList.length > 0,
           "Forbidden quality list is empty"
         );
-        const relatedMetatype = await em.findOne(Metatypes, {
-          name: metatype.name,
+        const relatedHeritage = await em.findOne(Heritages, {
+          name: heritage.name,
         });
         assert(
-          relatedMetatype !== null,
-          `undefined Metatype name: ${metatype.name}`
+          relatedHeritage !== null,
+          `undefined Heritage name 4: ${heritage.name}`
         );
-        for (const quality of metatype.forbiddenQualityList) {
+        for (const quality of heritage.forbiddenQualityList) {
           const linkedQuality = await em.findOne(Qualities, {
-            name: quality.name,
+            name: quality,
           });
-          assert(linkedQuality !== null, `undefined Quality: ${quality.name}`);
+          assert(linkedQuality !== null, `undefined Quality: ${quality}`);
           const referencedQuality = ref(linkedQuality);
-          relatedMetatype.forbiddenQualityList.add(referencedQuality);
+          relatedHeritage.forbiddenQualityList.add(referencedQuality);
         }
       }
     }
 
-    // Priority heritages
-    for (const priority of unlinkedPriorities) {
-      if (priority.category === priorityCategoryEnum.Heritage) {
-        assert(priority.metatypeList.length > 0, "Add metatype list is empty");
-        const relatedPriority = await em.findOne(HeritagePriorities, {
-          name: priority.name,
-        });
-        assert(
-          relatedPriority !== null,
-          `undefined Priority name: ${priority.name}`
-        );
-        for (const metatype of priority.metatypeList) {
-          const linkedMetatype = await em.findOne(Metatypes, {
-            name: metatype.name,
-          });
-          assert(
-            linkedMetatype !== null,
-            `undefined Metatype name: ${metatype.name}`
-          );
-          const referencedMetatype = ref(linkedMetatype);
-          const heritagePriority = new HeritagePriorityDetails({
-            heritage: referencedMetatype,
-            specialAttributePoints: metatype.specialAttributePoints,
-            karmaCost: metatype.karmaCost,
-          });
-          // em.create(HeritagePriorityDetails, heritagePriority);
-          // await em.flush();
-          relatedPriority.heritageList.add(heritagePriority);
-        }
-      }
-    }
-    // Priority Talents
-    for (const priority of unlinkedPriorities) {
-      if (priority.category === priorityCategoryEnum.Talent) {
-        assert(priority.talentList.length > 0, "Add talent list is empty");
-        const relatedPriority = await em.findOne(TalentPriorities, {
-          name: priority.name,
-        });
-        assert(
-          relatedPriority !== null,
-          `undefined Priority name: ${priority.name}`
-        );
-        for (const talent of priority.talentList) {
-          let stagedTalent: TalentPriorityDetails;
-          switch (talent.category) {
-            case talentCategoryEnum.Magic:
-              stagedTalent = new MagicTalentPriorityDetails(talent);
-              break;
-            case talentCategoryEnum.Resonance:
-              stagedTalent = new ResonanceTalentPriorityDetails(talent);
-              break;
-            case talentCategoryEnum.Depth:
-              stagedTalent = new DepthTalentPriorityDetails(talent);
-              break;
-            case talentCategoryEnum.Mundane:
-              stagedTalent = new MundaneTalentPriorityDetails(talent);
-              break;
-          }
-
-          if (talent.includedSkills !== undefined) {
-            if ("source" in talent.includedSkills) {
-              const includedSkills = new SkillSourcePriorityDetails(
-                talent.includedSkills
-              );
-              includedSkills.talentPriorityDetails = ref(stagedTalent);
-              em.create(SkillSourcePriorityDetails, includedSkills);
-            } else {
-              const includedSkills = new SkillPriorityDetails(
-                talent.includedSkills
-              );
-              for (const skill of talent.includedSkills.skillList) {
-                const linkedSkill = await em.findOne(Skills, {
-                  name: skill,
-                });
-                assert(linkedSkill !== null, `undefined Skill: ${skill}`);
-                includedSkills.skillList.add(linkedSkill);
-              }
-              // TODO: check if this creation cascades properly
-              includedSkills.talentPriorityDetails = ref(stagedTalent);
-              em.create(SkillPriorityDetails, includedSkills);
-            }
-          }
-          if (talent.includedSkillGroups !== undefined) {
-            const includedSkillGroups = new SkillGroupPriorityDetails(
-              talent.includedSkillGroups
-            );
-            for (const skillGroup of talent.includedSkillGroups.groupList) {
-              const linkedSkillGroup = await em.findOne(SkillGroups, {
-                name: skillGroup,
-              });
-              assert(
-                linkedSkillGroup !== null,
-                `undefined Skill Group: ${skillGroup}`
-              );
-              includedSkillGroups.skillGroupList.add(linkedSkillGroup);
-            }
-            // TODO: check if this creation cascades properly
-            includedSkillGroups.talentPriorityDetails = ref(stagedTalent);
-            em.create(SkillGroupPriorityDetails, includedSkillGroups);
-          }
-          if (talent.includedQuality !== undefined) {
-            const linkedQuality = await em.findOne(Qualities, {
-              name: talent.includedQuality,
-            });
-            assert(
-              linkedQuality !== null,
-              `undefined Quality: ${talent.includedQuality}`
-            );
-            stagedTalent.includedQuality = ref(linkedQuality);
-          }
-
-          if (stagedTalent instanceof MagicTalentPriorityDetails) {
-            em.create(MagicTalentPriorityDetails, stagedTalent);
-          } else if (stagedTalent instanceof ResonanceTalentPriorityDetails) {
-            em.create(ResonanceTalentPriorityDetails, stagedTalent);
-          } else if (stagedTalent instanceof DepthTalentPriorityDetails) {
-            em.create(DepthTalentPriorityDetails, stagedTalent);
-          } else if (stagedTalent instanceof MundaneTalentPriorityDetails) {
-            em.create(MundaneTalentPriorityDetails, stagedTalent);
-          } else {
-            assert(false, `Unknown talentDetails instance`);
-          }
-          relatedPriority.talentList.add(stagedTalent);
-        }
-      }
-    }
+    // Priority
+    await addHeritageLinks(
+      priorityLetterEnum.A,
+      unlinkedPriorities.A.heritages
+    );
+    await addHeritageLinks(
+      priorityLetterEnum.B,
+      unlinkedPriorities.B.heritages
+    );
+    await addHeritageLinks(
+      priorityLetterEnum.C,
+      unlinkedPriorities.C.heritages
+    );
+    await addHeritageLinks(
+      priorityLetterEnum.D,
+      unlinkedPriorities.D.heritages
+    );
+    await addHeritageLinks(
+      priorityLetterEnum.E,
+      unlinkedPriorities.E.heritages
+    );
+    await addTalentLinks(priorityLetterEnum.A, unlinkedPriorities.A.talents);
+    await addTalentLinks(priorityLetterEnum.B, unlinkedPriorities.B.talents);
+    await addTalentLinks(priorityLetterEnum.C, unlinkedPriorities.C.talents);
+    await addTalentLinks(priorityLetterEnum.D, unlinkedPriorities.D.talents);
+    await addTalentLinks(priorityLetterEnum.E, unlinkedPriorities.E.talents);
 
     // Weapon Accessories that are weapons
     for (const weaponAccessory of unlinkedWeaponAccessories) {
@@ -539,7 +479,7 @@ export class GearSeeder extends Seeder {
           const allowedGear = await em.findOne(Gears, {
             name: gear,
           });
-          assert(allowedGear !== null, `undefined Allowed Gear: ${gear}`);
+          assert(allowedGear !== null, `undefined Allowed Gear (1): ${gear}`);
           const referencedGear = ref(allowedGear);
           relatedWeaponAccessory.allowedGearList.add(referencedGear);
         }
@@ -585,13 +525,16 @@ export class GearSeeder extends Seeder {
         const relatedWeapon = await em.findOne(Weapons, {
           name: weapon.name,
         });
-        assert(relatedWeapon !== null, `undefined Weapon name: ${weapon.name}`);
+        assert(
+          relatedWeapon !== null,
+          `undefined Weapon name 3: ${weapon.name}`
+        );
 
         for (const gear of weapon.allowedGearList) {
           const allowedGear = await em.findOne(Gears, {
             name: gear,
           });
-          assert(allowedGear !== null, `undefined Allowed Gear: ${gear}`);
+          assert(allowedGear !== null, `undefined Allowed Gear (2): ${gear}`);
           const referencedGear = ref(allowedGear);
           relatedWeapon.allowedGearList.add(referencedGear);
         }
@@ -603,7 +546,10 @@ export class GearSeeder extends Seeder {
         const relatedWeapon = await em.findOne(Weapons, {
           name: weapon.name,
         });
-        assert(relatedWeapon !== null, `undefined Weapon name: ${weapon.name}`);
+        assert(
+          relatedWeapon !== null,
+          `undefined Weapon name 4: ${weapon.name}`
+        );
         const referencedWeapon = ref(relatedWeapon);
         for (const accessory of weapon.accessories) {
           const includeWeaponAccessory = await em.findOne(WeaponAccessories, {
@@ -654,7 +600,10 @@ export class GearSeeder extends Seeder {
         weapon.alternativeWeaponForms.length > 0
       ) {
         const relatedWeapon = await em.findOne(Weapons, { name: weapon.name });
-        assert(relatedWeapon !== null, `undefined Weapon name: ${weapon.name}`);
+        assert(
+          relatedWeapon !== null,
+          `undefined Weapon name 5: ${weapon.name}`
+        );
         for (const alternativeFormName of weapon.alternativeWeaponForms) {
           const alternativeWeaponForm = await em.findOne(Weapons, {
             name: alternativeFormName,
@@ -673,7 +622,10 @@ export class GearSeeder extends Seeder {
     for (const weapon of unlinkedWeapons) {
       if ("rangeList" in weapon) {
         const relatedWeapon = await em.findOne(Weapons, { name: weapon.name });
-        assert(relatedWeapon !== null, `undefined Weapon name: ${weapon.name}`);
+        assert(
+          relatedWeapon !== null,
+          `undefined Weapon name 6: ${weapon.name}`
+        );
         const rangeList = weapon.rangeList;
         assert(rangeList.length > 0, "rangeList.length = 0");
         for (const currentRange of rangeList) {
@@ -699,7 +651,10 @@ export class GearSeeder extends Seeder {
         const relatedWeapon = await em.findOne(FirearmWeapons, {
           name: weapon.name,
         });
-        assert(relatedWeapon !== null, `undefined Weapon name: ${weapon.name}`);
+        assert(
+          relatedWeapon !== null,
+          `undefined Weapon name 7: ${weapon.name}`
+        );
         for (const underbarrelWeaponName of weapon.firearmOptions
           .underbarrelWeapons) {
           const underbarrelWeapon = await em.findOne(Weapons, {
@@ -880,7 +835,10 @@ export class GearSeeder extends Seeder {
           const allowedGear = await em.findOne(Gears, {
             name: gear,
           });
-          assert(allowedGear !== null, `undefined Allowed Gear: ${gear}`);
+          assert(
+            allowedGear !== null,
+            `undefined Allowed Gear (3): ${gear}, for Augmentations: ${augmentation.name}`
+          );
           const referencedGear = ref(allowedGear);
           relatedAugmentation.allowedGearList.add(referencedGear);
         }
@@ -1066,7 +1024,7 @@ export class GearSeeder extends Seeder {
             });
             assert(
               relatedWeapon !== null,
-              `undefined Weapon name: ${weaponMount.includedWeapon}`
+              `undefined Weapon name 8: ${weaponMount.includedWeapon}`
             );
             referencedWeapon = ref(relatedWeapon);
           }
@@ -1089,7 +1047,7 @@ export class GearSeeder extends Seeder {
             );
             assert(
               relatedVehicleMountMod !== null,
-              `undefined Weapon name: ${weaponMount.includedMountMod}`
+              `undefined Weapon name 9: ${weaponMount.includedMountMod}`
             );
             stagedIncludedWeaponMount.mountMods.add(relatedVehicleMountMod);
           }
@@ -1143,7 +1101,7 @@ export class GearSeeder extends Seeder {
           });
           assert(
             allowedGear !== null,
-            `undefined Allowed Gear: ${unlinkedAllowedGear}`
+            `undefined Allowed Gear (4): ${unlinkedAllowedGear}`
           );
           const referencedGear = ref(allowedGear);
           relatedGear.allowedGearList.add(referencedGear);
@@ -1151,5 +1109,133 @@ export class GearSeeder extends Seeder {
       }
     }
     console.log("Gear relationships associated");
+
+    async function addTalentLinks(
+      rowLetter: priorityLetterEnum,
+      talentPriority: TalentOptionsPriorityType
+    ) {
+      assert(talentPriority.talentList.length > 0, "Add talent list is empty");
+      const relatedPriority = await em.findOne(Priorities, {
+        rowLetter: rowLetter,
+      });
+      assert(relatedPriority !== null, `undefined Priority row: ${rowLetter}`);
+      for (const talent of talentPriority.talentList) {
+        let stagedTalent: TalentPriorityDetails;
+        switch (talent.category) {
+          case talentCategoryEnum.Magic:
+            stagedTalent = new MagicTalentPriorityDetails(talent);
+            break;
+          case talentCategoryEnum.Resonance:
+            stagedTalent = new ResonanceTalentPriorityDetails(talent);
+            break;
+          case talentCategoryEnum.Depth:
+            stagedTalent = new DepthTalentPriorityDetails(talent);
+            break;
+          case talentCategoryEnum.Mundane:
+            stagedTalent = new MundaneTalentPriorityDetails(talent);
+            break;
+        }
+
+        if (talent.includedSkills !== undefined) {
+          if ("source" in talent.includedSkills) {
+            const includedSkills = new SkillSourcePriorityDetails(
+              talent.includedSkills
+            );
+            includedSkills.talentPriorityDetails = ref(stagedTalent);
+            em.create(SkillSourcePriorityDetails, includedSkills);
+          } else {
+            const includedSkills = new SkillPriorityDetails(
+              talent.includedSkills
+            );
+            for (const skill of talent.includedSkills.skillList) {
+              const linkedSkill = await em.findOne(Skills, {
+                name: skill,
+              });
+              assert(linkedSkill !== null, `undefined Skill: ${skill}`);
+              includedSkills.skillList.add(linkedSkill);
+            }
+            // TODO: check if this creation cascades properly
+            includedSkills.talentPriorityDetails = ref(stagedTalent);
+            em.create(SkillPriorityDetails, includedSkills);
+          }
+        }
+        if (talent.includedSkillGroups !== undefined) {
+          const includedSkillGroups = new SkillGroupPriorityDetails(
+            talent.includedSkillGroups
+          );
+          for (const skillGroup of talent.includedSkillGroups.groupList) {
+            const linkedSkillGroup = await em.findOne(SkillGroups, {
+              name: skillGroup,
+            });
+            assert(
+              linkedSkillGroup !== null,
+              `undefined Skill Group: ${skillGroup}`
+            );
+            includedSkillGroups.skillGroupList.add(linkedSkillGroup);
+          }
+          // TODO: check if this creation cascades properly
+          includedSkillGroups.talentPriorityDetails = ref(stagedTalent);
+          em.create(SkillGroupPriorityDetails, includedSkillGroups);
+        }
+        if (talent.includedQuality !== undefined) {
+          const linkedQuality = await em.findOne(Qualities, {
+            name: talent.includedQuality,
+          });
+          assert(
+            linkedQuality !== null,
+            `undefined Quality: ${talent.includedQuality}`
+          );
+          stagedTalent.includedQuality = ref(linkedQuality);
+        }
+
+        if (stagedTalent instanceof MagicTalentPriorityDetails) {
+          em.create(MagicTalentPriorityDetails, stagedTalent);
+        } else if (stagedTalent instanceof ResonanceTalentPriorityDetails) {
+          em.create(ResonanceTalentPriorityDetails, stagedTalent);
+        } else if (stagedTalent instanceof DepthTalentPriorityDetails) {
+          em.create(DepthTalentPriorityDetails, stagedTalent);
+        } else if (stagedTalent instanceof MundaneTalentPriorityDetails) {
+          em.create(MundaneTalentPriorityDetails, stagedTalent);
+        } else {
+          assert(false, `Unknown talentDetails instance`);
+        }
+        relatedPriority.talentList.add(stagedTalent);
+      }
+    }
+
+    async function addHeritageLinks(
+      rowLetter: priorityLetterEnum,
+      heritagePriority: HeritageOptionsPriorityType
+    ) {
+      assert(
+        heritagePriority.heritageList.length > 0,
+        "Add heritage list is empty"
+      );
+      const relatedPriority = await em.findOne(Priorities, {
+        rowLetter: rowLetter,
+      });
+      assert(
+        relatedPriority !== null,
+        `undefined Priority rowLetter: ${rowLetter}`
+      );
+      for (const heritage of heritagePriority.heritageList) {
+        const linkedHeritage = await em.findOne(Heritages, {
+          name: heritage.name,
+        });
+        assert(
+          linkedHeritage !== null,
+          `undefined Heritage name 5: ${heritage.name}`
+        );
+        const referencedHeritage = ref(linkedHeritage);
+        const heritagePriority = new HeritagePriorityDetails({
+          heritage: referencedHeritage,
+          specialAttributePoints: heritage.specialAttributePoints,
+          karmaCost: heritage.karmaCost,
+        });
+        // em.create(HeritagePriorityDetails, heritagePriority);
+        // await em.flush();
+        relatedPriority.heritageList.add(heritagePriority);
+      }
+    }
   }
 }

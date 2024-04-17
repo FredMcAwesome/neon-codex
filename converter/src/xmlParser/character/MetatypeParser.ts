@@ -1,10 +1,9 @@
 import {
-  MetatypeListSchema,
-  MetatypeSchema,
-  type BaseMetatypeType,
-  type MetatypeType,
+  HeritageListSchema,
+  type HeritageListType,
+  type HeritageType,
   type MovementStrideType,
-} from "@neon-codex/common/build/schemas/abilities/metatypeSchemas.js";
+} from "@neon-codex/common/build/schemas/abilities/heritageSchemas.js";
 import assert from "assert";
 import { XMLParser } from "fast-xml-parser";
 import fs from "fs";
@@ -21,6 +20,8 @@ import {
   convertMetatypeQualities,
   convertMovement,
 } from "./MetatypeParserHelper.js";
+import { ForbiddenQualityListSchema } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
+import { heritageCategoryEnum } from "@neon-codex/common/build/enums.js";
 
 export function ParseMetatypes() {
   const currentPath = import.meta.url;
@@ -49,20 +50,20 @@ export function ParseMetatypes() {
   }
 
   const metatypeList = metatypeListParsed.data;
-  const metatypeListConverted = metatypeList.map(
-    (metatype: MetatypeXmlType) => {
-      const convertedMetatype = convertMetatype(metatype);
-      const check = MetatypeSchema.safeParse(convertedMetatype);
-      if (!check.success) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.log(convertedMetatype);
-        throw new Error(check.error.message);
-      }
-      return convertedMetatype;
+  let metatypeListConverted: HeritageListType = [];
+  metatypeList.forEach((metatype) => {
+    const convertedMetatypeList = convertMetatype(metatype);
+    const check = HeritageListSchema.safeParse(convertedMetatypeList);
+    if (!check.success) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      console.log(convertedMetatypeList);
+      throw new Error(check.error.message);
     }
-  );
+    metatypeListConverted = metatypeListConverted.concat(convertedMetatypeList);
+  });
+
   // console.log(metatypeListConverted);
-  const check = MetatypeListSchema.safeParse(metatypeListConverted);
+  const check = HeritageListSchema.safeParse(metatypeListConverted);
   if (!check.success) {
     throw new Error(check.error.message);
   }
@@ -82,24 +83,38 @@ export function ParseMetatypes() {
   );
 }
 
-const convertMetatype = function (xmlMetatype: MetatypeXmlType): MetatypeType {
-  const metatype: MetatypeType = convertBaseMetatype(xmlMetatype);
+const convertMetatype = function (
+  xmlMetatype: MetatypeXmlType
+): Array<HeritageType> {
+  const metatypeList: Array<HeritageType> = [];
+  const metatype: HeritageType = convertBaseMetatype(xmlMetatype);
+
   if (xmlMetatype.metavariants !== undefined) {
     const metavariantXmlList = Array.isArray(
       xmlMetatype.metavariants.metavariant
     )
       ? xmlMetatype.metavariants.metavariant
       : [xmlMetatype.metavariants.metavariant];
-    metatype.metavariantList = metavariantXmlList.map((metavariant) => {
-      return convertBaseMetatype(metavariant);
+    const metavariantList = metavariantXmlList.map((metavariant) => {
+      return convertBaseMetatype(metavariant, xmlMetatype.name);
+    });
+    assert(metatype.category !== heritageCategoryEnum.Metavariant);
+    metatype.metavariantList = metavariantList.map((metavariant) => {
+      return metavariant.name;
+    });
+    metavariantList.forEach((metavariant) => {
+      metatypeList.push(metavariant);
     });
   }
-  return metatype;
+  metatypeList.push(metatype);
+
+  return metatypeList;
 };
 
 const convertBaseMetatype = function (
-  xmlMetatype: BaseMetatypeXmlType
-): BaseMetatypeType {
+  xmlMetatype: BaseMetatypeXmlType,
+  baseHeritage?: string
+): HeritageType {
   const category = convertMetatypeCategory(xmlMetatype.category);
 
   const bodyAttributeRange = {
@@ -221,15 +236,49 @@ const convertBaseMetatype = function (
   }
   let forbiddenQualityList;
   if (xmlMetatype.qualityrestriction !== undefined) {
-    forbiddenQualityList = convertMetatypeQualities(
+    let parsingQualityList = convertMetatypeQualities(
       xmlMetatype.qualityrestriction
     );
+    const parsedQualityList = ForbiddenQualityListSchema.safeParse(
+      parsingQualityList.map((quality) => {
+        assert(quality.rating === undefined);
+        return quality.name;
+      })
+    );
+    assert(
+      parsedQualityList.success,
+      `Forbidden quality list parse failed: ${xmlMetatype.name}`
+    );
+    forbiddenQualityList = parsedQualityList.data;
   }
+
+  let typeInformation:
+    | (
+        | { category: heritageCategoryEnum.Metahuman }
+        | { category: heritageCategoryEnum.Metasapient }
+        | { category: heritageCategoryEnum.Shapeshifter }
+      )
+    | {
+        category: heritageCategoryEnum.Metavariant;
+        baseHeritage: string;
+      }
+    | undefined;
+  if (category === heritageCategoryEnum.Metavariant) {
+    assert(baseHeritage !== undefined);
+    typeInformation = {
+      category: heritageCategoryEnum.Metavariant as const,
+      baseHeritage: baseHeritage,
+    };
+  } else {
+    typeInformation = { category: category };
+  }
+  assert(typeInformation !== undefined);
+
   return {
     // id: xmlMetatype.id,
     name: xmlMetatype.name,
     description: "",
-    category: category,
+    ...typeInformation,
     pointBuyKarmaCost: xmlMetatype.karma,
     // priorityKarmaCost: priorityKarmaCost,
     ...(xmlMetatype.halveattributepoints !== undefined && {

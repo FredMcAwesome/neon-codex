@@ -6,7 +6,7 @@ import type {
   CustomSkillListType,
   CustomSkillType,
 } from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
-import type { ISkillPoints } from "./PriorityImports.js";
+import type { SkillPointInfoType } from "../commonSchemas.js";
 
 // first rating empty for no points in skill
 const skillRating = [
@@ -26,8 +26,8 @@ const skillRating = [
 ];
 
 interface IProps {
-  skillPointItems: ISkillPoints;
-  setSkillPoints: (loadingSkillPoints: ISkillPoints) => void;
+  skillPointItems: SkillPointInfoType;
+  setSkillPoints: (loadingSkillPoints: SkillPointInfoType) => void;
   skillSelections: CustomSkillListType;
   setSkillSelections: (loadingSkillPoints: CustomSkillListType) => void;
 }
@@ -187,7 +187,7 @@ interface ISkillListProp {
     skillGroupPoints: number
   ) => void;
   skillType: skillCategoryEnum;
-  skillPointItems: ISkillPoints;
+  skillPointItems: SkillPointInfoType;
 }
 
 const SkillList = function ({

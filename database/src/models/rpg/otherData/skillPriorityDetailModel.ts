@@ -43,17 +43,10 @@ export abstract class SkillBasePriorityDetails {
   }
 }
 
-@Entity()
-export abstract class SkillSpecificityPriorityDetails extends SkillBasePriorityDetails {
-  constructor(dto: SkillBaseType) {
-    super(dto);
-  }
-}
-
 @Entity({
   discriminatorValue: "SkillPriorityDetails",
 })
-export class SkillPriorityDetails extends SkillSpecificityPriorityDetails {
+export class SkillPriorityDetails extends SkillBasePriorityDetails {
   @ManyToMany({ entity: () => Skills, owner: true, joinColumn: "join_id" })
   skillList: Collection<Skills> = new Collection<Skills>(this);
 
@@ -65,7 +58,7 @@ export class SkillPriorityDetails extends SkillSpecificityPriorityDetails {
 @Entity({
   discriminatorValue: "SkillSourcePriorityDetails",
 })
-export class SkillSourcePriorityDetails extends SkillSpecificityPriorityDetails {
+export class SkillSourcePriorityDetails extends SkillBasePriorityDetails {
   @Enum(() => skillTalentSourceEnum)
   source!: skillTalentSourceEnum;
 

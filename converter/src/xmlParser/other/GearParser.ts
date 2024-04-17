@@ -4,12 +4,9 @@ import { XMLParser } from "fast-xml-parser";
 import path from "path";
 import { fileURLToPath } from "url";
 import * as fs from "fs";
-import {
-  GearXmlCategoryEnum,
-  sourceBookXmlEnum,
-} from "../common/ParserCommonDefines.js";
+import { GearXmlCategoryEnum } from "../common/ParserCommonDefines.js";
 import { GearListXmlSchema } from "./GearParserSchemas.js";
-import type { GearListXmlType, GearXmlType } from "./GearParserSchemas.js";
+import type { GearXmlType } from "./GearParserSchemas.js";
 import {
   convertGearCategory,
   convertRatingMeaning,
@@ -71,74 +68,8 @@ export function ParseGear() {
   // .filter((gear) => {
   //   return gear.name === "Detonating Cord, High Yield";
   // });
-  const englishGearList: GearListXmlType = gearList.filter((gear) => {
-    let found = false;
-    switch (gear.source) {
-      case sourceBookXmlEnum.StreetLethal:
-      case sourceBookXmlEnum.RunAndGun:
-      case sourceBookXmlEnum.Shadowrun5:
-      case sourceBookXmlEnum.HardTargets:
-      case sourceBookXmlEnum.TheSeattleGambit:
-      case sourceBookXmlEnum.KillCode:
-      case sourceBookXmlEnum.KrimeKatalog:
-      case sourceBookXmlEnum.Rigger5:
-      case sourceBookXmlEnum.StolenSouls:
-      case sourceBookXmlEnum.BookOfTheLost:
-      case sourceBookXmlEnum.RunFaster:
-      case sourceBookXmlEnum.DataTrails:
-      case sourceBookXmlEnum.ChromeFlesh:
-      case sourceBookXmlEnum.Lockdown:
-      case sourceBookXmlEnum.SplinteredState:
-      case sourceBookXmlEnum.HongKongSourcebook:
-      case sourceBookXmlEnum.CuttingAces:
-      case sourceBookXmlEnum.TheCompleteTrog:
-      case sourceBookXmlEnum.BulletsAndBandages:
-      case sourceBookXmlEnum.StreetGrimoire:
-      case sourceBookXmlEnum.ForbiddenArcana:
-      case sourceBookXmlEnum.ShadowSpells:
-      case sourceBookXmlEnum.ShadowrunMissions0803_10BlockTango:
-      case sourceBookXmlEnum.ShadowrunMissions0804_DirtyLaundry:
-      case sourceBookXmlEnum.TheVladivostokGauntlet:
-      case sourceBookXmlEnum.ShadowrunQuickStartRules:
-      case sourceBookXmlEnum.HowlingShadows:
-      case sourceBookXmlEnum.DarkTerrors:
-      case sourceBookXmlEnum.BetterThanBad:
-      case sourceBookXmlEnum.NoFuture:
-        found = true;
-        break;
-      // Not in english
-      case sourceBookXmlEnum.StateOfTheArtADL:
-      case sourceBookXmlEnum.Schattenhandbuch:
-      case sourceBookXmlEnum.Schattenhandbuch2:
-      case sourceBookXmlEnum.Schattenhandbuch3:
-      case sourceBookXmlEnum.Hamburg:
-      case sourceBookXmlEnum.DatapulsSOTA2080:
-      case sourceBookXmlEnum.DatapulsVerschlusssache:
-      case sourceBookXmlEnum.Shadowrun2050:
-      case 2050:
-      case sourceBookXmlEnum.GrimmesErwachen:
-        break;
-      // Not containing Generic Gear
-      case sourceBookXmlEnum.AssassinPrimer:
-      case sourceBookXmlEnum.GunHeaven3:
-      case sourceBookXmlEnum.SailAwaySweetSister:
-      case sourceBookXmlEnum.ShadowsInFocus_SanFranciscoMetroplex:
-      case sourceBookXmlEnum.StreetGrimoireErrata:
-      case sourceBookXmlEnum.NothingPersonal:
-      case sourceBookXmlEnum.BloodyBusiness:
-      case sourceBookXmlEnum.DataTrailsDissonantEchoes:
-      case sourceBookXmlEnum.ShadowsInFocus_Butte:
-      case sourceBookXmlEnum.ShadowsInFocus_Metropole:
-      case sourceBookXmlEnum.ShadowsInFocus_SiouxNation_CountingCoup:
-      case sourceBookXmlEnum.Aetherology:
-      case sourceBookXmlEnum.SprawlWilds:
-        assert(false, gear.source);
-        break;
-    }
-    return found;
-  });
 
-  const gearListConverted = englishGearList
+  const gearListConverted = gearList
     // .filter((weapon) => weapon.name === "Osmium Mace")
     .map((gear) => {
       const convertedGear = convertGear(gear);

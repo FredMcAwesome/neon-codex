@@ -37,6 +37,11 @@ export const BonusQualityListSchema = zod.array(
 );
 export type BonusQualityListType = zod.infer<typeof BonusQualityListSchema>;
 
+export const ForbiddenQualityListSchema = zod.array(zod.string());
+export type ForbiddenQualityListType = zod.infer<
+  typeof ForbiddenQualityListSchema
+>;
+
 const AddictionResistanceSchema = zod
   .object({
     physiological: zod.optional(

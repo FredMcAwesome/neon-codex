@@ -4,9 +4,8 @@ import { XMLParser } from "fast-xml-parser";
 import path from "path";
 import { fileURLToPath } from "url";
 import * as fs from "fs";
-import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
 import { SpellListXmlSchema } from "./SpellParserSchemas.js";
-import type { SpellListXmlType, SpellXmlType } from "./SpellParserSchemas.js";
+import type { SpellXmlType } from "./SpellParserSchemas.js";
 import {
   convertSpellDamageType,
   convertSpellType,
@@ -58,74 +57,8 @@ export function ParseSpells() {
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
   // })
-  const englishSpellsList: SpellListXmlType = spellList.filter((spell) => {
-    let found = false;
-    switch (spell.source) {
-      case sourceBookXmlEnum.Shadowrun5:
-      case sourceBookXmlEnum.StreetGrimoire:
-      case sourceBookXmlEnum.BulletsAndBandages:
-      case sourceBookXmlEnum.StolenSouls:
-      case sourceBookXmlEnum.ShadowSpells:
-      case sourceBookXmlEnum.HardTargets:
-      case sourceBookXmlEnum.CuttingAces:
-      case sourceBookXmlEnum.ForbiddenArcana:
-      case sourceBookXmlEnum.BetterThanBad:
-        found = true;
-        break;
-      // Not in english
-      case sourceBookXmlEnum.StateOfTheArtADL:
-      case sourceBookXmlEnum.Schattenhandbuch:
-      case sourceBookXmlEnum.Schattenhandbuch2:
-      case sourceBookXmlEnum.Schattenhandbuch3:
-      case sourceBookXmlEnum.Hamburg:
-      case sourceBookXmlEnum.DatapulsSOTA2080:
-      case sourceBookXmlEnum.DatapulsVerschlusssache:
-      case sourceBookXmlEnum.Shadowrun2050:
-      case 2050:
-      case sourceBookXmlEnum.GrimmesErwachen:
-        break;
-      // Not containing Spells
-      case sourceBookXmlEnum.RunAndGun:
-      case sourceBookXmlEnum.RunFaster:
-      case sourceBookXmlEnum.HowlingShadows:
-      case sourceBookXmlEnum.TheCompleteTrog:
-      case sourceBookXmlEnum.StreetLethal:
-      case sourceBookXmlEnum.KillCode:
-      case sourceBookXmlEnum.NoFuture:
-      case sourceBookXmlEnum.AssassinPrimer:
-      case sourceBookXmlEnum.ChromeFlesh:
-      case sourceBookXmlEnum.DataTrails:
-      case sourceBookXmlEnum.GunHeaven3:
-      case sourceBookXmlEnum.KrimeKatalog:
-      case sourceBookXmlEnum.Lockdown:
-      case sourceBookXmlEnum.Rigger5:
-      case sourceBookXmlEnum.SailAwaySweetSister:
-      case sourceBookXmlEnum.ShadowsInFocus_SanFranciscoMetroplex:
-      case sourceBookXmlEnum.TheSeattleGambit:
-      case sourceBookXmlEnum.StreetGrimoireErrata:
-      case sourceBookXmlEnum.NothingPersonal:
-      case sourceBookXmlEnum.BloodyBusiness:
-      case sourceBookXmlEnum.DataTrailsDissonantEchoes:
-      case sourceBookXmlEnum.TheVladivostokGauntlet:
-      case sourceBookXmlEnum.SplinteredState:
-      case sourceBookXmlEnum.ShadowsInFocus_Butte:
-      case sourceBookXmlEnum.HongKongSourcebook:
-      case sourceBookXmlEnum.ShadowsInFocus_Metropole:
-      case sourceBookXmlEnum.BookOfTheLost:
-      case sourceBookXmlEnum.ShadowsInFocus_SiouxNation_CountingCoup:
-      case sourceBookXmlEnum.DarkTerrors:
-      case sourceBookXmlEnum.Aetherology:
-      case sourceBookXmlEnum.ShadowrunMissions0803_10BlockTango:
-      case sourceBookXmlEnum.ShadowrunMissions0804_DirtyLaundry:
-      case sourceBookXmlEnum.ShadowrunQuickStartRules:
-      case sourceBookXmlEnum.SprawlWilds:
-        assert(false, spell.source);
-        break;
-    }
-    return found;
-  });
 
-  const spellListConverted = englishSpellsList
+  const spellListConverted = spellList
     // .filter((weapon) => weapon.name === "Osmium Mace")
     .map((spell) => {
       const convertedSpell = convertSpell(spell);

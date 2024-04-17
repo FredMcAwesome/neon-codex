@@ -6,7 +6,7 @@ import { MikroORM } from "@mikro-orm/postgresql";
 
 // Create a singleton equivilant orm creator
 let cache: MikroORM;
-export const init = async () => {
+export const init = async function () {
   if (cache !== undefined) {
     return cache;
   }

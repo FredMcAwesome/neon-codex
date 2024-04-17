@@ -1236,6 +1236,22 @@
     "page": 73
   },
   {
+    "name": "Internal Air Tank (5 Minutes)",
+    "description": "",
+    "category": "General",
+    "maxRating": 1,
+    "damageReduction": 0,
+    "capacityCost": [0],
+    "userSelectable": false,
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Hamburg",
+    "page": 173
+  },
+  {
     "name": "Grey Mana Integration",
     "description": "",
     "category": "General",

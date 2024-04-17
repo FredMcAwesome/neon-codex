@@ -4,7 +4,6 @@ import { XMLParser } from "fast-xml-parser";
 import path from "path";
 import { fileURLToPath } from "url";
 import * as fs from "fs";
-import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
 import { VehicleModListXmlSchema } from "./VehicleModParserSchemas.js";
 import type {
   VehicleModListXmlType,
@@ -86,76 +85,8 @@ export function ParseVehicleMods() {
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
   // })
-  const englishVehicleModList: VehicleModListXmlType = vehicleModList.filter(
-    (vehicleMod) => {
-      let found = false;
-      switch (vehicleMod.source) {
-        case sourceBookXmlEnum.Shadowrun5:
-        case sourceBookXmlEnum.Rigger5:
-        case sourceBookXmlEnum.StolenSouls:
-        case sourceBookXmlEnum.NothingPersonal:
-        case sourceBookXmlEnum.BulletsAndBandages:
-        case sourceBookXmlEnum.HardTargets:
-        case sourceBookXmlEnum.TheVladivostokGauntlet:
-        case sourceBookXmlEnum.CuttingAces:
-        case sourceBookXmlEnum.TheCompleteTrog:
-        case sourceBookXmlEnum.ShadowsInFocus_Metropole:
-        case sourceBookXmlEnum.TheSeattleGambit:
-        case sourceBookXmlEnum.StreetLethal:
-        case sourceBookXmlEnum.NoFuture:
-        case sourceBookXmlEnum.KrimeKatalog:
-        case sourceBookXmlEnum.RunFaster:
-          found = true;
-          break;
-        // Not in english
-        case sourceBookXmlEnum.StateOfTheArtADL:
-        case sourceBookXmlEnum.Schattenhandbuch:
-        case sourceBookXmlEnum.Schattenhandbuch2:
-        case sourceBookXmlEnum.Schattenhandbuch3:
-        case sourceBookXmlEnum.Hamburg:
-        case sourceBookXmlEnum.DatapulsSOTA2080:
-        case sourceBookXmlEnum.DatapulsVerschlusssache:
-        case sourceBookXmlEnum.Shadowrun2050:
-        case 2050:
-        case sourceBookXmlEnum.GrimmesErwachen:
-          break;
-        // Not containing Cyberware
-        case sourceBookXmlEnum.KillCode:
-        case sourceBookXmlEnum.ChromeFlesh:
-        case sourceBookXmlEnum.Lockdown:
-        case sourceBookXmlEnum.HowlingShadows:
-        case sourceBookXmlEnum.DarkTerrors:
-        case sourceBookXmlEnum.RunAndGun:
-        case sourceBookXmlEnum.AssassinPrimer:
-        case sourceBookXmlEnum.DataTrails:
-        case sourceBookXmlEnum.GunHeaven3:
-        case sourceBookXmlEnum.SailAwaySweetSister:
-        case sourceBookXmlEnum.ShadowsInFocus_SanFranciscoMetroplex:
-        case sourceBookXmlEnum.StreetGrimoire:
-        case sourceBookXmlEnum.StreetGrimoireErrata:
-        case sourceBookXmlEnum.ShadowSpells:
-        case sourceBookXmlEnum.BloodyBusiness:
-        case sourceBookXmlEnum.DataTrailsDissonantEchoes:
-        case sourceBookXmlEnum.SplinteredState:
-        case sourceBookXmlEnum.ShadowsInFocus_Butte:
-        case sourceBookXmlEnum.HongKongSourcebook:
-        case sourceBookXmlEnum.BookOfTheLost:
-        case sourceBookXmlEnum.ForbiddenArcana:
-        case sourceBookXmlEnum.ShadowsInFocus_SiouxNation_CountingCoup:
-        case sourceBookXmlEnum.BetterThanBad:
-        case sourceBookXmlEnum.Aetherology:
-        case sourceBookXmlEnum.ShadowrunMissions0803_10BlockTango:
-        case sourceBookXmlEnum.ShadowrunMissions0804_DirtyLaundry:
-        case sourceBookXmlEnum.ShadowrunQuickStartRules:
-        case sourceBookXmlEnum.SprawlWilds:
-          assert(false, vehicleMod.source);
-          break;
-      }
-      return found;
-    }
-  );
 
-  const vehicleModListConverted = englishVehicleModList.map((vehicleMod) => {
+  const vehicleModListConverted = vehicleModList.map((vehicleMod) => {
     const convertedVehicleMod = convertVehicleMod(vehicleMod);
 
     const check = VehicleModSchema.safeParse(convertedVehicleMod);

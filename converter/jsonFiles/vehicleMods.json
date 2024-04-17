@@ -6034,6 +6034,71 @@
     "type": "Vehicle"
   },
   {
+    "name": "Rigger Adaptation (2050)",
+    "description": "",
+    "subtype": "Cosmetic",
+    "maxRating": [0],
+    "slotCost": [0],
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [2800],
+    "source": "Shadowrun 2050",
+    "page": 212,
+    "type": "Vehicle"
+  },
+  {
+    "name": "Remote Adaptation (2050)",
+    "description": "",
+    "subtype": "Cosmetic",
+    "maxRating": [0],
+    "slotCost": [0],
+    "requirements": {},
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Body"
+              },
+              {
+                "operator": ">="
+              },
+              0
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      },
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "option": "Body"
+          },
+          {
+            "operator": "*"
+          },
+          1000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 212,
+    "type": "Vehicle"
+  },
+  {
     "name": "Blow-Away Panel Weapon Mount Add-on (Drone)",
     "description": "",
     "subtype": "All",

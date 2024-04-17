@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import AttributesSelect from "./AttributesSelect.js";
 import PrioritySelect from "./PrioritySelect.js";
-import { priorityOptions } from "./PriorityImports.js";
-import type { ISkillPoints } from "./PriorityImports.js";
 import "./CharacterCreator.css";
 import { Fragment } from "react";
 import { QualitiesSelect } from "./QualitiesSelect.js";
@@ -11,19 +9,24 @@ import { EquipmentSelect } from "./EquipmentSelect.js";
 import { trpc } from "../../../utils/trpc.js";
 import type { CustomSkillListType } from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
 import type { EquipmentListType } from "@neon-codex/common/build/schemas/equipment/other/equipmentSchemas.js";
-import {
-  PriorityLevelEnum,
-  MetatypeEnum,
-  MagicTypeEnum,
-} from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
 import type {
   AttributesType,
   SpecialAttributesType,
-  PrioritiesType,
+  PriorityLevelsType,
+  HeritagePrioritySelectedType,
 } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
 import { CreatorSummary } from "./CreatorSummary.js";
 import { useNavigate } from "react-router-dom";
 import type { QualityListType } from "@neon-codex/common/build/schemas/abilities/qualitySchemas.js";
+import {
+  priorityLetterEnum,
+  talentCategoryEnum,
+} from "@neon-codex/common/build/enums.js";
+import type {
+  SkillPriorityType,
+  TalentPriorityType,
+} from "@neon-codex/common/build/schemas/otherData/prioritySchemas.js";
+import type { SkillPointInfoType } from "../commonSchemas.js";
 
 const characterCreatorPath = "/character_creator";
 const CharacterCreator = function () {
@@ -31,14 +34,12 @@ const CharacterCreator = function () {
   const skills = trpc.character.skills.useQuery();
   const character = trpc.character.createCharacter.useMutation();
   // Character creator holds values of all sub components
-  const [priorityInfo, setPriorityInfo] = useState<PrioritiesType>({
-    MetatypePriority: PriorityLevelEnum.A,
-    MetatypeSubselection: MetatypeEnum.Human,
-    AttributesPriority: PriorityLevelEnum.B,
-    MagicPriority: PriorityLevelEnum.C,
-    MagicSubselection: MagicTypeEnum.Magician,
-    SkillsPriority: PriorityLevelEnum.D,
-    ResourcesPriority: PriorityLevelEnum.E,
+  const [priorityInfo, setPriorityInfo] = useState<PriorityLevelsType>({
+    heritage: priorityLetterEnum.A,
+    attributes: priorityLetterEnum.B,
+    talent: priorityLetterEnum.C,
+    skills: priorityLetterEnum.D,
+    resources: priorityLetterEnum.E,
   });
   const [attributeInfo, setAttributeInfo] = useState<AttributesType>({
     body: 1,
@@ -50,19 +51,45 @@ const CharacterCreator = function () {
     intuition: 1,
     charisma: 1,
   });
+  const [priorityHeritage, setPriorityHeritage] =
+    useState<HeritagePrioritySelectedType>({
+      heritage: "",
+      specialAttributePoints: 0,
+    });
+  const [priorityAttributes, setPriorityAttributes] = useState(0);
+  const [priorityTalent, setPriorityTalent] = useState<TalentPriorityType>({
+    name: "",
+    label: "",
+    category: talentCategoryEnum.Mundane,
+  });
+  const [prioritySkills, setPrioritySkills] = useState<SkillPriorityType>({
+    name: "",
+    skillPoints: 0,
+    skillGroupPoints: 0,
+  });
+  const [priorityResources, setPriorityResources] = useState(0);
   const [specialAttributeInfo, setSpecialAttributeInfo] =
     useState<SpecialAttributesType>({
       edge: 0,
-      magic: 0,
+      talent: { type: talentCategoryEnum.Mundane },
     });
   const [karmaPoints, setKarmaPoints] = useState(25);
   const [positiveQualitiesSelected, setPositiveQualitiesSelected] =
     useState<QualityListType>([]);
   const [negativeQualitiesSelected, setNegativeQualitiesSelected] =
     useState<QualityListType>([]);
-  const [skillPoints, setSkillPoints] = useState<ISkillPoints>(
-    priorityOptions[priorityInfo.SkillsPriority].skills
-  );
+  const [skillPoints, setSkillPoints] = useState<SkillPointInfoType>({
+    skillPoints: 0,
+    skillGroupPoints: 0,
+  });
+
+  useEffect(() => {
+    setSkillPoints(prioritySkills);
+  }, [prioritySkills]);
+
+  useEffect(() => {
+    setNuyen(priorityResources);
+  }, [priorityResources]);
 
   // const skills = data !== undefined ? data : [];
   const [skillSelections, setSkillSelections] = useState<CustomSkillListType>(
@@ -90,14 +117,29 @@ const CharacterCreator = function () {
       vehicles: [],
     }
   );
-  const [nuyen, setNuyen] = useState(
-    priorityOptions[priorityInfo.ResourcesPriority].resources
-  );
+  const [nuyen, setNuyen] = useState(0);
 
-  const onPriorityInfoChanged = function (loadingPriorities: PrioritiesType) {
+  const onPriorityInfoChanged = function (
+    loadingPriorities: PriorityLevelsType
+  ) {
     setPriorityInfo(loadingPriorities);
-    setSkillPoints(priorityOptions[loadingPriorities.SkillsPriority].skills);
-    setNuyen(priorityOptions[loadingPriorities.ResourcesPriority].resources);
+  };
+  const onHeritageInfoChanged = function (
+    heritageInfo: HeritagePrioritySelectedType
+  ) {
+    setPriorityHeritage(heritageInfo);
+  };
+  const onPriorityAttributesChanged = function (loadingAttributes: number) {
+    setPriorityAttributes(loadingAttributes);
+  };
+  const onPriorityTalentChanged = function (loadingTalent: TalentPriorityType) {
+    setPriorityTalent(loadingTalent);
+  };
+  const onPrioritySkillsChanged = function (loadingSkills: SkillPriorityType) {
+    setPrioritySkills(loadingSkills);
+  };
+  const onPriorityResources = function (loadingResources: number) {
+    setPriorityResources(loadingResources);
   };
   const onAttributeInfoChanged = function (loadingAttributes: AttributesType) {
     setAttributeInfo(loadingAttributes);
@@ -120,7 +162,9 @@ const CharacterCreator = function () {
   ) {
     setNegativeQualitiesSelected(loadingNegativeQualities);
   };
-  const onSkillPointChanged = function (loadingSkillPoints: ISkillPoints) {
+  const onSkillPointChanged = function (
+    loadingSkillPoints: SkillPointInfoType
+  ) {
     setSkillPoints(loadingSkillPoints);
   };
   const onSkillSelectionsChanged = function (
@@ -161,6 +205,15 @@ const CharacterCreator = function () {
         <PrioritySelect
           priorityInfo={priorityInfo}
           setPriorityInfo={onPriorityInfoChanged}
+          priorityHeritage={priorityHeritage}
+          setPriorityHeritage={onHeritageInfoChanged}
+          setPriorityAttributes={onPriorityAttributesChanged}
+          setPriorityTalent={onPriorityTalentChanged}
+          setPrioritySkills={onPrioritySkillsChanged}
+          setPriorityResources={onPriorityResources}
+          specialAttributeInfo={specialAttributeInfo}
+          setSpecialAttributeInfo={onSpecialAttributeInfoChanged}
+          priorityTalent={priorityTalent}
         />
       );
       break;
@@ -168,23 +221,13 @@ const CharacterCreator = function () {
       currentStage = (
         <AttributesSelect
           priorityInfo={priorityInfo}
+          heritageInfo={priorityHeritage}
           attributeInfo={attributeInfo}
           setAttributeInfo={onAttributeInfoChanged}
           specialAttributeInfo={specialAttributeInfo}
           setSpecialAttributeInfo={onSpecialAttributeInfoChanged}
-          maxAttributePoints={
-            priorityOptions[priorityInfo.AttributesPriority].attributes
-          }
-          maxSpecialAttributePoints={
-            priorityOptions[priorityInfo.MetatypePriority].metatypeInfo[
-              priorityInfo.MetatypeSubselection
-            ].specialAttributes
-          }
-          magicInfo={
-            priorityOptions[priorityInfo.MagicPriority].magicInfo[
-              priorityInfo.MagicSubselection
-            ]
-          }
+          maxAttributePoints={priorityAttributes}
+          talentInfo={priorityTalent}
         />
       );
       break;
@@ -238,12 +281,7 @@ const CharacterCreator = function () {
       break;
 
     default:
-      currentStage = (
-        <PrioritySelect
-          priorityInfo={priorityInfo}
-          setPriorityInfo={onPriorityInfoChanged}
-        />
-      );
+      currentStage = <>Error</>;
   }
   return (
     <Fragment>

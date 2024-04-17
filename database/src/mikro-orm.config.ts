@@ -84,22 +84,15 @@ import { Qualities } from "./models/rpg/traits/qualityModel.js";
 import {
   Metahumans,
   Metasapients,
-  Metatypes,
+  Heritages,
   Metavariants,
   Shapeshifters,
-} from "./models/rpg/traits/metatypeModel.js";
+  BaseHeritages,
+} from "./models/rpg/traits/heritageModel.js";
 import { HeritagePriorityDetails } from "./models/rpg/otherData/heritagePriorityDetailModel.js";
-import {
-  Priorities,
-  HeritagePriorities,
-  TalentPriorities,
-  AttributePriorities,
-  SkillPriorities,
-  ResourcePriorities,
-} from "./models/rpg/otherData/priorityModel.js";
+import { Priorities } from "./models/rpg/otherData/priorityModel.js";
 import {
   SkillBasePriorityDetails,
-  SkillSpecificityPriorityDetails,
   SkillPriorityDetails,
   SkillSourcePriorityDetails,
   SkillGroupPriorityDetails,
@@ -124,23 +117,18 @@ const dbOptions: Options = {
     CustomisedSkills,
     Qualities,
 
-    Metatypes,
+    Heritages,
+    BaseHeritages,
     Metahumans,
     Metavariants,
     Metasapients,
     Shapeshifters,
 
     Priorities,
-    HeritagePriorities,
-    TalentPriorities,
-    AttributePriorities,
-    SkillPriorities,
-    ResourcePriorities,
 
     HeritagePriorityDetails,
     TalentPriorityDetails,
     SkillBasePriorityDetails,
-    SkillSpecificityPriorityDetails,
     SkillPriorityDetails,
     SkillSourcePriorityDetails,
     SkillGroupPriorityDetails,

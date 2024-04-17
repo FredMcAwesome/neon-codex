@@ -5,7 +5,6 @@ import {
 } from "@testing-library/react";
 import { rest } from "msw";
 import { MemoryRouter } from "react-router-dom";
-import { JwtTokenType } from "@neon-codex/common";
 import App from "../App.js";
 import { rootRender } from "../utils/TestingUtils.js";
 import { getLoginStatus, postLogin } from "../utils/api.js";
@@ -14,6 +13,7 @@ import {
   saveUserSession,
 } from "../components/login/loginHelper.js";
 import { server } from "./mocks/server.js";
+import type { JwtTokenType } from "@neon-codex/common/build/serverResponse.js";
 
 const token: JwtTokenType = {
   token: "tokenValue",

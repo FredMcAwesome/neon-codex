@@ -2115,6 +2115,382 @@
     "page": 197
   },
   {
+    "name": "Tripod (2050)",
+    "description": "",
+    "maxRating": 0,
+    "isWeapon": false,
+    "recoilCompensationIncrease": 6,
+    "recoilCompensationType": 1,
+    "deploymentRequired": true,
+    "specialModification": false,
+    "hostWeaponMountsRequired": ["Under"],
+    "availability": {
+      "rating": [10],
+      "restriction": ""
+    },
+    "cost": [600],
+    "source": "Shadowrun 2050",
+    "page": 186
+  },
+  {
+    "name": "Spare Clip (2050)",
+    "description": "",
+    "maxRating": 0,
+    "isWeapon": false,
+    "deploymentRequired": false,
+    "specialModification": false,
+    "extraAmmoSlots": 1,
+    "hostWeaponRequirements": {
+      "ammunitionDetails": ["(c)", "(d)"]
+    },
+    "hostWeaponRestrictions": {
+      "weaponNames": ["HK Urban Fighter"]
+    },
+    "availability": {
+      "rating": [2],
+      "restriction": ""
+    },
+    "cost": [5],
+    "source": "Shadowrun 2050",
+    "page": 189
+  },
+  {
+    "name": "Gas-Vent 2 System (2050)",
+    "description": "",
+    "maxRating": 0,
+    "isWeapon": false,
+    "recoilCompensationIncrease": 2,
+    "deploymentRequired": false,
+    "specialModification": false,
+    "hostWeaponMountsRequired": ["Barrel"],
+    "availability": {
+      "rating": [2],
+      "restriction": "R"
+    },
+    "cost": [450],
+    "source": "Shadowrun 2050",
+    "page": 189
+  },
+  {
+    "name": "Gas-Vent 3 System (2050)",
+    "description": "",
+    "maxRating": 0,
+    "isWeapon": false,
+    "recoilCompensationIncrease": 2,
+    "deploymentRequired": false,
+    "specialModification": false,
+    "hostWeaponMountsRequired": ["Barrel"],
+    "availability": {
+      "rating": [2],
+      "restriction": "R"
+    },
+    "cost": [700],
+    "source": "Shadowrun 2050",
+    "page": 189
+  },
+  {
+    "name": "Grenade Launcher (2050)",
+    "description": "",
+    "maxRating": 0,
+    "isWeapon": false,
+    "deploymentRequired": false,
+    "specialModification": false,
+    "hostWeaponMountsRequired": ["Under"],
+    "hostWeaponRequirements": {
+      "minimumHostConcealment": 0
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "F"
+    },
+    "cost": [1700],
+    "source": "Shadowrun 2050",
+    "page": 189
+  },
+  {
+    "name": "Gyro Mount, default (2050)",
+    "description": "",
+    "maxRating": 0,
+    "isWeapon": false,
+    "recoilCompensationIncrease": 5,
+    "recoilCompensationType": 1,
+    "deploymentRequired": false,
+    "specialModification": false,
+    "hostWeaponMountsRequired": ["Under"],
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [2500],
+    "source": "Shadowrun 2050",
+    "page": 189
+  },
+  {
+    "name": "Gyro Mount, Deluxe (2050)",
+    "description": "",
+    "maxRating": 0,
+    "isWeapon": false,
+    "recoilCompensationIncrease": 6,
+    "recoilCompensationType": 1,
+    "deploymentRequired": false,
+    "specialModification": false,
+    "hostWeaponMountsRequired": ["Under"],
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [6000],
+    "source": "Shadowrun 2050",
+    "page": 189
+  },
+  {
+    "name": "Laser Sight (2050)",
+    "description": "",
+    "maxRating": 0,
+    "isWeapon": false,
+    "accuracyIncrease": 1,
+    "deploymentRequired": false,
+    "specialModification": false,
+    "hostWeaponMountsRequired": ["Top", "Under"],
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [500],
+    "source": "Shadowrun 2050",
+    "page": 189
+  },
+  {
+    "name": "Silencer (2050)",
+    "description": "",
+    "maxRating": 0,
+    "isWeapon": false,
+    "deploymentRequired": false,
+    "specialModification": false,
+    "hostWeaponMountsRequired": ["Barrel"],
+    "hostWeaponRestrictions": {
+      "weaponNames": ["PSK-3 Collapsible Heavy Pistol"],
+      "ammunitionDetails": ["(cy)", "Shotguns"],
+      "categories": ["Shotguns"]
+    },
+    "availability": {
+      "rating": [9],
+      "restriction": "F"
+    },
+    "cost": [500],
+    "source": "Shadowrun 2050",
+    "page": 189
+  },
+  {
+    "name": "Speed Loader (2050)",
+    "description": "",
+    "maxRating": 0,
+    "isWeapon": false,
+    "deploymentRequired": false,
+    "specialModification": false,
+    "extraAmmoSlots": 1,
+    "hostWeaponRequirements": {
+      "ammunitionDetails": ["(cy)"]
+    },
+    "availability": {
+      "rating": [2],
+      "restriction": ""
+    },
+    "cost": [10],
+    "source": "Shadowrun 2050",
+    "page": 189
+  },
+  {
+    "name": "Shock Pad (2050)",
+    "description": "",
+    "maxRating": 0,
+    "isWeapon": false,
+    "recoilCompensationIncrease": 1,
+    "recoilCompensationType": 2,
+    "deploymentRequired": true,
+    "specialModification": false,
+    "hostWeaponRequirements": {
+      "categories": [
+        "Sniper Rifles",
+        "Assault Rifles",
+        "Sporting Rifles",
+        "Shotguns",
+        "Light Machineguns",
+        "Medium Heavy Machineguns",
+        "Medium Heavy Machineguns",
+        "Weapon Attachments",
+        "Assault Cannons",
+        "Flamethrowers",
+        "Lasers",
+        "Grenade Launchers",
+        "Missile Launchers"
+      ]
+    },
+    "hostWeaponRestrictions": {
+      "accessories": [
+        "Stock Removal",
+        "Sawed Off/Shortbarrel and Stock Removal"
+      ]
+    },
+    "availability": {
+      "rating": [2],
+      "restriction": ""
+    },
+    "cost": [200],
+    "source": "Shadowrun 2050",
+    "page": 189
+  },
+  {
+    "name": "Smartgun System, Internal (2050)",
+    "description": "",
+    "maxRating": 0,
+    "isWeapon": false,
+    "accuracyIncrease": 2,
+    "deploymentRequired": false,
+    "specialModification": false,
+    "hostWeaponRestrictions": {
+      "accessories": [
+        "Ceramic/Plasteel Components",
+        "Collapsible Traditional Bow",
+        "Vintage"
+      ]
+    },
+    "availability": {
+      "rating": [2],
+      "restriction": "R",
+      "modifier": "+"
+    },
+    "cost": [
+      {
+        "option": "Weapon Cost"
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 189
+  },
+  {
+    "name": "Smartgun System, External (2050)",
+    "description": "",
+    "maxRating": 0,
+    "isWeapon": false,
+    "accuracyIncrease": 2,
+    "deploymentRequired": false,
+    "specialModification": false,
+    "hostWeaponMountsRequired": ["Top", "Under"],
+    "hostWeaponRestrictions": {
+      "accessories": [
+        "Ceramic/Plasteel Components",
+        "Collapsible Traditional Bow",
+        "Vintage"
+      ]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [600],
+    "source": "Shadowrun 2050",
+    "page": 189
+  },
+  {
+    "name": "Concealable Holster (2050)",
+    "description": "",
+    "maxRating": 0,
+    "isWeapon": false,
+    "deploymentRequired": false,
+    "specialModification": false,
+    "hostWeaponRequirements": {
+      "maximumHostConcealment": 0
+    },
+    "concealabilityModification": -2,
+    "availability": {
+      "rating": [2],
+      "restriction": ""
+    },
+    "cost": [100],
+    "source": "Shadowrun 2050",
+    "page": 189
+  },
+  {
+    "name": "Imaging Scope (2050)",
+    "description": "",
+    "maxRating": 0,
+    "isWeapon": false,
+    "deploymentRequired": false,
+    "allowedGearCategories": ["Vision Enhancements", "Custom"],
+    "includedGearList": [
+      {
+        "name": "Vision Magnification",
+        "category": "Vision Enhancements"
+      }
+    ],
+    "specialModification": false,
+    "hostWeaponMountsRequired": ["Top"],
+    "availability": {
+      "rating": [3],
+      "restriction": ""
+    },
+    "cost": [500],
+    "source": "Shadowrun 2050",
+    "page": 189
+  },
+  {
+    "name": "Bipod (2050)",
+    "description": "",
+    "maxRating": 0,
+    "isWeapon": false,
+    "recoilCompensationIncrease": 2,
+    "recoilCompensationType": 1,
+    "deploymentRequired": false,
+    "specialModification": false,
+    "hostWeaponMountsRequired": ["Under"],
+    "availability": {
+      "rating": [2],
+      "restriction": ""
+    },
+    "cost": [400],
+    "source": "Shadowrun 2050",
+    "page": 189
+  },
+  {
+    "name": "Silencer (HK Urban Fighter)",
+    "description": "",
+    "maxRating": 0,
+    "isWeapon": false,
+    "deploymentRequired": false,
+    "specialModification": false,
+    "hostWeaponMountsRequired": ["Barrel"],
+    "hostWeaponRequirements": {
+      "weaponNames": ["HK Urban Fighter"]
+    },
+    "availability": {
+      "rating": [16],
+      "restriction": "F"
+    },
+    "cost": [1000],
+    "source": "State Of The Art - ADL",
+    "page": 21
+  },
+  {
+    "name": "Silencer (Onotari Arms Pressure KS-X)",
+    "description": "",
+    "maxRating": 0,
+    "isWeapon": false,
+    "deploymentRequired": false,
+    "specialModification": false,
+    "hostWeaponMountsRequired": ["Barrel"],
+    "hostWeaponRequirements": {
+      "weaponNames": ["Onotari Arms Pressure KS-X"]
+    },
+    "availability": {
+      "rating": [14],
+      "restriction": "F"
+    },
+    "cost": [900],
+    "source": "State Of The Art - ADL",
+    "page": 35
+  },
+  {
     "name": "Survival Knife Bonuses",
     "description": "",
     "maxRating": 0,
@@ -2634,6 +3010,42 @@
     "cost": [0],
     "source": "Better Than Bad",
     "page": 161
+  },
+  {
+    "name": "Maker Mag",
+    "description": "",
+    "maxRating": 0,
+    "isWeapon": false,
+    "deploymentRequired": false,
+    "specialModification": false,
+    "hostWeaponRestrictions": {
+      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"]
+    },
+    "availability": {
+      "rating": [18],
+      "restriction": "R"
+    },
+    "cost": [1000],
+    "source": "Datapuls SOTA 2080",
+    "page": 12
+  },
+  {
+    "name": "Plastic Components",
+    "description": "",
+    "maxRating": 6,
+    "isWeapon": false,
+    "deploymentRequired": false,
+    "specialModification": false,
+    "hostWeaponRestrictions": {
+      "weaponNames": ["HK Urban Combat", "HK Urban Fighter"]
+    },
+    "availability": {
+      "rating": [18],
+      "restriction": "R"
+    },
+    "cost": [1000],
+    "source": "Datapuls SOTA 2080",
+    "page": 12
   },
   {
     "name": "Metahuman Adaptation",

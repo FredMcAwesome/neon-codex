@@ -4,14 +4,8 @@ import { XMLParser } from "fast-xml-parser";
 import path from "path";
 import { fileURLToPath } from "url";
 import * as fs from "fs";
-import {
-  augmentationXmlGradeEnum,
-  sourceBookXmlEnum,
-} from "../common/ParserCommonDefines.js";
-import type {
-  CyberwareListXmlType,
-  CyberwareXmlType,
-} from "./CyberwareParserSchemas.js";
+import { augmentationXmlGradeEnum } from "../common/ParserCommonDefines.js";
+import type { CyberwareXmlType } from "./CyberwareParserSchemas.js";
 import { CyberwareListXmlSchema } from "./CyberwareParserSchemas.js";
 import {
   convertAllowGear,
@@ -85,76 +79,8 @@ export function ParseCyberware() {
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
   // })
-  const englishCyberwareList: CyberwareListXmlType = cyberwareList.filter(
-    (cyberware) => {
-      let found = false;
-      switch (cyberware.source) {
-        case sourceBookXmlEnum.Shadowrun5:
-        case sourceBookXmlEnum.Rigger5:
-        case sourceBookXmlEnum.KillCode:
-        case sourceBookXmlEnum.TheSeattleGambit:
-        case sourceBookXmlEnum.ChromeFlesh:
-        case sourceBookXmlEnum.BulletsAndBandages:
-        case sourceBookXmlEnum.HardTargets:
-        case sourceBookXmlEnum.Lockdown:
-        case sourceBookXmlEnum.HowlingShadows:
-        case sourceBookXmlEnum.TheCompleteTrog:
-        case sourceBookXmlEnum.NoFuture:
-          found = true;
-          break;
-        // Not in english
-        case sourceBookXmlEnum.StateOfTheArtADL:
-        case sourceBookXmlEnum.Schattenhandbuch:
-        case sourceBookXmlEnum.Schattenhandbuch2:
-        case sourceBookXmlEnum.Schattenhandbuch3:
-        case sourceBookXmlEnum.Hamburg:
-        case sourceBookXmlEnum.DatapulsSOTA2080:
-        case sourceBookXmlEnum.DatapulsVerschlusssache:
-        case sourceBookXmlEnum.Shadowrun2050:
-        case 2050:
-        case sourceBookXmlEnum.GrimmesErwachen:
-          break;
-        // Not containing Cyberware
-        case sourceBookXmlEnum.DarkTerrors:
-        case sourceBookXmlEnum.TheVladivostokGauntlet:
-        case sourceBookXmlEnum.StolenSouls:
-        case sourceBookXmlEnum.RunAndGun:
-        case sourceBookXmlEnum.RunFaster:
-        case sourceBookXmlEnum.CuttingAces:
-        case sourceBookXmlEnum.StreetLethal:
-        case sourceBookXmlEnum.AssassinPrimer:
-        case sourceBookXmlEnum.DataTrails:
-        case sourceBookXmlEnum.GunHeaven3:
-        case sourceBookXmlEnum.KrimeKatalog:
-        case sourceBookXmlEnum.SailAwaySweetSister:
-        case sourceBookXmlEnum.ShadowsInFocus_SanFranciscoMetroplex:
-        case sourceBookXmlEnum.StreetGrimoire:
-        case sourceBookXmlEnum.StreetGrimoireErrata:
-        case sourceBookXmlEnum.ShadowSpells:
-        case sourceBookXmlEnum.NothingPersonal:
-        case sourceBookXmlEnum.BloodyBusiness:
-        case sourceBookXmlEnum.DataTrailsDissonantEchoes:
-        case sourceBookXmlEnum.SplinteredState:
-        case sourceBookXmlEnum.ShadowsInFocus_Butte:
-        case sourceBookXmlEnum.HongKongSourcebook:
-        case sourceBookXmlEnum.ShadowsInFocus_Metropole:
-        case sourceBookXmlEnum.BookOfTheLost:
-        case sourceBookXmlEnum.ForbiddenArcana:
-        case sourceBookXmlEnum.ShadowsInFocus_SiouxNation_CountingCoup:
-        case sourceBookXmlEnum.BetterThanBad:
-        case sourceBookXmlEnum.Aetherology:
-        case sourceBookXmlEnum.ShadowrunMissions0803_10BlockTango:
-        case sourceBookXmlEnum.ShadowrunMissions0804_DirtyLaundry:
-        case sourceBookXmlEnum.ShadowrunQuickStartRules:
-        case sourceBookXmlEnum.SprawlWilds:
-          assert(false, cyberware.source);
-          break;
-      }
-      return found;
-    }
-  );
 
-  const cyberwareListConverted = englishCyberwareList.map((cyberware) => {
+  const cyberwareListConverted = cyberwareList.map((cyberware) => {
     const convertedCyberware = convertCyberware(cyberware);
     const check = AugmentationSchema.safeParse(convertedCyberware);
     if (!check.success) {

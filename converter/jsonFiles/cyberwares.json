@@ -10016,6 +10016,2141 @@
     "capacity": [0]
   },
   {
+    "name": "Datajack (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "essenceCost": [0.2],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [1000],
+    "source": "Shadowrun 2050",
+    "page": 199,
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0]
+  },
+  {
+    "name": "Chipjack (2050)",
+    "description": "",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.1
+        ]
+      }
+    ],
+    "rating": {
+      "minimum": [1],
+      "maximum": [4]
+    },
+    "bonus": {
+      "skillSoftMaxRating": {
+        "bonus": {
+          "option": "Rating"
+        }
+      }
+    },
+    "availability": {
+      "rating": [3],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          2000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 199,
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0]
+  },
+  {
+    "name": "Cortex Bomb (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "essenceCost": [0],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [20],
+      "restriction": "F"
+    },
+    "cost": [40000],
+    "source": "Shadowrun 2050",
+    "page": 199,
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0]
+  },
+  {
+    "name": "Data Lock (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "essenceCost": [0.2],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [1000],
+    "source": "Shadowrun 2050",
+    "page": 199,
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0]
+  },
+  {
+    "name": "Radio (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "essenceCost": [0.75],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [2],
+      "restriction": ""
+    },
+    "cost": [4000],
+    "source": "Shadowrun 2050",
+    "page": 199,
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0]
+  },
+  {
+    "name": "Headware Memory (2050)",
+    "description": "",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "subnumbers": [
+                  {
+                    "subnumbers": [
+                      {
+                        "option": "Rating"
+                      },
+                      {
+                        "operator": "-"
+                      },
+                      11
+                    ]
+                  },
+                  {
+                    "operator": "*"
+                  },
+                  0.0005
+                ]
+              }
+            ]
+          },
+          {
+            "operator": "+"
+          },
+          0.01
+        ]
+      }
+    ],
+    "rating": {
+      "minimum": [1],
+      "maximum": [11980]
+    },
+    "availability": {
+      "rating": [2],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          25
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 199,
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0]
+  },
+  {
+    "name": "Telephone (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "essenceCost": [0.5],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [3],
+      "restriction": ""
+    },
+    "cost": [3700],
+    "source": "Shadowrun 2050",
+    "page": 199,
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0]
+  },
+  {
+    "name": "Cybereyes (2050)",
+    "description": "",
+    "essenceCost": [0.2],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "allowedGearCategories": ["Custom", "Sensors"],
+    "allowCategoryList": ["Eyeware"],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [5000],
+    "source": "Shadowrun 2050",
+    "page": 201,
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacity": [4]
+  },
+  {
+    "name": "Camera (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "essenceCost": [0.1],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [5000],
+    "source": "Shadowrun 2050",
+    "page": 201,
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacityCost": [1]
+  },
+  {
+    "name": "Flare Compensation (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "essenceCost": [0.1],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [5],
+      "restriction": ""
+    },
+    "cost": [2000],
+    "source": "Shadowrun 2050",
+    "page": 201,
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacityCost": [1]
+  },
+  {
+    "name": "Display Link (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "essenceCost": [0.1],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [1000],
+    "source": "Shadowrun 2050",
+    "page": 201,
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacityCost": [1]
+  },
+  {
+    "name": "Thermographic (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "essenceCost": [0.2],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [3000],
+    "source": "Shadowrun 2050",
+    "page": 201,
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacityCost": [1]
+  },
+  {
+    "name": "Cosmetic Modifications: Eye (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "essenceCost": [0],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [2],
+      "restriction": ""
+    },
+    "cost": [1000],
+    "source": "Shadowrun 2050",
+    "page": 201,
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacity": [0]
+  },
+  {
+    "name": "Cosmetic Modifications: Ear (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "essenceCost": [0],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [2],
+      "restriction": ""
+    },
+    "cost": [1000],
+    "source": "Shadowrun 2050",
+    "page": 201,
+    "type": "Cyberware",
+    "subtype": "Earware",
+    "capacity": [0]
+  },
+  {
+    "name": "Low-Light (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "essenceCost": [0.2],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [3000],
+    "source": "Shadowrun 2050",
+    "page": 201,
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacityCost": [1]
+  },
+  {
+    "name": "Retinal Duplication (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "essenceCost": [0.2],
+    "rating": {
+      "minimum": [1],
+      "maximum": [6]
+    },
+    "availability": {
+      "rating": [12],
+      "restriction": "F"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          10000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 201,
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacityCost": [1]
+  },
+  {
+    "name": "Vision Magnification (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "essenceCost": [0.2],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [5],
+      "restriction": ""
+    },
+    "cost": [8500],
+    "source": "Shadowrun 2050",
+    "page": 201,
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacityCost": [2]
+  },
+  {
+    "name": "Cyberears (2050)",
+    "description": "",
+    "essenceCost": [0.2],
+    "rating": {
+      "minimum": [1],
+      "maximum": [0]
+    },
+    "allowedGearCategories": ["Custom", "Sensors"],
+    "allowCategoryList": ["Earware"],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [5000],
+    "source": "Shadowrun 2050",
+    "page": 201,
+    "type": "Cyberware",
+    "subtype": "Earware",
+    "capacity": [4],
+    "subsystemList": {
+      "cyberwareList": [
+        {
+          "name": "Sound Link"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Hearing Amplification (2050)",
+    "description": "",
+    "essenceCost": [0.2],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [3500],
+    "source": "Shadowrun 2050",
+    "page": 201,
+    "type": "Cyberware",
+    "subtype": "Earware",
+    "capacityCost": [1]
+  },
+  {
+    "name": "Damper (2050)",
+    "description": "",
+    "essenceCost": [0.1],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [3500],
+    "source": "Shadowrun 2050",
+    "page": 201,
+    "type": "Cyberware",
+    "subtype": "Earware",
+    "capacityCost": [1]
+  },
+  {
+    "name": "Expanded Frequency (2050)",
+    "description": "",
+    "essenceCost": [0.2],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [6000],
+    "source": "Shadowrun 2050",
+    "page": 201,
+    "type": "Cyberware",
+    "subtype": "Earware",
+    "capacityCost": [1]
+  },
+  {
+    "name": "Sound Recorder (2050)",
+    "description": "",
+    "essenceCost": [0.3],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "R"
+    },
+    "cost": [7000],
+    "source": "Shadowrun 2050",
+    "page": 201,
+    "type": "Cyberware",
+    "subtype": "Earware",
+    "capacityCost": [1]
+  },
+  {
+    "name": "Cyberlimb Full Arm, Obvious (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "Arm"
+    },
+    "essenceCost": [1],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
+    "selectSide": true,
+    "bonus": {
+      "addPhysicalBoxes": 1
+    },
+    "allowedGearCategories": ["Custom", "Sensors"],
+    "allowCategoryList": [
+      "Headware",
+      "Bodyware",
+      "Cosmetic Enhancement",
+      "Cyberlimb",
+      "Cyberlimb Enhancement",
+      "Cyberlimb Accessory",
+      "Cyber Implant Weapon"
+    ],
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [45000],
+    "source": "Shadowrun 2050",
+    "page": 203,
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [15],
+    "limbSlot": "Arm"
+  },
+  {
+    "name": "Cyberlimb Full Leg, Obvious (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "Leg"
+    },
+    "essenceCost": [1],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "blockedMountList": ["Ankle", "Knee", "Hip"],
+    "selectSide": true,
+    "bonus": {
+      "addPhysicalBoxes": 1
+    },
+    "allowedGearCategories": ["Custom", "Sensors"],
+    "allowCategoryList": [
+      "Headware",
+      "Bodyware",
+      "Cosmetic Enhancement",
+      "Cyberlimb",
+      "Cyberlimb Enhancement",
+      "Cyberlimb Accessory",
+      "Cyber Implant Weapon"
+    ],
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [45000],
+    "source": "Shadowrun 2050",
+    "page": 203,
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [20],
+    "limbSlot": "Leg"
+  },
+  {
+    "name": "Cyberlimb Full Arm, Synthetic (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "Arm"
+    },
+    "essenceCost": [1],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
+    "selectSide": true,
+    "bonus": {
+      "addPhysicalBoxes": 1
+    },
+    "allowedGearCategories": ["Custom", "Sensors"],
+    "allowCategoryList": [
+      "Headware",
+      "Bodyware",
+      "Cosmetic Enhancement",
+      "Cyberlimb",
+      "Cyberlimb Enhancement",
+      "Cyberlimb Accessory",
+      "Cyber Implant Weapon"
+    ],
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [50000],
+    "source": "Shadowrun 2050",
+    "page": 203,
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [8],
+    "limbSlot": "Arm"
+  },
+  {
+    "name": "Cyberlimb Full Leg, Synthetic (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "Leg"
+    },
+    "essenceCost": [1],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "blockedMountList": ["Ankle", "Knee", "Hip"],
+    "selectSide": true,
+    "bonus": {
+      "addPhysicalBoxes": 1
+    },
+    "allowedGearCategories": ["Custom", "Sensors"],
+    "allowCategoryList": [
+      "Headware",
+      "Bodyware",
+      "Cosmetic Enhancement",
+      "Cyberlimb",
+      "Cyberlimb Enhancement",
+      "Cyberlimb Accessory",
+      "Cyber Implant Weapon"
+    ],
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [50000],
+    "source": "Shadowrun 2050",
+    "page": 203,
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [10],
+    "limbSlot": "Leg"
+  },
+  {
+    "name": "Cyberlimb Customization, Strength (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "essenceCost": [0],
+    "rating": {
+      "minimum": [
+        {
+          "option": "Minimum Strength"
+        },
+        {
+          "operator": "+"
+        },
+        1
+      ],
+      "maximum": [
+        {
+          "option": "Maximum Strength"
+        }
+      ]
+    },
+    "availability": {
+      "rating": [
+        {
+          "option": "Rating"
+        },
+        {
+          "operator": "-"
+        },
+        {
+          "option": "Minimum Rating"
+        },
+        {
+          "operator": "+"
+        },
+        1
+      ],
+      "restriction": "",
+      "modifier": "+"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "-"
+              },
+              {
+                "option": "Minimum Rating"
+              },
+              {
+                "operator": "+"
+              },
+              1
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          2000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 203,
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacityCost": [0]
+  },
+  {
+    "name": "Cyberlimb Customization, Agility (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "essenceCost": [0],
+    "rating": {
+      "minimum": [
+        {
+          "option": "Minimum Agility"
+        },
+        {
+          "operator": "+"
+        },
+        1
+      ],
+      "maximum": [
+        {
+          "option": "Maximum Agility"
+        }
+      ]
+    },
+    "availability": {
+      "rating": [
+        {
+          "option": "Rating"
+        },
+        {
+          "operator": "-"
+        },
+        {
+          "option": "Minimum Rating"
+        },
+        {
+          "operator": "+"
+        },
+        1
+      ],
+      "restriction": "",
+      "modifier": "+"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "-"
+              },
+              {
+                "option": "Minimum Rating"
+              },
+              {
+                "operator": "+"
+              },
+              1
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          2000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 203,
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacityCost": [0]
+  },
+  {
+    "name": "Cyberlimb Augmentation, Armor (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "essenceCost": [0],
+    "rating": {
+      "minimum": [1],
+      "maximum": [3]
+    },
+    "bonus": {
+      "armour": {
+        "bonus": {
+          "option": "Rating"
+        }
+      }
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            3
+          ]
+        }
+      ],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 203,
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacityCost": [
+      {
+        "option": "Rating"
+      }
+    ]
+  },
+  {
+    "name": "Cyberlimb Augmentation, Strength (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "essenceCost": [0],
+    "rating": {
+      "minimum": [1],
+      "maximum": [3]
+    },
+    "availability": {
+      "rating": [
+        {
+          "option": "Rating"
+        }
+      ],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          350
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 203,
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacityCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Cyberlimb Augmentation, Agility (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "essenceCost": [0],
+    "rating": {
+      "minimum": [1],
+      "maximum": [3]
+    },
+    "availability": {
+      "rating": [
+        {
+          "option": "Rating"
+        }
+      ],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          400
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 203,
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacityCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          1
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Filtration System, Cybergill (2050)",
+    "description": "",
+    "essenceCost": [0.5],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [60000],
+    "source": "Shadowrun 2050",
+    "page": 203,
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0]
+  },
+  {
+    "name": "Dermal Plating (2050)",
+    "description": "",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.5
+        ]
+      }
+    ],
+    "rating": {
+      "minimum": [1],
+      "maximum": [3]
+    },
+    "bonus": {
+      "armour": {
+        "nonStacking": true,
+        "bonus": {
+          "option": "Rating"
+        }
+      }
+    },
+    "forbidden": {},
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            4
+          ]
+        }
+      ],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          5000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 203,
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0]
+  },
+  {
+    "name": "Filtration System, Blood (2050)",
+    "description": "",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.2
+        ]
+      }
+    ],
+    "rating": {
+      "minimum": [1],
+      "maximum": [6]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          10000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 203,
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0]
+  },
+  {
+    "name": "Filtration System, Air (2050)",
+    "description": "",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.1
+        ]
+      }
+    ],
+    "rating": {
+      "minimum": [1],
+      "maximum": [6]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          15000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 203,
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0]
+  },
+  {
+    "name": "Fingertip Compartment (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "essenceCost": [0.1],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [3],
+      "restriction": ""
+    },
+    "cost": [3000],
+    "source": "Shadowrun 2050",
+    "page": 203,
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacityCost": [1]
+  },
+  {
+    "name": "Olfactory Booster (2050)",
+    "description": "",
+    "essenceCost": [0.2],
+    "rating": {
+      "minimum": [1],
+      "maximum": [6]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          1000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 203,
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0]
+  },
+  {
+    "name": "Cosmetic Modifications (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "essenceCost": [0],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [2],
+      "restriction": ""
+    },
+    "cost": {
+      "range": {
+        "min": 2000,
+        "max": 10000
+      }
+    },
+    "source": "Shadowrun 2050",
+    "page": 203,
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0]
+  },
+  {
+    "name": "Muscle Replacement (2050)",
+    "description": "",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          1
+        ]
+      }
+    ],
+    "rating": {
+      "minimum": [1],
+      "maximum": [4]
+    },
+    "bonus": {
+      "disableQualities": [
+        {
+          "name": "Celerity"
+        }
+      ]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          20000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 203,
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0]
+  },
+  {
+    "name": "Hand Razors, Fixed (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "essenceCost": [0.1],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "addWeapon": "Hand Razors, Fixed (2050)",
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "availability": {
+      "rating": [3],
+      "restriction": "F"
+    },
+    "cost": [4500],
+    "source": "Shadowrun 2050",
+    "page": 203,
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [1]
+  },
+  {
+    "name": "Hand Razors, Retractable (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "essenceCost": [0.2],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "addWeapon": "Hand Razors, Retractable (2050)",
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "availability": {
+      "rating": [5],
+      "restriction": "F"
+    },
+    "cost": [9000],
+    "source": "Shadowrun 2050",
+    "page": 203,
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [2]
+  },
+  {
+    "name": "Spur, Fixed (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "essenceCost": [0.1],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "addWeapon": "Spur, Fixed (2050)",
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "availability": {
+      "rating": [3],
+      "restriction": "F"
+    },
+    "cost": [7000],
+    "source": "Shadowrun 2050",
+    "page": 203,
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [1]
+  },
+  {
+    "name": "Spur, Retractable (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "essenceCost": [0.3],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "addWeapon": "Spur, Retractable (2050)",
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "availability": {
+      "rating": [3],
+      "restriction": "F"
+    },
+    "cost": [11500],
+    "source": "Shadowrun 2050",
+    "page": 203,
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [3]
+  },
+  {
+    "name": "Boosted Reflexes (2050)",
+    "description": "",
+    "essenceCost": {
+      "ratingLinked": [[2], [3], [5]]
+    },
+    "rating": {
+      "minimum": [1],
+      "maximum": [3]
+    },
+    "bonus": {
+      "initiative": {
+        "bonusDice": {
+          "option": "Rating"
+        }
+      },
+      "disableQualities": [
+        {
+          "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
+        }
+      ]
+    },
+    "availability": {
+      "ratingLinked": [
+        {
+          "rating": [4],
+          "restriction": "R"
+        },
+        {
+          "rating": [4],
+          "restriction": "R"
+        },
+        {
+          "rating": [8],
+          "restriction": "R"
+        }
+      ]
+    },
+    "cost": {
+      "ratingLinked": [[55000], [165000], [500000]]
+    },
+    "source": "Shadowrun 2050",
+    "page": 203,
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0]
+  },
+  {
+    "name": "Vehicle Control Rig (2050)",
+    "description": "",
+    "essenceCost": {
+      "ratingLinked": [[2], [3], [5]]
+    },
+    "rating": {
+      "minimum": [1],
+      "maximum": [3]
+    },
+    "availability": {
+      "ratingLinked": [
+        {
+          "rating": [6],
+          "restriction": ""
+        },
+        {
+          "rating": [8],
+          "restriction": ""
+        },
+        {
+          "rating": [8],
+          "restriction": ""
+        }
+      ]
+    },
+    "cost": {
+      "ratingLinked": [[12000], [60000], [300000]]
+    },
+    "source": "Shadowrun 2050",
+    "page": 203,
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0]
+  },
+  {
+    "name": "Smartlink (2050)",
+    "description": "",
+    "essenceCost": [0.5],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "bonus": {
+      "smartlinkAccuracy": 2
+    },
+    "availability": {
+      "rating": [3],
+      "restriction": "R"
+    },
+    "cost": [2500],
+    "source": "Shadowrun 2050",
+    "page": 203,
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0]
+  },
+  {
+    "name": "Voice Modulator (2050)",
+    "description": "",
+    "essenceCost": [0.2],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [2],
+      "restriction": ""
+    },
+    "cost": [50000],
+    "source": "Shadowrun 2050",
+    "page": 302,
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0]
+  },
+  {
+    "name": "Voice Modulator, Playback Feature (2050)",
+    "description": "",
+    "essenceCost": [0.2],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [40000],
+    "source": "Shadowrun 2050",
+    "page": 203,
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0]
+  },
+  {
+    "name": "Voice Modulator, Second Voiceprint (2050)",
+    "description": "",
+    "essenceCost": [0],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "F"
+    },
+    "cost": [50000],
+    "source": "Shadowrun 2050",
+    "page": 203,
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0]
+  },
+  {
+    "name": "Cyber Holdout Pistol (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "essenceCost": [0.1],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "addWeapon": "Cyber Holdout Pistol (2050)",
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "availability": {
+      "rating": [8],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Shadowrun 2050",
+    "page": 204,
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [2]
+  },
+  {
+    "name": "Cyber Light Pistol (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "essenceCost": [0.25],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "addWeapon": "Cyber Light Pistol (2050)",
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "availability": {
+      "rating": [8],
+      "restriction": "F"
+    },
+    "cost": [650],
+    "source": "Shadowrun 2050",
+    "page": 204,
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [4]
+  },
+  {
+    "name": "Cyber Machine Pistol (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "essenceCost": [0.5],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "addWeapon": "Cyber Machine Pistol (2050)",
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "availability": {
+      "rating": [8],
+      "restriction": "F"
+    },
+    "cost": [900],
+    "source": "Shadowrun 2050",
+    "page": 204,
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [6]
+  },
+  {
+    "name": "Cyber Heavy Pistol (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "essenceCost": [0.5],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "addWeapon": "Cyber Heavy Pistol (2050)",
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "availability": {
+      "rating": [8],
+      "restriction": "F"
+    },
+    "cost": [800],
+    "source": "Shadowrun 2050",
+    "page": 204,
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [6]
+  },
+  {
+    "name": "Cyber Submachine Gun (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "essenceCost": [1],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "addWeapon": "Cyber Submachine Gun (2050)",
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "availability": {
+      "rating": [8],
+      "restriction": "F"
+    },
+    "cost": [1800],
+    "source": "Shadowrun 2050",
+    "page": 204,
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [10]
+  },
+  {
+    "name": "Cyber Shotgun (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "essenceCost": [1.25],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "addWeapon": "Cyber Shotgun (2050)",
+    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "availability": {
+      "rating": [8],
+      "restriction": "F"
+    },
+    "cost": [1200],
+    "source": "Shadowrun 2050",
+    "page": 204,
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [10]
+  },
+  {
+    "name": "Siemens Cyberspine",
+    "description": "",
+    "essenceCost": [2.09],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "forbidden": {},
+    "availability": {
+      "rating": [10],
+      "restriction": "R"
+    },
+    "cost": [72600],
+    "source": "State Of The Art - ADL",
+    "page": 80,
+    "type": "Cyberware",
+    "subtype": "Cybersuite",
+    "capacity": [0],
+    "inheritAttributes": true,
+    "subsystemList": {
+      "cyberwareList": [
+        {
+          "name": "Wired Reflexes",
+          "rating": 1
+        },
+        {
+          "name": "Reaction Enhancers",
+          "rating": 1
+        },
+        {
+          "name": "Bone Lacing (Plastic)"
+        },
+        {
+          "name": "Biomonitor"
+        }
+      ]
+    },
+    "forceGrade": "Standard"
+  },
+  {
+    "name": "Siemens Cyberspine Upgrade (Elite Athletic)",
+    "description": "",
+    "essenceCost": [0.22],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "requirements": {},
+    "availability": {
+      "rating": [12],
+      "restriction": "R"
+    },
+    "cost": [15600],
+    "source": "State Of The Art - ADL",
+    "page": 80,
+    "type": "Cyberware",
+    "subtype": "Cybersuite",
+    "capacity": [0],
+    "inheritAttributes": true,
+    "subsystemList": {
+      "cyberwareList": [
+        {
+          "name": "Reaction Enhancers",
+          "rating": 2
+        }
+      ]
+    },
+    "forceGrade": "Standard"
+  },
+  {
+    "name": "Siemens Cyberspine Upgrade (Celestial Athletic)",
+    "description": "",
+    "essenceCost": [0.22],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "requirements": {},
+    "availability": {
+      "rating": [17],
+      "restriction": "R"
+    },
+    "cost": [15600],
+    "source": "State Of The Art - ADL",
+    "page": 80,
+    "type": "Cyberware",
+    "subtype": "Cybersuite",
+    "capacity": [0],
+    "inheritAttributes": true,
+    "subsystemList": {
+      "cyberwareList": [
+        {
+          "name": "Reaction Enhancers",
+          "rating": 3
+        }
+      ]
+    },
+    "forceGrade": "Standard"
+  },
+  {
+    "name": "Siemens Cyberspine Upgrade (Elite Warrior)",
+    "description": "",
+    "essenceCost": [0.72],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "requirements": {},
+    "availability": {
+      "rating": [14],
+      "restriction": "R"
+    },
+    "cost": [132000],
+    "source": "State Of The Art - ADL",
+    "page": 80,
+    "type": "Cyberware",
+    "subtype": "Cybersuite",
+    "capacity": [0],
+    "inheritAttributes": true,
+    "subsystemList": {
+      "cyberwareList": [
+        {
+          "name": "Wired Reflexes",
+          "rating": 2
+        }
+      ]
+    },
+    "forceGrade": "Standard"
+  },
+  {
+    "name": "Siemens Cyberspine Upgrade (Celestial Warrior)",
+    "description": "",
+    "essenceCost": [1.44],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "requirements": {},
+    "availability": {
+      "rating": [22],
+      "restriction": "R"
+    },
+    "cost": [81600],
+    "source": "State Of The Art - ADL",
+    "page": 80,
+    "type": "Cyberware",
+    "subtype": "Cybersuite",
+    "capacity": [0],
+    "inheritAttributes": true,
+    "subsystemList": {
+      "cyberwareList": [
+        {
+          "name": "Wired Reflexes",
+          "rating": 3
+        }
+      ]
+    },
+    "forceGrade": "Standard"
+  },
+  {
+    "name": "Zeiss Consortium MET2000 Elitepilot",
+    "description": "",
+    "essenceCost": [2.23],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "forbidden": {},
+    "availability": {
+      "rating": [12],
+      "restriction": "R"
+    },
+    "cost": [162000],
+    "source": "State Of The Art - ADL",
+    "page": 81,
+    "type": "Cyberware",
+    "subtype": "Cybersuite",
+    "capacity": [0],
+    "inheritAttributes": true,
+    "subsystemList": {
+      "cyberwareList": [
+        {
+          "name": "Attention Coprocessor"
+        },
+        {
+          "name": "Gastric Neurostimulator"
+        },
+        {
+          "name": "Reaction Enhancers",
+          "rating": 2
+        },
+        {
+          "name": "Control Rig",
+          "rating": 2
+        }
+      ]
+    },
+    "forceGrade": "Standard"
+  },
+  {
+    "name": "Zeiss Consortium MET2000 Fernspäher",
+    "description": "",
+    "essenceCost": [1.22],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "forbidden": {},
+    "availability": {
+      "rating": [11],
+      "restriction": "R"
+    },
+    "cost": [64200],
+    "source": "State Of The Art - ADL",
+    "page": 81,
+    "type": "Cyberware",
+    "subtype": "Cybersuite",
+    "capacity": [0],
+    "inheritAttributes": true,
+    "subsystemList": {
+      "cyberwareList": [
+        {
+          "name": "Attention Coprocessor"
+        },
+        {
+          "name": "Cybereyes Basic System",
+          "rating": 3,
+          "subsystem": {
+            "cyberwareList": [
+              {
+                "name": "Flare Compensation"
+              },
+              {
+                "name": "Thermographic Vision"
+              },
+              {
+                "name": "Low-Light Vision"
+              },
+              {
+                "name": "Vision Enhancement",
+                "rating": 2
+              },
+              {
+                "name": "Smartlink"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Cyberears",
+          "rating": 1,
+          "subsystem": {
+            "cyberwareList": [
+              {
+                "name": "Spatial Recognizer"
+              },
+              {
+                "name": "Audio Enhancement",
+                "rating": 2
+              }
+            ]
+          }
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Orientation System"
+        },
+        {
+          "name": "Radar Sensor",
+          "rating": 2
+        }
+      ]
+    },
+    "forceGrade": "Standard"
+  },
+  {
+    "name": "Zeiss Consortium MET2000 Sturmpionier",
+    "description": "",
+    "essenceCost": [1.4],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "forbidden": {},
+    "availability": {
+      "rating": [11],
+      "restriction": "R"
+    },
+    "cost": [74100],
+    "source": "State Of The Art - ADL",
+    "page": 81,
+    "type": "Cyberware",
+    "subtype": "Cybersuite",
+    "capacity": [0],
+    "inheritAttributes": true,
+    "subsystemList": {
+      "cyberwareList": [
+        {
+          "name": "Cybereyes Basic System",
+          "rating": 3,
+          "subsystem": {
+            "cyberwareList": [
+              {
+                "name": "Flare Compensation"
+              },
+              {
+                "name": "Thermographic Vision"
+              },
+              {
+                "name": "Low-Light Vision"
+              },
+              {
+                "name": "Vision Enhancement",
+                "rating": 2
+              },
+              {
+                "name": "Smartlink"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Internal Air Tank",
+          "rating": 1
+        },
+        {
+          "name": "Muscle Replacement",
+          "rating": 1
+        },
+        {
+          "name": "Modular Mount"
+        },
+        {
+          "name": "Skilljack",
+          "rating": 4
+        },
+        {
+          "name": "Visualizer"
+        }
+      ]
+    },
+    "forceGrade": "Standard"
+  },
+  {
+    "name": "Zeiss Consortium MET2000 Sturmpionier - Trench Wires",
+    "description": "",
+    "essenceCost": [1.69],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "forbidden": {},
+    "availability": {
+      "rating": [14],
+      "restriction": "R"
+    },
+    "cost": [170100],
+    "source": "State Of The Art - ADL",
+    "page": 81,
+    "type": "Cyberware",
+    "subtype": "Cybersuite",
+    "capacity": [0],
+    "inheritAttributes": true,
+    "subsystemList": {
+      "cyberwareList": [
+        {
+          "name": "Cybereyes Basic System",
+          "rating": 3,
+          "subsystem": {
+            "cyberwareList": [
+              {
+                "name": "Flare Compensation"
+              },
+              {
+                "name": "Thermographic Vision"
+              },
+              {
+                "name": "Low-Light Vision"
+              },
+              {
+                "name": "Vision Enhancement",
+                "rating": 2
+              },
+              {
+                "name": "Smartlink"
+              }
+            ]
+          }
+        },
+        {
+          "name": "Internal Air Tank",
+          "rating": 1
+        },
+        {
+          "name": "Muscle Replacement",
+          "rating": 1
+        },
+        {
+          "name": "Modular Mount"
+        },
+        {
+          "name": "Skilljack",
+          "rating": 4
+        },
+        {
+          "name": "Visualizer"
+        },
+        {
+          "name": "Skillwires",
+          "rating": 4
+        }
+      ]
+    },
+    "forceGrade": "Standard"
+  },
+  {
     "name": "Antenna Grill",
     "description": "",
     "essenceCost": [0.1],

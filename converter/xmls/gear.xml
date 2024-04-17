@@ -18738,7 +18738,7 @@
       <rating>0</rating>
       <source>2050</source>
       <page>191</page>
-      <avail>4E</avail>
+      <avail>4</avail> <!-- TODO: Confirm this availability -->
       <cost>250</cost>
     </gear>
     <gear>
@@ -20335,7 +20335,7 @@
       <rating>0</rating>
       <source>2050</source>
       <page>197</page>
-      <avail>4V</avail>
+      <avail>4R</avail> <!-- TODO: Confirm this availability -->
       <cost>180</cost>
     </gear>
     <gear>
@@ -20357,7 +20357,7 @@
       <rating>0</rating>
       <source>2050</source>
       <page>197</page>
-      <avail>4E</avail>
+      <avail>4</avail> <!-- TODO: Confirm this availability -->
       <cost>50</cost>
     </gear>
     <gear>
@@ -20377,7 +20377,7 @@
       <rating>0</rating>
       <source>2050</source>
       <page>197</page>
-      <avail>3V</avail>
+      <avail>3R</avail> <!-- TODO: Confirm this availability -->
       <cost>360</cost>
     </gear>
     <gear>

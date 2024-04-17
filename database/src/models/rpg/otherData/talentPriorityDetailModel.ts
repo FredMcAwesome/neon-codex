@@ -10,13 +10,14 @@ import {
 } from "@mikro-orm/postgresql";
 import { talentCategoryEnum } from "@neon-codex/common/build/enums.js";
 import type { TalentPriorityType } from "@neon-codex/common/build/schemas/otherData/prioritySchemas.js";
-import { TalentPriorities } from "./priorityModel.js";
 import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
 import { Qualities } from "../traits/qualityModel.js";
 import {
-  SkillSpecificityPriorityDetails,
   SkillGroupPriorityDetails,
+  SkillPriorityDetails,
+  SkillSourcePriorityDetails,
 } from "./skillPriorityDetailModel.js";
+import { Priorities } from "./priorityModel.js";
 
 @Entity({
   discriminatorColumn: "type",
@@ -40,8 +41,11 @@ export abstract class TalentPriorityDetails {
   @ManyToOne({ entity: () => Qualities, ref: true, nullable: true })
   includedQuality?: Ref<Qualities>;
 
-  @OneToOne({ entity: () => SkillSpecificityPriorityDetails, nullable: true })
-  includedSkills?: SkillSpecificityPriorityDetails;
+  @OneToOne({ entity: () => SkillPriorityDetails, nullable: true })
+  includedSkills?: SkillPriorityDetails;
+
+  @OneToOne({ entity: () => SkillSourcePriorityDetails, nullable: true })
+  includedSkillSource?: SkillSourcePriorityDetails;
 
   @OneToOne({ entity: () => SkillGroupPriorityDetails, nullable: true })
   includedSkillGroups?: SkillGroupPriorityDetails;
@@ -52,8 +56,8 @@ export abstract class TalentPriorityDetails {
   @Property({ type: "json", nullable: true })
   forbidden?: RequirementsType;
 
-  @ManyToOne({ entity: () => TalentPriorities, ref: true })
-  talentPriority!: Ref<TalentPriorities>;
+  @ManyToOne({ entity: () => Priorities, ref: true })
+  talentPriority!: Ref<Priorities>;
 
   constructor(dto: TalentPriorityType) {
     this.name = dto.name;

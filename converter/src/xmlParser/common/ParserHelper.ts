@@ -123,16 +123,26 @@ export const convertSource = function (source: sourceBookXmlEnum | 2050) {
       return sourceBookEnum.TheVladivostokGauntlet;
     // Not in english
     case sourceBookXmlEnum.StateOfTheArtADL:
+      return sourceBookEnum.StateOfTheArtADL;
     case sourceBookXmlEnum.Schattenhandbuch:
+      return sourceBookEnum.Schattenhandbuch;
     case sourceBookXmlEnum.Schattenhandbuch2:
+      return sourceBookEnum.Schattenhandbuch2;
     case sourceBookXmlEnum.Schattenhandbuch3:
+      return sourceBookEnum.Schattenhandbuch3;
     case sourceBookXmlEnum.Hamburg:
+      return sourceBookEnum.Hamburg;
     case sourceBookXmlEnum.DatapulsSOTA2080:
+      return sourceBookEnum.DatapulsSOTA2080;
     case sourceBookXmlEnum.DatapulsVerschlusssache:
+      return sourceBookEnum.DatapulsVerschlusssache;
     case sourceBookXmlEnum.Shadowrun2050:
+      return sourceBookEnum.Shadowrun2050;
     case sourceBookXmlEnum.GrimmesErwachen:
-      assert(false, "Only english books should get here.");
+      return sourceBookEnum.GrimmesErwachen;
       break;
+    default:
+      assert(false, `Missing Book: ${xmlSource}`);
   }
 };
 
@@ -317,6 +327,9 @@ export const convertAllowGear = function (
     return { allowedGearList: undefined };
   }
   if (typeof xmlAllowGear === "string") {
+    if (xmlAllowGear === "") {
+      return { allowedGearList: undefined };
+    }
     return { allowedGearList: [xmlAllowGear] };
   }
   // console.log("Allow Gear: " + xmlAllowGear.toString());
@@ -392,37 +405,26 @@ export function convertAttribute(attribute: attributeXMLEnum) {
   switch (attribute) {
     case attributeXMLEnum.BOD:
       return attributeTypeEnum.Body;
-      break;
     case attributeXMLEnum.AGI:
       return attributeTypeEnum.Agility;
-      break;
     case attributeXMLEnum.REA:
       return attributeTypeEnum.Reaction;
-      break;
     case attributeXMLEnum.STR:
       return attributeTypeEnum.Strength;
-      break;
     case attributeXMLEnum.WIL:
       return attributeTypeEnum.Willpower;
-      break;
     case attributeXMLEnum.LOG:
       return attributeTypeEnum.Logic;
-      break;
     case attributeXMLEnum.INT:
       return attributeTypeEnum.Intuition;
-      break;
     case attributeXMLEnum.CHA:
       return attributeTypeEnum.Charisma;
-      break;
     case attributeXMLEnum.MAG:
       return attributeTypeEnum.Magic;
-      break;
     case attributeXMLEnum.RES:
       return attributeTypeEnum.Resonance;
-      break;
     case attributeXMLEnum.EDG:
       return attributeTypeEnum.Edge;
-      break;
     default:
       assert(false, attribute);
   }

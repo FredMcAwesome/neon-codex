@@ -2,12 +2,8 @@ import { XMLParser } from "fast-xml-parser";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import type {
-  WeaponXmlType,
-  WeaponListXmlType,
-} from "./WeaponParserSchemas.js";
+import type { WeaponXmlType } from "./WeaponParserSchemas.js";
 import { WeaponListXmlSchema } from "./WeaponParserSchemas.js";
-import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
 import { convertAllowGear, convertSource } from "../common/ParserHelper.js";
 import assert from "assert";
 import {
@@ -90,77 +86,8 @@ export function ParseWeapons() {
   }
 
   const weaponList = weaponListParsed.data;
-  const englishWeaponList: WeaponListXmlType = weaponList.filter(
-    (weaponAccessory) => {
-      let found = false;
-      switch (weaponAccessory.source) {
-        case sourceBookXmlEnum.AssassinPrimer:
-        case sourceBookXmlEnum.ChromeFlesh:
-        case sourceBookXmlEnum.CuttingAces:
-        case sourceBookXmlEnum.DataTrails:
-        case sourceBookXmlEnum.GunHeaven3:
-        case sourceBookXmlEnum.HardTargets:
-        case sourceBookXmlEnum.KillCode:
-        case sourceBookXmlEnum.KrimeKatalog:
-        case sourceBookXmlEnum.Lockdown:
-        case sourceBookXmlEnum.NoFuture:
-        case sourceBookXmlEnum.Rigger5:
-        case sourceBookXmlEnum.RunAndGun:
-        case sourceBookXmlEnum.RunFaster:
-        case sourceBookXmlEnum.SailAwaySweetSister:
-        case sourceBookXmlEnum.Shadowrun5:
-        case sourceBookXmlEnum.ShadowsInFocus_SanFranciscoMetroplex:
-        case sourceBookXmlEnum.StolenSouls:
-        case sourceBookXmlEnum.StreetGrimoire:
-        case sourceBookXmlEnum.StreetLethal:
-        case sourceBookXmlEnum.TheCompleteTrog:
-        case sourceBookXmlEnum.TheSeattleGambit:
-        case sourceBookXmlEnum.ForbiddenArcana:
-        case sourceBookXmlEnum.HowlingShadows:
-          found = true;
-          break;
-        // Not in english
-        case sourceBookXmlEnum.StateOfTheArtADL:
-        case sourceBookXmlEnum.Schattenhandbuch:
-        case sourceBookXmlEnum.Schattenhandbuch2:
-        case sourceBookXmlEnum.Schattenhandbuch3:
-        case sourceBookXmlEnum.Hamburg:
-        case sourceBookXmlEnum.DatapulsSOTA2080:
-        case sourceBookXmlEnum.DatapulsVerschlusssache:
-        case sourceBookXmlEnum.Shadowrun2050:
-        case 2050:
-        case sourceBookXmlEnum.GrimmesErwachen:
-          break;
-        // Not containing Weapons
-        case sourceBookXmlEnum.StreetGrimoireErrata:
-        case sourceBookXmlEnum.BulletsAndBandages:
-        case sourceBookXmlEnum.ShadowSpells:
-        case sourceBookXmlEnum.NothingPersonal:
-        case sourceBookXmlEnum.BloodyBusiness:
-        case sourceBookXmlEnum.DataTrailsDissonantEchoes:
-        case sourceBookXmlEnum.TheVladivostokGauntlet:
-        case sourceBookXmlEnum.SplinteredState:
-        case sourceBookXmlEnum.ShadowsInFocus_Butte:
-        case sourceBookXmlEnum.HongKongSourcebook:
-        case sourceBookXmlEnum.ShadowsInFocus_Metropole:
-        case sourceBookXmlEnum.BookOfTheLost:
-        case sourceBookXmlEnum.ShadowsInFocus_SiouxNation_CountingCoup:
-        case sourceBookXmlEnum.DarkTerrors:
-        case sourceBookXmlEnum.BetterThanBad:
-        case sourceBookXmlEnum.Aetherology:
-        case sourceBookXmlEnum.ShadowrunMissions0803_10BlockTango:
-        case sourceBookXmlEnum.ShadowrunMissions0804_DirtyLaundry:
-        case sourceBookXmlEnum.ShadowrunQuickStartRules:
-        case sourceBookXmlEnum.SprawlWilds:
-          assert(false);
-          break;
-      }
-      return found;
-    }
-  );
-  const weaponListNoAmmo = englishWeaponList;
 
-  const weaponListConverted: WeaponSummaryListType = weaponListNoAmmo
+  const weaponListConverted: WeaponSummaryListType = weaponList
     // .filter((weapon) => weapon.name === "Ares Thunderstruck Gauss Rifle")
     .map((weapon: WeaponXmlType) => {
       const convertedWeapon: WeaponSummaryType = convertWeapon(weapon);

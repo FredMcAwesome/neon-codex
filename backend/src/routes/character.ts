@@ -15,6 +15,9 @@ import {
   weaponTypeEnum,
   augmentationTypeEnum,
   vehicleTypeEnum,
+  priorityLetterEnum,
+  talentCategoryEnum,
+  heritageCategoryEnum,
 } from "@neon-codex/common/build/enums.js";
 import type {
   AugmentationListType,
@@ -60,8 +63,8 @@ import type {
 } from "@neon-codex/common/build/schemas/equipment/combat/armourSchemas.js";
 import {
   AttributesSchema,
+  PriorityLevelsSchema,
   SpecialAttributesSchema,
-  PrioritiesSchema,
 } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
 import { Armours } from "@neon-codex/database/build/models/rpg/equipment/combat/armourModel.js";
 import { Characters } from "@neon-codex/database/build/models/rpg/characters/characterModel.js";
@@ -71,6 +74,27 @@ import {
   type QualityType,
 } from "@neon-codex/common/build/schemas/abilities/qualitySchemas.js";
 import { Qualities } from "@neon-codex/database/build/models/rpg/traits/qualityModel.js";
+import {
+  BaseHeritages,
+  Heritages,
+  Metavariants,
+} from "@neon-codex/database/build/models/rpg/traits/heritageModel.js";
+import { Priorities } from "@neon-codex/database/build/models/rpg/otherData/priorityModel.js";
+import type {
+  PriorityRowType,
+  PriorityTableType,
+} from "@neon-codex/common/build/schemas/otherData/prioritySchemas.js";
+import type { Loaded } from "@mikro-orm/postgresql";
+import {
+  MagicTalentPriorityDetails,
+  ResonanceTalentPriorityDetails,
+  DepthTalentPriorityDetails,
+  MundaneTalentPriorityDetails,
+} from "@neon-codex/database/build/models/rpg/otherData/talentPriorityDetailModel.js";
+import type {
+  HeritageListType,
+  HeritageType,
+} from "@neon-codex/common/build/schemas/abilities/heritageSchemas.js";
 
 export async function getSkills() {
   const db = await init();
@@ -580,9 +604,155 @@ async function getQualities() {
   return qualitiesResponse;
 }
 
+async function getPriorityTable() {
+  const db = await init();
+  const priorities = await db.em.findAll(Priorities, {
+    populate: ["*", "heritageList", "talentList"],
+  });
+  const parsedPriorities = priorities.map((priority) => {
+    return parsePriority(priority);
+  });
+  const A = parsedPriorities.find(
+    (priorities) => priorities.priority === priorityLetterEnum.A
+  );
+  const B = parsedPriorities.find(
+    (priorities) => priorities.priority === priorityLetterEnum.B
+  );
+  const C = parsedPriorities.find(
+    (priorities) => priorities.priority === priorityLetterEnum.C
+  );
+  const D = parsedPriorities.find(
+    (priorities) => priorities.priority === priorityLetterEnum.D
+  );
+  const E = parsedPriorities.find(
+    (priorities) => priorities.priority === priorityLetterEnum.E
+  );
+  if (
+    A === undefined ||
+    B === undefined ||
+    C === undefined ||
+    D === undefined ||
+    E === undefined
+  ) {
+    throw Error("Priority table not loaded in DB");
+  }
+  const priorityTableResponse: PriorityTableType = {
+    A: (({ priority: _, ...o }) => o)(A),
+    B: (({ priority: _, ...o }) => o)(B),
+    C: (({ priority: _, ...o }) => o)(C),
+    D: (({ priority: _, ...o }) => o)(D),
+    E: (({ priority: _, ...o }) => o)(E),
+  };
+  return priorityTableResponse;
+}
+
+async function getHeritages() {
+  const db = await init();
+  const heritages = await db.em.findAll(Heritages, {
+    populate: [
+      "*",
+      "includedWeaponList",
+      "includedQualityList",
+      "forbiddenQualityList",
+    ],
+  });
+
+  return Promise.all(
+    heritages.map(async (heritage) => {
+      let typeInformation:
+        | {
+            category: heritageCategoryEnum.Metahuman;
+            metavariantList?: Array<string>;
+          }
+        | {
+            category: heritageCategoryEnum.Metasapient;
+            metavariantList?: Array<string>;
+          }
+        | {
+            category: heritageCategoryEnum.Shapeshifter;
+            metavariantList?: Array<string>;
+          }
+        | {
+            category: heritageCategoryEnum.Metavariant;
+            baseHeritage: string;
+          }
+        | undefined;
+      if (heritage instanceof Metavariants) {
+        const fullBaseHeritage = await heritage.baseHeritage.load();
+        if (fullBaseHeritage === null) {
+          throw Error("metavariant base heritage is not loaded");
+        }
+        typeInformation = {
+          category: heritageCategoryEnum.Metavariant as const,
+          baseHeritage: fullBaseHeritage.name,
+        };
+      } else {
+        const variantHeritages = (heritage as unknown as BaseHeritages)
+          .variantHeritages;
+
+        if (heritage.type === heritageCategoryEnum.Metahuman) {
+          typeInformation = {
+            category: heritageCategoryEnum.Metahuman as const,
+          };
+        } else if (heritage.type === heritageCategoryEnum.Metasapient) {
+          typeInformation = {
+            category: heritageCategoryEnum.Metasapient as const,
+          };
+        } else {
+          typeInformation = {
+            category: heritageCategoryEnum.Shapeshifter as const,
+          };
+        }
+
+        if (variantHeritages.length > 0) {
+          const metavariantList = variantHeritages.map((metavariant) => {
+            return metavariant.name;
+          });
+          typeInformation.metavariantList = metavariantList;
+        }
+      }
+      const parsedHeritage: HeritageType = {
+        name: heritage.name,
+        ...typeInformation,
+        pointBuyKarmaCost: heritage.pointBuyKarmaCost,
+        halveAttributePoints: heritage.halveAttributePoints,
+        bodyAttributeRange: heritage.bodyAttributeRange,
+        agilityAttributeRange: heritage.agilityAttributeRange,
+        reactionAttributeRange: heritage.reactionAttributeRange,
+        strengthAttributeRange: heritage.strengthAttributeRange,
+        charismaAttributeRange: heritage.charismaAttributeRange,
+        intuitionAttributeRange: heritage.intuitionAttributeRange,
+        logicAttributeRange: heritage.logicAttributeRange,
+        willpowerAttributeRange: heritage.willpowerAttributeRange,
+        initiativeAttributeRange: heritage.initiativeAttributeRange,
+        edgeAttributeRange: heritage.edgeAttributeRange,
+        magicAttributeRange: heritage.magicAttributeRange,
+        resonanceAttributeRange: heritage.resonanceAttributeRange,
+        essenceAttributeRange: heritage.essenceAttributeRange,
+        depthAttributeRange: heritage.depthAttributeRange,
+        initiative: heritage.initiative,
+        nonStandardMovement: heritage.nonStandardMovement,
+        movement: heritage.movement,
+        addWeaponList: heritage.includedWeaponList.map((weapon) => weapon.name),
+        addQualityList: heritage.includedQualityList.$.map((quality) => {
+          return { name: quality.quality.$.name, rating: quality.rating };
+        }),
+        forbiddenQualityList: heritage.forbiddenQualityList.map(
+          (quality) => quality.name
+        ),
+        bonus: heritage.bonus,
+        source: heritage.source,
+        page: heritage.page,
+        description: heritage.description,
+      };
+      return parsedHeritage;
+    })
+  );
+}
+
 const skills = privateProcedure.query(async () => {
   try {
-    const skillsResponse = await getSkills();
+    const skillsResponse: SkillListType = await getSkills();
     return skillsResponse;
   } catch (error) {
     logger.error("Unable to connect to the database:", error);
@@ -593,7 +763,7 @@ const skills = privateProcedure.query(async () => {
 const weapons = privateProcedure.query(async () => {
   try {
     const weaponsResponse: WeaponSummaryListType = await getWeapons();
-    logger.log(JSON.stringify(weaponsResponse, null, 2));
+    // logger.log(JSON.stringify(weaponsResponse, null, 2));
     return weaponsResponse;
   } catch (error) {
     logger.error("Unable to connect to the database:", error);
@@ -604,7 +774,7 @@ const weapons = privateProcedure.query(async () => {
 const armours = privateProcedure.query(async () => {
   try {
     const armoursResponse: ArmourListType = await getArmours();
-    logger.log(JSON.stringify(armoursResponse, null, 2));
+    // logger.log(JSON.stringify(armoursResponse, null, 2));
     return armoursResponse;
   } catch (error) {
     logger.error("Unable to connect to the database:", error);
@@ -614,8 +784,8 @@ const armours = privateProcedure.query(async () => {
 
 const gears = privateProcedure.query(async () => {
   try {
-    const gearResponse = await getGears();
-    logger.log(JSON.stringify(gearResponse, null, 2));
+    const gearResponse: GearListType = await getGears();
+    // logger.log(JSON.stringify(gearResponse, null, 2));
     return gearResponse;
   } catch (error) {
     logger.error("Unable to connect to the database:", error);
@@ -627,7 +797,7 @@ const augmentations = privateProcedure.query(async () => {
   try {
     const augmentationsResponse: AugmentationListType =
       await getAugmentations();
-    logger.log(JSON.stringify(augmentationsResponse, null, 2));
+    // logger.log(JSON.stringify(augmentationsResponse, null, 2));
     return augmentationsResponse;
   } catch (error) {
     logger.error("Unable to connect to the database:", error);
@@ -638,7 +808,7 @@ const augmentations = privateProcedure.query(async () => {
 const vehiclesAndDrones = privateProcedure.query(async () => {
   try {
     const vehiclesAndDronesResponse: VehicleListType = await getVehicles();
-    logger.log(JSON.stringify(vehiclesAndDronesResponse, null, 2));
+    // logger.log(JSON.stringify(vehiclesAndDronesResponse, null, 2));
     return vehiclesAndDronesResponse;
   } catch (error) {
     logger.error("Unable to connect to the database:", error);
@@ -649,8 +819,30 @@ const vehiclesAndDrones = privateProcedure.query(async () => {
 const qualities = privateProcedure.query(async () => {
   try {
     const qualitiesResponse: QualityListType = await getQualities();
-    logger.log(JSON.stringify(qualitiesResponse, null, 2));
+    // logger.log(JSON.stringify(qualitiesResponse, null, 2));
     return qualitiesResponse;
+  } catch (error) {
+    logger.error("Unable to connect to the database:", error);
+    throw new Error("Database error");
+  }
+});
+
+const priorities = privateProcedure.query(async () => {
+  try {
+    const prioritiesResponse: PriorityTableType = await getPriorityTable();
+    // logger.log(JSON.stringify(prioritiesResponse, null, 2));
+    return prioritiesResponse;
+  } catch (error) {
+    logger.error("Unable to connect to the database:", error);
+    throw new Error("Database error");
+  }
+});
+
+const heritages = privateProcedure.query(async () => {
+  try {
+    const prioritiesResponse: HeritageListType = await getHeritages();
+    // logger.log(JSON.stringify(prioritiesResponse, null, 2));
+    return prioritiesResponse;
   } catch (error) {
     logger.error("Unable to connect to the database:", error);
     throw new Error("Database error");
@@ -688,7 +880,8 @@ const all = privateProcedure.query(async () => {
 });
 const CharacterInformationSchema = zod
   .object({
-    priorityInfo: PrioritiesSchema,
+    // TODO: Maybe a union for this with other creation types?
+    priorityInfo: PriorityLevelsSchema,
     attributeInfo: AttributesSchema,
     specialAttributeInfo: SpecialAttributesSchema,
     positiveQualitiesSelected: QualityListSchema,
@@ -715,7 +908,7 @@ const createCharacter = privateProcedure
       karmaPoints: opts.input.karmaPoints,
     });
     await db.em.persistAndFlush(character);
-    logger.log(JSON.stringify(character, null, 2));
+    // logger.log(JSON.stringify(character, null, 2));
     return character.id;
   });
 
@@ -735,7 +928,7 @@ const getCharacter = privateProcedure
       if (character === null) {
         throw new Error("Character does not exist");
       }
-      logger.log(JSON.stringify(character, null, 2));
+      // logger.log(JSON.stringify(character, null, 2));
       return character;
     } catch (error) {
       logger.error("Unable to connect to the database:", error);
@@ -746,6 +939,8 @@ const getCharacter = privateProcedure
 export const characterRouter = router({
   skills: skills,
   qualities: qualities,
+  priorities: priorities,
+  heritages: heritages,
   weapons: weapons,
   armours: armours,
   gear: gears,
@@ -755,3 +950,113 @@ export const characterRouter = router({
   createCharacter: createCharacter,
   getCharacter: getCharacter,
 });
+
+function parsePriority(
+  priority: Loaded<Priorities, "*" | "heritageList" | "talentList", "*", never>
+): PriorityRowType {
+  const heritageList = priority.heritageList.$.map((heritage) => {
+    let metavariantList;
+    if (heritage.metavariantList.$.length > 0) {
+      metavariantList = heritage.metavariantList.$.map((metavariant) => {
+        return {
+          name: metavariant.linkedHeritage.$.name,
+          specialAttributePoints: metavariant.specialAttributePoints,
+          karmaCost: metavariant.karmaCost,
+        };
+      });
+    }
+
+    return {
+      name: heritage.linkedHeritage.$.name,
+      specialAttributePoints: heritage.specialAttributePoints,
+      karmaCost: heritage.karmaCost,
+      metavariantList: metavariantList,
+    };
+  });
+
+  const talentList = priority.talentList.$.map((talent) => {
+    let includedSkills;
+    if (talent.includedSkills !== undefined) {
+      includedSkills = {
+        points: talent.includedSkills.points,
+        rating: talent.includedSkills.rating,
+        skillList: talent.includedSkills.skillList.$.map((skill) => {
+          return skill.name;
+        }),
+      };
+    }
+    let includedSkillSource;
+    if (talent.includedSkillSource !== undefined) {
+      includedSkillSource = {
+        points: talent.includedSkillSource.points,
+        rating: talent.includedSkillSource.rating,
+        source: talent.includedSkillSource.source,
+      };
+    }
+    let includedSkillGroups;
+    if (talent.includedSkillGroups !== undefined) {
+      includedSkillGroups = {
+        points: talent.includedSkillGroups.points,
+        rating: talent.includedSkillGroups.rating,
+        groupList: talent.includedSkillGroups.skillGroupList.$.map((group) => {
+          return group.name;
+        }),
+      };
+    }
+
+    const baseTalent = {
+      name: talent.name,
+      label: talent.label,
+      includedQuality: talent.includedQuality?.$.name,
+      includedSkills: includedSkills || includedSkillSource,
+      includedSkillGroups: includedSkillGroups,
+      required: talent.requirements,
+      forbidden: talent.forbidden,
+    };
+
+    if (talent instanceof MagicTalentPriorityDetails) {
+      return {
+        ...baseTalent,
+        category: talentCategoryEnum.Magic as const,
+        magic: talent.magic,
+        spells: talent.spells,
+      };
+    } else if (talent instanceof ResonanceTalentPriorityDetails) {
+      return {
+        ...baseTalent,
+        category: talentCategoryEnum.Resonance as const,
+        resonance: talent.resonance,
+        complexForms: talent.complexForms,
+      };
+    } else if (talent instanceof DepthTalentPriorityDetails) {
+      return {
+        ...baseTalent,
+        category: talentCategoryEnum.Depth as const,
+        depth: talent.depth,
+      };
+    } else if (talent instanceof MundaneTalentPriorityDetails) {
+      return {
+        ...baseTalent,
+        category: talentCategoryEnum.Mundane as const,
+      };
+    } else {
+      throw Error("Talent type is unknown");
+    }
+  });
+
+  return {
+    priority: priority.rowLetter,
+    heritages: {
+      name: priority.heritageLabel,
+      heritageList: heritageList,
+    },
+
+    talents: {
+      name: priority.talentLabel,
+      talentList: talentList,
+    },
+    attributes: priority.attributes,
+    skills: priority.skills,
+    resources: priority.resources,
+  };
+}

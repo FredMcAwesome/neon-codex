@@ -2,10 +2,7 @@
 import { XMLParser } from "fast-xml-parser";
 import path from "path";
 import { fileURLToPath } from "url";
-import type {
-  WeaponAccessoryXmlType,
-  WeaponAccessoryListXmlType,
-} from "./WeaponAccessoryParserSchemas.js";
+import type { WeaponAccessoryXmlType } from "./WeaponAccessoryParserSchemas.js";
 import { WeaponAccessoryListXmlSchema } from "./WeaponAccessoryParserSchemas.js";
 import type {
   AmmoCapacityCalculationType,
@@ -30,7 +27,6 @@ import {
   modifyAmmoCapacitySemantics,
   ammoWeaponAccessorySemantics,
 } from "./WeaponAccessoryParserHelper.js";
-import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
 import { convertSource } from "../common/ParserHelper.js";
 import WeaponAccessories from "../../grammar/weaponAccessories.ohm-bundle.js";
 import type { MatchResult } from "ohm-js";
@@ -210,76 +206,9 @@ export function ParseWeaponAccessories() {
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
   // })
-  const englishWeaponAccessoryList: WeaponAccessoryListXmlType =
-    weaponAccessoryList.filter((weaponAccessory) => {
-      let found = false;
-      switch (weaponAccessory.source) {
-        case sourceBookXmlEnum.AssassinPrimer:
-        case sourceBookXmlEnum.ChromeFlesh:
-        case sourceBookXmlEnum.CuttingAces:
-        case sourceBookXmlEnum.DataTrails:
-        case sourceBookXmlEnum.GunHeaven3:
-        case sourceBookXmlEnum.HardTargets:
-        case sourceBookXmlEnum.KillCode:
-        case sourceBookXmlEnum.KrimeKatalog:
-        case sourceBookXmlEnum.Lockdown:
-        case sourceBookXmlEnum.NoFuture:
-        case sourceBookXmlEnum.Rigger5:
-        case sourceBookXmlEnum.RunAndGun:
-        case sourceBookXmlEnum.RunFaster:
-        case sourceBookXmlEnum.SailAwaySweetSister:
-        case sourceBookXmlEnum.Shadowrun5:
-        case sourceBookXmlEnum.ShadowsInFocus_SanFranciscoMetroplex:
-        case sourceBookXmlEnum.StolenSouls:
-        case sourceBookXmlEnum.StreetGrimoire:
-        case sourceBookXmlEnum.StreetLethal:
-        case sourceBookXmlEnum.TheCompleteTrog:
-        case sourceBookXmlEnum.TheSeattleGambit:
-        case sourceBookXmlEnum.BetterThanBad:
-          found = true;
-          break;
-        // Not in english
-        case sourceBookXmlEnum.StateOfTheArtADL:
-        case sourceBookXmlEnum.Schattenhandbuch:
-        case sourceBookXmlEnum.Schattenhandbuch2:
-        case sourceBookXmlEnum.Schattenhandbuch3:
-        case sourceBookXmlEnum.Hamburg:
-        case sourceBookXmlEnum.DatapulsSOTA2080:
-        case sourceBookXmlEnum.DatapulsVerschlusssache:
-        case sourceBookXmlEnum.Shadowrun2050:
-        case 2050:
-        case sourceBookXmlEnum.GrimmesErwachen:
-          break;
-        // Not containing Weapon Accessories
-        case sourceBookXmlEnum.StreetGrimoireErrata:
-        case sourceBookXmlEnum.BulletsAndBandages:
-        case sourceBookXmlEnum.ShadowSpells:
-        case sourceBookXmlEnum.NothingPersonal:
-        case sourceBookXmlEnum.BloodyBusiness:
-        case sourceBookXmlEnum.DataTrailsDissonantEchoes:
-        case sourceBookXmlEnum.HowlingShadows:
-        case sourceBookXmlEnum.TheVladivostokGauntlet:
-        case sourceBookXmlEnum.SplinteredState:
-        case sourceBookXmlEnum.ShadowsInFocus_Butte:
-        case sourceBookXmlEnum.HongKongSourcebook:
-        case sourceBookXmlEnum.ShadowsInFocus_Metropole:
-        case sourceBookXmlEnum.BookOfTheLost:
-        case sourceBookXmlEnum.ForbiddenArcana:
-        case sourceBookXmlEnum.ShadowsInFocus_SiouxNation_CountingCoup:
-        case sourceBookXmlEnum.DarkTerrors:
-        case sourceBookXmlEnum.Aetherology:
-        case sourceBookXmlEnum.ShadowrunMissions0803_10BlockTango:
-        case sourceBookXmlEnum.ShadowrunMissions0804_DirtyLaundry:
-        case sourceBookXmlEnum.ShadowrunQuickStartRules:
-        case sourceBookXmlEnum.SprawlWilds:
-          assert(false, `weaponAccessory.source = ${weaponAccessory.source}`);
-          break;
-      }
-      return found;
-    });
 
   // const weaponListConverted: Array<RequiredEntityData<MeleeWeapons>> =
-  const weaponAccessoryListConverted = englishWeaponAccessoryList
+  const weaponAccessoryListConverted = weaponAccessoryList
     // .filter((weapon) => weapon.name === "Ares Thunderstruck Gauss Rifle")
     // .filter((weaponAccessory) => weaponAccessory.name === "Concealable Holster")
     .map((weaponAccessory: WeaponAccessoryXmlType) => {

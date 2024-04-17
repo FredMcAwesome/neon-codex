@@ -3150,6 +3150,434 @@
     "page": 136
   },
   {
+    "name": "Form Fitting, Shirt (2050)",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 1,
+    "capacity": 0,
+    "availability": {
+      "rating": [3],
+      "restriction": ""
+    },
+    "cost": [150],
+    "source": "Shadowrun 2050",
+    "page": 192
+  },
+  {
+    "name": "Form Fitting, Half Suit (2050)",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 2,
+    "capacity": 0,
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [250],
+    "source": "Shadowrun 2050",
+    "page": 192
+  },
+  {
+    "name": "Form Fitting, Full Suit (2050)",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 3,
+    "capacity": 0,
+    "availability": {
+      "rating": [5],
+      "restriction": ""
+    },
+    "cost": [500],
+    "source": "Shadowrun 2050",
+    "page": 192
+  },
+  {
+    "name": "Lined Coat (2050)",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 9,
+    "capacity": 9,
+    "availability": {
+      "rating": [2],
+      "restriction": ""
+    },
+    "cost": [700],
+    "source": "Shadowrun 2050",
+    "page": 192
+  },
+  {
+    "name": "Helmet (2050)",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 2,
+    "capacity": 9,
+    "availability": {
+      "rating": [12],
+      "restriction": ""
+    },
+    "cost": [200],
+    "source": "Shadowrun 2050",
+    "page": 192
+  },
+  {
+    "name": "Clothing, Ordinary (2050)",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [50],
+    "source": "Shadowrun 2050",
+    "page": 192
+  },
+  {
+    "name": "Clothing, Fine (2050)",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [500],
+    "source": "Shadowrun 2050",
+    "page": 192
+  },
+  {
+    "name": "Clothing, Tres Chic (2050)",
+    "description": "",
+    "category": "Clothing",
+    "damageReduction": 0,
+    "capacity": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": {
+      "range": {
+        "min": 1000,
+        "max": 100000
+      }
+    },
+    "source": "Shadowrun 2050",
+    "page": 192
+  },
+  {
+    "name": "Leather, Synthetic (2050)",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 3,
+    "capacity": 3,
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [250],
+    "source": "Shadowrun 2050",
+    "page": 192
+  },
+  {
+    "name": "Leather, Real (2050)",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 4,
+    "capacity": 4,
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [750],
+    "source": "Shadowrun 2050",
+    "page": 192
+  },
+  {
+    "name": "Armor Jacket (2050)",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 12,
+    "capacity": 12,
+    "availability": {
+      "rating": [3],
+      "restriction": ""
+    },
+    "cost": [900],
+    "source": "Shadowrun 2050",
+    "page": 192
+  },
+  {
+    "name": "Armor Clothing (2050)",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 6,
+    "capacity": 6,
+    "availability": {
+      "rating": [2],
+      "restriction": ""
+    },
+    "cost": [500],
+    "source": "Shadowrun 2050",
+    "page": 192
+  },
+  {
+    "name": "Armor Vest (2050)",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 9,
+    "capacity": 9,
+    "availability": {
+      "rating": [2],
+      "restriction": ""
+    },
+    "cost": [200],
+    "source": "Shadowrun 2050",
+    "page": 192
+  },
+  {
+    "name": "Heavy Armor, Full (2050)",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 18,
+    "capacity": 18,
+    "allowModsFromCategory": "Full Body Armour Mods",
+    "availability": {
+      "rating": [16],
+      "restriction": "R"
+    },
+    "cost": [20000],
+    "source": "Shadowrun 2050",
+    "page": 192
+  },
+  {
+    "name": "Heavy Armor, Partial (2050)",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 15,
+    "capacity": 15,
+    "availability": {
+      "rating": [8],
+      "restriction": "R"
+    },
+    "cost": [10000],
+    "source": "Shadowrun 2050",
+    "page": 192
+  },
+  {
+    "name": "E'lyzée Elio: Bra's Suit",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 8,
+    "capacity": 4,
+    "includedMods": [
+      {
+        "name": "Custom Fit"
+      }
+    ],
+    "availability": {
+      "rating": [8],
+      "restriction": ""
+    },
+    "cost": [3500],
+    "source": "State Of The Art - ADL",
+    "page": 91
+  },
+  {
+    "name": "E'lyzée Elio: Tha'il Dress",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 6,
+    "capacity": 2,
+    "includedMods": [
+      {
+        "name": "Custom Fit"
+      }
+    ],
+    "availability": {
+      "rating": [10],
+      "restriction": ""
+    },
+    "cost": [4500],
+    "source": "State Of The Art - ADL",
+    "page": 91
+  },
+  {
+    "name": "E'lyzée Elio: Bra's Cape",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 10,
+    "customFitStackDamageReduction": 2,
+    "capacity": 12,
+    "includedMods": [
+      {
+        "name": "Custom Fit (Stack)"
+      }
+    ],
+    "availability": {
+      "rating": [10],
+      "restriction": ""
+    },
+    "cost": [4000],
+    "source": "State Of The Art - ADL",
+    "page": 91
+  },
+  {
+    "name": "E'lyzée Elio: Tha'il Cape",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 8,
+    "customFitStackDamageReduction": 2,
+    "capacity": 4,
+    "includedMods": [
+      {
+        "name": "Custom Fit (Stack)"
+      }
+    ],
+    "availability": {
+      "rating": [8],
+      "restriction": ""
+    },
+    "cost": [1500],
+    "source": "State Of The Art - ADL",
+    "page": 91
+  },
+  {
+    "name": "Franzinger Fashion Tenor: Tailcoat Combination",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 8,
+    "capacity": 5,
+    "includedMods": [
+      {
+        "name": "Custom Fit"
+      }
+    ],
+    "availability": {
+      "rating": [8],
+      "restriction": ""
+    },
+    "cost": [2400],
+    "source": "State Of The Art - ADL",
+    "page": 92
+  },
+  {
+    "name": "Franzinger Fashion Tenor: Coat",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 10,
+    "customFitStackDamageReduction": 2,
+    "capacity": 8,
+    "includedMods": [
+      {
+        "name": "Custom Fit (Stack)"
+      }
+    ],
+    "availability": {
+      "rating": [8],
+      "restriction": ""
+    },
+    "cost": [3200],
+    "source": "State Of The Art - ADL",
+    "page": 92
+  },
+  {
+    "name": "Rheingold Pro Tec Plus: Suit",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 9,
+    "capacity": 5,
+    "includedMods": [
+      {
+        "name": "Custom Fit"
+      }
+    ],
+    "availability": {
+      "rating": [8],
+      "restriction": ""
+    },
+    "cost": [2700],
+    "source": "State Of The Art - ADL",
+    "page": 92
+  },
+  {
+    "name": "Rheingold Pro Tec Plus: Coat",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 10,
+    "customFitStackDamageReduction": 3,
+    "capacity": 10,
+    "includedMods": [
+      {
+        "name": "Custom Fit (Stack)"
+      }
+    ],
+    "availability": {
+      "rating": [10],
+      "restriction": ""
+    },
+    "cost": [3500],
+    "source": "State Of The Art - ADL",
+    "page": 92
+  },
+  {
+    "name": "StattKrieg: Armor Vest",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 8,
+    "capacity": 4,
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [550],
+    "source": "State Of The Art - ADL",
+    "page": 93
+  },
+  {
+    "name": "StattKrieg: Armor Jacket",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 10,
+    "capacity": 5,
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [800],
+    "source": "State Of The Art - ADL",
+    "page": 93
+  },
+  {
+    "name": "StattKrieg: Padded Overall",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 8,
+    "capacity": 8,
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [550],
+    "source": "State Of The Art - ADL",
+    "page": 93
+  },
+  {
+    "name": "StattKrieg: Helmet",
+    "description": "",
+    "category": "High-Fashion Armour",
+    "damageReduction": 2,
+    "capacity": 2,
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [150],
+    "source": "State Of The Art - ADL",
+    "page": 93
+  },
+  {
     "name": "Rockblood Old School Line",
     "description": "",
     "category": "Armour",
@@ -3320,6 +3748,68 @@
     "cost": [1000],
     "source": "Kill Code",
     "page": 70
+  },
+  {
+    "name": "FleetHead Kappe",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 0,
+    "capacity": 3,
+    "includedGearList": [
+      {
+        "name": "Image Link"
+      }
+    ],
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [200],
+    "source": "Hamburg",
+    "page": 173
+  },
+  {
+    "name": "Rheingold Friesennerz",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 8,
+    "capacity": 6,
+    "includedMods": [
+      {
+        "name": "Chemical Protection",
+        "rating": 3
+      }
+    ],
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [850],
+    "source": "Hamburg",
+    "page": 173
+  },
+  {
+    "name": "Ares Victory Friesennerz",
+    "description": "",
+    "category": "Armour",
+    "damageReduction": 6,
+    "capacity": 5,
+    "includedMods": [
+      {
+        "name": "Chemical Protection",
+        "rating": 3
+      },
+      {
+        "name": "Internal Air Tank (5 Minutes)"
+      }
+    ],
+    "availability": {
+      "rating": [7],
+      "restriction": ""
+    },
+    "cost": [920],
+    "source": "Hamburg",
+    "page": 173
   },
   {
     "name": "Trenchcoat",

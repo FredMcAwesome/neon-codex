@@ -2,11 +2,12 @@ import { z as zod } from "zod";
 import {
   BonusQualityListSchema,
   BonusSchema,
+  ForbiddenQualityListSchema,
   InitiativeSchema,
 } from "../shared/bonusSchemas.js";
-import { metatypeCategoryEnum } from "../../enums.js";
+import { heritageCategoryEnum } from "../../enums.js";
 
-const AttributeRangeSchema = zod
+export const AttributeRangeSchema = zod
   .object({
     min: zod.number(),
     max: zod.number(),
@@ -32,12 +33,11 @@ const MovementStrideSchema = zod
   .strict();
 export type MovementStrideType = zod.infer<typeof MovementStrideSchema>;
 
-const BaseMetatypeSchema = zod
+const PartialHeritageSchema = zod
   .object({
     // id: zod.string(),
     name: zod.string(),
     description: zod.string(),
-    category: zod.nativeEnum(metatypeCategoryEnum),
     pointBuyKarmaCost: zod.number(),
     halveAttributePoints: zod.optional(zod.literal(true)),
     bodyAttributeRange: AttributeRangeSchema,
@@ -60,16 +60,33 @@ const BaseMetatypeSchema = zod
     addWeaponList: zod.optional(zod.array(zod.string())),
     addPowerList: zod.optional(zod.array(zod.string())),
     addQualityList: zod.optional(BonusQualityListSchema),
-    forbiddenQualityList: zod.optional(BonusQualityListSchema),
+    forbiddenQualityList: zod.optional(ForbiddenQualityListSchema),
     bonus: zod.optional(BonusSchema),
     source: zod.string(),
     page: zod.number(),
   })
   .strict();
-export type BaseMetatypeType = zod.infer<typeof BaseMetatypeSchema>;
-export const MetatypeSchema = BaseMetatypeSchema.extend({
-  metavariantList: zod.optional(zod.array(BaseMetatypeSchema)),
+const MetavariantSchema = PartialHeritageSchema.extend({
+  category: zod.literal(heritageCategoryEnum.Metavariant),
+  baseHeritage: zod.string(),
 }).strict();
-export type MetatypeType = zod.infer<typeof MetatypeSchema>;
-export const MetatypeListSchema = zod.array(MetatypeSchema);
-export type MetatypeListType = zod.infer<typeof MetatypeListSchema>;
+// Can't have a union as a key for a discriminated union so
+// need to do this instead
+const PartialBaseHeritageSchema = PartialHeritageSchema.extend({
+  metavariantList: zod.optional(zod.array(zod.string())),
+}).strict();
+export const HeritageSchema = zod.discriminatedUnion("category", [
+  PartialBaseHeritageSchema.extend({
+    category: zod.literal(heritageCategoryEnum.Metahuman),
+  }).strict(),
+  PartialBaseHeritageSchema.extend({
+    category: zod.literal(heritageCategoryEnum.Metasapient),
+  }).strict(),
+  PartialBaseHeritageSchema.extend({
+    category: zod.literal(heritageCategoryEnum.Shapeshifter),
+  }).strict(),
+  MetavariantSchema,
+]);
+export type HeritageType = zod.infer<typeof HeritageSchema>;
+export const HeritageListSchema = zod.array(HeritageSchema);
+export type HeritageListType = zod.infer<typeof HeritageListSchema>;

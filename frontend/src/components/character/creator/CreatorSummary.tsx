@@ -1,21 +1,21 @@
 import type { EquipmentListType } from "@neon-codex/common/build/schemas/equipment/other/equipmentSchemas.js";
 import type { CustomSkillListType } from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
-import type { ISkillPoints } from "./PriorityImports.js";
 import type {
-  PrioritiesType,
+  PriorityLevelsType,
   AttributesType,
   SpecialAttributesType,
 } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
 import type { QualityListType } from "@neon-codex/common/build/schemas/abilities/qualitySchemas.js";
+import type { SkillPointInfoType } from "../commonSchemas.js";
 
 interface IProps {
-  priorityInfo: PrioritiesType;
+  priorityInfo: PriorityLevelsType;
   attributeInfo: AttributesType;
   specialAttributeInfo: SpecialAttributesType;
   karmaPoints: number;
   positiveQualitiesSelected: QualityListType;
   negativeQualitiesSelected: QualityListType;
-  skillPoints: ISkillPoints;
+  skillPoints: SkillPointInfoType;
   skillSelections: CustomSkillListType;
   equipmentSelected: EquipmentListType;
   nuyen: number;
@@ -26,15 +26,15 @@ export const CreatorSummary = function (props: IProps) {
     <div>
       <div>
         Priorities:
-        <div>Metatype: {props.priorityInfo.MetatypePriority}</div>
+        <div>Heritage Priority: {props.priorityInfo.heritage}</div>
         <div>
-          Metatype Subselection: {props.priorityInfo.MetatypeSubselection}
+          {/* Metatype Subselection: {props.priorityInfo.MetatypeSubselection} */}
         </div>
-        <div>Attributes: {props.priorityInfo.AttributesPriority}</div>
-        <div>Magic: {props.priorityInfo.MagicPriority}</div>
-        <div>Magic Subselection: {props.priorityInfo.MagicSubselection}</div>
-        <div>Skills: {props.priorityInfo.SkillsPriority}</div>
-        <div>Resources: {props.priorityInfo.ResourcesPriority}</div>
+        <div>Attribute Priority: {props.priorityInfo.attributes}</div>
+        <div>Talent Priority: {props.priorityInfo.talent}</div>
+        {/* <div>Magic Subselection: {props.priorityInfo.MagicSubselection}</div> */}
+        <div>Skill Priority: {props.priorityInfo.skills}</div>
+        <div>Resource Priority: {props.priorityInfo.resources}</div>
       </div>
       <div>
         Attributes:
@@ -47,7 +47,7 @@ export const CreatorSummary = function (props: IProps) {
         <div>intuition: {props.attributeInfo.intuition}</div>
         <div>charisma: {props.attributeInfo.charisma}</div>
         <div>edge: {props.specialAttributeInfo.edge}</div>
-        <div>magic: {props.specialAttributeInfo.magic}</div>
+        {/* <div>magic: {props.specialAttributeInfo.talent}</div> */}
       </div>
       <div>
         Positive Qualities:

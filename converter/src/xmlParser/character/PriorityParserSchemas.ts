@@ -1,11 +1,18 @@
 import {
   priorityLetterEnum,
   priorityCategoryEnum,
-  metatypeCategoryEnum,
+  heritageCategoryEnum,
   priorityTableRunnerLevelEnum,
 } from "@neon-codex/common/build/enums.js";
 import { z as zod } from "zod";
 import { StringArrayOrStringSchema } from "../common/ParserCommonDefines.js";
+import {
+  AttributePrioritySchema,
+  HeritageOptionsPrioritySchema,
+  ResourcePrioritySchema,
+  SkillPrioritySchema,
+  TalentOptionsPrioritySchema,
+} from "@neon-codex/common/build/schemas/otherData/prioritySchemas.js";
 
 const PriorityBaseXmlSchema = zod
   .object({
@@ -45,7 +52,7 @@ const PriorityMetatypeXmlSchema = zod
   })
   .strict();
 
-const HeritageSchema = PriorityBaseXmlSchema.extend({
+const HeritageXmlSchema = PriorityBaseXmlSchema.extend({
   category: zod.literal(priorityCategoryEnum.Heritage),
   metatypes: zod
     .object({
@@ -56,9 +63,9 @@ const HeritageSchema = PriorityBaseXmlSchema.extend({
     })
     .strict(),
 }).strict();
-export type HeritageType = zod.infer<typeof HeritageSchema>;
+export type HeritageXmlType = zod.infer<typeof HeritageXmlSchema>;
 
-const TalentSchema = PriorityBaseXmlSchema.extend({
+const TalentXmlSchema = PriorityBaseXmlSchema.extend({
   category: zod.literal(priorityCategoryEnum.Talent),
   talents: zod
     .object({
@@ -127,7 +134,7 @@ const TalentSchema = PriorityBaseXmlSchema.extend({
                     zod
                       .object({
                         metatypecategory: zod.literal(
-                          metatypeCategoryEnum.Metahuman
+                          heritageCategoryEnum.Metahuman
                         ),
                       })
                       .strict(),
@@ -157,20 +164,20 @@ const TalentSchema = PriorityBaseXmlSchema.extend({
     })
     .strict(),
 }).strict();
-export type TalentType = zod.infer<typeof TalentSchema>;
+export type TalentXmlType = zod.infer<typeof TalentXmlSchema>;
 
-const AttributeSchema = PriorityBaseXmlSchema.extend({
+const AttributeXmlSchema = PriorityBaseXmlSchema.extend({
   category: zod.literal(priorityCategoryEnum.Attributes),
   attributes: zod.number(),
 }).strict();
-export type AttributeType = zod.infer<typeof AttributeSchema>;
+export type AttributeXmlType = zod.infer<typeof AttributeXmlSchema>;
 
-const SkillSchema = PriorityBaseXmlSchema.extend({
+const SkillXmlSchema = PriorityBaseXmlSchema.extend({
   category: zod.literal(priorityCategoryEnum.Skills),
   skills: zod.number(),
   skillgroups: zod.number(),
 }).strict();
-export type SkillXmlType = zod.infer<typeof SkillSchema>;
+export type SkillXmlType = zod.infer<typeof SkillXmlSchema>;
 
 const ResourceXmlSchema = PriorityBaseXmlSchema.extend({
   category: zod.literal(priorityCategoryEnum.Resources),
@@ -180,11 +187,38 @@ const ResourceXmlSchema = PriorityBaseXmlSchema.extend({
 export type ResourceXmlType = zod.infer<typeof ResourceXmlSchema>;
 
 export const PriorityXmlSchema = zod.discriminatedUnion("category", [
-  HeritageSchema,
-  TalentSchema,
-  AttributeSchema,
-  SkillSchema,
+  HeritageXmlSchema,
+  TalentXmlSchema,
+  AttributeXmlSchema,
+  SkillXmlSchema,
   ResourceXmlSchema,
 ]);
 export const PriorityListXmlSchema = zod.array(PriorityXmlSchema);
 export type PriorityXmlType = zod.infer<typeof PriorityXmlSchema>;
+
+export const PriorityUnionSchema = zod.discriminatedUnion("category", [
+  HeritageOptionsPrioritySchema.extend({
+    category: zod.literal(priorityCategoryEnum.Heritage),
+    rowLetter: zod.nativeEnum(priorityLetterEnum),
+  }).strict(),
+  TalentOptionsPrioritySchema.extend({
+    category: zod.literal(priorityCategoryEnum.Talent),
+    rowLetter: zod.nativeEnum(priorityLetterEnum),
+  }).strict(),
+  AttributePrioritySchema.extend({
+    category: zod.literal(priorityCategoryEnum.Attributes),
+    rowLetter: zod.nativeEnum(priorityLetterEnum),
+  }).strict(),
+  SkillPrioritySchema.extend({
+    category: zod.literal(priorityCategoryEnum.Skills),
+    rowLetter: zod.nativeEnum(priorityLetterEnum),
+  }).strict(),
+  ResourcePrioritySchema.extend({
+    category: zod.literal(priorityCategoryEnum.Resources),
+    rowLetter: zod.nativeEnum(priorityLetterEnum),
+    priorityTable: zod.nativeEnum(priorityTableRunnerLevelEnum),
+  }).strict(),
+]);
+export const PriorityUnionList = zod.array(PriorityUnionSchema);
+export type PriorityUnionType = zod.infer<typeof PriorityUnionSchema>;
+export type PriorityUnionListType = zod.infer<typeof PriorityUnionList>;

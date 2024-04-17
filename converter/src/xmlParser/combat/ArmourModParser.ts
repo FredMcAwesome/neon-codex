@@ -3,13 +3,9 @@ import { XMLParser } from "fast-xml-parser";
 import path from "path";
 import { fileURLToPath } from "url";
 import * as fs from "fs";
-import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
 import { convertXmlBonus } from "../common/BonusParserHelper.js";
 import { ArmourModListXmlSchema } from "./ArmourModParserSchemas.js";
-import type {
-  ArmourModListXmlType,
-  ArmourModXmlType,
-} from "./ArmourModParserSchemas.js";
+import type { ArmourModXmlType } from "./ArmourModParserSchemas.js";
 import {
   availabilityArmourModificationSemantics,
   capacityArmourModificationSemantics,
@@ -64,78 +60,8 @@ export function ParseArmourMods() {
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
   // })
-  const englishArmourModList: ArmourModListXmlType = armourModList.filter(
-    (armourMod) => {
-      let found = false;
-      switch (armourMod.source) {
-        case sourceBookXmlEnum.Shadowrun5:
-        case sourceBookXmlEnum.BetterThanBad:
-        case sourceBookXmlEnum.BulletsAndBandages:
-        case sourceBookXmlEnum.RunAndGun:
-        case sourceBookXmlEnum.HardTargets:
-        case sourceBookXmlEnum.CuttingAces:
-        case sourceBookXmlEnum.StreetLethal:
-        case sourceBookXmlEnum.KillCode:
-          found = true;
-          break;
-        // Not in english
-        case sourceBookXmlEnum.StateOfTheArtADL:
-        case sourceBookXmlEnum.Schattenhandbuch:
-        case sourceBookXmlEnum.Schattenhandbuch2:
-        case sourceBookXmlEnum.Schattenhandbuch3:
-        case sourceBookXmlEnum.Hamburg:
-        case sourceBookXmlEnum.DatapulsSOTA2080:
-        case sourceBookXmlEnum.DatapulsVerschlusssache:
-        case sourceBookXmlEnum.Shadowrun2050:
-        case 2050:
-        case sourceBookXmlEnum.GrimmesErwachen:
-          break;
-        // Not containing Armour Mods
-        case sourceBookXmlEnum.AssassinPrimer:
-        case sourceBookXmlEnum.ChromeFlesh:
-        case sourceBookXmlEnum.DataTrails:
-        case sourceBookXmlEnum.GunHeaven3:
-        case sourceBookXmlEnum.KrimeKatalog:
-        case sourceBookXmlEnum.Lockdown:
-        case sourceBookXmlEnum.Rigger5:
-        case sourceBookXmlEnum.SailAwaySweetSister:
-        case sourceBookXmlEnum.ShadowsInFocus_SanFranciscoMetroplex:
-        case sourceBookXmlEnum.StolenSouls:
-        case sourceBookXmlEnum.StreetGrimoire:
-        case sourceBookXmlEnum.TheSeattleGambit:
-        case sourceBookXmlEnum.StreetGrimoireErrata:
-        case sourceBookXmlEnum.ShadowSpells:
-        case sourceBookXmlEnum.NothingPersonal:
-        case sourceBookXmlEnum.BloodyBusiness:
-        case sourceBookXmlEnum.DataTrailsDissonantEchoes:
-        case sourceBookXmlEnum.TheVladivostokGauntlet:
-        case sourceBookXmlEnum.SplinteredState:
-        case sourceBookXmlEnum.ShadowsInFocus_Butte:
-        case sourceBookXmlEnum.HongKongSourcebook:
-        case sourceBookXmlEnum.ShadowsInFocus_Metropole:
-        case sourceBookXmlEnum.BookOfTheLost:
-        case sourceBookXmlEnum.ForbiddenArcana:
-        case sourceBookXmlEnum.ShadowsInFocus_SiouxNation_CountingCoup:
-        case sourceBookXmlEnum.DarkTerrors:
-        case sourceBookXmlEnum.Aetherology:
-        case sourceBookXmlEnum.ShadowrunMissions0803_10BlockTango:
-        case sourceBookXmlEnum.ShadowrunMissions0804_DirtyLaundry:
-        case sourceBookXmlEnum.ShadowrunQuickStartRules:
-        case sourceBookXmlEnum.SprawlWilds:
-        case sourceBookXmlEnum.NoFuture:
-        case sourceBookXmlEnum.TheCompleteTrog:
-        case sourceBookXmlEnum.HowlingShadows:
-        case sourceBookXmlEnum.RunFaster:
-          assert(false, armourMod.source);
-          break;
-      }
-      return found;
-    }
-  );
 
-  // console.log(englishArmourList);
-
-  const armourModListConverted = englishArmourModList
+  const armourModListConverted = armourModList
     // .filter((weapon) => weapon.name === "Osmium Mace")
     .map((armourMod) => {
       const convertedArmourMod = convertArmourMod(armourMod);

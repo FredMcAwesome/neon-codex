@@ -26,7 +26,7 @@ export enum qualityCategoryEnum {
   Negative = "Negative",
 }
 
-export enum metatypeCategoryEnum {
+export enum heritageCategoryEnum {
   Metahuman = "Metahuman",
   Metavariant = "Metavariant",
   Metasapient = "Metasapient",
@@ -62,6 +62,24 @@ export enum priorityLetterEnum {
   E = "E",
 }
 
+export enum baseAttributeTypeEnum {
+  Body = "Body",
+  Agility = "Agility",
+  Reaction = "Reaction",
+  Strength = "Strength",
+  Willpower = "Willpower",
+  Logic = "Logic",
+  Intuition = "Intuition",
+  Charisma = "Charisma",
+}
+
+export enum specialAttributeTypeEnum {
+  Magic = "Magic",
+  Resonance = "Resonance",
+  Depth = "Depth",
+  Edge = "Edge",
+}
+
 export enum attributeTypeEnum {
   Body = "Body",
   Agility = "Agility",
@@ -73,6 +91,7 @@ export enum attributeTypeEnum {
   Charisma = "Charisma",
   Magic = "Magic",
   Resonance = "Resonance",
+  Depth = "Depth",
   Edge = "Edge",
 }
 
@@ -615,6 +634,16 @@ export enum sourceBookEnum {
   ShadowrunMissions0804_DirtyLaundry = "Shadowrun Missions 0804: Dirty Laundry",
   ShadowrunQuickStartRules = "Shadowrun Quick Start Rules",
   SprawlWilds = "Sprawl Wilds",
+  // Not in English
+  StateOfTheArtADL = "State Of The Art - ADL",
+  Schattenhandbuch = "Schattenhandbuch",
+  Schattenhandbuch2 = "Schattenhandbuch 2",
+  Schattenhandbuch3 = "Schattenhandbuch 3",
+  Hamburg = "Hamburg",
+  DatapulsSOTA2080 = "Datapuls SOTA 2080",
+  DatapulsVerschlusssache = "Datapuls Verschlusssache",
+  Shadowrun2050 = "Shadowrun 2050",
+  GrimmesErwachen = "Grimmes Erwachen",
 }
 
 export enum armourCategoryEnum {

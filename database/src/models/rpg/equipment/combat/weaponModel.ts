@@ -183,8 +183,8 @@ export class MeleeWeapons extends Weapons {
   }
 }
 
-// this should be fully abstract but getting an error when I do so
-// just leaving as partially abstract for now... TODO: fix
+// this should be fully abstract but a relationship cannot point
+// to an abstract entity... TODO: fix (maybe with polymorphic relationships?)
 @Entity()
 export abstract class RangedWeapons extends Weapons {
   @ManyToMany({

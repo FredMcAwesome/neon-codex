@@ -8584,7 +8584,6 @@
         <name>Rigger Interface</name>
       </mods>
       <modslots>0</modslots>
-      <seats>0</seats>
     </vehicle>
     <vehicle>
       <id>78071d83-1328-46d2-bfac-aece4ecc7dff</id>
@@ -8614,7 +8613,6 @@
         <name>Rigger Interface</name>
       </mods>
       <modslots>0</modslots>
-      <seats>0</seats>
     </vehicle>
     <vehicle>
       <id>cd05b23c-f14d-4d76-8037-ec5d99c90cb0</id>
@@ -8645,7 +8643,6 @@
         <name>Rigger Interface</name>
       </mods>
       <modslots>0</modslots>
-      <seats>0</seats>
     </vehicle>
     <vehicle>
       <id>bc48ec25-84ce-435a-a418-ddbac5f7507c</id>
@@ -8673,7 +8670,6 @@
         <name>Rigger Interface</name>
       </mods>
       <modslots>2</modslots>
-      <seats>0</seats>
     </vehicle>
     <vehicle>
       <id>33487443-148e-4a25-b351-3a958aae5a90</id>
@@ -8702,7 +8698,6 @@
         <name>Rigger Interface</name>
       </mods>
       <modslots>2</modslots>
-      <seats>0</seats>
     </vehicle>
     <vehicle>
       <id>c2073528-54a5-45e0-b5f8-9c1ab74647aa</id>
@@ -8731,7 +8726,6 @@
         <name>Rigger Interface</name>
       </mods>
       <modslots>1</modslots>
-      <seats>0</seats>
     </vehicle>
     <vehicle>
       <id>581eeb8d-3b66-44c0-9e1e-b6d819135b3f</id>
@@ -8761,7 +8755,6 @@
       <mods>
         <name>Rigger Interface</name>
       </mods>
-      <seats>0</seats>
       <weaponmounts>
         <weaponmount>
           <control>Remote</control>
@@ -8799,7 +8792,6 @@
         <name>Rigger Interface</name>
       </mods>
       <modslots>0</modslots>
-      <seats>0</seats>
     </vehicle>
     <vehicle>
       <id>d15d0609-296d-4e47-a4c0-f41fefcf6f4e</id>
@@ -8828,7 +8820,6 @@
         <name>Rigger Interface</name>
       </mods>
       <modslots>4</modslots>
-      <seats>0</seats>
     </vehicle>
     <vehicle>
       <id>b7abae70-ed26-4f8d-9b73-01760009dc1e</id>
@@ -8858,7 +8849,6 @@
       <mods>
         <name>Rigger Interface</name>
       </mods>
-      <seats>0</seats>
       <weaponmounts>
         <weaponmount>
           <control>Remote</control>
@@ -8895,7 +8885,6 @@
         <name>Rigger Interface</name>
       </mods>
       <modslots>0</modslots>
-      <seats>0</seats>
       <weaponmounts>
         <weaponmount>
           <control>Remote</control>
@@ -8933,7 +8922,6 @@
         <name>Rigger Interface</name>
       </mods>
       <modslots>0</modslots>
-      <seats>0</seats>
     </vehicle>
     <vehicle>
       <id>47a4d3aa-f9bb-4f16-bbf1-5e8b73f61c0e</id>
@@ -8964,7 +8952,6 @@
       <mods>
         <name>Rigger Interface</name>
       </mods>
-      <seats>0</seats>
       <weaponmounts>
         <weaponmount>
           <control>Remote</control>
@@ -9009,7 +8996,6 @@
         <name>Rigger Interface</name>
       </mods>
       <modslots>0</modslots>
-      <seats>0</seats>
       <weaponmounts>
         <weaponmount>
           <control>Remote</control>
@@ -9052,7 +9038,6 @@
         <name>Rigger Interface</name>
       </mods>
       <modslots>3</modslots>
-      <seats>0</seats>
     </vehicle>
     <vehicle>
       <id>7c921200-76a8-465f-8207-01a7c1785c67</id>
@@ -9083,7 +9068,6 @@
         <name>Rigger Interface</name>
       </mods>
       <modslots>0</modslots>
-      <seats>0</seats>
       <weaponmounts>
         <weaponmount>
           <control>Remote</control>
@@ -9142,7 +9126,6 @@
         <name>Rigger Interface</name>
       </mods>
       <modslots>0</modslots>
-      <seats>0</seats>
       <weaponmounts>
         <weaponmount>
           <control>Remote</control>
@@ -9308,7 +9291,8 @@
         <name>Rigger Interface</name>
         <name>Enhanced Image Screens</name>
       </mods>
-      <seats>2-6</seats>
+      <seats>6</seats>
+      <!-- <seats>2-6</seats> TODO: allow this--> 
     </vehicle>
     <vehicle>
       <id>7b728361-e755-4c86-815b-3018b17e7753</id>
@@ -9397,7 +9381,8 @@
         <name>Interior Cameras</name>
         <name>Rigger Interface</name>
       </mods>
-      <seats>8-10</seats>
+      <seats>10</seats>
+      <!-- <seats>8-10</seats> TODO: allow this -->
     </vehicle>
     <vehicle>
       <id>188daf6f-4b37-4e6f-a4a7-d7a186643787</id>

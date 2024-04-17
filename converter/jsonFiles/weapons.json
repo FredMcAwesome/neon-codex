@@ -14961,6 +14961,63 @@
     }
   },
   {
+    "name": "Talons (Falconine Form)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          1
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "relatedSkill": "Unarmed Combat",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Run Faster",
+    "page": 105,
+    "type": "Melee",
+    "subtype": "Exotic",
+    "meleeOptions": {
+      "reach": -1
+    }
+  },
+  {
     "name": "Bite (Lupine Form)",
     "description": "",
     "concealability": 0,
@@ -15402,6 +15459,120 @@
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 0
+    }
+  },
+  {
+    "name": "Bite (Phocine Form)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          1
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "relatedSkill": "Unarmed Combat",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "State Of The Art - ADL",
+    "page": 147,
+    "type": "Melee",
+    "subtype": "Exotic",
+    "meleeOptions": {
+      "reach": -1
+    }
+  },
+  {
+    "name": "Bite (Seal Form)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          1
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "relatedSkill": "Unarmed Combat",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "State Of The Art - ADL",
+    "page": 147,
+    "type": "Melee",
+    "subtype": "Exotic",
+    "meleeOptions": {
+      "reach": -1
     }
   },
   {
@@ -18261,6 +18432,509 @@
     "rangeList": ["Heavy Pistols"]
   },
   {
+    "name": "Mannlicher Marpingen Pro D (Shotgun Barrels)",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [5],
+    "damage": [
+      {
+        "damageAmount": [12],
+        "type": "Physical",
+        "annotation": "Flechette"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 2,
+        "reloadMethod": "(b)"
+      }
+    ],
+    "allowAccessories": false,
+    "userSelectable": false,
+    "relatedSkill": "Longarms",
+    "relatedSkillSpecialisations": ["Shotguns"],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Schattenhandbuch 2",
+    "page": 0,
+    "type": "Firearm",
+    "subtype": "Shotguns",
+    "firearmOptions": {
+      "mode": ["SS"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1
+    },
+    "rangeList": ["Shotguns", "Shotguns (flechette)"]
+  },
+  {
+    "name": "Mannlicher Marpingen Pro D",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [11],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            4
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 6,
+        "reloadMethod": "(m)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Slide Mount"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Longarms",
+    "relatedSkillSpecialisations": ["Sporting Rifles"],
+    "availability": {
+      "rating": [5],
+      "restriction": "R"
+    },
+    "cost": [1800],
+    "source": "Schattenhandbuch 2",
+    "page": 0,
+    "type": "Firearm",
+    "subtype": "Sporting Rifles",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 1,
+      "ammoSlots": 1,
+      "underbarrelWeapons": ["Mannlicher Marpingen Pro D (Shotgun Barrels)"],
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Sniper Rifles"]
+  },
+  {
+    "name": "HK MP75",
+    "description": "",
+    "concealability": 2,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [9],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 30,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Smartgun System, Internal"
+      },
+      {
+        "name": "Advanced Safety System, Basic"
+      },
+      {
+        "name": "Gas-Vent 2 System"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Automatics",
+    "relatedSkillSpecialisations": ["Submachine Guns"],
+    "availability": {
+      "rating": [12],
+      "restriction": "F"
+    },
+    "cost": [1000],
+    "source": "Schattenhandbuch 2",
+    "page": 0,
+    "type": "Firearm",
+    "subtype": "Submachine Guns",
+    "firearmOptions": {
+      "mode": ["SA", "BF", "FA"],
+      "recoilCompensation": 2,
+      "ammoCategory": "Assault Rifles",
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Submachine Guns"]
+  },
+  {
+    "name": "Mannlicher Dirmingen SX BD: Shotgun Barrel",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [14],
+        "type": "Physical",
+        "annotation": "Flechette"
+      }
+    ],
+    "armourPenetration": [[1]],
+    "ammunition": [
+      {
+        "capacity": 1,
+        "reloadMethod": "(b)"
+      }
+    ],
+    "allowAccessories": false,
+    "userSelectable": false,
+    "relatedSkill": "Longarms",
+    "relatedSkillSpecialisations": ["Shotguns"],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Schattenhandbuch",
+    "page": 0,
+    "type": "Firearm",
+    "subtype": "Shotguns",
+    "firearmOptions": {
+      "mode": ["SS"],
+      "recoilCompensation": 1,
+      "ammoSlots": 1
+    },
+    "rangeList": ["Shotguns", "Shotguns (flechette)"]
+  },
+  {
+    "name": "Mannlicher Dirmingen SX BD",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [12],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            3
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 1,
+        "reloadMethod": "(b)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Longarms",
+    "availability": {
+      "rating": [6],
+      "restriction": "R"
+    },
+    "cost": [1550],
+    "source": "Schattenhandbuch 2",
+    "page": 0,
+    "type": "Firearm",
+    "subtype": "Sporting Rifles",
+    "firearmOptions": {
+      "mode": ["SS"],
+      "recoilCompensation": 1,
+      "ammoSlots": 1,
+      "underbarrelWeapons": [
+        "Mannlicher Dirmingen SX BD: Shotgun Barrel",
+        "Mannlicher Dirmingen SX BD: Small Caliber"
+      ],
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Shotguns (slug)", "Shotguns (flechette)"]
+  },
+  {
+    "name": "Mannlicher Dirmingen SX BD: Small Caliber",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [6],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 10,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "allowAccessories": false,
+    "userSelectable": false,
+    "relatedSkill": "Longarms",
+    "relatedSkillSpecialisations": ["Sporting Rifles"],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Schattenhandbuch 2",
+    "page": 0,
+    "type": "Firearm",
+    "subtype": "Sporting Rifles",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 1,
+      "ammoSlots": 1
+    },
+    "rangeList": ["Machine Pistols"]
+  },
+  {
+    "name": "Walther PP110",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [7],
+    "damage": [
+      {
+        "damageAmount": [7],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 16,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Flashlight, Standard"
+      },
+      {
+        "name": "Advanced Safety System, Basic"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Pistols",
+    "relatedSkillSpecialisations": ["Semi-Automatics"],
+    "availability": {
+      "rating": [7],
+      "restriction": "R"
+    },
+    "cost": [325],
+    "source": "Schattenhandbuch 2",
+    "page": 0,
+    "type": "Firearm",
+    "subtype": "Light Pistols",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Barrel", "Top"]
+    },
+    "rangeList": ["Light Pistols"]
+  },
+  {
+    "name": "Onotari Arms Troublemaker",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [5],
+    "damage": [
+      {
+        "damageAmount": [8],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 18,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Laser Sight"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Pistols",
+    "relatedSkillSpecialisations": ["Semi-Automatics"],
+    "availability": {
+      "rating": [8],
+      "restriction": "R"
+    },
+    "cost": [700],
+    "source": "Schattenhandbuch",
+    "page": 0,
+    "type": "Firearm",
+    "subtype": "Heavy Pistols",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+    },
+    "rangeList": ["Heavy Pistols"]
+  },
+  {
+    "name": "Altmayr SPX",
+    "description": "",
+    "concealability": 2,
+    "accuracy": [4],
+    "damage": [
+      {
+        "damageAmount": [10],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 8,
+        "reloadMethod": "(m)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Longarms",
+    "relatedSkillSpecialisations": ["Shotguns"],
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [475],
+    "source": "Schattenhandbuch",
+    "page": 0,
+    "type": "Firearm",
+    "subtype": "Shotguns",
+    "firearmOptions": {
+      "mode": ["SS"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Heavy Pistols"]
+  },
+  {
+    "name": "Onotari Arms SIG-6",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [4],
+    "damage": [
+      {
+        "damageAmount": [8],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 16,
+        "reloadMethod": "(c)"
+      },
+      {
+        "capacity": 32,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Smartgun System, Internal"
+      },
+      {
+        "name": "Folding Stock"
+      },
+      {
+        "name": "Gas-Vent 2 System"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Automatics",
+    "relatedSkillSpecialisations": ["Submachine Guns"],
+    "availability": {
+      "rating": [7],
+      "restriction": "R"
+    },
+    "cost": [780],
+    "source": "Schattenhandbuch",
+    "page": 0,
+    "type": "Firearm",
+    "subtype": "Submachine Guns",
+    "firearmOptions": {
+      "mode": ["SA", "BF"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Submachine Guns"]
+  },
+  {
     "name": "Mortimer of London 'Belgrave' Sword Cane",
     "description": "",
     "concealability": 0,
@@ -18767,6 +19441,5038 @@
     "meleeOptions": {
       "reach": 0
     }
+  },
+  {
+    "name": "Hand Razors, Fixed (2050)",
+    "description": "",
+    "concealability": -2,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          1
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            3
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "augmentationType": "Cyberware",
+    "relatedSkill": "Unarmed Combat",
+    "relatedSkillSpecialisations": ["Cyber Implants"],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Shadowrun 2050",
+    "page": 203,
+    "type": "Melee",
+    "subtype": "Blades",
+    "meleeOptions": {
+      "reach": 0
+    }
+  },
+  {
+    "name": "Hand Razors, Retractable (2050)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          1
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            3
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "augmentationType": "Cyberware",
+    "relatedSkill": "Unarmed Combat",
+    "relatedSkillSpecialisations": ["Cyber Implants"],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Shadowrun 2050",
+    "page": 203,
+    "type": "Melee",
+    "subtype": "Blades",
+    "meleeOptions": {
+      "reach": 0
+    }
+  },
+  {
+    "name": "Spur, Fixed (2050)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          3
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "augmentationType": "Cyberware",
+    "relatedSkill": "Unarmed Combat",
+    "relatedSkillSpecialisations": ["Cyber Implants"],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Shadowrun 2050",
+    "page": 203,
+    "type": "Melee",
+    "subtype": "Blades",
+    "meleeOptions": {
+      "reach": 0
+    }
+  },
+  {
+    "name": "Spur, Retractable (2050)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          3
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "augmentationType": "Cyberware",
+    "relatedSkill": "Unarmed Combat",
+    "relatedSkillSpecialisations": ["Cyber Implants"],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Shadowrun 2050",
+    "page": 203,
+    "type": "Melee",
+    "subtype": "Blades",
+    "meleeOptions": {
+      "reach": 0
+    }
+  },
+  {
+    "name": "Cyber Holdout Pistol (2050)",
+    "description": "",
+    "concealability": -6,
+    "accuracy": [4],
+    "damage": [
+      {
+        "damageAmount": [6],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 2,
+        "reloadMethod": "(m)"
+      },
+      {
+        "capacity": 6,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "allowAccessories": false,
+    "userSelectable": false,
+    "augmentationType": "Cyberware",
+    "relatedSkill": "Pistols",
+    "relatedSkillSpecialisations": ["Semi-Automatics"],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Shadowrun 2050",
+    "page": 204,
+    "type": "Firearm",
+    "subtype": "Hold Outs",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1
+    },
+    "rangeList": ["Holdouts"]
+  },
+  {
+    "name": "Cyber Light Pistol (2050)",
+    "description": "",
+    "concealability": -6,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [7],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 10,
+        "reloadMethod": "(m)"
+      },
+      {
+        "capacity": 15,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "allowAccessories": false,
+    "userSelectable": false,
+    "augmentationType": "Cyberware",
+    "relatedSkill": "Pistols",
+    "relatedSkillSpecialisations": ["Semi-Automatics"],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Shadowrun 2050",
+    "page": 204,
+    "type": "Firearm",
+    "subtype": "Light Pistols",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1
+    },
+    "rangeList": ["Light Pistols"]
+  },
+  {
+    "name": "Cyber Machine Pistol (2050)",
+    "description": "",
+    "concealability": -6,
+    "accuracy": [4],
+    "damage": [
+      {
+        "damageAmount": [7],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 18,
+        "reloadMethod": "(m)"
+      },
+      {
+        "capacity": 32,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "allowAccessories": false,
+    "userSelectable": false,
+    "augmentationType": "Cyberware",
+    "relatedSkill": "Automatics",
+    "relatedSkillSpecialisations": ["Semi-Automatics"],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Shadowrun 2050",
+    "page": 204,
+    "type": "Firearm",
+    "subtype": "Machine Pistols",
+    "firearmOptions": {
+      "mode": ["SA", "BF"],
+      "recoilCompensation": 1,
+      "ammoSlots": 1
+    },
+    "rangeList": ["Machine Pistols"]
+  },
+  {
+    "name": "Cyber Heavy Pistol (2050)",
+    "description": "",
+    "concealability": -6,
+    "accuracy": [4],
+    "damage": [
+      {
+        "damageAmount": [7],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 8,
+        "reloadMethod": "(m)"
+      },
+      {
+        "capacity": 12,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "allowAccessories": false,
+    "userSelectable": false,
+    "augmentationType": "Cyberware",
+    "relatedSkill": "Pistols",
+    "relatedSkillSpecialisations": ["Semi-Automatics"],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Shadowrun 2050",
+    "page": 204,
+    "type": "Firearm",
+    "subtype": "Heavy Pistols",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1
+    },
+    "rangeList": ["Heavy Pistols"]
+  },
+  {
+    "name": "Cyber Submachine Gun (2050)",
+    "description": "",
+    "concealability": -6,
+    "accuracy": [4],
+    "damage": [
+      {
+        "damageAmount": [7],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 18,
+        "reloadMethod": "(m)"
+      },
+      {
+        "capacity": 32,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "allowAccessories": false,
+    "userSelectable": false,
+    "augmentationType": "Cyberware",
+    "relatedSkill": "Automatics",
+    "relatedSkillSpecialisations": ["Semi-Automatics"],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Shadowrun 2050",
+    "page": 204,
+    "type": "Firearm",
+    "subtype": "Submachine Guns",
+    "firearmOptions": {
+      "mode": ["SA", "BF"],
+      "recoilCompensation": 1,
+      "ammoSlots": 1
+    },
+    "rangeList": ["Submachine Guns"]
+  },
+  {
+    "name": "Cyber Shotgun (2050)",
+    "description": "",
+    "concealability": -6,
+    "accuracy": [4],
+    "damage": [
+      {
+        "damageAmount": [12],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[4]],
+    "ammunition": [
+      {
+        "capacity": 4,
+        "reloadMethod": "(m)"
+      },
+      {
+        "capacity": 10,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "allowAccessories": false,
+    "userSelectable": false,
+    "augmentationType": "Cyberware",
+    "relatedSkill": "Longarms",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Shadowrun 2050",
+    "page": 204,
+    "type": "Firearm",
+    "subtype": "Shotguns",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1
+    },
+    "rangeList": ["Shotguns", "Shotguns (flechette)"]
+  },
+  {
+    "name": "Defiance Super Shock (2050)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [4],
+    "damage": [
+      {
+        "damageAmount": [9],
+        "type": "Stun",
+        "annotation": "Electrical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            5
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 4,
+        "reloadMethod": "(m)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Imaging Scope (2050)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Pistols",
+    "availability": {
+      "rating": [3],
+      "restriction": "R"
+    },
+    "cost": [1000],
+    "source": "Shadowrun 2050",
+    "page": 184,
+    "type": "Firearm",
+    "subtype": "Tasers",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side"]
+    },
+    "rangeList": ["Tasers"]
+  },
+  {
+    "name": "Streetline Special (2050)",
+    "description": "",
+    "concealability": -4,
+    "accuracy": [4],
+    "damage": [
+      {
+        "damageAmount": [6],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 6,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Pistols",
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [100],
+    "source": "Shadowrun 2050",
+    "page": 184,
+    "type": "Firearm",
+    "subtype": "Hold Outs",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1
+    },
+    "rangeList": ["Holdouts"]
+  },
+  {
+    "name": "Tiffani Self-Defender (2050)",
+    "description": "",
+    "concealability": -4,
+    "accuracy": [4],
+    "damage": [
+      {
+        "damageAmount": [6],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 4,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Pistols",
+    "availability": {
+      "rating": [2],
+      "restriction": "R"
+    },
+    "cost": [450],
+    "source": "Shadowrun 2050",
+    "page": 184,
+    "type": "Firearm",
+    "subtype": "Hold Outs",
+    "firearmOptions": {
+      "mode": ["SS"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1
+    },
+    "rangeList": ["Holdouts"]
+  },
+  {
+    "name": "Walther Palm Pistol (2050)",
+    "description": "",
+    "concealability": -4,
+    "accuracy": [4],
+    "damage": [
+      {
+        "damageAmount": [7],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 2,
+        "reloadMethod": "(b)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Pistols",
+    "availability": {
+      "rating": [3],
+      "restriction": "R"
+    },
+    "cost": [200],
+    "source": "Shadowrun 2050",
+    "page": 184,
+    "type": "Firearm",
+    "subtype": "Hold Outs",
+    "firearmOptions": {
+      "mode": ["SS", "BF"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1
+    },
+    "rangeList": ["Holdouts"]
+  },
+  {
+    "name": "Ares Light Fire 70 (2050)",
+    "description": "",
+    "concealability": -3,
+    "accuracy": [7],
+    "damage": [
+      {
+        "damageAmount": [6],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 16,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Pistols",
+    "relatedSkillSpecialisations": ["Semi-Automatics"],
+    "availability": {
+      "rating": [3],
+      "restriction": "R"
+    },
+    "cost": [475],
+    "source": "Shadowrun 2050",
+    "page": 184,
+    "type": "Firearm",
+    "subtype": "Light Pistols",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Barrel", "Top"]
+    },
+    "rangeList": ["Light Pistols"]
+  },
+  {
+    "name": "Beretta 200 ST (2050)",
+    "description": "",
+    "concealability": -2,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [6],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 20,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Stock"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Pistols",
+    "relatedSkillSpecialisations": ["Semi-Automatics"],
+    "availability": {
+      "rating": [5],
+      "restriction": "R"
+    },
+    "cost": [750],
+    "source": "Shadowrun 2050",
+    "page": 184,
+    "type": "Firearm",
+    "subtype": "Light Pistols",
+    "firearmOptions": {
+      "mode": ["SA", "BF"],
+      "recoilCompensation": 1,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Barrel", "Top"]
+    },
+    "rangeList": ["Light Pistols"]
+  },
+  {
+    "name": "Beretta Modell 101T (2050)",
+    "description": "",
+    "concealability": -2,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [6],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 12,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Pistols",
+    "relatedSkillSpecialisations": ["Semi-Automatics"],
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [350],
+    "source": "Shadowrun 2050",
+    "page": 184,
+    "type": "Firearm",
+    "subtype": "Light Pistols",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Barrel", "Top"]
+    },
+    "rangeList": ["Light Pistols"]
+  },
+  {
+    "name": "Colt America L36 (2050)",
+    "description": "",
+    "concealability": -2,
+    "accuracy": [7],
+    "damage": [
+      {
+        "damageAmount": [7],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 11,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Pistols",
+    "relatedSkillSpecialisations": ["Semi-Automatics"],
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [350],
+    "source": "Shadowrun 2050",
+    "page": 184,
+    "type": "Firearm",
+    "subtype": "Light Pistols",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Barrel", "Top"]
+    },
+    "rangeList": ["Light Pistols"]
+  },
+  {
+    "name": "Fichetti Security 500 (2050)",
+    "description": "",
+    "concealability": -2,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [7],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 10,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Stock"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Pistols",
+    "relatedSkillSpecialisations": ["Semi-Automatics"],
+    "availability": {
+      "rating": [6],
+      "restriction": "R"
+    },
+    "cost": [400],
+    "source": "Shadowrun 2050",
+    "page": 184,
+    "type": "Firearm",
+    "subtype": "Light Pistols",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 1,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Barrel", "Top"]
+    },
+    "rangeList": ["Light Pistols"]
+  },
+  {
+    "name": "Fichetti Security 500a (2050)",
+    "description": "",
+    "concealability": -2,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [7],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 22,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Stock"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Pistols",
+    "relatedSkillSpecialisations": ["Semi-Automatics"],
+    "availability": {
+      "rating": [6],
+      "restriction": "R"
+    },
+    "cost": [450],
+    "source": "Shadowrun 2050",
+    "page": 184,
+    "type": "Firearm",
+    "subtype": "Light Pistols",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 1,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Barrel", "Top"]
+    },
+    "rangeList": ["Light Pistols"]
+  },
+  {
+    "name": "Ares Crusader MP 6 (2050)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [5],
+    "damage": [
+      {
+        "damageAmount": [7],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 40,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Automatics",
+    "relatedSkillSpecialisations": ["Semi-Automatics"],
+    "availability": {
+      "rating": [5],
+      "restriction": "F"
+    },
+    "cost": [950],
+    "source": "Shadowrun 2050",
+    "page": 184,
+    "type": "Firearm",
+    "subtype": "Machine Pistols",
+    "firearmOptions": {
+      "mode": ["SA", "BF"],
+      "recoilCompensation": 2,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Machine Pistols"]
+  },
+  {
+    "name": "Ceska Black Scorpion (2050)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [5],
+    "damage": [
+      {
+        "damageAmount": [6],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 35,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Folding Stock"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Automatics",
+    "relatedSkillSpecialisations": ["Semi-Automatics"],
+    "availability": {
+      "rating": [6],
+      "restriction": "R"
+    },
+    "cost": [270],
+    "source": "Shadowrun 2050",
+    "page": 184,
+    "type": "Firearm",
+    "subtype": "Machine Pistols",
+    "firearmOptions": {
+      "mode": ["SA", "BF"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Machine Pistols"]
+  },
+  {
+    "name": "Ares Predator (2050)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [5],
+    "damage": [
+      {
+        "damageAmount": [8],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 15,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Pistols",
+    "relatedSkillSpecialisations": ["Semi-Automatics"],
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [450],
+    "source": "Shadowrun 2050",
+    "page": 185,
+    "type": "Firearm",
+    "subtype": "Heavy Pistols",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+    },
+    "rangeList": ["Heavy Pistols"]
+  },
+  {
+    "name": "Ares Viper Slivergun (2050)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [4],
+    "damage": [
+      {
+        "damageAmount": [9],
+        "type": "Physical",
+        "annotation": "Flechette"
+      }
+    ],
+    "armourPenetration": [[4]],
+    "ammunition": [
+      {
+        "capacity": 30,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Silencer/Suppressor"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Pistols",
+    "relatedSkillSpecialisations": ["Semi-Automatics"],
+    "availability": {
+      "rating": [5],
+      "restriction": "R"
+    },
+    "cost": [600],
+    "source": "Shadowrun 2050",
+    "page": 185,
+    "type": "Firearm",
+    "subtype": "Heavy Pistols",
+    "firearmOptions": {
+      "mode": ["SA", "BF"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+    },
+    "rangeList": ["Heavy Pistols"]
+  },
+  {
+    "name": "Browning Max-Power (2050)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [5],
+    "damage": [
+      {
+        "damageAmount": [8],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 10,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Pistols",
+    "relatedSkillSpecialisations": ["Semi-Automatics"],
+    "availability": {
+      "rating": [3],
+      "restriction": "R"
+    },
+    "cost": [450],
+    "source": "Shadowrun 2050",
+    "page": 185,
+    "type": "Firearm",
+    "subtype": "Heavy Pistols",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+    },
+    "rangeList": ["Heavy Pistols"]
+  },
+  {
+    "name": "Colt Manhunter (2050)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [7],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 16,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Laser Sight"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Pistols",
+    "relatedSkillSpecialisations": ["Semi-Automatics"],
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [300],
+    "source": "Shadowrun 2050",
+    "page": 185,
+    "type": "Firearm",
+    "subtype": "Heavy Pistols",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+    },
+    "rangeList": ["Heavy Pistols"]
+  },
+  {
+    "name": "Remington Roomsweeper (2050)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [4],
+    "damage": [
+      {
+        "damageAmount": [9],
+        "type": "Physical",
+        "annotation": "Flechette"
+      }
+    ],
+    "armourPenetration": [[4]],
+    "ammunition": [
+      {
+        "capacity": 8,
+        "reloadMethod": "(m)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Pistols",
+    "relatedSkillSpecialisations": ["Semi-Automatics"],
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [300],
+    "source": "Shadowrun 2050",
+    "page": 185,
+    "type": "Firearm",
+    "subtype": "Heavy Pistols",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+    },
+    "rangeList": ["Heavy Pistols"]
+  },
+  {
+    "name": "Ruger Super Warhawk (2050)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [5],
+    "damage": [
+      {
+        "damageAmount": [9],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 6,
+        "reloadMethod": "(cy)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Pistols",
+    "relatedSkillSpecialisations": ["Revolvers"],
+    "availability": {
+      "rating": [3],
+      "restriction": "R"
+    },
+    "cost": [300],
+    "source": "Shadowrun 2050",
+    "page": 185,
+    "type": "Firearm",
+    "subtype": "Heavy Pistols",
+    "firearmOptions": {
+      "mode": ["SS"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+    },
+    "rangeList": ["Heavy Pistols"]
+  },
+  {
+    "name": "AK-97 Karabiner (2050)",
+    "description": "",
+    "concealability": 2,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [7],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 30,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Folding Stock"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Automatics",
+    "availability": {
+      "rating": [5],
+      "restriction": "F"
+    },
+    "cost": [800],
+    "source": "Shadowrun 2050",
+    "page": 185,
+    "type": "Firearm",
+    "subtype": "Submachine Guns",
+    "firearmOptions": {
+      "mode": ["SA", "BF", "FA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Submachine Guns"]
+  },
+  {
+    "name": "Beretta Modell 70 (2050)",
+    "description": "",
+    "concealability": 2,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [7],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 35,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Laser Sight"
+      },
+      {
+        "name": "Silencer/Suppressor"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Automatics",
+    "availability": {
+      "rating": [5],
+      "restriction": "F"
+    },
+    "cost": [900],
+    "source": "Shadowrun 2050",
+    "page": 185,
+    "type": "Firearm",
+    "subtype": "Submachine Guns",
+    "firearmOptions": {
+      "mode": ["BF", "FA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Submachine Guns"]
+  },
+  {
+    "name": "HK227 (2050)",
+    "description": "",
+    "concealability": 2,
+    "accuracy": [5],
+    "damage": [
+      {
+        "damageAmount": [7],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 28,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Gas-Vent 2 System"
+      },
+      {
+        "name": "Laser Sight"
+      },
+      {
+        "name": "Folding Stock"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Automatics",
+    "availability": {
+      "rating": [4],
+      "restriction": "F"
+    },
+    "cost": [1500],
+    "source": "Shadowrun 2050",
+    "page": 185,
+    "type": "Firearm",
+    "subtype": "Submachine Guns",
+    "firearmOptions": {
+      "mode": ["SA", "BF", "FA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Submachine Guns"]
+  },
+  {
+    "name": "Ingram Smartgun (2050)",
+    "description": "",
+    "concealability": 2,
+    "accuracy": [4],
+    "damage": [
+      {
+        "damageAmount": [8],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 32,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Smartgun System, Internal"
+      },
+      {
+        "name": "Folding Stock"
+      },
+      {
+        "name": "Gas-Vent 2 System"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Automatics",
+    "availability": {
+      "rating": [4],
+      "restriction": "F"
+    },
+    "cost": [950],
+    "source": "Shadowrun 2050",
+    "page": 185,
+    "type": "Firearm",
+    "subtype": "Submachine Guns",
+    "firearmOptions": {
+      "mode": ["BF", "FA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+    },
+    "rangeList": ["Submachine Guns"]
+  },
+  {
+    "name": "Uzi III (2050)",
+    "description": "",
+    "concealability": 2,
+    "accuracy": [4],
+    "damage": [
+      {
+        "damageAmount": [7],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 24,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Folding Stock"
+      },
+      {
+        "name": "Laser Sight"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Automatics",
+    "availability": {
+      "rating": [4],
+      "restriction": "F"
+    },
+    "cost": [600],
+    "source": "Shadowrun 2050",
+    "page": 185,
+    "type": "Firearm",
+    "subtype": "Submachine Guns",
+    "firearmOptions": {
+      "mode": ["BF"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+    },
+    "rangeList": ["Submachine Guns"]
+  },
+  {
+    "name": "AK-97 (2050)",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [5],
+    "damage": [
+      {
+        "damageAmount": [10],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 22,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Automatics",
+    "availability": {
+      "rating": [3],
+      "restriction": "F"
+    },
+    "cost": [500],
+    "source": "Shadowrun 2050",
+    "page": 185,
+    "type": "Firearm",
+    "subtype": "Assault Rifles",
+    "firearmOptions": {
+      "mode": ["SA", "BF", "FA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Assault Rifles"]
+  },
+  {
+    "name": "AK-98 (2050)",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [5],
+    "damage": [
+      {
+        "damageAmount": [10],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 22,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Automatics",
+    "availability": {
+      "rating": [6],
+      "restriction": "F"
+    },
+    "cost": [2500],
+    "source": "Shadowrun 2050",
+    "page": 185,
+    "type": "Firearm",
+    "subtype": "Assault Rifles",
+    "firearmOptions": {
+      "mode": ["SA", "BF", "FA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "underbarrelWeapons": ["AK-98 Grenade Launcher"],
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Assault Rifles"]
+  },
+  {
+    "name": "Colt M22A2 (2050)",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [4],
+    "damage": [
+      {
+        "damageAmount": [9],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 40,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Automatics",
+    "availability": {
+      "rating": [4],
+      "restriction": "F"
+    },
+    "cost": [1600],
+    "source": "Shadowrun 2050",
+    "page": 185,
+    "type": "Firearm",
+    "subtype": "Assault Rifles",
+    "firearmOptions": {
+      "mode": ["SA", "BF", "FA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "underbarrelWeapons": ["Colt M22A2 Grenade Launcher (2050)"],
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Assault Rifles"]
+  },
+  {
+    "name": "Colt M22A2 Grenade Launcher (2050)",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [3],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Grenade"
+          }
+        ],
+        "type": "N/A"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "option": "Grenade"
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 6,
+        "reloadMethod": "(m)"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "hostWeaponRequirements": {
+      "hostWeaponMountsRequired": ["Under"]
+    },
+    "relatedSkill": "Heavy Weapons",
+    "relatedSkillSpecialisations": ["Grenade Launchers"],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Shadowrun 2050",
+    "page": 185,
+    "type": "Firearm",
+    "subtype": "Weapon Attachments",
+    "firearmOptions": {
+      "mode": ["SS"],
+      "recoilCompensation": 0,
+      "ammoCategory": "Grenade Launchers",
+      "ammoSlots": 1
+    },
+    "rangeList": ["Grenade Launchers"]
+  },
+  {
+    "name": "FN HAR (2050)",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [5],
+    "damage": [
+      {
+        "damageAmount": [10],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 20,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Laser Sight"
+      },
+      {
+        "name": "Folding Stock"
+      },
+      {
+        "name": "Gas-Vent 2 System"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Automatics",
+    "availability": {
+      "rating": [4],
+      "restriction": "F"
+    },
+    "cost": [1200],
+    "source": "Shadowrun 2050",
+    "page": 185,
+    "type": "Firearm",
+    "subtype": "Assault Rifles",
+    "firearmOptions": {
+      "mode": ["SA", "BF", "FA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Assault Rifles"]
+  },
+  {
+    "name": "Ranger Arms SM-3 (2050)",
+    "description": "",
+    "concealability": 8,
+    "accuracy": [8],
+    "damage": [
+      {
+        "damageAmount": [14],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            5
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 6,
+        "reloadMethod": "(m)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Silencer/Suppressor"
+      },
+      {
+        "name": "Imaging Scope (2050)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Longarms",
+    "availability": {
+      "rating": [12],
+      "restriction": "F"
+    },
+    "cost": [4000],
+    "source": "Shadowrun 2050",
+    "page": 186,
+    "type": "Firearm",
+    "subtype": "Sniper Rifles",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Sniper Rifles"]
+  },
+  {
+    "name": "Remington 750 (2050)",
+    "description": "",
+    "concealability": 8,
+    "accuracy": [7],
+    "damage": [
+      {
+        "damageAmount": [11],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            3
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 5,
+        "reloadMethod": "(m)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Imaging Scope (2050)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Longarms",
+    "availability": {
+      "rating": [3],
+      "restriction": "R"
+    },
+    "cost": [600],
+    "source": "Shadowrun 2050",
+    "page": 186,
+    "type": "Firearm",
+    "subtype": "Sniper Rifles",
+    "firearmOptions": {
+      "mode": ["SS"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
+    },
+    "rangeList": ["Sniper Rifles"]
+  },
+  {
+    "name": "Remington 950 (2050)",
+    "description": "",
+    "concealability": 8,
+    "accuracy": [7],
+    "damage": [
+      {
+        "damageAmount": [12],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            4
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 5,
+        "reloadMethod": "(m)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Imaging Scope (2050)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Longarms",
+    "availability": {
+      "rating": [3],
+      "restriction": "R"
+    },
+    "cost": [800],
+    "source": "Shadowrun 2050",
+    "page": 186,
+    "type": "Firearm",
+    "subtype": "Sniper Rifles",
+    "firearmOptions": {
+      "mode": ["SS"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
+    },
+    "rangeList": ["Sniper Rifles"]
+  },
+  {
+    "name": "Ruger 100 (2050)",
+    "description": "",
+    "concealability": 8,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [11],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            3
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 5,
+        "reloadMethod": "(m)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Imaging Scope (2050)"
+      },
+      {
+        "name": "Shock Pad"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Longarms",
+    "availability": {
+      "rating": [3],
+      "restriction": "R"
+    },
+    "cost": [1300],
+    "source": "Shadowrun 2050",
+    "page": 186,
+    "type": "Firearm",
+    "subtype": "Sniper Rifles",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Sniper Rifles"]
+  },
+  {
+    "name": "Walther MA-2100 (2050)",
+    "description": "",
+    "concealability": 8,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [12],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            3
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 10,
+        "reloadMethod": "(m)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Smartgun System, Internal (2050)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Longarms",
+    "availability": {
+      "rating": [12],
+      "restriction": "F"
+    },
+    "cost": [6500],
+    "source": "Shadowrun 2050",
+    "page": 186,
+    "type": "Firearm",
+    "subtype": "Sniper Rifles",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Sniper Rifles"]
+  },
+  {
+    "name": "Steyr AUG-CSL (2050)",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [5],
+    "damage": [
+      {
+        "damageAmount": [9],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 40,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Gas-Vent 1 System"
+      }
+    ],
+    "allowAccessories": true,
+    "alternativeWeaponForms": [
+      "Steyr AUG-CSL SMG (2050)",
+      "Steyr AUG-CSL Carbine (2050)",
+      "Steyr AUG-CSL LMG (2050)"
+    ],
+    "relatedSkill": "Automatics",
+    "availability": {
+      "rating": [10],
+      "restriction": "F"
+    },
+    "cost": [4500],
+    "source": "Shadowrun 2050",
+    "page": 184,
+    "type": "Firearm",
+    "subtype": "Assault Rifles",
+    "firearmOptions": {
+      "mode": ["SA", "BF", "FA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Assault Rifles"]
+  },
+  {
+    "name": "Steyr AUG-CSL SMG (2050)",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [5],
+    "damage": [
+      {
+        "damageAmount": [7],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 40,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Gas-Vent 1 System"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "relatedSkill": "Automatics",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Shadowrun 2050",
+    "page": 184,
+    "type": "Firearm",
+    "subtype": "Submachine Guns",
+    "firearmOptions": {
+      "mode": ["SA", "BF"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Submachine Guns"]
+  },
+  {
+    "name": "Steyr AUG-CSL Carbine (2050)",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [5],
+    "damage": [
+      {
+        "damageAmount": [8],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 40,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Gas-Vent 1 System"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "relatedSkill": "Longarms",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Shadowrun 2050",
+    "page": 184,
+    "type": "Firearm",
+    "subtype": "Sporting Rifles",
+    "firearmOptions": {
+      "mode": ["SA", "BF"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Sporting Rifles"]
+  },
+  {
+    "name": "Steyr AUG-CSL LMG (2050)",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [5],
+    "damage": [
+      {
+        "damageAmount": [10],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 40,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Gas-Vent 1 System"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "relatedSkill": "Heavy Weapons",
+    "relatedSkillSpecialisations": ["Machine Guns"],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Shadowrun 2050",
+    "page": 184,
+    "type": "Firearm",
+    "subtype": "Light Machineguns",
+    "firearmOptions": {
+      "mode": ["SA", "BF", "FA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Light Machine Guns"]
+  },
+  {
+    "name": "Grenade: Shock (2050)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [10],
+        "type": "Stun",
+        "blast": {
+          "type": "Radius",
+          "value": 10
+        }
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            4
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Throwing Weapons",
+    "relatedSkillSpecialisations": ["Non-Aerodynamic"],
+    "availability": {
+      "rating": [5],
+      "restriction": "F"
+    },
+    "cost": [30],
+    "source": "Shadowrun 2050",
+    "page": 191,
+    "type": "Explosive",
+    "subtype": "Grenade",
+    "rangeList": ["Standard Grenade"]
+  },
+  {
+    "name": "Grenade: Shock, Aerodynamic (2050)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [10],
+        "type": "Stun",
+        "blast": {
+          "type": "Radius",
+          "value": 10
+        }
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            4
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Throwing Weapons",
+    "relatedSkillSpecialisations": ["Aerodynamic"],
+    "availability": {
+      "rating": [5],
+      "restriction": "F"
+    },
+    "cost": [30],
+    "source": "Shadowrun 2050",
+    "page": 191,
+    "type": "Explosive",
+    "subtype": "Grenade",
+    "rangeList": ["Aerodynamic Grenade"]
+  },
+  {
+    "name": "Minigrenade: Shock (2050)",
+    "description": "",
+    "concealability": -2,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [10],
+        "type": "Stun",
+        "blast": {
+          "type": "Radius",
+          "value": 10
+        }
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            4
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "relatedSkillSpecialisations": ["Grenade Launcher"],
+    "availability": {
+      "rating": [8],
+      "restriction": "F"
+    },
+    "cost": [60],
+    "source": "Shadowrun 2050",
+    "page": 191,
+    "type": "Explosive",
+    "subtype": "Rocket",
+    "rangeList": ["Grenade Launchers"]
+  },
+  {
+    "name": "Grenade: Defensive (2050)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [16],
+        "type": "Physical",
+        "blast": {
+          "type": "Reducing",
+          "value": -2
+        }
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Throwing Weapons",
+    "relatedSkillSpecialisations": ["Non-Aerodynamic"],
+    "availability": {
+      "rating": [4],
+      "restriction": "F"
+    },
+    "cost": [45],
+    "source": "Shadowrun 2050",
+    "page": 191,
+    "type": "Explosive",
+    "subtype": "Grenade",
+    "rangeList": ["Standard Grenade"]
+  },
+  {
+    "name": "Grenade: Defensive, Aerodynamic (2050)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [16],
+        "type": "Physical",
+        "blast": {
+          "type": "Reducing",
+          "value": -2
+        }
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Throwing Weapons",
+    "relatedSkillSpecialisations": ["Aerodynamic"],
+    "availability": {
+      "rating": [4],
+      "restriction": "F"
+    },
+    "cost": [45],
+    "source": "Shadowrun 2050",
+    "page": 191,
+    "type": "Explosive",
+    "subtype": "Grenade",
+    "rangeList": ["Aerodynamic Grenade"]
+  },
+  {
+    "name": "Minigrenade: Defensive (2050)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [16],
+        "type": "Physical",
+        "blast": {
+          "type": "Reducing",
+          "value": -2
+        }
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "availability": {
+      "rating": [8],
+      "restriction": "F"
+    },
+    "cost": [60],
+    "source": "Shadowrun 2050",
+    "page": 191,
+    "type": "Explosive",
+    "subtype": "Rocket",
+    "rangeList": ["Grenade Launchers"]
+  },
+  {
+    "name": "Grenade: Offensive (2050)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [18],
+        "type": "Physical",
+        "annotation": "Flechette",
+        "blast": {
+          "type": "Reducing",
+          "value": -1
+        }
+      }
+    ],
+    "armourPenetration": [[5]],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Throwing Weapons",
+    "relatedSkillSpecialisations": ["Non-Aerodynamic"],
+    "availability": {
+      "rating": [4],
+      "restriction": "F"
+    },
+    "cost": [35],
+    "source": "Shadowrun 2050",
+    "page": 191,
+    "type": "Explosive",
+    "subtype": "Grenade",
+    "rangeList": ["Standard Grenade"]
+  },
+  {
+    "name": "Grenade: Offensive, Aerodynamic (2050)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [18],
+        "type": "Physical",
+        "annotation": "Flechette",
+        "blast": {
+          "type": "Reducing",
+          "value": -1
+        }
+      }
+    ],
+    "armourPenetration": [[5]],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Throwing Weapons",
+    "relatedSkillSpecialisations": ["Aerodynamic"],
+    "availability": {
+      "rating": [4],
+      "restriction": "F"
+    },
+    "cost": [35],
+    "source": "Shadowrun 2050",
+    "page": 191,
+    "type": "Explosive",
+    "subtype": "Grenade",
+    "rangeList": ["Aerodynamic Grenade"]
+  },
+  {
+    "name": "Minigrenade: Offensive (2050)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [18],
+        "type": "Physical",
+        "annotation": "Flechette",
+        "blast": {
+          "type": "Reducing",
+          "value": -1
+        }
+      }
+    ],
+    "armourPenetration": [[5]],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "availability": {
+      "rating": [8],
+      "restriction": "F"
+    },
+    "cost": [60],
+    "source": "Shadowrun 2050",
+    "page": 191,
+    "type": "Explosive",
+    "subtype": "Rocket",
+    "rangeList": ["Grenade Launchers"]
+  },
+  {
+    "name": "Grenade: Smoke (2050)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [0],
+        "type": "N/A",
+        "blast": {
+          "type": "Radius",
+          "value": 10
+        }
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Throwing Weapons",
+    "relatedSkillSpecialisations": ["Non-Aerodynamic"],
+    "availability": {
+      "rating": [3],
+      "restriction": "R"
+    },
+    "cost": [30],
+    "source": "Shadowrun 2050",
+    "page": 191,
+    "type": "Explosive",
+    "subtype": "Grenade",
+    "rangeList": ["Standard Grenade"]
+  },
+  {
+    "name": "Grenade: Smoke, Aerodynamic (2050)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [0],
+        "type": "N/A",
+        "blast": {
+          "type": "Radius",
+          "value": 10
+        }
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Throwing Weapons",
+    "relatedSkillSpecialisations": ["Aerodynamic"],
+    "availability": {
+      "rating": [3],
+      "restriction": "R"
+    },
+    "cost": [30],
+    "source": "Shadowrun 2050",
+    "page": 191,
+    "type": "Explosive",
+    "subtype": "Grenade",
+    "rangeList": ["Aerodynamic Grenade"]
+  },
+  {
+    "name": "Minigrenade: Smoke (2050)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [0],
+        "type": "N/A",
+        "blast": {
+          "type": "Radius",
+          "value": 10
+        }
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "availability": {
+      "rating": [3],
+      "restriction": "R"
+    },
+    "cost": [60],
+    "source": "Shadowrun 2050",
+    "page": 191,
+    "type": "Explosive",
+    "subtype": "Rocket",
+    "rangeList": ["Grenade Launchers"]
+  },
+  {
+    "name": "Rocket: Anti-Personnel (2050)",
+    "description": "",
+    "concealability": 10,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [23],
+        "type": "Physical",
+        "annotation": "Flechette",
+        "blast": {
+          "type": "Reducing",
+          "value": -1
+        }
+      }
+    ],
+    "armourPenetration": [[5]],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "availability": {
+      "rating": [8],
+      "restriction": "F"
+    },
+    "cost": [1000],
+    "source": "Shadowrun 2050",
+    "page": 191,
+    "type": "Explosive",
+    "subtype": "Rocket",
+    "rangeList": ["Grenade Launchers"]
+  },
+  {
+    "name": "Rocket: Anti-Vehicle (2050)",
+    "description": "",
+    "concealability": 10,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [24],
+        "type": "Physical",
+        "blast": {
+          "type": "Reducing",
+          "value": -4
+        }
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            4
+          ]
+        }
+      ],
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            10
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "availability": {
+      "rating": [8],
+      "restriction": "F"
+    },
+    "cost": [2000],
+    "source": "Shadowrun 2050",
+    "page": 191,
+    "type": "Explosive",
+    "subtype": "Rocket",
+    "rangeList": ["Grenade Launchers"]
+  },
+  {
+    "name": "Rocket: High Explosive (2050)",
+    "description": "",
+    "concealability": 10,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [21],
+        "type": "Physical",
+        "blast": {
+          "type": "Reducing",
+          "value": -2
+        }
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "availability": {
+      "rating": [8],
+      "restriction": "F"
+    },
+    "cost": [1500],
+    "source": "Shadowrun 2050",
+    "page": 191,
+    "type": "Explosive",
+    "subtype": "Rocket",
+    "rangeList": ["Grenade Launchers"]
+  },
+  {
+    "name": "Missile: Anti-Personnel (2050)",
+    "description": "",
+    "concealability": 10,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [23],
+        "type": "Physical",
+        "annotation": "Flechette",
+        "blast": {
+          "type": "Reducing",
+          "value": -1
+        }
+      }
+    ],
+    "armourPenetration": [[5]],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "availability": {
+      "rating": [12],
+      "restriction": "F"
+    },
+    "cost": [1000],
+    "source": "Shadowrun 2050",
+    "page": 191,
+    "type": "Explosive",
+    "subtype": "Rocket",
+    "rangeList": ["Grenade Launchers"]
+  },
+  {
+    "name": "Missile: Anti-Vehicle (2050)",
+    "description": "",
+    "concealability": 10,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [24],
+        "type": "Physical",
+        "blast": {
+          "type": "Reducing",
+          "value": -4
+        }
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            4
+          ]
+        }
+      ],
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            10
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "availability": {
+      "rating": [12],
+      "restriction": "F"
+    },
+    "cost": [2000],
+    "source": "Shadowrun 2050",
+    "page": 191,
+    "type": "Explosive",
+    "subtype": "Rocket",
+    "rangeList": ["Grenade Launchers"]
+  },
+  {
+    "name": "Missile: High Explosive (2050)",
+    "description": "",
+    "concealability": 10,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [21],
+        "type": "Physical",
+        "blast": {
+          "type": "Reducing",
+          "value": -2
+        }
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "availability": {
+      "rating": [12],
+      "restriction": "F"
+    },
+    "cost": [1500],
+    "source": "Shadowrun 2050",
+    "page": 191,
+    "type": "Explosive",
+    "subtype": "Rocket",
+    "rangeList": ["Grenade Launchers"]
+  },
+  {
+    "name": "Autocannon (2050)",
+    "description": "",
+    "concealability": 10,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [13],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            6
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 10,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "availability": {
+      "rating": [12],
+      "restriction": "F"
+    },
+    "cost": [12000],
+    "source": "Shadowrun 2050",
+    "page": 196,
+    "type": "Firearm",
+    "subtype": "Assault Cannons",
+    "firearmOptions": {
+      "mode": ["SS"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1
+    },
+    "rangeList": ["Assault Cannons"]
+  },
+  {
+    "name": "Launcher, Vehicle (2050)",
+    "description": "",
+    "concealability": 10,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Missile"
+          }
+        ],
+        "type": "N/A"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "option": "Missile"
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 6,
+        "reloadMethod": "(b)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "availability": {
+      "rating": [12],
+      "restriction": "F"
+    },
+    "cost": [15000],
+    "source": "Shadowrun 2050",
+    "page": 196,
+    "type": "Firearm",
+    "subtype": "Missile Launchers",
+    "firearmOptions": {
+      "mode": ["SS"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Top", "Under"]
+    },
+    "rangeList": ["Missile Launchers"]
+  },
+  {
+    "name": "Water Cannon (2050)",
+    "description": "",
+    "concealability": 10,
+    "accuracy": [0],
+    "damage": [
+      {
+        "damageAmount": [12],
+        "type": "Stun"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            6
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 200,
+        "reloadMethod": "(tank)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "availability": {
+      "rating": [15],
+      "restriction": "R"
+    },
+    "cost": [20000],
+    "source": "Shadowrun 2050",
+    "page": 196,
+    "type": "Firearm",
+    "subtype": "Assault Cannons",
+    "firearmOptions": {
+      "mode": ["SS"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1
+    },
+    "rangeList": ["Submachine Guns"]
+  },
+  {
+    "name": "Defiance T-250 (2050)",
+    "description": "",
+    "concealability": 3,
+    "accuracy": [4],
+    "damage": [
+      {
+        "damageAmount": [10],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 5,
+        "reloadMethod": "(m)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Longarms",
+    "availability": {
+      "rating": [3],
+      "restriction": "R"
+    },
+    "cost": [750],
+    "source": "Shadowrun 2050",
+    "page": 186,
+    "type": "Firearm",
+    "subtype": "Shotguns",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Top", "Under"]
+    },
+    "rangeList": ["Heavy Pistols"]
+  },
+  {
+    "name": "Enfield AS-7 (2050)",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [4],
+    "damage": [
+      {
+        "damageAmount": [10],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 10,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Laser Sight"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Longarms",
+    "availability": {
+      "rating": [8],
+      "restriction": "R"
+    },
+    "cost": [1000],
+    "source": "Shadowrun 2050",
+    "page": 186,
+    "type": "Firearm",
+    "subtype": "Shotguns",
+    "firearmOptions": {
+      "mode": ["SA", "BF"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Shotguns", "Shotguns (flechette)"]
+  },
+  {
+    "name": "Mossberg CMDT (2050)",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [4],
+    "damage": [
+      {
+        "damageAmount": [10],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 8,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Longarms",
+    "availability": {
+      "rating": [8],
+      "restriction": "F"
+    },
+    "cost": [1500],
+    "source": "Shadowrun 2050",
+    "page": 186,
+    "type": "Firearm",
+    "subtype": "Shotguns",
+    "firearmOptions": {
+      "mode": ["SA", "BF"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Shotguns", "Shotguns (flechette)"]
+  },
+  {
+    "name": "Mossberg CMDT/SM (2050)",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [4],
+    "damage": [
+      {
+        "damageAmount": [10],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 8,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Smartgun System, Internal"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Longarms",
+    "availability": {
+      "rating": [12],
+      "restriction": "F"
+    },
+    "cost": [1900],
+    "source": "Shadowrun 2050",
+    "page": 186,
+    "type": "Firearm",
+    "subtype": "Shotguns",
+    "firearmOptions": {
+      "mode": ["SA", "BF"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Shotguns", "Shotguns (flechette)"]
+  },
+  {
+    "name": "Walther Secura Superkompakt",
+    "description": "",
+    "concealability": -4,
+    "accuracy": [4],
+    "damage": [
+      {
+        "damageAmount": [7],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 4,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Ceramic/Plasteel Components",
+        "rating": 4
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Pistols",
+    "availability": {
+      "rating": [8],
+      "restriction": "R"
+    },
+    "cost": [1000],
+    "source": "State Of The Art - ADL",
+    "page": 18,
+    "type": "Firearm",
+    "subtype": "Hold Outs",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 0,
+      "ammoCategory": "Heavy Pistols",
+      "ammoSlots": 1
+    },
+    "rangeList": ["Holdouts"]
+  },
+  {
+    "name": "Altmayr Black Moon",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [8],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 6,
+        "reloadMethod": "(cy)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Electronic Firing"
+      },
+      {
+        "name": "Slide Mount"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Pistols",
+    "relatedSkillSpecialisations": ["Revolvers"],
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [1150],
+    "source": "State Of The Art - ADL",
+    "page": 19,
+    "type": "Firearm",
+    "subtype": "Heavy Pistols",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 1,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+    },
+    "rangeList": ["Heavy Pistols"]
+  },
+  {
+    "name": "Glock-Swarovski Adlerauge",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [7],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 12,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Long Barrel"
+      },
+      {
+        "name": "Improved Range Finder"
+      },
+      {
+        "name": "Smartgun System, Internal"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Pistols",
+    "relatedSkillSpecialisations": ["Semi-Automatics"],
+    "availability": {
+      "rating": [11],
+      "restriction": "R"
+    },
+    "cost": [890],
+    "source": "State Of The Art - ADL",
+    "page": 20,
+    "type": "Firearm",
+    "subtype": "Heavy Pistols",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+    },
+    "rangeList": ["Heavy Pistols"]
+  },
+  {
+    "name": "HK Urban Fighter (ADL)",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [7],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 10,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Pistols",
+    "relatedSkillSpecialisations": ["Semi-Automatics"],
+    "availability": {
+      "rating": [16],
+      "restriction": "F"
+    },
+    "cost": [2400],
+    "source": "State Of The Art - ADL",
+    "page": 21,
+    "type": "Firearm",
+    "subtype": "Heavy Pistols",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 1,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+    },
+    "rangeList": ["Heavy Pistols"]
+  },
+  {
+    "name": "Walther Secura II",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [8],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 18,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Smartgun System, Internal"
+      },
+      {
+        "name": "Flashlight, Standard"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Pistols",
+    "relatedSkillSpecialisations": ["Semi-Automatics"],
+    "availability": {
+      "rating": [10],
+      "restriction": "R"
+    },
+    "cost": [925],
+    "source": "State Of The Art - ADL",
+    "page": 22,
+    "type": "Firearm",
+    "subtype": "Heavy Pistols",
+    "firearmOptions": {
+      "mode": ["SA", "BF"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+    },
+    "rangeList": ["Heavy Pistols"]
+  },
+  {
+    "name": "Glock 51",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [5],
+    "damage": [
+      {
+        "damageAmount": [7],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 28,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Ceramic/Plasteel Components",
+        "rating": 2
+      },
+      {
+        "name": "Laser Sight"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Automatics",
+    "availability": {
+      "rating": [10],
+      "restriction": "R"
+    },
+    "cost": [450],
+    "source": "State Of The Art - ADL",
+    "page": 23,
+    "type": "Firearm",
+    "subtype": "Machine Pistols",
+    "firearmOptions": {
+      "mode": ["SA", "BF", "FA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
+    },
+    "rangeList": ["Machine Pistols"]
+  },
+  {
+    "name": "Walther P118",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [4],
+    "damage": [
+      {
+        "damageAmount": [7],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 16,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Trigger Removal"
+      },
+      {
+        "name": "Electronic Firing"
+      },
+      {
+        "name": "Advanced Safety System, Basic"
+      },
+      {
+        "name": "Gas-Vent 2 System"
+      },
+      {
+        "name": "Smartgun System, Internal"
+      },
+      {
+        "name": "Safe Target System, Base"
+      },
+      {
+        "name": "Extended Clip",
+        "rating": 1
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Automatics",
+    "availability": {
+      "rating": [9],
+      "restriction": "R"
+    },
+    "cost": [2300],
+    "source": "State Of The Art - ADL",
+    "page": 24,
+    "type": "Firearm",
+    "subtype": "Machine Pistols",
+    "firearmOptions": {
+      "mode": ["SA", "BF", "FA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
+    },
+    "rangeList": ["Machine Pistols"]
+  },
+  {
+    "name": "Glock MP Custodes (MPK)",
+    "description": "",
+    "concealability": 2,
+    "accuracy": [5],
+    "damage": [
+      {
+        "damageAmount": [7],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 24,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Folding Stock"
+      },
+      {
+        "name": "Gas-Vent 1 System"
+      },
+      {
+        "name": "Ceramic/Plasteel Components",
+        "rating": 1
+      },
+      {
+        "name": "Sling"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Automatics",
+    "availability": {
+      "rating": [15],
+      "restriction": "F"
+    },
+    "cost": [1500],
+    "source": "State Of The Art - ADL",
+    "page": 25,
+    "type": "Firearm",
+    "subtype": "Submachine Guns",
+    "firearmOptions": {
+      "mode": ["SA", "BF", "FA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+    },
+    "rangeList": ["Submachine Guns"]
+  },
+  {
+    "name": "Glock MP Custodes (MPV)",
+    "description": "",
+    "concealability": -6,
+    "accuracy": [5],
+    "damage": [
+      {
+        "damageAmount": [7],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 24,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Folding Stock"
+      },
+      {
+        "name": "Gas-Vent 1 System"
+      },
+      {
+        "name": "Ceramic/Plasteel Components",
+        "rating": 1
+      },
+      {
+        "name": "Sling"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Automatics",
+    "availability": {
+      "rating": [15],
+      "restriction": "F"
+    },
+    "cost": [2000],
+    "source": "State Of The Art - ADL",
+    "page": 25,
+    "type": "Firearm",
+    "subtype": "Submachine Guns",
+    "firearmOptions": {
+      "mode": ["SA", "BF", "FA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+    },
+    "rangeList": ["Submachine Guns"]
+  },
+  {
+    "name": "HK 223C",
+    "description": "",
+    "concealability": 2,
+    "accuracy": [4],
+    "damage": [
+      {
+        "damageAmount": [8],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 30,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Folding Stock"
+      },
+      {
+        "name": "Slide Mount"
+      },
+      {
+        "name": "Slide Mount"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Automatics",
+    "availability": {
+      "rating": [9],
+      "restriction": "F"
+    },
+    "cost": [850],
+    "source": "State Of The Art - ADL",
+    "page": 26,
+    "type": "Firearm",
+    "subtype": "Submachine Guns",
+    "firearmOptions": {
+      "mode": ["SA", "BF", "FA"],
+      "recoilCompensation": 0,
+      "ammoCategory": "Assault Rifles",
+      "ammoSlots": 1,
+      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+    },
+    "rangeList": ["Submachine Guns"]
+  },
+  {
+    "name": "HK Urban Enforcer",
+    "description": "",
+    "concealability": 2,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [8],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 36,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Trigger Removal"
+      },
+      {
+        "name": "Electronic Firing"
+      },
+      {
+        "name": "Silencer/Suppressor"
+      },
+      {
+        "name": "Smartgun System, Internal"
+      },
+      {
+        "name": "Advanced Safety System, Basic"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Automatics",
+    "availability": {
+      "rating": [20],
+      "restriction": "F"
+    },
+    "cost": [6200],
+    "source": "State Of The Art - ADL",
+    "page": 27,
+    "type": "Firearm",
+    "subtype": "Submachine Guns",
+    "firearmOptions": {
+      "mode": ["SA", "BF", "FA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "underbarrelWeapons": ["HK Urban Enforcer Microgrenade Launcher"],
+      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+    },
+    "rangeList": ["Submachine Guns"]
+  },
+  {
+    "name": "HK Urban Enforcer Microgrenade Launcher",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [4],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Grenade"
+          }
+        ],
+        "type": "N/A"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "option": "Grenade"
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 4,
+        "reloadMethod": "(m)"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "hostWeaponRequirements": {
+      "hostWeaponMountsRequired": ["Under"]
+    },
+    "relatedSkill": "Heavy Weapons",
+    "relatedSkillSpecialisations": ["Grenade Launchers"],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "State Of The Art - ADL",
+    "page": 27,
+    "type": "Firearm",
+    "subtype": "Weapon Attachments",
+    "firearmOptions": {
+      "mode": ["SS"],
+      "recoilCompensation": 0,
+      "ammoCategory": "Grenade Launchers",
+      "ammoSlots": 1
+    },
+    "rangeList": ["Grenade Launchers"]
+  },
+  {
+    "name": "Steyr AUG-CSL III (Assault Rifle)",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [10],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 30,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Laser Sight"
+      },
+      {
+        "name": "Imaging Scope"
+      },
+      {
+        "name": "Foregrip"
+      }
+    ],
+    "allowAccessories": true,
+    "alternativeWeaponForms": [
+      "Steyr AUG-CSL III (Carbine)",
+      "Steyr AUG-CSL III (LMG)",
+      "Steyr AUG-CSL III (Sniper Rifle)"
+    ],
+    "relatedSkill": "Automatics",
+    "availability": {
+      "rating": [13],
+      "restriction": "F"
+    },
+    "cost": [3000],
+    "source": "State Of The Art - ADL",
+    "page": 29,
+    "type": "Firearm",
+    "subtype": "Assault Rifles",
+    "firearmOptions": {
+      "mode": ["SA", "BF", "FA"],
+      "recoilCompensation": 1,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Assault Rifles"]
+  },
+  {
+    "name": "Steyr AUG-CSL III (Carbine)",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [8],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 36,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Laser Sight"
+      },
+      {
+        "name": "Imaging Scope"
+      },
+      {
+        "name": "Foregrip"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "relatedSkill": "Automatics",
+    "relatedSkillSpecialisations": ["Submachine Guns"],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "State Of The Art - ADL",
+    "page": 29,
+    "type": "Firearm",
+    "subtype": "Assault Rifles",
+    "firearmOptions": {
+      "mode": ["SA", "BF", "FA"],
+      "recoilCompensation": 1,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Submachine Guns"]
+  },
+  {
+    "name": "Steyr AUG-CSL III (LMG)",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [10],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 50,
+        "reloadMethod": "(m)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Laser Sight"
+      },
+      {
+        "name": "Imaging Scope"
+      },
+      {
+        "name": "Bipod"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "relatedSkill": "Heavy Weapons",
+    "relatedSkillSpecialisations": ["Machine Guns"],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "State Of The Art - ADL",
+    "page": 29,
+    "type": "Firearm",
+    "subtype": "Assault Rifles",
+    "firearmOptions": {
+      "mode": ["BF", "FA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Light Machine Guns"]
+  },
+  {
+    "name": "Steyr AUG-CSL III (Sniper Rifle)",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [7],
+    "damage": [
+      {
+        "damageAmount": [10],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            3
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 10,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Laser Sight"
+      },
+      {
+        "name": "Imaging Scope"
+      },
+      {
+        "name": "Bipod"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "relatedSkill": "Longarms",
+    "relatedSkillSpecialisations": ["Sniper Rifles"],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "State Of The Art - ADL",
+    "page": 29,
+    "type": "Firearm",
+    "subtype": "Assault Rifles",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Sniper Rifles"]
+  },
+  {
+    "name": "HK G12A4",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [9],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 32,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Folding Stock"
+      },
+      {
+        "name": "Gas-Vent 2 System"
+      },
+      {
+        "name": "Slide Mount"
+      },
+      {
+        "name": "Slide Mount"
+      },
+      {
+        "name": "Slide Mount"
+      },
+      {
+        "name": "Smartgun System, Internal"
+      },
+      {
+        "name": "Foregrip"
+      },
+      {
+        "name": "Imaging Scope"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Automatics",
+    "availability": {
+      "rating": [9],
+      "restriction": "F"
+    },
+    "cost": [2850],
+    "source": "State Of The Art - ADL",
+    "page": 30,
+    "type": "Firearm",
+    "subtype": "Assault Rifles",
+    "firearmOptions": {
+      "mode": ["SA", "BF", "FA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "underbarrelWeapons": ["HK G12A4 Grenade Launcher"],
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Assault Rifles"]
+  },
+  {
+    "name": "HK G12A4 Grenade Launcher",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [4],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Grenade"
+          }
+        ],
+        "type": "N/A"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "option": "Grenade"
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 8,
+        "reloadMethod": "(m)"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "hostWeaponRequirements": {
+      "hostWeaponMountsRequired": ["Under"]
+    },
+    "relatedSkill": "Heavy Weapons",
+    "relatedSkillSpecialisations": ["Grenade Launchers"],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "State Of The Art - ADL",
+    "page": 30,
+    "type": "Firearm",
+    "subtype": "Weapon Attachments",
+    "firearmOptions": {
+      "mode": ["SS"],
+      "recoilCompensation": 0,
+      "ammoCategory": "Grenade Launchers",
+      "ammoSlots": 1
+    },
+    "rangeList": ["Grenade Launchers"]
+  },
+  {
+    "name": "Steyr UCR",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [9],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 40,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Shock Pad"
+      },
+      {
+        "name": "Laser Sight"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Automatics",
+    "availability": {
+      "rating": [10],
+      "restriction": "F"
+    },
+    "cost": [1850],
+    "source": "State Of The Art - ADL",
+    "page": 31,
+    "type": "Firearm",
+    "subtype": "Assault Rifles",
+    "firearmOptions": {
+      "mode": ["SA", "BF", "FA"],
+      "recoilCompensation": 1,
+      "ammoSlots": 1,
+      "underbarrelWeapons": ["Steyr UCR Underbarrel Shotgun"],
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Assault Rifles"]
+  },
+  {
+    "name": "Steyr UCR Underbarrel Shotgun",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [3],
+    "damage": [
+      {
+        "damageAmount": [10],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 4,
+        "reloadMethod": "(m)"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "relatedSkill": "Longarms",
+    "relatedSkillSpecialisations": ["Shotguns"],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "State Of The Art - ADL",
+    "page": 31,
+    "type": "Firearm",
+    "subtype": "Shotguns",
+    "firearmOptions": {
+      "mode": ["SS"],
+      "recoilCompensation": 0,
+      "ammoCategory": "Shotguns",
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Shotguns", "Shotguns (flechette)"]
+  },
+  {
+    "name": "HK DMR 11D",
+    "description": "",
+    "concealability": 8,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [11],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            3
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 30,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Imaging Scope"
+      },
+      {
+        "name": "Slide Mount"
+      },
+      {
+        "name": "Bipod"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Longarms",
+    "availability": {
+      "rating": [10],
+      "restriction": "F"
+    },
+    "cost": [8500],
+    "source": "State Of The Art - ADL",
+    "page": 32,
+    "type": "Firearm",
+    "subtype": "Sniper Rifles",
+    "firearmOptions": {
+      "mode": ["SA", "BF"],
+      "recoilCompensation": 0,
+      "ammoCategory": "Assault Rifles",
+      "ammoSlots": 1,
+      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+    },
+    "rangeList": ["Sniper Rifles"]
+  },
+  {
+    "name": "HK Urban Striker",
+    "description": "",
+    "concealability": 8,
+    "accuracy": [7],
+    "damage": [
+      {
+        "damageAmount": [13],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            4
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 10,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Imaging Scope"
+      },
+      {
+        "name": "Bipod"
+      },
+      {
+        "name": "Trigger Removal"
+      },
+      {
+        "name": "Electronic Firing"
+      },
+      {
+        "name": "Easy Breakdown (Unpowered)"
+      },
+      {
+        "name": "Silencer/Suppressor"
+      },
+      {
+        "name": "Smartgun System, Internal"
+      },
+      {
+        "name": "Advanced Safety System, Basic"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Longarms",
+    "availability": {
+      "rating": [18],
+      "restriction": "F"
+    },
+    "cost": [45000],
+    "source": "State Of The Art - ADL",
+    "page": 33,
+    "type": "Firearm",
+    "subtype": "Sniper Rifles",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 1,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Barrel", "Top", "Stock", "Side"]
+    },
+    "rangeList": ["Sniper Rifles"]
+  },
+  {
+    "name": "Altmayr SPX2",
+    "description": "",
+    "concealability": 2,
+    "accuracy": [4],
+    "damage": [
+      {
+        "damageAmount": [10],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 8,
+        "reloadMethod": "(m)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Longarms",
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [475],
+    "source": "State Of The Art - ADL",
+    "page": 34,
+    "type": "Firearm",
+    "subtype": "Shotguns",
+    "firearmOptions": {
+      "mode": ["SS", "SA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Heavy Pistols", "Shotguns (flechette)"]
+  },
+  {
+    "name": "Onotari Arms Pressure KS-X",
+    "description": "",
+    "concealability": 2,
+    "accuracy": [4],
+    "damage": [
+      {
+        "damageAmount": [10],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 6,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Folding Stock"
+      },
+      {
+        "name": "Laser Sight"
+      },
+      {
+        "name": "Slide Mount"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Longarms",
+    "availability": {
+      "rating": [12],
+      "restriction": "F"
+    },
+    "cost": [1200],
+    "source": "State Of The Art - ADL",
+    "page": 35,
+    "type": "Firearm",
+    "subtype": "Shotguns",
+    "firearmOptions": {
+      "mode": ["SA", "BF"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top"]
+    },
+    "rangeList": ["Shotguns", "Shotguns (flechette)"]
+  },
+  {
+    "name": "PJSS Model 75",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [11],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 2,
+        "reloadMethod": "(b)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Shock Pad"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Longarms",
+    "availability": {
+      "rating": [8],
+      "restriction": "R"
+    },
+    "cost": [1200],
+    "source": "State Of The Art - ADL",
+    "page": 36,
+    "type": "Firearm",
+    "subtype": "Shotguns",
+    "firearmOptions": {
+      "mode": ["SS"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Shotguns", "Shotguns (flechette)"]
+  },
+  {
+    "name": "PJSS Model 75-III (Shotgun Barrel)",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [11],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 2,
+        "reloadMethod": "(b)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Shock Pad"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Longarms",
+    "availability": {
+      "rating": [8],
+      "restriction": "R"
+    },
+    "cost": [1700],
+    "source": "State Of The Art - ADL",
+    "page": 36,
+    "type": "Firearm",
+    "subtype": "Shotguns",
+    "firearmOptions": {
+      "mode": ["SS"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "underbarrelWeapons": ["PJSS Model 75-III (Rifle Barrel)"],
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Shotguns", "Shotguns (flechette)"]
+  },
+  {
+    "name": "PJSS Model 75-III (Rifle Barrel)",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [12],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 1,
+        "reloadMethod": "(b)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Shock Pad"
+      }
+    ],
+    "allowAccessories": true,
+    "userSelectable": false,
+    "relatedSkill": "Longarms",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "State Of The Art - ADL",
+    "page": 36,
+    "type": "Firearm",
+    "subtype": "Shotguns",
+    "firearmOptions": {
+      "mode": ["SS"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1
+    },
+    "rangeList": ["Shotguns", "Shotguns (flechette)"]
+  },
+  {
+    "name": "Ruhrmetall SMK 252",
+    "description": "",
+    "concealability": 10,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [16],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            5
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 20,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Extended Clip",
+        "rating": 1
+      },
+      {
+        "name": "Long Barrel"
+      },
+      {
+        "name": "Foregrip"
+      },
+      {
+        "name": "Bipod"
+      },
+      {
+        "name": "Imaging Scope"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "availability": {
+      "rating": [22],
+      "restriction": "F"
+    },
+    "cost": [50000],
+    "source": "State Of The Art - ADL",
+    "page": 37,
+    "type": "Firearm",
+    "subtype": "Assault Cannons",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 1,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Top", "Under"]
+    },
+    "rangeList": ["Assault Cannons"]
   },
   {
     "name": "Osmium Mace",
@@ -23730,6 +29436,107 @@
     "rangeList": ["Grenade Launchers"]
   },
   {
+    "name": "Elektro-Angel",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [4],
+    "damage": [
+      {
+        "damageAmount": [8],
+        "type": "Stun"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            5
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Exotic Melee Weapon",
+    "relatedSkillSpecialisations": ["Elektro-Angel"],
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [500],
+    "source": "Hamburg",
+    "page": 172,
+    "type": "Melee",
+    "subtype": "Exotic",
+    "meleeOptions": {
+      "reach": 2
+    }
+  },
+  {
+    "name": "Elektro-Netz",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [
+      {
+        "option": "Physical"
+      },
+      {
+        "operator": "-"
+      },
+      2
+    ],
+    "damage": [
+      {
+        "damageAmount": [8],
+        "type": "Stun"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            5
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Exotic Ranged Weapon",
+    "relatedSkillSpecialisations": ["Elektro-Netz"],
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [600],
+    "source": "Hamburg",
+    "page": 172,
+    "type": "Firearm",
+    "subtype": "Exotic",
+    "firearmOptions": {
+      "mode": [""],
+      "recoilCompensation": 0,
+      "ammoSlots": 1
+    },
+    "rangeList": ["Thrown Knife"]
+  },
+  {
     "name": "Hardened Yo-Yo",
     "description": "",
     "concealability": 0,
@@ -24206,6 +30013,736 @@
     "type": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Aerodynamic Grenade"]
+  },
+  {
+    "name": "Abräumer",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [5],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          3
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Blades",
+    "relatedSkillSpecialisations": ["Swords"],
+    "availability": {
+      "rating": [7],
+      "restriction": "R"
+    },
+    "cost": [850],
+    "source": "Datapuls SOTA 2080",
+    "page": 8,
+    "type": "Melee",
+    "subtype": "Blades",
+    "meleeOptions": {
+      "reach": 0
+    }
+  },
+  {
+    "name": "Katzbalger",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [7],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          3
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Blades",
+    "relatedSkillSpecialisations": ["Swords"],
+    "availability": {
+      "rating": [8],
+      "restriction": "R"
+    },
+    "cost": [2000],
+    "source": "Datapuls SOTA 2080",
+    "page": 7,
+    "type": "Melee",
+    "subtype": "Blades",
+    "meleeOptions": {
+      "reach": 0
+    }
+  },
+  {
+    "name": "Folding Spade",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [5],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          2
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Blades",
+    "relatedSkillSpecialisations": ["Swords"],
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [100],
+    "source": "Datapuls SOTA 2080",
+    "page": 8,
+    "type": "Melee",
+    "subtype": "Blades",
+    "meleeOptions": {
+      "reach": 1
+    }
+  },
+  {
+    "name": "Sabre",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [5],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          3
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Blades",
+    "relatedSkillSpecialisations": ["Swords"],
+    "availability": {
+      "rating": [7],
+      "restriction": ""
+    },
+    "cost": [2500],
+    "source": "Datapuls SOTA 2080",
+    "page": 7,
+    "type": "Melee",
+    "subtype": "Blades",
+    "meleeOptions": {
+      "reach": 1
+    }
+  },
+  {
+    "name": "Walther Battle Sword",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [8],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Strength"
+          },
+          {
+            "operator": "+"
+          },
+          4
+        ],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            4
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "reloadMethod": "Special"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Blades",
+    "relatedSkillSpecialisations": ["Swords"],
+    "availability": {
+      "rating": [10],
+      "restriction": ""
+    },
+    "cost": [8600],
+    "source": "Datapuls SOTA 2080",
+    "page": 7,
+    "type": "Melee",
+    "subtype": "Blades",
+    "meleeOptions": {
+      "reach": 1
+    }
+  },
+  {
+    "name": "HK Urban Assassin",
+    "description": "",
+    "concealability": 0,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [7],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 10,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Maker Mag"
+      },
+      {
+        "name": "Personalized Grip"
+      },
+      {
+        "name": "Silencer/Suppressor"
+      },
+      {
+        "name": "Smartgun System, Internal"
+      },
+      {
+        "name": "Plastic Components",
+        "rating": 6
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Pistols",
+    "availability": {
+      "rating": [16],
+      "restriction": "F"
+    },
+    "cost": [3400],
+    "source": "Datapuls SOTA 2080",
+    "page": 12,
+    "type": "Firearm",
+    "subtype": "Heavy Pistols",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1
+    },
+    "rangeList": ["Heavy Pistols"]
+  },
+  {
+    "name": "Kanonenschlag",
+    "description": "",
+    "concealability": -4,
+    "accuracy": [
+      {
+        "option": "Physical"
+      }
+    ],
+    "damage": [
+      {
+        "damageAmount": [9],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            3
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 1,
+        "reloadMethod": "(b)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Pistols",
+    "availability": {
+      "rating": [6],
+      "restriction": "F"
+    },
+    "cost": [100],
+    "source": "Datapuls SOTA 2080",
+    "page": 9,
+    "type": "Firearm",
+    "subtype": "Hold Outs",
+    "firearmOptions": {
+      "mode": ["SS"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1
+    },
+    "rangeList": ["Holdouts"]
+  },
+  {
+    "name": "Donnerbüchse",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [3],
+    "damage": [
+      {
+        "damageAmount": [9],
+        "type": "Physical",
+        "annotation": "Flechette"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            1
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 2,
+        "reloadMethod": "(b)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Longarms",
+    "availability": {
+      "rating": [4],
+      "restriction": "F"
+    },
+    "cost": [150],
+    "source": "Datapuls SOTA 2080",
+    "page": 10,
+    "type": "Firearm",
+    "subtype": "Shotguns",
+    "firearmOptions": {
+      "mode": ["SS"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1
+    },
+    "rangeList": ["Shotguns"]
+  },
+  {
+    "name": "Blaser R11 Conqueror",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [7],
+    "damage": [
+      {
+        "damageAmount": [12],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            3
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 5,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Silencer/Suppressor"
+      },
+      {
+        "name": "Shock Pad"
+      },
+      {
+        "name": "Imaging Scope"
+      },
+      {
+        "name": "Smartgun System, Internal"
+      },
+      {
+        "name": "Easy Breakdown (Unpowered)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Longarms",
+    "relatedSkillSpecialisations": ["Sniper Rifles"],
+    "availability": {
+      "rating": [9],
+      "restriction": "R"
+    },
+    "cost": [8500],
+    "source": "Datapuls SOTA 2080",
+    "page": 11,
+    "type": "Firearm",
+    "subtype": "Sniper Rifles",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 1,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Sniper Rifles"]
+  },
+  {
+    "name": "Krupp Munitions 3E Firefighting Cannon",
+    "description": "",
+    "concealability": 10,
+    "accuracy": [3],
+    "damage": [
+      {
+        "damageAmount": [6],
+        "type": "Stun"
+      }
+    ],
+    "armourPenetration": [[2]],
+    "ammunition": [
+      {
+        "capacity": 250,
+        "reloadMethod": "(belt)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Exotic Ranged Weapon",
+    "availability": {
+      "rating": [8],
+      "restriction": ""
+    },
+    "cost": [6500],
+    "source": "Datapuls SOTA 2080",
+    "page": 16,
+    "type": "Firearm",
+    "subtype": "Exotic",
+    "extraClassification": "Firefighting Cannons",
+    "firearmOptions": {
+      "mode": ["FA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1
+    },
+    "rangeList": ["Machine Pistols"]
+  },
+  {
+    "name": "Ruhrmetall SFW-30",
+    "description": "",
+    "concealability": 10,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [14],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            10
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 100,
+        "reloadMethod": "(belt)"
+      }
+    ],
+    "accessories": [
+      {
+        "name": "Smartgun System, Internal"
+      },
+      {
+        "name": "Trigger Removal"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Heavy Weapons",
+    "relatedSkillSpecialisations": ["Machine Guns"],
+    "availability": {
+      "rating": [24],
+      "restriction": "F"
+    },
+    "cost": [60000],
+    "source": "Datapuls SOTA 2080",
+    "page": 14,
+    "type": "Firearm",
+    "subtype": "Medium Heavy Machineguns",
+    "firearmOptions": {
+      "mode": ["FA"],
+      "recoilCompensation": -6,
+      "ammoSlots": 1,
+      "underbarrelWeapons": ["Underbarrel Weapon"],
+      "accessoryMounts": ["Stock", "Side", "Barrel", "Top", "Under"]
+    },
+    "rangeList": ["Medium/Heavy Machinegun"]
+  },
+  {
+    "name": "Underbarrel Weapon",
+    "description": "",
+    "concealability": 10,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [12],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [
+      [
+        {
+          "subnumbers": [
+            -1,
+            {
+              "operator": "*"
+            },
+            4
+          ]
+        }
+      ]
+    ],
+    "ammunition": [
+      {
+        "capacity": 10,
+        "reloadMethod": "(m)"
+      }
+    ],
+    "allowAccessories": false,
+    "userSelectable": false,
+    "relatedSkill": "Heavy Weapons",
+    "relatedSkillSpecialisations": ["Machine Guns"],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Datapuls SOTA 2080",
+    "page": 14,
+    "type": "Firearm",
+    "subtype": "Medium Heavy Machineguns",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": -6,
+      "ammoSlots": 1
+    },
+    "rangeList": ["Medium/Heavy Machinegun"]
+  },
+  {
+    "name": "Ontario Arms Sling-Shot",
+    "description": "",
+    "concealability": 6,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [
+          {
+            "option": "Special"
+          }
+        ],
+        "type": "N/A"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 10,
+        "reloadMethod": "(m)"
+      }
+    ],
+    "allowAccessories": true,
+    "hostWeaponRequirements": {
+      "weaponRequirements": {
+        "minimumHostConcealment": 0
+      },
+      "hostWeaponMountsRequired": ["Under"]
+    },
+    "relatedSkill": "Archery",
+    "relatedSkillSpecialisations": ["Slingshots"],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [150],
+    "source": "Datapuls SOTA 2080",
+    "page": 13,
+    "type": "Firearm",
+    "subtype": "Weapon Attachments",
+    "extraClassification": "Slingshot",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1
+    },
+    "rangeList": ["Shuriken"]
+  },
+  {
+    "name": "Walther P99",
+    "description": "",
+    "concealability": -2,
+    "accuracy": [6],
+    "damage": [
+      {
+        "damageAmount": [6],
+        "type": "Physical"
+      }
+    ],
+    "armourPenetration": [[0]],
+    "ammunition": [
+      {
+        "capacity": 12,
+        "reloadMethod": "(c)"
+      }
+    ],
+    "allowAccessories": true,
+    "relatedSkill": "Pistols",
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [175],
+    "source": "Datapuls Verschlusssache",
+    "page": 32,
+    "type": "Firearm",
+    "subtype": "Light Pistols",
+    "firearmOptions": {
+      "mode": ["SA"],
+      "recoilCompensation": 0,
+      "ammoSlots": 1,
+      "accessoryMounts": ["Barrel", "Top"]
+    },
+    "rangeList": ["Light Pistols"]
   },
   {
     "name": "Melee Bite",

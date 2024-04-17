@@ -4,9 +4,8 @@ import { XMLParser } from "fast-xml-parser";
 import path from "path";
 import { fileURLToPath } from "url";
 import * as fs from "fs";
-import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
 import { DrugListXmlSchema } from "./DrugParserSchemas.js";
-import type { DrugListXmlType, DrugXmlType } from "./DrugParserSchemas.js";
+import type { DrugXmlType } from "./DrugParserSchemas.js";
 import { convertXmlBonus } from "../common/BonusParserHelper.js";
 import { convertSource } from "../common/ParserHelper.js";
 import { availabilityDrugSemantics } from "./DrugParserHelper.js";
@@ -50,74 +49,8 @@ export function ParseDrugs() {
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
   // })
-  const englishDrugList: DrugListXmlType = drugList.filter((drug) => {
-    let found = false;
-    switch (drug.source) {
-      case sourceBookXmlEnum.TheVladivostokGauntlet:
-      case sourceBookXmlEnum.Shadowrun5:
-      case sourceBookXmlEnum.BulletsAndBandages:
-      case sourceBookXmlEnum.Lockdown:
-      case sourceBookXmlEnum.StolenSouls:
-      case sourceBookXmlEnum.ChromeFlesh:
-        found = true;
-        break;
-      // Not in english
-      case sourceBookXmlEnum.StateOfTheArtADL:
-      case sourceBookXmlEnum.Schattenhandbuch:
-      case sourceBookXmlEnum.Schattenhandbuch2:
-      case sourceBookXmlEnum.Schattenhandbuch3:
-      case sourceBookXmlEnum.Hamburg:
-      case sourceBookXmlEnum.DatapulsSOTA2080:
-      case sourceBookXmlEnum.DatapulsVerschlusssache:
-      case sourceBookXmlEnum.Shadowrun2050:
-      case 2050:
-      case sourceBookXmlEnum.GrimmesErwachen:
-        break;
-      // Not containing Drugs
-      case sourceBookXmlEnum.RunAndGun:
-      case sourceBookXmlEnum.RunFaster:
-      case sourceBookXmlEnum.HardTargets:
-      case sourceBookXmlEnum.HowlingShadows:
-      case sourceBookXmlEnum.CuttingAces:
-      case sourceBookXmlEnum.TheCompleteTrog:
-      case sourceBookXmlEnum.StreetLethal:
-      case sourceBookXmlEnum.KillCode:
-      case sourceBookXmlEnum.NoFuture:
-      case sourceBookXmlEnum.AssassinPrimer:
-      case sourceBookXmlEnum.DataTrails:
-      case sourceBookXmlEnum.GunHeaven3:
-      case sourceBookXmlEnum.KrimeKatalog:
-      case sourceBookXmlEnum.Rigger5:
-      case sourceBookXmlEnum.SailAwaySweetSister:
-      case sourceBookXmlEnum.ShadowsInFocus_SanFranciscoMetroplex:
-      case sourceBookXmlEnum.StreetGrimoire:
-      case sourceBookXmlEnum.TheSeattleGambit:
-      case sourceBookXmlEnum.StreetGrimoireErrata:
-      case sourceBookXmlEnum.ShadowSpells:
-      case sourceBookXmlEnum.NothingPersonal:
-      case sourceBookXmlEnum.BloodyBusiness:
-      case sourceBookXmlEnum.DataTrailsDissonantEchoes:
-      case sourceBookXmlEnum.SplinteredState:
-      case sourceBookXmlEnum.ShadowsInFocus_Butte:
-      case sourceBookXmlEnum.HongKongSourcebook:
-      case sourceBookXmlEnum.ShadowsInFocus_Metropole:
-      case sourceBookXmlEnum.BookOfTheLost:
-      case sourceBookXmlEnum.ForbiddenArcana:
-      case sourceBookXmlEnum.ShadowsInFocus_SiouxNation_CountingCoup:
-      case sourceBookXmlEnum.DarkTerrors:
-      case sourceBookXmlEnum.BetterThanBad:
-      case sourceBookXmlEnum.Aetherology:
-      case sourceBookXmlEnum.ShadowrunMissions0803_10BlockTango:
-      case sourceBookXmlEnum.ShadowrunMissions0804_DirtyLaundry:
-      case sourceBookXmlEnum.ShadowrunQuickStartRules:
-      case sourceBookXmlEnum.SprawlWilds:
-        assert(false, drug.source);
-        break;
-    }
-    return found;
-  });
 
-  const drugListConverted = englishDrugList
+  const drugListConverted = drugList
     // .filter((weapon) => weapon.name === "Osmium Mace")
     .map((drug) => {
       const convertedDrug = convertDrug(drug);

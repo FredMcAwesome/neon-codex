@@ -5,8 +5,8 @@ const orm = await MikroORM.init(MikroORMConfig);
 const generator = orm.getSchemaGenerator();
 // const dropDump = await generator.getDropSchemaSQL();
 // console.log(dropDump);
-const createDump = await generator.getCreateSchemaSQL();
-console.log(createDump);
+// const createDump = await generator.getCreateSchemaSQL();
+// console.log(createDump);
 // const updateDump = await generator.getUpdateSchemaSQL();
 // console.log(updateDump);
 

@@ -4,12 +4,14 @@ import {
   PrimaryKey,
   Property,
   type Ref,
+  OneToMany,
+  Collection,
 } from "@mikro-orm/postgresql";
-import { HeritagePriorities } from "./priorityModel.js";
-import { Metatypes } from "../traits/metatypeModel.js";
+import { Priorities } from "./priorityModel.js";
+import { Heritages } from "../traits/heritageModel.js";
 
 type HeritagePriorityDetailsType = {
-  heritage: Ref<Metatypes>;
+  heritage: Ref<Heritages>;
   specialAttributePoints: number;
   karmaCost: number;
 };
@@ -25,11 +27,24 @@ export class HeritagePriorityDetails {
   @Property()
   karmaCost!: number;
 
-  @ManyToOne({ entity: () => HeritagePriorities, ref: true })
-  heritagePriority!: Ref<HeritagePriorities>;
+  @ManyToOne({
+    entity: () => HeritagePriorityDetails,
+    ref: true,
+    nullable: true,
+  })
+  coreHeritage?: Ref<HeritagePriorityDetails>;
 
-  @ManyToOne({ entity: () => Metatypes, ref: true })
-  linkedHeritage!: Ref<Metatypes>;
+  @OneToMany(
+    () => HeritagePriorityDetails,
+    (metavariant) => metavariant.coreHeritage
+  )
+  metavariantList = new Collection<HeritagePriorityDetails>(this);
+
+  @ManyToOne({ entity: () => Priorities, ref: true })
+  heritagePriority!: Ref<Priorities>;
+
+  @ManyToOne({ entity: () => Heritages, ref: true })
+  linkedHeritage!: Ref<Heritages>;
 
   constructor(dto: HeritagePriorityDetailsType) {
     this.specialAttributePoints = dto.specialAttributePoints;

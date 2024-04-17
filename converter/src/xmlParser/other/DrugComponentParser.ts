@@ -4,12 +4,8 @@ import { XMLParser } from "fast-xml-parser";
 import path from "path";
 import { fileURLToPath } from "url";
 import * as fs from "fs";
-import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
 import { DrugComponentListXmlSchema } from "./DrugComponentParserSchemas.js";
-import type {
-  DrugComponentListXmlType,
-  DrugComponentXmlType,
-} from "./DrugComponentParserSchemas.js";
+import type { DrugComponentXmlType } from "./DrugComponentParserSchemas.js";
 import { availabilityDrugSemantics } from "./DrugParserHelper.js";
 import Drug from "../../grammar/drug.ohm-bundle.js";
 import { convertSource } from "../common/ParserHelper.js";
@@ -52,75 +48,8 @@ export function ParseDrugComponents() {
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
   // })
-  const englishDrugComponentList: DrugComponentListXmlType =
-    drugComponentList.filter((drugComponent) => {
-      let found = false;
-      switch (drugComponent.source) {
-        case sourceBookXmlEnum.TheVladivostokGauntlet:
-        case sourceBookXmlEnum.Shadowrun5:
-        case sourceBookXmlEnum.BulletsAndBandages:
-        case sourceBookXmlEnum.Lockdown:
-        case sourceBookXmlEnum.StolenSouls:
-        case sourceBookXmlEnum.ChromeFlesh:
-          found = true;
-          break;
-        // Not in english
-        case sourceBookXmlEnum.StateOfTheArtADL:
-        case sourceBookXmlEnum.Schattenhandbuch:
-        case sourceBookXmlEnum.Schattenhandbuch2:
-        case sourceBookXmlEnum.Schattenhandbuch3:
-        case sourceBookXmlEnum.Hamburg:
-        case sourceBookXmlEnum.DatapulsSOTA2080:
-        case sourceBookXmlEnum.DatapulsVerschlusssache:
-        case sourceBookXmlEnum.Shadowrun2050:
-        case 2050:
-        case sourceBookXmlEnum.GrimmesErwachen:
-          break;
-        // Not containing Drugs
-        case sourceBookXmlEnum.RunAndGun:
-        case sourceBookXmlEnum.RunFaster:
-        case sourceBookXmlEnum.HardTargets:
-        case sourceBookXmlEnum.HowlingShadows:
-        case sourceBookXmlEnum.CuttingAces:
-        case sourceBookXmlEnum.TheCompleteTrog:
-        case sourceBookXmlEnum.StreetLethal:
-        case sourceBookXmlEnum.KillCode:
-        case sourceBookXmlEnum.NoFuture:
-        case sourceBookXmlEnum.AssassinPrimer:
-        case sourceBookXmlEnum.DataTrails:
-        case sourceBookXmlEnum.GunHeaven3:
-        case sourceBookXmlEnum.KrimeKatalog:
-        case sourceBookXmlEnum.Rigger5:
-        case sourceBookXmlEnum.SailAwaySweetSister:
-        case sourceBookXmlEnum.ShadowsInFocus_SanFranciscoMetroplex:
-        case sourceBookXmlEnum.StreetGrimoire:
-        case sourceBookXmlEnum.TheSeattleGambit:
-        case sourceBookXmlEnum.StreetGrimoireErrata:
-        case sourceBookXmlEnum.ShadowSpells:
-        case sourceBookXmlEnum.NothingPersonal:
-        case sourceBookXmlEnum.BloodyBusiness:
-        case sourceBookXmlEnum.DataTrailsDissonantEchoes:
-        case sourceBookXmlEnum.SplinteredState:
-        case sourceBookXmlEnum.ShadowsInFocus_Butte:
-        case sourceBookXmlEnum.HongKongSourcebook:
-        case sourceBookXmlEnum.ShadowsInFocus_Metropole:
-        case sourceBookXmlEnum.BookOfTheLost:
-        case sourceBookXmlEnum.ForbiddenArcana:
-        case sourceBookXmlEnum.ShadowsInFocus_SiouxNation_CountingCoup:
-        case sourceBookXmlEnum.DarkTerrors:
-        case sourceBookXmlEnum.BetterThanBad:
-        case sourceBookXmlEnum.Aetherology:
-        case sourceBookXmlEnum.ShadowrunMissions0803_10BlockTango:
-        case sourceBookXmlEnum.ShadowrunMissions0804_DirtyLaundry:
-        case sourceBookXmlEnum.ShadowrunQuickStartRules:
-        case sourceBookXmlEnum.SprawlWilds:
-          assert(false, drugComponent.source);
-          break;
-      }
-      return found;
-    });
 
-  const drugComponentListConverted = englishDrugComponentList
+  const drugComponentListConverted = drugComponentList
     // .filter((weapon) => weapon.name === "Osmium Mace")
     .map((drug) => {
       const convertedDrugComponent = convertDrugComponent(drug);

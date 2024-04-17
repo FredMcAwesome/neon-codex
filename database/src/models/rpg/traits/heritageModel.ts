@@ -6,37 +6,38 @@ import {
   ManyToOne,
   PrimaryKey,
   Property,
-  Unique,
-  type Ref,
   OneToMany,
+  type Ref,
 } from "@mikro-orm/postgresql";
-import { metatypeCategoryEnum } from "@neon-codex/common/build/enums.js";
+import { heritageCategoryEnum } from "@neon-codex/common/build/enums.js";
 import type {
   AttributeRangeType,
-  MetatypeType,
+  HeritageType,
   MovementStrideType,
-} from "@neon-codex/common/build/schemas/abilities/metatypeSchemas.js";
+} from "@neon-codex/common/build/schemas/abilities/heritageSchemas.js";
 import { Weapons } from "../equipment/combat/weaponModel.js";
 import type {
   BonusType,
   InitiativeType,
 } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 import { Qualities } from "./qualityModel.js";
+import { CustomisedQualities } from "../activeTables/customisedQualityModel.js";
 
 @Entity({
   discriminatorColumn: "type",
   abstract: true,
 })
-export abstract class Metatypes {
+export abstract class Heritages {
   @PrimaryKey()
   id!: number;
 
   @Property({ length: 255 })
-  @Unique()
+  // Commented as some metavariants have the same name
+  // @Unique()
   name!: string;
 
-  @Enum(() => metatypeCategoryEnum)
-  type!: metatypeCategoryEnum;
+  @Enum(() => heritageCategoryEnum)
+  type!: heritageCategoryEnum;
 
   @Property()
   pointBuyKarmaCost!: number;
@@ -101,8 +102,12 @@ export abstract class Metatypes {
   // @ManyToMany({ entity: () => Powers, owner: true, joinColumn: "join_id" })
   // includedPowerList = new Collection<Powers>(this);
 
-  @ManyToMany({ entity: () => Qualities, owner: true, joinColumn: "join_id" })
-  includedQualityList = new Collection<Qualities>(this);
+  @ManyToMany({
+    entity: () => CustomisedQualities,
+    owner: true,
+    joinColumn: "join_id",
+  })
+  includedQualityList = new Collection<CustomisedQualities>(this);
 
   @ManyToMany({ entity: () => Qualities, owner: true, joinColumn: "join_id" })
   forbiddenQualityList = new Collection<Qualities>(this);
@@ -119,7 +124,7 @@ export abstract class Metatypes {
   @Property({ length: 5000 })
   description!: string;
 
-  constructor(dto: MetatypeType) {
+  constructor(dto: HeritageType) {
     this.name = dto.name;
     // if (dto.priorityKarmaCost !== undefined) {
     //   this.priorityKarmaCost = dto.priorityKarmaCost;
@@ -172,33 +177,57 @@ export abstract class Metatypes {
   }
 }
 
-@Entity({ discriminatorValue: metatypeCategoryEnum.Metahuman })
-export class Metahumans extends Metatypes {
-  @OneToMany(() => Metavariants, (metavariant) => metavariant.baseSpecies)
-  subSpecies = new Collection<Metavariants>(this);
+type BaseHeritagesType = HeritageType &
+  (
+    | { category: heritageCategoryEnum.Metahuman }
+    | { category: heritageCategoryEnum.Metasapient }
+    | { category: heritageCategoryEnum.Shapeshifter }
+  );
 
-  constructor(dto: MetatypeType) {
-    super(dto);
-  }
-}
-@Entity({ discriminatorValue: metatypeCategoryEnum.Metavariant })
-export class Metavariants extends Metatypes {
-  @ManyToOne({ entity: () => Metahumans, ref: true, nullable: true })
-  baseSpecies?: Ref<Metahumans>;
+@Entity()
+export abstract class BaseHeritages extends Heritages {
+  @OneToMany(() => Metavariants, (metavariant) => metavariant.baseHeritage)
+  variantHeritages = new Collection<Metavariants>(this);
 
-  constructor(dto: MetatypeType) {
+  constructor(dto: BaseHeritagesType) {
     super(dto);
   }
 }
-@Entity({ discriminatorValue: metatypeCategoryEnum.Metasapient })
-export class Metasapients extends Metatypes {
-  constructor(dto: MetatypeType) {
+@Entity({ discriminatorValue: heritageCategoryEnum.Metahuman })
+export class Metahumans extends BaseHeritages {
+  constructor(dto: BaseHeritagesType) {
     super(dto);
   }
 }
-@Entity({ discriminatorValue: metatypeCategoryEnum.Shapeshifter })
-export class Shapeshifters extends Metatypes {
-  constructor(dto: MetatypeType) {
+
+@Entity({ discriminatorValue: heritageCategoryEnum.Metasapient })
+export class Metasapients extends BaseHeritages {
+  constructor(dto: BaseHeritagesType) {
     super(dto);
+  }
+}
+@Entity({ discriminatorValue: heritageCategoryEnum.Shapeshifter })
+export class Shapeshifters extends BaseHeritages {
+  constructor(dto: BaseHeritagesType) {
+    super(dto);
+  }
+}
+
+type MetavariantType = {
+  heritage: HeritageType & { category: heritageCategoryEnum.Metavariant };
+  baseHeritage: Ref<BaseHeritages>;
+};
+
+@Entity({ discriminatorValue: heritageCategoryEnum.Metavariant })
+export class Metavariants extends Heritages {
+  @ManyToOne({
+    entity: () => BaseHeritages,
+    ref: true,
+  })
+  baseHeritage!: Ref<BaseHeritages>;
+
+  constructor(dto: MetavariantType) {
+    super(dto.heritage);
+    this.baseHeritage = dto.baseHeritage;
   }
 }

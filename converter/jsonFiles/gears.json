@@ -1869,6 +1869,22 @@
     "page": 424
   },
   {
+    "name": "Elektro-Netz",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 0,
+    "includedWeapon": {
+      "name": "Elektro-Netz"
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [600],
+    "source": "Hamburg",
+    "page": 172
+  },
+  {
     "name": "Arrow: Barbed Head",
     "description": "",
     "category": "Ammunition",
@@ -3422,6 +3438,118 @@
     "cost": [20],
     "source": "Street Lethal",
     "page": 132
+  },
+  {
+    "name": "Ammo: Water",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 0,
+    "ammoForWeaponType": [
+      {
+        "extraClassification": "Firefighting Cannons"
+      }
+    ],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Datapuls SOTA 2080",
+    "page": 16
+  },
+  {
+    "name": "Ammo: Fire Extinguishant",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 0,
+    "quantity": 50,
+    "weaponBonus": {
+      "damage": [
+        {
+          "damageAmount": [-1],
+          "type": "N/A"
+        }
+      ]
+    },
+    "ammoForWeaponType": [
+      {
+        "extraClassification": "Firefighting Cannons"
+      }
+    ],
+    "availability": {
+      "rating": [6],
+      "restriction": "R"
+    },
+    "cost": [500],
+    "source": "Datapuls SOTA 2080",
+    "page": 16
+  },
+  {
+    "name": "Ammo: Slingshot Acid Capsules",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 0,
+    "quantity": 10,
+    "weaponBonus": {
+      "damageReplace": "6P",
+      "damageType": "Acid"
+    },
+    "ammoForWeaponType": [
+      {
+        "extraClassification": "Slingshot"
+      }
+    ],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [100],
+    "source": "Datapuls SOTA 2080",
+    "page": 13
+  },
+  {
+    "name": "Ammo: Slingshot Paint Capsules",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 0,
+    "quantity": 10,
+    "weaponBonus": {
+      "damageReplace": "0S"
+    },
+    "ammoForWeaponType": [
+      {
+        "extraClassification": "Slingshot"
+      }
+    ],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [10],
+    "source": "Datapuls SOTA 2080",
+    "page": 13
+  },
+  {
+    "name": "Ammo: Slingshot Poison Capsules",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 0,
+    "quantity": 10,
+    "weaponBonus": {
+      "damageReplace": "As Narcoject"
+    },
+    "ammoForWeaponType": [
+      {
+        "extraClassification": "Slingshot"
+      }
+    ],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [100],
+    "source": "Datapuls SOTA 2080",
+    "page": 13
   },
   {
     "name": "Ammo: Slingshot Capsule Round",
@@ -9421,6 +9549,260 @@
     "cost": [0],
     "source": "Street Lethal",
     "page": 132
+  },
+  {
+    "name": "Cyberdynamix Special HardCore",
+    "description": "",
+    "category": "Commlinks",
+    "maxRating": 0,
+    "includedGearList": [
+      {
+        "name": "Datasoft",
+        "category": "Software"
+      },
+      {
+        "name": "Commlink Functionality",
+        "category": "Electronics Accessories"
+      }
+    ],
+    "deviceRating": 2,
+    "dataProcessing": 1,
+    "firewall": 2,
+    "canFormPersona": "Self",
+    "capacityInformation": {
+      "capacity": [0]
+    },
+    "armourCapacityInformation": {
+      "capacityCost": [2]
+    },
+    "availability": {
+      "rating": [5],
+      "restriction": ""
+    },
+    "cost": [800],
+    "source": "State Of The Art - ADL",
+    "page": 86
+  },
+  {
+    "name": "Urban Brawl News",
+    "description": "",
+    "category": "Miscellany",
+    "maxRating": 0,
+    "userSelectable": false,
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "State Of The Art - ADL",
+    "page": 86
+  },
+  {
+    "name": "MCT Dusseldorf",
+    "description": "",
+    "category": "Commlinks",
+    "maxRating": 0,
+    "includedGearList": [
+      {
+        "name": "Commlink Form Factor, Non-Standard",
+        "category": "Commlink/Cyberdeck Form Factors"
+      },
+      {
+        "name": "Hardened Casing",
+        "category": "Commlink Accessories"
+      },
+      {
+        "name": "Blood Alcohol Biosensor",
+        "category": "Sensors"
+      },
+      {
+        "name": "Commlink Functionality",
+        "category": "Electronics Accessories"
+      }
+    ],
+    "deviceRating": 3,
+    "dataProcessing": 2,
+    "firewall": 3,
+    "canFormPersona": "Self",
+    "capacityInformation": {
+      "capacity": [0]
+    },
+    "armourCapacityInformation": {
+      "capacityCost": [2]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [2500],
+    "source": "State Of The Art - ADL",
+    "page": 86
+  },
+  {
+    "name": "Wristband",
+    "description": "",
+    "category": "Miscellany",
+    "maxRating": 0,
+    "userSelectable": false,
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "State Of The Art - ADL",
+    "page": 86
+  },
+  {
+    "name": "Hardened Casing",
+    "description": "",
+    "category": "Commlink Accessories",
+    "maxRating": 0,
+    "allowCategoryList": ["Custom"],
+    "userSelectable": false,
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "State Of The Art - ADL",
+    "page": 86
+  },
+  {
+    "name": "Blood Alcohol Biosensor",
+    "description": "",
+    "category": "Sensors",
+    "maxRating": 0,
+    "allowCategoryList": ["Custom"],
+    "userSelectable": false,
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "State Of The Art - ADL",
+    "page": 86
+  },
+  {
+    "name": "Siemens Rheingold",
+    "description": "",
+    "category": "Commlinks",
+    "maxRating": 0,
+    "includedGearList": [
+      {
+        "name": "Commlink Functionality",
+        "category": "Electronics Accessories"
+      }
+    ],
+    "deviceRating": 4,
+    "dataProcessing": 5,
+    "firewall": 4,
+    "canFormPersona": "Self",
+    "capacityInformation": {
+      "capacity": [0]
+    },
+    "armourCapacityInformation": {
+      "capacityCost": [2]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": ""
+    },
+    "cost": [5000],
+    "source": "State Of The Art - ADL",
+    "page": 86
+  },
+  {
+    "name": "Cyberdynamix Waterkant",
+    "description": "",
+    "category": "Cyberdecks",
+    "maxRating": 0,
+    "includedGearList": [
+      {
+        "name": "Sim Module, Hot",
+        "category": "Commlink Accessories"
+      },
+      {
+        "name": "Universal Connector Cord",
+        "rating": 1,
+        "category": "Tools"
+      },
+      {
+        "name": "Waterproof Casing",
+        "category": "Commlink Accessories"
+      },
+      {
+        "name": "Commlink Functionality",
+        "category": "Electronics Accessories"
+      }
+    ],
+    "deviceRating": 3,
+    "programs": [3],
+    "attributeArray": [7, 4, 3, 2],
+    "canFormPersona": "Self",
+    "capacityInformation": {
+      "capacity": [0]
+    },
+    "availability": {
+      "rating": [10],
+      "restriction": "R"
+    },
+    "cost": [210000],
+    "source": "State Of The Art - ADL",
+    "page": 86
+  },
+  {
+    "name": "Waterproof Casing",
+    "description": "",
+    "category": "Commlink Accessories",
+    "maxRating": 0,
+    "allowCategoryList": ["Custom"],
+    "userSelectable": false,
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "State Of The Art - ADL",
+    "page": 86
+  },
+  {
+    "name": "MSI Falke",
+    "description": "",
+    "category": "Cyberdecks",
+    "maxRating": 0,
+    "includedGearList": [
+      {
+        "name": "Sim Module, Hot",
+        "category": "Commlink Accessories"
+      },
+      {
+        "name": "Universal Connector Cord",
+        "rating": 1,
+        "category": "Tools"
+      },
+      {
+        "name": "Hardened Casing",
+        "category": "Commlink Accessories"
+      },
+      {
+        "name": "Commlink Functionality",
+        "category": "Electronics Accessories"
+      }
+    ],
+    "deviceRating": 4,
+    "programs": [4],
+    "attributeArray": [7, 6, 5, 4],
+    "canFormPersona": "Self",
+    "capacityInformation": {
+      "capacity": [0]
+    },
+    "availability": {
+      "rating": [12],
+      "restriction": "R"
+    },
+    "cost": [285000],
+    "source": "State Of The Art - ADL",
+    "page": 86
   },
   {
     "name": "Scratch-Built Junk",
@@ -25092,6 +25474,34 @@
     "page": 187
   },
   {
+    "name": "Shiva (Vintage)",
+    "description": "",
+    "category": "Drugs",
+    "maxRating": 0,
+    "allowCategoryList": ["Drug Grades", "Custom"],
+    "availability": {
+      "rating": [12],
+      "restriction": "F"
+    },
+    "cost": [200],
+    "source": "State Of The Art - ADL",
+    "page": 97
+  },
+  {
+    "name": "Shiva II",
+    "description": "",
+    "category": "Drugs",
+    "maxRating": 0,
+    "allowCategoryList": ["Drug Grades", "Custom"],
+    "availability": {
+      "rating": [6],
+      "restriction": "R"
+    },
+    "cost": [150],
+    "source": "State Of The Art - ADL",
+    "page": 97
+  },
+  {
     "name": "Caldwell Lily Extract",
     "description": "",
     "category": "Toxins",
@@ -31037,6 +31447,485 @@
     "page": 1
   },
   {
+    "name": "Detonator, Radio (2050)",
+    "description": "",
+    "category": "Explosives",
+    "maxRating": 0,
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [250],
+    "source": "Shadowrun 2050",
+    "page": 191
+  },
+  {
+    "name": "Detonator, Timer (2050)",
+    "description": "",
+    "category": "Explosives",
+    "maxRating": 0,
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [100],
+    "source": "Shadowrun 2050",
+    "page": 191
+  },
+  {
+    "name": "Plastic Explosive C-6 (2050)",
+    "description": "",
+    "category": "Explosives",
+    "minRating": 6,
+    "maxRating": 6,
+    "explosiveWeight": 1,
+    "availability": {
+      "rating": [8],
+      "restriction": "F"
+    },
+    "cost": [80],
+    "source": "Shadowrun 2050",
+    "page": 191
+  },
+  {
+    "name": "Plastic Explosive C-12 (2050)",
+    "description": "",
+    "category": "Explosives",
+    "minRating": 12,
+    "maxRating": 12,
+    "explosiveWeight": 1,
+    "availability": {
+      "rating": [10],
+      "restriction": "F"
+    },
+    "cost": [200],
+    "source": "Shadowrun 2050",
+    "page": 191
+  },
+  {
+    "name": "Commercial Explosive (2050)",
+    "description": "",
+    "category": "Explosives",
+    "minRating": 3,
+    "maxRating": 3,
+    "explosiveWeight": 1,
+    "availability": {
+      "rating": [6],
+      "restriction": "R"
+    },
+    "cost": [60],
+    "source": "Shadowrun 2050",
+    "page": 191
+  },
+  {
+    "name": "Missile: Anti-Vehicle (2050)",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 6,
+    "includedWeapon": {
+      "name": "Missile: Anti-Vehicle (2050)"
+    },
+    "ammoForWeaponType": [
+      {
+        "type": "Firearm",
+        "subtype": "Missile Launchers"
+      }
+    ],
+    "availability": {
+      "rating": [12],
+      "restriction": "F"
+    },
+    "cost": [
+      2000,
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "*"
+              },
+              500
+            ]
+          }
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 191
+  },
+  {
+    "name": "Missile: Anti-Personnel (2050)",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 6,
+    "includedWeapon": {
+      "name": "Missile: Anti-Personnel (2050)"
+    },
+    "ammoForWeaponType": [
+      {
+        "type": "Firearm",
+        "subtype": "Missile Launchers"
+      }
+    ],
+    "availability": {
+      "rating": [12],
+      "restriction": "F"
+    },
+    "cost": [
+      1000,
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "*"
+              },
+              500
+            ]
+          }
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 191
+  },
+  {
+    "name": "Missile: High Explosive (2050)",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 6,
+    "includedWeapon": {
+      "name": "Missile: High Explosive (2050)"
+    },
+    "ammoForWeaponType": [
+      {
+        "type": "Firearm",
+        "subtype": "Missile Launchers"
+      }
+    ],
+    "availability": {
+      "rating": [12],
+      "restriction": "F"
+    },
+    "cost": [
+      1500,
+      {
+        "operator": "+"
+      },
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "*"
+              },
+              500
+            ]
+          }
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 191
+  },
+  {
+    "name": "Rocket: High Explosive (2050)",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 0,
+    "includedWeapon": {
+      "name": "Rocket: High Explosive (2050)"
+    },
+    "ammoForWeaponType": [
+      {
+        "type": "Firearm",
+        "subtype": "Missile Launchers"
+      }
+    ],
+    "availability": {
+      "rating": [8],
+      "restriction": "F"
+    },
+    "cost": [1500],
+    "source": "Shadowrun 2050",
+    "page": 191
+  },
+  {
+    "name": "Rocket: Anti-Vehicle (2050)",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 0,
+    "includedWeapon": {
+      "name": "Rocket: Anti-Vehicle (2050)"
+    },
+    "ammoForWeaponType": [
+      {
+        "type": "Firearm",
+        "subtype": "Missile Launchers"
+      }
+    ],
+    "availability": {
+      "rating": [8],
+      "restriction": "F"
+    },
+    "cost": [2000],
+    "source": "Shadowrun 2050",
+    "page": 191
+  },
+  {
+    "name": "Rocket: Anti-Personnel (2050)",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 0,
+    "includedWeapon": {
+      "name": "Rocket: Anti-Personnel (2050)"
+    },
+    "ammoForWeaponType": [
+      {
+        "type": "Firearm",
+        "subtype": "Missile Launchers"
+      }
+    ],
+    "availability": {
+      "rating": [8],
+      "restriction": "F"
+    },
+    "cost": [1000],
+    "source": "Shadowrun 2050",
+    "page": 191
+  },
+  {
+    "name": "Grenade: Smoke (2050)",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 0,
+    "includedWeapon": {
+      "name": "Grenade: Smoke (2050)"
+    },
+    "availability": {
+      "rating": [3],
+      "restriction": "R"
+    },
+    "cost": [30],
+    "source": "Shadowrun 2050",
+    "page": 191
+  },
+  {
+    "name": "Grenade: Smoke, Aerodynamic (2050)",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 0,
+    "includedWeapon": {
+      "name": "Grenade: Smoke, Aerodynamic (2050)"
+    },
+    "availability": {
+      "rating": [3],
+      "restriction": "R"
+    },
+    "cost": [30],
+    "source": "Shadowrun 2050",
+    "page": 191
+  },
+  {
+    "name": "Minigrenade: Smoke (2050)",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 0,
+    "includedWeapon": {
+      "name": "Minigrenade: Smoke (2050)"
+    },
+    "ammoForWeaponType": [
+      {
+        "type": "Firearm",
+        "subtype": "Grenade Launchers"
+      }
+    ],
+    "availability": {
+      "rating": [8],
+      "restriction": "F"
+    },
+    "cost": [60],
+    "source": "Shadowrun 2050",
+    "page": 191
+  },
+  {
+    "name": "Grenade: Offensive (2050)",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 0,
+    "includedWeapon": {
+      "name": "Grenade: Offensive (2050)"
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "F"
+    },
+    "cost": [45],
+    "source": "Shadowrun 2050",
+    "page": 191
+  },
+  {
+    "name": "Grenade: Offensive, Aerodynamic (2050)",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 0,
+    "includedWeapon": {
+      "name": "Grenade: Offensive, Aerodynamic (2050)"
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "F"
+    },
+    "cost": [45],
+    "source": "Shadowrun 2050",
+    "page": 191
+  },
+  {
+    "name": "Minigrenade: Offensive (2050)",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 0,
+    "includedWeapon": {
+      "name": "Minigrenade: Offensive (2050)"
+    },
+    "ammoForWeaponType": [
+      {
+        "type": "Firearm",
+        "subtype": "Grenade Launchers"
+      }
+    ],
+    "availability": {
+      "rating": [4],
+      "restriction": "F"
+    },
+    "cost": [60],
+    "source": "Shadowrun 2050",
+    "page": 191
+  },
+  {
+    "name": "Grenade: Defensive (2050)",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 0,
+    "includedWeapon": {
+      "name": "Grenade: Defensive (2050)"
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "F"
+    },
+    "cost": [45],
+    "source": "Shadowrun 2050",
+    "page": 191
+  },
+  {
+    "name": "Grenade: Defensive, Aerodynamic (2050)",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 0,
+    "includedWeapon": {
+      "name": "Grenade: Defensive, Aerodynamic (2050)"
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "F"
+    },
+    "cost": [45],
+    "source": "Shadowrun 2050",
+    "page": 191
+  },
+  {
+    "name": "Minigrenade: Defensive (2050)",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 0,
+    "includedWeapon": {
+      "name": "Minigrenade: Defensive (2050)"
+    },
+    "ammoForWeaponType": [
+      {
+        "type": "Firearm",
+        "subtype": "Grenade Launchers"
+      }
+    ],
+    "availability": {
+      "rating": [4],
+      "restriction": "F"
+    },
+    "cost": [60],
+    "source": "Shadowrun 2050",
+    "page": 191
+  },
+  {
+    "name": "Grenade: Shock (2050)",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 0,
+    "includedWeapon": {
+      "name": "Grenade: Shock (2050)"
+    },
+    "availability": {
+      "rating": [5],
+      "restriction": "F"
+    },
+    "cost": [30],
+    "source": "Shadowrun 2050",
+    "page": 191
+  },
+  {
+    "name": "Grenade: Shock, Aerodynamic (2050)",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 0,
+    "includedWeapon": {
+      "name": "Grenade: Shock, Aerodynamic (2050)"
+    },
+    "availability": {
+      "rating": [5],
+      "restriction": "F"
+    },
+    "cost": [30],
+    "source": "Shadowrun 2050",
+    "page": 191
+  },
+  {
+    "name": "Minigrenade: Shock (2050)",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 0,
+    "includedWeapon": {
+      "name": "Minigrenade: Shock (2050)"
+    },
+    "ammoForWeaponType": [
+      {
+        "type": "Firearm",
+        "subtype": "Grenade Launchers"
+      }
+    ],
+    "availability": {
+      "rating": [8],
+      "restriction": "F"
+    },
+    "cost": [60],
+    "source": "Shadowrun 2050",
+    "page": 191
+  },
+  {
     "name": "Grenade: Halloweener Molotov Cocktail",
     "description": "",
     "category": "Ammunition",
@@ -31067,6 +31956,3335 @@
     "cost": [50],
     "source": "The Seattle Gambit",
     "page": 29
+  },
+  {
+    "name": "Ammo: Taser Dart (2050)",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 0,
+    "quantity": 10,
+    "ammoForWeaponType": [
+      {
+        "type": "Firearm",
+        "subtype": "Tasers"
+      }
+    ],
+    "availability": {
+      "rating": [6],
+      "restriction": "R"
+    },
+    "cost": [50],
+    "source": "Shadowrun 2050",
+    "page": 190
+  },
+  {
+    "name": "Ammo: Assault Cannon (2050)",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 0,
+    "quantity": 10,
+    "ammoForWeaponType": [
+      {
+        "type": "Firearm",
+        "subtype": "Assault Cannons"
+      }
+    ],
+    "availability": {
+      "rating": [10],
+      "restriction": "F"
+    },
+    "cost": [450],
+    "source": "Shadowrun 2050",
+    "page": 190
+  },
+  {
+    "name": "Ammo: Injection Darts (2050)",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 0,
+    "allowCategoryList": ["Drugs", "Toxins"],
+    "quantity": 10,
+    "ammoForWeaponType": [
+      {
+        "extraClassification": "Dart Gun"
+      }
+    ],
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [200],
+    "source": "Shadowrun 2050",
+    "page": 190
+  },
+  {
+    "name": "Ammo: Gel Rounds (2050)",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 0,
+    "quantity": 10,
+    "weaponBonus": {
+      "ap": 1,
+      "damageType": "S"
+    },
+    "ammoForWeaponType": [
+      {
+        "type": "Firearm",
+        "subtype": "Hold Outs"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Light Pistols"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Heavy Pistols"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Machine Pistols"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Submachine Guns"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Assault Rifles"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Carbines"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Sporting Rifles"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Sniper Rifles"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Shotguns"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Light Machineguns"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Medium Heavy Machineguns"
+      }
+    ],
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [30],
+    "source": "Shadowrun 2050",
+    "page": 190
+  },
+  {
+    "name": "Ammo: Flechette Rounds (2050)",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 0,
+    "quantity": 10,
+    "weaponBonus": {
+      "ap": 5,
+      "damage": [
+        {
+          "damageAmount": [2],
+          "type": "N/A"
+        }
+      ],
+      "damageType": "P(f)"
+    },
+    "ammoForWeaponType": [
+      {
+        "type": "Firearm",
+        "subtype": "Hold Outs"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Light Pistols"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Heavy Pistols"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Machine Pistols"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Submachine Guns"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Assault Rifles"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Carbines"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Sporting Rifles"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Sniper Rifles"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Shotguns"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Light Machineguns"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Medium Heavy Machineguns"
+      }
+    ],
+    "availability": {
+      "rating": [3],
+      "restriction": "R"
+    },
+    "cost": [100],
+    "source": "Shadowrun 2050",
+    "page": 190
+  },
+  {
+    "name": "Ammo: Explosive Rounds (2050)",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 0,
+    "quantity": 10,
+    "weaponBonus": {
+      "ap": -1,
+      "damage": [
+        {
+          "damageAmount": [1],
+          "type": "N/A"
+        }
+      ]
+    },
+    "ammoForWeaponType": [
+      {
+        "type": "Firearm",
+        "subtype": "Hold Outs"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Light Pistols"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Heavy Pistols"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Machine Pistols"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Submachine Guns"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Assault Rifles"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Carbines"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Sporting Rifles"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Sniper Rifles"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Shotguns"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Light Machineguns"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Medium Heavy Machineguns"
+      }
+    ],
+    "availability": {
+      "rating": [8],
+      "restriction": "R"
+    },
+    "cost": [50],
+    "source": "Shadowrun 2050",
+    "page": 190
+  },
+  {
+    "name": "Ammo: APDS (2050)",
+    "description": "",
+    "category": "Ammunition",
+    "maxRating": 0,
+    "quantity": 10,
+    "weaponBonus": {
+      "ap": -4
+    },
+    "ammoForWeaponType": [
+      {
+        "type": "Firearm",
+        "subtype": "Hold Outs"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Light Pistols"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Heavy Pistols"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Machine Pistols"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Submachine Guns"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Assault Rifles"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Carbines"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Sporting Rifles"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Sniper Rifles"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Shotguns"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Light Machineguns"
+      },
+      {
+        "type": "Firearm",
+        "subtype": "Medium Heavy Machineguns"
+      }
+    ],
+    "availability": {
+      "rating": [14],
+      "restriction": "F"
+    },
+    "cost": [70],
+    "source": "Shadowrun 2050",
+    "page": 190
+  },
+  {
+    "name": "Concealable Holster (2050)",
+    "description": "",
+    "category": "Armor Enhancements",
+    "maxRating": 0,
+    "armourCapacityInformation": {
+      "capacityCost": [4]
+    },
+    "requirements": {},
+    "requireParent": true,
+    "availability": {
+      "rating": [2],
+      "restriction": ""
+    },
+    "cost": [100],
+    "source": "Shadowrun 2050",
+    "page": 189
+  },
+  {
+    "name": "Smart Goggles (2050)",
+    "description": "",
+    "category": "Vision Devices",
+    "maxRating": 0,
+    "bonus": {
+      "smartlinkAccuracy": 1
+    },
+    "capacityInformation": {
+      "capacity": [2]
+    },
+    "availability": {
+      "rating": [3],
+      "restriction": "R"
+    },
+    "cost": [3000],
+    "source": "Shadowrun 2050",
+    "page": 189
+  },
+  {
+    "name": "Low Light (2050)",
+    "description": "",
+    "category": "Vision Enhancements",
+    "maxRating": 0,
+    "capacityInformation": {
+      "capacityCost": [1]
+    },
+    "armourCapacityInformation": {
+      "capacityCost": [1]
+    },
+    "requireParent": true,
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [1000],
+    "source": "Shadowrun 2050",
+    "page": 189
+  },
+  {
+    "name": "Thermographic Vision(2050)",
+    "description": "",
+    "category": "Vision Enhancements",
+    "maxRating": 0,
+    "capacityInformation": {
+      "capacityCost": [1]
+    },
+    "armourCapacityInformation": {
+      "capacityCost": [1]
+    },
+    "requireParent": true,
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [1000],
+    "source": "Shadowrun 2050",
+    "page": 189
+  },
+  {
+    "name": "Counterspelling Focus, Health (2050)",
+    "description": "",
+    "category": "Foci",
+    "maxRating": 18,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                4
+              ]
+            }
+          ]
+        }
+      ],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          40000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 207
+  },
+  {
+    "name": "Counterspelling Focus, Illusion (2050)",
+    "description": "",
+    "category": "Foci",
+    "maxRating": 18,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                4
+              ]
+            }
+          ]
+        }
+      ],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          40000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 207
+  },
+  {
+    "name": "Counterspelling Focus, Combat (2050)",
+    "description": "",
+    "category": "Foci",
+    "maxRating": 18,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                4
+              ]
+            }
+          ]
+        }
+      ],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          40000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 207
+  },
+  {
+    "name": "Counterspelling Focus, Manipulation (2050)",
+    "description": "",
+    "category": "Foci",
+    "maxRating": 18,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                4
+              ]
+            }
+          ]
+        }
+      ],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          40000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 207
+  },
+  {
+    "name": "Counterspelling Focus, Detection (2050)",
+    "description": "",
+    "category": "Foci",
+    "maxRating": 18,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                4
+              ]
+            }
+          ]
+        }
+      ],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          40000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 207
+  },
+  {
+    "name": "Binding Focus (2050)",
+    "description": "",
+    "category": "Foci",
+    "maxRating": 18,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                4
+              ]
+            }
+          ]
+        }
+      ],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          60000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 207
+  },
+  {
+    "name": "Summoning Focus (2050)",
+    "description": "",
+    "category": "Foci",
+    "maxRating": 18,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                3
+              ]
+            }
+          ]
+        }
+      ],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          60000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 207
+  },
+  {
+    "name": "Power Focus (2050)",
+    "description": "",
+    "category": "Foci",
+    "maxRating": 18,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                3
+              ]
+            }
+          ]
+        }
+      ],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          105000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 207
+  },
+  {
+    "name": "Banishing Focus (2050)",
+    "description": "",
+    "category": "Foci",
+    "maxRating": 18,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                3
+              ]
+            }
+          ]
+        }
+      ],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          50000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 207
+  },
+  {
+    "name": "Weapon Focus (2050)",
+    "description": "",
+    "category": "Foci",
+    "maxRating": 18,
+    "bonus": {
+      "linkWeapon": true
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                3
+              ]
+            }
+          ]
+        }
+      ],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          90000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 207
+  },
+  {
+    "name": "Spell Lock, Health (2050)",
+    "description": "",
+    "category": "Foci",
+    "maxRating": 18,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                4
+              ]
+            }
+          ]
+        }
+      ],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          10000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 207
+  },
+  {
+    "name": "Spell Lock, Illusion (2050)",
+    "description": "",
+    "category": "Foci",
+    "maxRating": 18,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                4
+              ]
+            }
+          ]
+        }
+      ],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          10000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 207
+  },
+  {
+    "name": "Spell Lock, Combat (2050)",
+    "description": "",
+    "category": "Foci",
+    "maxRating": 18,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                4
+              ]
+            }
+          ]
+        }
+      ],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          10000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 207
+  },
+  {
+    "name": "Spell Lock, Manipulation (2050)",
+    "description": "",
+    "category": "Foci",
+    "maxRating": 18,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                4
+              ]
+            }
+          ]
+        }
+      ],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          10000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 207
+  },
+  {
+    "name": "Spell Lock, Detection (2050)",
+    "description": "",
+    "category": "Foci",
+    "maxRating": 18,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                4
+              ]
+            }
+          ]
+        }
+      ],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          10000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 207
+  },
+  {
+    "name": "Spellcasting Focus, Health (2050)",
+    "description": "",
+    "category": "Foci",
+    "maxRating": 18,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                4
+              ]
+            }
+          ]
+        }
+      ],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          45000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 207
+  },
+  {
+    "name": "Spellcasting Focus, Illusion (2050)",
+    "description": "",
+    "category": "Foci",
+    "maxRating": 18,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                4
+              ]
+            }
+          ]
+        }
+      ],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          45000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 207
+  },
+  {
+    "name": "Spellcasting Focus, Combat (2050)",
+    "description": "",
+    "category": "Foci",
+    "maxRating": 18,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                4
+              ]
+            }
+          ]
+        }
+      ],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          45000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 207
+  },
+  {
+    "name": "Spellcasting Focus, Manipulation (2050)",
+    "description": "",
+    "category": "Foci",
+    "maxRating": 18,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                4
+              ]
+            }
+          ]
+        }
+      ],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          45000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 207
+  },
+  {
+    "name": "Spellcasting Focus, Detection (2050)",
+    "description": "",
+    "category": "Foci",
+    "maxRating": 18,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                4
+              ]
+            }
+          ]
+        }
+      ],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          45000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 207
+  },
+  {
+    "name": "Elemental Binding Materials (2050)",
+    "description": "",
+    "category": "Magical Supplies",
+    "maxRating": 20,
+    "availability": {
+      "rating": [
+        {
+          "option": "Rating"
+        }
+      ],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 207
+  },
+  {
+    "name": "Medicine Lodge Materials (2050)",
+    "description": "",
+    "category": "Magical Supplies",
+    "maxRating": 20,
+    "availability": {
+      "rating": [
+        {
+          "option": "Rating"
+        }
+      ],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 207
+  },
+  {
+    "name": "Radio Shack PCD-100 (2050)",
+    "description": "",
+    "category": "Cyberdecks",
+    "maxRating": 0,
+    "deviceRating": 2,
+    "programs": [1],
+    "attack": 0,
+    "sleaze": 0,
+    "dataProcessing": 1,
+    "firewall": 0,
+    "capacityInformation": {
+      "capacity": [0]
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [6200],
+    "source": "Shadowrun 2050",
+    "page": 169
+  },
+  {
+    "name": "Allegiance Alpha (2050)",
+    "description": "",
+    "category": "Cyberdecks",
+    "maxRating": 0,
+    "deviceRating": 3,
+    "programs": [1],
+    "attack": 0,
+    "sleaze": 0,
+    "dataProcessing": 1,
+    "firewall": 1,
+    "capacityInformation": {
+      "capacity": [0]
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [13200],
+    "source": "Shadowrun 2050",
+    "page": 169
+  },
+  {
+    "name": "Sony CTY-360 (2050)",
+    "description": "",
+    "category": "Cyberdecks",
+    "maxRating": 0,
+    "deviceRating": 4,
+    "programs": [3],
+    "attack": 0,
+    "sleaze": 0,
+    "dataProcessing": 3,
+    "firewall": 3,
+    "capacityInformation": {
+      "capacity": [0]
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [111000],
+    "source": "Shadowrun 2050",
+    "page": 169
+  },
+  {
+    "name": "Fuchi Cyber-4 (2050)",
+    "description": "",
+    "category": "Cyberdecks",
+    "maxRating": 0,
+    "deviceRating": 4,
+    "programs": [4],
+    "attack": 0,
+    "sleaze": 0,
+    "dataProcessing": 3,
+    "firewall": 3,
+    "capacityInformation": {
+      "capacity": [0]
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [150000],
+    "source": "Shadowrun 2050",
+    "page": 169
+  },
+  {
+    "name": "Fuchi Cyber-6 (2050)",
+    "description": "",
+    "category": "Cyberdecks",
+    "maxRating": 0,
+    "deviceRating": 5,
+    "programs": [5],
+    "attack": 0,
+    "sleaze": 0,
+    "dataProcessing": 4,
+    "firewall": 4,
+    "capacityInformation": {
+      "capacity": [0]
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [364000],
+    "source": "Shadowrun 2050",
+    "page": 169
+  },
+  {
+    "name": "Fuchi Cyber-7 (2050)",
+    "description": "",
+    "category": "Cyberdecks",
+    "maxRating": 0,
+    "deviceRating": 5,
+    "programs": [5],
+    "attack": 0,
+    "sleaze": 0,
+    "dataProcessing": 5,
+    "firewall": 4,
+    "capacityInformation": {
+      "capacity": [0]
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [514000],
+    "source": "Shadowrun 2050",
+    "page": 169
+  },
+  {
+    "name": "Fairlight Excalibur (2050)",
+    "description": "",
+    "category": "Cyberdecks",
+    "maxRating": 0,
+    "deviceRating": 6,
+    "programs": [6],
+    "attack": 0,
+    "sleaze": 0,
+    "dataProcessing": 6,
+    "firewall": 5,
+    "capacityInformation": {
+      "capacity": [0]
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [990000],
+    "source": "Shadowrun 2050",
+    "page": 169
+  },
+  {
+    "name": "Radio Shack DTU-2500, Terminal (2050)",
+    "description": "",
+    "category": "Cyberdecks",
+    "maxRating": 0,
+    "deviceRating": 2,
+    "programs": [2],
+    "attack": 0,
+    "sleaze": 0,
+    "dataProcessing": 1,
+    "firewall": 1,
+    "capacityInformation": {
+      "capacity": [0]
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [620],
+    "source": "Shadowrun 2050",
+    "page": 170
+  },
+  {
+    "name": "Microdeck Deckmaster, Terminal (2050)",
+    "description": "",
+    "category": "Cyberdecks",
+    "maxRating": 0,
+    "deviceRating": 3,
+    "programs": [2],
+    "attack": 0,
+    "sleaze": 0,
+    "dataProcessing": 1,
+    "firewall": 1,
+    "capacityInformation": {
+      "capacity": [0]
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [1300],
+    "source": "Shadowrun 2050",
+    "page": 170
+  },
+  {
+    "name": "Sony R4J, Terminal (2050)",
+    "description": "",
+    "category": "Cyberdecks",
+    "maxRating": 0,
+    "deviceRating": 4,
+    "programs": [4],
+    "attack": 0,
+    "sleaze": 0,
+    "dataProcessing": 3,
+    "firewall": 3,
+    "capacityInformation": {
+      "capacity": [0]
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [11000],
+    "source": "Shadowrun 2050",
+    "page": 170
+  },
+  {
+    "name": "Fuchi Cyber-2, Terminal (2050)",
+    "description": "",
+    "category": "Cyberdecks",
+    "maxRating": 0,
+    "deviceRating": 4,
+    "programs": [4],
+    "attack": 0,
+    "sleaze": 0,
+    "dataProcessing": 3,
+    "firewall": 4,
+    "capacityInformation": {
+      "capacity": [0]
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [15000],
+    "source": "Shadowrun 2050",
+    "page": 170
+  },
+  {
+    "name": "MTC Sarari-Man, Terminal (2050)",
+    "description": "",
+    "category": "Cyberdecks",
+    "maxRating": 0,
+    "deviceRating": 5,
+    "programs": [5],
+    "attack": 0,
+    "sleaze": 0,
+    "dataProcessing": 4,
+    "firewall": 4,
+    "capacityInformation": {
+      "capacity": [0]
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [37000],
+    "source": "Shadowrun 2050",
+    "page": 170
+  },
+  {
+    "name": "Renraku Desukuwa-Ku, Terminal (2050)",
+    "description": "",
+    "category": "Cyberdecks",
+    "maxRating": 0,
+    "deviceRating": 5,
+    "programs": [5],
+    "attack": 0,
+    "sleaze": 0,
+    "dataProcessing": 5,
+    "firewall": 4,
+    "capacityInformation": {
+      "capacity": [0]
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [51500],
+    "source": "Shadowrun 2050",
+    "page": 170
+  },
+  {
+    "name": "Fairlight Joyeuse, Terminal (2050)",
+    "description": "",
+    "category": "Cyberdecks",
+    "maxRating": 0,
+    "deviceRating": 6,
+    "programs": [6],
+    "attack": 0,
+    "sleaze": 0,
+    "dataProcessing": 6,
+    "firewall": 6,
+    "capacityInformation": {
+      "capacity": [0]
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [450000],
+    "source": "Shadowrun 2050",
+    "page": 170
+  },
+  {
+    "name": "Radio Shack PCD-50, Luggage (2050)",
+    "description": "",
+    "category": "Cyberdecks",
+    "maxRating": 0,
+    "deviceRating": 2,
+    "programs": [1],
+    "attack": 0,
+    "sleaze": 0,
+    "dataProcessing": 1,
+    "firewall": 0,
+    "capacityInformation": {
+      "capacity": [0]
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [3000],
+    "source": "Shadowrun 2050",
+    "page": 171
+  },
+  {
+    "name": "Microdesk Luggable, Luggage (2050)",
+    "description": "",
+    "category": "Cyberdecks",
+    "maxRating": 0,
+    "deviceRating": 3,
+    "programs": [1],
+    "attack": 0,
+    "sleaze": 0,
+    "dataProcessing": 1,
+    "firewall": 1,
+    "capacityInformation": {
+      "capacity": [0]
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [6500],
+    "source": "Shadowrun 2050",
+    "page": 171
+  },
+  {
+    "name": "Sony CTY-180, Luggage (2050)",
+    "description": "",
+    "category": "Cyberdecks",
+    "maxRating": 0,
+    "deviceRating": 4,
+    "programs": [3],
+    "attack": 0,
+    "sleaze": 0,
+    "dataProcessing": 3,
+    "firewall": 3,
+    "capacityInformation": {
+      "capacity": [0]
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [60000],
+    "source": "Shadowrun 2050",
+    "page": 171
+  },
+  {
+    "name": "Fuchi Cyber-3, Luggage (2050)",
+    "description": "",
+    "category": "Cyberdecks",
+    "maxRating": 0,
+    "deviceRating": 4,
+    "programs": [4],
+    "attack": 0,
+    "sleaze": 0,
+    "dataProcessing": 3,
+    "firewall": 3,
+    "capacityInformation": {
+      "capacity": [0]
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [75000],
+    "source": "Shadowrun 2050",
+    "page": 171
+  },
+  {
+    "name": "Amalgamated Tech. und Tele., Luggage (2050)",
+    "description": "",
+    "category": "Cyberdecks",
+    "maxRating": 0,
+    "deviceRating": 5,
+    "programs": [5],
+    "attack": 0,
+    "sleaze": 0,
+    "dataProcessing": 4,
+    "firewall": 4,
+    "capacityInformation": {
+      "capacity": [0]
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [364000],
+    "source": "Shadowrun 2050",
+    "page": 171
+  },
+  {
+    "name": "Microtrónica Azteca Maletin, Luggage (2050)",
+    "description": "",
+    "category": "Cyberdecks",
+    "maxRating": 0,
+    "deviceRating": 5,
+    "programs": [5],
+    "attack": 0,
+    "sleaze": 0,
+    "dataProcessing": 5,
+    "firewall": 4,
+    "capacityInformation": {
+      "capacity": [0]
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [250000],
+    "source": "Shadowrun 2050",
+    "page": 171
+  },
+  {
+    "name": "Fairlight Sharur, Luggage (2050)",
+    "description": "",
+    "category": "Cyberdecks",
+    "maxRating": 0,
+    "deviceRating": 6,
+    "programs": [6],
+    "attack": 0,
+    "sleaze": 0,
+    "dataProcessing": 6,
+    "firewall": 5,
+    "capacityInformation": {
+      "capacity": [0]
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [499999],
+    "source": "Shadowrun 2050",
+    "page": 171
+  },
+  {
+    "name": "Binoculars (2050)",
+    "description": "",
+    "category": "Vision Devices",
+    "maxRating": 0,
+    "allowCategoryList": ["Vision Enhancements", "Custom"],
+    "includedGearList": [
+      {
+        "name": "Vision Magnification",
+        "category": "Vision Enhancements"
+      }
+    ],
+    "capacityInformation": {
+      "capacity": [2]
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [150],
+    "source": "Shadowrun 2050",
+    "page": 193
+  },
+  {
+    "name": "Binoculars, Optical (2050)",
+    "description": "",
+    "category": "Vision Devices",
+    "maxRating": 0,
+    "includedGearList": [
+      {
+        "name": "Vision Magnification",
+        "category": "Vision Enhancements"
+      }
+    ],
+    "capacityInformation": {
+      "capacity": [0]
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [150],
+    "source": "Shadowrun 2050",
+    "page": 193
+  },
+  {
+    "name": "Binoculars, Thermographic Vision (2050)",
+    "description": "",
+    "category": "Vision Enhancements",
+    "maxRating": 0,
+    "capacityInformation": {
+      "capacityCost": [1]
+    },
+    "armourCapacityInformation": {
+      "capacityCost": [1]
+    },
+    "requirements": {},
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [250],
+    "source": "Shadowrun 2050",
+    "page": 193
+  },
+  {
+    "name": "Binoculars, Low Light (2050)",
+    "description": "",
+    "category": "Vision Enhancements",
+    "maxRating": 0,
+    "capacityInformation": {
+      "capacityCost": [1]
+    },
+    "armourCapacityInformation": {
+      "capacityCost": [1]
+    },
+    "requirements": {},
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [200],
+    "source": "Shadowrun 2050",
+    "page": 193
+  },
+  {
+    "name": "Goggles (2050)",
+    "description": "",
+    "category": "Vision Devices",
+    "maxRating": 0,
+    "allowCategoryList": ["Vision Enhancements", "Custom"],
+    "capacityInformation": {
+      "capacity": [3]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [1500],
+    "source": "Shadowrun 2050",
+    "page": 193
+  },
+  {
+    "name": "Goggles, Thermographic Vision (2050)",
+    "description": "",
+    "category": "Vision Enhancements",
+    "maxRating": 0,
+    "capacityInformation": {
+      "capacityCost": [1]
+    },
+    "armourCapacityInformation": {
+      "capacityCost": [1]
+    },
+    "requirements": {},
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [700],
+    "source": "Shadowrun 2050",
+    "page": 193
+  },
+  {
+    "name": "Goggles, Low Light (2050)",
+    "description": "",
+    "category": "Vision Enhancements",
+    "maxRating": 0,
+    "capacityInformation": {
+      "capacityCost": [1]
+    },
+    "armourCapacityInformation": {
+      "capacityCost": [1]
+    },
+    "requirements": {},
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [500],
+    "source": "Shadowrun 2050",
+    "page": 193
+  },
+  {
+    "name": "Goggles, Vision Magnification (2050)",
+    "description": "",
+    "category": "Vision Enhancements",
+    "maxRating": 0,
+    "capacityInformation": {
+      "capacityCost": [1]
+    },
+    "armourCapacityInformation": {
+      "capacityCost": [1]
+    },
+    "requirements": {},
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [200],
+    "source": "Shadowrun 2050",
+    "page": 193
+  },
+  {
+    "name": "Credstick, Certified (2050)",
+    "description": "",
+    "category": "ID/Credsticks",
+    "maxRating": 0,
+    "allowCategoryList": ["ID/Credsticks", "Currency", "Custom"],
+    "deviceRating": 5,
+    "capacityInformation": {
+      "capacity": [1000000]
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [25],
+    "source": "Shadowrun 2050",
+    "page": 193
+  },
+  {
+    "name": "Credstick, Standard (2050)",
+    "description": "",
+    "category": "ID/Credsticks",
+    "maxRating": 0,
+    "allowCategoryList": ["ID/Credsticks", "Currency", "Custom"],
+    "bonus": {
+      "enterName": true
+    },
+    "deviceRating": 5,
+    "capacityInformation": {
+      "capacity": [1000000]
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [5],
+    "source": "Shadowrun 2050",
+    "page": 193
+  },
+  {
+    "name": "Credstick, Fake (2050)",
+    "description": "",
+    "category": "ID/Credsticks",
+    "maxRating": 6,
+    "allowCategoryList": ["ID/Credsticks", "Currency", "Custom"],
+    "bonus": {
+      "enterName": true
+    },
+    "deviceRating": 5,
+    "capacityInformation": {
+      "capacity": [1000000]
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                2
+              ]
+            }
+          ]
+        }
+      ],
+      "restriction": "F"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          1000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 193
+  },
+  {
+    "name": "Telecom (2050)",
+    "description": "",
+    "category": "Communications and Countermeasures",
+    "maxRating": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [1000],
+    "source": "Shadowrun 2050",
+    "page": 194
+  },
+  {
+    "name": "Portable Phone (2050)",
+    "description": "",
+    "category": "Communications and Countermeasures",
+    "maxRating": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [500],
+    "source": "Shadowrun 2050",
+    "page": 194
+  },
+  {
+    "name": "Pocket Secretary (2050)",
+    "description": "",
+    "category": "Communications and Countermeasures",
+    "maxRating": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [3000],
+    "source": "Shadowrun 2050",
+    "page": 194
+  },
+  {
+    "name": "Personal Computer (2050)",
+    "description": "",
+    "category": "Communications and Countermeasures",
+    "maxRating": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [5000],
+    "source": "Shadowrun 2050",
+    "page": 194
+  },
+  {
+    "name": "Data Display (2050)",
+    "description": "",
+    "category": "Communications and Countermeasures",
+    "maxRating": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [500],
+    "source": "Shadowrun 2050",
+    "page": 194
+  },
+  {
+    "name": "Data Codebreaker (2050)",
+    "description": "",
+    "category": "Communications and Countermeasures",
+    "maxRating": 6,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            }
+          ]
+        }
+      ],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              }
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          10000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 195
+  },
+  {
+    "name": "Dataline Scanner (2050)",
+    "description": "",
+    "category": "Communications and Countermeasures",
+    "maxRating": 6,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            }
+          ]
+        }
+      ],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              }
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          100
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 195
+  },
+  {
+    "name": "Dataline Tap (2050)",
+    "description": "",
+    "category": "Communications and Countermeasures",
+    "maxRating": 6,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            }
+          ]
+        }
+      ],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              }
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          5000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 195
+  },
+  {
+    "name": "Data Encryption System (2050)",
+    "description": "",
+    "category": "Communications and Countermeasures",
+    "maxRating": 6,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            }
+          ]
+        }
+      ],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              }
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          1000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 195
+  },
+  {
+    "name": "Restraints, Metal (2050)",
+    "description": "",
+    "category": "Security Devices",
+    "maxRating": 0,
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [50],
+    "source": "Shadowrun 2050",
+    "page": 195
+  },
+  {
+    "name": "Restraints, Plastic (2050)",
+    "description": "",
+    "category": "Security Devices",
+    "maxRating": 0,
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [20],
+    "source": "Shadowrun 2050",
+    "page": 195
+  },
+  {
+    "name": "Squealer (2050)",
+    "description": "",
+    "category": "Security Devices",
+    "minRating": 5,
+    "maxRating": 5,
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [100],
+    "source": "Shadowrun 2050",
+    "page": 195
+  },
+  {
+    "name": "Identification Scanner, Thumbprint (2050)",
+    "description": "",
+    "category": "Security Devices",
+    "maxRating": 6,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            }
+          ]
+        }
+      ],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              }
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          200
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 195
+  },
+  {
+    "name": "Identification Scanner, Palm Print (2050)",
+    "description": "",
+    "category": "Security Devices",
+    "maxRating": 6,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            }
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        1
+      ],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              }
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          300
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 195
+  },
+  {
+    "name": "Identification Scanner, Retinal (2050)",
+    "description": "",
+    "category": "Security Devices",
+    "maxRating": 6,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            }
+          ]
+        },
+        {
+          "operator": "+"
+        },
+        2
+      ],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              }
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          1000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 195
+  },
+  {
+    "name": "Laser Microphone (2050)",
+    "description": "",
+    "category": "Security Devices",
+    "maxRating": 6,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            }
+          ]
+        }
+      ],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              }
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          1500
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 195
+  },
+  {
+    "name": "Maglocks (2050)",
+    "description": "",
+    "category": "Security Devices",
+    "maxRating": 6,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            }
+          ]
+        }
+      ],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              }
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          100
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 195
+  },
+  {
+    "name": "Maglock Passkey (2050)",
+    "description": "",
+    "category": "Breaking and Entering Gear",
+    "maxRating": 6,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            }
+          ]
+        }
+      ],
+      "restriction": "F"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              }
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          10000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 195
+  },
+  {
+    "name": "Micro-Camcorder (2050)",
+    "description": "",
+    "category": "Communications and Countermeasures",
+    "maxRating": 6,
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [2500],
+    "source": "Shadowrun 2050",
+    "page": 195
+  },
+  {
+    "name": "Micro-Recorder (2050)",
+    "description": "",
+    "category": "Communications and Countermeasures",
+    "maxRating": 6,
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [1000],
+    "source": "Shadowrun 2050",
+    "page": 195
+  },
+  {
+    "name": "Micro-Transceiver (2050)",
+    "description": "",
+    "category": "Communications and Countermeasures",
+    "maxRating": 6,
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [2500],
+    "source": "Shadowrun 2050",
+    "page": 195
+  },
+  {
+    "name": "Tracking Signal (2050)",
+    "description": "",
+    "category": "Communications and Countermeasures",
+    "maxRating": 6,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            }
+          ]
+        }
+      ],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              }
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          200
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 195
+  },
+  {
+    "name": "Shotgun Microphone (2050)",
+    "description": "",
+    "category": "Communications and Countermeasures",
+    "maxRating": 6,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            }
+          ]
+        }
+      ],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              }
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          1000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 195
+  },
+  {
+    "name": "Signal Locator (2050)",
+    "description": "",
+    "category": "Communications and Countermeasures",
+    "maxRating": 6,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            }
+          ]
+        }
+      ],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              }
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          1000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 195
+  },
+  {
+    "name": "Voice Identifier (2050)",
+    "description": "",
+    "category": "Communications and Countermeasures",
+    "maxRating": 6,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            }
+          ]
+        }
+      ],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              }
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          2000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 195
+  },
+  {
+    "name": "Voice Mask (2050)",
+    "description": "",
+    "category": "Communications and Countermeasures",
+    "maxRating": 6,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            }
+          ]
+        }
+      ],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              }
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          3000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 195
+  },
+  {
+    "name": "Bug Scanner (2050)",
+    "description": "",
+    "category": "Communications and Countermeasures",
+    "maxRating": 6,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            }
+          ]
+        }
+      ],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              }
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 195
+  },
+  {
+    "name": "White Noise Generator (2050)",
+    "description": "",
+    "category": "Communications and Countermeasures",
+    "maxRating": 6,
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            }
+          ]
+        }
+      ],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              }
+            ]
+          },
+          {
+            "operator": "*"
+          },
+          1500
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 195
+  },
+  {
+    "name": "Tool Kit (2050)",
+    "description": "",
+    "category": "Tools",
+    "maxRating": 0,
+    "availability": {
+      "rating": [5],
+      "restriction": ""
+    },
+    "cost": [500],
+    "source": "Shadowrun 2050",
+    "page": 196
+  },
+  {
+    "name": "Tool Shop (2050)",
+    "description": "",
+    "category": "Tools",
+    "maxRating": 0,
+    "availability": {
+      "rating": [8],
+      "restriction": ""
+    },
+    "cost": [5000],
+    "source": "Shadowrun 2050",
+    "page": 196
+  },
+  {
+    "name": "Tool Facility (2050)",
+    "description": "",
+    "category": "Tools",
+    "maxRating": 0,
+    "availability": {
+      "rating": [14],
+      "restriction": ""
+    },
+    "cost": [100000],
+    "source": "Shadowrun 2050",
+    "page": 196
+  },
+  {
+    "name": "Atropine (2050)",
+    "description": "",
+    "category": "Toxins",
+    "maxRating": 0,
+    "availability": {
+      "rating": [5],
+      "restriction": "F"
+    },
+    "cost": [600],
+    "source": "Shadowrun 2050",
+    "page": 197
+  },
+  {
+    "name": "Dikote™ (2050)",
+    "description": "",
+    "category": "Chemicals",
+    "maxRating": 0,
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [1000],
+    "source": "Shadowrun 2050",
+    "page": 197
+  },
+  {
+    "name": "DMSO (2050)",
+    "description": "",
+    "category": "Toxins",
+    "maxRating": 0,
+    "availability": {
+      "rating": [2],
+      "restriction": "R"
+    },
+    "cost": [10],
+    "source": "Shadowrun 2050",
+    "page": 197
+  },
+  {
+    "name": "Fugu-5 (2050)",
+    "description": "",
+    "category": "Toxins",
+    "maxRating": 0,
+    "availability": {
+      "rating": [6],
+      "restriction": "R"
+    },
+    "cost": [25],
+    "source": "Shadowrun 2050",
+    "page": 197
+  },
+  {
+    "name": "Hyper (2050)",
+    "description": "",
+    "category": "Toxins",
+    "maxRating": 0,
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [180],
+    "source": "Shadowrun 2050",
+    "page": 197
+  },
+  {
+    "name": "Kamikaze (2050)",
+    "description": "",
+    "category": "Drugs",
+    "maxRating": 0,
+    "allowCategoryList": ["Drug Grades", "Custom"],
+    "availability": {
+      "rating": [5],
+      "restriction": "R"
+    },
+    "cost": [50],
+    "source": "Shadowrun 2050",
+    "page": 197
+  },
+  {
+    "name": "Narcoject (2050)",
+    "description": "",
+    "category": "Toxins",
+    "maxRating": 0,
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [50],
+    "source": "Shadowrun 2050",
+    "page": 197
+  },
+  {
+    "name": "Neuro-Stun VII (2050)",
+    "description": "",
+    "category": "Toxins",
+    "maxRating": 0,
+    "availability": {
+      "rating": [6],
+      "restriction": "R"
+    },
+    "cost": [60],
+    "source": "Shadowrun 2050",
+    "page": 197
+  },
+  {
+    "name": "Cyanide (2050)",
+    "description": "",
+    "category": "Toxins",
+    "maxRating": 0,
+    "availability": {
+      "rating": [3],
+      "restriction": "R"
+    },
+    "cost": [360],
+    "source": "Shadowrun 2050",
+    "page": 197
+  },
+  {
+    "name": "Chemsuit (2050)",
+    "description": "",
+    "category": "Survival Gear",
+    "maxRating": 6,
+    "bonus": {
+      "toxinContactResist": {
+        "option": "Rating"
+      },
+      "pathogenContactResist": {
+        "option": "Rating"
+      }
+    },
+    "availability": {
+      "rating": [
+        {
+          "option": "Rating"
+        }
+      ],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          200
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 197
+  },
+  {
+    "name": "Respirator (2050)",
+    "description": "",
+    "category": "Survival Gear",
+    "maxRating": 0,
+    "armourCapacityInformation": {
+      "capacityCost": [2]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [750],
+    "source": "Shadowrun 2050",
+    "page": 197
+  },
+  {
+    "name": "Survival Kit (2050)",
+    "description": "",
+    "category": "Survival Gear",
+    "maxRating": 0,
+    "armourCapacityInformation": {
+      "capacityCost": [6]
+    },
+    "availability": {
+      "rating": [2],
+      "restriction": ""
+    },
+    "cost": [100],
+    "source": "Shadowrun 2050",
+    "page": 197
+  },
+  {
+    "name": "Extra Compressed Soy Bars (2050)",
+    "description": "",
+    "category": "Survival Gear",
+    "maxRating": 0,
+    "quantity": 10,
+    "availability": {
+      "rating": [2],
+      "restriction": ""
+    },
+    "cost": [30],
+    "source": "Shadowrun 2050",
+    "page": 197
+  },
+  {
+    "name": "DocWagon Contract, HTR Service (2050)",
+    "description": "",
+    "category": "Contracts/Upkeep",
+    "maxRating": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [5000],
+    "source": "Shadowrun 2050",
+    "page": 198
+  },
+  {
+    "name": "DocWagon Contract, Employee Death Compensation (2050)",
+    "description": "",
+    "category": "Contracts/Upkeep",
+    "maxRating": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [20000],
+    "source": "Shadowrun 2050",
+    "page": 198
+  },
+  {
+    "name": "DocWagon Contract, Resuscitation Service (2050)",
+    "description": "",
+    "category": "Contracts/Upkeep",
+    "maxRating": 0,
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [8000],
+    "source": "Shadowrun 2050",
+    "page": 198
+  },
+  {
+    "name": "Medkit (2050)",
+    "description": "",
+    "category": "Biotech",
+    "maxRating": 0,
+    "armourCapacityInformation": {
+      "capacityCost": [5]
+    },
+    "availability": {
+      "rating": [2],
+      "restriction": ""
+    },
+    "cost": [200],
+    "source": "Shadowrun 2050",
+    "page": 198
+  },
+  {
+    "name": "Medkit Supplies (2050)",
+    "description": "",
+    "category": "Biotech",
+    "maxRating": 0,
+    "availability": {
+      "rating": [2],
+      "restriction": ""
+    },
+    "cost": [50],
+    "source": "Shadowrun 2050",
+    "page": 198
+  },
+  {
+    "name": "Stabilization Unit, Standard (2050)",
+    "description": "",
+    "category": "Biotech",
+    "maxRating": 0,
+    "availability": {
+      "rating": [12],
+      "restriction": ""
+    },
+    "cost": [10000],
+    "source": "Shadowrun 2050",
+    "page": 198
+  },
+  {
+    "name": "Stabilization Unit, Deluxe (2050)",
+    "description": "",
+    "category": "Biotech",
+    "maxRating": 0,
+    "availability": {
+      "rating": [16],
+      "restriction": ""
+    },
+    "cost": [20000],
+    "source": "Shadowrun 2050",
+    "page": 198
+  },
+  {
+    "name": "Stabilization Unit Supplies (2050)",
+    "description": "",
+    "category": "Biotech",
+    "maxRating": 0,
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [100],
+    "source": "Shadowrun 2050",
+    "page": 198
+  },
+  {
+    "name": "Slap Patch, Chem Patch (2050)",
+    "description": "",
+    "category": "Biotech",
+    "maxRating": 0,
+    "availability": {
+      "rating": [3],
+      "restriction": ""
+    },
+    "cost": [20],
+    "source": "Shadowrun 2050",
+    "page": 198
+  },
+  {
+    "name": "Slap Patch, Stim Patch (2050)",
+    "description": "",
+    "category": "Biotech",
+    "maxRating": 6,
+    "availability": {
+      "rating": [2],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          25
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 198
+  },
+  {
+    "name": "Slap Patch, Tranq Patch (2050)",
+    "description": "",
+    "category": "Biotech",
+    "maxRating": 10,
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          20
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 198
+  },
+  {
+    "name": "Slap Patch, Trauma Patch (2050)",
+    "description": "",
+    "category": "Biotech",
+    "maxRating": 0,
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [400],
+    "source": "Shadowrun 2050",
+    "page": 198
+  },
+  {
+    "name": "Remote Control Deck (2050)",
+    "description": "",
+    "category": "Rigger Command Consoles",
+    "maxRating": 6,
+    "deviceRating": 0,
+    "attack": 0,
+    "sleaze": 0,
+    "dataProcessing": 0,
+    "firewall": 0,
+    "capacityInformation": {
+      "capacity": [0]
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          5000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 212
+  },
+  {
+    "name": "Chip Burner (2050)",
+    "description": "",
+    "category": "Cyberdeck Modules",
+    "maxRating": 0,
+    "deviceRating": 0,
+    "armourCapacityInformation": {
+      "capacity": [0]
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [250],
+    "source": "Shadowrun 2050",
+    "page": 170
+  },
+  {
+    "name": "Response Increase (2050)",
+    "description": "",
+    "category": "Cyberdeck Modules",
+    "maxRating": 0,
+    "deviceRating": 0,
+    "armourCapacityInformation": {
+      "capacity": [0]
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [35000],
+    "source": "Shadowrun 2050",
+    "page": 170
+  },
+  {
+    "name": "Hitcher Jacks (2050)",
+    "description": "",
+    "category": "Cyberdeck Modules",
+    "maxRating": 0,
+    "deviceRating": 0,
+    "armourCapacityInformation": {
+      "capacity": [0]
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [1000],
+    "source": "Shadowrun 2050",
+    "page": 170
+  },
+  {
+    "name": "Vidscreen Display (2050)",
+    "description": "",
+    "category": "Cyberdeck Modules",
+    "maxRating": 0,
+    "deviceRating": 0,
+    "armourCapacityInformation": {
+      "capacity": [0]
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [500],
+    "source": "Shadowrun 2050",
+    "page": 170
   },
   {
     "name": "Atomizer",

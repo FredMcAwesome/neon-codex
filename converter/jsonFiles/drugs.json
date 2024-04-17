@@ -856,5 +856,29 @@
     "cost": 1500,
     "source": "Chrome Flesh",
     "page": 187
+  },
+  {
+    "name": "Shiva (Vintage)",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 12,
+      "restriction": "F"
+    },
+    "cost": 200,
+    "source": "State Of The Art - ADL",
+    "page": 97
+  },
+  {
+    "name": "Shiva II",
+    "description": "",
+    "category": "Drugs",
+    "availability": {
+      "rating": 6,
+      "restriction": "R"
+    },
+    "cost": 150,
+    "source": "State Of The Art - ADL",
+    "page": 97
   }
 ]

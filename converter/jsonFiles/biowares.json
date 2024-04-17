@@ -5030,6 +5030,879 @@
     "subtype": "Cultured"
   },
   {
+    "name": "Adrenaline Pump (2050)",
+    "description": "",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.75
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [3]
+    },
+    "availability": {
+      "rating": [10],
+      "restriction": "F"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          50000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 205,
+    "type": "Bioware",
+    "subtype": "Basic"
+  },
+  {
+    "name": "Enhanced Articulation (2050)",
+    "description": "",
+    "essenceCost": [0.3],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [5],
+      "restriction": ""
+    },
+    "cost": [40000],
+    "source": "Shadowrun 2050",
+    "page": 205,
+    "type": "Bioware",
+    "subtype": "Basic"
+  },
+  {
+    "name": "Suprathyroid Gland (2050)",
+    "description": "",
+    "essenceCost": [0.7],
+    "rating": {
+      "maximum": [1]
+    },
+    "bonus": {
+      "lifestyleCostModifier": [
+        {
+          "cost": 25
+        }
+      ]
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": "F"
+    },
+    "cost": [50000],
+    "source": "Shadowrun 2050",
+    "page": 205,
+    "type": "Bioware",
+    "subtype": "Basic"
+  },
+  {
+    "name": "Tracheal Filter (2050)",
+    "description": "",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.1
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [6]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          30000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 205,
+    "type": "Bioware",
+    "subtype": "Basic"
+  },
+  {
+    "name": "Tailored Pheromones (2050)",
+    "description": "",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.2
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [3]
+    },
+    "bonus": {
+      "socialLimit": [
+        {
+          "option": "Rating"
+        }
+      ]
+    },
+    "availability": {
+      "rating": [12],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          22000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 205,
+    "type": "Bioware",
+    "subtype": "Basic"
+  },
+  {
+    "name": "Mnemonic Enhancer (2050)",
+    "description": "",
+    "unavailableGrades": ["Used"],
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.1
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [3]
+    },
+    "bonus": {
+      "skillCategories": [
+        {
+          "category": "Academic",
+          "bonus": [
+            {
+              "option": "Rating"
+            }
+          ]
+        },
+        {
+          "category": "Interest",
+          "bonus": [
+            {
+              "option": "Rating"
+            }
+          ]
+        },
+        {
+          "category": "Language",
+          "bonus": [
+            {
+              "option": "Rating"
+            }
+          ]
+        },
+        {
+          "category": "Professional",
+          "bonus": [
+            {
+              "option": "Rating"
+            }
+          ]
+        },
+        {
+          "category": "Street",
+          "bonus": [
+            {
+              "option": "Rating"
+            }
+          ]
+        }
+      ],
+      "mentalLimit": {
+        "option": "Rating"
+      },
+      "memory": [
+        {
+          "option": "Rating"
+        }
+      ]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          15000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 205,
+    "type": "Bioware",
+    "subtype": "Cultured"
+  },
+  {
+    "name": "Muscle Toner (2050)",
+    "description": "",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.2
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [4]
+    },
+    "bonus": {
+      "disableQualities": [
+        {
+          "name": "Celerity"
+        }
+      ]
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            5
+          ]
+        }
+      ],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          25000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 205,
+    "type": "Bioware",
+    "subtype": "Basic"
+  },
+  {
+    "name": "Muscle Augmentation (2050)",
+    "description": "",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.2
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [4]
+    },
+    "bonus": {
+      "disableQualities": [
+        {
+          "name": "Celerity"
+        }
+      ]
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            5
+          ]
+        }
+      ],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          20000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 205,
+    "type": "Bioware",
+    "subtype": "Basic"
+  },
+  {
+    "name": "Nephritic Screen (2050)",
+    "description": "",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.2
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [6]
+    },
+    "bonus": {
+      "toxinContactResist": {
+        "option": "Rating"
+      },
+      "pathogenContactResist": {
+        "option": "Rating"
+      },
+      "toxinInhalationResist": {
+        "option": "Rating"
+      },
+      "pathogenInhalationResist": {
+        "option": "Rating"
+      },
+      "toxinIngestionResist": {
+        "option": "Rating"
+      },
+      "pathogenIngestionResist": {
+        "option": "Rating"
+      },
+      "toxinInjectionResist": {
+        "option": "Rating"
+      },
+      "pathogenInjectionResist": {
+        "option": "Rating"
+      },
+      "addictionResistance": {
+        "physiological": {
+          "initialTest": [
+            {
+              "option": "Rating"
+            }
+          ],
+          "progressingTest": [
+            {
+              "option": "Rating"
+            }
+          ]
+        },
+        "psychological": {
+          "initialTest": [
+            {
+              "option": "Rating"
+            }
+          ],
+          "progressingTest": [0]
+        }
+      }
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          24000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 205,
+    "type": "Bioware",
+    "subtype": "Basic"
+  },
+  {
+    "name": "Orthoskin (2050)",
+    "description": "",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.25
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [3]
+    },
+    "bonus": {
+      "armour": {
+        "nonStacking": true,
+        "bonus": {
+          "option": "Rating"
+        }
+      }
+    },
+    "forbidden": {},
+    "availability": {
+      "rating": [8],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          30000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 205,
+    "type": "Bioware",
+    "subtype": "Basic"
+  },
+  {
+    "name": "Pathogenic Defense (2050)",
+    "description": "",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.1
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [6]
+    },
+    "bonus": {
+      "pathogenContactResist": {
+        "option": "Rating"
+      },
+      "pathogenInhalationResist": {
+        "option": "Rating"
+      },
+      "pathogenIngestionResist": {
+        "option": "Rating"
+      },
+      "pathogenInjectionResist": {
+        "option": "Rating"
+      }
+    },
+    "availability": {
+      "rating": [8],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          10000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 205,
+    "type": "Bioware",
+    "subtype": "Basic"
+  },
+  {
+    "name": "Reflex Recorder (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
+    "unavailableGrades": ["Used"],
+    "essenceCost": [0.1],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [5],
+      "restriction": ""
+    },
+    "cost": [10000],
+    "source": "Shadowrun 2050",
+    "page": 205,
+    "type": "Bioware",
+    "subtype": "Cultured"
+  },
+  {
+    "name": "Damage Compensators (2050)",
+    "description": "",
+    "unavailableGrades": ["Used"],
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.1
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [12]
+    },
+    "bonus": {
+      "ignoreConditionModifierNegativeEffects": {
+        "option": "Rating"
+      }
+    },
+    "forbidden": {},
+    "availability": {
+      "rating": [10],
+      "restriction": "F"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          50000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 206,
+    "type": "Bioware",
+    "subtype": "Cultured"
+  },
+  {
+    "name": "Pain Editor (2050)",
+    "description": "",
+    "unavailableGrades": ["Used"],
+    "essenceCost": [0.3],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "F"
+    },
+    "cost": [60000],
+    "source": "Shadowrun 2050",
+    "page": 205,
+    "type": "Bioware",
+    "subtype": "Cultured"
+  },
+  {
+    "name": "Symbiotes (2050)",
+    "description": "",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.2
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [3]
+    },
+    "availability": {
+      "rating": [5],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          20000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 205,
+    "type": "Bioware",
+    "subtype": "Basic"
+  },
+  {
+    "name": "Synaptic Accelerator (2050)",
+    "description": "",
+    "unavailableGrades": ["Used"],
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.5
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [3]
+    },
+    "bonus": {
+      "initiative": {
+        "bonusDice": {
+          "option": "Rating"
+        }
+      },
+      "disableQualities": [
+        {
+          "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
+        }
+      ]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          100000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 205,
+    "type": "Bioware",
+    "subtype": "Cultured"
+  },
+  {
+    "name": "Synthacardium (2050)",
+    "description": "",
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.1
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [3]
+    },
+    "bonus": {
+      "skillGroups": [
+        {
+          "group": "Athletics",
+          "bonus": [
+            {
+              "option": "Rating"
+            }
+          ]
+        }
+      ]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          10000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 205,
+    "type": "Bioware",
+    "subtype": "Basic"
+  },
+  {
+    "name": "Platelet Factories (2050)",
+    "description": "",
+    "essenceCost": [0.2],
+    "rating": {
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [5],
+      "restriction": ""
+    },
+    "cost": [30000],
+    "source": "Shadowrun 2050",
+    "page": 205,
+    "type": "Bioware",
+    "subtype": "Basic"
+  },
+  {
+    "name": "Cerebral Booster (2050)",
+    "description": "",
+    "unavailableGrades": ["Used"],
+    "essenceCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          0.2
+        ]
+      }
+    ],
+    "rating": {
+      "maximum": [3]
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          55000
+        ]
+      }
+    ],
+    "source": "Shadowrun 2050",
+    "page": 205,
+    "type": "Bioware",
+    "subtype": "Cultured"
+  },
+  {
     "name": "MCT BioLink",
     "description": "",
     "essenceCost": [0.5],
