@@ -25,6 +25,7 @@ import {
 import type { UseGearListType } from "../../shared/commonSchemas.js";
 import { BonusSchema } from "../../shared/bonusSchemas.js";
 import { RequirementsSchema } from "../../shared/requiredSchemas.js";
+import { GearListSchema } from "../other/gearSchemas.js";
 
 export const InnerAvailabilityAugmentationSchema = zod
   .object({
@@ -265,3 +266,23 @@ export const AugmentationSchema = zod.discriminatedUnion("type", [
 export type AugmentationType = zod.infer<typeof AugmentationSchema>;
 export const AugmentationListSchema = zod.array(AugmentationSchema);
 export type AugmentationListType = zod.infer<typeof AugmentationListSchema>;
+
+export const CustomisedAugmentationSchema = zod
+  .object({
+    baseAugmentation: AugmentationSchema,
+    // This overrides baseAugmentation included gear
+    gearList: zod.optional(GearListSchema),
+    // TODO: is rating a thing for augmentations?
+    // rating: zod.optional(zod.number()),
+    customName: zod.optional(zod.string()),
+  })
+  .strict();
+export type CustomisedAugmentationType = zod.infer<
+  typeof CustomisedAugmentationSchema
+>;
+export const CustomisedAugmentationListSchema = zod.array(
+  CustomisedAugmentationSchema
+);
+export type CustomisedAugmentationListType = zod.infer<
+  typeof CustomisedAugmentationListSchema
+>;

@@ -14,7 +14,6 @@ import type {
   AvailabilityArmourType,
   CapacityArmourType,
   CostArmourType,
-  DamageReductionArmourType,
 } from "@neon-codex/common/build/schemas/equipment/combat/armourSchemas.js";
 import {
   armourCategoryEnum,
@@ -25,6 +24,7 @@ import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSch
 import { Weapons } from "./weaponModel.js";
 import { IncludedArmourModifications } from "../../activeTables/activeArmourModificationModel.js";
 import { ArmourIncludedGears } from "../../activeTables/activeGearModel.js";
+import type { DamageReductionArmourType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 
 @Entity()
 export class Armours {

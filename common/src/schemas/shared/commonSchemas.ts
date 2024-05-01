@@ -158,6 +158,18 @@ export const RangeCostSchema = zod
   })
   .strict();
 
+export const DamageReductionArmourSchema = zod.union([
+  zod.number(),
+  zod
+    .object({
+      option: zod.nativeEnum(availabilityEnum),
+    })
+    .strict(),
+]);
+export type DamageReductionArmourType = zod.infer<
+  typeof DamageReductionArmourSchema
+>;
+
 // export type EssenceType = zod.infer<typeof EssenceSchema>;
 // Essence Cost is a recursive type
 export const EssenceSubnumberSchema = zod.union([

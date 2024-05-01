@@ -17,6 +17,7 @@ import { RequirementsSchema } from "../../shared/requiredSchemas.js";
 import {
   AccessoryMountSchema,
   AmmunitionSingleSchema,
+  MountSchema,
 } from "./weaponSchemas.js";
 
 export const AvailabilityWeaponAccessorySchema = zod
@@ -134,3 +135,15 @@ export const WeaponAccessorySummaryListSchema = zod.array(
 export type WeaponAccessorySummaryListType = zod.infer<
   typeof WeaponAccessorySummaryListSchema
 >;
+
+export const CustomisedWeaponAccessorySchema = zod
+  .object({
+    baseAccessory: WeaponAccessorySummarySchema,
+    gearList: zod.array(zod.string()),
+    mountList: zod.array(MountSchema),
+    rating: zod.optional(zod.number()),
+  })
+  .strict();
+export const CustomisedWeaponAccessoryListSchema = zod.array(
+  CustomisedWeaponAccessorySchema
+);

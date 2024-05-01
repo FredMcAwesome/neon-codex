@@ -22,7 +22,7 @@ import assert from "assert";
 import type { AccessoryXmlType, WeaponXmlType } from "./WeaponParserSchemas.js";
 import { weaponTypeXmlEnum } from "./WeaponParserSchemas.js";
 import type {
-  UnlinkedAccessoryType,
+  UnlinkedWeaponAccessoryType,
   FirearmOptionsType,
   MeleeOptionsType,
   MountType,
@@ -781,7 +781,7 @@ export const convertAccessories = function (
       mount = Array.isArray(xmlAccessory.mount)
         ? xmlAccessory.mount
         : [xmlAccessory.mount];
-    const accessory: UnlinkedAccessoryType = {
+    const accessory: UnlinkedWeaponAccessoryType = {
       name: xmlAccessory.name,
       mount: mount,
       rating: xmlAccessory.rating,

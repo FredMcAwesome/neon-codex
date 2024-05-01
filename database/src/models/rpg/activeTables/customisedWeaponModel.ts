@@ -32,7 +32,7 @@ export class CustomisedWeapons {
 
   // rating is only used in a few weapons
   @Property({ nullable: true })
-  rating?: string;
+  rating?: number;
 
   @Property({ nullable: true })
   customName?: string;

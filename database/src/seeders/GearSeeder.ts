@@ -96,7 +96,7 @@ import type {
   HeritageOptionsPriorityType,
   TalentOptionsPriorityType,
 } from "@neon-codex/common/build/schemas/otherData/prioritySchemas.js";
-import { CustomisedQualities } from "../models/rpg/activeTables/customisedQualityModel.js";
+import { IncludedQualities } from "../models/rpg/activeTables/activeQualityModel.js";
 
 export class GearSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
@@ -382,11 +382,11 @@ export class GearSeeder extends Seeder {
           });
           assert(linkedQuality !== null, `undefined Quality: ${quality.name}`);
           const referencedQuality = ref(linkedQuality);
-          const customisedQuality = new CustomisedQualities(
+          const customisedQuality = new IncludedQualities(
             referencedQuality,
             quality.rating
           );
-          em.create(CustomisedQualities, customisedQuality);
+          em.create(IncludedQualities, customisedQuality);
           relatedHeritage.includedQualityList.add(customisedQuality);
         }
       }

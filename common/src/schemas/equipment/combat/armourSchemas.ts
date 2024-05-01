@@ -10,11 +10,14 @@ import {
 } from "../../../enums.js";
 import {
   AvailabilityRatingSchema,
+  DamageReductionArmourSchema,
   RangeCostSchema,
   UseGearListSchema,
 } from "../../shared/commonSchemas.js";
 import { BonusSchema } from "../../shared/bonusSchemas.js";
 import { GenericModListSchema } from "../../shared/modSchemas.js";
+import { CustomisedArmourModListSchema } from "./armourModSchemas.js";
+import { GearListSchema } from "../other/gearSchemas.js";
 
 export const AvailabilityArmourSchema = zod
   .object({
@@ -57,18 +60,6 @@ export const CostArmourSchema = zod.union([
 
 export type CostArmourType = zod.infer<typeof CostArmourSchema>;
 
-export const DamageReductionArmourSchema = zod.union([
-  zod.number(),
-  zod
-    .object({
-      option: zod.nativeEnum(availabilityEnum),
-    })
-    .strict(),
-]);
-export type DamageReductionArmourType = zod.infer<
-  typeof DamageReductionArmourSchema
->;
-
 const CapacityArmourSchema = zod.union([
   zod.number(),
   zod
@@ -105,3 +96,20 @@ export type ArmourType = zod.infer<typeof ArmourSchema>;
 
 export const ArmourListSchema = zod.array(ArmourSchema);
 export type ArmourListType = zod.infer<typeof ArmourListSchema>;
+
+export const CustomisedArmourSchema = zod
+  .object({
+    baseArmour: ArmourSchema,
+    // This overrides baseArmour modifications
+    modList: zod.optional(CustomisedArmourModListSchema),
+    // This overrides baseArmour gears
+    gearList: zod.optional(GearListSchema),
+    rating: zod.optional(zod.number()),
+    customName: zod.optional(zod.string()),
+  })
+  .strict();
+export type CustomisedArmourType = zod.infer<typeof CustomisedArmourSchema>;
+export const CustomisedArmourListSchema = zod.array(CustomisedArmourSchema);
+export type CustomisedArmourListType = zod.infer<
+  typeof CustomisedArmourListSchema
+>;

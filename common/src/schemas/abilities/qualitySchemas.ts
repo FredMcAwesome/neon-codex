@@ -76,3 +76,10 @@ export const QualitySchema = zod
 export type QualityType = zod.infer<typeof QualitySchema>;
 export const QualityListSchema = zod.array(QualitySchema);
 export type QualityListType = zod.infer<typeof QualityListSchema>;
+
+export const CustomQualitySchema = QualitySchema.extend({
+  rating: zod.number(),
+}).strict();
+export type CustomQualityType = zod.infer<typeof CustomQualitySchema>;
+export const CustomQualityListSchema = zod.array(CustomQualitySchema);
+export type CustomQualityListType = zod.infer<typeof CustomQualityListSchema>;

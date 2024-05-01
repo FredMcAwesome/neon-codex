@@ -1,6 +1,24 @@
 import { z as zod } from "zod";
 import { priorityLetterEnum, talentCategoryEnum } from "../../enums.js";
-import { AttributeRangeSchema } from "../abilities/heritageSchemas.js";
+import {
+  AttributeRangeSchema,
+  HeritageSchema,
+} from "../abilities/heritageSchemas.js";
+import type { HeritageType } from "../abilities/heritageSchemas.js";
+import { CustomisedWeaponListSchema } from "../equipment/combat/weaponSchemas.js";
+import type { CustomisedWeaponListType } from "../equipment/combat/weaponSchemas.js";
+import { CustomisedArmourListSchema } from "../equipment/combat/armourSchemas.js";
+import type { CustomisedArmourListType } from "../equipment/combat/armourSchemas.js";
+import { CustomisedGearListSchema } from "../equipment/other/gearSchemas.js";
+import type { CustomisedGearListType } from "../equipment/other/gearSchemas.js";
+import { CustomisedAugmentationListSchema } from "../equipment/bodyModification/augmentationSchemas.js";
+import type { CustomisedAugmentationListType } from "../equipment/bodyModification/augmentationSchemas.js";
+import { CustomisedVehicleListSchema } from "../equipment/rigger/vehicleSchemas.js";
+import type { CustomisedVehicleListType } from "../equipment/rigger/vehicleSchemas.js";
+import { CustomSkillListSchema } from "../abilities/skillSchemas.js";
+import type { CustomSkillListType } from "../abilities/skillSchemas.js";
+import { CustomQualityListSchema } from "../abilities/qualitySchemas.js";
+import type { CustomQualityListType } from "../abilities/qualitySchemas.js";
 
 export enum PrioritiesEnum {
   Heritage,
@@ -67,7 +85,19 @@ export const SpecialAttributesSchema = zod
   .strict();
 export type SpecialAttributesType = zod.infer<typeof SpecialAttributesSchema>;
 
-const HeritagePrioritySelectedSchema = zod
+export const QualitySelectedListSchema = zod.array(
+  zod
+    .object({
+      name: zod.string(),
+      rating: zod.optional(zod.number()),
+    })
+    .strict()
+);
+export type QualitySelectedListType = zod.infer<
+  typeof QualitySelectedListSchema
+>;
+
+export const HeritagePrioritySelectedSchema = zod
   .object({
     heritage: zod.string(),
     metavariant: zod.optional(zod.string()),
@@ -98,10 +128,41 @@ export const AttributeRangesSchema = zod
   .strict();
 export type AttributeRangesType = zod.infer<typeof AttributeRangesSchema>;
 
-const SpecialAttributeRangesSchema = zod.object({}).strict();
-export type SpecialAttributeRangesType = zod.infer<
-  typeof SpecialAttributeRangesSchema
->;
-
 const CostRangeSchema = zod.array(zod.number());
 export type CostRange = zod.infer<typeof CostRangeSchema>;
+
+export type CharacterType = {
+  name: string;
+  heritage: HeritageType;
+  priorities: PriorityLevelsType;
+  attributes: AttributesType;
+  specialAttributes: SpecialAttributesType;
+  skills: CustomSkillListType;
+  qualities: CustomQualityListType;
+  nuyen: number;
+  karmaPoints: number;
+  weapons: CustomisedWeaponListType;
+  armours: CustomisedArmourListType;
+  gears: CustomisedGearListType;
+  augmentations: CustomisedAugmentationListType;
+  vehicles: CustomisedVehicleListType;
+};
+export const CharacterSchema: zod.ZodType<CharacterType> = zod
+  .object({
+    name: zod.string(),
+    heritage: HeritageSchema,
+    priorities: PriorityLevelsSchema,
+    attributes: AttributesSchema,
+    specialAttributes: SpecialAttributesSchema,
+    skills: CustomSkillListSchema,
+    qualities: CustomQualityListSchema,
+    //talent: talentStuffSchema,
+    nuyen: zod.number(),
+    karmaPoints: zod.number(),
+    weapons: CustomisedWeaponListSchema,
+    armours: CustomisedArmourListSchema,
+    gears: CustomisedGearListSchema,
+    augmentations: CustomisedAugmentationListSchema,
+    vehicles: CustomisedVehicleListSchema,
+  })
+  .strict();

@@ -97,6 +97,7 @@ export abstract class Weapons {
   @OneToMany(() => Weapons, (weapon) => weapon.baseWeaponForm)
   alternativeWeaponForms = new Collection<Weapons>(this);
 
+  // TODO: make this actually linked properly
   @Property({ type: "json", nullable: true })
   requirements?: RequirementsType;
 

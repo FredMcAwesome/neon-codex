@@ -1,19 +1,20 @@
 import { Fragment } from "react";
 import Dropdown from "react-dropdown";
 import { trpc } from "../../../utils/trpc.js";
-import type { QualityListType } from "@neon-codex/common/build/schemas/abilities/qualitySchemas.js";
 import { qualityCategoryEnum } from "@neon-codex/common/build/enums.js";
+import type { QualitySelectedListType } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
+import type { QualityListType } from "@neon-codex/common/build/schemas/abilities/qualitySchemas.js";
 
 interface IProps {
   karmaPoints: number;
   setKarmaPoints: (loadingKarma: number) => void;
-  positiveQualitiesSelected: QualityListType;
+  positiveQualitiesSelected: QualitySelectedListType;
   setPositiveQualitiesSelected: (
-    loadingPositiveQualities: QualityListType
+    loadingPositiveQualities: QualitySelectedListType
   ) => void;
-  negativeQualitiesSelected: QualityListType;
+  negativeQualitiesSelected: QualitySelectedListType;
   setNegativeQualitiesSelected: (
-    loadingNegativeQualities: QualityListType
+    loadingNegativeQualities: QualitySelectedListType
   ) => void;
 }
 
@@ -46,7 +47,7 @@ export const QualitiesSelect = function (props: IProps) {
           qualityList={qualities.data.filter(
             (quality) => quality.category === qualityCategoryEnum.Positive
           )}
-          selectedQualitiesList={props.positiveQualitiesSelected}
+          selectedQualityList={props.positiveQualitiesSelected}
           setQualities={props.setPositiveQualitiesSelected}
           setKarma={setKarma}
         />
@@ -58,7 +59,7 @@ export const QualitiesSelect = function (props: IProps) {
           qualityList={qualities.data.filter(
             (quality) => quality.category === qualityCategoryEnum.Negative
           )}
-          selectedQualitiesList={props.negativeQualitiesSelected}
+          selectedQualityList={props.negativeQualitiesSelected}
           setQualities={props.setNegativeQualitiesSelected}
           setKarma={setKarma}
         />
@@ -69,7 +70,7 @@ export const QualitiesSelect = function (props: IProps) {
 
 // interface IRatingProps {
 //   quality: QualityType;
-//   qualitiesList: QualityListType;
+//   qualityList: QualityListType;
 //   index: number;
 //   setKarma: (removeKarma: boolean, difference: number) => void;
 //   setQualities: (loadingQualities: QualityListType) => void;
@@ -77,7 +78,7 @@ export const QualitiesSelect = function (props: IProps) {
 
 // const RatingComponent = function ({
 //   quality,
-//   qualitiesList,
+//   qualityList,
 //   index,
 //   setKarma,
 //   setQualities,
@@ -91,8 +92,8 @@ export const QualitiesSelect = function (props: IProps) {
 //         )}
 //         value={quality.ratingSelected?.toString() || "Select Rating value"}
 //         onChange={(arg) => {
-//           const newQualities = [...qualitiesList];
-//           const currentRating = qualitiesList[index].ratingSelected || 0;
+//           const newQualities = [...qualityList];
+//           const currentRating = qualityList[index].ratingSelected || 0;
 //           const newRating = parseInt(arg.value);
 //           newQualities[index].ratingSelected = newRating;
 
@@ -122,9 +123,9 @@ export const QualitiesSelect = function (props: IProps) {
 interface IQualityDropdownProps {
   positive: boolean;
   currentValue: string;
-  qualitiesList: QualityListType;
-  selectedQualitiesList: QualityListType;
-  setQualities: (loadingQualities: QualityListType) => void;
+  qualityList: QualityListType;
+  selectedQualityList: QualitySelectedListType;
+  setQualities: (loadingQualities: QualitySelectedListType) => void;
   setKarma: (removeKarma: boolean, difference: number) => void;
   index: number;
 }
@@ -132,26 +133,26 @@ interface IQualityDropdownProps {
 function QualityDropdownComponent({
   positive,
   currentValue,
-  qualitiesList,
-  selectedQualitiesList,
+  qualityList,
+  selectedQualityList,
   setQualities,
   setKarma,
   index,
 }: IQualityDropdownProps) {
   return (
     <Dropdown
-      options={qualitiesList.map((quality) => {
+      options={qualityList.map((quality) => {
         return quality.name;
       })}
       value={currentValue}
       onChange={(arg) => {
-        const newQuality = qualitiesList.find((quality) => {
+        const newQuality = qualityList.find((quality) => {
           return quality.name === arg.value;
         });
 
         if (newQuality) {
           if (index === -1) {
-            setQualities([...selectedQualitiesList, newQuality]);
+            setQualities([...selectedQualityList, { name: newQuality.name }]);
             if (
               typeof newQuality.karma === "number" &&
               newQuality.limit === undefined
@@ -162,17 +163,17 @@ function QualityDropdownComponent({
               );
             }
           } else {
-            const oldQuality = selectedQualitiesList[index];
-            if (selectedQualitiesList.length - 1 === index) {
+            const oldQuality = selectedQualityList[index];
+            if (selectedQualityList.length - 1 === index) {
               setQualities([
-                ...selectedQualitiesList.slice(0, index),
-                newQuality,
+                ...selectedQualityList.slice(0, index),
+                { name: newQuality.name },
               ]);
             } else {
               setQualities([
-                ...selectedQualitiesList.slice(0, index),
-                newQuality,
-                ...selectedQualitiesList.slice(index + 1),
+                ...selectedQualityList.slice(0, index),
+                { name: newQuality.name },
+                ...selectedQualityList.slice(index + 1),
               ]);
             }
             let newCost = 0;
@@ -182,9 +183,15 @@ function QualityDropdownComponent({
             ) {
               newCost = newQuality.karma;
             }
+            const fullQuality = qualityList.find(
+              (qual) => qual.name === oldQuality.name
+            );
+            if (fullQuality === undefined) {
+              throw new Error(`Quality ${oldQuality.name} is not found`);
+            }
             setKarma(
               newQuality.category === qualityCategoryEnum.Positive,
-              newCost - oldQuality.karma
+              newCost - fullQuality.karma
             );
           }
         } else {
@@ -205,47 +212,53 @@ function QualityDropdownComponent({
 interface IQualitySelectionProps {
   positive: boolean;
   qualityList: QualityListType;
-  selectedQualitiesList: QualityListType;
-  setQualities: (loadingQualities: QualityListType) => void;
+  selectedQualityList: QualitySelectedListType;
+  setQualities: (loadingQualities: QualitySelectedListType) => void;
   setKarma: (removeKarma: boolean, difference: number) => void;
 }
 
 const QualitySelectionComponent = function ({
   positive,
   qualityList,
-  selectedQualitiesList,
+  selectedQualityList,
   setQualities,
   setKarma,
 }: IQualitySelectionProps) {
   return (
     <div>
-      {selectedQualitiesList.map((quality, index) => {
+      {selectedQualityList.map((quality, index) => {
+        const fullQuality = qualityList.find((qual) => {
+          return qual.name === quality.name;
+        });
+        if (fullQuality === undefined) {
+          throw new Error(`Quality ${quality.name} doesn't exist`);
+        }
         return (
           <div key={index}>
             <QualityDropdownComponent
-              currentValue={quality.name}
+              currentValue={fullQuality.name}
               positive={positive}
-              selectedQualitiesList={selectedQualitiesList}
-              qualitiesList={qualityList}
+              selectedQualityList={selectedQualityList}
+              qualityList={qualityList}
               setQualities={setQualities}
               setKarma={setKarma}
               index={index}
             />
-            <p>{quality.description}</p>
+            <p>{fullQuality.description}</p>
             {/* {quality.subqualities && (
               <SubqualitiesComponent
                 quality={quality}
-                qualitiesList={qualitiesList}
+                qualityList={qualityList}
                 index={index}
                 setKarma={setKarma}
                 setQualities={setQualities}
               />
             )} */}
-            <h4>Karma cost: {quality.karma} </h4>
+            <h4>Karma cost: {fullQuality.karma} </h4>
             {/* {quality.maxRating && (
               <RatingComponent
                 quality={quality}
-                qualitiesList={qualitiesList}
+                qualityList={qualityList}
                 index={index}
                 setKarma={setKarma}
                 setQualities={setQualities}
@@ -254,21 +267,29 @@ const QualitySelectionComponent = function ({
             <button
               onClick={() => {
                 let difference = 0;
-                const removedQuality = selectedQualitiesList[index];
+                const removedQuality = selectedQualityList[index];
 
-                difference = removedQuality.karma;
+                const fullQuality = qualityList.find(
+                  (qual) => qual.name === removedQuality.name
+                );
+                if (fullQuality === undefined) {
+                  throw new Error(
+                    `Quality ${removedQuality.name} is not found`
+                  );
+                }
+                difference = fullQuality.karma;
 
                 // difference *= removedQuality. || 1;
                 setKarma(
-                  removedQuality.category === qualityCategoryEnum.Negative,
+                  fullQuality.category === qualityCategoryEnum.Negative,
                   difference
                 );
-                if (selectedQualitiesList.length - 1 === index) {
-                  setQualities([...selectedQualitiesList.slice(0, index)]);
+                if (selectedQualityList.length - 1 === index) {
+                  setQualities([...selectedQualityList.slice(0, index)]);
                 } else {
                   setQualities([
-                    ...selectedQualitiesList.slice(0, index),
-                    ...selectedQualitiesList.slice(index + 1),
+                    ...selectedQualityList.slice(0, index),
+                    ...selectedQualityList.slice(index + 1),
                   ]);
                 }
               }}
@@ -283,8 +304,8 @@ const QualitySelectionComponent = function ({
         <QualityDropdownComponent
           currentValue={"Select a quality"}
           positive={positive}
-          qualitiesList={qualityList}
-          selectedQualitiesList={selectedQualitiesList}
+          qualityList={qualityList}
+          selectedQualityList={selectedQualityList}
           setQualities={setQualities}
           setKarma={setKarma}
           index={-1}

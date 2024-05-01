@@ -7,9 +7,9 @@ import {
   restrictionEnum,
   sourceBookEnum,
 } from "../../../enums.js";
-import { DamageReductionArmourSchema } from "./armourSchemas.js";
 import {
   AvailabilityRatingSchema,
+  DamageReductionArmourSchema,
   UseGearListSchema,
 } from "../../shared/commonSchemas.js";
 import { BonusSchema } from "../../shared/bonusSchemas.js";
@@ -132,3 +132,14 @@ export type ArmourModType = zod.infer<typeof ArmourModSchema>;
 
 export const ArmourModListSchema = zod.array(ArmourModSchema);
 export type ArmourModListType = zod.infer<typeof ArmourModListSchema>;
+
+export const CustomisedArmourModSchema = zod
+  .object({
+    baseArmourMod: ArmourModSchema,
+    gearList: zod.array(zod.string()),
+    rating: zod.optional(zod.number()),
+  })
+  .strict();
+export const CustomisedArmourModListSchema = zod.array(
+  CustomisedArmourModSchema
+);

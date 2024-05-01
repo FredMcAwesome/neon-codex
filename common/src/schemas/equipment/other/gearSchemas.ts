@@ -233,3 +233,18 @@ export const GearSchema = zod
 export type GearType = zod.infer<typeof GearSchema>;
 export const GearListSchema = zod.array(GearSchema);
 export type GearListType = zod.infer<typeof GearListSchema>;
+
+export const CustomisedGearSchema = zod
+  .object({
+    baseGear: GearSchema,
+    // This overrides baseGear included gear
+    // TODO: make this lazy and point to itself
+    gearList: zod.optional(GearListSchema),
+    // TODO: is rating a thing for gear?
+    // rating: zod.optional(zod.number()),
+    customName: zod.optional(zod.string()),
+  })
+  .strict();
+export type CustomisedGearType = zod.infer<typeof CustomisedGearSchema>;
+export const CustomisedGearListSchema = zod.array(CustomisedGearSchema);
+export type CustomisedGearListType = zod.infer<typeof CustomisedGearListSchema>;

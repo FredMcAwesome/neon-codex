@@ -18,9 +18,9 @@ import {
   armourModCategoryEnum,
   sourceBookEnum,
 } from "@neon-codex/common/build/enums.js";
-import type { DamageReductionArmourType } from "@neon-codex/common/build/schemas/equipment/combat/armourSchemas.js";
 import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 import { ArmourModificationIncludedGears } from "../../activeTables/activeGearModel.js";
+import type { DamageReductionArmourType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 
 @Entity()
 export class ArmourModifications {

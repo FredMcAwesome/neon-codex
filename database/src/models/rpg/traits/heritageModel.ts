@@ -21,7 +21,8 @@ import type {
   InitiativeType,
 } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 import { Qualities } from "./qualityModel.js";
-import { CustomisedQualities } from "../activeTables/customisedQualityModel.js";
+import { ActiveQualities } from "../activeTables/activeQualityModel.js";
+import { Characters } from "../characters/characterModel.js";
 
 @Entity({
   discriminatorColumn: "type",
@@ -35,6 +36,9 @@ export abstract class Heritages {
   // Commented as some metavariants have the same name
   // @Unique()
   name!: string;
+
+  @OneToMany(() => Characters, (character) => character.heritage)
+  characters = new Collection<Characters>(this);
 
   @Enum(() => heritageCategoryEnum)
   type!: heritageCategoryEnum;
@@ -103,11 +107,11 @@ export abstract class Heritages {
   // includedPowerList = new Collection<Powers>(this);
 
   @ManyToMany({
-    entity: () => CustomisedQualities,
+    entity: () => ActiveQualities,
     owner: true,
     joinColumn: "join_id",
   })
-  includedQualityList = new Collection<CustomisedQualities>(this);
+  includedQualityList = new Collection<ActiveQualities>(this);
 
   @ManyToMany({ entity: () => Qualities, owner: true, joinColumn: "join_id" })
   forbiddenQualityList = new Collection<Qualities>(this);

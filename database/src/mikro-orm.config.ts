@@ -35,8 +35,8 @@ import {
   IncludedWeaponMounts,
   CustomisedWeaponMounts,
 } from "./models/rpg/activeTables/activeWeaponMountModel.js";
+import { ActiveSkills } from "./models/rpg/activeTables/activeSkillModel.js";
 import { CustomisedArmours } from "./models/rpg/activeTables/customisedArmourModel.js";
-import { CustomisedSkills } from "./models/rpg/activeTables/customisedSkillModel.js";
 import { CustomisedVehicles } from "./models/rpg/activeTables/customisedVehicleModel.js";
 import { CustomisedWeapons } from "./models/rpg/activeTables/customisedWeaponModel.js";
 import {
@@ -105,6 +105,11 @@ import {
   MundaneTalentPriorityDetails,
 } from "./models/rpg/otherData/talentPriorityDetailModel.js";
 import { SkillGroups } from "./models/rpg/abilities/skillGroupModel.js";
+import {
+  ActiveQualities,
+  CustomisedQualities,
+  IncludedQualities,
+} from "./models/rpg/activeTables/activeQualityModel.js";
 
 const dbOptions: Options = {
   entities: [
@@ -114,8 +119,11 @@ const dbOptions: Options = {
 
     Skills,
     SkillGroups,
-    CustomisedSkills,
+    ActiveSkills,
     Qualities,
+    ActiveQualities,
+    IncludedQualities,
+    CustomisedQualities,
 
     Heritages,
     BaseHeritages,

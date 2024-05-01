@@ -1,15 +1,25 @@
 import {
   Collection,
   Entity,
+  ManyToOne,
   OneToMany,
   PrimaryKey,
   Property,
+  type Ref,
 } from "@mikro-orm/postgresql";
 import { CustomisedWeapons } from "../activeTables/customisedWeaponModel.js";
 import type {
   AttributesType,
+  PriorityLevelsType,
   SpecialAttributesType,
 } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
+import { ActiveSkills } from "../activeTables/activeSkillModel.js";
+import { Heritages } from "../traits/heritageModel.js";
+import { CustomisedQualities } from "../activeTables/activeQualityModel.js";
+import { CustomisedArmours } from "../activeTables/customisedArmourModel.js";
+import { CustomisedGears } from "../activeTables/activeGearModel.js";
+import { CustomisedVehicles } from "../activeTables/customisedVehicleModel.js";
+import { CustomisedAugmentations } from "../activeTables/customisedAugmentationModel.js";
 
 @Entity()
 export class Characters {
@@ -19,11 +29,11 @@ export class Characters {
   @Property()
   name!: string;
 
-  @Property()
-  metatype!: string;
+  @ManyToOne({ entity: () => Heritages, ref: true })
+  heritage!: Ref<Heritages>;
 
-  @Property()
-  priorities!: string;
+  @Property({ type: "json" })
+  priorities!: PriorityLevelsType;
 
   @Property({ type: "json" })
   attributes!: AttributesType;
@@ -31,8 +41,11 @@ export class Characters {
   @Property({ type: "json" })
   specialAttributes!: SpecialAttributesType;
 
-  @Property()
-  qualities!: string;
+  @OneToMany(() => ActiveSkills, (skill) => skill.character)
+  skills = new Collection<ActiveSkills>(this);
+
+  @OneToMany(() => CustomisedQualities, (quality) => quality.character)
+  qualities = new Collection<CustomisedQualities>(this);
 
   @Property()
   nuyen!: number;
@@ -40,25 +53,38 @@ export class Characters {
   @Property()
   karmaPoints!: number;
 
-  @OneToMany(() => CustomisedWeapons, (weapons) => weapons.character)
+  @OneToMany(() => CustomisedWeapons, (weapon) => weapon.character)
   weapons = new Collection<CustomisedWeapons>(this);
+
+  @OneToMany(() => CustomisedArmours, (armour) => armour.character)
+  armours = new Collection<CustomisedArmours>(this);
+
+  @OneToMany(() => CustomisedGears, (gear) => gear.character)
+  gears = new Collection<CustomisedGears>(this);
+
+  @OneToMany(
+    () => CustomisedAugmentations,
+    (augmentation) => augmentation.character
+  )
+  augmentations = new Collection<CustomisedAugmentations>(this);
+
+  @OneToMany(() => CustomisedVehicles, (vehicle) => vehicle.character)
+  vehicles = new Collection<CustomisedVehicles>(this);
 
   constructor(dto: {
     name: string;
-    metatype: string;
-    priorities: string;
+    heritage: Ref<Heritages>;
+    priorities: PriorityLevelsType;
     attributes: AttributesType;
     specialAttributes: SpecialAttributesType;
-    qualities: string;
     nuyen: number;
     karmaPoints: number;
   }) {
     this.name = dto.name;
-    this.metatype = dto.metatype;
+    this.heritage = dto.heritage;
     this.priorities = dto.priorities;
     this.attributes = dto.attributes;
     this.specialAttributes = dto.specialAttributes;
-    this.qualities = dto.qualities;
     this.nuyen = dto.nuyen;
     this.karmaPoints = dto.karmaPoints;
   }

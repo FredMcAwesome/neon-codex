@@ -3,8 +3,10 @@ import * as logger from "../utils/logger.js";
 import { router, privateProcedure } from "../trpc.js";
 import { Skills } from "@neon-codex/database/build/models/rpg/abilities/skillModel.js";
 import { init } from "../utils/db.js";
+import { ref } from "@mikro-orm/postgresql";
 import {
   CustomSkillListSchema,
+  type CustomSkillType,
   type SkillListType,
 } from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
 import type {
@@ -22,12 +24,16 @@ import {
 import type {
   AugmentationListType,
   AugmentationType,
+  CustomisedAugmentationType,
 } from "@neon-codex/common/build/schemas/equipment/bodyModification/augmentationSchemas.js";
 import type {
+  CustomisedGearType,
   GearListType,
   GearType,
 } from "@neon-codex/common/build/schemas/equipment/other/gearSchemas.js";
 import type {
+  CustomisedWeaponType,
+  UnlinkedWeaponAccessoryType,
   WeaponSummaryListType,
   WeaponSummaryType,
 } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
@@ -60,16 +66,21 @@ import { Gears } from "@neon-codex/database/build/models/rpg/equipment/other/gea
 import type {
   ArmourListType,
   ArmourType,
+  CustomisedArmourType,
 } from "@neon-codex/common/build/schemas/equipment/combat/armourSchemas.js";
+import type { CustomisedVehicleType } from "@neon-codex/common/build/schemas/equipment/rigger/vehicleSchemas.js";
 import {
   AttributesSchema,
-  PriorityLevelsSchema,
   SpecialAttributesSchema,
+  HeritagePrioritySelectedSchema,
+  PriorityLevelsSchema,
+  QualitySelectedListSchema,
+  type CharacterType,
 } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
 import { Armours } from "@neon-codex/database/build/models/rpg/equipment/combat/armourModel.js";
 import { Characters } from "@neon-codex/database/build/models/rpg/characters/characterModel.js";
 import {
-  QualityListSchema,
+  type CustomQualityType,
   type QualityListType,
   type QualityType,
 } from "@neon-codex/common/build/schemas/abilities/qualitySchemas.js";
@@ -77,7 +88,10 @@ import { Qualities } from "@neon-codex/database/build/models/rpg/traits/qualityM
 import {
   BaseHeritages,
   Heritages,
+  Metahumans,
+  Metasapients,
   Metavariants,
+  Shapeshifters,
 } from "@neon-codex/database/build/models/rpg/traits/heritageModel.js";
 import { Priorities } from "@neon-codex/database/build/models/rpg/otherData/priorityModel.js";
 import type {
@@ -95,6 +109,30 @@ import type {
   HeritageListType,
   HeritageType,
 } from "@neon-codex/common/build/schemas/abilities/heritageSchemas.js";
+import {
+  ActiveQualities,
+  CustomisedQualities,
+} from "@neon-codex/database/build/models/rpg/activeTables/activeQualityModel.js";
+import { ActiveSkills } from "@neon-codex/database/build/models/rpg/activeTables/activeSkillModel.js";
+import { CustomisedWeapons } from "@neon-codex/database/build/models/rpg/activeTables/customisedWeaponModel.js";
+import { CustomisedArmours } from "@neon-codex/database/build/models/rpg/activeTables/customisedArmourModel.js";
+import { WeaponAccessories } from "@neon-codex/database/build/models/rpg/equipment/combat/weaponAccessoryModel.js";
+import {
+  ActiveAugmentationGears,
+  ActiveGears,
+  CustomisedGears,
+} from "@neon-codex/database/build/models/rpg/activeTables/activeGearModel.js";
+import type { useGearType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
+import {
+  CustomisedWeaponAccessories,
+  type ActiveWeaponAccessories,
+} from "@neon-codex/database/build/models/rpg/activeTables/activeWeaponAccessoryModel.js";
+import { CustomisedArmourModifications } from "@neon-codex/database/build/models/rpg/activeTables/activeArmourModificationModel.js";
+import { ArmourModifications } from "@neon-codex/database/build/models/rpg/equipment/combat/armourModificationModel.js";
+import { CustomisedAugmentations } from "@neon-codex/database/build/models/rpg/activeTables/customisedAugmentationModel.js";
+import { VehicleModifications } from "@neon-codex/database/build/models/rpg/equipment/rigger/vehicleModificationModel.js";
+import { CustomisedVehicleModifications } from "@neon-codex/database/build/models/rpg/activeTables/activeVehicleModificationModel.js";
+import { CustomisedVehicles } from "@neon-codex/database/build/models/rpg/activeTables/customisedVehicleModel.js";
 
 export async function getSkills() {
   const db = await init();
@@ -882,10 +920,11 @@ const CharacterInformationSchema = zod
   .object({
     // TODO: Maybe a union for this with other creation types?
     priorityInfo: PriorityLevelsSchema,
+    heritageInfo: HeritagePrioritySelectedSchema,
     attributeInfo: AttributesSchema,
     specialAttributeInfo: SpecialAttributesSchema,
-    positiveQualitiesSelected: QualityListSchema,
-    negativeQualitiesSelected: QualityListSchema,
+    positiveQualitiesSelected: QualitySelectedListSchema,
+    negativeQualitiesSelected: QualitySelectedListSchema,
     skillSelections: CustomSkillListSchema,
     equipmentSelected: EquipmentListSchema,
     karmaPoints: zod.number(),
@@ -897,16 +936,242 @@ const createCharacter = privateProcedure
   .input(CharacterInformationSchema)
   .mutation(async (opts) => {
     const db = await init();
+    let heritage = await db.em.findOne(
+      Heritages,
+      { name: opts.input.heritageInfo.heritage },
+      {
+        populate: ["*"],
+      }
+    );
+    if (heritage === null) {
+      throw new Error("Heritage does not exist");
+    }
+    if (opts.input.heritageInfo.metavariant !== undefined) {
+      heritage = await db.em.findOne(
+        Metavariants,
+        {
+          name: opts.input.heritageInfo.metavariant,
+          baseHeritage: ref(heritage),
+        },
+        {
+          populate: ["*"],
+        }
+      );
+      if (heritage === null) {
+        throw new Error("Heritage does not exist");
+      }
+    }
+
+    const skillList = [];
+    for (const selectedSkill of opts.input.skillSelections) {
+      const skill = await db.em.findOne(Skills, {
+        name: selectedSkill.name,
+      });
+      if (skill === null) {
+        throw new Error("Skill does not exist");
+      }
+      const activeSkill = new ActiveSkills(
+        ref(skill),
+        selectedSkill.skillGroupPoints,
+        selectedSkill.skillPoints,
+        selectedSkill.karmaPoints,
+        selectedSkill.specialisationsSelected
+      );
+
+      skillList.push(activeSkill);
+    }
+
+    const qualityList = [];
+    const rawQualityList = opts.input.positiveQualitiesSelected.concat(
+      opts.input.negativeQualitiesSelected
+    );
+    for (const selectedQuality of rawQualityList) {
+      const quality = await db.em.findOne(Qualities, {
+        name: selectedQuality.name,
+      });
+      if (quality === null) {
+        throw new Error("Quality does not exist");
+      }
+      const activeQuality = new CustomisedQualities(
+        ref(quality),
+        selectedQuality.rating
+      );
+
+      qualityList.push(activeQuality);
+    }
+
+    const weaponList = [];
+    for (const unlinkedWeapon of opts.input.equipmentSelected.weapons) {
+      const weapon = await db.em.findOne(Weapons, {
+        name: unlinkedWeapon.name,
+      });
+      if (weapon === null) {
+        throw new Error("Weapon does not exist");
+      }
+      const activeWeapon = new CustomisedWeapons(ref(weapon));
+      if (unlinkedWeapon.accessories === undefined) {
+        continue;
+      }
+      for (const unlinkedAccessory of unlinkedWeapon.accessories) {
+        const accessory = await db.em.findOne(WeaponAccessories, {
+          name: unlinkedAccessory.name,
+        });
+        if (accessory === null) {
+          throw new Error("Weapon Accessory does not exist");
+        }
+        // TODO: confirm this cascades properly
+        new CustomisedWeaponAccessories(
+          ref(activeWeapon),
+          ref(accessory),
+          unlinkedAccessory.rating,
+          unlinkedAccessory.mount
+        );
+      }
+
+      weaponList.push(activeWeapon);
+    }
+
+    const armourList = [];
+    for (const unlinkedArmour of opts.input.equipmentSelected.armours) {
+      const armour = await db.em.findOne(Armours, {
+        name: unlinkedArmour.name,
+      });
+      if (armour === null) {
+        throw new Error("Armour does not exist");
+      }
+      const activeArmour = new CustomisedArmours(ref(armour));
+      if (unlinkedArmour.includedMods === undefined) {
+        continue;
+      }
+      for (const unlinkedMod of unlinkedArmour.includedMods) {
+        const mod = await db.em.findOne(ArmourModifications, {
+          name: unlinkedMod.name,
+        });
+        if (mod === null) {
+          throw new Error("Armour Mod does not exist");
+        }
+        // TODO: confirm this cascades properly
+        new CustomisedArmourModifications(
+          ref(activeArmour),
+          ref(mod),
+          unlinkedMod.rating
+        );
+      }
+
+      armourList.push(activeArmour);
+    }
+
+    const gearList = [];
+    for (const unlinkedGear of opts.input.equipmentSelected.gears) {
+      const gear = await db.em.findOne(Gears, {
+        name: unlinkedGear.name,
+      });
+      if (gear === null) {
+        throw new Error("Gear does not exist");
+      }
+      const activeGear = new CustomisedGears(ref(gear));
+
+      if (unlinkedGear.includedGearList === undefined) {
+        continue;
+      }
+      for (const unlinkedChildGear of unlinkedGear.includedGearList) {
+        const childGear = await db.em.findOne(Gears, {
+          name: unlinkedChildGear.name,
+        });
+        if (childGear === null) {
+          throw new Error("Gear does not exist");
+        }
+        // TODO: confirm this cascades properly
+        new CustomisedGears(ref(childGear), ref(activeGear));
+      }
+
+      gearList.push(activeGear);
+    }
+
+    const augmentationList = [];
+    for (const unlinkedAugmentation of opts.input.equipmentSelected
+      .augmentations) {
+      const augmentation = await db.em.findOne(Augmentations, {
+        name: unlinkedAugmentation.name,
+      });
+      if (augmentation === null) {
+        throw new Error("Augmentation does not exist");
+      }
+      const activeAugmentation = new CustomisedAugmentations(ref(augmentation));
+
+      if (unlinkedAugmentation.includedGearList === undefined) {
+        continue;
+      }
+      for (const unlinkedGear of unlinkedAugmentation.includedGearList) {
+        const gear = await db.em.findOne(Gears, {
+          name: unlinkedGear.name,
+        });
+        if (gear === null) {
+          throw new Error("Gear does not exist");
+        }
+        // TODO: confirm this cascades properly
+        new ActiveAugmentationGears(ref(gear), ref(activeAugmentation));
+      }
+
+      augmentationList.push(activeAugmentation);
+    }
+
+    const vehicleList = [];
+    for (const unlinkedVehicle of opts.input.equipmentSelected.vehicles) {
+      const vehicle = await db.em.findOne(Vehicles, {
+        name: unlinkedVehicle.name,
+      });
+      if (vehicle === null) {
+        throw new Error("Vehicle does not exist");
+      }
+      const activeVehicle = new CustomisedVehicles(ref(vehicle));
+      if (unlinkedVehicle.includedMods === undefined) {
+        continue;
+      }
+      for (const unlinkedMods of unlinkedVehicle.includedMods) {
+        const mod = await db.em.findOne(VehicleModifications, {
+          name: unlinkedMods.name,
+        });
+        if (mod === null) {
+          throw new Error("Vehicle Mod does not exist");
+        }
+        // TODO: confirm this cascades properly
+        new CustomisedVehicleModifications(ref(activeVehicle), ref(mod));
+      }
+
+      vehicleList.push(activeVehicle);
+    }
+
     const character = new Characters({
       name: "",
-      metatype: "",
-      priorities: "opts.input.priorityInfo",
+      heritage: ref(Heritages, heritage),
+      priorities: opts.input.priorityInfo,
       attributes: opts.input.attributeInfo,
       specialAttributes: opts.input.specialAttributeInfo,
-      qualities: "",
       nuyen: opts.input.nuyen,
       karmaPoints: opts.input.karmaPoints,
     });
+    for (const selectedSkill of skillList) {
+      character.skills.add(selectedSkill);
+    }
+    for (const selectedQuality of qualityList) {
+      character.qualities.add(selectedQuality);
+    }
+    for (const selectedWeapon of weaponList) {
+      character.weapons.add(selectedWeapon);
+    }
+    for (const selectedArmour of armourList) {
+      character.armours.add(selectedArmour);
+    }
+    for (const selectedGear of gearList) {
+      character.gears.add(selectedGear);
+    }
+    for (const selectedAugmentation of augmentationList) {
+      character.augmentations.add(selectedAugmentation);
+    }
+    for (const selectedVehicle of vehicleList) {
+      character.vehicles.add(selectedVehicle);
+    }
     await db.em.persistAndFlush(character);
     // logger.log(JSON.stringify(character, null, 2));
     return character.id;
@@ -928,13 +1193,836 @@ const getCharacter = privateProcedure
       if (character === null) {
         throw new Error("Character does not exist");
       }
+
+      const skills = await Promise.all(
+        character.skills.map(async (skill) => {
+          return await convertActiveSkillDBToDTO(skill);
+        })
+      );
+      const qualities = await Promise.all(
+        character.qualities.map(async (quality) => {
+          return await convertActiveQualityDBToDTO(quality);
+        })
+      );
+
       // logger.log(JSON.stringify(character, null, 2));
-      return character;
+      const loadedCharacter: CharacterType = {
+        name: character.name,
+        heritage: await convertHeritageDBToDTO(character.heritage.$),
+        priorities: character.priorities,
+        attributes: character.attributes,
+        specialAttributes: character.specialAttributes,
+        skills: skills,
+        qualities: qualities,
+        nuyen: character.nuyen,
+        karmaPoints: character.karmaPoints,
+        weapons: await Promise.all(
+          character.weapons.map(async (weapon) => {
+            return await convertCustomWeaponDBToDTO(weapon);
+          })
+        ),
+        armours: await Promise.all(
+          character.armours.map(async (armour) => {
+            return await convertCustomArmourDBToDTO(armour);
+          })
+        ),
+        gears: await Promise.all(
+          character.gears.map(async (gear) => {
+            return await convertCustomGearDBToDTO(gear);
+          })
+        ),
+        augmentations: await Promise.all(
+          character.augmentations.map(async (augmentation) => {
+            return await convertCustomAugmentationDBToDTO(augmentation);
+          })
+        ),
+        vehicles: await Promise.all(
+          character.vehicles.map(async (vehicle) => {
+            return await convertCustomVehicleDBToDTO(vehicle);
+          })
+        ),
+      };
+      return loadedCharacter;
     } catch (error) {
       logger.error("Unable to connect to the database:", error);
       throw new Error("Database error");
     }
   });
+
+const convertHeritageDBToDTO = async function (
+  heritageDB: Heritages
+): Promise<HeritageType> {
+  let typeInformation;
+  if (heritageDB instanceof Metahumans) {
+    typeInformation = {
+      category: heritageCategoryEnum.Metahuman as const,
+    };
+  } else if (heritageDB instanceof Metasapients) {
+    typeInformation = {
+      category: heritageCategoryEnum.Metasapient as const,
+    };
+  } else if (heritageDB instanceof Shapeshifters) {
+    typeInformation = {
+      category: heritageCategoryEnum.Shapeshifter as const,
+    };
+  } else if (heritageDB instanceof Metavariants) {
+    const db = await init();
+    const baseHeritage = await db.em.findOne(
+      BaseHeritages,
+      heritageDB.baseHeritage.id,
+      {
+        populate: ["*"],
+      }
+    );
+    if (baseHeritage === null) {
+      throw new Error("Heritage does not exist");
+    }
+    typeInformation = {
+      category: heritageCategoryEnum.Metavariant as const,
+      baseHeritage: baseHeritage.name,
+    };
+  } else {
+    throw new Error("Unknown heritage type");
+  }
+
+  return {
+    name: heritageDB.name,
+    ...typeInformation,
+    ...(heritageDB.halveAttributePoints !== undefined && {
+      halveAttributePoints: true,
+    }),
+    pointBuyKarmaCost: heritageDB.pointBuyKarmaCost,
+    bodyAttributeRange: heritageDB.bodyAttributeRange,
+    agilityAttributeRange: heritageDB.agilityAttributeRange,
+    reactionAttributeRange: heritageDB.reactionAttributeRange,
+    strengthAttributeRange: heritageDB.strengthAttributeRange,
+    charismaAttributeRange: heritageDB.charismaAttributeRange,
+    intuitionAttributeRange: heritageDB.intuitionAttributeRange,
+    logicAttributeRange: heritageDB.logicAttributeRange,
+    willpowerAttributeRange: heritageDB.willpowerAttributeRange,
+    initiativeAttributeRange: heritageDB.initiativeAttributeRange,
+    edgeAttributeRange: heritageDB.edgeAttributeRange,
+    magicAttributeRange: heritageDB.magicAttributeRange,
+    resonanceAttributeRange: heritageDB.resonanceAttributeRange,
+    essenceAttributeRange: heritageDB.essenceAttributeRange,
+    depthAttributeRange: heritageDB.depthAttributeRange,
+    ...(heritageDB.initiative !== undefined && {
+      initiative: heritageDB.initiative,
+    }),
+    ...(heritageDB.nonStandardMovement !== undefined && {
+      nonStandardMovement: heritageDB.nonStandardMovement,
+    }),
+    ...(heritageDB.movement !== undefined && {
+      movement: heritageDB.movement,
+    }),
+    ...(heritageDB.includedWeaponList !== undefined && {
+      addWeaponList: heritageDB.includedWeaponList.map((weapon) => {
+        return weapon.name;
+      }),
+    }),
+    // ...(heritageDB.addPowerList !== undefined && {
+    //   addPowerList: heritageDB.addPowerList,
+    // }),
+    ...(heritageDB.includedQualityList !== undefined && {
+      addQualityList: await Promise.all(
+        heritageDB.includedQualityList.map(async (activeQuality) => {
+          const db = await init();
+          const quality = await db.em.findOne(
+            Qualities,
+            activeQuality.quality.id,
+            {
+              populate: ["*"],
+            }
+          );
+          if (quality === null) {
+            throw new Error("Heritage does not exist");
+          }
+          return { name: quality.name, rating: activeQuality.rating };
+        })
+      ),
+    }),
+    ...(heritageDB.forbiddenQualityList !== undefined && {
+      forbiddenQualityList: heritageDB.forbiddenQualityList.map((quality) => {
+        return quality.name;
+      }),
+    }),
+    ...(heritageDB.bonus !== undefined && {
+      bonus: heritageDB.bonus,
+    }),
+    source: heritageDB.source,
+    page: heritageDB.page,
+    description: heritageDB.description,
+  };
+};
+
+const convertActiveSkillDBToDTO = async function (
+  activeSkillDB: ActiveSkills
+): Promise<CustomSkillType> {
+  const db = await init();
+  const skillDB = await db.em.findOne(Skills, activeSkillDB.skill.id, {
+    populate: ["*"],
+  });
+  if (skillDB === null) {
+    throw new Error("Skill does not exist");
+  }
+
+  return {
+    name: skillDB.name,
+    description: skillDB.description,
+    category: skillDB.category,
+    attribute: skillDB.attribute,
+    default: skillDB.default,
+    exotic: skillDB.exotic,
+    ...(skillDB.skillGroup !== undefined && {
+      skillGroup: skillDB.skillGroup.$.name,
+    }),
+    specialisations: skillDB.defaultSpecialisations,
+    source: skillDB.source,
+    page: skillDB.page,
+
+    skillGroupPoints: activeSkillDB.skillGroupPoints,
+    skillPoints: activeSkillDB.skillPoints,
+    karmaPoints: activeSkillDB.karmaPoints,
+    specialisationsSelected: activeSkillDB.specialisationsSelected,
+  };
+};
+
+const convertActiveQualityDBToDTO = async function (
+  activeQualityDB: ActiveQualities
+): Promise<CustomQualityType> {
+  const db = await init();
+  const qualityDB = await db.em.findOne(Qualities, activeQualityDB.quality.id, {
+    populate: ["*"],
+  });
+  if (qualityDB === null) {
+    throw new Error("Character does not exist");
+  }
+
+  return {
+    name: qualityDB.name,
+    description: qualityDB.description,
+    category: qualityDB.category,
+    karma: qualityDB.karma,
+    charGenOnly: qualityDB.charGenOnly,
+    charGenLimit: qualityDB.charGenLimit,
+    charGenDoNotContributeToKarmaLimit:
+      qualityDB.charGenDoNotContributeToKarmaLimit,
+    charGenNoKarma: qualityDB.charGenNoKarma,
+    chargenQualityOnly_NotSelectableIfPriorityChargen:
+      qualityDB.chargenQualityOnly_NotSelectableIfPriorityChargen,
+    careerOnly: qualityDB.careerOnly,
+    charGenCostInCareer: qualityDB.charGenCostInCareer,
+    limit: qualityDB.limit,
+    sharedLimitQualityList: qualityDB.sharedLimitQualityList.$.map(
+      (quality) => quality.name
+    ),
+    karmaDiscount: qualityDB.karmaDiscount,
+    noLevels: qualityDB.noLevels,
+    firstLevelBonus: qualityDB.firstLevelBonus,
+    addWeapons: qualityDB.includedWeaponList.$.map((weapon) => weapon.name),
+    isMetagenic: qualityDB.isMetagenic,
+    canBuyWithSpellPoints: qualityDB.canBuyWithSpellPoints,
+    userSelectable: qualityDB.userSelectable,
+    bonus: qualityDB.bonus,
+    requirements: qualityDB.requirements,
+    forbidden: qualityDB.forbidden,
+    source: qualityDB.source,
+    page: qualityDB.page,
+
+    rating: activeQualityDB.rating,
+  };
+};
+const convertCustomWeaponDBToDTO = async function (
+  customWeaponDB: CustomisedWeapons
+): Promise<CustomisedWeaponType> {
+  const db = await init();
+  const weaponDB = await db.em.findOne(Weapons, customWeaponDB.weapon.id, {
+    populate: ["*"],
+  });
+  if (weaponDB === null) {
+    throw new Error("Weapon does not exist");
+  }
+  const convertedWeapon = await convertWeaponDBToDTO(weaponDB);
+  const convertedAccessories = await Promise.all(
+    customWeaponDB.accessories.map((accessory) => {
+      return convertIncludedWeaponAccessoryDBToDTO(accessory);
+    })
+  );
+
+  return {
+    baseWeapon: convertedWeapon,
+    accessories: convertedAccessories,
+    rating: customWeaponDB.rating,
+    customName: customWeaponDB.customName,
+  };
+};
+
+const convertWeaponDBToDTO = async function (
+  weaponDB: Weapons
+): Promise<WeaponSummaryType> {
+  const hostWeaponRequirements = {
+    requirements: weaponDB.requirements,
+    hostWeaponMountsRequired: weaponDB.hostWeaponMountsRequired,
+  };
+
+  const relatedSkill = await weaponDB.relatedSkill.load();
+  if (relatedSkill === null) {
+    throw new Error("Related skill is unknown");
+  }
+
+  const weaponTypeInformation = convertWeaponDBTypeInformationToDTO(weaponDB);
+
+  return {
+    name: weaponDB.name,
+    ...weaponTypeInformation,
+    description: weaponDB.description,
+    wireless: weaponDB.wireless,
+    concealability: weaponDB.concealability,
+    accuracy: weaponDB.accuracy,
+    damage: weaponDB.damage,
+    armourPenetration: weaponDB.armourPenetration,
+    ammunition: weaponDB.ammunition,
+    allowedGearList: weaponDB.allowedGearList.map((gear) => {
+      return gear.name;
+    }),
+    allowedGearCategories: weaponDB.allowedGearCategories,
+    accessories: await Promise.all(
+      weaponDB.includedAccessories.map((accessory) => {
+        return convertIncludedWeaponAccessoryDBToDTO(accessory);
+      })
+    ),
+    allowAccessories: weaponDB.allowAccessories,
+    userSelectable: weaponDB.userSelectable,
+    augmentationType: weaponDB.augmentationType,
+    alternativeWeaponForms: weaponDB.alternativeWeaponForms.map((weapon) => {
+      return weapon.name;
+    }),
+    hostWeaponRequirements: hostWeaponRequirements,
+    relatedSkill: relatedSkill.name,
+    relatedSkillSpecialisations: weaponDB.relatedSkillSpecialisations,
+    availability: weaponDB.availability,
+    cost: weaponDB.cost,
+    source: weaponDB.source,
+    page: weaponDB.page,
+  };
+};
+
+const convertWeaponDBTypeInformationToDTO = function (weaponDB: Weapons) {
+  if (weaponDB instanceof MeleeWeapons) {
+    return {
+      type: weaponTypeEnum.Melee as const,
+      subtype: weaponDB.subtype,
+      meleeOptions: {
+        reach: weaponDB.reach,
+      },
+    };
+  } else if (weaponDB instanceof ProjectileWeapons) {
+    return {
+      type: weaponTypeEnum.Projectile as const,
+      subtype: weaponDB.subtype,
+      extraClassification: weaponDB.extraClassification,
+      rangeList: weaponDB.ranges.map((range) => {
+        return range.name;
+      }),
+    };
+  } else if (weaponDB instanceof FirearmWeapons) {
+    return {
+      type: weaponTypeEnum.Firearm as const,
+      subtype: weaponDB.subtype,
+      extraClassification: weaponDB.extraClassification,
+      firearmOptions: {
+        mode: weaponDB.mode,
+        recoilCompensation: weaponDB.recoilCompensation,
+        ammoCategory: weaponDB.ammoCategory,
+        ammoSlots: weaponDB.ammoSlots,
+        ...(weaponDB.underbarrelWeapons.length > 0 && {
+          underbarrelWeapons: weaponDB.underbarrelWeapons.map((weapon) => {
+            return weapon.name;
+          }),
+        }),
+        accessoryMounts: weaponDB.accessoryMounts,
+        doubleCostAccessoryMounts: weaponDB.doubleCostAccessoryMounts,
+      },
+      rangeList: weaponDB.ranges.map((range) => {
+        return range.name;
+      }),
+    };
+  } else if (weaponDB instanceof Explosives) {
+    return {
+      type: weaponTypeEnum.Explosive as const,
+      subtype: weaponDB.subtype,
+      rangeList: weaponDB.ranges.map((range) => {
+        return range.name;
+      }),
+    };
+  } else {
+    throw new Error("Unknown Weapon type");
+  }
+};
+
+const convertIncludedWeaponAccessoryDBToDTO = async function (
+  includedAccessoryDB: ActiveWeaponAccessories
+): Promise<UnlinkedWeaponAccessoryType> {
+  const db = await init();
+
+  const weaponAccessoryDB = await db.em.findOne(
+    WeaponAccessories,
+    includedAccessoryDB.weaponAccessory.id,
+    {
+      populate: ["*"],
+    }
+  );
+  if (weaponAccessoryDB === null) {
+    throw new Error("Weapon does not exist");
+  }
+
+  return {
+    name: weaponAccessoryDB.name,
+    mount: includedAccessoryDB.weaponMountsUsed,
+    rating: includedAccessoryDB.rating,
+    gears: await Promise.all(
+      includedAccessoryDB.includedGearList.map(async (gear) => {
+        return await convertActiveGearDBToDTO(gear);
+      })
+    ),
+  };
+};
+
+const convertCustomArmourDBToDTO = async function (
+  activeArmourDB: CustomisedArmours
+): Promise<CustomisedArmourType> {
+  const db = await init();
+  const armourDB = await db.em.findOne(Armours, activeArmourDB.armour.id, {
+    populate: ["*"],
+  });
+  if (armourDB === null) {
+    throw new Error("Armour does not exist");
+  }
+  const baseArmour = await convertArmourDBToDTO(armourDB);
+  return {
+    baseArmour: baseArmour,
+    // TODO add these...
+    // modList: modList,
+    // gearList: gearList,
+    // rating?
+    customName: activeArmourDB.customName,
+  };
+};
+
+export const convertArmourDBToDTO = async function (
+  armourDB: Armours
+): Promise<ArmourType> {
+  // let includedWeapon;
+  // const db = await init();
+  // if (armourDB.includedWeapon !== undefined) {
+  //   const weaponDB = await db.em.findOne(
+  //     CustomisedWeapons,
+  //     armourDB.includedWeapon,
+  //     {
+  //       populate: ["*"],
+  //     }
+  //   );
+  //   if (weaponDB === null) {
+  //     throw new Error("Weapon does not exist");
+  //   }
+  //   includedWeapon = {
+  //     name: weaponDB.weapon.$.name,
+  //     // TODO: fix this conversion..
+  //     // rating: weaponDB.rating
+  //   };
+  // }
+  return {
+    name: armourDB.name,
+    description: armourDB.description,
+    category: armourDB.category,
+    maxRating: armourDB.maxRating,
+    damageReduction: armourDB.damageReduction,
+    customFitStackDamageReduction: armourDB.customFitStackDamageReduction,
+    capacity: armourDB.capacity,
+    ...(armourDB.linkedWeapon !== undefined && { isWeapon: true }),
+    // TODO: add
+    // includedGearList: armourDB.includedGearList,
+    bonus: armourDB.bonus,
+    wirelessBonus: armourDB.wirelessBonus,
+    // TODO: Add
+    // includedMods: armourDB.includedMods,
+    allowModsFromCategory: armourDB.allowModsFromCategory,
+    addModFromCategory: armourDB.addModFromCategory,
+    availability: armourDB.availability,
+    cost: armourDB.cost,
+    source: armourDB.source,
+    page: armourDB.page,
+  };
+};
+
+const convertActiveGearDBToDTO = async function (
+  activeGearDB: ActiveGears
+): Promise<useGearType> {
+  const db = await init();
+  const gearDB = await db.em.findOne(Gears, activeGearDB.gear.id, {
+    populate: ["*"],
+  });
+  if (gearDB === null) {
+    throw new Error("Gear does not exist");
+  }
+
+  return {
+    name: gearDB.name,
+    category: gearDB.category,
+    specificOption: activeGearDB.specificOption,
+    rating: activeGearDB.rating,
+    ...(activeGearDB.consumeCapacity !== undefined && {
+      consumeCapacity: true,
+    }),
+    quantity: activeGearDB.quantity,
+  };
+};
+
+const convertCustomGearDBToDTO = async function (
+  customisedGearDB: CustomisedGears
+): Promise<CustomisedGearType> {
+  const db = await init();
+  const gearDB = await db.em.findOne(Gears, customisedGearDB.gear.id, {
+    populate: ["*"],
+  });
+  if (gearDB === null) {
+    throw new Error("Gear does not exist");
+  }
+
+  return {
+    baseGear: await convertGearDBToDTO(gearDB),
+    gearList: await Promise.all(
+      customisedGearDB.childrenGear.map(async (childGear) => {
+        const loadedChildGear = await childGear.gear.load();
+        if (loadedChildGear === null) {
+          throw new Error("Gear does not exist");
+        }
+        return convertGearDBToDTO(loadedChildGear);
+      })
+    ),
+  };
+};
+
+export const convertGearDBToDTO = async function (
+  gearDB: Gears
+): Promise<GearType> {
+  let includedWeapon;
+  const db = await init();
+  if (gearDB.includedWeapon !== undefined) {
+    const weaponDB = await db.em.findOne(
+      CustomisedWeapons,
+      gearDB.includedWeapon,
+      {
+        populate: ["*"],
+      }
+    );
+    if (weaponDB === null) {
+      throw new Error("Weapon does not exist");
+    }
+    includedWeapon = {
+      name: weaponDB.weapon.$.name,
+      // TODO: fix this conversion..
+      // rating: weaponDB.rating
+    };
+  }
+  return {
+    name: gearDB.name,
+    description: gearDB.description,
+    category: gearDB.category,
+    minRating: gearDB.minRating,
+    maxRating: gearDB.maxRating,
+    ratingMeaning: gearDB.ratingMeaning,
+    includedWeapon: includedWeapon,
+    allowCategoryList: gearDB.allowCategoryList,
+    quantity: gearDB.quantity,
+    bonus: gearDB.bonus,
+    weaponBonus: gearDB.weaponBonus,
+    isFlechetteAmmo: gearDB.isFlechetteAmmo,
+    flechetteWeaponBonus: gearDB.flechetteWeaponBonus,
+    ammoForWeaponType: gearDB.ammoForWeaponType,
+    explosiveWeight: gearDB.explosiveWeight,
+    userSelectable: gearDB.userSelectable,
+    allowedGearList: gearDB.allowedGearList.map((gear) => {
+      return gear.name;
+    }),
+    includedGearList: gearDB.includedGearList.map((gear) => {
+      return {
+        name: gear.name,
+      };
+    }),
+    deviceRating: gearDB.deviceRating,
+    programs: gearDB.programs,
+    attributeArray: gearDB.attributeArray,
+    attack: gearDB.attack,
+    sleaze: gearDB.sleaze,
+    dataProcessing: gearDB.dataProcessing,
+    firewall: gearDB.firewall,
+    canFormPersona: gearDB.canFormPersona,
+    capacityInformation: gearDB.capacityInformation,
+    armourCapacityInformation: gearDB.armourCapacityInformation,
+    requirements: gearDB.requirements,
+    requireParent: gearDB.requireParent,
+    forbidden: gearDB.forbidden,
+    modifyAttributeArray: gearDB.modifyAttributeArray,
+    modifyAttack: gearDB.modifyAttack,
+    modifySleaze: gearDB.modifySleaze,
+    modifyDataProcessing: gearDB.modifyDataProcessing,
+    modifyFirewall: gearDB.modifyFirewall,
+    addMatrixBoxes: gearDB.addMatrixBoxes,
+    renameCustomLabel: gearDB.renameCustomLabel,
+    availability: gearDB.availability,
+    cost: gearDB.cost,
+    source: gearDB.source,
+    page: gearDB.page,
+  };
+};
+
+const convertCustomAugmentationDBToDTO = async function (
+  customisedAugmentationDB: CustomisedAugmentations
+): Promise<CustomisedAugmentationType> {
+  const db = await init();
+  const augmentationDB = await db.em.findOne(
+    Augmentations,
+    customisedAugmentationDB.augmentation.id,
+    {
+      populate: ["*"],
+    }
+  );
+  if (augmentationDB === null) {
+    throw new Error("Augmentation does not exist");
+  }
+
+  return {
+    baseAugmentation: await convertAugmentationDBToDTO(augmentationDB),
+    gearList: await Promise.all(
+      customisedAugmentationDB.includedGearList.map(async (childGear) => {
+        const loadedChildGear = await childGear.gear.load();
+        if (loadedChildGear === null) {
+          throw new Error("Gear does not exist");
+        }
+        return convertGearDBToDTO(loadedChildGear);
+      })
+    ),
+  };
+};
+
+export const convertAugmentationDBToDTO = async function (
+  augmentationDB: Augmentations
+): Promise<AugmentationType> {
+  const typeInformation = await convertAugmentationTypeInformation(
+    augmentationDB
+  );
+
+  let addWeapon;
+  if (augmentationDB.addWeapon !== undefined) {
+    addWeapon = await augmentationDB.addWeapon.load();
+    if (addWeapon === null) {
+      throw new Error("Weapon does not exist");
+    }
+    addWeapon = addWeapon.name;
+  }
+
+  return {
+    ...typeInformation,
+    name: augmentationDB.name,
+    description: augmentationDB.description,
+    wireless: augmentationDB.wireless,
+    augmentationLimit: augmentationDB.augmentationLimit,
+    unavailableGrades: augmentationDB.unavailableGrades,
+    essenceCost: augmentationDB.essenceCost,
+    modification: augmentationDB.modification,
+    rating: augmentationDB.rating,
+    ratingMeaning: augmentationDB.ratingMeaning,
+    addWeapon: addWeapon,
+    blockedMountList: augmentationDB.blockedMountList,
+    selectSide: augmentationDB.selectSide,
+    bonus: augmentationDB.bonus,
+    pairBonus: augmentationDB.pairBonus,
+    pairIncludeList: augmentationDB.pairIncludeList.map((augmentation) => {
+      return augmentation.name;
+    }),
+    requirements: augmentationDB.requirements,
+    forbidden: augmentationDB.forbidden,
+    allowedGearList: augmentationDB.allowedGearList.map((gear) => {
+      return gear.name;
+    }),
+    includedGearList: await Promise.all(
+      augmentationDB.includedGearList.map(async (gear) => {
+        const loadedGear = await gear.gear.load();
+        if (loadedGear === null) {
+          throw new Error("Gear does not exist");
+        }
+        return {
+          name: loadedGear.name,
+          // TODO: add the rest...
+        };
+      })
+    ),
+    allowedGearCategories: augmentationDB.allowedGearCategories,
+    userSelectable: augmentationDB.userSelectable,
+    allowCategoryList: augmentationDB.allowCategoryList,
+    availability: augmentationDB.availability,
+    cost: augmentationDB.cost,
+    source: augmentationDB.source,
+    page: augmentationDB.page,
+  };
+};
+
+const convertAugmentationTypeInformation = async function (
+  augmentationDB: Augmentations
+) {
+  if (augmentationDB instanceof Cyberwares) {
+    let addVechicle;
+    if (augmentationDB.linkedVehicle !== undefined) {
+      addVechicle = await augmentationDB.linkedVehicle.load();
+      if (addVechicle === null) {
+        throw new Error("Vehicle does not exist");
+      }
+    }
+    return {
+      type: augmentationTypeEnum.Cyberware as const,
+      subtype: augmentationDB.subtype,
+      programs: augmentationDB.programs,
+      capacity: augmentationDB.capacity,
+      capacityCost: augmentationDB.capacityCost,
+      addToParentCapacity: augmentationDB.addToParentCapacity,
+      addParentWeaponAccessory: augmentationDB.addParentWeaponAccessory,
+      removalCost: augmentationDB.removalCost,
+      inheritAttributes: augmentationDB.inheritAttributes,
+      limbSlot: augmentationDB.limbSlot,
+      useBothLimbSlots: augmentationDB.useBothLimbSlots,
+      mountsLocation: augmentationDB.mountsLocation,
+      modularMount: augmentationDB.modularMount,
+      wirelessBonus: augmentationDB.wirelessBonus,
+      wirelessPairBonus: augmentationDB.wirelessPairBonus,
+      ...(augmentationDB.wirelessPairLinkedCyberware !== undefined && {
+        wirelessPairInclude: augmentationDB.wirelessPairLinkedCyberware.name,
+      }),
+      subsystemList: augmentationDB.subsystemList,
+      forceGrade: augmentationDB.forceGrade,
+      deviceRating: augmentationDB.deviceRating,
+      addVechicle: addVechicle,
+      wireless: augmentationDB.wireless,
+    };
+  } else if (augmentationDB instanceof Biowares) {
+    return {
+      type: augmentationTypeEnum.Bioware as const,
+      subtype: augmentationDB.subtype,
+      ...(augmentationDB.isGeneware !== undefined && {
+        isGeneware: true as const,
+      }),
+    };
+  } else {
+    throw new Error("Augmentation type unknown");
+  }
+};
+
+const convertCustomVehicleDBToDTO = async function (
+  activeVehicleDB: CustomisedVehicles
+): Promise<CustomisedVehicleType> {
+  const db = await init();
+  const vehicleDB = await db.em.findOne(Vehicles, activeVehicleDB.vehicle.id, {
+    populate: ["*"],
+  });
+  if (vehicleDB === null) {
+    throw new Error("Vehicle does not exist");
+  }
+  const baseVehicle = await convertVehicleDBToDTO(vehicleDB);
+  return {
+    baseVehicle: baseVehicle,
+    // TODO add these...
+    // modList: modList,
+    // gearList: gearList,
+    // rating?
+    customName: activeVehicleDB.customName,
+  };
+};
+
+export const convertVehicleDBToDTO = async function (
+  vehicleDB: Vehicles
+): Promise<VehicleType> {
+  const typeInformation = convertVehicleTypeInformation(vehicleDB);
+  return {
+    ...typeInformation,
+    name: vehicleDB.name,
+    description: vehicleDB.description,
+    handling: vehicleDB.handling,
+    speed: vehicleDB.speed,
+    acceleration: vehicleDB.acceleration,
+    body: vehicleDB.body,
+    armour: vehicleDB.armour,
+    pilot: vehicleDB.pilot,
+    sensor: vehicleDB.sensor,
+    includedGearList: await Promise.all(
+      vehicleDB.includedGearList.map(async (gear) => {
+        const loadedGear = await gear.gear.load();
+        if (loadedGear === null) {
+          throw new Error("Gear does not exist");
+        }
+        return {
+          name: loadedGear.name,
+          // TODO: add the rest...
+        };
+      })
+    ),
+    includedMods: await Promise.all(
+      vehicleDB.includedModList.map(async (mod) => {
+        const loadedMod = await mod.vehicleModification.load();
+        if (loadedMod === null) {
+          throw new Error("Vehicle Mod does not exist");
+        }
+        return {
+          name: loadedMod.name,
+          // TODO: add the rest...
+        };
+      })
+    ),
+    modSlots: vehicleDB.modSlots,
+    powerTrainModSlots: vehicleDB.powerTrainModSlots,
+    protectionModSlots: vehicleDB.protectionModSlots,
+    weaponModSlots: vehicleDB.weaponModSlots,
+    bodyModSlots: vehicleDB.bodyModSlots,
+    electromagneticModSlots: vehicleDB.electromagneticModSlots,
+    cosmeticModSlots: vehicleDB.cosmeticModSlots,
+    // TODO: add
+    // weaponList: vehicleDB.weaponList,
+    // weaponMountList: vehicleDB.weaponMountList,
+    userSelectable: vehicleDB.userSelectable,
+    availability: vehicleDB.availability,
+    cost: vehicleDB.cost,
+    source: vehicleDB.source,
+    page: vehicleDB.page,
+  };
+};
+
+const convertVehicleTypeInformation = function (vehicleDB: Vehicles) {
+  if (vehicleDB instanceof Groundcrafts) {
+    return {
+      type: vehicleTypeEnum.Groundcraft as const,
+      subtype: vehicleDB.subtype,
+      seats: vehicleDB.seats,
+    };
+  } else if (vehicleDB instanceof Watercrafts) {
+    return {
+      type: vehicleTypeEnum.Watercraft as const,
+      subtype: vehicleDB.subtype,
+      seats: vehicleDB.seats,
+    };
+  } else if (vehicleDB instanceof Aircrafts) {
+    return {
+      type: vehicleTypeEnum.Aircraft as const,
+      subtype: vehicleDB.subtype,
+      seats: vehicleDB.seats,
+    };
+  } else if (vehicleDB instanceof Drones) {
+    return {
+      type: vehicleTypeEnum.Drone as const,
+      subtype: vehicleDB.subtype,
+    };
+  } else {
+    throw new Error("Vehicle type unknown");
+  }
+};
 
 export const characterRouter = router({
   skills: skills,

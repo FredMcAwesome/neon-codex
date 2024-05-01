@@ -4,8 +4,8 @@ import type {
   PriorityLevelsType,
   AttributesType,
   SpecialAttributesType,
+  QualitySelectedListType,
 } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
-import type { QualityListType } from "@neon-codex/common/build/schemas/abilities/qualitySchemas.js";
 import type { SkillPointInfoType } from "../commonSchemas.js";
 
 interface IProps {
@@ -13,8 +13,8 @@ interface IProps {
   attributeInfo: AttributesType;
   specialAttributeInfo: SpecialAttributesType;
   karmaPoints: number;
-  positiveQualitiesSelected: QualityListType;
-  negativeQualitiesSelected: QualityListType;
+  positiveQualitiesSelected: QualitySelectedListType;
+  negativeQualitiesSelected: QualitySelectedListType;
   skillPoints: SkillPointInfoType;
   skillSelections: CustomSkillListType;
   equipmentSelected: EquipmentListType;
@@ -53,7 +53,11 @@ export const CreatorSummary = function (props: IProps) {
         Positive Qualities:
         <ul>
           {props.positiveQualitiesSelected.map((quality) => {
-            return <li key={quality.name}>{quality.name}</li>;
+            return (
+              <li key={quality.name}>
+                {quality.name} : {quality.rating}
+              </li>
+            );
           })}
         </ul>
       </div>
@@ -61,7 +65,11 @@ export const CreatorSummary = function (props: IProps) {
         Negative Qualities:
         <ul>
           {props.negativeQualitiesSelected.map((quality) => {
-            return <li key={quality.name}>{quality.name}</li>;
+            return (
+              <li key={quality.name}>
+                {quality.name} : {quality.rating}
+              </li>
+            );
           })}
         </ul>
       </div>

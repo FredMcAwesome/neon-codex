@@ -1,4 +1,11 @@
-import { Entity, ManyToOne, PrimaryKey, Property } from "@mikro-orm/postgresql";
+import {
+  Collection,
+  Entity,
+  ManyToOne,
+  OneToMany,
+  PrimaryKey,
+  Property,
+} from "@mikro-orm/postgresql";
 import type { Ref } from "@mikro-orm/postgresql";
 import { ActiveWeaponAccessories } from "./activeWeaponAccessoryModel.js";
 import { Augmentations } from "../equipment/bodyModification/augmentationModel.js";
@@ -7,6 +14,8 @@ import { ArmourModifications } from "../equipment/combat/armourModificationModel
 import { WeaponAccessories } from "../equipment/combat/weaponAccessoryModel.js";
 import { Gears } from "../equipment/other/gearModel.js";
 import { Vehicles } from "../equipment/rigger/vehicleModel.js";
+import { Characters } from "../characters/characterModel.js";
+import { CustomisedAugmentations } from "./customisedAugmentationModel.js";
 
 @Entity({
   discriminatorColumn: "discr",
@@ -136,6 +145,24 @@ export class AugmentationIncludedGears extends ActiveGears {
   }
 }
 
+@Entity({ discriminatorValue: "activeAugmentation" })
+export class ActiveAugmentationGears extends ActiveGears {
+  @ManyToOne({ entity: () => CustomisedAugmentations, ref: true })
+  activeAugmentation: Ref<CustomisedAugmentations>;
+
+  constructor(
+    gear: Ref<Gears>,
+    activeAugmentation: Ref<CustomisedAugmentations>,
+    specificOption?: string,
+    rating?: number,
+    consumeCapacity?: boolean,
+    quantity?: number
+  ) {
+    super(gear, specificOption, rating, consumeCapacity, quantity);
+    this.activeAugmentation = activeAugmentation;
+  }
+}
+
 @Entity({ discriminatorValue: "vehicle" })
 export class VehicleIncludedGears extends ActiveGears {
   @ManyToOne({ entity: () => Vehicles, ref: true })
@@ -169,5 +196,31 @@ export class GearIncludedGears extends ActiveGears {
   ) {
     super(includedGear, specificOption, rating, consumeCapacity, quantity);
     this.linkedGear = linkedGear;
+  }
+}
+
+@Entity({ discriminatorValue: "customisedGear" })
+export class CustomisedGears extends ActiveGears {
+  @ManyToOne({ entity: () => Characters, ref: true })
+  character!: Ref<Characters>;
+
+  @OneToMany(() => CustomisedGears, (gear) => gear.parentGear)
+  childrenGear = new Collection<CustomisedGears>(this);
+
+  @ManyToOne({ entity: () => CustomisedGears, ref: true, nullable: true })
+  parentGear?: Ref<CustomisedGears>;
+
+  constructor(
+    includedGear: Ref<Gears>,
+    parentGear?: Ref<CustomisedGears>,
+    specificOption?: string,
+    rating?: number,
+    consumeCapacity?: boolean,
+    quantity?: number
+  ) {
+    super(includedGear, specificOption, rating, consumeCapacity, quantity);
+    if (parentGear !== undefined) {
+      this.parentGear = parentGear;
+    }
   }
 }

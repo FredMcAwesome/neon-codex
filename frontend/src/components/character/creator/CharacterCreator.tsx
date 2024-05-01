@@ -14,10 +14,10 @@ import type {
   SpecialAttributesType,
   PriorityLevelsType,
   HeritagePrioritySelectedType,
+  QualitySelectedListType,
 } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
 import { CreatorSummary } from "./CreatorSummary.js";
 import { useNavigate } from "react-router-dom";
-import type { QualityListType } from "@neon-codex/common/build/schemas/abilities/qualitySchemas.js";
 import {
   priorityLetterEnum,
   talentCategoryEnum,
@@ -75,9 +75,9 @@ const CharacterCreator = function () {
     });
   const [karmaPoints, setKarmaPoints] = useState(25);
   const [positiveQualitiesSelected, setPositiveQualitiesSelected] =
-    useState<QualityListType>([]);
+    useState<QualitySelectedListType>([]);
   const [negativeQualitiesSelected, setNegativeQualitiesSelected] =
-    useState<QualityListType>([]);
+    useState<QualitySelectedListType>([]);
   const [skillPoints, setSkillPoints] = useState<SkillPointInfoType>({
     skillPoints: 0,
     skillGroupPoints: 0,
@@ -153,12 +153,12 @@ const CharacterCreator = function () {
     setKarmaPoints(loadingKarma);
   };
   const onPositiveQualitiesSelectedChanged = function (
-    loadingPositiveQualities: QualityListType
+    loadingPositiveQualities: QualitySelectedListType
   ) {
     setPositiveQualitiesSelected(loadingPositiveQualities);
   };
   const onNegativeQualitiesSelectedChanged = function (
-    loadingNegativeQualities: QualityListType
+    loadingNegativeQualities: QualitySelectedListType
   ) {
     setNegativeQualitiesSelected(loadingNegativeQualities);
   };
@@ -306,6 +306,7 @@ const CharacterCreator = function () {
         onClick={async () => {
           const characterId = await character.mutateAsync({
             priorityInfo: priorityInfo,
+            heritageInfo: priorityHeritage,
             attributeInfo: attributeInfo,
             specialAttributeInfo: specialAttributeInfo,
             positiveQualitiesSelected: positiveQualitiesSelected,

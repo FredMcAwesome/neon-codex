@@ -7,14 +7,17 @@ import {
   Property,
 } from "@mikro-orm/postgresql";
 import type { Ref } from "@mikro-orm/postgresql";
-import { CustomisedWeaponAccessories } from "./activeWeaponAccessoryModel.js";
 import { CustomisedArmourModifications } from "./activeArmourModificationModel.js";
 import { Armours } from "../equipment/combat/armourModel.js";
+import { Characters } from "../characters/characterModel.js";
 
 @Entity()
 export class CustomisedArmours {
   @PrimaryKey()
   id!: number;
+
+  @ManyToOne({ entity: () => Characters, ref: true })
+  character!: Ref<Characters>;
 
   @ManyToOne({ entity: () => Armours, ref: true })
   armour!: Ref<Armours>;
@@ -23,7 +26,7 @@ export class CustomisedArmours {
     () => CustomisedArmourModifications,
     (armourModifications) => armourModifications.customisedArmour
   )
-  accessories = new Collection<CustomisedWeaponAccessories>(this);
+  accessories = new Collection<CustomisedArmourModifications>(this);
 
   @Property({ nullable: true })
   customName?: string;

@@ -21,6 +21,8 @@ import {
   UseGearListSchema,
 } from "../../shared/commonSchemas.js";
 import { GenericVehicleModListSchema } from "../../shared/modSchemas.js";
+import { GearListSchema } from "../other/gearSchemas.js";
+import { VehicleModListSchema } from "./vehicleModSchemas.js";
 
 export const AvailabilityVehicleSchema = zod
   .object({
@@ -157,3 +159,21 @@ export const VehicleSchema = zod.discriminatedUnion("type", [
 export type VehicleType = zod.infer<typeof VehicleSchema>;
 export const VehicleListSchema = zod.array(VehicleSchema);
 export type VehicleListType = zod.infer<typeof VehicleListSchema>;
+
+export const CustomisedVehicleSchema = zod
+  .object({
+    baseVehicle: VehicleSchema,
+    // This overrides baseVehicle modifications
+    modList: zod.optional(VehicleModListSchema),
+    // This overrides baseVehicle included gear
+    gearList: zod.optional(GearListSchema),
+    // TODO: is rating a thing for vehicles?
+    // rating: zod.optional(zod.number()),
+    customName: zod.optional(zod.string()),
+  })
+  .strict();
+export type CustomisedVehicleType = zod.infer<typeof CustomisedVehicleSchema>;
+export const CustomisedVehicleListSchema = zod.array(CustomisedVehicleSchema);
+export type CustomisedVehicleListType = zod.infer<
+  typeof CustomisedVehicleListSchema
+>;

@@ -10,11 +10,15 @@ import type { Ref } from "@mikro-orm/postgresql";
 import { CustomisedVehicleModifications } from "./activeVehicleModificationModel.js";
 import { Weapons } from "../equipment/combat/weaponModel.js";
 import { Vehicles } from "../equipment/rigger/vehicleModel.js";
+import { Characters } from "../characters/characterModel.js";
 
 @Entity()
 export class CustomisedVehicles {
   @PrimaryKey()
   id!: number;
+
+  @ManyToOne({ entity: () => Characters, ref: true })
+  character!: Ref<Characters>;
 
   @ManyToOne({ entity: () => Weapons, ref: true })
   vehicle!: Ref<Vehicles>;
@@ -23,7 +27,7 @@ export class CustomisedVehicles {
     () => CustomisedVehicleModifications,
     (vehicleModification) => vehicleModification.customisedVehicle
   )
-  accessories = new Collection<CustomisedVehicleModifications>(this);
+  mods = new Collection<CustomisedVehicleModifications>(this);
 
   // rating is only used in a few weapons
   @Property({ nullable: true })

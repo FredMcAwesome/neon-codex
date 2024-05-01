@@ -1,8 +1,8 @@
 import type {
   AvailabilityArmourType,
   CostArmourType,
-  DamageReductionArmourType,
 } from "../schemas/equipment/combat/armourSchemas.js";
+import type { DamageReductionArmourType } from "../schemas/shared/commonSchemas.js";
 import { formatRating } from "./commonFormatter.js";
 
 export function formatArmourDamageReduction(

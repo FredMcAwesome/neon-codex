@@ -218,7 +218,7 @@ export const SingleArmourPenetrationSchema: zod.ZodType<SingleArmourPenetrationT
 export const ArmourPenetrationSchema = zod.array(SingleArmourPenetrationSchema);
 export type ArmourPenetrationType = zod.infer<typeof ArmourPenetrationSchema>;
 
-const UnlinkedAccessorySchema = zod
+const UnlinkedWeaponAccessorySchema = zod
   .object({
     name: zod.string(),
     mount: zod.optional(AccessoryMountSchema),
@@ -226,8 +226,12 @@ const UnlinkedAccessorySchema = zod
     gears: zod.optional(UseGearListSchema),
   })
   .strict();
-export type UnlinkedAccessoryType = zod.infer<typeof UnlinkedAccessorySchema>;
-export const UnlinkedAccessoryListSchema = zod.array(UnlinkedAccessorySchema);
+export type UnlinkedWeaponAccessoryType = zod.infer<
+  typeof UnlinkedWeaponAccessorySchema
+>;
+export const UnlinkedAccessoryListSchema = zod.array(
+  UnlinkedWeaponAccessorySchema
+);
 export type UnlinkedAccessoryListType = zod.infer<
   typeof UnlinkedAccessoryListSchema
 >;
@@ -323,3 +327,18 @@ export const WeaponSummarySchema = zod.discriminatedUnion("type", [
 export type WeaponSummaryType = zod.infer<typeof WeaponSummarySchema>;
 export const WeaponSummaryListSchema = zod.array(WeaponSummarySchema);
 export type WeaponSummaryListType = zod.infer<typeof WeaponSummaryListSchema>;
+
+export const CustomisedWeaponSchema = zod
+  .object({
+    baseWeapon: WeaponSummarySchema,
+    // This overrides baseWeapon accessories
+    accessories: zod.optional(UnlinkedAccessoryListSchema),
+    rating: zod.optional(zod.number()),
+    customName: zod.optional(zod.string()),
+  })
+  .strict();
+export type CustomisedWeaponType = zod.infer<typeof CustomisedWeaponSchema>;
+export const CustomisedWeaponListSchema = zod.array(CustomisedWeaponSchema);
+export type CustomisedWeaponListType = zod.infer<
+  typeof CustomisedWeaponListSchema
+>;
