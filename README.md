@@ -26,6 +26,14 @@ Run `npm install` at root of repo. (This will install all child dependencies)
 Run `npm start` to start locally - note will still need a local db.
 ### DB Setup
 Install postgresSQL and setup a default user with some credentials (postgres for username and password is the default used.)
+
+```shell
+sudo -u postgres psql
+CREATE DATABASE development;
+CREATE DATABASE shadowrun;
+CREATE DATABASE test;
+```
+
 Run the following commands to create a database and fill it with some dummy data for development
 `npm run build` at least once
 Create .env_development, .env_production, and .env_test in database/ and set the DB_NAME to whatever you want each name to be. Can also set all other credentials used in database/src/utils/config.ts.

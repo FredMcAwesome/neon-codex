@@ -15,13 +15,13 @@ export class ActiveSkills {
   character!: Ref<Characters>;
 
   @Property()
-  skillGroupPoints = 0;
+  skillGroupPoints: number = 0;
 
   @Property()
-  skillPoints = 0;
+  skillPoints: number = 0;
 
   @Property()
-  karmaPoints = 0;
+  karmaPoints: number = 0;
 
   @Property({ type: "string[]", nullable: true })
   specialisationsSelected?: Array<string>;

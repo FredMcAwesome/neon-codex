@@ -302,75 +302,75 @@ export const CheckGUIDs = function () {
     assert(false);
   }
 
-  const idList = biowareListParsed.data.map((bioware) => {
+  let idList = biowareListParsed.data.map((bioware) => {
     return bioware.id;
   });
-  idList.concat(
+  idList = idList.concat(
     cyberwareListParsed.data.map((cyberware) => {
       return cyberware.id;
     })
   );
-  idList.concat(
+  idList = idList.concat(
     qualityListParsed.data.map((quality) => {
       return quality.id;
     })
   );
-  idList.concat(
+  idList = idList.concat(
     skillListParsed.data.map((skill) => {
       return skill.id;
     })
   );
-  idList.concat(
+  idList = idList.concat(
     armourModListParsed.data.map((armourMod) => {
       return armourMod.id;
     })
   );
-  idList.concat(
+  idList = idList.concat(
     armourListParsed.data.map((armour) => {
       return armour.id;
     })
   );
-  idList.concat(
+  idList = idList.concat(
     weaponAccessoryListParsed.data.map((weaponAccessory) => {
       return weaponAccessory.id;
     })
   );
-  idList.concat(
+  idList = idList.concat(
     weaponListParsed.data.map((weapon) => {
       return weapon.id;
     })
   );
-  idList.concat(
+  idList = idList.concat(
     spellListParsed.data.map((spell) => {
       return spell.id;
     })
   );
-  idList.concat(
+  idList = idList.concat(
     drugComponentListParsed.data.map((drugComponent) => {
       return drugComponent.id;
     })
   );
-  idList.concat(
+  idList = idList.concat(
     drugListParsed.data.map((drug) => {
       return drug.id;
     })
   );
-  idList.concat(
+  idList = idList.concat(
     gearListParsed.data.map((gear) => {
       return gear.id;
     })
   );
-  idList.concat(
+  idList = idList.concat(
     vehicleModListParsed.data.map((vehicleMod) => {
       return vehicleMod.id;
     })
   );
-  idList.concat(
+  idList = idList.concat(
     vehicleWeaponMountModListParsed.data.map((weaponMount) => {
       return weaponMount.id;
     })
   );
-  idList.concat(
+  idList = idList.concat(
     vehicleListParsed.data.map((vehicle) => {
       return vehicle.id;
     })

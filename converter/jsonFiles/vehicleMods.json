@@ -841,6 +841,21 @@
     "type": "Vehicle"
   },
   {
+    "name": "Manual Controls",
+    "description": "",
+    "subtype": "Power Train",
+    "maxRating": [0],
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Shadows In Focus: Metropole",
+    "page": 31,
+    "type": "Vehicle"
+  },
+  {
     "name": "Secondary Manual Controls",
     "description": "",
     "subtype": "Power Train",
@@ -1659,6 +1674,22 @@
     ],
     "source": "Rigger 5",
     "page": 159,
+    "type": "Vehicle"
+  },
+  {
+    "name": "Flash-Pak",
+    "description": "",
+    "subtype": "Weapons",
+    "maxRating": [0],
+    "slotCost": [0],
+    "userSelectable": false,
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "State Of The Art - ADL",
+    "page": 0,
     "type": "Vehicle"
   },
   {
@@ -3107,6 +3138,21 @@
     "type": "Vehicle"
   },
   {
+    "name": "Amenities (Street)",
+    "description": "",
+    "subtype": "Cosmetic",
+    "maxRating": [0],
+    "slotCost": [0],
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Krime Katalog",
+    "page": 0,
+    "type": "Vehicle"
+  },
+  {
     "name": "Amenities (Low)",
     "description": "",
     "subtype": "Cosmetic",
@@ -3367,6 +3413,22 @@
     ],
     "source": "Rigger 5",
     "page": 171,
+    "type": "Vehicle"
+  },
+  {
+    "name": "Rigger Adaptation",
+    "description": "",
+    "subtype": "All",
+    "maxRating": [0],
+    "slotCost": [0],
+    "userSelectable": false,
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [0],
+    "source": "Rigger 5",
+    "page": 12,
     "type": "Vehicle"
   },
   {

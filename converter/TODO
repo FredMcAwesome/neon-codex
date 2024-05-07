@@ -5,18 +5,18 @@ So far I have only passed to the frontend:
   - Skills
   - Augmentations
   - Vehicles (including weapon mounts)
+  - VehicleMods (including weapon mount mods)
   - Gear
   - Armour
+  - ArmourModifications
   - Qualities
-
-Still need passed through to frontend):
-  - ArmourAccessories
-  - Spells
-  - Drugs
-  - DrugComponents
-  - VehicleMods (including weapon mount mods)
   - Metatypes
   - Priorities
+  - Drugs
+
+Still need passed through to frontend):
+  - Spells
+  - DrugComponents
 
 I need to parse, store in DB, and pass to frontend:
   - Powers

@@ -499,11 +499,13 @@ export function convertXmlBonus(bonus: BonusXmlType) {
   }
   {
     // qualities scope
-    const qualities: BonusQualityListType = [];
+    let qualities: BonusQualityListType = [];
     if ("quality" in bonus && bonus.quality !== undefined) {
       const rating = Number(bonus.quality._rating);
       assert(!isNaN(rating));
-      qualities.concat([{ name: bonus.quality.xmltext, rating: rating }]);
+      qualities = qualities.concat([
+        { name: bonus.quality.xmltext, rating: rating },
+      ]);
     }
     if ("addqualities" in bonus && bonus.addqualities !== undefined) {
       const addQuality = bonus.addqualities.addquality;
@@ -519,7 +521,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
           return { name: quality.xmltext };
         }
       });
-      qualities.concat(qualityArray);
+      qualities = qualities.concat(qualityArray);
     }
     if (qualities.length > 0) {
       bonusObject.qualities = qualities;

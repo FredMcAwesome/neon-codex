@@ -3223,6 +3223,13 @@
     "rating": {
       "maximum": [1]
     },
+    "bonus": {
+      "qualities": [
+        {
+          "name": "Photographic Memory"
+        }
+      ]
+    },
     "availability": {
       "rating": [4],
       "restriction": ""
@@ -3689,6 +3696,11 @@
       "maximum": [1]
     },
     "bonus": {
+      "qualities": [
+        {
+          "name": "Poor Self Control (Thrill Seeker) (Dareadrenaline)"
+        }
+      ],
       "addictionResistance": {
         "physiological": {
           "initialTest": [1],

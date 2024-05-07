@@ -15,7 +15,7 @@ export abstract class ActiveQualities {
   quality!: Ref<Qualities>;
 
   @Property()
-  rating = 0;
+  rating: number = 0;
 
   constructor(quality: Ref<Qualities>, rating?: number) {
     this.quality = quality;

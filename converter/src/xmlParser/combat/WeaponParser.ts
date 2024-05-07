@@ -179,9 +179,8 @@ function convertWeapon(weapon: WeaponXmlType) {
   }
   const cost: CostWeaponType = costWeaponSemantics(match).eval();
   // console.log(`Cost: ${cost}`);
-  const accessories: UnlinkedAccessoryListType | undefined = convertAccessories(
-    weapon.accessories
-  );
+  const includedAccessoryList: UnlinkedAccessoryListType | undefined =
+    convertAccessories(weapon.accessories);
   const accessoryMounts: AccessoryMountType | undefined =
     convertAccessoryMounts(weapon.accessorymounts);
   const alternativeWeaponForms = weapon.addweapon
@@ -332,7 +331,9 @@ function convertWeapon(weapon: WeaponXmlType) {
     ...(allowedGearCategories !== undefined && {
       allowedGearCategories: allowedGearCategories,
     }),
-    ...(accessories !== undefined && { accessories: accessories }),
+    ...(includedAccessoryList !== undefined && {
+      includedAccessoryList: includedAccessoryList,
+    }),
     allowAccessories: weapon.allowaccessory !== "False",
     ...(weapon.hide !== undefined && { userSelectable: false as const }),
     ...(augmentationType !== undefined && {

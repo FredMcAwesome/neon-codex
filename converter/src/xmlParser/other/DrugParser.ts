@@ -84,6 +84,7 @@ function convertDrug(drug: DrugXmlType) {
   if (match.failed()) {
     assert(false, match.message);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const availability = availabilityDrugSemantics(match).eval();
 
   const bonus =

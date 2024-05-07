@@ -542,7 +542,7 @@ export class GearSeeder extends Seeder {
     }
     // Weapons that include certain Accessories
     for (const weapon of unlinkedWeapons) {
-      if (weapon.accessories !== undefined) {
+      if (weapon.includedAccessoryList !== undefined) {
         const relatedWeapon = await em.findOne(Weapons, {
           name: weapon.name,
         });
@@ -551,7 +551,7 @@ export class GearSeeder extends Seeder {
           `undefined Weapon name 4: ${weapon.name}`
         );
         const referencedWeapon = ref(relatedWeapon);
-        for (const accessory of weapon.accessories) {
+        for (const accessory of weapon.includedAccessoryList) {
           const includeWeaponAccessory = await em.findOne(WeaponAccessories, {
             name: accessory.name,
           });
@@ -728,7 +728,7 @@ export class GearSeeder extends Seeder {
           const includedMod = await em.findOne(ArmourModifications, {
             name: mod.name,
           });
-          assert(includedMod !== null, `undefined Mod: ${mod.name}`);
+          assert(includedMod !== null, `undefined Mod 1: ${mod.name}`);
           const referencedMod = ref(includedMod);
           const stagedIncludedGear = new IncludedArmourModifications(
             referencedArmour,
@@ -966,7 +966,7 @@ export class GearSeeder extends Seeder {
           const includedMod = await em.findOne(VehicleChasisModifications, {
             name: mod.name,
           });
-          assert(includedMod !== null, `undefined Mod: ${mod.name}`);
+          assert(includedMod !== null, `undefined Mod 2: ${mod.name}`);
           const referencedMod = ref(includedMod);
           const stagedIncludedGear = new IncludedVehicleModifications(
             referencedVehicle,

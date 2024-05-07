@@ -397,6 +397,7 @@ const VehicleModListXmlSchema = ModListXmlSchema.extend({
       .strict()
   ),
 }).strict();
+export type VehicleModListXmlType = zod.infer<typeof VehicleModListXmlSchema>;
 
 export const ModRecursiveXmlSchema = VehicleModListXmlSchema.extend({
   mod: zod.optional(

@@ -80,7 +80,7 @@ export abstract class Weapons {
     () => IncludedWeaponAccessories,
     (accessory) => accessory.standardWeapon
   )
-  includedAccessories = new Collection<IncludedWeaponAccessories>(this);
+  includedAccessoryList = new Collection<IncludedWeaponAccessories>(this);
 
   @Property()
   allowAccessories!: boolean;

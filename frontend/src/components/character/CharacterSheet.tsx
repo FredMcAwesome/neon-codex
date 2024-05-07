@@ -4,7 +4,10 @@ import type {
   AttributesType,
   SpecialAttributesType,
 } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
-import { talentCategoryEnum } from "@neon-codex/common/build/enums.js";
+import {
+  attributeTypeEnum,
+  talentCategoryEnum,
+} from "@neon-codex/common/build/enums.js";
 import type { CustomSkillListType } from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
 import type { CustomQualityListType } from "@neon-codex/common/build/schemas/abilities/qualitySchemas.js";
 import type { CustomisedWeaponListType } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
@@ -38,7 +41,7 @@ const CharacterSheet = function () {
       <div>Heritage: {data.heritage.name}</div>
       {Attributes(data.attributes)}
       {SpecialAttributes(data.specialAttributes)}
-      {Skills(data.skills)}
+      {Skills(data.skills, data.attributes, data.specialAttributes)}
       {Qualities(data.qualities)}
       {Weapons(data.weapons)}
       {Armours(data.armours)}
@@ -94,15 +97,66 @@ function SpecialAttributes(data: SpecialAttributesType) {
   );
 }
 
-function Skills(data: CustomSkillListType) {
+function Skills(
+  skillList: CustomSkillListType,
+  attributeList: AttributesType,
+  specialAttributeList: SpecialAttributesType
+) {
   return (
     <div>
       Skills
       <ul>
-        {data.map((skill) => {
-          return (
-            <li key={skill.name}>{`${skill.name}: ${skill.skillPoints}`}</li>
-          );
+        {skillList.map((skill) => {
+          let attributeLevel;
+          switch (skill.attribute) {
+            case attributeTypeEnum.Agility:
+              attributeLevel = attributeList.agility;
+              break;
+            case attributeTypeEnum.Body:
+              attributeLevel = attributeList.body;
+              break;
+            case attributeTypeEnum.Charisma:
+              attributeLevel = attributeList.charisma;
+              break;
+            case attributeTypeEnum.Intuition:
+              attributeLevel = attributeList.intuition;
+              break;
+            case attributeTypeEnum.Logic:
+              attributeLevel = attributeList.logic;
+              break;
+            case attributeTypeEnum.Reaction:
+              attributeLevel = attributeList.reaction;
+              break;
+            case attributeTypeEnum.Resonance:
+              attributeLevel = attributeList.agility;
+              break;
+            case attributeTypeEnum.Strength:
+              attributeLevel = attributeList.strength;
+              break;
+            case attributeTypeEnum.Willpower:
+              attributeLevel = attributeList.willpower;
+              break;
+            case attributeTypeEnum.Depth:
+              const depth =
+                specialAttributeList.talent.type === talentCategoryEnum.Depth
+                  ? specialAttributeList.talent.depth
+                  : 0;
+              attributeLevel = depth;
+              break;
+            case attributeTypeEnum.Edge:
+              attributeLevel = specialAttributeList.edge;
+              break;
+            case attributeTypeEnum.Magic:
+              const magic =
+                specialAttributeList.talent.type === talentCategoryEnum.Magic
+                  ? specialAttributeList.talent.magic
+                  : 0;
+              attributeLevel = magic;
+
+              break;
+          }
+          const skillTotal = attributeLevel + skill.skillPoints;
+          return <li key={skill.name}>{`${skill.name}: ${skillTotal}`}</li>;
         })}
       </ul>
     </div>

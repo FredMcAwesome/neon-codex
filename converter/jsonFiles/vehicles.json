@@ -18,6 +18,11 @@
         "rating": 1
       }
     ],
+    "includedMods": [
+      {
+        "name": "Improved Economy"
+      }
+    ],
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -46,6 +51,11 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Enviroseal"
       }
     ],
     "availability": {
@@ -78,6 +88,11 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Gyro-Stabilization"
+      }
+    ],
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -106,6 +121,15 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Gyro-Stabilization"
+      },
+      {
+        "name": "Smart Tires",
+        "rating": 1
       }
     ],
     "availability": {
@@ -144,6 +168,11 @@
         "rating": 1
       }
     ],
+    "includedMods": [
+      {
+        "name": "Tracked Propulsion"
+      }
+    ],
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -174,6 +203,11 @@
         "rating": 1
       }
     ],
+    "includedMods": [
+      {
+        "name": "Gyro-Stabilization"
+      }
+    ],
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -202,6 +236,12 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Metahuman Adjustment",
+        "rating": 1
       }
     ],
     "availability": {
@@ -262,6 +302,11 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Off-Road Suspension"
       }
     ],
     "availability": {
@@ -354,6 +399,15 @@
         "rating": 1
       }
     ],
+    "includedMods": [
+      {
+        "name": "Smart Tires",
+        "rating": 2
+      },
+      {
+        "name": "Secondary Propulsion (Amphibious, Surface)"
+      }
+    ],
     "availability": {
       "rating": [3],
       "restriction": ""
@@ -382,6 +436,12 @@
       {
         "name": "Sensor Array",
         "rating": 1
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Metahuman Adjustment",
+        "rating": 2
       }
     ],
     "availability": {
@@ -445,6 +505,15 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Metahuman Adjustment",
+        "rating": 1
+      },
+      {
+        "name": "Enviroseal"
       }
     ],
     "availability": {
@@ -535,6 +604,11 @@
       {
         "name": "Sensor Array",
         "rating": 5
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "availability": {
@@ -630,6 +704,11 @@
         "rating": 3
       }
     ],
+    "includedMods": [
+      {
+        "name": "Amenities (Low)"
+      }
+    ],
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -658,6 +737,11 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Amenities (Low)"
       }
     ],
     "availability": {
@@ -693,6 +777,22 @@
         "rating": 4
       }
     ],
+    "includedMods": [
+      {
+        "name": "Amenities (Luxury)"
+      },
+      {
+        "name": "Anti-Theft System",
+        "rating": 2
+      },
+      {
+        "name": "Armor (Concealed)",
+        "rating": 3
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [18],
       "restriction": ""
@@ -717,6 +817,14 @@
     "armour": 6,
     "pilot": 0,
     "sensor": 0,
+    "includedMods": [
+      {
+        "name": "Off-Road Suspension"
+      },
+      {
+        "name": "Manual Operation"
+      }
+    ],
     "weaponMountList": [
       {
         "control": "Manual",
@@ -755,6 +863,11 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Off-Road Suspension"
+      }
+    ],
     "availability": {
       "rating": [8],
       "restriction": ""
@@ -783,6 +896,11 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Off-Road Suspension"
       }
     ],
     "availability": {
@@ -843,6 +961,14 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Off-Road Suspension"
+      },
+      {
+        "name": "Multifuel Engine"
       }
     ],
     "availability": {
@@ -938,6 +1064,11 @@
         "rating": 5
       }
     ],
+    "includedMods": [
+      {
+        "name": "Amenities (Middle)"
+      }
+    ],
     "availability": {
       "rating": [12],
       "restriction": ""
@@ -968,6 +1099,18 @@
         "rating": 4
       }
     ],
+    "includedMods": [
+      {
+        "name": "Amenities (High)"
+      },
+      {
+        "name": "Anti-Theft System",
+        "rating": 2
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [10],
       "restriction": ""
@@ -996,6 +1139,11 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Amenities (Low)"
       }
     ],
     "availability": {
@@ -1574,6 +1722,20 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Amenities (Squatter)"
+      },
+      {
+        "name": "Extreme Environment Modification"
+      },
+      {
+        "name": "SunCell"
+      },
+      {
+        "name": "Satellite Link"
+      }
+    ],
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -1605,6 +1767,20 @@
       {
         "name": "Sensor Array",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Amenities (Squatter)"
+      },
+      {
+        "name": "GridLink"
+      },
+      {
+        "name": "SunCell"
+      },
+      {
+        "name": "Satellite Link"
       }
     ],
     "availability": {
@@ -1640,6 +1816,23 @@
         "rating": 4
       }
     ],
+    "includedMods": [
+      {
+        "name": "Amenities (Squatter)"
+      },
+      {
+        "name": "Extreme Environment Modification"
+      },
+      {
+        "name": "SunCell"
+      },
+      {
+        "name": "Off-Road Suspension"
+      },
+      {
+        "name": "Satellite Link"
+      }
+    ],
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -1673,6 +1866,38 @@
         "rating": 3
       }
     ],
+    "includedMods": [
+      {
+        "name": "Amenities (Low)"
+      },
+      {
+        "name": "Landing Drone Rack (Medium)"
+      },
+      {
+        "name": "Landing Drone Rack (Medium)"
+      },
+      {
+        "name": "Landing Drone Rack (Micro)"
+      },
+      {
+        "name": "Landing Drone Rack (Small)"
+      },
+      {
+        "name": "Landing Drone Rack (Small)"
+      },
+      {
+        "name": "Rigger Cocoon"
+      },
+      {
+        "name": "Rigger Cocoon"
+      },
+      {
+        "name": "Rigger Interface"
+      },
+      {
+        "name": "Drone Rail"
+      }
+    ],
     "availability": {
       "rating": [16],
       "restriction": "R"
@@ -1701,6 +1926,14 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "GridLink"
+      },
+      {
+        "name": "GridLink Override"
       }
     ],
     "availability": {
@@ -1733,6 +1966,17 @@
         "rating": 3
       }
     ],
+    "includedMods": [
+      {
+        "name": "GridLink"
+      },
+      {
+        "name": "GridLink Override"
+      },
+      {
+        "name": "Special Equipment"
+      }
+    ],
     "availability": {
       "rating": [14],
       "restriction": ""
@@ -1761,6 +2005,11 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Special Equipment"
       }
     ],
     "availability": {
@@ -1793,6 +2042,11 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Special Equipment"
+      }
+    ],
     "availability": {
       "rating": [12],
       "restriction": ""
@@ -1821,6 +2075,11 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Special Equipment"
       }
     ],
     "availability": {
@@ -1853,6 +2112,11 @@
         "rating": 3
       }
     ],
+    "includedMods": [
+      {
+        "name": "Special Equipment"
+      }
+    ],
     "availability": {
       "rating": [16],
       "restriction": ""
@@ -1881,6 +2145,11 @@
       {
         "name": "Sensor Array",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Secondary Propulsion (Hovercraft)"
       }
     ],
     "availability": {
@@ -1971,6 +2240,11 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Amenities (Squatter)"
       }
     ],
     "weaponMountList": [
@@ -2111,6 +2385,20 @@
         "rating": 4
       }
     ],
+    "includedMods": [
+      {
+        "name": "Oil Slick Sprayer"
+      },
+      {
+        "name": "Smoke Projector"
+      },
+      {
+        "name": "Road Strip Ejector"
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "weaponMountList": [
       {
         "control": "Remote",
@@ -2161,6 +2449,36 @@
         "rating": 3
       }
     ],
+    "includedMods": [
+      {
+        "name": "Gun Port"
+      },
+      {
+        "name": "Gun Port"
+      },
+      {
+        "name": "Gun Port"
+      },
+      {
+        "name": "Gun Port"
+      },
+      {
+        "name": "Gun Port"
+      },
+      {
+        "name": "Gun Port"
+      },
+      {
+        "name": "Extra Entry/Exit Points"
+      },
+      {
+        "name": "Ram Plate"
+      },
+      {
+        "name": "Special Equipment",
+        "specificOption": "Extended Roof"
+      }
+    ],
     "availability": {
       "rating": [20],
       "restriction": "R"
@@ -2188,6 +2506,18 @@
     "includedGearList": [
       {
         "name": "Sensor Array",
+        "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "FlashTech"
+      },
+      {
+        "name": "Signature Dampening"
+      },
+      {
+        "name": "Anti-Theft System",
         "rating": 3
       }
     ],
@@ -2315,6 +2645,26 @@
         "rating": 6
       }
     ],
+    "includedMods": [
+      {
+        "name": "Amenities (Middle)"
+      },
+      {
+        "name": "Anti-Theft System",
+        "rating": 3
+      },
+      {
+        "name": "Life Support",
+        "rating": 2
+      },
+      {
+        "name": "Missile Defense System"
+      },
+      {
+        "name": "Passenger Protection System",
+        "rating": 6
+      }
+    ],
     "weaponMountList": [
       {
         "control": "Remote",
@@ -2353,6 +2703,30 @@
         "rating": 6
       }
     ],
+    "includedMods": [
+      {
+        "name": "Extra Entry/Exit Points"
+      },
+      {
+        "name": "Amenities (Middle)"
+      },
+      {
+        "name": "Special Equipment",
+        "specificOption": "Bathroom"
+      },
+      {
+        "name": "Special Equipment",
+        "specificOption": "Holding Cell"
+      },
+      {
+        "name": "Special Equipment",
+        "specificOption": "Holding Cell"
+      },
+      {
+        "name": "Special Equipment",
+        "specificOption": "Sleeping Quarters"
+      }
+    ],
     "availability": {
       "rating": [18],
       "restriction": "R"
@@ -2381,6 +2755,34 @@
       {
         "name": "Sensor Array",
         "rating": 6
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Special Equipment",
+        "specificOption": "Generator"
+      },
+      {
+        "name": "Rigger Adaptation"
+      },
+      {
+        "name": "Rigger Cocoon"
+      },
+      {
+        "name": "Workshop",
+        "specificOption": "Aeronautics Mechanic"
+      },
+      {
+        "name": "Standard Drone Rack (Medium)"
+      },
+      {
+        "name": "Standard Drone Rack (Medium)"
+      },
+      {
+        "name": "Standard Drone Rack (Medium)"
+      },
+      {
+        "name": "Standard Drone Rack (Medium)"
       }
     ],
     "availability": {
@@ -2413,6 +2815,27 @@
         "rating": 5
       }
     ],
+    "includedMods": [
+      {
+        "name": "Extra Entry/Exit Points"
+      },
+      {
+        "name": "Gun Port"
+      },
+      {
+        "name": "Gun Port"
+      },
+      {
+        "name": "Gun Port"
+      },
+      {
+        "name": "Gun Port"
+      },
+      {
+        "name": "Special Equipment",
+        "specificOption": "Advanced Lightbar"
+      }
+    ],
     "availability": {
       "rating": [20],
       "restriction": "R"
@@ -2441,6 +2864,15 @@
       {
         "name": "Sensor Array",
         "rating": 6
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Extra Entry/Exit Points"
+      },
+      {
+        "name": "Anti-Theft System",
+        "rating": 1
       }
     ],
     "weaponMountList": [
@@ -2493,6 +2925,15 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Enviroseal"
+      },
+      {
+        "name": "Life Support",
+        "rating": 2
+      }
+    ],
     "availability": {
       "rating": [20],
       "restriction": "F"
@@ -2520,6 +2961,20 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Amenities (Middle)"
+      },
+      {
+        "name": "Satellite Link"
+      },
+      {
+        "name": "Secondary Manual Controls"
+      },
+      {
+        "name": "Smuggling Compartment"
+      }
+    ],
     "availability": {
       "rating": [12],
       "restriction": ""
@@ -2545,6 +3000,18 @@
       {
         "name": "Sensor Array",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Amenities (Squatter)"
+      },
+      {
+        "name": "Rigger Interface"
+      },
+      {
+        "name": "Speed Enhancement",
+        "rating": 1
       }
     ],
     "weaponMountList": [
@@ -2651,6 +3118,25 @@
     "includedGearList": [
       {
         "name": "Sensor Array",
+        "rating": 4
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Amenities (Squatter)"
+      },
+      {
+        "name": "Life Support",
+        "rating": 1
+      },
+      {
+        "name": "Rigger Interface"
+      },
+      {
+        "name": "Satellite Link"
+      },
+      {
+        "name": "Signature Masking",
         "rating": 4
       }
     ],
@@ -2770,6 +3256,16 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Life Support",
+        "rating": 1
+      },
+      {
+        "name": "Signature Masking",
+        "rating": 1
+      }
+    ],
     "availability": {
       "rating": [16],
       "restriction": ""
@@ -2804,6 +3300,17 @@
       {
         "name": "Sensor Array",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Amenities (Middle)"
+      },
+      {
+        "name": "Improved Economy"
+      },
+      {
+        "name": "Satellite Link"
       }
     ],
     "availability": {
@@ -2842,6 +3349,27 @@
         "rating": 3
       }
     ],
+    "includedMods": [
+      {
+        "name": "Amenities (Middle)"
+      },
+      {
+        "name": "Improved Economy"
+      },
+      {
+        "name": "Satellite Link"
+      },
+      {
+        "name": "Secondary Manual Controls"
+      },
+      {
+        "name": "SunCell"
+      },
+      {
+        "name": "Signature Masking",
+        "rating": 2
+      }
+    ],
     "availability": {
       "rating": [12],
       "restriction": ""
@@ -2878,6 +3406,20 @@
         "rating": 3
       }
     ],
+    "includedMods": [
+      {
+        "name": "Amenities (Middle)"
+      },
+      {
+        "name": "Improved Economy"
+      },
+      {
+        "name": "Satellite Link"
+      },
+      {
+        "name": "SunCell"
+      }
+    ],
     "availability": {
       "rating": [12],
       "restriction": ""
@@ -2903,6 +3445,17 @@
       {
         "name": "Sensor Array",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Amenities (Middle)"
+      },
+      {
+        "name": "Improved Economy"
+      },
+      {
+        "name": "Satellite Link"
       }
     ],
     "availability": {
@@ -2932,6 +3485,20 @@
         "rating": 4
       }
     ],
+    "includedMods": [
+      {
+        "name": "Amenities (High)"
+      },
+      {
+        "name": "Interior Cameras"
+      },
+      {
+        "name": "Rigger Interface"
+      },
+      {
+        "name": "Satellite Link"
+      }
+    ],
     "availability": {
       "rating": [16],
       "restriction": ""
@@ -2957,6 +3524,29 @@
       {
         "name": "Sensor Array",
         "rating": 5
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Amenities (Luxury)"
+      },
+      {
+        "name": "Interior Cameras"
+      },
+      {
+        "name": "Rigger Interface"
+      },
+      {
+        "name": "Rigger Cocoon"
+      },
+      {
+        "name": "Satellite Link"
+      },
+      {
+        "name": "Manual Control Override"
+      },
+      {
+        "name": "Searchlight"
       }
     ],
     "availability": {
@@ -3013,6 +3603,14 @@
         "rating": 3
       }
     ],
+    "includedMods": [
+      {
+        "name": "Amenities (Middle)"
+      },
+      {
+        "name": "Winch (Basic)"
+      }
+    ],
     "availability": {
       "rating": [10],
       "restriction": ""
@@ -3040,6 +3638,14 @@
         "rating": 3
       }
     ],
+    "includedMods": [
+      {
+        "name": "Amenities (Middle)"
+      },
+      {
+        "name": "Winch (Basic)"
+      }
+    ],
     "availability": {
       "rating": [10],
       "restriction": ""
@@ -3065,6 +3671,20 @@
       {
         "name": "Sensor Array",
         "rating": 4
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Amenities (Squatter)"
+      },
+      {
+        "name": "Winch (Basic)"
+      },
+      {
+        "name": "Satellite Link"
+      },
+      {
+        "name": "Smuggling Compartment"
       }
     ],
     "availability": {
@@ -3148,6 +3768,23 @@
         "rating": 4
       }
     ],
+    "includedMods": [
+      {
+        "name": "Amenities (Squatter)"
+      },
+      {
+        "name": "Rigger Cocoon"
+      },
+      {
+        "name": "Rigger Interface"
+      },
+      {
+        "name": "Satellite Link"
+      },
+      {
+        "name": "Searchlight"
+      }
+    ],
     "weaponMountList": [
       {
         "control": "Remote",
@@ -3207,6 +3844,32 @@
         "rating": 5
       }
     ],
+    "includedMods": [
+      {
+        "name": "Amenities (Squatter)"
+      },
+      {
+        "name": "Rigger Cocoon"
+      },
+      {
+        "name": "Rigger Interface"
+      },
+      {
+        "name": "Satellite Link"
+      },
+      {
+        "name": "Searchlight"
+      },
+      {
+        "name": "Searchlight"
+      },
+      {
+        "name": "Searchlight"
+      },
+      {
+        "name": "Searchlight"
+      }
+    ],
     "weaponMountList": [
       {
         "control": "Remote",
@@ -3264,6 +3927,27 @@
       {
         "name": "Sensor Array",
         "rating": 6
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Amenities (Squatter)"
+      },
+      {
+        "name": "Rigger Cocoon"
+      },
+      {
+        "name": "Rigger Interface"
+      },
+      {
+        "name": "Satellite Link"
+      },
+      {
+        "name": "Searchlight"
+      },
+      {
+        "name": "Signature Masking",
+        "rating": 4
       }
     ],
     "weaponMountList": [
@@ -3358,6 +4042,11 @@
         "rating": 5
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [28],
       "restriction": "F"
@@ -3383,6 +4072,11 @@
       {
         "name": "Sensor Array",
         "rating": 4
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "availability": {
@@ -3412,6 +4106,11 @@
         "rating": 4
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [24],
       "restriction": "R"
@@ -3437,6 +4136,14 @@
       {
         "name": "Sensor Array",
         "rating": 4
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Winch (Basic)"
+      },
+      {
+        "name": "Winch (Basic)"
       }
     ],
     "availability": {
@@ -3513,6 +4220,32 @@
         "rating": 4
       }
     ],
+    "includedMods": [
+      {
+        "name": "Winch (Basic)"
+      },
+      {
+        "name": "Winch (Basic)"
+      },
+      {
+        "name": "Winch (Basic)"
+      },
+      {
+        "name": "Winch (Basic)"
+      },
+      {
+        "name": "Winch (Enhanced)"
+      },
+      {
+        "name": "Winch (Enhanced)"
+      },
+      {
+        "name": "Winch (Enhanced)"
+      },
+      {
+        "name": "Winch (Enhanced)"
+      }
+    ],
     "availability": {
       "rating": [14],
       "restriction": ""
@@ -3538,6 +4271,11 @@
       {
         "name": "Sensor Array",
         "rating": 5
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "weaponMountList": [
@@ -3585,6 +4323,12 @@
       {
         "name": "Sensor Array",
         "rating": 5
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Metahuman Adjustment",
+        "rating": 10
       }
     ],
     "availability": {
@@ -3641,6 +4385,12 @@
         "rating": 4
       }
     ],
+    "includedMods": [
+      {
+        "name": "Metahuman Adjustment",
+        "rating": 1
+      }
+    ],
     "availability": {
       "rating": [24],
       "restriction": "R"
@@ -3666,6 +4416,17 @@
       {
         "name": "Sensor Array",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Speakers"
+      },
+      {
+        "name": "Strobes"
+      },
+      {
+        "name": "Rigger Interface"
       }
     ],
     "availability": {
@@ -3697,6 +4458,14 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Submersible (Drone)"
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [6],
       "restriction": ""
@@ -3723,6 +4492,11 @@
         "rating": 4
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [6],
       "restriction": "R"
@@ -3747,6 +4521,11 @@
       {
         "name": "Sensor Array",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "availability": {
@@ -3778,6 +4557,11 @@
       {
         "name": "Sensor Array",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "weaponList": ["Melee Bite"],
@@ -3816,6 +4600,15 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Realistic Features (Drone)",
+        "rating": 1
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [8],
       "restriction": ""
@@ -3844,6 +4637,11 @@
       {
         "name": "Sensor Array",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "availability": {
@@ -3876,6 +4674,11 @@
         "rating": 3
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [4],
       "restriction": ""
@@ -3903,6 +4706,11 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "availability": {
@@ -3942,6 +4750,11 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 0,
     "weaponList": ["Colt Cobra TZ-120"],
     "weaponMountList": [
@@ -3979,6 +4792,11 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 0,
     "availability": {
       "rating": [8],
@@ -4004,6 +4822,11 @@
       {
         "name": "Sensor Array",
         "rating": 4
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "modSlots": 1,
@@ -4045,6 +4868,14 @@
         "specificOption": "Automotive Mechanic"
       }
     ],
+    "includedMods": [
+      {
+        "name": "Drone Arm"
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 1,
     "availability": {
       "rating": [6],
@@ -4076,6 +4907,11 @@
       },
       {
         "name": "Flashlight"
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "modSlots": 1,
@@ -4121,6 +4957,17 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Submersible (Drone)"
+      },
+      {
+        "name": "Gecko Grips (Drone)"
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 1,
     "availability": {
       "rating": [10],
@@ -4146,6 +4993,11 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "modSlots": 4,
@@ -4176,6 +5028,11 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "modSlots": 1,
@@ -4227,6 +5084,11 @@
         "name": "SmartSafety Bracelet"
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 0,
     "weaponMountList": [
       {
@@ -4260,6 +5122,14 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Immobile (Drone)"
+      },
+      {
+        "name": "Rigger Interface"
       }
     ],
     "modSlots": 0,
@@ -4300,6 +5170,11 @@
         "rating": 1
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 3,
     "availability": {
       "rating": [0],
@@ -4325,6 +5200,11 @@
       {
         "name": "Sensor Array",
         "rating": 1
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "modSlots": 3,
@@ -4357,6 +5237,11 @@
         "rating": 1
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 3,
     "availability": {
       "rating": [2],
@@ -4382,6 +5267,11 @@
       {
         "name": "Sensor Array",
         "rating": 1
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "modSlots": 3,
@@ -4411,6 +5301,11 @@
         "rating": 1
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 3,
     "availability": {
       "rating": [4],
@@ -4438,6 +5333,11 @@
         "rating": 1
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 3,
     "availability": {
       "rating": [6],
@@ -4463,6 +5363,11 @@
       {
         "name": "Sensor Array",
         "rating": 1
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "modSlots": 3,
@@ -4507,6 +5412,11 @@
         "rating": 4
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 0,
     "availability": {
       "rating": [12],
@@ -4532,6 +5442,11 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "modSlots": 0,
@@ -4571,6 +5486,11 @@
         "name": "Ink Pouch"
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 0,
     "weaponList": ["Micro-Torpedo Launcher"],
     "weaponMountList": [
@@ -4608,6 +5528,11 @@
         "rating": 4
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 0,
     "availability": {
       "rating": [8],
@@ -4640,6 +5565,11 @@
         "consumeCapacity": true
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 1,
     "availability": {
       "rating": [4],
@@ -4668,6 +5598,11 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "modSlots": 1,
@@ -4702,6 +5637,14 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Immobile (Drone)"
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [4],
       "restriction": ""
@@ -4726,6 +5669,15 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Special Equipment",
+        "specificOption": "Storage Compartment"
+      },
+      {
+        "name": "Rigger Interface"
       }
     ],
     "modSlots": 1,
@@ -4758,6 +5710,11 @@
         "rating": 8
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 0,
     "availability": {
       "rating": [10],
@@ -4783,6 +5740,11 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "modSlots": 0,
@@ -4825,6 +5787,14 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Amphibious (Drone)"
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 1,
     "availability": {
       "rating": [8],
@@ -4852,6 +5822,11 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [4],
       "restriction": ""
@@ -4876,6 +5851,11 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "modSlots": 2,
@@ -4923,6 +5903,11 @@
         "quantity": 4
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 0,
     "weaponList": ["Yamaha Pulsar"],
     "weaponMountList": [
@@ -4963,6 +5948,11 @@
         "rating": 4
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 1,
     "availability": {
       "rating": [2],
@@ -4992,6 +5982,11 @@
       {
         "name": "[Weapon] Targeting Autosoft",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "weaponList": [
@@ -5048,6 +6043,14 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Drone Arm"
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 3,
     "availability": {
       "rating": [4],
@@ -5073,6 +6076,14 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Tracked Propulsion"
+      },
+      {
+        "name": "Rigger Interface"
       }
     ],
     "modSlots": 0,
@@ -5106,6 +6117,14 @@
         "rating": 6
       }
     ],
+    "includedMods": [
+      {
+        "name": "Tracked Propulsion"
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 2,
     "availability": {
       "rating": [6],
@@ -5133,6 +6152,26 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Standard Drone Rack (Mini)"
+      },
+      {
+        "name": "Standard Drone Rack (Mini)"
+      },
+      {
+        "name": "Standard Drone Rack (Mini)"
+      },
+      {
+        "name": "Standard Drone Rack (Mini)"
+      },
+      {
+        "name": "Retrans Unit"
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [8],
       "restriction": ""
@@ -5157,6 +6196,17 @@
       {
         "name": "Sensor Array",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Submersible (Drone)"
+      },
+      {
+        "name": "Searchlight"
+      },
+      {
+        "name": "Rigger Interface"
       }
     ],
     "modSlots": 0,
@@ -5196,6 +6246,11 @@
       {
         "name": "Sensor Array",
         "rating": 4
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "modSlots": 0,
@@ -5240,6 +6295,11 @@
         "rating": 3
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 0,
     "weaponMountList": [
       {
@@ -5280,6 +6340,11 @@
       {
         "name": "Sensor Array",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "modSlots": 0,
@@ -5336,6 +6401,11 @@
         "rating": 3
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 0,
     "weaponMountList": [
       {
@@ -5379,6 +6449,14 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Drone Arm"
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 2,
     "availability": {
       "rating": [12],
@@ -5404,6 +6482,11 @@
       {
         "name": "Sensor Array",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "modSlots": 0,
@@ -5441,6 +6524,23 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Drone Arm"
+      },
+      {
+        "name": "Drone Arm"
+      },
+      {
+        "name": "Drone Leg"
+      },
+      {
+        "name": "Drone Leg"
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [2],
       "restriction": ""
@@ -5470,6 +6570,23 @@
         "name": "Skill Autosoft",
         "specificOption": "Instruction",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Drone Arm"
+      },
+      {
+        "name": "Drone Arm"
+      },
+      {
+        "name": "Drone Leg"
+      },
+      {
+        "name": "Drone Leg"
+      },
+      {
+        "name": "Rigger Interface"
       }
     ],
     "availability": {
@@ -5503,6 +6620,23 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Drone Arm"
+      },
+      {
+        "name": "Drone Arm"
+      },
+      {
+        "name": "Drone Leg"
+      },
+      {
+        "name": "Drone Leg"
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [8],
       "restriction": "R"
@@ -5527,6 +6661,23 @@
       {
         "name": "Sensor Array",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Drone Arm"
+      },
+      {
+        "name": "Drone Arm"
+      },
+      {
+        "name": "Drone Leg"
+      },
+      {
+        "name": "Drone Leg"
+      },
+      {
+        "name": "Rigger Interface"
       }
     ],
     "weaponMountList": [
@@ -5569,6 +6720,23 @@
         "rating": 4
       }
     ],
+    "includedMods": [
+      {
+        "name": "Drone Arm"
+      },
+      {
+        "name": "Drone Arm"
+      },
+      {
+        "name": "Drone Leg"
+      },
+      {
+        "name": "Drone Leg"
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [12],
       "restriction": "R"
@@ -5600,6 +6768,27 @@
         "rating": 3
       }
     ],
+    "includedMods": [
+      {
+        "name": "Synthetic Drone Arm"
+      },
+      {
+        "name": "Synthetic Drone Arm"
+      },
+      {
+        "name": "Synthetic Drone Leg"
+      },
+      {
+        "name": "Synthetic Drone Leg"
+      },
+      {
+        "name": "Realistic Features (Drone)",
+        "rating": 1
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [4],
       "restriction": ""
@@ -5627,6 +6816,12 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Metahuman Adjustment",
+        "rating": 1
       }
     ],
     "availability": {
@@ -5660,6 +6855,11 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Off-Road Suspension"
       }
     ],
     "availability": {
@@ -5780,6 +6980,16 @@
       {
         "name": "Sensor Array",
         "rating": 5
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Passenger Protection System",
+        "rating": 6
+      },
+      {
+        "name": "Anti-Theft System",
+        "rating": 2
       }
     ],
     "availability": {
@@ -6023,6 +7233,15 @@
         "rating": 5
       }
     ],
+    "includedMods": [
+      {
+        "name": "Amenities (Luxury)"
+      },
+      {
+        "name": "Life Support",
+        "rating": 2
+      }
+    ],
     "availability": {
       "rating": [16],
       "restriction": ""
@@ -6141,6 +7360,15 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Off-Road Suspension"
+      },
+      {
+        "name": "Special Equipment",
+        "specificOption": "Open Box Storage"
       }
     ],
     "availability": {
@@ -6378,6 +7606,14 @@
         "rating": 1
       }
     ],
+    "includedMods": [
+      {
+        "name": "Smuggling Compartment"
+      },
+      {
+        "name": "Assembly/Disassembly"
+      }
+    ],
     "availability": {
       "rating": [8],
       "restriction": ""
@@ -6446,6 +7682,11 @@
         "rating": 3
       }
     ],
+    "includedMods": [
+      {
+        "name": "Landing Drone Rack (Medium)"
+      }
+    ],
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -6500,6 +7741,12 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Signature Masking",
+        "rating": 4
+      }
+    ],
     "availability": {
       "rating": [8],
       "restriction": ""
@@ -6552,6 +7799,11 @@
       {
         "name": "Sensor Array",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Secondary Propulsion (Amphibious, Surface)"
       }
     ],
     "availability": {
@@ -6711,6 +7963,15 @@
         "rating": 6
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Cocoon"
+      },
+      {
+        "name": "ECM",
+        "rating": 4
+      }
+    ],
     "availability": {
       "rating": [24],
       "restriction": "F"
@@ -6765,6 +8026,14 @@
         "rating": 3
       }
     ],
+    "includedMods": [
+      {
+        "name": "Gecko Tips"
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [8],
       "restriction": ""
@@ -6791,6 +8060,11 @@
         "rating": 3
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [6],
       "restriction": ""
@@ -6815,6 +8089,11 @@
       {
         "name": "Sensor Array",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "availability": {
@@ -6849,6 +8128,11 @@
         "rating": 3
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [8],
       "restriction": ""
@@ -6873,6 +8157,11 @@
       {
         "name": "Sensor Array",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "userSelectable": false,
@@ -6902,6 +8191,15 @@
         "rating": 3
       }
     ],
+    "includedMods": [
+      {
+        "name": "Realistic Features",
+        "rating": 2
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [8],
       "restriction": ""
@@ -6926,6 +8224,11 @@
       {
         "name": "Sensor Array",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "availability": {
@@ -6954,6 +8257,15 @@
         "rating": 3
       }
     ],
+    "includedMods": [
+      {
+        "name": "Signature Masking",
+        "rating": 3
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [10],
       "restriction": ""
@@ -6978,6 +8290,11 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "modSlots": 0,
@@ -7010,6 +8327,27 @@
         "name": "[Weapon] Targeting Autosoft",
         "specificOption": "Sword",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Drone Arm"
+      },
+      {
+        "name": "Drone Arm"
+      },
+      {
+        "name": "Drone Leg"
+      },
+      {
+        "name": "Drone Leg"
+      },
+      {
+        "name": "Realistic Features",
+        "rating": 1
+      },
+      {
+        "name": "Rigger Interface"
       }
     ],
     "weaponList": ["Sword", "Sword"],
@@ -7055,6 +8393,11 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -7086,6 +8429,17 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Drone Arm"
+      },
+      {
+        "name": "Drone Arm"
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [4],
       "restriction": ""
@@ -7110,6 +8464,11 @@
       {
         "name": "Sensor Array",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "weaponMountList": [
@@ -7146,6 +8505,11 @@
         "rating": 3
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "weaponModSlots": 7,
     "availability": {
       "rating": [6],
@@ -7171,6 +8535,11 @@
       {
         "name": "Sensor Array",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "availability": {
@@ -7199,6 +8568,11 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [12],
       "restriction": "F"
@@ -7223,6 +8597,11 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "availability": {
@@ -7251,6 +8630,23 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Drone Arm"
+      },
+      {
+        "name": "Drone Arm"
+      },
+      {
+        "name": "Drone Leg"
+      },
+      {
+        "name": "Drone Leg"
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [14],
       "restriction": "F"
@@ -7275,6 +8671,11 @@
       {
         "name": "Sensor Array",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "weaponMountList": [
@@ -7311,6 +8712,14 @@
         "rating": 3
       }
     ],
+    "includedMods": [
+      {
+        "name": "Dustoff Armored Valkyrie Module"
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [10],
       "restriction": "R"
@@ -7339,6 +8748,25 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Drone Arm",
+        "addCyberware": "Snake Fingers"
+      },
+      {
+        "name": "Drone Arm",
+        "addCyberware": "Snake Fingers"
+      },
+      {
+        "name": "Drone Leg"
+      },
+      {
+        "name": "Drone Leg"
+      },
+      {
+        "name": "Rigger Adaptation"
       }
     ],
     "availability": {
@@ -7370,6 +8798,11 @@
         "name": "[Weapon] Targeting Autosoft",
         "specificOption": "Stoner-Ares M202",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "weaponList": ["Stoner-Ares M202"],
@@ -7474,6 +8907,11 @@
         "rating": 3
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [20],
       "restriction": "F"
@@ -7494,6 +8932,11 @@
     "armour": 0,
     "pilot": 0,
     "sensor": 0,
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "userSelectable": false,
     "availability": {
       "rating": [8],
@@ -7526,6 +8969,11 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [5],
       "restriction": ""
@@ -7552,6 +9000,11 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [6],
       "restriction": "R"
@@ -7576,6 +9029,29 @@
       {
         "name": "Sensor Array",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Chameleon Coating"
+      },
+      {
+        "name": "Gecko Grips (Drone)"
+      },
+      {
+        "name": "Synthetic Drone Arm"
+      },
+      {
+        "name": "Synthetic Drone Arm"
+      },
+      {
+        "name": "Synthetic Drone Leg"
+      },
+      {
+        "name": "Synthetic Drone Leg"
+      },
+      {
+        "name": "Rigger Interface"
       }
     ],
     "availability": {
@@ -7619,6 +9095,23 @@
         "rating": 1
       }
     ],
+    "includedMods": [
+      {
+        "name": "Drone Arm"
+      },
+      {
+        "name": "Drone Arm"
+      },
+      {
+        "name": "Drone Leg"
+      },
+      {
+        "name": "Drone Leg"
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [6],
       "restriction": ""
@@ -7643,6 +9136,11 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "availability": {
@@ -7671,6 +9169,11 @@
         "rating": 3
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [11],
       "restriction": ""
@@ -7695,6 +9198,11 @@
       {
         "name": "Sensor Array",
         "rating": 1
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "availability": {
@@ -7732,6 +9240,11 @@
         "specificOption": "Armorer"
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [11],
       "restriction": ""
@@ -7759,6 +9272,11 @@
       {
         "name": "Sensor Array",
         "rating": 1
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Improved Economy"
       }
     ],
     "availability": {
@@ -8550,6 +10068,11 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 4,
     "availability": {
       "rating": [6],
@@ -8577,6 +10100,11 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 4,
     "availability": {
       "rating": [4],
@@ -8602,6 +10130,11 @@
       {
         "name": "Sensor Array",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "weaponMountList": [
@@ -8642,6 +10175,11 @@
       {
         "name": "Sensor Array",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "weaponMountList": [
@@ -8687,6 +10225,19 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Off-Road Suspension"
+      },
+      {
+        "name": "Anti-Theft System",
+        "rating": 2
+      },
+      {
+        "name": "Metahuman Adjustment",
+        "rating": 3
+      }
+    ],
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -8715,6 +10266,18 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Anti-Theft System",
+        "rating": 2
+      },
+      {
+        "name": "Gyro-Stabilization"
+      },
+      {
+        "name": "GridLink"
       }
     ],
     "availability": {
@@ -8747,6 +10310,25 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Anti-Theft System",
+        "rating": 2
+      },
+      {
+        "name": "Passenger Protection System",
+        "rating": 2
+      },
+      {
+        "name": "Improved Economy"
+      },
+      {
+        "name": "GridLink"
+      },
+      {
+        "name": "Amenities (Middle)"
+      }
+    ],
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -8775,6 +10357,39 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Anti-Theft System",
+        "rating": 2
+      },
+      {
+        "name": "Passenger Protection System",
+        "rating": 4
+      },
+      {
+        "name": "ECM",
+        "rating": 2
+      },
+      {
+        "name": "Improved Economy"
+      },
+      {
+        "name": "GridLink"
+      },
+      {
+        "name": "Amenities (High)"
+      },
+      {
+        "name": "Interior Cameras"
+      },
+      {
+        "name": "Satellite Link"
+      },
+      {
+        "name": "Armor (Concealed)",
+        "rating": 3
       }
     ],
     "availability": {
@@ -8807,6 +10422,33 @@
         "rating": 3
       }
     ],
+    "includedMods": [
+      {
+        "name": "Anti-Theft System",
+        "rating": 2
+      },
+      {
+        "name": "Standard Drone Rack (Small)"
+      },
+      {
+        "name": "Off-Road Suspension"
+      },
+      {
+        "name": "Amenities (High)"
+      },
+      {
+        "name": "Winch (Basic)"
+      },
+      {
+        "name": "Satellite Link"
+      },
+      {
+        "name": "Multifuel Engine"
+      },
+      {
+        "name": "SunCell"
+      }
+    ],
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -8835,6 +10477,20 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Anti-Theft System",
+        "rating": 2
+      },
+      {
+        "name": "Passenger Protection System",
+        "rating": 1
+      },
+      {
+        "name": "Life Support",
+        "rating": 1
       }
     ],
     "availability": {
@@ -8867,6 +10523,12 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Metahuman Adjustment",
+        "rating": 4
+      }
+    ],
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -8894,6 +10556,33 @@
     "includedGearList": [
       {
         "name": "Sensor Array",
+        "rating": 4
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Anti-Theft System",
+        "rating": 2
+      },
+      {
+        "name": "Passenger Protection System",
+        "rating": 2
+      },
+      {
+        "name": "ECM",
+        "rating": 2
+      },
+      {
+        "name": "Rigger Interface"
+      },
+      {
+        "name": "GridLink"
+      },
+      {
+        "name": "Amenities (Luxury)"
+      },
+      {
+        "name": "Armor (Concealed)",
         "rating": 4
       }
     ],
@@ -8927,6 +10616,21 @@
         "rating": 3
       }
     ],
+    "includedMods": [
+      {
+        "name": "Amenities (Middle)"
+      },
+      {
+        "name": "Interior Cameras"
+      },
+      {
+        "name": "SunCell"
+      },
+      {
+        "name": "Metahuman Adjustment",
+        "rating": 25
+      }
+    ],
     "availability": {
       "rating": [14],
       "restriction": ""
@@ -8957,6 +10661,22 @@
         "rating": 3
       }
     ],
+    "includedMods": [
+      {
+        "name": "Anti-Theft System",
+        "rating": 1
+      },
+      {
+        "name": "Passenger Protection System",
+        "rating": 4
+      },
+      {
+        "name": "Off-Road Suspension"
+      },
+      {
+        "name": "Multifuel Engine"
+      }
+    ],
     "availability": {
       "rating": [16],
       "restriction": ""
@@ -8985,6 +10705,16 @@
       {
         "name": "Sensor Array",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Anti-Theft System",
+        "rating": 2
+      },
+      {
+        "name": "Passenger Protection System",
+        "rating": 2
       }
     ],
     "weaponMountList": [
@@ -9031,6 +10761,15 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Passenger Protection System",
+        "rating": 2
+      },
+      {
+        "name": "Valkyrie Module"
+      }
+    ],
     "availability": {
       "rating": [10],
       "restriction": ""
@@ -9056,6 +10795,14 @@
       {
         "name": "Sensor Array",
         "rating": 1
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Multifuel Engine"
+      },
+      {
+        "name": "Winch (Basic)"
       }
     ],
     "availability": {
@@ -9085,6 +10832,11 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Multifuel Engine"
+      }
+    ],
     "availability": {
       "rating": [12],
       "restriction": ""
@@ -9110,6 +10862,25 @@
       {
         "name": "Sensor Array",
         "rating": 4
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Anti-Theft System",
+        "rating": 4
+      },
+      {
+        "name": "Amenities (Middle)"
+      },
+      {
+        "name": "Interior Cameras"
+      },
+      {
+        "name": "Life Support",
+        "rating": 1
+      },
+      {
+        "name": "Extra Entry/Exit Points"
       }
     ],
     "availability": {
@@ -9139,6 +10910,11 @@
         "rating": 4
       }
     ],
+    "includedMods": [
+      {
+        "name": "SunCell"
+      }
+    ],
     "availability": {
       "rating": [12],
       "restriction": ""
@@ -9164,6 +10940,20 @@
       {
         "name": "Sensor Array",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Flash-Pak"
+      },
+      {
+        "name": "Gecko Grips (Drone)"
+      },
+      {
+        "name": "Spotlight (Drone)"
+      },
+      {
+        "name": "Rigger Interface"
       }
     ],
     "modSlots": 0,
@@ -9193,6 +10983,18 @@
         "rating": 3
       }
     ],
+    "includedMods": [
+      {
+        "name": "Gecko Grips (Drone)"
+      },
+      {
+        "name": "Realistic Features",
+        "rating": 1
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 0,
     "availability": {
       "rating": [8],
@@ -9218,6 +11020,22 @@
       {
         "name": "Sensor Array",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Gecko Grips (Drone)"
+      },
+      {
+        "name": "Realistic Features",
+        "rating": 1
+      },
+      {
+        "name": "Special Equipment",
+        "specificOption": "Engineering laser"
+      },
+      {
+        "name": "Rigger Interface"
       }
     ],
     "modSlots": 0,
@@ -9247,6 +11065,11 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 2,
     "availability": {
       "rating": [8],
@@ -9274,6 +11097,15 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Realistic Features",
+        "rating": 4
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 2,
     "availability": {
       "rating": [8],
@@ -9299,6 +11131,14 @@
       {
         "name": "Sensor Array",
         "rating": 4
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Assembly Time Improvement (Drone)"
+      },
+      {
+        "name": "Rigger Interface"
       }
     ],
     "modSlots": 1,
@@ -9338,6 +11178,11 @@
         "name": "Smartsoft"
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 1,
     "weaponMountList": [
       {
@@ -9373,6 +11218,17 @@
         "rating": 4
       }
     ],
+    "includedMods": [
+      {
+        "name": "Gecko Grips (Drone)"
+      },
+      {
+        "name": "Spotlight (Drone)"
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 0,
     "availability": {
       "rating": [10],
@@ -9398,6 +11254,14 @@
       {
         "name": "Sensor Array",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Spotlight (Drone)"
+      },
+      {
+        "name": "Rigger Interface"
       }
     ],
     "modSlots": 4,
@@ -9434,6 +11298,11 @@
         "rating": 5
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 2,
     "weaponMountList": [
       {
@@ -9467,6 +11336,14 @@
       {
         "name": "Sensor Array",
         "rating": 1
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Flash-Pak"
+      },
+      {
+        "name": "Rigger Interface"
       }
     ],
     "modSlots": 0,
@@ -9509,6 +11386,14 @@
         "rating": 3
       }
     ],
+    "includedMods": [
+      {
+        "name": "Spotlight (Drone)"
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 0,
     "availability": {
       "rating": [10],
@@ -9546,6 +11431,11 @@
       {
         "name": "Clearsight Autosoft",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "modSlots": 0,
@@ -9597,6 +11487,15 @@
         "rating": 4
       }
     ],
+    "includedMods": [
+      {
+        "name": "ECM",
+        "rating": 3
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 0,
     "weaponMountList": [
       {
@@ -9637,6 +11536,20 @@
         "rating": 5
       }
     ],
+    "includedMods": [
+      {
+        "name": "SkyGuide (Drone)"
+      },
+      {
+        "name": "SunCell"
+      },
+      {
+        "name": "Spotlight (Drone)"
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 3,
     "availability": {
       "rating": [8],
@@ -9670,6 +11583,14 @@
       },
       {
         "name": "Smartsoft"
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Gecko Grips (Drone)"
+      },
+      {
+        "name": "Rigger Interface"
       }
     ],
     "modSlots": 0,
@@ -9726,6 +11647,26 @@
         "rating": 3
       }
     ],
+    "includedMods": [
+      {
+        "name": "Touch Sensors"
+      },
+      {
+        "name": "Drone Arm"
+      },
+      {
+        "name": "Drone Arm"
+      },
+      {
+        "name": "Drone Leg"
+      },
+      {
+        "name": "Drone Leg"
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "modSlots": 0,
     "weaponList": ["Yamaha Pulsar"],
     "weaponMountList": [
@@ -9766,6 +11707,12 @@
         "rating": 3
       }
     ],
+    "includedMods": [
+      {
+        "name": "Metahuman Adjustment",
+        "rating": 1
+      }
+    ],
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -9794,6 +11741,12 @@
       {
         "name": "Sensor Array",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Metahuman Adjustment",
+        "rating": 8
       }
     ],
     "availability": {
@@ -9838,6 +11791,17 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      },
+      {
+        "name": "Manual Controls"
+      },
+      {
+        "name": "Avibras-Nissan AN 822 Device Rating Upgrade"
+      }
+    ],
     "availability": {
       "rating": [10],
       "restriction": ""
@@ -9869,6 +11833,14 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Searchlight"
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [10],
       "restriction": ""
@@ -9896,6 +11868,20 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Removed Manual Controls"
+      },
+      {
+        "name": "GridLink"
+      },
+      {
+        "name": "Rigger Interface"
+      },
+      {
+        "name": "Enhanced Image Screens"
       }
     ],
     "availability": {
@@ -9928,6 +11914,24 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Removed Manual Controls"
+      },
+      {
+        "name": "Off-Road Suspension"
+      },
+      {
+        "name": "GridLink"
+      },
+      {
+        "name": "Metahuman Adjustment",
+        "rating": 4
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [9],
       "restriction": "R"
@@ -9955,6 +11959,15 @@
     "includedGearList": [
       {
         "name": "Sensor Array",
+        "rating": 4
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      },
+      {
+        "name": "Sensor Enhancement",
         "rating": 4
       }
     ],
@@ -9988,6 +12001,20 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Removed Manual Controls"
+      },
+      {
+        "name": "GridLink"
+      },
+      {
+        "name": "Interior Cameras"
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [10],
       "restriction": "R"
@@ -10013,6 +12040,21 @@
       {
         "name": "Sensor Array",
         "rating": 4
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "ECM"
+      },
+      {
+        "name": "Passenger Protection System",
+        "rating": 1
+      },
+      {
+        "name": "Amenities (Luxury)"
+      },
+      {
+        "name": "Rigger Interface"
       }
     ],
     "availability": {
@@ -10078,6 +12120,11 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [6],
       "restriction": ""
@@ -10104,6 +12151,11 @@
         "rating": 4
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [10],
       "restriction": ""
@@ -10128,6 +12180,11 @@
       {
         "name": "Sensor Array",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "availability": {
@@ -10239,6 +12296,34 @@
       {
         "name": "Maersk Shipyards Wavecutter MPAC (Commlink)",
         "rating": 7
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "ECM",
+        "rating": 4
+      },
+      {
+        "name": "Manual Control Override"
+      },
+      {
+        "name": "Rigger Cocoon"
+      },
+      {
+        "name": "Rigger Interface"
+      },
+      {
+        "name": "Satellite Link"
+      },
+      {
+        "name": "SunCell"
+      },
+      {
+        "name": "Signature Masking",
+        "rating": 4
+      },
+      {
+        "name": "Maersk Shipyards Wavecutter MPAC Small Craft Bay"
       }
     ],
     "weaponModSlots": 4,
@@ -10660,6 +12745,18 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Off-Road Suspension"
+      },
+      {
+        "name": "Anti-Theft System",
+        "rating": 1
+      },
+      {
+        "name": "Multifuel Engine"
+      }
+    ],
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -10685,6 +12782,11 @@
       {
         "name": "Sensor Array",
         "rating": 3
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "availability": {
@@ -10713,6 +12815,14 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Amenities (Squatter)"
+      },
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -10738,6 +12848,11 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
       }
     ],
     "availability": {
@@ -10769,6 +12884,46 @@
         "rating": 4
       }
     ],
+    "includedMods": [
+      {
+        "name": "Anti-Theft System",
+        "rating": 2
+      },
+      {
+        "name": "Standard Drone Rack (Small)"
+      },
+      {
+        "name": "Off-Road Suspension"
+      },
+      {
+        "name": "Amenities (Low)"
+      },
+      {
+        "name": "Multifuel Engine"
+      },
+      {
+        "name": "Satellite Link"
+      },
+      {
+        "name": "Winch (Basic)"
+      },
+      {
+        "name": "Searchlight"
+      },
+      {
+        "name": "Retrans Unit"
+      },
+      {
+        "name": "Special Equipment",
+        "specificOption": "Command center with own Host"
+      },
+      {
+        "name": "Enhanced Image Screens"
+      },
+      {
+        "name": "Increased Seating"
+      }
+    ],
     "availability": {
       "rating": [10],
       "restriction": ""
@@ -10797,6 +12952,60 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Anti-Theft System",
+        "rating": 2
+      },
+      {
+        "name": "Standard Drone Rack (Small)"
+      },
+      {
+        "name": "Off-Road Suspension"
+      },
+      {
+        "name": "Amenities (Low)"
+      },
+      {
+        "name": "Multifuel Engine"
+      },
+      {
+        "name": "Satellite Link"
+      },
+      {
+        "name": "Winch (Basic)"
+      },
+      {
+        "name": "Searchlight"
+      },
+      {
+        "name": "Extreme Environment Modification"
+      },
+      {
+        "name": "Life Support",
+        "rating": 1
+      },
+      {
+        "name": "Special Equipment",
+        "specificOption": "Firefighting Cannon"
+      },
+      {
+        "name": "Special Equipment",
+        "specificOption": "Dozer Blade"
+      },
+      {
+        "name": "Special Equipment",
+        "specificOption": "Water Jet Cutter"
+      },
+      {
+        "name": "Special Equipment",
+        "specificOption": "Rescue-Equipment"
+      },
+      {
+        "name": "Special Armor Modification (Fire)",
+        "rating": 6
       }
     ],
     "weaponList": ["Krupp Munitions 3E Firefighting Cannon"],
@@ -10839,6 +13048,57 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Anti-Theft System",
+        "rating": 2
+      },
+      {
+        "name": "Standard Drone Rack (Small)"
+      },
+      {
+        "name": "Off-Road Suspension"
+      },
+      {
+        "name": "Amenities (Low)"
+      },
+      {
+        "name": "Multifuel Engine"
+      },
+      {
+        "name": "Satellite Link"
+      },
+      {
+        "name": "Winch (Basic)"
+      },
+      {
+        "name": "Searchlight"
+      },
+      {
+        "name": "Life Support",
+        "rating": 2
+      },
+      {
+        "name": "Special Equipment",
+        "specificOption": "Firefighting Cannon"
+      },
+      {
+        "name": "Special Equipment",
+        "specificOption": "Dozer Blade"
+      },
+      {
+        "name": "Special Equipment",
+        "specificOption": "CBRN Equipment"
+      },
+      {
+        "name": "Special Armor Modification (Radiation)",
+        "rating": 6
+      },
+      {
+        "name": "Special Armor Modification (Chemical)",
+        "rating": 6
+      }
+    ],
     "weaponList": ["Krupp Munitions 3E Firefighting Cannon"],
     "weaponMountList": [
       {
@@ -10879,6 +13139,39 @@
         "rating": 5
       }
     ],
+    "includedMods": [
+      {
+        "name": "Anti-Theft System",
+        "rating": 2
+      },
+      {
+        "name": "Off-Road Suspension"
+      },
+      {
+        "name": "Amenities (Low)"
+      },
+      {
+        "name": "Life Support",
+        "rating": 1
+      },
+      {
+        "name": "Multifuel Engine"
+      },
+      {
+        "name": "Retrans Unit"
+      },
+      {
+        "name": "Special Armor Modification (Radiation)",
+        "rating": 6
+      },
+      {
+        "name": "Special Armor Modification (Chemical)",
+        "rating": 6
+      },
+      {
+        "name": "Extra Entry/Exit Points"
+      }
+    ],
     "weaponMountList": [
       {
         "control": "Manual",
@@ -10917,6 +13210,36 @@
         "rating": 4
       }
     ],
+    "includedMods": [
+      {
+        "name": "Anti-Theft System",
+        "rating": 2
+      },
+      {
+        "name": "Off-Road Suspension"
+      },
+      {
+        "name": "Amenities (Low)"
+      },
+      {
+        "name": "Life Support",
+        "rating": 1
+      },
+      {
+        "name": "Multifuel Engine"
+      },
+      {
+        "name": "Retrans Unit"
+      },
+      {
+        "name": "Special Armor Modification (Radiation)",
+        "rating": 6
+      },
+      {
+        "name": "Special Armor Modification (Chemical)",
+        "rating": 6
+      }
+    ],
     "weaponMountList": [
       {
         "control": "Remote",
@@ -10952,6 +13275,11 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Rigger Interface"
+      }
+    ],
     "availability": {
       "rating": [9],
       "restriction": "R"
@@ -10979,6 +13307,15 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Amenities (Street)"
+      },
+      {
+        "name": "Metahuman Adjustment",
+        "rating": 1
       }
     ],
     "availability": {
@@ -11011,6 +13348,15 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Amenities (Street)"
+      },
+      {
+        "name": "Metahuman Adjustment",
+        "rating": 4
+      }
+    ],
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -11039,6 +13385,15 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Amenities (Street)"
+      },
+      {
+        "name": "Metahuman Adjustment",
+        "rating": 4
       }
     ],
     "availability": {
@@ -11071,6 +13426,20 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Amenities (Street)"
+      },
+      {
+        "name": "Metahuman Adjustment",
+        "rating": 4
+      },
+      {
+        "name": "Yerzed Out",
+        "rating": 2,
+        "specificOption": "Chrome"
+      }
+    ],
     "availability": {
       "rating": [7],
       "restriction": ""
@@ -11099,6 +13468,18 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Amenities (Street)"
+      },
+      {
+        "name": "Metahuman Adjustment",
+        "rating": 4
+      },
+      {
+        "name": "Off-Road Suspension"
       }
     ],
     "availability": {
@@ -11131,6 +13512,18 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Amenities (Street)"
+      },
+      {
+        "name": "Metahuman Adjustment",
+        "rating": 4
+      },
+      {
+        "name": "Off-Road Suspension"
+      }
+    ],
     "availability": {
       "rating": [5],
       "restriction": ""
@@ -11159,6 +13552,20 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Amenities (Street)"
+      },
+      {
+        "name": "Metahuman Adjustment",
+        "rating": 4
+      },
+      {
+        "name": "Yerzed Out",
+        "rating": 2,
+        "specificOption": "Chrome"
       }
     ],
     "availability": {
@@ -11191,6 +13598,24 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Life Support",
+        "rating": 1
+      },
+      {
+        "name": "Metahuman Adjustment",
+        "rating": 2
+      },
+      {
+        "name": "Passenger Protection System",
+        "rating": 3
+      },
+      {
+        "name": "Personal Armor",
+        "rating": 4
+      }
+    ],
     "availability": {
       "rating": [12],
       "restriction": ""
@@ -11219,6 +13644,58 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Gun Port",
+        "specificOption": "Driver"
+      },
+      {
+        "name": "Gun Port",
+        "specificOption": "Passenger"
+      },
+      {
+        "name": "Passenger Protection System",
+        "rating": 3
+      },
+      {
+        "name": "Personal Armor",
+        "rating": 6
+      },
+      {
+        "name": "GridLink"
+      },
+      {
+        "name": "Metahuman Adjustment",
+        "rating": 4
+      },
+      {
+        "name": "Multifuel Engine"
+      },
+      {
+        "name": "Ram Plate"
+      },
+      {
+        "name": "Rigger Interface"
+      },
+      {
+        "name": "Road Strip Ejector"
+      },
+      {
+        "name": "Searchlight",
+        "specificOption": "Driver"
+      },
+      {
+        "name": "Searchlight",
+        "specificOption": "Passenger"
+      },
+      {
+        "name": "Winch (Enhanced)"
+      },
+      {
+        "name": "Yerzed Out",
+        "rating": 1
       }
     ],
     "powerTrainModSlots": -14,
@@ -11253,6 +13730,23 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Amenities (Middle)"
+      },
+      {
+        "name": "Metahuman Adjustment",
+        "rating": 3
+      },
+      {
+        "name": "Special Equipment",
+        "specificOption": "Open box storage"
+      },
+      {
+        "name": "Yerzed Out",
+        "rating": 1
+      }
+    ],
     "availability": {
       "rating": [21],
       "restriction": "R"
@@ -11281,6 +13775,19 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Metahuman Adjustment",
+        "rating": 4
+      },
+      {
+        "name": "Multifuel Engine"
+      },
+      {
+        "name": "Special Equipment",
+        "specificOption": "Open box storage"
       }
     ],
     "availability": {
@@ -11316,6 +13823,29 @@
         "rating": 2
       }
     ],
+    "includedMods": [
+      {
+        "name": "Amenities (Street)"
+      },
+      {
+        "name": "Metahuman Adjustment",
+        "rating": 6
+      },
+      {
+        "name": "Multifuel Engine"
+      },
+      {
+        "name": "Satellite Link"
+      },
+      {
+        "name": "Special Equipment",
+        "specificOption": "Fishing nets and lines"
+      },
+      {
+        "name": "Special Equipment",
+        "specificOption": "Oversized fish freezer"
+      }
+    ],
     "availability": {
       "rating": [12],
       "restriction": ""
@@ -11341,6 +13871,24 @@
       {
         "name": "Sensor Array",
         "rating": 2
+      }
+    ],
+    "includedMods": [
+      {
+        "name": "Amenities (Street)"
+      },
+      {
+        "name": "Metahuman Adjustment",
+        "rating": 1
+      },
+      {
+        "name": "Rigger Cocoon"
+      },
+      {
+        "name": "Rigger Interface"
+      },
+      {
+        "name": "Searchlight"
       }
     ],
     "powerTrainModSlots": -7,

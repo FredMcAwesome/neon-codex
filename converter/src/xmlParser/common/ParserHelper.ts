@@ -433,7 +433,8 @@ export function convertAttribute(attribute: attributeXMLEnum) {
 export const convertXmlVehicleModList = function (
   modList: ModRecursiveXmlType
 ): GenericVehicleModListType | undefined {
-  const mods: GenericVehicleModListType = [];
+  let mods: GenericVehicleModListType = [];
+  // TODO: handle all possiblities here properly
   if ("mod" in modList && modList.mod !== undefined) {
     const nameList = Array.isArray(modList.mod) ? modList.mod : [modList.mod];
     nameList.forEach((name) => {
@@ -443,18 +444,20 @@ export const convertXmlVehicleModList = function (
         // technically this could also be bioware but no examples yet
         assert("cyberware" in name.subsystems);
         const subsystem = name.subsystems.cyberware.name;
-        modObject = {
-          addCyberware: subsystem,
-          ...initialModObject,
-        };
+        assert(initialModObject.length === 1);
+        modObject = [
+          {
+            addCyberware: subsystem,
+            ...initialModObject[0],
+          },
+        ];
       } else {
         modObject = initialModObject;
       }
-
-      mods.concat(modObject);
+      mods = mods.concat(modObject);
     });
   }
-  mods.concat(convertXmlModObject(modList));
+  mods = mods.concat(convertXmlModObject(modList));
   if (mods.length === 0) {
     return undefined;
   }

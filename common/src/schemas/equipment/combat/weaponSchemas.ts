@@ -262,7 +262,7 @@ const WeaponSummaryPartialSchema = zod
     allowedGearCategories: zod.optional(
       zod.array(zod.nativeEnum(gearCategoryEnum))
     ),
-    accessories: zod.optional(UnlinkedAccessoryListSchema),
+    includedAccessoryList: zod.optional(UnlinkedAccessoryListSchema),
     allowAccessories: zod.boolean(),
     userSelectable: zod.optional(zod.literal(false)),
     augmentationType: zod.optional(zod.nativeEnum(augmentationTypeEnum)),

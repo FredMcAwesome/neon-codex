@@ -161,13 +161,13 @@ export async function getSkills() {
 async function getWeapons(): Promise<WeaponSummaryListType> {
   const db = await init();
   const weapons = await db.em.findAll(Weapons, {
-    populate: ["*", "includedAccessories.weaponAccessory"],
+    populate: ["*", "includedAccessoryList.weaponAccessory"],
   });
   const weaponsResponse = Promise.all(
     weapons.map(async (weapon) => {
       const skill = weapon.relatedSkill.$.name;
-      const dbAccessories = weapon.includedAccessories;
-      const accessories = dbAccessories.$.map((accessory) => {
+      const dbAccessories = weapon.includedAccessoryList;
+      const includedAccessoryList = dbAccessories.$.map((accessory) => {
         const originalAccessory = accessory.weaponAccessory.$.name;
         return { name: originalAccessory };
       });
@@ -198,8 +198,8 @@ async function getWeapons(): Promise<WeaponSummaryListType> {
         ...(weapon.allowedGearCategories !== undefined && {
           allowedGearCategories: weapon.allowedGearCategories,
         }),
-        ...(accessories.length > 0 && {
-          accessories: accessories,
+        ...(includedAccessoryList.length > 0 && {
+          includedAccessoryList: includedAccessoryList,
         }),
         allowAccessories: weapon.allowAccessories,
         userSelectable: weapon.userSelectable,
@@ -1009,10 +1009,10 @@ const createCharacter = privateProcedure
         throw new Error("Weapon does not exist");
       }
       const activeWeapon = new CustomisedWeapons(ref(weapon));
-      if (unlinkedWeapon.accessories === undefined) {
+      if (unlinkedWeapon.includedAccessoryList === undefined) {
         continue;
       }
-      for (const unlinkedAccessory of unlinkedWeapon.accessories) {
+      for (const unlinkedAccessory of unlinkedWeapon.includedAccessoryList) {
         const accessory = await db.em.findOne(WeaponAccessories, {
           name: unlinkedAccessory.name,
         });
@@ -1486,8 +1486,8 @@ const convertWeaponDBToDTO = async function (
       return gear.name;
     }),
     allowedGearCategories: weaponDB.allowedGearCategories,
-    accessories: await Promise.all(
-      weaponDB.includedAccessories.map((accessory) => {
+    includedAccessoryList: await Promise.all(
+      weaponDB.includedAccessoryList.map((accessory) => {
         return convertIncludedWeaponAccessoryDBToDTO(accessory);
       })
     ),

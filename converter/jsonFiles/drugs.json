@@ -4,6 +4,14 @@
     "description": "",
     "category": "Drugs",
     "speed": 1,
+    "bonus": {
+      "qualities": [
+        {
+          "name": "High Pain Tolerance",
+          "rating": 3
+        }
+      ]
+    },
     "availability": {
       "rating": 3,
       "restriction": "F"
@@ -74,7 +82,13 @@
     "bonus": {
       "initiative": {
         "bonusDice": 2
-      }
+      },
+      "qualities": [
+        {
+          "name": "High Pain Tolerance",
+          "rating": 3
+        }
+      ]
     },
     "availability": {
       "rating": 4,
@@ -102,6 +116,14 @@
     "description": "",
     "category": "Drugs",
     "speed": 6,
+    "bonus": {
+      "qualities": [
+        {
+          "name": "High Pain Tolerance",
+          "rating": 6
+        }
+      ]
+    },
     "availability": {
       "rating": 2,
       "restriction": "R"
@@ -115,6 +137,14 @@
     "description": "",
     "category": "Drugs",
     "speed": 6,
+    "bonus": {
+      "qualities": [
+        {
+          "name": "High Pain Tolerance",
+          "rating": 1
+        }
+      ]
+    },
     "availability": {
       "rating": 2,
       "restriction": "R"

@@ -178,94 +178,77 @@ export const EquipmentSelect = function (props: IProps) {
       <h1>Equipment Selection</h1>
       <CollapsibleDiv title="Weapons">
         <div id="Weapons_Div">
-          <WeaponDiv
-            title={"Melee Weapons"}
-            data={data.weapons}
-            weaponType={weaponTypeEnum.Melee}
-            addWeapon={addWeapon}
-          />
-          <WeaponDiv
-            title={"Projectile Weapons"}
-            data={data.weapons}
-            weaponType={weaponTypeEnum.Projectile}
-            addWeapon={addWeapon}
-          />
-          <WeaponDiv
-            title={"Firearms"}
-            data={data.weapons}
-            weaponType={weaponTypeEnum.Firearm}
-            addWeapon={addWeapon}
-          />
-          <WeaponDiv
-            title={"Explosives"}
-            data={data.weapons}
-            weaponType={weaponTypeEnum.Explosive}
-            addWeapon={addWeapon}
-          />
+          {Object.values(weaponTypeEnum).map((value, index) => {
+            return (
+              <WeaponDiv
+                title={value}
+                data={data.weapons}
+                weaponType={value}
+                addWeapon={addWeapon}
+                key={index}
+              />
+            );
+          })}
         </div>
       </CollapsibleDiv>
       <CollapsibleDiv title="Armour">
         <div id="Armour_Div">
-          <ArmourDiv
-            title={"Armour"}
-            data={data.armours}
-            armourType={armourCategoryEnum.Armour}
-            addArmour={addArmour}
-          />
+          {Object.values(armourCategoryEnum).map((value, index) => {
+            return (
+              <ArmourDiv
+                title={value}
+                data={data.armours}
+                armourType={value}
+                addArmour={addArmour}
+                key={index}
+              />
+            );
+          })}
         </div>
       </CollapsibleDiv>
       <CollapsibleDiv title="Gear">
         <div id="Gear_Div">
-          <GearDiv
-            title={"Industrial Chemicals"}
-            data={data.gears}
-            gearCategory={gearCategoryEnum.Ammunition}
-            addGear={addGear}
-          />
+          {Object.values(gearCategoryEnum).map((value, index) => {
+            return (
+              <GearDiv
+                title={value}
+                data={data.gears}
+                gearCategory={value}
+                addGear={addGear}
+                key={index}
+              />
+            );
+          })}
         </div>
       </CollapsibleDiv>
       <CollapsibleDiv title="Augmentations">
         <div id="Augmentations_Div">
-          <AugmentationsDiv
-            title={"Cyberware"}
-            data={data.augmentations}
-            augmentationType={augmentationTypeEnum.Cyberware}
-            addAugmentations={addAugmentations}
-          />
-          <AugmentationsDiv
-            title={"Bioware"}
-            data={data.augmentations}
-            augmentationType={augmentationTypeEnum.Bioware}
-            addAugmentations={addAugmentations}
-          />
+          {Object.values(augmentationTypeEnum).map((value, index) => {
+            return (
+              <AugmentationsDiv
+                title={value}
+                data={data.augmentations}
+                augmentationType={value}
+                addAugmentations={addAugmentations}
+                key={index}
+              />
+            );
+          })}
         </div>
       </CollapsibleDiv>
       <CollapsibleDiv title="Vehicles and Drones">
         <div id="Vehicles">
-          <VehiclesDiv
-            title={"Groundcraft"}
-            data={data.vehicles}
-            vehicleType={vehicleTypeEnum.Groundcraft}
-            addVehicles={addVehicles}
-          />
-          <VehiclesDiv
-            title={"Watercraft"}
-            data={data.vehicles}
-            vehicleType={vehicleTypeEnum.Watercraft}
-            addVehicles={addVehicles}
-          />
-          <VehiclesDiv
-            title={"Aircraft"}
-            data={data.vehicles}
-            vehicleType={vehicleTypeEnum.Aircraft}
-            addVehicles={addVehicles}
-          />
-          <VehiclesDiv
-            title={"Drones"}
-            data={data.vehicles}
-            vehicleType={vehicleTypeEnum.Drone}
-            addVehicles={addVehicles}
-          />
+          {Object.values(vehicleTypeEnum).map((value, index) => {
+            return (
+              <VehiclesDiv
+                title={value}
+                data={data.vehicles}
+                vehicleType={value}
+                addVehicles={addVehicles}
+                key={index}
+              />
+            );
+          })}
         </div>
       </CollapsibleDiv>
       <h2>Gear Selected</h2>
@@ -290,20 +273,21 @@ export const EquipmentSelect = function (props: IProps) {
                 key={weapon.name + index}
               >
                 <div>{weapon.description}</div>
-                {weapon.accessories && (
-                  <div>
-                    <span>Accessories:</span>
-                    <ul>
-                      {weapon.accessories.map((accessory) => {
-                        return (
-                          <li key={weapon.name + accessory.name}>
-                            {accessory.name}
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </div>
-                )}
+                {weapon.includedAccessoryList !== undefined &&
+                  weapon.includedAccessoryList.length > 0 && (
+                    <div>
+                      <span>Accessories:</span>
+                      <ul>
+                        {weapon.includedAccessoryList.map((accessory) => {
+                          return (
+                            <li key={weapon.name + accessory.name}>
+                              {accessory.name}
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  )}
               </CollapsibleEquipmentDiv>
             );
           })}
@@ -325,6 +309,19 @@ export const EquipmentSelect = function (props: IProps) {
                 key={armour.name + index}
               >
                 <div>{armour.description}</div>
+                {armour.includedMods !== undefined &&
+                  armour.includedMods.length > 0 && (
+                    <div>
+                      <span>Modifications:</span>
+                      <ul>
+                        {armour.includedMods.map((mod) => {
+                          return (
+                            <li key={armour.name + mod.name}>{mod.name}</li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  )}
               </CollapsibleEquipmentDiv>
             );
           })}
@@ -373,21 +370,34 @@ export const EquipmentSelect = function (props: IProps) {
         </div>
         <h3>Vehicles</h3>
         <div>
-          {equipmentSelected.vehicles.map((vehicles, index) => {
+          {equipmentSelected.vehicles.map((vehicle, index) => {
             const addItem = function () {
-              addVehicles(vehicles);
+              addVehicles(vehicle);
             };
             const removeItem = function () {
-              removeVehicles(vehicles, index);
+              removeVehicles(vehicle, index);
             };
             return (
               <CollapsibleEquipmentDiv
-                title={vehicles.name}
+                title={vehicle.name}
                 addItem={addItem}
                 removeItem={removeItem}
-                key={vehicles.name + index}
+                key={vehicle.name + index}
               >
-                <div>{vehicles.description}</div>
+                <div>{vehicle.description}</div>
+                {vehicle.includedMods !== undefined &&
+                  vehicle.includedMods.length > 0 && (
+                    <div>
+                      <span>Modifications:</span>
+                      <ul>
+                        {vehicle.includedMods.map((mod) => {
+                          return (
+                            <li key={vehicle.name + mod.name}>{mod.name}</li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  )}
               </CollapsibleEquipmentDiv>
             );
           })}

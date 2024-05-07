@@ -4768,6 +4768,13 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "bonus": {
+      "qualities": [
+        {
+          "name": "Human-Looking"
+        }
+      ]
+    },
     "requirements": {},
     "availability": {
       "rating": [4],
