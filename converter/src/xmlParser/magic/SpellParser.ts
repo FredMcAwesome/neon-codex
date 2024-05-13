@@ -20,7 +20,7 @@ import {
 import { convertXmlBonus } from "../common/BonusParserHelper.js";
 import { convertSource } from "../common/ParserHelper.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
-import { SpellSchema } from "@neon-codex/common/build/schemas/abilities/spellSchemas.js";
+import { SpellSchema } from "@neon-codex/common/build/schemas/abilities/magic/spellSchemas.js";
 import Spells from "../../grammar/spells.ohm-bundle.js";
 const Damage = Spells.Damage;
 

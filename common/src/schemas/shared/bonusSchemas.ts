@@ -633,7 +633,16 @@ export const BonusSchema = zod
           .strict(),
       ])
     ),
-    addPhysicalBoxes: zod.optional(zod.number()),
+    addPhysicalBoxes: zod.optional(
+      zod.union([
+        zod.number(),
+        zod
+          .object({
+            option: zod.literal("Rating"),
+          })
+          .strict(),
+      ])
+    ),
     // Note: percentage speed increases stack so 50% + 50% = 100%
     swimSpeedPercentageModifier: zod.optional(zod.number()),
     walkSpeedPercentageModifier: zod.optional(zod.number()),

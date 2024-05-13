@@ -97,8 +97,12 @@ import type {
   TalentOptionsPriorityType,
 } from "@neon-codex/common/build/schemas/otherData/prioritySchemas.js";
 import { IncludedQualities } from "../models/rpg/activeTables/activeQualityModel.js";
+import { Spells } from "../models/rpg/abilities/spellModel.js";
+import { getSpells } from "../seeds/rpgSeeds/spellsSeed.js";
+import { getAdeptPowers } from "../seeds/rpgSeeds/adeptPowerSeed.js";
+import { AdeptPowers } from "../models/rpg/abilities/adeptPowerModel.js";
 
-export class GearSeeder extends Seeder {
+export class SourcebookSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
     const { stagedSkills, stagedSkillGroups } = getSkills();
     const { unlinkedQualities, stagedQualities } = getQualities();
@@ -122,6 +126,8 @@ export class GearSeeder extends Seeder {
     const stagedVehicleWeaponMounts = createVehicleWeaponMounts();
     const stagedVehicleModifications = getVehicleModifications();
     const { unlinkedGears, stagedGears } = getGears();
+    const stagedspells: Array<Spells> = getSpells();
+    const { unlinkedAdeptPowers, stagedAdeptPowers } = getAdeptPowers();
 
     stagedSkills.forEach((skill) => {
       em.create(Skills, skill);
@@ -244,6 +250,16 @@ export class GearSeeder extends Seeder {
       em.create(Gears, gear);
     }
     console.log("Gears created");
+
+    stagedspells.forEach((spell) => {
+      em.create(Spells, spell);
+    });
+    console.log("Spells created");
+
+    stagedAdeptPowers.forEach((adeptPower) => {
+      em.create(AdeptPowers, adeptPower);
+    });
+    console.log("Adept Powers created");
 
     await em.flush();
 
@@ -1109,6 +1125,36 @@ export class GearSeeder extends Seeder {
       }
     }
     console.log("Gear relationships associated");
+
+    // Adept Powers that share limits with other adept powers
+    for (const adeptPower of unlinkedAdeptPowers) {
+      if (adeptPower.sharedLimitAdeptPowerList !== undefined) {
+        assert(
+          adeptPower.sharedLimitAdeptPowerList.length > 0,
+          "Shared Adept Power list is empty"
+        );
+        const relatedAdeptPower = await em.findOne(AdeptPowers, {
+          name: adeptPower.name,
+        });
+        assert(
+          relatedAdeptPower !== null,
+          `undefined Adept Power: ${adeptPower.name}`
+        );
+
+        for (const sharedLimitAdeptPower of adeptPower.sharedLimitAdeptPowerList) {
+          const linkedAdeptPower = await em.findOne(AdeptPowers, {
+            name: sharedLimitAdeptPower,
+          });
+          assert(
+            linkedAdeptPower !== null,
+            `undefined Shared Limit Adept Power (4): ${sharedLimitAdeptPower}`
+          );
+          const referencedAdeptPower = ref(linkedAdeptPower);
+          relatedAdeptPower.sharedLimitAdeptPowerList.add(referencedAdeptPower);
+        }
+      }
+    }
+    console.log("Adept Power relationships associated");
 
     async function addTalentLinks(
       rowLetter: priorityLetterEnum,

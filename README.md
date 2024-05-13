@@ -50,12 +50,10 @@ export MIKRO_ORM_CLI_CONFIG='./src/mikro-orm_seeder.config.ts' &&
 export MIKRO_ORM_SEEDER_PATH='./src/seeders/' &&
 export NODE_ENV=test &&
 npx mikro-orm-esm seeder:run &&
-npx mikro-orm-esm seeder:run --class=GearSeeder &&
-npx mikro-orm-esm seeder:run --class=AbilitiesSeeder &&
+npx mikro-orm-esm seeder:run --class=DatabaseSeeder &&
 export NODE_ENV=development &&
 npx mikro-orm-esm seeder:run &&
-npx mikro-orm-esm seeder:run --class=GearSeeder &&
-npx mikro-orm-esm seeder:run --class=AbilitiesSeeder &&
+npx mikro-orm-esm seeder:run --class=DatabaseSeeder &&
 unset NODE_ENV &&
 unset MIKRO_ORM_CLI_CONFIG
 ```

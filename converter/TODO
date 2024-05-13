@@ -16,10 +16,8 @@ So far I have only passed to the frontend:
 
 Still need passed through to frontend):
   - Spells
-  - DrugComponents
-
-I need to parse, store in DB, and pass to frontend:
   - Powers
+  - DrugComponents
 
 Other main priorities:
   - Complex Forms

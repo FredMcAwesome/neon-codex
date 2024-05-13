@@ -18,6 +18,7 @@ import { GearListXmlSchema } from "./other/GearParserSchemas.js";
 import { VehicleModListXmlSchema } from "./riggerGear/VehicleModParserSchemas.js";
 import { VehicleListXmlSchema } from "./riggerGear/VehicleParserSchemas.js";
 import { MetatypeListXmlSchema } from "./character/MetatypeParserSchemas.js";
+import { AdeptPowerListXmlSchema } from "./magic/AdeptPowerParserSchemas.js";
 
 export const CheckGUIDs = function () {
   const currentPath = import.meta.url;
@@ -201,6 +202,24 @@ export const CheckGUIDs = function () {
     assert(false);
   }
 
+  // --- Adept Powers --- //
+  xml_string = fs.readFileSync(
+    fileURLToPath(path.dirname(currentPath) + "../../../xmls/powers.xml"),
+    "utf8"
+  );
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  jObj = parser.parse(xml_string);
+
+  const adeptPowerListParsed = AdeptPowerListXmlSchema.safeParse(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    jObj.chummer.powers.power
+  );
+
+  if (!adeptPowerListParsed.success) {
+    console.log(adeptPowerListParsed.error.errors[0]);
+    assert(false);
+  }
+
   // --- Drug Component --- //
   xml_string = fs.readFileSync(
     fileURLToPath(
@@ -342,6 +361,11 @@ export const CheckGUIDs = function () {
   );
   idList = idList.concat(
     spellListParsed.data.map((spell) => {
+      return spell.id;
+    })
+  );
+  idList = idList.concat(
+    adeptPowerListParsed.data.map((spell) => {
       return spell.id;
     })
   );

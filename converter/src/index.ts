@@ -17,6 +17,9 @@ ParseArmourMods();
 import { ParseSpells } from "./xmlParser/magic/SpellParser.js";
 ParseSpells();
 
+import { ParseAdeptPowers } from "./xmlParser/magic/AdeptPowerParser.js";
+ParseAdeptPowers();
+
 import { ParseBioware } from "./xmlParser/bodyModification/BiowareParser.js";
 ParseBioware();
 import { ParseCyberware } from "./xmlParser/bodyModification/CyberwareParser.js";

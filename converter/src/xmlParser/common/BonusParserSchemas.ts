@@ -42,7 +42,7 @@ const SelectAttributeSchema = zod.union([
         zod.array(zod.nativeEnum(attributeXMLEnum)),
         zod.nativeEnum(attributeXMLEnum),
       ]),
-      val: zod.optional(zod.number()),
+      val: zod.optional(NumberOrRatingSchema),
     })
     .strict(),
 ]);
@@ -100,6 +100,33 @@ const MovementMultiplierSchema = zod
     percent: zod.optional(zod.number()),
   })
   .strict();
+
+const SelectSkillSchema = zod.union([
+  zod
+    .object({
+      _limittoskill: zod.optional(zod.string()),
+      _excludeskill: zod.optional(zod.string()),
+      _excludecategory: zod.optional(zod.string()),
+      _knowledgeskills: zod.optional(zod.string()),
+      _skillcategory: zod.optional(zod.string()),
+      _limittoattribute: zod.optional(zod.string()),
+      _maximumrating: zod.optional(zod.string()),
+      _minimumrating: zod.optional(zod.string()),
+      skillcategories: zod.optional(
+        zod
+          .object({
+            category: zod.array(zod.string()),
+          })
+          .strict()
+      ),
+      applytorating: zod.optional(zod.string()),
+      val: zod.optional(NumberOrRatingSchema),
+      max: zod.optional(zod.number()),
+      disablespecializationeffects: zod.optional(zod.literal("")),
+    })
+    .strict(),
+  zod.literal(""),
+]);
 
 // https://github.com/chummer5a/chummer5a/wiki/Improvement-Manager explains bonus properties
 export const BonusXmlSchema = zod.union([
@@ -191,19 +218,11 @@ export const BonusXmlSchema = zod.union([
       // Select a paragon (from paragons.xml)
       selectparagon: zod.optional(zod.literal("")),
       // Choose a skill to link to
-      selectskill: zod.optional(
+      selectskill: zod.optional(SelectSkillSchema),
+      selectspell: zod.optional(
         zod
           .object({
-            _limittoskill: zod.optional(zod.string()),
-            _knowledgeskills: zod.optional(zod.string()),
-            _skillcategory: zod.optional(zod.string()),
-            _limittoattribute: zod.optional(zod.string()),
-            _maximumrating: zod.optional(zod.string()),
-            _minimumrating: zod.optional(zod.string()),
-            applytorating: zod.optional(zod.string()),
-            val: zod.optional(zod.number()),
-            max: zod.optional(zod.number()),
-            disablespecializationeffects: zod.optional(zod.literal("")),
+            _ignorerequirements: zod.literal("True"),
           })
           .strict()
       ),
@@ -267,6 +286,7 @@ export const BonusXmlSchema = zod.union([
       skillgroup: zod.optional(
         zod.union([zod.array(SkillSchema), SkillSchema])
       ),
+      selectlimit: zod.optional(zod.object({ val: zod.number() })),
       addskillspecializationoption: zod.optional(
         zod
           .object({
@@ -511,17 +531,7 @@ export const BonusXmlSchema = zod.union([
         zod
           .object({
             name: zod.optional(zod.string()),
-            selectskill: zod.optional(
-              zod
-                .object({
-                  _knowledgeskills: zod.optional(zod.literal("False")),
-                  _exludecategory: zod.optional(zod.string()),
-                  _skillcategory: zod.optional(zod.string()),
-                  _excludeskill: zod.optional(zod.string()),
-                  _excludecategory: zod.optional(zod.string()),
-                })
-                .strict()
-            ),
+            selectskill: zod.optional(SelectSkillSchema),
             value: zod.number(),
           })
           .strict()
@@ -531,14 +541,24 @@ export const BonusXmlSchema = zod.union([
         zod
           .object({
             bonus: zod.number(),
-            selectskill: zod
+            selectskill: SelectSkillSchema,
+          })
+          .strict()
+      ),
+      weaponcategorydice: zod.optional(
+        zod
+          .object({
+            category: zod
               .object({
-                _limittoskill: zod.string(),
+                name: zod.string(),
+                value: zod.number(),
               })
               .strict(),
           })
           .strict()
       ),
+      throwstr: zod.optional(zod.number()),
+      throwrangestr: zod.optional(zod.string()),
       // smartlink accuracy bonus for smartgun systems
       smartlink: zod.optional(zod.number()),
       // additional initiative (not dice)
@@ -636,6 +656,7 @@ export const BonusXmlSchema = zod.union([
       unarmeddv: zod.optional(StringOrNumberSchema),
       // unarmed does physical instead of stun
       unarmeddvphysical: zod.optional(zod.string()),
+      unarmedap: zod.optional(NumberOrAnyRatingSchema),
       // modify the cost to improve an attribute
       attributekarmacost: zod.optional(
         zod.union([GenericNameValueSchema, zod.array(GenericNameValueSchema)])
@@ -659,14 +680,14 @@ export const BonusXmlSchema = zod.union([
             // ignore the negative effects of a number of boxes in any combination of track
             sharedthresholdoffset: zod.optional(NumberOrRatingSchema),
             // ignore the negative effects of a number of boxes on one track
-            thresholdoffset: zod.optional(zod.number()),
+            thresholdoffset: zod.optional(NumberOrRatingSchema),
             // reduce the number of boxes in each level when determining negative offsets
             // e.g. if -1 then every 2 boxes increase negative effects
             threshold: zod.optional(zod.number()),
             // add boxes to physical track
-            physical: zod.optional(zod.number()),
+            physical: zod.optional(NumberOrRatingSchema),
             // add boxes to stun track
-            stun: zod.optional(zod.number()),
+            stun: zod.optional(NumberOrRatingSchema),
             // add overflow boxes (used to determine death only)
             overflow: zod.optional(zod.number()),
           })
@@ -795,6 +816,8 @@ export const BonusXmlSchema = zod.union([
       judgeintentionsdefense: zod.optional(NumberOrAnyRatingSchema),
       // bonus to offense for judge intentions test
       judgeintentionsoffense: zod.optional(NumberOrAnyRatingSchema),
+      // bonus to all judge intentions test
+      judgeintentions: zod.optional(NumberOrAnyRatingSchema),
       // bonus to memory tests
       memory: zod.optional(NumberOrAnyRatingSchema),
 
@@ -833,6 +856,7 @@ export const BonusXmlSchema = zod.union([
           })
           .strict()
       ),
+      addweapon: zod.optional(zod.object({ name: zod.string() }).strict()),
       // add spirits?
       addspirit: zod.optional(
         zod.union([zod.array(SpiritSchema), SpiritSchema])

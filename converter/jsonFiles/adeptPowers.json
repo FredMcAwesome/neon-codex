@@ -1,0 +1,1442 @@
+[
+  {
+    "name": "Adrenaline Boost",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": true,
+    "limit": 1,
+    "action": "Free",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 309
+  },
+  {
+    "name": "Astral Perception",
+    "description": "",
+    "pointCost": 1,
+    "levels": false,
+    "limit": 1,
+    "action": "Simple",
+    "adeptWay": {
+      "pointCost": 0.5,
+      "requirements": {}
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 309
+  },
+  {
+    "name": "Attribute Boost",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": true,
+    "limit": 4,
+    "action": "Simple",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 309
+  },
+  {
+    "name": "Combat Sense",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": true,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.25,
+      "requirements": {}
+    },
+    "bonus": {
+      "dodge": [
+        {
+          "option": "Rating"
+        }
+      ]
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 309
+  },
+  {
+    "name": "Critical Strike",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": false,
+    "limit": 100,
+    "adeptWay": {
+      "pointCost": 0.25,
+      "requirements": {}
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 309
+  },
+  {
+    "name": "Danger Sense",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": true,
+    "limit": 1,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 309
+  },
+  {
+    "name": "Enhanced Perception",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": true,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.25,
+      "requirements": {}
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 309
+  },
+  {
+    "name": "Enhanced Accuracy (skill)",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": false,
+    "limit": 100,
+    "bonus": {
+      "weaponSkillAccuracy": {
+        "skill": {
+          "selectSkill": true,
+          "exceptions": [
+            "No category: Combat Active",
+            "No skill: Unarmed Combat"
+          ]
+        },
+        "bonus": 1
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 309
+  },
+  {
+    "name": "Improved Ability (skill)",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": true,
+    "limit": 100,
+    "adeptWay": {
+      "pointCost": 0.25,
+      "requirements": {}
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 309
+  },
+  {
+    "name": "Improved Physical Attribute",
+    "description": "",
+    "pointCost": 1,
+    "levels": true,
+    "limit": 12,
+    "adeptWay": {
+      "pointCost": 0.5,
+      "requirements": {}
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 309
+  },
+  {
+    "name": "Improved Potential (Social)",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": false,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.25,
+      "requirements": {}
+    },
+    "bonus": {
+      "socialLimit": [
+        {
+          "option": "Rating"
+        }
+      ]
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 309
+  },
+  {
+    "name": "Improved Potential (Mental)",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": false,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.25,
+      "requirements": {}
+    },
+    "bonus": {
+      "mentalLimit": {
+        "option": "Rating"
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 309
+  },
+  {
+    "name": "Improved Potential (Physical)",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": false,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.25,
+      "requirements": {}
+    },
+    "bonus": {
+      "physicalLimit": {
+        "option": "Rating"
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 309
+  },
+  {
+    "name": "Improved Potential (Chaos Mentor)",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": false,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.25,
+      "requirements": {}
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 309
+  },
+  {
+    "name": "Improved Reflexes",
+    "description": "",
+    "pointCost": 1,
+    "extraFirstLevelPointCost": 0.5,
+    "levels": true,
+    "limit": 1,
+    "bonus": {
+      "initiative": {
+        "bonusDice": {
+          "option": "Rating"
+        }
+      },
+      "disableQualities": [
+        {
+          "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
+        }
+      ]
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 310
+  },
+  {
+    "name": "Improved Sense",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": false,
+    "limit": 100,
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 310
+  },
+  {
+    "name": "Killing Hands",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": false,
+    "limit": 1,
+    "action": "Free",
+    "adeptWay": {
+      "pointCost": 0.25,
+      "requirements": {}
+    },
+    "bonus": {
+      "unarmedDamageType": "Physical"
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 310
+  },
+  {
+    "name": "Kinesics",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": true,
+    "limit": 1,
+    "bonus": {
+      "judgeIntentionsDefense": [
+        {
+          "option": "Rating"
+        }
+      ]
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 310
+  },
+  {
+    "name": "Light Body",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": true,
+    "limit": 1,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 310
+  },
+  {
+    "name": "Missile Parry",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": true,
+    "limit": 1,
+    "action": "Interrupt",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 310
+  },
+  {
+    "name": "Mystic Armor",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": true,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.25,
+      "requirements": {}
+    },
+    "bonus": {
+      "armour": {
+        "bonus": {
+          "option": "Rating"
+        }
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 310
+  },
+  {
+    "name": "Natural Immunity",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": true,
+    "limit": 1,
+    "bonus": {
+      "toxinContactResist": {
+        "option": "Rating"
+      },
+      "pathogenContactResist": {
+        "option": "Rating"
+      },
+      "toxinInhalationResist": {
+        "option": "Rating"
+      },
+      "pathogenInhalationResist": {
+        "option": "Rating"
+      },
+      "toxinIngestionResist": {
+        "option": "Rating"
+      },
+      "pathogenIngestionResist": {
+        "option": "Rating"
+      },
+      "toxinInjectionResist": {
+        "option": "Rating"
+      },
+      "pathogenInjectionResist": {
+        "option": "Rating"
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 311
+  },
+  {
+    "name": "Pain Resistance",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": true,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.25,
+      "requirements": {}
+    },
+    "forbidden": {},
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 311
+  },
+  {
+    "name": "Rapid Healing",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": true,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.25,
+      "requirements": {}
+    },
+    "bonus": {
+      "stunHealing": {
+        "option": "Rating"
+      },
+      "physicalHealing": {
+        "option": "Rating"
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 311
+  },
+  {
+    "name": "Spell Resistance",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": true,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.25
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 311
+  },
+  {
+    "name": "Traceless Walk",
+    "description": "",
+    "pointCost": 1,
+    "levels": false,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.5,
+      "requirements": {}
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 311
+  },
+  {
+    "name": "Voice Control",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": true,
+    "limit": 20,
+    "adeptWay": {
+      "pointCost": 0.25,
+      "requirements": {}
+    },
+    "bonus": {
+      "socialLimit": [
+        {
+          "option": "Rating"
+        }
+      ]
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 311
+  },
+  {
+    "name": "Wall Running",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": false,
+    "limit": 1,
+    "action": "Simple",
+    "adeptWay": {
+      "pointCost": 0.25,
+      "requirements": {}
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 311
+  },
+  {
+    "name": "Analytics",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": true,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.25,
+      "requirements": {}
+    },
+    "source": "Street Grimoire",
+    "page": 169
+  },
+  {
+    "name": "Animal Empathy",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": true,
+    "limit": 1,
+    "source": "Street Grimoire",
+    "page": 169
+  },
+  {
+    "name": "Berserk",
+    "description": "",
+    "pointCost": 1,
+    "levels": false,
+    "limit": 1,
+    "action": "Simple",
+    "adeptWay": {
+      "pointCost": 0.5,
+      "requirements": {}
+    },
+    "source": "Street Grimoire",
+    "page": 169
+  },
+  {
+    "name": "Berserker's Rage",
+    "description": "",
+    "pointCost": 1,
+    "levels": false,
+    "limit": 1,
+    "action": "Complex",
+    "adeptWay": {
+      "pointCost": 0.5,
+      "requirements": {}
+    },
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 169
+  },
+  {
+    "name": "Blind Fighting",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": false,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.25,
+      "requirements": {}
+    },
+    "source": "Street Grimoire",
+    "page": 169
+  },
+  {
+    "name": "Cloak",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": true,
+    "limit": 1,
+    "bonus": {
+      "detectionResist": [
+        {
+          "option": "Rating"
+        }
+      ]
+    },
+    "source": "Street Grimoire",
+    "page": 169
+  },
+  {
+    "name": "Cool Resolve",
+    "description": "",
+    "pointCost": 1,
+    "levels": true,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.5,
+      "requirements": {}
+    },
+    "source": "Street Grimoire",
+    "page": 169
+  },
+  {
+    "name": "Authoritative Tone",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": true,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.25
+    },
+    "source": "Street Grimoire Errata",
+    "page": 4
+  },
+  {
+    "name": "Counterstrike",
+    "description": "",
+    "pointCost": 1,
+    "levels": true,
+    "limit": 1,
+    "action": "Interrupt",
+    "adeptWay": {
+      "pointCost": 0.5,
+      "requirements": {}
+    },
+    "source": "Street Grimoire",
+    "page": 170
+  },
+  {
+    "name": "Elemental Body",
+    "description": "",
+    "pointCost": 1,
+    "levels": false,
+    "limit": 100,
+    "action": "Complex",
+    "adeptWay": {
+      "pointCost": 0.5
+    },
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 170
+  },
+  {
+    "name": "Elemental Strike",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": false,
+    "limit": 100,
+    "action": "Simple",
+    "adeptWay": {
+      "pointCost": 0.25,
+      "requirements": {}
+    },
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 170
+  },
+  {
+    "name": "Elemental Weapon",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": false,
+    "limit": 100,
+    "action": "Simple",
+    "adeptWay": {
+      "pointCost": 0.25,
+      "requirements": {}
+    },
+    "source": "Street Grimoire",
+    "page": 170
+  },
+  {
+    "name": "Empathic Healing",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": false,
+    "limit": 1,
+    "action": "Special",
+    "adeptWay": {
+      "pointCost": 0.25
+    },
+    "source": "Street Grimoire",
+    "page": 171
+  },
+  {
+    "name": "Facial Sculpt",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": true,
+    "limit": 1,
+    "action": "Complex",
+    "source": "Street Grimoire",
+    "page": 171
+  },
+  {
+    "name": "Flexibility",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": true,
+    "limit": 1,
+    "source": "Street Grimoire",
+    "page": 171
+  },
+  {
+    "name": "Freefall",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": true,
+    "limit": 1,
+    "source": "Street Grimoire",
+    "page": 171
+  },
+  {
+    "name": "Hang Time",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": true,
+    "limit": 1,
+    "action": "Simple",
+    "source": "Street Grimoire",
+    "page": 171
+  },
+  {
+    "name": "Inertia Strike",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": false,
+    "limit": 1,
+    "action": "Free",
+    "adeptWay": {
+      "pointCost": 0.25
+    },
+    "source": "Street Grimoire",
+    "page": 172
+  },
+  {
+    "name": "Keratin Control (SG)",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": false,
+    "limit": 1,
+    "action": "Free",
+    "adeptWay": {
+      "pointCost": 0.25
+    },
+    "source": "Street Grimoire Errata",
+    "page": 4
+  },
+  {
+    "name": "Kinesics Mastery",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": false,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.25,
+      "requirements": {}
+    },
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 172
+  },
+  {
+    "name": "Linguistics",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": false,
+    "limit": 1,
+    "source": "Street Grimoire",
+    "page": 172
+  },
+  {
+    "name": "Living Focus (SG)",
+    "description": "",
+    "pointCost": 1,
+    "levels": false,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.5
+    },
+    "source": "Street Grimoire Errata",
+    "page": 4
+  },
+  {
+    "name": "Magic Sense",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": false,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.25,
+      "requirements": {}
+    },
+    "source": "Street Grimoire",
+    "page": 172
+  },
+  {
+    "name": "Melanin Control",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": false,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.25
+    },
+    "source": "Street Grimoire",
+    "page": 172
+  },
+  {
+    "name": "Metabolic Control",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": false,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.25,
+      "requirements": {}
+    },
+    "source": "Street Grimoire",
+    "page": 172
+  },
+  {
+    "name": "Missile Mastery",
+    "description": "",
+    "pointCost": 1,
+    "levels": false,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.5,
+      "requirements": {}
+    },
+    "source": "Street Grimoire",
+    "page": 172
+  },
+  {
+    "name": "Motion Sense",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": false,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.25,
+      "requirements": {}
+    },
+    "source": "Street Grimoire",
+    "page": 172
+  },
+  {
+    "name": "Nerve Strike (SG)",
+    "description": "",
+    "pointCost": 1,
+    "levels": false,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.5,
+      "requirements": {}
+    },
+    "source": "Street Grimoire",
+    "page": 173
+  },
+  {
+    "name": "Nimble Fingers (SG)",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": false,
+    "limit": 1,
+    "source": "Street Grimoire",
+    "page": 173
+  },
+  {
+    "name": "Pain Relief",
+    "description": "",
+    "pointCost": 1,
+    "levels": false,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.5
+    },
+    "source": "Street Grimoire",
+    "page": 173
+  },
+  {
+    "name": "Penetrating Strike",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": true,
+    "limit": 1,
+    "source": "Street Grimoire",
+    "page": 173
+  },
+  {
+    "name": "Plague Cloud",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": false,
+    "limit": 1,
+    "action": "Free",
+    "adeptWay": {
+      "pointCost": 0.25
+    },
+    "source": "Street Grimoire",
+    "page": 173
+  },
+  {
+    "name": "Rapid Draw",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": false,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.25,
+      "requirements": {}
+    },
+    "source": "Street Grimoire",
+    "page": 173
+  },
+  {
+    "name": "Riposte",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": true,
+    "limit": 1,
+    "action": "Interrupt",
+    "adeptWay": {
+      "pointCost": 0.25
+    },
+    "source": "Street Grimoire",
+    "page": 174
+  },
+  {
+    "name": "Skate",
+    "description": "",
+    "pointCost": 1,
+    "levels": false,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.5,
+      "requirements": {}
+    },
+    "source": "Street Grimoire",
+    "page": 174
+  },
+  {
+    "name": "Smashing Blow",
+    "description": "",
+    "pointCost": 1,
+    "levels": false,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.5
+    },
+    "source": "Street Grimoire",
+    "page": 174
+  },
+  {
+    "name": "Spirit Claw",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": false,
+    "limit": 1,
+    "action": "Free",
+    "source": "Street Grimoire",
+    "page": 174
+  },
+  {
+    "name": "Spirit Ram",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": false,
+    "limit": 1,
+    "action": "Simple",
+    "adeptWay": {
+      "pointCost": 0.25,
+      "requirements": {}
+    },
+    "source": "Street Grimoire",
+    "page": 174
+  },
+  {
+    "name": "Stillness",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": true,
+    "limit": 1,
+    "source": "Street Grimoire",
+    "page": 174
+  },
+  {
+    "name": "Sustenance",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": false,
+    "limit": 1,
+    "source": "Street Grimoire",
+    "page": 174
+  },
+  {
+    "name": "Temperature Tolerance",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": true,
+    "limit": 1,
+    "bonus": {
+      "fireArmour": {
+        "option": "Rating"
+      },
+      "coldArmour": {
+        "option": "Rating"
+      }
+    },
+    "source": "Street Grimoire",
+    "page": 175
+  },
+  {
+    "name": "Three-Dimensional Memory",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": false,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.25,
+      "requirements": {}
+    },
+    "source": "Street Grimoire",
+    "page": 175
+  },
+  {
+    "name": "Toxic Strike",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": false,
+    "limit": 100,
+    "action": "Simple",
+    "adeptWay": {
+      "pointCost": 0.25
+    },
+    "bonus": {
+      "enterName": true
+    },
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 176
+  },
+  {
+    "name": "Feign Illness",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": false,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.25
+    },
+    "source": "Bullets And Bandages",
+    "page": 22
+  },
+  {
+    "name": "Feign Death",
+    "description": "",
+    "pointCost": 1,
+    "levels": false,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.5
+    },
+    "source": "Bullets And Bandages",
+    "page": 22
+  },
+  {
+    "name": "Transmit Damage",
+    "description": "",
+    "pointCost": 1,
+    "levels": true,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.5
+    },
+    "source": "Bullets And Bandages",
+    "page": 22
+  },
+  {
+    "name": "Commanding Voice",
+    "description": "",
+    "pointCost": 1,
+    "levels": false,
+    "limit": 1,
+    "action": "Complex",
+    "adeptWay": {
+      "pointCost": 0.5
+    },
+    "source": "Stolen Souls",
+    "page": 191
+  },
+  {
+    "name": "Light Touch",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": true,
+    "limit": 100,
+    "source": "Stolen Souls",
+    "page": 191
+  },
+  {
+    "name": "Mimic",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": true,
+    "limit": 1,
+    "source": "Stolen Souls",
+    "page": 191
+  },
+  {
+    "name": "Nerve Strike (SS)",
+    "description": "",
+    "pointCost": 1,
+    "levels": false,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.5,
+      "requirements": {}
+    },
+    "source": "Stolen Souls",
+    "page": 191
+  },
+  {
+    "name": "Nimble Fingers (SS)",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": false,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.125,
+      "requirements": {}
+    },
+    "source": "Stolen Souls",
+    "page": 191
+  },
+  {
+    "name": "Demara",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": false,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.25
+    },
+    "source": "Shadow Spells",
+    "page": 23
+  },
+  {
+    "name": "Eidetic Sense Memory",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": false,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.25
+    },
+    "source": "Shadow Spells",
+    "page": 23
+  },
+  {
+    "name": "Enthralling Performance",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": false,
+    "limit": 100,
+    "adeptWay": {
+      "pointCost": 0.25
+    },
+    "bonus": {
+      "linkSkill": true
+    },
+    "source": "Shadow Spells",
+    "page": 23
+  },
+  {
+    "name": "Heightened Concentration",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": false,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.25,
+      "requirements": {}
+    },
+    "source": "Shadow Spells",
+    "page": 23
+  },
+  {
+    "name": "Indomitable Will",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": true,
+    "limit": 1,
+    "source": "Shadow Spells",
+    "page": 23
+  },
+  {
+    "name": "Iron Gut",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": true,
+    "limit": 1,
+    "bonus": {
+      "toxinIngestionResist": {
+        "option": "Rating"
+      }
+    },
+    "source": "Shadow Spells",
+    "page": 23
+  },
+  {
+    "name": "Iron Lungs",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": true,
+    "limit": 1,
+    "bonus": {
+      "fatigueResist": {
+        "option": "Rating"
+      }
+    },
+    "source": "Shadow Spells",
+    "page": 23
+  },
+  {
+    "name": "Iron Will",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": true,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.25
+    },
+    "bonus": {
+      "mentalManipulationResist": [
+        {
+          "option": "Rating"
+        }
+      ]
+    },
+    "source": "Shadow Spells",
+    "page": 23
+  },
+  {
+    "name": "Keratin Control (SSP)",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": false,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.25
+    },
+    "source": "Shadow Spells",
+    "page": 24
+  },
+  {
+    "name": "Living Focus (SSP)",
+    "description": "",
+    "pointCost": 1,
+    "levels": false,
+    "limit": 1,
+    "action": "Free",
+    "adeptWay": {
+      "pointCost": 0.5
+    },
+    "source": "Shadow Spells",
+    "page": 24
+  },
+  {
+    "name": "Maintain Warmth",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": false,
+    "limit": 1,
+    "source": "Shadow Spells",
+    "page": 24
+  },
+  {
+    "name": "Memory Displacement",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": false,
+    "limit": 1,
+    "action": "Complex",
+    "source": "Shadow Spells",
+    "page": 24
+  },
+  {
+    "name": "Piercing Senses",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": true,
+    "limit": 1,
+    "bonus": {
+      "manaIllusionResist": [
+        {
+          "option": "Rating"
+        }
+      ]
+    },
+    "source": "Shadow Spells",
+    "page": 24
+  },
+  {
+    "name": "Power Swimming",
+    "description": "",
+    "pointCost": 1,
+    "levels": false,
+    "limit": 1,
+    "sharedLimitAdeptPowerList": ["Power Swimming (Elf or Troll)"],
+    "adeptWay": {
+      "pointCost": 0.5
+    },
+    "bonus": {
+      "swimSpeedPercentageModifier": 100,
+      "sprintSpeedPercentageModifier": 20000
+    },
+    "forbidden": {},
+    "source": "Shadow Spells",
+    "page": 24
+  },
+  {
+    "name": "Power Swimming (Elf or Troll)",
+    "description": "",
+    "pointCost": 1,
+    "levels": false,
+    "limit": 1,
+    "sharedLimitAdeptPowerList": ["Power Swimming"],
+    "adeptWay": {
+      "pointCost": 0.5
+    },
+    "bonus": {
+      "swimSpeedPercentageModifier": 100,
+      "sprintSpeedPercentageModifier": 40000
+    },
+    "requirements": {},
+    "source": "Shadow Spells",
+    "page": 24
+  },
+  {
+    "name": "Rooting",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": true,
+    "limit": 1,
+    "action": "Simple",
+    "source": "Shadow Spells",
+    "page": 24
+  },
+  {
+    "name": "Supernatural Toughness",
+    "description": "",
+    "pointCost": 1,
+    "levels": true,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.5
+    },
+    "bonus": {
+      "addPhysicalBoxes": {
+        "option": "Rating"
+      }
+    },
+    "source": "Shadow Spells",
+    "page": 24
+  },
+  {
+    "name": "Adept Spell",
+    "description": "",
+    "pointCost": 1,
+    "levels": false,
+    "limit": 1,
+    "action": "Simple",
+    "adeptWay": {
+      "pointCost": 0.5
+    },
+    "source": "Hard Targets",
+    "page": 190
+  },
+  {
+    "name": "Adept Accident",
+    "description": "",
+    "pointCost": 0.5,
+    "levels": false,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.25
+    },
+    "source": "Hard Targets",
+    "page": 190
+  },
+  {
+    "name": "Focused Archery",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": true,
+    "limit": 1,
+    "source": "Hard Targets",
+    "page": 190
+  },
+  {
+    "name": "Kiai",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": true,
+    "limit": 1,
+    "source": "Hard Targets",
+    "page": 190
+  },
+  {
+    "name": "Master Archer",
+    "description": "",
+    "pointCost": 1,
+    "levels": false,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.5
+    },
+    "source": "Hard Targets",
+    "page": 191
+  },
+  {
+    "name": "Precision Throwing",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": true,
+    "limit": 1,
+    "source": "Hard Targets",
+    "page": 191
+  },
+  {
+    "name": "Body Sculpt",
+    "description": "",
+    "pointCost": 1,
+    "levels": false,
+    "limit": 1,
+    "adeptWay": {
+      "pointCost": 0.5
+    },
+    "requirements": {},
+    "source": "Bloody Business",
+    "page": 160
+  },
+  {
+    "name": "Lie Detector",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": true,
+    "limit": 1,
+    "source": "Cutting Aces",
+    "page": 153
+  },
+  {
+    "name": "Osmosis",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": true,
+    "limit": 1,
+    "requirements": {},
+    "source": "Cutting Aces",
+    "page": 153
+  },
+  {
+    "name": "Ventriloquism",
+    "description": "",
+    "pointCost": 0.25,
+    "levels": false,
+    "limit": 1,
+    "source": "Cutting Aces",
+    "page": 153
+  },
+  {
+    "name": "Mystic Aptitude",
+    "description": "",
+    "pointCost": 0.75,
+    "levels": true,
+    "limit": 1,
+    "action": "Simple",
+    "adeptWay": {
+      "pointCost": 0.25
+    },
+    "source": "Better Than Bad",
+    "page": 159
+  },
+  {
+    "name": "State of Purity",
+    "description": "",
+    "pointCost": 1.5,
+    "levels": false,
+    "limit": 1,
+    "action": "Complex",
+    "adeptWay": {
+      "pointCost": 0.75
+    },
+    "requirements": {},
+    "source": "Better Than Bad",
+    "page": 160
+  },
+  {
+    "name": "Berserker Temper",
+    "description": "",
+    "pointCost": 0,
+    "levels": false,
+    "limit": 1,
+    "action": "Free",
+    "source": "Forbidden Arcana",
+    "page": 68
+  }
+]

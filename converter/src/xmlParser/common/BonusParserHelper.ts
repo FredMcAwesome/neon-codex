@@ -270,20 +270,24 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     let skill: SelectSkillType;
     if (weaponSkillAccuracy.selectskill !== undefined) {
       let exceptions: Array<string> = [];
-      if (weaponSkillAccuracy.selectskill._knowledgeskills !== undefined) {
-        exceptions.push("Knowledge Skills Disallowed");
-      }
-      const excludedCategory = weaponSkillAccuracy.selectskill._exludecategory;
-      if (excludedCategory !== undefined) {
-        exceptions.push(`No category: ${excludedCategory}`);
-      }
-      const skillCategory = weaponSkillAccuracy.selectskill._skillcategory;
-      if (skillCategory !== undefined) {
-        exceptions.push(`No category: ${skillCategory}`);
-      }
-      const excludeSkill = weaponSkillAccuracy.selectskill._excludeskill;
-      if (excludeSkill !== undefined) {
-        exceptions.push(`No skill: ${excludeSkill}`);
+      // if selectskill has no items there are no exceptions
+      if (weaponSkillAccuracy.selectskill !== "") {
+        if (weaponSkillAccuracy.selectskill._knowledgeskills !== undefined) {
+          exceptions.push("Knowledge Skills Disallowed");
+        }
+        const excludedCategory =
+          weaponSkillAccuracy.selectskill._excludecategory;
+        if (excludedCategory !== undefined) {
+          exceptions.push(`No category: ${excludedCategory}`);
+        }
+        const skillCategory = weaponSkillAccuracy.selectskill._skillcategory;
+        if (skillCategory !== undefined) {
+          exceptions.push(`No category: ${skillCategory}`);
+        }
+        const excludeSkill = weaponSkillAccuracy.selectskill._excludeskill;
+        if (excludeSkill !== undefined) {
+          exceptions.push(`No skill: ${excludeSkill}`);
+        }
       }
       skill = {
         selectSkill: true,
@@ -620,7 +624,13 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       "physical" in conditionMonitor &&
       conditionMonitor.physical !== undefined
     ) {
-      bonusObject.addPhysicalBoxes = conditionMonitor.physical;
+      if (conditionMonitor.physical === "Rating") {
+        bonusObject.addPhysicalBoxes = {
+          option: "Rating",
+        };
+      } else {
+        bonusObject.addPhysicalBoxes = conditionMonitor.physical;
+      }
     }
   }
   if ("walkmultiplier" in bonus && bonus.walkmultiplier !== undefined) {

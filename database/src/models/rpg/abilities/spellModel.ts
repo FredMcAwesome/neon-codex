@@ -17,7 +17,7 @@ import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSch
 import type {
   spellRangeType,
   SpellType,
-} from "@neon-codex/common/build/schemas/abilities/spellSchemas.js";
+} from "@neon-codex/common/build/schemas/abilities/magic/spellSchemas.js";
 import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
 
 @Entity()

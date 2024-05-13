@@ -871,3 +871,11 @@ export enum qualityLimitEnum {
   ArmCountSubOne = "Number of arms - 1",
   False = "False",
 }
+
+export enum actionEnum {
+  Simple = "Simple",
+  Free = "Free",
+  Complex = "Complex",
+  Interrupt = "Interrupt",
+  Special = "Special",
+}

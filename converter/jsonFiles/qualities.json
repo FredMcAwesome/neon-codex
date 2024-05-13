@@ -6037,7 +6037,7 @@
       "weaponSkillAccuracy": {
         "skill": {
           "selectSkill": true,
-          "exceptions": []
+          "exceptions": ["No category: Combat Active"]
         },
         "bonus": 1
       }

@@ -8,9 +8,9 @@ import {
   spellRangeEnum,
   spellTargetEnum,
   spellTypeEnum,
-} from "../../enums.js";
-import { BonusSchema } from "../shared/bonusSchemas.js";
-import { RequirementsSchema } from "../shared/requiredSchemas.js";
+} from "../../../enums.js";
+import { BonusSchema } from "../../shared/bonusSchemas.js";
+import { RequirementsSchema } from "../../shared/requiredSchemas.js";
 
 const spellDamageSchema = zod.union([
   zod.number(),
