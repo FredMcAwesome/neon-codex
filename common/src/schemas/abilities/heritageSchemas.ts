@@ -1,37 +1,15 @@
 import { z as zod } from "zod";
 import {
-  BonusQualityListSchema,
+  BonusGenericListSchema,
   BonusSchema,
   ForbiddenQualityListSchema,
   InitiativeSchema,
 } from "../shared/bonusSchemas.js";
 import { heritageCategoryEnum } from "../../enums.js";
-
-export const AttributeRangeSchema = zod
-  .object({
-    min: zod.number(),
-    max: zod.number(),
-    augmentedMax: zod.number(),
-  })
-  .strict();
-export type AttributeRangeType = zod.infer<typeof AttributeRangeSchema>;
-
-const MovementEnvironmentSchema = zod
-  .object({
-    ground: zod.number(),
-    water: zod.number(),
-    air: zod.number(),
-  })
-  .strict();
-
-const MovementStrideSchema = zod
-  .object({
-    walk: MovementEnvironmentSchema,
-    run: MovementEnvironmentSchema,
-    sprint: MovementEnvironmentSchema,
-  })
-  .strict();
-export type MovementStrideType = zod.infer<typeof MovementStrideSchema>;
+import {
+  AttributeRangeSchema,
+  MovementStrideSchema,
+} from "../shared/commonSchemas.js";
 
 const PartialHeritageSchema = zod
   .object({
@@ -59,7 +37,7 @@ const PartialHeritageSchema = zod
     movement: zod.optional(MovementStrideSchema),
     addWeaponList: zod.optional(zod.array(zod.string())),
     addPowerList: zod.optional(zod.array(zod.string())),
-    addQualityList: zod.optional(BonusQualityListSchema),
+    addQualityList: zod.optional(BonusGenericListSchema),
     forbiddenQualityList: zod.optional(ForbiddenQualityListSchema),
     bonus: zod.optional(BonusSchema),
     source: zod.string(),

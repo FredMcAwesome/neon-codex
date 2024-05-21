@@ -14,6 +14,7 @@ export class ActiveSkills {
   @ManyToOne({ entity: () => Characters, ref: true })
   character!: Ref<Characters>;
 
+  // TODO: split this to a separate table
   @Property()
   skillGroupPoints: number = 0;
 

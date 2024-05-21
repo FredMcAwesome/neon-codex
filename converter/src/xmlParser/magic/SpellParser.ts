@@ -13,12 +13,14 @@ import {
 import {
   convertSpellCategory,
   convertSpellDescriptors,
-  convertSpellDuration,
-  convertSpellRange,
   damageSpellSemantics,
 } from "./SpellParserHelper.js";
 import { convertXmlBonus } from "../common/BonusParserHelper.js";
-import { convertSource } from "../common/ParserHelper.js";
+import {
+  convertDuration,
+  convertSource,
+  convertSpellPowerRange,
+} from "../common/ParserHelper.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { SpellSchema } from "@neon-codex/common/build/schemas/abilities/magic/spellSchemas.js";
 import Spells from "../../grammar/spells.ohm-bundle.js";
@@ -88,18 +90,18 @@ export function ParseSpells() {
 }
 
 function convertSpell(spell: SpellXmlType) {
-  // console.log(`\n${armour.name}`);
+  // console.log(`\n${spell.name}`);
 
   const category = convertSpellCategory(spell.category);
   const damageType = convertSpellDamageType(spell.damage);
   const descriptorList = convertSpellDescriptors(spell.descriptor);
-  const duration = convertSpellDuration(spell.duration);
+  const duration = convertDuration(spell.duration);
   let match = Damage.match(spell.dv);
   if (match.failed()) {
     assert(false, match.message);
   }
   const damage = damageSpellSemantics(match).eval();
-  const range = convertSpellRange(spell.range);
+  const range = convertSpellPowerRange(spell.range);
   const type = convertSpellType(spell.type);
 
   const bonus =

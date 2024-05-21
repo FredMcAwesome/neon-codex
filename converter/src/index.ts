@@ -20,6 +20,9 @@ ParseSpells();
 import { ParseAdeptPowers } from "./xmlParser/magic/AdeptPowerParser.js";
 ParseAdeptPowers();
 
+import { ParseTraditions } from "./xmlParser/magic/TraditionParser.js";
+ParseTraditions();
+
 import { ParseBioware } from "./xmlParser/bodyModification/BiowareParser.js";
 ParseBioware();
 import { ParseCyberware } from "./xmlParser/bodyModification/CyberwareParser.js";
@@ -46,6 +49,11 @@ ParseMetatypes();
 
 import { ParsePriorites } from "./xmlParser/character/PriorityParser.js";
 ParsePriorites();
+
+import { ParseCritters } from "./xmlParser/creatures/CritterParser.js";
+ParseCritters();
+import { ParseCritterPowers } from "./xmlParser/creatures/CritterPowerParser.js";
+ParseCritterPowers();
 
 import { CheckGUIDs } from "./xmlParser/utilities.js";
 CheckGUIDs();

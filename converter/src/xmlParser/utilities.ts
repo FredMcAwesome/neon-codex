@@ -19,6 +19,8 @@ import { VehicleModListXmlSchema } from "./riggerGear/VehicleModParserSchemas.js
 import { VehicleListXmlSchema } from "./riggerGear/VehicleParserSchemas.js";
 import { MetatypeListXmlSchema } from "./character/MetatypeParserSchemas.js";
 import { AdeptPowerListXmlSchema } from "./magic/AdeptPowerParserSchemas.js";
+import { TraditionListXmlSchema } from "./magic/TraditionParserSchemas.js";
+import { CritterListXmlSchema } from "./creatures/CritterParserSchemas.js";
 
 export const CheckGUIDs = function () {
   const currentPath = import.meta.url;
@@ -217,6 +219,41 @@ export const CheckGUIDs = function () {
 
   if (!adeptPowerListParsed.success) {
     console.log(adeptPowerListParsed.error.errors[0]);
+    assert(false);
+  }
+  // --- Traditions --- //
+  xml_string = fs.readFileSync(
+    fileURLToPath(path.dirname(currentPath) + "../../../xmls/traditions.xml"),
+    "utf8"
+  );
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  jObj = parser.parse(xml_string);
+
+  const traditionListParsed = TraditionListXmlSchema.safeParse(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    jObj.chummer.traditions.tradition
+  );
+
+  if (!traditionListParsed.success) {
+    console.log(traditionListParsed.error.errors[0]);
+    assert(false);
+  }
+
+  // --- Critters --- //
+  xml_string = fs.readFileSync(
+    fileURLToPath(path.dirname(currentPath) + "../../../xmls/critters.xml"),
+    "utf8"
+  );
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  jObj = parser.parse(xml_string);
+
+  const critterListParsed = CritterListXmlSchema.safeParse(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    jObj.chummer.metatypes.metatype
+  );
+
+  if (!critterListParsed.success) {
+    console.log(critterListParsed.error.errors[0]);
     assert(false);
   }
 

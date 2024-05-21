@@ -1,0 +1,3947 @@
+[
+  {
+    "name": "Combat Skill",
+    "description": "",
+    "category": "Paranormal",
+    "userSelectable": false,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 130
+  },
+  {
+    "name": "Physical Skill",
+    "description": "",
+    "category": "Paranormal",
+    "userSelectable": false,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 133
+  },
+  {
+    "name": "Social Skill",
+    "description": "",
+    "category": "Paranormal",
+    "userSelectable": false,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 137
+  },
+  {
+    "name": "Technical Skill",
+    "description": "",
+    "category": "Paranormal",
+    "userSelectable": false,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 143
+  },
+  {
+    "name": "Vehicle Skill",
+    "description": "",
+    "category": "Paranormal",
+    "userSelectable": false,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 146
+  },
+  {
+    "name": "Sense Link",
+    "description": "",
+    "category": "Mundane",
+    "type": "Mana",
+    "action": "Simple",
+    "range": {
+      "magicMutliplied": 50
+    },
+    "duration": "Always",
+    "source": "Street Grimoire",
+    "page": 198
+  },
+  {
+    "name": "Accident",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 394
+  },
+  {
+    "name": "Animal Control",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Mana",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 394
+  },
+  {
+    "name": "Astral Form",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Mana",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 394
+  },
+  {
+    "name": "Binding",
+    "description": "",
+    "category": "Mundane",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 395
+  },
+  {
+    "name": "Compulsion",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 395
+  },
+  {
+    "name": "Concealment",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Simple",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 395
+  },
+  {
+    "name": "Confusion",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 395
+  },
+  {
+    "name": "Corrosive Spit",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Special",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 395
+  },
+  {
+    "name": "Dual Natured",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 395
+  },
+  {
+    "name": "Elemental Attack",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 396
+  },
+  {
+    "name": "Energy Aura",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 396
+  },
+  {
+    "name": "Enhanced Senses",
+    "description": "",
+    "category": "Mundane",
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 396
+  },
+  {
+    "name": "Essence Drain",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Touch",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Permanent",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 396
+  },
+  {
+    "name": "Fear",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Mana",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Special",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 397
+  },
+  {
+    "name": "Guard",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 397
+  },
+  {
+    "name": "Hardened Armor",
+    "description": "",
+    "category": "Paranormal",
+    "rating": {
+      "critterRating": true
+    },
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "bonus": {
+      "armour": {
+        "bonus": {
+          "option": "Rating"
+        }
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 397
+  },
+  {
+    "name": "Immunity",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 397
+  },
+  {
+    "name": "Infection",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Touch",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Permanent",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 398
+  },
+  {
+    "name": "Influence",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Mana",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 398
+  },
+  {
+    "name": "Innate Spell",
+    "description": "",
+    "category": "Paranormal",
+    "type": {
+      "spellType": true
+    },
+    "action": "Complex",
+    "range": {
+      "spellRange": true
+    },
+    "duration": {
+      "spellDuration": true
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 398
+  },
+  {
+    "name": "Magic Resistance",
+    "description": "",
+    "category": "Mundane",
+    "rating": {
+      "critterRating": true
+    },
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 76
+  },
+  {
+    "name": "Materialization",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 398
+  },
+  {
+    "name": "Manifest",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Special",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 314
+  },
+  {
+    "name": "Mimicry",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Simple",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 398
+  },
+  {
+    "name": "Mist Form",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 398
+  },
+  {
+    "name": "Movement",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 399
+  },
+  {
+    "name": "Mystic Armor",
+    "description": "",
+    "category": "Paranormal",
+    "rating": {
+      "critterRating": true
+    },
+    "type": "Mana",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 399
+  },
+  {
+    "name": "Natural Weapon",
+    "description": "",
+    "category": "Mundane",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Touch",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 399
+  },
+  {
+    "name": "Noxious Breath",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Special",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 399
+  },
+  {
+    "name": "Paralyzing Howl",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Special",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Special",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 399
+  },
+  {
+    "name": "Psychokinesis",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 400
+  },
+  {
+    "name": "Regeneration",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 400
+  },
+  {
+    "name": "Search",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Special",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Special",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 400
+  },
+  {
+    "name": "Sapience",
+    "description": "",
+    "category": "Mundane",
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 400
+  },
+  {
+    "name": "Venom",
+    "description": "",
+    "category": "Mundane",
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Touch",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 401
+  },
+  {
+    "name": "Weather Control",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 401
+  },
+  {
+    "name": "Astral Gateway",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Mana",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Area"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Street Grimoire",
+    "page": 194
+  },
+  {
+    "name": "Aura Masking",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Mana",
+    "action": "Free",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Street Grimoire",
+    "page": 194
+  },
+  {
+    "name": "Banishing Resistance",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Mana",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Special",
+    "source": "Street Grimoire",
+    "page": 194
+  },
+  {
+    "name": "Desire Reflection",
+    "description": "",
+    "category": "Paranormal",
+    "karma": 9,
+    "type": "Mana",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 194
+  },
+  {
+    "name": "Divining",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Mana",
+    "action": "Special",
+    "range": {
+      "rangeCalc": {
+        "value": "Special",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Special",
+    "source": "Street Grimoire",
+    "page": 194
+  },
+  {
+    "name": "Endowment",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Mana",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Touch",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Street Grimoire",
+    "page": 195
+  },
+  {
+    "name": "Energy Drain",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Mana",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Special",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Permanent",
+    "source": "Street Grimoire",
+    "page": 195
+  },
+  {
+    "name": "Engulf",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Touch",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 396
+  },
+  {
+    "name": "Hemorrhage",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "magicMutliplied": 1
+    },
+    "duration": "Instantaneous",
+    "source": "Street Grimoire",
+    "page": 91
+  },
+  {
+    "name": "Inhabitation",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Special",
+    "source": "Street Grimoire",
+    "page": 195
+  },
+  {
+    "name": "Magical Guard",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Mana",
+    "action": "Free",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "source": "Street Grimoire",
+    "page": 196
+  },
+  {
+    "name": "Mind Link",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Mana",
+    "action": "Simple",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Street Grimoire",
+    "page": 196
+  },
+  {
+    "name": "Possession",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Street Grimoire",
+    "page": 197
+  },
+  {
+    "name": "Quake",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Special",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "source": "Street Grimoire",
+    "page": 197
+  },
+  {
+    "name": "Realistic Form",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Special",
+    "source": "Street Grimoire",
+    "page": 198
+  },
+  {
+    "name": "Shadow Cloak",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Free",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Street Grimoire",
+    "page": 198
+  },
+  {
+    "name": "Silence",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Special",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Street Grimoire",
+    "page": 199
+  },
+  {
+    "name": "Storm",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Special",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Special",
+    "source": "Street Grimoire",
+    "page": 199
+  },
+  {
+    "name": "Astral Projection",
+    "description": "",
+    "category": "Free Spirit",
+    "type": "Mana",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Special",
+    "source": "Street Grimoire",
+    "page": 204
+  },
+  {
+    "name": "Mutable Form",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Special",
+    "source": "Street Grimoire",
+    "page": 204
+  },
+  {
+    "name": "Personal Domain",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Mana",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Street Grimoire",
+    "page": 205
+  },
+  {
+    "name": "Spirit Pact",
+    "description": "",
+    "category": "Free Spirit",
+    "type": "Mana",
+    "action": "Special",
+    "range": {
+      "rangeCalc": {
+        "value": "Special",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Special",
+    "source": "Street Grimoire",
+    "page": 205
+  },
+  {
+    "name": "Hidden Life",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Touch",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Permanent",
+    "source": "Street Grimoire",
+    "page": 205
+  },
+  {
+    "name": "Vessel Trading",
+    "description": "",
+    "category": "Free Spirit",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Touch",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "source": "Street Grimoire",
+    "page": 205
+  },
+  {
+    "name": "Wealth",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Special",
+    "source": "Street Grimoire",
+    "page": 205
+  },
+  {
+    "name": "Anaphylaxis",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Touch",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "source": "Street Grimoire",
+    "page": 193
+  },
+  {
+    "name": "Mutagen",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Street Grimoire",
+    "page": 196
+  },
+  {
+    "name": "Devouring",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Touch",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Street Grimoire",
+    "page": 194
+  },
+  {
+    "name": "Hive Mind",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Mana",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Special",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "source": "Street Grimoire",
+    "page": 195
+  },
+  {
+    "name": "Pestilence",
+    "description": "",
+    "category": "Mundane",
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Touch",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "source": "Street Grimoire",
+    "page": 197
+  },
+  {
+    "name": "Reinforcement",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Touch",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Special",
+    "source": "Street Grimoire",
+    "page": 198
+  },
+  {
+    "name": "Sonic Projection",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Special",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Street Grimoire",
+    "page": 199
+  },
+  {
+    "name": "Gestalt Consciousness",
+    "description": "",
+    "category": "Mundane",
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "source": "Howling Shadows",
+    "page": 192
+  },
+  {
+    "name": "Gills",
+    "description": "",
+    "category": "Mundane",
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "source": "Howling Shadows",
+    "page": 192
+  },
+  {
+    "name": "Secretion/Substance Extrusion",
+    "description": "",
+    "category": "Mundane",
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Howling Shadows",
+    "page": 193
+  },
+  {
+    "name": "Wall Walking",
+    "description": "",
+    "category": "Mundane",
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "source": "Howling Shadows",
+    "page": 194
+  },
+  {
+    "name": "Adaptive Coloration",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "source": "Howling Shadows",
+    "page": 188
+  },
+  {
+    "name": "Binding",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 395
+  },
+  {
+    "name": "Control Focus",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Mana",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Special",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Special",
+    "source": "Howling Shadows",
+    "page": 188
+  },
+  {
+    "name": "Deathly Aura",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Simple",
+    "range": {
+      "rangeCalc": {
+        "value": "Special",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Street Grimoire",
+    "page": 194
+  },
+  {
+    "name": "Dragonspeech",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Mana",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 395
+  },
+  {
+    "name": "Empathy",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Mana",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Howling Shadows",
+    "page": 190
+  },
+  {
+    "name": "Fey Glamour",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Mana",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Special",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Howling Shadows",
+    "page": 191
+  },
+  {
+    "name": "Magic Sense",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Mana",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Howling Shadows",
+    "page": 193
+  },
+  {
+    "name": "Metahuman Form",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Run Faster",
+    "page": 213
+  },
+  {
+    "name": "Paralyzing Touch",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Touch",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Special",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 400
+  },
+  {
+    "name": "Petrification",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 400
+  },
+  {
+    "name": "Spirit Pact",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Mana",
+    "action": "Special",
+    "range": {
+      "rangeCalc": {
+        "value": "Special",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Special",
+    "source": "Street Grimoire",
+    "page": 205
+  },
+  {
+    "name": "Vanishing",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Mana",
+    "action": "Free",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Special",
+    "source": "Howling Shadows",
+    "page": 194
+  },
+  {
+    "name": "AR-Parallelism",
+    "description": "",
+    "category": "Emergent",
+    "source": "Howling Shadows",
+    "page": 194
+  },
+  {
+    "name": "Blend",
+    "description": "",
+    "category": "Emergent",
+    "source": "Howling Shadows",
+    "page": 194
+  },
+  {
+    "name": "Cozenge",
+    "description": "",
+    "category": "Emergent",
+    "source": "Howling Shadows",
+    "page": 194
+  },
+  {
+    "name": "Diagnostics",
+    "description": "",
+    "category": "Emergent",
+    "action": "Simple",
+    "duration": "Sustained",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 257
+  },
+  {
+    "name": "E-Hive",
+    "description": "",
+    "category": "Emergent",
+    "source": "Howling Shadows",
+    "page": 195
+  },
+  {
+    "name": "Gremlins (Sprite)",
+    "description": "",
+    "category": "Emergent",
+    "type": {
+      "device": true
+    },
+    "action": "Complex",
+    "duration": "Instantaneous",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 257
+  },
+  {
+    "name": "Gremlins",
+    "description": "",
+    "category": "Emergent",
+    "source": "Howling Shadows",
+    "page": 195
+  },
+  {
+    "name": "Holographic Concealment",
+    "description": "",
+    "category": "Emergent",
+    "source": "Howling Shadows",
+    "page": 195
+  },
+  {
+    "name": "Resonance Feed",
+    "description": "",
+    "category": "Emergent",
+    "source": "Howling Shadows",
+    "page": 195
+  },
+  {
+    "name": "Spraying",
+    "description": "",
+    "category": "Emergent",
+    "source": "Howling Shadows",
+    "page": 195
+  },
+  {
+    "name": "Suppression",
+    "description": "",
+    "category": "Emergent",
+    "type": {
+      "host": true
+    },
+    "action": "Complex",
+    "duration": "Sustained",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 257
+  },
+  {
+    "name": "Traceroute",
+    "description": "",
+    "category": "Emergent",
+    "source": "Howling Shadows",
+    "page": 195
+  },
+  {
+    "name": "Tunnel",
+    "description": "",
+    "category": "Emergent",
+    "source": "Howling Shadows",
+    "page": 195
+  },
+  {
+    "name": "Venomous Code",
+    "description": "",
+    "category": "Emergent",
+    "source": "Howling Shadows",
+    "page": 195
+  },
+  {
+    "name": "Allergy",
+    "description": "",
+    "category": "Weakness",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 401
+  },
+  {
+    "name": "Dietary Requirement",
+    "description": "",
+    "category": "Weakness",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 401
+  },
+  {
+    "name": "Essence Loss",
+    "description": "",
+    "category": "Weakness",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 401
+  },
+  {
+    "name": "Evanescence",
+    "description": "",
+    "category": "Weakness",
+    "source": "Street Grimoire",
+    "page": 101
+  },
+  {
+    "name": "Fragile",
+    "description": "",
+    "category": "Weakness",
+    "rating": {
+      "maxRating": 20
+    },
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "bonus": {
+      "addPhysicalBoxes": {
+        "option": "-Rating"
+      }
+    },
+    "source": "Howling Shadows",
+    "page": 192
+  },
+  {
+    "name": "Reduced Senses",
+    "description": "",
+    "category": "Weakness",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 401
+  },
+  {
+    "name": "Uneducated",
+    "description": "",
+    "category": "Weakness",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 401
+  },
+  {
+    "name": "Vulnerability",
+    "description": "",
+    "category": "Weakness",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 401
+  },
+  {
+    "name": "Camouflage",
+    "description": "",
+    "category": "Emergent",
+    "type": {
+      "file": true
+    },
+    "action": "Complex",
+    "duration": "Permanent",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 256
+  },
+  {
+    "name": "Cookie",
+    "description": "",
+    "category": "Emergent",
+    "type": {
+      "persona": true
+    },
+    "action": "Complex",
+    "duration": {
+      "spriteDuration": true
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 256
+  },
+  {
+    "name": "Electron Storm",
+    "description": "",
+    "category": "Emergent",
+    "type": {
+      "persona": true
+    },
+    "action": "Complex",
+    "duration": "Sustained",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 257
+  },
+  {
+    "name": "Hash",
+    "description": "",
+    "category": "Emergent",
+    "type": {
+      "file": true
+    },
+    "action": "Special",
+    "duration": {
+      "forceMultipliedTenCombatTurns": true
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 257
+  },
+  {
+    "name": "Stability",
+    "description": "",
+    "category": "Emergent",
+    "type": {
+      "personaOrDevice": true
+    },
+    "action": "Complex",
+    "duration": "Sustained",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 257
+  },
+  {
+    "name": "Watermark",
+    "description": "",
+    "category": "Emergent",
+    "type": {
+      "icon": true
+    },
+    "action": "Complex",
+    "duration": "Permanent",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 257
+  },
+  {
+    "name": "Shift (Metahuman Form)",
+    "description": "",
+    "category": "Shapeshifter",
+    "type": "Mana",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Special",
+    "requirements": {},
+    "source": "Run Faster",
+    "page": 123
+  },
+  {
+    "name": "Shift (Dracoform)",
+    "description": "",
+    "category": "Drake",
+    "type": "Mana",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Special",
+    "source": "Howling Shadows",
+    "page": 194
+  },
+  {
+    "name": "Induced Dormancy",
+    "description": "",
+    "category": "Weakness",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 401
+  },
+  {
+    "name": "Concealment (Self Only)",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Simple",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 395
+  },
+  {
+    "name": "Armor",
+    "description": "",
+    "category": "Mundane",
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "bonus": {
+      "armour": {
+        "bonus": {
+          "option": "Rating"
+        }
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 394
+  },
+  {
+    "name": "Hardened Mystic Armor",
+    "description": "",
+    "category": "Paranormal",
+    "rating": {
+      "critterRating": true
+    },
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 397
+  },
+  {
+    "name": "Vestigial Wings",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "source": "Howling Shadows",
+    "page": 173
+  },
+  {
+    "name": "Underwater Adaptation",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "source": "Howling Shadows",
+    "page": 164
+  },
+  {
+    "name": "Alienate",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Howling Shadows",
+    "page": 188
+  },
+  {
+    "name": "Astral Venom",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Mana",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "source": "Howling Shadows",
+    "page": 188
+  },
+  {
+    "name": "Brachiation",
+    "description": "",
+    "category": "Mundane",
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "source": "Howling Shadows",
+    "page": 188
+  },
+  {
+    "name": "Create Alchera",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Howling Shadows",
+    "page": 189
+  },
+  {
+    "name": "Darkness",
+    "description": "",
+    "category": "Paranormal",
+    "karma": 9,
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Howling Shadows",
+    "page": 189
+  },
+  {
+    "name": "Deathlock",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "source": "Howling Shadows",
+    "page": 190
+  },
+  {
+    "name": "Dive Attack",
+    "description": "",
+    "category": "Mundane",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Touch",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "source": "Howling Shadows",
+    "page": 190
+  },
+  {
+    "name": "Entropic Aura",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "source": "Howling Shadows",
+    "page": 190
+  },
+  {
+    "name": "Extra Fragile",
+    "description": "",
+    "category": "Weakness",
+    "bonus": {
+      "addPhysicalBoxes": -20
+    },
+    "source": "Howling Shadows",
+    "page": 191
+  },
+  {
+    "name": "Flay Touch",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Touch",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "source": "Howling Shadows",
+    "page": 191
+  },
+  {
+    "name": "Ghost Chain",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Mana",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Special",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "source": "Howling Shadows",
+    "page": 192
+  },
+  {
+    "name": "Haunt",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Mana",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Special",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "source": "Howling Shadows",
+    "page": 192
+  },
+  {
+    "name": "Innate Ritual",
+    "description": "",
+    "category": "Paranormal",
+    "type": {
+      "ritualType": true
+    },
+    "action": {
+      "ritualType": true
+    },
+    "range": {
+      "ritualRange": true
+    },
+    "duration": {
+      "ritualDuration": true
+    },
+    "source": "Howling Shadows",
+    "page": 193
+  },
+  {
+    "name": "Manipulate Magic",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Mana",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Touch",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Permanent",
+    "source": "Howling Shadows",
+    "page": 193
+  },
+  {
+    "name": "Pounce",
+    "description": "",
+    "category": "Mundane",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Touch",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "source": "Howling Shadows",
+    "page": 193
+  },
+  {
+    "name": "Toughness",
+    "description": "",
+    "category": "Mundane",
+    "rating": {
+      "critterRating": true
+    },
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "bonus": {
+      "addPhysicalBoxes": {
+        "option": "Rating"
+      }
+    },
+    "source": "Howling Shadows",
+    "page": 194
+  },
+  {
+    "name": "Domesticated",
+    "description": "",
+    "category": "Mundane",
+    "source": "Howling Shadows",
+    "page": 186
+  },
+  {
+    "name": "Gliding",
+    "description": "",
+    "category": "Mundane",
+    "source": "Howling Shadows",
+    "page": 186
+  },
+  {
+    "name": "Critter Cyberpsychosis",
+    "description": "",
+    "category": "Weakness",
+    "source": "Howling Shadows",
+    "page": 186
+  },
+  {
+    "name": "CI3D (Critter Implant Induced Immune Deficiency)",
+    "description": "",
+    "category": "Weakness",
+    "source": "Howling Shadows",
+    "page": 186
+  },
+  {
+    "name": "CTLE-X (Critter Temporal Lobe Epilepsy)",
+    "description": "",
+    "category": "Weakness",
+    "source": "Howling Shadows",
+    "page": 186
+  },
+  {
+    "name": "Precarious Physiology",
+    "description": "",
+    "category": "Weakness",
+    "source": "Howling Shadows",
+    "page": 186
+  },
+  {
+    "name": "Dracoform Mastery",
+    "description": "",
+    "category": "Drake",
+    "karma": 50,
+    "type": "Physical",
+    "action": "Special",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "source": "Howling Shadows",
+    "page": 190
+  },
+  {
+    "name": "Adaptive Coloration",
+    "description": "",
+    "category": "Drake",
+    "karma": 6,
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "requirements": {},
+    "source": "Howling Shadows",
+    "page": 164
+  },
+  {
+    "name": "Natural Weapon",
+    "description": "",
+    "category": "Drake",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Touch",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Howling Shadows",
+    "page": 164
+  },
+  {
+    "name": "Animal Control",
+    "description": "",
+    "category": "Drake",
+    "karma": 9,
+    "type": "Mana",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Howling Shadows",
+    "page": 164
+  },
+  {
+    "name": "Compulsion",
+    "description": "",
+    "category": "Drake",
+    "karma": 9,
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Howling Shadows",
+    "page": 164
+  },
+  {
+    "name": "Corrosive Spit",
+    "description": "",
+    "category": "Drake",
+    "karma": 9,
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Special",
+    "source": "Howling Shadows",
+    "page": 164
+  },
+  {
+    "name": "Dragonspeech",
+    "description": "",
+    "category": "Drake",
+    "karma": 9,
+    "type": "Mana",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "source": "Howling Shadows",
+    "page": 164
+  },
+  {
+    "name": "Enhanced Sense (Wide Band Hearing)",
+    "description": "",
+    "category": "Drake",
+    "karma": 3,
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "source": "Howling Shadows",
+    "page": 164
+  },
+  {
+    "name": "Enhanced Sense (Low Light Vision)",
+    "description": "",
+    "category": "Drake",
+    "karma": 3,
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "source": "Howling Shadows",
+    "page": 164
+  },
+  {
+    "name": "Enhanced Sense (Smell)",
+    "description": "",
+    "category": "Drake",
+    "karma": 3,
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "source": "Howling Shadows",
+    "page": 164
+  },
+  {
+    "name": "Enhanced Sense (Thermographic Vision)",
+    "description": "",
+    "category": "Drake",
+    "karma": 3,
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "source": "Howling Shadows",
+    "page": 164
+  },
+  {
+    "name": "Fear",
+    "description": "",
+    "category": "Drake",
+    "karma": 9,
+    "type": "Mana",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Special",
+    "source": "Howling Shadows",
+    "page": 164
+  },
+  {
+    "name": "Flight",
+    "description": "",
+    "category": "Drake",
+    "karma": 14,
+    "type": "Mana",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Special",
+    "requirements": {},
+    "forbidden": {},
+    "source": "Howling Shadows",
+    "page": 164
+  },
+  {
+    "name": "Additional Additional Natural Weapon (Claws)",
+    "description": "",
+    "category": "Drake",
+    "karma": 5,
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Touch",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "source": "Howling Shadows",
+    "page": 164
+  },
+  {
+    "name": "Additional Natural Weapon (Fangs)",
+    "description": "",
+    "category": "Drake",
+    "karma": 5,
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Touch",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "source": "Howling Shadows",
+    "page": 164
+  },
+  {
+    "name": "Additional Natural Weapon (Tail)",
+    "description": "",
+    "category": "Drake",
+    "karma": 5,
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Touch",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "source": "Howling Shadows",
+    "page": 164
+  },
+  {
+    "name": "Additional Natural Weapon (Horns)",
+    "description": "",
+    "category": "Drake",
+    "karma": 5,
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Touch",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "source": "Howling Shadows",
+    "page": 164
+  },
+  {
+    "name": "Heavy Scales",
+    "description": "",
+    "category": "Drake",
+    "karma": 6,
+    "type": "Mana",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Special",
+    "requirements": {},
+    "source": "Howling Shadows",
+    "page": 165
+  },
+  {
+    "name": "Improved Natural Armor",
+    "description": "",
+    "category": "Drake",
+    "karma": 16,
+    "type": "Mana",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Special",
+    "source": "Howling Shadows",
+    "page": 165
+  },
+  {
+    "name": "Magical Flight",
+    "description": "",
+    "category": "Drake",
+    "karma": 14,
+    "type": "Mana",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Special",
+    "requirements": {},
+    "source": "Howling Shadows",
+    "page": 165
+  },
+  {
+    "name": "Influence",
+    "description": "",
+    "category": "Drake",
+    "karma": 9,
+    "type": "Mana",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "source": "Howling Shadows",
+    "page": 165
+  },
+  {
+    "name": "Noxious Breath",
+    "description": "",
+    "category": "Drake",
+    "karma": 9,
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Special",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "source": "Howling Shadows",
+    "page": 165
+  },
+  {
+    "name": "Resistance to Pathogens and Toxins",
+    "description": "",
+    "category": "Drake",
+    "karma": 8,
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Special",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "bonus": {
+      "toxinContactResist": 1,
+      "pathogenContactResist": 1,
+      "toxinInhalationResist": 1,
+      "pathogenInhalationResist": 1,
+      "toxinIngestionResist": 1,
+      "pathogenIngestionResist": 1,
+      "toxinInjectionResist": 1,
+      "pathogenInjectionResist": 1
+    },
+    "source": "Howling Shadows",
+    "page": 165
+  },
+  {
+    "name": "Tail Stinger",
+    "description": "",
+    "category": "Drake",
+    "karma": 9,
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Special",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "requirements": {},
+    "source": "Howling Shadows",
+    "page": 165
+  },
+  {
+    "name": "Transcend Form",
+    "description": "",
+    "category": "Drake",
+    "karma": 25,
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Special",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "source": "Howling Shadows",
+    "page": 165
+  },
+  {
+    "name": "Venom",
+    "description": "",
+    "category": "Drake",
+    "karma": 9,
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Special",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "source": "Howling Shadows",
+    "page": 165
+  },
+  {
+    "name": "Resonance Hosting",
+    "description": "",
+    "category": "Emergent",
+    "source": "Kill Code",
+    "page": 168
+  },
+  {
+    "name": "Shift",
+    "description": "",
+    "category": "Free Spirit",
+    "type": "Mana",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Special",
+    "source": "Aetherology",
+    "page": 38
+  },
+  {
+    "name": "Skill",
+    "description": "",
+    "category": "Free Spirit",
+    "source": "Aetherology",
+    "page": 38
+  },
+  {
+    "name": "Transfer Energy (Essence)",
+    "description": "",
+    "category": "Free Spirit",
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Touch",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Permanent",
+    "source": "Aetherology",
+    "page": 38
+  },
+  {
+    "name": "Vanishing",
+    "description": "",
+    "category": "Free Spirit",
+    "type": "Mana",
+    "action": "Free",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Special",
+    "source": "Aetherology",
+    "page": 39
+  },
+  {
+    "name": "Korrigan Pact",
+    "description": "",
+    "category": "Free Spirit",
+    "source": "Aetherology",
+    "page": 39
+  },
+  {
+    "name": "Animal Control (Insect Type)",
+    "description": "",
+    "category": "Paranormal",
+    "karma": 9,
+    "type": "Mana",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "bonus": {
+      "enterName": true
+    },
+    "requirements": {},
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 394
+  },
+  {
+    "name": "Compulsion",
+    "description": "",
+    "category": "Paranormal",
+    "karma": 9,
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "requirements": {},
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 395
+  },
+  {
+    "name": "Confusion",
+    "description": "",
+    "category": "Paranormal",
+    "karma": 9,
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "requirements": {},
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 395
+  },
+  {
+    "name": "Enhanced Senses (Ultrasound)",
+    "description": "",
+    "category": "Mundane",
+    "karma": 9,
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "requirements": {},
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 396
+  },
+  {
+    "name": "Fear",
+    "description": "",
+    "category": "Paranormal",
+    "karma": 9,
+    "type": "Mana",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Special",
+    "requirements": {},
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 397
+  },
+  {
+    "name": "Search",
+    "description": "",
+    "category": "Paranormal",
+    "karma": 9,
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Special",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Special",
+    "requirements": {},
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 400
+  },
+  {
+    "name": "Anchored Resident",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Mana",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "source": "Dark Terrors",
+    "page": 49
+  },
+  {
+    "name": "Shell Game",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Mana",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "source": "Dark Terrors",
+    "page": 49
+  },
+  {
+    "name": "Superior Banishing Resistance",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Mana",
+    "action": "Simple",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "source": "Dark Terrors",
+    "page": 50
+  },
+  {
+    "name": "Superior Regeneration",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Mana",
+    "action": "Simple",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Permanent",
+    "source": "Dark Terrors",
+    "page": 49
+  },
+  {
+    "name": "Wounded Fury",
+    "description": "",
+    "category": "Paranormal",
+    "type": "Mana",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "source": "Dark Terrors",
+    "page": 49
+  },
+  {
+    "name": "Amphibious",
+    "description": "",
+    "category": "Infected",
+    "karma": 6,
+    "type": "Mana",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "requirements": {},
+    "source": "Dark Terrors",
+    "page": 156
+  },
+  {
+    "name": "Astral Brute",
+    "description": "",
+    "category": "Infected",
+    "karma": 9,
+    "type": "Mana",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "requirements": {},
+    "source": "Dark Terrors",
+    "page": 157
+  },
+  {
+    "name": "Bacchanal",
+    "description": "",
+    "category": "Infected",
+    "karma": 9,
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "requirements": {},
+    "source": "Dark Terrors",
+    "page": 157
+  },
+  {
+    "name": "Bone Spikes",
+    "description": "",
+    "category": "Infected",
+    "karma": 5,
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "bonus": {
+      "unarmedDamageType": "Physical"
+    },
+    "requirements": {},
+    "source": "Dark Terrors",
+    "page": 157
+  },
+  {
+    "name": "Calcified Hide",
+    "description": "",
+    "category": "Infected",
+    "karma": 5,
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "requirements": {},
+    "source": "Dark Terrors",
+    "page": 157
+  },
+  {
+    "name": "Corrosive Spit (Infected)",
+    "description": "",
+    "category": "Infected",
+    "karma": 9,
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Special",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "requirements": {},
+    "source": "Dark Terrors",
+    "page": 159
+  },
+  {
+    "name": "Deathlock Venom",
+    "description": "",
+    "category": "Infected",
+    "karma": 9,
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "requirements": {},
+    "source": "Dark Terrors",
+    "page": 159
+  },
+  {
+    "name": "Digitigrade Legs",
+    "description": "",
+    "category": "Infected",
+    "karma": 6,
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "bonus": {
+      "sprintSpeedPercentageModifier": 10000
+    },
+    "requirements": {},
+    "source": "Dark Terrors",
+    "page": 159
+  },
+  {
+    "name": "Drag Down",
+    "description": "",
+    "category": "Infected",
+    "karma": 6,
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "requirements": {},
+    "source": "Dark Terrors",
+    "page": 159
+  },
+  {
+    "name": "Dread Feast",
+    "description": "",
+    "category": "Infected",
+    "karma": 12,
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "requirements": {},
+    "source": "Dark Terrors",
+    "page": 159
+  },
+  {
+    "name": "Dual Concealment",
+    "description": "",
+    "category": "Infected",
+    "karma": 9,
+    "type": "Mana",
+    "action": "Simple",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "requirements": {},
+    "source": "Dark Terrors",
+    "page": 160
+  },
+  {
+    "name": "Evolved Reflexes",
+    "description": "",
+    "category": "Infected",
+    "karma": 12,
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "bonus": {
+      "initiative": {
+        "bonusDice": 1
+      }
+    },
+    "requirements": {},
+    "source": "Dark Terrors",
+    "page": 160
+  },
+  {
+    "name": "Feral Dash",
+    "description": "",
+    "category": "Infected",
+    "karma": 5,
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "requirements": {},
+    "source": "Dark Terrors",
+    "page": 160
+  },
+  {
+    "name": "Gnashing Teeth",
+    "description": "",
+    "category": "Infected",
+    "karma": 6,
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "requirements": {},
+    "source": "Dark Terrors",
+    "page": 160
+  },
+  {
+    "name": "Immunity (Cold)",
+    "description": "",
+    "category": "Infected",
+    "karma": 6,
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "requirements": {},
+    "source": "Dark Terrors",
+    "page": 160
+  },
+  {
+    "name": "Metahuman Masque",
+    "description": "",
+    "category": "Infected",
+    "karma": 12,
+    "type": "Mana",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "requirements": {},
+    "source": "Dark Terrors",
+    "page": 160
+  },
+  {
+    "name": "Mimicry",
+    "description": "",
+    "category": "Infected",
+    "karma": 9,
+    "type": "Physical",
+    "action": "Simple",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 398
+  },
+  {
+    "name": "Morningstar Fall",
+    "description": "",
+    "category": "Infected",
+    "karma": 9,
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "requirements": {},
+    "source": "Dark Terrors",
+    "page": 161
+  },
+  {
+    "name": "Mystic Armor (Infected)",
+    "description": "",
+    "category": "Infected",
+    "karma": 6,
+    "rating": {
+      "critterRating": true
+    },
+    "type": "Mana",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "requirements": {},
+    "source": "Dark Terrors",
+    "page": 161
+  },
+  {
+    "name": "Plague Bearer",
+    "description": "",
+    "category": "Infected",
+    "karma": 12,
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "requirements": {},
+    "source": "Dark Terrors",
+    "page": 161
+  },
+  {
+    "name": "Pounce (Infected)",
+    "description": "",
+    "category": "Infected",
+    "karma": 9,
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Touch",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Instantaneous",
+    "requirements": {},
+    "source": "Howling Shadows",
+    "page": 193
+  },
+  {
+    "name": "Predator's Glamour",
+    "description": "",
+    "category": "Infected",
+    "karma": 9,
+    "type": "Mana",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "requirements": {},
+    "source": "Dark Terrors",
+    "page": 161
+  },
+  {
+    "name": "Psychokinesis (Infected)",
+    "description": "",
+    "category": "Paranormal",
+    "karma": 9,
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Line Of Sight",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 400
+  },
+  {
+    "name": "Rat King",
+    "description": "",
+    "category": "Infected",
+    "karma": 12,
+    "type": "Mana",
+    "action": "Auto",
+    "range": {
+      "magicMutliplied": 25
+    },
+    "duration": "Always",
+    "requirements": {},
+    "source": "Dark Terrors",
+    "page": 162
+  },
+  {
+    "name": "Scythe Claws",
+    "description": "",
+    "category": "Infected",
+    "karma": 6,
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "requirements": {},
+    "source": "Dark Terrors",
+    "page": 162
+  },
+  {
+    "name": "Secretion/Substance Extrusion (Anti-Coagulant)",
+    "description": "",
+    "category": "Mundane",
+    "karma": 9,
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "requirements": {},
+    "source": "Howling Shadows",
+    "page": 193
+  },
+  {
+    "name": "Silence",
+    "description": "",
+    "category": "Infected",
+    "karma": 9,
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Special",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 199
+  },
+  {
+    "name": "Tunneling Claws",
+    "description": "",
+    "category": "Infected",
+    "karma": 6,
+    "requirements": {},
+    "source": "Howling Shadows",
+    "page": 172
+  },
+  {
+    "name": "Sonic Shriek",
+    "description": "",
+    "category": "Infected",
+    "karma": 9,
+    "type": "Physical",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Special",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "requirements": {},
+    "source": "Dark Terrors",
+    "page": 162
+  },
+  {
+    "name": "Spines",
+    "description": "",
+    "category": "Infected",
+    "karma": 6,
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "requirements": {},
+    "source": "Dark Terrors",
+    "page": 162
+  },
+  {
+    "name": "Stupefying Miasma",
+    "description": "",
+    "category": "Infected",
+    "karma": 9,
+    "type": "Physical",
+    "action": "Simple",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "requirements": {},
+    "source": "Dark Terrors",
+    "page": 162
+  },
+  {
+    "name": "Terrorscape",
+    "description": "",
+    "category": "Infected",
+    "karma": 12,
+    "type": "Mana",
+    "action": "Complex",
+    "range": {
+      "rangeCalc": {
+        "value": "Special",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Sustained",
+    "requirements": {},
+    "source": "Dark Terrors",
+    "page": 162
+  },
+  {
+    "name": "Traceless Walk",
+    "description": "",
+    "category": "Infected",
+    "karma": 9,
+    "type": "Physical",
+    "action": "Auto",
+    "range": {
+      "rangeCalc": {
+        "value": "Self",
+        "target": "Single Target"
+      }
+    },
+    "duration": "Always",
+    "requirements": {},
+    "source": "Dark Terrors",
+    "page": 163
+  },
+  {
+    "name": "Bodyguard",
+    "description": "",
+    "category": "Emergent",
+    "source": "Kill Code",
+    "page": 100
+  },
+  {
+    "name": "Shield",
+    "description": "",
+    "category": "Emergent",
+    "source": "Kill Code",
+    "page": 100
+  },
+  {
+    "name": "Active Analytics",
+    "description": "",
+    "category": "Emergent",
+    "source": "Kill Code",
+    "page": 101
+  },
+  {
+    "name": "Borrowed IP",
+    "description": "",
+    "category": "Emergent",
+    "source": "Kill Code",
+    "page": 101
+  },
+  {
+    "name": "Decompiling Resistance",
+    "description": "",
+    "category": "Emergent",
+    "source": "Kill Code",
+    "page": 101
+  },
+  {
+    "name": "Enhance",
+    "description": "",
+    "category": "Emergent",
+    "source": "Kill Code",
+    "page": 101
+  },
+  {
+    "name": "Navi",
+    "description": "",
+    "category": "Emergent",
+    "source": "Kill Code",
+    "page": 101
+  },
+  {
+    "name": "Resilient Code",
+    "description": "",
+    "category": "Emergent",
+    "source": "Kill Code",
+    "page": 101
+  },
+  {
+    "name": "Resonance Spooling",
+    "description": "",
+    "category": "Emergent",
+    "source": "Kill Code",
+    "page": 101
+  },
+  {
+    "name": "Resonance Hosting",
+    "description": "",
+    "category": "Emergent",
+    "source": "Kill Code",
+    "page": 168
+  },
+  {
+    "name": "All-Around Sight",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 170
+  },
+  {
+    "name": "Aquatic Adaptation",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 170
+  },
+  {
+    "name": "Attribute Enhancement (Body)",
+    "description": "",
+    "category": "Chimeric Modification",
+    "rating": {
+      "critterRating": true
+    },
+    "source": "Howling Shadows",
+    "page": 170
+  },
+  {
+    "name": "Attribute Enhancement (Agility)",
+    "description": "",
+    "category": "Chimeric Modification",
+    "rating": {
+      "critterRating": true
+    },
+    "source": "Howling Shadows",
+    "page": 170
+  },
+  {
+    "name": "Attribute Enhancement (Reaction)",
+    "description": "",
+    "category": "Chimeric Modification",
+    "rating": {
+      "critterRating": true
+    },
+    "source": "Howling Shadows",
+    "page": 170
+  },
+  {
+    "name": "Attribute Enhancement (Strength)",
+    "description": "",
+    "category": "Chimeric Modification",
+    "rating": {
+      "critterRating": true
+    },
+    "source": "Howling Shadows",
+    "page": 170
+  },
+  {
+    "name": "Attribute Enhancement (Charisma)",
+    "description": "",
+    "category": "Chimeric Modification",
+    "rating": {
+      "critterRating": true
+    },
+    "source": "Howling Shadows",
+    "page": 170
+  },
+  {
+    "name": "Attribute Enhancement (Intuition)",
+    "description": "",
+    "category": "Chimeric Modification",
+    "rating": {
+      "critterRating": true
+    },
+    "source": "Howling Shadows",
+    "page": 170
+  },
+  {
+    "name": "Attribute Enhancement (Logic)",
+    "description": "",
+    "category": "Chimeric Modification",
+    "rating": {
+      "critterRating": true
+    },
+    "source": "Howling Shadows",
+    "page": 170
+  },
+  {
+    "name": "Attribute Enhancement (Willpower)",
+    "description": "",
+    "category": "Chimeric Modification",
+    "rating": {
+      "critterRating": true
+    },
+    "source": "Howling Shadows",
+    "page": 170
+  },
+  {
+    "name": "Balance Tail",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 170
+  },
+  {
+    "name": "Bioluminescence",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 170
+  },
+  {
+    "name": "Biotoxin Alteration (Anesthetic)",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 170
+  },
+  {
+    "name": "Biotoxin Alteration (Formic Acid)",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 170
+  },
+  {
+    "name": "Biotoxin Alteration (Hallucinogen)",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 170
+  },
+  {
+    "name": "Biotoxin Alteration (Nauseating)",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 170
+  },
+  {
+    "name": "Camouflage",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 171
+  },
+  {
+    "name": "Celerity",
+    "description": "",
+    "category": "Chimeric Modification",
+    "bonus": {
+      "walkSpeedPercentageModifier": 100,
+      "runSpeedPercentageModifier": 100,
+      "sprintSpeedPercentageModifier": 10000
+    },
+    "source": "Howling Shadows",
+    "page": 171
+  },
+  {
+    "name": "Climate Adaptation",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 171
+  },
+  {
+    "name": "Defensive Secretion",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 171
+  },
+  {
+    "name": "Dynamic Coloration",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 171
+  },
+  {
+    "name": "Echolocation",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 171
+  },
+  {
+    "name": "Electrocytes",
+    "description": "",
+    "category": "Chimeric Modification",
+    "range": {
+      "rangeCalc": {
+        "value": "Touch",
+        "target": "Single Target"
+      }
+    },
+    "source": "Howling Shadows",
+    "page": 171
+  },
+  {
+    "name": "Enhanced Sense (Low Light Vision)",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 171
+  },
+  {
+    "name": "Enhanced Sense (Thermographic Vision)",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 171
+  },
+  {
+    "name": "Enhanced Sense (Scent)",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 171
+  },
+  {
+    "name": "Enhanced Sense (Broadened Auditory Spectrum)",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 171
+  },
+  {
+    "name": "Extra Head",
+    "description": "",
+    "category": "Chimeric Modification",
+    "rating": {
+      "maxRating": 2
+    },
+    "bonus": {
+      "addPhysicalBoxes": {
+        "option": "Rating"
+      }
+    },
+    "source": "Howling Shadows",
+    "page": 172
+  },
+  {
+    "name": "Frog Tongue",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 172
+  },
+  {
+    "name": "Gills",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 172
+  },
+  {
+    "name": "Gliding",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 172
+  },
+  {
+    "name": "Ink Extrusion",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 172
+  },
+  {
+    "name": "Magnetoception",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 172
+  },
+  {
+    "name": "Natural Weapon (Bite)",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 172
+  },
+  {
+    "name": "Natural Weapon (Claws)",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 172
+  },
+  {
+    "name": "Natural Weapon (Horns)",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 172
+  },
+  {
+    "name": "Natural Weapon (Tail)",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 172
+  },
+  {
+    "name": "Natural Weapon (Tusk)",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 172
+  },
+  {
+    "name": "Proboscis",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 172
+  },
+  {
+    "name": "Potent Venom",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 172
+  },
+  {
+    "name": "Quills",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 172
+  },
+  {
+    "name": "Scent Spray",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 173
+  },
+  {
+    "name": "Skill Enhancement",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 173
+  },
+  {
+    "name": "Sturdiness",
+    "description": "",
+    "category": "Chimeric Modification",
+    "bonus": {
+      "physicalLimit": 1
+    },
+    "source": "Howling Shadows",
+    "page": 173
+  },
+  {
+    "name": "Thermosense",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 173
+  },
+  {
+    "name": "Thicker Skin",
+    "description": "",
+    "category": "Chimeric Modification",
+    "rating": {
+      "critterRating": true
+    },
+    "bonus": {
+      "armour": {
+        "bonus": {
+          "option": "Rating"
+        }
+      }
+    },
+    "source": "Howling Shadows",
+    "page": 173
+  },
+  {
+    "name": "Venom",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 173
+  },
+  {
+    "name": "Vestigial Wings",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 173
+  },
+  {
+    "name": "Wall Climbing",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 173
+  },
+  {
+    "name": "Web Extrusion",
+    "description": "",
+    "category": "Chimeric Modification",
+    "source": "Howling Shadows",
+    "page": 173
+  }
+]

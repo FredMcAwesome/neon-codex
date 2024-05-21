@@ -111,6 +111,7 @@ import {
   IncludedQualities,
 } from "./models/rpg/activeTables/activeQualityModel.js";
 import { AdeptPowers } from "./models/rpg/abilities/adeptPowerModel.js";
+import { Traditions } from "./models/rpg/traits/traditionModel.js";
 
 const dbOptions: Options = {
   entities: [
@@ -211,6 +212,7 @@ const dbOptions: Options = {
 
     Spells,
     AdeptPowers,
+    Traditions,
 
     Characters,
   ],

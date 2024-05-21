@@ -1,0 +1,985 @@
+[
+  {
+    "name": "Custom",
+    "description": "",
+    "drain": "Willpower + Select Attribute",
+    "spiritTypes": "Select Spirits",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 279
+  },
+  {
+    "name": "Hermetic",
+    "description": "",
+    "drain": "Willpower + Logic",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Fire",
+      "spiritdetection": "Spirit of Air",
+      "spirithealth": "Spirit of Man",
+      "spiritillusion": "Spirit of Water",
+      "spiritmanipulation": "Spirit of Earth"
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 279
+  },
+  {
+    "name": "Shamanic",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Beasts",
+      "spiritdetection": "Spirit of Water",
+      "spirithealth": "Spirit of Earth",
+      "spiritillusion": "Spirit of Air",
+      "spiritmanipulation": "Spirit of Man"
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 279
+  },
+  {
+    "name": "Aztec",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritTypes": {
+      "spiritcombat": "Guardian Spirit",
+      "spiritdetection": "Spirit of Fire",
+      "spirithealth": "Plant Spirit",
+      "spiritillusion": "Spirit of Water",
+      "spiritmanipulation": "Spirit of Beasts"
+    },
+    "source": "Street Grimoire",
+    "page": 41
+  },
+  {
+    "name": "Black Magic",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Fire",
+      "spiritdetection": "Spirit of Water",
+      "spirithealth": "Spirit of Earth",
+      "spiritillusion": "Spirit of Air",
+      "spiritmanipulation": "Spirit of Man"
+    },
+    "source": "Street Grimoire",
+    "page": 41
+  },
+  {
+    "name": "Black Magic [Alt]",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Fire",
+      "spiritdetection": "Spirit of Water",
+      "spirithealth": "Spirit of Earth",
+      "spiritillusion": "Spirit of Air",
+      "spiritmanipulation": "Spirit of Man"
+    },
+    "bonus": {
+      "qualities": [
+        {
+          "name": "Animal Familiar"
+        },
+        {
+          "name": "Dark Ally"
+        }
+      ]
+    },
+    "source": "Forbidden Arcana",
+    "page": 61
+  },
+  {
+    "name": "Buddhism",
+    "description": "",
+    "drain": "Willpower + Intuition",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Air",
+      "spiritdetection": "Guidance Spirit",
+      "spirithealth": "Spirit of Earth",
+      "spiritillusion": "Spirit of Fire",
+      "spiritmanipulation": "Spirit of Water"
+    },
+    "source": "Street Grimoire",
+    "page": 43
+  },
+  {
+    "name": "Chaos Magic",
+    "description": "",
+    "drain": "Willpower + Intuition",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Fire",
+      "spiritdetection": "Spirit of Air",
+      "spirithealth": "Spirit of Earth",
+      "spiritillusion": "Spirit of Man",
+      "spiritmanipulation": "Spirit of Water"
+    },
+    "source": "Street Grimoire",
+    "page": 44
+  },
+  {
+    "name": "Christian Theurgy",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Fire",
+      "spiritdetection": "Spirit of Water",
+      "spirithealth": "Spirit of Air",
+      "spiritillusion": "Spirit of Earth",
+      "spiritmanipulation": "Guidance Spirit"
+    },
+    "source": "Street Grimoire",
+    "page": 44
+  },
+  {
+    "name": "Druid",
+    "description": "",
+    "drain": "Willpower + Intuition",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Beasts",
+      "spiritdetection": "Spirit of Water",
+      "spirithealth": "Plant Spirit",
+      "spiritillusion": "Spirit of Air",
+      "spiritmanipulation": "Spirit of Earth"
+    },
+    "source": "Street Grimoire",
+    "page": 45
+  },
+  {
+    "name": "Hinduism",
+    "description": "",
+    "drain": "Willpower + Logic",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Beasts",
+      "spiritdetection": "Spirit of Water",
+      "spirithealth": "Plant Spirit",
+      "spiritillusion": "Spirit of Air",
+      "spiritmanipulation": "Spirit of Earth"
+    },
+    "source": "Street Grimoire",
+    "page": 46
+  },
+  {
+    "name": "Islam",
+    "description": "",
+    "drain": "Willpower + Logic",
+    "spiritTypes": {
+      "spiritcombat": "Guardian Spirit",
+      "spiritdetection": "Spirit of Earth",
+      "spirithealth": "Plant Spirit",
+      "spiritillusion": "Spirit of Air",
+      "spiritmanipulation": "Spirit of Fire"
+    },
+    "source": "Street Grimoire",
+    "page": 46
+  },
+  {
+    "name": "Path of the Wheel",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Earth",
+      "spiritdetection": "Guidance Spirit",
+      "spirithealth": "Spirit of Air",
+      "spiritillusion": "Spirit of Water",
+      "spiritmanipulation": "Spirit of Fire"
+    },
+    "source": "Street Grimoire",
+    "page": 47
+  },
+  {
+    "name": "Qabbalism",
+    "description": "",
+    "drain": "Willpower + Logic",
+    "spiritForm": "Possession",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Air",
+      "spiritdetection": "Spirit of Earth",
+      "spirithealth": "Spirit of Fire",
+      "spiritillusion": "Spirit of Water",
+      "spiritmanipulation": "Task Spirit"
+    },
+    "source": "Street Grimoire",
+    "page": 48
+  },
+  {
+    "name": "Quimbanda",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Fire",
+      "spiritdetection": "Spirit of Water",
+      "spirithealth": "Spirit of Earth",
+      "spiritillusion": "Spirit of Air",
+      "spiritmanipulation": "Spirit of Man"
+    },
+    "source": "Shadows In Focus: Metropole",
+    "page": 13
+  },
+  {
+    "name": "Shinto",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Air",
+      "spiritdetection": "Spirit of Water",
+      "spirithealth": "Plant Spirit",
+      "spiritillusion": "Spirit of Beasts",
+      "spiritmanipulation": "Spirit of Man"
+    },
+    "source": "Street Grimoire",
+    "page": 48
+  },
+  {
+    "name": "Sioux",
+    "description": "",
+    "drain": "Willpower + Intuition",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Beasts",
+      "spiritdetection": "Plant Spirit",
+      "spirithealth": "Spirit of Fire",
+      "spiritillusion": "Spirit of Air",
+      "spiritmanipulation": "Guardian Spirit"
+    },
+    "source": "Street Grimoire",
+    "page": 49
+  },
+  {
+    "name": "Toxic",
+    "description": "",
+    "drain": "Willpower + Select Attribute",
+    "spiritTypes": "Select Spirits",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 84
+  },
+  {
+    "name": "Vodou",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritForm": "Possession",
+    "spiritTypes": {
+      "spiritcombat": "Guardian Spirit",
+      "spiritdetection": "Spirit of Water",
+      "spirithealth": "Spirit of Man",
+      "spiritillusion": "Guidance Spirit",
+      "spiritmanipulation": "Task Spirit"
+    },
+    "source": "Street Grimoire",
+    "page": 50
+  },
+  {
+    "name": "Wicca, Gardnerian",
+    "description": "",
+    "drain": "Willpower + Logic",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Fire",
+      "spiritdetection": "Spirit of Water",
+      "spirithealth": "Plant Spirit",
+      "spiritillusion": "Spirit of Air",
+      "spiritmanipulation": "Spirit of Earth"
+    },
+    "source": "Street Grimoire",
+    "page": 50
+  },
+  {
+    "name": "Wicca, Goddess",
+    "description": "",
+    "drain": "Willpower + Intuition",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Fire",
+      "spiritdetection": "Spirit of Water",
+      "spirithealth": "Plant Spirit",
+      "spiritillusion": "Spirit of Air",
+      "spiritmanipulation": "Spirit of Earth"
+    },
+    "source": "Street Grimoire",
+    "page": 50
+  },
+  {
+    "name": "Wuxing",
+    "description": "",
+    "drain": "Willpower + Logic",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Fire",
+      "spiritdetection": "Spirit of Earth",
+      "spirithealth": "Plant Spirit",
+      "spiritillusion": "Spirit of Water",
+      "spiritmanipulation": "Guidance Spirit"
+    },
+    "source": "Street Grimoire",
+    "page": 51
+  },
+  {
+    "name": "Zoroastrianism",
+    "description": "",
+    "drain": "Willpower + Logic",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Man",
+      "spiritdetection": "Spirit of Water",
+      "spirithealth": "Spirit of Fire",
+      "spiritillusion": "Spirit of Air",
+      "spiritmanipulation": "Plant Spirit"
+    },
+    "source": "Street Grimoire",
+    "page": 52
+  },
+  {
+    "name": "Insect Shaman",
+    "description": "",
+    "drain": "Willpower + Intuition",
+    "spiritForm": "Inhabitation",
+    "spiritTypes": {
+      "spiritcombat": "Soldier Spirit",
+      "spiritdetection": "Scout Spirit",
+      "spirithealth": "Caretaker Spirit",
+      "spiritillusion": "Nymph Spirit",
+      "spiritmanipulation": "Worker Spirit"
+    },
+    "source": "Street Grimoire",
+    "page": 94
+  },
+  {
+    "name": "Aboriginal",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Beasts",
+      "spiritdetection": "Spirit of Earth",
+      "spirithealth": "Plant Spirit",
+      "spiritillusion": "Guidance Spirit",
+      "spiritmanipulation": "Spirit of Air"
+    },
+    "source": "Shadow Spells",
+    "page": 3
+  },
+  {
+    "name": "Egyptian",
+    "description": "",
+    "drain": "Willpower + Intuition",
+    "spiritForm": "Possession",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Fire",
+      "spiritdetection": "Spirit of Earth",
+      "spirithealth": "Spirit of Air",
+      "spiritillusion": "Guidance Spirit",
+      "spiritmanipulation": "Spirit of Water"
+    },
+    "source": "Shadow Spells",
+    "page": 3
+  },
+  {
+    "name": "Norse",
+    "description": "",
+    "drain": "Willpower + Logic",
+    "spiritTypes": {
+      "spiritcombat": "Guardian Spirit",
+      "spiritdetection": "Spirit of Earth",
+      "spirithealth": "Plant Spirit",
+      "spiritillusion": "Spirit of Air",
+      "spiritmanipulation": "Spirit of Fire"
+    },
+    "source": "Shadow Spells",
+    "page": 4
+  },
+  {
+    "name": "Psionic",
+    "description": "",
+    "drain": "Willpower + Intuition",
+    "spiritForm": "Possession",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Fire",
+      "spiritdetection": "Spirit of Air",
+      "spirithealth": "Spirit of Man",
+      "spiritillusion": "Guidance Spirit",
+      "spiritmanipulation": "Task Spirit"
+    },
+    "source": "Shadow Spells",
+    "page": 5
+  },
+  {
+    "name": "Obeah",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Fire",
+      "spiritdetection": "Spirit of Water",
+      "spirithealth": "Spirit of Man",
+      "spiritillusion": "Guidance Spirit",
+      "spiritmanipulation": "Task Spirit"
+    },
+    "source": "Hard Targets",
+    "page": 130
+  },
+  {
+    "name": "Santeria",
+    "description": "",
+    "drain": "Willpower + Intuition",
+    "spiritForm": "Possession",
+    "spiritTypes": {
+      "spiritcombat": "Guidance Spirit",
+      "spiritdetection": "Guardian Spirit",
+      "spirithealth": "Spirit of Earth",
+      "spiritillusion": "Spirit of Man",
+      "spiritmanipulation": "Spirit of Water"
+    },
+    "source": "Hard Targets",
+    "page": 130
+  },
+  {
+    "name": "Buddhism [Traditionalist]",
+    "description": "",
+    "drain": "Willpower + Intuition",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Air",
+      "spiritdetection": "Guidance Spirit",
+      "spirithealth": "Spirit of Earth",
+      "spiritillusion": "Spirit of Fire",
+      "spiritmanipulation": "Spirit of Water"
+    },
+    "bonus": {
+      "qualities": [
+        {
+          "name": "Barehanded Adept"
+        },
+        {
+          "name": "Spiritual Lodge"
+        },
+        {
+          "name": "Spiritual Pilgrim"
+        }
+      ]
+    },
+    "source": "Forbidden Arcana",
+    "page": 62
+  },
+  {
+    "name": "Christian Theurgy [Traditional]",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Fire",
+      "spiritdetection": "Spirit of Water",
+      "spirithealth": "Spirit of Air",
+      "spiritillusion": "Spirit of Earth",
+      "spiritmanipulation": "Guidance Spirit"
+    },
+    "source": "Forbidden Arcana",
+    "page": 64
+  },
+  {
+    "name": "Christian Theurgy [Vigila Evangelica]",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Fire",
+      "spiritdetection": "Spirit of Water",
+      "spirithealth": "Spirit of Air",
+      "spiritillusion": "Spirit of Earth",
+      "spiritmanipulation": "Guidance Spirit"
+    },
+    "bonus": {
+      "qualities": [
+        {
+          "name": "Pacifist I"
+        }
+      ]
+    },
+    "source": "Forbidden Arcana",
+    "page": 64
+  },
+  {
+    "name": "Christian Theurgy [Westphalian]",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Fire",
+      "spiritdetection": "Spirit of Water",
+      "spirithealth": "Spirit of Air",
+      "spiritillusion": "Spirit of Earth",
+      "spiritmanipulation": "Guidance Spirit"
+    },
+    "bonus": {
+      "qualities": [
+        {
+          "name": "Vexcraft"
+        }
+      ]
+    },
+    "source": "Forbidden Arcana",
+    "page": 64
+  },
+  {
+    "name": "Cosmic",
+    "description": "",
+    "drain": "Willpower + Logic",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Earth",
+      "spiritdetection": "Guidance Spirit",
+      "spirithealth": "Spirit of Water",
+      "spiritillusion": "Spirit of Air",
+      "spiritmanipulation": "Spirit of Fire"
+    },
+    "source": "Forbidden Arcana",
+    "page": 75
+  },
+  {
+    "name": "Draconic",
+    "description": "",
+    "drain": "Willpower + Magic",
+    "spiritTypes": {
+      "spiritcombat": "All",
+      "spiritdetection": "All",
+      "spirithealth": "All",
+      "spiritillusion": "All",
+      "spiritmanipulation": "All"
+    },
+    "source": "Forbidden Arcana",
+    "page": 76
+  },
+  {
+    "name": "Druid [Alt]",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Beasts",
+      "spiritdetection": "Spirit of Water",
+      "spirithealth": "Plant Spirit",
+      "spiritillusion": "Spirit of Air",
+      "spiritmanipulation": "Spirit of Earth"
+    },
+    "source": "Forbidden Arcana",
+    "page": 65
+  },
+  {
+    "name": "Druid [Traditional]",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Beasts",
+      "spiritdetection": "Spirit of Water",
+      "spirithealth": "Plant Spirit",
+      "spiritillusion": "Spirit of Air",
+      "spiritmanipulation": "Spirit of Earth"
+    },
+    "bonus": {
+      "qualities": [
+        {
+          "name": "Mentor Spirit"
+        }
+      ]
+    },
+    "source": "Forbidden Arcana",
+    "page": 65
+  },
+  {
+    "name": "Elder God",
+    "description": "",
+    "drain": "Willpower + Intuition",
+    "spiritTypes": {
+      "spiritcombat": "Task Spirit",
+      "spiritdetection": "Guardian Spirit",
+      "spirithealth": "Spirit of Earth",
+      "spiritillusion": "Spirit of Fire",
+      "spiritmanipulation": "Spirit of Water"
+    },
+    "bonus": {
+      "spellCategoryList": [
+        {
+          "category": "Illusion",
+          "bonus": 3
+        }
+      ],
+      "drainResist": [-2]
+    },
+    "source": "Forbidden Arcana",
+    "page": 78
+  },
+  {
+    "name": "Green Magic",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritTypes": {
+      "spiritcombat": "Plant Spirit",
+      "spiritdetection": "Spirit of Earth",
+      "spirithealth": "Spirit of Water",
+      "spiritillusion": "Spirit of Air",
+      "spiritmanipulation": "Spirit of Fire"
+    },
+    "source": "Forbidden Arcana",
+    "page": 80
+  },
+  {
+    "name": "Islam [Islamic Alchemist]",
+    "description": "",
+    "drain": "Willpower + Logic",
+    "spiritTypes": {
+      "spiritcombat": "Guardian Spirit",
+      "spiritdetection": "Spirit of Earth",
+      "spirithealth": "Plant Spirit",
+      "spiritillusion": "Spirit of Air",
+      "spiritmanipulation": "Spirit of Fire"
+    },
+    "source": "Forbidden Arcana",
+    "page": 69
+  },
+  {
+    "name": "Islam [Licit Qur'anic]",
+    "description": "",
+    "drain": "Willpower + Logic",
+    "spiritTypes": {
+      "spiritcombat": "Guardian Spirit",
+      "spiritdetection": "Spirit of Earth",
+      "spirithealth": "Plant Spirit",
+      "spiritillusion": "Spirit of Air",
+      "spiritmanipulation": "Spirit of Fire"
+    },
+    "source": "Forbidden Arcana",
+    "page": 69
+  },
+  {
+    "name": "Missionist",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Man",
+      "spiritdetection": "Spirit of Air",
+      "spirithealth": "Spirit of Water",
+      "spiritillusion": "Spirit of Fire",
+      "spiritmanipulation": "Spirit of Earth"
+    },
+    "bonus": {
+      "spellCategoryList": [
+        {
+          "category": "Health",
+          "bonus": 2
+        },
+        {
+          "category": "Combat",
+          "bonus": -2
+        }
+      ]
+    },
+    "source": "Forbidden Arcana",
+    "page": 81
+  },
+  {
+    "name": "Necro Magic",
+    "description": "",
+    "drain": "Willpower + Logic",
+    "spiritTypes": {
+      "spiritcombat": "Corpse Spirit",
+      "spiritdetection": "Carcass Spirit",
+      "spirithealth": "Rot Spirit",
+      "spiritillusion": "Detritus Spirit",
+      "spiritmanipulation": "Palefire Spirit"
+    },
+    "source": "Forbidden Arcana",
+    "page": 82
+  },
+  {
+    "name": "Norse [Alt]",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritTypes": {
+      "spiritcombat": "Guardian Spirit",
+      "spiritdetection": "Spirit of Earth",
+      "spirithealth": "Plant Spirit",
+      "spiritillusion": "Spirit of Air",
+      "spiritmanipulation": "Spirit of Fire"
+    },
+    "source": "Forbidden Arcana",
+    "page": 68
+  },
+  {
+    "name": "Norse [Godi/Runemaster]",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritTypes": {
+      "spiritcombat": "Guardian Spirit",
+      "spiritdetection": "Spirit of Earth",
+      "spirithealth": "Plant Spirit",
+      "spiritillusion": "Spirit of Air",
+      "spiritmanipulation": "Spirit of Fire"
+    },
+    "source": "Forbidden Arcana",
+    "page": 68
+  },
+  {
+    "name": "Norse [Cunning Woman]",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritTypes": {
+      "spiritcombat": "Guardian Spirit",
+      "spiritdetection": "Spirit of Earth",
+      "spirithealth": "Plant Spirit",
+      "spiritillusion": "Spirit of Air",
+      "spiritmanipulation": "Spirit of Fire"
+    },
+    "source": "Forbidden Arcana",
+    "page": 68
+  },
+  {
+    "name": "Norse [Berserker]",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritTypes": {
+      "spiritcombat": "Guardian Spirit",
+      "spiritdetection": "Spirit of Earth",
+      "spirithealth": "Plant Spirit",
+      "spiritillusion": "Spirit of Air",
+      "spiritmanipulation": "Spirit of Fire"
+    },
+    "bonus": {
+      "specificPower": "Berserker Temper"
+    },
+    "requirements": {},
+    "source": "Forbidden Arcana",
+    "page": 68
+  },
+  {
+    "name": "Norse [Seidman]",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritTypes": {
+      "spiritcombat": "Guardian Spirit",
+      "spiritdetection": "Spirit of Earth",
+      "spirithealth": "Plant Spirit",
+      "spiritillusion": "Spirit of Air",
+      "spiritmanipulation": "Spirit of Fire"
+    },
+    "bonus": {
+      "qualities": [
+        {
+          "name": "Dedicated Conjurer"
+        }
+      ]
+    },
+    "source": "Forbidden Arcana",
+    "page": 68
+  },
+  {
+    "name": "Olympianism",
+    "description": "",
+    "drain": "Willpower + Logic",
+    "spiritTypes": {
+      "spiritcombat": "Guardian Spirit",
+      "spiritdetection": "Spirit of Air",
+      "spirithealth": "Spirit of Earth",
+      "spiritillusion": "Spirit of Water",
+      "spiritmanipulation": "Spirit of Fire"
+    },
+    "source": "Forbidden Arcana",
+    "page": 84
+  },
+  {
+    "name": "Pariah",
+    "description": "",
+    "drain": "Willpower + Logic",
+    "spiritTypes": "Select Spirits",
+    "source": "Forbidden Arcana",
+    "page": 85
+  },
+  {
+    "name": "Planar Magic",
+    "description": "",
+    "drain": "Willpower + Logic",
+    "spiritTypes": {
+      "spiritcombat": "Guardian Spirit",
+      "spiritdetection": "Guidance Spirit",
+      "spirithealth": "Spirit of Water",
+      "spiritillusion": "Spirit of Air",
+      "spiritmanipulation": "Task Spirit"
+    },
+    "source": "Forbidden Arcana",
+    "page": 87
+  },
+  {
+    "name": "Red Magic",
+    "description": "",
+    "drain": "Willpower + Intuition",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Beasts",
+      "spiritdetection": "Spirit of Air",
+      "spirithealth": "Spirit of Water",
+      "spiritillusion": "Spirit of Earth",
+      "spiritmanipulation": "Spirit of Man"
+    },
+    "source": "Forbidden Arcana",
+    "page": 88
+  },
+  {
+    "name": "Romani",
+    "description": "",
+    "drain": "Willpower + Willpower",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Fire",
+      "spiritdetection": "Spirit of Air",
+      "spirithealth": "Plant Spirit",
+      "spiritillusion": "Spirit of Water",
+      "spiritmanipulation": "Spirit of Earth"
+    },
+    "source": "Forbidden Arcana",
+    "page": 90
+  },
+  {
+    "name": "Tarot",
+    "description": "",
+    "drain": "Willpower + Logic",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Air",
+      "spiritdetection": "Spirit of Fire",
+      "spirithealth": "Spirit of Water",
+      "spiritillusion": "Spirit of Man",
+      "spiritmanipulation": "Spirit of Earth"
+    },
+    "source": "Forbidden Arcana",
+    "page": 91
+  },
+  {
+    "name": "Armanentradition",
+    "description": "",
+    "drain": "Willpower + Logic",
+    "spiritTypes": {
+      "spiritcombat": "Guardian Spirit",
+      "spiritdetection": "Guidance Spirit",
+      "spirithealth": "Spirit of Earth",
+      "spiritillusion": "Spirit of Water",
+      "spiritmanipulation": "Task Spirit"
+    },
+    "source": "State Of The Art - ADL",
+    "page": 111
+  },
+  {
+    "name": "Dianism",
+    "description": "",
+    "drain": "Willpower + Intuition",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Beasts",
+      "spiritdetection": "Spirit of Fire",
+      "spirithealth": "Spirit of Air",
+      "spiritillusion": "Spirit of Water",
+      "spiritmanipulation": "Spirit of Man"
+    },
+    "source": "State Of The Art - ADL",
+    "page": 112
+  },
+  {
+    "name": "Frisian Magic",
+    "description": "",
+    "drain": "Willpower + Logic",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Water",
+      "spiritdetection": "Spirit of Earth",
+      "spirithealth": "Guidance Spirit",
+      "spiritillusion": "Spirit of Air",
+      "spiritmanipulation": "Plant Spirit"
+    },
+    "source": "State Of The Art - ADL",
+    "page": 113
+  },
+  {
+    "name": "Magic of Roma and Street Nomads",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritTypes": {
+      "spiritcombat": "Guardian Spirit",
+      "spiritdetection": "Spirit of Beasts",
+      "spirithealth": "Plant Spirit",
+      "spiritillusion": "Spirit of Air",
+      "spiritmanipulation": "Spirit of Man"
+    },
+    "source": "State Of The Art - ADL",
+    "page": 114
+  },
+  {
+    "name": "Svetoid",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Earth",
+      "spiritdetection": "Guidance Spirit",
+      "spirithealth": "Plant Spirit",
+      "spiritillusion": "Spirit of Man",
+      "spiritmanipulation": "Spirit of Water"
+    },
+    "source": "State Of The Art - ADL",
+    "page": 115
+  },
+  {
+    "name": "Troll Shamanism",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Fire",
+      "spiritdetection": "Spirit of Earth",
+      "spirithealth": "Guardian Spirit",
+      "spiritillusion": "Spirit of Water",
+      "spiritmanipulation": "Plant Spirit"
+    },
+    "source": "State Of The Art - ADL",
+    "page": 115
+  },
+  {
+    "name": "Dark Magic",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Fire",
+      "spiritdetection": "Spirit of Earth",
+      "spirithealth": "Spirit of Water",
+      "spiritillusion": "Spirit of Air",
+      "spiritmanipulation": "Spirit of Man"
+    },
+    "source": "Dark Terrors",
+    "page": 165
+  },
+  {
+    "name": "Dr.-Singer-School",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Beasts",
+      "spiritdetection": "Task Spirit",
+      "spirithealth": "Spirit of Earth",
+      "spiritillusion": "Guidance Spirit",
+      "spiritmanipulation": "Spirit of Man"
+    },
+    "source": "Schattenhandbuch 3",
+    "page": 169
+  },
+  {
+    "name": "Storm Children",
+    "description": "",
+    "drain": "Willpower + Intuition",
+    "spiritTypes": {
+      "spiritcombat": "Spirit of Fire",
+      "spiritdetection": "Spirit of Beasts",
+      "spirithealth": "Spirit of Earth",
+      "spiritillusion": "Plant Spirit",
+      "spiritmanipulation": "Spirit of Air"
+    },
+    "source": "Schattenhandbuch 3",
+    "page": 169
+  },
+  {
+    "name": "Storyteller",
+    "description": "",
+    "drain": "Willpower + Charisma",
+    "spiritTypes": {
+      "spiritcombat": "Guardian Spirit",
+      "spiritdetection": "Spirit of Beasts",
+      "spirithealth": "Task Spirit",
+      "spiritillusion": "Guidance Spirit",
+      "spiritmanipulation": "Spirit of Man"
+    },
+    "bonus": {
+      "spellCategoryList": [
+        {
+          "category": "Illusion",
+          "bonus": 2
+        }
+      ]
+    },
+    "source": "Grimmes Erwachen",
+    "page": 68
+  }
+]

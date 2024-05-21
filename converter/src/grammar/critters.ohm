@@ -1,0 +1,20 @@
+Rating {
+  Exp = Variable | AddSub
+  Variable = "2D6"
+  AddSub = AddSub "+" MulDiv -- add
+    | AddSub "-" MulDiv -- subtract
+    | MulDiv -- base
+  MulDiv = MulDiv "*" SubCalculation -- multiply
+    | MulDiv "/" SubCalculation -- divide
+    | SubCalculation
+  SubCalculation = "(" AddSub ")" -- parenthesis
+    | Number "D" Number -- variable
+    | RatingValue
+  RatingValue = Number
+    | Force
+  Force = "F"
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+}

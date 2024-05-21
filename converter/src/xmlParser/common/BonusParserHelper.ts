@@ -7,7 +7,7 @@ import {
 } from "@neon-codex/common/build/enums.js";
 import type {
   BonusType,
-  BonusQualityListType,
+  BonusGenericListType,
   SelectSkillType,
 } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 import assert from "assert";
@@ -208,6 +208,9 @@ export function convertXmlBonus(bonus: BonusXmlType) {
   if ("specificskill" in bonus && bonus.specificskill !== undefined) {
     // bonusObject.skill = bonusSkill(bonus.specificskill);
   }
+  if ("specificpower" in bonus && bonus.specificpower !== undefined) {
+    bonusObject.specificPower = bonus.specificpower.name;
+  }
   if ("skillattribute" in bonus && bonus.skillattribute !== undefined) {
     // bonusObject.skill = bonusSkill(bonus.skillattribute);
   }
@@ -218,25 +221,31 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     // bonusObject.skill = bonusSkill(bonus.skilllinkedattribute);
   }
   if ("spellcategory" in bonus && bonus.spellcategory !== undefined) {
-    const spellCategory = bonus.spellcategory;
-    let category, value;
-    if (spellCategory.name === undefined) {
-      // TODO: better way to do this?
-      category = { option: "SelectCategory" as const };
-    } else {
-      category = spellCategoryConversion(spellCategory.name);
+    const spellCategoryList = Array.isArray(bonus.spellcategory)
+      ? bonus.spellcategory
+      : [bonus.spellcategory];
+    assert(spellCategoryList.length > 0);
+    bonusObject.spellCategoryList = [];
+    for (const spellCategory of spellCategoryList) {
+      let category, value;
+      if (spellCategory.name === undefined) {
+        // TODO: better way to do this?
+        category = { option: "SelectCategory" as const };
+      } else {
+        category = spellCategoryConversion(spellCategory.name);
+      }
+      if (typeof spellCategory.val === "number") {
+        value = spellCategory.val;
+      } else {
+        value = {
+          option: "Rating" as const,
+        };
+      }
+      bonusObject.spellCategoryList.push({
+        category: category,
+        bonus: value,
+      });
     }
-    if (typeof spellCategory.val === "number") {
-      value = spellCategory.val;
-    } else {
-      value = {
-        option: "Rating" as const,
-      };
-    }
-    bonusObject.spellCategory = {
-      limitCategory: category,
-      bonus: value,
-    };
   }
   if ("essencepenaltyt100" in bonus && bonus.essencepenaltyt100 !== undefined) {
     const match = EssenceCost.match(bonus.essencepenaltyt100.toString());
@@ -503,7 +512,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
   }
   {
     // qualities scope
-    let qualities: BonusQualityListType = [];
+    let qualities: BonusGenericListType = [];
     if ("quality" in bonus && bonus.quality !== undefined) {
       const rating = Number(bonus.quality._rating);
       assert(!isNaN(rating));
@@ -627,6 +636,10 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       if (conditionMonitor.physical === "Rating") {
         bonusObject.addPhysicalBoxes = {
           option: "Rating",
+        };
+      } else if (conditionMonitor.physical === "-Rating") {
+        bonusObject.addPhysicalBoxes = {
+          option: "-Rating",
         };
       } else {
         bonusObject.addPhysicalBoxes = conditionMonitor.physical;

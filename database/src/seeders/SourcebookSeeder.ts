@@ -101,6 +101,8 @@ import { Spells } from "../models/rpg/abilities/spellModel.js";
 import { getSpells } from "../seeds/rpgSeeds/spellsSeed.js";
 import { getAdeptPowers } from "../seeds/rpgSeeds/adeptPowerSeed.js";
 import { AdeptPowers } from "../models/rpg/abilities/adeptPowerModel.js";
+import { Traditions } from "../models/rpg/traits/traditionModel.js";
+import { getTraditions } from "../seeds/rpgSeeds/traditionSeed.js";
 
 export class SourcebookSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
@@ -128,6 +130,7 @@ export class SourcebookSeeder extends Seeder {
     const { unlinkedGears, stagedGears } = getGears();
     const stagedspells: Array<Spells> = getSpells();
     const { unlinkedAdeptPowers, stagedAdeptPowers } = getAdeptPowers();
+    const { unlinkedTraditions, stagedTraditions } = getTraditions();
 
     stagedSkills.forEach((skill) => {
       em.create(Skills, skill);
@@ -260,6 +263,11 @@ export class SourcebookSeeder extends Seeder {
       em.create(AdeptPowers, adeptPower);
     });
     console.log("Adept Powers created");
+
+    stagedTraditions.forEach((tradition) => {
+      em.create(Traditions, tradition);
+    });
+    console.log("Traditions created");
 
     await em.flush();
 
@@ -1155,6 +1163,13 @@ export class SourcebookSeeder extends Seeder {
       }
     }
     console.log("Adept Power relationships associated");
+
+    // for (const tradition of unlinkedTraditions){
+
+    // }
+    console.log("Tradition relationships associated");
+    // log to appease transpiler
+    console.log(unlinkedTraditions[0]);
 
     async function addTalentLinks(
       rowLetter: priorityLetterEnum,

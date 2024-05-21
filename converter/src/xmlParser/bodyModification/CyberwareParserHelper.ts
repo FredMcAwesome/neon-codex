@@ -57,18 +57,19 @@ export const convertCyberwareRating = function (rating: cyberwareRatingType) {
   if (typeof rating === "number") {
     return [rating];
   }
+
   switch (rating) {
-    case "MaximumSTR":
+    case "{STRMaximum}":
       return [{ option: "Maximum Strength" }];
-    case "MaximumAGI":
+    case "{AGIMaximum}":
       return [{ option: "Maximum Agility" }];
-    case "MinimumSTR+1":
+    case "{STRMinimum}+1":
       return [
         { option: "Minimum Strength" },
         { operator: mathOperatorEnum.Add },
         1,
       ];
-    case "MinimumAGI+1":
+    case "{AGIMinimum}+1":
       return [
         { option: "Minimum Agility" },
         { operator: mathOperatorEnum.Add },

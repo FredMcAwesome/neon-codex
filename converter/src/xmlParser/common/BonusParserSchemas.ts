@@ -5,6 +5,7 @@ import {
   limbSlotXmlEnum,
   LimitModifierSchema,
   lockedAttributeXmlEnum,
+  NaturalWeaponSchema,
   NumberOrAnyRatingSchema,
   NumberOrRatingSchema,
   SkillSchema,
@@ -120,7 +121,7 @@ const SelectSkillSchema = zod.union([
           .strict()
       ),
       applytorating: zod.optional(zod.string()),
-      val: zod.optional(NumberOrRatingSchema),
+      val: zod.optional(StringOrNumberSchema),
       max: zod.optional(zod.number()),
       disablespecializationeffects: zod.optional(zod.literal("")),
     })
@@ -220,11 +221,15 @@ export const BonusXmlSchema = zod.union([
       // Choose a skill to link to
       selectskill: zod.optional(SelectSkillSchema),
       selectspell: zod.optional(
-        zod
-          .object({
-            _ignorerequirements: zod.literal("True"),
-          })
-          .strict()
+        zod.union([
+          zod.literal(""),
+
+          zod
+            .object({
+              _ignorerequirements: zod.literal("True"),
+            })
+            .strict(),
+        ])
       ),
       // Choose a power to link to
       selectpowers: zod.optional(
@@ -286,6 +291,7 @@ export const BonusXmlSchema = zod.union([
       skillgroup: zod.optional(
         zod.union([zod.array(SkillSchema), SkillSchema])
       ),
+      allowskilldefaulting: zod.optional(zod.literal("")),
       selectlimit: zod.optional(zod.object({ val: zod.number() })),
       addskillspecializationoption: zod.optional(
         zod
@@ -373,6 +379,10 @@ export const BonusXmlSchema = zod.union([
         zod
           .object({
             name: zod.nativeEnum(lockedAttributeXmlEnum),
+            min: zod.optional(zod.union([zod.literal("F"), zod.number()])),
+            max: zod.optional(zod.union([zod.literal("F"), zod.number()])),
+            aug: zod.optional(zod.union([zod.literal("F"), zod.number()])),
+            val: zod.optional(zod.union([zod.literal("F"), zod.number()])),
           })
           .strict()
       ),
@@ -380,6 +390,7 @@ export const BonusXmlSchema = zod.union([
       specificattribute: zod.optional(
         zod.union([zod.array(GenericNameValueSchema), GenericNameValueSchema])
       ),
+      specificpower: zod.optional(zod.object({ name: zod.string() }).strict()),
       // bonus to a specific skill
       specificskill: zod.optional(
         zod.union([zod.array(SkillSchema), SkillSchema])
@@ -404,18 +415,39 @@ export const BonusXmlSchema = zod.union([
               })
               .strict(),
           ]),
-          zod.array(zod.string()),
+          zod.array(
+            zod.union([
+              zod.string(),
+              zod
+                .object({
+                  xmltext: zod.string(),
+                  _name: zod.string(),
+                })
+                .strict(),
+            ])
+          ),
         ])
       ),
       // bonus to a specific spell category
       spellcategory: zod.optional(
-        zod
-          .object({
-            // When optional it means pick a spell category
-            name: zod.optional(zod.string()),
-            val: NumberOrRatingSchema,
-          })
-          .strict()
+        zod.union([
+          zod.array(
+            zod
+              .object({
+                // When optional it means pick a spell category
+                name: zod.optional(zod.string()),
+                val: NumberOrRatingSchema,
+              })
+              .strict()
+          ),
+          zod
+            .object({
+              // When optional it means pick a spell category
+              name: zod.optional(zod.string()),
+              val: NumberOrRatingSchema,
+            })
+            .strict(),
+        ])
       ),
       // Allows casting spells from a spell category
       allowspellcategory: zod.optional(zod.string()),
@@ -472,6 +504,7 @@ export const BonusXmlSchema = zod.union([
         zod.union([
           // Empty i.e. "" for select a category
           zod.string(),
+          zod.array(zod.string()),
           zod
             .object({
               _exclude: zod.string(),
@@ -479,14 +512,31 @@ export const BonusXmlSchema = zod.union([
             .strict(),
         ])
       ),
+      metamagiclimit: zod.optional(
+        zod
+          .object({
+            metamagic: zod.array(
+              zod
+                .object({
+                  _grade: zod.string(),
+                  xmltext: zod.string(),
+                })
+                .strict()
+            ),
+          })
+          .strict()
+      ),
       // Enable a tab in chummer e.g. magician tab
       enabletab: zod.optional(
         zod
           .object({
             name: StringArrayOrStringSchema,
+            reach: zod.optional(zod.number()),
           })
           .strict()
       ),
+      genetechcostmultiplier: zod.optional(zod.number()),
+      genetechessmultiplier: zod.optional(zod.number()),
       // essence cost times 100 (to avoid float issues)
       // These are negative for cost, positive for bonus
       essencepenaltyt100: zod.optional(StringOrNumberSchema),
@@ -568,7 +618,9 @@ export const BonusXmlSchema = zod.union([
       // additional initiative dice
       initiativedice: zod.optional(zod.number()),
       // additional initiative dice
-      initiativepass: zod.optional(GenericNameValueSchema),
+      initiativepass: zod.optional(
+        zod.union([GenericNameValueSchema, zod.number()])
+      ),
       // additional matrix initiative dice
       matrixinitiativedice: zod.optional(
         zod
@@ -634,7 +686,8 @@ export const BonusXmlSchema = zod.union([
                   zod.string(),
                   zod
                     .object({
-                      _select: zod.string(),
+                      _select: zod.optional(zod.string()),
+                      _forced: zod.optional(zod.literal("True")),
                       xmltext: zod.string(),
                     })
                     .strict(),
@@ -685,7 +738,7 @@ export const BonusXmlSchema = zod.union([
             // e.g. if -1 then every 2 boxes increase negative effects
             threshold: zod.optional(zod.number()),
             // add boxes to physical track
-            physical: zod.optional(NumberOrRatingSchema),
+            physical: zod.optional(NumberOrAnyRatingSchema),
             // add boxes to stun track
             stun: zod.optional(NumberOrRatingSchema),
             // add overflow boxes (used to determine death only)
@@ -857,6 +910,7 @@ export const BonusXmlSchema = zod.union([
           .strict()
       ),
       addweapon: zod.optional(zod.object({ name: zod.string() }).strict()),
+      naturalweapon: zod.optional(NaturalWeaponSchema),
       // add spirits?
       addspirit: zod.optional(
         zod.union([zod.array(SpiritSchema), SpiritSchema])
@@ -867,6 +921,11 @@ export const BonusXmlSchema = zod.union([
           zod.object({
             spirit: zod.string(),
           }),
+          zod.array(
+            zod.object({
+              spirit: zod.string(),
+            })
+          ),
           zod.literal(""),
         ])
       ),
@@ -1067,6 +1126,28 @@ export const BonusXmlSchema = zod.union([
           })
           .strict()
       ),
+      critterpowerlevels: zod.optional(
+        zod
+          .object({
+            power: zod.union([
+              zod
+                .object({
+                  name: zod.string(),
+                  val: zod.number(),
+                })
+                .strict(),
+              zod.array(
+                zod
+                  .object({
+                    name: zod.string(),
+                    val: zod.number(),
+                  })
+                  .strict()
+              ),
+            ]),
+          })
+          .strict()
+      ),
       // Can add critter powers, but only from this category
       limitcritterpowercategory: zod.optional(
         zod.union([zod.literal("Drake"), zod.literal("Infected")])
@@ -1076,6 +1157,7 @@ export const BonusXmlSchema = zod.union([
         zod
           .object({
             optionalpower: PowersSchema,
+            _count: zod.optional(zod.string()),
           })
           .strict()
       ),
@@ -1210,6 +1292,8 @@ export const BonusXmlSchema = zod.union([
           zod.number(),
         ])
       ),
+      // Uneducated critter power
+      uneducated: zod.optional(zod.literal("")),
     })
     .strict(),
   zod.literal(""),

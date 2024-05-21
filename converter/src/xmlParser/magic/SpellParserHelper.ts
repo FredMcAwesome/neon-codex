@@ -1,19 +1,12 @@
 import assert from "assert";
 import {
   damageTypeEnum,
-  durationEnum,
   spellCategoryEnum,
   spellDescriptorEnum,
-  spellRangeEnum,
-  spellTargetEnum,
   spellTypeEnum,
 } from "@neon-codex/common/build/enums.js";
 import { spellXmlCategoryEnum } from "./SpellParserSchemas.js";
-import type {
-  SpellXmlDamageType,
-  SpellXmlDurationType,
-  SpellXmlRangeType,
-} from "./SpellParserSchemas.js";
+import type { SpellXmlDamageType } from "./SpellParserSchemas.js";
 import Spells from "../../grammar/spells.ohm-bundle.js";
 const Damage = Spells.Damage;
 
@@ -53,59 +46,6 @@ export const convertSpellDamageType = function (damage: SpellXmlDamageType) {
       return damageTypeEnum.Stun;
     case "Special":
       return damageTypeEnum.Special;
-  }
-};
-
-export const convertSpellRange = function (range: SpellXmlRangeType) {
-  switch (range) {
-    case "S":
-      return {
-        value: spellRangeEnum.Self,
-        target: spellTargetEnum.Target,
-      };
-    case "S (A)":
-      return {
-        value: spellRangeEnum.Self,
-        target: spellTargetEnum.Area,
-      };
-    case "T":
-      return {
-        value: spellRangeEnum.Touch,
-        target: spellTargetEnum.Target,
-      };
-    case "T (A)":
-      return {
-        value: spellRangeEnum.Touch,
-        target: spellTargetEnum.Area,
-      };
-    case "LOS":
-      return {
-        value: spellRangeEnum.LineOfSight,
-        target: spellTargetEnum.Target,
-      };
-    case "LOS (A)":
-      return {
-        value: spellRangeEnum.LineOfSight,
-        target: spellTargetEnum.Area,
-      };
-    case "Special":
-      return {
-        value: spellRangeEnum.Special,
-        target: spellTargetEnum.Target,
-      };
-  }
-};
-
-export const convertSpellDuration = function (duration: SpellXmlDurationType) {
-  switch (duration) {
-    case "I":
-      return durationEnum.Instantaneous;
-    case "S":
-      return durationEnum.Sustained;
-    case "P":
-      return durationEnum.Permanent;
-    case "Special":
-      return durationEnum.Special;
   }
 };
 

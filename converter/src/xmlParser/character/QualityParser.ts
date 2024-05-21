@@ -28,7 +28,11 @@ export function ParseQuality() {
     textNodeName: "xmltext",
   });
   const jObj: any = parser.parse(xml_string);
-  // console.log(jObj.chummer.qualities.quality[745]);
+
+  // console.log(
+  //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+  //   jObj.chummer.qualities.quality[698]
+  // );
   const qualityListParsed = QualityListXmlSchema.safeParse(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.qualities.quality

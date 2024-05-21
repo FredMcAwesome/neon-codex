@@ -1,0 +1,35 @@
+import { z as zod } from "zod";
+import { sourceBookEnum, traditionDrainAttributeEnum } from "../../../enums.js";
+import { BonusSchema } from "../../shared/bonusSchemas.js";
+import { RequirementsSchema } from "../../shared/requiredSchemas.js";
+
+export const TraditionSchema = zod
+  .object({
+    name: zod.string(),
+    description: zod.string(),
+    drain: zod.nativeEnum(traditionDrainAttributeEnum),
+    spiritForm: zod.optional(
+      zod.union([zod.literal("Possession"), zod.literal("Inhabitation")])
+    ),
+    spiritTypes: zod.union([
+      zod.literal("Select Spirits"),
+      zod
+        .object({
+          spiritcombat: zod.string(),
+          spiritdetection: zod.string(),
+          spirithealth: zod.string(),
+          spiritillusion: zod.string(),
+          spiritmanipulation: zod.string(),
+        })
+        .strict(),
+    ]),
+    bonus: zod.optional(BonusSchema),
+    requirements: zod.optional(RequirementsSchema),
+    source: zod.nativeEnum(sourceBookEnum),
+    page: zod.number(),
+  })
+  .strict();
+export type TraditionType = zod.infer<typeof TraditionSchema>;
+
+export const TraditionListSchema = zod.array(TraditionSchema);
+export type TraditionListType = zod.infer<typeof TraditionListSchema>;

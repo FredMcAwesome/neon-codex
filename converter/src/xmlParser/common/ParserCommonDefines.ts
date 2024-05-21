@@ -316,6 +316,7 @@ export const SkillSchema = zod
     _precedence: zod.optional(zod.literal("0")),
     condition: zod.optional(zod.string()),
     exclude: zod.optional(zod.string()),
+    applytorating: zod.optional(zod.literal("True")),
   })
   .strict();
 
@@ -477,3 +478,91 @@ export const xmlAllowGearSchema = zod.union([
 ]);
 
 export type xmlAllowGearType = zod.infer<typeof xmlAllowGearSchema>;
+
+const XmlQualitySingleSchema = zod.union([
+  zod
+    .object({
+      // At least one of these optional must be implemented for xmltext to be valid
+      _removable: zod.optional(zod.literal("True")),
+      _select: zod.optional(zod.string()),
+      xmltext: zod.string(),
+    })
+    .strict(),
+  zod.string(),
+]);
+
+const XmlQualitiesSingularSchema = zod
+  .object({
+    quality: zod.union([
+      zod.array(XmlQualitySingleSchema),
+      XmlQualitySingleSchema,
+    ]),
+  })
+  .strict();
+export type XmlQualitiesSingularType = zod.infer<
+  typeof XmlQualitiesSingularSchema
+>;
+
+export const XmlQualitiesSchema = zod
+  .object({
+    // one of either positive or negative must be defined
+    positive: zod.optional(XmlQualitiesSingularSchema),
+    negative: zod.optional(XmlQualitiesSingularSchema),
+  })
+  .strict();
+export type XmlQualitiesType = zod.infer<typeof XmlQualitiesSchema>;
+
+export const XmlPowerSchema = zod.union([
+  zod
+    .object({
+      _select: zod.optional(zod.string()),
+      _rating: zod.optional(zod.string()),
+      xmltext: zod.string(),
+    })
+    .strict(),
+  zod.string(),
+]);
+
+export const XmlDurationSchema = zod.union([
+  zod.literal("I"),
+  zod.literal("Instant"),
+  zod.literal("S"),
+  zod.literal("Sustained"),
+  // Permanent
+  zod.literal("P"),
+  zod.literal("Permanent"),
+  zod.literal("Always"),
+  zod.literal("Special"),
+]);
+export type XmlDurationType = zod.infer<typeof XmlDurationSchema>;
+
+export const SpellPowerXmlRangeSchema = zod.union([
+  zod.literal("LOS"), // Line Of Sight
+  zod.literal("LOS (A)"), // LOS (Area)
+  zod.literal("T"), // Touch
+  zod.literal("Touch"),
+  zod.literal("T (A)"), // Touch (Area)? How does this work?
+  zod.literal("S"), // Self
+  zod.literal("Self"),
+  zod.literal("S (A)"), // Self (Area) - originate from self
+  zod.literal("Special"),
+  // This only applies to critter powers
+  // TODO: in chummer make linkable to one of them
+  zod.literal("Touch or LOS"), // Line Of Sight or Touch
+]);
+
+export type SpellPowerXmlRangeType = zod.infer<typeof SpellPowerXmlRangeSchema>;
+
+export const NaturalWeaponSchema = zod
+  .object({
+    name: zod.string(),
+    reach: zod.number(),
+    damage: zod.string(),
+    ap: zod.number(),
+    useskill: zod.string(),
+    useskillspec: zod.optional(zod.string()),
+    accuracy: zod.string(),
+    source: zod.string(),
+    page: zod.number(),
+  })
+  .strict();

@@ -5,8 +5,8 @@ import {
   sourceBookEnum,
   spellCategoryEnum,
   spellDescriptorEnum,
-  spellRangeEnum,
-  spellTargetEnum,
+  spellPowerRangeEnum,
+  spellPowerTargetEnum,
   spellTypeEnum,
 } from "../../../enums.js";
 import { BonusSchema } from "../../shared/bonusSchemas.js";
@@ -22,10 +22,10 @@ const spellDamageSchema = zod.union([
 ]);
 export type spellDamageType = zod.infer<typeof spellDamageSchema>;
 
-const spellRangeSchema = zod
+export const spellRangeSchema = zod
   .object({
-    value: zod.nativeEnum(spellRangeEnum),
-    target: zod.nativeEnum(spellTargetEnum),
+    value: zod.nativeEnum(spellPowerRangeEnum),
+    target: zod.nativeEnum(spellPowerTargetEnum),
   })
   .strict();
 export type spellRangeType = zod.infer<typeof spellRangeSchema>;

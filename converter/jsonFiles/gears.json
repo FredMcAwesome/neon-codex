@@ -17527,12 +17527,14 @@
     "maxRating": 18,
     "bonus": {
       "linkTradition": true,
-      "spellCategory": {
-        "limitCategory": "Combat",
-        "bonus": {
-          "option": "Rating"
+      "spellCategoryList": [
+        {
+          "category": "Combat",
+          "bonus": {
+            "option": "Rating"
+          }
         }
-      }
+      ]
     },
     "availability": {
       "rating": [
@@ -17709,12 +17711,14 @@
     "maxRating": 18,
     "bonus": {
       "linkTradition": true,
-      "spellCategory": {
-        "limitCategory": "Detection",
-        "bonus": {
-          "option": "Rating"
+      "spellCategoryList": [
+        {
+          "category": "Detection",
+          "bonus": {
+            "option": "Rating"
+          }
         }
-      }
+      ]
     },
     "availability": {
       "rating": [
@@ -17891,12 +17895,14 @@
     "maxRating": 18,
     "bonus": {
       "linkTradition": true,
-      "spellCategory": {
-        "limitCategory": "Health",
-        "bonus": {
-          "option": "Rating"
+      "spellCategoryList": [
+        {
+          "category": "Health",
+          "bonus": {
+            "option": "Rating"
+          }
         }
-      }
+      ]
     },
     "availability": {
       "rating": [
@@ -18073,12 +18079,14 @@
     "maxRating": 18,
     "bonus": {
       "linkTradition": true,
-      "spellCategory": {
-        "limitCategory": "Illusion",
-        "bonus": {
-          "option": "Rating"
+      "spellCategoryList": [
+        {
+          "category": "Illusion",
+          "bonus": {
+            "option": "Rating"
+          }
         }
-      }
+      ]
     },
     "availability": {
       "rating": [
@@ -18255,12 +18263,14 @@
     "maxRating": 18,
     "bonus": {
       "linkTradition": true,
-      "spellCategory": {
-        "limitCategory": "Manipulation",
-        "bonus": {
-          "option": "Rating"
+      "spellCategoryList": [
+        {
+          "category": "Manipulation",
+          "bonus": {
+            "option": "Rating"
+          }
         }
-      }
+      ]
     },
     "availability": {
       "rating": [
@@ -18968,12 +18978,14 @@
     "maxRating": 18,
     "bonus": {
       "linkTradition": true,
-      "spellCategory": {
-        "limitCategory": "Combat",
-        "bonus": {
-          "option": "Rating"
+      "spellCategoryList": [
+        {
+          "category": "Combat",
+          "bonus": {
+            "option": "Rating"
+          }
         }
-      }
+      ]
     },
     "requirements": {},
     "availability": {
@@ -19154,12 +19166,14 @@
     "maxRating": 18,
     "bonus": {
       "linkTradition": true,
-      "spellCategory": {
-        "limitCategory": "Detection",
-        "bonus": {
-          "option": "Rating"
+      "spellCategoryList": [
+        {
+          "category": "Detection",
+          "bonus": {
+            "option": "Rating"
+          }
         }
-      }
+      ]
     },
     "requirements": {},
     "availability": {
@@ -19340,12 +19354,14 @@
     "maxRating": 18,
     "bonus": {
       "linkTradition": true,
-      "spellCategory": {
-        "limitCategory": "Health",
-        "bonus": {
-          "option": "Rating"
+      "spellCategoryList": [
+        {
+          "category": "Health",
+          "bonus": {
+            "option": "Rating"
+          }
         }
-      }
+      ]
     },
     "requirements": {},
     "availability": {
@@ -19526,12 +19542,14 @@
     "maxRating": 18,
     "bonus": {
       "linkTradition": true,
-      "spellCategory": {
-        "limitCategory": "Illusion",
-        "bonus": {
-          "option": "Rating"
+      "spellCategoryList": [
+        {
+          "category": "Illusion",
+          "bonus": {
+            "option": "Rating"
+          }
         }
-      }
+      ]
     },
     "requirements": {},
     "availability": {
@@ -19712,12 +19730,14 @@
     "maxRating": 18,
     "bonus": {
       "linkTradition": true,
-      "spellCategory": {
-        "limitCategory": "Manipulation",
-        "bonus": {
-          "option": "Rating"
+      "spellCategoryList": [
+        {
+          "category": "Manipulation",
+          "bonus": {
+            "option": "Rating"
+          }
         }
-      }
+      ]
     },
     "requirements": {},
     "availability": {
@@ -20431,12 +20451,14 @@
     "maxRating": 18,
     "bonus": {
       "linkTradition": true,
-      "spellCategory": {
-        "limitCategory": "Combat",
-        "bonus": {
-          "option": "Rating"
+      "spellCategoryList": [
+        {
+          "category": "Combat",
+          "bonus": {
+            "option": "Rating"
+          }
         }
-      }
+      ]
     },
     "requirements": {},
     "availability": {
@@ -20617,12 +20639,14 @@
     "maxRating": 18,
     "bonus": {
       "linkTradition": true,
-      "spellCategory": {
-        "limitCategory": "Detection",
-        "bonus": {
-          "option": "Rating"
+      "spellCategoryList": [
+        {
+          "category": "Detection",
+          "bonus": {
+            "option": "Rating"
+          }
         }
-      }
+      ]
     },
     "requirements": {},
     "availability": {
@@ -20803,12 +20827,14 @@
     "maxRating": 18,
     "bonus": {
       "linkTradition": true,
-      "spellCategory": {
-        "limitCategory": "Health",
-        "bonus": {
-          "option": "Rating"
+      "spellCategoryList": [
+        {
+          "category": "Health",
+          "bonus": {
+            "option": "Rating"
+          }
         }
-      }
+      ]
     },
     "requirements": {},
     "availability": {
@@ -20989,12 +21015,14 @@
     "maxRating": 18,
     "bonus": {
       "linkTradition": true,
-      "spellCategory": {
-        "limitCategory": "Illusion",
-        "bonus": {
-          "option": "Rating"
+      "spellCategoryList": [
+        {
+          "category": "Illusion",
+          "bonus": {
+            "option": "Rating"
+          }
         }
-      }
+      ]
     },
     "requirements": {},
     "availability": {
@@ -21175,12 +21203,14 @@
     "maxRating": 18,
     "bonus": {
       "linkTradition": true,
-      "spellCategory": {
-        "limitCategory": "Manipulation",
-        "bonus": {
-          "option": "Rating"
+      "spellCategoryList": [
+        {
+          "category": "Manipulation",
+          "bonus": {
+            "option": "Rating"
+          }
         }
-      }
+      ]
     },
     "requirements": {},
     "availability": {

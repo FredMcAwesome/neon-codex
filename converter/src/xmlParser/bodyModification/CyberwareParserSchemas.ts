@@ -83,10 +83,10 @@ export type CyberwareSubsystemsXmlType = zod.infer<
 
 const cyberwareRatingSchema = zod.union([
   zod.number(),
-  zod.literal("MaximumSTR"),
-  zod.literal("MaximumAGI"),
-  zod.literal("MinimumSTR+1"),
-  zod.literal("MinimumAGI+1"),
+  zod.literal("{STRMaximum}"),
+  zod.literal("{AGIMaximum}"),
+  zod.literal("{STRMinimum}+1"),
+  zod.literal("{AGIMinimum}+1"),
 ]);
 export type cyberwareRatingType = zod.infer<typeof cyberwareRatingSchema>;
 

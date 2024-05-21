@@ -210,3 +210,29 @@ export const EssenceCostSchema = zod.union([
 ]);
 
 export type EssenceCostType = zod.infer<typeof EssenceCostSchema>;
+
+export const AttributeRangeSchema = zod
+  .object({
+    min: zod.number(),
+    max: zod.number(),
+    augmentedMax: zod.number(),
+  })
+  .strict();
+export type AttributeRangeType = zod.infer<typeof AttributeRangeSchema>;
+
+const MovementEnvironmentSchema = zod
+  .object({
+    ground: zod.number(),
+    water: zod.number(),
+    air: zod.number(),
+  })
+  .strict();
+
+export const MovementStrideSchema = zod
+  .object({
+    walk: MovementEnvironmentSchema,
+    run: MovementEnvironmentSchema,
+    sprint: MovementEnvironmentSchema,
+  })
+  .strict();
+export type MovementStrideType = zod.infer<typeof MovementStrideSchema>;

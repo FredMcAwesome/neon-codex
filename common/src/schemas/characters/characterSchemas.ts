@@ -1,9 +1,6 @@
 import { z as zod } from "zod";
 import { priorityLetterEnum, talentCategoryEnum } from "../../enums.js";
-import {
-  AttributeRangeSchema,
-  HeritageSchema,
-} from "../abilities/heritageSchemas.js";
+import { HeritageSchema } from "../abilities/heritageSchemas.js";
 import type { HeritageType } from "../abilities/heritageSchemas.js";
 import { CustomisedWeaponListSchema } from "../equipment/combat/weaponSchemas.js";
 import type { CustomisedWeaponListType } from "../equipment/combat/weaponSchemas.js";
@@ -19,6 +16,7 @@ import { CustomSkillListSchema } from "../abilities/skillSchemas.js";
 import type { CustomSkillListType } from "../abilities/skillSchemas.js";
 import { CustomQualityListSchema } from "../abilities/qualitySchemas.js";
 import type { CustomQualityListType } from "../abilities/qualitySchemas.js";
+import { AttributeRangeSchema } from "../shared/commonSchemas.js";
 
 export enum PrioritiesEnum {
   Heritage,

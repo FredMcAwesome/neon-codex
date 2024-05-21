@@ -1,46 +1,46 @@
 So far I have only passed to the frontend:
   - Ranges
   - Weapons
-  - WeaponAccessories
+  - Weapon Accessories
   - Skills
   - Augmentations
   - Vehicles (including weapon mounts)
-  - VehicleMods (including weapon mount mods)
+  - Vehicle Mods (including weapon mount mods)
   - Gear
   - Armour
-  - ArmourModifications
+  - Armour Mods
   - Qualities
   - Metatypes
   - Priorities
   - Drugs
 
 Still need passed through to frontend):
-  - Spells
-  - Powers
   - DrugComponents
+  - Adept Powers
+  - Spells
+  - Traditions
+  - Critters (Including spirits and sprites)
+  - Critter Powers
 
 Other main priorities:
   - Complex Forms
-  - Critter Powers
-  - Critters
+  - Contacts
   - Echoes
   - Marital Arts
   - Mentors
   - Metamagic
+  - Paragons
   - Programs
-  - Spirit Powers
   - Streams
 
 Other xmls to maybe implement:
   - Actions
-  - Contacts
   - Life modules
   - Lifestyles
   - Packs
-  - Paragons
   - References
   - Settings
-  - Traditions
 
 Some xmls are better to just copy paste to an enum:
   - Licenses
+  - Vessels

@@ -63,10 +63,10 @@ const UnderbarrelXmlSchema = zod
   })
   .strict();
 
-const AccuracyXmlSchema = StringOrNumberSchema;
+export const AccuracyXmlSchema = StringOrNumberSchema;
 export type AccuracyXmlType = zod.infer<typeof AccuracyXmlSchema>;
 
-const DamageXmlSchema = zod.union([zod.string(), zod.literal(0)]);
+export const DamageXmlSchema = zod.union([zod.string(), zod.literal(0)]);
 export type DamageXmlType = zod.infer<typeof DamageXmlSchema>;
 
 const AccessoriesXmlSchema = zod.union([

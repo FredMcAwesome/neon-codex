@@ -2,10 +2,13 @@ import {
   attributeTypeEnum,
   augmentationGradeEnum,
   augmentationLimitEnum,
+  durationEnum,
   gearCategoryEnum,
   limbSlotEnum,
   ratingMeaningEnum,
   sourceBookEnum,
+  spellPowerRangeEnum,
+  spellPowerTargetEnum,
 } from "@neon-codex/common/build/enums.js";
 import type {
   GenericModListType,
@@ -16,6 +19,10 @@ import type {
   CategoryXmlListType,
   AugmentationXmlLimitType,
   xmlAllowGearType,
+  XmlQualitiesType,
+  XmlQualitiesSingularType,
+  XmlDurationType,
+  SpellPowerXmlRangeType,
 } from "./ParserCommonDefines.js";
 import {
   attributeXMLEnum,
@@ -31,6 +38,8 @@ import type {
 } from "./ParserCommonDefines.js";
 import { sourceBookXmlEnum } from "./ParserCommonDefines.js";
 import type { UseGearListType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
+import type { XmlMovementType } from "../character/MetatypeParserSchemas.js";
+import type { BonusGenericListType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 
 export const convertSource = function (source: sourceBookXmlEnum | 2050) {
   const xmlSource = source === 2050 ? sourceBookXmlEnum.Shadowrun2050 : source;
@@ -628,5 +637,130 @@ export const convertLimbSlot = function (slot: limbSlotXmlEnum) {
       return limbSlotEnum.All;
     default:
       assert(false);
+  }
+};
+
+export const convertMovement = function (movement: XmlMovementType) {
+  let movementString;
+  if (typeof movement === "object") {
+    movementString = movement.xmltext;
+  } else {
+    movementString = movement;
+  }
+  const movementArray = movementString.split("/").map((movement) => {
+    const movementNumber = parseInt(movement);
+    assert(!isNaN(movementNumber));
+    return movementNumber;
+  });
+  assert(movementArray.length === 3);
+  return {
+    ground: movementArray[2],
+    water: movementArray[1],
+    air: movementArray[0],
+  };
+};
+
+export const convertIncludedQualities = function (qualities: XmlQualitiesType) {
+  assert(
+    !(qualities.positive === undefined && qualities.negative === undefined)
+  );
+  let qualityList: BonusGenericListType = [];
+  if (qualities.positive !== undefined) {
+    qualityList = qualityList.concat(
+      convertIncludedQuality(qualities.positive)
+    );
+  }
+  if (qualities.negative !== undefined) {
+    qualityList = qualityList.concat(
+      convertIncludedQuality(qualities.negative)
+    );
+  }
+  assert(
+    qualityList.length > 0,
+    `Quality list is empty, ${qualities.positive}, ${qualities.negative}`
+  );
+  return qualityList;
+};
+
+const convertIncludedQuality = function (
+  qualitySingular: XmlQualitiesSingularType
+) {
+  const qualityList = Array.isArray(qualitySingular.quality)
+    ? qualitySingular.quality
+    : [qualitySingular.quality];
+  assert(
+    qualityList.length > 0,
+    `Quality list is empty, ${qualitySingular.quality}`
+  );
+  return qualityList.map((quality) => {
+    if (typeof quality === "object") {
+      return { name: quality.xmltext };
+    }
+    return { name: quality };
+  });
+};
+
+export const convertDuration = function (duration: XmlDurationType) {
+  switch (duration) {
+    case "I":
+    case "Instant":
+      return durationEnum.Instantaneous;
+    case "S":
+    case "Sustained":
+      return durationEnum.Sustained;
+    case "P":
+    case "Permanent":
+      return durationEnum.Permanent;
+    case "Always":
+      return durationEnum.Always;
+    case "Special":
+      return durationEnum.Special;
+  }
+};
+
+export const convertSpellPowerRange = function (range: SpellPowerXmlRangeType) {
+  switch (range) {
+    case "S":
+    case "Self":
+      return {
+        value: spellPowerRangeEnum.Self,
+        target: spellPowerTargetEnum.Target,
+      };
+    case "S (A)":
+      return {
+        value: spellPowerRangeEnum.Self,
+        target: spellPowerTargetEnum.Area,
+      };
+    case "T":
+    case "Touch":
+      return {
+        value: spellPowerRangeEnum.Touch,
+        target: spellPowerTargetEnum.Target,
+      };
+    case "T (A)":
+      return {
+        value: spellPowerRangeEnum.Touch,
+        target: spellPowerTargetEnum.Area,
+      };
+    case "LOS":
+      return {
+        value: spellPowerRangeEnum.LineOfSight,
+        target: spellPowerTargetEnum.Target,
+      };
+    case "LOS (A)":
+      return {
+        value: spellPowerRangeEnum.LineOfSight,
+        target: spellPowerTargetEnum.Area,
+      };
+    case "Special":
+      return {
+        value: spellPowerRangeEnum.Special,
+        target: spellPowerTargetEnum.Target,
+      };
+    case "Touch or LOS":
+      return {
+        value: spellPowerRangeEnum.Special,
+        target: spellPowerTargetEnum.Target,
+      };
   }
 };

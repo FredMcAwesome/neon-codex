@@ -1,7 +1,11 @@
 // import { standardCalculationEnum } from "@neon-codex/common/build/enums.js";
 import { z as zod } from "zod";
 import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
-import { SourceXmlSchema } from "../common/ParserCommonDefines.js";
+import {
+  SourceXmlSchema,
+  SpellPowerXmlRangeSchema,
+  XmlDurationSchema,
+} from "../common/ParserCommonDefines.js";
 import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
 
 export enum spellXmlCategoryEnum {
@@ -22,26 +26,6 @@ const SpellXmlDamageSchema = zod.union([
 ]);
 export type SpellXmlDamageType = zod.infer<typeof SpellXmlDamageSchema>;
 
-const SpellXmlRangeSchema = zod.union([
-  zod.literal("LOS"), // Line Of Sight
-  zod.literal("LOS (A)"), // LOS (Area)
-  zod.literal("T"), // Touch
-  zod.literal("T (A)"), // Touch (Area)? How does this work?
-  zod.literal("S"), // Self
-  zod.literal("S (A)"), // Self (Area) - originate from self
-  zod.literal("Special"),
-]);
-
-export type SpellXmlRangeType = zod.infer<typeof SpellXmlRangeSchema>;
-
-const SpellXmlDurationSchema = zod.union([
-  zod.literal("I"),
-  zod.literal("S"),
-  zod.literal("P"),
-  zod.literal("Special"),
-]);
-export type SpellXmlDurationType = zod.infer<typeof SpellXmlDurationSchema>;
-
 const SpellXmlSchema = zod
   .object({
     id: zod.string(),
@@ -53,11 +37,11 @@ const SpellXmlSchema = zod
     // List of descriptors (don't think these are used for anything?)
     descriptor: zod.string(),
     // Duration spell lasts/casting time
-    duration: SpellXmlDurationSchema,
+    duration: XmlDurationSchema,
     // Damage value
     dv: zod.string(),
     // Spell targets + states if AOE
-    range: SpellXmlRangeSchema,
+    range: SpellPowerXmlRangeSchema,
     // Physical or Mana
     type: zod.union([zod.literal("P"), zod.literal("M")]),
     // Bonus (these are specific choices to select when adding when)

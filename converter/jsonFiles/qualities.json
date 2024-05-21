@@ -1494,6 +1494,7 @@
     "category": "Positive",
     "karma": 10,
     "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
     "forbidden": {},
     "description": "",
     "source": "RF",
@@ -1504,6 +1505,7 @@
     "category": "Positive",
     "karma": 15,
     "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
     "forbidden": {},
     "description": "",
     "source": "RF",
@@ -1514,6 +1516,7 @@
     "category": "Positive",
     "karma": 30,
     "charGenDoNotContributeToKarmaLimit": true,
+    "charGenCostInCareer": true,
     "forbidden": {},
     "description": "",
     "source": "RF",
@@ -5200,6 +5203,7 @@
     "name": "Wildcard Chimera",
     "category": "Positive",
     "karma": 0,
+    "requirements": {},
     "description": "",
     "source": "DTR",
     "page": 163
@@ -5208,6 +5212,7 @@
     "name": "It Works If You Work It",
     "category": "Positive",
     "karma": 5,
+    "requirements": {},
     "description": "",
     "source": "DTR",
     "page": 164
@@ -5228,6 +5233,7 @@
     "bonus": {
       "enterName": true
     },
+    "requirements": {},
     "description": "",
     "source": "DTR",
     "page": 164

@@ -4,7 +4,11 @@ import {
 } from "@neon-codex/common/build/enums.js";
 import { z as zod } from "zod";
 import { BonusXmlWrappedSchema } from "../common/BonusParserSchemas.js";
-import { StringArrayOrStringSchema } from "../common/ParserCommonDefines.js";
+import {
+  StringArrayOrStringSchema,
+  XmlPowerSchema,
+  XmlQualitiesSchema,
+} from "../common/ParserCommonDefines.js";
 
 export type GenericXmlParsingType =
   | { option: standardCalculationEnum }
@@ -14,7 +18,7 @@ export type GenericXmlParsingType =
 
 export type GenericArrayXmlParsingType = Array<GenericXmlParsingType>;
 
-const MetatypeXmlMovementSchema = zod.union([
+const XmlMovementSchema = zod.union([
   // Formatted like: Ground/Water/Air speed
   zod.string(),
   zod
@@ -25,54 +29,7 @@ const MetatypeXmlMovementSchema = zod.union([
     })
     .strict(),
 ]);
-export type MetatypeXmlMovementType = zod.infer<
-  typeof MetatypeXmlMovementSchema
->;
-
-const MetatypeXmlQualitySingleSchema = zod.union([
-  zod
-    .object({
-      // At least one of these optional must be implemented for xmltext to be valid
-      _removable: zod.optional(zod.literal("True")),
-      _select: zod.optional(zod.string()),
-      xmltext: zod.string(),
-    })
-    .strict(),
-  zod.string(),
-]);
-
-const MetatypeXmlQualitiesSingularSchema = zod
-  .object({
-    quality: zod.union([
-      zod.array(MetatypeXmlQualitySingleSchema),
-      MetatypeXmlQualitySingleSchema,
-    ]),
-  })
-  .strict();
-export type MetatypeXmlQualitiesSingularType = zod.infer<
-  typeof MetatypeXmlQualitiesSingularSchema
->;
-
-const MetatypeXmlQualitiesSchema = zod
-  .object({
-    // one of either positive or negative must be defined
-    positive: zod.optional(MetatypeXmlQualitiesSingularSchema),
-    negative: zod.optional(MetatypeXmlQualitiesSingularSchema),
-  })
-  .strict();
-export type MetatypeXmlQualitiesType = zod.infer<
-  typeof MetatypeXmlQualitiesSchema
->;
-
-const MetatypeXmlPowerSchema = zod.union([
-  zod
-    .object({
-      _select: zod.string(),
-      xmltext: zod.string(),
-    })
-    .strict(),
-  zod.string(),
-]);
+export type XmlMovementType = zod.infer<typeof XmlMovementSchema>;
 
 const BaseMetatypeXmlSubBonusSchema = zod
   .object({
@@ -86,7 +43,7 @@ const BaseMetatypeXmlSubBonusSchema = zod
     // Body
     bodmin: zod.number(),
     bodmax: zod.number(),
-    // Augmented maximum
+    // Augmented maximum (bonus with cyberware https://www.reddit.com/r/Shadowrun/comments/deo0go/augmented_maximum_defined_in_5e/)
     bodaug: zod.number(),
     // Agility
     agimin: zod.number(),
@@ -132,14 +89,14 @@ const BaseMetatypeXmlSubBonusSchema = zod
     resmin: zod.number(),
     resmax: zod.number(),
     resaug: zod.number(),
-    // Essence
-    essmin: zod.number(),
-    essmax: zod.number(),
-    essaug: zod.number(),
     // Depth
     depmin: zod.number(),
     depmax: zod.number(),
     depaug: zod.number(),
+    // Essence
+    essmin: zod.number(),
+    essmax: zod.number(),
+    essaug: zod.number(),
     // Additional initiative dice
     // Only used in metavariants (this should probably be moved into bonus tag)
     initiativedice: zod.optional(zod.number()),
@@ -147,26 +104,23 @@ const BaseMetatypeXmlSubBonusSchema = zod
     movement: zod.optional(zod.literal("Special")),
     // Movement speeds
     // optional for metavariants only
-    walk: zod.optional(MetatypeXmlMovementSchema),
-    run: zod.optional(MetatypeXmlMovementSchema),
-    sprint: zod.optional(MetatypeXmlMovementSchema),
+    walk: zod.optional(XmlMovementSchema),
+    run: zod.optional(XmlMovementSchema),
+    sprint: zod.optional(XmlMovementSchema),
     // Add a natural weapon
     addweapon: zod.optional(StringArrayOrStringSchema),
     // Included powers
     powers: zod.optional(
       zod
         .object({
-          power: zod.union([
-            zod.array(MetatypeXmlPowerSchema),
-            MetatypeXmlPowerSchema,
-          ]),
+          power: zod.union([zod.array(XmlPowerSchema), XmlPowerSchema]),
         })
         .strict()
     ),
     // Included qualities
-    qualities: zod.optional(MetatypeXmlQualitiesSchema),
+    qualities: zod.optional(XmlQualitiesSchema),
     // Illegal qualities
-    qualityrestriction: zod.optional(MetatypeXmlQualitiesSchema),
+    qualityrestriction: zod.optional(XmlQualitiesSchema),
     source: zod.string(),
     page: zod.number(),
   })

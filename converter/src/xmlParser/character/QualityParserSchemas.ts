@@ -13,6 +13,7 @@ import {
   type RequiredXmlType,
 } from "../common/RequiredParserSchemas.js";
 import {
+  NaturalWeaponSchema,
   StringArrayOrStringSchema,
   StringOrNumberSchema,
 } from "../common/ParserCommonDefines.js";
@@ -24,19 +25,6 @@ export type GenericXmlParsingType =
   | number;
 
 export type GenericArrayXmlParsingType = Array<GenericXmlParsingType>;
-
-const NaturalWeaponSchema = zod
-  .object({
-    name: zod.string(),
-    reach: zod.number(),
-    damage: zod.string(),
-    ap: zod.number(),
-    useskill: zod.string(),
-    accuracy: zod.string(),
-    source: zod.string(),
-    page: zod.number(),
-  })
-  .strict();
 
 const QualitySubBonusXmlSchema = zod
   .object({

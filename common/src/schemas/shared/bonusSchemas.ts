@@ -27,7 +27,7 @@ const SelectSkillSchema = zod.discriminatedUnion("selectSkill", [
 ]);
 export type SelectSkillType = zod.infer<typeof SelectSkillSchema>;
 
-export const BonusQualityListSchema = zod.array(
+export const BonusGenericListSchema = zod.array(
   zod
     .object({
       name: zod.string(),
@@ -35,7 +35,7 @@ export const BonusQualityListSchema = zod.array(
     })
     .strict()
 );
-export type BonusQualityListType = zod.infer<typeof BonusQualityListSchema>;
+export type BonusGenericListType = zod.infer<typeof BonusGenericListSchema>;
 
 export const ForbiddenQualityListSchema = zod.array(zod.string());
 export type ForbiddenQualityListType = zod.infer<
@@ -319,25 +319,28 @@ export const BonusSchema = zod
           .strict()
       )
     ),
-    spellCategory: zod.optional(
-      zod
-        .object({
-          limitCategory: zod.union([
-            zod.nativeEnum(spellCategoryEnum),
-            zod.object({ option: zod.literal("SelectCategory") }).strict(),
-          ]),
-          bonus: zod.union([
-            zod.number(),
-            zod
-              .object({
-                option: zod.literal("Rating"),
-              })
-              .strict(),
-          ]),
-        })
-        .strict()
+    spellCategoryList: zod.optional(
+      zod.array(
+        zod
+          .object({
+            category: zod.union([
+              zod.nativeEnum(spellCategoryEnum),
+              zod.object({ option: zod.literal("SelectCategory") }).strict(),
+            ]),
+            bonus: zod.union([
+              zod.number(),
+              zod
+                .object({
+                  option: zod.literal("Rating"),
+                })
+                .strict(),
+            ]),
+          })
+          .strict()
+      )
     ),
     essenceCostTimes100: zod.optional(EssenceCostSchema),
+    specificPower: zod.optional(zod.string()),
     specificWeapon: zod.optional(
       zod
         .object({
@@ -524,7 +527,7 @@ export const BonusSchema = zod
       ])
     ),
     // TODO: needs to be linked to a quality
-    qualities: zod.optional(BonusQualityListSchema),
+    qualities: zod.optional(BonusGenericListSchema),
     disableQualities: zod.optional(
       zod.array(
         zod
@@ -638,7 +641,7 @@ export const BonusSchema = zod
         zod.number(),
         zod
           .object({
-            option: zod.literal("Rating"),
+            option: zod.union([zod.literal("Rating"), zod.literal("-Rating")]),
           })
           .strict(),
       ])

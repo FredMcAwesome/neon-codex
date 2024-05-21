@@ -468,14 +468,14 @@ export enum spellTypeEnum {
   Physical = "Physical",
 }
 
-export enum spellRangeEnum {
+export enum spellPowerRangeEnum {
   LineOfSight = "Line Of Sight",
   Touch = "Touch",
   Self = "Self",
   Special = "Special",
 }
 
-export enum spellTargetEnum {
+export enum spellPowerTargetEnum {
   Area = "Area",
   Target = "Single Target",
 }
@@ -539,6 +539,7 @@ export enum durationEnum {
   Instantaneous = "Instantaneous",
   Sustained = "Sustained",
   Permanent = "Permanent",
+  Always = "Always",
   Special = "Special",
 }
 
@@ -873,9 +874,71 @@ export enum qualityLimitEnum {
 }
 
 export enum actionEnum {
+  // No Action Required
+  Auto = "Auto",
   Simple = "Simple",
   Free = "Free",
   Complex = "Complex",
   Interrupt = "Interrupt",
   Special = "Special",
+}
+
+export enum traditionDrainAttributeEnum {
+  WillpowerAndCharisma = "Willpower + Charisma",
+  WillpowerAndIntuition = "Willpower + Intuition",
+  WillpowerAndLogic = "Willpower + Logic",
+  WillpowerAndMagic = "Willpower + Magic",
+  WillpowerAndWillpower = "Willpower + Willpower",
+  WillpowerAndSelect = "Willpower + Select Attribute",
+}
+
+export enum critterTypeEnum {
+  AIs = "A.I.s",
+  Dracoforms = "Dracoforms",
+  EntropicSprites = "Entropic Sprites",
+  Fey = "Fey",
+  Ghost_Haunt = "Ghosts and Haunts",
+  Harbingers = "Harbingers",
+  Imps = "Imps",
+  Infected = "Infected",
+  InsectSpirits = "Insect Spirits",
+  MundaneCritters = "Mundane Critters",
+  MutantCritters = "Mutant Critters",
+  ParanormalCritters = "Paranormal Critters",
+  PrimordialSpirits = "Primordial Spirits",
+  Protosapients = "Protosapients",
+  // Generally critters created from/with mana (rather than summoned)
+  Ritual = "Ritual",
+  ShadowSpirits = "Shadow Spirits",
+  // Shedim are a type of spirit
+  Shedim = "Shedim",
+  Spirits = "Spirits",
+  Sprites = "Sprites",
+  Technocritters = "Technocritters",
+  ToxicCritters = "Toxic Critters",
+  ToxicSpirits = "Toxic Spirits",
+  Warforms = "Warforms",
+  // Sort of like Fey Spirits
+  ExtraplanarTravelers = "Extraplanar Travelers",
+  NecroSpirits = "Necro Spirits",
+}
+
+export enum critterAttributePowerEnum {
+  Force = "Force",
+  Level = "Level",
+  Variable = "Variable",
+}
+
+export enum critterPowerEnum {
+  Drake = "Drake",
+  Echoes = "Echoes",
+  Emergent = "Emergent",
+  FreeSpirit = "Free Spirit",
+  Paranormal = "Paranormal",
+  Infected = "Infected",
+  Mundane = "Mundane",
+  ToxicCritterPowers = "Toxic Critter Powers",
+  Weakness = "Weakness",
+  ChimericModification = "Chimeric Modification",
+  Shapeshifter = "Shapeshifter",
 }
