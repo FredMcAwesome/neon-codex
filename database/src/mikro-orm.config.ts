@@ -35,7 +35,11 @@ import {
   IncludedWeaponMounts,
   CustomisedWeaponMounts,
 } from "./models/rpg/activeTables/activeWeaponMountModel.js";
-import { ActiveSkills } from "./models/rpg/activeTables/activeSkillModel.js";
+import {
+  ActiveSkills,
+  CustomisedSkills,
+  CritterIncludedSkills,
+} from "./models/rpg/activeTables/activeSkillModel.js";
 import { CustomisedArmours } from "./models/rpg/activeTables/customisedArmourModel.js";
 import { CustomisedVehicles } from "./models/rpg/activeTables/customisedVehicleModel.js";
 import { CustomisedWeapons } from "./models/rpg/activeTables/customisedWeaponModel.js";
@@ -109,9 +113,46 @@ import {
   ActiveQualities,
   CustomisedQualities,
   IncludedQualities,
+  CritterIncludedQualities,
 } from "./models/rpg/activeTables/activeQualityModel.js";
 import { AdeptPowers } from "./models/rpg/abilities/adeptPowerModel.js";
-import { Traditions } from "./models/rpg/traits/traditionModel.js";
+import {
+  AllSpiritsTraditions,
+  LinkedSpiritsTraditions,
+  Traditions,
+  UnlinkedSpiritsTraditions,
+} from "./models/rpg/traits/traditionModel.js";
+import { ComplexForms } from "./models/rpg/abilities/complexFormModel.js";
+import { CritterPowers } from "./models/rpg/abilities/critterPowerModel.js";
+import { Critters } from "./models/rpg/creatures/critterModel.js";
+import {
+  CustomisedAugmentations,
+  ActiveAugmentations,
+  IncludedAugmentations,
+  CritterIncludedAugmentations,
+} from "./models/rpg/activeTables/activeAugmentationModel.js";
+import {
+  ActiveComplexForms,
+  CustomisedComplexForms,
+  IncludedComplexForms,
+  CritterIncludedComplexForms,
+} from "./models/rpg/activeTables/activeComplexFormModel.js";
+import {
+  ActiveCritterPowers,
+  IncludedCritterPowers,
+  CustomisedCritterPowers,
+} from "./models/rpg/activeTables/activeCritterPowerModel.js";
+import { CustomisedCritters } from "./models/rpg/activeTables/customisedCritterModel.js";
+import {
+  ActiveSkillGroups,
+  CritterIncludedSkillGroups,
+  CustomisedSkillGroups,
+} from "./models/rpg/activeTables/activeSkillGroupModel.js";
+import {
+  ActiveKnowledgeSkills,
+  CustomisedKnowledgeSkills,
+  CritterIncludedKnowledgeSkills,
+} from "./models/rpg/activeTables/activeKnowledgeSkillModel.js";
 
 const dbOptions: Options = {
   entities: [
@@ -120,11 +161,21 @@ const dbOptions: Options = {
     Comments,
 
     Skills,
-    SkillGroups,
     ActiveSkills,
+    CritterIncludedSkills,
+    CustomisedSkills,
+    SkillGroups,
+    ActiveSkillGroups,
+    CritterIncludedSkillGroups,
+    CustomisedSkillGroups,
+    ActiveKnowledgeSkills,
+    CritterIncludedKnowledgeSkills,
+    CustomisedKnowledgeSkills,
+
     Qualities,
     ActiveQualities,
     IncludedQualities,
+    CritterIncludedQualities,
     CustomisedQualities,
 
     Heritages,
@@ -176,6 +227,10 @@ const dbOptions: Options = {
     Augmentations,
     Biowares,
     Cyberwares,
+    ActiveAugmentations,
+    IncludedAugmentations,
+    CritterIncludedAugmentations,
+    CustomisedAugmentations,
 
     Vehicles,
     MannedVehicles,
@@ -213,6 +268,21 @@ const dbOptions: Options = {
     Spells,
     AdeptPowers,
     Traditions,
+    LinkedSpiritsTraditions,
+    UnlinkedSpiritsTraditions,
+    AllSpiritsTraditions,
+    ComplexForms,
+    ActiveComplexForms,
+    IncludedComplexForms,
+    CritterIncludedComplexForms,
+    CustomisedComplexForms,
+
+    Critters,
+    CustomisedCritters,
+    CritterPowers,
+    ActiveCritterPowers,
+    IncludedCritterPowers,
+    CustomisedCritterPowers,
 
     Characters,
   ],

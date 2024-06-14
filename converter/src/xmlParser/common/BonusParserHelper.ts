@@ -537,7 +537,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       qualities = qualities.concat(qualityArray);
     }
     if (qualities.length > 0) {
-      bonusObject.qualities = qualities;
+      bonusObject.qualityList = qualities;
     }
   }
   if ("disablequality" in bonus && bonus.disablequality !== undefined) {

@@ -109,10 +109,28 @@ function convertTradition(tradition: TraditionXmlType): TraditionType {
       break;
   }
 
-  const spirits =
-    typeof tradition.spirits === "object"
-      ? tradition.spirits
-      : "Select Spirits";
+  let spirits;
+  if (typeof tradition.spirits === "object") {
+    if (tradition.spirits.spiritcombat === "All") {
+      assert(
+        tradition.spirits.spiritdetection === "All" &&
+          tradition.spirits.spirithealth === "All" &&
+          tradition.spirits.spiritillusion === "All" &&
+          tradition.spirits.spiritmanipulation === "All"
+      );
+      spirits = "All" as const;
+    } else {
+      spirits = {
+        spiritCombat: tradition.spirits.spiritcombat,
+        spiritDetection: tradition.spirits.spiritdetection,
+        spiritHealth: tradition.spirits.spirithealth,
+        spiritIllusion: tradition.spirits.spiritillusion,
+        spiritManipulation: tradition.spirits.spiritmanipulation,
+      };
+    }
+  } else {
+    spirits = "Select Spirits" as const;
+  }
 
   const bonus =
     tradition.bonus !== undefined

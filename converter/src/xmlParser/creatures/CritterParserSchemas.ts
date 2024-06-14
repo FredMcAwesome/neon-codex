@@ -5,34 +5,30 @@ import {
   SourceXmlSchema,
   StringOrNumberSchema,
   XmlPowerSchema,
-  XmlQualitiesSchema,
+  XmlQualityListSchema,
+  attributeXMLEnum,
 } from "../common/ParserCommonDefines.js";
 import {
   critterTypeEnum,
+  matrixAttributeEnum,
   skillCategoryEnum,
 } from "@neon-codex/common/build/enums.js";
 
-const SkillSchema = zod.union([
-  zod
-    .object({
-      _spec: zod.optional(zod.string()),
-      _rating: zod.optional(zod.string()),
-      _select: zod.optional(zod.string()),
-      xmltext: zod.string(),
-    })
-    .strict(),
-  zod.string(),
-]);
+const SkillSchema = zod
+  .object({
+    _spec: zod.optional(zod.string()),
+    _rating: zod.string(),
+    _select: zod.optional(zod.string()),
+    xmltext: zod.string(),
+  })
+  .strict();
 
-const GroupSchema = zod.union([
-  zod
-    .object({
-      _rating: zod.string(),
-      xmltext: zod.string(),
-    })
-    .strict(),
-  zod.string(),
-]);
+const GroupSchema = zod
+  .object({
+    _rating: zod.string(),
+    xmltext: zod.string(),
+  })
+  .strict();
 
 const SkillListSchema = zod
   .object({
@@ -43,6 +39,7 @@ const SkillListSchema = zod
         .object({
           _rating: zod.string(),
           _category: zod.nativeEnum(skillCategoryEnum),
+          _attribute: zod.nativeEnum(attributeXMLEnum),
           xmltext: zod.string(),
         })
         .strict()
@@ -50,14 +47,31 @@ const SkillListSchema = zod
   })
   .strict();
 
-const BiowareSchema = zod.union([
+const CritterIncludedBiowareSchema = zod.union([
   zod.string(),
   zod.object({ _rating: zod.string(), xmltext: zod.string() }).strict(),
 ]);
-const ComplexFormSchema = zod.union([
+const CritterIncludedBiowareListSchema = zod.array(
+  CritterIncludedBiowareSchema
+);
+export type CritterIncludedBiowareListType = zod.infer<
+  typeof CritterIncludedBiowareListSchema
+>;
+const CritterIncludedComplexFormSchema = zod.union([
   zod.string(),
-  zod.object({ _select: zod.string(), xmltext: zod.string() }).strict(),
+  zod
+    .object({
+      _select: zod.nativeEnum(matrixAttributeEnum),
+      xmltext: zod.string(),
+    })
+    .strict(),
 ]);
+const CritterIncludedComplexFormListSchema = zod.array(
+  CritterIncludedComplexFormSchema
+);
+export type CritterIncludedComplexFormType = zod.infer<
+  typeof CritterIncludedComplexFormListSchema
+>;
 
 const SubCritterXmlSchema = zod
   .object({
@@ -135,7 +149,7 @@ const SubCritterXmlSchema = zod
     // Creature is Sprite, force means level for this purpose
     forceislevels: zod.optional(zod.literal("")),
     // Included qualities
-    qualities: zod.optional(XmlQualitiesSchema),
+    qualities: zod.optional(XmlQualityListSchema),
     // Included Powers
     powers: zod.optional(
       zod
@@ -157,7 +171,10 @@ const SubCritterXmlSchema = zod
     biowares: zod.optional(
       zod
         .object({
-          bioware: zod.union([zod.array(BiowareSchema), BiowareSchema]),
+          bioware: zod.union([
+            zod.array(CritterIncludedBiowareSchema),
+            CritterIncludedBiowareSchema,
+          ]),
         })
         .strict()
     ),
@@ -166,8 +183,8 @@ const SubCritterXmlSchema = zod
       zod
         .object({
           complexform: zod.union([
-            zod.array(ComplexFormSchema),
-            ComplexFormSchema,
+            zod.array(CritterIncludedComplexFormSchema),
+            CritterIncludedComplexFormSchema,
           ]),
         })
         .strict()

@@ -2,8 +2,13 @@ import { Entity, ManyToOne, PrimaryKey, Property } from "@mikro-orm/postgresql";
 import type { Ref } from "@mikro-orm/postgresql";
 import { Skills } from "../abilities/skillModel.js";
 import { Characters } from "../characters/characterModel.js";
+import { Critters } from "../creatures/critterModel.js";
+import type { CritterRatingType } from "@neon-codex/common/build/schemas/creatures/critterSchemas.js";
 
-@Entity()
+@Entity({
+  discriminatorColumn: "discr",
+  abstract: true,
+})
 export class ActiveSkills {
   @PrimaryKey()
   id!: number;
@@ -11,12 +16,44 @@ export class ActiveSkills {
   @ManyToOne({ entity: () => Skills, ref: true })
   skill!: Ref<Skills>;
 
+  @Property({ type: "string[]", nullable: true })
+  specialisationsSelected?: Array<string>;
+
+  constructor(
+    skill: Ref<Skills>,
+    specialisationsSelected: Array<string> | undefined
+  ) {
+    this.skill = skill;
+    if (specialisationsSelected !== undefined) {
+      this.specialisationsSelected = specialisationsSelected;
+    }
+  }
+}
+
+@Entity({ discriminatorValue: "included" })
+export class CritterIncludedSkills extends ActiveSkills {
+  @ManyToOne({ entity: () => Critters, ref: true })
+  standardCritter!: Ref<Critters>;
+
+  @Property({ type: "json" })
+  critterSkillRating!: CritterRatingType;
+
+  constructor(
+    standardCritter: Ref<Critters>,
+    skill: Ref<Skills>,
+    critterSkillRating: CritterRatingType,
+    specialisationsSelected: Array<string> | undefined
+  ) {
+    super(skill, specialisationsSelected);
+    this.standardCritter = standardCritter;
+    this.critterSkillRating = critterSkillRating;
+  }
+}
+
+@Entity({ discriminatorValue: "customised" })
+export class CustomisedSkills extends ActiveSkills {
   @ManyToOne({ entity: () => Characters, ref: true })
   character!: Ref<Characters>;
-
-  // TODO: split this to a separate table
-  @Property()
-  skillGroupPoints: number = 0;
 
   @Property()
   skillPoints: number = 0;
@@ -24,22 +61,16 @@ export class ActiveSkills {
   @Property()
   karmaPoints: number = 0;
 
-  @Property({ type: "string[]", nullable: true })
-  specialisationsSelected?: Array<string>;
-
   constructor(
+    character: Ref<Characters>,
     skill: Ref<Skills>,
-    skillGroupPoints: number,
     skillPoints: number,
     karmaPoints: number,
     specialisationsSelected: Array<string> | undefined
   ) {
-    this.skill = skill;
-    this.skillGroupPoints = skillGroupPoints;
+    super(skill, specialisationsSelected);
+    this.character = character;
     this.skillPoints = skillPoints;
     this.karmaPoints = karmaPoints;
-    if (specialisationsSelected !== undefined) {
-      this.specialisationsSelected = specialisationsSelected;
-    }
   }
 }

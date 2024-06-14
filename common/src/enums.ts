@@ -942,3 +942,30 @@ export enum critterPowerEnum {
   ChimericModification = "Chimeric Modification",
   Shapeshifter = "Shapeshifter",
 }
+
+export enum complexFormTargetEnum {
+  Persona = "Persona",
+  Device = "Device",
+  File = "File",
+  Sprite = "Sprite",
+  Self = "Self",
+  Host = "Host",
+  Icon = "Icon",
+  // Intrusion Countermeasures
+  IC = "IC",
+  Cyberware = "Cyberware",
+}
+
+export enum traditionSpiritEnum {
+  Linked = "Linked",
+  Custom = "Custom",
+  // Unrestricted
+  All = "All",
+}
+
+export enum matrixAttributeEnum {
+  Attack = "Attack",
+  DataProcessing = "Data Processing",
+  Firewall = "Firewall",
+  Sleaze = "Sleaze",
+}

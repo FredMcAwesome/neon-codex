@@ -135,15 +135,15 @@ export type CharacterType = {
   priorities: PriorityLevelsType;
   attributes: AttributesType;
   specialAttributes: SpecialAttributesType;
-  skills: CustomSkillListType;
-  qualities: CustomQualityListType;
+  skillList: CustomSkillListType;
+  qualityList: CustomQualityListType;
   nuyen: number;
   karmaPoints: number;
-  weapons: CustomisedWeaponListType;
-  armours: CustomisedArmourListType;
-  gears: CustomisedGearListType;
-  augmentations: CustomisedAugmentationListType;
-  vehicles: CustomisedVehicleListType;
+  weaponList: CustomisedWeaponListType;
+  armourList: CustomisedArmourListType;
+  gearList: CustomisedGearListType;
+  augmentationList: CustomisedAugmentationListType;
+  vehicleList: CustomisedVehicleListType;
 };
 export const CharacterSchema: zod.ZodType<CharacterType> = zod
   .object({
@@ -152,15 +152,15 @@ export const CharacterSchema: zod.ZodType<CharacterType> = zod
     priorities: PriorityLevelsSchema,
     attributes: AttributesSchema,
     specialAttributes: SpecialAttributesSchema,
-    skills: CustomSkillListSchema,
-    qualities: CustomQualityListSchema,
+    skillList: CustomSkillListSchema,
+    qualityList: CustomQualityListSchema,
     //talent: talentStuffSchema,
     nuyen: zod.number(),
     karmaPoints: zod.number(),
-    weapons: CustomisedWeaponListSchema,
-    armours: CustomisedArmourListSchema,
-    gears: CustomisedGearListSchema,
-    augmentations: CustomisedAugmentationListSchema,
-    vehicles: CustomisedVehicleListSchema,
+    weaponList: CustomisedWeaponListSchema,
+    armourList: CustomisedArmourListSchema,
+    gearList: CustomisedGearListSchema,
+    augmentationList: CustomisedAugmentationListSchema,
+    vehicleList: CustomisedVehicleListSchema,
   })
   .strict();

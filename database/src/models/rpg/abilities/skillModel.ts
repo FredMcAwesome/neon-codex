@@ -15,13 +15,19 @@ import {
 import { SkillGroups } from "./skillGroupModel.js";
 
 @Entity()
+@Unique({
+  properties: ["name", "isKnowledgeSkill"],
+  name: "All active skills are unique, and all knowledge skills are unique",
+})
 export class Skills {
   @PrimaryKey()
   id!: number;
 
   @Property({ length: 255 })
-  @Unique()
   name!: string;
+
+  @Property()
+  isKnowledgeSkill!: boolean;
 
   @Enum(() => attributeTypeEnum)
   attribute!: attributeTypeEnum;
@@ -52,6 +58,7 @@ export class Skills {
 
   constructor(dto: SkillType) {
     this.name = dto.name;
+    this.isKnowledgeSkill = dto.isKnowledgeSkill;
     this.attribute = dto.attribute;
     this.category = dto.category;
     this.default = dto.default;

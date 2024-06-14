@@ -1,7 +1,7 @@
 import {
   Entity,
   Enum,
-  OneToOne,
+  ManyToOne,
   PrimaryKey,
   Property,
   Unique,
@@ -10,14 +10,18 @@ import {
 import {
   sourceBookEnum,
   traditionDrainAttributeEnum,
+  traditionSpiritEnum,
 } from "@neon-codex/common/build/enums.js";
 import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
 import type { TraditionType } from "@neon-codex/common/build/schemas/abilities/magic/traditionSchemas.js";
-import { TraditionSpirits } from "./traditionSpiritModel.js";
+import { Critters } from "../creatures/critterModel.js";
 
-@Entity()
-export class Traditions {
+@Entity({
+  discriminatorColumn: "type",
+  abstract: true,
+})
+export abstract class Traditions {
   @PrimaryKey()
   id!: number;
 
@@ -25,17 +29,14 @@ export class Traditions {
   @Unique()
   name!: string;
 
+  @Enum(() => traditionSpiritEnum)
+  type!: traditionSpiritEnum;
+
   @Enum(() => traditionDrainAttributeEnum)
   drain!: traditionDrainAttributeEnum;
 
   @Property({ nullable: true })
   spiritForm?: string;
-
-  @Property()
-  selectSpiritTypes!: boolean;
-
-  @OneToOne({ entity: () => TraditionSpirits, ref: true, nullable: true })
-  spiritTypes?: Ref<TraditionSpirits>;
 
   @Property({ type: "json", nullable: true })
   bonus?: BonusType;
@@ -56,13 +57,58 @@ export class Traditions {
     this.name = dto.name;
     this.drain = dto.drain;
     if (dto.spiritForm !== undefined) this.spiritForm = dto.spiritForm;
-    this.selectSpiritTypes = typeof dto.spiritTypes === "string";
-    //TODO connect spirit types
 
     if (dto.bonus !== undefined) this.bonus = dto.bonus;
     if (dto.requirements !== undefined) this.requirements = dto.requirements;
     this.source = dto.source;
     this.page = dto.page;
     this.description = dto.description;
+  }
+}
+
+@Entity({ discriminatorValue: traditionSpiritEnum.Linked })
+export class LinkedSpiritsTraditions extends Traditions {
+  @ManyToOne({ entity: () => Critters, ref: true })
+  combat!: Ref<Critters>;
+
+  @ManyToOne({ entity: () => Critters, ref: true })
+  detection!: Ref<Critters>;
+
+  @ManyToOne({ entity: () => Critters, ref: true })
+  health!: Ref<Critters>;
+
+  @ManyToOne({ entity: () => Critters, ref: true })
+  illusion!: Ref<Critters>;
+
+  @ManyToOne({ entity: () => Critters, ref: true })
+  manipulation!: Ref<Critters>;
+
+  constructor(
+    dto: TraditionType,
+    combat: Ref<Critters>,
+    detection: Ref<Critters>,
+    health: Ref<Critters>,
+    illusion: Ref<Critters>,
+    manipulation: Ref<Critters>
+  ) {
+    super(dto);
+    this.combat = combat;
+    this.detection = detection;
+    this.health = health;
+    this.illusion = illusion;
+    this.manipulation = manipulation;
+  }
+}
+
+@Entity({ discriminatorValue: traditionSpiritEnum.Custom })
+export class UnlinkedSpiritsTraditions extends Traditions {
+  constructor(dto: TraditionType) {
+    super(dto);
+  }
+}
+@Entity({ discriminatorValue: traditionSpiritEnum.All })
+export class AllSpiritsTraditions extends Traditions {
+  constructor(dto: TraditionType) {
+    super(dto);
   }
 }

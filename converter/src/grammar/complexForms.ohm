@@ -1,0 +1,16 @@
+FadingValue {
+  Exp = FadingValue
+    | Special
+  FadingValue = "L+" digit+ -- add
+    | "L-" digit+ -- minus
+    | "L" -- base
+  Special = "Special"
+}
+
+Other {
+  Exp = Damage
+    | Special
+  Damage = "F-" digit+ -- add
+    | "F"
+  Special = "Special"
+}

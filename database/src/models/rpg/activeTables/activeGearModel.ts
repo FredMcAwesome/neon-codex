@@ -15,7 +15,7 @@ import { WeaponAccessories } from "../equipment/combat/weaponAccessoryModel.js";
 import { Gears } from "../equipment/other/gearModel.js";
 import { Vehicles } from "../equipment/rigger/vehicleModel.js";
 import { Characters } from "../characters/characterModel.js";
-import { CustomisedAugmentations } from "./customisedAugmentationModel.js";
+import { CustomisedAugmentations } from "./activeAugmentationModel.js";
 
 @Entity({
   discriminatorColumn: "discr",

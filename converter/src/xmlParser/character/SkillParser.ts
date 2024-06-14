@@ -1,6 +1,7 @@
 import {
   mathOperatorEnum,
   skillCategoryEnum,
+  sourceBookEnum,
   standardCalculationEnum,
 } from "@neon-codex/common/build/enums.js";
 import {
@@ -28,12 +29,16 @@ export type GenericXmlParsingType =
 
 export type GenericArrayXmlParsingType = Array<GenericXmlParsingType>;
 
-const convertSkill = function (xmlSkill: SkillXmlType): SkillType {
+const convertSkill = function (
+  xmlSkill: SkillXmlType,
+  isKnowledgeSkill: boolean
+): SkillType {
   const attribute = convertAttribute(xmlSkill.attribute);
 
   return {
     // id: xmlSkill.id,
     name: xmlSkill.name,
+    isKnowledgeSkill: isKnowledgeSkill,
     attribute: attribute,
     category: xmlSkill.category,
     default: xmlSkill.default == "True",
@@ -46,8 +51,9 @@ const convertSkill = function (xmlSkill: SkillXmlType): SkillType {
           : [xmlSkill.specs.spec]
         : undefined,
     description: "",
-    source: xmlSkill.source,
-    page: xmlSkill.page,
+    // TODO: fix this once all page numbers add to knowledge skills
+    source: xmlSkill.source || sourceBookEnum.Shadowrun5,
+    page: xmlSkill.page || 0,
   };
 };
 
@@ -78,8 +84,9 @@ const SkillXmlSchema = zod
         .strict(),
       zod.literal(""),
     ]),
-    source: zod.string(),
-    page: zod.number(),
+    // TODO: add these to knowledge skills in xml
+    source: zod.optional(zod.string()),
+    page: zod.optional(zod.number()),
   })
   .strict();
 export const SkillListXmlSchema = zod.array(SkillXmlSchema);
@@ -104,15 +111,29 @@ export function ParseSkills() {
   );
 
   // console.log(jObj.chummer.skills.skill[356]);
-  if (skillListParsed.success) console.log("skills.xml initial zod parsed");
+  if (skillListParsed.success)
+    console.log("skills.xml (skills) initial zod parsed");
   else {
     console.log(skillListParsed.error.errors[0]);
     assert(false);
   }
 
+  const knowledgeSkillListParsed = SkillListXmlSchema.safeParse(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    jObj.chummer.knowledgeskills.skill
+  );
+
+  // console.log(jObj.chummer.skills.skill[356]);
+  if (knowledgeSkillListParsed.success)
+    console.log("skills.xml (knowledge skills) initial zod parsed");
+  else {
+    console.log(knowledgeSkillListParsed.error.errors[0]);
+    assert(false);
+  }
+
   const skillList = skillListParsed.data;
-  const skillListConverted = skillList.map((skill: SkillXmlType) => {
-    const convertedSkill = convertSkill(skill);
+  const partialSkillListConverted = skillList.map((skill: SkillXmlType) => {
+    const convertedSkill = convertSkill(skill, false);
     const check = SkillSchema.safeParse(convertedSkill);
     if (!check.success) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
@@ -121,6 +142,19 @@ export function ParseSkills() {
     }
     return convertedSkill;
   });
+  const knowledgeSkillList = knowledgeSkillListParsed.data;
+  const skillListConverted = partialSkillListConverted.concat(
+    knowledgeSkillList.map((skill: SkillXmlType) => {
+      const convertedSkill = convertSkill(skill, true);
+      const check = SkillSchema.safeParse(convertedSkill);
+      if (!check.success) {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        console.log(convertedSkill);
+        throw new Error(check.error.message);
+      }
+      return convertedSkill;
+    })
+  );
   // console.log(skillListConverted);
   const check = SkillListSchema.safeParse(skillListConverted);
   if (!check.success) {

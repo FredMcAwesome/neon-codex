@@ -96,13 +96,32 @@ import type {
   HeritageOptionsPriorityType,
   TalentOptionsPriorityType,
 } from "@neon-codex/common/build/schemas/otherData/prioritySchemas.js";
-import { IncludedQualities } from "../models/rpg/activeTables/activeQualityModel.js";
+import {
+  CritterIncludedQualities,
+  IncludedQualities,
+} from "../models/rpg/activeTables/activeQualityModel.js";
 import { Spells } from "../models/rpg/abilities/spellModel.js";
 import { getSpells } from "../seeds/rpgSeeds/spellsSeed.js";
 import { getAdeptPowers } from "../seeds/rpgSeeds/adeptPowerSeed.js";
 import { AdeptPowers } from "../models/rpg/abilities/adeptPowerModel.js";
-import { Traditions } from "../models/rpg/traits/traditionModel.js";
+import {
+  AllSpiritsTraditions,
+  LinkedSpiritsTraditions,
+  UnlinkedSpiritsTraditions,
+} from "../models/rpg/traits/traditionModel.js";
 import { getTraditions } from "../seeds/rpgSeeds/traditionSeed.js";
+import { getComplexForms } from "../seeds/rpgSeeds/complexFormsSeed.js";
+import { ComplexForms } from "../models/rpg/abilities/complexFormModel.js";
+import { getCritters } from "../seeds/rpgSeeds/crittersSeed.js";
+import { getCritterPowers } from "../seeds/rpgSeeds/critterPowersSeed.js";
+import { Critters } from "../models/rpg/creatures/critterModel.js";
+import { CritterPowers } from "../models/rpg/abilities/critterPowerModel.js";
+import { CritterIncludedAugmentations } from "../models/rpg/activeTables/activeAugmentationModel.js";
+import { IncludedCritterPowers } from "../models/rpg/activeTables/activeCritterPowerModel.js";
+import { CritterIncludedComplexForms } from "../models/rpg/activeTables/activeComplexFormModel.js";
+import { CritterIncludedSkills } from "../models/rpg/activeTables/activeSkillModel.js";
+import { CritterIncludedSkillGroups } from "../models/rpg/activeTables/activeSkillGroupModel.js";
+import { CritterIncludedKnowledgeSkills } from "../models/rpg/activeTables/activeKnowledgeSkillModel.js";
 
 export class SourcebookSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
@@ -130,7 +149,10 @@ export class SourcebookSeeder extends Seeder {
     const { unlinkedGears, stagedGears } = getGears();
     const stagedspells: Array<Spells> = getSpells();
     const { unlinkedAdeptPowers, stagedAdeptPowers } = getAdeptPowers();
-    const { unlinkedTraditions, stagedTraditions } = getTraditions();
+    const stagedComplexForms = getComplexForms();
+    const { unlinkedCritters, stagedCritters } = getCritters();
+    const stagedCritterPowers = getCritterPowers();
+    const stagedTraditions = getTraditions(stagedCritters);
 
     stagedSkills.forEach((skill) => {
       em.create(Skills, skill);
@@ -264,10 +286,33 @@ export class SourcebookSeeder extends Seeder {
     });
     console.log("Adept Powers created");
 
-    stagedTraditions.forEach((tradition) => {
-      em.create(Traditions, tradition);
-    });
+    for (const tradition of stagedTraditions) {
+      if (tradition instanceof LinkedSpiritsTraditions) {
+        em.create(LinkedSpiritsTraditions, tradition);
+      } else if (tradition instanceof UnlinkedSpiritsTraditions) {
+        em.create(UnlinkedSpiritsTraditions, tradition);
+      } else if (tradition instanceof AllSpiritsTraditions) {
+        em.create(AllSpiritsTraditions, tradition);
+      } else {
+        assert(false, `Unhandled tradition: ${tradition.name}`);
+      }
+    }
     console.log("Traditions created");
+
+    stagedComplexForms.forEach((complexForm) => {
+      em.create(ComplexForms, complexForm);
+    });
+    console.log("Complex Forms created");
+
+    stagedCritters.forEach((critter) => {
+      em.create(Critters, critter);
+    });
+    console.log("Critters created");
+
+    stagedCritterPowers.forEach((critterPower) => {
+      em.create(CritterPowers, critterPower);
+    });
+    console.log("Critter Powers created");
 
     await em.flush();
 
@@ -351,11 +396,11 @@ export class SourcebookSeeder extends Seeder {
           });
           assert(
             loadedMetavariant !== undefined,
-            `undefined metavariant name: ${metavariant}`
+            `undefined metavariant name 1: ${metavariant}`
           );
           assert(
             loadedMetavariant.category === heritageCategoryEnum.Metavariant,
-            `undefined metavariant category is wrong: ${loadedMetavariant.category}`
+            `undefined metavariant category is wrong 1: ${loadedMetavariant.category}`
           );
           const stagedMetavariant = new Metavariants({
             heritage: loadedMetavariant,
@@ -404,14 +449,16 @@ export class SourcebookSeeder extends Seeder {
           const linkedQuality = await em.findOne(Qualities, {
             name: quality.name,
           });
-          assert(linkedQuality !== null, `undefined Quality: ${quality.name}`);
+          assert(
+            linkedQuality !== null,
+            `undefined Quality (1): ${quality.name}`
+          );
           const referencedQuality = ref(linkedQuality);
           const customisedQuality = new IncludedQualities(
             referencedQuality,
             quality.rating
           );
           em.create(IncludedQualities, customisedQuality);
-          relatedHeritage.includedQualityList.add(customisedQuality);
         }
       }
     }
@@ -433,7 +480,7 @@ export class SourcebookSeeder extends Seeder {
           const linkedQuality = await em.findOne(Qualities, {
             name: quality,
           });
-          assert(linkedQuality !== null, `undefined Quality: ${quality}`);
+          assert(linkedQuality !== null, `undefined Quality (2): ${quality}`);
           const referencedQuality = ref(linkedQuality);
           relatedHeritage.forbiddenQualityList.add(referencedQuality);
         }
@@ -1164,12 +1211,247 @@ export class SourcebookSeeder extends Seeder {
     }
     console.log("Adept Power relationships associated");
 
-    // for (const tradition of unlinkedTraditions){
+    // Critters that have included powers
+    for (const critter of unlinkedCritters) {
+      if (critter.includedPowerList !== undefined) {
+        assert(
+          critter.includedPowerList.length > 0,
+          "Critter Power list is empty"
+        );
+        const relatedCritter = await em.findOne(Critters, {
+          name: critter.name,
+        });
+        assert(relatedCritter !== null, `undefined Critter: ${critter.name}`);
 
-    // }
-    console.log("Tradition relationships associated");
-    // log to appease transpiler
-    console.log(unlinkedTraditions[0]);
+        for (const critterPower of critter.includedPowerList) {
+          const linkedCritterPower = await em.findOne(CritterPowers, {
+            name: critterPower.name,
+          });
+          assert(
+            linkedCritterPower !== null,
+            `undefined Critter Power: ${critterPower.name}`
+          );
+          const referencedCritterPower = ref(linkedCritterPower);
+          const referencedCritter = ref(relatedCritter);
+          const customisedCritterPower = new IncludedCritterPowers(
+            referencedCritterPower,
+            referencedCritter,
+            critterPower.selectText,
+            critterPower.rating
+          );
+          em.create(IncludedCritterPowers, customisedCritterPower);
+        }
+      }
+    }
+    // Critters that have a list optional powers
+    for (const critter of unlinkedCritters) {
+      if (critter.optionalPowerList !== undefined) {
+        assert(
+          critter.optionalPowerList.length > 0,
+          "Critter Optional Power list is empty"
+        );
+        const relatedCritter = await em.findOne(Critters, {
+          name: critter.name,
+        });
+        assert(relatedCritter !== null, `undefined Critter: ${critter.name}`);
+
+        for (const critterPower of critter.optionalPowerList) {
+          const linkedCritterPower = await em.findOne(CritterPowers, {
+            name: critterPower.name,
+          });
+          assert(
+            linkedCritterPower !== null,
+            `undefined Critter Power: ${critterPower.name}`
+          );
+          const referencedCritterPower = ref(linkedCritterPower);
+          const referencedCritter = ref(relatedCritter);
+          const customisedCritterPower = new IncludedCritterPowers(
+            referencedCritterPower,
+            referencedCritter,
+            critterPower.selectText,
+            critterPower.rating
+          );
+          em.create(IncludedCritterPowers, customisedCritterPower);
+        }
+      }
+    }
+    // Critters that have included qualities
+    for (const critter of unlinkedCritters) {
+      if (critter.addQualityList !== undefined) {
+        assert(
+          critter.addQualityList.length > 0,
+          "Critter Quality list is empty"
+        );
+        const relatedCritter = await em.findOne(Critters, {
+          name: critter.name,
+        });
+        assert(relatedCritter !== null, `undefined Critter: ${critter.name}`);
+
+        for (const critterQuality of critter.addQualityList) {
+          const linkedQuality = await em.findOne(Qualities, {
+            name: critterQuality.name,
+          });
+          assert(
+            linkedQuality !== null,
+            `undefined Quality (3): ${critterQuality.name}`
+          );
+          const referencedQuality = ref(linkedQuality);
+          const referencedCritter = ref(relatedCritter);
+          const customisedQuality = new CritterIncludedQualities(
+            referencedCritter,
+            referencedQuality,
+            critterQuality.rating
+          );
+          em.create(CritterIncludedQualities, customisedQuality);
+        }
+      }
+    }
+    // Critters that have included Bioware
+    for (const critter of unlinkedCritters) {
+      if (critter.addBiowareList !== undefined) {
+        assert(
+          critter.addBiowareList.length > 0,
+          "Critter Bioware list is empty"
+        );
+        const relatedCritter = await em.findOne(Critters, {
+          name: critter.name,
+        });
+        assert(relatedCritter !== null, `undefined Critter: ${critter.name}`);
+
+        for (const critterBioware of critter.addBiowareList) {
+          const linkedAugmentation = await em.findOne(Augmentations, {
+            name: critterBioware.name,
+          });
+          assert(
+            linkedAugmentation !== null,
+            `undefined Augmentation: ${critterBioware.name}`
+          );
+          const referencedAugmentation = ref(linkedAugmentation);
+          const referencedCritter = ref(relatedCritter);
+          const customisedAugmentation = new CritterIncludedAugmentations(
+            referencedAugmentation,
+            referencedCritter,
+            critterBioware.rating
+          );
+          em.create(CritterIncludedAugmentations, customisedAugmentation);
+        }
+      }
+    }
+    // Critters that have included complex forms
+    for (const critter of unlinkedCritters) {
+      if (critter.addComplexFormList !== undefined) {
+        assert(
+          critter.addComplexFormList.length > 0,
+          "Critter Complex form list is empty"
+        );
+        const relatedCritter = await em.findOne(Critters, {
+          name: critter.name,
+        });
+        assert(relatedCritter !== null, `undefined Critter: ${critter.name}`);
+        for (const critterComplexForm of critter.addComplexFormList) {
+          const linkedComplexForm = await em.findOne(ComplexForms, {
+            name: critterComplexForm.name,
+          });
+          assert(
+            linkedComplexForm !== null,
+            `undefined Complex Form: ${critterComplexForm.name}`
+          );
+          const referencedComplexForm = ref(linkedComplexForm);
+          const referencedCritter = ref(relatedCritter);
+          const customisedComplexForm = new CritterIncludedComplexForms(
+            referencedComplexForm,
+            referencedCritter,
+            critterComplexForm.select
+          );
+          em.create(CritterIncludedComplexForms, customisedComplexForm);
+        }
+      }
+    }
+    // Critters that have included Skills
+    for (const critter of unlinkedCritters) {
+      if (critter.skills.skillList !== undefined) {
+        assert(
+          critter.skills.skillList.length > 0,
+          "Critter skill list is empty"
+        );
+        const relatedCritter = await em.findOne(Critters, {
+          name: critter.name,
+        });
+        assert(relatedCritter !== null, `undefined Critter: ${critter.name}`);
+        for (const critterSkill of critter.skills.skillList) {
+          const linkedSkill = await em.findOne(Skills, {
+            name: critterSkill.name,
+          });
+          assert(linkedSkill !== null, `undefined Skill: ${critterSkill.name}`);
+          const referencedSkill = ref(linkedSkill);
+          const referencedCritter = ref(relatedCritter);
+          // TODO: include select here
+          const critterIncludedSkill = new CritterIncludedSkills(
+            referencedCritter,
+            referencedSkill,
+            critterSkill.rating,
+            critterSkill.specialised
+          );
+          em.create(CritterIncludedSkills, critterIncludedSkill);
+        }
+      }
+    }
+    // Critters that have included Skill Groups
+    for (const critter of unlinkedCritters) {
+      if (critter.skills.skillGroupList !== undefined) {
+        assert(
+          critter.skills.skillGroupList.length > 0,
+          "Critter skill group list is empty"
+        );
+        const relatedCritter = await em.findOne(Critters, {
+          name: critter.name,
+        });
+        assert(relatedCritter !== null, `undefined Critter: ${critter.name}`);
+        for (const critterSkillGroup of critter.skills.skillGroupList) {
+          const linkedSkillGroup = await em.findOne(SkillGroups, {
+            name: critterSkillGroup.name,
+          });
+          assert(
+            linkedSkillGroup !== null,
+            `undefined Skill Group: ${critterSkillGroup.name}`
+          );
+          const referencedSkillGroup = ref(linkedSkillGroup);
+          const referencedCritter = ref(relatedCritter);
+          const critterIncludedSkillGroup = new CritterIncludedSkillGroups(
+            referencedCritter,
+            referencedSkillGroup,
+            critterSkillGroup.rating
+          );
+          em.create(CritterIncludedSkillGroups, critterIncludedSkillGroup);
+        }
+      }
+    }
+    // Critters that have included Knowledge Skills
+    for (const critter of unlinkedCritters) {
+      if (critter.skills.knowledgeSkillList !== undefined) {
+        assert(
+          critter.skills.knowledgeSkillList.length > 0,
+          "Critter knowledge skill list is empty"
+        );
+        const relatedCritter = await em.findOne(Critters, {
+          name: critter.name,
+        });
+        assert(relatedCritter !== null, `undefined Critter: ${critter.name}`);
+        const referencedCritter = ref(relatedCritter);
+        for (const critterKnowledgeSkill of critter.skills.knowledgeSkillList) {
+          const critterIncludedKnowledgeSkill =
+            new CritterIncludedKnowledgeSkills(
+              referencedCritter,
+              critterKnowledgeSkill
+            );
+          em.create(
+            CritterIncludedKnowledgeSkills,
+            critterIncludedKnowledgeSkill
+          );
+        }
+      }
+    }
+    console.log("Critters relationships associated");
 
     async function addTalentLinks(
       rowLetter: priorityLetterEnum,
@@ -1244,7 +1526,7 @@ export class SourcebookSeeder extends Seeder {
           });
           assert(
             linkedQuality !== null,
-            `undefined Quality: ${talent.includedQuality}`
+            `undefined Quality (4): ${talent.includedQuality}`
           );
           stagedTalent.includedQuality = ref(linkedQuality);
         }
@@ -1288,14 +1570,39 @@ export class SourcebookSeeder extends Seeder {
           `undefined Heritage name 5: ${heritage.name}`
         );
         const referencedHeritage = ref(linkedHeritage);
+        const referencedPriority = ref(relatedPriority);
         const heritagePriority = new HeritagePriorityDetails({
+          heritagePriority: referencedPriority,
           heritage: referencedHeritage,
           specialAttributePoints: heritage.specialAttributePoints,
           karmaCost: heritage.karmaCost,
         });
-        // em.create(HeritagePriorityDetails, heritagePriority);
-        // await em.flush();
-        relatedPriority.heritageList.add(heritagePriority);
+        em.create(HeritagePriorityDetails, heritagePriority);
+
+        if (heritage.metavariantList !== undefined) {
+          for (const metavariant of heritage.metavariantList) {
+            const loadedMetavariant = await em.findOne(Metavariants, {
+              name: metavariant.name,
+              baseHeritage: referencedHeritage,
+            });
+
+            assert(
+              loadedMetavariant !== null,
+              `undefined metavariant name 2: ${metavariant.name}`
+            );
+
+            const referencedMetavariant = ref(loadedMetavariant);
+            const referenceCorePriorityHeritage = ref(heritagePriority);
+            const metavariantPriorityDetails = new HeritagePriorityDetails({
+              heritagePriority: referencedPriority,
+              heritage: referencedMetavariant,
+              corePriorityHeritage: referenceCorePriorityHeritage,
+              specialAttributePoints: heritage.specialAttributePoints,
+              karmaCost: heritage.karmaCost,
+            });
+            em.create(HeritagePriorityDetails, metavariantPriorityDetails);
+          }
+        }
       }
     }
   }

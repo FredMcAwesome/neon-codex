@@ -802,7 +802,7 @@
             <skill rating="8">Sneaking</skill>
             <skill rating="6">Perception</skill>
             <group rating="3">Athletics</group>
-            <knowledge rating="8" category="Professional">Animal Calls</knowledge>
+            <knowledge rating="8" category="Professional" attribute="LOG">Animal Calls</knowledge>
          </skills>
          <source>SR5</source>
          <page>406</page>
@@ -3384,7 +3384,7 @@
       </metatype>
       <metatype>
          <id>3ac65435-45f1-4d78-ad90-42fbd36b1a85</id>
-         <name>Baboon</name>
+         <name>Ozian Baboon</name>
          <category>Paranormal Critters</category>
          <karma>0</karma>
          <bodmin>5</bodmin>
@@ -6071,7 +6071,7 @@
             <skill rating="3">Unarmed Combat</skill>
          </skills>
          <powers>
-            <power select="DV 2P, AP -3">Natural Weapon (Fang)</power>
+            <power select="Fang: DV 2P, AP -3">Natural Weapon</power>
             <power select="Contact">Venom</power>
          </powers>
          <bonus>
@@ -6715,7 +6715,7 @@
             <power select="Hearing, Smell, Motion Detection, Thermosense">Enhanced Senses</power>
             <power select="Toxins">Immunity</power>
             <power select="Bite: (STR+4)P, AP -6">Natural Weapon</power>
-            <power select="Spit">Substance Extrusion</power>
+            <power select="Spit">Secretion/Substance Extrusion</power>
             <power select="Spit">Venom</power>
             <power select="Vector: Contact, Injection, Speed: Instant, Penetration: -6, Power: 12, Effect: Agony, Nausea, Disorientation, Physical Damage">Vulnerability</power>
          </powers>
@@ -6789,7 +6789,7 @@
             <power rating="4">Armor</power>
             <power select="Hearing, Low-Light Vision, Smell">Enhanced Senses</power>
             <power select="Claws/Bite: (STR+2)P">Natural Weapon</power>
-            <power select="Spit">Substance Extrusion</power>
+            <power select="Spit">Secretion/Substance Extrusion</power>
             <power select="Vector: Injection, Speed: 1 Combat Turn, Penetration: 0, Power: 6, Effect: Malaise, Physical Damage">Venom</power>
             <power select="Sunlight, Mild">Allergy</power>
          </powers>
@@ -7498,10 +7498,11 @@
             <power>Sense Link</power>
          </powers>
          <skills>
-            <skill>Assensing</skill>
-            <skill>Astral Combat</skill>
-            <skill>Perception</skill>
-            <skill>Unarmed Combat</skill>
+            <!-- spirits have skills at rating = force -->
+            <skill rating="F">Assensing</skill>
+            <skill rating="F">Astral Combat</skill>
+            <skill rating="F">Perception</skill>
+            <skill rating="F">Unarmed Combat</skill>
          </skills>
          <source>SG</source>
          <page>200</page>
@@ -8421,11 +8422,11 @@
             <power>Search</power>
          </powers>
          <skills>
-            <skill>Artisan</skill>
-            <skill>Assensing</skill>
-            <skill>Astral Combat</skill>
-            <skill>Perception</skill>
-            <skill>Unarmed Combat</skill>
+            <skill rating="F">Artisan</skill>
+            <skill rating="F">Assensing</skill>
+            <skill rating="F">Astral Combat</skill>
+            <skill rating="F">Perception</skill>
+            <skill rating="F">Unarmed Combat</skill>
          </skills>
          <source>SG</source>
          <page>193</page>
@@ -9958,7 +9959,7 @@
             <power>Stealth</power>
          </powers>
          <skills>
-            <skill rating="F">Free-fall</skill>
+            <skill rating="F">Free-Fall</skill>
             <skill rating="F">Navigation</skill>
             <skill rating="F">Perception</skill>
             <skill rating="F">Pilot Aircraft</skill>
@@ -10035,7 +10036,7 @@
             <power>Astral Form</power>
             <power rating="14">Armor</power>
             <power>Banishing Resistance</power>
-            <power rating="LOS, Touch, and Self">Binding</power>
+            <power select="LOS, Touch, and Self">Binding</power>
             <power>Concealment</power>
             <power>Engulf</power>
             <power>Materialization</power>
@@ -10122,9 +10123,9 @@
             <power>Banishing Resistance</power>
             <power>Concealment</power>
             <power>Confusion</power>
-            <power>Devour</power>
+            <power>Devouring</power> <!-- "Devour" in source -->
             <power rating="6">Hardened Armor</power>
-            <power rating="Living Vessels">Inhabitation</power>
+            <power select="Living Vessels">Inhabitation</power>
             <power>Movement</power>
             <power>Sapience</power>
             <power>Search</power>
@@ -10135,7 +10136,7 @@
             <skill rating="F">Astral Combat</skill>
             <skill rating="F">Perception</skill>
             <skill rating="F">Running</skill>
-            <skill rating="F">Shadowing</skill>
+            <skill rating="F">Sneaking</skill>  <!-- "Shadowing" in source -->
             <skill rating="F">Unarmed Combat</skill>
          </skills>
          <source>AET</source>
@@ -10209,11 +10210,11 @@
             <power>Accident</power>
             <power>Astral Form</power>
             <power>Banishing Resistance</power>
-            <power rating="Low-Light-Vision, Thermographic Vision, Spatial Sense">Enhanced Senses</power>
+            <power select="Low-Light-Vision, Thermographic Vision, Spatial Sense">Enhanced Senses</power>
             <power>Materialization</power>
             <power>Paralyzing Touch</power>
             <power>Sapience</power>
-            <power>Sillence</power>
+            <power>Silence</power>
             <power>Vanishing</power>
          </powers>
          <skills>
@@ -10295,13 +10296,13 @@
             <power>Astral Form</power>
             <power>Aura Masking</power>
             <power>Banishing Resistance</power>
-            <power rating="Essence">Energy Drain</power>
-            <power rating="Thermographic Vision">Enhanced Senses</power>
-            <power rating="Foreboding">Innate Spell</power>
-            <power rating="Living Vessels">Inhabitation</power>
+            <power select="Essence">Energy Drain</power>
+            <power select="Thermographic Vision">Enhanced Senses</power>
+            <power select="Foreboding">Innate Spell</power>
+            <power select="Living Vessels">Inhabitation</power>
             <power>Materialization</power>
             <power>Sapience</power>
-            <power rating="Metahuman">Shift</power>
+            <power select="Metahuman">Shift</power>
             <power>Transfer Energy (Essence)</power>
             <power>Vanishing</power>
          </powers>
@@ -10384,12 +10385,12 @@
             <power>Accident</power>
             <power>Aura Masking</power>
             <power>Desire Reflection</power>
-            <power rating="Karma">Energy Drain</power>
+            <power select="Karma">Energy Drain</power>
             <power>Influence</power>
-            <power rating="Alter Memory">Innate Spell</power>
+            <power select="Alter Memory">Innate Spell</power>
             <power>Movement</power>
-            <power rating="Inanimate Mechanical Devices Only">Inhabitation</power>
-            <power rating="Occupied Mechanical Device Only">Psychokinesis</power>
+            <power select="Inanimate Mechanical Devices Only">Inhabitation</power>
+            <power select="Occupied Mechanical Device Only">Psychokinesis</power>
          </powers>
          <skills>
             <skill rating="F">Assensing</skill>
@@ -10469,11 +10470,11 @@
             <initiativepass>1</initiativepass>
          </bonus>
          <powers>
-            <power rating="Spider Type">Animal Control</power>
+            <power select="Spider Type">Animal Control</power>
             <power>Astral Form</power>
-            <power rating="Touch">Binding</power>
+            <power select="Touch">Binding</power>
             <power>Concealment</power>
-            <power rating="Smell, Thermographic Vision, or Ultrasound">Enhanced Senses</power>
+            <power select="Smell, Thermographic Vision, or Ultrasound">Enhanced Senses</power>
             <power>Movement</power>
             <power>Reinforcement</power>
             <power>Sapience</power>
@@ -10482,8 +10483,8 @@
          <skills>
             <skill rating="F">Assensing</skill>
             <skill rating="F">Astral Combat</skill>
-            <skill rating="F">Dodge</skill>
-            <skill rating="F">Infiltration</skill>
+            <skill rating="F" spec="Dodging">Gymnastics</skill> <!-- "Dodge" in source -->
+            <!-- <skill rating="F">Infiltration</skill> Combined to Sneaking in 5E -->
             <skill rating="F">Perception</skill>
             <skill rating="F">Sneaking</skill>
             <skill rating="F">Unarmed Combat</skill>
@@ -10557,7 +10558,7 @@
          </bonus>
          <powers>
             <power>Astral Form</power>
-            <power rating="LOS">Binding</power>
+            <power select="LOS">Binding</power>
             <power>Fear</power>
             <power>Natural Weapon</power>
             <power>Reinforcement</power>
@@ -19010,23 +19011,23 @@
          <sprint>2/1/0</sprint>
          <armor>0</armor>
          <skills>
-            <skill>Assensing</skill>
-            <skill>Automatics</skill>
-            <skill>Blades</skill>
-            <skill>Clubs</skill>
-            <skill>Con</skill>
-            <skill>Demolitions</skill>
-            <skill>Disguise</skill>
-            <skill>Forgery</skill>
-            <skill>Gymnastics</skill>
-            <skill>Impersonation</skill>
-            <skill>Locksmith</skill>
-            <skill>Palming</skill>
-            <skill>Perception</skill>
-            <skill>Pistols</skill>
-            <skill>Sneaking</skill>
-            <skill>Throwing Weapons</skill>
-            <skill>Unarmed Combat</skill>
+            <skill rating="F">Assensing</skill>
+            <skill rating="F">Automatics</skill>
+            <skill rating="F">Blades</skill>
+            <skill rating="F">Clubs</skill>
+            <skill rating="F">Con</skill>
+            <skill rating="F">Demolitions</skill>
+            <skill rating="F">Disguise</skill>
+            <skill rating="F">Forgery</skill>
+            <skill rating="F">Gymnastics</skill>
+            <skill rating="F">Impersonation</skill>
+            <skill rating="F">Locksmith</skill>
+            <skill rating="F">Palming</skill>
+            <skill rating="F">Perception</skill>
+            <skill rating="F">Pistols</skill>
+            <skill rating="F">Sneaking</skill>
+            <skill rating="F">Throwing Weapons</skill>
+            <skill rating="F">Unarmed Combat</skill>
          </skills>
          <powers>
             <power>Accident</power>
@@ -19084,11 +19085,11 @@
          <sprint>2/1/0</sprint>
          <armor>0</armor>
          <skills>
-            <group>Close Combat</group>
-            <skill>Assensing</skill>
-            <skill>Astral Combat</skill>
-            <skill select="Thorns">Exotic Ranged Weapon</skill>
-            <skill>Perception</skill>
+            <group rating="F">Close Combat</group>
+            <skill rating="F">Assensing</skill>
+            <skill rating="F">Astral Combat</skill>
+            <skill rating="F" select="Thorns">Exotic Ranged Weapon</skill>
+            <skill rating="F">Perception</skill>
          </skills>
          <optionalpowers>
             <optionalpower>Guard</optionalpower>
@@ -19157,22 +19158,22 @@
          <run>4/0/0</run>
          <sprint>2/1/0</sprint>
          <skills>
-            <skill>Assensing</skill>
-            <skill>Automatics</skill>
-            <skill>Blades</skill>
-            <skill>Clubs</skill>
-            <skill>Computer</skill>
-            <skill>First Aid</skill>
-            <skill>Gymnastics</skill>
-            <skill>Intimidation</skill>
-            <skill>Locksmith</skill>
-            <skill>Longarms</skill>
-            <skill>Perception</skill>
-            <skill>Pilot Ground Craft</skill>
-            <skill>Pistols</skill>
-            <skill>Sneaking</skill>
-            <skill>Throwing Weapons</skill>
-            <skill>Unarmed Combat</skill>
+            <skill rating="F">Assensing</skill>
+            <skill rating="F">Automatics</skill>
+            <skill rating="F">Blades</skill>
+            <skill rating="F">Clubs</skill>
+            <skill rating="F">Computer</skill>
+            <skill rating="F">First Aid</skill>
+            <skill rating="F">Gymnastics</skill>
+            <skill rating="F">Intimidation</skill>
+            <skill rating="F">Locksmith</skill>
+            <skill rating="F">Longarms</skill>
+            <skill rating="F">Perception</skill>
+            <skill rating="F">Pilot Ground Craft</skill>
+            <skill rating="F">Pistols</skill>
+            <skill rating="F">Sneaking</skill>
+            <skill rating="F">Throwing Weapons</skill>
+            <skill rating="F">Unarmed Combat</skill>
          </skills>
          <powers>
             <power>Aura Masking</power>
@@ -19232,9 +19233,9 @@
          <run>4/0/0</run>
          <sprint>2/1/0</sprint>
          <skills>
-            <group>Close Combat</group>
-            <skill>Assensing</skill>
-            <skill>Astral Combat</skill>
+            <group rating="F">Close Combat</group>
+            <skill rating="F">Assensing</skill>
+            <skill rating="F">Astral Combat</skill>
          </skills>
          <powers>
             <power>Astral Form</power>
@@ -19301,22 +19302,22 @@
          <sprint>2/1/0</sprint>
          <armor>0</armor>
          <skills>
-            <skill>Artisan</skill>
-            <skill>Assensing</skill>
-            <skill>Astral Combat</skill>
-            <skill>Con</skill>
-            <skill>Counterspelling</skill>
-            <skill>Disenchanting</skill>
-            <skill>Gymnastics</skill>
-            <skill>Negotiation</skill>
-            <skill>Perception</skill>
-            <skill>Unarmed Combat</skill>
+            <skill rating="F">Artisan</skill>
+            <skill rating="F">Assensing</skill>
+            <skill rating="F">Astral Combat</skill>
+            <skill rating="F">Con</skill>
+            <skill rating="F">Counterspelling</skill>
+            <skill rating="F">Disenchanting</skill>
+            <skill rating="F">Gymnastics</skill>
+            <skill rating="F">Negotiation</skill>
+            <skill rating="F">Perception</skill>
+            <skill rating="F">Unarmed Combat</skill>
          </skills>
          <powers>
             <power>Astral Form</power>
             <power>Aura Masking</power>
-            <power select="Smell">Improved Senses</power>
-            <power select="Thermal">Improved Senses</power>
+            <power select="Smell">Enhanced Senses</power> <!-- "Improved Senses" in source -->
+            <power select="Thermal">Enhanced Senses</power> <!-- "Improved Senses" in source -->
             <power>Materialization</power>
             <power>Sapience</power>
             <power select="4">Spell Resistance</power>
@@ -19373,17 +19374,17 @@
          <sprint>2/1/0</sprint>
          <armor>F*2</armor>
          <skills>
-            <skill>Archery</skill>
-            <skill>Blades</skill>
-            <skill>Clubs</skill>
-            <skill>First Aid</skill>
-            <skill>Gymnastics</skill>
+            <skill rating="F">Archery</skill>
+            <skill rating="F">Blades</skill>
+            <skill rating="F">Clubs</skill>
+            <skill rating="F">First Aid</skill>
+            <skill rating="F">Gymnastics</skill>
          </skills>
          <powers>
             <power>Accident</power>
             <power>Astral Form</power>
             <power>Aura Masking</power>
-            <power>Banishing</power>
+            <power>Banishing Resistance</power>
          </powers>
          <bonus>
             <enabletab>
@@ -19496,22 +19497,22 @@
          <sprint>2/1/0</sprint>
          <armor>0</armor>
          <skills>
-            <skill>Artificing</skill>
-            <skill>Assensing</skill>
-            <skill>Astral Combat</skill>
-            <skill>Gymnastics</skill>
-            <skill>Perception</skill>
-            <skill>Ritual Spellcasting</skill>
-            <skill>Spellcasting</skill>
+            <skill rating="F">Artificing</skill>
+            <skill rating="F">Assensing</skill>
+            <skill rating="F">Astral Combat</skill>
+            <skill rating="F">Gymnastics</skill>
+            <skill rating="F">Perception</skill>
+            <skill rating="F">Ritual Spellcasting</skill>
+            <skill rating="F">Spellcasting</skill>
          </skills>
          <powers>
             <power>Astral Form</power>
             <power>Aura Masking</power>
-            <power>Fae Glamour</power>
+            <power>Fey Glamour</power> <!-- "Fae Glamour" in source -->
             <power>Flay Touch</power>
             <power>Fold Perception</power>
-            <power select="Smell">Improved Senses</power>
-            <power select="Thermal">Improved Senses</power>
+            <power select="Smell">Enhanced Senses</power> <!-- "Improved Senses" in source -->
+            <power select="Thermal">Enhanced Senses</power> <!-- "Improved Senses" in source -->
             <power>Materialization</power>
             <power>Sapience</power>
             <power>Spirit Pact</power>
@@ -19567,24 +19568,24 @@
          <sprint>2/1/0</sprint>
          <armor>0</armor>
          <skills>
-            <skill>Assensing</skill>
-            <skill>Astral Combat</skill>
-            <skill>Con</skill>
-            <skill>Gymnastics</skill>
-            <skill>Perception</skill>
+            <skill rating="F">Assensing</skill>
+            <skill rating="F">Astral Combat</skill>
+            <skill rating="F">Con</skill>
+            <skill rating="F">Gymnastics</skill>
+            <skill rating="F">Perception</skill>
          </skills>
          <qualities>
             <positive>
-               <quality>Shiva Arms</quality>
+               <quality>Shiva Arms (Pair)</quality>
             </positive>
          </qualities>
          <powers>
             <power>Astral Form</power>
             <power>Aura Masking</power>
             <power select="Spirit Pact Only">Hidden Life</power>
-            <power select="Touch">Improved Sense</power>
+            <power select="Touch">Enhanced Senses</power> <!-- "Improved Sense" in source -->
             <power>Materialization</power>
-            <power select="Spirit Pact Only">Regenerate</power>
+            <power select="Spirit Pact Only">Regeneration</power> <!-- Regenerate in source -->
             <power>Sapience</power>
             <power>Spirit Pact</power>
          </powers>
@@ -19639,21 +19640,20 @@
          <sprint>2/1/0</sprint>
          <armor>0</armor>
          <skills>
-            <skill>Assensing</skill>
-            <skill>Astral Combat</skill>
-            <skill>Con</skill>
-            <skill>Counterspelling</skill>
-            <skill>Disenchanting</skill>
-            <skill>Gymnastics</skill>
-            <skill>Perception</skill>
-            <skill>Spellcasting</skill>
+            <skill rating="F">Assensing</skill>
+            <skill rating="F">Astral Combat</skill>
+            <skill rating="F">Con</skill>
+            <skill rating="F">Counterspelling</skill>
+            <skill rating="F">Disenchanting</skill>
+            <skill rating="F">Gymnastics</skill>
+            <skill rating="F">Perception</skill>
+            <skill rating="F">Spellcasting</skill>
          </skills>
          <powers>
             <power>Astral Form</power>
             <power>Aura Masking</power>
             <power>Materialization</power>
-            <power select="Essence">Energy Drain</power>
-            <power>Age)</power>
+            <power select="Essence,Age">Energy Drain</power>
             <power>Fey Glamour</power>
             <power>Sapience</power>
             <power>Spirit Pact</power>
@@ -19708,23 +19708,23 @@
          <run>4/0/0</run>
          <sprint>1/1/0</sprint>
          <skills>
-            <skill>Assensing</skill>
-            <skill>Astral Combat</skill>
-            <skill>Automatics</skill>
-            <skill>Blades</skill>
-            <skill>Clubs</skill>
-            <skill>Computer</skill>
-            <skill>First Aid</skill>
-            <skill>Gymnastics</skill>
-            <skill>Intimidation</skill>
-            <skill>Locksmith</skill>
-            <skill>Longarms</skill>
-            <skill>Perception</skill>
-            <skill>Pilot Ground Craft</skill>
-            <skill>Pistols</skill>
-            <skill>Sneaking</skill>
-            <skill>Throwing Weapons</skill>
-            <skill>Unarmed Combat</skill>
+            <skill rating="F">Assensing</skill>
+            <skill rating="F">Astral Combat</skill>
+            <skill rating="F">Automatics</skill>
+            <skill rating="F">Blades</skill>
+            <skill rating="F">Clubs</skill>
+            <skill rating="F">Computer</skill>
+            <skill rating="F">First Aid</skill>
+            <skill rating="F">Gymnastics</skill>
+            <skill rating="F">Intimidation</skill>
+            <skill rating="F">Locksmith</skill>
+            <skill rating="F">Longarms</skill>
+            <skill rating="F">Perception</skill>
+            <skill rating="F">Pilot Ground Craft</skill>
+            <skill rating="F">Pistols</skill>
+            <skill rating="F">Sneaking</skill>
+            <skill rating="F">Throwing Weapons</skill>
+            <skill rating="F">Unarmed Combat</skill>
          </skills>
          <powers>
             <power>Astral Form</power>
@@ -19785,13 +19785,13 @@
          <sprint>4/1/0</sprint>
          <armor>(F x 2)H</armor>
          <skills>
-            <skill>Assensing</skill>
-            <skill>Astral Combat</skill>
-            <skill>Flight</skill>
-            <skill>Gymnastics</skill>
-            <skill>Perception</skill>
-            <skill>Sneaking</skill>
-            <skill>Unarmed Combat</skill>
+            <skill rating="F">Assensing</skill>
+            <skill rating="F">Astral Combat</skill>
+            <skill rating="F">Flight</skill>
+            <skill rating="F">Gymnastics</skill>
+            <skill rating="F">Perception</skill>
+            <skill rating="F">Sneaking</skill>
+            <skill rating="F">Unarmed Combat</skill>
          </skills>
          <powers>
             <power>Accident</power>
@@ -19804,9 +19804,7 @@
             <power>Influence</power>
             <power>Materialization</power>
             <power select="Claws (DV (F+2)P AP -F)">Natural Weapon</power>
-            <power select="Wings (DV (F+6)S AP -F)">Natural Weapon</power>
-            <power>AP -Force</power>
-            <power>Knockdown)</power>
+            <power select="Wings (DV (F+6)S AP -Force, Knockdown)">Natural Weapon</power>
             <power>Psychokinesis</power>
             <power>Sapience</power>
          </powers>
@@ -19861,16 +19859,16 @@
          <sprint>2/1/0</sprint>
          <armor>0</armor>
          <skills>
-            <skill>Assensing</skill>
-            <skill>Astral Combat</skill>
-            <skill>Counterspelling</skill>
-            <skill>Gymnastics</skill>
+            <skill rating="F">Assensing</skill>
+            <skill rating="F">Astral Combat</skill>
+            <skill rating="F">Counterspelling</skill>
+            <skill rating="F">Gymnastics</skill>
          </skills>
          <powers>
             <power select="Domain">Accident</power>
             <power>Alienate</power>
             <power>Astral Form</power>
-            <power>Aura</power>
+            <power>Aura Masking</power>
          </powers>
          <bonus>
             <enabletab>
@@ -19923,10 +19921,10 @@
          <sprint>2/1/0</sprint>
          <armor>0</armor>
          <skills>
-            <skill>Alchemy</skill>
-            <skill>Assensing</skill>
-            <skill>Astral Combat</skill>
-            <skill>Con</skill>
+            <skill rating="F">Alchemy</skill>
+            <skill rating="F">Assensing</skill>
+            <skill rating="F">Astral Combat</skill>
+            <skill rating="F">Con</skill>
          </skills>
          <powers>
             <power>Astral Form</power>
@@ -19984,10 +19982,10 @@
          <sprint>2/1/0</sprint>
          <armor>0</armor>
          <skills>
-            <skill>Assensing</skill>
-            <skill>Astral Combat</skill>
-            <skill>Counterspelling</skill>
-            <skill>Gymnastics</skill>
+            <skill rating="F">Assensing</skill>
+            <skill rating="F">Astral Combat</skill>
+            <skill rating="F">Counterspelling</skill>
+            <skill rating="F">Gymnastics</skill>
          </skills>
          <powers>
             <power>Astral Form</power>
@@ -20045,9 +20043,9 @@
          <sprint>1/1/0</sprint>
          <armor>0</armor>
          <skills>
-            <skill>Assensing</skill>
-            <skill>Astral Combat</skill>
-            <skill spec="Elemental Attack">Exotic Ranged Weapon</skill>
+            <skill rating="F">Assensing</skill>
+            <skill rating="F">Astral Combat</skill>
+            <skill rating="F" spec="Elemental Attack">Exotic Ranged Weapon</skill>
          </skills>
          <powers>
             <power>Astral Form</power>
@@ -20115,12 +20113,12 @@
          <sprint>2/1/0</sprint>
          <armor>0</armor>
          <skills>
-            <skill>Assensing</skill>
-            <skill>Astral Combat</skill>
-            <skill>Perception</skill>
-            <skill>Ritual Spellcasting</skill>
-            <skill>Sneaking</skill>
-            <skill>Unarmed Combat</skill>
+            <skill rating="F">Assensing</skill>
+            <skill rating="F">Astral Combat</skill>
+            <skill rating="F">Perception</skill>
+            <skill rating="F">Ritual Spellcasting</skill>
+            <skill rating="F">Sneaking</skill>
+            <skill rating="F">Unarmed Combat</skill>
          </skills>
          <powers>
             <power>Accident</power>
@@ -20182,11 +20180,11 @@
          <run>5/0/0</run>
          <sprint>2/1/0</sprint>
          <skills>
-            <skill>Assensing</skill>
-            <skill>Astral Combat</skill>
-            <skill>Perception</skill>
-            <skill>Sneaking</skill>
-            <skill>Unarmed Combat</skill>
+            <skill rating="F">Assensing</skill>
+            <skill rating="F">Astral Combat</skill>
+            <skill rating="F">Perception</skill>
+            <skill rating="F">Sneaking</skill>
+            <skill rating="F">Unarmed Combat</skill>
          </skills>
          <powers>
             <power>Astral Form</power>
@@ -20250,11 +20248,11 @@
          <sprint>2/1/0</sprint>
          <armor>0</armor>
          <skills>
-            <skill>Assensing</skill>
-            <skill>Astral Combat</skill>
-            <skill>Gymnastics</skill>
-            <skill>Perception</skill>
-            <skill>Unarmed Combat</skill>
+            <skill rating="F">Assensing</skill>
+            <skill rating="F">Astral Combat</skill>
+            <skill rating="F">Gymnastics</skill>
+            <skill rating="F">Perception</skill>
+            <skill rating="F">Unarmed Combat</skill>
          </skills>
          <powers>
             <power>Accident</power>
@@ -20271,11 +20269,12 @@
          <optionalpowers>
             <optionalpower>Confusion</optionalpower>
             <optionalpower>Deathlock</optionalpower>
+            <!-- TODO: add non-natural weapon - Scythe -->
             <optionalpower>Ghost Chain</optionalpower>
-            <optionalpower>Howl</optionalpower>
             <optionalpower>Movement</optionalpower>
             <optionalpower>Noxious Breath</optionalpower>
             <optionalpower>Paralyzing Touch</optionalpower>
+            <optionalpower>Paralyzing Howl</optionalpower>
             <optionalpower>Sapience</optionalpower>
             <optionalpower>Spirit Pact</optionalpower>
          </optionalpowers>
@@ -20330,14 +20329,14 @@
          <sprint>2/1/0</sprint>
          <armor>F</armor>
          <skills>
-            <skill>Assensing</skill>
-            <skill>Astral Combat</skill>
-            <skill>Con</skill>
-            <skill>Intimidation</skill>
-            <skill>Negotiation</skill>
-            <skill>Perception</skill>
-            <skill>Sneaking</skill>
-            <skill>Unarmed Combat</skill>
+            <skill rating="F">Assensing</skill>
+            <skill rating="F">Astral Combat</skill>
+            <skill rating="F">Con</skill>
+            <skill rating="F">Intimidation</skill>
+            <skill rating="F">Negotiation</skill>
+            <skill rating="F">Perception</skill>
+            <skill rating="F">Sneaking</skill>
+            <skill rating="F">Unarmed Combat</skill>
          </skills>
          <powers>
             <power>Accident</power>
@@ -20352,8 +20351,7 @@
             <power select="F">Hardened Mystic Armor</power>
             <power>Influence</power>
             <power>Materialization</power>
-            <power select="DV (F-1)S">Natural Weapon (Fist)</power>
-            <power>AP -Force)</power>
+            <power select="Fist: (DV (F-1)S AP -Force)">Natural Weapon</power>
             <power>Psychokinesis</power>
             <power>Sapience</power>
             <power>Search</power>
@@ -20409,11 +20407,11 @@
          <sprint>2/1/0</sprint>
          <armor>(F x 2)H</armor>
          <skills>
-            <skill>Assensing</skill>
-            <skill>Astral Combat</skill>
-            <skill>Gymnastics</skill>
-            <skill>Perception</skill>
-            <skill>Unarmed Combat</skill>
+            <skill rating="F">Assensing</skill>
+            <skill rating="F">Astral Combat</skill>
+            <skill rating="F">Gymnastics</skill>
+            <skill rating="F">Perception</skill>
+            <skill rating="F">Unarmed Combat</skill>
          </skills>
          <powers>
             <power select="double pain modifers">Agonizing Pain</power>
@@ -20478,11 +20476,11 @@
          <sprint>2/1/0</sprint>
          <armor>(F x 2)H</armor>
          <skills>
-            <skill>Assensing</skill>
-            <skill>Astral Combat</skill>
-            <skill>Gymnastics</skill>
-            <skill>Perception</skill>
-            <skill>Unarmed Combat</skill>
+            <skill rating="F">Assensing</skill>
+            <skill rating="F">Astral Combat</skill>
+            <skill rating="F">Gymnastics</skill>
+            <skill rating="F">Perception</skill>
+            <skill rating="F">Unarmed Combat</skill>
          </skills>
          <powers>
             <power>Accident</power>
@@ -20610,10 +20608,10 @@
          <sprint>1/1/5</sprint>
          <armor>12H</armor>
          <skills>
-            <skill>Assensing</skill>
-            <skill>Flight</skill>
-            <skill>Perception</skill>
-            <skill>Unarmed Combat</skill>
+            <skill rating="F">Assensing</skill>
+            <skill rating="F">Flight</skill>
+            <skill rating="F">Perception</skill>
+            <skill rating="F">Unarmed Combat</skill>
          </skills>
          <powers>
             <power>Aura Masking</power>
@@ -21897,7 +21895,7 @@
             <skill rating="10">Sneaking</skill>
             <skill rating="7">Unarmed Combat</skill>
             <group rating="4">Athletics</group>
-            <knowledge rating="8" category="Professional">Animal Calls</knowledge>
+            <knowledge rating="8" category="Professional" attribute="LOG">Animal Calls</knowledge>
          </skills>
          <source>HS</source>
          <page>87</page>
@@ -24755,6 +24753,11 @@
          <walk>2/0/0</walk>
          <run>6/0/0</run>
          <sprint>4/0/0</sprint>
+         <qualities>
+            <positive>
+               <quality>Munge</quality>
+            </positive>
+         </qualities>
          <bonus>
             <enableattribute>
                <name>RES</name>
@@ -24769,7 +24772,6 @@
             <power>Blend</power>
             <power>Gremlins</power>
             <power>Holographic Concealment</power>
-            <power>Munge</power>
             <power select="Bite: DV (STR+1)P, AP 0, Reach 1">Natural Weapon</power>
             <power>Resonance Feed</power>
             <power>Tunnel</power>
@@ -24848,6 +24850,11 @@
          <walk>2/0/0</walk>
          <run>6/0/0</run>
          <sprint>4/0/0</sprint>
+         <qualities>
+            <positive>
+               <quality>Munge</quality>
+            </positive>
+         </qualities>
          <bonus>
             <enableattribute>
                <name>RES</name>
@@ -24862,7 +24869,6 @@
             <power>Blend</power>
             <power>Gremlins</power>
             <power>Holographic Concealment</power>
-            <power>Munge</power>
             <power select="Bite: DV (STR+1)P, AP 0, Reach 1">Natural Weapon</power>
             <power>Resonance Feed</power>
             <power>Tunnel</power>
@@ -24941,6 +24947,11 @@
          <walk>2/0/0</walk>
          <run>6/0/0</run>
          <sprint>4/0/0</sprint>
+         <qualities>
+            <positive>
+               <quality>Munge</quality>
+            </positive>
+         </qualities>
          <bonus>
             <enableattribute>
                <name>RES</name>
@@ -24955,7 +24966,6 @@
             <power>Blend</power>
             <power>Gremlins</power>
             <power>Holographic Concealment</power>
-            <power>Munge</power>
             <power select="Bite: DV (STR+1)P, AP 0, Reach 1">Natural Weapon</power>
             <power>Resonance Feed</power>
             <power>Tunnel</power>
@@ -25034,6 +25044,11 @@
          <walk>2/0/0</walk>
          <run>6/0/0</run>
          <sprint>4/0/0</sprint>
+         <qualities>
+            <positive>
+               <quality>Munge</quality>
+            </positive>
+         </qualities>
          <bonus>
             <enableattribute>
                <name>RES</name>
@@ -25048,7 +25063,6 @@
             <power>Blend</power>
             <power>Gremlins</power>
             <power>Holographic Concealment</power>
-            <power>Munge</power>
             <power select="Bite: DV (STR+1)P, AP 0, Reach 1">Natural Weapon</power>
             <power>Resonance Feed</power>
             <power>Tunnel</power>
@@ -25707,6 +25721,7 @@
             <power rating="4">Armor</power>
             <power select="Hoof: DV (STR)P, AP 0">Natural Weapon</power>
             <power>Resonance Feed</power>
+            <power>Resonance Hosting</power> <!-- Complex form NOT power in source -->
             <power>Blend</power>
             <power>AR-Parallelism</power>
          </powers>
@@ -25728,7 +25743,6 @@
             <complexform select="Attack">Diffusion of [Matrix Attribute]</complexform>
             <complexform select="Data Processing">Diffusion of [Matrix Attribute]</complexform>
             <complexform>Resonance Spike</complexform>
-            <complexform>Resonance Hosting</complexform>
             <complexform>Resonance Channel</complexform>
          </complexforms>
          <source>KC</source>
@@ -25803,9 +25817,9 @@
          <skills>
             <group rating="4">Athletics</group>
             <skill rating="3">Clubs</skill>
-            <skill rating="4">Perception</skill>           
-            <skill rating="2">Thrown Weapons</skill>           
-            <skill rating="6">Unarmed Combat</skill>           
+            <skill rating="4">Perception</skill>
+            <skill rating="2">Throwing Weapons</skill> <!-- "Thrown Weapons" in source -->
+            <skill rating="6">Unarmed Combat</skill>
             <skill rating="6">Computer</skill>
             <skill rating="5">Cybercombat</skill>
             <skill rating="5">Hacking</skill>
@@ -25813,7 +25827,7 @@
             <skill rating="5">Electronic Warfare</skill>
          </skills>
          <complexforms>
-            <complexform>Deezz</complexform>
+            <complexform>Derezz</complexform>
             <complexform select="Firewall">Diffusion of [Matrix Attribute]</complexform>
             <complexform>Editor</complexform>
             <complexform select="Sleaze">Infusion of [Matrix Attribute]</complexform>
@@ -25967,7 +25981,7 @@
                <quality>Munge</quality>
             </positive>
             <negative>
-               <quality>Real World Naivete</quality>
+               <quality>Real World Naiveté</quality>
             </negative>
          </qualities>
          <bonus>
@@ -26043,7 +26057,7 @@
                <quality>Snooper</quality>
             </positive>
             <negative>
-               <quality>Real World Naivete</quality>
+               <quality>Real World Naiveté</quality>
             </negative>
          </qualities>
          <bonus>
@@ -26116,7 +26130,7 @@
                <quality>Munge</quality>
             </positive>
             <negative>
-               <quality>Real World Naivete</quality>
+               <quality>Real World Naiveté</quality>
             </negative>
          </qualities>
          <bonus>
@@ -26190,7 +26204,7 @@
                <quality>Munge</quality>
             </positive>
             <negative>
-               <quality>Real World Naivete</quality>
+               <quality>Real World Naiveté</quality>
             </negative>
          </qualities>
          <bonus>
@@ -26263,7 +26277,7 @@
                <quality>Munge</quality>
             </positive>
             <negative>
-               <quality>Real World Naivete</quality>
+               <quality>Real World Naiveté</quality>
             </negative>
          </qualities>
          <bonus>
@@ -26336,7 +26350,7 @@
                <quality>Munge</quality>
             </positive>
             <negative>
-               <quality>Real World Naivete</quality>
+               <quality>Real World Naiveté</quality>
             </negative>
          </qualities>
          <bonus>
@@ -26412,7 +26426,7 @@
                <quality>Munge</quality>
             </positive>
             <negative>
-               <quality>Real World Naivete</quality>
+               <quality>Real World Naiveté</quality>
             </negative>
          </qualities>
          <bonus>
@@ -26487,7 +26501,7 @@
                <quality>Redundancy</quality>
             </positive>
             <negative>
-               <quality>Real World Naivete</quality>
+               <quality>Real World Naiveté</quality>
             </negative>
          </qualities>
          <bonus>
@@ -28043,7 +28057,7 @@
            <initiativepass>1</initiativepass>
          </bonus>
          <powers>
-             <power>Agony</power>
+             <power select="Agony">Innate Spell</power> <!-- "Agony" in source-->
              <power rating="6">Armor</power>
              <power>Deathlock</power>
              <power select="Low-Light Vision, Smell">Enhanced Senses</power>

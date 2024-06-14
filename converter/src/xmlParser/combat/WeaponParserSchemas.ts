@@ -69,11 +69,11 @@ export type AccuracyXmlType = zod.infer<typeof AccuracyXmlSchema>;
 export const DamageXmlSchema = zod.union([zod.string(), zod.literal(0)]);
 export type DamageXmlType = zod.infer<typeof DamageXmlSchema>;
 
-const AccessoriesXmlSchema = zod.union([
+const AccessoryListXmlSchema = zod.union([
   zod.array(AccessoryXmlSchema),
   AccessoryXmlSchema,
 ]);
-export type AccessoriesXmlType = zod.infer<typeof AccessoriesXmlSchema>;
+export type AccessoryListXmlType = zod.infer<typeof AccessoryListXmlSchema>;
 
 const WeaponXmlSchema = zod
   .object({
@@ -123,7 +123,7 @@ const WeaponXmlSchema = zod
     accessories: zod.optional(
       zod
         .object({
-          accessory: AccessoriesXmlSchema,
+          accessory: AccessoryListXmlSchema,
         })
         .strict()
     ),

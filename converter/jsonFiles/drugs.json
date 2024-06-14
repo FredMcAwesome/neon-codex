@@ -5,7 +5,7 @@
     "category": "Drugs",
     "speed": 1,
     "bonus": {
-      "qualities": [
+      "qualityList": [
         {
           "name": "High Pain Tolerance",
           "rating": 3
@@ -83,7 +83,7 @@
       "initiative": {
         "bonusDice": 2
       },
-      "qualities": [
+      "qualityList": [
         {
           "name": "High Pain Tolerance",
           "rating": 3
@@ -117,7 +117,7 @@
     "category": "Drugs",
     "speed": 6,
     "bonus": {
-      "qualities": [
+      "qualityList": [
         {
           "name": "High Pain Tolerance",
           "rating": 6
@@ -138,7 +138,7 @@
     "category": "Drugs",
     "speed": 6,
     "bonus": {
-      "qualities": [
+      "qualityList": [
         {
           "name": "High Pain Tolerance",
           "rating": 1

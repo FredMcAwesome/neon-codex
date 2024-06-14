@@ -36,7 +36,8 @@ export class CustomisedVehicles {
   @Property({ nullable: true })
   customName?: string;
 
-  constructor(vehicle: Ref<Vehicles>) {
+  constructor(character: Ref<Characters>, vehicle: Ref<Vehicles>) {
+    this.character = character;
     this.vehicle = vehicle;
   }
 }

@@ -1,0 +1,353 @@
+[
+  {
+    "name": "Cleaner",
+    "description": "",
+    "target": "Persona",
+    "duration": "Permanent",
+    "fadingValue": 2,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 252
+  },
+  {
+    "name": "Diffusion of [Matrix Attribute]",
+    "description": "",
+    "target": "Device",
+    "duration": "Sustained",
+    "fadingValue": 2,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 252
+  },
+  {
+    "name": "Editor",
+    "description": "",
+    "target": "File",
+    "duration": "Permanent",
+    "fadingValue": 1,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 252
+  },
+  {
+    "name": "Infusion of [Matrix Attribute]",
+    "description": "",
+    "target": "Device",
+    "duration": "Sustained",
+    "fadingValue": 2,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 252
+  },
+  {
+    "name": "Static Veil",
+    "description": "",
+    "target": "Persona",
+    "duration": "Sustained",
+    "fadingValue": 3,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 252
+  },
+  {
+    "name": "Pulse Storm",
+    "description": "",
+    "target": "Persona",
+    "duration": "Instantaneous",
+    "fadingValue": 3,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 252
+  },
+  {
+    "name": "Puppeteer",
+    "description": "",
+    "target": "Device",
+    "duration": "Instantaneous",
+    "fadingValue": 1,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 252
+  },
+  {
+    "name": "Resonance Channel",
+    "description": "",
+    "target": "Device",
+    "duration": "Sustained",
+    "fadingValue": 3,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 252
+  },
+  {
+    "name": "Resonance Spike",
+    "description": "",
+    "target": "Device",
+    "duration": "Instantaneous",
+    "fadingValue": 3,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 253
+  },
+  {
+    "name": "Resonance Veil",
+    "description": "",
+    "target": "Device",
+    "duration": "Sustained",
+    "fadingValue": 3,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 253
+  },
+  {
+    "name": "Static Bomb",
+    "description": "",
+    "target": "Self",
+    "duration": "Instantaneous",
+    "fadingValue": 1,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 253
+  },
+  {
+    "name": "Stitches",
+    "description": "",
+    "target": "Sprite",
+    "duration": "Permanent",
+    "fadingValue": 3,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 253
+  },
+  {
+    "name": "Transcendent Grid",
+    "description": "",
+    "target": "Self",
+    "duration": "Instantaneous",
+    "fadingValue": 3,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 253
+  },
+  {
+    "name": "Tattletale",
+    "description": "",
+    "target": "Persona",
+    "duration": "Permanent",
+    "fadingValue": 3,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 253
+  },
+  {
+    "name": "Derezz",
+    "description": "",
+    "target": "Persona",
+    "duration": "Instantaneous",
+    "fadingValue": 2,
+    "source": "Data Trails",
+    "page": 58
+  },
+  {
+    "name": "FAQ",
+    "description": "",
+    "target": "Device",
+    "duration": "Permanent",
+    "fadingValue": 0,
+    "source": "Data Trails",
+    "page": 58
+  },
+  {
+    "name": "IC Tray",
+    "description": "",
+    "target": "Host",
+    "duration": "Instantaneous",
+    "fadingValue": 2,
+    "source": "Data Trails",
+    "page": 58
+  },
+  {
+    "name": "Redundancy",
+    "description": "",
+    "target": "Device",
+    "duration": "Sustained",
+    "fadingValue": 0,
+    "source": "Data Trails",
+    "page": 58
+  },
+  {
+    "name": "Misread Marks",
+    "description": "",
+    "target": "IC",
+    "duration": "Permanent",
+    "fadingValue": 2,
+    "source": "Data Trails",
+    "page": 58
+  },
+  {
+    "name": "Coriolis",
+    "description": "",
+    "target": "Persona",
+    "duration": "Special",
+    "fadingValue": 3,
+    "source": "Chrome Flesh",
+    "page": 25
+  },
+  {
+    "name": "Overdrive",
+    "description": "",
+    "target": "Cyberware",
+    "duration": "Sustained",
+    "fadingValue": 1,
+    "requirements": {},
+    "source": "Kill Code",
+    "page": 90
+  },
+  {
+    "name": "LOTO",
+    "description": "",
+    "target": "Device",
+    "duration": "Instantaneous",
+    "fadingValue": 1,
+    "requirements": {},
+    "source": "Kill Code",
+    "page": 90
+  },
+  {
+    "name": "Hyperthreading",
+    "description": "",
+    "target": "Persona",
+    "duration": "Special",
+    "fadingValue": {
+      "option": "Special"
+    },
+    "requirements": {},
+    "source": "Kill Code",
+    "page": 91
+  },
+  {
+    "name": "Sprite Pet",
+    "description": "",
+    "target": "Persona",
+    "duration": "Permanent",
+    "fadingValue": 2,
+    "requirements": {},
+    "source": "Kill Code",
+    "page": 91
+  },
+  {
+    "name": "Causal Nexus",
+    "description": "",
+    "target": "Device",
+    "duration": "Permanent",
+    "fadingValue": 0,
+    "requirements": {},
+    "source": "Kill Code",
+    "page": 133
+  },
+  {
+    "name": "Dissonance Spike",
+    "description": "",
+    "target": "Device",
+    "duration": "Instantaneous",
+    "fadingValue": 6,
+    "requirements": {},
+    "source": "Kill Code",
+    "page": 134
+  },
+  {
+    "name": "Forced Heuristics",
+    "description": "",
+    "target": "Host",
+    "duration": "Sustained",
+    "fadingValue": 1,
+    "requirements": {},
+    "source": "Kill Code",
+    "page": 133
+  },
+  {
+    "name": "Arc Feedback",
+    "description": "",
+    "target": "Icon",
+    "duration": "Sustained",
+    "fadingValue": 2,
+    "source": "Kill Code",
+    "page": 94
+  },
+  {
+    "name": "Bootleg Program",
+    "description": "",
+    "target": "Device",
+    "duration": "Instantaneous",
+    "fadingValue": 2,
+    "source": "Kill Code",
+    "page": 94
+  },
+  {
+    "name": "Host Emulator",
+    "description": "",
+    "target": "Self",
+    "duration": "Permanent",
+    "fadingValue": 0,
+    "source": "Kill Code",
+    "page": 94
+  },
+  {
+    "name": "Mirrored Persona",
+    "description": "",
+    "target": "Self",
+    "duration": "Instantaneous",
+    "fadingValue": 2,
+    "source": "Kill Code",
+    "page": 95
+  },
+  {
+    "name": "Pinch",
+    "description": "",
+    "target": "Self",
+    "duration": "Sustained",
+    "fadingValue": 2,
+    "source": "Kill Code",
+    "page": 95
+  },
+  {
+    "name": "Primed Charge",
+    "description": "",
+    "target": "Self",
+    "duration": "Instantaneous",
+    "fadingValue": 0,
+    "source": "Kill Code",
+    "page": 95
+  },
+  {
+    "name": "Resonance Bind",
+    "description": "",
+    "target": "Persona",
+    "duration": "Sustained",
+    "fadingValue": 2,
+    "source": "Kill Code",
+    "page": 95
+  },
+  {
+    "name": "Resonance Cache",
+    "description": "",
+    "target": "IC",
+    "duration": "Instantaneous",
+    "fadingValue": 2,
+    "source": "Kill Code",
+    "page": 95
+  },
+  {
+    "name": "Search History",
+    "description": "",
+    "target": "Device",
+    "duration": "Instantaneous",
+    "fadingValue": 2,
+    "source": "Kill Code",
+    "page": 95
+  },
+  {
+    "name": "Weaken Data Bomb",
+    "description": "",
+    "target": "File",
+    "duration": "Instantaneous",
+    "fadingValue": 2,
+    "source": "Kill Code",
+    "page": 96
+  },
+  {
+    "name": "Weaken Encryption",
+    "description": "",
+    "target": "File",
+    "duration": "Instantaneous",
+    "fadingValue": 3,
+    "source": "Kill Code",
+    "page": 96
+  }
+]

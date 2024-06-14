@@ -527,7 +527,7 @@ export const BonusSchema = zod
       ])
     ),
     // TODO: needs to be linked to a quality
-    qualities: zod.optional(BonusGenericListSchema),
+    qualityList: zod.optional(BonusGenericListSchema),
     disableQualities: zod.optional(
       zod.array(
         zod

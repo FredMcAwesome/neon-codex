@@ -2483,7 +2483,7 @@
     "category": "Negative",
     "karma": -15,
     "bonus": {
-      "qualities": [
+      "qualityList": [
         {
           "name": "SINner (Criminal)"
         }
@@ -2738,7 +2738,7 @@
     "category": "Negative",
     "karma": -2,
     "bonus": {
-      "qualities": [
+      "qualityList": [
         {
           "name": "High Pain Tolerance"
         }
@@ -3610,7 +3610,7 @@
         }
       ],
       "socialLimit": [2],
-      "qualities": [
+      "qualityList": [
         {
           "name": "Distinctive Style"
         }
@@ -6181,7 +6181,7 @@
     "charGenDoNotContributeToKarmaLimit": true,
     "addWeapons": ["Dracoform Claws"],
     "bonus": {
-      "qualities": [
+      "qualityList": [
         {
           "name": "Wanted"
         }
@@ -6199,7 +6199,7 @@
     "charGenDoNotContributeToKarmaLimit": true,
     "addWeapons": ["Dracoform Horns"],
     "bonus": {
-      "qualities": [
+      "qualityList": [
         {
           "name": "Wanted"
         }
@@ -6217,7 +6217,7 @@
     "charGenDoNotContributeToKarmaLimit": true,
     "addWeapons": ["Dracoform Tail"],
     "bonus": {
-      "qualities": [
+      "qualityList": [
         {
           "name": "Wanted"
         }
@@ -6235,7 +6235,7 @@
     "charGenDoNotContributeToKarmaLimit": true,
     "addWeapons": ["Dracoform Fangs"],
     "bonus": {
-      "qualities": [
+      "qualityList": [
         {
           "name": "Wanted"
         }
@@ -8064,7 +8064,7 @@
     "karma": 0,
     "charGenDoNotContributeToKarmaLimit": true,
     "bonus": {
-      "qualities": [
+      "qualityList": [
         {
           "name": "Magic Resistance"
         }
@@ -8117,7 +8117,7 @@
     "karma": 22,
     "bonus": {
       "enterName": true,
-      "qualities": [
+      "qualityList": [
         {
           "name": "Home Ground"
         },

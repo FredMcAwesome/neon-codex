@@ -31,7 +31,8 @@ export class CustomisedArmours {
   @Property({ nullable: true })
   customName?: string;
 
-  constructor(armour: Ref<Armours>) {
+  constructor(character: Ref<Characters>, armour: Ref<Armours>) {
+    this.character = character;
     this.armour = armour;
   }
 }

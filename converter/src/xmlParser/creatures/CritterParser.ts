@@ -6,6 +6,7 @@ import { fileURLToPath } from "url";
 import * as fs from "fs";
 import { convertXmlBonus } from "../common/BonusParserHelper.js";
 import {
+  convertAttribute,
   convertIncludedQualities,
   convertMovement,
   convertSource,
@@ -20,7 +21,12 @@ import {
   type CritterXmlType,
 } from "./CritterParserSchemas.js";
 import type { MovementStrideType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
-import { convertCritterRating } from "./CritterParserHelper.js";
+import {
+  convertCritterRating,
+  convertIncludedBiowareList,
+  convertIncludedComplexForms,
+  convertIncludedCritterPowers,
+} from "./CritterParserHelper.js";
 
 export function ParseCritters() {
   const currentPath = import.meta.url;
@@ -221,9 +227,42 @@ function convertCritter(critter: CritterXmlType): CritterType {
     };
   }
 
+  let addPowerList;
+  if (critter.powers !== undefined) {
+    const powers = Array.isArray(critter.powers.power)
+      ? critter.powers.power
+      : [critter.powers.power];
+    assert(powers[0] !== undefined, `Empty powers for ${critter.name}`);
+    addPowerList = convertIncludedCritterPowers(powers);
+  }
+  let optionalPowerList;
+  if (critter.optionalpowers !== undefined) {
+    const powers = Array.isArray(critter.optionalpowers.optionalpower)
+      ? critter.optionalpowers.optionalpower
+      : [critter.optionalpowers.optionalpower];
+    assert(
+      powers[0] !== undefined,
+      `Empty optional powers for ${critter.name}`
+    );
+    optionalPowerList = convertIncludedCritterPowers(powers);
+  }
   let addQualityList;
   if (critter.qualities !== undefined) {
     addQualityList = convertIncludedQualities(critter.qualities);
+  }
+  let addBiowareList;
+  if (critter.biowares !== undefined) {
+    const biowares = Array.isArray(critter.biowares.bioware)
+      ? critter.biowares.bioware
+      : [critter.biowares.bioware];
+    addBiowareList = convertIncludedBiowareList(biowares);
+  }
+  let addComplexFormList;
+  if (critter.complexforms !== undefined) {
+    const complexFormList = Array.isArray(critter.complexforms.complexform)
+      ? critter.complexforms.complexform
+      : [critter.complexforms.complexform];
+    addComplexFormList = convertIncludedComplexForms(complexFormList);
   }
 
   const skillGroupList =
@@ -238,47 +277,41 @@ function convertCritter(critter: CritterXmlType): CritterType {
       ? [critter.skills.knowledge]
       : undefined;
 
+  // All critter should have some skills
+  assert(critter.skills.skill.length > 0);
   const skills: CritterSkillListType = {
     skillList: critter.skills.skill.map((skill) => {
-      if (typeof skill === "object") {
-        let rating;
-        if (skill._rating !== undefined) {
-          rating = convertCritterRating(skill._rating, critter.category);
-        }
-        return {
-          name: skill.xmltext,
-          ...(skill._spec !== undefined && { specialised: [skill._spec] }),
-          ...(rating !== undefined && { rating: rating }),
-          ...(skill._select !== undefined && { select: skill._select }),
-        };
-      } else {
-        return { name: skill };
-      }
+      assert(skill._rating !== undefined);
+      const rating = convertCritterRating(skill._rating, critter.category);
+
+      return {
+        name: skill.xmltext,
+        rating: rating,
+        ...(skill._spec !== undefined && { specialised: [skill._spec] }),
+        ...(skill._select !== undefined && { select: skill._select }),
+      };
     }),
     ...(skillGroupList !== undefined && {
       skillGroupList: skillGroupList.map((group) => {
-        if (typeof group === "object") {
-          const rating = parseInt(group._rating);
-          assert(!isNaN(rating));
+        const rating = convertCritterRating(group._rating, critter.category);
 
-          return {
-            name: group.xmltext,
-            rating: rating,
-          };
-        } else {
-          return { name: group };
-        }
+        return {
+          name: group.xmltext,
+          rating: rating,
+        };
       }),
     }),
     ...(knowledgeSkillList !== undefined && {
       knowledgeSkillList: knowledgeSkillList.map((skill) => {
-        const rating = parseInt(skill._rating);
-        assert(!isNaN(rating));
+        const skillPoints = parseInt(skill._rating);
+        assert(!isNaN(skillPoints));
 
         return {
           name: skill.xmltext,
-          rating: rating,
+          description: "",
           category: skill._category,
+          attribute: convertAttribute(skill._attribute),
+          skillPoints: skillPoints,
         };
       }),
     }),
@@ -304,9 +337,12 @@ function convertCritter(critter: CritterXmlType): CritterType {
     depthAttributeRange: depthAttributeRange,
     ...(critter.movement === "Special" && { nonStandardMovement: true }),
     ...(movement !== undefined && { movement: movement }),
+    includedPowerList: addPowerList,
+    optionalPowerList: optionalPowerList,
     addQualityList: addQualityList,
+    addBiowareList: addBiowareList,
+    addComplexFormList: addComplexFormList,
     skills: skills,
-
     ...(bonus !== undefined && { bonus: bonus }),
     source: source,
     page: critter.page,

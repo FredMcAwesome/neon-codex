@@ -11,6 +11,17 @@ import {
   MovementStrideSchema,
 } from "../shared/commonSchemas.js";
 
+const IncludedPowerListSchema = zod.array(
+  zod
+    .object({
+      name: zod.string(),
+      selectText: zod.optional(zod.string()),
+      rating: zod.optional(zod.number()),
+    })
+    .strict()
+);
+export type IncludedPowerListType = zod.infer<typeof IncludedPowerListSchema>;
+
 const PartialHeritageSchema = zod
   .object({
     // id: zod.string(),
@@ -36,7 +47,7 @@ const PartialHeritageSchema = zod
     nonStandardMovement: zod.optional(zod.literal(true)),
     movement: zod.optional(MovementStrideSchema),
     addWeaponList: zod.optional(zod.array(zod.string())),
-    addPowerList: zod.optional(zod.array(zod.string())),
+    addPowerList: zod.optional(IncludedPowerListSchema),
     addQualityList: zod.optional(BonusGenericListSchema),
     forbiddenQualityList: zod.optional(ForbiddenQualityListSchema),
     bonus: zod.optional(BonusSchema),

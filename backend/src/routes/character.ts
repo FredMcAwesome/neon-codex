@@ -2,12 +2,14 @@ import { z as zod } from "zod";
 import * as logger from "../utils/logger.js";
 import { router, privateProcedure } from "../trpc.js";
 import { Skills } from "@neon-codex/database/build/models/rpg/abilities/skillModel.js";
+import { SkillGroups } from "@neon-codex/database/build/models/rpg/abilities/skillGroupModel.js";
 import { init } from "../utils/db.js";
 import { ref } from "@mikro-orm/postgresql";
 import {
   CustomSkillListSchema,
   type CustomSkillType,
   type SkillListType,
+  CustomSkillGroupListSchema,
 } from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
 import type {
   VehicleListType,
@@ -129,10 +131,11 @@ import {
 } from "@neon-codex/database/build/models/rpg/activeTables/activeWeaponAccessoryModel.js";
 import { CustomisedArmourModifications } from "@neon-codex/database/build/models/rpg/activeTables/activeArmourModificationModel.js";
 import { ArmourModifications } from "@neon-codex/database/build/models/rpg/equipment/combat/armourModificationModel.js";
-import { CustomisedAugmentations } from "@neon-codex/database/build/models/rpg/activeTables/customisedAugmentationModel.js";
+import { CustomisedAugmentations } from "@neon-codex/database/build/models/rpg/activeTables/activeAugmentationModel.js";
 import { VehicleModifications } from "@neon-codex/database/build/models/rpg/equipment/rigger/vehicleModificationModel.js";
 import { CustomisedVehicleModifications } from "@neon-codex/database/build/models/rpg/activeTables/activeVehicleModificationModel.js";
 import { CustomisedVehicles } from "@neon-codex/database/build/models/rpg/activeTables/customisedVehicleModel.js";
+import { ActiveSkillGroups } from "@neon-codex/database/build/models/rpg/activeTables/activeSkillGroupModel.js";
 
 export async function getSkills() {
   const db = await init();
@@ -923,9 +926,10 @@ const CharacterInformationSchema = zod
     heritageInfo: HeritagePrioritySelectedSchema,
     attributeInfo: AttributesSchema,
     specialAttributeInfo: SpecialAttributesSchema,
-    positiveQualitiesSelected: QualitySelectedListSchema,
-    negativeQualitiesSelected: QualitySelectedListSchema,
+    positiveQualityListSelected: QualitySelectedListSchema,
+    negativeQualityListSelected: QualitySelectedListSchema,
     skillSelections: CustomSkillListSchema,
+    skillGroupSelections: CustomSkillGroupListSchema,
     equipmentSelected: EquipmentListSchema,
     karmaPoints: zod.number(),
     nuyen: zod.number(),
@@ -972,7 +976,6 @@ const createCharacter = privateProcedure
       }
       const activeSkill = new ActiveSkills(
         ref(skill),
-        selectedSkill.skillGroupPoints,
         selectedSkill.skillPoints,
         selectedSkill.karmaPoints,
         selectedSkill.specialisationsSelected
@@ -981,9 +984,26 @@ const createCharacter = privateProcedure
       skillList.push(activeSkill);
     }
 
+    const skillGroupList = [];
+    for (const selectedSkillGroup of opts.input.skillGroupSelections) {
+      const skillGroup = await db.em.findOne(SkillGroups, {
+        name: selectedSkillGroup.name,
+      });
+      if (skillGroup === null) {
+        throw new Error("Skill Group does not exist");
+      }
+      const activeSkillGroup = new ActiveSkillGroups(
+        ref(skillGroup),
+        selectedSkillGroup.skillGroupPoints,
+        selectedSkillGroup.karmaPoints
+      );
+
+      skillGroupList.push(activeSkillGroup);
+    }
+
     const qualityList = [];
-    const rawQualityList = opts.input.positiveQualitiesSelected.concat(
-      opts.input.negativeQualitiesSelected
+    const rawQualityList = opts.input.positiveQualityListSelected.concat(
+      opts.input.negativeQualityListSelected
     );
     for (const selectedQuality of rawQualityList) {
       const quality = await db.em.findOne(Qualities, {
@@ -1154,6 +1174,9 @@ const createCharacter = privateProcedure
     for (const selectedSkill of skillList) {
       character.skills.add(selectedSkill);
     }
+    for (const selectedSkillGroup of skillGroupList) {
+      character.skillGroups.add(selectedSkillGroup);
+    }
     for (const selectedQuality of qualityList) {
       character.qualities.add(selectedQuality);
     }
@@ -1212,31 +1235,31 @@ const getCharacter = privateProcedure
         priorities: character.priorities,
         attributes: character.attributes,
         specialAttributes: character.specialAttributes,
-        skills: skills,
-        qualities: qualities,
+        skillList: skills,
+        qualityList: qualities,
         nuyen: character.nuyen,
         karmaPoints: character.karmaPoints,
-        weapons: await Promise.all(
+        weaponList: await Promise.all(
           character.weapons.map(async (weapon) => {
             return await convertCustomWeaponDBToDTO(weapon);
           })
         ),
-        armours: await Promise.all(
+        armourList: await Promise.all(
           character.armours.map(async (armour) => {
             return await convertCustomArmourDBToDTO(armour);
           })
         ),
-        gears: await Promise.all(
+        gearList: await Promise.all(
           character.gears.map(async (gear) => {
             return await convertCustomGearDBToDTO(gear);
           })
         ),
-        augmentations: await Promise.all(
+        augmentationList: await Promise.all(
           character.augmentations.map(async (augmentation) => {
             return await convertCustomAugmentationDBToDTO(augmentation);
           })
         ),
-        vehicles: await Promise.all(
+        vehicleList: await Promise.all(
           character.vehicles.map(async (vehicle) => {
             return await convertCustomVehicleDBToDTO(vehicle);
           })
@@ -1451,7 +1474,7 @@ const convertCustomWeaponDBToDTO = async function (
 
   return {
     baseWeapon: convertedWeapon,
-    accessories: convertedAccessories,
+    accessoryList: convertedAccessories,
     rating: customWeaponDB.rating,
     customName: customWeaponDB.customName,
   };

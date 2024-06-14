@@ -13,13 +13,14 @@ import type {
   PriorityLevelsType,
   SpecialAttributesType,
 } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
-import { ActiveSkills } from "../activeTables/activeSkillModel.js";
+import { CustomisedSkills } from "../activeTables/activeSkillModel.js";
 import { Heritages } from "../traits/heritageModel.js";
 import { CustomisedQualities } from "../activeTables/activeQualityModel.js";
 import { CustomisedArmours } from "../activeTables/customisedArmourModel.js";
 import { CustomisedGears } from "../activeTables/activeGearModel.js";
 import { CustomisedVehicles } from "../activeTables/customisedVehicleModel.js";
-import { CustomisedAugmentations } from "../activeTables/customisedAugmentationModel.js";
+import { CustomisedAugmentations } from "../activeTables/activeAugmentationModel.js";
+import { CustomisedSkillGroups } from "../activeTables/activeSkillGroupModel.js";
 
 @Entity()
 export class Characters {
@@ -41,8 +42,11 @@ export class Characters {
   @Property({ type: "json" })
   specialAttributes!: SpecialAttributesType;
 
-  @OneToMany(() => ActiveSkills, (skill) => skill.character)
-  skills = new Collection<ActiveSkills>(this);
+  @OneToMany(() => CustomisedSkills, (skill) => skill.character)
+  skills = new Collection<CustomisedSkills>(this);
+
+  @OneToMany(() => CustomisedSkillGroups, (skillGroup) => skillGroup.character)
+  skillGroups = new Collection<CustomisedSkillGroups>(this);
 
   @OneToMany(() => CustomisedQualities, (quality) => quality.character)
   qualities = new Collection<CustomisedQualities>(this);

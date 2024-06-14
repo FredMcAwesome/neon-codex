@@ -11,9 +11,11 @@ import { Priorities } from "./priorityModel.js";
 import { Heritages } from "../traits/heritageModel.js";
 
 type HeritagePriorityDetailsType = {
+  heritagePriority: Ref<Priorities>;
   heritage: Ref<Heritages>;
   specialAttributePoints: number;
   karmaCost: number;
+  corePriorityHeritage?: Ref<HeritagePriorityDetails>;
 };
 
 @Entity()
@@ -32,11 +34,11 @@ export class HeritagePriorityDetails {
     ref: true,
     nullable: true,
   })
-  coreHeritage?: Ref<HeritagePriorityDetails>;
+  corePriorityHeritage?: Ref<HeritagePriorityDetails>;
 
   @OneToMany(
     () => HeritagePriorityDetails,
-    (metavariant) => metavariant.coreHeritage
+    (metavariant) => metavariant.corePriorityHeritage
   )
   metavariantList = new Collection<HeritagePriorityDetails>(this);
 
@@ -47,8 +49,12 @@ export class HeritagePriorityDetails {
   linkedHeritage!: Ref<Heritages>;
 
   constructor(dto: HeritagePriorityDetailsType) {
+    this.heritagePriority = dto.heritagePriority;
     this.specialAttributePoints = dto.specialAttributePoints;
     this.karmaCost = dto.karmaCost;
     this.linkedHeritage = dto.heritage;
+    if (dto.corePriorityHeritage !== undefined) {
+      this.corePriorityHeritage = dto.corePriorityHeritage;
+    }
   }
 }

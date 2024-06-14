@@ -55,5 +55,8 @@ ParseCritters();
 import { ParseCritterPowers } from "./xmlParser/creatures/CritterPowerParser.js";
 ParseCritterPowers();
 
+import { ParseComplexForms } from "./xmlParser/magic/ComplexFormParser.js";
+ParseComplexForms();
+
 import { CheckGUIDs } from "./xmlParser/utilities.js";
 CheckGUIDs();

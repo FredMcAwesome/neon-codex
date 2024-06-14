@@ -37,7 +37,8 @@ export class CustomisedWeapons {
   @Property({ nullable: true })
   customName?: string;
 
-  constructor(weapon: Ref<Weapons>) {
+  constructor(character: Ref<Characters>, weapon: Ref<Weapons>) {
+    this.character = character;
     this.weapon = weapon;
   }
 }

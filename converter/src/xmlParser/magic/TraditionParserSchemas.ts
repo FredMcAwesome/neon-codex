@@ -27,6 +27,7 @@ const TraditionSubBonusXmlSchema = zod
       zod.nativeEnum(traditionXmlDrainAttributeEnum),
       zod.literal(""),
     ]),
+    // replace materialisation power with this power instead
     spiritform: zod.optional(
       zod.union([zod.literal("Possession"), zod.literal("Inhabitation")])
     ),

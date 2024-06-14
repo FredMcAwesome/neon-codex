@@ -3943,5 +3943,61 @@
     "category": "Chimeric Modification",
     "source": "Howling Shadows",
     "page": 173
+  },
+  {
+    "name": "Evasion",
+    "description": "",
+    "category": "Paranormal",
+    "userSelectable": false,
+    "source": "Forbidden Arcana",
+    "page": 181
+  },
+  {
+    "name": "Maneuvering",
+    "description": "",
+    "category": "Paranormal",
+    "userSelectable": false,
+    "source": "Forbidden Arcana",
+    "page": 181
+  },
+  {
+    "name": "Stealth",
+    "description": "",
+    "category": "Paranormal",
+    "userSelectable": false,
+    "source": "Forbidden Arcana",
+    "page": 181
+  },
+  {
+    "name": "Astral Perception",
+    "description": "",
+    "category": "Paranormal",
+    "userSelectable": false,
+    "source": "Forbidden Arcana",
+    "page": 181
+  },
+  {
+    "name": "Spell Resistance",
+    "description": "",
+    "category": "Paranormal",
+    "userSelectable": false,
+    "source": "Howling Shadows",
+    "page": 118
+  },
+  {
+    "name": "Fold Perception",
+    "description": "",
+    "category": "Paranormal",
+    "userSelectable": false,
+    "source": "Howling Shadows",
+    "page": 118
+  },
+  {
+    "name": "Agonizing Pain",
+    "description": "",
+    "category": "Paranormal",
+    "userSelectable": false,
+    "source": "Howling Shadows",
+    "page": 118
   }
 ]

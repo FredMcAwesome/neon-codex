@@ -13,13 +13,15 @@ export const TraditionSchema = zod
     ),
     spiritTypes: zod.union([
       zod.literal("Select Spirits"),
+      // All spirits that have the materialise power can be conjured
+      zod.literal("All"),
       zod
         .object({
-          spiritcombat: zod.string(),
-          spiritdetection: zod.string(),
-          spirithealth: zod.string(),
-          spiritillusion: zod.string(),
-          spiritmanipulation: zod.string(),
+          spiritCombat: zod.string(),
+          spiritDetection: zod.string(),
+          spiritHealth: zod.string(),
+          spiritIllusion: zod.string(),
+          spiritManipulation: zod.string(),
         })
         .strict(),
     ]),

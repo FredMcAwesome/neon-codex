@@ -14,12 +14,15 @@ import {
   type MetatypeXmlType,
 } from "./MetatypeParserSchemas.js";
 import { convertXmlBonus } from "../common/BonusParserHelper.js";
-import { convertMetatypeCategory } from "./MetatypeParserHelper.js";
+import {
+  convertIncludedPowers,
+  convertMetatypeCategory,
+} from "./MetatypeParserHelper.js";
 import { ForbiddenQualityListSchema } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 import { heritageCategoryEnum } from "@neon-codex/common/build/enums.js";
 import {
-  convertIncludedQualities,
   convertMovement,
+  convertIncludedQualities,
 } from "../common/ParserHelper.js";
 import type { MovementStrideType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 
@@ -223,12 +226,7 @@ const convertBaseMetatype = function (
     const powers = Array.isArray(xmlMetatype.powers.power)
       ? xmlMetatype.powers.power
       : [xmlMetatype.powers.power];
-    addPowerList = powers.map((power) => {
-      if (typeof power === "object") {
-        return power.xmltext;
-      }
-      return power;
-    });
+    addPowerList = convertIncludedPowers(powers);
   }
   let addQualityList;
   if (xmlMetatype.qualities !== undefined) {
@@ -236,7 +234,7 @@ const convertBaseMetatype = function (
   }
   let forbiddenQualityList;
   if (xmlMetatype.qualityrestriction !== undefined) {
-    let parsingQualityList = convertIncludedQualities(
+    const parsingQualityList = convertIncludedQualities(
       xmlMetatype.qualityrestriction
     );
     const parsedQualityList = ForbiddenQualityListSchema.safeParse(

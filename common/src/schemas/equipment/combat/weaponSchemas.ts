@@ -332,7 +332,7 @@ export const CustomisedWeaponSchema = zod
   .object({
     baseWeapon: WeaponSummarySchema,
     // This overrides baseWeapon accessories
-    accessories: zod.optional(UnlinkedAccessoryListSchema),
+    accessoryList: zod.optional(UnlinkedAccessoryListSchema),
     rating: zod.optional(zod.number()),
     customName: zod.optional(zod.string()),
   })

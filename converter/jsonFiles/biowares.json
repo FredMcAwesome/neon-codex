@@ -3224,7 +3224,7 @@
       "maximum": [1]
     },
     "bonus": {
-      "qualities": [
+      "qualityList": [
         {
           "name": "Photographic Memory"
         }
@@ -3696,7 +3696,7 @@
       "maximum": [1]
     },
     "bonus": {
-      "qualities": [
+      "qualityList": [
         {
           "name": "Poor Self Control (Thrill Seeker) (Dareadrenaline)"
         }

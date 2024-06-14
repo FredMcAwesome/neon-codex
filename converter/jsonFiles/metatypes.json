@@ -2205,7 +2205,15 @@
         "air": 4
       }
     },
-    "addPowerList": ["Search", "Natural Weapon"],
+    "addPowerList": [
+      {
+        "name": "Search"
+      },
+      {
+        "name": "Natural Weapon",
+        "selectText": "Kick: DV ({STR} + 2)P, AP +1, +1 Reach"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Low-Light Vision"
@@ -2327,11 +2335,23 @@
       }
     },
     "addPowerList": [
-      "Dual Natured",
-      "Natural Weapon",
-      "Armor",
-      "Venom",
-      "Guard"
+      {
+        "name": "Dual Natured"
+      },
+      {
+        "name": "Natural Weapon",
+        "selectText": "Bite: DV ({STR} + 1)P, AP -2, Reach -1"
+      },
+      {
+        "name": "Armor",
+        "selectText": "8"
+      },
+      {
+        "name": "Venom"
+      },
+      {
+        "name": "Guard"
+      }
     ],
     "addQualityList": [
       {
@@ -2446,7 +2466,16 @@
         "air": 1
       }
     },
-    "addPowerList": ["Concealment", "Vanishing"],
+    "addPowerList": [
+      {
+        "name": "Concealment",
+        "selectText": "Self-Only"
+      },
+      {
+        "name": "Vanishing",
+        "selectText": "Upon Death"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Astral Perception"
@@ -2558,7 +2587,18 @@
       }
     },
     "addWeaponList": ["Claws (Sasquatch)"],
-    "addPowerList": ["Dual Natured", "Mimicry", "Natural Weapon"],
+    "addPowerList": [
+      {
+        "name": "Dual Natured"
+      },
+      {
+        "name": "Mimicry"
+      },
+      {
+        "name": "Natural Weapon",
+        "selectText": "Claws: DV ({STR} + 1)P, AP -, +1 Reach"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Uneducated"
@@ -3512,7 +3552,11 @@
         "air": 1
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Goring Horns"
@@ -3620,7 +3664,11 @@
         "air": 1
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Goring Horns"
@@ -3734,7 +3782,11 @@
         "air": 1
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Goring Horns"
@@ -3845,7 +3897,11 @@
         "air": 1
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Goring Horns"
@@ -3959,7 +4015,11 @@
         "air": 1
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Goring Horns"
@@ -4082,7 +4142,11 @@
         "air": 1
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Goring Horns"
@@ -4196,7 +4260,11 @@
         "air": 1
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Goring Horns"
@@ -4313,7 +4381,11 @@
         "air": 1
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Goring Horns"
@@ -4434,7 +4506,11 @@
         "air": 1
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Goring Horns"
@@ -4555,7 +4631,11 @@
         "air": 1
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Goring Horns"
@@ -4682,7 +4762,11 @@
         "air": 4
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Goring Horns"
@@ -4809,7 +4893,11 @@
         "air": 4
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Goring Horns"
@@ -4936,7 +5024,11 @@
         "air": 1
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Goring Horns"
@@ -5044,7 +5136,11 @@
         "air": 1
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Goring Horns"
@@ -5158,7 +5254,11 @@
         "air": 1
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Goring Horns"
@@ -5266,7 +5366,11 @@
         "air": 1
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Goring Horns"
@@ -5377,7 +5481,11 @@
         "air": 1
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Goring Horns"
@@ -5488,7 +5596,11 @@
         "air": 1
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Goring Horns"
@@ -5607,7 +5719,11 @@
         "air": 1
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Goring Horns"
@@ -5725,7 +5841,11 @@
         "air": 1
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Goring Horns"
@@ -5840,7 +5960,11 @@
         "air": 1
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Goring Horns"
@@ -5955,7 +6079,11 @@
         "air": 1
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Goring Horns"
@@ -6190,7 +6318,11 @@
       }
     },
     "addWeaponList": ["Bite (Canine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Low-Light Vision"
@@ -6302,7 +6434,11 @@
       }
     },
     "addWeaponList": ["Bite (Canine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Shiva Arms (Pair)"
@@ -6420,7 +6556,11 @@
       }
     },
     "addWeaponList": ["Bite (Canine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Low-Light Vision"
@@ -6532,7 +6672,11 @@
       }
     },
     "addWeaponList": ["Bite (Canine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Low-Light Vision"
@@ -6647,7 +6791,11 @@
       }
     },
     "addWeaponList": ["Bite (Canine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Low-Light Vision"
@@ -6771,7 +6919,11 @@
       }
     },
     "addWeaponList": ["Bite (Canine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Low-Light Vision"
@@ -6886,7 +7038,11 @@
       }
     },
     "addWeaponList": ["Bite (Canine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Low-Light Vision"
@@ -7004,7 +7160,11 @@
       }
     },
     "addWeaponList": ["Bite (Canine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Low-Light Vision"
@@ -7129,7 +7289,11 @@
       }
     },
     "addWeaponList": ["Bite (Canine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Low-Light Vision"
@@ -7254,7 +7418,11 @@
       }
     },
     "addWeaponList": ["Bite (Canine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Low-Light Vision"
@@ -7385,7 +7553,11 @@
       }
     },
     "addWeaponList": ["Bite (Canine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Low-Light Vision"
@@ -7516,7 +7688,11 @@
       }
     },
     "addWeaponList": ["Bite (Canine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Low-Light Vision"
@@ -7647,7 +7823,11 @@
       }
     },
     "addWeaponList": ["Bite (Canine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Low-Light Vision"
@@ -7766,7 +7946,11 @@
       }
     },
     "addWeaponList": ["Bite (Canine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -7884,7 +8068,11 @@
       }
     },
     "addWeaponList": ["Bite (Canine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -7996,7 +8184,11 @@
       }
     },
     "addWeaponList": ["Bite (Canine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -8111,7 +8303,11 @@
       }
     },
     "addWeaponList": ["Bite (Canine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -8226,7 +8422,11 @@
       }
     },
     "addWeaponList": ["Bite (Canine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Thermographic Vision"
@@ -8352,7 +8552,11 @@
       }
     },
     "addWeaponList": ["Bite (Canine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Thermographic Vision"
@@ -8481,7 +8685,11 @@
       }
     },
     "addWeaponList": ["Bite (Canine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Thermographic Vision"
@@ -8607,7 +8815,11 @@
       }
     },
     "addWeaponList": ["Bite (Canine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Thermographic Vision"
@@ -8733,7 +8945,11 @@
       }
     },
     "addWeaponList": ["Bite (Canine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -8980,7 +9196,11 @@
         "air": 4
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -9088,7 +9308,11 @@
         "air": 4
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -9202,7 +9426,11 @@
         "air": 4
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -9313,7 +9541,11 @@
         "air": 4
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -9427,7 +9659,11 @@
         "air": 4
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Low-Light Vision"
@@ -9550,7 +9786,11 @@
         "air": 4
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -9664,7 +9904,11 @@
         "air": 4
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -9781,7 +10025,11 @@
         "air": 4
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -9902,7 +10150,11 @@
         "air": 4
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -10023,7 +10275,11 @@
         "air": 4
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -10276,7 +10532,11 @@
         "air": 4
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Resistance to Pathogens"
@@ -10396,7 +10656,11 @@
         "air": 4
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Low-Light Vision"
@@ -10507,7 +10771,11 @@
         "air": 4
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Low-Light Vision"
@@ -10621,7 +10889,11 @@
         "air": 4
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Low-Light Vision"
@@ -10732,7 +11004,11 @@
         "air": 4
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -10846,7 +11122,11 @@
         "air": 4
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Low-Light Vision"
@@ -10960,7 +11240,11 @@
         "air": 4
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Thermographic Vision"
@@ -11082,7 +11366,11 @@
         "air": 4
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -11203,7 +11491,11 @@
         "air": 4
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -11321,7 +11613,11 @@
         "air": 4
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -11436,7 +11732,11 @@
         "air": 4
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Goring Horns"
@@ -11677,7 +11977,11 @@
       }
     },
     "addWeaponList": ["Bite (Falconine Form)", "Talons (Falconine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Hawk Eye"
@@ -11786,7 +12090,11 @@
       }
     },
     "addWeaponList": ["Bite (Falconine Form)", "Talons (Falconine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Hawk Eye"
@@ -11901,7 +12209,11 @@
       }
     },
     "addWeaponList": ["Bite (Falconine Form)", "Talons (Falconine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Hawk Eye"
@@ -12013,7 +12325,11 @@
       }
     },
     "addWeaponList": ["Bite (Falconine Form)", "Talons (Falconine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Low-Light Vision"
@@ -12128,7 +12444,11 @@
       }
     },
     "addWeaponList": ["Bite (Falconine Form)", "Talons (Falconine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Low-Light Vision"
@@ -12252,7 +12572,11 @@
       }
     },
     "addWeaponList": ["Bite (Falconine Form)", "Talons (Falconine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Low-Light Vision"
@@ -12367,7 +12691,11 @@
       }
     },
     "addWeaponList": ["Bite (Falconine Form)", "Talons (Falconine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Hawk Eye"
@@ -12485,7 +12813,11 @@
       }
     },
     "addWeaponList": ["Bite (Falconine Form)", "Talons (Falconine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Thermographic Vision"
@@ -12607,7 +12939,11 @@
       }
     },
     "addWeaponList": ["Bite (Falconine Form)", "Talons (Falconine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Thermographic Vision"
@@ -12729,7 +13065,11 @@
       }
     },
     "addWeaponList": ["Bite (Falconine Form)", "Talons (Falconine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Hawk Eye"
@@ -12857,7 +13197,11 @@
       }
     },
     "addWeaponList": ["Bite (Falconine Form)", "Talons (Falconine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Hawk Eye"
@@ -12988,7 +13332,11 @@
       }
     },
     "addWeaponList": ["Bite (Falconine Form)", "Talons (Falconine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Resistance to Pathogens"
@@ -13116,7 +13464,11 @@
       }
     },
     "addWeaponList": ["Bite (Falconine Form)", "Talons (Falconine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Hawk Eye"
@@ -13228,7 +13580,11 @@
       }
     },
     "addWeaponList": ["Bite (Falconine Form)", "Talons (Falconine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Fangs"
@@ -13346,7 +13702,11 @@
       }
     },
     "addWeaponList": ["Bite (Falconine Form)", "Talons (Falconine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Hawk Eye"
@@ -13458,7 +13818,11 @@
       }
     },
     "addWeaponList": ["Bite (Falconine Form)", "Talons (Falconine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Hawk Eye"
@@ -13573,7 +13937,11 @@
       }
     },
     "addWeaponList": ["Bite (Falconine Form)", "Talons (Falconine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Hawk Eye"
@@ -13688,7 +14056,11 @@
       }
     },
     "addWeaponList": ["Bite (Falconine Form)", "Talons (Falconine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Hawk Eye"
@@ -13811,7 +14183,11 @@
       }
     },
     "addWeaponList": ["Bite (Falconine Form)", "Talons (Falconine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Hawk Eye"
@@ -13933,7 +14309,11 @@
       }
     },
     "addWeaponList": ["Bite (Falconine Form)", "Talons (Falconine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Hawk Eye"
@@ -14052,7 +14432,11 @@
       }
     },
     "addWeaponList": ["Bite (Falconine Form)", "Talons (Falconine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Hawk Eye"
@@ -14171,7 +14555,11 @@
       }
     },
     "addWeaponList": ["Bite (Falconine Form)", "Talons (Falconine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Goring Horns"
@@ -14412,7 +14800,11 @@
       }
     },
     "addWeaponList": ["Bite (Leonine Form)", "Claws +1"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -14527,7 +14919,11 @@
       }
     },
     "addWeaponList": ["Bite (Leonine Form)", "Claws +1"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -14648,7 +15044,11 @@
       }
     },
     "addWeaponList": ["Bite (Leonine Form)", "Claws +1"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -14763,7 +15163,11 @@
       }
     },
     "addWeaponList": ["Bite (Leonine Form)", "Claws +1"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -14881,7 +15285,11 @@
       }
     },
     "addWeaponList": ["Bite (Leonine Form)", "Claws +1"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -15008,7 +15416,11 @@
       }
     },
     "addWeaponList": ["Bite (Leonine Form)", "Claws +1"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -15126,7 +15538,11 @@
       }
     },
     "addWeaponList": ["Bite (Leonine Form)", "Claws +1"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -15247,7 +15663,11 @@
       }
     },
     "addWeaponList": ["Bite (Leonine Form)", "Claws +1"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -15375,7 +15795,11 @@
       }
     },
     "addWeaponList": ["Bite (Leonine Form)", "Claws +1"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -15503,7 +15927,11 @@
       }
     },
     "addWeaponList": ["Bite (Leonine Form)", "Claws +1"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -15637,7 +16065,11 @@
       }
     },
     "addWeaponList": ["Bite (Leonine Form)", "Claws +1"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -15764,7 +16196,11 @@
       }
     },
     "addWeaponList": ["Bite (Leonine Form)", "Claws +1"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -15891,7 +16327,11 @@
       }
     },
     "addWeaponList": ["Bite (Leonine Form)", "Claws +1"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -16006,7 +16446,11 @@
       }
     },
     "addWeaponList": ["Bite (Leonine Form)", "Claws +1"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Fangs"
@@ -16124,7 +16568,11 @@
       }
     },
     "addWeaponList": ["Bite (Leonine Form)", "Claws +1"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -16239,7 +16687,11 @@
       }
     },
     "addWeaponList": ["Bite (Leonine Form)", "Claws +1"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -16357,7 +16809,11 @@
       }
     },
     "addWeaponList": ["Bite (Leonine Form)", "Claws +1"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -16475,7 +16931,11 @@
       }
     },
     "addWeaponList": ["Bite (Leonine Form)", "Claws +1"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -16604,7 +17064,11 @@
       }
     },
     "addWeaponList": ["Bite (Leonine Form)", "Claws +1"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -16736,7 +17200,11 @@
       }
     },
     "addWeaponList": ["Bite (Leonine Form)", "Claws +1"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -16861,7 +17329,11 @@
       }
     },
     "addWeaponList": ["Bite (Leonine Form)", "Claws +1"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -16986,7 +17458,11 @@
       }
     },
     "addWeaponList": ["Bite (Leonine Form)", "Claws +1"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -17230,7 +17706,11 @@
       }
     },
     "addWeaponList": ["Bite (Lupine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Vomeronasal Organ"
@@ -17345,7 +17825,11 @@
       }
     },
     "addWeaponList": ["Bite (Lupine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Vomeronasal Organ"
@@ -17466,7 +17950,11 @@
       }
     },
     "addWeaponList": ["Bite (Lupine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Vomeronasal Organ"
@@ -17581,7 +18069,11 @@
       }
     },
     "addWeaponList": ["Bite (Lupine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Vomeronasal Organ"
@@ -17699,7 +18191,11 @@
       }
     },
     "addWeaponList": ["Bite (Lupine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Vomeronasal Organ"
@@ -17826,7 +18322,11 @@
       }
     },
     "addWeaponList": ["Bite (Lupine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Vomeronasal Organ"
@@ -17944,7 +18444,11 @@
       }
     },
     "addWeaponList": ["Bite (Lupine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Vomeronasal Organ"
@@ -18065,7 +18569,11 @@
       }
     },
     "addWeaponList": ["Bite (Lupine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Vomeronasal Organ"
@@ -18193,7 +18701,11 @@
       }
     },
     "addWeaponList": ["Bite (Lupine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Vomeronasal Organ"
@@ -18324,7 +18836,11 @@
       }
     },
     "addWeaponList": ["Bite (Lupine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Vomeronasal Organ"
@@ -18461,7 +18977,11 @@
       }
     },
     "addWeaponList": ["Bite (Lupine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Vomeronasal Organ"
@@ -18595,7 +19115,11 @@
       }
     },
     "addWeaponList": ["Bite (Lupine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Vomeronasal Organ"
@@ -18729,7 +19253,11 @@
       }
     },
     "addWeaponList": ["Bite (Lupine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Vomeronasal Organ"
@@ -18844,7 +19372,11 @@
       }
     },
     "addWeaponList": ["Bite (Lupine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Vomeronasal Organ"
@@ -18962,7 +19494,11 @@
       }
     },
     "addWeaponList": ["Bite (Lupine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Vomeronasal Organ"
@@ -19077,7 +19613,11 @@
       }
     },
     "addWeaponList": ["Bite (Lupine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Vomeronasal Organ"
@@ -19195,7 +19735,11 @@
       }
     },
     "addWeaponList": ["Bite (Lupine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Vomeronasal Organ"
@@ -19313,7 +19857,11 @@
       }
     },
     "addWeaponList": ["Bite (Lupine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Vomeronasal Organ"
@@ -19442,7 +19990,11 @@
       }
     },
     "addWeaponList": ["Bite (Lupine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Vomeronasal Organ"
@@ -19574,7 +20126,11 @@
       }
     },
     "addWeaponList": ["Bite (Lupine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Vomeronasal Organ"
@@ -19699,7 +20255,11 @@
       }
     },
     "addWeaponList": ["Bite (Lupine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Vomeronasal Organ"
@@ -19824,7 +20384,11 @@
       }
     },
     "addWeaponList": ["Bite (Lupine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Vomeronasal Organ"
@@ -20068,7 +20632,11 @@
       }
     },
     "addWeaponList": ["Bite (Pantherine Form)", "Claws +2"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -20183,7 +20751,11 @@
       }
     },
     "addWeaponList": ["Bite (Pantherine Form)", "Claws +2"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -20304,7 +20876,11 @@
       }
     },
     "addWeaponList": ["Bite (Pantherine Form)", "Claws +2"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -20419,7 +20995,11 @@
       }
     },
     "addWeaponList": ["Bite (Pantherine Form)", "Claws +2"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -20537,7 +21117,11 @@
       }
     },
     "addWeaponList": ["Bite (Pantherine Form)", "Claws +2"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -20664,7 +21248,11 @@
       }
     },
     "addWeaponList": ["Bite (Pantherine Form)", "Claws +2"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -20782,7 +21370,11 @@
       }
     },
     "addWeaponList": ["Bite (Pantherine Form)", "Claws +2"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -20903,7 +21495,11 @@
       }
     },
     "addWeaponList": ["Bite (Pantherine Form)", "Claws +2"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -21031,7 +21627,11 @@
       }
     },
     "addWeaponList": ["Bite (Pantherine Form)", "Claws +2"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -21159,7 +21759,11 @@
       }
     },
     "addWeaponList": ["Bite (Pantherine Form)", "Claws +2"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -21293,7 +21897,11 @@
       }
     },
     "addWeaponList": ["Bite (Pantherine Form)", "Claws +2"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -21427,7 +22035,11 @@
       }
     },
     "addWeaponList": ["Bite (Pantherine Form)", "Claws +2"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -21561,7 +22173,11 @@
       }
     },
     "addWeaponList": ["Bite (Pantherine Form)", "Claws +2"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -21676,7 +22292,11 @@
       }
     },
     "addWeaponList": ["Bite (Pantherine Form)", "Claws +2"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -21794,7 +22414,11 @@
       }
     },
     "addWeaponList": ["Bite (Pantherine Form)", "Claws +2"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -21909,7 +22533,11 @@
       }
     },
     "addWeaponList": ["Bite (Pantherine Form)", "Claws +2"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -22027,7 +22655,11 @@
       }
     },
     "addWeaponList": ["Bite (Pantherine Form)", "Claws +2"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -22145,7 +22777,11 @@
       }
     },
     "addWeaponList": ["Bite (Pantherine Form)", "Claws +2"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -22274,7 +22910,11 @@
       }
     },
     "addWeaponList": ["Bite (Pantherine Form)", "Claws +2"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -22402,7 +23042,11 @@
       }
     },
     "addWeaponList": ["Bite (Pantherine Form)", "Claws +2"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -22527,7 +23171,11 @@
       }
     },
     "addWeaponList": ["Bite (Pantherine Form)", "Claws +2"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -22652,7 +23300,11 @@
       }
     },
     "addWeaponList": ["Bite (Pantherine Form)", "Claws +2"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -22896,7 +23548,11 @@
       }
     },
     "addWeaponList": ["Bite (Tigrine Form)", "Claws +1 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -23011,7 +23667,11 @@
       }
     },
     "addWeaponList": ["Bite (Tigrine Form)", "Claws +1 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -23132,7 +23792,11 @@
       }
     },
     "addWeaponList": ["Bite (Tigrine Form)", "Claws +1 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -23247,7 +23911,11 @@
       }
     },
     "addWeaponList": ["Bite (Tigrine Form)", "Claws +1 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -23365,7 +24033,11 @@
       }
     },
     "addWeaponList": ["Bite (Tigrine Form)", "Claws +1 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -23492,7 +24164,11 @@
       }
     },
     "addWeaponList": ["Bite (Tigrine Form)", "Claws +1 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -23610,7 +24286,11 @@
       }
     },
     "addWeaponList": ["Bite (Tigrine Form)", "Claws +1 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -23731,7 +24411,11 @@
       }
     },
     "addWeaponList": ["Bite (Tigrine Form)", "Claws +1 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -23859,7 +24543,11 @@
       }
     },
     "addWeaponList": ["Bite (Tigrine Form)", "Claws +1 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -23987,7 +24675,11 @@
       }
     },
     "addWeaponList": ["Bite (Tigrine Form)", "Claws +1 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -24121,7 +24813,11 @@
       }
     },
     "addWeaponList": ["Bite (Tigrine Form)", "Claws +1 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -24252,7 +24948,11 @@
       }
     },
     "addWeaponList": ["Bite (Tigrine Form)", "Claws +1 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -24386,7 +25086,11 @@
       }
     },
     "addWeaponList": ["Bite (Tigrine Form)", "Claws +1 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -24501,7 +25205,11 @@
       }
     },
     "addWeaponList": ["Bite (Tigrine Form)", "Claws +1 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -24619,7 +25327,11 @@
       }
     },
     "addWeaponList": ["Bite (Tigrine Form)", "Claws +1 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -24734,7 +25446,11 @@
       }
     },
     "addWeaponList": ["Bite (Tigrine Form)", "Claws +1 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -24852,7 +25568,11 @@
       }
     },
     "addWeaponList": ["Bite (Tigrine Form)", "Claws +1 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -24970,7 +25690,11 @@
       }
     },
     "addWeaponList": ["Bite (Tigrine Form)", "Claws +1 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -25099,7 +25823,11 @@
       }
     },
     "addWeaponList": ["Bite (Tigrine Form)", "Claws +1 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -25227,7 +25955,11 @@
       }
     },
     "addWeaponList": ["Bite (Tigrine Form)", "Claws +1 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -25352,7 +26084,11 @@
       }
     },
     "addWeaponList": ["Bite (Tigrine Form)", "Claws +1 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -25477,7 +26213,11 @@
       }
     },
     "addWeaponList": ["Bite (Tigrine Form)", "Claws +1 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Balance Receptor"
@@ -25721,7 +26461,11 @@
       }
     },
     "addWeaponList": ["Bite (Ursine Form)", "Claws +3 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -25839,7 +26583,11 @@
       }
     },
     "addWeaponList": ["Bite (Ursine Form)", "Claws +3 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -25963,7 +26711,11 @@
       }
     },
     "addWeaponList": ["Bite (Ursine Form)", "Claws +3 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -26081,7 +26833,11 @@
       }
     },
     "addWeaponList": ["Bite (Ursine Form)", "Claws +3 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -26202,7 +26958,11 @@
       }
     },
     "addWeaponList": ["Bite (Ursine Form)", "Claws +3 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -26329,7 +27089,11 @@
       }
     },
     "addWeaponList": ["Bite (Ursine Form)", "Claws +3 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -26450,7 +27214,11 @@
       }
     },
     "addWeaponList": ["Bite (Ursine Form)", "Claws +3 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -26574,7 +27342,11 @@
       }
     },
     "addWeaponList": ["Bite (Ursine Form)", "Claws +3 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -26705,7 +27477,11 @@
       }
     },
     "addWeaponList": ["Bite (Ursine Form)", "Claws +3 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -26839,7 +27615,11 @@
       }
     },
     "addWeaponList": ["Bite (Ursine Form)", "Claws +3 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -26979,7 +27759,11 @@
       }
     },
     "addWeaponList": ["Bite (Ursine Form)", "Claws +3 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -27116,7 +27900,11 @@
       }
     },
     "addWeaponList": ["Bite (Ursine Form)", "Claws +3 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -27253,7 +28041,11 @@
       }
     },
     "addWeaponList": ["Bite (Ursine Form)", "Claws +3 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -27371,7 +28163,11 @@
       }
     },
     "addWeaponList": ["Bite (Ursine Form)", "Claws +3 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -27492,7 +28288,11 @@
       }
     },
     "addWeaponList": ["Bite (Ursine Form)", "Claws +3 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -27610,7 +28410,11 @@
       }
     },
     "addWeaponList": ["Bite (Ursine Form)", "Claws +3 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -27731,7 +28535,11 @@
       }
     },
     "addWeaponList": ["Bite (Ursine Form)", "Claws +3 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -27852,7 +28660,11 @@
       }
     },
     "addWeaponList": ["Bite (Ursine Form)", "Claws +3 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -27984,7 +28796,11 @@
       }
     },
     "addWeaponList": ["Bite (Ursine Form)", "Claws +3 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -28115,7 +28931,11 @@
       }
     },
     "addWeaponList": ["Bite (Ursine Form)", "Claws +3 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -28243,7 +29063,11 @@
       }
     },
     "addWeaponList": ["Bite (Ursine Form)", "Claws +3 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -28371,7 +29195,11 @@
       }
     },
     "addWeaponList": ["Bite (Ursine Form)", "Claws +3 (reach)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -28618,7 +29446,11 @@
       }
     },
     "addWeaponList": ["Bite (Vulpine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -28736,7 +29568,11 @@
       }
     },
     "addWeaponList": ["Bite (Vulpine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -28860,7 +29696,11 @@
       }
     },
     "addWeaponList": ["Bite (Vulpine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -28978,7 +29818,11 @@
       }
     },
     "addWeaponList": ["Bite (Vulpine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -29099,7 +29943,11 @@
       }
     },
     "addWeaponList": ["Bite (Vulpine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -29226,7 +30074,11 @@
       }
     },
     "addWeaponList": ["Bite (Vulpine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -29347,7 +30199,11 @@
       }
     },
     "addWeaponList": ["Bite (Vulpine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -29471,7 +30327,11 @@
       }
     },
     "addWeaponList": ["Bite (Vulpine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -29602,7 +30462,11 @@
       }
     },
     "addWeaponList": ["Bite (Vulpine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -29736,7 +30600,11 @@
       }
     },
     "addWeaponList": ["Bite (Vulpine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -29876,7 +30744,11 @@
       }
     },
     "addWeaponList": ["Bite (Vulpine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -30013,7 +30885,11 @@
       }
     },
     "addWeaponList": ["Bite (Vulpine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -30150,7 +31026,11 @@
       }
     },
     "addWeaponList": ["Bite (Vulpine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -30268,7 +31148,11 @@
       }
     },
     "addWeaponList": ["Bite (Vulpine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -30389,7 +31273,11 @@
       }
     },
     "addWeaponList": ["Bite (Vulpine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -30507,7 +31395,11 @@
       }
     },
     "addWeaponList": ["Bite (Vulpine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -30628,7 +31520,11 @@
       }
     },
     "addWeaponList": ["Bite (Vulpine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -30749,7 +31645,11 @@
       }
     },
     "addWeaponList": ["Bite (Vulpine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -30881,7 +31781,11 @@
       }
     },
     "addWeaponList": ["Bite (Vulpine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -31012,7 +31916,11 @@
       }
     },
     "addWeaponList": ["Bite (Vulpine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -31140,7 +32048,11 @@
       }
     },
     "addWeaponList": ["Bite (Vulpine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -31268,7 +32180,11 @@
       }
     },
     "addWeaponList": ["Bite (Vulpine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Broadened Auditory System (Ultrasound)"
@@ -31515,7 +32431,11 @@
       }
     },
     "addWeaponList": ["Bite (Phocine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -31638,7 +32558,11 @@
         "air": 1
       }
     },
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -31768,7 +32692,11 @@
       }
     },
     "addWeaponList": ["Bite (Phocine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -31892,7 +32820,11 @@
       }
     },
     "addWeaponList": ["Bite (Phocine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -32016,7 +32948,11 @@
       }
     },
     "addWeaponList": ["Bite (Phocine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -32149,7 +33085,11 @@
       }
     },
     "addWeaponList": ["Bite (Phocine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -32276,7 +33216,11 @@
       }
     },
     "addWeaponList": ["Bite (Phocine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -32406,7 +33350,11 @@
       }
     },
     "addWeaponList": ["Bite (Phocine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -32543,7 +33491,11 @@
       }
     },
     "addWeaponList": ["Bite (Phocine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -32680,7 +33632,11 @@
       }
     },
     "addWeaponList": ["Bite (Phocine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -32823,7 +33779,11 @@
       }
     },
     "addWeaponList": ["Bite (Phocine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -32966,7 +33926,11 @@
       }
     },
     "addWeaponList": ["Bite (Phocine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -33103,7 +34067,11 @@
       }
     },
     "addWeaponList": ["Bite (Phocine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -33224,7 +34192,11 @@
       }
     },
     "addWeaponList": ["Bite (Phocine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -33351,7 +34323,11 @@
       }
     },
     "addWeaponList": ["Bite (Phocine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -33475,7 +34451,11 @@
       }
     },
     "addWeaponList": ["Bite (Phocine Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -33602,7 +34582,11 @@
       }
     },
     "addWeaponList": ["Bite (Seal Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Low-Light Vision"
@@ -33726,7 +34710,11 @@
       }
     },
     "addWeaponList": ["Bite (Seal Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -33870,7 +34858,11 @@
       }
     },
     "addWeaponList": ["Bite (Seal Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -34013,7 +35005,11 @@
       }
     },
     "addWeaponList": ["Bite (Seal Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -34153,7 +35149,11 @@
       }
     },
     "addWeaponList": ["Bite (Seal Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"
@@ -34293,7 +35293,11 @@
       }
     },
     "addWeaponList": ["Bite (Seal Form)"],
-    "addPowerList": ["Shift (Metahuman Form)"],
+    "addPowerList": [
+      {
+        "name": "Shift (Metahuman Form)"
+      }
+    ],
     "addQualityList": [
       {
         "name": "Keen-Eared"

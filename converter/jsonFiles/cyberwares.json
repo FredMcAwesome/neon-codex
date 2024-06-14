@@ -4769,7 +4769,7 @@
       "maximum": [1]
     },
     "bonus": {
-      "qualities": [
+      "qualityList": [
         {
           "name": "Human-Looking"
         }

@@ -41,13 +41,13 @@ const CharacterSheet = function () {
       <div>Heritage: {data.heritage.name}</div>
       {Attributes(data.attributes)}
       {SpecialAttributes(data.specialAttributes)}
-      {Skills(data.skills, data.attributes, data.specialAttributes)}
-      {Qualities(data.qualities)}
-      {Weapons(data.weapons)}
-      {Armours(data.armours)}
-      {Gears(data.gears)}
-      {Augmentations(data.augmentations)}
-      {Vehicles(data.vehicles)}
+      {Skills(data.skillList, data.attributes, data.specialAttributes)}
+      {Qualities(data.qualityList)}
+      {Weapons(data.weaponList)}
+      {Armours(data.armourList)}
+      {Gears(data.gearList)}
+      {Augmentations(data.augmentationList)}
+      {Vehicles(data.vehicleList)}
       <div>Nuyen: {data.nuyen}</div>
       <div>Karma: {data.karmaPoints}</div>
     </div>

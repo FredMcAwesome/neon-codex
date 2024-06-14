@@ -491,7 +491,7 @@ const XmlQualitySingleSchema = zod.union([
   zod.string(),
 ]);
 
-const XmlQualitiesSingularSchema = zod
+const XmlQualityListSingularSchema = zod
   .object({
     quality: zod.union([
       zod.array(XmlQualitySingleSchema),
@@ -499,18 +499,18 @@ const XmlQualitiesSingularSchema = zod
     ]),
   })
   .strict();
-export type XmlQualitiesSingularType = zod.infer<
-  typeof XmlQualitiesSingularSchema
+export type XmlQualityListSingularType = zod.infer<
+  typeof XmlQualityListSingularSchema
 >;
 
-export const XmlQualitiesSchema = zod
+export const XmlQualityListSchema = zod
   .object({
     // one of either positive or negative must be defined
-    positive: zod.optional(XmlQualitiesSingularSchema),
-    negative: zod.optional(XmlQualitiesSingularSchema),
+    positive: zod.optional(XmlQualityListSingularSchema),
+    negative: zod.optional(XmlQualityListSingularSchema),
   })
   .strict();
-export type XmlQualitiesType = zod.infer<typeof XmlQualitiesSchema>;
+export type XmlQualityListType = zod.infer<typeof XmlQualityListSchema>;
 
 export const XmlPowerSchema = zod.union([
   zod
@@ -522,6 +522,8 @@ export const XmlPowerSchema = zod.union([
     .strict(),
   zod.string(),
 ]);
+const XmlPowerListSchema = zod.array(XmlPowerSchema);
+export type XmlPowerListType = zod.infer<typeof XmlPowerListSchema>;
 
 export const XmlDurationSchema = zod.union([
   zod.literal("I"),
@@ -533,6 +535,8 @@ export const XmlDurationSchema = zod.union([
   zod.literal("Permanent"),
   zod.literal("Always"),
   zod.literal("Special"),
+  // Extended Test
+  zod.literal("E"),
 ]);
 export type XmlDurationType = zod.infer<typeof XmlDurationSchema>;
 

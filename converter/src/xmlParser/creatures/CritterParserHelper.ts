@@ -5,7 +5,17 @@ import {
   critterTypeEnum,
   mathOperatorEnum,
 } from "@neon-codex/common/build/enums.js";
-import type { CritterRatingNonArrayType } from "@neon-codex/common/build/schemas/creatures/critterSchemas.js";
+import type {
+  CritterRatingNonArrayType,
+  IncludedComplexFormListType,
+  IncludedCritterPowerListType,
+} from "@neon-codex/common/build/schemas/creatures/critterSchemas.js";
+import type { XmlPowerListType } from "../common/ParserCommonDefines.js";
+import type {
+  CritterIncludedBiowareListType,
+  CritterIncludedComplexFormType,
+} from "./CritterParserSchemas.js";
+import type { BonusGenericListType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 const Rating = Critters;
 
 const ratingSemantics = Rating.createSemantics();
@@ -113,7 +123,7 @@ function convertRating(
       if (rating.option === "Variable") {
         return { option: critterAttributePowerEnum.Variable as const };
       }
-      return convertCritterPower(category);
+      return convertCritterPowerSource(category);
     } else if ("subnumbers" in rating) {
       return {
         subnumbers: rating.subnumbers.map((subrating) => {
@@ -125,7 +135,7 @@ function convertRating(
   return rating;
 }
 
-export function convertCritterPower(category: critterTypeEnum) {
+function convertCritterPowerSource(category: critterTypeEnum) {
   switch (category) {
     case critterTypeEnum.Spirits:
     case critterTypeEnum.InsectSpirits:
@@ -157,5 +167,70 @@ export function convertCritterPower(category: critterTypeEnum) {
       assert(false, `Unexpected Power with category: ${category}`);
   }
 }
+
+export const convertIncludedCritterPowers = function (
+  powers: XmlPowerListType
+): IncludedCritterPowerListType {
+  return powers.map((power) => {
+    if (typeof power !== "object") {
+      assert(power !== "");
+      return {
+        name: power,
+      };
+    }
+    let rating;
+    if (power._rating !== undefined) {
+      rating = parseInt(power._rating);
+      if (isNaN(rating)) {
+        assert(power._rating === "F", `Rating ${power._rating} is unexpected`);
+        rating = { power: true as const };
+      }
+    }
+    return {
+      name: power.xmltext,
+      selectText: power._select,
+      rating: rating,
+    };
+  });
+};
+
+export const convertIncludedBiowareList = function (
+  biowareList: CritterIncludedBiowareListType
+): BonusGenericListType {
+  return biowareList.map((bioware) => {
+    if (typeof bioware !== "object") {
+      assert(bioware !== "");
+      return {
+        name: bioware,
+      };
+    }
+    let rating;
+    if (bioware._rating !== undefined) {
+      rating = parseInt(bioware._rating);
+      assert(!isNaN(rating));
+    }
+    return {
+      name: bioware.xmltext,
+      rating: rating,
+    };
+  });
+};
+
+export const convertIncludedComplexForms = function (
+  complexFormList: CritterIncludedComplexFormType
+): IncludedComplexFormListType {
+  return complexFormList.map((complexForm) => {
+    if (typeof complexForm !== "object") {
+      assert(complexForm !== "");
+      return {
+        name: complexForm,
+      };
+    }
+    return {
+      name: complexForm.xmltext,
+      select: complexForm._select,
+    };
+  });
+};
 
 export { ratingSemantics as attributeSemantics };

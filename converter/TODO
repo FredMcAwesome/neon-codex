@@ -21,9 +21,9 @@ Still need passed through to frontend):
   - Traditions
   - Critters (Including spirits and sprites)
   - Critter Powers
+  - Complex Forms
 
 Other main priorities:
-  - Complex Forms
   - Contacts
   - Echoes
   - Marital Arts
@@ -33,14 +33,23 @@ Other main priorities:
   - Programs
   - Streams
 
-Other xmls to maybe implement:
+Other xmls to implement:
   - Actions
   - Life modules
   - Lifestyles
   - Packs
-  - References
-  - Settings
 
 Some xmls are better to just copy paste to an enum:
   - Licenses
   - Vessels
+
+Unused xmls (maybe referenced):
+  - Books
+  - Improvements
+  - Options
+  - References
+  - Settings
+  - Sheets
+  - Spirit Powers (duplicated by critter powers)
+  - Strings
+  - Tips

@@ -4,6 +4,7 @@ export const SkillSchema = zod
   .object({
     // id: zod.string(),
     name: zod.string(),
+    isKnowledgeSkill: zod.boolean(),
     description: zod.string(),
     category: zod.nativeEnum(skillCategoryEnum),
     attribute: zod.nativeEnum(attributeTypeEnum),
@@ -20,7 +21,6 @@ export const SkillListSchema = zod.array(SkillSchema);
 export type SkillListType = zod.infer<typeof SkillListSchema>;
 
 export const CustomSkillSchema = SkillSchema.extend({
-  skillGroupPoints: zod.number(),
   skillPoints: zod.number(),
   karmaPoints: zod.number(),
   specialisationsSelected: zod.optional(zod.array(zod.string())),
@@ -28,3 +28,32 @@ export const CustomSkillSchema = SkillSchema.extend({
 export type CustomSkillType = zod.infer<typeof CustomSkillSchema>;
 export const CustomSkillListSchema = zod.array(CustomSkillSchema);
 export type CustomSkillListType = zod.infer<typeof CustomSkillListSchema>;
+
+export const CustomSkillGroupSchema = zod
+  .object({
+    name: zod.string(),
+    skillGroupPoints: zod.number(),
+    karmaPoints: zod.number(),
+  })
+  .strict();
+export type CustomSkillGroupType = zod.infer<typeof CustomSkillGroupSchema>;
+export const CustomSkillGroupListSchema = zod.array(CustomSkillGroupSchema);
+export type CustomSkillGroupListType = zod.infer<
+  typeof CustomSkillGroupListSchema
+>;
+
+export const CustomKnowledgeSkillSchema = zod
+  .object({
+    name: zod.string(),
+    description: zod.string(),
+    category: zod.nativeEnum(skillCategoryEnum),
+    attribute: zod.nativeEnum(attributeTypeEnum),
+    skillPoints: zod.number(),
+    karmaPoints: zod.number(),
+    specialisationsSelected: zod.optional(zod.array(zod.string())),
+  })
+  .strict();
+
+export type CustomKnowledgeSkillType = zod.infer<
+  typeof CustomKnowledgeSkillSchema
+>;

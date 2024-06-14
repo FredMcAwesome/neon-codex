@@ -7,7 +7,7 @@ import { BonusXmlWrappedSchema } from "../common/BonusParserSchemas.js";
 import {
   StringArrayOrStringSchema,
   XmlPowerSchema,
-  XmlQualitiesSchema,
+  XmlQualityListSchema,
 } from "../common/ParserCommonDefines.js";
 
 export type GenericXmlParsingType =
@@ -118,9 +118,9 @@ const BaseMetatypeXmlSubBonusSchema = zod
         .strict()
     ),
     // Included qualities
-    qualities: zod.optional(XmlQualitiesSchema),
+    qualities: zod.optional(XmlQualityListSchema),
     // Illegal qualities
-    qualityrestriction: zod.optional(XmlQualitiesSchema),
+    qualityrestriction: zod.optional(XmlQualityListSchema),
     source: zod.string(),
     page: zod.number(),
   })

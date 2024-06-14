@@ -19,8 +19,8 @@ import type {
   CategoryXmlListType,
   AugmentationXmlLimitType,
   xmlAllowGearType,
-  XmlQualitiesType,
-  XmlQualitiesSingularType,
+  XmlQualityListType,
+  XmlQualityListSingularType,
   XmlDurationType,
   SpellPowerXmlRangeType,
 } from "./ParserCommonDefines.js";
@@ -660,7 +660,9 @@ export const convertMovement = function (movement: XmlMovementType) {
   };
 };
 
-export const convertIncludedQualities = function (qualities: XmlQualitiesType) {
+export const convertIncludedQualities = function (
+  qualities: XmlQualityListType
+) {
   assert(
     !(qualities.positive === undefined && qualities.negative === undefined)
   );
@@ -683,7 +685,7 @@ export const convertIncludedQualities = function (qualities: XmlQualitiesType) {
 };
 
 const convertIncludedQuality = function (
-  qualitySingular: XmlQualitiesSingularType
+  qualitySingular: XmlQualityListSingularType
 ) {
   const qualityList = Array.isArray(qualitySingular.quality)
     ? qualitySingular.quality
@@ -713,6 +715,7 @@ export const convertDuration = function (duration: XmlDurationType) {
       return durationEnum.Permanent;
     case "Always":
       return durationEnum.Always;
+    case "E":
     case "Special":
       return durationEnum.Special;
   }
