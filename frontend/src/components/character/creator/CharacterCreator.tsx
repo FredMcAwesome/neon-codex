@@ -7,7 +7,10 @@ import { QualitiesSelect } from "./QualitiesSelect.js";
 import { SkillSelectList } from "./SkillsSelect.js";
 import { EquipmentSelect } from "./EquipmentSelect.js";
 import { trpc } from "../../../utils/trpc.js";
-import type { CustomSkillListType } from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
+import type {
+  CustomSkillGroupListType,
+  CustomSkillListType,
+} from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
 import type { EquipmentListType } from "@neon-codex/common/build/schemas/equipment/other/equipmentSchemas.js";
 import type {
   AttributesType,
@@ -74,9 +77,9 @@ const CharacterCreator = function () {
       talent: { type: talentCategoryEnum.Mundane },
     });
   const [karmaPoints, setKarmaPoints] = useState(25);
-  const [positiveQualitiesSelected, setPositiveQualitiesSelected] =
+  const [positiveQualityListSelected, setPositiveQualitiesSelected] =
     useState<QualitySelectedListType>([]);
-  const [negativeQualitiesSelected, setNegativeQualitiesSelected] =
+  const [negativeQualityListSelected, setNegativeQualitiesSelected] =
     useState<QualitySelectedListType>([]);
   const [skillPoints, setSkillPoints] = useState<SkillPointInfoType>({
     skillPoints: 0,
@@ -91,7 +94,6 @@ const CharacterCreator = function () {
     setNuyen(priorityResources);
   }, [priorityResources]);
 
-  // const skills = data !== undefined ? data : [];
   const [skillSelections, setSkillSelections] = useState<CustomSkillListType>(
     []
   );
@@ -101,13 +103,15 @@ const CharacterCreator = function () {
       skills.data.map((skill) => {
         return {
           ...skill,
-          skillGroupPoints: 0,
           skillPoints: 0,
           karmaPoints: 0,
         };
       })
     );
   }, [skills.data]);
+  // TODO: set skill group selections
+  const [skillGroupSelections, _setSkillGroupSelections] =
+    useState<CustomSkillGroupListType>([]);
   const [equipmentSelected, setEquipmentSelected] = useState<EquipmentListType>(
     {
       weapons: [],
@@ -236,9 +240,9 @@ const CharacterCreator = function () {
         <QualitiesSelect
           karmaPoints={karmaPoints}
           setKarmaPoints={onKarmaPointsChanged}
-          positiveQualitiesSelected={positiveQualitiesSelected}
+          positiveQualitiesSelected={positiveQualityListSelected}
           setPositiveQualitiesSelected={onPositiveQualitiesSelectedChanged}
-          negativeQualitiesSelected={negativeQualitiesSelected}
+          negativeQualitiesSelected={negativeQualityListSelected}
           setNegativeQualitiesSelected={onNegativeQualitiesSelectedChanged}
         />
       );
@@ -270,8 +274,8 @@ const CharacterCreator = function () {
           attributeInfo={attributeInfo}
           specialAttributeInfo={specialAttributeInfo}
           karmaPoints={karmaPoints}
-          positiveQualitiesSelected={positiveQualitiesSelected}
-          negativeQualitiesSelected={negativeQualitiesSelected}
+          positiveQualitiesSelected={positiveQualityListSelected}
+          negativeQualitiesSelected={negativeQualityListSelected}
           skillPoints={skillPoints}
           skillSelections={skillSelections}
           equipmentSelected={equipmentSelected}
@@ -309,9 +313,10 @@ const CharacterCreator = function () {
             heritageInfo: priorityHeritage,
             attributeInfo: attributeInfo,
             specialAttributeInfo: specialAttributeInfo,
-            positiveQualitiesSelected: positiveQualitiesSelected,
-            negativeQualitiesSelected: negativeQualitiesSelected,
+            positiveQualityListSelected: positiveQualityListSelected,
+            negativeQualityListSelected: negativeQualityListSelected,
             skillSelections: skillSelections,
+            skillGroupSelections: skillGroupSelections,
             equipmentSelected: equipmentSelected,
             karmaPoints: karmaPoints,
             nuyen: nuyen,

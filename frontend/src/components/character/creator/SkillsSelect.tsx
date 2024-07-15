@@ -36,7 +36,8 @@ export const SkillSelectList = function (props: IProps) {
   const setSkill = function (
     skill: CustomSkillType,
     skillPoints: number,
-    skillGroupPoints: number
+    // TODO: implement skill group points
+    _skillGroupPoints: number
   ) {
     const newSkillSelections = [...props.skillSelections];
     const skillPointItems = props.skillPointItems;
@@ -45,10 +46,10 @@ export const SkillSelectList = function (props: IProps) {
     );
     const foundSkill = newSkillSelections[foundSkillIndex];
     skillPointItems.skillPoints -= skillPoints - foundSkill.skillPoints;
-    skillPointItems.skillGroupPoints -=
-      skillGroupPoints - foundSkill.skillGroupPoints;
+    // skillPointItems.skillGroupPoints -=
+    //   skillGroupPoints - foundSkill.skillGroupPoints;
     newSkillSelections[foundSkillIndex].skillPoints = skillPoints;
-    newSkillSelections[foundSkillIndex].skillGroupPoints = skillGroupPoints;
+    // newSkillSelections[foundSkillIndex].skillGroupPoints = skillGroupPoints;
     props.setSkillPoints(skillPointItems);
     props.setSkillSelections(newSkillSelections);
   };
@@ -145,11 +146,12 @@ const SkillSelect = function ({
 }: ISkillSelectProp) {
   const escapedName = skill.name;
   const pointsInvested = skill.skillPoints;
-  const groupPointsInvested = skill.skillGroupPoints;
+  // TODO: fix
+  // const groupPointsInvested = skill.skillGroupPoints;
   return (
     <div>
       <label htmlFor={escapedName}>{escapedName}</label>
-      <Dropdown
+      {/* <Dropdown
         options={skillOptions.skillPointOptions}
         value={pointsInvested === 0 ? "" : pointsInvested.toString()}
         className={escapedName}
@@ -161,10 +163,10 @@ const SkillSelect = function ({
             onChange(skill, parseInt(arg.value), groupPointsInvested);
           }
         }}
-      />
+      /> */}
       <Dropdown
         options={skillOptions.skillGroupPointOptions}
-        value={groupPointsInvested === 0 ? "" : groupPointsInvested.toString()}
+        // value={groupPointsInvested === 0 ? "" : groupPointsInvested.toString()}
         className={escapedName}
         placeholder={""}
         onChange={(arg) => {
@@ -264,7 +266,9 @@ const SkillList = function ({
         .map((skill) => {
           const skillOptions = getSkillOptions(
             skill.skillPoints,
-            skill.skillGroupPoints
+            // TODO: fix
+            // skill.skillGroupPoints
+            0
           );
           return (
             <SkillSelect

@@ -115,7 +115,7 @@ import {
   ActiveQualities,
   CustomisedQualities,
 } from "@neon-codex/database/build/models/rpg/activeTables/activeQualityModel.js";
-import { ActiveSkills } from "@neon-codex/database/build/models/rpg/activeTables/activeSkillModel.js";
+import { CustomisedSkills } from "@neon-codex/database/build/models/rpg/activeTables/activeSkillModel.js";
 import { CustomisedWeapons } from "@neon-codex/database/build/models/rpg/activeTables/customisedWeaponModel.js";
 import { CustomisedArmours } from "@neon-codex/database/build/models/rpg/activeTables/customisedArmourModel.js";
 import { WeaponAccessories } from "@neon-codex/database/build/models/rpg/equipment/combat/weaponAccessoryModel.js";
@@ -135,7 +135,7 @@ import { CustomisedAugmentations } from "@neon-codex/database/build/models/rpg/a
 import { VehicleModifications } from "@neon-codex/database/build/models/rpg/equipment/rigger/vehicleModificationModel.js";
 import { CustomisedVehicleModifications } from "@neon-codex/database/build/models/rpg/activeTables/activeVehicleModificationModel.js";
 import { CustomisedVehicles } from "@neon-codex/database/build/models/rpg/activeTables/customisedVehicleModel.js";
-import { ActiveSkillGroups } from "@neon-codex/database/build/models/rpg/activeTables/activeSkillGroupModel.js";
+import { CustomisedSkillGroups } from "@neon-codex/database/build/models/rpg/activeTables/activeSkillGroupModel.js";
 
 export async function getSkills() {
   const db = await init();
@@ -147,6 +147,7 @@ export async function getSkills() {
       skill.skillGroup === undefined ? undefined : skill.skillGroup.$.name;
     return {
       name: skill.name,
+      isKnowledgeSkill: skill.isKnowledgeSkill,
       description: skill.description,
       category: skill.category,
       attribute: skill.attribute,
@@ -965,8 +966,18 @@ const createCharacter = privateProcedure
         throw new Error("Heritage does not exist");
       }
     }
+    const character = new Characters({
+      name: "",
+      heritage: ref(Heritages, heritage),
+      priorities: opts.input.priorityInfo,
+      attributes: opts.input.attributeInfo,
+      specialAttributes: opts.input.specialAttributeInfo,
+      nuyen: opts.input.nuyen,
+      karmaPoints: opts.input.karmaPoints,
+    });
 
-    const skillList = [];
+    const characterReference = ref(character);
+
     for (const selectedSkill of opts.input.skillSelections) {
       const skill = await db.em.findOne(Skills, {
         name: selectedSkill.name,
@@ -974,17 +985,16 @@ const createCharacter = privateProcedure
       if (skill === null) {
         throw new Error("Skill does not exist");
       }
-      const activeSkill = new ActiveSkills(
+      const activeSkill = new CustomisedSkills(
+        characterReference,
         ref(skill),
         selectedSkill.skillPoints,
         selectedSkill.karmaPoints,
         selectedSkill.specialisationsSelected
       );
-
-      skillList.push(activeSkill);
+      db.em.persist(activeSkill);
     }
 
-    const skillGroupList = [];
     for (const selectedSkillGroup of opts.input.skillGroupSelections) {
       const skillGroup = await db.em.findOne(SkillGroups, {
         name: selectedSkillGroup.name,
@@ -992,16 +1002,15 @@ const createCharacter = privateProcedure
       if (skillGroup === null) {
         throw new Error("Skill Group does not exist");
       }
-      const activeSkillGroup = new ActiveSkillGroups(
+      const activeSkillGroup = new CustomisedSkillGroups(
+        characterReference,
         ref(skillGroup),
         selectedSkillGroup.skillGroupPoints,
         selectedSkillGroup.karmaPoints
       );
-
-      skillGroupList.push(activeSkillGroup);
+      db.em.persist(activeSkillGroup);
     }
 
-    const qualityList = [];
     const rawQualityList = opts.input.positiveQualityListSelected.concat(
       opts.input.negativeQualityListSelected
     );
@@ -1013,14 +1022,13 @@ const createCharacter = privateProcedure
         throw new Error("Quality does not exist");
       }
       const activeQuality = new CustomisedQualities(
+        characterReference,
         ref(quality),
         selectedQuality.rating
       );
-
-      qualityList.push(activeQuality);
+      db.em.persist(activeQuality);
     }
 
-    const weaponList = [];
     for (const unlinkedWeapon of opts.input.equipmentSelected.weapons) {
       const weapon = await db.em.findOne(Weapons, {
         name: unlinkedWeapon.name,
@@ -1028,7 +1036,11 @@ const createCharacter = privateProcedure
       if (weapon === null) {
         throw new Error("Weapon does not exist");
       }
-      const activeWeapon = new CustomisedWeapons(ref(weapon));
+      const activeWeapon = new CustomisedWeapons(
+        characterReference,
+        ref(weapon)
+      );
+      db.em.persist(activeWeapon);
       if (unlinkedWeapon.includedAccessoryList === undefined) {
         continue;
       }
@@ -1040,18 +1052,17 @@ const createCharacter = privateProcedure
           throw new Error("Weapon Accessory does not exist");
         }
         // TODO: confirm this cascades properly
-        new CustomisedWeaponAccessories(
-          ref(activeWeapon),
-          ref(accessory),
-          unlinkedAccessory.rating,
-          unlinkedAccessory.mount
+        db.em.persist(
+          new CustomisedWeaponAccessories(
+            ref(activeWeapon),
+            ref(accessory),
+            unlinkedAccessory.rating,
+            unlinkedAccessory.mount
+          )
         );
       }
-
-      weaponList.push(activeWeapon);
     }
 
-    const armourList = [];
     for (const unlinkedArmour of opts.input.equipmentSelected.armours) {
       const armour = await db.em.findOne(Armours, {
         name: unlinkedArmour.name,
@@ -1059,7 +1070,11 @@ const createCharacter = privateProcedure
       if (armour === null) {
         throw new Error("Armour does not exist");
       }
-      const activeArmour = new CustomisedArmours(ref(armour));
+      const activeArmour = new CustomisedArmours(
+        characterReference,
+        ref(armour)
+      );
+      db.em.persist(activeArmour);
       if (unlinkedArmour.includedMods === undefined) {
         continue;
       }
@@ -1071,17 +1086,16 @@ const createCharacter = privateProcedure
           throw new Error("Armour Mod does not exist");
         }
         // TODO: confirm this cascades properly
-        new CustomisedArmourModifications(
-          ref(activeArmour),
-          ref(mod),
-          unlinkedMod.rating
+        db.em.persist(
+          new CustomisedArmourModifications(
+            ref(activeArmour),
+            ref(mod),
+            unlinkedMod.rating
+          )
         );
       }
-
-      armourList.push(activeArmour);
     }
 
-    const gearList = [];
     for (const unlinkedGear of opts.input.equipmentSelected.gears) {
       const gear = await db.em.findOne(Gears, {
         name: unlinkedGear.name,
@@ -1090,7 +1104,7 @@ const createCharacter = privateProcedure
         throw new Error("Gear does not exist");
       }
       const activeGear = new CustomisedGears(ref(gear));
-
+      db.em.persist(activeGear);
       if (unlinkedGear.includedGearList === undefined) {
         continue;
       }
@@ -1102,13 +1116,10 @@ const createCharacter = privateProcedure
           throw new Error("Gear does not exist");
         }
         // TODO: confirm this cascades properly
-        new CustomisedGears(ref(childGear), ref(activeGear));
+        db.em.persist(new CustomisedGears(ref(childGear), ref(activeGear)));
       }
-
-      gearList.push(activeGear);
     }
 
-    const augmentationList = [];
     for (const unlinkedAugmentation of opts.input.equipmentSelected
       .augmentations) {
       const augmentation = await db.em.findOne(Augmentations, {
@@ -1118,7 +1129,7 @@ const createCharacter = privateProcedure
         throw new Error("Augmentation does not exist");
       }
       const activeAugmentation = new CustomisedAugmentations(ref(augmentation));
-
+      db.em.persist(activeAugmentation);
       if (unlinkedAugmentation.includedGearList === undefined) {
         continue;
       }
@@ -1130,13 +1141,12 @@ const createCharacter = privateProcedure
           throw new Error("Gear does not exist");
         }
         // TODO: confirm this cascades properly
-        new ActiveAugmentationGears(ref(gear), ref(activeAugmentation));
+        db.em.persist(
+          new ActiveAugmentationGears(ref(gear), ref(activeAugmentation))
+        );
       }
-
-      augmentationList.push(activeAugmentation);
     }
 
-    const vehicleList = [];
     for (const unlinkedVehicle of opts.input.equipmentSelected.vehicles) {
       const vehicle = await db.em.findOne(Vehicles, {
         name: unlinkedVehicle.name,
@@ -1144,7 +1154,11 @@ const createCharacter = privateProcedure
       if (vehicle === null) {
         throw new Error("Vehicle does not exist");
       }
-      const activeVehicle = new CustomisedVehicles(ref(vehicle));
+      const activeVehicle = new CustomisedVehicles(
+        characterReference,
+        ref(vehicle)
+      );
+      db.em.persist(activeVehicle);
       if (unlinkedVehicle.includedMods === undefined) {
         continue;
       }
@@ -1156,44 +1170,10 @@ const createCharacter = privateProcedure
           throw new Error("Vehicle Mod does not exist");
         }
         // TODO: confirm this cascades properly
-        new CustomisedVehicleModifications(ref(activeVehicle), ref(mod));
+        db.em.persist(
+          new CustomisedVehicleModifications(ref(activeVehicle), ref(mod))
+        );
       }
-
-      vehicleList.push(activeVehicle);
-    }
-
-    const character = new Characters({
-      name: "",
-      heritage: ref(Heritages, heritage),
-      priorities: opts.input.priorityInfo,
-      attributes: opts.input.attributeInfo,
-      specialAttributes: opts.input.specialAttributeInfo,
-      nuyen: opts.input.nuyen,
-      karmaPoints: opts.input.karmaPoints,
-    });
-    for (const selectedSkill of skillList) {
-      character.skills.add(selectedSkill);
-    }
-    for (const selectedSkillGroup of skillGroupList) {
-      character.skillGroups.add(selectedSkillGroup);
-    }
-    for (const selectedQuality of qualityList) {
-      character.qualities.add(selectedQuality);
-    }
-    for (const selectedWeapon of weaponList) {
-      character.weapons.add(selectedWeapon);
-    }
-    for (const selectedArmour of armourList) {
-      character.armours.add(selectedArmour);
-    }
-    for (const selectedGear of gearList) {
-      character.gears.add(selectedGear);
-    }
-    for (const selectedAugmentation of augmentationList) {
-      character.augmentations.add(selectedAugmentation);
-    }
-    for (const selectedVehicle of vehicleList) {
-      character.vehicles.add(selectedVehicle);
     }
     await db.em.persistAndFlush(character);
     // logger.log(JSON.stringify(character, null, 2));
@@ -1379,7 +1359,7 @@ const convertHeritageDBToDTO = async function (
 };
 
 const convertActiveSkillDBToDTO = async function (
-  activeSkillDB: ActiveSkills
+  activeSkillDB: CustomisedSkills
 ): Promise<CustomSkillType> {
   const db = await init();
   const skillDB = await db.em.findOne(Skills, activeSkillDB.skill.id, {
@@ -1391,6 +1371,7 @@ const convertActiveSkillDBToDTO = async function (
 
   return {
     name: skillDB.name,
+    isKnowledgeSkill: skillDB.isKnowledgeSkill,
     description: skillDB.description,
     category: skillDB.category,
     attribute: skillDB.attribute,
@@ -1403,7 +1384,6 @@ const convertActiveSkillDBToDTO = async function (
     source: skillDB.source,
     page: skillDB.page,
 
-    skillGroupPoints: activeSkillDB.skillGroupPoints,
     skillPoints: activeSkillDB.skillPoints,
     karmaPoints: activeSkillDB.karmaPoints,
     specialisationsSelected: activeSkillDB.specialisationsSelected,

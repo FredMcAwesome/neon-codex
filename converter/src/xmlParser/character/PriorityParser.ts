@@ -16,11 +16,7 @@ import {
 } from "./PriorityParserSchemas.js";
 import {
   PriorityTableSchema,
-  type HeritageOptionsPriorityType,
   type PriorityType,
-  type TalentOptionsPriorityType,
-  type AttributePriorityType,
-  type SkillPriorityType,
   type ResourcePriorityType,
   type PriorityTableType,
 } from "@neon-codex/common/build/schemas/otherData/prioritySchemas.js";
@@ -125,58 +121,33 @@ const convertPriorityRow = function (
     const { rowLetter: _a, ...rest } = row;
     return rest;
   });
-  const heritageCategory = priorityRowNoLetter.find(
-    (
-      row
-    ): row is {
-      category: priorityCategoryEnum.Heritage;
-    } & HeritageOptionsPriorityType => {
-      return row.category === priorityCategoryEnum.Heritage;
-    }
-  );
+  const heritageCategory = priorityRowNoLetter.find((row) => {
+    return row.category === priorityCategoryEnum.Heritage;
+  });
   assert(heritageCategory !== undefined);
   const { category: _, ...heritage } = heritageCategory;
 
-  const talentCategory = priorityRowNoLetter.find(
-    (
-      row
-    ): row is {
-      category: priorityCategoryEnum.Talent;
-    } & TalentOptionsPriorityType =>
-      row.category === priorityCategoryEnum.Talent
-  );
+  const talentCategory = priorityRowNoLetter.find((row) => {
+    return row.category === priorityCategoryEnum.Talent;
+  });
   assert(talentCategory !== undefined);
   const { category: _b, ...talent } = talentCategory;
 
-  const attributeCategory = priorityRowNoLetter.find(
-    (
-      row
-    ): row is {
-      category: priorityCategoryEnum.Attributes;
-    } & AttributePriorityType =>
-      row.category === priorityCategoryEnum.Attributes
-  );
+  const attributeCategory = priorityRowNoLetter.find((row) => {
+    return row.category === priorityCategoryEnum.Attributes;
+  });
   assert(attributeCategory !== undefined);
   const { category: _c, ...attributes } = attributeCategory;
 
-  const skillCategory = priorityRowNoLetter.find(
-    (
-      row
-    ): row is {
-      category: priorityCategoryEnum.Skills;
-    } & SkillPriorityType => row.category === priorityCategoryEnum.Skills
-  );
+  const skillCategory = priorityRowNoLetter.find((row) => {
+    return row.category === priorityCategoryEnum.Skills;
+  });
   assert(skillCategory !== undefined);
   const { category: _d, ...skills } = skillCategory;
 
-  const resourceCategories = priorityRowNoLetter.filter(
-    (
-      row
-    ): row is {
-      category: priorityCategoryEnum.Resources;
-      priorityTable: priorityTableRunnerLevelEnum;
-    } & ResourcePriorityType => row.category === priorityCategoryEnum.Resources
-  );
+  const resourceCategories = priorityRowNoLetter.filter((row) => {
+    return row.category === priorityCategoryEnum.Resources;
+  });
   assert(resourceCategories !== undefined);
   const resourceList = resourceCategories.map((resourceCategory) => {
     const { category: _, ...resource } = resourceCategory;
@@ -462,15 +433,9 @@ function convertResourceRunnerPriority(
   >,
   runnerLevel: priorityTableRunnerLevelEnum
 ): ResourcePriorityType {
-  const resourcePriorityTable = resourceList.find(
-    (
-      resource
-    ): resource is {
-      priorityTable: priorityTableRunnerLevelEnum;
-    } & ResourcePriorityType => {
-      return resource.priorityTable === runnerLevel;
-    }
-  );
+  const resourcePriorityTable = resourceList.find((resource) => {
+    return resource.priorityTable === runnerLevel;
+  });
   assert(resourcePriorityTable !== undefined);
   const { priorityTable: _, ...resource } = resourcePriorityTable;
   return resource;

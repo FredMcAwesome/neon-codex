@@ -17,5 +17,5 @@ const PORT = parseInt(process.env.PORT || "3000");
 const TOKEN_SECRET = process.env.TOKEN_SECRET || "secret";
 
 const DATABASE_PORT = parseInt(process.env.PORT || "5432");
-
+console.log(`DB ${DB_NAME}`);
 export { DB_NAME, HOST, PORT, DATABASE_PORT, PASSWORD, TOKEN_SECRET };
