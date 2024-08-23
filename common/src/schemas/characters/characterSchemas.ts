@@ -1,5 +1,9 @@
 import { z as zod } from "zod";
-import { priorityLetterEnum, talentCategoryEnum } from "../../enums.js";
+import {
+  heritageCategoryEnum,
+  priorityLetterEnum,
+  talentCategoryEnum,
+} from "../../enums.js";
 import { HeritageSchema } from "../abilities/heritageSchemas.js";
 import type { HeritageType } from "../abilities/heritageSchemas.js";
 import { CustomisedWeaponListSchema } from "../equipment/combat/weaponSchemas.js";
@@ -164,3 +168,44 @@ export const CharacterSchema: zod.ZodType<CharacterType> = zod
     vehicleList: CustomisedVehicleListSchema,
   })
   .strict();
+
+export const HeritageSummarySchema = zod.discriminatedUnion("category", [
+  zod
+    .object({
+      name: zod.string(),
+      category: zod.literal(heritageCategoryEnum.Metavariant),
+      baseHeritage: zod.string(),
+    })
+    .strict(),
+  zod
+    .object({
+      name: zod.string(),
+      category: zod.literal(heritageCategoryEnum.Metahuman),
+    })
+    .strict(),
+  zod
+    .object({
+      name: zod.string(),
+      category: zod.literal(heritageCategoryEnum.Metasapient),
+    })
+    .strict(),
+  zod
+    .object({
+      name: zod.string(),
+      category: zod.literal(heritageCategoryEnum.Shapeshifter),
+    })
+    .strict(),
+]);
+
+export const CharacterSummarySchema = zod
+  .object({
+    id: zod.number(),
+    name: zod.string(),
+    heritage: HeritageSummarySchema,
+  })
+  .strict();
+export type CharacterSummaryType = zod.infer<typeof CharacterSummarySchema>;
+export const CharacterSummaryListSchema = zod.array(CharacterSummarySchema);
+export type CharacterSummaryListType = zod.infer<
+  typeof CharacterSummaryListSchema
+>;

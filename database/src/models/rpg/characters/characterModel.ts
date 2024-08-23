@@ -21,6 +21,7 @@ import { CustomisedGears } from "../activeTables/activeGearModel.js";
 import { CustomisedVehicles } from "../activeTables/customisedVehicleModel.js";
 import { CustomisedAugmentations } from "../activeTables/activeAugmentationModel.js";
 import { CustomisedSkillGroups } from "../activeTables/activeSkillGroupModel.js";
+import Users from "../../accounts/userModel.js";
 
 @Entity()
 export class Characters {
@@ -75,6 +76,9 @@ export class Characters {
   @OneToMany(() => CustomisedVehicles, (vehicle) => vehicle.character)
   vehicles = new Collection<CustomisedVehicles>(this);
 
+  @ManyToOne({ entity: () => Users, ref: true })
+  user!: Ref<Users>;
+
   constructor(dto: {
     name: string;
     heritage: Ref<Heritages>;
@@ -83,6 +87,7 @@ export class Characters {
     specialAttributes: SpecialAttributesType;
     nuyen: number;
     karmaPoints: number;
+    user: Ref<Users>;
   }) {
     this.name = dto.name;
     this.heritage = dto.heritage;
@@ -91,5 +96,6 @@ export class Characters {
     this.specialAttributes = dto.specialAttributes;
     this.nuyen = dto.nuyen;
     this.karmaPoints = dto.karmaPoints;
+    this.user = dto.user;
   }
 }

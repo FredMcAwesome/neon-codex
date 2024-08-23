@@ -7,8 +7,24 @@ const ThreadSummarySchema = zod
     id: zod.number(),
   })
   .strict();
-const ThreadListSchema = zod.array(ThreadSummarySchema);
-type ThreadListType = zod.infer<typeof ThreadListSchema>;
+const ThreadSummaryListSchema = zod.array(ThreadSummarySchema);
+type ThreadSummaryListType = zod.infer<typeof ThreadSummaryListSchema>;
+
+const ThreadSchema = zod
+  .object({
+    title: zod.string(),
+    username: zod.string(),
+    comments: zod.array(
+      zod
+        .object({
+          username: zod.string(),
+          content: zod.string(),
+        })
+        .strict()
+    ),
+  })
+  .strict();
+type ThreadType = zod.infer<typeof ThreadSchema>;
 
 const JwtTokenSchema = zod
   .object({
@@ -17,5 +33,5 @@ const JwtTokenSchema = zod
   .strict();
 type JwtTokenType = zod.infer<typeof JwtTokenSchema>;
 
-export type { ThreadListType, JwtTokenType };
-export { ThreadListSchema, JwtTokenSchema };
+export type { ThreadSummaryListType, JwtTokenType, ThreadType };
+export { ThreadSummaryListSchema, JwtTokenSchema, ThreadSchema };

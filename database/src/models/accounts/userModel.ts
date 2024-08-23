@@ -8,6 +8,7 @@ import {
 } from "@mikro-orm/postgresql";
 import Comments from "../forum/commentModel.js";
 import Threads from "../forum/threadModel.js";
+import { Characters } from "../rpg/characters/characterModel.js";
 
 @Entity()
 export default class Users {
@@ -29,6 +30,9 @@ export default class Users {
 
   @OneToMany(() => Comments, (comment) => comment.user)
   comments = new Collection<Comments>(this);
+
+  @OneToMany(() => Characters, (character) => character.user)
+  characters = new Collection<Characters>(this);
 
   constructor(username: string, password: string, admin: boolean) {
     this.username = username;

@@ -425,6 +425,7 @@ const convertResource = function (xmlResource: ResourceXmlType) {
     resources: xmlResource.resources,
   };
 };
+
 function convertResourceRunnerPriority(
   resourceList: Array<
     {

@@ -28,6 +28,7 @@ const isLoggedIn = middleware(async (opts) => {
   }
   return opts.next({
     ctx: {
+      id: ctx.user.id,
       username: ctx.user.username,
       isAdmin: ctx.user.isAdmin,
     },

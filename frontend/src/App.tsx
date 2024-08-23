@@ -14,6 +14,10 @@ import CharacterSheet, {
 } from "./components/character/CharacterSheet.js";
 import { NoMatch } from "./components/NoMatch.js";
 import { Fragment } from "react";
+import CharacterList, {
+  characterListPath,
+} from "./components/character/CharacterList.js";
+import Thread, { threadPath } from "./components/forum/Thread.js";
 
 function App() {
   const { isLoading } = useQuery(["authenticationStatus"], isAuthenticated);
@@ -40,10 +44,24 @@ function App() {
             path={forumPath}
             element={<PrivateRoute outlet={<Forum />} />}
           />
+          <Route
+            path={threadPath}
+            element={<PrivateRoute outlet={<Thread />} />}
+          />
+          <Route
+            path={characterListPath}
+            element={<PrivateRoute outlet={<CharacterList />} />}
+          />
+          <Route
+            path={characterSheetPath}
+            element={<PrivateRoute outlet={<CharacterSheet />} />}
+          />
+          <Route
+            path={characterCreatorPath}
+            element={<PrivateRoute outlet={<CharacterCreator />} />}
+          />
 
           <Route path={loginPath} element={<Login />} />
-          <Route path={characterSheetPath} element={<CharacterSheet />} />
-          <Route path={characterCreatorPath} element={<CharacterCreator />} />
           <Route path="*" element={<NoMatch />} />
         </Routes>
       </Fragment>

@@ -23,6 +23,7 @@ const LoginStatus = zod.discriminatedUnion("loginStatus", [
   zod
     .object({
       loginStatus: zod.literal(true),
+      id: zod.number(),
       username: zod.string(),
       isAdmin: zod.boolean(),
     })
@@ -61,8 +62,9 @@ export async function getLoginStatus({
         });
         if (user !== null) {
           return {
+            id: user.id,
             loginStatus: true,
-            username: decoded.username,
+            username: user.username,
             isAdmin: user.admin,
           };
         } else {

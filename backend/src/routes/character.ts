@@ -78,6 +78,8 @@ import {
   PriorityLevelsSchema,
   QualitySelectedListSchema,
   type CharacterType,
+  type CharacterSummaryListType,
+  type CharacterSummaryType,
 } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
 import { Armours } from "@neon-codex/database/build/models/rpg/equipment/combat/armourModel.js";
 import { Characters } from "@neon-codex/database/build/models/rpg/characters/characterModel.js";
@@ -136,6 +138,7 @@ import { VehicleModifications } from "@neon-codex/database/build/models/rpg/equi
 import { CustomisedVehicleModifications } from "@neon-codex/database/build/models/rpg/activeTables/activeVehicleModificationModel.js";
 import { CustomisedVehicles } from "@neon-codex/database/build/models/rpg/activeTables/customisedVehicleModel.js";
 import { CustomisedSkillGroups } from "@neon-codex/database/build/models/rpg/activeTables/activeSkillGroupModel.js";
+import Users from "@neon-codex/database/build/models/accounts/userModel.js";
 
 export async function getSkills() {
   const db = await init();
@@ -974,6 +977,7 @@ const createCharacter = privateProcedure
       specialAttributes: opts.input.specialAttributeInfo,
       nuyen: opts.input.nuyen,
       karmaPoints: opts.input.karmaPoints,
+      user: ref(Users, opts.ctx.id),
     });
 
     const characterReference = ref(character);
@@ -1180,6 +1184,38 @@ const createCharacter = privateProcedure
     return character.id;
   });
 
+const getCharacterList = privateProcedure.query(async (opts) => {
+  try {
+    const { ctx } = opts;
+    const db = await init();
+    const characterList = await db.em.findAll(Characters, {
+      where: { user: { username: ctx.username } },
+      populate: ["heritage"],
+    });
+    if (characterList === null) {
+      throw new Error("Character does not exist");
+    }
+
+    const loadedCharacterList: CharacterSummaryListType = [];
+    for (const character of characterList) {
+      const loadedCharacter: CharacterSummaryType = {
+        id: character.id,
+        name: character.name,
+        heritage: {
+          name: character.heritage.$.name,
+          ...(await getHeritageTypeInformation(character.heritage.$)),
+        },
+      };
+      loadedCharacterList.push(loadedCharacter);
+    }
+
+    return loadedCharacterList;
+  } catch (error) {
+    logger.error("Unable to connect to the database:", error);
+    throw new Error("Database error");
+  }
+});
+
 const getCharacter = privateProcedure
   .input(zod.string())
   .query(async (opts) => {
@@ -1255,38 +1291,7 @@ const getCharacter = privateProcedure
 const convertHeritageDBToDTO = async function (
   heritageDB: Heritages
 ): Promise<HeritageType> {
-  let typeInformation;
-  if (heritageDB instanceof Metahumans) {
-    typeInformation = {
-      category: heritageCategoryEnum.Metahuman as const,
-    };
-  } else if (heritageDB instanceof Metasapients) {
-    typeInformation = {
-      category: heritageCategoryEnum.Metasapient as const,
-    };
-  } else if (heritageDB instanceof Shapeshifters) {
-    typeInformation = {
-      category: heritageCategoryEnum.Shapeshifter as const,
-    };
-  } else if (heritageDB instanceof Metavariants) {
-    const db = await init();
-    const baseHeritage = await db.em.findOne(
-      BaseHeritages,
-      heritageDB.baseHeritage.id,
-      {
-        populate: ["*"],
-      }
-    );
-    if (baseHeritage === null) {
-      throw new Error("Heritage does not exist");
-    }
-    typeInformation = {
-      category: heritageCategoryEnum.Metavariant as const,
-      baseHeritage: baseHeritage.name,
-    };
-  } else {
-    throw new Error("Unknown heritage type");
-  }
+  const typeInformation = await getHeritageTypeInformation(heritageDB);
 
   return {
     name: heritageDB.name,
@@ -2040,7 +2045,44 @@ export const characterRouter = router({
   all: all,
   createCharacter: createCharacter,
   getCharacter: getCharacter,
+  getCharacterList: getCharacterList,
 });
+
+async function getHeritageTypeInformation(heritageDB: Heritages) {
+  let typeInformation;
+  if (heritageDB instanceof Metahumans) {
+    typeInformation = {
+      category: heritageCategoryEnum.Metahuman as const,
+    };
+  } else if (heritageDB instanceof Metasapients) {
+    typeInformation = {
+      category: heritageCategoryEnum.Metasapient as const,
+    };
+  } else if (heritageDB instanceof Shapeshifters) {
+    typeInformation = {
+      category: heritageCategoryEnum.Shapeshifter as const,
+    };
+  } else if (heritageDB instanceof Metavariants) {
+    const db = await init();
+    const baseHeritage = await db.em.findOne(
+      BaseHeritages,
+      heritageDB.baseHeritage.id,
+      {
+        populate: ["*"],
+      }
+    );
+    if (baseHeritage === null) {
+      throw new Error("Heritage does not exist");
+    }
+    typeInformation = {
+      category: heritageCategoryEnum.Metavariant as const,
+      baseHeritage: baseHeritage.name,
+    };
+  } else {
+    throw new Error("Unknown heritage type");
+  }
+  return typeInformation;
+}
 
 function parsePriority(
   priority: Loaded<Priorities, "*" | "heritageList" | "talentList", "*", never>
