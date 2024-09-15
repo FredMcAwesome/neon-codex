@@ -1,5 +1,9 @@
 import { z as zod } from "zod";
-import { sourceBookEnum, traditionDrainAttributeEnum } from "../../../enums.js";
+import {
+  sourceBookEnum,
+  traditionDrainAttributeEnum,
+  traditionSpiritFormEnum,
+} from "../../../enums.js";
 import { BonusSchema } from "../../shared/bonusSchemas.js";
 import { RequirementsSchema } from "../../shared/requiredSchemas.js";
 
@@ -8,9 +12,7 @@ export const TraditionSchema = zod
     name: zod.string(),
     description: zod.string(),
     drain: zod.nativeEnum(traditionDrainAttributeEnum),
-    spiritForm: zod.optional(
-      zod.union([zod.literal("Possession"), zod.literal("Inhabitation")])
-    ),
+    spiritForm: zod.optional(zod.nativeEnum(traditionSpiritFormEnum)),
     spiritTypes: zod.union([
       zod.literal("Select Spirits"),
       // All spirits that have the materialise power can be conjured

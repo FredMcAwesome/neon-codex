@@ -10,7 +10,7 @@ import { convertRequirements } from "../common/RequiredParserHelper.js";
 import {
   TraditionSchema,
   type TraditionType,
-} from "@neon-codex/common/build/schemas/abilities/magic/traditionSchemas.js";
+} from "@neon-codex/common/build/schemas/abilities/talent/traditionSchemas.js";
 import {
   TraditionListXmlSchema,
   traditionXmlDrainAttributeEnum,

@@ -1,0 +1,1219 @@
+[
+  {
+    "name": "Browse",
+    "description": "",
+    "category": "Common Programs",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [80],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 245
+  },
+  {
+    "name": "Configurator",
+    "description": "",
+    "category": "Common Programs",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [80],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 245
+  },
+  {
+    "name": "Edit",
+    "description": "",
+    "category": "Common Programs",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [80],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 245
+  },
+  {
+    "name": "Encryption",
+    "description": "",
+    "category": "Common Programs",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [80],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 245
+  },
+  {
+    "name": "Signal Scrub",
+    "description": "",
+    "category": "Common Programs",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [80],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 245
+  },
+  {
+    "name": "Toolbox",
+    "description": "",
+    "category": "Common Programs",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [80],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 245
+  },
+  {
+    "name": "Virtual Machine",
+    "description": "",
+    "category": "Common Programs",
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [80],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 245
+  },
+  {
+    "name": "Armor",
+    "description": "",
+    "category": "Hacking Programs",
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 245
+  },
+  {
+    "name": "Baby Monitor",
+    "description": "",
+    "category": "Hacking Programs",
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 245
+  },
+  {
+    "name": "Biofeedback",
+    "description": "",
+    "category": "Hacking Programs",
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 245
+  },
+  {
+    "name": "Biofeedback Filter",
+    "description": "",
+    "category": "Hacking Programs",
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 245
+  },
+  {
+    "name": "Blackout",
+    "description": "",
+    "category": "Hacking Programs",
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 245
+  },
+  {
+    "name": "Decryption",
+    "description": "",
+    "category": "Hacking Programs",
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 245
+  },
+  {
+    "name": "Defuse",
+    "description": "",
+    "category": "Hacking Programs",
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 245
+  },
+  {
+    "name": "Demolition",
+    "description": "",
+    "category": "Hacking Programs",
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 245
+  },
+  {
+    "name": "Exploit",
+    "description": "",
+    "category": "Hacking Programs",
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 245
+  },
+  {
+    "name": "Fork",
+    "description": "",
+    "category": "Hacking Programs",
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 245
+  },
+  {
+    "name": "Guard",
+    "description": "",
+    "category": "Hacking Programs",
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 245
+  },
+  {
+    "name": "Hammer",
+    "description": "",
+    "category": "Hacking Programs",
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 245
+  },
+  {
+    "name": "Lockdown",
+    "description": "",
+    "category": "Hacking Programs",
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 245
+  },
+  {
+    "name": "Mugger",
+    "description": "",
+    "category": "Hacking Programs",
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 245
+  },
+  {
+    "name": "Shell",
+    "description": "",
+    "category": "Hacking Programs",
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 245
+  },
+  {
+    "name": "Sneak",
+    "description": "",
+    "category": "Hacking Programs",
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 245
+  },
+  {
+    "name": "Stealth",
+    "description": "",
+    "category": "Hacking Programs",
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 245
+  },
+  {
+    "name": "Track",
+    "description": "",
+    "category": "Hacking Programs",
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 245
+  },
+  {
+    "name": "Wrapper",
+    "description": "",
+    "category": "Hacking Programs",
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 245
+  },
+  {
+    "name": "Bootstrap",
+    "description": "",
+    "category": "Common Programs",
+    "rating": {
+      "maxRating": 0,
+      "minRating": 0
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [80],
+    "source": "Data Trails",
+    "page": 56
+  },
+  {
+    "name": "Search",
+    "description": "",
+    "category": "Common Programs",
+    "rating": {
+      "maxRating": 0,
+      "minRating": 0
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [80],
+    "source": "Data Trails",
+    "page": 56
+  },
+  {
+    "name": "Shredder",
+    "description": "",
+    "category": "Common Programs",
+    "rating": {
+      "maxRating": 0,
+      "minRating": 0
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [80],
+    "source": "Data Trails",
+    "page": 56
+  },
+  {
+    "name": "Cat's Paw",
+    "description": "",
+    "category": "Hacking Programs",
+    "rating": {
+      "maxRating": 0,
+      "minRating": 0
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Data Trails",
+    "page": 56
+  },
+  {
+    "name": "Cloudless",
+    "description": "",
+    "category": "Hacking Programs",
+    "rating": {
+      "maxRating": 0,
+      "minRating": 0
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Data Trails",
+    "page": 56
+  },
+  {
+    "name": "Crash (Program)",
+    "description": "",
+    "category": "Hacking Programs",
+    "rating": {
+      "maxRating": 0,
+      "minRating": 0
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Data Trails",
+    "page": 57
+  },
+  {
+    "name": "Detonator",
+    "description": "",
+    "category": "Hacking Programs",
+    "rating": {
+      "maxRating": 0,
+      "minRating": 0
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [500],
+    "source": "Data Trails",
+    "page": 57
+  },
+  {
+    "name": "Evaluate",
+    "description": "",
+    "category": "Hacking Programs",
+    "rating": {
+      "maxRating": 0,
+      "minRating": 0
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Data Trails",
+    "page": 57
+  },
+  {
+    "name": "Fly on a Wall",
+    "description": "",
+    "category": "Hacking Programs",
+    "rating": {
+      "maxRating": 0,
+      "minRating": 0
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Data Trails",
+    "page": 57
+  },
+  {
+    "name": "Hitchhiker",
+    "description": "",
+    "category": "Hacking Programs",
+    "rating": {
+      "maxRating": 0,
+      "minRating": 0
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Data Trails",
+    "page": 57
+  },
+  {
+    "name": "Nuke-from-Orbit",
+    "description": "",
+    "category": "Hacking Programs",
+    "rating": {
+      "maxRating": 0,
+      "minRating": 0
+    },
+    "availability": {
+      "rating": [12],
+      "restriction": "F"
+    },
+    "cost": [250],
+    "source": "Data Trails",
+    "page": 57
+  },
+  {
+    "name": "Paintjob",
+    "description": "",
+    "category": "Hacking Programs",
+    "rating": {
+      "maxRating": 0,
+      "minRating": 0
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Data Trails",
+    "page": 57
+  },
+  {
+    "name": "Smoke and Mirrors",
+    "description": "",
+    "category": "Hacking Programs",
+    "rating": {
+      "maxRating": 0,
+      "minRating": 0
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Data Trails",
+    "page": 57
+  },
+  {
+    "name": "Swerve",
+    "description": "",
+    "category": "Hacking Programs",
+    "rating": {
+      "maxRating": 0,
+      "minRating": 0
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Data Trails",
+    "page": 57
+  },
+  {
+    "name": "Tantrum",
+    "description": "",
+    "category": "Hacking Programs",
+    "rating": {
+      "maxRating": 0,
+      "minRating": 0
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Data Trails",
+    "page": 57
+  },
+  {
+    "name": "Tarball",
+    "description": "",
+    "category": "Hacking Programs",
+    "rating": {
+      "maxRating": 0,
+      "minRating": 0
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": "R"
+    },
+    "cost": [250],
+    "source": "Data Trails",
+    "page": 57
+  },
+  {
+    "name": "Agent",
+    "description": "",
+    "category": "Software",
+    "rating": {
+      "maxRating": 6,
+      "minRating": 0
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            3
+          ]
+        }
+      ],
+      "restriction": ""
+    },
+    "cost": {
+      "ratingLinked": [[1000], [2000], [3000], [8000], [10000], [12000]]
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 246
+  },
+  {
+    "name": "Swarm",
+    "description": "",
+    "category": "Software",
+    "rating": {
+      "maxRating": 0,
+      "minRating": 0
+    },
+    "availability": {
+      "rating": [0],
+      "restriction": ""
+    },
+    "cost": [600],
+    "source": "Rigger 5",
+    "page": 31
+  },
+  {
+    "name": "Clearsight Autosoft",
+    "description": "",
+    "category": "Autosofts",
+    "rating": {
+      "maxRating": 6,
+      "minRating": 0
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      }
+    ],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 269
+  },
+  {
+    "name": "Electronic Warfare Autosoft",
+    "description": "",
+    "category": "Autosofts",
+    "rating": {
+      "maxRating": 6,
+      "minRating": 0
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      }
+    ],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 269
+  },
+  {
+    "name": "[Model] Evasion Autosoft",
+    "description": "",
+    "category": "Autosofts",
+    "rating": {
+      "maxRating": 6,
+      "minRating": 0
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      }
+    ],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 269
+  },
+  {
+    "name": "[Model] Maneuvering Autosoft",
+    "description": "",
+    "category": "Autosofts",
+    "rating": {
+      "maxRating": 6,
+      "minRating": 0
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      }
+    ],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 269
+  },
+  {
+    "name": "[Model] Stealth Autosoft",
+    "description": "",
+    "category": "Autosofts",
+    "rating": {
+      "maxRating": 6,
+      "minRating": 0
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      }
+    ],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 270
+  },
+  {
+    "name": "[Weapon] Targeting Autosoft",
+    "description": "",
+    "category": "Autosofts",
+    "rating": {
+      "maxRating": 6,
+      "minRating": 0
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      }
+    ],
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 270
+  },
+  {
+    "name": "Smartsoft",
+    "description": "",
+    "category": "Autosofts",
+    "rating": {
+      "maxRating": 3,
+      "minRating": 3
+    },
+    "availability": {
+      "rating": [6],
+      "restriction": "R"
+    },
+    "cost": [1500],
+    "source": "Rigger 5",
+    "page": 127
+  },
+  {
+    "name": "Group Autosoft",
+    "description": "",
+    "category": "Autosofts",
+    "rating": {
+      "maxRating": 2,
+      "minRating": 2
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [1000],
+    "source": "Rigger 5",
+    "page": 127
+  },
+  {
+    "name": "Skill Autosoft",
+    "description": "",
+    "category": "Autosofts",
+    "rating": {
+      "maxRating": 6,
+      "minRating": 0
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 127
+  },
+  {
+    "name": "Skill Autosoft (Restricted)",
+    "description": "",
+    "category": "Autosofts",
+    "rating": {
+      "maxRating": 6,
+      "minRating": 0
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ],
+      "restriction": "R"
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      }
+    ],
+    "bonus": {
+      "linkSkill": true
+    },
+    "source": "Rigger 5",
+    "page": 127
+  },
+  {
+    "name": "[Weapon] Melee Autosoft",
+    "description": "",
+    "category": "Autosofts",
+    "rating": {
+      "maxRating": 6,
+      "minRating": 0
+    },
+    "availability": {
+      "rating": [
+        {
+          "subnumbers": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
+        }
+      ],
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          500
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 127
+  },
+  {
+    "name": "Abduction",
+    "description": "",
+    "category": "Advanced Programs",
+    "availability": {
+      "rating": [0],
+      "restriction": "F"
+    },
+    "cost": [0],
+    "requirements": {},
+    "source": "Data Trails",
+    "page": 158
+  },
+  {
+    "name": "Authority",
+    "description": "",
+    "category": "Advanced Programs",
+    "availability": {
+      "rating": [0],
+      "restriction": "F"
+    },
+    "cost": [0],
+    "requirements": {},
+    "source": "Data Trails",
+    "page": 158
+  },
+  {
+    "name": "Cascade",
+    "description": "",
+    "category": "Advanced Programs",
+    "availability": {
+      "rating": [0],
+      "restriction": "F"
+    },
+    "cost": [0],
+    "requirements": {},
+    "source": "Data Trails",
+    "page": 158
+  },
+  {
+    "name": "Eguchi Smile",
+    "description": "",
+    "category": "Advanced Programs",
+    "availability": {
+      "rating": [0],
+      "restriction": "F"
+    },
+    "cost": [0],
+    "requirements": {},
+    "source": "Data Trails",
+    "page": 158
+  },
+  {
+    "name": "Fnord",
+    "description": "",
+    "category": "Advanced Programs",
+    "availability": {
+      "rating": [0],
+      "restriction": "F"
+    },
+    "cost": [0],
+    "requirements": {},
+    "source": "Data Trails",
+    "page": 158
+  },
+  {
+    "name": "Medic",
+    "description": "",
+    "category": "Advanced Programs",
+    "availability": {
+      "rating": [0],
+      "restriction": "F"
+    },
+    "cost": [0],
+    "requirements": {},
+    "source": "Data Trails",
+    "page": 159
+  },
+  {
+    "name": "Nyetworking",
+    "description": "",
+    "category": "Advanced Programs",
+    "availability": {
+      "rating": [0],
+      "restriction": "F"
+    },
+    "cost": [0],
+    "requirements": {},
+    "source": "Data Trails",
+    "page": 159
+  },
+  {
+    "name": "Poke",
+    "description": "",
+    "category": "Advanced Programs",
+    "availability": {
+      "rating": [0],
+      "restriction": "F"
+    },
+    "cost": [0],
+    "requirements": {},
+    "source": "Data Trails",
+    "page": 159
+  },
+  {
+    "name": "Psychotropic Biofeedback",
+    "description": "",
+    "category": "Advanced Programs",
+    "availability": {
+      "rating": [0],
+      "restriction": "F"
+    },
+    "cost": [0],
+    "requirements": {},
+    "source": "Data Trails",
+    "page": 160
+  },
+  {
+    "name": "Rootkit",
+    "description": "",
+    "category": "Advanced Programs",
+    "availability": {
+      "rating": [0],
+      "restriction": "F"
+    },
+    "cost": [0],
+    "requirements": {},
+    "source": "Data Trails",
+    "page": 160
+  },
+  {
+    "name": "Rust",
+    "description": "",
+    "category": "Advanced Programs",
+    "availability": {
+      "rating": [0],
+      "restriction": "F"
+    },
+    "cost": [0],
+    "requirements": {},
+    "source": "Data Trails",
+    "page": 160
+  },
+  {
+    "name": "Shunt",
+    "description": "",
+    "category": "Advanced Programs",
+    "availability": {
+      "rating": [0],
+      "restriction": "F"
+    },
+    "cost": [0],
+    "requirements": {},
+    "source": "Data Trails",
+    "page": 160
+  },
+  {
+    "name": "Spotter",
+    "description": "",
+    "category": "Advanced Programs",
+    "availability": {
+      "rating": [0],
+      "restriction": "F"
+    },
+    "cost": [0],
+    "requirements": {},
+    "source": "Data Trails",
+    "page": 160
+  },
+  {
+    "name": "Teergrube",
+    "description": "",
+    "category": "Advanced Programs",
+    "availability": {
+      "rating": [0],
+      "restriction": "F"
+    },
+    "cost": [0],
+    "requirements": {},
+    "source": "Data Trails",
+    "page": 160
+  },
+  {
+    "name": "Uncertainty",
+    "description": "",
+    "category": "Advanced Programs",
+    "availability": {
+      "rating": [0],
+      "restriction": "F"
+    },
+    "cost": [0],
+    "requirements": {},
+    "source": "Data Trails",
+    "page": 160
+  },
+  {
+    "name": "WTLM",
+    "description": "",
+    "category": "Advanced Programs",
+    "availability": {
+      "rating": [0],
+      "restriction": "F"
+    },
+    "cost": [0],
+    "requirements": {},
+    "source": "Data Trails",
+    "page": 160
+  }
+]

@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 import {
   ComplexFormListSchema,
   type ComplexFormListType,
-} from "@neon-codex/common/build/schemas/abilities/magic/complexFormSchemas.js";
+} from "@neon-codex/common/build/schemas/abilities/talent/complexFormSchemas.js";
 import { ComplexForms } from "../../models/rpg/abilities/complexFormModel.js";
 
 export const getComplexForms = function () {

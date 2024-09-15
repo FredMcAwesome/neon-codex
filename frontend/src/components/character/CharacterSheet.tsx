@@ -42,6 +42,7 @@ const CharacterSheet = function () {
       {Attributes(data.attributes)}
       {SpecialAttributes(data.specialAttributes)}
       {Skills(data.skillList, data.attributes, data.specialAttributes)}
+      {/* {Talent(data.talentList, data.attributes, data.specialAttributes)} */}
       {Qualities(data.qualityList)}
       {Weapons(data.weaponList)}
       {Armours(data.armourList)}

@@ -8,3 +8,12 @@
 #priority_table > * {
   border: 1px solid black;
 }
+
+nav {
+  display: flex;
+  list-style-type: none;
+}
+
+nav > li {
+  padding: 2px;
+}

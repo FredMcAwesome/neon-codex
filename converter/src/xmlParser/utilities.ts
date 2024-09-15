@@ -11,15 +11,15 @@ import { SkillListXmlSchema } from "./character/SkillParser.js";
 import { ArmourListXmlSchema } from "./combat/ArmourParserSchemas.js";
 import { WeaponAccessoryListXmlSchema } from "./combat/WeaponAccessoryParserSchemas.js";
 import { WeaponListXmlSchema } from "./combat/WeaponParserSchemas.js";
-import { SpellListXmlSchema } from "./magic/SpellParserSchemas.js";
+import { SpellListXmlSchema } from "./talent/SpellParserSchemas.js";
 import { DrugComponentListXmlSchema } from "./other/DrugComponentParserSchemas.js";
 import { DrugListXmlSchema } from "./other/DrugParserSchemas.js";
 import { GearListXmlSchema } from "./other/GearParserSchemas.js";
 import { VehicleModListXmlSchema } from "./riggerGear/VehicleModParserSchemas.js";
 import { VehicleListXmlSchema } from "./riggerGear/VehicleParserSchemas.js";
 import { MetatypeListXmlSchema } from "./character/MetatypeParserSchemas.js";
-import { AdeptPowerListXmlSchema } from "./magic/AdeptPowerParserSchemas.js";
-import { TraditionListXmlSchema } from "./magic/TraditionParserSchemas.js";
+import { AdeptPowerListXmlSchema } from "./talent/AdeptPowerParserSchemas.js";
+import { TraditionListXmlSchema } from "./talent/TraditionParserSchemas.js";
 import { CritterListXmlSchema } from "./creatures/CritterParserSchemas.js";
 
 export const CheckGUIDs = function () {

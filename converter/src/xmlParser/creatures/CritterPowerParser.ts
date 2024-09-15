@@ -18,8 +18,8 @@ import { convertRequirements } from "../common/RequiredParserHelper.js";
 import {
   CritterPowerSchema,
   type CritterPowerType,
-} from "@neon-codex/common/build/schemas/abilities/magic/critterPowerSchemas.js";
-import { convertSpellType } from "../magic/SpellParserHelper.js";
+} from "@neon-codex/common/build/schemas/abilities/talent/critterPowerSchemas.js";
+import { convertSpellType } from "../talent/SpellParserHelper.js";
 import {
   SpellPowerXmlRangeSchema,
   XmlDurationSchema,

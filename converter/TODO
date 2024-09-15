@@ -13,15 +13,16 @@ So far I have only passed to the frontend:
   - Metatypes
   - Priorities
   - Drugs
-
-Still need passed through to frontend):
-  - DrugComponents
-  - Adept Powers
   - Spells
+  - Complex Forms
+  - Adept Powers
+  - Programs
   - Traditions
   - Critters (Including spirits and sprites)
+
+Still need passed through to frontend):
+  - Drug Components
   - Critter Powers
-  - Complex Forms
 
 Other main priorities:
   - Contacts
@@ -30,7 +31,6 @@ Other main priorities:
   - Mentors
   - Metamagic
   - Paragons
-  - Programs
   - Streams
 
 Other xmls to implement:

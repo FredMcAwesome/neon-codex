@@ -15,9 +15,10 @@ import {
 } from "@neon-codex/common/build/enums.js";
 import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 import type {
+  spellDamageType,
   spellRangeType,
   SpellType,
-} from "@neon-codex/common/build/schemas/abilities/magic/spellSchemas.js";
+} from "@neon-codex/common/build/schemas/abilities/talent/spellSchemas.js";
 import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
 
 @Entity()
@@ -47,6 +48,9 @@ export class Spells {
   @Enum(() => durationEnum)
   duration!: durationEnum;
 
+  @Property()
+  damage!: spellDamageType;
+
   @Property({ type: "json" })
   range!: spellRangeType;
 
@@ -72,6 +76,7 @@ export class Spells {
     this.damageType = dto.damageType;
     this.descriptorList = dto.descriptorList;
     this.duration = dto.duration;
+    this.damage = dto.damage;
     this.range = dto.range;
     if (dto.bonus !== undefined) this.bonus = dto.bonus;
     if (dto.requirements !== undefined) this.requirements = dto.requirements;

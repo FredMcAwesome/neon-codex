@@ -3,8 +3,8 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { Spells } from "../../models/rpg/abilities/spellModel.js";
-import type { SpellListType } from "@neon-codex/common/build/schemas/abilities/magic/spellSchemas.js";
-import { SpellListSchema } from "@neon-codex/common/build/schemas/abilities/magic/spellSchemas.js";
+import type { SpellListType } from "@neon-codex/common/build/schemas/abilities/talent/spellSchemas.js";
+import { SpellListSchema } from "@neon-codex/common/build/schemas/abilities/talent/spellSchemas.js";
 
 export const getSpells = function () {
   const currentPath = import.meta.url;

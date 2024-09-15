@@ -14,13 +14,16 @@ ParseArmour();
 import { ParseArmourMods } from "./xmlParser/combat/ArmourModParser.js";
 ParseArmourMods();
 
-import { ParseSpells } from "./xmlParser/magic/SpellParser.js";
+import { ParseSpells } from "./xmlParser/talent/SpellParser.js";
 ParseSpells();
 
-import { ParseAdeptPowers } from "./xmlParser/magic/AdeptPowerParser.js";
+import { ParsePrograms } from "./xmlParser/talent/ProgramParser.js";
+ParsePrograms();
+
+import { ParseAdeptPowers } from "./xmlParser/talent/AdeptPowerParser.js";
 ParseAdeptPowers();
 
-import { ParseTraditions } from "./xmlParser/magic/TraditionParser.js";
+import { ParseTraditions } from "./xmlParser/talent/TraditionParser.js";
 ParseTraditions();
 
 import { ParseBioware } from "./xmlParser/bodyModification/BiowareParser.js";
@@ -55,7 +58,7 @@ ParseCritters();
 import { ParseCritterPowers } from "./xmlParser/creatures/CritterPowerParser.js";
 ParseCritterPowers();
 
-import { ParseComplexForms } from "./xmlParser/magic/ComplexFormParser.js";
+import { ParseComplexForms } from "./xmlParser/talent/ComplexFormParser.js";
 ParseComplexForms();
 
 import { CheckGUIDs } from "./xmlParser/utilities.js";

@@ -10,7 +10,7 @@ import { convertRequirements } from "../common/RequiredParserHelper.js";
 import {
   AdeptPowerSchema,
   type AdeptPowerType,
-} from "@neon-codex/common/build/schemas/abilities/magic/adeptPowerSchemas.js";
+} from "@neon-codex/common/build/schemas/abilities/talent/adeptPowerSchemas.js";
 import {
   AdeptPowerListXmlSchema,
   type AdeptPowerXmlType,

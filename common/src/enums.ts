@@ -892,6 +892,11 @@ export enum traditionDrainAttributeEnum {
   WillpowerAndSelect = "Willpower + Select Attribute",
 }
 
+export enum traditionSpiritFormEnum {
+  Possession = "Possession",
+  Inhabitation = "Inhabitation",
+}
+
 export enum critterTypeEnum {
   AIs = "A.I.s",
   Dracoforms = "Dracoforms",
@@ -968,4 +973,12 @@ export enum matrixAttributeEnum {
   DataProcessing = "Data Processing",
   Firewall = "Firewall",
   Sleaze = "Sleaze",
+}
+
+export enum programCategoryEnum {
+  Autosofts = "Autosofts",
+  AdvancedPrograms = "Advanced Programs",
+  CommonPrograms = "Common Programs",
+  HackingPrograms = "Hacking Programs",
+  Software = "Software",
 }

@@ -11,10 +11,11 @@ import {
   sourceBookEnum,
   traditionDrainAttributeEnum,
   traditionSpiritEnum,
+  traditionSpiritFormEnum,
 } from "@neon-codex/common/build/enums.js";
 import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
-import type { TraditionType } from "@neon-codex/common/build/schemas/abilities/magic/traditionSchemas.js";
+import type { TraditionType } from "@neon-codex/common/build/schemas/abilities/talent/traditionSchemas.js";
 import { Critters } from "../creatures/critterModel.js";
 
 @Entity({
@@ -35,8 +36,8 @@ export abstract class Traditions {
   @Enum(() => traditionDrainAttributeEnum)
   drain!: traditionDrainAttributeEnum;
 
-  @Property({ nullable: true })
-  spiritForm?: string;
+  @Enum({ items: () => traditionSpiritFormEnum, nullable: true })
+  spiritForm?: traditionSpiritFormEnum;
 
   @Property({ type: "json", nullable: true })
   bonus?: BonusType;

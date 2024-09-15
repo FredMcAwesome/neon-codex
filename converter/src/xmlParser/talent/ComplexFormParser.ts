@@ -11,7 +11,7 @@ import {
   ComplexFormListXmlSchema,
   type ComplexFormXmlType,
 } from "./ComplexFormParserSchemas.js";
-import { ComplexFormSchema } from "@neon-codex/common/build/schemas/abilities/magic/complexFormSchemas.js";
+import { ComplexFormSchema } from "@neon-codex/common/build/schemas/abilities/talent/complexFormSchemas.js";
 import ComplexForms from "../../grammar/complexForms.ohm-bundle.js";
 const FadingValue = ComplexForms.FadingValue;
 

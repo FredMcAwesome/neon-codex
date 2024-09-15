@@ -6,6 +6,7 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:@tanstack/eslint-plugin-query/recommended",
     "prettier"
   ],
   "ignorePatterns": ["node_modules", "build", "coverage"],
@@ -15,7 +16,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "sonarjs"],
+  "plugins": ["@typescript-eslint", "sonarjs", "@tanstack/eslint-plugin-query"],
   "rules": {
     "@typescript-eslint/switch-exhaustiveness-check": "error",
     "@typescript-eslint/no-unused-vars": [

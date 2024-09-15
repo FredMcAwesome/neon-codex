@@ -10,7 +10,7 @@ import {
 import { actionEnum, sourceBookEnum } from "@neon-codex/common/build/enums.js";
 import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
-import type { AdeptPowerType } from "@neon-codex/common/build/schemas/abilities/magic/adeptPowerSchemas.js";
+import type { AdeptPowerType } from "@neon-codex/common/build/schemas/abilities/talent/adeptPowerSchemas.js";
 
 @Entity()
 export class AdeptPowers {
@@ -46,13 +46,13 @@ export class AdeptPowers {
   adeptWayRequirements?: RequirementsType;
 
   @Property({ nullable: true })
-  doubleCost?: boolean;
+  doubleCost?: false;
 
   @Property({ nullable: true })
   maxLevels?: number;
 
   @Property({ nullable: true })
-  userSelectable?: boolean;
+  userSelectable?: false;
 
   @Property({ type: "json", nullable: true })
   bonus?: BonusType;

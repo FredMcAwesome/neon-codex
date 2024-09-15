@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 import {
   TraditionListSchema,
   type TraditionListType,
-} from "@neon-codex/common/build/schemas/abilities/magic/traditionSchemas.js";
+} from "@neon-codex/common/build/schemas/abilities/talent/traditionSchemas.js";
 import {
   AllSpiritsTraditions,
   LinkedSpiritsTraditions,

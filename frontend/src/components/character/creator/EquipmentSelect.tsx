@@ -66,6 +66,8 @@ interface IProps {
   setEquipmentSelected: (loadingEquipmentSelected: EquipmentListType) => void;
   nuyen: number;
   setNuyen: (nuyen: number) => void;
+  essencePoints: number;
+  setEssencePoints: (essencePoints: number) => void;
 }
 
 export const EquipmentSelect = function (props: IProps) {

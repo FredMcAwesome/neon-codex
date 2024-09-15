@@ -12,7 +12,7 @@ import type {
   CritterPowerRatingType,
   CritterPowerType,
   CritterPowerTypeType,
-} from "@neon-codex/common/build/schemas/abilities/magic/critterPowerSchemas.js";
+} from "@neon-codex/common/build/schemas/abilities/talent/critterPowerSchemas.js";
 
 @Entity()
 export class CritterPowers {

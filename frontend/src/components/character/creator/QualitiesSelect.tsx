@@ -18,7 +18,7 @@ interface IProps {
   ) => void;
 }
 
-export const QualitiesSelect = function (props: IProps) {
+export const QualityListSelect = function (props: IProps) {
   const qualities = trpc.character.qualities.useQuery();
   function setKarma(removeKarma: boolean, difference: number) {
     props.setKarmaPoints(

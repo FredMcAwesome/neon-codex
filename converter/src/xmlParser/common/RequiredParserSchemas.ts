@@ -436,6 +436,7 @@ const containsSchema = zod.union([
         .strict(),
     })
     .strict(),
+  zod.object({ program: zod.string() }).strict(),
   RequiredRecursiveSchema,
 ]);
 

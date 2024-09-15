@@ -6,19 +6,20 @@ import {
   Unique,
 } from "@mikro-orm/postgresql";
 import {
-  complexFormTargetEnum,
-  durationEnum,
   sourceBookEnum,
+  programCategoryEnum,
 } from "@neon-codex/common/build/enums.js";
-import type {
-  ComplexFormType,
-  fadingValueType,
-} from "@neon-codex/common/build/schemas/abilities/talent/complexFormSchemas.js";
 import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
+import type {
+  AvailabilityProgramType,
+  CostProgramType,
+  ProgramRatingType,
+  ProgramType,
+} from "@neon-codex/common/build/schemas/abilities/talent/programSchemas.js";
 import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
 
 @Entity()
-export class ComplexForms {
+export class Programs {
   @PrimaryKey()
   id!: number;
 
@@ -26,14 +27,17 @@ export class ComplexForms {
   @Unique()
   name!: string;
 
-  @Enum(() => complexFormTargetEnum)
-  target!: complexFormTargetEnum;
+  @Enum(() => programCategoryEnum)
+  category!: programCategoryEnum;
 
-  @Enum(() => durationEnum)
-  duration!: durationEnum;
+  @Property({ type: "json", nullable: true })
+  rating?: ProgramRatingType;
 
   @Property({ type: "json" })
-  fadingValue!: fadingValueType;
+  availability!: AvailabilityProgramType;
+
+  @Property({ type: "json" })
+  cost!: CostProgramType;
 
   @Property({ type: "json", nullable: true })
   bonus?: BonusType;
@@ -50,11 +54,12 @@ export class ComplexForms {
   @Property({ length: 5000 })
   description!: string;
 
-  constructor(dto: ComplexFormType) {
+  constructor(dto: ProgramType) {
     this.name = dto.name;
-    this.target = dto.target;
-    this.fadingValue = dto.fadingValue;
-    this.duration = dto.duration;
+    this.category = dto.category;
+    if (dto.rating !== undefined) this.rating = dto.rating;
+    this.availability = dto.availability;
+    this.cost = dto.cost;
     if (dto.bonus !== undefined) this.bonus = dto.bonus;
     if (dto.requirements !== undefined) this.requirements = dto.requirements;
     this.source = dto.source;

@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import AttributesSelect from "./AttributesSelect.js";
-import PrioritySelect from "./PrioritySelect.js";
+import AttributeListSelect from "./AttributesSelect.js";
+import PriorityListSelect from "./PrioritySelect.js";
 import "./CharacterCreator.css";
 import { Fragment } from "react";
-import { QualitiesSelect } from "./QualitiesSelect.js";
-import { SkillSelectList } from "./SkillsSelect.js";
+import { QualityListSelect } from "./QualitiesSelect.js";
+import { SkillListSelect } from "./SkillsSelect.js";
 import { EquipmentSelect } from "./EquipmentSelect.js";
 import { trpc } from "../../../utils/trpc.js";
 import type {
@@ -30,6 +30,7 @@ import type {
   TalentPriorityType,
 } from "@neon-codex/common/build/schemas/otherData/prioritySchemas.js";
 import type { SkillPointInfoType } from "../commonSchemas.js";
+import { TalentSelect } from "./TalentSelect.js";
 
 const characterCreatorPath = "/character_creator";
 const CharacterCreator = function () {
@@ -77,6 +78,7 @@ const CharacterCreator = function () {
       talent: { type: talentCategoryEnum.Mundane },
     });
   const [karmaPoints, setKarmaPoints] = useState(25);
+  const [essencePoints, setEssencePoints] = useState(6);
   const [positiveQualityListSelected, setPositiveQualitiesSelected] =
     useState<QualitySelectedListType>([]);
   const [negativeQualityListSelected, setNegativeQualitiesSelected] =
@@ -156,6 +158,9 @@ const CharacterCreator = function () {
   const onKarmaPointsChanged = function (loadingKarma: number) {
     setKarmaPoints(loadingKarma);
   };
+  const onEssencePointsChanged = function (loadingEssence: number) {
+    setEssencePoints(loadingEssence);
+  };
   const onPositiveQualitiesSelectedChanged = function (
     loadingPositiveQualities: QualitySelectedListType
   ) {
@@ -185,7 +190,39 @@ const CharacterCreator = function () {
     setNuyen(nuyen);
   };
 
-  const [page, setPage] = useState(0);
+  // TODO: make the page selection vary depending on talent choice
+  // and add a header at the top
+  enum CharacterPageEnum {
+    PriorityListSelect = "PriorityListSelect",
+    AttributeListSelect = "AttributeListSelect",
+    QualityListSelect = "QualityListSelect",
+    TalentListSelect = "TalentListSelect",
+    SkillListSelect = "SkillListSelect",
+    EquipmentListSelect = "EquipmentListSelect",
+    CreatorSummary = "CreatorSummary",
+  }
+
+  const PageActiveList =
+    priorityInfo.talent === priorityLetterEnum.E
+      ? [
+          CharacterPageEnum.PriorityListSelect,
+          CharacterPageEnum.AttributeListSelect,
+          CharacterPageEnum.QualityListSelect,
+          CharacterPageEnum.SkillListSelect,
+          CharacterPageEnum.EquipmentListSelect,
+          CharacterPageEnum.CreatorSummary,
+        ]
+      : [
+          CharacterPageEnum.PriorityListSelect,
+          CharacterPageEnum.AttributeListSelect,
+          CharacterPageEnum.QualityListSelect,
+          CharacterPageEnum.TalentListSelect,
+          CharacterPageEnum.SkillListSelect,
+          CharacterPageEnum.EquipmentListSelect,
+          CharacterPageEnum.CreatorSummary,
+        ];
+
+  const [page, setPage] = useState(CharacterPageEnum.PriorityListSelect);
 
   if (skills.isLoading) {
     return <div>Loading...</div>;
@@ -200,13 +237,11 @@ const CharacterCreator = function () {
     }
   }
 
-  const firstPage = 0;
-  const lastPage = 5;
   let currentStage;
   switch (page) {
-    case firstPage:
+    case CharacterPageEnum.PriorityListSelect:
       currentStage = (
-        <PrioritySelect
+        <PriorityListSelect
           priorityInfo={priorityInfo}
           setPriorityInfo={onPriorityInfoChanged}
           priorityHeritage={priorityHeritage}
@@ -221,9 +256,9 @@ const CharacterCreator = function () {
         />
       );
       break;
-    case 1:
+    case CharacterPageEnum.AttributeListSelect:
       currentStage = (
-        <AttributesSelect
+        <AttributeListSelect
           priorityInfo={priorityInfo}
           heritageInfo={priorityHeritage}
           attributeInfo={attributeInfo}
@@ -235,9 +270,9 @@ const CharacterCreator = function () {
         />
       );
       break;
-    case 2:
+    case CharacterPageEnum.QualityListSelect:
       currentStage = (
-        <QualitiesSelect
+        <QualityListSelect
           karmaPoints={karmaPoints}
           setKarmaPoints={onKarmaPointsChanged}
           positiveQualitiesSelected={positiveQualityListSelected}
@@ -247,9 +282,18 @@ const CharacterCreator = function () {
         />
       );
       break;
-    case 3:
+    case CharacterPageEnum.TalentListSelect:
       currentStage = (
-        <SkillSelectList
+        <TalentSelect
+          talent={priorityTalent}
+          karmaPoints={karmaPoints}
+          essencePoints={essencePoints}
+        />
+      );
+      break;
+    case CharacterPageEnum.SkillListSelect:
+      currentStage = (
+        <SkillListSelect
           skillPointItems={skillPoints}
           setSkillPoints={onSkillPointChanged}
           skillSelections={skillSelections}
@@ -257,17 +301,19 @@ const CharacterCreator = function () {
         />
       );
       break;
-    case 4:
+    case CharacterPageEnum.EquipmentListSelect:
       currentStage = (
         <EquipmentSelect
           equipmentSelected={equipmentSelected}
           setEquipmentSelected={onEquipmentSelectedChanged}
           nuyen={nuyen}
           setNuyen={onNuyenChanged}
+          essencePoints={essencePoints}
+          setEssencePoints={onEssencePointsChanged}
         />
       );
       break;
-    case lastPage:
+    case CharacterPageEnum.CreatorSummary:
       currentStage = (
         <CreatorSummary
           priorityInfo={priorityInfo}
@@ -287,22 +333,43 @@ const CharacterCreator = function () {
     default:
       currentStage = <>Error</>;
   }
+  const lastPage = PageActiveList.length - 1;
   return (
     <Fragment>
+      <nav>
+        {PageActiveList.map((page) => {
+          return <li>{page}</li>;
+        })}
+      </nav>
+      <div>Karma Remaining: {karmaPoints}</div>
+      <div>Essence Remaining: {essencePoints}</div>
       <button
         onClick={() => {
-          setPage(page > firstPage ? page - 1 : firstPage);
+          setPage(
+            page !== CharacterPageEnum.PriorityListSelect
+              ? PageActiveList[
+                  PageActiveList.findIndex((element) => element === page) - 1
+                ]
+              : CharacterPageEnum.PriorityListSelect
+          );
         }}
-        disabled={page == firstPage}
+        disabled={page == CharacterPageEnum.PriorityListSelect}
       >
         Previous
       </button>
+      {}
       {currentStage}
       <button
         onClick={() => {
-          setPage(page < lastPage ? page + 1 : lastPage);
+          setPage(
+            page !== PageActiveList[lastPage]
+              ? PageActiveList[
+                  PageActiveList.findIndex((element) => element === page) + 1
+                ]
+              : PageActiveList[lastPage]
+          );
         }}
-        hidden={page === lastPage}
+        hidden={page === PageActiveList[lastPage]}
       >
         Next
       </button>
@@ -323,7 +390,7 @@ const CharacterCreator = function () {
           });
           navigate(`/characters/${characterId}`);
         }}
-        hidden={page !== lastPage}
+        hidden={page !== PageActiveList[lastPage]}
       >
         Submit
       </button>

@@ -9,6 +9,7 @@ import {
   RequiredXmlSchema,
   type RequiredXmlType,
 } from "../common/RequiredParserSchemas.js";
+import { traditionSpiritFormEnum } from "@neon-codex/common/build/enums.js";
 
 export enum traditionXmlDrainAttributeEnum {
   WilCha = "{WIL} + {CHA}",
@@ -28,9 +29,7 @@ const TraditionSubBonusXmlSchema = zod
       zod.literal(""),
     ]),
     // replace materialisation power with this power instead
-    spiritform: zod.optional(
-      zod.union([zod.literal("Possession"), zod.literal("Inhabitation")])
-    ),
+    spiritform: zod.optional(zod.nativeEnum(traditionSpiritFormEnum)),
 
     limitspiritchoices: zod.optional(zod.literal("False")),
     // Other powers that count to this power's limit

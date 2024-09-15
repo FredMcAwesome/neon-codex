@@ -139,6 +139,23 @@ import { CustomisedVehicleModifications } from "@neon-codex/database/build/model
 import { CustomisedVehicles } from "@neon-codex/database/build/models/rpg/activeTables/customisedVehicleModel.js";
 import { CustomisedSkillGroups } from "@neon-codex/database/build/models/rpg/activeTables/activeSkillGroupModel.js";
 import Users from "@neon-codex/database/build/models/accounts/userModel.js";
+import type { SpellListType } from "@neon-codex/common/build/schemas/abilities/talent/spellSchemas.js";
+import { Spells } from "@neon-codex/database/build/models/rpg/abilities/spellModel.js";
+import type { ComplexFormListType } from "@neon-codex/common/build/schemas/abilities/talent/complexFormSchemas.js";
+import { ComplexForms } from "@neon-codex/database/build/models/rpg/abilities/complexFormModel.js";
+import type { AdeptPowerListType } from "@neon-codex/common/build/schemas/abilities/talent/adeptPowerSchemas.js";
+import { AdeptPowers } from "@neon-codex/database/build/models/rpg/abilities/adeptPowerModel.js";
+import type { ProgramListType } from "@neon-codex/common/build/schemas/abilities/talent/programSchemas.js";
+import { Programs } from "@neon-codex/database/build/models/rpg/abilities/programModel.js";
+import type { TraditionListType } from "@neon-codex/common/build/schemas/abilities/talent/traditionSchemas.js";
+import {
+  AllSpiritsTraditions,
+  LinkedSpiritsTraditions,
+  Traditions,
+  UnlinkedSpiritsTraditions,
+} from "@neon-codex/database/build/models/rpg/traits/traditionModel.js";
+import type { CritterListType } from "@neon-codex/common/build/schemas/creatures/critterSchemas.js";
+import { Critters } from "@neon-codex/database/build/models/rpg/creatures/critterModel.js";
 
 export async function getSkills() {
   const db = await init();
@@ -163,6 +180,306 @@ export async function getSkills() {
     };
   });
   return skillsResponse;
+}
+
+export async function getTraditions() {
+  const db = await init();
+  const traditions = await db.em.findAll(Traditions, {
+    populate: ["*"],
+  });
+  const traditionsResponse: TraditionListType = await Promise.all(
+    traditions.map(async (tradition) => {
+      let spiritTypes;
+      if (tradition instanceof UnlinkedSpiritsTraditions) {
+        spiritTypes = "Select Spirits" as const;
+      } else if (tradition instanceof AllSpiritsTraditions) {
+        spiritTypes = "All" as const;
+      } else if (tradition instanceof LinkedSpiritsTraditions) {
+        const combat = await tradition.combat.load();
+        if (combat === null) {
+          throw new Error("Combat spirit does not exist");
+        }
+        const detection = await tradition.detection.load();
+        if (detection === null) {
+          throw new Error("Detection spirit does not exist");
+        }
+        const health = await tradition.health.load();
+        if (health === null) {
+          throw new Error("Health spirit does not exist");
+        }
+        const illusion = await tradition.illusion.load();
+        if (illusion === null) {
+          throw new Error("Illusion spirit does not exist");
+        }
+        const manipulation = await tradition.manipulation.load();
+        if (manipulation === null) {
+          throw new Error("Manipulation spirit does not exist");
+        }
+        spiritTypes = {
+          spiritCombat: combat.name,
+          spiritDetection: detection.name,
+          spiritHealth: health.name,
+          spiritIllusion: illusion.name,
+          spiritManipulation: manipulation.name,
+        };
+      } else {
+        throw new Error(`Unknown Tradition type: ${tradition.name}`);
+      }
+      return {
+        name: tradition.name,
+        drain: tradition.drain,
+        spiritForm: tradition.spiritForm,
+        spiritTypes: spiritTypes,
+        bonus: tradition.bonus,
+        requirements: tradition.requirements,
+        source: tradition.source,
+        page: tradition.page,
+        description: tradition.description,
+      };
+    })
+  );
+  return traditionsResponse;
+}
+
+export async function getCritters() {
+  const db = await init();
+  const critters = await db.em.findAll(Critters, {
+    populate: ["*"],
+  });
+  const crittersResponse: CritterListType = await Promise.all(
+    critters.map(async (critter) => {
+      return {
+        name: critter.name,
+        category: critter.type,
+        bodyAttributeRange: critter.bodyAttributeRange,
+        agilityAttributeRange: critter.agilityAttributeRange,
+        reactionAttributeRange: critter.reactionAttributeRange,
+        strengthAttributeRange: critter.strengthAttributeRange,
+        charismaAttributeRange: critter.charismaAttributeRange,
+        intuitionAttributeRange: critter.intuitionAttributeRange,
+        logicAttributeRange: critter.logicAttributeRange,
+        willpowerAttributeRange: critter.willpowerAttributeRange,
+        initiativeAttributeRange: critter.initiativeAttributeRange,
+        edgeAttributeRange: critter.edgeAttributeRange,
+        magicAttributeRange: critter.magicAttributeRange,
+        resonanceAttributeRange: critter.resonanceAttributeRange,
+        essenceAttributeRange: critter.essenceAttributeRange,
+        depthAttributeRange: critter.depthAttributeRange,
+        nonStandardMovement: critter.nonStandardMovement,
+        movement: critter.movement,
+        includedPowerList: await Promise.all(
+          critter.includedPowerList.map(async (power) => {
+            const powerLoaded = await power.critterPower.load();
+            if (powerLoaded === null) {
+              throw new Error("Power does not exist");
+            }
+
+            return {
+              name: powerLoaded.name,
+              rating: power.rating,
+            };
+          })
+        ),
+        optionalPowerList: await Promise.all(
+          critter.optionalPowerList.map(async (power) => {
+            const powerLoaded = await power.critterPower.load();
+            if (powerLoaded === null) {
+              throw new Error("Power does not exist");
+            }
+
+            return {
+              name: powerLoaded.name,
+              rating: power.rating,
+            };
+          })
+        ),
+        addQualityList: await Promise.all(
+          critter.includedQualityList.map(async (quality) => {
+            const qualityLoaded = await quality.quality.load();
+            if (qualityLoaded === null) {
+              throw new Error("Included Quality does not exist");
+            }
+
+            return {
+              name: qualityLoaded.name,
+              rating: quality.rating,
+            };
+          })
+        ),
+        addBiowareList: await Promise.all(
+          critter.includedBiowareList.map(async (bioware) => {
+            const biowareLoaded = await bioware.augmentation.load();
+            if (biowareLoaded === null) {
+              throw new Error("Augmentation does not exist");
+            }
+
+            return {
+              name: biowareLoaded.name,
+              rating: bioware.rating,
+            };
+          })
+        ),
+        addComplexFormList: await Promise.all(
+          critter.includedComplexFormList.map(async (complexForm) => {
+            const complexFormLoaded = await complexForm.complexForm.load();
+            if (complexFormLoaded === null) {
+              throw new Error("Complex Form does not exist");
+            }
+
+            return {
+              name: complexFormLoaded.name,
+              select: complexForm.matrixAttribute,
+            };
+          })
+        ),
+        skills: {
+          skillList: await Promise.all(
+            critter.includedSkillList.map(async (skill) => {
+              const skillLoaded = await skill.skill.load();
+              if (skillLoaded === null) {
+                throw new Error("Skill does not exist");
+              }
+              return {
+                name: skillLoaded.name,
+                specialised: skill.specialisationsSelected,
+                rating: skill.critterSkillRating,
+                // TODO: do something for select
+                // select: skill.
+              };
+            })
+          ),
+          skillGroupList: await Promise.all(
+            critter.includedSkillGroupList.map(async (skillGroup) => {
+              const skillGroupLoaded = await skillGroup.skillGroup.load();
+              if (skillGroupLoaded === null) {
+                throw new Error("Skill Group does not exist");
+              }
+              return {
+                name: skillGroupLoaded.name,
+                rating: skillGroup.critterSkillGroupRating,
+              };
+            })
+          ),
+        },
+        bonus: critter.bonus,
+        source: critter.source,
+        page: critter.page,
+        description: critter.description,
+      };
+    })
+  );
+  return crittersResponse;
+}
+
+export async function getSpells() {
+  const db = await init();
+  const spells = await db.em.findAll(Spells, {
+    populate: ["*"],
+  });
+  const spellsResponse: SpellListType = spells.map((spell) => {
+    return {
+      name: spell.name,
+      category: spell.category,
+      type: spell.type,
+      damage: spell.damage,
+      damageType: spell.damageType,
+      descriptorList: spell.descriptorList,
+      duration: spell.duration,
+      range: spell.range,
+      bonus: spell.bonus,
+      requirements: spell.requirements,
+      source: spell.source,
+      page: spell.page,
+      description: spell.description,
+    };
+  });
+  return spellsResponse;
+}
+
+export async function getComplexForms() {
+  const db = await init();
+  const complexForms = await db.em.findAll(ComplexForms, {
+    populate: ["*"],
+  });
+  const complexFormsResponse: ComplexFormListType = complexForms.map(
+    (complexForm) => {
+      return {
+        name: complexForm.name,
+        target: complexForm.target,
+        duration: complexForm.duration,
+        fadingValue: complexForm.fadingValue,
+        bonus: complexForm.bonus,
+        requirements: complexForm.requirements,
+        source: complexForm.source,
+        page: complexForm.page,
+        description: complexForm.description,
+      };
+    }
+  );
+  return complexFormsResponse;
+}
+
+export async function getAdeptPowers() {
+  const db = await init();
+  const adeptPowers = await db.em.findAll(AdeptPowers, {
+    populate: ["*"],
+  });
+  const adeptPowersResponse: AdeptPowerListType = adeptPowers.map(
+    (adeptPower) => {
+      return {
+        name: adeptPower.name,
+        description: adeptPower.description,
+        pointCost: adeptPower.pointCost,
+        extraFirstLevelPointCost: adeptPower.extraFirstLevelPointCost,
+        levels: adeptPower.levels,
+        limit: adeptPower.limit,
+        sharedLimitAdeptPowerList: adeptPower.sharedLimitAdeptPowerList.map(
+          (power) => {
+            return power.name;
+          }
+        ),
+        action: adeptPower.action,
+        adeptWay:
+          adeptPower.adeptWayPointCost !== undefined
+            ? {
+                pointCost: adeptPower.adeptWayPointCost,
+                requirements: adeptPower.adeptWayRequirements,
+              }
+            : undefined,
+        doubleCost: adeptPower.doubleCost,
+        maxLevels: adeptPower.maxLevels,
+        userSelectable: adeptPower.userSelectable,
+        bonus: adeptPower.bonus,
+        requirements: adeptPower.requirements,
+        forbidden: adeptPower.forbidden,
+        source: adeptPower.source,
+        page: adeptPower.page,
+      };
+    }
+  );
+  return adeptPowersResponse;
+}
+
+export async function getPrograms() {
+  const db = await init();
+  const programs = await db.em.findAll(Programs, {
+    populate: ["*"],
+  });
+  const programsResponse: ProgramListType = programs.map((program) => {
+    return {
+      name: program.name,
+      description: program.description,
+      category: program.category,
+      rating: program.rating,
+      availability: program.availability,
+      cost: program.cost,
+      bonus: program.bonus,
+      requirements: program.requirements,
+      source: program.source,
+      page: program.page,
+    };
+  });
+  return programsResponse;
 }
 
 async function getWeapons(): Promise<WeaponSummaryListType> {
@@ -801,6 +1118,66 @@ const skills = privateProcedure.query(async () => {
     return skillsResponse;
   } catch (error) {
     logger.error("Unable to connect to the database:", error);
+    throw new Error("Database error");
+  }
+});
+
+const traditions = privateProcedure.query(async () => {
+  try {
+    const traditionsResponse: TraditionListType = await getTraditions();
+    return traditionsResponse;
+  } catch (error) {
+    logger.error("Unalbe to connect to the database:", error);
+    throw new Error("Database error");
+  }
+});
+
+const critters = privateProcedure.query(async () => {
+  try {
+    const crittersResponse: CritterListType = await getCritters();
+    return crittersResponse;
+  } catch (error) {
+    logger.error("Unalbe to connect to the database:", error);
+    throw new Error("Database error");
+  }
+});
+
+const spells = privateProcedure.query(async () => {
+  try {
+    const spellsResponse: SpellListType = await getSpells();
+    return spellsResponse;
+  } catch (error) {
+    logger.error("Unalbe to connect to the database:", error);
+    throw new Error("Database error");
+  }
+});
+
+const complexForms = privateProcedure.query(async () => {
+  try {
+    const complexFormsResponse: ComplexFormListType = await getComplexForms();
+    return complexFormsResponse;
+  } catch (error) {
+    logger.error("Unalbe to connect to the database:", error);
+    throw new Error("Database error");
+  }
+});
+
+const adeptPowers = privateProcedure.query(async () => {
+  try {
+    const adeptPowersResponse: AdeptPowerListType = await getAdeptPowers();
+    return adeptPowersResponse;
+  } catch (error) {
+    logger.error("Unalbe to connect to the database:", error);
+    throw new Error("Database error");
+  }
+});
+
+const programs = privateProcedure.query(async () => {
+  try {
+    const programsResponse: ProgramListType = await getPrograms();
+    return programsResponse;
+  } catch (error) {
+    logger.error("Unalbe to connect to the database:", error);
     throw new Error("Database error");
   }
 });
@@ -2033,6 +2410,12 @@ const convertVehicleTypeInformation = function (vehicleDB: Vehicles) {
 };
 
 export const characterRouter = router({
+  traditions: traditions,
+  critters: critters,
+  spells: spells,
+  complexForms: complexForms,
+  adeptPowers: adeptPowers,
+  programs: programs,
   skills: skills,
   qualities: qualities,
   priorities: priorities,

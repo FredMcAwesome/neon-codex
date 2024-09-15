@@ -169,7 +169,7 @@ interface IProps {
   priorityTalent: TalentPriorityType;
 }
 
-const PrioritySelect = function ({
+const PriorityListSelect = function ({
   priorityInfo,
   setPriorityInfo,
   priorityHeritage,
@@ -210,7 +210,7 @@ const PrioritySelect = function ({
   );
 };
 
-export default PrioritySelect;
+export default PriorityListSelect;
 
 const PrioritySelectLoaded = function ({
   priorityTable,

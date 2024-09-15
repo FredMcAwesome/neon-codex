@@ -122,6 +122,8 @@ import { CritterIncludedComplexForms } from "../models/rpg/activeTables/activeCo
 import { CritterIncludedSkills } from "../models/rpg/activeTables/activeSkillModel.js";
 import { CritterIncludedSkillGroups } from "../models/rpg/activeTables/activeSkillGroupModel.js";
 import { CritterIncludedKnowledgeSkills } from "../models/rpg/activeTables/activeKnowledgeSkillModel.js";
+import { getPrograms } from "../seeds/rpgSeeds/programsSeed.js";
+import { Programs } from "../models/rpg/abilities/programModel.js";
 
 export class SourcebookSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
@@ -147,7 +149,8 @@ export class SourcebookSeeder extends Seeder {
     const stagedVehicleWeaponMounts = createVehicleWeaponMounts();
     const stagedVehicleModifications = getVehicleModifications();
     const { unlinkedGears, stagedGears } = getGears();
-    const stagedspells: Array<Spells> = getSpells();
+    const stagedSpells: Array<Spells> = getSpells();
+    const stagedPrograms = getPrograms();
     const { unlinkedAdeptPowers, stagedAdeptPowers } = getAdeptPowers();
     const stagedComplexForms = getComplexForms();
     const { unlinkedCritters, stagedCritters } = getCritters();
@@ -276,10 +279,14 @@ export class SourcebookSeeder extends Seeder {
     }
     console.log("Gears created");
 
-    stagedspells.forEach((spell) => {
+    stagedSpells.forEach((spell) => {
       em.create(Spells, spell);
     });
     console.log("Spells created");
+
+    stagedPrograms.forEach((program) => {
+      em.create(Programs, program);
+    });
 
     stagedAdeptPowers.forEach((adeptPower) => {
       em.create(AdeptPowers, adeptPower);

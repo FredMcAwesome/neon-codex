@@ -8,7 +8,7 @@
     "converter"
   ],
   "scripts": {
-    "build": "npm run build-frontend && npm run build-backend",
+    "build": "npm run build-backend && npm run build-frontend ",
     "build-backend": "npm run build -w backend",
     "build-frontend": "npm run build-dev -w frontend",
     "serve-backend": "npm run dev -w backend",
@@ -28,6 +28,7 @@
   },
   "private": true,
   "devDependencies": {
+    "@tanstack/eslint-plugin-query": "^5.56.1",
     "@types/mini-css-extract-plugin": "^2.5.1",
     "@typescript-eslint/eslint-plugin": "^6.19.1",
     "@typescript-eslint/parser": "^6.19.1",

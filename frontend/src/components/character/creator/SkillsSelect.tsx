@@ -32,7 +32,7 @@ interface IProps {
   setSkillSelections: (loadingSkillPoints: CustomSkillListType) => void;
 }
 
-export const SkillSelectList = function (props: IProps) {
+export const SkillListSelect = function (props: IProps) {
   const setSkill = function (
     skill: CustomSkillType,
     skillPoints: number,

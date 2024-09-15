@@ -1,0 +1,47 @@
+Availability {
+  Exp = Availability
+  Availability = AddSub Restriction -- full
+    | "(" AddSub ")" Restriction -- parenthesisFull
+    | AddSub -- partial
+  Restriction = Restricted
+    | Forbidden
+  Restricted = "R"
+  Forbidden = "F"
+  AddSub = AddSub "+" MulDiv -- add
+    | AddSub "-" MulDiv -- subtract
+    | MulDiv -- base
+  MulDiv = MulDiv "*" AvailabilityValue -- multiply
+    | MulDiv "/" AvailabilityValue -- divide
+    | AvailabilityValue
+  AvailabilityValue = Number
+    | Rating
+  Rating = "Rating"
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+}
+
+Cost {
+  Exp = Cost
+    | "FixedValues(" Inner ")" -- fixed
+  Inner = Inner "," Cost -- list
+    | Cost -- cost 
+  Cost = "[" AddSub "]" -- fixed
+    | AddSub
+  AddSub = AddSub "+" MulDiv -- add
+    | AddSub "-" MulDiv -- subtract
+    | MulDiv -- base
+  MulDiv = MulDiv "*" SubCalculation -- multiply
+    | MulDiv "/" SubCalculation -- divide
+    | SubCalculation
+  SubCalculation = "(" Cost ")" -- parenthesis
+    | CostValue
+  CostValue = Number
+    | Rating
+  Rating = "{Rating}" | "Rating"
+  Number = "-" PositiveNumber -- negative
+    | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+}

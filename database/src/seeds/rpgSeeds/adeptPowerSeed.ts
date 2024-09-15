@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 import {
   AdeptPowerListSchema,
   type AdeptPowerListType,
-} from "@neon-codex/common/build/schemas/abilities/magic/adeptPowerSchemas.js";
+} from "@neon-codex/common/build/schemas/abilities/talent/adeptPowerSchemas.js";
 import { AdeptPowers } from "../../models/rpg/abilities/adeptPowerModel.js";
 
 export const getAdeptPowers = function () {

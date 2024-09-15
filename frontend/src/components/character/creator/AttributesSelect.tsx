@@ -80,7 +80,7 @@ interface IProps {
   talentInfo: TalentPriorityType;
 }
 
-const AttributesSelect = function (props: IProps) {
+const AttributeListSelect = function (props: IProps) {
   const heritages = trpc.character.heritages.useQuery();
 
   if (heritages.isError) {
@@ -105,7 +105,7 @@ const AttributesSelect = function (props: IProps) {
     />
   );
 };
-export default AttributesSelect;
+export default AttributeListSelect;
 
 const AttributesSelectLoaded = function (
   props: IProps & { heritages: HeritageListType }

@@ -22,7 +22,7 @@ import {
   convertSpellPowerRange,
 } from "../common/ParserHelper.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
-import { SpellSchema } from "@neon-codex/common/build/schemas/abilities/magic/spellSchemas.js";
+import { SpellSchema } from "@neon-codex/common/build/schemas/abilities/talent/spellSchemas.js";
 import Spells from "../../grammar/spells.ohm-bundle.js";
 const Damage = Spells.Damage;
 
