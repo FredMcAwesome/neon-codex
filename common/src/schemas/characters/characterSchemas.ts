@@ -87,6 +87,124 @@ export const SpecialAttributesSchema = zod
   .strict();
 export type SpecialAttributesType = zod.infer<typeof SpecialAttributesSchema>;
 
+const CustomSpiritsSchema = zod.discriminatedUnion("customSpirits", [
+  zod.object({ customSpirits: zod.literal(false) }).strict(),
+  zod
+    .object({
+      customSpirits: zod.literal(true),
+      selectedSpiritTypes: zod
+        .object({
+          combat: zod.string(),
+          detection: zod.string(),
+          health: zod.string(),
+          illusion: zod.string(),
+          manipulation: zod.string(),
+        })
+        .strict(),
+    })
+    .strict(),
+]);
+export type CustomSpiritsType = zod.infer<typeof CustomSpiritsSchema>;
+
+const TraditionSelectedSchema = zod
+  .object({
+    name: zod.string(),
+    customSpirits: CustomSpiritsSchema,
+  })
+  .strict();
+export type TraditionSelectedType = zod.infer<typeof TraditionSelectedSchema>;
+
+const FormulaListSelectedSchema = zod.discriminatedUnion("selectFormulae", [
+  zod
+    .object({
+      selectFormulae: zod.literal(false),
+    })
+    .strict(),
+  zod
+    .object({
+      selectFormulae: zod.literal(true),
+      spells: zod.array(zod.string()),
+      rituals: zod.array(zod.string()),
+      alchemicalPreparations: zod.array(zod.string()),
+    })
+    .strict(),
+]);
+export type FormulaListSelectedType = zod.infer<
+  typeof FormulaListSelectedSchema
+>;
+
+const AdeptPowerListSelectedSchema = zod.discriminatedUnion(
+  "selectAdeptPowers",
+  [
+    zod
+      .object({
+        selectAdeptPowers: zod.literal(false),
+      })
+      .strict(),
+    zod
+      .object({
+        selectAdeptPowers: zod.literal(true),
+        adeptPowers: zod.array(zod.string()),
+      })
+      .strict(),
+  ]
+);
+export type AdeptPowerListSelectedType = zod.infer<
+  typeof AdeptPowerListSelectedSchema
+>;
+const ProgramSelectedListSchema = zod.array(
+  zod
+    .object({
+      name: zod.string(),
+      rating: zod.optional(zod.number()),
+    })
+    .strict()
+);
+export type ProgramSelectedListType = zod.infer<
+  typeof ProgramSelectedListSchema
+>;
+
+export const TalentInfoSchema = zod.discriminatedUnion("type", [
+  zod
+    .object({
+      type: zod.literal(talentCategoryEnum.Magic),
+      selectedTradition: TraditionSelectedSchema,
+      selectedFormulae: FormulaListSelectedSchema,
+      selectedAdeptPowers: AdeptPowerListSelectedSchema,
+    })
+    .strict(),
+  zod
+    .object({
+      type: zod.literal(talentCategoryEnum.Resonance),
+      complexForms: zod.array(zod.string()),
+    })
+    .strict(),
+  zod
+    .object({
+      type: zod.literal(talentCategoryEnum.Depth),
+      programs: ProgramSelectedListSchema,
+    })
+    .strict(),
+  zod
+    .object({
+      type: zod.literal(talentCategoryEnum.Mundane),
+    })
+    .strict(),
+]);
+export type TalentInfoType = zod.infer<typeof TalentInfoSchema>;
+export type MagicTalentInfoType = TalentInfoType & {
+  type: talentCategoryEnum.Magic;
+};
+export type ResonanceTalentInfoType = TalentInfoType & {
+  type: talentCategoryEnum.Resonance;
+};
+export type DepthTalentInfoType = TalentInfoType & {
+  type: talentCategoryEnum.Depth;
+};
+export type MundaneTalentInfoType = TalentInfoType & {
+  type: talentCategoryEnum.Mundane;
+};
+
 export const QualitySelectedListSchema = zod.array(
   zod
     .object({
@@ -139,6 +257,7 @@ export type CharacterType = {
   priorities: PriorityLevelsType;
   attributes: AttributesType;
   specialAttributes: SpecialAttributesType;
+  talentInfo: TalentInfoType;
   skillList: CustomSkillListType;
   qualityList: CustomQualityListType;
   nuyen: number;
@@ -156,6 +275,7 @@ export const CharacterSchema: zod.ZodType<CharacterType> = zod
     priorities: PriorityLevelsSchema,
     attributes: AttributesSchema,
     specialAttributes: SpecialAttributesSchema,
+    talentInfo: TalentInfoSchema,
     skillList: CustomSkillListSchema,
     qualityList: CustomQualityListSchema,
     //talent: talentStuffSchema,

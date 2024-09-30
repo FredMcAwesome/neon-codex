@@ -80,6 +80,11 @@ import {
   type CharacterType,
   type CharacterSummaryListType,
   type CharacterSummaryType,
+  TalentInfoSchema,
+  type CustomSpiritsType,
+  type FormulaListSelectedType,
+  type AdeptPowerListSelectedType,
+  type ProgramSelectedListType,
 } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
 import { Armours } from "@neon-codex/database/build/models/rpg/equipment/combat/armourModel.js";
 import { Characters } from "@neon-codex/database/build/models/rpg/characters/characterModel.js";
@@ -156,6 +161,14 @@ import {
 } from "@neon-codex/database/build/models/rpg/traits/traditionModel.js";
 import type { CritterListType } from "@neon-codex/common/build/schemas/creatures/critterSchemas.js";
 import { Critters } from "@neon-codex/database/build/models/rpg/creatures/critterModel.js";
+import { ActivePrograms } from "@neon-codex/database/build/models/rpg/activeTables/activeProgramModel.js";
+import {
+  ActiveDepthTalents,
+  ActiveMagicTalents,
+  ActiveResonanceTalents,
+  ActiveTalents,
+} from "@neon-codex/database/build/models/rpg/activeTables/activeTalentModel.js";
+import assert from "assert";
 
 export async function getSkills() {
   const db = await init();
@@ -223,7 +236,9 @@ export async function getTraditions() {
           spiritManipulation: manipulation.name,
         };
       } else {
-        throw new Error(`Unknown Tradition type: ${tradition.name}`);
+        throw new Error(
+          `Unknown Tradition type: ${tradition.name}, class ${tradition.constructor.name}`
+        );
       }
       return {
         name: tradition.name,
@@ -622,7 +637,9 @@ async function getWeaponTypeInformation(weapon: Weapons) {
       };
       return typeInformation;
     } else {
-      throw new Error(`Weapon type unexpected: ${weapon.type}`);
+      throw new Error(
+        `Weapon type unexpected: ${weapon.type}, class ${weapon.constructor.name}`
+      );
     }
   }
   throw new Error(`Weapon type unexpected: ${weapon.type}`);
@@ -760,7 +777,9 @@ function getAugmentationTypeInformation(augmentation: Augmentations) {
       isGeneware: augmentation.isGeneware,
     };
   }
-  throw new Error(`Augmentation type unexpected: ${augmentation.type}`);
+  throw new Error(
+    `Augmentation type unexpected: ${augmentation.type}, class ${augmentation.constructor.name}`
+  );
 }
 
 async function getVehicles() {
@@ -848,7 +867,9 @@ function getVehicleTypeInformation(vehicle: Vehicles) {
     };
   }
 
-  throw new Error(`Vehicle type unexpected: ${vehicle.type}`);
+  throw new Error(
+    `Vehicle type unexpected: ${vehicle.type}, class ${vehicle.constructor.name}`
+  );
 }
 
 export async function getGears(): Promise<GearListType> {
@@ -1307,6 +1328,7 @@ const CharacterInformationSchema = zod
     heritageInfo: HeritagePrioritySelectedSchema,
     attributeInfo: AttributesSchema,
     specialAttributeInfo: SpecialAttributesSchema,
+    talentInfo: TalentInfoSchema,
     positiveQualityListSelected: QualitySelectedListSchema,
     negativeQualityListSelected: QualitySelectedListSchema,
     skillSelections: CustomSkillListSchema,
@@ -1376,12 +1398,162 @@ const createCharacter = privateProcedure
       db.em.persist(activeSkill);
     }
 
+    let activeTalent: ActiveTalents;
+    switch (opts.input.talentInfo.type) {
+      case talentCategoryEnum.Magic:
+        activeTalent = new ActiveMagicTalents(opts.input.talentInfo);
+        activeTalent.character = characterReference;
+        assert(activeTalent instanceof ActiveMagicTalents);
+        db.em.persist(activeTalent);
+        const magicTalent = opts.input.talentInfo;
+        const loadedTradition = await db.em.findOne(Traditions, {
+          name: magicTalent.selectedTradition.name,
+        });
+        if (loadedTradition === null) {
+          throw new Error(
+            `Tradition ${magicTalent.selectedTradition.name} does not exist`
+          );
+        }
+        activeTalent.tradition = ref(loadedTradition);
+        if (magicTalent.selectedTradition.customSpirits.customSpirits) {
+          const spiritTypes =
+            magicTalent.selectedTradition.customSpirits.selectedSpiritTypes;
+          let loadedSpirit = await db.em.findOne(Critters, {
+            name: spiritTypes.combat,
+          });
+          if (loadedSpirit === null) {
+            throw new Error(`Spirit ${spiritTypes.combat} does not exist`);
+          }
+          activeTalent.combatSpirit = ref(loadedSpirit);
+
+          loadedSpirit = await db.em.findOne(Critters, {
+            name: spiritTypes.detection,
+          });
+          if (loadedSpirit === null) {
+            throw new Error(`Spirit ${spiritTypes.detection} does not exist`);
+          }
+          activeTalent.detectionSpirit = ref(loadedSpirit);
+
+          loadedSpirit = await db.em.findOne(Critters, {
+            name: spiritTypes.health,
+          });
+          if (loadedSpirit === null) {
+            throw new Error(`Spirit ${spiritTypes.health} does not exist`);
+          }
+          activeTalent.healthSpirit = ref(loadedSpirit);
+
+          loadedSpirit = await db.em.findOne(Critters, {
+            name: spiritTypes.health,
+          });
+          if (loadedSpirit === null) {
+            throw new Error(`Spirit ${spiritTypes.health} does not exist`);
+          }
+          activeTalent.illusionSpirit = ref(loadedSpirit);
+
+          loadedSpirit = await db.em.findOne(Critters, {
+            name: spiritTypes.illusion,
+          });
+          if (loadedSpirit === null) {
+            throw new Error(`Spirit ${spiritTypes.combat} does not exist`);
+          }
+          activeTalent.manipulationSpirit = ref(loadedSpirit);
+        }
+
+        if (magicTalent.selectedFormulae.selectFormulae) {
+          for (const spell of magicTalent.selectedFormulae.spells) {
+            const loadedSpell = await db.em.findOne(Spells, {
+              name: spell,
+            });
+            if (loadedSpell === null) {
+              throw new Error(`Spell ${spell} does not exist`);
+            }
+            activeTalent.spellList.add(loadedSpell);
+          }
+          for (const ritual of magicTalent.selectedFormulae.rituals) {
+            const loadedRitual = await db.em.findOne(Spells, {
+              name: ritual,
+            });
+            if (loadedRitual === null) {
+              throw new Error(`Ritual ${ritual} does not exist`);
+            }
+            activeTalent.ritualList.add(loadedRitual);
+          }
+          for (const alchemicalPreparation of magicTalent.selectedFormulae
+            .alchemicalPreparations) {
+            const loadedAlchemicalPreparation = await db.em.findOne(Spells, {
+              name: alchemicalPreparation,
+            });
+            if (loadedAlchemicalPreparation === null) {
+              throw new Error(
+                `Alchemical Preparation ${alchemicalPreparation} does not exist`
+              );
+            }
+            activeTalent.alchemicalPreparationList.add(
+              loadedAlchemicalPreparation
+            );
+          }
+        }
+
+        if (magicTalent.selectedAdeptPowers.selectAdeptPowers) {
+          for (const adeptPower of magicTalent.selectedAdeptPowers
+            .adeptPowers) {
+            const loadedAdeptPower = await db.em.findOne(AdeptPowers, {
+              name: adeptPower,
+            });
+            if (loadedAdeptPower === null) {
+              throw new Error(`Adept Power ${adeptPower} does not exist`);
+            }
+            activeTalent.adeptPowerList.add(loadedAdeptPower);
+          }
+        }
+        break;
+      case talentCategoryEnum.Resonance:
+        activeTalent = new ActiveResonanceTalents(opts.input.talentInfo);
+        activeTalent.character = characterReference;
+        assert(activeTalent instanceof ActiveResonanceTalents);
+        db.em.persist(activeTalent);
+        for (const complexForm of opts.input.talentInfo.complexForms) {
+          const loadedComplexForm = await db.em.findOne(ComplexForms, {
+            name: complexForm,
+          });
+          if (loadedComplexForm === null) {
+            throw new Error(`Complex Form ${complexForm} does not exist`);
+          }
+          activeTalent.complexFormList.add(loadedComplexForm);
+        }
+        break;
+      case talentCategoryEnum.Depth:
+        activeTalent = new ActiveDepthTalents(opts.input.talentInfo);
+        activeTalent.character = characterReference;
+        db.em.persist(activeTalent);
+        for (const program of opts.input.talentInfo.programs) {
+          const loadedProgram = await db.em.findOne(Programs, {
+            name: program.name,
+          });
+          if (loadedProgram === null) {
+            throw new Error(`Program ${program.name} does not exist`);
+          }
+          const activeProgram = new ActivePrograms(
+            ref(loadedProgram),
+            ref(activeTalent),
+            program.rating
+          );
+          db.em.persist(activeProgram);
+        }
+        break;
+      case talentCategoryEnum.Mundane:
+        // Do nothing
+        break;
+    }
+
     for (const selectedSkillGroup of opts.input.skillGroupSelections) {
       const skillGroup = await db.em.findOne(SkillGroups, {
         name: selectedSkillGroup.name,
       });
       if (skillGroup === null) {
-        throw new Error("Skill Group does not exist");
+        throw new Error(
+          `Skill Group ${selectedSkillGroup.name} does not exist`
+        );
       }
       const activeSkillGroup = new CustomisedSkillGroups(
         characterReference,
@@ -1400,7 +1572,7 @@ const createCharacter = privateProcedure
         name: selectedQuality.name,
       });
       if (quality === null) {
-        throw new Error("Quality does not exist");
+        throw new Error(`Quality ${selectedQuality.name} does not exist`);
       }
       const activeQuality = new CustomisedQualities(
         characterReference,
@@ -1415,7 +1587,7 @@ const createCharacter = privateProcedure
         name: unlinkedWeapon.name,
       });
       if (weapon === null) {
-        throw new Error("Weapon does not exist");
+        throw new Error(`Weapon ${unlinkedWeapon.name} does not exist`);
       }
       const activeWeapon = new CustomisedWeapons(
         characterReference,
@@ -1430,7 +1602,9 @@ const createCharacter = privateProcedure
           name: unlinkedAccessory.name,
         });
         if (accessory === null) {
-          throw new Error("Weapon Accessory does not exist");
+          throw new Error(
+            `Weapon Accessory ${unlinkedAccessory.name} does not exist`
+          );
         }
         // TODO: confirm this cascades properly
         db.em.persist(
@@ -1449,7 +1623,7 @@ const createCharacter = privateProcedure
         name: unlinkedArmour.name,
       });
       if (armour === null) {
-        throw new Error("Armour does not exist");
+        throw new Error(`Armour ${unlinkedArmour.name} does not exist`);
       }
       const activeArmour = new CustomisedArmours(
         characterReference,
@@ -1464,7 +1638,7 @@ const createCharacter = privateProcedure
           name: unlinkedMod.name,
         });
         if (mod === null) {
-          throw new Error("Armour Mod does not exist");
+          throw new Error(`Armour Mod ${unlinkedMod.name} does not exist`);
         }
         // TODO: confirm this cascades properly
         db.em.persist(
@@ -1482,7 +1656,7 @@ const createCharacter = privateProcedure
         name: unlinkedGear.name,
       });
       if (gear === null) {
-        throw new Error("Gear does not exist");
+        throw new Error(`Gear ${unlinkedGear.name} does not exist`);
       }
       const activeGear = new CustomisedGears(ref(gear));
       db.em.persist(activeGear);
@@ -1494,7 +1668,7 @@ const createCharacter = privateProcedure
           name: unlinkedChildGear.name,
         });
         if (childGear === null) {
-          throw new Error("Gear does not exist");
+          throw new Error(`Gear ${unlinkedChildGear.name} does not exist`);
         }
         // TODO: confirm this cascades properly
         db.em.persist(new CustomisedGears(ref(childGear), ref(activeGear)));
@@ -1507,7 +1681,9 @@ const createCharacter = privateProcedure
         name: unlinkedAugmentation.name,
       });
       if (augmentation === null) {
-        throw new Error("Augmentation does not exist");
+        throw new Error(
+          `Augmentation ${unlinkedAugmentation.name} does not exist`
+        );
       }
       const activeAugmentation = new CustomisedAugmentations(ref(augmentation));
       db.em.persist(activeAugmentation);
@@ -1519,7 +1695,7 @@ const createCharacter = privateProcedure
           name: unlinkedGear.name,
         });
         if (gear === null) {
-          throw new Error("Gear does not exist");
+          throw new Error(`Gear ${unlinkedGear.name} does not exist`);
         }
         // TODO: confirm this cascades properly
         db.em.persist(
@@ -1533,7 +1709,7 @@ const createCharacter = privateProcedure
         name: unlinkedVehicle.name,
       });
       if (vehicle === null) {
-        throw new Error("Vehicle does not exist");
+        throw new Error(`Vehicle ${unlinkedVehicle.name} does not exist`);
       }
       const activeVehicle = new CustomisedVehicles(
         characterReference,
@@ -1548,7 +1724,7 @@ const createCharacter = privateProcedure
           name: unlinkedMods.name,
         });
         if (mod === null) {
-          throw new Error("Vehicle Mod does not exist");
+          throw new Error(`Vehicle Mod ${unlinkedMods.name} does not exist`);
         }
         // TODO: confirm this cascades properly
         db.em.persist(
@@ -1610,6 +1786,143 @@ const getCharacter = privateProcedure
         throw new Error("Character does not exist");
       }
 
+      let talentInfo;
+      if (character.talent === undefined) {
+        talentInfo = {
+          type: talentCategoryEnum.Mundane as const,
+        };
+      } else {
+        if (character.talent.$ instanceof ActiveMagicTalents) {
+          const talent = await db.em.findOne(
+            ActiveMagicTalents,
+            character.talent.id,
+            {
+              populate: ["*"],
+            }
+          );
+          if (talent === null) {
+            throw new Error("Talent does not exist");
+          }
+
+          let spirits: CustomSpiritsType = {
+            customSpirits: false as const,
+          };
+          if (
+            talent.combatSpirit !== undefined &&
+            talent.detectionSpirit !== undefined &&
+            talent.healthSpirit !== undefined &&
+            talent.illusionSpirit !== undefined &&
+            talent.manipulationSpirit !== undefined
+          ) {
+            spirits = {
+              customSpirits: true as const,
+              selectedSpiritTypes: {
+                combat: talent.combatSpirit.$.name,
+                detection: talent.detectionSpirit.$.name,
+                health: talent.healthSpirit.$.name,
+                illusion: talent.illusionSpirit.$.name,
+                manipulation: talent.manipulationSpirit.$.name,
+              },
+            };
+          }
+          const tradition = {
+            name: talent.tradition.$.name,
+            customSpirits: spirits,
+          };
+
+          let formulae: FormulaListSelectedType = { selectFormulae: false };
+          // TODO: this assumes we selected at char gen,
+          // there is probably a case where this isn't true
+          // need to check based on char gen method e.g. priority
+          // to see if we allow the selection of formulae
+          if (
+            talent.spellList.length > 0 ||
+            talent.ritualList.length > 0 ||
+            talent.alchemicalPreparationList.length > 0
+          ) {
+            formulae = {
+              selectFormulae: true as const,
+              spells: talent.spellList.$.map((spell) => {
+                return spell.name;
+              }),
+              rituals: talent.ritualList.$.map((ritual) => {
+                return ritual.name;
+              }),
+              alchemicalPreparations: talent.alchemicalPreparationList.$.map(
+                (alchemicalPreparation) => {
+                  return alchemicalPreparation.name;
+                }
+              ),
+            };
+          }
+          let adeptPowers: AdeptPowerListSelectedType = {
+            selectAdeptPowers: false as const,
+          };
+          if (talent.adeptPowerList.length > 0) {
+            adeptPowers = {
+              selectAdeptPowers: true as const,
+              adeptPowers: talent.adeptPowerList.$.map((adeptPower) => {
+                return adeptPower.name;
+              }),
+            };
+          }
+          talentInfo = {
+            type: talentCategoryEnum.Magic as const,
+            selectedTradition: tradition,
+            selectedFormulae: formulae,
+            selectedAdeptPowers: adeptPowers,
+          };
+        } else if (character.talent.$ instanceof ActiveResonanceTalents) {
+          const talent = await db.em.findOne(
+            ActiveResonanceTalents,
+            character.talent.id,
+            {
+              populate: ["*"],
+            }
+          );
+          if (talent === null) {
+            throw new Error("Talent does not exist");
+          }
+          talentInfo = {
+            type: talentCategoryEnum.Resonance as const,
+            complexForms: talent.complexFormList.$.map((complexForm) => {
+              return complexForm.name;
+            }),
+          };
+        } else if (character.talent.$ instanceof ActiveDepthTalents) {
+          const talent = await db.em.findOne(
+            ActiveDepthTalents,
+            character.talent.id,
+            {
+              populate: ["*"],
+            }
+          );
+          if (talent === null) {
+            throw new Error("Talent does not exist");
+          }
+          const programList: ProgramSelectedListType = [];
+          for (const activeProgram of talent.ProgramList.$) {
+            const program = await db.em.findOne(Programs, activeProgram.id);
+            if (program === null) {
+              throw new Error("Program does not exist");
+            }
+            programList.push({
+              name: program.name,
+              ...(activeProgram.rating !== undefined && {
+                rating: activeProgram.rating,
+              }),
+            });
+          }
+          talentInfo = {
+            type: talentCategoryEnum.Depth as const,
+            programs: programList,
+          };
+        } else {
+          throw new Error(
+            `Unknown talent type for ${character.id}, class ${character.constructor.name}`
+          );
+        }
+      }
       const skills = await Promise.all(
         character.skills.map(async (skill) => {
           return await convertActiveSkillDBToDTO(skill);
@@ -1628,6 +1941,7 @@ const getCharacter = privateProcedure
         priorities: character.priorities,
         attributes: character.attributes,
         specialAttributes: character.specialAttributes,
+        talentInfo: talentInfo,
         skillList: skills,
         qualityList: qualities,
         nuyen: character.nuyen,
@@ -1941,7 +2255,9 @@ const convertWeaponDBTypeInformationToDTO = function (weaponDB: Weapons) {
       }),
     };
   } else {
-    throw new Error("Unknown Weapon type");
+    throw new Error(
+      `Unknown Weapon type weapon ${weaponDB.name}, class ${weaponDB.constructor.name}`
+    );
   }
 };
 
@@ -2298,7 +2614,9 @@ const convertAugmentationTypeInformation = async function (
       }),
     };
   } else {
-    throw new Error("Augmentation type unknown");
+    throw new Error(
+      `Augmentation type unknown augmentation ${augmentationDB.name}, class ${augmentationDB.constructor.name}`
+    );
   }
 };
 
@@ -2405,7 +2723,9 @@ const convertVehicleTypeInformation = function (vehicleDB: Vehicles) {
       subtype: vehicleDB.subtype,
     };
   } else {
-    throw new Error("Vehicle type unknown");
+    throw new Error(
+      `Vehicle type unknown vehicle ${vehicleDB.name}, class ${vehicleDB.constructor.name}`
+    );
   }
 };
 
@@ -2462,7 +2782,9 @@ async function getHeritageTypeInformation(heritageDB: Heritages) {
       baseHeritage: baseHeritage.name,
     };
   } else {
-    throw new Error("Unknown heritage type");
+    throw new Error(
+      `Unknown heritage type heritage ${heritageDB.name}, class ${heritageDB.constructor.name}`
+    );
   }
   return typeInformation;
 }
@@ -2535,7 +2857,7 @@ function parsePriority(
         ...baseTalent,
         category: talentCategoryEnum.Magic as const,
         magic: talent.magic,
-        spells: talent.spells,
+        formulae: talent.formulae,
       };
     } else if (talent instanceof ResonanceTalentPriorityDetails) {
       return {
@@ -2556,7 +2878,9 @@ function parsePriority(
         category: talentCategoryEnum.Mundane as const,
       };
     } else {
-      throw Error("Talent type is unknown");
+      throw Error(
+        `Talent type is unknown talent ${talent.name}, class ${talent.constructor.name}`
+      );
     }
   });
 

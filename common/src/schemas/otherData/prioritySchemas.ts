@@ -58,7 +58,7 @@ const TalentBaseSchema = zod
 const MagicTalentPrioritySchema = TalentBaseSchema.extend({
   category: zod.literal(talentCategoryEnum.Magic),
   magic: zod.number(),
-  spells: zod.optional(zod.number()),
+  formulae: zod.optional(zod.number()),
 }).strict();
 
 const ResonanceTalentPrioritySchema = TalentBaseSchema.extend({

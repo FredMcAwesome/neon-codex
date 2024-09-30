@@ -18,6 +18,7 @@ import type {
   PriorityLevelsType,
   HeritagePrioritySelectedType,
   QualitySelectedListType,
+  TalentInfoType,
 } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
 import { CreatorSummary } from "./CreatorSummary.js";
 import { useNavigate } from "react-router-dom";
@@ -54,6 +55,9 @@ const CharacterCreator = function () {
     logic: 1,
     intuition: 1,
     charisma: 1,
+  });
+  const [talentInfo, setTalentInfo] = useState<TalentInfoType>({
+    type: talentCategoryEnum.Mundane,
   });
   const [priorityHeritage, setPriorityHeritage] =
     useState<HeritagePrioritySelectedType>({
@@ -154,6 +158,9 @@ const CharacterCreator = function () {
     loadingSpecialAttributes: SpecialAttributesType
   ) {
     setSpecialAttributeInfo(loadingSpecialAttributes);
+  };
+  const onTalentInfoChanged = function (loadingTalentInfo: TalentInfoType) {
+    setTalentInfo(loadingTalentInfo);
   };
   const onKarmaPointsChanged = function (loadingKarma: number) {
     setKarmaPoints(loadingKarma);
@@ -286,6 +293,8 @@ const CharacterCreator = function () {
       currentStage = (
         <TalentSelect
           talent={priorityTalent}
+          talentInfo={talentInfo}
+          setTalentInfo={onTalentInfoChanged}
           karmaPoints={karmaPoints}
           essencePoints={essencePoints}
         />
@@ -338,7 +347,7 @@ const CharacterCreator = function () {
     <Fragment>
       <nav>
         {PageActiveList.map((page) => {
-          return <li>{page}</li>;
+          return <li key={page}>{page}</li>;
         })}
       </nav>
       <div>Karma Remaining: {karmaPoints}</div>
@@ -374,21 +383,29 @@ const CharacterCreator = function () {
         Next
       </button>
       <button
-        onClick={async () => {
-          const characterId = await character.mutateAsync({
-            priorityInfo: priorityInfo,
-            heritageInfo: priorityHeritage,
-            attributeInfo: attributeInfo,
-            specialAttributeInfo: specialAttributeInfo,
-            positiveQualityListSelected: positiveQualityListSelected,
-            negativeQualityListSelected: negativeQualityListSelected,
-            skillSelections: skillSelections,
-            skillGroupSelections: skillGroupSelections,
-            equipmentSelected: equipmentSelected,
-            karmaPoints: karmaPoints,
-            nuyen: nuyen,
-          });
-          navigate(`/characters/${characterId}`);
+        onClick={() => {
+          character
+            .mutateAsync({
+              priorityInfo: priorityInfo,
+              heritageInfo: priorityHeritage,
+              attributeInfo: attributeInfo,
+              specialAttributeInfo: specialAttributeInfo,
+              talentInfo: talentInfo,
+              positiveQualityListSelected: positiveQualityListSelected,
+              negativeQualityListSelected: negativeQualityListSelected,
+              skillSelections: skillSelections,
+              skillGroupSelections: skillGroupSelections,
+              equipmentSelected: equipmentSelected,
+              karmaPoints: karmaPoints,
+              nuyen: nuyen,
+            })
+            .then((characterId) => {
+              navigate(`/characters/${characterId}`);
+            })
+            .catch((err) => {
+              // TODO: handle this
+              console.log(err);
+            });
         }}
         hidden={page !== PageActiveList[lastPage]}
       >

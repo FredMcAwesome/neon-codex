@@ -1,3 +1,5 @@
+Check all relationships match the docs (had some issues where onetoone aren't correct so aren't cascading)
+
 So far I have only passed to the frontend:
   - Ranges
   - Weapons

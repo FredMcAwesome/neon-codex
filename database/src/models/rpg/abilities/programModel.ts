@@ -1,6 +1,8 @@
 import {
+  Collection,
   Entity,
   Enum,
+  OneToMany,
   PrimaryKey,
   Property,
   Unique,
@@ -17,6 +19,7 @@ import type {
   ProgramType,
 } from "@neon-codex/common/build/schemas/abilities/talent/programSchemas.js";
 import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
+import { ActivePrograms } from "../activeTables/activeProgramModel.js";
 
 @Entity()
 export class Programs {
@@ -53,6 +56,9 @@ export class Programs {
 
   @Property({ length: 5000 })
   description!: string;
+
+  @OneToMany(() => ActivePrograms, (activeProgram) => activeProgram.program)
+  activeProgramList = new Collection<ActivePrograms>(this);
 
   constructor(dto: ProgramType) {
     this.name = dto.name;

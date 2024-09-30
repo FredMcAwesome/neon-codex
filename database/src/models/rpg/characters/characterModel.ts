@@ -3,6 +3,7 @@ import {
   Entity,
   ManyToOne,
   OneToMany,
+  OneToOne,
   PrimaryKey,
   Property,
   type Ref,
@@ -22,6 +23,7 @@ import { CustomisedVehicles } from "../activeTables/customisedVehicleModel.js";
 import { CustomisedAugmentations } from "../activeTables/activeAugmentationModel.js";
 import { CustomisedSkillGroups } from "../activeTables/activeSkillGroupModel.js";
 import Users from "../../accounts/userModel.js";
+import { ActiveTalents } from "../activeTables/activeTalentModel.js";
 
 @Entity()
 export class Characters {
@@ -42,6 +44,13 @@ export class Characters {
 
   @Property({ type: "json" })
   specialAttributes!: SpecialAttributesType;
+
+  @OneToOne(() => ActiveTalents, (activeTalent) => activeTalent.character, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  talent?: Ref<ActiveTalents>;
 
   @OneToMany(() => CustomisedSkills, (skill) => skill.character)
   skills = new Collection<CustomisedSkills>(this);

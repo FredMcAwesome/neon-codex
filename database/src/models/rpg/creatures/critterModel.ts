@@ -23,6 +23,7 @@ import { CritterIncludedComplexForms } from "../activeTables/activeComplexFormMo
 import { CritterIncludedSkills } from "../activeTables/activeSkillModel.js";
 import { CritterIncludedSkillGroups } from "../activeTables/activeSkillGroupModel.js";
 import { CritterIncludedKnowledgeSkills } from "../activeTables/activeKnowledgeSkillModel.js";
+import { ActiveMagicTalents } from "../activeTables/activeTalentModel.js";
 
 @Entity()
 export class Critters {
@@ -118,6 +119,17 @@ export class Critters {
   includedKnowledgeSkillList = new Collection<CritterIncludedKnowledgeSkills>(
     this
   );
+
+  @OneToMany(() => ActiveMagicTalents, (talent) => talent.combatSpirit)
+  customCombatTalent = new Collection<ActiveMagicTalents>(this);
+  @OneToMany(() => ActiveMagicTalents, (talent) => talent.detectionSpirit)
+  customDetectionTalent = new Collection<ActiveMagicTalents>(this);
+  @OneToMany(() => ActiveMagicTalents, (talent) => talent.healthSpirit)
+  customHealthTalent = new Collection<ActiveMagicTalents>(this);
+  @OneToMany(() => ActiveMagicTalents, (talent) => talent.illusionSpirit)
+  customIllusionTalent = new Collection<ActiveMagicTalents>(this);
+  @OneToMany(() => ActiveMagicTalents, (talent) => talent.manipulationSpirit)
+  customManipulationTalent = new Collection<ActiveMagicTalents>(this);
 
   @Property({ type: "json", nullable: true })
   bonus?: BonusType;

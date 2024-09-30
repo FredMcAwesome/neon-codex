@@ -74,13 +74,13 @@ export class MagicTalentPriorityDetails extends TalentPriorityDetails {
   magic!: number;
 
   @Property({ nullable: true })
-  spells?: number;
+  formulae?: number;
 
   constructor(dto: MagicTalentPriorityType) {
     super(dto);
     this.magic = dto.magic;
-    if (dto.spells !== undefined) {
-      this.spells = dto.spells;
+    if (dto.formulae !== undefined) {
+      this.formulae = dto.formulae;
     }
   }
 }

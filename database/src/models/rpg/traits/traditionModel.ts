@@ -1,7 +1,9 @@
 import {
+  Collection,
   Entity,
   Enum,
   ManyToOne,
+  OneToMany,
   PrimaryKey,
   Property,
   Unique,
@@ -17,6 +19,7 @@ import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSch
 import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
 import type { TraditionType } from "@neon-codex/common/build/schemas/abilities/talent/traditionSchemas.js";
 import { Critters } from "../creatures/critterModel.js";
+import { ActiveMagicTalents } from "../activeTables/activeTalentModel.js";
 
 @Entity({
   discriminatorColumn: "type",
@@ -53,6 +56,9 @@ export abstract class Traditions {
 
   @Property({ length: 5000 })
   description!: string;
+
+  @OneToMany(() => ActiveMagicTalents, (magicTalent) => magicTalent.tradition)
+  talent = new Collection<ActiveMagicTalents>(this);
 
   constructor(dto: TraditionType) {
     this.name = dto.name;

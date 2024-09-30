@@ -1461,7 +1461,7 @@
           "name": "Magician",
           "label": "Magician - 6 Magic/10 Spells",
           "magic": 6,
-          "spells": 10,
+          "formulae": 10,
           "category": "Magic",
           "includedQuality": "Magician",
           "includedSkills": {
@@ -1475,7 +1475,7 @@
           "name": "Mystic Adept",
           "label": "Mystic Adept - 6 Magic/10 Spells",
           "magic": 6,
-          "spells": 10,
+          "formulae": 10,
           "category": "Magic",
           "includedQuality": "Mystic Adept",
           "includedSkills": {
@@ -3012,7 +3012,7 @@
           "name": "Magician",
           "label": "Magician - 4 Magic/7 Spells",
           "magic": 4,
-          "spells": 7,
+          "formulae": 7,
           "category": "Magic",
           "includedQuality": "Magician",
           "includedSkills": {
@@ -3026,7 +3026,7 @@
           "name": "Mystic Adept",
           "label": "Mystic Adept - 4 Magic/7 Spells",
           "magic": 4,
-          "spells": 7,
+          "formulae": 7,
           "category": "Magic",
           "includedQuality": "Mystic Adept",
           "includedSkills": {
@@ -4562,7 +4562,7 @@
           "name": "Magician",
           "label": "Magician - 3 Magic/5 Spells",
           "magic": 3,
-          "spells": 5,
+          "formulae": 5,
           "category": "Magic",
           "includedQuality": "Magician",
           "forbidden": {}
@@ -4571,7 +4571,7 @@
           "name": "Mystic Adept",
           "label": "Mystic Adept - 3 Magic/5 Spells",
           "magic": 3,
-          "spells": 5,
+          "formulae": 5,
           "category": "Magic",
           "includedQuality": "Mystic Adept",
           "forbidden": {}

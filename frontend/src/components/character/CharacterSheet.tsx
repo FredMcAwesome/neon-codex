@@ -3,6 +3,7 @@ import { trpc } from "../../utils/trpc.js";
 import type {
   AttributesType,
   SpecialAttributesType,
+  TalentInfoType,
 } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
 import {
   attributeTypeEnum,
@@ -42,7 +43,7 @@ const CharacterSheet = function () {
       {Attributes(data.attributes)}
       {SpecialAttributes(data.specialAttributes)}
       {Skills(data.skillList, data.attributes, data.specialAttributes)}
-      {/* {Talent(data.talentList, data.attributes, data.specialAttributes)} */}
+      {Talent(data.talentInfo)}
       {Qualities(data.qualityList)}
       {Weapons(data.weaponList)}
       {Armours(data.armourList)}
@@ -162,6 +163,94 @@ function Skills(
       </ul>
     </div>
   );
+}
+
+function Talent(data: TalentInfoType) {
+  switch (data.type) {
+    case talentCategoryEnum.Magic:
+      let formulaList;
+      if (data.selectedFormulae.selectFormulae) {
+        formulaList = (
+          <div>
+            <div>
+              Spell List:
+              <ul>
+                {data.selectedFormulae.spells.map((spell, index) => {
+                  return <li key={index}>{spell}</li>;
+                })}
+              </ul>
+            </div>
+            <div>
+              Ritual List:
+              <ul>
+                {data.selectedFormulae.rituals.map((ritual, index) => {
+                  return <li key={index}>{ritual}</li>;
+                })}
+              </ul>
+            </div>
+            <div>
+              Alchemical Preparation List:
+              <ul>
+                {data.selectedFormulae.alchemicalPreparations.map(
+                  (alchemicalPreparation, index) => {
+                    return <li key={index}>{alchemicalPreparation}</li>;
+                  }
+                )}
+              </ul>
+            </div>
+          </div>
+        );
+      }
+
+      let adeptPowers;
+      if (data.selectedAdeptPowers.selectAdeptPowers) {
+        adeptPowers = (
+          <div>
+            Adept Powers:
+            <ul>
+              {data.selectedAdeptPowers.adeptPowers.map((adeptPower, index) => {
+                return <li key={index}>{adeptPower}</li>;
+              })}
+            </ul>
+          </div>
+        );
+      }
+
+      return (
+        <div>
+          <h2>Magic User</h2>
+          Tradition: {data.selectedTradition.name}
+          {formulaList}
+          {adeptPowers}
+        </div>
+      );
+
+    case talentCategoryEnum.Resonance:
+      return (
+        <div>
+          Complex Forms:
+          <ul>
+            {data.complexForms.map((complexForm, index) => {
+              return <li key={index}>{complexForm}</li>;
+            })}
+          </ul>
+        </div>
+      );
+    case talentCategoryEnum.Depth:
+      return (
+        <div>
+          AI Programs:
+          <ul>
+            {data.programs.map((program, index) => {
+              return <li key={index}>{program.name}</li>;
+            })}
+          </ul>
+        </div>
+      );
+      break;
+    case talentCategoryEnum.Mundane:
+      return <>Mundane</>;
+  }
 }
 
 function Qualities(data: CustomQualityListType) {

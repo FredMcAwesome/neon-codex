@@ -154,6 +154,14 @@ import {
   CritterIncludedKnowledgeSkills,
 } from "./models/rpg/activeTables/activeKnowledgeSkillModel.js";
 import { Programs } from "./models/rpg/abilities/programModel.js";
+import { ActivePrograms } from "./models/rpg/activeTables/activeProgramModel.js";
+import {
+  ActiveDepthTalents,
+  ActiveMagicTalents,
+  ActiveMundaneTalents,
+  ActiveResonanceTalents,
+  ActiveTalents,
+} from "./models/rpg/activeTables/activeTalentModel.js";
 
 const dbOptions: Options = {
   entities: [
@@ -278,7 +286,14 @@ const dbOptions: Options = {
     CritterIncludedComplexForms,
     CustomisedComplexForms,
 
+    ActiveTalents,
+    ActiveMagicTalents,
+    ActiveResonanceTalents,
+    ActiveDepthTalents,
+    ActiveMundaneTalents,
+
     Programs,
+    ActivePrograms,
 
     Critters,
     CustomisedCritters,

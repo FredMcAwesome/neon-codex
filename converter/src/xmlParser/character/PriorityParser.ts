@@ -315,7 +315,7 @@ const convertTalent = function (xmlTalent: TalentXmlType) {
       assert(talent.depth === undefined, "magic illegal");
       talentType = {
         magic: talent.magic,
-        ...(talent.spells !== undefined && { spells: talent.spells }),
+        ...(talent.spells !== undefined && { formulae: talent.spells }),
         category: talentCategoryEnum.Magic as const,
       };
     }

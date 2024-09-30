@@ -463,6 +463,12 @@ export enum spellCategoryEnum {
   Ritual = "Ritual",
 }
 
+export enum magicalFormulaeCategoryEnum {
+  Spell = "Spell",
+  Ritual = "Ritual",
+  AlchemicalPreparation = "Alchemical Preparation",
+}
+
 export enum spellTypeEnum {
   Mana = "Mana",
   Physical = "Physical",
@@ -541,11 +547,6 @@ export enum durationEnum {
   Permanent = "Permanent",
   Always = "Always",
   Special = "Special",
-}
-
-export enum formulaTypeEnum {
-  Focus = "Focus",
-  Spell = "Spell",
 }
 
 export enum vehicleTypeEnum {
