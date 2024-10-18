@@ -2,6 +2,7 @@ import type { TalentPriorityType } from "@neon-codex/common/build/schemas/otherD
 import {
   critterTypeEnum,
   magicalFormulaeCategoryEnum,
+  mentorCategoryEnum,
   spellCategoryEnum,
   talentCategoryEnum,
 } from "@neon-codex/common/build/enums.js";
@@ -16,6 +17,8 @@ import {
   type ResonanceTalentInfoType,
   type TalentInfoType,
 } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
+import type { CharacterCreatorBonusListType } from "../commonSchemas.js";
+import type { MentorType } from "@neon-codex/common/build/schemas/abilities/talent/mentorSchemas.js";
 
 interface IProps {
   talent: TalentPriorityType;
@@ -23,13 +26,17 @@ interface IProps {
   talentInfo: TalentInfoType;
   karmaPoints: number;
   essencePoints: number;
+  bonusInfo: CharacterCreatorBonusListType;
+  setBonusInfo: (loadingBonusInfo: CharacterCreatorBonusListType) => void;
 }
 
 export const TalentSelect = function (props: IProps) {
   const talent = props.talent;
   let selectTradition;
+  let selectMentorSpirit;
   let selectSpells;
   let selectComplexForms;
+  let selectParagon;
   let selectAdeptPowers;
   let selectPrograms;
 
@@ -110,6 +117,18 @@ export const TalentSelect = function (props: IProps) {
           talentInfo={props.talentInfo}
         />
       );
+
+      if (
+        props.bonusInfo.findIndex((element) => element.linkMentorSpirit) > -1
+      ) {
+        selectMentorSpirit = (
+          <MentorSpiritSelect
+            talentInfo={props.talentInfo}
+            setTalentInfo={props.setTalentInfo}
+          />
+        );
+      }
+
       if (
         isFormulaTalentType(props.talentInfo) &&
         talent.formulae !== undefined &&
@@ -149,6 +168,14 @@ export const TalentSelect = function (props: IProps) {
           />
         );
       }
+      if (props.bonusInfo.findIndex((element) => element.linkParagon) > -1) {
+        selectParagon = (
+          <ParagonSelect
+            talentInfo={props.talentInfo}
+            setTalentInfo={props.setTalentInfo}
+          />
+        );
+      }
       break;
     case talentCategoryEnum.Depth:
       if (props.talentInfo.type !== talentCategoryEnum.Depth) {
@@ -171,8 +198,10 @@ export const TalentSelect = function (props: IProps) {
   return (
     <Fragment>
       {selectTradition}
+      {selectMentorSpirit}
       {selectSpells}
       {selectComplexForms}
+      {selectParagon}
       {selectAdeptPowers}
       {selectPrograms}
     </Fragment>
@@ -365,6 +394,118 @@ const SpiritSelect = function (props: ISpiritSelectProps) {
     </Fragment>
   );
 };
+
+interface IMentorSpiritProps {
+  talentInfo: TalentInfoType & {
+    type: talentCategoryEnum.Magic;
+  };
+  setTalentInfo: (
+    talentInfo: TalentInfoType & {
+      type: talentCategoryEnum.Magic;
+    }
+  ) => void;
+}
+const MentorSpiritSelect = function (props: IMentorSpiritProps) {
+  const mentorList = trpc.character.mentors.useQuery();
+  if (mentorList.isError) {
+    return <>{mentorList.error}</>;
+  }
+
+  if (mentorList.data === undefined) {
+    return <></>;
+  }
+
+  const selectedMentorSpirit = props.talentInfo.selectedMentor;
+  let selectedSourceMentorSpirit:
+    | (MentorType & { category: mentorCategoryEnum.MentorSpirit })
+    | undefined;
+  const choiceSelections: Array<ReactElement> = [];
+  if (selectedMentorSpirit !== undefined) {
+    selectedSourceMentorSpirit = mentorList.data
+      .filter((element) => element.category === mentorCategoryEnum.MentorSpirit)
+      .find((element) => element.name === selectedMentorSpirit.name);
+    if (selectedSourceMentorSpirit === undefined) {
+      throw new Error(`Mentor not found ${selectedMentorSpirit.name}`);
+    }
+    for (let i = 0; i < selectedSourceMentorSpirit.choiceCount; i++) {
+      const displayValue =
+        selectedMentorSpirit.choices[i] !== undefined
+          ? selectedMentorSpirit.choices[i].name
+          : "Select a bonus";
+      choiceSelections.push(
+        <Dropdown
+          options={selectedSourceMentorSpirit.choices
+            .filter((element) => {
+              return element.set === i + 1;
+            })
+            .map((element) => element.name)}
+          value={displayValue}
+          onChange={(arg) => {
+            if (selectedSourceMentorSpirit === undefined) {
+              // TODO: better way to handle?
+              return;
+            }
+            const newChoice = selectedSourceMentorSpirit.choices.find(
+              (element) => element.name === arg.value
+            );
+            if (newChoice === undefined) {
+              throw new Error(`New Choice ${arg.value} doesn't exist`);
+            }
+            if (selectedMentorSpirit.choices[i] === undefined) {
+              selectedMentorSpirit.choices.push(newChoice);
+            } else {
+              selectedMentorSpirit.choices[i] = newChoice;
+            }
+
+            props.setTalentInfo({
+              ...props.talentInfo,
+              selectedMentor: selectedMentorSpirit,
+            });
+          }}
+        />
+      );
+    }
+  }
+
+  return (
+    <Fragment>
+      <div>Mentor Spirit:</div>
+      <Dropdown
+        options={mentorList.data
+          .filter(
+            (element) => element.category === mentorCategoryEnum.MentorSpirit
+          )
+          .map((mentor) => {
+            return mentor.name;
+          })}
+        value={selectedMentorSpirit?.name || "Select Mentor"}
+        onChange={(arg) => {
+          const mentorSpirit = mentorList.data
+            .filter(
+              (element) => element.category === mentorCategoryEnum.MentorSpirit
+            )
+            .find((element) => element.name === arg.value);
+          if (mentorSpirit === undefined) {
+            throw new Error(`Mentor Spirit ${arg.value} doesn't exist`);
+          }
+          const newMentorSpirit = {
+            ...mentorSpirit,
+            choices: [],
+          };
+          if (selectedMentorSpirit !== undefined) {
+            console.log(`TODO: remove ${selectedMentorSpirit?.name} bonus`);
+          }
+          props.setTalentInfo({
+            ...props.talentInfo,
+            selectedMentor: newMentorSpirit,
+          });
+        }}
+      />
+      {choiceSelections}
+    </Fragment>
+  );
+};
+
 type FormulaTalentType = TalentInfoType & {
   type: talentCategoryEnum.Magic;
   selectedFormulae: {
@@ -378,13 +519,13 @@ interface IFormulaProps {
 }
 
 const FormulaSelect = function (props: IFormulaProps) {
-  const spellsList = trpc.character.spells.useQuery();
+  const spellList = trpc.character.spells.useQuery();
 
-  if (spellsList.isError) {
-    return <>{spellsList.error}</>;
+  if (spellList.isError) {
+    return <>{spellList.error}</>;
   }
 
-  if (spellsList.data === undefined) {
+  if (spellList.data === undefined) {
     return <></>;
   }
 
@@ -431,7 +572,7 @@ const FormulaSelect = function (props: IFormulaProps) {
   selectedSpellList.forEach((selectedSpell, index) => {
     spellDropdowns.push(
       <Dropdown
-        options={spellsList.data
+        options={spellList.data
           .filter((spell) => {
             return spell.category !== spellCategoryEnum.Ritual;
           })
@@ -449,7 +590,7 @@ const FormulaSelect = function (props: IFormulaProps) {
   selectedRitualList.forEach((selectedRitual, index) => {
     ritualDropdowns.push(
       <Dropdown
-        options={spellsList.data
+        options={spellList.data
           .filter((spell) => {
             return spell.category === spellCategoryEnum.Ritual;
           })
@@ -468,7 +609,7 @@ const FormulaSelect = function (props: IFormulaProps) {
     (selectedAlchemicalPreparation, index) => {
       alchemicalPreparationDropdowns.push(
         <Dropdown
-          options={spellsList.data
+          options={spellList.data
             .filter((spell) => {
               return spell.category !== spellCategoryEnum.Ritual;
             })
@@ -496,7 +637,7 @@ const FormulaSelect = function (props: IFormulaProps) {
       </div>
       <div>Spells:</div>
       <Dropdown
-        options={spellsList.data
+        options={spellList.data
           .filter((spell) => {
             return spell.category !== spellCategoryEnum.Ritual;
           })
@@ -513,7 +654,7 @@ const FormulaSelect = function (props: IFormulaProps) {
       <div>
         Rituals:
         <Dropdown
-          options={spellsList.data
+          options={spellList.data
             .filter((spell) => {
               return spell.category === spellCategoryEnum.Ritual;
             })
@@ -531,7 +672,7 @@ const FormulaSelect = function (props: IFormulaProps) {
       <div>
         Alchemical formulas:
         <Dropdown
-          options={spellsList.data
+          options={spellList.data
             .filter((spell) => {
               return spell.category !== spellCategoryEnum.Ritual;
             })
@@ -609,6 +750,57 @@ const ComplexFormSelect = function (props: IComplexFormProps) {
         />
         {complexFormDropdowns}
       </div>
+    </Fragment>
+  );
+};
+
+interface IParagonProps {
+  talentInfo: TalentInfoType & {
+    type: talentCategoryEnum.Resonance;
+  };
+  setTalentInfo: (
+    talentInfo: TalentInfoType & {
+      type: talentCategoryEnum.Resonance;
+    }
+  ) => void;
+}
+const ParagonSelect = function (props: IParagonProps) {
+  const mentorList = trpc.character.mentors.useQuery();
+  if (mentorList.isError) {
+    return <>{mentorList.error}</>;
+  }
+
+  if (mentorList.data === undefined) {
+    return <>Loading...</>;
+  }
+
+  const selectedParagon = props.talentInfo.selectedMentor;
+
+  return (
+    <Fragment>
+      <div>Paragon:</div>
+      <Dropdown
+        options={mentorList.data
+          .filter((element) => element.category === mentorCategoryEnum.Paragon)
+          .map((mentor) => {
+            return mentor.name;
+          })}
+        value={selectedParagon?.name || "Select Mentor"}
+        onChange={(arg) => {
+          const paragon = mentorList.data
+            .filter(
+              (element) => element.category === mentorCategoryEnum.Paragon
+            )
+            .find((element) => element.name === arg.value);
+          if (paragon === undefined) {
+            throw new Error(`Paragon ${arg.value} doesn't exist`);
+          }
+          props.setTalentInfo({
+            ...props.talentInfo,
+            selectedMentor: paragon,
+          });
+        }}
+      />
     </Fragment>
   );
 };

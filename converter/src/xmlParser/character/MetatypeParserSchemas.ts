@@ -134,19 +134,27 @@ const BaseMetatypeXmlSchema: zod.ZodObject<BaseMetatypeXmlShape> =
   BaseMetatypeXmlSubBonusSchema.merge(BonusXmlWrappedSchema);
 export type BaseMetatypeXmlType = zod.infer<typeof BaseMetatypeXmlSchema>;
 
-export const MetatypeXmlSchema = BaseMetatypeXmlSchema.extend({
-  // metavariants of the base form
-  metavariants: zod.optional(
-    zod
-      .object({
-        metavariant: zod.union([
-          BaseMetatypeXmlSchema,
-          zod.array(BaseMetatypeXmlSchema),
-        ]),
-      })
-      .strict()
-  ),
-}).strict();
+export type MetatypeXmlType = BaseMetatypeXmlType & {
+  metavariants?:
+    | {
+        metavariant: BaseMetatypeXmlType | Array<BaseMetatypeXmlType>;
+      }
+    | undefined;
+};
 
-export type MetatypeXmlType = zod.infer<typeof MetatypeXmlSchema>;
+export const MetatypeXmlSchema: zod.ZodType<MetatypeXmlType> =
+  BaseMetatypeXmlSchema.extend({
+    // metavariants of the base form
+    metavariants: zod.optional(
+      zod
+        .object({
+          metavariant: zod.union([
+            BaseMetatypeXmlSchema,
+            zod.array(BaseMetatypeXmlSchema),
+          ]),
+        })
+        .strict()
+    ),
+  }).strict();
+
 export const MetatypeListXmlSchema = zod.array(MetatypeXmlSchema);

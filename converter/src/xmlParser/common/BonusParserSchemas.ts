@@ -113,6 +113,7 @@ const SelectSkillSchema = zod.union([
       _limittoattribute: zod.optional(zod.string()),
       _maximumrating: zod.optional(zod.string()),
       _minimumrating: zod.optional(zod.string()),
+      _prompt: zod.optional(zod.string()),
       skillcategories: zod.optional(
         zod
           .object({
@@ -127,6 +128,67 @@ const SelectSkillSchema = zod.union([
     })
     .strict(),
   zod.literal(""),
+]);
+
+const WeaponSkillAccuracyXMLSchema = zod
+  .object({
+    name: zod.optional(zod.string()),
+    selectskill: zod.optional(SelectSkillSchema),
+    value: zod.number(),
+  })
+  .strict();
+export type WeaponSkillAccuracyXMLType = zod.infer<
+  typeof WeaponSkillAccuracyXMLSchema
+>;
+
+const BonusOverrideSkillXMLSchema = zod
+  .object({
+    selectskill: zod
+      .object({
+        _skillcategory: zod.optional(zod.string()),
+        _skillgroup: zod.optional(zod.string()),
+        _limittoskill: zod.optional(zod.string()),
+        _minimumrating: zod.string(),
+        val: NumberOrRatingSchema,
+        skillcategories: zod.optional(
+          zod.object({
+            category: zod.array(zod.string()),
+          })
+        ),
+      })
+      .strict(),
+  })
+  .strict();
+const BonusOverrideAttributeXMLSchema = zod
+  .object({
+    selectattribute: zod
+      .object({
+        attribute: zod.nativeEnum(attributeXMLEnum),
+      })
+      .strict(),
+  })
+  .strict();
+const SpecificPowerXMLSchema = zod
+  .object({
+    name: zod.string(),
+    // How many levels of the power are given
+    val: zod.optional(zod.number()),
+    bonusoverride: zod.optional(
+      zod.union([BonusOverrideSkillXMLSchema, BonusOverrideAttributeXMLSchema])
+    ),
+  })
+  .strict();
+export type SpecificPowerXMLType = zod.infer<typeof SpecificPowerXMLSchema>;
+
+const AddQualityListXMLSchema = zod.union([
+  zod.string(),
+  zod
+    .object({
+      _select: zod.optional(zod.string()),
+      _forced: zod.optional(zod.literal("True")),
+      xmltext: zod.string(),
+    })
+    .strict(),
 ]);
 
 // https://github.com/chummer5a/chummer5a/wiki/Improvement-Manager explains bonus properties
@@ -223,7 +285,6 @@ export const BonusXmlSchema = zod.union([
       selectspell: zod.optional(
         zod.union([
           zod.literal(""),
-
           zod
             .object({
               _ignorerequirements: zod.literal("True"),
@@ -237,10 +298,11 @@ export const BonusXmlSchema = zod.union([
           .object({
             selectpower: zod
               .object({
-                ignorerating: zod.literal("True"),
-                val: zod.literal("Rating"),
-                limit: zod.literal("Rating"),
-                pointsperlevel: zod.number(),
+                _limittopowers: zod.optional(zod.string()),
+                ignorerating: zod.optional(zod.literal("True")),
+                val: NumberOrRatingSchema,
+                limit: zod.optional(zod.literal("Rating")),
+                pointsperlevel: zod.optional(zod.number()),
               })
               .strict(),
           })
@@ -390,7 +452,10 @@ export const BonusXmlSchema = zod.union([
       specificattribute: zod.optional(
         zod.union([zod.array(GenericNameValueSchema), GenericNameValueSchema])
       ),
-      specificpower: zod.optional(zod.object({ name: zod.string() }).strict()),
+      // Gives a power/bonus to a power
+      specificpower: zod.optional(
+        zod.union([SpecificPowerXMLSchema, zod.array(SpecificPowerXMLSchema)])
+      ),
       // bonus to a specific skill
       specificskill: zod.optional(
         zod.union([zod.array(SkillSchema), SkillSchema])
@@ -452,12 +517,7 @@ export const BonusXmlSchema = zod.union([
       // Allows casting spells from a spell category
       allowspellcategory: zod.optional(zod.string()),
       spelldicepool: zod.optional(
-        zod
-          .object({
-            name: zod.string(),
-            val: zod.number(),
-          })
-          .strict()
+        zod.union([zod.array(GenericNameValueSchema), GenericNameValueSchema])
       ),
       // Cannot cast spells with this spell descriptor
       // TODO: this only applies to adepts is it correct?
@@ -553,9 +613,19 @@ export const BonusXmlSchema = zod.union([
       biowareessmultiplier: zod.optional(zod.number()),
       // Bonus dice for actions of a specific category
       actiondicepool: zod.optional(
-        zod.object({
-          _category: zod.literal("Matrix"),
-        })
+        zod.union([
+          zod
+            .object({
+              _category: zod.literal("Matrix"),
+            })
+            .strict(),
+          zod
+            .object({
+              name: zod.string(),
+              val: zod.number(),
+            })
+            .strict(),
+        ])
       ),
       // bonus to a weapon that needs to be selected
       weaponspecificdice: zod.optional(
@@ -578,13 +648,10 @@ export const BonusXmlSchema = zod.union([
       // increases the accuracy of all weapons linked to a skill
       // select means this is chosen when bought
       weaponskillaccuracy: zod.optional(
-        zod
-          .object({
-            name: zod.optional(zod.string()),
-            selectskill: zod.optional(SelectSkillSchema),
-            value: zod.number(),
-          })
-          .strict()
+        zod.union([
+          WeaponSkillAccuracyXMLSchema,
+          zod.array(WeaponSkillAccuracyXMLSchema),
+        ])
       ),
       // bonus damage to weapons using specific skills
       weaponcategorydv: zod.optional(
@@ -621,6 +688,8 @@ export const BonusXmlSchema = zod.union([
       initiativepass: zod.optional(
         zod.union([GenericNameValueSchema, zod.number()])
       ),
+      // additional initiative (not dice)
+      matrixinitiative: zod.optional(zod.number()),
       // additional matrix initiative dice
       matrixinitiativedice: zod.optional(
         zod
@@ -674,25 +743,8 @@ export const BonusXmlSchema = zod.union([
         zod
           .object({
             addquality: zod.union([
-              zod
-                .object({
-                  _forced: zod.literal("True"),
-                  xmltext: zod.string(),
-                })
-                .strict(),
-              zod.string(),
-              zod.array(
-                zod.union([
-                  zod.string(),
-                  zod
-                    .object({
-                      _select: zod.optional(zod.string()),
-                      _forced: zod.optional(zod.literal("True")),
-                      xmltext: zod.string(),
-                    })
-                    .strict(),
-                ])
-              ),
+              AddQualityListXMLSchema,
+              zod.array(AddQualityListXMLSchema),
             ]),
           })
           .strict()
@@ -1043,6 +1095,14 @@ export const BonusXmlSchema = zod.union([
       // only applicable during character creation
       skillcategorypointcostmultiplier: zod.optional(
         zod.union([zod.array(GenericNameValueSchema), GenericNameValueSchema])
+      ),
+      skillgrouplevel: zod.optional(
+        zod
+          .object({
+            name: zod.string(),
+            val: zod.number(),
+          })
+          .strict()
       ),
       // Skill group cost multiplier times 100 for these categories
       // only applicable during character creation

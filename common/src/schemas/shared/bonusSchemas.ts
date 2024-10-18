@@ -148,20 +148,22 @@ export type InitiativeType = zod.infer<typeof InitiativeSchema>;
 
 export const BonusSchema = zod
   .object({
-    enterName: zod.optional(zod.boolean()),
+    enterName: zod.optional(zod.literal(true)),
     selection: zod.optional(
       zod.object({
         customAllowed: zod.optional(zod.literal(true)),
         optionList: zod.array(zod.string()),
       })
     ),
-    linkWeapon: zod.optional(zod.boolean()),
-    linkArmour: zod.optional(zod.boolean()),
-    linkSkill: zod.optional(zod.boolean()),
-    linkPower: zod.optional(zod.boolean()),
-    linkTradition: zod.optional(zod.boolean()),
-    linkLicense: zod.optional(zod.boolean()),
-    linkCyberware: zod.optional(zod.boolean()),
+    linkWeapon: zod.optional(zod.literal(true)),
+    linkArmour: zod.optional(zod.literal(true)),
+    linkSkill: zod.optional(zod.literal(true)),
+    linkParagon: zod.optional(zod.literal(true)),
+    linkPower: zod.optional(zod.literal(true)),
+    linkMentorSpirit: zod.optional(zod.literal(true)),
+    linkTradition: zod.optional(zod.literal(true)),
+    linkLicense: zod.optional(zod.literal(true)),
+    linkCyberware: zod.optional(zod.literal(true)),
     // TODO: fix these, should also have condition
     skillCategories: zod.optional(
       zod.array(
@@ -340,7 +342,14 @@ export const BonusSchema = zod
       )
     ),
     essenceCostTimes100: zod.optional(EssenceCostSchema),
-    specificPower: zod.optional(zod.string()),
+    specificPowerList: zod.optional(
+      zod.array(
+        zod.object({
+          name: zod.string(),
+          level: zod.optional(zod.number()),
+        })
+      )
+    ),
     specificWeapon: zod.optional(
       zod
         .object({
@@ -371,20 +380,22 @@ export const BonusSchema = zod
         })
         .strict()
     ),
-    weaponSkillAccuracy: zod.optional(
-      zod
-        .object({
-          skill: SelectSkillSchema,
-          bonus: zod.union([
-            zod.number(),
-            zod
-              .object({
-                option: zod.literal("Rating"),
-              })
-              .strict(),
-          ]),
-        })
-        .strict()
+    weaponSkillAccuracyList: zod.optional(
+      zod.array(
+        zod
+          .object({
+            skill: SelectSkillSchema,
+            bonus: zod.union([
+              zod.number(),
+              zod
+                .object({
+                  option: zod.literal("Rating"),
+                })
+                .strict(),
+            ]),
+          })
+          .strict()
+      )
     ),
     smartlinkAccuracy: zod.optional(zod.number()),
     initiative: zod.optional(InitiativeSchema),
@@ -415,8 +426,8 @@ export const BonusSchema = zod
           .strict(),
       ])
     ),
-    toxinContactImmune: zod.optional(zod.boolean()),
-    pathogenContactImmune: zod.optional(zod.boolean()),
+    toxinContactImmune: zod.optional(zod.literal(true)),
+    pathogenContactImmune: zod.optional(zod.literal(true)),
     toxinInhalationResist: zod.optional(
       zod.union([
         zod.number(),
@@ -437,8 +448,8 @@ export const BonusSchema = zod
           .strict(),
       ])
     ),
-    toxinInhalationImmune: zod.optional(zod.boolean()),
-    pathogenInhalationImmune: zod.optional(zod.boolean()),
+    toxinInhalationImmune: zod.optional(zod.literal(true)),
+    pathogenInhalationImmune: zod.optional(zod.literal(true)),
     toxinIngestionResist: zod.optional(
       zod.union([
         zod.number(),
@@ -459,8 +470,8 @@ export const BonusSchema = zod
           .strict(),
       ])
     ),
-    toxinIngestionImmune: zod.optional(zod.boolean()),
-    pathogenIngestionImmune: zod.optional(zod.boolean()),
+    toxinIngestionImmune: zod.optional(zod.literal(true)),
+    pathogenIngestionImmune: zod.optional(zod.literal(true)),
     toxinInjectionResist: zod.optional(
       zod.union([
         zod.number(),
@@ -481,8 +492,8 @@ export const BonusSchema = zod
           .strict(),
       ])
     ),
-    toxinInjectionImmune: zod.optional(zod.boolean()),
-    pathogenInjectionImmune: zod.optional(zod.boolean()),
+    toxinInjectionImmune: zod.optional(zod.literal(true)),
+    pathogenInjectionImmune: zod.optional(zod.literal(true)),
     fatigueResist: zod.optional(
       zod.union([
         zod.number(),
@@ -684,7 +695,7 @@ export const BonusSchema = zod
     armour: zod.optional(
       zod
         .object({
-          nonStacking: zod.optional(zod.boolean()),
+          nonStacking: zod.optional(zod.literal(true)),
           bonus: zod.union([
             zod.number(),
             zod
@@ -1026,15 +1037,15 @@ export const BonusSchema = zod
         })
         .strict()
     ),
-    adapsin: zod.optional(zod.boolean()),
-    reflex: zod.optional(zod.boolean()),
-    ambidextrous: zod.optional(zod.boolean()),
+    adapsin: zod.optional(zod.literal(true)),
+    reflex: zod.optional(zod.literal(true)),
+    ambidextrous: zod.optional(zod.literal(true)),
   })
   .strict();
 export type BonusType = zod.infer<typeof BonusSchema>;
 
 export const WirelessSchema = BonusSchema.extend({
-  replaceNonWireless: zod.optional(zod.boolean()),
+  replaceNonWireless: zod.optional(zod.literal(true)),
 });
 
 export const WeaponBonusSchema = zod

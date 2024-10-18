@@ -1,6 +1,7 @@
 import { z as zod } from "zod";
 import {
   heritageCategoryEnum,
+  mentorCategoryEnum,
   priorityLetterEnum,
   talentCategoryEnum,
 } from "../../enums.js";
@@ -21,6 +22,11 @@ import type { CustomSkillListType } from "../abilities/skillSchemas.js";
 import { CustomQualityListSchema } from "../abilities/qualitySchemas.js";
 import type { CustomQualityListType } from "../abilities/qualitySchemas.js";
 import { AttributeRangeSchema } from "../shared/commonSchemas.js";
+import {
+  MentorBaseSchema,
+  MentorChoiceSchema,
+} from "../abilities/talent/mentorSchemas.js";
+import { RequirementsSchema } from "../shared/requiredSchemas.js";
 
 export enum PrioritiesEnum {
   Heritage,
@@ -164,6 +170,19 @@ export type ProgramSelectedListType = zod.infer<
   typeof ProgramSelectedListSchema
 >;
 
+const MentorSpiritSelectedSchema = MentorBaseSchema.extend({
+  category: zod.literal(mentorCategoryEnum.MentorSpirit),
+  choices: zod.array(MentorChoiceSchema),
+  choiceCount: zod.number(),
+  required: zod.optional(RequirementsSchema),
+}).strict();
+export type MentorSpiritSelectedType = zod.infer<
+  typeof MentorSpiritSelectedSchema
+>;
+const ParagonSelectedSchema = MentorBaseSchema.extend({
+  category: zod.literal(mentorCategoryEnum.Paragon),
+}).strict();
+
 export const TalentInfoSchema = zod.discriminatedUnion("type", [
   zod
     .object({
@@ -171,12 +190,14 @@ export const TalentInfoSchema = zod.discriminatedUnion("type", [
       selectedTradition: TraditionSelectedSchema,
       selectedFormulae: FormulaListSelectedSchema,
       selectedAdeptPowers: AdeptPowerListSelectedSchema,
+      selectedMentor: zod.optional(MentorSpiritSelectedSchema),
     })
     .strict(),
   zod
     .object({
       type: zod.literal(talentCategoryEnum.Resonance),
       complexForms: zod.array(zod.string()),
+      selectedMentor: zod.optional(ParagonSelectedSchema),
     })
     .strict(),
   zod
@@ -278,7 +299,6 @@ export const CharacterSchema: zod.ZodType<CharacterType> = zod
     talentInfo: TalentInfoSchema,
     skillList: CustomSkillListSchema,
     qualityList: CustomQualityListSchema,
-    //talent: talentStuffSchema,
     nuyen: zod.number(),
     karmaPoints: zod.number(),
     weaponList: CustomisedWeaponListSchema,

@@ -22,6 +22,8 @@ import { Critters } from "../creatures/critterModel.js";
 import { AdeptPowers } from "../abilities/adeptPowerModel.js";
 import { ComplexForms } from "../abilities/complexFormModel.js";
 import { ActivePrograms } from "./activeProgramModel.js";
+import { ActiveMentorSpirits } from "./ActiveMentorModel.js";
+import { ActiveParagons } from "./ActiveParagonModel.js";
 
 @Entity({
   abstract: true,
@@ -67,6 +69,13 @@ export class ActiveMagicTalents extends ActiveTalents {
   @ManyToMany({ entity: () => AdeptPowers, owner: true, joinColumn: "join_id" })
   adeptPowerList: Collection<AdeptPowers> = new Collection<AdeptPowers>(this);
 
+  @OneToOne(() => ActiveMentorSpirits, (mentor) => mentor.activeTalent, {
+    owner: true,
+    ref: true,
+    nullable: true,
+  })
+  mentorSpirit?: Ref<ActiveMentorSpirits>;
+
   constructor(dto: MagicTalentInfoType) {
     super(dto);
   }
@@ -84,6 +93,13 @@ export class ActiveResonanceTalents extends ActiveTalents {
   complexFormList: Collection<ComplexForms> = new Collection<ComplexForms>(
     this
   );
+
+  @OneToOne(() => ActiveParagons, (paragon) => paragon.activeTalent, {
+    owner: true,
+    ref: true,
+    nullable: true,
+  })
+  paragon?: Ref<ActiveParagons>;
 
   constructor(dto: ResonanceTalentInfoType) {
     super(dto);

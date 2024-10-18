@@ -244,6 +244,9 @@
     "name": "Mentor Spirit",
     "category": "Positive",
     "karma": 5,
+    "bonus": {
+      "linkMentorSpirit": true
+    },
     "requirements": {},
     "description": "",
     "source": "SR5",
@@ -6040,13 +6043,15 @@
     "category": "Positive",
     "karma": 2,
     "bonus": {
-      "weaponSkillAccuracy": {
-        "skill": {
-          "selectSkill": true,
-          "exceptions": ["No category: Combat Active"]
-        },
-        "bonus": 1
-      }
+      "weaponSkillAccuracyList": [
+        {
+          "skill": {
+            "selectSkill": true,
+            "exceptions": ["No category: Combat Active"]
+          },
+          "bonus": 1
+        }
+      ]
     },
     "description": "",
     "source": "HT",
@@ -8799,6 +8804,9 @@
     "name": "Paragon",
     "category": "Positive",
     "karma": 0,
+    "bonus": {
+      "linkParagon": true
+    },
     "requirements": {},
     "description": "",
     "source": "KC",

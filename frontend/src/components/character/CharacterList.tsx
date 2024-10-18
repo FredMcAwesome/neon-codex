@@ -23,9 +23,11 @@ const CharacterList = function () {
 
   return (
     <div>
-      {data.map((character) => (
-        <CharacterCard data={character} key={character.id} />
-      ))}
+      {data.length > 0
+        ? data.map((character) => (
+            <CharacterCard data={character} key={character.id} />
+          ))
+        : "No characters created"}
     </div>
   );
 };

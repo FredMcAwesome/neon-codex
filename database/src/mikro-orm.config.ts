@@ -162,6 +162,14 @@ import {
   ActiveResonanceTalents,
   ActiveTalents,
 } from "./models/rpg/activeTables/activeTalentModel.js";
+import {
+  Mentors,
+  MentorSpirits,
+  Paragons,
+} from "./models/rpg/otherData/mentorModel.js";
+import { Bonuses, QualityBonuses } from "./models/rpg/otherData/bonusModel.js";
+import { ActiveMentorSpirits } from "./models/rpg/activeTables/ActiveMentorModel.js";
+import { ActiveParagons } from "./models/rpg/activeTables/ActiveParagonModel.js";
 
 const dbOptions: Options = {
   entities: [
@@ -295,12 +303,21 @@ const dbOptions: Options = {
     Programs,
     ActivePrograms,
 
+    Mentors,
+    MentorSpirits,
+    Paragons,
+    ActiveMentorSpirits,
+    ActiveParagons,
+
     Critters,
     CustomisedCritters,
     CritterPowers,
     ActiveCritterPowers,
     IncludedCritterPowers,
     CustomisedCritterPowers,
+
+    Bonuses,
+    QualityBonuses,
 
     Characters,
   ],

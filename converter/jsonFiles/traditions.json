@@ -723,7 +723,11 @@
       "spiritManipulation": "Spirit of Fire"
     },
     "bonus": {
-      "specificPower": "Berserker Temper"
+      "specificPowerList": [
+        {
+          "name": "Berserker Temper"
+        }
+      ]
     },
     "requirements": {},
     "source": "Forbidden Arcana",

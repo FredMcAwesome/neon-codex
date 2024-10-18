@@ -22,6 +22,7 @@ import {
   priorityLetterEnum,
   talentCategoryEnum,
   heritageCategoryEnum,
+  mentorCategoryEnum,
 } from "@neon-codex/common/build/enums.js";
 import type {
   AugmentationListType,
@@ -169,6 +170,30 @@ import {
   ActiveTalents,
 } from "@neon-codex/database/build/models/rpg/activeTables/activeTalentModel.js";
 import assert from "assert";
+import type { Bonuses } from "@neon-codex/database/build/models/rpg/otherData/bonusModel.js";
+import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
+import type {
+  MentorBaseType,
+  MentorListType,
+} from "@neon-codex/common/build/schemas/abilities/talent/mentorSchemas.js";
+import {
+  Mentors,
+  MentorSpirits,
+  Paragons,
+} from "@neon-codex/database/build/models/rpg/otherData/mentorModel.js";
+import { ActiveMentorSpirits } from "@neon-codex/database/build/models/rpg/activeTables/ActiveMentorModel.js";
+import { ActiveParagons } from "@neon-codex/database/build/models/rpg/activeTables/ActiveParagonModel.js";
+
+export function convertDBBonus(DBbonus: Bonuses) {
+  const bonus: BonusType = {};
+  if (DBbonus.linkMentorSpirit !== undefined) {
+    bonus.linkMentorSpirit = true;
+  }
+  if (DBbonus.linkParagon !== undefined) {
+    bonus.linkParagon = true;
+  }
+  return bonus;
+}
 
 export async function getSkills() {
   const db = await init();
@@ -254,6 +279,41 @@ export async function getTraditions() {
     })
   );
   return traditionsResponse;
+}
+
+export async function getMentors() {
+  const db = await init();
+  const mentors = await db.em.findAll(Mentors, {
+    populate: ["*"],
+  });
+  const mentorsResponse: MentorListType = mentors.map((mentor) => {
+    const baseMentor: MentorBaseType = {
+      name: mentor.name,
+      description: mentor.description,
+      advantage: mentor.advantage,
+      disadvantage: mentor.disadvantage,
+      bonus: mentor.bonus,
+      source: mentor.source,
+      page: mentor.page,
+    };
+    if (mentor instanceof MentorSpirits) {
+      return {
+        ...baseMentor,
+        category: mentorCategoryEnum.MentorSpirit,
+        choices: mentor.choices,
+        choiceCount: mentor.choiceCount,
+        required: mentor.required,
+      };
+    } else if (mentor instanceof Paragons) {
+      return {
+        ...baseMentor,
+        category: mentorCategoryEnum.Paragon,
+      };
+    } else {
+      throw new Error(`Mentor: ${mentor.name} has unknown class`);
+    }
+  });
+  return mentorsResponse;
 }
 
 export async function getCritters() {
@@ -953,6 +1013,8 @@ async function getQualities() {
     const includedQualitiesNameList = sharedLimitQualityList.map((quality) => {
       return quality.name;
     });
+    const bonus =
+      quality.bonus !== undefined ? convertDBBonus(quality.bonus.$) : undefined;
     const qualityFormatted: QualityType = {
       name: quality.name,
       description: quality.description,
@@ -976,7 +1038,7 @@ async function getQualities() {
       isMetagenic: quality.isMetagenic,
       canBuyWithSpellPoints: quality.canBuyWithSpellPoints,
       userSelectable: quality.userSelectable,
-      bonus: quality.bonus,
+      bonus: bonus,
       requirements: quality.requirements,
       forbidden: quality.forbidden,
       source: quality.source,
@@ -1148,7 +1210,17 @@ const traditions = privateProcedure.query(async () => {
     const traditionsResponse: TraditionListType = await getTraditions();
     return traditionsResponse;
   } catch (error) {
-    logger.error("Unalbe to connect to the database:", error);
+    logger.error("Unable to connect to the database:", error);
+    throw new Error("Database error");
+  }
+});
+
+const mentors = privateProcedure.query(async () => {
+  try {
+    const mentorsResponse: MentorListType = await getMentors();
+    return mentorsResponse;
+  } catch (error) {
+    logger.error("Unable to connect to the database:", error);
     throw new Error("Database error");
   }
 });
@@ -1158,7 +1230,7 @@ const critters = privateProcedure.query(async () => {
     const crittersResponse: CritterListType = await getCritters();
     return crittersResponse;
   } catch (error) {
-    logger.error("Unalbe to connect to the database:", error);
+    logger.error("Unable to connect to the database:", error);
     throw new Error("Database error");
   }
 });
@@ -1168,7 +1240,7 @@ const spells = privateProcedure.query(async () => {
     const spellsResponse: SpellListType = await getSpells();
     return spellsResponse;
   } catch (error) {
-    logger.error("Unalbe to connect to the database:", error);
+    logger.error("Unable to connect to the database:", error);
     throw new Error("Database error");
   }
 });
@@ -1178,7 +1250,7 @@ const complexForms = privateProcedure.query(async () => {
     const complexFormsResponse: ComplexFormListType = await getComplexForms();
     return complexFormsResponse;
   } catch (error) {
-    logger.error("Unalbe to connect to the database:", error);
+    logger.error("Unable to connect to the database:", error);
     throw new Error("Database error");
   }
 });
@@ -1188,7 +1260,7 @@ const adeptPowers = privateProcedure.query(async () => {
     const adeptPowersResponse: AdeptPowerListType = await getAdeptPowers();
     return adeptPowersResponse;
   } catch (error) {
-    logger.error("Unalbe to connect to the database:", error);
+    logger.error("Unable to connect to the database:", error);
     throw new Error("Database error");
   }
 });
@@ -1198,7 +1270,7 @@ const programs = privateProcedure.query(async () => {
     const programsResponse: ProgramListType = await getPrograms();
     return programsResponse;
   } catch (error) {
-    logger.error("Unalbe to connect to the database:", error);
+    logger.error("Unable to connect to the database:", error);
     throw new Error("Database error");
   }
 });
@@ -1459,6 +1531,22 @@ const createCharacter = privateProcedure
           activeTalent.manipulationSpirit = ref(loadedSpirit);
         }
 
+        if (magicTalent.selectedMentor !== undefined) {
+          const loadedMentor = await db.em.findOne(MentorSpirits, {
+            name: magicTalent.selectedMentor.name,
+          });
+          if (loadedMentor === null) {
+            throw new Error(
+              `Mentor ${magicTalent.selectedMentor.name} does not exist`
+            );
+          }
+          const activeMentorSpirit = new ActiveMentorSpirits(
+            magicTalent.selectedMentor.choices
+          );
+          activeMentorSpirit.mentorSpirit = ref(loadedMentor);
+          activeTalent.mentorSpirit = ref(activeMentorSpirit);
+        }
+
         if (magicTalent.selectedFormulae.selectFormulae) {
           for (const spell of magicTalent.selectedFormulae.spells) {
             const loadedSpell = await db.em.findOne(Spells, {
@@ -1508,6 +1596,7 @@ const createCharacter = privateProcedure
         }
         break;
       case talentCategoryEnum.Resonance:
+        const resonanceTalent = opts.input.talentInfo;
         activeTalent = new ActiveResonanceTalents(opts.input.talentInfo);
         activeTalent.character = characterReference;
         assert(activeTalent instanceof ActiveResonanceTalents);
@@ -1520,6 +1609,20 @@ const createCharacter = privateProcedure
             throw new Error(`Complex Form ${complexForm} does not exist`);
           }
           activeTalent.complexFormList.add(loadedComplexForm);
+        }
+
+        if (resonanceTalent.selectedMentor !== undefined) {
+          const loadedMentor = await db.em.findOne(Paragons, {
+            name: resonanceTalent.selectedMentor.name,
+          });
+          if (loadedMentor === null) {
+            throw new Error(
+              `Mentor ${resonanceTalent.selectedMentor.name} does not exist`
+            );
+          }
+          const activeParagon = new ActiveParagons();
+          activeParagon.paragon = ref(loadedMentor);
+          activeTalent.paragon = ref(activeParagon);
         }
         break;
       case talentCategoryEnum.Depth:
@@ -1830,6 +1933,24 @@ const getCharacter = privateProcedure
             customSpirits: spirits,
           };
 
+          let mentorSpirit;
+          if (talent.mentorSpirit !== undefined) {
+            const sourceMentorSpirit = talent.mentorSpirit.$.mentorSpirit.$;
+            mentorSpirit = {
+              name: sourceMentorSpirit.name,
+              description: sourceMentorSpirit.description,
+              advantage: sourceMentorSpirit.advantage,
+              disadvantage: sourceMentorSpirit.disadvantage,
+              bonus: sourceMentorSpirit.bonus,
+              source: sourceMentorSpirit.source,
+              page: sourceMentorSpirit.page,
+              category: mentorCategoryEnum.MentorSpirit as const,
+              choices: talent.mentorSpirit.$.choices,
+              choiceCount: sourceMentorSpirit.choiceCount,
+              required: sourceMentorSpirit.required,
+            };
+          }
+
           let formulae: FormulaListSelectedType = { selectFormulae: false };
           // TODO: this assumes we selected at char gen,
           // there is probably a case where this isn't true
@@ -1871,6 +1992,7 @@ const getCharacter = privateProcedure
             selectedTradition: tradition,
             selectedFormulae: formulae,
             selectedAdeptPowers: adeptPowers,
+            selectedMentor: mentorSpirit,
           };
         } else if (character.talent.$ instanceof ActiveResonanceTalents) {
           const talent = await db.em.findOne(
@@ -1883,11 +2005,26 @@ const getCharacter = privateProcedure
           if (talent === null) {
             throw new Error("Talent does not exist");
           }
+          let paragon;
+          if (talent.paragon !== undefined) {
+            const sourceParagon = talent.paragon.$.paragon.$;
+            paragon = {
+              name: sourceParagon.name,
+              description: sourceParagon.description,
+              advantage: sourceParagon.advantage,
+              disadvantage: sourceParagon.disadvantage,
+              bonus: sourceParagon.bonus,
+              source: sourceParagon.source,
+              page: sourceParagon.page,
+              category: mentorCategoryEnum.Paragon as const,
+            };
+          }
           talentInfo = {
             type: talentCategoryEnum.Resonance as const,
             complexForms: talent.complexFormList.$.map((complexForm) => {
               return complexForm.name;
             }),
+            selectedMentor: paragon,
           };
         } else if (character.talent.$ instanceof ActiveDepthTalents) {
           const talent = await db.em.findOne(
@@ -2096,6 +2233,10 @@ const convertActiveQualityDBToDTO = async function (
   if (qualityDB === null) {
     throw new Error("Character does not exist");
   }
+  const bonus =
+    qualityDB.bonus !== undefined
+      ? convertDBBonus(qualityDB.bonus.$)
+      : undefined;
 
   return {
     name: qualityDB.name,
@@ -2122,7 +2263,7 @@ const convertActiveQualityDBToDTO = async function (
     isMetagenic: qualityDB.isMetagenic,
     canBuyWithSpellPoints: qualityDB.canBuyWithSpellPoints,
     userSelectable: qualityDB.userSelectable,
-    bonus: qualityDB.bonus,
+    bonus: bonus,
     requirements: qualityDB.requirements,
     forbidden: qualityDB.forbidden,
     source: qualityDB.source,
@@ -2731,6 +2872,7 @@ const convertVehicleTypeInformation = function (vehicleDB: Vehicles) {
 
 export const characterRouter = router({
   traditions: traditions,
+  mentors: mentors,
   critters: critters,
   spells: spells,
   complexForms: complexForms,

@@ -18,6 +18,7 @@ import {
 import type { HeritageListType } from "@neon-codex/common/build/schemas/abilities/heritageSchemas.js";
 import type { TalentPriorityType } from "@neon-codex/common/build/schemas/otherData/prioritySchemas.js";
 import type { AttributeRangeType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
+import type { CharacterCreatorBonusListType } from "../commonSchemas.js";
 
 const AttributeOptionsSchema = zod
   .object({
@@ -78,6 +79,8 @@ interface IProps {
   ) => void;
   maxAttributePoints: number;
   talentInfo: TalentPriorityType;
+  bonusInfo: CharacterCreatorBonusListType;
+  setBonusInfo: (loadingBonusInfo: CharacterCreatorBonusListType) => void;
 }
 
 const AttributeListSelect = function (props: IProps) {
@@ -102,6 +105,8 @@ const AttributeListSelect = function (props: IProps) {
       setSpecialAttributeInfo={props.setSpecialAttributeInfo}
       maxAttributePoints={props.maxAttributePoints}
       talentInfo={props.talentInfo}
+      bonusInfo={props.bonusInfo}
+      setBonusInfo={props.setBonusInfo}
     />
   );
 };

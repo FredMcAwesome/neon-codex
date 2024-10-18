@@ -95,16 +95,18 @@
     "levels": false,
     "limit": 100,
     "bonus": {
-      "weaponSkillAccuracy": {
-        "skill": {
-          "selectSkill": true,
-          "exceptions": [
-            "No category: Combat Active",
-            "No skill: Unarmed Combat"
-          ]
-        },
-        "bonus": 1
-      }
+      "weaponSkillAccuracyList": [
+        {
+          "skill": {
+            "selectSkill": true,
+            "exceptions": [
+              "No category: Combat Active",
+              "No skill: Unarmed Combat"
+            ]
+          },
+          "bonus": 1
+        }
+      ]
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 309

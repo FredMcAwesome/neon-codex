@@ -60,6 +60,7 @@ import type {
   ArmourType,
 } from "@neon-codex/common/build/schemas/equipment/combat/armourSchemas.js";
 import { Fragment } from "react";
+import type { CharacterCreatorBonusListType } from "../commonSchemas.js";
 
 interface IProps {
   equipmentSelected: EquipmentListType;
@@ -68,6 +69,8 @@ interface IProps {
   setNuyen: (nuyen: number) => void;
   essencePoints: number;
   setEssencePoints: (essencePoints: number) => void;
+  bonusInfo: CharacterCreatorBonusListType;
+  setBonusInfo: (loadingBonusInfo: CharacterCreatorBonusListType) => void;
 }
 
 export const EquipmentSelect = function (props: IProps) {

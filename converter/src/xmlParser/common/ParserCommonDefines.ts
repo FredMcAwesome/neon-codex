@@ -312,7 +312,10 @@ export const LimitModifierSchema = zod
 export const SkillSchema = zod
   .object({
     name: zod.string(),
-    bonus: NumberOrAnyRatingSchema,
+    // bonus dice
+    val: zod.optional(zod.number()),
+    // check bonus or bonus dice?
+    bonus: zod.optional(NumberOrAnyRatingSchema),
     _precedence: zod.optional(zod.literal("0")),
     condition: zod.optional(zod.string()),
     exclude: zod.optional(zod.string()),
@@ -337,6 +340,7 @@ export const SpiritSchema = zod.union([
 
 export const GenericNameValueSchema = zod
   .object({
+    id: zod.optional(zod.string()),
     name: zod.optional(zod.string()),
     _name: zod.optional(zod.string()),
     value: zod.optional(zod.number()),

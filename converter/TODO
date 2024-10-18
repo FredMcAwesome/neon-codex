@@ -21,6 +21,8 @@ So far I have only passed to the frontend:
   - Programs
   - Traditions
   - Critters (Including spirits and sprites)
+  - Mentors
+  - Paragons
 
 Still need passed through to frontend):
   - Drug Components
@@ -30,10 +32,7 @@ Other main priorities:
   - Contacts
   - Echoes
   - Marital Arts
-  - Mentors
   - Metamagic
-  - Paragons
-  - Streams
 
 Other xmls to implement:
   - Actions

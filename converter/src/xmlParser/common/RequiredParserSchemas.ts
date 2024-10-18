@@ -1,5 +1,6 @@
 import { z as zod } from "zod";
 import {
+  attributeXMLEnum,
   StringArrayOrStringSchema,
   StringOrNumberSchema,
 } from "../common/ParserCommonDefines.js";
@@ -405,6 +406,14 @@ const RequiredRecursiveSchema = RequiredRecursiveSubSchema.extend({
   ),
 }).strict();
 
+const AttributeRequiredXMLSchema = zod
+  .object({
+    name: zod.nativeEnum(attributeXMLEnum),
+    natural: zod.optional(zod.literal("")),
+    total: zod.number(),
+  })
+  .strict();
+
 const containsSchema = zod.union([
   zod
     .object({
@@ -428,12 +437,10 @@ const containsSchema = zod.union([
     .strict(),
   zod
     .object({
-      attribute: zod
-        .object({
-          name: zod.string(),
-          total: zod.number(),
-        })
-        .strict(),
+      attribute: zod.union([
+        AttributeRequiredXMLSchema,
+        zod.array(AttributeRequiredXMLSchema),
+      ]),
     })
     .strict(),
   zod.object({ program: zod.string() }).strict(),

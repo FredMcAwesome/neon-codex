@@ -1,0 +1,176 @@
+[
+  {
+    "name": "01 (The World Tree)",
+    "description": "",
+    "advantage": "If a follower of 01 has at least one mark on a target, they may act as if they have an extra mark on it.",
+    "disadvantage": "–1 limit and –1 dice pool penalty when acting only in AR.",
+    "source": "Kill Code",
+    "page": 103,
+    "category": "Paragon"
+  },
+  {
+    "name": "Architect",
+    "description": "",
+    "advantage": "+1 limit and +1 dice pool bonus for Edit actions.",
+    "disadvantage": "–1 limit and –1 dice for Snoop actions.",
+    "source": "Kill Code",
+    "page": 103,
+    "category": "Paragon"
+  },
+  {
+    "name": "Archivist (The Record Keeper)",
+    "description": "",
+    "advantage": "+1 limit and +1 dice pool bonus for Browse actions and digital legwork.",
+    "disadvantage": "–1 limit for Edit actions designed to destroy data.",
+    "source": "Kill Code",
+    "page": 177,
+    "category": "Paragon"
+  },
+  {
+    "name": "Black Hat (The Cracker)",
+    "description": "",
+    "advantage": "+2 limit for gaining marks on a target.",
+    "disadvantage": "-1 limit and –1 die when setting a Data Bomb.",
+    "source": "Kill Code",
+    "page": 103,
+    "category": "Paragon"
+  },
+  {
+    "name": "Daedalus (The Inventor)",
+    "description": "",
+    "advantage": "+1 dice pool bonus for Hardware tests, +1 limit on Pilot skill tests when jumped in.",
+    "disadvantage": "–1 dice and limit for all actions in the Deep Resonance.",
+    "source": "Kill Code",
+    "page": 103,
+    "category": "Paragon"
+  },
+  {
+    "name": "Delphi (The Oracle)",
+    "description": "",
+    "advantage": "+1 bonus to dice pool and limit when threading complex forms.",
+    "disadvantage": "–2 modifier to the technomancer's Initiative Score.",
+    "bonus": {
+      "initiative": {
+        "bonus": -2
+      }
+    },
+    "source": "Kill Code",
+    "page": 104,
+    "category": "Paragon"
+  },
+  {
+    "name": "Intrusion Countermeasure (The Guardian)",
+    "description": "",
+    "advantage": "+1 bonus to dice pool and limit in cybercombat, +1 to firewall.",
+    "disadvantage": "–1 dice pool penalty when attacking IC in cybercombat.",
+    "source": "Kill Code",
+    "page": 104,
+    "category": "Paragon"
+  },
+  {
+    "name": "Probe (The Scout)",
+    "description": "",
+    "advantage": "+2 dice pool bonus and +1 limit on all actions when directly connected to an isolated system.",
+    "disadvantage": "–1 limit penalty when logged into more than one grid.",
+    "source": "Kill Code",
+    "page": 104,
+    "category": "Paragon"
+  },
+  {
+    "name": "Shooter (The Soldier)",
+    "description": "",
+    "advantage": "+1 bonus to dice pool and limit in cybercombat, +1 limit to all attack actions (physical and Matrix)",
+    "disadvantage": "–2 dice pool penalty and –1 limit when compiling sprites.",
+    "bonus": {
+      "weaponSkillAccuracyList": [
+        {
+          "skill": {
+            "selectSkill": false,
+            "name": "Archery"
+          },
+          "bonus": 1
+        },
+        {
+          "skill": {
+            "selectSkill": false,
+            "name": "Automatics"
+          },
+          "bonus": 1
+        },
+        {
+          "skill": {
+            "selectSkill": false,
+            "name": "Blades"
+          },
+          "bonus": 1
+        },
+        {
+          "skill": {
+            "selectSkill": false,
+            "name": "Clubs"
+          },
+          "bonus": 1
+        },
+        {
+          "skill": {
+            "selectSkill": false,
+            "name": "Exotic Melee Weapon"
+          },
+          "bonus": 1
+        },
+        {
+          "skill": {
+            "selectSkill": false,
+            "name": "Exotic Ranged Weapon"
+          },
+          "bonus": 1
+        },
+        {
+          "skill": {
+            "selectSkill": false,
+            "name": "Gunnery"
+          },
+          "bonus": 1
+        },
+        {
+          "skill": {
+            "selectSkill": false,
+            "name": "Heavy Weapons"
+          },
+          "bonus": 1
+        },
+        {
+          "skill": {
+            "selectSkill": false,
+            "name": "Longarms"
+          },
+          "bonus": 1
+        },
+        {
+          "skill": {
+            "selectSkill": false,
+            "name": "Pistols"
+          },
+          "bonus": 1
+        },
+        {
+          "skill": {
+            "selectSkill": false,
+            "name": "Throwing Weapons"
+          },
+          "bonus": 1
+        },
+        {
+          "skill": {
+            "selectSkill": false,
+            "name": "Unarmed Combat"
+          },
+          "bonus": 1
+        }
+      ]
+    },
+    "source": "Kill Code",
+    "page": 104,
+    "category": "Paragon"
+  }
+]

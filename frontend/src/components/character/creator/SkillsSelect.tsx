@@ -6,7 +6,10 @@ import type {
   CustomSkillListType,
   CustomSkillType,
 } from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
-import type { SkillPointInfoType } from "../commonSchemas.js";
+import type {
+  CharacterCreatorBonusListType,
+  SkillPointInfoType,
+} from "../commonSchemas.js";
 
 // first rating empty for no points in skill
 const skillRating = [
@@ -30,6 +33,8 @@ interface IProps {
   setSkillPoints: (loadingSkillPoints: SkillPointInfoType) => void;
   skillSelections: CustomSkillListType;
   setSkillSelections: (loadingSkillPoints: CustomSkillListType) => void;
+  bonusInfo: CharacterCreatorBonusListType;
+  setBonusInfo: (loadingBonusInfo: CharacterCreatorBonusListType) => void;
 }
 
 export const SkillListSelect = function (props: IProps) {

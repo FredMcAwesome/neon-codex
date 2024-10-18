@@ -124,6 +124,12 @@ import { CritterIncludedSkillGroups } from "../models/rpg/activeTables/activeSki
 import { CritterIncludedKnowledgeSkills } from "../models/rpg/activeTables/activeKnowledgeSkillModel.js";
 import { getPrograms } from "../seeds/rpgSeeds/programsSeed.js";
 import { Programs } from "../models/rpg/abilities/programModel.js";
+import { getMentors } from "../seeds/rpgSeeds/mentorSeed.js";
+import {
+  MentorSpirits,
+  Paragons,
+} from "../models/rpg/otherData/mentorModel.js";
+import { QualityBonuses } from "../models/rpg/otherData/bonusModel.js";
 
 export class SourcebookSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
@@ -156,6 +162,7 @@ export class SourcebookSeeder extends Seeder {
     const { unlinkedCritters, stagedCritters } = getCritters();
     const stagedCritterPowers = getCritterPowers();
     const stagedTraditions = getTraditions(stagedCritters);
+    const stagedMentors = getMentors();
 
     stagedSkills.forEach((skill) => {
       em.create(Skills, skill);
@@ -311,6 +318,17 @@ export class SourcebookSeeder extends Seeder {
     });
     console.log("Complex Forms created");
 
+    stagedMentors.forEach((mentor) => {
+      if (mentor instanceof MentorSpirits) {
+        em.create(MentorSpirits, mentor);
+      } else if (mentor instanceof Paragons) {
+        em.create(Paragons, mentor);
+      } else {
+        assert(false, `Unhandled mentor: ${mentor.name}`);
+      }
+    });
+    console.log("Mentors created");
+
     stagedCritters.forEach((critter) => {
       em.create(Critters, critter);
     });
@@ -375,6 +393,24 @@ export class SourcebookSeeder extends Seeder {
         }
       }
     }
+    // Quality Bonuses
+    for (const quality of unlinkedQualities) {
+      if (quality.bonus !== undefined) {
+        const relatedQuality = await em.findOne(Qualities, {
+          name: quality.name,
+        });
+        assert(
+          relatedQuality !== null,
+          `undefined Quality name: ${quality.name}`
+        );
+        const stagedBonus = new QualityBonuses(
+          quality.bonus,
+          ref(relatedQuality)
+        );
+        em.create(QualityBonuses, stagedBonus);
+      }
+    }
+    console.log("Quality linked");
 
     // Heritage metavariants
     for (const heritage of unlinkedHeritages) {

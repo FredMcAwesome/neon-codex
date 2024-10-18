@@ -6,7 +6,10 @@ import type {
   SpecialAttributesType,
   QualitySelectedListType,
 } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
-import type { SkillPointInfoType } from "../commonSchemas.js";
+import type {
+  CharacterCreatorBonusListType,
+  SkillPointInfoType,
+} from "../commonSchemas.js";
 
 interface IProps {
   priorityInfo: PriorityLevelsType;
@@ -19,6 +22,7 @@ interface IProps {
   skillSelections: CustomSkillListType;
   equipmentSelected: EquipmentListType;
   nuyen: number;
+  bonusInfo: CharacterCreatorBonusListType;
 }
 
 export const CreatorSummary = function (props: IProps) {

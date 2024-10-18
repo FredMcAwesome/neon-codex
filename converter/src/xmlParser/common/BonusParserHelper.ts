@@ -24,7 +24,11 @@ import {
   skillKarmaCostSemantics,
 } from "./ParserSemanticsHelper.js";
 import { convertAttribute, convertLimbSlot } from "./ParserHelper.js";
-import type { BonusXmlType } from "./BonusParserSchemas.js";
+import type {
+  BonusXmlType,
+  SpecificPowerXMLType,
+  WeaponSkillAccuracyXMLType,
+} from "./BonusParserSchemas.js";
 const Initiative = Bonus.Initiative;
 const SkillKarmaCost = Bonus.SkillKarmaCost;
 import Augmentation from "../../grammar/augmentation.ohm-bundle.js";
@@ -75,6 +79,11 @@ export function convertXmlBonus(bonus: BonusXmlType) {
   if ("selectattribute" in bonus && bonus.selectattribute !== undefined) {
     // TODO: handle
   }
+  if ("selectparagon" in bonus && bonus.selectparagon !== undefined) {
+    const linkParagon = bonus.selectparagon;
+    assert(linkParagon === "");
+    bonusObject.linkParagon = true;
+  }
   if ("selectpowers" in bonus && bonus.selectpowers !== undefined) {
     const linkPower = bonus.selectpowers;
     if (typeof linkPower === "string") {
@@ -83,6 +92,11 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     } else {
       // TODO: handle
     }
+  }
+  if ("selectmentorspirit" in bonus && bonus.selectmentorspirit !== undefined) {
+    const linkMentorSpirit = bonus.selectmentorspirit;
+    assert(linkMentorSpirit === "");
+    bonusObject.linkMentorSpirit = true;
   }
   if ("selecttradition" in bonus && bonus.selecttradition !== undefined) {
     const linkTradition = bonus.selecttradition;
@@ -112,9 +126,13 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       ? bonus.skillcategory
       : [bonus.skillcategory];
     bonusObject.skillCategories = skillCategoryList.map((category) => {
+      // TODO: category.val should be bonus dice not a bonus
+      const bonus =
+        category.bonus !== undefined ? category.bonus : category.val;
+      assert(bonus !== undefined);
       return {
         category: category.name,
-        bonus: convertRatingUnion(category.bonus),
+        bonus: convertRatingUnion(bonus),
       };
     });
   }
@@ -123,9 +141,12 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       ? bonus.skillgroup
       : [bonus.skillgroup];
     bonusObject.skillGroups = skillGroupList.map((group) => {
+      // TODO: group.val should be bonus dice not a bonus
+      const bonus = group.bonus !== undefined ? group.bonus : group.val;
+      assert(bonus !== undefined);
       return {
         group: group.name,
-        bonus: convertRatingUnion(group.bonus),
+        bonus: convertRatingUnion(bonus),
       };
     });
   }
@@ -209,7 +230,18 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     // bonusObject.skill = bonusSkill(bonus.specificskill);
   }
   if ("specificpower" in bonus && bonus.specificpower !== undefined) {
-    bonusObject.specificPower = bonus.specificpower.name;
+    let specificPowerList: Array<SpecificPowerXMLType> = [];
+    if (Array.isArray(bonus.specificpower)) {
+      specificPowerList = bonus.specificpower;
+    } else {
+      specificPowerList.push(bonus.specificpower);
+    }
+    bonusObject.specificPowerList = specificPowerList.map((power) => {
+      return {
+        name: power.name,
+        level: power.val,
+      };
+    });
   }
   if ("skillattribute" in bonus && bonus.skillattribute !== undefined) {
     // bonusObject.skill = bonusSkill(bonus.skillattribute);
@@ -275,44 +307,61 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     "weaponskillaccuracy" in bonus &&
     bonus.weaponskillaccuracy !== undefined
   ) {
-    const weaponSkillAccuracy = bonus.weaponskillaccuracy;
-    let skill: SelectSkillType;
-    if (weaponSkillAccuracy.selectskill !== undefined) {
-      let exceptions: Array<string> = [];
-      // if selectskill has no items there are no exceptions
-      if (weaponSkillAccuracy.selectskill !== "") {
-        if (weaponSkillAccuracy.selectskill._knowledgeskills !== undefined) {
-          exceptions.push("Knowledge Skills Disallowed");
+    const convertWeaponSkillAccuracy = function (
+      weaponSkillAccuracy: WeaponSkillAccuracyXMLType
+    ) {
+      let skill: SelectSkillType;
+      if (weaponSkillAccuracy.selectskill !== undefined) {
+        const exceptions: Array<string> = [];
+        // if selectskill has no items there are no exceptions
+        if (weaponSkillAccuracy.selectskill !== "") {
+          if (weaponSkillAccuracy.selectskill._knowledgeskills !== undefined) {
+            exceptions.push("Knowledge Skills Disallowed");
+          }
+          const excludedCategory =
+            weaponSkillAccuracy.selectskill._excludecategory;
+          if (excludedCategory !== undefined) {
+            exceptions.push(`No category: ${excludedCategory}`);
+          }
+          const skillCategory = weaponSkillAccuracy.selectskill._skillcategory;
+          if (skillCategory !== undefined) {
+            exceptions.push(`No category: ${skillCategory}`);
+          }
+          const excludeSkill = weaponSkillAccuracy.selectskill._excludeskill;
+          if (excludeSkill !== undefined) {
+            exceptions.push(`No skill: ${excludeSkill}`);
+          }
         }
-        const excludedCategory =
-          weaponSkillAccuracy.selectskill._excludecategory;
-        if (excludedCategory !== undefined) {
-          exceptions.push(`No category: ${excludedCategory}`);
-        }
-        const skillCategory = weaponSkillAccuracy.selectskill._skillcategory;
-        if (skillCategory !== undefined) {
-          exceptions.push(`No category: ${skillCategory}`);
-        }
-        const excludeSkill = weaponSkillAccuracy.selectskill._excludeskill;
-        if (excludeSkill !== undefined) {
-          exceptions.push(`No skill: ${excludeSkill}`);
-        }
+        skill = {
+          selectSkill: true,
+          exceptions: exceptions,
+        };
+      } else {
+        assert(weaponSkillAccuracy.name !== undefined);
+        skill = {
+          selectSkill: false,
+          name: weaponSkillAccuracy.name,
+        };
       }
-      skill = {
-        selectSkill: true,
-        exceptions: exceptions,
-      };
-    } else {
-      assert(weaponSkillAccuracy.name !== undefined);
-      skill = {
-        selectSkill: false,
-        name: weaponSkillAccuracy.name,
-      };
-    }
-    bonusObject.weaponSkillAccuracy = {
-      skill: skill,
-      bonus: weaponSkillAccuracy.value,
+      return skill;
     };
+
+    const weaponSkillAccuracyXMLList = bonus.weaponskillaccuracy;
+    const weaponSkillAccuracyList = [];
+    if (Array.isArray(weaponSkillAccuracyXMLList)) {
+      for (const weaponSkillAccuracy of weaponSkillAccuracyXMLList) {
+        weaponSkillAccuracyList.push({
+          skill: convertWeaponSkillAccuracy(weaponSkillAccuracy),
+          bonus: weaponSkillAccuracy.value,
+        });
+      }
+    } else {
+      weaponSkillAccuracyList.push({
+        skill: convertWeaponSkillAccuracy(weaponSkillAccuracyXMLList),
+        bonus: weaponSkillAccuracyXMLList.value,
+      });
+    }
+    bonusObject.weaponSkillAccuracyList = weaponSkillAccuracyList;
   }
   if ("smartlink" in bonus && bonus.smartlink !== undefined) {
     bonusObject.smartlinkAccuracy = bonus.smartlink;

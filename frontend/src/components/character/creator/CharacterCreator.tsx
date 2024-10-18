@@ -19,6 +19,7 @@ import type {
   HeritagePrioritySelectedType,
   QualitySelectedListType,
   TalentInfoType,
+  FormulaListSelectedType,
 } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
 import { CreatorSummary } from "./CreatorSummary.js";
 import { useNavigate } from "react-router-dom";
@@ -30,7 +31,10 @@ import type {
   SkillPriorityType,
   TalentPriorityType,
 } from "@neon-codex/common/build/schemas/otherData/prioritySchemas.js";
-import type { SkillPointInfoType } from "../commonSchemas.js";
+import type {
+  CharacterCreatorBonusListType,
+  SkillPointInfoType,
+} from "../commonSchemas.js";
 import { TalentSelect } from "./TalentSelect.js";
 
 const characterCreatorPath = "/character_creator";
@@ -38,6 +42,7 @@ const CharacterCreator = function () {
   const navigate = useNavigate();
   const skills = trpc.character.skills.useQuery();
   const character = trpc.character.createCharacter.useMutation();
+  const [bonusInfo, setBonusInfo] = useState<CharacterCreatorBonusListType>([]);
   // Character creator holds values of all sub components
   const [priorityInfo, setPriorityInfo] = useState<PriorityLevelsType>({
     heritage: priorityLetterEnum.A,
@@ -129,6 +134,12 @@ const CharacterCreator = function () {
   );
   const [nuyen, setNuyen] = useState(0);
 
+  const onBonusInfoChanged = function (
+    loadingBonusInfo: CharacterCreatorBonusListType
+  ) {
+    setBonusInfo(loadingBonusInfo);
+  };
+
   const onPriorityInfoChanged = function (
     loadingPriorities: PriorityLevelsType
   ) {
@@ -144,6 +155,62 @@ const CharacterCreator = function () {
   };
   const onPriorityTalentChanged = function (loadingTalent: TalentPriorityType) {
     setPriorityTalent(loadingTalent);
+    if (talentInfo.type !== loadingTalent.category) {
+      switch (loadingTalent.category) {
+        case talentCategoryEnum.Magic: {
+          const formulae: FormulaListSelectedType =
+            loadingTalent.formulae !== undefined
+              ? {
+                  selectFormulae: true as const,
+                  spells: [],
+                  rituals: [],
+                  alchemicalPreparations: [],
+                }
+              : {
+                  selectFormulae: false as const,
+                };
+          const powers =
+            loadingTalent.name === "Adept" ||
+            loadingTalent.name === "Mystic Adept"
+              ? {
+                  selectAdeptPowers: true as const,
+                  adeptPowers: [],
+                }
+              : {
+                  selectAdeptPowers: false as const,
+                };
+          setTalentInfo({
+            type: talentCategoryEnum.Magic,
+            selectedTradition: {
+              name: "",
+              customSpirits: {
+                customSpirits: false,
+              },
+            },
+            selectedFormulae: formulae,
+            selectedAdeptPowers: powers,
+          });
+          break;
+        }
+        case talentCategoryEnum.Resonance:
+          setTalentInfo({
+            type: talentCategoryEnum.Resonance,
+            complexForms: [],
+          });
+          break;
+        case talentCategoryEnum.Depth:
+          setTalentInfo({
+            type: talentCategoryEnum.Depth,
+            programs: [],
+          });
+          break;
+        case talentCategoryEnum.Mundane:
+          setTalentInfo({
+            type: talentCategoryEnum.Mundane,
+          });
+          break;
+      }
+    }
   };
   const onPrioritySkillsChanged = function (loadingSkills: SkillPriorityType) {
     setPrioritySkills(loadingSkills);
@@ -274,6 +341,8 @@ const CharacterCreator = function () {
           setSpecialAttributeInfo={onSpecialAttributeInfoChanged}
           maxAttributePoints={priorityAttributes}
           talentInfo={priorityTalent}
+          bonusInfo={bonusInfo}
+          setBonusInfo={onBonusInfoChanged}
         />
       );
       break;
@@ -286,6 +355,8 @@ const CharacterCreator = function () {
           setPositiveQualitiesSelected={onPositiveQualitiesSelectedChanged}
           negativeQualitiesSelected={negativeQualityListSelected}
           setNegativeQualitiesSelected={onNegativeQualitiesSelectedChanged}
+          bonusInfo={bonusInfo}
+          setBonusInfo={onBonusInfoChanged}
         />
       );
       break;
@@ -297,6 +368,8 @@ const CharacterCreator = function () {
           setTalentInfo={onTalentInfoChanged}
           karmaPoints={karmaPoints}
           essencePoints={essencePoints}
+          bonusInfo={bonusInfo}
+          setBonusInfo={onBonusInfoChanged}
         />
       );
       break;
@@ -307,6 +380,8 @@ const CharacterCreator = function () {
           setSkillPoints={onSkillPointChanged}
           skillSelections={skillSelections}
           setSkillSelections={onSkillSelectionsChanged}
+          bonusInfo={bonusInfo}
+          setBonusInfo={onBonusInfoChanged}
         />
       );
       break;
@@ -319,6 +394,8 @@ const CharacterCreator = function () {
           setNuyen={onNuyenChanged}
           essencePoints={essencePoints}
           setEssencePoints={onEssencePointsChanged}
+          bonusInfo={bonusInfo}
+          setBonusInfo={onBonusInfoChanged}
         />
       );
       break;
@@ -335,6 +412,7 @@ const CharacterCreator = function () {
           skillSelections={skillSelections}
           equipmentSelected={equipmentSelected}
           nuyen={nuyen}
+          bonusInfo={bonusInfo}
         />
       );
       break;

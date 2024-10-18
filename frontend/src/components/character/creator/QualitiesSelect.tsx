@@ -1,9 +1,15 @@
 import { Fragment } from "react";
 import Dropdown from "react-dropdown";
 import { trpc } from "../../../utils/trpc.js";
-import { qualityCategoryEnum } from "@neon-codex/common/build/enums.js";
+import {
+  BonusSourceEnum,
+  qualityCategoryEnum,
+} from "@neon-codex/common/build/enums.js";
 import type { QualitySelectedListType } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
 import type { QualityListType } from "@neon-codex/common/build/schemas/abilities/qualitySchemas.js";
+import type { CharacterCreatorBonusListType } from "../commonSchemas.js";
+
+const QualityDefault = "Select a quality";
 
 interface IProps {
   karmaPoints: number;
@@ -16,6 +22,8 @@ interface IProps {
   setNegativeQualitiesSelected: (
     loadingNegativeQualities: QualitySelectedListType
   ) => void;
+  bonusInfo: CharacterCreatorBonusListType;
+  setBonusInfo: (loadingBonusInfo: CharacterCreatorBonusListType) => void;
 }
 
 export const QualityListSelect = function (props: IProps) {
@@ -50,6 +58,8 @@ export const QualityListSelect = function (props: IProps) {
           selectedQualityList={props.positiveQualitiesSelected}
           setQualities={props.setPositiveQualitiesSelected}
           setKarma={setKarma}
+          bonusInfo={props.bonusInfo}
+          setBonusInfo={props.setBonusInfo}
         />
       </div>
       <div>
@@ -62,6 +72,8 @@ export const QualityListSelect = function (props: IProps) {
           selectedQualityList={props.negativeQualitiesSelected}
           setQualities={props.setNegativeQualitiesSelected}
           setKarma={setKarma}
+          bonusInfo={props.bonusInfo}
+          setBonusInfo={props.setBonusInfo}
         />
       </div>
     </Fragment>
@@ -128,6 +140,8 @@ interface IQualityDropdownProps {
   setQualities: (loadingQualities: QualitySelectedListType) => void;
   setKarma: (removeKarma: boolean, difference: number) => void;
   index: number;
+  bonusInfo: CharacterCreatorBonusListType;
+  setBonusInfo: (loadingBonusInfo: CharacterCreatorBonusListType) => void;
 }
 
 function QualityDropdownComponent({
@@ -138,6 +152,8 @@ function QualityDropdownComponent({
   setQualities,
   setKarma,
   index,
+  bonusInfo,
+  setBonusInfo,
 }: IQualityDropdownProps) {
   return (
     <Dropdown
@@ -149,9 +165,16 @@ function QualityDropdownComponent({
         const newQuality = qualityList.find((quality) => {
           return quality.name === arg.value;
         });
+        const oldQuality = qualityList.find((quality) => {
+          return quality.name === currentValue;
+        });
 
-        if (newQuality) {
-          if (index === -1) {
+        if (
+          newQuality !== undefined &&
+          (oldQuality !== undefined || currentValue === QualityDefault)
+        ) {
+          let newBonusInfo = bonusInfo;
+          if (oldQuality === undefined) {
             setQualities([...selectedQualityList, { name: newQuality.name }]);
             if (
               typeof newQuality.karma === "number" &&
@@ -163,7 +186,6 @@ function QualityDropdownComponent({
               );
             }
           } else {
-            const oldQuality = selectedQualityList[index];
             if (selectedQualityList.length - 1 === index) {
               setQualities([
                 ...selectedQualityList.slice(0, index),
@@ -183,16 +205,33 @@ function QualityDropdownComponent({
             ) {
               newCost = newQuality.karma;
             }
-            const fullQuality = qualityList.find(
-              (qual) => qual.name === oldQuality.name
-            );
-            if (fullQuality === undefined) {
-              throw new Error(`Quality ${oldQuality.name} is not found`);
-            }
             setKarma(
               newQuality.category === qualityCategoryEnum.Positive,
-              newCost - fullQuality.karma
+              newCost - oldQuality.karma
             );
+
+            const bonusIndex = newBonusInfo.findIndex(
+              (element) => element.source === oldQuality.name
+            );
+            if (bonusIndex > -1) {
+              newBonusInfo = newBonusInfo.splice(bonusIndex, 1);
+            } else {
+              console.log(`Quality: ${oldQuality.name} has no bonus to remove`);
+            }
+          }
+          if (newQuality.bonus !== undefined) {
+            const bonusParsed = {
+              sourceType: BonusSourceEnum.Quality,
+              source: newQuality.name,
+              ...(newQuality.bonus.linkMentorSpirit !== undefined && {
+                linkMentorSpirit: true as const,
+              }),
+              ...(newQuality.bonus.linkParagon !== undefined && {
+                linkParagon: true as const,
+              }),
+            };
+            newBonusInfo.push(bonusParsed);
+            setBonusInfo(newBonusInfo);
           }
         } else {
           console.error("Quality: " + arg.value + " not found");
@@ -215,6 +254,8 @@ interface IQualitySelectionProps {
   selectedQualityList: QualitySelectedListType;
   setQualities: (loadingQualities: QualitySelectedListType) => void;
   setKarma: (removeKarma: boolean, difference: number) => void;
+  bonusInfo: CharacterCreatorBonusListType;
+  setBonusInfo: (loadingBonusInfo: CharacterCreatorBonusListType) => void;
 }
 
 const QualitySelectionComponent = function ({
@@ -223,6 +264,8 @@ const QualitySelectionComponent = function ({
   selectedQualityList,
   setQualities,
   setKarma,
+  bonusInfo,
+  setBonusInfo,
 }: IQualitySelectionProps) {
   return (
     <div>
@@ -243,6 +286,8 @@ const QualitySelectionComponent = function ({
               setQualities={setQualities}
               setKarma={setKarma}
               index={index}
+              bonusInfo={bonusInfo}
+              setBonusInfo={setBonusInfo}
             />
             <p>{fullQuality.description}</p>
             {/* {quality.subqualities && (
@@ -302,13 +347,15 @@ const QualitySelectionComponent = function ({
       <h3>Add Quality:</h3>
       {
         <QualityDropdownComponent
-          currentValue={"Select a quality"}
+          currentValue={QualityDefault}
           positive={positive}
           qualityList={qualityList}
           selectedQualityList={selectedQualityList}
           setQualities={setQualities}
           setKarma={setKarma}
           index={-1}
+          bonusInfo={bonusInfo}
+          setBonusInfo={setBonusInfo}
         />
       }
     </div>

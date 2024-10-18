@@ -61,5 +61,11 @@ ParseCritterPowers();
 import { ParseComplexForms } from "./xmlParser/talent/ComplexFormParser.js";
 ParseComplexForms();
 
+import { ParseParagons } from "./xmlParser/talent/ParagonParser.js";
+ParseParagons();
+
+import { ParseMentors } from "./xmlParser/talent/MentorParser.js";
+ParseMentors();
+
 import { CheckGUIDs } from "./xmlParser/utilities.js";
 CheckGUIDs();

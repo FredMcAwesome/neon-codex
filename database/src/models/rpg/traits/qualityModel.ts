@@ -3,9 +3,11 @@ import {
   Entity,
   Enum,
   ManyToMany,
+  OneToOne,
   PrimaryKey,
   Property,
   Unique,
+  type Ref,
 } from "@mikro-orm/postgresql";
 import { qualityCategoryEnum } from "@neon-codex/common/build/enums.js";
 import type {
@@ -15,8 +17,8 @@ import type {
   QualityType,
 } from "@neon-codex/common/build/schemas/abilities/qualitySchemas.js";
 import { Weapons } from "../equipment/combat/weaponModel.js";
-import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
+import { QualityBonuses } from "../otherData/bonusModel.js";
 
 @Entity()
 export class Qualities {
@@ -81,8 +83,12 @@ export class Qualities {
   @Property({ nullable: true })
   userSelectable?: false;
 
-  @Property({ type: "json", nullable: true })
-  bonus?: BonusType;
+  @OneToOne(() => QualityBonuses, (bonus) => bonus.quality, {
+    owner: true,
+    nullable: true,
+    ref: true,
+  })
+  bonus?: Ref<QualityBonuses>;
 
   @Property({ type: "json", nullable: true })
   requirements?: RequirementsType;
@@ -128,7 +134,7 @@ export class Qualities {
       this.canBuyWithSpellPoints = dto.canBuyWithSpellPoints;
     if (dto.userSelectable !== undefined)
       this.userSelectable = dto.userSelectable;
-    if (dto.bonus !== undefined) this.bonus = dto.bonus;
+    // if (dto.bonus !== undefined) this.bonus = dto.bonus;
     if (dto.requirements !== undefined) this.requirements = dto.requirements;
     if (dto.forbidden !== undefined) this.forbidden = dto.forbidden;
     this.source = dto.source;

@@ -168,6 +168,24 @@ function Skills(
 function Talent(data: TalentInfoType) {
   switch (data.type) {
     case talentCategoryEnum.Magic:
+      let mentorSpirit;
+      if (data.selectedMentor) {
+        mentorSpirit = (
+          <div>
+            <div>
+              Mentor Spirit:
+              {data.selectedMentor.name}
+            </div>
+            <div>
+              Choices:
+              {data.selectedMentor.choices.map((choice) => {
+                return choice.name;
+              })}
+            </div>
+          </div>
+        );
+      }
+
       let formulaList;
       if (data.selectedFormulae.selectFormulae) {
         formulaList = (
@@ -220,12 +238,24 @@ function Talent(data: TalentInfoType) {
         <div>
           <h2>Magic User</h2>
           Tradition: {data.selectedTradition.name}
+          {mentorSpirit}
           {formulaList}
           {adeptPowers}
         </div>
       );
 
     case talentCategoryEnum.Resonance:
+      let paragon;
+      if (data.selectedMentor) {
+        paragon = (
+          <div>
+            <div>
+              Paragon:
+              {data.selectedMentor.name}
+            </div>
+          </div>
+        );
+      }
       return (
         <div>
           Complex Forms:
@@ -233,6 +263,7 @@ function Talent(data: TalentInfoType) {
             {data.complexForms.map((complexForm, index) => {
               return <li key={index}>{complexForm}</li>;
             })}
+            {paragon}
           </ul>
         </div>
       );
@@ -247,7 +278,6 @@ function Talent(data: TalentInfoType) {
           </ul>
         </div>
       );
-      break;
     case talentCategoryEnum.Mundane:
       return <>Mundane</>;
   }

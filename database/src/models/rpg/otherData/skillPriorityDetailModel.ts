@@ -23,7 +23,6 @@ import { TalentPriorityDetails } from "./talentPriorityDetailModel.js";
   abstract: true,
   discriminatorColumn: "discr",
 })
-@Entity()
 export abstract class SkillBasePriorityDetails {
   @PrimaryKey()
   id!: number;

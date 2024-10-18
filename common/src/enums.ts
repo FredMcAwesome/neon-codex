@@ -983,3 +983,13 @@ export enum programCategoryEnum {
   HackingPrograms = "Hacking Programs",
   Software = "Software",
 }
+
+export enum mentorCategoryEnum {
+  MentorSpirit = "Mentor Spirit",
+  Paragon = "Paragon",
+}
+
+export enum BonusSourceEnum {
+  Quality = "Quality",
+  Tradition = "Tradition",
+}

@@ -6697,13 +6697,15 @@
       "maximum": [1]
     },
     "bonus": {
-      "weaponSkillAccuracy": {
-        "skill": {
-          "selectSkill": true,
-          "exceptions": ["Knowledge Skills Disallowed"]
-        },
-        "bonus": 1
-      }
+      "weaponSkillAccuracyList": [
+        {
+          "skill": {
+            "selectSkill": true,
+            "exceptions": ["Knowledge Skills Disallowed"]
+          },
+          "bonus": 1
+        }
+      ]
     },
     "requirements": {},
     "availability": {
