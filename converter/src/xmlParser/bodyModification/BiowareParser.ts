@@ -29,7 +29,7 @@ const Cost = Augmentation.Cost;
 const Availability = Augmentation.Availability;
 const MountList = Augmentation.MountList;
 
-export function ParseBioware() {
+export function ParseBiowares() {
   const currentPath = import.meta.url;
   const xml_string = fs.readFileSync(
     fileURLToPath(path.dirname(currentPath) + "../../../../xmls/bioware.xml"),

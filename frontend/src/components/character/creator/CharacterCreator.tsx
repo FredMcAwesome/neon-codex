@@ -20,6 +20,7 @@ import type {
   QualitySelectedListType,
   TalentInfoType,
   FormulaListSelectedType,
+  MartialArtSelectedType,
 } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
 import { CreatorSummary } from "./CreatorSummary.js";
 import { useNavigate } from "react-router-dom";
@@ -36,6 +37,7 @@ import type {
   SkillPointInfoType,
 } from "../commonSchemas.js";
 import { TalentSelect } from "./TalentSelect.js";
+import { MartialArtSelect } from "./MartialArtsSelect.js";
 
 const characterCreatorPath = "/character_creator";
 const CharacterCreator = function () {
@@ -123,6 +125,9 @@ const CharacterCreator = function () {
   // TODO: set skill group selections
   const [skillGroupSelections, _setSkillGroupSelections] =
     useState<CustomSkillGroupListType>([]);
+  const [martialArtSelections, setMartialArtSelections] = useState<
+    MartialArtSelectedType | undefined
+  >(undefined);
   const [equipmentSelected, setEquipmentSelected] = useState<EquipmentListType>(
     {
       weapons: [],
@@ -263,6 +268,11 @@ const CharacterCreator = function () {
   const onNuyenChanged = function (nuyen: number) {
     setNuyen(nuyen);
   };
+  const onMartialArtSelectionsChanged = function (
+    martialArtSelected: MartialArtSelectedType | undefined
+  ) {
+    setMartialArtSelections(martialArtSelected);
+  };
 
   // TODO: make the page selection vary depending on talent choice
   // and add a header at the top
@@ -272,6 +282,7 @@ const CharacterCreator = function () {
     QualityListSelect = "QualityListSelect",
     TalentListSelect = "TalentListSelect",
     SkillListSelect = "SkillListSelect",
+    MartialArtSelect = "MartialArtSelect",
     EquipmentListSelect = "EquipmentListSelect",
     CreatorSummary = "CreatorSummary",
   }
@@ -283,6 +294,7 @@ const CharacterCreator = function () {
           CharacterPageEnum.AttributeListSelect,
           CharacterPageEnum.QualityListSelect,
           CharacterPageEnum.SkillListSelect,
+          CharacterPageEnum.MartialArtSelect,
           CharacterPageEnum.EquipmentListSelect,
           CharacterPageEnum.CreatorSummary,
         ]
@@ -292,6 +304,7 @@ const CharacterCreator = function () {
           CharacterPageEnum.QualityListSelect,
           CharacterPageEnum.TalentListSelect,
           CharacterPageEnum.SkillListSelect,
+          CharacterPageEnum.MartialArtSelect,
           CharacterPageEnum.EquipmentListSelect,
           CharacterPageEnum.CreatorSummary,
         ];
@@ -385,6 +398,16 @@ const CharacterCreator = function () {
         />
       );
       break;
+    case CharacterPageEnum.MartialArtSelect:
+      currentStage = (
+        <MartialArtSelect
+          karmaPoints={karmaPoints}
+          setKarmaPoints={onKarmaPointsChanged}
+          martialArtSelected={martialArtSelections}
+          setMartialArtSelected={onMartialArtSelectionsChanged}
+        />
+      );
+      break;
     case CharacterPageEnum.EquipmentListSelect:
       currentStage = (
         <EquipmentSelect
@@ -474,6 +497,7 @@ const CharacterCreator = function () {
               skillSelections: skillSelections,
               skillGroupSelections: skillGroupSelections,
               equipmentSelected: equipmentSelected,
+              martialArtSelected: martialArtSelections,
               karmaPoints: karmaPoints,
               nuyen: nuyen,
             })

@@ -16,7 +16,7 @@ import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { convertXmlBonus } from "../common/BonusParserHelper.js";
 import { qualityLimitEnum } from "@neon-codex/common/build/enums.js";
 
-export function ParseQuality() {
+export function ParseQualities() {
   const currentPath = import.meta.url;
   const xml_string = fs.readFileSync(
     fileURLToPath(path.dirname(currentPath) + "../../../../xmls/qualities.xml"),

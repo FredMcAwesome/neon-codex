@@ -42,7 +42,7 @@ const ProgramXmlSchema = zod
     page: zod.number(),
   })
   .strict();
-const ProgramListXmlSchema = zod.array(ProgramXmlSchema);
+export const ProgramListXmlSchema = zod.array(ProgramXmlSchema);
 type ProgramXmlType = zod.infer<typeof ProgramXmlSchema>;
 
 export function ParsePrograms() {

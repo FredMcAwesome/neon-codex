@@ -1,0 +1,847 @@
+[
+  {
+    "name": "52 Blocks",
+    "techniqueList": [
+      "Called Shot (Disarm)",
+      "Kick Attack",
+      "Multiple Opponent Defense (Defender has Defended)",
+      "Pouncing Dragon",
+      "Randori (Dirty Trick)",
+      "Rooted Tree",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 128,
+    "description": ""
+  },
+  {
+    "name": "Aikido",
+    "techniqueList": [
+      "Called Shot (Disarm)",
+      "Constrictor's Crush",
+      "Counterstrike",
+      "Throw Person",
+      "Yielding Force (Counterstrike)",
+      "Yielding Force (Throw)",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 128,
+    "description": ""
+  },
+  {
+    "name": "Arnis De Mano",
+    "techniqueList": [
+      "Close Quarter Defense Against Firearms",
+      "Multiple Opponent Combat",
+      "Opposing Force (Parry)",
+      "Randori (Vitals)",
+      "Two-Weapon Style Attack",
+      "Two-Weapon Style Defense",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 128,
+    "description": ""
+  },
+  {
+    "name": "Bartitsu",
+    "techniqueList": [
+      "Ballestra",
+      "Bending of the Reed",
+      "Called Shot (Disarm)",
+      "Kick Attack",
+      "Riposte",
+      "Sweep",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 128,
+    "description": ""
+  },
+  {
+    "name": "Boxing (Brawler Style)",
+    "techniqueList": [
+      "Clinch",
+      "Full Offense",
+      "Haymaker",
+      "Opposing Force (Block)",
+      "Stagger",
+      "Thunder Strike",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 129,
+    "description": ""
+  },
+  {
+    "name": "Boxing (Classic Style)",
+    "techniqueList": [
+      "Bending of the Reed",
+      "Called Shot (Feint)",
+      "Haymaker",
+      "Oaken Stance (Defense Against Being Knocked Down)",
+      "Opposing Force (Block)",
+      "Silken Storm",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 129,
+    "description": ""
+  },
+  {
+    "name": "Boxing (Swarmer Style)",
+    "techniqueList": [
+      "Bending of the Reed",
+      "Called Shot (Feint)",
+      "Clinch",
+      "Haymaker",
+      "Silken Storm",
+      "Two-Headed Snake",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 129,
+    "description": ""
+  },
+  {
+    "name": "Capoeira",
+    "techniqueList": [
+      "Bending of the Reed",
+      "Called Shot (Feint)",
+      "Kick Attack",
+      "Kip-Up",
+      "Sweep",
+      "Tricking",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 129,
+    "description": ""
+  },
+  {
+    "name": "Carromeleg",
+    "techniqueList": [
+      "Counterstrike",
+      "Iaijutsu",
+      "Imposing Stone",
+      "Riposte",
+      "Shadow Block",
+      "Stagger",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 129,
+    "description": ""
+  },
+  {
+    "name": "Chakram Fighting",
+    "techniqueList": [
+      "Called Shot (Pin)",
+      "Close Quarter Firearms (Thrown Weapons)",
+      "Knucklebreaker (Disarm)",
+      "Multiple Opponent Defense (Friends in Melee)",
+      "Opposing Force (Block)",
+      "Ti Khao",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 129,
+    "description": ""
+  },
+  {
+    "name": "Drunken Boxing",
+    "techniqueList": [
+      "Called Shot (Disarm)",
+      "Called Shot (Feint)",
+      "Defiant Dance",
+      "Full Offense",
+      "Karmic Response",
+      "Two-Headed Snake",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 130,
+    "description": ""
+  },
+  {
+    "name": "Fiore Dei Liberi",
+    "techniqueList": [
+      "Called Shot (Break Weapon)",
+      "Opposing Force (Parry)",
+      "Riposte",
+      "Two-Weapon Style Attack",
+      "Two-Weapon Style Defense",
+      "Yielding Force (Riposte)",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 130,
+    "description": ""
+  },
+  {
+    "name": "Firefight",
+    "techniqueList": [
+      "Clinch",
+      "Close Quarter Defense Against Firearms",
+      "Close Quarter Firearms (Pistols)",
+      "Multiple Opponent Defense (Friends in Melee)",
+      "Oaken Stance (Defense Against Being Knocked Down)",
+      "Oaken Stance (Defense Against Being Charged)",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 130,
+    "description": ""
+  },
+  {
+    "name": "Gun Kata",
+    "techniqueList": [
+      "Close Quarter Firearms (Pistols)",
+      "Kip-Up",
+      "Multiple Opponent Defense (Friends in Melee)",
+      "Opposing Force (Block)",
+      "Tricking",
+      "Stagger",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 130,
+    "description": ""
+  },
+  {
+    "name": "Jeet Kune Do",
+    "techniqueList": [
+      "Bending of the Reed",
+      "Counterstrike",
+      "Kick Attack",
+      "Opposing Force (Block)",
+      "Randori (Vitals)",
+      "Yielding Force (Counterstrike)",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 130,
+    "description": ""
+  },
+  {
+    "name": "Jogo Du Pau",
+    "techniqueList": [
+      "Barbed Hooks",
+      "Herding",
+      "Oaken Stance (Defense Against Being Charged)",
+      "Oaken Stance (Defense Against Being Knocked Down)",
+      "Opposing Force (Parry)",
+      "Pouncing Dragon",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 130,
+    "description": ""
+  },
+  {
+    "name": "Jujitsu",
+    "techniqueList": [
+      "Called Shot (Disarm)",
+      "Chin Na",
+      "Clinch",
+      "Sacrificial Throw",
+      "Sweep",
+      "Throw Person",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 131,
+    "description": ""
+  },
+  {
+    "name": "Karate",
+    "techniqueList": [
+      "Counterstrike",
+      "Kick Attack",
+      "Kip-Up",
+      "Opposing Force (Block)",
+      "Sweep",
+      "Yielding Force (Counterstrike)",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 131,
+    "description": ""
+  },
+  {
+    "name": "Kenjutsu",
+    "techniqueList": [
+      "Bending of the Reed",
+      "Finishing Move",
+      "Iaijutsu",
+      "Multiple Opponent Combat",
+      "Multiple Opponent Defense (Friends in Melee)",
+      "Opposing Force (Parry)",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 131,
+    "description": ""
+  },
+  {
+    "name": "Knight Errant Tactical",
+    "techniqueList": [
+      "Barbed Hooks",
+      "Broken Fang",
+      "Called Shot (Break Weapon)",
+      "Close Quarter Defense Against Firearms",
+      "Hammerfist",
+      "Imposing Stone",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 132,
+    "description": ""
+  },
+  {
+    "name": "Krav Maga",
+    "techniqueList": [
+      "Called Shot (Disarm)",
+      "Clinch",
+      "Constrictor's Crush",
+      "Imposing Stone",
+      "Releasing Talons",
+      "Ti Khao",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 132,
+    "description": ""
+  },
+  {
+    "name": "Kunst Des Fechtens",
+    "techniqueList": [
+      "Half Sword",
+      "Multiple Opponent Combat",
+      "Opposing Force (Parry)",
+      "Pouncing Dragon",
+      "Riposte",
+      "Yielding Force (Riposte)",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 132,
+    "description": ""
+  },
+  {
+    "name": "Kyujutsu",
+    "techniqueList": [
+      "Called Shot (Pin)",
+      "Close Quarter Firearms (Archery)",
+      "Hammerfist",
+      "Knucklebreaker (Blast Out of Hands)",
+      "Soaring Shackles",
+      "Tricking",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 132,
+    "description": ""
+  },
+  {
+    "name": "La Verdadera Destreza",
+    "techniqueList": [
+      "Ballestra",
+      "Multiple Opponent Combat",
+      "Multiple Opponent Defense (Friends in Melee)",
+      "Multiple Opponent Defense (Defender has Defended)",
+      "Opposing Force (Parry)",
+      "Riposte",
+      "Yielding Force (Riposte)",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 132,
+    "description": ""
+  },
+  {
+    "name": "Lone Star Tactical",
+    "techniqueList": [
+      "Called Shot (Break Weapon)",
+      "Close Quarter Defense Against Firearms",
+      "Herding",
+      "Multiple Opponent Defense (Defender has Defended)",
+      "Oaken Stance (Defense Against Being Charged)",
+      "Rooted Tree",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 132,
+    "description": ""
+  },
+  {
+    "name": "Muay Thai",
+    "techniqueList": [
+      "Clinch",
+      "Crushing Jaws",
+      "Finishing Move",
+      "Kick Attack",
+      "Thunder Strike",
+      "Ti Khao",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 133,
+    "description": ""
+  },
+  {
+    "name": "Ninjutsu",
+    "techniqueList": [
+      "Counterstrike",
+      "Dim Mak",
+      "Flying Kick",
+      "Kick Attack",
+      "Randori (Dirty Trick)",
+      "Tricking",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 133,
+    "description": ""
+  },
+  {
+    "name": "Okichitaw",
+    "techniqueList": [
+      "Called Shot (Pin)",
+      "Counterstrike",
+      "Opposing Force (Parry)",
+      "Randori (Vitals)",
+      "Shadow Block",
+      "Sweep",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 133,
+    "description": ""
+  },
+  {
+    "name": "Parkour",
+    "techniqueList": [
+      "Bending of the Reed",
+      "Kip-Up",
+      "Leaping Mantis",
+      "Monkey Climb",
+      "Rolling Clouds",
+      "Shadow Block",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 133,
+    "description": ""
+  },
+  {
+    "name": "Pentjak-Silat",
+    "techniqueList": [
+      "Called Shot (Break Weapon)",
+      "Called Shot (Disarm)",
+      "Dim Mak",
+      "Jiao Di (Charge)",
+      "Randori (Vitals)",
+      "Silken Storm",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 133,
+    "description": ""
+  },
+  {
+    "name": "Quarterstaff Fighting",
+    "techniqueList": [
+      "Jiao Di (Knock Down)",
+      "Multiple Opponent Combat",
+      "Opposing Force (Parry)",
+      "Sweep",
+      "Stagger",
+      "Thunder Strike",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 133,
+    "description": ""
+  },
+  {
+    "name": "Sangre Y Acero",
+    "techniqueList": [
+      "Called Shot (Break Weapon)",
+      "Clinch",
+      "Crushing Jaws",
+      "Finishing Move",
+      "Pouncing Dragon",
+      "Tricking",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 133,
+    "description": ""
+  },
+  {
+    "name": "Tae Kwon Do",
+    "techniqueList": [
+      "Counterstrike",
+      "Flying Kick",
+      "Kick Attack",
+      "Opposing Force (Block)",
+      "Sweep",
+      "Tricking",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 133,
+    "description": ""
+  },
+  {
+    "name": "The Cowboy Way",
+    "techniqueList": [
+      "Called Shot (Entanglement)",
+      "Hammerfist",
+      "Haymaker",
+      "Knucklebreaker (Blast Out of Hands)",
+      "Stagger",
+      "Tricking",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 133,
+    "description": ""
+  },
+  {
+    "name": "Turkish Archery",
+    "techniqueList": [
+      "Called Shot (Pin)",
+      "Close Quarter Defense Against Firearms",
+      "Hammerfist",
+      "Silken Storm",
+      "Soaring Shackles",
+      "Thunder Strike",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 134,
+    "description": ""
+  },
+  {
+    "name": "Whip Fighting",
+    "techniqueList": [
+      "Bending of the Reed",
+      "Called Shot (Entanglement)",
+      "Hammerfist",
+      "Herding",
+      "Multiple Opponent Defense (Friends in Melee)",
+      "Multiple Opponent Combat",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 134,
+    "description": ""
+  },
+  {
+    "name": "Wildcat",
+    "techniqueList": [
+      "Clinch",
+      "Counterstrike",
+      "Dim Mak",
+      "Finishing Move",
+      "Multiple Opponent Combat",
+      "Ti Khao",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 134,
+    "description": ""
+  },
+  {
+    "name": "Wrestling (Sport Style)",
+    "techniqueList": [
+      "Clinch",
+      "Constrictor's Crush",
+      "Jiao Di (Knock Down)",
+      "Karmic Response",
+      "Sweep",
+      "Throw Person",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 134,
+    "description": ""
+  },
+  {
+    "name": "Wrestling (Sumo Style)",
+    "techniqueList": [
+      "Barbed Hooks",
+      "Clinch",
+      "Herding",
+      "Jiao Di (Knock Down)",
+      "Rooted Tree",
+      "Throw Person",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 134,
+    "description": ""
+  },
+  {
+    "name": "Wrestling (Professional Style)",
+    "techniqueList": [
+      "Clinch",
+      "Jiao Di (Charge)",
+      "Karmic Response",
+      "Sacrifice Throw",
+      "Tricking",
+      "Yielding Force (Throw)",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 134,
+    "description": ""
+  },
+  {
+    "name": "Wrestling (MMA Style)",
+    "techniqueList": [
+      "Clinch",
+      "Constrictor's Crush",
+      "Crushing Jaws",
+      "Jiao Di (Knock Down)",
+      "Kick Attack",
+      "Pouncing Dragon",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 135,
+    "description": ""
+  },
+  {
+    "name": "Wudang Sword",
+    "techniqueList": [
+      "Ballestra",
+      "Finishing Move",
+      "Flying Kick",
+      "Hammerfist",
+      "Iaijutsu",
+      "Riposte",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Run And Gun",
+    "page": 135,
+    "description": ""
+  },
+  {
+    "name": "One Trick Pony",
+    "techniqueList": {
+      "allTechniques": true
+    },
+    "source": "Run And Gun",
+    "page": 127,
+    "description": ""
+  },
+  {
+    "name": "Way of Unified Mana (Hapsum-Do)",
+    "karmaCost": 15,
+    "requirements": {},
+    "techniqueList": [
+      "Called Shot (Disarm)",
+      "Mana Choke",
+      "Counterstrike",
+      "Yielding Force (Counterstrike)",
+      "Yielding Force (Throw)",
+      "Mana Strike",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Forbidden Arcana",
+    "page": 101,
+    "description": ""
+  },
+  {
+    "name": "Alpine Wrestling",
+    "techniqueList": [
+      "Oaken Stance (Defense Against Being Knocked Down)",
+      "Oaken Stance (Defense Against Being Charged)",
+      "Rooted Tree",
+      "Clinch",
+      "Karmic Response",
+      "Throw Person",
+      "Imposing Stone",
+      "Neijia"
+    ],
+    "source": "State Of The Art - ADL",
+    "page": 17,
+    "description": ""
+  },
+  {
+    "name": "German Jujitsu",
+    "techniqueList": [
+      "Called Shot (Disarm)",
+      "Sweep",
+      "Clinch",
+      "Kick Attack",
+      "Throw Person",
+      "Defiant Dance",
+      "Neijia"
+    ],
+    "source": "State Of The Art - ADL",
+    "page": 17,
+    "description": ""
+  },
+  {
+    "name": "Esdo",
+    "techniqueList": [
+      "Oaken Stance (Defense Against Being Knocked Down)",
+      "Oaken Stance (Defense Against Being Charged)",
+      "Bending of the Reed",
+      "Counterstrike",
+      "Kick Attack",
+      "Stagger",
+      "Yielding Force (Counterstrike)",
+      "Neijia"
+    ],
+    "source": "State Of The Art - ADL",
+    "page": 17,
+    "description": ""
+  },
+  {
+    "name": "Urban Brawl Parkour",
+    "techniqueList": [
+      "Tricking",
+      "Monkey Climb",
+      "Close Quarter Firearms (Pistols)",
+      "Close Quarter Defense Against Firearms",
+      "Rolling Clouds",
+      "Leaping Mantis",
+      "Neijia"
+    ],
+    "source": "State Of The Art - ADL",
+    "page": 17,
+    "description": ""
+  },
+  {
+    "name": "Sternschutz Tactical",
+    "techniqueList": [
+      "Oaken Stance (Defense Against Being Knocked Down)",
+      "Oaken Stance (Defense Against Being Charged)",
+      "Called Shot (Break Weapon)",
+      "Broken Fang",
+      "Hammerfist",
+      "Opposing Force (Parry)",
+      "Close Quarter Defense Against Firearms",
+      "Neijia"
+    ],
+    "source": "State Of The Art - ADL",
+    "page": 17,
+    "description": ""
+  },
+  {
+    "name": "Arbeitskreis INI",
+    "techniqueList": [
+      "Finishing Move",
+      "Half Sword",
+      "Hammerfist",
+      "Jiao Di (Charge)",
+      "Jiao Di (Knock Down)",
+      "Knucklebreaker (Disarm)",
+      "Knucklebreaker (Blast Out of Hands)",
+      "Full Offense",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Datapuls SOTA 2080",
+    "page": 6,
+    "description": ""
+  },
+  {
+    "name": "Circle Fencing",
+    "techniqueList": [
+      "Called Shot (Feint)",
+      "Called Shot (Break Weapon)",
+      "Broken Fang",
+      "Herding",
+      "Multiple Opponent Combat",
+      "Two-Headed Snake",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Datapuls SOTA 2080",
+    "page": 5,
+    "description": ""
+  },
+  {
+    "name": "Kreussler Fencing",
+    "techniqueList": [
+      "Ballestra",
+      "Hammerfist",
+      "Iaijutsu",
+      "Knucklebreaker (Disarm)",
+      "Knucklebreaker (Blast Out of Hands)",
+      "Riposte",
+      "Yielding Force (Riposte)",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Datapuls SOTA 2080",
+    "page": 5,
+    "description": ""
+  },
+  {
+    "name": "Asthenologica",
+    "techniqueList": [
+      "Clinch",
+      "Dim Mak",
+      "Multiple Opponent Combat",
+      "Defiant Dance",
+      "Stagger",
+      "Karmic Response",
+      "Neijia",
+      "Strike the Darkness"
+    ],
+    "source": "Datapuls SOTA 2080",
+    "page": 6,
+    "description": ""
+  }
+]

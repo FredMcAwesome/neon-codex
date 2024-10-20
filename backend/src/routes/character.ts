@@ -86,6 +86,8 @@ import {
   type FormulaListSelectedType,
   type AdeptPowerListSelectedType,
   type ProgramSelectedListType,
+  MartialArtSelectedSchema,
+  type MartialArtSelectedType,
 } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
 import { Armours } from "@neon-codex/database/build/models/rpg/equipment/combat/armourModel.js";
 import { Characters } from "@neon-codex/database/build/models/rpg/characters/characterModel.js";
@@ -183,6 +185,13 @@ import {
 } from "@neon-codex/database/build/models/rpg/otherData/mentorModel.js";
 import { ActiveMentorSpirits } from "@neon-codex/database/build/models/rpg/activeTables/ActiveMentorModel.js";
 import { ActiveParagons } from "@neon-codex/database/build/models/rpg/activeTables/ActiveParagonModel.js";
+import type {
+  MartialArtListType,
+  MartialArtTechniqueListType,
+} from "@neon-codex/common/src/schemas/abilities/martialArtSchemas.js";
+import { MartialArts } from "@neon-codex/database/build/models/rpg/abilities/martialArtModel.js";
+import { MartialArtTechniques } from "@neon-codex/database/build/models/rpg/abilities/martialArtTechniqueModel.js";
+import { ActiveMartialArts } from "@neon-codex/database/build/models/rpg/activeTables/activeMartialArts.js";
 
 export function convertDBBonus(DBbonus: Bonuses) {
   const bonus: BonusType = {};
@@ -932,6 +941,56 @@ function getVehicleTypeInformation(vehicle: Vehicles) {
   );
 }
 
+async function getMartialArts() {
+  const db = await init();
+  const martialArts = await db.em.findAll(MartialArts, { populate: ["*"] });
+  const martialArtsResponse: MartialArtListType = martialArts.map(
+    (martialArt) => {
+      let techniqueList;
+      if (martialArt.allTechniques !== undefined) {
+        techniqueList = {
+          allTechniques: true as const,
+        };
+      } else {
+        techniqueList = martialArt.techniqueList.$.map((technique) => {
+          return technique.name;
+        });
+      }
+      return {
+        name: martialArt.name,
+        bonus: martialArt.bonus,
+        techniqueList: techniqueList,
+        karmaCost: martialArt.karmaCost,
+        requirements: martialArt.requirements,
+        description: martialArt.description,
+        source: martialArt.source,
+        page: martialArt.page,
+      };
+    }
+  );
+  return martialArtsResponse;
+}
+
+async function getMartialArtTechniques() {
+  const db = await init();
+  const techniques = await db.em.findAll(MartialArtTechniques, {
+    populate: ["*"],
+  });
+  const techniquesResponse: MartialArtTechniqueListType = techniques.map(
+    (technique) => {
+      return {
+        name: technique.name,
+        bonus: technique.bonus,
+        requirements: technique.requirements,
+        description: technique.description,
+        source: technique.source,
+        page: technique.page,
+      };
+    }
+  );
+  return techniquesResponse;
+}
+
 export async function getGears(): Promise<GearListType> {
   const db = await init();
   const gears = await db.em.findAll(Gears, {
@@ -1331,6 +1390,29 @@ const vehiclesAndDrones = privateProcedure.query(async () => {
   }
 });
 
+const martialArts = privateProcedure.query(async () => {
+  try {
+    const martialArtsResponse: MartialArtListType = await getMartialArts();
+    // logger.log(JSON.stringify(vehiclesAndDronesResponse, null, 2));
+    return martialArtsResponse;
+  } catch (error) {
+    logger.error("Unable to connect to the database:", error);
+    throw new Error("Database error");
+  }
+});
+
+const martialArtTechniques = privateProcedure.query(async () => {
+  try {
+    const martialArtTechniquesResponse: MartialArtTechniqueListType =
+      await getMartialArtTechniques();
+    // logger.log(JSON.stringify(vehiclesAndDronesResponse, null, 2));
+    return martialArtTechniquesResponse;
+  } catch (error) {
+    logger.error("Unable to connect to the database:", error);
+    throw new Error("Database error");
+  }
+});
+
 const qualities = privateProcedure.query(async () => {
   try {
     const qualitiesResponse: QualityListType = await getQualities();
@@ -1406,6 +1488,7 @@ const CharacterInformationSchema = zod
     skillSelections: CustomSkillListSchema,
     skillGroupSelections: CustomSkillGroupListSchema,
     equipmentSelected: EquipmentListSchema,
+    martialArtSelected: zod.optional(MartialArtSelectedSchema),
     karmaPoints: zod.number(),
     nuyen: zod.number(),
   })
@@ -1835,6 +1918,34 @@ const createCharacter = privateProcedure
         );
       }
     }
+
+    if (opts.input.martialArtSelected !== undefined) {
+      const martialArtName = opts.input.martialArtSelected.martialArt.name;
+      const martialArt = await db.em.findOne(MartialArts, {
+        name: martialArtName,
+      });
+      if (martialArt === null) {
+        throw new Error(`Martial Art : ${martialArtName} does not exist`);
+      }
+      const activeMartialArt = new ActiveMartialArts(
+        ref(martialArt),
+        characterReference
+      );
+      for (const unlinkedTechnique of opts.input.martialArtSelected
+        .techniqueList) {
+        const technique = await db.em.findOne(MartialArtTechniques, {
+          name: unlinkedTechnique.name,
+        });
+        if (technique === null) {
+          throw new Error(
+            `Martial Art Technique: ${unlinkedTechnique.name} does not exist`
+          );
+        }
+        activeMartialArt.selectedTechniqueList.add(technique);
+      }
+      db.em.persist(activeMartialArt);
+    }
+
     await db.em.persistAndFlush(character);
     // logger.log(JSON.stringify(character, null, 2));
     return character.id;
@@ -2106,6 +2217,11 @@ const getCharacter = privateProcedure
         vehicleList: await Promise.all(
           character.vehicles.map(async (vehicle) => {
             return await convertCustomVehicleDBToDTO(vehicle);
+          })
+        ),
+        martialArtList: await Promise.all(
+          character.martialArts.map(async (martialArt) => {
+            return await convertActiveMartialArtDBToDTO(martialArt);
           })
         ),
       };
@@ -2870,6 +2986,51 @@ const convertVehicleTypeInformation = function (vehicleDB: Vehicles) {
   }
 };
 
+const convertActiveMartialArtDBToDTO = async function (
+  activeMartialArtDB: ActiveMartialArts
+): Promise<MartialArtSelectedType> {
+  const db = await init();
+  const martialArtDB = await db.em.findOne(
+    MartialArts,
+    activeMartialArtDB.martialArt.id,
+    {
+      populate: ["*"],
+    }
+  );
+  if (martialArtDB === null) {
+    throw new Error("Martial Art does not exist");
+  }
+  const martialArt = {
+    name: martialArtDB.name,
+    bonus: martialArtDB.bonus,
+    techniqueList: martialArtDB.techniqueList.$.map((technique) => {
+      return technique.name;
+    }),
+    karmaCost: martialArtDB.karmaCost,
+    requirements: martialArtDB.requirements,
+    description: martialArtDB.description,
+    source: martialArtDB.source,
+    page: martialArtDB.page,
+  };
+  const techniqueList = activeMartialArtDB.selectedTechniqueList.map(
+    (technique) => {
+      return {
+        name: technique.name,
+        bonus: technique.bonus,
+        requirements: technique.requirements,
+        description: technique.description,
+        source: technique.source,
+        page: technique.page,
+      };
+    }
+  );
+
+  return {
+    martialArt: martialArt,
+    techniqueList: techniqueList,
+  };
+};
+
 export const characterRouter = router({
   traditions: traditions,
   mentors: mentors,
@@ -2887,6 +3048,8 @@ export const characterRouter = router({
   gear: gears,
   augmentations: augmentations,
   vehiclesAndDrones: vehiclesAndDrones,
+  martialArts: martialArts,
+  martialArtTechniques: martialArtTechniques,
   all: all,
   createCharacter: createCharacter,
   getCharacter: getCharacter,

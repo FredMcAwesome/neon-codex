@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { trpc } from "../../utils/trpc.js";
 import type {
   AttributesType,
+  MartialArtSelectedListType,
   SpecialAttributesType,
   TalentInfoType,
 } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
@@ -50,6 +51,7 @@ const CharacterSheet = function () {
       {Gears(data.gearList)}
       {Augmentations(data.augmentationList)}
       {Vehicles(data.vehicleList)}
+      {MartialArts(data.martialArtList)}
       <div>Nuyen: {data.nuyen}</div>
       <div>Karma: {data.karmaPoints}</div>
     </div>
@@ -366,6 +368,29 @@ function Vehicles(data: CustomisedVehicleListType) {
             <li
               key={vehicle.baseVehicle.name}
             >{`${vehicle.baseVehicle.name}`}</li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+}
+
+function MartialArts(data: MartialArtSelectedListType) {
+  return (
+    <div>
+      Martial Arts
+      <ul>
+        {data.map((martialArt) => {
+          return (
+            <li key={martialArt.martialArt.name}>
+              <div>
+                Style: {`${martialArt.martialArt.name}`}
+                Techniques:{" "}
+                {martialArt.techniqueList.map((technique) => {
+                  return technique.name;
+                })}
+              </div>
+            </li>
           );
         })}
       </ul>

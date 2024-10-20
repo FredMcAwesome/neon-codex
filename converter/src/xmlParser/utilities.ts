@@ -21,6 +21,13 @@ import { MetatypeListXmlSchema } from "./character/MetatypeParserSchemas.js";
 import { AdeptPowerListXmlSchema } from "./talent/AdeptPowerParserSchemas.js";
 import { TraditionListXmlSchema } from "./talent/TraditionParserSchemas.js";
 import { CritterListXmlSchema } from "./creatures/CritterParserSchemas.js";
+import { ProgramListXmlSchema } from "./talent/ProgramParser.js";
+import { CritterPowerListXmlSchema } from "./creatures/CritterPowerParserSchemas.js";
+import { ComplexFormListXmlSchema } from "./talent/ComplexFormParserSchemas.js";
+import { ParagonListXmlSchema } from "./talent/ParagonParser.js";
+import { MentorSpiritListXmlSchema } from "./talent/MentorSpiritParser.js";
+import { MartialArtListXmlSchema } from "./character/MartialArtParser.js";
+import { MartialArtTechniqueListXmlSchema } from "./character/MartialArtTechniqueParser.js";
 
 export const CheckGUIDs = function () {
   const currentPath = import.meta.url;
@@ -204,6 +211,24 @@ export const CheckGUIDs = function () {
     assert(false);
   }
 
+  // --- Programs --- //
+  xml_string = fs.readFileSync(
+    fileURLToPath(path.dirname(currentPath) + "../../../xmls/programs.xml"),
+    "utf8"
+  );
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  jObj = parser.parse(xml_string);
+
+  const programListParsed = ProgramListXmlSchema.safeParse(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    jObj.chummer.programs.program
+  );
+
+  if (!programListParsed.success) {
+    console.log(programListParsed.error.errors[0]);
+    assert(false);
+  }
+
   // --- Adept Powers --- //
   xml_string = fs.readFileSync(
     fileURLToPath(path.dirname(currentPath) + "../../../xmls/powers.xml"),
@@ -257,6 +282,79 @@ export const CheckGUIDs = function () {
     assert(false);
   }
 
+  // --- Critter Powers --- //
+  xml_string = fs.readFileSync(
+    fileURLToPath(
+      path.dirname(currentPath) + "../../../xmls/critterpowers.xml"
+    ),
+    "utf8"
+  );
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  jObj = parser.parse(xml_string);
+
+  const critterPowerListParsed = CritterPowerListXmlSchema.safeParse(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    jObj.chummer.powers.power
+  );
+
+  if (!critterPowerListParsed.success) {
+    console.log(critterPowerListParsed.error.errors[0]);
+    assert(false);
+  }
+
+  // --- Complex Form --- //
+  xml_string = fs.readFileSync(
+    fileURLToPath(path.dirname(currentPath) + "../../../xmls/complexforms.xml"),
+    "utf8"
+  );
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  jObj = parser.parse(xml_string);
+
+  const complexFormListParsed = ComplexFormListXmlSchema.safeParse(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    jObj.chummer.complexforms.complexform
+  );
+
+  if (!complexFormListParsed.success) {
+    console.log(complexFormListParsed.error.errors[0]);
+    assert(false);
+  }
+
+  // --- Paragons --- //
+  xml_string = fs.readFileSync(
+    fileURLToPath(path.dirname(currentPath) + "../../../xmls/paragons.xml"),
+    "utf8"
+  );
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  jObj = parser.parse(xml_string);
+
+  const paragonListParsed = ParagonListXmlSchema.safeParse(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    jObj.chummer.mentors.mentor
+  );
+
+  if (!paragonListParsed.success) {
+    console.log(paragonListParsed.error.errors[0]);
+    assert(false);
+  }
+
+  // --- Mentor Spirit --- //
+  xml_string = fs.readFileSync(
+    fileURLToPath(path.dirname(currentPath) + "../../../xmls/mentors.xml"),
+    "utf8"
+  );
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  jObj = parser.parse(xml_string);
+
+  const mentorSpiritListParsed = MentorSpiritListXmlSchema.safeParse(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    jObj.chummer.mentors.mentor
+  );
+
+  if (!mentorSpiritListParsed.success) {
+    console.log(mentorSpiritListParsed.error.errors[0]);
+    assert(false);
+  }
   // --- Drug Component --- //
   xml_string = fs.readFileSync(
     fileURLToPath(
@@ -277,7 +375,7 @@ export const CheckGUIDs = function () {
     assert(false);
   }
 
-  // --- Drug --- //
+  // --- Drugs --- //
   xml_string = fs.readFileSync(
     fileURLToPath(
       path.dirname(currentPath) + "../../../xmls/drugcomponents.xml"
@@ -358,6 +456,44 @@ export const CheckGUIDs = function () {
     assert(false);
   }
 
+  // --- Martial Art --- //
+  xml_string = fs.readFileSync(
+    fileURLToPath(path.dirname(currentPath) + "../../../xmls/martialarts.xml"),
+    "utf8"
+  );
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  jObj = parser.parse(xml_string);
+
+  const martialArtListParsed = MartialArtListXmlSchema.safeParse(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    jObj.chummer.martialarts.martialart
+  );
+
+  if (!martialArtListParsed.success) {
+    console.log(martialArtListParsed.error.errors[0]);
+    assert(false);
+  }
+
+  // --- Martial Art Technique --- //
+  xml_string = fs.readFileSync(
+    fileURLToPath(path.dirname(currentPath) + "../../../xmls/martialarts.xml"),
+    "utf8"
+  );
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  jObj = parser.parse(xml_string);
+
+  const martialArtTechniqueListParsed =
+    MartialArtTechniqueListXmlSchema.safeParse(
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      jObj.chummer.techniques.technique
+    );
+
+  if (!martialArtTechniqueListParsed.success) {
+    console.log(martialArtTechniqueListParsed.error.errors[0]);
+    assert(false);
+  }
+
+  // ------ GUID List -------
   let idList = biowareListParsed.data.map((bioware) => {
     return bioware.id;
   });
@@ -369,6 +505,36 @@ export const CheckGUIDs = function () {
   idList = idList.concat(
     qualityListParsed.data.map((quality) => {
       return quality.id;
+    })
+  );
+  idList = idList.concat(
+    metatypeListParsed.data.map((metatype) => {
+      return metatype.id;
+    })
+  );
+  idList = idList.concat(
+    critterListParsed.data.map((critter) => {
+      return critter.id;
+    })
+  );
+  idList = idList.concat(
+    critterPowerListParsed.data.map((critterPower) => {
+      return critterPower.id;
+    })
+  );
+  idList = idList.concat(
+    complexFormListParsed.data.map((complexForm) => {
+      return complexForm.id;
+    })
+  );
+  idList = idList.concat(
+    paragonListParsed.data.map((paragon) => {
+      return paragon.id;
+    })
+  );
+  idList = idList.concat(
+    mentorSpiritListParsed.data.map((mentorSpirit) => {
+      return mentorSpirit.id;
     })
   );
   idList = idList.concat(
@@ -402,8 +568,18 @@ export const CheckGUIDs = function () {
     })
   );
   idList = idList.concat(
-    adeptPowerListParsed.data.map((spell) => {
-      return spell.id;
+    programListParsed.data.map((program) => {
+      return program.id;
+    })
+  );
+  idList = idList.concat(
+    adeptPowerListParsed.data.map((power) => {
+      return power.id;
+    })
+  );
+  idList = idList.concat(
+    traditionListParsed.data.map((tradition) => {
+      return tradition.id;
     })
   );
   idList = idList.concat(
@@ -434,6 +610,16 @@ export const CheckGUIDs = function () {
   idList = idList.concat(
     vehicleListParsed.data.map((vehicle) => {
       return vehicle.id;
+    })
+  );
+  idList = idList.concat(
+    martialArtListParsed.data.map((martialArt) => {
+      return martialArt.id;
+    })
+  );
+  idList = idList.concat(
+    martialArtTechniqueListParsed.data.map((martialArtTechnique) => {
+      return martialArtTechnique.id;
     })
   );
   for (let i = 0; i < idList.length; i++) {

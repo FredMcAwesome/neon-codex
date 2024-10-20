@@ -24,6 +24,7 @@ import { CustomisedAugmentations } from "../activeTables/activeAugmentationModel
 import { CustomisedSkillGroups } from "../activeTables/activeSkillGroupModel.js";
 import Users from "../../accounts/userModel.js";
 import { ActiveTalents } from "../activeTables/activeTalentModel.js";
+import { ActiveMartialArts } from "../activeTables/activeMartialArts.js";
 
 @Entity()
 export class Characters {
@@ -84,6 +85,9 @@ export class Characters {
 
   @OneToMany(() => CustomisedVehicles, (vehicle) => vehicle.character)
   vehicles = new Collection<CustomisedVehicles>(this);
+
+  @OneToMany(() => ActiveMartialArts, (martialArt) => martialArt.character)
+  martialArts = new Collection<ActiveMartialArts>(this);
 
   @ManyToOne({ entity: () => Users, ref: true })
   user!: Ref<Users>;

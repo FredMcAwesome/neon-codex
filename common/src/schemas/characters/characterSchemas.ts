@@ -27,6 +27,10 @@ import {
   MentorChoiceSchema,
 } from "../abilities/talent/mentorSchemas.js";
 import { RequirementsSchema } from "../shared/requiredSchemas.js";
+import {
+  MartialArtSchema,
+  MartialArtTechniqueListSchema,
+} from "../abilities/martialArtSchemas.js";
 
 export enum PrioritiesEnum {
   Heritage,
@@ -272,6 +276,18 @@ export type AttributeRangesType = zod.infer<typeof AttributeRangesSchema>;
 const CostRangeSchema = zod.array(zod.number());
 export type CostRange = zod.infer<typeof CostRangeSchema>;
 
+export const MartialArtSelectedSchema = zod
+  .object({
+    martialArt: MartialArtSchema,
+    techniqueList: MartialArtTechniqueListSchema,
+  })
+  .strict();
+export type MartialArtSelectedType = zod.infer<typeof MartialArtSelectedSchema>;
+export const MartialArtSelectedListSchema = zod.array(MartialArtSelectedSchema);
+export type MartialArtSelectedListType = zod.infer<
+  typeof MartialArtSelectedListSchema
+>;
+
 export type CharacterType = {
   name: string;
   heritage: HeritageType;
@@ -288,6 +304,7 @@ export type CharacterType = {
   gearList: CustomisedGearListType;
   augmentationList: CustomisedAugmentationListType;
   vehicleList: CustomisedVehicleListType;
+  martialArtList: MartialArtSelectedListType;
 };
 export const CharacterSchema: zod.ZodType<CharacterType> = zod
   .object({
@@ -306,6 +323,7 @@ export const CharacterSchema: zod.ZodType<CharacterType> = zod
     gearList: CustomisedGearListSchema,
     augmentationList: CustomisedAugmentationListSchema,
     vehicleList: CustomisedVehicleListSchema,
+    martialArtList: zod.array(MartialArtSelectedSchema),
   })
   .strict();
 

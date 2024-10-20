@@ -45,7 +45,7 @@ const Cost = Augmentation.Cost;
 const MountList = Augmentation.MountList;
 const Capacity = Augmentation.Capacity;
 
-export function ParseCyberware() {
+export function ParseCyberwares() {
   const currentPath = import.meta.url;
   const xml_string = fs.readFileSync(
     fileURLToPath(path.dirname(currentPath) + "../../../../xmls/cyberware.xml"),

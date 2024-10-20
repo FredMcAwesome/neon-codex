@@ -26,10 +26,10 @@ ParseAdeptPowers();
 import { ParseTraditions } from "./xmlParser/talent/TraditionParser.js";
 ParseTraditions();
 
-import { ParseBioware } from "./xmlParser/bodyModification/BiowareParser.js";
-ParseBioware();
-import { ParseCyberware } from "./xmlParser/bodyModification/CyberwareParser.js";
-ParseCyberware();
+import { ParseBiowares } from "./xmlParser/bodyModification/BiowareParser.js";
+ParseBiowares();
+import { ParseCyberwares } from "./xmlParser/bodyModification/CyberwareParser.js";
+ParseCyberwares();
 
 import { ParseDrugs } from "./xmlParser/other/DrugParser.js";
 ParseDrugs();
@@ -44,8 +44,8 @@ ParseVehicleMods();
 import { ParseGear } from "./xmlParser/other/GearParser.js";
 ParseGear();
 
-import { ParseQuality } from "./xmlParser/character/QualityParser.js";
-ParseQuality();
+import { ParseQualities } from "./xmlParser/character/QualityParser.js";
+ParseQualities();
 
 import { ParseMetatypes } from "./xmlParser/character/MetatypeParser.js";
 ParseMetatypes();
@@ -64,8 +64,14 @@ ParseComplexForms();
 import { ParseParagons } from "./xmlParser/talent/ParagonParser.js";
 ParseParagons();
 
-import { ParseMentors } from "./xmlParser/talent/MentorParser.js";
-ParseMentors();
+import { ParseMentorSpirits } from "./xmlParser/talent/MentorSpiritParser.js";
+ParseMentorSpirits();
+
+import { ParseMartialArts } from "./xmlParser/character/MartialArtParser.js";
+ParseMartialArts();
+
+import { ParseMartialArtTechniques } from "./xmlParser/character/MartialArtTechniqueParser.js";
+ParseMartialArtTechniques();
 
 import { CheckGUIDs } from "./xmlParser/utilities.js";
 CheckGUIDs();

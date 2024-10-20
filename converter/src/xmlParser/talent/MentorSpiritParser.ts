@@ -14,7 +14,7 @@ import { mentorCategoryEnum } from "@neon-codex/common/build/enums.js";
 import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
 
-const MentorXmlSchema = zod
+const MentorSpiritXmlSchema = zod
   .object({
     id: zod.string(),
     name: zod.string(),
@@ -40,10 +40,10 @@ const MentorXmlSchema = zod
     page: zod.number(),
   })
   .strict();
-type MentorXmlType = zod.infer<typeof MentorXmlSchema>;
-const MentorListXmlSchema = zod.array(MentorXmlSchema);
+type MentorSpiritXmlType = zod.infer<typeof MentorSpiritXmlSchema>;
+export const MentorSpiritListXmlSchema = zod.array(MentorSpiritXmlSchema);
 
-export function ParseMentors() {
+export function ParseMentorSpirits() {
   const currentPath = import.meta.url;
   const xml_string = fs.readFileSync(
     fileURLToPath(path.dirname(currentPath) + "../../../../xmls/mentors.xml"),
@@ -61,7 +61,7 @@ export function ParseMentors() {
   //   jObj.chummer.mentors.mentor[73]
   // );
 
-  const mentorListParsed = MentorListXmlSchema.safeParse(
+  const mentorListParsed = MentorSpiritListXmlSchema.safeParse(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.mentors.mentor
   );
@@ -106,7 +106,7 @@ export function ParseMentors() {
   );
 }
 
-function convertMentor(mentor: MentorXmlType) {
+function convertMentor(mentor: MentorSpiritXmlType) {
   // console.log(`\n${mentor.name}`);
 
   let choiceCount = 0;

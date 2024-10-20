@@ -25,7 +25,7 @@ const ParagonXmlSchema = zod
   })
   .strict();
 type ParagonXmlType = zod.infer<typeof ParagonXmlSchema>;
-const ParagonListXmlSchema = zod.array(ParagonXmlSchema);
+export const ParagonListXmlSchema = zod.array(ParagonXmlSchema);
 
 export function ParseParagons() {
   const currentPath = import.meta.url;

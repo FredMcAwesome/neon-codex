@@ -282,7 +282,13 @@ const QualitySelectionComponent = function ({
               currentValue={fullQuality.name}
               positive={positive}
               selectedQualityList={selectedQualityList}
-              qualityList={qualityList}
+              qualityList={qualityList.filter((localQuality) => {
+                return (
+                  !selectedQualityList.find((selectedQuality) => {
+                    return selectedQuality.name === localQuality.name;
+                  }) || fullQuality.name === localQuality.name
+                );
+              })}
               setQualities={setQualities}
               setKarma={setKarma}
               index={index}
@@ -349,7 +355,11 @@ const QualitySelectionComponent = function ({
         <QualityDropdownComponent
           currentValue={QualityDefault}
           positive={positive}
-          qualityList={qualityList}
+          qualityList={qualityList.filter((quality) => {
+            return !selectedQualityList.find((selectedQuality) => {
+              return quality.name === selectedQuality.name;
+            });
+          })}
           selectedQualityList={selectedQualityList}
           setQualities={setQualities}
           setKarma={setKarma}

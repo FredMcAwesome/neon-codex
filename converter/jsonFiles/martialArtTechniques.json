@@ -1,0 +1,479 @@
+[
+  {
+    "name": "Ballestra",
+    "source": "Run And Gun",
+    "page": 119,
+    "description": ""
+  },
+  {
+    "name": "Barbed Hooks",
+    "source": "Run And Gun",
+    "page": 135,
+    "description": ""
+  },
+  {
+    "name": "Bending of the Reed",
+    "source": "Run And Gun",
+    "page": 135,
+    "description": ""
+  },
+  {
+    "name": "Broken Fang",
+    "source": "Run And Gun",
+    "page": 135,
+    "description": ""
+  },
+  {
+    "name": "Called Shot (Break Weapon)",
+    "source": "Run And Gun",
+    "page": 111,
+    "description": ""
+  },
+  {
+    "name": "Called Shot (Disarm)",
+    "source": "Run And Gun",
+    "page": 111,
+    "description": ""
+  },
+  {
+    "name": "Called Shot (Entanglement)",
+    "source": "Run And Gun",
+    "page": 111,
+    "description": ""
+  },
+  {
+    "name": "Called Shot (Feint)",
+    "source": "Run And Gun",
+    "page": 111,
+    "description": ""
+  },
+  {
+    "name": "Called Shot (Pin)",
+    "source": "Run And Gun",
+    "page": 112,
+    "description": ""
+  },
+  {
+    "name": "Chin Na",
+    "source": "Run And Gun",
+    "page": 136,
+    "description": ""
+  },
+  {
+    "name": "Clinch",
+    "source": "Run And Gun",
+    "page": 119,
+    "description": ""
+  },
+  {
+    "name": "Close Quarter Firearms (Archery)",
+    "source": "Run And Gun",
+    "page": 136,
+    "description": ""
+  },
+  {
+    "name": "Close Quarter Firearms (Thrown Weapons)",
+    "source": "Run And Gun",
+    "page": 136,
+    "description": ""
+  },
+  {
+    "name": "Close Quarter Firearms (Automatics)",
+    "source": "Run And Gun",
+    "page": 136,
+    "description": ""
+  },
+  {
+    "name": "Close Quarter Firearms (Exotic Ranged Weapon)",
+    "source": "Run And Gun",
+    "page": 136,
+    "description": ""
+  },
+  {
+    "name": "Close Quarter Firearms (Heavy Weapons)",
+    "source": "Run And Gun",
+    "page": 136,
+    "description": ""
+  },
+  {
+    "name": "Close Quarter Firearms (Longarms)",
+    "source": "Run And Gun",
+    "page": 136,
+    "description": ""
+  },
+  {
+    "name": "Close Quarter Firearms (Pistols)",
+    "source": "Run And Gun",
+    "page": 136,
+    "description": ""
+  },
+  {
+    "name": "Close Quarter Defense Against Firearms",
+    "source": "Run And Gun",
+    "page": 137,
+    "description": ""
+  },
+  {
+    "name": "Constrictor's Crush",
+    "source": "Run And Gun",
+    "page": 137,
+    "description": ""
+  },
+  {
+    "name": "Counterstrike",
+    "source": "Run And Gun",
+    "page": 124,
+    "description": ""
+  },
+  {
+    "name": "Crushing Jaws",
+    "source": "Run And Gun",
+    "page": 137,
+    "description": ""
+  },
+  {
+    "name": "Defiant Dance",
+    "source": "Run And Gun",
+    "page": 137,
+    "description": ""
+  },
+  {
+    "name": "Dim Mak",
+    "source": "Run And Gun",
+    "page": 137,
+    "description": ""
+  },
+  {
+    "name": "Finishing Move",
+    "source": "Run And Gun",
+    "page": 120,
+    "description": ""
+  },
+  {
+    "name": "Flying Kick",
+    "source": "Run And Gun",
+    "page": 121,
+    "description": ""
+  },
+  {
+    "name": "Full Offense",
+    "source": "Run And Gun",
+    "page": 121,
+    "description": ""
+  },
+  {
+    "name": "Grasping Vines",
+    "source": "Run And Gun",
+    "page": 137,
+    "description": ""
+  },
+  {
+    "name": "Half Sword",
+    "source": "Run And Gun",
+    "page": 121,
+    "description": ""
+  },
+  {
+    "name": "Hammerfist",
+    "source": "Run And Gun",
+    "page": 138,
+    "description": ""
+  },
+  {
+    "name": "Haymaker",
+    "source": "Run And Gun",
+    "page": 121,
+    "description": ""
+  },
+  {
+    "name": "Herding",
+    "source": "Run And Gun",
+    "page": 121,
+    "description": ""
+  },
+  {
+    "name": "Iaijutsu",
+    "source": "Run And Gun",
+    "page": 122,
+    "description": ""
+  },
+  {
+    "name": "Imposing Stone",
+    "source": "Run And Gun",
+    "page": 138,
+    "description": ""
+  },
+  {
+    "name": "Jiao Di (Charge)",
+    "source": "Run And Gun",
+    "page": 138,
+    "description": ""
+  },
+  {
+    "name": "Jiao Di (Knock Down)",
+    "source": "Run And Gun",
+    "page": 138,
+    "description": ""
+  },
+  {
+    "name": "Karmic Response",
+    "source": "Run And Gun",
+    "page": 138,
+    "description": ""
+  },
+  {
+    "name": "Kick Attack",
+    "bonus": {
+      "unarmedReach": 1
+    },
+    "source": "Run And Gun",
+    "page": 138,
+    "description": ""
+  },
+  {
+    "name": "Kip-Up",
+    "source": "Run And Gun",
+    "page": 122,
+    "description": ""
+  },
+  {
+    "name": "Knucklebreaker (Disarm)",
+    "source": "Run And Gun",
+    "page": 139,
+    "description": ""
+  },
+  {
+    "name": "Knucklebreaker (Blast Out of Hands)",
+    "source": "Run And Gun",
+    "page": 139,
+    "description": ""
+  },
+  {
+    "name": "Leaping Mantis",
+    "source": "Run And Gun",
+    "page": 139,
+    "description": ""
+  },
+  {
+    "name": "Monkey Climb",
+    "source": "Run And Gun",
+    "page": 139,
+    "description": ""
+  },
+  {
+    "name": "Multiple Opponent Combat",
+    "source": "Run And Gun",
+    "page": 139,
+    "description": ""
+  },
+  {
+    "name": "Multiple Opponent Defense (Friends in Melee)",
+    "source": "Run And Gun",
+    "page": 139,
+    "description": ""
+  },
+  {
+    "name": "Multiple Opponent Defense (Defender has Defended)",
+    "source": "Run And Gun",
+    "page": 139,
+    "description": ""
+  },
+  {
+    "name": "Oaken Stance (Defense Against Being Knocked Down)",
+    "source": "Run And Gun",
+    "page": 139,
+    "description": ""
+  },
+  {
+    "name": "Oaken Stance (Defense Against Being Charged)",
+    "source": "Run And Gun",
+    "page": 139,
+    "description": ""
+  },
+  {
+    "name": "Opposing Force (Block)",
+    "source": "Run And Gun",
+    "page": 139,
+    "description": ""
+  },
+  {
+    "name": "Opposing Force (Parry)",
+    "source": "Run And Gun",
+    "page": 139,
+    "description": ""
+  },
+  {
+    "name": "Releasing Talons",
+    "source": "Run And Gun",
+    "page": 139,
+    "description": ""
+  },
+  {
+    "name": "Randori (Dirty Trick)",
+    "source": "Run And Gun",
+    "page": 140,
+    "description": ""
+  },
+  {
+    "name": "Randori (Vitals)",
+    "source": "Run And Gun",
+    "page": 140,
+    "description": ""
+  },
+  {
+    "name": "Randori (Specific Location)",
+    "source": "Run And Gun",
+    "page": 140,
+    "description": ""
+  },
+  {
+    "name": "Riposte",
+    "source": "Run And Gun",
+    "page": 125,
+    "description": ""
+  },
+  {
+    "name": "Rooted Tree",
+    "source": "Run And Gun",
+    "page": 140,
+    "description": ""
+  },
+  {
+    "name": "Sacrifice Throw",
+    "source": "Run And Gun",
+    "page": 125,
+    "description": ""
+  },
+  {
+    "name": "Shadow Block",
+    "source": "Run And Gun",
+    "page": 125,
+    "description": ""
+  },
+  {
+    "name": "Silken Storm",
+    "source": "Run And Gun",
+    "page": 140,
+    "description": ""
+  },
+  {
+    "name": "Soaring Shackles",
+    "source": "Run And Gun",
+    "page": 141,
+    "description": ""
+  },
+  {
+    "name": "Stagger",
+    "source": "Run And Gun",
+    "page": 141,
+    "description": ""
+  },
+  {
+    "name": "Pouncing Dragon",
+    "source": "Run And Gun",
+    "page": 122,
+    "description": ""
+  },
+  {
+    "name": "Rolling Clouds",
+    "source": "Run And Gun",
+    "page": 141,
+    "description": ""
+  },
+  {
+    "name": "Sweep",
+    "source": "Run And Gun",
+    "page": 141,
+    "description": ""
+  },
+  {
+    "name": "Throw Person",
+    "source": "Run And Gun",
+    "page": 123,
+    "description": ""
+  },
+  {
+    "name": "Thunder Strike",
+    "source": "Run And Gun",
+    "page": 141,
+    "description": ""
+  },
+  {
+    "name": "Ti Khao",
+    "source": "Run And Gun",
+    "page": 141,
+    "description": ""
+  },
+  {
+    "name": "Tricking",
+    "source": "Run And Gun",
+    "page": 141,
+    "description": ""
+  },
+  {
+    "name": "Two-Headed Snake",
+    "source": "Run And Gun",
+    "page": 141,
+    "description": ""
+  },
+  {
+    "name": "Two-Weapon Style Attack",
+    "source": "Run And Gun",
+    "page": 141,
+    "description": ""
+  },
+  {
+    "name": "Two-Weapon Style Defense",
+    "source": "Run And Gun",
+    "page": 141,
+    "description": ""
+  },
+  {
+    "name": "Yielding Force (Riposte)",
+    "source": "Run And Gun",
+    "page": 141,
+    "description": ""
+  },
+  {
+    "name": "Yielding Force (Counterstrike)",
+    "source": "Run And Gun",
+    "page": 141,
+    "description": ""
+  },
+  {
+    "name": "Yielding Force (Throw)",
+    "source": "Run And Gun",
+    "page": 141,
+    "description": ""
+  },
+  {
+    "name": "Neijia",
+    "source": "Run And Gun",
+    "page": 140,
+    "description": ""
+  },
+  {
+    "name": "Strike the Darkness",
+    "source": "Run And Gun",
+    "page": 141,
+    "description": ""
+  },
+  {
+    "name": "Sacrificial Throw",
+    "source": "Run And Gun",
+    "page": 131,
+    "description": ""
+  },
+  {
+    "name": "Mana Choke",
+    "source": "Forbidden Arcana",
+    "page": 102,
+    "description": ""
+  },
+  {
+    "name": "Mana Strike",
+    "source": "Forbidden Arcana",
+    "page": 102,
+    "description": ""
+  }
+]

@@ -356,16 +356,24 @@ export const BonusXmlSchema = zod.union([
       allowskilldefaulting: zod.optional(zod.literal("")),
       selectlimit: zod.optional(zod.object({ val: zod.number() })),
       addskillspecializationoption: zod.optional(
-        zod
-          .object({
-            spec: zod.string(),
-            skills: zod
-              .object({
-                skill: zod.union([zod.array(zod.string()), zod.string()]),
-              })
-              .strict(),
-          })
-          .strict()
+        zod.union([
+          zod
+            .object({
+              spec: zod.string(),
+              skill: zod.string(),
+            })
+            .strict(),
+          zod
+            .object({
+              spec: zod.string(),
+              skills: zod
+                .object({
+                  skill: zod.union([zod.array(zod.string()), zod.string()]),
+                })
+                .strict(),
+            })
+            .strict(),
+        ])
       ),
       // Select a skill group, you can no longer default on skills in it
       // and all skills have a max rank of 0

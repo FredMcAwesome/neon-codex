@@ -130,6 +130,10 @@ import {
   Paragons,
 } from "../models/rpg/otherData/mentorModel.js";
 import { QualityBonuses } from "../models/rpg/otherData/bonusModel.js";
+import { getMartialArts } from "../seeds/rpgSeeds/martialArtSeed.js";
+import { getMartialArtTechniques } from "../seeds/rpgSeeds/martialArtTechniqueSeed.js";
+import { MartialArts } from "../models/rpg/abilities/martialArtModel.js";
+import { MartialArtTechniques } from "../models/rpg/abilities/martialArtTechniqueModel.js";
 
 export class SourcebookSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
@@ -163,6 +167,8 @@ export class SourcebookSeeder extends Seeder {
     const stagedCritterPowers = getCritterPowers();
     const stagedTraditions = getTraditions(stagedCritters);
     const stagedMentors = getMentors();
+    const { unlinkedMartialArts, stagedMartialArts } = getMartialArts();
+    const stagedMartialArtTechniques = getMartialArtTechniques();
 
     stagedSkills.forEach((skill) => {
       em.create(Skills, skill);
@@ -339,6 +345,16 @@ export class SourcebookSeeder extends Seeder {
     });
     console.log("Critter Powers created");
 
+    stagedMartialArts.forEach((martialArt) => {
+      em.create(MartialArts, martialArt);
+    });
+    console.log("Martial Arts created");
+
+    stagedMartialArtTechniques.forEach((martialArtTechnique) => {
+      em.create(MartialArtTechniques, martialArtTechnique);
+    });
+    console.log("Martial Art Techniques created");
+
     await em.flush();
 
     // -----------------------------------------------------------------
@@ -410,7 +426,7 @@ export class SourcebookSeeder extends Seeder {
         em.create(QualityBonuses, stagedBonus);
       }
     }
-    console.log("Quality linked");
+    console.log("Quality relationships linked");
 
     // Heritage metavariants
     for (const heritage of unlinkedHeritages) {
@@ -455,7 +471,6 @@ export class SourcebookSeeder extends Seeder {
     }
     // Need to flush here to ensure all metavariants are handled by following loops
     await em.flush();
-
     // Heritages that have natural weapons
     for (const heritage of unlinkedHeritages) {
       if (heritage.addWeaponList !== undefined) {
@@ -529,6 +544,7 @@ export class SourcebookSeeder extends Seeder {
         }
       }
     }
+    console.log("Heritage relationships linked");
 
     // Priority
     await addHeritageLinks(
@@ -556,6 +572,7 @@ export class SourcebookSeeder extends Seeder {
     await addTalentLinks(priorityLetterEnum.C, unlinkedPriorities.C.talents);
     await addTalentLinks(priorityLetterEnum.D, unlinkedPriorities.D.talents);
     await addTalentLinks(priorityLetterEnum.E, unlinkedPriorities.E.talents);
+    console.log("Priority relationships linked");
 
     // Weapon Accessories that are weapons
     for (const weaponAccessory of unlinkedWeaponAccessories) {
@@ -632,6 +649,7 @@ export class SourcebookSeeder extends Seeder {
         }
       }
     }
+    console.log("Weapon Accessory relationships linked");
 
     // Weapons that allow certain gear to be added
     for (const weapon of unlinkedWeapons) {
@@ -1496,6 +1514,40 @@ export class SourcebookSeeder extends Seeder {
     }
     console.log("Critters relationships associated");
 
+    // Martial Art linked techniques
+    for (const martialArt of unlinkedMartialArts) {
+      if (Array.isArray(martialArt.techniqueList)) {
+        assert(
+          martialArt.techniqueList.length > 0,
+          "Martial Art Technique list is empty"
+        );
+        const relatedMartialArt = await em.findOne(MartialArts, {
+          name: martialArt.name,
+        });
+        assert(
+          relatedMartialArt !== null,
+          `undefined Martial Art: ${martialArt.name}`
+        );
+
+        for (const technique of martialArt.techniqueList) {
+          const relatedTechnique = await em.findOne(MartialArtTechniques, {
+            name: technique,
+          });
+          assert(
+            relatedTechnique !== null,
+            `undefined Technique: ${technique}`
+          );
+
+          const referencedTechnique = ref(relatedTechnique);
+          relatedMartialArt.techniqueList.add(referencedTechnique);
+        }
+      }
+    }
+    console.log("Martial Art relationships associated");
+
+    // -----------------------------------------------------------------
+    // Internally used functions
+    // -----------------------------------------------------------------
     async function addTalentLinks(
       rowLetter: priorityLetterEnum,
       talentPriority: TalentOptionsPriorityType

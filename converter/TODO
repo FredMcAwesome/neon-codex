@@ -23,15 +23,14 @@ So far I have only passed to the frontend:
   - Critters (Including spirits and sprites)
   - Mentors
   - Paragons
+  - Marital Arts
 
 Still need passed through to frontend):
   - Drug Components
   - Critter Powers
 
 Other main priorities:
-  - Contacts
   - Echoes
-  - Marital Arts
   - Metamagic
 
 Other xmls to implement:
@@ -43,6 +42,7 @@ Other xmls to implement:
 Some xmls are better to just copy paste to an enum:
   - Licenses
   - Vessels
+  - Contacts
 
 Unused xmls (maybe referenced):
   - Books

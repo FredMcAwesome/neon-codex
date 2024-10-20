@@ -170,6 +170,9 @@ import {
 import { Bonuses, QualityBonuses } from "./models/rpg/otherData/bonusModel.js";
 import { ActiveMentorSpirits } from "./models/rpg/activeTables/ActiveMentorModel.js";
 import { ActiveParagons } from "./models/rpg/activeTables/ActiveParagonModel.js";
+import { MartialArtTechniques } from "./models/rpg/abilities/martialArtTechniqueModel.js";
+import { MartialArts } from "./models/rpg/abilities/martialArtModel.js";
+import { ActiveMartialArts } from "./models/rpg/activeTables/activeMartialArts.js";
 
 const dbOptions: Options = {
   entities: [
@@ -318,6 +321,10 @@ const dbOptions: Options = {
 
     Bonuses,
     QualityBonuses,
+
+    MartialArts,
+    MartialArtTechniques,
+    ActiveMartialArts,
 
     Characters,
   ],
