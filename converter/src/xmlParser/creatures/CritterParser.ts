@@ -69,7 +69,7 @@ export function ParseCritters() {
       const check = CritterSchema.safeParse(convertedCritter);
       if (!check.success) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.log(convertedCritter);
+        console.dir(convertedCritter, { depth: Infinity });
         throw new Error(check.error.message);
       }
       return check.data;

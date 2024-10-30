@@ -56,7 +56,7 @@ export function ParseDrugComponents() {
       const check = DrugComponentSchema.safeParse(convertedDrugComponent);
       if (!check.success) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.log(convertedDrugComponent);
+        console.dir(convertedDrugComponent, { depth: Infinity });
         throw new Error(check.error.message);
       }
       return check.data;
@@ -83,6 +83,7 @@ function convertDrugComponent(drugComponent: DrugComponentXmlType) {
   if (match.failed()) {
     assert(false, match.message);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const availability = availabilityDrugSemantics(match).eval();
 
   const source = convertSource(drugComponent.source);

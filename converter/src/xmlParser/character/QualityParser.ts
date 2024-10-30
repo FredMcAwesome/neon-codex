@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import {
   QualityListSchema,
   QualitySchema,
@@ -27,6 +28,7 @@ export function ParseQualities() {
     attributeNamePrefix: "_",
     textNodeName: "xmltext",
   });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const jObj: any = parser.parse(xml_string);
 
   // console.log(
@@ -51,7 +53,7 @@ export function ParseQualities() {
     const check = QualitySchema.safeParse(convertedQuality);
     if (!check.success) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      console.log(convertedQuality);
+      console.dir(convertedQuality, { depth: Infinity });
       throw new Error(check.error.message);
     }
     return convertedQuality;

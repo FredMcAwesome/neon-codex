@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import {
   HeritageListSchema,
   type HeritageListType,
@@ -37,6 +38,7 @@ export function ParseMetatypes() {
     attributeNamePrefix: "_",
     textNodeName: "xmltext",
   });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const jObj: any = parser.parse(xml_string);
   // console.log(jObj.chummer.metatypes.metatype[301]);
   const metatypeListParsed = MetatypeListXmlSchema.safeParse(
@@ -59,7 +61,7 @@ export function ParseMetatypes() {
     const check = HeritageListSchema.safeParse(convertedMetatypeList);
     if (!check.success) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      console.log(convertedMetatypeList);
+      console.dir(convertedMetatypeList, { depth: Infinity });
       throw new Error(check.error.message);
     }
     metatypeListConverted = metatypeListConverted.concat(convertedMetatypeList);

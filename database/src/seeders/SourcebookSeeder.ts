@@ -134,6 +134,10 @@ import { getMartialArts } from "../seeds/rpgSeeds/martialArtSeed.js";
 import { getMartialArtTechniques } from "../seeds/rpgSeeds/martialArtTechniqueSeed.js";
 import { MartialArts } from "../models/rpg/abilities/martialArtModel.js";
 import { MartialArtTechniques } from "../models/rpg/abilities/martialArtTechniqueModel.js";
+import { getLifestyles } from "../seeds/rpgSeeds/lifestyleSeed.js";
+import { getLifestyleQualities } from "../seeds/rpgSeeds/lifestyleQualitySeed.js";
+import { Lifestyles } from "../models/rpg/otherData/lifestyleModel.js";
+import { LifestyleQualities } from "../models/rpg/otherData/lifestyleQualityModel.js";
 
 export class SourcebookSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
@@ -169,6 +173,9 @@ export class SourcebookSeeder extends Seeder {
     const stagedMentors = getMentors();
     const { unlinkedMartialArts, stagedMartialArts } = getMartialArts();
     const stagedMartialArtTechniques = getMartialArtTechniques();
+    const stagedLifestyles = getLifestyles();
+    const { unlinkedLifestyleQualities, stagedLifestyleQualities } =
+      getLifestyleQualities();
 
     stagedSkills.forEach((skill) => {
       em.create(Skills, skill);
@@ -354,6 +361,16 @@ export class SourcebookSeeder extends Seeder {
       em.create(MartialArtTechniques, martialArtTechnique);
     });
     console.log("Martial Art Techniques created");
+
+    stagedLifestyles.forEach((lifestyle) => {
+      em.create(Lifestyles, lifestyle);
+    });
+    console.log("Lifestyles created");
+
+    stagedLifestyleQualities.forEach((lifestyleQuality) => {
+      em.create(LifestyleQualities, lifestyleQuality);
+    });
+    console.log("Lifestyle Qualities created");
 
     await em.flush();
 
@@ -1545,6 +1562,38 @@ export class SourcebookSeeder extends Seeder {
     }
     console.log("Martial Art relationships associated");
 
+    // Lifestyle Qualities linked Lifestyle
+    for (const lifestyleQuality of unlinkedLifestyleQualities) {
+      if (lifestyleQuality.requiredLifestyleList !== undefined) {
+        assert(
+          lifestyleQuality.requiredLifestyleList.length > 0,
+          "Lifestyle Quality required lifestyle list is empty"
+        );
+        const relatedLifestyleQuality = await em.findOne(LifestyleQualities, {
+          name: lifestyleQuality.name,
+        });
+        assert(
+          relatedLifestyleQuality !== null,
+          `undefined Lifestyle Quality: ${lifestyleQuality.name}`
+        );
+
+        for (const lifestyle of lifestyleQuality.requiredLifestyleList) {
+          const relatedLifestyle = await em.findOne(Lifestyles, {
+            name: lifestyle,
+          });
+          assert(
+            relatedLifestyle !== null,
+            `undefined Lifestyle: ${lifestyle} for Quality: ${lifestyleQuality.name}`
+          );
+
+          const referencedLifestyle = ref(relatedLifestyle);
+          relatedLifestyleQuality.requiredLifestyleList.add(
+            referencedLifestyle
+          );
+        }
+      }
+    }
+    console.log("Lifestyle Quality relationships associated");
     // -----------------------------------------------------------------
     // Internally used functions
     // -----------------------------------------------------------------

@@ -58,7 +58,7 @@ export function ParseAdeptPowers() {
       const check = AdeptPowerSchema.safeParse(convertedAdeptPower);
       if (!check.success) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.log(convertedAdeptPower);
+        console.dir(convertedAdeptPower, { depth: Infinity });
         throw new Error(check.error.message);
       }
       return check.data;
@@ -107,9 +107,9 @@ function convertAdeptPower(adeptPower: AdeptPowerXmlType): AdeptPowerType {
 
   const sharedLimitAdeptPowerList =
     adeptPower.includeinlimit !== undefined
-      ? Array.isArray(adeptPower.includeinlimit)
-        ? adeptPower.includeinlimit.map((include) => {
-            return include.name;
+      ? Array.isArray(adeptPower.includeinlimit.name)
+        ? adeptPower.includeinlimit.name.map((name) => {
+            return name;
           })
         : [adeptPower.includeinlimit.name]
       : undefined;

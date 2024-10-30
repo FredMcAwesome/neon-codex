@@ -67,7 +67,7 @@ export function ParseWeapons() {
     attributeNamePrefix: "_",
     textNodeName: "xmltext",
   });
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
   const jObj: any = parser.parse(xml_string);
   // console.log(
   //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
@@ -94,7 +94,7 @@ export function ParseWeapons() {
       const check = WeaponSummarySchema.safeParse(convertedWeapon);
       if (!check.success) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.log(convertedWeapon);
+        console.dir(convertedWeapon, { depth: Infinity });
         throw new Error(check.error.message);
       }
       return check.data;
@@ -136,25 +136,30 @@ function convertWeapon(weapon: WeaponXmlType) {
   if (match.failed()) {
     assert(false, match.message);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
   const accuracy: AccuracyType = accuracySemantics(match).eval();
   // console.log(`Accuracy: ${accuracy}`);
   match = Damage.match(weapon.damage.toString());
   if (match.failed()) {
     assert(false, match.message);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
   const damage: DamageType = damageSemantics(match).eval();
   // console.log(`Damage: ${damage}`);
   match = ArmourPenetration.match(weapon.ap.toString());
   if (match.failed()) {
     assert(false, match.message);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const armourPenetration: ArmourPenetrationType =
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     armourPenetrationSemantics(match).eval();
   // console.log(`Armour Penetration: ${armourPenetration}`);
   match = Mode.match(weapon.mode.toString());
   if (match.failed()) {
     assert(false, match.message);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
   const mode: ModeType = modeSemantics(match).eval();
   // console.log(`Mode: ${mode}`);
   const recoilCompensation: RecoilCompensationType = convertRecoilCompensation(
@@ -164,19 +169,23 @@ function convertWeapon(weapon: WeaponXmlType) {
   if (match.failed()) {
     assert(false, match.message);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
   const ammo: AmmunitionType = ammoSemantics(match).eval();
   // console.log(`Ammo: ${ammo}`);
   match = Availability.match(weapon.avail.toString());
   if (match.failed()) {
     assert(false, match.message);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const availability: AvailabilityWeaponType =
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     availabilityWeaponSemantics(match).eval();
   // console.log(`Availability: ${availability}`);
   match = Cost.match(weapon.cost.toString());
   if (match.failed()) {
     assert(false, match.message);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
   const cost: CostWeaponType = costWeaponSemantics(match).eval();
   // console.log(`Cost: ${cost}`);
   const includedAccessoryList: UnlinkedAccessoryListType | undefined =

@@ -114,6 +114,7 @@ export function ParseWeaponAccessories() {
       if (match.failed()) {
         assert(false, match.message);
       }
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       ammoCapacityCalculation = modifyAmmoCapacitySemantics(match).eval();
       // console.log(`Ammo Capacity: ${ammoCapacityCalculation}`);
     }
@@ -123,6 +124,7 @@ export function ParseWeaponAccessories() {
       if (match.failed()) {
         assert(false, match.message);
       }
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       newAmmoType = ammoWeaponAccessorySemantics(match).eval();
       // console.log(`New Ammo type: ${newAmmoType}`);
     }
@@ -144,6 +146,7 @@ export function ParseWeaponAccessories() {
       assert(false, match.message);
     }
     const availability: AvailabilityWeaponAccessoryType =
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       availabilityWeaponAccessorySemantics(match).eval();
     // console.log(`Availability: ${availability}`);
 
@@ -152,6 +155,7 @@ export function ParseWeaponAccessories() {
       assert(false, match.message);
     }
     const cost: CostWeaponAccessoryType =
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       costWeaponAccessorySemantics(match).eval();
     // console.log(`Cost: ${cost}`);
 
@@ -218,7 +222,7 @@ export function ParseWeaponAccessories() {
       );
       if (!check.success) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.log(convertedWeaponAccessory);
+        console.dir(convertedWeaponAccessory, { depth: Infinity });
         throw new Error(check.error.message);
       }
       return check.data;

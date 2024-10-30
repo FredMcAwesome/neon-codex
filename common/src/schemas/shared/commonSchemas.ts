@@ -1,4 +1,5 @@
 import { z as zod } from "zod";
+import { BonusSourceEnum } from "../../enums.js";
 import {
   availabilityEnum,
   gearCategoryEnum,
@@ -236,3 +237,22 @@ export const MovementStrideSchema = zod
   })
   .strict();
 export type MovementStrideType = zod.infer<typeof MovementStrideSchema>;
+
+const CharacterCreatorBonusSchema = zod
+  .object({
+    source: zod.string(),
+    linkMentorSpirit: zod.optional(zod.literal(true)),
+    linkParagon: zod.optional(zod.literal(true)),
+    sourceType: zod.nativeEnum(BonusSourceEnum),
+  })
+  .strict();
+
+export type CharacterCreatorBonusType = zod.infer<
+  typeof CharacterCreatorBonusSchema
+>;
+export const CharacterCreatorBonusListSchema = zod.array(
+  CharacterCreatorBonusSchema
+);
+export type CharacterCreatorBonusListType = zod.infer<
+  typeof CharacterCreatorBonusListSchema
+>;

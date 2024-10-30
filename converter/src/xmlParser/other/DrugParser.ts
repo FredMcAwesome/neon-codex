@@ -57,7 +57,7 @@ export function ParseDrugs() {
       const check = DrugSchema.safeParse(convertedDrug);
       if (!check.success) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.log(convertedDrug);
+        console.dir(convertedDrug, { depth: Infinity });
         throw new Error(check.error.message);
       }
       return check.data;

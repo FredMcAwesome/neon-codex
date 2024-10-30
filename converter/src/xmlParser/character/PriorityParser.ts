@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import assert from "assert";
 import { XMLParser } from "fast-xml-parser";
 import fs from "fs";
@@ -42,6 +43,7 @@ export function ParsePriorites() {
     attributeNamePrefix: "_",
     textNodeName: "xmltext",
   });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const jObj: any = parser.parse(xml_string);
   // console.log(
   //   jObj.chummer.priorities.priority[0].metatypes.metatype[9].metavariants
@@ -69,6 +71,7 @@ export function ParsePriorites() {
   // console.log(priorityListConverted);
   const check = PriorityTableSchema.safeParse(priorityTable);
   if (!check.success) {
+    console.dir(priorityTable, { depth: Infinity });
     throw new Error(check.error.message);
   }
   const jsonFilePath = fileURLToPath(

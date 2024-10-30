@@ -92,7 +92,7 @@ export function ParseVehicleMods() {
     const check = VehicleModSchema.safeParse(convertedVehicleMod);
     if (!check.success) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      console.log(convertedVehicleMod);
+      console.dir(convertedVehicleMod, { depth: Infinity });
       throw new Error(check.error.message);
     }
     return check.data;
@@ -123,6 +123,7 @@ const convertVehicleMod = function (vehicleMod: VehicleModXmlType) {
     if (match.failed()) {
       assert(false, match.message);
     }
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     minRating = ratingSemantics(match).eval();
   }
   const ratingMeaning = convertRatingMeaning(vehicleMod.ratinglabel);
@@ -140,6 +141,7 @@ const convertVehicleMod = function (vehicleMod: VehicleModXmlType) {
     if (match.failed()) {
       assert(false, match.message);
     }
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     replaceAmmo = ammoSemantics(match).eval();
   }
   let requirements;
@@ -150,6 +152,7 @@ const convertVehicleMod = function (vehicleMod: VehicleModXmlType) {
   if (match.failed()) {
     assert(false, match.message);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const slotCost = slotSemantics(match).eval();
 
   const subsystemList = convertSubsystems(vehicleMod.subsystems);
@@ -159,6 +162,7 @@ const convertVehicleMod = function (vehicleMod: VehicleModXmlType) {
     if (match.failed()) {
       assert(false, match.message);
     }
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     weaponMountValidCategoryList = weaponMountCategoriesSemantics(match).eval();
   }
 
@@ -167,6 +171,7 @@ const convertVehicleMod = function (vehicleMod: VehicleModXmlType) {
     console.log(vehicleMod.name);
     assert(false, match.message);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const availability = availabilityVehicleModificationSemantics(match).eval();
 
   match = Cost.match(vehicleMod.cost.toString());
@@ -174,6 +179,7 @@ const convertVehicleMod = function (vehicleMod: VehicleModXmlType) {
     console.log(vehicleMod.name);
     assert(false, match.message);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const cost = costVehicleModificationSemantics(match).eval();
 
   const source = convertSource(vehicleMod.source);

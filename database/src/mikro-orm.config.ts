@@ -168,11 +168,14 @@ import {
   Paragons,
 } from "./models/rpg/otherData/mentorModel.js";
 import { Bonuses, QualityBonuses } from "./models/rpg/otherData/bonusModel.js";
-import { ActiveMentorSpirits } from "./models/rpg/activeTables/ActiveMentorModel.js";
-import { ActiveParagons } from "./models/rpg/activeTables/ActiveParagonModel.js";
+import { ActiveMentorSpirits } from "./models/rpg/activeTables/activeMentorModel.js";
+import { ActiveParagons } from "./models/rpg/activeTables/activeParagonModel.js";
 import { MartialArtTechniques } from "./models/rpg/abilities/martialArtTechniqueModel.js";
 import { MartialArts } from "./models/rpg/abilities/martialArtModel.js";
-import { ActiveMartialArts } from "./models/rpg/activeTables/activeMartialArts.js";
+import { ActiveMartialArts } from "./models/rpg/activeTables/activeMartialArtModel.js";
+import { Lifestyles } from "./models/rpg/otherData/lifestyleModel.js";
+import { LifestyleQualities } from "./models/rpg/otherData/lifestyleQualityModel.js";
+import { ActiveLifestyles } from "./models/rpg/activeTables/activeLIfestyleModel.js";
 
 const dbOptions: Options = {
   entities: [
@@ -325,6 +328,10 @@ const dbOptions: Options = {
     MartialArts,
     MartialArtTechniques,
     ActiveMartialArts,
+
+    Lifestyles,
+    LifestyleQualities,
+    ActiveLifestyles,
 
     Characters,
   ],

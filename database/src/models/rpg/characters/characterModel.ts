@@ -24,7 +24,8 @@ import { CustomisedAugmentations } from "../activeTables/activeAugmentationModel
 import { CustomisedSkillGroups } from "../activeTables/activeSkillGroupModel.js";
 import Users from "../../accounts/userModel.js";
 import { ActiveTalents } from "../activeTables/activeTalentModel.js";
-import { ActiveMartialArts } from "../activeTables/activeMartialArts.js";
+import { ActiveMartialArts } from "../activeTables/activeMartialArtModel.js";
+import { ActiveLifestyles } from "../activeTables/activeLIfestyleModel.js";
 
 @Entity()
 export class Characters {
@@ -89,6 +90,16 @@ export class Characters {
   @OneToMany(() => ActiveMartialArts, (martialArt) => martialArt.character)
   martialArts = new Collection<ActiveMartialArts>(this);
 
+  @OneToOne(
+    () => ActiveLifestyles,
+    (activeLifestyle) => activeLifestyle.character,
+    {
+      owner: true,
+      ref: true,
+    }
+  )
+  lifestyle!: Ref<ActiveLifestyles>;
+
   @ManyToOne({ entity: () => Users, ref: true })
   user!: Ref<Users>;
 
@@ -98,6 +109,7 @@ export class Characters {
     priorities: PriorityLevelsType;
     attributes: AttributesType;
     specialAttributes: SpecialAttributesType;
+    lifestyle: Ref<ActiveLifestyles>;
     nuyen: number;
     karmaPoints: number;
     user: Ref<Users>;
@@ -107,6 +119,7 @@ export class Characters {
     this.priorities = dto.priorities;
     this.attributes = dto.attributes;
     this.specialAttributes = dto.specialAttributes;
+    this.lifestyle = dto.lifestyle;
     this.nuyen = dto.nuyen;
     this.karmaPoints = dto.karmaPoints;
     this.user = dto.user;

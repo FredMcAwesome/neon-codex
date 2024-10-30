@@ -85,7 +85,7 @@ export function ParseCyberwares() {
     const check = AugmentationSchema.safeParse(convertedCyberware);
     if (!check.success) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      console.log(convertedCyberware);
+      console.dir(convertedCyberware, { depth: Infinity });
       throw new Error(check.error.message);
     }
     return check.data;
@@ -118,6 +118,7 @@ function convertCyberware(cyberware: CyberwareXmlType) {
   if (match.failed()) {
     assert(false, match.message);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const essenceCost = essenceCostSemantics(match).eval();
   let cyberwareModification;
   if (cyberware.addtoparentess !== undefined) {
@@ -154,6 +155,7 @@ function convertCyberware(cyberware: CyberwareXmlType) {
     if (match.failed()) {
       assert(false, match.message);
     }
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     capacity = capacityCyberwareSemantics(match).eval();
     if ("ratingLinked" in capacity && capacity.ratingLinked !== undefined) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
@@ -187,6 +189,7 @@ function convertCyberware(cyberware: CyberwareXmlType) {
   if (match.failed()) {
     assert(false, match.message);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const availability = availabilityAugmentationSemantics(match).eval();
   if (cyberware.cost === undefined) {
     cyberware.cost = 0;
@@ -195,6 +198,7 @@ function convertCyberware(cyberware: CyberwareXmlType) {
   if (match.failed()) {
     assert(false, match.message);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const cost = costAugmentationSemantics(match).eval();
 
   const inheritAttributes =
@@ -225,6 +229,7 @@ function convertCyberware(cyberware: CyberwareXmlType) {
     if (match.failed()) {
       assert(false, match.message);
     }
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     blockedMountList = mountsAugmentationSemantics(match).eval();
   }
 

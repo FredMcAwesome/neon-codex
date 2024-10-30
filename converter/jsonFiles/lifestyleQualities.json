@@ -1,0 +1,1141 @@
+[
+  {
+    "name": "Armory",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 2,
+    "requiredLifestyleList": ["High", "Luxury"],
+    "source": "Run Faster",
+    "page": 220,
+    "description": ""
+  },
+  {
+    "name": "Cleaning Service (Standard)",
+    "category": "Entertainment - Service",
+    "monthlyCost": 0,
+    "lifestylePointCost": 1,
+    "requiredLifestyleList": ["High", "Luxury"],
+    "source": "Run Faster",
+    "page": 220,
+    "description": ""
+  },
+  {
+    "name": "Cleaning Service (Mage Sensitive)",
+    "category": "Entertainment - Service",
+    "monthlyCost": 0,
+    "lifestylePointCost": 1,
+    "requiredLifestyleList": ["High", "Luxury"],
+    "source": "Run Faster",
+    "page": 220,
+    "description": ""
+  },
+  {
+    "name": "Cleaning Service (Pollution Sensitive)",
+    "category": "Entertainment - Service",
+    "monthlyCost": 0,
+    "lifestylePointCost": 1,
+    "requiredLifestyleList": ["High", "Luxury"],
+    "source": "Run Faster",
+    "page": 220,
+    "description": ""
+  },
+  {
+    "name": "Discreet Cleaning Service",
+    "category": "Entertainment - Service",
+    "monthlyCost": 0,
+    "lifestylePointCost": 4,
+    "source": "Run Faster",
+    "page": 221,
+    "description": ""
+  },
+  {
+    "name": "Discreet Deliveryman",
+    "category": "Entertainment - Service",
+    "monthlyCost": 0,
+    "lifestylePointCost": 3,
+    "source": "Run Faster",
+    "page": 221,
+    "description": ""
+  },
+  {
+    "name": "Discreet Candyman",
+    "category": "Entertainment - Service",
+    "monthlyCost": 0,
+    "lifestylePointCost": 3,
+    "source": "Run Faster",
+    "page": 221,
+    "description": ""
+  },
+  {
+    "name": "Cramped Garage (Airplane)",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 4,
+    "requiredLifestyleList": ["Luxury"],
+    "multipleAllowed": true,
+    "source": "Run Faster",
+    "page": 221,
+    "description": ""
+  },
+  {
+    "name": "Cramped Garage (Boat)",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 3,
+    "requiredLifestyleList": ["High", "Luxury"],
+    "multipleAllowed": true,
+    "source": "Run Faster",
+    "page": 221,
+    "description": ""
+  },
+  {
+    "name": "Cramped Garage (Car (Body 4 or Less))",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 1,
+    "requiredLifestyleList": ["Medium", "High", "Luxury"],
+    "multipleAllowed": true,
+    "source": "Run Faster",
+    "page": 221,
+    "description": ""
+  },
+  {
+    "name": "Cramped Garage (Car (Body 5 or More))",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 2,
+    "requiredLifestyleList": ["Medium", "High", "Luxury"],
+    "multipleAllowed": true,
+    "source": "Run Faster",
+    "page": 221,
+    "description": ""
+  },
+  {
+    "name": "Cramped Garage (Helicopter)",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 4,
+    "requiredLifestyleList": ["Luxury"],
+    "multipleAllowed": true,
+    "source": "Run Faster",
+    "page": 221,
+    "description": ""
+  },
+  {
+    "name": "Garage (Airplane)",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 4,
+    "requiredLifestyleList": ["Luxury"],
+    "multipleAllowed": true,
+    "source": "Run Faster",
+    "page": 221,
+    "description": ""
+  },
+  {
+    "name": "Garage (Boat)",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 3,
+    "requiredLifestyleList": ["High", "Luxury"],
+    "multipleAllowed": true,
+    "source": "Run Faster",
+    "page": 221,
+    "description": ""
+  },
+  {
+    "name": "Garage (Car (Body 4 or Less))",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 1,
+    "requiredLifestyleList": ["Medium", "High", "Luxury"],
+    "multipleAllowed": true,
+    "source": "Run Faster",
+    "page": 221,
+    "description": ""
+  },
+  {
+    "name": "Garage (Car (Body 5 or More))",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 2,
+    "requiredLifestyleList": ["Medium", "High", "Luxury"],
+    "multipleAllowed": true,
+    "source": "Run Faster",
+    "page": 221,
+    "description": ""
+  },
+  {
+    "name": "Garage (Helicopter)",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 4,
+    "requiredLifestyleList": ["Luxury"],
+    "multipleAllowed": true,
+    "source": "Run Faster",
+    "page": 221,
+    "description": ""
+  },
+  {
+    "name": "Greenhouse",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 2,
+    "requiredLifestyleList": ["High", "Luxury"],
+    "source": "Run Faster",
+    "page": 221,
+    "description": ""
+  },
+  {
+    "name": "Grid Subscription",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 1,
+    "requiredLifestyleList": ["Medium", "High", "Luxury"],
+    "multipleAllowed": true,
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Run Faster",
+    "page": 222,
+    "description": ""
+  },
+  {
+    "name": "Gym",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 2,
+    "requiredLifestyleList": ["Medium", "High", "Luxury"],
+    "source": "Run Faster",
+    "page": 222,
+    "description": ""
+  },
+  {
+    "name": "Indoor Arboretum",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 2,
+    "requiredLifestyleList": ["High", "Luxury"],
+    "source": "Run Faster",
+    "page": 222,
+    "description": ""
+  },
+  {
+    "name": "Local Bar Patron",
+    "category": "Entertainment - Outing",
+    "monthlyCost": 0,
+    "lifestylePointCost": 1,
+    "requiredLifestyleList": ["Low", "Medium", "High", "Luxury"],
+    "multipleAllowed": true,
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Run Faster",
+    "page": 222,
+    "description": ""
+  },
+  {
+    "name": "Merchandise: Goods (Specific Item) (Avail 3)",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 1,
+    "requiredLifestyleList": ["Commercial"],
+    "multipleAllowed": true,
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Run Faster",
+    "page": 222,
+    "description": ""
+  },
+  {
+    "name": "Merchandise: Goods (Specific Item) (Avail 5)",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 2,
+    "requiredLifestyleList": ["Commercial"],
+    "multipleAllowed": true,
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Run Faster",
+    "page": 222,
+    "description": ""
+  },
+  {
+    "name": "Merchandise: Goods (Specific Item) (Avail 7)",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 3,
+    "requiredLifestyleList": ["Commercial"],
+    "multipleAllowed": true,
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Run Faster",
+    "page": 222,
+    "description": ""
+  },
+  {
+    "name": "Merchandise: Goods (Specific Item) (Avail 9)",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 4,
+    "requiredLifestyleList": ["Commercial"],
+    "multipleAllowed": true,
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Run Faster",
+    "page": 222,
+    "description": ""
+  },
+  {
+    "name": "Merchandise: Pawn Shop/Thrift Store",
+    "category": "Entertainment - Service",
+    "monthlyCost": 0,
+    "lifestylePointCost": 2,
+    "requiredLifestyleList": ["Commercial"],
+    "source": "Run Faster",
+    "page": 222,
+    "description": ""
+  },
+  {
+    "name": "Merchandise: Used Goods (Specific Item)",
+    "category": "Entertainment - Service",
+    "monthlyCost": 0,
+    "lifestylePointCost": 2,
+    "requiredLifestyleList": ["Commercial"],
+    "multipleAllowed": true,
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Run Faster",
+    "page": 222,
+    "description": ""
+  },
+  {
+    "name": "Panic Room",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 2,
+    "requiredLifestyleList": ["High", "Luxury"],
+    "source": "Run Faster",
+    "page": 222,
+    "description": ""
+  },
+  {
+    "name": "Patron of the Arts (Concerts/Events)",
+    "category": "Entertainment - Outing",
+    "monthlyCost": 0,
+    "lifestylePointCost": 1,
+    "requiredLifestyleList": ["Medium", "High", "Luxury"],
+    "multipleAllowed": true,
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Run Faster",
+    "page": 223,
+    "description": ""
+  },
+  {
+    "name": "Patron of the Arts (Private Club)",
+    "category": "Entertainment - Outing",
+    "monthlyCost": 0,
+    "lifestylePointCost": 1,
+    "requiredLifestyleList": ["High", "Luxury"],
+    "multipleAllowed": true,
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Run Faster",
+    "page": 223,
+    "description": ""
+  },
+  {
+    "name": "Patron of the Arts (Zoo/Museum)",
+    "category": "Entertainment - Outing",
+    "monthlyCost": 0,
+    "lifestylePointCost": 1,
+    "requiredLifestyleList": ["Low", "Medium", "High", "Luxury"],
+    "multipleAllowed": true,
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Run Faster",
+    "page": 223,
+    "description": ""
+  },
+  {
+    "name": "Patron of the Arts (Theme Parks)",
+    "category": "Entertainment - Outing",
+    "monthlyCost": 0,
+    "lifestylePointCost": 1,
+    "requiredLifestyleList": ["Medium", "High", "Luxury"],
+    "multipleAllowed": true,
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Run Faster",
+    "page": 223,
+    "description": ""
+  },
+  {
+    "name": "Private Room",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 1,
+    "requiredLifestyleList": ["Squatter", "Low", "Medium", "High", "Luxury"],
+    "source": "Run Faster",
+    "page": 223,
+    "description": ""
+  },
+  {
+    "name": "Public Transportation",
+    "category": "Entertainment - Service",
+    "monthlyCost": 0,
+    "lifestylePointCost": 1,
+    "requiredLifestyleList": ["Low", "Medium", "High", "Luxury"],
+    "multipleAllowed": true,
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Run Faster",
+    "page": 223,
+    "description": ""
+  },
+  {
+    "name": "Railway Pass",
+    "category": "Entertainment - Service",
+    "monthlyCost": 0,
+    "lifestylePointCost": 1,
+    "requiredLifestyleList": ["Medium", "High", "Luxury"],
+    "multipleAllowed": true,
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Run Faster",
+    "page": 222,
+    "description": ""
+  },
+  {
+    "name": "Shooting Range",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 2,
+    "requiredLifestyleList": ["High", "Luxury"],
+    "source": "Run Faster",
+    "page": 223,
+    "description": ""
+  },
+  {
+    "name": "Soy Processing Unit",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 1,
+    "requiredLifestyleList": ["Medium", "High", "Luxury"],
+    "source": "Run Faster",
+    "page": 223,
+    "description": ""
+  },
+  {
+    "name": "Sports Court - Small",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 2,
+    "requiredLifestyleList": ["High", "Luxury"],
+    "multipleAllowed": true,
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Run Faster",
+    "page": 224,
+    "description": ""
+  },
+  {
+    "name": "Swimming Pool",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 1,
+    "requiredLifestyleList": ["Medium", "High", "Luxury"],
+    "source": "Run Faster",
+    "page": 224,
+    "description": ""
+  },
+  {
+    "name": "Walk-In Freezer",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 1,
+    "requiredLifestyleList": ["Commercial"],
+    "source": "Run Faster",
+    "page": 224,
+    "description": ""
+  },
+  {
+    "name": "Workshop/Facility",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 2,
+    "requiredLifestyleList": ["Commercial"],
+    "multipleAllowed": true,
+    "source": "Run Faster",
+    "page": 224,
+    "description": ""
+  },
+  {
+    "name": "Cramped Workshop/Facility",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 2,
+    "requiredLifestyleList": ["Commercial"],
+    "multipleAllowed": true,
+    "source": "Run Faster",
+    "page": 224,
+    "description": ""
+  },
+  {
+    "name": "Yard",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 2,
+    "requiredLifestyleList": ["Low", "Medium", "High", "Luxury"],
+    "multipleAllowed": true,
+    "source": "Run Faster",
+    "page": 224,
+    "description": ""
+  },
+  {
+    "name": "Zen Den",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 2,
+    "requiredLifestyleList": ["Medium", "High", "Luxury"],
+    "source": "Run Faster",
+    "page": 224,
+    "description": ""
+  },
+  {
+    "name": "Bat Cave",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 2,
+    "requiredLifestyleList": ["Medium", "High", "Luxury"],
+    "source": "Run Faster",
+    "page": 224,
+    "description": ""
+  },
+  {
+    "name": "Angry Drunk Reputation",
+    "category": "Negative",
+    "monthlyCost": 0,
+    "lifestylePointCost": -1,
+    "requirements": {},
+    "source": "Run Faster",
+    "page": 224,
+    "description": ""
+  },
+  {
+    "name": "Corporate Owned",
+    "category": "Positive",
+    "monthlyCost": 0,
+    "lifestylePointCost": 3,
+    "requirements": {},
+    "source": "Run Faster",
+    "page": 225,
+    "description": ""
+  },
+  {
+    "name": "Cramped",
+    "category": "Negative",
+    "monthlyCost": 0,
+    "lifestylePointCost": 1,
+    "lifestyleCostMultiplier": -10,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 370,
+    "description": ""
+  },
+  {
+    "name": "Extra Secure",
+    "category": "Positive",
+    "monthlyCost": 0,
+    "lifestylePointCost": 1,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 370,
+    "description": ""
+  },
+  {
+    "name": "Dangerous Area",
+    "category": "Negative",
+    "monthlyCost": 0,
+    "lifestylePointCost": -1,
+    "lifestyleCostMultiplier": -20,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 370,
+    "description": ""
+  },
+  {
+    "name": "Hotel California",
+    "category": "Negative",
+    "monthlyCost": 0,
+    "lifestylePointCost": -1,
+    "source": "Run Faster",
+    "page": 226,
+    "description": ""
+  },
+  {
+    "name": "Maid is Out",
+    "category": "Negative",
+    "monthlyCost": 0,
+    "lifestylePointCost": -1,
+    "requirements": {},
+    "source": "Run Faster",
+    "page": 226,
+    "description": ""
+  },
+  {
+    "name": "Not a Home",
+    "category": "Negative",
+    "monthlyCost": 0,
+    "lifestylePointCost": -1,
+    "source": "Run Faster",
+    "page": 226,
+    "description": ""
+  },
+  {
+    "name": "Obscure/Difficult to Find",
+    "category": "Negative",
+    "monthlyCost": 0,
+    "lifestylePointCost": -1,
+    "lifestyleCostMultiplier": 10,
+    "requirements": {},
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 370,
+    "description": ""
+  },
+  {
+    "name": "One Good Thing About This Place",
+    "category": "Positive",
+    "monthlyCost": 0,
+    "lifestylePointCost": 1,
+    "requiredLifestyleList": ["Traveler"],
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Run Faster",
+    "page": 226,
+    "description": ""
+  },
+  {
+    "name": "Safehouse",
+    "category": "Positive",
+    "monthlyCost": 0,
+    "lifestylePointCost": 0,
+    "source": "Run Faster",
+    "page": 226,
+    "description": ""
+  },
+  {
+    "name": "Safety Third",
+    "category": "Negative",
+    "monthlyCost": 0,
+    "lifestylePointCost": -1,
+    "requirements": {},
+    "source": "Run Faster",
+    "page": 226,
+    "description": ""
+  },
+  {
+    "name": "Special Work Area",
+    "category": "Positive",
+    "monthlyCost": 0,
+    "lifestylePointCost": 0,
+    "multipleAllowed": true,
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 370,
+    "description": ""
+  },
+  {
+    "name": "Thrifty",
+    "category": "Negative",
+    "monthlyCost": 0,
+    "lifestylePointCost": 2,
+    "requiredLifestyleList": ["Traveler"],
+    "source": "Run Faster",
+    "page": 226,
+    "description": ""
+  },
+  {
+    "name": "W Zone",
+    "category": "Negative",
+    "monthlyCost": 0,
+    "lifestylePointCost": -1,
+    "source": "Run Faster",
+    "page": 226,
+    "description": ""
+  },
+  {
+    "name": "Skillsoft Network, Basic",
+    "category": "Contracts",
+    "monthlyCost": 0,
+    "lifestylePointCost": 0,
+    "source": "Chrome Flesh",
+    "page": 78,
+    "description": ""
+  },
+  {
+    "name": "Skillsoft Network, Silver",
+    "category": "Contracts",
+    "monthlyCost": 0,
+    "lifestylePointCost": 0,
+    "source": "Chrome Flesh",
+    "page": 78,
+    "description": ""
+  },
+  {
+    "name": "Skillsoft Network, Gold",
+    "category": "Contracts",
+    "monthlyCost": 0,
+    "lifestylePointCost": 0,
+    "source": "Chrome Flesh",
+    "page": 78,
+    "description": ""
+  },
+  {
+    "name": "Skillsoft Network, Platinum",
+    "category": "Contracts",
+    "monthlyCost": 0,
+    "lifestylePointCost": 0,
+    "source": "Chrome Flesh",
+    "page": 78,
+    "description": ""
+  },
+  {
+    "name": "Datahost Subscription",
+    "category": "Contracts",
+    "monthlyCost": 0,
+    "lifestylePointCost": 0,
+    "source": "Chrome Flesh",
+    "page": 80,
+    "description": ""
+  },
+  {
+    "name": "Shopsoft Network Subscription",
+    "category": "Contracts",
+    "monthlyCost": 0,
+    "lifestylePointCost": 0,
+    "source": "Chrome Flesh",
+    "page": 80,
+    "description": ""
+  },
+  {
+    "name": "Mapping System Subscription, Basic",
+    "category": "Contracts",
+    "monthlyCost": 0,
+    "lifestylePointCost": 0,
+    "source": "Chrome Flesh",
+    "page": 81,
+    "description": ""
+  },
+  {
+    "name": "Mapping System Subscription, Silver",
+    "category": "Contracts",
+    "monthlyCost": 0,
+    "lifestylePointCost": 0,
+    "source": "Chrome Flesh",
+    "page": 81,
+    "description": ""
+  },
+  {
+    "name": "Mapping System Subscription, Gold",
+    "category": "Contracts",
+    "monthlyCost": 0,
+    "lifestylePointCost": 0,
+    "source": "Chrome Flesh",
+    "page": 81,
+    "description": ""
+  },
+  {
+    "name": "DocWagon Contract, Basic",
+    "category": "Contracts",
+    "monthlyCost": 0,
+    "lifestylePointCost": 0,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 450,
+    "description": ""
+  },
+  {
+    "name": "DocWagon Contract, Gold",
+    "category": "Contracts",
+    "monthlyCost": 0,
+    "lifestylePointCost": 0,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 450,
+    "description": ""
+  },
+  {
+    "name": "DocWagon Contract, Platinum",
+    "category": "Contracts",
+    "monthlyCost": 0,
+    "lifestylePointCost": 0,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 450,
+    "description": ""
+  },
+  {
+    "name": "DocWagon Contract, Super-Platinum",
+    "category": "Contracts",
+    "monthlyCost": 0,
+    "lifestylePointCost": 0,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 450,
+    "description": ""
+  },
+  {
+    "name": "Local Grid Subscription",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 1,
+    "requiredLifestyleList": ["Medium", "High", "Luxury"],
+    "multipleAllowed": true,
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Hard Targets",
+    "page": 140,
+    "description": ""
+  },
+  {
+    "name": "Global Grid Subscription",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 1,
+    "requiredLifestyleList": ["High", "Luxury"],
+    "multipleAllowed": true,
+    "bonus": {
+      "enterName": true
+    },
+    "source": "Hard Targets",
+    "page": 140,
+    "description": ""
+  },
+  {
+    "name": "Subsistence Hunting/Gathering I",
+    "category": "Entertainment - Outing",
+    "monthlyCost": 0,
+    "lifestylePointCost": 1,
+    "requiredLifestyleList": ["Squatter", "Low", "Medium", "High", "Luxury"],
+    "source": "Hard Targets",
+    "page": 140,
+    "description": ""
+  },
+  {
+    "name": "Subsistence Hunting/Gathering II",
+    "category": "Entertainment - Outing",
+    "monthlyCost": 0,
+    "lifestylePointCost": 2,
+    "requiredLifestyleList": ["Squatter", "Low", "Medium", "High", "Luxury"],
+    "source": "Hard Targets",
+    "page": 140,
+    "description": ""
+  },
+  {
+    "name": "Subsistence Hunting/Gathering III",
+    "category": "Entertainment - Outing",
+    "monthlyCost": 0,
+    "lifestylePointCost": 3,
+    "requiredLifestyleList": ["Squatter", "Low", "Medium", "High", "Luxury"],
+    "source": "Hard Targets",
+    "page": 140,
+    "description": ""
+  },
+  {
+    "name": "Subsistence Hunting/Gathering IV",
+    "category": "Entertainment - Outing",
+    "monthlyCost": 0,
+    "lifestylePointCost": 4,
+    "requiredLifestyleList": ["Squatter", "Low", "Medium", "High", "Luxury"],
+    "source": "Hard Targets",
+    "page": 140,
+    "description": ""
+  },
+  {
+    "name": "Drone Maids/Manservants",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 1,
+    "requiredLifestyleList": ["High", "Luxury"],
+    "source": "Hard Targets",
+    "page": 141,
+    "description": ""
+  },
+  {
+    "name": "Maids/Manservants",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 1,
+    "requiredLifestyleList": ["Luxury"],
+    "source": "Hard Targets",
+    "page": 141,
+    "description": ""
+  },
+  {
+    "name": "Zombie Maids/Manservants",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 2,
+    "requiredLifestyleList": ["High"],
+    "source": "Hard Targets",
+    "page": 141,
+    "description": ""
+  },
+  {
+    "name": "Household Gremlins I",
+    "category": "Negative",
+    "monthlyCost": 0,
+    "lifestylePointCost": 0,
+    "source": "Hard Targets",
+    "page": 141,
+    "description": ""
+  },
+  {
+    "name": "Household Gremlins II",
+    "category": "Negative",
+    "monthlyCost": 0,
+    "lifestylePointCost": 0,
+    "source": "Hard Targets",
+    "page": 141,
+    "description": ""
+  },
+  {
+    "name": "Dug a Hole",
+    "category": "Positive",
+    "monthlyCost": 0,
+    "lifestylePointCost": 0,
+    "source": "Hard Targets",
+    "page": 141,
+    "description": ""
+  },
+  {
+    "name": "Lax Security",
+    "category": "Negative",
+    "monthlyCost": 0,
+    "lifestylePointCost": -1,
+    "source": "Hard Targets",
+    "page": 141,
+    "description": ""
+  },
+  {
+    "name": "Limited Building Space",
+    "category": "Negative",
+    "monthlyCost": 0,
+    "lifestylePointCost": -1,
+    "source": "Hard Targets",
+    "page": 141,
+    "description": ""
+  },
+  {
+    "name": "Rough Neighborhood",
+    "category": "Negative",
+    "monthlyCost": 0,
+    "lifestylePointCost": -1,
+    "source": "Hard Targets",
+    "page": 141,
+    "description": ""
+  },
+  {
+    "name": "No Masters",
+    "category": "Negative",
+    "monthlyCost": 0,
+    "lifestylePointCost": -1,
+    "lifestyleCostMultiplier": -10,
+    "requirements": {},
+    "source": "Hard Targets",
+    "page": 141,
+    "description": ""
+  },
+  {
+    "name": "Escape Tunnel, 100 Meters",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 1,
+    "requiredLifestyleList": ["Squatter", "Low", "Medium", "High", "Luxury"],
+    "source": "Shadows In Focus: Butte",
+    "page": 20,
+    "description": ""
+  },
+  {
+    "name": "Escape Tunnel, 200 Meters",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 2,
+    "requiredLifestyleList": ["Squatter", "Low", "Medium", "High", "Luxury"],
+    "source": "Shadows In Focus: Butte",
+    "page": 20,
+    "description": ""
+  },
+  {
+    "name": "Escape Tunnel, 300 Meters",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 3,
+    "requiredLifestyleList": ["Squatter", "Low", "Medium", "High", "Luxury"],
+    "source": "Shadows In Focus: Butte",
+    "page": 20,
+    "description": ""
+  },
+  {
+    "name": "Escape Tunnel, 400 Meters",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 4,
+    "requiredLifestyleList": ["Squatter", "Low", "Medium", "High", "Luxury"],
+    "source": "Shadows In Focus: Butte",
+    "page": 20,
+    "description": ""
+  },
+  {
+    "name": "Escape Tunnel, 500 Meters",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 5,
+    "requiredLifestyleList": ["Squatter", "Low", "Medium", "High", "Luxury"],
+    "source": "Shadows In Focus: Butte",
+    "page": 20,
+    "description": ""
+  },
+  {
+    "name": "Cramped Garage (Stable)",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 1,
+    "requiredLifestyleList": ["Medium", "High", "Luxury"],
+    "multipleAllowed": true,
+    "source": "Shadows In Focus: Butte",
+    "page": 20,
+    "description": ""
+  },
+  {
+    "name": "Garage (Stable)",
+    "category": "Entertainment - Asset",
+    "monthlyCost": 0,
+    "lifestylePointCost": 1,
+    "requiredLifestyleList": ["Medium", "High", "Luxury"],
+    "multipleAllowed": true,
+    "source": "Shadows In Focus: Butte",
+    "page": 20,
+    "description": ""
+  },
+  {
+    "name": "Haunted",
+    "category": "Negative",
+    "monthlyCost": 0,
+    "lifestylePointCost": 0,
+    "lifestyleCostMultiplier": -20,
+    "source": "Shadows In Focus: Butte",
+    "page": 20,
+    "description": ""
+  },
+  {
+    "name": "AR Fashion Subscription, Casual",
+    "category": "Contracts",
+    "monthlyCost": 0,
+    "lifestylePointCost": 0,
+    "source": "Cutting Aces",
+    "page": 138,
+    "description": ""
+  },
+  {
+    "name": "AR Fashion Subscription, Business",
+    "category": "Contracts",
+    "monthlyCost": 0,
+    "lifestylePointCost": 0,
+    "source": "Cutting Aces",
+    "page": 138,
+    "description": ""
+  },
+  {
+    "name": "AR Fashion Subscription, Formal",
+    "category": "Contracts",
+    "monthlyCost": 0,
+    "lifestylePointCost": 0,
+    "source": "Cutting Aces",
+    "page": 138,
+    "description": ""
+  },
+  {
+    "name": "AR Fashion Subscription, Designer",
+    "category": "Contracts",
+    "monthlyCost": 0,
+    "lifestylePointCost": 0,
+    "source": "Cutting Aces",
+    "page": 138,
+    "description": ""
+  },
+  {
+    "name": "CarnivoreGold",
+    "category": "Contracts",
+    "monthlyCost": 0,
+    "lifestylePointCost": 0,
+    "source": "Cutting Aces",
+    "page": 144,
+    "description": ""
+  },
+  {
+    "name": "MonaLisa",
+    "category": "Contracts",
+    "monthlyCost": 0,
+    "lifestylePointCost": 0,
+    "source": "Cutting Aces",
+    "page": 144,
+    "description": ""
+  },
+  {
+    "name": "Pheromone Detection",
+    "category": "Contracts",
+    "monthlyCost": 0,
+    "lifestylePointCost": 0,
+    "source": "Cutting Aces",
+    "page": 144,
+    "description": ""
+  },
+  {
+    "name": "Speech Template Comparison",
+    "category": "Contracts",
+    "monthlyCost": 0,
+    "lifestylePointCost": 0,
+    "source": "Cutting Aces",
+    "page": 144,
+    "description": ""
+  },
+  {
+    "name": "Target Tracking Software",
+    "category": "Contracts",
+    "monthlyCost": 0,
+    "lifestylePointCost": 0,
+    "source": "Cutting Aces",
+    "page": 144,
+    "description": ""
+  },
+  {
+    "name": "Thermal Mood Reading",
+    "category": "Contracts",
+    "monthlyCost": 0,
+    "lifestylePointCost": 0,
+    "source": "Cutting Aces",
+    "page": 144,
+    "description": ""
+  },
+  {
+    "name": "Vocal Tension Lie Detection",
+    "category": "Contracts",
+    "monthlyCost": 0,
+    "lifestylePointCost": 0,
+    "source": "Cutting Aces",
+    "page": 144,
+    "description": ""
+  }
+]

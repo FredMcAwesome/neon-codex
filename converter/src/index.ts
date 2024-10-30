@@ -73,5 +73,11 @@ ParseMartialArts();
 import { ParseMartialArtTechniques } from "./xmlParser/character/MartialArtTechniqueParser.js";
 ParseMartialArtTechniques();
 
+import { ParseLifestyles } from "./xmlParser/character/LifestyleParser.js";
+ParseLifestyles();
+
+import { ParseLifestyleQualities } from "./xmlParser/character/LifestyleQualityParser.js";
+ParseLifestyleQualities();
+
 import { CheckGUIDs } from "./xmlParser/utilities.js";
 CheckGUIDs();

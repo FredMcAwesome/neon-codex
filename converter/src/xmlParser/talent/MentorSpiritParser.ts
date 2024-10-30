@@ -84,7 +84,7 @@ export function ParseMentorSpirits() {
       const check = MentorSchema.safeParse(convertedMentor);
       if (!check.success) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.log(convertedMentor);
+        console.dir(convertedMentor, { depth: Infinity });
         throw new Error(check.error.message);
       }
       return check.data;

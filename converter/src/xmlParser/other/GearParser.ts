@@ -79,7 +79,7 @@ export function ParseGear() {
       const check = GearSchema.safeParse(convertedGear);
       if (!check.success) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.log(convertedGear);
+        console.dir(convertedGear, { depth: Infinity });
         throw new Error(check.error.message);
       }
       return check.data;
@@ -162,6 +162,7 @@ const convertGear = function (gear: GearXmlType) {
     if (match.failed()) {
       assert(false, match.message);
     }
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     programs = programGearSemantics(match).eval();
   }
   const attributeArray =
@@ -170,7 +171,7 @@ const convertGear = function (gear: GearXmlType) {
       : gear.attributearray.split(",").map((attributeString) => {
           const attribute = Number(attributeString);
           assert(!isNaN(attribute));
-          return attribute as number;
+          return attribute;
         });
   const attack =
     gear.attack === undefined
@@ -195,6 +196,7 @@ const convertGear = function (gear: GearXmlType) {
     if (match.failed()) {
       assert(false, match.message);
     }
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     capacityInformation = capacityGearSemantics(match).eval();
   }
 
@@ -204,6 +206,7 @@ const convertGear = function (gear: GearXmlType) {
     if (match.failed()) {
       assert(false, match.message);
     }
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     armourCapacityInformation = capacityGearSemantics(match).eval();
   }
   let requirements;
@@ -227,7 +230,7 @@ const convertGear = function (gear: GearXmlType) {
       : gear.modattributearray.split(",").map((attributeString) => {
           const attribute = Number(attributeString);
           assert(!isNaN(attribute));
-          return attribute as number;
+          return attribute;
         });
   const modifyAttack =
     gear.modattack === undefined
@@ -261,12 +264,14 @@ const convertGear = function (gear: GearXmlType) {
   if (match.failed()) {
     assert(false, match.message);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const cost = costGearSemantics(match).eval();
 
   match = Availability.match(gear.avail.toString());
   if (match.failed()) {
     assert(false, match.message);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const availability = availabilityGearSemantics(match).eval();
 
   const source = convertSource(gear.source);

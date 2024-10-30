@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { trpc } from "../../utils/trpc.js";
 import type {
   AttributesType,
+  LifestyleSelectedType,
   MartialArtSelectedListType,
   SpecialAttributesType,
   TalentInfoType,
@@ -17,6 +18,7 @@ import type { CustomisedArmourListType } from "@neon-codex/common/build/schemas/
 import type { CustomisedGearListType } from "@neon-codex/common/build/schemas/equipment/other/gearSchemas.js";
 import type { CustomisedAugmentationListType } from "@neon-codex/common/build/schemas/equipment/bodyModification/augmentationSchemas.js";
 import type { CustomisedVehicleListType } from "@neon-codex/common/build/schemas/equipment/rigger/vehicleSchemas.js";
+import { CollapsibleDiv } from "../../utils/CollapsibleDiv.js";
 
 const characterSheetPath = "/characters/:id";
 const CharacterSheet = function () {
@@ -52,6 +54,7 @@ const CharacterSheet = function () {
       {Augmentations(data.augmentationList)}
       {Vehicles(data.vehicleList)}
       {MartialArts(data.martialArtList)}
+      {Lifestyle(data.lifestyle)}
       <div>Nuyen: {data.nuyen}</div>
       <div>Karma: {data.karmaPoints}</div>
     </div>
@@ -107,8 +110,7 @@ function Skills(
   specialAttributeList: SpecialAttributesType
 ) {
   return (
-    <div>
-      Skills
+    <CollapsibleDiv title="Skills">
       <ul>
         {skillList.map((skill) => {
           let attributeLevel;
@@ -140,17 +142,18 @@ function Skills(
             case attributeTypeEnum.Willpower:
               attributeLevel = attributeList.willpower;
               break;
-            case attributeTypeEnum.Depth:
+            case attributeTypeEnum.Depth: {
               const depth =
                 specialAttributeList.talent.type === talentCategoryEnum.Depth
                   ? specialAttributeList.talent.depth
                   : 0;
               attributeLevel = depth;
               break;
+            }
             case attributeTypeEnum.Edge:
               attributeLevel = specialAttributeList.edge;
               break;
-            case attributeTypeEnum.Magic:
+            case attributeTypeEnum.Magic: {
               const magic =
                 specialAttributeList.talent.type === talentCategoryEnum.Magic
                   ? specialAttributeList.talent.magic
@@ -158,18 +161,19 @@ function Skills(
               attributeLevel = magic;
 
               break;
+            }
           }
           const skillTotal = attributeLevel + skill.skillPoints;
           return <li key={skill.name}>{`${skill.name}: ${skillTotal}`}</li>;
         })}
       </ul>
-    </div>
+    </CollapsibleDiv>
   );
 }
 
 function Talent(data: TalentInfoType) {
   switch (data.type) {
-    case talentCategoryEnum.Magic:
+    case talentCategoryEnum.Magic: {
       let mentorSpirit;
       if (data.selectedMentor) {
         mentorSpirit = (
@@ -237,16 +241,16 @@ function Talent(data: TalentInfoType) {
       }
 
       return (
-        <div>
-          <h2>Magic User</h2>
+        <CollapsibleDiv title="Magic User">
           Tradition: {data.selectedTradition.name}
           {mentorSpirit}
           {formulaList}
           {adeptPowers}
-        </div>
+        </CollapsibleDiv>
       );
+    }
 
-    case talentCategoryEnum.Resonance:
+    case talentCategoryEnum.Resonance: {
       let paragon;
       if (data.selectedMentor) {
         paragon = (
@@ -259,26 +263,25 @@ function Talent(data: TalentInfoType) {
         );
       }
       return (
-        <div>
-          Complex Forms:
+        <CollapsibleDiv title="Complex Forms">
           <ul>
             {data.complexForms.map((complexForm, index) => {
               return <li key={index}>{complexForm}</li>;
             })}
             {paragon}
           </ul>
-        </div>
+        </CollapsibleDiv>
       );
+    }
     case talentCategoryEnum.Depth:
       return (
-        <div>
-          AI Programs:
+        <CollapsibleDiv title="AI Programs">
           <ul>
             {data.programs.map((program, index) => {
               return <li key={index}>{program.name}</li>;
             })}
           </ul>
-        </div>
+        </CollapsibleDiv>
       );
     case talentCategoryEnum.Mundane:
       return <>Mundane</>;
@@ -287,21 +290,20 @@ function Talent(data: TalentInfoType) {
 
 function Qualities(data: CustomQualityListType) {
   return (
-    <div>
+    <CollapsibleDiv title="Qualities">
       Qualities
       <ul>
         {data.map((quality) => {
           return <li key={quality.name}>{`${quality.name}`}</li>;
         })}
       </ul>
-    </div>
+    </CollapsibleDiv>
   );
 }
 
 function Weapons(data: CustomisedWeaponListType) {
   return (
-    <div>
-      Weapons
+    <CollapsibleDiv title="Weapons">
       <ul>
         {data.map((weapon) => {
           return (
@@ -309,14 +311,13 @@ function Weapons(data: CustomisedWeaponListType) {
           );
         })}
       </ul>
-    </div>
+    </CollapsibleDiv>
   );
 }
 
 function Armours(data: CustomisedArmourListType) {
   return (
-    <div>
-      Armours
+    <CollapsibleDiv title="Armours">
       <ul>
         {data.map((armour) => {
           return (
@@ -324,27 +325,25 @@ function Armours(data: CustomisedArmourListType) {
           );
         })}
       </ul>
-    </div>
+    </CollapsibleDiv>
   );
 }
 
 function Gears(data: CustomisedGearListType) {
   return (
-    <div>
-      Gears
+    <CollapsibleDiv title="Gears">
       <ul>
         {data.map((gear) => {
           return <li key={gear.baseGear.name}>{`${gear.baseGear.name}`}</li>;
         })}
       </ul>
-    </div>
+    </CollapsibleDiv>
   );
 }
 
 function Augmentations(data: CustomisedAugmentationListType) {
   return (
-    <div>
-      Augmentations
+    <CollapsibleDiv title="Augmentations">
       <ul>
         {data.map((augmentation) => {
           return (
@@ -354,14 +353,13 @@ function Augmentations(data: CustomisedAugmentationListType) {
           );
         })}
       </ul>
-    </div>
+    </CollapsibleDiv>
   );
 }
 
 function Vehicles(data: CustomisedVehicleListType) {
   return (
-    <div>
-      Vehicles/Drones
+    <CollapsibleDiv title="Vehicles/Drones">
       <ul>
         {data.map((vehicle) => {
           return (
@@ -371,14 +369,13 @@ function Vehicles(data: CustomisedVehicleListType) {
           );
         })}
       </ul>
-    </div>
+    </CollapsibleDiv>
   );
 }
 
 function MartialArts(data: MartialArtSelectedListType) {
   return (
-    <div>
-      Martial Arts
+    <CollapsibleDiv title="Martial Arts">
       <ul>
         {data.map((martialArt) => {
           return (
@@ -394,6 +391,22 @@ function MartialArts(data: MartialArtSelectedListType) {
           );
         })}
       </ul>
-    </div>
+    </CollapsibleDiv>
+  );
+}
+
+function Lifestyle(data: LifestyleSelectedType) {
+  return (
+    <CollapsibleDiv title="Lifestyle">
+      <div>Name: {`${data.lifestyle.name}`}</div>
+      <div>
+        Lifestyle Qualities:{" "}
+        <ul>
+          {data.lifestyleQualityList.map((quality) => {
+            return <li>{quality.name}</li>;
+          })}
+        </ul>
+      </div>
+    </CollapsibleDiv>
   );
 }

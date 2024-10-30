@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import {
   mathOperatorEnum,
   skillCategoryEnum,
@@ -103,6 +104,7 @@ export function ParseSkills() {
     attributeNamePrefix: "_",
     textNodeName: "xmltext",
   });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const jObj: any = parser.parse(xml_string);
   // console.log(jObj.chummer.skills.skill[18]);
   const skillListParsed = SkillListXmlSchema.safeParse(
@@ -137,7 +139,7 @@ export function ParseSkills() {
     const check = SkillSchema.safeParse(convertedSkill);
     if (!check.success) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      console.log(convertedSkill);
+      console.dir(convertedSkill, { depth: Infinity });
       throw new Error(check.error.message);
     }
     return convertedSkill;

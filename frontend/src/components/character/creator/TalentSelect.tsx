@@ -17,8 +17,8 @@ import {
   type ResonanceTalentInfoType,
   type TalentInfoType,
 } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
-import type { CharacterCreatorBonusListType } from "../commonSchemas.js";
 import type { MentorType } from "@neon-codex/common/build/schemas/abilities/talent/mentorSchemas.js";
+import type { CharacterCreatorBonusListType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 
 interface IProps {
   talent: TalentPriorityType;
@@ -223,7 +223,7 @@ const TraditionSelect = function (props: ITraditionSelectProps) {
   const traditionList = trpc.character.traditions.useQuery();
 
   if (traditionList.isError) {
-    return <>{traditionList.error}</>;
+    return <>{traditionList.error.message}</>;
   }
 
   if (traditionList.data === undefined) {

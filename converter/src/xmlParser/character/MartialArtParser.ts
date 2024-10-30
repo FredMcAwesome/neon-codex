@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import assert from "assert";
 import { XMLParser } from "fast-xml-parser";
 import fs from "fs";
@@ -66,6 +67,7 @@ export function ParseMartialArts() {
     attributeNamePrefix: "_",
     textNodeName: "xmltext",
   });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const jObj: any = parser.parse(xml_string);
 
   // console.log(
@@ -91,7 +93,7 @@ export function ParseMartialArts() {
       const check = MartialArtSchema.safeParse(convertedMartialArt);
       if (!check.success) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.log(convertedMartialArt);
+        console.dir(convertedMartialArt, { depth: Infinity });
         throw new Error(check.error.message);
       }
       return convertedMartialArt;

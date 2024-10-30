@@ -88,6 +88,8 @@ import {
   type ProgramSelectedListType,
   MartialArtSelectedSchema,
   type MartialArtSelectedType,
+  type LifestyleSelectedType,
+  LifestyleSelectedSchema,
 } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
 import { Armours } from "@neon-codex/database/build/models/rpg/equipment/combat/armourModel.js";
 import { Characters } from "@neon-codex/database/build/models/rpg/characters/characterModel.js";
@@ -178,20 +180,28 @@ import type {
   MentorBaseType,
   MentorListType,
 } from "@neon-codex/common/build/schemas/abilities/talent/mentorSchemas.js";
+import { CharacterCreatorBonusListSchema } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 import {
   Mentors,
   MentorSpirits,
   Paragons,
 } from "@neon-codex/database/build/models/rpg/otherData/mentorModel.js";
-import { ActiveMentorSpirits } from "@neon-codex/database/build/models/rpg/activeTables/ActiveMentorModel.js";
-import { ActiveParagons } from "@neon-codex/database/build/models/rpg/activeTables/ActiveParagonModel.js";
+import { ActiveMentorSpirits } from "@neon-codex/database/build/models/rpg/activeTables/activeMentorModel.js";
+import { ActiveParagons } from "@neon-codex/database/build/models/rpg/activeTables/activeParagonModel.js";
 import type {
   MartialArtListType,
   MartialArtTechniqueListType,
-} from "@neon-codex/common/src/schemas/abilities/martialArtSchemas.js";
+} from "@neon-codex/common/build/schemas/abilities/martialArtSchemas.js";
 import { MartialArts } from "@neon-codex/database/build/models/rpg/abilities/martialArtModel.js";
 import { MartialArtTechniques } from "@neon-codex/database/build/models/rpg/abilities/martialArtTechniqueModel.js";
-import { ActiveMartialArts } from "@neon-codex/database/build/models/rpg/activeTables/activeMartialArts.js";
+import { ActiveMartialArts } from "@neon-codex/database/build/models/rpg/activeTables/activeMartialArtModel.js";
+import type {
+  LifestyleListType,
+  LifestyleQualityListType,
+} from "@neon-codex/common/build/schemas/otherData/lifestyleSchemas.js";
+import { Lifestyles } from "@neon-codex/database/build/models/rpg/otherData/lifestyleModel.js";
+import { LifestyleQualities } from "@neon-codex/database/build/models/rpg/otherData/lifestyleQualityModel.js";
+import { ActiveLifestyles } from "@neon-codex/database/build/models/rpg/activeTables/activeLIfestyleModel.js";
 
 export function convertDBBonus(DBbonus: Bonuses) {
   const bonus: BonusType = {};
@@ -991,6 +1001,64 @@ async function getMartialArtTechniques() {
   return techniquesResponse;
 }
 
+async function getLifestyles() {
+  const db = await init();
+  const lifestyles = await db.em.findAll(Lifestyles, {
+    populate: ["*"],
+  });
+  const lifestylesResponse: LifestyleListType = lifestyles.map((lifestyle) => {
+    return {
+      name: lifestyle.name,
+      cost: lifestyle.cost,
+      lifestylePoints: lifestyle.lifestylePoints,
+      allowBonusLifestylePoints: lifestyle.allowBonusLifestylePoints,
+      freegridList: lifestyle.freegridList,
+      dice: lifestyle.dice,
+      startingNuyenMultiplier: lifestyle.startingNuyenMultiplier,
+      costIncreasePerCategoryLevelIncrease:
+        lifestyle.costIncreasePerCategoryLevelIncrease,
+      lifestyleCategoryDefaults: lifestyle.lifestyleCategoryDefaults,
+      requirements: lifestyle.requirements,
+      bonus: lifestyle.bonus,
+      forbidden: lifestyle.forbidden,
+      description: lifestyle.description,
+      source: lifestyle.source,
+      page: lifestyle.page,
+    };
+  });
+  return lifestylesResponse;
+}
+
+async function getLifestyleQualities() {
+  const db = await init();
+  const lifestyleQualities = await db.em.findAll(LifestyleQualities, {
+    populate: ["*"],
+  });
+  const lifestyleQualitiesResponse: LifestyleQualityListType =
+    lifestyleQualities.map((lifestyleQuality) => {
+      return {
+        name: lifestyleQuality.name,
+        category: lifestyleQuality.category,
+        monthlyCost: lifestyleQuality.monthlyCost,
+        lifestylePointCost: lifestyleQuality.lifestylePointCost,
+        lifestyleCostMultiplier: lifestyleQuality.lifestyleCostMultiplier,
+        requiredLifestyleList: lifestyleQuality.requiredLifestyleList.$.map(
+          (lifestyle) => {
+            return lifestyle.name;
+          }
+        ),
+        multipleAllowed: lifestyleQuality.multipleAllowed,
+        bonus: lifestyleQuality.bonus,
+        requirements: lifestyleQuality.requirements,
+        forbidden: lifestyleQuality.forbidden,
+        description: lifestyleQuality.description,
+        source: lifestyleQuality.source,
+        page: lifestyleQuality.page,
+      };
+    });
+  return lifestyleQualitiesResponse;
+}
+
 export async function getGears(): Promise<GearListType> {
   const db = await init();
   const gears = await db.em.findAll(Gears, {
@@ -1413,6 +1481,29 @@ const martialArtTechniques = privateProcedure.query(async () => {
   }
 });
 
+const lifestyles = privateProcedure.query(async () => {
+  try {
+    const lifestylesResponse: LifestyleListType = await getLifestyles();
+    // logger.log(JSON.stringify(vehiclesAndDronesResponse, null, 2));
+    return lifestylesResponse;
+  } catch (error) {
+    logger.error("Unable to connect to the database:", error);
+    throw new Error("Database error");
+  }
+});
+
+const lifestyleQualities = privateProcedure.query(async () => {
+  try {
+    const lifestyleQualitiesResponse: LifestyleQualityListType =
+      await getLifestyleQualities();
+    // logger.log(JSON.stringify(vehiclesAndDronesResponse, null, 2));
+    return lifestyleQualitiesResponse;
+  } catch (error) {
+    logger.error("Unable to connect to the database:", error);
+    throw new Error("Database error");
+  }
+});
+
 const qualities = privateProcedure.query(async () => {
   try {
     const qualitiesResponse: QualityListType = await getQualities();
@@ -1487,10 +1578,12 @@ const CharacterInformationSchema = zod
     negativeQualityListSelected: QualitySelectedListSchema,
     skillSelections: CustomSkillListSchema,
     skillGroupSelections: CustomSkillGroupListSchema,
-    equipmentSelected: EquipmentListSchema,
     martialArtSelected: zod.optional(MartialArtSelectedSchema),
+    equipmentSelections: EquipmentListSchema,
+    lifestyleSelected: zod.optional(LifestyleSelectedSchema),
     karmaPoints: zod.number(),
     nuyen: zod.number(),
+    bonusInfo: CharacterCreatorBonusListSchema,
   })
   .strict();
 
@@ -1523,12 +1616,36 @@ const createCharacter = privateProcedure
         throw new Error("Heritage does not exist");
       }
     }
+    if (opts.input.lifestyleSelected === undefined) {
+      throw new Error("Lifestyle not selected");
+    }
+    const lifestyle = await db.em.findOne(Lifestyles, {
+      name: opts.input.lifestyleSelected.lifestyle.name,
+    });
+    if (lifestyle === null) {
+      throw new Error("Lifestyle does not exist");
+    }
+
+    const activeLifestyle = new ActiveLifestyles();
+    activeLifestyle.lifestyle = ref(lifestyle);
+    for (const selectedLifestyleQuality of opts.input.lifestyleSelected
+      .lifestyleQualityList) {
+      const lifestyleQuality = await db.em.findOne(LifestyleQualities, {
+        name: selectedLifestyleQuality.name,
+      });
+      if (lifestyleQuality === null) {
+        throw new Error("lifestyleQuality does not exist");
+      }
+      activeLifestyle.lifestyleQualityList.add(lifestyleQuality);
+    }
+
     const character = new Characters({
       name: "",
       heritage: ref(Heritages, heritage),
       priorities: opts.input.priorityInfo,
       attributes: opts.input.attributeInfo,
       specialAttributes: opts.input.specialAttributeInfo,
+      lifestyle: ref(activeLifestyle),
       nuyen: opts.input.nuyen,
       karmaPoints: opts.input.karmaPoints,
       user: ref(Users, opts.ctx.id),
@@ -1556,175 +1673,181 @@ const createCharacter = privateProcedure
     let activeTalent: ActiveTalents;
     switch (opts.input.talentInfo.type) {
       case talentCategoryEnum.Magic:
-        activeTalent = new ActiveMagicTalents(opts.input.talentInfo);
-        activeTalent.character = characterReference;
-        assert(activeTalent instanceof ActiveMagicTalents);
-        db.em.persist(activeTalent);
-        const magicTalent = opts.input.talentInfo;
-        const loadedTradition = await db.em.findOne(Traditions, {
-          name: magicTalent.selectedTradition.name,
-        });
-        if (loadedTradition === null) {
-          throw new Error(
-            `Tradition ${magicTalent.selectedTradition.name} does not exist`
-          );
-        }
-        activeTalent.tradition = ref(loadedTradition);
-        if (magicTalent.selectedTradition.customSpirits.customSpirits) {
-          const spiritTypes =
-            magicTalent.selectedTradition.customSpirits.selectedSpiritTypes;
-          let loadedSpirit = await db.em.findOne(Critters, {
-            name: spiritTypes.combat,
+        {
+          activeTalent = new ActiveMagicTalents(opts.input.talentInfo);
+          activeTalent.character = characterReference;
+          assert(activeTalent instanceof ActiveMagicTalents);
+          db.em.persist(activeTalent);
+          const magicTalent = opts.input.talentInfo;
+          const loadedTradition = await db.em.findOne(Traditions, {
+            name: magicTalent.selectedTradition.name,
           });
-          if (loadedSpirit === null) {
-            throw new Error(`Spirit ${spiritTypes.combat} does not exist`);
-          }
-          activeTalent.combatSpirit = ref(loadedSpirit);
-
-          loadedSpirit = await db.em.findOne(Critters, {
-            name: spiritTypes.detection,
-          });
-          if (loadedSpirit === null) {
-            throw new Error(`Spirit ${spiritTypes.detection} does not exist`);
-          }
-          activeTalent.detectionSpirit = ref(loadedSpirit);
-
-          loadedSpirit = await db.em.findOne(Critters, {
-            name: spiritTypes.health,
-          });
-          if (loadedSpirit === null) {
-            throw new Error(`Spirit ${spiritTypes.health} does not exist`);
-          }
-          activeTalent.healthSpirit = ref(loadedSpirit);
-
-          loadedSpirit = await db.em.findOne(Critters, {
-            name: spiritTypes.health,
-          });
-          if (loadedSpirit === null) {
-            throw new Error(`Spirit ${spiritTypes.health} does not exist`);
-          }
-          activeTalent.illusionSpirit = ref(loadedSpirit);
-
-          loadedSpirit = await db.em.findOne(Critters, {
-            name: spiritTypes.illusion,
-          });
-          if (loadedSpirit === null) {
-            throw new Error(`Spirit ${spiritTypes.combat} does not exist`);
-          }
-          activeTalent.manipulationSpirit = ref(loadedSpirit);
-        }
-
-        if (magicTalent.selectedMentor !== undefined) {
-          const loadedMentor = await db.em.findOne(MentorSpirits, {
-            name: magicTalent.selectedMentor.name,
-          });
-          if (loadedMentor === null) {
+          if (loadedTradition === null) {
             throw new Error(
-              `Mentor ${magicTalent.selectedMentor.name} does not exist`
+              `Tradition ${magicTalent.selectedTradition.name} does not exist`
             );
           }
-          const activeMentorSpirit = new ActiveMentorSpirits(
-            magicTalent.selectedMentor.choices
-          );
-          activeMentorSpirit.mentorSpirit = ref(loadedMentor);
-          activeTalent.mentorSpirit = ref(activeMentorSpirit);
-        }
+          activeTalent.tradition = ref(loadedTradition);
+          if (magicTalent.selectedTradition.customSpirits.customSpirits) {
+            const spiritTypes =
+              magicTalent.selectedTradition.customSpirits.selectedSpiritTypes;
+            let loadedSpirit = await db.em.findOne(Critters, {
+              name: spiritTypes.combat,
+            });
+            if (loadedSpirit === null) {
+              throw new Error(`Spirit ${spiritTypes.combat} does not exist`);
+            }
+            activeTalent.combatSpirit = ref(loadedSpirit);
 
-        if (magicTalent.selectedFormulae.selectFormulae) {
-          for (const spell of magicTalent.selectedFormulae.spells) {
-            const loadedSpell = await db.em.findOne(Spells, {
-              name: spell,
+            loadedSpirit = await db.em.findOne(Critters, {
+              name: spiritTypes.detection,
             });
-            if (loadedSpell === null) {
-              throw new Error(`Spell ${spell} does not exist`);
+            if (loadedSpirit === null) {
+              throw new Error(`Spirit ${spiritTypes.detection} does not exist`);
             }
-            activeTalent.spellList.add(loadedSpell);
-          }
-          for (const ritual of magicTalent.selectedFormulae.rituals) {
-            const loadedRitual = await db.em.findOne(Spells, {
-              name: ritual,
+            activeTalent.detectionSpirit = ref(loadedSpirit);
+
+            loadedSpirit = await db.em.findOne(Critters, {
+              name: spiritTypes.health,
             });
-            if (loadedRitual === null) {
-              throw new Error(`Ritual ${ritual} does not exist`);
+            if (loadedSpirit === null) {
+              throw new Error(`Spirit ${spiritTypes.health} does not exist`);
             }
-            activeTalent.ritualList.add(loadedRitual);
-          }
-          for (const alchemicalPreparation of magicTalent.selectedFormulae
-            .alchemicalPreparations) {
-            const loadedAlchemicalPreparation = await db.em.findOne(Spells, {
-              name: alchemicalPreparation,
+            activeTalent.healthSpirit = ref(loadedSpirit);
+
+            loadedSpirit = await db.em.findOne(Critters, {
+              name: spiritTypes.health,
             });
-            if (loadedAlchemicalPreparation === null) {
+            if (loadedSpirit === null) {
+              throw new Error(`Spirit ${spiritTypes.health} does not exist`);
+            }
+            activeTalent.illusionSpirit = ref(loadedSpirit);
+
+            loadedSpirit = await db.em.findOne(Critters, {
+              name: spiritTypes.illusion,
+            });
+            if (loadedSpirit === null) {
+              throw new Error(`Spirit ${spiritTypes.combat} does not exist`);
+            }
+            activeTalent.manipulationSpirit = ref(loadedSpirit);
+          }
+
+          if (magicTalent.selectedMentor !== undefined) {
+            const loadedMentor = await db.em.findOne(MentorSpirits, {
+              name: magicTalent.selectedMentor.name,
+            });
+            if (loadedMentor === null) {
               throw new Error(
-                `Alchemical Preparation ${alchemicalPreparation} does not exist`
+                `Mentor ${magicTalent.selectedMentor.name} does not exist`
               );
             }
-            activeTalent.alchemicalPreparationList.add(
-              loadedAlchemicalPreparation
+            const activeMentorSpirit = new ActiveMentorSpirits(
+              magicTalent.selectedMentor.choices
             );
+            activeMentorSpirit.mentorSpirit = ref(loadedMentor);
+            activeTalent.mentorSpirit = ref(activeMentorSpirit);
           }
-        }
 
-        if (magicTalent.selectedAdeptPowers.selectAdeptPowers) {
-          for (const adeptPower of magicTalent.selectedAdeptPowers
-            .adeptPowers) {
-            const loadedAdeptPower = await db.em.findOne(AdeptPowers, {
-              name: adeptPower,
-            });
-            if (loadedAdeptPower === null) {
-              throw new Error(`Adept Power ${adeptPower} does not exist`);
+          if (magicTalent.selectedFormulae.selectFormulae) {
+            for (const spell of magicTalent.selectedFormulae.spells) {
+              const loadedSpell = await db.em.findOne(Spells, {
+                name: spell,
+              });
+              if (loadedSpell === null) {
+                throw new Error(`Spell ${spell} does not exist`);
+              }
+              activeTalent.spellList.add(loadedSpell);
             }
-            activeTalent.adeptPowerList.add(loadedAdeptPower);
+            for (const ritual of magicTalent.selectedFormulae.rituals) {
+              const loadedRitual = await db.em.findOne(Spells, {
+                name: ritual,
+              });
+              if (loadedRitual === null) {
+                throw new Error(`Ritual ${ritual} does not exist`);
+              }
+              activeTalent.ritualList.add(loadedRitual);
+            }
+            for (const alchemicalPreparation of magicTalent.selectedFormulae
+              .alchemicalPreparations) {
+              const loadedAlchemicalPreparation = await db.em.findOne(Spells, {
+                name: alchemicalPreparation,
+              });
+              if (loadedAlchemicalPreparation === null) {
+                throw new Error(
+                  `Alchemical Preparation ${alchemicalPreparation} does not exist`
+                );
+              }
+              activeTalent.alchemicalPreparationList.add(
+                loadedAlchemicalPreparation
+              );
+            }
+          }
+
+          if (magicTalent.selectedAdeptPowers.selectAdeptPowers) {
+            for (const adeptPower of magicTalent.selectedAdeptPowers
+              .adeptPowers) {
+              const loadedAdeptPower = await db.em.findOne(AdeptPowers, {
+                name: adeptPower,
+              });
+              if (loadedAdeptPower === null) {
+                throw new Error(`Adept Power ${adeptPower} does not exist`);
+              }
+              activeTalent.adeptPowerList.add(loadedAdeptPower);
+            }
           }
         }
         break;
       case talentCategoryEnum.Resonance:
-        const resonanceTalent = opts.input.talentInfo;
-        activeTalent = new ActiveResonanceTalents(opts.input.talentInfo);
-        activeTalent.character = characterReference;
-        assert(activeTalent instanceof ActiveResonanceTalents);
-        db.em.persist(activeTalent);
-        for (const complexForm of opts.input.talentInfo.complexForms) {
-          const loadedComplexForm = await db.em.findOne(ComplexForms, {
-            name: complexForm,
-          });
-          if (loadedComplexForm === null) {
-            throw new Error(`Complex Form ${complexForm} does not exist`);
+        {
+          const resonanceTalent = opts.input.talentInfo;
+          activeTalent = new ActiveResonanceTalents(opts.input.talentInfo);
+          activeTalent.character = characterReference;
+          assert(activeTalent instanceof ActiveResonanceTalents);
+          db.em.persist(activeTalent);
+          for (const complexForm of opts.input.talentInfo.complexForms) {
+            const loadedComplexForm = await db.em.findOne(ComplexForms, {
+              name: complexForm,
+            });
+            if (loadedComplexForm === null) {
+              throw new Error(`Complex Form ${complexForm} does not exist`);
+            }
+            activeTalent.complexFormList.add(loadedComplexForm);
           }
-          activeTalent.complexFormList.add(loadedComplexForm);
-        }
 
-        if (resonanceTalent.selectedMentor !== undefined) {
-          const loadedMentor = await db.em.findOne(Paragons, {
-            name: resonanceTalent.selectedMentor.name,
-          });
-          if (loadedMentor === null) {
-            throw new Error(
-              `Mentor ${resonanceTalent.selectedMentor.name} does not exist`
-            );
+          if (resonanceTalent.selectedMentor !== undefined) {
+            const loadedMentor = await db.em.findOne(Paragons, {
+              name: resonanceTalent.selectedMentor.name,
+            });
+            if (loadedMentor === null) {
+              throw new Error(
+                `Mentor ${resonanceTalent.selectedMentor.name} does not exist`
+              );
+            }
+            const activeParagon = new ActiveParagons();
+            activeParagon.paragon = ref(loadedMentor);
+            activeTalent.paragon = ref(activeParagon);
           }
-          const activeParagon = new ActiveParagons();
-          activeParagon.paragon = ref(loadedMentor);
-          activeTalent.paragon = ref(activeParagon);
         }
         break;
       case talentCategoryEnum.Depth:
-        activeTalent = new ActiveDepthTalents(opts.input.talentInfo);
-        activeTalent.character = characterReference;
-        db.em.persist(activeTalent);
-        for (const program of opts.input.talentInfo.programs) {
-          const loadedProgram = await db.em.findOne(Programs, {
-            name: program.name,
-          });
-          if (loadedProgram === null) {
-            throw new Error(`Program ${program.name} does not exist`);
+        {
+          activeTalent = new ActiveDepthTalents(opts.input.talentInfo);
+          activeTalent.character = characterReference;
+          db.em.persist(activeTalent);
+          for (const program of opts.input.talentInfo.programs) {
+            const loadedProgram = await db.em.findOne(Programs, {
+              name: program.name,
+            });
+            if (loadedProgram === null) {
+              throw new Error(`Program ${program.name} does not exist`);
+            }
+            const activeProgram = new ActivePrograms(
+              ref(loadedProgram),
+              ref(activeTalent),
+              program.rating
+            );
+            db.em.persist(activeProgram);
           }
-          const activeProgram = new ActivePrograms(
-            ref(loadedProgram),
-            ref(activeTalent),
-            program.rating
-          );
-          db.em.persist(activeProgram);
         }
         break;
       case talentCategoryEnum.Mundane:
@@ -1768,7 +1891,7 @@ const createCharacter = privateProcedure
       db.em.persist(activeQuality);
     }
 
-    for (const unlinkedWeapon of opts.input.equipmentSelected.weapons) {
+    for (const unlinkedWeapon of opts.input.equipmentSelections.weapons) {
       const weapon = await db.em.findOne(Weapons, {
         name: unlinkedWeapon.name,
       });
@@ -1804,7 +1927,7 @@ const createCharacter = privateProcedure
       }
     }
 
-    for (const unlinkedArmour of opts.input.equipmentSelected.armours) {
+    for (const unlinkedArmour of opts.input.equipmentSelections.armours) {
       const armour = await db.em.findOne(Armours, {
         name: unlinkedArmour.name,
       });
@@ -1837,7 +1960,7 @@ const createCharacter = privateProcedure
       }
     }
 
-    for (const unlinkedGear of opts.input.equipmentSelected.gears) {
+    for (const unlinkedGear of opts.input.equipmentSelections.gears) {
       const gear = await db.em.findOne(Gears, {
         name: unlinkedGear.name,
       });
@@ -1861,7 +1984,7 @@ const createCharacter = privateProcedure
       }
     }
 
-    for (const unlinkedAugmentation of opts.input.equipmentSelected
+    for (const unlinkedAugmentation of opts.input.equipmentSelections
       .augmentations) {
       const augmentation = await db.em.findOne(Augmentations, {
         name: unlinkedAugmentation.name,
@@ -1890,7 +2013,7 @@ const createCharacter = privateProcedure
       }
     }
 
-    for (const unlinkedVehicle of opts.input.equipmentSelected.vehicles) {
+    for (const unlinkedVehicle of opts.input.equipmentSelections.vehicles) {
       const vehicle = await db.em.findOne(Vehicles, {
         name: unlinkedVehicle.name,
       });
@@ -2224,6 +2347,7 @@ const getCharacter = privateProcedure
             return await convertActiveMartialArtDBToDTO(martialArt);
           })
         ),
+        lifestyle: await convertActiveLifestyleDBToDTO(character.lifestyle.$),
       };
       return loadedCharacter;
     } catch (error) {
@@ -3031,6 +3155,68 @@ const convertActiveMartialArtDBToDTO = async function (
   };
 };
 
+const convertActiveLifestyleDBToDTO = async function (
+  activeLifestyleDB: ActiveLifestyles
+): Promise<LifestyleSelectedType> {
+  const db = await init();
+  const lifestyleDB = await db.em.findOne(
+    Lifestyles,
+    activeLifestyleDB.lifestyle.id,
+    {
+      populate: ["*"],
+    }
+  );
+  if (lifestyleDB === null) {
+    throw new Error("Lifestyle does not exist");
+  }
+  const lifestyle = {
+    name: lifestyleDB.name,
+    cost: lifestyleDB.cost,
+    lifestylePoints: lifestyleDB.lifestylePoints,
+    allowBonusLifestylePoints: lifestyleDB.allowBonusLifestylePoints,
+    freegridList: lifestyleDB.freegridList,
+    dice: lifestyleDB.dice,
+    startingNuyenMultiplier: lifestyleDB.startingNuyenMultiplier,
+    costIncreasePerCategoryLevelIncrease:
+      lifestyleDB.costIncreasePerCategoryLevelIncrease,
+    lifestyleCategoryDefaults: lifestyleDB.lifestyleCategoryDefaults,
+    bonus: lifestyleDB.bonus,
+    requirements: lifestyleDB.requirements,
+    forbidden: lifestyleDB.forbidden,
+    source: lifestyleDB.source,
+    page: lifestyleDB.page,
+    description: lifestyleDB.description,
+  };
+  const lifestyleQualityList = activeLifestyleDB.lifestyleQualityList.map(
+    (lifestyleQuality) => {
+      return {
+        name: lifestyleQuality.name,
+        category: lifestyleQuality.category,
+        monthlyCost: lifestyleQuality.monthlyCost,
+        lifestylePointCost: lifestyleQuality.lifestylePointCost,
+        lifestyleCostMultiplier: lifestyleQuality.lifestyleCostMultiplier,
+        requiredLifestyleList: lifestyleQuality.requiredLifestyleList.map(
+          (lifestyle) => {
+            return lifestyle.name;
+          }
+        ),
+        multipleAllowed: lifestyleQuality.multipleAllowed,
+        bonus: lifestyleQuality.bonus,
+        requirements: lifestyleQuality.requirements,
+        forbidden: lifestyleQuality.forbidden,
+        source: lifestyleQuality.source,
+        page: lifestyleQuality.page,
+        description: lifestyleQuality.description,
+      };
+    }
+  );
+
+  return {
+    lifestyle: lifestyle,
+    lifestyleQualityList: lifestyleQualityList,
+  };
+};
+
 export const characterRouter = router({
   traditions: traditions,
   mentors: mentors,
@@ -3050,6 +3236,8 @@ export const characterRouter = router({
   vehiclesAndDrones: vehiclesAndDrones,
   martialArts: martialArts,
   martialArtTechniques: martialArtTechniques,
+  lifestyles: lifestyles,
+  lifestyleQualities: lifestyleQualities,
   all: all,
   createCharacter: createCharacter,
   getCharacter: getCharacter,

@@ -1,0 +1,288 @@
+[
+  {
+    "name": "Street",
+    "cost": {
+      "cost": 0,
+      "increment": "Monthly"
+    },
+    "lifestylePoints": 2,
+    "freegridList": ["Public Grid"],
+    "dice": 1,
+    "startingNuyenMultiplier": 20,
+    "costIncreasePerCategoryLevelIncrease": {
+      "comfort": 50,
+      "neighborhood": 50,
+      "security": 50
+    },
+    "lifestyleCategoryDefaults": {
+      "comfortInfo": {
+        "minimum": 0,
+        "limit": 1
+      },
+      "neighborhoodInfo": {
+        "minimum": 0,
+        "limit": 1
+      },
+      "securityInfo": {
+        "minimum": 0,
+        "limit": 1
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 369,
+    "description": ""
+  },
+  {
+    "name": "Squatter",
+    "cost": {
+      "cost": 500,
+      "increment": "Monthly"
+    },
+    "lifestylePoints": 2,
+    "freegridList": ["Public Grid"],
+    "dice": 2,
+    "startingNuyenMultiplier": 40,
+    "lifestyleCategoryDefaults": {
+      "comfortInfo": {
+        "minimum": 1,
+        "limit": 2
+      },
+      "neighborhoodInfo": {
+        "minimum": 1,
+        "limit": 2
+      },
+      "securityInfo": {
+        "minimum": 1,
+        "limit": 2
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 369,
+    "description": ""
+  },
+  {
+    "name": "Low",
+    "cost": {
+      "cost": 2000,
+      "increment": "Monthly"
+    },
+    "lifestylePoints": 3,
+    "freegridList": ["Public Grid"],
+    "dice": 3,
+    "startingNuyenMultiplier": 60,
+    "lifestyleCategoryDefaults": {
+      "comfortInfo": {
+        "minimum": 2,
+        "limit": 3
+      },
+      "neighborhoodInfo": {
+        "minimum": 2,
+        "limit": 3
+      },
+      "securityInfo": {
+        "minimum": 2,
+        "limit": 3
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 369,
+    "description": ""
+  },
+  {
+    "name": "Medium",
+    "cost": {
+      "cost": 5000,
+      "increment": "Monthly"
+    },
+    "lifestylePoints": 4,
+    "freegridList": ["Local Grid", "Public Grid"],
+    "dice": 4,
+    "startingNuyenMultiplier": 100,
+    "lifestyleCategoryDefaults": {
+      "comfortInfo": {
+        "minimum": 3,
+        "limit": 4
+      },
+      "neighborhoodInfo": {
+        "minimum": 4,
+        "limit": 5
+      },
+      "securityInfo": {
+        "minimum": 3,
+        "limit": 4
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 369,
+    "description": ""
+  },
+  {
+    "name": "High",
+    "cost": {
+      "cost": 10000,
+      "increment": "Monthly"
+    },
+    "lifestylePoints": 6,
+    "freegridList": ["Global Grid", "Local Grid", "Public Grid"],
+    "dice": 5,
+    "startingNuyenMultiplier": 500,
+    "lifestyleCategoryDefaults": {
+      "comfortInfo": {
+        "minimum": 4,
+        "limit": 6
+      },
+      "neighborhoodInfo": {
+        "minimum": 5,
+        "limit": 6
+      },
+      "securityInfo": {
+        "minimum": 4,
+        "limit": 6
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 369,
+    "description": ""
+  },
+  {
+    "name": "Luxury",
+    "cost": {
+      "cost": 100000,
+      "increment": "Monthly"
+    },
+    "lifestylePoints": 12,
+    "freegridList": ["Global Grid", "Local Grid", "Public Grid"],
+    "dice": 6,
+    "startingNuyenMultiplier": 1000,
+    "lifestyleCategoryDefaults": {
+      "comfortInfo": {
+        "minimum": 5,
+        "limit": 8
+      },
+      "neighborhoodInfo": {
+        "minimum": 5,
+        "limit": 7
+      },
+      "securityInfo": {
+        "minimum": 5,
+        "limit": 8
+      }
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 369,
+    "description": ""
+  },
+  {
+    "name": "Commercial",
+    "cost": {
+      "cost": 8000,
+      "increment": "Monthly"
+    },
+    "lifestylePoints": 4,
+    "freegridList": ["Local Grid", "Public Grid"],
+    "dice": 4,
+    "startingNuyenMultiplier": 100,
+    "lifestyleCategoryDefaults": {
+      "comfortInfo": {
+        "minimum": 3,
+        "limit": 4
+      },
+      "neighborhoodInfo": {
+        "minimum": 4,
+        "limit": 6
+      },
+      "securityInfo": {
+        "minimum": 3,
+        "limit": 7
+      }
+    },
+    "source": "Run Faster",
+    "page": 218,
+    "description": ""
+  },
+  {
+    "name": "Bolt Hole",
+    "cost": {
+      "cost": 1000,
+      "increment": "Monthly"
+    },
+    "lifestylePoints": 4,
+    "freegridList": ["Public Grid"],
+    "dice": 1,
+    "startingNuyenMultiplier": 0,
+    "lifestyleCategoryDefaults": {
+      "comfortInfo": {
+        "minimum": 1,
+        "limit": 2
+      },
+      "neighborhoodInfo": {
+        "minimum": 1,
+        "limit": 4
+      },
+      "securityInfo": {
+        "minimum": 1,
+        "limit": 4
+      }
+    },
+    "source": "Run Faster",
+    "page": 216,
+    "description": ""
+  },
+  {
+    "name": "Hospitalized, Basic",
+    "cost": {
+      "cost": 500,
+      "increment": "Daily"
+    },
+    "lifestylePoints": 0,
+    "freegridList": ["Global Grid", "Local Grid", "Public Grid"],
+    "dice": 0,
+    "startingNuyenMultiplier": 0,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 369,
+    "description": ""
+  },
+  {
+    "name": "Hospitalized, Intensive",
+    "cost": {
+      "cost": 1000,
+      "increment": "Daily"
+    },
+    "lifestylePoints": 0,
+    "freegridList": ["Global Grid", "Local Grid", "Public Grid"],
+    "dice": 0,
+    "startingNuyenMultiplier": 0,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 369,
+    "description": ""
+  },
+  {
+    "name": "Traveler",
+    "cost": {
+      "cost": 3000,
+      "increment": "Monthly"
+    },
+    "lifestylePoints": 2,
+    "allowBonusLifestylePoints": true,
+    "freegridList": ["Public Grid"],
+    "dice": 3,
+    "startingNuyenMultiplier": 60,
+    "lifestyleCategoryDefaults": {
+      "comfortInfo": {
+        "minimum": 2,
+        "limit": 4
+      },
+      "neighborhoodInfo": {
+        "minimum": 2,
+        "limit": 4
+      },
+      "securityInfo": {
+        "minimum": 2,
+        "limit": 4
+      }
+    },
+    "source": "Run Faster",
+    "page": 218,
+    "description": ""
+  }
+]

@@ -68,7 +68,7 @@ export function ParseBiowares() {
     const check = AugmentationSchema.safeParse(convertedBioware);
     if (!check.success) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      console.log(convertedBioware);
+      console.dir(convertedBioware, { depth: Infinity });
       throw new Error(check.error.message);
     }
     return check.data;
@@ -100,6 +100,7 @@ function convertBioware(bioware: BiowareXmlType) {
   if (match.failed()) {
     assert(false, match.message);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const essenceCost = essenceCostSemantics(match).eval();
   let biowareModification;
   if (bioware.addtoparentess !== undefined) {
@@ -114,11 +115,13 @@ function convertBioware(bioware: BiowareXmlType) {
   if (match.failed()) {
     assert(false, match.message);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const availability = availabilityAugmentationSemantics(match).eval();
   match = Cost.match(bioware.cost.toString());
   if (match.failed()) {
     assert(false, match.message);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const cost = costAugmentationSemantics(match).eval();
 
   const addWeapon =
@@ -135,6 +138,7 @@ function convertBioware(bioware: BiowareXmlType) {
     if (match.failed()) {
       assert(false, match.message);
     }
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     blockedMountList = mountsAugmentationSemantics(match).eval();
   }
   const selectSide = bioware.selectside === undefined ? undefined : true;

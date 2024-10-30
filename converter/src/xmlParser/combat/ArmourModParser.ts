@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import assert from "assert";
 import { XMLParser } from "fast-xml-parser";
 import path from "path";
@@ -68,7 +69,7 @@ export function ParseArmourMods() {
       const check = ArmourModSchema.safeParse(convertedArmourMod);
       if (!check.success) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.log(convertedArmourMod);
+        console.dir(convertedArmourMod, { depth: Infinity });
         throw new Error(check.error.message);
       }
       return check.data;
@@ -107,6 +108,7 @@ function convertArmourMod(armourMod: ArmourModXmlType) {
   if (match.failed()) {
     assert(false, match.message);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const capacityCost = capacityArmourModificationSemantics(match).eval();
   // console.log(`Capacity: ${capacity}`);
 
@@ -120,6 +122,7 @@ function convertArmourMod(armourMod: ArmourModXmlType) {
     assert(false, match.message);
   }
   const availability: AvailabilityArmourModType =
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     availabilityArmourModificationSemantics(match).eval();
   // console.log(`Availability: ${availability}`);
 
@@ -127,6 +130,7 @@ function convertArmourMod(armourMod: ArmourModXmlType) {
   if (match.failed()) {
     assert(false, match.message);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const cost: CostArmourModType = costArmourModificationSemantics(match).eval();
   // console.log(`Cost: ${cost}`);
 

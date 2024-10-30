@@ -21,6 +21,7 @@ import type {
   TalentInfoType,
   FormulaListSelectedType,
   MartialArtSelectedType,
+  LifestyleSelectedType,
 } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
 import { CreatorSummary } from "./CreatorSummary.js";
 import { useNavigate } from "react-router-dom";
@@ -32,12 +33,11 @@ import type {
   SkillPriorityType,
   TalentPriorityType,
 } from "@neon-codex/common/build/schemas/otherData/prioritySchemas.js";
-import type {
-  CharacterCreatorBonusListType,
-  SkillPointInfoType,
-} from "../commonSchemas.js";
+import type { SkillPointInfoType } from "../commonSchemas.js";
 import { TalentSelect } from "./TalentSelect.js";
 import { MartialArtSelect } from "./MartialArtsSelect.js";
+import { LifestyleSelect } from "./LIfestyleSelect.js";
+import type { CharacterCreatorBonusListType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 
 const characterCreatorPath = "/character_creator";
 const CharacterCreator = function () {
@@ -125,18 +125,20 @@ const CharacterCreator = function () {
   // TODO: set skill group selections
   const [skillGroupSelections, _setSkillGroupSelections] =
     useState<CustomSkillGroupListType>([]);
-  const [martialArtSelections, setMartialArtSelections] = useState<
+  const [martialArtSelected, setMartialArtSelected] = useState<
     MartialArtSelectedType | undefined
   >(undefined);
-  const [equipmentSelected, setEquipmentSelected] = useState<EquipmentListType>(
-    {
+  const [equipmentSelections, setEquipmentSelections] =
+    useState<EquipmentListType>({
       weapons: [],
       gears: [],
       armours: [],
       augmentations: [],
       vehicles: [],
-    }
-  );
+    });
+  const [lifestyleSelected, setLifestyleSelected] = useState<
+    LifestyleSelectedType | undefined
+  >(undefined);
   const [nuyen, setNuyen] = useState(0);
 
   const onBonusInfoChanged = function (
@@ -260,10 +262,10 @@ const CharacterCreator = function () {
   ) {
     setSkillSelections(loadingSkillSelection);
   };
-  const onEquipmentSelectedChanged = function (
-    equipmentSelected: EquipmentListType
+  const onEquipmentSelectionsChanged = function (
+    equipmentSelections: EquipmentListType
   ) {
-    setEquipmentSelected(equipmentSelected);
+    setEquipmentSelections(equipmentSelections);
   };
   const onNuyenChanged = function (nuyen: number) {
     setNuyen(nuyen);
@@ -271,7 +273,12 @@ const CharacterCreator = function () {
   const onMartialArtSelectionsChanged = function (
     martialArtSelected: MartialArtSelectedType | undefined
   ) {
-    setMartialArtSelections(martialArtSelected);
+    setMartialArtSelected(martialArtSelected);
+  };
+  const onLifestyleSelectedChanged = function (
+    lifestyleSelected: LifestyleSelectedType
+  ) {
+    setLifestyleSelected(lifestyleSelected);
   };
 
   // TODO: make the page selection vary depending on talent choice
@@ -284,6 +291,7 @@ const CharacterCreator = function () {
     SkillListSelect = "SkillListSelect",
     MartialArtSelect = "MartialArtSelect",
     EquipmentListSelect = "EquipmentListSelect",
+    LifestyleSelect = "LifestyleSelect",
     CreatorSummary = "CreatorSummary",
   }
 
@@ -296,6 +304,7 @@ const CharacterCreator = function () {
           CharacterPageEnum.SkillListSelect,
           CharacterPageEnum.MartialArtSelect,
           CharacterPageEnum.EquipmentListSelect,
+          CharacterPageEnum.LifestyleSelect,
           CharacterPageEnum.CreatorSummary,
         ]
       : [
@@ -306,6 +315,7 @@ const CharacterCreator = function () {
           CharacterPageEnum.SkillListSelect,
           CharacterPageEnum.MartialArtSelect,
           CharacterPageEnum.EquipmentListSelect,
+          CharacterPageEnum.LifestyleSelect,
           CharacterPageEnum.CreatorSummary,
         ];
 
@@ -403,7 +413,7 @@ const CharacterCreator = function () {
         <MartialArtSelect
           karmaPoints={karmaPoints}
           setKarmaPoints={onKarmaPointsChanged}
-          martialArtSelected={martialArtSelections}
+          martialArtSelected={martialArtSelected}
           setMartialArtSelected={onMartialArtSelectionsChanged}
         />
       );
@@ -411,8 +421,8 @@ const CharacterCreator = function () {
     case CharacterPageEnum.EquipmentListSelect:
       currentStage = (
         <EquipmentSelect
-          equipmentSelected={equipmentSelected}
-          setEquipmentSelected={onEquipmentSelectedChanged}
+          equipmentSelections={equipmentSelections}
+          setEquipmentSelections={onEquipmentSelectionsChanged}
           nuyen={nuyen}
           setNuyen={onNuyenChanged}
           essencePoints={essencePoints}
@@ -422,18 +432,31 @@ const CharacterCreator = function () {
         />
       );
       break;
+    case CharacterPageEnum.LifestyleSelect:
+      currentStage = (
+        <LifestyleSelect
+          lifestyleSelected={lifestyleSelected}
+          setLifestyleSelected={onLifestyleSelectedChanged}
+        />
+      );
+      break;
     case CharacterPageEnum.CreatorSummary:
       currentStage = (
         <CreatorSummary
           priorityInfo={priorityInfo}
+          heritageInfo={priorityHeritage}
           attributeInfo={attributeInfo}
           specialAttributeInfo={specialAttributeInfo}
-          karmaPoints={karmaPoints}
+          talentInfo={talentInfo}
           positiveQualitiesSelected={positiveQualityListSelected}
           negativeQualitiesSelected={negativeQualityListSelected}
           skillPoints={skillPoints}
           skillSelections={skillSelections}
-          equipmentSelected={equipmentSelected}
+          skillGroupSelections={skillGroupSelections}
+          martialArtSelected={martialArtSelected}
+          equipmentSelections={equipmentSelections}
+          lifestyleSelected={lifestyleSelected}
+          karmaPoints={karmaPoints}
           nuyen={nuyen}
           bonusInfo={bonusInfo}
         />
@@ -496,10 +519,12 @@ const CharacterCreator = function () {
               negativeQualityListSelected: negativeQualityListSelected,
               skillSelections: skillSelections,
               skillGroupSelections: skillGroupSelections,
-              equipmentSelected: equipmentSelected,
-              martialArtSelected: martialArtSelections,
+              martialArtSelected: martialArtSelected,
+              equipmentSelections: equipmentSelections,
+              lifestyleSelected: lifestyleSelected,
               karmaPoints: karmaPoints,
               nuyen: nuyen,
+              bonusInfo: bonusInfo,
             })
             .then((characterId) => {
               navigate(`/characters/${characterId}`);

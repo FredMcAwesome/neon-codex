@@ -10,7 +10,7 @@ import {
 import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
 import { sourceBookEnum } from "@neon-codex/common/build/enums.js";
-import type { MartialArtType } from "@neon-codex/common/src/schemas/abilities/martialArtSchemas.js";
+import type { MartialArtType } from "@neon-codex/common/build/schemas/abilities/martialArtSchemas.js";
 import { MartialArtTechniques } from "./martialArtTechniqueModel.js";
 
 @Entity()

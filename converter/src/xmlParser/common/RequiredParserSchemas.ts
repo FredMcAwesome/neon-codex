@@ -444,6 +444,8 @@ const containsSchema = zod.union([
     })
     .strict(),
   zod.object({ program: zod.string() }).strict(),
+  zod.object({ lifestylequality: StringArrayOrStringSchema }).strict(),
+  zod.object({ characterquality: StringArrayOrStringSchema }).strict(),
   RequiredRecursiveSchema,
 ]);
 

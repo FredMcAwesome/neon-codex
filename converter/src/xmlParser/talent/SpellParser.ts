@@ -67,7 +67,7 @@ export function ParseSpells() {
       const check = SpellSchema.safeParse(convertedSpell);
       if (!check.success) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.log(convertedSpell);
+        console.dir(convertedSpell, { depth: Infinity });
         throw new Error(check.error.message);
       }
       return check.data;
@@ -96,10 +96,11 @@ function convertSpell(spell: SpellXmlType) {
   const damageType = convertSpellDamageType(spell.damage);
   const descriptorList = convertSpellDescriptors(spell.descriptor);
   const duration = convertDuration(spell.duration);
-  let match = Damage.match(spell.dv);
+  const match = Damage.match(spell.dv);
   if (match.failed()) {
     assert(false, match.message);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const damage = damageSpellSemantics(match).eval();
   const range = convertSpellPowerRange(spell.range);
   const type = convertSpellType(spell.type);

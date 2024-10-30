@@ -7,7 +7,7 @@ import {
 } from "@neon-codex/common/build/enums.js";
 import type { QualitySelectedListType } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
 import type { QualityListType } from "@neon-codex/common/build/schemas/abilities/qualitySchemas.js";
-import type { CharacterCreatorBonusListType } from "../commonSchemas.js";
+import type { CharacterCreatorBonusListType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 
 const QualityDefault = "Select a quality";
 

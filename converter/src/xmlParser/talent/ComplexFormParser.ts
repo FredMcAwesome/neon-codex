@@ -59,7 +59,7 @@ export function ParseComplexForms() {
       const check = ComplexFormSchema.safeParse(convertedComplexForm);
       if (!check.success) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.log(convertedComplexForm);
+        console.dir(convertedComplexForm, { depth: Infinity });
         throw new Error(check.error.message);
       }
       return check.data;
@@ -90,6 +90,7 @@ function convertComplexForm(complexForm: ComplexFormXmlType) {
   if (match.failed()) {
     assert(false, match.message);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const fadingValue = fadingValueSemantics(match).eval();
 
   const bonus =

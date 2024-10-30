@@ -68,7 +68,7 @@ export function ParseParagons() {
       const check = MentorSchema.safeParse(convertedParagon);
       if (!check.success) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.log(convertedParagon);
+        console.dir(convertedParagon, { depth: Infinity });
         throw new Error(check.error.message);
       }
       return check.data;

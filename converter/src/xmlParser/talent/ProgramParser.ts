@@ -86,7 +86,7 @@ export function ParsePrograms() {
       const check = ProgramSchema.safeParse(convertedProgram);
       if (!check.success) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.log(convertedProgram);
+        console.dir(convertedProgram, { depth: Infinity });
         throw new Error(check.error.message);
       }
       return check.data;
@@ -124,11 +124,13 @@ function convertProgram(program: ProgramXmlType) {
     assert(false, match.message);
   }
   const availability: AvailabilityProgramType =
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     availabilityProgramSemantics(match).eval();
   match = Cost.match(program.cost.toString());
   if (match.failed()) {
     assert(false, match.message);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const cost: CostProgramType = costProgramSemantics(match).eval();
 
   const bonus =

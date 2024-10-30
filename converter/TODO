@@ -24,6 +24,7 @@ So far I have only passed to the frontend:
   - Mentors
   - Paragons
   - Marital Arts
+  - Lifestyles
 
 Still need passed through to frontend):
   - Drug Components
@@ -36,7 +37,6 @@ Other main priorities:
 Other xmls to implement:
   - Actions
   - Life modules
-  - Lifestyles
   - Packs
 
 Some xmls are better to just copy paste to an enum:

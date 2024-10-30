@@ -22,8 +22,8 @@ import { Critters } from "../creatures/critterModel.js";
 import { AdeptPowers } from "../abilities/adeptPowerModel.js";
 import { ComplexForms } from "../abilities/complexFormModel.js";
 import { ActivePrograms } from "./activeProgramModel.js";
-import { ActiveMentorSpirits } from "./ActiveMentorModel.js";
-import { ActiveParagons } from "./ActiveParagonModel.js";
+import { ActiveMentorSpirits } from "./activeMentorModel.js";
+import { ActiveParagons } from "./activeParagonModel.js";
 
 @Entity({
   abstract: true,

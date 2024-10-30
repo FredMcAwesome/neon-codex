@@ -69,7 +69,7 @@ export function ParseVehicles() {
       const check = VehicleSchema.safeParse(convertedVehicle);
       if (!check.success) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.log(convertedVehicle);
+        console.dir(convertedVehicle, { depth: Infinity });
         throw new Error(check.error.message);
       }
       return check.data;
@@ -96,11 +96,13 @@ const convertVehicle = function (vehicle: VehicleXmlType) {
   if (match.failed()) {
     assert(false, match.message);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const acceleration = accelerationSemantics(match).eval();
   match = Speed.match(vehicle.speed.toString());
   if (match.failed()) {
     assert(false, match.message);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const speed = speedSemantics(match).eval();
 
   const { type, subtype } = convertVehicleCategory(vehicle.category);
@@ -108,17 +110,20 @@ const convertVehicle = function (vehicle: VehicleXmlType) {
   if (match.failed()) {
     assert(false, match.message);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const availability = availabilitySemantics(match).eval();
   match = Cost.match(vehicle.cost.toString());
   if (match.failed()) {
     assert(false, match.message);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const cost = costSemantics(match).eval();
 
   match = Handling.match(vehicle.handling.toString());
   if (match.failed()) {
     assert(false, match.message);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const handling = handlingSemantics(match).eval();
 
   const includedGearList =

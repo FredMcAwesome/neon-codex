@@ -31,6 +31,10 @@ import {
   MartialArtSchema,
   MartialArtTechniqueListSchema,
 } from "../abilities/martialArtSchemas.js";
+import {
+  LifestyleQualityListSchema,
+  LifestyleSchema,
+} from "../otherData/lifestyleSchemas.js";
 
 export enum PrioritiesEnum {
   Heritage,
@@ -288,6 +292,14 @@ export type MartialArtSelectedListType = zod.infer<
   typeof MartialArtSelectedListSchema
 >;
 
+export const LifestyleSelectedSchema = zod
+  .object({
+    lifestyle: LifestyleSchema,
+    lifestyleQualityList: LifestyleQualityListSchema,
+  })
+  .strict();
+export type LifestyleSelectedType = zod.infer<typeof LifestyleSelectedSchema>;
+
 export type CharacterType = {
   name: string;
   heritage: HeritageType;
@@ -305,6 +317,7 @@ export type CharacterType = {
   augmentationList: CustomisedAugmentationListType;
   vehicleList: CustomisedVehicleListType;
   martialArtList: MartialArtSelectedListType;
+  lifestyle: LifestyleSelectedType;
 };
 export const CharacterSchema: zod.ZodType<CharacterType> = zod
   .object({
@@ -324,6 +337,7 @@ export const CharacterSchema: zod.ZodType<CharacterType> = zod
     augmentationList: CustomisedAugmentationListSchema,
     vehicleList: CustomisedVehicleListSchema,
     martialArtList: zod.array(MartialArtSelectedSchema),
+    lifestyle: LifestyleSelectedSchema,
   })
   .strict();
 

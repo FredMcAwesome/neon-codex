@@ -62,7 +62,7 @@ export function ParseTraditions() {
       const check = TraditionSchema.safeParse(convertedTradition);
       if (!check.success) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.log(convertedTradition);
+        console.dir(convertedTradition, { depth: Infinity });
         throw new Error(check.error.message);
       }
       return check.data;

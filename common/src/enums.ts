@@ -993,3 +993,23 @@ export enum BonusSourceEnum {
   Quality = "Quality",
   Tradition = "Tradition",
 }
+
+export enum LifestyleCostIncrementEnum {
+  Daily = "Daily",
+  Monthly = "Monthly",
+}
+
+export enum LifestyleQualityCategoryEnum {
+  Entertainment_Asset = "Entertainment - Asset",
+  Entertainment_Service = "Entertainment - Service",
+  Entertainment_Outing = "Entertainment - Outing",
+  Positive = "Positive",
+  Negative = "Negative",
+  Contracts = "Contracts",
+}
+
+export enum GridCategoryEnum {
+  LocalGrid = "Local Grid",
+  PublicGrid = "Public Grid",
+  GlobalGrid = "Global Grid",
+}

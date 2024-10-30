@@ -60,11 +60,13 @@ import type {
   ArmourType,
 } from "@neon-codex/common/build/schemas/equipment/combat/armourSchemas.js";
 import { Fragment } from "react";
-import type { CharacterCreatorBonusListType } from "../commonSchemas.js";
+import type { CharacterCreatorBonusListType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 
 interface IProps {
-  equipmentSelected: EquipmentListType;
-  setEquipmentSelected: (loadingEquipmentSelected: EquipmentListType) => void;
+  equipmentSelections: EquipmentListType;
+  setEquipmentSelections: (
+    loadingEquipmentSelections: EquipmentListType
+  ) => void;
   nuyen: number;
   setNuyen: (nuyen: number) => void;
   essencePoints: number;
@@ -88,21 +90,21 @@ export const EquipmentSelect = function (props: IProps) {
     }
   }
 
-  const equipmentSelected = props.equipmentSelected;
+  const equipmentSelections = props.equipmentSelections;
 
   const addWeapon = function (weapon: WeaponSummaryType) {
-    const equipment = { ...equipmentSelected };
+    const equipment = { ...equipmentSelections };
     equipment.weapons.push(weapon);
-    props.setEquipmentSelected(equipment);
+    props.setEquipmentSelections(equipment);
     props.setNuyen(
       props.nuyen - costCalculation<CostWeaponType>(weapon.cost, {})
     );
   };
   const removeWeapon = function (weapon: WeaponSummaryType, index: number) {
-    const equipment = { ...equipmentSelected };
+    const equipment = { ...equipmentSelections };
     if (equipment.weapons[index] === weapon) {
       equipment.weapons.splice(index, 1);
-      props.setEquipmentSelected(equipment);
+      props.setEquipmentSelections(equipment);
       props.setNuyen(
         props.nuyen + costCalculation<CostWeaponType>(weapon.cost, {})
       );
@@ -111,67 +113,67 @@ export const EquipmentSelect = function (props: IProps) {
     }
   };
   const addArmour = function (armour: ArmourType) {
-    const equipment = { ...equipmentSelected };
+    const equipment = { ...equipmentSelections };
     equipment.armours.push(armour);
-    props.setEquipmentSelected(equipment);
+    props.setEquipmentSelections(equipment);
     props.setNuyen(props.nuyen - costCalculation(armour.cost, {}));
   };
   const removeArmour = function (armour: ArmourType, index: number) {
-    const equipment = { ...equipmentSelected };
+    const equipment = { ...equipmentSelections };
     if (equipment.armours[index] === armour) {
       equipment.armours.splice(index, 1);
-      props.setEquipmentSelected(equipment);
+      props.setEquipmentSelections(equipment);
       props.setNuyen(props.nuyen + costCalculation(armour.cost, {}));
     } else {
       console.error("No armour at index: " + index);
     }
   };
   const addGear = function (gear: GearType) {
-    const equipment = Object.assign({}, equipmentSelected);
+    const equipment = Object.assign({}, equipmentSelections);
     equipment.gears.push(gear);
-    props.setEquipmentSelected(equipment);
+    props.setEquipmentSelections(equipment);
     props.setNuyen(props.nuyen - costCalculation(gear.cost, {}));
   };
   const removeGear = function (other: GearType, index: number) {
-    const equipment = Object.assign({}, equipmentSelected);
+    const equipment = Object.assign({}, equipmentSelections);
     if (equipment.gears[index] === other) {
       equipment.gears.splice(index, 1);
-      props.setEquipmentSelected(equipment);
+      props.setEquipmentSelections(equipment);
       props.setNuyen(props.nuyen + costCalculation(other.cost, {}));
     } else {
       console.error("No gear at index: " + index);
     }
   };
   const addAugmentations = function (augmentation: AugmentationType) {
-    const equipment = Object.assign({}, equipmentSelected);
+    const equipment = Object.assign({}, equipmentSelections);
     equipment.augmentations.push(augmentation);
-    props.setEquipmentSelected(equipment);
+    props.setEquipmentSelections(equipment);
     props.setNuyen(props.nuyen - costCalculation(augmentation.cost, {}));
   };
   const removeAugmentations = function (
     augmentation: AugmentationType,
     index: number
   ) {
-    const equipment = Object.assign({}, equipmentSelected);
+    const equipment = Object.assign({}, equipmentSelections);
     if (equipment.augmentations[index] === augmentation) {
       equipment.augmentations.splice(index, 1);
-      props.setEquipmentSelected(equipment);
+      props.setEquipmentSelections(equipment);
       props.setNuyen(props.nuyen + costCalculation(augmentation.cost, {}));
     } else {
       console.error("No augmentation at index: " + index);
     }
   };
   const addVehicles = function (vehicle: VehicleType) {
-    const equipment = Object.assign({}, equipmentSelected);
+    const equipment = Object.assign({}, equipmentSelections);
     equipment.vehicles.push(vehicle);
-    props.setEquipmentSelected(equipment);
+    props.setEquipmentSelections(equipment);
     props.setNuyen(props.nuyen - costCalculation(vehicle.cost, {}));
   };
   const removeVehicles = function (vehicle: VehicleType, index: number) {
-    const equipment = Object.assign({}, equipmentSelected);
+    const equipment = Object.assign({}, equipmentSelections);
     if (equipment.vehicles[index] === vehicle) {
       equipment.vehicles.splice(index, 1);
-      props.setEquipmentSelected(equipment);
+      props.setEquipmentSelections(equipment);
       props.setNuyen(props.nuyen + costCalculation(vehicle.cost, {}));
     } else {
       console.error("No vehicle/drone at index: " + index);
@@ -263,7 +265,7 @@ export const EquipmentSelect = function (props: IProps) {
       <div>
         <h3>Weapons</h3>
         <div>
-          {equipmentSelected.weapons.map((weapon, index) => {
+          {equipmentSelections.weapons.map((weapon, index) => {
             const addItem = function () {
               addWeapon(weapon);
             };
@@ -299,7 +301,7 @@ export const EquipmentSelect = function (props: IProps) {
         </div>
         <h3>Armour</h3>
         <div>
-          {equipmentSelected.armours.map((armour, index) => {
+          {equipmentSelections.armours.map((armour, index) => {
             const addItem = function () {
               addArmour(armour);
             };
@@ -333,7 +335,7 @@ export const EquipmentSelect = function (props: IProps) {
         </div>
         <h3>Gear</h3>
         <div>
-          {equipmentSelected.gears.map((gear, index) => {
+          {equipmentSelections.gears.map((gear, index) => {
             const addItem = function () {
               addGear(gear);
             };
@@ -354,7 +356,7 @@ export const EquipmentSelect = function (props: IProps) {
         </div>
         <h3>Augmentation</h3>
         <div>
-          {equipmentSelected.augmentations.map((augmentations, index) => {
+          {equipmentSelections.augmentations.map((augmentations, index) => {
             const addItem = function () {
               addAugmentations(augmentations);
             };
@@ -375,7 +377,7 @@ export const EquipmentSelect = function (props: IProps) {
         </div>
         <h3>Vehicles</h3>
         <div>
-          {equipmentSelected.vehicles.map((vehicle, index) => {
+          {equipmentSelections.vehicles.map((vehicle, index) => {
             const addItem = function () {
               addVehicles(vehicle);
             };

@@ -17,8 +17,10 @@ import {
 } from "@neon-codex/common/build/enums.js";
 import type { HeritageListType } from "@neon-codex/common/build/schemas/abilities/heritageSchemas.js";
 import type { TalentPriorityType } from "@neon-codex/common/build/schemas/otherData/prioritySchemas.js";
-import type { AttributeRangeType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
-import type { CharacterCreatorBonusListType } from "../commonSchemas.js";
+import type {
+  AttributeRangeType,
+  CharacterCreatorBonusListType,
+} from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 
 const AttributeOptionsSchema = zod
   .object({

@@ -71,7 +71,7 @@ export function ParseArmour() {
       const check = ArmourSchema.safeParse(convertedArmour);
       if (!check.success) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.log(convertedArmour);
+        console.dir(convertedArmour, { depth: Infinity });
         throw new Error(check.error.message);
       }
       return check.data;
@@ -119,11 +119,13 @@ function convertArmour(armour: ArmourXmlType) {
     assert(false, match.message);
   }
   const availability: AvailabilityArmourType =
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     availabilityArmourSemantics(match).eval();
   match = Cost.match(armour.cost.toString());
   if (match.failed()) {
     assert(false, match.message);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const cost: CostArmourType = costArmourSemantics(match).eval();
 
   const bonus =
