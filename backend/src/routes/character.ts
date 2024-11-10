@@ -128,15 +128,15 @@ import {
   CustomisedQualities,
 } from "@neon-codex/database/build/models/rpg/activeTables/activeQualityModel.js";
 import { CustomisedSkills } from "@neon-codex/database/build/models/rpg/activeTables/activeSkillModel.js";
-import { CustomisedWeapons } from "@neon-codex/database/build/models/rpg/activeTables/customisedWeaponModel.js";
-import { CustomisedArmours } from "@neon-codex/database/build/models/rpg/activeTables/customisedArmourModel.js";
+import { CustomisedWeapons } from "@neon-codex/database/build/models/rpg/activeTables/activeWeaponModel.js";
+import { CustomisedArmours } from "@neon-codex/database/build/models/rpg/activeTables/activeArmourModel.js";
 import { WeaponAccessories } from "@neon-codex/database/build/models/rpg/equipment/combat/weaponAccessoryModel.js";
 import {
   ActiveAugmentationGears,
   ActiveGears,
   CustomisedGears,
 } from "@neon-codex/database/build/models/rpg/activeTables/activeGearModel.js";
-import type { useGearType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
+import type { IncludedGearType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 import {
   CustomisedWeaponAccessories,
   type ActiveWeaponAccessories,
@@ -146,7 +146,7 @@ import { ArmourModifications } from "@neon-codex/database/build/models/rpg/equip
 import { CustomisedAugmentations } from "@neon-codex/database/build/models/rpg/activeTables/activeAugmentationModel.js";
 import { VehicleModifications } from "@neon-codex/database/build/models/rpg/equipment/rigger/vehicleModificationModel.js";
 import { CustomisedVehicleModifications } from "@neon-codex/database/build/models/rpg/activeTables/activeVehicleModificationModel.js";
-import { CustomisedVehicles } from "@neon-codex/database/build/models/rpg/activeTables/customisedVehicleModel.js";
+import { CustomisedVehicles } from "@neon-codex/database/build/models/rpg/activeTables/activeVehicleModel.js";
 import { CustomisedSkillGroups } from "@neon-codex/database/build/models/rpg/activeTables/activeSkillGroupModel.js";
 import Users from "@neon-codex/database/build/models/accounts/userModel.js";
 import type { SpellListType } from "@neon-codex/common/build/schemas/abilities/talent/spellSchemas.js";
@@ -404,7 +404,7 @@ export async function getCritters() {
           critter.includedBiowareList.map(async (bioware) => {
             const biowareLoaded = await bioware.augmentation.load();
             if (biowareLoaded === null) {
-              throw new Error("Augmentation does not exist");
+              throw new Error("Included Augmentation does not exist");
             }
 
             return {
@@ -1555,7 +1555,7 @@ const all = privateProcedure.query(async () => {
     const equipmentResponse: EquipmentListType = {
       weapons: weaponsResponse,
       armours: armoursResponse,
-      gears: gearsResponse,
+      gearList: gearsResponse,
       augmentations: augmentationsResponse,
       vehicles: vehiclesResponse,
     };
@@ -1960,7 +1960,7 @@ const createCharacter = privateProcedure
       }
     }
 
-    for (const unlinkedGear of opts.input.equipmentSelections.gears) {
+    for (const unlinkedGear of opts.input.equipmentSelections.gearList) {
       const gear = await db.em.findOne(Gears, {
         name: unlinkedGear.name,
       });
@@ -2347,7 +2347,7 @@ const getCharacter = privateProcedure
             return await convertActiveMartialArtDBToDTO(martialArt);
           })
         ),
-        lifestyle: await convertActiveLifestyleDBToDTO(character.lifestyle.$),
+        lifestyle: await convertActiveLifestyleDBToDTO(character.lifestyles.$),
       };
       return loadedCharacter;
     } catch (error) {
@@ -2739,7 +2739,7 @@ export const convertArmourDBToDTO = async function (
 
 const convertActiveGearDBToDTO = async function (
   activeGearDB: ActiveGears
-): Promise<useGearType> {
+): Promise<IncludedGearType> {
   const db = await init();
   const gearDB = await db.em.findOne(Gears, activeGearDB.gear.id, {
     populate: ["*"],
@@ -2877,7 +2877,7 @@ const convertCustomAugmentationDBToDTO = async function (
   return {
     baseAugmentation: await convertAugmentationDBToDTO(augmentationDB),
     gearList: await Promise.all(
-      customisedAugmentationDB.includedGearList.map(async (childGear) => {
+      customisedAugmentationDB.gearList.map(async (childGear) => {
         const loadedChildGear = await childGear.gear.load();
         if (loadedChildGear === null) {
           throw new Error("Gear does not exist");

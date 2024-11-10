@@ -18,13 +18,13 @@ import {
 import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { convertSource } from "../common/ParserHelper.js";
-import { LifestyleQualityCategoryEnum } from "@neon-codex/common/build/enums.js";
+import { lifestyleQualityCategoryEnum } from "@neon-codex/common/build/enums.js";
 
 const LifestyleQualityXmlSchema = zod
   .object({
     id: zod.string(),
     name: zod.string(),
-    category: zod.nativeEnum(LifestyleQualityCategoryEnum),
+    category: zod.nativeEnum(lifestyleQualityCategoryEnum),
     cost: zod.optional(StringOrNumberSchema),
     // Lifestyle point cost
     lp: zod.number(),

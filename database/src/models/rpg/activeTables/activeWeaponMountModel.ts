@@ -11,8 +11,8 @@ import { Weapons } from "../equipment/combat/weaponModel.js";
 import { Vehicles } from "../equipment/rigger/vehicleModel.js";
 import { WeaponMountModifications } from "../equipment/rigger/vehicleModificationModel.js";
 import { WeaponMounts } from "../equipment/rigger/weaponMountModel.js";
-import { CustomisedVehicles } from "./customisedVehicleModel.js";
-import { CustomisedWeapons } from "./customisedWeaponModel.js";
+import { CustomisedVehicles } from "./activeVehicleModel.js";
+import { CustomisedWeapons } from "./activeWeaponModel.js";
 
 // Links to either a custom vehicle, or a vehicle in the table.
 // When we create a custom vehicle that already has a modification

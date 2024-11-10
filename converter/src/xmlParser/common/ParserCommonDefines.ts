@@ -132,62 +132,83 @@ export enum GearXmlCategoryEnum {
   HardNanoware = "Hard Nanoware",
 }
 
-const GearsGearsSchema = zod
-  .object({
-    xmltext: zod.string(),
-    // this gear has some specific option that it needs to select
-    // e.g. Tutorsoft selects the "Automotive Mechanic" skill
-    _select: zod.optional(zod.string()),
-    _rating: zod.optional(zod.string()),
-    _consumecapacity: zod.optional(zod.string()),
-    _costfor: zod.optional(zod.string()),
-  })
-  .strict();
+// Gear Shenanigans
+const UseGearBaseXmlSchema = zod.union([
+  zod.string(),
+  zod
+    .object({
+      xmltext: zod.string(),
+      // this gear has some specific option that it needs to select
+      // e.g. Tutorsoft selects the "Automotive Mechanic" skill
+      _select: zod.optional(zod.string()),
+      _rating: zod.optional(zod.string()),
+      _consumecapacity: zod.optional(zod.string()),
+      _costfor: zod.optional(zod.string()),
+    })
+    .strict(),
+]);
+type UseGearBaseXmlType = zod.infer<typeof UseGearBaseXmlSchema>;
 
-const GearsGearsUnionSchema = zod
-  .object({
-    gear: zod.optional(
-      zod.union([zod.array(GearsGearsSchema), GearsGearsSchema])
-    ),
-  })
-  .strict();
-
-type GearsGearsUnionType = zod.infer<typeof GearsGearsUnionSchema>;
+type InnerGearType = {
+  gear:
+    | Array<InnerUseGearsXmlType>
+    | InnerUseGearsXmlType
+    | Array<UseGearBaseXmlType>
+    | UseGearBaseXmlType;
+};
+const InnerGearSchema: zod.ZodType<InnerGearType> = zod.lazy(() =>
+  zod
+    .object({
+      gear: zod.union([
+        zod.array(InnerUseGearXmlSchema),
+        InnerUseGearXmlSchema,
+        zod.array(UseGearBaseXmlSchema),
+        UseGearBaseXmlSchema,
+      ]),
+    })
+    .strict()
+);
 
 const PartialInnerUseGearXmlSchema = zod
   .object({
-    name: zod.union([
-      zod.string(),
-      zod.object({ xmltext: zod.string(), _select: zod.string() }).strict(),
-    ]),
+    name: UseGearBaseXmlSchema,
     // I think this is redundant as we are always have a name anyway
+    // edit: actually not redundant as some gear has the same name across
+    // different categories
     category: zod.optional(zod.nativeEnum(GearXmlCategoryEnum)),
     rating: zod.optional(zod.number()),
     maxrating: zod.optional(zod.number()),
     capacity: zod.optional(zod.string()),
+    qty: zod.optional(zod.number()),
   })
   .strict();
+type PartialInnerUseGearXmlType = zod.infer<
+  typeof PartialInnerUseGearXmlSchema
+>;
 
-export type GearsType = zod.infer<typeof PartialInnerUseGearXmlSchema> & {
-  gears?: zod.infer<typeof GearXmlSchema> | GearsGearsUnionType | undefined;
+export type InnerUseGearsXmlType = PartialInnerUseGearXmlType & {
+  gears?: zod.infer<typeof GearXmlSchema> | InnerGearType | undefined;
 };
 
-const InnerUseGearXmlSchema: zod.ZodType<GearsType> =
+const InnerUseGearXmlSchema: zod.ZodType<InnerUseGearsXmlType> =
   PartialInnerUseGearXmlSchema.extend({
     gears: zod.optional(
-      zod.union([zod.lazy(() => GearXmlSchema), GearsGearsUnionSchema])
+      zod.union([
+        zod.lazy(() => GearXmlSchema),
+        zod.lazy(() => InnerGearSchema),
+      ])
     ),
-  });
+  }).strict();
 
 // split into its own schema for ease of reading
 export const UseGearXmlSchema = zod.union([
-  zod.string(),
-  GearsGearsSchema,
+  UseGearBaseXmlSchema,
   InnerUseGearXmlSchema,
+  zod.array(zod.union([UseGearBaseXmlSchema, InnerUseGearXmlSchema])),
 ]);
 export const GearXmlSchema = zod
   .object({
-    usegear: zod.union([UseGearXmlSchema, zod.array(UseGearXmlSchema)]),
+    usegear: UseGearXmlSchema,
   })
   .strict();
 export type GearXmlType = zod.infer<typeof GearXmlSchema>;

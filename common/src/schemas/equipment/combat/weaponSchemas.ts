@@ -25,7 +25,7 @@ import {
 } from "../../../enums.js";
 import {
   AvailabilityRatingSchema,
-  UseGearListSchema,
+  IncludedGearListSchema,
   WeaponXmlSubtypeSchema,
 } from "../../shared/commonSchemas.js";
 import { RequirementsSchema } from "../../shared/requiredSchemas.js";
@@ -223,7 +223,7 @@ const UnlinkedWeaponAccessorySchema = zod
     name: zod.string(),
     mount: zod.optional(AccessoryMountSchema),
     rating: zod.optional(zod.number()),
-    gears: zod.optional(UseGearListSchema),
+    gearList: zod.optional(IncludedGearListSchema),
   })
   .strict();
 export type UnlinkedWeaponAccessoryType = zod.infer<

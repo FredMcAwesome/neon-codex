@@ -23,7 +23,7 @@ import type {
 import Armours from "../../grammar/armours.ohm-bundle.js";
 import {
   convertSource,
-  convertXmlGears,
+  convertIncludedXmlGears,
   convertXmlModObject,
 } from "../common/ParserHelper.js";
 import { convertArmourModCategory } from "./ArmourModParserHelper.js";
@@ -112,7 +112,9 @@ function convertArmour(armour: ArmourXmlType) {
   if (armour.addweapon !== undefined) assert(armour.addweapon === armour.name);
 
   const gears =
-    armour.gears !== undefined ? convertXmlGears(armour.gears) : undefined;
+    armour.gears !== undefined
+      ? convertIncludedXmlGears(armour.gears)
+      : undefined;
 
   let match = Availability.match(armour.avail.toString());
   if (match.failed()) {

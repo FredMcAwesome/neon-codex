@@ -16,7 +16,10 @@ import {
   createVehicleWeaponMounts,
 } from "../seeds/rpgSeeds/vehicleSeed.js";
 import { Skills } from "../models/rpg/abilities/skillModel.js";
-import { IncludedArmourModifications } from "../models/rpg/activeTables/activeArmourModificationModel.js";
+import {
+  CustomisedArmourModifications,
+  IncludedArmourModifications,
+} from "../models/rpg/activeTables/activeArmourModificationModel.js";
 import {
   WeaponAccessoryIncludedGears,
   ActiveWeaponAccessoryGears,
@@ -25,9 +28,17 @@ import {
   VehicleIncludedGears,
   GearIncludedGears,
   AugmentationIncludedGears,
+  PackGears,
+  ActiveArmourIncludedGears,
+  ActiveAugmentationGears,
+  ActiveVehicleGears,
+  ChildGears,
 } from "../models/rpg/activeTables/activeGearModel.js";
 import { IncludedVehicleModifications } from "../models/rpg/activeTables/activeVehicleModificationModel.js";
-import { IncludedWeaponAccessories } from "../models/rpg/activeTables/activeWeaponAccessoryModel.js";
+import {
+  CustomisedWeaponAccessories,
+  IncludedWeaponAccessories,
+} from "../models/rpg/activeTables/activeWeaponAccessoryModel.js";
 import { IncludedWeaponMounts } from "../models/rpg/activeTables/activeWeaponMountModel.js";
 import {
   Cyberwares,
@@ -116,7 +127,11 @@ import { getCritters } from "../seeds/rpgSeeds/crittersSeed.js";
 import { getCritterPowers } from "../seeds/rpgSeeds/critterPowersSeed.js";
 import { Critters } from "../models/rpg/creatures/critterModel.js";
 import { CritterPowers } from "../models/rpg/abilities/critterPowerModel.js";
-import { CritterIncludedAugmentations } from "../models/rpg/activeTables/activeAugmentationModel.js";
+import {
+  ChildAugmentations,
+  CritterIncludedAugmentations,
+  PackAugmentations,
+} from "../models/rpg/activeTables/activeAugmentationModel.js";
 import { IncludedCritterPowers } from "../models/rpg/activeTables/activeCritterPowerModel.js";
 import { CritterIncludedComplexForms } from "../models/rpg/activeTables/activeComplexFormModel.js";
 import { CritterIncludedSkills } from "../models/rpg/activeTables/activeSkillModel.js";
@@ -138,6 +153,15 @@ import { getLifestyles } from "../seeds/rpgSeeds/lifestyleSeed.js";
 import { getLifestyleQualities } from "../seeds/rpgSeeds/lifestyleQualitySeed.js";
 import { Lifestyles } from "../models/rpg/otherData/lifestyleModel.js";
 import { LifestyleQualities } from "../models/rpg/otherData/lifestyleQualityModel.js";
+import { getEquipmentPacks } from "../seeds/rpgSeeds/equipmentPackSeed.js";
+import { EquipmentPacks } from "../models/rpg/equipment/equipmentPackModel.js";
+import { PackArmours } from "../models/rpg/activeTables/activeArmourModel.js";
+import { PackVehicles } from "../models/rpg/activeTables/activeVehicleModel.js";
+import {
+  PackWeapons,
+  VehicleWeapons,
+} from "../models/rpg/activeTables/activeWeaponModel.js";
+import { PackLifestyles } from "../models/rpg/activeTables/activeLIfestyleModel.js";
 
 export class SourcebookSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
@@ -176,6 +200,8 @@ export class SourcebookSeeder extends Seeder {
     const stagedLifestyles = getLifestyles();
     const { unlinkedLifestyleQualities, stagedLifestyleQualities } =
       getLifestyleQualities();
+    const { unlinkedEquipmentPacks, stagedEquipmentPacks } =
+      getEquipmentPacks();
 
     stagedSkills.forEach((skill) => {
       em.create(Skills, skill);
@@ -371,6 +397,11 @@ export class SourcebookSeeder extends Seeder {
       em.create(LifestyleQualities, lifestyleQuality);
     });
     console.log("Lifestyle Qualities created");
+
+    stagedEquipmentPacks.forEach((equipmentPack) => {
+      em.create(EquipmentPacks, equipmentPack);
+    });
+    console.log("Equipment Packs created");
 
     await em.flush();
 
@@ -655,7 +686,6 @@ export class SourcebookSeeder extends Seeder {
           const referencedGear = ref(includedGear);
           const stagedIncludedGear = new WeaponAccessoryIncludedGears(
             referencedGear,
-            referencedWeaponAccessory,
             gear.specificOption,
             gear.rating,
             gear.consumeCapacity,
@@ -663,6 +693,7 @@ export class SourcebookSeeder extends Seeder {
           );
           // this creates the link to weapon accessory
           em.create(WeaponAccessoryIncludedGears, stagedIncludedGear);
+          referencedWeaponAccessory.$.includedGearList.add(stagedIncludedGear);
         }
       }
     }
@@ -710,18 +741,20 @@ export class SourcebookSeeder extends Seeder {
           );
           const referencedWeaponAccessory = ref(includeWeaponAccessory);
           const stagedIncludedWeaponAccessory = new IncludedWeaponAccessories(
-            referencedWeapon,
             referencedWeaponAccessory,
             accessory.rating,
             accessory.mount
           );
           // this creates the link to weapon accessory
           em.create(IncludedWeaponAccessories, stagedIncludedWeaponAccessory);
+          referencedWeapon.$.includedAccessoryList.add(
+            stagedIncludedWeaponAccessory
+          );
           const referencedIncludedWeaponAccessory = ref(
             stagedIncludedWeaponAccessory
           );
-          if (accessory.gears !== undefined) {
-            for (const gear of accessory.gears) {
+          if (accessory.gearList !== undefined) {
+            for (const gear of accessory.gearList) {
               const includedGear = await em.findOne(Gears, {
                 name: gear.name,
               });
@@ -729,13 +762,15 @@ export class SourcebookSeeder extends Seeder {
               const referencedGear = ref(includedGear);
               const stagedIncludedGear = new ActiveWeaponAccessoryGears(
                 referencedGear,
-                referencedIncludedWeaponAccessory,
                 gear.specificOption,
                 gear.rating,
                 gear.consumeCapacity,
                 gear.quantity
               );
               em.create(ActiveWeaponAccessoryGears, stagedIncludedGear);
+              referencedIncludedWeaponAccessory.$.includedGearList.add(
+                stagedIncludedGear
+              );
             }
           }
         }
@@ -854,7 +889,6 @@ export class SourcebookSeeder extends Seeder {
           const referencedGear = ref(includedGear);
           const stagedIncludedGear = new ArmourIncludedGears(
             referencedGear,
-            referencedArmour,
             gear.specificOption,
             gear.rating,
             gear.consumeCapacity,
@@ -862,6 +896,7 @@ export class SourcebookSeeder extends Seeder {
           );
           // this creates the link to weapon accessory
           em.create(ArmourIncludedGears, stagedIncludedGear);
+          referencedArmour.$.includedGearList.add(stagedIncludedGear);
         }
       }
     }
@@ -910,7 +945,6 @@ export class SourcebookSeeder extends Seeder {
           const referencedGear = ref(includedGear);
           const stagedIncludedGear = new ArmourModificationIncludedGears(
             referencedGear,
-            referencedArmourMod,
             gear.specificOption,
             gear.rating,
             gear.consumeCapacity,
@@ -918,6 +952,7 @@ export class SourcebookSeeder extends Seeder {
           );
           // this creates the link to armour modification
           em.create(ArmourModificationIncludedGears, stagedIncludedGear);
+          referencedArmourMod.$.includedGearList.add(stagedIncludedGear);
         }
       }
     }
@@ -1012,7 +1047,6 @@ export class SourcebookSeeder extends Seeder {
           const referencedGear = ref(includedGear);
           const stagedIncludedGear = new AugmentationIncludedGears(
             referencedGear,
-            referencedAugmentation,
             gear.specificOption,
             gear.rating,
             gear.consumeCapacity,
@@ -1020,6 +1054,7 @@ export class SourcebookSeeder extends Seeder {
           );
           // this creates the link to armour modification
           em.create(AugmentationIncludedGears, stagedIncludedGear);
+          referencedAugmentation.$.includedGearList.add(stagedIncludedGear);
         }
       }
     }
@@ -1089,7 +1124,6 @@ export class SourcebookSeeder extends Seeder {
           const referencedGear = ref(includedGear);
           const stagedIncludedGear = new VehicleIncludedGears(
             referencedGear,
-            referencedVehicle,
             gear.specificOption,
             gear.rating,
             gear.consumeCapacity,
@@ -1097,6 +1131,7 @@ export class SourcebookSeeder extends Seeder {
           );
           // this creates the link to vehicle
           em.create(VehicleIncludedGears, stagedIncludedGear);
+          referencedVehicle.$.includedGearList.add(stagedIncludedGear);
         }
       }
     }
@@ -1225,7 +1260,6 @@ export class SourcebookSeeder extends Seeder {
           const referencedIncludedGear = ref(includedGear);
           const stagedIncludedGear = new GearIncludedGears(
             referencedIncludedGear,
-            referencedLinkedGear,
             unlinkedIncludedGear.specificOption,
             unlinkedIncludedGear.rating,
             unlinkedIncludedGear.consumeCapacity,
@@ -1233,6 +1267,7 @@ export class SourcebookSeeder extends Seeder {
           );
           // this creates the link to weapon accessory
           em.create(GearIncludedGears, stagedIncludedGear);
+          referencedLinkedGear.$.includedGearList.add(stagedIncludedGear);
         }
       }
     }
@@ -1408,10 +1443,10 @@ export class SourcebookSeeder extends Seeder {
           const referencedCritter = ref(relatedCritter);
           const customisedAugmentation = new CritterIncludedAugmentations(
             referencedAugmentation,
-            referencedCritter,
             critterBioware.rating
           );
           em.create(CritterIncludedAugmentations, customisedAugmentation);
+          referencedCritter.$.includedBiowareList.add(customisedAugmentation);
         }
       }
     }
@@ -1594,6 +1629,482 @@ export class SourcebookSeeder extends Seeder {
       }
     }
     console.log("Lifestyle Quality relationships associated");
+
+    // Equipment Packs that have Armour
+    for (const equipmentPack of unlinkedEquipmentPacks) {
+      if (equipmentPack.armourList !== undefined) {
+        assert(
+          equipmentPack.armourList.length > 0,
+          "Equipment Pack armour list is empty"
+        );
+        const relatedEquipmentPack = await em.findOne(EquipmentPacks, {
+          name: equipmentPack.name,
+        });
+        assert(
+          relatedEquipmentPack !== null,
+          `undefined Equipment Pack: ${equipmentPack.name}`
+        );
+
+        for (const armour of equipmentPack.armourList) {
+          const relatedArmour = await em.findOne(Armours, {
+            name: armour.name,
+          });
+          assert(
+            relatedArmour !== null,
+            `undefined Armour: ${armour.name} for Equipment Pack: ${equipmentPack.name}`
+          );
+
+          const referencedArmour = ref(relatedArmour);
+          const activeArmour = new PackArmours(referencedArmour);
+          em.create(PackArmours, activeArmour);
+
+          if (armour.gearList !== undefined) {
+            assert(
+              armour.gearList.length > 0,
+              "Equipment Pack armour gear list is empty"
+            );
+            for (const gear of armour.gearList) {
+              const relatedGear = await em.findOne(Gears, {
+                name: gear.name,
+              });
+              assert(
+                relatedGear !== null,
+                `undefined armour gear: ${gear.name} for Equipment Pack: ${equipmentPack.name}`
+              );
+              const referencedGear = ref(relatedGear);
+              const activeArmourIncludedGear = new ActiveArmourIncludedGears(
+                referencedGear,
+                gear.specificOption,
+                gear.rating,
+                gear.consumeCapacity,
+                gear.quantity
+              );
+              em.create(ActiveArmourIncludedGears, activeArmourIncludedGear);
+              activeArmour.gears.add(activeArmourIncludedGear);
+            }
+          }
+
+          if (armour.modList !== undefined) {
+            assert(
+              armour.modList.length > 0,
+              "Equipment Pack armour mod list is empty"
+            );
+            for (const mod of armour.modList) {
+              const relatedMod = await em.findOne(ArmourModifications, {
+                name: mod.name,
+              });
+              assert(
+                relatedMod !== null,
+                `undefined armour mod: ${mod.name} for Equipment Pack: ${equipmentPack.name}`
+              );
+              const referencedMod = ref(relatedMod);
+              const customisedArmourModification =
+                new CustomisedArmourModifications(referencedMod, mod.rating);
+              em.create(
+                CustomisedArmourModifications,
+                customisedArmourModification
+              );
+              activeArmour.accessories.add(customisedArmourModification);
+            }
+          }
+
+          relatedEquipmentPack.armourList.add(activeArmour);
+        }
+      }
+    }
+    // Equipment Packs that have Augmentations
+    for (const equipmentPack of unlinkedEquipmentPacks) {
+      if (equipmentPack.augmentationList !== undefined) {
+        assert(
+          equipmentPack.augmentationList.length > 0,
+          "Equipment Pack augmentation list is empty"
+        );
+        const relatedEquipmentPack = await em.findOne(EquipmentPacks, {
+          name: equipmentPack.name,
+        });
+        assert(
+          relatedEquipmentPack !== null,
+          `undefined Equipment Pack: ${equipmentPack.name}`
+        );
+
+        for (const augmentation of equipmentPack.augmentationList) {
+          const relatedAugmentation = await em.findOne(Augmentations, {
+            name: augmentation.name,
+          });
+          assert(
+            relatedAugmentation !== null,
+            `undefined Augmentation: ${augmentation.name} for Equipment Pack: ${equipmentPack.name}`
+          );
+
+          const referencedAugmentation = ref(relatedAugmentation);
+          const activeAugmentation = new PackAugmentations(
+            referencedAugmentation
+          );
+          em.create(PackAugmentations, activeAugmentation);
+
+          relatedEquipmentPack.augmentationList.add(activeAugmentation);
+          await em.flush();
+          // if (
+          //   augmentation.type === augmentationTypeEnum.Bioware &&
+          //   augmentation.subsystemList !== undefined
+          // ) {
+          //   if (augmentation.subsystemList.biowareList !== undefined) {
+          //     assert(
+          //       augmentation.subsystemList.biowareList.length > 0,
+          //       "Equipment Pack augmentation subsystem bioware list is empty"
+          //     );
+          //     for (const subsystem of augmentation.subsystemList.biowareList) {
+          //       const relatedBioware = await em.findOne(Biowares, {
+          //         name: subsystem.name,
+          //       });
+          //       assert(
+          //         relatedBioware !== null,
+          //         `undefined augmentation subsystem bioware: ${subsystem.name} for Equipment Pack: ${equipmentPack.name}`
+          //       );
+          //       const referencedBioware = ref(relatedBioware);
+          //       const packAugmentation = new PackAugmentations(
+          //         referencedBioware,
+          //         subsystem.rating
+          //       );
+          //       em.create(PackAugmentations, packAugmentation);
+          //       activeAugmentation. .add(packAugmentation);
+          //     }
+          //   }
+          // }
+
+          if (
+            augmentation.type === augmentationTypeEnum.Cyberware &&
+            augmentation.subsystemList !== undefined
+          ) {
+            if (augmentation.subsystemList.cyberwareList !== undefined) {
+              assert(
+                augmentation.subsystemList.cyberwareList.length > 0,
+                "Equipment Pack augmentation subsystem cyberware list is empty"
+              );
+              // TODO: This is technically recursive...
+              for (const subsystem of augmentation.subsystemList
+                .cyberwareList) {
+                const relatedCyberware = await em.findOne(Cyberwares, {
+                  name: subsystem.name,
+                });
+                assert(
+                  relatedCyberware !== null,
+                  `undefined augmentation subsystem cyberware: ${subsystem.name} for Equipment Pack: ${equipmentPack.name}`
+                );
+                const referencedCyberware = ref(relatedCyberware);
+                const packAugmentation = new ChildAugmentations(
+                  referencedCyberware,
+                  subsystem.rating
+                );
+                em.create(ChildAugmentations, packAugmentation);
+                if (subsystem.gearList !== undefined) {
+                  assert(
+                    subsystem.gearList.length > 0,
+                    "Equipment Pack Augmentation subsystem gear list is empty"
+                  );
+                  for (const gear of subsystem.gearList) {
+                    const relatedGear = await em.findOne(Gears, {
+                      name: gear.name,
+                    });
+                    assert(
+                      relatedGear !== null,
+                      `undefined augmentation subsystem gear: ${gear.name} for Equipment Pack: ${equipmentPack.name}`
+                    );
+                    const referencedGear = ref(relatedGear);
+                    const activeAugmentationIncludedGear =
+                      new ActiveAugmentationGears(
+                        referencedGear,
+                        gear.specificOption,
+                        gear.rating,
+                        gear.consumeCapacity,
+                        gear.quantity
+                      );
+                    em.create(
+                      ActiveAugmentationGears,
+                      activeAugmentationIncludedGear
+                    );
+                    packAugmentation.gearList.add(
+                      activeAugmentationIncludedGear
+                    );
+                  }
+                }
+
+                activeAugmentation.subsystemList.add(packAugmentation);
+              }
+            }
+          }
+          if (
+            augmentation.type === augmentationTypeEnum.Cyberware &&
+            augmentation.gearList !== undefined
+          ) {
+            assert(
+              augmentation.gearList.length > 0,
+              "Equipment Pack Augmentation gear list is empty"
+            );
+            for (const gear of augmentation.gearList) {
+              const relatedGear = await em.findOne(Gears, {
+                name: gear.name,
+              });
+              assert(
+                relatedGear !== null,
+                `undefined augmentation subsystem gear: ${gear.name} for Equipment Pack: ${equipmentPack.name}`
+              );
+              const referencedGear = ref(relatedGear);
+              const activeAugmentationIncludedGear =
+                new ActiveAugmentationGears(
+                  referencedGear,
+                  gear.specificOption,
+                  gear.rating,
+                  gear.consumeCapacity,
+                  gear.quantity
+                );
+              em.create(
+                ActiveAugmentationGears,
+                activeAugmentationIncludedGear
+              );
+              activeAugmentation.gearList.add(activeAugmentationIncludedGear);
+            }
+          }
+        }
+      }
+    }
+    // Equipment Packs that have Gear
+    for (const equipmentPack of unlinkedEquipmentPacks) {
+      if (equipmentPack.gearList !== undefined) {
+        assert(
+          equipmentPack.gearList.length > 0,
+          "Equipment Pack gear list is empty"
+        );
+        const relatedEquipmentPack = await em.findOne(EquipmentPacks, {
+          name: equipmentPack.name,
+        });
+        assert(
+          relatedEquipmentPack !== null,
+          `undefined Equipment Pack: ${equipmentPack.name}`
+        );
+
+        for (const gear of equipmentPack.gearList) {
+          const relatedGear = await em.findOne(Gears, {
+            name: gear.name,
+          });
+          assert(
+            relatedGear !== null,
+            `undefined Gear: ${gear.name} for Equipment Pack: ${equipmentPack.name}`
+          );
+
+          const referencedGear = ref(relatedGear);
+          const activeGear = new PackGears(referencedGear);
+          em.create(PackGears, activeGear);
+
+          relatedEquipmentPack.gearList.add(activeGear);
+          await em.flush();
+
+          if (gear.innerGearList !== undefined) {
+            assert(
+              gear.innerGearList.length > 0,
+              "Equipment Pack gear inner gear list is empty"
+            );
+            for (const innerGear of gear.innerGearList) {
+              const relatedInnerGear = await em.findOne(Gears, {
+                name: innerGear.name,
+              });
+              assert(
+                relatedInnerGear !== null,
+                `undefined gear inner gear: ${innerGear.name} for Equipment Pack: ${equipmentPack.name}`
+              );
+              const referencedInnerGear = ref(relatedInnerGear);
+              const activeGearIncludedGear = new ChildGears(
+                referencedInnerGear,
+                innerGear.specificOption,
+                innerGear.rating,
+                innerGear.consumeCapacity,
+                innerGear.quantity
+              );
+              em.create(ChildGears, activeGearIncludedGear);
+              activeGear.childrenGear.add(activeGearIncludedGear);
+            }
+          }
+        }
+      }
+    }
+    // Equipment Packs that have Vehicles
+    for (const equipmentPack of unlinkedEquipmentPacks) {
+      if (equipmentPack.vehicleList !== undefined) {
+        assert(
+          equipmentPack.vehicleList.length > 0,
+          "Equipment Pack vehicle list is empty"
+        );
+        const relatedEquipmentPack = await em.findOne(EquipmentPacks, {
+          name: equipmentPack.name,
+        });
+        assert(
+          relatedEquipmentPack !== null,
+          `undefined Equipment Pack: ${equipmentPack.name}`
+        );
+
+        for (const vehicle of equipmentPack.vehicleList) {
+          const relatedVehicle = await em.findOne(Vehicles, {
+            name: vehicle.name,
+          });
+          assert(
+            relatedVehicle !== null,
+            `undefined Vehicle: ${vehicle.name} for Equipment Pack: ${equipmentPack.name}`
+          );
+
+          const referencedVehicle = ref(relatedVehicle);
+          const activeVehicle = new PackVehicles(referencedVehicle);
+          em.create(PackVehicles, activeVehicle);
+
+          if (vehicle.gearList !== undefined) {
+            assert(
+              vehicle.gearList.length > 0,
+              "Equipment Pack vehicle gear list is empty"
+            );
+            for (const gear of vehicle.gearList) {
+              const relatedGear = await em.findOne(Gears, {
+                name: gear.name,
+              });
+              assert(
+                relatedGear !== null,
+                `undefined vehicle gear: ${gear.name} for Equipment Pack: ${equipmentPack.name}`
+              );
+              const referencedGear = ref(relatedGear);
+              const activeVehicleIncludedGear = new ActiveVehicleGears(
+                referencedGear,
+                gear.specificOption,
+                gear.rating,
+                gear.consumeCapacity,
+                gear.quantity
+              );
+              em.create(ActiveVehicleGears, activeVehicleIncludedGear);
+              activeVehicle.gearList.add(activeVehicleIncludedGear);
+            }
+          }
+          if (vehicle.weaponList !== undefined) {
+            assert(
+              vehicle.weaponList.length > 0,
+              "Equipment Pack vehicle weapon list is empty"
+            );
+            for (const weapon of vehicle.weaponList) {
+              const relatedWeapon = await em.findOne(Weapons, {
+                name: weapon.name,
+              });
+              assert(
+                relatedWeapon !== null,
+                `undefined vehicle weapon: ${weapon.name} for Equipment Pack: ${equipmentPack.name}`
+              );
+              const referencedWeapon = ref(relatedWeapon);
+              const activeVehicleIncludedWeapon = new VehicleWeapons(
+                referencedWeapon
+              );
+              em.create(VehicleWeapons, activeVehicleIncludedWeapon);
+              if (weapon.accessoryList !== undefined) {
+                for (const accessory of weapon.accessoryList) {
+                  const relatedAccessory = await em.findOne(WeaponAccessories, {
+                    name: accessory.name,
+                  });
+                  assert(
+                    relatedAccessory !== null,
+                    `undefined vehicle weapon accessory: ${accessory.name} for Equipment Pack: ${equipmentPack.name}`
+                  );
+                  const referencedAccessory = ref(relatedAccessory);
+                  const activeVehicleIncludedWeaponAccessory =
+                    new CustomisedWeaponAccessories(referencedAccessory);
+                  em.create(
+                    CustomisedWeaponAccessories,
+                    activeVehicleIncludedWeaponAccessory
+                  );
+                  activeVehicleIncludedWeapon.accessories.add(
+                    activeVehicleIncludedWeaponAccessory
+                  );
+                }
+              }
+              activeVehicle.weaponList.add(activeVehicleIncludedWeapon);
+            }
+          }
+          relatedEquipmentPack.vehicleList.add(activeVehicle);
+        }
+      }
+    }
+    // Equipment Packs that have Weapons
+    for (const equipmentPack of unlinkedEquipmentPacks) {
+      if (equipmentPack.weaponList !== undefined) {
+        assert(
+          equipmentPack.weaponList.length > 0,
+          "Equipment Pack weapon list is empty"
+        );
+        const relatedEquipmentPack = await em.findOne(EquipmentPacks, {
+          name: equipmentPack.name,
+        });
+        assert(
+          relatedEquipmentPack !== null,
+          `undefined Equipment Pack: ${equipmentPack.name}`
+        );
+
+        for (const weapon of equipmentPack.weaponList) {
+          const relatedWeapon = await em.findOne(Weapons, {
+            name: weapon.name,
+          });
+          assert(
+            relatedWeapon !== null,
+            `undefined Weapon: ${weapon.name} for Equipment Pack: ${equipmentPack.name}`
+          );
+
+          const referencedWeapon = ref(relatedWeapon);
+          const activeWeapon = new PackWeapons(referencedWeapon);
+          em.create(PackWeapons, activeWeapon);
+
+          if (weapon.accessoryList !== undefined) {
+            for (const accessory of weapon.accessoryList) {
+              const relatedAccessory = await em.findOne(WeaponAccessories, {
+                name: accessory.name,
+              });
+              assert(
+                relatedAccessory !== null,
+                `undefined weapon accessory: ${accessory.name} for Equipment Pack: ${equipmentPack.name}`
+              );
+              const referencedAccessory = ref(relatedAccessory);
+              const activeWeaponIncludedWeaponAccessory =
+                new CustomisedWeaponAccessories(referencedAccessory);
+              em.create(
+                CustomisedWeaponAccessories,
+                activeWeaponIncludedWeaponAccessory
+              );
+              activeWeapon.accessories.add(activeWeaponIncludedWeaponAccessory);
+            }
+          }
+          relatedEquipmentPack.weaponList.add(activeWeapon);
+        }
+      }
+    }
+    // Equipment Packs that have a Lifestyle
+    for (const equipmentPack of unlinkedEquipmentPacks) {
+      if (equipmentPack.lifestyle !== undefined) {
+        const relatedEquipmentPack = await em.findOne(EquipmentPacks, {
+          name: equipmentPack.name,
+        });
+        assert(
+          relatedEquipmentPack !== null,
+          `undefined Equipment Pack: ${equipmentPack.name}`
+        );
+        const relatedLifestyle = await em.findOne(Lifestyles, {
+          name: equipmentPack.lifestyle.baseLifestyle,
+        });
+        assert(
+          relatedLifestyle !== null,
+          `undefined Lifestyle: ${equipmentPack.lifestyle.baseLifestyle} for Equipment Pack: ${equipmentPack.name}`
+        );
+        const referencedLifestyle = ref(relatedLifestyle);
+        const packLifestyle = new PackLifestyles(
+          referencedLifestyle,
+          equipmentPack.lifestyle.prepurchasedDuration
+        );
+        em.create(PackLifestyles, packLifestyle);
+        relatedEquipmentPack.lifestyle.add(packLifestyle);
+      }
+    }
+    console.log("Equipment Pack relationships associated");
+
     // -----------------------------------------------------------------
     // Internally used functions
     // -----------------------------------------------------------------

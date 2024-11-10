@@ -10,7 +10,7 @@ import type { Ref } from "@mikro-orm/postgresql";
 import { Cyberwares } from "../equipment/bodyModification/augmentationModel.js";
 import { Vehicles } from "../equipment/rigger/vehicleModel.js";
 import { VehicleModifications } from "../equipment/rigger/vehicleModificationModel.js";
-import { CustomisedVehicles } from "./customisedVehicleModel.js";
+import { CustomisedVehicles, PackVehicles } from "./activeVehicleModel.js";
 
 // Links to either a custom vehicle, or a vehicle in the table.
 // When we create a custom vehicle that already has a modification
@@ -66,6 +66,22 @@ export class IncludedVehicleModifications extends ActiveVehicleModifications {
   ) {
     super(vehicleModification, specificOption, rating);
     this.standardVehicle = vehicle;
+  }
+}
+
+@Entity({ discriminatorValue: "pack" })
+export class PackVehicleModifications extends ActiveVehicleModifications {
+  @ManyToOne({ entity: () => PackVehicles, ref: true })
+  packVehicle: Ref<PackVehicles>;
+
+  constructor(
+    packVehicle: Ref<PackVehicles>,
+    vehicleModification: Ref<VehicleModifications>,
+    specificOption?: string,
+    rating?: number
+  ) {
+    super(vehicleModification, specificOption, rating);
+    this.packVehicle = packVehicle;
   }
 }
 

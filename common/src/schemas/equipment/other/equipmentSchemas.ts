@@ -20,7 +20,7 @@ import {
 export type EquipmentListType = {
   weapons: WeaponSummaryListType;
   armours: ArmourListType;
-  gears: GearListType;
+  gearList: GearListType;
   augmentations: AugmentationListType;
   vehicles: VehicleListType;
 };
@@ -28,7 +28,7 @@ export const EquipmentListSchema: zod.ZodType<EquipmentListType> = zod
   .object({
     weapons: WeaponSummaryListSchema,
     armours: ArmourListSchema,
-    gears: GearListSchema,
+    gearList: GearListSchema,
     augmentations: AugmentationListSchema,
     vehicles: VehicleListSchema,
   })

@@ -1,6 +1,6 @@
 import { Entity, Enum, PrimaryKey, Property } from "@mikro-orm/postgresql";
 import {
-  GridCategoryEnum,
+  gridCategoryEnum,
   sourceBookEnum,
 } from "@neon-codex/common/build/enums.js";
 import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
@@ -29,8 +29,8 @@ export class Lifestyles {
   @Property({ type: "json", nullable: true })
   allowBonusLifestylePoints?: true;
 
-  @Enum({ items: () => GridCategoryEnum, array: true })
-  freegridList!: Array<GridCategoryEnum>;
+  @Enum({ items: () => gridCategoryEnum, array: true })
+  freegridList!: Array<gridCategoryEnum>;
 
   @Property()
   dice!: number;

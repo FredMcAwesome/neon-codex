@@ -6,6 +6,7 @@ import {
   OneToOne,
   Collection,
   ManyToMany,
+  OneToMany,
 } from "@mikro-orm/postgresql";
 import type { Ref } from "@mikro-orm/postgresql";
 import {
@@ -31,7 +32,8 @@ import type {
   WeightType,
 } from "@neon-codex/common/build/schemas/equipment/other/gearSchemas.js";
 import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
-import { CustomisedWeapons } from "../../activeTables/customisedWeaponModel.js";
+import { CustomisedWeapons } from "../../activeTables/activeWeaponModel.js";
+import { GearIncludedGears } from "../../activeTables/activeGearModel.js";
 
 @Entity()
 export class Gears {
@@ -87,8 +89,8 @@ export class Gears {
   @ManyToMany({ entity: () => Gears, owner: true })
   allowedGearList = new Collection<Gears>(this);
 
-  @ManyToMany({ entity: () => Gears, owner: true })
-  includedGearList = new Collection<Gears>(this);
+  @OneToMany(() => GearIncludedGears, (gear) => gear.linkedGear)
+  includedGearList = new Collection<GearIncludedGears>(this);
 
   @Property({ type: "json", nullable: true })
   deviceRating?: GearDeviceRatingType;

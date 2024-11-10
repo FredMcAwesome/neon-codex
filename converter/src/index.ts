@@ -79,5 +79,8 @@ ParseLifestyles();
 import { ParseLifestyleQualities } from "./xmlParser/character/LifestyleQualityParser.js";
 ParseLifestyleQualities();
 
+import { ParseEquipmentPacks } from "./xmlParser/other/EquipmentPackParser.js";
+ParseEquipmentPacks();
+
 import { CheckGUIDs } from "./xmlParser/utilities.js";
 CheckGUIDs();

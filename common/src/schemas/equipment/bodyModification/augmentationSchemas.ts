@@ -20,12 +20,11 @@ import {
   AvailabilityRatingSchema,
   EssenceCostSchema,
   RatingSchema,
-  UseGearListSchema,
+  IncludedGearListSchema,
 } from "../../shared/commonSchemas.js";
-import type { UseGearListType } from "../../shared/commonSchemas.js";
+import type { IncludedGearListType } from "../../shared/commonSchemas.js";
 import { BonusSchema } from "../../shared/bonusSchemas.js";
 import { RequirementsSchema } from "../../shared/requiredSchemas.js";
-import { GearListSchema } from "../other/gearSchemas.js";
 
 export const InnerAvailabilityAugmentationSchema = zod
   .object({
@@ -140,7 +139,7 @@ export type CyberwareSubsystemsRecursiveType = {
   name: string;
   forced?: string | undefined;
   rating?: number | undefined;
-  gears?: UseGearListType | undefined;
+  gearList?: IncludedGearListType | undefined;
   subsystem?: AugmentationSubsystemListType | undefined;
 };
 
@@ -152,7 +151,7 @@ const SubsystemListSchema: zod.ZodType<
       name: zod.string(),
       forced: zod.optional(zod.string()),
       rating: zod.optional(zod.number()),
-      gears: zod.optional(UseGearListSchema),
+      gearList: zod.optional(IncludedGearListSchema),
       subsystem: zod.optional(zod.lazy(() => AugmentationSubsystemListSchema)),
     })
     .strict()
@@ -207,7 +206,7 @@ export const AugmentationPartialSchema = zod
     requirements: zod.optional(RequirementsSchema),
     forbidden: zod.optional(RequirementsSchema),
     allowedGearList: zod.optional(zod.array(zod.string())),
-    includedGearList: zod.optional(UseGearListSchema),
+    includedGearList: zod.optional(IncludedGearListSchema),
     allowedGearCategories: zod.optional(
       zod.array(zod.nativeEnum(gearCategoryEnum))
     ),
@@ -271,7 +270,7 @@ export const CustomisedAugmentationSchema = zod
   .object({
     baseAugmentation: AugmentationSchema,
     // This overrides baseAugmentation included gear
-    gearList: zod.optional(GearListSchema),
+    gearList: zod.optional(IncludedGearListSchema),
     // TODO: is rating a thing for augmentations?
     // rating: zod.optional(zod.number()),
     customName: zod.optional(zod.string()),

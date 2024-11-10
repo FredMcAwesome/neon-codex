@@ -1,5 +1,5 @@
 import { z as zod } from "zod";
-import { BonusSourceEnum } from "../../enums.js";
+import { bonusSourceEnum } from "../../enums.js";
 import {
   availabilityEnum,
   gearCategoryEnum,
@@ -133,7 +133,7 @@ export enum weaponXmlSubtypeEnum {
 export const WeaponXmlSubtypeSchema = zod.nativeEnum(weaponXmlSubtypeEnum);
 export type WeaponXmlSubtypeType = zod.infer<typeof WeaponXmlSubtypeSchema>;
 
-const UseGearSchema = zod
+export const IncludedGearSubSchema = zod
   .object({
     name: zod.string(),
     specificOption: zod.optional(zod.string()),
@@ -143,10 +143,19 @@ const UseGearSchema = zod
     category: zod.optional(zod.nativeEnum(gearCategoryEnum)),
   })
   .strict();
-export type useGearType = zod.infer<typeof UseGearSchema>;
+type IncludedGearSubType = zod.infer<typeof IncludedGearSubSchema>;
 
-export const UseGearListSchema = zod.array(UseGearSchema);
-export type UseGearListType = zod.infer<typeof UseGearListSchema>;
+export type IncludedGearType = IncludedGearSubType & {
+  innerGearList?: Array<IncludedGearType> | undefined;
+};
+
+const IncludedGearSchema: zod.ZodType<IncludedGearType> =
+  IncludedGearSubSchema.extend({
+    innerGearList: zod.optional(zod.lazy(() => zod.array(IncludedGearSchema))),
+  }).strict();
+
+export const IncludedGearListSchema = zod.array(IncludedGearSchema);
+export type IncludedGearListType = zod.infer<typeof IncludedGearListSchema>;
 
 export const RangeCostSchema = zod
   .object({
@@ -243,7 +252,7 @@ const CharacterCreatorBonusSchema = zod
     source: zod.string(),
     linkMentorSpirit: zod.optional(zod.literal(true)),
     linkParagon: zod.optional(zod.literal(true)),
-    sourceType: zod.nativeEnum(BonusSourceEnum),
+    sourceType: zod.nativeEnum(bonusSourceEnum),
   })
   .strict();
 

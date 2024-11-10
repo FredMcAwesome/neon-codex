@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import Dropdown from "react-dropdown";
 import { trpc } from "../../../utils/trpc.js";
 import {
-  BonusSourceEnum,
+  bonusSourceEnum,
   qualityCategoryEnum,
 } from "@neon-codex/common/build/enums.js";
 import type { QualitySelectedListType } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
@@ -221,7 +221,7 @@ function QualityDropdownComponent({
           }
           if (newQuality.bonus !== undefined) {
             const bonusParsed = {
-              sourceType: BonusSourceEnum.Quality,
+              sourceType: bonusSourceEnum.Quality,
               source: newQuality.name,
               ...(newQuality.bonus.linkMentorSpirit !== undefined && {
                 linkMentorSpirit: true as const,

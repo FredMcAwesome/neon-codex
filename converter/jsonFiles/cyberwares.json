@@ -8585,7 +8585,7 @@
         },
         {
           "name": "Commlink",
-          "gears": [
+          "gearList": [
             {
               "name": "Shiawase Jishi",
               "category": "Commlinks"
@@ -9280,7 +9280,7 @@
       "cyberwareList": [
         {
           "name": "Commlink",
-          "gears": [
+          "gearList": [
             {
               "name": "Transys Avalon",
               "category": "Commlinks"
@@ -9347,7 +9347,7 @@
       "cyberwareList": [
         {
           "name": "Commlink",
-          "gears": [
+          "gearList": [
             {
               "name": "Transys Avalon",
               "category": "Commlinks"
@@ -9414,7 +9414,7 @@
       "cyberwareList": [
         {
           "name": "Commlink",
-          "gears": [
+          "gearList": [
             {
               "name": "Transys Avalon",
               "category": "Commlinks"
@@ -9494,7 +9494,7 @@
       "cyberwareList": [
         {
           "name": "Commlink",
-          "gears": [
+          "gearList": [
             {
               "name": "Sony Ronin",
               "category": "Commlinks"
@@ -9554,7 +9554,7 @@
       "cyberwareList": [
         {
           "name": "Commlink",
-          "gears": [
+          "gearList": [
             {
               "name": "Sony Ronin",
               "category": "Commlinks"
@@ -9611,7 +9611,7 @@
       "cyberwareList": [
         {
           "name": "Commlink",
-          "gears": [
+          "gearList": [
             {
               "name": "Sony Ronin",
               "category": "Commlinks"
@@ -9682,7 +9682,7 @@
       "cyberwareList": [
         {
           "name": "Commlink",
-          "gears": [
+          "gearList": [
             {
               "name": "MCT-5000",
               "category": "Commlinks"
@@ -9780,7 +9780,7 @@
       "cyberwareList": [
         {
           "name": "Commlink",
-          "gears": [
+          "gearList": [
             {
               "name": "MCT-5000",
               "category": "Commlinks"

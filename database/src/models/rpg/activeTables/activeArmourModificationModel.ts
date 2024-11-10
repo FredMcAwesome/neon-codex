@@ -1,6 +1,6 @@
 import { Entity, ManyToOne, PrimaryKey, Property } from "@mikro-orm/postgresql";
 import type { Ref } from "@mikro-orm/postgresql";
-import { CustomisedArmours } from "./customisedArmourModel.js";
+import { CustomisedArmours } from "./activeArmourModel.js";
 import { Armours } from "../equipment/combat/armourModel.js";
 import { ArmourModifications } from "../equipment/combat/armourModificationModel.js";
 
@@ -19,7 +19,7 @@ export abstract class ActiveArmourModifications {
   id!: number;
 
   @ManyToOne({ entity: () => ArmourModifications, ref: true })
-  armourModification: Ref<ArmourModifications>;
+  armourModification!: Ref<ArmourModifications>;
 
   @Property({ nullable: true })
   rating?: number;
@@ -33,7 +33,7 @@ export abstract class ActiveArmourModifications {
 @Entity({ discriminatorValue: "included" })
 export class IncludedArmourModifications extends ActiveArmourModifications {
   @ManyToOne({ entity: () => Armours, ref: true })
-  standardArmour: Ref<Armours>;
+  standardArmour!: Ref<Armours>;
 
   constructor(
     armour: Ref<Armours>,
@@ -48,14 +48,9 @@ export class IncludedArmourModifications extends ActiveArmourModifications {
 @Entity({ discriminatorValue: "customised" })
 export class CustomisedArmourModifications extends ActiveArmourModifications {
   @ManyToOne({ entity: () => CustomisedArmours, ref: true })
-  customisedArmour: Ref<CustomisedArmours>;
+  customisedArmour!: Ref<CustomisedArmours>;
 
-  constructor(
-    armour: Ref<CustomisedArmours>,
-    armourModification: Ref<ArmourModifications>,
-    rating?: number
-  ) {
+  constructor(armourModification: Ref<ArmourModifications>, rating?: number) {
     super(armourModification, rating);
-    this.customisedArmour = armour;
   }
 }

@@ -131,7 +131,7 @@ const CharacterCreator = function () {
   const [equipmentSelections, setEquipmentSelections] =
     useState<EquipmentListType>({
       weapons: [],
-      gears: [],
+      gearList: [],
       armours: [],
       augmentations: [],
       vehicles: [],

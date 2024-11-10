@@ -80,7 +80,7 @@ export function ParseDrugs() {
 }
 
 function convertDrug(drug: DrugXmlType) {
-  let match = Availability.match(drug.avail.toString());
+  const match = Availability.match(drug.avail.toString());
   if (match.failed()) {
     assert(false, match.message);
   }

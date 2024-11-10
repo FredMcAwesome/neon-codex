@@ -13,7 +13,7 @@ import { weaponAccessoryMountLocationEnum } from "@neon-codex/common/build/enums
 import type { AccessoryMountType } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
 import { WeaponAccessories } from "../equipment/combat/weaponAccessoryModel.js";
 import { Weapons } from "../equipment/combat/weaponModel.js";
-import { CustomisedWeapons } from "./customisedWeaponModel.js";
+import { ActiveWeapons } from "./activeWeaponModel.js";
 
 // Links to either a custom weapon, or a weapon in the table.
 // When we create a custom weapon that already has an accessory
@@ -30,7 +30,7 @@ export abstract class ActiveWeaponAccessories {
   id!: number;
 
   @ManyToOne({ entity: () => WeaponAccessories, ref: true })
-  weaponAccessory: Ref<WeaponAccessories>;
+  weaponAccessory!: Ref<WeaponAccessories>;
 
   @OneToMany(
     () => ActiveWeaponAccessoryGears,
@@ -63,31 +63,27 @@ export abstract class ActiveWeaponAccessories {
 @Entity({ discriminatorValue: "included" })
 export class IncludedWeaponAccessories extends ActiveWeaponAccessories {
   @ManyToOne({ entity: () => Weapons, ref: true })
-  standardWeapon: Ref<Weapons>;
+  standardWeapon!: Ref<Weapons>;
 
   constructor(
-    weapon: Ref<Weapons>,
     weaponAccessory: Ref<WeaponAccessories>,
     rating?: number,
     weaponMountsUsed?: AccessoryMountType
   ) {
     super(weaponAccessory, rating, weaponMountsUsed);
-    this.standardWeapon = weapon;
   }
 }
 
 @Entity({ discriminatorValue: "customised" })
 export class CustomisedWeaponAccessories extends ActiveWeaponAccessories {
-  @ManyToOne({ entity: () => CustomisedWeapons, ref: true })
-  customisedWeapon: Ref<CustomisedWeapons>;
+  @ManyToOne({ entity: () => ActiveWeapons, ref: true })
+  activeWeapon!: Ref<ActiveWeapons>;
 
   constructor(
-    weapon: Ref<CustomisedWeapons>,
     weaponAccessory: Ref<WeaponAccessories>,
     rating?: number,
     weaponMountsUsed?: AccessoryMountType
   ) {
     super(weaponAccessory, rating, weaponMountsUsed);
-    this.customisedWeapon = weapon;
   }
 }

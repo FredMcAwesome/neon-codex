@@ -14,7 +14,7 @@ import {
   convertLimbSlot,
   convertAugmentationLimit,
   convertSource,
-  convertXmlGears,
+  convertIncludedXmlGears,
   convertRatingMeaning,
 } from "../common/ParserHelper.js";
 import {
@@ -274,7 +274,7 @@ function convertCyberware(cyberware: CyberwareXmlType) {
 
   const gears =
     cyberware.gears !== undefined
-      ? convertXmlGears(cyberware.gears)
+      ? convertIncludedXmlGears(cyberware.gears)
       : undefined;
   const { allowedGearList, allowedGearCategories } = convertAllowGear(
     cyberware.allowgear

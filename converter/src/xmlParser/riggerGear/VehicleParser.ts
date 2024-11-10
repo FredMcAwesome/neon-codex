@@ -9,7 +9,7 @@ import { VehicleSchema } from "@neon-codex/common/build/schemas/equipment/rigger
 import type { VehicleXmlType } from "./VehicleParserSchemas.js";
 import {
   convertSource,
-  convertXmlGears,
+  convertIncludedXmlGears,
   convertXmlVehicleModList,
 } from "../common/ParserHelper.js";
 import {
@@ -41,9 +41,10 @@ export function ParseVehicles() {
   });
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const jObj: any = parser.parse(xml_string);
-  // console.log(
+  // console.dir(
   //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  //   jObj.chummer.vehicles.vehicle[305]
+  //   jObj.chummer.vehicles.vehicle[142],
+  //   { depth: Infinity }
   // );
 
   const vehicleListParsed = VehicleListXmlSchema.safeParse(
@@ -129,7 +130,7 @@ const convertVehicle = function (vehicle: VehicleXmlType) {
   const includedGearList =
     vehicle.gears !== undefined
       ? // switch gear to usegear (as it should be in xml...)
-        convertXmlGears({ usegear: vehicle.gears.gear })
+        convertIncludedXmlGears({ usegear: vehicle.gears.gear })
       : undefined;
   const includedMods =
     vehicle.mods !== undefined

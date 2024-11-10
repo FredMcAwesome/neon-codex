@@ -135,7 +135,7 @@ export const CreatorSummary = function (props: IProps) {
         </CollapsibleDiv>
         <CollapsibleDiv title="Gears">
           <ul>
-            {props.equipmentSelections.gears.map((gear) => {
+            {props.equipmentSelections.gearList.map((gear) => {
               return <li key={gear.name}>{gear.name}</li>;
             })}
           </ul>

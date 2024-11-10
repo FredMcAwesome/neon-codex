@@ -7,7 +7,7 @@ import {
   Property,
 } from "@mikro-orm/postgresql";
 import {
-  LifestyleQualityCategoryEnum,
+  lifestyleQualityCategoryEnum,
   sourceBookEnum,
 } from "@neon-codex/common/build/enums.js";
 import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
@@ -23,8 +23,8 @@ export class LifestyleQualities {
   @Property({ length: 255 })
   name!: string;
 
-  @Enum(() => LifestyleQualityCategoryEnum)
-  category!: LifestyleQualityCategoryEnum;
+  @Enum(() => lifestyleQualityCategoryEnum)
+  category!: lifestyleQualityCategoryEnum;
 
   @Property()
   monthlyCost!: number;

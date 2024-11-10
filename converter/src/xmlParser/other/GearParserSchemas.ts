@@ -130,7 +130,7 @@ const GearXmlSchema = zod
     gears: zod.optional(
       zod
         .object({
-          usegear: zod.union([zod.array(UseGearXmlSchema), UseGearXmlSchema]),
+          usegear: UseGearXmlSchema,
           // Used if there is a long list of included gear
           _startcollapsed: zod.optional(zod.literal("True")),
         })

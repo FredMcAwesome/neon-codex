@@ -11,7 +11,7 @@ import type {
 } from "./CyberwareParserSchemas.js";
 import { mountLocationXmlEnum } from "./CyberwareParserSchemas.js";
 import { cyberwareXmlCategoryEnum } from "./CyberwareParserSchemas.js";
-import { convertXmlGears } from "../common/ParserHelper.js";
+import { convertIncludedXmlGears } from "../common/ParserHelper.js";
 import type { AugmentationSubsystemListType } from "@neon-codex/common/build/schemas/equipment/bodyModification/augmentationSchemas.js";
 
 export const convertCyberwareCategory = function (
@@ -148,9 +148,9 @@ export const convertSubsystemInternal = function (
   const rating = subsystemInteral.rating;
   const forced = subsystemInteral.forced;
 
-  let gears;
+  let gearList;
   if (gearsXml !== undefined) {
-    gears = convertXmlGears(gearsXml);
+    gearList = convertIncludedXmlGears(gearsXml);
   }
   let subsystems;
   if (subsystemsXml !== undefined) {
@@ -162,7 +162,7 @@ export const convertSubsystemInternal = function (
     rating: rating,
     forced: forced,
     subsystem: subsystems,
-    gears: gears,
+    gearList: gearList,
   };
 };
 

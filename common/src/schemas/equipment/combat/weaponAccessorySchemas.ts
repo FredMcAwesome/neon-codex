@@ -11,7 +11,7 @@ import {
 } from "../../../enums.js";
 import {
   AvailabilityRatingSchema,
-  UseGearListSchema,
+  IncludedGearListSchema,
 } from "../../shared/commonSchemas.js";
 import { RequirementsSchema } from "../../shared/requiredSchemas.js";
 import {
@@ -109,7 +109,7 @@ export const WeaponAccessorySummarySchema = zod
     allowedGearCategories: zod.optional(
       zod.array(zod.nativeEnum(gearCategoryEnum))
     ),
-    includedGearList: zod.optional(UseGearListSchema),
+    includedGearList: zod.optional(IncludedGearListSchema),
     specialModification: zod.boolean(),
     extraAmmoSlots: zod.optional(zod.number()),
     ammoCapacityCalculation: zod.optional(AmmoCapacityCalculationSchema),

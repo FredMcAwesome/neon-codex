@@ -16,13 +16,13 @@ import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { convertSource } from "../common/ParserHelper.js";
 import {
-  GridCategoryEnum,
-  LifestyleCostIncrementEnum,
+  gridCategoryEnum,
+  lifestyleCostIncrementEnum,
 } from "@neon-codex/common/build/enums.js";
 
 const FreeGridXmlSchema = zod
   .object({
-    _select: zod.nativeEnum(GridCategoryEnum),
+    _select: zod.nativeEnum(gridCategoryEnum),
     xmltext: zod.literal("Grid Subscription"),
   })
   .strict();
@@ -210,12 +210,12 @@ const convertLifestyle = function ({
   if (xmlLifestyle.required !== undefined) {
     requirements = convertRequirements(xmlLifestyle.required);
   }
-  let costIncrement = LifestyleCostIncrementEnum.Monthly;
+  let costIncrement = lifestyleCostIncrementEnum.Monthly;
   if (xmlLifestyle.increment !== undefined) {
     // assert here just in case other increments are added later
     // (so I don't forget to update this)
     assert(xmlLifestyle.increment === "day");
-    costIncrement = LifestyleCostIncrementEnum.Daily;
+    costIncrement = lifestyleCostIncrementEnum.Daily;
   }
   let lifestyleCategoryDefaults;
   if (xmlLifestyle.lp > 0) {

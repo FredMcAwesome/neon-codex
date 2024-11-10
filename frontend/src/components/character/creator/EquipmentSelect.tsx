@@ -130,14 +130,14 @@ export const EquipmentSelect = function (props: IProps) {
   };
   const addGear = function (gear: GearType) {
     const equipment = Object.assign({}, equipmentSelections);
-    equipment.gears.push(gear);
+    equipment.gearList.push(gear);
     props.setEquipmentSelections(equipment);
     props.setNuyen(props.nuyen - costCalculation(gear.cost, {}));
   };
   const removeGear = function (other: GearType, index: number) {
     const equipment = Object.assign({}, equipmentSelections);
-    if (equipment.gears[index] === other) {
-      equipment.gears.splice(index, 1);
+    if (equipment.gearList[index] === other) {
+      equipment.gearList.splice(index, 1);
       props.setEquipmentSelections(equipment);
       props.setNuyen(props.nuyen + costCalculation(other.cost, {}));
     } else {
@@ -219,7 +219,7 @@ export const EquipmentSelect = function (props: IProps) {
             return (
               <GearDiv
                 title={value}
-                data={data.gears}
+                data={data.gearList}
                 gearCategory={value}
                 addGear={addGear}
                 key={index}
@@ -335,7 +335,7 @@ export const EquipmentSelect = function (props: IProps) {
         </div>
         <h3>Gear</h3>
         <div>
-          {equipmentSelections.gears.map((gear, index) => {
+          {equipmentSelections.gearList.map((gear, index) => {
             const addItem = function () {
               addGear(gear);
             };

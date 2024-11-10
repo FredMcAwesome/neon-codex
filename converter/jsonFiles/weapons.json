@@ -250,7 +250,7 @@
       },
       {
         "name": "Weapon Commlink",
-        "gears": [
+        "gearList": [
           {
             "name": "Ogre Hammer SWS Assault Cannon (Commlink)",
             "rating": 4,
@@ -260,7 +260,7 @@
       },
       {
         "name": "Imaging Scope",
-        "gears": [
+        "gearList": [
           {
             "name": "Image Link",
             "category": "Vision Enhancements"
@@ -1126,7 +1126,7 @@
     "includedAccessoryList": [
       {
         "name": "Imaging Scope",
-        "gears": [
+        "gearList": [
           {
             "name": "Vision Enhancement",
             "rating": 1,
@@ -1356,7 +1356,7 @@
     "includedAccessoryList": [
       {
         "name": "Imaging Scope",
-        "gears": [
+        "gearList": [
           {
             "name": "Image Link",
             "category": "Vision Enhancements"
@@ -11235,7 +11235,7 @@
       },
       {
         "name": "Weapon Commlink",
-        "gears": [
+        "gearList": [
           {
             "name": "Terracotta Arms AM-47 (Commlink)",
             "rating": 5,
@@ -11248,7 +11248,7 @@
       },
       {
         "name": "Imaging Scope",
-        "gears": [
+        "gearList": [
           {
             "name": "Image Link",
             "category": "Vision Enhancements"
@@ -12091,7 +12091,7 @@
     "includedAccessoryList": [
       {
         "name": "Imaging Scope",
-        "gears": [
+        "gearList": [
           {
             "name": "Image Link",
             "category": "Vision Enhancements"
@@ -12214,7 +12214,7 @@
     "includedAccessoryList": [
       {
         "name": "Imaging Scope",
-        "gears": [
+        "gearList": [
           {
             "name": "Image Link",
             "category": "Vision Enhancements"
@@ -31955,7 +31955,7 @@
       },
       {
         "name": "Weapon Commlink",
-        "gears": [
+        "gearList": [
           {
             "name": "Meta Link",
             "category": "Commlinks"
@@ -32436,7 +32436,7 @@
     "includedAccessoryList": [
       {
         "name": "Smart Firing Platform",
-        "gears": [
+        "gearList": [
           {
             "name": "Clearsight Autosoft",
             "rating": 1,

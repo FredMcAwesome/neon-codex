@@ -8,7 +8,7 @@ import {
   Property,
   type Ref,
 } from "@mikro-orm/postgresql";
-import { CustomisedWeapons } from "../activeTables/customisedWeaponModel.js";
+import { CustomisedWeapons } from "../activeTables/activeWeaponModel.js";
 import type {
   AttributesType,
   PriorityLevelsType,
@@ -17,15 +17,15 @@ import type {
 import { CustomisedSkills } from "../activeTables/activeSkillModel.js";
 import { Heritages } from "../traits/heritageModel.js";
 import { CustomisedQualities } from "../activeTables/activeQualityModel.js";
-import { CustomisedArmours } from "../activeTables/customisedArmourModel.js";
+import { CustomisedArmours } from "../activeTables/activeArmourModel.js";
 import { CustomisedGears } from "../activeTables/activeGearModel.js";
-import { CustomisedVehicles } from "../activeTables/customisedVehicleModel.js";
+import { CustomisedVehicles } from "../activeTables/activeVehicleModel.js";
 import { CustomisedAugmentations } from "../activeTables/activeAugmentationModel.js";
 import { CustomisedSkillGroups } from "../activeTables/activeSkillGroupModel.js";
 import Users from "../../accounts/userModel.js";
 import { ActiveTalents } from "../activeTables/activeTalentModel.js";
 import { ActiveMartialArts } from "../activeTables/activeMartialArtModel.js";
-import { ActiveLifestyles } from "../activeTables/activeLIfestyleModel.js";
+import { CustomisedLifestyles } from "../activeTables/activeLIfestyleModel.js";
 
 @Entity()
 export class Characters {
@@ -90,15 +90,11 @@ export class Characters {
   @OneToMany(() => ActiveMartialArts, (martialArt) => martialArt.character)
   martialArts = new Collection<ActiveMartialArts>(this);
 
-  @OneToOne(
-    () => ActiveLifestyles,
-    (activeLifestyle) => activeLifestyle.character,
-    {
-      owner: true,
-      ref: true,
-    }
+  @OneToMany(
+    () => CustomisedLifestyles,
+    (activeLifestyle) => activeLifestyle.character
   )
-  lifestyle!: Ref<ActiveLifestyles>;
+  lifestyles = new Collection<CustomisedLifestyles>(this);
 
   @ManyToOne({ entity: () => Users, ref: true })
   user!: Ref<Users>;
@@ -109,7 +105,6 @@ export class Characters {
     priorities: PriorityLevelsType;
     attributes: AttributesType;
     specialAttributes: SpecialAttributesType;
-    lifestyle: Ref<ActiveLifestyles>;
     nuyen: number;
     karmaPoints: number;
     user: Ref<Users>;
@@ -119,7 +114,6 @@ export class Characters {
     this.priorities = dto.priorities;
     this.attributes = dto.attributes;
     this.specialAttributes = dto.specialAttributes;
-    this.lifestyle = dto.lifestyle;
     this.nuyen = dto.nuyen;
     this.karmaPoints = dto.karmaPoints;
     this.user = dto.user;

@@ -15,7 +15,10 @@ import {
 import * as fs from "fs";
 import assert from "assert";
 import { WeaponListXmlSchema } from "./WeaponParserSchemas.js";
-import { convertAllowGear, convertXmlGears } from "../common/ParserHelper.js";
+import {
+  convertAllowGear,
+  convertIncludedXmlGears,
+} from "../common/ParserHelper.js";
 import {
   damageTypeEnum,
   standardCalculationEnum,
@@ -189,7 +192,7 @@ export function ParseWeaponAccessories() {
       allowedGearList: allowedGearList,
       allowedGearCategories: allowedGearCategories,
       includedGearList: weaponAccessory.gears
-        ? convertXmlGears(weaponAccessory.gears)
+        ? convertIncludedXmlGears(weaponAccessory.gears)
         : undefined,
       specialModification: weaponAccessory.specialmodification === "True",
       extraAmmoSlots: weaponAccessory.ammoslots,

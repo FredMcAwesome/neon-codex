@@ -19,8 +19,7 @@ import {
 import {
   AvailabilityRatingSchema,
   RangeCostSchema,
-  UseGearListSchema,
-  // RatingSchema
+  IncludedGearListSchema,
 } from "../../shared/commonSchemas.js";
 import { BonusSchema, WeaponBonusSchema } from "../../shared/bonusSchemas.js";
 import { RequirementsSchema } from "../../shared/requiredSchemas.js";
@@ -203,7 +202,7 @@ export const GearSchema = zod
     explosiveWeight: zod.optional(WeightSchema),
     userSelectable: zod.optional(zod.literal(false)),
     allowedGearList: zod.optional(zod.array(zod.string())),
-    includedGearList: zod.optional(UseGearListSchema),
+    includedGearList: zod.optional(IncludedGearListSchema),
     deviceRating: zod.optional(GearDeviceRatingSchema),
     programs: zod.optional(GearProgramSchema),
     attributeArray: zod.optional(zod.array(zod.number())),
@@ -239,7 +238,7 @@ export const CustomisedGearSchema = zod
     baseGear: GearSchema,
     // This overrides baseGear included gear
     // TODO: make this lazy and point to itself
-    gearList: zod.optional(GearListSchema),
+    gearList: zod.optional(IncludedGearListSchema),
     // TODO: is rating a thing for gear?
     // rating: zod.optional(zod.number()),
     customName: zod.optional(zod.string()),

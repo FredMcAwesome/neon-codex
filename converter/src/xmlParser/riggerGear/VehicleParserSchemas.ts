@@ -84,7 +84,7 @@ const VehicleXmlSchema = zod
     gears: zod.optional(
       zod
         .object({
-          gear: zod.union([zod.array(UseGearXmlSchema), UseGearXmlSchema]),
+          gear: UseGearXmlSchema,
         })
         .strict()
     ),

@@ -1,8 +1,8 @@
 import { z as zod } from "zod";
 import {
-  GridCategoryEnum,
-  LifestyleCostIncrementEnum,
-  LifestyleQualityCategoryEnum,
+  gridCategoryEnum,
+  lifestyleCostIncrementEnum,
+  lifestyleQualityCategoryEnum,
   sourceBookEnum,
 } from "../../enums.js";
 import { BonusSchema } from "../shared/bonusSchemas.js";
@@ -11,7 +11,7 @@ import { RequirementsSchema } from "../shared/requiredSchemas.js";
 export const LifestyleCostSchema = zod
   .object({
     cost: zod.number(),
-    increment: zod.nativeEnum(LifestyleCostIncrementEnum),
+    increment: zod.nativeEnum(lifestyleCostIncrementEnum),
   })
   .strict();
 export type LifestyleCostType = zod.infer<typeof LifestyleCostSchema>;
@@ -45,7 +45,7 @@ export const LifestyleSchema = zod
     cost: LifestyleCostSchema,
     lifestylePoints: zod.number(),
     allowBonusLifestylePoints: zod.optional(zod.literal(true)),
-    freegridList: zod.array(zod.nativeEnum(GridCategoryEnum)),
+    freegridList: zod.array(zod.nativeEnum(gridCategoryEnum)),
     dice: zod.number(),
     startingNuyenMultiplier: zod.number(),
     costIncreasePerCategoryLevelIncrease: zod.optional(
@@ -67,7 +67,7 @@ export type LifestyleListType = zod.infer<typeof LifestyleListSchema>;
 export const LifestyleQualitySchema = zod
   .object({
     name: zod.string(),
-    category: zod.nativeEnum(LifestyleQualityCategoryEnum),
+    category: zod.nativeEnum(lifestyleQualityCategoryEnum),
     monthlyCost: zod.number(),
     lifestylePointCost: zod.number(),
     lifestyleCostMultiplier: zod.optional(zod.number()),

@@ -11,7 +11,7 @@ import {
   convertGearCategory,
   convertRatingMeaning,
   convertSource,
-  convertXmlGears,
+  convertIncludedXmlGears,
 } from "../common/ParserHelper.js";
 import {
   availabilityGearSemantics,
@@ -149,7 +149,7 @@ const convertGear = function (gear: GearXmlType) {
       ? gear.allowgear.name
       : [gear.allowgear.name];
   const includedGearList =
-    gear.gears === undefined ? undefined : convertXmlGears(gear.gears);
+    gear.gears === undefined ? undefined : convertIncludedXmlGears(gear.gears);
 
   const deviceRating =
     gear.devicerating === undefined

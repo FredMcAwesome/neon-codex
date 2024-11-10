@@ -37,7 +37,7 @@ import type {
   ModXmlType,
 } from "./ParserCommonDefines.js";
 import { sourceBookXmlEnum } from "./ParserCommonDefines.js";
-import type { UseGearListType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
+import type { IncludedGearListType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 import type { XmlMovementType } from "../character/MetatypeParserSchemas.js";
 import type { BonusGenericListType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 
@@ -366,7 +366,9 @@ export const convertAllowGear = function (
 };
 
 // TODO: handle gear correctly
-export function convertXmlGears(gears: GearXmlType): UseGearListType {
+export function convertIncludedXmlGears(
+  gears: GearXmlType
+): IncludedGearListType {
   const xmlUseGear = Array.isArray(gears.usegear)
     ? gears.usegear
     : [gears.usegear];
@@ -394,19 +396,20 @@ export function convertXmlGears(gears: GearXmlType): UseGearListType {
         consumeCapacity: consumeCapacity,
         quantity: quantity,
       };
+    } else {
+      let category;
+      if (useGear.category) {
+        category = convertGearCategory(useGear.category);
+      }
+      if (typeof useGear.name !== "string") {
+        useGear.name = useGear.name.xmltext;
+      }
+      return {
+        name: useGear.name,
+        ...(useGear.rating !== undefined && { rating: useGear.rating }),
+        ...(category !== undefined && { category: category }),
+      };
     }
-    let category;
-    if (useGear.category) {
-      category = convertGearCategory(useGear.category);
-    }
-    if (typeof useGear.name !== "string") {
-      useGear.name = useGear.name.xmltext;
-    }
-    return {
-      name: useGear.name,
-      ...(useGear.rating !== undefined && { rating: useGear.rating }),
-      ...(category !== undefined && { category: category }),
-    };
   });
 }
 
@@ -576,6 +579,7 @@ export const convertAugmentationGrade = function (
     case augmentationXmlGradeEnum.OmegawareAdapsin:
     case augmentationXmlGradeEnum.GreywareAdapsin:
       assert(false, `Grade: ${grade} exists`);
+      break;
     case augmentationXmlGradeEnum.None:
       return augmentationGradeEnum.None;
     case augmentationXmlGradeEnum.Used:

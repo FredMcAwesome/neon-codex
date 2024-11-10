@@ -989,17 +989,17 @@ export enum mentorCategoryEnum {
   Paragon = "Paragon",
 }
 
-export enum BonusSourceEnum {
+export enum bonusSourceEnum {
   Quality = "Quality",
   Tradition = "Tradition",
 }
 
-export enum LifestyleCostIncrementEnum {
+export enum lifestyleCostIncrementEnum {
   Daily = "Daily",
   Monthly = "Monthly",
 }
 
-export enum LifestyleQualityCategoryEnum {
+export enum lifestyleQualityCategoryEnum {
   Entertainment_Asset = "Entertainment - Asset",
   Entertainment_Service = "Entertainment - Service",
   Entertainment_Outing = "Entertainment - Outing",
@@ -1008,8 +1008,23 @@ export enum LifestyleQualityCategoryEnum {
   Contracts = "Contracts",
 }
 
-export enum GridCategoryEnum {
+export enum gridCategoryEnum {
   LocalGrid = "Local Grid",
   PublicGrid = "Public Grid",
   GlobalGrid = "Global Grid",
+}
+
+export enum equipmentPackCategoryEnum {
+  CorePacks = "Core Packs",
+  WeaponAndAmmoPacks = "Weapon and Ammo Packs",
+  ArmorPacks = "Armor Packs",
+  CyberPacks = "Cyber Packs",
+  LifestylePacks = "Lifestyle Packs",
+  ColorPacks = "Color Packs",
+  VehiclePacks = "Vehicle Packs",
+  DeckerPacks = "Decker Packs",
+  DronePacks = "Drone Packs",
+  MagicPacks = "Magic Packs",
+  CommunityPacks = "Community Packs",
+  Custom = "Custom",
 }

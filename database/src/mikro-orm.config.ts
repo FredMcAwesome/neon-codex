@@ -19,11 +19,14 @@ import {
   AugmentationIncludedGears,
   VehicleIncludedGears,
   GearIncludedGears,
+  ActiveArmourIncludedGears,
+  PackGears,
 } from "./models/rpg/activeTables/activeGearModel.js";
 import {
   ActiveVehicleModifications,
   IncludedVehicleModifications,
   CustomisedVehicleModifications,
+  PackVehicleModifications,
 } from "./models/rpg/activeTables/activeVehicleModificationModel.js";
 import {
   ActiveWeaponAccessories,
@@ -40,9 +43,22 @@ import {
   CustomisedSkills,
   CritterIncludedSkills,
 } from "./models/rpg/activeTables/activeSkillModel.js";
-import { CustomisedArmours } from "./models/rpg/activeTables/customisedArmourModel.js";
-import { CustomisedVehicles } from "./models/rpg/activeTables/customisedVehicleModel.js";
-import { CustomisedWeapons } from "./models/rpg/activeTables/customisedWeaponModel.js";
+import {
+  ActiveArmours,
+  CustomisedArmours,
+  PackArmours,
+} from "./models/rpg/activeTables/activeArmourModel.js";
+import {
+  ActiveVehicles,
+  CustomisedVehicles,
+  PackVehicles,
+} from "./models/rpg/activeTables/activeVehicleModel.js";
+import {
+  ActiveWeapons,
+  CustomisedWeapons,
+  PackWeapons,
+  VehicleWeapons,
+} from "./models/rpg/activeTables/activeWeaponModel.js";
 import {
   Augmentations,
   Biowares,
@@ -130,6 +146,8 @@ import {
   ActiveAugmentations,
   IncludedAugmentations,
   CritterIncludedAugmentations,
+  PackAugmentations,
+  ChildAugmentations,
 } from "./models/rpg/activeTables/activeAugmentationModel.js";
 import {
   ActiveComplexForms,
@@ -175,7 +193,11 @@ import { MartialArts } from "./models/rpg/abilities/martialArtModel.js";
 import { ActiveMartialArts } from "./models/rpg/activeTables/activeMartialArtModel.js";
 import { Lifestyles } from "./models/rpg/otherData/lifestyleModel.js";
 import { LifestyleQualities } from "./models/rpg/otherData/lifestyleQualityModel.js";
-import { ActiveLifestyles } from "./models/rpg/activeTables/activeLIfestyleModel.js";
+import {
+  ActiveLifestyles,
+  PackLifestyles,
+} from "./models/rpg/activeTables/activeLIfestyleModel.js";
+import { EquipmentPacks } from "./models/rpg/equipment/equipmentPackModel.js";
 
 const dbOptions: Options = {
   entities: [
@@ -231,6 +253,9 @@ const dbOptions: Options = {
     Explosives,
     WeaponAccessories,
 
+    ActiveWeapons,
+    PackWeapons,
+    VehicleWeapons,
     CustomisedWeapons,
     ActiveWeaponAccessories,
     IncludedWeaponAccessories,
@@ -239,6 +264,8 @@ const dbOptions: Options = {
     Armours,
     ArmourModifications,
 
+    ActiveArmours,
+    PackArmours,
     CustomisedArmours,
     ActiveArmourModifications,
     IncludedArmourModifications,
@@ -252,6 +279,8 @@ const dbOptions: Options = {
     Cyberwares,
     ActiveAugmentations,
     IncludedAugmentations,
+    ChildAugmentations,
+    PackAugmentations,
     CritterIncludedAugmentations,
     CustomisedAugmentations,
 
@@ -272,9 +301,12 @@ const dbOptions: Options = {
     VehicleChasisModifications,
     WeaponMountModifications,
 
+    ActiveVehicles,
+    PackVehicles,
     CustomisedVehicles,
     ActiveVehicleModifications,
     IncludedVehicleModifications,
+    PackVehicleModifications,
     CustomisedVehicleModifications,
 
     Gears,
@@ -287,6 +319,8 @@ const dbOptions: Options = {
     AugmentationIncludedGears,
     VehicleIncludedGears,
     GearIncludedGears,
+    ActiveArmourIncludedGears,
+    PackGears,
 
     Spells,
     AdeptPowers,
@@ -332,6 +366,9 @@ const dbOptions: Options = {
     Lifestyles,
     LifestyleQualities,
     ActiveLifestyles,
+    PackLifestyles,
+
+    EquipmentPacks,
 
     Characters,
   ],

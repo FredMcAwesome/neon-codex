@@ -10,7 +10,7 @@ import {
 import {
   AvailabilityRatingSchema,
   DamageReductionArmourSchema,
-  UseGearListSchema,
+  IncludedGearListSchema,
 } from "../../shared/commonSchemas.js";
 import { BonusSchema } from "../../shared/bonusSchemas.js";
 
@@ -118,7 +118,7 @@ export const ArmourModSchema = zod
     damageReduction: DamageReductionArmourSchema,
     capacityCost: CapacityArmourModSchema,
     hostArmourRequirements: zod.optional(HostArmourRequirementSchema),
-    includedGearList: zod.optional(UseGearListSchema),
+    includedGearList: zod.optional(IncludedGearListSchema),
     bonus: zod.optional(BonusSchema),
     wirelessBonus: zod.optional(BonusSchema),
     userSelectable: zod.optional(zod.literal(false)),

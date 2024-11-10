@@ -38,6 +38,7 @@ import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/r
 import { Gears } from "../other/gearModel.js";
 import { WeaponRanges } from "./helperTables/weaponRangeModel.js";
 import { IncludedWeaponAccessories } from "../../activeTables/activeWeaponAccessoryModel.js";
+import { ActiveWeapons } from "../../activeTables/activeWeaponModel.js";
 
 @Entity({
   discriminatorColumn: "type",
@@ -107,6 +108,9 @@ export abstract class Weapons {
     nullable: true,
   })
   hostWeaponMountsRequired?: Array<weaponAccessoryMountLocationEnum>;
+
+  @OneToMany(() => ActiveWeapons, (activeWeapon) => activeWeapon.weapon)
+  ActiveWeaponList = new Collection<ActiveWeapons>(this);
 
   @ManyToOne({ entity: () => Skills, ref: true })
   relatedSkill!: Ref<Skills>;

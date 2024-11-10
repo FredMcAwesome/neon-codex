@@ -69,9 +69,10 @@ export function ParseWeapons() {
   });
   // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
   const jObj: any = parser.parse(xml_string);
-  // console.log(
+  // console.dir(
   //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  //   jObj.chummer.weapons.weapon[0]
+  //   jObj.chummer.weapons.weapon[637],
+  //   { depth: Infinity }
   // );
 
   const weaponListParsed = WeaponListXmlSchema.safeParse(

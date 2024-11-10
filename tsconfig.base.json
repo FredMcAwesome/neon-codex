@@ -3,7 +3,9 @@
     "incremental": true,
     "target": "ES2022",
     "lib": ["dom", "dom.iterable", "ES2022"],
-    "noUnusedLocals": true,
+    // this was annoying me when true,
+    // just catch with eslint instead
+    "noUnusedLocals": false,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "esModuleInterop": true,

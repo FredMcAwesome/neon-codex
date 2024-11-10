@@ -30,7 +30,7 @@ import type {
 import { weaponXmlSubtypeEnum } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 import type { WeaponXmlSubtypeType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 import Weapons from "../../grammar/weapons.ohm-bundle.js";
-import { convertXmlGears } from "../common/ParserHelper.js";
+import { convertIncludedXmlGears } from "../common/ParserHelper.js";
 const Accuracy = Weapons.Accuracy;
 const Damage = Weapons.Damage;
 const ArmourPenetration = Weapons.ArmourPenetration;
@@ -785,10 +785,10 @@ export const convertAccessories = function (
       name: xmlAccessory.name,
       mount: mount,
       rating: xmlAccessory.rating,
-      gears: undefined,
+      gearList: undefined,
     };
     if (xmlAccessory.gears) {
-      accessory.gears = convertXmlGears(xmlAccessory.gears);
+      accessory.gearList = convertIncludedXmlGears(xmlAccessory.gears);
     }
     return accessory;
   });

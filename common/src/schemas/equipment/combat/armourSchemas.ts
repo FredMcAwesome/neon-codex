@@ -12,12 +12,11 @@ import {
   AvailabilityRatingSchema,
   DamageReductionArmourSchema,
   RangeCostSchema,
-  UseGearListSchema,
+  IncludedGearListSchema,
 } from "../../shared/commonSchemas.js";
 import { BonusSchema } from "../../shared/bonusSchemas.js";
 import { GenericModListSchema } from "../../shared/modSchemas.js";
 import { CustomisedArmourModListSchema } from "./armourModSchemas.js";
-import { GearListSchema } from "../other/gearSchemas.js";
 
 export const AvailabilityArmourSchema = zod
   .object({
@@ -80,7 +79,7 @@ export const ArmourSchema = zod
     customFitStackDamageReduction: zod.optional(zod.number()),
     capacity: CapacityArmourSchema,
     isWeapon: zod.optional(zod.literal(true)),
-    includedGearList: zod.optional(UseGearListSchema),
+    includedGearList: zod.optional(IncludedGearListSchema),
     bonus: zod.optional(BonusSchema),
     wirelessBonus: zod.optional(BonusSchema),
     includedMods: zod.optional(GenericModListSchema),
@@ -103,7 +102,7 @@ export const CustomisedArmourSchema = zod
     // This overrides baseArmour modifications
     modList: zod.optional(CustomisedArmourModListSchema),
     // This overrides baseArmour gears
-    gearList: zod.optional(GearListSchema),
+    gearList: zod.optional(IncludedGearListSchema),
     rating: zod.optional(zod.number()),
     customName: zod.optional(zod.string()),
   })

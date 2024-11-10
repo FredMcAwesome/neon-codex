@@ -18,10 +18,9 @@ import {
 import {
   AvailabilityRatingSchema,
   RangeCostSchema,
-  UseGearListSchema,
+  IncludedGearListSchema,
 } from "../../shared/commonSchemas.js";
 import { GenericVehicleModListSchema } from "../../shared/modSchemas.js";
-import { GearListSchema } from "../other/gearSchemas.js";
 import { VehicleModListSchema } from "./vehicleModSchemas.js";
 
 export const AvailabilityVehicleSchema = zod
@@ -105,7 +104,7 @@ const VehiclePartialSchema = zod
     armour: zod.number(),
     pilot: zod.number(),
     sensor: zod.number(),
-    includedGearList: zod.optional(UseGearListSchema),
+    includedGearList: zod.optional(IncludedGearListSchema),
     includedMods: zod.optional(GenericVehicleModListSchema),
     modSlots: zod.optional(zod.number()),
     powerTrainModSlots: zod.optional(zod.number()),
@@ -166,7 +165,7 @@ export const CustomisedVehicleSchema = zod
     // This overrides baseVehicle modifications
     modList: zod.optional(VehicleModListSchema),
     // This overrides baseVehicle included gear
-    gearList: zod.optional(GearListSchema),
+    gearList: zod.optional(IncludedGearListSchema),
     // TODO: is rating a thing for vehicles?
     // rating: zod.optional(zod.number()),
     customName: zod.optional(zod.string()),

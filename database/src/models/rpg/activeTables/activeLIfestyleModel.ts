@@ -3,15 +3,19 @@ import {
   Entity,
   ManyToMany,
   ManyToOne,
-  OneToOne,
   PrimaryKey,
+  Property,
   type Ref,
 } from "@mikro-orm/postgresql";
 import { Characters } from "../characters/characterModel.js";
 import { LifestyleQualities } from "../otherData/lifestyleQualityModel.js";
 import { Lifestyles } from "../otherData/lifestyleModel.js";
+import { EquipmentPacks } from "../equipment/equipmentPackModel.js";
 
-@Entity()
+@Entity({
+  discriminatorColumn: "discr",
+  abstract: true,
+})
 export class ActiveLifestyles {
   @PrimaryKey()
   id!: number;
@@ -26,12 +30,31 @@ export class ActiveLifestyles {
   @ManyToOne({ entity: () => Lifestyles, ref: true })
   lifestyle!: Ref<Lifestyles>;
 
-  @OneToOne(() => Characters, (character) => character.lifestyle, { ref: true })
+  @Property()
+  prepurchasedDuration!: number;
+
+  constructor(dto: Ref<Lifestyles>, prepurchasedDuration: number) {
+    this.lifestyle = dto;
+    this.prepurchasedDuration = prepurchasedDuration;
+  }
+}
+
+@Entity({ discriminatorValue: "pack" })
+export class PackLifestyles extends ActiveLifestyles {
+  @ManyToOne({ entity: () => EquipmentPacks, ref: true })
+  equipmentPack!: Ref<EquipmentPacks>;
+
+  constructor(lifestyle: Ref<Lifestyles>, prepurchasedDuration: number) {
+    super(lifestyle, prepurchasedDuration);
+  }
+}
+
+@Entity({ discriminatorValue: "customised" })
+export class CustomisedLifestyles extends ActiveLifestyles {
+  @ManyToOne({ entity: () => Characters, ref: true })
   character!: Ref<Characters>;
 
-  // No constructor as this should be added to character, not the other way around
-  // constructor(dto: Ref<Lifestyles>, character: Ref<Characters>) {
-  //   this.lifestyle = dto;
-  //   this.character = character;
-  // }
+  constructor(lifestyle: Ref<Lifestyles>, prepurchasedDuration: number) {
+    super(lifestyle, prepurchasedDuration);
+  }
 }
