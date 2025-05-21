@@ -12,11 +12,11 @@ import {
   AvailabilityRatingSchema,
   DamageReductionArmourSchema,
   RangeCostSchema,
-  IncludedGearListSchema,
 } from "../../shared/commonSchemas.js";
 import { BonusSchema } from "../../shared/bonusSchemas.js";
 import { GenericModListSchema } from "../../shared/modSchemas.js";
 import { CustomisedArmourModListSchema } from "./armourModSchemas.js";
+import { CustomisedGearListSchema } from "../other/gearSchemas.js";
 
 export const AvailabilityArmourSchema = zod
   .object({
@@ -79,10 +79,10 @@ export const ArmourSchema = zod
     customFitStackDamageReduction: zod.optional(zod.number()),
     capacity: CapacityArmourSchema,
     isWeapon: zod.optional(zod.literal(true)),
-    includedGearList: zod.optional(IncludedGearListSchema),
+    includedGearList: zod.optional(CustomisedGearListSchema),
     bonus: zod.optional(BonusSchema),
     wirelessBonus: zod.optional(BonusSchema),
-    includedMods: zod.optional(GenericModListSchema),
+    includedModList: zod.optional(CustomisedArmourModListSchema),
     allowModsFromCategory: zod.optional(zod.nativeEnum(armourModCategoryEnum)),
     addModFromCategory: zod.optional(zod.nativeEnum(armourModCategoryEnum)),
     availability: AvailabilityArmourSchema,
@@ -98,12 +98,11 @@ export type ArmourListType = zod.infer<typeof ArmourListSchema>;
 
 export const CustomisedArmourSchema = zod
   .object({
-    baseArmour: ArmourSchema,
+    baseArmour: zod.string(),
     // This overrides baseArmour modifications
     modList: zod.optional(CustomisedArmourModListSchema),
     // This overrides baseArmour gears
-    gearList: zod.optional(IncludedGearListSchema),
-    rating: zod.optional(zod.number()),
+    gearList: zod.optional(CustomisedGearListSchema),
     customName: zod.optional(zod.string()),
   })
   .strict();

@@ -76,7 +76,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "ap": -5,
       "damage": [
@@ -149,7 +149,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "ap": 2
     },
@@ -216,7 +216,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "ap": 4,
       "damage": [
@@ -289,7 +289,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "ammoForWeaponType": [
       {
         "type": "Firearm",
@@ -353,7 +353,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "damage": [
         {
@@ -457,7 +457,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "ap": -4
     },
@@ -524,7 +524,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "ammoForWeaponType": [
       {
         "type": "Firearm",
@@ -544,7 +544,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "ap": -1,
       "damage": [
@@ -617,7 +617,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "ap": 5,
       "damage": [
@@ -695,7 +695,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "damageType": "S(e)"
     },
@@ -773,7 +773,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "ap": 1,
       "damageType": "S"
@@ -841,7 +841,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "ap": 2,
       "damage": [
@@ -915,7 +915,7 @@
     "category": "Ammunition",
     "maxRating": 0,
     "allowCategoryList": ["Drugs", "Toxins", "Custom"],
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "ammoForWeaponType": [
       {
         "extraClassification": "Dart Gun"
@@ -934,7 +934,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "apReplace": -1,
       "damageReplace": "7P",
@@ -1022,7 +1022,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "ammoForWeaponType": [
       {
         "type": "Firearm",
@@ -1086,7 +1086,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "apReplace": -5,
       "damage": [
@@ -1160,7 +1160,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "ammoForWeaponType": [
       {
         "type": "Firearm",
@@ -1224,7 +1224,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "ammoForWeaponType": [
       {
         "type": "Firearm",
@@ -1244,7 +1244,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "ap": -1,
       "damage": [
@@ -1317,7 +1317,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "ap": 4,
       "damage": [
@@ -1390,7 +1390,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "ap": 2,
       "damage": [
@@ -1463,7 +1463,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "ammoForWeaponType": [
       {
         "type": "Firearm",
@@ -1527,7 +1527,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "ammoForWeaponType": [
       {
         "type": "Firearm",
@@ -1592,7 +1592,7 @@
     "category": "Ammunition",
     "maxRating": 0,
     "allowCategoryList": ["Drugs", "Toxins", "Custom"],
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "ap": 4,
       "damage": [
@@ -1667,7 +1667,7 @@
     "category": "Ammunition",
     "maxRating": 0,
     "allowCategoryList": ["Drugs", "Toxins", "Custom"],
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "ammoForWeaponType": [
       {
         "extraClassification": "Squirt gun"
@@ -1687,7 +1687,7 @@
     "category": "Ammunition",
     "maxRating": 0,
     "allowCategoryList": ["Drugs", "Toxins", "Custom"],
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "ammoForWeaponType": [
       {
         "extraClassification": "Gas gun"
@@ -1706,7 +1706,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 6,
+    "purchaseQuantity": 6,
     "ammoForWeaponType": [
       {
         "extraClassification": "Trackstopper"
@@ -2516,7 +2516,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 4,
+    "purchaseQuantity": 4,
     "weaponBonus": {
       "ap": -5,
       "damageReplace": "8S(e)"
@@ -2539,7 +2539,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 2,
+    "purchaseQuantity": 2,
     "weaponBonus": {
       "ap": -5,
       "damageReplace": "8S(e)"
@@ -2562,7 +2562,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 4,
+    "purchaseQuantity": 4,
     "ammoForWeaponType": [
       {
         "type": "Firearm",
@@ -2582,7 +2582,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "ap": -1
     },
@@ -2649,7 +2649,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "ap": -5,
       "damage": [
@@ -2678,7 +2678,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "ammoForWeaponType": [
       {
         "type": "Firearm",
@@ -2698,7 +2698,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 4,
+    "purchaseQuantity": 4,
     "ammoForWeaponType": [
       {
         "extraClassification": "Net Gun"
@@ -2717,7 +2717,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 2,
+    "purchaseQuantity": 2,
     "ammoForWeaponType": [
       {
         "extraClassification": "Net Gun Large"
@@ -3425,7 +3425,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "ammoForWeaponType": [
       {
         "extraClassification": "Supermach"
@@ -3462,7 +3462,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 50,
+    "purchaseQuantity": 50,
     "weaponBonus": {
       "damage": [
         {
@@ -3489,7 +3489,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "damageReplace": "6P",
       "damageType": "Acid"
@@ -3512,7 +3512,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "damageReplace": "0S"
     },
@@ -3534,7 +3534,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "damageReplace": "As Narcoject"
     },
@@ -3556,7 +3556,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "damageReplace": "As Drug/Toxin",
       "useRange": "Light Pistol"
@@ -3651,7 +3651,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 1000,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "apReplace": 0,
       "damageReplace": "Special",
@@ -3733,7 +3733,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "apReplace": -8,
       "damageReplace": "9P",
@@ -3803,7 +3803,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "ammoForWeaponType": [
       {
         "extraClassification": "Man-Catcher"
@@ -3864,7 +3864,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "damageType": "(M)"
     },
@@ -3931,7 +3931,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 6,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "useRange": "Light Pistol"
     },
@@ -4024,7 +4024,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 2,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "useRange": "Light Pistol"
     },
@@ -4101,7 +4101,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "damageType": "(M)",
       "useRange": "Light Pistol"
@@ -4169,7 +4169,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "bonus": {
       "enterName": true
     },
@@ -4240,7 +4240,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "damageType": "(M)",
       "useRange": "Light Pistol"
@@ -4308,7 +4308,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "damageType": "(M)",
       "useRange": "Light Pistol"
@@ -4376,7 +4376,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "bonus": {
       "enterName": true
     },
@@ -4447,7 +4447,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "ap": -4,
       "damage": [
@@ -4731,7 +4731,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "ammoForWeaponType": [
       {
         "type": "Firearm",
@@ -4795,7 +4795,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "ap": -2
     },
@@ -4862,7 +4862,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "ap": -3,
       "damage": [
@@ -4935,7 +4935,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "ammoForWeaponType": [
       {
         "type": "Firearm",
@@ -4999,7 +4999,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "ap": -3,
       "damage": [
@@ -5028,7 +5028,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "ap": 1,
       "damageType": "(S)"
@@ -6137,44 +6137,44 @@
     "userSelectable": false,
     "includedGearList": [
       {
-        "name": "Music Player",
+        "baseGear": "Music Player",
         "category": "Electronics Accessories"
       },
       {
-        "name": "Micro Trid-Projector",
+        "baseGear": "Micro Trid-Projector",
         "category": "Electronics Accessories"
       },
       {
-        "name": "Touchscreen Display",
+        "baseGear": "Touchscreen Display",
         "category": "Electronics Accessories"
       },
       {
-        "name": "Camera, Micro",
+        "baseGear": "Camera, Micro",
         "category": "Vision Devices"
       },
       {
-        "name": "RFID Tag Scanner",
+        "baseGear": "RFID Tag Scanner",
         "category": "Electronics Accessories"
       },
       {
-        "name": "GPS Guidance System",
+        "baseGear": "GPS Guidance System",
         "category": "Electronics Accessories"
       },
       {
-        "name": "Chip Player",
+        "baseGear": "Chip Player",
         "category": "Electronics Accessories"
       },
       {
-        "name": "Credstick Reader",
+        "baseGear": "Credstick Reader",
         "category": "Electronics Accessories"
       },
       {
-        "name": "Earbuds",
-        "rating": 1,
-        "category": "Audio Devices"
+        "baseGear": "Earbuds",
+        "category": "Audio Devices",
+        "rating": 1
       },
       {
-        "name": "Shock- and Water-Resistant Case",
+        "baseGear": "Shock- and Water-Resistant Case",
         "category": "Commlink Accessories"
       }
     ],
@@ -6347,7 +6347,7 @@
     },
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -6396,7 +6396,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -6425,7 +6425,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -6454,7 +6454,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -6483,7 +6483,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -6512,7 +6512,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -6541,7 +6541,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -6570,7 +6570,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -6599,7 +6599,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -6664,16 +6664,16 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -6699,16 +6699,16 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -6734,16 +6734,16 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -6769,16 +6769,16 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -6804,16 +6804,16 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -6839,16 +6839,16 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -6874,16 +6874,16 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -6924,16 +6924,16 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -6959,16 +6959,16 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -6994,16 +6994,16 @@
     "maxRating": 100000,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -7058,16 +7058,16 @@
     "maxRating": 100000,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -7416,20 +7416,20 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Encryption",
+        "baseGear": "Encryption",
         "category": "Common Programs"
       },
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -7458,24 +7458,24 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Encryption",
+        "baseGear": "Encryption",
         "category": "Common Programs"
       },
       {
-        "name": "Shell",
+        "baseGear": "Shell",
         "category": "Common Programs"
       },
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -7504,28 +7504,28 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Encryption",
+        "baseGear": "Encryption",
         "category": "Common Programs"
       },
       {
-        "name": "Shell",
+        "baseGear": "Shell",
         "category": "Common Programs"
       },
       {
-        "name": "Armor",
+        "baseGear": "Armor",
         "category": "Common Programs"
       },
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -7554,32 +7554,32 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Encryption",
+        "baseGear": "Encryption",
         "category": "Common Programs"
       },
       {
-        "name": "Shell",
+        "baseGear": "Shell",
         "category": "Common Programs"
       },
       {
-        "name": "Armor",
+        "baseGear": "Armor",
         "category": "Common Programs"
       },
       {
-        "name": "Biofeedback Filter",
+        "baseGear": "Biofeedback Filter",
         "category": "Common Programs"
       },
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -7608,28 +7608,28 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Track",
+        "baseGear": "Track",
         "category": "Common Programs"
       },
       {
-        "name": "Shell",
+        "baseGear": "Shell",
         "category": "Common Programs"
       },
       {
-        "name": "Hammer",
+        "baseGear": "Hammer",
         "category": "Common Programs"
       },
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -7658,32 +7658,32 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Track",
+        "baseGear": "Track",
         "category": "Common Programs"
       },
       {
-        "name": "Shell",
+        "baseGear": "Shell",
         "category": "Common Programs"
       },
       {
-        "name": "Hammer",
+        "baseGear": "Hammer",
         "category": "Common Programs"
       },
       {
-        "name": "Decryption",
+        "baseGear": "Decryption",
         "category": "Common Programs"
       },
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -7712,36 +7712,36 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Track",
+        "baseGear": "Track",
         "category": "Common Programs"
       },
       {
-        "name": "Shell",
+        "baseGear": "Shell",
         "category": "Common Programs"
       },
       {
-        "name": "Hammer",
+        "baseGear": "Hammer",
         "category": "Common Programs"
       },
       {
-        "name": "Decryption",
+        "baseGear": "Decryption",
         "category": "Common Programs"
       },
       {
-        "name": "Hammer",
+        "baseGear": "Hammer",
         "category": "Common Programs"
       },
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -7770,44 +7770,44 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Track",
+        "baseGear": "Track",
         "category": "Common Programs"
       },
       {
-        "name": "Shell",
+        "baseGear": "Shell",
         "category": "Common Programs"
       },
       {
-        "name": "Hammer",
+        "baseGear": "Hammer",
         "category": "Common Programs"
       },
       {
-        "name": "Decryption",
+        "baseGear": "Decryption",
         "category": "Common Programs"
       },
       {
-        "name": "Hammer",
+        "baseGear": "Hammer",
         "category": "Common Programs"
       },
       {
-        "name": "Fork",
+        "baseGear": "Fork",
         "category": "Common Programs"
       },
       {
-        "name": "Biofeedback Filter",
+        "baseGear": "Biofeedback Filter",
         "category": "Common Programs"
       },
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -7836,16 +7836,16 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -7871,16 +7871,16 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -7910,16 +7910,16 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -7945,16 +7945,16 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -7980,16 +7980,16 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -8015,7 +8015,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -8044,7 +8044,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -8073,7 +8073,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -8102,7 +8102,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -8131,7 +8131,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -8160,7 +8160,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -8189,7 +8189,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -8218,7 +8218,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -8247,7 +8247,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -8276,7 +8276,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -8305,7 +8305,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -8334,7 +8334,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -8363,7 +8363,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -8392,7 +8392,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -8421,7 +8421,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -8450,7 +8450,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -8479,15 +8479,15 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Form Factor, Non-Standard",
+        "baseGear": "Commlink Form Factor, Non-Standard",
         "category": "Commlink/Cyberdeck Form Factors"
       },
       {
-        "name": "Secret Compartment with Faraday Cage",
+        "baseGear": "Secret Compartment with Faraday Cage",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -8546,11 +8546,11 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Form Factor, Non-Standard",
+        "baseGear": "Commlink Form Factor, Non-Standard",
         "category": "Commlink/Cyberdeck Form Factors"
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -8593,12 +8593,12 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Agent",
-        "rating": 3,
-        "category": "Software"
+        "baseGear": "Agent",
+        "category": "Software",
+        "rating": 3
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -8627,12 +8627,12 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Agent",
-        "rating": 3,
-        "category": "Software"
+        "baseGear": "Agent",
+        "category": "Software",
+        "rating": 3
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -8661,7 +8661,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -8687,7 +8687,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -8713,7 +8713,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -8755,20 +8755,20 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Biofeedback Filter",
+        "baseGear": "Biofeedback Filter",
         "category": "Hacking Programs"
       },
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -8797,16 +8797,16 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -8832,20 +8832,20 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Edit",
+        "baseGear": "Edit",
         "category": "Common Programs"
       },
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -8874,16 +8874,16 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -8909,16 +8909,16 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -8947,16 +8947,16 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -8982,16 +8982,16 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -9020,16 +9020,16 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -9058,16 +9058,16 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -9093,16 +9093,16 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -9128,16 +9128,16 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -9166,16 +9166,16 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -9201,16 +9201,16 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -9236,13 +9236,13 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       }
     ],
     "deviceRating": 1,
@@ -9266,13 +9266,13 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       }
     ],
     "deviceRating": 1,
@@ -9296,13 +9296,13 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       }
     ],
     "deviceRating": 2,
@@ -9326,13 +9326,13 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       }
     ],
     "deviceRating": 2,
@@ -9356,13 +9356,13 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       }
     ],
     "deviceRating": 3,
@@ -9386,13 +9386,13 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       }
     ],
     "deviceRating": 3,
@@ -9416,13 +9416,13 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       }
     ],
     "deviceRating": 4,
@@ -9446,13 +9446,13 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       }
     ],
     "deviceRating": 5,
@@ -9477,7 +9477,7 @@
     "userSelectable": false,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -9504,7 +9504,7 @@
     "userSelectable": false,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -9531,7 +9531,7 @@
     "userSelectable": false,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -9557,11 +9557,11 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Datasoft",
+        "baseGear": "Datasoft",
         "category": "Software"
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -9604,19 +9604,19 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Form Factor, Non-Standard",
+        "baseGear": "Commlink Form Factor, Non-Standard",
         "category": "Commlink/Cyberdeck Form Factors"
       },
       {
-        "name": "Hardened Casing",
+        "baseGear": "Hardened Casing",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Blood Alcohol Biosensor",
+        "baseGear": "Blood Alcohol Biosensor",
         "category": "Sensors"
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -9689,7 +9689,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -9718,20 +9718,20 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Waterproof Casing",
+        "baseGear": "Waterproof Casing",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -9772,20 +9772,20 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       },
       {
-        "name": "Hardened Casing",
+        "baseGear": "Hardened Casing",
         "category": "Commlink Accessories"
       },
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -9811,7 +9811,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -9838,7 +9838,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -9865,7 +9865,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -9892,7 +9892,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -9919,7 +9919,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -9946,7 +9946,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -9973,7 +9973,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -10000,7 +10000,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -10028,7 +10028,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -10055,7 +10055,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -10082,7 +10082,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -10109,7 +10109,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -10136,7 +10136,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -12277,7 +12277,7 @@
     "description": "",
     "category": "RFID Tags",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "deviceRating": 1,
     "availability": {
       "rating": [0],
@@ -12292,7 +12292,7 @@
     "description": "",
     "category": "RFID Tags",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "deviceRating": 1,
     "availability": {
       "rating": [0],
@@ -12307,7 +12307,7 @@
     "description": "",
     "category": "RFID Tags",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "deviceRating": 3,
     "availability": {
       "rating": [3],
@@ -12323,7 +12323,7 @@
     "category": "RFID Tags",
     "maxRating": 0,
     "allowCategoryList": ["Sensors", "Custom"],
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "deviceRating": 2,
     "capacityInformation": {
       "capacity": [1]
@@ -12341,7 +12341,7 @@
     "description": "",
     "category": "RFID Tags",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "deviceRating": 3,
     "sleaze": 3,
     "availability": {
@@ -13100,7 +13100,7 @@
     "allowCategoryList": ["Vision Enhancements", "Custom", "Sensors"],
     "includedGearList": [
       {
-        "name": "Vision Magnification",
+        "baseGear": "Vision Magnification",
         "category": "Vision Enhancements"
       }
     ],
@@ -13138,7 +13138,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Vision Magnification",
+        "baseGear": "Vision Magnification",
         "category": "Vision Enhancements"
       }
     ],
@@ -14561,17 +14561,17 @@
     "userSelectable": false,
     "includedGearList": [
       {
-        "name": "Motion Sensor",
-        "rating": 3,
-        "category": "Sensor Functions"
+        "baseGear": "Motion Sensor",
+        "category": "Sensor Functions",
+        "rating": 3
       },
       {
-        "name": "Radar Scanner",
-        "rating": 3,
-        "category": "Sensor Functions"
+        "baseGear": "Radar Scanner",
+        "category": "Sensor Functions",
+        "rating": 3
       },
       {
-        "name": "Thermographic Vision",
+        "baseGear": "Thermographic Vision",
         "category": "Vision Enhancements"
       }
     ],
@@ -14675,7 +14675,7 @@
     "allowCategoryList": ["Vision Enhancements", "Sensors", "Custom"],
     "includedGearList": [
       {
-        "name": "Image Link",
+        "baseGear": "Image Link",
         "category": "Vision Enhancements"
       }
     ],
@@ -14714,7 +14714,7 @@
     "allowCategoryList": ["Vision Enhancements", "Sensors", "Custom"],
     "includedGearList": [
       {
-        "name": "Image Link",
+        "baseGear": "Image Link",
         "category": "Vision Enhancements"
       }
     ],
@@ -15072,7 +15072,7 @@
     "description": "",
     "category": "Security Devices",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -15562,7 +15562,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Gas Mask",
+        "baseGear": "Gas Mask",
         "category": "Survival Gear"
       }
     ],
@@ -15793,27 +15793,27 @@
     },
     "includedGearList": [
       {
-        "name": "Lighter",
+        "baseGear": "Lighter",
         "category": "Survival Gear"
       },
       {
-        "name": "Compass",
+        "baseGear": "Compass",
         "category": "Survival Gear"
       },
       {
-        "name": "Matches",
+        "baseGear": "Matches",
         "category": "Survival Gear"
       },
       {
-        "name": "Lightweight Thermal Blanket",
+        "baseGear": "Lightweight Thermal Blanket",
         "category": "Survival Gear"
       },
       {
-        "name": "Several Days' Worth of Ration Bars",
+        "baseGear": "Several Days' Worth of Ration Bars",
         "category": "Survival Gear"
       },
       {
-        "name": "Water Purification Unit",
+        "baseGear": "Water Purification Unit",
         "category": "Survival Gear"
       }
     ],
@@ -26200,9 +26200,9 @@
     "allowCategoryList": ["Common Programs", "Hacking Programs"],
     "includedGearList": [
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       }
     ],
     "deviceRating": 0,
@@ -27355,7 +27355,7 @@
     "description": "",
     "category": "Electronic Parts",
     "maxRating": 0,
-    "quantity": 5,
+    "purchaseQuantity": 5,
     "armourCapacityInformation": {
       "capacityCost": [2]
     },
@@ -27885,7 +27885,7 @@
     "description": "",
     "category": "Food",
     "maxRating": 0,
-    "quantity": 4,
+    "purchaseQuantity": 4,
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -27964,7 +27964,7 @@
     "description": "",
     "category": "Food",
     "maxRating": 0,
-    "quantity": 3,
+    "purchaseQuantity": 3,
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -28241,7 +28241,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -28270,7 +28270,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Commlink Functionality",
+        "baseGear": "Commlink Functionality",
         "category": "Electronics Accessories"
       }
     ],
@@ -28685,7 +28685,7 @@
     "description": "",
     "category": "Tools",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -28699,7 +28699,7 @@
     "description": "",
     "category": "Tools",
     "maxRating": 0,
-    "quantity": 4,
+    "purchaseQuantity": 4,
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -28896,7 +28896,7 @@
     "description": "",
     "category": "Housewares",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -28910,7 +28910,7 @@
     "description": "",
     "category": "Housewares",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -29665,7 +29665,7 @@
     "description": "",
     "category": "Miscellany",
     "maxRating": 0,
-    "quantity": 2,
+    "purchaseQuantity": 2,
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -29679,7 +29679,7 @@
     "description": "",
     "category": "Miscellany",
     "maxRating": 0,
-    "quantity": 100,
+    "purchaseQuantity": 100,
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -29693,7 +29693,7 @@
     "description": "",
     "category": "Miscellany",
     "maxRating": 0,
-    "quantity": 100,
+    "purchaseQuantity": 100,
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -29707,7 +29707,7 @@
     "description": "",
     "category": "Miscellany",
     "maxRating": 0,
-    "quantity": 20,
+    "purchaseQuantity": 20,
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -29721,7 +29721,7 @@
     "description": "",
     "category": "Miscellany",
     "maxRating": 0,
-    "quantity": 2,
+    "purchaseQuantity": 2,
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -29748,7 +29748,7 @@
     "description": "",
     "category": "Miscellany",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -29762,7 +29762,7 @@
     "description": "",
     "category": "Miscellany",
     "maxRating": 0,
-    "quantity": 50,
+    "purchaseQuantity": 50,
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -29776,7 +29776,7 @@
     "description": "",
     "category": "Miscellany",
     "maxRating": 0,
-    "quantity": 2,
+    "purchaseQuantity": 2,
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -29907,7 +29907,7 @@
     "description": "",
     "category": "Miscellany",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -30338,7 +30338,7 @@
     "description": "",
     "category": "Miscellany",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -30690,14 +30690,14 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Camera",
-        "rating": 2,
-        "category": "Vision Devices"
+        "baseGear": "Camera",
+        "category": "Vision Devices",
+        "rating": 2
       },
       {
-        "name": "Microphone, Omni-Directional",
-        "rating": 2,
-        "category": "Audio Devices"
+        "baseGear": "Microphone, Omni-Directional",
+        "category": "Audio Devices",
+        "rating": 2
       }
     ],
     "capacityInformation": {
@@ -31992,7 +31992,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "ammoForWeaponType": [
       {
         "type": "Firearm",
@@ -32012,7 +32012,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "ammoForWeaponType": [
       {
         "type": "Firearm",
@@ -32033,7 +32033,7 @@
     "category": "Ammunition",
     "maxRating": 0,
     "allowCategoryList": ["Drugs", "Toxins"],
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "ammoForWeaponType": [
       {
         "extraClassification": "Dart Gun"
@@ -32052,7 +32052,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "ap": 1,
       "damageType": "S"
@@ -32120,7 +32120,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "ap": 5,
       "damage": [
@@ -32194,7 +32194,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "ap": -1,
       "damage": [
@@ -32267,7 +32267,7 @@
     "description": "",
     "category": "Ammunition",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "weaponBonus": {
       "ap": -4
     },
@@ -33757,7 +33757,7 @@
     "allowCategoryList": ["Vision Enhancements", "Custom"],
     "includedGearList": [
       {
-        "name": "Vision Magnification",
+        "baseGear": "Vision Magnification",
         "category": "Vision Enhancements"
       }
     ],
@@ -33779,7 +33779,7 @@
     "maxRating": 0,
     "includedGearList": [
       {
-        "name": "Vision Magnification",
+        "baseGear": "Vision Magnification",
         "category": "Vision Enhancements"
       }
     ],
@@ -35011,7 +35011,7 @@
     "description": "",
     "category": "Survival Gear",
     "maxRating": 0,
-    "quantity": 10,
+    "purchaseQuantity": 10,
     "availability": {
       "rating": [2],
       "restriction": ""

@@ -7,12 +7,11 @@ import {
   Property,
 } from "@mikro-orm/postgresql";
 import type { Ref } from "@mikro-orm/postgresql";
-import { Weapons } from "../equipment/combat/weaponModel.js";
 import { Vehicles } from "../equipment/rigger/vehicleModel.js";
-import { WeaponMountModifications } from "../equipment/rigger/vehicleModificationModel.js";
 import { WeaponMounts } from "../equipment/rigger/weaponMountModel.js";
-import { CustomisedVehicles } from "./activeVehicleModel.js";
-import { CustomisedWeapons } from "./activeWeaponModel.js";
+import { CustomisedVehicles, PackVehicles } from "./activeVehicleModel.js";
+import { ActiveWeapons } from "./activeWeaponModel.js";
+import { WeaponMountModifications } from "../equipment/rigger/weaponMountModModel.js";
 
 // Links to either a custom vehicle, or a vehicle in the table.
 // When we create a custom vehicle that already has a modification
@@ -30,6 +29,9 @@ export abstract class ActiveWeaponMounts {
 
   @ManyToOne({ entity: () => WeaponMounts, ref: true })
   weaponMount: Ref<WeaponMounts>;
+
+  @ManyToOne({ entity: () => ActiveWeapons, nullable: true, ref: true })
+  mountedWeapon?: Ref<ActiveWeapons>;
 
   @ManyToMany({
     entity: () => WeaponMountModifications,
@@ -60,21 +62,34 @@ export class IncludedWeaponMounts extends ActiveWeaponMounts {
   @ManyToOne({ entity: () => Vehicles, ref: true })
   standardVehicle: Ref<Vehicles>;
 
-  @ManyToOne({ entity: () => Weapons, nullable: true, ref: true })
-  standardWeapon?: Ref<Weapons>;
-
   constructor(
     vehicle: Ref<Vehicles>,
     weaponMount: Ref<WeaponMounts>,
     weaponExchangeable: boolean,
     rating?: number,
-    standardWeapon?: Ref<Weapons>
+    mountedWeapon?: Ref<ActiveWeapons>
   ) {
     super(weaponMount, weaponExchangeable, rating);
     this.standardVehicle = vehicle;
-    if (standardWeapon !== undefined) {
-      this.standardWeapon = standardWeapon;
+    if (mountedWeapon !== undefined) {
+      this.mountedWeapon = mountedWeapon;
     }
+  }
+}
+
+@Entity({ discriminatorValue: "packVehicle" })
+export class PackVehicleWeaponMounts extends ActiveWeaponMounts {
+  @ManyToOne({ entity: () => PackVehicles, ref: true })
+  packVehicle: Ref<PackVehicles>;
+
+  constructor(
+    vehicle: Ref<PackVehicles>,
+    weaponMount: Ref<WeaponMounts>,
+    weaponExchangeable: boolean,
+    rating?: number
+  ) {
+    super(weaponMount, weaponExchangeable, rating);
+    this.packVehicle = vehicle;
   }
 }
 
@@ -82,9 +97,6 @@ export class IncludedWeaponMounts extends ActiveWeaponMounts {
 export class CustomisedWeaponMounts extends ActiveWeaponMounts {
   @ManyToOne({ entity: () => CustomisedVehicles, ref: true })
   customisedVehicle: Ref<CustomisedVehicles>;
-
-  @ManyToOne({ entity: () => CustomisedWeapons, nullable: true, ref: true })
-  customisedWeapon?: Ref<CustomisedWeapons>;
 
   constructor(
     vehicle: Ref<CustomisedVehicles>,

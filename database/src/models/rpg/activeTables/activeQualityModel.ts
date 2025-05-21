@@ -3,6 +3,7 @@ import type { Ref } from "@mikro-orm/postgresql";
 import { Qualities } from "../traits/qualityModel.js";
 import { Characters } from "../characters/characterModel.js";
 import { Critters } from "../creatures/critterModel.js";
+import { Heritages } from "../traits/heritageModel.js";
 
 @Entity({
   discriminatorColumn: "discr",
@@ -26,10 +27,18 @@ export abstract class ActiveQualities {
   }
 }
 
-@Entity({ discriminatorValue: "included" })
-export class IncludedQualities extends ActiveQualities {
-  constructor(quality: Ref<Qualities>, rating?: number) {
+@Entity({ discriminatorValue: "heritageIncluded" })
+export class HeritageIncludedQualities extends ActiveQualities {
+  @ManyToOne({ entity: () => Heritages, ref: true })
+  heritage!: Ref<Heritages>;
+
+  constructor(
+    heritage: Ref<Heritages>,
+    quality: Ref<Qualities>,
+    rating?: number
+  ) {
     super(quality, rating);
+    this.heritage = heritage;
   }
 }
 

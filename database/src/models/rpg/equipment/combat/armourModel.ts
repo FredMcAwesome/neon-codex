@@ -67,9 +67,9 @@ export class Armours {
 
   @OneToMany(
     () => IncludedArmourModifications,
-    (armourIncludedMods) => armourIncludedMods.standardArmour
+    (armourIncludedMod) => armourIncludedMod.standardArmour
   )
-  includedMods = new Collection<IncludedArmourModifications>(this);
+  includedModList = new Collection<IncludedArmourModifications>(this);
 
   @Enum({
     items: () => armourModCategoryEnum,

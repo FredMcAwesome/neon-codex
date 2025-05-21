@@ -4,10 +4,7 @@ import { XMLParser } from "fast-xml-parser";
 import path from "path";
 import { fileURLToPath } from "url";
 import * as fs from "fs";
-import {
-  EquipmentPackSchema,
-  type AugmentationEquipmentPackListType,
-} from "@neon-codex/common/build/schemas/equipment/equipmentPackSchemas.js";
+import { EquipmentPackSchema } from "@neon-codex/common/build/schemas/equipment/equipmentPackSchemas.js";
 import {
   EquipmentListXmlSchema,
   type EquipmentPackXmlType,
@@ -20,6 +17,12 @@ import {
 } from "./EquipmentPackParserHelper.js";
 import { augmentationTypeEnum } from "@neon-codex/common/build/enums.js";
 import { convertIncludedXmlGears } from "../common/ParserHelper.js";
+import type { CustomisedAugmentationListType } from "@neon-codex/common/build/schemas/equipment/bodyModification/augmentationSchemas.js";
+import type { CustomisedArmourListType } from "@neon-codex/common/build/schemas/equipment/combat/armourSchemas.js";
+import type { CustomisedVehicleListType } from "@neon-codex/common/build/schemas/equipment/rigger/vehicleSchemas.js";
+import type { CustomisedGearListType } from "@neon-codex/common/build/schemas/equipment/other/gearSchemas.js";
+import type { CustomisedWeaponListType } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
+import type { CustomisedLifestyleListType } from "@neon-codex/common/build/schemas/otherData/lifestyleSchemas.js";
 
 export function ParseEquipmentPacks() {
   const currentPath = import.meta.url;
@@ -87,7 +90,7 @@ export function ParseEquipmentPacks() {
 
 function convertPack(pack: EquipmentPackXmlType) {
   // console.log(pack.name);
-  let armourList;
+  let armourList: CustomisedArmourListType = [];
   if (pack.armors !== undefined) {
     const xmlArmourList = Array.isArray(pack.armors.armor)
       ? pack.armors.armor
@@ -96,7 +99,7 @@ function convertPack(pack: EquipmentPackXmlType) {
       return convertArmorEquipmentPack(xmlArmour);
     });
   }
-  let augmentationList: AugmentationEquipmentPackListType | undefined;
+  let augmentationList: CustomisedAugmentationListType = [];
   if (pack.biowares !== undefined) {
     const xmlBiowareList = Array.isArray(pack.biowares.bioware)
       ? pack.biowares.bioware
@@ -130,14 +133,14 @@ function convertPack(pack: EquipmentPackXmlType) {
       });
     }
   }
-  let gearList;
+  let gearList: CustomisedGearListType = [];
   if (pack.gears !== undefined) {
     const xmlGearList = Array.isArray(pack.gears.gear)
       ? pack.gears.gear
       : [pack.gears.gear];
     gearList = convertIncludedXmlGears({ usegear: xmlGearList });
   }
-  let vehicleList;
+  let vehicleList: CustomisedVehicleListType = [];
   if (pack.vehicles !== undefined) {
     const xmlVehicleList = Array.isArray(pack.vehicles.vehicle)
       ? pack.vehicles.vehicle
@@ -146,7 +149,7 @@ function convertPack(pack: EquipmentPackXmlType) {
       return convertVehicleEquipmentPack(vehicle);
     });
   }
-  let weaponList;
+  let weaponList: CustomisedWeaponListType = [];
   if (pack.weapons !== undefined) {
     const xmlWeaponList = Array.isArray(pack.weapons.weapon)
       ? pack.weapons.weapon
@@ -155,7 +158,15 @@ function convertPack(pack: EquipmentPackXmlType) {
       return convertWeaponEquipmentPack(weapon);
     });
   }
-
+  let lifestyleList: CustomisedLifestyleListType = [];
+  if (pack.lifestyles !== undefined) {
+    lifestyleList = [
+      {
+        baseLifestyle: pack.lifestyles.lifestyle.baselifestyle,
+        purchasedDuration: pack.lifestyles.lifestyle.months,
+      },
+    ];
+  }
   return {
     name: pack.name,
     description: "",
@@ -166,11 +177,6 @@ function convertPack(pack: EquipmentPackXmlType) {
     gearList: gearList,
     vehicleList: vehicleList,
     weaponList: weaponList,
-    ...(pack.lifestyles !== undefined && {
-      lifestyle: {
-        baseLifestyle: pack.lifestyles.lifestyle.baselifestyle,
-        prepurchasedDuration: pack.lifestyles.lifestyle.months,
-      },
-    }),
+    lifestyleList: lifestyleList,
   };
 }

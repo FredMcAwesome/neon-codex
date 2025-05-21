@@ -1,15 +1,14 @@
 import {
   ammoSourceEnum,
-  firearmWeaponTypeEnum,
   mathOperatorEnum,
   ratingMeaningEnum,
   restrictionEnum,
   vehicleModAttributeEnum,
-  vehicleModSubtypeEnum,
-  vehicleModRatingEnum,
   vehicleModTypeEnum,
+  vehicleModRatingEnum,
   cyberwareCategoryEnum,
   sourceBookEnum,
+  firearmWeaponTypeEnum,
 } from "../../../enums.js";
 import { z as zod } from "zod";
 import { BonusSchema } from "../../shared/bonusSchemas.js";
@@ -148,21 +147,26 @@ const CostVehicleModSchema = zod.union([
 ]);
 export type CostVehicleModType = zod.infer<typeof CostVehicleModSchema>;
 
-const VehicleModPartialSchema = zod
+export const VehicleModSchema = zod
   .object({
     name: zod.string(),
     description: zod.string(),
-    subtype: zod.nativeEnum(vehicleModSubtypeEnum),
+    type: zod.nativeEnum(vehicleModTypeEnum),
     maxRating: VehicleModRatingSchema,
     minRating: zod.optional(VehicleModRatingSchema),
     ratingMeaning: zod.optional(zod.nativeEnum(ratingMeaningEnum)),
     capacity: zod.optional(zod.number()),
-    addPhysicalBoxes: zod.optional(zod.number()),
     isDowngrade: zod.optional(zod.literal(true)),
+    // TODO: Make this a child of vehicleModSchema
+    // combine with allowedSubsystemList, addPhysicalBoxes
     requiresDroneParent: zod.optional(zod.literal(true)),
-    slotCost: SlotCostSchema,
-    subsystemList: zod.optional(
+    allowedSubsystemList: zod.optional(
       zod.array(zod.nativeEnum(cyberwareCategoryEnum))
+    ),
+    addPhysicalBoxes: zod.optional(zod.number()),
+    slotCost: SlotCostSchema,
+    weaponMountValidCategoryList: zod.optional(
+      zod.array(zod.nativeEnum(firearmWeaponTypeEnum))
     ),
     bonus: zod.optional(BonusSchema),
     requirements: zod.optional(RequirementsSchema),
@@ -174,21 +178,25 @@ const VehicleModPartialSchema = zod
   })
   .strict();
 
-export const VehicleModSchema = zod.discriminatedUnion("type", [
-  VehicleModPartialSchema.extend({
-    type: zod.literal(vehicleModTypeEnum.Vehicle),
-    weaponMountValidCategoryList: zod.optional(
-      zod.array(zod.nativeEnum(firearmWeaponTypeEnum))
-    ),
-  }),
-  VehicleModPartialSchema.extend({
-    type: zod.literal(vehicleModTypeEnum.WeaponMount),
-    additionalAmmo: zod.optional(zod.number()),
-    percentageAmmoIncrease: zod.optional(zod.number()),
-    replaceAmmo: zod.optional(ReplaceAmmoSchema),
-  }),
-]);
-
 export type VehicleModType = zod.infer<typeof VehicleModSchema>;
 export const VehicleModListSchema = zod.array(VehicleModSchema);
 export type VehicleModListType = zod.infer<typeof VehicleModListSchema>;
+
+export const CustomisedVehicleModSchema = zod
+  .object({
+    baseMod: zod.string(),
+    rating: zod.optional(zod.number()),
+    // display this like 'name (specificOption)'
+    specificOption: zod.optional(zod.string()),
+    subsystemList: zod.optional(zod.array(zod.string())),
+  })
+  .strict();
+export type CustomisedVehicleModType = zod.infer<
+  typeof CustomisedVehicleModSchema
+>;
+export const CustomisedVehicleModListSchema = zod.array(
+  CustomisedVehicleModSchema
+);
+export type CustomisedVehicleModListType = zod.infer<
+  typeof CustomisedVehicleModListSchema
+>;

@@ -2,7 +2,6 @@ import {
   weaponXmlSubtypeEnum,
   WeaponXmlSubtypeSchema,
 } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
-import { MountSchema } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
 import { z as zod } from "zod";
 import {
   xmlAllowGearSchema,
@@ -12,6 +11,7 @@ import {
   StringOrNumberSchema,
 } from "../common/ParserCommonDefines.js";
 import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
+import { MountSchema } from "@neon-codex/common/build/schemas/shared/weaponSharedSchemas.js";
 
 export enum weaponTypeXmlEnum {
   Melee = "melee",

@@ -43,8 +43,8 @@ export class IncludedCritterPowers extends ActiveCritterPowers {
   standardCritter: Ref<Critters>;
 
   constructor(
-    critterPower: Ref<CritterPowers>,
     standardCritter: Ref<Critters>,
+    critterPower: Ref<CritterPowers>,
     selectText?: string,
     rating?: IncludedCritterPowerRatingType
   ) {

@@ -52,7 +52,7 @@ export class EquipmentPacks {
     () => PackLifestyles,
     (activeLifestyle) => activeLifestyle.equipmentPack
   )
-  lifestyle = new Collection<PackLifestyles>(this);
+  lifestyleList = new Collection<PackLifestyles>(this);
 
   @Property({ length: 5000 })
   description!: string;

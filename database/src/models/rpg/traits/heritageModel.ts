@@ -17,7 +17,10 @@ import type {
   InitiativeType,
 } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 import { Qualities } from "./qualityModel.js";
-import { ActiveQualities } from "../activeTables/activeQualityModel.js";
+import {
+  ActiveQualities,
+  HeritageIncludedQualities,
+} from "../activeTables/activeQualityModel.js";
 import { Characters } from "../characters/characterModel.js";
 import type {
   AttributeRangeType,
@@ -106,12 +109,8 @@ export abstract class Heritages {
   // @ManyToMany({ entity: () => Powers, owner: true, joinColumn: "join_id" })
   // includedPowerList = new Collection<Powers>(this);
 
-  @ManyToMany({
-    entity: () => ActiveQualities,
-    owner: true,
-    joinColumn: "join_id",
-  })
-  includedQualityList = new Collection<ActiveQualities>(this);
+  @OneToMany(() => HeritageIncludedQualities, (quality) => quality.heritage)
+  includedQualityList = new Collection<HeritageIncludedQualities>(this);
 
   @ManyToMany({ entity: () => Qualities, owner: true, joinColumn: "join_id" })
   forbiddenQualityList = new Collection<Qualities>(this);

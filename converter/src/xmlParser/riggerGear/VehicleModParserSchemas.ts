@@ -94,12 +94,6 @@ const VehicleModXmlSchema = zod
     cost: StringOrNumberSchema,
     source: zod.union([SourceXmlSchema, zod.literal(2050)]),
     page: zod.union([zod.number(), zod.literal("?")]),
-
-    // Non-xml tag, added to differentiate weapon mount mods and
-    // vehicle mods
-    modType: zod.optional(
-      zod.union([zod.literal("Vehicle"), zod.literal("Weapon Mount")])
-    ),
   })
   .strict();
 export type VehicleModXmlType = zod.infer<typeof VehicleModXmlSchema>;

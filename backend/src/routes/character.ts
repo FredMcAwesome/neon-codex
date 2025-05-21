@@ -12,6 +12,7 @@ import {
   CustomSkillGroupListSchema,
 } from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
 import type {
+  CustomisedVehicleListType,
   VehicleListType,
   VehicleType,
 } from "@neon-codex/common/build/schemas/equipment/rigger/vehicleSchemas.js";
@@ -23,10 +24,12 @@ import {
   talentCategoryEnum,
   heritageCategoryEnum,
   mentorCategoryEnum,
+  augmentationGradeEnum,
 } from "@neon-codex/common/build/enums.js";
 import type {
   AugmentationListType,
   AugmentationType,
+  CustomisedAugmentationListType,
   CustomisedAugmentationType,
 } from "@neon-codex/common/build/schemas/equipment/bodyModification/augmentationSchemas.js";
 import type {
@@ -36,12 +39,11 @@ import type {
 } from "@neon-codex/common/build/schemas/equipment/other/gearSchemas.js";
 import type {
   CustomisedWeaponType,
-  UnlinkedWeaponAccessoryType,
-  WeaponSummaryListType,
-  WeaponSummaryType,
+  WeaponListType,
+  WeaponType,
 } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
 import {
-  EquipmentListSchema,
+  SelectedEquipmentListSchema,
   type EquipmentListType,
 } from "@neon-codex/common/build/schemas/equipment/other/equipmentSchemas.js";
 import {
@@ -69,6 +71,7 @@ import { Gears } from "@neon-codex/database/build/models/rpg/equipment/other/gea
 import type {
   ArmourListType,
   ArmourType,
+  CustomisedArmourListType,
   CustomisedArmourType,
 } from "@neon-codex/common/build/schemas/equipment/combat/armourSchemas.js";
 import type { CustomisedVehicleType } from "@neon-codex/common/build/schemas/equipment/rigger/vehicleSchemas.js";
@@ -89,7 +92,7 @@ import {
   MartialArtSelectedSchema,
   type MartialArtSelectedType,
   type LifestyleSelectedType,
-  LifestyleSelectedSchema,
+  LifestyleSelectedListSchema,
 } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
 import { Armours } from "@neon-codex/database/build/models/rpg/equipment/combat/armourModel.js";
 import { Characters } from "@neon-codex/database/build/models/rpg/characters/characterModel.js";
@@ -128,25 +131,41 @@ import {
   CustomisedQualities,
 } from "@neon-codex/database/build/models/rpg/activeTables/activeQualityModel.js";
 import { CustomisedSkills } from "@neon-codex/database/build/models/rpg/activeTables/activeSkillModel.js";
-import { CustomisedWeapons } from "@neon-codex/database/build/models/rpg/activeTables/activeWeaponModel.js";
-import { CustomisedArmours } from "@neon-codex/database/build/models/rpg/activeTables/activeArmourModel.js";
+import {
+  ActiveWeapons,
+  CustomisedWeapons,
+  WeaponMountWeapons,
+} from "@neon-codex/database/build/models/rpg/activeTables/activeWeaponModel.js";
+import {
+  ActiveArmours,
+  CustomisedArmours,
+} from "@neon-codex/database/build/models/rpg/activeTables/activeArmourModel.js";
 import { WeaponAccessories } from "@neon-codex/database/build/models/rpg/equipment/combat/weaponAccessoryModel.js";
 import {
   ActiveAugmentationGears,
   ActiveGears,
+  ChildGears,
   CustomisedGears,
 } from "@neon-codex/database/build/models/rpg/activeTables/activeGearModel.js";
-import type { IncludedGearType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 import {
   CustomisedWeaponAccessories,
   type ActiveWeaponAccessories,
 } from "@neon-codex/database/build/models/rpg/activeTables/activeWeaponAccessoryModel.js";
-import { CustomisedArmourModifications } from "@neon-codex/database/build/models/rpg/activeTables/activeArmourModificationModel.js";
+import {
+  ActiveArmourModifications,
+  CustomisedArmourModifications,
+} from "@neon-codex/database/build/models/rpg/activeTables/activeArmourModificationModel.js";
 import { ArmourModifications } from "@neon-codex/database/build/models/rpg/equipment/combat/armourModificationModel.js";
 import { CustomisedAugmentations } from "@neon-codex/database/build/models/rpg/activeTables/activeAugmentationModel.js";
 import { VehicleModifications } from "@neon-codex/database/build/models/rpg/equipment/rigger/vehicleModificationModel.js";
-import { CustomisedVehicleModifications } from "@neon-codex/database/build/models/rpg/activeTables/activeVehicleModificationModel.js";
-import { CustomisedVehicles } from "@neon-codex/database/build/models/rpg/activeTables/activeVehicleModel.js";
+import {
+  ActiveVehicleModifications,
+  CustomisedVehicleModifications,
+} from "@neon-codex/database/build/models/rpg/activeTables/activeVehicleModificationModel.js";
+import {
+  ActiveVehicles,
+  CustomisedVehicles,
+} from "@neon-codex/database/build/models/rpg/activeTables/activeVehicleModel.js";
 import { CustomisedSkillGroups } from "@neon-codex/database/build/models/rpg/activeTables/activeSkillGroupModel.js";
 import Users from "@neon-codex/database/build/models/accounts/userModel.js";
 import type { SpellListType } from "@neon-codex/common/build/schemas/abilities/talent/spellSchemas.js";
@@ -201,7 +220,37 @@ import type {
 } from "@neon-codex/common/build/schemas/otherData/lifestyleSchemas.js";
 import { Lifestyles } from "@neon-codex/database/build/models/rpg/otherData/lifestyleModel.js";
 import { LifestyleQualities } from "@neon-codex/database/build/models/rpg/otherData/lifestyleQualityModel.js";
-import { ActiveLifestyles } from "@neon-codex/database/build/models/rpg/activeTables/activeLIfestyleModel.js";
+import {
+  ActiveLifestyles,
+  CustomisedLifestyles,
+} from "@neon-codex/database/build/models/rpg/activeTables/activeLIfestyleModel.js";
+import type { EquipmentPackListType } from "@neon-codex/common/build/schemas/equipment/equipmentPackSchemas.js";
+import { EquipmentPacks } from "@neon-codex/database/build/models/rpg/equipment/equipmentPackModel.js";
+import type {
+  CustomisedWeaponAccessoryType,
+  WeaponAccessoryListType,
+  WeaponAccessoryType,
+} from "@neon-codex/common/build/schemas/equipment/combat/weaponAccessorySchemas.js";
+import type {
+  ArmourModListType,
+  ArmourModType,
+  CustomisedArmourModType,
+} from "@neon-codex/common/build/schemas/equipment/combat/armourModSchemas.js";
+import type {
+  CustomisedVehicleModType,
+  VehicleModListType,
+  VehicleModType,
+} from "@neon-codex/common/build/schemas/equipment/rigger/vehicleModSchemas.js";
+import {
+  CustomisedWeaponMounts,
+  IncludedWeaponMounts,
+  PackVehicleWeaponMounts,
+  type ActiveWeaponMounts,
+} from "@neon-codex/database/build/models/rpg/activeTables/activeWeaponMountModel.js";
+import type { CustomisedWeaponMountType } from "@neon-codex/common/build/schemas/equipment/rigger/weaponMountSchemas.js";
+import { WeaponMounts } from "@neon-codex/database/build/models/rpg/equipment/rigger/weaponMountModel.js";
+import { createGunzip } from "zlib";
+import { access } from "fs";
 
 export function convertDBBonus(DBbonus: Bonuses) {
   const bonus: BonusType = {};
@@ -576,7 +625,7 @@ export async function getPrograms() {
   return programsResponse;
 }
 
-async function getWeapons(): Promise<WeaponSummaryListType> {
+async function getWeapons(): Promise<WeaponListType> {
   const db = await init();
   const weapons = await db.em.findAll(Weapons, {
     populate: ["*", "includedAccessoryList.weaponAccessory"],
@@ -585,10 +634,21 @@ async function getWeapons(): Promise<WeaponSummaryListType> {
     weapons.map(async (weapon) => {
       const skill = weapon.relatedSkill.$.name;
       const dbAccessories = weapon.includedAccessoryList;
-      const includedAccessoryList = dbAccessories.$.map((accessory) => {
-        const originalAccessory = accessory.weaponAccessory.$.name;
-        return { name: originalAccessory };
-      });
+      const includedAccessoryList = await Promise.all(
+        dbAccessories.$.map(async (accessory) => {
+          const originalAccessory = accessory.weaponAccessory.$.name;
+          return {
+            baseAccessory: originalAccessory,
+            gearList: await Promise.all(
+              accessory.includedGearList.$.map(async (gear) => {
+                return await convertActiveGearDBToDTO(gear);
+              })
+            ),
+            mountList: accessory.weaponMountsUsed,
+            rating: accessory.rating,
+          };
+        })
+      );
       const gearList = weapon.allowedGearList.$;
       const gearNameList = gearList.map((gear) => gear.name);
       const alternativeWeaponNameForms = weapon.alternativeWeaponForms.$.map(
@@ -596,7 +656,7 @@ async function getWeapons(): Promise<WeaponSummaryListType> {
       );
 
       const weaponTypeInformation = await getWeaponTypeInformation(weapon);
-      const weaponFormatted: WeaponSummaryType = {
+      const weaponFormatted: WeaponType = {
         // id: weapon.id,
         name: weapon.name,
         description: weapon.description,
@@ -644,6 +704,61 @@ async function getWeapons(): Promise<WeaponSummaryListType> {
     })
   );
   return weaponsResponse;
+}
+
+async function getWeaponAccessories(): Promise<WeaponAccessoryListType> {
+  const db = await init();
+  const weaponAccessories = await db.em.findAll(WeaponAccessories, {
+    populate: ["*"],
+  });
+  const weaponAccessoriesResponse = Promise.all(
+    weaponAccessories.map(async (weaponAccessory) => {
+      const gearList = await Promise.all(
+        weaponAccessory.includedGearList.$.map(async (gear) => {
+          return await convertActiveGearDBToDTO(gear);
+        })
+      );
+
+      const weaponAccessoryFormatted: WeaponAccessoryType = {
+        // id: weapon.id,
+        name: weaponAccessory.name,
+        description: weaponAccessory.description,
+        wireless: weaponAccessory.wireless,
+        maxRating: weaponAccessory.maxRating,
+        isWeapon: weaponAccessory.linkedWeapon !== undefined,
+        accuracyIncrease: weaponAccessory.accuracyIncrease,
+        damageIncrease: weaponAccessory.damageIncrease,
+        newDamageType: weaponAccessory.newDamageType,
+        reachIncrease: weaponAccessory.reachIncrease,
+        armourPiercingIncrease: weaponAccessory.armourPiercingIncrease,
+        recoilCompensationIncrease: weaponAccessory.recoilCompensationIncrease,
+        recoilCompensationType: weaponAccessory.recoilCompensationType,
+        deploymentRequired: weaponAccessory.deploymentRequired,
+        accessoryCostMultiplier: weaponAccessory.accessoryCostMultiplier,
+        allowedGearList: weaponAccessory.allowedGearList.$.map((gear) => {
+          return gear.name;
+        }),
+        allowedGearCategories: weaponAccessory.allowedGearCategories,
+        includedGearList: gearList,
+        specialModification: weaponAccessory.specialModification,
+        extraAmmoSlots: weaponAccessory.extraAmmoSlots,
+        ammoCapacityCalculation: weaponAccessory.ammoCapacityCalculation,
+        newAmmoType: weaponAccessory.newAmmoType,
+        hostWeaponMountsRequired: weaponAccessory.hostWeaponMountsRequired,
+        hostWeaponRequirements: weaponAccessory.hostWeaponRequirements,
+        hostWeaponRestrictions: weaponAccessory.hostWeaponRestrictions,
+        rangePenaltyDecrease: weaponAccessory.rangePenaltyDecrease,
+        concealabilityModification: weaponAccessory.concealabilityModification,
+        userSelectable: weaponAccessory.userSelectable,
+        availability: weaponAccessory.availability,
+        cost: weaponAccessory.cost,
+        source: weaponAccessory.source,
+        page: weaponAccessory.page,
+      };
+      return weaponAccessoryFormatted;
+    })
+  );
+  return weaponAccessoriesResponse;
 }
 
 async function getWeaponTypeInformation(weapon: Weapons) {
@@ -724,46 +839,87 @@ async function getWeaponTypeInformation(weapon: Weapons) {
   throw new Error(`Weapon type unexpected: ${weapon.type}`);
 }
 
-async function getArmours() {
+async function getArmours(): Promise<ArmourListType> {
   const db = await init();
   const armours = await db.em.findAll(Armours, {
     populate: ["*"],
   });
-  const armoursResponse: ArmourListType = armours.map((armour) => {
-    const isWeapon = armour.linkedWeapon !== undefined ? true : undefined;
-    const includedGearNameList = armour.includedGearList.$.map((activeGear) => {
-      const gear = activeGear.gear.$.name;
-      return { name: gear };
-    });
-    const includedMods = armour.includedMods.$.map((activeMod) => {
-      const mod = activeMod.armourModification.$.name;
-      return { name: mod };
-    });
+  const armoursResponse: ArmourListType = await Promise.all(
+    armours.map(async (armour) => {
+      const isWeapon = armour.linkedWeapon !== undefined ? true : undefined;
+      const includedGearNameList = await Promise.all(
+        armour.includedGearList.$.map(async (activeGear) => {
+          return await convertActiveGearDBToDTO(activeGear);
+        })
+      );
+      const includedMods = await Promise.all(
+        armour.includedModList.$.map(async (activeMod) => {
+          return await convertActiveArmourModDBToDTO(activeMod);
+        })
+      );
 
-    const armourFormatted: ArmourType = {
-      name: armour.name,
-      description: armour.description,
-      category: armour.category,
-      maxRating: armour.maxRating,
-      damageReduction: armour.damageReduction,
-      customFitStackDamageReduction: armour.customFitStackDamageReduction,
-      capacity: armour.capacity,
-      isWeapon: isWeapon,
-      includedGearList: includedGearNameList,
-      bonus: armour.bonus,
-      wirelessBonus: armour.wirelessBonus,
-      includedMods: includedMods,
-      allowModsFromCategory: armour.allowModsFromCategory,
-      addModFromCategory: armour.addModFromCategory,
-      availability: armour.availability,
-      cost: armour.cost,
-      source: armour.source,
-      page: armour.page,
-    };
-    return armourFormatted;
-  });
+      const armourFormatted: ArmourType = {
+        name: armour.name,
+        description: armour.description,
+        category: armour.category,
+        maxRating: armour.maxRating,
+        damageReduction: armour.damageReduction,
+        customFitStackDamageReduction: armour.customFitStackDamageReduction,
+        capacity: armour.capacity,
+        isWeapon: isWeapon,
+        includedGearList: includedGearNameList,
+        bonus: armour.bonus,
+        wirelessBonus: armour.wirelessBonus,
+        includedModList: includedMods,
+        allowModsFromCategory: armour.allowModsFromCategory,
+        addModFromCategory: armour.addModFromCategory,
+        availability: armour.availability,
+        cost: armour.cost,
+        source: armour.source,
+        page: armour.page,
+      };
+      return armourFormatted;
+    })
+  );
 
   return armoursResponse;
+}
+
+async function getArmourModifications(): Promise<ArmourModListType> {
+  const db = await init();
+  const armourMods = await db.em.findAll(ArmourModifications, {
+    populate: ["*"],
+  });
+  const armourModsResponse: ArmourModListType = await Promise.all(
+    armourMods.map(async (armourMod) => {
+      const includedGearList = await Promise.all(
+        armourMod.includedGearList.$.map(async (activeGear) => {
+          return await convertActiveGearDBToDTO(activeGear);
+        })
+      );
+
+      const armourModFormatted: ArmourModType = {
+        name: armourMod.name,
+        description: armourMod.description,
+        category: armourMod.category,
+        maxRating: armourMod.maxRating,
+        damageReduction: armourMod.damageReduction,
+        capacityCost: armourMod.capacityCost,
+        hostArmourRequirements: armourMod.hostArmourRequirements,
+        includedGearList: includedGearList,
+        bonus: armourMod.bonus,
+        wirelessBonus: armourMod.wirelessBonus,
+        userSelectable: armourMod.userSelectable,
+        availability: armourMod.availability,
+        cost: armourMod.cost,
+        source: armourMod.source,
+        page: armourMod.page,
+      };
+      return armourModFormatted;
+    })
+  );
+
+  return armourModsResponse;
 }
 
 async function getAugmentations() {
@@ -784,11 +940,10 @@ async function getAugmentations() {
       );
       const allowedGearList = await augmentation.allowedGearList.loadItems();
       const allowedGearNameList = allowedGearList.map((gear) => gear.name);
-      const includedGearNameList = augmentation.includedGearList.$.map(
-        (activeGear) => {
-          const gear = activeGear.gear.$.name;
-          return { name: gear };
-        }
+      const includedGearList = await Promise.all(
+        augmentation.includedGearList.$.map(async (activeGear) => {
+          return await convertActiveGearDBToDTO(activeGear);
+        })
       );
 
       const typeInformation = getAugmentationTypeInformation(augmentation);
@@ -812,10 +967,10 @@ async function getAugmentations() {
         requirements: augmentation.requirements,
         forbidden: augmentation.forbidden,
         allowedGearList: allowedGearNameList,
-        includedGearList: includedGearNameList,
+        includedGearList: includedGearList,
         allowedGearCategories: augmentation.allowedGearCategories,
         userSelectable: augmentation.userSelectable,
-        allowCategoryList: augmentation.allowCategoryList,
+        allowSubsystemCategoryList: augmentation.allowSubsystemCategoryList,
         availability: augmentation.availability,
         cost: augmentation.cost,
         source: augmentation.source,
@@ -864,57 +1019,79 @@ function getAugmentationTypeInformation(augmentation: Augmentations) {
 async function getVehicles() {
   const db = await init();
   const vehicles = await db.em.findAll(Vehicles, { populate: ["*"] });
-  const vehiclesResponse: VehicleListType = vehicles.map((vehicle) => {
-    const includedGearList = vehicle.includedGearList.$;
-    const includedGearNameList = includedGearList.map((activeGear) => {
-      const gear = activeGear.gear.$.name;
-      return { name: gear };
-    });
-    const includedModNames = vehicle.includedModList.$.map((mod) => {
-      const loadedMod = mod.vehicleModification.$.name;
-      return { name: loadedMod };
-    });
-    const includedWeaponMountNameList = vehicle.includedWeaponMountList.$.map(
-      (includedMount) => {
-        const loadedMount = includedMount.weaponMount.$;
-        return {
-          control: loadedMount.control,
-          flexibility: loadedMount.flexibility,
-          size: loadedMount.size,
-          visibility: loadedMount.visibility,
-        };
-      }
-    );
-    const vehicleTypeInformation = getVehicleTypeInformation(vehicle);
-    const vehicleFormatted: VehicleType = {
-      name: vehicle.name,
-      description: vehicle.description,
-      ...vehicleTypeInformation,
-      handling: vehicle.handling,
-      speed: vehicle.speed,
-      acceleration: vehicle.acceleration,
-      body: vehicle.body,
-      armour: vehicle.armour,
-      pilot: vehicle.pilot,
-      sensor: vehicle.sensor,
-      includedGearList: includedGearNameList,
-      includedMods: includedModNames,
-      modSlots: vehicle.modSlots,
-      powerTrainModSlots: vehicle.powerTrainModSlots,
-      protectionModSlots: vehicle.protectionModSlots,
-      weaponModSlots: vehicle.weaponModSlots,
-      bodyModSlots: vehicle.bodyModSlots,
-      electromagneticModSlots: vehicle.electromagneticModSlots,
-      cosmeticModSlots: vehicle.cosmeticModSlots,
-      weaponMountList: includedWeaponMountNameList,
-      userSelectable: vehicle.userSelectable,
-      availability: vehicle.availability,
-      cost: vehicle.cost,
-      source: vehicle.source,
-      page: vehicle.page,
-    };
-    return vehicleFormatted;
-  });
+  const vehiclesResponse: VehicleListType = await Promise.all(
+    vehicles.map(async (vehicle) => {
+      const includedGearList = await Promise.all(
+        vehicle.includedGearList.$.map(async (activeGear) => {
+          return await convertActiveGearDBToDTO(activeGear);
+        })
+      );
+      const includedModList = await Promise.all(
+        vehicle.includedModList.$.map(async (mod) => {
+          return await convertActiveVehicleModDBToDTO(mod);
+        })
+      );
+      const includedWeaponMountNameList = await Promise.all(
+        vehicle.includedWeaponMountList.$.map(async (includedMount) => {
+          const loadedMount = includedMount.weaponMount.$;
+          let weapon;
+          if (includedMount.mountedWeapon !== undefined) {
+            const activeWeapon = includedMount.mountedWeapon.$;
+
+            weapon = {
+              baseWeapon: activeWeapon.weapon.$.name,
+              accessoryList: await Promise.all(
+                activeWeapon.accessoryList.$.map(async (accessory) => {
+                  return await convertActiveWeaponAccessoryDBToDTO(accessory);
+                })
+              ),
+              rating: activeWeapon.rating,
+            };
+          }
+          return {
+            control: loadedMount.control,
+            flexibility: loadedMount.flexibility,
+            size: loadedMount.size,
+            visibility: loadedMount.visibility,
+            modList: includedMount.mountMods.$.map((mod) => {
+              return mod.name;
+            }),
+            weaponMounted: weapon,
+            weaponExchangeable: includedMount.weaponExchangeable,
+          };
+        })
+      );
+      const vehicleTypeInformation = getVehicleTypeInformation(vehicle);
+      const vehicleFormatted: VehicleType = {
+        name: vehicle.name,
+        description: vehicle.description,
+        ...vehicleTypeInformation,
+        handling: vehicle.handling,
+        speed: vehicle.speed,
+        acceleration: vehicle.acceleration,
+        body: vehicle.body,
+        armour: vehicle.armour,
+        pilot: vehicle.pilot,
+        sensor: vehicle.sensor,
+        includedGearList: includedGearList,
+        includedModList: includedModList,
+        modSlots: vehicle.modSlots,
+        powerTrainModSlots: vehicle.powerTrainModSlots,
+        protectionModSlots: vehicle.protectionModSlots,
+        weaponModSlots: vehicle.weaponModSlots,
+        bodyModSlots: vehicle.bodyModSlots,
+        electromagneticModSlots: vehicle.electromagneticModSlots,
+        cosmeticModSlots: vehicle.cosmeticModSlots,
+        includedWeaponMountList: includedWeaponMountNameList,
+        userSelectable: vehicle.userSelectable,
+        availability: vehicle.availability,
+        cost: vehicle.cost,
+        source: vehicle.source,
+        page: vehicle.page,
+      };
+      return vehicleFormatted;
+    })
+  );
   return vehiclesResponse;
 }
 
@@ -949,6 +1126,39 @@ function getVehicleTypeInformation(vehicle: Vehicles) {
   throw new Error(
     `Vehicle type unexpected: ${vehicle.type}, class ${vehicle.constructor.name}`
   );
+}
+
+async function getVehicleModifications(): Promise<VehicleModListType> {
+  const db = await init();
+  const vehicleModifications = await db.em.findAll(VehicleModifications, {
+    populate: ["*"],
+  });
+  const vehicleModificationsResponse: VehicleModListType =
+    vehicleModifications.map((vehicleModification) => {
+      const vehicleModificationFormatted: VehicleModType = {
+        name: vehicleModification.name,
+        description: vehicleModification.description,
+        type: vehicleModification.type,
+        maxRating: vehicleModification.maxRating,
+        minRating: vehicleModification.minRating,
+        ratingMeaning: vehicleModification.ratingMeaning,
+        capacity: vehicleModification.capacity,
+        addPhysicalBoxes: vehicleModification.addPhysicalBoxes,
+        isDowngrade: vehicleModification.isDowngrade,
+        requiresDroneParent: vehicleModification.requiresDroneParent,
+        slotCost: vehicleModification.slotCost,
+        allowedSubsystemList: vehicleModification.allowedSubsystemList,
+        bonus: vehicleModification.bonus,
+        requirements: vehicleModification.requirements,
+        userSelectable: vehicleModification.userSelectable,
+        availability: vehicleModification.availability,
+        cost: vehicleModification.cost,
+        source: vehicleModification.source,
+        page: vehicleModification.page,
+      };
+      return vehicleModificationFormatted;
+    });
+  return vehicleModificationsResponse;
 }
 
 async function getMartialArts() {
@@ -1059,70 +1269,152 @@ async function getLifestyleQualities() {
   return lifestyleQualitiesResponse;
 }
 
+async function getEquipmentPacks() {
+  const db = await init();
+  const equipmentPacks = await db.em.findAll(EquipmentPacks, {
+    populate: ["*"],
+  });
+  const equipmentPacksResponse: EquipmentPackListType = [];
+  for (const equipmentPack of equipmentPacks) {
+    const armourList: CustomisedArmourListType = await Promise.all(
+      equipmentPack.armourList.$.map(async (armour) => {
+        return {
+          baseArmour: armour.armour.$.name,
+          modList: await Promise.all(
+            armour.modList.$.map(async (mod) => {
+              return await convertActiveArmourModDBToDTO(mod);
+            })
+          ),
+          gearList: await Promise.all(
+            armour.gearList.$.map(async (gear) => {
+              return await convertActiveGearDBToDTO(gear);
+            })
+          ),
+        };
+      })
+    );
+
+    const augmentationList: CustomisedAugmentationListType = await Promise.all(
+      equipmentPack.augmentationList.$.map(async (augmentation) => {
+        const augmentationGearList = await Promise.all(
+          augmentation.gearList.$.map(async (gear) => {
+            return await convertActiveGearDBToDTO(gear);
+          })
+        );
+        // TODO: include all cyberware specific values
+        return {
+          baseAugmentation: augmentation.augmentation.$.name,
+          gearList: augmentationGearList,
+          grade: augmentation.grade,
+          rating: augmentation.rating,
+        };
+      })
+    );
+
+    const gearList = await Promise.all(
+      equipmentPack.gearList.$.map(async (gear) => {
+        return await convertActiveGearDBToDTO(gear);
+      })
+    );
+    const vehicleList: CustomisedVehicleListType = await Promise.all(
+      equipmentPack.vehicleList.$.map((vehicle) => {
+        return convertActiveVehicleDBToDTO(vehicle);
+      })
+    );
+    const weaponList = await Promise.all(
+      equipmentPack.weaponList.$.map((weapon) => {
+        return convertActiveWeaponDBToDTO(weapon);
+      })
+    );
+    const lifestyleList = equipmentPack.lifestyleList.$.map((lifestyle) => {
+      return {
+        baseLifestyle: lifestyle.lifestyle.$.name,
+        purchasedDuration: lifestyle.purchasedDuration,
+      };
+    });
+    equipmentPacksResponse.push({
+      name: equipmentPack.name,
+      category: equipmentPack.type,
+      nuyen: equipmentPack.nuyen,
+      armourList: armourList,
+      augmentationList: augmentationList,
+      gearList: gearList,
+      vehicleList: vehicleList,
+      weaponList: weaponList,
+      lifestyleList: lifestyleList,
+      description: equipmentPack.description,
+    });
+  }
+  return equipmentPacksResponse;
+}
+
 export async function getGears(): Promise<GearListType> {
   const db = await init();
   const gears = await db.em.findAll(Gears, {
     populate: ["*", "includedWeapon.weapon"],
   });
-  const gearsResponse: GearListType = gears.map((gear) => {
-    const gearList = gear.allowedGearList.$;
-    const gearNameList = gearList.map((linkedGear) => linkedGear.name);
-    const includedGearList = gear.includedGearList.$;
-    const includedGearNameList = includedGearList.map((activeGear) => {
-      return { name: activeGear.name };
-    });
-    let includedWeapon;
-    if (gear.includedWeapon !== undefined) {
-      const weaponLink = gear.includedWeapon.$.weapon.$.name;
-      includedWeapon = { name: weaponLink };
-    }
+  const gearsResponse: GearListType = await Promise.all(
+    gears.map(async (gear) => {
+      const gearList = gear.allowedGearList.$;
+      const gearNameList = gearList.map((linkedGear) => linkedGear.name);
+      const includedGearList = await Promise.all(
+        gear.includedGearList.$.map(async (activeGear) => {
+          return await convertActiveGearDBToDTO(activeGear);
+        })
+      );
+      let includedWeapon;
+      if (gear.includedWeapon !== undefined) {
+        const weaponLink = gear.includedWeapon.$.weapon.$.name;
+        includedWeapon = { name: weaponLink };
+      }
 
-    const gearFormatted: GearType = {
-      name: gear.name,
-      description: gear.description,
-      category: gear.category,
-      minRating: gear.minRating,
-      maxRating: gear.maxRating,
-      ratingMeaning: gear.ratingMeaning,
-      includedWeapon: includedWeapon,
-      allowCategoryList: gear.allowCategoryList,
-      quantity: gear.quantity,
-      bonus: gear.bonus,
-      weaponBonus: gear.weaponBonus,
-      isFlechetteAmmo: gear.isFlechetteAmmo,
-      flechetteWeaponBonus: gear.flechetteWeaponBonus,
-      ammoForWeaponType: gear.ammoForWeaponType,
-      explosiveWeight: gear.explosiveWeight,
-      userSelectable: gear.userSelectable,
-      allowedGearList: gearNameList,
-      includedGearList: includedGearNameList,
-      deviceRating: gear.deviceRating,
-      programs: gear.programs,
-      attributeArray: gear.attributeArray,
-      attack: gear.attack,
-      sleaze: gear.sleaze,
-      dataProcessing: gear.dataProcessing,
-      firewall: gear.firewall,
-      canFormPersona: gear.canFormPersona,
-      capacityInformation: gear.capacityInformation,
-      armourCapacityInformation: gear.armourCapacityInformation,
-      requirements: gear.requirements,
-      requireParent: gear.requireParent,
-      forbidden: gear.forbidden,
-      modifyAttributeArray: gear.modifyAttributeArray,
-      modifyAttack: gear.modifyAttack,
-      modifySleaze: gear.modifySleaze,
-      modifyDataProcessing: gear.modifyDataProcessing,
-      modifyFirewall: gear.modifyFirewall,
-      addMatrixBoxes: gear.addMatrixBoxes,
-      renameCustomLabel: gear.renameCustomLabel,
-      availability: gear.availability,
-      cost: gear.cost,
-      source: gear.source,
-      page: gear.page,
-    };
-    return gearFormatted;
-  });
+      const gearFormatted: GearType = {
+        name: gear.name,
+        description: gear.description,
+        category: gear.category,
+        minRating: gear.minRating,
+        maxRating: gear.maxRating,
+        ratingMeaning: gear.ratingMeaning,
+        includedWeapon: includedWeapon,
+        allowCategoryList: gear.allowCategoryList,
+        purchaseQuantity: gear.purchaseQuantity,
+        bonus: gear.bonus,
+        weaponBonus: gear.weaponBonus,
+        isFlechetteAmmo: gear.isFlechetteAmmo,
+        flechetteWeaponBonus: gear.flechetteWeaponBonus,
+        ammoForWeaponType: gear.ammoForWeaponType,
+        explosiveWeight: gear.explosiveWeight,
+        userSelectable: gear.userSelectable,
+        allowedGearList: gearNameList,
+        includedGearList: includedGearList,
+        deviceRating: gear.deviceRating,
+        programs: gear.programs,
+        attributeArray: gear.attributeArray,
+        attack: gear.attack,
+        sleaze: gear.sleaze,
+        dataProcessing: gear.dataProcessing,
+        firewall: gear.firewall,
+        canFormPersona: gear.canFormPersona,
+        capacityInformation: gear.capacityInformation,
+        armourCapacityInformation: gear.armourCapacityInformation,
+        requirements: gear.requirements,
+        requireParent: gear.requireParent,
+        forbidden: gear.forbidden,
+        modifyAttributeArray: gear.modifyAttributeArray,
+        modifyAttack: gear.modifyAttack,
+        modifySleaze: gear.modifySleaze,
+        modifyDataProcessing: gear.modifyDataProcessing,
+        modifyFirewall: gear.modifyFirewall,
+        addMatrixBoxes: gear.addMatrixBoxes,
+        renameCustomLabel: gear.renameCustomLabel,
+        availability: gear.availability,
+        cost: gear.cost,
+        source: gear.source,
+        page: gear.page,
+      };
+      return gearFormatted;
+    })
+  );
   return gearsResponse;
 }
 
@@ -1402,9 +1694,9 @@ const programs = privateProcedure.query(async () => {
   }
 });
 
-const weapons = privateProcedure.query(async () => {
+const weaponAccessory = privateProcedure.query(async () => {
   try {
-    const weaponsResponse: WeaponSummaryListType = await getWeapons();
+    const weaponsResponse: WeaponListType = await getWeapons();
     // logger.log(JSON.stringify(weaponsResponse, null, 2));
     return weaponsResponse;
   } catch (error) {
@@ -1504,6 +1796,18 @@ const lifestyleQualities = privateProcedure.query(async () => {
   }
 });
 
+const equipmentPacks = privateProcedure.query(async () => {
+  try {
+    const EquipmentPacksResponse: EquipmentPackListType =
+      await getEquipmentPacks();
+    // logger.log(JSON.stringify(vehiclesAndDronesResponse, null, 2));
+    return EquipmentPacksResponse;
+  } catch (error) {
+    logger.error("Unable to connect to the database:", error);
+    throw new Error("Database error");
+  }
+});
+
 const qualities = privateProcedure.query(async () => {
   try {
     const qualitiesResponse: QualityListType = await getQualities();
@@ -1540,24 +1844,36 @@ const heritages = privateProcedure.query(async () => {
 const all = privateProcedure.query(async () => {
   try {
     const [
+      equipmentPacksResponse,
       weaponsResponse,
+      weaponAccessoriesResponse,
       armoursResponse,
+      armourModificationsResponse,
       gearsResponse,
       augmentationsResponse,
       vehiclesResponse,
+      vehicleModificationsResponse,
     ] = await Promise.all([
+      getEquipmentPacks(),
       getWeapons(),
+      getWeaponAccessories(),
       getArmours(),
+      getArmourModifications(),
       getGears(),
       getAugmentations(),
       getVehicles(),
+      getVehicleModifications(),
     ]);
     const equipmentResponse: EquipmentListType = {
-      weapons: weaponsResponse,
-      armours: armoursResponse,
+      equipmentPackList: equipmentPacksResponse,
+      weaponList: weaponsResponse,
+      weaponAccessoryList: weaponAccessoriesResponse,
+      armourList: armoursResponse,
+      armourModificationList: armourModificationsResponse,
       gearList: gearsResponse,
-      augmentations: augmentationsResponse,
-      vehicles: vehiclesResponse,
+      augmentationList: augmentationsResponse,
+      vehicleList: vehiclesResponse,
+      vehicleModificationList: vehicleModificationsResponse,
     };
     // logger.log(JSON.stringify(equipmentResponse, null, 2));
     return equipmentResponse;
@@ -1579,8 +1895,8 @@ const CharacterInformationSchema = zod
     skillSelections: CustomSkillListSchema,
     skillGroupSelections: CustomSkillGroupListSchema,
     martialArtSelected: zod.optional(MartialArtSelectedSchema),
-    equipmentSelections: EquipmentListSchema,
-    lifestyleSelected: zod.optional(LifestyleSelectedSchema),
+    equipmentSelections: SelectedEquipmentListSchema,
+    lifestyleSelections: LifestyleSelectedListSchema,
     karmaPoints: zod.number(),
     nuyen: zod.number(),
     bonusInfo: CharacterCreatorBonusListSchema,
@@ -1616,27 +1932,8 @@ const createCharacter = privateProcedure
         throw new Error("Heritage does not exist");
       }
     }
-    if (opts.input.lifestyleSelected === undefined) {
+    if (opts.input.lifestyleSelections === undefined) {
       throw new Error("Lifestyle not selected");
-    }
-    const lifestyle = await db.em.findOne(Lifestyles, {
-      name: opts.input.lifestyleSelected.lifestyle.name,
-    });
-    if (lifestyle === null) {
-      throw new Error("Lifestyle does not exist");
-    }
-
-    const activeLifestyle = new ActiveLifestyles();
-    activeLifestyle.lifestyle = ref(lifestyle);
-    for (const selectedLifestyleQuality of opts.input.lifestyleSelected
-      .lifestyleQualityList) {
-      const lifestyleQuality = await db.em.findOne(LifestyleQualities, {
-        name: selectedLifestyleQuality.name,
-      });
-      if (lifestyleQuality === null) {
-        throw new Error("lifestyleQuality does not exist");
-      }
-      activeLifestyle.lifestyleQualityList.add(lifestyleQuality);
     }
 
     const character = new Characters({
@@ -1645,7 +1942,6 @@ const createCharacter = privateProcedure
       priorities: opts.input.priorityInfo,
       attributes: opts.input.attributeInfo,
       specialAttributes: opts.input.specialAttributeInfo,
-      lifestyle: ref(activeLifestyle),
       nuyen: opts.input.nuyen,
       karmaPoints: opts.input.karmaPoints,
       user: ref(Users, opts.ctx.id),
@@ -1891,28 +2187,28 @@ const createCharacter = privateProcedure
       db.em.persist(activeQuality);
     }
 
-    for (const unlinkedWeapon of opts.input.equipmentSelections.weapons) {
+    for (const unlinkedWeapon of opts.input.equipmentSelections.weaponList) {
       const weapon = await db.em.findOne(Weapons, {
-        name: unlinkedWeapon.name,
+        name: unlinkedWeapon.baseWeapon,
       });
       if (weapon === null) {
-        throw new Error(`Weapon ${unlinkedWeapon.name} does not exist`);
+        throw new Error(`Weapon ${unlinkedWeapon.baseWeapon} does not exist`);
       }
       const activeWeapon = new CustomisedWeapons(
         characterReference,
         ref(weapon)
       );
       db.em.persist(activeWeapon);
-      if (unlinkedWeapon.includedAccessoryList === undefined) {
+      if (unlinkedWeapon.accessoryList === undefined) {
         continue;
       }
-      for (const unlinkedAccessory of unlinkedWeapon.includedAccessoryList) {
+      for (const unlinkedAccessory of unlinkedWeapon.accessoryList) {
         const accessory = await db.em.findOne(WeaponAccessories, {
-          name: unlinkedAccessory.name,
+          name: unlinkedAccessory.baseAccessory,
         });
         if (accessory === null) {
           throw new Error(
-            `Weapon Accessory ${unlinkedAccessory.name} does not exist`
+            `Weapon Accessory ${unlinkedAccessory.baseAccessory} does not exist`
           );
         }
         // TODO: confirm this cascades properly
@@ -1920,34 +2216,34 @@ const createCharacter = privateProcedure
           new CustomisedWeaponAccessories(
             ref(activeWeapon),
             ref(accessory),
-            unlinkedAccessory.rating,
-            unlinkedAccessory.mount
+            unlinkedAccessory.mountList,
+            unlinkedAccessory.rating
           )
         );
       }
     }
 
-    for (const unlinkedArmour of opts.input.equipmentSelections.armours) {
+    for (const unlinkedArmour of opts.input.equipmentSelections.armourList) {
       const armour = await db.em.findOne(Armours, {
-        name: unlinkedArmour.name,
+        name: unlinkedArmour.baseArmour,
       });
       if (armour === null) {
-        throw new Error(`Armour ${unlinkedArmour.name} does not exist`);
+        throw new Error(`Armour ${unlinkedArmour.baseArmour} does not exist`);
       }
       const activeArmour = new CustomisedArmours(
         characterReference,
         ref(armour)
       );
       db.em.persist(activeArmour);
-      if (unlinkedArmour.includedMods === undefined) {
+      if (unlinkedArmour.modList === undefined) {
         continue;
       }
-      for (const unlinkedMod of unlinkedArmour.includedMods) {
+      for (const unlinkedMod of unlinkedArmour.modList) {
         const mod = await db.em.findOne(ArmourModifications, {
-          name: unlinkedMod.name,
+          name: unlinkedMod.baseMod,
         });
         if (mod === null) {
-          throw new Error(`Armour Mod ${unlinkedMod.name} does not exist`);
+          throw new Error(`Armour Mod ${unlinkedMod.baseMod} does not exist`);
         }
         // TODO: confirm this cascades properly
         db.em.persist(
@@ -1962,78 +2258,85 @@ const createCharacter = privateProcedure
 
     for (const unlinkedGear of opts.input.equipmentSelections.gearList) {
       const gear = await db.em.findOne(Gears, {
-        name: unlinkedGear.name,
+        name: unlinkedGear.baseGear,
       });
       if (gear === null) {
-        throw new Error(`Gear ${unlinkedGear.name} does not exist`);
+        throw new Error(`Gear ${unlinkedGear.baseGear} does not exist`);
       }
-      const activeGear = new CustomisedGears(ref(gear));
+      const activeGear = new CustomisedGears(characterReference, ref(gear));
       db.em.persist(activeGear);
-      if (unlinkedGear.includedGearList === undefined) {
+      if (unlinkedGear.innerGearList === undefined) {
         continue;
       }
-      for (const unlinkedChildGear of unlinkedGear.includedGearList) {
+      // TODO: make this recursive
+      for (const unlinkedChildGear of unlinkedGear.innerGearList) {
         const childGear = await db.em.findOne(Gears, {
-          name: unlinkedChildGear.name,
+          name: unlinkedChildGear.baseGear,
         });
         if (childGear === null) {
-          throw new Error(`Gear ${unlinkedChildGear.name} does not exist`);
+          throw new Error(`Gear ${unlinkedChildGear.baseGear} does not exist`);
         }
         // TODO: confirm this cascades properly
-        db.em.persist(new CustomisedGears(ref(childGear), ref(activeGear)));
+        db.em.persist(new ChildGears(ref(activeGear), ref(childGear)));
       }
     }
 
     for (const unlinkedAugmentation of opts.input.equipmentSelections
-      .augmentations) {
+      .augmentationList) {
       const augmentation = await db.em.findOne(Augmentations, {
-        name: unlinkedAugmentation.name,
+        name: unlinkedAugmentation.baseAugmentation,
       });
       if (augmentation === null) {
         throw new Error(
-          `Augmentation ${unlinkedAugmentation.name} does not exist`
+          `Augmentation ${unlinkedAugmentation.baseAugmentation} does not exist`
         );
       }
-      const activeAugmentation = new CustomisedAugmentations(ref(augmentation));
+      const activeAugmentation = new CustomisedAugmentations(
+        characterReference,
+        ref(augmentation),
+        unlinkedAugmentation.grade
+      );
       db.em.persist(activeAugmentation);
-      if (unlinkedAugmentation.includedGearList === undefined) {
+      if (unlinkedAugmentation.gearList === undefined) {
         continue;
       }
-      for (const unlinkedGear of unlinkedAugmentation.includedGearList) {
+      for (const unlinkedGear of unlinkedAugmentation.gearList) {
         const gear = await db.em.findOne(Gears, {
-          name: unlinkedGear.name,
+          name: unlinkedGear.baseGear,
         });
         if (gear === null) {
-          throw new Error(`Gear ${unlinkedGear.name} does not exist`);
+          throw new Error(`Gear ${unlinkedGear.baseGear} does not exist`);
         }
         // TODO: confirm this cascades properly
         db.em.persist(
-          new ActiveAugmentationGears(ref(gear), ref(activeAugmentation))
+          new ActiveAugmentationGears(ref(activeAugmentation), ref(gear))
         );
       }
     }
 
-    for (const unlinkedVehicle of opts.input.equipmentSelections.vehicles) {
+    for (const unlinkedVehicle of opts.input.equipmentSelections.vehicleList) {
       const vehicle = await db.em.findOne(Vehicles, {
-        name: unlinkedVehicle.name,
+        name: unlinkedVehicle.baseVehicle,
       });
       if (vehicle === null) {
-        throw new Error(`Vehicle ${unlinkedVehicle.name} does not exist`);
+        throw new Error(
+          `Vehicle ${unlinkedVehicle.baseVehicle} does not exist`
+        );
       }
       const activeVehicle = new CustomisedVehicles(
         characterReference,
         ref(vehicle)
       );
       db.em.persist(activeVehicle);
-      if (unlinkedVehicle.includedMods === undefined) {
+      if (unlinkedVehicle.modList === undefined) {
         continue;
       }
-      for (const unlinkedMods of unlinkedVehicle.includedMods) {
+      for (const unlinkedMods of unlinkedVehicle.modList) {
         const mod = await db.em.findOne(VehicleModifications, {
-          name: unlinkedMods.name,
+          name: unlinkedMods.baseMod,
         });
         if (mod === null) {
-          throw new Error(`Vehicle Mod ${unlinkedMods.name} does not exist`);
+          throw new Error(`Vehicle Mod ${unlinkedMods.baseMod} does not exist`);
         }
         // TODO: confirm this cascades properly
         db.em.persist(
@@ -2067,6 +2370,31 @@ const createCharacter = privateProcedure
         activeMartialArt.selectedTechniqueList.add(technique);
       }
       db.em.persist(activeMartialArt);
+    }
+
+    for (const selectedLifestyle of opts.input.lifestyleSelections) {
+      const lifestyle = await db.em.findOne(Lifestyles, {
+        name: selectedLifestyle.lifestyle.name,
+      });
+      if (lifestyle === null) {
+        throw new Error("Lifestyle does not exist");
+      }
+
+      const activeLifestyle = new CustomisedLifestyles(
+        characterReference,
+        ref(lifestyle),
+        selectedLifestyle.purchasedDuration
+      );
+      for (const selectedLifestyleQuality of selectedLifestyle.lifestyleQualityList) {
+        const lifestyleQuality = await db.em.findOne(LifestyleQualities, {
+          name: selectedLifestyleQuality.name,
+        });
+        if (lifestyleQuality === null) {
+          throw new Error("lifestyleQuality does not exist");
+        }
+        activeLifestyle.lifestyleQualityList.add(lifestyleQuality);
+      }
+      db.em.persist(activeLifestyle);
     }
 
     await db.em.persistAndFlush(character);
@@ -2295,12 +2623,12 @@ const getCharacter = privateProcedure
         }
       }
       const skills = await Promise.all(
-        character.skills.map(async (skill) => {
+        character.skillList.map(async (skill) => {
           return await convertActiveSkillDBToDTO(skill);
         })
       );
       const qualities = await Promise.all(
-        character.qualities.map(async (quality) => {
+        character.qualityList.map(async (quality) => {
           return await convertActiveQualityDBToDTO(quality);
         })
       );
@@ -2318,36 +2646,40 @@ const getCharacter = privateProcedure
         nuyen: character.nuyen,
         karmaPoints: character.karmaPoints,
         weaponList: await Promise.all(
-          character.weapons.map(async (weapon) => {
-            return await convertCustomWeaponDBToDTO(weapon);
+          character.weaponList.$.map(async (weapon) => {
+            return await convertActiveWeaponDBToDTO(weapon);
           })
         ),
         armourList: await Promise.all(
-          character.armours.map(async (armour) => {
-            return await convertCustomArmourDBToDTO(armour);
+          character.armourList.$.map(async (armour) => {
+            return await convertActiveArmourDBToDTO(armour);
           })
         ),
         gearList: await Promise.all(
-          character.gears.map(async (gear) => {
-            return await convertCustomGearDBToDTO(gear);
+          character.gearList.$.map(async (gear) => {
+            return await convertActiveGearDBToDTO(gear);
           })
         ),
         augmentationList: await Promise.all(
-          character.augmentations.map(async (augmentation) => {
+          character.augmentationList.$.map(async (augmentation) => {
             return await convertCustomAugmentationDBToDTO(augmentation);
           })
         ),
         vehicleList: await Promise.all(
-          character.vehicles.map(async (vehicle) => {
-            return await convertCustomVehicleDBToDTO(vehicle);
+          character.vehicleList.$.map(async (vehicle) => {
+            return await convertActiveVehicleDBToDTO(vehicle);
           })
         ),
         martialArtList: await Promise.all(
-          character.martialArts.map(async (martialArt) => {
+          character.martialArtList.$.map(async (martialArt) => {
             return await convertActiveMartialArtDBToDTO(martialArt);
           })
         ),
-        lifestyle: await convertActiveLifestyleDBToDTO(character.lifestyles.$),
+        lifestyleList: await Promise.all(
+          character.lifestyleList.$.map(async (lifestyle) => {
+            return await convertActiveLifestyleDBToDTO(lifestyle);
+          })
+        ),
       };
       return loadedCharacter;
     } catch (error) {
@@ -2512,11 +2844,11 @@ const convertActiveQualityDBToDTO = async function (
     rating: activeQualityDB.rating,
   };
 };
-const convertCustomWeaponDBToDTO = async function (
-  customWeaponDB: CustomisedWeapons
+const convertActiveWeaponDBToDTO = async function (
+  activeWeaponDB: ActiveWeapons
 ): Promise<CustomisedWeaponType> {
   const db = await init();
-  const weaponDB = await db.em.findOne(Weapons, customWeaponDB.weapon.id, {
+  const weaponDB = await db.em.findOne(Weapons, activeWeaponDB.weapon.id, {
     populate: ["*"],
   });
   if (weaponDB === null) {
@@ -2524,22 +2856,22 @@ const convertCustomWeaponDBToDTO = async function (
   }
   const convertedWeapon = await convertWeaponDBToDTO(weaponDB);
   const convertedAccessories = await Promise.all(
-    customWeaponDB.accessories.map((accessory) => {
-      return convertIncludedWeaponAccessoryDBToDTO(accessory);
+    activeWeaponDB.accessoryList.map((accessory) => {
+      return convertActiveWeaponAccessoryDBToDTO(accessory);
     })
   );
 
   return {
-    baseWeapon: convertedWeapon,
+    baseWeapon: convertedWeapon.name,
     accessoryList: convertedAccessories,
-    rating: customWeaponDB.rating,
-    customName: customWeaponDB.customName,
+    rating: activeWeaponDB.rating,
+    customName: activeWeaponDB.customName,
   };
 };
 
 const convertWeaponDBToDTO = async function (
   weaponDB: Weapons
-): Promise<WeaponSummaryType> {
+): Promise<WeaponType> {
   const hostWeaponRequirements = {
     requirements: weaponDB.requirements,
     hostWeaponMountsRequired: weaponDB.hostWeaponMountsRequired,
@@ -2568,7 +2900,7 @@ const convertWeaponDBToDTO = async function (
     allowedGearCategories: weaponDB.allowedGearCategories,
     includedAccessoryList: await Promise.all(
       weaponDB.includedAccessoryList.map((accessory) => {
-        return convertIncludedWeaponAccessoryDBToDTO(accessory);
+        return convertActiveWeaponAccessoryDBToDTO(accessory);
       })
     ),
     allowAccessories: weaponDB.allowAccessories,
@@ -2642,9 +2974,9 @@ const convertWeaponDBTypeInformationToDTO = function (weaponDB: Weapons) {
   }
 };
 
-const convertIncludedWeaponAccessoryDBToDTO = async function (
+const convertActiveWeaponAccessoryDBToDTO = async function (
   includedAccessoryDB: ActiveWeaponAccessories
-): Promise<UnlinkedWeaponAccessoryType> {
+): Promise<CustomisedWeaponAccessoryType> {
   const db = await init();
 
   const weaponAccessoryDB = await db.em.findOne(
@@ -2659,10 +2991,10 @@ const convertIncludedWeaponAccessoryDBToDTO = async function (
   }
 
   return {
-    name: weaponAccessoryDB.name,
-    mount: includedAccessoryDB.weaponMountsUsed,
+    baseAccessory: weaponAccessoryDB.name,
+    mountList: includedAccessoryDB.weaponMountsUsed,
     rating: includedAccessoryDB.rating,
-    gears: await Promise.all(
+    gearList: await Promise.all(
       includedAccessoryDB.includedGearList.map(async (gear) => {
         return await convertActiveGearDBToDTO(gear);
       })
@@ -2670,8 +3002,8 @@ const convertIncludedWeaponAccessoryDBToDTO = async function (
   };
 };
 
-const convertCustomArmourDBToDTO = async function (
-  activeArmourDB: CustomisedArmours
+const convertActiveArmourDBToDTO = async function (
+  activeArmourDB: ActiveArmours
 ): Promise<CustomisedArmourType> {
   const db = await init();
   const armourDB = await db.em.findOne(Armours, activeArmourDB.armour.id, {
@@ -2680,14 +3012,47 @@ const convertCustomArmourDBToDTO = async function (
   if (armourDB === null) {
     throw new Error("Armour does not exist");
   }
-  const baseArmour = await convertArmourDBToDTO(armourDB);
+  const modList = await Promise.all(
+    activeArmourDB.modList.map((mod) => {
+      return convertActiveArmourModDBToDTO(mod);
+    })
+  );
+  const gearList = await Promise.all(
+    activeArmourDB.gearList.map(async (gear) => {
+      return convertActiveGearDBToDTO(gear);
+    })
+  );
   return {
-    baseArmour: baseArmour,
-    // TODO add these...
-    // modList: modList,
-    // gearList: gearList,
-    // rating?
+    baseArmour: armourDB.name,
+    modList: modList,
+    gearList: gearList,
     customName: activeArmourDB.customName,
+  };
+};
+
+const convertActiveArmourModDBToDTO = async function (
+  activeArmourModificationDB: ActiveArmourModifications
+): Promise<CustomisedArmourModType> {
+  const db = await init();
+  const modDB = await db.em.findOne(
+    ActiveArmourModifications,
+    activeArmourModificationDB.id,
+    {
+      populate: ["*"],
+    }
+  );
+  if (modDB === null) {
+    throw new Error("Armour mod does not exist");
+  }
+  const gearList = await Promise.all(
+    modDB.includedGearList.map(async (gear) => {
+      return convertActiveGearDBToDTO(gear);
+    })
+  );
+  return {
+    baseMod: modDB.armourModification.$.name,
+    gearList: gearList,
+    rating: modDB.rating,
   };
 };
 
@@ -2738,30 +3103,7 @@ export const convertArmourDBToDTO = async function (
 };
 
 const convertActiveGearDBToDTO = async function (
-  activeGearDB: ActiveGears
-): Promise<IncludedGearType> {
-  const db = await init();
-  const gearDB = await db.em.findOne(Gears, activeGearDB.gear.id, {
-    populate: ["*"],
-  });
-  if (gearDB === null) {
-    throw new Error("Gear does not exist");
-  }
-
-  return {
-    name: gearDB.name,
-    category: gearDB.category,
-    specificOption: activeGearDB.specificOption,
-    rating: activeGearDB.rating,
-    ...(activeGearDB.consumeCapacity !== undefined && {
-      consumeCapacity: true,
-    }),
-    quantity: activeGearDB.quantity,
-  };
-};
-
-const convertCustomGearDBToDTO = async function (
-  customisedGearDB: CustomisedGears
+  customisedGearDB: ActiveGears
 ): Promise<CustomisedGearType> {
   const db = await init();
   const gearDB = await db.em.findOne(Gears, customisedGearDB.gear.id, {
@@ -2772,16 +3114,16 @@ const convertCustomGearDBToDTO = async function (
   }
 
   return {
-    baseGear: await convertGearDBToDTO(gearDB),
-    gearList: await Promise.all(
+    baseGear: gearDB.name,
+    innerGearList: await Promise.all(
       customisedGearDB.childrenGear.map(async (childGear) => {
-        const loadedChildGear = await childGear.gear.load();
-        if (loadedChildGear === null) {
-          throw new Error("Gear does not exist");
-        }
-        return convertGearDBToDTO(loadedChildGear);
+        return await convertActiveGearDBToDTO(childGear);
       })
     ),
+    specificOption: customisedGearDB.specificOption,
+    rating: customisedGearDB.rating,
+    consumeCapacity: customisedGearDB.consumeCapacity,
+    currentQuantity: customisedGearDB.currentQuantity,
   };
 };
 
@@ -2816,7 +3158,7 @@ export const convertGearDBToDTO = async function (
     ratingMeaning: gearDB.ratingMeaning,
     includedWeapon: includedWeapon,
     allowCategoryList: gearDB.allowCategoryList,
-    quantity: gearDB.quantity,
+    purchaseQuantity: gearDB.purchaseQuantity,
     bonus: gearDB.bonus,
     weaponBonus: gearDB.weaponBonus,
     isFlechetteAmmo: gearDB.isFlechetteAmmo,
@@ -2827,11 +3169,11 @@ export const convertGearDBToDTO = async function (
     allowedGearList: gearDB.allowedGearList.map((gear) => {
       return gear.name;
     }),
-    includedGearList: gearDB.includedGearList.map((gear) => {
-      return {
-        name: gear.name,
-      };
-    }),
+    includedGearList: await Promise.all(
+      gearDB.includedGearList.map(async (gear) => {
+        return convertActiveGearDBToDTO(gear);
+      })
+    ),
     deviceRating: gearDB.deviceRating,
     programs: gearDB.programs,
     attributeArray: gearDB.attributeArray,
@@ -2875,16 +3217,13 @@ const convertCustomAugmentationDBToDTO = async function (
   }
 
   return {
-    baseAugmentation: await convertAugmentationDBToDTO(augmentationDB),
+    baseAugmentation: augmentationDB.name,
     gearList: await Promise.all(
       customisedAugmentationDB.gearList.map(async (childGear) => {
-        const loadedChildGear = await childGear.gear.load();
-        if (loadedChildGear === null) {
-          throw new Error("Gear does not exist");
-        }
-        return convertGearDBToDTO(loadedChildGear);
+        return convertActiveGearDBToDTO(childGear);
       })
     ),
+    grade: customisedAugmentationDB.grade,
   };
 };
 
@@ -2934,15 +3273,12 @@ export const convertAugmentationDBToDTO = async function (
         if (loadedGear === null) {
           throw new Error("Gear does not exist");
         }
-        return {
-          name: loadedGear.name,
-          // TODO: add the rest...
-        };
+        return await convertActiveGearDBToDTO(gear);
       })
     ),
     allowedGearCategories: augmentationDB.allowedGearCategories,
     userSelectable: augmentationDB.userSelectable,
-    allowCategoryList: augmentationDB.allowCategoryList,
+    allowSubsystemCategoryList: augmentationDB.allowSubsystemCategoryList,
     availability: augmentationDB.availability,
     cost: augmentationDB.cost,
     source: augmentationDB.source,
@@ -3001,8 +3337,31 @@ const convertAugmentationTypeInformation = async function (
   }
 };
 
-const convertCustomVehicleDBToDTO = async function (
-  activeVehicleDB: CustomisedVehicles
+const convertActiveVehicleModDBToDTO = async function (
+  activeVehicleModificationDB: ActiveVehicleModifications
+): Promise<CustomisedVehicleModType> {
+  const db = await init();
+  const modDB = await db.em.findOne(
+    ActiveVehicleModifications,
+    activeVehicleModificationDB.id,
+    {
+      populate: ["*"],
+    }
+  );
+  if (modDB === null) {
+    throw new Error("Vehicle mod does not exist");
+  }
+  const subsystemList = modDB.associatedCyberwareList.map((cyberware) => {
+    return cyberware.name;
+  });
+  return {
+    baseMod: modDB.vehicleModification.$.name,
+    subsystemList: subsystemList,
+    rating: modDB.rating,
+  };
+};
+const convertActiveVehicleDBToDTO = async function (
+  activeVehicleDB: ActiveVehicles
 ): Promise<CustomisedVehicleType> {
   const db = await init();
   const vehicleDB = await db.em.findOne(Vehicles, activeVehicleDB.vehicle.id, {
@@ -3011,14 +3370,59 @@ const convertCustomVehicleDBToDTO = async function (
   if (vehicleDB === null) {
     throw new Error("Vehicle does not exist");
   }
-  const baseVehicle = await convertVehicleDBToDTO(vehicleDB);
   return {
-    baseVehicle: baseVehicle,
-    // TODO add these...
-    // modList: modList,
-    // gearList: gearList,
-    // rating?
+    baseVehicle: vehicleDB.name,
+    gearList: await Promise.all(
+      activeVehicleDB.gearList.map((gear) => {
+        return convertActiveGearDBToDTO(gear);
+      })
+    ),
+    weaponMountList: await Promise.all(
+      activeVehicleDB.weaponMountList.map((weaponMount) => {
+        return convertActiveWeaponMountDBToDTO(weaponMount);
+      })
+    ),
     customName: activeVehicleDB.customName,
+  };
+};
+const convertActiveWeaponMountDBToDTO = async function (
+  activeWeaponMountDB: ActiveWeaponMounts
+): Promise<CustomisedWeaponMountType> {
+  const db = await init();
+  const weaponMountDB = await db.em.findOne(
+    WeaponMounts,
+    activeWeaponMountDB.weaponMount.id,
+    {
+      populate: ["*"],
+    }
+  );
+  if (weaponMountDB === null) {
+    throw new Error("Weapon Mount does not exist");
+  }
+  let weaponId;
+  if (activeWeaponMountDB.mountedWeapon !== undefined) {
+    weaponId = activeWeaponMountDB.mountedWeapon.id;
+  }
+  let weaponMounted;
+  if (weaponId !== undefined) {
+    const weaponMounted = await db.em.findOne(WeaponMountWeapons, weaponId, {
+      populate: ["*"],
+    });
+    if (weaponMounted === null) {
+      throw new Error("Weapon does not exist");
+    }
+  }
+
+  return {
+    control: weaponMountDB.control,
+    flexibility: weaponMountDB.flexibility,
+    size: weaponMountDB.size,
+    visibility: weaponMountDB.visibility,
+    weaponExchangeable: activeWeaponMountDB.weaponExchangeable,
+    weaponMounted: weaponMounted,
+    weaponMountModList: activeWeaponMountDB.mountMods.map((mod) => {
+      return mod.name;
+    }),
   };
 };
 
@@ -3043,21 +3447,19 @@ export const convertVehicleDBToDTO = async function (
         if (loadedGear === null) {
           throw new Error("Gear does not exist");
         }
-        return {
-          name: loadedGear.name,
-          // TODO: add the rest...
-        };
+        return await convertActiveGearDBToDTO(gear);
       })
     ),
-    includedMods: await Promise.all(
+    includedModList: await Promise.all(
       vehicleDB.includedModList.map(async (mod) => {
         const loadedMod = await mod.vehicleModification.load();
         if (loadedMod === null) {
           throw new Error("Vehicle Mod does not exist");
         }
         return {
-          name: loadedMod.name,
-          // TODO: add the rest...
+          baseMod: loadedMod.name,
+          // TODO: fix all these conversions up to include all the missing
+          rating: mod.rating,
         };
       })
     ),
@@ -3214,6 +3616,7 @@ const convertActiveLifestyleDBToDTO = async function (
   return {
     lifestyle: lifestyle,
     lifestyleQualityList: lifestyleQualityList,
+    purchasedDuration: activeLifestyleDB.purchasedDuration,
   };
 };
 
@@ -3229,7 +3632,7 @@ export const characterRouter = router({
   qualities: qualities,
   priorities: priorities,
   heritages: heritages,
-  weapons: weapons,
+  weapons: weaponAccessory,
   armours: armours,
   gear: gears,
   augmentations: augmentations,
@@ -3238,6 +3641,7 @@ export const characterRouter = router({
   martialArtTechniques: martialArtTechniques,
   lifestyles: lifestyles,
   lifestyleQualities: lifestyleQualities,
+  equipmentPacks: equipmentPacks,
   all: all,
   createCharacter: createCharacter,
   getCharacter: getCharacter,

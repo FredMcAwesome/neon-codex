@@ -7,9 +7,7 @@ import type { VehicleModListType } from "@neon-codex/common/build/schemas/equipm
 import {
   VehicleChasisModifications,
   VehicleModifications,
-  WeaponMountModifications,
 } from "../../models/rpg/equipment/rigger/vehicleModificationModel.js";
-import { vehicleModTypeEnum } from "@neon-codex/common/build/enums.js";
 
 export const getVehicleModifications = function () {
   const currentPath = import.meta.url;
@@ -33,14 +31,7 @@ export const getVehicleModifications = function () {
   }
   const stagedVehicleMods: Array<VehicleModifications> = [];
   vehicleMods.forEach((vehicleMod) => {
-    switch (vehicleMod.type) {
-      case vehicleModTypeEnum.Vehicle:
-        stagedVehicleMods.push(new VehicleChasisModifications(vehicleMod));
-        break;
-      case vehicleModTypeEnum.WeaponMount:
-        stagedVehicleMods.push(new WeaponMountModifications(vehicleMod));
-        break;
-    }
+    stagedVehicleMods.push(new VehicleChasisModifications(vehicleMod));
     // console.log(vehicleMod.name);
   });
   return stagedVehicleMods;

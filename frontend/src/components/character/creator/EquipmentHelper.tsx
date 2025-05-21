@@ -4,8 +4,8 @@ import { Collapse } from "react-collapse";
 interface IProps {
   title: string;
   children: ReactNode;
-  addItem: () => void;
-  removeItem?: () => void;
+  addItem?: (() => void) | undefined;
+  removeItem?: (() => void) | undefined;
 }
 
 export const CollapsibleEquipmentDiv = function (props: IProps) {
@@ -18,15 +18,17 @@ export const CollapsibleEquipmentDiv = function (props: IProps) {
       <div onClick={() => toggleIsOpened()}>
         <div>{props.title}</div>
         <div>
-          <button
-            onClick={(event) => {
-              event.stopPropagation();
-              props.addItem();
-            }}
-          >
-            Add
-          </button>
-          {props.removeItem && (
+          {props.addItem !== undefined && (
+            <button
+              onClick={(event) => {
+                event.stopPropagation();
+                props.addItem!();
+              }}
+            >
+              Add
+            </button>
+          )}
+          {props.removeItem !== undefined && (
             <button
               onClick={(event) => {
                 event.stopPropagation();

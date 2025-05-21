@@ -9,16 +9,13 @@ import {
   restrictionEnum,
   gearCategoryEnum,
 } from "../../../enums.js";
-import {
-  AvailabilityRatingSchema,
-  IncludedGearListSchema,
-} from "../../shared/commonSchemas.js";
+import { AvailabilityRatingSchema } from "../../shared/commonSchemas.js";
 import { RequirementsSchema } from "../../shared/requiredSchemas.js";
+import { CustomisedGearListSchema } from "../other/gearSchemas.js";
 import {
   AccessoryMountSchema,
   AmmunitionSingleSchema,
-  MountSchema,
-} from "./weaponSchemas.js";
+} from "../../shared/weaponSharedSchemas.js";
 
 export const AvailabilityWeaponAccessorySchema = zod
   .object({
@@ -89,7 +86,7 @@ export type ConcealabilityModificationType = zod.infer<
   typeof ConcealabilityModificationSchema
 >;
 
-export const WeaponAccessorySummarySchema = zod
+export const WeaponAccessorySchema = zod
   .object({
     name: zod.string(),
     description: zod.string(),
@@ -109,7 +106,7 @@ export const WeaponAccessorySummarySchema = zod
     allowedGearCategories: zod.optional(
       zod.array(zod.nativeEnum(gearCategoryEnum))
     ),
-    includedGearList: zod.optional(IncludedGearListSchema),
+    includedGearList: zod.optional(CustomisedGearListSchema),
     specialModification: zod.boolean(),
     extraAmmoSlots: zod.optional(zod.number()),
     ammoCapacityCalculation: zod.optional(AmmoCapacityCalculationSchema),
@@ -126,24 +123,26 @@ export const WeaponAccessorySummarySchema = zod
     page: zod.number(),
   })
   .strict();
-export type WeaponAccessorySummaryType = zod.infer<
-  typeof WeaponAccessorySummarySchema
->;
-export const WeaponAccessorySummaryListSchema = zod.array(
-  WeaponAccessorySummarySchema
-);
-export type WeaponAccessorySummaryListType = zod.infer<
-  typeof WeaponAccessorySummaryListSchema
+export type WeaponAccessoryType = zod.infer<typeof WeaponAccessorySchema>;
+export const WeaponAccessoryListSchema = zod.array(WeaponAccessorySchema);
+export type WeaponAccessoryListType = zod.infer<
+  typeof WeaponAccessoryListSchema
 >;
 
 export const CustomisedWeaponAccessorySchema = zod
   .object({
-    baseAccessory: WeaponAccessorySummarySchema,
-    gearList: zod.array(zod.string()),
-    mountList: zod.array(MountSchema),
+    baseAccessory: zod.string(),
+    gearList: CustomisedGearListSchema,
+    mountList: AccessoryMountSchema,
     rating: zod.optional(zod.number()),
   })
   .strict();
+export type CustomisedWeaponAccessoryType = zod.infer<
+  typeof CustomisedWeaponAccessorySchema
+>;
 export const CustomisedWeaponAccessoryListSchema = zod.array(
   CustomisedWeaponAccessorySchema
 );
+export type CustomisedWeaponAccessoryListType = zod.infer<
+  typeof CustomisedWeaponAccessoryListSchema
+>;

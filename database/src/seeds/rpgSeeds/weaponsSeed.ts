@@ -7,9 +7,9 @@ import {
   FirearmWeaponSchema,
   MeleeWeaponSchema,
   ProjectileWeaponSchema,
-  WeaponSummaryListSchema,
+  WeaponListSchema,
 } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
-import type { WeaponSummaryListType } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
+import type { WeaponListType } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
 import { z as zod } from "zod";
 import { weaponTypeEnum } from "@neon-codex/common/build/enums.js";
 import { ref } from "@mikro-orm/postgresql";
@@ -42,12 +42,12 @@ export const getWeapons = function (
   stagedSkills: Array<Skills>,
   stagedWeaponRanges: Array<WeaponRanges>
 ): {
-  unlinkedWeapons: WeaponSummaryListType;
+  unlinkedWeapons: WeaponListType;
   stagedWeapons: Array<Weapons>;
 } {
   const currentPath = import.meta.url;
 
-  let unlinkedWeapons: WeaponSummaryListType;
+  let unlinkedWeapons: WeaponListType;
   const relativeConverterPath = "converter/jsonFiles/weapons.json";
   const rootPath = "../../../../../";
   const jsonString = fs.readFileSync(
@@ -57,7 +57,7 @@ export const getWeapons = function (
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const rawJson = JSON.parse(jsonString);
-  const weaponListParsed = WeaponSummaryListSchema.safeParse(rawJson);
+  const weaponListParsed = WeaponListSchema.safeParse(rawJson);
   if (weaponListParsed.success) {
     console.log("weapons all g");
     unlinkedWeapons = weaponListParsed.data;

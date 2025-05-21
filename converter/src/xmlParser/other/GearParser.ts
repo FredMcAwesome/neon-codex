@@ -116,7 +116,7 @@ const convertGear = function (gear: GearXmlType) {
       : Array.isArray(gear.addoncategory)
       ? gear.addoncategory.map((gear) => convertGearCategory(gear))
       : [convertGearCategory(gear.addoncategory)];
-  const quantity =
+  const purchaseQuantity =
     gear.costfor !== undefined && gear.costfor !== 1 ? gear.costfor : undefined;
   const bonus =
     gear.bonus === undefined ? undefined : convertXmlBonus(gear.bonus);
@@ -285,7 +285,7 @@ const convertGear = function (gear: GearXmlType) {
     ratingMeaning: ratingMeaning,
     includedWeapon: includedWeapon,
     allowCategoryList: allowCategoryList,
-    quantity: quantity,
+    purchaseQuantity: purchaseQuantity,
     bonus: bonus,
     weaponBonus: weaponBonus,
     isFlechetteAmmo: isFlechetteAmmo,

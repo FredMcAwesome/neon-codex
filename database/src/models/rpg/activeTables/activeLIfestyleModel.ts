@@ -31,11 +31,11 @@ export class ActiveLifestyles {
   lifestyle!: Ref<Lifestyles>;
 
   @Property()
-  prepurchasedDuration!: number;
+  purchasedDuration!: number;
 
-  constructor(dto: Ref<Lifestyles>, prepurchasedDuration: number) {
+  constructor(dto: Ref<Lifestyles>, purchasedDuration: number) {
     this.lifestyle = dto;
-    this.prepurchasedDuration = prepurchasedDuration;
+    this.purchasedDuration = purchasedDuration;
   }
 }
 
@@ -44,8 +44,13 @@ export class PackLifestyles extends ActiveLifestyles {
   @ManyToOne({ entity: () => EquipmentPacks, ref: true })
   equipmentPack!: Ref<EquipmentPacks>;
 
-  constructor(lifestyle: Ref<Lifestyles>, prepurchasedDuration: number) {
-    super(lifestyle, prepurchasedDuration);
+  constructor(
+    equipmentPack: Ref<EquipmentPacks>,
+    lifestyle: Ref<Lifestyles>,
+    purchasedDuration: number
+  ) {
+    super(lifestyle, purchasedDuration);
+    this.equipmentPack = equipmentPack;
   }
 }
 
@@ -54,7 +59,12 @@ export class CustomisedLifestyles extends ActiveLifestyles {
   @ManyToOne({ entity: () => Characters, ref: true })
   character!: Ref<Characters>;
 
-  constructor(lifestyle: Ref<Lifestyles>, prepurchasedDuration: number) {
-    super(lifestyle, prepurchasedDuration);
+  constructor(
+    character: Ref<Characters>,
+    lifestyle: Ref<Lifestyles>,
+    purchasedDuration: number
+  ) {
+    super(lifestyle, purchasedDuration);
+    this.character = character;
   }
 }

@@ -28,10 +28,13 @@ export abstract class ActiveArmours {
     () => CustomisedArmourModifications,
     (armourModifications) => armourModifications.customisedArmour
   )
-  accessories = new Collection<CustomisedArmourModifications>(this);
+  modList = new Collection<CustomisedArmourModifications>(this);
 
   @OneToMany(() => ActiveArmourIncludedGears, (gear) => gear.activeArmour)
-  gears = new Collection<ActiveArmourIncludedGears>(this);
+  gearList = new Collection<ActiveArmourIncludedGears>(this);
+
+  @Property({ nullable: true })
+  customName?: string;
 
   constructor(armour: Ref<Armours>) {
     this.armour = armour;
@@ -43,8 +46,9 @@ export class PackArmours extends ActiveArmours {
   @ManyToOne({ entity: () => EquipmentPacks, ref: true })
   equipmentPack!: Ref<EquipmentPacks>;
 
-  constructor(armour: Ref<Armours>) {
+  constructor(equipmentPack: Ref<EquipmentPacks>, armour: Ref<Armours>) {
     super(armour);
+    this.equipmentPack = equipmentPack;
   }
 }
 
@@ -52,9 +56,6 @@ export class PackArmours extends ActiveArmours {
 export class CustomisedArmours extends ActiveArmours {
   @ManyToOne({ entity: () => Characters, ref: true })
   character!: Ref<Characters>;
-
-  @Property({ nullable: true })
-  customName?: string;
 
   constructor(character: Ref<Characters>, armour: Ref<Armours>) {
     super(armour);

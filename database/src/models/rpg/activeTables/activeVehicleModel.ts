@@ -11,12 +11,11 @@ import {
   CustomisedVehicleModifications,
   PackVehicleModifications,
 } from "./activeVehicleModificationModel.js";
-import { Weapons } from "../equipment/combat/weaponModel.js";
 import { Vehicles } from "../equipment/rigger/vehicleModel.js";
 import { Characters } from "../characters/characterModel.js";
 import { EquipmentPacks } from "../equipment/equipmentPackModel.js";
 import { ActiveVehicleGears } from "./activeGearModel.js";
-import { VehicleWeapons } from "./activeWeaponModel.js";
+import { CustomisedWeaponMounts } from "./activeWeaponMountModel.js";
 
 @Entity({
   discriminatorColumn: "discr",
@@ -26,7 +25,7 @@ export abstract class ActiveVehicles {
   @PrimaryKey()
   id!: number;
 
-  @ManyToOne({ entity: () => Weapons, ref: true })
+  @ManyToOne({ entity: () => Vehicles, ref: true })
   vehicle!: Ref<Vehicles>;
 
   @OneToMany(
@@ -35,8 +34,8 @@ export abstract class ActiveVehicles {
   )
   mods = new Collection<CustomisedVehicleModifications>(this);
 
-  @OneToMany(() => VehicleWeapons, (weapon) => weapon.vehicle)
-  weaponList = new Collection<VehicleWeapons>(this);
+  @OneToMany(() => CustomisedWeaponMounts, (weapon) => weapon.customisedVehicle)
+  weaponMountList = new Collection<CustomisedWeaponMounts>(this);
 
   @OneToMany(() => ActiveVehicleGears, (activeGear) => activeGear.activeVehicle)
   gearList = new Collection<ActiveVehicleGears>(this);
@@ -44,6 +43,9 @@ export abstract class ActiveVehicles {
   // rating is only used in a few weapons
   @Property({ nullable: true })
   rating?: string;
+
+  @Property({ nullable: true })
+  customName?: string;
 
   constructor(vehicle: Ref<Vehicles>) {
     this.vehicle = vehicle;
@@ -61,8 +63,9 @@ export class PackVehicles extends ActiveVehicles {
   )
   packMods = new Collection<PackVehicleModifications>(this);
 
-  constructor(vehicle: Ref<Vehicles>) {
+  constructor(equipmentPack: Ref<EquipmentPacks>, vehicle: Ref<Vehicles>) {
     super(vehicle);
+    this.equipmentPack = equipmentPack;
   }
 }
 
@@ -71,10 +74,8 @@ export class CustomisedVehicles extends ActiveVehicles {
   @ManyToOne({ entity: () => Characters, ref: true })
   character!: Ref<Characters>;
 
-  @Property({ nullable: true })
-  customName?: string;
-
-  constructor(vehicle: Ref<Vehicles>) {
+  constructor(character: Ref<Characters>, vehicle: Ref<Vehicles>) {
     super(vehicle);
+    this.character = character;
   }
 }

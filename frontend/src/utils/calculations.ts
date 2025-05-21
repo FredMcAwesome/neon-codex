@@ -7,6 +7,7 @@ import type { CostGearType } from "@neon-codex/common/build/schemas/equipment/ot
 import type { CostWeaponType } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
 import type { CostVehicleType } from "@neon-codex/common/build/schemas/equipment/rigger/vehicleSchemas.js";
 import { costEnum, mathOperatorEnum } from "@neon-codex/common/build/enums.js";
+import type { CostVehicleModType } from "@neon-codex/common/build/schemas/equipment/rigger/vehicleModSchemas.js";
 
 export const genericListCalculation = function (
   genericList: GearCalculationType,
@@ -76,6 +77,7 @@ export const costCalculation = function <
     | CostAugmentationType
     | CostGearType
     | CostVehicleType
+    | CostVehicleModType
     | CostWeaponType
     | CostWeaponAccessoryType
 >(

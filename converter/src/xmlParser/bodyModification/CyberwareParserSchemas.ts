@@ -63,6 +63,8 @@ const SubsystemInternalSchema: zod.ZodType<CyberwareSubsystemsRecursiveType> =
       rating: zod.optional(zod.number()),
       gears: zod.optional(GearXmlSchema),
       subsystems: zod.optional(zod.lazy(() => CyberwareSubsystemsXmlSchema)),
+      // No grade as all accessories and add-ons must be of the same
+      // grade as the implant to which they are added
     })
     .strict();
 

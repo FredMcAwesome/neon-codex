@@ -10,9 +10,9 @@ import {
 import {
   AvailabilityRatingSchema,
   DamageReductionArmourSchema,
-  IncludedGearListSchema,
 } from "../../shared/commonSchemas.js";
 import { BonusSchema } from "../../shared/bonusSchemas.js";
+import { CustomisedGearListSchema } from "../other/gearSchemas.js";
 
 const InnerAvailabilityArmourModSchema = zod
   .object({
@@ -118,7 +118,7 @@ export const ArmourModSchema = zod
     damageReduction: DamageReductionArmourSchema,
     capacityCost: CapacityArmourModSchema,
     hostArmourRequirements: zod.optional(HostArmourRequirementSchema),
-    includedGearList: zod.optional(IncludedGearListSchema),
+    includedGearList: zod.optional(CustomisedGearListSchema),
     bonus: zod.optional(BonusSchema),
     wirelessBonus: zod.optional(BonusSchema),
     userSelectable: zod.optional(zod.literal(false)),
@@ -135,11 +135,18 @@ export type ArmourModListType = zod.infer<typeof ArmourModListSchema>;
 
 export const CustomisedArmourModSchema = zod
   .object({
-    baseArmourMod: ArmourModSchema,
-    gearList: zod.array(zod.string()),
+    baseMod: zod.string(),
+    gearList: zod.optional(CustomisedGearListSchema),
     rating: zod.optional(zod.number()),
   })
   .strict();
+export type CustomisedArmourModType = zod.infer<
+  typeof CustomisedArmourModSchema
+>;
+
 export const CustomisedArmourModListSchema = zod.array(
   CustomisedArmourModSchema
 );
+export type CustomisedArmourModListType = zod.infer<
+  typeof CustomisedArmourModListSchema
+>;

@@ -2,7 +2,6 @@ import { z as zod } from "zod";
 import { bonusSourceEnum } from "../../enums.js";
 import {
   availabilityEnum,
-  gearCategoryEnum,
   mathOperatorEnum,
   ratingAugmentationEnum,
 } from "../../enums.js";
@@ -132,30 +131,6 @@ export enum weaponXmlSubtypeEnum {
 
 export const WeaponXmlSubtypeSchema = zod.nativeEnum(weaponXmlSubtypeEnum);
 export type WeaponXmlSubtypeType = zod.infer<typeof WeaponXmlSubtypeSchema>;
-
-export const IncludedGearSubSchema = zod
-  .object({
-    name: zod.string(),
-    specificOption: zod.optional(zod.string()),
-    rating: zod.optional(zod.number()),
-    consumeCapacity: zod.optional(zod.literal(true)),
-    quantity: zod.optional(zod.number()),
-    category: zod.optional(zod.nativeEnum(gearCategoryEnum)),
-  })
-  .strict();
-type IncludedGearSubType = zod.infer<typeof IncludedGearSubSchema>;
-
-export type IncludedGearType = IncludedGearSubType & {
-  innerGearList?: Array<IncludedGearType> | undefined;
-};
-
-const IncludedGearSchema: zod.ZodType<IncludedGearType> =
-  IncludedGearSubSchema.extend({
-    innerGearList: zod.optional(zod.lazy(() => zod.array(IncludedGearSchema))),
-  }).strict();
-
-export const IncludedGearListSchema = zod.array(IncludedGearSchema);
-export type IncludedGearListType = zod.infer<typeof IncludedGearListSchema>;
 
 export const RangeCostSchema = zod
   .object({

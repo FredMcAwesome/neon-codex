@@ -1,10 +1,12 @@
 import { CollapsibleDiv } from "../../../utils/CollapsibleDiv.js";
 import { CollapsibleEquipmentDiv } from "./EquipmentHelper.js";
 import { costCalculation } from "../../../utils/calculations.js";
+import Dropdown from "react-dropdown";
 import type {
   CostWeaponType,
-  WeaponSummaryListType,
-  WeaponSummaryType,
+  CustomisedWeaponType,
+  WeaponListType,
+  WeaponType,
 } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
 import {
   formatAccuracy,
@@ -37,35 +39,64 @@ import {
 import { trpc } from "../../../utils/trpc.js";
 import {
   armourCategoryEnum,
+  augmentationGradeEnum,
   augmentationTypeEnum,
   gearCategoryEnum,
   vehicleTypeEnum,
   weaponTypeEnum,
 } from "@neon-codex/common/build/enums.js";
-import type { EquipmentListType } from "@neon-codex/common/build/schemas/equipment/other/equipmentSchemas.js";
 import type {
+  EquipmentListType,
+  SelectedEquipmentListType,
+} from "@neon-codex/common/build/schemas/equipment/other/equipmentSchemas.js";
+import type {
+  CostGearType,
+  CustomisedGearListType,
+  CustomisedGearType,
   GearListType,
   GearType,
 } from "@neon-codex/common/build/schemas/equipment/other/gearSchemas.js";
 import type {
   AugmentationType,
   AugmentationListType,
+  CustomisedAugmentationType,
+  CostAugmentationType,
 } from "@neon-codex/common/build/schemas/equipment/bodyModification/augmentationSchemas.js";
 import type {
+  CustomisedVehicleType,
   VehicleListType,
   VehicleType,
 } from "@neon-codex/common/build/schemas/equipment/rigger/vehicleSchemas.js";
 import type {
   ArmourListType,
   ArmourType,
+  CustomisedArmourType,
 } from "@neon-codex/common/build/schemas/equipment/combat/armourSchemas.js";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import type { CharacterCreatorBonusListType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
+import type { EquipmentPackType } from "@neon-codex/common/build/schemas/equipment/equipmentPackSchemas.js";
+import type {
+  ArmourModListType,
+  ArmourModType,
+  CustomisedArmourModListType,
+  CustomisedArmourModType,
+} from "@neon-codex/common/build/schemas/equipment/combat/armourModSchemas.js";
+import type {
+  CustomisedWeaponAccessoryType,
+  WeaponAccessoryListType,
+  WeaponAccessoryType,
+} from "@neon-codex/common/build/schemas/equipment/combat/weaponAccessorySchemas.js";
+import type {
+  CostVehicleModType,
+  CustomisedVehicleModType,
+  VehicleModListType,
+  VehicleModType,
+} from "@neon-codex/common/build/schemas/equipment/rigger/vehicleModSchemas.js";
 
 interface IProps {
-  equipmentSelections: EquipmentListType;
+  equipmentSelections: SelectedEquipmentListType;
   setEquipmentSelections: (
-    loadingEquipmentSelections: EquipmentListType
+    loadingEquipmentSelections: SelectedEquipmentListType
   ) => void;
   nuyen: number;
   setNuyen: (nuyen: number) => void;
@@ -77,6 +108,7 @@ interface IProps {
 
 export const EquipmentSelect = function (props: IProps) {
   const { data, error, isError, isLoading } = trpc.character.all.useQuery();
+  console.log("EquipmentSelect re-rendered");
   if (isLoading) {
     return <div>Loading equipment...</div>;
   }
@@ -89,107 +121,287 @@ export const EquipmentSelect = function (props: IProps) {
       return <div>Error!</div>;
     }
   }
+  return (
+    <EquipmentSelectLoaded
+      equipmentSelections={props.equipmentSelections}
+      setEquipmentSelections={props.setEquipmentSelections}
+      nuyen={props.nuyen}
+      setNuyen={props.setNuyen}
+      essencePoints={props.essencePoints}
+      setEssencePoints={props.setEssencePoints}
+      bonusInfo={props.bonusInfo}
+      setBonusInfo={props.setBonusInfo}
+      data={data}
+    />
+  );
+};
 
+const EquipmentSelectLoaded = function (
+  props: IProps & { data: EquipmentListType }
+) {
   const equipmentSelections = props.equipmentSelections;
 
-  const addWeapon = function (weapon: WeaponSummaryType) {
+  const addWeapon = function (weapon: CustomisedWeaponType) {
     const equipment = { ...equipmentSelections };
-    equipment.weapons.push(weapon);
+    equipment.weaponList.push(weapon);
+
     props.setEquipmentSelections(equipment);
-    props.setNuyen(
-      props.nuyen - costCalculation<CostWeaponType>(weapon.cost, {})
-    );
+    props.setNuyen(props.nuyen - calculateWeaponCost(weapon));
   };
-  const removeWeapon = function (weapon: WeaponSummaryType, index: number) {
+  const removeWeapon = function (weapon: CustomisedWeaponType, index: number) {
     const equipment = { ...equipmentSelections };
-    if (equipment.weapons[index] === weapon) {
-      equipment.weapons.splice(index, 1);
+    if (equipment.weaponList[index] === weapon) {
+      equipment.weaponList.splice(index, 1);
       props.setEquipmentSelections(equipment);
-      props.setNuyen(
-        props.nuyen + costCalculation<CostWeaponType>(weapon.cost, {})
-      );
+      props.setNuyen(props.nuyen + calculateWeaponCost(weapon));
     } else {
       console.error("No weapon at index: " + index);
     }
   };
-  const addArmour = function (armour: ArmourType) {
-    const equipment = { ...equipmentSelections };
-    equipment.armours.push(armour);
-    props.setEquipmentSelections(equipment);
-    props.setNuyen(props.nuyen - costCalculation(armour.cost, {}));
+  const calculateWeaponCost = function (weapon: CustomisedWeaponType): number {
+    const baseWeapon = findBaseWeapon(weapon.baseWeapon, props.data.weaponList);
+    const accessoryList =
+      weapon.accessoryList !== undefined ? weapon.accessoryList : [];
+    const baseWeaponAccessoryList = accessoryList.map((accessory) => {
+      return calculateWeaponAccessoryCost(accessory);
+    });
+
+    return (
+      costCalculation<CostWeaponType>(baseWeapon.cost, {}) +
+      baseWeaponAccessoryList.reduce((total: number, accessory) => {
+        return total + accessory;
+      }, 0)
+    );
   };
-  const removeArmour = function (armour: ArmourType, index: number) {
+  const calculateWeaponAccessoryCost = function (
+    accessory: CustomisedWeaponAccessoryType
+  ) {
+    const baseAccessory = findBaseWeaponAccessory(
+      accessory.baseAccessory,
+      props.data.weaponAccessoryList
+    );
+    const gearList = accessory.gearList.map((gear) => {
+      return calculateGearCost(gear);
+    });
+    return (
+      costCalculation<CostWeaponType>(baseAccessory.cost, {}) +
+      gearList.reduce((total: number, gear) => {
+        return total + gear;
+      }, 0)
+    );
+  };
+
+  const addArmour = function (armour: CustomisedArmourType) {
     const equipment = { ...equipmentSelections };
-    if (equipment.armours[index] === armour) {
-      equipment.armours.splice(index, 1);
+    equipment.armourList.push(armour);
+    props.setEquipmentSelections(equipment);
+    props.setNuyen(props.nuyen - calculateArmourCost(armour));
+  };
+  const removeArmour = function (armour: CustomisedArmourType, index: number) {
+    const equipment = { ...equipmentSelections };
+    if (equipment.armourList[index] === armour) {
+      equipment.armourList.splice(index, 1);
       props.setEquipmentSelections(equipment);
-      props.setNuyen(props.nuyen + costCalculation(armour.cost, {}));
+      props.setNuyen(props.nuyen + calculateArmourCost(armour));
     } else {
       console.error("No armour at index: " + index);
     }
   };
-  const addGear = function (gear: GearType) {
+  const calculateArmourCost = function (armour: CustomisedArmourType): number {
+    const baseArmour = findBaseArmour(armour.baseArmour, props.data.armourList);
+    const modList = armour.modList !== undefined ? armour.modList : [];
+    const baseArmourModList = modList.map((mod) => {
+      return calculateArmourModCost(mod);
+    });
+    return (
+      costCalculation<CostGearType>(baseArmour.cost, {}) +
+      baseArmourModList.reduce((total: number, mod) => {
+        return total + mod;
+      }, 0)
+    );
+  };
+  const calculateArmourModCost = function (
+    mod: CustomisedArmourModType
+  ): number {
+    const baseArmourMod = findBaseArmourMod(
+      mod.baseMod,
+      props.data.armourModificationList
+    );
+    const gearList =
+      mod.gearList !== undefined
+        ? mod.gearList.map((gear) => {
+            return calculateGearCost(gear);
+          })
+        : [];
+    return (
+      costCalculation<CostGearType>(baseArmourMod.cost, {}) +
+      gearList.reduce((total: number, gear) => {
+        return total + gear;
+      }, 0)
+    );
+  };
+
+  const addGear = function (gear: CustomisedGearType) {
     const equipment = Object.assign({}, equipmentSelections);
     equipment.gearList.push(gear);
     props.setEquipmentSelections(equipment);
-    props.setNuyen(props.nuyen - costCalculation(gear.cost, {}));
+    props.setNuyen(props.nuyen - calculateGearCost(gear));
   };
-  const removeGear = function (other: GearType, index: number) {
+  const removeGear = function (gear: CustomisedGearType, index: number) {
     const equipment = Object.assign({}, equipmentSelections);
-    if (equipment.gearList[index] === other) {
+    if (equipment.gearList[index] === gear) {
       equipment.gearList.splice(index, 1);
       props.setEquipmentSelections(equipment);
-      props.setNuyen(props.nuyen + costCalculation(other.cost, {}));
+      props.setNuyen(props.nuyen + calculateGearCost(gear));
     } else {
       console.error("No gear at index: " + index);
     }
   };
-  const addAugmentations = function (augmentation: AugmentationType) {
-    const equipment = Object.assign({}, equipmentSelections);
-    equipment.augmentations.push(augmentation);
-    props.setEquipmentSelections(equipment);
-    props.setNuyen(props.nuyen - costCalculation(augmentation.cost, {}));
+  const calculateGearCost = function (gear: CustomisedGearType): number {
+    const baseGear = findBaseGear(gear.baseGear, props.data.gearList);
+    const gearList = gear.innerGearList !== undefined ? gear.innerGearList : [];
+    const childGearList = gearList.map((childGear) => {
+      return calculateGearCost(childGear);
+    });
+
+    return (
+      costCalculation<CostGearType>(baseGear.cost, {}) +
+      childGearList.reduce((total: number, gear) => {
+        return total + gear;
+      }, 0)
+    );
   };
-  const removeAugmentations = function (
-    augmentation: AugmentationType,
+
+  const addAugmentation = function (augmentation: CustomisedAugmentationType) {
+    const equipment = Object.assign({}, equipmentSelections);
+    equipment.augmentationList.push(augmentation);
+    props.setEquipmentSelections(equipment);
+    props.setNuyen(props.nuyen - calculateAugmentationCost(augmentation));
+  };
+  const removeAugmentation = function (
+    augmentation: CustomisedAugmentationType,
     index: number
   ) {
     const equipment = Object.assign({}, equipmentSelections);
-    if (equipment.augmentations[index] === augmentation) {
-      equipment.augmentations.splice(index, 1);
+    if (equipment.augmentationList[index] === augmentation) {
+      equipment.augmentationList.splice(index, 1);
       props.setEquipmentSelections(equipment);
-      props.setNuyen(props.nuyen + costCalculation(augmentation.cost, {}));
+      props.setNuyen(props.nuyen + calculateAugmentationCost(augmentation));
     } else {
       console.error("No augmentation at index: " + index);
     }
   };
-  const addVehicles = function (vehicle: VehicleType) {
-    const equipment = Object.assign({}, equipmentSelections);
-    equipment.vehicles.push(vehicle);
-    props.setEquipmentSelections(equipment);
-    props.setNuyen(props.nuyen - costCalculation(vehicle.cost, {}));
+  const calculateAugmentationCost = function (
+    augmentation: CustomisedAugmentationType
+  ): number {
+    const baseAugmentation = findBaseAugmentation(
+      augmentation.baseAugmentation,
+      props.data.augmentationList
+    );
+    const gearList =
+      augmentation.gearList !== undefined ? augmentation.gearList : [];
+    const childGearList = gearList.map((gear) => {
+      return calculateGearCost(gear);
+    });
+    return (
+      costCalculation<CostAugmentationType>(baseAugmentation.cost, {}) +
+      childGearList.reduce((total: number, gear) => {
+        return total + gear;
+      }, 0)
+    );
   };
-  const removeVehicles = function (vehicle: VehicleType, index: number) {
+
+  const addVehicle = function (vehicle: CustomisedVehicleType) {
     const equipment = Object.assign({}, equipmentSelections);
-    if (equipment.vehicles[index] === vehicle) {
-      equipment.vehicles.splice(index, 1);
+    equipment.vehicleList.push(vehicle);
+    props.setEquipmentSelections(equipment);
+    props.setNuyen(props.nuyen - calculateVehicleCost(vehicle));
+  };
+  const removeVehicle = function (
+    vehicle: CustomisedVehicleType,
+    index: number
+  ) {
+    const equipment = Object.assign({}, equipmentSelections);
+    if (equipment.vehicleList[index] === vehicle) {
+      equipment.vehicleList.splice(index, 1);
       props.setEquipmentSelections(equipment);
-      props.setNuyen(props.nuyen + costCalculation(vehicle.cost, {}));
+      props.setNuyen(props.nuyen + calculateVehicleCost(vehicle));
     } else {
       console.error("No vehicle/drone at index: " + index);
     }
   };
+  const calculateVehicleCost = function (
+    vehicle: CustomisedVehicleType
+  ): number {
+    const baseVehicle = findBaseVehicle(
+      vehicle.baseVehicle,
+      props.data.vehicleList
+    );
+    const modList = vehicle.modList !== undefined ? vehicle.modList : [];
+    const baseVehicleModList = modList.map((mod) => {
+      return calculateVehicleModCost(mod);
+    });
+    return (
+      costCalculation<CostGearType>(baseVehicle.cost, {}) +
+      baseVehicleModList.reduce((total: number, mod) => {
+        return total + mod;
+      }, 0)
+    );
+  };
+  const calculateVehicleModCost = function (
+    mod: CustomisedVehicleModType
+  ): number {
+    const baseVehicleMod = findBaseVehicleMod(
+      mod.baseMod,
+      props.data.vehicleModificationList
+    );
+    return costCalculation<CostVehicleModType>(baseVehicleMod.cost, {});
+  };
+
+  const addEquipmentPack = function (_equipmentPack: EquipmentPackType) {
+    // for (const vehicle of equipmentPack.vehicleList) {
+    //   const loadedVehicle = data.vehicleList.find((fullVehicle) => {
+    //     return fullVehicle.name == vehicle.name;
+    //   });
+    //   if (loadedVehicle === undefined) {
+    //     throw new Error(`Base Vehicle not found for ${vehicle.name}`);
+    //   }
+    //   addVehicle({baseVehicle: loadedVehicle, );
+    // }
+  };
+
+  // const removeEquipmentPack = function (
+  //   equipmentPack: VehicleType,
+  //   index: number
+  // ) {
+  //   const equipment = Object.assign({}, equipmentSelections);
+  //   if (equipment.vehicleList[index].baseVehicle === equipmentPack) {
+  //     equipment.vehicleList.splice(index, 1);
+  //     props.setEquipmentSelections(equipment);
+  //     props.setNuyen(props.nuyen + costCalculation(equipmentPack.cost, {}));
+  //   } else {
+  //     console.error("No vehicle/drone at index: " + index);
+  //   }
+  // };
 
   return (
     <div>
       <h1>Equipment Selection</h1>
+      <CollapsibleDiv title="Equipment Pack">
+        <div id="Equipment_Pack_Div">
+          <EquipmentPackDiv
+            data={props.data}
+            addEquipmentPack={addEquipmentPack}
+          />
+        </div>
+      </CollapsibleDiv>
       <CollapsibleDiv title="Weapons">
         <div id="Weapons_Div">
           {Object.values(weaponTypeEnum).map((value, index) => {
             return (
               <WeaponDiv
                 title={value}
-                data={data.weapons}
+                data={props.data.weaponList}
                 weaponType={value}
                 addWeapon={addWeapon}
                 key={index}
@@ -204,7 +416,7 @@ export const EquipmentSelect = function (props: IProps) {
             return (
               <ArmourDiv
                 title={value}
-                data={data.armours}
+                data={props.data.armourList}
                 armourType={value}
                 addArmour={addArmour}
                 key={index}
@@ -219,7 +431,7 @@ export const EquipmentSelect = function (props: IProps) {
             return (
               <GearDiv
                 title={value}
-                data={data.gearList}
+                data={props.data.gearList}
                 gearCategory={value}
                 addGear={addGear}
                 key={index}
@@ -234,9 +446,9 @@ export const EquipmentSelect = function (props: IProps) {
             return (
               <AugmentationsDiv
                 title={value}
-                data={data.augmentations}
+                data={props.data.augmentationList}
                 augmentationType={value}
-                addAugmentations={addAugmentations}
+                addAugmentations={addAugmentation}
                 key={index}
               />
             );
@@ -249,9 +461,9 @@ export const EquipmentSelect = function (props: IProps) {
             return (
               <VehiclesDiv
                 title={value}
-                data={data.vehicles}
+                data={props.data.vehicleList}
                 vehicleType={value}
-                addVehicles={addVehicles}
+                addVehicles={addVehicle}
                 key={index}
               />
             );
@@ -265,30 +477,28 @@ export const EquipmentSelect = function (props: IProps) {
       <div>
         <h3>Weapons</h3>
         <div>
-          {equipmentSelections.weapons.map((weapon, index) => {
-            const addItem = function () {
-              addWeapon(weapon);
-            };
+          {equipmentSelections.weaponList.map((weapon, index) => {
             const removeItem = function () {
               removeWeapon(weapon, index);
             };
             return (
               <CollapsibleEquipmentDiv
-                title={weapon.name}
-                addItem={addItem}
+                title={weapon.baseWeapon}
                 removeItem={removeItem}
-                key={weapon.name + index}
+                key={weapon.baseWeapon + index}
               >
-                <div>{weapon.description}</div>
-                {weapon.includedAccessoryList !== undefined &&
-                  weapon.includedAccessoryList.length > 0 && (
+                {/* <div>{weapon.baseWeapon.description}</div> */}
+                {weapon.accessoryList !== undefined &&
+                  weapon.accessoryList.length > 0 && (
                     <div>
                       <span>Accessories:</span>
                       <ul>
-                        {weapon.includedAccessoryList.map((accessory) => {
+                        {weapon.accessoryList.map((accessory) => {
                           return (
-                            <li key={weapon.name + accessory.name}>
-                              {accessory.name}
+                            <li
+                              key={weapon.baseWeapon + accessory.baseAccessory}
+                            >
+                              {accessory.baseAccessory}
                             </li>
                           );
                         })}
@@ -301,34 +511,36 @@ export const EquipmentSelect = function (props: IProps) {
         </div>
         <h3>Armour</h3>
         <div>
-          {equipmentSelections.armours.map((armour, index) => {
-            const addItem = function () {
-              addArmour(armour);
-            };
+          {equipmentSelections.armourList.map((armour, index) => {
             const removeItem = function () {
               removeArmour(armour, index);
             };
             return (
               <CollapsibleEquipmentDiv
-                title={armour.name}
-                addItem={addItem}
+                title={armour.baseArmour}
                 removeItem={removeItem}
-                key={armour.name + index}
+                key={armour.baseArmour + index}
               >
-                <div>{armour.description}</div>
-                {armour.includedMods !== undefined &&
-                  armour.includedMods.length > 0 && (
-                    <div>
-                      <span>Modifications:</span>
-                      <ul>
-                        {armour.includedMods.map((mod) => {
-                          return (
-                            <li key={armour.name + mod.name}>{mod.name}</li>
-                          );
-                        })}
-                      </ul>
-                    </div>
-                  )}
+                {/* <div>{armour.baseArmour.description}</div> */}
+                {armour.modList !== undefined && armour.modList.length > 0 && (
+                  <div>
+                    <span>Modifications:</span>
+                    <ul>
+                      {armour.modList.map((mod) => {
+                        return (
+                          <li
+                            key={
+                              // TODO: This is different that other addons... standarise this
+                              armour.baseArmour + mod.baseMod
+                            }
+                          >
+                            {mod.baseMod}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                )}
               </CollapsibleEquipmentDiv>
             );
           })}
@@ -336,70 +548,61 @@ export const EquipmentSelect = function (props: IProps) {
         <h3>Gear</h3>
         <div>
           {equipmentSelections.gearList.map((gear, index) => {
-            const addItem = function () {
-              addGear(gear);
-            };
             const removeItem = function () {
               removeGear(gear, index);
             };
             return (
               <CollapsibleEquipmentDiv
-                title={gear.name}
-                addItem={addItem}
+                title={gear.baseGear}
                 removeItem={removeItem}
-                key={gear.name + index}
+                key={gear.baseGear + index}
               >
-                <div>{gear.description}</div>
+                <div></div>
+                {/* <div>{gear.baseGear.description}</div> */}
               </CollapsibleEquipmentDiv>
             );
           })}
         </div>
         <h3>Augmentation</h3>
         <div>
-          {equipmentSelections.augmentations.map((augmentations, index) => {
-            const addItem = function () {
-              addAugmentations(augmentations);
-            };
+          {equipmentSelections.augmentationList.map((augmentation, index) => {
             const removeItem = function () {
-              removeAugmentations(augmentations, index);
+              removeAugmentation(augmentation, index);
             };
             return (
               <CollapsibleEquipmentDiv
-                title={augmentations.name}
-                addItem={addItem}
+                title={augmentation.baseAugmentation}
                 removeItem={removeItem}
-                key={augmentations.name + index}
+                key={augmentation.baseAugmentation + index}
               >
-                <div>{augmentations.description}</div>
+                <div>{augmentation.baseAugmentation}</div>
               </CollapsibleEquipmentDiv>
             );
           })}
         </div>
         <h3>Vehicles</h3>
         <div>
-          {equipmentSelections.vehicles.map((vehicle, index) => {
-            const addItem = function () {
-              addVehicles(vehicle);
-            };
+          {equipmentSelections.vehicleList.map((vehicle, index) => {
             const removeItem = function () {
-              removeVehicles(vehicle, index);
+              removeVehicle(vehicle, index);
             };
             return (
               <CollapsibleEquipmentDiv
-                title={vehicle.name}
-                addItem={addItem}
+                title={vehicle.baseVehicle}
                 removeItem={removeItem}
-                key={vehicle.name + index}
+                key={vehicle.baseVehicle + index}
               >
-                <div>{vehicle.description}</div>
-                {vehicle.includedMods !== undefined &&
-                  vehicle.includedMods.length > 0 && (
+                {/* <div>{vehicle.baseVehicle.description}</div> */}
+                {vehicle.modList !== undefined &&
+                  vehicle.modList.length > 0 && (
                     <div>
                       <span>Modifications:</span>
                       <ul>
-                        {vehicle.includedMods.map((mod) => {
+                        {vehicle.modList.map((mod) => {
                           return (
-                            <li key={vehicle.name + mod.name}>{mod.name}</li>
+                            <li key={vehicle.baseVehicle + mod.baseMod}>
+                              {mod.baseMod}
+                            </li>
                           );
                         })}
                       </ul>
@@ -414,11 +617,188 @@ export const EquipmentSelect = function (props: IProps) {
   );
 };
 
+function findBaseAugmentation(
+  augmentationName: string,
+  augmentationList: AugmentationListType
+): AugmentationType {
+  const baseAugmentation = augmentationList.find((fullAugmentation) => {
+    return fullAugmentation.name == augmentationName;
+  });
+  if (baseAugmentation === undefined) {
+    throw new Error(`Base Augmentation not found for ${augmentationName}`);
+  }
+  return baseAugmentation;
+}
+
+function findBaseArmour(
+  armourName: string,
+  armourList: ArmourListType
+): ArmourType {
+  const baseArmour = armourList.find((fullArmour) => {
+    return fullArmour.name == armourName;
+  });
+  if (baseArmour === undefined) {
+    throw new Error(`Base Armour not found for ${armourName}`);
+  }
+  return baseArmour;
+}
+
+function findBaseArmourMod(
+  armourModName: string,
+  armourModList: ArmourModListType
+): ArmourModType {
+  const baseArmourMod = armourModList.find((fullArmourMod) => {
+    return fullArmourMod.name == armourModName;
+  });
+  if (baseArmourMod === undefined) {
+    throw new Error(`Base Armour Mod not found for ${armourModName}`);
+  }
+  return baseArmourMod;
+}
+
+function findBaseWeapon(
+  weaponName: string,
+  weaponList: WeaponListType
+): WeaponType {
+  const baseWeapon = weaponList.find((fullWeapon) => {
+    return fullWeapon.name == weaponName;
+  });
+  if (baseWeapon === undefined) {
+    throw new Error(`Base Weapon not found for ${weaponName}`);
+  }
+  return baseWeapon;
+}
+
+function findBaseWeaponAccessory(
+  weaponAccessoryName: string,
+  weaponAccessoryList: WeaponAccessoryListType
+): WeaponAccessoryType {
+  const baseWeaponAccessory = weaponAccessoryList.find(
+    (fullWeaponAccessory) => {
+      return fullWeaponAccessory.name == weaponAccessoryName;
+    }
+  );
+  if (baseWeaponAccessory === undefined) {
+    throw new Error(
+      `Base Weapon Accessory not found for ${weaponAccessoryName}`
+    );
+  }
+  return baseWeaponAccessory;
+}
+
+function findBaseGear(gearName: string, gearList: GearListType): GearType {
+  const baseGear = gearList.find((fullGear) => {
+    return fullGear.name == gearName;
+  });
+  if (baseGear === undefined) {
+    throw new Error(`Base Gear not found for ${gearName}`);
+  }
+  return baseGear;
+}
+
+function findBaseVehicle(
+  vehicleName: string,
+  vehicleList: VehicleListType
+): VehicleType {
+  const baseVehicle = vehicleList.find((fullVehicle) => {
+    return fullVehicle.name == vehicleName;
+  });
+  if (baseVehicle === undefined) {
+    throw new Error(`Base Vehicle not found for ${vehicleName}`);
+  }
+  return baseVehicle;
+}
+function findBaseVehicleMod(
+  vehicleModName: string,
+  vehicleModList: VehicleModListType
+): VehicleModType {
+  const baseVehicleMod = vehicleModList.find((fullVehicleMod) => {
+    return fullVehicleMod.name == vehicleModName;
+  });
+  if (baseVehicleMod === undefined) {
+    throw new Error(`Base Vehicle Mod not found for ${vehicleModName}`);
+  }
+  return baseVehicleMod;
+}
+
+interface IEquipmentPackDivProps {
+  data: EquipmentListType;
+  addEquipmentPack: (equipmentPack: EquipmentPackType) => void;
+}
+const EquipmentPackDiv = function ({
+  data,
+  addEquipmentPack,
+}: IEquipmentPackDivProps) {
+  return (
+    <div>
+      {data.equipmentPackList.map((equipment) => {
+        const addItem = function () {
+          addEquipmentPack(equipment);
+        };
+        return (
+          <CollapsibleEquipmentDiv
+            key={equipment.name}
+            title={equipment.name}
+            addItem={addItem}
+          >
+            <div>
+              {equipment.armourList.map((armour) => {
+                const baseArmour = data.armourList.find((fullArmour) => {
+                  return fullArmour.name == armour.baseArmour;
+                });
+                if (baseArmour === undefined) {
+                  throw new Error(
+                    `Base Armour not found for ${armour.baseArmour}`
+                  );
+                }
+
+                const armorModList =
+                  armour.modList !== undefined
+                    ? armour.modList.map((armourMod) => {
+                        const baseArmourMod = data.armourModificationList.find(
+                          (fullArmourMod) => {
+                            return fullArmourMod.name == armourMod.baseMod;
+                          }
+                        );
+                        if (baseArmourMod === undefined) {
+                          throw new Error(
+                            `Base Armour Mod not found for ${armour.baseArmour} : ${armourMod.baseMod}`
+                          );
+                        }
+
+                        return {
+                          baseMod: armourMod.baseMod,
+                          // TODO: set the gearlist
+                          gearList: [],
+                          rating: armourMod.rating,
+                        };
+                      })
+                    : undefined;
+
+                return (
+                  <li key={armour.baseArmour}>
+                    <FormattedArmourDiv
+                      armour={baseArmour}
+                      modList={armorModList}
+                      gearList={armour.gearList}
+                    />
+                    ;
+                  </li>
+                );
+              })}
+            </div>
+          </CollapsibleEquipmentDiv>
+        );
+      })}
+    </div>
+  );
+};
+
 interface IWeaponDivProps {
   title: string;
-  data: WeaponSummaryListType;
+  data: WeaponListType;
   weaponType: weaponTypeEnum;
-  addWeapon: (weapon: WeaponSummaryType) => void;
+  addWeapon: (weapon: CustomisedWeaponType) => void;
 }
 
 const WeaponDiv = function ({
@@ -445,8 +825,8 @@ const WeaponDiv = function ({
 };
 
 interface IWeaponDescriptionDivProps {
-  weapon: WeaponSummaryType;
-  addWeapon: (weapon: WeaponSummaryType) => void;
+  weapon: WeaponType;
+  addWeapon: (weapon: CustomisedWeaponType) => void;
 }
 
 const FormattedWeaponDiv = function ({
@@ -454,7 +834,10 @@ const FormattedWeaponDiv = function ({
   addWeapon,
 }: IWeaponDescriptionDivProps) {
   const addItem = function () {
-    addWeapon(weapon);
+    addWeapon({
+      baseWeapon: weapon.name,
+      accessoryList: weapon.includedAccessoryList,
+    });
   };
   return (
     <div>
@@ -480,7 +863,7 @@ const FormattedWeaponDiv = function ({
 const FormattedWeaponTypeInformation = function ({
   weapon: weapon,
 }: {
-  weapon: WeaponSummaryType;
+  weapon: WeaponType;
 }) {
   switch (weapon.type) {
     case weaponTypeEnum.Melee:
@@ -508,7 +891,7 @@ interface IArmourDivProps {
   title: string;
   data: ArmourListType;
   armourType: armourCategoryEnum;
-  addArmour: (armour: ArmourType) => void;
+  addArmour: (armour: CustomisedArmourType) => void;
 }
 
 const ArmourDiv = function ({
@@ -523,25 +906,9 @@ const ArmourDiv = function ({
         {data
           .filter((armour) => armour.category === armourType)
           .map((armour) => {
-            const addItem = function () {
-              addArmour(armour);
-            };
             return (
               <li key={armour.name}>
-                <CollapsibleEquipmentDiv title={armour.name} addItem={addItem}>
-                  <div>
-                    <div>{armour.description}</div>
-                    <div>
-                      Armour Rating:
-                      {formatArmourDamageReduction(armour.damageReduction)}
-                    </div>
-                    <div>
-                      Avail:
-                      {formatArmourAvailability(armour.availability)}
-                    </div>
-                    <div>Cost: {formatArmourCost(armour.cost)}</div>
-                  </div>
-                </CollapsibleEquipmentDiv>
+                <FormattedArmourDiv addArmour={addArmour} armour={armour} />;
               </li>
             );
           })}
@@ -550,11 +917,83 @@ const ArmourDiv = function ({
   );
 };
 
+interface IArmourDescriptionDivProps {
+  armour: ArmourType;
+  addArmour?: (armour: CustomisedArmourType) => void;
+  modList?: CustomisedArmourModListType | undefined;
+  gearList?: CustomisedGearListType | undefined;
+}
+
+function FormattedArmourDiv({
+  addArmour,
+  armour,
+  modList,
+  gearList,
+}: IArmourDescriptionDivProps) {
+  const addItem =
+    addArmour !== undefined
+      ? function () {
+          addArmour({
+            baseArmour: armour.name,
+            modList: armour.includedModList,
+            gearList: armour.includedGearList,
+          });
+        }
+      : undefined;
+  return (
+    <li key={armour.name}>
+      <CollapsibleEquipmentDiv title={armour.name} addItem={addItem}>
+        <div>
+          <div>{armour.description}</div>
+          <div>
+            Armour Rating:
+            {formatArmourDamageReduction(armour.damageReduction)}
+          </div>
+          <div>
+            Avail:
+            {formatArmourAvailability(armour.availability)}
+          </div>
+          <div>Cost: {formatArmourCost(armour.cost)}</div>
+          <div>
+            {modList !== undefined &&
+              modList.map((mod) => {
+                return <FormattedArmourMod mod={mod} />;
+              })}
+          </div>
+          <div>
+            {gearList !== undefined &&
+              gearList.map((gear) => {
+                return <FormattedGear gear={gear} />;
+              })}
+          </div>
+        </div>
+      </CollapsibleEquipmentDiv>
+    </li>
+  );
+}
+
+function FormattedArmourMod({ mod }: { mod: CustomisedArmourModType }) {
+  return (
+    <li key={mod.baseMod}>
+      <CollapsibleEquipmentDiv title={mod.baseMod}>
+        <div>
+          {/* <div>{mod.baseMod.description}</div> */}
+          {/* <div>{mod.baseMod.category}</div> */}
+        </div>
+      </CollapsibleEquipmentDiv>
+    </li>
+  );
+}
+
+function FormattedGear({ gear }: { gear: CustomisedGearType }) {
+  return <>{gear.baseGear}</>;
+}
+
 interface IGearDivProps {
   title: string;
   data: GearListType;
   gearCategory: gearCategoryEnum;
-  addGear: (gear: GearType) => void;
+  addGear: (gear: CustomisedGearType) => void;
 }
 
 const GearDiv = function ({
@@ -570,7 +1009,11 @@ const GearDiv = function ({
           .filter((gear) => gear.category === gearCategory)
           .map((gear) => {
             const addItem = function () {
-              addGear(gear);
+              addGear({
+                baseGear: gear.name,
+                innerGearList: gear.includedGearList,
+                // TODO: look at other options if can/need to set here
+              });
             };
             const ratingDiv =
               typeof gear.maxRating === "number" ? (
@@ -601,7 +1044,7 @@ interface IAugmentationsDivProps {
   title: string;
   data: AugmentationListType;
   augmentationType: augmentationTypeEnum;
-  addAugmentations: (augmentation: AugmentationType) => void;
+  addAugmentations: (augmentation: CustomisedAugmentationType) => void;
 }
 
 const AugmentationsDiv = function ({
@@ -610,6 +1053,9 @@ const AugmentationsDiv = function ({
   title,
   addAugmentations,
 }: IAugmentationsDivProps) {
+  const [grade, setGrade] = useState<augmentationGradeEnum>(
+    augmentationGradeEnum.Standard
+  );
   return (
     <CollapsibleDiv title={title}>
       <ul>
@@ -617,7 +1063,14 @@ const AugmentationsDiv = function ({
           .filter((augmentation) => augmentation.type === augmentationType)
           .map((augmentation) => {
             const addItem = function () {
-              addAugmentations(augmentation);
+              addAugmentations({
+                baseAugmentation: augmentation.name,
+                gearList: augmentation.includedGearList,
+                ...(augmentation.type === augmentationTypeEnum.Cyberware && {
+                  subsystemList: augmentation.includedSubsystemList,
+                }),
+                grade: grade,
+              });
             };
             return (
               <li key={augmentationType + augmentation.name}>
@@ -626,6 +1079,24 @@ const AugmentationsDiv = function ({
                   addItem={addItem}
                 >
                   <div>{augmentation.description}</div>
+                  <div>
+                    Grade:
+                    <Dropdown
+                      options={Object.values(augmentationGradeEnum).map(
+                        (value) => {
+                          return value;
+                        }
+                      )}
+                      value={grade}
+                      onChange={(arg) => {
+                        setGrade(
+                          augmentationGradeEnum[
+                            arg.value as keyof typeof augmentationGradeEnum
+                          ]
+                        );
+                      }}
+                    />
+                  </div>
                   <div>
                     Essence: {formatEssenceCost(augmentation.essenceCost)}
                   </div>
@@ -676,7 +1147,7 @@ interface IVehiclesDivProps {
   title: string;
   data: VehicleListType;
   vehicleType: vehicleTypeEnum;
-  addVehicles: (vehicle: VehicleType) => void;
+  addVehicles: (vehicle: CustomisedVehicleType) => void;
 }
 
 const VehiclesDiv = function ({
@@ -690,39 +1161,41 @@ const VehiclesDiv = function ({
       <ul>
         {data
           .filter((gear) => gear.type === vehicleType)
-          .map((vehicles) => {
+          .map((vehicle) => {
             const addItem = function () {
-              addVehicles(vehicles);
+              addVehicles({
+                baseVehicle: vehicle.name,
+                modList: vehicle.includedModList,
+                gearList: vehicle.includedGearList,
+                weaponMountList: vehicle.includedWeaponMountList,
+              });
             };
             let seats = "-";
-            if ("seats" in vehicles && vehicles.seats !== undefined) {
-              if (typeof vehicles.seats === "object") {
-                seats = vehicles.seats.max.toString();
+            if ("seats" in vehicle && vehicle.seats !== undefined) {
+              if (typeof vehicle.seats === "object") {
+                seats = vehicle.seats.max.toString();
               } else {
-                seats = vehicles.seats.toString();
+                seats = vehicle.seats.toString();
               }
             }
             return (
-              <li key={vehicleTypeEnum[vehicleType] + vehicles.name}>
-                <CollapsibleEquipmentDiv
-                  title={vehicles.name}
-                  addItem={addItem}
-                >
-                  <div>{vehicles.description}</div>
-                  <div>Handl: {formatOnOffRoad(vehicles.handling)}</div>
-                  <div>Speed: {formatOnOffRoad(vehicles.speed)}</div>
-                  <div>Accel: {formatOnOffRoad(vehicles.acceleration)}</div>
-                  <div>Bod: {vehicles.body}</div>
-                  <div>Armour: {vehicles.armour}</div>
-                  <div>Pilot: {vehicles.pilot}</div>
-                  <div>Sensor: {vehicles.sensor}</div>
+              <li key={vehicleTypeEnum[vehicleType] + vehicle.name}>
+                <CollapsibleEquipmentDiv title={vehicle.name} addItem={addItem}>
+                  <div>{vehicle.description}</div>
+                  <div>Handl: {formatOnOffRoad(vehicle.handling)}</div>
+                  <div>Speed: {formatOnOffRoad(vehicle.speed)}</div>
+                  <div>Accel: {formatOnOffRoad(vehicle.acceleration)}</div>
+                  <div>Bod: {vehicle.body}</div>
+                  <div>Armour: {vehicle.armour}</div>
+                  <div>Pilot: {vehicle.pilot}</div>
+                  <div>Sensor: {vehicle.sensor}</div>
                   <div>Seats: {seats}</div>
                   <div>
-                    Avail: {formatVehicleAvailability(vehicles.availability)}
+                    Avail: {formatVehicleAvailability(vehicle.availability)}
                   </div>
-                  <div>Cost: {formatVehicleCost(vehicles.cost)}</div>
+                  <div>Cost: {formatVehicleCost(vehicle.cost)}</div>
                 </CollapsibleEquipmentDiv>
-                <div>{vehicles.subtype}</div>
+                <div>{vehicle.subtype}</div>
               </li>
             );
           })}

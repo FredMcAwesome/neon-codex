@@ -64,6 +64,22 @@ export type LifestyleType = zod.infer<typeof LifestyleSchema>;
 export const LifestyleListSchema = zod.array(LifestyleSchema);
 export type LifestyleListType = zod.infer<typeof LifestyleListSchema>;
 
+export const CustomisedLifestyleSchema = zod
+  .object({
+    baseLifestyle: zod.string(),
+    purchasedDuration: zod.number(),
+  })
+  .strict();
+export type CustomisedLifestyleType = zod.infer<
+  typeof CustomisedLifestyleSchema
+>;
+export const CustomisedLifestyleListSchema = zod.array(
+  CustomisedLifestyleSchema
+);
+export type CustomisedLifestyleListType = zod.infer<
+  typeof CustomisedLifestyleListSchema
+>;
+
 export const LifestyleQualitySchema = zod
   .object({
     name: zod.string(),

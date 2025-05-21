@@ -15,10 +15,7 @@ import {
   ratingMeaningEnum,
   sourceBookEnum,
 } from "@neon-codex/common/build/enums.js";
-import type {
-  BonusType,
-  WeaponBonusType,
-} from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
+import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 import type {
   AmmoForWeaponTypeType,
   AvailabilityGearType,
@@ -34,6 +31,7 @@ import type {
 import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
 import { CustomisedWeapons } from "../../activeTables/activeWeaponModel.js";
 import { GearIncludedGears } from "../../activeTables/activeGearModel.js";
+import type { WeaponBonusType } from "@neon-codex/common/build/schemas/shared/weaponSharedSchemas.js";
 
 @Entity()
 export class Gears {
@@ -63,7 +61,7 @@ export class Gears {
   allowCategoryList?: Array<gearCategoryEnum>;
 
   @Property({ nullable: true })
-  quantity?: number;
+  purchaseQuantity?: number;
 
   @Property({ type: "json", nullable: true })
   bonus?: BonusType;
@@ -89,7 +87,7 @@ export class Gears {
   @ManyToMany({ entity: () => Gears, owner: true })
   allowedGearList = new Collection<Gears>(this);
 
-  @OneToMany(() => GearIncludedGears, (gear) => gear.linkedGear)
+  @OneToMany(() => GearIncludedGears, (gear) => gear.parentGear)
   includedGearList = new Collection<GearIncludedGears>(this);
 
   @Property({ type: "json", nullable: true })
@@ -183,8 +181,8 @@ export class Gears {
     if (dto.allowCategoryList !== undefined) {
       this.allowCategoryList = dto.allowCategoryList;
     }
-    if (dto.quantity !== undefined) {
-      this.quantity = dto.quantity;
+    if (dto.purchaseQuantity !== undefined) {
+      this.purchaseQuantity = dto.purchaseQuantity;
     }
     if (dto.bonus !== undefined) {
       this.bonus = dto.bonus;

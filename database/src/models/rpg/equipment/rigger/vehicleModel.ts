@@ -29,6 +29,7 @@ import type {
   AircraftVehicleType,
   DroneVehicleType,
 } from "@neon-codex/common/build/schemas/equipment/rigger/vehicleSchemas.js";
+import { ActiveVehicles } from "../../activeTables/activeVehicleModel.js";
 
 @Entity({
   discriminatorColumn: "type",
@@ -77,7 +78,7 @@ export abstract class Vehicles {
 
   @OneToMany(
     () => IncludedVehicleModifications,
-    (vehicleIncludedMods) => vehicleIncludedMods.standardVehicle
+    (vehicleIncludedMod) => vehicleIncludedMod.standardVehicle
   )
   includedModList = new Collection<IncludedVehicleModifications>(this);
 
@@ -107,6 +108,9 @@ export abstract class Vehicles {
     (weaponMount) => weaponMount.standardVehicle
   )
   includedWeaponMountList = new Collection<IncludedWeaponMounts>(this);
+
+  @OneToMany(() => ActiveVehicles, (activeVehicle) => activeVehicle.vehicle)
+  ActiveVehicleList = new Collection<ActiveVehicles>(this);
 
   @Property({ nullable: true })
   userSelectable?: false;

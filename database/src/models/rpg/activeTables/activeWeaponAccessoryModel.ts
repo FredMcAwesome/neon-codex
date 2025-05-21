@@ -10,10 +10,10 @@ import {
 import type { Ref } from "@mikro-orm/postgresql";
 import { ActiveWeaponAccessoryGears } from "./activeGearModel.js";
 import { weaponAccessoryMountLocationEnum } from "@neon-codex/common/build/enums.js";
-import type { AccessoryMountType } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
 import { WeaponAccessories } from "../equipment/combat/weaponAccessoryModel.js";
 import { Weapons } from "../equipment/combat/weaponModel.js";
 import { ActiveWeapons } from "./activeWeaponModel.js";
+import type { AccessoryMountType } from "@neon-codex/common/build/schemas/shared/weaponSharedSchemas.js";
 
 // Links to either a custom weapon, or a weapon in the table.
 // When we create a custom weapon that already has an accessory
@@ -42,21 +42,20 @@ export abstract class ActiveWeaponAccessories {
   @Enum({
     items: () => weaponAccessoryMountLocationEnum,
     array: true,
-    nullable: true,
   })
-  weaponMountsUsed?: Array<weaponAccessoryMountLocationEnum>;
+  weaponMountsUsed!: Array<weaponAccessoryMountLocationEnum>;
 
   @Property({ nullable: true })
   rating?: number;
 
   constructor(
     weaponAccessory: Ref<WeaponAccessories>,
-    rating?: number,
-    weaponMountsUsed?: AccessoryMountType
+    weaponMountsUsed: AccessoryMountType,
+    rating?: number
   ) {
     this.weaponAccessory = weaponAccessory;
-    if (rating) this.rating = rating;
-    if (weaponMountsUsed) this.weaponMountsUsed = weaponMountsUsed;
+    this.weaponMountsUsed = weaponMountsUsed;
+    if (rating !== undefined) this.rating = rating;
   }
 }
 
@@ -66,11 +65,13 @@ export class IncludedWeaponAccessories extends ActiveWeaponAccessories {
   standardWeapon!: Ref<Weapons>;
 
   constructor(
+    standardWeapon: Ref<Weapons>,
     weaponAccessory: Ref<WeaponAccessories>,
-    rating?: number,
-    weaponMountsUsed?: AccessoryMountType
+    weaponMountsUsed: AccessoryMountType,
+    rating?: number
   ) {
-    super(weaponAccessory, rating, weaponMountsUsed);
+    super(weaponAccessory, weaponMountsUsed, rating);
+    this.standardWeapon = standardWeapon;
   }
 }
 
@@ -80,10 +81,12 @@ export class CustomisedWeaponAccessories extends ActiveWeaponAccessories {
   activeWeapon!: Ref<ActiveWeapons>;
 
   constructor(
+    activeWeapon: Ref<ActiveWeapons>,
     weaponAccessory: Ref<WeaponAccessories>,
-    rating?: number,
-    weaponMountsUsed?: AccessoryMountType
+    weaponMountsUsed: AccessoryMountType,
+    rating?: number
   ) {
-    super(weaponAccessory, rating, weaponMountsUsed);
+    super(weaponAccessory, weaponMountsUsed, rating);
+    this.activeWeapon = activeWeapon;
   }
 }

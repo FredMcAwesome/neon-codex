@@ -10,7 +10,6 @@ import {
   firearmWeaponTypeEnum,
   ratingMeaningEnum,
   sourceBookEnum,
-  vehicleModSubtypeEnum,
   vehicleModTypeEnum,
 } from "@neon-codex/common/build/enums.js";
 import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
@@ -18,7 +17,6 @@ import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/r
 import type {
   AvailabilityVehicleModType,
   CostVehicleModType,
-  ReplaceAmmoType,
   VehicleModRatingType,
   SlotCostType,
   VehicleModType,
@@ -39,11 +37,8 @@ export abstract class VehicleModifications {
   @Property({ length: 5000 })
   description!: string;
 
-  @Enum(() => vehicleModTypeEnum)
-  type!: vehicleModTypeEnum;
-
   @Property()
-  subtype!: vehicleModSubtypeEnum;
+  type!: vehicleModTypeEnum;
 
   @Property({ type: "json" })
   maxRating!: VehicleModRatingType;
@@ -70,7 +65,7 @@ export abstract class VehicleModifications {
   slotCost!: SlotCostType;
 
   @Enum({ items: () => cyberwareCategoryEnum, nullable: true, array: true })
-  subsystemList?: Array<cyberwareCategoryEnum>;
+  allowedSubsystemList?: Array<cyberwareCategoryEnum>;
 
   @Property({ type: "json", nullable: true })
   bonus?: BonusType;
@@ -97,7 +92,7 @@ export abstract class VehicleModifications {
     this.name = dto.name;
     this.description = dto.description;
     this.type = dto.type;
-    this.subtype = dto.subtype;
+    this.type = dto.type;
     this.maxRating = dto.maxRating;
     if (dto.minRating !== undefined) {
       this.minRating = dto.minRating;
@@ -118,8 +113,8 @@ export abstract class VehicleModifications {
       this.requiresDroneParent = dto.requiresDroneParent;
     }
     this.slotCost = dto.slotCost;
-    if (dto.subsystemList !== undefined) {
-      this.subsystemList = dto.subsystemList;
+    if (dto.allowedSubsystemList !== undefined) {
+      this.allowedSubsystemList = dto.allowedSubsystemList;
     }
     if (dto.bonus !== undefined) {
       this.bonus = dto.bonus;
@@ -137,48 +132,15 @@ export abstract class VehicleModifications {
   }
 }
 
-type VehicleSpecificModType = VehicleModType & {
-  type: vehicleModTypeEnum.Vehicle;
-};
-
-@Entity({ discriminatorValue: vehicleModTypeEnum.Vehicle })
+@Entity({ discriminatorValue: "Chasis" })
 export class VehicleChasisModifications extends VehicleModifications {
   @Enum({ items: () => firearmWeaponTypeEnum, nullable: true, array: true })
   weaponMountValidCategoryList?: Array<firearmWeaponTypeEnum>;
 
-  constructor(dto: VehicleSpecificModType) {
+  constructor(dto: VehicleModType) {
     super(dto);
     if (dto.weaponMountValidCategoryList !== undefined) {
       this.weaponMountValidCategoryList = dto.weaponMountValidCategoryList;
-    }
-  }
-}
-
-type WeaponMountModType = VehicleModType & {
-  type: vehicleModTypeEnum.WeaponMount;
-};
-
-@Entity({ discriminatorValue: vehicleModTypeEnum.WeaponMount })
-export class WeaponMountModifications extends VehicleModifications {
-  @Property({ nullable: true })
-  additionalAmmo?: number;
-
-  @Property({ nullable: true })
-  percentageAmmoIncrease?: number;
-
-  @Property({ type: "json", nullable: true })
-  replaceAmmo?: ReplaceAmmoType;
-
-  constructor(dto: WeaponMountModType) {
-    super(dto);
-    if (dto.additionalAmmo !== undefined) {
-      this.additionalAmmo = dto.additionalAmmo;
-    }
-    if (dto.percentageAmmoIncrease !== undefined) {
-      this.percentageAmmoIncrease = dto.percentageAmmoIncrease;
-    }
-    if (dto.replaceAmmo !== undefined) {
-      this.replaceAmmo = dto.replaceAmmo;
     }
   }
 }

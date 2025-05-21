@@ -18,10 +18,10 @@ import {
 import {
   AvailabilityRatingSchema,
   RangeCostSchema,
-  IncludedGearListSchema,
 } from "../../shared/commonSchemas.js";
-import { GenericVehicleModListSchema } from "../../shared/modSchemas.js";
-import { VehicleModListSchema } from "./vehicleModSchemas.js";
+import { CustomisedVehicleModListSchema } from "./vehicleModSchemas.js";
+import { CustomisedGearListSchema } from "../other/gearSchemas.js";
+import { CustomisedWeaponMountListSchema } from "./weaponMountSchemas.js";
 
 export const AvailabilityVehicleSchema = zod
   .object({
@@ -71,8 +71,6 @@ const WeaponMountSchema = zod
     flexibility: zod.nativeEnum(weaponMountFlexibilityEnum),
     size: zod.nativeEnum(weaponMountSizeEnum),
     visibility: zod.nativeEnum(weaponMountVisibilityEnum),
-    includedWeapon: zod.optional(zod.string()),
-    includedMountMod: zod.optional(zod.string()),
   })
   .strict();
 export type WeaponMountType = zod.infer<typeof WeaponMountSchema>;
@@ -104,8 +102,8 @@ const VehiclePartialSchema = zod
     armour: zod.number(),
     pilot: zod.number(),
     sensor: zod.number(),
-    includedGearList: zod.optional(IncludedGearListSchema),
-    includedMods: zod.optional(GenericVehicleModListSchema),
+    includedGearList: zod.optional(CustomisedGearListSchema),
+    includedModList: zod.optional(CustomisedVehicleModListSchema),
     modSlots: zod.optional(zod.number()),
     powerTrainModSlots: zod.optional(zod.number()),
     protectionModSlots: zod.optional(zod.number()),
@@ -113,8 +111,7 @@ const VehiclePartialSchema = zod
     bodyModSlots: zod.optional(zod.number()),
     electromagneticModSlots: zod.optional(zod.number()),
     cosmeticModSlots: zod.optional(zod.number()),
-    weaponList: zod.optional(zod.array(zod.string())),
-    weaponMountList: zod.optional(zod.array(WeaponMountSchema)),
+    includedWeaponMountList: zod.optional(CustomisedWeaponMountListSchema),
     userSelectable: zod.optional(zod.literal(false)),
     availability: AvailabilityVehicleSchema,
     cost: CostVehicleSchema,
@@ -161,11 +158,12 @@ export type VehicleListType = zod.infer<typeof VehicleListSchema>;
 
 export const CustomisedVehicleSchema = zod
   .object({
-    baseVehicle: VehicleSchema,
+    baseVehicle: zod.string(),
     // This overrides baseVehicle modifications
-    modList: zod.optional(VehicleModListSchema),
+    modList: zod.optional(CustomisedVehicleModListSchema),
     // This overrides baseVehicle included gear
-    gearList: zod.optional(IncludedGearListSchema),
+    gearList: zod.optional(CustomisedGearListSchema),
+    weaponMountList: zod.optional(CustomisedWeaponMountListSchema),
     // TODO: is rating a thing for vehicles?
     // rating: zod.optional(zod.number()),
     customName: zod.optional(zod.string()),

@@ -8,7 +8,6 @@ import {
   spellCategoryEnum,
   weaponTypeEnum,
 } from "../../enums.js";
-import { DamageSchema } from "../equipment/combat/weaponSchemas.js";
 import { EssenceCostSchema } from "./commonSchemas.js";
 
 const SelectSkillSchema = zod.discriminatedUnion("selectSkill", [
@@ -1047,19 +1046,3 @@ export type BonusType = zod.infer<typeof BonusSchema>;
 export const WirelessSchema = BonusSchema.extend({
   replaceNonWireless: zod.optional(zod.literal(true)),
 });
-
-export const WeaponBonusSchema = zod
-  .object({
-    ap: zod.optional(zod.number()),
-    apReplace: zod.optional(zod.number()),
-    damage: zod.optional(DamageSchema),
-    damageReplace: zod.optional(zod.string()),
-    damageType: zod.optional(zod.string()),
-    modeReplace: zod.optional(zod.string()),
-    useRange: zod.optional(zod.string()),
-    accuracy: zod.optional(zod.number()),
-    accuracyReplace: zod.optional(zod.number()),
-    extraDiceIfSmartlinkEnabled: zod.optional(zod.number()),
-  })
-  .strict();
-export type WeaponBonusType = zod.infer<typeof WeaponBonusSchema>;

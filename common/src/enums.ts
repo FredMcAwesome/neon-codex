@@ -797,11 +797,6 @@ export enum weaponMountControlEnum {
 }
 
 export enum vehicleModTypeEnum {
-  Vehicle = "Vehicle",
-  WeaponMount = "Weapon Mount",
-}
-
-export enum vehicleModSubtypeEnum {
   Body = "Body",
   Cosmetic = "Cosmetic",
   Electromagnetic = "Electromagnetic",

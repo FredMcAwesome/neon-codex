@@ -123,7 +123,9 @@ export abstract class Augmentations {
   @Property({
     nullable: true,
   })
-  allowCategoryList?: Array<cyberwareCategoryEnum | biowareCategoryEnum>;
+  allowSubsystemCategoryList?: Array<
+    cyberwareCategoryEnum | biowareCategoryEnum
+  >;
 
   @Property({ type: "json" })
   availability!: AvailabilityAugmentationType;
@@ -171,8 +173,8 @@ export abstract class Augmentations {
       this.allowedGearCategories = dto.allowedGearCategories;
     if (dto.userSelectable !== undefined)
       this.userSelectable = dto.userSelectable;
-    if (dto.allowCategoryList !== undefined)
-      this.allowCategoryList = dto.allowCategoryList;
+    if (dto.allowSubsystemCategoryList !== undefined)
+      this.allowSubsystemCategoryList = dto.allowSubsystemCategoryList;
     this.availability = dto.availability;
     this.cost = dto.cost;
     this.source = dto.source;
@@ -268,7 +270,8 @@ export class Cyberwares extends Augmentations {
       this.wirelessPairBonus = dto.wirelessPairBonus;
     // if (dto.wirelessPairInclude !== undefined)
     //   this.wirelessPairInclude = dto.wirelessPairInclude;
-    if (dto.subsystemList !== undefined) this.subsystemList = dto.subsystemList;
+    if (dto.includedSubsystemList !== undefined)
+      this.subsystemList = dto.includedSubsystemList;
     if (dto.forceGrade !== undefined) this.forceGrade = dto.forceGrade;
     if (dto.deviceRating !== undefined) this.deviceRating = dto.deviceRating;
     // if (dto.addVehicle !== undefined) this.addVehicle = dto.addVehicle;

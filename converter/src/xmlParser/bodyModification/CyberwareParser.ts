@@ -279,8 +279,10 @@ function convertCyberware(cyberware: CyberwareXmlType) {
   const { allowedGearList, allowedGearCategories } = convertAllowGear(
     cyberware.allowgear
   );
-  const subsystemList = convertSubsystem(cyberware.subsystems);
-  const allowCategoryList = convertSubsystemCategory(cyberware.allowsubsystems);
+  const includedSubsystemList = convertSubsystem(cyberware.subsystems);
+  const allowSubsystemCategoryList = convertSubsystemCategory(
+    cyberware.allowsubsystems
+  );
   const forceGrade =
     cyberware.forcegrade === undefined
       ? undefined
@@ -311,7 +313,7 @@ function convertCyberware(cyberware: CyberwareXmlType) {
     wirelessPairBonus: wirelessPairBonus,
     wirelessPairInclude: wirelessPairInclude,
     includedGearList: gears,
-    subsystemList: subsystemList,
+    includedSubsystemList: includedSubsystemList,
     forceGrade: forceGrade,
     deviceRating: deviceRating,
     addVehicle: cyberware.addvehicle,
@@ -337,7 +339,7 @@ function convertCyberware(cyberware: CyberwareXmlType) {
     forbidden: forbidden,
     allowedGearList: allowedGearList,
     allowedGearCategories: allowedGearCategories,
-    allowCategoryList: allowCategoryList,
+    allowSubsystemCategoryList: allowSubsystemCategoryList,
     ...(cyberware.hide !== undefined && { userSelectable: false as const }),
     availability: availability,
     cost: cost,

@@ -5,67 +5,75 @@
     "nuyen": 2000,
     "armourList": [
       {
-        "name": "Armor Vest"
+        "baseArmour": "Armor Vest"
       }
     ],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Fake SIN",
-        "rating": 1,
-        "category": "ID/Credsticks"
+        "baseGear": "Fake SIN",
+        "category": "ID/Credsticks",
+        "rating": 1
       },
       {
-        "name": "Meta Link",
+        "baseGear": "Meta Link",
         "category": "Commlinks"
       },
       {
-        "name": "Ammo: Regular Ammo",
+        "baseGear": "Ammo: Regular Ammo",
         "category": "Ammunition"
       },
       {
-        "name": "Glasses",
-        "rating": 1,
-        "category": "Vision Devices"
+        "baseGear": "Glasses",
+        "category": "Vision Devices",
+        "rating": 1
       },
       {
-        "name": "Mapsoft",
+        "baseGear": "Mapsoft",
         "category": "Software"
       },
       {
-        "name": "Certified Credstick, Standard",
-        "rating": 1,
-        "category": "ID/Credsticks"
+        "baseGear": "Certified Credstick, Standard",
+        "category": "ID/Credsticks",
+        "rating": 1
       },
       {
-        "name": "Restraint, Plastic",
+        "baseGear": "Restraint, Plastic",
         "category": "Security Devices"
       },
       {
-        "name": "Flashlight",
+        "baseGear": "Flashlight",
         "category": "Survival Gear"
       },
       {
-        "name": "Respirator",
-        "rating": 1,
-        "category": "Survival Gear"
+        "baseGear": "Respirator",
+        "category": "Survival Gear",
+        "rating": 1
       }
     ],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "Colt America L36",
+        "baseWeapon": "Colt America L36",
         "accessoryList": [
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           }
         ]
       },
       {
-        "name": "Knife"
+        "baseWeapon": "Knife",
+        "accessoryList": []
       }
     ],
+    "lifestyleList": [],
     "description": ""
   },
   {
@@ -74,73 +82,77 @@
     "nuyen": 5000,
     "armourList": [
       {
-        "name": "Armor Vest"
+        "baseArmour": "Armor Vest"
       }
     ],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Fake SIN",
-        "rating": 3,
-        "category": "ID/Credsticks"
+        "baseGear": "Fake SIN",
+        "category": "ID/Credsticks",
+        "rating": 3
       },
       {
-        "name": "Renraku Sensei",
+        "baseGear": "Renraku Sensei",
         "category": "Commlinks"
       },
       {
-        "name": "Micro-Transceiver",
+        "baseGear": "Micro-Transceiver",
         "category": "Communications and Countermeasures"
       },
       {
-        "name": "Mapsoft",
+        "baseGear": "Mapsoft",
         "category": "Software"
       },
       {
-        "name": "Certified Credstick, Silver",
+        "baseGear": "Certified Credstick, Silver",
         "category": "ID/Credsticks"
       },
       {
-        "name": "Glasses",
-        "rating": 1,
-        "category": "Vision Devices"
+        "baseGear": "Glasses",
+        "category": "Vision Devices",
+        "rating": 1
       },
       {
-        "name": "Earbuds",
-        "rating": 1,
-        "category": "Audio Devices"
+        "baseGear": "Earbuds",
+        "category": "Audio Devices",
+        "rating": 1
       },
       {
-        "name": "Restraint, Metal",
+        "baseGear": "Restraint, Metal",
         "category": "Security Devices"
       },
       {
-        "name": "Restraint, Plastic",
+        "baseGear": "Restraint, Plastic",
         "category": "Security Devices"
       },
       {
-        "name": "Flashlight",
+        "baseGear": "Flashlight",
         "category": "Survival Gear"
       },
       {
-        "name": "Respirator",
-        "rating": 1,
+        "baseGear": "Respirator",
+        "category": "Survival Gear",
+        "rating": 1
+      },
+      {
+        "baseGear": "Survival Kit",
         "category": "Survival Gear"
       },
       {
-        "name": "Survival Kit",
-        "category": "Survival Gear"
-      },
-      {
-        "name": "Medkit",
-        "rating": 1,
-        "category": "Biotech"
+        "baseGear": "Medkit",
+        "category": "Biotech",
+        "rating": 1
       }
     ],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "Knife"
+        "baseWeapon": "Knife",
+        "accessoryList": []
       }
     ],
+    "lifestyleList": [],
     "description": ""
   },
   {
@@ -149,98 +161,102 @@
     "nuyen": 10000,
     "armourList": [
       {
-        "name": "Armor Vest"
+        "baseArmour": "Armor Vest"
       }
     ],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Fake SIN",
-        "rating": 4,
-        "category": "ID/Credsticks"
+        "baseGear": "Fake SIN",
+        "category": "ID/Credsticks",
+        "rating": 4
       },
       {
-        "name": "Erika Elite",
+        "baseGear": "Erika Elite",
         "category": "Commlinks"
       },
       {
-        "name": "Micro-Transceiver",
+        "baseGear": "Micro-Transceiver",
         "category": "Communications and Countermeasures"
       },
       {
-        "name": "Tag Eraser",
+        "baseGear": "Tag Eraser",
         "category": "Communications and Countermeasures"
       },
       {
-        "name": "Certified Credstick, Gold",
+        "baseGear": "Certified Credstick, Gold",
         "category": "ID/Credsticks"
       },
       {
-        "name": "Mapsoft",
+        "baseGear": "Mapsoft",
         "category": "Software"
       },
       {
-        "name": "Contacts",
-        "rating": 3,
-        "category": "Vision Devices"
+        "baseGear": "Contacts",
+        "category": "Vision Devices",
+        "rating": 3
       },
       {
-        "name": "Earbuds",
-        "rating": 3,
-        "category": "Audio Devices"
+        "baseGear": "Earbuds",
+        "category": "Audio Devices",
+        "rating": 3
       },
       {
-        "name": "Camera",
-        "rating": 1,
-        "category": "Sensor Functions"
+        "baseGear": "Camera",
+        "category": "Sensor Functions",
+        "rating": 1
       },
       {
-        "name": "Restraint, Metal",
+        "baseGear": "Restraint, Metal",
         "category": "Security Devices"
       },
       {
-        "name": "Flashlight",
+        "baseGear": "Flashlight",
         "category": "Survival Gear"
       },
       {
-        "name": "Flashlight, Low-light",
+        "baseGear": "Flashlight, Low-light",
         "category": "Survival Gear"
       },
       {
-        "name": "Climbing Gear",
+        "baseGear": "Climbing Gear",
         "category": "Survival Gear"
       },
       {
-        "name": "Diving Gear",
+        "baseGear": "Diving Gear",
         "category": "Survival Gear"
       },
       {
-        "name": "Gas Mask",
+        "baseGear": "Gas Mask",
         "category": "Survival Gear"
       },
       {
-        "name": "Respirator",
-        "rating": 4,
+        "baseGear": "Respirator",
+        "category": "Survival Gear",
+        "rating": 4
+      },
+      {
+        "baseGear": "Survival Kit",
         "category": "Survival Gear"
       },
       {
-        "name": "Survival Kit",
-        "category": "Survival Gear"
-      },
-      {
-        "name": "Standard Rope (100m)",
+        "baseGear": "Standard Rope (100m)",
         "category": "Grapple Gun"
       },
       {
-        "name": "Medkit",
-        "rating": 1,
-        "category": "Biotech"
+        "baseGear": "Medkit",
+        "category": "Biotech",
+        "rating": 1
       }
     ],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "Knife"
+        "baseWeapon": "Knife",
+        "accessoryList": []
       }
     ],
+    "lifestyleList": [],
     "description": ""
   },
   {
@@ -249,932 +265,1220 @@
     "nuyen": 2000,
     "armourList": [
       {
-        "name": "Clothing"
+        "baseArmour": "Clothing"
       }
     ],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Datasoft",
+        "baseGear": "Datasoft",
         "category": "Software"
       }
     ],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "Katana"
+        "baseWeapon": "Katana",
+        "accessoryList": []
       },
       {
-        "name": "Sword"
+        "baseWeapon": "Sword",
+        "accessoryList": []
       },
       {
-        "name": "Combat Knife"
+        "baseWeapon": "Combat Knife",
+        "accessoryList": []
       },
       {
-        "name": "Club"
+        "baseWeapon": "Club",
+        "accessoryList": []
       }
     ],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Up Close & Personal Pack",
     "category": "Weapon and Ammo Packs",
     "nuyen": 3000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Throwing Knife",
+        "baseGear": "Throwing Knife",
         "category": "Ammunition"
       }
     ],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "Combat Axe"
+        "baseWeapon": "Combat Axe",
+        "accessoryList": []
       },
       {
-        "name": "Katana"
+        "baseWeapon": "Katana",
+        "accessoryList": []
       },
       {
-        "name": "Knife"
+        "baseWeapon": "Knife",
+        "accessoryList": []
       },
       {
-        "name": "Knife"
+        "baseWeapon": "Knife",
+        "accessoryList": []
       },
       {
-        "name": "Combat Knife"
+        "baseWeapon": "Combat Knife",
+        "accessoryList": []
       },
       {
-        "name": "Club"
+        "baseWeapon": "Club",
+        "accessoryList": []
       },
       {
-        "name": "Extendable Baton"
+        "baseWeapon": "Extendable Baton",
+        "accessoryList": []
       },
       {
-        "name": "Telescoping Staff"
+        "baseWeapon": "Telescoping Staff",
+        "accessoryList": []
       },
       {
-        "name": "Knucks"
+        "baseWeapon": "Knucks",
+        "accessoryList": []
       }
     ],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Blademaster Pack",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
+    "armourList": [],
+    "augmentationList": [],
+    "gearList": [],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "Knife"
+        "baseWeapon": "Knife",
+        "accessoryList": []
       },
       {
-        "name": "Knife"
+        "baseWeapon": "Knife",
+        "accessoryList": []
       },
       {
-        "name": "Survival Knife"
+        "baseWeapon": "Survival Knife",
+        "accessoryList": []
       },
       {
-        "name": "Survival Knife"
+        "baseWeapon": "Survival Knife",
+        "accessoryList": []
       },
       {
-        "name": "Combat Knife"
+        "baseWeapon": "Combat Knife",
+        "accessoryList": []
       },
       {
-        "name": "Combat Knife"
+        "baseWeapon": "Combat Knife",
+        "accessoryList": []
       },
       {
-        "name": "Club"
+        "baseWeapon": "Club",
+        "accessoryList": []
       },
       {
-        "name": "Extendable Baton"
+        "baseWeapon": "Extendable Baton",
+        "accessoryList": []
       }
     ],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Monowhip Pack",
     "category": "Weapon and Ammo Packs",
     "nuyen": 10000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "DocWagon Contract, Basic (1 Year Advance Payment)",
+        "baseGear": "DocWagon Contract, Basic (1 Year Advance Payment)",
         "category": "Contracts/Upkeep"
       }
     ],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "Monofilament Whip"
+        "baseWeapon": "Monofilament Whip",
+        "accessoryList": []
       }
     ],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Basic Bowman Pack",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Survival Kit",
+        "baseGear": "Survival Kit",
         "category": "Survival Gear"
       },
       {
-        "name": "Arrow: Injection",
-        "rating": 4,
-        "category": "Ammunition"
+        "baseGear": "Arrow: Injection",
+        "category": "Ammunition",
+        "rating": 4
       },
       {
-        "name": "Arrow: Standard",
-        "rating": 4,
-        "category": "Ammunition"
+        "baseGear": "Arrow: Standard",
+        "category": "Ammunition",
+        "rating": 4
       }
     ],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "Bow (Rating 4)"
+        "baseWeapon": "Bow (Rating 4)",
+        "accessoryList": []
       },
       {
-        "name": "Survival Knife"
+        "baseWeapon": "Survival Knife",
+        "accessoryList": []
       }
     ],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Advanced Bowman Pack",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Survival Kit",
+        "baseGear": "Survival Kit",
         "category": "Survival Gear"
       },
       {
-        "name": "Arrow: Injection",
-        "rating": 6,
-        "category": "Ammunition"
+        "baseGear": "Arrow: Injection",
+        "category": "Ammunition",
+        "rating": 6
       },
       {
-        "name": "Arrow: Standard",
-        "rating": 6,
-        "category": "Ammunition"
+        "baseGear": "Arrow: Standard",
+        "category": "Ammunition",
+        "rating": 6
       }
     ],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "Bow (Rating 6)"
+        "baseWeapon": "Bow (Rating 6)",
+        "accessoryList": []
       },
       {
-        "name": "Knife"
+        "baseWeapon": "Knife",
+        "accessoryList": []
       },
       {
-        "name": "Knife"
+        "baseWeapon": "Knife",
+        "accessoryList": []
       }
     ],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Ares Pistol Pack",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Ammo: Regular Ammo",
+        "baseGear": "Ammo: Regular Ammo",
         "category": "Ammunition"
       },
       {
-        "name": "Ammo: Regular Ammo",
+        "baseGear": "Ammo: Regular Ammo",
         "category": "Ammunition"
       }
     ],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "Ares Predator V",
+        "baseWeapon": "Ares Predator V",
         "accessoryList": [
           {
-            "name": "Quick-Draw Holster"
+            "baseAccessory": "Quick-Draw Holster",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           }
         ]
       },
       {
-        "name": "Ares Light Fire 70",
+        "baseWeapon": "Ares Light Fire 70",
         "accessoryList": [
           {
-            "name": "Concealable Holster"
+            "baseAccessory": "Concealable Holster",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           }
         ]
       }
     ],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Big Boom Pistol Pack",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Ammo: Regular Ammo",
+        "baseGear": "Ammo: Regular Ammo",
         "category": "Ammunition"
       },
       {
-        "name": "Ammo: Flechette Rounds",
+        "baseGear": "Ammo: Flechette Rounds",
         "category": "Ammunition"
       }
     ],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "Remington Roomsweeper",
+        "baseWeapon": "Remington Roomsweeper",
         "accessoryList": [
           {
-            "name": "Quick-Draw Holster"
+            "baseAccessory": "Quick-Draw Holster",
+            "gearList": [],
+            "mountList": ["None"]
           }
         ]
       },
       {
-        "name": "Ruger Super Warhawk",
+        "baseWeapon": "Ruger Super Warhawk",
         "accessoryList": [
           {
-            "name": "Quick-Draw Holster"
+            "baseAccessory": "Quick-Draw Holster",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Speed Loader"
+            "baseAccessory": "Speed Loader",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Speed Loader"
+            "baseAccessory": "Speed Loader",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Speed Loader"
+            "baseAccessory": "Speed Loader",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Speed Loader"
+            "baseAccessory": "Speed Loader",
+            "gearList": [],
+            "mountList": ["None"]
           }
         ]
       }
     ],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Browning And Beretta Pistol Pack",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Ammo: Regular Ammo",
+        "baseGear": "Ammo: Regular Ammo",
         "category": "Ammunition"
       },
       {
-        "name": "Ammo: Regular Ammo",
+        "baseGear": "Ammo: Regular Ammo",
         "category": "Ammunition"
       }
     ],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "Browning Ultra-Power",
+        "baseWeapon": "Browning Ultra-Power",
         "accessoryList": [
           {
-            "name": "Quick-Draw Holster"
+            "baseAccessory": "Quick-Draw Holster",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           }
         ]
       },
       {
-        "name": "Beretta 201T",
+        "baseWeapon": "Beretta 201T",
         "accessoryList": [
           {
-            "name": "Concealable Holster"
+            "baseAccessory": "Concealable Holster",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           }
         ]
       }
     ],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Colt Pistol Pack",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Ammo: Regular Ammo",
+        "baseGear": "Ammo: Regular Ammo",
         "category": "Ammunition"
       },
       {
-        "name": "Ammo: Regular Ammo",
+        "baseGear": "Ammo: Regular Ammo",
         "category": "Ammunition"
       }
     ],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "Colt Government 2066",
+        "baseWeapon": "Colt Government 2066",
         "accessoryList": [
           {
-            "name": "Quick-Draw Holster"
+            "baseAccessory": "Quick-Draw Holster",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Laser Sight"
+            "baseAccessory": "Laser Sight",
+            "gearList": [],
+            "mountList": ["Top", "Under"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           }
         ]
       },
       {
-        "name": "Colt America L36",
+        "baseWeapon": "Colt America L36",
         "accessoryList": [
           {
-            "name": "Concealable Holster"
+            "baseAccessory": "Concealable Holster",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           }
         ]
       }
     ],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Subtle Pistol Pack",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Ammo: Flechette Rounds",
+        "baseGear": "Ammo: Flechette Rounds",
         "category": "Ammunition"
       },
       {
-        "name": "Ammo: Regular Ammo",
+        "baseGear": "Ammo: Regular Ammo",
         "category": "Ammunition"
       }
     ],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "Ares Viper Slivergun",
+        "baseWeapon": "Ares Viper Slivergun",
         "accessoryList": [
           {
-            "name": "Concealable Holster"
+            "baseAccessory": "Concealable Holster",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           }
         ]
       },
       {
-        "name": "Walther Palm Pistol",
+        "baseWeapon": "Walther Palm Pistol",
         "accessoryList": [
           {
-            "name": "Concealable Holster"
+            "baseAccessory": "Concealable Holster",
+            "gearList": [],
+            "mountList": ["None"]
           }
         ]
       }
     ],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Light Security Pack",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Ammo: Regular Ammo",
+        "baseGear": "Ammo: Regular Ammo",
         "category": "Ammunition"
       },
       {
-        "name": "Ammo: Regular Ammo",
+        "baseGear": "Ammo: Regular Ammo",
         "category": "Ammunition"
       }
     ],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "HK 227",
+        "baseWeapon": "HK 227",
         "accessoryList": [
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           }
         ]
       },
       {
-        "name": "Fichetti Security 600",
+        "baseWeapon": "Fichetti Security 600",
         "accessoryList": [
           {
-            "name": "Quick-Draw Holster"
+            "baseAccessory": "Quick-Draw Holster",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           }
         ]
       }
     ],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Japanacorp Light Security Pack",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Ammo: Regular Ammo",
+        "baseGear": "Ammo: Regular Ammo",
         "category": "Ammunition"
       },
       {
-        "name": "Ammo: Regular Ammo",
+        "baseGear": "Ammo: Regular Ammo",
         "category": "Ammunition"
       },
       {
-        "name": "Restraint, Plastic",
+        "baseGear": "Restraint, Plastic",
         "category": "Security Devices"
       },
       {
-        "name": "Ammo: Gel Rounds",
+        "baseGear": "Ammo: Gel Rounds",
         "category": "Ammunition"
       }
     ],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "SCK Model 100",
+        "baseWeapon": "SCK Model 100",
         "accessoryList": [
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           }
         ]
       },
       {
-        "name": "Beretta 201T",
+        "baseWeapon": "Beretta 201T",
         "accessoryList": [
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           }
         ]
       }
     ],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Smartgun Pack",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Ammo: Regular Ammo",
+        "baseGear": "Ammo: Regular Ammo",
         "category": "Ammunition"
       },
       {
-        "name": "Ammo: Regular Ammo",
+        "baseGear": "Ammo: Regular Ammo",
         "category": "Ammunition"
       }
     ],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "Ingram Smartgun X",
+        "baseWeapon": "Ingram Smartgun X",
         "accessoryList": [
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           }
         ]
       },
       {
-        "name": "Ares Predator V",
+        "baseWeapon": "Ares Predator V",
         "accessoryList": [
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           }
         ]
       }
     ],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Street Slugger Pack",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Ammo: Flechette Rounds",
+        "baseGear": "Ammo: Flechette Rounds",
         "category": "Ammunition"
       },
       {
-        "name": "Ammo: Regular Ammo",
+        "baseGear": "Ammo: Regular Ammo",
         "category": "Ammunition"
       },
       {
-        "name": "Ammo: Regular Ammo",
+        "baseGear": "Ammo: Regular Ammo",
         "category": "Ammunition"
       },
       {
-        "name": "Ammo: Regular Ammo",
+        "baseGear": "Ammo: Regular Ammo",
         "category": "Ammunition"
       }
     ],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "Defiance T-250"
+        "baseWeapon": "Defiance T-250",
+        "accessoryList": []
       },
       {
-        "name": "Colt America L36"
+        "baseWeapon": "Colt America L36",
+        "accessoryList": []
       },
       {
-        "name": "Streetline Special"
+        "baseWeapon": "Streetline Special",
+        "accessoryList": []
       },
       {
-        "name": "Knife"
+        "baseWeapon": "Knife",
+        "accessoryList": []
       },
       {
-        "name": "Knucks"
+        "baseWeapon": "Knucks",
+        "accessoryList": []
       }
     ],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Heavy Security Pack",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Ammo: Regular Ammo",
+        "baseGear": "Ammo: Regular Ammo",
         "category": "Ammunition"
       }
     ],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "FN HAR",
+        "baseWeapon": "FN HAR",
         "accessoryList": [
           {
-            "name": "Shock Pad"
+            "baseAccessory": "Shock Pad",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           }
         ]
       }
     ],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Cheap Soldier Pack",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Ammo: Regular Ammo",
+        "baseGear": "Ammo: Regular Ammo",
         "category": "Ammunition"
       },
       {
-        "name": "Kamikaze",
+        "baseGear": "Kamikaze",
         "category": "Drugs"
       }
     ],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "Colt M23",
+        "baseWeapon": "Colt M23",
         "accessoryList": [
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           }
         ]
       },
       {
-        "name": "Sword"
+        "baseWeapon": "Sword",
+        "accessoryList": []
       }
     ],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Ares Alpha Gunner Pack",
     "category": "Weapon and Ammo Packs",
     "nuyen": 4000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Ammo: Regular Ammo",
+        "baseGear": "Ammo: Regular Ammo",
         "category": "Ammunition"
       },
       {
-        "name": "Ammo: APDS",
+        "baseGear": "Ammo: APDS",
         "category": "Ammunition"
       },
       {
-        "name": "Ammo: Explosive Rounds",
+        "baseGear": "Ammo: Explosive Rounds",
         "category": "Ammunition"
       },
       {
-        "name": "Minigrenade: High Explosive",
+        "baseGear": "Minigrenade: High Explosive",
         "category": "Ammunition"
       },
       {
-        "name": "Minigrenade: Fragmentation",
+        "baseGear": "Minigrenade: Fragmentation",
         "category": "Ammunition"
       }
     ],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "Ares Alpha",
+        "baseWeapon": "Ares Alpha",
         "accessoryList": [
           {
-            "name": "Shock Pad"
+            "baseAccessory": "Shock Pad",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           }
         ]
       }
     ],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Sportsman Pack",
     "category": "Weapon and Ammo Packs",
     "nuyen": 2000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Survival Kit",
+        "baseGear": "Survival Kit",
         "category": "Survival Gear"
       },
       {
-        "name": "Flashlight",
+        "baseGear": "Flashlight",
         "category": "Survival Gear"
       },
       {
-        "name": "Arrow: Standard",
-        "rating": 4,
-        "category": "Ammunition"
+        "baseGear": "Arrow: Standard",
+        "category": "Ammunition",
+        "rating": 4
       },
       {
-        "name": "Ammo: Regular Ammo",
+        "baseGear": "Ammo: Regular Ammo",
         "category": "Ammunition"
       }
     ],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "Remington 950"
+        "baseWeapon": "Remington 950",
+        "accessoryList": []
       },
       {
-        "name": "Bow (Rating 4)"
+        "baseWeapon": "Bow (Rating 4)",
+        "accessoryList": []
       },
       {
-        "name": "Survival Knife"
+        "baseWeapon": "Survival Knife",
+        "accessoryList": []
       },
       {
-        "name": "Knife"
+        "baseWeapon": "Knife",
+        "accessoryList": []
       }
     ],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Tranq Darter Pack",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Ammo: Injection Darts",
+        "baseGear": "Ammo: Injection Darts",
         "category": "Ammunition"
       },
       {
-        "name": "Narcoject",
+        "baseGear": "Narcoject",
         "category": "Toxins"
       }
     ],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "Parashield Dart Rifle"
+        "baseWeapon": "Parashield Dart Rifle",
+        "accessoryList": []
       }
     ],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Tranq Pistol Darter Kit",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Ammo: Injection Darts",
+        "baseGear": "Ammo: Injection Darts",
         "category": "Ammunition"
       },
       {
-        "name": "Narcoject",
+        "baseGear": "Narcoject",
         "category": "Toxins"
       }
     ],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "Parashield Dart Pistol"
+        "baseWeapon": "Parashield Dart Pistol",
+        "accessoryList": []
       },
       {
-        "name": "Parashield Dart Pistol"
+        "baseWeapon": "Parashield Dart Pistol",
+        "accessoryList": []
       }
     ],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Squad Weapon Assault Pack",
     "category": "Weapon and Ammo Packs",
     "nuyen": 3000,
+    "armourList": [],
+    "augmentationList": [],
+    "gearList": [],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "Ingram Valiant",
+        "baseWeapon": "Ingram Valiant",
         "accessoryList": [
           {
-            "name": "Bipod"
+            "baseAccessory": "Bipod",
+            "gearList": [],
+            "mountList": ["Under"]
           }
         ]
       }
     ],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Medium Machine Gunner Pack",
     "category": "Weapon and Ammo Packs",
     "nuyen": 4000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Ammo: Regular Ammo",
+        "baseGear": "Ammo: Regular Ammo",
         "category": "Ammunition"
       }
     ],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "Stoner-Ares M202",
+        "baseWeapon": "Stoner-Ares M202",
         "accessoryList": [
           {
-            "name": "Tripod"
+            "baseAccessory": "Tripod",
+            "gearList": [],
+            "mountList": ["Under"]
           }
         ]
       }
     ],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Rocketeer Pack",
     "category": "Weapon and Ammo Packs",
     "nuyen": 8000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Rocket: Fragmentation",
+        "baseGear": "Rocket: Fragmentation",
         "category": "Ammunition"
       }
     ],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "Aztechnology Striker"
+        "baseWeapon": "Aztechnology Striker",
+        "accessoryList": []
       },
       {
-        "name": "Aztechnology Striker"
+        "baseWeapon": "Aztechnology Striker",
+        "accessoryList": []
       },
       {
-        "name": "Aztechnology Striker"
+        "baseWeapon": "Aztechnology Striker",
+        "accessoryList": []
       },
       {
-        "name": "Aztechnology Striker"
+        "baseWeapon": "Aztechnology Striker",
+        "accessoryList": []
       },
       {
-        "name": "Aztechnology Striker"
+        "baseWeapon": "Aztechnology Striker",
+        "accessoryList": []
       }
     ],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Box of Grenades #1",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Grenade: Fragmentation",
+        "baseGear": "Grenade: Fragmentation",
         "category": "Ammunition"
       },
       {
-        "name": "Grenade: High Explosive",
+        "baseGear": "Grenade: High Explosive",
         "category": "Ammunition"
       }
     ],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Box of Grenades #2",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Grenade: Flash-Bang",
+        "baseGear": "Grenade: Flash-Bang",
         "category": "Ammunition"
       },
       {
-        "name": "Grenade: Smoke",
+        "baseGear": "Grenade: Smoke",
         "category": "Ammunition"
       },
       {
-        "name": "Grenade: Gas",
+        "baseGear": "Grenade: Gas",
         "category": "Ammunition"
       },
       {
-        "name": "Gas Mask",
+        "baseGear": "Gas Mask",
         "category": "Survival Gear"
       },
       {
-        "name": "Grenade: Gas",
+        "baseGear": "Grenade: Gas",
         "category": "Ammunition"
       },
       {
-        "name": "Grenade: Thermal Smoke",
+        "baseGear": "Grenade: Thermal Smoke",
         "category": "Ammunition"
       }
     ],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
@@ -1183,25 +1487,30 @@
     "nuyen": 1000,
     "armourList": [
       {
-        "name": "Lined Coat",
+        "baseArmour": "Lined Coat",
         "modList": [
           {
-            "name": "Chemical Protection",
+            "baseMod": "Chemical Protection",
+            "gearList": [],
             "rating": 2
           }
         ]
       },
       {
-        "name": "Armor Clothing"
+        "baseArmour": "Armor Clothing"
       }
     ],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Respirator",
-        "rating": 3,
-        "category": "Survival Gear"
+        "baseGear": "Respirator",
+        "category": "Survival Gear",
+        "rating": 3
       }
     ],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
@@ -1210,23 +1519,31 @@
     "nuyen": 2000,
     "armourList": [
       {
-        "name": "Armor Jacket",
+        "baseArmour": "Armor Jacket",
         "modList": [
           {
-            "name": "Chemical Protection",
+            "baseMod": "Chemical Protection",
+            "gearList": [],
             "rating": 4
           },
           {
-            "name": "Fire Resistance",
+            "baseMod": "Fire Resistance",
+            "gearList": [],
             "rating": 4
           },
           {
-            "name": "Insulation",
+            "baseMod": "Insulation",
+            "gearList": [],
             "rating": 4
           }
         ]
       }
     ],
+    "augmentationList": [],
+    "gearList": [],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
@@ -1235,30 +1552,39 @@
     "nuyen": 1000,
     "armourList": [
       {
-        "name": "Urban Explorer Jumpsuit",
+        "baseArmour": "Urban Explorer Jumpsuit",
         "modList": [
           {
-            "name": "Electrochromic Clothing"
+            "baseMod": "Electrochromic Clothing",
+            "gearList": []
           },
           {
-            "name": "Nonconductivity",
+            "baseMod": "Nonconductivity",
+            "gearList": [],
             "rating": 2
           },
           {
-            "name": "Shock Frills"
+            "baseMod": "Shock Frills",
+            "gearList": []
           },
           {
-            "name": "Urban Explorer Jumpsuit: Helmet"
+            "baseMod": "Urban Explorer Jumpsuit: Helmet",
+            "gearList": []
           }
         ],
         "gearList": [
           {
-            "name": "Biomonitor",
+            "baseGear": "Biomonitor",
             "category": "Biotech"
           }
         ]
       }
     ],
+    "augmentationList": [],
+    "gearList": [],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
@@ -1267,29 +1593,34 @@
     "nuyen": 2000,
     "armourList": [
       {
-        "name": "Chameleon Suit",
+        "baseArmour": "Chameleon Suit",
         "modList": [
           {
-            "name": "Thermal Damping",
+            "baseMod": "Thermal Damping",
+            "gearList": [],
             "rating": 4
           }
         ]
       }
     ],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Gecko Tape Gloves",
+        "baseGear": "Gecko Tape Gloves",
         "category": "Survival Gear"
       },
       {
-        "name": "Flashlight",
+        "baseGear": "Flashlight",
         "category": "Survival Gear"
       },
       {
-        "name": "Flashlight, Low-light",
+        "baseGear": "Flashlight, Low-light",
         "category": "Survival Gear"
       }
     ],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
@@ -1298,14 +1629,20 @@
     "nuyen": 1000,
     "armourList": [
       {
-        "name": "Actioneer Business Clothes",
+        "baseArmour": "Actioneer Business Clothes",
         "modList": [
           {
-            "name": "Electrochromic Clothing"
+            "baseMod": "Electrochromic Clothing",
+            "gearList": []
           }
         ]
       }
     ],
+    "augmentationList": [],
+    "gearList": [],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
@@ -1314,41 +1651,45 @@
     "nuyen": 3000,
     "armourList": [
       {
-        "name": "Helmet",
+        "baseArmour": "Helmet",
         "gearList": [
           {
-            "name": "Image Link",
+            "baseGear": "Image Link",
             "category": "Vision Enhancements"
           },
           {
-            "name": "Low Light",
+            "baseGear": "Low Light",
             "category": "Vision Enhancements"
           },
           {
-            "name": "Smartlink",
+            "baseGear": "Smartlink",
             "category": "Vision Enhancements"
           },
           {
-            "name": "Micro-Transceiver",
+            "baseGear": "Micro-Transceiver",
             "category": "Communications and Countermeasures"
           },
           {
-            "name": "Flare Compensation",
+            "baseGear": "Flare Compensation",
             "category": "Vision Enhancements"
           },
           {
-            "name": "Flashlight",
+            "baseGear": "Flashlight",
             "category": "Survival Gear"
           }
         ]
       }
     ],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Hermes Ikon",
+        "baseGear": "Hermes Ikon",
         "category": "Commlinks"
       }
     ],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
@@ -1357,64 +1698,71 @@
     "nuyen": 1000,
     "armourList": [
       {
-        "name": "Armor Jacket",
+        "baseArmour": "Armor Jacket",
         "modList": [
           {
-            "name": "Nonconductivity",
+            "baseMod": "Nonconductivity",
+            "gearList": [],
             "rating": 4
           }
         ]
       }
     ],
+    "augmentationList": [],
+    "gearList": [],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Sim-Setional Pack",
     "category": "Cyber Packs",
     "nuyen": 6000,
+    "armourList": [],
     "augmentationList": [
       {
-        "name": "Datajack",
-        "grade": "Standard",
-        "type": "Cyberware"
+        "baseAugmentation": "Datajack",
+        "grade": "Standard"
       },
       {
-        "name": "Olfactory Booster",
-        "grade": "Standard",
+        "baseAugmentation": "Olfactory Booster",
         "rating": 1,
-        "type": "Cyberware"
+        "grade": "Standard"
       },
       {
-        "name": "Taste Booster",
-        "grade": "Standard",
+        "baseAugmentation": "Taste Booster",
         "rating": 1,
-        "type": "Cyberware"
+        "grade": "Standard"
       },
       {
-        "name": "Simrig",
-        "grade": "Standard",
-        "type": "Cyberware"
+        "baseAugmentation": "Simrig",
+        "grade": "Standard"
       }
     ],
+    "gearList": [],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Basic Combat Eyes Pack",
     "category": "Cyber Packs",
     "nuyen": 4000,
+    "armourList": [],
     "augmentationList": [
       {
-        "name": "Cybereyes Basic System",
-        "grade": "Standard",
-        "rating": 1,
-        "type": "Cyberware",
+        "baseAugmentation": "Cybereyes Basic System",
         "gearList": [
           {
-            "name": "Camera",
-            "rating": 1,
-            "category": "Vision Devices"
+            "baseGear": "Camera",
+            "category": "Vision Devices",
+            "rating": 1
           }
         ],
+        "rating": 1,
+        "grade": "Standard",
         "subsystemList": {
           "cyberwareList": [
             {
@@ -1424,25 +1772,29 @@
         }
       }
     ],
+    "gearList": [],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Advanced Combat Eyes Pack",
     "category": "Cyber Packs",
     "nuyen": 7000,
+    "armourList": [],
     "augmentationList": [
       {
-        "name": "Cybereyes Basic System",
-        "grade": "Standard",
-        "rating": 2,
-        "type": "Cyberware",
+        "baseAugmentation": "Cybereyes Basic System",
         "gearList": [
           {
-            "name": "Camera",
-            "rating": 1,
-            "category": "Vision Devices"
+            "baseGear": "Camera",
+            "category": "Vision Devices",
+            "rating": 1
           }
         ],
+        "rating": 2,
+        "grade": "Standard",
         "subsystemList": {
           "cyberwareList": [
             {
@@ -1461,25 +1813,29 @@
         }
       }
     ],
+    "gearList": [],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Eagle Eyes Pack",
     "category": "Cyber Packs",
     "nuyen": 7000,
+    "armourList": [],
     "augmentationList": [
       {
-        "name": "Cybereyes Basic System",
-        "grade": "Standard",
-        "rating": 1,
-        "type": "Cyberware",
+        "baseAugmentation": "Cybereyes Basic System",
         "gearList": [
           {
-            "name": "Camera",
-            "rating": 1,
-            "category": "Vision Devices"
+            "baseGear": "Camera",
+            "category": "Vision Devices",
+            "rating": 1
           }
         ],
+        "rating": 1,
+        "grade": "Standard",
         "subsystemList": {
           "cyberwareList": [
             {
@@ -1493,18 +1849,22 @@
         }
       }
     ],
+    "gearList": [],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Rabbit Ears Pack",
     "category": "Cyber Packs",
     "nuyen": 9000,
+    "armourList": [],
     "augmentationList": [
       {
-        "name": "Cyberears",
-        "grade": "Standard",
+        "baseAugmentation": "Cyberears",
         "rating": 1,
-        "type": "Cyberware",
+        "grade": "Standard",
         "subsystemList": {
           "cyberwareList": [
             {
@@ -1519,237 +1879,270 @@
         }
       }
     ],
+    "gearList": [],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Bulletproof Jeff Pack",
     "category": "Cyber Packs",
     "nuyen": 12000,
+    "armourList": [],
     "augmentationList": [
       {
-        "name": "Bone Lacing (Aluminum)",
-        "grade": "Standard",
-        "type": "Cyberware"
+        "baseAugmentation": "Bone Lacing (Aluminum)",
+        "grade": "Standard"
       },
       {
-        "name": "Dermal Plating",
-        "grade": "Standard",
+        "baseAugmentation": "Dermal Plating",
         "rating": 2,
-        "type": "Cyberware"
+        "grade": "Standard"
       }
     ],
+    "gearList": [],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Basic Razorboi Pack",
     "category": "Cyber Packs",
     "nuyen": 2000,
+    "armourList": [],
     "augmentationList": [
       {
-        "name": "Hand Razors",
-        "grade": "Standard",
-        "type": "Cyberware"
+        "baseAugmentation": "Hand Razors",
+        "grade": "Standard"
       },
       {
-        "name": "Hand Razors",
-        "grade": "Standard",
-        "type": "Cyberware"
+        "baseAugmentation": "Hand Razors",
+        "grade": "Standard"
       }
     ],
     "gearList": [
       {
-        "name": "Tool Kit",
+        "baseGear": "Tool Kit",
         "category": "Tools"
       }
     ],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "Hand Razors"
+        "baseWeapon": "Hand Razors",
+        "accessoryList": []
       },
       {
-        "name": "Hand Razors"
+        "baseWeapon": "Hand Razors",
+        "accessoryList": []
       },
       {
-        "name": "Katana"
+        "baseWeapon": "Katana",
+        "accessoryList": []
       }
     ],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Advanced Razorboi Pack",
     "category": "Cyber Packs",
     "nuyen": 6000,
+    "armourList": [],
     "augmentationList": [
       {
-        "name": "Spurs",
-        "grade": "Standard",
-        "type": "Cyberware"
+        "baseAugmentation": "Spurs",
+        "grade": "Standard"
       },
       {
-        "name": "Spurs",
-        "grade": "Standard",
-        "type": "Cyberware"
+        "baseAugmentation": "Spurs",
+        "grade": "Standard"
       }
     ],
     "gearList": [
       {
-        "name": "Tool Kit",
+        "baseGear": "Tool Kit",
         "category": "Tools"
       },
       {
-        "name": "Medkit",
-        "rating": 2,
-        "category": "Biotech"
+        "baseGear": "Medkit",
+        "category": "Biotech",
+        "rating": 2
       }
     ],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "Katana"
+        "baseWeapon": "Katana",
+        "accessoryList": []
       },
       {
-        "name": "Spurs"
+        "baseWeapon": "Spurs",
+        "accessoryList": []
       },
       {
-        "name": "Spurs"
+        "baseWeapon": "Spurs",
+        "accessoryList": []
       }
     ],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Basic Speedboost Pack",
     "category": "Cyber Packs",
     "nuyen": 20000,
+    "armourList": [],
     "augmentationList": [
       {
-        "name": "Datajack",
-        "grade": "Standard",
-        "type": "Cyberware"
+        "baseAugmentation": "Datajack",
+        "grade": "Standard"
       },
       {
-        "name": "Wired Reflexes",
-        "grade": "Standard",
+        "baseAugmentation": "Wired Reflexes",
         "rating": 1,
-        "type": "Cyberware"
+        "grade": "Standard"
       }
     ],
+    "gearList": [],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Advanced Speedboost Pack",
     "category": "Cyber Packs",
     "nuyen": 75000,
+    "armourList": [],
     "augmentationList": [
       {
-        "name": "Datajack",
-        "grade": "Standard",
-        "type": "Cyberware"
+        "baseAugmentation": "Datajack",
+        "grade": "Standard"
       },
       {
-        "name": "Wired Reflexes",
-        "grade": "Standard",
+        "baseAugmentation": "Wired Reflexes",
         "rating": 2,
-        "type": "Cyberware"
+        "grade": "Standard"
       }
     ],
+    "gearList": [],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Basic Vatjob Pack",
     "category": "Cyber Packs",
     "nuyen": 14000,
+    "armourList": [],
     "augmentationList": [
       {
-        "name": "Dermal Plating",
-        "grade": "Standard",
+        "baseAugmentation": "Dermal Plating",
         "rating": 1,
-        "type": "Cyberware"
+        "grade": "Standard"
       },
       {
-        "name": "Muscle Replacement",
-        "grade": "Standard",
+        "baseAugmentation": "Muscle Replacement",
         "rating": 1,
-        "type": "Cyberware"
+        "grade": "Standard"
       }
     ],
+    "gearList": [],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Advanced Vatjob Pack",
     "category": "Cyber Packs",
     "nuyen": 28000,
+    "armourList": [],
     "augmentationList": [
       {
-        "name": "Dermal Plating",
-        "grade": "Standard",
+        "baseAugmentation": "Dermal Plating",
         "rating": 2,
-        "type": "Cyberware"
+        "grade": "Standard"
       },
       {
-        "name": "Muscle Replacement",
-        "grade": "Standard",
+        "baseAugmentation": "Muscle Replacement",
         "rating": 2,
-        "type": "Cyberware"
+        "grade": "Standard"
       }
     ],
+    "gearList": [],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Basic Rigger Pack",
     "category": "Cyber Packs",
     "nuyen": 28000,
+    "armourList": [],
     "augmentationList": [
       {
-        "name": "Control Rig",
-        "grade": "Standard",
+        "baseAugmentation": "Control Rig",
         "rating": 1,
-        "type": "Cyberware"
+        "grade": "Standard"
       },
       {
-        "name": "Reaction Enhancers",
-        "grade": "Standard",
+        "baseAugmentation": "Reaction Enhancers",
         "rating": 1,
-        "type": "Cyberware"
+        "grade": "Standard"
       }
     ],
+    "gearList": [],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Advanced Rigger Pack",
     "category": "Cyber Packs",
     "nuyen": 52000,
+    "armourList": [],
     "augmentationList": [
       {
-        "name": "Control Rig",
-        "grade": "Standard",
+        "baseAugmentation": "Control Rig",
         "rating": 2,
-        "type": "Cyberware"
+        "grade": "Standard"
       },
       {
-        "name": "Reaction Enhancers",
-        "grade": "Standard",
+        "baseAugmentation": "Reaction Enhancers",
         "rating": 2,
-        "type": "Cyberware"
+        "grade": "Standard"
       }
     ],
+    "gearList": [],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Street Samurai Classic Pack",
     "category": "Cyber Packs",
     "nuyen": 100000,
+    "armourList": [],
     "augmentationList": [
       {
-        "name": "Cybereyes Basic System",
-        "grade": "Standard",
-        "rating": 2,
-        "type": "Cyberware",
+        "baseAugmentation": "Cybereyes Basic System",
         "gearList": [
           {
-            "name": "Camera",
-            "rating": 1,
-            "category": "Vision Devices"
+            "baseGear": "Camera",
+            "category": "Vision Devices",
+            "rating": 1
           }
         ],
+        "rating": 2,
+        "grade": "Standard",
         "subsystemList": {
           "cyberwareList": [
             {
@@ -1768,150 +2161,164 @@
         }
       },
       {
-        "name": "Datajack",
-        "grade": "Standard",
-        "type": "Cyberware"
+        "baseAugmentation": "Datajack",
+        "grade": "Standard"
       },
       {
-        "name": "Wired Reflexes",
-        "grade": "Standard",
+        "baseAugmentation": "Wired Reflexes",
         "rating": 2,
-        "type": "Cyberware"
+        "grade": "Standard"
       },
       {
-        "name": "Dermal Plating",
-        "grade": "Standard",
+        "baseAugmentation": "Dermal Plating",
         "rating": 1,
-        "type": "Cyberware"
+        "grade": "Standard"
       },
       {
-        "name": "Muscle Replacement",
-        "grade": "Standard",
+        "baseAugmentation": "Muscle Replacement",
         "rating": 1,
-        "type": "Cyberware"
+        "grade": "Standard"
       },
       {
-        "name": "Spurs",
-        "grade": "Standard",
-        "type": "Cyberware"
+        "baseAugmentation": "Spurs",
+        "grade": "Standard"
       },
       {
-        "name": "Spurs",
-        "grade": "Standard",
-        "type": "Cyberware"
+        "baseAugmentation": "Spurs",
+        "grade": "Standard"
       }
     ],
     "gearList": [
       {
-        "name": "Tool Kit",
+        "baseGear": "Tool Kit",
         "category": "Tools"
       },
       {
-        "name": "Medkit",
-        "rating": 2,
-        "category": "Biotech"
+        "baseGear": "Medkit",
+        "category": "Biotech",
+        "rating": 2
       }
     ],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "Katana"
+        "baseWeapon": "Katana",
+        "accessoryList": []
       },
       {
-        "name": "Spurs"
+        "baseWeapon": "Spurs",
+        "accessoryList": []
       },
       {
-        "name": "Spurs"
+        "baseWeapon": "Spurs",
+        "accessoryList": []
       },
       {
-        "name": "Spurs"
+        "baseWeapon": "Spurs",
+        "accessoryList": []
       },
       {
-        "name": "Spurs"
+        "baseWeapon": "Spurs",
+        "accessoryList": []
       }
     ],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Bioware Cat Pack(Catgirl pack)",
     "category": "Cyber Packs",
     "nuyen": 14000,
+    "armourList": [],
     "augmentationList": [
       {
-        "name": "Cat's Eyes",
-        "grade": "Standard",
-        "type": "Bioware"
+        "baseAugmentation": "Cat's Eyes",
+        "grade": "Standard"
       },
       {
-        "name": "Enhanced Articulation",
-        "grade": "Standard",
-        "type": "Bioware"
+        "baseAugmentation": "Enhanced Articulation",
+        "grade": "Standard"
       }
     ],
+    "gearList": [],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Bio-Computer Pack",
     "category": "Cyber Packs",
     "nuyen": 41000,
+    "armourList": [],
     "augmentationList": [
       {
-        "name": "Cerebral Booster",
-        "grade": "Standard",
+        "baseAugmentation": "Cerebral Booster",
         "rating": 2,
-        "type": "Bioware"
+        "grade": "Standard"
       },
       {
-        "name": "Mnemonic Enhancer",
-        "grade": "Standard",
+        "baseAugmentation": "Mnemonic Enhancer",
         "rating": 2,
-        "type": "Bioware"
+        "grade": "Standard"
       },
       {
-        "name": "Datajack",
-        "grade": "Standard",
-        "type": "Cyberware"
+        "baseAugmentation": "Datajack",
+        "grade": "Standard"
       }
     ],
+    "gearList": [],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Bioware Company Man Pack",
     "category": "Cyber Packs",
     "nuyen": 50000,
+    "armourList": [],
     "augmentationList": [
       {
-        "name": "Bone Density Augmentation",
-        "grade": "Standard",
+        "baseAugmentation": "Bone Density Augmentation",
         "rating": 1,
-        "type": "Bioware"
+        "grade": "Standard"
       },
       {
-        "name": "Synaptic Booster",
-        "grade": "Standard",
+        "baseAugmentation": "Synaptic Booster",
         "rating": 1,
-        "type": "Bioware"
+        "grade": "Standard"
       }
     ],
+    "gearList": [],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Basic Cyberdeck Programs Pack",
     "category": "Decker Packs",
     "nuyen": 1000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Tool Kit",
+        "baseGear": "Tool Kit",
         "category": "Tools"
       },
       {
-        "name": "Tool Kit",
+        "baseGear": "Tool Kit",
         "category": "Tools"
       },
       {
-        "name": "Broken Sony CIY-720",
+        "baseGear": "Broken Sony CIY-720",
         "category": "Cyberdecks"
       }
     ],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
@@ -1920,424 +2327,490 @@
     "nuyen": 2000,
     "armourList": [
       {
-        "name": "Armor Clothing"
+        "baseArmour": "Armor Clothing"
       }
     ],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Fake SIN",
-        "rating": 1,
-        "category": "ID/Credsticks"
+        "baseGear": "Fake SIN",
+        "category": "ID/Credsticks",
+        "rating": 1
       },
       {
-        "name": "Sony Emperor",
+        "baseGear": "Sony Emperor",
         "category": "Commlinks"
       },
       {
-        "name": "Ammo: Regular Ammo",
+        "baseGear": "Ammo: Regular Ammo",
         "category": "Ammunition"
       },
       {
-        "name": "Restraint, Metal",
+        "baseGear": "Restraint, Metal",
         "category": "Security Devices"
       },
       {
-        "name": "Datachip",
+        "baseGear": "Datachip",
         "category": "RFID Tags"
       },
       {
-        "name": "Security Tags",
+        "baseGear": "Security Tags",
         "category": "RFID Tags"
       },
       {
-        "name": "Long Haul",
+        "baseGear": "Long Haul",
         "category": "Drugs"
       },
       {
-        "name": "Certified Credstick, Standard",
+        "baseGear": "Certified Credstick, Standard",
         "category": "ID/Credsticks"
       }
     ],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "Streetline Special"
+        "baseWeapon": "Streetline Special",
+        "accessoryList": []
       },
       {
-        "name": "Knife",
+        "baseWeapon": "Knife",
         "accessoryList": [
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           }
         ]
       }
     ],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Cocktail Kid Pack",
     "category": "Color Packs",
     "nuyen": 1000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Disposable Syringe",
+        "baseGear": "Disposable Syringe",
         "category": "Biotech"
       },
       {
-        "name": "Jazz",
+        "baseGear": "Jazz",
         "category": "Drugs"
       },
       {
-        "name": "Long Haul",
+        "baseGear": "Long Haul",
         "category": "Drugs"
       },
       {
-        "name": "Kamikaze",
+        "baseGear": "Kamikaze",
         "category": "Drugs"
       },
       {
-        "name": "Zen",
+        "baseGear": "Zen",
         "category": "Drugs"
       },
       {
-        "name": "Novacoke",
+        "baseGear": "Novacoke",
         "category": "Drugs"
       }
     ],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Drone Mechanic Pack",
     "category": "Color Packs",
     "nuyen": 1000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Tool Kit",
+        "baseGear": "Tool Kit",
         "category": "Tools"
       },
       {
-        "name": "Tool Kit",
+        "baseGear": "Tool Kit",
         "category": "Tools"
       },
       {
-        "name": "Tool Kit",
+        "baseGear": "Tool Kit",
         "category": "Tools"
       },
       {
-        "name": "Tool Kit",
+        "baseGear": "Tool Kit",
         "category": "Tools"
       }
     ],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Mechanic Shop Pack",
     "category": "Color Packs",
     "nuyen": 3000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Tool Kit",
+        "baseGear": "Tool Kit",
         "category": "Tools"
       },
       {
-        "name": "Tool Shop",
+        "baseGear": "Tool Shop",
         "category": "Tools"
       },
       {
-        "name": "Shopsoft",
+        "baseGear": "Shopsoft",
         "category": "Software"
       },
       {
-        "name": "Knowsoft",
-        "rating": 1,
-        "category": "Skillsofts"
+        "baseGear": "Knowsoft",
+        "category": "Skillsofts",
+        "rating": 1
       },
       {
-        "name": "Flashlight",
+        "baseGear": "Flashlight",
         "category": "Survival Gear"
       },
       {
-        "name": "Chemsuit",
-        "rating": 1,
-        "category": "Survival Gear"
+        "baseGear": "Chemsuit",
+        "category": "Survival Gear",
+        "rating": 1
       },
       {
-        "name": "Respirator",
-        "rating": 1,
-        "category": "Survival Gear"
+        "baseGear": "Respirator",
+        "category": "Survival Gear",
+        "rating": 1
       }
     ],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Eavesdropper Pack",
     "category": "Color Packs",
     "nuyen": 1000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Data Tap",
+        "baseGear": "Data Tap",
         "category": "Communications and Countermeasures"
       },
       {
-        "name": "Camera, Micro",
-        "rating": 1,
-        "category": "Vision Devices"
+        "baseGear": "Camera, Micro",
+        "category": "Vision Devices",
+        "rating": 1
       }
     ],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Surveillance Pack",
     "category": "Color Packs",
     "nuyen": 1000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Binoculars, Optical",
+        "baseGear": "Binoculars, Optical",
         "category": "Vision Devices"
       },
       {
-        "name": "Binoculars",
-        "rating": 1,
-        "category": "Vision Devices"
+        "baseGear": "Binoculars",
+        "category": "Vision Devices",
+        "rating": 1
       },
       {
-        "name": "Camera",
-        "rating": 1,
-        "category": "Vision Devices"
+        "baseGear": "Camera",
+        "category": "Vision Devices",
+        "rating": 1
       },
       {
-        "name": "Camera, Micro",
-        "rating": 1,
-        "category": "Vision Devices"
+        "baseGear": "Camera, Micro",
+        "category": "Vision Devices",
+        "rating": 1
       },
       {
-        "name": "Directional Microphone",
-        "rating": 1,
-        "category": "Sensor Functions"
+        "baseGear": "Directional Microphone",
+        "category": "Sensor Functions",
+        "rating": 1
       },
       {
-        "name": "Laser Microphone",
-        "rating": 1,
-        "category": "Sensor Functions"
+        "baseGear": "Laser Microphone",
+        "category": "Sensor Functions",
+        "rating": 1
       }
     ],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Breaking and Entering Pack",
     "category": "Color Packs",
     "nuyen": 3000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Autopicker",
-        "rating": 4,
-        "category": "Breaking and Entering Gear"
+        "baseGear": "Autopicker",
+        "category": "Breaking and Entering Gear",
+        "rating": 4
       },
       {
-        "name": "Keycard Copier",
-        "rating": 5,
-        "category": "Breaking and Entering Gear"
+        "baseGear": "Keycard Copier",
+        "category": "Breaking and Entering Gear",
+        "rating": 5
       },
       {
-        "name": "Sequencer",
-        "rating": 4,
-        "category": "Breaking and Entering Gear"
+        "baseGear": "Sequencer",
+        "category": "Breaking and Entering Gear",
+        "rating": 4
       }
     ],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Jammer Pack",
     "category": "Color Packs",
     "nuyen": 1000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Jammer, Area",
-        "rating": 4,
+        "baseGear": "Jammer, Area",
+        "category": "Communications and Countermeasures",
+        "rating": 4
+      },
+      {
+        "baseGear": "Bug Scanner",
+        "category": "Communications and Countermeasures",
+        "rating": 5
+      },
+      {
+        "baseGear": "Tag Eraser",
         "category": "Communications and Countermeasures"
       },
       {
-        "name": "Bug Scanner",
-        "rating": 5,
-        "category": "Communications and Countermeasures"
-      },
-      {
-        "name": "Tag Eraser",
-        "category": "Communications and Countermeasures"
-      },
-      {
-        "name": "White Noise Generator",
-        "rating": 5,
-        "category": "Communications and Countermeasures"
+        "baseGear": "White Noise Generator",
+        "category": "Communications and Countermeasures",
+        "rating": 5
       }
     ],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Medic Pack",
     "category": "Color Packs",
     "nuyen": 1000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Medkit",
-        "rating": 6,
+        "baseGear": "Medkit",
+        "category": "Biotech",
+        "rating": 6
+      },
+      {
+        "baseGear": "Biomonitor",
         "category": "Biotech"
       },
       {
-        "name": "Biomonitor",
-        "category": "Biotech"
-      },
-      {
-        "name": "Medkit Supplies",
+        "baseGear": "Medkit Supplies",
         "category": "Biotech"
       }
     ],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Medical Patches Pack",
     "category": "Color Packs",
     "nuyen": 1000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Slap Patch, Antidote Patch",
-        "rating": 4,
-        "category": "Biotech"
+        "baseGear": "Slap Patch, Antidote Patch",
+        "category": "Biotech",
+        "rating": 4
       },
       {
-        "name": "Slap Patch, Stim Patch",
-        "rating": 4,
-        "category": "Biotech"
+        "baseGear": "Slap Patch, Stim Patch",
+        "category": "Biotech",
+        "rating": 4
       },
       {
-        "name": "Slap Patch, Tranq Patch",
-        "rating": 5,
-        "category": "Biotech"
+        "baseGear": "Slap Patch, Tranq Patch",
+        "category": "Biotech",
+        "rating": 5
       },
       {
-        "name": "Slap Patch, Trauma Patch",
+        "baseGear": "Slap Patch, Trauma Patch",
         "category": "Biotech"
       }
     ],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Mountaineering Pack",
     "category": "Color Packs",
     "nuyen": 1000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Climbing Gear",
+        "baseGear": "Climbing Gear",
         "category": "Survival Gear"
       },
       {
-        "name": "Flashlight",
+        "baseGear": "Flashlight",
         "category": "Survival Gear"
       },
       {
-        "name": "Magnesium Torch",
+        "baseGear": "Magnesium Torch",
         "category": "Survival Gear"
       },
       {
-        "name": "Micro Flare Launcher",
+        "baseGear": "Micro Flare Launcher",
         "category": "Survival Gear"
       },
       {
-        "name": "Micro Flares",
+        "baseGear": "Micro Flares",
         "category": "Survival Gear"
       },
       {
-        "name": "Rappelling Gloves",
+        "baseGear": "Rappelling Gloves",
         "category": "Survival Gear"
       },
       {
-        "name": "Survival Kit",
+        "baseGear": "Survival Kit",
         "category": "Survival Gear"
       },
       {
-        "name": "Grapple Gun",
+        "baseGear": "Grapple Gun",
         "category": "Grapple Gun"
       },
       {
-        "name": "Standard Rope (100m)",
+        "baseGear": "Standard Rope (100m)",
         "category": "Grapple Gun"
       },
       {
-        "name": "Medkit",
-        "rating": 2,
-        "category": "Biotech"
+        "baseGear": "Medkit",
+        "category": "Biotech",
+        "rating": 2
       }
     ],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Infiltration Pack",
     "category": "Color Packs",
     "nuyen": 1000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Tool Kit",
+        "baseGear": "Tool Kit",
         "category": "Tools"
       },
       {
-        "name": "Lockpick Set",
+        "baseGear": "Lockpick Set",
         "category": "Breaking and Entering Gear"
       },
       {
-        "name": "Contacts",
-        "rating": 2,
-        "category": "Vision Devices"
+        "baseGear": "Contacts",
+        "category": "Vision Devices",
+        "rating": 2
       },
       {
-        "name": "Flashlight",
+        "baseGear": "Flashlight",
         "category": "Survival Gear"
       },
       {
-        "name": "Flashlight, Low-light",
+        "baseGear": "Flashlight, Low-light",
         "category": "Survival Gear"
       },
       {
-        "name": "Datachip",
+        "baseGear": "Datachip",
         "category": "RFID Tags"
       },
       {
-        "name": "Stealth Tags",
+        "baseGear": "Stealth Tags",
         "category": "RFID Tags"
       },
       {
-        "name": "Restraint, Plastic",
+        "baseGear": "Restraint, Plastic",
         "category": "Security Devices"
       },
       {
-        "name": "Micro-Transceiver",
+        "baseGear": "Micro-Transceiver",
         "category": "Communications and Countermeasures"
       },
       {
-        "name": "Camera",
-        "rating": 1,
-        "category": "Vision Devices"
+        "baseGear": "Camera",
+        "category": "Vision Devices",
+        "rating": 1
       }
     ],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Demolitionist Pack",
     "category": "Color Packs",
     "nuyen": 1000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Tool Kit",
+        "baseGear": "Tool Kit",
         "category": "Tools"
       },
       {
-        "name": "Commercial Explosive",
-        "rating": 5,
-        "category": "Explosives"
+        "baseGear": "Commercial Explosive",
+        "category": "Explosives",
+        "rating": 5
       },
       {
-        "name": "Detonator, Blasting Cap",
+        "baseGear": "Detonator, Blasting Cap",
         "category": "Explosives"
       }
     ],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
@@ -2346,237 +2819,287 @@
     "nuyen": 5000,
     "armourList": [
       {
-        "name": "Armor Clothing"
+        "baseArmour": "Armor Clothing"
       },
       {
-        "name": "Helmet"
+        "baseArmour": "Helmet"
       },
       {
-        "name": "Helmet"
+        "baseArmour": "Helmet"
       }
     ],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Mapsoft",
+        "baseGear": "Mapsoft",
         "category": "Software"
       },
       {
-        "name": "Shopsoft",
+        "baseGear": "Shopsoft",
         "category": "Software"
       },
       {
-        "name": "Tool Kit",
+        "baseGear": "Tool Kit",
         "category": "Tools"
       }
     ],
     "vehicleList": [
       {
-        "name": "Suzuki Mirage (Racing Bike)",
+        "baseVehicle": "Suzuki Mirage (Racing Bike)",
         "gearList": [
           {
-            "name": "Sensor Array",
-            "rating": 2,
-            "category": "Sensors"
+            "baseGear": "Sensor Array",
+            "category": "Sensors",
+            "rating": 2
           }
         ]
       }
     ],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Off Road Pack",
     "category": "Vehicle Packs",
     "nuyen": 20000,
+    "armourList": [],
+    "augmentationList": [],
+    "gearList": [],
     "vehicleList": [
       {
-        "name": "Toyota Gopher (Heavy-Duty Pickup)",
+        "baseVehicle": "Toyota Gopher (Heavy-Duty Pickup)",
         "gearList": [
           {
-            "name": "Sensor Array",
-            "rating": 2,
-            "category": "Sensors"
+            "baseGear": "Sensor Array",
+            "category": "Sensors",
+            "rating": 2
           }
         ]
       },
       {
-        "name": "Yamaha Growler (Off-Road Bike)",
+        "baseVehicle": "Yamaha Growler (Off-Road Bike)",
         "gearList": [
           {
-            "name": "Sensor Array",
-            "rating": 2,
-            "category": "Sensors"
+            "baseGear": "Sensor Array",
+            "category": "Sensors",
+            "rating": 2
           }
         ]
       }
     ],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Basic Decker Pack",
     "category": "Decker Packs",
     "nuyen": 62000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Hermes Chariot",
+        "baseGear": "Hermes Chariot",
         "category": "Cyberdecks"
       },
       {
-        "name": "Tool Kit",
+        "baseGear": "Tool Kit",
         "category": "Tools"
       },
       {
-        "name": "Tool Kit",
+        "baseGear": "Tool Kit",
         "category": "Tools"
       }
     ],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Advanced Decker Pack",
     "category": "Decker Packs",
     "nuyen": 100000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Tool Kit",
+        "baseGear": "Tool Kit",
         "category": "Tools"
       },
       {
-        "name": "Tool Kit",
+        "baseGear": "Tool Kit",
         "category": "Tools"
       },
       {
-        "name": "Sony CIY-720",
+        "baseGear": "Sony CIY-720",
         "category": "Cyberdecks"
       }
     ],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Advanced Cyberdeck Programs Pack",
     "category": "Decker Packs",
     "nuyen": 1000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Armor",
+        "baseGear": "Armor",
         "category": "Hacking Programs"
       },
       {
-        "name": "Biofeedback",
+        "baseGear": "Biofeedback",
         "category": "Hacking Programs"
       },
       {
-        "name": "Blackout",
+        "baseGear": "Blackout",
         "category": "Hacking Programs"
       },
       {
-        "name": "Guard",
+        "baseGear": "Guard",
         "category": "Hacking Programs"
       },
       {
-        "name": "Hammer",
+        "baseGear": "Hammer",
         "category": "Hacking Programs"
       },
       {
-        "name": "Mugger",
+        "baseGear": "Mugger",
         "category": "Hacking Programs"
       },
       {
-        "name": "Shell",
+        "baseGear": "Shell",
         "category": "Hacking Programs"
       }
     ],
+    "vehicleList": [],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Basic Spy Drone Pack",
     "category": "Drone Packs",
     "nuyen": 2000,
+    "armourList": [],
+    "augmentationList": [],
+    "gearList": [],
     "vehicleList": [
       {
-        "name": "Shiawase Kanmushi (Microdrone)",
+        "baseVehicle": "Shiawase Kanmushi (Microdrone)",
         "gearList": [
           {
-            "name": "Sensor Array",
-            "rating": 3,
-            "category": "Sensors"
+            "baseGear": "Sensor Array",
+            "category": "Sensors",
+            "rating": 3
           },
           {
-            "name": "Low Light",
+            "baseGear": "Low Light",
             "category": "Vision Enhancements"
           },
           {
-            "name": "Select Sound Filter",
-            "rating": 2,
-            "category": "Audio Enhancements"
+            "baseGear": "Select Sound Filter",
+            "category": "Audio Enhancements",
+            "rating": 2
           }
         ]
       }
     ],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Advanced Spy Drone Pack",
     "category": "Drone Packs",
     "nuyen": 11000,
+    "armourList": [],
+    "augmentationList": [],
+    "gearList": [],
     "vehicleList": [
       {
-        "name": "Lockheed Optic-X2 (Small)",
+        "baseVehicle": "Lockheed Optic-X2 (Small)",
         "gearList": [
           {
-            "name": "Sensor Array",
-            "rating": 3,
-            "category": "Sensors"
+            "baseGear": "Sensor Array",
+            "category": "Sensors",
+            "rating": 3
           }
         ]
       }
     ],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Basic Combat Drone Pack",
     "category": "Drone Packs",
     "nuyen": 3000,
+    "armourList": [],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Ammo: Regular Ammo",
+        "baseGear": "Ammo: Regular Ammo",
         "category": "Ammunition"
       }
     ],
     "vehicleList": [
       {
-        "name": "GM-Nissan Doberman (Medium)",
+        "baseVehicle": "GM-Nissan Doberman (Medium)",
         "gearList": [
           {
-            "name": "Sensor Array",
-            "rating": 3,
-            "category": "Sensors"
+            "baseGear": "Sensor Array",
+            "category": "Sensors",
+            "rating": 3
           }
         ],
-        "weaponList": [
+        "weaponMountList": [
           {
-            "name": "Colt Cobra TZ-120"
+            "control": "Remote [SR5]",
+            "flexibility": "Flexible [SR5]",
+            "size": "Heavy [SR5]",
+            "visibility": "External [SR5]",
+            "weaponMounted": {
+              "baseWeapon": "Colt Cobra TZ-120",
+              "accessoryList": []
+            },
+            "weaponExchangeable": true
           }
         ]
       }
     ],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
     "name": "Advanced Combat Drone Pack",
     "category": "Drone Packs",
     "nuyen": 14000,
+    "armourList": [],
+    "augmentationList": [],
+    "gearList": [],
     "vehicleList": [
       {
-        "name": "Steel Lynx Combat Drone (Large)",
+        "baseVehicle": "Steel Lynx Combat Drone (Large)",
         "gearList": [
           {
-            "name": "Sensor Array",
-            "rating": 3,
-            "category": "Sensors"
+            "baseGear": "Sensor Array",
+            "category": "Sensors",
+            "rating": 3
           }
         ]
       }
     ],
+    "weaponList": [],
+    "lifestyleList": [],
     "description": ""
   },
   {
@@ -2585,178 +3108,189 @@
     "nuyen": 21000,
     "armourList": [
       {
-        "name": "Armor Jacket"
+        "baseArmour": "Armor Jacket"
       },
       {
-        "name": "Helmet"
+        "baseArmour": "Helmet"
       }
     ],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Hermes Ikon",
+        "baseGear": "Hermes Ikon",
         "category": "Commlinks"
       },
       {
-        "name": "Meta Link",
+        "baseGear": "Meta Link",
         "category": "Commlinks"
       },
       {
-        "name": "Trodes",
+        "baseGear": "Trodes",
         "category": "Electronics Accessories"
       },
       {
-        "name": "Micro-Transceiver",
+        "baseGear": "Micro-Transceiver",
         "category": "Communications and Countermeasures"
       },
       {
-        "name": "Camera, Micro",
-        "rating": 1,
-        "category": "Vision Devices"
+        "baseGear": "Camera, Micro",
+        "category": "Vision Devices",
+        "rating": 1
       },
       {
-        "name": "Fake SIN",
-        "rating": 4,
-        "category": "ID/Credsticks"
+        "baseGear": "Fake SIN",
+        "category": "ID/Credsticks",
+        "rating": 4
       },
       {
-        "name": "Ammo: APDS",
+        "baseGear": "Ammo: APDS",
         "category": "Ammunition"
       },
       {
-        "name": "Ammo: Stick-n-Shock",
+        "baseGear": "Ammo: Stick-n-Shock",
         "category": "Ammunition"
       },
       {
-        "name": "Certified Credstick, Silver",
+        "baseGear": "Certified Credstick, Silver",
         "category": "ID/Credsticks"
       },
       {
-        "name": "Certified Credstick, Standard",
+        "baseGear": "Certified Credstick, Standard",
         "category": "ID/Credsticks"
       },
       {
-        "name": "Contacts",
-        "rating": 3,
-        "category": "Vision Devices"
+        "baseGear": "Contacts",
+        "category": "Vision Devices",
+        "rating": 3
       },
       {
-        "name": "Glasses",
-        "rating": 4,
-        "category": "Vision Devices"
+        "baseGear": "Glasses",
+        "category": "Vision Devices",
+        "rating": 4
       },
       {
-        "name": "Earbuds",
-        "rating": 3,
-        "category": "Audio Devices"
+        "baseGear": "Earbuds",
+        "category": "Audio Devices",
+        "rating": 3
       },
       {
-        "name": "Datachip",
+        "baseGear": "Datachip",
         "category": "RFID Tags"
       },
       {
-        "name": "Standard Tags",
+        "baseGear": "Standard Tags",
         "category": "RFID Tags"
       },
       {
-        "name": "Stealth Tags",
+        "baseGear": "Stealth Tags",
         "category": "RFID Tags"
       },
       {
-        "name": "Restraint, Metal",
+        "baseGear": "Restraint, Metal",
         "category": "Security Devices"
       },
       {
-        "name": "Restraint, Plastic",
+        "baseGear": "Restraint, Plastic",
         "category": "Security Devices"
       },
       {
-        "name": "Slap Patch, Trauma Patch",
+        "baseGear": "Slap Patch, Trauma Patch",
         "category": "Biotech"
       },
       {
-        "name": "Slap Patch, Stim Patch",
-        "rating": 6,
-        "category": "Biotech"
+        "baseGear": "Slap Patch, Stim Patch",
+        "category": "Biotech",
+        "rating": 6
       },
       {
-        "name": "Medkit",
-        "rating": 3,
-        "category": "Biotech"
+        "baseGear": "Medkit",
+        "category": "Biotech",
+        "rating": 3
       },
       {
-        "name": "Medkit",
-        "rating": 6,
-        "category": "Biotech"
+        "baseGear": "Medkit",
+        "category": "Biotech",
+        "rating": 6
       },
       {
-        "name": "Bug Scanner",
-        "rating": 6,
+        "baseGear": "Bug Scanner",
+        "category": "Communications and Countermeasures",
+        "rating": 6
+      },
+      {
+        "baseGear": "Tag Eraser",
         "category": "Communications and Countermeasures"
       },
       {
-        "name": "Tag Eraser",
-        "category": "Communications and Countermeasures"
-      },
-      {
-        "name": "Long Haul",
+        "baseGear": "Long Haul",
         "category": "Drugs"
       },
       {
-        "name": "Standard Rope (100m)",
+        "baseGear": "Standard Rope (100m)",
         "category": "Grapple Gun"
       },
       {
-        "name": "Survival Kit",
+        "baseGear": "Survival Kit",
         "category": "Survival Gear"
       },
       {
-        "name": "Gas Mask",
+        "baseGear": "Gas Mask",
         "category": "Survival Gear"
       },
       {
-        "name": "Crowbar",
+        "baseGear": "Crowbar",
         "category": "Breaking and Entering Gear"
       },
       {
-        "name": "Miniwelder",
+        "baseGear": "Miniwelder",
         "category": "Breaking and Entering Gear"
       }
     ],
     "vehicleList": [
       {
-        "name": "Chrysler-Nissan Jackrabbit (Subcompact)",
+        "baseVehicle": "Chrysler-Nissan Jackrabbit (Subcompact)",
         "gearList": [
           {
-            "name": "Sensor Array",
-            "rating": 2,
-            "category": "Sensors"
+            "baseGear": "Sensor Array",
+            "category": "Sensors",
+            "rating": 2
           }
         ]
       }
     ],
     "weaponList": [
       {
-        "name": "Steyr TMP",
+        "baseWeapon": "Steyr TMP",
         "accessoryList": [
           {
-            "name": "Silencer/Suppressor"
+            "baseAccessory": "Silencer/Suppressor",
+            "gearList": [],
+            "mountList": ["Barrel"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           }
         ]
       }
     ],
-    "lifestyle": {
-      "baseLifestyle": "Low",
-      "prepurchasedDuration": 1
-    },
+    "lifestyleList": [
+      {
+        "baseLifestyle": "Low",
+        "purchasedDuration": 1
+      }
+    ],
     "description": ""
   },
   {
@@ -2765,110 +3299,122 @@
     "nuyen": 5000,
     "armourList": [
       {
-        "name": "Armor Jacket"
+        "baseArmour": "Armor Jacket"
       },
       {
-        "name": "Helmet"
+        "baseArmour": "Helmet"
       }
     ],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Renraku Sensei",
+        "baseGear": "Renraku Sensei",
         "category": "Commlinks"
       },
       {
-        "name": "Trodes",
+        "baseGear": "Trodes",
         "category": "Electronics Accessories"
       },
       {
-        "name": "Meta Link",
+        "baseGear": "Meta Link",
         "category": "Commlinks"
       },
       {
-        "name": "Micro-Transceiver",
+        "baseGear": "Micro-Transceiver",
         "category": "Communications and Countermeasures"
       },
       {
-        "name": "Camera, Micro",
-        "rating": 1,
-        "category": "Vision Devices"
+        "baseGear": "Camera, Micro",
+        "category": "Vision Devices",
+        "rating": 1
       },
       {
-        "name": "Fake SIN",
-        "rating": 3,
-        "category": "ID/Credsticks"
+        "baseGear": "Fake SIN",
+        "category": "ID/Credsticks",
+        "rating": 3
       },
       {
-        "name": "Ammo: APDS",
+        "baseGear": "Ammo: APDS",
         "category": "Ammunition"
       },
       {
-        "name": "Ammo: Stick-n-Shock",
+        "baseGear": "Ammo: Stick-n-Shock",
         "category": "Ammunition"
       },
       {
-        "name": "Certified Credstick, Silver",
+        "baseGear": "Certified Credstick, Silver",
         "category": "ID/Credsticks"
       },
       {
-        "name": "Certified Credstick, Standard",
+        "baseGear": "Certified Credstick, Standard",
         "category": "ID/Credsticks"
       },
       {
-        "name": "Contacts",
-        "rating": 1,
-        "category": "Vision Devices"
+        "baseGear": "Contacts",
+        "category": "Vision Devices",
+        "rating": 1
       },
       {
-        "name": "Earbuds",
-        "rating": 1,
-        "category": "Audio Devices"
+        "baseGear": "Earbuds",
+        "category": "Audio Devices",
+        "rating": 1
       },
       {
-        "name": "Datachip",
+        "baseGear": "Datachip",
         "category": "RFID Tags"
       },
       {
-        "name": "Standard Tags",
+        "baseGear": "Standard Tags",
         "category": "RFID Tags"
       },
       {
-        "name": "Stealth Tags",
+        "baseGear": "Stealth Tags",
         "category": "RFID Tags"
       },
       {
-        "name": "Slap Patch, Trauma Patch",
+        "baseGear": "Slap Patch, Trauma Patch",
         "category": "Biotech"
       },
       {
-        "name": "Slap Patch, Stim Patch",
-        "rating": 6,
-        "category": "Biotech"
+        "baseGear": "Slap Patch, Stim Patch",
+        "category": "Biotech",
+        "rating": 6
       }
     ],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "Steyr TMP",
+        "baseWeapon": "Steyr TMP",
         "accessoryList": [
           {
-            "name": "Silencer/Suppressor"
+            "baseAccessory": "Silencer/Suppressor",
+            "gearList": [],
+            "mountList": ["Barrel"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           },
           {
-            "name": "Spare Clip"
+            "baseAccessory": "Spare Clip",
+            "gearList": [],
+            "mountList": ["None"]
           }
         ]
       }
     ],
-    "lifestyle": {
-      "baseLifestyle": "Low",
-      "prepurchasedDuration": 1
-    },
+    "lifestyleList": [
+      {
+        "baseLifestyle": "Low",
+        "purchasedDuration": 1
+      }
+    ],
     "description": ""
   },
   {
@@ -2877,115 +3423,121 @@
     "nuyen": 10000,
     "armourList": [
       {
-        "name": "Armor Jacket"
+        "baseArmour": "Armor Jacket"
       },
       {
-        "name": "Ballistic Mask"
+        "baseArmour": "Ballistic Mask"
       }
     ],
+    "augmentationList": [],
     "gearList": [
       {
-        "name": "Renraku Sensei",
+        "baseGear": "Renraku Sensei",
         "category": "Commlinks"
       },
       {
-        "name": "Fake SIN",
-        "rating": 4,
-        "category": "ID/Credsticks"
+        "baseGear": "Fake SIN",
+        "category": "ID/Credsticks",
+        "rating": 4
       },
       {
-        "name": "AR Gloves",
+        "baseGear": "AR Gloves",
         "category": "Electronics Accessories"
       },
       {
-        "name": "Trodes",
+        "baseGear": "Trodes",
         "category": "Electronics Accessories"
       },
       {
-        "name": "Subvocal Mic",
+        "baseGear": "Subvocal Mic",
         "category": "Electronics Accessories"
       },
       {
-        "name": "Earbuds",
-        "rating": 2,
-        "category": "Audio Devices"
+        "baseGear": "Earbuds",
+        "category": "Audio Devices",
+        "rating": 2
       },
       {
-        "name": "Contacts",
-        "rating": 3,
-        "category": "Vision Devices"
+        "baseGear": "Contacts",
+        "category": "Vision Devices",
+        "rating": 3
       },
       {
-        "name": "Data Tap",
+        "baseGear": "Data Tap",
         "category": "Communications and Countermeasures"
       },
       {
-        "name": "Tag Eraser",
+        "baseGear": "Tag Eraser",
         "category": "Communications and Countermeasures"
       },
       {
-        "name": "Standard Tags",
+        "baseGear": "Standard Tags",
         "category": "RFID Tags"
       },
       {
-        "name": "Datachip",
+        "baseGear": "Datachip",
         "category": "RFID Tags"
       },
       {
-        "name": "Certified Credstick, Standard",
-        "rating": 1,
-        "category": "ID/Credsticks"
+        "baseGear": "Certified Credstick, Standard",
+        "category": "ID/Credsticks",
+        "rating": 1
       },
       {
-        "name": "Crowbar",
+        "baseGear": "Crowbar",
         "category": "Breaking and Entering Gear"
       },
       {
-        "name": "Flashlight",
+        "baseGear": "Flashlight",
         "category": "Survival Gear"
       },
       {
-        "name": "Restraint, Plasteel",
+        "baseGear": "Restraint, Plasteel",
         "category": "Security Devices"
       },
       {
-        "name": "Hold-Fast Adhesive Spray",
+        "baseGear": "Hold-Fast Adhesive Spray",
         "category": "Tools of the Trade"
       },
       {
-        "name": "Ultra-Glide Industrial Lubricant (liter)",
+        "baseGear": "Ultra-Glide Industrial Lubricant (liter)",
         "category": "Tools of the Trade"
       },
       {
-        "name": "Telescoping Mirror on a Stick",
+        "baseGear": "Telescoping Mirror on a Stick",
         "category": "Tools of the Trade"
       },
       {
-        "name": "Medkit",
-        "rating": 3,
-        "category": "Biotech"
+        "baseGear": "Medkit",
+        "category": "Biotech",
+        "rating": 3
       },
       {
-        "name": "Slap Patch, Stim Patch",
-        "rating": 6,
-        "category": "Biotech"
+        "baseGear": "Slap Patch, Stim Patch",
+        "category": "Biotech",
+        "rating": 6
       },
       {
-        "name": "Slap Patch, Trauma Patch",
+        "baseGear": "Slap Patch, Trauma Patch",
         "category": "Biotech"
       }
     ],
+    "vehicleList": [],
     "weaponList": [
       {
-        "name": "Survival Knife"
+        "baseWeapon": "Survival Knife",
+        "accessoryList": []
       },
       {
-        "name": "Savalette Guardian"
+        "baseWeapon": "Savalette Guardian",
+        "accessoryList": []
       },
       {
-        "name": "Hold-Fast Sprayer"
+        "baseWeapon": "Hold-Fast Sprayer",
+        "accessoryList": []
       }
     ],
+    "lifestyleList": [],
     "description": ""
   }
 ]

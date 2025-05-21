@@ -4,31 +4,27 @@ import { XMLParser } from "fast-xml-parser";
 import path from "path";
 import { fileURLToPath } from "url";
 import * as fs from "fs";
-import { VehicleModListXmlSchema } from "./VehicleModParserSchemas.js";
-import type {
-  VehicleModListXmlType,
-  VehicleModXmlType,
-} from "./VehicleModParserSchemas.js";
+import type { VehicleModXmlType } from "./VehicleModParserSchemas.js";
 import {
   availabilityVehicleModificationSemantics,
-  convertSubsystems,
   convertVehicleModCategory,
-  convertVehicleModMaxRating,
   costVehicleModificationSemantics,
-  ratingSemantics,
   slotSemantics,
 } from "./VehicleModHelper.js";
-import { convertXmlBonus } from "../common/BonusParserHelper.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
-import { convertRatingMeaning, convertSource } from "../common/ParserHelper.js";
-import { VehicleModSchema } from "@neon-codex/common/build/schemas/equipment/rigger/vehicleModSchemas.js";
+import { ammoSemantics } from "../combat/WeaponParserHelper.js";
+import Weapons from "../../grammar/weapons.ohm-bundle.js";
+const Ammo = Weapons.Ammo;
+import { convertSource } from "../common/ParserHelper.js";
+import { WeaponMountModSchema } from "@neon-codex/common/build/schemas/equipment/rigger/weaponMountModSchemas.js";
 import VehicleModifications from "../../grammar/vehicleModifications.ohm-bundle.js";
-const Rating = VehicleModifications.Rating;
+import type { AmmunitionType } from "@neon-codex/common/build/schemas/shared/weaponSharedSchemas.js";
+import { WeaponMountModListXmlSchema } from "./WeaponMountModParserSchemas.js";
 const Slot = VehicleModifications.Slot;
 const Availability = VehicleModifications.Availability;
 const Cost = VehicleModifications.Cost;
 
-export function ParseVehicleMods() {
+export function ParseWeaponMountMods() {
   const currentPath = import.meta.url;
   const xml_string = fs.readFileSync(
     fileURLToPath(path.dirname(currentPath) + "../../../../xmls/vehicles.xml"),
@@ -46,26 +42,26 @@ export function ParseVehicleMods() {
   //   jObj.chummer.mods.mod[96]
   // );
 
-  const vehicleModListParsed = VehicleModListXmlSchema.safeParse(
+  const weaponMountModListParsed = WeaponMountModListXmlSchema.safeParse(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    jObj.chummer.mods.mod
+    jObj.chummer.weaponmountmods.mod
   );
 
-  if (!vehicleModListParsed.success) {
-    console.log(vehicleModListParsed.error.errors[0]);
+  if (!weaponMountModListParsed.success) {
+    console.log(weaponMountModListParsed.error.errors[0]);
     assert(false);
   } else {
-    console.log("vehicles.xml (Mods) initial zod parsed");
+    console.log("vehicles.xml (Weapon Mount Mods) initial zod parsed");
   }
 
-  const vehicleModListConverted = vehicleModListParsed.data.map(
-    (vehicleMod) => {
-      const convertedVehicleMod = convertVehicleMod(vehicleMod);
+  const weaponMountModListConverted = weaponMountModListParsed.data.map(
+    (weaponMountMod) => {
+      const convertedWeaponMountMod = convertWeaponMountMod(weaponMountMod);
 
-      const check = VehicleModSchema.safeParse(convertedVehicleMod);
+      const check = WeaponMountModSchema.safeParse(convertedWeaponMountMod);
       if (!check.success) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.dir(convertedVehicleMod, { depth: Infinity });
+        console.dir(convertedWeaponMountMod, { depth: Infinity });
         throw new Error(check.error.message);
       }
       return check.data;
@@ -73,11 +69,11 @@ export function ParseVehicleMods() {
   );
   // console.log(vehicleListConverted);
   const jsonFilePath = fileURLToPath(
-    path.dirname(currentPath) + "../../../../jsonFiles/vehicleMods.json"
+    path.dirname(currentPath) + "../../../../jsonFiles/weaponMountMods.json"
   );
   fs.writeFile(
     jsonFilePath,
-    JSON.stringify(vehicleModListConverted, null, 2),
+    JSON.stringify(weaponMountModListConverted, null, 2),
     (error) => {
       if (error) {
         console.error(error);
@@ -88,25 +84,21 @@ export function ParseVehicleMods() {
   );
 }
 
-const convertVehicleMod = function (vehicleMod: VehicleModXmlType) {
+const convertWeaponMountMod = function (vehicleMod: VehicleModXmlType) {
   const type = convertVehicleModCategory(vehicleMod.category);
-  const maxRating = [convertVehicleModMaxRating(vehicleMod.rating)];
-  let minRating;
-  if (vehicleMod.minrating !== undefined) {
-    const match = Rating.match(vehicleMod.minrating);
+
+  const additionalAmmo = vehicleMod.ammobonus;
+  const percentageAmmoIncrease = vehicleMod.ammobonus;
+
+  let replaceAmmo: AmmunitionType | undefined;
+  if (vehicleMod.ammoreplace !== undefined) {
+    const match = Ammo.match(vehicleMod.ammoreplace);
     if (match.failed()) {
       assert(false, match.message);
     }
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-    minRating = ratingSemantics(match).eval();
+    replaceAmmo = ammoSemantics(match).eval();
   }
-  const ratingMeaning = convertRatingMeaning(vehicleMod.ratinglabel);
-
-  const bonus =
-    vehicleMod.bonus !== undefined
-      ? convertXmlBonus(vehicleMod.bonus)
-      : undefined;
-
   let requirements;
   if (vehicleMod.required) {
     requirements = convertRequirements(vehicleMod.required);
@@ -118,15 +110,20 @@ const convertVehicleMod = function (vehicleMod: VehicleModXmlType) {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const slotCost = slotSemantics(match).eval();
 
-  const allowedSubsystemList = convertSubsystems(vehicleMod.subsystems);
-
   match = Availability.match(vehicleMod.avail.toString());
   if (match.failed()) {
     console.log(vehicleMod.name);
     assert(false, match.message);
   }
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-  const availability = availabilityVehicleModificationSemantics(match).eval();
+  let availability = availabilityVehicleModificationSemantics(match).eval();
+  // TODO: do this properly
+  availability = {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    rating: availability.rating[0],
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    restriction: availability.restriction,
+  };
 
   match = Cost.match(vehicleMod.cost.toString());
   if (match.failed()) {
@@ -143,20 +140,13 @@ const convertVehicleMod = function (vehicleMod: VehicleModXmlType) {
     name: vehicleMod.name,
     description: "",
     type: type,
-    maxRating: maxRating,
-    minRating: minRating,
-    ratingMeaning: ratingMeaning,
-    bonus: bonus,
-    capacity: vehicleMod.capacity,
-    addPhysicalBoxes: vehicleMod.conditionmonitor,
-    isDowngrade:
-      vehicleMod.downgrade !== undefined ? (true as const) : undefined,
-    requiresDroneParent:
-      vehicleMod.optionaldrone !== undefined ? (true as const) : undefined,
     requirements: requirements,
     slotCost: slotCost,
-    allowedSubsystemList: allowedSubsystemList,
-    ...(vehicleMod.hide !== undefined && { userSelectable: false as const }),
+    ...(additionalAmmo !== undefined && { additionalAmmo: additionalAmmo }),
+    ...(percentageAmmoIncrease !== undefined && {
+      percentageAmmoIncrease: percentageAmmoIncrease,
+    }),
+    ...(replaceAmmo !== undefined && { replaceAmmo: replaceAmmo }),
     availability: availability,
     cost: cost,
     source: source,

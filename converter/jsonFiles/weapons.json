@@ -34,10 +34,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Shock Pad"
+        "baseAccessory": "Shock Pad",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -140,10 +144,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Slide Mount"
+        "baseAccessory": "Slide Mount",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -246,34 +254,38 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Advanced Safety System, Basic"
+        "baseAccessory": "Advanced Safety System, Basic",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Weapon Commlink",
+        "baseAccessory": "Weapon Commlink",
         "gearList": [
           {
-            "name": "Ogre Hammer SWS Assault Cannon (Commlink)",
-            "rating": 4,
-            "category": "Commlinks"
+            "baseGear": "Ogre Hammer SWS Assault Cannon (Commlink)",
+            "category": "Commlinks",
+            "rating": 4
           }
-        ]
+        ],
+        "mountList": []
       },
       {
-        "name": "Imaging Scope",
+        "baseAccessory": "Imaging Scope",
         "gearList": [
           {
-            "name": "Image Link",
+            "baseGear": "Image Link",
             "category": "Vision Enhancements"
           },
           {
-            "name": "Flare Compensation",
+            "baseGear": "Flare Compensation",
             "category": "Vision Enhancements"
           },
           {
-            "name": "Low Light",
+            "baseGear": "Low Light",
             "category": "Vision Enhancements"
           }
-        ]
+        ],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -327,7 +339,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -480,7 +494,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -523,10 +539,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Shock Pad"
+        "baseAccessory": "Shock Pad",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -580,16 +600,24 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Bipod"
+        "baseAccessory": "Bipod",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Electronic Firing"
+        "baseAccessory": "Electronic Firing",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Melee Hardening"
+        "baseAccessory": "Melee Hardening",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -692,10 +720,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Gas-Vent 2 System"
+        "baseAccessory": "Gas-Vent 2 System",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -749,13 +781,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Shock Pad"
+        "baseAccessory": "Shock Pad",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Imaging Scope"
+        "baseAccessory": "Imaging Scope",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -808,13 +846,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Shock Pad"
+        "baseAccessory": "Shock Pad",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Imaging Scope"
+        "baseAccessory": "Imaging Scope",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -871,13 +915,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Shock Pad"
+        "baseAccessory": "Shock Pad",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Imaging Scope"
+        "baseAccessory": "Imaging Scope",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -933,16 +983,24 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Bipod"
+        "baseAccessory": "Bipod",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Shock Pad"
+        "baseAccessory": "Shock Pad",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Imaging Scope"
+        "baseAccessory": "Imaging Scope",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -998,13 +1056,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Shock Pad"
+        "baseAccessory": "Shock Pad",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Imaging Scope"
+        "baseAccessory": "Imaging Scope",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -1060,16 +1124,24 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Bipod"
+        "baseAccessory": "Bipod",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Shock Pad"
+        "baseAccessory": "Shock Pad",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Imaging Scope"
+        "baseAccessory": "Imaging Scope",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -1125,14 +1197,15 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Imaging Scope",
+        "baseAccessory": "Imaging Scope",
         "gearList": [
           {
-            "name": "Vision Enhancement",
-            "rating": 1,
-            "category": "Vision Enhancements"
+            "baseGear": "Vision Enhancement",
+            "category": "Vision Enhancements",
+            "rating": 1
           }
-        ]
+        ],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -1186,10 +1259,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Shock Pad"
+        "baseAccessory": "Shock Pad",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -1244,7 +1321,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Vintage"
+        "baseAccessory": "Vintage",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -1298,10 +1377,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Electronic Firing"
+        "baseAccessory": "Electronic Firing",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -1355,24 +1438,27 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Imaging Scope",
+        "baseAccessory": "Imaging Scope",
         "gearList": [
           {
-            "name": "Image Link",
+            "baseGear": "Image Link",
             "category": "Vision Enhancements"
           },
           {
-            "name": "Flare Compensation",
+            "baseGear": "Flare Compensation",
             "category": "Vision Enhancements"
           },
           {
-            "name": "Low Light",
+            "baseGear": "Low Light",
             "category": "Vision Enhancements"
           }
-        ]
+        ],
+        "mountList": []
       },
       {
-        "name": "Folding Stock"
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -1426,13 +1512,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Electronic Firing"
+        "baseAccessory": "Electronic Firing",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Sound Suppressor"
+        "baseAccessory": "Sound Suppressor",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -2367,10 +2459,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Survival Knife Bonuses"
+        "baseAccessory": "Survival Knife Bonuses",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Survival Knife Wireless Bonuses"
+        "baseAccessory": "Survival Knife Wireless Bonuses",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -4647,7 +4743,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Slide Mount"
+        "baseAccessory": "Slide Mount",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -6577,7 +6675,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -6674,7 +6774,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": false,
@@ -6729,7 +6831,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Tripod"
+        "baseAccessory": "Tripod",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -6784,13 +6888,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Hip Pad Bracing System"
+        "baseAccessory": "Hip Pad Bracing System",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Gas-Vent 3 System"
+        "baseAccessory": "Gas-Vent 3 System",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -6845,10 +6955,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Tripod"
+        "baseAccessory": "Tripod",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -6903,7 +7017,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -6947,7 +7063,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Sound Suppressor"
+        "baseAccessory": "Sound Suppressor",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -7002,7 +7120,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -7211,7 +7331,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": false,
@@ -7267,13 +7389,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Safe Target System, Base"
+        "baseAccessory": "Safe Target System, Base",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Advanced Safety System, Basic"
+        "baseAccessory": "Advanced Safety System, Basic",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -7478,7 +7606,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -7525,7 +7655,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": false,
@@ -8184,7 +8316,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Bipod"
+        "baseAccessory": "Bipod",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -8346,13 +8480,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Slide Mount"
+        "baseAccessory": "Slide Mount",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Slide Mount"
+        "baseAccessory": "Slide Mount",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -8407,13 +8547,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Shock Pad"
+        "baseAccessory": "Shock Pad",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Gas-Vent 2 System"
+        "baseAccessory": "Gas-Vent 2 System",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -8468,7 +8614,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Bipod"
+        "baseAccessory": "Bipod",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -8523,16 +8671,24 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Gas-Vent 2 System"
+        "baseAccessory": "Gas-Vent 2 System",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Safe Target System, Base"
+        "baseAccessory": "Safe Target System, Base",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Safe Target System, Additional set of RFID or GPS data (10 data sets)"
+        "baseAccessory": "Safe Target System, Additional set of RFID or GPS data (10 data sets)",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -8613,10 +8769,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Silencer, Ares Light Fire 75"
+        "baseAccessory": "Silencer, Ares Light Fire 75",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -8659,7 +8819,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Stock"
+        "baseAccessory": "Stock",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -8854,10 +9016,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Folding Stock"
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -8904,7 +9070,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": false,
@@ -8948,7 +9116,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -9029,7 +9199,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -9072,10 +9244,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Gas-Vent 2 System"
+        "baseAccessory": "Gas-Vent 2 System",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -9118,13 +9294,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Folding Stock"
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Electronic Firing"
+        "baseAccessory": "Electronic Firing",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -9167,7 +9349,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Folding Stock"
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -9214,7 +9398,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": false,
@@ -9258,7 +9444,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -9301,10 +9489,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Folding Stock"
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -9347,13 +9539,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Collapsed Frame"
+        "baseAccessory": "Collapsed Frame",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Folding Stock"
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -9408,7 +9606,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Sound Suppressor"
+        "baseAccessory": "Sound Suppressor",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -9451,7 +9651,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -9494,10 +9696,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Gas-Vent 2 System"
+        "baseAccessory": "Gas-Vent 2 System",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -9552,13 +9758,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Gas-Vent 2 System"
+        "baseAccessory": "Gas-Vent 2 System",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Tripod"
+        "baseAccessory": "Tripod",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -9663,13 +9875,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Foregrip"
+        "baseAccessory": "Foregrip",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Tripod"
+        "baseAccessory": "Tripod",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -9872,7 +10090,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -9975,16 +10195,24 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Advanced Safety System, Basic"
+        "baseAccessory": "Advanced Safety System, Basic",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Melee Hardening"
+        "baseAccessory": "Melee Hardening",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Trigger Removal"
+        "baseAccessory": "Trigger Removal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -10042,7 +10270,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": false,
@@ -10195,7 +10425,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -10249,10 +10481,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Shock Pad"
+        "baseAccessory": "Shock Pad",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -10355,7 +10591,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -10409,7 +10647,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Shock Pad"
+        "baseAccessory": "Shock Pad",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -10463,10 +10703,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Slide Mount"
+        "baseAccessory": "Slide Mount",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Slide Mount"
+        "baseAccessory": "Slide Mount",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -10520,7 +10764,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Folding Stock"
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -10623,10 +10869,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Folding Stock"
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -10729,10 +10979,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Shock Pad"
+        "baseAccessory": "Shock Pad",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Imaging Scope"
+        "baseAccessory": "Imaging Scope",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -10786,13 +11040,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Bipod"
+        "baseAccessory": "Bipod",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Sound Suppressor"
+        "baseAccessory": "Sound Suppressor",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -10846,10 +11106,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Shock Pad"
+        "baseAccessory": "Shock Pad",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Imaging Scope"
+        "baseAccessory": "Imaging Scope",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -10903,7 +11167,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Shock Pad"
+        "baseAccessory": "Shock Pad",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -10957,7 +11223,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Shock Pad"
+        "baseAccessory": "Shock Pad",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -11011,13 +11279,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Silencer/Suppressor"
+        "baseAccessory": "Silencer/Suppressor",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Imaging Scope"
+        "baseAccessory": "Imaging Scope",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Shock Pad"
+        "baseAccessory": "Shock Pad",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -11071,7 +11345,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Imaging Scope"
+        "baseAccessory": "Imaging Scope",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -11125,10 +11401,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Imaging Scope"
+        "baseAccessory": "Imaging Scope",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Shock Pad"
+        "baseAccessory": "Shock Pad",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -11231,39 +11511,49 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Bipod"
+        "baseAccessory": "Bipod",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Weapon Commlink",
+        "baseAccessory": "Weapon Commlink",
         "gearList": [
           {
-            "name": "Terracotta Arms AM-47 (Commlink)",
-            "rating": 5,
-            "category": "Commlinks"
+            "baseGear": "Terracotta Arms AM-47 (Commlink)",
+            "category": "Commlinks",
+            "rating": 5
           }
-        ]
+        ],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Imaging Scope",
+        "baseAccessory": "Imaging Scope",
         "gearList": [
           {
-            "name": "Image Link",
+            "baseGear": "Image Link",
             "category": "Vision Enhancements"
           },
           {
-            "name": "Low Light",
+            "baseGear": "Low Light",
             "category": "Vision Enhancements"
           }
-        ]
+        ],
+        "mountList": []
       },
       {
-        "name": "Underbarrel Weight"
+        "baseAccessory": "Underbarrel Weight",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Safe Target System, Base"
+        "baseAccessory": "Safe Target System, Base",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -11896,7 +12186,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Vintage"
+        "baseAccessory": "Vintage",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -11950,7 +12242,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Imaging Scope"
+        "baseAccessory": "Imaging Scope",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -12090,21 +12384,24 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Imaging Scope",
+        "baseAccessory": "Imaging Scope",
         "gearList": [
           {
-            "name": "Image Link",
+            "baseGear": "Image Link",
             "category": "Vision Enhancements"
           },
           {
-            "name": "Vision Enhancement",
-            "rating": 2,
-            "category": "Vision Enhancements"
+            "baseGear": "Vision Enhancement",
+            "category": "Vision Enhancements",
+            "rating": 2
           }
-        ]
+        ],
+        "mountList": []
       },
       {
-        "name": "Extreme Environment Modification",
+        "baseAccessory": "Extreme Environment Modification",
+        "gearList": [],
+        "mountList": [],
         "rating": 1
       }
     ],
@@ -12159,7 +12456,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Vintage"
+        "baseAccessory": "Vintage",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -12213,18 +12512,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Imaging Scope",
+        "baseAccessory": "Imaging Scope",
         "gearList": [
           {
-            "name": "Image Link",
+            "baseGear": "Image Link",
             "category": "Vision Enhancements"
           },
           {
-            "name": "Vision Enhancement",
-            "rating": 1,
-            "category": "Vision Enhancements"
+            "baseGear": "Vision Enhancement",
+            "category": "Vision Enhancements",
+            "rating": 1
           }
-        ]
+        ],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -12266,7 +12566,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Vintage"
+        "baseAccessory": "Vintage",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -12308,7 +12610,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Imaging Scope"
+        "baseAccessory": "Imaging Scope",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -12362,7 +12666,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Vintage"
+        "baseAccessory": "Vintage",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -12404,10 +12710,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Folding Stock"
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Sound Suppressor"
+        "baseAccessory": "Sound Suppressor",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -12449,19 +12759,29 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Folding Stock"
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Slide Mount"
+        "baseAccessory": "Slide Mount",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Slide Mount"
+        "baseAccessory": "Slide Mount",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Foregrip"
+        "baseAccessory": "Foregrip",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -12503,10 +12823,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Folding Stock"
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -12548,13 +12872,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Folding Stock"
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Gas-Vent 2 System"
+        "baseAccessory": "Gas-Vent 2 System",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -12600,7 +12930,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": false,
@@ -12643,10 +12975,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Stock"
+        "baseAccessory": "Stock",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Flashlight, Standard"
+        "baseAccessory": "Flashlight, Standard",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -12688,13 +13024,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Folding Stock"
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Sound Suppressor"
+        "baseAccessory": "Sound Suppressor",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -12736,10 +13078,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Sound Suppressor"
+        "baseAccessory": "Sound Suppressor",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -12780,13 +13126,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Sound Suppressor"
+        "baseAccessory": "Sound Suppressor",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Gas-Vent 2 System"
+        "baseAccessory": "Gas-Vent 2 System",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -12865,10 +13217,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Folding Stock"
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -12910,10 +13266,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Folding Stock"
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -12968,7 +13328,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -13121,10 +13483,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Gecko Grip"
+        "baseAccessory": "Gecko Grip",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -13677,10 +14043,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Shock Pad"
+        "baseAccessory": "Shock Pad",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -17105,7 +17475,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -17958,7 +18330,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Holographic Sight"
+        "baseAccessory": "Holographic Sight",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -18013,7 +18387,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Ammo Skip"
+        "baseAccessory": "Ammo Skip",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -18408,7 +18784,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -18514,7 +18892,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Slide Mount"
+        "baseAccessory": "Slide Mount",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -18570,13 +18950,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Advanced Safety System, Basic"
+        "baseAccessory": "Advanced Safety System, Basic",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Gas-Vent 2 System"
+        "baseAccessory": "Gas-Vent 2 System",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -18750,10 +19136,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Flashlight, Standard"
+        "baseAccessory": "Flashlight, Standard",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Advanced Safety System, Basic"
+        "baseAccessory": "Advanced Safety System, Basic",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -18808,7 +19198,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -18905,13 +19297,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Folding Stock"
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Gas-Vent 2 System"
+        "baseAccessory": "Gas-Vent 2 System",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -19007,10 +19405,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Gas-Vent 1 System"
+        "baseAccessory": "Gas-Vent 1 System",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -19054,7 +19456,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Electronic Firing"
+        "baseAccessory": "Electronic Firing",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -19109,10 +19513,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Custom Look"
+        "baseAccessory": "Custom Look",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -19980,7 +20388,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Imaging Scope (2050)"
+        "baseAccessory": "Imaging Scope (2050)",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -20168,7 +20578,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Stock"
+        "baseAccessory": "Stock",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -20287,7 +20699,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Stock"
+        "baseAccessory": "Stock",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -20330,7 +20744,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Stock"
+        "baseAccessory": "Stock",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -20411,7 +20827,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Folding Stock"
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -20505,7 +20923,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Silencer/Suppressor"
+        "baseAccessory": "Silencer/Suppressor",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -20610,7 +21030,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -20742,7 +21164,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Folding Stock"
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -20784,10 +21208,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Silencer/Suppressor"
+        "baseAccessory": "Silencer/Suppressor",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -20829,13 +21257,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Gas-Vent 2 System"
+        "baseAccessory": "Gas-Vent 2 System",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Folding Stock"
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -20877,13 +21311,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Folding Stock"
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Gas-Vent 2 System"
+        "baseAccessory": "Gas-Vent 2 System",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -20925,10 +21365,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Folding Stock"
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -21183,13 +21627,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Folding Stock"
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Gas-Vent 2 System"
+        "baseAccessory": "Gas-Vent 2 System",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -21243,10 +21693,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Silencer/Suppressor"
+        "baseAccessory": "Silencer/Suppressor",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Imaging Scope (2050)"
+        "baseAccessory": "Imaging Scope (2050)",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -21300,7 +21754,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Imaging Scope (2050)"
+        "baseAccessory": "Imaging Scope (2050)",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -21354,7 +21810,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Imaging Scope (2050)"
+        "baseAccessory": "Imaging Scope (2050)",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -21408,10 +21866,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Imaging Scope (2050)"
+        "baseAccessory": "Imaging Scope (2050)",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Shock Pad"
+        "baseAccessory": "Shock Pad",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -21465,7 +21927,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal (2050)"
+        "baseAccessory": "Smartgun System, Internal (2050)",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -21519,7 +21983,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Gas-Vent 1 System"
+        "baseAccessory": "Gas-Vent 1 System",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -21566,7 +22032,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Gas-Vent 1 System"
+        "baseAccessory": "Gas-Vent 1 System",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -21609,7 +22077,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Gas-Vent 1 System"
+        "baseAccessory": "Gas-Vent 1 System",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -21664,7 +22134,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Gas-Vent 1 System"
+        "baseAccessory": "Gas-Vent 1 System",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -22724,7 +23196,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -22827,7 +23301,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -22881,7 +23357,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Ceramic/Plasteel Components",
+        "baseAccessory": "Ceramic/Plasteel Components",
+        "gearList": [],
+        "mountList": [],
         "rating": 4
       }
     ],
@@ -22936,10 +23414,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Electronic Firing"
+        "baseAccessory": "Electronic Firing",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Slide Mount"
+        "baseAccessory": "Slide Mount",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -22994,13 +23476,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Long Barrel"
+        "baseAccessory": "Long Barrel",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Improved Range Finder"
+        "baseAccessory": "Improved Range Finder",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -23105,10 +23593,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Flashlight, Standard"
+        "baseAccessory": "Flashlight, Standard",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -23151,11 +23643,15 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Ceramic/Plasteel Components",
+        "baseAccessory": "Ceramic/Plasteel Components",
+        "gearList": [],
+        "mountList": [],
         "rating": 2
       },
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -23197,25 +23693,39 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Trigger Removal"
+        "baseAccessory": "Trigger Removal",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Electronic Firing"
+        "baseAccessory": "Electronic Firing",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Advanced Safety System, Basic"
+        "baseAccessory": "Advanced Safety System, Basic",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Gas-Vent 2 System"
+        "baseAccessory": "Gas-Vent 2 System",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Safe Target System, Base"
+        "baseAccessory": "Safe Target System, Base",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Extended Clip",
+        "baseAccessory": "Extended Clip",
+        "gearList": [],
+        "mountList": [],
         "rating": 1
       }
     ],
@@ -23258,17 +23768,25 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Folding Stock"
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Gas-Vent 1 System"
+        "baseAccessory": "Gas-Vent 1 System",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Ceramic/Plasteel Components",
+        "baseAccessory": "Ceramic/Plasteel Components",
+        "gearList": [],
+        "mountList": [],
         "rating": 1
       },
       {
-        "name": "Sling"
+        "baseAccessory": "Sling",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -23310,17 +23828,25 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Folding Stock"
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Gas-Vent 1 System"
+        "baseAccessory": "Gas-Vent 1 System",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Ceramic/Plasteel Components",
+        "baseAccessory": "Ceramic/Plasteel Components",
+        "gearList": [],
+        "mountList": [],
         "rating": 1
       },
       {
-        "name": "Sling"
+        "baseAccessory": "Sling",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -23374,13 +23900,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Folding Stock"
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Slide Mount"
+        "baseAccessory": "Slide Mount",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Slide Mount"
+        "baseAccessory": "Slide Mount",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -23423,19 +23955,29 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Trigger Removal"
+        "baseAccessory": "Trigger Removal",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Electronic Firing"
+        "baseAccessory": "Electronic Firing",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Silencer/Suppressor"
+        "baseAccessory": "Silencer/Suppressor",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Advanced Safety System, Basic"
+        "baseAccessory": "Advanced Safety System, Basic",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -23542,13 +24084,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Imaging Scope"
+        "baseAccessory": "Imaging Scope",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Foregrip"
+        "baseAccessory": "Foregrip",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -23607,13 +24155,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Imaging Scope"
+        "baseAccessory": "Imaging Scope",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Foregrip"
+        "baseAccessory": "Foregrip",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -23669,13 +24223,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Imaging Scope"
+        "baseAccessory": "Imaging Scope",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Bipod"
+        "baseAccessory": "Bipod",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -23731,13 +24291,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Imaging Scope"
+        "baseAccessory": "Imaging Scope",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Bipod"
+        "baseAccessory": "Bipod",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -23793,28 +24359,44 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Folding Stock"
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Gas-Vent 2 System"
+        "baseAccessory": "Gas-Vent 2 System",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Slide Mount"
+        "baseAccessory": "Slide Mount",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Slide Mount"
+        "baseAccessory": "Slide Mount",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Slide Mount"
+        "baseAccessory": "Slide Mount",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Foregrip"
+        "baseAccessory": "Foregrip",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Imaging Scope"
+        "baseAccessory": "Imaging Scope",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -23921,10 +24503,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Shock Pad"
+        "baseAccessory": "Shock Pad",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -24031,13 +24617,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Imaging Scope"
+        "baseAccessory": "Imaging Scope",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Slide Mount"
+        "baseAccessory": "Slide Mount",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Bipod"
+        "baseAccessory": "Bipod",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -24092,28 +24684,44 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Imaging Scope"
+        "baseAccessory": "Imaging Scope",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Bipod"
+        "baseAccessory": "Bipod",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Trigger Removal"
+        "baseAccessory": "Trigger Removal",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Electronic Firing"
+        "baseAccessory": "Electronic Firing",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Easy Breakdown (Unpowered)"
+        "baseAccessory": "Easy Breakdown (Unpowered)",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Silencer/Suppressor"
+        "baseAccessory": "Silencer/Suppressor",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Advanced Safety System, Basic"
+        "baseAccessory": "Advanced Safety System, Basic",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -24216,13 +24824,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Folding Stock"
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Slide Mount"
+        "baseAccessory": "Slide Mount",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -24276,7 +24890,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Shock Pad"
+        "baseAccessory": "Shock Pad",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -24330,7 +24946,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Shock Pad"
+        "baseAccessory": "Shock Pad",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -24385,7 +25003,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Shock Pad"
+        "baseAccessory": "Shock Pad",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -24439,20 +25059,30 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Extended Clip",
+        "baseAccessory": "Extended Clip",
+        "gearList": [],
+        "mountList": [],
         "rating": 1
       },
       {
-        "name": "Long Barrel"
+        "baseAccessory": "Long Barrel",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Foregrip"
+        "baseAccessory": "Foregrip",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Bipod"
+        "baseAccessory": "Bipod",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Imaging Scope"
+        "baseAccessory": "Imaging Scope",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -26110,7 +26740,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Ceramic/Plasteel Components",
+        "baseAccessory": "Ceramic/Plasteel Components",
+        "gearList": [],
+        "mountList": [],
         "rating": 6
       }
     ],
@@ -26152,7 +26784,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -26193,13 +26827,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Electronic Firing"
+        "baseAccessory": "Electronic Firing",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Personalized Grip"
+        "baseAccessory": "Personalized Grip",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -26253,7 +26893,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -26309,7 +26951,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Red Dot Sight"
+        "baseAccessory": "Red Dot Sight",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -26468,13 +27112,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Electronic Firing"
+        "baseAccessory": "Electronic Firing",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Personalized Grip"
+        "baseAccessory": "Personalized Grip",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -26527,7 +27177,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Long Barrel"
+        "baseAccessory": "Long Barrel",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -26582,10 +27234,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Gas-Vent 2 System"
+        "baseAccessory": "Gas-Vent 2 System",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -26639,7 +27295,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Custom Look"
+        "baseAccessory": "Custom Look",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -26694,11 +27352,15 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Ceramic/Plasteel Components",
+        "baseAccessory": "Ceramic/Plasteel Components",
+        "gearList": [],
+        "mountList": [],
         "rating": 6
       },
       {
-        "name": "Silencer/Suppressor"
+        "baseAccessory": "Silencer/Suppressor",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -26751,8 +27413,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Laser Sight",
-        "mount": ["Top"]
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": ["Top"]
       }
     ],
     "allowAccessories": true,
@@ -26807,8 +27470,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Laser Sight",
-        "mount": ["Top"]
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": ["Top"]
       }
     ],
     "allowAccessories": true,
@@ -26863,10 +27527,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Melee Hardening"
+        "baseAccessory": "Melee Hardening",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -27120,7 +27788,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -27162,10 +27832,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Safe Target System, Base"
+        "baseAccessory": "Safe Target System, Base",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -27207,11 +27881,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Folding Stock",
-        "mount": ["Stock"]
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": ["Stock"]
       }
     ],
     "allowAccessories": true,
@@ -27266,7 +27943,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Folding Stock"
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -27320,19 +27999,24 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Improved Range Finder",
-        "mount": ["Top"]
+        "baseAccessory": "Improved Range Finder",
+        "gearList": [],
+        "mountList": ["Top"]
       },
       {
-        "name": "Flashlight, Low Light",
-        "mount": ["Side"]
+        "baseAccessory": "Flashlight, Low Light",
+        "gearList": [],
+        "mountList": ["Side"]
       },
       {
-        "name": "Slide Mount",
-        "mount": ["Under"]
+        "baseAccessory": "Slide Mount",
+        "gearList": [],
+        "mountList": ["Under"]
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -27386,7 +28070,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Laser Sight"
+        "baseAccessory": "Laser Sight",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -27441,11 +28127,15 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Extreme Environment Modification",
+        "baseAccessory": "Extreme Environment Modification",
+        "gearList": [],
+        "mountList": [],
         "rating": 1
       },
       {
-        "name": "Melee Hardening"
+        "baseAccessory": "Melee Hardening",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -27548,11 +28238,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Slide Mount",
-        "mount": ["Under"]
+        "baseAccessory": "Slide Mount",
+        "gearList": [],
+        "mountList": ["Under"]
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -27611,7 +28304,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -27667,11 +28362,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Slide Mount",
-        "mount": ["Under"]
+        "baseAccessory": "Slide Mount",
+        "gearList": [],
+        "mountList": ["Under"]
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -27727,11 +28425,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Slide Mount",
-        "mount": ["Under"]
+        "baseAccessory": "Slide Mount",
+        "gearList": [],
+        "mountList": ["Under"]
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -27787,12 +28488,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Additional Clip/Magazine",
-        "mount": ["Side"]
+        "baseAccessory": "Additional Clip/Magazine",
+        "gearList": [],
+        "mountList": ["Side"]
       },
       {
-        "name": "Imaging Scope",
-        "mount": ["Top"]
+        "baseAccessory": "Imaging Scope",
+        "gearList": [],
+        "mountList": ["Top"]
       }
     ],
     "allowAccessories": true,
@@ -27846,11 +28549,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Additional Clip/Magazine",
-        "mount": ["Side"]
+        "baseAccessory": "Additional Clip/Magazine",
+        "gearList": [],
+        "mountList": ["Side"]
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -27953,10 +28659,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Melee Hardening"
+        "baseAccessory": "Melee Hardening",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Shock Pad"
+        "baseAccessory": "Shock Pad",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -28052,10 +28762,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Personalized Grip"
+        "baseAccessory": "Personalized Grip",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -28110,10 +28824,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Personalized Grip"
+        "baseAccessory": "Personalized Grip",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -28156,10 +28874,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Personalized Grip"
+        "baseAccessory": "Personalized Grip",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -28308,7 +29030,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Imaging Scope"
+        "baseAccessory": "Imaging Scope",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -28360,7 +29084,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Foregrip"
+        "baseAccessory": "Foregrip",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -28721,7 +29447,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -28966,13 +29694,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Breeching Teeth"
+        "baseAccessory": "Breeching Teeth",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Foregrip"
+        "baseAccessory": "Foregrip",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Modified Pump Handle"
+        "baseAccessory": "Modified Pump Handle",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -29121,10 +29855,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Shock Pad"
+        "baseAccessory": "Shock Pad",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -29318,7 +30056,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Extreme Environment Modification",
+        "baseAccessory": "Extreme Environment Modification",
+        "gearList": [],
+        "mountList": [],
         "rating": 2
       }
     ],
@@ -30311,19 +31051,29 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Maker Mag"
+        "baseAccessory": "Maker Mag",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Personalized Grip"
+        "baseAccessory": "Personalized Grip",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Silencer/Suppressor"
+        "baseAccessory": "Silencer/Suppressor",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Plastic Components",
+        "baseAccessory": "Plastic Components",
+        "gearList": [],
+        "mountList": [],
         "rating": 6
       }
     ],
@@ -30478,19 +31228,29 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Silencer/Suppressor"
+        "baseAccessory": "Silencer/Suppressor",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Shock Pad"
+        "baseAccessory": "Shock Pad",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Imaging Scope"
+        "baseAccessory": "Imaging Scope",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Easy Breakdown (Unpowered)"
+        "baseAccessory": "Easy Breakdown (Unpowered)",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -30582,10 +31342,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smartgun System, Internal"
+        "baseAccessory": "Smartgun System, Internal",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Trigger Removal"
+        "baseAccessory": "Trigger Removal",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -31249,7 +32013,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Metahuman Adaptation"
+        "baseAccessory": "Metahuman Adaptation",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -31302,7 +32068,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Metahuman Adaptation"
+        "baseAccessory": "Metahuman Adaptation",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -31357,10 +32125,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Metahuman Adaptation"
+        "baseAccessory": "Metahuman Adaptation",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Folding Stock"
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -31407,7 +32179,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Metahuman Adaptation"
+        "baseAccessory": "Metahuman Adaptation",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -31453,13 +32227,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Metahuman Adaptation"
+        "baseAccessory": "Metahuman Adaptation",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Foregrip"
+        "baseAccessory": "Foregrip",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Gas-Vent 2 System"
+        "baseAccessory": "Gas-Vent 2 System",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -31517,10 +32297,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Metahuman Adaptation"
+        "baseAccessory": "Metahuman Adaptation",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Sling"
+        "baseAccessory": "Sling",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -31575,10 +32359,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Metahuman Adaptation"
+        "baseAccessory": "Metahuman Adaptation",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Folding Stock"
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -31632,10 +32420,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Metahuman Adaptation"
+        "baseAccessory": "Metahuman Adaptation",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Shock Pad"
+        "baseAccessory": "Shock Pad",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -31689,7 +32481,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Metahuman Adaptation"
+        "baseAccessory": "Metahuman Adaptation",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -31743,7 +32537,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Metahuman Adaptation"
+        "baseAccessory": "Metahuman Adaptation",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -31798,7 +32594,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Metahuman Adaptation"
+        "baseAccessory": "Metahuman Adaptation",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -31852,10 +32650,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Metahuman Adaptation"
+        "baseAccessory": "Metahuman Adaptation",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Folding Stock"
+        "baseAccessory": "Folding Stock",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -31909,7 +32711,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Metahuman Adaptation"
+        "baseAccessory": "Metahuman Adaptation",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -31951,21 +32755,24 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Metahuman Adaptation"
+        "baseAccessory": "Metahuman Adaptation",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Weapon Commlink",
+        "baseAccessory": "Weapon Commlink",
         "gearList": [
           {
-            "name": "Meta Link",
+            "baseGear": "Meta Link",
             "category": "Commlinks"
           },
           {
-            "name": "Tutorsoft",
-            "rating": 1,
-            "category": "Software"
+            "baseGear": "Tutorsoft",
+            "category": "Software",
+            "rating": 1
           }
-        ]
+        ],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -32021,7 +32828,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Metahuman Adaptation"
+        "baseAccessory": "Metahuman Adaptation",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -32069,7 +32878,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Metahuman Adaptation"
+        "baseAccessory": "Metahuman Adaptation",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -32127,10 +32938,14 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Bipod"
+        "baseAccessory": "Bipod",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Metahuman Adaptation"
+        "baseAccessory": "Metahuman Adaptation",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -32185,7 +33000,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Metahuman Adaptation"
+        "baseAccessory": "Metahuman Adaptation",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -32239,7 +33056,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Metahuman Adaptation"
+        "baseAccessory": "Metahuman Adaptation",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -32281,7 +33100,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Metahuman Adaptation"
+        "baseAccessory": "Metahuman Adaptation",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -32327,13 +33148,19 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Metahuman Adaptation"
+        "baseAccessory": "Metahuman Adaptation",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Imaging Scope"
+        "baseAccessory": "Imaging Scope",
+        "gearList": [],
+        "mountList": []
       },
       {
-        "name": "Matrix Signal Scanner"
+        "baseAccessory": "Matrix Signal Scanner",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -32379,7 +33206,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Metahuman Adaptation"
+        "baseAccessory": "Metahuman Adaptation",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -32435,24 +33264,25 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Smart Firing Platform",
+        "baseAccessory": "Smart Firing Platform",
         "gearList": [
           {
-            "name": "Clearsight Autosoft",
-            "rating": 1,
-            "category": "Autosofts"
+            "baseGear": "Clearsight Autosoft",
+            "category": "Autosofts",
+            "rating": 1
           },
           {
-            "name": "[Weapon] Targeting Autosoft",
-            "rating": 2,
-            "category": "Autosofts"
+            "baseGear": "[Weapon] Targeting Autosoft",
+            "category": "Autosofts",
+            "rating": 2
           },
           {
-            "name": "Krime Ripper Sensor Array",
-            "rating": 3,
-            "category": "Sensors"
+            "baseGear": "Krime Ripper Sensor Array",
+            "category": "Sensors",
+            "rating": 3
           }
-        ]
+        ],
+        "mountList": []
       }
     ],
     "allowAccessories": true,
@@ -32582,7 +33412,9 @@
     ],
     "includedAccessoryList": [
       {
-        "name": "Metahuman Adaptation"
+        "baseAccessory": "Metahuman Adaptation",
+        "gearList": [],
+        "mountList": []
       }
     ],
     "allowAccessories": true,

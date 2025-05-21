@@ -6,11 +6,11 @@ import type { WeaponAccessoryXmlType } from "./WeaponAccessoryParserSchemas.js";
 import { WeaponAccessoryListXmlSchema } from "./WeaponAccessoryParserSchemas.js";
 import type {
   AmmoCapacityCalculationType,
-  WeaponAccessorySummaryType,
+  WeaponAccessoryType,
 } from "@neon-codex/common/build/schemas/equipment/combat/weaponAccessorySchemas.js";
 import {
-  WeaponAccessorySummaryListSchema,
-  WeaponAccessorySummarySchema,
+  WeaponAccessoryListSchema,
+  WeaponAccessorySchema,
 } from "@neon-codex/common/build/schemas/equipment/combat/weaponAccessorySchemas.js";
 import * as fs from "fs";
 import assert from "assert";
@@ -94,7 +94,7 @@ export function ParseWeaponAccessories() {
 
   const convertWeaponAccessory = function (
     weaponAccessory: WeaponAccessoryXmlType
-  ): WeaponAccessorySummaryType {
+  ): WeaponAccessoryType {
     // console.log(`\n${weaponAccessory.name}`);
 
     const mountLocations = getWeaponMounts(weaponAccessory.mount);
@@ -220,9 +220,7 @@ export function ParseWeaponAccessories() {
     // .filter((weaponAccessory) => weaponAccessory.name === "Concealable Holster")
     .map((weaponAccessory: WeaponAccessoryXmlType) => {
       const convertedWeaponAccessory = convertWeaponAccessory(weaponAccessory);
-      const check = WeaponAccessorySummarySchema.safeParse(
-        convertedWeaponAccessory
-      );
+      const check = WeaponAccessorySchema.safeParse(convertedWeaponAccessory);
       if (!check.success) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         console.dir(convertedWeaponAccessory, { depth: Infinity });
@@ -231,7 +229,7 @@ export function ParseWeaponAccessories() {
       return check.data;
     });
   // console.log(weaponAccessoryListConverted);
-  const check = WeaponAccessorySummaryListSchema.safeParse(
+  const check = WeaponAccessoryListSchema.safeParse(
     weaponAccessoryListConverted
   );
   if (!check.success) {

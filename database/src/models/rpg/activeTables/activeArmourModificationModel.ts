@@ -1,8 +1,19 @@
-import { Entity, ManyToOne, PrimaryKey, Property } from "@mikro-orm/postgresql";
+import {
+  Collection,
+  Entity,
+  ManyToOne,
+  OneToMany,
+  PrimaryKey,
+  Property,
+} from "@mikro-orm/postgresql";
 import type { Ref } from "@mikro-orm/postgresql";
-import { CustomisedArmours } from "./activeArmourModel.js";
+import { CustomisedArmours, PackArmours } from "./activeArmourModel.js";
 import { Armours } from "../equipment/combat/armourModel.js";
 import { ArmourModifications } from "../equipment/combat/armourModificationModel.js";
+import {
+  ActiveArmourModificationIncludedGears,
+  ArmourModificationIncludedGears,
+} from "./activeGearModel.js";
 
 // Links to either a custom armour, or a armour in the table.
 // When we create a custom armour that already has a modification
@@ -21,6 +32,15 @@ export abstract class ActiveArmourModifications {
   @ManyToOne({ entity: () => ArmourModifications, ref: true })
   armourModification!: Ref<ArmourModifications>;
 
+  @OneToMany(
+    () => ActiveArmourModificationIncludedGears,
+    (activeArmourModIncludedGear) =>
+      activeArmourModIncludedGear.activeArmourModification
+  )
+  includedGearList = new Collection<ActiveArmourModificationIncludedGears>(
+    this
+  );
+
   @Property({ nullable: true })
   rating?: number;
 
@@ -36,12 +56,27 @@ export class IncludedArmourModifications extends ActiveArmourModifications {
   standardArmour!: Ref<Armours>;
 
   constructor(
-    armour: Ref<Armours>,
+    standardArmour: Ref<Armours>,
     armourModification: Ref<ArmourModifications>,
     rating?: number
   ) {
     super(armourModification, rating);
-    this.standardArmour = armour;
+    this.standardArmour = standardArmour;
+  }
+}
+
+@Entity({ discriminatorValue: "pack" })
+export class PackArmourModifications extends ActiveArmourModifications {
+  @ManyToOne({ entity: () => PackArmours, ref: true })
+  packArmour!: Ref<PackArmours>;
+
+  constructor(
+    packArmour: Ref<PackArmours>,
+    armourModification: Ref<ArmourModifications>,
+    rating?: number
+  ) {
+    super(armourModification, rating);
+    this.packArmour = packArmour;
   }
 }
 
@@ -50,7 +85,12 @@ export class CustomisedArmourModifications extends ActiveArmourModifications {
   @ManyToOne({ entity: () => CustomisedArmours, ref: true })
   customisedArmour!: Ref<CustomisedArmours>;
 
-  constructor(armourModification: Ref<ArmourModifications>, rating?: number) {
+  constructor(
+    customisedArmour: Ref<CustomisedArmours>,
+    armourModification: Ref<ArmourModifications>,
+    rating?: number
+  ) {
     super(armourModification, rating);
+    this.customisedArmour = customisedArmour;
   }
 }

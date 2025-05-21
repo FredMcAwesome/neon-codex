@@ -25,12 +25,10 @@ import {
 } from "@neon-codex/common/build/enums.js";
 import type {
   AccuracyType,
-  AmmunitionType,
   ArmourPenetrationType,
   AvailabilityWeaponType,
   CostWeaponType,
-  DamageType,
-  WeaponSummaryType,
+  WeaponType,
 } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
 import { weaponXmlSubtypeEnum } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 import { Skills } from "../../abilities/skillModel.js";
@@ -39,6 +37,10 @@ import { Gears } from "../other/gearModel.js";
 import { WeaponRanges } from "./helperTables/weaponRangeModel.js";
 import { IncludedWeaponAccessories } from "../../activeTables/activeWeaponAccessoryModel.js";
 import { ActiveWeapons } from "../../activeTables/activeWeaponModel.js";
+import type {
+  AmmunitionType,
+  DamageType,
+} from "@neon-codex/common/build/schemas/shared/weaponSharedSchemas.js";
 
 @Entity({
   discriminatorColumn: "type",
@@ -136,7 +138,7 @@ export abstract class Weapons {
   @Property({ length: 5000, nullable: true })
   wireless?: string;
 
-  constructor(dto: WeaponSummaryType, relatedSkill: Ref<Skills>) {
+  constructor(dto: WeaponType, relatedSkill: Ref<Skills>) {
     // this.id = dto.id;
     this.name = dto.name;
     this.type = dto.type;
@@ -170,7 +172,7 @@ export abstract class Weapons {
   }
 }
 
-type MeleeWeaponType = WeaponSummaryType & {
+type MeleeWeaponType = WeaponType & {
   type: weaponTypeEnum.Melee;
 };
 @Entity({ discriminatorValue: weaponTypeEnum.Melee })
@@ -203,7 +205,7 @@ export abstract class RangedWeapons extends Weapons {
   extraClassification?: weaponExtraClassificationEnum;
 
   constructor(
-    dto: WeaponSummaryType,
+    dto: WeaponType,
     relatedSkill: Ref<Skills>,
     extraClassification?: weaponExtraClassificationEnum
   ) {
@@ -214,7 +216,7 @@ export abstract class RangedWeapons extends Weapons {
   }
 }
 
-type ProjectileWeaponType = WeaponSummaryType & {
+type ProjectileWeaponType = WeaponType & {
   type: weaponTypeEnum.Projectile;
 };
 @Entity({ discriminatorValue: weaponTypeEnum.Projectile })
@@ -228,7 +230,7 @@ export class ProjectileWeapons extends RangedWeapons {
   }
 }
 
-type FirearmWeaponType = WeaponSummaryType & {
+type FirearmWeaponType = WeaponType & {
   type: weaponTypeEnum.Firearm;
 };
 @Entity({ discriminatorValue: weaponTypeEnum.Firearm })
@@ -285,7 +287,7 @@ export class FirearmWeapons extends RangedWeapons {
   }
 }
 
-type ExplosiveWeaponType = WeaponSummaryType & {
+type ExplosiveWeaponType = WeaponType & {
   type: weaponTypeEnum.Explosive;
 };
 @Entity({ discriminatorValue: weaponTypeEnum.Explosive })

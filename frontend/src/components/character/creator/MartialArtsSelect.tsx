@@ -128,7 +128,7 @@ export const MartialArtSelect = function ({
                 {martialArtSelected.techniqueList.length} (maximum 5)
                 {martialArtSelected.techniqueList.map((technique) => {
                   return (
-                    <div>
+                    <div key={technique.name}>
                       <Dropdown
                         options={techniqueOptionList.filter(
                           (localTechnique) => {

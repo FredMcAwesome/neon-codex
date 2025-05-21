@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { trpc } from "../../utils/trpc.js";
 import type {
   AttributesType,
-  LifestyleSelectedType,
+  LifestyleSelectedListType,
   MartialArtSelectedListType,
   SpecialAttributesType,
   TalentInfoType,
@@ -54,7 +54,7 @@ const CharacterSheet = function () {
       {Augmentations(data.augmentationList)}
       {Vehicles(data.vehicleList)}
       {MartialArts(data.martialArtList)}
-      {Lifestyle(data.lifestyle)}
+      {Lifestyles(data.lifestyleList)}
       <div>Nuyen: {data.nuyen}</div>
       <div>Karma: {data.karmaPoints}</div>
     </div>
@@ -306,9 +306,7 @@ function Weapons(data: CustomisedWeaponListType) {
     <CollapsibleDiv title="Weapons">
       <ul>
         {data.map((weapon) => {
-          return (
-            <li key={weapon.baseWeapon.name}>{`${weapon.baseWeapon.name}`}</li>
-          );
+          return <li key={weapon.baseWeapon}>{`${weapon.baseWeapon}`}</li>;
         })}
       </ul>
     </CollapsibleDiv>
@@ -320,9 +318,7 @@ function Armours(data: CustomisedArmourListType) {
     <CollapsibleDiv title="Armours">
       <ul>
         {data.map((armour) => {
-          return (
-            <li key={armour.baseArmour.name}>{`${armour.baseArmour.name}`}</li>
-          );
+          return <li key={armour.baseArmour}>{`${armour.baseArmour}`}</li>;
         })}
       </ul>
     </CollapsibleDiv>
@@ -334,7 +330,7 @@ function Gears(data: CustomisedGearListType) {
     <CollapsibleDiv title="Gears">
       <ul>
         {data.map((gear) => {
-          return <li key={gear.baseGear.name}>{`${gear.baseGear.name}`}</li>;
+          return <li key={gear.baseGear}>{`${gear.baseGear}`}</li>;
         })}
       </ul>
     </CollapsibleDiv>
@@ -348,8 +344,8 @@ function Augmentations(data: CustomisedAugmentationListType) {
         {data.map((augmentation) => {
           return (
             <li
-              key={augmentation.baseAugmentation.name}
-            >{`${augmentation.baseAugmentation.name}`}</li>
+              key={augmentation.baseAugmentation}
+            >{`${augmentation.baseAugmentation}`}</li>
           );
         })}
       </ul>
@@ -362,11 +358,7 @@ function Vehicles(data: CustomisedVehicleListType) {
     <CollapsibleDiv title="Vehicles/Drones">
       <ul>
         {data.map((vehicle) => {
-          return (
-            <li
-              key={vehicle.baseVehicle.name}
-            >{`${vehicle.baseVehicle.name}`}</li>
-          );
+          return <li key={vehicle.baseVehicle}>{`${vehicle.baseVehicle}`}</li>;
         })}
       </ul>
     </CollapsibleDiv>
@@ -395,18 +387,21 @@ function MartialArts(data: MartialArtSelectedListType) {
   );
 }
 
-function Lifestyle(data: LifestyleSelectedType) {
-  return (
-    <CollapsibleDiv title="Lifestyle">
-      <div>Name: {`${data.lifestyle.name}`}</div>
-      <div>
-        Lifestyle Qualities:{" "}
-        <ul>
-          {data.lifestyleQualityList.map((quality) => {
-            return <li>{quality.name}</li>;
-          })}
-        </ul>
-      </div>
-    </CollapsibleDiv>
-  );
+function Lifestyles(data: LifestyleSelectedListType) {
+  return data.map((lifestyle) => {
+    return (
+      <CollapsibleDiv title="Lifestyle">
+        <div>Name: {`${lifestyle.lifestyle.name}`}</div>
+        <div>
+          Lifestyle Qualities:{" "}
+          <ul>
+            {lifestyle.lifestyleQualityList.map((quality) => {
+              return <li>{quality.name}</li>;
+            })}
+          </ul>
+        </div>
+        <div>Duration: {lifestyle.purchasedDuration}</div>
+      </CollapsibleDiv>
+    );
+  });
 }

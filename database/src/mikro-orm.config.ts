@@ -9,6 +9,7 @@ import {
   ActiveArmourModifications,
   IncludedArmourModifications,
   CustomisedArmourModifications,
+  PackArmourModifications,
 } from "./models/rpg/activeTables/activeArmourModificationModel.js";
 import {
   ActiveGears,
@@ -37,6 +38,7 @@ import {
   ActiveWeaponMounts,
   IncludedWeaponMounts,
   CustomisedWeaponMounts,
+  PackVehicleWeaponMounts,
 } from "./models/rpg/activeTables/activeWeaponMountModel.js";
 import {
   ActiveSkills,
@@ -56,8 +58,8 @@ import {
 import {
   ActiveWeapons,
   CustomisedWeapons,
+  WeaponMountWeapons,
   PackWeapons,
-  VehicleWeapons,
 } from "./models/rpg/activeTables/activeWeaponModel.js";
 import {
   Augmentations,
@@ -90,7 +92,6 @@ import {
 import {
   VehicleModifications,
   VehicleChasisModifications,
-  WeaponMountModifications,
 } from "./models/rpg/equipment/rigger/vehicleModificationModel.js";
 import { WeaponMounts } from "./models/rpg/equipment/rigger/weaponMountModel.js";
 import {
@@ -128,7 +129,7 @@ import { SkillGroups } from "./models/rpg/abilities/skillGroupModel.js";
 import {
   ActiveQualities,
   CustomisedQualities,
-  IncludedQualities,
+  HeritageIncludedQualities,
   CritterIncludedQualities,
 } from "./models/rpg/activeTables/activeQualityModel.js";
 import { AdeptPowers } from "./models/rpg/abilities/adeptPowerModel.js";
@@ -144,10 +145,10 @@ import { Critters } from "./models/rpg/creatures/critterModel.js";
 import {
   CustomisedAugmentations,
   ActiveAugmentations,
-  IncludedAugmentations,
   CritterIncludedAugmentations,
   PackAugmentations,
   ChildAugmentations,
+  BaseActiveAugmentations,
 } from "./models/rpg/activeTables/activeAugmentationModel.js";
 import {
   ActiveComplexForms,
@@ -198,6 +199,7 @@ import {
   PackLifestyles,
 } from "./models/rpg/activeTables/activeLIfestyleModel.js";
 import { EquipmentPacks } from "./models/rpg/equipment/equipmentPackModel.js";
+import { WeaponMountModifications } from "./models/rpg/equipment/rigger/weaponMountModModel.js";
 
 const dbOptions: Options = {
   entities: [
@@ -219,7 +221,7 @@ const dbOptions: Options = {
 
     Qualities,
     ActiveQualities,
-    IncludedQualities,
+    HeritageIncludedQualities,
     CritterIncludedQualities,
     CustomisedQualities,
 
@@ -255,7 +257,7 @@ const dbOptions: Options = {
 
     ActiveWeapons,
     PackWeapons,
-    VehicleWeapons,
+    WeaponMountWeapons,
     CustomisedWeapons,
     ActiveWeaponAccessories,
     IncludedWeaponAccessories,
@@ -268,6 +270,7 @@ const dbOptions: Options = {
     PackArmours,
     CustomisedArmours,
     ActiveArmourModifications,
+    PackArmourModifications,
     IncludedArmourModifications,
     CustomisedArmourModifications,
 
@@ -278,7 +281,7 @@ const dbOptions: Options = {
     Biowares,
     Cyberwares,
     ActiveAugmentations,
-    IncludedAugmentations,
+    BaseActiveAugmentations,
     ChildAugmentations,
     PackAugmentations,
     CritterIncludedAugmentations,
@@ -292,14 +295,15 @@ const dbOptions: Options = {
     Drones,
 
     WeaponMounts,
+    WeaponMountModifications,
 
     ActiveWeaponMounts,
     IncludedWeaponMounts,
     CustomisedWeaponMounts,
+    PackVehicleWeaponMounts,
 
     VehicleModifications,
     VehicleChasisModifications,
-    WeaponMountModifications,
 
     ActiveVehicles,
     PackVehicles,

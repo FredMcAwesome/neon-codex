@@ -26,7 +26,7 @@
     "capacity": 8,
     "includedGearList": [
       {
-        "name": "Holster"
+        "baseGear": "Holster"
       }
     ],
     "availability": {
@@ -130,10 +130,10 @@
     "capacity": 9,
     "includedGearList": [
       {
-        "name": "Biomonitor"
+        "baseGear": "Biomonitor"
       },
       {
-        "name": "Music Player"
+        "baseGear": "Music Player"
       }
     ],
     "allowModsFromCategory": "Urban Explorer Jumpsuit Accessories",
@@ -247,12 +247,12 @@
         }
       ]
     },
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       },
       {
-        "name": "Concealability"
+        "baseMod": "Concealability"
       }
     ],
     "availability": {
@@ -277,12 +277,12 @@
         }
       ]
     },
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       },
       {
-        "name": "Concealability"
+        "baseMod": "Concealability"
       }
     ],
     "availability": {
@@ -307,12 +307,12 @@
         }
       ]
     },
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       },
       {
-        "name": "Concealability"
+        "baseMod": "Concealability"
       }
     ],
     "availability": {
@@ -337,12 +337,12 @@
         }
       ]
     },
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       },
       {
-        "name": "Concealability"
+        "baseMod": "Concealability"
       }
     ],
     "availability": {
@@ -367,12 +367,12 @@
         }
       ]
     },
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       },
       {
-        "name": "Concealability"
+        "baseMod": "Concealability"
       }
     ],
     "availability": {
@@ -398,12 +398,12 @@
         }
       ]
     },
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit (Stack)"
+        "baseMod": "Custom Fit (Stack)"
       },
       {
-        "name": "Concealability"
+        "baseMod": "Concealability"
       }
     ],
     "availability": {
@@ -429,12 +429,12 @@
         }
       ]
     },
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit (Stack)"
+        "baseMod": "Custom Fit (Stack)"
       },
       {
-        "name": "Concealability"
+        "baseMod": "Concealability"
       }
     ],
     "availability": {
@@ -460,12 +460,12 @@
         }
       ]
     },
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit (Stack)"
+        "baseMod": "Custom Fit (Stack)"
       },
       {
-        "name": "Concealability"
+        "baseMod": "Concealability"
       }
     ],
     "availability": {
@@ -506,7 +506,7 @@
     "capacity": 8,
     "includedGearList": [
       {
-        "name": "Holster"
+        "baseGear": "Holster"
       }
     ],
     "wirelessBonus": {
@@ -539,9 +539,9 @@
         }
       ]
     },
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Gear Access"
+        "baseMod": "Gear Access"
       }
     ],
     "availability": {
@@ -582,7 +582,7 @@
     "capacity": 6,
     "includedGearList": [
       {
-        "name": "Holster"
+        "baseGear": "Holster"
       }
     ],
     "wirelessBonus": {
@@ -609,7 +609,7 @@
     "capacity": 6,
     "includedGearList": [
       {
-        "name": "Holster"
+        "baseGear": "Holster"
       }
     ],
     "wirelessBonus": {
@@ -636,7 +636,7 @@
     "capacity": 6,
     "includedGearList": [
       {
-        "name": "Holster"
+        "baseGear": "Holster"
       }
     ],
     "wirelessBonus": {
@@ -669,9 +669,9 @@
         }
       ]
     },
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Concealability"
+        "baseMod": "Concealability"
       }
     ],
     "availability": {
@@ -688,9 +688,9 @@
     "category": "High-Fashion Armour",
     "damageReduction": 10,
     "capacity": 14,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       }
     ],
     "availability": {
@@ -709,12 +709,12 @@
     "capacity": 5,
     "includedGearList": [
       {
-        "name": "Holster"
+        "baseGear": "Holster"
       }
     ],
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       }
     ],
     "availability": {
@@ -734,12 +734,12 @@
     "capacity": 6,
     "includedGearList": [
       {
-        "name": "Holster"
+        "baseGear": "Holster"
       }
     ],
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit (Stack)"
+        "baseMod": "Custom Fit (Stack)"
       }
     ],
     "availability": {
@@ -758,18 +758,18 @@
     "capacity": 10,
     "includedGearList": [
       {
-        "name": "Holster"
+        "baseGear": "Holster"
       }
     ],
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       },
       {
-        "name": "Newest Model"
+        "baseMod": "Newest Model"
       },
       {
-        "name": "Ruthenium Polymer Coating",
+        "baseMod": "Ruthenium Polymer Coating",
         "rating": 3
       }
     ],
@@ -787,12 +787,12 @@
     "category": "High-Fashion Armour",
     "damageReduction": 12,
     "capacity": 4,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       },
       {
-        "name": "Newest Model"
+        "baseMod": "Newest Model"
       }
     ],
     "availability": {
@@ -809,12 +809,12 @@
     "category": "High-Fashion Armour",
     "damageReduction": 4,
     "capacity": 2,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       },
       {
-        "name": "Newest Model"
+        "baseMod": "Newest Model"
       }
     ],
     "availability": {
@@ -831,12 +831,12 @@
     "category": "High-Fashion Armour",
     "damageReduction": 6,
     "capacity": 3,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       },
       {
-        "name": "Newest Model"
+        "baseMod": "Newest Model"
       }
     ],
     "availability": {
@@ -853,12 +853,12 @@
     "category": "High-Fashion Armour",
     "damageReduction": 8,
     "capacity": 4,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       },
       {
-        "name": "Newest Model"
+        "baseMod": "Newest Model"
       }
     ],
     "availability": {
@@ -875,12 +875,12 @@
     "category": "High-Fashion Armour",
     "damageReduction": 10,
     "capacity": 5,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       },
       {
-        "name": "Newest Model"
+        "baseMod": "Newest Model"
       }
     ],
     "availability": {
@@ -897,12 +897,12 @@
     "category": "High-Fashion Armour",
     "damageReduction": 12,
     "capacity": 6,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       },
       {
-        "name": "Newest Model"
+        "baseMod": "Newest Model"
       }
     ],
     "availability": {
@@ -919,9 +919,9 @@
     "category": "High-Fashion Armour",
     "damageReduction": 7,
     "capacity": 2,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       }
     ],
     "allowModsFromCategory": "Nightshade IR",
@@ -940,15 +940,15 @@
     "damageReduction": 6,
     "customFitStackDamageReduction": 2,
     "capacity": 2,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit (Stack)"
+        "baseMod": "Custom Fit (Stack)"
       },
       {
-        "name": "Newest Model"
+        "baseMod": "Newest Model"
       },
       {
-        "name": "Ruthenium Polymer Coating",
+        "baseMod": "Ruthenium Polymer Coating",
         "rating": 4
       }
     ],
@@ -968,7 +968,7 @@
     "capacity": 10,
     "includedGearList": [
       {
-        "name": "Holster"
+        "baseGear": "Holster"
       }
     ],
     "addModFromCategory": "Globetrotter Jacket Liners",
@@ -1001,9 +1001,9 @@
     "category": "High-Fashion Armour",
     "damageReduction": 7,
     "capacity": 10,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Gear Access"
+        "baseMod": "Gear Access"
       }
     ],
     "addModFromCategory": "Globetrotter Clothing Liners",
@@ -1023,12 +1023,12 @@
     "capacity": 10,
     "includedGearList": [
       {
-        "name": "Holster"
+        "baseGear": "Holster"
       }
     ],
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Gear Access"
+        "baseMod": "Gear Access"
       }
     ],
     "addModFromCategory": "Victory Liners",
@@ -1054,9 +1054,9 @@
         }
       ]
     },
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Gear Access"
+        "baseMod": "Gear Access"
       }
     ],
     "availability": {
@@ -1075,15 +1075,15 @@
     "capacity": 12,
     "includedGearList": [
       {
-        "name": "Holster"
+        "baseGear": "Holster"
       }
     ],
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       },
       {
-        "name": "Gear Access"
+        "baseMod": "Gear Access"
       }
     ],
     "addModFromCategory": "Victory Liners",
@@ -1116,12 +1116,12 @@
     "category": "Specialty Armour",
     "damageReduction": 8,
     "capacity": 3,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       },
       {
-        "name": "Concealability"
+        "baseMod": "Concealability"
       }
     ],
     "availability": {
@@ -1138,15 +1138,15 @@
     "category": "Specialty Armour",
     "damageReduction": 15,
     "capacity": 15,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       },
       {
-        "name": "Gear Access"
+        "baseMod": "Gear Access"
       },
       {
-        "name": "Restrictive"
+        "baseMod": "Restrictive"
       }
     ],
     "availability": {
@@ -1163,15 +1163,15 @@
     "category": "Specialty Armour",
     "damageReduction": 18,
     "capacity": 18,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       },
       {
-        "name": "Gear Access"
+        "baseMod": "Gear Access"
       },
       {
-        "name": "Restrictive"
+        "baseMod": "Restrictive"
       }
     ],
     "availability": {
@@ -1188,15 +1188,15 @@
     "category": "Specialty Armour",
     "damageReduction": 20,
     "capacity": 20,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       },
       {
-        "name": "Gear Access"
+        "baseMod": "Gear Access"
       },
       {
-        "name": "Restrictive"
+        "baseMod": "Restrictive"
       }
     ],
     "availability": {
@@ -1229,18 +1229,18 @@
     "capacity": 12,
     "includedGearList": [
       {
-        "name": "Holster"
+        "baseGear": "Holster"
       }
     ],
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       },
       {
-        "name": "Gear Access"
+        "baseMod": "Gear Access"
       },
       {
-        "name": "Restrictive"
+        "baseMod": "Restrictive"
       }
     ],
     "availability": {
@@ -1259,18 +1259,18 @@
     "capacity": 14,
     "includedGearList": [
       {
-        "name": "Holster"
+        "baseGear": "Holster"
       }
     ],
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       },
       {
-        "name": "Gear Access"
+        "baseMod": "Gear Access"
       },
       {
-        "name": "Restrictive"
+        "baseMod": "Restrictive"
       }
     ],
     "availability": {
@@ -1289,18 +1289,18 @@
     "capacity": 16,
     "includedGearList": [
       {
-        "name": "Holster"
+        "baseGear": "Holster"
       }
     ],
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       },
       {
-        "name": "Gear Access"
+        "baseMod": "Gear Access"
       },
       {
-        "name": "Restrictive"
+        "baseMod": "Restrictive"
       }
     ],
     "availability": {
@@ -1367,13 +1367,13 @@
         }
       ]
     },
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Fire Resistance",
+        "baseMod": "Fire Resistance",
         "rating": 8
       },
       {
-        "name": "Restrictive"
+        "baseMod": "Restrictive"
       }
     ],
     "availability": {
@@ -1404,12 +1404,12 @@
     "category": "Specialty Armour",
     "damageReduction": 14,
     "capacity": 8,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Padded"
+        "baseMod": "Padded"
       },
       {
-        "name": "Restrictive"
+        "baseMod": "Restrictive"
       }
     ],
     "availability": {
@@ -1440,9 +1440,9 @@
     "category": "Specialty Armour",
     "damageReduction": 15,
     "capacity": 15,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Gear Access"
+        "baseMod": "Gear Access"
       }
     ],
     "availability": {
@@ -1515,12 +1515,12 @@
     "category": "Specialty Armour",
     "damageReduction": 8,
     "capacity": 4,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Concealability"
+        "baseMod": "Concealability"
       },
       {
-        "name": "Restrictive"
+        "baseMod": "Restrictive"
       }
     ],
     "availability": {
@@ -1551,12 +1551,12 @@
     "category": "Specialty Armour",
     "damageReduction": 7,
     "capacity": 2,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       },
       {
-        "name": "Padded"
+        "baseMod": "Padded"
       }
     ],
     "availability": {
@@ -1575,7 +1575,7 @@
     "capacity": 4,
     "includedGearList": [
       {
-        "name": "Grenade: Flash-Pak"
+        "baseGear": "Grenade: Flash-Pak"
       }
     ],
     "availability": {
@@ -1594,15 +1594,15 @@
     "capacity": 4,
     "includedGearList": [
       {
-        "name": "Biomonitor"
+        "baseGear": "Biomonitor"
       },
       {
-        "name": "Holster"
+        "baseGear": "Holster"
       }
     ],
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       }
     ],
     "availability": {
@@ -1663,9 +1663,9 @@
     "category": "Specialty Armour",
     "damageReduction": 4,
     "capacity": 4,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Restrictive"
+        "baseMod": "Restrictive"
       }
     ],
     "availability": {
@@ -1699,12 +1699,12 @@
     "capacity": 2,
     "includedGearList": [
       {
-        "name": "Flare Compensation"
+        "baseGear": "Flare Compensation"
       }
     ],
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       }
     ],
     "availability": {
@@ -1737,12 +1737,12 @@
     "capacity": 4,
     "includedGearList": [
       {
-        "name": "Flare Compensation"
+        "baseGear": "Flare Compensation"
       }
     ],
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Insulation",
+        "baseMod": "Insulation",
         "rating": 4
       }
     ],
@@ -1762,16 +1762,16 @@
     "capacity": 6,
     "includedGearList": [
       {
-        "name": "Flare Compensation"
+        "baseGear": "Flare Compensation"
       }
     ],
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Insulation",
+        "baseMod": "Insulation",
         "rating": 6
       },
       {
-        "name": "Thermal Damping",
+        "baseMod": "Thermal Damping",
         "rating": 4
       }
     ],
@@ -1791,26 +1791,26 @@
     "capacity": 14,
     "includedGearList": [
       {
-        "name": "Gas Mask"
+        "baseGear": "Gas Mask"
       },
       {
-        "name": "Flare Compensation"
+        "baseGear": "Flare Compensation"
       }
     ],
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       },
       {
-        "name": "Insulation",
+        "baseMod": "Insulation",
         "rating": 5
       },
       {
-        "name": "Thermal Damping",
+        "baseMod": "Thermal Damping",
         "rating": 4
       },
       {
-        "name": "Gear Access"
+        "baseMod": "Gear Access"
       }
     ],
     "availability": {
@@ -1829,22 +1829,22 @@
     "capacity": 6,
     "includedGearList": [
       {
-        "name": "Flare Compensation"
+        "baseGear": "Flare Compensation"
       }
     ],
     "bonus": {
       "fatigueResist": -2
     },
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       },
       {
-        "name": "Insulation",
+        "baseMod": "Insulation",
         "rating": 4
       },
       {
-        "name": "Restrictive"
+        "baseMod": "Restrictive"
       }
     ],
     "availability": {
@@ -1863,15 +1863,15 @@
     "capacity": 4,
     "includedGearList": [
       {
-        "name": "Flare Compensation"
+        "baseGear": "Flare Compensation"
       }
     ],
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       },
       {
-        "name": "Ruthenium Polymer Coating",
+        "baseMod": "Ruthenium Polymer Coating",
         "rating": 3
       }
     ],
@@ -1891,7 +1891,7 @@
     "capacity": 6,
     "includedGearList": [
       {
-        "name": "Low Light"
+        "baseGear": "Low Light"
       }
     ],
     "availability": {
@@ -1910,7 +1910,7 @@
     "capacity": 4,
     "includedGearList": [
       {
-        "name": "Gas Mask"
+        "baseGear": "Gas Mask"
       }
     ],
     "availability": {
@@ -1927,12 +1927,12 @@
     "category": "Specialty Armour",
     "damageReduction": 0,
     "capacity": 4,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Chemical Seal"
+        "baseMod": "Chemical Seal"
       },
       {
-        "name": "Insulation",
+        "baseMod": "Insulation",
         "rating": 4
       }
     ],
@@ -1950,9 +1950,9 @@
     "category": "Specialty Armour",
     "damageReduction": 7,
     "capacity": 4,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Chemical Protection",
+        "baseMod": "Chemical Protection",
         "rating": 4
       }
     ],
@@ -1970,9 +1970,9 @@
     "category": "Specialty Armour",
     "damageReduction": 1,
     "capacity": 4,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Insulation",
+        "baseMod": "Insulation",
         "rating": 8
       }
     ],
@@ -1992,28 +1992,28 @@
     "capacity": 5,
     "includedGearList": [
       {
-        "name": "Gas Mask"
+        "baseGear": "Gas Mask"
       }
     ],
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Insulation",
+        "baseMod": "Insulation",
         "rating": 4
       },
       {
-        "name": "Fire Resistance",
+        "baseMod": "Fire Resistance",
         "rating": 2
       },
       {
-        "name": "Radiation Shielding",
+        "baseMod": "Radiation Shielding",
         "rating": 3
       },
       {
-        "name": "Chemical Protection",
+        "baseMod": "Chemical Protection",
         "rating": 2
       },
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       }
     ],
     "availability": {
@@ -2032,29 +2032,29 @@
     "capacity": 6,
     "includedGearList": [
       {
-        "name": "Renraku Sensei"
+        "baseGear": "Renraku Sensei"
       },
       {
-        "name": "Flare Compensation"
+        "baseGear": "Flare Compensation"
       },
       {
-        "name": "Biomonitor"
+        "baseGear": "Biomonitor"
       }
     ],
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Chemical Seal"
+        "baseMod": "Chemical Seal"
       },
       {
-        "name": "Insulation",
+        "baseMod": "Insulation",
         "rating": 6
       },
       {
-        "name": "Thermal Damping",
+        "baseMod": "Thermal Damping",
         "rating": 4
       },
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       }
     ],
     "availability": {
@@ -2073,29 +2073,29 @@
     "capacity": 10,
     "includedGearList": [
       {
-        "name": "Renraku Sensei"
+        "baseGear": "Renraku Sensei"
       },
       {
-        "name": "Flare Compensation"
+        "baseGear": "Flare Compensation"
       },
       {
-        "name": "Biomonitor"
+        "baseGear": "Biomonitor"
       }
     ],
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Chemical Seal"
+        "baseMod": "Chemical Seal"
       },
       {
-        "name": "Insulation",
+        "baseMod": "Insulation",
         "rating": 6
       },
       {
-        "name": "Thermal Damping",
+        "baseMod": "Thermal Damping",
         "rating": 4
       },
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       }
     ],
     "availability": {
@@ -2114,30 +2114,30 @@
     "capacity": 10,
     "includedGearList": [
       {
-        "name": "Renraku Sensei"
+        "baseGear": "Renraku Sensei"
       },
       {
-        "name": "Biomonitor"
+        "baseGear": "Biomonitor"
       }
     ],
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Chemical Seal"
+        "baseMod": "Chemical Seal"
       },
       {
-        "name": "Insulation",
+        "baseMod": "Insulation",
         "rating": 6
       },
       {
-        "name": "Fire Resistance",
+        "baseMod": "Fire Resistance",
         "rating": 4
       },
       {
-        "name": "Thermal Damping",
+        "baseMod": "Thermal Damping",
         "rating": 4
       },
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       }
     ],
     "availability": {
@@ -2154,9 +2154,9 @@
     "category": "Specialty Armour",
     "damageReduction": 0,
     "capacity": 4,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       }
     ],
     "availability": {
@@ -2257,16 +2257,16 @@
     "category": "Specialty Armour",
     "damageReduction": 6,
     "capacity": 5,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Chemical Seal"
+        "baseMod": "Chemical Seal"
       },
       {
-        "name": "Fire Resistance",
+        "baseMod": "Fire Resistance",
         "rating": 4
       },
       {
-        "name": "Radiation Shielding",
+        "baseMod": "Radiation Shielding",
         "rating": 6
       }
     ],
@@ -3020,14 +3020,14 @@
     "capacity": 0,
     "includedGearList": [
       {
-        "name": "Camera",
-        "rating": 2,
-        "category": "Vision Devices"
+        "baseGear": "Camera",
+        "category": "Vision Devices",
+        "rating": 2
       },
       {
-        "name": "Microphone, Omni-Directional",
-        "rating": 2,
-        "category": "Audio Devices"
+        "baseGear": "Microphone, Omni-Directional",
+        "category": "Audio Devices",
+        "rating": 2
       }
     ],
     "availability": {
@@ -3371,9 +3371,9 @@
     "category": "High-Fashion Armour",
     "damageReduction": 8,
     "capacity": 4,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       }
     ],
     "availability": {
@@ -3390,9 +3390,9 @@
     "category": "High-Fashion Armour",
     "damageReduction": 6,
     "capacity": 2,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       }
     ],
     "availability": {
@@ -3410,9 +3410,9 @@
     "damageReduction": 10,
     "customFitStackDamageReduction": 2,
     "capacity": 12,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit (Stack)"
+        "baseMod": "Custom Fit (Stack)"
       }
     ],
     "availability": {
@@ -3430,9 +3430,9 @@
     "damageReduction": 8,
     "customFitStackDamageReduction": 2,
     "capacity": 4,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit (Stack)"
+        "baseMod": "Custom Fit (Stack)"
       }
     ],
     "availability": {
@@ -3449,9 +3449,9 @@
     "category": "High-Fashion Armour",
     "damageReduction": 8,
     "capacity": 5,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       }
     ],
     "availability": {
@@ -3469,9 +3469,9 @@
     "damageReduction": 10,
     "customFitStackDamageReduction": 2,
     "capacity": 8,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit (Stack)"
+        "baseMod": "Custom Fit (Stack)"
       }
     ],
     "availability": {
@@ -3488,9 +3488,9 @@
     "category": "High-Fashion Armour",
     "damageReduction": 9,
     "capacity": 5,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       }
     ],
     "availability": {
@@ -3508,9 +3508,9 @@
     "damageReduction": 10,
     "customFitStackDamageReduction": 3,
     "capacity": 10,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit (Stack)"
+        "baseMod": "Custom Fit (Stack)"
       }
     ],
     "availability": {
@@ -3611,9 +3611,9 @@
     "category": "Specialty Armour",
     "damageReduction": 9,
     "capacity": 4,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Parachute (Urban Explorer Daedalus)"
+        "baseMod": "Parachute (Urban Explorer Daedalus)"
       }
     ],
     "availability": {
@@ -3646,15 +3646,15 @@
     "capacity": 20,
     "includedGearList": [
       {
-        "name": "Holster"
+        "baseGear": "Holster"
       }
     ],
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Custom Fit"
+        "baseMod": "Custom Fit"
       },
       {
-        "name": "Gear Access"
+        "baseMod": "Gear Access"
       }
     ],
     "availability": {
@@ -3687,27 +3687,27 @@
     "capacity": 8,
     "includedGearList": [
       {
-        "name": "Holster"
+        "baseGear": "Holster"
       }
     ],
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Drag Handle"
+        "baseMod": "Drag Handle"
       },
       {
-        "name": "Pantheon Armored Shell"
+        "baseMod": "Pantheon Armored Shell"
       },
       {
-        "name": "Micro-Hardpoint"
+        "baseMod": "Micro-Hardpoint"
       },
       {
-        "name": "Micro-Hardpoint"
+        "baseMod": "Micro-Hardpoint"
       },
       {
-        "name": "Micro-Hardpoint"
+        "baseMod": "Micro-Hardpoint"
       },
       {
-        "name": "Pantheon Quick-Charge Battery Pack"
+        "baseMod": "Pantheon Quick-Charge Battery Pack"
       }
     ],
     "availability": {
@@ -3726,19 +3726,19 @@
     "capacity": 8,
     "includedGearList": [
       {
-        "name": "Holster"
+        "baseGear": "Holster"
       },
       {
-        "name": "Medkit",
+        "baseGear": "Medkit",
         "rating": 4
       }
     ],
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Drag Handle"
+        "baseMod": "Drag Handle"
       },
       {
-        "name": "Micro-Hardpoint"
+        "baseMod": "Micro-Hardpoint"
       }
     ],
     "availability": {
@@ -3757,7 +3757,7 @@
     "capacity": 3,
     "includedGearList": [
       {
-        "name": "Image Link"
+        "baseGear": "Image Link"
       }
     ],
     "availability": {
@@ -3774,9 +3774,9 @@
     "category": "Armour",
     "damageReduction": 8,
     "capacity": 6,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Chemical Protection",
+        "baseMod": "Chemical Protection",
         "rating": 3
       }
     ],
@@ -3794,13 +3794,13 @@
     "category": "Armour",
     "damageReduction": 6,
     "capacity": 5,
-    "includedMods": [
+    "includedModList": [
       {
-        "name": "Chemical Protection",
+        "baseMod": "Chemical Protection",
         "rating": 3
       },
       {
-        "name": "Internal Air Tank (5 Minutes)"
+        "baseMod": "Internal Air Tank (5 Minutes)"
       }
     ],
     "availability": {

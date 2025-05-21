@@ -132,7 +132,7 @@ const convertVehicle = function (vehicle: VehicleXmlType) {
       ? // switch gear to usegear (as it should be in xml...)
         convertIncludedXmlGears({ usegear: vehicle.gears.gear })
       : undefined;
-  const includedMods =
+  const includedModList =
     vehicle.mods !== undefined
       ? convertXmlVehicleModList(vehicle.mods)
       : undefined;
@@ -143,7 +143,7 @@ const convertVehicle = function (vehicle: VehicleXmlType) {
         ? vehicle.weapons.weapon
         : [vehicle.weapons.weapon]
       : undefined;
-  let weaponList;
+  let weaponList: Array<string> = [];
   if (weaponXmlList !== undefined) {
     weaponList = weaponXmlList.map((weapon) => {
       return weapon.name;
@@ -155,11 +155,23 @@ const convertVehicle = function (vehicle: VehicleXmlType) {
         ? vehicle.weaponmounts.weaponmount
         : [vehicle.weaponmounts.weaponmount]
       : undefined;
-  let weaponMountList;
+  let includedWeaponMountList;
   if (weaponMountXmlList !== undefined) {
-    weaponMountList = weaponMountXmlList.map((weaponMount) => {
+    includedWeaponMountList = weaponMountXmlList.map((weaponMount) => {
       return convertWeaponMount(weaponMount);
     });
+  }
+  for (const weapon of weaponList) {
+    assert(includedWeaponMountList !== undefined);
+    assert(
+      includedWeaponMountList.find((mount) => {
+        return (
+          mount.weaponMounted !== undefined &&
+          mount.weaponMounted.baseWeapon === weapon
+        );
+      }) !== undefined,
+      `Weapon ${weapon} not found in weapon mount list`
+    );
   }
   const source = convertSource(vehicle.source);
 
@@ -180,7 +192,7 @@ const convertVehicle = function (vehicle: VehicleXmlType) {
     pilot: vehicle.pilot,
     sensor: vehicle.sensor,
     includedGearList: includedGearList,
-    includedMods: includedMods,
+    includedModList: includedModList,
     modSlots: vehicle.modslots,
     powerTrainModSlots: vehicle.powertrainmodslots,
     protectionModSlots: vehicle.protectionmodslots,
@@ -189,8 +201,7 @@ const convertVehicle = function (vehicle: VehicleXmlType) {
     electromagneticModSlots: vehicle.electromagneticmodslots,
     cosmeticModSlots: vehicle.cosmeticmodslots,
     ...(vehicle.seats !== undefined && { seats: vehicle.seats }),
-    weaponList: weaponList,
-    weaponMountList: weaponMountList,
+    includedWeaponMountList: includedWeaponMountList,
     ...(vehicle.hide !== undefined && { userSelectable: false as const }),
     availability: availability,
     cost: cost,

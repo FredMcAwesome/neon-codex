@@ -1,4 +1,7 @@
-import type { EquipmentListType } from "@neon-codex/common/build/schemas/equipment/other/equipmentSchemas.js";
+import type {
+  EquipmentListType,
+  SelectedEquipmentListType,
+} from "@neon-codex/common/build/schemas/equipment/other/equipmentSchemas.js";
 import type {
   CustomSkillGroupListType,
   CustomSkillListType,
@@ -8,7 +11,7 @@ import type {
   AttributesType,
   SpecialAttributesType,
   QualitySelectedListType,
-  LifestyleSelectedType,
+  LifestyleSelectedListType,
   MartialArtSelectedType,
   HeritagePrioritySelectedType,
   TalentInfoType,
@@ -30,8 +33,8 @@ interface IProps {
   skillSelections: CustomSkillListType;
   skillGroupSelections: CustomSkillGroupListType;
   martialArtSelected: MartialArtSelectedType | undefined;
-  equipmentSelections: EquipmentListType;
-  lifestyleSelected: LifestyleSelectedType | undefined;
+  equipmentSelections: SelectedEquipmentListType;
+  lifestyleSelections: LifestyleSelectedListType | undefined;
   karmaPoints: number;
   nuyen: number;
   bonusInfo: CharacterCreatorBonusListType;
@@ -121,41 +124,45 @@ export const CreatorSummary = function (props: IProps) {
       <CollapsibleDiv title="Equipment Selections">
         <CollapsibleDiv title="Weapons">
           <ul>
-            {props.equipmentSelections.weapons.map((weapon) => {
-              return <li key={weapon.name}>{weapon.name}</li>;
+            {props.equipmentSelections.weaponList.map((weapon) => {
+              return <li key={weapon.baseWeapon}>{weapon.baseWeapon}</li>;
             })}
           </ul>
         </CollapsibleDiv>
         <CollapsibleDiv title="Armours">
           <ul>
-            {props.equipmentSelections.armours.map((armour) => {
-              return <li key={armour.name}>{armour.name}</li>;
+            {props.equipmentSelections.armourList.map((armour) => {
+              return <li key={armour.baseArmour}>{armour.baseArmour}</li>;
             })}
           </ul>
         </CollapsibleDiv>
         <CollapsibleDiv title="Gears">
           <ul>
             {props.equipmentSelections.gearList.map((gear) => {
-              return <li key={gear.name}>{gear.name}</li>;
+              return <li key={gear.baseGear}>{gear.baseGear}</li>;
             })}
           </ul>
         </CollapsibleDiv>
         <CollapsibleDiv title="Augmentations">
           <ul>
-            {props.equipmentSelections.augmentations.map((augmentation) => {
-              return <li key={augmentation.name}>{augmentation.name}</li>;
+            {props.equipmentSelections.augmentationList.map((augmentation) => {
+              return (
+                <li key={augmentation.baseAugmentation}>
+                  {augmentation.baseAugmentation}
+                </li>
+              );
             })}
           </ul>
         </CollapsibleDiv>
         <CollapsibleDiv title="Vehicles/Drones">
           <ul>
-            {props.equipmentSelections.vehicles.map((vehicle) => {
-              return <li key={vehicle.name}>{vehicle.name}</li>;
+            {props.equipmentSelections.vehicleList.map((vehicle) => {
+              return <li key={vehicle.baseVehicle}>{vehicle.baseVehicle}</li>;
             })}
           </ul>
         </CollapsibleDiv>
       </CollapsibleDiv>
-      {Lifestyle(props.lifestyleSelected)}
+      {Lifestyles(props.lifestyleSelections)}
       <div>
         Skill Points remaining:
         <div>Points: {props.skillPoints.skillPoints}</div>
@@ -285,21 +292,27 @@ function Talent(data: TalentInfoType) {
   }
 }
 
-function Lifestyle(data: LifestyleSelectedType | undefined) {
+function Lifestyles(data: LifestyleSelectedListType | undefined) {
   if (data === undefined) {
     return <div>Lifestyle not selected!</div>;
   }
   return (
     <CollapsibleDiv title="Lifestyle">
-      <div>Name: {`${data.lifestyle.name}`}</div>
-      <div>
-        Lifestyle Qualities:{" "}
-        <ul>
-          {data.lifestyleQualityList.map((quality) => {
-            return <li>{quality.name}</li>;
-          })}
-        </ul>
-      </div>
+      {data.map((lifestyle) => {
+        return (
+          <div>
+            <div>Name: {`${lifestyle.lifestyle.name}`}</div>
+            <div>
+              Lifestyle Qualities:{" "}
+              <ul>
+                {lifestyle.lifestyleQualityList.map((quality) => {
+                  return <li>{quality.name}</li>;
+                })}
+              </ul>
+            </div>
+          </div>
+        );
+      })}
     </CollapsibleDiv>
   );
 }

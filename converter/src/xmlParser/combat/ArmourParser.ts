@@ -137,7 +137,7 @@ function convertArmour(armour: ArmourXmlType) {
       ? convertXmlBonus(armour.wirelessbonus)
       : undefined;
 
-  const includedMods =
+  const includedModList =
     armour.mods !== undefined ? convertXmlModObject(armour.mods) : undefined;
   const allowModCategory =
     armour.addmodcategory !== undefined
@@ -169,7 +169,7 @@ function convertArmour(armour: ArmourXmlType) {
     }),
     ...(bonus !== undefined && { bonus: bonus }),
     ...(wirelessBonus !== undefined && { wirelessBonus: wirelessBonus }),
-    ...(includedMods !== undefined && { includedMods: includedMods }),
+    ...(includedModList !== undefined && { includedModList: includedModList }),
     allowModsFromCategory: allowModCategory,
     addModFromCategory: addModFromXmlCategory,
     source: source,

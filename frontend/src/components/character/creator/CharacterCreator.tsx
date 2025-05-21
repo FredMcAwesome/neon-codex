@@ -11,7 +11,10 @@ import type {
   CustomSkillGroupListType,
   CustomSkillListType,
 } from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
-import type { EquipmentListType } from "@neon-codex/common/build/schemas/equipment/other/equipmentSchemas.js";
+import type {
+  EquipmentListType,
+  SelectedEquipmentListType,
+} from "@neon-codex/common/build/schemas/equipment/other/equipmentSchemas.js";
 import type {
   AttributesType,
   SpecialAttributesType,
@@ -21,7 +24,7 @@ import type {
   TalentInfoType,
   FormulaListSelectedType,
   MartialArtSelectedType,
-  LifestyleSelectedType,
+  LifestyleSelectedListType,
 } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
 import { CreatorSummary } from "./CreatorSummary.js";
 import { useNavigate } from "react-router-dom";
@@ -36,7 +39,7 @@ import type {
 import type { SkillPointInfoType } from "../commonSchemas.js";
 import { TalentSelect } from "./TalentSelect.js";
 import { MartialArtSelect } from "./MartialArtsSelect.js";
-import { LifestyleSelect } from "./LIfestyleSelect.js";
+import { LifestyleSelect } from "./LifestyleSelect.js";
 import type { CharacterCreatorBonusListType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 
 const characterCreatorPath = "/character_creator";
@@ -129,16 +132,15 @@ const CharacterCreator = function () {
     MartialArtSelectedType | undefined
   >(undefined);
   const [equipmentSelections, setEquipmentSelections] =
-    useState<EquipmentListType>({
-      weapons: [],
+    useState<SelectedEquipmentListType>({
+      weaponList: [],
       gearList: [],
-      armours: [],
-      augmentations: [],
-      vehicles: [],
+      armourList: [],
+      augmentationList: [],
+      vehicleList: [],
     });
-  const [lifestyleSelected, setLifestyleSelected] = useState<
-    LifestyleSelectedType | undefined
-  >(undefined);
+  const [lifestyleSelections, setLifestyleSelections] =
+    useState<LifestyleSelectedListType>([]);
   const [nuyen, setNuyen] = useState(0);
 
   const onBonusInfoChanged = function (
@@ -263,7 +265,7 @@ const CharacterCreator = function () {
     setSkillSelections(loadingSkillSelection);
   };
   const onEquipmentSelectionsChanged = function (
-    equipmentSelections: EquipmentListType
+    equipmentSelections: SelectedEquipmentListType
   ) {
     setEquipmentSelections(equipmentSelections);
   };
@@ -276,9 +278,9 @@ const CharacterCreator = function () {
     setMartialArtSelected(martialArtSelected);
   };
   const onLifestyleSelectedChanged = function (
-    lifestyleSelected: LifestyleSelectedType
+    lifestyleSelections: LifestyleSelectedListType
   ) {
-    setLifestyleSelected(lifestyleSelected);
+    setLifestyleSelections(lifestyleSelections);
   };
 
   // TODO: make the page selection vary depending on talent choice
@@ -435,8 +437,8 @@ const CharacterCreator = function () {
     case CharacterPageEnum.LifestyleSelect:
       currentStage = (
         <LifestyleSelect
-          lifestyleSelected={lifestyleSelected}
-          setLifestyleSelected={onLifestyleSelectedChanged}
+          lifestyleSelections={lifestyleSelections}
+          setLifestyleSelections={onLifestyleSelectedChanged}
         />
       );
       break;
@@ -455,7 +457,7 @@ const CharacterCreator = function () {
           skillGroupSelections={skillGroupSelections}
           martialArtSelected={martialArtSelected}
           equipmentSelections={equipmentSelections}
-          lifestyleSelected={lifestyleSelected}
+          lifestyleSelections={lifestyleSelections}
           karmaPoints={karmaPoints}
           nuyen={nuyen}
           bonusInfo={bonusInfo}
@@ -521,7 +523,7 @@ const CharacterCreator = function () {
               skillGroupSelections: skillGroupSelections,
               martialArtSelected: martialArtSelected,
               equipmentSelections: equipmentSelections,
-              lifestyleSelected: lifestyleSelected,
+              lifestyleSelections: lifestyleSelections,
               karmaPoints: karmaPoints,
               nuyen: nuyen,
               bonusInfo: bonusInfo,

@@ -194,11 +194,11 @@
     "allowedGearCategories": ["Vision Enhancements", "Custom"],
     "includedGearList": [
       {
-        "name": "Camera, Micro",
+        "baseGear": "Camera, Micro",
         "category": "Vision Devices"
       },
       {
-        "name": "Vision Magnification",
+        "baseGear": "Vision Magnification",
         "category": "Vision Enhancements"
       }
     ],
@@ -391,11 +391,11 @@
     "deploymentRequired": false,
     "includedGearList": [
       {
-        "name": "Laser Range Finder",
+        "baseGear": "Laser Range Finder",
         "category": "Sensor Functions"
       },
       {
-        "name": "Camera, Micro",
+        "baseGear": "Camera, Micro",
         "category": "Vision Devices"
       }
     ],
@@ -429,11 +429,11 @@
     "deploymentRequired": false,
     "includedGearList": [
       {
-        "name": "Laser Range Finder",
+        "baseGear": "Laser Range Finder",
         "category": "Sensor Functions"
       },
       {
-        "name": "Camera, Micro",
+        "baseGear": "Camera, Micro",
         "category": "Vision Devices"
       }
     ],
@@ -2420,7 +2420,7 @@
     "allowedGearCategories": ["Vision Enhancements", "Custom"],
     "includedGearList": [
       {
-        "name": "Vision Magnification",
+        "baseGear": "Vision Magnification",
         "category": "Vision Enhancements"
       }
     ],
@@ -2498,23 +2498,23 @@
     "deploymentRequired": false,
     "includedGearList": [
       {
-        "name": "GPS Monitor",
+        "baseGear": "GPS Monitor",
         "category": "Survival Gear"
       },
       {
-        "name": "Mini-Multitool",
+        "baseGear": "Mini-Multitool",
         "category": "Survival Gear"
       },
       {
-        "name": "Micro-Lighter",
+        "baseGear": "Micro-Lighter",
         "category": "Survival Gear"
       },
       {
-        "name": "Hidden Compartment",
+        "baseGear": "Hidden Compartment",
         "category": "Survival Gear"
       },
       {
-        "name": "Phosphorescent Blade Coating",
+        "baseGear": "Phosphorescent Blade Coating",
         "category": "Survival Gear"
       }
     ],
@@ -2536,11 +2536,11 @@
     "deploymentRequired": false,
     "includedGearList": [
       {
-        "name": "ARO of Local Maps",
+        "baseGear": "ARO of Local Maps",
         "category": "Software"
       },
       {
-        "name": "Can Make Commcalls",
+        "baseGear": "Can Make Commcalls",
         "category": "Electronics Accessories"
       }
     ],
@@ -3071,7 +3071,7 @@
     "deploymentRequired": false,
     "includedGearList": [
       {
-        "name": "Radio Signal Scanner",
+        "baseGear": "Radio Signal Scanner",
         "category": "Sensor Functions"
       }
     ],
@@ -3094,11 +3094,11 @@
     "deploymentRequired": false,
     "includedGearList": [
       {
-        "name": "Laser Range Finder",
+        "baseGear": "Laser Range Finder",
         "category": "Sensor Functions"
       },
       {
-        "name": "Camera, Micro",
+        "baseGear": "Camera, Micro",
         "category": "Vision Devices"
       }
     ],

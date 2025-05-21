@@ -20,11 +20,13 @@ import {
   AvailabilityRatingSchema,
   EssenceCostSchema,
   RatingSchema,
-  IncludedGearListSchema,
 } from "../../shared/commonSchemas.js";
-import type { IncludedGearListType } from "../../shared/commonSchemas.js";
 import { BonusSchema } from "../../shared/bonusSchemas.js";
 import { RequirementsSchema } from "../../shared/requiredSchemas.js";
+import {
+  CustomisedGearListSchema,
+  type CustomisedGearListType,
+} from "../other/gearSchemas.js";
 
 export const InnerAvailabilityAugmentationSchema = zod
   .object({
@@ -139,7 +141,7 @@ export type CyberwareSubsystemsRecursiveType = {
   name: string;
   forced?: string | undefined;
   rating?: number | undefined;
-  gearList?: IncludedGearListType | undefined;
+  gearList?: CustomisedGearListType | undefined;
   subsystem?: AugmentationSubsystemListType | undefined;
 };
 
@@ -151,7 +153,7 @@ const SubsystemListSchema: zod.ZodType<
       name: zod.string(),
       forced: zod.optional(zod.string()),
       rating: zod.optional(zod.number()),
-      gearList: zod.optional(IncludedGearListSchema),
+      gearList: zod.optional(CustomisedGearListSchema),
       subsystem: zod.optional(zod.lazy(() => AugmentationSubsystemListSchema)),
     })
     .strict()
@@ -206,12 +208,12 @@ export const AugmentationPartialSchema = zod
     requirements: zod.optional(RequirementsSchema),
     forbidden: zod.optional(RequirementsSchema),
     allowedGearList: zod.optional(zod.array(zod.string())),
-    includedGearList: zod.optional(IncludedGearListSchema),
+    includedGearList: zod.optional(CustomisedGearListSchema),
     allowedGearCategories: zod.optional(
       zod.array(zod.nativeEnum(gearCategoryEnum))
     ),
     userSelectable: zod.optional(zod.literal(false)),
-    allowCategoryList: zod.optional(
+    allowSubsystemCategoryList: zod.optional(
       zod.array(
         zod.union([
           zod.nativeEnum(cyberwareCategoryEnum),
@@ -243,7 +245,7 @@ const CyberwareSchema = AugmentationPartialSchema.extend({
   wirelessBonus: zod.optional(BonusSchema),
   wirelessPairBonus: zod.optional(BonusSchema),
   wirelessPairInclude: zod.optional(zod.string()),
-  subsystemList: zod.optional(AugmentationSubsystemListSchema),
+  includedSubsystemList: zod.optional(AugmentationSubsystemListSchema),
   forceGrade: zod.optional(zod.nativeEnum(augmentationGradeEnum)),
   deviceRating: zod.optional(deviceRatingSchema),
   addVehicle: zod.optional(zod.string()),
@@ -268,12 +270,13 @@ export type AugmentationListType = zod.infer<typeof AugmentationListSchema>;
 
 export const CustomisedAugmentationSchema = zod
   .object({
-    baseAugmentation: AugmentationSchema,
+    baseAugmentation: zod.string(),
     // This overrides baseAugmentation included gear
-    gearList: zod.optional(IncludedGearListSchema),
-    // TODO: is rating a thing for augmentations?
-    // rating: zod.optional(zod.number()),
+    gearList: zod.optional(CustomisedGearListSchema),
+    rating: zod.optional(zod.number()),
     customName: zod.optional(zod.string()),
+    grade: zod.nativeEnum(augmentationGradeEnum),
+    subsystemList: zod.optional(AugmentationSubsystemListSchema),
   })
   .strict();
 export type CustomisedAugmentationType = zod.infer<

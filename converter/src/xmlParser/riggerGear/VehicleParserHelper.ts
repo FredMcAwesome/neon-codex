@@ -31,8 +31,14 @@ export const convertWeaponMount = function (
     flexibility: weaponMount.flexibility,
     size: weaponMount.size,
     visibility: weaponMount.visibility,
-    includedWeapon: weaponMount.allowedweapons,
-    includedMountMod: mod,
+    weaponMounted:
+      weaponMount.allowedweapons !== undefined
+        ? {
+            baseWeapon: weaponMount.allowedweapons,
+          }
+        : undefined,
+    weaponExchangeable: weaponMount.allowedweapons !== undefined,
+    weaponMountModList: mod !== undefined ? [mod] : undefined,
   };
 };
 

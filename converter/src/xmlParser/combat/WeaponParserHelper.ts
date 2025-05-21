@@ -22,15 +22,15 @@ import assert from "assert";
 import type { AccessoryXmlType, WeaponXmlType } from "./WeaponParserSchemas.js";
 import { weaponTypeXmlEnum } from "./WeaponParserSchemas.js";
 import type {
-  UnlinkedWeaponAccessoryType,
   FirearmOptionsType,
   MeleeOptionsType,
-  MountType,
 } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
 import { weaponXmlSubtypeEnum } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 import type { WeaponXmlSubtypeType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 import Weapons from "../../grammar/weapons.ohm-bundle.js";
 import { convertIncludedXmlGears } from "../common/ParserHelper.js";
+import type { CustomisedWeaponAccessoryType } from "@neon-codex/common/build/schemas/equipment/combat/weaponAccessorySchemas.js";
+import type { MountType } from "@neon-codex/common/build/schemas/shared/weaponSharedSchemas.js";
 const Accuracy = Weapons.Accuracy;
 const Damage = Weapons.Damage;
 const ArmourPenetration = Weapons.ArmourPenetration;
@@ -776,18 +776,18 @@ export const convertAccessories = function (
     : [xmlAccessoriesUndefined.accessory];
 
   return xmlAccessories.map((xmlAccessory) => {
-    let mount;
+    let mountList;
     if (xmlAccessory.mount)
-      mount = Array.isArray(xmlAccessory.mount)
+      mountList = Array.isArray(xmlAccessory.mount)
         ? xmlAccessory.mount
         : [xmlAccessory.mount];
-    const accessory: UnlinkedWeaponAccessoryType = {
-      name: xmlAccessory.name,
-      mount: mount,
+    const accessory: CustomisedWeaponAccessoryType = {
+      baseAccessory: xmlAccessory.name,
+      mountList: mountList || [],
       rating: xmlAccessory.rating,
-      gearList: undefined,
+      gearList: [],
     };
-    if (xmlAccessory.gears) {
+    if (xmlAccessory.gears !== undefined) {
       accessory.gearList = convertIncludedXmlGears(xmlAccessory.gears);
     }
     return accessory;

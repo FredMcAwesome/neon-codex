@@ -32,7 +32,16 @@ sudo -u postgres psql
 CREATE DATABASE development;
 CREATE DATABASE shadowrun;
 CREATE DATABASE test;
+\q
 ```
+
+Setup default access
+```shell
+sudo -u postgres psql
+show hba_file;
+\q
+```
+Open the hba file printed and change the method to access the database to md5
 
 Run the following commands to create a database and fill it with some dummy data for development
 `npm run build` at least once

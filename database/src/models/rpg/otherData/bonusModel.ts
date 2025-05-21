@@ -41,7 +41,7 @@ export class QualityBonuses extends Bonuses {
   })
   quality!: Ref<Qualities>;
 
-  constructor(dto: BonusType, quality: Ref<Qualities>) {
+  constructor(quality: Ref<Qualities>, dto: BonusType) {
     super(dto);
     this.quality = quality;
   }

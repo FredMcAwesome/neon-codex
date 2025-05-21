@@ -12,23 +12,19 @@ import {
 } from "@neon-codex/common/build/enums.js";
 import { weaponXmlSubtypeEnum } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 import type {
-  WeaponSummaryListType,
-  WeaponSummaryType,
+  WeaponListType,
+  WeaponType,
   ModeType,
-  AmmunitionType,
-  UnlinkedAccessoryListType,
-  AccessoryMountType,
   FirearmOptionsType,
   AvailabilityWeaponType,
   CostWeaponType,
   AccuracyType,
   ArmourPenetrationType,
   RecoilCompensationType,
-  DamageType,
 } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
 import {
-  WeaponSummaryListSchema,
-  WeaponSummarySchema,
+  WeaponListSchema,
+  WeaponSchema,
 } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
 import {
   getWeaponTypeInformation,
@@ -48,6 +44,12 @@ import {
 } from "./WeaponParserHelper.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
 import Weapons from "../../grammar/weapons.ohm-bundle.js";
+import type {
+  DamageType,
+  AmmunitionType,
+  AccessoryMountType,
+} from "@neon-codex/common/build/schemas/shared/weaponSharedSchemas.js";
+import type { CustomisedWeaponAccessoryListType } from "@neon-codex/common/build/schemas/equipment/combat/weaponAccessorySchemas.js";
 const Accuracy = Weapons.Accuracy;
 const Damage = Weapons.Damage;
 const ArmourPenetration = Weapons.ArmourPenetration;
@@ -88,11 +90,11 @@ export function ParseWeapons() {
 
   const weaponList = weaponListParsed.data;
 
-  const weaponListConverted: WeaponSummaryListType = weaponList
+  const weaponListConverted: WeaponListType = weaponList
     // .filter((weapon) => weapon.name === "Ares Thunderstruck Gauss Rifle")
     .map((weapon: WeaponXmlType) => {
-      const convertedWeapon: WeaponSummaryType = convertWeapon(weapon);
-      const check = WeaponSummarySchema.safeParse(convertedWeapon);
+      const convertedWeapon: WeaponType = convertWeapon(weapon);
+      const check = WeaponSchema.safeParse(convertedWeapon);
       if (!check.success) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         console.dir(convertedWeapon, { depth: Infinity });
@@ -101,7 +103,7 @@ export function ParseWeapons() {
       return check.data;
     });
   // console.log(weaponListConverted);
-  const check = WeaponSummaryListSchema.safeParse(weaponListConverted);
+  const check = WeaponListSchema.safeParse(weaponListConverted);
   if (!check.success) {
     throw new Error(check.error.message);
   }
@@ -189,7 +191,7 @@ function convertWeapon(weapon: WeaponXmlType) {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
   const cost: CostWeaponType = costWeaponSemantics(match).eval();
   // console.log(`Cost: ${cost}`);
-  const includedAccessoryList: UnlinkedAccessoryListType | undefined =
+  const includedAccessoryList: CustomisedWeaponAccessoryListType | undefined =
     convertAccessories(weapon.accessories);
   const accessoryMounts: AccessoryMountType | undefined =
     convertAccessoryMounts(weapon.accessorymounts);

@@ -10,10 +10,7 @@ import {
   spellPowerRangeEnum,
   spellPowerTargetEnum,
 } from "@neon-codex/common/build/enums.js";
-import type {
-  GenericModListType,
-  GenericVehicleModListType,
-} from "@neon-codex/common/build/schemas/shared/modSchemas.js";
+import type { GenericModListType } from "@neon-codex/common/build/schemas/shared/modSchemas.js";
 import assert from "assert";
 import type {
   CategoryXmlListType,
@@ -37,9 +34,10 @@ import type {
   ModXmlType,
 } from "./ParserCommonDefines.js";
 import { sourceBookXmlEnum } from "./ParserCommonDefines.js";
-import type { IncludedGearListType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 import type { XmlMovementType } from "../character/MetatypeParserSchemas.js";
 import type { BonusGenericListType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
+import type { CustomisedGearListType } from "@neon-codex/common/build/schemas/equipment/other/gearSchemas.js";
+import type { CustomisedVehicleModListType } from "@neon-codex/common/src/schemas/equipment/rigger/vehicleModSchemas.js";
 
 export const convertSource = function (source: sourceBookXmlEnum | 2050) {
   const xmlSource = source === 2050 ? sourceBookXmlEnum.Shadowrun2050 : source;
@@ -368,14 +366,14 @@ export const convertAllowGear = function (
 // TODO: handle gear correctly
 export function convertIncludedXmlGears(
   gears: GearXmlType
-): IncludedGearListType {
+): CustomisedGearListType {
   const xmlUseGear = Array.isArray(gears.usegear)
     ? gears.usegear
     : [gears.usegear];
   return xmlUseGear.map((useGear) => {
     if (typeof useGear === "string") {
       return {
-        name: useGear,
+        baseGear: useGear,
       };
     } else if ("xmltext" in useGear) {
       if (useGear._select !== undefined) {
@@ -390,11 +388,11 @@ export function convertIncludedXmlGears(
         useGear._costfor !== undefined ? parseInt(useGear._costfor) : undefined;
 
       return {
-        name: useGear.xmltext,
+        baseGear: useGear.xmltext,
         specificOption: specificOption,
         rating: rating,
         consumeCapacity: consumeCapacity,
-        quantity: quantity,
+        currentQuantity: quantity,
       };
     } else {
       let category;
@@ -405,7 +403,7 @@ export function convertIncludedXmlGears(
         useGear.name = useGear.name.xmltext;
       }
       return {
-        name: useGear.name,
+        baseGear: useGear.name,
         ...(useGear.rating !== undefined && { rating: useGear.rating }),
         ...(category !== undefined && { category: category }),
       };
@@ -444,8 +442,8 @@ export function convertAttribute(attribute: attributeXMLEnum) {
 
 export const convertXmlVehicleModList = function (
   modList: ModRecursiveXmlType
-): GenericVehicleModListType | undefined {
-  let mods: GenericVehicleModListType = [];
+): CustomisedVehicleModListType | undefined {
+  let mods: CustomisedVehicleModListType = [];
   // TODO: handle all possiblities here properly
   if ("mod" in modList && modList.mod !== undefined) {
     const nameList = Array.isArray(modList.mod) ? modList.mod : [modList.mod];
@@ -459,7 +457,7 @@ export const convertXmlVehicleModList = function (
         assert(initialModObject.length === 1);
         modObject = [
           {
-            addCyberware: subsystem,
+            subsystemList: [subsystem],
             ...initialModObject[0],
           },
         ];
@@ -471,7 +469,7 @@ export const convertXmlVehicleModList = function (
   }
   mods = mods.concat(convertXmlModObject(modList));
   if (mods.length === 0) {
-    return undefined;
+    return;
   }
   return mods;
 };
@@ -495,7 +493,7 @@ export const convertXmlModObject = function (
 
 const convertXmlModInner = function (mod: ModXmlType) {
   if (typeof mod === "string") {
-    return { name: mod };
+    return { baseMod: mod };
   }
 
   let rating;
@@ -505,7 +503,7 @@ const convertXmlModInner = function (mod: ModXmlType) {
   }
 
   return {
-    name: mod.xmltext,
+    baseMod: mod.xmltext,
     ...(mod._select !== undefined && { specificOption: mod._select }),
     ...(rating !== undefined && { rating: rating }),
   };

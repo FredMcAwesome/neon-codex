@@ -10,11 +10,10 @@ import {
   Unique,
 } from "@mikro-orm/postgresql";
 import type { Ref } from "@mikro-orm/postgresql";
-import type { AmmunitionSingleType } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
 import type {
   AmmoCapacityCalculationType,
   ConcealabilityModificationType,
-  WeaponAccessorySummaryType,
+  WeaponAccessoryType,
   AvailabilityWeaponAccessoryType,
   CostWeaponAccessoryType,
 } from "@neon-codex/common/build/schemas/equipment/combat/weaponAccessorySchemas.js";
@@ -24,9 +23,11 @@ import { Gears } from "../other/gearModel.js";
 import {
   damageTypeEnum,
   gearCategoryEnum,
+  sourceBookEnum,
   weaponAccessoryMountLocationEnum,
 } from "@neon-codex/common/build/enums.js";
 import { WeaponAccessoryIncludedGears } from "../../activeTables/activeGearModel.js";
+import type { AmmunitionSingleType } from "@neon-codex/common/build/schemas/shared/weaponSharedSchemas.js";
 
 @Entity()
 export class WeaponAccessories {
@@ -62,7 +63,7 @@ export class WeaponAccessories {
   recoilCompensationIncrease?: number;
 
   @Property({ nullable: true })
-  recoilCompensationGroupID?: number;
+  recoilCompensationType?: number;
 
   @Property()
   deploymentRequired: boolean;
@@ -122,8 +123,8 @@ export class WeaponAccessories {
   @Property({ type: "json" })
   cost!: CostWeaponAccessoryType;
 
-  @Property()
-  source!: string;
+  @Enum(() => sourceBookEnum)
+  source!: sourceBookEnum;
 
   @Property()
   page!: number;
@@ -134,7 +135,7 @@ export class WeaponAccessories {
   @Property({ length: 5000, nullable: true })
   wireless?: string;
 
-  constructor(dto: WeaponAccessorySummaryType, linkedWeapon?: Ref<Weapons>) {
+  constructor(dto: WeaponAccessoryType, linkedWeapon?: Ref<Weapons>) {
     this.name = dto.name;
     this.maxRating = dto.maxRating;
     if (linkedWeapon !== undefined) {
@@ -151,7 +152,7 @@ export class WeaponAccessories {
     if (dto.recoilCompensationIncrease !== undefined)
       this.recoilCompensationIncrease = dto.recoilCompensationIncrease;
     if (dto.recoilCompensationType !== undefined)
-      this.recoilCompensationGroupID = dto.recoilCompensationType;
+      this.recoilCompensationType = dto.recoilCompensationType;
     this.deploymentRequired = dto.deploymentRequired;
     this.availability = dto.availability;
     this.cost = dto.cost;

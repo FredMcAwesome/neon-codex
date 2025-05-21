@@ -6,14 +6,16 @@ import {
 } from "../enums.js";
 import type {
   AccuracyType,
-  AmmunitionType,
   ArmourPenetrationType,
   AvailabilityWeaponType,
   CostWeaponType,
-  DamageAmountType,
-  DamageType,
   SingleArmourPenetrationType,
 } from "../schemas/equipment/combat/weaponSchemas.js";
+import type {
+  AmmunitionType,
+  DamageAmountType,
+  DamageType,
+} from "../schemas/shared/weaponSharedSchemas.js";
 import { formatRating } from "./commonFormatter.js";
 
 export function formatDamage(unformattedDamage: DamageType): string {

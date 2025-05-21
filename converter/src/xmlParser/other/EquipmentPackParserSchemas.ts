@@ -4,6 +4,7 @@ import {
   equipmentPackCategoryEnum,
 } from "@neon-codex/common/build/enums.js";
 import { UseGearXmlSchema } from "../common/ParserCommonDefines.js";
+import { MountSchema } from "@neon-codex/common/build/schemas/shared/weaponSharedSchemas.js";
 
 const ArmorModEquipmentPackXmlSchema = zod
   .object({

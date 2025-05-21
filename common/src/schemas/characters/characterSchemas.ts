@@ -11,8 +11,10 @@ import { CustomisedWeaponListSchema } from "../equipment/combat/weaponSchemas.js
 import type { CustomisedWeaponListType } from "../equipment/combat/weaponSchemas.js";
 import { CustomisedArmourListSchema } from "../equipment/combat/armourSchemas.js";
 import type { CustomisedArmourListType } from "../equipment/combat/armourSchemas.js";
-import { CustomisedGearListSchema } from "../equipment/other/gearSchemas.js";
-import type { CustomisedGearListType } from "../equipment/other/gearSchemas.js";
+import {
+  CustomisedGearListSchema,
+  type CustomisedGearListType,
+} from "../equipment/other/gearSchemas.js";
 import { CustomisedAugmentationListSchema } from "../equipment/bodyModification/augmentationSchemas.js";
 import type { CustomisedAugmentationListType } from "../equipment/bodyModification/augmentationSchemas.js";
 import { CustomisedVehicleListSchema } from "../equipment/rigger/vehicleSchemas.js";
@@ -296,9 +298,14 @@ export const LifestyleSelectedSchema = zod
   .object({
     lifestyle: LifestyleSchema,
     lifestyleQualityList: LifestyleQualityListSchema,
+    purchasedDuration: zod.number(),
   })
   .strict();
 export type LifestyleSelectedType = zod.infer<typeof LifestyleSelectedSchema>;
+export const LifestyleSelectedListSchema = zod.array(LifestyleSelectedSchema);
+export type LifestyleSelectedListType = zod.infer<
+  typeof LifestyleSelectedListSchema
+>;
 
 export type CharacterType = {
   name: string;
@@ -317,7 +324,7 @@ export type CharacterType = {
   augmentationList: CustomisedAugmentationListType;
   vehicleList: CustomisedVehicleListType;
   martialArtList: MartialArtSelectedListType;
-  lifestyle: LifestyleSelectedType;
+  lifestyleList: LifestyleSelectedListType;
 };
 export const CharacterSchema: zod.ZodType<CharacterType> = zod
   .object({
@@ -337,7 +344,7 @@ export const CharacterSchema: zod.ZodType<CharacterType> = zod
     augmentationList: CustomisedAugmentationListSchema,
     vehicleList: CustomisedVehicleListSchema,
     martialArtList: zod.array(MartialArtSelectedSchema),
-    lifestyle: LifestyleSelectedSchema,
+    lifestyleList: LifestyleSelectedListSchema,
   })
   .strict();
 

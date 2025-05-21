@@ -1,0 +1,91 @@
+[
+  {
+    "name": "Blow-Away Panel Weapon Mount Add-on (Drone)",
+    "description": "",
+    "type": "All",
+    "slotCost": [0],
+    "requirements": {},
+    "availability": {
+      "rating": 0,
+      "restriction": ""
+    },
+    "cost": [25],
+    "source": "Rigger 5",
+    "page": 124
+  },
+  {
+    "name": "Pop-Out Weapon Mount Add-on (Drone)",
+    "description": "",
+    "type": "All",
+    "slotCost": [1],
+    "requirements": {},
+    "availability": {
+      "rating": 0,
+      "restriction": ""
+    },
+    "cost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Weapon Mount Slots"
+          },
+          {
+            "operator": "*"
+          },
+          100
+        ]
+      }
+    ],
+    "source": "Rigger 5",
+    "page": 124
+  },
+  {
+    "name": "Expanded Ammunition Bay (Second Bin) Weapon Mount Add-on (Drone)",
+    "description": "",
+    "type": "All",
+    "slotCost": [1],
+    "requirements": {},
+    "availability": {
+      "rating": 0,
+      "restriction": ""
+    },
+    "cost": [50],
+    "source": "Rigger 5",
+    "page": 124
+  },
+  {
+    "name": "Expanded Ammunition Bay (Belt-Feed) Weapon Mount Add-on (Drone)",
+    "description": "",
+    "type": "All",
+    "slotCost": [2],
+    "replaceAmmo": [
+      {
+        "reloadMethod": "(belt)",
+        "capacity": 100
+      }
+    ],
+    "requirements": {},
+    "availability": {
+      "rating": 0,
+      "restriction": ""
+    },
+    "cost": [500],
+    "source": "Rigger 5",
+    "page": 124
+  },
+  {
+    "name": "Ammo Bin",
+    "description": "",
+    "type": "Weapons",
+    "slotCost": [1],
+    "additionalAmmo": 250,
+    "percentageAmmoIncrease": 250,
+    "availability": {
+      "rating": 6,
+      "restriction": "R"
+    },
+    "cost": [200],
+    "source": "Rigger 5",
+    "page": 159
+  }
+]

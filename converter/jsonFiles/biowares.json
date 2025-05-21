@@ -1152,7 +1152,7 @@
       "Toxins",
       "Custom"
     ],
-    "allowCategoryList": ["Chemical Gland Modifications"],
+    "allowSubsystemCategoryList": ["Chemical Gland Modifications"],
     "availability": {
       "rating": [12],
       "restriction": "R",
@@ -1201,7 +1201,7 @@
       "Toxins",
       "Custom"
     ],
-    "allowCategoryList": ["Chemical Gland Modifications"],
+    "allowSubsystemCategoryList": ["Chemical Gland Modifications"],
     "availability": {
       "rating": [12],
       "restriction": "R",
@@ -1251,7 +1251,7 @@
       "Toxins",
       "Custom"
     ],
-    "allowCategoryList": ["Chemical Gland Modifications"],
+    "allowSubsystemCategoryList": ["Chemical Gland Modifications"],
     "availability": {
       "rating": [12],
       "restriction": "R",
@@ -1300,7 +1300,7 @@
       "Toxins",
       "Custom"
     ],
-    "allowCategoryList": ["Chemical Gland Modifications"],
+    "allowSubsystemCategoryList": ["Chemical Gland Modifications"],
     "availability": {
       "rating": [12],
       "restriction": "F",

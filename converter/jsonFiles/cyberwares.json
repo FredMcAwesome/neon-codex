@@ -117,7 +117,7 @@
     },
     "includedGearList": [
       {
-        "name": "Sim Module, Hot",
+        "baseGear": "Sim Module, Hot",
         "category": "Commlink Accessories"
       }
     ],
@@ -145,7 +145,7 @@
     "type": "Cyberware",
     "subtype": "Headware",
     "capacity": [0],
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Datajack"
@@ -256,9 +256,9 @@
     },
     "includedGearList": [
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       }
     ],
     "availability": {
@@ -660,7 +660,7 @@
       ]
     },
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": ["Eyeware"],
+    "allowSubsystemCategoryList": ["Eyeware"],
     "availability": {
       "rating": [
         {
@@ -733,7 +733,7 @@
         ]
       }
     ],
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Image Link"
@@ -1016,7 +1016,7 @@
       "maximum": [4]
     },
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": ["Earware"],
+    "allowSubsystemCategoryList": ["Earware"],
     "availability": {
       "rating": [
         {
@@ -1111,7 +1111,7 @@
         ]
       }
     ],
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Sound Link"
@@ -1812,7 +1812,7 @@
     },
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
       "Cyberlimb",
@@ -1857,7 +1857,7 @@
     },
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
       "Cyberlimb",
@@ -1901,7 +1901,7 @@
     },
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
       "Cyberlimb",
@@ -1937,7 +1937,7 @@
     "selectSide": true,
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
       "Cyberlimb",
@@ -1985,7 +1985,7 @@
     ],
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
       "Cyberlimb",
@@ -2040,7 +2040,7 @@
     ],
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
       "Cyberlimb",
@@ -2077,7 +2077,7 @@
     },
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
       "Cyberlimb",
@@ -2115,7 +2115,7 @@
     },
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
       "Cyberlimb",
@@ -2155,7 +2155,7 @@
     },
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
       "Cyberlimb",
@@ -2200,7 +2200,7 @@
     },
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
       "Cyberlimb",
@@ -2244,7 +2244,7 @@
     },
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
       "Cyberlimb",
@@ -2280,7 +2280,7 @@
     "selectSide": true,
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
       "Cyberlimb",
@@ -2328,7 +2328,7 @@
     ],
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
       "Cyberlimb",
@@ -2383,7 +2383,7 @@
     ],
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
       "Cyberlimb",
@@ -2420,7 +2420,7 @@
     },
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
       "Cyberlimb",
@@ -2458,7 +2458,7 @@
     },
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Headware",
       "Cosmetic Enhancement",
       "Cyberlimb",
@@ -2970,7 +2970,7 @@
       "maximum": [1]
     },
     "addWeapon": "Cyber Microgrenade Launcher",
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [20],
       "restriction": "F"
@@ -2996,7 +2996,7 @@
     "addWeapon": "Hand Blade",
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "requirements": {},
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [10],
       "restriction": "F"
@@ -3022,7 +3022,7 @@
     "addWeapon": "Hand Razors",
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "requirements": {},
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [8],
       "restriction": "F"
@@ -3046,7 +3046,7 @@
       "maximum": [1]
     },
     "addWeapon": "Heavy Cyber Pistol",
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [12],
       "restriction": "R"
@@ -3070,7 +3070,7 @@
       "maximum": [1]
     },
     "addWeapon": "Cyber Hold-Out",
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [8],
       "restriction": "R"
@@ -3120,7 +3120,7 @@
       "maximum": [1]
     },
     "addWeapon": "Light Cyber Pistol",
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [10],
       "restriction": "R"
@@ -3144,7 +3144,7 @@
       "maximum": [1]
     },
     "addWeapon": "Cyber Machine Pistol",
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [12],
       "restriction": "R"
@@ -3170,7 +3170,7 @@
     "addWeapon": "Shock Hand",
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "requirements": {},
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [8],
       "restriction": "R"
@@ -3194,7 +3194,7 @@
       "maximum": [1]
     },
     "addWeapon": "Cyber Shotgun",
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [12],
       "restriction": "R"
@@ -3244,7 +3244,7 @@
       "maximum": [1]
     },
     "addWeapon": "Spurs",
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [12],
       "restriction": "F"
@@ -3268,7 +3268,7 @@
       "maximum": [1]
     },
     "addWeapon": "Cyber Submachine Gun",
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [12],
       "restriction": "R"
@@ -3950,7 +3950,7 @@
       "maximum": [1]
     },
     "allowedGearCategories": ["Drugs", "Toxins"],
-    "allowCategoryList": ["Auto Injector Mods"],
+    "allowSubsystemCategoryList": ["Auto Injector Mods"],
     "availability": {
       "rating": [2],
       "restriction": ""
@@ -5489,7 +5489,7 @@
     },
     "selectSide": true,
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
       "Cyberlimb",
@@ -5524,7 +5524,7 @@
     },
     "selectSide": true,
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
       "Cyberlimb",
@@ -5559,7 +5559,7 @@
     },
     "selectSide": true,
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
       "Cyberlimb",
@@ -5594,7 +5594,7 @@
     },
     "selectSide": true,
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
       "Cyberlimb",
@@ -5642,7 +5642,7 @@
       "Synthetic Lower Leg, Modular"
     ],
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
       "Cyberlimb",
@@ -5690,7 +5690,7 @@
       "Synthetic Lower Leg, Modular"
     ],
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
       "Cyberlimb",
@@ -5738,7 +5738,7 @@
       "Synthetic Lower Leg, Modular"
     ],
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
       "Cyberlimb",
@@ -5786,7 +5786,7 @@
       "Synthetic Lower Leg, Modular"
     ],
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
       "Cyberlimb",
@@ -5824,7 +5824,7 @@
       "addPhysicalBoxes": 1
     },
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
       "Cyberlimb",
@@ -5862,7 +5862,7 @@
       "addPhysicalBoxes": 1
     },
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
       "Cyberlimb",
@@ -5900,7 +5900,7 @@
       "addPhysicalBoxes": 1
     },
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
       "Cyberlimb",
@@ -5938,7 +5938,7 @@
       "addPhysicalBoxes": 1
     },
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
       "Cyberlimb",
@@ -6398,7 +6398,7 @@
     },
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Bodyware",
       "Headware",
       "Cosmetic Enhancement",
@@ -6513,7 +6513,7 @@
     "inheritAttributes": true,
     "limbSlot": "Leg",
     "useBothLimbSlots": true,
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Centaur Front Leg",
@@ -6548,7 +6548,7 @@
     },
     "allowedGearCategories": ["Custom", "Sensors"],
     "userSelectable": false,
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
       "Cyberlimb",
@@ -6583,7 +6583,7 @@
     },
     "allowedGearCategories": ["Custom", "Sensors"],
     "userSelectable": false,
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
       "Cyberlimb",
@@ -6623,7 +6623,7 @@
     },
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Headware",
       "Bodyware",
       "Cosmetic Enhancement",
@@ -6663,7 +6663,7 @@
     },
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Headware",
       "Bodyware",
       "Cosmetic Enhancement",
@@ -6922,7 +6922,7 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -6945,7 +6945,7 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -6968,7 +6968,7 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -6991,7 +6991,7 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -7014,7 +7014,7 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -7042,7 +7042,7 @@
     "bonus": {
       "enterName": true
     },
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [8],
       "restriction": "F"
@@ -7065,7 +7065,7 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -7090,7 +7090,7 @@
     },
     "addWeapon": "Cyberfangs",
     "requirements": {},
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [6],
       "restriction": ""
@@ -7115,7 +7115,7 @@
     },
     "addWeapon": "Oral Slasher",
     "requirements": {},
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [12],
       "restriction": "R"
@@ -7168,7 +7168,7 @@
       "addPhysicalBoxes": 1
     },
     "requirements": {},
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [8],
       "restriction": "F"
@@ -7193,7 +7193,7 @@
     },
     "addWeapon": "Cyberfangs",
     "requirements": {},
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [8],
       "restriction": ""
@@ -7217,7 +7217,7 @@
       "maximum": [1]
     },
     "addWeapon": "Flametosser",
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [12],
       "restriction": "F"
@@ -7267,7 +7267,7 @@
       "minimum": [1],
       "maximum": [1]
     },
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -8309,7 +8309,7 @@
     "subtype": "Cybersuite",
     "capacity": [0],
     "inheritAttributes": true,
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Wired Reflexes",
@@ -8349,7 +8349,7 @@
     "subtype": "Cybersuite",
     "capacity": [0],
     "inheritAttributes": true,
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Wired Reflexes",
@@ -8392,7 +8392,7 @@
     "subtype": "Cybersuite",
     "capacity": [0],
     "inheritAttributes": true,
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Internal Air Tank",
@@ -8440,7 +8440,7 @@
     "subtype": "Cybersuite",
     "capacity": [0],
     "inheritAttributes": true,
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Datajack"
@@ -8491,7 +8491,7 @@
     "subtype": "Cybersuite",
     "capacity": [0],
     "inheritAttributes": true,
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Chipjack",
@@ -8528,7 +8528,7 @@
     "subtype": "Cybersuite",
     "capacity": [0],
     "inheritAttributes": true,
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Datajack"
@@ -8578,7 +8578,7 @@
     "subtype": "Cybersuite",
     "capacity": [0],
     "inheritAttributes": true,
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Datajack"
@@ -8587,7 +8587,7 @@
           "name": "Commlink",
           "gearList": [
             {
-              "name": "Shiawase Jishi",
+              "baseGear": "Shiawase Jishi",
               "category": "Commlinks"
             }
           ]
@@ -8911,7 +8911,7 @@
       "maximum": [1]
     },
     "addWeapon": "Foot Blade",
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [20],
       "restriction": "F"
@@ -8944,7 +8944,7 @@
     "subtype": "Cybersuite",
     "capacity": [0],
     "inheritAttributes": true,
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Cybereyes Basic System",
@@ -8989,7 +8989,7 @@
     "subtype": "Cybersuite",
     "capacity": [0],
     "inheritAttributes": true,
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Cybereyes Basic System",
@@ -9038,7 +9038,7 @@
     "subtype": "Cybersuite",
     "capacity": [0],
     "inheritAttributes": true,
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Cybereyes Basic System",
@@ -9088,7 +9088,7 @@
     "subtype": "Cybersuite",
     "capacity": [0],
     "inheritAttributes": true,
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Cybereyes Basic System",
@@ -9151,7 +9151,7 @@
     "capacity": [0],
     "inheritAttributes": true,
     "limbSlot": "All",
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Cybereyes Basic System",
@@ -9216,7 +9216,7 @@
     "subtype": "Cybersuite",
     "capacity": [0],
     "inheritAttributes": true,
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Cybereyes Basic System",
@@ -9276,13 +9276,13 @@
     "subtype": "Cybersuite",
     "capacity": [0],
     "inheritAttributes": true,
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Commlink",
           "gearList": [
             {
-              "name": "Transys Avalon",
+              "baseGear": "Transys Avalon",
               "category": "Commlinks"
             }
           ]
@@ -9343,13 +9343,13 @@
     "subtype": "Cybersuite",
     "capacity": [0],
     "inheritAttributes": true,
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Commlink",
           "gearList": [
             {
-              "name": "Transys Avalon",
+              "baseGear": "Transys Avalon",
               "category": "Commlinks"
             }
           ]
@@ -9410,13 +9410,13 @@
     "subtype": "Cybersuite",
     "capacity": [0],
     "inheritAttributes": true,
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Commlink",
           "gearList": [
             {
-              "name": "Transys Avalon",
+              "baseGear": "Transys Avalon",
               "category": "Commlinks"
             }
           ]
@@ -9490,13 +9490,13 @@
     "subtype": "Cybersuite",
     "capacity": [0],
     "inheritAttributes": true,
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Commlink",
           "gearList": [
             {
-              "name": "Sony Ronin",
+              "baseGear": "Sony Ronin",
               "category": "Commlinks"
             }
           ]
@@ -9550,13 +9550,13 @@
     "subtype": "Cybersuite",
     "capacity": [0],
     "inheritAttributes": true,
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Commlink",
           "gearList": [
             {
-              "name": "Sony Ronin",
+              "baseGear": "Sony Ronin",
               "category": "Commlinks"
             }
           ]
@@ -9607,13 +9607,13 @@
     "subtype": "Cybersuite",
     "capacity": [0],
     "inheritAttributes": true,
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Commlink",
           "gearList": [
             {
-              "name": "Sony Ronin",
+              "baseGear": "Sony Ronin",
               "category": "Commlinks"
             }
           ]
@@ -9678,13 +9678,13 @@
     "subtype": "Cybersuite",
     "capacity": [0],
     "inheritAttributes": true,
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Commlink",
           "gearList": [
             {
-              "name": "MCT-5000",
+              "baseGear": "MCT-5000",
               "category": "Commlinks"
             }
           ]
@@ -9732,7 +9732,7 @@
     "subtype": "Cybersuite",
     "capacity": [0],
     "inheritAttributes": true,
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Reaction Enhancers",
@@ -9776,13 +9776,13 @@
     "subtype": "Cybersuite",
     "capacity": [0],
     "inheritAttributes": true,
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Commlink",
           "gearList": [
             {
-              "name": "MCT-5000",
+              "baseGear": "MCT-5000",
               "category": "Commlinks"
             }
           ]
@@ -10256,7 +10256,7 @@
       "maximum": [1]
     },
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": ["Eyeware"],
+    "allowSubsystemCategoryList": ["Eyeware"],
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -10487,7 +10487,7 @@
       "maximum": [0]
     },
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": ["Earware"],
+    "allowSubsystemCategoryList": ["Earware"],
     "availability": {
       "rating": [0],
       "restriction": ""
@@ -10498,7 +10498,7 @@
     "type": "Cyberware",
     "subtype": "Earware",
     "capacity": [4],
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Sound Link"
@@ -10599,7 +10599,7 @@
       "addPhysicalBoxes": 1
     },
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Headware",
       "Bodyware",
       "Cosmetic Enhancement",
@@ -10637,7 +10637,7 @@
       "addPhysicalBoxes": 1
     },
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Headware",
       "Bodyware",
       "Cosmetic Enhancement",
@@ -10675,7 +10675,7 @@
       "addPhysicalBoxes": 1
     },
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Headware",
       "Bodyware",
       "Cosmetic Enhancement",
@@ -10713,7 +10713,7 @@
       "addPhysicalBoxes": 1
     },
     "allowedGearCategories": ["Custom", "Sensors"],
-    "allowCategoryList": [
+    "allowSubsystemCategoryList": [
       "Headware",
       "Bodyware",
       "Cosmetic Enhancement",
@@ -11352,7 +11352,7 @@
       "maximum": [1]
     },
     "addWeapon": "Hand Razors, Fixed (2050)",
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [3],
       "restriction": "F"
@@ -11376,7 +11376,7 @@
       "maximum": [1]
     },
     "addWeapon": "Hand Razors, Retractable (2050)",
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [5],
       "restriction": "F"
@@ -11400,7 +11400,7 @@
       "maximum": [1]
     },
     "addWeapon": "Spur, Fixed (2050)",
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [3],
       "restriction": "F"
@@ -11424,7 +11424,7 @@
       "maximum": [1]
     },
     "addWeapon": "Spur, Retractable (2050)",
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [3],
       "restriction": "F"
@@ -11609,7 +11609,7 @@
       "maximum": [1]
     },
     "addWeapon": "Cyber Holdout Pistol (2050)",
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [8],
       "restriction": "R"
@@ -11633,7 +11633,7 @@
       "maximum": [1]
     },
     "addWeapon": "Cyber Light Pistol (2050)",
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [8],
       "restriction": "F"
@@ -11657,7 +11657,7 @@
       "maximum": [1]
     },
     "addWeapon": "Cyber Machine Pistol (2050)",
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [8],
       "restriction": "F"
@@ -11681,7 +11681,7 @@
       "maximum": [1]
     },
     "addWeapon": "Cyber Heavy Pistol (2050)",
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [8],
       "restriction": "F"
@@ -11705,7 +11705,7 @@
       "maximum": [1]
     },
     "addWeapon": "Cyber Submachine Gun (2050)",
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [8],
       "restriction": "F"
@@ -11729,7 +11729,7 @@
       "maximum": [1]
     },
     "addWeapon": "Cyber Shotgun (2050)",
-    "allowCategoryList": ["Cyber Implant Weapon Accessory"],
+    "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
       "rating": [8],
       "restriction": "F"
@@ -11761,7 +11761,7 @@
     "subtype": "Cybersuite",
     "capacity": [0],
     "inheritAttributes": true,
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Wired Reflexes",
@@ -11801,7 +11801,7 @@
     "subtype": "Cybersuite",
     "capacity": [0],
     "inheritAttributes": true,
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Reaction Enhancers",
@@ -11831,7 +11831,7 @@
     "subtype": "Cybersuite",
     "capacity": [0],
     "inheritAttributes": true,
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Reaction Enhancers",
@@ -11861,7 +11861,7 @@
     "subtype": "Cybersuite",
     "capacity": [0],
     "inheritAttributes": true,
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Wired Reflexes",
@@ -11891,7 +11891,7 @@
     "subtype": "Cybersuite",
     "capacity": [0],
     "inheritAttributes": true,
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Wired Reflexes",
@@ -11921,7 +11921,7 @@
     "subtype": "Cybersuite",
     "capacity": [0],
     "inheritAttributes": true,
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Attention Coprocessor"
@@ -11961,7 +11961,7 @@
     "subtype": "Cybersuite",
     "capacity": [0],
     "inheritAttributes": true,
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Attention Coprocessor"
@@ -12039,7 +12039,7 @@
     "subtype": "Cybersuite",
     "capacity": [0],
     "inheritAttributes": true,
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Cybereyes Basic System",
@@ -12107,7 +12107,7 @@
     "subtype": "Cybersuite",
     "capacity": [0],
     "inheritAttributes": true,
-    "subsystemList": {
+    "includedSubsystemList": {
       "cyberwareList": [
         {
           "name": "Cybereyes Basic System",
@@ -12273,9 +12273,9 @@
     },
     "includedGearList": [
       {
-        "name": "Universal Connector Cord",
-        "rating": 1,
-        "category": "Tools"
+        "baseGear": "Universal Connector Cord",
+        "category": "Tools",
+        "rating": 1
       }
     ],
     "allowedGearCategories": ["Common Programs", "Hacking Programs"],

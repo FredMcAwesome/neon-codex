@@ -19,10 +19,10 @@ import {
 import {
   AvailabilityRatingSchema,
   RangeCostSchema,
-  IncludedGearListSchema,
 } from "../../shared/commonSchemas.js";
-import { BonusSchema, WeaponBonusSchema } from "../../shared/bonusSchemas.js";
+import { BonusSchema } from "../../shared/bonusSchemas.js";
 import { RequirementsSchema } from "../../shared/requiredSchemas.js";
+import { WeaponBonusSchema } from "../../shared/weaponSharedSchemas.js";
 
 export const PartialAvailabilityGearSchema = zod
   .object({
@@ -193,7 +193,7 @@ export const GearSchema = zod
     allowCategoryList: zod.optional(
       zod.array(zod.nativeEnum(gearCategoryEnum))
     ),
-    quantity: zod.optional(zod.number()),
+    purchaseQuantity: zod.optional(zod.number()),
     bonus: zod.optional(BonusSchema),
     weaponBonus: zod.optional(WeaponBonusSchema),
     isFlechetteAmmo: zod.optional(zod.literal(true)),
@@ -202,7 +202,7 @@ export const GearSchema = zod
     explosiveWeight: zod.optional(WeightSchema),
     userSelectable: zod.optional(zod.literal(false)),
     allowedGearList: zod.optional(zod.array(zod.string())),
-    includedGearList: zod.optional(IncludedGearListSchema),
+    includedGearList: zod.optional(zod.lazy(() => CustomisedGearListSchema)),
     deviceRating: zod.optional(GearDeviceRatingSchema),
     programs: zod.optional(GearProgramSchema),
     attributeArray: zod.optional(zod.array(zod.number())),
@@ -233,17 +233,29 @@ export type GearType = zod.infer<typeof GearSchema>;
 export const GearListSchema = zod.array(GearSchema);
 export type GearListType = zod.infer<typeof GearListSchema>;
 
-export const CustomisedGearSchema = zod
+export type CustomisedGearType = {
+  baseGear: string;
+  customName?: string | undefined;
+  specificOption?: string | undefined;
+  rating?: number | undefined;
+  consumeCapacity?: true | undefined;
+  currentQuantity?: number | undefined;
+  innerGearList?: CustomisedGearListType | undefined;
+};
+
+export const CustomisedGearSchema: zod.ZodType<CustomisedGearType> = zod
   .object({
-    baseGear: GearSchema,
-    // This overrides baseGear included gear
-    // TODO: make this lazy and point to itself
-    gearList: zod.optional(IncludedGearListSchema),
-    // TODO: is rating a thing for gear?
-    // rating: zod.optional(zod.number()),
+    baseGear: zod.string(),
+    // optional as only sometimes required to identify the gear
+    category: zod.optional(zod.nativeEnum(gearCategoryEnum)),
     customName: zod.optional(zod.string()),
+    specificOption: zod.optional(zod.string()),
+    rating: zod.optional(zod.number()),
+    consumeCapacity: zod.optional(zod.literal(true)),
+    currentQuantity: zod.optional(zod.number()),
+    innerGearList: zod.optional(zod.lazy(() => CustomisedGearListSchema)),
   })
   .strict();
-export type CustomisedGearType = zod.infer<typeof CustomisedGearSchema>;
+
 export const CustomisedGearListSchema = zod.array(CustomisedGearSchema);
 export type CustomisedGearListType = zod.infer<typeof CustomisedGearListSchema>;

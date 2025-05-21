@@ -2,7 +2,7 @@
   {
     "name": "Tracked Propulsion",
     "description": "",
-    "subtype": "Model-Specific",
+    "type": "Model-Specific",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -12,13 +12,12 @@
     },
     "cost": [0],
     "source": "Rigger 5",
-    "page": 0,
-    "type": "Vehicle"
+    "page": 0
   },
   {
     "name": "Signature Dampening",
     "description": "",
-    "subtype": "Model-Specific",
+    "type": "Model-Specific",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -28,13 +27,12 @@
     },
     "cost": [0],
     "source": "Rigger 5",
-    "page": 0,
-    "type": "Vehicle"
+    "page": 0
   },
   {
     "name": "FlashTech",
     "description": "",
-    "subtype": "Model-Specific",
+    "type": "Model-Specific",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -44,13 +42,12 @@
     },
     "cost": [0],
     "source": "Rigger 5",
-    "page": 0,
-    "type": "Vehicle"
+    "page": 0
   },
   {
     "name": "Enviroseal",
     "description": "",
-    "subtype": "Model-Specific",
+    "type": "Model-Specific",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -60,13 +57,12 @@
     },
     "cost": [0],
     "source": "Rigger 5",
-    "page": 0,
-    "type": "Vehicle"
+    "page": 0
   },
   {
     "name": "Drone Rail",
     "description": "",
-    "subtype": "Model-Specific",
+    "type": "Model-Specific",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -76,13 +72,12 @@
     },
     "cost": [0],
     "source": "Rigger 5",
-    "page": 0,
-    "type": "Vehicle"
+    "page": 0
   },
   {
     "name": "Gyro-Stabilization",
     "description": "",
-    "subtype": "Model-Specific",
+    "type": "Model-Specific",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -92,13 +87,12 @@
     },
     "cost": [0],
     "source": "Rigger 5",
-    "page": 0,
-    "type": "Vehicle"
+    "page": 0
   },
   {
     "name": "Smart Tires",
     "description": "",
-    "subtype": "Model-Specific",
+    "type": "Model-Specific",
     "maxRating": [
       {
         "option": "Quantity of Mod"
@@ -112,13 +106,12 @@
     },
     "cost": [0],
     "source": "Rigger 5",
-    "page": 0,
-    "type": "Vehicle"
+    "page": 0
   },
   {
     "name": "Dustoff Armored Valkyrie Module",
     "description": "",
-    "subtype": "Model-Specific",
+    "type": "Model-Specific",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -128,13 +121,12 @@
     },
     "cost": [0],
     "source": "Bullets And Bandages",
-    "page": 23,
-    "type": "Vehicle"
+    "page": 23
   },
   {
     "name": "Reloading Drone Forbidden Weapon Reloading Autosoft",
     "description": "",
-    "subtype": "Model-Specific",
+    "type": "Model-Specific",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -144,13 +136,12 @@
     },
     "cost": [250],
     "source": "Hard Targets",
-    "page": 189,
-    "type": "Vehicle"
+    "page": 189
   },
   {
     "name": "Avibras-Nissan AN 822 Device Rating Upgrade",
     "description": "",
-    "subtype": "Model-Specific",
+    "type": "Model-Specific",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -160,13 +151,12 @@
     },
     "cost": [0],
     "source": "Shadows In Focus: Metropole",
-    "page": 31,
-    "type": "Vehicle"
+    "page": 31
   },
   {
     "name": "Ruhrmetall Wolf II Troop Transport Module",
     "description": "",
-    "subtype": "Model-Specific",
+    "type": "Model-Specific",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -176,13 +166,12 @@
     },
     "cost": [0],
     "source": "Rigger 5",
-    "page": 77,
-    "type": "Vehicle"
+    "page": 77
   },
   {
     "name": "Maersk Shipyards Wavecutter MPAC Small Craft Bay",
     "description": "",
-    "subtype": "Model-Specific",
+    "type": "Model-Specific",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -192,13 +181,12 @@
     },
     "cost": [0],
     "source": "Street Lethal",
-    "page": 132,
-    "type": "Vehicle"
+    "page": 132
   },
   {
     "name": "Speakers",
     "description": "",
-    "subtype": "Cosmetic",
+    "type": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "userSelectable": false,
@@ -208,13 +196,12 @@
     },
     "cost": [0],
     "source": "Rigger 5",
-    "page": 128,
-    "type": "Vehicle"
+    "page": 128
   },
   {
     "name": "Strobes",
     "description": "",
-    "subtype": "Cosmetic",
+    "type": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "userSelectable": false,
@@ -224,13 +211,12 @@
     },
     "cost": [0],
     "source": "Rigger 5",
-    "page": 128,
-    "type": "Vehicle"
+    "page": 128
   },
   {
     "name": "Acceleration Enhancement",
     "description": "",
-    "subtype": "Power Train",
+    "type": "Power Train",
     "maxRating": [2],
     "slotCost": {
       "ratingLinked": [[4], [8]]
@@ -314,13 +300,12 @@
       ]
     },
     "source": "Rigger 5",
-    "page": 154,
-    "type": "Vehicle"
+    "page": 154
   },
   {
     "name": "Gecko Tips",
     "description": "",
-    "subtype": "Power Train",
+    "type": "Power Train",
     "maxRating": [0],
     "slotCost": [
       1,
@@ -378,13 +363,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 154,
-    "type": "Vehicle"
+    "page": 154
   },
   {
     "name": "Gliding System",
     "description": "",
-    "subtype": "Power Train",
+    "type": "Power Train",
     "maxRating": [0],
     "slotCost": [
       5,
@@ -515,13 +499,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 154,
-    "type": "Vehicle"
+    "page": 154
   },
   {
     "name": "Handling Enhancement",
     "description": "",
-    "subtype": "Power Train",
+    "type": "Power Train",
     "maxRating": [3],
     "slotCost": {
       "ratingLinked": [[4], [10], [18]]
@@ -652,13 +635,12 @@
       ]
     },
     "source": "Rigger 5",
-    "page": 154,
-    "type": "Vehicle"
+    "page": 154
   },
   {
     "name": "Improved Economy",
     "description": "",
-    "subtype": "Power Train",
+    "type": "Power Train",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -667,13 +649,12 @@
     },
     "cost": [7500],
     "source": "Rigger 5",
-    "page": 154,
-    "type": "Vehicle"
+    "page": 154
   },
   {
     "name": "Manual Control Override",
     "description": "",
-    "subtype": "Power Train",
+    "type": "Power Train",
     "maxRating": [0],
     "slotCost": [1],
     "availability": {
@@ -682,13 +663,12 @@
     },
     "cost": [500],
     "source": "Rigger 5",
-    "page": 154,
-    "type": "Vehicle"
+    "page": 154
   },
   {
     "name": "Multifuel Engine",
     "description": "",
-    "subtype": "Power Train",
+    "type": "Power Train",
     "maxRating": [0],
     "slotCost": [4],
     "availability": {
@@ -731,13 +711,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 155,
-    "type": "Vehicle"
+    "page": 155
   },
   {
     "name": "Off-Road Suspension",
     "description": "",
-    "subtype": "Power Train",
+    "type": "Power Train",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -758,13 +737,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 155,
-    "type": "Vehicle"
+    "page": 155
   },
   {
     "name": "Rigger Cocoon",
     "description": "",
-    "subtype": "Power Train",
+    "type": "Power Train",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -773,13 +751,12 @@
     },
     "cost": [1500],
     "source": "Rigger 5",
-    "page": 155,
-    "type": "Vehicle"
+    "page": 155
   },
   {
     "name": "Removed Manual Controls",
     "description": "",
-    "subtype": "Power Train",
+    "type": "Power Train",
     "maxRating": [0],
     "slotCost": [1],
     "availability": {
@@ -788,13 +765,12 @@
     },
     "cost": [200],
     "source": "Rigger 5",
-    "page": 155,
-    "type": "Vehicle"
+    "page": 155
   },
   {
     "name": "Rocket Booster",
     "description": "",
-    "subtype": "Power Train",
+    "type": "Power Train",
     "maxRating": [0],
     "slotCost": [10],
     "availability": {
@@ -837,13 +813,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 156,
-    "type": "Vehicle"
+    "page": 156
   },
   {
     "name": "Manual Controls",
     "description": "",
-    "subtype": "Power Train",
+    "type": "Power Train",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -852,13 +827,12 @@
     },
     "cost": [0],
     "source": "Shadows In Focus: Metropole",
-    "page": 31,
-    "type": "Vehicle"
+    "page": 31
   },
   {
     "name": "Secondary Manual Controls",
     "description": "",
-    "subtype": "Power Train",
+    "type": "Power Train",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -867,13 +841,12 @@
     },
     "cost": [1000],
     "source": "Rigger 5",
-    "page": 156,
-    "type": "Vehicle"
+    "page": 156
   },
   {
     "name": "Secondary Propulsion (Amphibious, Surface)",
     "description": "",
-    "subtype": "Power Train",
+    "type": "Power Train",
     "maxRating": [0],
     "slotCost": [4],
     "availability": {
@@ -916,13 +889,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 156,
-    "type": "Vehicle"
+    "page": 156
   },
   {
     "name": "Secondary Propulsion (Amphibious, Submersible)",
     "description": "",
-    "subtype": "Power Train",
+    "type": "Power Train",
     "maxRating": [0],
     "slotCost": [8],
     "availability": {
@@ -965,13 +937,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 156,
-    "type": "Vehicle"
+    "page": 156
   },
   {
     "name": "Secondary Propulsion (Hovercraft)",
     "description": "",
-    "subtype": "Power Train",
+    "type": "Power Train",
     "maxRating": [0],
     "slotCost": [8],
     "availability": {
@@ -1014,13 +985,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 156,
-    "type": "Vehicle"
+    "page": 156
   },
   {
     "name": "Secondary Propulsion (Rotor)",
     "description": "",
-    "subtype": "Power Train",
+    "type": "Power Train",
     "maxRating": [0],
     "slotCost": [10],
     "availability": {
@@ -1063,13 +1033,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 157,
-    "type": "Vehicle"
+    "page": 157
   },
   {
     "name": "Secondary Propulsion (Tracked)",
     "description": "",
-    "subtype": "Power Train",
+    "type": "Power Train",
     "maxRating": [0],
     "slotCost": [6],
     "availability": {
@@ -1112,13 +1081,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 157,
-    "type": "Vehicle"
+    "page": 157
   },
   {
     "name": "Secondary Propulsion (Walker)",
     "description": "",
-    "subtype": "Power Train",
+    "type": "Power Train",
     "maxRating": [0],
     "slotCost": [8],
     "availability": {
@@ -1161,13 +1129,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 157,
-    "type": "Vehicle"
+    "page": 157
   },
   {
     "name": "Speed Enhancement",
     "description": "",
-    "subtype": "Power Train",
+    "type": "Power Train",
     "maxRating": [3],
     "slotCost": {
       "ratingLinked": [[5], [14], [20]]
@@ -1298,13 +1265,12 @@
       ]
     },
     "source": "Rigger 5",
-    "page": 157,
-    "type": "Vehicle"
+    "page": 157
   },
   {
     "name": "Anti-Theft System",
     "description": "",
-    "subtype": "Protection",
+    "type": "Protection",
     "maxRating": [4],
     "slotCost": {
       "ratingLinked": [[1], [2], [4], [6]]
@@ -1333,13 +1299,12 @@
       "ratingLinked": [[500], [1000], [2500], [5000]]
     },
     "source": "Rigger 5",
-    "page": 159,
-    "type": "Vehicle"
+    "page": 159
   },
   {
     "name": "Armor (Standard)",
     "description": "",
-    "subtype": "Protection",
+    "type": "Protection",
     "maxRating": [
       {
         "option": "Body"
@@ -1383,13 +1348,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 159,
-    "type": "Vehicle"
+    "page": 159
   },
   {
     "name": "Armor (Concealed)",
     "description": "",
-    "subtype": "Protection",
+    "type": "Protection",
     "maxRating": [
       {
         "option": "Body"
@@ -1433,13 +1397,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 159,
-    "type": "Vehicle"
+    "page": 159
   },
   {
     "name": "Passenger Protection System",
     "description": "",
-    "subtype": "Protection",
+    "type": "Protection",
     "maxRating": [6],
     "slotCost": [2],
     "availability": {
@@ -1460,13 +1423,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 159,
-    "type": "Vehicle"
+    "page": 159
   },
   {
     "name": "Personal Armor",
     "description": "",
-    "subtype": "Protection",
+    "type": "Protection",
     "maxRating": [10],
     "slotCost": [2],
     "availability": {
@@ -1495,13 +1457,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 159,
-    "type": "Vehicle"
+    "page": 159
   },
   {
     "name": "Special Armor Modification (Chemical)",
     "description": "",
-    "subtype": "Protection",
+    "type": "Protection",
     "maxRating": [50],
     "slotCost": [2],
     "availability": {
@@ -1522,13 +1483,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 159,
-    "type": "Vehicle"
+    "page": 159
   },
   {
     "name": "Special Armor Modification (Fire)",
     "description": "",
-    "subtype": "Protection",
+    "type": "Protection",
     "maxRating": [50],
     "slotCost": [2],
     "availability": {
@@ -1549,13 +1509,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 159,
-    "type": "Vehicle"
+    "page": 159
   },
   {
     "name": "Special Armor Modification (Insulation)",
     "description": "",
-    "subtype": "Protection",
+    "type": "Protection",
     "maxRating": [50],
     "slotCost": [2],
     "availability": {
@@ -1576,13 +1535,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 159,
-    "type": "Vehicle"
+    "page": 159
   },
   {
     "name": "Special Armor Modification (Nonconductivity)",
     "description": "",
-    "subtype": "Protection",
+    "type": "Protection",
     "maxRating": [50],
     "slotCost": [2],
     "availability": {
@@ -1603,13 +1561,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 159,
-    "type": "Vehicle"
+    "page": 159
   },
   {
     "name": "Special Armor Modification (Radiation)",
     "description": "",
-    "subtype": "Protection",
+    "type": "Protection",
     "maxRating": [50],
     "slotCost": [2],
     "availability": {
@@ -1646,13 +1603,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 159,
-    "type": "Vehicle"
+    "page": 159
   },
   {
     "name": "Special Armor Modification (Universal Mirror Material)",
     "description": "",
-    "subtype": "Protection",
+    "type": "Protection",
     "maxRating": [50],
     "slotCost": [2],
     "availability": {
@@ -1673,13 +1629,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 159,
-    "type": "Vehicle"
+    "page": 159
   },
   {
     "name": "Flash-Pak",
     "description": "",
-    "subtype": "Weapons",
+    "type": "Weapons",
     "maxRating": [0],
     "slotCost": [0],
     "userSelectable": false,
@@ -1689,13 +1644,12 @@
     },
     "cost": [0],
     "source": "State Of The Art - ADL",
-    "page": 0,
-    "type": "Vehicle"
+    "page": 0
   },
   {
     "name": "Standard Drone Rack (Micro)",
     "description": "",
-    "subtype": "Weapons",
+    "type": "Weapons",
     "maxRating": [0],
     "slotCost": [1],
     "availability": {
@@ -1704,13 +1658,12 @@
     },
     "cost": [350],
     "source": "Rigger 5",
-    "page": 160,
-    "type": "Vehicle"
+    "page": 160
   },
   {
     "name": "Standard Drone Rack (Mini)",
     "description": "",
-    "subtype": "Weapons",
+    "type": "Weapons",
     "maxRating": [0],
     "slotCost": [1],
     "availability": {
@@ -1719,13 +1672,12 @@
     },
     "cost": [500],
     "source": "Rigger 5",
-    "page": 160,
-    "type": "Vehicle"
+    "page": 160
   },
   {
     "name": "Standard Drone Rack (Small)",
     "description": "",
-    "subtype": "Weapons",
+    "type": "Weapons",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -1734,13 +1686,12 @@
     },
     "cost": [1000],
     "source": "Rigger 5",
-    "page": 160,
-    "type": "Vehicle"
+    "page": 160
   },
   {
     "name": "Standard Drone Rack (Medium)",
     "description": "",
-    "subtype": "Weapons",
+    "type": "Weapons",
     "maxRating": [0],
     "slotCost": [3],
     "availability": {
@@ -1749,13 +1700,12 @@
     },
     "cost": [2000],
     "source": "Rigger 5",
-    "page": 160,
-    "type": "Vehicle"
+    "page": 160
   },
   {
     "name": "Standard Drone Rack (Large)",
     "description": "",
-    "subtype": "Weapons",
+    "type": "Weapons",
     "maxRating": [0],
     "slotCost": [4],
     "availability": {
@@ -1764,13 +1714,12 @@
     },
     "cost": [4000],
     "source": "Rigger 5",
-    "page": 160,
-    "type": "Vehicle"
+    "page": 160
   },
   {
     "name": "Landing Drone Rack (Micro)",
     "description": "",
-    "subtype": "Weapons",
+    "type": "Weapons",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -1779,13 +1728,12 @@
     },
     "cost": [750],
     "source": "Rigger 5",
-    "page": 160,
-    "type": "Vehicle"
+    "page": 160
   },
   {
     "name": "Landing Drone Rack (Mini)",
     "description": "",
-    "subtype": "Weapons",
+    "type": "Weapons",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -1794,13 +1742,12 @@
     },
     "cost": [1000],
     "source": "Rigger 5",
-    "page": 160,
-    "type": "Vehicle"
+    "page": 160
   },
   {
     "name": "Landing Drone Rack (Small)",
     "description": "",
-    "subtype": "Weapons",
+    "type": "Weapons",
     "maxRating": [0],
     "slotCost": [3],
     "availability": {
@@ -1809,13 +1756,12 @@
     },
     "cost": [4000],
     "source": "Rigger 5",
-    "page": 160,
-    "type": "Vehicle"
+    "page": 160
   },
   {
     "name": "Landing Drone Rack (Medium)",
     "description": "",
-    "subtype": "Weapons",
+    "type": "Weapons",
     "maxRating": [0],
     "slotCost": [4],
     "availability": {
@@ -1824,13 +1770,12 @@
     },
     "cost": [10000],
     "source": "Rigger 5",
-    "page": 160,
-    "type": "Vehicle"
+    "page": 160
   },
   {
     "name": "Landing Drone Rack (Large)",
     "description": "",
-    "subtype": "Weapons",
+    "type": "Weapons",
     "maxRating": [0],
     "slotCost": [5],
     "availability": {
@@ -1839,13 +1784,12 @@
     },
     "cost": [20000],
     "source": "Rigger 5",
-    "page": 160,
-    "type": "Vehicle"
+    "page": 160
   },
   {
     "name": "Gun Port",
     "description": "",
-    "subtype": "Weapons",
+    "type": "Weapons",
     "maxRating": [0],
     "slotCost": [1],
     "availability": {
@@ -1854,13 +1798,12 @@
     },
     "cost": [500],
     "source": "Rigger 5",
-    "page": 160,
-    "type": "Vehicle"
+    "page": 160
   },
   {
     "name": "Missile Defense System",
     "description": "",
-    "subtype": "Weapons",
+    "type": "Weapons",
     "maxRating": [0],
     "slotCost": [3],
     "availability": {
@@ -1869,13 +1812,12 @@
     },
     "cost": [15000],
     "source": "Rigger 5",
-    "page": 160,
-    "type": "Vehicle"
+    "page": 160
   },
   {
     "name": "Oil Slick Sprayer",
     "description": "",
-    "subtype": "Weapons",
+    "type": "Weapons",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -1884,13 +1826,12 @@
     },
     "cost": [500],
     "source": "Rigger 5",
-    "page": 161,
-    "type": "Vehicle"
+    "page": 161
   },
   {
     "name": "Ram Plate",
     "description": "",
-    "subtype": "Weapons",
+    "type": "Weapons",
     "maxRating": [0],
     "slotCost": [1],
     "availability": {
@@ -1933,13 +1874,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 161,
-    "type": "Vehicle"
+    "page": 161
   },
   {
     "name": "Smoke Projector",
     "description": "",
-    "subtype": "Weapons",
+    "type": "Weapons",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -1948,13 +1888,12 @@
     },
     "cost": [750],
     "source": "Rigger 5",
-    "page": 161,
-    "type": "Vehicle"
+    "page": 161
   },
   {
     "name": "Smoke Projector (Thermal)",
     "description": "",
-    "subtype": "Weapons",
+    "type": "Weapons",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -1963,13 +1902,12 @@
     },
     "cost": [850],
     "source": "Rigger 5",
-    "page": 161,
-    "type": "Vehicle"
+    "page": 161
   },
   {
     "name": "Road Strip Ejector",
     "description": "",
-    "subtype": "Weapons",
+    "type": "Weapons",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -1978,13 +1916,12 @@
     },
     "cost": [800],
     "source": "Rigger 5",
-    "page": 161,
-    "type": "Vehicle"
+    "page": 161
   },
   {
     "name": "Assembly/Disassembly",
     "description": "",
-    "subtype": "Body",
+    "type": "Body",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -1993,13 +1930,12 @@
     },
     "cost": [1000],
     "source": "Rigger 5",
-    "page": 163,
-    "type": "Vehicle"
+    "page": 163
   },
   {
     "name": "Chameleon Coating",
     "description": "",
-    "subtype": "Body",
+    "type": "Body",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -2042,13 +1978,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 163,
-    "type": "Vehicle"
+    "page": 163
   },
   {
     "name": "Extra Entry/Exit Points",
     "description": "",
-    "subtype": "Body",
+    "type": "Body",
     "maxRating": [0],
     "slotCost": [1],
     "availability": {
@@ -2057,13 +1992,12 @@
     },
     "cost": [2500],
     "source": "Rigger 5",
-    "page": 164,
-    "type": "Vehicle"
+    "page": 164
   },
   {
     "name": "Extreme Environment Modification",
     "description": "",
-    "subtype": "Body",
+    "type": "Body",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -2072,13 +2006,12 @@
     },
     "cost": [2000],
     "source": "Rigger 5",
-    "page": 164,
-    "type": "Vehicle"
+    "page": 164
   },
   {
     "name": "Increased Seating",
     "description": "",
-    "subtype": "Body",
+    "type": "Body",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -2087,13 +2020,12 @@
     },
     "cost": [2000],
     "source": "Rigger 5",
-    "page": 164,
-    "type": "Vehicle"
+    "page": 164
   },
   {
     "name": "Life Support",
     "description": "",
-    "subtype": "Body",
+    "type": "Body",
     "maxRating": [2],
     "slotCost": [2],
     "availability": {
@@ -2175,13 +2107,12 @@
       ]
     },
     "source": "Rigger 5",
-    "page": 164,
-    "type": "Vehicle"
+    "page": 164
   },
   {
     "name": "Mechanical Arm (Basic)",
     "description": "",
-    "subtype": "Body",
+    "type": "Body",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -2190,13 +2121,12 @@
     },
     "cost": [1000],
     "source": "Rigger 5",
-    "page": 165,
-    "type": "Vehicle"
+    "page": 165
   },
   {
     "name": "Mechanical Arm (Articulated)",
     "description": "",
-    "subtype": "Body",
+    "type": "Body",
     "maxRating": [0],
     "slotCost": [3],
     "availability": {
@@ -2205,13 +2135,12 @@
     },
     "cost": [5000],
     "source": "Rigger 5",
-    "page": 165,
-    "type": "Vehicle"
+    "page": 165
   },
   {
     "name": "Nanomaintenance System",
     "description": "",
-    "subtype": "Body",
+    "type": "Body",
     "maxRating": [4],
     "slotCost": [
       {
@@ -2252,13 +2181,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 165,
-    "type": "Vehicle"
+    "page": 165
   },
   {
     "name": "Realistic Features",
     "description": "",
-    "subtype": "Body",
+    "type": "Body",
     "maxRating": [4],
     "slotCost": [
       {
@@ -2335,13 +2263,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 165,
-    "type": "Vehicle"
+    "page": 165
   },
   {
     "name": "Smuggling Compartment",
     "description": "",
-    "subtype": "Body",
+    "type": "Body",
     "maxRating": [0],
     "slotCost": [3],
     "availability": {
@@ -2350,13 +2277,12 @@
     },
     "cost": [1500],
     "source": "Rigger 5",
-    "page": 165,
-    "type": "Vehicle"
+    "page": 165
   },
   {
     "name": "Special Equipment",
     "description": "",
-    "subtype": "Body",
+    "type": "Body",
     "maxRating": [0],
     "slotCost": [0],
     "bonus": {
@@ -2368,13 +2294,12 @@
     },
     "cost": [0],
     "source": "Rigger 5",
-    "page": 165,
-    "type": "Vehicle"
+    "page": 165
   },
   {
     "name": "Smuggling Compartment Shielding",
     "description": "",
-    "subtype": "Body",
+    "type": "Body",
     "maxRating": [0],
     "slotCost": [0],
     "bonus": {
@@ -2386,13 +2311,12 @@
     },
     "cost": [3000],
     "source": "Rigger 5",
-    "page": 165,
-    "type": "Vehicle"
+    "page": 165
   },
   {
     "name": "Valkyrie Module",
     "description": "",
-    "subtype": "Body",
+    "type": "Body",
     "maxRating": [0],
     "slotCost": [4],
     "availability": {
@@ -2401,13 +2325,12 @@
     },
     "cost": [2000],
     "source": "Rigger 5",
-    "page": 166,
-    "type": "Vehicle"
+    "page": 166
   },
   {
     "name": "Winch (Basic)",
     "description": "",
-    "subtype": "Body",
+    "type": "Body",
     "maxRating": [0],
     "slotCost": [1],
     "availability": {
@@ -2416,13 +2339,12 @@
     },
     "cost": [750],
     "source": "Rigger 5",
-    "page": 166,
-    "type": "Vehicle"
+    "page": 166
   },
   {
     "name": "Winch (Enhanced)",
     "description": "",
-    "subtype": "Body",
+    "type": "Body",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -2431,13 +2353,12 @@
     },
     "cost": [4000],
     "source": "Rigger 5",
-    "page": 166,
-    "type": "Vehicle"
+    "page": 166
   },
   {
     "name": "Workshop",
     "description": "",
-    "subtype": "Body",
+    "type": "Body",
     "maxRating": [0],
     "slotCost": [6],
     "availability": {
@@ -2446,13 +2367,12 @@
     },
     "cost": [5000],
     "source": "Rigger 5",
-    "page": 166,
-    "type": "Vehicle"
+    "page": 166
   },
   {
     "name": "Electromagnetic Shielding",
     "description": "",
-    "subtype": "Electromagnetic",
+    "type": "Electromagnetic",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -2495,13 +2415,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 166,
-    "type": "Vehicle"
+    "page": 166
   },
   {
     "name": "ECM",
     "description": "",
-    "subtype": "Electromagnetic",
+    "type": "Electromagnetic",
     "maxRating": [6],
     "slotCost": [2],
     "availability": {
@@ -2538,13 +2457,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 166,
-    "type": "Vehicle"
+    "page": 166
   },
   {
     "name": "GridLink",
     "description": "",
-    "subtype": "Electromagnetic",
+    "type": "Electromagnetic",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -2553,13 +2471,12 @@
     },
     "cost": [750],
     "source": "Rigger 5",
-    "page": 166,
-    "type": "Vehicle"
+    "page": 166
   },
   {
     "name": "GridLink Override",
     "description": "",
-    "subtype": "Electromagnetic",
+    "type": "Electromagnetic",
     "maxRating": [0],
     "slotCost": [1],
     "availability": {
@@ -2568,13 +2485,12 @@
     },
     "cost": [1000],
     "source": "Rigger 5",
-    "page": 167,
-    "type": "Vehicle"
+    "page": 167
   },
   {
     "name": "Retrans Unit",
     "description": "",
-    "subtype": "Electromagnetic",
+    "type": "Electromagnetic",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -2583,13 +2499,12 @@
     },
     "cost": [4000],
     "source": "Rigger 5",
-    "page": 168,
-    "type": "Vehicle"
+    "page": 168
   },
   {
     "name": "Satellite Link",
     "description": "",
-    "subtype": "Electromagnetic",
+    "type": "Electromagnetic",
     "maxRating": [0],
     "slotCost": [1],
     "availability": {
@@ -2598,13 +2513,12 @@
     },
     "cost": [500],
     "source": "Rigger 5",
-    "page": 168,
-    "type": "Vehicle"
+    "page": 168
   },
   {
     "name": "Pilot Enhancement",
     "description": "",
-    "subtype": "Electromagnetic",
+    "type": "Electromagnetic",
     "maxRating": [6],
     "slotCost": [
       {
@@ -2794,13 +2708,12 @@
       ]
     },
     "source": "Rigger 5",
-    "page": 167,
-    "type": "Vehicle"
+    "page": 167
   },
   {
     "name": "Sensor Enhancement",
     "description": "",
-    "subtype": "Electromagnetic",
+    "type": "Electromagnetic",
     "maxRating": [6],
     "slotCost": [
       {
@@ -2990,13 +2903,12 @@
       ]
     },
     "source": "Rigger 5",
-    "page": 167,
-    "type": "Vehicle"
+    "page": 167
   },
   {
     "name": "Signature Masking",
     "description": "",
-    "subtype": "Electromagnetic",
+    "type": "Electromagnetic",
     "maxRating": [6],
     "slotCost": [
       {
@@ -3021,13 +2933,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 168,
-    "type": "Vehicle"
+    "page": 168
   },
   {
     "name": "SunCell",
     "description": "",
-    "subtype": "Electromagnetic",
+    "type": "Electromagnetic",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -3070,13 +2981,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 168,
-    "type": "Vehicle"
+    "page": 168
   },
   {
     "name": "Touch Sensors",
     "description": "",
-    "subtype": "Electromagnetic",
+    "type": "Electromagnetic",
     "maxRating": [0],
     "slotCost": [3],
     "availability": {
@@ -3119,13 +3029,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 169,
-    "type": "Vehicle"
+    "page": 169
   },
   {
     "name": "Amenities (Squatter)",
     "description": "",
-    "subtype": "Cosmetic",
+    "type": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -3134,13 +3043,12 @@
     },
     "cost": [100],
     "source": "Rigger 5",
-    "page": 169,
-    "type": "Vehicle"
+    "page": 169
   },
   {
     "name": "Amenities (Street)",
     "description": "",
-    "subtype": "Cosmetic",
+    "type": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -3149,13 +3057,12 @@
     },
     "cost": [0],
     "source": "Krime Katalog",
-    "page": 0,
-    "type": "Vehicle"
+    "page": 0
   },
   {
     "name": "Amenities (Low)",
     "description": "",
-    "subtype": "Cosmetic",
+    "type": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -3164,13 +3071,12 @@
     },
     "cost": [0],
     "source": "Rigger 5",
-    "page": 169,
-    "type": "Vehicle"
+    "page": 169
   },
   {
     "name": "Amenities (Middle)",
     "description": "",
-    "subtype": "Cosmetic",
+    "type": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -3179,13 +3085,12 @@
     },
     "cost": [500],
     "source": "Rigger 5",
-    "page": 169,
-    "type": "Vehicle"
+    "page": 169
   },
   {
     "name": "Amenities (High)",
     "description": "",
-    "subtype": "Cosmetic",
+    "type": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -3194,13 +3099,12 @@
     },
     "cost": [1000],
     "source": "Rigger 5",
-    "page": 169,
-    "type": "Vehicle"
+    "page": 169
   },
   {
     "name": "Amenities (Luxury)",
     "description": "",
-    "subtype": "Cosmetic",
+    "type": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -3209,13 +3113,12 @@
     },
     "cost": [10000],
     "source": "Rigger 5",
-    "page": 169,
-    "type": "Vehicle"
+    "page": 169
   },
   {
     "name": "Enhanced Image Screens",
     "description": "",
-    "subtype": "Cosmetic",
+    "type": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -3224,13 +3127,12 @@
     },
     "cost": [5000],
     "source": "Rigger 5",
-    "page": 170,
-    "type": "Vehicle"
+    "page": 170
   },
   {
     "name": "Máquina Conversion",
     "description": "",
-    "subtype": "Cosmetic",
+    "type": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -3251,13 +3153,12 @@
       }
     ],
     "source": "Hard Targets",
-    "page": 139,
-    "type": "Vehicle"
+    "page": 139
   },
   {
     "name": "Metahuman Adjustment",
     "description": "",
-    "subtype": "Cosmetic",
+    "type": "Cosmetic",
     "maxRating": [
       {
         "option": "Seats"
@@ -3283,13 +3184,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 170,
-    "type": "Vehicle"
+    "page": 170
   },
   {
     "name": "Manual Operation",
     "description": "",
-    "subtype": "Cosmetic",
+    "type": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -3298,13 +3198,12 @@
     },
     "cost": [500],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 461,
-    "type": "Vehicle"
+    "page": 461
   },
   {
     "name": "Rigger Interface",
     "description": "",
-    "subtype": "Cosmetic",
+    "type": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -3313,13 +3212,12 @@
     },
     "cost": [1000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 461,
-    "type": "Vehicle"
+    "page": 461
   },
   {
     "name": "Interior Cameras",
     "description": "",
-    "subtype": "Cosmetic",
+    "type": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -3328,13 +3226,12 @@
     },
     "cost": [2000],
     "source": "Rigger 5",
-    "page": 171,
-    "type": "Vehicle"
+    "page": 171
   },
   {
     "name": "Searchlight",
     "description": "",
-    "subtype": "Cosmetic",
+    "type": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -3343,13 +3240,12 @@
     },
     "cost": [800],
     "source": "Rigger 5",
-    "page": 171,
-    "type": "Vehicle"
+    "page": 171
   },
   {
     "name": "Vehicle Tag Eraser",
     "description": "",
-    "subtype": "Cosmetic",
+    "type": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -3358,13 +3254,12 @@
     },
     "cost": [750],
     "source": "Rigger 5",
-    "page": 171,
-    "type": "Vehicle"
+    "page": 171
   },
   {
     "name": "Yerz Kit",
     "description": "",
-    "subtype": "Cosmetic",
+    "type": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -3373,13 +3268,12 @@
     },
     "cost": [500],
     "source": "The Complete Trog",
-    "page": 187,
-    "type": "Vehicle"
+    "page": 187
   },
   {
     "name": "Yerzed Out",
     "description": "",
-    "subtype": "Cosmetic",
+    "type": "Cosmetic",
     "maxRating": [4],
     "slotCost": [0],
     "availability": {
@@ -3412,13 +3306,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 171,
-    "type": "Vehicle"
+    "page": 171
   },
   {
     "name": "Rigger Adaptation",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "userSelectable": false,
@@ -3428,13 +3321,12 @@
     },
     "cost": [0],
     "source": "Rigger 5",
-    "page": 12,
-    "type": "Vehicle"
+    "page": 12
   },
   {
     "name": "Micro Weapon Mount (Drone)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "slotCost": [0],
@@ -3446,14 +3338,12 @@
     },
     "cost": [400],
     "source": "Rigger 5",
-    "page": 124,
-    "type": "Vehicle",
-    "weaponMountValidCategoryList": ["Micro-Drone Weapons"]
+    "page": 124
   },
   {
     "name": "Mini Weapon Mount (Drone)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "slotCost": [1],
@@ -3465,13 +3355,12 @@
     },
     "cost": [800],
     "source": "Rigger 5",
-    "page": 124,
-    "type": "Vehicle"
+    "page": 124
   },
   {
     "name": "Gecko Grips (Drone)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "slotCost": [1],
@@ -3516,13 +3405,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 125,
-    "type": "Vehicle"
+    "page": 125
   },
   {
     "name": "Small Weapon Mount (Drone)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "slotCost": [2],
@@ -3534,13 +3422,12 @@
     },
     "cost": [1600],
     "source": "Rigger 5",
-    "page": 124,
-    "type": "Vehicle"
+    "page": 124
   },
   {
     "name": "Standard Weapon Mount (Drone)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "slotCost": [3],
@@ -3552,13 +3439,12 @@
     },
     "cost": [2400],
     "source": "Rigger 5",
-    "page": 124,
-    "type": "Vehicle"
+    "page": 124
   },
   {
     "name": "Large Weapon Mount (Drone)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "slotCost": [4],
@@ -3570,14 +3456,12 @@
     },
     "cost": [3200],
     "source": "Rigger 5",
-    "page": 124,
-    "type": "Vehicle",
-    "weaponMountValidCategoryList": ["Sporting Rifles"]
+    "page": 124
   },
   {
     "name": "Huge Weapon Mount (Drone)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "slotCost": [5],
@@ -3589,14 +3473,12 @@
     },
     "cost": [4000],
     "source": "Rigger 5",
-    "page": 124,
-    "type": "Vehicle",
-    "weaponMountValidCategoryList": ["Sniper Rifles"]
+    "page": 124
   },
   {
     "name": "Heavy Weapon Mount (Drone)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "slotCost": [6],
@@ -3608,13 +3490,12 @@
     },
     "cost": [4800],
     "source": "Rigger 5",
-    "page": 124,
-    "type": "Vehicle"
+    "page": 124
   },
   {
     "name": "Realistic Features (Drone)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [4],
     "requiresDroneParent": true,
     "slotCost": [0],
@@ -3824,13 +3705,12 @@
       ]
     },
     "source": "Rigger 5",
-    "page": 125,
-    "type": "Vehicle"
+    "page": 125
   },
   {
     "name": "Amphibious (Drone)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "slotCost": [1],
@@ -3885,13 +3765,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 125,
-    "type": "Vehicle"
+    "page": 125
   },
   {
     "name": "Submersible (Drone)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "slotCost": [2],
@@ -3946,13 +3825,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 125,
-    "type": "Vehicle"
+    "page": 125
   },
   {
     "name": "Assembly Time Improvement (Drone)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "slotCost": [1],
@@ -3997,13 +3875,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 125,
-    "type": "Vehicle"
+    "page": 125
   },
   {
     "name": "Customized (Drone)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "slotCost": [0],
@@ -4019,19 +3896,16 @@
       }
     },
     "source": "Rigger 5",
-    "page": 125,
-    "type": "Vehicle"
+    "page": 125
   },
   {
     "name": "Drone Arm",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "capacity": 15,
-    "addPhysicalBoxes": 1,
     "requiresDroneParent": true,
-    "slotCost": [1],
-    "subsystemList": [
+    "allowedSubsystemList": [
       "Bodyware",
       "Headware",
       "Cosmetic Enhancement",
@@ -4040,6 +3914,8 @@
       "Cyberlimb Accessory",
       "Cyber Implant Weapon"
     ],
+    "addPhysicalBoxes": 1,
+    "slotCost": [1],
     "requirements": {},
     "availability": {
       "rating": [0],
@@ -4047,19 +3923,16 @@
     },
     "cost": [7500],
     "source": "Rigger 5",
-    "page": 125,
-    "type": "Vehicle"
+    "page": 125
   },
   {
     "name": "Synthetic Drone Arm",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "capacity": 15,
-    "addPhysicalBoxes": 1,
     "requiresDroneParent": true,
-    "slotCost": [1],
-    "subsystemList": [
+    "allowedSubsystemList": [
       "Bodyware",
       "Headware",
       "Cosmetic Enhancement",
@@ -4068,6 +3941,8 @@
       "Cyberlimb Accessory",
       "Cyber Implant Weapon"
     ],
+    "addPhysicalBoxes": 1,
+    "slotCost": [1],
     "requirements": {},
     "availability": {
       "rating": [0],
@@ -4075,19 +3950,16 @@
     },
     "cost": [10000],
     "source": "Rigger 5",
-    "page": 125,
-    "type": "Vehicle"
+    "page": 125
   },
   {
     "name": "Primitive Drone Arm",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "capacity": 15,
-    "addPhysicalBoxes": 1,
     "requiresDroneParent": true,
-    "slotCost": [1],
-    "subsystemList": [
+    "allowedSubsystemList": [
       "Bodyware",
       "Headware",
       "Cosmetic Enhancement",
@@ -4096,6 +3968,8 @@
       "Cyberlimb Accessory",
       "Cyber Implant Weapon"
     ],
+    "addPhysicalBoxes": 1,
+    "slotCost": [1],
     "requirements": {},
     "availability": {
       "rating": [0],
@@ -4103,18 +3977,16 @@
     },
     "cost": [1500],
     "source": "Rigger 5",
-    "page": 125,
-    "type": "Vehicle"
+    "page": 125
   },
   {
     "name": "Drone Leg",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "capacity": 20,
     "requiresDroneParent": true,
-    "slotCost": [1],
-    "subsystemList": [
+    "allowedSubsystemList": [
       "Bodyware",
       "Headware",
       "Cosmetic Enhancement",
@@ -4123,6 +3995,7 @@
       "Cyberlimb Accessory",
       "Cyber Implant Weapon"
     ],
+    "slotCost": [1],
     "requirements": {},
     "availability": {
       "rating": [0],
@@ -4130,18 +4003,16 @@
     },
     "cost": [7500],
     "source": "Rigger 5",
-    "page": 125,
-    "type": "Vehicle"
+    "page": 125
   },
   {
     "name": "Synthetic Drone Leg",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "capacity": 20,
     "requiresDroneParent": true,
-    "slotCost": [1],
-    "subsystemList": [
+    "allowedSubsystemList": [
       "Bodyware",
       "Headware",
       "Cosmetic Enhancement",
@@ -4150,6 +4021,7 @@
       "Cyberlimb Accessory",
       "Cyber Implant Weapon"
     ],
+    "slotCost": [1],
     "requirements": {},
     "availability": {
       "rating": [0],
@@ -4157,13 +4029,12 @@
     },
     "cost": [10000],
     "source": "Rigger 5",
-    "page": 125,
-    "type": "Vehicle"
+    "page": 125
   },
   {
     "name": "Immobile (Drone)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "slotCost": [-2],
@@ -4174,13 +4045,12 @@
     },
     "cost": [0],
     "source": "Rigger 5",
-    "page": 126,
-    "type": "Vehicle"
+    "page": 126
   },
   {
     "name": "SkyGuide (Drone)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "slotCost": [0],
@@ -4191,13 +4061,12 @@
     },
     "cost": [5],
     "source": "Rigger 5",
-    "page": 126,
-    "type": "Vehicle"
+    "page": 126
   },
   {
     "name": "Spotlight (Drone)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "slotCost": [0],
@@ -4208,13 +4077,12 @@
     },
     "cost": [50],
     "source": "Rigger 5",
-    "page": 126,
-    "type": "Vehicle"
+    "page": 126
   },
   {
     "name": "Suspension (Drone)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "slotCost": [0],
@@ -4259,13 +4127,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 126,
-    "type": "Vehicle"
+    "page": 126
   },
   {
     "name": "Tire Mod (Drone)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "slotCost": [0],
@@ -4310,13 +4177,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 126,
-    "type": "Vehicle"
+    "page": 126
   },
   {
     "name": "Pilot Program (Drone)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [6],
     "requiresDroneParent": true,
     "slotCost": [0],
@@ -4353,13 +4219,12 @@
       "ratingLinked": [[100], [400], [1800], [3200], [10000], [20000]]
     },
     "source": "Rigger 5",
-    "page": 126,
-    "type": "Vehicle"
+    "page": 126
   },
   {
     "name": "Spoof Chips (Alternative)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -4368,13 +4233,12 @@
     },
     "cost": [500],
     "source": "Stolen Souls",
-    "page": 177,
-    "type": "Vehicle"
+    "page": 177
   },
   {
     "name": "Spoof Chips",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -4383,13 +4247,12 @@
     },
     "cost": [500],
     "source": "Rigger 5",
-    "page": 152,
-    "type": "Vehicle"
+    "page": 152
   },
   {
     "name": "Fragile (Drone)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [99],
     "requiresDroneParent": true,
     "slotCost": [
@@ -4428,13 +4291,12 @@
     },
     "cost": [0],
     "source": "Rigger 5",
-    "page": 123,
-    "type": "Vehicle"
+    "page": 123
   },
   {
     "name": "Single Sensor (Drone)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [99],
     "minRating": [
       {
@@ -4476,13 +4338,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 123,
-    "type": "Vehicle"
+    "page": 123
   },
   {
     "name": "Paraplegic Modification",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -4503,13 +4364,12 @@
       }
     ],
     "source": "Run Faster",
-    "page": 157,
-    "type": "Vehicle"
+    "page": 157
   },
   {
     "name": "Daihatsu-Caterpillar Horseman Passenger Pod",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -4519,13 +4379,12 @@
     },
     "cost": [6000],
     "source": "Rigger 5",
-    "page": 42,
-    "type": "Vehicle"
+    "page": 42
   },
   {
     "name": "Daihatsu-Caterpillar Horseman Cargo Pod",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -4535,13 +4394,12 @@
     },
     "cost": [6000],
     "source": "Rigger 5",
-    "page": 42,
-    "type": "Vehicle"
+    "page": 42
   },
   {
     "name": "Daihatsu-Caterpillar Horseman Advanced Cargo Pod",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -4551,13 +4409,12 @@
     },
     "cost": [5000],
     "source": "Rigger 5",
-    "page": 42,
-    "type": "Vehicle"
+    "page": 42
   },
   {
     "name": "Daihatsu-Caterpillar Horseman Drone Pod",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -4567,13 +4424,12 @@
     },
     "cost": [4000],
     "source": "Rigger 5",
-    "page": 42,
-    "type": "Vehicle"
+    "page": 42
   },
   {
     "name": "Daihatsu-Caterpillar Horseman Security Pod",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -4583,14 +4439,12 @@
     },
     "cost": [5500],
     "source": "Rigger 5",
-    "page": 42,
-    "type": "Vehicle",
-    "weaponMountValidCategoryList": ["Flamethrowers"]
+    "page": 42
   },
   {
     "name": "Chameleon Coating (Alternative)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -4633,13 +4487,12 @@
       }
     ],
     "source": "Stolen Souls",
-    "page": 174,
-    "type": "Vehicle"
+    "page": 174
   },
   {
     "name": "Dash Light Bar",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -4648,13 +4501,12 @@
     },
     "cost": [3500],
     "source": "Stolen Souls",
-    "page": 176,
-    "type": "Vehicle"
+    "page": 176
   },
   {
     "name": "Emergency Light Bar",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -4663,13 +4515,12 @@
     },
     "cost": [5000],
     "source": "Stolen Souls",
-    "page": 176,
-    "type": "Vehicle"
+    "page": 176
   },
   {
     "name": "Morphing License Plate (Alternative)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -4678,13 +4529,12 @@
     },
     "cost": [1000],
     "source": "Stolen Souls",
-    "page": 186,
-    "type": "Vehicle"
+    "page": 186
   },
   {
     "name": "Morphing License Plate",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -4693,13 +4543,12 @@
     },
     "cost": [1000],
     "source": "Rigger 5",
-    "page": 152,
-    "type": "Vehicle"
+    "page": 152
   },
   {
     "name": "Spike Strip",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -4708,13 +4557,12 @@
     },
     "cost": [200],
     "source": "Rigger 5",
-    "page": 152,
-    "type": "Vehicle"
+    "page": 152
   },
   {
     "name": "Zapper Strip",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -4723,13 +4571,12 @@
     },
     "cost": [2500],
     "source": "Rigger 5",
-    "page": 152,
-    "type": "Vehicle"
+    "page": 152
   },
   {
     "name": "Tracking Strip",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -4738,13 +4585,12 @@
     },
     "cost": [600],
     "source": "Rigger 5",
-    "page": 153,
-    "type": "Vehicle"
+    "page": 153
   },
   {
     "name": "Off-Road Tires",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [
       {
         "option": "Quantity of Mod"
@@ -4769,13 +4615,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 152,
-    "type": "Vehicle"
+    "page": 152
   },
   {
     "name": "Racing Tires",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [
       {
         "option": "Quantity of Mod"
@@ -4800,13 +4645,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 152,
-    "type": "Vehicle"
+    "page": 152
   },
   {
     "name": "Run-Flat Tires",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [
       {
         "option": "Quantity of Mod"
@@ -4831,13 +4675,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 152,
-    "type": "Vehicle"
+    "page": 152
   },
   {
     "name": "Siren",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -4846,13 +4689,12 @@
     },
     "cost": [1400],
     "source": "Stolen Souls",
-    "page": 176,
-    "type": "Vehicle"
+    "page": 176
   },
   {
     "name": "Smuggling Compartment (Dwarf, Human, Elf, or Ork)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -4861,13 +4703,12 @@
     },
     "cost": [3500],
     "source": "Stolen Souls",
-    "page": 177,
-    "type": "Vehicle"
+    "page": 177
   },
   {
     "name": "Smuggling Compartment (Troll)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -4876,13 +4717,12 @@
     },
     "cost": [7000],
     "source": "Stolen Souls",
-    "page": 177,
-    "type": "Vehicle"
+    "page": 177
   },
   {
     "name": "Rigger Services (1 hour)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [1000000],
     "ratingMeaning": "1 Hour per Rating Level",
     "slotCost": [0],
@@ -4892,13 +4732,12 @@
     },
     "cost": [500],
     "source": "Stolen Souls",
-    "page": 186,
-    "type": "Vehicle"
+    "page": 186
   },
   {
     "name": "Extended Roof",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "userSelectable": false,
@@ -4908,13 +4747,12 @@
     },
     "cost": [0],
     "source": "Rigger 5",
-    "page": 70,
-    "type": "Vehicle"
+    "page": 70
   },
   {
     "name": "Bathroom",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "userSelectable": false,
@@ -4924,13 +4762,12 @@
     },
     "cost": [0],
     "source": "Rigger 5",
-    "page": 74,
-    "type": "Vehicle"
+    "page": 74
   },
   {
     "name": "Holding Cell",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "userSelectable": false,
@@ -4940,13 +4777,12 @@
     },
     "cost": [0],
     "source": "Rigger 5",
-    "page": 74,
-    "type": "Vehicle"
+    "page": 74
   },
   {
     "name": "Sleeping Quarters",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "userSelectable": false,
@@ -4956,13 +4792,12 @@
     },
     "cost": [0],
     "source": "Rigger 5",
-    "page": 74,
-    "type": "Vehicle"
+    "page": 74
   },
   {
     "name": "Advanced Lightbar",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "userSelectable": false,
@@ -4972,13 +4807,12 @@
     },
     "cost": [0],
     "source": "Rigger 5",
-    "page": 74,
-    "type": "Vehicle"
+    "page": 74
   },
   {
     "name": "Open Box Storage",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "userSelectable": false,
@@ -4988,13 +4822,12 @@
     },
     "cost": [0],
     "source": "Rigger 5",
-    "page": 74,
-    "type": "Vehicle"
+    "page": 74
   },
   {
     "name": "Interchangeable Bed: Armory",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -5009,13 +4842,12 @@
       }
     },
     "source": "Rigger 5",
-    "page": 54,
-    "type": "Vehicle"
+    "page": 54
   },
   {
     "name": "Interchangeable Bed: Cargo Pod",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -5030,13 +4862,12 @@
       }
     },
     "source": "Rigger 5",
-    "page": 54,
-    "type": "Vehicle"
+    "page": 54
   },
   {
     "name": "Interchangeable Bed: Food Truck",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -5051,13 +4882,12 @@
       }
     },
     "source": "Rigger 5",
-    "page": 54,
-    "type": "Vehicle"
+    "page": 54
   },
   {
     "name": "Interchangeable Bed: Sleeper Command Cabin",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -5072,13 +4902,12 @@
       }
     },
     "source": "Rigger 5",
-    "page": 54,
-    "type": "Vehicle"
+    "page": 54
   },
   {
     "name": "Interchangeable Bed: Transport",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -5093,13 +4922,12 @@
       }
     },
     "source": "Rigger 5",
-    "page": 54,
-    "type": "Vehicle"
+    "page": 54
   },
   {
     "name": "Interchangeable Bed: Standard Drone Rack (Micro)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -5109,13 +4937,12 @@
     },
     "cost": [350],
     "source": "Rigger 5",
-    "page": 54,
-    "type": "Vehicle"
+    "page": 54
   },
   {
     "name": "Interchangeable Bed: Standard Drone Rack (Mini)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -5125,13 +4952,12 @@
     },
     "cost": [500],
     "source": "Rigger 5",
-    "page": 54,
-    "type": "Vehicle"
+    "page": 54
   },
   {
     "name": "Interchangeable Bed: Standard Drone Rack (Small)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -5141,13 +4967,12 @@
     },
     "cost": [1000],
     "source": "Rigger 5",
-    "page": 54,
-    "type": "Vehicle"
+    "page": 54
   },
   {
     "name": "Interchangeable Bed: Standard Drone Rack (Medium)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -5157,13 +4982,12 @@
     },
     "cost": [2000],
     "source": "Rigger 5",
-    "page": 54,
-    "type": "Vehicle"
+    "page": 54
   },
   {
     "name": "Interchangeable Bed: Standard Drone Rack (Large)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -5173,13 +4997,12 @@
     },
     "cost": [4000],
     "source": "Rigger 5",
-    "page": 54,
-    "type": "Vehicle"
+    "page": 54
   },
   {
     "name": "Interchangeable Bed: Landing Drone Rack (Micro)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -5189,13 +5012,12 @@
     },
     "cost": [750],
     "source": "Rigger 5",
-    "page": 54,
-    "type": "Vehicle"
+    "page": 54
   },
   {
     "name": "Interchangeable Bed: Landing Drone Rack (Mini)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -5205,13 +5027,12 @@
     },
     "cost": [1000],
     "source": "Rigger 5",
-    "page": 54,
-    "type": "Vehicle"
+    "page": 54
   },
   {
     "name": "Interchangeable Bed: Landing Drone Rack (Small)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -5221,13 +5042,12 @@
     },
     "cost": [4000],
     "source": "Rigger 5",
-    "page": 54,
-    "type": "Vehicle"
+    "page": 54
   },
   {
     "name": "Interchangeable Bed: Landing Drone Rack (Medium)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -5237,13 +5057,12 @@
     },
     "cost": [10000],
     "source": "Rigger 5",
-    "page": 54,
-    "type": "Vehicle"
+    "page": 54
   },
   {
     "name": "Interchangeable Bed: Landing Drone Rack (Large)",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -5253,13 +5072,12 @@
     },
     "cost": [20000],
     "source": "Rigger 5",
-    "page": 54,
-    "type": "Vehicle"
+    "page": 54
   },
   {
     "name": "Interchangeable Bed: Workshop",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -5269,13 +5087,12 @@
     },
     "cost": [5000],
     "source": "Rigger 5",
-    "page": 54,
-    "type": "Vehicle"
+    "page": 54
   },
   {
     "name": "Interchangeable Bed: Rigger Cocoon",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -5285,13 +5102,12 @@
     },
     "cost": [1500],
     "source": "Rigger 5",
-    "page": 54,
-    "type": "Vehicle"
+    "page": 54
   },
   {
     "name": "Interchangeable Bed: Custom",
     "description": "",
-    "subtype": "All",
+    "type": "All",
     "maxRating": [0],
     "slotCost": [0],
     "bonus": {
@@ -5309,13 +5125,12 @@
       }
     },
     "source": "Rigger 5",
-    "page": 54,
-    "type": "Vehicle"
+    "page": 54
   },
   {
     "name": "Handling (Drone)",
     "description": "",
-    "subtype": "Handling",
+    "type": "Handling",
     "maxRating": [99],
     "minRating": [
       {
@@ -5440,13 +5255,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 123,
-    "type": "Vehicle"
+    "page": 123
   },
   {
     "name": "Speed (Drone)",
     "description": "",
-    "subtype": "Speed",
+    "type": "Speed",
     "maxRating": [99],
     "minRating": [
       {
@@ -5571,13 +5385,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 123,
-    "type": "Vehicle"
+    "page": 123
   },
   {
     "name": "Acceleration (Drone)",
     "description": "",
-    "subtype": "Acceleration",
+    "type": "Acceleration",
     "maxRating": [99],
     "minRating": [
       {
@@ -5702,13 +5515,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 123,
-    "type": "Vehicle"
+    "page": 123
   },
   {
     "name": "Armor (Drone)",
     "description": "",
-    "subtype": "Armour",
+    "type": "Armour",
     "maxRating": [99],
     "minRating": [
       {
@@ -5884,13 +5696,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 123,
-    "type": "Vehicle"
+    "page": 123
   },
   {
     "name": "Sensor (Drone)",
     "description": "",
-    "subtype": "Sensor",
+    "type": "Sensor",
     "maxRating": [8],
     "minRating": [
       {
@@ -5979,13 +5790,12 @@
       }
     ],
     "source": "Rigger 5",
-    "page": 123,
-    "type": "Vehicle"
+    "page": 123
   },
   {
     "name": "Handling Downgrade (Drone)",
     "description": "",
-    "subtype": "Handling",
+    "type": "Handling",
     "maxRating": [0],
     "isDowngrade": true,
     "requiresDroneParent": true,
@@ -5997,13 +5807,12 @@
     },
     "cost": [0],
     "source": "Rigger 5",
-    "page": 123,
-    "type": "Vehicle"
+    "page": 123
   },
   {
     "name": "Speed Downgrade (Drone)",
     "description": "",
-    "subtype": "Speed",
+    "type": "Speed",
     "maxRating": [0],
     "isDowngrade": true,
     "requiresDroneParent": true,
@@ -6015,13 +5824,12 @@
     },
     "cost": [0],
     "source": "Rigger 5",
-    "page": 123,
-    "type": "Vehicle"
+    "page": 123
   },
   {
     "name": "Acceleration Downgrade (Drone)",
     "description": "",
-    "subtype": "Acceleration",
+    "type": "Acceleration",
     "maxRating": [0],
     "isDowngrade": true,
     "requiresDroneParent": true,
@@ -6033,13 +5841,12 @@
     },
     "cost": [0],
     "source": "Rigger 5",
-    "page": 123,
-    "type": "Vehicle"
+    "page": 123
   },
   {
     "name": "Body Downgrade (Drone)",
     "description": "",
-    "subtype": "Body",
+    "type": "Body",
     "maxRating": [0],
     "isDowngrade": true,
     "requiresDroneParent": true,
@@ -6051,13 +5858,12 @@
     },
     "cost": [0],
     "source": "Rigger 5",
-    "page": 123,
-    "type": "Vehicle"
+    "page": 123
   },
   {
     "name": "Armor Downgrade (Drone)",
     "description": "",
-    "subtype": "Armour",
+    "type": "Armour",
     "maxRating": [0],
     "isDowngrade": true,
     "requiresDroneParent": true,
@@ -6074,13 +5880,12 @@
     },
     "cost": [0],
     "source": "Rigger 5",
-    "page": 123,
-    "type": "Vehicle"
+    "page": 123
   },
   {
     "name": "Sensor Downgrade (Drone)",
     "description": "",
-    "subtype": "Sensor",
+    "type": "Sensor",
     "maxRating": [0],
     "isDowngrade": true,
     "requiresDroneParent": true,
@@ -6092,13 +5897,12 @@
     },
     "cost": [0],
     "source": "Rigger 5",
-    "page": 123,
-    "type": "Vehicle"
+    "page": 123
   },
   {
     "name": "Rigger Adaptation (2050)",
     "description": "",
-    "subtype": "Cosmetic",
+    "type": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -6107,13 +5911,12 @@
     },
     "cost": [2800],
     "source": "Shadowrun 2050",
-    "page": 212,
-    "type": "Vehicle"
+    "page": 212
   },
   {
     "name": "Remote Adaptation (2050)",
     "description": "",
-    "subtype": "Cosmetic",
+    "type": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "requirements": {},
@@ -6157,110 +5960,6 @@
       }
     ],
     "source": "Shadowrun 2050",
-    "page": 212,
-    "type": "Vehicle"
-  },
-  {
-    "name": "Blow-Away Panel Weapon Mount Add-on (Drone)",
-    "description": "",
-    "subtype": "All",
-    "maxRating": [0],
-    "requiresDroneParent": true,
-    "slotCost": [0],
-    "requirements": {},
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [25],
-    "source": "Rigger 5",
-    "page": 124,
-    "type": "Weapon Mount"
-  },
-  {
-    "name": "Pop-Out Weapon Mount Add-on (Drone)",
-    "description": "",
-    "subtype": "All",
-    "maxRating": [0],
-    "requiresDroneParent": true,
-    "slotCost": [1],
-    "requirements": {},
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [
-      {
-        "subnumbers": [
-          {
-            "option": "Weapon Mount Slots"
-          },
-          {
-            "operator": "*"
-          },
-          100
-        ]
-      }
-    ],
-    "source": "Rigger 5",
-    "page": 124,
-    "type": "Weapon Mount"
-  },
-  {
-    "name": "Expanded Ammunition Bay (Second Bin) Weapon Mount Add-on (Drone)",
-    "description": "",
-    "subtype": "All",
-    "maxRating": [0],
-    "requiresDroneParent": true,
-    "slotCost": [1],
-    "requirements": {},
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [50],
-    "source": "Rigger 5",
-    "page": 124,
-    "type": "Weapon Mount"
-  },
-  {
-    "name": "Expanded Ammunition Bay (Belt-Feed) Weapon Mount Add-on (Drone)",
-    "description": "",
-    "subtype": "All",
-    "maxRating": [0],
-    "requiresDroneParent": true,
-    "slotCost": [2],
-    "requirements": {},
-    "availability": {
-      "rating": [0],
-      "restriction": ""
-    },
-    "cost": [500],
-    "source": "Rigger 5",
-    "page": 124,
-    "type": "Weapon Mount",
-    "replaceAmmo": [
-      {
-        "reloadMethod": "(belt)",
-        "capacity": 100
-      }
-    ]
-  },
-  {
-    "name": "Ammo Bin",
-    "description": "",
-    "subtype": "Weapons",
-    "maxRating": [0],
-    "slotCost": [1],
-    "availability": {
-      "rating": [6],
-      "restriction": "R"
-    },
-    "cost": [200],
-    "source": "Rigger 5",
-    "page": 159,
-    "type": "Weapon Mount",
-    "additionalAmmo": 250,
-    "percentageAmmoIncrease": 250
+    "page": 212
   }
 ]

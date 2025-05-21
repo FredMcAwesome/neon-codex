@@ -1,5 +1,5 @@
-import { WeaponAccessorySummaryListSchema } from "@neon-codex/common/build/schemas/equipment/combat/weaponAccessorySchemas.js";
-import type { WeaponAccessorySummaryListType } from "@neon-codex/common/build/schemas/equipment/combat/weaponAccessorySchemas.js";
+import { WeaponAccessoryListSchema } from "@neon-codex/common/build/schemas/equipment/combat/weaponAccessorySchemas.js";
+import type { WeaponAccessoryListType } from "@neon-codex/common/build/schemas/equipment/combat/weaponAccessorySchemas.js";
 import assert from "assert";
 import fs from "fs";
 import path from "path";
@@ -8,7 +8,7 @@ import { WeaponAccessories } from "../../models/rpg/equipment/combat/weaponAcces
 
 export const getWeaponAccessories = function () {
   const currentPath = import.meta.url;
-  let unlinkedWeaponAccessories: WeaponAccessorySummaryListType;
+  let unlinkedWeaponAccessories: WeaponAccessoryListType;
   const relativeConverterPath = "converter/jsonFiles/weaponAccessories.json";
   const rootPath = "../../../../../";
   const jsonString = fs.readFileSync(
@@ -19,7 +19,7 @@ export const getWeaponAccessories = function () {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const rawJson = JSON.parse(jsonString);
   const weaponAccessoryListParsed =
-    WeaponAccessorySummaryListSchema.safeParse(rawJson);
+    WeaponAccessoryListSchema.safeParse(rawJson);
   if (weaponAccessoryListParsed.success) {
     console.log("weapon accessories all g");
     unlinkedWeaponAccessories = weaponAccessoryListParsed.data;

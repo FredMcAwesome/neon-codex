@@ -4,7 +4,7 @@ import {
   mathOperatorEnum,
   meleeWeaponTypeEnum,
   restrictionEnum,
-  vehicleModSubtypeEnum,
+  vehicleModTypeEnum,
   vehicleModRatingEnum,
   vehicleModAttributeEnum,
   projectileWeaponTypeEnum,
@@ -26,31 +26,31 @@ export const convertVehicleModCategory = function (
 ) {
   switch (category) {
     case vehicleModXmlCategoryEnum.Body:
-      return vehicleModSubtypeEnum.Body;
+      return vehicleModTypeEnum.Body;
     case vehicleModXmlCategoryEnum.Cosmetic:
-      return vehicleModSubtypeEnum.Cosmetic;
+      return vehicleModTypeEnum.Cosmetic;
     case vehicleModXmlCategoryEnum.Electromagnetic:
-      return vehicleModSubtypeEnum.Electromagnetic;
+      return vehicleModTypeEnum.Electromagnetic;
     case vehicleModXmlCategoryEnum.ModelSpecific:
-      return vehicleModSubtypeEnum.ModelSpecific;
+      return vehicleModTypeEnum.ModelSpecific;
     case vehicleModXmlCategoryEnum.Powertrain:
-      return vehicleModSubtypeEnum.PowerTrain;
+      return vehicleModTypeEnum.PowerTrain;
     case vehicleModXmlCategoryEnum.Protection:
-      return vehicleModSubtypeEnum.Protection;
+      return vehicleModTypeEnum.Protection;
     case vehicleModXmlCategoryEnum.Weapons:
-      return vehicleModSubtypeEnum.Weapons;
+      return vehicleModTypeEnum.Weapons;
     case vehicleModXmlCategoryEnum.All:
-      return vehicleModSubtypeEnum.All;
+      return vehicleModTypeEnum.All;
     case vehicleModXmlCategoryEnum.Handling:
-      return vehicleModSubtypeEnum.Handling;
+      return vehicleModTypeEnum.Handling;
     case vehicleModXmlCategoryEnum.Speed:
-      return vehicleModSubtypeEnum.Speed;
+      return vehicleModTypeEnum.Speed;
     case vehicleModXmlCategoryEnum.Acceleration:
-      return vehicleModSubtypeEnum.Acceleration;
+      return vehicleModTypeEnum.Acceleration;
     case vehicleModXmlCategoryEnum.Armor:
-      return vehicleModSubtypeEnum.Armour;
+      return vehicleModTypeEnum.Armour;
     case vehicleModXmlCategoryEnum.Sensor:
-      return vehicleModSubtypeEnum.Sensor;
+      return vehicleModTypeEnum.Sensor;
   }
 };
 

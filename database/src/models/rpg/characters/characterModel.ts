@@ -55,13 +55,13 @@ export class Characters {
   talent?: Ref<ActiveTalents>;
 
   @OneToMany(() => CustomisedSkills, (skill) => skill.character)
-  skills = new Collection<CustomisedSkills>(this);
+  skillList = new Collection<CustomisedSkills>(this);
 
   @OneToMany(() => CustomisedSkillGroups, (skillGroup) => skillGroup.character)
-  skillGroups = new Collection<CustomisedSkillGroups>(this);
+  skillGroupList = new Collection<CustomisedSkillGroups>(this);
 
   @OneToMany(() => CustomisedQualities, (quality) => quality.character)
-  qualities = new Collection<CustomisedQualities>(this);
+  qualityList = new Collection<CustomisedQualities>(this);
 
   @Property()
   nuyen!: number;
@@ -70,31 +70,31 @@ export class Characters {
   karmaPoints!: number;
 
   @OneToMany(() => CustomisedWeapons, (weapon) => weapon.character)
-  weapons = new Collection<CustomisedWeapons>(this);
+  weaponList = new Collection<CustomisedWeapons>(this);
 
   @OneToMany(() => CustomisedArmours, (armour) => armour.character)
-  armours = new Collection<CustomisedArmours>(this);
+  armourList = new Collection<CustomisedArmours>(this);
 
   @OneToMany(() => CustomisedGears, (gear) => gear.character)
-  gears = new Collection<CustomisedGears>(this);
+  gearList = new Collection<CustomisedGears>(this);
 
   @OneToMany(
     () => CustomisedAugmentations,
     (augmentation) => augmentation.character
   )
-  augmentations = new Collection<CustomisedAugmentations>(this);
+  augmentationList = new Collection<CustomisedAugmentations>(this);
 
   @OneToMany(() => CustomisedVehicles, (vehicle) => vehicle.character)
-  vehicles = new Collection<CustomisedVehicles>(this);
+  vehicleList = new Collection<CustomisedVehicles>(this);
 
   @OneToMany(() => ActiveMartialArts, (martialArt) => martialArt.character)
-  martialArts = new Collection<ActiveMartialArts>(this);
+  martialArtList = new Collection<ActiveMartialArts>(this);
 
   @OneToMany(
     () => CustomisedLifestyles,
     (activeLifestyle) => activeLifestyle.character
   )
-  lifestyles = new Collection<CustomisedLifestyles>(this);
+  lifestyleList = new Collection<CustomisedLifestyles>(this);
 
   @ManyToOne({ entity: () => Users, ref: true })
   user!: Ref<Users>;

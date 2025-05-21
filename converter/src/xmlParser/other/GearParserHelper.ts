@@ -21,12 +21,12 @@ import type {
   GearXmlRatingType,
   WeaponXmlBonusType,
 } from "./GearParserSchemas.js";
-import type { WeaponBonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 import Weapons from "../../grammar/weapons.ohm-bundle.js";
 import { damageSemantics } from "../combat/WeaponParserHelper.js";
 import { weaponTypeXmlEnum } from "../combat/WeaponParserSchemas.js";
 const Damage = Weapons.Damage;
 import Gears from "../../grammar/gears.ohm-bundle.js";
+import type { WeaponBonusType } from "@neon-codex/common/build/schemas/shared/weaponSharedSchemas.js";
 const Program = Gears.Program;
 const Capacity = Gears.Capacity;
 const Availability = Gears.Availability;

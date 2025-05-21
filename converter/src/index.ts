@@ -41,6 +41,9 @@ ParseVehicles();
 import { ParseVehicleMods } from "./xmlParser/riggerGear/VehicleModParser.js";
 ParseVehicleMods();
 
+import { ParseWeaponMountMods } from "./xmlParser/riggerGear/WeaponMountModParser.js";
+ParseWeaponMountMods();
+
 import { ParseGear } from "./xmlParser/other/GearParser.js";
 ParseGear();
 

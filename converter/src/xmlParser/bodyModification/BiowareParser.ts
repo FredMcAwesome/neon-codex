@@ -170,7 +170,7 @@ function convertBioware(bioware: BiowareXmlType) {
   const allowCategory = bioware.allowsubsystems
     ? convertBiowareCategory(bioware.allowsubsystems.category)
     : undefined;
-  const allowCategoryList =
+  const allowSubsystemCategoryList =
     allowCategory === undefined ? undefined : [allowCategory];
 
   // forcegrade is currently only used for isgeneware
@@ -210,7 +210,7 @@ function convertBioware(bioware: BiowareXmlType) {
       allowedGearCategories: allowedGearCategories,
     }),
     ...(bioware.hide !== undefined && { userSelectable: false as const }),
-    allowCategoryList: allowCategoryList,
+    allowSubsystemCategoryList: allowSubsystemCategoryList,
     source: source,
     page: bioware.page,
   };
