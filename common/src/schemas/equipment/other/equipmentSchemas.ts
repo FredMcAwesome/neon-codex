@@ -45,46 +45,54 @@ import {
   VehicleModListSchema,
   type VehicleModListType,
 } from "../rigger/vehicleModSchemas.js";
+import {
+  WeaponMountModListSchema,
+  type WeaponMountModListType,
+} from "../rigger/weaponMountModSchemas.js";
 
 export type EquipmentListType = {
   equipmentPackList: EquipmentPackListType;
-  weaponList: WeaponListType;
-  weaponAccessoryList: WeaponAccessoryListType;
+  augmentationList: AugmentationListType;
   armourList: ArmourListType;
   armourModificationList: ArmourModListType;
   gearList: GearListType;
-  augmentationList: AugmentationListType;
   vehicleList: VehicleListType;
   vehicleModificationList: VehicleModListType;
+  weaponMountModificationList: WeaponMountModListType;
+  weaponList: WeaponListType;
+  weaponAccessoryList: WeaponAccessoryListType;
 };
 export const EquipmentListSchema: zod.ZodType<EquipmentListType> = zod
   .object({
     equipmentPackList: EquipmentPackListSchema,
-    weaponList: WeaponListSchema,
-    weaponAccessoryList: WeaponAccessoryListSchema,
+    augmentationList: AugmentationListSchema,
     armourList: ArmourListSchema,
     armourModificationList: ArmourModListSchema,
     gearList: GearListSchema,
-    augmentationList: AugmentationListSchema,
     vehicleList: VehicleListSchema,
     vehicleModificationList: VehicleModListSchema,
+    weaponMountModificationList: WeaponMountModListSchema,
+    weaponList: WeaponListSchema,
+    weaponAccessoryList: WeaponAccessoryListSchema,
   })
   .strict();
 
 export type SelectedEquipmentListType = {
-  weaponList: CustomisedWeaponListType;
+  equipmentPackList: EquipmentPackListType;
+  augmentationList: CustomisedAugmentationListType;
   armourList: CustomisedArmourListType;
   gearList: CustomisedGearListType;
-  augmentationList: CustomisedAugmentationListType;
   vehicleList: CustomisedVehicleListType;
+  weaponList: CustomisedWeaponListType;
 };
 export const SelectedEquipmentListSchema: zod.ZodType<SelectedEquipmentListType> =
   zod
     .object({
-      weaponList: CustomisedWeaponListSchema,
+      equipmentPackList: EquipmentPackListSchema,
+      augmentationList: CustomisedAugmentationListSchema,
       armourList: CustomisedArmourListSchema,
       gearList: CustomisedGearListSchema,
-      augmentationList: CustomisedAugmentationListSchema,
       vehicleList: CustomisedVehicleListSchema,
+      weaponList: CustomisedWeaponListSchema,
     })
     .strict();

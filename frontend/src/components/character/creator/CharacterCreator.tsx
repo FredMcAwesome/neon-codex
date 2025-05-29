@@ -133,6 +133,7 @@ const CharacterCreator = function () {
   >(undefined);
   const [equipmentSelections, setEquipmentSelections] =
     useState<SelectedEquipmentListType>({
+      equipmentPackList: [],
       weaponList: [],
       gearList: [],
       armourList: [],
@@ -492,8 +493,6 @@ const CharacterCreator = function () {
       >
         Previous
       </button>
-      {}
-      {currentStage}
       <button
         onClick={() => {
           setPage(
@@ -508,6 +507,8 @@ const CharacterCreator = function () {
       >
         Next
       </button>
+      {}
+      {currentStage}
       <button
         onClick={() => {
           character

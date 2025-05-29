@@ -249,8 +249,11 @@ import {
 } from "@neon-codex/database/build/models/rpg/activeTables/activeWeaponMountModel.js";
 import type { CustomisedWeaponMountType } from "@neon-codex/common/build/schemas/equipment/rigger/weaponMountSchemas.js";
 import { WeaponMounts } from "@neon-codex/database/build/models/rpg/equipment/rigger/weaponMountModel.js";
-import { createGunzip } from "zlib";
-import { access } from "fs";
+import type {
+  WeaponMountModListType,
+  WeaponMountModType,
+} from "@neon-codex/common/build/schemas/equipment/rigger/weaponMountModSchemas.js";
+import { WeaponMountModifications } from "@neon-codex/database/build/models/rpg/equipment/rigger/weaponMountModModel.js";
 
 export function convertDBBonus(DBbonus: Bonuses) {
   const bonus: BonusType = {};
@@ -1161,6 +1164,36 @@ async function getVehicleModifications(): Promise<VehicleModListType> {
   return vehicleModificationsResponse;
 }
 
+async function getWeaponMountModifications(): Promise<WeaponMountModListType> {
+  const db = await init();
+  const weaponMountModifications = await db.em.findAll(
+    WeaponMountModifications,
+    {
+      populate: ["*"],
+    }
+  );
+  const weaponMountModificationsResponse: WeaponMountModListType =
+    weaponMountModifications.map((weaponMountModification) => {
+      const weaponMountModificationFormatted: WeaponMountModType = {
+        name: weaponMountModification.name,
+        description: weaponMountModification.description,
+        type: weaponMountModification.type,
+        slotCost: weaponMountModification.slotCost,
+        additionalAmmo: weaponMountModification.additionalAmmo,
+        percentageAmmoIncrease: weaponMountModification.percentageAmmoIncrease,
+        replaceAmmo: weaponMountModification.replaceAmmo,
+        requirements: weaponMountModification.requirements,
+        userSelectable: weaponMountModification.userSelectable,
+        availability: weaponMountModification.availability,
+        cost: weaponMountModification.cost,
+        source: weaponMountModification.source,
+        page: weaponMountModification.page,
+      };
+      return weaponMountModificationFormatted;
+    });
+  return weaponMountModificationsResponse;
+}
+
 async function getMartialArts() {
   const db = await init();
   const martialArts = await db.em.findAll(MartialArts, { populate: ["*"] });
@@ -1853,6 +1886,7 @@ const all = privateProcedure.query(async () => {
       augmentationsResponse,
       vehiclesResponse,
       vehicleModificationsResponse,
+      weaponMountModificationResponse,
     ] = await Promise.all([
       getEquipmentPacks(),
       getWeapons(),
@@ -1863,6 +1897,7 @@ const all = privateProcedure.query(async () => {
       getAugmentations(),
       getVehicles(),
       getVehicleModifications(),
+      getWeaponMountModifications(),
     ]);
     const equipmentResponse: EquipmentListType = {
       equipmentPackList: equipmentPacksResponse,
@@ -1874,6 +1909,7 @@ const all = privateProcedure.query(async () => {
       augmentationList: augmentationsResponse,
       vehicleList: vehiclesResponse,
       vehicleModificationList: vehicleModificationsResponse,
+      weaponMountModificationList: weaponMountModificationResponse,
     };
     // logger.log(JSON.stringify(equipmentResponse, null, 2));
     return equipmentResponse;
