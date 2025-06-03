@@ -7,6 +7,7 @@ import {
   type CritterPowerListType,
 } from "@neon-codex/common/build/schemas/abilities/talent/critterPowerSchemas.js";
 import { CritterPowers } from "../../models/rpg/abilities/critterPowerModel.js";
+import { type } from "arktype";
 
 export const getCritterPowers = function () {
   const currentPath = import.meta.url;
@@ -20,13 +21,13 @@ export const getCritterPowers = function () {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const rawJson = JSON.parse(jsonString);
-  const critterPowerListParsed = CritterPowerListSchema.safeParse(rawJson);
-  if (critterPowerListParsed.success) {
-    console.log("critter powers all g");
-    unlinkedCritterPowers = critterPowerListParsed.data;
-  } else {
-    console.log(critterPowerListParsed.error.errors[0]);
+  const critterPowerListParsed = CritterPowerListSchema(rawJson);
+  if (critterPowerListParsed instanceof type.errors) {
+    console.log(critterPowerListParsed.summary);
     assert(false, "critter powers is undefined");
+  } else {
+    console.log("critter powers all g");
+    unlinkedCritterPowers = critterPowerListParsed;
   }
   const stagedCritterPowers: Array<CritterPowers> = [];
   unlinkedCritterPowers.forEach((critterPower) => {

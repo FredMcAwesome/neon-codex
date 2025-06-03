@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { z as zod } from "zod";
+
 import assert from "assert";
 import { XMLParser } from "fast-xml-parser";
 import path from "path";
@@ -11,21 +11,20 @@ import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
 import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
 import { MentorSchema } from "@neon-codex/common/build/schemas/abilities/talent/mentorSchemas.js";
 import { mentorCategoryEnum } from "@neon-codex/common/build/enums.js";
+import { type } from "arktype";
 
-const ParagonXmlSchema = zod
-  .object({
-    id: zod.string(),
-    name: zod.string(),
-    category: zod.literal("Resonance"),
-    advantage: zod.string(),
-    disadvantage: zod.string(),
-    bonus: zod.optional(BonusXmlSchema),
-    source: zod.nativeEnum(sourceBookXmlEnum),
-    page: zod.number(),
-  })
-  .strict();
-type ParagonXmlType = zod.infer<typeof ParagonXmlSchema>;
-export const ParagonListXmlSchema = zod.array(ParagonXmlSchema);
+const ParagonXmlSchema = type({
+  id: "string",
+  name: "string",
+  category: "'Resonance'",
+  advantage: "string",
+  disadvantage: "string",
+  "bonus?": BonusXmlSchema,
+  source: type.valueOf(sourceBookXmlEnum),
+  page: "number",
+});
+type ParagonXmlType = typeof ParagonXmlSchema.infer;
+export const ParagonListXmlSchema = type(ParagonXmlSchema.array());
 
 export function ParseParagons() {
   const currentPath = import.meta.url;
@@ -45,18 +44,19 @@ export function ParseParagons() {
   //   jObj.chummer.spells.spell[337].required
   // );
 
-  const paragonListParsed = ParagonListXmlSchema.safeParse(
+  const paragonListParsed = ParagonListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.mentors.mentor
   );
 
-  if (paragonListParsed.success) console.log("paragon.xml initial zod parsed");
-  else {
-    console.log(paragonListParsed.error.errors[0]);
+  if (paragonListParsed instanceof type.errors) {
+    console.log(paragonListParsed.summary);
     assert(false);
+  } else {
+    console.log("paragon.xml initial arktype parsed");
   }
 
-  const paragonList = paragonListParsed.data;
+  const paragonList = paragonListParsed;
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
   // })
@@ -65,13 +65,13 @@ export function ParseParagons() {
     // .filter((weapon) => weapon.name === "Osmium Mace")
     .map((paragon) => {
       const convertedParagon = convertParagon(paragon);
-      const check = MentorSchema.safeParse(convertedParagon);
-      if (!check.success) {
+      const check = MentorSchema(convertedParagon);
+      if (check instanceof type.errors) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         console.dir(convertedParagon, { depth: Infinity });
-        throw new Error(check.error.message);
+        throw new Error(check.summary);
       }
-      return check.data;
+      return check;
     });
   // console.log(paragonListConverted);
   const jsonFilePath = fileURLToPath(

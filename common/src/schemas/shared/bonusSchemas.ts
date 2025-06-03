@@ -1,4 +1,4 @@
-import { z as zod } from "zod";
+import { type } from "arktype";
 import {
   attributeTypeEnum,
   damageTypeEnum,
@@ -9,1040 +9,462 @@ import {
   weaponTypeEnum,
 } from "../../enums.js";
 import { EssenceCostSchema } from "./commonSchemas.js";
+const RatingCalculationSchema = type(
+  type.or(
+    "number",
+    {
+      option: "'Rating'",
+    },
+    { operator: type.valueOf(mathOperatorEnum) }
+  )
+).array();
 
-const SelectSkillSchema = zod.discriminatedUnion("selectSkill", [
-  zod
-    .object({
-      selectSkill: zod.literal(true),
-      exceptions: zod.array(zod.string()),
-    })
-    .strict(),
-  zod
-    .object({
-      selectSkill: zod.literal(false),
-      name: zod.string(),
-    })
-    .strict(),
-]);
-export type SelectSkillType = zod.infer<typeof SelectSkillSchema>;
-
-export const BonusGenericListSchema = zod.array(
-  zod
-    .object({
-      name: zod.string(),
-      rating: zod.optional(zod.number()),
-    })
-    .strict()
+const SelectSkillSchema = type.or(
+  {
+    selectSkill: "true",
+    exceptions: "string[]",
+  },
+  {
+    selectSkill: "false",
+    name: "string",
+  }
 );
-export type BonusGenericListType = zod.infer<typeof BonusGenericListSchema>;
+export type SelectSkillType = typeof SelectSkillSchema.infer;
 
-export const ForbiddenQualityListSchema = zod.array(zod.string());
-export type ForbiddenQualityListType = zod.infer<
-  typeof ForbiddenQualityListSchema
->;
-
-const AddictionResistanceSchema = zod
-  .object({
-    physiological: zod.optional(
-      zod
-        .object({
-          initialTest: zod.array(
-            zod.union([
-              zod.number(),
-              zod
-                .object({
-                  option: zod.literal("Rating"),
-                })
-                .strict(),
-              zod
-                .object({
-                  operator: zod.nativeEnum(mathOperatorEnum),
-                })
-                .strict(),
-            ])
-          ),
-          progressingTest: zod.array(
-            zod.union([
-              zod.number(),
-              zod
-                .object({
-                  option: zod.literal("Rating"),
-                })
-                .strict(),
-              zod
-                .object({
-                  operator: zod.nativeEnum(mathOperatorEnum),
-                })
-                .strict(),
-            ])
-          ),
-        })
-        .strict()
-    ),
-    psychological: zod.optional(
-      zod
-        .object({
-          initialTest: zod.array(
-            zod.union([
-              zod.number(),
-              zod
-                .object({
-                  option: zod.literal("Rating"),
-                })
-                .strict(),
-              zod
-                .object({
-                  operator: zod.nativeEnum(mathOperatorEnum),
-                })
-                .strict(),
-            ])
-          ),
-          progressingTest: zod.array(
-            zod.union([
-              zod.number(),
-              zod
-                .object({
-                  option: zod.literal("Rating"),
-                })
-                .strict(),
-              zod
-                .object({
-                  operator: zod.nativeEnum(mathOperatorEnum),
-                })
-                .strict(),
-            ])
-          ),
-        })
-        .strict()
-    ),
+export const BonusGenericListSchema = type(
+  type({
+    name: "string",
+    "rating?": "number",
   })
-  .strict();
+).array();
+export type BonusGenericListType = typeof BonusGenericListSchema.infer;
 
-export type AddictionResistanceType = zod.infer<
-  typeof AddictionResistanceSchema
->;
+export const ForbiddenQualityListSchema = type("string[]");
+export type ForbiddenQualityListType = typeof ForbiddenQualityListSchema.infer;
 
-export const InitiativeSchema = zod
-  .object({
-    bonus: zod.optional(
-      zod.union([
-        zod.object({ ratingLinked: zod.array(zod.number()) }).strict(),
-        zod.number(),
-      ])
-    ),
-    bonusDice: zod.optional(
-      zod.union([
-        zod.object({ ratingLinked: zod.array(zod.number()) }).strict(),
-        zod
-          .object({
-            option: zod.literal("Rating"),
-          })
-          .strict(),
-        zod.number(),
-      ])
-    ),
-  })
-  .strict();
-export type InitiativeType = zod.infer<typeof InitiativeSchema>;
+const AddictionResistanceSchema = type({
+  "physiological?": type({
+    initialTest: type(
+      type.or(
+        "number",
+        type({
+          option: "'Rating'",
+        }),
+        type({
+          operator: type.valueOf(mathOperatorEnum),
+        })
+      )
+    ).array(),
+    progressingTest: type(
+      type.or(
+        "number",
+        type({
+          option: "'Rating'",
+        }),
+        type({
+          operator: type.valueOf(mathOperatorEnum),
+        })
+      )
+    ).array(),
+  }),
+  "psychological?": type({
+    initialTest: type(
+      type.or(
+        "number",
+        type({
+          option: "'Rating'",
+        }),
+        type({
+          operator: type.valueOf(mathOperatorEnum),
+        })
+      )
+    ).array(),
+    progressingTest: type(
+      type.or(
+        "number",
+        type({
+          option: "'Rating'",
+        }),
+        type({
+          operator: type.valueOf(mathOperatorEnum),
+        })
+      )
+    ).array(),
+  }),
+});
+export type AddictionResistanceType = typeof AddictionResistanceSchema.infer;
 
-export const BonusSchema = zod
-  .object({
-    enterName: zod.optional(zod.literal(true)),
-    selection: zod.optional(
-      zod.object({
-        customAllowed: zod.optional(zod.literal(true)),
-        optionList: zod.array(zod.string()),
+export const InitiativeSchema = type({
+  "bonus?": type.or({ ratingLinked: "number[]" }, "number"),
+  "bonusDice?": type.or(
+    { ratingLinked: "number[]" },
+    type({
+      option: "'Rating'",
+    }),
+    "number"
+  ),
+});
+export type InitiativeType = typeof InitiativeSchema.infer;
+
+export const BonusSchema = type({
+  "enterName?": "true",
+  "selection?": {
+    "customAllowed?": "true",
+    optionList: "string[]",
+  },
+  "linkWeapon?": "true",
+  "linkArmour?": "true",
+  "linkSkill?": "true",
+  "linkParagon?": "true",
+  "linkPower?": "true",
+  "linkMentorSpirit?": "true",
+  "linkTradition?": "true",
+  "linkLicense?": "true",
+  "linkCyberware?": "true",
+  // TODO: fix these, should also have condition
+  "skillCategories?": type({
+    category: "string",
+    bonus: type(
+      type.or(
+        "number",
+        type({
+          option: "'Rating'",
+        }),
+        type({
+          operator: type.valueOf(mathOperatorEnum),
+        })
+      )
+    ).array(),
+  }).array(),
+  "skillGroups?": type(
+    type({
+      group: "string",
+      bonus: type(
+        type.or(
+          "number",
+          {
+            option: "'Rating'",
+          },
+          {
+            operator: type.valueOf(mathOperatorEnum),
+          }
+        )
+      ).array(),
+    })
+  ).array(),
+  "activeSoft?": type.or(
+    "number",
+    type({
+      option: "'Rating'",
+    })
+  ),
+  "skillSoft?": type({
+    bonus: type.or(
+      "number",
+      type({
+        option: "'Rating'",
       })
     ),
-    linkWeapon: zod.optional(zod.literal(true)),
-    linkArmour: zod.optional(zod.literal(true)),
-    linkSkill: zod.optional(zod.literal(true)),
-    linkParagon: zod.optional(zod.literal(true)),
-    linkPower: zod.optional(zod.literal(true)),
-    linkMentorSpirit: zod.optional(zod.literal(true)),
-    linkTradition: zod.optional(zod.literal(true)),
-    linkLicense: zod.optional(zod.literal(true)),
-    linkCyberware: zod.optional(zod.literal(true)),
-    // TODO: fix these, should also have condition
-    skillCategories: zod.optional(
-      zod.array(
-        zod
-          .object({
-            category: zod.string(),
-            bonus: zod.array(
-              zod.union([
-                zod.number(),
-                zod
-                  .object({
-                    option: zod.literal("Rating"),
-                  })
-                  .strict(),
-                zod
-                  .object({
-                    operator: zod.nativeEnum(mathOperatorEnum),
-                  })
-                  .strict(),
-              ])
-            ),
-          })
-          .strict()
-      )
+    // don't apply bonus to this category
+    "excludedCategory?": "string",
+    // only apply bonus to this category
+    "specificCategory?": "string",
+  }),
+  "skillSoftMaxRating?": type({
+    bonus: type.or(
+      "number",
+      type({
+        option: "'Rating'",
+      })
     ),
-    skillGroups: zod.optional(
-      zod.array(
-        zod
-          .object({
-            group: zod.string(),
-            bonus: zod.array(
-              zod.union([
-                zod.number(),
-                zod
-                  .object({
-                    option: zod.literal("Rating"),
-                  })
-                  .strict(),
-                zod
-                  .object({
-                    operator: zod.nativeEnum(mathOperatorEnum),
-                  })
-                  .strict(),
-              ])
-            ),
-          })
-          .strict()
-      )
-    ),
-    activeSoft: zod.optional(
-      zod.union([
-        zod.number(),
-        zod
-          .object({
-            option: zod.literal("Rating"),
-          })
-          .strict(),
-      ])
-    ),
-    skillSoft: zod.optional(
-      zod
-        .object({
-          bonus: zod.union([
-            zod.number(),
-            zod
-              .object({
-                option: zod.literal("Rating"),
-              })
-              .strict(),
-          ]),
-          // don't apply bonus to this category
-          excludedCategory: zod.optional(zod.string()),
-          // only apply bonus to this category
-          specificCategory: zod.optional(zod.string()),
-        })
-        .strict()
-    ),
-    skillSoftMaxRating: zod.optional(
-      zod
-        .object({
-          bonus: zod.union([
-            zod.number(),
-            zod
-              .object({
-                option: zod.literal("Rating"),
-              })
-              .strict(),
-          ]),
-          // only for hardwires
-          supportedSkillCategory: zod.optional(
-            zod.nativeEnum(limitCategoryEnum)
-          ),
-        })
-        .strict()
-    ),
-    activeSoftMaxRating: zod.optional(
-      zod.union([
-        zod.number(),
-        zod
-          .object({
-            option: zod.literal("Rating"),
-          })
-          .strict(),
-      ])
-    ),
-    limit: zod.optional(
-      zod
-        .object({
-          limitCategory: zod.nativeEnum(limitCategoryEnum),
-          bonus: zod.union([
-            zod.number(),
-            zod
-              .object({
-                option: zod.literal("Rating"),
-              })
-              .strict(),
-          ]),
-          // TODO: fix the conditions?
-          condition: zod.optional(zod.string()),
-        })
-        .strict()
-    ),
-    // TODO: fix, this can also change the max and other things..
-    attribute: zod.optional(
-      zod.array(
-        zod
-          .object({
-            name: zod.nativeEnum(attributeTypeEnum),
-            bonus: zod.union([
-              zod.number(),
-              zod
-                .object({
-                  option: zod.literal("Rating"),
-                })
-                .strict(),
-            ]),
-          })
-          .strict()
-      )
-    ),
-    skill: zod.optional(
-      zod.array(
-        zod
-          .object({
-            group: zod.string(),
-            bonus: zod.union([
-              zod.number(),
-              zod
-                .object({
-                  option: zod.literal("Rating"),
-                })
-                .strict(),
-            ]),
-          })
-          .strict()
-      )
-    ),
-    spellCategoryList: zod.optional(
-      zod.array(
-        zod
-          .object({
-            category: zod.union([
-              zod.nativeEnum(spellCategoryEnum),
-              zod.object({ option: zod.literal("SelectCategory") }).strict(),
-            ]),
-            bonus: zod.union([
-              zod.number(),
-              zod
-                .object({
-                  option: zod.literal("Rating"),
-                })
-                .strict(),
-            ]),
-          })
-          .strict()
-      )
-    ),
-    essenceCostTimes100: zod.optional(EssenceCostSchema),
-    specificPowerList: zod.optional(
-      zod.array(
-        zod.object({
-          name: zod.string(),
-          level: zod.optional(zod.number()),
-        })
-      )
-    ),
-    specificWeapon: zod.optional(
-      zod
-        .object({
-          weaponType: zod.nativeEnum(weaponTypeEnum),
-          bonus: zod.union([
-            zod.number(),
-            zod
-              .object({
-                option: zod.literal("Rating"),
-              })
-              .strict(),
-          ]),
-        })
-        .strict()
-    ),
-    weaponAccuracy: zod.optional(
-      zod
-        .object({
-          weapon: zod.string(),
-          bonus: zod.union([
-            zod.number(),
-            zod
-              .object({
-                option: zod.literal("Rating"),
-              })
-              .strict(),
-          ]),
-        })
-        .strict()
-    ),
-    weaponSkillAccuracyList: zod.optional(
-      zod.array(
-        zod
-          .object({
-            skill: SelectSkillSchema,
-            bonus: zod.union([
-              zod.number(),
-              zod
-                .object({
-                  option: zod.literal("Rating"),
-                })
-                .strict(),
-            ]),
-          })
-          .strict()
-      )
-    ),
-    smartlinkAccuracy: zod.optional(zod.number()),
-    initiative: zod.optional(InitiativeSchema),
-    matrixInitiative: zod.optional(
-      zod
-        .object({
-          bonusDice: zod.number(),
-        })
-        .strict()
-    ),
-    toxinContactResist: zod.optional(
-      zod.union([
-        zod.number(),
-        zod
-          .object({
-            option: zod.literal("Rating"),
-          })
-          .strict(),
-      ])
-    ),
-    pathogenContactResist: zod.optional(
-      zod.union([
-        zod.number(),
-        zod
-          .object({
-            option: zod.literal("Rating"),
-          })
-          .strict(),
-      ])
-    ),
-    toxinContactImmune: zod.optional(zod.literal(true)),
-    pathogenContactImmune: zod.optional(zod.literal(true)),
-    toxinInhalationResist: zod.optional(
-      zod.union([
-        zod.number(),
-        zod
-          .object({
-            option: zod.literal("Rating"),
-          })
-          .strict(),
-      ])
-    ),
-    pathogenInhalationResist: zod.optional(
-      zod.union([
-        zod.number(),
-        zod
-          .object({
-            option: zod.literal("Rating"),
-          })
-          .strict(),
-      ])
-    ),
-    toxinInhalationImmune: zod.optional(zod.literal(true)),
-    pathogenInhalationImmune: zod.optional(zod.literal(true)),
-    toxinIngestionResist: zod.optional(
-      zod.union([
-        zod.number(),
-        zod
-          .object({
-            option: zod.literal("Rating"),
-          })
-          .strict(),
-      ])
-    ),
-    pathogenIngestionResist: zod.optional(
-      zod.union([
-        zod.number(),
-        zod
-          .object({
-            option: zod.literal("Rating"),
-          })
-          .strict(),
-      ])
-    ),
-    toxinIngestionImmune: zod.optional(zod.literal(true)),
-    pathogenIngestionImmune: zod.optional(zod.literal(true)),
-    toxinInjectionResist: zod.optional(
-      zod.union([
-        zod.number(),
-        zod
-          .object({
-            option: zod.literal("Rating"),
-          })
-          .strict(),
-      ])
-    ),
-    pathogenInjectionResist: zod.optional(
-      zod.union([
-        zod.number(),
-        zod
-          .object({
-            option: zod.literal("Rating"),
-          })
-          .strict(),
-      ])
-    ),
-    toxinInjectionImmune: zod.optional(zod.literal(true)),
-    pathogenInjectionImmune: zod.optional(zod.literal(true)),
-    fatigueResist: zod.optional(
-      zod.union([
-        zod.number(),
-        zod
-          .object({
-            option: zod.literal("Rating"),
-          })
-          .strict(),
-      ])
-    ),
-    socialLimit: zod.optional(
-      zod.array(
-        zod.union([
-          zod.number(),
-          zod
-            .object({
-              option: zod.literal("Rating"),
-            })
-            .strict(),
-          zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
-        ])
-      )
-    ),
-    physicalLimit: zod.optional(
-      zod.union([
-        zod.number(),
-        zod
-          .object({
-            option: zod.literal("Rating"),
-          })
-          .strict(),
-      ])
-    ),
-    mentalLimit: zod.optional(
-      zod.union([
-        zod.number(),
-        zod
-          .object({
-            option: zod.literal("Rating"),
-          })
-          .strict(),
-      ])
-    ),
-    // TODO: needs to be linked to a quality
-    qualityList: zod.optional(BonusGenericListSchema),
-    disableQualities: zod.optional(
-      zod.array(
-        zod
-          .object({
-            name: zod.string(),
-          })
-          .strict()
-      )
-    ),
-    damageResistance: zod.optional(
-      zod.union([
-        zod.number(),
-        zod
-          .object({
-            option: zod.literal("Rating"),
-          })
-          .strict(),
-      ])
-    ),
-    radiationResistance: zod.optional(
-      zod.union([
-        zod.number(),
-        zod
-          .object({
-            option: zod.literal("Rating"),
-          })
-          .strict(),
-      ])
-    ),
-    sonicResistance: zod.optional(
-      zod.union([
-        zod.number(),
-        zod
-          .object({
-            option: zod.literal("Rating"),
-          })
-          .strict(),
-      ])
-    ),
-    unarmedDamage: zod.optional(
-      zod.array(
-        zod.union([
-          zod.number(),
-          zod
-            .object({
-              option: zod.literal("Rating"),
-            })
-            .strict(),
-          zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
-        ])
-      )
-    ),
-    unarmedDamageType: zod.optional(zod.nativeEnum(damageTypeEnum)),
-    modifyAttributeImprovementKarmaCost: zod.optional(
-      zod.array(
-        zod
-          .object({
-            name: zod.nativeEnum(attributeTypeEnum),
-            bonus: zod.union([
-              zod.number(),
-              zod
-                .object({
-                  option: zod.literal("Rating"),
-                })
-                .strict(),
-            ]),
-          })
-          .strict()
-      )
-    ),
-    modifySkillImprovementKarmaCost: zod.optional(
-      zod.array(
-        zod
-          .object({
-            skillRating: zod.union([
-              zod
-                .object({
-                  minimum: zod.number(),
-                })
-                .strict(),
-              zod
-                .object({
-                  maximum: zod.number(),
-                })
-                .strict(),
-            ]),
-            conditionalBonus: zod.union([
-              zod.number(),
-              zod
-                .object({
-                  RatingRequired: zod.number(),
-                })
-                .strict(),
-            ]),
-          })
-          .strict()
-      )
-    ),
-    ignoreConditionModifierNegativeEffects: zod.optional(
-      zod.union([
-        zod.number(),
-        zod
-          .object({
-            option: zod.literal("Rating"),
-          })
-          .strict(),
-      ])
-    ),
-    addPhysicalBoxes: zod.optional(
-      zod.union([
-        zod.number(),
-        zod
-          .object({
-            option: zod.union([zod.literal("Rating"), zod.literal("-Rating")]),
-          })
-          .strict(),
-      ])
-    ),
-    // Note: percentage speed increases stack so 50% + 50% = 100%
-    swimSpeedPercentageModifier: zod.optional(zod.number()),
-    walkSpeedPercentageModifier: zod.optional(zod.number()),
-    runSpeedPercentageModifier: zod.optional(zod.number()),
-    sprintSpeedPercentageModifier: zod.optional(zod.number()),
-    lifestyleCostModifier: zod.optional(
-      zod.array(
-        zod
-          .object({
-            lifestyle: zod.optional(zod.string()),
-            cost: zod.number(),
-          })
-          .strict()
-      )
-    ),
-    stunHealing: zod.optional(
-      zod.union([
-        zod.number(),
-        zod
-          .object({
-            option: zod.literal("Rating"),
-          })
-          .strict(),
-      ])
-    ),
-    physicalHealing: zod.optional(
-      zod.union([
-        zod.number(),
-        zod
-          .object({
-            option: zod.literal("Rating"),
-          })
-          .strict(),
-      ])
-    ),
-    armour: zod.optional(
-      zod
-        .object({
-          nonStacking: zod.optional(zod.literal(true)),
-          bonus: zod.union([
-            zod.number(),
-            zod
-              .object({
-                option: zod.literal("Rating"),
-              })
-              .strict(),
-          ]),
-        })
-        .strict()
-    ),
-    fireArmour: zod.optional(
-      zod.union([
-        zod.number(),
-        zod
-          .object({
-            option: zod.literal("Rating"),
-          })
-          .strict(),
-      ])
-    ),
-    electricityArmour: zod.optional(
-      zod.union([
-        zod.number(),
-        zod
-          .object({
-            option: zod.literal("Rating"),
-          })
-          .strict(),
-      ])
-    ),
-    coldArmour: zod.optional(
-      zod.union([
-        zod.number(),
-        zod
-          .object({
-            option: zod.literal("Rating"),
-          })
-          .strict(),
-      ])
-    ),
-    dodge: zod.optional(
-      zod.array(
-        zod.union([
-          zod.number(),
-          zod
-            .object({
-              option: zod.literal("Rating"),
-            })
-            .strict(),
-          zod
-            .object({
-              operator: zod.nativeEnum(mathOperatorEnum),
-            })
-            .strict(),
-        ])
-      )
-    ),
-    unarmedReach: zod.optional(zod.number()),
-    addictionResistance: zod.optional(AddictionResistanceSchema),
-    composure: zod.optional(zod.number()),
-    judgeIntentionsDefense: zod.optional(
-      zod.array(
-        zod.union([
-          zod.number(),
-          zod
-            .object({
-              option: zod.literal("Rating"),
-            })
-            .strict(),
-          zod
-            .object({
-              operator: zod.nativeEnum(mathOperatorEnum),
-            })
-            .strict(),
-        ])
-      )
-    ),
-    memory: zod.optional(
-      zod.array(
-        zod.union([
-          zod.number(),
-          zod
-            .object({
-              option: zod.literal("Rating"),
-            })
-            .strict(),
-          zod
-            .object({
-              operator: zod.nativeEnum(mathOperatorEnum),
-            })
-            .strict(),
-        ])
-      )
-    ),
-    drainResist: zod.optional(
-      zod.array(
-        zod.union([
-          zod.number(),
-          zod
-            .object({
-              option: zod.literal("Rating"),
-            })
-            .strict(),
-          zod
-            .object({
-              operator: zod.nativeEnum(mathOperatorEnum),
-            })
-            .strict(),
-        ])
-      )
-    ),
-    fadingResist: zod.optional(
-      zod.array(
-        zod.union([
-          zod.number(),
-          zod
-            .object({
-              option: zod.literal("Rating"),
-            })
-            .strict(),
-          zod
-            .object({
-              operator: zod.nativeEnum(mathOperatorEnum),
-            })
-            .strict(),
-        ])
-      )
-    ),
-    directManaResist: zod.optional(
-      zod.array(
-        zod.union([
-          zod.number(),
-          zod
-            .object({
-              option: zod.literal("Rating"),
-            })
-            .strict(),
-          zod
-            .object({
-              operator: zod.nativeEnum(mathOperatorEnum),
-            })
-            .strict(),
-        ])
-      )
-    ),
-    detectionResist: zod.optional(
-      zod.array(
-        zod.union([
-          zod.number(),
-          zod
-            .object({
-              option: zod.literal("Rating"),
-            })
-            .strict(),
-          zod
-            .object({
-              operator: zod.nativeEnum(mathOperatorEnum),
-            })
-            .strict(),
-        ])
-      )
-    ),
-    manaIllusionResist: zod.optional(
-      zod.array(
-        zod.union([
-          zod.number(),
-          zod
-            .object({
-              option: zod.literal("Rating"),
-            })
-            .strict(),
-          zod
-            .object({
-              operator: zod.nativeEnum(mathOperatorEnum),
-            })
-            .strict(),
-        ])
-      )
-    ),
-    mentalManipulationResist: zod.optional(
-      zod.array(
-        zod.union([
-          zod.number(),
-          zod
-            .object({
-              option: zod.literal("Rating"),
-            })
-            .strict(),
-          zod
-            .object({
-              operator: zod.nativeEnum(mathOperatorEnum),
-            })
-            .strict(),
-        ])
-      )
-    ),
-    decreaseBodyResist: zod.optional(
-      zod.array(
-        zod.union([
-          zod.number(),
-          zod
-            .object({
-              option: zod.literal("Rating"),
-            })
-            .strict(),
-          zod
-            .object({
-              operator: zod.nativeEnum(mathOperatorEnum),
-            })
-            .strict(),
-        ])
-      )
-    ),
-    decreaseAgilityResist: zod.optional(
-      zod.array(
-        zod.union([
-          zod.number(),
-          zod
-            .object({
-              option: zod.literal("Rating"),
-            })
-            .strict(),
-          zod
-            .object({
-              operator: zod.nativeEnum(mathOperatorEnum),
-            })
-            .strict(),
-        ])
-      )
-    ),
-    decreaseReasonanceResist: zod.optional(
-      zod.array(
-        zod.union([
-          zod.number(),
-          zod
-            .object({
-              option: zod.literal("Rating"),
-            })
-            .strict(),
-          zod
-            .object({
-              operator: zod.nativeEnum(mathOperatorEnum),
-            })
-            .strict(),
-        ])
-      )
-    ),
-    decreaseStrengthResist: zod.optional(
-      zod.array(
-        zod.union([
-          zod.number(),
-          zod
-            .object({
-              option: zod.literal("Rating"),
-            })
-            .strict(),
-          zod
-            .object({
-              operator: zod.nativeEnum(mathOperatorEnum),
-            })
-            .strict(),
-        ])
-      )
-    ),
-    decreaseCharismaResist: zod.optional(
-      zod.array(
-        zod.union([
-          zod.number(),
-          zod
-            .object({
-              option: zod.literal("Rating"),
-            })
-            .strict(),
-          zod
-            .object({
-              operator: zod.nativeEnum(mathOperatorEnum),
-            })
-            .strict(),
-        ])
-      )
-    ),
-    decreaseIntuitionResist: zod.optional(
-      zod.array(
-        zod.union([
-          zod.number(),
-          zod
-            .object({
-              option: zod.literal("Rating"),
-            })
-            .strict(),
-          zod
-            .object({
-              operator: zod.nativeEnum(mathOperatorEnum),
-            })
-            .strict(),
-        ])
-      )
-    ),
-    decreaseLogicResist: zod.optional(
-      zod.array(
-        zod.union([
-          zod.number(),
-          zod
-            .object({
-              option: zod.literal("Rating"),
-            })
-            .strict(),
-          zod
-            .object({
-              operator: zod.nativeEnum(mathOperatorEnum),
-            })
-            .strict(),
-        ])
-      )
-    ),
-    decreaseWillpowerResist: zod.optional(
-      zod.array(
-        zod.union([
-          zod.number(),
-          zod
-            .object({
-              option: zod.literal("Rating"),
-            })
-            .strict(),
-          zod
-            .object({
-              operator: zod.nativeEnum(mathOperatorEnum),
-            })
-            .strict(),
-        ])
-      )
-    ),
-    addLimb: zod.optional(
-      zod
-        .object({
-          limbSlot: zod.nativeEnum(limbSlotEnum),
-          numberOfLimbs: zod.number(),
-        })
-        .strict()
-    ),
-    adapsin: zod.optional(zod.literal(true)),
-    reflex: zod.optional(zod.literal(true)),
-    ambidextrous: zod.optional(zod.literal(true)),
-  })
-  .strict();
-export type BonusType = zod.infer<typeof BonusSchema>;
+    // only for hardwires
+    "supportedSkillCategory?": type.valueOf(limitCategoryEnum),
+  }),
+  "activeSoftMaxRating?": type.or("number", {
+    option: "'Rating'",
+  }),
+  "limit?": {
+    limitCategory: type.valueOf(limitCategoryEnum),
+    bonus: type.or("number", {
+      option: "'Rating'",
+    }),
+    // TODO: fix the conditions?
+    "condition?": "string",
+  },
 
-export const WirelessSchema = BonusSchema.extend({
-  replaceNonWireless: zod.optional(zod.literal(true)),
+  // TODO: fix, this can also change the max and other things..
+  "attribute?": type({
+    name: type.valueOf(attributeTypeEnum),
+    bonus: type.or("number", {
+      option: "'Rating'",
+    }),
+  }).array(),
+  "skill?": type({
+    group: "string",
+    bonus: type.or("number", {
+      option: "'Rating'",
+    }),
+  }).array(),
+  "spellCategoryList?": type({
+    category: type.or(type.valueOf(spellCategoryEnum), {
+      option: "'SelectCategory'",
+    }),
+    bonus: type.or("number", {
+      option: "'Rating'",
+    }),
+  }).array(),
+
+  "essenceCostTimes100?": EssenceCostSchema,
+  "specificPowerList?": type({
+    name: "string",
+    "level?": "number",
+  }).array(),
+  "specificWeapon?": {
+    weaponType: type.valueOf(weaponTypeEnum),
+    bonus: type.or(
+      "number",
+      type({
+        option: "'Rating'",
+      })
+    ),
+  },
+  "weaponAccuracy?": {
+    weapon: "string",
+    bonus: type.or(
+      "number",
+      type({
+        option: "'Rating'",
+      })
+    ),
+  },
+
+  "weaponSkillAccuracyList?": type({
+    skill: SelectSkillSchema,
+    bonus: type.or("number", {
+      option: "'Rating'",
+    }),
+  }).array(),
+  "smartlinkAccuracy?": "number",
+  "initiative?": InitiativeSchema,
+  "matrixInitiative?": {
+    bonusDice: "number",
+  },
+
+  "toxinContactResist?": type.or("number", {
+    option: "'Rating'",
+  }),
+  "pathogenContactResist?": type.or("number", {
+    option: "'Rating'",
+  }),
+  "toxinContactImmune?": "true",
+  "pathogenContactImmune?": "true",
+  "toxinInhalationResist?": type.or("number", {
+    option: "'Rating'",
+  }),
+  "pathogenInhalationResist?": type.or("number", {
+    option: "'Rating'",
+  }),
+  "toxinInhalationImmune?": "true",
+  "pathogenInhalationImmune?": "true",
+  "toxinIngestionResist?": type.or("number", {
+    option: "'Rating'",
+  }),
+  "pathogenIngestionResist?": type.or(
+    "number",
+    type({
+      option: "'Rating'",
+    })
+  ),
+  "toxinIngestionImmune?": "true",
+  "pathogenIngestionImmune?": "true",
+  "toxinInjectionResist?": type.or(
+    "number",
+    type({
+      option: "'Rating'",
+    })
+  ),
+  "pathogenInjectionResist?": type.or(
+    "number",
+    type({
+      option: "'Rating'",
+    })
+  ),
+  "toxinInjectionImmune?": "true",
+  "pathogenInjectionImmune?": "true",
+  "fatigueResist?": type.or(
+    "number",
+    type({
+      option: "'Rating'",
+    })
+  ),
+  "socialLimit?": type(
+    type.or(
+      "number",
+      type({
+        option: "'Rating'",
+      }),
+      { operator: type.valueOf(mathOperatorEnum) }
+    )
+  ).array(),
+
+  "physicalLimit?": type.or(
+    "number",
+    type({
+      option: "'Rating'",
+    })
+  ),
+  "mentalLimit?": type.or(
+    "number",
+    type({
+      option: "'Rating'",
+    })
+  ),
+  // TODO: needs to be linked to a quality
+  "qualityList?": BonusGenericListSchema,
+  "disableQualities?": type(
+    type({
+      name: "string",
+    })
+  ).array(),
+  "damageResistance?": type.or(
+    "number",
+    type({
+      option: "'Rating'",
+    })
+  ),
+  "radiationResistance?": type.or(
+    "number",
+    type({
+      option: "'Rating'",
+    })
+  ),
+  "sonicResistance?": type.or(
+    "number",
+    type({
+      option: "'Rating'",
+    })
+  ),
+  "unarmedDamage?": type(
+    type.or(
+      "number",
+      type({
+        option: "'Rating'",
+      }),
+      { operator: type.valueOf(mathOperatorEnum) }
+    )
+  ).array(),
+  "unarmedDamageType?": type.valueOf(damageTypeEnum),
+  "modifyAttributeImprovementKarmaCost?": type({
+    name: type.valueOf(attributeTypeEnum),
+    bonus: type.or("number", {
+      option: "'Rating'",
+    }),
+  }).array(),
+
+  "modifySkillImprovementKarmaCost?": type({
+    skillRating: type.or(
+      {
+        minimum: "number",
+      },
+      {
+        maximum: "number",
+      }
+    ),
+    conditionalBonus: type.or("number", {
+      RatingRequired: "number",
+    }),
+  }).array(),
+  "ignoreConditionModifierNegativeEffects?": type.or("number", {
+    option: "'Rating'",
+  }),
+  "addPhysicalBoxes?": type.or(
+    "number",
+    type({
+      option: type.or("'Rating'", "'-Rating'"),
+    })
+  ),
+  // Note: percentage speed increases stack so 50% + 50% = 100%
+  "swimSpeedPercentageModifier?": "number",
+  "walkSpeedPercentageModifier?": "number",
+  "runSpeedPercentageModifier?": "number",
+  "sprintSpeedPercentageModifier?": "number",
+  "lifestyleCostModifier?": type(
+    type({
+      "lifestyle?": "string",
+      cost: "number",
+    })
+  ).array(),
+  "stunHealing?": type.or(
+    "number",
+    type({
+      option: "'Rating'",
+    })
+  ),
+  "physicalHealing?": type.or(
+    "number",
+    type({
+      option: "'Rating'",
+    })
+  ),
+  "armour?": {
+    "nonStacking?": "true",
+    bonus: type.or("number", {
+      option: "'Rating'",
+    }),
+  },
+
+  "fireArmour?": type.or("number", {
+    option: "'Rating'",
+  }),
+  "electricityArmour?": type.or("number", {
+    option: "'Rating'",
+  }),
+  "coldArmour?": type.or("number", {
+    option: "'Rating'",
+  }),
+  "dodge?": type(
+    type.or(
+      "number",
+      {
+        option: "'Rating'",
+      },
+      {
+        operator: type.valueOf(mathOperatorEnum),
+      }
+    )
+  ).array(),
+
+  "unarmedReach?": "number",
+  "addictionResistance?": AddictionResistanceSchema,
+  "composure?": "number",
+  "judgeIntentionsDefense?": RatingCalculationSchema,
+  "memory?": RatingCalculationSchema,
+  "drainResist?": RatingCalculationSchema,
+  "fadingResist?": RatingCalculationSchema,
+  "directManaResist?": RatingCalculationSchema,
+  "detectionResist?": RatingCalculationSchema,
+  "manaIllusionResist?": RatingCalculationSchema,
+
+  "mentalManipulationResist?": RatingCalculationSchema,
+  "decreaseBodyResist?": RatingCalculationSchema,
+  "decreaseAgilityResist?": RatingCalculationSchema,
+  "decreaseReasonanceResist?": RatingCalculationSchema,
+  "decreaseStrengthResist?": RatingCalculationSchema,
+  "decreaseCharismaResist?": RatingCalculationSchema,
+  "decreaseIntuitionResist?": RatingCalculationSchema,
+  "decreaseLogicResist?": RatingCalculationSchema,
+  "decreaseWillpowerResist?": RatingCalculationSchema,
+  "addLimb?": type({
+    limbSlot: type.valueOf(limbSlotEnum),
+    numberOfLimbs: "number",
+  }),
+
+  "adapsin?": "true",
+  "reflex?": "true",
+  "ambidextrous?": "true",
+});
+export type BonusType = typeof BonusSchema.infer;
+
+export const WirelessSchema = BonusSchema.and({
+  "replaceNonWireless?": "true",
 });

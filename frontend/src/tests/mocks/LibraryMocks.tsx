@@ -1,3 +1,4 @@
+import type { FormEvent } from "react";
 import type { Group, Option } from "react-dropdown";
 
 interface IProps {

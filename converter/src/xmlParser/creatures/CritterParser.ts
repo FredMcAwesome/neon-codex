@@ -13,6 +13,7 @@ import {
 } from "../common/ParserHelper.js";
 import {
   CritterSchema,
+  type CritterAttributeRangeType,
   type CritterSkillListType,
   type CritterType,
 } from "@neon-codex/common/build/schemas/creatures/critterSchemas.js";
@@ -27,6 +28,7 @@ import {
   convertIncludedComplexForms,
   convertIncludedCritterPowers,
 } from "./CritterParserHelper.js";
+import { type } from "arktype";
 
 export function ParseCritters() {
   const currentPath = import.meta.url;
@@ -46,18 +48,19 @@ export function ParseCritters() {
   //   jObj.chummer.metatypes.metatype[155]
   // );
 
-  const critterListParsed = CritterListXmlSchema.safeParse(
+  const critterListParsed = CritterListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.metatypes.metatype
   );
 
-  if (critterListParsed.success) console.log("critters.xml initial zod parsed");
-  else {
-    console.log(critterListParsed.error.errors[0]);
+  if (critterListParsed instanceof type.errors) {
+    console.log(critterListParsed.summary);
     assert(false);
+  } else {
+    console.log("critters.xml initial arktype parsed");
   }
 
-  const critterList = critterListParsed.data;
+  const critterList = critterListParsed;
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
   // })
@@ -66,13 +69,13 @@ export function ParseCritters() {
     // .filter((weapon) => weapon.name === "Osmium Mace")
     .map((critter) => {
       const convertedCritter = convertCritter(critter);
-      const check = CritterSchema.safeParse(convertedCritter);
-      if (!check.success) {
+      const check = CritterSchema(convertedCritter);
+      if (check instanceof type.errors) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         console.dir(convertedCritter, { depth: Infinity });
-        throw new Error(check.error.message);
+        throw new Error(check.summary);
       }
-      return check.data;
+      return check;
     });
   // console.log(spellListConverted);
   const jsonFilePath = fileURLToPath(
@@ -99,7 +102,7 @@ function convertCritter(critter: CritterXmlType): CritterType {
       "movement" in critter
   );
 
-  const bodyAttributeRange = {
+  const bodyAttributeRange: CritterAttributeRangeType = {
     min: convertCritterRating(critter.bodmin, critter.category),
     max: convertCritterRating(critter.bodmax, critter.category),
     augmentedMax: convertCritterRating(critter.bodaug, critter.category),
@@ -337,11 +340,15 @@ function convertCritter(critter: CritterXmlType): CritterType {
     depthAttributeRange: depthAttributeRange,
     ...(critter.movement === "Special" && { nonStandardMovement: true }),
     ...(movement !== undefined && { movement: movement }),
-    includedPowerList: addPowerList,
-    optionalPowerList: optionalPowerList,
-    addQualityList: addQualityList,
-    addBiowareList: addBiowareList,
-    addComplexFormList: addComplexFormList,
+    ...(addPowerList !== undefined && { includedPowerList: addPowerList }),
+    ...(optionalPowerList !== undefined && {
+      optionalPowerList: optionalPowerList,
+    }),
+    ...(addQualityList !== undefined && { addQualityList: addQualityList }),
+    ...(addBiowareList !== undefined && { addBiowareList: addBiowareList }),
+    ...(addComplexFormList !== undefined && {
+      addComplexFormList: addComplexFormList,
+    }),
     skills: skills,
     ...(bonus !== undefined && { bonus: bonus }),
     source: source,

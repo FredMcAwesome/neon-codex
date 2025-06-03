@@ -1,10 +1,10 @@
-import { z as zod } from "zod";
 import * as trpcExpress from "@trpc/server/adapters/express";
 import jwt from "jsonwebtoken";
 import { TOKEN_SECRET } from "@neon-codex/database/build/utils/databaseConfig.js";
 import * as logger from "../utils/logger.js";
 import { init } from "./db.js";
 import Users from "@neon-codex/database/build/models/accounts/userModel.js";
+import { type } from "arktype";
 export interface jwtUsername extends jwt.JwtPayload {
   username: string;
 }
@@ -19,23 +19,19 @@ export const getToken = function (bearerHeader: string) {
   return bearerToken;
 };
 
-const LoginStatus = zod.discriminatedUnion("loginStatus", [
-  zod
-    .object({
-      loginStatus: zod.literal(true),
-      id: zod.number(),
-      username: zod.string(),
-      isAdmin: zod.boolean(),
-    })
-    .strict(),
-  zod
-    .object({
-      loginStatus: zod.literal(false),
-    })
-    .strict(),
-]);
+const LoginStatus = type.or(
+  {
+    loginStatus: "true",
+    id: "number",
+    username: "string",
+    isAdmin: "boolean",
+  },
+  {
+    loginStatus: "false",
+  }
+);
 
-type LoginStatusType = zod.infer<typeof LoginStatus>;
+type LoginStatusType = typeof LoginStatus.infer;
 
 export async function getLoginStatus({
   req,

@@ -5,6 +5,7 @@ import { fileURLToPath } from "url";
 import { ArmourListSchema } from "@neon-codex/common/build/schemas/equipment/combat/armourSchemas.js";
 import type { ArmourListType } from "@neon-codex/common/build/schemas/equipment/combat/armourSchemas.js";
 import { Armours } from "../../models/rpg/equipment/combat/armourModel.js";
+import { type } from "arktype";
 
 export const getArmours = function () {
   const currentPath = import.meta.url;
@@ -18,13 +19,13 @@ export const getArmours = function () {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const rawJson = JSON.parse(jsonString);
-  const armourListParsed = ArmourListSchema.safeParse(rawJson);
-  if (armourListParsed.success) {
-    console.log("armours all g");
-    unlinkedArmours = armourListParsed.data;
-  } else {
-    console.log(armourListParsed.error.errors[0]);
+  const armourListParsed = ArmourListSchema(rawJson);
+  if (armourListParsed instanceof type.errors) {
+    console.log(armourListParsed.summary);
     assert(false, "armours is undefined");
+  } else {
+    console.log("armours all g");
+    unlinkedArmours = armourListParsed;
   }
   const stagedArmours: Array<Armours> = [];
   unlinkedArmours.forEach((armour) => {

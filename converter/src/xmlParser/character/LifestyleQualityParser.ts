@@ -5,7 +5,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { convertXmlBonus } from "../common/BonusParserHelper.js";
-import { z as zod } from "zod";
+
 import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
 import {
   sourceBookXmlEnum,
@@ -19,41 +19,40 @@ import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { convertSource } from "../common/ParserHelper.js";
 import { lifestyleQualityCategoryEnum } from "@neon-codex/common/build/enums.js";
+import { type } from "arktype";
 
-const LifestyleQualityXmlSchema = zod
-  .object({
-    id: zod.string(),
-    name: zod.string(),
-    category: zod.nativeEnum(lifestyleQualityCategoryEnum),
-    cost: zod.optional(StringOrNumberSchema),
-    // Lifestyle point cost
-    lp: zod.number(),
-    // lifestyle cost multiplier (1 + multiplier)*cost
-    multiplier: zod.optional(zod.number()),
-    // lifestyle cost multiplier before split with roommates
-    // TODO: check if this is correct only used for Extra Secure
-    multiplierbaseonly: zod.optional(zod.number()),
-    // restricted to these lifestyles
-    allowed: zod.optional(zod.string()),
-    // can take this quality multiple times
-    allowmultiple: zod.optional(zod.literal("")),
-    security: zod.optional(zod.number()),
-    securitymaximum: zod.optional(zod.number()),
-    comforts: zod.optional(zod.number()),
-    comfortsmaximum: zod.optional(zod.number()),
-    neighborhood: zod.optional(zod.number()),
-    bonus: zod.optional(BonusXmlSchema),
-    required: zod.optional(RequiredXmlSchema),
-    forbidden: zod.optional(RequiredXmlSchema),
-    source: zod.nativeEnum(sourceBookXmlEnum),
-    page: zod.number(),
-    hide: zod.optional(zod.literal("")),
-  })
-  .strict();
-type LifestyleQualityXmlType = zod.infer<typeof LifestyleQualityXmlSchema>;
+const LifestyleQualityXmlSchema = type({
+  id: "string",
+  name: "string",
+  category: type.valueOf(lifestyleQualityCategoryEnum),
+  "cost?": StringOrNumberSchema,
+  // Lifestyle point cost
+  lp: "number",
+  // lifestyle cost multiplier (1 + multiplier)*cost
+  "multiplier?": "number",
+  // lifestyle cost multiplier before split with roommates
+  // TODO: check if this is correct only used for Extra Secure
+  "multiplierbaseonly?": "number",
+  // restricted to these lifestyles
+  "allowed?": "string",
+  // can take this quality multiple times
+  "allowmultiple?": "''",
+  "security?": "number",
+  "securitymaximum?": "number",
+  "comforts?": "number",
+  "comfortsmaximum?": "number",
+  "neighborhood?": "number",
+  "bonus?": BonusXmlSchema,
+  "required?": RequiredXmlSchema,
+  "forbidden?": RequiredXmlSchema,
+  source: type.valueOf(sourceBookXmlEnum),
+  page: "number",
+  "hide?": "''",
+});
+type LifestyleQualityXmlType = typeof LifestyleQualityXmlSchema.infer;
 
-export const LifestyleQualityListXmlSchema = zod.array(
-  LifestyleQualityXmlSchema
+export const LifestyleQualityListXmlSchema = type(
+  LifestyleQualityXmlSchema.array()
 );
 
 export function ParseLifestyleQualities() {
@@ -76,35 +75,33 @@ export function ParseLifestyleQualities() {
   //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   //   jObj.chummer.qualities.quality[46]
   // );
-  const lifestyleQualityListParsed = LifestyleQualityListXmlSchema.safeParse(
+  const lifestyleQualityListParsed = LifestyleQualityListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.qualities.quality
   );
 
-  if (lifestyleQualityListParsed.success)
-    console.log("lifestyle.xml (qualities) initial zod parsed");
-  else {
-    console.log(lifestyleQualityListParsed.error.errors[0]);
+  if (lifestyleQualityListParsed instanceof type.errors) {
+    console.log(lifestyleQualityListParsed.summary);
     assert(false);
+  } else {
+    console.log("lifestyle.xml (qualities) initial arktype parsed");
   }
 
-  const lifestyleQualityList = lifestyleQualityListParsed.data;
+  const lifestyleQualityList = lifestyleQualityListParsed;
   const lifestyleQualityListConverted = lifestyleQualityList.map(
     (lifestyle) => {
       const convertedLifestyleQuality = convertLifestyleQuality(lifestyle);
-      const check = LifestyleQualitySchema.safeParse(convertedLifestyleQuality);
-      if (!check.success) {
+      const check = LifestyleQualitySchema(convertedLifestyleQuality);
+      if (check instanceof type.errors) {
         console.dir(convertedLifestyleQuality, { depth: Infinity });
-        throw new Error(check.error.message);
+        throw new Error(check.summary);
       }
       return convertedLifestyleQuality;
     }
   );
-  const check = LifestyleQualityListSchema.safeParse(
-    lifestyleQualityListConverted
-  );
-  if (!check.success) {
-    throw new Error(check.error.message);
+  const check = LifestyleQualityListSchema(lifestyleQualityListConverted);
+  if (check instanceof type.errors) {
+    throw new Error(check.summary);
   }
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/lifestyleQualities.json"
@@ -143,7 +140,9 @@ const convertLifestyleQuality = function (xmlQuality: LifestyleQualityXmlType) {
     category: xmlQuality.category,
     monthlyCost: 0,
     lifestylePointCost: xmlQuality.lp,
-    lifestyleCostMultiplier: xmlQuality.multiplier,
+    ...(xmlQuality.multiplier !== undefined && {
+      lifestyleCostMultiplier: xmlQuality.multiplier,
+    }),
     ...(xmlQuality.allowed !== undefined && {
       requiredLifestyleList: xmlQuality.allowed.split(","),
     }),

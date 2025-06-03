@@ -331,7 +331,6 @@ const PrioritySelectLoaded = function ({
       const newHeritage = {
         heritage: heritage.name,
         specialAttributePoints: heritage.specialAttributePoints,
-        metavariant: undefined,
       };
       setPriorityHeritage(newHeritage);
     }
@@ -435,7 +434,7 @@ const PrioritySelectLoaded = function ({
               newHeritage.heritage = baseHeritage.name;
               newHeritage.specialAttributePoints =
                 baseHeritage.specialAttributePoints;
-              newHeritage.metavariant = undefined;
+              delete newHeritage.metavariant;
               setPriorityHeritage(newHeritage);
             }}
             placeholder={"Select an option"}

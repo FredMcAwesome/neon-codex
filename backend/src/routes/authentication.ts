@@ -8,6 +8,7 @@ import * as logger from "../utils/logger.js";
 import { TOKEN_SECRET } from "@neon-codex/database/build/utils/databaseConfig.js";
 import { router, publicProcedure, adminProcedure } from "../trpc.js";
 import { init } from "../utils/db.js";
+import { type } from "arktype";
 
 export const authenticationRouter = router({
   login: publicProcedure.input(LoginSchema).mutation(async (opts) => {

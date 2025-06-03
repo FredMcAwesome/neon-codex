@@ -1,4 +1,3 @@
-import { z as zod } from "zod";
 import { Fragment, useState } from "react";
 import Dropdown from "react-dropdown";
 import {
@@ -21,54 +20,41 @@ import type {
   AttributeRangeType,
   CharacterCreatorBonusListType,
 } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
+import { type } from "arktype";
 
-const AttributeOptionsSchema = zod
-  .object({
-    body: zod.array(zod.string()),
-    agility: zod.array(zod.string()),
-    reaction: zod.array(zod.string()),
-    strength: zod.array(zod.string()),
-    willpower: zod.array(zod.string()),
-    logic: zod.array(zod.string()),
-    intuition: zod.array(zod.string()),
-    charisma: zod.array(zod.string()),
-  })
-  .strict();
-type AttributesOptionsType = zod.infer<typeof AttributeOptionsSchema>;
+const AttributeOptionsSchema = type({
+  body: "string[]",
+  agility: "string[]",
+  reaction: "string[]",
+  strength: "string[]",
+  willpower: "string[]",
+  logic: "string[]",
+  intuition: "string[]",
+  charisma: "string[]",
+});
+type AttributesOptionsType = typeof AttributeOptionsSchema.infer;
 
-const SpecialAttributeOptionsSchema = zod
-  .object({
-    edge: zod.array(zod.string()),
-    talent: zod.discriminatedUnion("type", [
-      zod
-        .object({
-          type: zod.literal(talentCategoryEnum.Magic),
-          magic: zod.array(zod.string()),
-        })
-        .strict(),
-      zod
-        .object({
-          type: zod.literal(talentCategoryEnum.Resonance),
-          resonance: zod.array(zod.string()),
-        })
-        .strict(),
-      zod
-        .object({
-          type: zod.literal(talentCategoryEnum.Depth),
-          depth: zod.array(zod.string()),
-        })
-        .strict(),
-      zod
-        .object({
-          type: zod.literal(talentCategoryEnum.Mundane),
-        })
-        .strict(),
-    ]),
-  })
-  .strict();
-type SpecialAttributeOptionsType = zod.infer<
-  typeof SpecialAttributeOptionsSchema
->;
+const SpecialAttributeOptionsSchema = type({
+  edge: "string[]",
+  talent: type.or(
+    {
+      type: type.unit(talentCategoryEnum.Magic),
+      magic: "string[]",
+    },
+    {
+      type: type.unit(talentCategoryEnum.Resonance),
+      resonance: "string[]",
+    },
+    {
+      type: type.unit(talentCategoryEnum.Depth),
+      depth: "string[]",
+    },
+    {
+      type: type.unit(talentCategoryEnum.Mundane),
+    }
+  ),
+});
+type SpecialAttributeOptionsType = typeof SpecialAttributeOptionsSchema.infer;
 
 interface IProps {
   priorityInfo: PriorityLevelsType;

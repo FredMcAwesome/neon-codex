@@ -1,4 +1,3 @@
-import { z as zod } from "zod";
 import {
   armourModCategoryEnum,
   capacityEnum,
@@ -13,140 +12,120 @@ import {
 } from "../../shared/commonSchemas.js";
 import { BonusSchema } from "../../shared/bonusSchemas.js";
 import { CustomisedGearListSchema } from "../other/gearSchemas.js";
+import { type } from "arktype";
 
-const InnerAvailabilityArmourModSchema = zod
-  .object({
-    rating: AvailabilityRatingSchema,
-    restriction: zod.nativeEnum(restrictionEnum),
-    modifier: zod.optional(zod.literal(mathOperatorEnum.Add)),
-  })
-  .strict();
-const AvailabilityArmourModSchema = zod.union([
+const InnerAvailabilityArmourModSchema = type({
+  rating: AvailabilityRatingSchema,
+  restriction: type.valueOf(restrictionEnum),
+  "modifier?": type.unit(mathOperatorEnum.Add),
+});
+const AvailabilityArmourModSchema = type.or(
   InnerAvailabilityArmourModSchema,
-  zod
-    .object({ ratingLinked: zod.array(InnerAvailabilityArmourModSchema) })
-    .strict(),
-]);
-export type AvailabilityArmourModType = zod.infer<
-  typeof AvailabilityArmourModSchema
->;
+  type({ ratingLinked: InnerAvailabilityArmourModSchema.array() })
+);
+export type AvailabilityArmourModType =
+  typeof AvailabilityArmourModSchema.infer;
 
-const InnerCostArmourModSchema = zod.union([
-  zod.number(),
-  zod
-    .object({
-      option: zod.nativeEnum(costEnum),
-    })
-    .strict(),
-  zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
-]);
+const InnerCostArmourModSchema = type.or(
+  "number",
+  type({
+    option: type.valueOf(costEnum),
+  }),
+  { operator: type.valueOf(mathOperatorEnum) }
+);
 
 export type RecursiveCostArmourModType = Array<
-  | zod.infer<typeof InnerCostArmourModSchema>
+  | typeof InnerCostArmourModSchema.infer
   | { subnumbers: RecursiveCostArmourModType }
 >;
-export const RecursiveCostArmourModSchema: zod.ZodType<RecursiveCostArmourModType> =
-  zod.array(
-    zod.union([
+export const { RecursiveCostArmourModSchema } = type.module({
+  RecursiveCostArmourModSchema: [
+    [
       InnerCostArmourModSchema,
-      zod
-        .object({
-          subnumbers: zod.lazy(() => RecursiveCostArmourModSchema),
-        })
-        .strict(),
-    ])
-  );
-export const CostArmourModSchema = zod.union([
+      "|",
+      {
+        subnumbers: "RecursiveCostArmourModSchema",
+      },
+    ],
+    "[]",
+  ],
+});
+export const CostArmourModSchema = type.or(
   RecursiveCostArmourModSchema,
-  zod
-    .object({ ratingLinked: zod.array(RecursiveCostArmourModSchema) })
-    .strict(),
-]);
-export type CostArmourModType = zod.infer<typeof CostArmourModSchema>;
+  type({ ratingLinked: RecursiveCostArmourModSchema.array() })
+);
+export type CostArmourModType = typeof CostArmourModSchema.infer;
 
-const InnerCapacityArmourModSchema = zod.union([
-  zod.number(),
-  zod
-    .object({
-      option: zod.nativeEnum(capacityEnum),
-    })
-    .strict(),
-  zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
-]);
+const InnerCapacityArmourModSchema = type.or(
+  "number",
+  type({
+    option: type.valueOf(capacityEnum),
+  }),
+  { operator: type.valueOf(mathOperatorEnum) }
+);
 
 export type SingleCapacityArmourModType = Array<
-  | zod.infer<typeof InnerCapacityArmourModSchema>
+  | typeof InnerCapacityArmourModSchema.infer
   | { subnumbers: SingleCapacityArmourModType }
 >;
-export const SingleCapacityArmourModSchema: zod.ZodType<SingleCapacityArmourModType> =
-  zod.array(
-    zod.union([
+export const { SingleCapacityArmourModSchema } = type.module({
+  SingleCapacityArmourModSchema: [
+    [
       InnerCapacityArmourModSchema,
-      zod
-        .object({
-          subnumbers: zod.lazy(() => SingleCapacityArmourModSchema),
-        })
-        .strict(),
-    ])
-  );
-export const CapacityArmourModSchema = zod.union([
+      "|",
+      {
+        subnumbers: "SingleCapacityArmourModSchema",
+      },
+    ],
+    "[]",
+  ],
+});
+export const CapacityArmourModSchema = type.or(
   SingleCapacityArmourModSchema,
-  zod
-    .object({
-      ratingLinked: SingleCapacityArmourModSchema,
-    })
-    .strict(),
-]);
-export type CapacityArmourModType = zod.infer<typeof CapacityArmourModSchema>;
-
-const HostArmourRequirementSchema = zod
-  .object({
-    requiredMod: zod.optional(zod.string()),
-    hostArmour: zod.optional(zod.string()),
+  type({
+    ratingLinked: SingleCapacityArmourModSchema,
   })
-  .strict();
-export type HostArmourRequirementType = zod.infer<
-  typeof HostArmourRequirementSchema
->;
-
-export const ArmourModSchema = zod
-  .object({
-    name: zod.string(),
-    description: zod.string(),
-    category: zod.nativeEnum(armourModCategoryEnum),
-    maxRating: zod.number(),
-    damageReduction: DamageReductionArmourSchema,
-    capacityCost: CapacityArmourModSchema,
-    hostArmourRequirements: zod.optional(HostArmourRequirementSchema),
-    includedGearList: zod.optional(CustomisedGearListSchema),
-    bonus: zod.optional(BonusSchema),
-    wirelessBonus: zod.optional(BonusSchema),
-    userSelectable: zod.optional(zod.literal(false)),
-    availability: AvailabilityArmourModSchema,
-    cost: CostArmourModSchema,
-    source: zod.nativeEnum(sourceBookEnum),
-    page: zod.number(),
-  })
-  .strict();
-export type ArmourModType = zod.infer<typeof ArmourModSchema>;
-
-export const ArmourModListSchema = zod.array(ArmourModSchema);
-export type ArmourModListType = zod.infer<typeof ArmourModListSchema>;
-
-export const CustomisedArmourModSchema = zod
-  .object({
-    baseMod: zod.string(),
-    gearList: zod.optional(CustomisedGearListSchema),
-    rating: zod.optional(zod.number()),
-  })
-  .strict();
-export type CustomisedArmourModType = zod.infer<
-  typeof CustomisedArmourModSchema
->;
-
-export const CustomisedArmourModListSchema = zod.array(
-  CustomisedArmourModSchema
 );
-export type CustomisedArmourModListType = zod.infer<
-  typeof CustomisedArmourModListSchema
->;
+export type CapacityArmourModType = typeof CapacityArmourModSchema.infer;
+
+const HostArmourRequirementSchema = type({
+  "requiredMod?": "string",
+  "hostArmour?": "string",
+});
+export type HostArmourRequirementType =
+  typeof HostArmourRequirementSchema.infer;
+
+export const ArmourModSchema = type({
+  name: "string",
+  description: "string",
+  category: type.valueOf(armourModCategoryEnum),
+  maxRating: "number",
+  damageReduction: DamageReductionArmourSchema,
+  capacityCost: CapacityArmourModSchema,
+  "hostArmourRequirements?": HostArmourRequirementSchema,
+  "includedGearList?": CustomisedGearListSchema,
+  "bonus?": BonusSchema,
+  "wirelessBonus?": BonusSchema,
+  "userSelectable?": "false",
+  availability: AvailabilityArmourModSchema,
+  cost: CostArmourModSchema,
+  source: type.valueOf(sourceBookEnum),
+  page: "number",
+});
+export type ArmourModType = typeof ArmourModSchema.infer;
+
+export const ArmourModListSchema = type(ArmourModSchema.array());
+export type ArmourModListType = typeof ArmourModListSchema.infer;
+
+export const CustomisedArmourModSchema = type({
+  baseMod: "string",
+  "gearList?": CustomisedGearListSchema,
+  "rating?": "number",
+});
+export type CustomisedArmourModType = typeof CustomisedArmourModSchema.infer;
+
+export const CustomisedArmourModListSchema = type(
+  CustomisedArmourModSchema.array()
+);
+export type CustomisedArmourModListType =
+  typeof CustomisedArmourModListSchema.infer;

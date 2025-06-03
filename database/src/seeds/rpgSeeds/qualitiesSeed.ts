@@ -7,6 +7,7 @@ import {
   type QualityListType,
   QualityListSchema,
 } from "@neon-codex/common/build/schemas/abilities/qualitySchemas.js";
+import { type } from "arktype";
 
 export const getQualities = function () {
   const currentPath = import.meta.url;
@@ -20,13 +21,13 @@ export const getQualities = function () {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const rawJson = JSON.parse(jsonString);
-  const qualityListParsed = QualityListSchema.safeParse(rawJson);
-  if (qualityListParsed.success) {
-    console.log("qualities all g");
-    unlinkedQualities = qualityListParsed.data;
-  } else {
-    console.log(qualityListParsed.error.errors[0]);
+  const qualityListParsed = QualityListSchema(rawJson);
+  if (qualityListParsed instanceof type.errors) {
+    console.log(qualityListParsed.summary);
     assert(false, "qualities is undefined");
+  } else {
+    console.log("qualities all g");
+    unlinkedQualities = qualityListParsed;
   }
   const stagedQualities: Array<Qualities> = [];
   unlinkedQualities.forEach((quality) => {

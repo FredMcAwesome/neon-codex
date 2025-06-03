@@ -5,6 +5,7 @@ import { fileURLToPath } from "url";
 import { GearListSchema } from "@neon-codex/common/build/schemas/equipment/other/gearSchemas.js";
 import type { GearListType } from "@neon-codex/common/build/schemas/equipment/other/gearSchemas.js";
 import { Gears } from "../../models/rpg/equipment/other/gearModel.js";
+import { type } from "arktype";
 
 export const getGears = function () {
   const currentPath = import.meta.url;
@@ -18,13 +19,13 @@ export const getGears = function () {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const rawJson = JSON.parse(jsonString);
-  const gearListParsed = GearListSchema.safeParse(rawJson);
-  if (gearListParsed.success) {
-    console.log("Gears all g");
-    unlinkedGears = gearListParsed.data;
-  } else {
-    console.log(gearListParsed.error.errors[0]);
+  const gearListParsed = GearListSchema(rawJson);
+  if (gearListParsed instanceof type.errors) {
+    console.log(gearListParsed.summary);
     assert(false, "gears is undefined");
+  } else {
+    console.log("Gears all g");
+    unlinkedGears = gearListParsed;
   }
   const stagedGears: Array<Gears> = [];
   unlinkedGears.forEach((gear) => {

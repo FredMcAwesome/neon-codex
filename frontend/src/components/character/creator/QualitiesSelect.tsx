@@ -33,7 +33,7 @@ export const QualityListSelect = function (props: IProps) {
       props.karmaPoints + (removeKarma ? -1 : 1) * difference
     );
   }
-  if (qualities.isLoading) {
+  if (qualities.isPending) {
     return <span>Loading...</span>;
   }
 

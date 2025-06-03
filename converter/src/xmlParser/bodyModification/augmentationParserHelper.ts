@@ -275,17 +275,17 @@ mountsAugmentationSemantics.addOperation("eval", {
   },
   MountValue(mount) {
     switch (mount.sourceString) {
-      case mountLocationXmlEnum.WRIST:
+      case mountLocationXmlEnum.Wrist:
         return augmentationMountSlotEnum.Wrist;
-      case mountLocationXmlEnum.ANKLE:
+      case mountLocationXmlEnum.Ankle:
         return augmentationMountSlotEnum.Ankle;
-      case mountLocationXmlEnum.ELBOW:
+      case mountLocationXmlEnum.Elbow:
         return augmentationMountSlotEnum.Elbow;
-      case mountLocationXmlEnum.KNEE:
+      case mountLocationXmlEnum.Knee:
         return augmentationMountSlotEnum.Knee;
-      case mountLocationXmlEnum.SHOULDER:
+      case mountLocationXmlEnum.Shoulder:
         return augmentationMountSlotEnum.Shoulder;
-      case mountLocationXmlEnum.HIP:
+      case mountLocationXmlEnum.Hip:
         return augmentationMountSlotEnum.Hip;
       default:
         assert(false, mount.sourceString);

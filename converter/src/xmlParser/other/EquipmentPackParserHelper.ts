@@ -22,13 +22,14 @@ import {
 import type { AugmentationSubsystemListType } from "@neon-codex/common/build/schemas/equipment/bodyModification/augmentationSchemas.js";
 import type { CustomisedWeaponType } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
 import { getWeaponMounts } from "../combat/WeaponAccessoryParserHelper.js";
-import type { CustomisedVehicleType } from "@neon-codex/common/src/schemas/equipment/rigger/vehicleSchemas.js";
+import type { CustomisedVehicleType } from "@neon-codex/common/build/schemas/equipment/rigger/vehicleSchemas.js";
+import type { CustomisedArmourType } from "@neon-codex/common/build/schemas/equipment/combat/armourSchemas.js";
 
 export const convertArmorEquipmentPack = function (
   pack: ArmorEquipmentPackXmlType
-) {
+): CustomisedArmourType {
   let modList: GenericModListType | undefined;
-  if (pack.mods !== undefined) {
+  if ("mods" in pack && pack.mods !== undefined) {
     const tempModList = Array.isArray(pack.mods.mod)
       ? pack.mods.mod
       : [pack.mods.mod];
@@ -36,7 +37,7 @@ export const convertArmorEquipmentPack = function (
       // coerce into the expected format
       {
         name: tempModList.map((mod) => {
-          if (mod.rating === undefined) {
+          if (!("rating" in mod)) {
             return mod.name;
           }
           return {
@@ -48,18 +49,17 @@ export const convertArmorEquipmentPack = function (
     );
   }
   let gearList;
-  if (pack.gears !== undefined) {
+  if ("gears" in pack && pack.gears !== undefined) {
     gearList = convertIncludedXmlGears({ usegear: pack.gears.gear });
   }
   return {
     baseArmour: pack.name,
-    gearList: gearList,
-    modList:
-      modList !== undefined
-        ? modList.map((mod) => {
-            return { ...mod, gearList: [] };
-          })
-        : undefined,
+    ...(gearList !== undefined && { gearList: gearList }),
+    ...(modList !== undefined && {
+      modList: modList.map((mod) => {
+        return { ...mod, gearList: [] };
+      }),
+    }),
   };
 };
 
@@ -89,7 +89,7 @@ export const convertAugmentationEquipmentPack = function (
   return {
     baseAugmentation: augmentation.name,
     grade: augmentation.grade,
-    rating: augmentation.rating,
+    ...("rating" in augmentation && { rating: augmentation.rating }),
     ...(gearList !== undefined && { gearList: gearList }),
     ...(subsystemList !== undefined && { subsystemList: subsystemList }),
   };
@@ -114,7 +114,7 @@ export const convertVehicleEquipmentPack = function (
   }
   return {
     baseVehicle: vehicle.name,
-    gearList: gearList,
+    ...(gearList !== undefined && { gearList: gearList }),
     // simplist way to store the weapon list is to create dummy weapon mounts
     // this is then fixed in the seeder
     ...(weaponList !== undefined && {
@@ -126,10 +126,11 @@ export const convertVehicleEquipmentPack = function (
           visibility: weaponMountVisibilityEnum.External_SR5,
           weaponMounted: {
             baseWeapon: weapon.baseWeapon,
-            accessoryList: weapon.accessoryList,
-            rating: weapon.rating,
+            ...("accessoryList" in weapon && {
+              accessoryList: weapon.accessoryList,
+            }),
+            ...("rating" in weapon && { rating: weapon.rating }),
           },
-          weaponExchangeable: true,
         };
       }),
     }),

@@ -65,8 +65,8 @@ export class WeaponAccessories {
   @Property({ nullable: true })
   recoilCompensationType?: number;
 
-  @Property()
-  deploymentRequired: boolean;
+  @Property({ nullable: true })
+  deploymentRequired?: true;
 
   @Property({ nullable: true })
   accessoryCostMultiplier?: number;
@@ -83,8 +83,8 @@ export class WeaponAccessories {
   )
   includedGearList = new Collection<WeaponAccessoryIncludedGears>(this);
 
-  @Property()
-  specialModification!: boolean;
+  @Property({ nullable: true })
+  specialModification?: true;
 
   @Property({ nullable: true })
   extraAmmoSlots?: number;
@@ -153,7 +153,8 @@ export class WeaponAccessories {
       this.recoilCompensationIncrease = dto.recoilCompensationIncrease;
     if (dto.recoilCompensationType !== undefined)
       this.recoilCompensationType = dto.recoilCompensationType;
-    this.deploymentRequired = dto.deploymentRequired;
+    if (dto.deploymentRequired !== undefined)
+      this.deploymentRequired = dto.deploymentRequired;
     this.availability = dto.availability;
     this.cost = dto.cost;
     if (dto.accessoryCostMultiplier !== undefined)
@@ -161,7 +162,8 @@ export class WeaponAccessories {
     // if (dto.allowedGearList !== undefined) this.allowedGearList = dto.allowedGearList;
     if (dto.allowedGearCategories !== undefined)
       this.allowedGearCategories = dto.allowedGearCategories;
-    this.specialModification = dto.specialModification;
+    if (dto.specialModification !== undefined)
+      this.specialModification = dto.specialModification;
     if (dto.extraAmmoSlots !== undefined)
       this.extraAmmoSlots = dto.extraAmmoSlots;
     if (dto.ammoCapacityCalculation !== undefined)

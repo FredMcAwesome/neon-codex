@@ -188,8 +188,8 @@ export const convertIncludedCritterPowers = function (
     }
     return {
       name: power.xmltext,
-      selectText: power._select,
-      rating: rating,
+      ...(power._select !== undefined && { selectText: power._select }),
+      ...(rating !== undefined && { rating: rating }),
     };
   });
 };
@@ -211,7 +211,7 @@ export const convertIncludedBiowareList = function (
     }
     return {
       name: bioware.xmltext,
-      rating: rating,
+      ...(rating !== undefined && { rating: rating }),
     };
   });
 };

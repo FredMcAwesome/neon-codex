@@ -28,6 +28,7 @@ import { ParagonListXmlSchema } from "./talent/ParagonParser.js";
 import { MentorSpiritListXmlSchema } from "./talent/MentorSpiritParser.js";
 import { MartialArtListXmlSchema } from "./character/MartialArtParser.js";
 import { MartialArtTechniqueListXmlSchema } from "./character/MartialArtTechniqueParser.js";
+import { type } from "arktype";
 
 export const CheckGUIDs = function () {
   const currentPath = import.meta.url;
@@ -45,13 +46,13 @@ export const CheckGUIDs = function () {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let jObj: any = parser.parse(xml_string);
 
-  const biowareListParsed = BiowareListXmlSchema.safeParse(
+  const biowareListParsed = BiowareListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.biowares.bioware
   );
 
-  if (!biowareListParsed.success) {
-    console.log(biowareListParsed.error.errors[0]);
+  if (biowareListParsed instanceof type.errors) {
+    console.log(biowareListParsed.summary);
     assert(false);
   }
 
@@ -63,13 +64,13 @@ export const CheckGUIDs = function () {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   jObj = parser.parse(xml_string);
 
-  const cyberwareListParsed = CyberwareListXmlSchema.safeParse(
+  const cyberwareListParsed = CyberwareListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.cyberwares.cyberware
   );
 
-  if (!cyberwareListParsed.success) {
-    console.log(cyberwareListParsed.error.errors[0]);
+  if (cyberwareListParsed instanceof type.errors) {
+    console.log(cyberwareListParsed.summary);
     assert(false);
   }
 
@@ -79,13 +80,13 @@ export const CheckGUIDs = function () {
     "utf8"
   );
   jObj = parser.parse(xml_string);
-  const qualityListParsed = QualityListXmlSchema.safeParse(
+  const qualityListParsed = QualityListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.qualities.quality
   );
 
-  if (!qualityListParsed.success) {
-    console.log(qualityListParsed.error.errors[0]);
+  if (qualityListParsed instanceof type.errors) {
+    console.log(qualityListParsed.summary);
     assert(false);
   }
 
@@ -95,13 +96,13 @@ export const CheckGUIDs = function () {
     "utf8"
   );
   jObj = parser.parse(xml_string);
-  const metatypeListParsed = MetatypeListXmlSchema.safeParse(
+  const metatypeListParsed = MetatypeListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.metatypes.metatype
   );
 
-  if (!metatypeListParsed.success) {
-    console.log(metatypeListParsed.error.errors[0]);
+  if (metatypeListParsed instanceof type.errors) {
+    console.log(metatypeListParsed.summary);
     assert(false);
   }
 
@@ -111,13 +112,13 @@ export const CheckGUIDs = function () {
     "utf8"
   );
   jObj = parser.parse(xml_string);
-  const skillListParsed = SkillListXmlSchema.safeParse(
+  const skillListParsed = SkillListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.skills.skill
   );
 
-  if (!skillListParsed.success) {
-    console.log(skillListParsed.error.errors[0]);
+  if (skillListParsed instanceof type.errors) {
+    console.log(skillListParsed.summary);
     assert(false);
   }
 
@@ -129,13 +130,13 @@ export const CheckGUIDs = function () {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   jObj = parser.parse(xml_string);
 
-  const armourModListParsed = ArmourModListXmlSchema.safeParse(
+  const armourModListParsed = ArmourModListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.mods.mod
   );
 
-  if (!armourModListParsed.success) {
-    console.log(armourModListParsed.error.errors[0]);
+  if (armourModListParsed instanceof type.errors) {
+    console.log(armourModListParsed.summary);
     assert(false);
   }
 
@@ -147,13 +148,13 @@ export const CheckGUIDs = function () {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   jObj = parser.parse(xml_string);
 
-  const armourListParsed = ArmourListXmlSchema.safeParse(
+  const armourListParsed = ArmourListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.armors.armor
   );
 
-  if (!armourListParsed.success) {
-    console.log(armourListParsed.error.errors[0]);
+  if (armourListParsed instanceof type.errors) {
+    console.log(armourListParsed.summary);
     assert(false);
   }
 
@@ -165,13 +166,13 @@ export const CheckGUIDs = function () {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   jObj = parser.parse(xml_string);
 
-  const weaponAccessoryListParsed = WeaponAccessoryListXmlSchema.safeParse(
+  const weaponAccessoryListParsed = WeaponAccessoryListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.accessories.accessory
   );
 
-  if (!weaponAccessoryListParsed.success) {
-    console.log(weaponAccessoryListParsed.error.errors[0]);
+  if (weaponAccessoryListParsed instanceof type.errors) {
+    console.log(weaponAccessoryListParsed.summary);
     assert(false);
   }
 
@@ -183,13 +184,13 @@ export const CheckGUIDs = function () {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   jObj = parser.parse(xml_string);
 
-  const weaponListParsed = WeaponListXmlSchema.safeParse(
+  const weaponListParsed = WeaponListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.weapons.weapon
   );
 
-  if (!weaponListParsed.success) {
-    console.log(weaponListParsed.error.errors[0]);
+  if (weaponListParsed instanceof type.errors) {
+    console.log(weaponListParsed.summary);
     assert(false);
   }
 
@@ -201,13 +202,13 @@ export const CheckGUIDs = function () {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   jObj = parser.parse(xml_string);
 
-  const spellListParsed = SpellListXmlSchema.safeParse(
+  const spellListParsed = SpellListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.spells.spell
   );
 
-  if (!spellListParsed.success) {
-    console.log(spellListParsed.error.errors[0]);
+  if (spellListParsed instanceof type.errors) {
+    console.log(spellListParsed.summary);
     assert(false);
   }
 
@@ -219,13 +220,13 @@ export const CheckGUIDs = function () {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   jObj = parser.parse(xml_string);
 
-  const programListParsed = ProgramListXmlSchema.safeParse(
+  const programListParsed = ProgramListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.programs.program
   );
 
-  if (!programListParsed.success) {
-    console.log(programListParsed.error.errors[0]);
+  if (programListParsed instanceof type.errors) {
+    console.log(programListParsed.summary);
     assert(false);
   }
 
@@ -237,13 +238,13 @@ export const CheckGUIDs = function () {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   jObj = parser.parse(xml_string);
 
-  const adeptPowerListParsed = AdeptPowerListXmlSchema.safeParse(
+  const adeptPowerListParsed = AdeptPowerListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.powers.power
   );
 
-  if (!adeptPowerListParsed.success) {
-    console.log(adeptPowerListParsed.error.errors[0]);
+  if (adeptPowerListParsed instanceof type.errors) {
+    console.log(adeptPowerListParsed.summary);
     assert(false);
   }
   // --- Traditions --- //
@@ -254,13 +255,13 @@ export const CheckGUIDs = function () {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   jObj = parser.parse(xml_string);
 
-  const traditionListParsed = TraditionListXmlSchema.safeParse(
+  const traditionListParsed = TraditionListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.traditions.tradition
   );
 
-  if (!traditionListParsed.success) {
-    console.log(traditionListParsed.error.errors[0]);
+  if (traditionListParsed instanceof type.errors) {
+    console.log(traditionListParsed.summary);
     assert(false);
   }
 
@@ -272,13 +273,13 @@ export const CheckGUIDs = function () {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   jObj = parser.parse(xml_string);
 
-  const critterListParsed = CritterListXmlSchema.safeParse(
+  const critterListParsed = CritterListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.metatypes.metatype
   );
 
-  if (!critterListParsed.success) {
-    console.log(critterListParsed.error.errors[0]);
+  if (critterListParsed instanceof type.errors) {
+    console.log(critterListParsed.summary);
     assert(false);
   }
 
@@ -292,13 +293,13 @@ export const CheckGUIDs = function () {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   jObj = parser.parse(xml_string);
 
-  const critterPowerListParsed = CritterPowerListXmlSchema.safeParse(
+  const critterPowerListParsed = CritterPowerListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.powers.power
   );
 
-  if (!critterPowerListParsed.success) {
-    console.log(critterPowerListParsed.error.errors[0]);
+  if (critterPowerListParsed instanceof type.errors) {
+    console.log(critterPowerListParsed.summary);
     assert(false);
   }
 
@@ -310,13 +311,13 @@ export const CheckGUIDs = function () {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   jObj = parser.parse(xml_string);
 
-  const complexFormListParsed = ComplexFormListXmlSchema.safeParse(
+  const complexFormListParsed = ComplexFormListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.complexforms.complexform
   );
 
-  if (!complexFormListParsed.success) {
-    console.log(complexFormListParsed.error.errors[0]);
+  if (complexFormListParsed instanceof type.errors) {
+    console.log(complexFormListParsed.summary);
     assert(false);
   }
 
@@ -328,13 +329,13 @@ export const CheckGUIDs = function () {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   jObj = parser.parse(xml_string);
 
-  const paragonListParsed = ParagonListXmlSchema.safeParse(
+  const paragonListParsed = ParagonListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.mentors.mentor
   );
 
-  if (!paragonListParsed.success) {
-    console.log(paragonListParsed.error.errors[0]);
+  if (paragonListParsed instanceof type.errors) {
+    console.log(paragonListParsed.summary);
     assert(false);
   }
 
@@ -346,13 +347,13 @@ export const CheckGUIDs = function () {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   jObj = parser.parse(xml_string);
 
-  const mentorSpiritListParsed = MentorSpiritListXmlSchema.safeParse(
+  const mentorSpiritListParsed = MentorSpiritListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.mentors.mentor
   );
 
-  if (!mentorSpiritListParsed.success) {
-    console.log(mentorSpiritListParsed.error.errors[0]);
+  if (mentorSpiritListParsed instanceof type.errors) {
+    console.log(mentorSpiritListParsed.summary);
     assert(false);
   }
   // --- Drug Component --- //
@@ -365,13 +366,13 @@ export const CheckGUIDs = function () {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   jObj = parser.parse(xml_string);
 
-  const drugComponentListParsed = DrugComponentListXmlSchema.safeParse(
+  const drugComponentListParsed = DrugComponentListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.drugcomponents.drugcomponent
   );
 
-  if (!drugComponentListParsed.success) {
-    console.log(drugComponentListParsed.error.errors[0]);
+  if (drugComponentListParsed instanceof type.errors) {
+    console.log(drugComponentListParsed.summary);
     assert(false);
   }
 
@@ -385,13 +386,13 @@ export const CheckGUIDs = function () {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   jObj = parser.parse(xml_string);
 
-  const drugListParsed = DrugListXmlSchema.safeParse(
+  const drugListParsed = DrugListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.drugs.drug
   );
 
-  if (!drugListParsed.success) {
-    console.log(drugListParsed.error.errors[0]);
+  if (drugListParsed instanceof type.errors) {
+    console.log(drugListParsed.summary);
     assert(false);
   }
 
@@ -403,13 +404,13 @@ export const CheckGUIDs = function () {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   jObj = parser.parse(xml_string);
 
-  const gearListParsed = GearListXmlSchema.safeParse(
+  const gearListParsed = GearListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.gears.gear
   );
 
-  if (!gearListParsed.success) {
-    console.log(gearListParsed.error.errors[0]);
+  if (gearListParsed instanceof type.errors) {
+    console.log(gearListParsed.summary);
     assert(false);
   }
 
@@ -421,20 +422,20 @@ export const CheckGUIDs = function () {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   jObj = parser.parse(xml_string);
 
-  const vehicleModListParsed = VehicleModListXmlSchema.safeParse(
+  const vehicleModListParsed = VehicleModListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.mods.mod
   );
-  const vehicleWeaponMountModListParsed = VehicleModListXmlSchema.safeParse(
+  const vehicleWeaponMountModListParsed = VehicleModListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.weaponmountmods.mod
   );
 
-  if (!vehicleModListParsed.success) {
-    console.log(vehicleModListParsed.error.errors[0]);
+  if (vehicleModListParsed instanceof type.errors) {
+    console.log(vehicleModListParsed.summary);
     assert(false);
-  } else if (!vehicleWeaponMountModListParsed.success) {
-    console.log(vehicleWeaponMountModListParsed.error.errors[0]);
+  } else if (vehicleWeaponMountModListParsed instanceof type.errors) {
+    console.log(vehicleWeaponMountModListParsed.summary);
     assert(false);
   }
 
@@ -446,13 +447,13 @@ export const CheckGUIDs = function () {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   jObj = parser.parse(xml_string);
 
-  const vehicleListParsed = VehicleListXmlSchema.safeParse(
+  const vehicleListParsed = VehicleListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.vehicles.vehicle
   );
 
-  if (!vehicleListParsed.success) {
-    console.log(vehicleListParsed.error.errors[0]);
+  if (vehicleListParsed instanceof type.errors) {
+    console.log(vehicleListParsed.summary);
     assert(false);
   }
 
@@ -464,13 +465,13 @@ export const CheckGUIDs = function () {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   jObj = parser.parse(xml_string);
 
-  const martialArtListParsed = MartialArtListXmlSchema.safeParse(
+  const martialArtListParsed = MartialArtListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.martialarts.martialart
   );
 
-  if (!martialArtListParsed.success) {
-    console.log(martialArtListParsed.error.errors[0]);
+  if (martialArtListParsed instanceof type.errors) {
+    console.log(martialArtListParsed.summary);
     assert(false);
   }
 
@@ -482,143 +483,142 @@ export const CheckGUIDs = function () {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   jObj = parser.parse(xml_string);
 
-  const martialArtTechniqueListParsed =
-    MartialArtTechniqueListXmlSchema.safeParse(
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      jObj.chummer.techniques.technique
-    );
+  const martialArtTechniqueListParsed = MartialArtTechniqueListXmlSchema(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    jObj.chummer.techniques.technique
+  );
 
-  if (!martialArtTechniqueListParsed.success) {
-    console.log(martialArtTechniqueListParsed.error.errors[0]);
+  if (martialArtTechniqueListParsed instanceof type.errors) {
+    console.log(martialArtTechniqueListParsed.summary);
     assert(false);
   }
 
   // ------ GUID List -------
-  let idList = biowareListParsed.data.map((bioware) => {
+  let idList = biowareListParsed.map((bioware) => {
     return bioware.id;
   });
   idList = idList.concat(
-    cyberwareListParsed.data.map((cyberware) => {
+    cyberwareListParsed.map((cyberware) => {
       return cyberware.id;
     })
   );
   idList = idList.concat(
-    qualityListParsed.data.map((quality) => {
+    qualityListParsed.map((quality) => {
       return quality.id;
     })
   );
   idList = idList.concat(
-    metatypeListParsed.data.map((metatype) => {
+    metatypeListParsed.map((metatype) => {
       return metatype.id;
     })
   );
   idList = idList.concat(
-    critterListParsed.data.map((critter) => {
+    critterListParsed.map((critter) => {
       return critter.id;
     })
   );
   idList = idList.concat(
-    critterPowerListParsed.data.map((critterPower) => {
+    critterPowerListParsed.map((critterPower) => {
       return critterPower.id;
     })
   );
   idList = idList.concat(
-    complexFormListParsed.data.map((complexForm) => {
+    complexFormListParsed.map((complexForm) => {
       return complexForm.id;
     })
   );
   idList = idList.concat(
-    paragonListParsed.data.map((paragon) => {
+    paragonListParsed.map((paragon) => {
       return paragon.id;
     })
   );
   idList = idList.concat(
-    mentorSpiritListParsed.data.map((mentorSpirit) => {
+    mentorSpiritListParsed.map((mentorSpirit) => {
       return mentorSpirit.id;
     })
   );
   idList = idList.concat(
-    skillListParsed.data.map((skill) => {
+    skillListParsed.map((skill) => {
       return skill.id;
     })
   );
   idList = idList.concat(
-    armourModListParsed.data.map((armourMod) => {
+    armourModListParsed.map((armourMod) => {
       return armourMod.id;
     })
   );
   idList = idList.concat(
-    armourListParsed.data.map((armour) => {
+    armourListParsed.map((armour) => {
       return armour.id;
     })
   );
   idList = idList.concat(
-    weaponAccessoryListParsed.data.map((weaponAccessory) => {
+    weaponAccessoryListParsed.map((weaponAccessory) => {
       return weaponAccessory.id;
     })
   );
   idList = idList.concat(
-    weaponListParsed.data.map((weapon) => {
+    weaponListParsed.map((weapon) => {
       return weapon.id;
     })
   );
   idList = idList.concat(
-    spellListParsed.data.map((spell) => {
+    spellListParsed.map((spell) => {
       return spell.id;
     })
   );
   idList = idList.concat(
-    programListParsed.data.map((program) => {
+    programListParsed.map((program) => {
       return program.id;
     })
   );
   idList = idList.concat(
-    adeptPowerListParsed.data.map((power) => {
+    adeptPowerListParsed.map((power) => {
       return power.id;
     })
   );
   idList = idList.concat(
-    traditionListParsed.data.map((tradition) => {
+    traditionListParsed.map((tradition) => {
       return tradition.id;
     })
   );
   idList = idList.concat(
-    drugComponentListParsed.data.map((drugComponent) => {
+    drugComponentListParsed.map((drugComponent) => {
       return drugComponent.id;
     })
   );
   idList = idList.concat(
-    drugListParsed.data.map((drug) => {
+    drugListParsed.map((drug) => {
       return drug.id;
     })
   );
   idList = idList.concat(
-    gearListParsed.data.map((gear) => {
+    gearListParsed.map((gear) => {
       return gear.id;
     })
   );
   idList = idList.concat(
-    vehicleModListParsed.data.map((vehicleMod) => {
+    vehicleModListParsed.map((vehicleMod) => {
       return vehicleMod.id;
     })
   );
   idList = idList.concat(
-    vehicleWeaponMountModListParsed.data.map((weaponMount) => {
+    vehicleWeaponMountModListParsed.map((weaponMount) => {
       return weaponMount.id;
     })
   );
   idList = idList.concat(
-    vehicleListParsed.data.map((vehicle) => {
+    vehicleListParsed.map((vehicle) => {
       return vehicle.id;
     })
   );
   idList = idList.concat(
-    martialArtListParsed.data.map((martialArt) => {
+    martialArtListParsed.map((martialArt) => {
       return martialArt.id;
     })
   );
   idList = idList.concat(
-    martialArtTechniqueListParsed.data.map((martialArtTechnique) => {
+    martialArtTechniqueListParsed.map((martialArtTechnique) => {
       return martialArtTechnique.id;
     })
   );

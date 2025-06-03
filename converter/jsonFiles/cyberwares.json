@@ -5,6 +5,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
+    "forceGrade": "None",
     "essenceCost": [
       {
         "subnumbers": [
@@ -29,11 +33,7 @@
     },
     "cost": [0],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 0,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0],
-    "forceGrade": "None"
+    "page": 0
   },
   {
     "name": "Essence Antihole",
@@ -41,6 +41,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
+    "forceGrade": "None",
     "essenceCost": [
       {
         "subnumbers": [
@@ -65,11 +69,7 @@
     },
     "cost": [0],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 0,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0],
-    "forceGrade": "None"
+    "page": 0
   },
   {
     "name": "Commlink",
@@ -77,6 +77,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacityCost": [2],
     "unavailableGrades": ["Greyware"],
     "essenceCost": [0.2],
     "rating": {
@@ -90,14 +93,27 @@
     },
     "cost": [2000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 451,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacityCost": [2]
+    "page": 451
   },
   {
     "name": "Control Rig",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0],
+    "includedGearList": [
+      {
+        "baseGear": "Sim Module, Hot",
+        "category": "Commlink Accessories"
+      }
+    ],
+    "includedSubsystemList": {
+      "cyberwareList": [
+        {
+          "name": "Datajack"
+        }
+      ]
+    },
     "essenceCost": [
       {
         "subnumbers": [
@@ -115,12 +131,6 @@
       "minimum": [1],
       "maximum": [3]
     },
-    "includedGearList": [
-      {
-        "baseGear": "Sim Module, Hot",
-        "category": "Commlink Accessories"
-      }
-    ],
     "availability": {
       "rating": [
         {
@@ -141,17 +151,7 @@
       "ratingLinked": [[43000], [97000], [208000]]
     },
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 452,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacity": [0],
-    "includedSubsystemList": {
-      "cyberwareList": [
-        {
-          "name": "Datajack"
-        }
-      ]
-    }
+    "page": 452
   },
   {
     "name": "Cranial Bomb - Kink Bomb",
@@ -159,6 +159,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacityCost": [1],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -170,10 +173,7 @@
     },
     "cost": [10000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 452,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacityCost": [1]
+    "page": 452
   },
   {
     "name": "Cranial Bomb - Microbomb",
@@ -181,6 +181,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacityCost": [2],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -192,10 +195,7 @@
     },
     "cost": [25000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 452,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacityCost": [2]
+    "page": 452
   },
   {
     "name": "Cranial Bomb - Area Bomb",
@@ -203,6 +203,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacityCost": [3],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -214,10 +217,7 @@
     },
     "cost": [40000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 452,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacityCost": [3]
+    "page": 452
   },
   {
     "name": "Cyberdeck",
@@ -225,6 +225,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacityCost": [4],
     "unavailableGrades": ["Greyware"],
     "essenceCost": [0.4],
     "rating": {
@@ -238,10 +241,7 @@
     },
     "cost": [5000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 452,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacityCost": [4]
+    "page": 452
   },
   {
     "name": "Datajack",
@@ -249,34 +249,40 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0],
+    "includedGearList": [
+      {
+        "baseGear": "Universal Connector Cord",
+        "rating": 1,
+        "category": "Tools"
+      }
+    ],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
       "maximum": [1]
     },
-    "includedGearList": [
-      {
-        "baseGear": "Universal Connector Cord",
-        "category": "Tools",
-        "rating": 1
-      }
-    ],
     "availability": {
       "rating": [2],
       "restriction": ""
     },
     "cost": [1000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 452,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacity": [0]
+    "page": 452
   },
   {
     "name": "Data Lock",
     "description": "",
     "augmentationLimit": {
       "option": "N/A"
+    },
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacityCost": [1],
+    "deviceRating": {
+      "option": "Rating"
     },
     "essenceCost": [0.1],
     "rating": {
@@ -313,17 +319,14 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 452,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacityCost": [1],
-    "deviceRating": {
-      "option": "Rating"
-    }
+    "page": 452
   },
   {
     "name": "Olfactory Booster",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -359,14 +362,14 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 452,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacity": [0]
+    "page": 452
   },
   {
     "name": "Simrig",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -378,14 +381,14 @@
     },
     "cost": [4000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 452,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacity": [0]
+    "page": 452
   },
   {
     "name": "Skilljack",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0],
     "essenceCost": [
       {
         "subnumbers": [
@@ -440,14 +443,14 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 452,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacity": [0]
+    "page": 452
   },
   {
     "name": "Taste Booster",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -483,10 +486,7 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 452,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacity": [0]
+    "page": 452
   },
   {
     "name": "Tooth Compartment, Storage",
@@ -494,6 +494,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -505,10 +508,7 @@
     },
     "cost": [800],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 452,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacity": [0]
+    "page": 452
   },
   {
     "name": "Tooth Compartment, Breakable",
@@ -516,6 +516,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -527,14 +530,14 @@
     },
     "cost": [800],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 452,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacity": [0]
+    "page": 452
   },
   {
     "name": "Ultrasound Sensor",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacityCost": [2],
     "essenceCost": [0.25],
     "rating": {
       "minimum": [1],
@@ -558,14 +561,14 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 452,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacityCost": [2]
+    "page": 452
   },
   {
     "name": "Voice Modulator",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -601,14 +604,37 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 452,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacity": [0]
+    "page": 452
   },
   {
     "name": "Cybereyes Basic System",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacity": [
+      {
+        "subnumbers": [
+          {
+            "subnumbers": [
+              {
+                "option": "Rating"
+              },
+              {
+                "operator": "*"
+              },
+              4
+            ]
+          }
+        ]
+      }
+    ],
+    "includedSubsystemList": {
+      "cyberwareList": [
+        {
+          "name": "Image Link"
+        }
+      ]
+    },
     "essenceCost": [
       {
         "subnumbers": [
@@ -713,33 +739,7 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 453,
-    "type": "Cyberware",
-    "subtype": "Eyeware",
-    "capacity": [
-      {
-        "subnumbers": [
-          {
-            "subnumbers": [
-              {
-                "option": "Rating"
-              },
-              {
-                "operator": "*"
-              },
-              4
-            ]
-          }
-        ]
-      }
-    ],
-    "includedSubsystemList": {
-      "cyberwareList": [
-        {
-          "name": "Image Link"
-        }
-      ]
-    }
+    "page": 453
   },
   {
     "name": "Flare Compensation",
@@ -747,6 +747,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacityCost": [1],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -758,10 +761,7 @@
     },
     "cost": [1000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 453,
-    "type": "Cyberware",
-    "subtype": "Eyeware",
-    "capacityCost": [1]
+    "page": 453
   },
   {
     "name": "Image Link",
@@ -769,6 +769,13 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacityCost": [
+      {
+        "option": "Included"
+      }
+    ],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -780,14 +787,7 @@
     },
     "cost": [1000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 453,
-    "type": "Cyberware",
-    "subtype": "Eyeware",
-    "capacityCost": [
-      {
-        "option": "Included"
-      }
-    ]
+    "page": 453
   },
   {
     "name": "Low-Light Vision",
@@ -795,6 +795,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacityCost": [2],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -806,10 +809,7 @@
     },
     "cost": [1500],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 453,
-    "type": "Cyberware",
-    "subtype": "Eyeware",
-    "capacityCost": [2]
+    "page": 453
   },
   {
     "name": "Ocular Drone",
@@ -817,6 +817,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacityCost": [6],
+    "addVehicle": "Ocular Drone",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -828,11 +832,7 @@
     },
     "cost": [6000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 453,
-    "type": "Cyberware",
-    "subtype": "Eyeware",
-    "capacityCost": [6],
-    "addVehicle": "Ocular Drone"
+    "page": 453
   },
   {
     "name": "Retinal Duplication",
@@ -840,6 +840,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacityCost": [1],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -863,10 +866,7 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 453,
-    "type": "Cyberware",
-    "subtype": "Eyeware",
-    "capacityCost": [1]
+    "page": 453
   },
   {
     "name": "Smartlink",
@@ -874,6 +874,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacityCost": [3],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -888,10 +891,7 @@
     },
     "cost": [4000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 453,
-    "type": "Cyberware",
-    "subtype": "Eyeware",
-    "capacityCost": [3]
+    "page": 453
   },
   {
     "name": "Thermographic Vision",
@@ -899,6 +899,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacityCost": [2],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -910,10 +913,7 @@
     },
     "cost": [1500],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 453,
-    "type": "Cyberware",
-    "subtype": "Eyeware",
-    "capacityCost": [2]
+    "page": 453
   },
   {
     "name": "Vision Enhancement",
@@ -921,6 +921,13 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacityCost": [
+      {
+        "option": "Rating"
+      }
+    ],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -956,14 +963,7 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 453,
-    "type": "Cyberware",
-    "subtype": "Eyeware",
-    "capacityCost": [
-      {
-        "option": "Rating"
-      }
-    ]
+    "page": 453
   },
   {
     "name": "Vision Magnification",
@@ -971,6 +971,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacityCost": [2],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -982,14 +985,33 @@
     },
     "cost": [2000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 453,
-    "type": "Cyberware",
-    "subtype": "Eyeware",
-    "capacityCost": [2]
+    "page": 453
   },
   {
     "name": "Cyberears",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Earware",
+    "capacity": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          4
+        ]
+      }
+    ],
+    "includedSubsystemList": {
+      "cyberwareList": [
+        {
+          "name": "Sound Link"
+        }
+      ]
+    },
     "essenceCost": [
       {
         "subnumbers": [
@@ -1095,29 +1117,7 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 453,
-    "type": "Cyberware",
-    "subtype": "Earware",
-    "capacity": [
-      {
-        "subnumbers": [
-          {
-            "option": "Rating"
-          },
-          {
-            "operator": "*"
-          },
-          4
-        ]
-      }
-    ],
-    "includedSubsystemList": {
-      "cyberwareList": [
-        {
-          "name": "Sound Link"
-        }
-      ]
-    }
+    "page": 453
   },
   {
     "name": "Audio Enhancement",
@@ -1125,6 +1125,13 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Earware",
+    "capacityCost": [
+      {
+        "option": "Rating"
+      }
+    ],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -1160,18 +1167,14 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 453,
-    "type": "Cyberware",
-    "subtype": "Earware",
-    "capacityCost": [
-      {
-        "option": "Rating"
-      }
-    ]
+    "page": 453
   },
   {
     "name": "Balance Augmenter",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Earware",
+    "capacityCost": [4],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -1183,14 +1186,14 @@
     },
     "cost": [8000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 453,
-    "type": "Cyberware",
-    "subtype": "Earware",
-    "capacityCost": [4]
+    "page": 453
   },
   {
     "name": "Damper",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Earware",
+    "capacityCost": [1],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -1205,10 +1208,7 @@
     },
     "cost": [2250],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 454,
-    "type": "Cyberware",
-    "subtype": "Earware",
-    "capacityCost": [1]
+    "page": 454
   },
   {
     "name": "Select Sound Filter",
@@ -1216,6 +1216,13 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Earware",
+    "capacityCost": [
+      {
+        "option": "Rating"
+      }
+    ],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -1251,14 +1258,7 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 454,
-    "type": "Cyberware",
-    "subtype": "Earware",
-    "capacityCost": [
-      {
-        "option": "Rating"
-      }
-    ]
+    "page": 454
   },
   {
     "name": "Sound Link",
@@ -1266,6 +1266,13 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Earware",
+    "capacityCost": [
+      {
+        "option": "Included"
+      }
+    ],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -1277,14 +1284,7 @@
     },
     "cost": [1000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 454,
-    "type": "Cyberware",
-    "subtype": "Earware",
-    "capacityCost": [
-      {
-        "option": "Included"
-      }
-    ]
+    "page": 454
   },
   {
     "name": "Spatial Recognizer",
@@ -1292,6 +1292,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Earware",
+    "capacityCost": [2],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -1303,14 +1306,14 @@
     },
     "cost": [4000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 454,
-    "type": "Cyberware",
-    "subtype": "Earware",
-    "capacityCost": [2]
+    "page": 454
   },
   {
     "name": "Bone Lacing (Aluminum)",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": [1],
     "rating": {
       "minimum": [1],
@@ -1330,14 +1333,14 @@
     },
     "cost": [18000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 454,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 454
   },
   {
     "name": "Bone Lacing (Plastic)",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": [0.5],
     "rating": {
       "minimum": [1],
@@ -1357,14 +1360,14 @@
     },
     "cost": [8000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 454,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 454
   },
   {
     "name": "Bone Lacing (Titanium)",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": [1.5],
     "rating": {
       "minimum": [1],
@@ -1384,14 +1387,14 @@
     },
     "cost": [30000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 454,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 454
   },
   {
     "name": "Dermal Plating",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": [
       {
         "subnumbers": [
@@ -1411,10 +1414,10 @@
     },
     "bonus": {
       "armour": {
-        "nonStacking": true,
         "bonus": {
           "option": "Rating"
-        }
+        },
+        "nonStacking": true
       }
     },
     "forbidden": {},
@@ -1448,10 +1451,7 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 454,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 454
   },
   {
     "name": "Fingertip Compartment",
@@ -1459,6 +1459,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacityCost": [1],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -1470,10 +1473,7 @@
     },
     "cost": [3000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 454,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacityCost": [1]
+    "page": 454
   },
   {
     "name": "Grapple Gun",
@@ -1481,6 +1481,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacityCost": [4],
     "essenceCost": [0.5],
     "rating": {
       "minimum": [1],
@@ -1492,10 +1495,7 @@
     },
     "cost": [5000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 455,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacityCost": [4]
+    "page": 455
   },
   {
     "name": "Internal Air Tank",
@@ -1503,6 +1503,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacityCost": [3],
     "essenceCost": [0.25],
     "rating": {
       "minimum": [1],
@@ -1534,14 +1537,14 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 455,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacityCost": [3]
+    "page": 455
   },
   {
     "name": "Muscle Replacement",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": [
       {
         "subnumbers": [
@@ -1596,14 +1599,15 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 455,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 455
   },
   {
     "name": "Reaction Enhancers",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
+    "wirelessPairInclude": "Wired Reflexes",
     "essenceCost": [
       {
         "subnumbers": [
@@ -1651,15 +1655,14 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 455,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0],
-    "wirelessPairInclude": "Wired Reflexes"
+    "page": 455
   },
   {
     "name": "Skillwires",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": [
       {
         "subnumbers": [
@@ -1707,10 +1710,7 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 455,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 455
   },
   {
     "name": "Smuggling Compartment",
@@ -1718,6 +1718,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacityCost": [2],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -1729,14 +1732,27 @@
     },
     "cost": [7500],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 455,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacityCost": [2]
+    "page": 455
   },
   {
     "name": "Wired Reflexes",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
+    "wirelessPairBonus": {
+      "initiative": {
+        "bonusDice": {
+          "option": "Rating"
+        }
+      },
+      "disableQualities": [
+        {
+          "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
+        }
+      ]
+    },
+    "wirelessPairInclude": "Reaction Enhancers",
     "essenceCost": {
       "ratingLinked": [[2], [3], [5]]
     },
@@ -1776,23 +1792,7 @@
       "ratingLinked": [[39000], [149000], [217000]]
     },
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 455,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0],
-    "wirelessPairBonus": {
-      "initiative": {
-        "bonusDice": {
-          "option": "Rating"
-        }
-      },
-      "disableQualities": [
-        {
-          "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
-        }
-      ]
-    },
-    "wirelessPairInclude": "Reaction Enhancers"
+    "page": 455
   },
   {
     "name": "Obvious Full Arm",
@@ -1800,6 +1800,10 @@
     "augmentationLimit": {
       "option": "Arm"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [15],
+    "limbSlot": "Arm",
     "essenceCost": [1],
     "rating": {
       "minimum": [1],
@@ -1828,11 +1832,7 @@
     },
     "cost": [15000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 456,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [15],
-    "limbSlot": "Arm"
+    "page": 456
   },
   {
     "name": "Obvious Full Leg",
@@ -1840,6 +1840,10 @@
     "augmentationLimit": {
       "option": "Leg"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [20],
+    "limbSlot": "Leg",
     "essenceCost": [1],
     "rating": {
       "minimum": [1],
@@ -1873,11 +1877,7 @@
     },
     "cost": [15000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 456,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [20],
-    "limbSlot": "Leg"
+    "page": 456
   },
   {
     "name": "Obvious Foot",
@@ -1885,6 +1885,9 @@
     "augmentationLimit": {
       "option": "Leg"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [4],
     "essenceCost": [0.25],
     "rating": {
       "minimum": [1],
@@ -1917,10 +1920,7 @@
     },
     "cost": [5000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 456,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [4]
+    "page": 456
   },
   {
     "name": "Obvious Hand",
@@ -1928,6 +1928,9 @@
     "augmentationLimit": {
       "option": "Arm"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [4],
     "essenceCost": [0.25],
     "rating": {
       "minimum": [1],
@@ -1953,10 +1956,7 @@
     },
     "cost": [5000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 456,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [4]
+    "page": 456
   },
   {
     "name": "Obvious Lower Arm",
@@ -1964,6 +1964,9 @@
     "augmentationLimit": {
       "option": "Arm"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [10],
     "essenceCost": [0.45],
     "rating": {
       "minimum": [1],
@@ -2001,10 +2004,7 @@
     },
     "cost": [10000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 456,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [10]
+    "page": 456
   },
   {
     "name": "Obvious Lower Leg",
@@ -2012,6 +2012,9 @@
     "augmentationLimit": {
       "option": "Leg"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [12],
     "essenceCost": [0.45],
     "rating": {
       "minimum": [1],
@@ -2056,10 +2059,7 @@
     },
     "cost": [10000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 456,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [12]
+    "page": 456
   },
   {
     "name": "Obvious Torso",
@@ -2067,6 +2067,10 @@
     "augmentationLimit": {
       "option": "Leg"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [10],
+    "limbSlot": "Torso",
     "essenceCost": [1.5],
     "rating": {
       "minimum": [1],
@@ -2093,11 +2097,7 @@
     },
     "cost": [20000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 456,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [10],
-    "limbSlot": "Torso"
+    "page": 456
   },
   {
     "name": "Obvious Skull",
@@ -2105,6 +2105,10 @@
     "augmentationLimit": {
       "option": "Skull"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [4],
+    "limbSlot": "Skull",
     "essenceCost": [0.75],
     "rating": {
       "minimum": [1],
@@ -2131,11 +2135,7 @@
     },
     "cost": [10000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 456,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [4],
-    "limbSlot": "Skull"
+    "page": 456
   },
   {
     "name": "Synthetic Full Arm",
@@ -2143,6 +2143,10 @@
     "augmentationLimit": {
       "option": "Arm"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [8],
+    "limbSlot": "Arm",
     "essenceCost": [1],
     "rating": {
       "minimum": [1],
@@ -2171,11 +2175,7 @@
     },
     "cost": [20000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 456,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [8],
-    "limbSlot": "Arm"
+    "page": 456
   },
   {
     "name": "Synthetic Full Leg",
@@ -2183,6 +2183,10 @@
     "augmentationLimit": {
       "option": "Leg"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [10],
+    "limbSlot": "Leg",
     "essenceCost": [1],
     "rating": {
       "minimum": [1],
@@ -2216,11 +2220,7 @@
     },
     "cost": [20000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 456,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [10],
-    "limbSlot": "Leg"
+    "page": 456
   },
   {
     "name": "Synthetic Foot",
@@ -2228,6 +2228,9 @@
     "augmentationLimit": {
       "option": "Leg"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [2],
     "essenceCost": [0.25],
     "rating": {
       "minimum": [1],
@@ -2260,10 +2263,7 @@
     },
     "cost": [6000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 456,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [2]
+    "page": 456
   },
   {
     "name": "Synthetic Hand",
@@ -2271,6 +2271,9 @@
     "augmentationLimit": {
       "option": "Arm"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [2],
     "essenceCost": [0.25],
     "rating": {
       "minimum": [1],
@@ -2296,10 +2299,7 @@
     },
     "cost": [6000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 456,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [2]
+    "page": 456
   },
   {
     "name": "Synthetic Lower Arm",
@@ -2307,6 +2307,9 @@
     "augmentationLimit": {
       "option": "Arm"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [5],
     "essenceCost": [0.45],
     "rating": {
       "minimum": [1],
@@ -2344,10 +2347,7 @@
     },
     "cost": [12000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 456,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [5]
+    "page": 456
   },
   {
     "name": "Synthetic Lower Leg",
@@ -2355,6 +2355,9 @@
     "augmentationLimit": {
       "option": "Leg"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [6],
     "essenceCost": [0.45],
     "rating": {
       "minimum": [1],
@@ -2399,10 +2402,7 @@
     },
     "cost": [12000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 456,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [6]
+    "page": 456
   },
   {
     "name": "Synthetic Torso",
@@ -2410,6 +2410,10 @@
     "augmentationLimit": {
       "option": "Leg"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [5],
+    "limbSlot": "Torso",
     "essenceCost": [1.5],
     "rating": {
       "minimum": [1],
@@ -2436,11 +2440,7 @@
     },
     "cost": [25000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 456,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [5],
-    "limbSlot": "Torso"
+    "page": 456
   },
   {
     "name": "Synthetic Skull",
@@ -2448,6 +2448,10 @@
     "augmentationLimit": {
       "option": "Skull"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [2],
+    "limbSlot": "Skull",
     "essenceCost": [0.75],
     "rating": {
       "minimum": [1],
@@ -2473,11 +2477,7 @@
     },
     "cost": [15000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 456,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [2],
-    "limbSlot": "Skull"
+    "page": 456
   },
   {
     "name": "Armor",
@@ -2485,6 +2485,13 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Enhancement",
+    "capacityCost": [
+      {
+        "option": "Rating"
+      }
+    ],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -2527,14 +2534,7 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 456,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Enhancement",
-    "capacityCost": [
-      {
-        "option": "Rating"
-      }
-    ]
+    "page": 456
   },
   {
     "name": "Customized Strength",
@@ -2542,6 +2542,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Enhancement",
+    "capacityCost": [0],
     "essenceCost": [0],
     "rating": {
       "minimum": [
@@ -2606,10 +2609,7 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 456,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Enhancement",
-    "capacityCost": [0]
+    "page": 456
   },
   {
     "name": "Customized Agility",
@@ -2617,6 +2617,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Enhancement",
+    "capacityCost": [0],
     "essenceCost": [0],
     "rating": {
       "minimum": [
@@ -2681,10 +2684,7 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 456,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Enhancement",
-    "capacityCost": [0]
+    "page": 456
   },
   {
     "name": "Enhanced Strength",
@@ -2692,6 +2692,21 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Enhancement",
+    "capacityCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          1
+        ]
+      }
+    ],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -2727,22 +2742,7 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 456,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Enhancement",
-    "capacityCost": [
-      {
-        "subnumbers": [
-          {
-            "option": "Rating"
-          },
-          {
-            "operator": "*"
-          },
-          1
-        ]
-      }
-    ]
+    "page": 456
   },
   {
     "name": "Enhanced Agility",
@@ -2750,6 +2750,21 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Enhancement",
+    "capacityCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          1
+        ]
+      }
+    ],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -2785,22 +2800,7 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 456,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Enhancement",
-    "capacityCost": [
-      {
-        "subnumbers": [
-          {
-            "option": "Rating"
-          },
-          {
-            "operator": "*"
-          },
-          1
-        ]
-      }
-    ]
+    "page": 456
   },
   {
     "name": "Cyber Holster",
@@ -2808,6 +2808,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Accessory",
+    "capacityCost": [5],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -2819,10 +2822,7 @@
     },
     "cost": [2000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 457,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Accessory",
-    "capacityCost": [5]
+    "page": 457
   },
   {
     "name": "Cyberarm Gyromount",
@@ -2830,6 +2830,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Accessory",
+    "capacityCost": [8],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -2843,10 +2846,7 @@
     },
     "cost": [6000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 456,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Accessory",
-    "capacityCost": [8]
+    "page": 456
   },
   {
     "name": "Cyberarm Slide",
@@ -2854,6 +2854,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Accessory",
+    "capacityCost": [3],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -2865,10 +2868,7 @@
     },
     "cost": [3000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 456,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Accessory",
-    "capacityCost": [3]
+    "page": 456
   },
   {
     "name": "Hydraulic Jacks",
@@ -2876,6 +2876,13 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Accessory",
+    "capacityCost": [
+      {
+        "option": "Rating"
+      }
+    ],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -2901,14 +2908,7 @@
       }
     ],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 457,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Accessory",
-    "capacityCost": [
-      {
-        "option": "Rating"
-      }
-    ]
+    "page": 457
   },
   {
     "name": "Large Smuggling Compartment",
@@ -2916,6 +2916,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Accessory",
+    "capacityCost": [5],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -2927,10 +2930,7 @@
     },
     "cost": [8000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 457,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Accessory",
-    "capacityCost": [5]
+    "page": 457
   },
   {
     "name": "External Clip Port",
@@ -2938,6 +2938,11 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon Accessory",
+    "capacityCost": [1],
+    "addToParentCapacity": true,
+    "addParentWeaponAccessory": true,
     "essenceCost": [0.1],
     "modification": true,
     "rating": {
@@ -2951,12 +2956,7 @@
     },
     "cost": [1000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 458,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon Accessory",
-    "capacityCost": [1],
-    "addToParentCapacity": true,
-    "addParentWeaponAccessory": true
+    "page": 458
   },
   {
     "name": "Grenade Launcher",
@@ -2964,6 +2964,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [15],
     "essenceCost": [1.5],
     "rating": {
       "minimum": [1],
@@ -2977,10 +2980,7 @@
     },
     "cost": [30000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 458,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [15]
+    "page": 458
   },
   {
     "name": "Hand Blade",
@@ -2988,6 +2988,9 @@
     "augmentationLimit": {
       "option": "Arm"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [2],
     "essenceCost": [0.25],
     "rating": {
       "minimum": [1],
@@ -3003,10 +3006,7 @@
     },
     "cost": [2500],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 458,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [2]
+    "page": 458
   },
   {
     "name": "Hand Razors",
@@ -3014,6 +3014,9 @@
     "augmentationLimit": {
       "option": "Arm"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [2],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -3029,10 +3032,7 @@
     },
     "cost": [1250],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 458,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [2]
+    "page": 458
   },
   {
     "name": "Heavy Pistol",
@@ -3040,6 +3040,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [6],
     "essenceCost": [0.5],
     "rating": {
       "minimum": [1],
@@ -3053,10 +3056,7 @@
     },
     "cost": [4300],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 458,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [6]
+    "page": 458
   },
   {
     "name": "Holdout Pistol",
@@ -3064,6 +3064,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [2],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -3077,10 +3080,7 @@
     },
     "cost": [2000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 458,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [2]
+    "page": 458
   },
   {
     "name": "Laser Sight",
@@ -3088,6 +3088,11 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon Accessory",
+    "capacityCost": [1],
+    "addToParentCapacity": true,
+    "addParentWeaponAccessory": true,
     "essenceCost": [0],
     "modification": true,
     "rating": {
@@ -3101,12 +3106,7 @@
     },
     "cost": [1000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 458,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon Accessory",
-    "capacityCost": [1],
-    "addToParentCapacity": true,
-    "addParentWeaponAccessory": true
+    "page": 458
   },
   {
     "name": "Light Pistol",
@@ -3114,6 +3114,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [4],
     "essenceCost": [0.25],
     "rating": {
       "minimum": [1],
@@ -3127,10 +3130,7 @@
     },
     "cost": [3900],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 458,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [4]
+    "page": 458
   },
   {
     "name": "Machine Pistol",
@@ -3138,6 +3138,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [6],
     "essenceCost": [0.5],
     "rating": {
       "minimum": [1],
@@ -3151,10 +3154,7 @@
     },
     "cost": [3500],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 458,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [6]
+    "page": 458
   },
   {
     "name": "Shock Hand",
@@ -3162,6 +3162,9 @@
     "augmentationLimit": {
       "option": "Arm"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [4],
     "essenceCost": [0.25],
     "rating": {
       "minimum": [1],
@@ -3177,10 +3180,7 @@
     },
     "cost": [5000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 458,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [4]
+    "page": 458
   },
   {
     "name": "Shotgun",
@@ -3188,6 +3188,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [10],
     "essenceCost": [1.25],
     "rating": {
       "minimum": [1],
@@ -3201,10 +3204,7 @@
     },
     "cost": [8500],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 458,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [10]
+    "page": 458
   },
   {
     "name": "Silencer/Suppressor",
@@ -3212,6 +3212,11 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon Accessory",
+    "capacityCost": [2],
+    "addToParentCapacity": true,
+    "addParentWeaponAccessory": true,
     "essenceCost": [0],
     "modification": true,
     "rating": {
@@ -3225,12 +3230,7 @@
     },
     "cost": [1000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 458,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon Accessory",
-    "capacityCost": [2],
-    "addToParentCapacity": true,
-    "addParentWeaponAccessory": true
+    "page": 458
   },
   {
     "name": "Spurs",
@@ -3238,6 +3238,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [3],
     "essenceCost": [0.3],
     "rating": {
       "minimum": [1],
@@ -3251,10 +3254,7 @@
     },
     "cost": [5000],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 458,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [3]
+    "page": 458
   },
   {
     "name": "Submachine Gun",
@@ -3262,6 +3262,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [8],
     "essenceCost": [1],
     "rating": {
       "minimum": [1],
@@ -3275,14 +3278,14 @@
     },
     "cost": [4800],
     "source": "Shadowrun 5 Core Rulebook",
-    "page": 458,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [8]
+    "page": 458
   },
   {
     "name": "Attention Coprocessor",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacityCost": [1],
     "essenceCost": [0.3],
     "rating": {
       "minimum": [1],
@@ -3294,14 +3297,14 @@
     },
     "cost": [3000],
     "source": "Chrome Flesh",
-    "page": 78,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacityCost": [1]
+    "page": 78
   },
   {
     "name": "Chipjack",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0],
     "essenceCost": [
       {
         "subnumbers": [
@@ -3349,14 +3352,14 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 79,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacity": [0]
+    "page": 79
   },
   {
     "name": "Dream Link",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -3368,14 +3371,14 @@
     },
     "cost": [1000],
     "source": "Chrome Flesh",
-    "page": 79,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacity": [0]
+    "page": 79
   },
   {
     "name": "False Face",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacityCost": [8],
     "essenceCost": [0.5],
     "rating": {
       "minimum": [1],
@@ -3387,10 +3390,7 @@
     },
     "cost": [20000],
     "source": "Chrome Flesh",
-    "page": 79,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacityCost": [8]
+    "page": 79
   },
   {
     "name": "Knowledge Hardwires",
@@ -3398,6 +3398,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0],
     "essenceCost": [
       {
         "subnumbers": [
@@ -3444,14 +3447,14 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 80,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacity": [0]
+    "page": 80
   },
   {
     "name": "Math SPU",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacityCost": [1],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -3463,14 +3466,14 @@
     },
     "cost": [2000],
     "source": "Chrome Flesh",
-    "page": 80,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacityCost": [1]
+    "page": 80
   },
   {
     "name": "Orientation System",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacityCost": [1],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -3482,14 +3485,18 @@
     },
     "cost": [500],
     "source": "Chrome Flesh",
-    "page": 80,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacityCost": [1]
+    "page": 80
   },
   {
     "name": "Radar Sensor",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacityCost": [
+      {
+        "option": "Rating"
+      }
+    ],
     "essenceCost": [
       {
         "subnumbers": [
@@ -3537,18 +3544,14 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 81,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacityCost": [
-      {
-        "option": "Rating"
-      }
-    ]
+    "page": 81
   },
   {
     "name": "Synthlink",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacityCost": [1],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -3560,14 +3563,14 @@
     },
     "cost": [1000],
     "source": "Chrome Flesh",
-    "page": 81,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacityCost": [1]
+    "page": 81
   },
   {
     "name": "Visualizer",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -3579,14 +3582,14 @@
     },
     "cost": [2000],
     "source": "Chrome Flesh",
-    "page": 81,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacity": [0]
+    "page": 81
   },
   {
     "name": "Voice Mask",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -3598,10 +3601,7 @@
     },
     "cost": [2000],
     "source": "Chrome Flesh",
-    "page": 81,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacity": [0]
+    "page": 81
   },
   {
     "name": "Additional Eye Mount",
@@ -3609,6 +3609,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacityCost": [2],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -3621,10 +3624,7 @@
     },
     "cost": [1000],
     "source": "Chrome Flesh",
-    "page": 75,
-    "type": "Cyberware",
-    "subtype": "Eyeware",
-    "capacityCost": [2]
+    "page": 75
   },
   {
     "name": "Additional Eye Mount (Duplicated)",
@@ -3632,6 +3632,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacityCost": [2],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -3644,10 +3647,7 @@
     },
     "cost": [1000],
     "source": "Chrome Flesh",
-    "page": 75,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacityCost": [2]
+    "page": 75
   },
   {
     "name": "Eye Light System",
@@ -3655,6 +3655,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacityCost": [2],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -3666,10 +3669,7 @@
     },
     "cost": [500],
     "source": "Chrome Flesh",
-    "page": 76,
-    "type": "Cyberware",
-    "subtype": "Eyeware",
-    "capacityCost": [2]
+    "page": 76
   },
   {
     "name": "Eye Protectors (Plastic)",
@@ -3677,6 +3677,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacityCost": [2],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -3688,10 +3691,7 @@
     },
     "cost": [100],
     "source": "Chrome Flesh",
-    "page": 76,
-    "type": "Cyberware",
-    "subtype": "Eyeware",
-    "capacityCost": [2]
+    "page": 76
   },
   {
     "name": "Eye Protectors (Ballistic Glass)",
@@ -3699,6 +3699,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacityCost": [2],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -3710,10 +3713,7 @@
     },
     "cost": [100],
     "source": "Chrome Flesh",
-    "page": 76,
-    "type": "Cyberware",
-    "subtype": "Eyeware",
-    "capacityCost": [2]
+    "page": 76
   },
   {
     "name": "Microscopic Lenses",
@@ -3721,6 +3721,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacityCost": [3],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -3732,14 +3735,14 @@
     },
     "cost": [1000],
     "source": "Chrome Flesh",
-    "page": 76,
-    "type": "Cyberware",
-    "subtype": "Eyeware",
-    "capacityCost": [3]
+    "page": 76
   },
   {
     "name": "Spider Eyes",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacity": [2],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -3751,16 +3754,24 @@
     },
     "cost": [2000],
     "source": "Chrome Flesh",
-    "page": 76,
-    "type": "Cyberware",
-    "subtype": "Eyeware",
-    "capacity": [2]
+    "page": 76
   },
   {
     "name": "Targeting Laser",
     "description": "",
     "augmentationLimit": {
       "option": "N/A"
+    },
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacityCost": [4],
+    "wirelessBonus": {
+      "skillCategories": [
+        {
+          "category": "Combat Active",
+          "bonus": [1]
+        }
+      ]
     },
     "essenceCost": [0.2],
     "rating": {
@@ -3773,18 +3784,7 @@
     },
     "cost": [1000],
     "source": "Chrome Flesh",
-    "page": 77,
-    "type": "Cyberware",
-    "subtype": "Eyeware",
-    "capacityCost": [4],
-    "wirelessBonus": {
-      "skillCategories": [
-        {
-          "category": "Combat Active",
-          "bonus": [1]
-        }
-      ]
-    }
+    "page": 77
   },
   {
     "name": "Targeting Laser (Infrared)",
@@ -3792,6 +3792,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacityCost": [4],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -3803,15 +3806,15 @@
     },
     "cost": [1000],
     "source": "Chrome Flesh",
-    "page": 77,
-    "type": "Cyberware",
-    "subtype": "Eyeware",
-    "capacityCost": [4]
+    "page": 77
   },
   {
     "name": "Antennae",
     "description": "",
     "augmentationLimit": 3,
+    "type": "Cyberware",
+    "subtype": "Earware",
+    "capacityCost": [1],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -3823,14 +3826,14 @@
     },
     "cost": [500],
     "source": "Chrome Flesh",
-    "page": 74,
-    "type": "Cyberware",
-    "subtype": "Earware",
-    "capacityCost": [1]
+    "page": 74
   },
   {
     "name": "Ear protector",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Earware",
+    "capacityCost": [1],
     "essenceCost": [0.05],
     "rating": {
       "minimum": [1],
@@ -3842,14 +3845,14 @@
     },
     "cost": [250],
     "source": "Chrome Flesh",
-    "page": 75,
-    "type": "Cyberware",
-    "subtype": "Earware",
-    "capacityCost": [1]
+    "page": 75
   },
   {
     "name": "Increased Hearing Spectrum",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Earware",
+    "capacityCost": [1],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -3861,10 +3864,7 @@
     },
     "cost": [500],
     "source": "Chrome Flesh",
-    "page": 75,
-    "type": "Cyberware",
-    "subtype": "Earware",
-    "capacityCost": [1]
+    "page": 75
   },
   {
     "name": "Modular Mount",
@@ -3872,6 +3872,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Earware",
+    "capacityCost": [1],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -3883,14 +3886,14 @@
     },
     "cost": [250],
     "source": "Chrome Flesh",
-    "page": 75,
-    "type": "Cyberware",
-    "subtype": "Earware",
-    "capacityCost": [1]
+    "page": 75
   },
   {
     "name": "Translat-ear",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Earware",
+    "capacityCost": [1],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -3914,14 +3917,14 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 75,
-    "type": "Cyberware",
-    "subtype": "Earware",
-    "capacityCost": [1]
+    "page": 75
   },
   {
     "name": "Audio Analyzer",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Earware",
+    "capacityCost": [1],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -3933,10 +3936,7 @@
     },
     "cost": [1000],
     "source": "Chrome Flesh",
-    "page": 75,
-    "type": "Cyberware",
-    "subtype": "Earware",
-    "capacityCost": [1]
+    "page": 75
   },
   {
     "name": "Auto Injector",
@@ -3944,6 +3944,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": [0.05],
     "rating": {
       "minimum": [1],
@@ -3957,10 +3960,7 @@
     },
     "cost": [500],
     "source": "Chrome Flesh",
-    "page": 82,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 82
   },
   {
     "name": "Expanded Reservoir",
@@ -3968,6 +3968,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Auto Injector Mods",
+    "capacity": [0],
     "essenceCost": [0.05],
     "modification": true,
     "rating": {
@@ -3980,10 +3983,7 @@
     },
     "cost": [250],
     "source": "Chrome Flesh",
-    "page": 82,
-    "type": "Cyberware",
-    "subtype": "Auto Injector Mods",
-    "capacity": [0]
+    "page": 82
   },
   {
     "name": "Auto Injector Killswitch",
@@ -3991,6 +3991,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": [0.05],
     "rating": {
       "minimum": [1],
@@ -4002,10 +4005,7 @@
     },
     "cost": [750],
     "source": "Chrome Flesh",
-    "page": 82,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 82
   },
   {
     "name": "Balance Tail",
@@ -4013,6 +4013,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": [0.25],
     "rating": {
       "minimum": [1],
@@ -4024,10 +4027,7 @@
     },
     "cost": [2000],
     "source": "Chrome Flesh",
-    "page": 82,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 82
   },
   {
     "name": "Biomonitor",
@@ -4035,6 +4035,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacityCost": [1],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -4046,14 +4049,18 @@
     },
     "cost": [500],
     "source": "Chrome Flesh",
-    "page": 82,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacityCost": [1]
+    "page": 82
   },
   {
     "name": "Biowaste Storage",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacityCost": [
+      {
+        "option": "Rating"
+      }
+    ],
     "essenceCost": [
       {
         "subnumbers": [
@@ -4089,14 +4096,7 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 82,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacityCost": [
-      {
-        "option": "Rating"
-      }
-    ]
+    "page": 82
   },
   {
     "name": "Cyberfins (Hands)",
@@ -4104,6 +4104,9 @@
     "augmentationLimit": {
       "option": "Arm"
     },
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacityCost": [1],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -4121,10 +4124,7 @@
     },
     "cost": [500],
     "source": "Chrome Flesh",
-    "page": 83,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacityCost": [1]
+    "page": 83
   },
   {
     "name": "Cyberfins (Feet)",
@@ -4132,6 +4132,9 @@
     "augmentationLimit": {
       "option": "Leg"
     },
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacityCost": [1],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -4149,10 +4152,7 @@
     },
     "cost": [500],
     "source": "Chrome Flesh",
-    "page": 83,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacityCost": [1]
+    "page": 83
   },
   {
     "name": "Cybersafety",
@@ -4160,6 +4160,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacityCost": [1],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -4171,10 +4174,7 @@
     },
     "cost": [100],
     "source": "Chrome Flesh",
-    "page": 83,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacityCost": [1]
+    "page": 83
   },
   {
     "name": "Flex Hand",
@@ -4182,6 +4182,9 @@
     "augmentationLimit": {
       "option": "Arm"
     },
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": [0.15],
     "rating": {
       "minimum": [1],
@@ -4196,10 +4199,7 @@
     },
     "cost": [2000],
     "source": "Chrome Flesh",
-    "page": 83,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 83
   },
   {
     "name": "Foot Anchor",
@@ -4207,6 +4207,9 @@
     "augmentationLimit": {
       "option": "Leg"
     },
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacityCost": [3],
     "essenceCost": [0.25],
     "rating": {
       "minimum": [1],
@@ -4222,14 +4225,14 @@
     },
     "cost": [2000],
     "source": "Chrome Flesh",
-    "page": 84,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacityCost": [3]
+    "page": 84
   },
   {
     "name": "Gastric Neurostimulator",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -4241,14 +4244,14 @@
     },
     "cost": [2000],
     "source": "Chrome Flesh",
-    "page": 84,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 84
   },
   {
     "name": "Internal Router",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": [0.7],
     "rating": {
       "minimum": [1],
@@ -4260,10 +4263,7 @@
     },
     "cost": [15000],
     "source": "Chrome Flesh",
-    "page": 84,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 84
   },
   {
     "name": "Magnetic System",
@@ -4271,6 +4271,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacityCost": [2],
     "essenceCost": [0.25],
     "rating": {
       "minimum": [1],
@@ -4282,14 +4285,14 @@
     },
     "cost": [1000],
     "source": "Chrome Flesh",
-    "page": 84,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacityCost": [2]
+    "page": 84
   },
   {
     "name": "OXSYS Cybergill",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": [0.25],
     "rating": {
       "minimum": [1],
@@ -4301,10 +4304,7 @@
     },
     "cost": [2000],
     "source": "Chrome Flesh",
-    "page": 85,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 85
   },
   {
     "name": "Retractable Climbing Claws (Hands)",
@@ -4312,6 +4312,9 @@
     "augmentationLimit": {
       "option": "Arm"
     },
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacityCost": [2],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -4326,10 +4329,7 @@
     },
     "cost": [2000],
     "source": "Chrome Flesh",
-    "page": 86,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacityCost": [2]
+    "page": 86
   },
   {
     "name": "Retractable Climbing Claws (Feet)",
@@ -4337,6 +4337,9 @@
     "augmentationLimit": {
       "option": "Leg"
     },
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacityCost": [2],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -4351,14 +4354,14 @@
     },
     "cost": [2000],
     "source": "Chrome Flesh",
-    "page": 86,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacityCost": [2]
+    "page": 86
   },
   {
     "name": "Smart Articulation",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": [0.5],
     "rating": {
       "minimum": [1],
@@ -4372,14 +4375,14 @@
     },
     "cost": [6000],
     "source": "Chrome Flesh",
-    "page": 86,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 86
   },
   {
     "name": "Touch Link",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -4391,14 +4394,14 @@
     },
     "cost": [1000],
     "source": "Chrome Flesh",
-    "page": 86,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 86
   },
   {
     "name": "Move-by-Wire System",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": {
       "ratingLinked": [[3], [4], [5]]
     },
@@ -4447,10 +4450,7 @@
       "ratingLinked": [[40000], [125000], [205000]]
     },
     "source": "Chrome Flesh",
-    "page": 84,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 84
   },
   {
     "name": "Active Hardwires",
@@ -4458,6 +4458,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": [
       {
         "subnumbers": [
@@ -4510,14 +4513,18 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 81,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 81
   },
   {
     "name": "Nutrition Storage System",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacityCost": [
+      {
+        "option": "Rating"
+      }
+    ],
     "essenceCost": [
       {
         "subnumbers": [
@@ -4553,14 +4560,7 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 84,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacityCost": [
-      {
-        "option": "Rating"
-      }
-    ]
+    "page": 84
   },
   {
     "name": "Casemod",
@@ -4568,6 +4568,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cosmetic Enhancement",
+    "capacity": [0],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -4588,10 +4591,7 @@
       }
     },
     "source": "Chrome Flesh",
-    "page": 72,
-    "type": "Cyberware",
-    "subtype": "Cosmetic Enhancement",
-    "capacity": [0]
+    "page": 72
   },
   {
     "name": "Fiberoptic Hair",
@@ -4599,6 +4599,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cosmetic Enhancement",
+    "capacityCost": [1],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -4623,10 +4626,7 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 73,
-    "type": "Cyberware",
-    "subtype": "Cosmetic Enhancement",
-    "capacityCost": [1]
+    "page": 73
   },
   {
     "name": "Breast Implant (One Breast)",
@@ -4634,6 +4634,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cosmetic Enhancement",
+    "capacity": [0],
     "essenceCost": [0.05],
     "rating": {
       "minimum": [1],
@@ -4645,10 +4648,7 @@
     },
     "cost": [250],
     "source": "Chrome Flesh",
-    "page": 73,
-    "type": "Cyberware",
-    "subtype": "Cosmetic Enhancement",
-    "capacity": [0]
+    "page": 73
   },
   {
     "name": "Breast Implant 2.0 (One Breast)",
@@ -4656,6 +4656,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cosmetic Enhancement",
+    "capacityCost": [1],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -4667,10 +4670,7 @@
     },
     "cost": [1000],
     "source": "Chrome Flesh",
-    "page": 73,
-    "type": "Cyberware",
-    "subtype": "Cosmetic Enhancement",
-    "capacityCost": [1]
+    "page": 73
   },
   {
     "name": "Cyber Genitalia",
@@ -4678,6 +4678,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cosmetic Enhancement",
+    "capacityCost": [1],
     "essenceCost": [0.25],
     "rating": {
       "minimum": [1],
@@ -4689,10 +4692,7 @@
     },
     "cost": [2000],
     "source": "Chrome Flesh",
-    "page": 73,
-    "type": "Cyberware",
-    "subtype": "Cosmetic Enhancement",
-    "capacityCost": [1]
+    "page": 73
   },
   {
     "name": "Small LED Tattoo",
@@ -4700,6 +4700,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cosmetic Enhancement",
+    "capacityCost": [1],
     "essenceCost": [0.05],
     "rating": {
       "minimum": [1],
@@ -4711,10 +4714,7 @@
     },
     "cost": [100],
     "source": "Chrome Flesh",
-    "page": 73,
-    "type": "Cyberware",
-    "subtype": "Cosmetic Enhancement",
-    "capacityCost": [1]
+    "page": 73
   },
   {
     "name": "Medium LED Tattoo",
@@ -4722,6 +4722,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cosmetic Enhancement",
+    "capacityCost": [2],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -4733,10 +4736,7 @@
     },
     "cost": [500],
     "source": "Chrome Flesh",
-    "page": 73,
-    "type": "Cyberware",
-    "subtype": "Cosmetic Enhancement",
-    "capacityCost": [2]
+    "page": 73
   },
   {
     "name": "Large LED Tattoo",
@@ -4744,6 +4744,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cosmetic Enhancement",
+    "capacityCost": [4],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -4755,14 +4758,14 @@
     },
     "cost": [1000],
     "source": "Chrome Flesh",
-    "page": 73,
-    "type": "Cyberware",
-    "subtype": "Cosmetic Enhancement",
-    "capacityCost": [4]
+    "page": 73
   },
   {
     "name": "Metatype Reduction (Ork)",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Cosmetic Enhancement",
+    "capacity": [0],
     "essenceCost": [0.3],
     "rating": {
       "minimum": [1],
@@ -4782,14 +4785,14 @@
     },
     "cost": [6000],
     "source": "Chrome Flesh",
-    "page": 73,
-    "type": "Cyberware",
-    "subtype": "Cosmetic Enhancement",
-    "capacity": [0]
+    "page": 73
   },
   {
     "name": "Metatype Reduction (Troll)",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Cosmetic Enhancement",
+    "capacity": [0],
     "essenceCost": [0.3],
     "rating": {
       "minimum": [1],
@@ -4802,14 +4805,14 @@
     },
     "cost": [6000],
     "source": "Chrome Flesh",
-    "page": 73,
-    "type": "Cyberware",
-    "subtype": "Cosmetic Enhancement",
-    "capacity": [0]
+    "page": 73
   },
   {
     "name": "Skin Toner",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Cosmetic Enhancement",
+    "capacity": [0],
     "essenceCost": [0.5],
     "rating": {
       "minimum": [1],
@@ -4821,14 +4824,14 @@
     },
     "cost": [2000],
     "source": "Chrome Flesh",
-    "page": 74,
-    "type": "Cyberware",
-    "subtype": "Cosmetic Enhancement",
-    "capacity": [0]
+    "page": 74
   },
   {
     "name": "Chameleon Processor",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Cosmetic Enhancement",
+    "capacityCost": [2],
     "essenceCost": [0.3],
     "rating": {
       "minimum": [1],
@@ -4840,10 +4843,7 @@
     },
     "cost": [8000],
     "source": "Chrome Flesh",
-    "page": 74,
-    "type": "Cyberware",
-    "subtype": "Cosmetic Enhancement",
-    "capacityCost": [2]
+    "page": 74
   },
   {
     "name": "Steamers",
@@ -4851,6 +4851,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cosmetic Enhancement",
+    "capacityCost": [1],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -4862,10 +4865,7 @@
     },
     "cost": [500],
     "source": "Chrome Flesh",
-    "page": 74,
-    "type": "Cyberware",
-    "subtype": "Cosmetic Enhancement",
-    "capacityCost": [1]
+    "page": 74
   },
   {
     "name": "Cosmetic Surgery",
@@ -4873,6 +4873,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cosmetic Enhancement",
+    "capacity": [0],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -4892,10 +4895,7 @@
       }
     },
     "source": "Chrome Flesh",
-    "page": 72,
-    "type": "Cyberware",
-    "subtype": "Cosmetic Enhancement",
-    "capacity": [0]
+    "page": 72
   },
   {
     "name": "Primitive Prosthetic Full Arm",
@@ -4903,6 +4903,10 @@
     "augmentationLimit": {
       "option": "Arm"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [0],
+    "limbSlot": "Arm",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -4917,11 +4921,7 @@
     },
     "cost": [250],
     "source": "Chrome Flesh",
-    "page": 86,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [0],
-    "limbSlot": "Arm"
+    "page": 86
   },
   {
     "name": "Primitive Prosthetic Lower Arm",
@@ -4929,6 +4929,9 @@
     "augmentationLimit": {
       "option": "Arm"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [0],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -4943,10 +4946,7 @@
     },
     "cost": [100],
     "source": "Chrome Flesh",
-    "page": 86,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [0]
+    "page": 86
   },
   {
     "name": "Primitive Prosthetic Hand",
@@ -4954,6 +4954,9 @@
     "augmentationLimit": {
       "option": "Arm"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [0],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -4968,10 +4971,7 @@
     },
     "cost": [20],
     "source": "Chrome Flesh",
-    "page": 86,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [0]
+    "page": 86
   },
   {
     "name": "Primitive Prosthetic Full Leg",
@@ -4979,6 +4979,10 @@
     "augmentationLimit": {
       "option": "Leg"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [0],
+    "limbSlot": "Leg",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -5002,11 +5006,7 @@
     },
     "cost": [250],
     "source": "Chrome Flesh",
-    "page": 86,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [0],
-    "limbSlot": "Leg"
+    "page": 86
   },
   {
     "name": "Primitive Prosthetic Lower Leg",
@@ -5014,6 +5014,9 @@
     "augmentationLimit": {
       "option": "Leg"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [0],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -5037,10 +5040,7 @@
     },
     "cost": [100],
     "source": "Chrome Flesh",
-    "page": 86,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [0]
+    "page": 86
   },
   {
     "name": "Primitive Prosthetic Foot",
@@ -5048,6 +5048,9 @@
     "augmentationLimit": {
       "option": "Leg"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [0],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -5071,10 +5074,7 @@
     },
     "cost": [20],
     "source": "Chrome Flesh",
-    "page": 86,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [0]
+    "page": 86
   },
   {
     "name": "Built-in Medkit",
@@ -5082,6 +5082,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Enhancement",
+    "capacityCost": [10],
     "essenceCost": [0.45],
     "rating": {
       "minimum": [1],
@@ -5099,10 +5102,7 @@
     },
     "cost": [1000],
     "source": "Chrome Flesh",
-    "page": 86,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Enhancement",
-    "capacityCost": [10]
+    "page": 86
   },
   {
     "name": "Built-in Toolkit",
@@ -5110,6 +5110,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Enhancement",
+    "capacityCost": [10],
     "essenceCost": [0.45],
     "rating": {
       "minimum": [1],
@@ -5121,10 +5124,7 @@
     },
     "cost": [2000],
     "source": "Chrome Flesh",
-    "page": 86,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Enhancement",
-    "capacityCost": [10]
+    "page": 86
   },
   {
     "name": "Cyberfinger (Custom)",
@@ -5132,6 +5132,9 @@
     "augmentationLimit": {
       "option": "Finger"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Enhancement",
+    "capacityCost": [1],
     "essenceCost": [0.05],
     "rating": {
       "minimum": [1],
@@ -5149,10 +5152,7 @@
     },
     "cost": [500],
     "source": "Chrome Flesh",
-    "page": 86,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Enhancement",
-    "capacityCost": [1]
+    "page": 86
   },
   {
     "name": "Cyberfinger (Fingerlight)",
@@ -5160,6 +5160,9 @@
     "augmentationLimit": {
       "option": "Finger"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Enhancement",
+    "capacityCost": [1],
     "essenceCost": [0.05],
     "rating": {
       "minimum": [1],
@@ -5174,10 +5177,7 @@
     },
     "cost": [550],
     "source": "Chrome Flesh",
-    "page": 86,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Enhancement",
-    "capacityCost": [1]
+    "page": 86
   },
   {
     "name": "Cyberfinger (Fingerlighter)",
@@ -5185,6 +5185,9 @@
     "augmentationLimit": {
       "option": "Finger"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Enhancement",
+    "capacityCost": [1],
     "essenceCost": [0.05],
     "rating": {
       "minimum": [1],
@@ -5199,10 +5202,7 @@
     },
     "cost": [550],
     "source": "Chrome Flesh",
-    "page": 86,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Enhancement",
-    "capacityCost": [1]
+    "page": 86
   },
   {
     "name": "Cyberfinger (Grenade)",
@@ -5210,6 +5210,9 @@
     "augmentationLimit": {
       "option": "Finger"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Enhancement",
+    "capacityCost": [1],
     "essenceCost": [0.05],
     "rating": {
       "minimum": [1],
@@ -5225,10 +5228,7 @@
     },
     "cost": [500],
     "source": "Chrome Flesh",
-    "page": 86,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Enhancement",
-    "capacityCost": [1]
+    "page": 86
   },
   {
     "name": "Cyberfinger (Pistol)",
@@ -5236,6 +5236,9 @@
     "augmentationLimit": {
       "option": "Finger"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Enhancement",
+    "capacityCost": [1],
     "essenceCost": [0.05],
     "rating": {
       "minimum": [1],
@@ -5250,10 +5253,7 @@
     },
     "cost": [1000],
     "source": "Chrome Flesh",
-    "page": 86,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Enhancement",
-    "capacityCost": [1]
+    "page": 86
   },
   {
     "name": "Digigrade Legs",
@@ -5261,6 +5261,9 @@
     "augmentationLimit": {
       "option": "Leg"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Enhancement",
+    "capacityCost": [4],
     "essenceCost": [0.25],
     "modification": true,
     "rating": {
@@ -5281,10 +5284,7 @@
     },
     "cost": [5000],
     "source": "Chrome Flesh",
-    "page": 87,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Enhancement",
-    "capacityCost": [4]
+    "page": 87
   },
   {
     "name": "Grapple Hand",
@@ -5292,6 +5292,9 @@
     "augmentationLimit": {
       "option": "Arm"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Enhancement",
+    "capacityCost": [10],
     "essenceCost": [0.45],
     "rating": {
       "minimum": [1],
@@ -5307,10 +5310,7 @@
     },
     "cost": [2000],
     "source": "Chrome Flesh",
-    "page": 87,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Enhancement",
-    "capacityCost": [10]
+    "page": 87
   },
   {
     "name": "Remote Cyberhand",
@@ -5318,6 +5318,10 @@
     "augmentationLimit": {
       "option": "Arm"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Enhancement",
+    "capacityCost": [5],
+    "addVehicle": "Remote Cyberhand",
     "essenceCost": [0.25],
     "rating": {
       "minimum": [1],
@@ -5332,11 +5336,7 @@
     },
     "cost": [8000],
     "source": "Rigger 5",
-    "page": 130,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Enhancement",
-    "capacityCost": [5],
-    "addVehicle": "Remote Cyberhand"
+    "page": 130
   },
   {
     "name": "Monkey Foot",
@@ -5344,6 +5344,9 @@
     "augmentationLimit": {
       "option": "Leg"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Enhancement",
+    "capacityCost": [2],
     "essenceCost": [0.3],
     "rating": {
       "minimum": [1],
@@ -5358,10 +5361,7 @@
     },
     "cost": [6000],
     "source": "Chrome Flesh",
-    "page": 88,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Enhancement",
-    "capacityCost": [2]
+    "page": 88
   },
   {
     "name": "Raptor Foot",
@@ -5369,6 +5369,9 @@
     "augmentationLimit": {
       "option": "Leg"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Enhancement",
+    "capacityCost": [4],
     "essenceCost": [0.5],
     "rating": {
       "minimum": [1],
@@ -5384,10 +5387,7 @@
     },
     "cost": [8000],
     "source": "Chrome Flesh",
-    "page": 88,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Enhancement",
-    "capacityCost": [4]
+    "page": 88
   },
   {
     "name": "Skates",
@@ -5395,6 +5395,9 @@
     "augmentationLimit": {
       "option": "Leg"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Enhancement",
+    "capacityCost": [2],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -5412,10 +5415,7 @@
     },
     "cost": [250],
     "source": "Chrome Flesh",
-    "page": 88,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Enhancement",
-    "capacityCost": [2]
+    "page": 88
   },
   {
     "name": "Skimmers",
@@ -5423,6 +5423,9 @@
     "augmentationLimit": {
       "option": "Leg"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Enhancement",
+    "capacityCost": [4],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -5447,10 +5450,7 @@
     },
     "cost": [2000],
     "source": "Chrome Flesh",
-    "page": 88,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Enhancement",
-    "capacityCost": [4]
+    "page": 88
   },
   {
     "name": "Snake Fingers",
@@ -5458,6 +5458,9 @@
     "augmentationLimit": {
       "option": "Arm"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Enhancement",
+    "capacityCost": [2],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -5471,10 +5474,7 @@
     },
     "cost": [1000],
     "source": "Chrome Flesh",
-    "page": 88,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Enhancement",
-    "capacityCost": [2]
+    "page": 88
   },
   {
     "name": "Obvious Foot, Modular",
@@ -5482,6 +5482,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [3],
+    "mountsLocation": "Ankle",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -5505,11 +5509,7 @@
     },
     "cost": [6000],
     "source": "Chrome Flesh",
-    "page": 88,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [3],
-    "mountsLocation": "Ankle"
+    "page": 88
   },
   {
     "name": "Obvious Hand, Modular",
@@ -5517,6 +5517,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [3],
+    "mountsLocation": "Wrist",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -5540,11 +5544,7 @@
     },
     "cost": [6000],
     "source": "Chrome Flesh",
-    "page": 88,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [3],
-    "mountsLocation": "Wrist"
+    "page": 88
   },
   {
     "name": "Synthetic Foot, Modular",
@@ -5552,6 +5552,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [1],
+    "mountsLocation": "Ankle",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -5575,11 +5579,7 @@
     },
     "cost": [7000],
     "source": "Chrome Flesh",
-    "page": 88,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [1],
-    "mountsLocation": "Ankle"
+    "page": 88
   },
   {
     "name": "Synthetic Hand, Modular",
@@ -5587,6 +5587,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [1],
+    "mountsLocation": "Wrist",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -5610,11 +5614,7 @@
     },
     "cost": [7000],
     "source": "Chrome Flesh",
-    "page": 88,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [1],
-    "mountsLocation": "Wrist"
+    "page": 88
   },
   {
     "name": "Obvious Lower Arm, Modular",
@@ -5622,6 +5622,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [8],
+    "mountsLocation": "Elbow",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -5658,11 +5662,7 @@
     },
     "cost": [12000],
     "source": "Chrome Flesh",
-    "page": 88,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [8],
-    "mountsLocation": "Elbow"
+    "page": 88
   },
   {
     "name": "Obvious Lower Leg, Modular",
@@ -5670,6 +5670,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [10],
+    "mountsLocation": "Knee",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -5706,11 +5710,7 @@
     },
     "cost": [12000],
     "source": "Chrome Flesh",
-    "page": 88,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [10],
-    "mountsLocation": "Knee"
+    "page": 88
   },
   {
     "name": "Synthetic Lower Arm, Modular",
@@ -5718,6 +5718,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [3],
+    "mountsLocation": "Elbow",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -5754,11 +5758,7 @@
     },
     "cost": [14000],
     "source": "Chrome Flesh",
-    "page": 88,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [3],
-    "mountsLocation": "Elbow"
+    "page": 88
   },
   {
     "name": "Synthetic Lower Leg, Modular",
@@ -5766,6 +5766,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [4],
+    "mountsLocation": "Knee",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -5802,11 +5806,7 @@
     },
     "cost": [14000],
     "source": "Chrome Flesh",
-    "page": 88,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [4],
-    "mountsLocation": "Knee"
+    "page": 88
   },
   {
     "name": "Obvious Full Arm, Modular",
@@ -5814,6 +5814,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [12],
+    "mountsLocation": "Shoulder",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -5840,11 +5844,7 @@
     },
     "cost": [18000],
     "source": "Chrome Flesh",
-    "page": 88,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [12],
-    "mountsLocation": "Shoulder"
+    "page": 88
   },
   {
     "name": "Obvious Full Leg, Modular",
@@ -5852,6 +5852,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [17],
+    "mountsLocation": "Hip",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -5878,11 +5882,7 @@
     },
     "cost": [18000],
     "source": "Chrome Flesh",
-    "page": 88,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [17],
-    "mountsLocation": "Hip"
+    "page": 88
   },
   {
     "name": "Synthetic Full Arm, Modular",
@@ -5890,6 +5890,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [5],
+    "mountsLocation": "Shoulder",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -5916,11 +5920,7 @@
     },
     "cost": [23000],
     "source": "Chrome Flesh",
-    "page": 88,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [5],
-    "mountsLocation": "Shoulder"
+    "page": 88
   },
   {
     "name": "Synthetic Full Leg, Modular",
@@ -5928,6 +5928,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [7],
+    "mountsLocation": "Hip",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -5954,11 +5958,7 @@
     },
     "cost": [23000],
     "source": "Chrome Flesh",
-    "page": 88,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [7],
-    "mountsLocation": "Hip"
+    "page": 88
   },
   {
     "name": "Modular Gear (Hand)",
@@ -5966,6 +5966,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [0],
+    "mountsLocation": "Wrist",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -5977,11 +5981,7 @@
     },
     "cost": [50],
     "source": "Chrome Flesh",
-    "page": 88,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [0],
-    "mountsLocation": "Wrist"
+    "page": 88
   },
   {
     "name": "Modular Gear (Foot)",
@@ -5989,6 +5989,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [0],
+    "mountsLocation": "Ankle",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -6004,11 +6008,7 @@
     },
     "cost": [50],
     "source": "Chrome Flesh",
-    "page": 88,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [0],
-    "mountsLocation": "Ankle"
+    "page": 88
   },
   {
     "name": "Modular Gear (Lower Arm)",
@@ -6016,6 +6016,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [0],
+    "mountsLocation": "Elbow",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -6027,11 +6031,7 @@
     },
     "cost": [50],
     "source": "Chrome Flesh",
-    "page": 88,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [0],
-    "mountsLocation": "Elbow"
+    "page": 88
   },
   {
     "name": "Modular Gear (Lower Leg)",
@@ -6039,6 +6039,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [0],
+    "mountsLocation": "Knee",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -6054,11 +6058,7 @@
     },
     "cost": [50],
     "source": "Chrome Flesh",
-    "page": 88,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [0],
-    "mountsLocation": "Knee"
+    "page": 88
   },
   {
     "name": "Modular Gear (Full Arm)",
@@ -6066,6 +6066,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [0],
+    "mountsLocation": "Shoulder",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -6077,11 +6081,7 @@
     },
     "cost": [50],
     "source": "Chrome Flesh",
-    "page": 88,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [0],
-    "mountsLocation": "Shoulder"
+    "page": 88
   },
   {
     "name": "Modular Gear (Full Leg)",
@@ -6089,6 +6089,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [0],
+    "mountsLocation": "Hip",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -6104,11 +6108,7 @@
     },
     "cost": [50],
     "source": "Chrome Flesh",
-    "page": 88,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [0],
-    "mountsLocation": "Hip"
+    "page": 88
   },
   {
     "name": "Telescoping Limb",
@@ -6116,6 +6116,21 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Enhancement",
+    "capacityCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          3
+        ]
+      }
+    ],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -6154,22 +6169,7 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 90,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Enhancement",
-    "capacityCost": [
-      {
-        "subnumbers": [
-          {
-            "option": "Rating"
-          },
-          {
-            "operator": "*"
-          },
-          3
-        ]
-      }
-    ]
+    "page": 90
   },
   {
     "name": "Water Jet",
@@ -6177,6 +6177,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Enhancement",
+    "capacityCost": [4],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -6194,10 +6197,7 @@
     },
     "cost": [1000],
     "source": "Chrome Flesh",
-    "page": 90,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Enhancement",
-    "capacityCost": [4]
+    "page": 90
   },
   {
     "name": "Modular Connector, Wrist",
@@ -6205,6 +6205,11 @@
     "augmentationLimit": {
       "option": "Arm"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacityCost": [5],
+    "mountsLocation": "Wrist",
+    "modularMount": true,
     "essenceCost": [0.35],
     "rating": {
       "minimum": [1],
@@ -6219,12 +6224,7 @@
     },
     "cost": [2000],
     "source": "Chrome Flesh",
-    "page": 88,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacityCost": [5],
-    "mountsLocation": "Wrist",
-    "modularMount": true
+    "page": 88
   },
   {
     "name": "Modular Connector, Ankle",
@@ -6232,6 +6232,11 @@
     "augmentationLimit": {
       "option": "Leg"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacityCost": [5],
+    "mountsLocation": "Ankle",
+    "modularMount": true,
     "essenceCost": [0.35],
     "rating": {
       "minimum": [1],
@@ -6253,12 +6258,7 @@
     },
     "cost": [2000],
     "source": "Chrome Flesh",
-    "page": 88,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacityCost": [5],
-    "mountsLocation": "Ankle",
-    "modularMount": true
+    "page": 88
   },
   {
     "name": "Modular Connector, Elbow",
@@ -6266,6 +6266,11 @@
     "augmentationLimit": {
       "option": "Arm"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacityCost": [10],
+    "mountsLocation": "Elbow",
+    "modularMount": true,
     "essenceCost": [0.65],
     "rating": {
       "minimum": [1],
@@ -6280,12 +6285,7 @@
     },
     "cost": [4000],
     "source": "Chrome Flesh",
-    "page": 88,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacityCost": [10],
-    "mountsLocation": "Elbow",
-    "modularMount": true
+    "page": 88
   },
   {
     "name": "Modular Connector, Knee",
@@ -6293,6 +6293,11 @@
     "augmentationLimit": {
       "option": "Leg"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacityCost": [10],
+    "mountsLocation": "Knee",
+    "modularMount": true,
     "essenceCost": [0.65],
     "rating": {
       "minimum": [1],
@@ -6314,12 +6319,7 @@
     },
     "cost": [4000],
     "source": "Chrome Flesh",
-    "page": 88,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacityCost": [10],
-    "mountsLocation": "Knee",
-    "modularMount": true
+    "page": 88
   },
   {
     "name": "Modular Connector, Shoulder",
@@ -6327,6 +6327,13 @@
     "augmentationLimit": {
       "option": "Arm"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [0],
+    "inheritAttributes": true,
+    "limbSlot": "Arm",
+    "mountsLocation": "Shoulder",
+    "modularMount": true,
     "essenceCost": [1.3],
     "rating": {
       "minimum": [1],
@@ -6340,14 +6347,7 @@
     },
     "cost": [6000],
     "source": "Chrome Flesh",
-    "page": 88,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [0],
-    "inheritAttributes": true,
-    "limbSlot": "Arm",
-    "mountsLocation": "Shoulder",
-    "modularMount": true
+    "page": 88
   },
   {
     "name": "Modular Connector, Hip",
@@ -6355,6 +6355,13 @@
     "augmentationLimit": {
       "option": "Leg"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [0],
+    "inheritAttributes": true,
+    "limbSlot": "Leg",
+    "mountsLocation": "Hip",
+    "modularMount": true,
     "essenceCost": [1.3],
     "rating": {
       "minimum": [1],
@@ -6376,14 +6383,7 @@
     },
     "cost": [6000],
     "source": "Chrome Flesh",
-    "page": 88,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [0],
-    "inheritAttributes": true,
-    "limbSlot": "Leg",
-    "mountsLocation": "Hip",
-    "modularMount": true
+    "page": 88
   },
   {
     "name": "Partial Cyberskull",
@@ -6391,6 +6391,9 @@
     "augmentationLimit": {
       "option": "Skull"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [4],
     "essenceCost": [0.4],
     "rating": {
       "minimum": [1],
@@ -6414,10 +6417,7 @@
     },
     "cost": [8000],
     "source": "Chrome Flesh",
-    "page": 88,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [4]
+    "page": 88
   },
   {
     "name": "Improved Synthskin",
@@ -6425,6 +6425,21 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Enhancement",
+    "capacityCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          2
+        ]
+      }
+    ],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -6461,52 +6476,11 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 87,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Enhancement",
-    "capacityCost": [
-      {
-        "subnumbers": [
-          {
-            "option": "Rating"
-          },
-          {
-            "operator": "*"
-          },
-          2
-        ]
-      }
-    ]
+    "page": 87
   },
   {
     "name": "Liminal Body, Centaur",
     "description": "",
-    "essenceCost": [3],
-    "rating": {
-      "minimum": [1],
-      "maximum": [1]
-    },
-    "blockedMountList": ["Ankle", "Knee", "Hip"],
-    "bonus": {
-      "disableQualities": [
-        {
-          "name": "Celerity"
-        }
-      ],
-      "runSpeedPercentageModifier": 100,
-      "addLimb": {
-        "limbSlot": "Leg",
-        "numberOfLimbs": 2
-      }
-    },
-    "forbidden": {},
-    "availability": {
-      "rating": [12],
-      "restriction": ""
-    },
-    "cost": [80000],
-    "source": "Chrome Flesh",
-    "page": 87,
     "type": "Cyberware",
     "subtype": "Cyberlimb",
     "capacity": [80],
@@ -6532,11 +6506,41 @@
           "forced": "Right"
         }
       ]
-    }
+    },
+    "essenceCost": [3],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "blockedMountList": ["Ankle", "Knee", "Hip"],
+    "bonus": {
+      "disableQualities": [
+        {
+          "name": "Celerity"
+        }
+      ],
+      "runSpeedPercentageModifier": 100,
+      "addLimb": {
+        "limbSlot": "Leg",
+        "numberOfLimbs": 2
+      }
+    },
+    "forbidden": {},
+    "availability": {
+      "rating": [12],
+      "restriction": ""
+    },
+    "cost": [80000],
+    "source": "Chrome Flesh",
+    "page": 87
   },
   {
     "name": "Centaur Front Leg",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [20],
+    "limbSlot": "Leg",
     "essenceCost": [3],
     "rating": {
       "minimum": [1],
@@ -6547,7 +6551,6 @@
       "addPhysicalBoxes": 1
     },
     "allowedGearCategories": ["Custom", "Sensors"],
-    "userSelectable": false,
     "allowSubsystemCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
@@ -6557,21 +6560,22 @@
       "Cyber Implant Weapon",
       "Headware"
     ],
+    "userSelectable": false,
     "availability": {
       "rating": [12],
       "restriction": ""
     },
     "cost": [0],
     "source": "Chrome Flesh",
-    "page": 87,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [20],
-    "limbSlot": "Leg"
+    "page": 87
   },
   {
     "name": "Centaur Rear Leg",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [20],
+    "limbSlot": "Leg",
     "essenceCost": [3],
     "rating": {
       "minimum": [1],
@@ -6582,7 +6586,6 @@
       "addPhysicalBoxes": 1
     },
     "allowedGearCategories": ["Custom", "Sensors"],
-    "userSelectable": false,
     "allowSubsystemCategoryList": [
       "Bodyware",
       "Cosmetic Enhancement",
@@ -6592,21 +6595,23 @@
       "Cyber Implant Weapon",
       "Headware"
     ],
+    "userSelectable": false,
     "availability": {
       "rating": [12],
       "restriction": ""
     },
     "cost": [0],
     "source": "Chrome Flesh",
-    "page": 87,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [20],
-    "limbSlot": "Leg"
+    "page": 87
   },
   {
     "name": "Liminal Body, Wheeled (Full)",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [40],
+    "limbSlot": "Leg",
+    "useBothLimbSlots": true,
     "essenceCost": [2.5],
     "rating": {
       "minimum": [1],
@@ -6638,16 +6643,16 @@
     },
     "cost": [40000],
     "source": "Chrome Flesh",
-    "page": 87,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [40],
-    "limbSlot": "Leg",
-    "useBothLimbSlots": true
+    "page": 87
   },
   {
     "name": "Liminal Body, Tank (Full)",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [60],
+    "limbSlot": "Leg",
+    "useBothLimbSlots": true,
     "essenceCost": [3],
     "rating": {
       "minimum": [1],
@@ -6678,12 +6683,7 @@
     },
     "cost": [50000],
     "source": "Chrome Flesh",
-    "page": 87,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [60],
-    "limbSlot": "Leg",
-    "useBothLimbSlots": true
+    "page": 87
   },
   {
     "name": "Cyberlimb Optimization",
@@ -6691,6 +6691,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Enhancement",
+    "capacityCost": [2],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -6714,10 +6717,7 @@
     },
     "cost": [2000],
     "source": "Chrome Flesh",
-    "page": 87,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Enhancement",
-    "capacityCost": [2]
+    "page": 87
   },
   {
     "name": "Bulk Modification (Hand/Foot/Half-Skull)",
@@ -6725,6 +6725,17 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Enhancement",
+    "capacityCost": [
+      -1,
+      {
+        "operator": "*"
+      },
+      {
+        "option": "Rating"
+      }
+    ],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -6754,7 +6765,14 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 86,
+    "page": 86
+  },
+  {
+    "name": "Bulk Modification (Lower Arm/Lower Leg/Skull)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
     "type": "Cyberware",
     "subtype": "Cyberlimb Enhancement",
     "capacityCost": [
@@ -6765,14 +6783,7 @@
       {
         "option": "Rating"
       }
-    ]
-  },
-  {
-    "name": "Bulk Modification (Lower Arm/Lower Leg/Skull)",
-    "description": "",
-    "augmentationLimit": {
-      "option": "N/A"
-    },
+    ],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -6802,7 +6813,14 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 86,
+    "page": 86
+  },
+  {
+    "name": "Bulk Modification (Full Arm/Full Leg)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
     "type": "Cyberware",
     "subtype": "Cyberlimb Enhancement",
     "capacityCost": [
@@ -6813,14 +6831,7 @@
       {
         "option": "Rating"
       }
-    ]
-  },
-  {
-    "name": "Bulk Modification (Full Arm/Full Leg)",
-    "description": "",
-    "augmentationLimit": {
-      "option": "N/A"
-    },
+    ],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -6850,7 +6861,14 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 86,
+    "page": 86
+  },
+  {
+    "name": "Bulk Modification (Torso/Liminal Chassis)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
     "type": "Cyberware",
     "subtype": "Cyberlimb Enhancement",
     "capacityCost": [
@@ -6861,14 +6879,7 @@
       {
         "option": "Rating"
       }
-    ]
-  },
-  {
-    "name": "Bulk Modification (Torso/Liminal Chassis)",
-    "description": "",
-    "augmentationLimit": {
-      "option": "N/A"
-    },
+    ],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -6898,18 +6909,7 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 86,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Enhancement",
-    "capacityCost": [
-      -1,
-      {
-        "operator": "*"
-      },
-      {
-        "option": "Rating"
-      }
-    ]
+    "page": 86
   },
   {
     "name": "Custom Grenade Launcher",
@@ -6917,6 +6917,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [15],
     "essenceCost": [1.5],
     "rating": {
       "minimum": [1],
@@ -6929,10 +6932,7 @@
     },
     "cost": [20000],
     "source": "Chrome Flesh",
-    "page": 90,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [15]
+    "page": 90
   },
   {
     "name": "Custom Heavy Pistol",
@@ -6940,6 +6940,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [6],
     "essenceCost": [0.5],
     "rating": {
       "minimum": [1],
@@ -6952,10 +6955,7 @@
     },
     "cost": [3800],
     "source": "Chrome Flesh",
-    "page": 90,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [6]
+    "page": 90
   },
   {
     "name": "Custom Holdout Pistol",
@@ -6963,6 +6963,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [2],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -6975,10 +6978,7 @@
     },
     "cost": [1800],
     "source": "Chrome Flesh",
-    "page": 90,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [2]
+    "page": 90
   },
   {
     "name": "Custom Light Pistol",
@@ -6986,6 +6986,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [4],
     "essenceCost": [0.25],
     "rating": {
       "minimum": [1],
@@ -6998,10 +7001,7 @@
     },
     "cost": [3500],
     "source": "Chrome Flesh",
-    "page": 90,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [4]
+    "page": 90
   },
   {
     "name": "Custom Machine Pistol",
@@ -7009,6 +7009,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [6],
     "essenceCost": [0.5],
     "rating": {
       "minimum": [1],
@@ -7021,10 +7024,7 @@
     },
     "cost": [3000],
     "source": "Chrome Flesh",
-    "page": 90,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [6]
+    "page": 90
   },
   {
     "name": "Extreme Cyberimplant Weapon",
@@ -7032,6 +7032,9 @@
     "augmentationLimit": {
       "option": "Arm"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [5],
     "essenceCost": [0.5],
     "rating": {
       "minimum": [1],
@@ -7049,10 +7052,7 @@
     },
     "cost": [2000],
     "source": "Chrome Flesh",
-    "page": 90,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [5]
+    "page": 90
   },
   {
     "name": "Custom Shotgun",
@@ -7060,6 +7060,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [10],
     "essenceCost": [1.25],
     "rating": {
       "minimum": [1],
@@ -7072,10 +7075,7 @@
     },
     "cost": [7000],
     "source": "Chrome Flesh",
-    "page": 90,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [10]
+    "page": 90
   },
   {
     "name": "Cyberfangs",
@@ -7083,6 +7083,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [1],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -7097,10 +7100,7 @@
     },
     "cost": [200],
     "source": "Chrome Flesh",
-    "page": 90,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [1]
+    "page": 90
   },
   {
     "name": "Oral Slasher",
@@ -7108,6 +7108,9 @@
     "augmentationLimit": {
       "option": "Skull"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [3],
     "essenceCost": [0.25],
     "rating": {
       "minimum": [1],
@@ -7122,10 +7125,7 @@
     },
     "cost": [750],
     "source": "Chrome Flesh",
-    "page": 92,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [3]
+    "page": 92
   },
   {
     "name": "Weapon Launcher",
@@ -7133,6 +7133,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon Accessory",
+    "capacityCost": [2],
+    "addToParentCapacity": true,
     "essenceCost": [0.2],
     "modification": true,
     "rating": {
@@ -7146,11 +7150,7 @@
     },
     "cost": [500],
     "source": "Chrome Flesh",
-    "page": 92,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon Accessory",
-    "capacityCost": [2],
-    "addToParentCapacity": true
+    "page": 92
   },
   {
     "name": "Junkyard Jaw",
@@ -7158,6 +7158,9 @@
     "augmentationLimit": {
       "option": "Skull"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [6],
     "essenceCost": [0.75],
     "rating": {
       "minimum": [1],
@@ -7175,10 +7178,7 @@
     },
     "cost": [2000],
     "source": "Chrome Flesh",
-    "page": 91,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [6]
+    "page": 91
   },
   {
     "name": "Cyberfangs, Retractable",
@@ -7186,6 +7186,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [2],
     "essenceCost": [0.15],
     "rating": {
       "minimum": [1],
@@ -7200,10 +7203,7 @@
     },
     "cost": [500],
     "source": "Chrome Flesh",
-    "page": 90,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [2]
+    "page": 90
   },
   {
     "name": "Flametosser",
@@ -7211,6 +7211,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [8],
     "essenceCost": [1],
     "rating": {
       "minimum": [1],
@@ -7224,10 +7227,7 @@
     },
     "cost": [4000],
     "source": "Chrome Flesh",
-    "page": 91,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [8]
+    "page": 91
   },
   {
     "name": "Flametosser, Expanded Tank",
@@ -7235,6 +7235,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon Accessory",
+    "capacityCost": [2],
+    "addToParentCapacity": true,
     "essenceCost": [0.2],
     "modification": true,
     "rating": {
@@ -7250,11 +7254,7 @@
     },
     "cost": [500],
     "source": "Chrome Flesh",
-    "page": 91,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon Accessory",
-    "capacityCost": [2],
-    "addToParentCapacity": true
+    "page": 91
   },
   {
     "name": "Custom Submachine Gun",
@@ -7262,6 +7262,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [8],
     "essenceCost": [1],
     "rating": {
       "minimum": [1],
@@ -7274,14 +7277,14 @@
     },
     "cost": [4000],
     "source": "Chrome Flesh",
-    "page": 90,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [8]
+    "page": 90
   },
   {
     "name": "Voice Mimic",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Nanocybernetics",
+    "capacity": [0],
     "unavailableGrades": ["Greyware"],
     "essenceCost": [0.2],
     "rating": {
@@ -7306,14 +7309,14 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 152,
-    "type": "Cyberware",
-    "subtype": "Nanocybernetics",
-    "capacity": [0]
+    "page": 152
   },
   {
     "name": "Dynamic Handprints",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Nanocybernetics",
+    "capacity": [0],
     "unavailableGrades": ["Greyware"],
     "essenceCost": [0.2],
     "rating": {
@@ -7338,14 +7341,14 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 151,
-    "type": "Cyberware",
-    "subtype": "Nanocybernetics",
-    "capacity": [0]
+    "page": 151
   },
   {
     "name": "Flashback System",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Nanocybernetics",
+    "capacity": [0],
     "unavailableGrades": ["Greyware"],
     "essenceCost": [0.3],
     "rating": {
@@ -7358,10 +7361,7 @@
     },
     "cost": [6000],
     "source": "Chrome Flesh",
-    "page": 151,
-    "type": "Cyberware",
-    "subtype": "Nanocybernetics",
-    "capacity": [0]
+    "page": 151
   },
   {
     "name": "Nanohive, Hard",
@@ -7369,6 +7369,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Nanocybernetics",
+    "capacityCost": [2],
     "unavailableGrades": ["Greyware"],
     "essenceCost": [
       {
@@ -7418,10 +7421,7 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 151,
-    "type": "Cyberware",
-    "subtype": "Nanocybernetics",
-    "capacityCost": [2]
+    "page": 151
   },
   {
     "name": "Nanohive, Soft",
@@ -7429,6 +7429,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Nanocybernetics",
+    "capacity": [0],
     "unavailableGrades": ["Greyware"],
     "essenceCost": [
       {
@@ -7477,14 +7480,14 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 151,
-    "type": "Cyberware",
-    "subtype": "Nanocybernetics",
-    "capacity": [0]
+    "page": 151
   },
   {
     "name": "Retinal Adjusters",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Nanocybernetics",
+    "capacity": [0],
     "unavailableGrades": ["Greyware"],
     "essenceCost": [0.2],
     "rating": {
@@ -7509,14 +7512,14 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 151,
-    "type": "Cyberware",
-    "subtype": "Nanocybernetics",
-    "capacity": [0]
+    "page": 151
   },
   {
     "name": "Smartskin",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Nanocybernetics",
+    "capacity": [0],
     "unavailableGrades": ["Greyware"],
     "essenceCost": [
       {
@@ -7537,10 +7540,10 @@
     },
     "bonus": {
       "armour": {
-        "nonStacking": true,
         "bonus": {
           "option": "Rating"
-        }
+        },
+        "nonStacking": true
       }
     },
     "availability": {
@@ -7573,10 +7576,7 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 151,
-    "type": "Cyberware",
-    "subtype": "Nanocybernetics",
-    "capacity": [0]
+    "page": 151
   },
   {
     "name": "Anti-Rad",
@@ -7584,6 +7584,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Hard Nanoware",
+    "capacity": [0],
+    "forceGrade": "None",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -7607,11 +7611,7 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 147,
-    "type": "Cyberware",
-    "subtype": "Hard Nanoware",
-    "capacity": [0],
-    "forceGrade": "None"
+    "page": 147
   },
   {
     "name": "Control Rig Booster",
@@ -7619,6 +7619,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Hard Nanoware",
+    "capacity": [0],
+    "forceGrade": "None",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -7642,11 +7646,7 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 147,
-    "type": "Cyberware",
-    "subtype": "Hard Nanoware",
-    "capacity": [0],
-    "forceGrade": "None"
+    "page": 147
   },
   {
     "name": "Implant Medic",
@@ -7654,6 +7654,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Hard Nanoware",
+    "capacity": [0],
+    "forceGrade": "None",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -7673,11 +7677,7 @@
       }
     },
     "source": "Chrome Flesh",
-    "page": 147,
-    "type": "Cyberware",
-    "subtype": "Hard Nanoware",
-    "capacity": [0],
-    "forceGrade": "None"
+    "page": 147
   },
   {
     "name": "Nanite Hunters",
@@ -7685,6 +7685,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Hard Nanoware",
+    "capacity": [0],
+    "forceGrade": "None",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -7708,11 +7712,7 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 147,
-    "type": "Cyberware",
-    "subtype": "Hard Nanoware",
-    "capacity": [0],
-    "forceGrade": "None"
+    "page": 147
   },
   {
     "name": "Markers",
@@ -7720,6 +7720,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Hard Nanoware",
+    "capacity": [0],
+    "forceGrade": "None",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -7743,11 +7747,7 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 148,
-    "type": "Cyberware",
-    "subtype": "Hard Nanoware",
-    "capacity": [0],
-    "forceGrade": "None"
+    "page": 148
   },
   {
     "name": "Nanotattoos (Nanoware - Hard)",
@@ -7755,6 +7755,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Hard Nanoware",
+    "capacity": [0],
+    "forceGrade": "None",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -7778,11 +7782,7 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 148,
-    "type": "Cyberware",
-    "subtype": "Hard Nanoware",
-    "capacity": [0],
-    "forceGrade": "None"
+    "page": 148
   },
   {
     "name": "Taggants",
@@ -7790,6 +7790,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Hard Nanoware",
+    "capacity": [0],
+    "forceGrade": "None",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -7813,11 +7817,7 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 148,
-    "type": "Cyberware",
-    "subtype": "Hard Nanoware",
-    "capacity": [0],
-    "forceGrade": "None"
+    "page": 148
   },
   {
     "name": "Trauma Control System",
@@ -7825,6 +7825,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Hard Nanoware",
+    "capacity": [0],
+    "forceGrade": "None",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -7848,11 +7852,7 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 148,
-    "type": "Cyberware",
-    "subtype": "Hard Nanoware",
-    "capacity": [0],
-    "forceGrade": "None"
+    "page": 148
   },
   {
     "name": "Anti-Tox",
@@ -7860,6 +7860,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Soft Nanoware",
+    "capacity": [0],
+    "forceGrade": "None",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -7883,11 +7887,7 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 149,
-    "type": "Cyberware",
-    "subtype": "Soft Nanoware",
-    "capacity": [0],
-    "forceGrade": "None"
+    "page": 149
   },
   {
     "name": "Carcerand-Plus",
@@ -7895,6 +7895,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Soft Nanoware",
+    "capacity": [0],
+    "forceGrade": "None",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -7921,11 +7925,7 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 149,
-    "type": "Cyberware",
-    "subtype": "Soft Nanoware",
-    "capacity": [0],
-    "forceGrade": "None"
+    "page": 149
   },
   {
     "name": "Nanosymbiotes",
@@ -7933,6 +7933,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Soft Nanoware",
+    "capacity": [0],
+    "forceGrade": "None",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -7964,11 +7968,7 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 149,
-    "type": "Cyberware",
-    "subtype": "Soft Nanoware",
-    "capacity": [0],
-    "forceGrade": "None"
+    "page": 149
   },
   {
     "name": "Nantidotes",
@@ -7976,6 +7976,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Soft Nanoware",
+    "capacity": [0],
+    "forceGrade": "None",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -7999,11 +8003,7 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 149,
-    "type": "Cyberware",
-    "subtype": "Soft Nanoware",
-    "capacity": [0],
-    "forceGrade": "None"
+    "page": 149
   },
   {
     "name": "Nanotattoos",
@@ -8011,6 +8011,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Soft Nanoware",
+    "capacity": [0],
+    "forceGrade": "None",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -8034,11 +8038,7 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 150,
-    "type": "Cyberware",
-    "subtype": "Soft Nanoware",
-    "capacity": [0],
-    "forceGrade": "None"
+    "page": 150
   },
   {
     "name": "Neural Amplifiers (Learning Stimulus)",
@@ -8046,6 +8046,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Soft Nanoware",
+    "capacity": [0],
+    "forceGrade": "None",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -8095,11 +8099,7 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 149,
-    "type": "Cyberware",
-    "subtype": "Soft Nanoware",
-    "capacity": [0],
-    "forceGrade": "None"
+    "page": 149
   },
   {
     "name": "Neural Amplifiers (Limbic)",
@@ -8107,6 +8107,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Soft Nanoware",
+    "capacity": [0],
+    "forceGrade": "None",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -8130,11 +8134,7 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 149,
-    "type": "Cyberware",
-    "subtype": "Soft Nanoware",
-    "capacity": [0],
-    "forceGrade": "None"
+    "page": 149
   },
   {
     "name": "Neural Amplifiers (Neocortical)",
@@ -8142,6 +8142,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Soft Nanoware",
+    "capacity": [0],
+    "forceGrade": "None",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -8165,11 +8169,7 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 150,
-    "type": "Cyberware",
-    "subtype": "Soft Nanoware",
-    "capacity": [0],
-    "forceGrade": "None"
+    "page": 150
   },
   {
     "name": "Neural Amplifiers (Recall)",
@@ -8177,6 +8177,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Soft Nanoware",
+    "capacity": [0],
+    "forceGrade": "None",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -8207,11 +8211,7 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 150,
-    "type": "Cyberware",
-    "subtype": "Soft Nanoware",
-    "capacity": [0],
-    "forceGrade": "None"
+    "page": 150
   },
   {
     "name": "O-Cells",
@@ -8219,6 +8219,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Soft Nanoware",
+    "capacity": [0],
+    "forceGrade": "None",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -8242,11 +8246,7 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 150,
-    "type": "Cyberware",
-    "subtype": "Soft Nanoware",
-    "capacity": [0],
-    "forceGrade": "None"
+    "page": 150
   },
   {
     "name": "Oxyrush",
@@ -8254,6 +8254,10 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Soft Nanoware",
+    "capacity": [0],
+    "forceGrade": "None",
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -8282,29 +8286,11 @@
       }
     ],
     "source": "Chrome Flesh",
-    "page": 150,
-    "type": "Cyberware",
-    "subtype": "Soft Nanoware",
-    "capacity": [0],
-    "forceGrade": "None"
+    "page": 150
   },
   {
     "name": "Aztechnology Cuanmiztli A",
     "description": "",
-    "unavailableGrades": ["Greyware"],
-    "essenceCost": [3.06],
-    "rating": {
-      "minimum": [1],
-      "maximum": [1]
-    },
-    "forbidden": {},
-    "availability": {
-      "rating": [8],
-      "restriction": "R"
-    },
-    "cost": [68000],
-    "source": "Chrome Flesh",
-    "page": 92,
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
@@ -8326,25 +8312,25 @@
           "name": "Retractable Climbing Claws"
         }
       ]
-    }
-  },
-  {
-    "name": "Aztechnology Cuanmiztli B",
-    "description": "",
+    },
     "unavailableGrades": ["Greyware"],
-    "essenceCost": [5.31],
+    "essenceCost": [3.06],
     "rating": {
       "minimum": [1],
       "maximum": [1]
     },
     "forbidden": {},
     "availability": {
-      "rating": [12],
-      "restriction": "F"
+      "rating": [8],
+      "restriction": "R"
     },
-    "cost": [222000],
+    "cost": [68000],
     "source": "Chrome Flesh",
-    "page": 92,
+    "page": 92
+  },
+  {
+    "name": "Aztechnology Cuanmiztli B",
+    "description": "",
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
@@ -8370,24 +8356,25 @@
           "name": "Spurs"
         }
       ]
-    }
-  },
-  {
-    "name": "Evo Atlantis",
-    "description": "",
+    },
     "unavailableGrades": ["Greyware"],
-    "essenceCost": [0.72],
+    "essenceCost": [5.31],
     "rating": {
       "minimum": [1],
       "maximum": [1]
     },
+    "forbidden": {},
     "availability": {
-      "rating": [8],
-      "restriction": ""
+      "rating": [12],
+      "restriction": "F"
     },
-    "cost": [16000],
+    "cost": [222000],
     "source": "Chrome Flesh",
-    "page": 93,
+    "page": 92
+  },
+  {
+    "name": "Evo Atlantis",
+    "description": "",
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
@@ -8417,25 +8404,24 @@
           "name": "Low-Light Vision"
         }
       ]
-    }
-  },
-  {
-    "name": "Horizon Experience!",
-    "description": "",
+    },
     "unavailableGrades": ["Greyware"],
-    "essenceCost": [1.08],
+    "essenceCost": [0.72],
     "rating": {
       "minimum": [1],
       "maximum": [1]
     },
-    "forbidden": {},
     "availability": {
-      "rating": [12],
-      "restriction": "R"
+      "rating": [8],
+      "restriction": ""
     },
-    "cost": [20000],
+    "cost": [16000],
     "source": "Chrome Flesh",
-    "page": 93,
+    "page": 93
+  },
+  {
+    "name": "Horizon Experience!",
+    "description": "",
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
@@ -8468,13 +8454,9 @@
           "name": "Touch Link"
         }
       ]
-    }
-  },
-  {
-    "name": "Renraku Tradejack",
-    "description": "",
+    },
     "unavailableGrades": ["Greyware"],
-    "essenceCost": [0.9],
+    "essenceCost": [1.08],
     "rating": {
       "minimum": [1],
       "maximum": [1]
@@ -8482,11 +8464,15 @@
     "forbidden": {},
     "availability": {
       "rating": [12],
-      "restriction": ""
+      "restriction": "R"
     },
-    "cost": [124000],
+    "cost": [20000],
     "source": "Chrome Flesh",
-    "page": 93,
+    "page": 93
+  },
+  {
+    "name": "Renraku Tradejack",
+    "description": "",
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
@@ -8506,24 +8492,25 @@
           "rating": 4
         }
       ]
-    }
-  },
-  {
-    "name": "Saeder-Krupp Cyberlogician",
-    "description": "",
+    },
     "unavailableGrades": ["Greyware"],
-    "essenceCost": [0.81],
+    "essenceCost": [0.9],
     "rating": {
       "minimum": [1],
       "maximum": [1]
     },
+    "forbidden": {},
     "availability": {
       "rating": [12],
       "restriction": ""
     },
-    "cost": [16000],
+    "cost": [124000],
     "source": "Chrome Flesh",
-    "page": 93,
+    "page": 93
+  },
+  {
+    "name": "Saeder-Krupp Cyberlogician",
+    "description": "",
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
@@ -8556,24 +8543,24 @@
           "name": "Attention Coprocessor"
         }
       ]
-    }
-  },
-  {
-    "name": "Shiawase Kacho",
-    "description": "",
+    },
     "unavailableGrades": ["Greyware"],
-    "essenceCost": [0.45],
+    "essenceCost": [0.81],
     "rating": {
       "minimum": [1],
       "maximum": [1]
     },
     "availability": {
-      "rating": [4],
+      "rating": [12],
       "restriction": ""
     },
-    "cost": [6000],
+    "cost": [16000],
     "source": "Chrome Flesh",
-    "page": 93,
+    "page": 93
+  },
+  {
+    "name": "Shiawase Kacho",
+    "description": "",
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
@@ -8599,7 +8586,20 @@
           "name": "Sound Link"
         }
       ]
-    }
+    },
+    "unavailableGrades": ["Greyware"],
+    "essenceCost": [0.45],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [6000],
+    "source": "Chrome Flesh",
+    "page": 93
   },
   {
     "name": "STATscan",
@@ -8607,6 +8607,9 @@
     "augmentationLimit": {
       "option": "Arm"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Accessory",
+    "capacityCost": [2],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -8620,10 +8623,7 @@
     },
     "cost": [2500],
     "source": "Bullets And Bandages",
-    "page": 22,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Accessory",
-    "capacityCost": [2]
+    "page": 22
   },
   {
     "name": "Cybergland",
@@ -8631,6 +8631,13 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacityCost": [
+      {
+        "option": "Rating"
+      }
+    ],
     "essenceCost": [
       {
         "subnumbers": [
@@ -8678,18 +8685,14 @@
       }
     ],
     "source": "Hard Targets",
-    "page": 186,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacityCost": [
-      {
-        "option": "Rating"
-      }
-    ]
+    "page": 186
   },
   {
     "name": "Infrasonic Generator",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacityCost": [2],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -8725,10 +8728,7 @@
       }
     ],
     "source": "Hard Targets",
-    "page": 186,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacityCost": [2]
+    "page": 186
   },
   {
     "name": "Cyberarm Reloading Slide",
@@ -8736,6 +8736,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Accessory",
+    "capacityCost": [3],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -8749,10 +8752,7 @@
     },
     "cost": [2750],
     "source": "Hard Targets",
-    "page": 187,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Accessory",
-    "capacityCost": [3]
+    "page": 187
   },
   {
     "name": "Cybertorso Reloading Rail",
@@ -8760,6 +8760,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Accessory",
+    "capacityCost": [5],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -8772,10 +8775,7 @@
     },
     "cost": [3500],
     "source": "Hard Targets",
-    "page": 187,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Accessory",
-    "capacityCost": [5]
+    "page": 187
   },
   {
     "name": "Overclocked",
@@ -8783,6 +8783,11 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon Accessory",
+    "capacityCost": [0],
+    "addToParentCapacity": true,
+    "addParentWeaponAccessory": true,
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -8795,12 +8800,7 @@
     },
     "cost": [200],
     "source": "Hard Targets",
-    "page": 182,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon Accessory",
-    "capacityCost": [0],
-    "addToParentCapacity": true,
-    "addParentWeaponAccessory": true
+    "page": 182
   },
   {
     "name": "Cyberfinger (Credstick)",
@@ -8808,6 +8808,9 @@
     "augmentationLimit": {
       "option": "Finger"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Enhancement",
+    "capacityCost": [1],
     "essenceCost": [0.05],
     "rating": {
       "minimum": [1],
@@ -8821,10 +8824,7 @@
     },
     "cost": [500],
     "source": "Hard Targets",
-    "page": 186,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Enhancement",
-    "capacityCost": [1]
+    "page": 186
   },
   {
     "name": "Cyberfinger (Glass Cutter)",
@@ -8832,6 +8832,9 @@
     "augmentationLimit": {
       "option": "Finger"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Enhancement",
+    "capacityCost": [1],
     "essenceCost": [0.05],
     "rating": {
       "minimum": [1],
@@ -8845,10 +8848,7 @@
     },
     "cost": [550],
     "source": "Hard Targets",
-    "page": 186,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Enhancement",
-    "capacityCost": [1]
+    "page": 186
   },
   {
     "name": "Cyberfinger (Injector)",
@@ -8856,6 +8856,9 @@
     "augmentationLimit": {
       "option": "Finger"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Enhancement",
+    "capacityCost": [1],
     "essenceCost": [0.05],
     "rating": {
       "minimum": [1],
@@ -8870,10 +8873,7 @@
     },
     "cost": [650],
     "source": "Hard Targets",
-    "page": 186,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Enhancement",
-    "capacityCost": [1]
+    "page": 186
   },
   {
     "name": "Cyberfinger (Lockpick)",
@@ -8881,6 +8881,9 @@
     "augmentationLimit": {
       "option": "Finger"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb Enhancement",
+    "capacityCost": [1],
     "essenceCost": [0.05],
     "rating": {
       "minimum": [1],
@@ -8894,10 +8897,7 @@
     },
     "cost": [750],
     "source": "Hard Targets",
-    "page": 186,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb Enhancement",
-    "capacityCost": [1]
+    "page": 186
   },
   {
     "name": "Foot Blade",
@@ -8905,6 +8905,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacity": [0],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -8918,28 +8921,11 @@
     },
     "cost": [28000],
     "source": "Hard Targets",
-    "page": 185,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacity": [0]
+    "page": 185
   },
   {
     "name": "Spinrad Just a Little Edge",
     "description": "",
-    "unavailableGrades": ["Used", "Greyware"],
-    "essenceCost": [3.5],
-    "rating": {
-      "minimum": [1],
-      "maximum": [1]
-    },
-    "forbidden": {},
-    "availability": {
-      "rating": [10],
-      "restriction": "R"
-    },
-    "cost": [125000],
-    "source": "Lockdown",
-    "page": 205,
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
@@ -8966,25 +8952,25 @@
           "rating": 1
         }
       ]
-    }
-  },
-  {
-    "name": "Spinrad Peak Performance",
-    "description": "",
+    },
     "unavailableGrades": ["Used", "Greyware"],
-    "essenceCost": [5],
+    "essenceCost": [3.5],
     "rating": {
       "minimum": [1],
       "maximum": [1]
     },
     "forbidden": {},
     "availability": {
-      "rating": [14],
+      "rating": [10],
       "restriction": "R"
     },
-    "cost": [195000],
+    "cost": [125000],
     "source": "Lockdown",
-    "page": 205,
+    "page": 205
+  },
+  {
+    "name": "Spinrad Peak Performance",
+    "description": "",
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
@@ -9015,13 +9001,9 @@
           "rating": 2
         }
       ]
-    }
-  },
-  {
-    "name": "Spinrad Super Athlete",
-    "description": "",
+    },
     "unavailableGrades": ["Used", "Greyware"],
-    "essenceCost": [4.5],
+    "essenceCost": [5],
     "rating": {
       "minimum": [1],
       "maximum": [1]
@@ -9031,9 +9013,13 @@
       "rating": [14],
       "restriction": "R"
     },
-    "cost": [325000],
+    "cost": [195000],
     "source": "Lockdown",
-    "page": 205,
+    "page": 205
+  },
+  {
+    "name": "Spinrad Super Athlete",
+    "description": "",
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
@@ -9064,26 +9050,25 @@
           "rating": 2
         }
       ]
-    }
-  },
-  {
-    "name": "Evo Freak",
-    "description": "",
+    },
     "unavailableGrades": ["Used", "Greyware"],
     "essenceCost": [4.5],
     "rating": {
       "minimum": [1],
       "maximum": [1]
     },
-    "blockedMountList": ["Ankle", "Knee", "Wrist", "Elbow", "Hip", "Shoulder"],
     "forbidden": {},
     "availability": {
-      "rating": [18],
+      "rating": [14],
       "restriction": "R"
     },
-    "cost": [150000],
+    "cost": [325000],
     "source": "Lockdown",
-    "page": 206,
+    "page": 205
+  },
+  {
+    "name": "Evo Freak",
+    "description": "",
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
@@ -9126,11 +9111,7 @@
           "rating": 2
         }
       ]
-    }
-  },
-  {
-    "name": "Evo Better Than Human",
-    "description": "",
+    },
     "unavailableGrades": ["Used", "Greyware"],
     "essenceCost": [4.5],
     "rating": {
@@ -9140,12 +9121,16 @@
     "blockedMountList": ["Ankle", "Knee", "Wrist", "Elbow", "Hip", "Shoulder"],
     "forbidden": {},
     "availability": {
-      "rating": [16],
+      "rating": [18],
       "restriction": "R"
     },
-    "cost": [275000],
+    "cost": [150000],
     "source": "Lockdown",
-    "page": 206,
+    "page": 206
+  },
+  {
+    "name": "Evo Better Than Human",
+    "description": "",
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
@@ -9192,13 +9177,9 @@
           "rating": 1
         }
       ]
-    }
-  },
-  {
-    "name": "Evo InHuman",
-    "description": "",
+    },
     "unavailableGrades": ["Used", "Greyware"],
-    "essenceCost": [5],
+    "essenceCost": [4.5],
     "rating": {
       "minimum": [1],
       "maximum": [1]
@@ -9206,12 +9187,16 @@
     "blockedMountList": ["Ankle", "Knee", "Wrist", "Elbow", "Hip", "Shoulder"],
     "forbidden": {},
     "availability": {
-      "rating": [18],
+      "rating": [16],
       "restriction": "R"
     },
-    "cost": [175000],
+    "cost": [275000],
     "source": "Lockdown",
-    "page": 206,
+    "page": 206
+  },
+  {
+    "name": "Evo InHuman",
+    "description": "",
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
@@ -9253,11 +9238,75 @@
           "name": "Obvious Torso"
         }
       ]
-    }
+    },
+    "unavailableGrades": ["Used", "Greyware"],
+    "essenceCost": [5],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "blockedMountList": ["Ankle", "Knee", "Wrist", "Elbow", "Hip", "Shoulder"],
+    "forbidden": {},
+    "availability": {
+      "rating": [18],
+      "restriction": "R"
+    },
+    "cost": [175000],
+    "source": "Lockdown",
+    "page": 206
   },
   {
     "name": "Transys-Erika Mind Boost",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Cybersuite",
+    "capacity": [0],
+    "inheritAttributes": true,
+    "includedSubsystemList": {
+      "cyberwareList": [
+        {
+          "name": "Commlink",
+          "gearList": [
+            {
+              "baseGear": "Transys Avalon",
+              "category": "Commlinks"
+            }
+          ]
+        },
+        {
+          "name": "Cybereyes Basic System",
+          "rating": 1
+        },
+        {
+          "name": "Cyberears",
+          "rating": 1
+        },
+        {
+          "name": "Datajack"
+        },
+        {
+          "name": "Simrig"
+        },
+        {
+          "name": "Skilljack",
+          "rating": 2
+        },
+        {
+          "name": "Skillwires",
+          "rating": 2
+        }
+      ],
+      "biowareList": [
+        {
+          "name": "Cerebral Booster",
+          "rating": 1
+        },
+        {
+          "name": "Mnemonic Enhancer",
+          "rating": 1
+        }
+      ]
+    },
     "unavailableGrades": ["Used", "Greyware"],
     "essenceCost": [1],
     "rating": {
@@ -9271,7 +9320,11 @@
     },
     "cost": [185000],
     "source": "Lockdown",
-    "page": 206,
+    "page": 206
+  },
+  {
+    "name": "Transys-Erika Mental Gymnast",
+    "description": "",
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
@@ -9289,11 +9342,11 @@
         },
         {
           "name": "Cybereyes Basic System",
-          "rating": 1
+          "rating": 2
         },
         {
           "name": "Cyberears",
-          "rating": 1
+          "rating": 2
         },
         {
           "name": "Datajack"
@@ -9303,28 +9356,24 @@
         },
         {
           "name": "Skilljack",
-          "rating": 2
+          "rating": 4
         },
         {
           "name": "Skillwires",
-          "rating": 2
+          "rating": 4
         }
       ],
       "biowareList": [
         {
           "name": "Cerebral Booster",
-          "rating": 1
+          "rating": 3
         },
         {
           "name": "Mnemonic Enhancer",
-          "rating": 1
+          "rating": 3
         }
       ]
-    }
-  },
-  {
-    "name": "Transys-Erika Mental Gymnast",
-    "description": "",
+    },
     "unavailableGrades": ["Used", "Greyware"],
     "essenceCost": [2],
     "rating": {
@@ -9338,74 +9387,11 @@
     },
     "cost": [375000],
     "source": "Lockdown",
-    "page": 207,
-    "type": "Cyberware",
-    "subtype": "Cybersuite",
-    "capacity": [0],
-    "inheritAttributes": true,
-    "includedSubsystemList": {
-      "cyberwareList": [
-        {
-          "name": "Commlink",
-          "gearList": [
-            {
-              "baseGear": "Transys Avalon",
-              "category": "Commlinks"
-            }
-          ]
-        },
-        {
-          "name": "Cybereyes Basic System",
-          "rating": 2
-        },
-        {
-          "name": "Cyberears",
-          "rating": 2
-        },
-        {
-          "name": "Datajack"
-        },
-        {
-          "name": "Simrig"
-        },
-        {
-          "name": "Skilljack",
-          "rating": 4
-        },
-        {
-          "name": "Skillwires",
-          "rating": 4
-        }
-      ],
-      "biowareList": [
-        {
-          "name": "Cerebral Booster",
-          "rating": 3
-        },
-        {
-          "name": "Mnemonic Enhancer",
-          "rating": 3
-        }
-      ]
-    }
+    "page": 207
   },
   {
     "name": "Transys-Erika Front Line Mind",
     "description": "",
-    "unavailableGrades": ["Used", "Greyware"],
-    "essenceCost": [4.5],
-    "rating": {
-      "minimum": [1],
-      "maximum": [1]
-    },
-    "forbidden": {},
-    "availability": {
-      "rating": [14],
-      "restriction": ""
-    },
-    "cost": [575000],
-    "source": "Lockdown",
-    "page": 207,
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
@@ -9466,26 +9452,25 @@
           "rating": 2
         }
       ]
-    }
-  },
-  {
-    "name": "Sony Cybersystems Infiltrator",
-    "description": "",
+    },
     "unavailableGrades": ["Used", "Greyware"],
-    "essenceCost": [3],
+    "essenceCost": [4.5],
     "rating": {
       "minimum": [1],
       "maximum": [1]
     },
-    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "forbidden": {},
     "availability": {
       "rating": [14],
-      "restriction": "R"
+      "restriction": ""
     },
-    "cost": [210000],
+    "cost": [575000],
     "source": "Lockdown",
-    "page": 207,
+    "page": 207
+  },
+  {
+    "name": "Sony Cybersystems Infiltrator",
+    "description": "",
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
@@ -9527,25 +9512,26 @@
           "name": "Enhanced Articulation"
         }
       ]
-    }
-  },
-  {
-    "name": "Sony Cybersystems Field Operative",
-    "description": "",
+    },
     "unavailableGrades": ["Used", "Greyware"],
-    "essenceCost": [2.5],
+    "essenceCost": [3],
     "rating": {
       "minimum": [1],
       "maximum": [1]
     },
+    "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "forbidden": {},
     "availability": {
-      "rating": [10],
+      "rating": [14],
       "restriction": "R"
     },
-    "cost": [120000],
+    "cost": [210000],
     "source": "Lockdown",
-    "page": 207,
+    "page": 207
+  },
+  {
+    "name": "Sony Cybersystems Field Operative",
+    "description": "",
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
@@ -9584,25 +9570,25 @@
           "forced": "Pistols"
         }
       ]
-    }
-  },
-  {
-    "name": "Sony Cybersystems Ultimate Warrior",
-    "description": "",
+    },
     "unavailableGrades": ["Used", "Greyware"],
-    "essenceCost": [5],
+    "essenceCost": [2.5],
     "rating": {
       "minimum": [1],
       "maximum": [1]
     },
     "forbidden": {},
     "availability": {
-      "rating": [22],
+      "rating": [10],
       "restriction": "R"
     },
-    "cost": [725000],
+    "cost": [120000],
     "source": "Lockdown",
-    "page": 207,
+    "page": 207
+  },
+  {
+    "name": "Sony Cybersystems Ultimate Warrior",
+    "description": "",
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
@@ -9655,25 +9641,25 @@
           "name": "Suprathyroid Gland"
         }
       ]
-    }
-  },
-  {
-    "name": "MCT Kaisatsu",
-    "description": "",
+    },
     "unavailableGrades": ["Used", "Greyware"],
-    "essenceCost": [2],
+    "essenceCost": [5],
     "rating": {
       "minimum": [1],
       "maximum": [1]
     },
     "forbidden": {},
     "availability": {
-      "rating": [10],
+      "rating": [22],
       "restriction": "R"
     },
-    "cost": [120000],
+    "cost": [725000],
     "source": "Lockdown",
-    "page": 207,
+    "page": 207
+  },
+  {
+    "name": "MCT Kaisatsu",
+    "description": "",
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
@@ -9709,25 +9695,25 @@
           "rating": 1
         }
       ]
-    }
-  },
-  {
-    "name": "MCT Abunai",
-    "description": "",
+    },
     "unavailableGrades": ["Used", "Greyware"],
-    "essenceCost": [3.5],
+    "essenceCost": [2],
     "rating": {
       "minimum": [1],
       "maximum": [1]
     },
     "forbidden": {},
     "availability": {
-      "rating": [14],
+      "rating": [10],
       "restriction": "R"
     },
-    "cost": [345000],
+    "cost": [120000],
     "source": "Lockdown",
-    "page": 207,
+    "page": 207
+  },
+  {
+    "name": "MCT Abunai",
+    "description": "",
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
@@ -9753,25 +9739,25 @@
           "rating": 2
         }
       ]
-    }
-  },
-  {
-    "name": "MCT Kuro",
-    "description": "",
+    },
     "unavailableGrades": ["Used", "Greyware"],
-    "essenceCost": [5.25],
+    "essenceCost": [3.5],
     "rating": {
       "minimum": [1],
       "maximum": [1]
     },
     "forbidden": {},
     "availability": {
-      "rating": [22],
+      "rating": [14],
       "restriction": "R"
     },
-    "cost": [725000],
+    "cost": [345000],
     "source": "Lockdown",
-    "page": 207,
+    "page": 207
+  },
+  {
+    "name": "MCT Kuro",
+    "description": "",
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
@@ -9824,11 +9810,28 @@
           "rating": 3
         }
       ]
-    }
+    },
+    "unavailableGrades": ["Used", "Greyware"],
+    "essenceCost": [5.25],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "forbidden": {},
+    "availability": {
+      "rating": [22],
+      "restriction": "R"
+    },
+    "cost": [725000],
+    "source": "Lockdown",
+    "page": 207
   },
   {
     "name": "Chameleon Pelt",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Special Biodrone Cyberware",
+    "capacity": [0],
     "unavailableGrades": ["Greyware"],
     "essenceCost": [
       {
@@ -9865,14 +9868,14 @@
       }
     ],
     "source": "Howling Shadows",
-    "page": 181,
-    "type": "Cyberware",
-    "subtype": "Special Biodrone Cyberware",
-    "capacity": [0]
+    "page": 181
   },
   {
     "name": "CAST",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Special Biodrone Cyberware",
+    "capacity": [0],
     "unavailableGrades": ["Greyware"],
     "essenceCost": [0.5],
     "rating": {
@@ -9885,14 +9888,14 @@
     },
     "cost": [25000],
     "source": "Howling Shadows",
-    "page": 181,
-    "type": "Cyberware",
-    "subtype": "Special Biodrone Cyberware",
-    "capacity": [0]
+    "page": 181
   },
   {
     "name": "CAST w/ Friend or Foe Recognition",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Special Biodrone Cyberware",
+    "capacity": [0],
     "unavailableGrades": ["Greyware"],
     "essenceCost": [0.5],
     "rating": {
@@ -9905,14 +9908,14 @@
     },
     "cost": [30000],
     "source": "Howling Shadows",
-    "page": 181,
-    "type": "Cyberware",
-    "subtype": "Special Biodrone Cyberware",
-    "capacity": [0]
+    "page": 181
   },
   {
     "name": "Orientation Goad",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Special Biodrone Cyberware",
+    "capacity": [0],
     "unavailableGrades": ["Greyware"],
     "essenceCost": [0.1],
     "rating": {
@@ -9925,14 +9928,14 @@
     },
     "cost": [500],
     "source": "Howling Shadows",
-    "page": 181,
-    "type": "Cyberware",
-    "subtype": "Special Biodrone Cyberware",
-    "capacity": [0]
+    "page": 181
   },
   {
     "name": "Stirrup Interface",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Special Biodrone Cyberware",
+    "capacity": [0],
     "unavailableGrades": ["Greyware"],
     "essenceCost": [
       2.2,
@@ -9979,14 +9982,14 @@
       "ratingLinked": [[45000], [135000], [220000]]
     },
     "source": "Howling Shadows",
-    "page": 182,
-    "type": "Cyberware",
-    "subtype": "Special Biodrone Cyberware",
-    "capacity": [0]
+    "page": 182
   },
   {
     "name": "SEIS",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Special Biodrone Cyberware",
+    "capacity": [0],
     "unavailableGrades": ["Greyware"],
     "essenceCost": [0.7],
     "rating": {
@@ -9999,14 +10002,14 @@
     },
     "cost": [20000],
     "source": "Howling Shadows",
-    "page": 182,
-    "type": "Cyberware",
-    "subtype": "Special Biodrone Cyberware",
-    "capacity": [0]
+    "page": 182
   },
   {
     "name": "TRACES",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Special Biodrone Cyberware",
+    "capacity": [0],
     "unavailableGrades": ["Greyware"],
     "essenceCost": [0.7],
     "rating": {
@@ -10019,10 +10022,7 @@
     },
     "cost": [25000],
     "source": "Howling Shadows",
-    "page": 182,
-    "type": "Cyberware",
-    "subtype": "Special Biodrone Cyberware",
-    "capacity": [0]
+    "page": 182
   },
   {
     "name": "Datajack (2050)",
@@ -10030,6 +10030,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -10041,14 +10044,14 @@
     },
     "cost": [1000],
     "source": "Shadowrun 2050",
-    "page": 199,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacity": [0]
+    "page": 199
   },
   {
     "name": "Chipjack (2050)",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0],
     "essenceCost": [
       {
         "subnumbers": [
@@ -10091,10 +10094,7 @@
       }
     ],
     "source": "Shadowrun 2050",
-    "page": 199,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacity": [0]
+    "page": 199
   },
   {
     "name": "Cortex Bomb (2050)",
@@ -10102,6 +10102,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -10113,10 +10116,7 @@
     },
     "cost": [40000],
     "source": "Shadowrun 2050",
-    "page": 199,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacity": [0]
+    "page": 199
   },
   {
     "name": "Data Lock (2050)",
@@ -10124,6 +10124,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -10135,10 +10138,7 @@
     },
     "cost": [1000],
     "source": "Shadowrun 2050",
-    "page": 199,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacity": [0]
+    "page": 199
   },
   {
     "name": "Radio (2050)",
@@ -10146,6 +10146,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0],
     "essenceCost": [0.75],
     "rating": {
       "minimum": [1],
@@ -10157,14 +10160,14 @@
     },
     "cost": [4000],
     "source": "Shadowrun 2050",
-    "page": 199,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacity": [0]
+    "page": 199
   },
   {
     "name": "Headware Memory (2050)",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0],
     "essenceCost": [
       {
         "subnumbers": [
@@ -10220,10 +10223,7 @@
       }
     ],
     "source": "Shadowrun 2050",
-    "page": 199,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacity": [0]
+    "page": 199
   },
   {
     "name": "Telephone (2050)",
@@ -10231,6 +10231,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0],
     "essenceCost": [0.5],
     "rating": {
       "minimum": [1],
@@ -10242,14 +10245,14 @@
     },
     "cost": [3700],
     "source": "Shadowrun 2050",
-    "page": 199,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacity": [0]
+    "page": 199
   },
   {
     "name": "Cybereyes (2050)",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacity": [4],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -10263,10 +10266,7 @@
     },
     "cost": [5000],
     "source": "Shadowrun 2050",
-    "page": 201,
-    "type": "Cyberware",
-    "subtype": "Eyeware",
-    "capacity": [4]
+    "page": 201
   },
   {
     "name": "Camera (2050)",
@@ -10274,6 +10274,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacityCost": [1],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -10285,10 +10288,7 @@
     },
     "cost": [5000],
     "source": "Shadowrun 2050",
-    "page": 201,
-    "type": "Cyberware",
-    "subtype": "Eyeware",
-    "capacityCost": [1]
+    "page": 201
   },
   {
     "name": "Flare Compensation (2050)",
@@ -10296,6 +10296,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacityCost": [1],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -10307,10 +10310,7 @@
     },
     "cost": [2000],
     "source": "Shadowrun 2050",
-    "page": 201,
-    "type": "Cyberware",
-    "subtype": "Eyeware",
-    "capacityCost": [1]
+    "page": 201
   },
   {
     "name": "Display Link (2050)",
@@ -10318,6 +10318,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacityCost": [1],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -10329,10 +10332,7 @@
     },
     "cost": [1000],
     "source": "Shadowrun 2050",
-    "page": 201,
-    "type": "Cyberware",
-    "subtype": "Eyeware",
-    "capacityCost": [1]
+    "page": 201
   },
   {
     "name": "Thermographic (2050)",
@@ -10340,6 +10340,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacityCost": [1],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -10351,10 +10354,7 @@
     },
     "cost": [3000],
     "source": "Shadowrun 2050",
-    "page": 201,
-    "type": "Cyberware",
-    "subtype": "Eyeware",
-    "capacityCost": [1]
+    "page": 201
   },
   {
     "name": "Cosmetic Modifications: Eye (2050)",
@@ -10362,6 +10362,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacity": [0],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -10373,10 +10376,7 @@
     },
     "cost": [1000],
     "source": "Shadowrun 2050",
-    "page": 201,
-    "type": "Cyberware",
-    "subtype": "Eyeware",
-    "capacity": [0]
+    "page": 201
   },
   {
     "name": "Cosmetic Modifications: Ear (2050)",
@@ -10384,6 +10384,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Earware",
+    "capacity": [0],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -10395,10 +10398,7 @@
     },
     "cost": [1000],
     "source": "Shadowrun 2050",
-    "page": 201,
-    "type": "Cyberware",
-    "subtype": "Earware",
-    "capacity": [0]
+    "page": 201
   },
   {
     "name": "Low-Light (2050)",
@@ -10406,6 +10406,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacityCost": [1],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -10417,10 +10420,7 @@
     },
     "cost": [3000],
     "source": "Shadowrun 2050",
-    "page": 201,
-    "type": "Cyberware",
-    "subtype": "Eyeware",
-    "capacityCost": [1]
+    "page": 201
   },
   {
     "name": "Retinal Duplication (2050)",
@@ -10428,6 +10428,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacityCost": [1],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -10451,10 +10454,7 @@
       }
     ],
     "source": "Shadowrun 2050",
-    "page": 201,
-    "type": "Cyberware",
-    "subtype": "Eyeware",
-    "capacityCost": [1]
+    "page": 201
   },
   {
     "name": "Vision Magnification (2050)",
@@ -10462,6 +10462,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Eyeware",
+    "capacityCost": [2],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -10473,14 +10476,21 @@
     },
     "cost": [8500],
     "source": "Shadowrun 2050",
-    "page": 201,
-    "type": "Cyberware",
-    "subtype": "Eyeware",
-    "capacityCost": [2]
+    "page": 201
   },
   {
     "name": "Cyberears (2050)",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Earware",
+    "capacity": [4],
+    "includedSubsystemList": {
+      "cyberwareList": [
+        {
+          "name": "Sound Link"
+        }
+      ]
+    },
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -10494,21 +10504,14 @@
     },
     "cost": [5000],
     "source": "Shadowrun 2050",
-    "page": 201,
-    "type": "Cyberware",
-    "subtype": "Earware",
-    "capacity": [4],
-    "includedSubsystemList": {
-      "cyberwareList": [
-        {
-          "name": "Sound Link"
-        }
-      ]
-    }
+    "page": 201
   },
   {
     "name": "Hearing Amplification (2050)",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Earware",
+    "capacityCost": [1],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -10520,14 +10523,14 @@
     },
     "cost": [3500],
     "source": "Shadowrun 2050",
-    "page": 201,
-    "type": "Cyberware",
-    "subtype": "Earware",
-    "capacityCost": [1]
+    "page": 201
   },
   {
     "name": "Damper (2050)",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Earware",
+    "capacityCost": [1],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -10539,14 +10542,14 @@
     },
     "cost": [3500],
     "source": "Shadowrun 2050",
-    "page": 201,
-    "type": "Cyberware",
-    "subtype": "Earware",
-    "capacityCost": [1]
+    "page": 201
   },
   {
     "name": "Expanded Frequency (2050)",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Earware",
+    "capacityCost": [1],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -10558,14 +10561,14 @@
     },
     "cost": [6000],
     "source": "Shadowrun 2050",
-    "page": 201,
-    "type": "Cyberware",
-    "subtype": "Earware",
-    "capacityCost": [1]
+    "page": 201
   },
   {
     "name": "Sound Recorder (2050)",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Earware",
+    "capacityCost": [1],
     "essenceCost": [0.3],
     "rating": {
       "minimum": [1],
@@ -10577,10 +10580,7 @@
     },
     "cost": [7000],
     "source": "Shadowrun 2050",
-    "page": 201,
-    "type": "Cyberware",
-    "subtype": "Earware",
-    "capacityCost": [1]
+    "page": 201
   },
   {
     "name": "Cyberlimb Full Arm, Obvious (2050)",
@@ -10588,6 +10588,10 @@
     "augmentationLimit": {
       "option": "Arm"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [15],
+    "limbSlot": "Arm",
     "essenceCost": [1],
     "rating": {
       "minimum": [1],
@@ -10614,11 +10618,7 @@
     },
     "cost": [45000],
     "source": "Shadowrun 2050",
-    "page": 203,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [15],
-    "limbSlot": "Arm"
+    "page": 203
   },
   {
     "name": "Cyberlimb Full Leg, Obvious (2050)",
@@ -10626,6 +10626,10 @@
     "augmentationLimit": {
       "option": "Leg"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [20],
+    "limbSlot": "Leg",
     "essenceCost": [1],
     "rating": {
       "minimum": [1],
@@ -10652,11 +10656,7 @@
     },
     "cost": [45000],
     "source": "Shadowrun 2050",
-    "page": 203,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [20],
-    "limbSlot": "Leg"
+    "page": 203
   },
   {
     "name": "Cyberlimb Full Arm, Synthetic (2050)",
@@ -10664,6 +10664,10 @@
     "augmentationLimit": {
       "option": "Arm"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [8],
+    "limbSlot": "Arm",
     "essenceCost": [1],
     "rating": {
       "minimum": [1],
@@ -10690,11 +10694,7 @@
     },
     "cost": [50000],
     "source": "Shadowrun 2050",
-    "page": 203,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [8],
-    "limbSlot": "Arm"
+    "page": 203
   },
   {
     "name": "Cyberlimb Full Leg, Synthetic (2050)",
@@ -10702,6 +10702,10 @@
     "augmentationLimit": {
       "option": "Leg"
     },
+    "type": "Cyberware",
+    "subtype": "Cyberlimb",
+    "capacity": [10],
+    "limbSlot": "Leg",
     "essenceCost": [1],
     "rating": {
       "minimum": [1],
@@ -10728,11 +10732,7 @@
     },
     "cost": [50000],
     "source": "Shadowrun 2050",
-    "page": 203,
-    "type": "Cyberware",
-    "subtype": "Cyberlimb",
-    "capacity": [10],
-    "limbSlot": "Leg"
+    "page": 203
   },
   {
     "name": "Cyberlimb Customization, Strength (2050)",
@@ -10740,6 +10740,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacityCost": [0],
     "essenceCost": [0],
     "rating": {
       "minimum": [
@@ -10804,10 +10807,7 @@
       }
     ],
     "source": "Shadowrun 2050",
-    "page": 203,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacityCost": [0]
+    "page": 203
   },
   {
     "name": "Cyberlimb Customization, Agility (2050)",
@@ -10815,6 +10815,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacityCost": [0],
     "essenceCost": [0],
     "rating": {
       "minimum": [
@@ -10879,10 +10882,7 @@
       }
     ],
     "source": "Shadowrun 2050",
-    "page": 203,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacityCost": [0]
+    "page": 203
   },
   {
     "name": "Cyberlimb Augmentation, Armor (2050)",
@@ -10890,6 +10890,13 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacityCost": [
+      {
+        "option": "Rating"
+      }
+    ],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -10932,14 +10939,7 @@
       }
     ],
     "source": "Shadowrun 2050",
-    "page": 203,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacityCost": [
-      {
-        "option": "Rating"
-      }
-    ]
+    "page": 203
   },
   {
     "name": "Cyberlimb Augmentation, Strength (2050)",
@@ -10947,6 +10947,21 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacityCost": [
+      {
+        "subnumbers": [
+          {
+            "option": "Rating"
+          },
+          {
+            "operator": "*"
+          },
+          1
+        ]
+      }
+    ],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -10974,7 +10989,14 @@
       }
     ],
     "source": "Shadowrun 2050",
-    "page": 203,
+    "page": 203
+  },
+  {
+    "name": "Cyberlimb Augmentation, Agility (2050)",
+    "description": "",
+    "augmentationLimit": {
+      "option": "N/A"
+    },
     "type": "Cyberware",
     "subtype": "Bodyware",
     "capacityCost": [
@@ -10989,14 +11011,7 @@
           1
         ]
       }
-    ]
-  },
-  {
-    "name": "Cyberlimb Augmentation, Agility (2050)",
-    "description": "",
-    "augmentationLimit": {
-      "option": "N/A"
-    },
+    ],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -11024,26 +11039,14 @@
       }
     ],
     "source": "Shadowrun 2050",
-    "page": 203,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacityCost": [
-      {
-        "subnumbers": [
-          {
-            "option": "Rating"
-          },
-          {
-            "operator": "*"
-          },
-          1
-        ]
-      }
-    ]
+    "page": 203
   },
   {
     "name": "Filtration System, Cybergill (2050)",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": [0.5],
     "rating": {
       "minimum": [1],
@@ -11055,14 +11058,14 @@
     },
     "cost": [60000],
     "source": "Shadowrun 2050",
-    "page": 203,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 203
   },
   {
     "name": "Dermal Plating (2050)",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": [
       {
         "subnumbers": [
@@ -11082,10 +11085,10 @@
     },
     "bonus": {
       "armour": {
-        "nonStacking": true,
         "bonus": {
           "option": "Rating"
-        }
+        },
+        "nonStacking": true
       }
     },
     "forbidden": {},
@@ -11119,14 +11122,14 @@
       }
     ],
     "source": "Shadowrun 2050",
-    "page": 203,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 203
   },
   {
     "name": "Filtration System, Blood (2050)",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": [
       {
         "subnumbers": [
@@ -11162,14 +11165,14 @@
       }
     ],
     "source": "Shadowrun 2050",
-    "page": 203,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 203
   },
   {
     "name": "Filtration System, Air (2050)",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": [
       {
         "subnumbers": [
@@ -11205,10 +11208,7 @@
       }
     ],
     "source": "Shadowrun 2050",
-    "page": 203,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 203
   },
   {
     "name": "Fingertip Compartment (2050)",
@@ -11216,6 +11216,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacityCost": [1],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -11227,14 +11230,14 @@
     },
     "cost": [3000],
     "source": "Shadowrun 2050",
-    "page": 203,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacityCost": [1]
+    "page": 203
   },
   {
     "name": "Olfactory Booster (2050)",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -11258,10 +11261,7 @@
       }
     ],
     "source": "Shadowrun 2050",
-    "page": 203,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 203
   },
   {
     "name": "Cosmetic Modifications (2050)",
@@ -11269,6 +11269,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -11285,14 +11288,14 @@
       }
     },
     "source": "Shadowrun 2050",
-    "page": 203,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 203
   },
   {
     "name": "Muscle Replacement (2050)",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": [
       {
         "subnumbers": [
@@ -11335,10 +11338,7 @@
       }
     ],
     "source": "Shadowrun 2050",
-    "page": 203,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 203
   },
   {
     "name": "Hand Razors, Fixed (2050)",
@@ -11346,6 +11346,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [1],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -11359,10 +11362,7 @@
     },
     "cost": [4500],
     "source": "Shadowrun 2050",
-    "page": 203,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [1]
+    "page": 203
   },
   {
     "name": "Hand Razors, Retractable (2050)",
@@ -11370,6 +11370,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [2],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -11383,10 +11386,7 @@
     },
     "cost": [9000],
     "source": "Shadowrun 2050",
-    "page": 203,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [2]
+    "page": 203
   },
   {
     "name": "Spur, Fixed (2050)",
@@ -11394,6 +11394,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [1],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -11407,10 +11410,7 @@
     },
     "cost": [7000],
     "source": "Shadowrun 2050",
-    "page": 203,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [1]
+    "page": 203
   },
   {
     "name": "Spur, Retractable (2050)",
@@ -11418,6 +11418,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [3],
     "essenceCost": [0.3],
     "rating": {
       "minimum": [1],
@@ -11431,14 +11434,14 @@
     },
     "cost": [11500],
     "source": "Shadowrun 2050",
-    "page": 203,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [3]
+    "page": 203
   },
   {
     "name": "Boosted Reflexes (2050)",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": {
       "ratingLinked": [[2], [3], [5]]
     },
@@ -11478,14 +11481,14 @@
       "ratingLinked": [[55000], [165000], [500000]]
     },
     "source": "Shadowrun 2050",
-    "page": 203,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 203
   },
   {
     "name": "Vehicle Control Rig (2050)",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": {
       "ratingLinked": [[2], [3], [5]]
     },
@@ -11513,14 +11516,14 @@
       "ratingLinked": [[12000], [60000], [300000]]
     },
     "source": "Shadowrun 2050",
-    "page": 203,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 203
   },
   {
     "name": "Smartlink (2050)",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": [0.5],
     "rating": {
       "minimum": [1],
@@ -11535,14 +11538,14 @@
     },
     "cost": [2500],
     "source": "Shadowrun 2050",
-    "page": 203,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 203
   },
   {
     "name": "Voice Modulator (2050)",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -11554,14 +11557,14 @@
     },
     "cost": [50000],
     "source": "Shadowrun 2050",
-    "page": 302,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 302
   },
   {
     "name": "Voice Modulator, Playback Feature (2050)",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -11573,14 +11576,14 @@
     },
     "cost": [40000],
     "source": "Shadowrun 2050",
-    "page": 203,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 203
   },
   {
     "name": "Voice Modulator, Second Voiceprint (2050)",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -11592,10 +11595,7 @@
     },
     "cost": [50000],
     "source": "Shadowrun 2050",
-    "page": 203,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 203
   },
   {
     "name": "Cyber Holdout Pistol (2050)",
@@ -11603,6 +11603,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [2],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -11616,10 +11619,7 @@
     },
     "cost": [250],
     "source": "Shadowrun 2050",
-    "page": 204,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [2]
+    "page": 204
   },
   {
     "name": "Cyber Light Pistol (2050)",
@@ -11627,6 +11627,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [4],
     "essenceCost": [0.25],
     "rating": {
       "minimum": [1],
@@ -11640,10 +11643,7 @@
     },
     "cost": [650],
     "source": "Shadowrun 2050",
-    "page": 204,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [4]
+    "page": 204
   },
   {
     "name": "Cyber Machine Pistol (2050)",
@@ -11651,6 +11651,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [6],
     "essenceCost": [0.5],
     "rating": {
       "minimum": [1],
@@ -11664,10 +11667,7 @@
     },
     "cost": [900],
     "source": "Shadowrun 2050",
-    "page": 204,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [6]
+    "page": 204
   },
   {
     "name": "Cyber Heavy Pistol (2050)",
@@ -11675,6 +11675,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [6],
     "essenceCost": [0.5],
     "rating": {
       "minimum": [1],
@@ -11688,10 +11691,7 @@
     },
     "cost": [800],
     "source": "Shadowrun 2050",
-    "page": 204,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [6]
+    "page": 204
   },
   {
     "name": "Cyber Submachine Gun (2050)",
@@ -11699,6 +11699,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [10],
     "essenceCost": [1],
     "rating": {
       "minimum": [1],
@@ -11712,10 +11715,7 @@
     },
     "cost": [1800],
     "source": "Shadowrun 2050",
-    "page": 204,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [10]
+    "page": 204
   },
   {
     "name": "Cyber Shotgun (2050)",
@@ -11723,6 +11723,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Cyber Implant Weapon",
+    "capacityCost": [10],
     "essenceCost": [1.25],
     "rating": {
       "minimum": [1],
@@ -11736,27 +11739,11 @@
     },
     "cost": [1200],
     "source": "Shadowrun 2050",
-    "page": 204,
-    "type": "Cyberware",
-    "subtype": "Cyber Implant Weapon",
-    "capacityCost": [10]
+    "page": 204
   },
   {
     "name": "Siemens Cyberspine",
     "description": "",
-    "essenceCost": [2.09],
-    "rating": {
-      "minimum": [1],
-      "maximum": [1]
-    },
-    "forbidden": {},
-    "availability": {
-      "rating": [10],
-      "restriction": "R"
-    },
-    "cost": [72600],
-    "source": "State Of The Art - ADL",
-    "page": 80,
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
@@ -11779,24 +11766,24 @@
         }
       ]
     },
-    "forceGrade": "Standard"
-  },
-  {
-    "name": "Siemens Cyberspine Upgrade (Elite Athletic)",
-    "description": "",
-    "essenceCost": [0.22],
+    "forceGrade": "Standard",
+    "essenceCost": [2.09],
     "rating": {
       "minimum": [1],
       "maximum": [1]
     },
-    "requirements": {},
+    "forbidden": {},
     "availability": {
-      "rating": [12],
+      "rating": [10],
       "restriction": "R"
     },
-    "cost": [15600],
+    "cost": [72600],
     "source": "State Of The Art - ADL",
-    "page": 80,
+    "page": 80
+  },
+  {
+    "name": "Siemens Cyberspine Upgrade (Elite Athletic)",
+    "description": "",
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
@@ -11809,11 +11796,37 @@
         }
       ]
     },
-    "forceGrade": "Standard"
+    "forceGrade": "Standard",
+    "essenceCost": [0.22],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "requirements": {},
+    "availability": {
+      "rating": [12],
+      "restriction": "R"
+    },
+    "cost": [15600],
+    "source": "State Of The Art - ADL",
+    "page": 80
   },
   {
     "name": "Siemens Cyberspine Upgrade (Celestial Athletic)",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Cybersuite",
+    "capacity": [0],
+    "inheritAttributes": true,
+    "includedSubsystemList": {
+      "cyberwareList": [
+        {
+          "name": "Reaction Enhancers",
+          "rating": 3
+        }
+      ]
+    },
+    "forceGrade": "Standard",
     "essenceCost": [0.22],
     "rating": {
       "minimum": [1],
@@ -11826,37 +11839,11 @@
     },
     "cost": [15600],
     "source": "State Of The Art - ADL",
-    "page": 80,
-    "type": "Cyberware",
-    "subtype": "Cybersuite",
-    "capacity": [0],
-    "inheritAttributes": true,
-    "includedSubsystemList": {
-      "cyberwareList": [
-        {
-          "name": "Reaction Enhancers",
-          "rating": 3
-        }
-      ]
-    },
-    "forceGrade": "Standard"
+    "page": 80
   },
   {
     "name": "Siemens Cyberspine Upgrade (Elite Warrior)",
     "description": "",
-    "essenceCost": [0.72],
-    "rating": {
-      "minimum": [1],
-      "maximum": [1]
-    },
-    "requirements": {},
-    "availability": {
-      "rating": [14],
-      "restriction": "R"
-    },
-    "cost": [132000],
-    "source": "State Of The Art - ADL",
-    "page": 80,
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
@@ -11869,24 +11856,24 @@
         }
       ]
     },
-    "forceGrade": "Standard"
-  },
-  {
-    "name": "Siemens Cyberspine Upgrade (Celestial Warrior)",
-    "description": "",
-    "essenceCost": [1.44],
+    "forceGrade": "Standard",
+    "essenceCost": [0.72],
     "rating": {
       "minimum": [1],
       "maximum": [1]
     },
     "requirements": {},
     "availability": {
-      "rating": [22],
+      "rating": [14],
       "restriction": "R"
     },
-    "cost": [81600],
+    "cost": [132000],
     "source": "State Of The Art - ADL",
-    "page": 80,
+    "page": 80
+  },
+  {
+    "name": "Siemens Cyberspine Upgrade (Celestial Warrior)",
+    "description": "",
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
@@ -11899,24 +11886,24 @@
         }
       ]
     },
-    "forceGrade": "Standard"
-  },
-  {
-    "name": "Zeiss Consortium MET2000 Elitepilot",
-    "description": "",
-    "essenceCost": [2.23],
+    "forceGrade": "Standard",
+    "essenceCost": [1.44],
     "rating": {
       "minimum": [1],
       "maximum": [1]
     },
-    "forbidden": {},
+    "requirements": {},
     "availability": {
-      "rating": [12],
+      "rating": [22],
       "restriction": "R"
     },
-    "cost": [162000],
+    "cost": [81600],
     "source": "State Of The Art - ADL",
-    "page": 81,
+    "page": 80
+  },
+  {
+    "name": "Zeiss Consortium MET2000 Elitepilot",
+    "description": "",
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
@@ -11939,24 +11926,24 @@
         }
       ]
     },
-    "forceGrade": "Standard"
-  },
-  {
-    "name": "Zeiss Consortium MET2000 Fernspäher",
-    "description": "",
-    "essenceCost": [1.22],
+    "forceGrade": "Standard",
+    "essenceCost": [2.23],
     "rating": {
       "minimum": [1],
       "maximum": [1]
     },
     "forbidden": {},
     "availability": {
-      "rating": [11],
+      "rating": [12],
       "restriction": "R"
     },
-    "cost": [64200],
+    "cost": [162000],
     "source": "State Of The Art - ADL",
-    "page": 81,
+    "page": 81
+  },
+  {
+    "name": "Zeiss Consortium MET2000 Fernspäher",
+    "description": "",
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
@@ -12017,12 +12004,8 @@
         }
       ]
     },
-    "forceGrade": "Standard"
-  },
-  {
-    "name": "Zeiss Consortium MET2000 Sturmpionier",
-    "description": "",
-    "essenceCost": [1.4],
+    "forceGrade": "Standard",
+    "essenceCost": [1.22],
     "rating": {
       "minimum": [1],
       "maximum": [1]
@@ -12032,9 +12015,13 @@
       "rating": [11],
       "restriction": "R"
     },
-    "cost": [74100],
+    "cost": [64200],
     "source": "State Of The Art - ADL",
-    "page": 81,
+    "page": 81
+  },
+  {
+    "name": "Zeiss Consortium MET2000 Sturmpionier",
+    "description": "",
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
@@ -12085,24 +12072,24 @@
         }
       ]
     },
-    "forceGrade": "Standard"
-  },
-  {
-    "name": "Zeiss Consortium MET2000 Sturmpionier - Trench Wires",
-    "description": "",
-    "essenceCost": [1.69],
+    "forceGrade": "Standard",
+    "essenceCost": [1.4],
     "rating": {
       "minimum": [1],
       "maximum": [1]
     },
     "forbidden": {},
     "availability": {
-      "rating": [14],
+      "rating": [11],
       "restriction": "R"
     },
-    "cost": [170100],
+    "cost": [74100],
     "source": "State Of The Art - ADL",
-    "page": 81,
+    "page": 81
+  },
+  {
+    "name": "Zeiss Consortium MET2000 Sturmpionier - Trench Wires",
+    "description": "",
     "type": "Cyberware",
     "subtype": "Cybersuite",
     "capacity": [0],
@@ -12157,11 +12144,27 @@
         }
       ]
     },
-    "forceGrade": "Standard"
+    "forceGrade": "Standard",
+    "essenceCost": [1.69],
+    "rating": {
+      "minimum": [1],
+      "maximum": [1]
+    },
+    "forbidden": {},
+    "availability": {
+      "rating": [14],
+      "restriction": "R"
+    },
+    "cost": [170100],
+    "source": "State Of The Art - ADL",
+    "page": 81
   },
   {
     "name": "Antenna Grill",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -12173,10 +12176,7 @@
     },
     "cost": [1000],
     "source": "The Complete Trog",
-    "page": 184,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 184
   },
   {
     "name": "Horn Compartment",
@@ -12184,6 +12184,9 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": [0],
     "rating": {
       "minimum": [1],
@@ -12195,14 +12198,14 @@
     },
     "cost": [1000],
     "source": "The Complete Trog",
-    "page": 185,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 185
   },
   {
     "name": "Troll Roarer",
     "description": "",
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
     "essenceCost": [0.1],
     "rating": {
       "minimum": [1],
@@ -12230,10 +12233,7 @@
       }
     ],
     "source": "The Complete Trog",
-    "page": 187,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0]
+    "page": 187
   },
   {
     "name": "Busted Ware",
@@ -12241,6 +12241,11 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Bodyware",
+    "capacity": [0],
+    "removalCost": 16000,
+    "forceGrade": "None",
     "essenceCost": [0.5],
     "rating": {
       "minimum": [1],
@@ -12253,12 +12258,7 @@
     },
     "cost": [0],
     "source": "The Seattle Gambit",
-    "page": 30,
-    "type": "Cyberware",
-    "subtype": "Bodyware",
-    "capacity": [0],
-    "removalCost": 16000,
-    "forceGrade": "None"
+    "page": 30
   },
   {
     "name": "Datajack Plus",
@@ -12266,18 +12266,22 @@
     "augmentationLimit": {
       "option": "N/A"
     },
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "programs": "Rating",
+    "capacity": [0],
+    "includedGearList": [
+      {
+        "baseGear": "Universal Connector Cord",
+        "rating": 1,
+        "category": "Tools"
+      }
+    ],
     "essenceCost": [0.15],
     "rating": {
       "minimum": [1],
       "maximum": [3]
     },
-    "includedGearList": [
-      {
-        "baseGear": "Universal Connector Cord",
-        "category": "Tools",
-        "rating": 1
-      }
-    ],
     "allowedGearCategories": ["Common Programs", "Hacking Programs"],
     "availability": {
       "rating": [4],
@@ -12297,16 +12301,15 @@
       }
     ],
     "source": "Kill Code",
-    "page": 65,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "programs": "Rating",
-    "capacity": [0]
+    "page": 65
   },
   {
     "name": "Enhanced Augmented Reality Reflex System",
     "description": "",
     "augmentationLimit": 1,
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0],
     "essenceCost": [0.75],
     "rating": {
       "minimum": [1],
@@ -12318,15 +12321,15 @@
     },
     "cost": [30000],
     "source": "Kill Code",
-    "page": 66,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacity": [0]
+    "page": 66
   },
   {
     "name": "Cranial Shield",
     "description": "",
     "augmentationLimit": 1,
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0],
     "essenceCost": [0.5],
     "rating": {
       "minimum": [1],
@@ -12338,15 +12341,15 @@
     },
     "cost": [5000],
     "source": "Kill Code",
-    "page": 66,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacity": [0]
+    "page": 66
   },
   {
     "name": "Autovoice",
     "description": "",
     "augmentationLimit": 1,
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -12374,15 +12377,15 @@
       }
     ],
     "source": "No Future",
-    "page": 175,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacity": [0]
+    "page": 175
   },
   {
     "name": "Autovoice (Hacked)",
     "description": "",
     "augmentationLimit": 1,
+    "type": "Cyberware",
+    "subtype": "Headware",
+    "capacity": [0],
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
@@ -12418,9 +12421,6 @@
       }
     ],
     "source": "No Future",
-    "page": 175,
-    "type": "Cyberware",
-    "subtype": "Headware",
-    "capacity": [0]
+    "page": 175
   }
 ]

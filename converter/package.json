@@ -18,10 +18,11 @@
   "license": "ISC",
   "dependencies": {
     "@neon-codex/common": "*",
+    "arktype": "^2.1.20",
     "ohm-js": "^17.1.0"
   },
   "devDependencies": {
     "@ohm-js/cli": "^2.0.0",
-    "typescript": "^5.5.2"
+    "typescript": "^5.8.3"
   }
 }

@@ -27,6 +27,7 @@ import {
   convertXmlModObject,
 } from "../common/ParserHelper.js";
 import { convertArmourModCategory } from "./ArmourModParserHelper.js";
+import { type } from "arktype";
 const Availability = Armours.Availability;
 const Cost = Armours.Cost;
 
@@ -48,18 +49,19 @@ export function ParseArmour() {
   //   jObj.chummer.armors.armor[193].gears.usegear
   // );
 
-  const armourListParsed = ArmourListXmlSchema.safeParse(
+  const armourListParsed = ArmourListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.armors.armor
   );
 
-  if (armourListParsed.success) console.log("armor.xml initial zod parsed");
-  else {
-    console.log(armourListParsed.error.errors[0]);
+  if (armourListParsed instanceof type.errors) {
+    console.log(armourListParsed.summary);
     assert(false);
+  } else {
+    console.log("armor.xml initial arktype parsed");
   }
 
-  const armourList = armourListParsed.data;
+  const armourList = armourListParsed;
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
   // })
@@ -68,18 +70,18 @@ export function ParseArmour() {
     // .filter((weapon) => weapon.name === "Osmium Mace")
     .map((armour) => {
       const convertedArmour = convertArmour(armour);
-      const check = ArmourSchema.safeParse(convertedArmour);
-      if (!check.success) {
+      const check = ArmourSchema(convertedArmour);
+      if (check instanceof type.errors) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         console.dir(convertedArmour, { depth: Infinity });
-        throw new Error(check.error.message);
+        throw new Error(check.summary);
       }
-      return check.data;
+      return check;
     });
   // console.log(armourListConverted);
-  const check = ArmourListSchema.safeParse(armourListConverted);
-  if (!check.success) {
-    throw new Error(check.error.message);
+  const check = ArmourListSchema(armourListConverted);
+  if (check instanceof type.errors) {
+    throw new Error(check.summary);
   }
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/armours.json"
@@ -170,8 +172,12 @@ function convertArmour(armour: ArmourXmlType) {
     ...(bonus !== undefined && { bonus: bonus }),
     ...(wirelessBonus !== undefined && { wirelessBonus: wirelessBonus }),
     ...(includedModList !== undefined && { includedModList: includedModList }),
-    allowModsFromCategory: allowModCategory,
-    addModFromCategory: addModFromXmlCategory,
+    ...(allowModCategory !== undefined && {
+      allowModsFromCategory: allowModCategory,
+    }),
+    ...(addModFromXmlCategory !== undefined && {
+      addModFromCategory: addModFromXmlCategory,
+    }),
     source: source,
     page: armour.page,
   };

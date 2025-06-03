@@ -7,6 +7,7 @@ import {
   type LifestyleListType,
 } from "@neon-codex/common/build/schemas/otherData/lifestyleSchemas.js";
 import { Lifestyles } from "../../models/rpg/otherData/lifestyleModel.js";
+import { type } from "arktype";
 
 export const getLifestyles = function () {
   const currentPath = import.meta.url;
@@ -20,13 +21,13 @@ export const getLifestyles = function () {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const rawJson = JSON.parse(jsonString);
-  const lifestyleListParsed = LifestyleListSchema.safeParse(rawJson);
-  if (lifestyleListParsed.success) {
-    console.log("lifestyles all g");
-    unlinkedLifestyles = lifestyleListParsed.data;
-  } else {
-    console.log(lifestyleListParsed.error.errors[0]);
+  const lifestyleListParsed = LifestyleListSchema(rawJson);
+  if (lifestyleListParsed instanceof type.errors) {
+    console.log(lifestyleListParsed.summary);
     assert(false, "lifestyles is undefined");
+  } else {
+    console.log("lifestyles all g");
+    unlinkedLifestyles = lifestyleListParsed;
   }
   const stagedLifestyles: Array<Lifestyles> = [];
   unlinkedLifestyles.forEach((lifestyleQuality) => {

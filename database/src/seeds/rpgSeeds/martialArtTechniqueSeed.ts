@@ -7,6 +7,7 @@ import {
   type MartialArtTechniqueListType,
 } from "@neon-codex/common/build/schemas/abilities/martialArtSchemas.js";
 import { MartialArtTechniques } from "../../models/rpg/abilities/martialArtTechniqueModel.js";
+import { type } from "arktype";
 
 export const getMartialArtTechniques = function () {
   const currentPath = import.meta.url;
@@ -20,13 +21,13 @@ export const getMartialArtTechniques = function () {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const rawJson = JSON.parse(jsonString);
-  const martialArtListParsed = MartialArtTechniqueListSchema.safeParse(rawJson);
-  if (martialArtListParsed.success) {
-    console.log("martial art (techniques) all g");
-    unlinkedMartialArtTechniques = martialArtListParsed.data;
-  } else {
-    console.log(martialArtListParsed.error.errors[0]);
+  const martialArtListParsed = MartialArtTechniqueListSchema(rawJson);
+  if (martialArtListParsed instanceof type.errors) {
+    console.log(martialArtListParsed.summary);
     assert(false, "martial arts (techniques) is undefined");
+  } else {
+    console.log("martial art (techniques) all g");
+    unlinkedMartialArtTechniques = martialArtListParsed;
   }
   const stagedMartialArtTechnique: Array<MartialArtTechniques> = [];
   unlinkedMartialArtTechniques.forEach((martialArtTechnique) => {

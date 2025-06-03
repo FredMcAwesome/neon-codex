@@ -1,37 +1,27 @@
-import { z as zod } from "zod";
+import { type } from "arktype";
 
-const ThreadSummarySchema = zod
-  .object({
-    title: zod.string(),
-    user: zod.string(),
-    id: zod.number(),
-  })
-  .strict();
-const ThreadSummaryListSchema = zod.array(ThreadSummarySchema);
-type ThreadSummaryListType = zod.infer<typeof ThreadSummaryListSchema>;
+const ThreadSummarySchema = type({
+  title: "string",
+  user: "string",
+  id: "number",
+});
+const ThreadSummaryListSchema = ThreadSummarySchema.array();
+type ThreadSummaryListType = typeof ThreadSummaryListSchema.infer;
 
-const ThreadSchema = zod
-  .object({
-    title: zod.string(),
-    username: zod.string(),
-    comments: zod.array(
-      zod
-        .object({
-          username: zod.string(),
-          content: zod.string(),
-        })
-        .strict()
-    ),
-  })
-  .strict();
-type ThreadType = zod.infer<typeof ThreadSchema>;
+const ThreadSchema = type({
+  title: "string",
+  username: "string",
+  comments: type({
+    username: "string",
+    content: "string",
+  }).array(),
+});
+type ThreadType = typeof ThreadSchema.infer;
 
-const JwtTokenSchema = zod
-  .object({
-    token: zod.string(),
-  })
-  .strict();
-type JwtTokenType = zod.infer<typeof JwtTokenSchema>;
+const JwtTokenSchema = type({
+  token: "string",
+});
+type JwtTokenType = typeof JwtTokenSchema.infer;
 
 export type { ThreadSummaryListType, JwtTokenType, ThreadType };
 export { ThreadSummaryListSchema, JwtTokenSchema, ThreadSchema };

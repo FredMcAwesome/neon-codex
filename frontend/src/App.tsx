@@ -20,9 +20,12 @@ import CharacterList, {
 import Thread, { threadPath } from "./components/forum/Thread.js";
 
 function App() {
-  const { isLoading } = useQuery(["authenticationStatus"], isAuthenticated);
+  const { isPending } = useQuery({
+    queryKey: ["authenticationStatus"],
+    queryFn: isAuthenticated,
+  });
 
-  if (isLoading) {
+  if (isPending) {
     // need to return routes here to allow for testing with a different router
     return (
       <Routes>

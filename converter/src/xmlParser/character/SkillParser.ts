@@ -15,12 +15,13 @@ import { XMLParser } from "fast-xml-parser";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { z as zod } from "zod";
+
 import {
   attributeXMLEnum,
   StringArrayOrStringSchema,
 } from "../common/ParserCommonDefines.js";
 import { convertAttribute } from "../common/ParserHelper.js";
+import { type } from "arktype";
 
 export type GenericXmlParsingType =
   | { option: standardCalculationEnum }
@@ -44,13 +45,12 @@ const convertSkill = function (
     category: xmlSkill.category,
     default: xmlSkill.default == "True",
     exotic: xmlSkill.exotic == "True",
-    skillGroup: xmlSkill.skillgroup !== "" ? xmlSkill.skillgroup : undefined,
-    specialisations:
-      xmlSkill.specs !== ""
-        ? Array.isArray(xmlSkill.specs.spec)
-          ? xmlSkill.specs.spec
-          : [xmlSkill.specs.spec]
-        : undefined,
+    ...(xmlSkill.skillgroup !== "" && { skillGroup: xmlSkill.skillgroup }),
+    ...(xmlSkill.specs !== "" && {
+      specialisations: Array.isArray(xmlSkill.specs.spec)
+        ? xmlSkill.specs.spec
+        : [xmlSkill.specs.spec],
+    }),
     description: "",
     // TODO: fix this once all page numbers add to knowledge skills
     source: xmlSkill.source || sourceBookEnum.Shadowrun5,
@@ -58,40 +58,36 @@ const convertSkill = function (
   };
 };
 
-const SkillXmlSchema = zod
-  .object({
-    id: zod.string(),
-    name: zod.string(),
-    // Related attribute
-    attribute: zod.nativeEnum(attributeXMLEnum),
-    // Category of skill
-    category: zod.nativeEnum(skillCategoryEnum),
-    // Able to use this skill without ranks
-    default: zod.union([zod.literal("True"), zod.literal("False")]),
-    // This skill is for one specific exotic thing e.g. exotic weapon
-    exotic: zod.optional(zod.literal("True")),
-    // Skillgroup this belongs to "" for none
-    skillgroup: zod.string(),
-    // Skills with these are related to the movement type
-    requiresgroundmovement: zod.optional(zod.literal("True")),
-    requiresswimmovement: zod.optional(zod.literal("True")),
-    requiresflymovement: zod.optional(zod.literal("True")),
-    // List of default specialisations, however custom ones are normally possible
-    specs: zod.union([
-      zod
-        .object({
-          spec: StringArrayOrStringSchema,
-        })
-        .strict(),
-      zod.literal(""),
-    ]),
-    // TODO: add these to knowledge skills in xml
-    source: zod.optional(zod.string()),
-    page: zod.optional(zod.number()),
-  })
-  .strict();
-export const SkillListXmlSchema = zod.array(SkillXmlSchema);
-type SkillXmlType = zod.infer<typeof SkillXmlSchema>;
+const SkillXmlSchema = type({
+  id: "string",
+  name: "string",
+  // Related attribute
+  attribute: type.valueOf(attributeXMLEnum),
+  // Category of skill
+  category: type.valueOf(skillCategoryEnum),
+  // Able to use this skill without ranks
+  default: type.or("'True'", "'False'"),
+  // This skill is for one specific exotic thing e.g. exotic weapon
+  "exotic?": "'True'",
+  // Skillgroup this belongs to "" for none
+  skillgroup: "string",
+  // Skills with these are related to the movement type
+  "requiresgroundmovement?": "'True'",
+  "requiresswimmovement?": "'True'",
+  "requiresflymovement?": "'True'",
+  // List of default specialisations, however custom ones are normally possible
+  specs: type.or(
+    type({
+      spec: StringArrayOrStringSchema,
+    }),
+    "''"
+  ),
+  // TODO: add these to knowledge skills in xml
+  "source?": "string",
+  "page?": "number",
+});
+export const SkillListXmlSchema = type(SkillXmlSchema.array());
+type SkillXmlType = typeof SkillXmlSchema.infer;
 
 export function ParseSkills() {
   const currentPath = import.meta.url;
@@ -107,60 +103,60 @@ export function ParseSkills() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const jObj: any = parser.parse(xml_string);
   // console.log(jObj.chummer.skills.skill[18]);
-  const skillListParsed = SkillListXmlSchema.safeParse(
+  const skillListParsed = SkillListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.skills.skill
   );
 
   // console.log(jObj.chummer.skills.skill[356]);
-  if (skillListParsed.success)
-    console.log("skills.xml (skills) initial zod parsed");
-  else {
-    console.log(skillListParsed.error.errors[0]);
+  if (skillListParsed instanceof type.errors) {
+    console.log(skillListParsed.summary);
     assert(false);
+  } else {
+    console.log("skills.xml (skills) initial arktype parsed");
   }
 
-  const knowledgeSkillListParsed = SkillListXmlSchema.safeParse(
+  const knowledgeSkillListParsed = SkillListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.knowledgeskills.skill
   );
 
   // console.log(jObj.chummer.skills.skill[356]);
-  if (knowledgeSkillListParsed.success)
-    console.log("skills.xml (knowledge skills) initial zod parsed");
-  else {
-    console.log(knowledgeSkillListParsed.error.errors[0]);
+  if (knowledgeSkillListParsed instanceof type.errors) {
+    console.log(knowledgeSkillListParsed.summary);
     assert(false);
+  } else {
+    console.log("skills.xml (knowledge skills) initial arktype parsed");
   }
 
-  const skillList = skillListParsed.data;
+  const skillList = skillListParsed;
   const partialSkillListConverted = skillList.map((skill: SkillXmlType) => {
     const convertedSkill = convertSkill(skill, false);
-    const check = SkillSchema.safeParse(convertedSkill);
-    if (!check.success) {
+    const check = SkillSchema(convertedSkill);
+    if (check instanceof type.errors) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       console.dir(convertedSkill, { depth: Infinity });
-      throw new Error(check.error.message);
+      throw new Error(check.summary);
     }
     return convertedSkill;
   });
-  const knowledgeSkillList = knowledgeSkillListParsed.data;
+  const knowledgeSkillList = knowledgeSkillListParsed;
   const skillListConverted = partialSkillListConverted.concat(
     knowledgeSkillList.map((skill: SkillXmlType) => {
       const convertedSkill = convertSkill(skill, true);
-      const check = SkillSchema.safeParse(convertedSkill);
-      if (!check.success) {
+      const check = SkillSchema(convertedSkill);
+      if (check instanceof type.errors) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         console.log(convertedSkill);
-        throw new Error(check.error.message);
+        throw new Error(check.summary);
       }
       return convertedSkill;
     })
   );
   // console.log(skillListConverted);
-  const check = SkillListSchema.safeParse(skillListConverted);
-  if (!check.success) {
-    throw new Error(check.error.message);
+  const check = SkillListSchema(skillListConverted);
+  if (check instanceof type.errors) {
+    throw new Error(check.summary);
   }
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/skills.json"

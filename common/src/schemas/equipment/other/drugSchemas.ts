@@ -1,4 +1,4 @@
-import { z as zod } from "zod";
+import { type } from "arktype";
 import {
   drugComponentCategoryEnum,
   gearCategoryEnum,
@@ -7,45 +7,39 @@ import {
 } from "../../../enums.js";
 import { BonusSchema } from "../../shared/bonusSchemas.js";
 
-export const AvailabilityDrugSchema = zod
-  .object({
-    rating: zod.number(),
-    restriction: zod.nativeEnum(restrictionEnum),
-  })
-  .strict();
-export type AvailabilityDrugType = zod.infer<typeof AvailabilityDrugSchema>;
+export const AvailabilityDrugSchema = type({
+  rating: "number",
+  restriction: type.valueOf(restrictionEnum),
+});
+export type AvailabilityDrugType = typeof AvailabilityDrugSchema.infer;
 
-export const DrugSchema = zod
-  .object({
-    name: zod.string(),
-    description: zod.string(),
-    category: zod.nativeEnum(gearCategoryEnum),
-    speed: zod.optional(zod.number()),
-    bonus: zod.optional(BonusSchema),
-    availability: AvailabilityDrugSchema,
-    cost: zod.number(),
-    source: zod.nativeEnum(sourceBookEnum),
-    page: zod.number(),
-  })
-  .strict();
-export type DrugType = zod.infer<typeof DrugSchema>;
-export const DrugListSchema = zod.array(DrugSchema);
-export type DrugListType = zod.infer<typeof DrugListSchema>;
+export const DrugSchema = type({
+  name: "string",
+  description: "string",
+  category: type.valueOf(gearCategoryEnum),
+  "speed?": "number",
+  "bonus?": BonusSchema,
+  availability: AvailabilityDrugSchema,
+  cost: "number",
+  source: type.valueOf(sourceBookEnum),
+  page: "number",
+});
+export type DrugType = typeof DrugSchema.infer;
+export const DrugListSchema = type(DrugSchema.array());
+export type DrugListType = typeof DrugListSchema.infer;
 
-export const DrugComponentSchema = zod
-  .object({
-    name: zod.string(),
-    description: zod.string(),
-    category: zod.nativeEnum(drugComponentCategoryEnum),
-    appliedLimit: zod.optional(zod.number()),
-    addictionRating: zod.optional(zod.number()),
-    addictionThreshold: zod.optional(zod.number()),
-    availability: AvailabilityDrugSchema,
-    cost: zod.number(),
-    source: zod.nativeEnum(sourceBookEnum),
-    page: zod.number(),
-  })
-  .strict();
-export type DrugComponentType = zod.infer<typeof DrugComponentSchema>;
-export const DrugComponentListSchema = zod.array(DrugComponentSchema);
-export type DrugComponentListType = zod.infer<typeof DrugComponentListSchema>;
+export const DrugComponentSchema = type({
+  name: "string",
+  description: "string",
+  category: type.valueOf(drugComponentCategoryEnum),
+  "appliedLimit?": "number",
+  "addictionRating?": "number",
+  "addictionThreshold?": "number",
+  availability: AvailabilityDrugSchema,
+  cost: "number",
+  source: type.valueOf(sourceBookEnum),
+  page: "number",
+});
+export type DrugComponentType = typeof DrugComponentSchema.infer;
+export const DrugComponentListSchema = type(DrugComponentSchema.array());
+export type DrugComponentListType = typeof DrugComponentListSchema.infer;

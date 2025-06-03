@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 const characterListPath = "/characters/";
 
 const CharacterList = function () {
-  const { data, error, isError, isLoading } =
+  const { data, error, isError, isPending } =
     trpc.character.getCharacterList.useQuery();
 
-  if (isLoading) {
+  if (isPending) {
     return <div>Loading character list...</div>;
   }
 

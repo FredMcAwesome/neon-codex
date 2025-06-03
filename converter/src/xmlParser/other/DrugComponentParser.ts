@@ -10,6 +10,7 @@ import { availabilityDrugSemantics } from "./DrugParserHelper.js";
 import Drug from "../../grammar/drug.ohm-bundle.js";
 import { convertSource } from "../common/ParserHelper.js";
 import { DrugComponentSchema } from "@neon-codex/common/build/schemas/equipment/other/drugSchemas.js";
+import { type } from "arktype";
 const Availability = Drug;
 
 export function ParseDrugComponents() {
@@ -32,19 +33,19 @@ export function ParseDrugComponents() {
   //   jObj.chummer.drugcomponents.drugcomponent[20]
   // );
 
-  const drugComponentListParsed = DrugComponentListXmlSchema.safeParse(
+  const drugComponentListParsed = DrugComponentListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.drugcomponents.drugcomponent
   );
 
-  if (drugComponentListParsed.success)
-    console.log("drugcomponents.xml (Components) initial zod parsed");
-  else {
-    console.log(drugComponentListParsed.error.errors[0]);
+  if (drugComponentListParsed instanceof type.errors) {
+    console.log(drugComponentListParsed.summary);
     assert(false);
+  } else {
+    console.log("drugcomponents.xml (Components) initial arktype parsed");
   }
 
-  const drugComponentList = drugComponentListParsed.data;
+  const drugComponentList = drugComponentListParsed;
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
   // })
@@ -53,13 +54,13 @@ export function ParseDrugComponents() {
     // .filter((weapon) => weapon.name === "Osmium Mace")
     .map((drug) => {
       const convertedDrugComponent = convertDrugComponent(drug);
-      const check = DrugComponentSchema.safeParse(convertedDrugComponent);
-      if (!check.success) {
+      const check = DrugComponentSchema(convertedDrugComponent);
+      if (check instanceof type.errors) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         console.dir(convertedDrugComponent, { depth: Infinity });
-        throw new Error(check.error.message);
+        throw new Error(check.summary);
       }
-      return check.data;
+      return check;
     });
   // console.log(armourListConverted);
   const jsonFilePath = fileURLToPath(
@@ -94,9 +95,15 @@ function convertDrugComponent(drugComponent: DrugComponentXmlType) {
     category: drugComponent.category,
     availability: availability,
     cost: drugComponent.cost,
-    appliedLimit: drugComponent.limit,
-    addictionRating: drugComponent.rating,
-    addictionThreshold: drugComponent.threshold,
+    ...(drugComponent.limit !== undefined && {
+      appliedLimit: drugComponent.limit,
+    }),
+    ...(drugComponent.rating !== undefined && {
+      addictionRating: drugComponent.rating,
+    }),
+    ...(drugComponent.threshold !== undefined && {
+      addictionThreshold: drugComponent.threshold,
+    }),
     source: source,
     page: drugComponent.page,
   };

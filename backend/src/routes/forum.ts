@@ -1,13 +1,14 @@
 import { init } from "../utils/db.js";
 import * as logger from "../utils/logger.js";
 import { router, privateProcedure } from "../trpc.js";
-import { z as zod } from "zod";
+
 import Threads from "@neon-codex/database/build/models/forum/threadModel.js";
 import Users from "@neon-codex/database/build/models/accounts/userModel.js";
 import type {
   ThreadSummaryListType,
   ThreadType,
 } from "@neon-codex/common/build/serverResponse.js";
+import { type } from "arktype";
 
 const getThreadList = privateProcedure.query(async () => {
   const db = await init();
@@ -30,7 +31,7 @@ const getThreadList = privateProcedure.query(async () => {
   }
 });
 
-const getThread = privateProcedure.input(zod.string()).query(async (opts) => {
+const getThread = privateProcedure.input(type("string")).query(async (opts) => {
   try {
     const { input } = opts;
     const id = Number(input);
@@ -72,12 +73,10 @@ const getThread = privateProcedure.input(zod.string()).query(async (opts) => {
 
 const createThread = privateProcedure
   .input(
-    zod
-      .object({
-        title: zod.string(),
-        username: zod.string(),
-      })
-      .strict()
+    type({
+      title: "string",
+      username: "string",
+    })
   )
   .mutation(async (opts) => {
     const db = await init();

@@ -22,6 +22,7 @@ import {
   type VehicleListType,
   VehicleListSchema,
 } from "@neon-codex/common/build/schemas/equipment/rigger/vehicleSchemas.js";
+import { type } from "arktype";
 
 export const getVehicles = function () {
   const currentPath = import.meta.url;
@@ -35,13 +36,13 @@ export const getVehicles = function () {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const rawJson = JSON.parse(jsonString);
-  const vehicleListParsed = VehicleListSchema.safeParse(rawJson);
-  if (vehicleListParsed.success) {
-    console.log("vehicles all g");
-    unlinkedVehicles = vehicleListParsed.data;
-  } else {
-    console.log(vehicleListParsed.error.errors[0]);
+  const vehicleListParsed = VehicleListSchema(rawJson);
+  if (vehicleListParsed instanceof type.errors) {
+    console.log(vehicleListParsed.summary);
     assert(false, "vehicles is undefined");
+  } else {
+    console.log("vehicles all g");
+    unlinkedVehicles = vehicleListParsed;
   }
   const stagedVehicles: Array<Vehicles> = [];
   unlinkedVehicles.forEach((vehicle) => {

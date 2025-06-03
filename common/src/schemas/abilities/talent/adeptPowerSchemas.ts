@@ -1,37 +1,31 @@
-import { z as zod } from "zod";
+import { type } from "arktype";
 import { actionEnum, sourceBookEnum } from "../../../enums.js";
 import { BonusSchema } from "../../shared/bonusSchemas.js";
 import { RequirementsSchema } from "../../shared/requiredSchemas.js";
 
-export const AdeptPowerSchema = zod
-  .object({
-    name: zod.string(),
-    description: zod.string(),
-    pointCost: zod.number(),
-    extraFirstLevelPointCost: zod.optional(zod.number()),
-    levels: zod.boolean(),
-    limit: zod.number(),
-    sharedLimitAdeptPowerList: zod.optional(zod.array(zod.string())),
-    action: zod.optional(zod.nativeEnum(actionEnum)),
-    adeptWay: zod.optional(
-      zod
-        .object({
-          pointCost: zod.number(),
-          requirements: zod.optional(RequirementsSchema),
-        })
-        .strict()
-    ),
-    doubleCost: zod.optional(zod.literal(false)),
-    maxLevels: zod.optional(zod.number()),
-    userSelectable: zod.optional(zod.literal(false)),
-    bonus: zod.optional(BonusSchema),
-    requirements: zod.optional(RequirementsSchema),
-    forbidden: zod.optional(RequirementsSchema),
-    source: zod.nativeEnum(sourceBookEnum),
-    page: zod.number(),
-  })
-  .strict();
-export type AdeptPowerType = zod.infer<typeof AdeptPowerSchema>;
+export const AdeptPowerSchema = type({
+  name: "string",
+  description: "string",
+  pointCost: "number",
+  "extraFirstLevelPointCost?": "number",
+  levels: "boolean",
+  limit: "number",
+  "sharedLimitAdeptPowerList?": "string[]",
+  "action?": type.valueOf(actionEnum),
+  "adeptWay?": {
+    pointCost: "number",
+    "requirements?": RequirementsSchema,
+  },
+  "doubleCost?": "false",
+  "maxLevels?": "number",
+  "userSelectable?": "false",
+  "bonus?": BonusSchema,
+  "requirements?": RequirementsSchema,
+  "forbidden?": RequirementsSchema,
+  source: type.valueOf(sourceBookEnum),
+  page: "number",
+});
+export type AdeptPowerType = typeof AdeptPowerSchema.infer;
 
-export const AdeptPowerListSchema = zod.array(AdeptPowerSchema);
-export type AdeptPowerListType = zod.infer<typeof AdeptPowerListSchema>;
+export const AdeptPowerListSchema = type(AdeptPowerSchema.array());
+export type AdeptPowerListType = typeof AdeptPowerListSchema.infer;

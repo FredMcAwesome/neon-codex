@@ -1,4 +1,3 @@
-import { z as zod } from "zod";
 import {
   damageTypeEnum,
   mathOperatorEnum,
@@ -33,6 +32,7 @@ const Initiative = Bonus.Initiative;
 const SkillKarmaCost = Bonus.SkillKarmaCost;
 import Augmentation from "../../grammar/augmentation.ohm-bundle.js";
 import { essenceCostSemantics } from "../bodyModification/augmentationParserHelper.js";
+import { type } from "arktype";
 const EssenceCost = Augmentation.EssenceCost;
 
 // TODO: handle bonus correctly
@@ -160,8 +160,12 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       bonus: {
         option: skillSoft.val,
       },
-      excludedCategory: skillSoft._excludecategory,
-      specificCategory: skillSoft._skillcategory,
+      ...(skillSoft._excludecategory !== undefined && {
+        excludedCategory: skillSoft._excludecategory,
+      }),
+      ...(skillSoft._skillcategory !== undefined && {
+        specificCategory: skillSoft._skillcategory,
+      }),
     };
   }
   if ("skillsoftaccess" in bonus && bonus.skillsoftaccess !== undefined) {
@@ -239,7 +243,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     bonusObject.specificPowerList = specificPowerList.map((power) => {
       return {
         name: power.name,
-        level: power.val,
+        ...(power.val !== undefined && { level: power.val }),
       };
     });
   }
@@ -1054,17 +1058,23 @@ export const bonusSkill = function (skillInput: SkillListType) {
 };
 
 const spellCategoryConversion = function (category: string) {
-  const spellCategoryEnumSchema = zod.nativeEnum(spellCategoryEnum);
-  const categoryEnum = spellCategoryEnumSchema.safeParse(category);
-  assert(categoryEnum.success, `spellCategoryEnum not found: ${category}`);
-  return categoryEnum.data;
+  const spellCategoryEnumSchema = type.valueOf(spellCategoryEnum);
+  const categoryEnum = spellCategoryEnumSchema(category);
+  assert(
+    !(categoryEnum instanceof type.errors),
+    `spellCategoryEnum not found: ${category}`
+  );
+  return categoryEnum;
 };
 
-const weaponTypeConversion = function (type: string) {
-  const weaponTypeEnumSchema = zod.nativeEnum(weaponTypeEnum);
-  const typeEnum = weaponTypeEnumSchema.safeParse(type);
-  assert(typeEnum.success, `weaponTypeEnum enum not found: ${type}`);
-  return typeEnum.data;
+const weaponTypeConversion = function (weaponType: string) {
+  const weaponTypeEnumSchema = type.valueOf(weaponTypeEnum);
+  const typeEnum = weaponTypeEnumSchema(weaponType);
+  assert(
+    !(typeEnum instanceof type.errors),
+    `weaponTypeEnum enum not found: ${weaponType}`
+  );
+  return typeEnum;
 };
 
 export const convertKarmaCost = function (karmaCost: GenericNameValueType) {
@@ -1118,7 +1128,7 @@ const convertRatingUnion = function (unionObject: NumberOrAnyRatingType) {
 //     nodePath
 //   })
 
-//   const armourListParsed = ArmourListXmlSchema.safeParse(
+//   const armourListParsed = ArmourListXmlSchema(
 //     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
 //     jObj.chummer.armors.armor
 //   );

@@ -20,6 +20,7 @@ import { WeaponMountModSchema } from "@neon-codex/common/build/schemas/equipment
 import VehicleModifications from "../../grammar/vehicleModifications.ohm-bundle.js";
 import type { AmmunitionType } from "@neon-codex/common/build/schemas/shared/weaponSharedSchemas.js";
 import { WeaponMountModListXmlSchema } from "./WeaponMountModParserSchemas.js";
+import { type } from "arktype";
 const Slot = VehicleModifications.Slot;
 const Availability = VehicleModifications.Availability;
 const Cost = VehicleModifications.Cost;
@@ -42,29 +43,29 @@ export function ParseWeaponMountMods() {
   //   jObj.chummer.mods.mod[96]
   // );
 
-  const weaponMountModListParsed = WeaponMountModListXmlSchema.safeParse(
+  const weaponMountModListParsed = WeaponMountModListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.weaponmountmods.mod
   );
 
-  if (!weaponMountModListParsed.success) {
-    console.log(weaponMountModListParsed.error.errors[0]);
+  if (weaponMountModListParsed instanceof type.errors) {
+    console.log(weaponMountModListParsed.summary);
     assert(false);
   } else {
-    console.log("vehicles.xml (Weapon Mount Mods) initial zod parsed");
+    console.log("vehicles.xml (Weapon Mount Mods) initial arktype parsed");
   }
 
-  const weaponMountModListConverted = weaponMountModListParsed.data.map(
+  const weaponMountModListConverted = weaponMountModListParsed.map(
     (weaponMountMod) => {
       const convertedWeaponMountMod = convertWeaponMountMod(weaponMountMod);
 
-      const check = WeaponMountModSchema.safeParse(convertedWeaponMountMod);
-      if (!check.success) {
+      const check = WeaponMountModSchema(convertedWeaponMountMod);
+      if (check instanceof type.errors) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         console.dir(convertedWeaponMountMod, { depth: Infinity });
-        throw new Error(check.error.message);
+        throw new Error(check.summary);
       }
-      return check.data;
+      return check;
     }
   );
   // console.log(vehicleListConverted);
@@ -140,7 +141,7 @@ const convertWeaponMountMod = function (vehicleMod: VehicleModXmlType) {
     name: vehicleMod.name,
     description: "",
     type: type,
-    requirements: requirements,
+    ...(requirements !== undefined && { requirements: requirements }),
     slotCost: slotCost,
     ...(additionalAmmo !== undefined && { additionalAmmo: additionalAmmo }),
     ...(percentageAmmoIncrease !== undefined && {

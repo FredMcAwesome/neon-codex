@@ -5,10 +5,11 @@ import { getLoginStatus } from "./utils/login.js";
 export async function createContext({
   req,
   res,
+  info,
 }: trpcExpress.CreateExpressContextOptions) {
   // Create your context based on the request object
   // Will be available as `ctx` in all your resolvers
-  const user = await getLoginStatus({ req, res });
+  const user = await getLoginStatus({ req, res, info });
   return {
     user,
   };

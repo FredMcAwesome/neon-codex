@@ -13,6 +13,7 @@ import {
   Shapeshifters,
 } from "../../models/rpg/traits/heritageModel.js";
 import { heritageCategoryEnum } from "@neon-codex/common/build/enums.js";
+import { type } from "arktype";
 
 export const getHeritages = function () {
   const currentPath = import.meta.url;
@@ -26,13 +27,13 @@ export const getHeritages = function () {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const rawJson = JSON.parse(jsonString);
-  const heritageListParsed = HeritageListSchema.safeParse(rawJson);
-  if (heritageListParsed.success) {
-    console.log("heritages all g");
-    unlinkedHeritages = heritageListParsed.data;
-  } else {
-    console.log(heritageListParsed.error.errors[0]);
+  const heritageListParsed = HeritageListSchema(rawJson);
+  if (heritageListParsed instanceof type.errors) {
+    console.log(heritageListParsed.summary);
     assert(false, "heritages is undefined");
+  } else {
+    console.log("heritages all g");
+    unlinkedHeritages = heritageListParsed;
   }
   const stagedHeritages: Array<Heritages> = [];
   unlinkedHeritages.forEach((heritage) => {

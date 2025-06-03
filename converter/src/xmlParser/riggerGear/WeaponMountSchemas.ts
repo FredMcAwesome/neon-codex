@@ -1,11 +1,12 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-nocheck
-import { z as zod } from "zod";
+
 import {
   SourceXmlSchema,
   StringOrNumberSchema,
 } from "../common/ParserCommonDefines.js";
 import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
+import { type } from "arktype";
 
 enum weaponMountAttributeCategoryXmlEnum {
   Size = "Size",
@@ -21,29 +22,27 @@ enum weaponMountAttributeCategoryXmlEnum {
 
 // This is never actually used, this information will just be
 // in code, e.g. what size categories there are will be in code
-const WeaponMountSchema = zod
-  .object({
-    id: zod.string(),
-    name: zod.string(),
-    // Category of weapon mount
-    category: zod.nativeEnum(weaponMountAttributeCategoryXmlEnum),
-    // Availability
-    avail: StringOrNumberSchema,
-    // Cost
-    cost: StringOrNumberSchema,
-    // This weapon mount is only available for a drone
-    optionaldrone: zod.optional(zod.string()),
-    // Mod slots available for this weapon mount
-    slots: StringOrNumberSchema,
-    // Required
-    required: zod.optional(RequiredXmlSchema),
-    // Forbidden
-    forbidden: zod.optional(RequiredXmlSchema),
-    // List of weapon categories that
-    weaponcategories: zod.optional(zod.string()),
-    // Not selectable
-    hide: zod.optional(zod.literal("")),
-    source: zod.union([SourceXmlSchema, zod.literal(2050)]),
-    page: zod.number(),
-  })
-  .strict();
+const WeaponMountSchema = type({
+  id: "string",
+  name: "string",
+  // Category of weapon mount
+  category: type.valueOf(weaponMountAttributeCategoryXmlEnum),
+  // Availability
+  avail: StringOrNumberSchema,
+  // Cost
+  cost: StringOrNumberSchema,
+  // This weapon mount is only available for a drone
+  "optionaldrone?": "string",
+  // Mod slots available for this weapon mount
+  slots: StringOrNumberSchema,
+  // Required
+  "required?": RequiredXmlSchema,
+  // Forbidden
+  "forbidden?": RequiredXmlSchema,
+  // List of weapon categories that
+  "weaponcategories?": "string",
+  // Not selectable
+  "hide?": "''",
+  source: type.or(SourceXmlSchema, "2050"),
+  page: "number",
+});

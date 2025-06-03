@@ -1,165 +1,141 @@
+import { type } from "arktype";
 import {
   priorityLetterEnum,
   skillTalentSourceEnum,
   talentCategoryEnum,
 } from "../../enums.js";
-import { z as zod } from "zod";
+
 import { RequirementsSchema } from "../shared/requiredSchemas.js";
 
-const PriorityMetatypeBaseSchema = zod
-  .object({
-    name: zod.string(),
-    specialAttributePoints: zod.number(),
-    karmaCost: zod.number(),
-  })
-  .strict();
+const PriorityMetatypeBaseSchema = type({
+  name: "string",
+  specialAttributePoints: "number",
+  karmaCost: "number",
+});
+const HeritagePrioritySchema = PriorityMetatypeBaseSchema.and({
+  "metavariantList?": PriorityMetatypeBaseSchema.array(),
+});
+export type HeritagePriorityType = typeof HeritagePrioritySchema.infer;
 
-const HeritagePrioritySchema = PriorityMetatypeBaseSchema.extend({
-  metavariantList: zod.optional(zod.array(PriorityMetatypeBaseSchema)),
-}).strict();
-export type HeritagePriorityType = zod.infer<typeof HeritagePrioritySchema>;
+const SkillBaseSchema = type({
+  points: "number",
+  rating: "number",
+});
+export type SkillBaseType = typeof SkillBaseSchema.infer;
 
-const SkillBaseSchema = zod
-  .object({
-    points: zod.number(),
-    rating: zod.number(),
-  })
-  .strict();
-export type SkillBaseType = zod.infer<typeof SkillBaseSchema>;
+const SkillSourceSchema = SkillBaseSchema.and({
+  source: type.valueOf(skillTalentSourceEnum),
+});
+export type SkillSourceType = typeof SkillSourceSchema.infer;
 
-const SkillSourceSchema = SkillBaseSchema.extend({
-  source: zod.nativeEnum(skillTalentSourceEnum),
-}).strict();
-export type SkillSourceType = zod.infer<typeof SkillSourceSchema>;
+const SkillSchema = SkillBaseSchema.and({
+  skillList: "string[]",
+});
+export type SkillType = typeof SkillSchema.infer;
 
-const SkillSchema = SkillBaseSchema.extend({
-  skillList: zod.array(zod.string()),
-}).strict();
-export type SkillType = zod.infer<typeof SkillSchema>;
+const SkillGroupSchema = SkillBaseSchema.and({
+  groupList: "string[]",
+});
+export type SkillGroupType = typeof SkillGroupSchema.infer;
 
-const SkillGroupSchema = SkillBaseSchema.extend({
-  groupList: zod.array(zod.string()),
-}).strict();
-export type SkillGroupType = zod.infer<typeof SkillGroupSchema>;
+const TalentBaseSchema = type({
+  // Name is xml value and label is xml name
+  name: "string",
+  label: "string",
+  "includedQuality?": "string",
+  "includedSkills?": type.or(SkillSchema, SkillSourceSchema),
+  "includedSkillGroups?": SkillGroupSchema,
+  "required?": RequirementsSchema,
+  "forbidden?": RequirementsSchema,
+});
+const MagicTalentPrioritySchema = TalentBaseSchema.and({
+  category: type.unit(talentCategoryEnum.Magic),
+  magic: "number",
+  "formulae?": "number",
+});
 
-const TalentBaseSchema = zod
-  .object({
-    // Name is xml value and label is xml name
-    name: zod.string(),
-    label: zod.string(),
-    includedQuality: zod.optional(zod.string()),
-    includedSkills: zod.optional(zod.union([SkillSchema, SkillSourceSchema])),
-    includedSkillGroups: zod.optional(SkillGroupSchema),
-    required: zod.optional(RequirementsSchema),
-    forbidden: zod.optional(RequirementsSchema),
-  })
-  .strict();
+const ResonanceTalentPrioritySchema = TalentBaseSchema.and({
+  category: type.unit(talentCategoryEnum.Resonance),
+  resonance: "number",
+  complexForms: "number",
+});
 
-const MagicTalentPrioritySchema = TalentBaseSchema.extend({
-  category: zod.literal(talentCategoryEnum.Magic),
-  magic: zod.number(),
-  formulae: zod.optional(zod.number()),
-}).strict();
+const DepthTalentPrioritySchema = TalentBaseSchema.and({
+  category: type.unit(talentCategoryEnum.Depth),
+  depth: "number",
+});
 
-const ResonanceTalentPrioritySchema = TalentBaseSchema.extend({
-  category: zod.literal(talentCategoryEnum.Resonance),
-  resonance: zod.number(),
-  complexForms: zod.number(),
-}).strict();
+const MundaneTalentPrioritySchema = TalentBaseSchema.and({
+  category: type.unit(talentCategoryEnum.Mundane),
+});
 
-const DepthTalentPrioritySchema = TalentBaseSchema.extend({
-  category: zod.literal(talentCategoryEnum.Depth),
-  depth: zod.number(),
-}).strict();
-
-const MundaneTalentPrioritySchema = TalentBaseSchema.extend({
-  category: zod.literal(talentCategoryEnum.Mundane),
-}).strict();
-
-const TalentPrioritySchema = zod.discriminatedUnion("category", [
+const TalentPrioritySchema = type.or(
   MagicTalentPrioritySchema,
   ResonanceTalentPrioritySchema,
   DepthTalentPrioritySchema,
-  MundaneTalentPrioritySchema,
-]);
-export type TalentPriorityType = zod.infer<typeof TalentPrioritySchema>;
+  MundaneTalentPrioritySchema
+);
+export type TalentPriorityType = typeof TalentPrioritySchema.infer;
 
-export const HeritageOptionsPrioritySchema = zod
-  .object({
-    name: zod.string(),
-    heritageList: zod.array(HeritagePrioritySchema),
-  })
-  .strict();
-export type HeritageOptionsPriorityType = zod.infer<
-  typeof HeritageOptionsPrioritySchema
->;
-export const TalentOptionsPrioritySchema = zod
-  .object({
-    name: zod.string(),
-    talentList: zod.array(TalentPrioritySchema),
-  })
-  .strict();
-export type TalentOptionsPriorityType = zod.infer<
-  typeof TalentOptionsPrioritySchema
->;
-export const AttributePrioritySchema = zod
-  .object({
-    name: zod.string(),
-    attributes: zod.number(),
-  })
-  .strict();
-export type AttributePriorityType = zod.infer<typeof AttributePrioritySchema>;
-export const SkillPrioritySchema = zod
-  .object({
-    name: zod.string(),
-    skillPoints: zod.number(),
-    skillGroupPoints: zod.number(),
-  })
-  .strict();
-export type SkillPriorityType = zod.infer<typeof SkillPrioritySchema>;
-export const ResourcePrioritySchema = zod
-  .object({
-    name: zod.string(),
-    resources: zod.number(),
-  })
-  .strict();
-export type ResourcePriorityType = zod.infer<typeof ResourcePrioritySchema>;
-export const ResourceOptionsPrioritySchema = zod
-  .object({
-    streetLevel: ResourcePrioritySchema,
-    standard: ResourcePrioritySchema,
-    primeRunner: ResourcePrioritySchema,
-  })
-  .strict();
-export type ResourceOptionsPriorityType = zod.infer<
-  typeof ResourceOptionsPrioritySchema
->;
+export const HeritageOptionsPrioritySchema = type({
+  name: "string",
+  heritageList: HeritagePrioritySchema.array(),
+});
+export type HeritageOptionsPriorityType =
+  typeof HeritageOptionsPrioritySchema.infer;
 
-const PrioritySchema = zod
-  .object({
-    heritages: HeritageOptionsPrioritySchema,
-    attributes: AttributePrioritySchema,
-    talents: TalentOptionsPrioritySchema,
-    skills: SkillPrioritySchema,
-    resources: ResourceOptionsPrioritySchema,
-  })
-  .strict();
-export type PriorityType = zod.infer<typeof PrioritySchema>;
-const PriorityRowSchema = PrioritySchema.extend({
-  priority: zod.nativeEnum(priorityLetterEnum),
-}).strict();
-export type PriorityRowType = zod.infer<typeof PriorityRowSchema>;
+export const TalentOptionsPrioritySchema = type({
+  name: "string",
+  talentList: TalentPrioritySchema.array(),
+});
+export type TalentOptionsPriorityType =
+  typeof TalentOptionsPrioritySchema.infer;
 
-export const PriorityTableSchema = zod
-  .object({
-    A: PrioritySchema,
-    B: PrioritySchema,
-    C: PrioritySchema,
-    D: PrioritySchema,
-    E: PrioritySchema,
-  })
-  .strict();
-export type PriorityTableType = zod.infer<typeof PriorityTableSchema>;
+export const AttributePrioritySchema = type({
+  name: "string",
+  attributes: "number",
+});
+export type AttributePriorityType = typeof AttributePrioritySchema.infer;
+export const SkillPrioritySchema = type({
+  name: "string",
+  skillPoints: "number",
+  skillGroupPoints: "number",
+});
+export type SkillPriorityType = typeof SkillPrioritySchema.infer;
+export const ResourcePrioritySchema = type({
+  name: "string",
+  resources: "number",
+});
+export type ResourcePriorityType = typeof ResourcePrioritySchema.infer;
+export const ResourceOptionsPrioritySchema = type({
+  streetLevel: ResourcePrioritySchema,
+  standard: ResourcePrioritySchema,
+  primeRunner: ResourcePrioritySchema,
+});
+export type ResourceOptionsPriorityType =
+  typeof ResourceOptionsPrioritySchema.infer;
+
+const PrioritySchema = type({
+  heritages: HeritageOptionsPrioritySchema,
+  attributes: AttributePrioritySchema,
+  talents: TalentOptionsPrioritySchema,
+  skills: SkillPrioritySchema,
+  resources: ResourceOptionsPrioritySchema,
+});
+export type PriorityType = typeof PrioritySchema.infer;
+const PriorityRowSchema = PrioritySchema.and({
+  priority: type.valueOf(priorityLetterEnum),
+});
+export type PriorityRowType = typeof PriorityRowSchema.infer;
+
+export const PriorityTableSchema = type({
+  A: PrioritySchema,
+  B: PrioritySchema,
+  C: PrioritySchema,
+  D: PrioritySchema,
+  E: PrioritySchema,
+});
+export type PriorityTableType = typeof PriorityTableSchema.infer;
 
 export const PriorityLetterOptions = [
   priorityLetterEnum.A,

@@ -24,16 +24,16 @@
     "category": "Armour",
     "damageReduction": 8,
     "capacity": 8,
-    "includedGearList": [
-      {
-        "baseGear": "Holster"
-      }
-    ],
     "availability": {
       "rating": [8],
       "restriction": ""
     },
     "cost": [1500],
+    "includedGearList": [
+      {
+        "baseGear": "Holster"
+      }
+    ],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
   },
@@ -99,12 +99,12 @@
     "category": "Armour",
     "damageReduction": 15,
     "capacity": 15,
-    "allowModsFromCategory": "Full Body Armour Mods",
     "availability": {
       "rating": [14],
       "restriction": "R"
     },
     "cost": [2000],
+    "allowModsFromCategory": "Full Body Armour Mods",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
   },
@@ -128,6 +128,11 @@
     "category": "Armour",
     "damageReduction": 9,
     "capacity": 9,
+    "availability": {
+      "rating": [8],
+      "restriction": ""
+    },
+    "cost": [650],
     "includedGearList": [
       {
         "baseGear": "Biomonitor"
@@ -137,11 +142,6 @@
       }
     ],
     "allowModsFromCategory": "Urban Explorer Jumpsuit Accessories",
-    "availability": {
-      "rating": [8],
-      "restriction": ""
-    },
-    "cost": [650],
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
   },
@@ -195,6 +195,11 @@
     "category": "High-Fashion Armour",
     "damageReduction": 8,
     "capacity": 4,
+    "availability": {
+      "rating": [10],
+      "restriction": ""
+    },
+    "cost": [2500],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -203,11 +208,6 @@
         }
       ]
     },
-    "availability": {
-      "rating": [10],
-      "restriction": ""
-    },
-    "cost": [2500],
     "source": "Run And Gun",
     "page": 57
   },
@@ -217,6 +217,11 @@
     "category": "High-Fashion Armour",
     "damageReduction": 8,
     "capacity": 4,
+    "availability": {
+      "rating": [10],
+      "restriction": ""
+    },
+    "cost": [2500],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -225,11 +230,6 @@
         }
       ]
     },
-    "availability": {
-      "rating": [10],
-      "restriction": ""
-    },
-    "cost": [2500],
     "source": "Run And Gun",
     "page": 57
   },
@@ -239,6 +239,11 @@
     "category": "High-Fashion Armour",
     "damageReduction": 9,
     "capacity": 5,
+    "availability": {
+      "rating": [9],
+      "restriction": ""
+    },
+    "cost": [2600],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -255,11 +260,6 @@
         "baseMod": "Concealability"
       }
     ],
-    "availability": {
-      "rating": [9],
-      "restriction": ""
-    },
-    "cost": [2600],
     "source": "Run And Gun",
     "page": 58
   },
@@ -269,6 +269,11 @@
     "category": "High-Fashion Armour",
     "damageReduction": 8,
     "capacity": 4,
+    "availability": {
+      "rating": [8],
+      "restriction": ""
+    },
+    "cost": [2300],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -285,11 +290,6 @@
         "baseMod": "Concealability"
       }
     ],
-    "availability": {
-      "rating": [8],
-      "restriction": ""
-    },
-    "cost": [2300],
     "source": "Run And Gun",
     "page": 58
   },
@@ -299,6 +299,11 @@
     "category": "High-Fashion Armour",
     "damageReduction": 8,
     "capacity": 5,
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [2400],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -315,11 +320,6 @@
         "baseMod": "Concealability"
       }
     ],
-    "availability": {
-      "rating": [6],
-      "restriction": ""
-    },
-    "cost": [2400],
     "source": "Run And Gun",
     "page": 58
   },
@@ -329,6 +329,11 @@
     "category": "High-Fashion Armour",
     "damageReduction": 8,
     "capacity": 6,
+    "availability": {
+      "rating": [7],
+      "restriction": ""
+    },
+    "cost": [2500],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -345,11 +350,6 @@
         "baseMod": "Concealability"
       }
     ],
-    "availability": {
-      "rating": [7],
-      "restriction": ""
-    },
-    "cost": [2500],
     "source": "Run And Gun",
     "page": 58
   },
@@ -359,6 +359,11 @@
     "category": "High-Fashion Armour",
     "damageReduction": 7,
     "capacity": 5,
+    "availability": {
+      "rating": [7],
+      "restriction": ""
+    },
+    "cost": [2200],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -375,11 +380,6 @@
         "baseMod": "Concealability"
       }
     ],
-    "availability": {
-      "rating": [7],
-      "restriction": ""
-    },
-    "cost": [2200],
     "source": "Run And Gun",
     "page": 58
   },
@@ -390,6 +390,11 @@
     "damageReduction": 10,
     "customFitStackDamageReduction": 3,
     "capacity": 10,
+    "availability": {
+      "rating": [8],
+      "restriction": ""
+    },
+    "cost": [3000],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -406,11 +411,6 @@
         "baseMod": "Concealability"
       }
     ],
-    "availability": {
-      "rating": [8],
-      "restriction": ""
-    },
-    "cost": [3000],
     "source": "Run And Gun",
     "page": 58
   },
@@ -421,6 +421,11 @@
     "damageReduction": 10,
     "customFitStackDamageReduction": 3,
     "capacity": 12,
+    "availability": {
+      "rating": [8],
+      "restriction": ""
+    },
+    "cost": [3100],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -437,11 +442,6 @@
         "baseMod": "Concealability"
       }
     ],
-    "availability": {
-      "rating": [8],
-      "restriction": ""
-    },
-    "cost": [3100],
     "source": "Run And Gun",
     "page": 58
   },
@@ -452,6 +452,11 @@
     "damageReduction": 12,
     "customFitStackDamageReduction": 4,
     "capacity": 14,
+    "availability": {
+      "rating": [10],
+      "restriction": ""
+    },
+    "cost": [3600],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -468,11 +473,6 @@
         "baseMod": "Concealability"
       }
     ],
-    "availability": {
-      "rating": [10],
-      "restriction": ""
-    },
-    "cost": [3600],
     "source": "Run And Gun",
     "page": 58
   },
@@ -482,6 +482,11 @@
     "category": "High-Fashion Armour",
     "damageReduction": 9,
     "capacity": 8,
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [1600],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -490,11 +495,6 @@
         }
       ]
     },
-    "availability": {
-      "rating": [6],
-      "restriction": ""
-    },
-    "cost": [1600],
     "source": "Run And Gun",
     "page": 60
   },
@@ -504,6 +504,11 @@
     "category": "High-Fashion Armour",
     "damageReduction": 7,
     "capacity": 8,
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [1300],
     "includedGearList": [
       {
         "baseGear": "Holster"
@@ -517,11 +522,6 @@
         }
       ]
     },
-    "availability": {
-      "rating": [6],
-      "restriction": ""
-    },
-    "cost": [1300],
     "source": "Run And Gun",
     "page": 60
   },
@@ -531,6 +531,11 @@
     "category": "High-Fashion Armour",
     "damageReduction": 6,
     "capacity": 8,
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [1200],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -544,11 +549,6 @@
         "baseMod": "Gear Access"
       }
     ],
-    "availability": {
-      "rating": [6],
-      "restriction": ""
-    },
-    "cost": [1200],
     "source": "Run And Gun",
     "page": 60
   },
@@ -558,6 +558,11 @@
     "category": "High-Fashion Armour",
     "damageReduction": 7,
     "capacity": 10,
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [2100],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -566,11 +571,6 @@
         }
       ]
     },
-    "availability": {
-      "rating": [4],
-      "restriction": ""
-    },
-    "cost": [2100],
     "source": "Run And Gun",
     "page": 60
   },
@@ -580,6 +580,11 @@
     "category": "High-Fashion Armour",
     "damageReduction": 7,
     "capacity": 6,
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [1000],
     "includedGearList": [
       {
         "baseGear": "Holster"
@@ -593,11 +598,6 @@
         }
       ]
     },
-    "availability": {
-      "rating": [6],
-      "restriction": ""
-    },
-    "cost": [1000],
     "source": "Run And Gun",
     "page": 60
   },
@@ -607,6 +607,11 @@
     "category": "High-Fashion Armour",
     "damageReduction": 7,
     "capacity": 6,
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [1000],
     "includedGearList": [
       {
         "baseGear": "Holster"
@@ -620,11 +625,6 @@
         }
       ]
     },
-    "availability": {
-      "rating": [6],
-      "restriction": ""
-    },
-    "cost": [1000],
     "source": "Run And Gun",
     "page": 60
   },
@@ -634,6 +634,11 @@
     "category": "High-Fashion Armour",
     "damageReduction": 7,
     "capacity": 6,
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [1000],
     "includedGearList": [
       {
         "baseGear": "Holster"
@@ -647,11 +652,6 @@
         }
       ]
     },
-    "availability": {
-      "rating": [6],
-      "restriction": ""
-    },
-    "cost": [1000],
     "source": "Run And Gun",
     "page": 60
   },
@@ -661,6 +661,11 @@
     "category": "High-Fashion Armour",
     "damageReduction": 8,
     "capacity": 6,
+    "availability": {
+      "rating": [8],
+      "restriction": ""
+    },
+    "cost": [1400],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -674,11 +679,6 @@
         "baseMod": "Concealability"
       }
     ],
-    "availability": {
-      "rating": [8],
-      "restriction": ""
-    },
-    "cost": [1400],
     "source": "Run And Gun",
     "page": 60
   },
@@ -688,16 +688,16 @@
     "category": "High-Fashion Armour",
     "damageReduction": 10,
     "capacity": 14,
-    "includedModList": [
-      {
-        "baseMod": "Custom Fit"
-      }
-    ],
     "availability": {
       "rating": [7],
       "restriction": ""
     },
     "cost": [2250],
+    "includedModList": [
+      {
+        "baseMod": "Custom Fit"
+      }
+    ],
     "source": "Run And Gun",
     "page": 61
   },
@@ -707,6 +707,11 @@
     "category": "High-Fashion Armour",
     "damageReduction": 9,
     "capacity": 5,
+    "availability": {
+      "rating": [8],
+      "restriction": ""
+    },
+    "cost": [1500],
     "includedGearList": [
       {
         "baseGear": "Holster"
@@ -717,11 +722,6 @@
         "baseMod": "Custom Fit"
       }
     ],
-    "availability": {
-      "rating": [8],
-      "restriction": ""
-    },
-    "cost": [1500],
     "source": "Run And Gun",
     "page": 61
   },
@@ -732,6 +732,11 @@
     "damageReduction": 10,
     "customFitStackDamageReduction": 3,
     "capacity": 6,
+    "availability": {
+      "rating": [8],
+      "restriction": ""
+    },
+    "cost": [2300],
     "includedGearList": [
       {
         "baseGear": "Holster"
@@ -742,11 +747,6 @@
         "baseMod": "Custom Fit (Stack)"
       }
     ],
-    "availability": {
-      "rating": [8],
-      "restriction": ""
-    },
-    "cost": [2300],
     "source": "Run And Gun",
     "page": 61
   },
@@ -756,6 +756,11 @@
     "category": "High-Fashion Armour",
     "damageReduction": 13,
     "capacity": 10,
+    "availability": {
+      "rating": [10],
+      "restriction": ""
+    },
+    "cost": [13500],
     "includedGearList": [
       {
         "baseGear": "Holster"
@@ -773,11 +778,6 @@
         "rating": 3
       }
     ],
-    "availability": {
-      "rating": [10],
-      "restriction": ""
-    },
-    "cost": [13500],
     "source": "Run And Gun",
     "page": 61
   },
@@ -787,6 +787,11 @@
     "category": "High-Fashion Armour",
     "damageReduction": 12,
     "capacity": 4,
+    "availability": {
+      "rating": [12],
+      "restriction": ""
+    },
+    "cost": [2000],
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -795,11 +800,6 @@
         "baseMod": "Newest Model"
       }
     ],
-    "availability": {
-      "rating": [12],
-      "restriction": ""
-    },
-    "cost": [2000],
     "source": "Run And Gun",
     "page": 61
   },
@@ -809,6 +809,11 @@
     "category": "High-Fashion Armour",
     "damageReduction": 4,
     "capacity": 2,
+    "availability": {
+      "rating": [16],
+      "restriction": ""
+    },
+    "cost": [4000],
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -817,11 +822,6 @@
         "baseMod": "Newest Model"
       }
     ],
-    "availability": {
-      "rating": [16],
-      "restriction": ""
-    },
-    "cost": [4000],
     "source": "Run And Gun",
     "page": 62
   },
@@ -831,6 +831,11 @@
     "category": "High-Fashion Armour",
     "damageReduction": 6,
     "capacity": 3,
+    "availability": {
+      "rating": [16],
+      "restriction": ""
+    },
+    "cost": [5000],
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -839,11 +844,6 @@
         "baseMod": "Newest Model"
       }
     ],
-    "availability": {
-      "rating": [16],
-      "restriction": ""
-    },
-    "cost": [5000],
     "source": "Run And Gun",
     "page": 62
   },
@@ -853,6 +853,11 @@
     "category": "High-Fashion Armour",
     "damageReduction": 8,
     "capacity": 4,
+    "availability": {
+      "rating": [16],
+      "restriction": ""
+    },
+    "cost": [6000],
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -861,11 +866,6 @@
         "baseMod": "Newest Model"
       }
     ],
-    "availability": {
-      "rating": [16],
-      "restriction": ""
-    },
-    "cost": [6000],
     "source": "Run And Gun",
     "page": 62
   },
@@ -875,6 +875,11 @@
     "category": "High-Fashion Armour",
     "damageReduction": 10,
     "capacity": 5,
+    "availability": {
+      "rating": [16],
+      "restriction": ""
+    },
+    "cost": [7000],
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -883,11 +888,6 @@
         "baseMod": "Newest Model"
       }
     ],
-    "availability": {
-      "rating": [16],
-      "restriction": ""
-    },
-    "cost": [7000],
     "source": "Run And Gun",
     "page": 62
   },
@@ -897,6 +897,11 @@
     "category": "High-Fashion Armour",
     "damageReduction": 12,
     "capacity": 6,
+    "availability": {
+      "rating": [16],
+      "restriction": ""
+    },
+    "cost": [8000],
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -905,11 +910,6 @@
         "baseMod": "Newest Model"
       }
     ],
-    "availability": {
-      "rating": [16],
-      "restriction": ""
-    },
-    "cost": [8000],
     "source": "Run And Gun",
     "page": 62
   },
@@ -919,17 +919,17 @@
     "category": "High-Fashion Armour",
     "damageReduction": 7,
     "capacity": 2,
+    "availability": {
+      "rating": [10],
+      "restriction": ""
+    },
+    "cost": [8500],
     "includedModList": [
       {
         "baseMod": "Custom Fit"
       }
     ],
     "allowModsFromCategory": "Nightshade IR",
-    "availability": {
-      "rating": [10],
-      "restriction": ""
-    },
-    "cost": [8500],
     "source": "Run And Gun",
     "page": 62
   },
@@ -940,6 +940,11 @@
     "damageReduction": 6,
     "customFitStackDamageReduction": 2,
     "capacity": 2,
+    "availability": {
+      "rating": [14],
+      "restriction": ""
+    },
+    "cost": [12000],
     "includedModList": [
       {
         "baseMod": "Custom Fit (Stack)"
@@ -952,11 +957,6 @@
         "rating": 4
       }
     ],
-    "availability": {
-      "rating": [14],
-      "restriction": ""
-    },
-    "cost": [12000],
     "source": "Run And Gun",
     "page": 63
   },
@@ -966,17 +966,17 @@
     "category": "High-Fashion Armour",
     "damageReduction": 12,
     "capacity": 10,
+    "availability": {
+      "rating": [10],
+      "restriction": ""
+    },
+    "cost": [1300],
     "includedGearList": [
       {
         "baseGear": "Holster"
       }
     ],
     "addModFromCategory": "Globetrotter Jacket Liners",
-    "availability": {
-      "rating": [10],
-      "restriction": ""
-    },
-    "cost": [1300],
     "source": "Run And Gun",
     "page": 63
   },
@@ -986,12 +986,12 @@
     "category": "High-Fashion Armour",
     "damageReduction": 9,
     "capacity": 10,
-    "addModFromCategory": "Globetrotter Vest Liners",
     "availability": {
       "rating": [7],
       "restriction": ""
     },
     "cost": [900],
+    "addModFromCategory": "Globetrotter Vest Liners",
     "source": "Run And Gun",
     "page": 63
   },
@@ -1001,17 +1001,17 @@
     "category": "High-Fashion Armour",
     "damageReduction": 7,
     "capacity": 10,
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [600],
     "includedModList": [
       {
         "baseMod": "Gear Access"
       }
     ],
     "addModFromCategory": "Globetrotter Clothing Liners",
-    "availability": {
-      "rating": [6],
-      "restriction": ""
-    },
-    "cost": [600],
     "source": "Run And Gun",
     "page": 63
   },
@@ -1021,6 +1021,11 @@
     "category": "High-Fashion Armour",
     "damageReduction": 12,
     "capacity": 10,
+    "availability": {
+      "rating": [12],
+      "restriction": ""
+    },
+    "cost": [3000],
     "includedGearList": [
       {
         "baseGear": "Holster"
@@ -1032,11 +1037,6 @@
       }
     ],
     "addModFromCategory": "Victory Liners",
-    "availability": {
-      "rating": [12],
-      "restriction": ""
-    },
-    "cost": [3000],
     "source": "Run And Gun",
     "page": 63
   },
@@ -1046,6 +1046,11 @@
     "category": "High-Fashion Armour",
     "damageReduction": 9,
     "capacity": 6,
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [1100],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -1059,11 +1064,6 @@
         "baseMod": "Gear Access"
       }
     ],
-    "availability": {
-      "rating": [6],
-      "restriction": ""
-    },
-    "cost": [1100],
     "source": "Run And Gun",
     "page": 64
   },
@@ -1073,6 +1073,11 @@
     "category": "High-Fashion Armour",
     "damageReduction": 14,
     "capacity": 12,
+    "availability": {
+      "rating": [12],
+      "restriction": ""
+    },
+    "cost": [5000],
     "includedGearList": [
       {
         "baseGear": "Holster"
@@ -1087,11 +1092,6 @@
       }
     ],
     "addModFromCategory": "Victory Liners",
-    "availability": {
-      "rating": [12],
-      "restriction": ""
-    },
-    "cost": [5000],
     "source": "Run And Gun",
     "page": 64
   },
@@ -1101,12 +1101,12 @@
     "category": "High-Fashion Armour",
     "damageReduction": 9,
     "capacity": 6,
-    "allowModsFromCategory": "Rapid Transit Detailing",
     "availability": {
       "rating": [10],
       "restriction": ""
     },
     "cost": [400],
+    "allowModsFromCategory": "Rapid Transit Detailing",
     "source": "Run And Gun",
     "page": 65
   },
@@ -1116,6 +1116,11 @@
     "category": "Specialty Armour",
     "damageReduction": 8,
     "capacity": 3,
+    "availability": {
+      "rating": [8],
+      "restriction": ""
+    },
+    "cost": [1300],
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -1124,11 +1129,6 @@
         "baseMod": "Concealability"
       }
     ],
-    "availability": {
-      "rating": [8],
-      "restriction": ""
-    },
-    "cost": [1300],
     "source": "Run And Gun",
     "page": 65
   },
@@ -1138,6 +1138,11 @@
     "category": "Specialty Armour",
     "damageReduction": 15,
     "capacity": 15,
+    "availability": {
+      "rating": [16],
+      "restriction": "F"
+    },
+    "cost": [15000],
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -1149,11 +1154,6 @@
         "baseMod": "Restrictive"
       }
     ],
-    "availability": {
-      "rating": [16],
-      "restriction": "F"
-    },
-    "cost": [15000],
     "source": "Run And Gun",
     "page": 66
   },
@@ -1163,6 +1163,11 @@
     "category": "Specialty Armour",
     "damageReduction": 18,
     "capacity": 18,
+    "availability": {
+      "rating": [18],
+      "restriction": "F"
+    },
+    "cost": [20000],
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -1174,11 +1179,6 @@
         "baseMod": "Restrictive"
       }
     ],
-    "availability": {
-      "rating": [18],
-      "restriction": "F"
-    },
-    "cost": [20000],
     "source": "Run And Gun",
     "page": 66
   },
@@ -1188,6 +1188,11 @@
     "category": "Specialty Armour",
     "damageReduction": 20,
     "capacity": 20,
+    "availability": {
+      "rating": [22],
+      "restriction": "F"
+    },
+    "cost": [25000],
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -1199,11 +1204,6 @@
         "baseMod": "Restrictive"
       }
     ],
-    "availability": {
-      "rating": [22],
-      "restriction": "F"
-    },
-    "cost": [25000],
     "source": "Run And Gun",
     "page": 66
   },
@@ -1227,6 +1227,11 @@
     "category": "Specialty Armour",
     "damageReduction": 15,
     "capacity": 12,
+    "availability": {
+      "rating": [14],
+      "restriction": "R"
+    },
+    "cost": [8000],
     "includedGearList": [
       {
         "baseGear": "Holster"
@@ -1243,11 +1248,6 @@
         "baseMod": "Restrictive"
       }
     ],
-    "availability": {
-      "rating": [14],
-      "restriction": "R"
-    },
-    "cost": [8000],
     "source": "Run And Gun",
     "page": 67
   },
@@ -1257,6 +1257,11 @@
     "category": "Specialty Armour",
     "damageReduction": 18,
     "capacity": 14,
+    "availability": {
+      "rating": [16],
+      "restriction": "R"
+    },
+    "cost": [14000],
     "includedGearList": [
       {
         "baseGear": "Holster"
@@ -1273,11 +1278,6 @@
         "baseMod": "Restrictive"
       }
     ],
-    "availability": {
-      "rating": [16],
-      "restriction": "R"
-    },
-    "cost": [14000],
     "source": "Run And Gun",
     "page": 67
   },
@@ -1287,6 +1287,11 @@
     "category": "Specialty Armour",
     "damageReduction": 20,
     "capacity": 16,
+    "availability": {
+      "rating": [18],
+      "restriction": "R"
+    },
+    "cost": [20000],
     "includedGearList": [
       {
         "baseGear": "Holster"
@@ -1303,11 +1308,6 @@
         "baseMod": "Restrictive"
       }
     ],
-    "availability": {
-      "rating": [18],
-      "restriction": "R"
-    },
-    "cost": [20000],
     "source": "Run And Gun",
     "page": 67
   },
@@ -1359,6 +1359,11 @@
     "category": "Specialty Armour",
     "damageReduction": 6,
     "capacity": 6,
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [3000],
     "wirelessBonus": {
       "skillCategories": [
         {
@@ -1376,11 +1381,6 @@
         "baseMod": "Restrictive"
       }
     ],
-    "availability": {
-      "rating": [6],
-      "restriction": ""
-    },
-    "cost": [3000],
     "source": "Run And Gun",
     "page": 69
   },
@@ -1404,6 +1404,11 @@
     "category": "Specialty Armour",
     "damageReduction": 14,
     "capacity": 8,
+    "availability": {
+      "rating": [10],
+      "restriction": "R"
+    },
+    "cost": [5000],
     "includedModList": [
       {
         "baseMod": "Padded"
@@ -1412,11 +1417,6 @@
         "baseMod": "Restrictive"
       }
     ],
-    "availability": {
-      "rating": [10],
-      "restriction": "R"
-    },
-    "cost": [5000],
     "source": "Run And Gun",
     "page": 69
   },
@@ -1440,16 +1440,16 @@
     "category": "Specialty Armour",
     "damageReduction": 15,
     "capacity": 15,
-    "includedModList": [
-      {
-        "baseMod": "Gear Access"
-      }
-    ],
     "availability": {
       "rating": [16],
       "restriction": "R"
     },
     "cost": [8000],
+    "includedModList": [
+      {
+        "baseMod": "Gear Access"
+      }
+    ],
     "source": "Run And Gun",
     "page": 70
   },
@@ -1515,6 +1515,11 @@
     "category": "Specialty Armour",
     "damageReduction": 8,
     "capacity": 4,
+    "availability": {
+      "rating": [8],
+      "restriction": ""
+    },
+    "cost": [750],
     "includedModList": [
       {
         "baseMod": "Concealability"
@@ -1523,11 +1528,6 @@
         "baseMod": "Restrictive"
       }
     ],
-    "availability": {
-      "rating": [8],
-      "restriction": ""
-    },
-    "cost": [750],
     "source": "Run And Gun",
     "page": 70
   },
@@ -1551,6 +1551,11 @@
     "category": "Specialty Armour",
     "damageReduction": 7,
     "capacity": 2,
+    "availability": {
+      "rating": [8],
+      "restriction": ""
+    },
+    "cost": [600],
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -1559,11 +1564,6 @@
         "baseMod": "Padded"
       }
     ],
-    "availability": {
-      "rating": [8],
-      "restriction": ""
-    },
-    "cost": [600],
     "source": "Run And Gun",
     "page": 72
   },
@@ -1573,16 +1573,16 @@
     "category": "Specialty Armour",
     "damageReduction": 6,
     "capacity": 4,
-    "includedGearList": [
-      {
-        "baseGear": "Grenade: Flash-Pak"
-      }
-    ],
     "availability": {
       "rating": [12],
       "restriction": "R"
     },
     "cost": [4000],
+    "includedGearList": [
+      {
+        "baseGear": "Grenade: Flash-Pak"
+      }
+    ],
     "source": "Run And Gun",
     "page": 72
   },
@@ -1592,6 +1592,11 @@
     "category": "Specialty Armour",
     "damageReduction": 13,
     "capacity": 4,
+    "availability": {
+      "rating": [12],
+      "restriction": "R"
+    },
+    "cost": [5000],
     "includedGearList": [
       {
         "baseGear": "Biomonitor"
@@ -1605,11 +1610,6 @@
         "baseMod": "Custom Fit"
       }
     ],
-    "availability": {
-      "rating": [12],
-      "restriction": "R"
-    },
-    "cost": [5000],
     "source": "Run And Gun",
     "page": 72
   },
@@ -1633,12 +1633,12 @@
     "category": "Specialty Armour",
     "damageReduction": 2,
     "capacity": 8,
-    "allowModsFromCategory": "Customized Ballistic Mask",
     "availability": {
       "rating": [6],
       "restriction": ""
     },
     "cost": [150],
+    "allowModsFromCategory": "Customized Ballistic Mask",
     "source": "Run And Gun",
     "page": 74
   },
@@ -1648,12 +1648,12 @@
     "category": "Specialty Armour",
     "damageReduction": 2,
     "capacity": 8,
-    "allowModsFromCategory": "Customized Ballistic Mask",
     "availability": {
       "rating": [6],
       "restriction": ""
     },
     "cost": [300],
+    "allowModsFromCategory": "Customized Ballistic Mask",
     "source": "Run And Gun",
     "page": 74
   },
@@ -1663,16 +1663,16 @@
     "category": "Specialty Armour",
     "damageReduction": 4,
     "capacity": 4,
-    "includedModList": [
-      {
-        "baseMod": "Restrictive"
-      }
-    ],
     "availability": {
       "rating": [6],
       "restriction": ""
     },
     "cost": [600],
+    "includedModList": [
+      {
+        "baseMod": "Restrictive"
+      }
+    ],
     "source": "Run And Gun",
     "page": 75
   },
@@ -1682,12 +1682,12 @@
     "category": "Specialty Armour",
     "damageReduction": 8,
     "capacity": 6,
-    "addModFromCategory": "Globetrotter Jacket Liners",
     "availability": {
       "rating": [10],
       "restriction": ""
     },
     "cost": [1500],
+    "addModFromCategory": "Globetrotter Jacket Liners",
     "source": "Run And Gun",
     "page": 75
   },
@@ -1697,6 +1697,11 @@
     "category": "Specialty Armour",
     "damageReduction": 3,
     "capacity": 2,
+    "availability": {
+      "rating": [8],
+      "restriction": ""
+    },
+    "cost": [1000],
     "includedGearList": [
       {
         "baseGear": "Flare Compensation"
@@ -1707,11 +1712,6 @@
         "baseMod": "Custom Fit"
       }
     ],
-    "availability": {
-      "rating": [8],
-      "restriction": ""
-    },
-    "cost": [1000],
     "source": "Run And Gun",
     "page": 75
   },
@@ -1735,6 +1735,11 @@
     "category": "Specialty Armour",
     "damageReduction": 0,
     "capacity": 4,
+    "availability": {
+      "rating": [4],
+      "restriction": ""
+    },
+    "cost": [800],
     "includedGearList": [
       {
         "baseGear": "Flare Compensation"
@@ -1746,11 +1751,6 @@
         "rating": 4
       }
     ],
-    "availability": {
-      "rating": [4],
-      "restriction": ""
-    },
-    "cost": [800],
     "source": "Run And Gun",
     "page": 76
   },
@@ -1760,6 +1760,11 @@
     "category": "Specialty Armour",
     "damageReduction": 6,
     "capacity": 6,
+    "availability": {
+      "rating": [8],
+      "restriction": ""
+    },
+    "cost": [2000],
     "includedGearList": [
       {
         "baseGear": "Flare Compensation"
@@ -1775,11 +1780,6 @@
         "rating": 4
       }
     ],
-    "availability": {
-      "rating": [8],
-      "restriction": ""
-    },
-    "cost": [2000],
     "source": "Run And Gun",
     "page": 76
   },
@@ -1789,6 +1789,11 @@
     "category": "Specialty Armour",
     "damageReduction": 15,
     "capacity": 14,
+    "availability": {
+      "rating": [16],
+      "restriction": "R"
+    },
+    "cost": [11000],
     "includedGearList": [
       {
         "baseGear": "Gas Mask"
@@ -1813,11 +1818,6 @@
         "baseMod": "Gear Access"
       }
     ],
-    "availability": {
-      "rating": [16],
-      "restriction": "R"
-    },
-    "cost": [11000],
     "source": "Run And Gun",
     "page": 77
   },
@@ -1827,6 +1827,11 @@
     "category": "Specialty Armour",
     "damageReduction": 9,
     "capacity": 6,
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [1200],
     "includedGearList": [
       {
         "baseGear": "Flare Compensation"
@@ -1847,11 +1852,6 @@
         "baseMod": "Restrictive"
       }
     ],
-    "availability": {
-      "rating": [6],
-      "restriction": ""
-    },
-    "cost": [1200],
     "source": "Run And Gun",
     "page": 78
   },
@@ -1861,6 +1861,11 @@
     "category": "Specialty Armour",
     "damageReduction": 6,
     "capacity": 4,
+    "availability": {
+      "rating": [16],
+      "restriction": "F"
+    },
+    "cost": [10000],
     "includedGearList": [
       {
         "baseGear": "Flare Compensation"
@@ -1875,11 +1880,6 @@
         "rating": 3
       }
     ],
-    "availability": {
-      "rating": [16],
-      "restriction": "F"
-    },
-    "cost": [10000],
     "source": "Run And Gun",
     "page": 78
   },
@@ -1889,16 +1889,16 @@
     "category": "Specialty Armour",
     "damageReduction": 0,
     "capacity": 6,
-    "includedGearList": [
-      {
-        "baseGear": "Low Light"
-      }
-    ],
     "availability": {
       "rating": [8],
       "restriction": ""
     },
     "cost": [900],
+    "includedGearList": [
+      {
+        "baseGear": "Low Light"
+      }
+    ],
     "source": "Run And Gun",
     "page": 79
   },
@@ -1908,16 +1908,16 @@
     "category": "Specialty Armour",
     "damageReduction": 0,
     "capacity": 4,
-    "includedGearList": [
-      {
-        "baseGear": "Gas Mask"
-      }
-    ],
     "availability": {
       "rating": [8],
       "restriction": ""
     },
     "cost": [300],
+    "includedGearList": [
+      {
+        "baseGear": "Gas Mask"
+      }
+    ],
     "source": "Run And Gun",
     "page": 79
   },
@@ -1927,6 +1927,11 @@
     "category": "Specialty Armour",
     "damageReduction": 0,
     "capacity": 4,
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [2500],
     "includedModList": [
       {
         "baseMod": "Chemical Seal"
@@ -1936,11 +1941,6 @@
         "rating": 4
       }
     ],
-    "availability": {
-      "rating": [6],
-      "restriction": ""
-    },
-    "cost": [2500],
     "source": "Run And Gun",
     "page": 79
   },
@@ -1950,17 +1950,17 @@
     "category": "Specialty Armour",
     "damageReduction": 7,
     "capacity": 4,
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [1750],
     "includedModList": [
       {
         "baseMod": "Chemical Protection",
         "rating": 4
       }
     ],
-    "availability": {
-      "rating": [6],
-      "restriction": ""
-    },
-    "cost": [1750],
     "source": "Run And Gun",
     "page": 80
   },
@@ -1970,17 +1970,17 @@
     "category": "Specialty Armour",
     "damageReduction": 1,
     "capacity": 4,
+    "availability": {
+      "rating": [8],
+      "restriction": ""
+    },
+    "cost": [3000],
     "includedModList": [
       {
         "baseMod": "Insulation",
         "rating": 8
       }
     ],
-    "availability": {
-      "rating": [8],
-      "restriction": ""
-    },
-    "cost": [3000],
     "source": "Run And Gun",
     "page": 80
   },
@@ -1990,6 +1990,11 @@
     "category": "Specialty Armour",
     "damageReduction": 8,
     "capacity": 5,
+    "availability": {
+      "rating": [10],
+      "restriction": ""
+    },
+    "cost": [3000],
     "includedGearList": [
       {
         "baseGear": "Gas Mask"
@@ -2016,11 +2021,6 @@
         "baseMod": "Custom Fit"
       }
     ],
-    "availability": {
-      "rating": [10],
-      "restriction": ""
-    },
-    "cost": [3000],
     "source": "Run And Gun",
     "page": 81
   },
@@ -2030,6 +2030,11 @@
     "category": "Specialty Armour",
     "damageReduction": 12,
     "capacity": 6,
+    "availability": {
+      "rating": [16],
+      "restriction": ""
+    },
+    "cost": [12000],
     "includedGearList": [
       {
         "baseGear": "Renraku Sensei"
@@ -2057,11 +2062,6 @@
         "baseMod": "Custom Fit"
       }
     ],
-    "availability": {
-      "rating": [16],
-      "restriction": ""
-    },
-    "cost": [12000],
     "source": "Run And Gun",
     "page": 81
   },
@@ -2071,6 +2071,11 @@
     "category": "Specialty Armour",
     "damageReduction": 15,
     "capacity": 10,
+    "availability": {
+      "rating": [24],
+      "restriction": ""
+    },
+    "cost": [25000],
     "includedGearList": [
       {
         "baseGear": "Renraku Sensei"
@@ -2098,11 +2103,6 @@
         "baseMod": "Custom Fit"
       }
     ],
-    "availability": {
-      "rating": [24],
-      "restriction": ""
-    },
-    "cost": [25000],
     "source": "Run And Gun",
     "page": 81
   },
@@ -2112,6 +2112,11 @@
     "category": "Specialty Armour",
     "damageReduction": 16,
     "capacity": 10,
+    "availability": {
+      "rating": [24],
+      "restriction": "R"
+    },
+    "cost": [35000],
     "includedGearList": [
       {
         "baseGear": "Renraku Sensei"
@@ -2140,11 +2145,6 @@
         "baseMod": "Custom Fit"
       }
     ],
-    "availability": {
-      "rating": [24],
-      "restriction": "R"
-    },
-    "cost": [35000],
     "source": "Run And Gun",
     "page": 82
   },
@@ -2154,16 +2154,16 @@
     "category": "Specialty Armour",
     "damageReduction": 0,
     "capacity": 4,
-    "includedModList": [
-      {
-        "baseMod": "Custom Fit"
-      }
-    ],
     "availability": {
       "rating": [12],
       "restriction": ""
     },
     "cost": [2500],
+    "includedModList": [
+      {
+        "baseMod": "Custom Fit"
+      }
+    ],
     "source": "Run And Gun",
     "page": 83
   },
@@ -2257,6 +2257,11 @@
     "category": "Specialty Armour",
     "damageReduction": 6,
     "capacity": 5,
+    "availability": {
+      "rating": [10],
+      "restriction": ""
+    },
+    "cost": [2500],
     "includedModList": [
       {
         "baseMod": "Chemical Seal"
@@ -2270,11 +2275,6 @@
         "rating": 6
       }
     ],
-    "availability": {
-      "rating": [10],
-      "restriction": ""
-    },
-    "cost": [2500],
     "source": "Run And Gun",
     "page": 83
   },
@@ -3018,23 +3018,23 @@
     "category": "Specialty Armour",
     "damageReduction": 0,
     "capacity": 0,
-    "includedGearList": [
-      {
-        "baseGear": "Camera",
-        "category": "Vision Devices",
-        "rating": 2
-      },
-      {
-        "baseGear": "Microphone, Omni-Directional",
-        "category": "Audio Devices",
-        "rating": 2
-      }
-    ],
     "availability": {
       "rating": [2],
       "restriction": ""
     },
     "cost": [200],
+    "includedGearList": [
+      {
+        "baseGear": "Camera",
+        "rating": 2,
+        "category": "Vision Devices"
+      },
+      {
+        "baseGear": "Microphone, Omni-Directional",
+        "rating": 2,
+        "category": "Audio Devices"
+      }
+    ],
     "source": "Howling Shadows",
     "page": 185
   },
@@ -3075,14 +3075,14 @@
     "category": "Specialty Armour",
     "damageReduction": 8,
     "capacity": 8,
-    "bonus": {
-      "enterName": true
-    },
     "availability": {
       "rating": [4],
       "restriction": ""
     },
     "cost": [750],
+    "bonus": {
+      "enterName": true
+    },
     "source": "Cutting Aces",
     "page": 136
   },
@@ -3092,14 +3092,14 @@
     "category": "Specialty Armour",
     "damageReduction": 6,
     "capacity": 6,
-    "bonus": {
-      "enterName": true
-    },
     "availability": {
       "rating": [2],
       "restriction": ""
     },
     "cost": [500],
+    "bonus": {
+      "enterName": true
+    },
     "source": "Cutting Aces",
     "page": 136
   },
@@ -3138,14 +3138,14 @@
     "category": "Specialty Armour",
     "damageReduction": 8,
     "capacity": 6,
-    "bonus": {
-      "socialLimit": [1]
-    },
     "availability": {
       "rating": [10],
       "restriction": ""
     },
     "cost": [2000],
+    "bonus": {
+      "socialLimit": [1]
+    },
     "source": "Cutting Aces",
     "page": 136
   },
@@ -3342,12 +3342,12 @@
     "category": "Armour",
     "damageReduction": 18,
     "capacity": 18,
-    "allowModsFromCategory": "Full Body Armour Mods",
     "availability": {
       "rating": [16],
       "restriction": "R"
     },
     "cost": [20000],
+    "allowModsFromCategory": "Full Body Armour Mods",
     "source": "Shadowrun 2050",
     "page": 192
   },
@@ -3371,16 +3371,16 @@
     "category": "High-Fashion Armour",
     "damageReduction": 8,
     "capacity": 4,
-    "includedModList": [
-      {
-        "baseMod": "Custom Fit"
-      }
-    ],
     "availability": {
       "rating": [8],
       "restriction": ""
     },
     "cost": [3500],
+    "includedModList": [
+      {
+        "baseMod": "Custom Fit"
+      }
+    ],
     "source": "State Of The Art - ADL",
     "page": 91
   },
@@ -3390,16 +3390,16 @@
     "category": "High-Fashion Armour",
     "damageReduction": 6,
     "capacity": 2,
-    "includedModList": [
-      {
-        "baseMod": "Custom Fit"
-      }
-    ],
     "availability": {
       "rating": [10],
       "restriction": ""
     },
     "cost": [4500],
+    "includedModList": [
+      {
+        "baseMod": "Custom Fit"
+      }
+    ],
     "source": "State Of The Art - ADL",
     "page": 91
   },
@@ -3410,16 +3410,16 @@
     "damageReduction": 10,
     "customFitStackDamageReduction": 2,
     "capacity": 12,
-    "includedModList": [
-      {
-        "baseMod": "Custom Fit (Stack)"
-      }
-    ],
     "availability": {
       "rating": [10],
       "restriction": ""
     },
     "cost": [4000],
+    "includedModList": [
+      {
+        "baseMod": "Custom Fit (Stack)"
+      }
+    ],
     "source": "State Of The Art - ADL",
     "page": 91
   },
@@ -3430,16 +3430,16 @@
     "damageReduction": 8,
     "customFitStackDamageReduction": 2,
     "capacity": 4,
-    "includedModList": [
-      {
-        "baseMod": "Custom Fit (Stack)"
-      }
-    ],
     "availability": {
       "rating": [8],
       "restriction": ""
     },
     "cost": [1500],
+    "includedModList": [
+      {
+        "baseMod": "Custom Fit (Stack)"
+      }
+    ],
     "source": "State Of The Art - ADL",
     "page": 91
   },
@@ -3449,16 +3449,16 @@
     "category": "High-Fashion Armour",
     "damageReduction": 8,
     "capacity": 5,
-    "includedModList": [
-      {
-        "baseMod": "Custom Fit"
-      }
-    ],
     "availability": {
       "rating": [8],
       "restriction": ""
     },
     "cost": [2400],
+    "includedModList": [
+      {
+        "baseMod": "Custom Fit"
+      }
+    ],
     "source": "State Of The Art - ADL",
     "page": 92
   },
@@ -3469,16 +3469,16 @@
     "damageReduction": 10,
     "customFitStackDamageReduction": 2,
     "capacity": 8,
-    "includedModList": [
-      {
-        "baseMod": "Custom Fit (Stack)"
-      }
-    ],
     "availability": {
       "rating": [8],
       "restriction": ""
     },
     "cost": [3200],
+    "includedModList": [
+      {
+        "baseMod": "Custom Fit (Stack)"
+      }
+    ],
     "source": "State Of The Art - ADL",
     "page": 92
   },
@@ -3488,16 +3488,16 @@
     "category": "High-Fashion Armour",
     "damageReduction": 9,
     "capacity": 5,
-    "includedModList": [
-      {
-        "baseMod": "Custom Fit"
-      }
-    ],
     "availability": {
       "rating": [8],
       "restriction": ""
     },
     "cost": [2700],
+    "includedModList": [
+      {
+        "baseMod": "Custom Fit"
+      }
+    ],
     "source": "State Of The Art - ADL",
     "page": 92
   },
@@ -3508,16 +3508,16 @@
     "damageReduction": 10,
     "customFitStackDamageReduction": 3,
     "capacity": 10,
-    "includedModList": [
-      {
-        "baseMod": "Custom Fit (Stack)"
-      }
-    ],
     "availability": {
       "rating": [10],
       "restriction": ""
     },
     "cost": [3500],
+    "includedModList": [
+      {
+        "baseMod": "Custom Fit (Stack)"
+      }
+    ],
     "source": "State Of The Art - ADL",
     "page": 92
   },
@@ -3611,16 +3611,16 @@
     "category": "Specialty Armour",
     "damageReduction": 9,
     "capacity": 4,
-    "includedModList": [
-      {
-        "baseMod": "Parachute (Urban Explorer Daedalus)"
-      }
-    ],
     "availability": {
       "rating": [8],
       "restriction": ""
     },
     "cost": [3200],
+    "includedModList": [
+      {
+        "baseMod": "Parachute (Urban Explorer Daedalus)"
+      }
+    ],
     "source": "Street Lethal",
     "page": 48
   },
@@ -3644,6 +3644,11 @@
     "category": "Armour",
     "damageReduction": 20,
     "capacity": 20,
+    "availability": {
+      "rating": [30],
+      "restriction": "F"
+    },
+    "cost": [35000],
     "includedGearList": [
       {
         "baseGear": "Holster"
@@ -3657,11 +3662,6 @@
         "baseMod": "Gear Access"
       }
     ],
-    "availability": {
-      "rating": [30],
-      "restriction": "F"
-    },
-    "cost": [35000],
     "source": "Street Lethal",
     "page": 130
   },
@@ -3685,6 +3685,11 @@
     "category": "Armour",
     "damageReduction": 12,
     "capacity": 8,
+    "availability": {
+      "rating": [12],
+      "restriction": "R"
+    },
+    "cost": [1700],
     "includedGearList": [
       {
         "baseGear": "Holster"
@@ -3710,11 +3715,6 @@
         "baseMod": "Pantheon Quick-Charge Battery Pack"
       }
     ],
-    "availability": {
-      "rating": [12],
-      "restriction": "R"
-    },
-    "cost": [1700],
     "source": "Kill Code",
     "page": 70
   },
@@ -3724,6 +3724,11 @@
     "category": "Armour",
     "damageReduction": 8,
     "capacity": 8,
+    "availability": {
+      "rating": [10],
+      "restriction": ""
+    },
+    "cost": [1000],
     "includedGearList": [
       {
         "baseGear": "Holster"
@@ -3741,11 +3746,6 @@
         "baseMod": "Micro-Hardpoint"
       }
     ],
-    "availability": {
-      "rating": [10],
-      "restriction": ""
-    },
-    "cost": [1000],
     "source": "Kill Code",
     "page": 70
   },
@@ -3755,16 +3755,16 @@
     "category": "Armour",
     "damageReduction": 0,
     "capacity": 3,
-    "includedGearList": [
-      {
-        "baseGear": "Image Link"
-      }
-    ],
     "availability": {
       "rating": [4],
       "restriction": ""
     },
     "cost": [200],
+    "includedGearList": [
+      {
+        "baseGear": "Image Link"
+      }
+    ],
     "source": "Hamburg",
     "page": 173
   },
@@ -3774,17 +3774,17 @@
     "category": "Armour",
     "damageReduction": 8,
     "capacity": 6,
+    "availability": {
+      "rating": [6],
+      "restriction": ""
+    },
+    "cost": [850],
     "includedModList": [
       {
         "baseMod": "Chemical Protection",
         "rating": 3
       }
     ],
-    "availability": {
-      "rating": [6],
-      "restriction": ""
-    },
-    "cost": [850],
     "source": "Hamburg",
     "page": 173
   },
@@ -3794,6 +3794,11 @@
     "category": "Armour",
     "damageReduction": 6,
     "capacity": 5,
+    "availability": {
+      "rating": [7],
+      "restriction": ""
+    },
+    "cost": [920],
     "includedModList": [
       {
         "baseMod": "Chemical Protection",
@@ -3803,11 +3808,6 @@
         "baseMod": "Internal Air Tank (5 Minutes)"
       }
     ],
-    "availability": {
-      "rating": [7],
-      "restriction": ""
-    },
-    "cost": [920],
     "source": "Hamburg",
     "page": 173
   },

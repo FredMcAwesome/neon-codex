@@ -24,6 +24,7 @@ import {
 import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { SpellSchema } from "@neon-codex/common/build/schemas/abilities/talent/spellSchemas.js";
 import Spells from "../../grammar/spells.ohm-bundle.js";
+import { type } from "arktype";
 const Damage = Spells.Damage;
 
 export function ParseSpells() {
@@ -44,18 +45,19 @@ export function ParseSpells() {
   //   jObj.chummer.spells.spell[337].required
   // );
 
-  const spellListParsed = SpellListXmlSchema.safeParse(
+  const spellListParsed = SpellListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.spells.spell
   );
 
-  if (spellListParsed.success) console.log("spells.xml initial zod parsed");
-  else {
-    console.log(spellListParsed.error.errors[0]);
+  if (spellListParsed instanceof type.errors) {
+    console.log(spellListParsed.summary);
     assert(false);
+  } else {
+    console.log("spells.xml initial arktype parsed");
   }
 
-  const spellList = spellListParsed.data;
+  const spellList = spellListParsed;
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
   // })
@@ -64,13 +66,13 @@ export function ParseSpells() {
     // .filter((weapon) => weapon.name === "Osmium Mace")
     .map((spell) => {
       const convertedSpell = convertSpell(spell);
-      const check = SpellSchema.safeParse(convertedSpell);
-      if (!check.success) {
+      const check = SpellSchema(convertedSpell);
+      if (check instanceof type.errors) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         console.dir(convertedSpell, { depth: Infinity });
-        throw new Error(check.error.message);
+        throw new Error(check.summary);
       }
-      return check.data;
+      return check;
     });
   // console.log(spellListConverted);
   const jsonFilePath = fileURLToPath(

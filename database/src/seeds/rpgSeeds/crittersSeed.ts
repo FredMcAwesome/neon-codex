@@ -7,6 +7,7 @@ import {
   type CritterListType,
 } from "@neon-codex/common/build/schemas/creatures/critterSchemas.js";
 import { Critters } from "../../models/rpg/creatures/critterModel.js";
+import { type } from "arktype";
 
 export const getCritters = function () {
   const currentPath = import.meta.url;
@@ -20,13 +21,13 @@ export const getCritters = function () {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const rawJson = JSON.parse(jsonString);
-  const critterListParsed = CritterListSchema.safeParse(rawJson);
-  if (critterListParsed.success) {
-    console.log("critters all g");
-    unlinkedCritters = critterListParsed.data;
-  } else {
-    console.log(critterListParsed.error.errors[0]);
+  const critterListParsed = CritterListSchema(rawJson);
+  if (critterListParsed instanceof type.errors) {
+    console.log(critterListParsed.summary);
     assert(false, "critters is undefined");
+  } else {
+    console.log("critters all g");
+    unlinkedCritters = critterListParsed;
   }
   const stagedCritters: Array<Critters> = [];
   unlinkedCritters.forEach((critter) => {

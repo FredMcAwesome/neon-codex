@@ -1840,7 +1840,7 @@
       <id>025f360f-f143-46a5-bfc7-e4e7ec5af37c</id>
       <name>Enclosed Breathing Helmet</name>
       <category>Specialty Armor</category>
-      <armor>+0</armor>
+      <armor>0</armor>
       <armorcapacity>6</armorcapacity>
       <avail>8</avail>
       <cost>900</cost>
@@ -1854,7 +1854,7 @@
       <id>feb98de4-5e5b-473f-a31a-a73ca36d0e1d</id>
       <name>Full Face Mask</name>
       <category>Specialty Armor</category>
-      <armor>+0</armor>
+      <armor>0</armor>
       <armorcapacity>4</armorcapacity>
       <avail>8</avail>
       <cost>300</cost>
@@ -1868,7 +1868,7 @@
       <id>b53bd60a-2687-4554-ae10-8309ee3c2991</id>
       <name>Drysuit</name>
       <category>Specialty Armor</category>
-      <armor>+0</armor>
+      <armor>0</armor>
       <armorcapacity>4</armorcapacity>
       <avail>6</avail>
       <cost>2500</cost>
@@ -1998,7 +1998,7 @@
       <id>5f6058e9-d026-492e-8f3f-0da6a54d90d6</id>
       <name>Magnetic Boots</name>
       <category>Specialty Armor</category>
-      <armor>+0</armor>
+      <armor>0</armor>
       <armorcapacity>4</armorcapacity>
       <avail>12</avail>
       <cost>2500</cost>

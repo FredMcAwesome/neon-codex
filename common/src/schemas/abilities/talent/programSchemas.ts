@@ -1,4 +1,3 @@
-import { z as zod } from "zod";
 import {
   costEnum,
   mathOperatorEnum,
@@ -9,72 +8,59 @@ import {
 import { BonusSchema } from "../../shared/bonusSchemas.js";
 import { RequirementsSchema } from "../../shared/requiredSchemas.js";
 import { AvailabilityRatingSchema } from "../../shared/commonSchemas.js";
+import { type } from "arktype";
 
-const ProgramRatingSchema = zod
-  .object({
-    maxRating: zod.number(),
-    minRating: zod.number(),
-  })
-  .strict();
-export type ProgramRatingType = zod.infer<typeof ProgramRatingSchema>;
+const ProgramRatingSchema = type({
+  maxRating: "number",
+  minRating: "number",
+});
+export type ProgramRatingType = typeof ProgramRatingSchema.infer;
 
-export const AvailabilityProgramSchema = zod
-  .object({
-    rating: AvailabilityRatingSchema,
-    restriction: zod.nativeEnum(restrictionEnum),
-  })
-  .strict();
-export type AvailabilityProgramType = zod.infer<
-  typeof AvailabilityProgramSchema
->;
+export const AvailabilityProgramSchema = type({
+  rating: AvailabilityRatingSchema,
+  restriction: type.valueOf(restrictionEnum),
+});
+export type AvailabilityProgramType = typeof AvailabilityProgramSchema.infer;
 
-const InnerCostProgramSchema = zod.union([
-  zod.number(),
-  zod
-    .object({
-      option: zod.nativeEnum(costEnum),
-    })
-    .strict(),
-  zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
-]);
-type InnerCostProgramType = zod.infer<typeof InnerCostProgramSchema>;
-
-type PartialCostProgramType = Array<
-  InnerCostProgramType | { subnumbers: PartialCostProgramType }
->;
-
-const PartialCostProgramSchema: zod.ZodType<PartialCostProgramType> = zod.array(
-  zod.union([
-    InnerCostProgramSchema,
-    zod
-      .object({
-        subnumbers: zod.lazy(() => PartialCostProgramSchema),
-      })
-      .strict(),
-  ])
+const InnerCostProgramSchema = type.or(
+  "number",
+  type({
+    option: type.valueOf(costEnum),
+  }),
+  { operator: type.valueOf(mathOperatorEnum) }
 );
 
-export const CostProgramSchema = zod.union([
-  PartialCostProgramSchema,
-  zod.object({ ratingLinked: zod.array(PartialCostProgramSchema) }).strict(),
-]);
+const { PartialCostProgramSchema } = type.module({
+  PartialCostProgramSchema: [
+    [
+      InnerCostProgramSchema,
+      "|",
+      {
+        subnumbers: "PartialCostProgramSchema",
+      },
+    ],
+    "[]",
+  ],
+});
 
-export type CostProgramType = zod.infer<typeof CostProgramSchema>;
+export const CostProgramSchema = type.or(PartialCostProgramSchema, {
+  ratingLinked: PartialCostProgramSchema.array(),
+});
 
-export const ProgramSchema = zod
-  .object({
-    name: zod.string(),
-    description: zod.string(),
-    category: zod.nativeEnum(programCategoryEnum),
-    rating: zod.optional(ProgramRatingSchema),
-    availability: AvailabilityProgramSchema,
-    cost: CostProgramSchema,
-    bonus: zod.optional(BonusSchema),
-    requirements: zod.optional(RequirementsSchema),
-    source: zod.nativeEnum(sourceBookEnum),
-    page: zod.number(),
-  })
-  .strict();
-export type ProgramType = zod.infer<typeof ProgramSchema>;
-export const ProgramListSchema = zod.array(ProgramSchema);
-export type ProgramListType = zod.infer<typeof ProgramListSchema>;
+export type CostProgramType = typeof CostProgramSchema.infer;
+
+export const ProgramSchema = type({
+  name: "string",
+  description: "string",
+  category: type.valueOf(programCategoryEnum),
+  "rating?": ProgramRatingSchema,
+  availability: AvailabilityProgramSchema,
+  cost: CostProgramSchema,
+  "bonus?": BonusSchema,
+  "requirements?": RequirementsSchema,
+  source: type.valueOf(sourceBookEnum),
+  page: "number",
+});
+export type ProgramType = typeof ProgramSchema.infer;
+export const ProgramListSchema = type(ProgramSchema.array());
+export type ProgramListType = typeof ProgramListSchema.infer;

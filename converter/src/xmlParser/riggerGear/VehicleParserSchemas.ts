@@ -4,13 +4,14 @@ import {
   weaponMountSizeEnum,
   weaponMountVisibilityEnum,
 } from "@neon-codex/common/build/enums.js";
-import { z as zod } from "zod";
+
 import {
   ModRecursiveXmlSchema,
   SourceXmlSchema,
   StringOrNumberSchema,
   UseGearXmlSchema,
 } from "../common/ParserCommonDefines.js";
+import { type } from "arktype";
 
 export enum vehicleXmlCategoryEnum {
   Bikes = "Bikes",
@@ -35,120 +36,98 @@ export enum vehicleXmlCategoryEnum {
   Hovercraft = "Hovercraft",
 }
 
-const IncludedWeaponMountXmlSchema = zod
-  .object({
-    // Mount Control type - how it is fired
-    control: zod.nativeEnum(weaponMountControlEnum),
-    // Mount Flexibility - how moveable a weapon on this mount is
-    flexibility: zod.nativeEnum(weaponMountFlexibilityEnum),
-    // Mount Size - each category can hold a set of weapon types
-    size: zod.nativeEnum(weaponMountSizeEnum),
-    // Mount Visibility - how visible mounted weapons are
-    visibility: zod.nativeEnum(weaponMountVisibilityEnum),
-    // Only this weapon can be mounted to this mount
-    allowedweapons: zod.optional(zod.string()),
-    // included mods only apply to one (German book) mount
-    mods: zod.optional(zod.object({ mod: zod.string() }).strict()),
-  })
-  .strict();
+const IncludedWeaponMountXmlSchema = type({
+  // Mount Control type - how it is fired
+  control: type.valueOf(weaponMountControlEnum),
+  // Mount Flexibility - how moveable a weapon on this mount is
+  flexibility: type.valueOf(weaponMountFlexibilityEnum),
+  // Mount Size - each category can hold a set of weapon types
+  size: type.valueOf(weaponMountSizeEnum),
+  // Mount Visibility - how visible mounted weapons are
+  visibility: type.valueOf(weaponMountVisibilityEnum),
+  // Only this weapon can be mounted to this mount
+  "allowedweapons?": "string",
+  // included mods only apply to one (German book) mount
+  "mods?": { mod: "string" },
+});
+export type IncludedWeaponMountXmlType =
+  typeof IncludedWeaponMountXmlSchema.infer;
 
-export type IncludedWeaponMountXmlType = zod.infer<
-  typeof IncludedWeaponMountXmlSchema
->;
+const VehicleXmlSchema = type({
+  id: "string",
+  name: "string",
+  // Acceleration - Range categories a vehicle can move in a turn
+  accel: StringOrNumberSchema,
+  // Max speed - Base limit for tests that emphasize speed
+  speed: StringOrNumberSchema,
+  // Armour - Toughness (used with body for resist damage tests)
+  armor: "number",
+  // Body - Structual integrity (used with armour for resist damage tests)
+  body: "number",
+  // Category of vehicle
+  category: type.valueOf(vehicleXmlCategoryEnum),
+  // Availability
+  avail: StringOrNumberSchema,
+  // Cost
+  cost: StringOrNumberSchema,
+  // Handling
+  handling: StringOrNumberSchema,
+  // Built-in computer piloting system (used when not actively piloted)
+  pilot: "number",
+  // Limit for perception and other detection tests with vehicle systems
+  sensor: "number",
+  // Included gear
+  "gears?": type({
+    gear: UseGearXmlSchema,
+  }),
+  // Vehicle Mods included
+  "mods?": ModRecursiveXmlSchema,
+  // Number of mod slots of each category
+  // This can be overriden for any specific slot type
+  "modslots?": "number",
+  // Mod slot category modification
+  // Power Train mod slots modification
+  "powertrainmodslots?": "number",
+  // Protection mod slots modification
+  "protectionmodslots?": "number",
+  // Weapon mod slots modification
+  "weaponmodslots?": "number",
+  // Body mod slots modification
+  "bodymodslots?": "number",
+  // Electromagnetic mod slots modification
+  "electromagneticmodslots?": "number",
+  // Cosmetic mod slots modification
+  "cosmeticmodslots?": "number",
+  // Number of seats, only for vehicles I assume?
+  "seats?": StringOrNumberSchema,
+  // Included weapons
+  // These weapons use a weapon mount
+  "weapons?": type({
+    weapon: type.or(
+      type({
+        name: "string",
+      }),
+      type({
+        name: "string",
+      }).array()
+    ),
+  }),
 
-const VehicleXmlSchema = zod
-  .object({
-    id: zod.string(),
-    name: zod.string(),
-    // Acceleration - Range categories a vehicle can move in a turn
-    accel: StringOrNumberSchema,
-    // Max speed - Base limit for tests that emphasize speed
-    speed: StringOrNumberSchema,
-    // Armour - Toughness (used with body for resist damage tests)
-    armor: zod.number(),
-    // Body - Structual integrity (used with armour for resist damage tests)
-    body: zod.number(),
-    // Category of vehicle
-    category: zod.nativeEnum(vehicleXmlCategoryEnum),
-    // Availability
-    avail: StringOrNumberSchema,
-    // Cost
-    cost: StringOrNumberSchema,
-    // Handling
-    handling: StringOrNumberSchema,
-    // Built-in computer piloting system (used when not actively piloted)
-    pilot: zod.number(),
-    // Limit for perception and other detection tests with vehicle systems
-    sensor: zod.number(),
-    // Included gear
-    gears: zod.optional(
-      zod
-        .object({
-          gear: UseGearXmlSchema,
-        })
-        .strict()
+  // Included weapon mounts
+  // Generally (currently always) included weapons
+  // are the only weapon/s useable in the included weapon mounts
+  "weaponmounts?": type({
+    weaponmount: type.or(
+      IncludedWeaponMountXmlSchema,
+      IncludedWeaponMountXmlSchema.array()
     ),
-    // Vehicle Mods included
-    mods: zod.optional(ModRecursiveXmlSchema),
-    // Number of mod slots of each category
-    // This can be overriden for any specific slot type
-    modslots: zod.optional(zod.number()),
-    // Mod slot category modification
-    // Power Train mod slots modification
-    powertrainmodslots: zod.optional(zod.number()),
-    // Protection mod slots modification
-    protectionmodslots: zod.optional(zod.number()),
-    // Weapon mod slots modification
-    weaponmodslots: zod.optional(zod.number()),
-    // Body mod slots modification
-    bodymodslots: zod.optional(zod.number()),
-    // Electromagnetic mod slots modification
-    electromagneticmodslots: zod.optional(zod.number()),
-    // Cosmetic mod slots modification
-    cosmeticmodslots: zod.optional(zod.number()),
-    // Number of seats, only for vehicles I assume?
-    seats: zod.optional(StringOrNumberSchema),
-    // Included weapons
-    // These weapons use a weapon mount
-    weapons: zod.optional(
-      zod
-        .object({
-          weapon: zod.union([
-            zod.array(
-              zod
-                .object({
-                  name: zod.string(),
-                })
-                .strict()
-            ),
-            zod
-              .object({
-                name: zod.string(),
-              })
-              .strict(),
-          ]),
-        })
-        .strict()
-    ),
-    // Included weapon mounts
-    // Generally (currently always) included weapons
-    // are the only weapon/s useable in the included weapon mounts
-    weaponmounts: zod.optional(
-      zod
-        .object({
-          weaponmount: zod.union([
-            zod.array(IncludedWeaponMountXmlSchema),
-            IncludedWeaponMountXmlSchema,
-          ]),
-        })
-        .strict()
-    ),
-    // Not selectable
-    hide: zod.optional(zod.literal("")),
-    source: zod.union([SourceXmlSchema, zod.literal(2050)]),
-    page: zod.number(),
-  })
-  .strict();
-export type VehicleXmlType = zod.infer<typeof VehicleXmlSchema>;
-export const VehicleListXmlSchema = zod.array(VehicleXmlSchema);
-export type VehicleListXmlType = zod.infer<typeof VehicleListXmlSchema>;
+  }),
+
+  // Not selectable
+  "hide?": "''",
+  source: type.or(SourceXmlSchema, "2050"),
+  page: "number",
+});
+export type VehicleXmlType = typeof VehicleXmlSchema.infer;
+export const VehicleListXmlSchema = VehicleXmlSchema.array();
+export type VehicleListXmlType = typeof VehicleListXmlSchema.infer;

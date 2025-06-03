@@ -16,6 +16,7 @@ import {
 import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { convertXmlBonus } from "../common/BonusParserHelper.js";
 import { qualityLimitEnum } from "@neon-codex/common/build/enums.js";
+import { type } from "arktype";
 
 export function ParseQualities() {
   const currentPath = import.meta.url;
@@ -35,33 +36,33 @@ export function ParseQualities() {
   //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   //   jObj.chummer.qualities.quality[698]
   // );
-  const qualityListParsed = QualityListXmlSchema.safeParse(
+  const qualityListParsed = QualityListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.qualities.quality
   );
 
-  if (qualityListParsed.success)
-    console.log("qualities.xml initial zod parsed");
-  else {
-    console.log(qualityListParsed.error.errors[0]);
+  if (qualityListParsed instanceof type.errors) {
+    console.log(qualityListParsed.summary);
     assert(false);
+  } else {
+    console.log("qualities.xml initial arktype parsed");
   }
 
-  const qualityList = qualityListParsed.data;
+  const qualityList = qualityListParsed;
   const qualityListConverted = qualityList.map((skill: QualityXmlType) => {
     const convertedQuality = convertQuality(skill);
-    const check = QualitySchema.safeParse(convertedQuality);
-    if (!check.success) {
+    const check = QualitySchema(convertedQuality);
+    if (check instanceof type.errors) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       console.dir(convertedQuality, { depth: Infinity });
-      throw new Error(check.error.message);
+      throw new Error(check.summary);
     }
     return convertedQuality;
   });
   // console.log(qualityListConverted);
-  const check = QualityListSchema.safeParse(qualityListConverted);
-  if (!check.success) {
-    throw new Error(check.error.message);
+  const check = QualityListSchema(qualityListConverted);
+  if (check instanceof type.errors) {
+    throw new Error(check.summary);
   }
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/qualities.json"
@@ -179,14 +180,16 @@ const convertQuality = function (xmlQuality: QualityXmlType): QualityType {
     ...(xmlQuality.doublecareer !== undefined && {
       charGenCostInCareer: true,
     }),
-    limit: limit,
-    sharedLimitQualityList: sharedLimitQualityList,
-    karmaDiscount: karmaDiscount,
+    ...(limit !== undefined && { limit: limit }),
+    ...(sharedLimitQualityList !== undefined && {
+      sharedLimitQualityList: sharedLimitQualityList,
+    }),
+    ...(karmaDiscount !== undefined && { karmaDiscount: karmaDiscount }),
     ...(xmlQuality.nolevels !== undefined && {
       noLevels: true,
     }),
-    firstLevelBonus: firstLevelBonus,
-    addWeapons: addWeaponList,
+    ...(firstLevelBonus !== undefined && { firstLevelBonus: firstLevelBonus }),
+    ...(addWeaponList !== undefined && { addWeapons: addWeaponList }),
     ...(xmlQuality.metagenic !== undefined && {
       isMetagenic: true,
     }),
@@ -194,9 +197,9 @@ const convertQuality = function (xmlQuality: QualityXmlType): QualityType {
       canBuyWithSpellPoints: true,
     }),
     ...(xmlQuality.hide !== undefined && { userSelectable: false as const }),
-    bonus: bonus,
-    requirements: requirements,
-    forbidden: forbidden,
+    ...(bonus !== undefined && { bonus: bonus }),
+    ...(requirements !== undefined && { requirements: requirements }),
+    ...(forbidden !== undefined && { forbidden: forbidden }),
     description: "",
     source: xmlQuality.source,
     page: xmlQuality.page,

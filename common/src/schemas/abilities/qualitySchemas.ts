@@ -1,85 +1,70 @@
-import { z as zod } from "zod";
+import { type } from "arktype";
 import { qualityCategoryEnum, qualityLimitEnum } from "../../enums.js";
 import { BonusSchema } from "../shared/bonusSchemas.js";
 import { RequirementsSchema } from "../shared/requiredSchemas.js";
 
-const QualityLimitSchema = zod.union([
-  zod
-    .object({
-      option: zod.nativeEnum(qualityLimitEnum),
-    })
-    .strict(),
-  zod.number(),
-]);
-export type QualityLimitType = zod.infer<typeof QualityLimitSchema>;
+const QualityLimitSchema = type.or(
+  {
+    option: type.valueOf(qualityLimitEnum),
+  },
+  "number"
+);
+export type QualityLimitType = typeof QualityLimitSchema.infer;
 
-const QualityKarmaDiscountSchema = zod
-  .object({
-    requirements: RequirementsSchema,
-    value: zod.number(),
-  })
-  .strict();
-export type QualityKarmaDiscountType = zod.infer<
-  typeof QualityKarmaDiscountSchema
->;
+const QualityKarmaDiscountSchema = type({
+  requirements: RequirementsSchema,
+  value: "number",
+});
+export type QualityKarmaDiscountType = typeof QualityKarmaDiscountSchema.infer;
 
-const QualityFirstLevelBonusSchema = zod.union([
-  zod
-    .object({
-      // Increase to Notoriety level
-      notoriety: zod.number(),
-    })
-    .strict(),
-  zod
-    .object({
-      // prevents attribute maximum/s from being increased
-      attributeMaxClamp: zod.array(zod.string()),
-    })
-    .strict(),
-]);
-export type QualityFirstLevelBonusType = zod.infer<
-  typeof QualityFirstLevelBonusSchema
->;
+const QualityFirstLevelBonusSchema = type.or(
+  {
+    // Increase to Notoriety level
+    notoriety: "number",
+  },
+  {
+    // prevents attribute maximum/s from being increased
+    attributeMaxClamp: "string[]",
+  }
+);
+export type QualityFirstLevelBonusType =
+  typeof QualityFirstLevelBonusSchema.infer;
 
-export const QualitySchema = zod
-  .object({
-    // id: zod.string(),
-    name: zod.string(),
-    description: zod.string(),
-    category: zod.nativeEnum(qualityCategoryEnum),
-    karma: zod.number(),
-    charGenOnly: zod.optional(zod.literal(true)),
-    charGenLimit: zod.optional(zod.number()),
-    charGenDoNotContributeToKarmaLimit: zod.optional(zod.literal(true)),
-    charGenNoKarma: zod.optional(zod.literal(true)),
-    chargenQualityOnly_NotSelectableIfPriorityChargen: zod.optional(
-      zod.literal(true)
-    ),
-    careerOnly: zod.optional(zod.literal(true)),
-    charGenCostInCareer: zod.optional(zod.literal(true)),
-    limit: zod.optional(QualityLimitSchema),
-    sharedLimitQualityList: zod.optional(zod.array(zod.string())),
-    karmaDiscount: zod.optional(QualityKarmaDiscountSchema),
-    noLevels: zod.optional(zod.literal(true)),
-    firstLevelBonus: zod.optional(QualityFirstLevelBonusSchema),
-    addWeapons: zod.optional(zod.array(zod.string())),
-    isMetagenic: zod.optional(zod.literal(true)),
-    canBuyWithSpellPoints: zod.optional(zod.literal(true)),
-    userSelectable: zod.optional(zod.literal(false)),
-    bonus: zod.optional(BonusSchema),
-    requirements: zod.optional(RequirementsSchema),
-    forbidden: zod.optional(RequirementsSchema),
-    source: zod.string(),
-    page: zod.number(),
-  })
-  .strict();
-export type QualityType = zod.infer<typeof QualitySchema>;
-export const QualityListSchema = zod.array(QualitySchema);
-export type QualityListType = zod.infer<typeof QualityListSchema>;
+export const QualitySchema = type({
+  // id: "string",
+  name: "string",
+  description: "string",
+  category: type.valueOf(qualityCategoryEnum),
+  karma: "number",
+  "charGenOnly?": "true",
+  "charGenLimit?": "number",
+  "charGenDoNotContributeToKarmaLimit?": "true",
+  "charGenNoKarma?": "true",
+  "chargenQualityOnly_NotSelectableIfPriorityChargen?": "true",
+  "careerOnly?": "true",
+  "charGenCostInCareer?": "true",
+  "limit?": QualityLimitSchema,
+  "sharedLimitQualityList?": "string[]",
+  "karmaDiscount?": QualityKarmaDiscountSchema,
+  "noLevels?": "true",
+  "firstLevelBonus?": QualityFirstLevelBonusSchema,
+  "addWeapons?": "string[]",
+  "isMetagenic?": "true",
+  "canBuyWithSpellPoints?": "true",
+  "userSelectable?": "false",
+  "bonus?": BonusSchema,
+  "requirements?": RequirementsSchema,
+  "forbidden?": RequirementsSchema,
+  source: "string",
+  page: "number",
+});
+export type QualityType = typeof QualitySchema.infer;
+export const QualityListSchema = QualitySchema.array();
+export type QualityListType = typeof QualityListSchema.infer;
 
-export const CustomQualitySchema = QualitySchema.extend({
-  rating: zod.number(),
-}).strict();
-export type CustomQualityType = zod.infer<typeof CustomQualitySchema>;
-export const CustomQualityListSchema = zod.array(CustomQualitySchema);
-export type CustomQualityListType = zod.infer<typeof CustomQualityListSchema>;
+export const CustomQualitySchema = QualitySchema.and({
+  rating: "number",
+});
+export type CustomQualityType = typeof CustomQualitySchema.infer;
+export const CustomQualityListSchema = CustomQualitySchema.array();
+export type CustomQualityListType = typeof CustomQualityListSchema.infer;

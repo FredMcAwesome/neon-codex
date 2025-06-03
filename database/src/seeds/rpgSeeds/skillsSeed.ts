@@ -6,6 +6,7 @@ import { Skills } from "../../models/rpg/abilities/skillModel.js";
 import { SkillListSchema } from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
 import type { SkillListType } from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
 import { SkillGroups } from "../../models/rpg/abilities/skillGroupModel.js";
+import { type } from "arktype";
 
 export const getSkills = function () {
   const currentPath = import.meta.url;
@@ -19,13 +20,13 @@ export const getSkills = function () {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const rawJson = JSON.parse(jsonString);
-  const skillListParsed = SkillListSchema.safeParse(rawJson);
-  if (skillListParsed.success) {
-    console.log("skills all g");
-    skills = skillListParsed.data;
-  } else {
-    console.log(skillListParsed.error.errors[0]);
+  const skillListParsed = SkillListSchema(rawJson);
+  if (skillListParsed instanceof type.errors) {
+    console.log(skillListParsed.summary);
     assert(false, "skills is undefined");
+  } else {
+    console.log("skills all g");
+    skills = skillListParsed;
   }
   const stagedSkills: Array<Skills> = [];
   const skillGroups: Array<SkillGroups> = [];

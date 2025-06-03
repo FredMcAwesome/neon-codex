@@ -2,51 +2,52 @@
   {
     "name": "01 (The World Tree)",
     "description": "",
+    "category": "Paragon",
     "advantage": "If a follower of 01 has at least one mark on a target, they may act as if they have an extra mark on it.",
     "disadvantage": "–1 limit and –1 dice pool penalty when acting only in AR.",
     "source": "Kill Code",
-    "page": 103,
-    "category": "Paragon"
+    "page": 103
   },
   {
     "name": "Architect",
     "description": "",
+    "category": "Paragon",
     "advantage": "+1 limit and +1 dice pool bonus for Edit actions.",
     "disadvantage": "–1 limit and –1 dice for Snoop actions.",
     "source": "Kill Code",
-    "page": 103,
-    "category": "Paragon"
+    "page": 103
   },
   {
     "name": "Archivist (The Record Keeper)",
     "description": "",
+    "category": "Paragon",
     "advantage": "+1 limit and +1 dice pool bonus for Browse actions and digital legwork.",
     "disadvantage": "–1 limit for Edit actions designed to destroy data.",
     "source": "Kill Code",
-    "page": 177,
-    "category": "Paragon"
+    "page": 177
   },
   {
     "name": "Black Hat (The Cracker)",
     "description": "",
+    "category": "Paragon",
     "advantage": "+2 limit for gaining marks on a target.",
     "disadvantage": "-1 limit and –1 die when setting a Data Bomb.",
     "source": "Kill Code",
-    "page": 103,
-    "category": "Paragon"
+    "page": 103
   },
   {
     "name": "Daedalus (The Inventor)",
     "description": "",
+    "category": "Paragon",
     "advantage": "+1 dice pool bonus for Hardware tests, +1 limit on Pilot skill tests when jumped in.",
     "disadvantage": "–1 dice and limit for all actions in the Deep Resonance.",
     "source": "Kill Code",
-    "page": 103,
-    "category": "Paragon"
+    "page": 103
   },
   {
     "name": "Delphi (The Oracle)",
     "description": "",
+    "category": "Paragon",
     "advantage": "+1 bonus to dice pool and limit when threading complex forms.",
     "disadvantage": "–2 modifier to the technomancer's Initiative Score.",
     "bonus": {
@@ -55,30 +56,30 @@
       }
     },
     "source": "Kill Code",
-    "page": 104,
-    "category": "Paragon"
+    "page": 104
   },
   {
     "name": "Intrusion Countermeasure (The Guardian)",
     "description": "",
+    "category": "Paragon",
     "advantage": "+1 bonus to dice pool and limit in cybercombat, +1 to firewall.",
     "disadvantage": "–1 dice pool penalty when attacking IC in cybercombat.",
     "source": "Kill Code",
-    "page": 104,
-    "category": "Paragon"
+    "page": 104
   },
   {
     "name": "Probe (The Scout)",
     "description": "",
+    "category": "Paragon",
     "advantage": "+2 dice pool bonus and +1 limit on all actions when directly connected to an isolated system.",
     "disadvantage": "–1 limit penalty when logged into more than one grid.",
     "source": "Kill Code",
-    "page": 104,
-    "category": "Paragon"
+    "page": 104
   },
   {
     "name": "Shooter (The Soldier)",
     "description": "",
+    "category": "Paragon",
     "advantage": "+1 bonus to dice pool and limit in cybercombat, +1 limit to all attack actions (physical and Matrix)",
     "disadvantage": "–2 dice pool penalty and –1 limit when compiling sprites.",
     "bonus": {
@@ -170,7 +171,6 @@
       ]
     },
     "source": "Kill Code",
-    "page": 104,
-    "category": "Paragon"
+    "page": 104
   }
 ]

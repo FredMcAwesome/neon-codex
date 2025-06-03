@@ -94,18 +94,18 @@ export const convertXmlWeaponBonus = function (bonus: WeaponXmlBonusType) {
 };
 
 export const convertAmmoForWeaponType = function (
-  type: AmmoForWeaponTypeXmlType
+  ammoType: AmmoForWeaponTypeXmlType
 ) {
   let typeListProcessing;
-  if (typeof type === "string") {
-    typeListProcessing = type.split(",").map((type) => {
+  if (typeof ammoType === "string") {
+    typeListProcessing = ammoType.split(",").map((type) => {
       return { name: type, categorySpecific: true };
     });
   } else {
     typeListProcessing = [
       {
-        name: type.xmltext,
-        categorySpecific: type._noextra === undefined,
+        name: ammoType.xmltext,
+        categorySpecific: ammoType._noextra === undefined,
       },
     ];
   }
@@ -113,8 +113,8 @@ export const convertAmmoForWeaponType = function (
   // Convert these to the types WeaponParserHelper::getWeaponTypeInformation()
   // converts the weapon category to
   const typeListConverted: Array<Array<AmmoForWeaponTypeType>> =
-    typeListProcessing.map((type) => {
-      switch (type.name) {
+    typeListProcessing.map((listAmmoType) => {
+      switch (listAmmoType.name) {
         case weaponTypeXmlEnum.Melee:
           assert(false, "Melee ammo shouldn't occur");
           break;
@@ -354,7 +354,7 @@ export const convertAmmoForWeaponType = function (
             },
           ];
         default:
-          assert(false, `Weapon type: ${type.name} is not expected`);
+          assert(false, `Weapon type: ${listAmmoType.name} is not expected`);
       }
     });
   // Flatten 2d array to 1d

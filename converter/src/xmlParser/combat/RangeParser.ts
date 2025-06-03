@@ -3,7 +3,7 @@ import { XMLParser } from "fast-xml-parser";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { z as zod } from "zod";
+
 import { StringOrNumberSchema } from "../common/ParserCommonDefines.js";
 import Range from "../../grammar/range.ohm-bundle.js";
 import type { RangeIncrementType } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
@@ -12,19 +12,18 @@ import {
   RangeSchema,
 } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
 import { mathOperatorEnum, rangeEnum } from "@neon-codex/common/build/enums.js";
+import { type } from "arktype";
 
-const RangeXmlSchema = zod
-  .object({
-    name: zod.string(),
-    min: zod.number(),
-    short: StringOrNumberSchema,
-    medium: StringOrNumberSchema,
-    long: StringOrNumberSchema,
-    extreme: StringOrNumberSchema,
-  })
-  .strict();
-const RangeListXmlSchema = zod.array(RangeXmlSchema);
-type RangeXmlType = zod.infer<typeof RangeXmlSchema>;
+const RangeXmlSchema = type({
+  name: "string",
+  min: "number",
+  short: StringOrNumberSchema,
+  medium: StringOrNumberSchema,
+  long: StringOrNumberSchema,
+  extreme: StringOrNumberSchema,
+});
+const RangeListXmlSchema = type(RangeXmlSchema.array());
+type RangeXmlType = typeof RangeXmlSchema.infer;
 
 const semantics = Range.createSemantics();
 semantics.addOperation("eval", {
@@ -67,33 +66,34 @@ export function ParseRanges() {
     textNodeName: "xmltext",
   });
   const jObj: any = parser.parse(xml_string);
-  const rangeListParsed = RangeListXmlSchema.safeParse(
+  const rangeListParsed = RangeListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.ranges.range
   );
 
-  if (rangeListParsed.success) console.log("ranges.xml initial zod parsed");
-  else {
-    console.log(rangeListParsed.error.errors[0]);
+  if (rangeListParsed instanceof type.errors) {
+    console.log(rangeListParsed.summary);
     assert(false);
+  } else {
+    console.log("ranges.xml initial arktype parsed");
   }
 
-  const rangeList = rangeListParsed.data;
+  const rangeList = rangeListParsed;
 
   const rangeListConverted = rangeList.map((range: RangeXmlType) => {
     const convertedRange = convertRange(range);
-    const check = RangeSchema.safeParse(convertedRange);
-    if (!check.success) {
+    const check = RangeSchema(convertedRange);
+    if (check instanceof type.errors) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       console.dir(convertedRange, { depth: Infinity });
-      throw new Error(check.error.message);
+      throw new Error(check.summary);
     }
-    return check.data;
+    return check;
   });
   // console.log(rangeListConverted);
-  const check = RangeListSchema.safeParse(rangeListConverted);
-  if (!check.success) {
-    throw new Error(check.error.message);
+  const check = RangeListSchema(rangeListConverted);
+  if (check instanceof type.errors) {
+    throw new Error(check.summary);
   }
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/ranges.json"

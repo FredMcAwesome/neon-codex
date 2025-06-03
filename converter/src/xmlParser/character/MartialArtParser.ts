@@ -5,7 +5,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { convertXmlBonus } from "../common/BonusParserHelper.js";
-import { z as zod } from "zod";
+
 import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
 import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
 import {
@@ -15,44 +15,35 @@ import {
 import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { convertSource } from "../common/ParserHelper.js";
+import { type } from "arktype";
 
-const MartialArtXmlSchema = zod.union([
-  zod
-    .object({
-      id: zod.string(),
-      name: zod.string(),
-      cost: zod.optional(zod.number()),
-      bonus: zod.optional(BonusXmlSchema),
-      required: zod.optional(RequiredXmlSchema),
-      techniques: zod
-        .object({
-          technique: zod.array(
-            zod
-              .object({
-                name: zod.string(),
-              })
-              .strict()
-          ),
-        })
-        .strict(),
-      source: zod.nativeEnum(sourceBookXmlEnum),
-      page: zod.number(),
-    })
-    .strict(),
-  zod
-    .object({
-      id: zod.string(),
-      name: zod.string(),
-      isquality: zod.literal("True"),
-      alltechniques: zod.literal(""),
-      source: zod.nativeEnum(sourceBookXmlEnum),
-      page: zod.number(),
-    })
-    .strict(),
-]);
-type MartialArtXmlType = zod.infer<typeof MartialArtXmlSchema>;
+const MartialArtXmlSchema = type.or(
+  {
+    id: "string",
+    name: "string",
+    "cost?": "number",
+    "bonus?": BonusXmlSchema,
+    "required?": RequiredXmlSchema,
+    techniques: {
+      technique: type({
+        name: "string",
+      }).array(),
+    },
+    source: type.valueOf(sourceBookXmlEnum),
+    page: "number",
+  },
+  {
+    id: "string",
+    name: "string",
+    isquality: "'True'",
+    alltechniques: "''",
+    source: type.valueOf(sourceBookXmlEnum),
+    page: "number",
+  }
+);
+type MartialArtXmlType = typeof MartialArtXmlSchema.infer;
 
-export const MartialArtListXmlSchema = zod.array(MartialArtXmlSchema);
+export const MartialArtListXmlSchema = type(MartialArtXmlSchema.array());
 
 export function ParseMartialArts() {
   const currentPath = import.meta.url;
@@ -74,35 +65,35 @@ export function ParseMartialArts() {
   //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   //   jObj.chummer.martialarts.martialart[51]
   // );
-  const martialArtListParsed = MartialArtListXmlSchema.safeParse(
+  const martialArtListParsed = MartialArtListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.martialarts.martialart
   );
 
-  if (martialArtListParsed.success)
-    console.log("martialarts.xml initial zod parsed");
-  else {
-    console.log(martialArtListParsed.error.errors[0]);
+  if (martialArtListParsed instanceof type.errors) {
+    console.log(martialArtListParsed.summary);
     assert(false);
+  } else {
+    console.log("martialarts.xml initial arktype parsed");
   }
 
-  const martialArtList = martialArtListParsed.data;
+  const martialArtList = martialArtListParsed;
   const martialArtListConverted = martialArtList.map(
     (martialArt: MartialArtXmlType) => {
       const convertedMartialArt = convertMartialArt(martialArt);
-      const check = MartialArtSchema.safeParse(convertedMartialArt);
-      if (!check.success) {
+      const check = MartialArtSchema(convertedMartialArt);
+      if (check instanceof type.errors) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         console.dir(convertedMartialArt, { depth: Infinity });
-        throw new Error(check.error.message);
+        throw new Error(check.summary);
       }
       return convertedMartialArt;
     }
   );
   // console.log(qualityListConverted);
-  const check = MartialArtListSchema.safeParse(martialArtListConverted);
-  if (!check.success) {
-    throw new Error(check.error.message);
+  const check = MartialArtListSchema(martialArtListConverted);
+  if (check instanceof type.errors) {
+    throw new Error(check.summary);
   }
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/martialArts.json"

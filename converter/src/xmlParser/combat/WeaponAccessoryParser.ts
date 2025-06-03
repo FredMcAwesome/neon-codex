@@ -38,6 +38,7 @@ import type {
   CostWeaponAccessoryType,
 } from "@neon-codex/common/build/schemas/equipment/combat/weaponAccessorySchemas.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
+import { type } from "arktype";
 const Availability = WeaponAccessories.Availability;
 const Cost = WeaponAccessories.Cost;
 const ModifyAmmoCapacity = WeaponAccessories.ModifyAmmoCapacity;
@@ -68,28 +69,28 @@ export function ParseWeaponAccessories() {
   //   JSON.stringify(jObj.chummer.accessories.accessory[86])
   // );
 
-  const weaponListParsed = WeaponListXmlSchema.safeParse(
+  const weaponListParsed = WeaponListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.weapons.weapon
   );
 
   let weaponNames: Array<string> = [];
-  if (weaponListParsed.success) {
-    weaponNames = weaponListParsed.data.map((weapon) => weapon.name);
-  } else {
+  if (weaponListParsed instanceof type.errors) {
     assert(false);
+  } else {
+    weaponNames = weaponListParsed.map((weapon) => weapon.name);
   }
 
-  const weaponAccessoryListParsed = WeaponAccessoryListXmlSchema.safeParse(
+  const weaponAccessoryListParsed = WeaponAccessoryListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.accessories.accessory
   );
 
-  if (weaponAccessoryListParsed.success) {
-    console.log("weapons.xml (accessories) initial zod parsed");
-  } else {
-    console.log(weaponAccessoryListParsed.error.errors[0]);
+  if (weaponAccessoryListParsed instanceof type.errors) {
+    console.log(weaponAccessoryListParsed.summary);
     assert(false);
+  } else {
+    console.log("weapons.xml (accessories) initial arktype parsed");
   }
 
   const convertWeaponAccessory = function (
@@ -171,45 +172,80 @@ export function ParseWeaponAccessories() {
       name: weaponAccessory.name,
       description: "",
       maxRating: weaponAccessory.rating,
-      isWeapon: weaponNames.includes(weaponAccessory.name),
-      accuracyIncrease: weaponAccessory.accuracy,
-      damageIncrease: weaponAccessory.damage,
-      newDamageType: weaponAccessory.damagetype
-        ? weaponAccessory.damagetype === "P"
-          ? damageTypeEnum.Physical
-          : undefined
-        : undefined,
-      reachIncrease: weaponAccessory.reach,
-      armourPiercingIncrease: weaponAccessory.ap,
-      recoilCompensationIncrease: weaponAccessory.rc,
-      recoilCompensationType: weaponAccessory.rcgroup,
-      deploymentRequired: weaponAccessory.rcdeployable === "True",
+      ...(weaponNames.includes(weaponAccessory.name) && {
+        isWeapon: true as const,
+      }),
+      ...(weaponAccessory.accuracy !== undefined && {
+        accuracyIncrease: weaponAccessory.accuracy,
+      }),
+      ...(weaponAccessory.damage !== undefined && {
+        damageIncrease: weaponAccessory.damage,
+      }),
+      ...(weaponAccessory.damagetype !== undefined &&
+        weaponAccessory.damagetype === "P" && {
+          newDamageType: damageTypeEnum.Physical,
+        }),
+      ...(weaponAccessory.reach !== undefined && {
+        reachIncrease: weaponAccessory.reach,
+      }),
+      ...(weaponAccessory.ap !== undefined && {
+        armourPiercingIncrease: weaponAccessory.ap,
+      }),
+      ...(weaponAccessory.rc !== undefined && {
+        recoilCompensationIncrease: weaponAccessory.rc,
+      }),
+      ...(weaponAccessory.rcgroup !== undefined && {
+        recoilCompensationType: weaponAccessory.rcgroup,
+      }),
+      ...(weaponAccessory.rcdeployable !== undefined &&
+        weaponAccessory.rcdeployable === "True" && {
+          deploymentRequired: true as const,
+        }),
       availability: availability,
       cost: cost,
       source: convertSource(weaponAccessory.source),
       page: weaponAccessory.page,
-      accessoryCostMultiplier: weaponAccessory.accessorycostmultiplier,
-      allowedGearList: allowedGearList,
-      allowedGearCategories: allowedGearCategories,
-      includedGearList: weaponAccessory.gears
-        ? convertIncludedXmlGears(weaponAccessory.gears)
-        : undefined,
-      specialModification: weaponAccessory.specialmodification === "True",
-      extraAmmoSlots: weaponAccessory.ammoslots,
-      ammoCapacityCalculation: ammoCapacityCalculation,
-      newAmmoType: newAmmoType,
-      hostWeaponMountsRequired: mountLocationsOnHostWeapon,
-      hostWeaponRequirements: requirements,
-      hostWeaponRestrictions: forbidden,
+      ...(weaponAccessory.accessorycostmultiplier !== undefined && {
+        accessoryCostMultiplier: weaponAccessory.accessorycostmultiplier,
+      }),
+      ...(allowedGearList !== undefined && {
+        allowedGearList: allowedGearList,
+      }),
+      ...(allowedGearCategories !== undefined && {
+        allowedGearCategories: allowedGearCategories,
+      }),
+      ...(weaponAccessory.gears !== undefined && {
+        includedGearList: convertIncludedXmlGears(weaponAccessory.gears),
+      }),
+      ...(weaponAccessory.specialmodification !== undefined &&
+        weaponAccessory.specialmodification === "True" && {
+          specialModification: true as const,
+        }),
+      ...(weaponAccessory.ammoslots !== undefined && {
+        extraAmmoSlots: weaponAccessory.ammoslots,
+      }),
+      ...(ammoCapacityCalculation !== undefined && {
+        ammoCapacityCalculation: ammoCapacityCalculation,
+      }),
+      ...(newAmmoType !== undefined && { newAmmoType: newAmmoType }),
+      ...(mountLocationsOnHostWeapon !== undefined && {
+        hostWeaponMountsRequired: mountLocationsOnHostWeapon,
+      }),
+      ...(requirements !== undefined && {
+        hostWeaponRequirements: requirements,
+      }),
+      ...(forbidden !== undefined && { hostWeaponRestrictions: forbidden }),
       ...(weaponAccessory.hide !== undefined && {
         userSelectable: false as const,
       }),
-      rangePenaltyDecrease: weaponAccessory.rangemodifier,
-      concealabilityModification: conceal,
+      ...(weaponAccessory.rangemodifier !== undefined && {
+        rangePenaltyDecrease: weaponAccessory.rangemodifier,
+      }),
+      ...(conceal !== undefined && { concealabilityModification: conceal }),
     };
   };
 
-  const weaponAccessoryList = weaponAccessoryListParsed.data;
+  const weaponAccessoryList = weaponAccessoryListParsed;
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
   // })
@@ -220,20 +256,18 @@ export function ParseWeaponAccessories() {
     // .filter((weaponAccessory) => weaponAccessory.name === "Concealable Holster")
     .map((weaponAccessory: WeaponAccessoryXmlType) => {
       const convertedWeaponAccessory = convertWeaponAccessory(weaponAccessory);
-      const check = WeaponAccessorySchema.safeParse(convertedWeaponAccessory);
-      if (!check.success) {
+      const check = WeaponAccessorySchema(convertedWeaponAccessory);
+      if (check instanceof type.errors) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         console.dir(convertedWeaponAccessory, { depth: Infinity });
-        throw new Error(check.error.message);
+        throw new Error(check.summary);
       }
-      return check.data;
+      return check;
     });
   // console.log(weaponAccessoryListConverted);
-  const check = WeaponAccessoryListSchema.safeParse(
-    weaponAccessoryListConverted
-  );
-  if (!check.success) {
-    throw new Error(check.error.message);
+  const check = WeaponAccessoryListSchema(weaponAccessoryListConverted);
+  if (check instanceof type.errors) {
+    throw new Error(check.summary);
   }
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/weaponAccessories.json"

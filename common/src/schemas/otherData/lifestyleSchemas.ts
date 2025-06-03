@@ -1,4 +1,4 @@
-import { z as zod } from "zod";
+import { type } from "arktype";
 import {
   gridCategoryEnum,
   lifestyleCostIncrementEnum,
@@ -8,97 +8,71 @@ import {
 import { BonusSchema } from "../shared/bonusSchemas.js";
 import { RequirementsSchema } from "../shared/requiredSchemas.js";
 
-export const LifestyleCostSchema = zod
-  .object({
-    cost: zod.number(),
-    increment: zod.nativeEnum(lifestyleCostIncrementEnum),
-  })
-  .strict();
-export type LifestyleCostType = zod.infer<typeof LifestyleCostSchema>;
-const LifestyleCategoryIncreaseCostSchema = zod
-  .object({
-    comfort: zod.number(),
-    neighborhood: zod.number(),
-    security: zod.number(),
-  })
-  .strict();
-export type LifestyleCategoryIncreaseCostType = zod.infer<
-  typeof LifestyleCategoryIncreaseCostSchema
->;
-const LifestyleCategoryDefaults = zod
-  .object({
-    comfortInfo: zod
-      .object({ minimum: zod.number(), limit: zod.number() })
-      .strict(),
-    neighborhoodInfo: zod
-      .object({ minimum: zod.number(), limit: zod.number() })
-      .strict(),
-    securityInfo: zod
-      .object({ minimum: zod.number(), limit: zod.number() })
-      .strict(),
-  })
-  .strict();
-export type LifestyleCategoryType = zod.infer<typeof LifestyleCategoryDefaults>;
-export const LifestyleSchema = zod
-  .object({
-    name: zod.string(),
-    cost: LifestyleCostSchema,
-    lifestylePoints: zod.number(),
-    allowBonusLifestylePoints: zod.optional(zod.literal(true)),
-    freegridList: zod.array(zod.nativeEnum(gridCategoryEnum)),
-    dice: zod.number(),
-    startingNuyenMultiplier: zod.number(),
-    costIncreasePerCategoryLevelIncrease: zod.optional(
-      LifestyleCategoryIncreaseCostSchema
-    ),
-    lifestyleCategoryDefaults: zod.optional(LifestyleCategoryDefaults),
-    bonus: zod.optional(BonusSchema),
-    requirements: zod.optional(RequirementsSchema),
-    forbidden: zod.optional(RequirementsSchema),
-    source: zod.nativeEnum(sourceBookEnum),
-    page: zod.number(),
-    description: zod.string(),
-  })
-  .strict();
-export type LifestyleType = zod.infer<typeof LifestyleSchema>;
-export const LifestyleListSchema = zod.array(LifestyleSchema);
-export type LifestyleListType = zod.infer<typeof LifestyleListSchema>;
+export const LifestyleCostSchema = type({
+  cost: "number",
+  increment: type.valueOf(lifestyleCostIncrementEnum),
+});
+export type LifestyleCostType = typeof LifestyleCostSchema.infer;
+const LifestyleCategoryIncreaseCostSchema = type({
+  comfort: "number",
+  neighborhood: "number",
+  security: "number",
+});
+export type LifestyleCategoryIncreaseCostType =
+  typeof LifestyleCategoryIncreaseCostSchema.infer;
+const LifestyleCategoryDefaults = type({
+  comfortInfo: { minimum: "number", limit: "number" },
+  neighborhoodInfo: { minimum: "number", limit: "number" },
+  securityInfo: { minimum: "number", limit: "number" },
+});
+export type LifestyleCategoryType = typeof LifestyleCategoryDefaults.infer;
+export const LifestyleSchema = type({
+  name: "string",
+  cost: LifestyleCostSchema,
+  lifestylePoints: "number",
+  "allowBonusLifestylePoints?": "true",
+  freegridList: type.valueOf(gridCategoryEnum).array(),
+  dice: "number",
+  startingNuyenMultiplier: "number",
+  "costIncreasePerCategoryLevelIncrease?": LifestyleCategoryIncreaseCostSchema,
+  "lifestyleCategoryDefaults?": LifestyleCategoryDefaults,
+  "bonus?": BonusSchema,
+  "requirements?": RequirementsSchema,
+  "forbidden?": RequirementsSchema,
+  source: type.valueOf(sourceBookEnum),
+  page: "number",
+  description: "string",
+});
+export type LifestyleType = typeof LifestyleSchema.infer;
+export const LifestyleListSchema = type(LifestyleSchema.array());
+export type LifestyleListType = typeof LifestyleListSchema.infer;
 
-export const CustomisedLifestyleSchema = zod
-  .object({
-    baseLifestyle: zod.string(),
-    purchasedDuration: zod.number(),
-  })
-  .strict();
-export type CustomisedLifestyleType = zod.infer<
-  typeof CustomisedLifestyleSchema
->;
-export const CustomisedLifestyleListSchema = zod.array(
-  CustomisedLifestyleSchema
+export const CustomisedLifestyleSchema = type({
+  baseLifestyle: "string",
+  purchasedDuration: "number",
+});
+export type CustomisedLifestyleType = typeof CustomisedLifestyleSchema.infer;
+export const CustomisedLifestyleListSchema = type(
+  CustomisedLifestyleSchema.array()
 );
-export type CustomisedLifestyleListType = zod.infer<
-  typeof CustomisedLifestyleListSchema
->;
+export type CustomisedLifestyleListType =
+  typeof CustomisedLifestyleListSchema.infer;
 
-export const LifestyleQualitySchema = zod
-  .object({
-    name: zod.string(),
-    category: zod.nativeEnum(lifestyleQualityCategoryEnum),
-    monthlyCost: zod.number(),
-    lifestylePointCost: zod.number(),
-    lifestyleCostMultiplier: zod.optional(zod.number()),
-    requiredLifestyleList: zod.optional(zod.array(zod.string())),
-    multipleAllowed: zod.optional(zod.literal(true)),
-    bonus: zod.optional(BonusSchema),
-    requirements: zod.optional(RequirementsSchema),
-    forbidden: zod.optional(RequirementsSchema),
-    source: zod.nativeEnum(sourceBookEnum),
-    page: zod.number(),
-    description: zod.string(),
-  })
-  .strict();
-export type LifestyleQualityType = zod.infer<typeof LifestyleQualitySchema>;
-export const LifestyleQualityListSchema = zod.array(LifestyleQualitySchema);
-export type LifestyleQualityListType = zod.infer<
-  typeof LifestyleQualityListSchema
->;
+export const LifestyleQualitySchema = type({
+  name: "string",
+  category: type.valueOf(lifestyleQualityCategoryEnum),
+  monthlyCost: "number",
+  lifestylePointCost: "number",
+  "lifestyleCostMultiplier?": "number",
+  "requiredLifestyleList?": "string[]",
+  "multipleAllowed?": "true",
+  "bonus?": BonusSchema,
+  "requirements?": RequirementsSchema,
+  "forbidden?": RequirementsSchema,
+  source: type.valueOf(sourceBookEnum),
+  page: "number",
+  description: "string",
+});
+export type LifestyleQualityType = typeof LifestyleQualitySchema.infer;
+export const LifestyleQualityListSchema = type(LifestyleQualitySchema.array());
+export type LifestyleQualityListType = typeof LifestyleQualityListSchema.infer;

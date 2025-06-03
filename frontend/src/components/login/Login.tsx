@@ -9,7 +9,7 @@ const loginPath = "/login";
 const LoginRoute = function () {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const { mutateAsync, isLoading, isError, error } =
+  const { mutateAsync, isPending, isError, error } =
     trpc.authentication.login.useMutation({
       onSuccess(data, variables) {
         saveUserSession(data, variables.username);
@@ -45,7 +45,7 @@ const LoginRoute = function () {
         />
 
         <input
-          disabled={isLoading}
+          disabled={isPending}
           name="submit"
           type="submit"
           value="Submit"

@@ -1,5 +1,6 @@
 // import { standardCalculationEnum } from "@neon-codex/common/build/enums.js";
-import { z as zod } from "zod";
+
+import { type } from "arktype";
 import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
 import {
   SourceXmlSchema,
@@ -18,41 +19,39 @@ export enum spellXmlCategoryEnum {
   Rituals = "Rituals",
 }
 
-const SpellXmlDamageSchema = zod.union([
-  zod.literal("P"), // Physical
-  zod.literal("S"), // Stun
-  zod.literal(0),
-  zod.literal("Special"),
-]);
-export type SpellXmlDamageType = zod.infer<typeof SpellXmlDamageSchema>;
+const SpellXmlDamageSchema = type.or(
+  "'P'", // Physical
+  "'S'", // Stun
+  "0",
+  "'Special'"
+);
+export type SpellXmlDamageType = typeof SpellXmlDamageSchema.infer;
 
-const SpellXmlSchema = zod
-  .object({
-    id: zod.string(),
-    name: zod.string(),
-    // Category
-    category: zod.nativeEnum(spellXmlCategoryEnum),
-    // Damage Type
-    damage: SpellXmlDamageSchema,
-    // List of descriptors (don't think these are used for anything?)
-    descriptor: zod.string(),
-    // Duration spell lasts/casting time
-    duration: XmlDurationSchema,
-    // Damage value
-    dv: zod.string(),
-    // Spell targets + states if AOE
-    range: SpellPowerXmlRangeSchema,
-    // Physical or Mana
-    type: zod.union([zod.literal("P"), zod.literal("M")]),
-    // Bonus (these are specific choices to select when adding when)
-    // e.g. summoning spell chooses what you summon
-    bonus: zod.optional(BonusXmlSchema),
-    // Requirements e.g. type of spellcaster
-    required: zod.optional(RequiredXmlSchema),
-    source: zod.union([SourceXmlSchema, zod.literal(2050)]),
-    page: zod.number(),
-  })
-  .strict();
-export type SpellXmlType = zod.infer<typeof SpellXmlSchema>;
-export const SpellListXmlSchema = zod.array(SpellXmlSchema);
-export type SpellListXmlType = zod.infer<typeof SpellListXmlSchema>;
+const SpellXmlSchema = type({
+  id: "string",
+  name: "string",
+  // Category
+  category: type.valueOf(spellXmlCategoryEnum),
+  // Damage Type
+  damage: SpellXmlDamageSchema,
+  // List of descriptors (don't think these are used for anything?)
+  descriptor: "string",
+  // Duration spell lasts/casting time
+  duration: XmlDurationSchema,
+  // Damage value
+  dv: "string",
+  // Spell targets + states if AOE
+  range: SpellPowerXmlRangeSchema,
+  // Physical or Mana
+  type: type.or("'P'", "'M'"),
+  // Bonus (these are specific choices to select when adding when)
+  // e.g. summoning spell chooses what you summon
+  "bonus?": BonusXmlSchema,
+  // Requirements e.g. type of spellcaster
+  "required?": RequiredXmlSchema,
+  source: type.or(SourceXmlSchema, "2050"),
+  page: "number",
+});
+export type SpellXmlType = typeof SpellXmlSchema.infer;
+export const SpellListXmlSchema = type(SpellXmlSchema.array());
+export type SpellListXmlType = typeof SpellListXmlSchema.infer;

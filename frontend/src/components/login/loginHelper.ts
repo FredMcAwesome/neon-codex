@@ -5,6 +5,7 @@ import {
   JwtTokenSchema,
 } from "@neon-codex/common/build/serverResponse.js";
 import { postLogin } from "../../utils/api.js";
+import { type } from "arktype";
 
 // otherwise use store values
 export const saveUserSession = (token: string, username: string) => {
@@ -42,18 +43,18 @@ export const attemptLogin = async function (userinfo: IUserInfo) {
     body: new URLSearchParams(loginCredentials),
   });
   if (response.ok) {
-    // Use zod to parse the api return data
+    // Use arktype to parse the api return data
     // | ResponseLogin isn't needed here but shown to clarify intended result
-    const res: unknown | JwtTokenType = await response.json();
-    const parsedRes = JwtTokenSchema.safeParse(res);
-    if (parsedRes.success) {
-      saveUserSession(parsedRes.data.token, userinfo.username);
+    const res: unknown = await response.json();
+    const parsedRes = JwtTokenSchema(res);
+    if (parsedRes instanceof type.errors) {
+      console.error("failed to parse login response");
+      throw new Error("invalid response parsing from attemptlogin");
+    } else {
+      saveUserSession(parsedRes.token, userinfo.username);
       return {
         success: true,
       };
-    } else {
-      console.error("failed to parse login response");
-      throw new Error("invalid response parsing from attemptlogin");
     }
   } else {
     if (response.status == 401) {
@@ -68,7 +69,7 @@ export const attemptLogin = async function (userinfo: IUserInfo) {
 
 export const isAuthenticated = async function () {
   const { token } = getUserSession();
-  if (!token || token.length == 0) {
+  if (token === null || token.length == 0) {
     return false;
   }
   // const authHeader = { Authorization: "Bearer " + token };

@@ -1,6 +1,7 @@
 [
   {
     "name": "Intro Runner Pack",
+    "description": "",
     "category": "Core Packs",
     "nuyen": 2000,
     "armourList": [
@@ -12,8 +13,8 @@
     "gearList": [
       {
         "baseGear": "Fake SIN",
-        "category": "ID/Credsticks",
-        "rating": 1
+        "rating": 1,
+        "category": "ID/Credsticks"
       },
       {
         "baseGear": "Meta Link",
@@ -25,8 +26,8 @@
       },
       {
         "baseGear": "Glasses",
-        "category": "Vision Devices",
-        "rating": 1
+        "rating": 1,
+        "category": "Vision Devices"
       },
       {
         "baseGear": "Mapsoft",
@@ -34,8 +35,8 @@
       },
       {
         "baseGear": "Certified Credstick, Standard",
-        "category": "ID/Credsticks",
-        "rating": 1
+        "rating": 1,
+        "category": "ID/Credsticks"
       },
       {
         "baseGear": "Restraint, Plastic",
@@ -47,8 +48,8 @@
       },
       {
         "baseGear": "Respirator",
-        "category": "Survival Gear",
-        "rating": 1
+        "rating": 1,
+        "category": "Survival Gear"
       }
     ],
     "vehicleList": [],
@@ -73,11 +74,11 @@
         "accessoryList": []
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Basic Runner Pack",
+    "description": "",
     "category": "Core Packs",
     "nuyen": 5000,
     "armourList": [
@@ -89,8 +90,8 @@
     "gearList": [
       {
         "baseGear": "Fake SIN",
-        "category": "ID/Credsticks",
-        "rating": 3
+        "rating": 3,
+        "category": "ID/Credsticks"
       },
       {
         "baseGear": "Renraku Sensei",
@@ -110,13 +111,13 @@
       },
       {
         "baseGear": "Glasses",
-        "category": "Vision Devices",
-        "rating": 1
+        "rating": 1,
+        "category": "Vision Devices"
       },
       {
         "baseGear": "Earbuds",
-        "category": "Audio Devices",
-        "rating": 1
+        "rating": 1,
+        "category": "Audio Devices"
       },
       {
         "baseGear": "Restraint, Metal",
@@ -132,8 +133,8 @@
       },
       {
         "baseGear": "Respirator",
-        "category": "Survival Gear",
-        "rating": 1
+        "rating": 1,
+        "category": "Survival Gear"
       },
       {
         "baseGear": "Survival Kit",
@@ -141,8 +142,8 @@
       },
       {
         "baseGear": "Medkit",
-        "category": "Biotech",
-        "rating": 1
+        "rating": 1,
+        "category": "Biotech"
       }
     ],
     "vehicleList": [],
@@ -152,11 +153,11 @@
         "accessoryList": []
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Advanced Runner Pack",
+    "description": "",
     "category": "Core Packs",
     "nuyen": 10000,
     "armourList": [
@@ -168,8 +169,8 @@
     "gearList": [
       {
         "baseGear": "Fake SIN",
-        "category": "ID/Credsticks",
-        "rating": 4
+        "rating": 4,
+        "category": "ID/Credsticks"
       },
       {
         "baseGear": "Erika Elite",
@@ -193,18 +194,18 @@
       },
       {
         "baseGear": "Contacts",
-        "category": "Vision Devices",
-        "rating": 3
+        "rating": 3,
+        "category": "Vision Devices"
       },
       {
         "baseGear": "Earbuds",
-        "category": "Audio Devices",
-        "rating": 3
+        "rating": 3,
+        "category": "Audio Devices"
       },
       {
         "baseGear": "Camera",
-        "category": "Sensor Functions",
-        "rating": 1
+        "rating": 1,
+        "category": "Sensor Functions"
       },
       {
         "baseGear": "Restraint, Metal",
@@ -232,8 +233,8 @@
       },
       {
         "baseGear": "Respirator",
-        "category": "Survival Gear",
-        "rating": 4
+        "rating": 4,
+        "category": "Survival Gear"
       },
       {
         "baseGear": "Survival Kit",
@@ -245,8 +246,8 @@
       },
       {
         "baseGear": "Medkit",
-        "category": "Biotech",
-        "rating": 1
+        "rating": 1,
+        "category": "Biotech"
       }
     ],
     "vehicleList": [],
@@ -256,11 +257,11 @@
         "accessoryList": []
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Clasic Samurai Pack",
+    "description": "",
     "category": "Weapon and Ammo Packs",
     "nuyen": 2000,
     "armourList": [
@@ -294,11 +295,11 @@
         "accessoryList": []
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Up Close & Personal Pack",
+    "description": "",
     "category": "Weapon and Ammo Packs",
     "nuyen": 3000,
     "armourList": [],
@@ -348,11 +349,11 @@
         "accessoryList": []
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Blademaster Pack",
+    "description": "",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
     "armourList": [],
@@ -393,11 +394,11 @@
         "accessoryList": []
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Monowhip Pack",
+    "description": "",
     "category": "Weapon and Ammo Packs",
     "nuyen": 10000,
     "armourList": [],
@@ -415,11 +416,11 @@
         "accessoryList": []
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Basic Bowman Pack",
+    "description": "",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
     "armourList": [],
@@ -431,13 +432,13 @@
       },
       {
         "baseGear": "Arrow: Injection",
-        "category": "Ammunition",
-        "rating": 4
+        "rating": 4,
+        "category": "Ammunition"
       },
       {
         "baseGear": "Arrow: Standard",
-        "category": "Ammunition",
-        "rating": 4
+        "rating": 4,
+        "category": "Ammunition"
       }
     ],
     "vehicleList": [],
@@ -451,11 +452,11 @@
         "accessoryList": []
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Advanced Bowman Pack",
+    "description": "",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
     "armourList": [],
@@ -467,13 +468,13 @@
       },
       {
         "baseGear": "Arrow: Injection",
-        "category": "Ammunition",
-        "rating": 6
+        "rating": 6,
+        "category": "Ammunition"
       },
       {
         "baseGear": "Arrow: Standard",
-        "category": "Ammunition",
-        "rating": 6
+        "rating": 6,
+        "category": "Ammunition"
       }
     ],
     "vehicleList": [],
@@ -491,11 +492,11 @@
         "accessoryList": []
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Ares Pistol Pack",
+    "description": "",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
     "armourList": [],
@@ -563,11 +564,11 @@
         ]
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Big Boom Pistol Pack",
+    "description": "",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
     "armourList": [],
@@ -625,11 +626,11 @@
         ]
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Browning And Beretta Pistol Pack",
+    "description": "",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
     "armourList": [],
@@ -692,11 +693,11 @@
         ]
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Colt Pistol Pack",
+    "description": "",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
     "armourList": [],
@@ -764,11 +765,11 @@
         ]
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Subtle Pistol Pack",
+    "description": "",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
     "armourList": [],
@@ -811,11 +812,11 @@
         ]
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Light Security Pack",
+    "description": "",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
     "armourList": [],
@@ -878,11 +879,11 @@
         ]
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Japanacorp Light Security Pack",
+    "description": "",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
     "armourList": [],
@@ -938,11 +939,11 @@
         ]
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Smartgun Pack",
+    "description": "",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
     "armourList": [],
@@ -985,11 +986,11 @@
         ]
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Street Slugger Pack",
+    "description": "",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
     "armourList": [],
@@ -1035,11 +1036,11 @@
         "accessoryList": []
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Heavy Security Pack",
+    "description": "",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
     "armourList": [],
@@ -1093,11 +1094,11 @@
         ]
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Cheap Soldier Pack",
+    "description": "",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
     "armourList": [],
@@ -1144,11 +1145,11 @@
         "accessoryList": []
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Ares Alpha Gunner Pack",
+    "description": "",
     "category": "Weapon and Ammo Packs",
     "nuyen": 4000,
     "armourList": [],
@@ -1228,11 +1229,11 @@
         ]
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Sportsman Pack",
+    "description": "",
     "category": "Weapon and Ammo Packs",
     "nuyen": 2000,
     "armourList": [],
@@ -1248,8 +1249,8 @@
       },
       {
         "baseGear": "Arrow: Standard",
-        "category": "Ammunition",
-        "rating": 4
+        "rating": 4,
+        "category": "Ammunition"
       },
       {
         "baseGear": "Ammo: Regular Ammo",
@@ -1275,11 +1276,11 @@
         "accessoryList": []
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Tranq Darter Pack",
+    "description": "",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
     "armourList": [],
@@ -1301,11 +1302,11 @@
         "accessoryList": []
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Tranq Pistol Darter Kit",
+    "description": "",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
     "armourList": [],
@@ -1331,11 +1332,11 @@
         "accessoryList": []
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Squad Weapon Assault Pack",
+    "description": "",
     "category": "Weapon and Ammo Packs",
     "nuyen": 3000,
     "armourList": [],
@@ -1354,11 +1355,11 @@
         ]
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Medium Machine Gunner Pack",
+    "description": "",
     "category": "Weapon and Ammo Packs",
     "nuyen": 4000,
     "armourList": [],
@@ -1382,11 +1383,11 @@
         ]
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Rocketeer Pack",
+    "description": "",
     "category": "Weapon and Ammo Packs",
     "nuyen": 8000,
     "armourList": [],
@@ -1420,11 +1421,11 @@
         "accessoryList": []
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Box of Grenades #1",
+    "description": "",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
     "armourList": [],
@@ -1441,11 +1442,11 @@
     ],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Box of Grenades #2",
+    "description": "",
     "category": "Weapon and Ammo Packs",
     "nuyen": 1000,
     "armourList": [],
@@ -1478,11 +1479,11 @@
     ],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "City Slicker Pack",
+    "description": "",
     "category": "Armor Packs",
     "nuyen": 1000,
     "armourList": [
@@ -1491,8 +1492,8 @@
         "modList": [
           {
             "baseMod": "Chemical Protection",
-            "gearList": [],
-            "rating": 2
+            "rating": 2,
+            "gearList": []
           }
         ]
       },
@@ -1504,17 +1505,17 @@
     "gearList": [
       {
         "baseGear": "Respirator",
-        "category": "Survival Gear",
-        "rating": 3
+        "rating": 3,
+        "category": "Survival Gear"
       }
     ],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Go Anywhere Jacket Pack",
+    "description": "",
     "category": "Armor Packs",
     "nuyen": 2000,
     "armourList": [
@@ -1523,18 +1524,18 @@
         "modList": [
           {
             "baseMod": "Chemical Protection",
-            "gearList": [],
-            "rating": 4
+            "rating": 4,
+            "gearList": []
           },
           {
             "baseMod": "Fire Resistance",
-            "gearList": [],
-            "rating": 4
+            "rating": 4,
+            "gearList": []
           },
           {
             "baseMod": "Insulation",
-            "gearList": [],
-            "rating": 4
+            "rating": 4,
+            "gearList": []
           }
         ]
       }
@@ -1543,16 +1544,22 @@
     "gearList": [],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Neon Nights Pack",
+    "description": "",
     "category": "Armor Packs",
     "nuyen": 1000,
     "armourList": [
       {
         "baseArmour": "Urban Explorer Jumpsuit",
+        "gearList": [
+          {
+            "baseGear": "Biomonitor",
+            "category": "Biotech"
+          }
+        ],
         "modList": [
           {
             "baseMod": "Electrochromic Clothing",
@@ -1560,8 +1567,8 @@
           },
           {
             "baseMod": "Nonconductivity",
-            "gearList": [],
-            "rating": 2
+            "rating": 2,
+            "gearList": []
           },
           {
             "baseMod": "Shock Frills",
@@ -1571,12 +1578,6 @@
             "baseMod": "Urban Explorer Jumpsuit: Helmet",
             "gearList": []
           }
-        ],
-        "gearList": [
-          {
-            "baseGear": "Biomonitor",
-            "category": "Biotech"
-          }
         ]
       }
     ],
@@ -1584,11 +1585,11 @@
     "gearList": [],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Nightbird Pack",
+    "description": "",
     "category": "Armor Packs",
     "nuyen": 2000,
     "armourList": [
@@ -1597,8 +1598,8 @@
         "modList": [
           {
             "baseMod": "Thermal Damping",
-            "gearList": [],
-            "rating": 4
+            "rating": 4,
+            "gearList": []
           }
         ]
       }
@@ -1620,11 +1621,11 @@
     ],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Stylish Suit Pack",
+    "description": "",
     "category": "Armor Packs",
     "nuyen": 1000,
     "armourList": [
@@ -1642,11 +1643,11 @@
     "gearList": [],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Tacticool Helmet Pack",
+    "description": "",
     "category": "Armor Packs",
     "nuyen": 3000,
     "armourList": [
@@ -1689,11 +1690,11 @@
     ],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Tusker Toughskin Pack",
+    "description": "",
     "category": "Armor Packs",
     "nuyen": 1000,
     "armourList": [
@@ -1702,8 +1703,8 @@
         "modList": [
           {
             "baseMod": "Nonconductivity",
-            "gearList": [],
-            "rating": 4
+            "rating": 4,
+            "gearList": []
           }
         ]
       }
@@ -1712,11 +1713,11 @@
     "gearList": [],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Sim-Setional Pack",
+    "description": "",
     "category": "Cyber Packs",
     "nuyen": 6000,
     "armourList": [],
@@ -1727,13 +1728,13 @@
       },
       {
         "baseAugmentation": "Olfactory Booster",
-        "rating": 1,
-        "grade": "Standard"
+        "grade": "Standard",
+        "rating": 1
       },
       {
         "baseAugmentation": "Taste Booster",
-        "rating": 1,
-        "grade": "Standard"
+        "grade": "Standard",
+        "rating": 1
       },
       {
         "baseAugmentation": "Simrig",
@@ -1743,26 +1744,26 @@
     "gearList": [],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Basic Combat Eyes Pack",
+    "description": "",
     "category": "Cyber Packs",
     "nuyen": 4000,
     "armourList": [],
     "augmentationList": [
       {
         "baseAugmentation": "Cybereyes Basic System",
+        "grade": "Standard",
+        "rating": 1,
         "gearList": [
           {
             "baseGear": "Camera",
-            "category": "Vision Devices",
-            "rating": 1
+            "rating": 1,
+            "category": "Vision Devices"
           }
         ],
-        "rating": 1,
-        "grade": "Standard",
         "subsystemList": {
           "cyberwareList": [
             {
@@ -1775,26 +1776,26 @@
     "gearList": [],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Advanced Combat Eyes Pack",
+    "description": "",
     "category": "Cyber Packs",
     "nuyen": 7000,
     "armourList": [],
     "augmentationList": [
       {
         "baseAugmentation": "Cybereyes Basic System",
+        "grade": "Standard",
+        "rating": 2,
         "gearList": [
           {
             "baseGear": "Camera",
-            "category": "Vision Devices",
-            "rating": 1
+            "rating": 1,
+            "category": "Vision Devices"
           }
         ],
-        "rating": 2,
-        "grade": "Standard",
         "subsystemList": {
           "cyberwareList": [
             {
@@ -1816,26 +1817,26 @@
     "gearList": [],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Eagle Eyes Pack",
+    "description": "",
     "category": "Cyber Packs",
     "nuyen": 7000,
     "armourList": [],
     "augmentationList": [
       {
         "baseAugmentation": "Cybereyes Basic System",
+        "grade": "Standard",
+        "rating": 1,
         "gearList": [
           {
             "baseGear": "Camera",
-            "category": "Vision Devices",
-            "rating": 1
+            "rating": 1,
+            "category": "Vision Devices"
           }
         ],
-        "rating": 1,
-        "grade": "Standard",
         "subsystemList": {
           "cyberwareList": [
             {
@@ -1852,19 +1853,19 @@
     "gearList": [],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Rabbit Ears Pack",
+    "description": "",
     "category": "Cyber Packs",
     "nuyen": 9000,
     "armourList": [],
     "augmentationList": [
       {
         "baseAugmentation": "Cyberears",
-        "rating": 1,
         "grade": "Standard",
+        "rating": 1,
         "subsystemList": {
           "cyberwareList": [
             {
@@ -1882,11 +1883,11 @@
     "gearList": [],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Bulletproof Jeff Pack",
+    "description": "",
     "category": "Cyber Packs",
     "nuyen": 12000,
     "armourList": [],
@@ -1897,18 +1898,18 @@
       },
       {
         "baseAugmentation": "Dermal Plating",
-        "rating": 2,
-        "grade": "Standard"
+        "grade": "Standard",
+        "rating": 2
       }
     ],
     "gearList": [],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Basic Razorboi Pack",
+    "description": "",
     "category": "Cyber Packs",
     "nuyen": 2000,
     "armourList": [],
@@ -1943,11 +1944,11 @@
         "accessoryList": []
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Advanced Razorboi Pack",
+    "description": "",
     "category": "Cyber Packs",
     "nuyen": 6000,
     "armourList": [],
@@ -1968,8 +1969,8 @@
       },
       {
         "baseGear": "Medkit",
-        "category": "Biotech",
-        "rating": 2
+        "rating": 2,
+        "category": "Biotech"
       }
     ],
     "vehicleList": [],
@@ -1987,11 +1988,11 @@
         "accessoryList": []
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Basic Speedboost Pack",
+    "description": "",
     "category": "Cyber Packs",
     "nuyen": 20000,
     "armourList": [],
@@ -2002,18 +2003,18 @@
       },
       {
         "baseAugmentation": "Wired Reflexes",
-        "rating": 1,
-        "grade": "Standard"
+        "grade": "Standard",
+        "rating": 1
       }
     ],
     "gearList": [],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Advanced Speedboost Pack",
+    "description": "",
     "category": "Cyber Packs",
     "nuyen": 75000,
     "armourList": [],
@@ -2024,125 +2025,125 @@
       },
       {
         "baseAugmentation": "Wired Reflexes",
-        "rating": 2,
-        "grade": "Standard"
+        "grade": "Standard",
+        "rating": 2
       }
     ],
     "gearList": [],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Basic Vatjob Pack",
+    "description": "",
     "category": "Cyber Packs",
     "nuyen": 14000,
     "armourList": [],
     "augmentationList": [
       {
         "baseAugmentation": "Dermal Plating",
-        "rating": 1,
-        "grade": "Standard"
+        "grade": "Standard",
+        "rating": 1
       },
       {
         "baseAugmentation": "Muscle Replacement",
-        "rating": 1,
-        "grade": "Standard"
+        "grade": "Standard",
+        "rating": 1
       }
     ],
     "gearList": [],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Advanced Vatjob Pack",
+    "description": "",
     "category": "Cyber Packs",
     "nuyen": 28000,
     "armourList": [],
     "augmentationList": [
       {
         "baseAugmentation": "Dermal Plating",
-        "rating": 2,
-        "grade": "Standard"
+        "grade": "Standard",
+        "rating": 2
       },
       {
         "baseAugmentation": "Muscle Replacement",
-        "rating": 2,
-        "grade": "Standard"
+        "grade": "Standard",
+        "rating": 2
       }
     ],
     "gearList": [],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Basic Rigger Pack",
+    "description": "",
     "category": "Cyber Packs",
     "nuyen": 28000,
     "armourList": [],
     "augmentationList": [
       {
         "baseAugmentation": "Control Rig",
-        "rating": 1,
-        "grade": "Standard"
+        "grade": "Standard",
+        "rating": 1
       },
       {
         "baseAugmentation": "Reaction Enhancers",
-        "rating": 1,
-        "grade": "Standard"
+        "grade": "Standard",
+        "rating": 1
       }
     ],
     "gearList": [],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Advanced Rigger Pack",
+    "description": "",
     "category": "Cyber Packs",
     "nuyen": 52000,
     "armourList": [],
     "augmentationList": [
       {
         "baseAugmentation": "Control Rig",
-        "rating": 2,
-        "grade": "Standard"
+        "grade": "Standard",
+        "rating": 2
       },
       {
         "baseAugmentation": "Reaction Enhancers",
-        "rating": 2,
-        "grade": "Standard"
+        "grade": "Standard",
+        "rating": 2
       }
     ],
     "gearList": [],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Street Samurai Classic Pack",
+    "description": "",
     "category": "Cyber Packs",
     "nuyen": 100000,
     "armourList": [],
     "augmentationList": [
       {
         "baseAugmentation": "Cybereyes Basic System",
+        "grade": "Standard",
+        "rating": 2,
         "gearList": [
           {
             "baseGear": "Camera",
-            "category": "Vision Devices",
-            "rating": 1
+            "rating": 1,
+            "category": "Vision Devices"
           }
         ],
-        "rating": 2,
-        "grade": "Standard",
         "subsystemList": {
           "cyberwareList": [
             {
@@ -2166,18 +2167,18 @@
       },
       {
         "baseAugmentation": "Wired Reflexes",
-        "rating": 2,
-        "grade": "Standard"
+        "grade": "Standard",
+        "rating": 2
       },
       {
         "baseAugmentation": "Dermal Plating",
-        "rating": 1,
-        "grade": "Standard"
+        "grade": "Standard",
+        "rating": 1
       },
       {
         "baseAugmentation": "Muscle Replacement",
-        "rating": 1,
-        "grade": "Standard"
+        "grade": "Standard",
+        "rating": 1
       },
       {
         "baseAugmentation": "Spurs",
@@ -2195,8 +2196,8 @@
       },
       {
         "baseGear": "Medkit",
-        "category": "Biotech",
-        "rating": 2
+        "rating": 2,
+        "category": "Biotech"
       }
     ],
     "vehicleList": [],
@@ -2222,11 +2223,11 @@
         "accessoryList": []
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Bioware Cat Pack(Catgirl pack)",
+    "description": "",
     "category": "Cyber Packs",
     "nuyen": 14000,
     "armourList": [],
@@ -2243,24 +2244,24 @@
     "gearList": [],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Bio-Computer Pack",
+    "description": "",
     "category": "Cyber Packs",
     "nuyen": 41000,
     "armourList": [],
     "augmentationList": [
       {
         "baseAugmentation": "Cerebral Booster",
-        "rating": 2,
-        "grade": "Standard"
+        "grade": "Standard",
+        "rating": 2
       },
       {
         "baseAugmentation": "Mnemonic Enhancer",
-        "rating": 2,
-        "grade": "Standard"
+        "grade": "Standard",
+        "rating": 2
       },
       {
         "baseAugmentation": "Datajack",
@@ -2270,34 +2271,34 @@
     "gearList": [],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Bioware Company Man Pack",
+    "description": "",
     "category": "Cyber Packs",
     "nuyen": 50000,
     "armourList": [],
     "augmentationList": [
       {
         "baseAugmentation": "Bone Density Augmentation",
-        "rating": 1,
-        "grade": "Standard"
+        "grade": "Standard",
+        "rating": 1
       },
       {
         "baseAugmentation": "Synaptic Booster",
-        "rating": 1,
-        "grade": "Standard"
+        "grade": "Standard",
+        "rating": 1
       }
     ],
     "gearList": [],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Basic Cyberdeck Programs Pack",
+    "description": "",
     "category": "Decker Packs",
     "nuyen": 1000,
     "armourList": [],
@@ -2318,11 +2319,11 @@
     ],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Bug-out Bag",
+    "description": "",
     "category": "Lifestyle Packs",
     "nuyen": 2000,
     "armourList": [
@@ -2334,8 +2335,8 @@
     "gearList": [
       {
         "baseGear": "Fake SIN",
-        "category": "ID/Credsticks",
-        "rating": 1
+        "rating": 1,
+        "category": "ID/Credsticks"
       },
       {
         "baseGear": "Sony Emperor",
@@ -2383,11 +2384,11 @@
         ]
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Cocktail Kid Pack",
+    "description": "",
     "category": "Color Packs",
     "nuyen": 1000,
     "armourList": [],
@@ -2420,11 +2421,11 @@
     ],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Drone Mechanic Pack",
+    "description": "",
     "category": "Color Packs",
     "nuyen": 1000,
     "armourList": [],
@@ -2449,11 +2450,11 @@
     ],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Mechanic Shop Pack",
+    "description": "",
     "category": "Color Packs",
     "nuyen": 3000,
     "armourList": [],
@@ -2473,8 +2474,8 @@
       },
       {
         "baseGear": "Knowsoft",
-        "category": "Skillsofts",
-        "rating": 1
+        "rating": 1,
+        "category": "Skillsofts"
       },
       {
         "baseGear": "Flashlight",
@@ -2482,22 +2483,22 @@
       },
       {
         "baseGear": "Chemsuit",
-        "category": "Survival Gear",
-        "rating": 1
+        "rating": 1,
+        "category": "Survival Gear"
       },
       {
         "baseGear": "Respirator",
-        "category": "Survival Gear",
-        "rating": 1
+        "rating": 1,
+        "category": "Survival Gear"
       }
     ],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Eavesdropper Pack",
+    "description": "",
     "category": "Color Packs",
     "nuyen": 1000,
     "armourList": [],
@@ -2509,17 +2510,17 @@
       },
       {
         "baseGear": "Camera, Micro",
-        "category": "Vision Devices",
-        "rating": 1
+        "rating": 1,
+        "category": "Vision Devices"
       }
     ],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Surveillance Pack",
+    "description": "",
     "category": "Color Packs",
     "nuyen": 1000,
     "armourList": [],
@@ -2531,37 +2532,37 @@
       },
       {
         "baseGear": "Binoculars",
-        "category": "Vision Devices",
-        "rating": 1
+        "rating": 1,
+        "category": "Vision Devices"
       },
       {
         "baseGear": "Camera",
-        "category": "Vision Devices",
-        "rating": 1
+        "rating": 1,
+        "category": "Vision Devices"
       },
       {
         "baseGear": "Camera, Micro",
-        "category": "Vision Devices",
-        "rating": 1
+        "rating": 1,
+        "category": "Vision Devices"
       },
       {
         "baseGear": "Directional Microphone",
-        "category": "Sensor Functions",
-        "rating": 1
+        "rating": 1,
+        "category": "Sensor Functions"
       },
       {
         "baseGear": "Laser Microphone",
-        "category": "Sensor Functions",
-        "rating": 1
+        "rating": 1,
+        "category": "Sensor Functions"
       }
     ],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Breaking and Entering Pack",
+    "description": "",
     "category": "Color Packs",
     "nuyen": 3000,
     "armourList": [],
@@ -2569,27 +2570,27 @@
     "gearList": [
       {
         "baseGear": "Autopicker",
-        "category": "Breaking and Entering Gear",
-        "rating": 4
+        "rating": 4,
+        "category": "Breaking and Entering Gear"
       },
       {
         "baseGear": "Keycard Copier",
-        "category": "Breaking and Entering Gear",
-        "rating": 5
+        "rating": 5,
+        "category": "Breaking and Entering Gear"
       },
       {
         "baseGear": "Sequencer",
-        "category": "Breaking and Entering Gear",
-        "rating": 4
+        "rating": 4,
+        "category": "Breaking and Entering Gear"
       }
     ],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Jammer Pack",
+    "description": "",
     "category": "Color Packs",
     "nuyen": 1000,
     "armourList": [],
@@ -2597,13 +2598,13 @@
     "gearList": [
       {
         "baseGear": "Jammer, Area",
-        "category": "Communications and Countermeasures",
-        "rating": 4
+        "rating": 4,
+        "category": "Communications and Countermeasures"
       },
       {
         "baseGear": "Bug Scanner",
-        "category": "Communications and Countermeasures",
-        "rating": 5
+        "rating": 5,
+        "category": "Communications and Countermeasures"
       },
       {
         "baseGear": "Tag Eraser",
@@ -2611,17 +2612,17 @@
       },
       {
         "baseGear": "White Noise Generator",
-        "category": "Communications and Countermeasures",
-        "rating": 5
+        "rating": 5,
+        "category": "Communications and Countermeasures"
       }
     ],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Medic Pack",
+    "description": "",
     "category": "Color Packs",
     "nuyen": 1000,
     "armourList": [],
@@ -2629,8 +2630,8 @@
     "gearList": [
       {
         "baseGear": "Medkit",
-        "category": "Biotech",
-        "rating": 6
+        "rating": 6,
+        "category": "Biotech"
       },
       {
         "baseGear": "Biomonitor",
@@ -2643,11 +2644,11 @@
     ],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Medical Patches Pack",
+    "description": "",
     "category": "Color Packs",
     "nuyen": 1000,
     "armourList": [],
@@ -2655,18 +2656,18 @@
     "gearList": [
       {
         "baseGear": "Slap Patch, Antidote Patch",
-        "category": "Biotech",
-        "rating": 4
+        "rating": 4,
+        "category": "Biotech"
       },
       {
         "baseGear": "Slap Patch, Stim Patch",
-        "category": "Biotech",
-        "rating": 4
+        "rating": 4,
+        "category": "Biotech"
       },
       {
         "baseGear": "Slap Patch, Tranq Patch",
-        "category": "Biotech",
-        "rating": 5
+        "rating": 5,
+        "category": "Biotech"
       },
       {
         "baseGear": "Slap Patch, Trauma Patch",
@@ -2675,11 +2676,11 @@
     ],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Mountaineering Pack",
+    "description": "",
     "category": "Color Packs",
     "nuyen": 1000,
     "armourList": [],
@@ -2723,17 +2724,17 @@
       },
       {
         "baseGear": "Medkit",
-        "category": "Biotech",
-        "rating": 2
+        "rating": 2,
+        "category": "Biotech"
       }
     ],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Infiltration Pack",
+    "description": "",
     "category": "Color Packs",
     "nuyen": 1000,
     "armourList": [],
@@ -2749,8 +2750,8 @@
       },
       {
         "baseGear": "Contacts",
-        "category": "Vision Devices",
-        "rating": 2
+        "rating": 2,
+        "category": "Vision Devices"
       },
       {
         "baseGear": "Flashlight",
@@ -2778,17 +2779,17 @@
       },
       {
         "baseGear": "Camera",
-        "category": "Vision Devices",
-        "rating": 1
+        "rating": 1,
+        "category": "Vision Devices"
       }
     ],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Demolitionist Pack",
+    "description": "",
     "category": "Color Packs",
     "nuyen": 1000,
     "armourList": [],
@@ -2800,8 +2801,8 @@
       },
       {
         "baseGear": "Commercial Explosive",
-        "category": "Explosives",
-        "rating": 5
+        "rating": 5,
+        "category": "Explosives"
       },
       {
         "baseGear": "Detonator, Blasting Cap",
@@ -2810,11 +2811,11 @@
     ],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Racing Bike Pack",
+    "description": "",
     "category": "Vehicle Packs",
     "nuyen": 5000,
     "armourList": [
@@ -2849,18 +2850,18 @@
         "gearList": [
           {
             "baseGear": "Sensor Array",
-            "category": "Sensors",
-            "rating": 2
+            "rating": 2,
+            "category": "Sensors"
           }
         ]
       }
     ],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Off Road Pack",
+    "description": "",
     "category": "Vehicle Packs",
     "nuyen": 20000,
     "armourList": [],
@@ -2872,8 +2873,8 @@
         "gearList": [
           {
             "baseGear": "Sensor Array",
-            "category": "Sensors",
-            "rating": 2
+            "rating": 2,
+            "category": "Sensors"
           }
         ]
       },
@@ -2882,18 +2883,18 @@
         "gearList": [
           {
             "baseGear": "Sensor Array",
-            "category": "Sensors",
-            "rating": 2
+            "rating": 2,
+            "category": "Sensors"
           }
         ]
       }
     ],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Basic Decker Pack",
+    "description": "",
     "category": "Decker Packs",
     "nuyen": 62000,
     "armourList": [],
@@ -2914,11 +2915,11 @@
     ],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Advanced Decker Pack",
+    "description": "",
     "category": "Decker Packs",
     "nuyen": 100000,
     "armourList": [],
@@ -2939,11 +2940,11 @@
     ],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Advanced Cyberdeck Programs Pack",
+    "description": "",
     "category": "Decker Packs",
     "nuyen": 1000,
     "armourList": [],
@@ -2980,11 +2981,11 @@
     ],
     "vehicleList": [],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Basic Spy Drone Pack",
+    "description": "",
     "category": "Drone Packs",
     "nuyen": 2000,
     "armourList": [],
@@ -2996,8 +2997,8 @@
         "gearList": [
           {
             "baseGear": "Sensor Array",
-            "category": "Sensors",
-            "rating": 3
+            "rating": 3,
+            "category": "Sensors"
           },
           {
             "baseGear": "Low Light",
@@ -3005,18 +3006,18 @@
           },
           {
             "baseGear": "Select Sound Filter",
-            "category": "Audio Enhancements",
-            "rating": 2
+            "rating": 2,
+            "category": "Audio Enhancements"
           }
         ]
       }
     ],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Advanced Spy Drone Pack",
+    "description": "",
     "category": "Drone Packs",
     "nuyen": 11000,
     "armourList": [],
@@ -3028,18 +3029,18 @@
         "gearList": [
           {
             "baseGear": "Sensor Array",
-            "category": "Sensors",
-            "rating": 3
+            "rating": 3,
+            "category": "Sensors"
           }
         ]
       }
     ],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Basic Combat Drone Pack",
+    "description": "",
     "category": "Drone Packs",
     "nuyen": 3000,
     "armourList": [],
@@ -3056,8 +3057,8 @@
         "gearList": [
           {
             "baseGear": "Sensor Array",
-            "category": "Sensors",
-            "rating": 3
+            "rating": 3,
+            "category": "Sensors"
           }
         ],
         "weaponMountList": [
@@ -3069,18 +3070,17 @@
             "weaponMounted": {
               "baseWeapon": "Colt Cobra TZ-120",
               "accessoryList": []
-            },
-            "weaponExchangeable": true
+            }
           }
         ]
       }
     ],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Advanced Combat Drone Pack",
+    "description": "",
     "category": "Drone Packs",
     "nuyen": 14000,
     "armourList": [],
@@ -3092,18 +3092,18 @@
         "gearList": [
           {
             "baseGear": "Sensor Array",
-            "category": "Sensors",
-            "rating": 3
+            "rating": 3,
+            "category": "Sensors"
           }
         ]
       }
     ],
     "weaponList": [],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   },
   {
     "name": "Runnerhub Basic Gear Pack",
+    "description": "",
     "category": "Community Packs",
     "nuyen": 21000,
     "armourList": [
@@ -3134,13 +3134,13 @@
       },
       {
         "baseGear": "Camera, Micro",
-        "category": "Vision Devices",
-        "rating": 1
+        "rating": 1,
+        "category": "Vision Devices"
       },
       {
         "baseGear": "Fake SIN",
-        "category": "ID/Credsticks",
-        "rating": 4
+        "rating": 4,
+        "category": "ID/Credsticks"
       },
       {
         "baseGear": "Ammo: APDS",
@@ -3160,18 +3160,18 @@
       },
       {
         "baseGear": "Contacts",
-        "category": "Vision Devices",
-        "rating": 3
+        "rating": 3,
+        "category": "Vision Devices"
       },
       {
         "baseGear": "Glasses",
-        "category": "Vision Devices",
-        "rating": 4
+        "rating": 4,
+        "category": "Vision Devices"
       },
       {
         "baseGear": "Earbuds",
-        "category": "Audio Devices",
-        "rating": 3
+        "rating": 3,
+        "category": "Audio Devices"
       },
       {
         "baseGear": "Datachip",
@@ -3199,23 +3199,23 @@
       },
       {
         "baseGear": "Slap Patch, Stim Patch",
-        "category": "Biotech",
-        "rating": 6
+        "rating": 6,
+        "category": "Biotech"
       },
       {
         "baseGear": "Medkit",
-        "category": "Biotech",
-        "rating": 3
+        "rating": 3,
+        "category": "Biotech"
       },
       {
         "baseGear": "Medkit",
-        "category": "Biotech",
-        "rating": 6
+        "rating": 6,
+        "category": "Biotech"
       },
       {
         "baseGear": "Bug Scanner",
-        "category": "Communications and Countermeasures",
-        "rating": 6
+        "rating": 6,
+        "category": "Communications and Countermeasures"
       },
       {
         "baseGear": "Tag Eraser",
@@ -3252,8 +3252,8 @@
         "gearList": [
           {
             "baseGear": "Sensor Array",
-            "category": "Sensors",
-            "rating": 2
+            "rating": 2,
+            "category": "Sensors"
           }
         ]
       }
@@ -3290,11 +3290,11 @@
         "baseLifestyle": "Low",
         "purchasedDuration": 1
       }
-    ],
-    "description": ""
+    ]
   },
   {
     "name": "Runnerhub Pennypincher Pack",
+    "description": "",
     "category": "Community Packs",
     "nuyen": 5000,
     "armourList": [
@@ -3325,13 +3325,13 @@
       },
       {
         "baseGear": "Camera, Micro",
-        "category": "Vision Devices",
-        "rating": 1
+        "rating": 1,
+        "category": "Vision Devices"
       },
       {
         "baseGear": "Fake SIN",
-        "category": "ID/Credsticks",
-        "rating": 3
+        "rating": 3,
+        "category": "ID/Credsticks"
       },
       {
         "baseGear": "Ammo: APDS",
@@ -3351,13 +3351,13 @@
       },
       {
         "baseGear": "Contacts",
-        "category": "Vision Devices",
-        "rating": 1
+        "rating": 1,
+        "category": "Vision Devices"
       },
       {
         "baseGear": "Earbuds",
-        "category": "Audio Devices",
-        "rating": 1
+        "rating": 1,
+        "category": "Audio Devices"
       },
       {
         "baseGear": "Datachip",
@@ -3377,8 +3377,8 @@
       },
       {
         "baseGear": "Slap Patch, Stim Patch",
-        "category": "Biotech",
-        "rating": 6
+        "rating": 6,
+        "category": "Biotech"
       }
     ],
     "vehicleList": [],
@@ -3414,11 +3414,11 @@
         "baseLifestyle": "Low",
         "purchasedDuration": 1
       }
-    ],
-    "description": ""
+    ]
   },
   {
     "name": "ShadowNET starter pack",
+    "description": "",
     "category": "Community Packs",
     "nuyen": 10000,
     "armourList": [
@@ -3437,8 +3437,8 @@
       },
       {
         "baseGear": "Fake SIN",
-        "category": "ID/Credsticks",
-        "rating": 4
+        "rating": 4,
+        "category": "ID/Credsticks"
       },
       {
         "baseGear": "AR Gloves",
@@ -3454,13 +3454,13 @@
       },
       {
         "baseGear": "Earbuds",
-        "category": "Audio Devices",
-        "rating": 2
+        "rating": 2,
+        "category": "Audio Devices"
       },
       {
         "baseGear": "Contacts",
-        "category": "Vision Devices",
-        "rating": 3
+        "rating": 3,
+        "category": "Vision Devices"
       },
       {
         "baseGear": "Data Tap",
@@ -3480,8 +3480,8 @@
       },
       {
         "baseGear": "Certified Credstick, Standard",
-        "category": "ID/Credsticks",
-        "rating": 1
+        "rating": 1,
+        "category": "ID/Credsticks"
       },
       {
         "baseGear": "Crowbar",
@@ -3509,13 +3509,13 @@
       },
       {
         "baseGear": "Medkit",
-        "category": "Biotech",
-        "rating": 3
+        "rating": 3,
+        "category": "Biotech"
       },
       {
         "baseGear": "Slap Patch, Stim Patch",
-        "category": "Biotech",
-        "rating": 6
+        "rating": 6,
+        "category": "Biotech"
       },
       {
         "baseGear": "Slap Patch, Trauma Patch",
@@ -3537,7 +3537,6 @@
         "accessoryList": []
       }
     ],
-    "lifestyleList": [],
-    "description": ""
+    "lifestyleList": []
   }
 ]

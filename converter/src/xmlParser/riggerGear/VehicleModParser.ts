@@ -23,6 +23,7 @@ import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { convertRatingMeaning, convertSource } from "../common/ParserHelper.js";
 import { VehicleModSchema } from "@neon-codex/common/build/schemas/equipment/rigger/vehicleModSchemas.js";
 import VehicleModifications from "../../grammar/vehicleModifications.ohm-bundle.js";
+import { type } from "arktype";
 const Rating = VehicleModifications.Rating;
 const Slot = VehicleModifications.Slot;
 const Availability = VehicleModifications.Availability;
@@ -46,31 +47,29 @@ export function ParseVehicleMods() {
   //   jObj.chummer.mods.mod[96]
   // );
 
-  const vehicleModListParsed = VehicleModListXmlSchema.safeParse(
+  const vehicleModListParsed = VehicleModListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.mods.mod
   );
 
-  if (!vehicleModListParsed.success) {
-    console.log(vehicleModListParsed.error.errors[0]);
+  if (vehicleModListParsed instanceof type.errors) {
+    console.log(vehicleModListParsed.summary);
     assert(false);
   } else {
-    console.log("vehicles.xml (Mods) initial zod parsed");
+    console.log("vehicles.xml (Mods) initial arktype parsed");
   }
 
-  const vehicleModListConverted = vehicleModListParsed.data.map(
-    (vehicleMod) => {
-      const convertedVehicleMod = convertVehicleMod(vehicleMod);
+  const vehicleModListConverted = vehicleModListParsed.map((vehicleMod) => {
+    const convertedVehicleMod = convertVehicleMod(vehicleMod);
 
-      const check = VehicleModSchema.safeParse(convertedVehicleMod);
-      if (!check.success) {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        console.dir(convertedVehicleMod, { depth: Infinity });
-        throw new Error(check.error.message);
-      }
-      return check.data;
+    const check = VehicleModSchema(convertedVehicleMod);
+    if (check instanceof type.errors) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      console.dir(convertedVehicleMod, { depth: Infinity });
+      throw new Error(check.summary);
     }
-  );
+    return check;
+  });
   // console.log(vehicleListConverted);
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/vehicleMods.json"
@@ -144,18 +143,22 @@ const convertVehicleMod = function (vehicleMod: VehicleModXmlType) {
     description: "",
     type: type,
     maxRating: maxRating,
-    minRating: minRating,
-    ratingMeaning: ratingMeaning,
-    bonus: bonus,
-    capacity: vehicleMod.capacity,
-    addPhysicalBoxes: vehicleMod.conditionmonitor,
-    isDowngrade:
-      vehicleMod.downgrade !== undefined ? (true as const) : undefined,
-    requiresDroneParent:
-      vehicleMod.optionaldrone !== undefined ? (true as const) : undefined,
-    requirements: requirements,
+    ...(minRating !== undefined && { minRating: minRating }),
+    ...(ratingMeaning !== undefined && { ratingMeaning: ratingMeaning }),
+    ...(bonus !== undefined && { bonus: bonus }),
+    ...(vehicleMod.capacity && { capacity: vehicleMod.capacity }),
+    ...(vehicleMod.conditionmonitor && {
+      addPhysicalBoxes: vehicleMod.conditionmonitor,
+    }),
+    ...(vehicleMod.downgrade !== undefined && { isDowngrade: true as const }),
+    ...(vehicleMod.optionaldrone !== undefined && {
+      requiresDroneParent: true as const,
+    }),
+    ...(requirements !== undefined && { requirements: requirements }),
     slotCost: slotCost,
-    allowedSubsystemList: allowedSubsystemList,
+    ...(allowedSubsystemList !== undefined && {
+      allowedSubsystemList: allowedSubsystemList,
+    }),
     ...(vehicleMod.hide !== undefined && { userSelectable: false as const }),
     availability: availability,
     cost: cost,

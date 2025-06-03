@@ -73,7 +73,9 @@ export const convertRequirements = function (
     xmlRequirements.parentdetails !== undefined
   ) {
     const parentdetails = xmlRequirements.parentdetails;
-    requirements.hostArmour = parentdetails.name;
+    if ("name" in parentdetails) {
+      requirements.hostArmour = parentdetails.name;
+    }
   }
 
   if (Object.keys(requirements).length === 0) {
@@ -126,15 +128,22 @@ const convertWeaponDetailsInner = function (
     [];
   let requiredDamage: WeaponDamageRequirementsType | undefined = undefined;
 
-  const weaponName = weaponDetails.name;
-  const ammo = weaponDetails.ammo;
-  const ammoCategory = weaponDetails.ammocategory;
-  const category = weaponDetails.category;
-  const type = weaponDetails.type;
-  const conceal = weaponDetails.conceal;
-  const useSkill = weaponDetails.useskill;
-  const accessoryMounts = weaponDetails.accessorymounts;
-  const damage = weaponDetails.damage;
+  const weaponName = "name" in weaponDetails ? weaponDetails.name : undefined;
+  const ammo = "ammo" in weaponDetails ? weaponDetails.ammo : undefined;
+  const ammoCategory =
+    "ammocategory" in weaponDetails ? weaponDetails.ammocategory : undefined;
+  const category =
+    "category" in weaponDetails ? weaponDetails.category : undefined;
+  const type = "type" in weaponDetails ? weaponDetails.type : undefined;
+  const conceal =
+    "conceal" in weaponDetails ? weaponDetails.conceal : undefined;
+  const useSkill =
+    "useskill" in weaponDetails ? weaponDetails.useskill : undefined;
+  const accessoryMounts =
+    "accessorymounts" in weaponDetails
+      ? weaponDetails.accessorymounts
+      : undefined;
+  const damage = "damage" in weaponDetails ? weaponDetails.damage : undefined;
   let minimumHostConcealment: number | undefined = undefined;
   let maximumHostConcealment: number | undefined = undefined;
   if (weaponName) {
@@ -202,7 +211,7 @@ const convertWeaponDetailsInner = function (
       requiredAmmunitionDetails
     );
   }
-  if (category) {
+  if (category !== undefined) {
     const categoryArray = Array.isArray(category) ? category : [category];
     requiredCategory = getWeaponCategories<weaponTypeEnum.Melee>(
       categoryArray,

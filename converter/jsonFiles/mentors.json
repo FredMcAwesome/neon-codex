@@ -2,14 +2,9 @@
   {
     "name": "Bear",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice for tests to resist damage (not including drain).",
     "disadvantage": "You might go berserk when you take Physical damage in combat or if someone under your care is badly injured. Make a Simple Charisma + Willpower Test (wound modifiers apply). You go berserk for 3 turns minus 1 turn per hit, so 3 or more hits averts the berserk rage entirely. If you're already going berserk, increase the duration. When you're berserk, you go after your attacker(s) without regard for your own safety. If you incapacitate the target(s) before the time is up, the berserk fury dissipates.",
-    "bonus": {
-      "damageResistance": 2
-    },
-    "source": "Shadowrun 5 Core Rulebook",
-    "page": 321,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for Health spells",
@@ -36,16 +31,19 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "bonus": {
+      "damageResistance": 2
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 321
   },
   {
     "name": "Cat",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice to either Gymnastics or Sneaking Tests (choose one).",
     "disadvantage": "Cat magicians toy with their prey. Unless you succeed in a Charisma + Willpower (3) Test at the start of combat, you cannot make an attack that incapacitates your target. If you take any Physical damage, all this playing around stops.",
-    "source": "Shadowrun 5 Core Rulebook",
-    "page": 321,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "+2 dice on Gymnastics Tests",
@@ -80,16 +78,16 @@
         "set": 2
       }
     ],
-    "choiceCount": 2
+    "choiceCount": 2,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 321
   },
   {
     "name": "Dog",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice for Tracking tests.",
     "disadvantage": "A Dog magician is stubbornly loyal. You can never leave someone behind, betray your comrades, or let another sacrifice themselves in your place without making a successful Charisma + Willpower (3) Test.",
-    "source": "Shadowrun 5 Core Rulebook",
-    "page": 321,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for Detection spells",
@@ -118,16 +116,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 321
   },
   {
     "name": "Dragonslayer",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice pool modifier for one social skill of choice.",
     "disadvantage": "If you break a promise, whether by choice or by accident, you take a –1 dice pool modifier to all actions until you make good on your promise.",
-    "source": "Shadowrun 5 Core Rulebook",
-    "page": 321,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for Combat spells",
@@ -158,23 +156,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 321
   },
   {
     "name": "Eagle",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice to Perception Tests.",
     "disadvantage": "You get the Allergy (pollutants, mild) quality (p. 322; no bonus Karma for this negative quality).",
-    "bonus": {
-      "qualityList": [
-        {
-          "name": "Allergy (Common, Mild)"
-        }
-      ]
-    },
-    "source": "Shadowrun 5 Core Rulebook",
-    "page": 322,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice summoning spirits of air",
@@ -193,16 +184,23 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "bonus": {
+      "qualityList": [
+        {
+          "name": "Allergy (Common, Mild)"
+        }
+      ]
+    },
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 322
   },
   {
     "name": "Fire-Bringer",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice to Artisan skill tests or Alchemy skill tests (choose one).",
     "disadvantage": "When someone sincerely asks you for help, you can't refuse without succeeding in a Simple Charisma + Willpower (3) Test.",
-    "source": "Shadowrun 5 Core Rulebook",
-    "page": 322,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "+2 dice on Artisan Tests",
@@ -237,16 +235,16 @@
         "set": 2
       }
     ],
-    "choiceCount": 2
+    "choiceCount": 2,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 322
   },
   {
     "name": "Mountain",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice to Survival Tests.",
     "disadvantage": "When a Mountain magician makes a plan, she sticks to it. You must make a Charisma + Willpower (3) Test to abandon a planned course of action in favor of a new one. If you fail, you must endeavor to continue with your original plan, even if it means going on alone. Similarly, you must succeed in a Charisma + Willpower (3) Test to proceed in anything without a plan.",
-    "source": "Shadowrun 5 Core Rulebook",
-    "page": 322,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for Counterspelling and anchored rituals",
@@ -265,16 +263,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 322
   },
   {
     "name": "Rat",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice for Sneaking Tests.",
     "disadvantage": "A Rat magician must make a Charisma + Willpower (3) Test to not immediately flee or seek cover whenever caught in a combat situation. If there is nowhere to flee, she is forced to fight.",
-    "source": "Shadowrun 5 Core Rulebook",
-    "page": 323,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 to Alchemy for harvesting, and you may use any reagents",
@@ -293,16 +291,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 323
   },
   {
     "name": "Raven",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice for Con tests.",
     "disadvantage": "You must make a Charisma + Willpower (3) Test to avoid exploiting someone else's misfortune to your own advantage or to pull a clever trick or prank even if it's to the disadvantage of your friends.",
-    "source": "Shadowrun 5 Core Rulebook",
-    "page": 323,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for Manipulation spells",
@@ -332,16 +330,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 323
   },
   {
     "name": "Sea",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice for Swimming Tests.",
     "disadvantage": "You must make a Charisma + Willpower (3) Test to give away something you own or be charitable in some way.",
-    "source": "Shadowrun 5 Core Rulebook",
-    "page": 323,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice summoning spirits of water",
@@ -360,16 +358,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 323
   },
   {
     "name": "Seducer",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice for Con Tests.",
     "disadvantage": "You must succeed in a Charisma + Willpower (3) Test to avoid pursuing a vice or indulgence (drugs, BTLs, sex, and so on) when it is made available.",
-    "source": "Shadowrun 5 Core Rulebook",
-    "page": 323,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for Illusion spells",
@@ -396,16 +394,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 323
   },
   {
     "name": "Shark",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice to Unarmed Combat tests.",
     "disadvantage": "You might go berserk when you take Physical damage in combat. Every time it happens, make a Simple Charisma + Willpower Test (wound modifiers apply). You go berserk for 3 turns minus 1 turn per hit, so 3 or more hits averts the berserk rage entirely. If you're already going berserk, increase the duration. When you're berserk, you go after your attacker(s) without regard for your own safety. If you run out of targets before the time's up, you keep attacking their bodies.",
-    "source": "Shadowrun 5 Core Rulebook",
-    "page": 323,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for Combat spells",
@@ -431,16 +429,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 323
   },
   {
     "name": "Snake",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 to Arcana tests.",
     "disadvantage": "You must succeed in a Charisma + Willpower (3) Test to avoid pursuing secrets or knowledge that few people know about when you receive hints of its existence.",
-    "source": "Shadowrun 5 Core Rulebook",
-    "page": 324,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for Detection spells",
@@ -467,16 +465,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 324
   },
   {
     "name": "Thunderbird",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice for Intimidation Tests.",
     "disadvantage": "A Thunderbird magician must succeed in a Charisma + Willpower (3) Test to avoid responding to an insult in kind.",
-    "source": "Shadowrun 5 Core Rulebook",
-    "page": 324,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for summoning spirits of air",
@@ -495,16 +493,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 324
   },
   {
     "name": "Wise Warrior",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 to dice to Leadership or Instruction skill tests (choose one).",
     "disadvantage": "If you act dishonorably or without courtesy, whether by choice or by accident, you take a –1 dice pool modifier to all actions until you atone for your behavior.",
-    "source": "Shadowrun 5 Core Rulebook",
-    "page": 324,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "+2 dice for Leadership skill tests",
@@ -539,16 +537,16 @@
         "set": 2
       }
     ],
-    "choiceCount": 2
+    "choiceCount": 2,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 324
   },
   {
     "name": "Wolf",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice to Tracking tests.",
     "disadvantage": "You must succeed in a Charisma + Willpower (3) Test to retreat from a fight.",
-    "source": "Shadowrun 5 Core Rulebook",
-    "page": 324,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for Combat spells",
@@ -575,19 +573,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 324
   },
   {
     "name": "Berserker",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice pool modifier for Composure Tests",
     "disadvantage": "Berserker's followers have very short fuses. Whenever someone strongly disagrees with you (gamemaster's discretion), you must pass a Charisma + Willpower (3) Test to keep from striking out against the offender. If the test fails, the attack can be in any form you choose (fist, spell, etc.), but it must have the intent to cause damage.",
-    "bonus": {
-      "composure": 2
-    },
-    "source": "Street Grimoire",
-    "page": 199,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for Physical-type Combat Spells",
@@ -634,16 +629,19 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "bonus": {
+      "composure": 2
+    },
+    "source": "Street Grimoire",
+    "page": 199
   },
   {
     "name": "Chaos",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice pool modifier for Con Tests",
     "disadvantage": "You are an inveterate gossip trying to stir up trouble, especially between friends, and thus cannot keep damaging secrets to yourself. Also, anytime you encounter a public situation deemed too quiet or stable (gamemaster's discretion), make a Willpower + Intuition (3) Test. Failure means that you are compelled to stir the pot in any way you desire, be it attacking, telling lies, or throwing a drink on someone nearby.",
-    "source": "Street Grimoire",
-    "page": 200,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for Illusion Spells",
@@ -669,16 +667,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Street Grimoire",
+    "page": 200
   },
   {
     "name": "Peacemaker",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice pool modifier for Negotiation Tests",
     "disadvantage": "You see even enemies as potential friends and go out of your way to keep from hurting anyone unless the situation truly warrants it. At the very beginning of combat, you must pass a Charisma + Intuition (3) Test; failure means you are unable to take actions that cause Physical damage for the duration of combat. At the beginning of a new Combat Turn, you may choose to retake the test if you failed the first time and you or a member of your team suffered damage in the previous Combat Turn.",
-    "source": "Street Grimoire",
-    "page": 200,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for Detection Spells",
@@ -705,16 +703,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Street Grimoire",
+    "page": 200
   },
   {
     "name": "Oracle",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice pool modifier for Arcana Tests",
     "disadvantage": "You hate mysteries with a passion and can disappear for days trying to track down the answer. When confronted by a particularly haunting question (gamemaster's discretion), you must take a Willpower + Intuition (3) Test. Failure means you must undertake an Intuition + Logic [Mental] (5, 1 hour) Extended Test to try researching the answer. Completion of the Extended Test does not necessarily mean you found the answer, but it at least silences the question in your mind for the time being. When a follower of Oracle becomes a Grade 1 initiate, she must choose Divination for her first metamagic rather than a Power Point or any other benefit.",
-    "source": "Street Grimoire",
-    "page": 200,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for Detection Spells",
@@ -740,16 +738,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Street Grimoire",
+    "page": 200
   },
   {
     "name": "Doom",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 to Demolitions or a single Combat Skill",
     "disadvantage": "Followers of Doom must succeed in a Willpower + Charisma (3) Test to avoid a fight once it has begun, or to not enact a plan to do violence. If they fail, they must engage in combat until all opponents are defeated or flee.",
-    "source": "Street Grimoire",
-    "page": 86,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "+2 to Demolitions",
@@ -784,26 +782,16 @@
       }
     ],
     "choiceCount": 2,
-    "required": {}
+    "required": {},
+    "source": "Street Grimoire",
+    "page": 86
   },
   {
     "name": "Disease",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 to resist all pathogens and toxins",
     "disadvantage": "Followers of Disease must make a Charisma + Willpower (3) Test to not flee or seek cover whenever in a combat situation, unless they outnumber their opponents. If they begin a fight with greater numbers but then their side is reduced so that they no longer outnumber their opponents, they must make a test to avoid fleeing.",
-    "bonus": {
-      "toxinContactResist": 2,
-      "pathogenContactResist": 2,
-      "toxinInhalationResist": 2,
-      "pathogenInhalationResist": 2,
-      "toxinIngestionResist": 2,
-      "pathogenIngestionResist": 2,
-      "toxinInjectionResist": 2,
-      "pathogenInjectionResist": 2
-    },
-    "source": "Street Grimoire",
-    "page": 86,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for Summoning or Binding plague spirits",
@@ -822,16 +810,26 @@
       }
     ],
     "choiceCount": 1,
-    "required": {}
+    "bonus": {
+      "toxinContactResist": 2,
+      "pathogenContactResist": 2,
+      "toxinInhalationResist": 2,
+      "pathogenInhalationResist": 2,
+      "toxinIngestionResist": 2,
+      "pathogenIngestionResist": 2,
+      "toxinInjectionResist": 2,
+      "pathogenInjectionResist": 2
+    },
+    "required": {},
+    "source": "Street Grimoire",
+    "page": 86
   },
   {
     "name": "Mutation",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice to a Physical skill",
     "disadvantage": "If a follower of Mutation finds themselves inferior to an opponent, they suffer a –1 penalty on all actions until they defeat their rival in that area, or overcome or compensate for the weakness in another way (such as acquiring a new power, spell, or augmentation).",
-    "source": "Street Grimoire",
-    "page": 86,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for Health Spells",
@@ -859,16 +857,16 @@
       }
     ],
     "choiceCount": 1,
-    "required": {}
+    "required": {},
+    "source": "Street Grimoire",
+    "page": 86
   },
   {
     "name": "Pollution",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 for Chemistry Tests when dealing with pollutants",
     "disadvantage": "If they are in an area cleaner than their normal habitation, followers of Pollution must make a Willpower + Charisma (3) Test every day. If they fail, they must spend at least eight hours that day actively despoiling the land, regardless of any other plans they had for that time.",
-    "source": "Street Grimoire",
-    "page": 86,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for summoning or binding toxic spirits",
@@ -887,16 +885,16 @@
       }
     ],
     "choiceCount": 1,
-    "required": {}
+    "required": {},
+    "source": "Street Grimoire",
+    "page": 86
   },
   {
     "name": "Great Mother",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 to First Aid or Medicine Tests",
     "disadvantage": "Followers of the Great Mother are lovers and healers, not fighters. As a result, they suffer a –1 dice pool modifier for any combat-related actions (using a combat skill, or casting a spell from the Combat category).",
-    "source": "Sail Away Sweet Sister",
-    "page": 33,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "+2 to First Aid",
@@ -931,16 +929,16 @@
         "set": 2
       }
     ],
-    "choiceCount": 2
+    "choiceCount": 2,
+    "source": "Sail Away Sweet Sister",
+    "page": 33
   },
   {
     "name": "The Adversary",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice to demolitions tests.",
     "disadvantage": "Because of their deep-seated hatred for authority, a teammate's use of leadership skill is counterproductive to followers of Adversary, invoking either a negative dice penalty or loss of initiative. If the plan doesn't go the way that the adversary follower wants it to go, it takes a Charisma + Willpower (3) Test for him to get him to cooperate.",
-    "source": "Hard Targets",
-    "page": 136,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for Counterspelling and disenchanting",
@@ -959,16 +957,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Hard Targets",
+    "page": 136
   },
   {
     "name": "Alligator",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice to intimidation tests.",
     "disadvantage": "A follower of Alligator is stubborn about changing a plan or action to which he is committed. When the rest of the team goes to Plan B, the magician must succeed in a Charisma + Willpower (3) Test for the magician to stop trying Plan A.",
-    "source": "Hard Targets",
-    "page": 137,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for conjuring Spirits of Water.",
@@ -990,16 +988,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Hard Targets",
+    "page": 137
   },
   {
     "name": "Bat",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice to navigation tests.",
     "disadvantage": "A follower of Bat is easily distracted and becomes irritable during enforced inaction. She prefers spontaneity to routine. Every week that the magician stays in the same place, she takes a –1 penalty to all actions until she finds a new place to stay. Also, unless she succeeds in a Charisma + Willpower (3) Test, she cannot enter a hangout (bar, club, restaurant) more than once in a week without suffering a –1 to all Magic tests for the next twenty-four hours.",
-    "source": "Hard Targets",
-    "page": 137,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +1 dice for conjuring spirits.",
@@ -1017,16 +1015,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Hard Targets",
+    "page": 137
   },
   {
     "name": "Monkey",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice to gymnastics tests involving climbing.",
     "disadvantage": "Because Monkey is not an assassin, the magician must succeed in a Charisma + Willpower (3) Test in order to strike a surprised opponent. Monkey must be able to watch his prank go off or see the look on the opponent's face after taunting them, otherwise he suffers –1 to all Magic tests until the next sunrise/sunset.",
-    "source": "Hard Targets",
-    "page": 137,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for spells, preparations, and rituals of the manipulation type.",
@@ -1053,16 +1051,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Hard Targets",
+    "page": 137
   },
   {
     "name": "Coyote",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice pool to all Con tests.",
     "disadvantage": "Coyote has a hard time with head-on attacks or brute force methods, unless it's part of a larger con or misdirection. Anytime he is forced into such actions, he must make a Willpower + Charisma [Mental] (4) Test. If he fails, then he decides to do things another way, which means he may exit a combat instead of participating in it.",
-    "source": "Shadows In Focus: Sioux Nation: Counting Coup",
-    "page": 24,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +1 to all Manipulation and Illusion spell tests, preparations, and rituals.",
@@ -1093,19 +1091,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Shadows In Focus: Sioux Nation: Counting Coup",
+    "page": 24
   },
   {
     "name": "Oak (SHB)",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice to memory test.",
     "disadvantage": "A follower of Oak has to succeed in a CHA+WIL (3) test to retreat from a dangerous area instead of waiting till the danger passes.",
-    "bonus": {
-      "memory": [2]
-    },
-    "source": "Schattenhandbuch 2",
-    "page": 179,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for Detection spells.",
@@ -1132,16 +1127,19 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "bonus": {
+      "memory": [2]
+    },
+    "source": "Schattenhandbuch 2",
+    "page": 179
   },
   {
     "name": "Artist",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice to Artisan or Forgery.",
     "disadvantage": "If for more than two weeks the Artist fails to find an audience for a presentation of her ability, she has to make a WIL+ CHA (3) test. Should she fail, she fall into depression (-2 dice for every skill linked to LOG, INT or CHA) for 1d6 days. After that (or if she succeeded in the the WIL+CHA test) a new 14 day period begins in which she has to show off her skills.",
-    "source": "Schattenhandbuch 2",
-    "page": 179,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for Illusion spells.",
@@ -1160,16 +1158,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Schattenhandbuch 2",
+    "page": 179
   },
   {
     "name": "Blacksmith",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice to Artisan or Alchemy tests.",
     "disadvantage": "You have to pass a CHA + WIL (3) check to refrain from instantaneously avenging an insult.",
-    "source": "Schattenhandbuch 2",
-    "page": 179,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for summoning spirits of fire.",
@@ -1192,23 +1190,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Schattenhandbuch 2",
+    "page": 179
   },
   {
     "name": "Gambler",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 to Etiquette or Palming.",
     "disadvantage": "Gain the Distinctive Style negative quality.",
-    "bonus": {
-      "qualityList": [
-        {
-          "name": "Distinctive Style"
-        }
-      ]
-    },
-    "source": "Schattenhandbuch 2",
-    "page": 179,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for Manipulation Spells.",
@@ -1235,16 +1226,23 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "bonus": {
+      "qualityList": [
+        {
+          "name": "Distinctive Style"
+        }
+      ]
+    },
+    "source": "Schattenhandbuch 2",
+    "page": 179
   },
   {
     "name": "Boar",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: Home Ground Quality is gained for free.",
     "disadvantage": "A follower of Boar does not like it if there are others intruding in his space or disrupting his routine. At best, the follower protects the bar and employees of the bar he always goes to. At worst, he will start a fight for a specific table or stool that he thinks is his. A warning is optional and usually proffered by the follower's friends. It takes a Charisma + Willpower (3) Test for a follower of Boar to leave his home, safehouse, or routine permanently, otherwise he will keep coming back, even at the risk of his own safety. If the Boar does leave, he receives a –1 penalty to all active skill tests for three weeks until he finally settles into a new place and routine.",
-    "source": "Howling Shadows",
-    "page": 41,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +1 to the number of services gained when successfully summoning a spirit",
@@ -1268,16 +1266,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Howling Shadows",
+    "page": 41
   },
   {
     "name": "Giraffe",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 Assensing skill tests or +2 to Judge Intentions test (choose one)",
     "disadvantage": "A follower of Giraffe stumbles through social etiquette, as she believes the small talk and chitchat that are the core of social chatter are fundamentally dishonest and not worthy of her efforts. She can make a wide range of situations awkward and receives –2 dice for Etiquette skill tests.",
-    "source": "Howling Shadows",
-    "page": 42,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "+2 dice on Assensing Tests",
@@ -1304,16 +1302,16 @@
         "set": 2
       }
     ],
-    "choiceCount": 2
+    "choiceCount": 2,
+    "source": "Howling Shadows",
+    "page": 42
   },
   {
     "name": "Dolphin",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice on Artisan skill tests or Pilot Watercraft skill tests (choose one)",
     "disadvantage": "Followers are altruistic when it comes to helping people and cannot turn a blind eye to those who they believe deserve their help. It is difficult for them not to get involved when they see someone being bullied or obviously polluting the environment. If they see such a situation, it takes a Charisma + Willpower (3) Test for a follower of Dolphin not to intervene. If the job that the follower of Dolphin is on involves polluting the environment or becoming the bully/enforcer on those less deserving, then the follower loses 2 dice after each such deed until she atones. Atonement is up to the gamemaster but can involve time and money spent with charities.",
-    "source": "Howling Shadows",
-    "page": 43,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "+2 dice on Artisan tests",
@@ -1348,16 +1346,16 @@
         "set": 2
       }
     ],
-    "choiceCount": 2
+    "choiceCount": 2,
+    "source": "Howling Shadows",
+    "page": 43
   },
   {
     "name": "Whale",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice to Swimming or Pilot Watercraft skill tests (choose one)",
     "disadvantage": "Because of their personal sense of ethics, followers of the whale must honor any agreement they enter into. This can be an oath to an organization or a verbal contract with a corporation. Failing to honor the contract or oath results in a loss of a point of Magic. The Whale mentor spirit understands if circumstances to complete the contract are out of the Awakened's hands. For everything else, the follower can attempt to atone, but at the gamemaster's discretion.",
-    "source": "Howling Shadows",
-    "page": 43,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "+2 dice on Swimming tests",
@@ -1384,16 +1382,16 @@
         "set": 2
       }
     ],
-    "choiceCount": 2
+    "choiceCount": 2,
+    "source": "Howling Shadows",
+    "page": 43
   },
   {
     "name": "Horse",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice to Running or Pilot Ground Craft tests (choose one)",
     "disadvantage": "Followers of the Horse can't sit still for long nor be confined indoors. They must spend at least four hours a day outside and be able to run or drive around (any method of travel faster than walking). If followers are not able to meet this condition, they suffer –1 die to all action skill tests. This penalty is cumulative, meaning if the follower is stuck at a desk all day (indoors and not moving around) for two days in a a row, they suffer –2 to all actions until they get that free time in.",
-    "source": "Howling Shadows",
-    "page": 46,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "+2 dice on Running tests",
@@ -1412,16 +1410,16 @@
         "set": 2
       }
     ],
-    "choiceCount": 2
+    "choiceCount": 2,
+    "source": "Howling Shadows",
+    "page": 46
   },
   {
     "name": "Raccoon",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 to Palming skill tests",
     "disadvantage": "The Raccoon is commonly one of the Thief totems, so the followers can tend to err on the side of greed. A follower of Raccoon must make a Charisma + Willpower (3) Test to resist the urge to open that next locked door to look for something to steal, or to follow that Matrix rabbit trail in the quest for more paydata.",
-    "source": "Howling Shadows",
-    "page": 46,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for spells, preparations, and spell rituals in the Manipulation category.",
@@ -1450,16 +1448,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Howling Shadows",
+    "page": 46
   },
   {
     "name": "Spider",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice to Computer skill tests",
     "disadvantage": "Followers of Spider are already paranoid about people having any misconceptions about them being insect shamans. They will keep such details from casual conversation. Followers of Spider also have taken advantage of the Matrix more than more traditional shamans in creating connections. This makes followers more agoraphobic as they avoid uncontrolled social situations and unfamiliar environments. They receive a –1 dice pool modifier to Magic tests while out in the open (this includes very large indoor rooms such as auditoriums, theaters, and stadiums). The penalty doubles if there is a large crowd of people to deal with.",
-    "source": "Howling Shadows",
-    "page": 47,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for Illusion spells",
@@ -1486,16 +1484,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Howling Shadows",
+    "page": 47
   },
   {
     "name": "Goddess",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice pool modifier for Instruction Tests.",
     "disadvantage": "The Goddess refuses to take a backseat to any male counterparts. Unless you succeed in a Charisma + Willpower Test (3), you will not take orders from a male, or if a male disrespects you, you must respond with equal measure",
-    "source": "Book Of The Lost",
-    "page": 129,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for Ritual Spellcasting Tests",
@@ -1514,16 +1512,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Book Of The Lost",
+    "page": 129
   },
   {
     "name": "Lion",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice pool modifier for Survival Tests, Running Tests, or Tracking Tests (Choose One)",
     "disadvantage": "In combat situations, a Lion will never leave a comrade behind, and will fight to the death to protect an ally. Unless you succeed in a Charisma + Willpower Test (3), you cannot flee combat before your team members are safe. Further, whenever taking actions that don't benefit the team somehow, your physical and mental limits are reduced by 2.",
-    "source": "Book Of The Lost",
-    "page": 132,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice to Combat spells, preparations, and rituals",
@@ -1550,40 +1548,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Book Of The Lost",
+    "page": 132
   },
   {
     "name": "Raven (Alt)",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice pool modifier for knowledge skill tests.",
     "disadvantage": "Followers of Raven share their mentor's love of collecting. When presented with data, knowledge, or other gear that would be valuable (gamemaster's discretion), you must pass a Charisma + Willpower Test (3), or be unable to resist trying to acquiring it.",
-    "bonus": {
-      "skillCategories": [
-        {
-          "category": "Academic",
-          "bonus": [2]
-        },
-        {
-          "category": "Interest",
-          "bonus": [2]
-        },
-        {
-          "category": "Language",
-          "bonus": [2]
-        },
-        {
-          "category": "Professional",
-          "bonus": [2]
-        },
-        {
-          "category": "Street",
-          "bonus": [2]
-        }
-      ]
-    },
-    "source": "Book Of The Lost",
-    "page": 121,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice to Detection spells, preparations, and rituals.",
@@ -1614,16 +1588,40 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "bonus": {
+      "skillCategories": [
+        {
+          "category": "Academic",
+          "bonus": [2]
+        },
+        {
+          "category": "Interest",
+          "bonus": [2]
+        },
+        {
+          "category": "Language",
+          "bonus": [2]
+        },
+        {
+          "category": "Professional",
+          "bonus": [2]
+        },
+        {
+          "category": "Street",
+          "bonus": [2]
+        }
+      ]
+    },
+    "source": "Book Of The Lost",
+    "page": 121
   },
   {
     "name": "Dove",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice pool modifier for Negotiation tests.",
     "disadvantage": "Dove discourages combat whenever possible. As such, those who follow Dove are at –2 dice pool modifier to cast Combat spells or when using lethal force.",
-    "source": "Forbidden Arcana",
-    "page": 94,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +1 dice pool modifier for casting Health spells, +1 dice pool modifier to summon air spirits",
@@ -1650,16 +1648,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Forbidden Arcana",
+    "page": 94
   },
   {
     "name": "Planar Entity",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: Determined by spirit type and gamemaster approval.",
     "disadvantage": "Taking on an extraplanar entity into one's soul is not without its drawbacks. Much of their mental ability is taken up keeping themselves from losing their identity as a result of their shared existence. Mages suffer a –2 dice pool penalty when making tests involving Willpower",
-    "source": "Forbidden Arcana",
-    "page": 95,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: Determined by spirit type and gamemaster approval.",
@@ -1670,16 +1668,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Forbidden Arcana",
+    "page": 95
   },
   {
     "name": "Arcana",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: Once per day, when making a decision or test influenced by a Tarot reading/card, may re-roll misses as if they had used Edge.",
     "disadvantage": "Followers of the Arcana must use Tarot decks or individual cards as foci and fetishes, or else take –2 when attempting to use them. The Tarot Arcana plays such a major part in the lives of its adherents that when a follower of Arcana becomes a grade 1 initiate, they must choose centering or adept centering for their first benefit, with the cards of Tarot being the focus of their centering.",
-    "source": "Forbidden Arcana",
-    "page": 95,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +1 dice pool modifier for casting Detection spells, an additional +2 dice pool modifier to cast Clairvoyance spells.",
@@ -1706,16 +1704,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Forbidden Arcana",
+    "page": 95
   },
   {
     "name": "Holy Text",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "Gain +4 ranks of (Choose Holy Text) Knowledge Skill.",
     "disadvantage": "When a follower of a Holy Text wishes to take an action that is contrary to the teaching of the text (whatever that text is), they must pass a Charisma + Willpower (4) Test to take the action.",
-    "source": "Forbidden Arcana",
-    "page": 95,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice pool modifier when using the Banishing skill.",
@@ -1738,16 +1736,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Forbidden Arcana",
+    "page": 95
   },
   {
     "name": "Death",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +4 ranks of the Knowledge Skill Anatomy, Disease, Infected, or Undead (choose one).",
     "disadvantage": "In order for a follower of Death to attempt to help someone who is dying or injured, they must first pass a Charisma + Willpower (3) Test.",
-    "source": "Forbidden Arcana",
-    "page": 96,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice pool modifier when casting the spells Death Touch, Manaball, Manabolt, One Less, Slaughter, Slay.",
@@ -1776,16 +1774,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Forbidden Arcana",
+    "page": 96
   },
   {
     "name": "War",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: After character creation, may purchase combat skills at rank 3 or higher for 1 less Karma",
     "disadvantage": "If it looks as if they are going to lose a battle, those with the War mentor must pass a Charisma + Willpower (4) Test, or else use all means necessary—including the lives, nuyen, and honor of their teammates—to overcome their adversary.",
-    "source": "Forbidden Arcana",
-    "page": 97,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice pool modifier when casting Combat spells, preparations, and rituals.",
@@ -1811,23 +1809,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Forbidden Arcana",
+    "page": 97
   },
   {
     "name": "Tohu Wa-Bohu",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice pool modifier for Intimidation or Demolitions tests (choose one)",
     "disadvantage": "Followers gain the Driven quality, in which the focus is the opportunity to destroy something meaningful. Further, they fnd it hard to work in groups given their destructive nature. They can never benefit from teamwork or leadership bonuses.",
-    "bonus": {
-      "qualityList": [
-        {
-          "name": "Driven"
-        }
-      ]
-    },
-    "source": "Forbidden Arcana",
-    "page": 97,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: Gain the Witness My Hate quality for free.",
@@ -1852,16 +1843,23 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "bonus": {
+      "qualityList": [
+        {
+          "name": "Driven"
+        }
+      ]
+    },
+    "source": "Forbidden Arcana",
+    "page": 97
   },
   {
     "name": "Green Man",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice pool modifier for Negotiation Tests.",
     "disadvantage": "When significant damage is being done to vegetation, they must pass a Charisma + Willpower (3) Test or use all means possible to stop the destruction.",
-    "source": "Forbidden Arcana",
-    "page": 98,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice pool modifier to summon Plant Spirits.",
@@ -1880,16 +1878,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Forbidden Arcana",
+    "page": 98
   },
   {
     "name": "Sun",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice pool modifier for Perception tests when outside during the day.",
     "disadvantage": "Followers of Sun must pass a Charisma + Willpower (4) Test in order to purposefully deceive others.",
-    "source": "Forbidden Arcana",
-    "page": 98,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice pool modifier when casting Sun- or Fire-based spells.",
@@ -1908,16 +1906,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Forbidden Arcana",
+    "page": 98
   },
   {
     "name": "Dark King",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice to Intimidation tests.",
     "disadvantage": "Followers receive a –1 dice pool penalty when resisting physical damage.",
-    "source": "Forbidden Arcana",
-    "page": 98,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice to Contractual Rituals.",
@@ -1936,16 +1934,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Forbidden Arcana",
+    "page": 98
   },
   {
     "name": "Moon",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice to Negotiation tests.",
     "disadvantage": "Followers of Moon must make a Charisma + Willpower (4) Test in order to engage in direct confrontation; failure means they cannot make any action considered as such. Negotiation is not considered confrontation (Moon loves discussion), but arguments fall into that category.",
-    "source": "Forbidden Arcana",
-    "page": 98,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for Illusion and transformation-focused Manipulation spells, preparations, and spell rituals.",
@@ -1976,19 +1974,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Forbidden Arcana",
+    "page": 98
   },
   {
     "name": "Oak",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +1 to Damage Resistance tests.",
     "disadvantage": "Must have a natural (meaning un-augmented) Body and Strength of 4 or greater to select this mentor spirit.",
-    "bonus": {
-      "damageResistance": 1
-    },
-    "source": "Forbidden Arcana",
-    "page": 99,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice pool bonus when summoning plant spirits.",
@@ -2012,16 +2007,19 @@
       }
     ],
     "choiceCount": 1,
-    "required": {}
+    "bonus": {
+      "damageResistance": 1
+    },
+    "required": {},
+    "source": "Forbidden Arcana",
+    "page": 99
   },
   {
     "name": "Stag",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 to Blades tests.",
     "disadvantage": "Followers of the Stag demand respect, especially to those they give it to. Once disrespected, they must succeed in a Charisma + Willpower (3) Test, or they will demand satisfaction against the slight.",
-    "source": "Forbidden Arcana",
-    "page": 99,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 to summoning earth spirits.",
@@ -2040,16 +2038,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Forbidden Arcana",
+    "page": 99
   },
   {
     "name": "Great Mother (alt)",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: When not in an urban area, gain +1 to any skill test with skills in the Outdoors skill group.",
     "disadvantage": "Treat any background count due to pollution or twisted element as twice the actual rating.",
-    "source": "Forbidden Arcana",
-    "page": 99,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 for health spells, preparations, and spell rituals.",
@@ -2075,24 +2073,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Forbidden Arcana",
+    "page": 99
   },
   {
     "name": "Spider (Alt)",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice pool modifier for tests using the Stealth skill group.",
     "disadvantage": "When not following a plan or a plan doesn't go according to plan, followers of Spider must pass a Charisma + Willpower (4) Test or suffer –2 to all rolls until a new plan is established.",
-    "bonus": {
-      "skillGroups": [
-        {
-          "group": "Stealth",
-          "bonus": [2]
-        }
-      ]
-    },
-    "source": "Forbidden Arcana",
-    "page": 100,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice pool modifier when casting Manipulation spells, preparations, and rituals",
@@ -2119,16 +2109,24 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "bonus": {
+      "skillGroups": [
+        {
+          "group": "Stealth",
+          "bonus": [2]
+        }
+      ]
+    },
+    "source": "Forbidden Arcana",
+    "page": 100
   },
   {
     "name": "Wolf (Alt)",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +1 dice pool modifier for tests using the Sneaking, Perception, Survival, and Tracking skills.",
     "disadvantage": "Whenever a follower of Wolf sees an opportunity to survive by attacking or sacrificing the weak, they must pass a Charisma + Willpower (4) Test or attempt to seize the opportunity. This does not apply to those the Wolf considers friends or family.",
-    "source": "Forbidden Arcana",
-    "page": 100,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +1 dice pool modifier when casting Combat spells, preparations, and rituals.",
@@ -2155,16 +2153,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Forbidden Arcana",
+    "page": 100
   },
   {
     "name": "Rat (Alt)",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +1 dice pool modifier for tests using the Perception and Sneaking skills.",
     "disadvantage": "Followers of Rat cannot receive aid or aid others with a Teamwork test unless they trust the individuals they are teaming with. Further, if they do trust the individuals, but that trust is broken through incompetence or betrayal, they must pass a Charisma + Willpower (4) Test to be able to use teamwork with that individual each time in the future.",
-    "source": "Forbidden Arcana",
-    "page": 100,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +1 dice pool modifier when casting Health spells, preparations, and rituals",
@@ -2191,16 +2189,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Forbidden Arcana",
+    "page": 100
   },
   {
     "name": "Eurasian Jay",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +1 dice pool modifier for tests using the Perception and Palming skills.",
     "disadvantage": "Eurasian Jay loves to split his possessions. If a follower of Eurasian Jay receives a splittable reward, she must make a Charisma + Willpower (3) test to not spread the reward over different accounts or rooms.",
-    "source": "State Of The Art - ADL",
-    "page": 120,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice pool modifier when casting Illusion spells, preparations, and rituals",
@@ -2251,16 +2249,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "State Of The Art - ADL",
+    "page": 120
   },
   {
     "name": "Squirrel",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice pool modifier for tests using the Gymnastics skill.",
     "disadvantage": "When followers of Squirrel are in confined spaces, they must make a Willpower + Charisma (3) Tests or take a -1 dice pool modifier on all tests while feeling cramped.",
-    "source": "State Of The Art - ADL",
-    "page": 121,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice pool modifier when casting Detection spells, preparations, and rituals",
@@ -2287,16 +2285,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "State Of The Art - ADL",
+    "page": 121
   },
   {
     "name": "Fox",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice pool modifier for tests using the Perception skill.",
     "disadvantage": "If Fox fights, it'll fight to kill. A follower of this mentor spirit must make a Willpower + Intuition (3) Test to spare an overpowered foe.",
-    "source": "State Of The Art - ADL",
-    "page": 121,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice pool modifier when casting Illusion spells, preparations, and rituals",
@@ -2323,16 +2321,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "State Of The Art - ADL",
+    "page": 121
   },
   {
     "name": "Tide",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice pool modifier for tests using the Ritual Spellcasting skill.",
     "disadvantage": "Followers of Tide live in transition, but in the consistency of a cycle. They also design their lives this way. If their normal life cycle is lastingly impaired by Sleep deprivation or illness, they suffer a -1 dice pool modifier on all tests until the cycle is restored.",
-    "source": "State Of The Art - ADL",
-    "page": 121,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice summoning spirits of water or earth (The type of spirit for which this bonus applies changes every 6 hours).",
@@ -2351,16 +2349,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "State Of The Art - ADL",
+    "page": 121
   },
   {
     "name": "Heinzelmännchen",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice pool modifier for tests using the Artisan skill and the Engineering skill group.",
     "disadvantage": "Heinzelmännchen works in secret. If a follower of Heinzelmännchen wants to perform magic in public or under close observation, they'll have to make a Willpower + Charisma (3) Test or else their magic cease to function for the moment.",
-    "source": "State Of The Art - ADL",
-    "page": 121,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice pool modifier when casting Manipulation spells, preparations, and rituals",
@@ -2387,16 +2385,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "State Of The Art - ADL",
+    "page": 121
   },
   {
     "name": "Groundhog",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +1 dice pool modifier for tests using the Perception and Etiquette skills.",
     "disadvantage": "If a follower of Groundhog get into a fight (intentionally or unintentionally), they'll have to make a Willpower + Charisma (3) Test to not flee immediately.",
-    "source": "State Of The Art - ADL",
-    "page": 122,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice pool modifier when casting Detection spells, preparations, and rituals",
@@ -2434,16 +2432,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "State Of The Art - ADL",
+    "page": 122
   },
   {
     "name": "Seal",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice pool modifier for Judge Intentions tests.",
     "disadvantage": "Seal has compassion, but she is lacking in tact dealing with the feelings of others. Whenever a follower of Seal gains insight into the emotional world of an other, it's difficult for him to respect private boundaries and not address the subject. In order to remain discreet in such situations, they must make a Charisma + Willpower (3) test. Glitches in social test are automatically critical.",
-    "source": "State Of The Art - ADL",
-    "page": 122,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice summoning spirits of water.",
@@ -2473,16 +2471,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "State Of The Art - ADL",
+    "page": 122
   },
   {
     "name": "Pig",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice pool modifier for tests using the Con skill.",
     "disadvantage": "A follower of Pig must make a Willpower + Charisma (3) Test to break free from pleasurable activities like sleeping, eating, drinking or consuming drugs.",
-    "source": "State Of The Art - ADL",
-    "page": 122,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice pool modifier when casting Manipulation spells, preparations, and rituals",
@@ -2509,16 +2507,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "State Of The Art - ADL",
+    "page": 122
   },
   {
     "name": "Capricorn",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice pool modifier for tests using the Gymnastics skill.",
     "disadvantage": "Capricorn may not be stubborn, but he decides and acts quickly. He has neither tolerance nor time for hesitation. If a follower of Capricorn is confronted with long decision-making processes, discussions, or indecision, he must make a Charisma + Willpower (3) test in order not to immediately choose the in his opinion best decision available and to put it into practice immediately.",
-    "source": "State Of The Art - ADL",
-    "page": 123,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice summoning spirits of earth.",
@@ -2537,16 +2535,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "State Of The Art - ADL",
+    "page": 123
   },
   {
     "name": "Wild Hunt",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice pool modifier for tests using the Pilot Ground Craft or Intimidation skill.",
     "disadvantage": "A follower of the Wild Hunt always leaves behind a swath of devastation. If objects or uninvolved persons could be harmed in the fight, he wouldn't take any consideration. If a follower of the Wild Hunt is consciously considerate in the fight, he must succeed in a Charisma + Willpower (3) test, otherwise he is so inhibited that he suffers a -2 dicepool modifier on all actions.",
-    "source": "State Of The Art - ADL",
-    "page": 123,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "+2 dice on Pilot Ground Craft Tests",
@@ -2576,16 +2574,16 @@
         "set": 2
       }
     ],
-    "choiceCount": 2
+    "choiceCount": 2,
+    "source": "State Of The Art - ADL",
+    "page": 123
   },
   {
     "name": "Guanyin",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice for First Aid tests.",
     "disadvantage": "A Guanyin magician is highly motivated to save other beings. If the Magician is offered a run that doesn't involve hooding, she must make a Charisma + Willpower (3) test before she can accept the run. Failure on this test means she turns down the job.",
-    "source": "Better Than Bad",
-    "page": 139,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for Health spells",
@@ -2611,16 +2609,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Better Than Bad",
+    "page": 139
   },
   {
     "name": "Architect",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice to Leadership",
     "disadvantage": "Followers of this spirit like to stay in charge. Should the circumstances of a run force them to go on the defensive, make a WIL + INT (3) test. Failure imposes a -2 penalty to all tests until the follower regains control of the situation.",
-    "source": "Datapuls SOTA 2080",
-    "page": 29,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for Combat spells",
@@ -2647,16 +2645,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Datapuls SOTA 2080",
+    "page": 29
   },
   {
     "name": "German Shepherd",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +1 to dice to Leadership and Perception",
     "disadvantage": "Sometimes, German shepherd followers show impatience. Should their patience be tested (GM discretion), they must succeed at a WIL + CHA (3) test not to react harshly.",
-    "source": "Datapuls SOTA 2080",
-    "page": 29,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +1 die for Combat and Detection spells",
@@ -2687,16 +2685,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Datapuls SOTA 2080",
+    "page": 29
   },
   {
     "name": "Doberman",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +1 die to Perception and one combat skill (choose one)",
     "disadvantage": "Doberman is very self-confident. In order to accept a subordinate role to someone or follow a stranger's plans, they have to succeed on a WIL + CHA (3) test.",
-    "source": "Datapuls SOTA 2080",
-    "page": 29,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for Combat spells",
@@ -2723,16 +2721,16 @@
         "set": 2
       }
     ],
-    "choiceCount": 2
+    "choiceCount": 2,
+    "source": "Datapuls SOTA 2080",
+    "page": 29
   },
   {
     "name": "Weimaraner",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +1 die to Running and Tracking",
     "disadvantage": "Should a follower find themselves unable to use their skills for longer than 12 hours, they must succeed  a WIL + CHA (3) test, otherwise they suffer a -1 penalty to all actions until they can use their abilities again.",
-    "source": "Datapuls SOTA 2080",
-    "page": 31,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for Detection spells",
@@ -2759,26 +2757,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Datapuls SOTA 2080",
+    "page": 31
   },
   {
     "name": "Badger",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: 2 levels of Perceptive quality are gained for free",
     "disadvantage": "Badger relentlessly guards his territory. Should enemies invade an area guarded by a follower, for instance a building, or steal an object under their protection, must succeed at a WIL + CHA (3) test to not immediately go after the culprits.",
-    "bonus": {
-      "qualityList": [
-        {
-          "name": "Perceptive"
-        },
-        {
-          "name": "Perceptive"
-        }
-      ]
-    },
-    "source": "Datapuls SOTA 2080",
-    "page": 31,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +1 die for Counterspelling and Combat Spells",
@@ -2805,16 +2793,26 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "bonus": {
+      "qualityList": [
+        {
+          "name": "Perceptive"
+        },
+        {
+          "name": "Perceptive"
+        }
+      ]
+    },
+    "source": "Datapuls SOTA 2080",
+    "page": 31
   },
   {
     "name": "Mystic Guardian",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 dice to one melee combat skill (choose one)",
     "disadvantage": "What does a mystic guardian do when there is nothing to guard? As long as the follower does not have a specific task, an employer or a ward (or does not carry out their self-imposed duties), they suffer a -2 penalty on every test.",
-    "source": "Datapuls SOTA 2080",
-    "page": 31,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for summoning guardian spirits.",
@@ -2837,16 +2835,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Datapuls SOTA 2080",
+    "page": 31
   },
   {
     "name": "Little Red Riding Hood",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +2 to dice to Con",
     "disadvantage": "In their unbridled curiosity, followers of Little Red Riding Hood sometimes overlook the important and obvious things. They receive a -1 penalty to Perception tests in unknown areas.",
-    "source": "Datapuls SOTA 2080",
-    "page": 32,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice to Contractual Rituals",
@@ -2864,16 +2862,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Datapuls SOTA 2080",
+    "page": 32
   },
   {
     "name": "Treasure Hunter",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +1 die to Navigation and Locksmith",
     "disadvantage": "A follower of this spirit devotes their full attention to the desired object, as a result, slacking or tackling tasks not directly related to obtaining it in a halfhearted fashion. After the meet with the J, they must succeed at a WIL + WIL (3) test or incur a -1 penalty to all tests which don't directly involve the object of their desire.",
-    "source": "Datapuls SOTA 2080",
-    "page": 32,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for Detection spells",
@@ -2899,16 +2897,16 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Datapuls SOTA 2080",
+    "page": 32
   },
   {
     "name": "Brother at Arms",
     "description": "",
+    "category": "Mentor Spirit",
     "advantage": "All: +1 die to Etiquette and Instruction",
     "disadvantage": "Every run, followers choose three persons - PCs or key NPCs - of direct relevance to the plot to whom they pledge their loyalty for the duration of the mission. Taking advantage of, lying to or abandoning any of them requires succeeding at a WIL + INT (3) test. Even if they can bring themselves to do so, they suffer a -2 penalty to all tests until they atone.",
-    "source": "Datapuls SOTA 2080",
-    "page": 32,
-    "category": "Mentor Spirit",
     "choices": [
       {
         "name": "Magician: +2 dice for summoning guardian spirits.",
@@ -2935,6 +2933,8 @@
         "set": 1
       }
     ],
-    "choiceCount": 1
+    "choiceCount": 1,
+    "source": "Datapuls SOTA 2080",
+    "page": 32
   }
 ]

@@ -324,7 +324,7 @@ const CharacterCreator = function () {
 
   const [page, setPage] = useState(CharacterPageEnum.PriorityListSelect);
 
-  if (skills.isLoading) {
+  if (skills.isPending) {
     return <div>Loading...</div>;
   }
 
@@ -522,7 +522,9 @@ const CharacterCreator = function () {
               negativeQualityListSelected: negativeQualityListSelected,
               skillSelections: skillSelections,
               skillGroupSelections: skillGroupSelections,
-              martialArtSelected: martialArtSelected,
+              ...(martialArtSelected !== undefined && {
+                martialArtSelected: martialArtSelected,
+              }),
               equipmentSelections: equipmentSelections,
               lifestyleSelections: lifestyleSelections,
               karmaPoints: karmaPoints,

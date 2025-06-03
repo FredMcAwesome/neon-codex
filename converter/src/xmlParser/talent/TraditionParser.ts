@@ -17,6 +17,7 @@ import {
   type TraditionXmlType,
 } from "./TraditionParserSchemas.js";
 import { traditionDrainAttributeEnum } from "@neon-codex/common/build/enums.js";
+import { type } from "arktype";
 
 export function ParseTraditions() {
   const currentPath = import.meta.url;
@@ -38,19 +39,19 @@ export function ParseTraditions() {
   //   jObj.chummer.traditions.tradition[95]
   // );
 
-  const traditionListParsed = TraditionListXmlSchema.safeParse(
+  const traditionListParsed = TraditionListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.traditions.tradition
   );
 
-  if (traditionListParsed.success)
-    console.log("traditions.xml initial zod parsed");
-  else {
-    console.log(traditionListParsed.error.errors[0]);
+  if (traditionListParsed instanceof type.errors) {
+    console.log(traditionListParsed.summary);
     assert(false);
+  } else {
+    console.log("traditions.xml initial arktype parsed");
   }
 
-  const traditionList = traditionListParsed.data;
+  const traditionList = traditionListParsed;
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
   // })
@@ -59,13 +60,13 @@ export function ParseTraditions() {
     // .filter((weapon) => weapon.name === "Osmium Mace")
     .map((tradition) => {
       const convertedTradition = convertTradition(tradition);
-      const check = TraditionSchema.safeParse(convertedTradition);
-      if (!check.success) {
+      const check = TraditionSchema(convertedTradition);
+      if (check instanceof type.errors) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         console.dir(convertedTradition, { depth: Infinity });
-        throw new Error(check.error.message);
+        throw new Error(check.summary);
       }
-      return check.data;
+      return check;
     });
   // console.log(spellListConverted);
   const jsonFilePath = fileURLToPath(
@@ -146,7 +147,9 @@ function convertTradition(tradition: TraditionXmlType): TraditionType {
     name: tradition.name,
     description: "",
     drain: drain,
-    spiritForm: tradition.spiritform,
+    ...(tradition.spiritform !== undefined && {
+      spiritForm: tradition.spiritform,
+    }),
     spiritTypes: spirits,
     ...(bonus !== undefined && { bonus: bonus }),
     ...(requirements !== undefined && { requirements: requirements }),

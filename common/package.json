@@ -7,10 +7,10 @@
     "compile": "tsc -b",
     "clean": "tsc --build --clean && rm -r build/"
   },
-  "dependencies": {
-    "zod": "^3.22.4"
-  },
   "devDependencies": {
-    "typescript": "^5.5.2"
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "arktype": "^2.1.20"
   }
 }

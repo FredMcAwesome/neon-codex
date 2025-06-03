@@ -1,96 +1,80 @@
-import { z as zod } from "zod";
 import { bonusSourceEnum } from "../../enums.js";
 import {
   availabilityEnum,
   mathOperatorEnum,
   ratingAugmentationEnum,
 } from "../../enums.js";
+import { type } from "arktype";
 
-export const GearCalculation = zod.array(
-  zod.union([
-    zod.number(),
-    zod
-      .object({
-        option: zod.enum([
-          "Rating",
-          "Weapon",
-          "Chemical",
-          "Sensor",
-          "Capacity",
-          "Force",
-        ]),
-      })
-      .strict(),
-    zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
-  ])
-);
+export const GearCalculation = type(
+  type.or(
+    "number",
+    {
+      option: type.enumerated(
+        "Rating",
+        "Weapon",
+        "Chemical",
+        "Sensor",
+        "Capacity",
+        "Force"
+      ),
+    },
+    { operator: type.valueOf(mathOperatorEnum) }
+  )
+).array();
 
-export type GearCalculationType = zod.infer<typeof GearCalculation>;
+export type GearCalculationType = typeof GearCalculation.infer;
 
-export const BaseOrSpecialSchema = zod.union([
-  zod.number(),
-  zod.enum(["Calculation"]),
-]);
+export const BaseOrSpecialSchema = type.or("number", "'Calculation'");
 
 // availability rating is a recursive type
-export const AvailabilityRatingSubnumberSchema = zod.union([
-  zod.number(),
-  zod
-    .object({
-      option: zod.nativeEnum(availabilityEnum),
-    })
-    .strict(),
-  zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
-]);
-export type AvailabilityRatingType = Array<
-  | zod.infer<typeof AvailabilityRatingSubnumberSchema>
-  | {
-      subnumbers: AvailabilityRatingType;
-    }
->;
-export const AvailabilityRatingSchema: zod.ZodType<AvailabilityRatingType> =
-  zod.array(
-    zod.union([
-      AvailabilityRatingSubnumberSchema,
-      zod
-        .object({
-          subnumbers: zod.lazy(() => AvailabilityRatingSchema),
-        })
-        .strict(),
-    ])
-  );
-
-const ratingCalculation = zod.array(
-  zod.union([
-    zod.number(),
-    zod
-      .object({
-        option: zod.nativeEnum(ratingAugmentationEnum),
-      })
-      .strict(),
-    zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
-  ])
+export const AvailabilityRatingSubnumberSchema = type.or(
+  "number",
+  {
+    option: type.valueOf(availabilityEnum),
+  },
+  { operator: type.valueOf(mathOperatorEnum) }
 );
 
-export const ValueRangeSchema = zod.union([
-  zod
-    .object({
-      minimum: zod.optional(ratingCalculation),
-      maximum: zod.optional(ratingCalculation),
-    })
-    .strict(),
-  zod
-    .object({
-      base: BaseOrSpecialSchema,
-      specialCalculation: GearCalculation,
-    })
-    .strict(),
-]);
+export const { AvailabilityRatingSchema } = type.module({
+  AvailabilityRatingSchema: [
+    [
+      AvailabilityRatingSubnumberSchema,
+      "|",
+      {
+        subnumbers: "AvailabilityRatingSchema",
+      },
+    ],
+    "[]",
+  ],
+});
+export type AvailabilityRatingType = typeof AvailabilityRatingSchema.infer;
+
+const AbilityRatingCalculationSchema = type(
+  type.or(
+    "number",
+    {
+      option: type.valueOf(ratingAugmentationEnum),
+    },
+    { operator: type.valueOf(mathOperatorEnum) }
+  )
+).array();
+
+export const ValueRangeSchema = type.or(
+  {
+    "minimum?": AbilityRatingCalculationSchema,
+    "maximum?": AbilityRatingCalculationSchema,
+  },
+  {
+    base: BaseOrSpecialSchema,
+    specialCalculation: GearCalculation,
+  }
+);
 export const RatingSchema = ValueRangeSchema;
-export type RatingType = zod.infer<typeof RatingSchema>;
+export type RatingType = typeof RatingSchema.infer;
 
 export const CapacitySchema = ValueRangeSchema;
-export type CapacityType = zod.infer<typeof CapacitySchema>;
+export type CapacityType = typeof CapacitySchema.infer;
 
 export enum weaponXmlSubtypeEnum {
   Blades = "Blades",
@@ -129,114 +113,83 @@ export enum weaponXmlSubtypeEnum {
   Pistol = "Pistol",
 }
 
-export const WeaponXmlSubtypeSchema = zod.nativeEnum(weaponXmlSubtypeEnum);
-export type WeaponXmlSubtypeType = zod.infer<typeof WeaponXmlSubtypeSchema>;
+export const WeaponXmlSubtypeSchema = type.valueOf(weaponXmlSubtypeEnum);
+export type WeaponXmlSubtypeType = typeof WeaponXmlSubtypeSchema.infer;
 
-export const RangeCostSchema = zod
-  .object({
-    range: zod
-      .object({
-        min: zod.number(),
-        max: zod.number(),
-      })
-      .strict(),
-  })
-  .strict();
+export const RangeCostSchema = type({
+  range: {
+    min: "number",
+    max: "number",
+  },
+});
 
-export const DamageReductionArmourSchema = zod.union([
-  zod.number(),
-  zod
-    .object({
-      option: zod.nativeEnum(availabilityEnum),
-    })
-    .strict(),
-]);
-export type DamageReductionArmourType = zod.infer<
-  typeof DamageReductionArmourSchema
->;
+export const DamageReductionArmourSchema = type.or("number", {
+  option: type.valueOf(availabilityEnum),
+});
+export type DamageReductionArmourType =
+  typeof DamageReductionArmourSchema.infer;
 
-// export type EssenceType = zod.infer<typeof EssenceSchema>;
+// export type EssenceType = typeof EssenceSchema.infer;
 // Essence Cost is a recursive type
-export const EssenceSubnumberSchema = zod.union([
-  zod.number(),
-  zod
-    .object({
-      option: zod.literal("Rating"),
-    })
-    .strict(),
-  zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
-]);
-
-type EssenceRecursiveCostType = Array<
-  | zod.infer<typeof EssenceSubnumberSchema>
-  | {
-      subnumbers: EssenceRecursiveCostType;
-    }
->;
-export const EssenceCostRecursiveSchema: zod.ZodType<EssenceRecursiveCostType> =
-  zod.array(
-    zod.union([
-      EssenceSubnumberSchema,
-      zod
-        .object({
-          subnumbers: zod.lazy(() => EssenceCostRecursiveSchema),
-        })
-        .strict(),
-    ])
-  );
-
-export const EssenceCostSchema = zod.union([
-  zod
-    .object({
-      ratingLinked: zod.array(EssenceCostRecursiveSchema),
-    })
-    .strict(),
-  EssenceCostRecursiveSchema,
-]);
-
-export type EssenceCostType = zod.infer<typeof EssenceCostSchema>;
-
-export const AttributeRangeSchema = zod
-  .object({
-    min: zod.number(),
-    max: zod.number(),
-    augmentedMax: zod.number(),
-  })
-  .strict();
-export type AttributeRangeType = zod.infer<typeof AttributeRangeSchema>;
-
-const MovementEnvironmentSchema = zod
-  .object({
-    ground: zod.number(),
-    water: zod.number(),
-    air: zod.number(),
-  })
-  .strict();
-
-export const MovementStrideSchema = zod
-  .object({
-    walk: MovementEnvironmentSchema,
-    run: MovementEnvironmentSchema,
-    sprint: MovementEnvironmentSchema,
-  })
-  .strict();
-export type MovementStrideType = zod.infer<typeof MovementStrideSchema>;
-
-const CharacterCreatorBonusSchema = zod
-  .object({
-    source: zod.string(),
-    linkMentorSpirit: zod.optional(zod.literal(true)),
-    linkParagon: zod.optional(zod.literal(true)),
-    sourceType: zod.nativeEnum(bonusSourceEnum),
-  })
-  .strict();
-
-export type CharacterCreatorBonusType = zod.infer<
-  typeof CharacterCreatorBonusSchema
->;
-export const CharacterCreatorBonusListSchema = zod.array(
-  CharacterCreatorBonusSchema
+export const EssenceSubnumberSchema = type.or(
+  "number",
+  {
+    option: "'Rating'",
+  },
+  { operator: type.valueOf(mathOperatorEnum) }
 );
-export type CharacterCreatorBonusListType = zod.infer<
-  typeof CharacterCreatorBonusListSchema
->;
+
+export const { EssenceCostRecursiveSchema } = type.module({
+  EssenceCostRecursiveSchema: [
+    [
+      EssenceSubnumberSchema,
+      "|",
+      {
+        subnumbers: "EssenceCostRecursiveSchema",
+      },
+    ],
+    "[]",
+  ],
+});
+
+export const EssenceCostSchema = type.or(
+  {
+    ratingLinked: EssenceCostRecursiveSchema.array(),
+  },
+  EssenceCostRecursiveSchema
+);
+
+export type EssenceCostType = typeof EssenceCostSchema.infer;
+
+export const AttributeRangeSchema = type({
+  min: "number",
+  max: "number",
+  augmentedMax: "number",
+});
+export type AttributeRangeType = typeof AttributeRangeSchema.infer;
+
+const MovementEnvironmentSchema = type({
+  ground: "number",
+  water: "number",
+  air: "number",
+});
+export const MovementStrideSchema = type({
+  walk: MovementEnvironmentSchema,
+  run: MovementEnvironmentSchema,
+  sprint: MovementEnvironmentSchema,
+});
+export type MovementStrideType = typeof MovementStrideSchema.infer;
+
+const CharacterCreatorBonusSchema = type({
+  source: "string",
+  "linkMentorSpirit?": "true",
+  "linkParagon?": "true",
+  sourceType: type.valueOf(bonusSourceEnum),
+});
+export type CharacterCreatorBonusType =
+  typeof CharacterCreatorBonusSchema.infer;
+export const CharacterCreatorBonusListSchema = type(
+  CharacterCreatorBonusSchema
+).array();
+export type CharacterCreatorBonusListType =
+  typeof CharacterCreatorBonusListSchema.infer;

@@ -42,20 +42,19 @@
   {
     "name": "Sense Link",
     "description": "",
-    "category": "Mundane",
     "type": "Mana",
     "action": "Simple",
     "range": {
       "magicMutliplied": 50
     },
     "duration": "Always",
+    "category": "Mundane",
     "source": "Street Grimoire",
     "page": 198
   },
   {
     "name": "Accident",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -65,13 +64,13 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 394
   },
   {
     "name": "Animal Control",
     "description": "",
-    "category": "Paranormal",
     "type": "Mana",
     "action": "Complex",
     "range": {
@@ -81,6 +80,7 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "bonus": {
       "enterName": true
     },
@@ -90,7 +90,6 @@
   {
     "name": "Astral Form",
     "description": "",
-    "category": "Paranormal",
     "type": "Mana",
     "action": "Auto",
     "range": {
@@ -100,13 +99,13 @@
       }
     },
     "duration": "Always",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 394
   },
   {
     "name": "Binding",
     "description": "",
-    "category": "Mundane",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -116,13 +115,13 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Mundane",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 395
   },
   {
     "name": "Compulsion",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -132,13 +131,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 395
   },
   {
     "name": "Concealment",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Simple",
     "range": {
@@ -148,13 +147,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 395
   },
   {
     "name": "Confusion",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -164,13 +163,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 395
   },
   {
     "name": "Corrosive Spit",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -180,13 +179,13 @@
       }
     },
     "duration": "Special",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 395
   },
   {
     "name": "Dual Natured",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -196,13 +195,13 @@
       }
     },
     "duration": "Always",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 395
   },
   {
     "name": "Elemental Attack",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -212,13 +211,13 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 396
   },
   {
     "name": "Energy Aura",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -228,13 +227,13 @@
       }
     },
     "duration": "Always",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 396
   },
   {
     "name": "Enhanced Senses",
     "description": "",
-    "category": "Mundane",
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -244,6 +243,7 @@
       }
     },
     "duration": "Always",
+    "category": "Mundane",
     "bonus": {
       "enterName": true
     },
@@ -253,7 +253,6 @@
   {
     "name": "Essence Drain",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -263,13 +262,13 @@
       }
     },
     "duration": "Permanent",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 396
   },
   {
     "name": "Fear",
     "description": "",
-    "category": "Paranormal",
     "type": "Mana",
     "action": "Complex",
     "range": {
@@ -279,13 +278,13 @@
       }
     },
     "duration": "Special",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 397
   },
   {
     "name": "Guard",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -295,13 +294,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 397
   },
   {
     "name": "Hardened Armor",
     "description": "",
-    "category": "Paranormal",
     "rating": {
       "critterRating": true
     },
@@ -314,6 +313,7 @@
       }
     },
     "duration": "Always",
+    "category": "Paranormal",
     "bonus": {
       "armour": {
         "bonus": {
@@ -327,7 +327,6 @@
   {
     "name": "Immunity",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -337,13 +336,13 @@
       }
     },
     "duration": "Always",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 397
   },
   {
     "name": "Infection",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -353,13 +352,13 @@
       }
     },
     "duration": "Permanent",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 398
   },
   {
     "name": "Influence",
     "description": "",
-    "category": "Paranormal",
     "type": "Mana",
     "action": "Complex",
     "range": {
@@ -369,13 +368,13 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 398
   },
   {
     "name": "Innate Spell",
     "description": "",
-    "category": "Paranormal",
     "type": {
       "spellType": true
     },
@@ -386,13 +385,13 @@
     "duration": {
       "spellDuration": true
     },
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 398
   },
   {
     "name": "Magic Resistance",
     "description": "",
-    "category": "Mundane",
     "rating": {
       "critterRating": true
     },
@@ -405,13 +404,13 @@
       }
     },
     "duration": "Always",
+    "category": "Mundane",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 76
   },
   {
     "name": "Materialization",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -421,13 +420,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 398
   },
   {
     "name": "Manifest",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -437,13 +436,13 @@
       }
     },
     "duration": "Special",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 314
   },
   {
     "name": "Mimicry",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Simple",
     "range": {
@@ -453,13 +452,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 398
   },
   {
     "name": "Mist Form",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -469,13 +468,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 398
   },
   {
     "name": "Movement",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -485,13 +484,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 399
   },
   {
     "name": "Mystic Armor",
     "description": "",
-    "category": "Paranormal",
     "rating": {
       "critterRating": true
     },
@@ -504,13 +503,13 @@
       }
     },
     "duration": "Always",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 399
   },
   {
     "name": "Natural Weapon",
     "description": "",
-    "category": "Mundane",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -520,6 +519,7 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Mundane",
     "bonus": {
       "enterName": true
     },
@@ -529,7 +529,6 @@
   {
     "name": "Noxious Breath",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -539,13 +538,13 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 399
   },
   {
     "name": "Paralyzing Howl",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -555,13 +554,13 @@
       }
     },
     "duration": "Special",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 399
   },
   {
     "name": "Psychokinesis",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -571,13 +570,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 400
   },
   {
     "name": "Regeneration",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -587,13 +586,13 @@
       }
     },
     "duration": "Always",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 400
   },
   {
     "name": "Search",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -603,13 +602,13 @@
       }
     },
     "duration": "Special",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 400
   },
   {
     "name": "Sapience",
     "description": "",
-    "category": "Mundane",
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -619,13 +618,13 @@
       }
     },
     "duration": "Always",
+    "category": "Mundane",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 400
   },
   {
     "name": "Venom",
     "description": "",
-    "category": "Mundane",
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -635,13 +634,13 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Mundane",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 401
   },
   {
     "name": "Weather Control",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -651,6 +650,7 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "bonus": {
       "enterName": true
     },
@@ -660,7 +660,6 @@
   {
     "name": "Astral Gateway",
     "description": "",
-    "category": "Paranormal",
     "type": "Mana",
     "action": "Complex",
     "range": {
@@ -670,13 +669,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Street Grimoire",
     "page": 194
   },
   {
     "name": "Aura Masking",
     "description": "",
-    "category": "Paranormal",
     "type": "Mana",
     "action": "Free",
     "range": {
@@ -686,13 +685,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Street Grimoire",
     "page": 194
   },
   {
     "name": "Banishing Resistance",
     "description": "",
-    "category": "Paranormal",
     "type": "Mana",
     "action": "Auto",
     "range": {
@@ -702,13 +701,13 @@
       }
     },
     "duration": "Special",
+    "category": "Paranormal",
     "source": "Street Grimoire",
     "page": 194
   },
   {
     "name": "Desire Reflection",
     "description": "",
-    "category": "Paranormal",
     "karma": 9,
     "type": "Mana",
     "action": "Complex",
@@ -719,6 +718,7 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "requirements": {},
     "source": "Street Grimoire",
     "page": 194
@@ -726,7 +726,6 @@
   {
     "name": "Divining",
     "description": "",
-    "category": "Paranormal",
     "type": "Mana",
     "action": "Special",
     "range": {
@@ -736,13 +735,13 @@
       }
     },
     "duration": "Special",
+    "category": "Paranormal",
     "source": "Street Grimoire",
     "page": 194
   },
   {
     "name": "Endowment",
     "description": "",
-    "category": "Paranormal",
     "type": "Mana",
     "action": "Complex",
     "range": {
@@ -752,13 +751,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Street Grimoire",
     "page": 195
   },
   {
     "name": "Energy Drain",
     "description": "",
-    "category": "Paranormal",
     "type": "Mana",
     "action": "Complex",
     "range": {
@@ -768,13 +767,13 @@
       }
     },
     "duration": "Permanent",
+    "category": "Paranormal",
     "source": "Street Grimoire",
     "page": 195
   },
   {
     "name": "Engulf",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -784,26 +783,26 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 396
   },
   {
     "name": "Hemorrhage",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
       "magicMutliplied": 1
     },
     "duration": "Instantaneous",
+    "category": "Paranormal",
     "source": "Street Grimoire",
     "page": 91
   },
   {
     "name": "Inhabitation",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -813,13 +812,13 @@
       }
     },
     "duration": "Special",
+    "category": "Paranormal",
     "source": "Street Grimoire",
     "page": 195
   },
   {
     "name": "Magical Guard",
     "description": "",
-    "category": "Paranormal",
     "type": "Mana",
     "action": "Free",
     "range": {
@@ -829,13 +828,13 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Paranormal",
     "source": "Street Grimoire",
     "page": 196
   },
   {
     "name": "Mind Link",
     "description": "",
-    "category": "Paranormal",
     "type": "Mana",
     "action": "Simple",
     "range": {
@@ -845,13 +844,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Street Grimoire",
     "page": 196
   },
   {
     "name": "Possession",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -861,13 +860,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Street Grimoire",
     "page": 197
   },
   {
     "name": "Quake",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -877,13 +876,13 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Paranormal",
     "source": "Street Grimoire",
     "page": 197
   },
   {
     "name": "Realistic Form",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -893,13 +892,13 @@
       }
     },
     "duration": "Special",
+    "category": "Paranormal",
     "source": "Street Grimoire",
     "page": 198
   },
   {
     "name": "Shadow Cloak",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Free",
     "range": {
@@ -909,13 +908,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Street Grimoire",
     "page": 198
   },
   {
     "name": "Silence",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -925,13 +924,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Street Grimoire",
     "page": 199
   },
   {
     "name": "Storm",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -941,13 +940,13 @@
       }
     },
     "duration": "Special",
+    "category": "Paranormal",
     "source": "Street Grimoire",
     "page": 199
   },
   {
     "name": "Astral Projection",
     "description": "",
-    "category": "Free Spirit",
     "type": "Mana",
     "action": "Complex",
     "range": {
@@ -957,13 +956,13 @@
       }
     },
     "duration": "Special",
+    "category": "Free Spirit",
     "source": "Street Grimoire",
     "page": 204
   },
   {
     "name": "Mutable Form",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -973,13 +972,13 @@
       }
     },
     "duration": "Special",
+    "category": "Paranormal",
     "source": "Street Grimoire",
     "page": 204
   },
   {
     "name": "Personal Domain",
     "description": "",
-    "category": "Paranormal",
     "type": "Mana",
     "action": "Auto",
     "range": {
@@ -989,13 +988,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Street Grimoire",
     "page": 205
   },
   {
     "name": "Spirit Pact",
     "description": "",
-    "category": "Free Spirit",
     "type": "Mana",
     "action": "Special",
     "range": {
@@ -1005,13 +1004,13 @@
       }
     },
     "duration": "Special",
+    "category": "Free Spirit",
     "source": "Street Grimoire",
     "page": 205
   },
   {
     "name": "Hidden Life",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -1021,13 +1020,13 @@
       }
     },
     "duration": "Permanent",
+    "category": "Paranormal",
     "source": "Street Grimoire",
     "page": 205
   },
   {
     "name": "Vessel Trading",
     "description": "",
-    "category": "Free Spirit",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -1037,13 +1036,13 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Free Spirit",
     "source": "Street Grimoire",
     "page": 205
   },
   {
     "name": "Wealth",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -1053,13 +1052,13 @@
       }
     },
     "duration": "Special",
+    "category": "Paranormal",
     "source": "Street Grimoire",
     "page": 205
   },
   {
     "name": "Anaphylaxis",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -1069,13 +1068,13 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Paranormal",
     "source": "Street Grimoire",
     "page": 193
   },
   {
     "name": "Mutagen",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -1085,13 +1084,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Street Grimoire",
     "page": 196
   },
   {
     "name": "Devouring",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -1101,13 +1100,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Street Grimoire",
     "page": 194
   },
   {
     "name": "Hive Mind",
     "description": "",
-    "category": "Paranormal",
     "type": "Mana",
     "action": "Auto",
     "range": {
@@ -1117,13 +1116,13 @@
       }
     },
     "duration": "Always",
+    "category": "Paranormal",
     "source": "Street Grimoire",
     "page": 195
   },
   {
     "name": "Pestilence",
     "description": "",
-    "category": "Mundane",
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -1133,13 +1132,13 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Mundane",
     "source": "Street Grimoire",
     "page": 197
   },
   {
     "name": "Reinforcement",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -1149,13 +1148,13 @@
       }
     },
     "duration": "Special",
+    "category": "Paranormal",
     "source": "Street Grimoire",
     "page": 198
   },
   {
     "name": "Sonic Projection",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -1165,13 +1164,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Street Grimoire",
     "page": 199
   },
   {
     "name": "Gestalt Consciousness",
     "description": "",
-    "category": "Mundane",
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -1181,13 +1180,13 @@
       }
     },
     "duration": "Always",
+    "category": "Mundane",
     "source": "Howling Shadows",
     "page": 192
   },
   {
     "name": "Gills",
     "description": "",
-    "category": "Mundane",
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -1197,13 +1196,13 @@
       }
     },
     "duration": "Always",
+    "category": "Mundane",
     "source": "Howling Shadows",
     "page": 192
   },
   {
     "name": "Secretion/Substance Extrusion",
     "description": "",
-    "category": "Mundane",
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -1213,6 +1212,7 @@
       }
     },
     "duration": "Always",
+    "category": "Mundane",
     "bonus": {
       "enterName": true
     },
@@ -1222,7 +1222,6 @@
   {
     "name": "Wall Walking",
     "description": "",
-    "category": "Mundane",
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -1232,13 +1231,13 @@
       }
     },
     "duration": "Always",
+    "category": "Mundane",
     "source": "Howling Shadows",
     "page": 194
   },
   {
     "name": "Adaptive Coloration",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -1248,13 +1247,13 @@
       }
     },
     "duration": "Always",
+    "category": "Paranormal",
     "source": "Howling Shadows",
     "page": 188
   },
   {
     "name": "Binding",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -1264,13 +1263,13 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 395
   },
   {
     "name": "Control Focus",
     "description": "",
-    "category": "Paranormal",
     "type": "Mana",
     "action": "Auto",
     "range": {
@@ -1280,13 +1279,13 @@
       }
     },
     "duration": "Special",
+    "category": "Paranormal",
     "source": "Howling Shadows",
     "page": 188
   },
   {
     "name": "Deathly Aura",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Simple",
     "range": {
@@ -1296,13 +1295,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Street Grimoire",
     "page": 194
   },
   {
     "name": "Dragonspeech",
     "description": "",
-    "category": "Paranormal",
     "type": "Mana",
     "action": "Auto",
     "range": {
@@ -1312,13 +1311,13 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 395
   },
   {
     "name": "Empathy",
     "description": "",
-    "category": "Paranormal",
     "type": "Mana",
     "action": "Complex",
     "range": {
@@ -1328,13 +1327,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Howling Shadows",
     "page": 190
   },
   {
     "name": "Fey Glamour",
     "description": "",
-    "category": "Paranormal",
     "type": "Mana",
     "action": "Complex",
     "range": {
@@ -1344,13 +1343,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Howling Shadows",
     "page": 191
   },
   {
     "name": "Magic Sense",
     "description": "",
-    "category": "Paranormal",
     "type": "Mana",
     "action": "Auto",
     "range": {
@@ -1360,13 +1359,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Howling Shadows",
     "page": 193
   },
   {
     "name": "Metahuman Form",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -1376,13 +1375,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Run Faster",
     "page": 213
   },
   {
     "name": "Paralyzing Touch",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -1392,13 +1391,13 @@
       }
     },
     "duration": "Special",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 400
   },
   {
     "name": "Petrification",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -1408,13 +1407,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 400
   },
   {
     "name": "Spirit Pact",
     "description": "",
-    "category": "Paranormal",
     "type": "Mana",
     "action": "Special",
     "range": {
@@ -1424,13 +1423,13 @@
       }
     },
     "duration": "Special",
+    "category": "Paranormal",
     "source": "Street Grimoire",
     "page": 205
   },
   {
     "name": "Vanishing",
     "description": "",
-    "category": "Paranormal",
     "type": "Mana",
     "action": "Free",
     "range": {
@@ -1440,6 +1439,7 @@
       }
     },
     "duration": "Special",
+    "category": "Paranormal",
     "source": "Howling Shadows",
     "page": 194
   },
@@ -1467,9 +1467,9 @@
   {
     "name": "Diagnostics",
     "description": "",
-    "category": "Emergent",
     "action": "Simple",
     "duration": "Sustained",
+    "category": "Emergent",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 257
   },
@@ -1483,12 +1483,12 @@
   {
     "name": "Gremlins (Sprite)",
     "description": "",
-    "category": "Emergent",
     "type": {
       "device": true
     },
     "action": "Complex",
     "duration": "Instantaneous",
+    "category": "Emergent",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 257
   },
@@ -1523,12 +1523,12 @@
   {
     "name": "Suppression",
     "description": "",
-    "category": "Emergent",
     "type": {
       "host": true
     },
     "action": "Complex",
     "duration": "Sustained",
+    "category": "Emergent",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 257
   },
@@ -1590,7 +1590,6 @@
   {
     "name": "Fragile",
     "description": "",
-    "category": "Weakness",
     "rating": {
       "maxRating": 20
     },
@@ -1603,6 +1602,7 @@
       }
     },
     "duration": "Always",
+    "category": "Weakness",
     "bonus": {
       "addPhysicalBoxes": {
         "option": "-Rating"
@@ -1641,19 +1641,18 @@
   {
     "name": "Camouflage",
     "description": "",
-    "category": "Emergent",
     "type": {
       "file": true
     },
     "action": "Complex",
     "duration": "Permanent",
+    "category": "Emergent",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 256
   },
   {
     "name": "Cookie",
     "description": "",
-    "category": "Emergent",
     "type": {
       "persona": true
     },
@@ -1661,25 +1660,25 @@
     "duration": {
       "spriteDuration": true
     },
+    "category": "Emergent",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 256
   },
   {
     "name": "Electron Storm",
     "description": "",
-    "category": "Emergent",
     "type": {
       "persona": true
     },
     "action": "Complex",
     "duration": "Sustained",
+    "category": "Emergent",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 257
   },
   {
     "name": "Hash",
     "description": "",
-    "category": "Emergent",
     "type": {
       "file": true
     },
@@ -1687,37 +1686,37 @@
     "duration": {
       "forceMultipliedTenCombatTurns": true
     },
+    "category": "Emergent",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 257
   },
   {
     "name": "Stability",
     "description": "",
-    "category": "Emergent",
     "type": {
       "personaOrDevice": true
     },
     "action": "Complex",
     "duration": "Sustained",
+    "category": "Emergent",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 257
   },
   {
     "name": "Watermark",
     "description": "",
-    "category": "Emergent",
     "type": {
       "icon": true
     },
     "action": "Complex",
     "duration": "Permanent",
+    "category": "Emergent",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 257
   },
   {
     "name": "Shift (Metahuman Form)",
     "description": "",
-    "category": "Shapeshifter",
     "type": "Mana",
     "action": "Complex",
     "range": {
@@ -1727,6 +1726,7 @@
       }
     },
     "duration": "Special",
+    "category": "Shapeshifter",
     "requirements": {},
     "source": "Run Faster",
     "page": 123
@@ -1734,7 +1734,6 @@
   {
     "name": "Shift (Dracoform)",
     "description": "",
-    "category": "Drake",
     "type": "Mana",
     "action": "Complex",
     "range": {
@@ -1744,6 +1743,7 @@
       }
     },
     "duration": "Special",
+    "category": "Drake",
     "source": "Howling Shadows",
     "page": 194
   },
@@ -1760,7 +1760,6 @@
   {
     "name": "Concealment (Self Only)",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Simple",
     "range": {
@@ -1770,13 +1769,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 395
   },
   {
     "name": "Armor",
     "description": "",
-    "category": "Mundane",
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -1786,6 +1785,7 @@
       }
     },
     "duration": "Always",
+    "category": "Mundane",
     "bonus": {
       "armour": {
         "bonus": {
@@ -1799,7 +1799,6 @@
   {
     "name": "Hardened Mystic Armor",
     "description": "",
-    "category": "Paranormal",
     "rating": {
       "critterRating": true
     },
@@ -1812,13 +1811,13 @@
       }
     },
     "duration": "Always",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 397
   },
   {
     "name": "Vestigial Wings",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -1828,13 +1827,13 @@
       }
     },
     "duration": "Always",
+    "category": "Paranormal",
     "source": "Howling Shadows",
     "page": 173
   },
   {
     "name": "Underwater Adaptation",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -1844,13 +1843,13 @@
       }
     },
     "duration": "Always",
+    "category": "Paranormal",
     "source": "Howling Shadows",
     "page": 164
   },
   {
     "name": "Alienate",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -1860,13 +1859,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Howling Shadows",
     "page": 188
   },
   {
     "name": "Astral Venom",
     "description": "",
-    "category": "Paranormal",
     "type": "Mana",
     "action": "Auto",
     "range": {
@@ -1876,13 +1875,13 @@
       }
     },
     "duration": "Always",
+    "category": "Paranormal",
     "source": "Howling Shadows",
     "page": 188
   },
   {
     "name": "Brachiation",
     "description": "",
-    "category": "Mundane",
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -1892,13 +1891,13 @@
       }
     },
     "duration": "Always",
+    "category": "Mundane",
     "source": "Howling Shadows",
     "page": 188
   },
   {
     "name": "Create Alchera",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -1908,13 +1907,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Howling Shadows",
     "page": 189
   },
   {
     "name": "Darkness",
     "description": "",
-    "category": "Paranormal",
     "karma": 9,
     "type": "Physical",
     "action": "Complex",
@@ -1925,13 +1924,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Howling Shadows",
     "page": 189
   },
   {
     "name": "Deathlock",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -1941,13 +1940,13 @@
       }
     },
     "duration": "Always",
+    "category": "Paranormal",
     "source": "Howling Shadows",
     "page": 190
   },
   {
     "name": "Dive Attack",
     "description": "",
-    "category": "Mundane",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -1957,13 +1956,13 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Mundane",
     "source": "Howling Shadows",
     "page": 190
   },
   {
     "name": "Entropic Aura",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Auto",
     "range": {
@@ -1973,6 +1972,7 @@
       }
     },
     "duration": "Always",
+    "category": "Paranormal",
     "source": "Howling Shadows",
     "page": 190
   },
@@ -1989,7 +1989,6 @@
   {
     "name": "Flay Touch",
     "description": "",
-    "category": "Paranormal",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -1999,13 +1998,13 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Paranormal",
     "source": "Howling Shadows",
     "page": 191
   },
   {
     "name": "Ghost Chain",
     "description": "",
-    "category": "Paranormal",
     "type": "Mana",
     "action": "Auto",
     "range": {
@@ -2015,13 +2014,13 @@
       }
     },
     "duration": "Always",
+    "category": "Paranormal",
     "source": "Howling Shadows",
     "page": 192
   },
   {
     "name": "Haunt",
     "description": "",
-    "category": "Paranormal",
     "type": "Mana",
     "action": "Auto",
     "range": {
@@ -2031,13 +2030,13 @@
       }
     },
     "duration": "Always",
+    "category": "Paranormal",
     "source": "Howling Shadows",
     "page": 192
   },
   {
     "name": "Innate Ritual",
     "description": "",
-    "category": "Paranormal",
     "type": {
       "ritualType": true
     },
@@ -2050,13 +2049,13 @@
     "duration": {
       "ritualDuration": true
     },
+    "category": "Paranormal",
     "source": "Howling Shadows",
     "page": 193
   },
   {
     "name": "Manipulate Magic",
     "description": "",
-    "category": "Paranormal",
     "type": "Mana",
     "action": "Auto",
     "range": {
@@ -2066,13 +2065,13 @@
       }
     },
     "duration": "Permanent",
+    "category": "Paranormal",
     "source": "Howling Shadows",
     "page": 193
   },
   {
     "name": "Pounce",
     "description": "",
-    "category": "Mundane",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -2082,13 +2081,13 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Mundane",
     "source": "Howling Shadows",
     "page": 193
   },
   {
     "name": "Toughness",
     "description": "",
-    "category": "Mundane",
     "rating": {
       "critterRating": true
     },
@@ -2101,6 +2100,7 @@
       }
     },
     "duration": "Always",
+    "category": "Mundane",
     "bonus": {
       "addPhysicalBoxes": {
         "option": "Rating"
@@ -2154,7 +2154,6 @@
   {
     "name": "Dracoform Mastery",
     "description": "",
-    "category": "Drake",
     "karma": 50,
     "type": "Physical",
     "action": "Special",
@@ -2165,13 +2164,13 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Drake",
     "source": "Howling Shadows",
     "page": 190
   },
   {
     "name": "Adaptive Coloration",
     "description": "",
-    "category": "Drake",
     "karma": 6,
     "type": "Physical",
     "action": "Auto",
@@ -2182,6 +2181,7 @@
       }
     },
     "duration": "Always",
+    "category": "Drake",
     "requirements": {},
     "source": "Howling Shadows",
     "page": 164
@@ -2189,7 +2189,6 @@
   {
     "name": "Natural Weapon",
     "description": "",
-    "category": "Drake",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -2199,6 +2198,7 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Drake",
     "bonus": {
       "enterName": true
     },
@@ -2208,7 +2208,6 @@
   {
     "name": "Animal Control",
     "description": "",
-    "category": "Drake",
     "karma": 9,
     "type": "Mana",
     "action": "Complex",
@@ -2219,6 +2218,7 @@
       }
     },
     "duration": "Sustained",
+    "category": "Drake",
     "bonus": {
       "enterName": true
     },
@@ -2228,7 +2228,6 @@
   {
     "name": "Compulsion",
     "description": "",
-    "category": "Drake",
     "karma": 9,
     "type": "Physical",
     "action": "Complex",
@@ -2239,13 +2238,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Drake",
     "source": "Howling Shadows",
     "page": 164
   },
   {
     "name": "Corrosive Spit",
     "description": "",
-    "category": "Drake",
     "karma": 9,
     "type": "Physical",
     "action": "Complex",
@@ -2256,13 +2255,13 @@
       }
     },
     "duration": "Special",
+    "category": "Drake",
     "source": "Howling Shadows",
     "page": 164
   },
   {
     "name": "Dragonspeech",
     "description": "",
-    "category": "Drake",
     "karma": 9,
     "type": "Mana",
     "action": "Auto",
@@ -2273,13 +2272,13 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Drake",
     "source": "Howling Shadows",
     "page": 164
   },
   {
     "name": "Enhanced Sense (Wide Band Hearing)",
     "description": "",
-    "category": "Drake",
     "karma": 3,
     "type": "Physical",
     "action": "Auto",
@@ -2290,13 +2289,13 @@
       }
     },
     "duration": "Always",
+    "category": "Drake",
     "source": "Howling Shadows",
     "page": 164
   },
   {
     "name": "Enhanced Sense (Low Light Vision)",
     "description": "",
-    "category": "Drake",
     "karma": 3,
     "type": "Physical",
     "action": "Auto",
@@ -2307,13 +2306,13 @@
       }
     },
     "duration": "Always",
+    "category": "Drake",
     "source": "Howling Shadows",
     "page": 164
   },
   {
     "name": "Enhanced Sense (Smell)",
     "description": "",
-    "category": "Drake",
     "karma": 3,
     "type": "Physical",
     "action": "Auto",
@@ -2324,13 +2323,13 @@
       }
     },
     "duration": "Always",
+    "category": "Drake",
     "source": "Howling Shadows",
     "page": 164
   },
   {
     "name": "Enhanced Sense (Thermographic Vision)",
     "description": "",
-    "category": "Drake",
     "karma": 3,
     "type": "Physical",
     "action": "Auto",
@@ -2341,13 +2340,13 @@
       }
     },
     "duration": "Always",
+    "category": "Drake",
     "source": "Howling Shadows",
     "page": 164
   },
   {
     "name": "Fear",
     "description": "",
-    "category": "Drake",
     "karma": 9,
     "type": "Mana",
     "action": "Complex",
@@ -2358,13 +2357,13 @@
       }
     },
     "duration": "Special",
+    "category": "Drake",
     "source": "Howling Shadows",
     "page": 164
   },
   {
     "name": "Flight",
     "description": "",
-    "category": "Drake",
     "karma": 14,
     "type": "Mana",
     "action": "Complex",
@@ -2375,6 +2374,7 @@
       }
     },
     "duration": "Special",
+    "category": "Drake",
     "requirements": {},
     "forbidden": {},
     "source": "Howling Shadows",
@@ -2383,7 +2383,6 @@
   {
     "name": "Additional Additional Natural Weapon (Claws)",
     "description": "",
-    "category": "Drake",
     "karma": 5,
     "type": "Physical",
     "action": "Complex",
@@ -2394,13 +2393,13 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Drake",
     "source": "Howling Shadows",
     "page": 164
   },
   {
     "name": "Additional Natural Weapon (Fangs)",
     "description": "",
-    "category": "Drake",
     "karma": 5,
     "type": "Physical",
     "action": "Complex",
@@ -2411,13 +2410,13 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Drake",
     "source": "Howling Shadows",
     "page": 164
   },
   {
     "name": "Additional Natural Weapon (Tail)",
     "description": "",
-    "category": "Drake",
     "karma": 5,
     "type": "Physical",
     "action": "Complex",
@@ -2428,13 +2427,13 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Drake",
     "source": "Howling Shadows",
     "page": 164
   },
   {
     "name": "Additional Natural Weapon (Horns)",
     "description": "",
-    "category": "Drake",
     "karma": 5,
     "type": "Physical",
     "action": "Complex",
@@ -2445,13 +2444,13 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Drake",
     "source": "Howling Shadows",
     "page": 164
   },
   {
     "name": "Heavy Scales",
     "description": "",
-    "category": "Drake",
     "karma": 6,
     "type": "Mana",
     "action": "Auto",
@@ -2462,6 +2461,7 @@
       }
     },
     "duration": "Special",
+    "category": "Drake",
     "requirements": {},
     "source": "Howling Shadows",
     "page": 165
@@ -2469,7 +2469,6 @@
   {
     "name": "Improved Natural Armor",
     "description": "",
-    "category": "Drake",
     "karma": 16,
     "type": "Mana",
     "action": "Auto",
@@ -2480,13 +2479,13 @@
       }
     },
     "duration": "Special",
+    "category": "Drake",
     "source": "Howling Shadows",
     "page": 165
   },
   {
     "name": "Magical Flight",
     "description": "",
-    "category": "Drake",
     "karma": 14,
     "type": "Mana",
     "action": "Complex",
@@ -2497,6 +2496,7 @@
       }
     },
     "duration": "Special",
+    "category": "Drake",
     "requirements": {},
     "source": "Howling Shadows",
     "page": 165
@@ -2504,7 +2504,6 @@
   {
     "name": "Influence",
     "description": "",
-    "category": "Drake",
     "karma": 9,
     "type": "Mana",
     "action": "Complex",
@@ -2515,13 +2514,13 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Drake",
     "source": "Howling Shadows",
     "page": 165
   },
   {
     "name": "Noxious Breath",
     "description": "",
-    "category": "Drake",
     "karma": 9,
     "type": "Physical",
     "action": "Complex",
@@ -2532,13 +2531,13 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Drake",
     "source": "Howling Shadows",
     "page": 165
   },
   {
     "name": "Resistance to Pathogens and Toxins",
     "description": "",
-    "category": "Drake",
     "karma": 8,
     "type": "Physical",
     "action": "Complex",
@@ -2549,6 +2548,7 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Drake",
     "bonus": {
       "toxinContactResist": 1,
       "pathogenContactResist": 1,
@@ -2565,7 +2565,6 @@
   {
     "name": "Tail Stinger",
     "description": "",
-    "category": "Drake",
     "karma": 9,
     "type": "Physical",
     "action": "Complex",
@@ -2576,6 +2575,7 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Drake",
     "requirements": {},
     "source": "Howling Shadows",
     "page": 165
@@ -2583,7 +2583,6 @@
   {
     "name": "Transcend Form",
     "description": "",
-    "category": "Drake",
     "karma": 25,
     "type": "Physical",
     "action": "Complex",
@@ -2594,13 +2593,13 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Drake",
     "source": "Howling Shadows",
     "page": 165
   },
   {
     "name": "Venom",
     "description": "",
-    "category": "Drake",
     "karma": 9,
     "type": "Physical",
     "action": "Complex",
@@ -2611,6 +2610,7 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Drake",
     "source": "Howling Shadows",
     "page": 165
   },
@@ -2624,7 +2624,6 @@
   {
     "name": "Shift",
     "description": "",
-    "category": "Free Spirit",
     "type": "Mana",
     "action": "Complex",
     "range": {
@@ -2634,6 +2633,7 @@
       }
     },
     "duration": "Special",
+    "category": "Free Spirit",
     "source": "Aetherology",
     "page": 38
   },
@@ -2647,7 +2647,6 @@
   {
     "name": "Transfer Energy (Essence)",
     "description": "",
-    "category": "Free Spirit",
     "type": "Physical",
     "action": "Complex",
     "range": {
@@ -2657,13 +2656,13 @@
       }
     },
     "duration": "Permanent",
+    "category": "Free Spirit",
     "source": "Aetherology",
     "page": 38
   },
   {
     "name": "Vanishing",
     "description": "",
-    "category": "Free Spirit",
     "type": "Mana",
     "action": "Free",
     "range": {
@@ -2673,6 +2672,7 @@
       }
     },
     "duration": "Special",
+    "category": "Free Spirit",
     "source": "Aetherology",
     "page": 39
   },
@@ -2686,7 +2686,6 @@
   {
     "name": "Animal Control (Insect Type)",
     "description": "",
-    "category": "Paranormal",
     "karma": 9,
     "type": "Mana",
     "action": "Complex",
@@ -2697,6 +2696,7 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "bonus": {
       "enterName": true
     },
@@ -2707,7 +2707,6 @@
   {
     "name": "Compulsion",
     "description": "",
-    "category": "Paranormal",
     "karma": 9,
     "type": "Physical",
     "action": "Complex",
@@ -2718,6 +2717,7 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "requirements": {},
     "source": "Shadowrun 5 Core Rulebook",
     "page": 395
@@ -2725,7 +2725,6 @@
   {
     "name": "Confusion",
     "description": "",
-    "category": "Paranormal",
     "karma": 9,
     "type": "Physical",
     "action": "Complex",
@@ -2736,6 +2735,7 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "requirements": {},
     "source": "Shadowrun 5 Core Rulebook",
     "page": 395
@@ -2743,7 +2743,6 @@
   {
     "name": "Enhanced Senses (Ultrasound)",
     "description": "",
-    "category": "Mundane",
     "karma": 9,
     "type": "Physical",
     "action": "Auto",
@@ -2754,6 +2753,7 @@
       }
     },
     "duration": "Always",
+    "category": "Mundane",
     "requirements": {},
     "source": "Shadowrun 5 Core Rulebook",
     "page": 396
@@ -2761,7 +2761,6 @@
   {
     "name": "Fear",
     "description": "",
-    "category": "Paranormal",
     "karma": 9,
     "type": "Mana",
     "action": "Complex",
@@ -2772,6 +2771,7 @@
       }
     },
     "duration": "Special",
+    "category": "Paranormal",
     "requirements": {},
     "source": "Shadowrun 5 Core Rulebook",
     "page": 397
@@ -2779,7 +2779,6 @@
   {
     "name": "Search",
     "description": "",
-    "category": "Paranormal",
     "karma": 9,
     "type": "Physical",
     "action": "Complex",
@@ -2790,6 +2789,7 @@
       }
     },
     "duration": "Special",
+    "category": "Paranormal",
     "requirements": {},
     "source": "Shadowrun 5 Core Rulebook",
     "page": 400
@@ -2797,7 +2797,6 @@
   {
     "name": "Anchored Resident",
     "description": "",
-    "category": "Paranormal",
     "type": "Mana",
     "action": "Auto",
     "range": {
@@ -2807,13 +2806,13 @@
       }
     },
     "duration": "Always",
+    "category": "Paranormal",
     "source": "Dark Terrors",
     "page": 49
   },
   {
     "name": "Shell Game",
     "description": "",
-    "category": "Paranormal",
     "type": "Mana",
     "action": "Auto",
     "range": {
@@ -2823,13 +2822,13 @@
       }
     },
     "duration": "Always",
+    "category": "Paranormal",
     "source": "Dark Terrors",
     "page": 49
   },
   {
     "name": "Superior Banishing Resistance",
     "description": "",
-    "category": "Paranormal",
     "type": "Mana",
     "action": "Simple",
     "range": {
@@ -2839,13 +2838,13 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Paranormal",
     "source": "Dark Terrors",
     "page": 50
   },
   {
     "name": "Superior Regeneration",
     "description": "",
-    "category": "Paranormal",
     "type": "Mana",
     "action": "Simple",
     "range": {
@@ -2855,13 +2854,13 @@
       }
     },
     "duration": "Permanent",
+    "category": "Paranormal",
     "source": "Dark Terrors",
     "page": 49
   },
   {
     "name": "Wounded Fury",
     "description": "",
-    "category": "Paranormal",
     "type": "Mana",
     "action": "Auto",
     "range": {
@@ -2871,13 +2870,13 @@
       }
     },
     "duration": "Always",
+    "category": "Paranormal",
     "source": "Dark Terrors",
     "page": 49
   },
   {
     "name": "Amphibious",
     "description": "",
-    "category": "Infected",
     "karma": 6,
     "type": "Mana",
     "action": "Auto",
@@ -2888,6 +2887,7 @@
       }
     },
     "duration": "Always",
+    "category": "Infected",
     "requirements": {},
     "source": "Dark Terrors",
     "page": 156
@@ -2895,7 +2895,6 @@
   {
     "name": "Astral Brute",
     "description": "",
-    "category": "Infected",
     "karma": 9,
     "type": "Mana",
     "action": "Auto",
@@ -2906,6 +2905,7 @@
       }
     },
     "duration": "Always",
+    "category": "Infected",
     "requirements": {},
     "source": "Dark Terrors",
     "page": 157
@@ -2913,7 +2913,6 @@
   {
     "name": "Bacchanal",
     "description": "",
-    "category": "Infected",
     "karma": 9,
     "type": "Physical",
     "action": "Complex",
@@ -2924,6 +2923,7 @@
       }
     },
     "duration": "Sustained",
+    "category": "Infected",
     "requirements": {},
     "source": "Dark Terrors",
     "page": 157
@@ -2931,7 +2931,6 @@
   {
     "name": "Bone Spikes",
     "description": "",
-    "category": "Infected",
     "karma": 5,
     "type": "Physical",
     "action": "Auto",
@@ -2942,6 +2941,7 @@
       }
     },
     "duration": "Always",
+    "category": "Infected",
     "bonus": {
       "unarmedDamageType": "Physical"
     },
@@ -2952,7 +2952,6 @@
   {
     "name": "Calcified Hide",
     "description": "",
-    "category": "Infected",
     "karma": 5,
     "type": "Physical",
     "action": "Auto",
@@ -2963,6 +2962,7 @@
       }
     },
     "duration": "Always",
+    "category": "Infected",
     "requirements": {},
     "source": "Dark Terrors",
     "page": 157
@@ -2970,7 +2970,6 @@
   {
     "name": "Corrosive Spit (Infected)",
     "description": "",
-    "category": "Infected",
     "karma": 9,
     "type": "Physical",
     "action": "Complex",
@@ -2981,6 +2980,7 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Infected",
     "requirements": {},
     "source": "Dark Terrors",
     "page": 159
@@ -2988,7 +2988,6 @@
   {
     "name": "Deathlock Venom",
     "description": "",
-    "category": "Infected",
     "karma": 9,
     "type": "Physical",
     "action": "Auto",
@@ -2999,6 +2998,7 @@
       }
     },
     "duration": "Always",
+    "category": "Infected",
     "requirements": {},
     "source": "Dark Terrors",
     "page": 159
@@ -3006,7 +3006,6 @@
   {
     "name": "Digitigrade Legs",
     "description": "",
-    "category": "Infected",
     "karma": 6,
     "type": "Physical",
     "action": "Auto",
@@ -3017,6 +3016,7 @@
       }
     },
     "duration": "Always",
+    "category": "Infected",
     "bonus": {
       "sprintSpeedPercentageModifier": 10000
     },
@@ -3027,7 +3027,6 @@
   {
     "name": "Drag Down",
     "description": "",
-    "category": "Infected",
     "karma": 6,
     "type": "Physical",
     "action": "Auto",
@@ -3038,6 +3037,7 @@
       }
     },
     "duration": "Always",
+    "category": "Infected",
     "requirements": {},
     "source": "Dark Terrors",
     "page": 159
@@ -3045,7 +3045,6 @@
   {
     "name": "Dread Feast",
     "description": "",
-    "category": "Infected",
     "karma": 12,
     "type": "Physical",
     "action": "Auto",
@@ -3056,6 +3055,7 @@
       }
     },
     "duration": "Always",
+    "category": "Infected",
     "requirements": {},
     "source": "Dark Terrors",
     "page": 159
@@ -3063,7 +3063,6 @@
   {
     "name": "Dual Concealment",
     "description": "",
-    "category": "Infected",
     "karma": 9,
     "type": "Mana",
     "action": "Simple",
@@ -3074,6 +3073,7 @@
       }
     },
     "duration": "Sustained",
+    "category": "Infected",
     "requirements": {},
     "source": "Dark Terrors",
     "page": 160
@@ -3081,7 +3081,6 @@
   {
     "name": "Evolved Reflexes",
     "description": "",
-    "category": "Infected",
     "karma": 12,
     "type": "Physical",
     "action": "Auto",
@@ -3092,6 +3091,7 @@
       }
     },
     "duration": "Always",
+    "category": "Infected",
     "bonus": {
       "initiative": {
         "bonusDice": 1
@@ -3104,7 +3104,6 @@
   {
     "name": "Feral Dash",
     "description": "",
-    "category": "Infected",
     "karma": 5,
     "type": "Physical",
     "action": "Auto",
@@ -3115,6 +3114,7 @@
       }
     },
     "duration": "Always",
+    "category": "Infected",
     "requirements": {},
     "source": "Dark Terrors",
     "page": 160
@@ -3122,7 +3122,6 @@
   {
     "name": "Gnashing Teeth",
     "description": "",
-    "category": "Infected",
     "karma": 6,
     "type": "Physical",
     "action": "Auto",
@@ -3133,6 +3132,7 @@
       }
     },
     "duration": "Always",
+    "category": "Infected",
     "requirements": {},
     "source": "Dark Terrors",
     "page": 160
@@ -3140,7 +3140,6 @@
   {
     "name": "Immunity (Cold)",
     "description": "",
-    "category": "Infected",
     "karma": 6,
     "type": "Physical",
     "action": "Auto",
@@ -3151,6 +3150,7 @@
       }
     },
     "duration": "Always",
+    "category": "Infected",
     "requirements": {},
     "source": "Dark Terrors",
     "page": 160
@@ -3158,7 +3158,6 @@
   {
     "name": "Metahuman Masque",
     "description": "",
-    "category": "Infected",
     "karma": 12,
     "type": "Mana",
     "action": "Complex",
@@ -3169,6 +3168,7 @@
       }
     },
     "duration": "Sustained",
+    "category": "Infected",
     "requirements": {},
     "source": "Dark Terrors",
     "page": 160
@@ -3176,7 +3176,6 @@
   {
     "name": "Mimicry",
     "description": "",
-    "category": "Infected",
     "karma": 9,
     "type": "Physical",
     "action": "Simple",
@@ -3187,13 +3186,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Infected",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 398
   },
   {
     "name": "Morningstar Fall",
     "description": "",
-    "category": "Infected",
     "karma": 9,
     "type": "Physical",
     "action": "Auto",
@@ -3204,6 +3203,7 @@
       }
     },
     "duration": "Always",
+    "category": "Infected",
     "requirements": {},
     "source": "Dark Terrors",
     "page": 161
@@ -3211,7 +3211,6 @@
   {
     "name": "Mystic Armor (Infected)",
     "description": "",
-    "category": "Infected",
     "karma": 6,
     "rating": {
       "critterRating": true
@@ -3225,6 +3224,7 @@
       }
     },
     "duration": "Always",
+    "category": "Infected",
     "requirements": {},
     "source": "Dark Terrors",
     "page": 161
@@ -3232,7 +3232,6 @@
   {
     "name": "Plague Bearer",
     "description": "",
-    "category": "Infected",
     "karma": 12,
     "type": "Physical",
     "action": "Auto",
@@ -3243,6 +3242,7 @@
       }
     },
     "duration": "Always",
+    "category": "Infected",
     "requirements": {},
     "source": "Dark Terrors",
     "page": 161
@@ -3250,7 +3250,6 @@
   {
     "name": "Pounce (Infected)",
     "description": "",
-    "category": "Infected",
     "karma": 9,
     "type": "Physical",
     "action": "Complex",
@@ -3261,6 +3260,7 @@
       }
     },
     "duration": "Instantaneous",
+    "category": "Infected",
     "requirements": {},
     "source": "Howling Shadows",
     "page": 193
@@ -3268,7 +3268,6 @@
   {
     "name": "Predator's Glamour",
     "description": "",
-    "category": "Infected",
     "karma": 9,
     "type": "Mana",
     "action": "Complex",
@@ -3279,6 +3278,7 @@
       }
     },
     "duration": "Sustained",
+    "category": "Infected",
     "requirements": {},
     "source": "Dark Terrors",
     "page": 161
@@ -3286,7 +3286,6 @@
   {
     "name": "Psychokinesis (Infected)",
     "description": "",
-    "category": "Paranormal",
     "karma": 9,
     "type": "Physical",
     "action": "Complex",
@@ -3297,13 +3296,13 @@
       }
     },
     "duration": "Sustained",
+    "category": "Paranormal",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 400
   },
   {
     "name": "Rat King",
     "description": "",
-    "category": "Infected",
     "karma": 12,
     "type": "Mana",
     "action": "Auto",
@@ -3311,6 +3310,7 @@
       "magicMutliplied": 25
     },
     "duration": "Always",
+    "category": "Infected",
     "requirements": {},
     "source": "Dark Terrors",
     "page": 162
@@ -3318,7 +3318,6 @@
   {
     "name": "Scythe Claws",
     "description": "",
-    "category": "Infected",
     "karma": 6,
     "type": "Physical",
     "action": "Auto",
@@ -3329,6 +3328,7 @@
       }
     },
     "duration": "Always",
+    "category": "Infected",
     "requirements": {},
     "source": "Dark Terrors",
     "page": 162
@@ -3336,7 +3336,6 @@
   {
     "name": "Secretion/Substance Extrusion (Anti-Coagulant)",
     "description": "",
-    "category": "Mundane",
     "karma": 9,
     "type": "Physical",
     "action": "Auto",
@@ -3347,6 +3346,7 @@
       }
     },
     "duration": "Always",
+    "category": "Mundane",
     "requirements": {},
     "source": "Howling Shadows",
     "page": 193
@@ -3354,7 +3354,6 @@
   {
     "name": "Silence",
     "description": "",
-    "category": "Infected",
     "karma": 9,
     "type": "Physical",
     "action": "Complex",
@@ -3365,6 +3364,7 @@
       }
     },
     "duration": "Sustained",
+    "category": "Infected",
     "requirements": {},
     "source": "Street Grimoire",
     "page": 199
@@ -3372,8 +3372,8 @@
   {
     "name": "Tunneling Claws",
     "description": "",
-    "category": "Infected",
     "karma": 6,
+    "category": "Infected",
     "requirements": {},
     "source": "Howling Shadows",
     "page": 172
@@ -3381,7 +3381,6 @@
   {
     "name": "Sonic Shriek",
     "description": "",
-    "category": "Infected",
     "karma": 9,
     "type": "Physical",
     "action": "Complex",
@@ -3392,6 +3391,7 @@
       }
     },
     "duration": "Sustained",
+    "category": "Infected",
     "requirements": {},
     "source": "Dark Terrors",
     "page": 162
@@ -3399,7 +3399,6 @@
   {
     "name": "Spines",
     "description": "",
-    "category": "Infected",
     "karma": 6,
     "type": "Physical",
     "action": "Auto",
@@ -3410,6 +3409,7 @@
       }
     },
     "duration": "Always",
+    "category": "Infected",
     "requirements": {},
     "source": "Dark Terrors",
     "page": 162
@@ -3417,7 +3417,6 @@
   {
     "name": "Stupefying Miasma",
     "description": "",
-    "category": "Infected",
     "karma": 9,
     "type": "Physical",
     "action": "Simple",
@@ -3428,6 +3427,7 @@
       }
     },
     "duration": "Sustained",
+    "category": "Infected",
     "requirements": {},
     "source": "Dark Terrors",
     "page": 162
@@ -3435,7 +3435,6 @@
   {
     "name": "Terrorscape",
     "description": "",
-    "category": "Infected",
     "karma": 12,
     "type": "Mana",
     "action": "Complex",
@@ -3446,6 +3445,7 @@
       }
     },
     "duration": "Sustained",
+    "category": "Infected",
     "requirements": {},
     "source": "Dark Terrors",
     "page": 162
@@ -3453,7 +3453,6 @@
   {
     "name": "Traceless Walk",
     "description": "",
-    "category": "Infected",
     "karma": 9,
     "type": "Physical",
     "action": "Auto",
@@ -3464,6 +3463,7 @@
       }
     },
     "duration": "Always",
+    "category": "Infected",
     "requirements": {},
     "source": "Dark Terrors",
     "page": 163
@@ -3555,80 +3555,80 @@
   {
     "name": "Attribute Enhancement (Body)",
     "description": "",
-    "category": "Chimeric Modification",
     "rating": {
       "critterRating": true
     },
+    "category": "Chimeric Modification",
     "source": "Howling Shadows",
     "page": 170
   },
   {
     "name": "Attribute Enhancement (Agility)",
     "description": "",
-    "category": "Chimeric Modification",
     "rating": {
       "critterRating": true
     },
+    "category": "Chimeric Modification",
     "source": "Howling Shadows",
     "page": 170
   },
   {
     "name": "Attribute Enhancement (Reaction)",
     "description": "",
-    "category": "Chimeric Modification",
     "rating": {
       "critterRating": true
     },
+    "category": "Chimeric Modification",
     "source": "Howling Shadows",
     "page": 170
   },
   {
     "name": "Attribute Enhancement (Strength)",
     "description": "",
-    "category": "Chimeric Modification",
     "rating": {
       "critterRating": true
     },
+    "category": "Chimeric Modification",
     "source": "Howling Shadows",
     "page": 170
   },
   {
     "name": "Attribute Enhancement (Charisma)",
     "description": "",
-    "category": "Chimeric Modification",
     "rating": {
       "critterRating": true
     },
+    "category": "Chimeric Modification",
     "source": "Howling Shadows",
     "page": 170
   },
   {
     "name": "Attribute Enhancement (Intuition)",
     "description": "",
-    "category": "Chimeric Modification",
     "rating": {
       "critterRating": true
     },
+    "category": "Chimeric Modification",
     "source": "Howling Shadows",
     "page": 170
   },
   {
     "name": "Attribute Enhancement (Logic)",
     "description": "",
-    "category": "Chimeric Modification",
     "rating": {
       "critterRating": true
     },
+    "category": "Chimeric Modification",
     "source": "Howling Shadows",
     "page": 170
   },
   {
     "name": "Attribute Enhancement (Willpower)",
     "description": "",
-    "category": "Chimeric Modification",
     "rating": {
       "critterRating": true
     },
+    "category": "Chimeric Modification",
     "source": "Howling Shadows",
     "page": 170
   },
@@ -3724,13 +3724,13 @@
   {
     "name": "Electrocytes",
     "description": "",
-    "category": "Chimeric Modification",
     "range": {
       "rangeCalc": {
         "value": "Touch",
         "target": "Single Target"
       }
     },
+    "category": "Chimeric Modification",
     "source": "Howling Shadows",
     "page": 171
   },
@@ -3765,10 +3765,10 @@
   {
     "name": "Extra Head",
     "description": "",
-    "category": "Chimeric Modification",
     "rating": {
       "maxRating": 2
     },
+    "category": "Chimeric Modification",
     "bonus": {
       "addPhysicalBoxes": {
         "option": "Rating"
@@ -3902,10 +3902,10 @@
   {
     "name": "Thicker Skin",
     "description": "",
-    "category": "Chimeric Modification",
     "rating": {
       "critterRating": true
     },
+    "category": "Chimeric Modification",
     "bonus": {
       "armour": {
         "bonus": {

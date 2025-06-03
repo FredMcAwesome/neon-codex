@@ -30,7 +30,10 @@ import {
   augmentationTypeEnum,
   availabilityEnum,
 } from "@neon-codex/common/build/enums.js";
-import { AugmentationSchema } from "@neon-codex/common/build/schemas/equipment/bodyModification/augmentationSchemas.js";
+import {
+  AugmentationSchema,
+  type CapacityAugmentationType,
+} from "@neon-codex/common/build/schemas/equipment/bodyModification/augmentationSchemas.js";
 import Augmentation from "../../grammar/augmentation.ohm-bundle.js";
 import {
   availabilityAugmentationSemantics,
@@ -39,6 +42,7 @@ import {
   essenceCostSemantics,
   mountsAugmentationSemantics,
 } from "./augmentationParserHelper.js";
+import { type } from "arktype";
 const EssenceCost = Augmentation.EssenceCost;
 const Availability = Augmentation.Availability;
 const Cost = Augmentation.Cost;
@@ -63,32 +67,32 @@ export function ParseCyberwares() {
   //   jObj.chummer.cyberwares.cyberware[47].capacity
   // );
 
-  const cyberwareListParsed = CyberwareListXmlSchema.safeParse(
+  const cyberwareListParsed = CyberwareListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.cyberwares.cyberware
   );
 
-  if (cyberwareListParsed.success)
-    console.log("cyberware.xml initial zod parsed");
-  else {
-    console.log(cyberwareListParsed.error.errors[0]);
+  if (cyberwareListParsed instanceof type.errors) {
+    console.log(cyberwareListParsed.summary);
     assert(false);
+  } else {
+    console.log("cyberware.xml initial arktype parsed");
   }
 
-  const cyberwareList = cyberwareListParsed.data;
+  const cyberwareList = cyberwareListParsed;
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
   // })
 
   const cyberwareListConverted = cyberwareList.map((cyberware) => {
     const convertedCyberware = convertCyberware(cyberware);
-    const check = AugmentationSchema.safeParse(convertedCyberware);
-    if (!check.success) {
+    const augmentation = AugmentationSchema(convertedCyberware);
+    if (augmentation instanceof type.errors) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       console.dir(convertedCyberware, { depth: Infinity });
-      throw new Error(check.error.message);
+      throw new Error(augmentation.summary);
     }
-    return check.data;
+    return augmentation;
   });
   // console.log(cyberwareListConverted);
   const jsonFilePath = fileURLToPath(
@@ -180,9 +184,9 @@ function convertCyberware(cyberware: CyberwareXmlType) {
   if (cyberware.addtoparentcapacity !== undefined) {
     addToParentCapacity = true as const;
   }
-  let addParentWeaponCapacity;
+  let addParentWeaponAccessory;
   if (cyberware.addparentweaponaccessory !== undefined) {
-    addParentWeaponCapacity = true as const;
+    addParentWeaponAccessory = true as const;
   }
 
   match = Availability.match(cyberware.avail.toString());
@@ -298,48 +302,76 @@ function convertCyberware(cyberware: CyberwareXmlType) {
   const typeInformation = {
     type: augmentationTypeEnum.Cyberware,
     subtype: subtype,
-    programs: programs,
-    capacity: capacity,
-    capacityCost: capacityCost,
-    addToParentCapacity: addToParentCapacity,
-    addParentWeaponAccessory: addParentWeaponCapacity,
-    removalCost: cyberware.removalcost,
-    inheritAttributes: inheritAttributes,
-    limbSlot: limbSlot,
-    useBothLimbSlots: useBothLimbSlots,
-    mountsLocation: mountLocation,
-    modularMount: modularMount,
-    wirelessBonus: wirelessBonus,
-    wirelessPairBonus: wirelessPairBonus,
-    wirelessPairInclude: wirelessPairInclude,
-    includedGearList: gears,
-    includedSubsystemList: includedSubsystemList,
-    forceGrade: forceGrade,
-    deviceRating: deviceRating,
-    addVehicle: cyberware.addvehicle,
+    ...(programs !== undefined && { programs: programs }),
+    ...(capacity !== undefined && { capacity: capacity }),
+    ...(capacityCost !== undefined && { capacityCost: capacityCost }),
+    ...(addToParentCapacity !== undefined && {
+      addToParentCapacity: addToParentCapacity,
+    }),
+    ...(addParentWeaponAccessory !== undefined && {
+      addParentWeaponAccessory: addParentWeaponAccessory,
+    }),
+    ...(cyberware.removalcost !== undefined && {
+      removalCost: cyberware.removalcost,
+    }),
+    ...(inheritAttributes !== undefined && {
+      inheritAttributes: inheritAttributes,
+    }),
+    ...(limbSlot !== undefined && { limbSlot: limbSlot }),
+    ...(useBothLimbSlots !== undefined && {
+      useBothLimbSlots: useBothLimbSlots,
+    }),
+    ...(mountLocation !== undefined && { mountsLocation: mountLocation }),
+    ...(modularMount !== undefined && { modularMount: modularMount }),
+    ...(wirelessBonus !== undefined && { wirelessBonus: wirelessBonus }),
+    ...(wirelessPairBonus !== undefined && {
+      wirelessPairBonus: wirelessPairBonus,
+    }),
+    ...(wirelessPairInclude !== undefined && {
+      wirelessPairInclude: wirelessPairInclude,
+    }),
+    ...(gears !== undefined && { includedGearList: gears }),
+    ...(includedSubsystemList !== undefined && {
+      includedSubsystemList: includedSubsystemList,
+    }),
+    ...(forceGrade !== undefined && { forceGrade: forceGrade }),
+    ...(deviceRating !== undefined && { deviceRating: deviceRating }),
+    ...(cyberware.addvehicle !== undefined && {
+      addVehicle: cyberware.addvehicle,
+    }),
   };
 
   return {
     name: cyberware.name,
     description: "",
-    augmentationLimit: augmentationLimit,
+    ...(augmentationLimit !== undefined && {
+      augmentationLimit: augmentationLimit,
+    }),
     ...typeInformation,
-    unavailableGrades: unavailableGrades,
+    ...(unavailableGrades !== undefined && {
+      unavailableGrades: unavailableGrades,
+    }),
     essenceCost: essenceCost,
-    modification: cyberwareModification,
+    ...(cyberwareModification !== undefined && {
+      modification: cyberwareModification,
+    }),
     rating: { minimum: minRating, maximum: maxRating },
-    ratingMeaning: ratingMeaning,
-    addWeapon: addWeapon,
+    ...(ratingMeaning !== undefined && { ratingMeaning: ratingMeaning }),
+    ...(addWeapon !== undefined && { addWeapon: addWeapon }),
     ...(blockedMountList.length > 0 && { blockedMountList: blockedMountList }),
-    selectSide: selectSide,
-    bonus: bonus,
-    pairBonus: pairBonus,
-    pairIncludeList: pairIncludeList,
-    requirements: requirements,
-    forbidden: forbidden,
-    allowedGearList: allowedGearList,
-    allowedGearCategories: allowedGearCategories,
-    allowSubsystemCategoryList: allowSubsystemCategoryList,
+    ...(selectSide !== undefined && { selectSide: selectSide }),
+    ...(bonus !== undefined && { bonus: bonus }),
+    ...(pairBonus !== undefined && { pairBonus: pairBonus }),
+    ...(pairIncludeList !== undefined && { pairIncludeList: pairIncludeList }),
+    ...(requirements !== undefined && { requirements: requirements }),
+    ...(forbidden !== undefined && { forbidden: forbidden }),
+    ...(allowedGearList !== undefined && { allowedGearList: allowedGearList }),
+    ...(allowedGearCategories !== undefined && {
+      allowedGearCategories: allowedGearCategories,
+    }),
+    ...(allowSubsystemCategoryList !== undefined && {
+      allowSubsystemCategoryList: allowSubsystemCategoryList,
+    }),
     ...(cyberware.hide !== undefined && { userSelectable: false as const }),
     availability: availability,
     cost: cost,

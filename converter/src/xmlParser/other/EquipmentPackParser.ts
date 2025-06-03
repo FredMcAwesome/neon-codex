@@ -23,6 +23,7 @@ import type { CustomisedVehicleListType } from "@neon-codex/common/build/schemas
 import type { CustomisedGearListType } from "@neon-codex/common/build/schemas/equipment/other/gearSchemas.js";
 import type { CustomisedWeaponListType } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
 import type { CustomisedLifestyleListType } from "@neon-codex/common/build/schemas/otherData/lifestyleSchemas.js";
+import { type } from "arktype";
 
 export function ParseEquipmentPacks() {
   const currentPath = import.meta.url;
@@ -43,18 +44,19 @@ export function ParseEquipmentPacks() {
   //   { depth: Infinity }
   // );
 
-  const packListParsed = EquipmentListXmlSchema.safeParse(
+  const packListParsed = EquipmentListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.packs.pack
   );
 
-  if (packListParsed.success) console.log("packs.xml initial zod parsed");
-  else {
-    console.log(packListParsed.error.errors[0]);
+  if (packListParsed instanceof type.errors) {
+    console.log(packListParsed.summary);
     assert(false);
+  } else {
+    console.log("packs.xml initial arktype parsed");
   }
 
-  const packList = packListParsed.data;
+  const packList = packListParsed;
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
   // })
@@ -63,13 +65,13 @@ export function ParseEquipmentPacks() {
     // .filter((weapon) => weapon.name === "Osmium Mace")
     .map((pack) => {
       const convertedPack = convertPack(pack);
-      const check = EquipmentPackSchema.safeParse(convertedPack);
-      if (!check.success) {
+      const check = EquipmentPackSchema(convertedPack);
+      if (check instanceof type.errors) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         console.dir(convertedPack, { depth: Infinity });
-        throw new Error(check.error.message);
+        throw new Error(check.summary);
       }
-      return check.data;
+      return check;
     });
   // console.log(armourListConverted);
   const jsonFilePath = fileURLToPath(
@@ -135,10 +137,7 @@ function convertPack(pack: EquipmentPackXmlType) {
   }
   let gearList: CustomisedGearListType = [];
   if (pack.gears !== undefined) {
-    const xmlGearList = Array.isArray(pack.gears.gear)
-      ? pack.gears.gear
-      : [pack.gears.gear];
-    gearList = convertIncludedXmlGears({ usegear: xmlGearList });
+    gearList = convertIncludedXmlGears({ usegear: pack.gears.gear });
   }
   let vehicleList: CustomisedVehicleListType = [];
   if (pack.vehicles !== undefined) {

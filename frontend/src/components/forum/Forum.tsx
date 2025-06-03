@@ -3,10 +3,10 @@ import { trpc } from "../../utils/trpc.js";
 
 const forumPath = "/forum/";
 const Forum = function () {
-  const { data, error, isError, isLoading } =
+  const { data, error, isError, isPending } =
     trpc.forum.getThreadList.useQuery();
 
-  if (isLoading) {
+  if (isPending) {
     return <div>Loading threads...</div>;
   }
 

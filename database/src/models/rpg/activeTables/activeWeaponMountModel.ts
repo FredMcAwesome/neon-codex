@@ -40,19 +40,20 @@ export abstract class ActiveWeaponMounts {
   })
   mountMods = new Collection<WeaponMountModifications>(this);
 
-  @Property()
-  weaponExchangeable!: boolean;
+  @Property({ nullable: true })
+  weaponExchangeable!: false;
 
   @Property({ nullable: true })
   rating?: number;
 
   constructor(
     weaponMount: Ref<WeaponMounts>,
-    weaponExchangeable: boolean,
+    weaponExchangeable?: false,
     rating?: number
   ) {
     this.weaponMount = weaponMount;
-    this.weaponExchangeable = weaponExchangeable;
+    if (weaponExchangeable !== undefined)
+      this.weaponExchangeable = weaponExchangeable;
     if (rating) this.rating = rating;
   }
 }
@@ -65,7 +66,7 @@ export class IncludedWeaponMounts extends ActiveWeaponMounts {
   constructor(
     vehicle: Ref<Vehicles>,
     weaponMount: Ref<WeaponMounts>,
-    weaponExchangeable: boolean,
+    weaponExchangeable?: false,
     rating?: number,
     mountedWeapon?: Ref<ActiveWeapons>
   ) {
@@ -85,7 +86,7 @@ export class PackVehicleWeaponMounts extends ActiveWeaponMounts {
   constructor(
     vehicle: Ref<PackVehicles>,
     weaponMount: Ref<WeaponMounts>,
-    weaponExchangeable: boolean,
+    weaponExchangeable?: false,
     rating?: number
   ) {
     super(weaponMount, weaponExchangeable, rating);
@@ -101,7 +102,7 @@ export class CustomisedWeaponMounts extends ActiveWeaponMounts {
   constructor(
     vehicle: Ref<CustomisedVehicles>,
     weaponMount: Ref<WeaponMounts>,
-    weaponExchangeable: boolean,
+    weaponExchangeable?: false,
     rating?: number
   ) {
     super(weaponMount, weaponExchangeable, rating);

@@ -23,10 +23,10 @@ import { CollapsibleDiv } from "../../utils/CollapsibleDiv.js";
 const characterSheetPath = "/characters/:id";
 const CharacterSheet = function () {
   const { id } = useParams();
-  const { data, error, isError, isLoading } =
-    trpc.character.getCharacter.useQuery(id || "");
+  const { data, error, isError, isPending } =
+    trpc.character.getCharacter.useQuery(id ?? "");
 
-  if (isLoading) {
+  if (isPending) {
     return <div>Loading character...</div>;
   }
 

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { z as zod } from "zod";
+
 import assert from "assert";
 import { XMLParser } from "fast-xml-parser";
 import path from "path";
@@ -24,26 +24,25 @@ import {
   availabilityProgramSemantics,
   costProgramSemantics,
 } from "./ProgramParserHelper.js";
+import { type } from "arktype";
 const Availability = Programs.Availability;
 const Cost = Programs.Cost;
 
-const ProgramXmlSchema = zod
-  .object({
-    id: zod.string(),
-    name: zod.string(),
-    category: zod.string(),
-    rating: zod.optional(zod.number()),
-    minrating: zod.optional(zod.number()),
-    avail: StringOrNumberSchema,
-    cost: StringOrNumberSchema,
-    bonus: zod.optional(BonusXmlSchema),
-    required: zod.optional(RequiredXmlSchema),
-    source: zod.union([SourceXmlSchema, zod.literal(2050)]),
-    page: zod.number(),
-  })
-  .strict();
-export const ProgramListXmlSchema = zod.array(ProgramXmlSchema);
-type ProgramXmlType = zod.infer<typeof ProgramXmlSchema>;
+const ProgramXmlSchema = type({
+  id: "string",
+  name: "string",
+  category: "string",
+  "rating?": "number",
+  "minrating?": "number",
+  avail: StringOrNumberSchema,
+  cost: StringOrNumberSchema,
+  "bonus?": BonusXmlSchema,
+  "required?": RequiredXmlSchema,
+  source: type.or(SourceXmlSchema, "2050"),
+  page: "number",
+});
+type ProgramXmlType = typeof ProgramXmlSchema.infer;
+export const ProgramListXmlSchema = type(ProgramXmlSchema.array());
 
 export function ParsePrograms() {
   const currentPath = import.meta.url;
@@ -63,18 +62,19 @@ export function ParsePrograms() {
   //   jObj.chummer.programs.program[37]
   // );
 
-  const programListParsed = ProgramListXmlSchema.safeParse(
+  const programListParsed = ProgramListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.programs.program
   );
 
-  if (programListParsed.success) console.log("programs.xml initial zod parsed");
-  else {
-    console.log(programListParsed.error.errors[0]);
+  if (programListParsed instanceof type.errors) {
+    console.log(programListParsed.summary);
     assert(false);
+  } else {
+    console.log("programs.xml initial arktype parsed");
   }
 
-  const programList = programListParsed.data;
+  const programList = programListParsed;
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
   // })
@@ -83,13 +83,13 @@ export function ParsePrograms() {
     // .filter((weapon) => weapon.name === "Osmium Mace")
     .map((program) => {
       const convertedProgram = convertProgram(program);
-      const check = ProgramSchema.safeParse(convertedProgram);
-      if (!check.success) {
+      const check = ProgramSchema(convertedProgram);
+      if (check instanceof type.errors) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         console.dir(convertedProgram, { depth: Infinity });
-        throw new Error(check.error.message);
+        throw new Error(check.summary);
       }
-      return check.data;
+      return check;
     });
   // console.log(programListConverted);
   const jsonFilePath = fileURLToPath(
@@ -145,7 +145,7 @@ function convertProgram(program: ProgramXmlType) {
     name: program.name,
     description: "",
     category: program.category,
-    rating: rating,
+    ...(rating !== undefined && { rating: rating }),
     availability: availability,
     cost: cost,
     ...(bonus !== undefined && { bonus: bonus }),

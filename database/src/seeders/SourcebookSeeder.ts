@@ -1228,7 +1228,7 @@ export class SourcebookSeeder extends Seeder {
           const stagedIncludedWeaponMount = new IncludedWeaponMounts(
             referencedVehicle,
             referencedWeaponMount,
-            stagedMountedWeapon !== undefined,
+            stagedMountedWeapon !== undefined ? (false as const) : undefined,
             undefined
           );
           if (weaponMount.weaponMountModList !== undefined) {
@@ -2003,7 +2003,9 @@ export class SourcebookSeeder extends Seeder {
                 new PackVehicleWeaponMounts(
                   ref(activeVehicle),
                   referencedWeaponMount,
-                  weaponMount.weaponExchangeable
+                  weaponMount.weaponExchangeable !== undefined
+                    ? weaponMount.weaponExchangeable
+                    : undefined
                 );
               em.create(
                 PackVehicleWeaponMounts,

@@ -10,7 +10,6 @@ import {
   WeaponListSchema,
 } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
 import type { WeaponListType } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
-import { z as zod } from "zod";
 import { weaponTypeEnum } from "@neon-codex/common/build/enums.js";
 import { ref } from "@mikro-orm/postgresql";
 import { Skills } from "../../models/rpg/abilities/skillModel.js";
@@ -22,21 +21,18 @@ import {
   ProjectileWeapons,
   Explosives,
 } from "../../models/rpg/equipment/combat/weaponModel.js";
-export const WeaponDBSchema = zod
-  .discriminatedUnion("type", [
-    FirearmWeaponSchema.omit({ relatedSkill: true }),
-    MeleeWeaponSchema.omit({ relatedSkill: true }),
-    ProjectileWeaponSchema.omit({ relatedSkill: true }),
-    ExplosiveWeaponSchema.omit({ relatedSkill: true }),
-  ])
-  .and(
-    zod
-      .object({
-        relatedSkill: zod.instanceof(Skills),
-      })
-      .strict()
-  );
-export type WeaponDBType = zod.infer<typeof WeaponDBSchema>;
+import { type } from "arktype";
+export const WeaponDBSchema = type
+  .or(
+    FirearmWeaponSchema.omit("relatedSkill"),
+    MeleeWeaponSchema.omit("relatedSkill"),
+    ProjectileWeaponSchema.omit("relatedSkill"),
+    ExplosiveWeaponSchema.omit("relatedSkill")
+  )
+  .and({
+    relatedSkill: type.instanceOf(Skills),
+  });
+export type WeaponDBType = typeof WeaponDBSchema.infer;
 
 export const getWeapons = function (
   stagedSkills: Array<Skills>,
@@ -57,13 +53,13 @@ export const getWeapons = function (
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const rawJson = JSON.parse(jsonString);
-  const weaponListParsed = WeaponListSchema.safeParse(rawJson);
-  if (weaponListParsed.success) {
-    console.log("weapons all g");
-    unlinkedWeapons = weaponListParsed.data;
-  } else {
-    console.log(weaponListParsed.error.errors[0]);
+  const weaponListParsed = WeaponListSchema(rawJson);
+  if (weaponListParsed instanceof type.errors) {
+    console.log(weaponListParsed.summary);
     assert(false, "weaponsUnlinked is undefined");
+  } else {
+    console.log("weapons all g");
+    unlinkedWeapons = weaponListParsed;
   }
   const stagedWeapons: Array<Weapons> = [];
 

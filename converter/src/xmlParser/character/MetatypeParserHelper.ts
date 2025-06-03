@@ -36,14 +36,14 @@ export const convertIncludedPowers = function (
       };
     }
     let rating;
-    if (power._rating !== undefined) {
+    if ("_rating" in power && power._rating !== undefined) {
       rating = parseInt(power._rating);
       assert(!isNaN(rating));
     }
     return {
       name: power.xmltext,
-      selectText: power._select,
-      rating: rating,
+      ...("_select" in power && { selectText: power._select }),
+      ...(rating !== undefined && { rating: rating }),
     };
   });
 };

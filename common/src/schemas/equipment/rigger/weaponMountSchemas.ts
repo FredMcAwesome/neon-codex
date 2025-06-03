@@ -1,4 +1,4 @@
-import { z as zod } from "zod";
+import { type } from "arktype";
 import {
   weaponMountControlEnum,
   weaponMountFlexibilityEnum,
@@ -7,23 +7,20 @@ import {
 } from "../../../enums.js";
 import { CustomisedWeaponSchema } from "../combat/weaponSchemas.js";
 
-export const CustomisedWeaponMountSchema = zod
-  .object({
-    control: zod.nativeEnum(weaponMountControlEnum),
-    flexibility: zod.nativeEnum(weaponMountFlexibilityEnum),
-    size: zod.nativeEnum(weaponMountSizeEnum),
-    visibility: zod.nativeEnum(weaponMountVisibilityEnum),
-    weaponMounted: zod.optional(CustomisedWeaponSchema),
-    weaponExchangeable: zod.boolean(),
-    weaponMountModList: zod.optional(zod.array(zod.string())),
-  })
-  .strict();
-export type CustomisedWeaponMountType = zod.infer<
-  typeof CustomisedWeaponMountSchema
->;
-export const CustomisedWeaponMountListSchema = zod.array(
-  CustomisedWeaponMountSchema
+export const CustomisedWeaponMountSchema = type({
+  control: type.valueOf(weaponMountControlEnum),
+  flexibility: type.valueOf(weaponMountFlexibilityEnum),
+  size: type.valueOf(weaponMountSizeEnum),
+  visibility: type.valueOf(weaponMountVisibilityEnum),
+  "weaponMounted?": CustomisedWeaponSchema,
+  "weaponExchangeable?": "false",
+  "weaponMountModList?": "string[]",
+});
+export type CustomisedWeaponMountType =
+  typeof CustomisedWeaponMountSchema.infer;
+
+export const CustomisedWeaponMountListSchema = type(
+  CustomisedWeaponMountSchema.array()
 );
-export type CustomisedWeaponMountListType = zod.infer<
-  typeof CustomisedWeaponMountListSchema
->;
+export type CustomisedWeaponMountListType =
+  typeof CustomisedWeaponMountListSchema.infer;

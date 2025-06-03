@@ -12,6 +12,7 @@ import {
   Paragons,
 } from "../../models/rpg/otherData/mentorModel.js";
 import { mentorCategoryEnum } from "@neon-codex/common/build/enums.js";
+import { type } from "arktype";
 
 export const getMentors = function () {
   const currentPath = import.meta.url;
@@ -26,13 +27,13 @@ export const getMentors = function () {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   let rawJson = JSON.parse(jsonString);
-  const mentorSpiritListParsed = MentorListSchema.safeParse(rawJson);
-  if (mentorSpiritListParsed.success) {
-    console.log("mentor spirits all g");
-    unlinkedMentorSpirits = mentorSpiritListParsed.data;
-  } else {
-    console.log(mentorSpiritListParsed.error.errors[0]);
+  const mentorSpiritListParsed = MentorListSchema(rawJson);
+  if (mentorSpiritListParsed instanceof type.errors) {
+    console.log(mentorSpiritListParsed.summary);
     assert(false, "mentor spirits is undefined");
+  } else {
+    console.log("mentor spirits all g");
+    unlinkedMentorSpirits = mentorSpiritListParsed;
   }
   const stagedMentors: Array<Mentors> = [];
   unlinkedMentorSpirits.forEach((mentor) => {
@@ -48,13 +49,13 @@ export const getMentors = function () {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   rawJson = JSON.parse(jsonString);
-  const paragonListParsed = MentorListSchema.safeParse(rawJson);
-  if (paragonListParsed.success) {
-    console.log("paragons all g");
-    unlinkedParagons = paragonListParsed.data;
-  } else {
-    console.log(paragonListParsed.error.errors[0]);
+  const paragonListParsed = MentorListSchema(rawJson);
+  if (paragonListParsed instanceof type.errors) {
+    console.log(paragonListParsed.summary);
     assert(false, "paragons is undefined");
+  } else {
+    console.log("paragons all g");
+    unlinkedParagons = paragonListParsed;
   }
 
   unlinkedParagons.forEach((mentor) => {

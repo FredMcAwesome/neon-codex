@@ -12,6 +12,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { DrugComponents } from "../../models/rpg/equipment/other/drugComponentModel.js";
 import { Drugs } from "../../models/rpg/equipment/other/drugModel.js";
+import { type } from "arktype";
 
 export const getDrugs = function () {
   const currentPath = import.meta.url;
@@ -25,13 +26,13 @@ export const getDrugs = function () {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const rawJson = JSON.parse(jsonString);
-  const drugListParsed = DrugListSchema.safeParse(rawJson);
-  if (drugListParsed.success) {
-    console.log("drugs all g");
-    drugs = drugListParsed.data;
-  } else {
-    console.log(drugListParsed.error.errors[0]);
+  const drugListParsed = DrugListSchema(rawJson);
+  if (drugListParsed instanceof type.errors) {
+    console.log(drugListParsed.summary);
     assert(false, "drugs is undefined");
+  } else {
+    console.log("drugs all g");
+    drugs = drugListParsed;
   }
   const stagedDrugs: Array<Drugs> = [];
   drugs.forEach((drug) => {
@@ -53,13 +54,13 @@ export const getDrugComponents = function () {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const rawJson = JSON.parse(jsonString);
-  const drugComponentListParsed = DrugComponentListSchema.safeParse(rawJson);
-  if (drugComponentListParsed.success) {
-    console.log("drug components all g");
-    drugComponents = drugComponentListParsed.data;
-  } else {
-    console.log(drugComponentListParsed.error.errors[0]);
+  const drugComponentListParsed = DrugComponentListSchema(rawJson);
+  if (drugComponentListParsed instanceof type.errors) {
+    console.log(drugComponentListParsed.summary);
     assert(false, "drugComponents is undefined");
+  } else {
+    console.log("drug components all g");
+    drugComponents = drugComponentListParsed;
   }
   const stagedDrugComponents: Array<DrugComponents> = [];
   drugComponents.forEach((drugComponent) => {

@@ -1,4 +1,3 @@
-import { z as zod } from "zod";
 import {
   heritageCategoryEnum,
   mentorCategoryEnum,
@@ -37,6 +36,7 @@ import {
   LifestyleQualityListSchema,
   LifestyleSchema,
 } from "../otherData/lifestyleSchemas.js";
+import { type } from "arktype";
 
 export enum PrioritiesEnum {
   Heritage,
@@ -46,183 +46,135 @@ export enum PrioritiesEnum {
   Resources,
 }
 
-export const PriorityLevelsSchema = zod
-  .object({
-    heritage: zod.nativeEnum(priorityLetterEnum),
-    attributes: zod.nativeEnum(priorityLetterEnum),
-    talent: zod.nativeEnum(priorityLetterEnum),
-    skills: zod.nativeEnum(priorityLetterEnum),
-    resources: zod.nativeEnum(priorityLetterEnum),
-  })
-  .strict();
-export type PriorityLevelsType = zod.infer<typeof PriorityLevelsSchema>;
+export const PriorityLevelsSchema = type({
+  heritage: type.valueOf(priorityLetterEnum),
+  attributes: type.valueOf(priorityLetterEnum),
+  talent: type.valueOf(priorityLetterEnum),
+  skills: type.valueOf(priorityLetterEnum),
+  resources: type.valueOf(priorityLetterEnum),
+});
+export type PriorityLevelsType = typeof PriorityLevelsSchema.infer;
 
-export const AttributesSchema = zod
-  .object({
-    body: zod.number(),
-    agility: zod.number(),
-    reaction: zod.number(),
-    strength: zod.number(),
-    willpower: zod.number(),
-    logic: zod.number(),
-    intuition: zod.number(),
-    charisma: zod.number(),
-  })
-  .strict();
-export type AttributesType = zod.infer<typeof AttributesSchema>;
+export const AttributesSchema = type({
+  body: "number",
+  agility: "number",
+  reaction: "number",
+  strength: "number",
+  willpower: "number",
+  logic: "number",
+  intuition: "number",
+  charisma: "number",
+});
+export type AttributesType = typeof AttributesSchema.infer;
 
-export const SpecialAttributesSchema = zod
-  .object({
-    edge: zod.number(),
-    talent: zod.discriminatedUnion("type", [
-      zod
-        .object({
-          type: zod.literal(talentCategoryEnum.Magic),
-          magic: zod.number(),
-        })
-        .strict(),
-      zod
-        .object({
-          type: zod.literal(talentCategoryEnum.Resonance),
-          resonance: zod.number(),
-        })
-        .strict(),
-      zod
-        .object({
-          type: zod.literal(talentCategoryEnum.Depth),
-          depth: zod.number(),
-        })
-        .strict(),
-      zod
-        .object({
-          type: zod.literal(talentCategoryEnum.Mundane),
-        })
-        .strict(),
-    ]),
-  })
-  .strict();
-export type SpecialAttributesType = zod.infer<typeof SpecialAttributesSchema>;
+export const SpecialAttributesSchema = type({
+  edge: "number",
+  talent: type.or(
+    {
+      type: type.unit(talentCategoryEnum.Magic),
+      magic: "number",
+    },
+    {
+      type: type.unit(talentCategoryEnum.Resonance),
+      resonance: "number",
+    },
+    {
+      type: type.unit(talentCategoryEnum.Depth),
+      depth: "number",
+    },
+    {
+      type: type.unit(talentCategoryEnum.Mundane),
+    }
+  ),
+});
+export type SpecialAttributesType = typeof SpecialAttributesSchema.infer;
 
-const CustomSpiritsSchema = zod.discriminatedUnion("customSpirits", [
-  zod.object({ customSpirits: zod.literal(false) }).strict(),
-  zod
-    .object({
-      customSpirits: zod.literal(true),
-      selectedSpiritTypes: zod
-        .object({
-          combat: zod.string(),
-          detection: zod.string(),
-          health: zod.string(),
-          illusion: zod.string(),
-          manipulation: zod.string(),
-        })
-        .strict(),
-    })
-    .strict(),
-]);
-export type CustomSpiritsType = zod.infer<typeof CustomSpiritsSchema>;
-
-const TraditionSelectedSchema = zod
-  .object({
-    name: zod.string(),
-    customSpirits: CustomSpiritsSchema,
-  })
-  .strict();
-export type TraditionSelectedType = zod.infer<typeof TraditionSelectedSchema>;
-
-const FormulaListSelectedSchema = zod.discriminatedUnion("selectFormulae", [
-  zod
-    .object({
-      selectFormulae: zod.literal(false),
-    })
-    .strict(),
-  zod
-    .object({
-      selectFormulae: zod.literal(true),
-      spells: zod.array(zod.string()),
-      rituals: zod.array(zod.string()),
-      alchemicalPreparations: zod.array(zod.string()),
-    })
-    .strict(),
-]);
-export type FormulaListSelectedType = zod.infer<
-  typeof FormulaListSelectedSchema
->;
-
-const AdeptPowerListSelectedSchema = zod.discriminatedUnion(
-  "selectAdeptPowers",
-  [
-    zod
-      .object({
-        selectAdeptPowers: zod.literal(false),
-      })
-      .strict(),
-    zod
-      .object({
-        selectAdeptPowers: zod.literal(true),
-        adeptPowers: zod.array(zod.string()),
-      })
-      .strict(),
-  ]
+const CustomSpiritsSchema = type.or(
+  { customSpirits: "false" },
+  {
+    customSpirits: "true",
+    selectedSpiritTypes: {
+      combat: "string",
+      detection: "string",
+      health: "string",
+      illusion: "string",
+      manipulation: "string",
+    },
+  }
 );
-export type AdeptPowerListSelectedType = zod.infer<
-  typeof AdeptPowerListSelectedSchema
->;
-const ProgramSelectedListSchema = zod.array(
-  zod
-    .object({
-      name: zod.string(),
-      rating: zod.optional(zod.number()),
-    })
-    .strict()
+export type CustomSpiritsType = typeof CustomSpiritsSchema.infer;
+
+const TraditionSelectedSchema = type({
+  name: "string",
+  customSpirits: CustomSpiritsSchema,
+});
+export type TraditionSelectedType = typeof TraditionSelectedSchema.infer;
+
+const FormulaListSelectedSchema = type.or(
+  {
+    selectFormulae: "false",
+  },
+  {
+    selectFormulae: "true",
+    spells: "string[]",
+    rituals: "string[]",
+    alchemicalPreparations: "string[]",
+  }
 );
-export type ProgramSelectedListType = zod.infer<
-  typeof ProgramSelectedListSchema
->;
+export type FormulaListSelectedType = typeof FormulaListSelectedSchema.infer;
 
-const MentorSpiritSelectedSchema = MentorBaseSchema.extend({
-  category: zod.literal(mentorCategoryEnum.MentorSpirit),
-  choices: zod.array(MentorChoiceSchema),
-  choiceCount: zod.number(),
-  required: zod.optional(RequirementsSchema),
-}).strict();
-export type MentorSpiritSelectedType = zod.infer<
-  typeof MentorSpiritSelectedSchema
->;
-const ParagonSelectedSchema = MentorBaseSchema.extend({
-  category: zod.literal(mentorCategoryEnum.Paragon),
-}).strict();
+const AdeptPowerListSelectedSchema = type.or(
+  {
+    selectAdeptPowers: "false",
+  },
+  {
+    selectAdeptPowers: "true",
+    adeptPowers: "string[]",
+  }
+);
+export type AdeptPowerListSelectedType =
+  typeof AdeptPowerListSelectedSchema.infer;
 
-export const TalentInfoSchema = zod.discriminatedUnion("type", [
-  zod
-    .object({
-      type: zod.literal(talentCategoryEnum.Magic),
-      selectedTradition: TraditionSelectedSchema,
-      selectedFormulae: FormulaListSelectedSchema,
-      selectedAdeptPowers: AdeptPowerListSelectedSchema,
-      selectedMentor: zod.optional(MentorSpiritSelectedSchema),
-    })
-    .strict(),
-  zod
-    .object({
-      type: zod.literal(talentCategoryEnum.Resonance),
-      complexForms: zod.array(zod.string()),
-      selectedMentor: zod.optional(ParagonSelectedSchema),
-    })
-    .strict(),
-  zod
-    .object({
-      type: zod.literal(talentCategoryEnum.Depth),
-      programs: ProgramSelectedListSchema,
-    })
-    .strict(),
-  zod
-    .object({
-      type: zod.literal(talentCategoryEnum.Mundane),
-    })
-    .strict(),
-]);
-export type TalentInfoType = zod.infer<typeof TalentInfoSchema>;
+const ProgramSelectedListSchema = type({
+  name: "string",
+  "rating?": "number",
+}).array();
+export type ProgramSelectedListType = typeof ProgramSelectedListSchema.infer;
+
+const MentorSpiritSelectedSchema = MentorBaseSchema.and({
+  category: type.unit(mentorCategoryEnum.MentorSpirit),
+  choices: MentorChoiceSchema.array(),
+  choiceCount: "number",
+  "required?": RequirementsSchema,
+});
+export type MentorSpiritSelectedType = typeof MentorSpiritSelectedSchema.infer;
+
+const ParagonSelectedSchema = MentorBaseSchema.and({
+  category: type.unit(mentorCategoryEnum.Paragon),
+});
+
+export const TalentInfoSchema = type.or(
+  {
+    type: type.unit(talentCategoryEnum.Magic),
+    selectedTradition: TraditionSelectedSchema,
+    selectedFormulae: FormulaListSelectedSchema,
+    selectedAdeptPowers: AdeptPowerListSelectedSchema,
+    "selectedMentor?": MentorSpiritSelectedSchema,
+  },
+  {
+    type: type.unit(talentCategoryEnum.Resonance),
+    complexForms: "string[]",
+    "selectedMentor?": ParagonSelectedSchema,
+  },
+  {
+    type: type.unit(talentCategoryEnum.Depth),
+    programs: ProgramSelectedListSchema,
+  },
+  {
+    type: type.unit(talentCategoryEnum.Mundane),
+  }
+);
+export type TalentInfoType = typeof TalentInfoSchema.infer;
 export type MagicTalentInfoType = TalentInfoType & {
   type: talentCategoryEnum.Magic;
 };
@@ -236,76 +188,59 @@ export type MundaneTalentInfoType = TalentInfoType & {
   type: talentCategoryEnum.Mundane;
 };
 
-export const QualitySelectedListSchema = zod.array(
-  zod
-    .object({
-      name: zod.string(),
-      rating: zod.optional(zod.number()),
-    })
-    .strict()
-);
-export type QualitySelectedListType = zod.infer<
-  typeof QualitySelectedListSchema
->;
+export const QualitySelectedListSchema = type({
+  name: "string",
+  "rating?": "number",
+}).array();
+export type QualitySelectedListType = typeof QualitySelectedListSchema.infer;
 
-export const HeritagePrioritySelectedSchema = zod
-  .object({
-    heritage: zod.string(),
-    metavariant: zod.optional(zod.string()),
-    specialAttributePoints: zod.number(),
-  })
-  .strict();
+export const HeritagePrioritySelectedSchema = type({
+  heritage: "string",
+  "metavariant?": "string",
+  specialAttributePoints: "number",
+});
 
-export type HeritagePrioritySelectedType = zod.infer<
-  typeof HeritagePrioritySelectedSchema
->;
+export type HeritagePrioritySelectedType =
+  typeof HeritagePrioritySelectedSchema.infer;
 
-export const AttributeRangesSchema = zod
-  .object({
-    body: AttributeRangeSchema,
-    agility: AttributeRangeSchema,
-    reaction: AttributeRangeSchema,
-    strength: AttributeRangeSchema,
-    willpower: AttributeRangeSchema,
-    logic: AttributeRangeSchema,
-    intuition: AttributeRangeSchema,
-    charisma: AttributeRangeSchema,
-    // Special Attributes
-    edge: AttributeRangeSchema,
-    magic: AttributeRangeSchema,
-    resonance: AttributeRangeSchema,
-    depth: AttributeRangeSchema,
-  })
-  .strict();
-export type AttributeRangesType = zod.infer<typeof AttributeRangesSchema>;
+export const AttributeRangesSchema = type({
+  body: AttributeRangeSchema,
+  agility: AttributeRangeSchema,
+  reaction: AttributeRangeSchema,
+  strength: AttributeRangeSchema,
+  willpower: AttributeRangeSchema,
+  logic: AttributeRangeSchema,
+  intuition: AttributeRangeSchema,
+  charisma: AttributeRangeSchema,
+  // Special Attributes
+  edge: AttributeRangeSchema,
+  magic: AttributeRangeSchema,
+  resonance: AttributeRangeSchema,
+  depth: AttributeRangeSchema,
+});
+export type AttributeRangesType = typeof AttributeRangesSchema.infer;
 
-const CostRangeSchema = zod.array(zod.number());
-export type CostRange = zod.infer<typeof CostRangeSchema>;
+const CostRangeSchema = type("number[]");
+export type CostRange = typeof CostRangeSchema.infer;
 
-export const MartialArtSelectedSchema = zod
-  .object({
-    martialArt: MartialArtSchema,
-    techniqueList: MartialArtTechniqueListSchema,
-  })
-  .strict();
-export type MartialArtSelectedType = zod.infer<typeof MartialArtSelectedSchema>;
-export const MartialArtSelectedListSchema = zod.array(MartialArtSelectedSchema);
-export type MartialArtSelectedListType = zod.infer<
-  typeof MartialArtSelectedListSchema
->;
+export const MartialArtSelectedSchema = type({
+  martialArt: MartialArtSchema,
+  techniqueList: MartialArtTechniqueListSchema,
+});
+export type MartialArtSelectedType = typeof MartialArtSelectedSchema.infer;
+export const MartialArtSelectedListSchema = MartialArtSelectedSchema.array();
+export type MartialArtSelectedListType =
+  typeof MartialArtSelectedListSchema.infer;
 
-export const LifestyleSelectedSchema = zod
-  .object({
-    lifestyle: LifestyleSchema,
-    lifestyleQualityList: LifestyleQualityListSchema,
-    purchasedDuration: zod.number(),
-  })
-  .strict();
-export type LifestyleSelectedType = zod.infer<typeof LifestyleSelectedSchema>;
-export const LifestyleSelectedListSchema = zod.array(LifestyleSelectedSchema);
-export type LifestyleSelectedListType = zod.infer<
-  typeof LifestyleSelectedListSchema
->;
+export const LifestyleSelectedSchema = type({
+  lifestyle: LifestyleSchema,
+  lifestyleQualityList: LifestyleQualityListSchema,
+  purchasedDuration: "number",
+});
+export type LifestyleSelectedType = typeof LifestyleSelectedSchema.infer;
+export const LifestyleSelectedListSchema = LifestyleSelectedSchema.array();
+export type LifestyleSelectedListType =
+  typeof LifestyleSelectedListSchema.infer;
 
 export type CharacterType = {
   name: string;
@@ -326,65 +261,51 @@ export type CharacterType = {
   martialArtList: MartialArtSelectedListType;
   lifestyleList: LifestyleSelectedListType;
 };
-export const CharacterSchema: zod.ZodType<CharacterType> = zod
-  .object({
-    name: zod.string(),
-    heritage: HeritageSchema,
-    priorities: PriorityLevelsSchema,
-    attributes: AttributesSchema,
-    specialAttributes: SpecialAttributesSchema,
-    talentInfo: TalentInfoSchema,
-    skillList: CustomSkillListSchema,
-    qualityList: CustomQualityListSchema,
-    nuyen: zod.number(),
-    karmaPoints: zod.number(),
-    weaponList: CustomisedWeaponListSchema,
-    armourList: CustomisedArmourListSchema,
-    gearList: CustomisedGearListSchema,
-    augmentationList: CustomisedAugmentationListSchema,
-    vehicleList: CustomisedVehicleListSchema,
-    martialArtList: zod.array(MartialArtSelectedSchema),
-    lifestyleList: LifestyleSelectedListSchema,
-  })
-  .strict();
+export const CharacterSchema = type({
+  name: "string",
+  heritage: HeritageSchema,
+  priorities: PriorityLevelsSchema,
+  attributes: AttributesSchema,
+  specialAttributes: SpecialAttributesSchema,
+  talentInfo: TalentInfoSchema,
+  skillList: CustomSkillListSchema,
+  qualityList: CustomQualityListSchema,
+  nuyen: "number",
+  karmaPoints: "number",
+  weaponList: CustomisedWeaponListSchema,
+  armourList: CustomisedArmourListSchema,
+  gearList: CustomisedGearListSchema,
+  augmentationList: CustomisedAugmentationListSchema,
+  vehicleList: CustomisedVehicleListSchema,
+  martialArtList: MartialArtSelectedSchema.array(),
+  lifestyleList: LifestyleSelectedListSchema,
+});
 
-export const HeritageSummarySchema = zod.discriminatedUnion("category", [
-  zod
-    .object({
-      name: zod.string(),
-      category: zod.literal(heritageCategoryEnum.Metavariant),
-      baseHeritage: zod.string(),
-    })
-    .strict(),
-  zod
-    .object({
-      name: zod.string(),
-      category: zod.literal(heritageCategoryEnum.Metahuman),
-    })
-    .strict(),
-  zod
-    .object({
-      name: zod.string(),
-      category: zod.literal(heritageCategoryEnum.Metasapient),
-    })
-    .strict(),
-  zod
-    .object({
-      name: zod.string(),
-      category: zod.literal(heritageCategoryEnum.Shapeshifter),
-    })
-    .strict(),
-]);
+export const HeritageSummarySchema = type.or(
+  {
+    name: "string",
+    category: type.unit(heritageCategoryEnum.Metavariant),
+    baseHeritage: "string",
+  },
+  {
+    name: "string",
+    category: type.unit(heritageCategoryEnum.Metahuman),
+  },
+  {
+    name: "string",
+    category: type.unit(heritageCategoryEnum.Metasapient),
+  },
+  {
+    name: "string",
+    category: type.unit(heritageCategoryEnum.Shapeshifter),
+  }
+);
 
-export const CharacterSummarySchema = zod
-  .object({
-    id: zod.number(),
-    name: zod.string(),
-    heritage: HeritageSummarySchema,
-  })
-  .strict();
-export type CharacterSummaryType = zod.infer<typeof CharacterSummarySchema>;
-export const CharacterSummaryListSchema = zod.array(CharacterSummarySchema);
-export type CharacterSummaryListType = zod.infer<
-  typeof CharacterSummaryListSchema
->;
+export const CharacterSummarySchema = type({
+  id: "number",
+  name: "string",
+  heritage: HeritageSummarySchema,
+});
+export type CharacterSummaryType = typeof CharacterSummarySchema.infer;
+export const CharacterSummaryListSchema = CharacterSummarySchema.array();
+export type CharacterSummaryListType = typeof CharacterSummaryListSchema.infer;

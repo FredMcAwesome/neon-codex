@@ -11,6 +11,7 @@ import { convertSource } from "../common/ParserHelper.js";
 import { availabilityDrugSemantics } from "./DrugParserHelper.js";
 import { DrugSchema } from "@neon-codex/common/build/schemas/equipment/other/drugSchemas.js";
 import Drug from "../../grammar/drug.ohm-bundle.js";
+import { type } from "arktype";
 const Availability = Drug;
 
 export function ParseDrugs() {
@@ -33,19 +34,19 @@ export function ParseDrugs() {
   //   jObj.chummer.drugs.drug[6].bonus
   // );
 
-  const drugListParsed = DrugListXmlSchema.safeParse(
+  const drugListParsed = DrugListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.drugs.drug
   );
 
-  if (drugListParsed.success)
-    console.log("drugcomponents.xml initial zod parsed");
-  else {
-    console.log(drugListParsed.error.errors[0]);
+  if (drugListParsed instanceof type.errors) {
+    console.log(drugListParsed.summary);
     assert(false);
+  } else {
+    console.log("drugcomponents.xml initial arktype parsed");
   }
 
-  const drugList = drugListParsed.data;
+  const drugList = drugListParsed;
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
   // })
@@ -54,13 +55,13 @@ export function ParseDrugs() {
     // .filter((weapon) => weapon.name === "Osmium Mace")
     .map((drug) => {
       const convertedDrug = convertDrug(drug);
-      const check = DrugSchema.safeParse(convertedDrug);
-      if (!check.success) {
+      const check = DrugSchema(convertedDrug);
+      if (check instanceof type.errors) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         console.dir(convertedDrug, { depth: Infinity });
-        throw new Error(check.error.message);
+        throw new Error(check.summary);
       }
-      return check.data;
+      return check;
     });
   // console.log(armourListConverted);
   const jsonFilePath = fileURLToPath(
@@ -97,8 +98,8 @@ function convertDrug(drug: DrugXmlType) {
     category: drug.category,
     availability: availability,
     cost: drug.cost,
-    speed: drug.speed,
-    bonus: bonus,
+    ...(drug.speed !== undefined && { speed: drug.speed }),
+    ...(bonus !== undefined && { bonus: bonus }),
     source: source,
     page: drug.page,
   };

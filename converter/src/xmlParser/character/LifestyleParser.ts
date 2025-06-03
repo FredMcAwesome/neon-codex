@@ -5,7 +5,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { convertXmlBonus } from "../common/BonusParserHelper.js";
-import { z as zod } from "zod";
+
 import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
 import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
 import {
@@ -19,67 +19,59 @@ import {
   gridCategoryEnum,
   lifestyleCostIncrementEnum,
 } from "@neon-codex/common/build/enums.js";
+import { type } from "arktype";
 
-const FreeGridXmlSchema = zod
-  .object({
-    _select: zod.nativeEnum(gridCategoryEnum),
-    xmltext: zod.literal("Grid Subscription"),
-  })
-  .strict();
-const FreeGridsXmlSchema = zod
-  .object({
-    freegrid: zod.union([FreeGridXmlSchema, zod.array(FreeGridXmlSchema)]),
-  })
-  .strict();
-type FreeGridsXmlType = zod.infer<typeof FreeGridsXmlSchema>;
-const LifestyleXmlSchema = zod
-  .object({
-    id: zod.string(),
-    name: zod.string(),
-    cost: zod.number(),
-    // cost per what period (monthly if not specified)
-    increment: zod.optional(zod.literal("day")),
-    dice: zod.number(),
-    // Starting nuyen multiplier
-    multiplier: zod.number(),
-    // Lifestyle points
-    // only optional for error case
-    lp: zod.optional(zod.number()),
-    // Can add an arbitrary number of extra lp
-    // (only used for traveler)
-    allowbonuslp: zod.optional(zod.literal("True")),
-    // only optional for error case
-    freegrids: zod.optional(FreeGridsXmlSchema),
-    // increase cost per neighborhood level increase
-    costforarea: zod.optional(zod.number()),
-    // increase cost per comfort level increase
-    costforcomforts: zod.optional(zod.number()),
-    // increase cost per security level increase
-    costforsecurity: zod.optional(zod.number()),
-    bonus: zod.optional(BonusXmlSchema),
-    required: zod.optional(RequiredXmlSchema),
-    source: zod.nativeEnum(sourceBookXmlEnum),
-    page: zod.number(),
-    hide: zod.optional(zod.literal("")),
-  })
-  .strict();
-type LifestyleXmlType = zod.infer<typeof LifestyleXmlSchema>;
+const FreeGridXmlSchema = type({
+  _select: type.valueOf(gridCategoryEnum),
+  xmltext: "'Grid Subscription'",
+});
+const FreeGridsXmlSchema = type({
+  freegrid: type.or(FreeGridXmlSchema, FreeGridXmlSchema.array()),
+});
+type FreeGridsXmlType = typeof FreeGridsXmlSchema.infer;
+const LifestyleXmlSchema = type({
+  id: "string",
+  name: "string",
+  cost: "number",
+  // cost per what period (monthly if not specified)
+  "increment?": "'day'",
+  dice: "number",
+  // Starting nuyen multiplier
+  multiplier: "number",
+  // Lifestyle points
+  // only optional for error case
+  "lp?": "number",
+  // Can add an arbitrary number of extra lp
+  // (only used for traveler)
+  "allowbonuslp?": "'True'",
+  // only optional for error case
+  "freegrids?": FreeGridsXmlSchema,
+  // increase cost per neighborhood level increase
+  "costforarea?": "number",
+  // increase cost per comfort level increase
+  "costforcomforts?": "number",
+  // increase cost per security level increase
+  "costforsecurity?": "number",
+  "bonus?": BonusXmlSchema,
+  "required?": RequiredXmlSchema,
+  source: type.valueOf(sourceBookXmlEnum),
+  page: "number",
+  "hide?": "''",
+});
+type LifestyleXmlType = typeof LifestyleXmlSchema.infer;
 
-const LifeStyleAdvancedLevelXmlSchema = zod
-  .object({
-    name: zod.string(),
-    minimum: zod.number(),
-    limit: zod.number(),
-  })
-  .strict();
-const LifeStyleAdvancedLevelListXmlSchema = zod.array(
+const LifeStyleAdvancedLevelXmlSchema = type({
+  name: "string",
+  minimum: "number",
+  limit: "number",
+});
+const LifeStyleAdvancedLevelListXmlSchema = type(
   LifeStyleAdvancedLevelXmlSchema
-);
-type LifeStyleAdvancedLevelListXmlType = zod.infer<
-  typeof LifeStyleAdvancedLevelListXmlSchema
->;
+).array();
+type LifeStyleAdvancedLevelListXmlType =
+  typeof LifeStyleAdvancedLevelListXmlSchema.infer;
 
-export const LifestyleListXmlSchema = zod.array(LifestyleXmlSchema);
+export const LifestyleListXmlSchema = type(LifestyleXmlSchema.array());
 
 export function ParseLifestyles() {
   const currentPath = import.meta.url;
@@ -101,52 +93,49 @@ export function ParseLifestyles() {
   //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   //   jObj.chummer.lifestyles.lifestyle[51]
   // );
-  const lifestyleListParsed = LifestyleListXmlSchema.safeParse(
+  const lifestyleListParsed = LifestyleListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.lifestyles.lifestyle
   );
-  const lifestyleComfortListParsed =
-    LifeStyleAdvancedLevelListXmlSchema.safeParse(
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      jObj.chummer.comforts.comfort
-    );
-  const lifestyleNeighborhoodListParsed =
-    LifeStyleAdvancedLevelListXmlSchema.safeParse(
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      jObj.chummer.neighborhoods.neighborhood
-    );
-  const lifestyleSecurityListParsed =
-    LifeStyleAdvancedLevelListXmlSchema.safeParse(
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      jObj.chummer.securities.security
-    );
+  const lifestyleComfortListParsed = LifeStyleAdvancedLevelListXmlSchema(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    jObj.chummer.comforts.comfort
+  );
+  const lifestyleNeighborhoodListParsed = LifeStyleAdvancedLevelListXmlSchema(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    jObj.chummer.neighborhoods.neighborhood
+  );
+  const lifestyleSecurityListParsed = LifeStyleAdvancedLevelListXmlSchema(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    jObj.chummer.securities.security
+  );
 
-  if (lifestyleListParsed.success)
-    console.log("lifestyle.xml initial zod parsed");
-  else {
-    console.log(lifestyleListParsed.error.errors[0]);
+  if (lifestyleListParsed instanceof type.errors) {
+    console.log(lifestyleListParsed.summary);
     assert(false);
+  } else {
+    console.log("lifestyle.xml initial arktype parsed");
   }
-  if (lifestyleComfortListParsed.success)
-    console.log("lifestyle.xml (comforts) initial zod parsed");
-  else {
-    console.log(lifestyleComfortListParsed.error.errors[0]);
+  if (lifestyleComfortListParsed instanceof type.errors) {
+    console.log(lifestyleComfortListParsed.summary);
     assert(false);
+  } else {
+    console.log("lifestyle.xml (comforts) initial arktype parsed");
   }
-  if (lifestyleNeighborhoodListParsed.success)
-    console.log("lifestyle.xml (neighborhoods) initial zod parsed");
-  else {
-    console.log(lifestyleNeighborhoodListParsed.error.errors[0]);
+  if (lifestyleNeighborhoodListParsed instanceof type.errors) {
+    console.log(lifestyleNeighborhoodListParsed.summary);
     assert(false);
+  } else {
+    console.log("lifestyle.xml (neighborhoods) initial arktype parsed");
   }
-  if (lifestyleSecurityListParsed.success)
-    console.log("lifestyle.xml (securities) initial zod parsed");
-  else {
-    console.log(lifestyleSecurityListParsed.error.errors[0]);
+  if (lifestyleSecurityListParsed instanceof type.errors) {
+    console.log(lifestyleSecurityListParsed.summary);
     assert(false);
+  } else {
+    console.log("lifestyle.xml (securities) initial arktype parsed");
   }
 
-  const lifestyleList = lifestyleListParsed.data;
+  const lifestyleList = lifestyleListParsed;
   const lifestyleListConverted = lifestyleList
     .filter((lifestyle) => {
       return lifestyle.lp !== undefined;
@@ -159,20 +148,20 @@ export function ParseLifestyles() {
           lp: number;
           freegrids: FreeGridsXmlType;
         },
-        comforts: lifestyleComfortListParsed.data,
-        neighborhoods: lifestyleNeighborhoodListParsed.data,
-        securities: lifestyleSecurityListParsed.data,
+        comforts: lifestyleComfortListParsed,
+        neighborhoods: lifestyleNeighborhoodListParsed,
+        securities: lifestyleSecurityListParsed,
       });
-      const check = LifestyleSchema.safeParse(convertedLifestyle);
-      if (!check.success) {
+      const check = LifestyleSchema(convertedLifestyle);
+      if (check instanceof type.errors) {
         console.dir(convertedLifestyle, { depth: Infinity });
-        throw new Error(check.error.message);
+        throw new Error(check.summary);
       }
-      return check.data;
+      return check;
     });
-  const check = LifestyleListSchema.safeParse(lifestyleListConverted);
-  if (!check.success) {
-    throw new Error(check.error.message);
+  const check = LifestyleListSchema(lifestyleListConverted);
+  if (check instanceof type.errors) {
+    throw new Error(check.summary);
   }
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/lifestyles.json"
@@ -285,7 +274,9 @@ const convertLifestyle = function ({
       increment: costIncrement,
     },
     lifestylePoints: xmlLifestyle.lp,
-    allowBonusLifestylePoints: allowBonusLifestylePoints,
+    ...(allowBonusLifestylePoints !== undefined && {
+      allowBonusLifestylePoints: allowBonusLifestylePoints,
+    }),
     freegridList: freegrids.map((freegrid) => freegrid._select),
     dice: xmlLifestyle.dice,
     startingNuyenMultiplier: xmlLifestyle.multiplier,

@@ -1,4 +1,3 @@
-import { z as zod } from "zod";
 import {
   BonusXmlSchema,
   type BonusXmlType,
@@ -10,47 +9,38 @@ import {
 } from "../common/RequiredParserSchemas.js";
 import { StringArrayOrStringSchema } from "../common/ParserCommonDefines.js";
 import { actionEnum } from "@neon-codex/common/build/enums.js";
+import { type } from "arktype";
 
-const AdeptPowerSubBonusXmlSchema = zod
-  .object({
-    id: zod.string(),
-    name: zod.string(),
-    // Power Point Cost
-    points: zod.number(),
-    levels: zod.union([zod.literal("True"), zod.literal("False")]),
-    limit: zod.number(),
-    // Other powers that count to this power's limit
-    includeinlimit: zod.optional(
-      zod
-        .object({
-          name: StringArrayOrStringSchema,
-        })
-        .strict()
-    ),
-    action: zod.optional(zod.nativeEnum(actionEnum)),
-    adeptway: zod.optional(zod.number()),
-    adeptwayrequires: zod.optional(
-      zod.union([
-        zod
-          .object({
-            required: RequiredXmlSchema,
-          })
-          .strict(),
-        zod.object({ magicianswayforbids: zod.literal("") }).strict(),
-      ])
-    ),
-    doublecost: zod.optional(zod.literal("False")),
-    // Extra point cost for first level only
-    extrapointcost: zod.optional(zod.number()),
-    maxlevels: zod.optional(zod.number()),
+const AdeptPowerSubBonusXmlSchema = type({
+  id: "string",
+  name: "string",
+  // Power Point Cost
+  points: "number",
+  levels: type.or("'True'", "'False'"),
+  limit: "number",
+  // Other powers that count to this power's limit
+  "includeinlimit?": type({
+    name: StringArrayOrStringSchema,
+  }),
+  "action?": type.valueOf(actionEnum),
+  "adeptway?": "number",
+  "adeptwayrequires?": type.or(
+    type({
+      required: RequiredXmlSchema,
+    }),
+    { magicianswayforbids: "''" }
+  ),
+  "doublecost?": "'False'",
+  // Extra point cost for first level only
+  "extrapointcost?": "number",
+  "maxlevels?": "number",
 
-    // Not selectable
-    hide: zod.optional(zod.literal("")),
-    source: zod.union([SourceXmlSchema, zod.literal(2050)]),
-    page: zod.number(),
-  })
-  .strict();
-type AdeptPowerSubBonusXmlType = zod.infer<typeof AdeptPowerSubBonusXmlSchema>;
+  // Not selectable
+  "hide?": "''",
+  source: type.or(SourceXmlSchema, "2050"),
+  page: "number",
+});
+type AdeptPowerSubBonusXmlType = typeof AdeptPowerSubBonusXmlSchema.infer;
 
 // Need to split up type/annotate schema to avoid TS7056 error
 export type AdeptPowerXmlType = AdeptPowerSubBonusXmlType & {
@@ -58,14 +48,13 @@ export type AdeptPowerXmlType = AdeptPowerSubBonusXmlType & {
   required?: RequiredXmlType | undefined;
   forbidden?: RequiredXmlType | undefined;
 };
-const AdeptPowerXmlSchema: zod.ZodSchema<AdeptPowerXmlType> =
-  AdeptPowerSubBonusXmlSchema.extend({
-    // Bonus (these are specific choices to select when adding when)
-    // e.g. summoning spell chooses what you summon
-    bonus: zod.optional(BonusXmlSchema),
-    // Requirements e.g. type of spellcaster
-    required: zod.optional(RequiredXmlSchema),
-    forbidden: zod.optional(RequiredXmlSchema),
-  });
-export const AdeptPowerListXmlSchema = zod.array(AdeptPowerXmlSchema);
-export type AdeptPowerListXmlType = zod.infer<typeof AdeptPowerListXmlSchema>;
+const AdeptPowerXmlSchema = AdeptPowerSubBonusXmlSchema.and({
+  // Bonus (these are specific choices to select when adding when)
+  // e.g. summoning spell chooses what you summon
+  "bonus?": BonusXmlSchema,
+  // Requirements e.g. type of spellcaster
+  "required?": RequiredXmlSchema,
+  "forbidden?": RequiredXmlSchema,
+});
+export const AdeptPowerListXmlSchema = type(AdeptPowerXmlSchema.array());
+export type AdeptPowerListXmlType = typeof AdeptPowerListXmlSchema.infer;

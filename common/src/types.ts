@@ -1,8 +1,8 @@
-import { z as zod } from "zod";
+import { type } from "arktype";
 
-const RatingLiteralSchema = zod.literal("Rating");
+const RatingLiteralSchema = type("'Rating'");
 
-type RatingLiteralType = zod.infer<typeof RatingLiteralSchema>;
+type RatingLiteralType = typeof RatingLiteralSchema.infer;
 
 export type { RatingLiteralType };
 export { RatingLiteralSchema };

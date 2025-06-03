@@ -7,6 +7,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { EquipmentPacks } from "../../models/rpg/equipment/equipmentPackModel.js";
+import { type } from "arktype";
 export const getEquipmentPacks = function () {
   const currentPath = import.meta.url;
 
@@ -20,13 +21,13 @@ export const getEquipmentPacks = function () {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const rawJson = JSON.parse(jsonString);
-  const equipmentPackListParsed = EquipmentPackListSchema.safeParse(rawJson);
-  if (equipmentPackListParsed.success) {
-    console.log("equipment packs all g");
-    unlinkedEquipmentPacks = equipmentPackListParsed.data;
-  } else {
-    console.log(equipmentPackListParsed.error.errors[0]);
+  const equipmentPackListParsed = EquipmentPackListSchema(rawJson);
+  if (equipmentPackListParsed instanceof type.errors) {
+    console.log(equipmentPackListParsed.summary);
     assert(false, "equipment packs is undefined");
+  } else {
+    console.log("equipment packs all g");
+    unlinkedEquipmentPacks = equipmentPackListParsed;
   }
   const stagedEquipmentPacks: Array<EquipmentPacks> = [];
 

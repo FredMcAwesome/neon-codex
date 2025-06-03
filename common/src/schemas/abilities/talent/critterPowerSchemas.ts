@@ -1,4 +1,4 @@
-import { z as zod } from "zod";
+import { type } from "arktype";
 import {
   actionEnum,
   critterPowerEnum,
@@ -10,147 +10,102 @@ import { BonusSchema } from "../../shared/bonusSchemas.js";
 import { RequirementsSchema } from "../../shared/requiredSchemas.js";
 import { spellRangeSchema } from "./spellSchemas.js";
 
-const CritterPowerRatingSchema = zod.union([
-  zod
-    .object({
-      critterRating: zod.literal(true),
-    })
-    .strict(),
-  zod
-    .object({
-      maxRating: zod.number(),
-    })
-    .strict(),
-]);
-export type CritterPowerRatingType = zod.infer<typeof CritterPowerRatingSchema>;
+const CritterPowerRatingSchema = type.or(
+  {
+    critterRating: "true",
+  },
+  {
+    maxRating: "number",
+  }
+);
+export type CritterPowerRatingType = typeof CritterPowerRatingSchema.infer;
 
-const CritterPowerTypeSchema = zod.union([
-  zod.nativeEnum(spellTypeEnum),
-  zod
-    .object({
-      spellType: zod.literal(true),
-    })
-    .strict(),
-  zod
-    .object({
-      ritualType: zod.literal(true),
-    })
-    .strict(),
-  zod
-    .object({
-      device: zod.literal(true),
-    })
-    .strict(),
-  zod
-    .object({
-      host: zod.literal(true),
-    })
-    .strict(),
-  zod
-    .object({
-      file: zod.literal(true),
-    })
-    .strict(),
-  zod
-    .object({
-      persona: zod.literal(true),
-    })
-    .strict(),
-  zod
-    .object({
-      personaOrDevice: zod.literal(true),
-    })
-    .strict(),
-  zod
-    .object({
-      icon: zod.literal(true),
-    })
-    .strict(),
-]);
+const CritterPowerTypeSchema = type.or(
+  type.valueOf(spellTypeEnum),
+  {
+    spellType: "true",
+  },
+  {
+    ritualType: "true",
+  },
+  {
+    device: "true",
+  },
+  {
+    host: "true",
+  },
+  {
+    file: "true",
+  },
+  {
+    persona: "true",
+  },
+  {
+    personaOrDevice: "true",
+  },
+  {
+    icon: "true",
+  }
+);
 
-export type CritterPowerTypeType = zod.infer<typeof CritterPowerTypeSchema>;
+export type CritterPowerTypeType = typeof CritterPowerTypeSchema.infer;
 
-const CritterActionSchema = zod.union([
-  zod.nativeEnum(actionEnum),
-  zod
-    .object({
-      ritualType: zod.literal(true),
-    })
-    .strict(),
-]);
-export type CritterActionType = zod.infer<typeof CritterActionSchema>;
+const CritterActionSchema = type.or(type.valueOf(actionEnum), {
+  ritualType: "true",
+});
+export type CritterActionType = typeof CritterActionSchema.infer;
 
-const CritterPowerRangeSchema = zod.union([
-  zod
-    .object({
-      rangeCalc: spellRangeSchema,
-    })
-    .strict(),
-  zod
-    .object({
-      spellRange: zod.literal(true),
-    })
-    .strict(),
-  zod
-    .object({
-      ritualRange: zod.literal(true),
-    })
-    .strict(),
-  zod
-    .object({
-      magicMutliplied: zod.number(),
-    })
-    .strict(),
-]);
-export type CritterPowerRangeType = zod.infer<typeof CritterPowerRangeSchema>;
+const CritterPowerRangeSchema = type.or(
+  {
+    rangeCalc: spellRangeSchema,
+  },
+  {
+    spellRange: "true",
+  },
+  {
+    ritualRange: "true",
+  },
+  {
+    magicMutliplied: "number",
+  }
+);
+export type CritterPowerRangeType = typeof CritterPowerRangeSchema.infer;
 
-const CritterPowerDurationSchema = zod.union([
-  zod.nativeEnum(durationEnum),
-  zod
-    .object({
-      spellDuration: zod.literal(true),
-    })
-    .strict(),
-  zod
-    .object({
-      ritualDuration: zod.literal(true),
-    })
-    .strict(),
-  zod
-    .object({
-      spriteDuration: zod.literal(true),
-    })
-    .strict(),
-  zod
-    .object({
-      forceMultipliedTenCombatTurns: zod.literal(true),
-    })
-    .strict(),
-]);
-export type CritterPowerDurationType = zod.infer<
-  typeof CritterPowerDurationSchema
->;
+const CritterPowerDurationSchema = type.or(
+  type.valueOf(durationEnum),
+  {
+    spellDuration: "true",
+  },
+  {
+    ritualDuration: "true",
+  },
+  {
+    spriteDuration: "true",
+  },
+  {
+    forceMultipliedTenCombatTurns: "true",
+  }
+);
+export type CritterPowerDurationType = typeof CritterPowerDurationSchema.infer;
 
-export const CritterPowerSchema = zod
-  .object({
-    name: zod.string(),
-    description: zod.string(),
-    category: zod.nativeEnum(critterPowerEnum),
-    karma: zod.optional(zod.number()),
-    rating: zod.optional(CritterPowerRatingSchema),
-    type: zod.optional(CritterPowerTypeSchema),
-    action: zod.optional(CritterActionSchema),
-    range: zod.optional(CritterPowerRangeSchema),
-    duration: zod.optional(CritterPowerDurationSchema),
-    userSelectable: zod.optional(zod.literal(false)),
-    bonus: zod.optional(BonusSchema),
-    requirements: zod.optional(RequirementsSchema),
-    forbidden: zod.optional(RequirementsSchema),
-    source: zod.nativeEnum(sourceBookEnum),
-    page: zod.number(),
-  })
-  .strict();
-export type CritterPowerType = zod.infer<typeof CritterPowerSchema>;
+export const CritterPowerSchema = type({
+  name: "string",
+  description: "string",
+  category: type.valueOf(critterPowerEnum),
+  "karma?": "number",
+  "rating?": CritterPowerRatingSchema,
+  "type?": CritterPowerTypeSchema,
+  "action?": CritterActionSchema,
+  "range?": CritterPowerRangeSchema,
+  "duration?": CritterPowerDurationSchema,
+  "userSelectable?": "false",
+  "bonus?": BonusSchema,
+  "requirements?": RequirementsSchema,
+  "forbidden?": RequirementsSchema,
+  source: type.valueOf(sourceBookEnum),
+  page: "number",
+});
+export type CritterPowerType = typeof CritterPowerSchema.infer;
 
-export const CritterPowerListSchema = zod.array(CritterPowerSchema);
-export type CritterPowerListType = zod.infer<typeof CritterPowerListSchema>;
+export const CritterPowerListSchema = type(CritterPowerSchema.array());
+export type CritterPowerListType = typeof CritterPowerListSchema.infer;

@@ -13,6 +13,7 @@ import {
 } from "./ComplexFormParserSchemas.js";
 import { ComplexFormSchema } from "@neon-codex/common/build/schemas/abilities/talent/complexFormSchemas.js";
 import ComplexForms from "../../grammar/complexForms.ohm-bundle.js";
+import { type } from "arktype";
 const FadingValue = ComplexForms.FadingValue;
 
 export function ParseComplexForms() {
@@ -35,19 +36,19 @@ export function ParseComplexForms() {
   //   jObj.chummer.complexforms.complexform[37]
   // );
 
-  const complexFormListParsed = ComplexFormListXmlSchema.safeParse(
+  const complexFormListParsed = ComplexFormListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.complexforms.complexform
   );
 
-  if (complexFormListParsed.success)
-    console.log("complexforms.xml initial zod parsed");
-  else {
-    console.log(complexFormListParsed.error.errors[0]);
+  if (complexFormListParsed instanceof type.errors) {
+    console.log(complexFormListParsed.summary);
     assert(false);
+  } else {
+    console.log("complexforms.xml initial arktype parsed");
   }
 
-  const complexFormList = complexFormListParsed.data;
+  const complexFormList = complexFormListParsed;
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
   // })
@@ -56,13 +57,13 @@ export function ParseComplexForms() {
     // .filter((weapon) => weapon.name === "Osmium Mace")
     .map((complexForm) => {
       const convertedComplexForm = convertComplexForm(complexForm);
-      const check = ComplexFormSchema.safeParse(convertedComplexForm);
-      if (!check.success) {
+      const check = ComplexFormSchema(convertedComplexForm);
+      if (check instanceof type.errors) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         console.dir(convertedComplexForm, { depth: Infinity });
-        throw new Error(check.error.message);
+        throw new Error(check.summary);
       }
-      return check.data;
+      return check;
     });
   // console.log(complexFormListConverted);
   const jsonFilePath = fileURLToPath(

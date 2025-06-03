@@ -22,6 +22,7 @@ import { ArmourModSchema } from "@neon-codex/common/build/schemas/equipment/comb
 import ArmourModifications from "../../grammar/armourModifications.ohm-bundle.js";
 import { convertSource } from "../common/ParserHelper.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
+import { type } from "arktype";
 
 const Availability = ArmourModifications.Availability;
 const Cost = ArmourModifications.Cost;
@@ -45,19 +46,19 @@ export function ParseArmourMods() {
   //   jObj.chummer.mods.mod[58]
   // );
 
-  const armourModListParsed = ArmourModListXmlSchema.safeParse(
+  const armourModListParsed = ArmourModListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.mods.mod
   );
 
-  if (armourModListParsed.success)
-    console.log("armor.xml (Mods) initial zod parsed");
-  else {
-    console.log(armourModListParsed.error.errors[0]);
+  if (armourModListParsed instanceof type.errors) {
+    console.log(armourModListParsed.summary);
     assert(false);
+  } else {
+    console.log("armor.xml (Mods) initial arktype parsed");
   }
 
-  const armourModList = armourModListParsed.data;
+  const armourModList = armourModListParsed;
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
   // })
@@ -66,18 +67,18 @@ export function ParseArmourMods() {
     // .filter((weapon) => weapon.name === "Osmium Mace")
     .map((armourMod) => {
       const convertedArmourMod = convertArmourMod(armourMod);
-      const check = ArmourModSchema.safeParse(convertedArmourMod);
-      if (!check.success) {
+      const check = ArmourModSchema(convertedArmourMod);
+      if (check instanceof type.errors) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         console.dir(convertedArmourMod, { depth: Infinity });
-        throw new Error(check.error.message);
+        throw new Error(check.summary);
       }
-      return check.data;
+      return check;
     });
   // console.log(armourModListConverted);
-  const check = ArmourModListSchema.safeParse(armourModListConverted);
-  if (!check.success) {
-    throw new Error(check.error.message);
+  const check = ArmourModListSchema(armourModListConverted);
+  if (check instanceof type.errors) {
+    throw new Error(check.summary);
   }
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/armourMods.json"

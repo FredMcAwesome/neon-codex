@@ -1,4 +1,3 @@
-import { z as zod } from "zod";
 import * as logger from "../utils/logger.js";
 import { router, privateProcedure } from "../trpc.js";
 import { Skills } from "@neon-codex/database/build/models/rpg/abilities/skillModel.js";
@@ -254,6 +253,7 @@ import type {
   WeaponMountModType,
 } from "@neon-codex/common/build/schemas/equipment/rigger/weaponMountModSchemas.js";
 import { WeaponMountModifications } from "@neon-codex/database/build/models/rpg/equipment/rigger/weaponMountModModel.js";
+import { type } from "arktype";
 
 export function convertDBBonus(DBbonus: Bonuses) {
   const bonus: BonusType = {};
@@ -282,8 +282,10 @@ export async function getSkills() {
       attribute: skill.attribute,
       default: skill.default,
       exotic: skill.exotic,
-      skillGroup: skillGroup,
-      specialisations: skill.defaultSpecialisations,
+      ...(skillGroup !== undefined && { skillGroup: skillGroup }),
+      ...(skill.defaultSpecialisations !== undefined && {
+        specialisations: skill.defaultSpecialisations,
+      }),
       source: skill.source,
       page: skill.page,
     };
@@ -339,10 +341,14 @@ export async function getTraditions() {
       return {
         name: tradition.name,
         drain: tradition.drain,
-        spiritForm: tradition.spiritForm,
+        ...(tradition.spiritForm !== undefined && {
+          spiritForm: tradition.spiritForm,
+        }),
         spiritTypes: spiritTypes,
-        bonus: tradition.bonus,
-        requirements: tradition.requirements,
+        ...(tradition.bonus !== undefined && { bonus: tradition.bonus }),
+        ...(tradition.requirements !== undefined && {
+          requirements: tradition.requirements,
+        }),
         source: tradition.source,
         page: tradition.page,
         description: tradition.description,
@@ -363,7 +369,7 @@ export async function getMentors() {
       description: mentor.description,
       advantage: mentor.advantage,
       disadvantage: mentor.disadvantage,
-      bonus: mentor.bonus,
+      ...(mentor.bonus !== undefined && { bonus: mentor.bonus }),
       source: mentor.source,
       page: mentor.page,
     };
@@ -373,7 +379,7 @@ export async function getMentors() {
         category: mentorCategoryEnum.MentorSpirit,
         choices: mentor.choices,
         choiceCount: mentor.choiceCount,
-        required: mentor.required,
+        ...(mentor.required && { required: mentor.required }),
       };
     } else if (mentor instanceof Paragons) {
       return {
@@ -411,8 +417,10 @@ export async function getCritters() {
         resonanceAttributeRange: critter.resonanceAttributeRange,
         essenceAttributeRange: critter.essenceAttributeRange,
         depthAttributeRange: critter.depthAttributeRange,
-        nonStandardMovement: critter.nonStandardMovement,
-        movement: critter.movement,
+        ...(critter.nonStandardMovement !== undefined && {
+          nonStandardMovement: critter.nonStandardMovement,
+        }),
+        ...(critter.movement !== undefined && { movement: critter.movement }),
         includedPowerList: await Promise.all(
           critter.includedPowerList.map(async (power) => {
             const powerLoaded = await power.critterPower.load();
@@ -422,7 +430,7 @@ export async function getCritters() {
 
             return {
               name: powerLoaded.name,
-              rating: power.rating,
+              ...(power.rating !== undefined && { rating: power.rating }),
             };
           })
         ),
@@ -435,7 +443,7 @@ export async function getCritters() {
 
             return {
               name: powerLoaded.name,
-              rating: power.rating,
+              ...(power.rating !== undefined && { rating: power.rating }),
             };
           })
         ),
@@ -474,7 +482,9 @@ export async function getCritters() {
 
             return {
               name: complexFormLoaded.name,
-              select: complexForm.matrixAttribute,
+              ...(complexForm.matrixAttribute !== undefined && {
+                select: complexForm.matrixAttribute,
+              }),
             };
           })
         ),
@@ -487,7 +497,9 @@ export async function getCritters() {
               }
               return {
                 name: skillLoaded.name,
-                specialised: skill.specialisationsSelected,
+                ...(skill.specialisationsSelected !== undefined && {
+                  specialised: skill.specialisationsSelected,
+                }),
                 rating: skill.critterSkillRating,
                 // TODO: do something for select
                 // select: skill.
@@ -507,7 +519,7 @@ export async function getCritters() {
             })
           ),
         },
-        bonus: critter.bonus,
+        ...(critter.bonus !== undefined && { bonus: critter.bonus }),
         source: critter.source,
         page: critter.page,
         description: critter.description,
@@ -532,8 +544,10 @@ export async function getSpells() {
       descriptorList: spell.descriptorList,
       duration: spell.duration,
       range: spell.range,
-      bonus: spell.bonus,
-      requirements: spell.requirements,
+      ...(spell.bonus !== undefined && { bonus: spell.bonus }),
+      ...(spell.requirements !== undefined && {
+        requirements: spell.requirements,
+      }),
       source: spell.source,
       page: spell.page,
       description: spell.description,
@@ -554,8 +568,10 @@ export async function getComplexForms() {
         target: complexForm.target,
         duration: complexForm.duration,
         fadingValue: complexForm.fadingValue,
-        bonus: complexForm.bonus,
-        requirements: complexForm.requirements,
+        ...(complexForm.bonus !== undefined && { bonus: complexForm.bonus }),
+        ...(complexForm.requirements !== undefined && {
+          requirements: complexForm.requirements,
+        }),
         source: complexForm.source,
         page: complexForm.page,
         description: complexForm.description,
@@ -576,7 +592,9 @@ export async function getAdeptPowers() {
         name: adeptPower.name,
         description: adeptPower.description,
         pointCost: adeptPower.pointCost,
-        extraFirstLevelPointCost: adeptPower.extraFirstLevelPointCost,
+        ...(adeptPower.extraFirstLevelPointCost !== undefined && {
+          extraFirstLevelPointCost: adeptPower.extraFirstLevelPointCost,
+        }),
         levels: adeptPower.levels,
         limit: adeptPower.limit,
         sharedLimitAdeptPowerList: adeptPower.sharedLimitAdeptPowerList.map(
@@ -584,20 +602,31 @@ export async function getAdeptPowers() {
             return power.name;
           }
         ),
-        action: adeptPower.action,
-        adeptWay:
-          adeptPower.adeptWayPointCost !== undefined
-            ? {
-                pointCost: adeptPower.adeptWayPointCost,
-                requirements: adeptPower.adeptWayRequirements,
-              }
-            : undefined,
-        doubleCost: adeptPower.doubleCost,
-        maxLevels: adeptPower.maxLevels,
-        userSelectable: adeptPower.userSelectable,
-        bonus: adeptPower.bonus,
-        requirements: adeptPower.requirements,
-        forbidden: adeptPower.forbidden,
+        ...(adeptPower.action !== undefined && { action: adeptPower.action }),
+        ...(adeptPower.adeptWayPointCost !== undefined && {
+          adeptWay: {
+            pointCost: adeptPower.adeptWayPointCost,
+            ...(adeptPower.adeptWayRequirements !== undefined && {
+              requirements: adeptPower.adeptWayRequirements,
+            }),
+          },
+        }),
+        ...(adeptPower.doubleCost !== undefined && {
+          doubleCost: adeptPower.doubleCost,
+        }),
+        ...(adeptPower.maxLevels !== undefined && {
+          maxLevels: adeptPower.maxLevels,
+        }),
+        ...(adeptPower.userSelectable !== undefined && {
+          userSelectable: adeptPower.userSelectable,
+        }),
+        ...(adeptPower.bonus !== undefined && { bonus: adeptPower.bonus }),
+        ...(adeptPower.requirements !== undefined && {
+          requirements: adeptPower.requirements,
+        }),
+        ...(adeptPower.forbidden !== undefined && {
+          forbidden: adeptPower.forbidden,
+        }),
         source: adeptPower.source,
         page: adeptPower.page,
       };
@@ -616,11 +645,13 @@ export async function getPrograms() {
       name: program.name,
       description: program.description,
       category: program.category,
-      rating: program.rating,
+      ...(program.rating !== undefined && { rating: program.rating }),
       availability: program.availability,
       cost: program.cost,
-      bonus: program.bonus,
-      requirements: program.requirements,
+      ...(program.bonus !== undefined && { bonus: program.bonus }),
+      ...(program.requirements !== undefined && {
+        requirements: program.requirements,
+      }),
       source: program.source,
       page: program.page,
     };
@@ -648,7 +679,7 @@ async function getWeapons(): Promise<WeaponListType> {
               })
             ),
             mountList: accessory.weaponMountsUsed,
-            rating: accessory.rating,
+            ...(accessory.rating !== undefined && { rating: accessory.rating }),
           };
         })
       );
@@ -683,11 +714,17 @@ async function getWeapons(): Promise<WeaponListType> {
           includedAccessoryList: includedAccessoryList,
         }),
         allowAccessories: weapon.allowAccessories,
-        userSelectable: weapon.userSelectable,
-        augmentationType: weapon.augmentationType,
+        ...(weapon.userSelectable !== undefined && {
+          userSelectable: weapon.userSelectable,
+        }),
+        ...(weapon.augmentationType !== undefined && {
+          augmentationType: weapon.augmentationType,
+        }),
         ...(weapon.hostWeaponMountsRequired && {
           hostWeaponRequirements: {
-            weaponRequirements: weapon.requirements,
+            ...(weapon.requirements !== undefined && {
+              weaponRequirements: weapon.requirements,
+            }),
             hostWeaponMountsRequired: weapon.hostWeaponMountsRequired,
           },
         }),
@@ -726,33 +763,79 @@ async function getWeaponAccessories(): Promise<WeaponAccessoryListType> {
         // id: weapon.id,
         name: weaponAccessory.name,
         description: weaponAccessory.description,
-        wireless: weaponAccessory.wireless,
+        ...(weaponAccessory.wireless !== undefined && {
+          wireless: weaponAccessory.wireless,
+        }),
         maxRating: weaponAccessory.maxRating,
-        isWeapon: weaponAccessory.linkedWeapon !== undefined,
-        accuracyIncrease: weaponAccessory.accuracyIncrease,
-        damageIncrease: weaponAccessory.damageIncrease,
-        newDamageType: weaponAccessory.newDamageType,
-        reachIncrease: weaponAccessory.reachIncrease,
-        armourPiercingIncrease: weaponAccessory.armourPiercingIncrease,
-        recoilCompensationIncrease: weaponAccessory.recoilCompensationIncrease,
-        recoilCompensationType: weaponAccessory.recoilCompensationType,
-        deploymentRequired: weaponAccessory.deploymentRequired,
-        accessoryCostMultiplier: weaponAccessory.accessoryCostMultiplier,
+        ...(weaponAccessory.linkedWeapon !== undefined && {
+          isWeapon: true as const,
+        }),
+        ...(weaponAccessory.accuracyIncrease !== undefined && {
+          accuracyIncrease: weaponAccessory.accuracyIncrease,
+        }),
+        ...(weaponAccessory.damageIncrease !== undefined && {
+          damageIncrease: weaponAccessory.damageIncrease,
+        }),
+        ...(weaponAccessory.newDamageType !== undefined && {
+          newDamageType: weaponAccessory.newDamageType,
+        }),
+        ...(weaponAccessory.reachIncrease !== undefined && {
+          reachIncrease: weaponAccessory.reachIncrease,
+        }),
+        ...(weaponAccessory.armourPiercingIncrease !== undefined && {
+          armourPiercingIncrease: weaponAccessory.armourPiercingIncrease,
+        }),
+        ...(weaponAccessory.recoilCompensationIncrease !== undefined && {
+          recoilCompensationIncrease:
+            weaponAccessory.recoilCompensationIncrease,
+        }),
+        ...(weaponAccessory.recoilCompensationType !== undefined && {
+          recoilCompensationType: weaponAccessory.recoilCompensationType,
+        }),
+        ...(weaponAccessory.deploymentRequired !== undefined && {
+          deploymentRequired: weaponAccessory.deploymentRequired,
+        }),
+        ...(weaponAccessory.accessoryCostMultiplier !== undefined && {
+          accessoryCostMultiplier: weaponAccessory.accessoryCostMultiplier,
+        }),
         allowedGearList: weaponAccessory.allowedGearList.$.map((gear) => {
           return gear.name;
         }),
-        allowedGearCategories: weaponAccessory.allowedGearCategories,
+        ...(weaponAccessory.allowedGearCategories !== undefined && {
+          allowedGearCategories: weaponAccessory.allowedGearCategories,
+        }),
         includedGearList: gearList,
-        specialModification: weaponAccessory.specialModification,
-        extraAmmoSlots: weaponAccessory.extraAmmoSlots,
-        ammoCapacityCalculation: weaponAccessory.ammoCapacityCalculation,
-        newAmmoType: weaponAccessory.newAmmoType,
-        hostWeaponMountsRequired: weaponAccessory.hostWeaponMountsRequired,
-        hostWeaponRequirements: weaponAccessory.hostWeaponRequirements,
-        hostWeaponRestrictions: weaponAccessory.hostWeaponRestrictions,
-        rangePenaltyDecrease: weaponAccessory.rangePenaltyDecrease,
-        concealabilityModification: weaponAccessory.concealabilityModification,
-        userSelectable: weaponAccessory.userSelectable,
+        ...(weaponAccessory.specialModification !== undefined && {
+          specialModification: weaponAccessory.specialModification,
+        }),
+        ...(weaponAccessory.extraAmmoSlots !== undefined && {
+          extraAmmoSlots: weaponAccessory.extraAmmoSlots,
+        }),
+        ...(weaponAccessory.ammoCapacityCalculation !== undefined && {
+          ammoCapacityCalculation: weaponAccessory.ammoCapacityCalculation,
+        }),
+        ...(weaponAccessory.newAmmoType !== undefined && {
+          newAmmoType: weaponAccessory.newAmmoType,
+        }),
+        ...(weaponAccessory.hostWeaponMountsRequired !== undefined && {
+          hostWeaponMountsRequired: weaponAccessory.hostWeaponMountsRequired,
+        }),
+        ...(weaponAccessory.hostWeaponRequirements !== undefined && {
+          hostWeaponRequirements: weaponAccessory.hostWeaponRequirements,
+        }),
+        ...(weaponAccessory.hostWeaponRestrictions !== undefined && {
+          hostWeaponRestrictions: weaponAccessory.hostWeaponRestrictions,
+        }),
+        ...(weaponAccessory.rangePenaltyDecrease !== undefined && {
+          rangePenaltyDecrease: weaponAccessory.rangePenaltyDecrease,
+        }),
+        ...(weaponAccessory.concealabilityModification !== undefined && {
+          concealabilityModification:
+            weaponAccessory.concealabilityModification,
+        }),
+        ...(weaponAccessory.userSelectable !== undefined && {
+          userSelectable: weaponAccessory.userSelectable,
+        }),
         availability: weaponAccessory.availability,
         cost: weaponAccessory.cost,
         source: weaponAccessory.source,
@@ -786,7 +869,9 @@ async function getWeaponTypeInformation(weapon: Weapons) {
       const typeInformation = {
         type: weaponTypeEnum.Projectile as const,
         subtype: projectileWeapon.subtype,
-        extraClassification: weapon.extraClassification,
+        ...(weapon.extraClassification !== undefined && {
+          extraClassification: weapon.extraClassification,
+        }),
         rangeList: rangeList,
       };
       return typeInformation;
@@ -800,7 +885,9 @@ async function getWeaponTypeInformation(weapon: Weapons) {
       const typeInformation = {
         type: weaponTypeEnum.Firearm as const,
         subtype: firearmWeapon.subtype,
-        extraClassification: weapon.extraClassification,
+        ...(weapon.extraClassification !== undefined && {
+          extraClassification: weapon.extraClassification,
+        }),
         firearmOptions: {
           mode: firearmWeapon.mode,
           recoilCompensation: firearmWeapon.recoilCompensation,
@@ -865,17 +952,25 @@ async function getArmours(): Promise<ArmourListType> {
         name: armour.name,
         description: armour.description,
         category: armour.category,
-        maxRating: armour.maxRating,
+        ...(armour.maxRating !== undefined && { maxRating: armour.maxRating }),
         damageReduction: armour.damageReduction,
-        customFitStackDamageReduction: armour.customFitStackDamageReduction,
+        ...(armour.customFitStackDamageReduction !== undefined && {
+          customFitStackDamageReduction: armour.customFitStackDamageReduction,
+        }),
         capacity: armour.capacity,
-        isWeapon: isWeapon,
+        ...(isWeapon !== undefined && { isWeapon: isWeapon }),
         includedGearList: includedGearNameList,
-        bonus: armour.bonus,
-        wirelessBonus: armour.wirelessBonus,
+        ...(armour.bonus !== undefined && { bonus: armour.bonus }),
+        ...(armour.wirelessBonus !== undefined && {
+          wirelessBonus: armour.wirelessBonus,
+        }),
         includedModList: includedMods,
-        allowModsFromCategory: armour.allowModsFromCategory,
-        addModFromCategory: armour.addModFromCategory,
+        ...(armour.allowModsFromCategory !== undefined && {
+          allowModsFromCategory: armour.allowModsFromCategory,
+        }),
+        ...(armour.addModFromCategory !== undefined && {
+          addModFromCategory: armour.addModFromCategory,
+        }),
         availability: armour.availability,
         cost: armour.cost,
         source: armour.source,
@@ -908,11 +1003,17 @@ async function getArmourModifications(): Promise<ArmourModListType> {
         maxRating: armourMod.maxRating,
         damageReduction: armourMod.damageReduction,
         capacityCost: armourMod.capacityCost,
-        hostArmourRequirements: armourMod.hostArmourRequirements,
+        ...(armourMod.hostArmourRequirements !== undefined && {
+          hostArmourRequirements: armourMod.hostArmourRequirements,
+        }),
         includedGearList: includedGearList,
-        bonus: armourMod.bonus,
-        wirelessBonus: armourMod.wirelessBonus,
-        userSelectable: armourMod.userSelectable,
+        ...(armourMod.bonus !== undefined && { bonus: armourMod.bonus }),
+        ...(armourMod.wirelessBonus !== undefined && {
+          wirelessBonus: armourMod.wirelessBonus,
+        }),
+        ...(armourMod.userSelectable !== undefined && {
+          userSelectable: armourMod.userSelectable,
+        }),
         availability: armourMod.availability,
         cost: armourMod.cost,
         source: armourMod.source,
@@ -953,27 +1054,53 @@ async function getAugmentations() {
       const augmentationFormatted: AugmentationType = {
         name: augmentation.name,
         description: augmentation.description,
-        wireless: augmentation.wireless,
+        ...(augmentation.wireless !== undefined && {
+          wireless: augmentation.wireless,
+        }),
         ...typeInformation,
-        augmentationLimit: augmentation.augmentationLimit,
-        unavailableGrades: augmentation.unavailableGrades,
+        ...(augmentation.augmentationLimit !== undefined && {
+          augmentationLimit: augmentation.augmentationLimit,
+        }),
+        ...(augmentation.unavailableGrades !== undefined && {
+          unavailableGrades: augmentation.unavailableGrades,
+        }),
         essenceCost: augmentation.essenceCost,
-        modification: augmentation.modification,
+        ...(augmentation.modification !== undefined && {
+          modification: augmentation.modification,
+        }),
         rating: augmentation.rating,
-        ratingMeaning: augmentation.ratingMeaning,
-        addWeapon: weaponName,
-        blockedMountList: augmentation.blockedMountList,
-        selectSide: augmentation.selectSide,
-        bonus: augmentation.bonus,
-        pairBonus: augmentation.pairBonus,
+        ...(augmentation.ratingMeaning !== undefined && {
+          ratingMeaning: augmentation.ratingMeaning,
+        }),
+        ...(weaponName !== undefined && { addWeapon: weaponName }),
+        ...(augmentation.blockedMountList !== undefined && {
+          blockedMountList: augmentation.blockedMountList,
+        }),
+        ...(augmentation.selectSide !== undefined && {
+          selectSide: augmentation.selectSide,
+        }),
+        ...(augmentation.bonus !== undefined && { bonus: augmentation.bonus }),
+        ...(augmentation.pairBonus !== undefined && {
+          pairBonus: augmentation.pairBonus,
+        }),
         pairIncludeList: pairIncludeNameList,
-        requirements: augmentation.requirements,
-        forbidden: augmentation.forbidden,
+        ...(augmentation.requirements !== undefined && {
+          requirements: augmentation.requirements,
+        }),
+        ...(augmentation.forbidden !== undefined && {
+          forbidden: augmentation.forbidden,
+        }),
         allowedGearList: allowedGearNameList,
         includedGearList: includedGearList,
-        allowedGearCategories: augmentation.allowedGearCategories,
-        userSelectable: augmentation.userSelectable,
-        allowSubsystemCategoryList: augmentation.allowSubsystemCategoryList,
+        ...(augmentation.allowedGearCategories !== undefined && {
+          allowedGearCategories: augmentation.allowedGearCategories,
+        }),
+        ...(augmentation.userSelectable !== undefined && {
+          userSelectable: augmentation.userSelectable,
+        }),
+        ...(augmentation.allowSubsystemCategoryList !== undefined && {
+          allowSubsystemCategoryList: augmentation.allowSubsystemCategoryList,
+        }),
         availability: augmentation.availability,
         cost: augmentation.cost,
         source: augmentation.source,
@@ -990,28 +1117,56 @@ function getAugmentationTypeInformation(augmentation: Augmentations) {
     return {
       type: augmentationTypeEnum.Cyberware as const,
       subtype: augmentation.subtype,
-      programs: augmentation.programs,
-      capacity: augmentation.capacity,
-      capacityCost: augmentation.capacityCost,
-      addToParentCapacity: augmentation.addToParentCapacity,
-      addParentWeaponAccessory: augmentation.addParentWeaponAccessory,
-      removalCost: augmentation.removalCost,
-      inheritAttributes: augmentation.inheritAttributes,
-      limbSlot: augmentation.limbSlot,
-      useBothLimbSlots: augmentation.useBothLimbSlots,
-      mountsLocation: augmentation.mountsLocation,
-      modularMount: augmentation.modularMount,
-      wirelessBonus: augmentation.wirelessBonus,
-      wirelessPairBonus: augmentation.wirelessPairBonus,
-      subsystemList: augmentation.subsystemList,
-      forceGrade: augmentation.forceGrade,
-      deviceRating: augmentation.deviceRating,
+      ...(augmentation.programs !== undefined && {
+        programs: augmentation.programs,
+      }),
+      ...(augmentation.capacity !== undefined && {
+        capacity: augmentation.capacity,
+      }),
+      ...(augmentation.capacityCost !== undefined && {
+        capacityCost: augmentation.capacityCost,
+      }),
+      ...(augmentation.addToParentCapacity !== undefined && {
+        addToParentCapacity: augmentation.addToParentCapacity,
+      }),
+      ...(augmentation.addParentWeaponAccessory !== undefined && {
+        addParentWeaponAccessory: augmentation.addParentWeaponAccessory,
+      }),
+      ...(augmentation.removalCost !== undefined && {
+        removalCost: augmentation.removalCost,
+      }),
+      ...(augmentation.inheritAttributes !== undefined && {
+        inheritAttributes: augmentation.inheritAttributes,
+      }),
+      ...(augmentation.limbSlot !== undefined && {
+        limbSlot: augmentation.limbSlot,
+      }),
+      ...(augmentation.modularMount !== undefined && {
+        modularMount: augmentation.modularMount,
+      }),
+      ...(augmentation.wirelessBonus !== undefined && {
+        wirelessBonus: augmentation.wirelessBonus,
+      }),
+      ...(augmentation.wirelessPairBonus !== undefined && {
+        wirelessPairBonus: augmentation.wirelessPairBonus,
+      }),
+      ...(augmentation.subsystemList !== undefined && {
+        subsystemList: augmentation.subsystemList,
+      }),
+      ...(augmentation.forceGrade !== undefined && {
+        forceGrade: augmentation.forceGrade,
+      }),
+      ...(augmentation.deviceRating !== undefined && {
+        deviceRating: augmentation.deviceRating,
+      }),
     };
   } else if (augmentation instanceof Biowares) {
     return {
       type: augmentationTypeEnum.Bioware as const,
       subtype: augmentation.subtype,
-      isGeneware: augmentation.isGeneware,
+      ...(augmentation.isGeneware !== undefined && {
+        isGeneware: augmentation.isGeneware,
+      }),
     };
   }
   throw new Error(
@@ -1039,17 +1194,9 @@ async function getVehicles() {
           const loadedMount = includedMount.weaponMount.$;
           let weapon;
           if (includedMount.mountedWeapon !== undefined) {
-            const activeWeapon = includedMount.mountedWeapon.$;
-
-            weapon = {
-              baseWeapon: activeWeapon.weapon.$.name,
-              accessoryList: await Promise.all(
-                activeWeapon.accessoryList.$.map(async (accessory) => {
-                  return await convertActiveWeaponAccessoryDBToDTO(accessory);
-                })
-              ),
-              rating: activeWeapon.rating,
-            };
+            weapon = await convertActiveWeaponDBToDTO(
+              includedMount.mountedWeapon.$
+            );
           }
           return {
             control: loadedMount.control,
@@ -1059,7 +1206,7 @@ async function getVehicles() {
             modList: includedMount.mountMods.$.map((mod) => {
               return mod.name;
             }),
-            weaponMounted: weapon,
+            ...(weapon !== undefined && { weaponMounted: weapon }),
             weaponExchangeable: includedMount.weaponExchangeable,
           };
         })
@@ -1078,15 +1225,29 @@ async function getVehicles() {
         sensor: vehicle.sensor,
         includedGearList: includedGearList,
         includedModList: includedModList,
-        modSlots: vehicle.modSlots,
-        powerTrainModSlots: vehicle.powerTrainModSlots,
-        protectionModSlots: vehicle.protectionModSlots,
-        weaponModSlots: vehicle.weaponModSlots,
-        bodyModSlots: vehicle.bodyModSlots,
-        electromagneticModSlots: vehicle.electromagneticModSlots,
-        cosmeticModSlots: vehicle.cosmeticModSlots,
+        ...(vehicle.modSlots !== undefined && { modSlots: vehicle.modSlots }),
+        ...(vehicle.powerTrainModSlots !== undefined && {
+          powerTrainModSlots: vehicle.powerTrainModSlots,
+        }),
+        ...(vehicle.protectionModSlots !== undefined && {
+          protectionModSlots: vehicle.protectionModSlots,
+        }),
+        ...(vehicle.weaponModSlots !== undefined && {
+          weaponModSlots: vehicle.weaponModSlots,
+        }),
+        ...(vehicle.bodyModSlots !== undefined && {
+          bodyModSlots: vehicle.bodyModSlots,
+        }),
+        ...(vehicle.electromagneticModSlots !== undefined && {
+          electromagneticModSlots: vehicle.electromagneticModSlots,
+        }),
+        ...(vehicle.cosmeticModSlots !== undefined && {
+          cosmeticModSlots: vehicle.cosmeticModSlots,
+        }),
         includedWeaponMountList: includedWeaponMountNameList,
-        userSelectable: vehicle.userSelectable,
+        ...(vehicle.userSelectable !== undefined && {
+          userSelectable: vehicle.userSelectable,
+        }),
         availability: vehicle.availability,
         cost: vehicle.cost,
         source: vehicle.source,
@@ -1143,17 +1304,37 @@ async function getVehicleModifications(): Promise<VehicleModListType> {
         description: vehicleModification.description,
         type: vehicleModification.type,
         maxRating: vehicleModification.maxRating,
-        minRating: vehicleModification.minRating,
-        ratingMeaning: vehicleModification.ratingMeaning,
-        capacity: vehicleModification.capacity,
-        addPhysicalBoxes: vehicleModification.addPhysicalBoxes,
-        isDowngrade: vehicleModification.isDowngrade,
-        requiresDroneParent: vehicleModification.requiresDroneParent,
+        ...(vehicleModification.minRating !== undefined && {
+          minRating: vehicleModification.minRating,
+        }),
+        ...(vehicleModification.ratingMeaning !== undefined && {
+          ratingMeaning: vehicleModification.ratingMeaning,
+        }),
+        ...(vehicleModification.capacity !== undefined && {
+          capacity: vehicleModification.capacity,
+        }),
+        ...(vehicleModification.addPhysicalBoxes !== undefined && {
+          addPhysicalBoxes: vehicleModification.addPhysicalBoxes,
+        }),
+        ...(vehicleModification.isDowngrade !== undefined && {
+          isDowngrade: vehicleModification.isDowngrade,
+        }),
+        ...(vehicleModification.requiresDroneParent !== undefined && {
+          requiresDroneParent: vehicleModification.requiresDroneParent,
+        }),
         slotCost: vehicleModification.slotCost,
-        allowedSubsystemList: vehicleModification.allowedSubsystemList,
-        bonus: vehicleModification.bonus,
-        requirements: vehicleModification.requirements,
-        userSelectable: vehicleModification.userSelectable,
+        ...(vehicleModification.allowedSubsystemList !== undefined && {
+          allowedSubsystemList: vehicleModification.allowedSubsystemList,
+        }),
+        ...(vehicleModification.bonus !== undefined && {
+          bonus: vehicleModification.bonus,
+        }),
+        ...(vehicleModification.requirements !== undefined && {
+          requirements: vehicleModification.requirements,
+        }),
+        ...(vehicleModification.userSelectable !== undefined && {
+          userSelectable: vehicleModification.userSelectable,
+        }),
         availability: vehicleModification.availability,
         cost: vehicleModification.cost,
         source: vehicleModification.source,
@@ -1179,11 +1360,22 @@ async function getWeaponMountModifications(): Promise<WeaponMountModListType> {
         description: weaponMountModification.description,
         type: weaponMountModification.type,
         slotCost: weaponMountModification.slotCost,
-        additionalAmmo: weaponMountModification.additionalAmmo,
-        percentageAmmoIncrease: weaponMountModification.percentageAmmoIncrease,
-        replaceAmmo: weaponMountModification.replaceAmmo,
-        requirements: weaponMountModification.requirements,
-        userSelectable: weaponMountModification.userSelectable,
+        ...(weaponMountModification.additionalAmmo !== undefined && {
+          additionalAmmo: weaponMountModification.additionalAmmo,
+        }),
+        ...(weaponMountModification.percentageAmmoIncrease !== undefined && {
+          percentageAmmoIncrease:
+            weaponMountModification.percentageAmmoIncrease,
+        }),
+        ...(weaponMountModification.replaceAmmo !== undefined && {
+          replaceAmmo: weaponMountModification.replaceAmmo,
+        }),
+        ...(weaponMountModification.requirements !== undefined && {
+          requirements: weaponMountModification.requirements,
+        }),
+        ...(weaponMountModification.userSelectable !== undefined && {
+          userSelectable: weaponMountModification.userSelectable,
+        }),
         availability: weaponMountModification.availability,
         cost: weaponMountModification.cost,
         source: weaponMountModification.source,
@@ -1211,10 +1403,14 @@ async function getMartialArts() {
       }
       return {
         name: martialArt.name,
-        bonus: martialArt.bonus,
+        ...(martialArt.bonus !== undefined && { bonus: martialArt.bonus }),
         techniqueList: techniqueList,
-        karmaCost: martialArt.karmaCost,
-        requirements: martialArt.requirements,
+        ...(martialArt.karmaCost !== undefined && {
+          karmaCost: martialArt.karmaCost,
+        }),
+        ...(martialArt.requirements !== undefined && {
+          requirements: martialArt.requirements,
+        }),
         description: martialArt.description,
         source: martialArt.source,
         page: martialArt.page,
@@ -1233,8 +1429,10 @@ async function getMartialArtTechniques() {
     (technique) => {
       return {
         name: technique.name,
-        bonus: technique.bonus,
-        requirements: technique.requirements,
+        ...(technique.bonus !== undefined && { bonus: technique.bonus }),
+        ...(technique.requirements !== undefined && {
+          requirements: technique.requirements,
+        }),
         description: technique.description,
         source: technique.source,
         page: technique.page,
@@ -1254,16 +1452,26 @@ async function getLifestyles() {
       name: lifestyle.name,
       cost: lifestyle.cost,
       lifestylePoints: lifestyle.lifestylePoints,
-      allowBonusLifestylePoints: lifestyle.allowBonusLifestylePoints,
+      ...(lifestyle.allowBonusLifestylePoints !== undefined && {
+        allowBonusLifestylePoints: lifestyle.allowBonusLifestylePoints,
+      }),
       freegridList: lifestyle.freegridList,
       dice: lifestyle.dice,
       startingNuyenMultiplier: lifestyle.startingNuyenMultiplier,
-      costIncreasePerCategoryLevelIncrease:
-        lifestyle.costIncreasePerCategoryLevelIncrease,
-      lifestyleCategoryDefaults: lifestyle.lifestyleCategoryDefaults,
-      requirements: lifestyle.requirements,
-      bonus: lifestyle.bonus,
-      forbidden: lifestyle.forbidden,
+      ...(lifestyle.costIncreasePerCategoryLevelIncrease !== undefined && {
+        costIncreasePerCategoryLevelIncrease:
+          lifestyle.costIncreasePerCategoryLevelIncrease,
+      }),
+      ...(lifestyle.lifestyleCategoryDefaults !== undefined && {
+        lifestyleCategoryDefaults: lifestyle.lifestyleCategoryDefaults,
+      }),
+      ...(lifestyle.requirements !== undefined && {
+        requirements: lifestyle.requirements,
+      }),
+      ...(lifestyle.bonus !== undefined && { bonus: lifestyle.bonus }),
+      ...(lifestyle.forbidden !== undefined && {
+        forbidden: lifestyle.forbidden,
+      }),
       description: lifestyle.description,
       source: lifestyle.source,
       page: lifestyle.page,
@@ -1284,16 +1492,24 @@ async function getLifestyleQualities() {
         category: lifestyleQuality.category,
         monthlyCost: lifestyleQuality.monthlyCost,
         lifestylePointCost: lifestyleQuality.lifestylePointCost,
-        lifestyleCostMultiplier: lifestyleQuality.lifestyleCostMultiplier,
+        ...(lifestyleQuality.lifestyleCostMultiplier !== undefined && {
+          lifestyleCostMultiplier: lifestyleQuality.lifestyleCostMultiplier,
+        }),
         requiredLifestyleList: lifestyleQuality.requiredLifestyleList.$.map(
           (lifestyle) => {
             return lifestyle.name;
           }
         ),
         multipleAllowed: lifestyleQuality.multipleAllowed,
-        bonus: lifestyleQuality.bonus,
-        requirements: lifestyleQuality.requirements,
-        forbidden: lifestyleQuality.forbidden,
+        ...(lifestyleQuality.bonus !== undefined && {
+          bonus: lifestyleQuality.bonus,
+        }),
+        ...(lifestyleQuality.requirements !== undefined && {
+          requirements: lifestyleQuality.requirements,
+        }),
+        ...(lifestyleQuality.forbidden !== undefined && {
+          forbidden: lifestyleQuality.forbidden,
+        }),
         description: lifestyleQuality.description,
         source: lifestyleQuality.source,
         page: lifestyleQuality.page,
@@ -1405,41 +1621,89 @@ export async function getGears(): Promise<GearListType> {
         name: gear.name,
         description: gear.description,
         category: gear.category,
-        minRating: gear.minRating,
-        maxRating: gear.maxRating,
-        ratingMeaning: gear.ratingMeaning,
-        includedWeapon: includedWeapon,
-        allowCategoryList: gear.allowCategoryList,
-        purchaseQuantity: gear.purchaseQuantity,
-        bonus: gear.bonus,
-        weaponBonus: gear.weaponBonus,
-        isFlechetteAmmo: gear.isFlechetteAmmo,
-        flechetteWeaponBonus: gear.flechetteWeaponBonus,
-        ammoForWeaponType: gear.ammoForWeaponType,
-        explosiveWeight: gear.explosiveWeight,
-        userSelectable: gear.userSelectable,
+        ...(gear.minRating !== undefined && { minRating: gear.minRating }),
+        ...(gear.maxRating !== undefined && { maxRating: gear.maxRating }),
+        ...(gear.ratingMeaning !== undefined && {
+          ratingMeaning: gear.ratingMeaning,
+        }),
+        ...(includedWeapon !== undefined && { includedWeapon: includedWeapon }),
+        ...(gear.allowCategoryList !== undefined && {
+          allowCategoryList: gear.allowCategoryList,
+        }),
+        ...(gear.purchaseQuantity !== undefined && {
+          purchaseQuantity: gear.purchaseQuantity,
+        }),
+        ...(gear.bonus !== undefined && { bonus: gear.bonus }),
+        ...(gear.weaponBonus !== undefined && {
+          weaponBonus: gear.weaponBonus,
+        }),
+        ...(gear.isFlechetteAmmo !== undefined && {
+          isFlechetteAmmo: gear.isFlechetteAmmo,
+        }),
+        ...(gear.flechetteWeaponBonus !== undefined && {
+          flechetteWeaponBonus: gear.flechetteWeaponBonus,
+        }),
+        ...(gear.ammoForWeaponType !== undefined && {
+          ammoForWeaponType: gear.ammoForWeaponType,
+        }),
+        ...(gear.explosiveWeight !== undefined && {
+          explosiveWeight: gear.explosiveWeight,
+        }),
+        ...(gear.userSelectable !== undefined && {
+          userSelectable: gear.userSelectable,
+        }),
         allowedGearList: gearNameList,
         includedGearList: includedGearList,
-        deviceRating: gear.deviceRating,
-        programs: gear.programs,
-        attributeArray: gear.attributeArray,
-        attack: gear.attack,
-        sleaze: gear.sleaze,
-        dataProcessing: gear.dataProcessing,
-        firewall: gear.firewall,
-        canFormPersona: gear.canFormPersona,
-        capacityInformation: gear.capacityInformation,
-        armourCapacityInformation: gear.armourCapacityInformation,
-        requirements: gear.requirements,
-        requireParent: gear.requireParent,
-        forbidden: gear.forbidden,
-        modifyAttributeArray: gear.modifyAttributeArray,
-        modifyAttack: gear.modifyAttack,
-        modifySleaze: gear.modifySleaze,
-        modifyDataProcessing: gear.modifyDataProcessing,
-        modifyFirewall: gear.modifyFirewall,
-        addMatrixBoxes: gear.addMatrixBoxes,
-        renameCustomLabel: gear.renameCustomLabel,
+        ...(gear.deviceRating !== undefined && {
+          deviceRating: gear.deviceRating,
+        }),
+        ...(gear.programs !== undefined && { programs: gear.programs }),
+        ...(gear.attributeArray !== undefined && {
+          attributeArray: gear.attributeArray,
+        }),
+        ...(gear.attack !== undefined && { attack: gear.attack }),
+        ...(gear.sleaze !== undefined && { sleaze: gear.sleaze }),
+        ...(gear.dataProcessing !== undefined && {
+          dataProcessing: gear.dataProcessing,
+        }),
+        ...(gear.firewall !== undefined && { firewall: gear.firewall }),
+        ...(gear.canFormPersona !== undefined && {
+          canFormPersona: gear.canFormPersona,
+        }),
+        ...(gear.capacityInformation !== undefined && {
+          capacityInformation: gear.capacityInformation,
+        }),
+        ...(gear.armourCapacityInformation !== undefined && {
+          armourCapacityInformation: gear.armourCapacityInformation,
+        }),
+        ...(gear.requirements !== undefined && {
+          requirements: gear.requirements,
+        }),
+        ...(gear.requireParent !== undefined && {
+          requireParent: gear.requireParent,
+        }),
+        ...(gear.forbidden !== undefined && { forbidden: gear.forbidden }),
+        ...(gear.modifyAttributeArray !== undefined && {
+          modifyAttributeArray: gear.modifyAttributeArray,
+        }),
+        ...(gear.modifyAttack !== undefined && {
+          modifyAttack: gear.modifyAttack,
+        }),
+        ...(gear.modifySleaze !== undefined && {
+          modifySleaze: gear.modifySleaze,
+        }),
+        ...(gear.modifyDataProcessing !== undefined && {
+          modifyDataProcessing: gear.modifyDataProcessing,
+        }),
+        ...(gear.modifyFirewall !== undefined && {
+          modifyFirewall: gear.modifyFirewall,
+        }),
+        ...(gear.addMatrixBoxes !== undefined && {
+          addMatrixBoxes: gear.addMatrixBoxes,
+        }),
+        ...(gear.renameCustomLabel !== undefined && {
+          renameCustomLabel: gear.renameCustomLabel,
+        }),
         availability: gear.availability,
         cost: gear.cost,
         source: gear.source,
@@ -1472,27 +1736,54 @@ async function getQualities() {
       description: quality.description,
       category: quality.category,
       karma: quality.karma,
-      charGenOnly: quality.charGenOnly,
-      charGenLimit: quality.charGenLimit,
-      charGenDoNotContributeToKarmaLimit:
-        quality.charGenDoNotContributeToKarmaLimit,
-      charGenNoKarma: quality.charGenNoKarma,
-      chargenQualityOnly_NotSelectableIfPriorityChargen:
-        quality.chargenQualityOnly_NotSelectableIfPriorityChargen,
-      careerOnly: quality.careerOnly,
-      charGenCostInCareer: quality.charGenCostInCareer,
-      limit: quality.limit,
+      ...(quality.charGenOnly !== undefined && {
+        charGenOnly: quality.charGenOnly,
+      }),
+      ...(quality.charGenLimit !== undefined && {
+        charGenLimit: quality.charGenLimit,
+      }),
+      ...(quality.charGenDoNotContributeToKarmaLimit !== undefined && {
+        charGenDoNotContributeToKarmaLimit:
+          quality.charGenDoNotContributeToKarmaLimit,
+      }),
+      ...(quality.charGenNoKarma !== undefined && {
+        charGenNoKarma: quality.charGenNoKarma,
+      }),
+      ...(quality.chargenQualityOnly_NotSelectableIfPriorityChargen !==
+        undefined && {
+        chargenQualityOnly_NotSelectableIfPriorityChargen:
+          quality.chargenQualityOnly_NotSelectableIfPriorityChargen,
+      }),
+      ...(quality.careerOnly !== undefined && {
+        careerOnly: quality.careerOnly,
+      }),
+      ...(quality.charGenCostInCareer !== undefined && {
+        charGenCostInCareer: quality.charGenCostInCareer,
+      }),
+      ...(quality.limit !== undefined && { limit: quality.limit }),
       sharedLimitQualityList: includedQualitiesNameList,
-      karmaDiscount: quality.karmaDiscount,
-      noLevels: quality.noLevels,
-      firstLevelBonus: quality.firstLevelBonus,
+      ...(quality.karmaDiscount !== undefined && {
+        karmaDiscount: quality.karmaDiscount,
+      }),
+      ...(quality.noLevels !== undefined && { noLevels: quality.noLevels }),
+      ...(quality.firstLevelBonus !== undefined && {
+        firstLevelBonus: quality.firstLevelBonus,
+      }),
       addWeapons: includedWeaponsNameList,
-      isMetagenic: quality.isMetagenic,
-      canBuyWithSpellPoints: quality.canBuyWithSpellPoints,
-      userSelectable: quality.userSelectable,
-      bonus: bonus,
-      requirements: quality.requirements,
-      forbidden: quality.forbidden,
+      ...(quality.isMetagenic !== undefined && {
+        isMetagenic: quality.isMetagenic,
+      }),
+      ...(quality.canBuyWithSpellPoints !== undefined && {
+        canBuyWithSpellPoints: quality.canBuyWithSpellPoints,
+      }),
+      ...(quality.userSelectable !== undefined && {
+        userSelectable: quality.userSelectable,
+      }),
+      ...(bonus !== undefined && { bonus: bonus }),
+      ...(quality.requirements !== undefined && {
+        requirements: quality.requirements,
+      }),
+      ...(quality.forbidden !== undefined && { forbidden: quality.forbidden }),
       source: quality.source,
       page: quality.page,
     };
@@ -1612,7 +1903,9 @@ async function getHeritages() {
         name: heritage.name,
         ...typeInformation,
         pointBuyKarmaCost: heritage.pointBuyKarmaCost,
-        halveAttributePoints: heritage.halveAttributePoints,
+        ...(heritage.halveAttributePoints !== undefined && {
+          halveAttributePoints: heritage.halveAttributePoints,
+        }),
         bodyAttributeRange: heritage.bodyAttributeRange,
         agilityAttributeRange: heritage.agilityAttributeRange,
         reactionAttributeRange: heritage.reactionAttributeRange,
@@ -1627,9 +1920,13 @@ async function getHeritages() {
         resonanceAttributeRange: heritage.resonanceAttributeRange,
         essenceAttributeRange: heritage.essenceAttributeRange,
         depthAttributeRange: heritage.depthAttributeRange,
-        initiative: heritage.initiative,
-        nonStandardMovement: heritage.nonStandardMovement,
-        movement: heritage.movement,
+        ...(heritage.initiative !== undefined && {
+          initiative: heritage.initiative,
+        }),
+        ...(heritage.nonStandardMovement !== undefined && {
+          nonStandardMovement: heritage.nonStandardMovement,
+        }),
+        ...(heritage.movement !== undefined && { movement: heritage.movement }),
         addWeaponList: heritage.includedWeaponList.map((weapon) => weapon.name),
         addQualityList: heritage.includedQualityList.$.map((quality) => {
           return { name: quality.quality.$.name, rating: quality.rating };
@@ -1637,7 +1934,7 @@ async function getHeritages() {
         forbiddenQualityList: heritage.forbiddenQualityList.map(
           (quality) => quality.name
         ),
-        bonus: heritage.bonus,
+        ...(heritage.bonus !== undefined && { bonus: heritage.bonus }),
         source: heritage.source,
         page: heritage.page,
         description: heritage.description,
@@ -1918,27 +2215,24 @@ const all = privateProcedure.query(async () => {
     throw new Error("Database error");
   }
 });
-const CharacterInformationSchema = zod
-  .object({
-    // TODO: Maybe a union for this with other creation types?
-    priorityInfo: PriorityLevelsSchema,
-    heritageInfo: HeritagePrioritySelectedSchema,
-    attributeInfo: AttributesSchema,
-    specialAttributeInfo: SpecialAttributesSchema,
-    talentInfo: TalentInfoSchema,
-    positiveQualityListSelected: QualitySelectedListSchema,
-    negativeQualityListSelected: QualitySelectedListSchema,
-    skillSelections: CustomSkillListSchema,
-    skillGroupSelections: CustomSkillGroupListSchema,
-    martialArtSelected: zod.optional(MartialArtSelectedSchema),
-    equipmentSelections: SelectedEquipmentListSchema,
-    lifestyleSelections: LifestyleSelectedListSchema,
-    karmaPoints: zod.number(),
-    nuyen: zod.number(),
-    bonusInfo: CharacterCreatorBonusListSchema,
-  })
-  .strict();
-
+const CharacterInformationSchema = type({
+  // TODO: Maybe a union for this with other creation types?
+  priorityInfo: PriorityLevelsSchema,
+  heritageInfo: HeritagePrioritySelectedSchema,
+  attributeInfo: AttributesSchema,
+  specialAttributeInfo: SpecialAttributesSchema,
+  talentInfo: TalentInfoSchema,
+  positiveQualityListSelected: QualitySelectedListSchema,
+  negativeQualityListSelected: QualitySelectedListSchema,
+  skillSelections: CustomSkillListSchema,
+  skillGroupSelections: CustomSkillGroupListSchema,
+  "martialArtSelected?": MartialArtSelectedSchema,
+  equipmentSelections: SelectedEquipmentListSchema,
+  lifestyleSelections: LifestyleSelectedListSchema,
+  karmaPoints: "number",
+  nuyen: "number",
+  bonusInfo: CharacterCreatorBonusListSchema,
+});
 const createCharacter = privateProcedure
   .input(CharacterInformationSchema)
   .mutation(async (opts) => {
@@ -2471,7 +2765,7 @@ const getCharacterList = privateProcedure.query(async (opts) => {
 });
 
 const getCharacter = privateProcedure
-  .input(zod.string())
+  .input(type("string"))
   .query(async (opts) => {
     try {
       const { input } = opts;
@@ -2539,17 +2833,23 @@ const getCharacter = privateProcedure
               description: sourceMentorSpirit.description,
               advantage: sourceMentorSpirit.advantage,
               disadvantage: sourceMentorSpirit.disadvantage,
-              bonus: sourceMentorSpirit.bonus,
+              ...(sourceMentorSpirit.bonus !== undefined && {
+                bonus: sourceMentorSpirit.bonus,
+              }),
               source: sourceMentorSpirit.source,
               page: sourceMentorSpirit.page,
               category: mentorCategoryEnum.MentorSpirit as const,
               choices: talent.mentorSpirit.$.choices,
               choiceCount: sourceMentorSpirit.choiceCount,
-              required: sourceMentorSpirit.required,
+              ...(sourceMentorSpirit.required !== undefined && {
+                required: sourceMentorSpirit.required,
+              }),
             };
           }
 
-          let formulae: FormulaListSelectedType = { selectFormulae: false };
+          let formulae: FormulaListSelectedType = {
+            selectFormulae: false as const,
+          };
           // TODO: this assumes we selected at char gen,
           // there is probably a case where this isn't true
           // need to check based on char gen method e.g. priority
@@ -2590,7 +2890,7 @@ const getCharacter = privateProcedure
             selectedTradition: tradition,
             selectedFormulae: formulae,
             selectedAdeptPowers: adeptPowers,
-            selectedMentor: mentorSpirit,
+            ...(mentorSpirit !== undefined && { selectedMentor: mentorSpirit }),
           };
         } else if (character.talent.$ instanceof ActiveResonanceTalents) {
           const talent = await db.em.findOne(
@@ -2611,7 +2911,9 @@ const getCharacter = privateProcedure
               description: sourceParagon.description,
               advantage: sourceParagon.advantage,
               disadvantage: sourceParagon.disadvantage,
-              bonus: sourceParagon.bonus,
+              ...(sourceParagon.bonus !== undefined && {
+                bonus: sourceParagon.bonus,
+              }),
               source: sourceParagon.source,
               page: sourceParagon.page,
               category: mentorCategoryEnum.Paragon as const,
@@ -2622,7 +2924,7 @@ const getCharacter = privateProcedure
             complexForms: talent.complexFormList.$.map((complexForm) => {
               return complexForm.name;
             }),
-            selectedMentor: paragon,
+            ...(paragon !== undefined && { selectedMentor: paragon }),
           };
         } else if (character.talent.$ instanceof ActiveDepthTalents) {
           const talent = await db.em.findOne(
@@ -2821,13 +3123,17 @@ const convertActiveSkillDBToDTO = async function (
     ...(skillDB.skillGroup !== undefined && {
       skillGroup: skillDB.skillGroup.$.name,
     }),
-    specialisations: skillDB.defaultSpecialisations,
+    ...(skillDB.defaultSpecialisations !== undefined && {
+      specialisations: skillDB.defaultSpecialisations,
+    }),
     source: skillDB.source,
     page: skillDB.page,
 
     skillPoints: activeSkillDB.skillPoints,
     karmaPoints: activeSkillDB.karmaPoints,
-    specialisationsSelected: activeSkillDB.specialisationsSelected,
+    ...(activeSkillDB.specialisationsSelected !== undefined && {
+      specialisationsSelected: activeSkillDB.specialisationsSelected,
+    }),
   };
 };
 
@@ -2851,32 +3157,60 @@ const convertActiveQualityDBToDTO = async function (
     description: qualityDB.description,
     category: qualityDB.category,
     karma: qualityDB.karma,
-    charGenOnly: qualityDB.charGenOnly,
-    charGenLimit: qualityDB.charGenLimit,
-    charGenDoNotContributeToKarmaLimit:
-      qualityDB.charGenDoNotContributeToKarmaLimit,
-    charGenNoKarma: qualityDB.charGenNoKarma,
-    chargenQualityOnly_NotSelectableIfPriorityChargen:
-      qualityDB.chargenQualityOnly_NotSelectableIfPriorityChargen,
-    careerOnly: qualityDB.careerOnly,
-    charGenCostInCareer: qualityDB.charGenCostInCareer,
-    limit: qualityDB.limit,
+    ...(qualityDB.charGenOnly !== undefined && {
+      charGenOnly: qualityDB.charGenOnly,
+    }),
+    ...(qualityDB.charGenLimit !== undefined && {
+      charGenLimit: qualityDB.charGenLimit,
+    }),
+    ...(qualityDB.charGenDoNotContributeToKarmaLimit !== undefined && {
+      charGenDoNotContributeToKarmaLimit:
+        qualityDB.charGenDoNotContributeToKarmaLimit,
+    }),
+    ...(qualityDB.charGenNoKarma !== undefined && {
+      charGenNoKarma: qualityDB.charGenNoKarma,
+    }),
+    ...(qualityDB.chargenQualityOnly_NotSelectableIfPriorityChargen !==
+      undefined && {
+      chargenQualityOnly_NotSelectableIfPriorityChargen:
+        qualityDB.chargenQualityOnly_NotSelectableIfPriorityChargen,
+    }),
+    ...(qualityDB.careerOnly !== undefined && {
+      careerOnly: qualityDB.careerOnly,
+    }),
+    ...(qualityDB.charGenCostInCareer !== undefined && {
+      charGenCostInCareer: qualityDB.charGenCostInCareer,
+    }),
+    ...(qualityDB.limit !== undefined && { limit: qualityDB.limit }),
     sharedLimitQualityList: qualityDB.sharedLimitQualityList.$.map(
       (quality) => quality.name
     ),
-    karmaDiscount: qualityDB.karmaDiscount,
-    noLevels: qualityDB.noLevels,
-    firstLevelBonus: qualityDB.firstLevelBonus,
+    ...(qualityDB.karmaDiscount !== undefined && {
+      karmaDiscount: qualityDB.karmaDiscount,
+    }),
+    ...(qualityDB.noLevels !== undefined && { noLevels: qualityDB.noLevels }),
+    ...(qualityDB.firstLevelBonus !== undefined && {
+      firstLevelBonus: qualityDB.firstLevelBonus,
+    }),
     addWeapons: qualityDB.includedWeaponList.$.map((weapon) => weapon.name),
-    isMetagenic: qualityDB.isMetagenic,
-    canBuyWithSpellPoints: qualityDB.canBuyWithSpellPoints,
-    userSelectable: qualityDB.userSelectable,
-    bonus: bonus,
-    requirements: qualityDB.requirements,
-    forbidden: qualityDB.forbidden,
+    ...(qualityDB.isMetagenic !== undefined && {
+      isMetagenic: qualityDB.isMetagenic,
+    }),
+    ...(qualityDB.canBuyWithSpellPoints !== undefined && {
+      canBuyWithSpellPoints: qualityDB.canBuyWithSpellPoints,
+    }),
+    ...(qualityDB.userSelectable !== undefined && {
+      userSelectable: qualityDB.userSelectable,
+    }),
+    ...(bonus !== undefined && { bonus: bonus }),
+    ...(qualityDB.requirements !== undefined && {
+      requirements: qualityDB.requirements,
+    }),
+    ...(qualityDB.forbidden !== undefined && {
+      forbidden: qualityDB.forbidden,
+    }),
     source: qualityDB.source,
     page: qualityDB.page,
-
     rating: activeQualityDB.rating,
   };
 };
@@ -2900,18 +3234,30 @@ const convertActiveWeaponDBToDTO = async function (
   return {
     baseWeapon: convertedWeapon.name,
     accessoryList: convertedAccessories,
-    rating: activeWeaponDB.rating,
-    customName: activeWeaponDB.customName,
+    ...(activeWeaponDB.rating !== undefined && {
+      rating: activeWeaponDB.rating,
+    }),
+    ...(activeWeaponDB.customName !== undefined && {
+      customName: activeWeaponDB.customName,
+    }),
   };
 };
 
 const convertWeaponDBToDTO = async function (
   weaponDB: Weapons
 ): Promise<WeaponType> {
-  const hostWeaponRequirements = {
-    requirements: weaponDB.requirements,
-    hostWeaponMountsRequired: weaponDB.hostWeaponMountsRequired,
-  };
+  const hostWeaponRequirements =
+    weaponDB.requirements !== undefined &&
+    weaponDB.hostWeaponMountsRequired !== undefined
+      ? undefined
+      : {
+          ...(weaponDB.requirements !== undefined && {
+            requirements: weaponDB.requirements,
+          }),
+          ...(weaponDB.hostWeaponMountsRequired !== undefined && {
+            hostWeaponMountsRequired: weaponDB.hostWeaponMountsRequired,
+          }),
+        };
 
   const relatedSkill = await weaponDB.relatedSkill.load();
   if (relatedSkill === null) {
@@ -2924,30 +3270,42 @@ const convertWeaponDBToDTO = async function (
     name: weaponDB.name,
     ...weaponTypeInformation,
     description: weaponDB.description,
-    wireless: weaponDB.wireless,
+    ...(weaponDB.wireless !== undefined && { wireless: weaponDB.wireless }),
     concealability: weaponDB.concealability,
     accuracy: weaponDB.accuracy,
     damage: weaponDB.damage,
     armourPenetration: weaponDB.armourPenetration,
-    ammunition: weaponDB.ammunition,
+    ...(weaponDB.ammunition !== undefined && {
+      ammunition: weaponDB.ammunition,
+    }),
     allowedGearList: weaponDB.allowedGearList.map((gear) => {
       return gear.name;
     }),
-    allowedGearCategories: weaponDB.allowedGearCategories,
+    ...(weaponDB.allowedGearCategories !== undefined && {
+      allowedGearCategories: weaponDB.allowedGearCategories,
+    }),
     includedAccessoryList: await Promise.all(
       weaponDB.includedAccessoryList.map((accessory) => {
         return convertActiveWeaponAccessoryDBToDTO(accessory);
       })
     ),
     allowAccessories: weaponDB.allowAccessories,
-    userSelectable: weaponDB.userSelectable,
-    augmentationType: weaponDB.augmentationType,
+    ...(weaponDB.userSelectable !== undefined && {
+      userSelectable: weaponDB.userSelectable,
+    }),
+    ...(weaponDB.augmentationType !== undefined && {
+      augmentationType: weaponDB.augmentationType,
+    }),
     alternativeWeaponForms: weaponDB.alternativeWeaponForms.map((weapon) => {
       return weapon.name;
     }),
-    hostWeaponRequirements: hostWeaponRequirements,
+    ...(hostWeaponRequirements !== undefined && {
+      hostWeaponRequirements: hostWeaponRequirements,
+    }),
     relatedSkill: relatedSkill.name,
-    relatedSkillSpecialisations: weaponDB.relatedSkillSpecialisations,
+    ...(weaponDB.relatedSkillSpecialisations !== undefined && {
+      relatedSkillSpecialisations: weaponDB.relatedSkillSpecialisations,
+    }),
     availability: weaponDB.availability,
     cost: weaponDB.cost,
     source: weaponDB.source,
@@ -2968,7 +3326,9 @@ const convertWeaponDBTypeInformationToDTO = function (weaponDB: Weapons) {
     return {
       type: weaponTypeEnum.Projectile as const,
       subtype: weaponDB.subtype,
-      extraClassification: weaponDB.extraClassification,
+      ...(weaponDB.extraClassification !== undefined && {
+        extraClassification: weaponDB.extraClassification,
+      }),
       rangeList: weaponDB.ranges.map((range) => {
         return range.name;
       }),
@@ -2977,19 +3337,27 @@ const convertWeaponDBTypeInformationToDTO = function (weaponDB: Weapons) {
     return {
       type: weaponTypeEnum.Firearm as const,
       subtype: weaponDB.subtype,
-      extraClassification: weaponDB.extraClassification,
+      ...(weaponDB.extraClassification !== undefined && {
+        extraClassification: weaponDB.extraClassification,
+      }),
       firearmOptions: {
         mode: weaponDB.mode,
         recoilCompensation: weaponDB.recoilCompensation,
-        ammoCategory: weaponDB.ammoCategory,
+        ...(weaponDB.ammoCategory !== undefined && {
+          ammoCategory: weaponDB.ammoCategory,
+        }),
         ammoSlots: weaponDB.ammoSlots,
         ...(weaponDB.underbarrelWeapons.length > 0 && {
           underbarrelWeapons: weaponDB.underbarrelWeapons.map((weapon) => {
             return weapon.name;
           }),
         }),
-        accessoryMounts: weaponDB.accessoryMounts,
-        doubleCostAccessoryMounts: weaponDB.doubleCostAccessoryMounts,
+        ...(weaponDB.accessoryMounts !== undefined && {
+          accessoryMounts: weaponDB.accessoryMounts,
+        }),
+        ...(weaponDB.doubleCostAccessoryMounts !== undefined && {
+          doubleCostAccessoryMounts: weaponDB.doubleCostAccessoryMounts,
+        }),
       },
       rangeList: weaponDB.ranges.map((range) => {
         return range.name;
@@ -3029,7 +3397,9 @@ const convertActiveWeaponAccessoryDBToDTO = async function (
   return {
     baseAccessory: weaponAccessoryDB.name,
     mountList: includedAccessoryDB.weaponMountsUsed,
-    rating: includedAccessoryDB.rating,
+    ...(includedAccessoryDB.rating !== undefined && {
+      rating: includedAccessoryDB.rating,
+    }),
     gearList: await Promise.all(
       includedAccessoryDB.includedGearList.map(async (gear) => {
         return await convertActiveGearDBToDTO(gear);
@@ -3062,7 +3432,9 @@ const convertActiveArmourDBToDTO = async function (
     baseArmour: armourDB.name,
     modList: modList,
     gearList: gearList,
-    customName: activeArmourDB.customName,
+    ...(activeArmourDB.customName !== undefined && {
+      customName: activeArmourDB.customName,
+    }),
   };
 };
 
@@ -3088,7 +3460,7 @@ const convertActiveArmourModDBToDTO = async function (
   return {
     baseMod: modDB.armourModification.$.name,
     gearList: gearList,
-    rating: modDB.rating,
+    ...(modDB.rating !== undefined && { rating: modDB.rating }),
   };
 };
 
@@ -3118,19 +3490,27 @@ export const convertArmourDBToDTO = async function (
     name: armourDB.name,
     description: armourDB.description,
     category: armourDB.category,
-    maxRating: armourDB.maxRating,
+    ...(armourDB.maxRating !== undefined && { maxRating: armourDB.maxRating }),
     damageReduction: armourDB.damageReduction,
-    customFitStackDamageReduction: armourDB.customFitStackDamageReduction,
+    ...(armourDB.customFitStackDamageReduction !== undefined && {
+      customFitStackDamageReduction: armourDB.customFitStackDamageReduction,
+    }),
     capacity: armourDB.capacity,
     ...(armourDB.linkedWeapon !== undefined && { isWeapon: true }),
     // TODO: add
     // includedGearList: armourDB.includedGearList,
-    bonus: armourDB.bonus,
-    wirelessBonus: armourDB.wirelessBonus,
+    ...(armourDB.bonus !== undefined && { bonus: armourDB.bonus }),
+    ...(armourDB.wirelessBonus !== undefined && {
+      wirelessBonus: armourDB.wirelessBonus,
+    }),
     // TODO: Add
     // includedMods: armourDB.includedMods,
-    allowModsFromCategory: armourDB.allowModsFromCategory,
-    addModFromCategory: armourDB.addModFromCategory,
+    ...(armourDB.allowModsFromCategory !== undefined && {
+      allowModsFromCategory: armourDB.allowModsFromCategory,
+    }),
+    ...(armourDB.addModFromCategory !== undefined && {
+      addModFromCategory: armourDB.addModFromCategory,
+    }),
     availability: armourDB.availability,
     cost: armourDB.cost,
     source: armourDB.source,
@@ -3156,10 +3536,18 @@ const convertActiveGearDBToDTO = async function (
         return await convertActiveGearDBToDTO(childGear);
       })
     ),
-    specificOption: customisedGearDB.specificOption,
-    rating: customisedGearDB.rating,
-    consumeCapacity: customisedGearDB.consumeCapacity,
-    currentQuantity: customisedGearDB.currentQuantity,
+    ...(customisedGearDB.specificOption !== undefined && {
+      specificOption: customisedGearDB.specificOption,
+    }),
+    ...(customisedGearDB.rating !== undefined && {
+      rating: customisedGearDB.rating,
+    }),
+    ...(customisedGearDB.consumeCapacity !== undefined && {
+      consumeCapacity: customisedGearDB.consumeCapacity,
+    }),
+    ...(customisedGearDB.currentQuantity !== undefined && {
+      currentQuantity: customisedGearDB.currentQuantity,
+    }),
   };
 };
 
@@ -3189,19 +3577,37 @@ export const convertGearDBToDTO = async function (
     name: gearDB.name,
     description: gearDB.description,
     category: gearDB.category,
-    minRating: gearDB.minRating,
-    maxRating: gearDB.maxRating,
-    ratingMeaning: gearDB.ratingMeaning,
-    includedWeapon: includedWeapon,
-    allowCategoryList: gearDB.allowCategoryList,
-    purchaseQuantity: gearDB.purchaseQuantity,
-    bonus: gearDB.bonus,
-    weaponBonus: gearDB.weaponBonus,
-    isFlechetteAmmo: gearDB.isFlechetteAmmo,
-    flechetteWeaponBonus: gearDB.flechetteWeaponBonus,
-    ammoForWeaponType: gearDB.ammoForWeaponType,
-    explosiveWeight: gearDB.explosiveWeight,
-    userSelectable: gearDB.userSelectable,
+    ...(gearDB.minRating !== undefined && { minRating: gearDB.minRating }),
+    ...(gearDB.maxRating !== undefined && { maxRating: gearDB.maxRating }),
+    ...(gearDB.ratingMeaning !== undefined && {
+      ratingMeaning: gearDB.ratingMeaning,
+    }),
+    ...(includedWeapon !== undefined && { includedWeapon: includedWeapon }),
+    ...(gearDB.allowCategoryList !== undefined && {
+      allowCategoryList: gearDB.allowCategoryList,
+    }),
+    ...(gearDB.purchaseQuantity !== undefined && {
+      purchaseQuantity: gearDB.purchaseQuantity,
+    }),
+    ...(gearDB.bonus !== undefined && { bonus: gearDB.bonus }),
+    ...(gearDB.weaponBonus !== undefined && {
+      weaponBonus: gearDB.weaponBonus,
+    }),
+    ...(gearDB.isFlechetteAmmo !== undefined && {
+      isFlechetteAmmo: gearDB.isFlechetteAmmo,
+    }),
+    ...(gearDB.flechetteWeaponBonus !== undefined && {
+      flechetteWeaponBonus: gearDB.flechetteWeaponBonus,
+    }),
+    ...(gearDB.ammoForWeaponType !== undefined && {
+      ammoForWeaponType: gearDB.ammoForWeaponType,
+    }),
+    ...(gearDB.explosiveWeight !== undefined && {
+      explosiveWeight: gearDB.explosiveWeight,
+    }),
+    ...(gearDB.userSelectable !== undefined && {
+      userSelectable: gearDB.userSelectable,
+    }),
     allowedGearList: gearDB.allowedGearList.map((gear) => {
       return gear.name;
     }),
@@ -3210,26 +3616,56 @@ export const convertGearDBToDTO = async function (
         return convertActiveGearDBToDTO(gear);
       })
     ),
-    deviceRating: gearDB.deviceRating,
-    programs: gearDB.programs,
-    attributeArray: gearDB.attributeArray,
-    attack: gearDB.attack,
-    sleaze: gearDB.sleaze,
-    dataProcessing: gearDB.dataProcessing,
-    firewall: gearDB.firewall,
-    canFormPersona: gearDB.canFormPersona,
-    capacityInformation: gearDB.capacityInformation,
-    armourCapacityInformation: gearDB.armourCapacityInformation,
-    requirements: gearDB.requirements,
-    requireParent: gearDB.requireParent,
-    forbidden: gearDB.forbidden,
-    modifyAttributeArray: gearDB.modifyAttributeArray,
-    modifyAttack: gearDB.modifyAttack,
-    modifySleaze: gearDB.modifySleaze,
-    modifyDataProcessing: gearDB.modifyDataProcessing,
-    modifyFirewall: gearDB.modifyFirewall,
-    addMatrixBoxes: gearDB.addMatrixBoxes,
-    renameCustomLabel: gearDB.renameCustomLabel,
+    ...(gearDB.deviceRating !== undefined && {
+      deviceRating: gearDB.deviceRating,
+    }),
+    ...(gearDB.programs !== undefined && { programs: gearDB.programs }),
+    ...(gearDB.attributeArray !== undefined && {
+      attributeArray: gearDB.attributeArray,
+    }),
+    ...(gearDB.attack !== undefined && { attack: gearDB.attack }),
+    ...(gearDB.sleaze !== undefined && { sleaze: gearDB.sleaze }),
+    ...(gearDB.dataProcessing !== undefined && {
+      dataProcessing: gearDB.dataProcessing,
+    }),
+    ...(gearDB.firewall !== undefined && { firewall: gearDB.firewall }),
+    ...(gearDB.canFormPersona !== undefined && {
+      canFormPersona: gearDB.canFormPersona,
+    }),
+    ...(gearDB.capacityInformation !== undefined && {
+      capacityInformation: gearDB.capacityInformation,
+    }),
+    ...(gearDB.armourCapacityInformation !== undefined && {
+      armourCapacityInformation: gearDB.armourCapacityInformation,
+    }),
+    ...(gearDB.requirements !== undefined && {
+      requirements: gearDB.requirements,
+    }),
+    ...(gearDB.requireParent !== undefined && {
+      requireParent: gearDB.requireParent,
+    }),
+    ...(gearDB.forbidden !== undefined && { forbidden: gearDB.forbidden }),
+    ...(gearDB.modifyAttributeArray !== undefined && {
+      modifyAttributeArray: gearDB.modifyAttributeArray,
+    }),
+    ...(gearDB.modifyAttack !== undefined && {
+      modifyAttack: gearDB.modifyAttack,
+    }),
+    ...(gearDB.modifySleaze !== undefined && {
+      modifySleaze: gearDB.modifySleaze,
+    }),
+    ...(gearDB.modifyDataProcessing !== undefined && {
+      modifyDataProcessing: gearDB.modifyDataProcessing,
+    }),
+    ...(gearDB.modifyFirewall !== undefined && {
+      modifyFirewall: gearDB.modifyFirewall,
+    }),
+    ...(gearDB.addMatrixBoxes !== undefined && {
+      addMatrixBoxes: gearDB.addMatrixBoxes,
+    }),
+    ...(gearDB.renameCustomLabel !== undefined && {
+      renameCustomLabel: gearDB.renameCustomLabel,
+    }),
     availability: gearDB.availability,
     cost: gearDB.cost,
     source: gearDB.source,
@@ -3283,23 +3719,43 @@ export const convertAugmentationDBToDTO = async function (
     ...typeInformation,
     name: augmentationDB.name,
     description: augmentationDB.description,
-    wireless: augmentationDB.wireless,
-    augmentationLimit: augmentationDB.augmentationLimit,
-    unavailableGrades: augmentationDB.unavailableGrades,
+    ...(augmentationDB.wireless !== undefined && {
+      wireless: augmentationDB.wireless,
+    }),
+    ...(augmentationDB.augmentationLimit !== undefined && {
+      augmentationLimit: augmentationDB.augmentationLimit,
+    }),
+    ...(augmentationDB.unavailableGrades !== undefined && {
+      unavailableGrades: augmentationDB.unavailableGrades,
+    }),
     essenceCost: augmentationDB.essenceCost,
-    modification: augmentationDB.modification,
+    ...(augmentationDB.modification !== undefined && {
+      modification: augmentationDB.modification,
+    }),
     rating: augmentationDB.rating,
-    ratingMeaning: augmentationDB.ratingMeaning,
-    addWeapon: addWeapon,
-    blockedMountList: augmentationDB.blockedMountList,
-    selectSide: augmentationDB.selectSide,
-    bonus: augmentationDB.bonus,
-    pairBonus: augmentationDB.pairBonus,
+    ...(augmentationDB.ratingMeaning !== undefined && {
+      ratingMeaning: augmentationDB.ratingMeaning,
+    }),
+    ...(addWeapon !== undefined && { addWeapon: addWeapon }),
+    ...(augmentationDB.blockedMountList !== undefined && {
+      blockedMountList: augmentationDB.blockedMountList,
+    }),
+    ...(augmentationDB.selectSide !== undefined && {
+      selectSide: augmentationDB.selectSide,
+    }),
+    ...(augmentationDB.bonus !== undefined && { bonus: augmentationDB.bonus }),
+    ...(augmentationDB.pairBonus !== undefined && {
+      pairBonus: augmentationDB.pairBonus,
+    }),
     pairIncludeList: augmentationDB.pairIncludeList.map((augmentation) => {
       return augmentation.name;
     }),
-    requirements: augmentationDB.requirements,
-    forbidden: augmentationDB.forbidden,
+    ...(augmentationDB.requirements !== undefined && {
+      requirements: augmentationDB.requirements,
+    }),
+    ...(augmentationDB.forbidden !== undefined && {
+      forbidden: augmentationDB.forbidden,
+    }),
     allowedGearList: augmentationDB.allowedGearList.map((gear) => {
       return gear.name;
     }),
@@ -3312,9 +3768,15 @@ export const convertAugmentationDBToDTO = async function (
         return await convertActiveGearDBToDTO(gear);
       })
     ),
-    allowedGearCategories: augmentationDB.allowedGearCategories,
-    userSelectable: augmentationDB.userSelectable,
-    allowSubsystemCategoryList: augmentationDB.allowSubsystemCategoryList,
+    ...(augmentationDB.allowedGearCategories !== undefined && {
+      allowedGearCategories: augmentationDB.allowedGearCategories,
+    }),
+    ...(augmentationDB.userSelectable !== undefined && {
+      userSelectable: augmentationDB.userSelectable,
+    }),
+    ...(augmentationDB.allowSubsystemCategoryList !== undefined && {
+      allowSubsystemCategoryList: augmentationDB.allowSubsystemCategoryList,
+    }),
     availability: augmentationDB.availability,
     cost: augmentationDB.cost,
     source: augmentationDB.source,
@@ -3336,27 +3798,61 @@ const convertAugmentationTypeInformation = async function (
     return {
       type: augmentationTypeEnum.Cyberware as const,
       subtype: augmentationDB.subtype,
-      programs: augmentationDB.programs,
-      capacity: augmentationDB.capacity,
-      capacityCost: augmentationDB.capacityCost,
-      addToParentCapacity: augmentationDB.addToParentCapacity,
-      addParentWeaponAccessory: augmentationDB.addParentWeaponAccessory,
-      removalCost: augmentationDB.removalCost,
-      inheritAttributes: augmentationDB.inheritAttributes,
-      limbSlot: augmentationDB.limbSlot,
-      useBothLimbSlots: augmentationDB.useBothLimbSlots,
-      mountsLocation: augmentationDB.mountsLocation,
-      modularMount: augmentationDB.modularMount,
-      wirelessBonus: augmentationDB.wirelessBonus,
-      wirelessPairBonus: augmentationDB.wirelessPairBonus,
+      ...(augmentationDB.programs !== undefined && {
+        programs: augmentationDB.programs,
+      }),
+      ...(augmentationDB.capacity !== undefined && {
+        capacity: augmentationDB.capacity,
+      }),
+      ...(augmentationDB.capacityCost !== undefined && {
+        capacityCost: augmentationDB.capacityCost,
+      }),
+      ...(augmentationDB.addToParentCapacity !== undefined && {
+        addToParentCapacity: augmentationDB.addToParentCapacity,
+      }),
+      ...(augmentationDB.addParentWeaponAccessory !== undefined && {
+        addParentWeaponAccessory: augmentationDB.addParentWeaponAccessory,
+      }),
+      ...(augmentationDB.removalCost !== undefined && {
+        removalCost: augmentationDB.removalCost,
+      }),
+      ...(augmentationDB.inheritAttributes !== undefined && {
+        inheritAttributes: augmentationDB.inheritAttributes,
+      }),
+      ...(augmentationDB.limbSlot !== undefined && {
+        limbSlot: augmentationDB.limbSlot,
+      }),
+      ...(augmentationDB.useBothLimbSlots !== undefined && {
+        useBothLimbSlots: augmentationDB.useBothLimbSlots,
+      }),
+      ...(augmentationDB.mountsLocation !== undefined && {
+        mountsLocation: augmentationDB.mountsLocation,
+      }),
+      ...(augmentationDB.modularMount !== undefined && {
+        modularMount: augmentationDB.modularMount,
+      }),
+      ...(augmentationDB.wirelessBonus !== undefined && {
+        wirelessBonus: augmentationDB.wirelessBonus,
+      }),
+      ...(augmentationDB.wirelessPairBonus !== undefined && {
+        wirelessPairBonus: augmentationDB.wirelessPairBonus,
+      }),
       ...(augmentationDB.wirelessPairLinkedCyberware !== undefined && {
         wirelessPairInclude: augmentationDB.wirelessPairLinkedCyberware.name,
       }),
-      subsystemList: augmentationDB.subsystemList,
-      forceGrade: augmentationDB.forceGrade,
-      deviceRating: augmentationDB.deviceRating,
-      addVechicle: addVechicle,
-      wireless: augmentationDB.wireless,
+      ...(augmentationDB.subsystemList !== undefined && {
+        subsystemList: augmentationDB.subsystemList,
+      }),
+      ...(augmentationDB.forceGrade !== undefined && {
+        forceGrade: augmentationDB.forceGrade,
+      }),
+      ...(augmentationDB.deviceRating !== undefined && {
+        deviceRating: augmentationDB.deviceRating,
+      }),
+      ...(addVechicle !== undefined && { addVechicle: addVechicle }),
+      ...(augmentationDB.wireless !== undefined && {
+        wireless: augmentationDB.wireless,
+      }),
     };
   } else if (augmentationDB instanceof Biowares) {
     return {
@@ -3393,7 +3889,7 @@ const convertActiveVehicleModDBToDTO = async function (
   return {
     baseMod: modDB.vehicleModification.$.name,
     subsystemList: subsystemList,
-    rating: modDB.rating,
+    ...(modDB.rating !== undefined && { rating: modDB.rating }),
   };
 };
 const convertActiveVehicleDBToDTO = async function (
@@ -3418,7 +3914,9 @@ const convertActiveVehicleDBToDTO = async function (
         return convertActiveWeaponMountDBToDTO(weaponMount);
       })
     ),
-    customName: activeVehicleDB.customName,
+    ...(activeVehicleDB.customName !== undefined && {
+      customName: activeVehicleDB.customName,
+    }),
   };
 };
 const convertActiveWeaponMountDBToDTO = async function (
@@ -3441,7 +3939,7 @@ const convertActiveWeaponMountDBToDTO = async function (
   }
   let weaponMounted;
   if (weaponId !== undefined) {
-    const weaponMounted = await db.em.findOne(WeaponMountWeapons, weaponId, {
+    weaponMounted = await db.em.findOne(WeaponMountWeapons, weaponId, {
       populate: ["*"],
     });
     if (weaponMounted === null) {
@@ -3455,7 +3953,9 @@ const convertActiveWeaponMountDBToDTO = async function (
     size: weaponMountDB.size,
     visibility: weaponMountDB.visibility,
     weaponExchangeable: activeWeaponMountDB.weaponExchangeable,
-    weaponMounted: weaponMounted,
+    ...(weaponMounted !== undefined && {
+      weaponMounted: await convertActiveWeaponDBToDTO(weaponMounted),
+    }),
     weaponMountModList: activeWeaponMountDB.mountMods.map((mod) => {
       return mod.name;
     }),
@@ -3495,21 +3995,35 @@ export const convertVehicleDBToDTO = async function (
         return {
           baseMod: loadedMod.name,
           // TODO: fix all these conversions up to include all the missing
-          rating: mod.rating,
+          ...(mod.rating !== undefined && { rating: mod.rating }),
         };
       })
     ),
-    modSlots: vehicleDB.modSlots,
-    powerTrainModSlots: vehicleDB.powerTrainModSlots,
-    protectionModSlots: vehicleDB.protectionModSlots,
-    weaponModSlots: vehicleDB.weaponModSlots,
-    bodyModSlots: vehicleDB.bodyModSlots,
-    electromagneticModSlots: vehicleDB.electromagneticModSlots,
-    cosmeticModSlots: vehicleDB.cosmeticModSlots,
+    ...(vehicleDB.modSlots !== undefined && { modSlots: vehicleDB.modSlots }),
+    ...(vehicleDB.powerTrainModSlots !== undefined && {
+      powerTrainModSlots: vehicleDB.powerTrainModSlots,
+    }),
+    ...(vehicleDB.protectionModSlots !== undefined && {
+      protectionModSlots: vehicleDB.protectionModSlots,
+    }),
+    ...(vehicleDB.weaponModSlots !== undefined && {
+      weaponModSlots: vehicleDB.weaponModSlots,
+    }),
+    ...(vehicleDB.bodyModSlots !== undefined && {
+      bodyModSlots: vehicleDB.bodyModSlots,
+    }),
+    ...(vehicleDB.electromagneticModSlots !== undefined && {
+      electromagneticModSlots: vehicleDB.electromagneticModSlots,
+    }),
+    ...(vehicleDB.cosmeticModSlots !== undefined && {
+      cosmeticModSlots: vehicleDB.cosmeticModSlots,
+    }),
     // TODO: add
     // weaponList: vehicleDB.weaponList,
     // weaponMountList: vehicleDB.weaponMountList,
-    userSelectable: vehicleDB.userSelectable,
+    ...(vehicleDB.userSelectable !== undefined && {
+      userSelectable: vehicleDB.userSelectable,
+    }),
     availability: vehicleDB.availability,
     cost: vehicleDB.cost,
     source: vehicleDB.source,
@@ -3564,12 +4078,16 @@ const convertActiveMartialArtDBToDTO = async function (
   }
   const martialArt = {
     name: martialArtDB.name,
-    bonus: martialArtDB.bonus,
+    ...(martialArtDB.bonus !== undefined && { bonus: martialArtDB.bonus }),
     techniqueList: martialArtDB.techniqueList.$.map((technique) => {
       return technique.name;
     }),
-    karmaCost: martialArtDB.karmaCost,
-    requirements: martialArtDB.requirements,
+    ...(martialArtDB.karmaCost !== undefined && {
+      karmaCost: martialArtDB.karmaCost,
+    }),
+    ...(martialArtDB.requirements !== undefined && {
+      requirements: martialArtDB.requirements,
+    }),
     description: martialArtDB.description,
     source: martialArtDB.source,
     page: martialArtDB.page,
@@ -3578,8 +4096,10 @@ const convertActiveMartialArtDBToDTO = async function (
     (technique) => {
       return {
         name: technique.name,
-        bonus: technique.bonus,
-        requirements: technique.requirements,
+        ...(technique.bonus !== undefined && { bonus: technique.bonus }),
+        ...(technique.requirements !== undefined && {
+          requirements: technique.requirements,
+        }),
         description: technique.description,
         source: technique.source,
         page: technique.page,
@@ -3611,16 +4131,26 @@ const convertActiveLifestyleDBToDTO = async function (
     name: lifestyleDB.name,
     cost: lifestyleDB.cost,
     lifestylePoints: lifestyleDB.lifestylePoints,
-    allowBonusLifestylePoints: lifestyleDB.allowBonusLifestylePoints,
+    ...(lifestyleDB.allowBonusLifestylePoints !== undefined && {
+      allowBonusLifestylePoints: lifestyleDB.allowBonusLifestylePoints,
+    }),
     freegridList: lifestyleDB.freegridList,
     dice: lifestyleDB.dice,
     startingNuyenMultiplier: lifestyleDB.startingNuyenMultiplier,
-    costIncreasePerCategoryLevelIncrease:
-      lifestyleDB.costIncreasePerCategoryLevelIncrease,
-    lifestyleCategoryDefaults: lifestyleDB.lifestyleCategoryDefaults,
-    bonus: lifestyleDB.bonus,
-    requirements: lifestyleDB.requirements,
-    forbidden: lifestyleDB.forbidden,
+    ...(lifestyleDB.costIncreasePerCategoryLevelIncrease !== undefined && {
+      costIncreasePerCategoryLevelIncrease:
+        lifestyleDB.costIncreasePerCategoryLevelIncrease,
+    }),
+    ...(lifestyleDB.lifestyleCategoryDefaults !== undefined && {
+      lifestyleCategoryDefaults: lifestyleDB.lifestyleCategoryDefaults,
+    }),
+    ...(lifestyleDB.bonus !== undefined && { bonus: lifestyleDB.bonus }),
+    ...(lifestyleDB.requirements !== undefined && {
+      requirements: lifestyleDB.requirements,
+    }),
+    ...(lifestyleDB.forbidden !== undefined && {
+      forbidden: lifestyleDB.forbidden,
+    }),
     source: lifestyleDB.source,
     page: lifestyleDB.page,
     description: lifestyleDB.description,
@@ -3632,16 +4162,24 @@ const convertActiveLifestyleDBToDTO = async function (
         category: lifestyleQuality.category,
         monthlyCost: lifestyleQuality.monthlyCost,
         lifestylePointCost: lifestyleQuality.lifestylePointCost,
-        lifestyleCostMultiplier: lifestyleQuality.lifestyleCostMultiplier,
+        ...(lifestyleQuality.lifestyleCostMultiplier !== undefined && {
+          lifestyleCostMultiplier: lifestyleQuality.lifestyleCostMultiplier,
+        }),
         requiredLifestyleList: lifestyleQuality.requiredLifestyleList.map(
           (lifestyle) => {
             return lifestyle.name;
           }
         ),
         multipleAllowed: lifestyleQuality.multipleAllowed,
-        bonus: lifestyleQuality.bonus,
-        requirements: lifestyleQuality.requirements,
-        forbidden: lifestyleQuality.forbidden,
+        ...(lifestyleQuality.bonus !== undefined && {
+          bonus: lifestyleQuality.bonus,
+        }),
+        ...(lifestyleQuality.requirements !== undefined && {
+          requirements: lifestyleQuality.requirements,
+        }),
+        ...(lifestyleQuality.forbidden !== undefined && {
+          forbidden: lifestyleQuality.forbidden,
+        }),
         source: lifestyleQuality.source,
         page: lifestyleQuality.page,
         description: lifestyleQuality.description,
@@ -3741,7 +4279,9 @@ function parsePriority(
       name: heritage.linkedHeritage.$.name,
       specialAttributePoints: heritage.specialAttributePoints,
       karmaCost: heritage.karmaCost,
-      metavariantList: metavariantList,
+      ...(metavariantList !== undefined && {
+        metavariantList: metavariantList,
+      }),
     };
   });
 
@@ -3755,10 +4295,9 @@ function parsePriority(
           return skill.name;
         }),
       };
-    }
-    let includedSkillSource;
-    if (talent.includedSkillSource !== undefined) {
-      includedSkillSource = {
+      // TODO: these are all empty, take a look...
+    } else if (talent.includedSkillSource !== undefined) {
+      includedSkills = {
         points: talent.includedSkillSource.points,
         rating: talent.includedSkillSource.rating,
         source: talent.includedSkillSource.source,
@@ -3778,11 +4317,17 @@ function parsePriority(
     const baseTalent = {
       name: talent.name,
       label: talent.label,
-      includedQuality: talent.includedQuality?.$.name,
-      includedSkills: includedSkills || includedSkillSource,
-      includedSkillGroups: includedSkillGroups,
-      required: talent.requirements,
-      forbidden: talent.forbidden,
+      ...(talent.includedQuality !== undefined && {
+        includedQuality: talent.includedQuality.$.name,
+      }),
+      ...(includedSkills !== undefined && { includedSkills: includedSkills }),
+      ...(includedSkillGroups !== undefined && {
+        includedSkillGroups: includedSkillGroups,
+      }),
+      ...(talent.requirements !== undefined && {
+        required: talent.requirements,
+      }),
+      ...(talent.forbidden !== undefined && { forbidden: talent.forbidden }),
     };
 
     if (talent instanceof MagicTalentPriorityDetails) {
@@ -3790,7 +4335,7 @@ function parsePriority(
         ...baseTalent,
         category: talentCategoryEnum.Magic as const,
         magic: talent.magic,
-        formulae: talent.formulae,
+        ...(talent.formulae !== undefined && { formulae: talent.formulae }),
       };
     } else if (talent instanceof ResonanceTalentPriorityDetails) {
       return {

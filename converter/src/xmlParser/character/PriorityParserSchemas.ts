@@ -4,7 +4,7 @@ import {
   heritageCategoryEnum,
   priorityTableRunnerLevelEnum,
 } from "@neon-codex/common/build/enums.js";
-import { z as zod } from "zod";
+
 import { StringArrayOrStringSchema } from "../common/ParserCommonDefines.js";
 import {
   AttributePrioritySchema,
@@ -13,212 +13,166 @@ import {
   SkillPrioritySchema,
   TalentOptionsPrioritySchema,
 } from "@neon-codex/common/build/schemas/otherData/prioritySchemas.js";
+import { type } from "arktype";
 
-const PriorityBaseXmlSchema = zod
-  .object({
-    id: zod.string(),
-    name: zod.string(),
-    // Related attribute
-    value: zod.nativeEnum(priorityLetterEnum),
-  })
-  .strict();
-
-const PriorityMetavariantXmlSchema = zod
-  .object({
-    name: zod.string(),
-    value: zod.number(),
-    karma: zod.number(),
-  })
-  .strict();
-
-const PriorityMetatypeXmlSchema = zod
-  .object({
-    name: zod.string(),
-    value: zod.number(),
-    karma: zod.number(),
-    metavariants: zod.optional(
-      zod.union([
-        zod
-          .object({
-            metavariant: zod.union([
-              zod.array(PriorityMetavariantXmlSchema),
-              PriorityMetavariantXmlSchema,
-            ]),
-          })
-          .strict(),
-        zod.literal(""),
-      ])
-    ),
-  })
-  .strict();
-
-const HeritageXmlSchema = PriorityBaseXmlSchema.extend({
-  category: zod.literal(priorityCategoryEnum.Heritage),
-  metatypes: zod
-    .object({
-      metatype: zod.union([
-        zod.array(PriorityMetatypeXmlSchema),
-        PriorityMetatypeXmlSchema,
-      ]),
-    })
-    .strict(),
-}).strict();
-export type HeritageXmlType = zod.infer<typeof HeritageXmlSchema>;
-
-const TalentXmlSchema = PriorityBaseXmlSchema.extend({
-  category: zod.literal(priorityCategoryEnum.Talent),
-  talents: zod
-    .object({
-      talent: zod.array(
-        zod
-          .object({
-            name: zod.string(),
-            value: zod.string(),
-            qualities: zod.optional(
-              zod
-                .object({
-                  quality: zod.string(),
-                })
-                .strict()
-            ),
-            magic: zod.optional(zod.number()),
-            spells: zod.optional(zod.number()),
-            resonance: zod.optional(zod.number()),
-            // Complex forms
-            cfp: zod.optional(zod.number()),
-            depth: zod.optional(zod.number()),
-            // Number of free skills of the type in skill type
-            skillqty: zod.optional(zod.number()),
-            // Rating of skills
-            skillval: zod.optional(zod.number()),
-            // The type of free skills given
-            skilltype: zod.optional(
-              zod.union([
-                zod.literal("resonance"),
-                zod.literal("matrix"),
-                // Look at skill choices
-                zod.literal("specific"),
-                zod.literal("magic"),
-                zod
-                  .object({
-                    _xpath: zod.literal(
-                      "not(attribute = 'RES' or attribute = 'DEP') and (not(category = 'Magical Active') or skillgroup = '' or not(skillgroup))"
-                    ),
-                    xmltext: zod.literal("xpath"),
-                  })
-                  .strict(),
-              ])
-            ),
-            // Used for the "specific" skilltype
-            skillchoices: zod.optional(
-              zod.object({ skill: zod.array(zod.string()) }).strict()
-            ),
-            // Number of free skill group points
-            skillgroupqty: zod.optional(zod.number()),
-            // Rating of skill group
-            skillgroupval: zod.optional(zod.number()),
-            // This seems kinda redundant as is only ever grouped..
-            skillgrouptype: zod.optional(zod.literal("grouped")),
-            // Choices when using skill groups
-            skillgroupchoices: zod.optional(
-              zod
-                .object({
-                  skillgroup: StringArrayOrStringSchema,
-                })
-                .strict()
-            ),
-            required: zod.optional(
-              zod
-                .object({
-                  oneof: zod.union([
-                    zod
-                      .object({
-                        metatypecategory: zod.literal(
-                          heritageCategoryEnum.Metahuman
-                        ),
-                      })
-                      .strict(),
-                    zod
-                      .object({
-                        metatype: zod.literal("A.I."),
-                      })
-                      .strict(),
-                  ]),
-                })
-                .strict()
-            ),
-            forbidden: zod.optional(
-              zod
-                .object({
-                  oneof: zod
-                    .object({
-                      metatype: zod.literal("A.I."),
-                    })
-                    .strict(),
-                })
-                .strict()
-            ),
-          })
-          .strict()
+const PriorityBaseXmlSchema = type({
+  id: "string",
+  name: "string",
+  // Related attribute
+  value: type.valueOf(priorityLetterEnum),
+});
+const PriorityMetavariantXmlSchema = type({
+  name: "string",
+  value: "number",
+  karma: "number",
+});
+const PriorityMetatypeXmlSchema = type({
+  name: "string",
+  value: "number",
+  karma: "number",
+  "metavariants?": type.or(
+    type({
+      metavariant: type.or(
+        PriorityMetavariantXmlSchema,
+        PriorityMetavariantXmlSchema.array()
       ),
-    })
-    .strict(),
-}).strict();
-export type TalentXmlType = zod.infer<typeof TalentXmlSchema>;
+    }),
+    "''"
+  ),
+});
+const HeritageXmlSchema = PriorityBaseXmlSchema.and({
+  category: type.unit(priorityCategoryEnum.Heritage),
+  metatypes: type({
+    metatype: type.or(
+      PriorityMetatypeXmlSchema,
+      PriorityMetatypeXmlSchema.array()
+    ),
+  }),
+});
+export type HeritageXmlType = typeof HeritageXmlSchema.infer;
 
-const AttributeXmlSchema = PriorityBaseXmlSchema.extend({
-  category: zod.literal(priorityCategoryEnum.Attributes),
-  attributes: zod.number(),
-}).strict();
-export type AttributeXmlType = zod.infer<typeof AttributeXmlSchema>;
+const TalentXmlSchema = PriorityBaseXmlSchema.and({
+  category: type.unit(priorityCategoryEnum.Talent),
+  talents: type({
+    talent: type(
+      type({
+        name: "string",
+        value: "string",
+        "qualities?": type({
+          quality: "string",
+        }),
 
-const SkillXmlSchema = PriorityBaseXmlSchema.extend({
-  category: zod.literal(priorityCategoryEnum.Skills),
-  skills: zod.number(),
-  skillgroups: zod.number(),
-}).strict();
-export type SkillXmlType = zod.infer<typeof SkillXmlSchema>;
+        "magic?": "number",
+        "spells?": "number",
+        "resonance?": "number",
+        // Complex forms
+        "cfp?": "number",
+        "depth?": "number",
+        // Number of free skills of the type in skill type
+        "skillqty?": "number",
+        // Rating of skills
+        "skillval?": "number",
+        // The type of free skills given
+        "skilltype?": type.or(
+          "'resonance'",
+          "'matrix'",
+          // Look at skill choices
+          "'specific'",
+          "'magic'",
+          type({
+            _xpath:
+              "\"not(attribute = 'RES' or attribute = 'DEP') and (not(category = 'Magical Active') or skillgroup = '' or not(skillgroup))\"",
+            xmltext: "'xpath'",
+          })
+        ),
+        // Used for the "specific" skilltype
+        "skillchoices?": { skill: "string[]" },
+        // Number of free skill group points
+        "skillgroupqty?": "number",
+        // Rating of skill group
+        "skillgroupval?": "number",
+        // This seems kinda redundant as is only ever grouped..
+        "skillgrouptype?": "'grouped'",
+        // Choices when using skill groups
+        "skillgroupchoices?": type({
+          skillgroup: StringArrayOrStringSchema,
+        }),
 
-const ResourceXmlSchema = PriorityBaseXmlSchema.extend({
-  category: zod.literal(priorityCategoryEnum.Resources),
-  prioritytable: zod.nativeEnum(priorityTableRunnerLevelEnum),
-  resources: zod.number(),
-}).strict();
-export type ResourceXmlType = zod.infer<typeof ResourceXmlSchema>;
+        "required?": type({
+          oneof: type.or(
+            type({
+              metatypecategory: type.unit(heritageCategoryEnum.Metahuman),
+            }),
+            type({
+              metatype: "'A.I.'",
+            })
+          ),
+        }),
 
-export const PriorityXmlSchema = zod.discriminatedUnion("category", [
+        "forbidden?": type({
+          oneof: type({
+            metatype: "'A.I.'",
+          }),
+        }),
+      })
+    ).array(),
+  }),
+});
+export type TalentXmlType = typeof TalentXmlSchema.infer;
+
+const AttributeXmlSchema = PriorityBaseXmlSchema.and({
+  category: type.unit(priorityCategoryEnum.Attributes),
+  attributes: "number",
+});
+export type AttributeXmlType = typeof AttributeXmlSchema.infer;
+
+const SkillXmlSchema = PriorityBaseXmlSchema.and({
+  category: type.unit(priorityCategoryEnum.Skills),
+  skills: "number",
+  skillgroups: "number",
+});
+export type SkillXmlType = typeof SkillXmlSchema.infer;
+
+const ResourceXmlSchema = PriorityBaseXmlSchema.and({
+  category: type.unit(priorityCategoryEnum.Resources),
+  prioritytable: type.valueOf(priorityTableRunnerLevelEnum),
+  resources: "number",
+});
+export type ResourceXmlType = typeof ResourceXmlSchema.infer;
+
+export const PriorityXmlSchema = type.or(
   HeritageXmlSchema,
   TalentXmlSchema,
   AttributeXmlSchema,
   SkillXmlSchema,
-  ResourceXmlSchema,
-]);
-export const PriorityListXmlSchema = zod.array(PriorityXmlSchema);
-export type PriorityXmlType = zod.infer<typeof PriorityXmlSchema>;
+  ResourceXmlSchema
+);
+export const PriorityListXmlSchema = type(PriorityXmlSchema.array());
+export type PriorityXmlType = typeof PriorityXmlSchema.infer;
 
-export const PriorityUnionSchema = zod.discriminatedUnion("category", [
-  HeritageOptionsPrioritySchema.extend({
-    category: zod.literal(priorityCategoryEnum.Heritage),
-    rowLetter: zod.nativeEnum(priorityLetterEnum),
-  }).strict(),
-  TalentOptionsPrioritySchema.extend({
-    category: zod.literal(priorityCategoryEnum.Talent),
-    rowLetter: zod.nativeEnum(priorityLetterEnum),
-  }).strict(),
-  AttributePrioritySchema.extend({
-    category: zod.literal(priorityCategoryEnum.Attributes),
-    rowLetter: zod.nativeEnum(priorityLetterEnum),
-  }).strict(),
-  SkillPrioritySchema.extend({
-    category: zod.literal(priorityCategoryEnum.Skills),
-    rowLetter: zod.nativeEnum(priorityLetterEnum),
-  }).strict(),
-  ResourcePrioritySchema.extend({
-    category: zod.literal(priorityCategoryEnum.Resources),
-    rowLetter: zod.nativeEnum(priorityLetterEnum),
-    priorityTable: zod.nativeEnum(priorityTableRunnerLevelEnum),
-  }).strict(),
-]);
-export const PriorityUnionList = zod.array(PriorityUnionSchema);
-export type PriorityUnionType = zod.infer<typeof PriorityUnionSchema>;
-export type PriorityUnionListType = zod.infer<typeof PriorityUnionList>;
+export const PriorityUnionSchema = type.or(
+  HeritageOptionsPrioritySchema.and({
+    category: type.unit(priorityCategoryEnum.Heritage),
+    rowLetter: type.valueOf(priorityLetterEnum),
+  }),
+  TalentOptionsPrioritySchema.and({
+    category: type.unit(priorityCategoryEnum.Talent),
+    rowLetter: type.valueOf(priorityLetterEnum),
+  }),
+  AttributePrioritySchema.and({
+    category: type.unit(priorityCategoryEnum.Attributes),
+    rowLetter: type.valueOf(priorityLetterEnum),
+  }),
+  SkillPrioritySchema.and({
+    category: type.unit(priorityCategoryEnum.Skills),
+    rowLetter: type.valueOf(priorityLetterEnum),
+  }),
+  ResourcePrioritySchema.and({
+    category: type.unit(priorityCategoryEnum.Resources),
+    rowLetter: type.valueOf(priorityLetterEnum),
+    priorityTable: type.valueOf(priorityTableRunnerLevelEnum),
+  })
+);
+export const PriorityUnionList = type(PriorityUnionSchema.array());
+export type PriorityUnionType = typeof PriorityUnionSchema.infer;
+export type PriorityUnionListType = typeof PriorityUnionList.infer;

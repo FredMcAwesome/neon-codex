@@ -26,6 +26,7 @@ import {
   convertIncludedQualities,
 } from "../common/ParserHelper.js";
 import type { MovementStrideType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
+import { type } from "arktype";
 
 export function ParseMetatypes() {
   const currentPath = import.meta.url;
@@ -41,36 +42,36 @@ export function ParseMetatypes() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const jObj: any = parser.parse(xml_string);
   // console.log(jObj.chummer.metatypes.metatype[301]);
-  const metatypeListParsed = MetatypeListXmlSchema.safeParse(
+  const metatypeListParsed = MetatypeListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.metatypes.metatype
   );
 
   // console.log(jObj.chummer.metatypes.metatype[356]);
-  if (metatypeListParsed.success)
-    console.log("metatypes.xml initial zod parsed");
-  else {
-    console.log(metatypeListParsed.error.errors[0]);
+  if (metatypeListParsed instanceof type.errors) {
+    console.log(metatypeListParsed.summary);
     assert(false);
+  } else {
+    console.log("metatypes.xml initial arktype parsed");
   }
 
-  const metatypeList = metatypeListParsed.data;
+  const metatypeList = metatypeListParsed;
   let metatypeListConverted: HeritageListType = [];
   metatypeList.forEach((metatype) => {
     const convertedMetatypeList = convertMetatype(metatype);
-    const check = HeritageListSchema.safeParse(convertedMetatypeList);
-    if (!check.success) {
+    const check = HeritageListSchema(convertedMetatypeList);
+    if (check instanceof type.errors) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       console.dir(convertedMetatypeList, { depth: Infinity });
-      throw new Error(check.error.message);
+      throw new Error(check.summary);
     }
     metatypeListConverted = metatypeListConverted.concat(convertedMetatypeList);
   });
 
   // console.log(metatypeListConverted);
-  const check = HeritageListSchema.safeParse(metatypeListConverted);
-  if (!check.success) {
-    throw new Error(check.error.message);
+  const check = HeritageListSchema(metatypeListConverted);
+  if (check instanceof type.errors) {
+    throw new Error(check.summary);
   }
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/metatypes.json"
@@ -239,17 +240,17 @@ const convertBaseMetatype = function (
     const parsingQualityList = convertIncludedQualities(
       xmlMetatype.qualityrestriction
     );
-    const parsedQualityList = ForbiddenQualityListSchema.safeParse(
+    const parsedQualityList = ForbiddenQualityListSchema(
       parsingQualityList.map((quality) => {
         assert(quality.rating === undefined);
         return quality.name;
       })
     );
     assert(
-      parsedQualityList.success,
+      !(parsedQualityList instanceof type.errors),
       `Forbidden quality list parse failed: ${xmlMetatype.name}`
     );
-    forbiddenQualityList = parsedQualityList.data;
+    forbiddenQualityList = parsedQualityList;
   }
 
   let typeInformation:
@@ -298,14 +299,18 @@ const convertBaseMetatype = function (
     resonanceAttributeRange: resonanceAttributeRange,
     essenceAttributeRange: essenceAttributeRange,
     depthAttributeRange: depthAttributeRange,
-    initiative: bonusInitiativeDice,
+    ...(bonusInitiativeDice !== undefined && {
+      initiative: bonusInitiativeDice,
+    }),
     ...(xmlMetatype.movement === "Special" && { nonStandardMovement: true }),
     ...(movement !== undefined && { movement: movement }),
-    addWeaponList: addWeaponList,
-    addPowerList: addPowerList,
-    addQualityList: addQualityList,
-    forbiddenQualityList: forbiddenQualityList,
-    bonus: bonus,
+    ...(addWeaponList !== undefined && { addWeaponList: addWeaponList }),
+    ...(addPowerList !== undefined && { addPowerList: addPowerList }),
+    ...(addQualityList !== undefined && { addQualityList: addQualityList }),
+    ...(forbiddenQualityList !== undefined && {
+      forbiddenQualityList: forbiddenQualityList,
+    }),
+    ...(bonus !== undefined && { bonus: bonus }),
     source: xmlMetatype.source,
     page: xmlMetatype.page,
   };

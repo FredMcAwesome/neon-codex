@@ -82,17 +82,17 @@ export const convertMountLocation = function (
   mountLocation: mountLocationXmlEnum
 ) {
   switch (mountLocation) {
-    case "wrist":
+    case mountLocationXmlEnum.Wrist:
       return augmentationMountSlotEnum.Wrist;
-    case "elbow":
+    case mountLocationXmlEnum.Elbow:
       return augmentationMountSlotEnum.Elbow;
-    case "shoulder":
+    case mountLocationXmlEnum.Shoulder:
       return augmentationMountSlotEnum.Shoulder;
-    case "ankle":
+    case mountLocationXmlEnum.Ankle:
       return augmentationMountSlotEnum.Ankle;
-    case "knee":
+    case mountLocationXmlEnum.Knee:
       return augmentationMountSlotEnum.Knee;
-    case "hip":
+    case mountLocationXmlEnum.Hip:
       return augmentationMountSlotEnum.Hip;
     default:
       assert(false, mountLocation);
@@ -133,10 +133,14 @@ export const convertSubsystem = function (
     });
   }
 
-  return {
-    cyberwareList: cyberwareList,
-    biowareList: biowareList,
-  };
+  if (cyberwareList === undefined && biowareList === undefined) {
+    return undefined;
+  } else {
+    return {
+      ...(cyberwareList !== undefined && { cyberwareList: cyberwareList }),
+      ...(biowareList !== undefined && { biowareList: biowareList }),
+    };
+  }
 };
 
 export const convertSubsystemInternal = function (
@@ -159,10 +163,10 @@ export const convertSubsystemInternal = function (
 
   return {
     name: name,
-    rating: rating,
-    forced: forced,
-    subsystem: subsystems,
-    gearList: gearList,
+    ...(rating !== undefined && { rating: rating }),
+    ...(forced !== undefined && { forced: forced }),
+    ...(subsystems !== undefined && { subsystem: subsystems }),
+    ...(gearList !== undefined && { gearList: gearList }),
   };
 };
 

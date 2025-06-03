@@ -23,13 +23,13 @@ export const LifestyleSelect = function ({
     return <></>;
   }
 
-  if (lifestyleList.isLoading) {
+  if (lifestyleList.isPending) {
     return <span>Loading...</span>;
   }
   if (lifestyleList.isError) {
     return <span>Error: {lifestyleList.error.message}</span>;
   }
-  if (lifestyleQualityList.isLoading) {
+  if (lifestyleQualityList.isPending) {
     return <span>Loading...</span>;
   }
   if (lifestyleQualityList.isError) {

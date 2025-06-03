@@ -15,6 +15,7 @@ import {
   AdeptPowerListXmlSchema,
   type AdeptPowerXmlType,
 } from "./AdeptPowerParserSchemas.js";
+import { type } from "arktype";
 
 export function ParseAdeptPowers() {
   const currentPath = import.meta.url;
@@ -34,19 +35,19 @@ export function ParseAdeptPowers() {
   //   jObj.chummer.powers.power[95]
   // );
 
-  const adeptPowerListParsed = AdeptPowerListXmlSchema.safeParse(
+  const adeptPowerListParsed = AdeptPowerListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.powers.power
   );
 
-  if (adeptPowerListParsed.success)
-    console.log("powers.xml initial zod parsed");
-  else {
-    console.log(adeptPowerListParsed.error.errors[0]);
+  if (adeptPowerListParsed instanceof type.errors) {
+    console.log(adeptPowerListParsed.summary);
     assert(false);
+  } else {
+    console.log("powers.xml initial arktype parsed");
   }
 
-  const adeptPowerList = adeptPowerListParsed.data;
+  const adeptPowerList = adeptPowerListParsed;
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
   // })
@@ -55,13 +56,13 @@ export function ParseAdeptPowers() {
     // .filter((weapon) => weapon.name === "Osmium Mace")
     .map((adeptPower) => {
       const convertedAdeptPower = convertAdeptPower(adeptPower);
-      const check = AdeptPowerSchema.safeParse(convertedAdeptPower);
-      if (!check.success) {
+      const check = AdeptPowerSchema(convertedAdeptPower);
+      if (check instanceof type.errors) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         console.dir(convertedAdeptPower, { depth: Infinity });
-        throw new Error(check.error.message);
+        throw new Error(check.summary);
       }
-      return check.data;
+      return check;
     });
   // console.log(spellListConverted);
   const jsonFilePath = fileURLToPath(
@@ -132,12 +133,16 @@ function convertAdeptPower(adeptPower: AdeptPowerXmlType): AdeptPowerType {
     name: adeptPower.name,
     description: "",
     pointCost: adeptPower.points,
-    extraFirstLevelPointCost: adeptPower.extrapointcost,
+    ...(adeptPower.extrapointcost !== undefined && {
+      extraFirstLevelPointCost: adeptPower.extrapointcost,
+    }),
     levels: adeptPower.levels === "True",
     limit: adeptPower.limit,
-    sharedLimitAdeptPowerList: sharedLimitAdeptPowerList,
-    action: adeptPower.action,
-    adeptWay: adeptWay,
+    ...(sharedLimitAdeptPowerList !== undefined && {
+      sharedLimitAdeptPowerList: sharedLimitAdeptPowerList,
+    }),
+    ...(adeptPower.action !== undefined && { action: adeptPower.action }),
+    ...(adeptWay !== undefined && { adeptWay: adeptWay }),
     ...(bonus !== undefined && { bonus: bonus }),
     ...(requirements !== undefined && { requirements: requirements }),
     ...(forbidden !== undefined && { forbidden: forbidden }),

@@ -28,7 +28,7 @@ import {
   GearXmlCategoryEnum,
 } from "./ParserCommonDefines.js";
 import type {
-  GearXmlType,
+  IncludedGearXmlType,
   ModListXmlType,
   ModRecursiveXmlType,
   ModXmlType,
@@ -37,7 +37,7 @@ import { sourceBookXmlEnum } from "./ParserCommonDefines.js";
 import type { XmlMovementType } from "../character/MetatypeParserSchemas.js";
 import type { BonusGenericListType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 import type { CustomisedGearListType } from "@neon-codex/common/build/schemas/equipment/other/gearSchemas.js";
-import type { CustomisedVehicleModListType } from "@neon-codex/common/src/schemas/equipment/rigger/vehicleModSchemas.js";
+import type { CustomisedVehicleModListType } from "@neon-codex/common/build/schemas/equipment/rigger/vehicleModSchemas.js";
 
 export const convertSource = function (source: sourceBookXmlEnum | 2050) {
   const xmlSource = source === 2050 ? sourceBookXmlEnum.Shadowrun2050 : source;
@@ -365,7 +365,7 @@ export const convertAllowGear = function (
 
 // TODO: handle gear correctly
 export function convertIncludedXmlGears(
-  gears: GearXmlType
+  gears: IncludedGearXmlType
 ): CustomisedGearListType {
   const xmlUseGear = Array.isArray(gears.usegear)
     ? gears.usegear
@@ -389,10 +389,12 @@ export function convertIncludedXmlGears(
 
       return {
         baseGear: useGear.xmltext,
-        specificOption: specificOption,
-        rating: rating,
-        consumeCapacity: consumeCapacity,
-        currentQuantity: quantity,
+        ...(specificOption !== undefined && { specificOption: specificOption }),
+        ...(rating !== undefined && { rating: rating }),
+        ...(consumeCapacity !== undefined && {
+          consumeCapacity: consumeCapacity,
+        }),
+        ...(quantity !== undefined && { currentQuantity: quantity }),
       };
     } else {
       let category;

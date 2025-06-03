@@ -7,6 +7,7 @@ import {
   type ComplexFormListType,
 } from "@neon-codex/common/build/schemas/abilities/talent/complexFormSchemas.js";
 import { ComplexForms } from "../../models/rpg/abilities/complexFormModel.js";
+import { type } from "arktype";
 
 export const getComplexForms = function () {
   const currentPath = import.meta.url;
@@ -20,13 +21,13 @@ export const getComplexForms = function () {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const rawJson = JSON.parse(jsonString);
-  const complexFormListParsed = ComplexFormListSchema.safeParse(rawJson);
-  if (complexFormListParsed.success) {
-    console.log("complex forms all g");
-    unlinkedComplexForms = complexFormListParsed.data;
-  } else {
-    console.log(complexFormListParsed.error.errors[0]);
+  const complexFormListParsed = ComplexFormListSchema(rawJson);
+  if (complexFormListParsed instanceof type.errors) {
+    console.log(complexFormListParsed.summary);
     assert(false, "complex forms is undefined");
+  } else {
+    console.log("complex forms all g");
+    unlinkedComplexForms = complexFormListParsed;
   }
   const stagedComplexForms: Array<ComplexForms> = [];
   unlinkedComplexForms.forEach((complexForm) => {

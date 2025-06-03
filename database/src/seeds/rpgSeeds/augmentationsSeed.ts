@@ -10,6 +10,7 @@ import {
   Cyberwares,
 } from "../../models/rpg/equipment/bodyModification/augmentationModel.js";
 import { augmentationTypeEnum } from "@neon-codex/common/build/enums.js";
+import { type } from "arktype";
 
 export const getAugmentations = function () {
   const currentPath = import.meta.url;
@@ -24,13 +25,13 @@ export const getAugmentations = function () {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   let rawJson = JSON.parse(jsonString);
-  const biowareListParsed = AugmentationListSchema.safeParse(rawJson);
-  if (biowareListParsed.success) {
-    console.log("biowares all g");
-    biowares = biowareListParsed.data;
-  } else {
-    console.log(biowareListParsed.error.errors[0]);
+  const biowareListParsed = AugmentationListSchema(rawJson);
+  if (biowareListParsed instanceof type.errors) {
+    console.log(biowareListParsed.summary);
     assert(false, "biowares is undefined");
+  } else {
+    console.log("biowares all g");
+    biowares = biowareListParsed;
   }
   const stagedAugmentations: Array<Augmentations> = [];
   biowares.forEach((augmentation) => {
@@ -47,13 +48,13 @@ export const getAugmentations = function () {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   rawJson = JSON.parse(jsonString);
-  const cyberwareListParsed = AugmentationListSchema.safeParse(rawJson);
-  if (cyberwareListParsed.success) {
-    console.log("cyberwares all g");
-    cyberwares = cyberwareListParsed.data;
-  } else {
-    console.log(cyberwareListParsed.error.errors[0]);
+  const cyberwareListParsed = AugmentationListSchema(rawJson);
+  if (cyberwareListParsed instanceof type.errors) {
+    console.log(cyberwareListParsed.summary);
     assert(false, "cyberwares is undefined");
+  } else {
+    console.log("cyberwares all g");
+    cyberwares = cyberwareListParsed;
   }
 
   cyberwares.forEach((augmentation) => {

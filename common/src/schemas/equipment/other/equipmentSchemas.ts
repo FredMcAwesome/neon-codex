@@ -1,4 +1,3 @@
-import { z as zod } from "zod";
 import {
   AugmentationListSchema,
   CustomisedAugmentationListSchema,
@@ -49,6 +48,7 @@ import {
   WeaponMountModListSchema,
   type WeaponMountModListType,
 } from "../rigger/weaponMountModSchemas.js";
+import { type } from "arktype";
 
 export type EquipmentListType = {
   equipmentPackList: EquipmentPackListType;
@@ -62,20 +62,18 @@ export type EquipmentListType = {
   weaponList: WeaponListType;
   weaponAccessoryList: WeaponAccessoryListType;
 };
-export const EquipmentListSchema: zod.ZodType<EquipmentListType> = zod
-  .object({
-    equipmentPackList: EquipmentPackListSchema,
-    augmentationList: AugmentationListSchema,
-    armourList: ArmourListSchema,
-    armourModificationList: ArmourModListSchema,
-    gearList: GearListSchema,
-    vehicleList: VehicleListSchema,
-    vehicleModificationList: VehicleModListSchema,
-    weaponMountModificationList: WeaponMountModListSchema,
-    weaponList: WeaponListSchema,
-    weaponAccessoryList: WeaponAccessoryListSchema,
-  })
-  .strict();
+export const EquipmentListSchema = type({
+  equipmentPackList: EquipmentPackListSchema,
+  augmentationList: AugmentationListSchema,
+  armourList: ArmourListSchema,
+  armourModificationList: ArmourModListSchema,
+  gearList: GearListSchema,
+  vehicleList: VehicleListSchema,
+  vehicleModificationList: VehicleModListSchema,
+  weaponMountModificationList: WeaponMountModListSchema,
+  weaponList: WeaponListSchema,
+  weaponAccessoryList: WeaponAccessoryListSchema,
+});
 
 export type SelectedEquipmentListType = {
   equipmentPackList: EquipmentPackListType;
@@ -85,14 +83,11 @@ export type SelectedEquipmentListType = {
   vehicleList: CustomisedVehicleListType;
   weaponList: CustomisedWeaponListType;
 };
-export const SelectedEquipmentListSchema: zod.ZodType<SelectedEquipmentListType> =
-  zod
-    .object({
-      equipmentPackList: EquipmentPackListSchema,
-      augmentationList: CustomisedAugmentationListSchema,
-      armourList: CustomisedArmourListSchema,
-      gearList: CustomisedGearListSchema,
-      vehicleList: CustomisedVehicleListSchema,
-      weaponList: CustomisedWeaponListSchema,
-    })
-    .strict();
+export const SelectedEquipmentListSchema = type({
+  equipmentPackList: EquipmentPackListSchema,
+  augmentationList: CustomisedAugmentationListSchema,
+  armourList: CustomisedArmourListSchema,
+  gearList: CustomisedGearListSchema,
+  vehicleList: CustomisedVehicleListSchema,
+  weaponList: CustomisedWeaponListSchema,
+});

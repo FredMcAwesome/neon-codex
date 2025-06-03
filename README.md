@@ -73,7 +73,7 @@ To run client with hot reload `npm run watch-frontend` from root (Needs server r
 
 ## Frontend
 This is a standard SPA (Single Page Application) React app, created with create-react-app using a BrowserRouter to swap between pages.
-All API calls are transmitted through **trpc** for end to end typesafety with typing/validation via **zod**.
+All API calls are transmitted through **trpc** for end to end typesafety with typing/validation via **arktype**.
 For testing we use **MSW** (Mock Service Worker) which allows simple mocking of network responses to server requests.
 We use **Jest** for testing as that is good enough for anything we need.
 We use **React Query** for automatic loading and error states, as well as caching data (show the data again immediately and in the background refetch to check if new data available)

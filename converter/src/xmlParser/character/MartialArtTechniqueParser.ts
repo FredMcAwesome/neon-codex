@@ -4,7 +4,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { convertXmlBonus } from "../common/BonusParserHelper.js";
-import { z as zod } from "zod";
+
 import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
 import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
 import {
@@ -13,24 +13,21 @@ import {
 } from "@neon-codex/common/build/schemas/abilities/martialArtSchemas.js";
 import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
 import { convertSource } from "../common/ParserHelper.js";
+import { type } from "arktype";
 
-const MartialArtTechniqueXmlSchema = zod
-  .object({
-    id: zod.string(),
-    name: zod.string(),
-    bonus: zod.optional(BonusXmlSchema),
-    required: zod.optional(RequiredXmlSchema),
-    source: zod.nativeEnum(sourceBookXmlEnum),
-    page: zod.number(),
-  })
-  .strict();
-type MartialArtTechniqueXmlType = zod.infer<
-  typeof MartialArtTechniqueXmlSchema
->;
+const MartialArtTechniqueXmlSchema = type({
+  id: "string",
+  name: "string",
+  "bonus?": BonusXmlSchema,
+  "required?": RequiredXmlSchema,
+  source: type.valueOf(sourceBookXmlEnum),
+  page: "number",
+});
+type MartialArtTechniqueXmlType = typeof MartialArtTechniqueXmlSchema.infer;
 
-export const MartialArtTechniqueListXmlSchema = zod.array(
+export const MartialArtTechniqueListXmlSchema = type(
   MartialArtTechniqueXmlSchema
-);
+).array();
 
 export function ParseMartialArtTechniques() {
   const currentPath = import.meta.url;
@@ -51,41 +48,36 @@ export function ParseMartialArtTechniques() {
   //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   //   jObj.chummer.techniques.technique[51]
   // );
-  const martialArtTechniqueListParsed =
-    MartialArtTechniqueListXmlSchema.safeParse(
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      jObj.chummer.techniques.technique
-    );
+  const martialArtTechniqueListParsed = MartialArtTechniqueListXmlSchema(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    jObj.chummer.techniques.technique
+  );
 
-  if (martialArtTechniqueListParsed.success)
-    console.log("martialarts (techniques).xml initial zod parsed");
-  else {
-    console.log(martialArtTechniqueListParsed.error.errors[0]);
+  if (martialArtTechniqueListParsed instanceof type.errors) {
+    console.log(martialArtTechniqueListParsed.summary);
     assert(false);
+  } else {
+    console.log("martialarts (techniques).xml initial arktype parsed");
   }
 
-  const martialArtTechniqueList = martialArtTechniqueListParsed.data;
+  const martialArtTechniqueList = martialArtTechniqueListParsed;
   const martialArtTechniqueListConverted = martialArtTechniqueList.map(
     (technique: MartialArtTechniqueXmlType) => {
       const convertedMartialArtTechnique =
         convertMartialArtTechnique(technique);
-      const check = MartialArtTechniqueSchema.safeParse(
-        convertedMartialArtTechnique
-      );
-      if (!check.success) {
+      const check = MartialArtTechniqueSchema(convertedMartialArtTechnique);
+      if (check instanceof type.errors) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         console.log(convertedMartialArtTechnique);
-        throw new Error(check.error.message);
+        throw new Error(check.summary);
       }
       return convertedMartialArtTechnique;
     }
   );
   // console.log(qualityListConverted);
-  const check = MartialArtTechniqueListSchema.safeParse(
-    martialArtTechniqueListConverted
-  );
-  if (!check.success) {
-    throw new Error(check.error.message);
+  const check = MartialArtTechniqueListSchema(martialArtTechniqueListConverted);
+  if (check instanceof type.errors) {
+    throw new Error(check.summary);
   }
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) +

@@ -1,4 +1,4 @@
-import { z as zod } from "zod";
+import { type } from "arktype";
 import {
   damageCalculationOptionEnum,
   mathOperatorEnum,
@@ -9,78 +9,70 @@ import {
   ammoSourceEnum,
 } from "../../enums.js";
 
-export const BlastSchema = zod
-  .object({
-    type: zod.nativeEnum(blastTypeEnum),
-    value: zod.number(),
-  })
-  .strict();
-export type BlastType = zod.infer<typeof BlastSchema>;
+export const BlastSchema = type({
+  type: type.valueOf(blastTypeEnum),
+  value: "number",
+});
+export type BlastType = typeof BlastSchema.infer;
 
 // damage is a recursive type
-export const DamageSubnumberSchema = zod.union([
-  zod.number(),
-  zod.object({ option: zod.nativeEnum(damageCalculationOptionEnum) }).strict(),
-  zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
-]);
+export const DamageSubnumberSchema = type.or(
+  "number",
+  { option: type.valueOf(damageCalculationOptionEnum) },
+  { operator: type.valueOf(mathOperatorEnum) }
+);
 export type DamageAmountType = Array<
-  | zod.infer<typeof DamageSubnumberSchema>
+  | typeof DamageSubnumberSchema.infer
   | {
       subnumbers: DamageAmountType;
     }
 >;
-export const DamageAmountSchema: zod.ZodType<DamageAmountType> = zod.array(
-  zod.union([
-    DamageSubnumberSchema,
-    zod
-      .object({
-        subnumbers: zod.lazy(() => DamageAmountSchema),
-      })
-      .strict(),
-  ])
-);
+export const { DamageAmountSchema } = type.module({
+  DamageAmountSchema: [
+    [
+      DamageSubnumberSchema,
+      "|",
+      {
+        subnumbers: "DamageAmountSchema",
+      },
+    ],
+    "[]",
+  ],
+});
 
-export const DamageSchema = zod.array(
-  zod
-    .object({
-      damageAmount: DamageAmountSchema,
-      type: zod.nativeEnum(damageTypeEnum),
-      annotation: zod.optional(zod.nativeEnum(damageAnnotationEnum)),
-      blast: zod.optional(BlastSchema),
-      barrels: zod.optional(zod.number()),
-    })
-    .strict()
-);
-export type DamageType = zod.infer<typeof DamageSchema>;
+export const DamageSchema = type({
+  damageAmount: DamageAmountSchema,
+  type: type.valueOf(damageTypeEnum),
+  "annotation?": type.valueOf(damageAnnotationEnum),
+  "blast?": BlastSchema,
+  "barrels?": "number",
+}).array();
+export type DamageType = typeof DamageSchema.infer;
 
-export const WeaponBonusSchema = zod
-  .object({
-    ap: zod.optional(zod.number()),
-    apReplace: zod.optional(zod.number()),
-    damage: zod.optional(DamageSchema),
-    damageReplace: zod.optional(zod.string()),
-    damageType: zod.optional(zod.string()),
-    modeReplace: zod.optional(zod.string()),
-    useRange: zod.optional(zod.string()),
-    accuracy: zod.optional(zod.number()),
-    accuracyReplace: zod.optional(zod.number()),
-    extraDiceIfSmartlinkEnabled: zod.optional(zod.number()),
-  })
-  .strict();
-export type WeaponBonusType = zod.infer<typeof WeaponBonusSchema>;
+export const WeaponBonusSchema = type({
+  "ap?": "number",
+  "apReplace?": "number",
+  "damage?": DamageSchema,
+  "damageReplace?": "string",
+  "damageType?": "string",
+  "modeReplace?": "string",
+  "useRange?": "string",
+  "accuracy?": "number",
+  "accuracyReplace?": "number",
+  "extraDiceIfSmartlinkEnabled?": "number",
+});
+export type WeaponBonusType = typeof WeaponBonusSchema.infer;
 
-export const MountSchema = zod.nativeEnum(weaponAccessoryMountLocationEnum);
-export type MountType = zod.infer<typeof MountSchema>;
-export const AccessoryMountSchema = zod.array(MountSchema);
-export type AccessoryMountType = zod.infer<typeof AccessoryMountSchema>;
+export const MountSchema = type.valueOf(weaponAccessoryMountLocationEnum);
+export type MountType = typeof MountSchema.infer;
+export const AccessoryMountSchema = type(MountSchema.array());
+export type AccessoryMountType = typeof AccessoryMountSchema.infer;
 
-export const AmmunitionSingleSchema = zod
-  .object({
-    capacity: zod.optional(zod.number()),
-    numberOfAmmunitionHolders: zod.optional(zod.number()),
-    reloadMethod: zod.nativeEnum(ammoSourceEnum),
-  })
-  .strict();
-export type AmmunitionSingleType = zod.infer<typeof AmmunitionSingleSchema>;
-export const AmmunitionSchema = zod.array(AmmunitionSingleSchema);
-export type AmmunitionType = zod.infer<typeof AmmunitionSchema>;
+export const AmmunitionSingleSchema = type({
+  "capacity?": "number",
+  "numberOfAmmunitionHolders?": "number",
+  reloadMethod: type.valueOf(ammoSourceEnum),
+});
+export type AmmunitionSingleType = typeof AmmunitionSingleSchema.infer;
+export const AmmunitionSchema = type(AmmunitionSingleSchema.array());
+export type AmmunitionType = typeof AmmunitionSchema.infer;

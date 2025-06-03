@@ -8,6 +8,7 @@ import {
   VehicleChasisModifications,
   VehicleModifications,
 } from "../../models/rpg/equipment/rigger/vehicleModificationModel.js";
+import { type } from "arktype";
 
 export const getVehicleModifications = function () {
   const currentPath = import.meta.url;
@@ -21,13 +22,13 @@ export const getVehicleModifications = function () {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const rawJson = JSON.parse(jsonString);
-  const vehicleListParsed = VehicleModListSchema.safeParse(rawJson);
-  if (vehicleListParsed.success) {
-    console.log("vehicle Mods all g");
-    vehicleMods = vehicleListParsed.data;
-  } else {
-    console.log(vehicleListParsed.error.errors[0]);
+  const vehicleListParsed = VehicleModListSchema(rawJson);
+  if (vehicleListParsed instanceof type.errors) {
+    console.log(vehicleListParsed.summary);
     assert(false, "vehicleMods is undefined");
+  } else {
+    console.log("vehicle Mods all g");
+    vehicleMods = vehicleListParsed;
   }
   const stagedVehicleMods: Array<VehicleModifications> = [];
   vehicleMods.forEach((vehicleMod) => {

@@ -6,6 +6,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
+// https://github.com/trpc/trpc/issues/6554
 import App from "./App.js";
 import "./index.css";
 import { httpBatchLink, TRPCClientError } from "@trpc/client";

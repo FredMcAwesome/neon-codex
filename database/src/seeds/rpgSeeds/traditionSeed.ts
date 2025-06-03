@@ -14,6 +14,7 @@ import {
 } from "../../models/rpg/traits/traditionModel.js";
 import type { Critters } from "../../models/rpg/creatures/critterModel.js";
 import { ref } from "@mikro-orm/postgresql";
+import { type } from "arktype";
 
 export const getTraditions = function (stagedCritters: Array<Critters>) {
   const currentPath = import.meta.url;
@@ -27,13 +28,13 @@ export const getTraditions = function (stagedCritters: Array<Critters>) {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const rawJson = JSON.parse(jsonString);
-  const traditionListParsed = TraditionListSchema.safeParse(rawJson);
-  if (traditionListParsed.success) {
-    console.log("traditions all g");
-    unlinkedTraditions = traditionListParsed.data;
-  } else {
-    console.log(traditionListParsed.error.errors[0]);
+  const traditionListParsed = TraditionListSchema(rawJson);
+  if (traditionListParsed instanceof type.errors) {
+    console.log(traditionListParsed.summary);
     assert(false, "traditions is undefined");
+  } else {
+    console.log("traditions all g");
+    unlinkedTraditions = traditionListParsed;
   }
   const stagedTraditions: Array<Traditions> = [];
   unlinkedTraditions.forEach((tradition) => {

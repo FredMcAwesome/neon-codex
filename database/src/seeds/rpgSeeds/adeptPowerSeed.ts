@@ -7,6 +7,7 @@ import {
   type AdeptPowerListType,
 } from "@neon-codex/common/build/schemas/abilities/talent/adeptPowerSchemas.js";
 import { AdeptPowers } from "../../models/rpg/abilities/adeptPowerModel.js";
+import { type } from "arktype";
 
 export const getAdeptPowers = function () {
   const currentPath = import.meta.url;
@@ -20,13 +21,13 @@ export const getAdeptPowers = function () {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const rawJson = JSON.parse(jsonString);
-  const adeptPowerListParsed = AdeptPowerListSchema.safeParse(rawJson);
-  if (adeptPowerListParsed.success) {
-    console.log("adept powers all g");
-    unlinkedAdeptPowers = adeptPowerListParsed.data;
-  } else {
-    console.log(adeptPowerListParsed.error.errors[0]);
+  const adeptPowerListParsed = AdeptPowerListSchema(rawJson);
+  if (adeptPowerListParsed instanceof type.errors) {
+    console.log(adeptPowerListParsed.summary);
     assert(false, "adept powers is undefined");
+  } else {
+    console.log("adept powers all g");
+    unlinkedAdeptPowers = adeptPowerListParsed;
   }
   const stagedAdeptPowers: Array<AdeptPowers> = [];
   unlinkedAdeptPowers.forEach((spell) => {

@@ -1,11 +1,12 @@
 import { costEnum, gearCategoryEnum } from "@neon-codex/common/build/enums.js";
-import { z as zod } from "zod";
+
 import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
 import {
   SourceXmlSchema,
   StringOrNumberSchema,
 } from "../common/ParserCommonDefines.js";
 import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
+import { type } from "arktype";
 
 export enum armourModXmlCategoryEnum {
   FullBodyArmorMods = "Full Body Armor Mods",
@@ -20,46 +21,42 @@ export enum armourModXmlCategoryEnum {
   VictoryLiners = "Victory Liners",
 }
 
-const ArmourModXmlSchema = zod
-  .object({
-    id: zod.string(),
-    name: zod.string(),
-    // Category of mod, if not "General" then the host armour must have the
-    // matching addmodcategory in order to use this
-    category: zod.nativeEnum(armourModXmlCategoryEnum),
-    armor: zod.union([zod.number(), zod.nativeEnum(costEnum)]),
-    // Maximum rating for armour mod
-    // this should be 1 for items without rating variable effects
-    maxrating: zod.number(),
-    // Capacity taken up by this mod
-    armorcapacity: zod.string(),
-    // Armour requirements
-    required: zod.optional(RequiredXmlSchema),
-    // This item is not selectable i.e. only used when armour includes it
-    hide: zod.optional(zod.literal("")),
-    // Allows gear to be added from these gear categories
-    addoncategory: zod.optional(
-      zod.union([
-        zod.array(zod.nativeEnum(gearCategoryEnum)),
-        zod.nativeEnum(gearCategoryEnum),
-      ])
-    ),
-    // Availability
-    avail: StringOrNumberSchema,
-    // Cost
-    cost: StringOrNumberSchema,
-    // Number of gear that can be added to armour mod
-    // currently this seems to crash chummer if more than this is added
-    // rather than preventing more from being added...
-    gearcapacity: zod.optional(zod.number()),
-    // Bonus from mod
-    bonus: zod.optional(BonusXmlSchema),
-    // Bonus when mod is wirelessly enabled
-    wirelessbonus: zod.optional(BonusXmlSchema),
-    source: zod.union([SourceXmlSchema, zod.literal(2050)]),
-    page: zod.number(),
-  })
-  .strict();
-export type ArmourModXmlType = zod.infer<typeof ArmourModXmlSchema>;
-export const ArmourModListXmlSchema = zod.array(ArmourModXmlSchema);
-export type ArmourModListXmlType = zod.infer<typeof ArmourModListXmlSchema>;
+const ArmourModXmlSchema = type({
+  id: "string",
+  name: "string",
+  // Category of mod, if not "General" then the host armour must have the
+  // matching addmodcategory in order to use this
+  category: type.valueOf(armourModXmlCategoryEnum),
+  armor: type.or("number", type.valueOf(costEnum)),
+  // Maximum rating for armour mod
+  // this should be 1 for items without rating variable effects
+  maxrating: "number",
+  // Capacity taken up by this mod
+  armorcapacity: "string",
+  // Armour requirements
+  "required?": RequiredXmlSchema,
+  // This item is not selectable i.e. only used when armour includes it
+  "hide?": "''",
+  // Allows gear to be added from these gear categories
+  "addoncategory?": type.or(
+    type.valueOf(gearCategoryEnum),
+    type.valueOf(gearCategoryEnum).array()
+  ),
+  // Availability
+  avail: StringOrNumberSchema,
+  // Cost
+  cost: StringOrNumberSchema,
+  // Number of gear that can be added to armour mod
+  // currently this seems to crash chummer if more than this is added
+  // rather than preventing more from being added...
+  "gearcapacity?": "number",
+  // Bonus from mod
+  "bonus?": BonusXmlSchema,
+  // Bonus when mod is wirelessly enabled
+  "wirelessbonus?": BonusXmlSchema,
+  source: type.or(SourceXmlSchema, "2050"),
+  page: "number",
+});
+export type ArmourModXmlType = typeof ArmourModXmlSchema.infer;
+export const ArmourModListXmlSchema = type(ArmourModXmlSchema.array());
+export type ArmourModListXmlType = typeof ArmourModListXmlSchema.infer;

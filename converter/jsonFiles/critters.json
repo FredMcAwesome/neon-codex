@@ -115,8 +115,8 @@
         },
         {
           "name": "Perception",
-          "specialised": ["Smell"],
-          "rating": [5]
+          "rating": [5],
+          "specialised": ["Smell"]
         },
         {
           "name": "Running",
@@ -491,8 +491,8 @@
       "skillList": [
         {
           "name": "Perception",
-          "specialised": ["Smell"],
-          "rating": [6]
+          "rating": [6],
+          "specialised": ["Smell"]
         },
         {
           "name": "Swimming",
@@ -620,8 +620,8 @@
         },
         {
           "name": "Perception",
-          "specialised": ["Smell"],
-          "rating": [5]
+          "rating": [5],
+          "specialised": ["Smell"]
         },
         {
           "name": "Sneaking",
@@ -1069,8 +1069,8 @@
       "skillList": [
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Elemental Attack"],
-          "rating": [4]
+          "rating": [4],
+          "specialised": ["Elemental Attack"]
         },
         {
           "name": "Sneaking",
@@ -5738,8 +5738,8 @@
         },
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Elemental Attack"],
-          "rating": [5]
+          "rating": [5],
+          "specialised": ["Elemental Attack"]
         },
         {
           "name": "Flight",
@@ -6570,8 +6570,8 @@
       "skillList": [
         {
           "name": "Etiquette",
-          "specialised": ["Tribal"],
-          "rating": [4]
+          "rating": [4],
+          "specialised": ["Tribal"]
         },
         {
           "name": "Sneaking",
@@ -7322,8 +7322,8 @@
       "skillList": [
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Sonic Projection"],
-          "rating": [6]
+          "rating": [6],
+          "specialised": ["Sonic Projection"]
         },
         {
           "name": "Perception",
@@ -7933,8 +7933,8 @@
       "skillList": [
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Venom Spit"],
-          "rating": [5]
+          "rating": [5],
+          "specialised": ["Venom Spit"]
         },
         {
           "name": "Intimidation",
@@ -8657,8 +8657,8 @@
         },
         {
           "name": "Navigation",
-          "specialised": ["Underground"],
-          "rating": [3]
+          "rating": [3],
+          "specialised": ["Underground"]
         },
         {
           "name": "Sneaking",
@@ -8978,8 +8978,8 @@
         },
         {
           "name": "Tracking",
-          "specialised": ["Smell"],
-          "rating": [4]
+          "rating": [4],
+          "specialised": ["Smell"]
         },
         {
           "name": "Perception",
@@ -10162,8 +10162,8 @@
         },
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Corrosive Spit"],
-          "rating": [5]
+          "rating": [5],
+          "specialised": ["Corrosive Spit"]
         },
         {
           "name": "Running",
@@ -11352,8 +11352,8 @@
       "skillList": [
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Corrosive Spit"],
-          "rating": [6]
+          "rating": [6],
+          "specialised": ["Corrosive Spit"]
         },
         {
           "name": "Gymnastics",
@@ -11488,8 +11488,8 @@
       "skillList": [
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Corrosive Spit"],
-          "rating": [4]
+          "rating": [4],
+          "specialised": ["Corrosive Spit"]
         },
         {
           "name": "Perception",
@@ -11609,8 +11609,8 @@
       "skillList": [
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Feathers"],
-          "rating": [5]
+          "rating": [5],
+          "specialised": ["Feathers"]
         },
         {
           "name": "Flight",
@@ -12057,8 +12057,8 @@
         },
         {
           "name": "Unarmed Combat",
-          "specialised": ["Grapple"],
-          "rating": [6]
+          "rating": [6],
+          "specialised": ["Grapple"]
         }
       ]
     },
@@ -12508,8 +12508,8 @@
       "skillList": [
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Spit"],
-          "rating": [6]
+          "rating": [6],
+          "specialised": ["Spit"]
         },
         {
           "name": "Perception",
@@ -12974,8 +12974,8 @@
         },
         {
           "name": "Perception",
-          "specialised": ["Smell"],
-          "rating": [8]
+          "rating": [8],
+          "specialised": ["Smell"]
         },
         {
           "name": "Running",
@@ -13130,8 +13130,8 @@
         },
         {
           "name": "Perception",
-          "specialised": ["Smell"],
-          "rating": [8]
+          "rating": [8],
+          "specialised": ["Smell"]
         },
         {
           "name": "Running",
@@ -13438,8 +13438,8 @@
       "skillList": [
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Electricity"],
-          "rating": [4]
+          "rating": [4],
+          "specialised": ["Electricity"]
         },
         {
           "name": "Perception",
@@ -14571,12 +14571,12 @@
         },
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Elemental Attack"],
           "rating": [
             {
               "option": "Force"
             }
-          ]
+          ],
+          "specialised": ["Elemental Attack"]
         },
         {
           "name": "Perception",
@@ -15381,12 +15381,12 @@
         },
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Elemental Attack"],
           "rating": [
             {
               "option": "Force"
             }
-          ]
+          ],
+          "specialised": ["Elemental Attack"]
         },
         {
           "name": "Perception",
@@ -15816,12 +15816,12 @@
         },
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Elemental Attack"],
           "rating": [
             {
               "option": "Force"
             }
-          ]
+          ],
+          "specialised": ["Elemental Attack"]
         },
         {
           "name": "Flight",
@@ -16646,12 +16646,12 @@
         },
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Elemental Attack"],
           "rating": [
             {
               "option": "Force"
             }
-          ]
+          ],
+          "specialised": ["Elemental Attack"]
         },
         {
           "name": "Perception",
@@ -17061,12 +17061,12 @@
         },
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Elemental Attack"],
           "rating": [
             {
               "option": "Force"
             }
-          ]
+          ],
+          "specialised": ["Elemental Attack"]
         },
         {
           "name": "Perception",
@@ -17846,12 +17846,12 @@
         },
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Noxious Breath"],
           "rating": [
             {
               "option": "Force"
             }
-          ]
+          ],
+          "specialised": ["Noxious Breath"]
         },
         {
           "name": "Perception",
@@ -19884,12 +19884,12 @@
         },
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Corrosive Spit"],
           "rating": [
             {
               "option": "Force"
             }
-          ]
+          ],
+          "specialised": ["Corrosive Spit"]
         },
         {
           "name": "Perception",
@@ -20327,12 +20327,12 @@
         },
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Elemental Attack"],
           "rating": [
             {
               "option": "Force"
             }
-          ]
+          ],
+          "specialised": ["Elemental Attack"]
         },
         {
           "name": "Perception",
@@ -20770,12 +20770,12 @@
         },
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Elemental Attack"],
           "rating": [
             {
               "option": "Force"
             }
-          ]
+          ],
+          "specialised": ["Elemental Attack"]
         },
         {
           "name": "Flight",
@@ -21209,12 +21209,12 @@
         },
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Elemental Attack"],
           "rating": [
             {
               "option": "Force"
             }
-          ]
+          ],
+          "specialised": ["Elemental Attack"]
         },
         {
           "name": "Perception",
@@ -22092,12 +22092,12 @@
         },
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Noxious Breath"],
           "rating": [
             {
               "option": "Force"
             }
-          ]
+          ],
+          "specialised": ["Noxious Breath"]
         },
         {
           "name": "Running",
@@ -22494,12 +22494,12 @@
         },
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Elemental Attack"],
           "rating": [
             {
               "option": "Force"
             }
-          ]
+          ],
+          "specialised": ["Elemental Attack"]
         },
         {
           "name": "Perception",
@@ -22921,12 +22921,12 @@
         },
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Elemental Attack"],
           "rating": [
             {
               "option": "Force"
             }
-          ]
+          ],
+          "specialised": ["Elemental Attack"]
         },
         {
           "name": "Perception",
@@ -23355,12 +23355,12 @@
         },
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Elemental Attack"],
           "rating": [
             {
               "option": "Force"
             }
-          ]
+          ],
+          "specialised": ["Elemental Attack"]
         },
         {
           "name": "Flight",
@@ -23781,12 +23781,12 @@
         },
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Elemental Attack"],
           "rating": [
             {
               "option": "Force"
             }
-          ]
+          ],
+          "specialised": ["Elemental Attack"]
         },
         {
           "name": "Intimidation",
@@ -27781,12 +27781,12 @@
         },
         {
           "name": "Gymnastics",
-          "specialised": ["Dodging"],
           "rating": [
             {
               "option": "Force"
             }
-          ]
+          ],
+          "specialised": ["Dodging"]
         },
         {
           "name": "Perception",
@@ -29925,12 +29925,12 @@
         },
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Noxious Breath"],
           "rating": [
             {
               "option": "Force"
             }
-          ]
+          ],
+          "specialised": ["Noxious Breath"]
         },
         {
           "name": "Perception",
@@ -37353,12 +37353,12 @@
         },
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Elemental Attack"],
           "rating": [
             {
               "option": "Force"
             }
-          ]
+          ],
+          "specialised": ["Elemental Attack"]
         },
         {
           "name": "Perception",
@@ -37816,12 +37816,12 @@
         },
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Noxious Breath"],
           "rating": [
             {
               "option": "Force"
             }
-          ]
+          ],
+          "specialised": ["Noxious Breath"]
         },
         {
           "name": "Perception",
@@ -38259,12 +38259,12 @@
         },
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Elemental Attack"],
           "rating": [
             {
               "option": "Force"
             }
-          ]
+          ],
+          "specialised": ["Elemental Attack"]
         },
         {
           "name": "Perception",
@@ -43938,12 +43938,12 @@
         },
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Elemental Attack"],
           "rating": [
             {
               "option": "Force"
             }
-          ]
+          ],
+          "specialised": ["Elemental Attack"]
         }
       ]
     },
@@ -49816,18 +49816,18 @@
         },
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Elemental Attack"],
-          "rating": [12]
+          "rating": [12],
+          "specialised": ["Elemental Attack"]
         },
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Corrosive Spit"],
-          "rating": [12]
+          "rating": [12],
+          "specialised": ["Corrosive Spit"]
         },
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Noxious Breath"],
-          "rating": [12]
+          "rating": [12],
+          "specialised": ["Noxious Breath"]
         },
         {
           "name": "Flight",
@@ -50033,18 +50033,18 @@
         },
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Elemental Attack"],
-          "rating": [12]
+          "rating": [12],
+          "specialised": ["Elemental Attack"]
         },
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Corrosive Spit"],
-          "rating": [12]
+          "rating": [12],
+          "specialised": ["Corrosive Spit"]
         },
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Noxious Breath"],
-          "rating": [12]
+          "rating": [12],
+          "specialised": ["Noxious Breath"]
         },
         {
           "name": "Flight",
@@ -50250,18 +50250,18 @@
         },
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Elemental Attack"],
-          "rating": [12]
+          "rating": [12],
+          "specialised": ["Elemental Attack"]
         },
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Corrosive Spit"],
-          "rating": [12]
+          "rating": [12],
+          "specialised": ["Corrosive Spit"]
         },
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Noxious Breath"],
-          "rating": [12]
+          "rating": [12],
+          "specialised": ["Noxious Breath"]
         },
         {
           "name": "Flight",
@@ -52801,8 +52801,8 @@
         },
         {
           "name": "Perception",
-          "specialised": ["Smell"],
-          "rating": [5]
+          "rating": [5],
+          "specialised": ["Smell"]
         },
         {
           "name": "Running",
@@ -54587,8 +54587,8 @@
         },
         {
           "name": "Perception",
-          "specialised": ["Smell"],
-          "rating": [5]
+          "rating": [5],
+          "specialised": ["Smell"]
         },
         {
           "name": "Running",
@@ -54745,8 +54745,8 @@
         },
         {
           "name": "Perception",
-          "specialised": ["Smell"],
-          "rating": [5]
+          "rating": [5],
+          "specialised": ["Smell"]
         },
         {
           "name": "Sneaking",
@@ -57097,8 +57097,8 @@
       "skillList": [
         {
           "name": "Perception",
-          "specialised": ["Hearing"],
-          "rating": [6]
+          "rating": [6],
+          "specialised": ["Hearing"]
         },
         {
           "name": "Running",
@@ -57852,8 +57852,8 @@
       "skillList": [
         {
           "name": "Perception",
-          "specialised": ["Smell"],
-          "rating": [6]
+          "rating": [6],
+          "specialised": ["Smell"]
         },
         {
           "name": "Swimming",
@@ -61533,8 +61533,8 @@
         },
         {
           "name": "Flight",
-          "specialised": ["Harness Updraft"],
-          "rating": [6]
+          "rating": [6],
+          "specialised": ["Harness Updraft"]
         },
         {
           "name": "Gymnastics",
@@ -61546,8 +61546,8 @@
         },
         {
           "name": "Perception",
-          "specialised": ["Sight"],
-          "rating": [6]
+          "rating": [6],
+          "specialised": ["Sight"]
         },
         {
           "name": "Unarmed Combat",
@@ -62477,8 +62477,8 @@
       "skillList": [
         {
           "name": "Gymnastics",
-          "specialised": ["Climbing"],
-          "rating": [2]
+          "rating": [2],
+          "specialised": ["Climbing"]
         },
         {
           "name": "Sneaking",
@@ -62627,8 +62627,8 @@
       "skillList": [
         {
           "name": "Exotic Ranged Weapon",
-          "specialised": ["Tail Spikes"],
-          "rating": [3]
+          "rating": [3],
+          "specialised": ["Tail Spikes"]
         },
         {
           "name": "Perception",

@@ -22,6 +22,7 @@ import {
   handlingSemantics,
 } from "./VehicleParserHelper.js";
 import Vehicles from "../../grammar/vehicles.ohm-bundle.js";
+import { type } from "arktype";
 const Acceleration = Vehicles.Acceleration;
 const Speed = Vehicles.Speed;
 const Availability = Vehicles.Availability;
@@ -47,18 +48,19 @@ export function ParseVehicles() {
   //   { depth: Infinity }
   // );
 
-  const vehicleListParsed = VehicleListXmlSchema.safeParse(
+  const vehicleListParsed = VehicleListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.vehicles.vehicle
   );
 
-  if (vehicleListParsed.success) console.log("vehicles.xml initial zod parsed");
-  else {
-    console.log(vehicleListParsed.error.errors[0]);
+  if (vehicleListParsed instanceof type.errors) {
+    console.log(vehicleListParsed.summary);
     assert(false);
+  } else {
+    console.log("vehicles.xml initial arktype parsed");
   }
 
-  const vehicleList = vehicleListParsed.data;
+  const vehicleList = vehicleListParsed;
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
   // })
@@ -67,13 +69,13 @@ export function ParseVehicles() {
     // .filter((weapon) => weapon.name === "Osmium Mace")
     .map((vehicle) => {
       const convertedVehicle = convertVehicle(vehicle);
-      const check = VehicleSchema.safeParse(convertedVehicle);
-      if (!check.success) {
+      const check = VehicleSchema(convertedVehicle);
+      if (check instanceof type.errors) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         console.dir(convertedVehicle, { depth: Infinity });
-        throw new Error(check.error.message);
+        throw new Error(check.summary);
       }
-      return check.data;
+      return check;
     });
   // console.log(vehicleListConverted);
   const jsonFilePath = fileURLToPath(
@@ -191,17 +193,33 @@ const convertVehicle = function (vehicle: VehicleXmlType) {
     armour: vehicle.armor,
     pilot: vehicle.pilot,
     sensor: vehicle.sensor,
-    includedGearList: includedGearList,
-    includedModList: includedModList,
-    modSlots: vehicle.modslots,
-    powerTrainModSlots: vehicle.powertrainmodslots,
-    protectionModSlots: vehicle.protectionmodslots,
-    weaponModSlots: vehicle.weaponmodslots,
-    bodyModSlots: vehicle.bodymodslots,
-    electromagneticModSlots: vehicle.electromagneticmodslots,
-    cosmeticModSlots: vehicle.cosmeticmodslots,
+    ...(includedGearList !== undefined && {
+      includedGearList: includedGearList,
+    }),
+    ...(includedModList !== undefined && { includedModList: includedModList }),
+    ...(vehicle.modslots !== undefined && { modSlots: vehicle.modslots }),
+    ...(vehicle.powertrainmodslots !== undefined && {
+      powerTrainModSlots: vehicle.powertrainmodslots,
+    }),
+    ...(vehicle.protectionmodslots !== undefined && {
+      protectionModSlots: vehicle.protectionmodslots,
+    }),
+    ...(vehicle.weaponmodslots !== undefined && {
+      weaponModSlots: vehicle.weaponmodslots,
+    }),
+    ...(vehicle.bodymodslots !== undefined && {
+      bodyModSlots: vehicle.bodymodslots,
+    }),
+    ...(vehicle.electromagneticmodslots !== undefined && {
+      electromagneticModSlots: vehicle.electromagneticmodslots,
+    }),
+    ...(vehicle.cosmeticmodslots !== undefined && {
+      cosmeticModSlots: vehicle.cosmeticmodslots,
+    }),
     ...(vehicle.seats !== undefined && { seats: vehicle.seats }),
-    includedWeaponMountList: includedWeaponMountList,
+    ...(includedWeaponMountList !== undefined && {
+      includedWeaponMountList: includedWeaponMountList,
+    }),
     ...(vehicle.hide !== undefined && { userSelectable: false as const }),
     availability: availability,
     cost: cost,

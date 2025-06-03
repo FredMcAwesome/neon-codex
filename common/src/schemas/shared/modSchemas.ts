@@ -1,11 +1,8 @@
-import { z as zod } from "zod";
+import { type } from "arktype";
 
-const GenericModSchema = zod
-  .object({
-    baseMod: zod.string(),
-    rating: zod.optional(zod.number()),
-  })
-  .strict();
-
-export const GenericModListSchema = zod.array(GenericModSchema);
-export type GenericModListType = zod.infer<typeof GenericModListSchema>;
+const GenericModSchema = type({
+  baseMod: "string",
+  "rating?": "number",
+});
+export const GenericModListSchema = type(GenericModSchema.array());
+export type GenericModListType = typeof GenericModListSchema.infer;

@@ -25,6 +25,7 @@ import {
   XmlDurationSchema,
 } from "../common/ParserCommonDefines.js";
 import { actionEnum } from "@neon-codex/common/build/enums.js";
+import { type } from "arktype";
 
 export function ParseCritterPowers() {
   const currentPath = import.meta.url;
@@ -46,19 +47,19 @@ export function ParseCritterPowers() {
   //   jObj.chummer.powers.power[271]
   // );
 
-  const critterPowerListParsed = CritterPowerListXmlSchema.safeParse(
+  const critterPowerListParsed = CritterPowerListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.powers.power
   );
 
-  if (critterPowerListParsed.success)
-    console.log("critterpowers.xml initial zod parsed");
-  else {
-    console.log(critterPowerListParsed.error.errors[0]);
+  if (critterPowerListParsed instanceof type.errors) {
+    console.log(critterPowerListParsed.summary);
     assert(false);
+  } else {
+    console.log("critterpowers.xml initial arktype parsed");
   }
 
-  const critterPowerList = critterPowerListParsed.data;
+  const critterPowerList = critterPowerListParsed;
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
   // })
@@ -67,13 +68,13 @@ export function ParseCritterPowers() {
     // .filter((weapon) => weapon.name === "Osmium Mace")
     .map((critterPower) => {
       const convertedCritter = convertCritterPower(critterPower);
-      const check = CritterPowerSchema.safeParse(convertedCritter);
-      if (!check.success) {
+      const check = CritterPowerSchema(convertedCritter);
+      if (check instanceof type.errors) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         console.dir(convertedCritter, { depth: Infinity });
-        throw new Error(check.error.message);
+        throw new Error(check.summary);
       }
-      return check.data;
+      return check;
     });
   // console.log(spellListConverted);
   const jsonFilePath = fileURLToPath(
@@ -98,26 +99,26 @@ function convertCritterPower(
   // console.log(`\n${critterPower.name}`);
 
   const karma = critterPower.karma !== "" ? critterPower.karma : undefined;
-  let type;
+  let powerType;
   if (critterPower.type !== "") {
     if (critterPower.type === "As Spell") {
-      type = { spellType: true as const };
+      powerType = { spellType: true as const };
     } else if (critterPower.type === "As ritual") {
-      type = { ritualType: true as const };
+      powerType = { ritualType: true as const };
     } else if (critterPower.type === "Device") {
-      type = { device: true as const };
+      powerType = { device: true as const };
     } else if (critterPower.type === "Host") {
-      type = { host: true as const };
+      powerType = { host: true as const };
     } else if (critterPower.type === "File") {
-      type = { file: true as const };
+      powerType = { file: true as const };
     } else if (critterPower.type === "Icon") {
-      type = { icon: true as const };
+      powerType = { icon: true as const };
     } else if (critterPower.type === "Persona") {
-      type = { persona: true as const };
+      powerType = { persona: true as const };
     } else if (critterPower.type === "Persona or Device") {
-      type = { personaOrDevice: true as const };
+      powerType = { personaOrDevice: true as const };
     } else {
-      type = convertSpellType(critterPower.type);
+      powerType = convertSpellType(critterPower.type);
     }
   }
   const action =
@@ -130,9 +131,9 @@ function convertCritterPower(
       : undefined;
   let range;
   if (critterPower.range !== "") {
-    const check = SpellPowerXmlRangeSchema.safeParse(critterPower.range);
-    if (check.success) {
-      range = { rangeCalc: convertSpellPowerRange(check.data) };
+    const check = SpellPowerXmlRangeSchema(critterPower.range);
+    if (!(check instanceof type.errors)) {
+      range = { rangeCalc: convertSpellPowerRange(check) };
     } else {
       switch (critterPower.range) {
         case "Per Spell":
@@ -157,9 +158,9 @@ function convertCritterPower(
   }
   let duration;
   if (critterPower.duration !== "") {
-    const check = XmlDurationSchema.safeParse(critterPower.duration);
-    if (check.success) {
-      duration = convertDuration(check.data);
+    const check = XmlDurationSchema(critterPower.duration);
+    if (!(check instanceof type.errors)) {
+      duration = convertDuration(check);
     } else {
       switch (critterPower.duration) {
         case "Per Spell":
@@ -205,17 +206,17 @@ function convertCritterPower(
   return {
     name: critterPower.name,
     description: "",
-    karma: karma,
-    rating: rating,
-    type: type,
-    action: action,
-    range: range,
-    duration: duration,
+    ...(karma !== undefined && { karma: karma }),
+    ...(rating !== undefined && { rating: rating }),
+    ...(powerType !== undefined && { type: powerType }),
+    ...(action !== undefined && { action: action }),
+    ...(range !== undefined && { range: range }),
+    ...(duration !== undefined && { duration: duration }),
     category: critterPower.category,
     ...(bonus !== undefined && { bonus: bonus }),
     ...(critterPower.hide !== undefined && { userSelectable: false as const }),
-    requirements: requirements,
-    forbidden: forbidden,
+    ...(requirements !== undefined && { requirements: requirements }),
+    ...(forbidden !== undefined && { forbidden: forbidden }),
     source: source,
     page: critterPower.page,
   };

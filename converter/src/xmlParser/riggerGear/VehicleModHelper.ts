@@ -73,7 +73,7 @@ export const convertVehicleModMaxRating = function (
 const ratingSemantics = Rating.createSemantics();
 ratingSemantics.addOperation("eval", {
   Rating_addition(str, _, range) {
-    return [str.eval(), mathOperatorEnum.Add, range.eval()];
+    return [str.eval(), { operator: mathOperatorEnum.Add }, range.eval()];
   },
   Rating_single(str) {
     return [str.eval()];

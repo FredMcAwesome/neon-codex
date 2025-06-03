@@ -23,7 +23,7 @@ export const convertWeaponMount = function (
   weaponMount: IncludedWeaponMountXmlType
 ) {
   let mod;
-  if (weaponMount.mods !== undefined) {
+  if ("mods" in weaponMount && weaponMount.mods !== undefined) {
     mod = weaponMount.mods.mod;
   }
   return {
@@ -31,14 +31,13 @@ export const convertWeaponMount = function (
     flexibility: weaponMount.flexibility,
     size: weaponMount.size,
     visibility: weaponMount.visibility,
-    weaponMounted:
-      weaponMount.allowedweapons !== undefined
-        ? {
-            baseWeapon: weaponMount.allowedweapons,
-          }
-        : undefined,
-    weaponExchangeable: weaponMount.allowedweapons !== undefined,
-    weaponMountModList: mod !== undefined ? [mod] : undefined,
+    ...("allowedweapons" in weaponMount && {
+      ...(weaponMount.allowedweapons !== undefined && {
+        weaponMounted: { baseWeapon: weaponMount.allowedweapons },
+        weaponExchangeable: false as const,
+      }),
+    }),
+    ...(mod !== undefined && { weaponMountModList: [mod] }),
   };
 };
 

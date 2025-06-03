@@ -1,12 +1,10 @@
-import { z as zod } from "zod";
-const LoginSchema = zod
-  .object({
-    username: zod.string().min(1),
-    password: zod.string().min(1),
-  })
-  .strict();
+import { type } from "arktype";
 
-type LoginType = zod.infer<typeof LoginSchema>;
+const LoginSchema = type({
+  username: "string > 0",
+  password: "string > 0",
+});
+type LoginType = typeof LoginSchema.infer;
 
 export type { LoginType };
 export { LoginSchema };

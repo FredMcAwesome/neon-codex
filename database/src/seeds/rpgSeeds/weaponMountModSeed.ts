@@ -7,6 +7,7 @@ import {
   WeaponMountModListSchema,
   type WeaponMountModListType,
 } from "@neon-codex/common/build/schemas/equipment/rigger/weaponMountModSchemas.js";
+import { type } from "arktype";
 
 export const getWeaponMountModifications = function () {
   const currentPath = import.meta.url;
@@ -20,13 +21,13 @@ export const getWeaponMountModifications = function () {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const rawJson = JSON.parse(jsonString);
-  const weaponMountListParsed = WeaponMountModListSchema.safeParse(rawJson);
-  if (weaponMountListParsed.success) {
-    console.log("Weapon Mount Mods all g");
-    weaponMountMods = weaponMountListParsed.data;
-  } else {
-    console.log(weaponMountListParsed.error.errors[0]);
+  const weaponMountListParsed = WeaponMountModListSchema(rawJson);
+  if (weaponMountListParsed instanceof type.errors) {
+    console.log(weaponMountListParsed.summary);
     assert(false, "Weapon Mount Mods is undefined");
+  } else {
+    console.log("Weapon Mount Mods all g");
+    weaponMountMods = weaponMountListParsed;
   }
   const stagedWeaponMountMods: Array<WeaponMountModifications> = [];
   weaponMountMods.forEach((weaponMountMod) => {

@@ -1,4 +1,3 @@
-import { z as zod } from "zod";
 import {
   attributeXMLEnum,
   GenericNameValueSchema,
@@ -13,1364 +12,973 @@ import {
   StringArrayOrStringSchema,
   StringOrNumberSchema,
 } from "./ParserCommonDefines.js";
+import { type } from "arktype";
 
-const SkillXmlObjectSchema = zod
-  .object({
-    // check if name is ""
-    name: zod.string(),
-    val: StringOrNumberSchema,
-    min: zod.optional(zod.number()),
-    max: zod.optional(zod.number()),
-    // Specific to quality
-    // TODO: make this an enum with meaning given to all choices
-    condition: zod.optional(zod.string()),
-  })
-  .strict();
+const SkillXmlObjectSchema = type({
+  // check if name is ""
+  name: "string",
+  val: StringOrNumberSchema,
+  "min?": "number",
+  "max?": "number",
+  // Specific to quality
+  // TODO: make this an enum with meaning given to all choices
+  "condition?": "string",
+});
 
-const SelectAttributeSchema = zod.union([
-  zod
-    .object({
-      excludeattribute: zod.union([
-        zod.array(zod.nativeEnum(attributeXMLEnum)),
-        zod.nativeEnum(attributeXMLEnum),
-      ]),
-      max: zod.optional(zod.number()),
-    })
-    .strict(),
-  zod
-    .object({
-      attribute: zod.union([
-        zod.array(zod.nativeEnum(attributeXMLEnum)),
-        zod.nativeEnum(attributeXMLEnum),
-      ]),
-      val: zod.optional(NumberOrRatingSchema),
-    })
-    .strict(),
-]);
-
-const SelectQualitySchema = zod.union([
-  zod
-    .object({
-      _contributetobp: zod.literal("True"),
-      _forced: zod.literal("True"),
-      xmltext: zod.string(),
-    })
-    .strict(),
-  zod.string(),
-]);
-
-const PowersSchema = zod.union([
-  zod.array(
-    zod.union([
-      zod
-        .object({
-          xmltext: zod.string(),
-          _select: zod.string(),
-        })
-        .strict(),
-      zod
-        .object({
-          xmltext: zod.string(),
-          _rating: zod.string(),
-        })
-        .strict(),
-      zod.string(),
-    ])
-  ),
-  zod.union([
-    zod
-      .object({
-        xmltext: zod.string(),
-        _select: zod.string(),
-      })
-      .strict(),
-    zod
-      .object({
-        xmltext: zod.string(),
-        _rating: zod.string(),
-      })
-      .strict(),
-    zod.string(),
-  ]),
-]);
-
-const MovementMultiplierSchema = zod
-  .object({
-    category: zod.string(),
-    val: zod.optional(zod.number()),
-    percent: zod.optional(zod.number()),
-  })
-  .strict();
-
-const SelectSkillSchema = zod.union([
-  zod
-    .object({
-      _limittoskill: zod.optional(zod.string()),
-      _excludeskill: zod.optional(zod.string()),
-      _excludecategory: zod.optional(zod.string()),
-      _knowledgeskills: zod.optional(zod.string()),
-      _skillcategory: zod.optional(zod.string()),
-      _limittoattribute: zod.optional(zod.string()),
-      _maximumrating: zod.optional(zod.string()),
-      _minimumrating: zod.optional(zod.string()),
-      _prompt: zod.optional(zod.string()),
-      skillcategories: zod.optional(
-        zod
-          .object({
-            category: zod.array(zod.string()),
-          })
-          .strict()
-      ),
-      applytorating: zod.optional(zod.string()),
-      val: zod.optional(StringOrNumberSchema),
-      max: zod.optional(zod.number()),
-      disablespecializationeffects: zod.optional(zod.literal("")),
-    })
-    .strict(),
-  zod.literal(""),
-]);
-
-const WeaponSkillAccuracyXMLSchema = zod
-  .object({
-    name: zod.optional(zod.string()),
-    selectskill: zod.optional(SelectSkillSchema),
-    value: zod.number(),
-  })
-  .strict();
-export type WeaponSkillAccuracyXMLType = zod.infer<
-  typeof WeaponSkillAccuracyXMLSchema
->;
-
-const BonusOverrideSkillXMLSchema = zod
-  .object({
-    selectskill: zod
-      .object({
-        _skillcategory: zod.optional(zod.string()),
-        _skillgroup: zod.optional(zod.string()),
-        _limittoskill: zod.optional(zod.string()),
-        _minimumrating: zod.string(),
-        val: NumberOrRatingSchema,
-        skillcategories: zod.optional(
-          zod.object({
-            category: zod.array(zod.string()),
-          })
-        ),
-      })
-      .strict(),
-  })
-  .strict();
-const BonusOverrideAttributeXMLSchema = zod
-  .object({
-    selectattribute: zod
-      .object({
-        attribute: zod.nativeEnum(attributeXMLEnum),
-      })
-      .strict(),
-  })
-  .strict();
-const SpecificPowerXMLSchema = zod
-  .object({
-    name: zod.string(),
-    // How many levels of the power are given
-    val: zod.optional(zod.number()),
-    bonusoverride: zod.optional(
-      zod.union([BonusOverrideSkillXMLSchema, BonusOverrideAttributeXMLSchema])
+const SelectAttributeSchema = type.or(
+  {
+    excludeattribute: type.or(
+      type.valueOf(attributeXMLEnum),
+      type.valueOf(attributeXMLEnum).array()
     ),
-  })
-  .strict();
-export type SpecificPowerXMLType = zod.infer<typeof SpecificPowerXMLSchema>;
+    "max?": "number",
+  },
+  {
+    attribute: type.or(
+      type.valueOf(attributeXMLEnum),
+      type.valueOf(attributeXMLEnum).array()
+    ),
+    "val?": NumberOrRatingSchema,
+  }
+);
 
-const AddQualityListXMLSchema = zod.union([
-  zod.string(),
-  zod
-    .object({
-      _select: zod.optional(zod.string()),
-      _forced: zod.optional(zod.literal("True")),
-      xmltext: zod.string(),
-    })
-    .strict(),
-]);
+const SelectQualitySchema = type.or(
+  {
+    _contributetobp: "'True'",
+    _forced: "'True'",
+    xmltext: "string",
+  },
+  "string"
+);
+
+const PowersSchema = type.or(
+  type
+    .or(
+      {
+        xmltext: "string",
+        _select: "string",
+      },
+      {
+        xmltext: "string",
+        _rating: "string",
+      },
+      "string"
+    )
+    .array(),
+  type.or(
+    {
+      xmltext: "string",
+      _select: "string",
+    },
+    {
+      xmltext: "string",
+      _rating: "string",
+    },
+    "string"
+  )
+);
+
+const MovementMultiplierSchema = type({
+  category: "string",
+  "val?": "number",
+  "percent?": "number",
+});
+
+const SelectSkillSchema = type.or(
+  {
+    "_limittoskill?": "string",
+    "_excludeskill?": "string",
+    "_excludecategory?": "string",
+    "_knowledgeskills?": "string",
+    "_skillcategory?": "string",
+    "_limittoattribute?": "string",
+    "_maximumrating?": "string",
+    "_minimumrating?": "string",
+    "_prompt?": "string",
+    "skillcategories?": {
+      category: "string[]",
+    },
+    "applytorating?": "string",
+    "val?": StringOrNumberSchema,
+    "max?": "number",
+    "disablespecializationeffects?": "''",
+  },
+  "''"
+);
+
+const WeaponSkillAccuracyXMLSchema = type({
+  "name?": "string",
+  "selectskill?": SelectSkillSchema,
+  value: "number",
+});
+export type WeaponSkillAccuracyXMLType =
+  typeof WeaponSkillAccuracyXMLSchema.infer;
+
+const BonusOverrideSkillXMLSchema = type({
+  selectskill: {
+    "_skillcategory?": "string",
+    "_skillgroup?": "string",
+    "_limittoskill?": "string",
+    "_minimumrating?": "string",
+    val: NumberOrRatingSchema,
+    "skillcategories?": {
+      category: "string[]",
+    },
+  },
+});
+const BonusOverrideAttributeXMLSchema = type({
+  selectattribute: {
+    attribute: type.valueOf(attributeXMLEnum),
+  },
+});
+const SpecificPowerXMLSchema = type({
+  name: "string",
+  // How many levels of the power are given
+  "val?": "number",
+  "bonusoverride?": type.or(
+    BonusOverrideSkillXMLSchema,
+    BonusOverrideAttributeXMLSchema
+  ),
+});
+export type SpecificPowerXMLType = typeof SpecificPowerXMLSchema.infer;
+
+const AddQualityListXMLSchema = type.or("string", {
+  "_select?": "string",
+  "_forced?": "'True'",
+  xmltext: "string",
+});
 
 // https://github.com/chummer5a/chummer5a/wiki/Improvement-Manager explains bonus properties
-export const BonusXmlSchema = zod.union([
-  zod
-    .object({
-      // unique bonus... these don't seem to be used?
-      _unique: zod.optional(zod.string()),
-      // for wireless bonus, replace normal bonus
-      _mode: zod.optional(zod.literal("replace")),
-      _useselected: zod.optional(zod.literal("False")),
-      // Enter a name for this item
-      selecttext: zod.optional(
-        zod.union([
-          zod
-            .object({
-              _xml: zod.string(),
-              _xpath: zod.string(),
-              _allowedit: zod.optional(zod.string()),
-            })
-            .strict(),
-          zod.literal(""),
-        ])
+export const BonusXmlSchema = type.or(
+  {
+    // unique bonus... these don't seem to be used?
+    "_unique?": "string",
+    // for wireless bonus, replace normal bonus
+    "_mode?": "'replace'",
+    "_useselected?": "'False'",
+    // Enter a name for this item
+    "selecttext?": type.or(
+      {
+        _xml: "string",
+        _xpath: "string",
+        "_allowedit?": "string",
+      },
+      "''"
+    ),
+    // Choose a weapon to link to
+    "selectweapon?": type.or(
+      {
+        _weapondetails: "string",
+      },
+      "''"
+    ),
+    // Choose an armour to link to
+    "selectarmor?": "''",
+    // Choose a contact to link to
+    "selectcontact?": "''",
+    // Choose an attribute to link to
+    "selectattributes?": {
+      selectattribute: type.or(
+        SelectAttributeSchema,
+        SelectAttributeSchema.array()
       ),
-      // Choose a weapon to link to
-      selectweapon: zod.optional(
-        zod.union([
-          zod
-            .object({
-              _weapondetails: zod.string(),
-            })
-            .strict(),
-          zod.literal(""),
-        ])
+    },
+    // Choose an attribute to link to
+    // TODO: standardise this in chummer
+    "selectattribute?": SelectAttributeSchema,
+    // Choose a (negative) quality, if discount is not listed gain no karma
+    // if discount is listed gain karma minus the discount amount
+    "selectquality?": {
+      quality: type.or(SelectQualitySchema, SelectQualitySchema.array()),
+      "discountqualities?": {
+        quality: type.or(
+          type({
+            _discount: "string",
+            xmltext: "string",
+          }).array(),
+          {
+            _discount: "string",
+            xmltext: "string",
+          }
+        ),
+      },
+    },
+    // Select a sprite type
+    "selectsprite?": "''",
+    // Select a paragon (from paragons.xml)
+    "selectparagon?": "''",
+    // Choose a skill to link to
+    "selectskill?": SelectSkillSchema,
+    "selectspell?": type.or("''", {
+      _ignorerequirements: "'True'",
+    }),
+    // Choose a power to link to
+    "selectpowers?": {
+      selectpower: {
+        "_limittopowers?": "string",
+        "ignorerating?": "'True'",
+        val: NumberOrRatingSchema,
+        "limit?": "'Rating'",
+        "pointsperlevel?": "number",
+      },
+    },
+    "selectmentorspirit?": "''",
+    // Choose a tradition to link to
+    "selecttradition?": "''",
+    // Choose a license to link to
+    "selectrestricted?": "''",
+    // Choose a cyberware to link to
+    "selectcyberware?": type.or(
+      {
+        category: "string",
+      },
+      "''"
+    ),
+    // Select side of body this applies to
+    "selectside?": "''",
+    // Select skill expertise
+    "selectexpertise?": {
+      _limittoskill: "string",
+    },
+    // Replace standard min/max/augmented with new values
+    "replaceattributes?": {
+      replaceattribute: type.or(
+        GenericNameValueSchema,
+        GenericNameValueSchema.array()
       ),
-      // Choose an armour to link to
-      selectarmor: zod.optional(zod.literal("")),
-      // Choose a contact to link to
-      selectcontact: zod.optional(zod.literal("")),
-      // Choose an attribute to link to
-      selectattributes: zod.optional(
-        zod
-          .object({
-            selectattribute: zod.union([
-              zod.array(SelectAttributeSchema),
-              SelectAttributeSchema,
-            ]),
-          })
-          .strict()
-      ),
-      // Choose an attribute to link to
-      // TODO: standardise this in chummer
-      selectattribute: zod.optional(SelectAttributeSchema),
-      // Choose a (negative) quality, if discount is not listed gain no karma
-      // if discount is listed gain karma minus the discount amount
-      selectquality: zod.optional(
-        zod
-          .object({
-            quality: zod.union([
-              zod.array(SelectQualitySchema),
-              SelectQualitySchema,
-            ]),
-            discountqualities: zod.optional(
-              zod
-                .object({
-                  quality: zod.union([
-                    zod.array(
-                      zod
-                        .object({
-                          _discount: zod.string(),
-                          xmltext: zod.string(),
-                        })
-                        .strict()
-                    ),
-                    zod
-                      .object({
-                        _discount: zod.string(),
-                        xmltext: zod.string(),
-                      })
-                      .strict(),
-                  ]),
-                })
-                .strict()
-            ),
-          })
-          .strict()
-      ),
-      // Select a sprite type
-      selectsprite: zod.optional(zod.literal("")),
-      // Select a paragon (from paragons.xml)
-      selectparagon: zod.optional(zod.literal("")),
-      // Choose a skill to link to
-      selectskill: zod.optional(SelectSkillSchema),
-      selectspell: zod.optional(
-        zod.union([
-          zod.literal(""),
-          zod
-            .object({
-              _ignorerequirements: zod.literal("True"),
-            })
-            .strict(),
-        ])
-      ),
-      // Choose a power to link to
-      selectpowers: zod.optional(
-        zod
-          .object({
-            selectpower: zod
-              .object({
-                _limittopowers: zod.optional(zod.string()),
-                ignorerating: zod.optional(zod.literal("True")),
-                val: NumberOrRatingSchema,
-                limit: zod.optional(zod.literal("Rating")),
-                pointsperlevel: zod.optional(zod.number()),
-              })
-              .strict(),
-          })
-          .strict()
-      ),
-      selectmentorspirit: zod.optional(zod.literal("")),
-      // Choose a tradition to link to
-      selecttradition: zod.optional(zod.literal("")),
-      // Choose a license to link to
-      selectrestricted: zod.optional(zod.literal("")),
-      // Choose a cyberware to link to
-      selectcyberware: zod.optional(
-        zod.union([
-          zod
-            .object({
-              category: zod.string(),
-            })
-            .strict(),
-          zod.literal(""),
-        ])
-      ),
-      // Select side of body this applies to
-      selectside: zod.optional(zod.literal("")),
-      // Select skill expertise
-      selectexpertise: zod.optional(
-        zod
-          .object({
-            _limittoskill: zod.string(),
-          })
-          .strict()
-      ),
-      // Replace standard min/max/augmented with new values
-      replaceattributes: zod.optional(
-        zod
-          .object({
-            replaceattribute: zod.union([
-              zod.array(GenericNameValueSchema),
-              GenericNameValueSchema,
-            ]),
-          })
-          .strict()
-      ),
-      // bonus to these skill categories
-      skillcategory: zod.optional(
-        zod.union([zod.array(SkillSchema), SkillSchema])
-      ),
-      // bonus to these skill groups (groups and categories and different...)
-      skillgroup: zod.optional(
-        zod.union([zod.array(SkillSchema), SkillSchema])
-      ),
-      allowskilldefaulting: zod.optional(zod.literal("")),
-      selectlimit: zod.optional(zod.object({ val: zod.number() })),
-      addskillspecializationoption: zod.optional(
-        zod.union([
-          zod
-            .object({
-              spec: zod.string(),
-              skill: zod.string(),
-            })
-            .strict(),
-          zod
-            .object({
-              spec: zod.string(),
-              skills: zod
-                .object({
-                  skill: zod.union([zod.array(zod.string()), zod.string()]),
-                })
-                .strict(),
-            })
-            .strict(),
-        ])
-      ),
-      // Select a skill group, you can no longer default on skills in it
-      // and all skills have a max rank of 0
-      blockskillgroupdefaulting: zod.optional(zod.literal("")),
-      // Select a skill category, you can no longer default on skills in it
-      // and all skills have a max rank of 0
-      blockskillcategorydefaulting: zod.optional(StringArrayOrStringSchema),
-      // skillsoft for physical active skills
-      activesoft: zod.optional(
-        zod
-          .object({
-            val: zod.literal("Rating"),
-          })
-          .strict()
-      ),
-      // skillsoft for any skill
-      skillsoft: zod.optional(
-        zod
-          .object({
-            val: zod.literal("Rating"),
-            _excludecategory: zod.optional(zod.string()),
-            _skillcategory: zod.optional(zod.string()),
-          })
-          .strict()
-      ),
-      // max skillsoft rating
-      skillsoftaccess: zod.optional(
-        zod
-          .object({
-            xmltext: zod.literal("Rating"),
-            _precedence: zod.literal("0"),
-          })
-          .strict()
-      ),
-      // max activesoft rating
-      skillwire: zod.optional(
-        zod.union([GenericNameValueSchema, zod.string()])
-      ),
-      // max skillsoft/activesoft rating (only supports 1)
-      hardwires: zod.optional(
-        zod.union([
-          zod
-            .object({
-              xmltext: zod.literal("Rating"),
-              _knowledgeskill: zod.literal("True"),
-            })
-            .strict(),
+    },
+    // bonus to these skill categories
+    "skillcategory?": type.or(SkillSchema, SkillSchema.array()),
+    // bonus to these skill groups (groups and categories and different...)
+    "skillgroup?": type.or(SkillSchema, SkillSchema.array()),
+    "allowskilldefaulting?": "''",
+    "selectlimit?": { val: "number" },
+    "addskillspecializationoption?": type.or(
+      {
+        spec: "string",
+        skill: "string",
+      },
+      {
+        spec: "string",
+        skills: {
+          skill: type.or("string[]", "string"),
+        },
+      }
+    ),
+    // Select a skill group, you can no longer default on skills in it
+    // and all skills have a max rank of 0
+    "blockskillgroupdefaulting?": "''",
+    // Select a skill category, you can no longer default on skills in it
+    // and all skills have a max rank of 0
+    "blockskillcategorydefaulting?": StringArrayOrStringSchema,
+    // skillsoft for physical active skills
+    "activesoft?": {
+      val: "'Rating'",
+    },
+    // skillsoft for any skill
+    "skillsoft?": {
+      val: "'Rating'",
+      "_excludecategory?": "string",
+      "_skillcategory?": "string",
+    },
+    // max skillsoft rating
+    "skillsoftaccess?": {
+      xmltext: "'Rating'",
+      _precedence: "'0'",
+    },
+    // max activesoft rating
+    "skillwire?": type.or(GenericNameValueSchema, "string"),
+    // max skillsoft/activesoft rating (only supports 1)
+    "hardwires?": type.or(
+      {
+        xmltext: "'Rating'",
+        _knowledgeskill: "'True'",
+      },
 
-          zod
-            .object({
-              xmltext: zod.literal("Rating"),
-              _excludecategory: zod.string(),
-            })
-            .strict(),
-        ])
-      ),
-      // modifications to test limits
-      limit: zod.optional(
-        zod.union([zod.array(GenericNameValueSchema), GenericNameValueSchema])
-      ),
-      // modifications to test limits (normally with conditions)
-      limitmodifier: zod.optional(
-        zod.union([zod.array(LimitModifierSchema), LimitModifierSchema])
-      ),
-      // increase native language limit by 1
-      nativelanguagelimit: zod.optional(zod.number()),
-      // bonus to an attribute
-      attribute: zod.optional(
-        zod.union([zod.array(GenericNameValueSchema), GenericNameValueSchema])
-      ),
-      // Enable magic or resonance attributes
-      enableattribute: zod.optional(
-        zod
-          .object({
-            name: zod.nativeEnum(lockedAttributeXmlEnum),
-            min: zod.optional(zod.union([zod.literal("F"), zod.number()])),
-            max: zod.optional(zod.union([zod.literal("F"), zod.number()])),
-            aug: zod.optional(zod.union([zod.literal("F"), zod.number()])),
-            val: zod.optional(zod.union([zod.literal("F"), zod.number()])),
-          })
-          .strict()
-      ),
-      // bonus to an attribute
-      specificattribute: zod.optional(
-        zod.union([zod.array(GenericNameValueSchema), GenericNameValueSchema])
-      ),
-      // Gives a power/bonus to a power
-      specificpower: zod.optional(
-        zod.union([SpecificPowerXMLSchema, zod.array(SpecificPowerXMLSchema)])
-      ),
-      // bonus to a specific skill
-      specificskill: zod.optional(
-        zod.union([zod.array(SkillSchema), SkillSchema])
-      ),
-      // bonus to tests with an attribute
-      skillattribute: zod.optional(
-        zod.union([zod.array(SkillSchema), SkillSchema])
-      ),
-      // bonus to tests with an attribute
-      skilllinkedattribute: zod.optional(
-        zod.union([zod.array(SkillSchema), SkillSchema])
-      ),
-      // Allows taking ranks in skills if not previously able to
-      unlockskills: zod.optional(
-        zod.union([
-          zod.union([
-            zod.string(),
-            zod
-              .object({
-                xmltext: zod.string(),
-                _name: zod.string(),
-              })
-              .strict(),
-          ]),
-          zod.array(
-            zod.union([
-              zod.string(),
-              zod
-                .object({
-                  xmltext: zod.string(),
-                  _name: zod.string(),
-                })
-                .strict(),
-            ])
-          ),
-        ])
-      ),
-      // bonus to a specific spell category
-      spellcategory: zod.optional(
-        zod.union([
-          zod.array(
-            zod
-              .object({
-                // When optional it means pick a spell category
-                name: zod.optional(zod.string()),
-                val: NumberOrRatingSchema,
-              })
-              .strict()
-          ),
-          zod
-            .object({
-              // When optional it means pick a spell category
-              name: zod.optional(zod.string()),
-              val: NumberOrRatingSchema,
-            })
-            .strict(),
-        ])
-      ),
-      // Allows casting spells from a spell category
-      allowspellcategory: zod.optional(zod.string()),
-      spelldicepool: zod.optional(
-        zod.union([zod.array(GenericNameValueSchema), GenericNameValueSchema])
-      ),
-      // Cannot cast spells with this spell descriptor
-      // TODO: this only applies to adepts is it correct?
-      blockspelldescriptor: zod.optional(zod.string()),
-      // Bonus to damage of spells using the descriptor
-      spelldescriptordamage: zod.optional(
-        zod
-          .object({
-            descriptor: zod.string(),
-            val: zod.number(),
-          })
-          .strict()
-      ),
-      // Bonus to drain of spells using the descriptor
-      spelldescriptordrain: zod.optional(
-        zod
-          .object({
-            descriptor: zod.string(),
-            val: zod.number(),
-          })
-          .strict()
-      ),
-      // Bonus to damage of spells in the category
-      spellcategorydamage: zod.optional(
-        zod
-          .object({
-            category: zod.string(),
-            val: zod.number(),
-          })
-          .strict()
-      ),
-      // Bonus to drain of spells in the category
-      spellcategorydrain: zod.optional(
-        zod
-          .object({
-            // When optional it means pick a spell category
-            category: zod.optional(zod.string()),
-            val: zod.number(),
-          })
-          .strict()
-      ),
-      // Can only use 1 spell category
-      limitspellcategory: zod.optional(
-        zod.union([
-          // Empty i.e. "" for select a category
-          zod.string(),
-          zod.array(zod.string()),
-          zod
-            .object({
-              _exclude: zod.string(),
-            })
-            .strict(),
-        ])
-      ),
-      metamagiclimit: zod.optional(
-        zod
-          .object({
-            metamagic: zod.array(
-              zod
-                .object({
-                  _grade: zod.string(),
-                  xmltext: zod.string(),
-                })
-                .strict()
-            ),
-          })
-          .strict()
-      ),
-      // Enable a tab in chummer e.g. magician tab
-      enabletab: zod.optional(
-        zod
-          .object({
-            name: StringArrayOrStringSchema,
-            reach: zod.optional(zod.number()),
-          })
-          .strict()
-      ),
-      genetechcostmultiplier: zod.optional(zod.number()),
-      genetechessmultiplier: zod.optional(zod.number()),
-      // essence cost times 100 (to avoid float issues)
-      // These are negative for cost, positive for bonus
-      essencepenaltyt100: zod.optional(StringOrNumberSchema),
-      // essence cost times 100 to determine if essence loss affects magic rating
-      essencepenaltymagonlyt100: zod.optional(StringOrNumberSchema),
-      // essence cost
-      essencepenalty: zod.optional(zod.number()),
-      // essence cost multiplier times 100 (not a copy paste error, it is times 100) for
-      // cyberware installed
-      cyberwaretotalessmultiplier: zod.optional(zod.number()),
-      // This seems like it needs to be combined with the above
-      cyberwareessmultiplier: zod.optional(zod.number()),
-      // essence cost multiplier times 100 for bioware installed
-      biowareessmultiplier: zod.optional(zod.number()),
-      // Bonus dice for actions of a specific category
-      actiondicepool: zod.optional(
-        zod.union([
-          zod
-            .object({
-              _category: zod.literal("Matrix"),
-            })
-            .strict(),
-          zod
-            .object({
-              name: zod.string(),
-              val: zod.number(),
-            })
-            .strict(),
-        ])
-      ),
-      // bonus to a weapon that needs to be selected
-      weaponspecificdice: zod.optional(
-        zod
-          .object({
-            xmltext: zod.literal("Rating"),
-            _type: zod.literal("Melee"),
-          })
-          .strict()
-      ),
-      // increases the accuracy of a weapon
-      weaponaccuracy: zod.optional(
-        zod
-          .object({
-            name: zod.string(),
-            value: zod.number(),
-          })
-          .strict()
-      ),
-      // increases the accuracy of all weapons linked to a skill
-      // select means this is chosen when bought
-      weaponskillaccuracy: zod.optional(
-        zod.union([
-          WeaponSkillAccuracyXMLSchema,
-          zod.array(WeaponSkillAccuracyXMLSchema),
-        ])
-      ),
-      // bonus damage to weapons using specific skills
-      weaponcategorydv: zod.optional(
-        zod
-          .object({
-            bonus: zod.number(),
-            selectskill: SelectSkillSchema,
-          })
-          .strict()
-      ),
-      weaponcategorydice: zod.optional(
-        zod
-          .object({
-            category: zod
-              .object({
-                name: zod.string(),
-                value: zod.number(),
-              })
-              .strict(),
-          })
-          .strict()
-      ),
-      throwstr: zod.optional(zod.number()),
-      throwrangestr: zod.optional(zod.string()),
-      // smartlink accuracy bonus for smartgun systems
-      smartlink: zod.optional(zod.number()),
-      // additional initiative (not dice)
-      initiative: zod.optional(
-        zod.union([zod.number(), GenericNameValueSchema])
-      ),
-      // additional initiative dice
-      initiativedice: zod.optional(zod.number()),
-      // additional initiative dice
-      initiativepass: zod.optional(
-        zod.union([GenericNameValueSchema, zod.number()])
-      ),
-      // additional initiative (not dice)
-      matrixinitiative: zod.optional(zod.number()),
-      // additional matrix initiative dice
-      matrixinitiativedice: zod.optional(
-        zod
-          .object({
-            xmltext: zod.number(),
-            _precedence: zod.string(),
-          })
-          .strict()
-      ),
+      {
+        xmltext: "'Rating'",
+        _excludecategory: "string",
+      }
+    ),
+    // modifications to test limits
+    "limit?": type.or(GenericNameValueSchema, GenericNameValueSchema.array()),
+    // modifications to test limits (normally with conditions)
+    "limitmodifier?": type.or(LimitModifierSchema, LimitModifierSchema.array()),
+    // increase native language limit by 1
+    "nativelanguagelimit?": "number",
+    // bonus to an attribute
+    "attribute?": type.or(
+      GenericNameValueSchema,
+      GenericNameValueSchema.array()
+    ),
+    // Enable magic or resonance attributes
+    "enableattribute?": {
+      name: type.valueOf(lockedAttributeXmlEnum),
+      "min?": type.or("'F'", "number"),
+      "max?": type.or("'F'", "number"),
+      "aug?": type.or("'F'", "number"),
+      "val?": type.or("'F'", "number"),
+    },
+    // bonus to an attribute
+    "specificattribute?": type.or(
+      GenericNameValueSchema,
+      GenericNameValueSchema.array()
+    ),
+    // Gives a power/bonus to a power
+    "specificpower?": type.or(
+      SpecificPowerXMLSchema,
+      SpecificPowerXMLSchema.array()
+    ),
+    // bonus to a specific skill
+    "specificskill?": type.or(SkillSchema, SkillSchema.array()),
+    // bonus to tests with an attribute
+    "skillattribute?": type.or(SkillSchema, SkillSchema.array()),
+    // bonus to tests with an attribute
+    "skilllinkedattribute?": type.or(SkillSchema, SkillSchema.array()),
+    // Allows taking ranks in skills if not previously able to
+    "unlockskills?": type.or(
+      type.or("string", {
+        xmltext: "string",
+        _name: "string",
+      }),
+      type
+        .or("string", {
+          xmltext: "string",
+          _name: "string",
+        })
+        .array()
+    ),
+    // bonus to a specific spell category
+    "spellcategory?": type.or(
+      type({
+        // When optional it means pick a spell category
+        name: "string",
+        val: NumberOrRatingSchema,
+      }).array(),
+      {
+        // When optional it means pick a spell category
+        name: "string",
+        val: NumberOrRatingSchema,
+      }
+    ),
+    // Allows casting spells from a spell category
+    "allowspellcategory?": "string",
+    "spelldicepool?": type.or(
+      GenericNameValueSchema,
+      GenericNameValueSchema.array()
+    ),
+    // Cannot cast spells with this spell descriptor
+    // TODO: this only applies to adepts is it correct?
+    "blockspelldescriptor?": "string",
+    // Bonus to damage of spells using the descriptor
+    "spelldescriptordamage?": {
+      descriptor: "string",
+      val: "number",
+    },
+    // Bonus to drain of spells using the descriptor
+    "spelldescriptordrain?": {
+      descriptor: "string",
+      val: "number",
+    },
+    // Bonus to damage of spells in the category
+    "spellcategorydamage?": {
+      category: "string",
+      val: "number",
+    },
+    // Bonus to drain of spells in the category
+    "spellcategorydrain?": {
+      // When optional it means pick a spell category
+      "category?": "string",
+      val: "number",
+    },
+    // Can only use 1 spell category
+    "limitspellcategory?": type.or(
+      // Empty i.e. "" for select a category
+      "string",
+      "string[]",
+      {
+        _exclude: "string",
+      }
+    ),
+    "metamagiclimit?": {
+      metamagic: type({
+        _grade: "string",
+        xmltext: "string",
+      }).array(),
+    },
+    // Enable a tab in chummer e.g. magician tab
+    "enabletab?": {
+      name: StringArrayOrStringSchema,
+    },
+    "genetechcostmultiplier?": "number",
+    "genetechessmultiplier?": "number",
+    // essence cost times 100 (to avoid float issues)
+    // These are negative for cost, positive for bonus
+    "essencepenaltyt100?": StringOrNumberSchema,
+    // essence cost times 100 to determine if essence loss affects magic rating
+    "essencepenaltymagonlyt100?": StringOrNumberSchema,
+    // essence cost
+    "essencepenalty?": "number",
+    // essence cost multiplier times 100 (not a copy paste error, it is times 100) for
+    // cyberware installed
+    "cyberwaretotalessmultiplier?": "number",
+    // This seems like it needs to be combined with the above
+    "cyberwareessmultiplier?": "number",
+    // essence cost multiplier times 100 for bioware installed
+    "biowareessmultiplier?": "number",
+    // Bonus dice for actions of a specific category
+    "actiondicepool?": type.or(
+      {
+        _category: "'Matrix'",
+      },
+      {
+        name: "string",
+        val: "number",
+      }
+    ),
+    // bonus to a weapon that needs to be selected
+    "weaponspecificdice?": {
+      xmltext: "'Rating'",
+      _type: "'Melee'",
+    },
+    // increases the accuracy of a weapon
+    "weaponaccuracy?": {
+      name: "string",
+      value: "number",
+    },
+    // increases the accuracy of all weapons linked to a skill
+    // select means this is chosen when bought
+    "weaponskillaccuracy?": type.or(
+      WeaponSkillAccuracyXMLSchema,
+      WeaponSkillAccuracyXMLSchema.array()
+    ),
+    // bonus damage to weapons using specific skills
+    "weaponcategorydv?": {
+      bonus: "number",
+      selectskill: SelectSkillSchema,
+    },
+    "weaponcategorydice?": {
+      category: {
+        name: "string",
+        value: "number",
+      },
+    },
+    "throwstr?": "number",
+    "throwrangestr?": "string",
+    // smartlink accuracy bonus for smartgun systems
+    "smartlink?": "number",
+    // additional initiative (not dice)
+    "initiative?": type.or("number", GenericNameValueSchema),
+    // additional initiative dice
+    "initiativedice?": "number",
+    // additional initiative dice
+    "initiativepass?": type.or(GenericNameValueSchema, "number"),
+    // additional initiative (not dice)
+    "matrixinitiative?": "number",
+    // additional matrix initiative dice
+    "matrixinitiativedice?": {
+      xmltext: "number",
+      _precedence: "string",
+    },
 
-      // Toxin and pathogen resistances/immunities
-      toxincontactresist: zod.optional(NumberOrRatingSchema),
-      pathogencontactresist: zod.optional(NumberOrRatingSchema),
-      toxincontactimmune: zod.optional(zod.literal("")),
-      pathogencontactimmune: zod.optional(zod.literal("")),
-      toxininhalationresist: zod.optional(NumberOrRatingSchema),
-      pathogeninhalationresist: zod.optional(NumberOrRatingSchema),
-      toxininhalationimmune: zod.optional(zod.literal("")),
-      pathogeninhalationimmune: zod.optional(zod.literal("")),
-      toxiningestionresist: zod.optional(NumberOrRatingSchema),
-      pathogeningestionresist: zod.optional(NumberOrRatingSchema),
-      toxiningestionimmune: zod.optional(zod.literal("")),
-      pathogeningestionimmune: zod.optional(zod.literal("")),
-      toxininjectionresist: zod.optional(NumberOrRatingSchema),
-      pathogeninjectionresist: zod.optional(NumberOrRatingSchema),
-      toxininjectionimmune: zod.optional(zod.literal("")),
-      pathogeninjectionimmune: zod.optional(zod.literal("")),
+    // Toxin and pathogen resistances/immunities
+    "toxincontactresist?": NumberOrRatingSchema,
+    "pathogencontactresist?": NumberOrRatingSchema,
+    "toxincontactimmune?": "''",
+    "pathogencontactimmune?": "''",
+    "toxininhalationresist?": NumberOrRatingSchema,
+    "pathogeninhalationresist?": NumberOrRatingSchema,
+    "toxininhalationimmune?": "''",
+    "pathogeninhalationimmune?": "''",
+    "toxiningestionresist?": NumberOrRatingSchema,
+    "pathogeningestionresist?": NumberOrRatingSchema,
+    "toxiningestionimmune?": "''",
+    "pathogeningestionimmune?": "''",
+    "toxininjectionresist?": NumberOrRatingSchema,
+    "pathogeninjectionresist?": NumberOrRatingSchema,
+    "toxininjectionimmune?": "''",
+    "pathogeninjectionimmune?": "''",
 
-      // fatigue test bonus
-      fatigueresist: zod.optional(NumberOrRatingSchema),
+    // fatigue test bonus
+    "fatigueresist?": NumberOrRatingSchema,
 
-      // Limit bonuses
-      // bonus to social limit
-      sociallimit: zod.optional(NumberOrAnyRatingSchema),
-      // bonus to physical limit
-      physicallimit: zod.optional(NumberOrRatingSchema),
-      // bonus to mental limit
-      mentallimit: zod.optional(NumberOrRatingSchema),
+    // Limit bonuses
+    // bonus to social limit
+    "sociallimit?": NumberOrAnyRatingSchema,
+    // bonus to physical limit
+    "physicallimit?": NumberOrRatingSchema,
+    // bonus to mental limit
+    "mentallimit?": NumberOrRatingSchema,
 
-      // add a quality (mainly temporary from drugs)
-      quality: zod.optional(
-        zod
-          .object({
-            xmltext: zod.string(),
-            _rating: zod.string(),
-          })
-          .strict()
+    // add a quality (mainly temporary from drugs)
+    "quality?": {
+      xmltext: "string",
+      _rating: "string",
+    },
+    // add a quality
+    "addqualities?": {
+      addquality: type.or(
+        AddQualityListXMLSchema,
+        AddQualityListXMLSchema.array()
       ),
-      // add a quality
-      addqualities: zod.optional(
-        zod
-          .object({
-            addquality: zod.union([
-              AddQualityListXMLSchema,
-              zod.array(AddQualityListXMLSchema),
-            ]),
-          })
-          .strict()
-      ),
-      // disable quality (sometimes uses the quality guid)
-      disablequality: zod.optional(StringArrayOrStringSchema),
-      // add dice for damage resistance
-      damageresistance: zod.optional(NumberOrRatingSchema),
-      // add dice for radiation resistance
-      radiationresist: zod.optional(NumberOrRatingSchema),
-      // add dice for sonic resistance
-      sonicresist: zod.optional(zod.number()),
-      // bonus damage
-      unarmeddv: zod.optional(StringOrNumberSchema),
-      // unarmed does physical instead of stun
-      unarmeddvphysical: zod.optional(zod.string()),
-      unarmedap: zod.optional(NumberOrAnyRatingSchema),
-      // modify the cost to improve an attribute
-      attributekarmacost: zod.optional(
-        zod.union([GenericNameValueSchema, zod.array(GenericNameValueSchema)])
-      ),
-      // modify the cost to improve a active skill
-      activeskillkarmacost: zod.optional(
-        zod.union([SkillXmlObjectSchema, zod.array(SkillXmlObjectSchema)])
-      ),
-      // modify the cost to improve a knowledge skill
-      knowledgeskillkarmacost: zod.optional(
-        zod.union([SkillXmlObjectSchema, zod.array(SkillXmlObjectSchema)])
-      ),
-      // Karma cost cannot be reduced below minimum
-      knowledgeskillkarmacostmin: zod.optional(
-        zod.union([SkillXmlObjectSchema, zod.array(SkillXmlObjectSchema)])
-      ),
-      // modify the condition modifier track
-      conditionmonitor: zod.optional(
-        zod
-          .object({
-            // ignore the negative effects of a number of boxes in any combination of track
-            sharedthresholdoffset: zod.optional(NumberOrRatingSchema),
-            // ignore the negative effects of a number of boxes on one track
-            thresholdoffset: zod.optional(NumberOrRatingSchema),
-            // reduce the number of boxes in each level when determining negative offsets
-            // e.g. if -1 then every 2 boxes increase negative effects
-            threshold: zod.optional(zod.number()),
-            // add boxes to physical track
-            physical: zod.optional(NumberOrAnyRatingSchema),
-            // add boxes to stun track
-            stun: zod.optional(NumberOrRatingSchema),
-            // add overflow boxes (used to determine death only)
-            overflow: zod.optional(zod.number()),
-          })
-          .strict()
-      ),
-      // Replace movement
-      movementreplace: zod.optional(
-        zod.union([
-          zod.array(
-            zod
-              .object({
-                category: zod.union([
-                  zod.literal("Fly"),
-                  zod.literal("Ground"),
-                ]),
-                speed: zod.union([
-                  zod.literal("sprint"),
-                  zod.literal("run"),
-                  zod.literal("walk"),
-                ]),
-                val: zod.number(),
-              })
-              .strict()
-          ),
-          zod
-            .object({
-              category: zod.union([zod.literal("Fly"), zod.literal("Ground")]),
-              speed: zod.union([
-                zod.literal("sprint"),
-                zod.literal("run"),
-                zod.literal("walk"),
-              ]),
-              val: zod.number(),
-            })
-            .strict(),
-        ])
-      ),
-      // Swim and walk speed modifiers
-      walkmultiplier: zod.optional(
-        zod.union([
-          zod.array(MovementMultiplierSchema),
-          MovementMultiplierSchema,
-        ])
-      ),
-      // Run speed modifier
-      runmultiplier: zod.optional(MovementMultiplierSchema),
-      // Sprint speed modifier
-      sprintbonus: zod.optional(MovementMultiplierSchema),
-      // increase to lifestyle cost
-      lifestylecost: zod.optional(
-        zod.union([
-          zod.array(
-            zod.union([
-              zod.number(),
-              zod
-                .object({
-                  _lifestyle: zod.string(),
-                  xmltext: zod.number(),
-                })
-                .strict(),
-            ])
-          ),
-          zod.union([
-            zod.number(),
-            zod
-              .object({
-                _lifestyle: zod.string(),
-                xmltext: zod.number(),
-              })
-              .strict(),
-          ]),
-        ])
-      ),
-      // Seems to be redundant with lifestylecost
-      basiclifestylecost: zod.optional(zod.number()),
-      // stun condition modifier dice bonus
-      stuncmrecovery: zod.optional(NumberOrRatingSchema),
-      // physical condition modifier dice bonus
-      physicalcmrecovery: zod.optional(NumberOrRatingSchema),
-      // Armour bonus, only one from each group applies
-      armor: zod.optional(
-        zod.union([
-          zod
-            .object({
-              xmltext: zod.union([zod.literal("Rating"), zod.number()]),
-              _group: zod.literal("0"),
-            })
-            .strict(),
-          NumberOrRatingSchema,
-          zod.literal("+Rating"),
-        ])
-      ),
-      // Armour bonus against fire attacks/damage
-      firearmor: zod.optional(NumberOrRatingSchema),
-      // Armour bonus against electricity attacks/damage
-      electricityarmor: zod.optional(NumberOrRatingSchema),
-      // Armour bonus against cold attacks/damage
-      coldarmor: zod.optional(NumberOrRatingSchema),
-      // bonus to ranged and melee defense tests
-      defensetest: zod.optional(zod.number()),
-      // bonus to all defense tests
-      dodge: zod.optional(NumberOrAnyRatingSchema),
-      // Unarmed reach bonus
-      unarmedreach: zod.optional(zod.number()),
-      // Reach with a specific bioware or quality (that likely extends limbs)
-      reach: zod.optional(zod.union([GenericNameValueSchema, zod.number()])),
+    },
+    // disable quality (sometimes uses the quality guid)
+    "disablequality?": StringArrayOrStringSchema,
+    // add dice for damage resistance
+    "damageresistance?": NumberOrRatingSchema,
+    // add dice for radiation resistance
+    "radiationresist?": NumberOrRatingSchema,
+    // add dice for sonic resistance
+    "sonicresist?": "number",
+    // bonus damage
+    "unarmeddv?": StringOrNumberSchema,
+    // unarmed does physical instead of stun
+    "unarmeddvphysical?": "string",
+    "unarmedap?": NumberOrAnyRatingSchema,
+    // modify the cost to improve an attribute
+    "attributekarmacost?": type.or(
+      GenericNameValueSchema,
+      GenericNameValueSchema.array()
+    ),
+    // modify the cost to improve a active skill
+    "activeskillkarmacost?": type.or(
+      SkillXmlObjectSchema,
+      SkillXmlObjectSchema.array()
+    ),
+    // modify the cost to improve a knowledge skill
+    "knowledgeskillkarmacost?": type.or(
+      SkillXmlObjectSchema,
+      SkillXmlObjectSchema.array()
+    ),
+    // Karma cost cannot be reduced below minimum
+    "knowledgeskillkarmacostmin?": type.or(
+      SkillXmlObjectSchema,
+      SkillXmlObjectSchema.array()
+    ),
+    // modify the condition modifier track
+    "conditionmonitor?": {
+      // ignore the negative effects of a number of boxes in any combination of track
+      "sharedthresholdoffset?": NumberOrRatingSchema,
+      // ignore the negative effects of a number of boxes on one track
+      "thresholdoffset?": NumberOrRatingSchema,
+      // reduce the number of boxes in each level when determining negative offsets
+      // e.g. if -1 then every 2 boxes increase negative effects
+      "threshold?": "number",
+      // add boxes to physical track
+      "physical?": NumberOrAnyRatingSchema,
+      // add boxes to stun track
+      "stun?": NumberOrRatingSchema,
+      // add overflow boxes (used to determine death only)
+      "overflow?": "number",
+    },
+    // Replace movement
+    "movementreplace?": type.or(
+      type({
+        category: type.or("'Fly'", "'Ground'"),
+        speed: type.or("'sprint'", "'run'", "'walk'"),
+        val: "number",
+      }).array(),
+      {
+        category: type.or("'Fly'", "'Ground'"),
+        speed: type.or("'sprint'", "'run'", "'walk'"),
+        val: "number",
+      }
+    ),
+    // Swim and walk speed modifiers
+    "walkmultiplier?": type.or(
+      MovementMultiplierSchema.array(),
+      MovementMultiplierSchema
+    ),
+    // Run speed modifier
+    "runmultiplier?": MovementMultiplierSchema,
+    // Sprint speed modifier
+    "sprintbonus?": MovementMultiplierSchema,
+    // increase to lifestyle cost
+    "lifestylecost?": type.or(
+      type(
+        type.or("number", {
+          _lifestyle: "string",
+          xmltext: "number",
+        })
+      ).array(),
+      type.or("number", {
+        _lifestyle: "string",
+        xmltext: "number",
+      })
+    ),
+    // Seems to be redundant with lifestylecost
+    "basiclifestylecost?": "number",
+    // stun condition modifier dice bonus
+    "stuncmrecovery?": NumberOrRatingSchema,
+    // physical condition modifier dice bonus
+    "physicalcmrecovery?": NumberOrRatingSchema,
+    // Armour bonus, only one from each group applies
+    "armor?": type.or(
+      {
+        xmltext: type.or("'Rating'", "number"),
+        _group: "'0'",
+      },
+      NumberOrRatingSchema,
+      "'+Rating'"
+    ),
+    // Armour bonus against fire attacks/damage
+    "firearmor?": NumberOrRatingSchema,
+    // Armour bonus against electricity attacks/damage
+    "electricityarmor?": NumberOrRatingSchema,
+    // Armour bonus against cold attacks/damage
+    "coldarmor?": NumberOrRatingSchema,
+    // bonus to ranged and melee defense tests
+    "defensetest?": "number",
+    // bonus to all defense tests
+    "dodge?": NumberOrAnyRatingSchema,
+    // Unarmed reach bonus
+    "unarmedreach?": "number",
+    // Reach with a specific bioware or quality (that likely merges limbs)
+    "reach?": type.or(GenericNameValueSchema, "number"),
+    // Addiction Bonuses
+    // Bonus to avoid physiological addiction starting
+    "physiologicaladdictionfirsttime?": NumberOrAnyRatingSchema,
+    // Bonus to avoid psychological addiction starting
+    "psychologicaladdictionfirsttime?": NumberOrAnyRatingSchema,
+    // Bonus to avoid physiological addiction progressing
+    "physiologicaladdictionalreadyaddicted?": NumberOrAnyRatingSchema,
+    // Bonus to avoid psychological addiction progressing
+    "psychologicaladdictionalreadyaddicted?": NumberOrAnyRatingSchema,
 
-      // Addiction Bonuses
-      // Bonus to avoid physiological addiction starting
-      physiologicaladdictionfirsttime: zod.optional(NumberOrAnyRatingSchema),
-      // Bonus to avoid psychological addiction starting
-      psychologicaladdictionfirsttime: zod.optional(NumberOrAnyRatingSchema),
-      // Bonus to avoid physiological addiction progressing
-      physiologicaladdictionalreadyaddicted: zod.optional(
-        NumberOrAnyRatingSchema
-      ),
-      // Bonus to avoid psychological addiction progressing
-      psychologicaladdictionalreadyaddicted: zod.optional(
-        NumberOrAnyRatingSchema
-      ),
+    // Bonuses to attribute-only tests
+    // bonus to composure tests
+    "composure?": "number",
+    // bonus to defense for judge intentions test
+    "judgeintentionsdefense?": NumberOrAnyRatingSchema,
+    // bonus to offense for judge intentions test
+    "judgeintentionsoffense?": NumberOrAnyRatingSchema,
+    // bonus to all judge intentions test
+    "judgeintentions?": NumberOrAnyRatingSchema,
+    // bonus to memory tests
+    "memory?": NumberOrAnyRatingSchema,
 
-      // Bonuses to attribute-only tests
-      // bonus to composure tests
-      composure: zod.optional(zod.number()),
-      // bonus to defense for judge intentions test
-      judgeintentionsdefense: zod.optional(NumberOrAnyRatingSchema),
-      // bonus to offense for judge intentions test
-      judgeintentionsoffense: zod.optional(NumberOrAnyRatingSchema),
-      // bonus to all judge intentions test
-      judgeintentions: zod.optional(NumberOrAnyRatingSchema),
-      // bonus to memory tests
-      memory: zod.optional(NumberOrAnyRatingSchema),
+    // resist drain
+    "drainresist?": NumberOrAnyRatingSchema,
+    // resist fading
+    "fadingresist?": NumberOrAnyRatingSchema,
+    // resist all spells
+    "spellresistance?": NumberOrAnyRatingSchema,
+    // resist direct combat mana spells (you are attacked)
+    "directmanaspellresist?": NumberOrAnyRatingSchema,
+    // resist detection spells (you are being detected)
+    "detectionspellresist?": NumberOrAnyRatingSchema,
+    // resist illusion - mana illusion spells (try to detect mind illusion)
+    "manaillusionresist?": NumberOrAnyRatingSchema,
+    // resist illusion - physical illusion spells (try to detect in world illusion)
+    "physicalillusionresist?": NumberOrAnyRatingSchema,
+    // resist manipulation mental spells
+    "mentalmanipulationresist?": NumberOrAnyRatingSchema,
+    // Resist spell: Decrease [Attribute]
+    "decreasebodresist?": NumberOrAnyRatingSchema,
+    "decreaseagiresist?": NumberOrAnyRatingSchema,
+    "decreaserearesist?": NumberOrAnyRatingSchema,
+    "decreasestrresist?": NumberOrAnyRatingSchema,
+    "decreasecharesist?": NumberOrAnyRatingSchema,
+    "decreaseintresist?": NumberOrAnyRatingSchema,
+    "decreaselogresist?": NumberOrAnyRatingSchema,
+    "decreasewilresist?": NumberOrAnyRatingSchema,
+    // add limb slot
+    "addlimb?": {
+      limbslot: type.valueOf(limbSlotXmlEnum),
+      val: "number",
+      "_precedence?": "'0'",
+    },
+    "addweapon?": { name: "string" },
+    "naturalweapon?": NaturalWeaponSchema,
+    // add spirits?
+    "addspirit?": type.or(SpiritSchema, SpiritSchema.array()),
+    // Can only use 1 spirit category
+    "limitspiritcategory?": type.or(
+      {
+        spirit: "string",
+      },
+      type({
+        spirit: "string",
+      }).array(),
+      "''"
+    ),
+    // Add certain gear
+    "addgear?": {
+      name: "string",
+      category: "string",
+      "rating?": "number",
+      "children?": {
+        child: type({
+          name: "string",
+          category: "string",
+          rating: "number",
+        }).array(),
+      },
+    },
+    // Add certain augmentation
+    "addware?": {
+      name: "string",
+      grade: "string",
+      type: "string",
+    },
+    // Add contact
+    "addcontact?": {
+      "loyalty?": "number",
+      "connection?": "number",
+      "forcedloyalty?": "number",
+      "forcegroup?": "''",
+      "free?": "''",
+      "group?": "''",
+    },
+    // Device rating bonus
+    "devicerating?": "number",
+    // Vehicle bonuses
+    "seats?": StringOrNumberSchema,
+    "accel?": StringOrNumberSchema,
+    "offroadaccel?": StringOrNumberSchema,
+    "handling?": StringOrNumberSchema,
+    "offroadhandling?": StringOrNumberSchema,
+    "speed?": StringOrNumberSchema,
+    "offroadspeed?": StringOrNumberSchema,
+    "pilot?": "string",
+    "sensor?": StringOrNumberSchema,
+    "body?": StringOrNumberSchema,
 
-      // resist drain
-      drainresist: zod.optional(NumberOrAnyRatingSchema),
-      // resist fading
-      fadingresist: zod.optional(NumberOrAnyRatingSchema),
-      // resist all spells
-      spellresistance: zod.optional(NumberOrAnyRatingSchema),
-      // resist direct combat mana spells (you are attacked)
-      directmanaspellresist: zod.optional(NumberOrAnyRatingSchema),
-      // resist detection spells (you are being detected)
-      detectionspellresist: zod.optional(NumberOrAnyRatingSchema),
-      // resist illusion - mana illusion spells (try to detect mind illusion)
-      manaillusionresist: zod.optional(NumberOrAnyRatingSchema),
-      // resist illusion - physical illusion spells (try to detect in world illusion)
-      physicalillusionresist: zod.optional(NumberOrAnyRatingSchema),
-      // resist manipulation mental spells
-      mentalmanipulationresist: zod.optional(NumberOrAnyRatingSchema),
-      // Resist spell: Decrease [Attribute]
-      decreasebodresist: zod.optional(NumberOrAnyRatingSchema),
-      decreaseagiresist: zod.optional(NumberOrAnyRatingSchema),
-      decreaserearesist: zod.optional(NumberOrAnyRatingSchema),
-      decreasestrresist: zod.optional(NumberOrAnyRatingSchema),
-      decreasecharesist: zod.optional(NumberOrAnyRatingSchema),
-      decreaseintresist: zod.optional(NumberOrAnyRatingSchema),
-      decreaselogresist: zod.optional(NumberOrAnyRatingSchema),
-      decreasewilresist: zod.optional(NumberOrAnyRatingSchema),
-      // add limb slot
-      addlimb: zod.optional(
-        zod
-          .object({
-            limbslot: zod.nativeEnum(limbSlotXmlEnum),
-            val: zod.number(),
-            _precedence: zod.optional(zod.literal("0")),
-          })
-          .strict()
-      ),
-      addweapon: zod.optional(zod.object({ name: zod.string() }).strict()),
-      naturalweapon: zod.optional(NaturalWeaponSchema),
-      // add spirits?
-      addspirit: zod.optional(
-        zod.union([zod.array(SpiritSchema), SpiritSchema])
-      ),
-      // Can only use 1 spirit category
-      limitspiritcategory: zod.optional(
-        zod.union([
-          zod.object({
-            spirit: zod.string(),
-          }),
-          zod.array(
-            zod.object({
-              spirit: zod.string(),
-            })
-          ),
-          zod.literal(""),
-        ])
-      ),
-      // Add certain gear
-      addgear: zod.optional(
-        zod
-          .object({
-            name: zod.string(),
-            category: zod.string(),
-            rating: zod.optional(zod.number()),
-            children: zod.optional(
-              zod
-                .object({
-                  child: zod.array(
-                    zod
-                      .object({
-                        name: zod.string(),
-                        category: zod.string(),
-                        rating: zod.number(),
-                      })
-                      .strict()
-                  ),
-                })
-                .strict()
-            ),
-          })
-          .strict()
-      ),
-      // Add certain augmentation
-      addware: zod.optional(
-        zod
-          .object({
-            name: zod.string(),
-            grade: zod.string(),
-            type: zod.string(),
-          })
-          .strict()
-      ),
-      // Add contact
-      addcontact: zod.optional(
-        zod
-          .object({
-            loyalty: zod.optional(zod.number()),
-            connection: zod.optional(zod.number()),
-            forcedloyalty: zod.optional(zod.number()),
-            forcegroup: zod.optional(zod.literal("")),
-            free: zod.literal(""),
-            group: zod.literal(""),
-          })
-          .strict()
-      ),
-      // Device rating bonus
-      devicerating: zod.optional(zod.number()),
-      // Vehicle bonuses
-      seats: zod.optional(StringOrNumberSchema),
-      accel: zod.optional(StringOrNumberSchema),
-      offroadaccel: zod.optional(StringOrNumberSchema),
-      handling: zod.optional(StringOrNumberSchema),
-      offroadhandling: zod.optional(StringOrNumberSchema),
-      speed: zod.optional(StringOrNumberSchema),
-      offroadspeed: zod.optional(StringOrNumberSchema),
-      pilot: zod.optional(zod.string()),
-      sensor: zod.optional(StringOrNumberSchema),
-      body: zod.optional(StringOrNumberSchema),
+    // One-off bonuses e.g. very specific to one thing
+    // Reduces future cyberware essence cost
+    "adapsin?": "''",
+    // avoid default penalty (-1) on skills without ranks when
+    // you have reflex recorder for a skill in its group
+    "reflexrecorderoptimization?": "''",
+    // no offhand penalty
+    "ambidextrous?": "''",
+    // Increase to Notoriety level
+    "notoriety?": "number",
+    // Increase astral reputation
+    // Negative is good here (you don't want astral reputation)
+    "astralreputation?": "number",
+    // Increase public awareness
+    "publicawareness?": "number",
+    // bonus for surprise tests
+    "surprise?": NumberOrAnyRatingSchema,
+    // Add a martial art
+    "martialart?": "string",
+    // Add a number of restricted gear up to an amount
+    // up to an availability
+    "restrictedgear?": {
+      availability: "number",
+      amount: "number",
+    },
 
-      // One-off bonuses e.g. very specific to one thing
-      // Reduces future cyberware essence cost
-      adapsin: zod.optional(zod.literal("")),
-      // avoid default penalty (-1) on skills without ranks when
-      // you have reflex recorder for a skill in its group
-      reflexrecorderoptimization: zod.optional(zod.literal("")),
-      // no offhand penalty
-      ambidextrous: zod.optional(zod.literal("")),
-      // Increase to Notoriety level
-      notoriety: zod.optional(zod.number()),
-      // Increase astral reputation
-      // Negative is good here (you don't want astral reputation)
-      astralreputation: zod.optional(zod.number()),
-      // Increase public awareness
-      publicawareness: zod.optional(zod.number()),
-      // bonus for surprise tests
-      surprise: zod.optional(NumberOrAnyRatingSchema),
-      // Add a martial art
-      martialart: zod.optional(zod.string()),
-      // Add a number of restricted gear up to an amount
-      // up to an availability
-      restrictedgear: zod.optional(
-        zod
-          .object({
-            availability: zod.number(),
-            amount: zod.number(),
-          })
-          .strict()
-      ),
+    // Cannot add bioware to this character
+    "disablebioware?": "''",
+    // Cannot use these bioware grades
+    "disablebiowaregrade?": StringArrayOrStringSchema,
+    // Cannot use these cyberware grades
+    "disablecyberwaregrade?": StringArrayOrStringSchema,
+    // Karma cost increase or decrease per category
+    "skillcategorykarmacost?": type.or(
+      SkillXmlObjectSchema,
+      SkillXmlObjectSchema.array()
+    ),
+    // Karma cost multiplier times 100 for these categories
+    "skillcategorykarmacostmultiplier?": type.or(
+      SkillXmlObjectSchema,
+      SkillXmlObjectSchema.array()
+    ),
+    // Karma cost multiplier times 100 for these categories
+    "skillcategoryspecializationkarmacostmultiplier?": type.or(
+      SkillXmlObjectSchema,
+      SkillXmlObjectSchema.array()
+    ),
+    // Skill cost multiplier times 100 for these categories
+    // only applicable during character creation
+    "skillcategorypointcostmultiplier?": type.or(
+      GenericNameValueSchema,
+      GenericNameValueSchema.array()
+    ),
+    "skillgrouplevel?": {
+      name: "string",
+      val: "number",
+    },
+    // Skill group cost multiplier times 100 for these categories
+    // only applicable during character creation
+    "skillgroupcategorykarmacostmultiplier?": type.or(
+      GenericNameValueSchema.array(),
+      GenericNameValueSchema
+    ),
+    // Cannot put points into the skill groups under this category
+    "skillgroupcategorydisable?": "string",
+    // Cannot put points into this skill group
+    "skillgroupdisable?": StringArrayOrStringSchema,
+    // Badly named, when determining street cred divide the karma gained
+    // by 10 + this number to determine street cred instead of the normal 10
+    "streetcredmultiplier?": "number",
+    // Karma discount on binding a focus
+    "focusbindingkarmacost?": type.or(
+      type({
+        name: "string",
+        val: "number",
+        "extracontains?": "string",
+      }).array(),
+      {
+        name: "string",
+        val: "number",
+        "extracontains?": "string",
+      }
+    ),
+    // specific qualities
+    "freequality?": "string",
+    "burnoutsway?": "''",
+    "friendsinhighplaces?": "''",
+    "overclocker?": "''",
+    "trustfund?": "number",
+    "prototypetranshuman?": "number",
+    "excon?": "''",
+    "mademan?": "''",
+    "magicianswaydiscount?": "''",
+    "blackmarketdiscount?": "''",
+    "erased?": "''",
+    "fame?": "''",
+    "selectinherentaiprogram?": "''",
+    "dealerconnection?": { category: StringArrayOrStringSchema },
+    "cyberadeptdaemon?": "''",
 
-      // Cannot add bioware to this character
-      disablebioware: zod.optional(zod.literal("")),
-      // Cannot use these bioware grades
-      disablebiowaregrade: zod.optional(StringArrayOrStringSchema),
-      // Cannot use these cyberware grades
-      disablecyberwaregrade: zod.optional(StringArrayOrStringSchema),
-      // Karma cost increase or decrease per category
-      skillcategorykarmacost: zod.optional(
-        zod.union([zod.array(SkillXmlObjectSchema), SkillXmlObjectSchema])
+    // Bonus knowledge skill points
+    "knowledgeskillpoints?": { val: "number" },
+    // Points that can be spent on metagenic qualities
+    "metageniclimit?": "number",
+    // Bonus nuyen that must be spent on gear
+    "nuyenamt?": type.or("number", {
+      // Your gear is stolen
+      _condition: "'Stolen'",
+      xmltext: "number",
+    }),
+    // Bonus to number of karma points that can be
+    // converted to nuyen in character creation
+    "nuyenmaxbp?": "number",
+    // Included critter powers
+    "critterpowers?": {
+      power: PowersSchema,
+    },
+    "critterpowerlevels?": {
+      power: type.or(
+        {
+          name: "string",
+          val: "number",
+        },
+        type({
+          name: "string",
+          val: "number",
+        }).array()
       ),
-      // Karma cost multiplier times 100 for these categories
-      skillcategorykarmacostmultiplier: zod.optional(
-        zod.union([zod.array(SkillXmlObjectSchema), SkillXmlObjectSchema])
-      ),
-      // Karma cost multiplier times 100 for these categories
-      skillcategoryspecializationkarmacostmultiplier: zod.optional(
-        zod.union([zod.array(SkillXmlObjectSchema), SkillXmlObjectSchema])
-      ),
-      // Skill cost multiplier times 100 for these categories
-      // only applicable during character creation
-      skillcategorypointcostmultiplier: zod.optional(
-        zod.union([zod.array(GenericNameValueSchema), GenericNameValueSchema])
-      ),
-      skillgrouplevel: zod.optional(
-        zod
-          .object({
-            name: zod.string(),
-            val: zod.number(),
-          })
-          .strict()
-      ),
-      // Skill group cost multiplier times 100 for these categories
-      // only applicable during character creation
-      skillgroupcategorykarmacostmultiplier: zod.optional(
-        zod.union([zod.array(GenericNameValueSchema), GenericNameValueSchema])
-      ),
-      // Cannot put points into the skill groups under this category
-      skillgroupcategorydisable: zod.optional(zod.string()),
-      // Cannot put points into this skill group
-      skillgroupdisable: zod.optional(StringArrayOrStringSchema),
-      // Badly named, when determining street cred divide the karma gained
-      // by 10 + this number to determine street cred instead of the normal 10
-      streetcredmultiplier: zod.optional(zod.number()),
-      // Karma discount on binding a focus
-      focusbindingkarmacost: zod.optional(
-        zod.union([
-          zod.array(
-            zod
-              .object({
-                name: zod.string(),
-                val: zod.number(),
-                extracontains: zod.optional(zod.string()),
-              })
-              .strict()
-          ),
-          zod
-            .object({
-              name: zod.string(),
-              val: zod.number(),
-              extracontains: zod.optional(zod.string()),
-            })
-            .strict(),
-        ])
-      ),
-      // specific qualities
-      freequality: zod.optional(zod.string()),
-      burnoutsway: zod.optional(zod.literal("")),
-      friendsinhighplaces: zod.optional(zod.literal("")),
-      overclocker: zod.optional(zod.literal("")),
-      trustfund: zod.optional(zod.number()),
-      prototypetranshuman: zod.optional(zod.number()),
-      excon: zod.optional(zod.literal("")),
-      mademan: zod.optional(zod.literal("")),
-      magicianswaydiscount: zod.optional(zod.literal("")),
-      blackmarketdiscount: zod.optional(zod.literal("")),
-      erased: zod.optional(zod.literal("")),
-      fame: zod.optional(zod.literal("")),
-      selectinherentaiprogram: zod.optional(zod.literal("")),
-      dealerconnection: zod.optional(
-        zod.object({ category: StringArrayOrStringSchema }).strict()
-      ),
-      cyberadeptdaemon: zod.optional(zod.literal("")),
+    },
+    // Can add critter powers, but only from this category
+    "limitcritterpowercategory?": type.or("'Drake'", "'Infected'"),
+    // Optional powers that can be bought after chargen
+    "optionalpowers?": {
+      optionalpower: PowersSchema,
+      "_count?": "string",
+    },
+    // Add essense as dice pool modifier to natural recovery rolls
+    "addesstophysicalcmrecovery?": "''",
+    // Add essense as dice pool modifier to natural recovery rolls
+    "addesstostuncmrecovery?": "''",
+    // Modifier to essence maximum
+    "essencemax?": "number",
+    // +1 to the ability for every 2 limbs replaced
+    "cyberseeker?": StringArrayOrStringSchema,
+    // When using a certain skill use a different attribute
+    "swapskillattribute?": {
+      attribute: "string",
+      limittoskill: "string",
+    },
+    // When using a certain specialisation of a certain skill
+    // use a different attribute
+    "swapskillspecattribute?": {
+      attribute: "string",
+      limittoskill: "string",
+      spec: "string",
+    },
+    // Learn a spell
+    "addspell?": {
+      _alchemical: "'True'",
+      xmltext: "string",
+    },
+    // Learn metamagic
+    "addmetamagic?": type.or(
+      type({
+        _forced: "'True'",
+        xmltext: "string",
+      }).array(),
+      {
+        _forced: "'True'",
+        xmltext: "string",
+      }
+    ),
+    // Used in conjuction with freespells to show what type of spell are available
+    "allowspellrange?": StringArrayOrStringSchema,
+    // Add free spells
+    "freespells?": type.or(
+      // free spells equal to attribute modified by limit
+      {
+        _attribute: "string",
+        _limit: "string",
+      },
+      // free spells equal to ranks in a skill
+      {
+        _skill: "string",
+      }
+    ),
+    // Can not use the skill
+    "skilldisable?": StringArrayOrStringSchema,
+    // Modify Karma cost
+    "newspellkarmacost?": {
+      _type: "'Spells'",
+      xmltext: "number",
+    },
+    // Gain bonus power points
+    "adeptpowerpoints?": "number",
+    // Modify drain value
+    "drainvalue?": "number",
+    // Bonus to matrix attribute
+    "livingpersona?": {
+      "attack?": "number",
+      "dataprocessing?": "number",
+      "firewall?": "number",
+      "sleaze?": "number",
+    },
+    // Allows spirit fettering to be used on a sprite
+    "allowspritefettering?": "''",
+    // Add an echo
+    "addecho?": "string",
+    // Resonance loss due to augmentation multiplier (times 100)
+    "specialattburnmultiplier?": "number",
+    // Limit of all special modification
+    // This is only gained from qualities but doesn't use
+    // limitwithinclusions as it is needed in weapons
+    // Links with required specialmodificationlimit
+    "specialmodificationlimit?": "number",
+    // Modify karma cost of adding a contact by this amount
+    "contactkarma?": "number",
+    // Minimum karma cost of a contact
+    "contactkarmaminimum?": "number",
+    // Fading modification
+    "fadingvalue?": type.or(
+      type({
+        _specific: "string",
+        xmltext: "number",
+      }).array(),
+      "number"
+    ),
+    // Uneducated critter power
+    "uneducated?": "''",
+  },
+  "''"
+);
 
-      // Bonus knowledge skill points
-      knowledgeskillpoints: zod.optional(
-        zod.object({ val: zod.number() }).strict()
-      ),
-      // Points that can be spent on metagenic qualities
-      metageniclimit: zod.optional(zod.number()),
-      // Bonus nuyen that must be spent on gear
-      nuyenamt: zod.optional(
-        zod.union([
-          zod.number(),
-          zod
-            .object({
-              // Your gear is stolen
-              _condition: zod.literal("Stolen"),
-              xmltext: zod.number(),
-            })
-            .strict(),
-        ])
-      ),
-      // Bonus to number of karma points that can be
-      // converted to nuyen in character creation
-      nuyenmaxbp: zod.optional(zod.number()),
-      // Included critter powers
-      critterpowers: zod.optional(
-        zod
-          .object({
-            power: PowersSchema,
-          })
-          .strict()
-      ),
-      critterpowerlevels: zod.optional(
-        zod
-          .object({
-            power: zod.union([
-              zod
-                .object({
-                  name: zod.string(),
-                  val: zod.number(),
-                })
-                .strict(),
-              zod.array(
-                zod
-                  .object({
-                    name: zod.string(),
-                    val: zod.number(),
-                  })
-                  .strict()
-              ),
-            ]),
-          })
-          .strict()
-      ),
-      // Can add critter powers, but only from this category
-      limitcritterpowercategory: zod.optional(
-        zod.union([zod.literal("Drake"), zod.literal("Infected")])
-      ),
-      // Optional powers that can be bought after chargen
-      optionalpowers: zod.optional(
-        zod
-          .object({
-            optionalpower: PowersSchema,
-            _count: zod.optional(zod.string()),
-          })
-          .strict()
-      ),
-      // Add essense as dice pool modifier to natural recovery rolls
-      addesstophysicalcmrecovery: zod.optional(zod.literal("")),
-      // Add essense as dice pool modifier to natural recovery rolls
-      addesstostuncmrecovery: zod.optional(zod.literal("")),
-      // Modifier to essence maximum
-      essencemax: zod.optional(zod.number()),
-      // +1 to the ability for every 2 limbs replaced
-      cyberseeker: zod.optional(StringArrayOrStringSchema),
-      // When using a certain skill use a different attribute
-      swapskillattribute: zod.optional(
-        zod
-          .object({
-            attribute: zod.string(),
-            limittoskill: zod.string(),
-          })
-          .strict()
-      ),
-      // When using a certain specialisation of a certain skill
-      // use a different attribute
-      swapskillspecattribute: zod.optional(
-        zod
-          .object({
-            attribute: zod.string(),
-            limittoskill: zod.string(),
-            spec: zod.string(),
-          })
-          .strict()
-      ),
-      // Learn a spell
-      addspell: zod.optional(
-        zod
-          .object({
-            _alchemical: zod.literal("True"),
-            xmltext: zod.string(),
-          })
-          .strict()
-      ),
-      // Learn metamagic
-      addmetamagic: zod.optional(
-        zod.union([
-          zod.array(
-            zod
-              .object({
-                _forced: zod.literal("True"),
-                xmltext: zod.string(),
-              })
-              .strict()
-          ),
-          zod
-            .object({
-              _forced: zod.literal("True"),
-              xmltext: zod.string(),
-            })
-            .strict(),
-        ])
-      ),
-      // Used in conjuction with freespells to show what type of spell are available
-      allowspellrange: zod.optional(StringArrayOrStringSchema),
-      // Add free spells
-      freespells: zod.optional(
-        zod.union([
-          // free spells equal to attribute modified by limit
-          zod
-            .object({
-              _attribute: zod.string(),
-              _limit: zod.string(),
-            })
-            .strict(),
-          // free spells equal to ranks in a skill
-          zod
-            .object({
-              _skill: zod.string(),
-            })
-            .strict(),
-        ])
-      ),
-      // Can not use the skill
-      skilldisable: zod.optional(StringArrayOrStringSchema),
-      // Modify Karma cost
-      newspellkarmacost: zod.optional(
-        zod
-          .object({
-            _type: zod.optional(zod.literal("Spells")),
-            xmltext: zod.optional(zod.number()),
-          })
-          .strict()
-      ),
-      // Gain bonus power points
-      adeptpowerpoints: zod.optional(zod.number()),
-      // Modify drain value
-      drainvalue: zod.optional(zod.number()),
-      // Bonus to matrix attribute
-      livingpersona: zod.optional(
-        zod
-          .object({
-            attack: zod.optional(zod.number()),
-            dataprocessing: zod.optional(zod.number()),
-            firewall: zod.optional(zod.number()),
-            sleaze: zod.optional(zod.number()),
-          })
-          .strict()
-      ),
-      // Allows spirit fettering to be used on a sprite
-      allowspritefettering: zod.optional(zod.literal("")),
-      // Add an echo
-      addecho: zod.optional(zod.string()),
-      // Resonance loss due to augmentation multiplier (times 100)
-      specialattburnmultiplier: zod.optional(zod.number()),
-      // Limit of all special modification
-      // This is only gained from qualities but doesn't use
-      // limitwithinclusions as it is needed in weapons
-      // Links with required specialmodificationlimit
-      specialmodificationlimit: zod.optional(zod.number()),
-      // Modify karma cost of adding a contact by this amount
-      contactkarma: zod.optional(zod.number()),
-      // Minimum karma cost of a contact
-      contactkarmaminimum: zod.optional(zod.number()),
-      // Fading modification
-      fadingvalue: zod.optional(
-        zod.union([
-          zod.array(
-            zod
-              .object({
-                _specific: zod.string(),
-                xmltext: zod.number(),
-              })
-              .strict()
-          ),
-          zod.number(),
-        ])
-      ),
-      // Uneducated critter power
-      uneducated: zod.optional(zod.literal("")),
-    })
-    .strict(),
-  zod.literal(""),
-]);
-
-export const BonusXmlWrappedSchema = zod
-  .object({
-    // Bonus applied by Metatype
-    bonus: zod.optional(BonusXmlSchema),
-  })
-  .strict();
-export type BonusXmlType = zod.infer<typeof BonusXmlSchema>;
+export const BonusXmlWrappedSchema = type({
+  // Bonus applied by Metatype
+  "bonus?": BonusXmlSchema,
+});
+export type BonusXmlType = typeof BonusXmlSchema.infer;

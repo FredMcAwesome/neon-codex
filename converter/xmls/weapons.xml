@@ -5937,7 +5937,7 @@
       <name>FN-AAL Gyrojet Pistol</name>
       <category>Exotic Ranged Weapons</category>
       <type>Ranged</type>
-      <conceal>+0</conceal>
+      <conceal>0</conceal>
       <accuracy>5</accuracy>
       <reach>0</reach>
       <damage>10P</damage>
@@ -13837,7 +13837,7 @@
       <name>Cavalier Flash</name>
       <category>Machine Pistols</category>
       <type>Ranged</type>
-      <conceal>+0</conceal>
+      <conceal>0</conceal>
       <accuracy>4</accuracy>
       <reach>0</reach>
       <damage>7P</damage>

@@ -24,6 +24,7 @@ import {
   mountsAugmentationSemantics,
 } from "./augmentationParserHelper.js";
 import { augmentationTypeEnum } from "@neon-codex/common/build/enums.js";
+import { type } from "arktype";
 const EssenceCost = Augmentation.EssenceCost;
 const Cost = Augmentation.Cost;
 const Availability = Augmentation.Availability;
@@ -47,31 +48,32 @@ export function ParseBiowares() {
   //   jObj.chummer.biowares.bioware[186].bonus
   // );
 
-  const biowareListParsed = BiowareListXmlSchema.safeParse(
+  const biowareListParsed = BiowareListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.biowares.bioware
   );
 
-  if (biowareListParsed.success) console.log("bioware.xml initial zod parsed");
-  else {
-    console.log(biowareListParsed.error.errors[0]);
+  if (biowareListParsed instanceof type.errors) {
+    console.log(biowareListParsed.summary);
     assert(false);
+  } else {
+    console.log("bioware.xml initial arktype parsed");
   }
 
-  const biowareList = biowareListParsed.data;
+  const biowareList = biowareListParsed;
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
   // })
 
   const biowareListConverted = biowareList.map((bioware) => {
     const convertedBioware = convertBioware(bioware);
-    const check = AugmentationSchema.safeParse(convertedBioware);
-    if (!check.success) {
+    const augmentation = AugmentationSchema(convertedBioware);
+    if (augmentation instanceof type.errors) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       console.dir(convertedBioware, { depth: Infinity });
-      throw new Error(check.error.message);
+      throw new Error(augmentation.summary);
     }
-    return check.data;
+    return augmentation;
   });
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/biowares.json"
@@ -183,34 +185,42 @@ function convertBioware(bioware: BiowareXmlType) {
   const typeInformation = {
     type: augmentationTypeEnum.Bioware,
     subtype: subtype,
-    isGeneware: isGeneware,
+    ...(isGeneware !== undefined && { isGeneware: isGeneware }),
   };
 
   return {
     name: bioware.name,
     description: "",
-    augmentationLimit: augmentationLimit,
+    ...(augmentationLimit !== undefined && {
+      augmentationLimit: augmentationLimit,
+    }),
     ...typeInformation,
-    unavailableGrades: unavailableGrades,
+    ...(unavailableGrades !== undefined && {
+      unavailableGrades: unavailableGrades,
+    }),
     essenceCost: essenceCost,
-    modification: biowareModification,
+    ...(biowareModification !== undefined && {
+      modification: biowareModification,
+    }),
     rating: { maximum: [maxRating] },
     availability: availability,
     cost: cost,
-    addWeapon: addWeapon,
+    ...(addWeapon !== undefined && { addWeapon: addWeapon }),
     ...(blockedMountList.length > 0 && { blockedMountList: blockedMountList }),
-    selectSide: selectSide,
-    bonus: bonus,
-    pairBonus: pairBonus,
-    pairIncludeList: pairIncludeList,
-    requirements: requirements,
-    forbidden: forbidden,
+    ...(selectSide !== undefined && { selectSide: selectSide }),
+    ...(bonus !== undefined && { bonus: bonus }),
+    ...(pairBonus !== undefined && { pairBonus: pairBonus }),
+    ...(pairIncludeList !== undefined && { pairIncludeList: pairIncludeList }),
+    ...(requirements !== undefined && { requirements: requirements }),
+    ...(forbidden !== undefined && { forbidden: forbidden }),
     ...(allowedGearList !== undefined && { allowedGearList: allowedGearList }),
     ...(allowedGearCategories !== undefined && {
       allowedGearCategories: allowedGearCategories,
     }),
     ...(bioware.hide !== undefined && { userSelectable: false as const }),
-    allowSubsystemCategoryList: allowSubsystemCategoryList,
+    ...(allowSubsystemCategoryList !== undefined && {
+      allowSubsystemCategoryList: allowSubsystemCategoryList,
+    }),
     source: source,
     page: bioware.page,
   };

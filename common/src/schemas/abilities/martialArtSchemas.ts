@@ -1,50 +1,38 @@
-import { z as zod } from "zod";
 import { BonusSchema } from "../shared/bonusSchemas.js";
 import { RequirementsSchema } from "../shared/requiredSchemas.js";
 import { sourceBookEnum } from "../../enums.js";
+import { type } from "arktype";
 
-export const MartialArtSchema = zod
-  .object({
-    name: zod.string(),
-    bonus: zod.optional(BonusSchema),
-    techniqueList: zod.union([
-      zod.array(zod.string()),
-      zod
-        .object({
-          allTechniques: zod.literal(true),
-        })
-        .strict(),
-    ]),
-    karmaCost: zod.optional(zod.number()),
-    requirements: zod.optional(RequirementsSchema),
-    description: zod.string(),
-    source: zod.nativeEnum(sourceBookEnum),
-    page: zod.number(),
-  })
-  .strict();
+export const MartialArtSchema = type({
+  name: "string",
+  "bonus?": BonusSchema,
+  techniqueList: type.or("string[]", {
+    allTechniques: "true",
+  }),
+  "karmaCost?": "number",
+  "requirements?": RequirementsSchema,
+  description: "string",
+  source: type.valueOf(sourceBookEnum),
+  page: "number",
+});
 
-export type MartialArtType = zod.infer<typeof MartialArtSchema>;
-export const MartialArtListSchema = zod.array(MartialArtSchema);
+export type MartialArtType = typeof MartialArtSchema.infer;
+export const MartialArtListSchema = type(MartialArtSchema.array());
 
-export type MartialArtListType = zod.infer<typeof MartialArtListSchema>;
+export type MartialArtListType = typeof MartialArtListSchema.infer;
 
-export const MartialArtTechniqueSchema = zod
-  .object({
-    name: zod.string(),
-    bonus: zod.optional(BonusSchema),
-    requirements: zod.optional(RequirementsSchema),
-    description: zod.string(),
-    source: zod.nativeEnum(sourceBookEnum),
-    page: zod.number(),
-  })
-  .strict();
-export type MartialArtTechniqueType = zod.infer<
-  typeof MartialArtTechniqueSchema
->;
+export const MartialArtTechniqueSchema = type({
+  name: "string",
+  "bonus?": BonusSchema,
+  "requirements?": RequirementsSchema,
+  description: "string",
+  source: type.valueOf(sourceBookEnum),
+  page: "number",
+});
+export type MartialArtTechniqueType = typeof MartialArtTechniqueSchema.infer;
 
-export const MartialArtTechniqueListSchema = zod.array(
-  MartialArtTechniqueSchema
+export const MartialArtTechniqueListSchema = type(
+  MartialArtTechniqueSchema.array()
 );
-export type MartialArtTechniqueListType = zod.infer<
-  typeof MartialArtTechniqueListSchema
->;
+export type MartialArtTechniqueListType =
+  typeof MartialArtTechniqueListSchema.infer;

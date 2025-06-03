@@ -7,6 +7,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { Programs } from "../../models/rpg/abilities/programModel.js";
+import { type } from "arktype";
 
 export const getPrograms = function () {
   const currentPath = import.meta.url;
@@ -20,13 +21,13 @@ export const getPrograms = function () {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const rawJson = JSON.parse(jsonString);
-  const programListParsed = ProgramListSchema.safeParse(rawJson);
-  if (programListParsed.success) {
-    console.log("programs all g");
-    programs = programListParsed.data;
-  } else {
-    console.log(programListParsed.error.errors[0]);
+  const programListParsed = ProgramListSchema(rawJson);
+  if (programListParsed instanceof type.errors) {
+    console.log(programListParsed.summary);
     assert(false, "programs is undefined");
+  } else {
+    console.log("programs all g");
+    programs = programListParsed;
   }
   const stagedPrograms: Array<Programs> = [];
   programs.forEach((program) => {

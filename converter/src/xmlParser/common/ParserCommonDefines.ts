@@ -1,4 +1,4 @@
-import { z as zod } from "zod";
+import { type } from "arktype";
 
 export enum sourceBookXmlEnum {
   AssassinPrimer = "AP",
@@ -54,7 +54,7 @@ export enum sourceBookXmlEnum {
   GrimmesErwachen = "GE",
   SprawlWilds = "SW",
 }
-export const SourceXmlSchema = zod.nativeEnum(sourceBookXmlEnum);
+export const SourceXmlSchema = type.valueOf(sourceBookXmlEnum);
 
 export enum GearXmlCategoryEnum {
   AlchemicalTools = "Alchemical Tools",
@@ -133,85 +133,59 @@ export enum GearXmlCategoryEnum {
 }
 
 // Gear Shenanigans
-const UseGearBaseXmlSchema = zod.union([
-  zod.string(),
-  zod
-    .object({
-      xmltext: zod.string(),
-      // this gear has some specific option that it needs to select
-      // e.g. Tutorsoft selects the "Automotive Mechanic" skill
-      _select: zod.optional(zod.string()),
-      _rating: zod.optional(zod.string()),
-      _consumecapacity: zod.optional(zod.string()),
-      _costfor: zod.optional(zod.string()),
-    })
-    .strict(),
-]);
-type UseGearBaseXmlType = zod.infer<typeof UseGearBaseXmlSchema>;
+const UseGearBaseXmlSchema = type.or("string", {
+  xmltext: "string",
+  // this gear has some specific option that it needs to select
+  // e.g. Tutorsoft selects the "Automotive Mechanic" skill
+  "_select?": "string",
+  "_rating?": "string",
+  "_consumecapacity?": "string",
+  "_costfor?": "string",
+});
+const PartialInnerUseGearXmlSchema = type({
+  name: UseGearBaseXmlSchema,
+  // I think this is redundant as we are always have a name anyway
+  // edit: actually not redundant as some gear has the same name across
+  // different categories
+  "category?": type.valueOf(GearXmlCategoryEnum),
+  "rating?": "number",
+  "maxrating?": "number",
+  "capacity?": "string",
+  "qty?": "number",
+});
 
-type InnerGearType = {
-  gear:
-    | Array<InnerUseGearsXmlType>
-    | InnerUseGearsXmlType
-    | Array<UseGearBaseXmlType>
-    | UseGearBaseXmlType;
-};
-const InnerGearSchema: zod.ZodType<InnerGearType> = zod.lazy(() =>
-  zod
-    .object({
-      gear: zod.union([
-        zod.array(InnerUseGearXmlSchema),
-        InnerUseGearXmlSchema,
-        zod.array(UseGearBaseXmlSchema),
-        UseGearBaseXmlSchema,
-      ]),
-    })
-    .strict()
-);
-
-const PartialInnerUseGearXmlSchema = zod
-  .object({
-    name: UseGearBaseXmlSchema,
-    // I think this is redundant as we are always have a name anyway
-    // edit: actually not redundant as some gear has the same name across
-    // different categories
-    category: zod.optional(zod.nativeEnum(GearXmlCategoryEnum)),
-    rating: zod.optional(zod.number()),
-    maxrating: zod.optional(zod.number()),
-    capacity: zod.optional(zod.string()),
-    qty: zod.optional(zod.number()),
-  })
-  .strict();
-type PartialInnerUseGearXmlType = zod.infer<
-  typeof PartialInnerUseGearXmlSchema
->;
-
-export type InnerUseGearsXmlType = PartialInnerUseGearXmlType & {
-  gears?: zod.infer<typeof GearXmlSchema> | InnerGearType | undefined;
-};
-
-const InnerUseGearXmlSchema: zod.ZodType<InnerUseGearsXmlType> =
-  PartialInnerUseGearXmlSchema.extend({
-    gears: zod.optional(
-      zod.union([
-        zod.lazy(() => GearXmlSchema),
-        zod.lazy(() => InnerGearSchema),
-      ])
-    ),
-  }).strict();
-
-// split into its own schema for ease of reading
-export const UseGearXmlSchema = zod.union([
-  UseGearBaseXmlSchema,
+export const {
+  IncludedGearXmlSchema,
+  UseGearXmlSchema,
+  InnerGearSchema,
   InnerUseGearXmlSchema,
-  zod.array(zod.union([UseGearBaseXmlSchema, InnerUseGearXmlSchema])),
-]);
-export const GearXmlSchema = zod
-  .object({
-    usegear: UseGearXmlSchema,
-  })
-  .strict();
-export type GearXmlType = zod.infer<typeof GearXmlSchema>;
+} = type.module({
+  IncludedGearXmlSchema: {
+    usegear: "UseGearXmlSchema",
+  },
+  UseGearXmlSchema:
+    // Obviously not the best syntax but it will do
+    [
+      UseGearBaseXmlSchema,
+      "|",
+      [
+        "InnerUseGearXmlSchema",
+        "|",
+        [[UseGearBaseXmlSchema, "|", "InnerUseGearXmlSchema"], "[]"],
+      ],
+    ],
+  InnerUseGearXmlSchema: [
+    PartialInnerUseGearXmlSchema,
+    "&",
+    {
+      "gears?": ["IncludedGearXmlSchema", "|", "InnerGearSchema"],
+    },
+  ],
+  InnerGearSchema: {
+    gear: "UseGearXmlSchema",
+  },
+});
+export type IncludedGearXmlType = typeof IncludedGearXmlSchema.infer;
 
 export enum attributeXMLEnum {
   BOD = "BOD",
@@ -243,228 +217,186 @@ export enum limbSlotXmlEnum {
   ALL = "all",
 }
 
-export const StringOrNumberSchema = zod.union([zod.number(), zod.string()]);
-export const StringArrayOrStringSchema = zod.union([
-  zod.array(zod.string()),
-  zod.string(),
-]);
-export const NumberOrRatingSchema = zod.union([
-  zod.number(),
-  zod.literal("Rating"),
-]);
-export const NumberOrAnyRatingSchema = zod.union([
-  zod.number(),
-  zod.literal("Rating"),
-  zod.literal("-Rating"),
-]);
-export type NumberOrAnyRatingType = zod.infer<typeof NumberOrAnyRatingSchema>;
-
-export const LimitModifierSchema = zod
-  .object({
-    limit: zod.union([
-      zod.literal("Physical"),
-      zod.literal("Social"),
-      zod.literal("Mental"),
-    ]),
-    value: NumberOrRatingSchema,
-    // these are keys for strings listed in en-us.xml
-    condition: zod.optional(
-      zod.union([
-        zod.literal("LimitCondition_AttribSkillINT"),
-        zod.literal("LimitCondition_AttribSkillLOG"),
-        zod.literal("LimitCondition_ShieldPhysicalPenalty"),
-        zod.literal("LimitCondition_Visible"),
-        zod.literal("LimitCondition_BunkerGearVisible"),
-        zod.literal("LimitCondition_CorporationVisible"),
-        zod.literal("LimitCondition_IntimidationVisible"),
-        zod.literal("LimitCondition_ExcludeIntimidationVisible"),
-        zod.literal("LimitCondition_PublicVisible"),
-        zod.literal("LimitCondition_GangVisible"),
-        zod.literal("LimitCondition_ClimbingTests"),
-        zod.literal("LimitCondition_SkillGroupStealth"),
-        zod.literal("LimitCondition_SkillGroupStealthNaked"),
-        zod.literal("LimitCondition_SkillsKnowledgeAcademic"),
-        zod.literal("LimitCondition_SkillsKnowledgeScientificTechnical"),
-        zod.literal("LimitCondition_SkillsActiveDisguiseImpersonation"),
-        zod.literal("LimitCondition_SkillsActiveEscapeArtist"),
-        zod.literal("LimitCondition_SkillsActiveEscapeArtistGrappleLoose"),
-        zod.literal("LimitCondition_SkillsActiveFirstAidMedicine"),
-        zod.literal("LimitCondition_SkillsActiveGymnasticsClimbing"),
-        zod.literal("LimitCondition_SkillsActiveLeadership"),
-        zod.literal("LimitCondition_SkillsActiveNavigation"),
-        zod.literal("LimitCondition_SkillsActivePerception"),
-        zod.literal("LimitCondition_SkillsActivePerceptionHearing"),
-        zod.literal("LimitCondition_SkillsActivePerceptionSpatialRecognizer"),
-        zod.literal("LimitCondition_SkillsActivePerceptionVisual"),
-        zod.literal("LimitCondition_SkillsActivePerformance"),
-        zod.literal("LimitCondition_SkillsActivePerformanceSinging"),
-        zod.literal("LimitCondition_SkillsActivePerformanceSynthtrument"),
-        zod.literal("LimitCondition_SkillsActiveSneakingVisible"),
-        zod.literal("LimitCondition_SkillsActiveSneakingNaked"),
-        zod.literal("LimitCondition_SkillsActiveSwimming"),
-        zod.literal("LimitCondition_SportsFans"),
-        zod.literal("LimitCondition_SportsRivals"),
-        zod.literal("LimitCondition_Sprawl"),
-        zod.literal("LimitCondition_ExcludeFansGangers"),
-        zod.literal("LimitCondition_TestSneakingThermal"),
-        zod.literal("LimitCondition_TestSpeech"),
-        zod.literal("LimitCondition_TestsEndurance"),
-        zod.literal("LimitCondition_Skillwires"),
-        zod.literal("LimitCondition_CyberwareHydraulicJacks"),
-        zod.literal("LimitCondition_CyberwareBalanceTail"),
-        zod.literal("LimitCondition_CyberwareCyberfins"),
-        zod.literal("LimitCondition_CyberwareFootAnchor"),
-        zod.literal("LimitCondition_CyberwareMonkeyFoot"),
-        zod.literal("LimitCondition_CyberwareRaptorFoot"),
-        zod.literal("LimitCondition_CyberwareSnakeFingers"),
-        zod.literal("LimitCondition_InUse"),
-        zod.literal("LimitCondition_ExcludeIntimidation"),
-        zod.literal("LimitCondition_Intimidation"),
-        zod.literal("LimitCondition_GearAutopicker"),
-        zod.literal("LimitCondition_NationalLanguageRanks"),
-        zod.literal("LimitCondition_Megacorp"),
-        zod.literal("LimitCondition_QualityTrustworthy"),
-        zod.literal("LimitCondition_QualityChatty"),
-      ])
-    ),
-  })
-  .strict();
-
-export const SkillSchema = zod
-  .object({
-    name: zod.string(),
-    // bonus dice
-    val: zod.optional(zod.number()),
-    // check bonus or bonus dice?
-    bonus: zod.optional(NumberOrAnyRatingSchema),
-    _precedence: zod.optional(zod.literal("0")),
-    condition: zod.optional(zod.string()),
-    exclude: zod.optional(zod.string()),
-    applytorating: zod.optional(zod.literal("True")),
-  })
-  .strict();
-
-const SkillListSchema = zod.union([zod.array(SkillSchema), SkillSchema]);
-export type SkillListType = zod.infer<typeof SkillListSchema>;
-
-export const SpiritSchema = zod.union([
-  zod
-    .object({
-      spirit: StringArrayOrStringSchema,
-      addtoselected: zod.optional(
-        zod.union([zod.literal("False"), zod.literal("True")])
-      ),
-    })
-    .strict(),
-  zod.literal(""),
-]);
-
-export const GenericNameValueSchema = zod
-  .object({
-    id: zod.optional(zod.string()),
-    name: zod.optional(zod.string()),
-    _name: zod.optional(zod.string()),
-    value: zod.optional(zod.number()),
-    val: zod.optional(StringOrNumberSchema),
-    min: zod.optional(StringOrNumberSchema),
-    max: zod.optional(StringOrNumberSchema),
-    aug: zod.optional(StringOrNumberSchema),
-    _precedence: zod.optional(zod.string()),
-    xmltext: zod.optional(StringOrNumberSchema),
-  })
-  .strict();
-
-export type GenericNameValueType = zod.infer<typeof GenericNameValueSchema>;
-
-const GenericNameValueListSchema = zod.union([
-  zod.array(GenericNameValueSchema),
-  GenericNameValueSchema,
-]);
-
-export type GenericNameValueListType = zod.infer<
-  typeof GenericNameValueListSchema
->;
-
-const ModXmlSchema = zod.union([
-  zod.string(),
-  zod
-    .object({
-      xmltext: zod.string(),
-      // select="Driver">Searchlight
-      _select: zod.optional(zod.string()),
-      _rating: zod.optional(zod.string()),
-      // used when the mod rating exceeds the item rating
-      _maxrating: zod.optional(zod.string()),
-      // This is only used to override a mod cost
-      // I won't use this...
-      _cost: zod.optional(zod.string()),
-    })
-    .strict(),
-]);
-export type ModXmlType = zod.infer<typeof ModXmlSchema>;
-
-export const ModListXmlSchema = zod
-  .object({
-    name: zod.union([zod.array(ModXmlSchema), ModXmlSchema]),
-  })
-  .strict();
-export type ModListXmlType = zod.infer<typeof ModListXmlSchema>;
-
-const VehicleModListXmlSchema = ModListXmlSchema.extend({
-  subsystems: zod.optional(
-    zod
-      .object({
-        cyberware: zod
-          .object({
-            name: zod.string(),
-          })
-          .strict(),
-      })
-      .strict()
-  ),
-}).strict();
-export type VehicleModListXmlType = zod.infer<typeof VehicleModListXmlSchema>;
-
-export const ModRecursiveXmlSchema = VehicleModListXmlSchema.extend({
-  mod: zod.optional(
-    zod.union([VehicleModListXmlSchema, zod.array(VehicleModListXmlSchema)])
-  ),
-}).strict();
-
-export type ModRecursiveXmlType = zod.infer<typeof ModRecursiveXmlSchema>;
-
-export const CategoryXmlListSchema = zod.array(
-  zod
-    .object({
-      _blackmarket: zod.string(),
-      xmltext: zod.string(),
-    })
-    .strict()
+export const StringOrNumberSchema = type.or("number", "string");
+export const StringArrayOrStringSchema = type.or("string[]", "string");
+export const NumberOrRatingSchema = type.or("number", "'Rating'");
+export const NumberOrAnyRatingSchema = type.or(
+  "number",
+  "'Rating'",
+  "'-Rating'"
 );
-export type CategoryXmlListType = zod.infer<typeof CategoryXmlListSchema>;
+export type NumberOrAnyRatingType = typeof NumberOrAnyRatingSchema.infer;
 
-export const AugmentationXmlLimitSchema = zod.union([
+export const LimitModifierSchema = type({
+  limit: type.or("'Physical'", "'Social'", "'Mental'"),
+  value: NumberOrRatingSchema,
+  // these are keys for strings listed in en-us.xml
+  "condition?": type.or(
+    "'LimitCondition_AttribSkillINT'",
+    "'LimitCondition_AttribSkillLOG'",
+    "'LimitCondition_ShieldPhysicalPenalty'",
+    "'LimitCondition_Visible'",
+    "'LimitCondition_BunkerGearVisible'",
+    "'LimitCondition_CorporationVisible'",
+    "'LimitCondition_IntimidationVisible'",
+    "'LimitCondition_ExcludeIntimidationVisible'",
+    "'LimitCondition_PublicVisible'",
+    "'LimitCondition_GangVisible'",
+    "'LimitCondition_ClimbingTests'",
+    "'LimitCondition_SkillGroupStealth'",
+    "'LimitCondition_SkillGroupStealthNaked'",
+    "'LimitCondition_SkillsKnowledgeAcademic'",
+    "'LimitCondition_SkillsKnowledgeScientificTechnical'",
+    "'LimitCondition_SkillsActiveDisguiseImpersonation'",
+    "'LimitCondition_SkillsActiveEscapeArtist'",
+    "'LimitCondition_SkillsActiveEscapeArtistGrappleLoose'",
+    "'LimitCondition_SkillsActiveFirstAidMedicine'",
+    "'LimitCondition_SkillsActiveGymnasticsClimbing'",
+    "'LimitCondition_SkillsActiveLeadership'",
+    "'LimitCondition_SkillsActiveNavigation'",
+    "'LimitCondition_SkillsActivePerception'",
+    "'LimitCondition_SkillsActivePerceptionHearing'",
+    "'LimitCondition_SkillsActivePerceptionSpatialRecognizer'",
+    "'LimitCondition_SkillsActivePerceptionVisual'",
+    "'LimitCondition_SkillsActivePerformance'",
+    "'LimitCondition_SkillsActivePerformanceSinging'",
+    "'LimitCondition_SkillsActivePerformanceSynthtrument'",
+    "'LimitCondition_SkillsActiveSneakingVisible'",
+    "'LimitCondition_SkillsActiveSneakingNaked'",
+    "'LimitCondition_SkillsActiveSwimming'",
+    "'LimitCondition_SportsFans'",
+    "'LimitCondition_SportsRivals'",
+    "'LimitCondition_Sprawl'",
+    "'LimitCondition_ExcludeFansGangers'",
+    "'LimitCondition_TestSneakingThermal'",
+    "'LimitCondition_TestSpeech'",
+    "'LimitCondition_TestsEndurance'",
+    "'LimitCondition_Skillwires'",
+    "'LimitCondition_CyberwareHydraulicJacks'",
+    "'LimitCondition_CyberwareBalanceTail'",
+    "'LimitCondition_CyberwareCyberfins'",
+    "'LimitCondition_CyberwareFootAnchor'",
+    "'LimitCondition_CyberwareMonkeyFoot'",
+    "'LimitCondition_CyberwareRaptorFoot'",
+    "'LimitCondition_CyberwareSnakeFingers'",
+    "'LimitCondition_InUse'",
+    "'LimitCondition_ExcludeIntimidation'",
+    "'LimitCondition_Intimidation'",
+    "'LimitCondition_GearAutopicker'",
+    "'LimitCondition_NationalLanguageRanks'",
+    "'LimitCondition_Megacorp'",
+    "'LimitCondition_QualityTrustworthy'",
+    "'LimitCondition_QualityChatty'"
+  ),
+});
+
+export const SkillSchema = type({
+  name: "string",
+  // bonus dice
+  "val?": "number",
+  // check bonus or bonus dice?
+  "bonus?": NumberOrAnyRatingSchema,
+  "_precedence?": "'0'",
+  "condition?": "string",
+  "exclude?": "string",
+  "applytorating?": "'True'",
+});
+
+const SkillListSchema = type.or(SkillSchema.array(), SkillSchema);
+export type SkillListType = typeof SkillListSchema.infer;
+
+export const SpiritSchema = type.or(
+  type({
+    spirit: StringArrayOrStringSchema,
+    "addtoselected?": type.or("'False'", "'True'"),
+  }),
+  "''"
+);
+
+export const GenericNameValueSchema = type({
+  "id?": "string",
+  "name?": "string",
+  "_name?": "string",
+  "value?": "number",
+  "val?": StringOrNumberSchema,
+  "min?": StringOrNumberSchema,
+  "max?": StringOrNumberSchema,
+  "aug?": StringOrNumberSchema,
+  "_precedence?": "string",
+  "xmltext?": StringOrNumberSchema,
+});
+
+export type GenericNameValueType = typeof GenericNameValueSchema.infer;
+
+const GenericNameValueListSchema = type.or(
+  GenericNameValueSchema.array(),
+  GenericNameValueSchema
+);
+
+export type GenericNameValueListType = typeof GenericNameValueListSchema.infer;
+
+const ModXmlSchema = type.or(
+  "string",
+  type({
+    xmltext: "string",
+    // select="Driver">Searchlight
+    "_select?": "string",
+    "_rating?": "string",
+    // used when the mod rating exceeds the item rating
+    "_maxrating?": "string",
+    // This is only used to override a mod cost
+    // I won't use this...
+    "_cost?": "string",
+  })
+);
+export type ModXmlType = typeof ModXmlSchema.infer;
+
+export const ModListXmlSchema = type({
+  name: type.or(ModXmlSchema.array(), ModXmlSchema),
+});
+export type ModListXmlType = typeof ModListXmlSchema.infer;
+
+const VehicleModListXmlSchema = ModListXmlSchema.and({
+  "subsystems?": {
+    cyberware: {
+      name: "string",
+    },
+  },
+});
+export type VehicleModListXmlType = typeof VehicleModListXmlSchema.infer;
+
+export const ModRecursiveXmlSchema = VehicleModListXmlSchema.and({
+  "mod?": type.or(VehicleModListXmlSchema, VehicleModListXmlSchema.array()),
+});
+
+export type ModRecursiveXmlType = typeof ModRecursiveXmlSchema.infer;
+
+export const CategoryXmlListSchema = type({
+  _blackmarket: "string",
+  xmltext: "string",
+}).array();
+export type CategoryXmlListType = typeof CategoryXmlListSchema.infer;
+
+export const AugmentationXmlLimitSchema = type.or(
   // Unlimited times
-  zod.literal("False"),
+  "'False'",
   // Replaces arm
-  zod.literal("{arm}"),
+  "'{arm}'",
   // Replaces leg
-  zod.literal("{leg}"),
+  "'{leg}'",
   // Replaces torso
-  zod.literal("{torso}"),
+  "'{torso}'",
   // Replaces skull
-  zod.literal("{skull}"),
+  "'{skull}'",
   // Replaces finger
-  zod.literal("{arm} * 5"),
+  "'{arm} * 5'",
   // Up to Unaugmented Body Score
-  zod.literal("{BODUnaug}"),
+  "'{BODUnaug}'",
   // This augmentation can be taken up to this number
-  zod.number(),
-]);
+  "number"
+);
 
-export type AugmentationXmlLimitType = zod.infer<
-  typeof AugmentationXmlLimitSchema
->;
+export type AugmentationXmlLimitType = typeof AugmentationXmlLimitSchema.infer;
 
 export enum augmentationXmlGradeEnum {
   None = "None",
@@ -487,111 +419,94 @@ export enum augmentationXmlGradeEnum {
   GreywareAdapsin = "Greyware (Adapsin)",
 }
 
-export const xmlAllowGearSchema = zod.union([
-  zod
-    .object({
-      gearcategory: zod.optional(
-        zod.union([
-          zod.array(zod.nativeEnum(GearXmlCategoryEnum)),
-          zod.nativeEnum(GearXmlCategoryEnum),
-        ])
-      ),
-      gearname: zod.optional(zod.array(zod.string())),
-    })
-    .strict(),
-  zod.string(),
-]);
+export const xmlAllowGearSchema = type.or(
+  type({
+    "gearcategory?": type.or(
+      type.valueOf(GearXmlCategoryEnum).array(),
+      type.valueOf(GearXmlCategoryEnum)
+    ),
 
-export type xmlAllowGearType = zod.infer<typeof xmlAllowGearSchema>;
+    "gearname?": "string[]",
+  }),
+  "string"
+);
 
-const XmlQualitySingleSchema = zod.union([
-  zod
-    .object({
-      // At least one of these optional must be implemented for xmltext to be valid
-      _removable: zod.optional(zod.literal("True")),
-      _select: zod.optional(zod.string()),
-      xmltext: zod.string(),
-    })
-    .strict(),
-  zod.string(),
-]);
+export type xmlAllowGearType = typeof xmlAllowGearSchema.infer;
 
-const XmlQualityListSingularSchema = zod
-  .object({
-    quality: zod.union([
-      zod.array(XmlQualitySingleSchema),
-      XmlQualitySingleSchema,
-    ]),
-  })
-  .strict();
-export type XmlQualityListSingularType = zod.infer<
-  typeof XmlQualityListSingularSchema
->;
+const XmlQualitySingleSchema = type.or(
+  {
+    // At least one of these optional must be implemented for xmltext to be valid
+    "_removable?": "'True'",
+    "_select?": "string",
+    xmltext: "string",
+  },
+  "string"
+);
 
-export const XmlQualityListSchema = zod
-  .object({
-    // one of either positive or negative must be defined
-    positive: zod.optional(XmlQualityListSingularSchema),
-    negative: zod.optional(XmlQualityListSingularSchema),
-  })
-  .strict();
-export type XmlQualityListType = zod.infer<typeof XmlQualityListSchema>;
+const XmlQualityListSingularSchema = type({
+  quality: type.or(XmlQualitySingleSchema.array(), XmlQualitySingleSchema),
+});
+export type XmlQualityListSingularType =
+  typeof XmlQualityListSingularSchema.infer;
 
-export const XmlPowerSchema = zod.union([
-  zod
-    .object({
-      _select: zod.optional(zod.string()),
-      _rating: zod.optional(zod.string()),
-      xmltext: zod.string(),
-    })
-    .strict(),
-  zod.string(),
-]);
-const XmlPowerListSchema = zod.array(XmlPowerSchema);
-export type XmlPowerListType = zod.infer<typeof XmlPowerListSchema>;
+export const XmlQualityListSchema = type({
+  // one of either positive or negative must be defined
+  "positive?": XmlQualityListSingularSchema,
+  "negative?": XmlQualityListSingularSchema,
+});
+export type XmlQualityListType = typeof XmlQualityListSchema.infer;
 
-export const XmlDurationSchema = zod.union([
-  zod.literal("I"),
-  zod.literal("Instant"),
-  zod.literal("S"),
-  zod.literal("Sustained"),
+export const XmlPowerSchema = type.or(
+  {
+    "_select?": "string",
+    "_rating?": "string",
+    xmltext: "string",
+  },
+  "string"
+);
+const XmlPowerListSchema = type(XmlPowerSchema.array());
+export type XmlPowerListType = typeof XmlPowerListSchema.infer;
+
+export const XmlDurationSchema = type.or(
+  "'I'",
+  "'Instant'",
+  "'S'",
+  "'Sustained'",
   // Permanent
-  zod.literal("P"),
-  zod.literal("Permanent"),
-  zod.literal("Always"),
-  zod.literal("Special"),
+  "'P'",
+  "'Permanent'",
+  "'Always'",
+  "'Special'",
   // Extended Test
-  zod.literal("E"),
-]);
-export type XmlDurationType = zod.infer<typeof XmlDurationSchema>;
+  "'E'"
+);
+export type XmlDurationType = typeof XmlDurationSchema.infer;
 
-export const SpellPowerXmlRangeSchema = zod.union([
-  zod.literal("LOS"), // Line Of Sight
-  zod.literal("LOS (A)"), // LOS (Area)
-  zod.literal("T"), // Touch
-  zod.literal("Touch"),
-  zod.literal("T (A)"), // Touch (Area)? How does this work?
-  zod.literal("S"), // Self
-  zod.literal("Self"),
-  zod.literal("S (A)"), // Self (Area) - originate from self
-  zod.literal("Special"),
+export const SpellPowerXmlRangeSchema = type.or(
+  "'LOS'", // Line Of Sight
+  "'LOS (A)'", // LOS (Area)
+  "'T'", // Touch
+  "'Touch'",
+  "'T (A)'", // Touch (Area)? How does this work?
+  "'S'", // Self
+  "'Self'",
+  "'S (A)'", // Self (Area) - originate from self
+  "'Special'",
   // This only applies to critter powers
   // TODO: in chummer make linkable to one of them
-  zod.literal("Touch or LOS"), // Line Of Sight or Touch
-]);
+  "'Touch or LOS'" // Line Of Sight or Touch
+);
 
-export type SpellPowerXmlRangeType = zod.infer<typeof SpellPowerXmlRangeSchema>;
+export type SpellPowerXmlRangeType = typeof SpellPowerXmlRangeSchema.infer;
 
-export const NaturalWeaponSchema = zod
-  .object({
-    name: zod.string(),
-    reach: zod.number(),
-    damage: zod.string(),
-    ap: zod.number(),
-    useskill: zod.string(),
-    useskillspec: zod.optional(zod.string()),
-    accuracy: zod.string(),
-    source: zod.string(),
-    page: zod.number(),
-  })
-  .strict();
+export const NaturalWeaponSchema = type({
+  name: "string",
+  reach: "number",
+  damage: "string",
+  ap: "number",
+  useskill: "string",
+  "useskillspec?": "string",
+  accuracy: "string",
+  source: "string",
+  page: "number",
+});

@@ -19,6 +19,7 @@
   "plugins": ["@typescript-eslint", "sonarjs", "@tanstack/eslint-plugin-query"],
   "rules": {
     "@typescript-eslint/switch-exhaustiveness-check": "error",
+    "@typescript-eslint/strict-boolean-expressions": "error",
     "@typescript-eslint/no-unused-vars": [
       "error",
       { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }

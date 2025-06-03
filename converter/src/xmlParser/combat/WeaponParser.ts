@@ -50,6 +50,7 @@ import type {
   AccessoryMountType,
 } from "@neon-codex/common/build/schemas/shared/weaponSharedSchemas.js";
 import type { CustomisedWeaponAccessoryListType } from "@neon-codex/common/build/schemas/equipment/combat/weaponAccessorySchemas.js";
+import { type } from "arktype";
 const Accuracy = Weapons.Accuracy;
 const Damage = Weapons.Damage;
 const ArmourPenetration = Weapons.ArmourPenetration;
@@ -77,35 +78,36 @@ export function ParseWeapons() {
   //   { depth: Infinity }
   // );
 
-  const weaponListParsed = WeaponListXmlSchema.safeParse(
+  const weaponListParsed = WeaponListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.weapons.weapon
   );
 
-  if (weaponListParsed.success) console.log("weapons.xml initial zod parsed");
-  else {
-    console.log(weaponListParsed.error.errors[0]);
+  if (weaponListParsed instanceof type.errors) {
+    console.log(weaponListParsed.summary);
     assert(false);
+  } else {
+    console.log("weapons.xml initial arktype parsed");
   }
 
-  const weaponList = weaponListParsed.data;
+  const weaponList = weaponListParsed;
 
   const weaponListConverted: WeaponListType = weaponList
     // .filter((weapon) => weapon.name === "Ares Thunderstruck Gauss Rifle")
     .map((weapon: WeaponXmlType) => {
       const convertedWeapon: WeaponType = convertWeapon(weapon);
-      const check = WeaponSchema.safeParse(convertedWeapon);
-      if (!check.success) {
+      const check = WeaponSchema(convertedWeapon);
+      if (check instanceof type.errors) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         console.dir(convertedWeapon, { depth: Infinity });
-        throw new Error(check.error.message);
+        throw new Error(check.summary);
       }
-      return check.data;
+      return check;
     });
   // console.log(weaponListConverted);
-  const check = WeaponListSchema.safeParse(weaponListConverted);
-  if (!check.success) {
-    throw new Error(check.error.message);
+  const check = WeaponListSchema(weaponListConverted);
+  if (check instanceof type.errors) {
+    throw new Error(check.summary);
   }
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/weapons.json"
@@ -123,7 +125,7 @@ export function ParseWeapons() {
   );
 }
 
-function convertWeapon(weapon: WeaponXmlType) {
+function convertWeapon(weapon: WeaponXmlType): WeaponType {
   // console.log(`\n${weapon.name}`);
 
   const { weaponType, weaponSubtype } = getWeaponTypeInformation(weapon);
@@ -223,7 +225,7 @@ function convertWeapon(weapon: WeaponXmlType) {
     return range;
   });
   let requirements;
-  if (weapon.required) {
+  if (weapon.required !== undefined) {
     requirements = convertRequirements(weapon.required);
   }
   const mountLocationsOnHostWeapon = weapon.mount
@@ -239,13 +241,18 @@ function convertWeapon(weapon: WeaponXmlType) {
       `Weapon underbarrel error: ${weapon.name}`
     );
   }
-  const hostWeaponRequirements =
-    weapon.category === weaponXmlSubtypeEnum.UnderbarrelWeapons
-      ? {
-          weaponRequirements: requirements,
-          hostWeaponMountsRequired: mountLocationsOnHostWeapon,
-        }
-      : undefined;
+  let hostWeaponRequirements;
+  if (weapon.category === weaponXmlSubtypeEnum.UnderbarrelWeapons) {
+    assert(
+      requirements !== undefined || mountLocationsOnHostWeapon !== undefined
+    );
+    hostWeaponRequirements = {
+      ...(requirements !== undefined && { weaponRequirements: requirements }),
+      ...(mountLocationsOnHostWeapon !== undefined && {
+        hostWeaponMountsRequired: mountLocationsOnHostWeapon,
+      }),
+    };
+  }
   if (weapon.category === weaponXmlSubtypeEnum.UnderbarrelWeapons) {
     if (weapon.hide === undefined) {
       // TODO: renable

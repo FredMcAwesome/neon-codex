@@ -118,9 +118,9 @@ interface IProps {
 }
 
 export const EquipmentSelect = function (props: IProps) {
-  const { data, error, isError, isLoading } = trpc.character.all.useQuery();
+  const { data, error, isError, isPending } = trpc.character.all.useQuery();
   console.log("EquipmentSelect re-rendered");
-  if (isLoading) {
+  if (isPending) {
     return <div>Loading equipment...</div>;
   }
 
@@ -1054,7 +1054,9 @@ const FormattedWeaponDiv = function ({
       ? function () {
           addWeapon({
             baseWeapon: weapon.name,
-            accessoryList: weapon.includedAccessoryList,
+            ...(weapon.includedAccessoryList !== undefined && {
+              accessoryList: weapon.includedAccessoryList,
+            }),
           });
         }
       : undefined;
@@ -1216,8 +1218,12 @@ function FormattedArmourDiv({
       ? function () {
           addArmour({
             baseArmour: armour.name,
-            modList: armour.includedModList,
-            gearList: armour.includedGearList,
+            ...(armour.includedModList !== undefined && {
+              modList: armour.includedModList,
+            }),
+            ...(armour.includedGearList !== undefined && {
+              gearList: armour.includedGearList,
+            }),
           });
         }
       : undefined;
@@ -1335,7 +1341,9 @@ function FormattedGearDiv({
       ? function () {
           addGear({
             baseGear: gear.name,
-            innerGearList: gear.includedGearList,
+            ...(gear.includedGearList !== undefined && {
+              innerGearList: gear.includedGearList,
+            }),
             // TODO: look at other options if can/need to set here
           });
         }
@@ -1448,7 +1456,9 @@ const FormattedAugmentationDiv = function ({
       ? function () {
           addAugmentation({
             baseAugmentation: augmentation.name,
-            gearList: augmentation.includedGearList,
+            ...(augmentation.includedGearList !== undefined && {
+              gearList: augmentation.includedGearList,
+            }),
             ...(augmentation.type === augmentationTypeEnum.Cyberware && {
               subsystemList: augmentation.includedSubsystemList,
             }),
@@ -1630,9 +1640,15 @@ const FormattedVehicleDiv = function ({
       ? function () {
           addVehicle({
             baseVehicle: vehicle.name,
-            modList: vehicle.includedModList,
-            gearList: vehicle.includedGearList,
-            weaponMountList: vehicle.includedWeaponMountList,
+            ...(vehicle.includedModList !== undefined && {
+              modList: vehicle.includedModList,
+            }),
+            ...(vehicle.includedGearList !== undefined && {
+              gearList: vehicle.includedGearList,
+            }),
+            ...(vehicle.includedWeaponMountList !== undefined && {
+              weaponMountList: vehicle.includedWeaponMountList,
+            }),
           });
         }
       : undefined;

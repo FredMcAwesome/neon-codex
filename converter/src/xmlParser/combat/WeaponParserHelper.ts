@@ -136,7 +136,9 @@ export const convertTypeInformation = function (
       return {
         type: weaponTypeEnum.Projectile as const,
         subtype: weaponSubtype as projectileWeaponTypeEnum,
-        extraClassification: weaponExtraClassification,
+        ...(weaponExtraClassification !== undefined && {
+          extraClassification: weaponExtraClassification,
+        }),
         rangeList: ranges,
       };
     case weaponTypeEnum.Firearm:
@@ -149,7 +151,9 @@ export const convertTypeInformation = function (
       return {
         type: weaponTypeEnum.Firearm as const,
         subtype: weaponSubtype as firearmWeaponTypeEnum,
-        extraClassification: weaponExtraClassification,
+        ...(weaponExtraClassification !== undefined && {
+          extraClassification: weaponExtraClassification,
+        }),
         firearmOptions: firearmOptions,
         rangeList: ranges,
       };
@@ -784,7 +788,7 @@ export const convertAccessories = function (
     const accessory: CustomisedWeaponAccessoryType = {
       baseAccessory: xmlAccessory.name,
       mountList: mountList || [],
-      rating: xmlAccessory.rating,
+      ...(xmlAccessory.rating !== undefined && { rating: xmlAccessory.rating }),
       gearList: [],
     };
     if (xmlAccessory.gears !== undefined) {

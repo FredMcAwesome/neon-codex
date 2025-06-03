@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { z as zod } from "zod";
+
 import assert from "assert";
 import { XMLParser } from "fast-xml-parser";
 import path from "path";
@@ -13,35 +13,28 @@ import { MentorSchema } from "@neon-codex/common/build/schemas/abilities/talent/
 import { mentorCategoryEnum } from "@neon-codex/common/build/enums.js";
 import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
+import { type } from "arktype";
 
-const MentorSpiritXmlSchema = zod
-  .object({
-    id: zod.string(),
-    name: zod.string(),
-    advantage: zod.string(),
-    disadvantage: zod.string(),
-    bonus: zod.optional(BonusXmlSchema),
-    choices: zod
-      .object({
-        choice: zod.array(
-          zod
-            .object({
-              _set: zod.optional(zod.string()),
-              name: zod.string(),
-              // optional as sometimes the bonus is too specific to apply in general
-              bonus: zod.optional(BonusXmlSchema),
-            })
-            .strict()
-        ),
-      })
-      .strict(),
-    required: zod.optional(RequiredXmlSchema),
-    source: zod.nativeEnum(sourceBookXmlEnum),
-    page: zod.number(),
-  })
-  .strict();
-type MentorSpiritXmlType = zod.infer<typeof MentorSpiritXmlSchema>;
-export const MentorSpiritListXmlSchema = zod.array(MentorSpiritXmlSchema);
+const MentorSpiritXmlSchema = type({
+  id: "string",
+  name: "string",
+  advantage: "string",
+  disadvantage: "string",
+  "bonus?": BonusXmlSchema,
+  choices: {
+    choice: type({
+      "_set?": "string",
+      name: "string",
+      // optional as sometimes the bonus is too specific to apply in general
+      "bonus?": BonusXmlSchema,
+    }).array(),
+  },
+  "required?": RequiredXmlSchema,
+  source: type.valueOf(sourceBookXmlEnum),
+  page: "number",
+});
+type MentorSpiritXmlType = typeof MentorSpiritXmlSchema.infer;
+export const MentorSpiritListXmlSchema = type(MentorSpiritXmlSchema.array());
 
 export function ParseMentorSpirits() {
   const currentPath = import.meta.url;
@@ -61,18 +54,19 @@ export function ParseMentorSpirits() {
   //   jObj.chummer.mentors.mentor[73]
   // );
 
-  const mentorListParsed = MentorSpiritListXmlSchema.safeParse(
+  const mentorListParsed = MentorSpiritListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.mentors.mentor
   );
 
-  if (mentorListParsed.success) console.log("mentors.xml initial zod parsed");
-  else {
-    console.log(mentorListParsed.error.errors[0]);
+  if (mentorListParsed instanceof type.errors) {
+    console.log(mentorListParsed.summary);
     assert(false);
+  } else {
+    console.log("mentors.xml initial arktype parsed");
   }
 
-  const mentorList = mentorListParsed.data;
+  const mentorList = mentorListParsed;
   // .filter((weapon) => {
   //   return weapon.type === weaponTypeEnum.Melee;
   // })
@@ -81,13 +75,13 @@ export function ParseMentorSpirits() {
     // .filter((weapon) => weapon.name === "Osmium Mace")
     .map((mentor) => {
       const convertedMentor = convertMentor(mentor);
-      const check = MentorSchema.safeParse(convertedMentor);
-      if (!check.success) {
+      const check = MentorSchema(convertedMentor);
+      if (check instanceof type.errors) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         console.dir(convertedMentor, { depth: Infinity });
-        throw new Error(check.error.message);
+        throw new Error(check.summary);
       }
-      return check.data;
+      return check;
     });
   // console.log(paragonListConverted);
   const jsonFilePath = fileURLToPath(
@@ -118,7 +112,7 @@ function convertMentor(mentor: MentorSpiritXmlType) {
     choiceCount = set > choiceCount ? set : choiceCount;
     return {
       name: choice.name,
-      bonus: choiceBonus,
+      ...(choiceBonus !== undefined && { bonus: choiceBonus }),
       set: set,
     };
   });

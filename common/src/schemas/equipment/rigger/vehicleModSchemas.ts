@@ -10,193 +10,168 @@ import {
   sourceBookEnum,
   firearmWeaponTypeEnum,
 } from "../../../enums.js";
-import { z as zod } from "zod";
+
 import { BonusSchema } from "../../shared/bonusSchemas.js";
 import { RequirementsSchema } from "../../shared/requiredSchemas.js";
 import { RangeCostSchema } from "../../shared/commonSchemas.js";
+import { type } from "arktype";
 
-const VehicleModRatingSchema = zod.array(
-  zod.union([
-    zod
-      .object({
-        option: zod.nativeEnum(vehicleModRatingEnum),
-      })
-      .strict(),
-    zod.nativeEnum(mathOperatorEnum),
-    zod.number(),
-  ])
+const VehicleModRatingSchema = type
+  .or(
+    {
+      option: type.valueOf(vehicleModRatingEnum),
+    },
+    {
+      operator: type.valueOf(mathOperatorEnum),
+    },
+    "number"
+  )
+  .array();
+export type VehicleModRatingType = typeof VehicleModRatingSchema.infer;
+
+const ReplaceAmmoSchema = type({
+  reloadMethod: type.valueOf(ammoSourceEnum),
+  "capacity?": "number",
+  "numberOfAmmunitionHolders?": "number",
+}).array();
+export type ReplaceAmmoType = typeof ReplaceAmmoSchema.infer;
+
+const InnerSlotCostSchema = type.or(
+  {
+    option: type.valueOf(vehicleModAttributeEnum),
+  },
+  { operator: type.valueOf(mathOperatorEnum) },
+  "number"
 );
-export type VehicleModRatingType = zod.infer<typeof VehicleModRatingSchema>;
-
-const ReplaceAmmoSchema = zod.array(
-  zod
-    .object({
-      reloadMethod: zod.nativeEnum(ammoSourceEnum),
-      capacity: zod.optional(zod.number()),
-      numberOfAmmunitionHolders: zod.optional(zod.number()),
-    })
-    .strict()
-);
-export type ReplaceAmmoType = zod.infer<typeof ReplaceAmmoSchema>;
-
-const InnerSlotCostSchema = zod.union([
-  zod
-    .object({
-      option: zod.nativeEnum(vehicleModAttributeEnum),
-    })
-    .strict(),
-  zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
-  zod.number(),
-]);
 
 export type PartialSlotCostType = Array<
-  zod.infer<typeof InnerSlotCostSchema> | { subnumbers: PartialSlotCostType }
+  typeof InnerSlotCostSchema.infer | { subnumbers: PartialSlotCostType }
 >;
-const PartialSlotCostSchema: zod.ZodType<PartialSlotCostType> = zod.array(
-  zod.union([
-    InnerSlotCostSchema,
-    zod
-      .object({
-        subnumbers: zod.lazy(() => PartialSlotCostSchema),
-      })
-      .strict(),
-  ])
+const { PartialSlotCostSchema } = type.module({
+  PartialSlotCostSchema: [
+    [
+      InnerSlotCostSchema,
+      "|",
+      {
+        subnumbers: "PartialSlotCostSchema",
+      },
+    ],
+    "[]",
+  ],
+});
+
+const SlotCostSchema = type.or(PartialSlotCostSchema, {
+  ratingLinked: PartialSlotCostSchema.array(),
+});
+export type SlotCostType = typeof SlotCostSchema.infer;
+
+const InnerAvailabilityRatingVehicleModSchema = type.or(
+  { option: type.valueOf(vehicleModAttributeEnum) },
+  "number",
+  { operator: type.valueOf(mathOperatorEnum) }
 );
-
-const SlotCostSchema = zod.union([
-  PartialSlotCostSchema,
-  zod
-    .object({
-      ratingLinked: zod.array(PartialSlotCostSchema),
-    })
-    .strict(),
-]);
-export type SlotCostType = zod.infer<typeof SlotCostSchema>;
-
-const InnerAvailabilityRatingVehicleModSchema = zod.union([
-  zod.object({ option: zod.nativeEnum(vehicleModAttributeEnum) }).strict(),
-  zod.number(),
-  zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
-]);
 
 export type AvailabilityRatingVehicleModType = Array<
-  | zod.infer<typeof InnerAvailabilityRatingVehicleModSchema>
+  | typeof InnerAvailabilityRatingVehicleModSchema.infer
   | { subnumbers: AvailabilityRatingVehicleModType }
 >;
-const AvailabilityRatingVehicleModSchema: zod.ZodType<AvailabilityRatingVehicleModType> =
-  zod.array(
-    zod.union([
+const { AvailabilityRatingVehicleModSchema } = type.module({
+  AvailabilityRatingVehicleModSchema: [
+    [
       InnerAvailabilityRatingVehicleModSchema,
-      zod
-        .object({
-          subnumbers: zod.lazy(() => AvailabilityRatingVehicleModSchema),
-        })
-        .strict(),
-    ])
-  );
-
-const PartialAvailabilityVehicleModSchema = zod
-  .object({
-    rating: AvailabilityRatingVehicleModSchema,
-    restriction: zod.nativeEnum(restrictionEnum),
-  })
-  .strict();
-
-const AvailabilityVehicleModSchema = zod.union([
+      "|",
+      {
+        subnumbers: "AvailabilityRatingVehicleModSchema ",
+      },
+    ],
+    "[]",
+  ],
+});
+const PartialAvailabilityVehicleModSchema = type({
+  rating: AvailabilityRatingVehicleModSchema,
+  restriction: type.valueOf(restrictionEnum),
+});
+const AvailabilityVehicleModSchema = type.or(
   PartialAvailabilityVehicleModSchema,
-  zod
-    .object({
-      ratingLinked: zod.array(PartialAvailabilityVehicleModSchema),
-    })
-    .strict(),
-]);
-export type AvailabilityVehicleModType = zod.infer<
-  typeof AvailabilityVehicleModSchema
->;
+  {
+    ratingLinked: PartialAvailabilityVehicleModSchema.array(),
+  }
+);
+export type AvailabilityVehicleModType =
+  typeof AvailabilityVehicleModSchema.infer;
 
-const InnerCostVehicleModSchema = zod.union([
-  zod.object({ option: zod.nativeEnum(vehicleModAttributeEnum) }).strict(),
-  zod.number(),
-  zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
-]);
+const InnerCostVehicleModSchema = type.or(
+  { option: type.valueOf(vehicleModAttributeEnum) },
+  "number",
+  { operator: type.valueOf(mathOperatorEnum) }
+);
 
 export type PartialCostVehicleModType = Array<
-  | zod.infer<typeof InnerCostVehicleModSchema>
+  | typeof InnerCostVehicleModSchema.infer
   | { subnumbers: PartialCostVehicleModType }
 >;
-const PartialCostVehicleModSchema: zod.ZodType<PartialCostVehicleModType> =
-  zod.array(
-    zod.union([
+const { PartialCostVehicleModSchema } = type.module({
+  PartialCostVehicleModSchema: [
+    [
       InnerCostVehicleModSchema,
-      zod
-        .object({
-          subnumbers: zod.lazy(() => PartialCostVehicleModSchema),
-        })
-        .strict(),
-    ])
-  );
+      "|",
+      {
+        subnumbers: "PartialCostVehicleModSchema",
+      },
+    ],
+    "[]",
+  ],
+});
 
-const CostVehicleModSchema = zod.union([
+const CostVehicleModSchema = type.or(
   RangeCostSchema,
   PartialCostVehicleModSchema,
-  zod
-    .object({
-      ratingLinked: zod.array(PartialCostVehicleModSchema),
-    })
-    .strict(),
-]);
-export type CostVehicleModType = zod.infer<typeof CostVehicleModSchema>;
-
-export const VehicleModSchema = zod
-  .object({
-    name: zod.string(),
-    description: zod.string(),
-    type: zod.nativeEnum(vehicleModTypeEnum),
-    maxRating: VehicleModRatingSchema,
-    minRating: zod.optional(VehicleModRatingSchema),
-    ratingMeaning: zod.optional(zod.nativeEnum(ratingMeaningEnum)),
-    capacity: zod.optional(zod.number()),
-    isDowngrade: zod.optional(zod.literal(true)),
-    // TODO: Make this a child of vehicleModSchema
-    // combine with allowedSubsystemList, addPhysicalBoxes
-    requiresDroneParent: zod.optional(zod.literal(true)),
-    allowedSubsystemList: zod.optional(
-      zod.array(zod.nativeEnum(cyberwareCategoryEnum))
-    ),
-    addPhysicalBoxes: zod.optional(zod.number()),
-    slotCost: SlotCostSchema,
-    weaponMountValidCategoryList: zod.optional(
-      zod.array(zod.nativeEnum(firearmWeaponTypeEnum))
-    ),
-    bonus: zod.optional(BonusSchema),
-    requirements: zod.optional(RequirementsSchema),
-    userSelectable: zod.optional(zod.literal(false)),
-    availability: AvailabilityVehicleModSchema,
-    cost: CostVehicleModSchema,
-    source: zod.nativeEnum(sourceBookEnum),
-    page: zod.number(),
-  })
-  .strict();
-
-export type VehicleModType = zod.infer<typeof VehicleModSchema>;
-export const VehicleModListSchema = zod.array(VehicleModSchema);
-export type VehicleModListType = zod.infer<typeof VehicleModListSchema>;
-
-export const CustomisedVehicleModSchema = zod
-  .object({
-    baseMod: zod.string(),
-    rating: zod.optional(zod.number()),
-    // display this like 'name (specificOption)'
-    specificOption: zod.optional(zod.string()),
-    subsystemList: zod.optional(zod.array(zod.string())),
-  })
-  .strict();
-export type CustomisedVehicleModType = zod.infer<
-  typeof CustomisedVehicleModSchema
->;
-export const CustomisedVehicleModListSchema = zod.array(
-  CustomisedVehicleModSchema
+  {
+    ratingLinked: PartialCostVehicleModSchema.array(),
+  }
 );
-export type CustomisedVehicleModListType = zod.infer<
-  typeof CustomisedVehicleModListSchema
->;
+export type CostVehicleModType = typeof CostVehicleModSchema.infer;
+
+export const VehicleModSchema = type({
+  name: "string",
+  description: "string",
+  type: type.valueOf(vehicleModTypeEnum),
+  maxRating: VehicleModRatingSchema,
+  "minRating?": VehicleModRatingSchema,
+  "ratingMeaning?": type.valueOf(ratingMeaningEnum),
+  "capacity?": "number",
+  "isDowngrade?": "true",
+  // TODO: Make this a child of vehicleModSchema
+  // combine with allowedSubsystemList, addPhysicalBoxes
+  "requiresDroneParent?": "true",
+  "allowedSubsystemList?": type.valueOf(cyberwareCategoryEnum).array(),
+  "addPhysicalBoxes?": "number",
+  slotCost: SlotCostSchema,
+  "weaponMountValidCategoryList?": type.valueOf(firearmWeaponTypeEnum).array(),
+  "bonus?": BonusSchema,
+  "requirements?": RequirementsSchema,
+  "userSelectable?": "false",
+  availability: AvailabilityVehicleModSchema,
+  cost: CostVehicleModSchema,
+  source: type.valueOf(sourceBookEnum),
+  page: "number",
+});
+
+export type VehicleModType = typeof VehicleModSchema.infer;
+export const VehicleModListSchema = type(VehicleModSchema.array());
+export type VehicleModListType = typeof VehicleModListSchema.infer;
+
+export const CustomisedVehicleModSchema = type({
+  baseMod: "string",
+  "rating?": "number",
+  // display this like 'name (specificOption)'
+  "specificOption?": "string",
+  "subsystemList?": "string[]",
+});
+export type CustomisedVehicleModType = typeof CustomisedVehicleModSchema.infer;
+
+export const CustomisedVehicleModListSchema = type(
+  CustomisedVehicleModSchema.array()
+);
+export type CustomisedVehicleModListType =
+  typeof CustomisedVehicleModListSchema.infer;

@@ -5,6 +5,7 @@ import { fileURLToPath } from "url";
 import { Spells } from "../../models/rpg/abilities/spellModel.js";
 import type { SpellListType } from "@neon-codex/common/build/schemas/abilities/talent/spellSchemas.js";
 import { SpellListSchema } from "@neon-codex/common/build/schemas/abilities/talent/spellSchemas.js";
+import { type } from "arktype";
 
 export const getSpells = function () {
   const currentPath = import.meta.url;
@@ -18,13 +19,13 @@ export const getSpells = function () {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const rawJson = JSON.parse(jsonString);
-  const spellListParsed = SpellListSchema.safeParse(rawJson);
-  if (spellListParsed.success) {
-    console.log("spells all g");
-    spells = spellListParsed.data;
-  } else {
-    console.log(spellListParsed.error.errors[0]);
+  const spellListParsed = SpellListSchema(rawJson);
+  if (spellListParsed instanceof type.errors) {
+    console.log(spellListParsed.summary);
     assert(false, "spells is undefined");
+  } else {
+    console.log("spells all g");
+    spells = spellListParsed;
   }
   const stagedSpells: Array<Spells> = [];
   spells.forEach((spell) => {

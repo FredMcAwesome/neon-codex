@@ -5,6 +5,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { WeaponAccessories } from "../../models/rpg/equipment/combat/weaponAccessoryModel.js";
+import { type } from "arktype";
 
 export const getWeaponAccessories = function () {
   const currentPath = import.meta.url;
@@ -18,14 +19,13 @@ export const getWeaponAccessories = function () {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const rawJson = JSON.parse(jsonString);
-  const weaponAccessoryListParsed =
-    WeaponAccessoryListSchema.safeParse(rawJson);
-  if (weaponAccessoryListParsed.success) {
-    console.log("weapon accessories all g");
-    unlinkedWeaponAccessories = weaponAccessoryListParsed.data;
-  } else {
-    console.log(weaponAccessoryListParsed.error.errors[0]);
+  const weaponAccessoryListParsed = WeaponAccessoryListSchema(rawJson);
+  if (weaponAccessoryListParsed instanceof type.errors) {
+    console.log(weaponAccessoryListParsed.summary);
     assert(false, "weaponAccessories is undefined");
+  } else {
+    console.log("weapon accessories all g");
+    unlinkedWeaponAccessories = weaponAccessoryListParsed;
   }
   const stagedWeaponAccessories: Array<WeaponAccessories> = [];
   unlinkedWeaponAccessories.forEach((weaponAccessory) => {

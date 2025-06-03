@@ -30,6 +30,7 @@ import { convertXmlBonus } from "../common/BonusParserHelper.js";
 import Gears from "../../grammar/gears.ohm-bundle.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { GearSchema } from "@neon-codex/common/build/schemas/equipment/other/gearSchemas.js";
+import { type } from "arktype";
 const Program = Gears.Program;
 const Capacity = Gears.Capacity;
 const Cost = Gears.Cost;
@@ -53,18 +54,19 @@ export function ParseGear() {
   //   jObj.chummer.gears.gear[480].bonus.limitmodifier
   // );
 
-  const gearListParsed = GearListXmlSchema.safeParse(
+  const gearListParsed = GearListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.gears.gear
   );
 
-  if (gearListParsed.success) console.log("gear.xml initial zod parsed");
-  else {
-    console.log(gearListParsed.error.errors[0]);
+  if (gearListParsed instanceof type.errors) {
+    console.log(gearListParsed.summary);
     assert(false);
+  } else {
+    console.log("gear.xml initial arktype parsed");
   }
 
-  const gearList = gearListParsed.data;
+  const gearList = gearListParsed;
   // .filter((gear) => {
   //   return gear.name === "Detonating Cord, High Yield";
   // });
@@ -76,13 +78,13 @@ export function ParseGear() {
       if (convertedGear === undefined) {
         return undefined;
       }
-      const check = GearSchema.safeParse(convertedGear);
-      if (!check.success) {
+      const check = GearSchema(convertedGear);
+      if (check instanceof type.errors) {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         console.dir(convertedGear, { depth: Infinity });
-        throw new Error(check.error.message);
+        throw new Error(check.summary);
       }
-      return check.data;
+      return check;
     })
     .filter((gear) => gear !== undefined);
   const jsonFilePath = fileURLToPath(
@@ -210,11 +212,11 @@ const convertGear = function (gear: GearXmlType) {
     armourCapacityInformation = capacityGearSemantics(match).eval();
   }
   let requirements;
-  if (gear.required) {
+  if ("required" in gear) {
     requirements = convertRequirements(gear.required);
   }
   let forbidden;
-  if (gear.forbidden) {
+  if ("forbidden" in gear) {
     forbidden = convertRequirements(gear.forbidden);
   }
   const requireParent =
@@ -280,41 +282,65 @@ const convertGear = function (gear: GearXmlType) {
     name: gear.name,
     description: "",
     category: category,
-    minRating: gear.minrating,
-    maxRating: maxRating,
-    ratingMeaning: ratingMeaning,
-    includedWeapon: includedWeapon,
-    allowCategoryList: allowCategoryList,
-    purchaseQuantity: purchaseQuantity,
-    bonus: bonus,
-    weaponBonus: weaponBonus,
-    isFlechetteAmmo: isFlechetteAmmo,
-    flechetteWeaponBonus: flechetteWeaponBonus,
-    ammoForWeaponType: ammoForWeaponType,
-    explosiveWeight: weight,
+    ...(gear.minrating !== undefined && { minRating: gear.minrating }),
+    ...(maxRating !== undefined && { maxRating: maxRating }),
+    ...(ratingMeaning !== undefined && { ratingMeaning: ratingMeaning }),
+    ...(includedWeapon !== undefined && { includedWeapon: includedWeapon }),
+    ...(allowCategoryList !== undefined && {
+      allowCategoryList: allowCategoryList,
+    }),
+    ...(purchaseQuantity !== undefined && {
+      purchaseQuantity: purchaseQuantity,
+    }),
+    ...(bonus !== undefined && { bonus: bonus }),
+    ...(weaponBonus !== undefined && { weaponBonus: weaponBonus }),
+    ...(isFlechetteAmmo !== undefined && { isFlechetteAmmo: isFlechetteAmmo }),
+    ...(flechetteWeaponBonus !== undefined && {
+      flechetteWeaponBonus: flechetteWeaponBonus,
+    }),
+    ...(ammoForWeaponType !== undefined && {
+      ammoForWeaponType: ammoForWeaponType,
+    }),
+    ...(weight !== undefined && { explosiveWeight: weight }),
     ...(gear.hide !== undefined && { userSelectable: false as const }),
-    allowedGearList: allowedGearList,
-    includedGearList: includedGearList,
-    deviceRating: deviceRating,
-    programs: programs,
-    attributeArray: attributeArray,
-    attack: attack,
-    sleaze: sleaze,
-    dataProcessing: dataProcessing,
-    firewall: firewall,
-    canFormPersona: gear.canformpersona,
-    capacityInformation: capacityInformation,
-    armourCapacityInformation: armourCapacityInformation,
-    requirements: requirements,
-    requireParent: requireParent,
-    forbidden: forbidden,
-    modifyAttributeArray: modifyAttributeArray,
-    modifyAttack: modifyAttack,
-    modifySleaze: modifySleaze,
-    modifyDataProcessing: modifyDataProcessing,
-    modifyFirewall: modifyFirewall,
-    addMatrixBoxes: gear.matrixcmbonus,
-    renameCustomLabel: renameCustomLabel,
+    ...(allowedGearList !== undefined && { allowedGearList: allowedGearList }),
+    ...(includedGearList !== undefined && {
+      includedGearList: includedGearList,
+    }),
+    ...(deviceRating !== undefined && { deviceRating: deviceRating }),
+    ...(programs !== undefined && { programs: programs }),
+    ...(attributeArray !== undefined && { attributeArray: attributeArray }),
+    ...(attack !== undefined && { attack: attack }),
+    ...(sleaze !== undefined && { sleaze: sleaze }),
+    ...(dataProcessing !== undefined && { dataProcessing: dataProcessing }),
+    ...(firewall !== undefined && { firewall: firewall }),
+    ...(gear.canformpersona !== undefined && {
+      canFormPersona: gear.canformpersona,
+    }),
+    ...(capacityInformation !== undefined && {
+      capacityInformation: capacityInformation,
+    }),
+    ...(armourCapacityInformation !== undefined && {
+      armourCapacityInformation: armourCapacityInformation,
+    }),
+    ...(requirements !== undefined && { requirements: requirements }),
+    ...(requireParent !== undefined && { requireParent: requireParent }),
+    ...(forbidden !== undefined && { forbidden: forbidden }),
+    ...(modifyAttributeArray !== undefined && {
+      modifyAttributeArray: modifyAttributeArray,
+    }),
+    ...(modifyAttack !== undefined && { modifyAttack: modifyAttack }),
+    ...(modifySleaze !== undefined && { modifySleaze: modifySleaze }),
+    ...(modifyDataProcessing !== undefined && {
+      modifyDataProcessing: modifyDataProcessing,
+    }),
+    ...(modifyFirewall !== undefined && { modifyFirewall: modifyFirewall }),
+    ...(gear.matrixcmbonus !== undefined && {
+      addMatrixBoxes: gear.matrixcmbonus,
+    }),
+    ...(renameCustomLabel !== undefined && {
+      renameCustomLabel: renameCustomLabel,
+    }),
     cost: cost,
     availability: availability,
     source: source,

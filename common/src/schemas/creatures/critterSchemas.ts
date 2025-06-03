@@ -1,4 +1,4 @@
-import { z as zod } from "zod";
+import { type } from "arktype";
 import {
   sourceBookEnum,
   critterTypeEnum,
@@ -12,150 +12,124 @@ import { BonusGenericListSchema, BonusSchema } from "../shared/bonusSchemas.js";
 import { MovementStrideSchema } from "../shared/commonSchemas.js";
 
 // critter rating is a recursive type
-export const CritterRatingSubnumberSchema = zod.union([
-  zod.number(),
-  zod.object({ option: zod.nativeEnum(critterAttributePowerEnum) }).strict(),
-  zod.object({ operator: zod.nativeEnum(mathOperatorEnum) }).strict(),
-]);
+export const CritterRatingSubnumberSchema = type.or(
+  "number",
+  { option: type.valueOf(critterAttributePowerEnum) },
+  { operator: type.valueOf(mathOperatorEnum) }
+);
 
 export type CritterRatingNonArrayType =
-  | zod.infer<typeof CritterRatingSubnumberSchema>
+  | typeof CritterRatingSubnumberSchema.infer
   | {
       subnumbers: CritterRatingType;
     };
 
 export type CritterRatingType = Array<CritterRatingNonArrayType>;
-export const CritterRatingSchema: zod.ZodType<CritterRatingType> = zod.array(
-  zod.union([
-    CritterRatingSubnumberSchema,
-    zod
-      .object({
-        subnumbers: zod.lazy(() => CritterRatingSchema),
-      })
-      .strict(),
-  ])
-);
+export const { CritterRatingSchema } = type.module({
+  CritterRatingSchema: [
+    [
+      CritterRatingSubnumberSchema,
+      "|",
+      {
+        subnumbers: "CritterRatingSchema",
+      },
+    ],
+    "[]",
+  ],
+});
 
-const SkillLoadingSchema = zod
-  .object({
-    name: zod.string(),
-    specialised: zod.optional(zod.array(zod.string())),
-    rating: CritterRatingSchema,
-    select: zod.optional(zod.string()),
-  })
-  .strict();
+const SkillLoadingSchema = type({
+  name: "string",
+  "specialised?": "string[]",
+  rating: CritterRatingSchema,
+  "select?": "string",
+});
+const SkillGroupLoadingSchema = type({
+  name: "string",
+  rating: CritterRatingSchema,
+});
+const KnowledgeSkillSchema = type({
+  name: "string",
+  description: "string",
+  category: type.valueOf(skillCategoryEnum),
+  attribute: type.valueOf(attributeTypeEnum),
+  skillPoints: "number",
+  "specialisationsSelected?": "string[]",
+});
+export type CritterIncludedKnowledgeSkillType =
+  typeof KnowledgeSkillSchema.infer;
 
-const SkillGroupLoadingSchema = zod
-  .object({
-    name: zod.string(),
-    rating: CritterRatingSchema,
-  })
-  .strict();
+const CritterSkillListSchema = type({
+  skillList: SkillLoadingSchema.array(),
+  "skillGroupList?": SkillGroupLoadingSchema.array(),
+  "knowledgeSkillList?": KnowledgeSkillSchema.array(),
+});
+export type CritterSkillListType = typeof CritterSkillListSchema.infer;
 
-const KnowledgeSkillSchema = zod
-  .object({
-    name: zod.string(),
-    description: zod.string(),
-    category: zod.nativeEnum(skillCategoryEnum),
-    attribute: zod.nativeEnum(attributeTypeEnum),
-    skillPoints: zod.number(),
-    specialisationsSelected: zod.optional(zod.array(zod.string())),
-  })
-  .strict();
-export type CritterIncludedKnowledgeSkillType = zod.infer<
-  typeof KnowledgeSkillSchema
->;
+const CritterAttributeRangeSchema = type({
+  min: CritterRatingSchema,
+  max: CritterRatingSchema,
+  augmentedMax: CritterRatingSchema,
+});
+export type CritterAttributeRangeType =
+  typeof CritterAttributeRangeSchema.infer;
 
-const CritterSkillListSchema = zod
-  .object({
-    skillList: zod.array(SkillLoadingSchema),
-    skillGroupList: zod.optional(zod.array(SkillGroupLoadingSchema)),
-    knowledgeSkillList: zod.optional(zod.array(KnowledgeSkillSchema)),
-  })
-  .strict();
-export type CritterSkillListType = zod.infer<typeof CritterSkillListSchema>;
+const IncludedCritterPowerRatingSchema = type.or("number", {
+  power: "true",
+});
+export type IncludedCritterPowerRatingType =
+  typeof IncludedCritterPowerRatingSchema.infer;
 
-const CritterAttributeRangeSchema = zod
-  .object({
-    min: CritterRatingSchema,
-    max: CritterRatingSchema,
-    augmentedMax: CritterRatingSchema,
-  })
-  .strict();
-export type CritterAttributeRangeType = zod.infer<
-  typeof CritterAttributeRangeSchema
->;
-
-const IncludedCritterPowerRatingSchema = zod.union([
-  zod.number(),
-  zod
-    .object({
-      power: zod.literal(true),
-    })
-    .strict(),
-]);
-export type IncludedCritterPowerRatingType = zod.infer<
-  typeof IncludedCritterPowerRatingSchema
->;
-
-const IncludedCritterPowerSchema = zod
-  .object({
-    name: zod.string(),
-    selectText: zod.optional(zod.string()),
-    rating: zod.optional(IncludedCritterPowerRatingSchema),
-  })
-  .strict();
-export const IncludedCritterPowerListSchema = zod.array(
+const IncludedCritterPowerSchema = type({
+  name: "string",
+  "selectText?": "string",
+  "rating?": IncludedCritterPowerRatingSchema,
+});
+export const IncludedCritterPowerListSchema = type(
   IncludedCritterPowerSchema
-);
-export type IncludedCritterPowerListType = zod.infer<
-  typeof IncludedCritterPowerListSchema
->;
+).array();
+export type IncludedCritterPowerListType =
+  typeof IncludedCritterPowerListSchema.infer;
 
-const IncludedComplexFormSchema = zod
-  .object({
-    name: zod.string(),
-    select: zod.optional(zod.nativeEnum(matrixAttributeEnum)),
-  })
-  .strict();
-const IncludedComplexFormListSchema = zod.array(IncludedComplexFormSchema);
-export type IncludedComplexFormListType = zod.infer<
-  typeof IncludedComplexFormListSchema
->;
+const IncludedComplexFormSchema = type({
+  name: "string",
+  "select?": type.valueOf(matrixAttributeEnum),
+});
+const IncludedComplexFormListSchema = type(IncludedComplexFormSchema.array());
+export type IncludedComplexFormListType =
+  typeof IncludedComplexFormListSchema.infer;
 
-export const CritterSchema = zod
-  .object({
-    name: zod.string(),
-    description: zod.string(),
-    category: zod.nativeEnum(critterTypeEnum),
-    bodyAttributeRange: CritterAttributeRangeSchema,
-    agilityAttributeRange: CritterAttributeRangeSchema,
-    reactionAttributeRange: CritterAttributeRangeSchema,
-    strengthAttributeRange: CritterAttributeRangeSchema,
-    charismaAttributeRange: CritterAttributeRangeSchema,
-    intuitionAttributeRange: CritterAttributeRangeSchema,
-    logicAttributeRange: CritterAttributeRangeSchema,
-    willpowerAttributeRange: CritterAttributeRangeSchema,
-    initiativeAttributeRange: CritterAttributeRangeSchema,
-    edgeAttributeRange: CritterAttributeRangeSchema,
-    magicAttributeRange: CritterAttributeRangeSchema,
-    resonanceAttributeRange: CritterAttributeRangeSchema,
-    essenceAttributeRange: CritterAttributeRangeSchema,
-    depthAttributeRange: CritterAttributeRangeSchema,
-    nonStandardMovement: zod.optional(zod.literal(true)),
-    movement: zod.optional(MovementStrideSchema),
-    includedPowerList: zod.optional(IncludedCritterPowerListSchema),
-    optionalPowerList: zod.optional(IncludedCritterPowerListSchema),
-    addQualityList: zod.optional(BonusGenericListSchema),
-    addBiowareList: zod.optional(BonusGenericListSchema),
-    addComplexFormList: zod.optional(IncludedComplexFormListSchema),
-    skills: CritterSkillListSchema,
-    bonus: zod.optional(BonusSchema),
-    source: zod.nativeEnum(sourceBookEnum),
-    page: zod.number(),
-  })
-  .strict();
-export type CritterType = zod.infer<typeof CritterSchema>;
+export const CritterSchema = type({
+  name: "string",
+  description: "string",
+  category: type.valueOf(critterTypeEnum),
+  bodyAttributeRange: CritterAttributeRangeSchema,
+  agilityAttributeRange: CritterAttributeRangeSchema,
+  reactionAttributeRange: CritterAttributeRangeSchema,
+  strengthAttributeRange: CritterAttributeRangeSchema,
+  charismaAttributeRange: CritterAttributeRangeSchema,
+  intuitionAttributeRange: CritterAttributeRangeSchema,
+  logicAttributeRange: CritterAttributeRangeSchema,
+  willpowerAttributeRange: CritterAttributeRangeSchema,
+  initiativeAttributeRange: CritterAttributeRangeSchema,
+  edgeAttributeRange: CritterAttributeRangeSchema,
+  magicAttributeRange: CritterAttributeRangeSchema,
+  resonanceAttributeRange: CritterAttributeRangeSchema,
+  essenceAttributeRange: CritterAttributeRangeSchema,
+  depthAttributeRange: CritterAttributeRangeSchema,
+  "nonStandardMovement?": "true",
+  "movement?": MovementStrideSchema,
+  "includedPowerList?": IncludedCritterPowerListSchema,
+  "optionalPowerList?": IncludedCritterPowerListSchema,
+  "addQualityList?": BonusGenericListSchema,
+  "addBiowareList?": BonusGenericListSchema,
+  "addComplexFormList?": IncludedComplexFormListSchema,
+  skills: CritterSkillListSchema,
+  "bonus?": BonusSchema,
+  source: type.valueOf(sourceBookEnum),
+  page: "number",
+});
+export type CritterType = typeof CritterSchema.infer;
 
-export const CritterListSchema = zod.array(CritterSchema);
-export type CritterListType = zod.infer<typeof CritterListSchema>;
+export const CritterListSchema = type(CritterSchema.array());
+export type CritterListType = typeof CritterListSchema.infer;

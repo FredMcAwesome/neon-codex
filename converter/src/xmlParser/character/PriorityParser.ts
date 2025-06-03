@@ -29,6 +29,7 @@ import {
   talentCategoryEnum,
 } from "@neon-codex/common/build/enums.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
+import { type } from "arktype";
 
 export function ParsePriorites() {
   const currentPath = import.meta.url;
@@ -48,20 +49,20 @@ export function ParsePriorites() {
   // console.log(
   //   jObj.chummer.priorities.priority[0].metatypes.metatype[9].metavariants
   // );
-  const priorityListParsed = PriorityListXmlSchema.safeParse(
+  const priorityListParsed = PriorityListXmlSchema(
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     jObj.chummer.priorities.priority
   );
 
   // console.log(jObj.chummer.priorities.priority[356]);
-  if (priorityListParsed.success) {
-    console.log("priorities.xml initial zod parsed");
-  } else {
-    console.log(priorityListParsed.error.errors[0]);
+  if (priorityListParsed instanceof type.errors) {
+    console.log(priorityListParsed.summary);
     assert(false);
+  } else {
+    console.log("priorities.xml initial arktype parsed");
   }
 
-  const priorityList = priorityListParsed.data;
+  const priorityList = priorityListParsed;
   const priorityCellListConverted = priorityList.map(
     (priority: PriorityXmlType) => {
       return convertPriorityCell(priority);
@@ -69,10 +70,10 @@ export function ParsePriorites() {
   );
   const priorityTable = convertPriorityTable(priorityCellListConverted);
   // console.log(priorityListConverted);
-  const check = PriorityTableSchema.safeParse(priorityTable);
-  if (!check.success) {
+  const check = PriorityTableSchema(priorityTable);
+  if (check instanceof type.errors) {
     console.dir(priorityTable, { depth: Infinity });
-    throw new Error(check.error.message);
+    throw new Error(check.summary);
   }
   const jsonFilePath = fileURLToPath(
     path.dirname(currentPath) + "../../../../jsonFiles/priorities.json"
@@ -198,7 +199,9 @@ const convertPriorityCell = function (
   }
 };
 
-const convertHeritage = function (xmlHeritage: HeritageXmlType) {
+const convertHeritage = function (
+  xmlHeritage: HeritageXmlType
+): PriorityUnionType {
   const metatypeXmlList = Array.isArray(xmlHeritage.metatypes.metatype)
     ? xmlHeritage.metatypes.metatype
     : [xmlHeritage.metatypes.metatype];
@@ -225,7 +228,9 @@ const convertHeritage = function (xmlHeritage: HeritageXmlType) {
       name: metatype.name,
       specialAttributePoints: metatype.value,
       karmaCost: metatype.karma,
-      metavariantList: metavariantList,
+      ...(metavariantList !== undefined && {
+        metavariantList: metavariantList,
+      }),
     };
   });
   assert(
@@ -243,7 +248,7 @@ const convertHeritage = function (xmlHeritage: HeritageXmlType) {
   };
 };
 
-const convertTalent = function (xmlTalent: TalentXmlType) {
+const convertTalent = function (xmlTalent: TalentXmlType): PriorityUnionType {
   const talentList = xmlTalent.talents.talent.map((talent) => {
     const quality =
       talent.qualities === undefined ? undefined : talent.qualities.quality;
@@ -353,9 +358,11 @@ const convertTalent = function (xmlTalent: TalentXmlType) {
       name: talent.value,
       label: talent.name,
       ...talentType,
-      includedQuality: quality,
-      includedSkills: includedSkills,
-      includedSkillGroups: includedSkillGroups,
+      ...(quality !== undefined && { includedQuality: quality }),
+      ...(includedSkills !== undefined && { includedSkills: includedSkills }),
+      ...(includedSkillGroups !== undefined && {
+        includedSkillGroups: includedSkillGroups,
+      }),
       ...(talent.required !== undefined && {
         required: convertRequirements(talent.required),
       }),
@@ -379,7 +386,9 @@ const convertTalent = function (xmlTalent: TalentXmlType) {
   };
 };
 
-const convertAttribute = function (xmlAttribute: AttributeXmlType) {
+const convertAttribute = function (
+  xmlAttribute: AttributeXmlType
+): PriorityUnionType {
   assert(
     xmlAttribute.name.startsWith("A - ") ||
       xmlAttribute.name.startsWith("B - ") ||
@@ -395,7 +404,7 @@ const convertAttribute = function (xmlAttribute: AttributeXmlType) {
   };
 };
 
-const convertSkill = function (xmlSkill: SkillXmlType) {
+const convertSkill = function (xmlSkill: SkillXmlType): PriorityUnionType {
   assert(
     xmlSkill.name.startsWith("A - ") ||
       xmlSkill.name.startsWith("B - ") ||
@@ -412,7 +421,9 @@ const convertSkill = function (xmlSkill: SkillXmlType) {
   };
 };
 
-const convertResource = function (xmlResource: ResourceXmlType) {
+const convertResource = function (
+  xmlResource: ResourceXmlType
+): PriorityUnionType {
   assert(
     xmlResource.name.startsWith("A - ") ||
       xmlResource.name.startsWith("B - ") ||

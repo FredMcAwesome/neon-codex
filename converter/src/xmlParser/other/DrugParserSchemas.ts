@@ -1,38 +1,37 @@
 import { gearCategoryEnum } from "@neon-codex/common/build/enums.js";
-import { z as zod } from "zod";
+
 import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
 import {
   SourceXmlSchema,
   StringOrNumberSchema,
 } from "../common/ParserCommonDefines.js";
+import { type } from "arktype";
 
-const DrugXmlSchema = zod
-  .object({
-    id: zod.string(),
-    name: zod.string(),
-    // Category of gear this is
-    category: zod.union([
-      zod.literal(gearCategoryEnum.Drugs),
-      zod.literal(gearCategoryEnum.Toxins),
-    ]),
-    // Unused
-    rating: zod.literal(0),
-    // Availability
-    avail: StringOrNumberSchema,
-    // Cost
-    cost: zod.number(),
-    // How quickly drug takes effect
-    speed: zod.optional(zod.number()),
-    // How the drug is administered (Contact, Injection, Ingestion, Inhalation)
-    vectors: zod.optional(zod.string()),
-    // How long the effect lasts
-    duration: zod.optional(StringOrNumberSchema),
-    // Bonus applied by Drug
-    bonus: zod.optional(BonusXmlSchema),
-    source: zod.union([SourceXmlSchema, zod.literal(2050)]),
-    page: zod.number(),
-  })
-  .strict();
-export type DrugXmlType = zod.infer<typeof DrugXmlSchema>;
-export const DrugListXmlSchema = zod.array(DrugXmlSchema);
-export type DrugListXmlType = zod.infer<typeof DrugListXmlSchema>;
+const DrugXmlSchema = type({
+  id: "string",
+  name: "string",
+  // Category of gear this is
+  category: type.or(
+    type.unit(gearCategoryEnum.Drugs),
+    type.unit(gearCategoryEnum.Toxins)
+  ),
+  // Unused
+  rating: "0",
+  // Availability
+  avail: StringOrNumberSchema,
+  // Cost
+  cost: "number",
+  // How quickly drug takes effect
+  "speed?": "number",
+  // How the drug is administered (Contact, Injection, Ingestion, Inhalation)
+  "vectors?": "string",
+  // How long the effect lasts
+  "duration?": StringOrNumberSchema,
+  // Bonus applied by Drug
+  "bonus?": BonusXmlSchema,
+  source: type.or(SourceXmlSchema, "2050"),
+  page: "number",
+});
+export type DrugXmlType = typeof DrugXmlSchema.infer;
+export const DrugListXmlSchema = type(DrugXmlSchema.array());
+export type DrugListXmlType = typeof DrugListXmlSchema.infer;

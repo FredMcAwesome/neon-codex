@@ -3,6 +3,11 @@
     "name": "Bliss",
     "description": "",
     "category": "Drugs",
+    "availability": {
+      "rating": 3,
+      "restriction": "F"
+    },
+    "cost": 15,
     "speed": 1,
     "bonus": {
       "qualityList": [
@@ -12,11 +17,6 @@
         }
       ]
     },
-    "availability": {
-      "rating": 3,
-      "restriction": "F"
-    },
-    "cost": 15,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 411
   },
@@ -24,17 +24,17 @@
     "name": "Cram",
     "description": "",
     "category": "Drugs",
+    "availability": {
+      "rating": 2,
+      "restriction": "R"
+    },
+    "cost": 10,
     "speed": 600,
     "bonus": {
       "initiative": {
         "bonusDice": 1
       }
     },
-    "availability": {
-      "rating": 2,
-      "restriction": "R"
-    },
-    "cost": 10,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 411
   },
@@ -42,17 +42,17 @@
     "name": "Deepweed",
     "description": "",
     "category": "Drugs",
+    "availability": {
+      "rating": 8,
+      "restriction": "F"
+    },
+    "cost": 400,
     "speed": 1,
     "bonus": {
       "initiative": {
         "bonusDice": 1
       }
     },
-    "availability": {
-      "rating": 8,
-      "restriction": "F"
-    },
-    "cost": 400,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 411
   },
@@ -60,17 +60,17 @@
     "name": "Jazz",
     "description": "",
     "category": "Drugs",
+    "availability": {
+      "rating": 2,
+      "restriction": "R"
+    },
+    "cost": 75,
     "speed": 1,
     "bonus": {
       "initiative": {
         "bonusDice": 2
       }
     },
-    "availability": {
-      "rating": 2,
-      "restriction": "R"
-    },
-    "cost": 75,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 411
   },
@@ -78,6 +78,11 @@
     "name": "Kamikaze",
     "description": "",
     "category": "Drugs",
+    "availability": {
+      "rating": 4,
+      "restriction": "R"
+    },
+    "cost": 100,
     "speed": 1,
     "bonus": {
       "initiative": {
@@ -90,11 +95,6 @@
         }
       ]
     },
-    "availability": {
-      "rating": 4,
-      "restriction": "R"
-    },
-    "cost": 100,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 412
   },
@@ -102,12 +102,12 @@
     "name": "Long Haul",
     "description": "",
     "category": "Drugs",
-    "speed": 600,
     "availability": {
       "rating": 0,
       "restriction": ""
     },
     "cost": 50,
+    "speed": 600,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 412
   },
@@ -115,6 +115,11 @@
     "name": "Nitro",
     "description": "",
     "category": "Drugs",
+    "availability": {
+      "rating": 2,
+      "restriction": "R"
+    },
+    "cost": 50,
     "speed": 6,
     "bonus": {
       "qualityList": [
@@ -124,11 +129,6 @@
         }
       ]
     },
-    "availability": {
-      "rating": 2,
-      "restriction": "R"
-    },
-    "cost": 50,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 412
   },
@@ -136,6 +136,11 @@
     "name": "Novacoke",
     "description": "",
     "category": "Drugs",
+    "availability": {
+      "rating": 2,
+      "restriction": "R"
+    },
+    "cost": 10,
     "speed": 6,
     "bonus": {
       "qualityList": [
@@ -145,11 +150,6 @@
         }
       ]
     },
-    "availability": {
-      "rating": 2,
-      "restriction": "R"
-    },
-    "cost": 10,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 412
   },
@@ -157,12 +157,12 @@
     "name": "Psyche",
     "description": "",
     "category": "Drugs",
-    "speed": 600,
     "availability": {
       "rating": 0,
       "restriction": ""
     },
     "cost": 200,
+    "speed": 600,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 412
   },
@@ -170,12 +170,12 @@
     "name": "Zen",
     "description": "",
     "category": "Drugs",
-    "speed": 300,
     "availability": {
       "rating": 4,
       "restriction": "R"
     },
     "cost": 5,
+    "speed": 300,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 412
   },
