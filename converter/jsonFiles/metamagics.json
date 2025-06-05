@@ -1,0 +1,605 @@
+[
+  {
+    "name": "Adept Centering",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "True",
+    "magician": "False",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 325
+  },
+  {
+    "name": "Centering",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "requirements": {},
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 325
+  },
+  {
+    "name": "Fixation",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "requirements": {},
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 325
+  },
+  {
+    "name": "Flexible Signature",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "True",
+    "magician": "True",
+    "requirements": {},
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 325
+  },
+  {
+    "name": "Masking",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "True",
+    "magician": "True",
+    "requirements": {},
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 326
+  },
+  {
+    "name": "Power Point",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "True",
+    "magician": "False",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 326
+  },
+  {
+    "name": "Quickening",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "requirements": {},
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 326
+  },
+  {
+    "name": "Shielding",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "requirements": {},
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 326
+  },
+  {
+    "name": "Spell Shaping",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "requirements": {},
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 326
+  },
+  {
+    "name": "Taint",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 87
+  },
+  {
+    "name": "Corruption",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 87
+  },
+  {
+    "name": "Sympathetic Linking",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "True",
+    "magician": "True",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 145
+  },
+  {
+    "name": "Psychometry",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "True",
+    "magician": "True",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 145
+  },
+  {
+    "name": "Danger Sense",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 145
+  },
+  {
+    "name": "Channeling",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 148
+  },
+  {
+    "name": "Exorcism",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "True",
+    "magician": "True",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 148
+  },
+  {
+    "name": "Extended Masking",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "True",
+    "magician": "True",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 149
+  },
+  {
+    "name": "Astral Bluff",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 150
+  },
+  {
+    "name": "Flux",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "True",
+    "magician": "True",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 150
+  },
+  {
+    "name": "Absorption",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 151
+  },
+  {
+    "name": "Reflection",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 151
+  },
+  {
+    "name": "Anchoring",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 152
+  },
+  {
+    "name": "Advanced Alchemy",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 153
+  },
+  {
+    "name": "Efficient Ritual",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "True",
+    "magician": "True",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 153
+  },
+  {
+    "name": "Greater Ritual",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 153
+  },
+  {
+    "name": "Penetrating Spell",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 153
+  },
+  {
+    "name": "Cleansing",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 155
+  },
+  {
+    "name": "Sensing",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 155
+  },
+  {
+    "name": "Infusion",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "True",
+    "magician": "False",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 156
+  },
+  {
+    "name": "Qi Sculpt",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "True",
+    "magician": "False",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 156
+  },
+  {
+    "name": "Supernatural Prowess",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "True",
+    "magician": "False",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 156
+  },
+  {
+    "name": "Apex Predator",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "True",
+    "magician": "False",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 157
+  },
+  {
+    "name": "Totem Form (Animal)",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "True",
+    "magician": "False",
+    "bonus": {
+      "enterName": true
+    },
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 157
+  },
+  {
+    "name": "Stillness of the Void",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "True",
+    "magician": "False",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 158
+  },
+  {
+    "name": "Domain of the Spiritual",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "True",
+    "magician": "False",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 158
+  },
+  {
+    "name": "Fae-Touched",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "True",
+    "magician": "False",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 158
+  },
+  {
+    "name": "Presence",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "True",
+    "magician": "False",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 159
+  },
+  {
+    "name": "Domain of the Warrior",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "True",
+    "magician": "False",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 159
+  },
+  {
+    "name": "Sacrifice",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "True",
+    "magician": "True",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 90
+  },
+  {
+    "name": "Power Bleed",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "True",
+    "magician": "False",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 90
+  },
+  {
+    "name": "Cannibalize",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "True",
+    "magician": "False",
+    "requirements": {},
+    "source": "Street Grimoire",
+    "page": 90
+  },
+  {
+    "name": "Movement",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "True",
+    "magician": "False",
+    "requirements": {},
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 399
+  },
+  {
+    "name": "Paradigm Shift: Insect Shaman",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "source": "Forbidden Arcana",
+    "page": 43
+  },
+  {
+    "name": "Paradigm Shift: Toxic",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "source": "Forbidden Arcana",
+    "page": 44
+  },
+  {
+    "name": "Spirit Expansion: UMT",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "source": "Forbidden Arcana",
+    "page": 44
+  },
+  {
+    "name": "Spirit Expansion: Shedim",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "source": "Forbidden Arcana",
+    "page": 44
+  },
+  {
+    "name": "Improved Astral Form",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "source": "Forbidden Arcana",
+    "page": 44
+  },
+  {
+    "name": "Astralnaut",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "requirements": {},
+    "source": "Forbidden Arcana",
+    "page": 44
+  },
+  {
+    "name": "Structured Spellcasting",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "source": "Forbidden Arcana",
+    "page": 44
+  },
+  {
+    "name": "Tarot Summoning",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "requirements": {},
+    "source": "Forbidden Arcana",
+    "page": 45
+  },
+  {
+    "name": "Reckless Necro Conjuring",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "source": "Forbidden Arcana",
+    "page": 45
+  },
+  {
+    "name": "Noble Sacrifice",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "source": "Forbidden Arcana",
+    "page": 46
+  },
+  {
+    "name": "Harmonious Defense",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "True",
+    "magician": "True",
+    "requirements": {},
+    "source": "Forbidden Arcana",
+    "page": 46
+  },
+  {
+    "name": "Harmonious Reflection",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "True",
+    "magician": "True",
+    "requirements": {},
+    "source": "Forbidden Arcana",
+    "page": 46
+  },
+  {
+    "name": "Predator Feast",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "True",
+    "magician": "False",
+    "requirements": {},
+    "source": "Forbidden Arcana",
+    "page": 131
+  },
+  {
+    "name": "Soul Tether",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "requirements": {},
+    "source": "Forbidden Arcana",
+    "page": 131
+  },
+  {
+    "name": "Spiritual Sacrifice",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "requirements": {},
+    "source": "Forbidden Arcana",
+    "page": 131
+  },
+  {
+    "name": "Echo Binding",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "requirements": {},
+    "source": "Dark Terrors",
+    "page": 165
+  },
+  {
+    "name": "Essence Expansion",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "True",
+    "magician": "True",
+    "requirements": {},
+    "source": "Dark Terrors",
+    "page": 165
+  },
+  {
+    "name": "Enhanced Mist Form",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "True",
+    "magician": "True",
+    "requirements": {},
+    "source": "Dark Terrors",
+    "page": 165
+  },
+  {
+    "name": "Great Form Possession",
+    "description": "",
+    "category": "Mentor Spirit",
+    "adept": "False",
+    "magician": "True",
+    "requirements": {},
+    "source": "Hard Targets",
+    "page": 134
+  }
+]

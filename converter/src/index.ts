@@ -85,5 +85,11 @@ ParseLifestyleQualities();
 import { ParseEquipmentPacks } from "./xmlParser/other/EquipmentPackParser.js";
 ParseEquipmentPacks();
 
+import { ParseMetamagics } from "./xmlParser/talent/MetamagicParser.js";
+ParseMetamagics();
+
+import { ParseEchos } from "./xmlParser/talent/EchoParser.js";
+ParseEchos();
+
 import { CheckGUIDs } from "./xmlParser/utilities.js";
 CheckGUIDs();

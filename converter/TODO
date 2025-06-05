@@ -30,10 +30,11 @@ So far I have only passed to the frontend:
 Still need passed through to frontend):
   - Drug Components
   - Critter Powers
-
-Other main priorities:
   - Echoes
   - Metamagic
+
+Other main priorities:
+  - N/A
 
 Other xmls to implement:
   - Actions

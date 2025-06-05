@@ -1,0 +1,210 @@
+[
+  {
+    "name": "Attack Upgrade",
+    "description": "",
+    "category": "Mentor Spirit",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 258
+  },
+  {
+    "name": "Data Processing Upgrade",
+    "description": "",
+    "category": "Mentor Spirit",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 258
+  },
+  {
+    "name": "Firewall Upgrade",
+    "description": "",
+    "category": "Mentor Spirit",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 258
+  },
+  {
+    "name": "Mind Over Machine",
+    "description": "",
+    "category": "Mentor Spirit",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 258
+  },
+  {
+    "name": "NeuroFilter",
+    "description": "",
+    "category": "Mentor Spirit",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 258
+  },
+  {
+    "name": "Overclocking",
+    "description": "",
+    "category": "Mentor Spirit",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 258
+  },
+  {
+    "name": "Resonance Link",
+    "description": "",
+    "category": "Mentor Spirit",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 258
+  },
+  {
+    "name": "Resonance [Program]",
+    "description": "",
+    "category": "Mentor Spirit",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 258
+  },
+  {
+    "name": "Sleaze Upgrade",
+    "description": "",
+    "category": "Mentor Spirit",
+    "source": "Shadowrun 5 Core Rulebook",
+    "page": 258
+  },
+  {
+    "name": "Fight or Flight Filter",
+    "description": "",
+    "category": "Mentor Spirit",
+    "source": "Data Trails",
+    "page": 58
+  },
+  {
+    "name": "Mathemagics",
+    "description": "",
+    "category": "Mentor Spirit",
+    "source": "Data Trails",
+    "page": 58
+  },
+  {
+    "name": "MMRI",
+    "description": "",
+    "category": "Mentor Spirit",
+    "source": "Data Trails",
+    "page": 59
+  },
+  {
+    "name": "Quiet",
+    "description": "",
+    "category": "Mentor Spirit",
+    "source": "Data Trails",
+    "page": 59
+  },
+  {
+    "name": "Resonance Riding",
+    "description": "",
+    "category": "Mentor Spirit",
+    "source": "Data Trails",
+    "page": 59
+  },
+  {
+    "name": "Resonance Scream",
+    "description": "",
+    "category": "Mentor Spirit",
+    "source": "Data Trails",
+    "page": 59
+  },
+  {
+    "name": "Skinlink",
+    "description": "",
+    "category": "Mentor Spirit",
+    "source": "Data Trails",
+    "page": 59
+  },
+  {
+    "name": "Sleepwalker",
+    "description": "",
+    "category": "Mentor Spirit",
+    "source": "Data Trails",
+    "page": 59
+  },
+  {
+    "name": "Contaminate",
+    "description": "",
+    "category": "Mentor Spirit",
+    "source": "Data Trails - Dissonant Echoes",
+    "page": 165
+  },
+  {
+    "name": "Siphon",
+    "description": "",
+    "category": "Mentor Spirit",
+    "source": "Data Trails - Dissonant Echoes",
+    "page": 165
+  },
+  {
+    "name": "Pryon",
+    "description": "",
+    "category": "Mentor Spirit",
+    "source": "Data Trails - Dissonant Echoes",
+    "page": 165
+  },
+  {
+    "name": "Defrag",
+    "description": "",
+    "category": "Mentor Spirit",
+    "source": "Dark Terrors",
+    "page": 85
+  },
+  {
+    "name": "Aegis",
+    "description": "",
+    "category": "Mentor Spirit",
+    "source": "Kill Code",
+    "page": 101
+  },
+  {
+    "name": "Draining Spike",
+    "description": "",
+    "category": "Mentor Spirit",
+    "source": "Kill Code",
+    "page": 101
+  },
+  {
+    "name": "Neural Synergy",
+    "description": "",
+    "category": "Mentor Spirit",
+    "source": "Kill Code",
+    "page": 101
+  },
+  {
+    "name": "Predictive Analytics",
+    "description": "",
+    "category": "Mentor Spirit",
+    "bonus": {
+      "initiative": {
+        "bonusDice": 1
+      }
+    },
+    "source": "Kill Code",
+    "page": 101
+  },
+  {
+    "name": "Resonance Resistance",
+    "description": "",
+    "category": "Mentor Spirit",
+    "source": "Kill Code",
+    "page": 102
+  },
+  {
+    "name": "The Van der Waals Effect",
+    "description": "",
+    "category": "Mentor Spirit",
+    "source": "Kill Code",
+    "page": 102
+  },
+  {
+    "name": "Will of the Resonance",
+    "description": "",
+    "category": "Mentor Spirit",
+    "source": "Kill Code",
+    "page": 102
+  },
+  {
+    "name": "Sourcerer Daemon",
+    "description": "",
+    "category": "Mentor Spirit",
+    "source": "Kill Code",
+    "page": 91
+  }
+]

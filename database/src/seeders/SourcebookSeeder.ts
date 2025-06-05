@@ -7,15 +7,15 @@ import { getWeaponAccessories } from "../seeds/rpgSeeds/weaponAccessoriesSeed.js
 import { getArmourModifications } from "../seeds/rpgSeeds/armourModificationsSeed.js";
 import { getArmours } from "../seeds/rpgSeeds/armoursSeed.js";
 import { getAugmentations } from "../seeds/rpgSeeds/augmentationsSeed.js";
-import { getDrugs, getDrugComponents } from "../seeds/rpgSeeds/drugSeed.js";
-import { getGears } from "../seeds/rpgSeeds/gearSeed.js";
+import { getDrugs, getDrugComponents } from "../seeds/rpgSeeds/drugsSeed.js";
+import { getGears } from "../seeds/rpgSeeds/gearsSeed.js";
 import { getRanges } from "../seeds/rpgSeeds/rangesSeed.js";
-import { getVehicleModifications } from "../seeds/rpgSeeds/vehicleModificationSeed.js";
-import { getWeaponMountModifications } from "../seeds/rpgSeeds/weaponMountModSeed.js";
+import { getVehicleModifications } from "../seeds/rpgSeeds/vehicleModificationsSeed.js";
+import { getWeaponMountModifications } from "../seeds/rpgSeeds/weaponMountModsSeed.js";
 import {
   getVehicles,
   createVehicleWeaponMounts,
-} from "../seeds/rpgSeeds/vehicleSeed.js";
+} from "../seeds/rpgSeeds/vehiclesSeed.js";
 import { Skills } from "../models/rpg/abilities/skillModel.js";
 import {
   IncludedArmourModifications,
@@ -92,7 +92,7 @@ import {
   BaseHeritages,
   Metavariants,
 } from "../models/rpg/traits/heritageModel.js";
-import { getPriorities } from "../seeds/rpgSeeds/prioritySeed.js";
+import { getPriorities } from "../seeds/rpgSeeds/prioritiesSeed.js";
 import { Priorities } from "../models/rpg/otherData/priorityModel.js";
 import { HeritagePriorityDetails } from "../models/rpg/otherData/heritagePriorityDetailModel.js";
 import {
@@ -118,14 +118,14 @@ import {
 } from "../models/rpg/activeTables/activeQualityModel.js";
 import { Spells } from "../models/rpg/abilities/spellModel.js";
 import { getSpells } from "../seeds/rpgSeeds/spellsSeed.js";
-import { getAdeptPowers } from "../seeds/rpgSeeds/adeptPowerSeed.js";
+import { getAdeptPowers } from "../seeds/rpgSeeds/adeptPowersSeed.js";
 import { AdeptPowers } from "../models/rpg/abilities/adeptPowerModel.js";
 import {
   AllSpiritsTraditions,
   LinkedSpiritsTraditions,
   UnlinkedSpiritsTraditions,
 } from "../models/rpg/traits/traditionModel.js";
-import { getTraditions } from "../seeds/rpgSeeds/traditionSeed.js";
+import { getTraditions } from "../seeds/rpgSeeds/traditionsSeed.js";
 import { getComplexForms } from "../seeds/rpgSeeds/complexFormsSeed.js";
 import { ComplexForms } from "../models/rpg/abilities/complexFormModel.js";
 import { getCritters } from "../seeds/rpgSeeds/crittersSeed.js";
@@ -144,21 +144,21 @@ import { CritterIncludedSkillGroups } from "../models/rpg/activeTables/activeSki
 import { CritterIncludedKnowledgeSkills } from "../models/rpg/activeTables/activeKnowledgeSkillModel.js";
 import { getPrograms } from "../seeds/rpgSeeds/programsSeed.js";
 import { Programs } from "../models/rpg/abilities/programModel.js";
-import { getMentors } from "../seeds/rpgSeeds/mentorSeed.js";
+import { getMentors } from "../seeds/rpgSeeds/mentorsSeed.js";
 import {
   MentorSpirits,
   Paragons,
 } from "../models/rpg/otherData/mentorModel.js";
 import { QualityBonuses } from "../models/rpg/otherData/bonusModel.js";
-import { getMartialArts } from "../seeds/rpgSeeds/martialArtSeed.js";
-import { getMartialArtTechniques } from "../seeds/rpgSeeds/martialArtTechniqueSeed.js";
+import { getMartialArts } from "../seeds/rpgSeeds/martialArtsSeed.js";
+import { getMartialArtTechniques } from "../seeds/rpgSeeds/martialArtTechniquesSeed.js";
 import { MartialArts } from "../models/rpg/abilities/martialArtModel.js";
 import { MartialArtTechniques } from "../models/rpg/abilities/martialArtTechniqueModel.js";
-import { getLifestyles } from "../seeds/rpgSeeds/lifestyleSeed.js";
-import { getLifestyleQualities } from "../seeds/rpgSeeds/lifestyleQualitySeed.js";
+import { getLifestyles } from "../seeds/rpgSeeds/lifestylesSeed.js";
+import { getLifestyleQualities } from "../seeds/rpgSeeds/lifestyleQualitiesSeed.js";
 import { Lifestyles } from "../models/rpg/otherData/lifestyleModel.js";
 import { LifestyleQualities } from "../models/rpg/otherData/lifestyleQualityModel.js";
-import { getEquipmentPacks } from "../seeds/rpgSeeds/equipmentPackSeed.js";
+import { getEquipmentPacks } from "../seeds/rpgSeeds/equipmentPacksSeed.js";
 import { EquipmentPacks } from "../models/rpg/equipment/equipmentPackModel.js";
 import { PackArmours } from "../models/rpg/activeTables/activeArmourModel.js";
 import { PackVehicles } from "../models/rpg/activeTables/activeVehicleModel.js";
@@ -168,6 +168,10 @@ import {
 } from "../models/rpg/activeTables/activeWeaponModel.js";
 import { PackLifestyles } from "../models/rpg/activeTables/activeLIfestyleModel.js";
 import { WeaponMountModifications } from "../models/rpg/equipment/rigger/weaponMountModModel.js";
+import { getEchoes } from "../seeds/rpgSeeds/echoesSeed.js";
+import { getMetamagics } from "../seeds/rpgSeeds/metamagicsSeed.js";
+import { Echoes } from "../models/rpg/otherData/echoModel.js";
+import { Metamagics } from "../models/rpg/otherData/metamagicModel.js";
 
 export class SourcebookSeeder extends Seeder {
   async run(em: EntityManager): Promise<void> {
@@ -209,6 +213,8 @@ export class SourcebookSeeder extends Seeder {
       getLifestyleQualities();
     const { unlinkedEquipmentPacks, stagedEquipmentPacks } =
       getEquipmentPacks();
+    const stagedEchoes = getEchoes();
+    const stagedMetamagics = getMetamagics();
 
     stagedSkills.forEach((skill) => {
       em.create(Skills, skill);
@@ -412,6 +418,15 @@ export class SourcebookSeeder extends Seeder {
       em.create(EquipmentPacks, equipmentPack);
     });
     console.log("Equipment Packs created");
+
+    stagedEchoes.forEach((echo) => {
+      em.create(Echoes, echo);
+    });
+    console.log("Echoes Created");
+
+    stagedMetamagics.forEach((metamagic) => {
+      em.create(Metamagics, metamagic);
+    });
 
     await em.flush();
 

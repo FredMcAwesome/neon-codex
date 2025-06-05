@@ -200,6 +200,8 @@ import {
 } from "./models/rpg/activeTables/activeLIfestyleModel.js";
 import { EquipmentPacks } from "./models/rpg/equipment/equipmentPackModel.js";
 import { WeaponMountModifications } from "./models/rpg/equipment/rigger/weaponMountModModel.js";
+import { Echoes } from "./models/rpg/otherData/echoModel.js";
+import { Metamagics } from "./models/rpg/otherData/metamagicModel.js";
 
 const dbOptions: Options = {
   entities: [
@@ -332,11 +334,15 @@ const dbOptions: Options = {
     LinkedSpiritsTraditions,
     UnlinkedSpiritsTraditions,
     AllSpiritsTraditions,
+
     ComplexForms,
     ActiveComplexForms,
     IncludedComplexForms,
     CritterIncludedComplexForms,
     CustomisedComplexForms,
+
+    Echoes,
+    Metamagics,
 
     ActiveTalents,
     ActiveMagicTalents,

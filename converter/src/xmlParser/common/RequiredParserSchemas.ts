@@ -206,7 +206,10 @@ export const { RequiredGearDetailsXmlSchema } = type.module({
 
 const RequiredSubSchema = type({
   "tradition?": StringArrayOrStringSchema,
-  "quality?": StringArrayOrStringSchema,
+  "quality?": type.or(StringArrayOrStringSchema, {
+    xmltext: "string",
+    _extra: "string",
+  }),
   "martialtechnique?": "string",
   // this should probably self-referential...
   "initiategrade?": "number",
