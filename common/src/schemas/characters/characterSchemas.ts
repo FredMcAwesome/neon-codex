@@ -47,6 +47,7 @@ export enum PrioritiesEnum {
 }
 
 export const PriorityLevelsSchema = type({
+  "+": "reject",
   heritage: type.valueOf(priorityLetterEnum),
   attributes: type.valueOf(priorityLetterEnum),
   talent: type.valueOf(priorityLetterEnum),
@@ -56,6 +57,7 @@ export const PriorityLevelsSchema = type({
 export type PriorityLevelsType = typeof PriorityLevelsSchema.infer;
 
 export const AttributesSchema = type({
+  "+": "reject",
   body: "number",
   agility: "number",
   reaction: "number",
@@ -68,80 +70,96 @@ export const AttributesSchema = type({
 export type AttributesType = typeof AttributesSchema.infer;
 
 export const SpecialAttributesSchema = type({
+  "+": "reject",
   edge: "number",
   talent: type.or(
-    {
+    type({
+      "+": "reject",
       type: type.unit(talentCategoryEnum.Magic),
       magic: "number",
-    },
-    {
+    }),
+    type({
+      "+": "reject",
       type: type.unit(talentCategoryEnum.Resonance),
       resonance: "number",
-    },
-    {
+    }),
+    type({
+      "+": "reject",
       type: type.unit(talentCategoryEnum.Depth),
       depth: "number",
-    },
-    {
+    }),
+    type({
+      "+": "reject",
       type: type.unit(talentCategoryEnum.Mundane),
-    }
+    })
   ),
 });
 export type SpecialAttributesType = typeof SpecialAttributesSchema.infer;
 
 const CustomSpiritsSchema = type.or(
-  { customSpirits: "false" },
-  {
+  type({
+    "+": "reject",
+    customSpirits: "false",
+  }),
+  type({
+    "+": "reject",
     customSpirits: "true",
-    selectedSpiritTypes: {
+    selectedSpiritTypes: type({
+      "+": "reject",
       combat: "string",
       detection: "string",
       health: "string",
       illusion: "string",
       manipulation: "string",
-    },
-  }
+    }),
+  })
 );
 export type CustomSpiritsType = typeof CustomSpiritsSchema.infer;
 
 const TraditionSelectedSchema = type({
+  "+": "reject",
   name: "string",
   customSpirits: CustomSpiritsSchema,
 });
 export type TraditionSelectedType = typeof TraditionSelectedSchema.infer;
 
 const FormulaListSelectedSchema = type.or(
-  {
+  type({
+    "+": "reject",
     selectFormulae: "false",
-  },
-  {
+  }),
+  type({
+    "+": "reject",
     selectFormulae: "true",
     spells: "string[]",
     rituals: "string[]",
     alchemicalPreparations: "string[]",
-  }
+  })
 );
 export type FormulaListSelectedType = typeof FormulaListSelectedSchema.infer;
 
 const AdeptPowerListSelectedSchema = type.or(
-  {
+  type({
+    "+": "reject",
     selectAdeptPowers: "false",
-  },
-  {
+  }),
+  type({
+    "+": "reject",
     selectAdeptPowers: "true",
     adeptPowers: "string[]",
-  }
+  })
 );
 export type AdeptPowerListSelectedType =
   typeof AdeptPowerListSelectedSchema.infer;
 
 const ProgramSelectedListSchema = type({
+  "+": "reject",
   name: "string",
   "rating?": "number",
 }).array();
 export type ProgramSelectedListType = typeof ProgramSelectedListSchema.infer;
 
-const MentorSpiritSelectedSchema = MentorBaseSchema.and({
+const MentorSpiritSelectedSchema = MentorBaseSchema.merge({
   category: type.unit(mentorCategoryEnum.MentorSpirit),
   choices: MentorChoiceSchema.array(),
   choiceCount: "number",
@@ -149,30 +167,34 @@ const MentorSpiritSelectedSchema = MentorBaseSchema.and({
 });
 export type MentorSpiritSelectedType = typeof MentorSpiritSelectedSchema.infer;
 
-const ParagonSelectedSchema = MentorBaseSchema.and({
+const ParagonSelectedSchema = MentorBaseSchema.merge({
   category: type.unit(mentorCategoryEnum.Paragon),
 });
 
 export const TalentInfoSchema = type.or(
-  {
+  type({
+    "+": "reject",
     type: type.unit(talentCategoryEnum.Magic),
     selectedTradition: TraditionSelectedSchema,
     selectedFormulae: FormulaListSelectedSchema,
     selectedAdeptPowers: AdeptPowerListSelectedSchema,
     "selectedMentor?": MentorSpiritSelectedSchema,
-  },
-  {
+  }),
+  type({
+    "+": "reject",
     type: type.unit(talentCategoryEnum.Resonance),
     complexForms: "string[]",
     "selectedMentor?": ParagonSelectedSchema,
-  },
-  {
+  }),
+  type({
+    "+": "reject",
     type: type.unit(talentCategoryEnum.Depth),
     programs: ProgramSelectedListSchema,
-  },
-  {
+  }),
+  type({
+    "+": "reject",
     type: type.unit(talentCategoryEnum.Mundane),
-  }
+  })
 );
 export type TalentInfoType = typeof TalentInfoSchema.infer;
 export type MagicTalentInfoType = TalentInfoType & {
@@ -189,12 +211,14 @@ export type MundaneTalentInfoType = TalentInfoType & {
 };
 
 export const QualitySelectedListSchema = type({
+  "+": "reject",
   name: "string",
   "rating?": "number",
 }).array();
 export type QualitySelectedListType = typeof QualitySelectedListSchema.infer;
 
 export const HeritagePrioritySelectedSchema = type({
+  "+": "reject",
   heritage: "string",
   "metavariant?": "string",
   specialAttributePoints: "number",
@@ -204,6 +228,7 @@ export type HeritagePrioritySelectedType =
   typeof HeritagePrioritySelectedSchema.infer;
 
 export const AttributeRangesSchema = type({
+  "+": "reject",
   body: AttributeRangeSchema,
   agility: AttributeRangeSchema,
   reaction: AttributeRangeSchema,
@@ -224,6 +249,7 @@ const CostRangeSchema = type("number[]");
 export type CostRange = typeof CostRangeSchema.infer;
 
 export const MartialArtSelectedSchema = type({
+  "+": "reject",
   martialArt: MartialArtSchema,
   techniqueList: MartialArtTechniqueListSchema,
 });
@@ -233,6 +259,7 @@ export type MartialArtSelectedListType =
   typeof MartialArtSelectedListSchema.infer;
 
 export const LifestyleSelectedSchema = type({
+  "+": "reject",
   lifestyle: LifestyleSchema,
   lifestyleQualityList: LifestyleQualityListSchema,
   purchasedDuration: "number",
@@ -262,6 +289,7 @@ export type CharacterType = {
   lifestyleList: LifestyleSelectedListType;
 };
 export const CharacterSchema = type({
+  "+": "reject",
   name: "string",
   heritage: HeritageSchema,
   priorities: PriorityLevelsSchema,
@@ -282,26 +310,31 @@ export const CharacterSchema = type({
 });
 
 export const HeritageSummarySchema = type.or(
-  {
+  type({
+    "+": "reject",
     name: "string",
     category: type.unit(heritageCategoryEnum.Metavariant),
     baseHeritage: "string",
-  },
-  {
+  }),
+  type({
+    "+": "reject",
     name: "string",
     category: type.unit(heritageCategoryEnum.Metahuman),
-  },
-  {
+  }),
+  type({
+    "+": "reject",
     name: "string",
     category: type.unit(heritageCategoryEnum.Metasapient),
-  },
-  {
+  }),
+  type({
+    "+": "reject",
     name: "string",
     category: type.unit(heritageCategoryEnum.Shapeshifter),
-  }
+  })
 );
 
 export const CharacterSummarySchema = type({
+  "+": "reject",
   id: "number",
   name: "string",
   heritage: HeritageSummarySchema,

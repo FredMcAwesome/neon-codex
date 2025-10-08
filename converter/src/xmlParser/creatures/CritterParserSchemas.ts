@@ -16,29 +16,37 @@ import {
 } from "@neon-codex/common/build/enums.js";
 
 const SkillSchema = type({
+  "+": "reject",
   "_spec?": "string",
   _rating: "string",
   "_select?": "string",
   xmltext: "string",
 });
 const GroupSchema = type({
+  "+": "reject",
   _rating: "string",
   xmltext: "string",
 });
 const SkillListSchema = type({
+  "+": "reject",
   skill: SkillSchema.array(),
   "group?": type.or(GroupSchema, GroupSchema.array()),
   "knowledge?": type({
+    "+": "reject",
     _rating: "string",
     _category: type.valueOf(skillCategoryEnum),
     _attribute: type.valueOf(attributeXMLEnum),
     xmltext: "string",
   }),
 });
-const CritterIncludedBiowareSchema = type.or("string", {
-  _rating: "string",
-  xmltext: "string",
-});
+const CritterIncludedBiowareSchema = type.or(
+  "string",
+  type({
+    "+": "reject",
+    _rating: "string",
+    xmltext: "string",
+  })
+);
 const CritterIncludedBiowareListSchema = type(
   CritterIncludedBiowareSchema.array()
 );
@@ -48,6 +56,7 @@ export type CritterIncludedBiowareListType =
 const CritterIncludedComplexFormSchema = type.or(
   "string",
   type({
+    "+": "reject",
     _select: type.valueOf(matrixAttributeEnum),
     xmltext: "string",
   })
@@ -59,6 +68,7 @@ export type CritterIncludedComplexFormType =
   typeof CritterIncludedComplexFormListSchema.infer;
 
 const SubCritterXmlSchema = type({
+  "+": "reject",
   id: "string",
   name: "string",
   "karma?": "0",
@@ -136,17 +146,20 @@ const SubCritterXmlSchema = type({
   "qualities?": XmlQualityListSchema,
   // Included Powers
   "powers?": type({
+    "+": "reject",
     power: type.or(XmlPowerSchema, XmlPowerSchema.array()),
   }),
 
   // Choose one optional power per every 3 points of force in summoning
   "optionalpowers?": type({
+    "+": "reject",
     optionalpower: type.or(XmlPowerSchema, XmlPowerSchema.array()),
     "_count?": "string",
   }),
 
   // Included Biowares
   "biowares?": type({
+    "+": "reject",
     bioware: type.or(
       CritterIncludedBiowareSchema,
       CritterIncludedBiowareSchema.array()
@@ -155,6 +168,7 @@ const SubCritterXmlSchema = type({
 
   // Technocritters have complex forms
   "complexforms?": type({
+    "+": "reject",
     complexform: type.or(
       CritterIncludedComplexFormSchema,
       CritterIncludedComplexFormSchema.array()
@@ -169,10 +183,11 @@ const SubCritterXmlSchema = type({
   source: type.or(SourceXmlSchema, "2050"),
   page: "number",
 });
-const CritterXmlSchema = SubCritterXmlSchema.and({
+const CritterXmlSchema = SubCritterXmlSchema.merge({
   category: type.valueOf(critterTypeEnum),
   // subcritter types (used for insect spirits)
   "metavariants?": type({
+    "+": "reject",
     metavariant: SubCritterXmlSchema.array(),
   }),
 });

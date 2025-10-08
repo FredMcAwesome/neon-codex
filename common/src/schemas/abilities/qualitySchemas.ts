@@ -4,33 +4,38 @@ import { BonusSchema } from "../shared/bonusSchemas.js";
 import { RequirementsSchema } from "../shared/requiredSchemas.js";
 
 const QualityLimitSchema = type.or(
-  {
+  type({
+    "+": "reject",
     option: type.valueOf(qualityLimitEnum),
-  },
+  }),
   "number"
 );
 export type QualityLimitType = typeof QualityLimitSchema.infer;
 
 const QualityKarmaDiscountSchema = type({
+  "+": "reject",
   requirements: RequirementsSchema,
   value: "number",
 });
 export type QualityKarmaDiscountType = typeof QualityKarmaDiscountSchema.infer;
 
 const QualityFirstLevelBonusSchema = type.or(
-  {
+  type({
+    "+": "reject",
     // Increase to Notoriety level
     notoriety: "number",
-  },
-  {
+  }),
+  type({
+    "+": "reject",
     // prevents attribute maximum/s from being increased
     attributeMaxClamp: "string[]",
-  }
+  })
 );
 export type QualityFirstLevelBonusType =
   typeof QualityFirstLevelBonusSchema.infer;
 
 export const QualitySchema = type({
+  "+": "reject",
   // id: "string",
   name: "string",
   description: "string",
@@ -62,7 +67,7 @@ export type QualityType = typeof QualitySchema.infer;
 export const QualityListSchema = QualitySchema.array();
 export type QualityListType = typeof QualityListSchema.infer;
 
-export const CustomQualitySchema = QualitySchema.and({
+export const CustomQualitySchema = QualitySchema.merge({
   rating: "number",
 });
 export type CustomQualityType = typeof CustomQualitySchema.infer;

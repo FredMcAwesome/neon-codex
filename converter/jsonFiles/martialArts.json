@@ -1,6 +1,14 @@
 [
   {
     "name": "52 Blocks",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "52 Blocks",
+          "skillList": ["Unarmed Combat"]
+        }
+      }
+    },
     "techniqueList": [
       "Called Shot (Disarm)",
       "Kick Attack",
@@ -17,6 +25,14 @@
   },
   {
     "name": "Aikido",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Aikido",
+          "skillList": ["Unarmed Combat"]
+        }
+      }
+    },
     "techniqueList": [
       "Called Shot (Disarm)",
       "Constrictor's Crush",
@@ -33,6 +49,14 @@
   },
   {
     "name": "Arnis De Mano",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Arnis De Mano",
+          "skillList": ["Clubs"]
+        }
+      }
+    },
     "techniqueList": [
       "Close Quarter Defense Against Firearms",
       "Multiple Opponent Combat",
@@ -49,6 +73,14 @@
   },
   {
     "name": "Bartitsu",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Bartitsu",
+          "skillList": ["Clubs"]
+        }
+      }
+    },
     "techniqueList": [
       "Ballestra",
       "Bending of the Reed",
@@ -65,6 +97,14 @@
   },
   {
     "name": "Boxing (Brawler Style)",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Boxing (Brawler Style)",
+          "skillList": ["Unarmed Combat"]
+        }
+      }
+    },
     "techniqueList": [
       "Clinch",
       "Full Offense",
@@ -81,6 +121,14 @@
   },
   {
     "name": "Boxing (Classic Style)",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Boxing (Classic Style)",
+          "skillList": ["Unarmed Combat"]
+        }
+      }
+    },
     "techniqueList": [
       "Bending of the Reed",
       "Called Shot (Feint)",
@@ -97,6 +145,14 @@
   },
   {
     "name": "Boxing (Swarmer Style)",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Boxing (Swarmer Style)",
+          "skillList": ["Unarmed Combat"]
+        }
+      }
+    },
     "techniqueList": [
       "Bending of the Reed",
       "Called Shot (Feint)",
@@ -113,6 +169,14 @@
   },
   {
     "name": "Capoeira",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Capoeira",
+          "skillList": ["Unarmed Combat"]
+        }
+      }
+    },
     "techniqueList": [
       "Bending of the Reed",
       "Called Shot (Feint)",
@@ -129,6 +193,14 @@
   },
   {
     "name": "Carromeleg",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Carromeleg",
+          "skillList": ["Unarmed Combat"]
+        }
+      }
+    },
     "techniqueList": [
       "Counterstrike",
       "Iaijutsu",
@@ -161,6 +233,14 @@
   },
   {
     "name": "Drunken Boxing",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Drunken Boxing",
+          "skillList": ["Unarmed Combat"]
+        }
+      }
+    },
     "techniqueList": [
       "Called Shot (Disarm)",
       "Called Shot (Feint)",
@@ -177,6 +257,14 @@
   },
   {
     "name": "Fiore Dei Liberi",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Fiore dei Liberi",
+          "skillList": ["Blades"]
+        }
+      }
+    },
     "techniqueList": [
       "Called Shot (Break Weapon)",
       "Opposing Force (Parry)",
@@ -193,6 +281,14 @@
   },
   {
     "name": "Firefight",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Firefight",
+          "skillList": ["Pistols", "Longarms", "Automatics"]
+        }
+      }
+    },
     "techniqueList": [
       "Clinch",
       "Close Quarter Defense Against Firearms",
@@ -209,6 +305,14 @@
   },
   {
     "name": "Gun Kata",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Gun Kata",
+          "skillList": ["Pistols", "Longarms", "Automatics"]
+        }
+      }
+    },
     "techniqueList": [
       "Close Quarter Firearms (Pistols)",
       "Kip-Up",
@@ -225,6 +329,14 @@
   },
   {
     "name": "Jeet Kune Do",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Jeet Kune Do",
+          "skillList": ["Unarmed Combat"]
+        }
+      }
+    },
     "techniqueList": [
       "Bending of the Reed",
       "Counterstrike",
@@ -241,6 +353,14 @@
   },
   {
     "name": "Jogo Du Pau",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Jogo Du Pau",
+          "skillList": ["Clubs"]
+        }
+      }
+    },
     "techniqueList": [
       "Barbed Hooks",
       "Herding",
@@ -257,6 +377,14 @@
   },
   {
     "name": "Jujitsu",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Jujitsu",
+          "skillList": ["Unarmed Combat"]
+        }
+      }
+    },
     "techniqueList": [
       "Called Shot (Disarm)",
       "Chin Na",
@@ -273,6 +401,14 @@
   },
   {
     "name": "Karate",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Karate",
+          "skillList": ["Unarmed Combat"]
+        }
+      }
+    },
     "techniqueList": [
       "Counterstrike",
       "Kick Attack",
@@ -289,6 +425,14 @@
   },
   {
     "name": "Kenjutsu",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Kenjutsu",
+          "skillList": ["Blades"]
+        }
+      }
+    },
     "techniqueList": [
       "Bending of the Reed",
       "Finishing Move",
@@ -321,6 +465,14 @@
   },
   {
     "name": "Krav Maga",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Krav Maga",
+          "skillList": ["Unarmed Combat"]
+        }
+      }
+    },
     "techniqueList": [
       "Called Shot (Disarm)",
       "Clinch",
@@ -337,6 +489,14 @@
   },
   {
     "name": "Kunst Des Fechtens",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Kunst Des Fechtens (Long Sword Fighting)",
+          "skillList": ["Blades"]
+        }
+      }
+    },
     "techniqueList": [
       "Half Sword",
       "Multiple Opponent Combat",
@@ -353,6 +513,14 @@
   },
   {
     "name": "Kyujutsu",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Kyujutsu",
+          "skillList": ["Archery"]
+        }
+      }
+    },
     "techniqueList": [
       "Called Shot (Pin)",
       "Close Quarter Firearms (Archery)",
@@ -369,6 +537,14 @@
   },
   {
     "name": "La Verdadera Destreza",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "La Verdadera Destreza (Rapier Fighting)",
+          "skillList": ["Blades"]
+        }
+      }
+    },
     "techniqueList": [
       "Ballestra",
       "Multiple Opponent Combat",
@@ -402,6 +578,14 @@
   },
   {
     "name": "Muay Thai",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Muay Thai",
+          "skillList": ["Unarmed Combat"]
+        }
+      }
+    },
     "techniqueList": [
       "Clinch",
       "Crushing Jaws",
@@ -434,6 +618,14 @@
   },
   {
     "name": "Okichitaw",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Okichitaw",
+          "skillList": ["Clubs"]
+        }
+      }
+    },
     "techniqueList": [
       "Called Shot (Pin)",
       "Counterstrike",
@@ -450,6 +642,14 @@
   },
   {
     "name": "Parkour",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Parkour",
+          "skillList": ["Gymnastics"]
+        }
+      }
+    },
     "techniqueList": [
       "Bending of the Reed",
       "Kip-Up",
@@ -466,6 +666,14 @@
   },
   {
     "name": "Pentjak-Silat",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Pentjak-Silat",
+          "skillList": ["Blades"]
+        }
+      }
+    },
     "techniqueList": [
       "Called Shot (Break Weapon)",
       "Called Shot (Disarm)",
@@ -482,6 +690,14 @@
   },
   {
     "name": "Quarterstaff Fighting",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Quarterstaff Fighting",
+          "skillList": ["Clubs"]
+        }
+      }
+    },
     "techniqueList": [
       "Jiao Di (Knock Down)",
       "Multiple Opponent Combat",
@@ -498,6 +714,14 @@
   },
   {
     "name": "Sangre Y Acero",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Sangre Y Acero",
+          "skillList": ["Unarmed Combat"]
+        }
+      }
+    },
     "techniqueList": [
       "Called Shot (Break Weapon)",
       "Clinch",
@@ -514,6 +738,14 @@
   },
   {
     "name": "Tae Kwon Do",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Tae Kwon Do",
+          "skillList": ["Unarmed Combat"]
+        }
+      }
+    },
     "techniqueList": [
       "Counterstrike",
       "Flying Kick",
@@ -530,6 +762,14 @@
   },
   {
     "name": "The Cowboy Way",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "The Cowboy Way",
+          "skillList": ["Pistols", "Longarms", "Automatics"]
+        }
+      }
+    },
     "techniqueList": [
       "Called Shot (Entanglement)",
       "Hammerfist",
@@ -546,6 +786,14 @@
   },
   {
     "name": "Turkish Archery",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Turkish Archery",
+          "skillList": ["Archery"]
+        }
+      }
+    },
     "techniqueList": [
       "Called Shot (Pin)",
       "Close Quarter Defense Against Firearms",
@@ -578,6 +826,14 @@
   },
   {
     "name": "Wildcat",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Wildcat",
+          "skillList": ["Unarmed Combat"]
+        }
+      }
+    },
     "techniqueList": [
       "Clinch",
       "Counterstrike",
@@ -594,6 +850,14 @@
   },
   {
     "name": "Wrestling (Sport Style)",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Wrestling (Sport Style)",
+          "skillList": ["Unarmed Combat"]
+        }
+      }
+    },
     "techniqueList": [
       "Clinch",
       "Constrictor's Crush",
@@ -610,6 +874,14 @@
   },
   {
     "name": "Wrestling (Sumo Style)",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Wrestling (Sumo Style)",
+          "skillList": ["Unarmed Combat"]
+        }
+      }
+    },
     "techniqueList": [
       "Barbed Hooks",
       "Clinch",
@@ -626,6 +898,14 @@
   },
   {
     "name": "Wrestling (Professional Style)",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Wrestling (Professional Style)",
+          "skillList": ["Unarmed Combat"]
+        }
+      }
+    },
     "techniqueList": [
       "Clinch",
       "Jiao Di (Charge)",
@@ -642,6 +922,14 @@
   },
   {
     "name": "Wrestling (MMA Style)",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Wrestling (MMA Style)",
+          "skillList": ["Unarmed Combat"]
+        }
+      }
+    },
     "techniqueList": [
       "Clinch",
       "Constrictor's Crush",
@@ -658,6 +946,14 @@
   },
   {
     "name": "Wudang Sword",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Wudang Sword",
+          "skillList": ["Blades"]
+        }
+      }
+    },
     "techniqueList": [
       "Ballestra",
       "Finishing Move",
@@ -779,6 +1075,14 @@
   },
   {
     "name": "Arbeitskreis INI",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Arbeitskreis INI",
+          "skillList": ["Blades"]
+        }
+      }
+    },
     "techniqueList": [
       "Finishing Move",
       "Half Sword",
@@ -797,6 +1101,14 @@
   },
   {
     "name": "Circle Fencing",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Circle Fencing",
+          "skillList": ["Blades"]
+        }
+      }
+    },
     "techniqueList": [
       "Called Shot (Feint)",
       "Called Shot (Break Weapon)",
@@ -813,6 +1125,14 @@
   },
   {
     "name": "Kreussler Fencing",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Kreussler Fencing",
+          "skillList": ["Blades", "Clubs"]
+        }
+      }
+    },
     "techniqueList": [
       "Ballestra",
       "Hammerfist",
@@ -830,6 +1150,14 @@
   },
   {
     "name": "Asthenologica",
+    "bonus": {
+      "skill": {
+        "addSkillSpecialistion": {
+          "spec": "Asthenologica",
+          "skillList": ["Unarmed Combat"]
+        }
+      }
+    },
     "techniqueList": [
       "Clinch",
       "Dim Mak",

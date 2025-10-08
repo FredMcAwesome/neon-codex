@@ -12,23 +12,24 @@ import { actionEnum } from "@neon-codex/common/build/enums.js";
 import { type } from "arktype";
 
 const AdeptPowerSubBonusXmlSchema = type({
+  "+": "reject",
   id: "string",
   name: "string",
   // Power Point Cost
   points: "number",
   levels: type.or("'True'", "'False'"),
+  // Number of times this power can be taken
   limit: "number",
   // Other powers that count to this power's limit
-  "includeinlimit?": type({
-    name: StringArrayOrStringSchema,
-  }),
+  "includeinlimit?": type({ "+": "reject", name: StringArrayOrStringSchema }),
   "action?": type.valueOf(actionEnum),
   "adeptway?": "number",
   "adeptwayrequires?": type.or(
+    type({ "+": "reject", required: RequiredXmlSchema }),
     type({
-      required: RequiredXmlSchema,
-    }),
-    { magicianswayforbids: "''" }
+      "+": "reject",
+      magicianswayforbids: "''",
+    })
   ),
   "doublecost?": "'False'",
   // Extra point cost for first level only
@@ -48,7 +49,7 @@ export type AdeptPowerXmlType = AdeptPowerSubBonusXmlType & {
   required?: RequiredXmlType | undefined;
   forbidden?: RequiredXmlType | undefined;
 };
-const AdeptPowerXmlSchema = AdeptPowerSubBonusXmlSchema.and({
+const AdeptPowerXmlSchema = AdeptPowerSubBonusXmlSchema.merge({
   // Bonus (these are specific choices to select when adding when)
   // e.g. summoning spell chooses what you summon
   "bonus?": BonusXmlSchema,

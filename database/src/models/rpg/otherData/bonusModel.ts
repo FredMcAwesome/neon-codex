@@ -23,11 +23,11 @@ export abstract class Bonuses {
   linkParagon?: true;
 
   constructor(dto: BonusType) {
-    if (dto.linkMentorSpirit !== undefined) {
-      this.linkMentorSpirit = dto.linkMentorSpirit;
+    if (dto.spellAndMagic?.linkMentorSpirit !== undefined) {
+      this.linkMentorSpirit = dto.spellAndMagic.linkMentorSpirit;
     }
-    if (dto.linkParagon !== undefined) {
-      this.linkParagon = dto.linkParagon;
+    if (dto.technomancer?.linkParagon !== undefined) {
+      this.linkParagon = dto.technomancer.linkParagon;
     }
   }
 }

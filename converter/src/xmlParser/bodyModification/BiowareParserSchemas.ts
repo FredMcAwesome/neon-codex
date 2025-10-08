@@ -29,6 +29,7 @@ export enum biowareXmlCategoryEnum {
 }
 
 const BiowareXmlSchema = type({
+  "+": "reject",
   id: "string",
   name: "string",
   // How many times can this bioware be taken

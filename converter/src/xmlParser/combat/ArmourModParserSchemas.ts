@@ -22,6 +22,7 @@ export enum armourModXmlCategoryEnum {
 }
 
 const ArmourModXmlSchema = type({
+  "+": "reject",
   id: "string",
   name: "string",
   // Category of mod, if not "General" then the host armour must have the

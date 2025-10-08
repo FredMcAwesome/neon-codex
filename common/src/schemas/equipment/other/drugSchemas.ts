@@ -8,12 +8,14 @@ import {
 import { BonusSchema } from "../../shared/bonusSchemas.js";
 
 export const AvailabilityDrugSchema = type({
+  "+": "reject",
   rating: "number",
   restriction: type.valueOf(restrictionEnum),
 });
 export type AvailabilityDrugType = typeof AvailabilityDrugSchema.infer;
 
 export const DrugSchema = type({
+  "+": "reject",
   name: "string",
   description: "string",
   category: type.valueOf(gearCategoryEnum),
@@ -29,6 +31,7 @@ export const DrugListSchema = type(DrugSchema.array());
 export type DrugListType = typeof DrugListSchema.infer;
 
 export const DrugComponentSchema = type({
+  "+": "reject",
   name: "string",
   description: "string",
   category: type.valueOf(drugComponentCategoryEnum),

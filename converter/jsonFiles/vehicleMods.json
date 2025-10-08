@@ -1311,9 +1311,11 @@
       }
     ],
     "bonus": {
-      "armour": {
-        "bonus": {
-          "option": "Rating"
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": {
+            "option": "Rating"
+          }
         }
       }
     },
@@ -1360,9 +1362,11 @@
       }
     ],
     "bonus": {
-      "armour": {
-        "bonus": {
-          "option": "Rating"
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": {
+            "option": "Rating"
+          }
         }
       }
     },
@@ -2285,7 +2289,11 @@
     "type": "Body",
     "maxRating": [0],
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "slotCost": [0],
     "availability": {
@@ -2302,7 +2310,11 @@
     "type": "Body",
     "maxRating": [0],
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "slotCost": [0],
     "availability": {
@@ -2360,6 +2372,20 @@
     "description": "",
     "type": "Body",
     "maxRating": [0],
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Skill"
+            },
+            {
+              "base": "Knowledge Skill"
+            }
+          ]
+        }
+      }
+    },
     "slotCost": [6],
     "availability": {
       "rating": [8],
@@ -5112,7 +5138,11 @@
     "type": "All",
     "maxRating": [0],
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "requirements": {},
     "slotCost": [0],
@@ -5541,9 +5571,11 @@
     ],
     "ratingMeaning": "Rating of parent is upgraded",
     "bonus": {
-      "armour": {
-        "bonus": {
-          "option": "Rating"
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": {
+            "option": "Rating"
+          }
         }
       }
     },
@@ -5878,8 +5910,10 @@
     "type": "Armour",
     "maxRating": [0],
     "bonus": {
-      "armour": {
-        "bonus": -3
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": -3
+        }
       }
     },
     "isDowngrade": true,

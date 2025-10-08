@@ -2216,6 +2216,7 @@ const all = privateProcedure.query(async () => {
   }
 });
 const CharacterInformationSchema = type({
+  "+": "reject",
   // TODO: Maybe a union for this with other creation types?
   priorityInfo: PriorityLevelsSchema,
   heritageInfo: HeritagePrioritySelectedSchema,

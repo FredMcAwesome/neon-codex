@@ -22,6 +22,7 @@ import { lifestyleQualityCategoryEnum } from "@neon-codex/common/build/enums.js"
 import { type } from "arktype";
 
 const LifestyleQualityXmlSchema = type({
+  "+": "reject",
   id: "string",
   name: "string",
   category: type.valueOf(lifestyleQualityCategoryEnum),

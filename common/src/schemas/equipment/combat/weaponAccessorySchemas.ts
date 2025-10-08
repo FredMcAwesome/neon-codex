@@ -18,6 +18,7 @@ import {
 import { type } from "arktype";
 
 export const AvailabilityWeaponAccessorySchema = type({
+  "+": "reject",
   rating: AvailabilityRatingSchema,
   restriction: type.valueOf(restrictionEnum),
   "modifier?": type.unit(mathOperatorEnum.Add),
@@ -27,10 +28,14 @@ export type AvailabilityWeaponAccessoryType =
 
 const InnerCostWeaponAccessorySchema = type.or(
   "number",
-  {
+  type({
+    "+": "reject",
     option: type.valueOf(costEnum),
-  },
-  { operator: type.valueOf(mathOperatorEnum) }
+  }),
+  type({
+    "+": "reject",
+    operator: type.valueOf(mathOperatorEnum),
+  })
 );
 
 export type CostWeaponAccessoryType = Array<
@@ -52,8 +57,14 @@ export const { CostWeaponAccessorySchema } = type.module({
 
 export const AmmoCapacityCalculationSubnumberSchema = type.or(
   "number",
-  { option: type.valueOf(ammoOptionEnum) },
-  { operator: type.valueOf(mathOperatorEnum) }
+  type({
+    "+": "reject",
+    option: type.valueOf(ammoOptionEnum),
+  }),
+  type({
+    "+": "reject",
+    operator: type.valueOf(mathOperatorEnum),
+  })
 );
 
 export type AmmoCapacityCalculationType = Array<
@@ -83,6 +94,7 @@ export type ConcealabilityModificationType =
   typeof ConcealabilityModificationSchema.infer;
 
 export const WeaponAccessorySchema = type({
+  "+": "reject",
   name: "string",
   description: "string",
   "wireless?": "string",
@@ -120,6 +132,7 @@ export const WeaponAccessoryListSchema = type(WeaponAccessorySchema.array());
 export type WeaponAccessoryListType = typeof WeaponAccessoryListSchema.infer;
 
 export const CustomisedWeaponAccessorySchema = type({
+  "+": "reject",
   baseAccessory: "string",
   gearList: CustomisedGearListSchema,
   mountList: AccessoryMountSchema,

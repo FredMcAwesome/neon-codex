@@ -28,6 +28,7 @@ const SpellXmlDamageSchema = type.or(
 export type SpellXmlDamageType = typeof SpellXmlDamageSchema.infer;
 
 const SpellXmlSchema = type({
+  "+": "reject",
   id: "string",
   name: "string",
   // Category

@@ -82,6 +82,7 @@ const cyberwareRatingSchema = type.or(
 export type cyberwareRatingType = typeof cyberwareRatingSchema.infer;
 
 const CyberwareSubBonusXmlSchema = type({
+  "+": "reject",
   id: "string",
   name: "string",
   // How many times can this bioware be taken
@@ -190,7 +191,7 @@ export type CyberwareXmlType = CyberwareSubBonusXmlType & {
   required?: RequiredXmlType | undefined;
   forbidden?: RequiredXmlType | undefined;
 };
-const CyberwareXmlSchema = CyberwareSubBonusXmlSchema.and({
+const CyberwareXmlSchema = CyberwareSubBonusXmlSchema.merge({
   // Bonus applied by Cyberware
   "bonus?": BonusXmlSchema,
   // // Bonus applied when 2 are equipped e.g. 2 feet = different run speed

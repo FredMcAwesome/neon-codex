@@ -15,22 +15,24 @@ import { CustomisedGearListSchema } from "../other/gearSchemas.js";
 import { type } from "arktype";
 
 const InnerAvailabilityArmourModSchema = type({
+  "+": "reject",
   rating: AvailabilityRatingSchema,
   restriction: type.valueOf(restrictionEnum),
   "modifier?": type.unit(mathOperatorEnum.Add),
 });
 const AvailabilityArmourModSchema = type.or(
   InnerAvailabilityArmourModSchema,
-  type({ ratingLinked: InnerAvailabilityArmourModSchema.array() })
+  type({
+    "+": "reject",
+    ratingLinked: InnerAvailabilityArmourModSchema.array(),
+  })
 );
 export type AvailabilityArmourModType =
   typeof AvailabilityArmourModSchema.infer;
 
 const InnerCostArmourModSchema = type.or(
   "number",
-  type({
-    option: type.valueOf(costEnum),
-  }),
+  type({ "+": "reject", option: type.valueOf(costEnum) }),
   { operator: type.valueOf(mathOperatorEnum) }
 );
 
@@ -44,6 +46,7 @@ export const { RecursiveCostArmourModSchema } = type.module({
       InnerCostArmourModSchema,
       "|",
       {
+        "+": "reject",
         subnumbers: "RecursiveCostArmourModSchema",
       },
     ],
@@ -52,15 +55,13 @@ export const { RecursiveCostArmourModSchema } = type.module({
 });
 export const CostArmourModSchema = type.or(
   RecursiveCostArmourModSchema,
-  type({ ratingLinked: RecursiveCostArmourModSchema.array() })
+  type({ "+": "reject", ratingLinked: RecursiveCostArmourModSchema.array() })
 );
 export type CostArmourModType = typeof CostArmourModSchema.infer;
 
 const InnerCapacityArmourModSchema = type.or(
   "number",
-  type({
-    option: type.valueOf(capacityEnum),
-  }),
+  type({ "+": "reject", option: type.valueOf(capacityEnum) }),
   { operator: type.valueOf(mathOperatorEnum) }
 );
 
@@ -74,6 +75,7 @@ export const { SingleCapacityArmourModSchema } = type.module({
       InnerCapacityArmourModSchema,
       "|",
       {
+        "+": "reject",
         subnumbers: "SingleCapacityArmourModSchema",
       },
     ],
@@ -82,13 +84,12 @@ export const { SingleCapacityArmourModSchema } = type.module({
 });
 export const CapacityArmourModSchema = type.or(
   SingleCapacityArmourModSchema,
-  type({
-    ratingLinked: SingleCapacityArmourModSchema,
-  })
+  type({ "+": "reject", ratingLinked: SingleCapacityArmourModSchema })
 );
 export type CapacityArmourModType = typeof CapacityArmourModSchema.infer;
 
 const HostArmourRequirementSchema = type({
+  "+": "reject",
   "requiredMod?": "string",
   "hostArmour?": "string",
 });
@@ -96,6 +97,7 @@ export type HostArmourRequirementType =
   typeof HostArmourRequirementSchema.infer;
 
 export const ArmourModSchema = type({
+  "+": "reject",
   name: "string",
   description: "string",
   category: type.valueOf(armourModCategoryEnum),
@@ -118,6 +120,7 @@ export const ArmourModListSchema = type(ArmourModSchema.array());
 export type ArmourModListType = typeof ArmourModListSchema.infer;
 
 export const CustomisedArmourModSchema = type({
+  "+": "reject",
   baseMod: "string",
   "gearList?": CustomisedGearListSchema,
   "rating?": "number",

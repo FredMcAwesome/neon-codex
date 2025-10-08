@@ -19,6 +19,7 @@ import { CustomisedGearListSchema } from "../other/gearSchemas.js";
 import { type } from "arktype";
 
 export const AvailabilityArmourSchema = type({
+  "+": "reject",
   rating: AvailabilityRatingSchema,
   restriction: type.valueOf(restrictionEnum),
   "modifier?": type.unit(mathOperatorEnum.Add),
@@ -27,10 +28,14 @@ export type AvailabilityArmourType = typeof AvailabilityArmourSchema.infer;
 
 const InnerCostArmourSchema = type.or(
   "number",
-  {
+  type({
+    "+": "reject",
     option: type.valueOf(costEnum),
-  },
-  { operator: type.valueOf(mathOperatorEnum) }
+  }),
+  type({
+    "+": "reject",
+    operator: type.valueOf(mathOperatorEnum),
+  })
 );
 
 const { PartialCostArmourSchema } = type.module({
@@ -39,6 +44,7 @@ const { PartialCostArmourSchema } = type.module({
       InnerCostArmourSchema,
       "|",
       {
+        "+": "reject",
         subnumbers: "PartialCostArmourSchema",
       },
     ],
@@ -53,12 +59,17 @@ export const CostArmourSchema = type.or(
 
 export type CostArmourType = typeof CostArmourSchema.infer;
 
-const CapacityArmourSchema = type.or("number", {
-  option: type.valueOf(availabilityEnum),
-});
+const CapacityArmourSchema = type.or(
+  "number",
+  type({
+    "+": "reject",
+    option: type.valueOf(availabilityEnum),
+  })
+);
 export type CapacityArmourType = typeof CapacityArmourSchema.infer;
 
 export const ArmourSchema = type({
+  "+": "reject",
   name: "string",
   description: "string",
   category: type.valueOf(armourCategoryEnum),
@@ -84,6 +95,7 @@ export const ArmourListSchema = type(ArmourSchema.array());
 export type ArmourListType = typeof ArmourListSchema.infer;
 
 export const CustomisedArmourSchema = type({
+  "+": "reject",
   baseArmour: "string",
   // This overrides baseArmour modifications
   "modList?": CustomisedArmourModListSchema,

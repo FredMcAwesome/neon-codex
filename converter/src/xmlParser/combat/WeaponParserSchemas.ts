@@ -1,6 +1,6 @@
 import {
-  weaponXmlSubtypeEnum,
-  WeaponXmlSubtypeSchema,
+  weaponSubtypeEnum,
+  WeaponSubtypeSchema,
 } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 
 import {
@@ -49,6 +49,7 @@ export enum weaponTypeXmlEnum {
 }
 
 const AccessoryXmlSchema = type({
+  "+": "reject",
   name: "string",
   "mount?": type.or(MountSchema, MountSchema.array()),
   "rating?": "number",
@@ -57,6 +58,7 @@ const AccessoryXmlSchema = type({
 export type AccessoryXmlType = typeof AccessoryXmlSchema.infer;
 
 const UnderbarrelXmlSchema = type({
+  "+": "reject",
   underbarrel: StringArrayOrStringSchema,
 });
 export const AccuracyXmlSchema = StringOrNumberSchema;
@@ -72,6 +74,7 @@ const AccessoryListXmlSchema = type.or(
 export type AccessoryListXmlType = typeof AccessoryListXmlSchema.infer;
 
 const WeaponXmlSchema = type({
+  "+": "reject",
   id: "string",
   name: "string",
   // Melee or ranged weapon
@@ -81,7 +84,7 @@ const WeaponXmlSchema = type({
   // give all the information you would want here
   // gear is a special option that means it could be a missile
   // or grenade
-  category: WeaponXmlSubtypeSchema,
+  category: WeaponSubtypeSchema,
   // Dice pool penalty to notice the weapon when it is being hidden (bonus is negative for conceal)
   conceal: "number",
   // Accuracy acts as a limit for weapon tests
@@ -113,12 +116,11 @@ const WeaponXmlSchema = type({
   cost: StringOrNumberSchema,
   // Included weapon accessories, where they are mounted (if appropriate),
   // their rating (if appropriate), and any gear included with that accessory
-  "accessories?": type({
-    accessory: AccessoryListXmlSchema,
-  }),
+  "accessories?": type({ "+": "reject", accessory: AccessoryListXmlSchema }),
   // All mounts available for accessories
   // this includes any already used by an included accessory
   "accessorymounts?": type({
+    "+": "reject",
     mount: type.or(MountSchema.array(), MountSchema),
   }),
   // Lists other weapons that this weapon can be used as
@@ -134,7 +136,7 @@ const WeaponXmlSchema = type({
   // only used to add poison to an injector pen
   "allowgear?": xmlAllowGearSchema,
   // Ammo type if different than weapon type or for exotic ranged weapons
-  "ammocategory?": type.valueOf(weaponXmlSubtypeEnum),
+  "ammocategory?": type.valueOf(weaponSubtypeEnum),
   // This is maybe redundant as ammo already says if multiple barrels are in use
   "ammoslots?": "number",
   // This weapon is cyberware
@@ -162,6 +164,7 @@ const WeaponXmlSchema = type({
   "shortburst?": "6",
   // These accessory mount(s) cost double
   "doubledcostaccessorymounts?": type({
+    "+": "reject",
     mount: type.or(MountSchema, MountSchema.array()),
   }),
   // Can be mounted as though it were a weapon of this type, used for vehicle mounts

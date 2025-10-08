@@ -15,6 +15,7 @@ const AccessoryDamageXmlSchema = type("number");
 export type AccessoryDamageXmlType = typeof AccessoryDamageXmlSchema.infer;
 
 const WeaponAccessoryXmlSchema = type({
+  "+": "reject",
   id: "string",
   name: "string",
   // Maximum accessory rating, 0 when not applicable

@@ -71,11 +71,16 @@
       }
     ],
     "bonus": {
-      "toxinContactResist": {
-        "option": "Rating"
+      "combatAndWeapon": {
+        "toxinContactResist": {
+          "option": "Rating"
+        },
+        "pathogenContactResist": {
+          "option": "Rating"
+        }
       },
-      "pathogenContactResist": {
-        "option": "Rating"
+      "miscellaneous": {
+        "uniqueBonusCategory": "chemicalprotection"
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -94,10 +99,12 @@
     },
     "cost": [3000],
     "bonus": {
-      "toxinContactImmune": true,
-      "pathogenContactImmune": true,
-      "toxinInhalationImmune": true,
-      "pathogenInhalationImmune": true
+      "combatAndWeapon": {
+        "toxinContactImmune": true,
+        "pathogenContactImmune": true,
+        "toxinInhalationImmune": true,
+        "pathogenInhalationImmune": true
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
@@ -129,8 +136,13 @@
       }
     ],
     "bonus": {
-      "fireArmour": {
-        "option": "Rating"
+      "combatAndWeapon": {
+        "fireArmour": {
+          "option": "Rating"
+        }
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "fireresistance"
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -163,8 +175,13 @@
       }
     ],
     "bonus": {
-      "coldArmour": {
-        "option": "Rating"
+      "combatAndWeapon": {
+        "coldArmour": {
+          "option": "Rating"
+        }
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "insulation"
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -197,8 +214,13 @@
       }
     ],
     "bonus": {
-      "electricityArmour": {
-        "option": "Rating"
+      "combatAndWeapon": {
+        "electricityArmour": {
+          "option": "Rating"
+        }
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "nonconductivity"
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -230,6 +252,19 @@
         ]
       }
     ],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Physical",
+            "value": {
+              "option": "Rating"
+            },
+            "condition": "Only for Sneaking against Thermographic Vision or thermal sensors."
+          }
+        ]
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 438
   },
@@ -267,10 +302,12 @@
     },
     "cost": [6000],
     "bonus": {
-      "toxinContactImmune": true,
-      "pathogenContactImmune": true,
-      "toxinInhalationImmune": true,
-      "pathogenInhalationImmune": true
+      "combatAndWeapon": {
+        "toxinContactImmune": true,
+        "pathogenContactImmune": true,
+        "toxinInhalationImmune": true,
+        "pathogenInhalationImmune": true
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
@@ -336,7 +373,12 @@
     },
     "cost": [0],
     "bonus": {
-      "fireArmour": 4
+      "combatAndWeapon": {
+        "fireArmour": 4
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "fireresistance"
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
@@ -354,8 +396,13 @@
     },
     "cost": [0],
     "bonus": {
-      "toxinContactResist": 4,
-      "pathogenContactResist": 4
+      "combatAndWeapon": {
+        "toxinContactResist": 4,
+        "pathogenContactResist": 4
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "chemicalprotection"
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
@@ -373,7 +420,12 @@
     },
     "cost": [0],
     "bonus": {
-      "coldArmour": 4
+      "combatAndWeapon": {
+        "coldArmour": 4
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "insulation"
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
@@ -406,8 +458,13 @@
     },
     "cost": [0],
     "bonus": {
-      "toxinContactResist": 3,
-      "pathogenContactResist": 3
+      "combatAndWeapon": {
+        "toxinContactResist": 3,
+        "pathogenContactResist": 3
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "chemicalprotection"
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
@@ -425,7 +482,12 @@
     },
     "cost": [0],
     "bonus": {
-      "coldArmour": 3
+      "combatAndWeapon": {
+        "coldArmour": 3
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "insulation"
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
@@ -443,7 +505,12 @@
     },
     "cost": [0],
     "bonus": {
-      "fireArmour": 2
+      "combatAndWeapon": {
+        "fireArmour": 2
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "fireresistance"
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
@@ -461,8 +528,13 @@
     },
     "cost": [0],
     "bonus": {
-      "toxinContactResist": 2,
-      "pathogenContactResist": 2
+      "combatAndWeapon": {
+        "toxinContactResist": 2,
+        "pathogenContactResist": 2
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "chemicalprotection"
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
@@ -480,7 +552,12 @@
     },
     "cost": [0],
     "bonus": {
-      "coldArmour": 2
+      "combatAndWeapon": {
+        "coldArmour": 2
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "insulation"
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
@@ -498,7 +575,12 @@
     },
     "cost": [0],
     "bonus": {
-      "fireArmour": 6
+      "combatAndWeapon": {
+        "fireArmour": 6
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "fireresistance"
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
@@ -516,8 +598,13 @@
     },
     "cost": [0],
     "bonus": {
-      "toxinContactResist": 6,
-      "pathogenContactResist": 6
+      "combatAndWeapon": {
+        "toxinContactResist": 6,
+        "pathogenContactResist": 6
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "chemicalprotection"
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
@@ -535,7 +622,12 @@
     },
     "cost": [0],
     "bonus": {
-      "coldArmour": 6
+      "combatAndWeapon": {
+        "coldArmour": 6
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "insulation"
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
@@ -569,7 +661,9 @@
     },
     "cost": [0],
     "bonus": {
-      "linkArmour": true
+      "combatAndWeapon": {
+        "linkArmour": true
+      }
     },
     "userSelectable": false,
     "source": "Run And Gun",
@@ -682,6 +776,17 @@
       "restriction": ""
     },
     "cost": [600],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "source": "Run And Gun",
     "page": 65
   },
@@ -697,6 +802,17 @@
       "restriction": ""
     },
     "cost": [1100],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 2,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "source": "Run And Gun",
     "page": 65
   },
@@ -712,6 +828,17 @@
       "restriction": ""
     },
     "cost": [2400],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 3,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "source": "Run And Gun",
     "page": 65
   },
@@ -996,8 +1123,10 @@
       }
     ],
     "bonus": {
-      "radiationResistance": {
-        "option": "Rating"
+      "combatAndWeapon": {
+        "radiationResistance": {
+          "option": "Rating"
+        }
       }
     },
     "source": "Run And Gun",
@@ -1030,6 +1159,17 @@
       "restriction": ""
     },
     "cost": [2500],
+    "wirelessBonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Mental",
+            "value": 1,
+            "condition": "Only for Perception"
+          }
+        ]
+      }
+    },
     "source": "Run And Gun",
     "page": 85
   },

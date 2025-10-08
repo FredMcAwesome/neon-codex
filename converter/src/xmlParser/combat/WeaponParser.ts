@@ -10,7 +10,7 @@ import {
   ammoSourceEnum,
   augmentationTypeEnum,
 } from "@neon-codex/common/build/enums.js";
-import { weaponXmlSubtypeEnum } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
+import { weaponSubtypeEnum } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 import type {
   WeaponListType,
   WeaponType,
@@ -132,7 +132,7 @@ function convertWeapon(weapon: WeaponXmlType): WeaponType {
   let augmentationType: augmentationTypeEnum | undefined = undefined;
   if (weapon.cyberware !== undefined) {
     augmentationType = augmentationTypeEnum.Cyberware;
-  } else if (weapon.category === weaponXmlSubtypeEnum.BioWeapon) {
+  } else if (weapon.category === weaponSubtypeEnum.BioWeapon) {
     augmentationType = augmentationTypeEnum.Bioware;
   }
 
@@ -237,12 +237,12 @@ function convertWeapon(weapon: WeaponXmlType): WeaponType {
     : undefined;
   if (requirements !== undefined || mountLocationsOnHostWeapon !== undefined) {
     assert(
-      weapon.category === weaponXmlSubtypeEnum.UnderbarrelWeapons,
+      weapon.category === weaponSubtypeEnum.UnderbarrelWeapons,
       `Weapon underbarrel error: ${weapon.name}`
     );
   }
   let hostWeaponRequirements;
-  if (weapon.category === weaponXmlSubtypeEnum.UnderbarrelWeapons) {
+  if (weapon.category === weaponSubtypeEnum.UnderbarrelWeapons) {
     assert(
       requirements !== undefined || mountLocationsOnHostWeapon !== undefined
     );
@@ -253,7 +253,7 @@ function convertWeapon(weapon: WeaponXmlType): WeaponType {
       }),
     };
   }
-  if (weapon.category === weaponXmlSubtypeEnum.UnderbarrelWeapons) {
+  if (weapon.category === weaponSubtypeEnum.UnderbarrelWeapons) {
     if (weapon.hide === undefined) {
       // TODO: renable
       // assert(

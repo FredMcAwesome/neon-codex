@@ -14,8 +14,14 @@ import { MovementStrideSchema } from "../shared/commonSchemas.js";
 // critter rating is a recursive type
 export const CritterRatingSubnumberSchema = type.or(
   "number",
-  { option: type.valueOf(critterAttributePowerEnum) },
-  { operator: type.valueOf(mathOperatorEnum) }
+  type({
+    "+": "reject",
+    option: type.valueOf(critterAttributePowerEnum),
+  }),
+  type({
+    "+": "reject",
+    operator: type.valueOf(mathOperatorEnum),
+  })
 );
 
 export type CritterRatingNonArrayType =
@@ -31,6 +37,7 @@ export const { CritterRatingSchema } = type.module({
       CritterRatingSubnumberSchema,
       "|",
       {
+        "+": "reject",
         subnumbers: "CritterRatingSchema",
       },
     ],
@@ -39,16 +46,19 @@ export const { CritterRatingSchema } = type.module({
 });
 
 const SkillLoadingSchema = type({
+  "+": "reject",
   name: "string",
   "specialised?": "string[]",
   rating: CritterRatingSchema,
   "select?": "string",
 });
 const SkillGroupLoadingSchema = type({
+  "+": "reject",
   name: "string",
   rating: CritterRatingSchema,
 });
 const KnowledgeSkillSchema = type({
+  "+": "reject",
   name: "string",
   description: "string",
   category: type.valueOf(skillCategoryEnum),
@@ -60,6 +70,7 @@ export type CritterIncludedKnowledgeSkillType =
   typeof KnowledgeSkillSchema.infer;
 
 const CritterSkillListSchema = type({
+  "+": "reject",
   skillList: SkillLoadingSchema.array(),
   "skillGroupList?": SkillGroupLoadingSchema.array(),
   "knowledgeSkillList?": KnowledgeSkillSchema.array(),
@@ -67,6 +78,7 @@ const CritterSkillListSchema = type({
 export type CritterSkillListType = typeof CritterSkillListSchema.infer;
 
 const CritterAttributeRangeSchema = type({
+  "+": "reject",
   min: CritterRatingSchema,
   max: CritterRatingSchema,
   augmentedMax: CritterRatingSchema,
@@ -74,13 +86,18 @@ const CritterAttributeRangeSchema = type({
 export type CritterAttributeRangeType =
   typeof CritterAttributeRangeSchema.infer;
 
-const IncludedCritterPowerRatingSchema = type.or("number", {
-  power: "true",
-});
+const IncludedCritterPowerRatingSchema = type.or(
+  "number",
+  type({
+    "+": "reject",
+    power: "true",
+  })
+);
 export type IncludedCritterPowerRatingType =
   typeof IncludedCritterPowerRatingSchema.infer;
 
 const IncludedCritterPowerSchema = type({
+  "+": "reject",
   name: "string",
   "selectText?": "string",
   "rating?": IncludedCritterPowerRatingSchema,
@@ -92,6 +109,7 @@ export type IncludedCritterPowerListType =
   typeof IncludedCritterPowerListSchema.infer;
 
 const IncludedComplexFormSchema = type({
+  "+": "reject",
   name: "string",
   "select?": type.valueOf(matrixAttributeEnum),
 });
@@ -100,6 +118,7 @@ export type IncludedComplexFormListType =
   typeof IncludedComplexFormListSchema.infer;
 
 export const CritterSchema = type({
+  "+": "reject",
   name: "string",
   description: "string",
   category: type.valueOf(critterTypeEnum),

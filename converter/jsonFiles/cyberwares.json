@@ -407,9 +407,12 @@
       "maximum": [6]
     },
     "bonus": {
-      "skillSoftMaxRating": {
-        "bonus": {
-          "option": "Rating"
+      "skill": {
+        "skillSoftHost": {
+          "maximumSkillSoftRating": {
+            "option": "Rating",
+            "precedence": "0"
+          }
         }
       }
     },
@@ -574,6 +577,19 @@
       "minimum": [1],
       "maximum": [6]
     },
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Impersonation",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "availability": {
       "rating": [
         {
@@ -661,29 +677,31 @@
       "maximum": [4]
     },
     "bonus": {
-      "disableQualities": [
-        {
-          "name": "8ec5c9bb-aeb9-42f2-a436-a60f764adfe4"
-        },
-        {
-          "name": "fd346177-3791-44c0-af8c-7cf176fc9aa3"
-        },
-        {
-          "name": "02e76a38-304e-4a0e-93a3-ad2938306afc"
-        },
-        {
-          "name": "7a468691-1362-439a-a096-76da6933b24c"
-        },
-        {
-          "name": "2f080d13-92d7-4b16-9ee6-93b5a89206e4"
-        },
-        {
-          "name": "210401d7-57fa-4260-9517-2725689a509e"
-        },
-        {
-          "name": "4390735f-54fa-44a5-bce7-d23a67427f25"
-        }
-      ]
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "8ec5c9bb-aeb9-42f2-a436-a60f764adfe4"
+          },
+          {
+            "name": "fd346177-3791-44c0-af8c-7cf176fc9aa3"
+          },
+          {
+            "name": "02e76a38-304e-4a0e-93a3-ad2938306afc"
+          },
+          {
+            "name": "7a468691-1362-439a-a096-76da6933b24c"
+          },
+          {
+            "name": "2f080d13-92d7-4b16-9ee6-93b5a89206e4"
+          },
+          {
+            "name": "210401d7-57fa-4260-9517-2725689a509e"
+          },
+          {
+            "name": "4390735f-54fa-44a5-bce7-d23a67427f25"
+          }
+        ]
+      }
     },
     "allowedGearCategories": ["Custom", "Sensors"],
     "allowSubsystemCategoryList": ["Eyeware"],
@@ -883,7 +901,9 @@
       "maximum": [1]
     },
     "bonus": {
-      "smartlinkAccuracy": 2
+      "combatAndWeapon": {
+        "smartlinkAccuracy": 2
+      }
     },
     "availability": {
       "rating": [8],
@@ -932,6 +952,19 @@
     "rating": {
       "minimum": [1],
       "maximum": [3]
+    },
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Mental",
+            "value": {
+              "option": "Rating"
+            },
+            "condition": "Only for Perception (Visual)"
+          }
+        ]
+      }
     },
     "availability": {
       "rating": [
@@ -1137,6 +1170,19 @@
       "minimum": [1],
       "maximum": [3]
     },
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Mental",
+            "value": {
+              "option": "Rating"
+            },
+            "condition": "Only for Perception (Hearing)"
+          }
+        ]
+      }
+    },
     "availability": {
       "rating": [
         {
@@ -1200,7 +1246,9 @@
       "maximum": [1]
     },
     "bonus": {
-      "sonicResistance": 2
+      "combatAndWeapon": {
+        "sonicResistance": 2
+      }
     },
     "availability": {
       "rating": [6],
@@ -1300,6 +1348,17 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Mental",
+            "value": 2,
+            "condition": "Only for Perception to find the source of a sound"
+          }
+        ]
+      }
+    },
     "availability": {
       "rating": [8],
       "restriction": ""
@@ -1320,10 +1379,12 @@
       "maximum": [1]
     },
     "bonus": {
-      "damageResistance": 2,
-      "unarmedDamageType": "Physical",
-      "armour": {
-        "bonus": 2
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": 2
+        },
+        "unarmedDamageType": "Physical",
+        "damageResistance": 2
       }
     },
     "forbidden": {},
@@ -1347,10 +1408,12 @@
       "maximum": [1]
     },
     "bonus": {
-      "damageResistance": 1,
-      "unarmedDamageType": "Physical",
-      "armour": {
-        "bonus": 1
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": 1
+        },
+        "unarmedDamageType": "Physical",
+        "damageResistance": 1
       }
     },
     "forbidden": {},
@@ -1374,10 +1437,12 @@
       "maximum": [1]
     },
     "bonus": {
-      "damageResistance": 3,
-      "unarmedDamageType": "Physical",
-      "armour": {
-        "bonus": 3
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": 3
+        },
+        "unarmedDamageType": "Physical",
+        "damageResistance": 3
       }
     },
     "forbidden": {},
@@ -1413,11 +1478,13 @@
       "maximum": [6]
     },
     "bonus": {
-      "armour": {
-        "bonus": {
-          "option": "Rating"
-        },
-        "nonStacking": true
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": {
+            "option": "Rating"
+          },
+          "nonStacking": true
+        }
       }
     },
     "forbidden": {},
@@ -1512,8 +1579,10 @@
       "maximum": [3]
     },
     "bonus": {
-      "toxinInhalationImmune": true,
-      "pathogenInhalationImmune": true
+      "combatAndWeapon": {
+        "toxinInhalationImmune": true,
+        "pathogenInhalationImmune": true
+      }
     },
     "availability": {
       "rating": [
@@ -1563,11 +1632,36 @@
       "maximum": [4]
     },
     "bonus": {
-      "disableQualities": [
-        {
-          "name": "Celerity"
-        }
-      ]
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Agility"
+            },
+            "attributeIncrease": {
+              "option": "Rating"
+            }
+          },
+          {
+            "linkType": {
+              "linkedAttribute": "Strength"
+            },
+            "attributeIncrease": {
+              "option": "Rating"
+            }
+          }
+        ]
+      },
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "Celerity"
+          }
+        ]
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "muscle"
+      }
     },
     "availability": {
       "rating": [
@@ -1607,6 +1701,26 @@
     "type": "Cyberware",
     "subtype": "Bodyware",
     "capacity": [0],
+    "wirelessPairBonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Reaction"
+            },
+            "attributeIncrease": {
+              "option": "Rating"
+            },
+            "augmentatedIncrease": {
+              "ratingLinked": [0, 0, 1]
+            }
+          }
+        ]
+      },
+      "miscellaneous": {
+        "replaceNonWireless": true
+      }
+    },
     "wirelessPairInclude": "Wired Reflexes",
     "essenceCost": [
       {
@@ -1624,6 +1738,20 @@
     "rating": {
       "minimum": [1],
       "maximum": [3]
+    },
+    "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Reaction"
+            },
+            "attributeIncrease": {
+              "option": "Rating"
+            }
+          }
+        ]
+      }
     },
     "availability": {
       "rating": [
@@ -1663,6 +1791,27 @@
     "type": "Cyberware",
     "subtype": "Bodyware",
     "capacity": [0],
+    "wirelessBonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Mental",
+            "value": 1,
+            "condition": "Only for Skillwires"
+          },
+          {
+            "category": "Physical",
+            "value": 1,
+            "condition": "Only for Skillwires"
+          },
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Only for Skillwires"
+          }
+        ]
+      }
+    },
     "essenceCost": [
       {
         "subnumbers": [
@@ -1679,6 +1828,18 @@
     "rating": {
       "minimum": [1],
       "maximum": [6]
+    },
+    "bonus": {
+      "skill": {
+        "skillwire": {
+          "maximumSkillSoftRating": [
+            {
+              "option": "Rating"
+            }
+          ],
+          "precedence": "0"
+        }
+      }
     },
     "availability": {
       "rating": [
@@ -1741,16 +1902,38 @@
     "subtype": "Bodyware",
     "capacity": [0],
     "wirelessPairBonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Reaction"
+            },
+            "attributeIncrease": {
+              "option": "Rating"
+            },
+            "augmentatedIncrease": {
+              "ratingLinked": [0, 0, 1]
+            }
+          }
+        ]
+      },
       "initiative": {
-        "bonusDice": {
-          "option": "Rating"
+        "initiative": {
+          "bonusDice": {
+            "option": "Rating"
+          }
         }
       },
-      "disableQualities": [
-        {
-          "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
-        }
-      ]
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
+          }
+        ]
+      },
+      "miscellaneous": {
+        "replaceNonWireless": true
+      }
     },
     "wirelessPairInclude": "Reaction Enhancers",
     "essenceCost": {
@@ -1761,16 +1944,32 @@
       "maximum": [3]
     },
     "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Reaction"
+            },
+            "attributeIncrease": {
+              "option": "Rating"
+            }
+          }
+        ]
+      },
       "initiative": {
-        "bonusDice": {
-          "option": "Rating"
+        "initiative": {
+          "bonusDice": {
+            "option": "Rating"
+          }
         }
       },
-      "disableQualities": [
-        {
-          "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
-        }
-      ]
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
+          }
+        ]
+      }
     },
     "availability": {
       "ratingLinked": [
@@ -1812,7 +2011,9 @@
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
     "bonus": {
-      "addPhysicalBoxes": 1
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": 1
+      }
     },
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
@@ -1852,12 +2053,16 @@
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "selectSide": true,
     "bonus": {
-      "disableQualities": [
-        {
-          "name": "Celerity"
-        }
-      ],
-      "addPhysicalBoxes": 1
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": 1
+      },
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "Celerity"
+          }
+        ]
+      }
     },
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
@@ -1896,11 +2101,13 @@
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "selectSide": true,
     "bonus": {
-      "disableQualities": [
-        {
-          "name": "Celerity"
-        }
-      ]
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "Celerity"
+          }
+        ]
+      }
     },
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
@@ -1975,7 +2182,9 @@
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
     "pairBonus": {
-      "addPhysicalBoxes": 1
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": 1
+      }
     },
     "pairIncludeList": [
       "Obvious Lower Leg",
@@ -2023,14 +2232,18 @@
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "selectSide": true,
     "bonus": {
-      "disableQualities": [
-        {
-          "name": "Celerity"
-        }
-      ]
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "Celerity"
+          }
+        ]
+      }
     },
     "pairBonus": {
-      "addPhysicalBoxes": 1
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": 1
+      }
     },
     "pairIncludeList": [
       "Obvious Lower Arm",
@@ -2077,7 +2290,9 @@
       "maximum": [1]
     },
     "bonus": {
-      "addPhysicalBoxes": 1
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": 1
+      }
     },
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
@@ -2115,7 +2330,9 @@
       "maximum": [1]
     },
     "bonus": {
-      "addPhysicalBoxes": 1
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": 1
+      }
     },
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
@@ -2155,7 +2372,9 @@
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
     "bonus": {
-      "addPhysicalBoxes": 1
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": 1
+      }
     },
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
@@ -2195,12 +2414,16 @@
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "selectSide": true,
     "bonus": {
-      "disableQualities": [
-        {
-          "name": "Celerity"
-        }
-      ],
-      "addPhysicalBoxes": 1
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": 1
+      },
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "Celerity"
+          }
+        ]
+      }
     },
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
@@ -2239,11 +2462,13 @@
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "selectSide": true,
     "bonus": {
-      "disableQualities": [
-        {
-          "name": "Celerity"
-        }
-      ]
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "Celerity"
+          }
+        ]
+      }
     },
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
@@ -2318,7 +2543,9 @@
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
     "pairBonus": {
-      "addPhysicalBoxes": 1
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": 1
+      }
     },
     "pairIncludeList": [
       "Obvious Lower Leg",
@@ -2366,14 +2593,18 @@
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "selectSide": true,
     "bonus": {
-      "disableQualities": [
-        {
-          "name": "Celerity"
-        }
-      ]
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "Celerity"
+          }
+        ]
+      }
     },
     "pairBonus": {
-      "addPhysicalBoxes": 1
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": 1
+      }
     },
     "pairIncludeList": [
       "Obvious Lower Leg",
@@ -2420,7 +2651,9 @@
       "maximum": [1]
     },
     "bonus": {
-      "addPhysicalBoxes": 1
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": 1
+      }
     },
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
@@ -2458,7 +2691,9 @@
       "maximum": [1]
     },
     "bonus": {
-      "addPhysicalBoxes": 1
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": 1
+      }
     },
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
@@ -2498,9 +2733,11 @@
       "maximum": [3]
     },
     "bonus": {
-      "armour": {
-        "bonus": {
-          "option": "Rating"
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": {
+            "option": "Rating"
+          }
         }
       }
     },
@@ -2889,6 +3126,19 @@
       "maximum": [6]
     },
     "blockedMountList": ["Ankle", "Knee", "Hip"],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Physical",
+            "value": {
+              "option": "Rating"
+            },
+            "condition": "Only for Gymnastics (Jumping) and Running (Sprinting)"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "availability": {
       "rating": [9],
@@ -3286,10 +3536,32 @@
     "type": "Cyberware",
     "subtype": "Headware",
     "capacityCost": [1],
+    "wirelessBonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Perception",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "essenceCost": [0.3],
     "rating": {
       "minimum": [1],
       "maximum": [1]
+    },
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Mental",
+            "value": 1,
+            "condition": "Only for Perception"
+          }
+        ]
+      }
     },
     "availability": {
       "rating": [8],
@@ -3384,6 +3656,17 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Disguise",
+            "bonus": 4,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "availability": {
       "rating": [12],
       "restriction": "R"
@@ -3419,9 +3702,13 @@
       "maximum": [6]
     },
     "bonus": {
-      "skillSoftMaxRating": {
-        "bonus": {
-          "option": "Rating"
+      "skill": {
+        "hardwire": {
+          "maximumSkillSoftRating": {
+            "option": "Rating"
+          },
+          "activeSkills": false,
+          "excludeCategoryList": []
         }
       }
     },
@@ -3460,6 +3747,26 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Mental",
+            "value": 1,
+            "condition": "Only for Scientific or Technical Knowledge Skills"
+          }
+        ]
+      },
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Mathematics",
+            "bonus": 4,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "availability": {
       "rating": [8],
       "restriction": ""
@@ -3474,10 +3781,32 @@
     "type": "Cyberware",
     "subtype": "Headware",
     "capacityCost": [1],
+    "wirelessBonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Navigation",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "essenceCost": [0.2],
     "rating": {
       "minimum": [1],
       "maximum": [1]
+    },
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Mental",
+            "value": 2,
+            "condition": "Only for Navigation"
+          }
+        ]
+      }
     },
     "availability": {
       "rating": [4],
@@ -3557,6 +3886,17 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 2,
+            "condition": "Only for Performance, Must use linked synthtrument"
+          }
+        ]
+      }
+    },
     "availability": {
       "rating": [4],
       "restriction": ""
@@ -3617,6 +3957,16 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Physical",
+            "value": -1
+          }
+        ]
+      }
+    },
     "forbidden": {},
     "availability": {
       "rating": [8],
@@ -3639,6 +3989,16 @@
     "rating": {
       "minimum": [1],
       "maximum": [1]
+    },
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Physical",
+            "value": -1
+          }
+        ]
+      }
     },
     "requirements": {},
     "availability": {
@@ -3766,12 +4126,15 @@
     "subtype": "Eyeware",
     "capacityCost": [4],
     "wirelessBonus": {
-      "skillCategories": [
-        {
-          "category": "Combat Active",
-          "bonus": [1]
-        }
-      ]
+      "skill": {
+        "skillCategoryList": [
+          {
+            "name": "Combat Active",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "essenceCost": [0.2],
     "rating": {
@@ -3930,6 +4293,17 @@
       "minimum": [1],
       "maximum": [1]
     },
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Only for Performance"
+          }
+        ]
+      }
+    },
     "availability": {
       "rating": [4],
       "restriction": ""
@@ -4020,6 +4394,17 @@
     "rating": {
       "minimum": [1],
       "maximum": [1]
+    },
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Physical",
+            "value": 1,
+            "condition": "Only for Gymnastics (Climbing), Gymnastics (Jumping), Running, and knockdown resist"
+          }
+        ]
+      }
     },
     "availability": {
       "rating": [8],
@@ -4113,9 +4498,31 @@
       "maximum": [1]
     },
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Physical",
+            "value": -1,
+            "condition": "Only for making repairs, typing, dancing etc., Must be engaged"
+          }
+        ]
+      }
+    },
     "pairBonus": {
-      "swimSpeedPercentageModifier": 50,
-      "sprintSpeedPercentageModifier": 50
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Swimming",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      },
+      "movementAndLifestyle": {
+        "swimSpeedPercentageModifier": 50,
+        "sprintSpeedPercentageModifier": 50
+      }
     },
     "requirements": {},
     "availability": {
@@ -4141,9 +4548,31 @@
       "maximum": [1]
     },
     "blockedMountList": ["Ankle", "Knee", "Hip"],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Physical",
+            "value": -1,
+            "condition": "Only for making repairs, typing, dancing etc., Must be engaged"
+          }
+        ]
+      }
+    },
     "pairBonus": {
-      "swimSpeedPercentageModifier": 50,
-      "sprintSpeedPercentageModifier": 50
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Swimming",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      },
+      "movementAndLifestyle": {
+        "swimSpeedPercentageModifier": 50,
+        "sprintSpeedPercentageModifier": 50
+      }
     },
     "requirements": {},
     "availability": {
@@ -4218,6 +4647,17 @@
     "addWeapon": "Foot Anchor",
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "selectSide": true,
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Physical",
+            "value": 1,
+            "condition": "Only for knockdown tests, must be anchored"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "availability": {
       "rating": [10],
@@ -4322,6 +4762,17 @@
     },
     "addWeapon": "Retractable Climbing Claws",
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Physical",
+            "value": 1,
+            "condition": "Only for Gymnastics (Climbing)"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "availability": {
       "rating": [8],
@@ -4347,6 +4798,17 @@
     },
     "addWeapon": "Retractable Climbing Claws",
     "blockedMountList": ["Ankle", "Knee", "Hip"],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Physical",
+            "value": 1,
+            "condition": "Only for Gymnastics (Climbing)"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "availability": {
       "rating": [8],
@@ -4368,6 +4830,22 @@
       "maximum": [1]
     },
     "blockedMountList": ["Wrist", "Elbow", "Shoulder", "Ankle", "Knee", "Hip"],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Physical",
+            "value": 2,
+            "condition": "Only for Escape Artist and Grappling, Must be loosened"
+          },
+          {
+            "category": "Physical",
+            "value": 1,
+            "condition": "Only for tests involving endurance, must be tightened"
+          }
+        ]
+      }
+    },
     "forbidden": {},
     "availability": {
       "rating": [8],
@@ -4410,25 +4888,49 @@
       "maximum": [3]
     },
     "bonus": {
-      "initiative": {
-        "bonusDice": {
-          "ratingLinked": [0, 1, 1]
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Reaction"
+            },
+            "attributeIncrease": {
+              "option": "Rating"
+            }
+          }
+        ],
+        "socialLimit": {
+          "option": "-Rating"
         }
       },
-      "socialLimit": [
-        -1,
-        {
-          "operator": "*"
-        },
-        {
-          "option": "Rating"
+      "skill": {
+        "skillwire": {
+          "maximumSkillSoftRating": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ],
+          "precedence": "0"
         }
-      ],
-      "disableQualities": [
-        {
-          "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
+      },
+      "initiative": {
+        "initiative": {
+          "bonusDice": {
+            "ratingLinked": [0, 1, 1]
+          }
         }
-      ]
+      },
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
+          }
+        ]
+      }
     },
     "availability": {
       "ratingLinked": [
@@ -4479,8 +4981,14 @@
       "maximum": [6]
     },
     "bonus": {
-      "activeSoftMaxRating": {
-        "option": "Rating"
+      "skill": {
+        "hardwire": {
+          "maximumSkillSoftRating": {
+            "option": "Rating"
+          },
+          "activeSkills": true,
+          "excludeCategoryList": ["Magical Active", "Resonance Active"]
+        }
       }
     },
     "availability": {
@@ -4772,11 +5280,13 @@
       "maximum": [1]
     },
     "bonus": {
-      "qualityList": [
-        {
-          "name": "Human-Looking"
-        }
-      ]
+      "quality": {
+        "addQualityList": [
+          {
+            "name": "Human-Looking"
+          }
+        ]
+      }
     },
     "requirements": {},
     "availability": {
@@ -4797,6 +5307,18 @@
     "rating": {
       "minimum": [1],
       "maximum": [1]
+    },
+    "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Charisma"
+            },
+            "maximumIncrease": 1
+          }
+        ]
+      }
     },
     "requirements": {},
     "availability": {
@@ -4836,6 +5358,17 @@
     "rating": {
       "minimum": [1],
       "maximum": [1]
+    },
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Physical",
+            "value": 4,
+            "condition": "Only for Sneaking, Must be completely naked"
+          }
+        ]
+      }
     },
     "availability": {
       "rating": [12],
@@ -4882,7 +5415,11 @@
       "maximum": [1]
     },
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "availability": {
       "rating": [2],
@@ -4990,13 +5527,17 @@
     },
     "selectSide": true,
     "bonus": {
-      "disableQualities": [
-        {
-          "name": "Celerity"
-        }
-      ],
-      "walkSpeedPercentageModifier": -50,
-      "runSpeedPercentageModifier": -100
+      "movementAndLifestyle": {
+        "walkSpeedPercentageModifier": -50,
+        "runSpeedPercentageModifier": -100
+      },
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "Celerity"
+          }
+        ]
+      }
     },
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
@@ -5024,13 +5565,17 @@
     },
     "selectSide": true,
     "bonus": {
-      "disableQualities": [
-        {
-          "name": "Celerity"
-        }
-      ],
-      "walkSpeedPercentageModifier": -50,
-      "runSpeedPercentageModifier": -100
+      "movementAndLifestyle": {
+        "walkSpeedPercentageModifier": -50,
+        "runSpeedPercentageModifier": -100
+      },
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "Celerity"
+          }
+        ]
+      }
     },
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
@@ -5058,13 +5603,17 @@
     },
     "selectSide": true,
     "bonus": {
-      "disableQualities": [
-        {
-          "name": "Celerity"
-        }
-      ],
-      "walkSpeedPercentageModifier": -50,
-      "runSpeedPercentageModifier": -100
+      "movementAndLifestyle": {
+        "walkSpeedPercentageModifier": -50,
+        "runSpeedPercentageModifier": -100
+      },
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "Celerity"
+          }
+        ]
+      }
     },
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
@@ -5143,7 +5692,11 @@
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "requirements": {},
     "availability": {
@@ -5271,11 +5824,24 @@
       "maximum": [1]
     },
     "pairBonus": {
-      "weaponAccuracy": {
-        "weapon": "Raptor Foot",
-        "bonus": 1
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Physical",
+            "value": 1,
+            "condition": "Only for Stealth group"
+          }
+        ]
       },
-      "runSpeedPercentageModifier": 100
+      "combatAndWeapon": {
+        "weaponAccuracy": {
+          "weapon": "Raptor Foot",
+          "bonus": 1
+        }
+      },
+      "movementAndLifestyle": {
+        "runSpeedPercentageModifier": 100
+      }
     },
     "requirements": {},
     "availability": {
@@ -5354,6 +5920,17 @@
     },
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "selectSide": true,
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Physical",
+            "value": -1,
+            "condition": "Only when used as hand"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "availability": {
       "rating": [8],
@@ -5380,6 +5957,17 @@
     "addWeapon": "Raptor Foot",
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "selectSide": true,
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Physical",
+            "value": -1,
+            "condition": "Only when attacking with the legs"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "availability": {
       "rating": [8],
@@ -5405,8 +5993,19 @@
     },
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "pairBonus": {
-      "walkSpeedPercentageModifier": 50,
-      "runSpeedPercentageModifier": 50
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Physical",
+            "value": -1,
+            "condition": "Only when in use"
+          }
+        ]
+      },
+      "movementAndLifestyle": {
+        "walkSpeedPercentageModifier": 50,
+        "runSpeedPercentageModifier": 50
+      }
     },
     "requirements": {},
     "availability": {
@@ -5433,15 +6032,28 @@
     },
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "bonus": {
-      "disableQualities": [
-        {
-          "name": "Celerity"
-        }
-      ]
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "Celerity"
+          }
+        ]
+      }
     },
     "pairBonus": {
-      "walkSpeedPercentageModifier": 100,
-      "runSpeedPercentageModifier": 100
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Physical",
+            "value": -2,
+            "condition": "Only when in use"
+          }
+        ]
+      },
+      "movementAndLifestyle": {
+        "walkSpeedPercentageModifier": 100,
+        "runSpeedPercentageModifier": 100
+      }
     },
     "requirements": {},
     "availability": {
@@ -5467,6 +6079,28 @@
       "maximum": [1]
     },
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Physical",
+            "value": 1,
+            "condition": "Only with manual dexterity"
+          }
+        ]
+      }
+    },
+    "pairBonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Palming",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "availability": {
       "rating": [6],
@@ -5633,7 +6267,9 @@
     },
     "selectSide": true,
     "pairBonus": {
-      "addPhysicalBoxes": 1
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": 1
+      }
     },
     "pairIncludeList": [
       "Obvious Lower Leg",
@@ -5681,7 +6317,9 @@
     },
     "selectSide": true,
     "pairBonus": {
-      "addPhysicalBoxes": 1
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": 1
+      }
     },
     "pairIncludeList": [
       "Obvious Lower Leg",
@@ -5729,7 +6367,9 @@
     },
     "selectSide": true,
     "pairBonus": {
-      "addPhysicalBoxes": 1
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": 1
+      }
     },
     "pairIncludeList": [
       "Obvious Lower Leg",
@@ -5777,7 +6417,9 @@
     },
     "selectSide": true,
     "pairBonus": {
-      "addPhysicalBoxes": 1
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": 1
+      }
     },
     "pairIncludeList": [
       "Obvious Lower Leg",
@@ -5825,7 +6467,9 @@
     },
     "selectSide": true,
     "bonus": {
-      "addPhysicalBoxes": 1
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": 1
+      }
     },
     "allowedGearCategories": ["Custom", "Sensors"],
     "allowSubsystemCategoryList": [
@@ -5863,7 +6507,9 @@
     },
     "selectSide": true,
     "bonus": {
-      "addPhysicalBoxes": 1
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": 1
+      }
     },
     "allowedGearCategories": ["Custom", "Sensors"],
     "allowSubsystemCategoryList": [
@@ -5901,7 +6547,9 @@
     },
     "selectSide": true,
     "bonus": {
-      "addPhysicalBoxes": 1
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": 1
+      }
     },
     "allowedGearCategories": ["Custom", "Sensors"],
     "allowSubsystemCategoryList": [
@@ -5939,7 +6587,9 @@
     },
     "selectSide": true,
     "bonus": {
-      "addPhysicalBoxes": 1
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": 1
+      }
     },
     "allowedGearCategories": ["Custom", "Sensors"],
     "allowSubsystemCategoryList": [
@@ -5999,8 +6649,10 @@
       "maximum": [1]
     },
     "bonus": {
-      "walkSpeedPercentageModifier": -50,
-      "runSpeedPercentageModifier": -100
+      "movementAndLifestyle": {
+        "walkSpeedPercentageModifier": -50,
+        "runSpeedPercentageModifier": -100
+      }
     },
     "availability": {
       "rating": [0],
@@ -6049,8 +6701,10 @@
       "maximum": [1]
     },
     "bonus": {
-      "walkSpeedPercentageModifier": -50,
-      "runSpeedPercentageModifier": -100
+      "movementAndLifestyle": {
+        "walkSpeedPercentageModifier": -50,
+        "runSpeedPercentageModifier": -100
+      }
     },
     "availability": {
       "rating": [0],
@@ -6099,8 +6753,10 @@
       "maximum": [1]
     },
     "bonus": {
-      "walkSpeedPercentageModifier": -50,
-      "runSpeedPercentageModifier": -100
+      "movementAndLifestyle": {
+        "walkSpeedPercentageModifier": -50,
+        "runSpeedPercentageModifier": -100
+      }
     },
     "availability": {
       "rating": [0],
@@ -6187,8 +6843,10 @@
     },
     "blockedMountList": ["Knee", "Hip"],
     "bonus": {
-      "swimSpeedPercentageModifier": 100,
-      "sprintSpeedPercentageModifier": 100
+      "movementAndLifestyle": {
+        "swimSpeedPercentageModifier": 100,
+        "sprintSpeedPercentageModifier": 100
+      }
     },
     "requirements": {},
     "availability": {
@@ -6245,11 +6903,13 @@
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "selectSide": true,
     "bonus": {
-      "disableQualities": [
-        {
-          "name": "Celerity"
-        }
-      ]
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "Celerity"
+          }
+        ]
+      }
     },
     "requirements": {},
     "availability": {
@@ -6306,11 +6966,13 @@
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "selectSide": true,
     "bonus": {
-      "disableQualities": [
-        {
-          "name": "Celerity"
-        }
-      ]
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "Celerity"
+          }
+        ]
+      }
     },
     "requirements": {},
     "availability": {
@@ -6370,11 +7032,13 @@
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "selectSide": true,
     "bonus": {
-      "disableQualities": [
-        {
-          "name": "Celerity"
-        }
-      ]
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "Celerity"
+          }
+        ]
+      }
     },
     "forbidden": {},
     "availability": {
@@ -6514,15 +7178,21 @@
     },
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "bonus": {
-      "disableQualities": [
-        {
-          "name": "Celerity"
+      "movementAndLifestyle": {
+        "runSpeedPercentageModifier": 100
+      },
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "Celerity"
+          }
+        ]
+      },
+      "miscellaneous": {
+        "addLimb": {
+          "limbSlot": "Leg",
+          "numberOfLimbs": 2
         }
-      ],
-      "runSpeedPercentageModifier": 100,
-      "addLimb": {
-        "limbSlot": "Leg",
-        "numberOfLimbs": 2
       }
     },
     "forbidden": {},
@@ -6548,7 +7218,9 @@
     },
     "selectSide": true,
     "bonus": {
-      "addPhysicalBoxes": 1
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": 1
+      }
     },
     "allowedGearCategories": ["Custom", "Sensors"],
     "allowSubsystemCategoryList": [
@@ -6583,7 +7255,9 @@
     },
     "selectSide": true,
     "bonus": {
-      "addPhysicalBoxes": 1
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": 1
+      }
     },
     "allowedGearCategories": ["Custom", "Sensors"],
     "allowSubsystemCategoryList": [
@@ -6619,12 +7293,16 @@
     },
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "bonus": {
-      "disableQualities": [
-        {
-          "name": "Celerity"
-        }
-      ],
-      "runSpeedPercentageModifier": 100
+      "movementAndLifestyle": {
+        "runSpeedPercentageModifier": 100
+      },
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "Celerity"
+          }
+        ]
+      }
     },
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
@@ -6660,11 +7338,13 @@
     },
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "bonus": {
-      "disableQualities": [
-        {
-          "name": "Celerity"
-        }
-      ]
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "Celerity"
+          }
+        ]
+      }
     },
     "forbidden": {},
     "allowedGearCategories": ["Custom", "Sensors"],
@@ -6700,15 +7380,40 @@
       "maximum": [1]
     },
     "bonus": {
-      "weaponSkillAccuracyList": [
-        {
+      "combatAndWeapon": {
+        "weaponSkillAccuracyList": [
+          {
+            "skill": {
+              "selectSkill": true,
+              "selectionOptions": {
+                "restriction": {
+                  "knowledgeSkillRestriction": {
+                    "limit": "Exclude"
+                  }
+                }
+              }
+            },
+            "bonus": 1
+          }
+        ]
+      }
+    },
+    "pairBonus": {
+      "skill": {
+        "selectSkill": {
           "skill": {
-            "selectSkill": true,
-            "exceptions": ["Knowledge Skills Disallowed"]
+            "restriction": {
+              "knowledgeSkillRestriction": {
+                "limit": "Exclude"
+              }
+            }
           },
-          "bonus": 1
+          "bonus": {
+            "ratingIncreaseCount": 1,
+            "modifierType": "DicePoolIncrease"
+          }
         }
-      ]
+      }
     },
     "requirements": {},
     "availability": {
@@ -7043,7 +7748,11 @@
     "addWeapon": "Extreme Cyberimplant",
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
     "availability": {
@@ -7168,7 +7877,9 @@
     },
     "addWeapon": "Junkyard Jaw",
     "bonus": {
-      "addPhysicalBoxes": 1
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": 1
+      }
     },
     "requirements": {},
     "allowSubsystemCategoryList": ["Cyber Implant Weapon Accessory"],
@@ -7290,6 +8001,19 @@
     "rating": {
       "minimum": [1],
       "maximum": [6]
+    },
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Impersonation",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "availability": {
       "rating": [16],
@@ -7450,6 +8174,14 @@
       "minimum": [1],
       "maximum": [6]
     },
+    "bonus": {
+      "essenceAndAugmentation": {
+        "selectCyberware": {
+          "restrictCategory": true,
+          "category": "Soft Nanoware"
+        }
+      }
+    },
     "availability": {
       "rating": [
         {
@@ -7539,11 +8271,13 @@
       "maximum": [6]
     },
     "bonus": {
-      "armour": {
-        "bonus": {
-          "option": "Rating"
-        },
-        "nonStacking": true
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": {
+            "option": "Rating"
+          },
+          "nonStacking": true
+        }
       }
     },
     "availability": {
@@ -7664,7 +8398,11 @@
       "maximum": [6]
     },
     "bonus": {
-      "linkCyberware": true
+      "essenceAndAugmentation": {
+        "selectCyberware": {
+          "restrictCategory": false
+        }
+      }
     },
     "availability": {
       "rating": [12],
@@ -7905,7 +8643,11 @@
       "maximum": [6]
     },
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "availability": {
       "rating": [10],
@@ -7943,11 +8685,13 @@
       "maximum": [3]
     },
     "bonus": {
-      "stunHealing": {
-        "option": "Rating"
-      },
-      "physicalHealing": {
-        "option": "Rating"
+      "conditionAndRecovery": {
+        "stunHealing": {
+          "option": "Rating"
+        },
+        "physicalHealing": {
+          "option": "Rating"
+        }
       }
     },
     "availability": {
@@ -7984,6 +8728,17 @@
     "rating": {
       "minimum": [1],
       "maximum": [6]
+    },
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Gear"
+            }
+          ]
+        }
+      }
     },
     "availability": {
       "rating": [8],
@@ -8056,30 +8811,32 @@
       "maximum": [3]
     },
     "bonus": {
-      "modifySkillImprovementKarmaCost": [
-        {
-          "skillRating": {
-            "minimum": 3
-          },
-          "conditionalBonus": -1
-        },
-        {
-          "skillRating": {
-            "minimum": 4
-          },
-          "conditionalBonus": {
-            "RatingRequired": 2
-          }
-        },
-        {
-          "skillRating": {
-            "minimum": 5
-          },
-          "conditionalBonus": {
-            "RatingRequired": 3
-          }
+      "skill": {
+        "skillKarmaCostModifierList": {
+          "allSkillList": [
+            {
+              "value": -1,
+              "skillType": "Knowledge",
+              "costModifierType": "Karma Increase",
+              "minimumLevelWhereBonusApplies": 3
+            },
+            {
+              "value": 1,
+              "skillType": "Knowledge",
+              "costModifierType": "Karma Increase",
+              "minimumLevelWhereBonusApplies": 4,
+              "itemRatingRequired": 2
+            },
+            {
+              "value": 1,
+              "skillType": "Knowledge",
+              "costModifierType": "Karma Increase",
+              "minimumLevelWhereBonusApplies": 5,
+              "itemRatingRequired": 3
+            }
+          ]
         }
-      ]
+      }
     },
     "availability": {
       "rating": [14],
@@ -8116,6 +8873,28 @@
       "minimum": [1],
       "maximum": [3]
     },
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Mental",
+            "value": {
+              "option": "Rating"
+            },
+            "condition": "Only with Intuition-linked skills"
+          }
+        ]
+      },
+      "skill": {
+        "skillIncreaseForAttributeList": [
+          {
+            "name": "INT",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "availability": {
       "rating": [16],
       "restriction": "F"
@@ -8150,6 +8929,28 @@
     "rating": {
       "minimum": [1],
       "maximum": [3]
+    },
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Mental",
+            "value": {
+              "option": "Rating"
+            },
+            "condition": "Only with Logic-linked skills"
+          }
+        ]
+      },
+      "skill": {
+        "skillIncreaseForAttributeList": [
+          {
+            "name": "LOG",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "availability": {
       "rating": [16],
@@ -8187,11 +8988,11 @@
       "maximum": [3]
     },
     "bonus": {
-      "memory": [
-        {
+      "testAndResistance": {
+        "memory": {
           "option": "Rating"
         }
-      ]
+      }
     },
     "availability": {
       "rating": [12],
@@ -8264,8 +9065,10 @@
       "maximum": [5]
     },
     "bonus": {
-      "fatigueResist": {
-        "option": "Rating"
+      "testAndResistance": {
+        "fatigueResist": {
+          "option": "Rating"
+        }
       }
     },
     "availability": {
@@ -8697,6 +9500,19 @@
     "rating": {
       "minimum": [1],
       "maximum": [4]
+    },
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Intimidation",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "availability": {
       "rating": [
@@ -9951,16 +10767,45 @@
       "maximum": [3]
     },
     "bonus": {
-      "initiative": {
-        "bonusDice": {
-          "ratingLinked": [0, 1, 1]
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Reaction"
+            },
+            "attributeIncrease": {
+              "option": "Rating"
+            }
+          }
+        ]
+      },
+      "skill": {
+        "skillwire": {
+          "maximumSkillSoftRating": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "*"
+            },
+            2
+          ]
         }
       },
-      "disableQualities": [
-        {
-          "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
+      "initiative": {
+        "initiative": {
+          "bonusDice": {
+            "ratingLinked": [0, 1, 1]
+          }
         }
-      ]
+      },
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
+          }
+        ]
+      }
     },
     "availability": {
       "ratingLinked": [
@@ -10070,9 +10915,12 @@
       "maximum": [4]
     },
     "bonus": {
-      "skillSoftMaxRating": {
-        "bonus": {
-          "option": "Rating"
+      "skill": {
+        "skillSoftHost": {
+          "maximumSkillSoftRating": {
+            "option": "Rating",
+            "precedence": "0"
+          }
         }
       }
     },
@@ -10600,7 +11448,9 @@
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
     "bonus": {
-      "addPhysicalBoxes": 1
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": 1
+      }
     },
     "allowedGearCategories": ["Custom", "Sensors"],
     "allowSubsystemCategoryList": [
@@ -10638,7 +11488,9 @@
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "selectSide": true,
     "bonus": {
-      "addPhysicalBoxes": 1
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": 1
+      }
     },
     "allowedGearCategories": ["Custom", "Sensors"],
     "allowSubsystemCategoryList": [
@@ -10676,7 +11528,9 @@
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
     "bonus": {
-      "addPhysicalBoxes": 1
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": 1
+      }
     },
     "allowedGearCategories": ["Custom", "Sensors"],
     "allowSubsystemCategoryList": [
@@ -10714,7 +11568,9 @@
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "selectSide": true,
     "bonus": {
-      "addPhysicalBoxes": 1
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": 1
+      }
     },
     "allowedGearCategories": ["Custom", "Sensors"],
     "allowSubsystemCategoryList": [
@@ -10903,9 +11759,11 @@
       "maximum": [3]
     },
     "bonus": {
-      "armour": {
-        "bonus": {
-          "option": "Rating"
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": {
+            "option": "Rating"
+          }
         }
       }
     },
@@ -11084,11 +11942,13 @@
       "maximum": [3]
     },
     "bonus": {
-      "armour": {
-        "bonus": {
-          "option": "Rating"
-        },
-        "nonStacking": true
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": {
+            "option": "Rating"
+          },
+          "nonStacking": true
+        }
       }
     },
     "forbidden": {},
@@ -11314,11 +12174,33 @@
       "maximum": [4]
     },
     "bonus": {
-      "disableQualities": [
-        {
-          "name": "Celerity"
-        }
-      ]
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Agility"
+            },
+            "attributeIncrease": {
+              "option": "Rating"
+            }
+          },
+          {
+            "linkType": {
+              "linkedAttribute": "Strength"
+            },
+            "attributeIncrease": {
+              "option": "Rating"
+            }
+          }
+        ]
+      },
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "Celerity"
+          }
+        ]
+      }
     },
     "availability": {
       "rating": [4],
@@ -11450,16 +12332,32 @@
       "maximum": [3]
     },
     "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Reaction"
+            },
+            "attributeIncrease": {
+              "option": "Rating"
+            }
+          }
+        ]
+      },
       "initiative": {
-        "bonusDice": {
-          "option": "Rating"
+        "initiative": {
+          "bonusDice": {
+            "option": "Rating"
+          }
         }
       },
-      "disableQualities": [
-        {
-          "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
-        }
-      ]
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
+          }
+        ]
+      }
     },
     "availability": {
       "ratingLinked": [
@@ -11530,7 +12428,9 @@
       "maximum": [1]
     },
     "bonus": {
-      "smartlinkAccuracy": 2
+      "combatAndWeapon": {
+        "smartlinkAccuracy": 2
+      }
     },
     "availability": {
       "rating": [3],

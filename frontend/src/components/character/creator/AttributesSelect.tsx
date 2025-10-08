@@ -23,6 +23,7 @@ import type {
 import { type } from "arktype";
 
 const AttributeOptionsSchema = type({
+  "+": "reject",
   body: "string[]",
   agility: "string[]",
   reaction: "string[]",
@@ -35,23 +36,28 @@ const AttributeOptionsSchema = type({
 type AttributesOptionsType = typeof AttributeOptionsSchema.infer;
 
 const SpecialAttributeOptionsSchema = type({
+  "+": "reject",
   edge: "string[]",
   talent: type.or(
-    {
+    type({
+      "+": "reject",
       type: type.unit(talentCategoryEnum.Magic),
       magic: "string[]",
-    },
-    {
+    }),
+    type({
+      "+": "reject",
       type: type.unit(talentCategoryEnum.Resonance),
       resonance: "string[]",
-    },
-    {
+    }),
+    type({
+      "+": "reject",
       type: type.unit(talentCategoryEnum.Depth),
       depth: "string[]",
-    },
-    {
+    }),
+    type({
+      "+": "reject",
       type: type.unit(talentCategoryEnum.Mundane),
-    }
+    })
   ),
 });
 type SpecialAttributeOptionsType = typeof SpecialAttributeOptionsSchema.infer;

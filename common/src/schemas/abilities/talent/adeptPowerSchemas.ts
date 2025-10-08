@@ -4,6 +4,7 @@ import { BonusSchema } from "../../shared/bonusSchemas.js";
 import { RequirementsSchema } from "../../shared/requiredSchemas.js";
 
 export const AdeptPowerSchema = type({
+  "+": "reject",
   name: "string",
   description: "string",
   pointCost: "number",

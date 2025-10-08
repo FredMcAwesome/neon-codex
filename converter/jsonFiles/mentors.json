@@ -9,31 +9,39 @@
       {
         "name": "Magician: +2 dice for Health spells",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Health",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Health",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: 1 free level of Rapid Healing",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Rapid Healing",
-              "level": 1
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Rapid Healing",
+                "bonus": {
+                  "value": 1
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
     "bonus": {
-      "damageResistance": 2
+      "combatAndWeapon": {
+        "damageResistance": 2
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 321
@@ -47,33 +55,61 @@
     "choices": [
       {
         "name": "+2 dice on Gymnastics Tests",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Gymnastics",
+                "bonus": 2,
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "+2 dice on Sneaking Tests",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Sneaking",
+                "bonus": 2,
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Magician: +2 dice for Illusion spells",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Illusion",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Illusion",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 2
       },
       {
         "name": "Adept: 2 free levels of Light Body",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Light Body",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Light Body",
+                "bonus": {
+                  "value": 2
+                }
+              }
+            ]
+          }
         },
         "set": 2
       }
@@ -92,31 +128,46 @@
       {
         "name": "Magician: +2 dice for Detection spells",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Detection",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Detection",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: 2 free Improved Sense powers",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Improved Sense"
-            },
-            {
-              "name": "Improved Sense"
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Improved Sense"
+              },
+              {
+                "name": "Improved Sense"
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Tracking",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 321
   },
@@ -130,33 +181,59 @@
       {
         "name": "Magician: +2 dice for Combat spells",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Combat",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Combat",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: 1 free level of Enhanced Accuracy and Danger Sense",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Enhanced Accuracy (skill)",
-              "level": 1
-            },
-            {
-              "name": "Danger Sense",
-              "level": 1
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Enhanced Accuracy (skill)",
+                "bonus": {
+                  "value": 1
+                }
+              },
+              {
+                "name": "Danger Sense",
+                "bonus": {
+                  "value": 1
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "selectSkill": {
+          "skill": {
+            "restriction": {
+              "skillCategoryList": {
+                "skillCategoryList": ["Social Active"],
+                "limit": "Only"
+              }
+            }
+          },
+          "bonus": {
+            "ratingIncreaseCount": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        }
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 321
   },
@@ -169,28 +246,55 @@
     "choices": [
       {
         "name": "Magician: +2 dice summoning spirits of air",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Summoning",
+                "bonus": 2,
+                "condition": "Spirits of Air",
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Adept: 1 free level of Combat Sense",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Combat Sense",
-              "level": 1
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Combat Sense",
+                "bonus": {
+                  "value": 1
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
     "bonus": {
-      "qualityList": [
-        {
-          "name": "Allergy (Common, Mild)"
-        }
-      ]
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Perception",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      },
+      "quality": {
+        "addQualityList": [
+          {
+            "name": "Allergy (Common, Mild)"
+          }
+        ]
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 322
@@ -204,33 +308,77 @@
     "choices": [
       {
         "name": "+2 dice on Artisan Tests",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Artisan",
+                "bonus": 2,
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "+2 dice on Alchemy Tests",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Alchemy",
+                "bonus": 2,
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Magician: +2 dice for Manipulation spells",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Manipulation",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Manipulation",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 2
       },
       {
         "name": "Adept: 1 free level of Improved Ability on a non-combat skill",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Improved Ability (skill)",
-              "level": 1
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Improved Ability (skill)",
+                "bonus": {
+                  "value": 1,
+                  "select": {
+                    "skill": {
+                      "restriction": {
+                        "skillCategoryList": {
+                          "skillCategoryList": [
+                            "Physical Active",
+                            "Social Active",
+                            "Technical Active",
+                            "Vehicle Active"
+                          ],
+                          "limit": "Only"
+                        }
+                      },
+                      "minimumRating": 1
+                    }
+                  }
+                }
+              }
+            ]
+          }
         },
         "set": 2
       }
@@ -248,22 +396,48 @@
     "choices": [
       {
         "name": "Magician: +2 dice for Counterspelling and anchored rituals",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Counterspelling",
+                "bonus": 2,
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Adept: 1 free level of Mystic Armor",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Mystic Armor",
-              "level": 1
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Mystic Armor",
+                "bonus": {
+                  "value": 1
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Survival",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 322
   },
@@ -281,17 +455,32 @@
       {
         "name": "Adept: 2 free levels of Natural Immunity",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Natural Immunity",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Natural Immunity",
+                "bonus": {
+                  "value": 2
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Sneaking",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 323
   },
@@ -305,32 +494,49 @@
       {
         "name": "Magician: +2 dice for Manipulation spells",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Manipulation",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Manipulation",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: Free Traceless Walk and 1 level of Voice Control",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Traceless Walk"
-            },
-            {
-              "name": "Voice Control",
-              "level": 1
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Traceless Walk"
+              },
+              {
+                "name": "Voice Control",
+                "bonus": {
+                  "value": 1
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Con",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 323
   },
@@ -343,22 +549,60 @@
     "choices": [
       {
         "name": "Magician: +2 dice summoning spirits of water",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Summoning",
+                "bonus": 2,
+                "condition": "Spirits of Water",
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Adept: 1 free level of Improved Ability on an athletic skill",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Improved Ability (skill)",
-              "level": 1
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Improved Ability (skill)",
+                "bonus": {
+                  "value": 1,
+                  "select": {
+                    "skill": {
+                      "restriction": {
+                        "skillCategoryList": {
+                          "skillCategoryList": ["Physical Active"],
+                          "limit": "Only"
+                        }
+                      },
+                      "minimumRating": 1
+                    }
+                  }
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Swimming",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 323
   },
@@ -372,29 +616,57 @@
       {
         "name": "Magician: +2 dice for Illusion spells",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Illusion",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Illusion",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: 1 free level of Improved Ability for a skill in the Acting or Influence skill group",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Improved Ability (skill)",
-              "level": 1
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Improved Ability (skill)",
+                "bonus": {
+                  "value": 1,
+                  "select": {
+                    "skill": {
+                      "restriction": {
+                        "skillGroupList": {
+                          "skillGroupList": ["Acting", "Influence"],
+                          "limit": "Only"
+                        }
+                      },
+                      "minimumRating": 1
+                    }
+                  }
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Con",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 323
   },
@@ -408,28 +680,43 @@
       {
         "name": "Magician: +2 dice for Combat spells",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Combat",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Combat",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: Free Killing Hands",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Killing Hands"
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Killing Hands"
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Unarmed Combat",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 323
   },
@@ -443,29 +730,46 @@
       {
         "name": "Magician: +2 dice for Detection spells",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Detection",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Detection",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: 2 free levels of Kinesics",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Kinesics",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Kinesics",
+                "bonus": {
+                  "value": 2
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Arcana",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 324
   },
@@ -478,22 +782,49 @@
     "choices": [
       {
         "name": "Magician: +2 dice for summoning spirits of air",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Summoning",
+                "bonus": 2,
+                "condition": "Spirits of Air",
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Adept: 1 free level of Critical Strike",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Critical Strike",
-              "level": 1
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Critical Strike",
+                "bonus": {
+                  "value": 1
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Intimidation",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 324
   },
@@ -506,33 +837,72 @@
     "choices": [
       {
         "name": "+2 dice for Leadership skill tests",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Leadership",
+                "bonus": 2,
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "+2 dice for Instruction skill tests",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Instruction",
+                "bonus": 2,
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Magician: +2 dice for Combat spells",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Combat",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Combat",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 2
       },
       {
         "name": "Adept: 1 free level of Improved Ability on a Combat skill",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Improved Ability (skill)",
-              "level": 1
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Improved Ability (skill)",
+                "bonus": {
+                  "value": 1,
+                  "select": {
+                    "skill": {
+                      "restriction": {
+                        "skillCategoryList": {
+                          "skillCategoryList": ["Combat Active"],
+                          "limit": "Only"
+                        }
+                      },
+                      "minimumRating": 1
+                    }
+                  }
+                }
+              }
+            ]
+          }
         },
         "set": 2
       }
@@ -551,29 +921,49 @@
       {
         "name": "Magician: +2 dice for Combat spells",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Combat",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Combat",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: 2 free levels of Attribute Boost (Agility)",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Attribute Boost",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Attribute Boost",
+                "bonus": {
+                  "value": 2,
+                  "select": {
+                    "attribute": "Agility"
+                  }
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Tracking",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 324
   },
@@ -586,52 +976,92 @@
     "choices": [
       {
         "name": "Magician: +2 dice for Physical-type Combat Spells",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Spellcasting",
+                "bonus": 2,
+                "condition": "Physical Combat",
+                "modifierType": "DicePoolIncrease"
+              },
+              {
+                "name": "Ritual Spellcasting",
+                "bonus": 2,
+                "condition": "Physical Combat",
+                "modifierType": "DicePoolIncrease"
+              },
+              {
+                "name": "Alchemy",
+                "bonus": 2,
+                "condition": "Physical Combat",
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Adept: 2 free levels of Mystic Armor",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Mystic Armor",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Mystic Armor",
+                "bonus": {
+                  "value": 2
+                }
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: 2 free levels of Pain Resistance",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Pain Resistance",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Pain Resistance",
+                "bonus": {
+                  "value": 2
+                }
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: 1 free level of Mystic Armor and Pain Resistance",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Pain Resistance",
-              "level": 1
-            },
-            {
-              "name": "Mystic Armor",
-              "level": 1
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Pain Resistance",
+                "bonus": {
+                  "value": 1
+                }
+              },
+              {
+                "name": "Mystic Armor",
+                "bonus": {
+                  "value": 1
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
     "bonus": {
-      "composure": 2
+      "testAndResistance": {
+        "composure": 2
+      }
     },
     "source": "Street Grimoire",
     "page": 199
@@ -646,28 +1076,52 @@
       {
         "name": "Magician: +2 dice for Illusion Spells",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Illusion",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Illusion",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: 2 free levels of Improved Potential",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Improved Potential (Chaos Mentor)"
-            }
-          ]
+          "power": {
+            "selectPower": {
+              "limitedPowerList": [
+                "Improved Potential (Social)",
+                "Improved Potential (Physical)",
+                "Improved Potential (Mental)"
+              ],
+              "ignorePowerLimit": true,
+              "powerLevelBonus": 1
+            },
+            "specificPowerList": [
+              {
+                "name": "Improved Potential (Chaos Mentor)"
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Con",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Street Grimoire",
     "page": 200
   },
@@ -681,29 +1135,46 @@
       {
         "name": "Magician: +2 dice for Detection Spells",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Detection",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Detection",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: 2 free levels of Enhanced Perception",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Enhanced Perception",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Enhanced Perception",
+                "bonus": {
+                  "value": 2
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Negotiation",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Street Grimoire",
     "page": 200
   },
@@ -717,28 +1188,43 @@
       {
         "name": "Magician: +2 dice for Detection Spells",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Detection",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Detection",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: Free Astral Perception",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Astral Perception"
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Astral Perception"
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Arcana",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Street Grimoire",
     "page": 200
   },
@@ -751,32 +1237,65 @@
     "choices": [
       {
         "name": "+2 to Demolitions",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Demolitions",
+                "bonus": 2,
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "+2 to a Combat Skill",
+        "bonus": {
+          "skill": {
+            "selectSkill": {
+              "skill": {
+                "restriction": {
+                  "skillCategoryList": {
+                    "skillCategoryList": ["Combat Active"],
+                    "limit": "Only"
+                  }
+                }
+              },
+              "bonus": {
+                "ratingIncreaseCount": 2,
+                "modifierType": "DicePoolIncrease"
+              }
+            }
+          }
+        },
         "set": 1
       },
       {
         "name": "Magician: +2 dice for Combat spells",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Combat",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Combat",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 2
       },
       {
         "name": "Adept: free Killing Hands",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Killing Hands"
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Killing Hands"
+              }
+            ]
+          }
         },
         "set": 2
       }
@@ -795,30 +1314,52 @@
     "choices": [
       {
         "name": "Magician: +2 dice for Summoning or Binding plague spirits",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Summoning",
+                "bonus": 2,
+                "condition": "Plague Spirit",
+                "modifierType": "DicePoolIncrease"
+              },
+              {
+                "name": "Binding",
+                "bonus": 2,
+                "condition": "Plague Spirit",
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Adept: Free Plague Cloud",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Plague Cloud"
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Plague Cloud"
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
     "bonus": {
-      "toxinContactResist": 2,
-      "pathogenContactResist": 2,
-      "toxinInhalationResist": 2,
-      "pathogenInhalationResist": 2,
-      "toxinIngestionResist": 2,
-      "pathogenIngestionResist": 2,
-      "toxinInjectionResist": 2,
-      "pathogenInjectionResist": 2
+      "combatAndWeapon": {
+        "toxinContactResist": 2,
+        "pathogenContactResist": 2,
+        "toxinInhalationResist": 2,
+        "pathogenInhalationResist": 2,
+        "toxinIngestionResist": 2,
+        "pathogenIngestionResist": 2,
+        "toxinInjectionResist": 2,
+        "pathogenInjectionResist": 2
+      }
     },
     "required": {},
     "source": "Street Grimoire",
@@ -834,29 +1375,53 @@
       {
         "name": "Magician: +2 dice for Health Spells",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Health",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Health",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: 2 free levels of Attribute Boost",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Attribute Boost",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Attribute Boost",
+                "bonus": {
+                  "value": 2
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "selectSkill": {
+          "skill": {
+            "restriction": {
+              "skillCategoryList": {
+                "skillCategoryList": ["Physical Active"],
+                "limit": "Only"
+              }
+            }
+          },
+          "bonus": {
+            "ratingIncreaseCount": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        }
+      }
+    },
     "required": {},
     "source": "Street Grimoire",
     "page": 86
@@ -870,16 +1435,36 @@
     "choices": [
       {
         "name": "Magician: +2 dice for summoning or binding toxic spirits",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Summoning",
+                "bonus": 2,
+                "condition": "Toxic Spirits",
+                "modifierType": "DicePoolIncrease"
+              },
+              {
+                "name": "Binding",
+                "bonus": 2,
+                "condition": "Toxic Spirits",
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Adept: Free Toxic Strike",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Toxic Strike"
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Toxic Strike"
+              }
+            ]
+          }
         },
         "set": 1
       }
@@ -898,33 +1483,61 @@
     "choices": [
       {
         "name": "+2 to First Aid",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "First Aid",
+                "bonus": 2,
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "+2 to Medicine",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Medicine",
+                "bonus": 2,
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Magician: +2 dice for Health spells, preparations and rituals",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Health",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Health",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 2
       },
       {
         "name": "Adept: 1 free level of Rapid Healing",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Rapid Healing",
-              "level": 1
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Rapid Healing",
+                "bonus": {
+                  "value": 1
+                }
+              }
+            ]
+          }
         },
         "set": 2
       }
@@ -942,22 +1555,48 @@
     "choices": [
       {
         "name": "Magician: +2 dice for Counterspelling and disenchanting",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Counterspelling",
+                "bonus": 2,
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Adept: 1 free level of Iron Will",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Iron Will",
-              "level": 1
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Iron Will",
+                "bonus": {
+                  "value": 1
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Demolitions",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Hard Targets",
     "page": 136
   },
@@ -970,25 +1609,62 @@
     "choices": [
       {
         "name": "Magician: +2 dice for conjuring Spirits of Water.",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Conjuring",
+                "bonus": 2,
+                "condition": "Spirits of Water",
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Magician: +2 dice for conjuring Spirits of Man.",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Conjuring",
+                "bonus": 2,
+                "condition": "Spirits of Man",
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Adept: Free Inertia Strike",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Inertia Strike"
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Inertia Strike"
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Intimidation",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Hard Targets",
     "page": 137
   },
@@ -1001,21 +1677,45 @@
     "choices": [
       {
         "name": "Magician: +1 dice for conjuring spirits.",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Conjuring",
+                "bonus": 1,
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Adept: Free motion sense",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Motion Sense"
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Motion Sense"
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Navigation",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Hard Targets",
     "page": 137
   },
@@ -1029,29 +1729,47 @@
       {
         "name": "Magician: +2 dice for spells, preparations, and rituals of the manipulation type.",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Manipulation",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Manipulation",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: 2 free levels of Hang Time.",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Hang Time",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Hang Time",
+                "bonus": {
+                  "value": 2
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Gymnastics",
+            "bonus": 2,
+            "condition": "Climbing",
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Hard Targets",
     "page": 137
   },
@@ -1065,33 +1783,50 @@
       {
         "name": "Magician: +1 to all Manipulation and Illusion spell tests, preparations, and rituals.",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Manipulation",
-              "bonus": 1
-            },
-            {
-              "category": "Illusion",
-              "bonus": 1
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Manipulation",
+                "bonus": 1
+              },
+              {
+                "category": "Illusion",
+                "bonus": 1
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: Danger Sense level 2.",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Danger Sense",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Danger Sense",
+                "bonus": {
+                  "value": 2
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Con",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Shadows In Focus: Sioux Nation: Counting Coup",
     "page": 24
   },
@@ -1105,31 +1840,39 @@
       {
         "name": "Magician: +2 dice for Detection spells.",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Detection",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Detection",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: 1 free level of Mystic Armor.",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Mystic Armor",
-              "level": 1
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Mystic Armor",
+                "bonus": {
+                  "value": 1
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
     "bonus": {
-      "memory": [2]
+      "testAndResistance": {
+        "memory": 2
+      }
     },
     "source": "Schattenhandbuch 2",
     "page": 179
@@ -1144,21 +1887,53 @@
       {
         "name": "Magician: +2 dice for Illusion spells.",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Illusion",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Illusion",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: 1 free level of Improved Potential.",
+        "bonus": {
+          "power": {
+            "selectPower": {
+              "limitedPowerList": [
+                "Improved Potential (Social)",
+                "Improved Potential (Physical)",
+                "Improved Potential (Mental)"
+              ],
+              "powerLevelBonus": 1
+            }
+          }
+        },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "selectSkill": {
+          "skill": {
+            "restriction": {
+              "skillList": {
+                "skillList": ["Artisan", "Forgery"],
+                "limit": "Only"
+              }
+            }
+          },
+          "bonus": {
+            "ratingIncreaseCount": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        }
+      }
+    },
     "source": "Schattenhandbuch 2",
     "page": 179
   },
@@ -1171,26 +1946,62 @@
     "choices": [
       {
         "name": "Magician: +2 dice for summoning spirits of fire.",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Summoning",
+                "bonus": 2,
+                "condition": "Spirits of Fire",
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Adept: 2 free levels of Enhanced Accuracy (skill)",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Enhanced Accuracy (skill)",
-              "level": 1
-            },
-            {
-              "name": "Enhanced Accuracy (skill)",
-              "level": 1
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Enhanced Accuracy (skill)",
+                "bonus": {
+                  "value": 1
+                }
+              },
+              {
+                "name": "Enhanced Accuracy (skill)",
+                "bonus": {
+                  "value": 1
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "selectSkill": {
+          "skill": {
+            "restriction": {
+              "skillList": {
+                "skillList": ["Artisan", "Alchemy"],
+                "limit": "Only"
+              }
+            }
+          },
+          "bonus": {
+            "ratingIncreaseCount": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        }
+      }
+    },
     "source": "Schattenhandbuch 2",
     "page": 179
   },
@@ -1204,35 +2015,59 @@
       {
         "name": "Magician: +2 dice for Manipulation Spells.",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Manipulation",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Manipulation",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: 2 free levels of Danger Sense.",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Danger Sense",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Danger Sense",
+                "bonus": {
+                  "value": 2
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
     "bonus": {
-      "qualityList": [
-        {
-          "name": "Distinctive Style"
+      "skill": {
+        "selectSkill": {
+          "skill": {
+            "restriction": {
+              "skillList": {
+                "skillList": ["Palming", "Etiquette"],
+                "limit": "Only"
+              }
+            }
+          },
+          "bonus": {
+            "ratingIncreaseCount": 2,
+            "modifierType": "DicePoolIncrease"
+          }
         }
-      ]
+      },
+      "quality": {
+        "addQualityList": [
+          {
+            "name": "Distinctive Style"
+          }
+        ]
+      }
     },
     "source": "Schattenhandbuch 2",
     "page": 179
@@ -1251,17 +2086,23 @@
       {
         "name": "Adept: Gains Rooting (2) power for free.",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Rooting",
-              "level": 2
-            }
-          ],
-          "qualityList": [
-            {
-              "name": "Home Ground"
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Rooting",
+                "bonus": {
+                  "value": 2
+                }
+              }
+            ]
+          },
+          "quality": {
+            "addQualityList": [
+              {
+                "name": "Home Ground"
+              }
+            ]
+          }
         },
         "set": 1
       }
@@ -1279,6 +2120,17 @@
     "choices": [
       {
         "name": "+2 dice on Assensing Tests",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Assensing",
+                "bonus": 2,
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
@@ -1292,12 +2144,16 @@
       {
         "name": "Adept: 2 free levels of Piercing Senses",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Piercing Senses",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Piercing Senses",
+                "bonus": {
+                  "value": 2
+                }
+              }
+            ]
+          }
         },
         "set": 2
       }
@@ -1315,33 +2171,61 @@
     "choices": [
       {
         "name": "+2 dice on Artisan tests",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Artisan",
+                "bonus": 2,
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "+2 on Pilot Watercraft Tests",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Pilot Watercraft",
+                "bonus": 2,
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Magician: +2 for health spells, preparations, and spell rituals.",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Health",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Health",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 2
       },
       {
         "name": "Adept: Gain Flexibility (2) power for free",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Flexibility",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Flexibility",
+                "bonus": {
+                  "value": 2
+                }
+              }
+            ]
+          }
         },
         "set": 2
       }
@@ -1359,10 +2243,32 @@
     "choices": [
       {
         "name": "+2 dice on Swimming tests",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Swimming",
+                "bonus": 2,
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "+2 on Pilot Watercraft Tests",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Pilot Watercraft",
+                "bonus": 2,
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
@@ -1372,12 +2278,16 @@
       {
         "name": "Adept: Receive 2 ranks in Iron Lungs or free.",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Iron Lungs",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Iron Lungs",
+                "bonus": {
+                  "value": 2
+                }
+              }
+            ]
+          }
         },
         "set": 2
       }
@@ -1395,10 +2305,32 @@
     "choices": [
       {
         "name": "+2 dice on Running tests",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Running",
+                "bonus": 2,
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "+2 on Pilot Ground Craft Tests",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Pilot Ground Craft",
+                "bonus": 2,
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
@@ -1424,31 +2356,46 @@
       {
         "name": "Magician: +2 dice for spells, preparations, and spell rituals in the Manipulation category.",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Manipulation",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Manipulation",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: 2 Improved Sense powers",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Improved Sense"
-            },
-            {
-              "name": "Improved Sense"
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Improved Sense"
+              },
+              {
+                "name": "Improved Sense"
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Palming",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Howling Shadows",
     "page": 46
   },
@@ -1462,29 +2409,46 @@
       {
         "name": "Magician: +2 dice for Illusion spells",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Illusion",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Illusion",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: Hang time (2)",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Hang Time",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Hang Time",
+                "bonus": {
+                  "value": 2
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Computer",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Howling Shadows",
     "page": 47
   },
@@ -1497,22 +2461,48 @@
     "choices": [
       {
         "name": "Magician: +2 dice for Ritual Spellcasting Tests",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Ritual Spellcasting",
+                "bonus": 2,
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Adept: 1 free level of Authoritative Tone",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Authoritative Tone",
-              "level": 1
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Authoritative Tone",
+                "bonus": {
+                  "value": 1
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Instruction",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Book Of The Lost",
     "page": 129
   },
@@ -1526,29 +2516,56 @@
       {
         "name": "Magician: +2 dice to Combat spells, preparations, and rituals",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Combat",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Combat",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: 2 free levels of Attribute Boost (Strength)",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Attribute Boost",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Attribute Boost",
+                "bonus": {
+                  "value": 2,
+                  "select": {
+                    "attribute": "Strength"
+                  }
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "selectSkill": {
+          "skill": {
+            "restriction": {
+              "skillList": {
+                "skillList": ["Survival", "Running", "Tracking"],
+                "limit": "Only"
+              }
+            }
+          },
+          "bonus": {
+            "ratingIncreaseCount": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        }
+      }
+    },
     "source": "Book Of The Lost",
     "page": 132
   },
@@ -1562,56 +2579,80 @@
       {
         "name": "Magician: +2 dice to Detection spells, preparations, and rituals.",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Detection",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Detection",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Magician: +2 dice to summoning spirits if summoner also has Code of Honor: Harmony with Nature, The Shaman's Code and bargains with the summoned spirit.",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Summoning",
+                "bonus": 2,
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Adept: 2 free levels of Enhanced Perception.",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Enhanced Perception",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Enhanced Perception",
+                "bonus": {
+                  "value": 2
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
     "bonus": {
-      "skillCategories": [
-        {
-          "category": "Academic",
-          "bonus": [2]
-        },
-        {
-          "category": "Interest",
-          "bonus": [2]
-        },
-        {
-          "category": "Language",
-          "bonus": [2]
-        },
-        {
-          "category": "Professional",
-          "bonus": [2]
-        },
-        {
-          "category": "Street",
-          "bonus": [2]
-        }
-      ]
+      "skill": {
+        "skillCategoryList": [
+          {
+            "name": "Academic",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Interest",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Language",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Professional",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Street",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "source": "Book Of The Lost",
     "page": 121
@@ -1626,29 +2667,46 @@
       {
         "name": "Magician: +1 dice pool modifier for casting Health spells, +1 dice pool modifier to summon air spirits",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Health",
-              "bonus": 1
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Health",
+                "bonus": 1
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: Gain 1 free level of Enhanced Perception.",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Enhanced Perception",
-              "level": 1
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Enhanced Perception",
+                "bonus": {
+                  "value": 1
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Negotiation",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Forbidden Arcana",
     "page": 94
   },
@@ -1682,24 +2740,30 @@
       {
         "name": "Magician: +1 dice pool modifier for casting Detection spells, an additional +2 dice pool modifier to cast Clairvoyance spells.",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Detection",
-              "bonus": 1
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Detection",
+                "bonus": 1
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: Gain 2 free levels of Danger Sense",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Danger Sense",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Danger Sense",
+                "bonus": {
+                  "value": 2
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
@@ -1717,26 +2781,64 @@
     "choices": [
       {
         "name": "Magician: +2 dice pool modifier when using the Banishing skill.",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Banishing",
+                "bonus": 2,
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Magician: +2 dice pool modifier when casting Health spells.",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Health",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Health",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: Gain 1 free level of Mystic Armor or Empathic Healing (choose one).",
+        "bonus": {
+          "power": {
+            "selectPower": {
+              "limitedPowerList": ["Mystic Armor", "Empathic Healing"],
+              "powerLevelBonus": 1
+            }
+          }
+        },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "selectSkill": {
+          "skill": {
+            "enterName": true,
+            "restriction": {
+              "knowledgeSkillRestriction": {
+                "limit": "Only"
+              }
+            }
+          },
+          "bonus": {
+            "modifierType": "Linked"
+          }
+        }
+      }
+    },
     "source": "Forbidden Arcana",
     "page": 95
   },
@@ -1754,27 +2856,52 @@
       {
         "name": "Adept: Gain 1 free level of Killing Hands",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Killing Hands"
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Killing Hands"
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: Gain 1 free level of Plague Cloud",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Plague Cloud"
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Plague Cloud"
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "selectSkill": {
+          "skill": {
+            "restriction": {
+              "skillList": {
+                "skillList": ["Anatomy", "Disease", "Infected", "Undead"],
+                "limit": "Only"
+              },
+              "knowledgeSkillRestriction": {
+                "limit": "Only"
+              }
+            }
+          },
+          "bonus": {
+            "ratingIncreaseCount": 4,
+            "modifierType": "ApplyBonusToLevel"
+          }
+        }
+      }
+    },
     "source": "Forbidden Arcana",
     "page": 96
   },
@@ -1788,28 +2915,47 @@
       {
         "name": "Magician: +2 dice pool modifier when casting Combat spells, preparations, and rituals.",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Combat",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Combat",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: Gain 1 free level of Critical Strike.",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Critical Strike"
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Critical Strike"
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillKarmaCostModifierList": {
+          "skillCategoryList": [
+            {
+              "category": "Combat Active",
+              "value": -1,
+              "costModifierType": "Karma Increase",
+              "condition": "Career Mode",
+              "minimumLevelWhereBonusApplies": 3
+            }
+          ]
+        }
+      }
+    },
     "source": "Forbidden Arcana",
     "page": 97
   },
@@ -1823,33 +2969,55 @@
       {
         "name": "Magician: Gain the Witness My Hate quality for free.",
         "bonus": {
-          "qualityList": [
-            {
-              "name": "Witness My Hate"
-            }
-          ]
+          "quality": {
+            "addQualityList": [
+              {
+                "name": "Witness My Hate"
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: Gain the Adept Accident power for free.",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Adept Accident"
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Adept Accident"
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
     "bonus": {
-      "qualityList": [
-        {
-          "name": "Driven"
+      "skill": {
+        "selectSkill": {
+          "skill": {
+            "restriction": {
+              "skillList": {
+                "skillList": ["Demolitions", "Intimidation"],
+                "limit": "Only"
+              }
+            }
+          },
+          "bonus": {
+            "ratingIncreaseCount": 2,
+            "modifierType": "DicePoolIncrease"
+          }
         }
-      ]
+      },
+      "quality": {
+        "addQualityList": [
+          {
+            "name": "Driven"
+          }
+        ]
+      }
     },
     "source": "Forbidden Arcana",
     "page": 97
@@ -1863,22 +3031,49 @@
     "choices": [
       {
         "name": "Magician: +2 dice pool modifier to summon Plant Spirits.",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Summoning",
+                "bonus": 2,
+                "condition": "Plant Spirit",
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Adept: Gain 2 free levels of Rooting.",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Rooting",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Rooting",
+                "bonus": {
+                  "value": 2
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Negotiation",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Forbidden Arcana",
     "page": 98
   },
@@ -1891,17 +3086,63 @@
     "choices": [
       {
         "name": "Magician: +2 dice pool modifier when casting Sun- or Fire-based spells.",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Spellcasting",
+                "bonus": 2,
+                "condition": "Sun",
+                "modifierType": "DicePoolIncrease"
+              },
+              {
+                "name": "Spellcasting",
+                "bonus": 2,
+                "condition": "Fire",
+                "modifierType": "DicePoolIncrease"
+              },
+              {
+                "name": "Ritual Spellcasting",
+                "bonus": 2,
+                "condition": "Sun",
+                "modifierType": "DicePoolIncrease"
+              },
+              {
+                "name": "Ritual Spellcasting",
+                "bonus": 2,
+                "condition": "Fire",
+                "modifierType": "DicePoolIncrease"
+              },
+              {
+                "name": "Alchemy",
+                "bonus": 2,
+                "condition": "Sun",
+                "modifierType": "DicePoolIncrease"
+              },
+              {
+                "name": "Alchemy",
+                "bonus": 2,
+                "condition": "Fire",
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Adept: Gain 3 free levels of Temperature Tolerance",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Temperature Tolerance",
-              "level": 3
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Temperature Tolerance",
+                "bonus": {
+                  "value": 3
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
@@ -1919,22 +3160,49 @@
     "choices": [
       {
         "name": "Magician: +2 dice to Contractual Rituals.",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Ritual Spellcasting",
+                "bonus": 2,
+                "condition": "Contractual",
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Adept: Gain Spirit Ram for free.",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Spirit Ram",
-              "level": 1
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Spirit Ram",
+                "bonus": {
+                  "value": 1
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Intimidation",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Forbidden Arcana",
     "page": 98
   },
@@ -1948,33 +3216,50 @@
       {
         "name": "Magician: +2 dice for Illusion and transformation-focused Manipulation spells, preparations, and spell rituals.",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Manipulation",
-              "bonus": 2
-            },
-            {
-              "category": "Illusion",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Manipulation",
+                "bonus": 2
+              },
+              {
+                "category": "Illusion",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: Gain 3 levels of Stillness for free.",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Stillness",
-              "level": 3
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Stillness",
+                "bonus": {
+                  "value": 3
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Negotiation",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Forbidden Arcana",
     "page": 98
   },
@@ -1987,28 +3272,58 @@
     "choices": [
       {
         "name": "Magician: +2 dice pool bonus when summoning plant spirits.",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Summoning",
+                "bonus": 2,
+                "condition": "Plant Spirit",
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Magician: +2 dice pool bonus when summoning air spirits.",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Summoning",
+                "bonus": 2,
+                "condition": "Spirits of Air",
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Adept: Gain 2 levels of Stillness for free",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Stillness",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Stillness",
+                "bonus": {
+                  "value": 2
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
     "bonus": {
-      "damageResistance": 1
+      "combatAndWeapon": {
+        "damageResistance": 1
+      }
     },
     "required": {},
     "source": "Forbidden Arcana",
@@ -2023,22 +3338,49 @@
     "choices": [
       {
         "name": "Magician: +2 to summoning earth spirits.",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Summoning",
+                "bonus": 2,
+                "condition": "Spirits of Earth",
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Adept: Gain +2 levels of Light Body for free.",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Light Body",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Light Body",
+                "bonus": {
+                  "value": 2
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Blades",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Forbidden Arcana",
     "page": 99
   },
@@ -2052,23 +3394,27 @@
       {
         "name": "Magician: +2 for health spells, preparations, and spell rituals.",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Health",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Health",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: Gain Empathic Healing for free.",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Empathic Healing"
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Empathic Healing"
+              }
+            ]
+          }
         },
         "set": 1
       }
@@ -2087,36 +3433,45 @@
       {
         "name": "Magician: +2 dice pool modifier when casting Manipulation spells, preparations, and rituals",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Manipulation",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Manipulation",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: Gain 2 free levels of Spirit Claw (although in this case, it manifests as a fang).",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Spirit Claw",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Spirit Claw",
+                "bonus": {
+                  "value": 2
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
     "bonus": {
-      "skillGroups": [
-        {
-          "group": "Stealth",
-          "bonus": [2]
-        }
-      ]
+      "skill": {
+        "skillGroupList": [
+          {
+            "name": "Stealth",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "source": "Forbidden Arcana",
     "page": 100
@@ -2131,29 +3486,61 @@
       {
         "name": "Magician: +1 dice pool modifier when casting Combat spells, preparations, and rituals.",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Combat",
-              "bonus": 1
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Combat",
+                "bonus": 1
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: Gain 2 free levels of Danger Sense.",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Danger Sense",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Danger Sense",
+                "bonus": {
+                  "value": 2
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Sneaking",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Perception",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Survival",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Tracking",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Forbidden Arcana",
     "page": 100
   },
@@ -2167,29 +3554,51 @@
       {
         "name": "Magician: +1 dice pool modifier when casting Health spells, preparations, and rituals",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Health",
-              "bonus": 1
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Health",
+                "bonus": 1
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: Gain 1 free level of Analytics.",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Analytics",
-              "level": 1
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Analytics",
+                "bonus": {
+                  "value": 1
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Sneaking",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Perception",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Forbidden Arcana",
     "page": 100
   },
@@ -2203,53 +3612,81 @@
       {
         "name": "Magician: +2 dice pool modifier when casting Illusion spells, preparations, and rituals",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Illusion",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Illusion",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Magician: +2 dice pool modifier when casting Manipulation spells, preparations, and rituals",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Manipulation",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Manipulation",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: Gain 1 free level of Voice Control.",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Voice Control",
-              "level": 1
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Voice Control",
+                "bonus": {
+                  "value": 1
+                }
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: Gain 2 free levels of Danger Sense.",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Danger Sense",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Danger Sense",
+                "bonus": {
+                  "value": 2
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Palming",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Perception",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "State Of The Art - ADL",
     "page": 120
   },
@@ -2263,29 +3700,46 @@
       {
         "name": "Magician: +2 dice pool modifier when casting Detection spells, preparations, and rituals",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Detection",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Detection",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: Gain 2 free levels of Light Body.",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Light Body",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Light Body",
+                "bonus": {
+                  "value": 2
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Gymnastics",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "State Of The Art - ADL",
     "page": 121
   },
@@ -2299,29 +3753,46 @@
       {
         "name": "Magician: +2 dice pool modifier when casting Illusion spells, preparations, and rituals",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Illusion",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Illusion",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: Gain 2 free levels of Combat Sense.",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Combat Sense",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Combat Sense",
+                "bonus": {
+                  "value": 2
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Perception",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "State Of The Art - ADL",
     "page": 121
   },
@@ -2334,22 +3805,55 @@
     "choices": [
       {
         "name": "Magician: +2 dice summoning spirits of water or earth (The type of spirit for which this bonus applies changes every 6 hours).",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Summoning",
+                "bonus": 2,
+                "condition": "Spirits of Water (High Tide)",
+                "modifierType": "DicePoolIncrease"
+              },
+              {
+                "name": "Summoning",
+                "bonus": 2,
+                "condition": "Spirits of Earth (Low Tide)",
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Adept: Gain 2 free levels of Heightened Concentration.",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Heightened Concentration",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Heightened Concentration",
+                "bonus": {
+                  "value": 2
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Ritual Spellcasting",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "State Of The Art - ADL",
     "page": 121
   },
@@ -2363,29 +3867,70 @@
       {
         "name": "Magician: +2 dice pool modifier when casting Manipulation spells, preparations, and rituals",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Manipulation",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Manipulation",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: Gain 1 free level of Improved Ability (Artisan or a skill from the Engineering group).",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Improved Ability (skill)",
-              "level": 1
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Improved Ability (skill)",
+                "bonus": {
+                  "value": 1,
+                  "select": {
+                    "skill": {
+                      "restriction": {
+                        "skillList": {
+                          "skillList": [
+                            "Artisan",
+                            "Aeronautics Mechanic",
+                            "Automotive Mechanic",
+                            "Industrial Mechanic",
+                            "Nautical Mechanic"
+                          ],
+                          "limit": "Only"
+                        }
+                      },
+                      "minimumRating": 1
+                    }
+                  }
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Artisan",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ],
+        "skillGroupList": [
+          {
+            "name": "Engineering",
+            "bonus": 1,
+            "modifierType": "LevelIncrease"
+          }
+        ]
+      }
+    },
     "source": "State Of The Art - ADL",
     "page": 121
   },
@@ -2399,40 +3944,67 @@
       {
         "name": "Magician: +2 dice pool modifier when casting Detection spells, preparations, and rituals",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Detection",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Detection",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: Gain 2 free levels of Attribute Boost (Reaction).",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Attribute Boost",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Attribute Boost",
+                "bonus": {
+                  "value": 2,
+                  "select": {
+                    "attribute": "Reaction"
+                  }
+                }
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: Gain the Motion Sense power for free.",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Motion Sense"
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Motion Sense"
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Perception",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Etiquette",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "State Of The Art - ADL",
     "page": 122
   },
@@ -2445,28 +4017,44 @@
     "choices": [
       {
         "name": "Magician: +2 dice summoning spirits of water.",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Summoning",
+                "bonus": 2,
+                "condition": "Spirits of Water",
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Magician: +2 dice pool modifier when casting Illusion spells, preparations, and rituals",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Illusion",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Illusion",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: Gain the Astral Perception Power for free.",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Astral Perception"
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Astral Perception"
+              }
+            ]
+          }
         },
         "set": 1
       }
@@ -2485,29 +4073,64 @@
       {
         "name": "Magician: +2 dice pool modifier when casting Manipulation spells, preparations, and rituals",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Manipulation",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Manipulation",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: Gain 1 free level of Improved Ability for a skill from the Influence or Acting group.",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Improved Ability (skill)",
-              "level": 1
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Improved Ability (skill)",
+                "bonus": {
+                  "value": 1,
+                  "select": {
+                    "skill": {
+                      "restriction": {
+                        "skillList": {
+                          "skillList": [
+                            "Con",
+                            "Impersonation",
+                            "Performance",
+                            "Etiquette",
+                            "Leadership",
+                            "Negotiation"
+                          ],
+                          "limit": "Only"
+                        }
+                      },
+                      "minimumRating": 1
+                    }
+                  }
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Con",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "State Of The Art - ADL",
     "page": 122
   },
@@ -2520,22 +4143,49 @@
     "choices": [
       {
         "name": "Magician: +2 dice summoning spirits of earth.",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Summoning",
+                "bonus": 2,
+                "condition": "Spirits of Earth",
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Adept: 2 free levels of Hang Time.",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Hang Time",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Hang Time",
+                "bonus": {
+                  "value": 2
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Gymnastics",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "State Of The Art - ADL",
     "page": 123
   },
@@ -2548,28 +4198,76 @@
     "choices": [
       {
         "name": "+2 dice on Pilot Ground Craft Tests",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Pilot Ground Craft",
+                "bonus": 2,
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "+2 dice on Intimidation Tests",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Intimidation",
+                "bonus": 2,
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Magician: +2 dice summoning spirits of man.",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Summoning",
+                "bonus": 2,
+                "condition": "Spirits of Man",
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 2
       },
       {
         "name": "Magician: +2 dice summoning guardian spirits.",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Summoning",
+                "bonus": 2,
+                "condition": "Guardian Spirit",
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 2
       },
       {
         "name": "Adept: Gain the Berserk power for free.",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Berserk"
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Berserk"
+              }
+            ]
+          }
         },
         "set": 2
       }
@@ -2588,28 +4286,43 @@
       {
         "name": "Magician: +2 dice for Health spells",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Health",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Health",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: Free Empathic Healing power",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Empathic Healing"
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Empathic Healing"
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "First Aid",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Better Than Bad",
     "page": 139
   },
@@ -2623,29 +4336,46 @@
       {
         "name": "Magician: +2 dice for Combat spells",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Combat",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Combat",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: 2 free levels of Analytics",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Analytics",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Analytics",
+                "bonus": {
+                  "value": 2
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Leadership",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Datapuls SOTA 2080",
     "page": 29
   },
@@ -2659,33 +4389,55 @@
       {
         "name": "Magician: +1 die for Combat and Detection spells",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Combat",
-              "bonus": 1
-            },
-            {
-              "category": "Detection",
-              "bonus": 1
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Combat",
+                "bonus": 1
+              },
+              {
+                "category": "Detection",
+                "bonus": 1
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: 2 levels of Danger Sense",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Danger Sense",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Danger Sense",
+                "bonus": {
+                  "value": 2
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Leadership",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Perception",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Datapuls SOTA 2080",
     "page": 29
   },
@@ -2699,29 +4451,60 @@
       {
         "name": "Magician: +2 dice for Combat spells",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Combat",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Combat",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 2
       },
       {
         "name": "Adept: 1 free level of Combat Sense",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Combat Sense",
-              "level": 1
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Combat Sense",
+                "bonus": {
+                  "value": 1
+                }
+              }
+            ]
+          }
         },
         "set": 2
       }
     ],
     "choiceCount": 2,
+    "bonus": {
+      "skill": {
+        "selectSkill": {
+          "skill": {
+            "restriction": {
+              "skillCategoryList": {
+                "skillCategoryList": ["Combat Active"],
+                "limit": "Only"
+              }
+            }
+          },
+          "bonus": {
+            "ratingIncreaseCount": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        },
+        "skillIncreaseList": [
+          {
+            "name": "Perception",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Datapuls SOTA 2080",
     "page": 29
   },
@@ -2735,29 +4518,51 @@
       {
         "name": "Magician: +2 dice for Detection spells",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Detection",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Detection",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: 1 free level of Enhanced Perception",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Enhanced Perception",
-              "level": 1
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Enhanced Perception",
+                "bonus": {
+                  "value": 1
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Running",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Tracking",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Datapuls SOTA 2080",
     "page": 31
   },
@@ -2771,38 +4576,55 @@
       {
         "name": "Magician: +1 die for Counterspelling and Combat Spells",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Combat",
-              "bonus": 2
-            }
-          ]
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Counterspelling",
+                "bonus": 1,
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          },
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Combat",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: 2 levels of Danger Sense",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Danger Sense",
-              "level": 2
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Danger Sense",
+                "bonus": {
+                  "value": 2
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
     "bonus": {
-      "qualityList": [
-        {
-          "name": "Perceptive"
-        },
-        {
-          "name": "Perceptive"
-        }
-      ]
+      "quality": {
+        "addQualityList": [
+          {
+            "name": "Perceptive"
+          },
+          {
+            "name": "Perceptive"
+          }
+        ]
+      }
     },
     "source": "Datapuls SOTA 2080",
     "page": 31
@@ -2816,26 +4638,77 @@
     "choices": [
       {
         "name": "Magician: +2 dice for summoning guardian spirits.",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Summoning",
+                "bonus": 2,
+                "condition": "Guardian Spirit",
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Magician: +2 dice for summoning beast spirits.",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Summoning",
+                "bonus": 2,
+                "condition": "Spirits of Beasts",
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Adept: Magic Sense",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Magic Sense",
-              "level": 1
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Magic Sense",
+                "bonus": {
+                  "value": 1
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "selectSkill": {
+          "skill": {
+            "restriction": {
+              "skillList": {
+                "skillList": [
+                  "Blades",
+                  "Clubs",
+                  "Exotic Melee Weapon",
+                  "Unarmed Combat"
+                ],
+                "limit": "Only"
+              }
+            }
+          },
+          "bonus": {
+            "ratingIncreaseCount": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        }
+      }
+    },
     "source": "Datapuls SOTA 2080",
     "page": 31
   },
@@ -2848,21 +4721,46 @@
     "choices": [
       {
         "name": "Magician: +2 dice to Contractual Rituals",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Ritual Spellcasting",
+                "bonus": 2,
+                "condition": "Contractual",
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Adept: Gain Linguist for free",
         "bonus": {
-          "qualityList": [
-            {
-              "name": "Linguist"
-            }
-          ]
+          "quality": {
+            "addQualityList": [
+              {
+                "name": "Linguist"
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Con",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Datapuls SOTA 2080",
     "page": 32
   },
@@ -2876,28 +4774,48 @@
       {
         "name": "Magician: +2 dice for Detection spells",
         "bonus": {
-          "spellCategoryList": [
-            {
-              "category": "Detection",
-              "bonus": 2
-            }
-          ]
+          "spellAndMagic": {
+            "spellCategoryList": [
+              {
+                "category": "Detection",
+                "bonus": 2
+              }
+            ]
+          }
         },
         "set": 1
       },
       {
         "name": "Adept: Gain Three-Dimensional Memory for free",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Three-Dimensional Memory"
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Three-Dimensional Memory"
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Navigation",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Locksmith",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Datapuls SOTA 2080",
     "page": 32
   },
@@ -2910,30 +4828,86 @@
     "choices": [
       {
         "name": "Magician: +2 dice for summoning guardian spirits.",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Summoning",
+                "bonus": 2,
+                "condition": "Guardian Spirit",
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Magician: +2 dice for summoning task spirits.",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Summoning",
+                "bonus": 2,
+                "condition": "Task Spirit",
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Magician: +2 dice for summoning spirits of man.",
+        "bonus": {
+          "skill": {
+            "skillIncreaseList": [
+              {
+                "name": "Summoning",
+                "bonus": 2,
+                "condition": "Spirits of Man",
+                "modifierType": "DicePoolIncrease"
+              }
+            ]
+          }
+        },
         "set": 1
       },
       {
         "name": "Adept: 1 free level of Mystic Armor",
         "bonus": {
-          "specificPowerList": [
-            {
-              "name": "Mystic Armor",
-              "level": 1
-            }
-          ]
+          "power": {
+            "specificPowerList": [
+              {
+                "name": "Mystic Armor",
+                "bonus": {
+                  "value": 1
+                }
+              }
+            ]
+          }
         },
         "set": 1
       }
     ],
     "choiceCount": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Etiquette",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Instruction",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Datapuls SOTA 2080",
     "page": 32
   }

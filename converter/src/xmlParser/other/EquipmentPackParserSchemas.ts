@@ -7,25 +7,30 @@ import { MountSchema } from "@neon-codex/common/build/schemas/shared/weaponShare
 import { type } from "arktype";
 
 const ArmorModEquipmentPackXmlSchema = type({
+  "+": "reject",
   name: "string",
   "rating?": "number",
 });
 const ArmorEquipmentPackXmlSchema = type({
+  "+": "reject",
   name: "string",
-  "mods?": {
+  "mods?": type({
+    "+": "reject",
     mod: type.or(
       ArmorModEquipmentPackXmlSchema,
       ArmorModEquipmentPackXmlSchema.array()
     ),
-  },
-  "gears?": {
+  }),
+  "gears?": type({
+    "+": "reject",
     gear: UseGearXmlSchema,
-  },
+  }),
 });
 export type ArmorEquipmentPackXmlType =
   typeof ArmorEquipmentPackXmlSchema.infer;
 
 const BiowareEquipmentPackXmlSchema = type({
+  "+": "reject",
   name: "string",
   grade: type.valueOf(augmentationGradeEnum),
   "rating?": "number",
@@ -34,60 +39,68 @@ export type BiowareEquipmentPackXmlType =
   typeof BiowareEquipmentPackXmlSchema.infer;
 
 const CyberwareEquipmentPackXmlSchema = type({
+  "+": "reject",
   name: "string",
   grade: type.valueOf(augmentationGradeEnum),
   "rating?": "number",
-  "gears?": {
+  "gears?": type({
+    "+": "reject",
     gear: UseGearXmlSchema,
-  },
-  "cyberwares?": {
+  }),
+  "cyberwares?": type({
+    "+": "reject",
     cyberware: type.or(
-      {
-        name: "string",
-        "rating?": "number",
-      },
       type({
+        "+": "reject",
         name: "string",
         "rating?": "number",
-      }).array()
+      }),
+      type({ "+": "reject", name: "string", "rating?": "number" }).array()
     ),
-  },
+  }),
 });
 export type CyberwareEquipmentPackXmlType =
   typeof CyberwareEquipmentPackXmlSchema.infer;
 
 const WeaponAccessoryEquipmentPackXmlSchema = type({
+  "+": "reject",
   name: "string",
   mount: "string",
 });
 const WeaponEquipmentPackXmlSchema = type({
+  "+": "reject",
   name: "string",
-  "accessories?": {
+  "accessories?": type({
+    "+": "reject",
     accessory: type.or(
       WeaponAccessoryEquipmentPackXmlSchema,
       WeaponAccessoryEquipmentPackXmlSchema.array()
     ),
-  },
+  }),
 });
 export type WeaponEquipmentPackXmlType =
   typeof WeaponEquipmentPackXmlSchema.infer;
 
 const VehicleEquipmentPackXmlSchema = type({
+  "+": "reject",
   name: "string",
-  "gears?": {
+  "gears?": type({
+    "+": "reject",
     gear: UseGearXmlSchema,
-  },
-  "weapons?": {
+  }),
+  "weapons?": type({
+    "+": "reject",
     weapon: type.or(
       WeaponEquipmentPackXmlSchema,
       WeaponEquipmentPackXmlSchema.array()
     ),
-  },
+  }),
 });
 export type VehicleEquipmentPackXmlType =
   typeof VehicleEquipmentPackXmlSchema.infer;
 
 const EquipmentPackXmlSchema = type({
+  "+": "reject",
   name: "string",
   // Category of pack this is
   category: type.valueOf(equipmentPackCategoryEnum),
@@ -95,52 +108,60 @@ const EquipmentPackXmlSchema = type({
   // Nuyen cost in karma (converted to nuyen)
   nuyenbp: "number",
   // Armour List
-  "armors?": {
+  "armors?": type({
+    "+": "reject",
     armor: type.or(
       ArmorEquipmentPackXmlSchema,
       ArmorEquipmentPackXmlSchema.array()
     ),
-  },
+  }),
   // Biowares
-  "biowares?": {
+  "biowares?": type({
+    "+": "reject",
     bioware: type.or(
       BiowareEquipmentPackXmlSchema,
       BiowareEquipmentPackXmlSchema.array()
     ),
-  },
+  }),
   // Cyberwares
-  "cyberwares?": {
+  "cyberwares?": type({
+    "+": "reject",
     cyberware: type.or(
       CyberwareEquipmentPackXmlSchema,
       CyberwareEquipmentPackXmlSchema.array()
     ),
-  },
+  }),
   // Gears
-  "gears?": {
+  "gears?": type({
+    "+": "reject",
     gear: UseGearXmlSchema,
-  },
+  }),
   // Vehicles
-  "vehicles?": {
+  "vehicles?": type({
+    "+": "reject",
     vehicle: type.or(
       VehicleEquipmentPackXmlSchema,
       VehicleEquipmentPackXmlSchema.array()
     ),
-  },
+  }),
   // Weapons
-  "weapons?": {
+  "weapons?": type({
+    "+": "reject",
     weapon: type.or(
       WeaponEquipmentPackXmlSchema,
       WeaponEquipmentPackXmlSchema.array()
     ),
-  },
+  }),
   // Lifestyle
-  "lifestyles?": {
-    lifestyle: {
+  "lifestyles?": type({
+    "+": "reject",
+    lifestyle: type({
+      "+": "reject",
       // these are non-advanced lifestyles
       baselifestyle: "string",
       months: "number",
-    },
-  },
+    }),
+  }),
 });
 export type EquipmentPackXmlType = typeof EquipmentPackXmlSchema.infer;
 export const EquipmentListXmlSchema = type(EquipmentPackXmlSchema.array());

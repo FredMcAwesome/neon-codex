@@ -16,22 +16,26 @@ import {
 import { type } from "arktype";
 
 const PriorityBaseXmlSchema = type({
+  "+": "reject",
   id: "string",
   name: "string",
   // Related attribute
   value: type.valueOf(priorityLetterEnum),
 });
 const PriorityMetavariantXmlSchema = type({
+  "+": "reject",
   name: "string",
   value: "number",
   karma: "number",
 });
 const PriorityMetatypeXmlSchema = type({
+  "+": "reject",
   name: "string",
   value: "number",
   karma: "number",
   "metavariants?": type.or(
     type({
+      "+": "reject",
       metavariant: type.or(
         PriorityMetavariantXmlSchema,
         PriorityMetavariantXmlSchema.array()
@@ -40,9 +44,10 @@ const PriorityMetatypeXmlSchema = type({
     "''"
   ),
 });
-const HeritageXmlSchema = PriorityBaseXmlSchema.and({
+const HeritageXmlSchema = PriorityBaseXmlSchema.merge({
   category: type.unit(priorityCategoryEnum.Heritage),
   metatypes: type({
+    "+": "reject",
     metatype: type.or(
       PriorityMetatypeXmlSchema,
       PriorityMetatypeXmlSchema.array()
@@ -51,16 +56,16 @@ const HeritageXmlSchema = PriorityBaseXmlSchema.and({
 });
 export type HeritageXmlType = typeof HeritageXmlSchema.infer;
 
-const TalentXmlSchema = PriorityBaseXmlSchema.and({
+const TalentXmlSchema = PriorityBaseXmlSchema.merge({
   category: type.unit(priorityCategoryEnum.Talent),
   talents: type({
+    "+": "reject",
     talent: type(
       type({
+        "+": "reject",
         name: "string",
         value: "string",
-        "qualities?": type({
-          quality: "string",
-        }),
+        "qualities?": type({ "+": "reject", quality: "string" }),
 
         "magic?": "number",
         "spells?": "number",
@@ -80,6 +85,7 @@ const TalentXmlSchema = PriorityBaseXmlSchema.and({
           "'specific'",
           "'magic'",
           type({
+            "+": "reject",
             _xpath:
               "\"not(attribute = 'RES' or attribute = 'DEP') and (not(category = 'Magical Active') or skillgroup = '' or not(skillgroup))\"",
             xmltext: "'xpath'",
@@ -95,24 +101,24 @@ const TalentXmlSchema = PriorityBaseXmlSchema.and({
         "skillgrouptype?": "'grouped'",
         // Choices when using skill groups
         "skillgroupchoices?": type({
+          "+": "reject",
           skillgroup: StringArrayOrStringSchema,
         }),
 
         "required?": type({
+          "+": "reject",
           oneof: type.or(
             type({
+              "+": "reject",
               metatypecategory: type.unit(heritageCategoryEnum.Metahuman),
             }),
-            type({
-              metatype: "'A.I.'",
-            })
+            type({ "+": "reject", metatype: "'A.I.'" })
           ),
         }),
 
         "forbidden?": type({
-          oneof: type({
-            metatype: "'A.I.'",
-          }),
+          "+": "reject",
+          oneof: type({ "+": "reject", metatype: "'A.I.'" }),
         }),
       })
     ).array(),
@@ -120,20 +126,20 @@ const TalentXmlSchema = PriorityBaseXmlSchema.and({
 });
 export type TalentXmlType = typeof TalentXmlSchema.infer;
 
-const AttributeXmlSchema = PriorityBaseXmlSchema.and({
+const AttributeXmlSchema = PriorityBaseXmlSchema.merge({
   category: type.unit(priorityCategoryEnum.Attributes),
   attributes: "number",
 });
 export type AttributeXmlType = typeof AttributeXmlSchema.infer;
 
-const SkillXmlSchema = PriorityBaseXmlSchema.and({
+const SkillXmlSchema = PriorityBaseXmlSchema.merge({
   category: type.unit(priorityCategoryEnum.Skills),
   skills: "number",
   skillgroups: "number",
 });
 export type SkillXmlType = typeof SkillXmlSchema.infer;
 
-const ResourceXmlSchema = PriorityBaseXmlSchema.and({
+const ResourceXmlSchema = PriorityBaseXmlSchema.merge({
   category: type.unit(priorityCategoryEnum.Resources),
   prioritytable: type.valueOf(priorityTableRunnerLevelEnum),
   resources: "number",
@@ -151,23 +157,23 @@ export const PriorityListXmlSchema = type(PriorityXmlSchema.array());
 export type PriorityXmlType = typeof PriorityXmlSchema.infer;
 
 export const PriorityUnionSchema = type.or(
-  HeritageOptionsPrioritySchema.and({
+  HeritageOptionsPrioritySchema.merge({
     category: type.unit(priorityCategoryEnum.Heritage),
     rowLetter: type.valueOf(priorityLetterEnum),
   }),
-  TalentOptionsPrioritySchema.and({
+  TalentOptionsPrioritySchema.merge({
     category: type.unit(priorityCategoryEnum.Talent),
     rowLetter: type.valueOf(priorityLetterEnum),
   }),
-  AttributePrioritySchema.and({
+  AttributePrioritySchema.merge({
     category: type.unit(priorityCategoryEnum.Attributes),
     rowLetter: type.valueOf(priorityLetterEnum),
   }),
-  SkillPrioritySchema.and({
+  SkillPrioritySchema.merge({
     category: type.unit(priorityCategoryEnum.Skills),
     rowLetter: type.valueOf(priorityLetterEnum),
   }),
-  ResourcePrioritySchema.and({
+  ResourcePrioritySchema.merge({
     category: type.unit(priorityCategoryEnum.Resources),
     rowLetter: type.valueOf(priorityLetterEnum),
     priorityTable: type.valueOf(priorityTableRunnerLevelEnum),

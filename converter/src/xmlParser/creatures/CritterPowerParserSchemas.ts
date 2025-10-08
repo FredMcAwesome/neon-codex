@@ -20,6 +20,7 @@ import {
 import { type } from "arktype";
 
 const CritterPowerXmlSchema = type({
+  "+": "reject",
   id: "string",
   name: "string",
   category: type.valueOf(critterPowerEnum),

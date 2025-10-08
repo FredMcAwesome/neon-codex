@@ -23,6 +23,7 @@ const XmlMovementSchema = type.or(
   // Formatted like: Ground/Water/Air speed
   "string",
   type({
+    "+": "reject",
     // Alt text is for shapeshifters (the orignal form speeds)
     _alt: "string",
     xmltext: "string",
@@ -31,6 +32,7 @@ const XmlMovementSchema = type.or(
 export type XmlMovementType = typeof XmlMovementSchema.infer;
 
 const BaseMetatypeXmlSubBonusSchema = type({
+  "+": "reject",
   id: "string",
   name: "string",
   // Karma cost for point buy
@@ -109,6 +111,7 @@ const BaseMetatypeXmlSubBonusSchema = type({
   "addweapon?": StringArrayOrStringSchema,
   // Included powers
   "powers?": type({
+    "+": "reject",
     power: type.or(XmlPowerSchema, XmlPowerSchema.array()),
   }),
 
@@ -120,7 +123,7 @@ const BaseMetatypeXmlSubBonusSchema = type({
   page: "number",
 });
 // Need to split up type/annotate schema to avoid TS7056 error
-const BaseMetatypeXmlSchema = BaseMetatypeXmlSubBonusSchema.and(
+const BaseMetatypeXmlSchema = BaseMetatypeXmlSubBonusSchema.merge(
   BonusXmlWrappedSchema
 );
 export type BaseMetatypeXmlType = typeof BaseMetatypeXmlSchema.infer;
@@ -133,9 +136,10 @@ export type MetatypeXmlType = BaseMetatypeXmlType & {
     | undefined;
 };
 
-export const MetatypeXmlSchema = BaseMetatypeXmlSchema.and({
+export const MetatypeXmlSchema = BaseMetatypeXmlSchema.merge({
   // metavariants of the base form
   "metavariants?": type({
+    "+": "reject",
     metavariant: type.or(BaseMetatypeXmlSchema, BaseMetatypeXmlSchema.array()),
   }),
 });

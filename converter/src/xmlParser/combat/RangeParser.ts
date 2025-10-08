@@ -15,6 +15,7 @@ import { mathOperatorEnum, rangeEnum } from "@neon-codex/common/build/enums.js";
 import { type } from "arktype";
 
 const RangeXmlSchema = type({
+  "+": "reject",
   name: "string",
   min: "number",
   short: StringOrNumberSchema,

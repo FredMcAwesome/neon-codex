@@ -282,7 +282,7 @@ const PrioritySelectLoaded = function ({
   const heritageOptions = heritages.heritageList.map((heritage) => {
     return heritage.name;
   });
-  let heritage = heritages.heritageList.find((heritageLocal) => {
+  const heritage = heritages.heritageList.find((heritageLocal) => {
     return (
       heritageLocal.name === priorityHeritage.heritage &&
       heritageLocal.specialAttributePoints ===
@@ -443,7 +443,11 @@ const PrioritySelectLoaded = function ({
           {metavariantOptions.length > 0 && (
             <Dropdown
               options={metavariantOptions}
-              value={priorityHeritage.metavariant || ""}
+              value={
+                typeof priorityHeritage.metavariant === "string"
+                  ? priorityHeritage.metavariant
+                  : ""
+              }
               onChange={(arg) => {
                 const heritages = convertererer(
                   priorityTable,

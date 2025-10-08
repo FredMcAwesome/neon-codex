@@ -194,7 +194,11 @@
     "requiredLifestyleList": ["Medium", "High", "Luxury"],
     "multipleAllowed": true,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Run Faster",
     "page": 222,
@@ -228,7 +232,11 @@
     "requiredLifestyleList": ["Low", "Medium", "High", "Luxury"],
     "multipleAllowed": true,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Run Faster",
     "page": 222,
@@ -242,7 +250,11 @@
     "requiredLifestyleList": ["Commercial"],
     "multipleAllowed": true,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Run Faster",
     "page": 222,
@@ -256,7 +268,11 @@
     "requiredLifestyleList": ["Commercial"],
     "multipleAllowed": true,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Run Faster",
     "page": 222,
@@ -270,7 +286,11 @@
     "requiredLifestyleList": ["Commercial"],
     "multipleAllowed": true,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Run Faster",
     "page": 222,
@@ -284,7 +304,11 @@
     "requiredLifestyleList": ["Commercial"],
     "multipleAllowed": true,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Run Faster",
     "page": 222,
@@ -308,7 +332,11 @@
     "requiredLifestyleList": ["Commercial"],
     "multipleAllowed": true,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Run Faster",
     "page": 222,
@@ -332,7 +360,11 @@
     "requiredLifestyleList": ["Medium", "High", "Luxury"],
     "multipleAllowed": true,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Run Faster",
     "page": 223,
@@ -346,7 +378,11 @@
     "requiredLifestyleList": ["High", "Luxury"],
     "multipleAllowed": true,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Run Faster",
     "page": 223,
@@ -360,7 +396,11 @@
     "requiredLifestyleList": ["Low", "Medium", "High", "Luxury"],
     "multipleAllowed": true,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Run Faster",
     "page": 223,
@@ -374,7 +414,11 @@
     "requiredLifestyleList": ["Medium", "High", "Luxury"],
     "multipleAllowed": true,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Run Faster",
     "page": 223,
@@ -398,7 +442,11 @@
     "requiredLifestyleList": ["Low", "Medium", "High", "Luxury"],
     "multipleAllowed": true,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Run Faster",
     "page": 223,
@@ -412,7 +460,11 @@
     "requiredLifestyleList": ["Medium", "High", "Luxury"],
     "multipleAllowed": true,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Run Faster",
     "page": 222,
@@ -446,7 +498,11 @@
     "requiredLifestyleList": ["High", "Luxury"],
     "multipleAllowed": true,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Run Faster",
     "page": 224,
@@ -479,6 +535,20 @@
     "lifestylePointCost": 2,
     "requiredLifestyleList": ["Commercial"],
     "multipleAllowed": true,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Skill"
+            },
+            {
+              "base": "Knowledge Skill"
+            }
+          ]
+        }
+      }
+    },
     "source": "Run Faster",
     "page": 224,
     "description": ""
@@ -490,6 +560,20 @@
     "lifestylePointCost": 2,
     "requiredLifestyleList": ["Commercial"],
     "multipleAllowed": true,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Skill"
+            },
+            {
+              "base": "Knowledge Skill"
+            }
+          ]
+        }
+      }
+    },
     "source": "Run Faster",
     "page": 224,
     "description": ""
@@ -620,7 +704,11 @@
     "lifestylePointCost": 1,
     "requiredLifestyleList": ["Traveler"],
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Run Faster",
     "page": 226,
@@ -652,7 +740,11 @@
     "lifestylePointCost": 0,
     "multipleAllowed": true,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 370,
@@ -802,7 +894,11 @@
     "requiredLifestyleList": ["Medium", "High", "Luxury"],
     "multipleAllowed": true,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Hard Targets",
     "page": 140,
@@ -816,7 +912,11 @@
     "requiredLifestyleList": ["High", "Luxury"],
     "multipleAllowed": true,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Hard Targets",
     "page": 140,

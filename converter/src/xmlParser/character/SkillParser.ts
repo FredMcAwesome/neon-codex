@@ -59,6 +59,7 @@ const convertSkill = function (
 };
 
 const SkillXmlSchema = type({
+  "+": "reject",
   id: "string",
   name: "string",
   // Related attribute
@@ -77,9 +78,7 @@ const SkillXmlSchema = type({
   "requiresflymovement?": "'True'",
   // List of default specialisations, however custom ones are normally possible
   specs: type.or(
-    type({
-      spec: StringArrayOrStringSchema,
-    }),
+    type({ "+": "reject", spec: StringArrayOrStringSchema }),
     "''"
   ),
   // TODO: add these to knowledge skills in xml

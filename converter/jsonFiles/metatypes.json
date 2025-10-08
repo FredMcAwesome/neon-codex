@@ -740,11 +740,13 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
-        }
-      ]
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 89
@@ -840,11 +842,13 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
-        }
-      ]
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 89
@@ -940,11 +944,13 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
-        }
-      ]
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 90
@@ -1143,11 +1149,13 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
-        }
-      ]
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "SR5",
     "page": 50,
@@ -1710,11 +1718,13 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
-        }
-      ]
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -1804,11 +1814,13 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
-        }
-      ]
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -1898,11 +1910,13 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
-        }
-      ]
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -1992,11 +2006,13 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
-        }
-      ]
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -2099,14 +2115,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": 1,
+          "nonStacking": true
         }
-      ],
-      "armour": {
-        "bonus": 1,
-        "nonStacking": true
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
       }
     },
     "source": "SR5",
@@ -2229,14 +2249,23 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 150
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ],
-      "addLimb": {
-        "limbSlot": "Leg",
-        "numberOfLimbs": 2
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 150
+          }
+        ]
+      },
+      "miscellaneous": {
+        "addLimb": {
+          "limbSlot": "Leg",
+          "numberOfLimbs": 2
+        }
       }
     },
     "source": "RF",
@@ -2362,13 +2391,22 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 150
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ],
-      "armour": {
-        "bonus": 8
+      },
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": 8
+        }
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 150
+          }
+        ]
       }
     },
     "source": "RF",
@@ -2485,11 +2523,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 99
@@ -2605,11 +2650,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 99
@@ -2823,6 +2875,13 @@
       "Wanted",
       "Wanted by GOD"
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Depth"
+        }
+      }
+    },
     "source": "DT",
     "page": 161
   },
@@ -3035,6 +3094,13 @@
       "Wanted",
       "Wanted by GOD"
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Depth"
+        }
+      }
+    },
     "source": "DT",
     "page": 135
   },
@@ -3250,6 +3316,13 @@
       "Wanted",
       "Wanted by GOD"
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Depth"
+        }
+      }
+    },
     "source": "DT",
     "page": 135
   },
@@ -3452,6 +3525,13 @@
       "Wanted",
       "Wanted by GOD"
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Depth"
+        }
+      }
+    },
     "source": "DT",
     "page": 135,
     "metavariantList": ["E-Ghost", "Xenosapient", "Protosapient"]
@@ -3565,6 +3645,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -3683,6 +3770,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -3798,6 +3892,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -3916,6 +4017,13 @@
         "name": "Symbiosis"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -4043,6 +4151,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -4161,6 +4276,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -4282,6 +4404,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -4401,11 +4530,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "SR5",
     "page": 50
@@ -4526,11 +4662,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 89
@@ -4657,11 +4800,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 89
@@ -4788,11 +4938,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 90
@@ -4919,11 +5076,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 90
@@ -5037,6 +5201,13 @@
         "name": "Low-Light Vision"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -5155,6 +5326,13 @@
         "name": "Keen-Eared"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -5267,6 +5445,13 @@
         "name": "Low-Light Vision"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -5382,6 +5567,13 @@
         "name": "Striking Skin Pigmentation"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -5497,6 +5689,13 @@
         "name": "Satyr Legs"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -5610,14 +5809,23 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ],
-      "armour": {
-        "bonus": 1,
-        "nonStacking": true
+      },
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": 1,
+          "nonStacking": true
+        }
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
       }
     },
     "source": "SR5",
@@ -5736,11 +5944,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -5855,11 +6070,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -5974,11 +6196,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -6093,11 +6322,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -6334,6 +6570,13 @@
         "name": "Vomeronasal Organ"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -6456,6 +6699,13 @@
         "name": "Striking Skin Pigmentation"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -6572,6 +6822,13 @@
         "name": "Vomeronasal Organ"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -6691,6 +6948,13 @@
         "name": "Symbiosis"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -6819,6 +7083,13 @@
         "name": "Unusual Hair"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -6938,6 +7209,13 @@
         "name": "Allergy (Common, Mild)"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -7060,6 +7338,13 @@
         "name": "Vomeronasal Organ"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -7183,11 +7468,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "SR5",
     "page": 50
@@ -7312,11 +7604,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 89
@@ -7447,11 +7746,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 89
@@ -7582,11 +7888,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 90
@@ -7717,11 +8030,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 90
@@ -7840,11 +8160,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "SR5",
     "page": 50
@@ -7968,6 +8295,13 @@
         "name": "Keen-Eared"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -8084,6 +8418,13 @@
         "name": "Low-Light Vision"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -8203,6 +8544,13 @@
         "name": "Striking Skin Pigmentation"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -8322,6 +8670,13 @@
         "name": "Satyr Legs"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -8442,14 +8797,23 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ],
-      "armour": {
-        "bonus": 1,
-        "nonStacking": true
+      },
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": 1,
+          "nonStacking": true
+        }
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
       }
     },
     "source": "SR5",
@@ -8575,14 +8939,23 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ],
-      "armour": {
-        "bonus": 1,
-        "nonStacking": true
+      },
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": 1,
+          "nonStacking": true
+        }
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
       }
     },
     "source": "RF",
@@ -8705,14 +9078,23 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ],
-      "armour": {
-        "bonus": 1,
-        "nonStacking": true
+      },
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": 1,
+          "nonStacking": true
+        }
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
       }
     },
     "source": "RF",
@@ -8835,14 +9217,23 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ],
-      "armour": {
-        "bonus": 1,
-        "nonStacking": true
+      },
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": 1,
+          "nonStacking": true
+        }
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
       }
     },
     "source": "RF",
@@ -8968,14 +9359,23 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ],
-      "armour": {
-        "bonus": 1,
-        "nonStacking": true
+      },
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": 1,
+          "nonStacking": true
+        }
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
       }
     },
     "source": "RF",
@@ -9209,6 +9609,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -9327,6 +9734,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -9442,6 +9856,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -9560,6 +9981,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -9687,6 +10115,13 @@
         "name": "Unusual Hair"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -9805,6 +10240,13 @@
         "name": "Allergy (Common, Mild)"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -9926,6 +10368,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -10045,11 +10494,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "SR5",
     "page": 50
@@ -10170,11 +10626,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 89
@@ -10301,11 +10764,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 89
@@ -10427,11 +10897,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 90
@@ -10557,6 +11034,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 90
   },
@@ -10672,6 +11156,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -10790,6 +11281,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -10905,6 +11403,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -11023,6 +11528,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -11141,6 +11653,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -11257,14 +11776,23 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ],
-      "armour": {
-        "bonus": 1,
-        "nonStacking": true
+      },
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": 1,
+          "nonStacking": true
+        }
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
       }
     },
     "source": "SR5",
@@ -11386,11 +11914,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -11508,11 +12043,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -11627,11 +12169,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -11752,11 +12301,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -11990,6 +12546,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -12109,6 +12672,13 @@
         "name": "Striking Skin Pigmentation"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -12225,6 +12795,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -12344,6 +12921,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -12472,6 +13056,13 @@
         "name": "Unusual Hair"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -12591,6 +13182,13 @@
         "name": "Allergy (Common, Mild)"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -12713,6 +13311,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -12833,11 +13438,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "SR5",
     "page": 50
@@ -12959,11 +13571,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 89
@@ -13091,11 +13710,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 89
@@ -13223,14 +13849,21 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
-        },
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          },
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 90
@@ -13358,11 +13991,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 90
@@ -13480,6 +14120,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -13602,6 +14249,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -13718,6 +14372,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -13837,6 +14498,13 @@
         "name": "Striking Skin Pigmentation"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -13956,6 +14624,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -14073,14 +14748,23 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ],
-      "armour": {
-        "bonus": 1,
-        "nonStacking": true
+      },
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": 1,
+          "nonStacking": true
+        }
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
       }
     },
     "source": "SR5",
@@ -14203,11 +14887,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -14326,11 +15017,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -14449,11 +15147,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -14575,11 +15280,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -14819,6 +15531,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -14944,6 +15663,13 @@
         "name": "Striking Skin Pigmentation"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -15063,6 +15789,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -15185,6 +15918,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -15316,6 +16056,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -15438,6 +16185,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -15563,6 +16317,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -15689,11 +16450,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "SR5",
     "page": 50
@@ -15821,11 +16589,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 89
@@ -15959,11 +16734,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 89
@@ -16096,6 +16878,13 @@
         "name": "Unusual Hair"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 90
   },
@@ -16227,6 +17016,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 90
   },
@@ -16346,6 +17142,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -16468,6 +17271,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -16587,6 +17397,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -16709,6 +17526,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -16831,6 +17655,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -16954,14 +17785,23 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ],
-      "armour": {
-        "bonus": 1,
-        "nonStacking": true
+      },
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": 1,
+          "nonStacking": true
+        }
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
       }
     },
     "source": "SR5",
@@ -17090,14 +17930,23 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ],
-      "armour": {
-        "bonus": 1,
-        "nonStacking": true
+      },
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": 1,
+          "nonStacking": true
+        }
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
       }
     },
     "source": "RF",
@@ -17223,11 +18072,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -17352,11 +18208,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -17481,11 +18344,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -17725,6 +18595,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -17850,6 +18727,13 @@
         "name": "Striking Skin Pigmentation"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -17969,6 +18853,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -18091,6 +18982,13 @@
         "name": "Symbiosis"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -18222,6 +19120,13 @@
         "name": "Unusual Hair"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -18344,6 +19249,13 @@
         "name": "Allergy (Common, Mild)"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -18469,6 +19381,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -18595,11 +19514,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "SR5",
     "page": 50
@@ -18730,11 +19656,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 89
@@ -18871,11 +19804,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 89
@@ -19009,11 +19949,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 90
@@ -19147,11 +20094,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 90
@@ -19272,6 +20226,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -19394,6 +20355,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -19513,6 +20481,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -19635,6 +20610,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -19757,6 +20739,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -19880,14 +20869,23 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ],
-      "armour": {
-        "bonus": 1,
-        "nonStacking": true
+      },
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": 1,
+          "nonStacking": true
+        }
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
       }
     },
     "source": "SR5",
@@ -20016,14 +21014,23 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ],
-      "armour": {
-        "bonus": 1,
-        "nonStacking": true
+      },
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": 1,
+          "nonStacking": true
+        }
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
       }
     },
     "source": "RF",
@@ -20149,11 +21156,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -20278,11 +21292,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -20407,11 +21428,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -20651,6 +21679,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -20776,6 +21811,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -20895,6 +21937,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -21017,6 +22066,13 @@
         "name": "Symbiosis"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -21148,6 +22204,13 @@
         "name": "Unusual Hair"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -21270,6 +22333,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -21395,6 +22465,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -21521,11 +22598,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "SR5",
     "page": 50
@@ -21653,11 +22737,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 89
@@ -21791,11 +22882,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 89
@@ -21929,11 +23027,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 90
@@ -22067,11 +23172,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 90
@@ -22192,6 +23304,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -22314,6 +23433,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -22433,6 +23559,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -22555,6 +23688,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -22677,6 +23817,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -22800,14 +23947,23 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ],
-      "armour": {
-        "bonus": 1,
-        "nonStacking": true
+      },
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": 1,
+          "nonStacking": true
+        }
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
       }
     },
     "source": "SR5",
@@ -22936,11 +24092,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -23065,11 +24228,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -23194,11 +24364,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -23323,11 +24500,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -23567,6 +24751,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -23692,6 +24883,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -23811,6 +25009,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -23933,6 +25138,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -24064,6 +25276,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -24186,6 +25405,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -24311,6 +25537,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -24437,11 +25670,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "SR5",
     "page": 50
@@ -24569,11 +25809,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 89
@@ -24707,11 +25954,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 89
@@ -24845,11 +26099,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 90
@@ -24980,11 +26241,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 90
@@ -25105,6 +26373,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -25227,6 +26502,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -25346,6 +26628,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -25468,6 +26757,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -25590,6 +26886,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -25713,14 +27016,23 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ],
-      "armour": {
-        "bonus": 1,
-        "nonStacking": true
+      },
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": 1,
+          "nonStacking": true
+        }
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
       }
     },
     "source": "SR5",
@@ -25849,11 +27161,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -25978,11 +27297,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -26107,11 +27433,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -26236,11 +27569,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -26483,6 +27823,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -26611,6 +27958,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -26733,6 +28087,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -26858,6 +28219,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -26989,6 +28357,13 @@
         "name": "Unusual Hair"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -27114,6 +28489,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -27242,6 +28624,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -27371,11 +28760,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "SR5",
     "page": 50
@@ -27509,11 +28905,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 89
@@ -27653,11 +29056,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 89
@@ -27794,11 +29204,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 90
@@ -27935,11 +29352,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 90
@@ -28063,6 +29487,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -28188,6 +29619,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -28310,6 +29748,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -28435,6 +29880,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -28560,6 +30012,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -28686,14 +30145,23 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ],
-      "armour": {
-        "bonus": 1,
-        "nonStacking": true
+      },
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": 1,
+          "nonStacking": true
+        }
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
       }
     },
     "source": "SR5",
@@ -28825,11 +30293,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -28957,11 +30432,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -29089,11 +30571,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -29221,11 +30710,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -29468,6 +30964,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -29596,6 +31099,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -29718,6 +31228,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -29843,6 +31360,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -29974,6 +31498,13 @@
         "name": "Unusual Hair"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -30099,6 +31630,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -30227,6 +31765,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -30356,11 +31901,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "SR5",
     "page": 50
@@ -30494,11 +32046,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 89
@@ -30638,11 +32197,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 89
@@ -30779,11 +32345,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 90
@@ -30920,11 +32493,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 90
@@ -31048,6 +32628,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -31173,6 +32760,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -31295,6 +32889,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -31420,6 +33021,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -31545,6 +33153,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -31671,14 +33286,23 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ],
-      "armour": {
-        "bonus": 1,
-        "nonStacking": true
+      },
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": 1,
+          "nonStacking": true
+        }
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
       }
     },
     "source": "SR5",
@@ -31810,11 +33434,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -31942,11 +33573,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -32074,11 +33712,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -32206,11 +33851,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -32459,6 +34111,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -32592,6 +34251,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -32720,6 +34386,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -32848,6 +34521,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -32985,6 +34665,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -33116,6 +34803,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -33250,6 +34944,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -33385,11 +35086,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "SR5",
     "page": 50
@@ -33526,11 +35234,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 89
@@ -33673,11 +35388,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 89
@@ -33820,11 +35542,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 90
@@ -33961,11 +35690,18 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 90
@@ -34095,6 +35831,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "SR5",
     "page": 50
   },
@@ -34223,6 +35966,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -34351,6 +36101,13 @@
         "name": "Uneducated"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -34482,6 +36239,13 @@
         "name": "Striking Skin Pigmentation"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -34610,6 +36374,13 @@
         "name": "Underwater Vision"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      }
+    },
     "source": "RF",
     "page": 104
   },
@@ -34745,17 +36516,26 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
-        },
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ],
-      "armour": {
-        "bonus": 1,
-        "nonStacking": true
+      },
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": 1,
+          "nonStacking": true
+        }
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          },
+          {
+            "cost": 20
+          }
+        ]
       }
     },
     "source": "SR5",
@@ -34896,14 +36676,21 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 100
-        },
-        {
-          "cost": 20
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 100
+          },
+          {
+            "cost": 20
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -35040,14 +36827,21 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
-        },
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          },
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -35184,14 +36978,21 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
-        },
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          },
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104
@@ -35328,14 +37129,21 @@
       }
     ],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 20
-        },
-        {
-          "cost": 100
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
         }
-      ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 20
+          },
+          {
+            "cost": 100
+          }
+        ]
+      }
     },
     "source": "RF",
     "page": 104

@@ -16,6 +16,7 @@ import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { type } from "arktype";
 
 const MentorSpiritXmlSchema = type({
+  "+": "reject",
   id: "string",
   name: "string",
   advantage: "string",
@@ -23,6 +24,7 @@ const MentorSpiritXmlSchema = type({
   "bonus?": BonusXmlSchema,
   choices: {
     choice: type({
+      "+": "reject",
       "_set?": "string",
       name: "string",
       // optional as sometimes the bonus is too specific to apply in general

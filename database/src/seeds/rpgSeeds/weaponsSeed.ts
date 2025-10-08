@@ -29,7 +29,7 @@ export const WeaponDBSchema = type
     ProjectileWeaponSchema.omit("relatedSkill"),
     ExplosiveWeaponSchema.omit("relatedSkill")
   )
-  .and({
+  .merge({
     relatedSkill: type.instanceOf(Skills),
   });
 export type WeaponDBType = typeof WeaponDBSchema.infer;

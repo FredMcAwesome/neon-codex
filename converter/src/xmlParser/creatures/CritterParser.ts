@@ -45,7 +45,7 @@ export function ParseCritters() {
   const jObj: any = parser.parse(xml_string);
   // console.log(
   //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  //   jObj.chummer.metatypes.metatype[155]
+  //   jObj.chummer.metatypes.metatype[236]
   // );
 
   const critterListParsed = CritterListXmlSchema(

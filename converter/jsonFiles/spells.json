@@ -477,7 +477,11 @@
     },
     "type": "Mana",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 287
@@ -496,7 +500,11 @@
     },
     "type": "Mana",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 287
@@ -547,7 +555,11 @@
     },
     "type": "Physical",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 287
@@ -645,6 +657,17 @@
       "target": "Single Target"
     },
     "type": "Physical",
+    "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "exclude": ["Initiative", "Magic", "Resonance", "Edge", "Depth"]
+            }
+          }
+        ]
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 288
   },
@@ -693,6 +716,17 @@
       "target": "Single Target"
     },
     "type": "Physical",
+    "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "exclude": ["Initiative", "Magic", "Resonance", "Edge", "Depth"]
+            }
+          }
+        ]
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 288
   },
@@ -1544,7 +1578,11 @@
     },
     "type": "Physical",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Street Grimoire",
     "page": 102
@@ -1563,7 +1601,11 @@
     },
     "type": "Physical",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Street Grimoire",
     "page": 102
@@ -1582,7 +1624,11 @@
     },
     "type": "Physical",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Street Grimoire",
     "page": 102
@@ -1601,7 +1647,11 @@
     },
     "type": "Mana",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Street Grimoire",
     "page": 102
@@ -1620,7 +1670,11 @@
     },
     "type": "Mana",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Street Grimoire",
     "page": 103
@@ -1639,7 +1693,11 @@
     },
     "type": "Physical",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Street Grimoire",
     "page": 103
@@ -1690,7 +1748,11 @@
     },
     "type": "Mana",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Street Grimoire",
     "page": 103
@@ -1741,7 +1803,11 @@
     },
     "type": "Mana",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Street Grimoire",
     "page": 104
@@ -1760,7 +1826,11 @@
     },
     "type": "Mana",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Street Grimoire",
     "page": 104
@@ -1779,7 +1849,11 @@
     },
     "type": "Mana",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Street Grimoire",
     "page": 104
@@ -1798,7 +1872,11 @@
     },
     "type": "Physical",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Street Grimoire",
     "page": 104
@@ -1817,7 +1895,11 @@
     },
     "type": "Physical",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Street Grimoire",
     "page": 105
@@ -1836,7 +1918,11 @@
     },
     "type": "Physical",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Street Grimoire",
     "page": 105
@@ -2175,7 +2261,11 @@
     },
     "type": "Mana",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Street Grimoire",
     "page": 108
@@ -2306,7 +2396,11 @@
     },
     "type": "Physical",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Street Grimoire",
     "page": 109
@@ -2597,7 +2691,11 @@
     },
     "type": "Physical",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Street Grimoire",
     "page": 112
@@ -2616,7 +2714,11 @@
     },
     "type": "Physical",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Street Grimoire",
     "page": 112
@@ -2843,7 +2945,11 @@
     },
     "type": "Physical",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Street Grimoire",
     "page": 114
@@ -2926,7 +3032,11 @@
     },
     "type": "Physical",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Street Grimoire",
     "page": 115
@@ -2945,7 +3055,11 @@
     },
     "type": "Physical",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Street Grimoire",
     "page": 115
@@ -3284,7 +3398,11 @@
     },
     "type": "Physical",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Street Grimoire",
     "page": 118
@@ -3319,7 +3437,11 @@
     },
     "type": "Physical",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Street Grimoire",
     "page": 118
@@ -3496,7 +3618,11 @@
     },
     "type": "Mana",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "requirements": {},
     "source": "Street Grimoire",
@@ -3518,7 +3644,11 @@
     },
     "type": "Mana",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "requirements": {},
     "source": "Street Grimoire",
@@ -4532,7 +4662,11 @@
     },
     "type": "Physical",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Shadow Spells",
     "page": 17
@@ -4647,7 +4781,11 @@
     },
     "type": "Mana",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Shadow Spells",
     "page": 18

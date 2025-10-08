@@ -103,10 +103,12 @@
       }
     ],
     "bonus": {
-      "damageResistance": {
-        "option": "Rating"
-      },
-      "unarmedDamageType": "Physical"
+      "combatAndWeapon": {
+        "unarmedDamageType": "Physical",
+        "damageResistance": {
+          "option": "Rating"
+        }
+      }
     },
     "forbidden": {},
     "source": "Shadowrun 5 Core Rulebook",
@@ -180,6 +182,20 @@
         ]
       }
     ],
+    "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Logic"
+            },
+            "attributeIncrease": {
+              "option": "Rating"
+            }
+          }
+        ]
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 460
   },
@@ -235,8 +251,10 @@
       }
     ],
     "bonus": {
-      "ignoreConditionModifierNegativeEffects": {
-        "option": "Rating"
+      "conditionAndRecovery": {
+        "ignoreConditionModifierNegativeEffects": {
+          "option": "Rating"
+        }
       }
     },
     "forbidden": {},
@@ -258,7 +276,18 @@
     },
     "cost": [24000],
     "bonus": {
-      "physicalLimit": 1
+      "attribute": {
+        "physicalLimit": 1
+      },
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Escape Artist",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "forbidden": {},
     "source": "Shadowrun 5 Core Rulebook",
@@ -316,56 +345,55 @@
       }
     ],
     "bonus": {
-      "skillCategories": [
-        {
-          "category": "Academic",
-          "bonus": [
-            {
-              "option": "Rating"
-            }
-          ]
-        },
-        {
-          "category": "Interest",
-          "bonus": [
-            {
-              "option": "Rating"
-            }
-          ]
-        },
-        {
-          "category": "Language",
-          "bonus": [
-            {
-              "option": "Rating"
-            }
-          ]
-        },
-        {
-          "category": "Professional",
-          "bonus": [
-            {
-              "option": "Rating"
-            }
-          ]
-        },
-        {
-          "category": "Street",
-          "bonus": [
-            {
-              "option": "Rating"
-            }
-          ]
-        }
-      ],
-      "mentalLimit": {
-        "option": "Rating"
-      },
-      "memory": [
-        {
+      "attribute": {
+        "mentalLimit": {
           "option": "Rating"
         }
-      ]
+      },
+      "skill": {
+        "skillCategoryList": [
+          {
+            "name": "Academic",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Interest",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Language",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Professional",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Street",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      },
+      "testAndResistance": {
+        "memory": {
+          "option": "Rating"
+        }
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 460
@@ -421,11 +449,28 @@
       }
     ],
     "bonus": {
-      "disableQualities": [
-        {
-          "name": "Celerity"
-        }
-      ]
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Strength"
+            },
+            "attributeIncrease": {
+              "option": "Rating"
+            }
+          }
+        ]
+      },
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "Celerity"
+          }
+        ]
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "muscle"
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 459
@@ -481,11 +526,28 @@
       }
     ],
     "bonus": {
-      "disableQualities": [
-        {
-          "name": "Celerity"
-        }
-      ]
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Agility"
+            },
+            "attributeIncrease": {
+              "option": "Rating"
+            }
+          }
+        ]
+      },
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "Celerity"
+          }
+        ]
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "muscle"
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 459
@@ -541,11 +603,13 @@
       }
     ],
     "bonus": {
-      "armour": {
-        "bonus": {
-          "option": "Rating"
-        },
-        "nonStacking": true
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": {
+            "option": "Rating"
+          },
+          "nonStacking": true
+        }
       }
     },
     "forbidden": {},
@@ -621,17 +685,19 @@
       }
     ],
     "bonus": {
-      "pathogenContactResist": {
-        "option": "Rating"
-      },
-      "pathogenInhalationResist": {
-        "option": "Rating"
-      },
-      "pathogenIngestionResist": {
-        "option": "Rating"
-      },
-      "pathogenInjectionResist": {
-        "option": "Rating"
+      "combatAndWeapon": {
+        "pathogenContactResist": {
+          "option": "Rating"
+        },
+        "pathogenInhalationResist": {
+          "option": "Rating"
+        },
+        "pathogenIngestionResist": {
+          "option": "Rating"
+        },
+        "pathogenInjectionResist": {
+          "option": "Rating"
+        }
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -672,6 +738,23 @@
       "restriction": ""
     },
     "cost": [14000],
+    "bonus": {
+      "skill": {
+        "selectSkill": {
+          "skill": {
+            "restriction": {
+              "attributeList": {
+                "attributeList": ["BOD", "AGI", "REA", "STR"]
+              }
+            }
+          },
+          "bonus": {
+            "ratingIncreaseCount": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        }
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 460
   },
@@ -728,11 +811,41 @@
     },
     "cost": [140000],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 25
-        }
-      ]
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Body"
+            },
+            "attributeIncrease": 1
+          },
+          {
+            "linkType": {
+              "linkedAttribute": "Agility"
+            },
+            "attributeIncrease": 1
+          },
+          {
+            "linkType": {
+              "linkedAttribute": "Reaction"
+            },
+            "attributeIncrease": 1
+          },
+          {
+            "linkType": {
+              "linkedAttribute": "Strength"
+            },
+            "attributeIncrease": 1
+          }
+        ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 25
+          }
+        ]
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 459
@@ -788,11 +901,13 @@
       }
     ],
     "bonus": {
-      "stunHealing": {
-        "option": "Rating"
-      },
-      "physicalHealing": {
-        "option": "Rating"
+      "conditionAndRecovery": {
+        "stunHealing": {
+          "option": "Rating"
+        },
+        "physicalHealing": {
+          "option": "Rating"
+        }
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -850,16 +965,32 @@
       }
     ],
     "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Reaction"
+            },
+            "attributeIncrease": {
+              "option": "Rating"
+            }
+          }
+        ]
+      },
       "initiative": {
-        "bonusDice": {
-          "option": "Rating"
+        "initiative": {
+          "bonusDice": {
+            "option": "Rating"
+          }
         }
       },
-      "disableQualities": [
-        {
-          "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
-        }
-      ]
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
+          }
+        ]
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 461
@@ -915,16 +1046,17 @@
       }
     ],
     "bonus": {
-      "skillGroups": [
-        {
-          "group": "Athletics",
-          "bonus": [
-            {
+      "skill": {
+        "skillGroupList": [
+          {
+            "name": "Athletics",
+            "bonus": {
               "option": "Rating"
-            }
-          ]
-        }
-      ]
+            },
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 460
@@ -980,29 +1112,31 @@
       }
     ],
     "bonus": {
-      "skillGroups": [
-        {
-          "group": "Acting",
-          "bonus": [
-            {
-              "option": "Rating"
-            }
-          ]
-        },
-        {
-          "group": "Influence",
-          "bonus": [
-            {
-              "option": "Rating"
-            }
-          ]
-        }
-      ],
-      "socialLimit": [
-        {
+      "attribute": {
+        "socialLimit": {
           "option": "Rating"
         }
-      ]
+      },
+      "skill": {
+        "skillGroupList": [
+          {
+            "name": "Acting",
+            "bonus": {
+              "option": "Rating"
+            },
+            "condition": "People who can smell you",
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Influence",
+            "bonus": {
+              "option": "Rating"
+            },
+            "condition": "People who can smell you",
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 460
@@ -1058,17 +1192,19 @@
       }
     ],
     "bonus": {
-      "toxinContactResist": {
-        "option": "Rating"
-      },
-      "toxinInhalationResist": {
-        "option": "Rating"
-      },
-      "toxinIngestionResist": {
-        "option": "Rating"
-      },
-      "toxinInjectionResist": {
-        "option": "Rating"
+      "combatAndWeapon": {
+        "toxinContactResist": {
+          "option": "Rating"
+        },
+        "toxinInhalationResist": {
+          "option": "Rating"
+        },
+        "toxinIngestionResist": {
+          "option": "Rating"
+        },
+        "toxinInjectionResist": {
+          "option": "Rating"
+        }
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -1125,8 +1261,10 @@
       }
     ],
     "bonus": {
-      "toxinInhalationResist": {
-        "option": "Rating"
+      "combatAndWeapon": {
+        "toxinInhalationResist": {
+          "option": "Rating"
+        }
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -1171,7 +1309,11 @@
       }
     ],
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "allowedGearCategories": [
       "Chemicals",
@@ -1396,8 +1538,12 @@
     },
     "cost": [20000],
     "bonus": {
-      "toxinContactResist": 2,
-      "fatigueResist": -2
+      "combatAndWeapon": {
+        "toxinContactResist": 2
+      },
+      "testAndResistance": {
+        "fatigueResist": -2
+      }
     },
     "requirements": {},
     "source": "Chrome Flesh",
@@ -1418,7 +1564,9 @@
     },
     "cost": [2000],
     "bonus": {
-      "fireArmour": 2
+      "combatAndWeapon": {
+        "fireArmour": 2
+      }
     },
     "requirements": {},
     "source": "Chrome Flesh",
@@ -1439,7 +1587,9 @@
     },
     "cost": [8000],
     "bonus": {
-      "electricityArmour": 2
+      "combatAndWeapon": {
+        "electricityArmour": 2
+      }
     },
     "requirements": {},
     "forbidden": {},
@@ -1461,7 +1611,9 @@
     },
     "cost": [8000],
     "bonus": {
-      "electricityArmour": -2
+      "combatAndWeapon": {
+        "electricityArmour": -2
+      }
     },
     "requirements": {},
     "forbidden": {},
@@ -1483,7 +1635,9 @@
     },
     "cost": [2000],
     "bonus": {
-      "coldArmour": 2
+      "combatAndWeapon": {
+        "coldArmour": 2
+      }
     },
     "requirements": {},
     "source": "Chrome Flesh",
@@ -1522,7 +1676,9 @@
     },
     "cost": [8000],
     "bonus": {
-      "unarmedReach": 1
+      "combatAndWeapon": {
+        "unarmedReach": 1
+      }
     },
     "requirements": {},
     "source": "Chrome Flesh",
@@ -1542,6 +1698,17 @@
       "restriction": ""
     },
     "cost": [8000],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Physical",
+            "value": 1,
+            "condition": "Only for Escape Artist"
+          }
+        ]
+      }
+    },
     "forbidden": {},
     "source": "Chrome Flesh",
     "page": 112
@@ -1561,7 +1728,9 @@
     },
     "cost": [8000],
     "bonus": {
-      "fatigueResist": -2
+      "testAndResistance": {
+        "fatigueResist": -2
+      }
     },
     "source": "Chrome Flesh",
     "page": 113
@@ -1584,8 +1753,21 @@
     },
     "cost": [1000],
     "selectSide": true,
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Physical",
+            "value": 1,
+            "condition": "Only for Swimming"
+          }
+        ]
+      }
+    },
     "pairBonus": {
-      "swimSpeedPercentageModifier": 100
+      "movementAndLifestyle": {
+        "swimSpeedPercentageModifier": 100
+      }
     },
     "source": "Chrome Flesh",
     "page": 113
@@ -1608,8 +1790,21 @@
     },
     "cost": [1000],
     "selectSide": true,
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Physical",
+            "value": 1,
+            "condition": "Only for Swimming"
+          }
+        ]
+      }
+    },
     "pairBonus": {
-      "swimSpeedPercentageModifier": 100
+      "movementAndLifestyle": {
+        "swimSpeedPercentageModifier": 100
+      }
     },
     "source": "Chrome Flesh",
     "page": 113
@@ -1796,6 +1991,22 @@
       "restriction": ""
     },
     "cost": [10000],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Only for test involving speaking"
+          },
+          {
+            "category": "Social",
+            "value": 2,
+            "condition": "Only for Performance (Singing)"
+          }
+        ]
+      }
+    },
     "source": "Chrome Flesh",
     "page": 115
   },
@@ -1813,6 +2024,22 @@
       "restriction": "R"
     },
     "cost": [30000],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Only for test involving speaking"
+          },
+          {
+            "category": "Social",
+            "value": 2,
+            "condition": "Only for Performance (Singing)"
+          }
+        ]
+      }
+    },
     "source": "Chrome Flesh",
     "page": 115
   },
@@ -1867,50 +2094,48 @@
       }
     ],
     "bonus": {
-      "toxinContactResist": {
-        "option": "Rating"
-      },
-      "pathogenContactResist": {
-        "option": "Rating"
-      },
-      "toxinInhalationResist": {
-        "option": "Rating"
-      },
-      "pathogenInhalationResist": {
-        "option": "Rating"
-      },
-      "toxinIngestionResist": {
-        "option": "Rating"
-      },
-      "pathogenIngestionResist": {
-        "option": "Rating"
-      },
-      "toxinInjectionResist": {
-        "option": "Rating"
-      },
-      "pathogenInjectionResist": {
-        "option": "Rating"
-      },
-      "addictionResistance": {
-        "physiological": {
-          "initialTest": [
-            {
-              "option": "Rating"
-            }
-          ],
-          "progressingTest": [
-            {
-              "option": "Rating"
-            }
-          ]
+      "combatAndWeapon": {
+        "toxinContactResist": {
+          "option": "Rating"
         },
-        "psychological": {
-          "initialTest": [
-            {
+        "pathogenContactResist": {
+          "option": "Rating"
+        },
+        "toxinInhalationResist": {
+          "option": "Rating"
+        },
+        "pathogenInhalationResist": {
+          "option": "Rating"
+        },
+        "toxinIngestionResist": {
+          "option": "Rating"
+        },
+        "pathogenIngestionResist": {
+          "option": "Rating"
+        },
+        "toxinInjectionResist": {
+          "option": "Rating"
+        },
+        "pathogenInjectionResist": {
+          "option": "Rating"
+        }
+      },
+      "conditionAndRecovery": {
+        "addictionResistance": {
+          "physiological": {
+            "initialTest": {
+              "option": "Rating"
+            },
+            "progressingTest": {
               "option": "Rating"
             }
-          ],
-          "progressingTest": [0]
+          },
+          "psychological": {
+            "initialTest": {
+              "option": "Rating"
+            },
+            "progressingTest": 0
+          }
         }
       }
     },
@@ -1985,7 +2210,11 @@
       }
     ],
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Chrome Flesh",
     "page": 115
@@ -2041,8 +2270,10 @@
       }
     ],
     "bonus": {
-      "fatigueResist": {
-        "option": "Rating"
+      "testAndResistance": {
+        "fatigueResist": {
+          "option": "Rating"
+        }
       }
     },
     "source": "Chrome Flesh",
@@ -2099,17 +2330,19 @@
       }
     ],
     "bonus": {
-      "pathogenContactResist": {
-        "option": "Rating"
-      },
-      "pathogenInhalationResist": {
-        "option": "Rating"
-      },
-      "pathogenIngestionResist": {
-        "option": "Rating"
-      },
-      "pathogenInjectionResist": {
-        "option": "Rating"
+      "combatAndWeapon": {
+        "pathogenContactResist": {
+          "option": "Rating"
+        },
+        "pathogenInhalationResist": {
+          "option": "Rating"
+        },
+        "pathogenIngestionResist": {
+          "option": "Rating"
+        },
+        "pathogenInjectionResist": {
+          "option": "Rating"
+        }
       }
     },
     "source": "Chrome Flesh",
@@ -2138,7 +2371,11 @@
       }
     },
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Chrome Flesh",
     "page": 108
@@ -2166,7 +2403,11 @@
       }
     },
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Chrome Flesh",
     "page": 108
@@ -2194,7 +2435,11 @@
       }
     },
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Chrome Flesh",
     "page": 108
@@ -2226,8 +2471,22 @@
       "ratingLinked": [[15000], [25000]]
     },
     "bonus": {
-      "armour": {
-        "bonus": -1
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Charisma"
+            },
+            "maximumIncrease": {
+              "option": "Rating"
+            }
+          }
+        ]
+      },
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": -1
+        }
       }
     },
     "requirements": {},
@@ -2248,6 +2507,18 @@
       "restriction": ""
     },
     "cost": [15000],
+    "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Charisma"
+            },
+            "maximumIncrease": 1
+          }
+        ]
+      }
+    },
     "requirements": {},
     "source": "Chrome Flesh",
     "page": 108
@@ -2270,7 +2541,11 @@
     },
     "cost": [10000],
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Chrome Flesh",
     "page": 108
@@ -2293,7 +2568,11 @@
     },
     "cost": [20000],
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Chrome Flesh",
     "page": 108
@@ -2319,7 +2598,9 @@
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
     "pairBonus": {
-      "unarmedReach": 1
+      "combatAndWeapon": {
+        "unarmedReach": 1
+      }
     },
     "source": "Chrome Flesh",
     "page": 120
@@ -2413,7 +2694,9 @@
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
     "bonus": {
-      "unarmedDamageType": "Physical"
+      "combatAndWeapon": {
+        "unarmedDamageType": "Physical"
+      }
     },
     "pairIncludeList": ["Striking Callus (Feet)"],
     "source": "Chrome Flesh",
@@ -2439,7 +2722,9 @@
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "selectSide": true,
     "bonus": {
-      "unarmedDamageType": "Physical"
+      "combatAndWeapon": {
+        "unarmedDamageType": "Physical"
+      }
     },
     "pairIncludeList": ["Striking Callus (Hands)"],
     "source": "Chrome Flesh",
@@ -2649,9 +2934,11 @@
     },
     "cost": [2000],
     "bonus": {
-      "weaponAccuracy": {
-        "weapon": "[contains]Fangs",
-        "bonus": 2
+      "combatAndWeapon": {
+        "weaponAccuracy": {
+          "weapon": "[contains]Fangs",
+          "bonus": 2
+        }
       }
     },
     "source": "Chrome Flesh",
@@ -2770,7 +3057,11 @@
       "ratingLinked": [[500], [1000], [1500]]
     },
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Chrome Flesh",
     "page": 109
@@ -2789,6 +3080,17 @@
       "restriction": ""
     },
     "cost": [2000],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Physical",
+            "value": 1,
+            "condition": "Only for Stealth group, Must be completely naked"
+          }
+        ]
+      }
+    },
     "source": "Chrome Flesh",
     "page": 109
   },
@@ -2806,6 +3108,17 @@
       "restriction": ""
     },
     "cost": [4000],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Physical",
+            "value": 2,
+            "condition": "Only for Stealth group, Must be completely naked"
+          }
+        ]
+      }
+    },
     "source": "Chrome Flesh",
     "page": 109
   },
@@ -2878,7 +3191,11 @@
     },
     "cost": [200],
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Chrome Flesh",
     "page": 109
@@ -2953,7 +3270,11 @@
       }
     ],
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Chrome Flesh",
     "page": 110
@@ -2996,7 +3317,11 @@
     },
     "cost": [200],
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Chrome Flesh",
     "page": 111
@@ -3019,7 +3344,11 @@
     },
     "cost": [1000],
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Chrome Flesh",
     "page": 111
@@ -3075,6 +3404,20 @@
         ]
       }
     ],
+    "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Intuition"
+            },
+            "attributeIncrease": {
+              "option": "Rating"
+            }
+          }
+        ]
+      }
+    },
     "source": "Chrome Flesh",
     "page": 118
   },
@@ -3095,13 +3438,17 @@
     "cost": [10000],
     "bonus": {
       "initiative": {
-        "bonusDice": 1
-      },
-      "disableQualities": [
-        {
-          "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
+        "initiative": {
+          "bonusDice": 1
         }
-      ]
+      },
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
+          }
+        ]
+      }
     },
     "source": "Chrome Flesh",
     "page": 118
@@ -3124,6 +3471,24 @@
       "restriction": ""
     },
     "cost": [2000],
+    "bonus": {
+      "skill": {
+        "selectSkill": {
+          "skill": {
+            "restriction": {
+              "knowledgeSkillRestriction": {
+                "limit": "Only"
+              }
+            },
+            "maximumRating": 0
+          },
+          "bonus": {
+            "ratingIncreaseCount": 1,
+            "modifierType": "ApplyBonusToLevel"
+          }
+        }
+      }
+    },
     "source": "Chrome Flesh",
     "page": 118
   },
@@ -3231,11 +3596,13 @@
     },
     "cost": [10000],
     "bonus": {
-      "qualityList": [
-        {
-          "name": "Photographic Memory"
-        }
-      ]
+      "quality": {
+        "addQualityList": [
+          {
+            "name": "Photographic Memory"
+          }
+        ]
+      }
     },
     "source": "Chrome Flesh",
     "page": 118
@@ -3517,7 +3884,9 @@
     },
     "cost": [15000],
     "bonus": {
-      "memory": [2]
+      "testAndResistance": {
+        "memory": 2
+      }
     },
     "source": "Chrome Flesh",
     "page": 159
@@ -3538,7 +3907,9 @@
     },
     "cost": [16500],
     "bonus": {
-      "fatigueResist": 1
+      "testAndResistance": {
+        "fatigueResist": 1
+      }
     },
     "source": "Chrome Flesh",
     "page": 159
@@ -3559,7 +3930,9 @@
     },
     "cost": [12000],
     "bonus": {
-      "electricityArmour": 1
+      "combatAndWeapon": {
+        "electricityArmour": 1
+      }
     },
     "source": "Chrome Flesh",
     "page": 159
@@ -3580,12 +3953,22 @@
     },
     "cost": [30500],
     "bonus": {
-      "modifyAttributeImprovementKarmaCost": [
-        {
-          "name": "Strength",
-          "bonus": -2
-        }
-      ]
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Strength"
+            },
+            "attributeIncrease": 1
+          }
+        ],
+        "modifyAttributeImprovementKarmaCost": [
+          {
+            "name": "Strength",
+            "bonus": -2
+          }
+        ]
+      }
     },
     "source": "Chrome Flesh",
     "page": 159
@@ -3606,14 +3989,16 @@
     },
     "cost": [16420],
     "bonus": {
-      "addictionResistance": {
-        "physiological": {
-          "initialTest": [-2],
-          "progressingTest": [2]
-        },
-        "psychological": {
-          "initialTest": [-2],
-          "progressingTest": [0]
+      "conditionAndRecovery": {
+        "addictionResistance": {
+          "physiological": {
+            "initialTest": -2,
+            "progressingTest": 2
+          },
+          "psychological": {
+            "initialTest": -2,
+            "progressingTest": 0
+          }
         }
       }
     },
@@ -3654,15 +4039,19 @@
     },
     "cost": [8000],
     "bonus": {
-      "toxinContactResist": 1,
-      "toxinInhalationResist": 1,
-      "toxinIngestionResist": 1,
-      "toxinInjectionResist": 1,
-      "lifestyleCostModifier": [
-        {
-          "cost": -10
-        }
-      ]
+      "combatAndWeapon": {
+        "toxinContactResist": 1,
+        "toxinInhalationResist": 1,
+        "toxinIngestionResist": 1,
+        "toxinInjectionResist": 1
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": -10
+          }
+        ]
+      }
     },
     "source": "Chrome Flesh",
     "page": 160
@@ -3683,7 +4072,9 @@
     },
     "cost": [30000],
     "bonus": {
-      "adapsin": true
+      "specificQuality": {
+        "adapsin": true
+      }
     },
     "source": "Chrome Flesh",
     "page": 160
@@ -3704,37 +4095,52 @@
     },
     "cost": [61000],
     "bonus": {
-      "qualityList": [
-        {
-          "name": "Poor Self Control (Thrill Seeker) (Dareadrenaline)"
-        }
-      ],
-      "addictionResistance": {
-        "physiological": {
-          "initialTest": [1],
-          "progressingTest": [1]
-        },
-        "psychological": {
-          "initialTest": [1],
-          "progressingTest": [0]
+      "skill": {
+        "skillIncreaseForAttributeList": [
+          {
+            "name": "WIL",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      },
+      "conditionAndRecovery": {
+        "addictionResistance": {
+          "physiological": {
+            "initialTest": 1,
+            "progressingTest": 1
+          },
+          "psychological": {
+            "initialTest": 1,
+            "progressingTest": 0
+          }
         }
       },
-      "composure": 1,
-      "judgeIntentionsDefense": [1],
-      "drainResist": [1],
-      "fadingResist": [1],
-      "directManaResist": [1],
-      "detectionResist": [1],
-      "manaIllusionResist": [1],
-      "mentalManipulationResist": [1],
-      "decreaseBodyResist": [1],
-      "decreaseAgilityResist": [1],
-      "decreaseReasonanceResist": [1],
-      "decreaseStrengthResist": [1],
-      "decreaseCharismaResist": [1],
-      "decreaseIntuitionResist": [1],
-      "decreaseLogicResist": [1],
-      "decreaseWillpowerResist": [1]
+      "testAndResistance": {
+        "composure": 1,
+        "judgeIntentionsDefense": 1,
+        "drainResist": 1,
+        "fadingResist": 1,
+        "directManaResist": 1,
+        "detectionResist": 1,
+        "manaIllusionResist": 1,
+        "mentalManipulationResist": 1,
+        "decreaseBodyResist": 1,
+        "decreaseAgilityResist": 1,
+        "decreaseReasonanceResist": 1,
+        "decreaseStrengthResist": 1,
+        "decreaseCharismaResist": 1,
+        "decreaseIntuitionResist": 1,
+        "decreaseLogicResist": 1,
+        "decreaseWillpowerResist": 1
+      },
+      "quality": {
+        "addQualityList": [
+          {
+            "name": "Poor Self Control (Thrill Seeker) (Dareadrenaline)"
+          }
+        ]
+      }
     },
     "source": "Chrome Flesh",
     "page": 160
@@ -3755,7 +4161,9 @@
     },
     "cost": [18000],
     "bonus": {
-      "fatigueResist": -1
+      "testAndResistance": {
+        "fatigueResist": -1
+      }
     },
     "source": "Chrome Flesh",
     "page": 160
@@ -3776,11 +4184,13 @@
     },
     "cost": [8000],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 10
-        }
-      ]
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 10
+          }
+        ]
+      }
     },
     "source": "Chrome Flesh",
     "page": 160
@@ -3800,6 +4210,17 @@
       "restriction": ""
     },
     "cost": [7000],
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Navigation",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Chrome Flesh",
     "page": 160
   },
@@ -3819,16 +4240,25 @@
     },
     "cost": [38000],
     "bonus": {
-      "skillGroups": [
-        {
-          "group": "Athletics",
-          "bonus": [1]
-        }
-      ],
-      "fatigueResist": 1,
-      "physicalLimit": 1,
-      "stunHealing": 1,
-      "physicalHealing": 1
+      "attribute": {
+        "physicalLimit": 1
+      },
+      "skill": {
+        "skillGroupList": [
+          {
+            "name": "Athletics",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      },
+      "conditionAndRecovery": {
+        "stunHealing": 1,
+        "physicalHealing": 1
+      },
+      "testAndResistance": {
+        "fatigueResist": 1
+      }
     },
     "source": "Chrome Flesh",
     "page": 160
@@ -3848,6 +4278,17 @@
       "restriction": ""
     },
     "cost": [62000],
+    "bonus": {
+      "skill": {
+        "skillIncreaseForAttributeList": [
+          {
+            "name": "LOG",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Chrome Flesh",
     "page": 160
   },
@@ -3866,6 +4307,17 @@
       "restriction": ""
     },
     "cost": [65000],
+    "bonus": {
+      "skill": {
+        "skillIncreaseForAttributeList": [
+          {
+            "name": "INT",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Chrome Flesh",
     "page": 161
   },
@@ -3885,7 +4337,9 @@
     },
     "cost": [73000],
     "bonus": {
-      "dodge": [2]
+      "combatAndWeapon": {
+        "dodge": 2
+      }
     },
     "source": "Chrome Flesh",
     "page": 161
@@ -3905,6 +4359,17 @@
       "restriction": ""
     },
     "cost": [9000],
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Gymnastics",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Chrome Flesh",
     "page": 161
   },
@@ -3924,11 +4389,13 @@
     },
     "cost": [8000],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": -10
-        }
-      ]
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": -10
+          }
+        ]
+      }
     },
     "source": "Chrome Flesh",
     "page": 161
@@ -3949,15 +4416,21 @@
     },
     "cost": [78000],
     "bonus": {
-      "initiative": {
-        "bonusDice": 1
+      "combatAndWeapon": {
+        "dodge": 1
       },
-      "disableQualities": [
-        {
-          "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
+      "initiative": {
+        "initiative": {
+          "bonusDice": 1
         }
-      ],
-      "dodge": [1]
+      },
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
+          }
+        ]
+      }
     },
     "source": "Chrome Flesh",
     "page": 162
@@ -3977,6 +4450,17 @@
       "restriction": ""
     },
     "cost": [14000],
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Perception",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Chrome Flesh",
     "page": 162
   },
@@ -3995,6 +4479,18 @@
       "restriction": ""
     },
     "cost": [8000],
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Perception",
+            "bonus": 3,
+            "condition": "Visual",
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Chrome Flesh",
     "page": 161
   },
@@ -4031,6 +4527,11 @@
       "restriction": ""
     },
     "cost": [20000],
+    "bonus": {
+      "miscellaneous": {
+        "uniqueBonusCategory": "microadaptation"
+      }
+    },
     "source": "Chrome Flesh",
     "page": 163
   },
@@ -4050,7 +4551,12 @@
     },
     "cost": [8000],
     "bonus": {
-      "coldArmour": 2
+      "combatAndWeapon": {
+        "coldArmour": 2
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "microadaptation"
+      }
     },
     "forbidden": {},
     "source": "Chrome Flesh",
@@ -4071,6 +4577,11 @@
       "restriction": ""
     },
     "cost": [50000],
+    "bonus": {
+      "miscellaneous": {
+        "uniqueBonusCategory": "microadaptation"
+      }
+    },
     "source": "Chrome Flesh",
     "page": 163
   },
@@ -4090,7 +4601,12 @@
     },
     "cost": [8000],
     "bonus": {
-      "fireArmour": 2
+      "combatAndWeapon": {
+        "fireArmour": 2
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "microadaptation"
+      }
     },
     "forbidden": {},
     "source": "Chrome Flesh",
@@ -4112,11 +4628,16 @@
     },
     "cost": [8000],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 10
-        }
-      ]
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 10
+          }
+        ]
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "microadaptation"
+      }
     },
     "source": "Chrome Flesh",
     "page": 163
@@ -4136,6 +4657,11 @@
       "restriction": ""
     },
     "cost": [30000],
+    "bonus": {
+      "miscellaneous": {
+        "uniqueBonusCategory": "microadaptation"
+      }
+    },
     "source": "Chrome Flesh",
     "page": 163
   },
@@ -4155,9 +4681,14 @@
     },
     "cost": [15000],
     "bonus": {
-      "toxinContactResist": 2,
-      "toxinInhalationResist": 2,
-      "toxinIngestionResist": 2
+      "combatAndWeapon": {
+        "toxinContactResist": 2,
+        "toxinInhalationResist": 2,
+        "toxinIngestionResist": 2
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "microadaptation"
+      }
     },
     "source": "Chrome Flesh",
     "page": 163
@@ -4178,7 +4709,12 @@
     },
     "cost": [15000],
     "bonus": {
-      "radiationResistance": 2
+      "combatAndWeapon": {
+        "radiationResistance": 2
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "microadaptation"
+      }
     },
     "source": "Chrome Flesh",
     "page": 164
@@ -4204,7 +4740,11 @@
       }
     },
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Chrome Flesh",
     "page": 164
@@ -4245,7 +4785,9 @@
     "cost": [6600],
     "bonus": {
       "initiative": {
-        "bonus": 1
+        "initiative": {
+          "bonus": 1
+        }
       }
     },
     "requirements": {},
@@ -4343,6 +4885,18 @@
       "restriction": ""
     },
     "cost": [47000],
+    "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Body"
+            },
+            "maximumIncrease": 1
+          }
+        ]
+      }
+    },
     "forbidden": {},
     "source": "Chrome Flesh",
     "page": 157
@@ -4362,6 +4916,18 @@
       "restriction": ""
     },
     "cost": [47000],
+    "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Agility"
+            },
+            "maximumIncrease": 1
+          }
+        ]
+      }
+    },
     "forbidden": {},
     "source": "Chrome Flesh",
     "page": 157
@@ -4381,6 +4947,18 @@
       "restriction": ""
     },
     "cost": [47000],
+    "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Reaction"
+            },
+            "maximumIncrease": 1
+          }
+        ]
+      }
+    },
     "forbidden": {},
     "source": "Chrome Flesh",
     "page": 157
@@ -4400,6 +4978,18 @@
       "restriction": ""
     },
     "cost": [47000],
+    "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Strength"
+            },
+            "maximumIncrease": 1
+          }
+        ]
+      }
+    },
     "forbidden": {},
     "source": "Chrome Flesh",
     "page": 157
@@ -4419,6 +5009,18 @@
       "restriction": ""
     },
     "cost": [47000],
+    "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Charisma"
+            },
+            "maximumIncrease": 1
+          }
+        ]
+      }
+    },
     "forbidden": {},
     "source": "Chrome Flesh",
     "page": 157
@@ -4438,6 +5040,18 @@
       "restriction": ""
     },
     "cost": [47000],
+    "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Intuition"
+            },
+            "maximumIncrease": 1
+          }
+        ]
+      }
+    },
     "forbidden": {},
     "source": "Chrome Flesh",
     "page": 157
@@ -4457,6 +5071,18 @@
       "restriction": ""
     },
     "cost": [47000],
+    "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Logic"
+            },
+            "maximumIncrease": 1
+          }
+        ]
+      }
+    },
     "forbidden": {},
     "source": "Chrome Flesh",
     "page": 157
@@ -4476,6 +5102,18 @@
       "restriction": ""
     },
     "cost": [47000],
+    "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Willpower"
+            },
+            "maximumIncrease": 1
+          }
+        ]
+      }
+    },
     "forbidden": {},
     "source": "Chrome Flesh",
     "page": 157
@@ -4499,7 +5137,11 @@
     },
     "cost": [35000],
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Chrome Flesh",
     "page": 158
@@ -4540,6 +5182,20 @@
       "restriction": ""
     },
     "cost": [38000],
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Heritage"
+            },
+            {
+              "base": "Heritage"
+            }
+          ]
+        }
+      }
+    },
     "source": "Chrome Flesh",
     "page": 158
   },
@@ -4562,7 +5218,11 @@
     },
     "cost": [20000],
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Chrome Flesh",
     "page": 164
@@ -4586,7 +5246,11 @@
     },
     "cost": [90000],
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Chrome Flesh",
     "page": 156
@@ -4735,8 +5399,10 @@
     },
     "cost": [100],
     "bonus": {
-      "stunHealing": 1,
-      "physicalHealing": 1
+      "conditionAndRecovery": {
+        "stunHealing": 1,
+        "physicalHealing": 1
+      }
     },
     "source": "Chrome Flesh",
     "page": 123
@@ -4773,11 +5439,13 @@
     },
     "cost": [10000],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": -10
-        }
-      ]
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": -10
+          }
+        ]
+      }
     },
     "source": "Chrome Flesh",
     "page": 123
@@ -4891,8 +5559,10 @@
     },
     "cost": [30000],
     "bonus": {
-      "stunHealing": 1,
-      "physicalHealing": 2
+      "conditionAndRecovery": {
+        "stunHealing": 1,
+        "physicalHealing": 2
+      }
     },
     "source": "Chrome Flesh",
     "page": 124
@@ -4912,7 +5582,9 @@
     },
     "cost": [1000],
     "bonus": {
-      "toxinIngestionResist": 1
+      "combatAndWeapon": {
+        "toxinIngestionResist": 1
+      }
     },
     "source": "Chrome Flesh",
     "page": 124
@@ -4949,7 +5621,9 @@
     },
     "cost": [4500],
     "bonus": {
-      "ambidextrous": true
+      "specificQuality": {
+        "ambidextrous": true
+      }
     },
     "source": "Hard Targets",
     "page": 185
@@ -5096,6 +5770,26 @@
       "restriction": ""
     },
     "cost": [40000],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Physical",
+            "value": 1,
+            "condition": "Only for Escape Artist"
+          }
+        ]
+      },
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Escape Artist",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Shadowrun 2050",
     "page": 205
   },
@@ -5114,11 +5808,41 @@
     },
     "cost": [50000],
     "bonus": {
-      "lifestyleCostModifier": [
-        {
-          "cost": 25
-        }
-      ]
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Body"
+            },
+            "attributeIncrease": 1
+          },
+          {
+            "linkType": {
+              "linkedAttribute": "Agility"
+            },
+            "attributeIncrease": 1
+          },
+          {
+            "linkType": {
+              "linkedAttribute": "Reaction"
+            },
+            "attributeIncrease": 1
+          },
+          {
+            "linkType": {
+              "linkedAttribute": "Strength"
+            },
+            "attributeIncrease": 1
+          }
+        ]
+      },
+      "movementAndLifestyle": {
+        "lifestyleCostModifier": [
+          {
+            "cost": 25
+          }
+        ]
+      }
     },
     "source": "Shadowrun 2050",
     "page": 205
@@ -5203,11 +5927,11 @@
       }
     ],
     "bonus": {
-      "socialLimit": [
-        {
+      "attribute": {
+        "socialLimit": {
           "option": "Rating"
         }
-      ]
+      }
     },
     "source": "Shadowrun 2050",
     "page": 205
@@ -5252,56 +5976,55 @@
       }
     ],
     "bonus": {
-      "skillCategories": [
-        {
-          "category": "Academic",
-          "bonus": [
-            {
-              "option": "Rating"
-            }
-          ]
-        },
-        {
-          "category": "Interest",
-          "bonus": [
-            {
-              "option": "Rating"
-            }
-          ]
-        },
-        {
-          "category": "Language",
-          "bonus": [
-            {
-              "option": "Rating"
-            }
-          ]
-        },
-        {
-          "category": "Professional",
-          "bonus": [
-            {
-              "option": "Rating"
-            }
-          ]
-        },
-        {
-          "category": "Street",
-          "bonus": [
-            {
-              "option": "Rating"
-            }
-          ]
-        }
-      ],
-      "mentalLimit": {
-        "option": "Rating"
-      },
-      "memory": [
-        {
+      "attribute": {
+        "mentalLimit": {
           "option": "Rating"
         }
-      ]
+      },
+      "skill": {
+        "skillCategoryList": [
+          {
+            "name": "Academic",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Interest",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Language",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Professional",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Street",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      },
+      "testAndResistance": {
+        "memory": {
+          "option": "Rating"
+        }
+      }
     },
     "source": "Shadowrun 2050",
     "page": 205
@@ -5357,11 +6080,28 @@
       }
     ],
     "bonus": {
-      "disableQualities": [
-        {
-          "name": "Celerity"
-        }
-      ]
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Agility"
+            },
+            "attributeIncrease": {
+              "option": "Rating"
+            }
+          }
+        ]
+      },
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "Celerity"
+          }
+        ]
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "muscle"
+      }
     },
     "source": "Shadowrun 2050",
     "page": 205
@@ -5417,11 +6157,28 @@
       }
     ],
     "bonus": {
-      "disableQualities": [
-        {
-          "name": "Celerity"
-        }
-      ]
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Strength"
+            },
+            "attributeIncrease": {
+              "option": "Rating"
+            }
+          }
+        ]
+      },
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "Celerity"
+          }
+        ]
+      },
+      "miscellaneous": {
+        "uniqueBonusCategory": "muscle"
+      }
     },
     "source": "Shadowrun 2050",
     "page": 205
@@ -5465,50 +6222,48 @@
       }
     ],
     "bonus": {
-      "toxinContactResist": {
-        "option": "Rating"
-      },
-      "pathogenContactResist": {
-        "option": "Rating"
-      },
-      "toxinInhalationResist": {
-        "option": "Rating"
-      },
-      "pathogenInhalationResist": {
-        "option": "Rating"
-      },
-      "toxinIngestionResist": {
-        "option": "Rating"
-      },
-      "pathogenIngestionResist": {
-        "option": "Rating"
-      },
-      "toxinInjectionResist": {
-        "option": "Rating"
-      },
-      "pathogenInjectionResist": {
-        "option": "Rating"
-      },
-      "addictionResistance": {
-        "physiological": {
-          "initialTest": [
-            {
-              "option": "Rating"
-            }
-          ],
-          "progressingTest": [
-            {
-              "option": "Rating"
-            }
-          ]
+      "combatAndWeapon": {
+        "toxinContactResist": {
+          "option": "Rating"
         },
-        "psychological": {
-          "initialTest": [
-            {
+        "pathogenContactResist": {
+          "option": "Rating"
+        },
+        "toxinInhalationResist": {
+          "option": "Rating"
+        },
+        "pathogenInhalationResist": {
+          "option": "Rating"
+        },
+        "toxinIngestionResist": {
+          "option": "Rating"
+        },
+        "pathogenIngestionResist": {
+          "option": "Rating"
+        },
+        "toxinInjectionResist": {
+          "option": "Rating"
+        },
+        "pathogenInjectionResist": {
+          "option": "Rating"
+        }
+      },
+      "conditionAndRecovery": {
+        "addictionResistance": {
+          "physiological": {
+            "initialTest": {
+              "option": "Rating"
+            },
+            "progressingTest": {
               "option": "Rating"
             }
-          ],
-          "progressingTest": [0]
+          },
+          "psychological": {
+            "initialTest": {
+              "option": "Rating"
+            },
+            "progressingTest": 0
+          }
         }
       }
     },
@@ -5554,11 +6309,13 @@
       }
     ],
     "bonus": {
-      "armour": {
-        "bonus": {
-          "option": "Rating"
-        },
-        "nonStacking": true
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": {
+            "option": "Rating"
+          },
+          "nonStacking": true
+        }
       }
     },
     "forbidden": {},
@@ -5604,17 +6361,19 @@
       }
     ],
     "bonus": {
-      "pathogenContactResist": {
-        "option": "Rating"
-      },
-      "pathogenInhalationResist": {
-        "option": "Rating"
-      },
-      "pathogenIngestionResist": {
-        "option": "Rating"
-      },
-      "pathogenInjectionResist": {
-        "option": "Rating"
+      "combatAndWeapon": {
+        "pathogenContactResist": {
+          "option": "Rating"
+        },
+        "pathogenInhalationResist": {
+          "option": "Rating"
+        },
+        "pathogenIngestionResist": {
+          "option": "Rating"
+        },
+        "pathogenInjectionResist": {
+          "option": "Rating"
+        }
       }
     },
     "source": "Shadowrun 2050",
@@ -5638,6 +6397,23 @@
       "restriction": ""
     },
     "cost": [10000],
+    "bonus": {
+      "skill": {
+        "selectSkill": {
+          "skill": {
+            "restriction": {
+              "attributeList": {
+                "attributeList": ["BOD", "AGI", "REA", "STR"]
+              }
+            }
+          },
+          "bonus": {
+            "ratingIncreaseCount": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        }
+      }
+    },
     "source": "Shadowrun 2050",
     "page": 205
   },
@@ -5681,8 +6457,10 @@
       }
     ],
     "bonus": {
-      "ignoreConditionModifierNegativeEffects": {
-        "option": "Rating"
+      "conditionAndRecovery": {
+        "ignoreConditionModifierNegativeEffects": {
+          "option": "Rating"
+        }
       }
     },
     "forbidden": {},
@@ -5788,16 +6566,32 @@
       }
     ],
     "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Reaction"
+            },
+            "attributeIncrease": {
+              "option": "Rating"
+            }
+          }
+        ]
+      },
       "initiative": {
-        "bonusDice": {
-          "option": "Rating"
+        "initiative": {
+          "bonusDice": {
+            "option": "Rating"
+          }
         }
       },
-      "disableQualities": [
-        {
-          "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
-        }
-      ]
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
+          }
+        ]
+      }
     },
     "source": "Shadowrun 2050",
     "page": 205
@@ -5841,16 +6635,17 @@
       }
     ],
     "bonus": {
-      "skillGroups": [
-        {
-          "group": "Athletics",
-          "bonus": [
-            {
+      "skill": {
+        "skillGroupList": [
+          {
+            "name": "Athletics",
+            "bonus": {
               "option": "Rating"
-            }
-          ]
-        }
-      ]
+            },
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "source": "Shadowrun 2050",
     "page": 205
@@ -5911,6 +6706,20 @@
         ]
       }
     ],
+    "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Logic"
+            },
+            "attributeIncrease": {
+              "option": "Rating"
+            }
+          }
+        ]
+      }
+    },
     "source": "Shadowrun 2050",
     "page": 205
   },
@@ -5971,6 +6780,26 @@
         ]
       }
     ],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": {
+              "option": "Rating"
+            },
+            "condition": "Only for Leadership"
+          },
+          {
+            "category": "Social",
+            "value": {
+              "option": "Rating"
+            },
+            "condition": "Only for Performance (Singing)"
+          }
+        ]
+      }
+    },
     "source": "No Future",
     "page": 175
   },

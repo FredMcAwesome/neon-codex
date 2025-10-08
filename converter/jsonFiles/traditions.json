@@ -75,14 +75,16 @@
       "spiritManipulation": "Spirit of Man"
     },
     "bonus": {
-      "qualityList": [
-        {
-          "name": "Animal Familiar"
-        },
-        {
-          "name": "Dark Ally"
-        }
-      ]
+      "quality": {
+        "addQualityList": [
+          {
+            "name": "Animal Familiar"
+          },
+          {
+            "name": "Dark Ally"
+          }
+        ]
+      }
     },
     "source": "Forbidden Arcana",
     "page": 61
@@ -436,17 +438,24 @@
       "spiritManipulation": "Spirit of Water"
     },
     "bonus": {
-      "qualityList": [
-        {
-          "name": "Barehanded Adept"
-        },
-        {
-          "name": "Spiritual Lodge"
-        },
-        {
-          "name": "Spiritual Pilgrim"
+      "skill": {
+        "skillDisableList": {
+          "skillGroupList": ["Enchanting"]
         }
-      ]
+      },
+      "quality": {
+        "addQualityList": [
+          {
+            "name": "Barehanded Adept"
+          },
+          {
+            "name": "Spiritual Lodge"
+          },
+          {
+            "name": "Spiritual Pilgrim"
+          }
+        ]
+      }
     },
     "source": "Forbidden Arcana",
     "page": 62
@@ -461,6 +470,14 @@
       "spiritHealth": "Spirit of Air",
       "spiritIllusion": "Spirit of Earth",
       "spiritManipulation": "Guidance Spirit"
+    },
+    "bonus": {
+      "skill": {
+        "skillDisableList": {
+          "skillGroupList": ["Enchanting"],
+          "skillList": ["Binding"]
+        }
+      }
     },
     "source": "Forbidden Arcana",
     "page": 64
@@ -477,11 +494,18 @@
       "spiritManipulation": "Guidance Spirit"
     },
     "bonus": {
-      "qualityList": [
-        {
-          "name": "Pacifist I"
+      "skill": {
+        "skillDisableList": {
+          "skillList": ["Binding"]
         }
-      ]
+      },
+      "quality": {
+        "addQualityList": [
+          {
+            "name": "Pacifist I"
+          }
+        ]
+      }
     },
     "source": "Forbidden Arcana",
     "page": 64
@@ -498,11 +522,25 @@
       "spiritManipulation": "Guidance Spirit"
     },
     "bonus": {
-      "qualityList": [
-        {
-          "name": "Vexcraft"
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Banishing",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ],
+        "skillDisableList": {
+          "skillList": ["Alchemy", "Artificing"]
         }
-      ]
+      },
+      "quality": {
+        "addQualityList": [
+          {
+            "name": "Vexcraft"
+          }
+        ]
+      }
     },
     "source": "Forbidden Arcana",
     "page": 64
@@ -555,11 +593,19 @@
       "spiritManipulation": "Spirit of Earth"
     },
     "bonus": {
-      "qualityList": [
-        {
-          "name": "Mentor Spirit"
+      "skill": {
+        "skillDisableList": {
+          "skillGroupList": ["Enchanting"],
+          "skillList": ["Binding"]
         }
-      ]
+      },
+      "quality": {
+        "addQualityList": [
+          {
+            "name": "Mentor Spirit"
+          }
+        ]
+      }
     },
     "source": "Forbidden Arcana",
     "page": 65
@@ -576,13 +622,17 @@
       "spiritManipulation": "Spirit of Water"
     },
     "bonus": {
-      "spellCategoryList": [
-        {
-          "category": "Illusion",
-          "bonus": 3
-        }
-      ],
-      "drainResist": [-2]
+      "spellAndMagic": {
+        "spellCategoryList": [
+          {
+            "category": "Illusion",
+            "bonus": 3
+          }
+        ]
+      },
+      "testAndResistance": {
+        "drainResist": -2
+      }
     },
     "source": "Forbidden Arcana",
     "page": 78
@@ -611,6 +661,13 @@
       "spiritHealth": "Plant Spirit",
       "spiritIllusion": "Spirit of Air",
       "spiritManipulation": "Spirit of Fire"
+    },
+    "bonus": {
+      "skill": {
+        "skillDisableList": {
+          "skillList": ["Ritual Spellcasting", "Spellcasting"]
+        }
+      }
     },
     "source": "Forbidden Arcana",
     "page": 69
@@ -641,16 +698,18 @@
       "spiritManipulation": "Spirit of Earth"
     },
     "bonus": {
-      "spellCategoryList": [
-        {
-          "category": "Health",
-          "bonus": 2
-        },
-        {
-          "category": "Combat",
-          "bonus": -2
-        }
-      ]
+      "spellAndMagic": {
+        "spellCategoryList": [
+          {
+            "category": "Health",
+            "bonus": 2
+          },
+          {
+            "category": "Combat",
+            "bonus": -2
+          }
+        ]
+      }
     },
     "source": "Forbidden Arcana",
     "page": 81
@@ -723,11 +782,13 @@
       "spiritManipulation": "Spirit of Fire"
     },
     "bonus": {
-      "specificPowerList": [
-        {
-          "name": "Berserker Temper"
-        }
-      ]
+      "power": {
+        "specificPowerList": [
+          {
+            "name": "Berserker Temper"
+          }
+        ]
+      }
     },
     "requirements": {},
     "source": "Forbidden Arcana",
@@ -745,11 +806,18 @@
       "spiritManipulation": "Spirit of Fire"
     },
     "bonus": {
-      "qualityList": [
-        {
-          "name": "Dedicated Conjurer"
+      "skill": {
+        "skillDisableList": {
+          "skillGroupList": ["Sorcery"]
         }
-      ]
+      },
+      "quality": {
+        "addQualityList": [
+          {
+            "name": "Dedicated Conjurer"
+          }
+        ]
+      }
     },
     "source": "Forbidden Arcana",
     "page": 68
@@ -773,6 +841,37 @@
     "description": "",
     "drain": "Willpower + Logic",
     "spiritTypes": "Select Spirits",
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Banishing",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Counterspelling",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Disenchanting",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ],
+        "skillDisableList": {
+          "skillList": [
+            "Summoning",
+            "Binding",
+            "Spellcasting",
+            "Ritual Spellcasting",
+            "Alchemy",
+            "Artificing"
+          ]
+        }
+      }
+    },
     "source": "Forbidden Arcana",
     "page": 85
   },
@@ -970,12 +1069,14 @@
       "spiritManipulation": "Spirit of Man"
     },
     "bonus": {
-      "spellCategoryList": [
-        {
-          "category": "Illusion",
-          "bonus": 2
-        }
-      ]
+      "spellAndMagic": {
+        "spellCategoryList": [
+          {
+            "category": "Illusion",
+            "bonus": 2
+          }
+        ]
+      }
     },
     "source": "Grimmes Erwachen",
     "page": 68

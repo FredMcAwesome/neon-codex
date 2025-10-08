@@ -133,16 +133,21 @@ export enum GearXmlCategoryEnum {
 }
 
 // Gear Shenanigans
-const UseGearBaseXmlSchema = type.or("string", {
-  xmltext: "string",
-  // this gear has some specific option that it needs to select
-  // e.g. Tutorsoft selects the "Automotive Mechanic" skill
-  "_select?": "string",
-  "_rating?": "string",
-  "_consumecapacity?": "string",
-  "_costfor?": "string",
-});
+const UseGearBaseXmlSchema = type.or(
+  "string",
+  type({
+    "+": "reject",
+    xmltext: "string",
+    // this gear has some specific option that it needs to select
+    // e.g. Tutorsoft selects the "Automotive Mechanic" skill
+    "_select?": "string",
+    "_rating?": "string",
+    "_consumecapacity?": "string",
+    "_costfor?": "string",
+  })
+);
 const PartialInnerUseGearXmlSchema = type({
+  "+": "reject",
   name: UseGearBaseXmlSchema,
   // I think this is redundant as we are always have a name anyway
   // edit: actually not redundant as some gear has the same name across
@@ -174,13 +179,10 @@ export const {
         [[UseGearBaseXmlSchema, "|", "InnerUseGearXmlSchema"], "[]"],
       ],
     ],
-  InnerUseGearXmlSchema: [
-    PartialInnerUseGearXmlSchema,
-    "&",
-    {
-      "gears?": ["IncludedGearXmlSchema", "|", "InnerGearSchema"],
-    },
-  ],
+  InnerUseGearXmlSchema: {
+    "...": PartialInnerUseGearXmlSchema,
+    "gears?": ["IncludedGearXmlSchema", "|", "InnerGearSchema"],
+  },
   InnerGearSchema: {
     gear: "UseGearXmlSchema",
   },
@@ -226,8 +228,17 @@ export const NumberOrAnyRatingSchema = type.or(
   "'-Rating'"
 );
 export type NumberOrAnyRatingType = typeof NumberOrAnyRatingSchema.infer;
+export const NumberOrRatingOrAttributeSchema = type.or(
+  type.valueOf(attributeXMLEnum),
+  "number",
+  "'Rating'",
+  "'-Rating'"
+);
+export type NumberOrRatingOrAttributeType =
+  typeof NumberOrRatingOrAttributeSchema.infer;
 
 export const LimitModifierSchema = type({
+  "+": "reject",
   limit: type.or("'Physical'", "'Social'", "'Mental'"),
   value: NumberOrRatingSchema,
   // these are keys for strings listed in en-us.xml
@@ -290,23 +301,48 @@ export const LimitModifierSchema = type({
   ),
 });
 
-export const SkillSchema = type({
+export const EnglishTranslationsXMLSchema = type({
+  string: type({
+    key: "string",
+    text: type.or(
+      "string",
+      type({
+        "xmltext?": "string",
+        "_xml:space": "'preserve'",
+      })
+    ),
+  }).array(),
+});
+export type EnglishTranslationsXMLType =
+  typeof EnglishTranslationsXMLSchema.infer;
+
+export const SkillXMLSchema = type({
+  "+": "reject",
   name: "string",
   // bonus dice
   "val?": "number",
-  // check bonus or bonus dice?
+  // check bonus or bonus dice? Answered, see applytorating
   "bonus?": NumberOrAnyRatingSchema,
+  // A precedence of 1 ignore all other Improvements and uses the COMBINED value of all other precedence 1 items (Wired Reflexes, Move-by-Wire, and Reaction Enhancers).
+  // A precedence of 0 ignore all other Improvements and uses the single highest precedence 0 Improvement the character has (Synaptic Booster).
+  // A precedence of -1 ignore the standard behavior of precedence 0 improvements that would normally ignore other sources
+  // When values of improvements are fetched, precedence0 and precedence1 items will now check the total value of items without precedence, and if they are less than the latter, they will not override it.
   "_precedence?": "'0'",
+  // String or en-us.xml mapped condition of getting this bonus e.g. Only applicable to people who can smell you
   "condition?": "string",
+  // Single skill to exclude
   "exclude?": "string",
+  // If 'True' then directly increase rating, otherwise add as a dice pool modifier
   "applytorating?": "'True'",
 });
+export type SkillXMLType = typeof SkillXMLSchema.infer;
 
-const SkillListSchema = type.or(SkillSchema.array(), SkillSchema);
-export type SkillListType = typeof SkillListSchema.infer;
+const SkillXMLListSchema = type.or(SkillXMLSchema.array(), SkillXMLSchema);
+export type SkillXMLListType = typeof SkillXMLListSchema.infer;
 
 export const SpiritSchema = type.or(
   type({
+    "+": "reject",
     spirit: StringArrayOrStringSchema,
     "addtoselected?": type.or("'False'", "'True'"),
   }),
@@ -314,6 +350,7 @@ export const SpiritSchema = type.or(
 );
 
 export const GenericNameValueSchema = type({
+  "+": "reject",
   "id?": "string",
   "name?": "string",
   "_name?": "string",
@@ -338,6 +375,7 @@ export type GenericNameValueListType = typeof GenericNameValueListSchema.infer;
 const ModXmlSchema = type.or(
   "string",
   type({
+    "+": "reject",
     xmltext: "string",
     // select="Driver">Searchlight
     "_select?": "string",
@@ -352,11 +390,12 @@ const ModXmlSchema = type.or(
 export type ModXmlType = typeof ModXmlSchema.infer;
 
 export const ModListXmlSchema = type({
+  "+": "reject",
   name: type.or(ModXmlSchema.array(), ModXmlSchema),
 });
 export type ModListXmlType = typeof ModListXmlSchema.infer;
 
-const VehicleModListXmlSchema = ModListXmlSchema.and({
+const VehicleModListXmlSchema = ModListXmlSchema.merge({
   "subsystems?": {
     cyberware: {
       name: "string",
@@ -365,13 +404,14 @@ const VehicleModListXmlSchema = ModListXmlSchema.and({
 });
 export type VehicleModListXmlType = typeof VehicleModListXmlSchema.infer;
 
-export const ModRecursiveXmlSchema = VehicleModListXmlSchema.and({
+export const ModRecursiveXmlSchema = VehicleModListXmlSchema.merge({
   "mod?": type.or(VehicleModListXmlSchema, VehicleModListXmlSchema.array()),
 });
 
 export type ModRecursiveXmlType = typeof ModRecursiveXmlSchema.infer;
 
 export const CategoryXmlListSchema = type({
+  "+": "reject",
   _blackmarket: "string",
   xmltext: "string",
 }).array();
@@ -421,11 +461,11 @@ export enum augmentationXmlGradeEnum {
 
 export const xmlAllowGearSchema = type.or(
   type({
+    "+": "reject",
     "gearcategory?": type.or(
       type.valueOf(GearXmlCategoryEnum).array(),
       type.valueOf(GearXmlCategoryEnum)
     ),
-
     "gearname?": "string[]",
   }),
   "string"
@@ -434,22 +474,24 @@ export const xmlAllowGearSchema = type.or(
 export type xmlAllowGearType = typeof xmlAllowGearSchema.infer;
 
 const XmlQualitySingleSchema = type.or(
-  {
+  type({
     // At least one of these optional must be implemented for xmltext to be valid
     "_removable?": "'True'",
     "_select?": "string",
     xmltext: "string",
-  },
+  }),
   "string"
 );
 
 const XmlQualityListSingularSchema = type({
+  "+": "reject",
   quality: type.or(XmlQualitySingleSchema.array(), XmlQualitySingleSchema),
 });
 export type XmlQualityListSingularType =
   typeof XmlQualityListSingularSchema.infer;
 
 export const XmlQualityListSchema = type({
+  "+": "reject",
   // one of either positive or negative must be defined
   "positive?": XmlQualityListSingularSchema,
   "negative?": XmlQualityListSingularSchema,
@@ -457,11 +499,12 @@ export const XmlQualityListSchema = type({
 export type XmlQualityListType = typeof XmlQualityListSchema.infer;
 
 export const XmlPowerSchema = type.or(
-  {
+  type({
+    "+": "reject",
     "_select?": "string",
     "_rating?": "string",
     xmltext: "string",
-  },
+  }),
   "string"
 );
 const XmlPowerListSchema = type(XmlPowerSchema.array());
@@ -500,6 +543,7 @@ export const SpellPowerXmlRangeSchema = type.or(
 export type SpellPowerXmlRangeType = typeof SpellPowerXmlRangeSchema.infer;
 
 export const NaturalWeaponSchema = type({
+  "+": "reject",
   name: "string",
   reach: "number",
   damage: "string",
@@ -510,3 +554,10 @@ export const NaturalWeaponSchema = type({
   source: "string",
   page: "number",
 });
+
+export enum MatrixAttributeXmlSchema {
+  Attack = "String_Attack",
+  DataProcessing = "String_DataProcessing",
+  Firewall = "String_Firewall",
+  Sleaze = "String_Sleaze",
+}

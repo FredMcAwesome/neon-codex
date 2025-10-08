@@ -63,6 +63,7 @@ export type EquipmentListType = {
   weaponAccessoryList: WeaponAccessoryListType;
 };
 export const EquipmentListSchema = type({
+  "+": "reject",
   equipmentPackList: EquipmentPackListSchema,
   augmentationList: AugmentationListSchema,
   armourList: ArmourListSchema,
@@ -84,6 +85,7 @@ export type SelectedEquipmentListType = {
   weaponList: CustomisedWeaponListType;
 };
 export const SelectedEquipmentListSchema = type({
+  "+": "reject",
   equipmentPackList: EquipmentPackListSchema,
   augmentationList: CustomisedAugmentationListSchema,
   armourList: CustomisedArmourListSchema,

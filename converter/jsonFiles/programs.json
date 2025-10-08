@@ -730,6 +730,17 @@
         ]
       }
     ],
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Vehicle"
+            }
+          ]
+        }
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 269
   },
@@ -770,6 +781,17 @@
         ]
       }
     ],
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Vehicle"
+            }
+          ]
+        }
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 269
   },
@@ -810,6 +832,17 @@
         ]
       }
     ],
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Vehicle"
+            }
+          ]
+        }
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 270
   },
@@ -850,6 +883,17 @@
         ]
       }
     ],
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Weapon"
+            }
+          ]
+        }
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 270
   },
@@ -922,6 +966,20 @@
         ]
       }
     ],
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Skill"
+            },
+            {
+              "base": "Knowledge Skill"
+            }
+          ]
+        }
+      }
+    },
     "source": "Rigger 5",
     "page": 127
   },
@@ -963,7 +1021,16 @@
       }
     ],
     "bonus": {
-      "linkSkill": true
+      "skill": {
+        "selectSkill": {
+          "skill": {
+            "restriction": {}
+          },
+          "bonus": {
+            "modifierType": "Linked"
+          }
+        }
+      }
     },
     "source": "Rigger 5",
     "page": 127
@@ -1005,6 +1072,17 @@
         ]
       }
     ],
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Weapon"
+            }
+          ]
+        }
+      }
+    },
     "source": "Rigger 5",
     "page": 127
   },
@@ -1173,6 +1251,17 @@
       "restriction": "F"
     },
     "cost": [0],
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Weapon"
+            }
+          ]
+        }
+      }
+    },
     "requirements": {},
     "source": "Data Trails",
     "page": 160
@@ -1212,6 +1301,17 @@
       "restriction": "F"
     },
     "cost": [0],
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Vehicle"
+            }
+          ]
+        }
+      }
+    },
     "requirements": {},
     "source": "Data Trails",
     "page": 160

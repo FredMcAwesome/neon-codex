@@ -21,6 +21,7 @@ export enum traditionXmlDrainAttributeEnum {
 }
 
 const TraditionSubBonusXmlSchema = type({
+  "+": "reject",
   id: "string",
   name: "string",
   // Abilities used to resist drain e.g. {WIL} + {INT}
@@ -30,20 +31,24 @@ const TraditionSubBonusXmlSchema = type({
 
   "limitspiritchoices?": "'False'",
   // Other powers that count to this power's limit
-  spirits: type.or("''", {
-    spiritcombat: "string",
-    spiritdetection: "string",
-    spirithealth: "string",
-    spiritillusion: "string",
-    spiritmanipulation: "string",
-  }),
+  spirits: type.or(
+    "''",
+    type({
+      "+": "reject",
+      spiritcombat: "string",
+      spiritdetection: "string",
+      spirithealth: "string",
+      spiritillusion: "string",
+      spiritmanipulation: "string",
+    })
+  ),
   source: type.or(SourceXmlSchema, "2050"),
   page: "number",
 });
 
 // Need to split up type/annotate schema to avoid TS7056 error
 export type TraditionXmlType = typeof TraditionXmlSchema.infer;
-const TraditionXmlSchema = TraditionSubBonusXmlSchema.and({
+const TraditionXmlSchema = TraditionSubBonusXmlSchema.merge({
   // Bonus (these are specific choices to select when adding when)
   // e.g. summoning spell chooses what you summon
   "bonus?": BonusXmlSchema,

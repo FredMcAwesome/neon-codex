@@ -38,6 +38,13 @@
     "name": "Overclocking",
     "description": "",
     "category": "Mentor Spirit",
+    "bonus": {
+      "initiative": {
+        "matrixInitiative": {
+          "bonusDice": 1
+        }
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 258
   },
@@ -52,6 +59,18 @@
     "name": "Resonance [Program]",
     "description": "",
     "category": "Mentor Spirit",
+    "repeatable": true,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Program"
+            }
+          ]
+        }
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 258
   },
@@ -73,6 +92,17 @@
     "name": "Mathemagics",
     "description": "",
     "category": "Mentor Spirit",
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Mental",
+            "value": 2,
+            "condition": "Only for Scientific or Technical Knowledge Skills"
+          }
+        ]
+      }
+    },
     "source": "Data Trails",
     "page": 58
   },
@@ -164,6 +194,18 @@
     "name": "Neural Synergy",
     "description": "",
     "category": "Mentor Spirit",
+    "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Logic"
+            },
+            "attributeIncrease": 1
+          }
+        ]
+      }
+    },
     "source": "Kill Code",
     "page": 101
   },
@@ -173,7 +215,9 @@
     "category": "Mentor Spirit",
     "bonus": {
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Kill Code",
@@ -197,6 +241,18 @@
     "name": "Will of the Resonance",
     "description": "",
     "category": "Mentor Spirit",
+    "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Willpower"
+            },
+            "attributeIncrease": 1
+          }
+        ]
+      }
+    },
     "source": "Kill Code",
     "page": 102
   },

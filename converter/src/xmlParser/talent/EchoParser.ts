@@ -16,9 +16,12 @@ import { type } from "arktype";
 import { EchoSchema } from "@neon-codex/common/build/schemas/abilities/talent/echoSchemas.js";
 
 const EchoXmlSchema = type({
+  "+": "reject",
   id: "string",
   name: "string",
   "bonus?": BonusXmlSchema,
+  "limit?": type.or("'False'", "number", "'Mental'"),
+  "hide?": "''",
   source: type.valueOf(sourceBookXmlEnum),
   page: "number",
 });
@@ -38,10 +41,10 @@ export function ParseEchos() {
   });
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const jObj: any = parser.parse(xml_string);
-  // console
-  // .log(
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  // jObj.chummer.echoes.echo[41]
+  // console.dir(
+  //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+  //   jObj.chummer.echoes.echo[28],
+  //   { depth: Infinity }
   // );
 
   const EchoListParsed = EchoListXmlSchema(
@@ -102,6 +105,7 @@ function convertEcho(Echo: EchoXmlType) {
     name: Echo.name,
     description: "",
     category: mentorCategoryEnum.MentorSpirit,
+    ...(Echo.limit === "False" && { repeatable: true }),
     ...(bonus !== undefined && { bonus: bonus }),
     source: source,
     page: Echo.page,

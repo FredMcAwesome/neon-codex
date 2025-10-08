@@ -8,6 +8,7 @@ import {
 import { type } from "arktype";
 
 const DrugXmlSchema = type({
+  "+": "reject",
   id: "string",
   name: "string",
   // Category of gear this is

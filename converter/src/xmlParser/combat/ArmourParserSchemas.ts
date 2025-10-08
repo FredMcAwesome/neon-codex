@@ -19,9 +19,11 @@ export enum armourXmlCategoryEnum {
 }
 
 const ModCategoryXmlSchema = type({
+  "+": "reject",
   category: type.valueOf(armourModXmlCategoryEnum),
 });
 const ArmourXmlSchema = type({
+  "+": "reject",
   id: "string",
   name: "string",
   // Category of clothing

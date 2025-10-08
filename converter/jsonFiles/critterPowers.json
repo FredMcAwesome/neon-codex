@@ -3,6 +3,26 @@
     "name": "Combat Skill",
     "description": "",
     "category": "Paranormal",
+    "bonus": {
+      "skill": {
+        "selectSkill": {
+          "skill": {
+            "restriction": {
+              "skillCategoryList": {
+                "skillCategoryList": ["Combat Active"],
+                "limit": "Only"
+              }
+            }
+          },
+          "bonus": {
+            "ratingIncreaseCount": {
+              "option": "Magic"
+            },
+            "modifierType": "ApplyBonusToLevel"
+          }
+        }
+      }
+    },
     "userSelectable": false,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 130
@@ -11,6 +31,26 @@
     "name": "Physical Skill",
     "description": "",
     "category": "Paranormal",
+    "bonus": {
+      "skill": {
+        "selectSkill": {
+          "skill": {
+            "restriction": {
+              "skillCategoryList": {
+                "skillCategoryList": ["Physical Active"],
+                "limit": "Only"
+              }
+            }
+          },
+          "bonus": {
+            "ratingIncreaseCount": {
+              "option": "Magic"
+            },
+            "modifierType": "ApplyBonusToLevel"
+          }
+        }
+      }
+    },
     "userSelectable": false,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 133
@@ -19,6 +59,26 @@
     "name": "Social Skill",
     "description": "",
     "category": "Paranormal",
+    "bonus": {
+      "skill": {
+        "selectSkill": {
+          "skill": {
+            "restriction": {
+              "skillCategoryList": {
+                "skillCategoryList": ["Social Active"],
+                "limit": "Only"
+              }
+            }
+          },
+          "bonus": {
+            "ratingIncreaseCount": {
+              "option": "Magic"
+            },
+            "modifierType": "ApplyBonusToLevel"
+          }
+        }
+      }
+    },
     "userSelectable": false,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 137
@@ -27,6 +87,26 @@
     "name": "Technical Skill",
     "description": "",
     "category": "Paranormal",
+    "bonus": {
+      "skill": {
+        "selectSkill": {
+          "skill": {
+            "restriction": {
+              "skillCategoryList": {
+                "skillCategoryList": ["Technical Active"],
+                "limit": "Only"
+              }
+            }
+          },
+          "bonus": {
+            "ratingIncreaseCount": {
+              "option": "Magic"
+            },
+            "modifierType": "ApplyBonusToLevel"
+          }
+        }
+      }
+    },
     "userSelectable": false,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 143
@@ -35,6 +115,26 @@
     "name": "Vehicle Skill",
     "description": "",
     "category": "Paranormal",
+    "bonus": {
+      "skill": {
+        "selectSkill": {
+          "skill": {
+            "restriction": {
+              "skillCategoryList": {
+                "skillCategoryList": ["Vehicle Active"],
+                "limit": "Only"
+              }
+            }
+          },
+          "bonus": {
+            "ratingIncreaseCount": {
+              "option": "Magic"
+            },
+            "modifierType": "ApplyBonusToLevel"
+          }
+        }
+      }
+    },
     "userSelectable": false,
     "source": "Shadowrun 5 Core Rulebook",
     "page": 146
@@ -82,7 +182,11 @@
     "duration": "Sustained",
     "category": "Paranormal",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 394
@@ -196,6 +300,11 @@
     },
     "duration": "Always",
     "category": "Paranormal",
+    "bonus": {
+      "skill": {
+        "unlockSkillList": ["Assensing", "Astral Combat"]
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 395
   },
@@ -212,6 +321,17 @@
     },
     "duration": "Instantaneous",
     "category": "Paranormal",
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Element"
+            }
+          ]
+        }
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 396
   },
@@ -245,7 +365,11 @@
     "duration": "Always",
     "category": "Mundane",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 396
@@ -315,9 +439,11 @@
     "duration": "Always",
     "category": "Paranormal",
     "bonus": {
-      "armour": {
-        "bonus": {
-          "option": "Rating"
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": {
+            "option": "Rating"
+          }
         }
       }
     },
@@ -337,6 +463,20 @@
     },
     "duration": "Always",
     "category": "Paranormal",
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Element"
+            },
+            {
+              "base": "Immunity"
+            }
+          ]
+        }
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 397
   },
@@ -386,6 +526,13 @@
       "spellDuration": true
     },
     "category": "Paranormal",
+    "bonus": {
+      "spellAndMagic": {
+        "linkSpell": {
+          "ignoreRequirements": false
+        }
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 398
   },
@@ -521,7 +668,11 @@
     "duration": "Instantaneous",
     "category": "Mundane",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 399
@@ -619,6 +770,11 @@
     },
     "duration": "Always",
     "category": "Mundane",
+    "bonus": {
+      "skill": {
+        "allowSkillDefaulting": true
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 400
   },
@@ -652,7 +808,11 @@
     "duration": "Sustained",
     "category": "Paranormal",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 401
@@ -829,6 +989,11 @@
     },
     "duration": "Instantaneous",
     "category": "Paranormal",
+    "bonus": {
+      "skill": {
+        "unlockSkillList": ["Counterspelling"]
+      }
+    },
     "source": "Street Grimoire",
     "page": 196
   },
@@ -1214,7 +1379,11 @@
     "duration": "Always",
     "category": "Mundane",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Howling Shadows",
     "page": 193
@@ -1558,7 +1727,11 @@
     "description": "",
     "category": "Weakness",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 401
@@ -1568,7 +1741,11 @@
     "description": "",
     "category": "Weakness",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 401
@@ -1604,8 +1781,10 @@
     "duration": "Always",
     "category": "Weakness",
     "bonus": {
-      "addPhysicalBoxes": {
-        "option": "-Rating"
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": {
+          "option": "-Rating"
+        }
       }
     },
     "source": "Howling Shadows",
@@ -1616,7 +1795,11 @@
     "description": "",
     "category": "Weakness",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 401
@@ -1633,7 +1816,11 @@
     "description": "",
     "category": "Weakness",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 401
@@ -1752,7 +1939,11 @@
     "description": "",
     "category": "Weakness",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 401
@@ -1787,9 +1978,11 @@
     "duration": "Always",
     "category": "Mundane",
     "bonus": {
-      "armour": {
-        "bonus": {
-          "option": "Rating"
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": {
+            "option": "Rating"
+          }
         }
       }
     },
@@ -1844,6 +2037,17 @@
     },
     "duration": "Always",
     "category": "Paranormal",
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Swimming",
+            "bonus": 4,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Howling Shadows",
     "page": 164
   },
@@ -1981,7 +2185,9 @@
     "description": "",
     "category": "Weakness",
     "bonus": {
-      "addPhysicalBoxes": -20
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": -20
+      }
     },
     "source": "Howling Shadows",
     "page": 191
@@ -2050,6 +2256,17 @@
       "ritualDuration": true
     },
     "category": "Paranormal",
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Spell"
+            }
+          ]
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 193
   },
@@ -2102,8 +2319,10 @@
     "duration": "Always",
     "category": "Mundane",
     "bonus": {
-      "addPhysicalBoxes": {
-        "option": "Rating"
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": {
+          "option": "Rating"
+        }
       }
     },
     "source": "Howling Shadows",
@@ -2120,6 +2339,17 @@
     "name": "Gliding",
     "description": "",
     "category": "Mundane",
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Free-Fall",
+            "bonus": 1,
+            "modifierType": "ApplyBonusToLevel"
+          }
+        ]
+      }
+    },
     "source": "Howling Shadows",
     "page": 186
   },
@@ -2200,7 +2430,11 @@
     "duration": "Instantaneous",
     "category": "Drake",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Howling Shadows",
     "page": 164
@@ -2220,7 +2454,11 @@
     "duration": "Sustained",
     "category": "Drake",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Howling Shadows",
     "page": 164
@@ -2550,14 +2788,16 @@
     "duration": "Instantaneous",
     "category": "Drake",
     "bonus": {
-      "toxinContactResist": 1,
-      "pathogenContactResist": 1,
-      "toxinInhalationResist": 1,
-      "pathogenInhalationResist": 1,
-      "toxinIngestionResist": 1,
-      "pathogenIngestionResist": 1,
-      "toxinInjectionResist": 1,
-      "pathogenInjectionResist": 1
+      "combatAndWeapon": {
+        "toxinContactResist": 1,
+        "pathogenContactResist": 1,
+        "toxinInhalationResist": 1,
+        "pathogenInhalationResist": 1,
+        "toxinIngestionResist": 1,
+        "pathogenIngestionResist": 1,
+        "toxinInjectionResist": 1,
+        "pathogenInjectionResist": 1
+      }
     },
     "source": "Howling Shadows",
     "page": 165
@@ -2698,7 +2938,11 @@
     "duration": "Sustained",
     "category": "Paranormal",
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "requirements": {},
     "source": "Shadowrun 5 Core Rulebook",
@@ -2943,7 +3187,9 @@
     "duration": "Always",
     "category": "Infected",
     "bonus": {
-      "unarmedDamageType": "Physical"
+      "combatAndWeapon": {
+        "unarmedDamageType": "Physical"
+      }
     },
     "requirements": {},
     "source": "Dark Terrors",
@@ -3018,7 +3264,9 @@
     "duration": "Always",
     "category": "Infected",
     "bonus": {
-      "sprintSpeedPercentageModifier": 10000
+      "movementAndLifestyle": {
+        "sprintSpeedPercentageModifier": 10000
+      }
     },
     "requirements": {},
     "source": "Dark Terrors",
@@ -3094,7 +3342,9 @@
     "category": "Infected",
     "bonus": {
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "requirements": {},
@@ -3549,6 +3799,17 @@
     "name": "Aquatic Adaptation",
     "description": "",
     "category": "Chimeric Modification",
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Swimming",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Howling Shadows",
     "page": 170
   },
@@ -3559,6 +3820,20 @@
       "critterRating": true
     },
     "category": "Chimeric Modification",
+    "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Body"
+            },
+            "attributeIncrease": {
+              "option": "Rating"
+            }
+          }
+        ]
+      }
+    },
     "source": "Howling Shadows",
     "page": 170
   },
@@ -3569,6 +3844,20 @@
       "critterRating": true
     },
     "category": "Chimeric Modification",
+    "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Agility"
+            },
+            "attributeIncrease": {
+              "option": "Rating"
+            }
+          }
+        ]
+      }
+    },
     "source": "Howling Shadows",
     "page": 170
   },
@@ -3579,6 +3868,20 @@
       "critterRating": true
     },
     "category": "Chimeric Modification",
+    "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Reaction"
+            },
+            "attributeIncrease": {
+              "option": "Rating"
+            }
+          }
+        ]
+      }
+    },
     "source": "Howling Shadows",
     "page": 170
   },
@@ -3589,6 +3892,20 @@
       "critterRating": true
     },
     "category": "Chimeric Modification",
+    "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Strength"
+            },
+            "attributeIncrease": {
+              "option": "Rating"
+            }
+          }
+        ]
+      }
+    },
     "source": "Howling Shadows",
     "page": 170
   },
@@ -3599,6 +3916,20 @@
       "critterRating": true
     },
     "category": "Chimeric Modification",
+    "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Charisma"
+            },
+            "attributeIncrease": {
+              "option": "Rating"
+            }
+          }
+        ]
+      }
+    },
     "source": "Howling Shadows",
     "page": 170
   },
@@ -3609,6 +3940,20 @@
       "critterRating": true
     },
     "category": "Chimeric Modification",
+    "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Intuition"
+            },
+            "attributeIncrease": {
+              "option": "Rating"
+            }
+          }
+        ]
+      }
+    },
     "source": "Howling Shadows",
     "page": 170
   },
@@ -3619,6 +3964,20 @@
       "critterRating": true
     },
     "category": "Chimeric Modification",
+    "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Logic"
+            },
+            "attributeIncrease": {
+              "option": "Rating"
+            }
+          }
+        ]
+      }
+    },
     "source": "Howling Shadows",
     "page": 170
   },
@@ -3629,6 +3988,20 @@
       "critterRating": true
     },
     "category": "Chimeric Modification",
+    "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Willpower"
+            },
+            "attributeIncrease": {
+              "option": "Rating"
+            }
+          }
+        ]
+      }
+    },
     "source": "Howling Shadows",
     "page": 170
   },
@@ -3636,6 +4009,22 @@
     "name": "Balance Tail",
     "description": "",
     "category": "Chimeric Modification",
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Gymnastics",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Free-Fall",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Howling Shadows",
     "page": 170
   },
@@ -3686,9 +4075,11 @@
     "description": "",
     "category": "Chimeric Modification",
     "bonus": {
-      "walkSpeedPercentageModifier": 100,
-      "runSpeedPercentageModifier": 100,
-      "sprintSpeedPercentageModifier": 10000
+      "movementAndLifestyle": {
+        "walkSpeedPercentageModifier": 100,
+        "runSpeedPercentageModifier": 100,
+        "sprintSpeedPercentageModifier": 10000
+      }
     },
     "source": "Howling Shadows",
     "page": 171
@@ -3770,8 +4161,21 @@
     },
     "category": "Chimeric Modification",
     "bonus": {
-      "addPhysicalBoxes": {
-        "option": "Rating"
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Perception",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      },
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": {
+          "option": "Rating"
+        }
       }
     },
     "source": "Howling Shadows",
@@ -3795,6 +4199,17 @@
     "name": "Gliding",
     "description": "",
     "category": "Chimeric Modification",
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Free-Fall",
+            "bonus": 1,
+            "modifierType": "ApplyBonusToLevel"
+          }
+        ]
+      }
+    },
     "source": "Howling Shadows",
     "page": 172
   },
@@ -3879,6 +4294,19 @@
     "name": "Skill Enhancement",
     "description": "",
     "category": "Chimeric Modification",
+    "bonus": {
+      "skill": {
+        "selectSkill": {
+          "skill": {
+            "restriction": {}
+          },
+          "bonus": {
+            "ratingIncreaseCount": 2,
+            "modifierType": "ApplyBonusToLevel"
+          }
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 173
   },
@@ -3887,7 +4315,9 @@
     "description": "",
     "category": "Chimeric Modification",
     "bonus": {
-      "physicalLimit": 1
+      "attribute": {
+        "physicalLimit": 1
+      }
     },
     "source": "Howling Shadows",
     "page": 173
@@ -3907,9 +4337,11 @@
     },
     "category": "Chimeric Modification",
     "bonus": {
-      "armour": {
-        "bonus": {
-          "option": "Rating"
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": {
+            "option": "Rating"
+          }
         }
       }
     },
@@ -3927,6 +4359,17 @@
     "name": "Vestigial Wings",
     "description": "",
     "category": "Chimeric Modification",
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Gymnastics",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Howling Shadows",
     "page": 173
   },

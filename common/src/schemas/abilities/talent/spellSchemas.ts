@@ -12,18 +12,24 @@ import {
 import { BonusSchema } from "../../shared/bonusSchemas.js";
 import { RequirementsSchema } from "../../shared/requiredSchemas.js";
 
-const spellDamageSchema = type.or("number", {
-  option: "'Special'",
-});
+const spellDamageSchema = type.or(
+  "number",
+  type({
+    "+": "reject",
+    option: "'Special'",
+  })
+);
 export type spellDamageType = typeof spellDamageSchema.infer;
 
 export const spellRangeSchema = type({
+  "+": "reject",
   value: type.valueOf(spellPowerRangeEnum),
   target: type.valueOf(spellPowerTargetEnum),
 });
 export type spellRangeType = typeof spellRangeSchema.infer;
 
 export const SpellSchema = type({
+  "+": "reject",
   name: "string",
   description: "string",
   category: type.valueOf(spellCategoryEnum),

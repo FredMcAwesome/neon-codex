@@ -14,6 +14,17 @@
     "target": "Device",
     "duration": "Sustained",
     "fadingValue": 2,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Matrix Attribute"
+            }
+          ]
+        }
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 252
   },
@@ -32,6 +43,17 @@
     "target": "Device",
     "duration": "Sustained",
     "fadingValue": 2,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Matrix Attribute"
+            }
+          ]
+        }
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 252
   },

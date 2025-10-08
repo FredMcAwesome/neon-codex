@@ -20,15 +20,17 @@ export const getToken = function (bearerHeader: string) {
 };
 
 const LoginStatus = type.or(
-  {
+  type({
+    "+": "reject",
     loginStatus: "true",
     id: "number",
     username: "string",
     isAdmin: "boolean",
-  },
-  {
+  }),
+  type({
+    "+": "reject",
     loginStatus: "false",
-  }
+  })
 );
 
 type LoginStatusType = typeof LoginStatus.infer;

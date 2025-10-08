@@ -37,6 +37,7 @@ export enum vehicleXmlCategoryEnum {
 }
 
 const IncludedWeaponMountXmlSchema = type({
+  "+": "reject",
   // Mount Control type - how it is fired
   control: type.valueOf(weaponMountControlEnum),
   // Mount Flexibility - how moveable a weapon on this mount is
@@ -54,6 +55,7 @@ export type IncludedWeaponMountXmlType =
   typeof IncludedWeaponMountXmlSchema.infer;
 
 const VehicleXmlSchema = type({
+  "+": "reject",
   id: "string",
   name: "string",
   // Acceleration - Range categories a vehicle can move in a turn
@@ -77,9 +79,7 @@ const VehicleXmlSchema = type({
   // Limit for perception and other detection tests with vehicle systems
   sensor: "number",
   // Included gear
-  "gears?": type({
-    gear: UseGearXmlSchema,
-  }),
+  "gears?": type({ "+": "reject", gear: UseGearXmlSchema }),
   // Vehicle Mods included
   "mods?": ModRecursiveXmlSchema,
   // Number of mod slots of each category
@@ -103,13 +103,10 @@ const VehicleXmlSchema = type({
   // Included weapons
   // These weapons use a weapon mount
   "weapons?": type({
+    "+": "reject",
     weapon: type.or(
-      type({
-        name: "string",
-      }),
-      type({
-        name: "string",
-      }).array()
+      type({ "+": "reject", name: "string" }),
+      type({ "+": "reject", name: "string" }).array()
     ),
   }),
 
@@ -117,6 +114,7 @@ const VehicleXmlSchema = type({
   // Generally (currently always) included weapons
   // are the only weapon/s useable in the included weapon mounts
   "weaponmounts?": type({
+    "+": "reject",
     weaponmount: type.or(
       IncludedWeaponMountXmlSchema,
       IncludedWeaponMountXmlSchema.array()

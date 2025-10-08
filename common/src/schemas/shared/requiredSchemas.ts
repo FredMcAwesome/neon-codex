@@ -11,12 +11,14 @@ import {
 } from "../../enums.js";
 
 export const WeaponDamageRequirementsSchema = type({
+  "+": "reject",
   type: type.valueOf(damageTypeEnum),
   "annotation?": type.valueOf(damageAnnotationEnum),
 });
 export type WeaponDamageRequirementsType =
   typeof WeaponDamageRequirementsSchema.infer;
 export const RequirementsSchema = type({
+  "+": "reject",
   "weaponNames?": "string[]",
   "minimumHostConcealment?": "number",
   "maximumHostConcealment?": "number",

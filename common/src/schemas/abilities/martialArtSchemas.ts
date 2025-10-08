@@ -4,11 +4,16 @@ import { sourceBookEnum } from "../../enums.js";
 import { type } from "arktype";
 
 export const MartialArtSchema = type({
+  "+": "reject",
   name: "string",
   "bonus?": BonusSchema,
-  techniqueList: type.or("string[]", {
-    allTechniques: "true",
-  }),
+  techniqueList: type.or(
+    "string[]",
+    type({
+      "+": "reject",
+      allTechniques: "true",
+    })
+  ),
   "karmaCost?": "number",
   "requirements?": RequirementsSchema,
   description: "string",
@@ -22,6 +27,7 @@ export const MartialArtListSchema = type(MartialArtSchema.array());
 export type MartialArtListType = typeof MartialArtListSchema.infer;
 
 export const MartialArtTechniqueSchema = type({
+  "+": "reject",
   name: "string",
   "bonus?": BonusSchema,
   "requirements?": RequirementsSchema,

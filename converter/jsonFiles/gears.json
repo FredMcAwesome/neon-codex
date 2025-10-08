@@ -426,7 +426,15 @@
     "category": "Ammunition",
     "maxRating": 0,
     "bonus": {
-      "linkWeapon": true
+      "combatAndWeapon": {
+        "linkWeapon": {
+          "restrictions": true,
+          "weaponRequirements": {
+            "reloadMethodList": ["(c)", "(d)"],
+            "disallowedWeaponList": ["HK Urban Fighter"]
+          }
+        }
+      }
     },
     "cost": [5],
     "availability": {
@@ -442,7 +450,14 @@
     "category": "Ammunition",
     "maxRating": 0,
     "bonus": {
-      "linkWeapon": true
+      "combatAndWeapon": {
+        "linkWeapon": {
+          "restrictions": true,
+          "weaponRequirements": {
+            "reloadMethodList": ["(cy)"]
+          }
+        }
+      }
     },
     "cost": [25],
     "availability": {
@@ -4171,7 +4186,11 @@
     "maxRating": 0,
     "purchaseQuantity": 10,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "weaponBonus": {
       "damageType": "(M)",
@@ -4241,6 +4260,17 @@
     "category": "Ammunition",
     "maxRating": 0,
     "purchaseQuantity": 10,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Megacorp"
+            }
+          ]
+        }
+      }
+    },
     "weaponBonus": {
       "damageType": "(M)",
       "useRange": "Light Pistol"
@@ -4378,7 +4408,11 @@
     "maxRating": 0,
     "purchaseQuantity": 10,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "weaponBonus": {
       "damageType": "(M)",
@@ -4448,6 +4482,17 @@
     "category": "Ammunition",
     "maxRating": 0,
     "purchaseQuantity": 10,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Megacorp"
+            }
+          ]
+        }
+      }
+    },
     "weaponBonus": {
       "ap": -4,
       "damage": [
@@ -5982,7 +6027,11 @@
     "category": "Disguises",
     "maxRating": 10,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "cost": [
       {
@@ -6038,7 +6087,11 @@
     "category": "Disguises",
     "maxRating": 10,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "cost": [
       {
@@ -6343,7 +6396,11 @@
     "category": "Commlinks",
     "maxRating": 7,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "includedGearList": [
       {
@@ -10162,7 +10219,11 @@
     "category": "Commlink Apps",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "cost": {
       "range": {
@@ -10237,7 +10298,11 @@
     "category": "Commlink Apps",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "cost": {
       "range": {
@@ -10936,8 +11001,10 @@
     "category": "Skillsofts",
     "maxRating": 6,
     "bonus": {
-      "activeSoft": {
-        "option": "Rating"
+      "skill": {
+        "activeSoft": {
+          "option": "Rating"
+        }
       }
     },
     "cost": [
@@ -10978,11 +11045,13 @@
     "category": "Skillsofts",
     "maxRating": 6,
     "bonus": {
-      "skillSoft": {
-        "bonus": {
-          "option": "Rating"
-        },
-        "excludedCategory": "Language"
+      "skill": {
+        "skillSoft": {
+          "bonus": {
+            "option": "Rating"
+          },
+          "excludedCategory": "Language"
+        }
       }
     },
     "cost": [
@@ -11015,11 +11084,13 @@
     "category": "Skillsofts",
     "maxRating": 6,
     "bonus": {
-      "skillSoft": {
-        "bonus": {
-          "option": "Rating"
-        },
-        "specificCategory": "Language"
+      "skill": {
+        "skillSoft": {
+          "bonus": {
+            "option": "Rating"
+          },
+          "specificCategory": "Language"
+        }
       }
     },
     "cost": [
@@ -11065,7 +11136,11 @@
     "category": "Software",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "cost": [120],
     "availability": {
@@ -11081,7 +11156,11 @@
     "category": "Software",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "cost": [100],
     "availability": {
@@ -11097,7 +11176,11 @@
     "category": "Software",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "cost": [150],
     "availability": {
@@ -11113,7 +11196,11 @@
     "category": "Software",
     "maxRating": 6,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "cost": [
       {
@@ -11231,6 +11318,17 @@
     "description": "",
     "category": "Autosofts",
     "maxRating": 6,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Vehicle"
+            }
+          ]
+        }
+      }
+    },
     "cost": [
       {
         "subnumbers": [
@@ -11268,6 +11366,17 @@
     "description": "",
     "category": "Autosofts",
     "maxRating": 6,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Vehicle"
+            }
+          ]
+        }
+      }
+    },
     "cost": [
       {
         "subnumbers": [
@@ -11305,6 +11414,17 @@
     "description": "",
     "category": "Autosofts",
     "maxRating": 6,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Vehicle"
+            }
+          ]
+        }
+      }
+    },
     "cost": [
       {
         "subnumbers": [
@@ -11342,6 +11462,17 @@
     "description": "",
     "category": "Autosofts",
     "maxRating": 6,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Weapon"
+            }
+          ]
+        }
+      }
+    },
     "cost": [
       {
         "subnumbers": [
@@ -11407,6 +11538,36 @@
     "description": "",
     "category": "Autosofts",
     "maxRating": 6,
+    "bonus": {
+      "skill": {
+        "selectSkill": {
+          "skill": {
+            "restriction": {
+              "skillList": {
+                "skillList": [
+                  "First Aid",
+                  "Hardware",
+                  "Instruction",
+                  "Aeronautics Mechanic",
+                  "Automotive Mechanic",
+                  "Industrial Mechanic",
+                  "Nautical Mechanic",
+                  "Navigation",
+                  "Performance"
+                ],
+                "limit": "Only"
+              }
+            }
+          },
+          "bonus": {
+            "ratingIncreaseCount": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          }
+        }
+      }
+    },
     "cost": [
       {
         "subnumbers": [
@@ -11444,6 +11605,29 @@
     "description": "",
     "category": "Autosofts",
     "maxRating": 6,
+    "bonus": {
+      "skill": {
+        "selectSkill": {
+          "skill": {
+            "restriction": {
+              "skillCategoryList": {
+                "skillCategoryList": ["Academic", "Language", "Professional"],
+                "limit": "Only"
+              },
+              "knowledgeSkillRestriction": {
+                "limit": "Only"
+              }
+            }
+          },
+          "bonus": {
+            "ratingIncreaseCount": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          }
+        }
+      }
+    },
     "cost": [
       {
         "subnumbers": [
@@ -11481,6 +11665,32 @@
     "description": "",
     "category": "Autosofts",
     "maxRating": 6,
+    "bonus": {
+      "skill": {
+        "selectSkill": {
+          "skill": {
+            "restriction": {
+              "skillList": {
+                "skillList": [
+                  "Chemistry",
+                  "Demolitions",
+                  "Electronic Warfare",
+                  "Lockpicking",
+                  "Medicine"
+                ],
+                "limit": "Only"
+              }
+            }
+          },
+          "bonus": {
+            "ratingIncreaseCount": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          }
+        }
+      }
+    },
     "cost": [
       {
         "subnumbers": [
@@ -11522,6 +11732,17 @@
     "description": "",
     "category": "Autosofts",
     "maxRating": 6,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Weapon"
+            }
+          ]
+        }
+      }
+    },
     "cost": [
       {
         "subnumbers": [
@@ -11812,7 +12033,11 @@
     "category": "Software Tweaks",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "cost": [100],
     "availability": {
@@ -11828,7 +12053,11 @@
     "category": "Software Tweaks",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "cost": [50],
     "availability": {
@@ -11885,6 +12114,17 @@
     "description": "",
     "category": "Electronics Accessories",
     "maxRating": 6,
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Only for Intimidation"
+          }
+        ]
+      }
+    },
     "armourCapacityInformation": {
       "capacityCost": [1]
     },
@@ -12169,7 +12409,11 @@
     "category": "Electronics Accessories",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "deviceRating": 4,
     "cost": [250],
@@ -12243,7 +12487,11 @@
     "maxRating": 0,
     "allowCategoryList": ["Custom"],
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "userSelectable": false,
     "cost": [0],
@@ -12261,7 +12509,11 @@
     "maxRating": 0,
     "allowCategoryList": ["Custom"],
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "userSelectable": false,
     "cost": [0],
@@ -12963,7 +13215,9 @@
     "category": "ID/Credsticks",
     "maxRating": 6,
     "bonus": {
-      "linkLicense": true
+      "miscellaneous": {
+        "linkLicense": true
+      }
     },
     "requirements": {},
     "renameCustomLabel": true,
@@ -13010,7 +13264,11 @@
     "maxRating": 6,
     "allowCategoryList": ["ID/Credsticks", "Custom"],
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "forbidden": {},
     "renameCustomLabel": true,
@@ -13055,6 +13313,20 @@
     "description": "",
     "category": "Tools",
     "maxRating": 0,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Skill"
+            },
+            {
+              "base": "Knowledge Skill"
+            }
+          ]
+        }
+      }
+    },
     "armourCapacityInformation": {
       "capacityCost": [6]
     },
@@ -13071,6 +13343,20 @@
     "description": "",
     "category": "Tools",
     "maxRating": 0,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Skill"
+            },
+            {
+              "base": "Knowledge Skill"
+            }
+          ]
+        }
+      }
+    },
     "cost": [5000],
     "availability": {
       "rating": [8],
@@ -13084,6 +13370,20 @@
     "description": "",
     "category": "Tools",
     "maxRating": 0,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Skill"
+            },
+            {
+              "base": "Knowledge Skill"
+            }
+          ]
+        }
+      }
+    },
     "cost": [50000],
     "availability": {
       "rating": [12],
@@ -13470,7 +13770,9 @@
     "category": "Vision Enhancements",
     "maxRating": 0,
     "bonus": {
-      "smartlinkAccuracy": 1
+      "combatAndWeapon": {
+        "smartlinkAccuracy": 1
+      }
     },
     "capacityInformation": {
       "capacityCost": [1]
@@ -13513,6 +13815,19 @@
     "description": "",
     "category": "Vision Enhancements",
     "maxRating": 3,
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Mental",
+            "value": {
+              "option": "Rating"
+            },
+            "condition": "Only for Perception (Visual)"
+          }
+        ]
+      }
+    },
     "capacityInformation": {
       "capacityCost": [
         {
@@ -13784,6 +14099,19 @@
     "description": "",
     "category": "Audio Enhancements",
     "maxRating": 3,
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Mental",
+            "value": {
+              "option": "Rating"
+            },
+            "condition": "Only for Perception (Hearing)"
+          }
+        ]
+      }
+    },
     "capacityInformation": {
       "capacityCost": [
         {
@@ -13898,6 +14226,17 @@
     "description": "",
     "category": "Audio Enhancements",
     "maxRating": 0,
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Mental",
+            "value": 2,
+            "condition": "Only for Perception to find the source of a sound"
+          }
+        ]
+      }
+    },
     "capacityInformation": {
       "capacityCost": [2]
     },
@@ -15099,6 +15438,19 @@
     "description": "",
     "category": "Breaking and Entering Gear",
     "maxRating": 6,
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Physical",
+            "value": {
+              "option": "Rating"
+            },
+            "condition": "Only for picking mechanical locks"
+          }
+        ]
+      }
+    },
     "armourCapacityInformation": {
       "capacityCost": [1]
     },
@@ -15431,7 +15783,11 @@
     "category": "Chemicals",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [300],
@@ -15500,11 +15856,16 @@
     "category": "Survival Gear",
     "maxRating": 6,
     "bonus": {
-      "toxinContactResist": {
-        "option": "Rating"
+      "combatAndWeapon": {
+        "toxinContactResist": {
+          "option": "Rating"
+        },
+        "pathogenContactResist": {
+          "option": "Rating"
+        }
       },
-      "pathogenContactResist": {
-        "option": "Rating"
+      "miscellaneous": {
+        "uniqueBonusCategory": "chemicalprotection"
       }
     },
     "cost": [
@@ -15628,8 +15989,10 @@
     "category": "Survival Gear",
     "maxRating": 0,
     "bonus": {
-      "toxinInhalationImmune": true,
-      "pathogenInhalationImmune": true
+      "combatAndWeapon": {
+        "toxinInhalationImmune": true,
+        "pathogenInhalationImmune": true
+      }
     },
     "armourCapacityInformation": {
       "capacityCost": [2]
@@ -15661,10 +16024,12 @@
     "category": "Survival Gear",
     "maxRating": 0,
     "bonus": {
-      "toxinContactImmune": true,
-      "pathogenContactImmune": true,
-      "toxinInhalationImmune": true,
-      "pathogenInhalationImmune": true
+      "combatAndWeapon": {
+        "toxinContactImmune": true,
+        "pathogenContactImmune": true,
+        "toxinInhalationImmune": true,
+        "pathogenInhalationImmune": true
+      }
     },
     "cost": [3000],
     "availability": {
@@ -15753,11 +16118,16 @@
     "category": "Survival Gear",
     "maxRating": 6,
     "bonus": {
-      "toxinInhalationResist": {
-        "option": "Rating"
+      "combatAndWeapon": {
+        "toxinInhalationResist": {
+          "option": "Rating"
+        },
+        "pathogenInhalationResist": {
+          "option": "Rating"
+        }
       },
-      "pathogenInhalationResist": {
-        "option": "Rating"
+      "miscellaneous": {
+        "uniqueBonusCategory": "respirator"
       }
     },
     "armourCapacityInformation": {
@@ -16029,8 +16399,10 @@
     "category": "Survival Gear",
     "maxRating": 0,
     "bonus": {
-      "toxinInhalationImmune": true,
-      "pathogenInhalationImmune": true
+      "combatAndWeapon": {
+        "toxinInhalationImmune": true,
+        "pathogenInhalationImmune": true
+      }
     },
     "capacityInformation": {
       "capacity": [0]
@@ -16049,11 +16421,16 @@
     "category": "Survival Gear",
     "maxRating": 6,
     "bonus": {
-      "toxinInhalationResist": {
-        "option": "Rating"
+      "combatAndWeapon": {
+        "toxinInhalationResist": {
+          "option": "Rating"
+        },
+        "pathogenInhalationResist": {
+          "option": "Rating"
+        }
       },
-      "pathogenInhalationResist": {
-        "option": "Rating"
+      "miscellaneous": {
+        "uniqueBonusCategory": "respirator"
       }
     },
     "capacityInformation": {
@@ -16416,6 +16793,19 @@
     "description": "",
     "category": "Biotech",
     "maxRating": 6,
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Mental",
+            "value": {
+              "option": "Rating"
+            },
+            "condition": "Only for First Aid and Medicine"
+          }
+        ]
+      }
+    },
     "armourCapacityInformation": {
       "capacityCost": [5]
     },
@@ -16461,6 +16851,19 @@
     "description": "",
     "category": "Biotech",
     "maxRating": 6,
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Mental",
+            "value": {
+              "option": "Rating"
+            },
+            "condition": "Only for First Aid and Medicine"
+          }
+        ]
+      }
+    },
     "armourCapacityInformation": {
       "capacityCost": [5]
     },
@@ -17089,7 +17492,20 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Alchemy",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      },
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -17133,7 +17549,20 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Disenchanting",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      },
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -17177,7 +17606,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -17221,7 +17652,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -17265,7 +17698,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -17309,7 +17744,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -17353,7 +17790,21 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "skill": {
+        "skillIncreaseForAttributeList": [
+          {
+            "name": "MAG",
+            "bonus": {
+              "option": "Rating"
+            },
+            "precedence": "0",
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      },
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -17396,6 +17847,22 @@
     "description": "",
     "category": "Foci",
     "maxRating": 18,
+    "bonus": {
+      "power": {
+        "selectPower": {
+          "ignorePowerLimit": true,
+          "powerLevelBonus": {
+            "option": "Rating"
+          },
+          "powerPointLimit": {
+            "limit": {
+              "option": "Rating"
+            },
+            "powerPointsPerLevel": 0.25
+          }
+        }
+      }
+    },
     "cost": [
       {
         "subnumbers": [
@@ -17438,7 +17905,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -17482,7 +17951,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -17526,15 +17997,17 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true,
-      "spellCategoryList": [
-        {
-          "category": "Combat",
-          "bonus": {
-            "option": "Rating"
+      "spellAndMagic": {
+        "spellCategoryList": [
+          {
+            "category": "Combat",
+            "bonus": {
+              "option": "Rating"
+            }
           }
-        }
-      ]
+        ],
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -17578,7 +18051,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -17622,7 +18097,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -17666,7 +18143,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -17710,15 +18189,17 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true,
-      "spellCategoryList": [
-        {
-          "category": "Detection",
-          "bonus": {
-            "option": "Rating"
+      "spellAndMagic": {
+        "spellCategoryList": [
+          {
+            "category": "Detection",
+            "bonus": {
+              "option": "Rating"
+            }
           }
-        }
-      ]
+        ],
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -17762,7 +18243,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -17806,7 +18289,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -17850,7 +18335,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -17894,15 +18381,17 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true,
-      "spellCategoryList": [
-        {
-          "category": "Health",
-          "bonus": {
-            "option": "Rating"
+      "spellAndMagic": {
+        "spellCategoryList": [
+          {
+            "category": "Health",
+            "bonus": {
+              "option": "Rating"
+            }
           }
-        }
-      ]
+        ],
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -17946,7 +18435,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -17990,7 +18481,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -18034,7 +18527,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -18078,15 +18573,17 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true,
-      "spellCategoryList": [
-        {
-          "category": "Illusion",
-          "bonus": {
-            "option": "Rating"
+      "spellAndMagic": {
+        "spellCategoryList": [
+          {
+            "category": "Illusion",
+            "bonus": {
+              "option": "Rating"
+            }
           }
-        }
-      ]
+        ],
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -18130,7 +18627,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -18174,7 +18673,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -18218,7 +18719,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -18262,15 +18765,17 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true,
-      "spellCategoryList": [
-        {
-          "category": "Manipulation",
-          "bonus": {
-            "option": "Rating"
+      "spellAndMagic": {
+        "spellCategoryList": [
+          {
+            "category": "Manipulation",
+            "bonus": {
+              "option": "Rating"
+            }
           }
-        }
-      ]
+        ],
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -18314,7 +18819,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -18357,6 +18864,17 @@
     "description": "",
     "category": "Foci",
     "maxRating": 18,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Spirit Category"
+            }
+          ]
+        }
+      }
+    },
     "cost": [
       {
         "subnumbers": [
@@ -18398,6 +18916,17 @@
     "description": "",
     "category": "Foci",
     "maxRating": 18,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Spirit Category"
+            }
+          ]
+        }
+      }
+    },
     "cost": [
       {
         "subnumbers": [
@@ -18439,6 +18968,17 @@
     "description": "",
     "category": "Foci",
     "maxRating": 18,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Spirit Category"
+            }
+          ]
+        }
+      }
+    },
     "cost": [
       {
         "subnumbers": [
@@ -18481,11 +19021,13 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "specificWeapon": {
-        "bonus": {
-          "option": "Rating"
-        },
-        "weaponType": "Melee"
+      "combatAndWeapon": {
+        "specificWeapon": {
+          "bonus": {
+            "option": "Rating"
+          },
+          "weaponType": "Melee"
+        }
       }
     },
     "cost": [
@@ -18530,7 +19072,20 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Alchemy",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      },
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -18575,7 +19130,20 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Disenchanting",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      },
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -18620,7 +19188,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -18665,7 +19235,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -18710,7 +19282,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -18755,7 +19329,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -18800,7 +19376,21 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "skill": {
+        "skillIncreaseForAttributeList": [
+          {
+            "name": "MAG",
+            "bonus": {
+              "option": "Rating"
+            },
+            "precedence": "0",
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      },
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -18844,6 +19434,22 @@
     "description": "",
     "category": "Foci",
     "maxRating": 18,
+    "bonus": {
+      "power": {
+        "selectPower": {
+          "ignorePowerLimit": true,
+          "powerLevelBonus": {
+            "option": "Rating"
+          },
+          "powerPointLimit": {
+            "limit": {
+              "option": "Rating"
+            },
+            "powerPointsPerLevel": 0.25
+          }
+        }
+      }
+    },
     "requirements": {},
     "cost": [
       {
@@ -18887,7 +19493,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -18932,7 +19540,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -18977,15 +19587,17 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true,
-      "spellCategoryList": [
-        {
-          "category": "Combat",
-          "bonus": {
-            "option": "Rating"
+      "spellAndMagic": {
+        "spellCategoryList": [
+          {
+            "category": "Combat",
+            "bonus": {
+              "option": "Rating"
+            }
           }
-        }
-      ]
+        ],
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -19030,7 +19642,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -19075,7 +19689,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -19120,7 +19736,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -19165,15 +19783,17 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true,
-      "spellCategoryList": [
-        {
-          "category": "Detection",
-          "bonus": {
-            "option": "Rating"
+      "spellAndMagic": {
+        "spellCategoryList": [
+          {
+            "category": "Detection",
+            "bonus": {
+              "option": "Rating"
+            }
           }
-        }
-      ]
+        ],
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -19218,7 +19838,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -19263,7 +19885,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -19308,7 +19932,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -19353,15 +19979,17 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true,
-      "spellCategoryList": [
-        {
-          "category": "Health",
-          "bonus": {
-            "option": "Rating"
+      "spellAndMagic": {
+        "spellCategoryList": [
+          {
+            "category": "Health",
+            "bonus": {
+              "option": "Rating"
+            }
           }
-        }
-      ]
+        ],
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -19406,7 +20034,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -19451,7 +20081,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -19496,7 +20128,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -19541,15 +20175,17 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true,
-      "spellCategoryList": [
-        {
-          "category": "Illusion",
-          "bonus": {
-            "option": "Rating"
+      "spellAndMagic": {
+        "spellCategoryList": [
+          {
+            "category": "Illusion",
+            "bonus": {
+              "option": "Rating"
+            }
           }
-        }
-      ]
+        ],
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -19594,7 +20230,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -19639,7 +20277,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -19684,7 +20324,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -19729,15 +20371,17 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true,
-      "spellCategoryList": [
-        {
-          "category": "Manipulation",
-          "bonus": {
-            "option": "Rating"
+      "spellAndMagic": {
+        "spellCategoryList": [
+          {
+            "category": "Manipulation",
+            "bonus": {
+              "option": "Rating"
+            }
           }
-        }
-      ]
+        ],
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -19782,7 +20426,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -19826,6 +20472,17 @@
     "description": "",
     "category": "Foci",
     "maxRating": 18,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Spirit Category"
+            }
+          ]
+        }
+      }
+    },
     "requirements": {},
     "cost": [
       {
@@ -19868,6 +20525,17 @@
     "description": "",
     "category": "Foci",
     "maxRating": 18,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Spirit Category"
+            }
+          ]
+        }
+      }
+    },
     "requirements": {},
     "cost": [
       {
@@ -19910,6 +20578,17 @@
     "description": "",
     "category": "Foci",
     "maxRating": 18,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Spirit Category"
+            }
+          ]
+        }
+      }
+    },
     "requirements": {},
     "cost": [
       {
@@ -19953,11 +20632,13 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "specificWeapon": {
-        "bonus": {
-          "option": "Rating"
-        },
-        "weaponType": "Melee"
+      "combatAndWeapon": {
+        "specificWeapon": {
+          "bonus": {
+            "option": "Rating"
+          },
+          "weaponType": "Melee"
+        }
       }
     },
     "requirements": {},
@@ -20003,7 +20684,20 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Alchemy",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      },
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -20048,7 +20742,20 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Disenchanting",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      },
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -20093,7 +20800,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -20138,7 +20847,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -20183,7 +20894,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -20228,7 +20941,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -20273,7 +20988,21 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "skill": {
+        "skillIncreaseForAttributeList": [
+          {
+            "name": "MAG",
+            "bonus": {
+              "option": "Rating"
+            },
+            "precedence": "0",
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      },
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -20317,6 +21046,22 @@
     "description": "",
     "category": "Foci",
     "maxRating": 18,
+    "bonus": {
+      "power": {
+        "selectPower": {
+          "ignorePowerLimit": true,
+          "powerLevelBonus": {
+            "option": "Rating"
+          },
+          "powerPointLimit": {
+            "limit": {
+              "option": "Rating"
+            },
+            "powerPointsPerLevel": 0.25
+          }
+        }
+      }
+    },
     "requirements": {},
     "cost": [
       {
@@ -20360,7 +21105,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -20405,7 +21152,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -20450,15 +21199,17 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true,
-      "spellCategoryList": [
-        {
-          "category": "Combat",
-          "bonus": {
-            "option": "Rating"
+      "spellAndMagic": {
+        "spellCategoryList": [
+          {
+            "category": "Combat",
+            "bonus": {
+              "option": "Rating"
+            }
           }
-        }
-      ]
+        ],
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -20503,7 +21254,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -20548,7 +21301,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -20593,7 +21348,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -20638,15 +21395,17 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true,
-      "spellCategoryList": [
-        {
-          "category": "Detection",
-          "bonus": {
-            "option": "Rating"
+      "spellAndMagic": {
+        "spellCategoryList": [
+          {
+            "category": "Detection",
+            "bonus": {
+              "option": "Rating"
+            }
           }
-        }
-      ]
+        ],
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -20691,7 +21450,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -20736,7 +21497,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -20781,7 +21544,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -20826,15 +21591,17 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true,
-      "spellCategoryList": [
-        {
-          "category": "Health",
-          "bonus": {
-            "option": "Rating"
+      "spellAndMagic": {
+        "spellCategoryList": [
+          {
+            "category": "Health",
+            "bonus": {
+              "option": "Rating"
+            }
           }
-        }
-      ]
+        ],
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -20879,7 +21646,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -20924,7 +21693,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -20969,7 +21740,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -21014,15 +21787,17 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true,
-      "spellCategoryList": [
-        {
-          "category": "Illusion",
-          "bonus": {
-            "option": "Rating"
+      "spellAndMagic": {
+        "spellCategoryList": [
+          {
+            "category": "Illusion",
+            "bonus": {
+              "option": "Rating"
+            }
           }
-        }
-      ]
+        ],
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -21067,7 +21842,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -21112,7 +21889,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -21157,7 +21936,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -21202,15 +21983,17 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true,
-      "spellCategoryList": [
-        {
-          "category": "Manipulation",
-          "bonus": {
-            "option": "Rating"
+      "spellAndMagic": {
+        "spellCategoryList": [
+          {
+            "category": "Manipulation",
+            "bonus": {
+              "option": "Rating"
+            }
           }
-        }
-      ]
+        ],
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -21255,7 +22038,9 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "requirements": {},
     "cost": [
@@ -21299,6 +22084,17 @@
     "description": "",
     "category": "Foci",
     "maxRating": 18,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Spirit Category"
+            }
+          ]
+        }
+      }
+    },
     "requirements": {},
     "cost": [
       {
@@ -21341,6 +22137,17 @@
     "description": "",
     "category": "Foci",
     "maxRating": 18,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Spirit Category"
+            }
+          ]
+        }
+      }
+    },
     "requirements": {},
     "cost": [
       {
@@ -21383,6 +22190,17 @@
     "description": "",
     "category": "Foci",
     "maxRating": 18,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Spirit Category"
+            }
+          ]
+        }
+      }
+    },
     "requirements": {},
     "cost": [
       {
@@ -21426,11 +22244,13 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "specificWeapon": {
-        "bonus": {
-          "option": "Rating"
-        },
-        "weaponType": "Melee"
+      "combatAndWeapon": {
+        "specificWeapon": {
+          "bonus": {
+            "option": "Rating"
+          },
+          "weaponType": "Melee"
+        }
       }
     },
     "requirements": {},
@@ -21476,7 +22296,9 @@
     "category": "Formulae",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -21520,7 +22342,9 @@
     "category": "Formulae",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -21564,7 +22388,9 @@
     "category": "Formulae",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -21608,7 +22434,9 @@
     "category": "Formulae",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -21652,7 +22480,9 @@
     "category": "Formulae",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -21696,7 +22526,9 @@
     "category": "Formulae",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -21740,7 +22572,9 @@
     "category": "Formulae",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -21784,7 +22618,9 @@
     "category": "Formulae",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -21828,7 +22664,9 @@
     "category": "Formulae",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -21872,7 +22710,9 @@
     "category": "Formulae",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -21916,7 +22756,9 @@
     "category": "Formulae",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -21960,7 +22802,9 @@
     "category": "Formulae",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -22004,7 +22848,9 @@
     "category": "Formulae",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -22048,7 +22894,9 @@
     "category": "Formulae",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -22092,7 +22940,9 @@
     "category": "Formulae",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -22136,7 +22986,9 @@
     "category": "Formulae",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -22180,7 +23032,9 @@
     "category": "Formulae",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -22224,7 +23078,9 @@
     "category": "Formulae",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -22268,7 +23124,9 @@
     "category": "Formulae",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -22312,7 +23170,9 @@
     "category": "Formulae",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -22356,7 +23216,9 @@
     "category": "Formulae",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -22400,7 +23262,9 @@
     "category": "Formulae",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -22444,7 +23308,9 @@
     "category": "Formulae",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -22488,7 +23354,9 @@
     "category": "Formulae",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -22532,7 +23400,9 @@
     "category": "Formulae",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -22576,7 +23446,9 @@
     "category": "Formulae",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -22620,7 +23492,9 @@
     "category": "Formulae",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -22664,7 +23538,9 @@
     "category": "Formulae",
     "maxRating": 18,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -22707,6 +23583,17 @@
     "description": "",
     "category": "Formulae",
     "maxRating": 18,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Spirit Category"
+            }
+          ]
+        }
+      }
+    },
     "renameCustomLabel": true,
     "cost": [
       {
@@ -22749,6 +23636,17 @@
     "description": "",
     "category": "Formulae",
     "maxRating": 18,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Spirit Category"
+            }
+          ]
+        }
+      }
+    },
     "renameCustomLabel": true,
     "cost": [
       {
@@ -22791,6 +23689,17 @@
     "description": "",
     "category": "Formulae",
     "maxRating": 18,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Spirit Category"
+            }
+          ]
+        }
+      }
+    },
     "renameCustomLabel": true,
     "cost": [
       {
@@ -22834,7 +23743,11 @@
     "category": "Formulae",
     "maxRating": 18,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [
@@ -22878,6 +23791,17 @@
     "description": "",
     "category": "Formulae",
     "maxRating": 0,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Spell"
+            }
+          ]
+        }
+      }
+    },
     "renameCustomLabel": true,
     "cost": [2000],
     "availability": {
@@ -22892,6 +23816,17 @@
     "description": "",
     "category": "Formulae",
     "maxRating": 0,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Spell"
+            }
+          ]
+        }
+      }
+    },
     "renameCustomLabel": true,
     "cost": [500],
     "availability": {
@@ -22906,6 +23841,17 @@
     "description": "",
     "category": "Formulae",
     "maxRating": 0,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Spell"
+            }
+          ]
+        }
+      }
+    },
     "renameCustomLabel": true,
     "cost": [500],
     "availability": {
@@ -22920,6 +23866,17 @@
     "description": "",
     "category": "Formulae",
     "maxRating": 0,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Spell"
+            }
+          ]
+        }
+      }
+    },
     "renameCustomLabel": true,
     "cost": [1000],
     "availability": {
@@ -22934,6 +23891,17 @@
     "description": "",
     "category": "Formulae",
     "maxRating": 0,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Spell"
+            }
+          ]
+        }
+      }
+    },
     "renameCustomLabel": true,
     "cost": [1500],
     "availability": {
@@ -22962,7 +23930,9 @@
     "category": "Magical Supplies",
     "maxRating": 20,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -23002,7 +23972,9 @@
     "category": "Magical Supplies",
     "maxRating": 20,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [
       {
@@ -23042,7 +24014,9 @@
     "category": "Magical Supplies",
     "maxRating": 0,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [20],
     "availability": {
@@ -23058,7 +24032,9 @@
     "category": "Magical Supplies",
     "maxRating": 0,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [350],
     "availability": {
@@ -23074,7 +24050,9 @@
     "category": "Magical Supplies",
     "maxRating": 0,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [4500],
     "availability": {
@@ -23090,7 +24068,9 @@
     "category": "Magical Supplies",
     "maxRating": 0,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [20],
     "availability": {
@@ -23106,7 +24086,9 @@
     "category": "Magical Supplies",
     "maxRating": 0,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [100],
     "availability": {
@@ -23122,7 +24104,9 @@
     "category": "Magical Supplies",
     "maxRating": 0,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [500],
     "availability": {
@@ -23138,7 +24122,9 @@
     "category": "Magical Supplies",
     "maxRating": 0,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [30],
     "availability": {
@@ -23154,7 +24140,9 @@
     "category": "Magical Supplies",
     "maxRating": 0,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [150],
     "availability": {
@@ -23170,7 +24158,9 @@
     "category": "Magical Supplies",
     "maxRating": 0,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [750],
     "availability": {
@@ -23186,7 +24176,9 @@
     "category": "Magical Supplies",
     "maxRating": 0,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [40],
     "availability": {
@@ -23202,7 +24194,9 @@
     "category": "Magical Supplies",
     "maxRating": 0,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [200],
     "availability": {
@@ -23218,7 +24212,9 @@
     "category": "Magical Supplies",
     "maxRating": 0,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [1000],
     "availability": {
@@ -23234,7 +24230,9 @@
     "category": "Magical Supplies",
     "maxRating": 0,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [50],
     "availability": {
@@ -23250,7 +24248,9 @@
     "category": "Magical Supplies",
     "maxRating": 0,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [250],
     "availability": {
@@ -23266,7 +24266,9 @@
     "category": "Magical Supplies",
     "maxRating": 0,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [1250],
     "availability": {
@@ -23282,7 +24284,9 @@
     "category": "Magical Supplies",
     "maxRating": 0,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [60],
     "availability": {
@@ -23298,7 +24302,9 @@
     "category": "Magical Supplies",
     "maxRating": 0,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [300],
     "availability": {
@@ -23314,7 +24320,9 @@
     "category": "Magical Supplies",
     "maxRating": 0,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [1500],
     "availability": {
@@ -23330,7 +24338,9 @@
     "category": "Magical Supplies",
     "maxRating": 0,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [70],
     "availability": {
@@ -23346,7 +24356,9 @@
     "category": "Magical Supplies",
     "maxRating": 0,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [350],
     "availability": {
@@ -23362,7 +24374,9 @@
     "category": "Magical Supplies",
     "maxRating": 0,
     "bonus": {
-      "linkTradition": true
+      "spellAndMagic": {
+        "linkTradition": true
+      }
     },
     "cost": [1750],
     "availability": {
@@ -23390,6 +24404,17 @@
     "description": "",
     "category": "Magical Supplies",
     "maxRating": 0,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Spell"
+            }
+          ]
+        }
+      }
+    },
     "cost": [2000],
     "availability": {
       "rating": [4],
@@ -23560,6 +24585,26 @@
     "description": "",
     "category": "Magical Supplies",
     "maxRating": 20,
+    "bonus": {
+      "skill": {
+        "selectSkill": {
+          "skill": {
+            "restriction": {
+              "skillCategoryList": {
+                "skillCategoryList": ["Physical Active"],
+                "limit": "Only"
+              }
+            }
+          },
+          "bonus": {
+            "ratingIncreaseCount": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          }
+        }
+      }
+    },
     "cost": [
       {
         "subnumbers": [
@@ -23797,7 +24842,11 @@
     "category": "Magical Supplies",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [0],
@@ -23839,6 +24888,17 @@
     "description": "",
     "category": "Magical Supplies",
     "maxRating": 0,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Spirit"
+            }
+          ]
+        }
+      }
+    },
     "renameCustomLabel": true,
     "cost": [1000],
     "availability": {
@@ -26241,7 +27301,11 @@
     "category": "Commlink/Cyberdeck Form Factors",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "requirements": {},
     "renameCustomLabel": true,
@@ -26312,7 +27376,11 @@
     "category": "Commlink/Cyberdeck Form Factors",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "requirements": {},
     "renameCustomLabel": true,
@@ -26404,8 +27472,10 @@
     "category": "Cyberdeck Modules",
     "maxRating": 0,
     "bonus": {
-      "matrixInitiative": {
-        "bonusDice": 1
+      "initiative": {
+        "matrixInitiative": {
+          "bonusDice": 1
+        }
       }
     },
     "deviceRating": 0,
@@ -26442,6 +27512,17 @@
     "description": "",
     "category": "Cyberdeck Modules",
     "maxRating": 0,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Program"
+            }
+          ]
+        }
+      }
+    },
     "deviceRating": 0,
     "armourCapacityInformation": {
       "capacityCost": [2]
@@ -28121,7 +29202,11 @@
     "category": "Entertainment",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [10],
@@ -28138,7 +29223,11 @@
     "category": "Entertainment",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [20],
@@ -28155,7 +29244,11 @@
     "category": "Entertainment",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [5],
@@ -28172,7 +29265,11 @@
     "category": "Entertainment",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [5],
@@ -28189,7 +29286,11 @@
     "category": "Entertainment",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [50],
@@ -28206,7 +29307,11 @@
     "category": "Entertainment",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [10],
@@ -28223,7 +29328,11 @@
     "category": "Entertainment",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [10],
@@ -28298,7 +29407,11 @@
     "category": "Entertainment",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [50],
@@ -28315,7 +29428,11 @@
     "category": "Entertainment",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [20],
@@ -28332,7 +29449,11 @@
     "category": "Entertainment",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [5],
@@ -28349,7 +29470,11 @@
     "category": "Entertainment",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [5],
@@ -28366,7 +29491,11 @@
     "category": "Entertainment",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [20],
@@ -28383,7 +29512,11 @@
     "category": "Entertainment",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [20],
@@ -28400,7 +29533,11 @@
     "category": "Entertainment",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [100],
@@ -28417,7 +29554,11 @@
     "category": "Entertainment",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [100],
@@ -28434,7 +29575,11 @@
     "category": "Entertainment",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [500],
@@ -28451,7 +29596,11 @@
     "category": "Entertainment",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [500],
@@ -28507,7 +29656,11 @@
     "category": "Entertainment",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [10],
@@ -28524,7 +29677,11 @@
     "category": "Entertainment",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [50],
@@ -28541,7 +29698,11 @@
     "category": "Entertainment",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [500],
@@ -28558,7 +29719,11 @@
     "category": "Entertainment",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [50],
@@ -28575,7 +29740,11 @@
     "category": "Entertainment",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [250],
@@ -28592,7 +29761,11 @@
     "category": "Entertainment",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [1000],
@@ -28609,7 +29782,11 @@
     "category": "Entertainment",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [20000],
@@ -28626,7 +29803,11 @@
     "category": "Entertainment",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [1],
@@ -28643,7 +29824,11 @@
     "category": "Entertainment",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [1],
@@ -29120,7 +30305,11 @@
     "category": "Tools",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [10],
@@ -29164,7 +30353,11 @@
     "category": "Tools",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [5],
@@ -29285,7 +30478,11 @@
     "category": "Tools",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [5],
@@ -29302,7 +30499,11 @@
     "category": "Tools",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [20],
@@ -29319,7 +30520,11 @@
     "category": "Tools",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [20],
@@ -29336,7 +30541,11 @@
     "category": "Tools",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": [100],
@@ -30354,8 +31563,10 @@
     "maxRating": 0,
     "allowCategoryList": ["Nanogear", "Custom"],
     "bonus": {
-      "toxinContactImmune": true,
-      "pathogenContactImmune": true
+      "combatAndWeapon": {
+        "toxinContactImmune": true,
+        "pathogenContactImmune": true
+      }
     },
     "cost": [1250],
     "availability": {
@@ -30439,6 +31650,17 @@
     "description": "",
     "category": "Nanogear",
     "maxRating": 0,
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Mental",
+            "value": 1,
+            "condition": "Only for Disguise and Impersonation"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "cost": [250],
     "availability": {
@@ -30504,6 +31726,17 @@
     "description": "",
     "category": "Nanogear",
     "maxRating": 6,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Gear"
+            }
+          ]
+        }
+      }
+    },
     "renameCustomLabel": true,
     "cost": [
       {
@@ -30874,7 +32107,11 @@
     "category": "Paydata",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": {
@@ -30896,7 +32133,11 @@
     "category": "Paydata",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": {
@@ -30918,7 +32159,11 @@
     "category": "Paydata",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": {
@@ -30940,7 +32185,11 @@
     "category": "Paydata",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": {
@@ -30962,7 +32211,11 @@
     "category": "Paydata",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": {
@@ -30984,7 +32237,11 @@
     "category": "Paydata",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": {
@@ -31006,7 +32263,11 @@
     "category": "Paydata",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": {
@@ -31028,7 +32289,11 @@
     "category": "Paydata",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": {
@@ -31050,7 +32315,11 @@
     "category": "Paydata",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": {
@@ -31072,7 +32341,11 @@
     "category": "Paydata",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": {
@@ -31094,7 +32367,11 @@
     "category": "Paydata",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": {
@@ -31116,7 +32393,11 @@
     "category": "Paydata",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": {
@@ -31138,7 +32419,11 @@
     "category": "Paydata",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": {
@@ -31160,7 +32445,11 @@
     "category": "Paydata",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": {
@@ -31182,7 +32471,11 @@
     "category": "Paydata",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "renameCustomLabel": true,
     "cost": {
@@ -32353,7 +33646,9 @@
     "category": "Vision Devices",
     "maxRating": 0,
     "bonus": {
-      "smartlinkAccuracy": 1
+      "combatAndWeapon": {
+        "smartlinkAccuracy": 1
+      }
     },
     "capacityInformation": {
       "capacity": [2]
@@ -32781,7 +34076,11 @@
     "category": "Foci",
     "maxRating": 18,
     "bonus": {
-      "linkWeapon": true
+      "combatAndWeapon": {
+        "linkWeapon": {
+          "restrictions": false
+        }
+      }
     },
     "cost": [
       {
@@ -33936,7 +35235,11 @@
     "maxRating": 0,
     "allowCategoryList": ["ID/Credsticks", "Currency", "Custom"],
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "deviceRating": 5,
     "capacityInformation": {
@@ -33957,7 +35260,11 @@
     "maxRating": 6,
     "allowCategoryList": ["ID/Credsticks", "Currency", "Custom"],
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "deviceRating": 5,
     "capacityInformation": {
@@ -34785,6 +36092,20 @@
     "description": "",
     "category": "Tools",
     "maxRating": 0,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Skill"
+            },
+            {
+              "base": "Knowledge Skill"
+            }
+          ]
+        }
+      }
+    },
     "cost": [500],
     "availability": {
       "rating": [5],
@@ -34798,6 +36119,20 @@
     "description": "",
     "category": "Tools",
     "maxRating": 0,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Skill"
+            },
+            {
+              "base": "Knowledge Skill"
+            }
+          ]
+        }
+      }
+    },
     "cost": [5000],
     "availability": {
       "rating": [8],
@@ -34811,6 +36146,20 @@
     "description": "",
     "category": "Tools",
     "maxRating": 0,
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Skill"
+            },
+            {
+              "base": "Knowledge Skill"
+            }
+          ]
+        }
+      }
+    },
     "cost": [100000],
     "availability": {
       "rating": [14],
@@ -34943,11 +36292,16 @@
     "category": "Survival Gear",
     "maxRating": 6,
     "bonus": {
-      "toxinContactResist": {
-        "option": "Rating"
+      "combatAndWeapon": {
+        "toxinContactResist": {
+          "option": "Rating"
+        },
+        "pathogenContactResist": {
+          "option": "Rating"
+        }
       },
-      "pathogenContactResist": {
-        "option": "Rating"
+      "miscellaneous": {
+        "uniqueBonusCategory": "chemicalprotection"
       }
     },
     "cost": [
@@ -35064,6 +36418,17 @@
     "description": "",
     "category": "Biotech",
     "maxRating": 0,
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Mental",
+            "value": 3,
+            "condition": "Only for First Aid and Medicine"
+          }
+        ]
+      }
+    },
     "armourCapacityInformation": {
       "capacityCost": [5]
     },
@@ -35514,20 +36879,26 @@
     "category": "Appearance Modification",
     "maxRating": 3,
     "bonus": {
-      "enterName": true,
-      "essenceCostTimes100": [
-        {
-          "subnumbers": [
-            -10,
-            {
-              "operator": "*"
-            },
-            {
-              "option": "Rating"
-            }
-          ]
+      "essenceAndAugmentation": {
+        "essenceCostTimes100": [
+          {
+            "subnumbers": [
+              -10,
+              {
+                "operator": "*"
+              },
+              {
+                "option": "Rating"
+              }
+            ]
+          }
+        ]
+      },
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
         }
-      ]
+      }
     },
     "cost": [
       {
@@ -35568,7 +36939,11 @@
     "category": "Musical Instruments",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "allowedGearList": ["Internal Synthlink", "External Synthlink"],
     "cost": [50],
@@ -35585,7 +36960,11 @@
     "category": "Musical Instruments",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "allowedGearList": ["Internal Synthlink", "External Synthlink"],
     "cost": [500],
@@ -35602,7 +36981,11 @@
     "category": "Musical Instruments",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "allowedGearList": ["Internal Synthlink", "External Synthlink"],
     "cost": [5000],
@@ -35619,7 +37002,11 @@
     "category": "Musical Instruments",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "allowedGearList": ["Internal Synthlink", "External Synthlink"],
     "cost": [50000],
@@ -35730,7 +37117,11 @@
     "category": "Reporter Gear",
     "maxRating": 0,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "cost": [50],
     "availability": {

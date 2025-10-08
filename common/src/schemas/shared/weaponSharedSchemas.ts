@@ -10,6 +10,7 @@ import {
 } from "../../enums.js";
 
 export const BlastSchema = type({
+  "+": "reject",
   type: type.valueOf(blastTypeEnum),
   value: "number",
 });
@@ -18,8 +19,14 @@ export type BlastType = typeof BlastSchema.infer;
 // damage is a recursive type
 export const DamageSubnumberSchema = type.or(
   "number",
-  { option: type.valueOf(damageCalculationOptionEnum) },
-  { operator: type.valueOf(mathOperatorEnum) }
+  type({
+    "+": "reject",
+    option: type.valueOf(damageCalculationOptionEnum),
+  }),
+  type({
+    "+": "reject",
+    operator: type.valueOf(mathOperatorEnum),
+  })
 );
 export type DamageAmountType = Array<
   | typeof DamageSubnumberSchema.infer
@@ -41,6 +48,7 @@ export const { DamageAmountSchema } = type.module({
 });
 
 export const DamageSchema = type({
+  "+": "reject",
   damageAmount: DamageAmountSchema,
   type: type.valueOf(damageTypeEnum),
   "annotation?": type.valueOf(damageAnnotationEnum),
@@ -50,6 +58,7 @@ export const DamageSchema = type({
 export type DamageType = typeof DamageSchema.infer;
 
 export const WeaponBonusSchema = type({
+  "+": "reject",
   "ap?": "number",
   "apReplace?": "number",
   "damage?": DamageSchema,
@@ -69,6 +78,7 @@ export const AccessoryMountSchema = type(MountSchema.array());
 export type AccessoryMountType = typeof AccessoryMountSchema.infer;
 
 export const AmmunitionSingleSchema = type({
+  "+": "reject",
   "capacity?": "number",
   "numberOfAmmunitionHolders?": "number",
   reloadMethod: type.valueOf(ammoSourceEnum),

@@ -16,6 +16,7 @@ import { convertSource } from "../common/ParserHelper.js";
 import { type } from "arktype";
 
 const MartialArtTechniqueXmlSchema = type({
+  "+": "reject",
   id: "string",
   name: "string",
   "bonus?": BonusXmlSchema,

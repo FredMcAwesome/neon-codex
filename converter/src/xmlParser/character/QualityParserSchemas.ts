@@ -27,6 +27,7 @@ export type GenericXmlParsingType =
 export type GenericArrayXmlParsingType = Array<GenericXmlParsingType>;
 
 const QualitySubBonusXmlSchema = type({
+  "+": "reject",
   id: "string",
   name: "string",
   // Category of quality
@@ -73,20 +74,23 @@ const QualitySubBonusXmlSchema = type({
   "nolevels?": "''",
   // Bonus is only applied the first time this quality is taken
   "firstlevelbonus?": type.or(
-    {
+    type({
+      "+": "reject",
       // Increase to Notoriety level
       notoriety: "number",
-    },
-    {
+    }),
+    type({
+      "+": "reject",
       // prevents attribute maximum/s from being increased
       attributemaxclamp: StringArrayOrStringSchema,
-    }
+    })
   ),
   // Add custom natural weapons
   // Chummer doesn't want them as weapons, I do
-  "naturalweapons?": {
+  "naturalweapons?": type({
+    "+": "reject",
     naturalweapon: type.or(NaturalWeaponSchema, NaturalWeaponSchema.array()),
-  },
+  }),
   // Add weapon
   "addweapon?": StringArrayOrStringSchema,
   // This is a metagenic quality, only matters if another
@@ -121,7 +125,7 @@ export type QualityXmlType = QualitySubBonusXmlType & {
   required?: RequiredXmlType | undefined;
   forbidden?: RequiredXmlType | undefined;
 };
-const QualityXmlSchema = QualitySubBonusXmlSchema.and({
+const QualityXmlSchema = QualitySubBonusXmlSchema.merge({
   // Bonus applied by Cyberware
   "bonus?": BonusXmlSchema,
   // Required

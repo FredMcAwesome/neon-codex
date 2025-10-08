@@ -3,11 +3,12 @@ import {
   StringArrayOrStringSchema,
   StringOrNumberSchema,
 } from "../common/ParserCommonDefines.js";
-import { WeaponXmlSubtypeSchema } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
+import { WeaponSubtypeSchema } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 import { metamagicArtEnum } from "@neon-codex/common/build/enums.js";
 import { type } from "arktype";
 
 const SkillSchema = type({
+  "+": "reject",
   name: "string",
   val: "number",
   "spec?": "string",
@@ -15,11 +16,13 @@ const SkillSchema = type({
 });
 
 const SpellCategorySchema = type({
+  "+": "reject",
   name: "string",
   count: "number",
 });
 
 const ConcealXmlSchema = type({
+  "+": "reject",
   xmltext: "number",
   _operation: type.or(
     "'lessthanequals'",
@@ -29,6 +32,7 @@ const ConcealXmlSchema = type({
 });
 
 const XmlOperationSchema = type({
+  "+": "reject",
   xmltext: StringOrNumberSchema,
   _operation: "string",
 });
@@ -38,23 +42,25 @@ const XmlStringOrOperationSchema = type.or(
   StringOrNumberSchema
 );
 
-const XmlCategoryOrOperationSchema = type.or(WeaponXmlSubtypeSchema, {
-  xmltext: WeaponXmlSubtypeSchema,
-  _operation: "string",
-});
+const XmlCategoryOrOperationSchema = type.or(
+  WeaponSubtypeSchema,
+  type({
+    "+": "reject",
+    xmltext: WeaponSubtypeSchema,
+    _operation: "string",
+  })
+);
 export type XmlCategoryOrOperationType =
   typeof XmlCategoryOrOperationSchema.infer;
 
 const RequiredWeaponDetailsXmlSubSchema = type({
+  "+": "reject",
   "name?": type.or(
     XmlStringOrOperationSchema,
     XmlStringOrOperationSchema.array()
   ),
   "ammo?": type.or(XmlOperationSchema, XmlOperationSchema.array()),
-  "ammocategory?": type.or(
-    WeaponXmlSubtypeSchema,
-    WeaponXmlSubtypeSchema.array()
-  ),
+  "ammocategory?": type.or(WeaponSubtypeSchema, WeaponSubtypeSchema.array()),
   "category?": type.or(
     [XmlCategoryOrOperationSchema],
     XmlCategoryOrOperationSchema
@@ -63,11 +69,18 @@ const RequiredWeaponDetailsXmlSubSchema = type({
   "spec?": StringArrayOrStringSchema,
   "spec2?": StringArrayOrStringSchema,
   "conceal?": ConcealXmlSchema,
-  "useskill?": type.or(StringArrayOrStringSchema, {
-    _NOT: "''",
-    _operation: "'exists'",
+  "useskill?": type.or(
+    StringArrayOrStringSchema,
+    type({
+      "+": "reject",
+      _NOT: "''",
+      _operation: "'exists'",
+    })
+  ),
+  "accessorymounts?": type({
+    "+": "reject",
+    mount: StringArrayOrStringSchema,
   }),
-  "accessorymounts?": { mount: StringArrayOrStringSchema },
   "_NOT?": "''",
   "damage?": XmlOperationSchema,
   "mode?": XmlOperationSchema,
@@ -91,12 +104,14 @@ export type RequiredWeaponDetailsXmlType =
 
 const WeaponAccessoryDetailsOrXmlSchema = type.or(
   RequiredWeaponDetailsXmlSchema,
-  {
+  type({
+    "+": "reject",
     weapondetails: RequiredWeaponDetailsXmlSchema,
-  }
+  })
 );
 
 const RequiredVehicleDetailsXmlSubSchema = type({
+  "+": "reject",
   "name?": type.or(
     XmlStringOrOperationSchema,
     XmlStringOrOperationSchema.array()
@@ -124,6 +139,7 @@ const { RequiredVehicleDetailsXmlSchema } = type.module({
 });
 
 const RequiredWeaponMountDetailsXmlSubSchema = type({
+  "+": "reject",
   "control?": StringArrayOrStringSchema,
   "flexibility?": StringArrayOrStringSchema,
   "visibility?": StringArrayOrStringSchema,
@@ -162,11 +178,12 @@ const { RequiredWeaponMountDetailsXmlSchema } = type.module({
 });
 
 const GearRequiredGearDetailsPropertyStandardSchema = type.or(
-  {
+  type({
+    "+": "reject",
     _operation: "string",
     "_NOT?": "''",
     "xmltext?": type.or("0", "string"),
-  },
+  }),
   "0"
 );
 
@@ -180,6 +197,7 @@ const NameUnionSchema = type.or(StringArrayOrStringSchema, [
 ]);
 
 const PartialGearRequiredInnerSchema = type({
+  "+": "reject",
   "category?": StringArrayOrStringSchema,
   "attributearray?": {
     _operation: "string",
@@ -205,11 +223,16 @@ export const { RequiredGearDetailsXmlSchema } = type.module({
 });
 
 const RequiredSubSchema = type({
+  "+": "reject",
   "tradition?": StringArrayOrStringSchema,
-  "quality?": type.or(StringArrayOrStringSchema, {
-    xmltext: "string",
-    _extra: "string",
-  }),
+  "quality?": type.or(
+    StringArrayOrStringSchema,
+    type({
+      "+": "reject",
+      xmltext: "string",
+      _extra: "string",
+    })
+  ),
   "martialtechnique?": "string",
   // this should probably self-referential...
   "initiategrade?": "number",
@@ -235,18 +258,20 @@ const RequiredSubSchema = type({
   "ess?": type.or(
     type(
       type.or(
-        {
+        type({
+          "+": "reject",
           _grade: "string",
           xmltext: "number",
-        },
+        }),
         StringOrNumberSchema
       )
     ).array(),
     type.or(
-      {
+      type({
+        "+": "reject",
         _grade: "string",
         xmltext: "number",
-      },
+      }),
       StringOrNumberSchema
     )
   ),
@@ -257,11 +282,11 @@ const RequiredSubSchema = type({
   "skill?": type.or(SkillSchema, SkillSchema.array()),
   "gameplayoption?": "string",
 });
-const RequiredRecursiveSubSchema = RequiredSubSchema.and({
+const RequiredRecursiveSubSchema = RequiredSubSchema.merge({
   "grouponeof?": type.or(RequiredSubSchema, RequiredSubSchema.array()),
 });
 
-const RequiredRecursiveSchema = RequiredRecursiveSubSchema.and({
+const RequiredRecursiveSchema = RequiredRecursiveSubSchema.merge({
   "group?": type.or(
     RequiredRecursiveSubSchema,
     RequiredRecursiveSubSchema.array()
@@ -269,57 +294,80 @@ const RequiredRecursiveSchema = RequiredRecursiveSubSchema.and({
 });
 
 const AttributeRequiredXMLSchema = type({
+  "+": "reject",
   name: type.valueOf(attributeXMLEnum),
   "natural?": "''",
   total: "number",
 });
 const containsSchema = type.or(
-  {
+  type({
+    "+": "reject",
+
     accessory: StringArrayOrStringSchema,
-  },
-  {
+  }),
+  type({
+    "+": "reject",
+
     specialmodificationlimit: "number",
-  },
-  {
-    armormod: {
+  }),
+  type({
+    "+": "reject",
+
+    armormod: type({
+      "+": "reject",
       xmltext: "string",
       _sameparent: "'True'",
-    },
-  },
-  {
+    }),
+  }),
+  type({
+    "+": "reject",
+
     attribute: type.or(AttributeRequiredXMLSchema, [
       AttributeRequiredXMLSchema,
     ]),
-  },
-  { program: "string" },
-  { lifestylequality: StringArrayOrStringSchema },
-  { characterquality: StringArrayOrStringSchema },
+  }),
+  type({
+    "+": "reject",
+    program: "string",
+  }),
+  type({
+    "+": "reject",
+    lifestylequality: StringArrayOrStringSchema,
+  }),
+  type({
+    "+": "reject",
+    characterquality: StringArrayOrStringSchema,
+  }),
   RequiredRecursiveSchema
 );
 
 export type containsType = typeof containsSchema.infer;
 
 const parentDetailsSchema = type({
+  "+": "reject",
   "NONE?": "''",
-  "OR?": {
+  "OR?": type({
+    "+": "reject",
     name: type
       .or(
-        {
+        type({
+          "+": "reject",
           xmltext: "string",
           _operation: "string",
-        },
+        }),
         "string"
       )
       .array(),
     "NONE?": "''",
-  },
+  }),
   "category?": "string",
   "name?": "string",
   "ammoforweapontype?": "'bow'",
 });
 
 export const RequiredXmlSchema = type.or(
-  {
+  type({
+    "+": "reject",
     "weapondetails?": RequiredWeaponDetailsXmlSchema,
     "vehicledetails?": RequiredVehicleDetailsXmlSchema,
     "weaponmountdetails?": RequiredWeaponMountDetailsXmlSchema,
@@ -327,9 +375,10 @@ export const RequiredXmlSchema = type.or(
     "oneof?": containsSchema,
     "allof?": containsSchema,
     "parentdetails?": parentDetailsSchema,
-  },
-  {
+  }),
+  type({
+    "+": "reject",
     OR: WeaponAccessoryDetailsOrXmlSchema,
-  }
+  })
 );
 export type RequiredXmlType = typeof RequiredXmlSchema.infer;

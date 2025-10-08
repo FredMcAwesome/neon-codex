@@ -1,5 +1,5 @@
 // FixedValues(1,2,5...)
-Initiative {
+NumberFixedRating {
   Exp = "FixedValues(" Inner ")" -- fixed
     | InitiativeValue
   Inner = Inner "," ArrayWrapper -- list
@@ -20,6 +20,120 @@ SkillKarmaCost {
   Calculation = "-number(Rating >= " Number ")"
   Number = "-" PositiveNumber -- negative
     | PositiveNumber
+  PositiveNumber = digit+ "." digit+ -- float
+    | digit+ -- int
+}
+
+Xpath {
+  Exp = Exp "|" Exp -- union
+    | Path
+  Path = "/chummer/" + SubPath
+  SubPath = Element
+    | Immunity
+    | Spell
+    | Gear
+    | Program
+    | Vehicle
+    | Weapon
+    | Skill
+    | KnowledgeSkill
+    | SpiritCategory
+    | Spirit
+    | Mega
+    | MegaAA
+    | SkillGroup
+    | Metatype
+    | Metavariant
+    | Action
+    | MatrixAttributes
+  Element = "elements/*"
+    | "elements/element"
+  Immunity = "immunities/immunity"
+  Spell = "spells/spell"
+    | "spells/spell" + Filter -- filter
+  Gear = "gear/gear"
+    | "gear/gear" + Filter -- filter
+  Program = "programs/program"
+    | "programs/program" + Filter -- filter
+  Vehicle = "vehicles/vehicle"
+    | "vehicles/vehicle" + Filter -- filter
+  Weapon = "weapons/weapon"
+    | "weapons/weapon" + Filter -- filter
+  Skill = "skills/skill"
+    | "skills/skill/name"
+    | "skills/skill" + Filter -- filter
+  KnowledgeSkill = "knowledgeskills/skill"
+    | "knowledgeskills/skill/name"
+    | "knowledgeskills/skill" + Filter -- filter
+  SpiritCategory = "spiritcategory/category"
+  Spirit = "spirits/spirit"
+    | "spirits/spirit" + Filter -- filter
+  Mega = "storybuilder/macros/mega/persistent"
+  MegaAA = "storybuilder/macros/megadoublea/persistent"
+  SkillGroup = "skillgroups/*"
+  Metatype = "metatypes/metatype"
+    | "metatypes/metatype" + Filter -- filter
+  Metavariant = "metatypes/metatype/metavariants/metavariant"
+    | "metatypes/metatype/metavariants/metavariant" + Filter -- filter
+  Action = "actions/action"
+    | "actions/action" + Filter -- filter
+  MatrixAttributes = "matrixattributes/*"
+
+  Filter = "[" + FilterInner  + "]"
+  FilterInner = FilterInner + "or" + FilterInner -- or
+    | FilterInner + "and" + FilterInner -- and
+    | FilterContains -- contains
+    | FilterEquals -- equals
+    | FilterNot -- not
+  FilterAnd =
+  FilterNot = "not(" + FilterInner + ")"
+  FilterEquals = Node + "=" + NodeValue
+  FilterContains = "contains(" + Node + "," + NodeValue + ")"
+  Node = letter+
+  NodeValue = "'" + Node + "'"
+}
+
+WeaponDetails {
+  Exp = Exp "and" Exp -- and
+    | ContainsList
+    | DisallowedWeaponList
+  DisallowedWeaponList = "name != '" Node "'"
+  ContainsList = "(" Contains "or" Contains ")" -- multiple
+    | Contains -- single
+  Contains = "contains(ammo, '" ReloadMethod "')"
+  ReloadMethod = Break
+    | Clip
+    | Drum
+    | MuzzleLoader
+    | InternalMagazine
+    | Cylinder
+    | BeltFed
+    | Tank
+    | External
+    | Energy
+    | CapAndBall
+  Break = "(b)"
+  Clip = "(c)"
+  Drum = "(d)"
+  MuzzleLoader = caseInsensitive<"(ml)">
+  InternalMagazine = "(m)"
+  Cylinder = "(cy)"
+  BeltFed = "(belt)"
+  Tank = "(tank)"
+  External = "External Source" | "energy"
+  Energy = "Energy"
+  CapAndBall = "(cb)"
+  Node = letter+
+}
+
+RatingCalculation {
+  Exp = Calculation
+    | PositiveNumber
+  Calculation = Calculation "*" PositiveNumber -- ratingTimes
+    | PositiveNumber "*" Calculation -- timesRating
+    | Rating
+  Rating = "Rating"
+  Number = PositiveNumber
   PositiveNumber = digit+ "." digit+ -- float
     | digit+ -- int
 }

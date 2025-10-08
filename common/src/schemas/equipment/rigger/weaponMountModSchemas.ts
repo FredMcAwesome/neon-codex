@@ -14,16 +14,21 @@ import { type } from "arktype";
 
 const WeaponMountModRatingSchema = type(
   type.or(
-    {
+    type({
+      "+": "reject",
       option: type.valueOf(vehicleModRatingEnum),
-    },
-    { operator: type.valueOf(mathOperatorEnum) },
+    }),
+    type({
+      "+": "reject",
+      operator: type.valueOf(mathOperatorEnum),
+    }),
     "number"
   )
 ).array();
 export type WeaponMountModRatingType = typeof WeaponMountModRatingSchema.infer;
 
 const ReplaceAmmoSchema = type({
+  "+": "reject",
   reloadMethod: type.valueOf(ammoSourceEnum),
   "capacity?": "number",
   "numberOfAmmunitionHolders?": "number",
@@ -31,10 +36,14 @@ const ReplaceAmmoSchema = type({
 export type ReplaceAmmoType = typeof ReplaceAmmoSchema.infer;
 
 const InnerSlotCostSchema = type.or(
-  {
+  type({
+    "+": "reject",
     option: type.valueOf(vehicleModAttributeEnum),
-  },
-  { operator: type.valueOf(mathOperatorEnum) },
+  }),
+  type({
+    "+": "reject",
+    operator: type.valueOf(mathOperatorEnum),
+  }),
   "number"
 );
 
@@ -47,6 +56,7 @@ const { PartialSlotCostSchema } = type.module({
       InnerSlotCostSchema,
       "|",
       {
+        "+": "reject",
         subnumbers: "PartialSlotCostSchema",
       },
     ],
@@ -54,12 +64,17 @@ const { PartialSlotCostSchema } = type.module({
   ],
 });
 
-const WeaponMountSlotCostSchema = type.or(PartialSlotCostSchema, {
-  ratingLinked: PartialSlotCostSchema.array(),
-});
+const WeaponMountSlotCostSchema = type.or(
+  PartialSlotCostSchema,
+  type({
+    "+": "reject",
+    ratingLinked: PartialSlotCostSchema.array(),
+  })
+);
 export type WeaponMountSlotCostType = typeof WeaponMountSlotCostSchema.infer;
 
 const AvailabilityWeaponMountModSchema = type({
+  "+": "reject",
   rating: "number",
   restriction: type.valueOf(restrictionEnum),
 });
@@ -67,9 +82,15 @@ export type AvailabilityWeaponMountModType =
   typeof AvailabilityWeaponMountModSchema.infer;
 
 const InnerCostVehicleModSchema = type.or(
-  { option: type.valueOf(vehicleModAttributeEnum) },
+  type({
+    "+": "reject",
+    option: type.valueOf(vehicleModAttributeEnum),
+  }),
   "number",
-  { operator: type.valueOf(mathOperatorEnum) }
+  type({
+    "+": "reject",
+    operator: type.valueOf(mathOperatorEnum),
+  })
 );
 
 const { PartialCostWeaponMountModSchema } = type.module({
@@ -78,6 +99,7 @@ const { PartialCostWeaponMountModSchema } = type.module({
       InnerCostVehicleModSchema,
       "|",
       {
+        "+": "reject",
         subnumbers: "PartialCostWeaponMountModSchema ",
       },
     ],
@@ -87,13 +109,15 @@ const { PartialCostWeaponMountModSchema } = type.module({
 const CostWeaponMountModSchema = type.or(
   RangeCostSchema,
   PartialCostWeaponMountModSchema,
-  {
+  type({
+    "+": "reject",
     ratingLinked: PartialCostWeaponMountModSchema.array(),
-  }
+  })
 );
 export type CostWeaponMountModType = typeof CostWeaponMountModSchema.infer;
 
 export const WeaponMountModSchema = type({
+  "+": "reject",
   name: "string",
   description: "string",
   type: type.valueOf(vehicleModTypeEnum),

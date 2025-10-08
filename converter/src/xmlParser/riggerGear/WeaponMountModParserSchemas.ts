@@ -7,6 +7,7 @@ import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
 import { vehicleModXmlCategoryEnum } from "./VehicleModParserSchemas.js";
 
 const WeaponMountModXmlSchema = type({
+  "+": "reject",
   id: "string",
   name: "string",
   // Category of vehicle mod

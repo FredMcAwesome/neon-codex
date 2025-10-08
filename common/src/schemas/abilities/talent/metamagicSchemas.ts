@@ -1,11 +1,16 @@
 import { type } from "arktype";
-import { sourceBookEnum } from "../../../enums.js";
+import { mentorCategoryEnum, sourceBookEnum } from "../../../enums.js";
 import { BonusSchema } from "../../shared/bonusSchemas.js";
 import { RequirementsSchema } from "../../shared/requiredSchemas.js";
 
 export const MetamagicSchema = type({
+  "+": "reject",
   name: "string",
   description: "string",
+  category: type.valueOf(mentorCategoryEnum),
+  adept: "boolean",
+  magician: "boolean",
+  "repeatable?": "true",
   "bonus?": BonusSchema,
   "requirements?": RequirementsSchema,
   source: type.valueOf(sourceBookEnum),

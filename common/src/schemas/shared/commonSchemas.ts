@@ -9,7 +9,8 @@ import { type } from "arktype";
 export const GearCalculation = type(
   type.or(
     "number",
-    {
+    type({
+      "+": "reject",
       option: type.enumerated(
         "Rating",
         "Weapon",
@@ -18,8 +19,11 @@ export const GearCalculation = type(
         "Capacity",
         "Force"
       ),
-    },
-    { operator: type.valueOf(mathOperatorEnum) }
+    }),
+    type({
+      "+": "reject",
+      operator: type.valueOf(mathOperatorEnum),
+    })
   )
 ).array();
 
@@ -30,10 +34,11 @@ export const BaseOrSpecialSchema = type.or("number", "'Calculation'");
 // availability rating is a recursive type
 export const AvailabilityRatingSubnumberSchema = type.or(
   "number",
-  {
+  type({
+    "+": "reject",
     option: type.valueOf(availabilityEnum),
-  },
-  { operator: type.valueOf(mathOperatorEnum) }
+  }),
+  type({ operator: type.valueOf(mathOperatorEnum) })
 );
 
 export const { AvailabilityRatingSchema } = type.module({
@@ -53,22 +58,28 @@ export type AvailabilityRatingType = typeof AvailabilityRatingSchema.infer;
 const AbilityRatingCalculationSchema = type(
   type.or(
     "number",
-    {
+    type({
+      "+": "reject",
       option: type.valueOf(ratingAugmentationEnum),
-    },
-    { operator: type.valueOf(mathOperatorEnum) }
+    }),
+    type({
+      "+": "reject",
+      operator: type.valueOf(mathOperatorEnum),
+    })
   )
 ).array();
 
 export const ValueRangeSchema = type.or(
-  {
+  type({
+    "+": "reject",
     "minimum?": AbilityRatingCalculationSchema,
     "maximum?": AbilityRatingCalculationSchema,
-  },
-  {
+  }),
+  type({
+    "+": "reject",
     base: BaseOrSpecialSchema,
     specialCalculation: GearCalculation,
-  }
+  })
 );
 export const RatingSchema = ValueRangeSchema;
 export type RatingType = typeof RatingSchema.infer;
@@ -76,7 +87,7 @@ export type RatingType = typeof RatingSchema.infer;
 export const CapacitySchema = ValueRangeSchema;
 export type CapacityType = typeof CapacitySchema.infer;
 
-export enum weaponXmlSubtypeEnum {
+export enum weaponSubtypeEnum {
   Blades = "Blades",
   Clubs = "Clubs",
   Gear = "Gear",
@@ -113,19 +124,24 @@ export enum weaponXmlSubtypeEnum {
   Pistol = "Pistol",
 }
 
-export const WeaponXmlSubtypeSchema = type.valueOf(weaponXmlSubtypeEnum);
-export type WeaponXmlSubtypeType = typeof WeaponXmlSubtypeSchema.infer;
+export const WeaponSubtypeSchema = type.valueOf(weaponSubtypeEnum);
+export type WeaponSubtypeType = typeof WeaponSubtypeSchema.infer;
 
 export const RangeCostSchema = type({
+  "+": "reject",
   range: {
     min: "number",
     max: "number",
   },
 });
 
-export const DamageReductionArmourSchema = type.or("number", {
-  option: type.valueOf(availabilityEnum),
-});
+export const DamageReductionArmourSchema = type.or(
+  "number",
+  type({
+    "+": "reject",
+    option: type.valueOf(availabilityEnum),
+  })
+);
 export type DamageReductionArmourType =
   typeof DamageReductionArmourSchema.infer;
 
@@ -133,10 +149,14 @@ export type DamageReductionArmourType =
 // Essence Cost is a recursive type
 export const EssenceSubnumberSchema = type.or(
   "number",
-  {
+  type({
+    "+": "reject",
     option: "'Rating'",
-  },
-  { operator: type.valueOf(mathOperatorEnum) }
+  }),
+  type({
+    "+": "reject",
+    operator: type.valueOf(mathOperatorEnum),
+  })
 );
 
 export const { EssenceCostRecursiveSchema } = type.module({
@@ -145,6 +165,7 @@ export const { EssenceCostRecursiveSchema } = type.module({
       EssenceSubnumberSchema,
       "|",
       {
+        "+": "reject",
         subnumbers: "EssenceCostRecursiveSchema",
       },
     ],
@@ -153,15 +174,17 @@ export const { EssenceCostRecursiveSchema } = type.module({
 });
 
 export const EssenceCostSchema = type.or(
-  {
+  type({
+    "+": "reject",
     ratingLinked: EssenceCostRecursiveSchema.array(),
-  },
+  }),
   EssenceCostRecursiveSchema
 );
 
 export type EssenceCostType = typeof EssenceCostSchema.infer;
 
 export const AttributeRangeSchema = type({
+  "+": "reject",
   min: "number",
   max: "number",
   augmentedMax: "number",
@@ -169,11 +192,13 @@ export const AttributeRangeSchema = type({
 export type AttributeRangeType = typeof AttributeRangeSchema.infer;
 
 const MovementEnvironmentSchema = type({
+  "+": "reject",
   ground: "number",
   water: "number",
   air: "number",
 });
 export const MovementStrideSchema = type({
+  "+": "reject",
   walk: MovementEnvironmentSchema,
   run: MovementEnvironmentSchema,
   sprint: MovementEnvironmentSchema,
@@ -181,6 +206,7 @@ export const MovementStrideSchema = type({
 export type MovementStrideType = typeof MovementStrideSchema.infer;
 
 const CharacterCreatorBonusSchema = type({
+  "+": "reject",
   source: "string",
   "linkMentorSpirit?": "true",
   "linkParagon?": "true",

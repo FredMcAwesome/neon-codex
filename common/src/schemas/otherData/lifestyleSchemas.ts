@@ -9,11 +9,13 @@ import { BonusSchema } from "../shared/bonusSchemas.js";
 import { RequirementsSchema } from "../shared/requiredSchemas.js";
 
 export const LifestyleCostSchema = type({
+  "+": "reject",
   cost: "number",
   increment: type.valueOf(lifestyleCostIncrementEnum),
 });
 export type LifestyleCostType = typeof LifestyleCostSchema.infer;
 const LifestyleCategoryIncreaseCostSchema = type({
+  "+": "reject",
   comfort: "number",
   neighborhood: "number",
   security: "number",
@@ -21,12 +23,14 @@ const LifestyleCategoryIncreaseCostSchema = type({
 export type LifestyleCategoryIncreaseCostType =
   typeof LifestyleCategoryIncreaseCostSchema.infer;
 const LifestyleCategoryDefaults = type({
+  "+": "reject",
   comfortInfo: { minimum: "number", limit: "number" },
   neighborhoodInfo: { minimum: "number", limit: "number" },
   securityInfo: { minimum: "number", limit: "number" },
 });
 export type LifestyleCategoryType = typeof LifestyleCategoryDefaults.infer;
 export const LifestyleSchema = type({
+  "+": "reject",
   name: "string",
   cost: LifestyleCostSchema,
   lifestylePoints: "number",
@@ -48,6 +52,7 @@ export const LifestyleListSchema = type(LifestyleSchema.array());
 export type LifestyleListType = typeof LifestyleListSchema.infer;
 
 export const CustomisedLifestyleSchema = type({
+  "+": "reject",
   baseLifestyle: "string",
   purchasedDuration: "number",
 });
@@ -59,6 +64,7 @@ export type CustomisedLifestyleListType =
   typeof CustomisedLifestyleListSchema.infer;
 
 export const LifestyleQualitySchema = type({
+  "+": "reject",
   name: "string",
   category: type.valueOf(lifestyleQualityCategoryEnum),
   monthlyCost: "number",

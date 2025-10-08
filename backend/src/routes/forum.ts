@@ -72,12 +72,7 @@ const getThread = privateProcedure.input(type("string")).query(async (opts) => {
 });
 
 const createThread = privateProcedure
-  .input(
-    type({
-      title: "string",
-      username: "string",
-    })
-  )
+  .input(type({ "+": "reject", title: "string", username: "string" }))
   .mutation(async (opts) => {
     const db = await init();
     const user = await db.em.findOne(Users, {

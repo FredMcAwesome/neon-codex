@@ -20,6 +20,11 @@
       "pointCost": 0.5,
       "requirements": {}
     },
+    "bonus": {
+      "skill": {
+        "unlockSkillList": ["Assensing"]
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 309
   },
@@ -30,6 +35,17 @@
     "levels": true,
     "limit": 4,
     "action": "Simple",
+    "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "include": ["Agility", "Body", "Reaction", "Strength"]
+            }
+          }
+        ]
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 309
   },
@@ -44,11 +60,11 @@
       "requirements": {}
     },
     "bonus": {
-      "dodge": [
-        {
+      "combatAndWeapon": {
+        "dodge": {
           "option": "Rating"
         }
-      ]
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 309
@@ -62,6 +78,27 @@
     "adeptWay": {
       "pointCost": 0.25,
       "requirements": {}
+    },
+    "bonus": {
+      "combatAndWeapon": {
+        "weaponSkillDamage": {
+          "selectionOptions": {
+            "restriction": {
+              "skillList": {
+                "skillList": [
+                  "Astral Combat",
+                  "Blades",
+                  "Clubs",
+                  "Exotic Melee Weapon",
+                  "Unarmed Combat"
+                ],
+                "limit": "Only"
+              }
+            }
+          },
+          "bonus": 1
+        }
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 309
@@ -85,6 +122,26 @@
       "pointCost": 0.25,
       "requirements": {}
     },
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Perception",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Assensing",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 309
   },
@@ -95,18 +152,28 @@
     "levels": false,
     "limit": 100,
     "bonus": {
-      "weaponSkillAccuracyList": [
-        {
-          "skill": {
-            "selectSkill": true,
-            "exceptions": [
-              "No category: Combat Active",
-              "No skill: Unarmed Combat"
-            ]
-          },
-          "bonus": 1
-        }
-      ]
+      "combatAndWeapon": {
+        "weaponSkillAccuracyList": [
+          {
+            "skill": {
+              "selectSkill": true,
+              "selectionOptions": {
+                "restriction": {
+                  "skillList": {
+                    "skillList": ["Unarmed Combat"],
+                    "limit": "Exclude"
+                  },
+                  "skillCategoryList": {
+                    "skillCategoryList": ["Combat Active"],
+                    "limit": "Only"
+                  }
+                }
+              }
+            },
+            "bonus": 1
+          }
+        ]
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 309
@@ -121,6 +188,33 @@
       "pointCost": 0.25,
       "requirements": {}
     },
+    "bonus": {
+      "skill": {
+        "selectSkill": {
+          "skill": {
+            "restriction": {
+              "skillCategoryList": {
+                "skillCategoryList": [
+                  "Combat Active",
+                  "Physical Active",
+                  "Social Active",
+                  "Technical Active",
+                  "Vehicle Active"
+                ],
+                "limit": "Only"
+              }
+            },
+            "minimumRating": 1
+          },
+          "bonus": {
+            "ratingIncreaseCount": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          }
+        }
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 309
   },
@@ -133,6 +227,20 @@
     "adeptWay": {
       "pointCost": 0.5,
       "requirements": {}
+    },
+    "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "include": ["Body", "Agility", "Reaction", "Strength"]
+            },
+            "attributeIncrease": {
+              "option": "Rating"
+            }
+          }
+        ]
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 309
@@ -148,11 +256,11 @@
       "requirements": {}
     },
     "bonus": {
-      "socialLimit": [
-        {
+      "attribute": {
+        "socialLimit": {
           "option": "Rating"
         }
-      ]
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 309
@@ -168,8 +276,10 @@
       "requirements": {}
     },
     "bonus": {
-      "mentalLimit": {
-        "option": "Rating"
+      "attribute": {
+        "mentalLimit": {
+          "option": "Rating"
+        }
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -186,8 +296,10 @@
       "requirements": {}
     },
     "bonus": {
-      "physicalLimit": {
-        "option": "Rating"
+      "attribute": {
+        "physicalLimit": {
+          "option": "Rating"
+        }
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -203,6 +315,11 @@
       "pointCost": 0.25,
       "requirements": {}
     },
+    "bonus": {
+      "attribute": {
+        "increaseLimitIgnoreMaximum": 1
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 309
   },
@@ -214,16 +331,32 @@
     "levels": true,
     "limit": 1,
     "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Reaction"
+            },
+            "attributeIncrease": {
+              "option": "Rating"
+            }
+          }
+        ]
+      },
       "initiative": {
-        "bonusDice": {
-          "option": "Rating"
+        "initiative": {
+          "bonusDice": {
+            "option": "Rating"
+          }
         }
       },
-      "disableQualities": [
-        {
-          "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
-        }
-      ]
+      "quality": {
+        "disableQualityList": [
+          {
+            "name": "3564b678-7721-4a8d-ac79-1600cf92dc14"
+          }
+        ]
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 310
@@ -235,7 +368,11 @@
     "levels": false,
     "limit": 100,
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 310
@@ -252,7 +389,9 @@
       "requirements": {}
     },
     "bonus": {
-      "unarmedDamageType": "Physical"
+      "combatAndWeapon": {
+        "unarmedDamageType": "Physical"
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 310
@@ -264,11 +403,11 @@
     "levels": true,
     "limit": 1,
     "bonus": {
-      "judgeIntentionsDefense": [
-        {
+      "testAndResistance": {
+        "judgeIntentionsDefense": {
           "option": "Rating"
         }
-      ]
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 310
@@ -303,9 +442,11 @@
       "requirements": {}
     },
     "bonus": {
-      "armour": {
-        "bonus": {
-          "option": "Rating"
+      "combatAndWeapon": {
+        "armour": {
+          "bonus": {
+            "option": "Rating"
+          }
         }
       }
     },
@@ -319,29 +460,31 @@
     "levels": true,
     "limit": 1,
     "bonus": {
-      "toxinContactResist": {
-        "option": "Rating"
-      },
-      "pathogenContactResist": {
-        "option": "Rating"
-      },
-      "toxinInhalationResist": {
-        "option": "Rating"
-      },
-      "pathogenInhalationResist": {
-        "option": "Rating"
-      },
-      "toxinIngestionResist": {
-        "option": "Rating"
-      },
-      "pathogenIngestionResist": {
-        "option": "Rating"
-      },
-      "toxinInjectionResist": {
-        "option": "Rating"
-      },
-      "pathogenInjectionResist": {
-        "option": "Rating"
+      "combatAndWeapon": {
+        "toxinContactResist": {
+          "option": "Rating"
+        },
+        "pathogenContactResist": {
+          "option": "Rating"
+        },
+        "toxinInhalationResist": {
+          "option": "Rating"
+        },
+        "pathogenInhalationResist": {
+          "option": "Rating"
+        },
+        "toxinIngestionResist": {
+          "option": "Rating"
+        },
+        "pathogenIngestionResist": {
+          "option": "Rating"
+        },
+        "toxinInjectionResist": {
+          "option": "Rating"
+        },
+        "pathogenInjectionResist": {
+          "option": "Rating"
+        }
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -372,11 +515,13 @@
       "requirements": {}
     },
     "bonus": {
-      "stunHealing": {
-        "option": "Rating"
-      },
-      "physicalHealing": {
-        "option": "Rating"
+      "conditionAndRecovery": {
+        "stunHealing": {
+          "option": "Rating"
+        },
+        "physicalHealing": {
+          "option": "Rating"
+        }
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -418,11 +563,22 @@
       "requirements": {}
     },
     "bonus": {
-      "socialLimit": [
-        {
+      "attribute": {
+        "socialLimit": {
           "option": "Rating"
         }
-      ]
+      },
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Impersonation",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 311
@@ -460,6 +616,19 @@
     "pointCost": 0.25,
     "levels": true,
     "limit": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Animal Handling",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Street Grimoire",
     "page": 169
   },
@@ -512,11 +681,11 @@
     "levels": true,
     "limit": 1,
     "bonus": {
-      "detectionResist": [
-        {
+      "testAndResistance": {
+        "detectionResist": {
           "option": "Rating"
         }
-      ]
+      }
     },
     "source": "Street Grimoire",
     "page": 169
@@ -530,6 +699,68 @@
     "adeptWay": {
       "pointCost": 0.5,
       "requirements": {}
+    },
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Con",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Etiquette",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Impersonation",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Instruction",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Intimidation",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Leadership",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Negotiation",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Performance",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "source": "Street Grimoire",
     "page": 169
@@ -570,6 +801,17 @@
     "adeptWay": {
       "pointCost": 0.5
     },
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Element"
+            }
+          ]
+        }
+      }
+    },
     "requirements": {},
     "source": "Street Grimoire",
     "page": 170
@@ -585,6 +827,17 @@
       "pointCost": 0.25,
       "requirements": {}
     },
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Element"
+            }
+          ]
+        }
+      }
+    },
     "requirements": {},
     "source": "Street Grimoire",
     "page": 170
@@ -599,6 +852,17 @@
     "adeptWay": {
       "pointCost": 0.25,
       "requirements": {}
+    },
+    "bonus": {
+      "miscellaneous": {
+        "selection": {
+          "optionList": [
+            {
+              "base": "Element"
+            }
+          ]
+        }
+      }
     },
     "source": "Street Grimoire",
     "page": 170
@@ -623,6 +887,19 @@
     "levels": true,
     "limit": 1,
     "action": "Complex",
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Disguise",
+            "bonus": {
+              "option": "Rating"
+            },
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Street Grimoire",
     "page": 171
   },
@@ -763,6 +1040,17 @@
       "pointCost": 0.5,
       "requirements": {}
     },
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Throwing Weapons",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Street Grimoire",
     "page": 172
   },
@@ -798,6 +1086,17 @@
     "pointCost": 0.25,
     "levels": false,
     "limit": 1,
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Palming",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Street Grimoire",
     "page": 173
   },
@@ -935,11 +1234,13 @@
     "levels": true,
     "limit": 1,
     "bonus": {
-      "fireArmour": {
-        "option": "Rating"
-      },
-      "coldArmour": {
-        "option": "Rating"
+      "combatAndWeapon": {
+        "fireArmour": {
+          "option": "Rating"
+        },
+        "coldArmour": {
+          "option": "Rating"
+        }
       }
     },
     "source": "Street Grimoire",
@@ -969,7 +1270,11 @@
       "pointCost": 0.25
     },
     "bonus": {
-      "enterName": true
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "requirements": {},
     "source": "Street Grimoire",
@@ -1065,6 +1370,17 @@
       "pointCost": 0.125,
       "requirements": {}
     },
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Palming",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Stolen Souls",
     "page": 191
   },
@@ -1102,7 +1418,16 @@
       "pointCost": 0.25
     },
     "bonus": {
-      "linkSkill": true
+      "skill": {
+        "selectSkill": {
+          "skill": {
+            "restriction": {}
+          },
+          "bonus": {
+            "modifierType": "Linked"
+          }
+        }
+      }
     },
     "source": "Shadow Spells",
     "page": 23
@@ -1136,8 +1461,10 @@
     "levels": true,
     "limit": 1,
     "bonus": {
-      "toxinIngestionResist": {
-        "option": "Rating"
+      "combatAndWeapon": {
+        "toxinIngestionResist": {
+          "option": "Rating"
+        }
       }
     },
     "source": "Shadow Spells",
@@ -1150,8 +1477,10 @@
     "levels": true,
     "limit": 1,
     "bonus": {
-      "fatigueResist": {
-        "option": "Rating"
+      "testAndResistance": {
+        "fatigueResist": {
+          "option": "Rating"
+        }
       }
     },
     "source": "Shadow Spells",
@@ -1167,11 +1496,11 @@
       "pointCost": 0.25
     },
     "bonus": {
-      "mentalManipulationResist": [
-        {
+      "testAndResistance": {
+        "mentalManipulationResist": {
           "option": "Rating"
         }
-      ]
+      }
     },
     "source": "Shadow Spells",
     "page": 23
@@ -1227,11 +1556,11 @@
     "levels": true,
     "limit": 1,
     "bonus": {
-      "manaIllusionResist": [
-        {
+      "testAndResistance": {
+        "manaIllusionResist": {
           "option": "Rating"
         }
-      ]
+      }
     },
     "source": "Shadow Spells",
     "page": 24
@@ -1247,8 +1576,10 @@
       "pointCost": 0.5
     },
     "bonus": {
-      "swimSpeedPercentageModifier": 100,
-      "sprintSpeedPercentageModifier": 20000
+      "movementAndLifestyle": {
+        "swimSpeedPercentageModifier": 100,
+        "sprintSpeedPercentageModifier": 20000
+      }
     },
     "forbidden": {},
     "source": "Shadow Spells",
@@ -1265,8 +1596,10 @@
       "pointCost": 0.5
     },
     "bonus": {
-      "swimSpeedPercentageModifier": 100,
-      "sprintSpeedPercentageModifier": 40000
+      "movementAndLifestyle": {
+        "swimSpeedPercentageModifier": 100,
+        "sprintSpeedPercentageModifier": 40000
+      }
     },
     "requirements": {},
     "source": "Shadow Spells",
@@ -1292,8 +1625,10 @@
       "pointCost": 0.5
     },
     "bonus": {
-      "addPhysicalBoxes": {
-        "option": "Rating"
+      "conditionAndRecovery": {
+        "addPhysicalBoxes": {
+          "option": "Rating"
+        }
       }
     },
     "source": "Shadow Spells",
@@ -1308,6 +1643,16 @@
     "action": "Simple",
     "adeptWay": {
       "pointCost": 0.5
+    },
+    "bonus": {
+      "skill": {
+        "unlockSkillList": ["Spellcasting"]
+      },
+      "spellAndMagic": {
+        "linkSpell": {
+          "ignoreRequirements": true
+        }
+      }
     },
     "source": "Hard Targets",
     "page": 190
@@ -1371,6 +1716,17 @@
     "limit": 1,
     "adeptWay": {
       "pointCost": 0.5
+    },
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Disguise",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "requirements": {},
     "source": "Bloody Business",

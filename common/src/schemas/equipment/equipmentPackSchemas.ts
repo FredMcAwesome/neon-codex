@@ -8,6 +8,7 @@ import { CustomisedLifestyleListSchema } from "../otherData/lifestyleSchemas.js"
 import { type } from "arktype";
 
 export const EquipmentPackSchema = type({
+  "+": "reject",
   name: "string",
   category: type.valueOf(equipmentPackCategoryEnum),
   nuyen: "number",

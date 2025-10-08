@@ -487,7 +487,7 @@
       <id>4709630d-f2d0-40cc-915b-4f41eb8a4092</id>
       <name>Noxious Breath</name>
       <category>Paranormal</category>
-      
+
       <type>P</type>
       <action>Complex</action>
       <range>Special</range>
@@ -583,7 +583,7 @@
       <id>5e45dcc0-ec66-4bd5-a855-d3ce577dd2b4</id>
       <name>Venom</name>
       <category>Mundane</category>
-      
+
       <type>P</type>
       <action>Auto</action>
       <range>Touch</range>
@@ -893,7 +893,7 @@
       <id>44dd8deb-891e-4361-bc0c-47c4258ea6fd</id>
       <name>Anaphylaxis</name>
       <category>Paranormal</category>
-      
+
       <type>P</type>
       <action>Complex</action>
       <range>Touch</range>
@@ -905,7 +905,7 @@
       <id>3c6b961c-cac8-4e45-91ec-03cf612ac3c3</id>
       <name>Mutagen</name>
       <category>Paranormal</category>
-      
+
       <type>P</type>
       <action>Complex</action>
       <range>Self</range>
@@ -917,7 +917,7 @@
       <id>e525a62b-5762-477d-b242-6e166fdcd6e9</id>
       <name>Devouring</name>
       <category>Paranormal</category>
-      
+
       <type>P</type>
       <action>Complex</action>
       <range>Touch</range>
@@ -940,7 +940,7 @@
       <id>ecbab218-1ba9-41b6-9add-897ccbbf1d52</id>
       <name>Pestilence</name>
       <category>Mundane</category>
-      
+
       <type>P</type>
       <action>Auto</action>
       <range>Touch</range>
@@ -1032,7 +1032,7 @@
       <id>71a78fd2-c75a-46a8-a0f3-320e268a9b4d</id>
       <name>Binding</name>
       <category>Paranormal</category>
-      
+
       <type>P</type>
       <action>Complex</action>
       <range>LOS</range>
@@ -1099,7 +1099,7 @@
       <id>e36812c9-c918-4d38-a71f-79f04a77a924</id>
       <name>Magic Sense</name>
       <category>Paranormal</category>
-      
+
       <type>M</type>
       <action>Auto</action>
       <range>LOS</range>
@@ -2361,7 +2361,7 @@
       <id>3fe334d3-f0e3-4bd7-ac39-57fa395ce0be</id>
       <name>Animal Control (Insect Type)</name>
       <category>Paranormal</category>
-      
+
       <type>M</type>
       <action>Complex</action>
       <range>LOS</range>
@@ -2459,7 +2459,7 @@
       <id>ed387fd9-5fa3-4f5d-9e97-a9a97ad17b94</id>
       <name>Confusion</name>
       <category>Paranormal</category>
-      
+
       <type>P</type>
       <action>Complex</action>
       <range>LOS</range>
@@ -2507,7 +2507,7 @@
       <id>ac9855da-519a-44ac-b120-a605c20450e6</id>
       <name>Enhanced Senses (Ultrasound)</name>
       <category>Mundane</category>
-      
+
       <type>P</type>
       <action>Auto</action>
       <range>Self</range>
@@ -2555,7 +2555,7 @@
       <id>fc4ca556-2d13-409b-824d-a4a8a16fc0ee</id>
       <name>Fear</name>
       <category>Paranormal</category>
-      
+
       <type>M</type>
       <action>Complex</action>
       <range>LOS</range>
@@ -3445,10 +3445,10 @@
       <range />
       <duration />
       <bonus>
-        <specificattribute>
+        <specificskill>
           <name>Swimming</name>
-          <val>2</val>
-        </specificattribute>
+          <bonus>2</bonus>
+        </specificskill>
       </bonus>
       <source>HS</source>
       <page>170</page>

@@ -14,6 +14,18 @@
     "category": "Paragon",
     "advantage": "+1 limit and +1 dice pool bonus for Edit actions.",
     "disadvantage": "–1 limit and –1 dice for Snoop actions.",
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Computer",
+            "bonus": 1,
+            "condition": "Edit File",
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Kill Code",
     "page": 103
   },
@@ -23,6 +35,18 @@
     "category": "Paragon",
     "advantage": "+1 limit and +1 dice pool bonus for Browse actions and digital legwork.",
     "disadvantage": "–1 limit for Edit actions designed to destroy data.",
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Computer",
+            "bonus": 1,
+            "condition": "Matrix Search",
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Kill Code",
     "page": 177
   },
@@ -41,6 +65,17 @@
     "category": "Paragon",
     "advantage": "+1 dice pool bonus for Hardware tests, +1 limit on Pilot skill tests when jumped in.",
     "disadvantage": "–1 dice and limit for all actions in the Deep Resonance.",
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Hardware",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Kill Code",
     "page": 103
   },
@@ -52,7 +87,9 @@
     "disadvantage": "–2 modifier to the technomancer's Initiative Score.",
     "bonus": {
       "initiative": {
-        "bonus": -2
+        "initiative": {
+          "bonus": -2
+        }
       }
     },
     "source": "Kill Code",
@@ -64,6 +101,18 @@
     "category": "Paragon",
     "advantage": "+1 bonus to dice pool and limit in cybercombat, +1 to firewall.",
     "disadvantage": "–1 dice pool penalty when attacking IC in cybercombat.",
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Cybercombat",
+            "bonus": 1,
+            "condition": "Not against IC",
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "Kill Code",
     "page": 104
   },
@@ -83,92 +132,108 @@
     "advantage": "+1 bonus to dice pool and limit in cybercombat, +1 limit to all attack actions (physical and Matrix)",
     "disadvantage": "–2 dice pool penalty and –1 limit when compiling sprites.",
     "bonus": {
-      "weaponSkillAccuracyList": [
-        {
-          "skill": {
-            "selectSkill": false,
-            "name": "Archery"
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Cybercombat",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
           },
-          "bonus": 1
-        },
-        {
-          "skill": {
-            "selectSkill": false,
-            "name": "Automatics"
+          {
+            "name": "Compiling",
+            "bonus": -2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      },
+      "combatAndWeapon": {
+        "weaponSkillAccuracyList": [
+          {
+            "skill": {
+              "selectSkill": false,
+              "name": "Archery"
+            },
+            "bonus": 1
           },
-          "bonus": 1
-        },
-        {
-          "skill": {
-            "selectSkill": false,
-            "name": "Blades"
+          {
+            "skill": {
+              "selectSkill": false,
+              "name": "Automatics"
+            },
+            "bonus": 1
           },
-          "bonus": 1
-        },
-        {
-          "skill": {
-            "selectSkill": false,
-            "name": "Clubs"
+          {
+            "skill": {
+              "selectSkill": false,
+              "name": "Blades"
+            },
+            "bonus": 1
           },
-          "bonus": 1
-        },
-        {
-          "skill": {
-            "selectSkill": false,
-            "name": "Exotic Melee Weapon"
+          {
+            "skill": {
+              "selectSkill": false,
+              "name": "Clubs"
+            },
+            "bonus": 1
           },
-          "bonus": 1
-        },
-        {
-          "skill": {
-            "selectSkill": false,
-            "name": "Exotic Ranged Weapon"
+          {
+            "skill": {
+              "selectSkill": false,
+              "name": "Exotic Melee Weapon"
+            },
+            "bonus": 1
           },
-          "bonus": 1
-        },
-        {
-          "skill": {
-            "selectSkill": false,
-            "name": "Gunnery"
+          {
+            "skill": {
+              "selectSkill": false,
+              "name": "Exotic Ranged Weapon"
+            },
+            "bonus": 1
           },
-          "bonus": 1
-        },
-        {
-          "skill": {
-            "selectSkill": false,
-            "name": "Heavy Weapons"
+          {
+            "skill": {
+              "selectSkill": false,
+              "name": "Gunnery"
+            },
+            "bonus": 1
           },
-          "bonus": 1
-        },
-        {
-          "skill": {
-            "selectSkill": false,
-            "name": "Longarms"
+          {
+            "skill": {
+              "selectSkill": false,
+              "name": "Heavy Weapons"
+            },
+            "bonus": 1
           },
-          "bonus": 1
-        },
-        {
-          "skill": {
-            "selectSkill": false,
-            "name": "Pistols"
+          {
+            "skill": {
+              "selectSkill": false,
+              "name": "Longarms"
+            },
+            "bonus": 1
           },
-          "bonus": 1
-        },
-        {
-          "skill": {
-            "selectSkill": false,
-            "name": "Throwing Weapons"
+          {
+            "skill": {
+              "selectSkill": false,
+              "name": "Pistols"
+            },
+            "bonus": 1
           },
-          "bonus": 1
-        },
-        {
-          "skill": {
-            "selectSkill": false,
-            "name": "Unarmed Combat"
+          {
+            "skill": {
+              "selectSkill": false,
+              "name": "Throwing Weapons"
+            },
+            "bonus": 1
           },
-          "bonus": 1
-        }
-      ]
+          {
+            "skill": {
+              "selectSkill": false,
+              "name": "Unarmed Combat"
+            },
+            "bonus": 1
+          }
+        ]
+      }
     },
     "source": "Kill Code",
     "page": 104

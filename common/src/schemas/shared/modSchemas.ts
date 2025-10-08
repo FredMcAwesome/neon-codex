@@ -1,6 +1,7 @@
 import { type } from "arktype";
 
 const GenericModSchema = type({
+  "+": "reject",
   baseMod: "string",
   "rating?": "number",
 });

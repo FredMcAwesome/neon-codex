@@ -2781,6 +2781,7 @@
       <blocksmounts>ankle,knee,hip</blocksmounts>
       <selectside />
       <bonus>
+        <!-- TODO: In chummer add RC mod -->
         <limitmodifier>
           <limit>Physical</limit>
           <value>1</value>

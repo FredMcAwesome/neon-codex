@@ -90,6 +90,17 @@
       "restriction": "R"
     },
     "cost": [1700],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Physical",
+            "value": 2,
+            "condition": "Only for Sneaking, Must be visible"
+          }
+        ]
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 437
   },
@@ -171,6 +182,17 @@
       "restriction": "R"
     },
     "cost": [1200],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Physical",
+            "value": -1,
+            "condition": "For actions where Shield might get in the way."
+          }
+        ]
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 438
   },
@@ -186,6 +208,17 @@
       "restriction": "R"
     },
     "cost": [1500],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Physical",
+            "value": -1,
+            "condition": "For actions where Shield might get in the way."
+          }
+        ]
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 438
   },
@@ -200,13 +233,27 @@
       "restriction": ""
     },
     "cost": [2500],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 2,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "wirelessBonus": {
-      "skillCategories": [
-        {
-          "category": "Social Active",
-          "bonus": [1]
-        }
-      ]
+      "skill": {
+        "skillCategoryList": [
+          {
+            "name": "Social Active",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "source": "Run And Gun",
     "page": 57
@@ -222,13 +269,27 @@
       "restriction": ""
     },
     "cost": [2500],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 2,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "wirelessBonus": {
-      "skillCategories": [
-        {
-          "category": "Social Active",
-          "bonus": [1]
-        }
-      ]
+      "skill": {
+        "skillCategoryList": [
+          {
+            "name": "Social Active",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "source": "Run And Gun",
     "page": 57
@@ -244,13 +305,27 @@
       "restriction": ""
     },
     "cost": [2600],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "wirelessBonus": {
-      "skillCategories": [
-        {
-          "category": "Social Active",
-          "bonus": [1]
-        }
-      ]
+      "skill": {
+        "skillCategoryList": [
+          {
+            "name": "Social Active",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "includedModList": [
       {
@@ -274,13 +349,27 @@
       "restriction": ""
     },
     "cost": [2300],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "wirelessBonus": {
-      "skillCategories": [
-        {
-          "category": "Social Active",
-          "bonus": [1]
-        }
-      ]
+      "skill": {
+        "skillCategoryList": [
+          {
+            "name": "Social Active",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "includedModList": [
       {
@@ -304,13 +393,27 @@
       "restriction": ""
     },
     "cost": [2400],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "wirelessBonus": {
-      "skillCategories": [
-        {
-          "category": "Social Active",
-          "bonus": [1]
-        }
-      ]
+      "skill": {
+        "skillCategoryList": [
+          {
+            "name": "Social Active",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "includedModList": [
       {
@@ -334,13 +437,27 @@
       "restriction": ""
     },
     "cost": [2500],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "wirelessBonus": {
-      "skillCategories": [
-        {
-          "category": "Social Active",
-          "bonus": [1]
-        }
-      ]
+      "skill": {
+        "skillCategoryList": [
+          {
+            "name": "Social Active",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "includedModList": [
       {
@@ -364,13 +481,27 @@
       "restriction": ""
     },
     "cost": [2200],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "wirelessBonus": {
-      "skillCategories": [
-        {
-          "category": "Social Active",
-          "bonus": [1]
-        }
-      ]
+      "skill": {
+        "skillCategoryList": [
+          {
+            "name": "Social Active",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "includedModList": [
       {
@@ -395,13 +526,27 @@
       "restriction": ""
     },
     "cost": [3000],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "wirelessBonus": {
-      "skillCategories": [
-        {
-          "category": "Social Active",
-          "bonus": [1]
-        }
-      ]
+      "skill": {
+        "skillCategoryList": [
+          {
+            "name": "Social Active",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "includedModList": [
       {
@@ -426,13 +571,27 @@
       "restriction": ""
     },
     "cost": [3100],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "wirelessBonus": {
-      "skillCategories": [
-        {
-          "category": "Social Active",
-          "bonus": [1]
-        }
-      ]
+      "skill": {
+        "skillCategoryList": [
+          {
+            "name": "Social Active",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "includedModList": [
       {
@@ -457,13 +616,27 @@
       "restriction": ""
     },
     "cost": [3600],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "wirelessBonus": {
-      "skillCategories": [
-        {
-          "category": "Social Active",
-          "bonus": [1]
-        }
-      ]
+      "skill": {
+        "skillCategoryList": [
+          {
+            "name": "Social Active",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "includedModList": [
       {
@@ -487,13 +660,27 @@
       "restriction": ""
     },
     "cost": [1600],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "wirelessBonus": {
-      "skillCategories": [
-        {
-          "category": "Social Active",
-          "bonus": [1]
-        }
-      ]
+      "skill": {
+        "skillCategoryList": [
+          {
+            "name": "Social Active",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "source": "Run And Gun",
     "page": 60
@@ -515,12 +702,15 @@
       }
     ],
     "wirelessBonus": {
-      "skillCategories": [
-        {
-          "category": "Social Active",
-          "bonus": [1]
-        }
-      ]
+      "skill": {
+        "skillCategoryList": [
+          {
+            "name": "Social Active",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "source": "Run And Gun",
     "page": 60
@@ -537,12 +727,15 @@
     },
     "cost": [1200],
     "wirelessBonus": {
-      "skillCategories": [
-        {
-          "category": "Social Active",
-          "bonus": [1]
-        }
-      ]
+      "skill": {
+        "skillCategoryList": [
+          {
+            "name": "Social Active",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "includedModList": [
       {
@@ -563,13 +756,27 @@
       "restriction": ""
     },
     "cost": [2100],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 3,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "wirelessBonus": {
-      "skillCategories": [
-        {
-          "category": "Social Active",
-          "bonus": [1]
-        }
-      ]
+      "skill": {
+        "skillCategoryList": [
+          {
+            "name": "Social Active",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "source": "Run And Gun",
     "page": 60
@@ -591,12 +798,15 @@
       }
     ],
     "wirelessBonus": {
-      "skillCategories": [
-        {
-          "category": "Social Active",
-          "bonus": [1]
-        }
-      ]
+      "skill": {
+        "skillCategoryList": [
+          {
+            "name": "Social Active",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "source": "Run And Gun",
     "page": 60
@@ -618,12 +828,15 @@
       }
     ],
     "wirelessBonus": {
-      "skillCategories": [
-        {
-          "category": "Social Active",
-          "bonus": [1]
-        }
-      ]
+      "skill": {
+        "skillCategoryList": [
+          {
+            "name": "Social Active",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "source": "Run And Gun",
     "page": 60
@@ -645,12 +858,15 @@
       }
     ],
     "wirelessBonus": {
-      "skillCategories": [
-        {
-          "category": "Social Active",
-          "bonus": [1]
-        }
-      ]
+      "skill": {
+        "skillCategoryList": [
+          {
+            "name": "Social Active",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "source": "Run And Gun",
     "page": 60
@@ -667,12 +883,15 @@
     },
     "cost": [1400],
     "wirelessBonus": {
-      "skillCategories": [
-        {
-          "category": "Social Active",
-          "bonus": [1]
-        }
-      ]
+      "skill": {
+        "skillCategoryList": [
+          {
+            "name": "Social Active",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "includedModList": [
       {
@@ -693,6 +912,17 @@
       "restriction": ""
     },
     "cost": [2250],
+    "wirelessBonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -717,6 +947,17 @@
         "baseGear": "Holster"
       }
     ],
+    "wirelessBonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -742,6 +983,17 @@
         "baseGear": "Holster"
       }
     ],
+    "wirelessBonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Custom Fit (Stack)"
@@ -766,6 +1018,17 @@
         "baseGear": "Holster"
       }
     ],
+    "wirelessBonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -792,6 +1055,28 @@
       "restriction": ""
     },
     "cost": [2000],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
+    "wirelessBonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 2,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -814,6 +1099,17 @@
       "restriction": ""
     },
     "cost": [4000],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 2,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -836,6 +1132,17 @@
       "restriction": ""
     },
     "cost": [5000],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 2,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -858,6 +1165,17 @@
       "restriction": ""
     },
     "cost": [6000],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 2,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -880,6 +1198,17 @@
       "restriction": ""
     },
     "cost": [7000],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 2,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -902,6 +1231,17 @@
       "restriction": ""
     },
     "cost": [8000],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 2,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -924,6 +1264,17 @@
       "restriction": ""
     },
     "cost": [8500],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -976,6 +1327,17 @@
         "baseGear": "Holster"
       }
     ],
+    "wirelessBonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Survival",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "addModFromCategory": "Globetrotter Jacket Liners",
     "source": "Run And Gun",
     "page": 63
@@ -991,6 +1353,17 @@
       "restriction": ""
     },
     "cost": [900],
+    "wirelessBonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Survival",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "addModFromCategory": "Globetrotter Vest Liners",
     "source": "Run And Gun",
     "page": 63
@@ -1006,6 +1379,17 @@
       "restriction": ""
     },
     "cost": [600],
+    "wirelessBonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Survival",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Gear Access"
@@ -1031,6 +1415,17 @@
         "baseGear": "Holster"
       }
     ],
+    "wirelessBonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Survival",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Gear Access"
@@ -1051,13 +1446,27 @@
       "restriction": ""
     },
     "cost": [1100],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Only with appropriate corp, Must be visible"
+          }
+        ]
+      }
+    },
     "wirelessBonus": {
-      "skillCategories": [
-        {
-          "category": "Social Active",
-          "bonus": [1]
-        }
-      ]
+      "skill": {
+        "skillCategoryList": [
+          {
+            "name": "Social Active",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "includedModList": [
       {
@@ -1083,6 +1492,17 @@
         "baseGear": "Holster"
       }
     ],
+    "wirelessBonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Survival",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -1143,6 +1563,17 @@
       "restriction": "F"
     },
     "cost": [15000],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 2,
+            "condition": "Only for Intimidation, Must be visible."
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -1168,6 +1599,17 @@
       "restriction": "F"
     },
     "cost": [20000],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 2,
+            "condition": "Only for Intimidation, Must be visible."
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -1193,6 +1635,17 @@
       "restriction": "F"
     },
     "cost": [25000],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 2,
+            "condition": "Only for Intimidation, Must be visible."
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -1237,6 +1690,17 @@
         "baseGear": "Holster"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Only for Intimidation, Must be visible."
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -1267,6 +1731,17 @@
         "baseGear": "Holster"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Only for Intimidation, Must be visible."
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -1297,6 +1772,17 @@
         "baseGear": "Holster"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Only for Intimidation, Must be visible."
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -1364,13 +1850,27 @@
       "restriction": ""
     },
     "cost": [3000],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 2,
+            "condition": "Only during emergency situations, Must be visible"
+          }
+        ]
+      }
+    },
     "wirelessBonus": {
-      "skillCategories": [
-        {
-          "category": "Social",
-          "bonus": [1]
-        }
-      ]
+      "skill": {
+        "skillCategoryList": [
+          {
+            "name": "Social",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
     },
     "includedModList": [
       {
@@ -1409,6 +1909,28 @@
       "restriction": "R"
     },
     "cost": [5000],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Only for Intimidation, Must be visible."
+          }
+        ]
+      }
+    },
+    "wirelessBonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 2,
+            "condition": "Only for Intimidation, Must be visible."
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Padded"
@@ -1445,6 +1967,33 @@
       "restriction": "R"
     },
     "cost": [8000],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 2,
+            "condition": "Only for Intimidation, Must be visible."
+          },
+          {
+            "category": "Social",
+            "value": -1,
+            "condition": "For all tests except Intimidation, Must be visible."
+          }
+        ]
+      }
+    },
+    "wirelessBonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 3,
+            "condition": "Only for Intimidation, Must be visible."
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Gear Access"
@@ -1478,6 +2027,17 @@
       "restriction": ""
     },
     "cost": [250],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": -1,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "source": "Run And Gun",
     "page": 70
   },
@@ -1492,6 +2052,17 @@
       "restriction": ""
     },
     "cost": [300],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": -1,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "source": "Run And Gun",
     "page": 70
   },
@@ -1506,6 +2077,17 @@
       "restriction": ""
     },
     "cost": [350],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": -1,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "source": "Run And Gun",
     "page": 70
   },
@@ -1520,6 +2102,17 @@
       "restriction": ""
     },
     "cost": [750],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": -1,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Concealability"
@@ -1542,6 +2135,22 @@
       "restriction": ""
     },
     "cost": [900],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": -1,
+            "condition": "General public only, Must be visible."
+          },
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Gang members only, Must be visible."
+          }
+        ]
+      }
+    },
     "source": "Run And Gun",
     "page": 71
   },
@@ -1556,6 +2165,22 @@
       "restriction": ""
     },
     "cost": [600],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": -1,
+            "condition": "General public only, Must be visible."
+          },
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Gang members only, Must be visible."
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -1638,6 +2263,17 @@
       "restriction": ""
     },
     "cost": [150],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Only for Intimidation, Must be visible."
+          }
+        ]
+      }
+    },
     "allowModsFromCategory": "Customized Ballistic Mask",
     "source": "Run And Gun",
     "page": 74
@@ -1653,6 +2289,17 @@
       "restriction": ""
     },
     "cost": [300],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 2,
+            "condition": "Only for Intimidation, Must be visible."
+          }
+        ]
+      }
+    },
     "allowModsFromCategory": "Customized Ballistic Mask",
     "source": "Run And Gun",
     "page": 74
@@ -1687,6 +2334,28 @@
       "restriction": ""
     },
     "cost": [1500],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": -1,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
+    "wirelessBonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Survival",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "addModFromCategory": "Globetrotter Jacket Liners",
     "source": "Run And Gun",
     "page": 75
@@ -1707,6 +2376,17 @@
         "baseGear": "Flare Compensation"
       }
     ],
+    "wirelessBonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Survival",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -1745,6 +2425,17 @@
         "baseGear": "Flare Compensation"
       }
     ],
+    "wirelessBonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Survival",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Insulation",
@@ -1770,6 +2461,17 @@
         "baseGear": "Flare Compensation"
       }
     ],
+    "wirelessBonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Physical",
+            "value": 1,
+            "condition": "For climbing only"
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Insulation",
@@ -1802,6 +2504,28 @@
         "baseGear": "Flare Compensation"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Physical",
+            "value": 1,
+            "condition": "Only for Gymnastics (Climbing)"
+          }
+        ]
+      }
+    },
+    "wirelessBonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Physical",
+            "value": 1,
+            "condition": "For climbing only"
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -1838,7 +2562,9 @@
       }
     ],
     "bonus": {
-      "fatigueResist": -2
+      "testAndResistance": {
+        "fatigueResist": -2
+      }
     },
     "includedModList": [
       {
@@ -2333,6 +3059,16 @@
         ]
       }
     ],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": -1
+          }
+        ]
+      }
+    },
     "source": "Hard Targets",
     "page": 184
   },
@@ -3081,7 +3817,25 @@
     },
     "cost": [750],
     "bonus": {
-      "enterName": true
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Fans of Sports Team"
+          },
+          {
+            "category": "Social",
+            "value": -1,
+            "condition": "Rivals of Sports Team"
+          }
+        ]
+      },
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Cutting Aces",
     "page": 136
@@ -3098,7 +3852,25 @@
     },
     "cost": [500],
     "bonus": {
-      "enterName": true
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Fans of Sports Team"
+          },
+          {
+            "category": "Social",
+            "value": -1,
+            "condition": "Rivals of Sports Team"
+          }
+        ]
+      },
+      "miscellaneous": {
+        "selection": {
+          "enterName": true
+        }
+      }
     },
     "source": "Cutting Aces",
     "page": 136
@@ -3144,7 +3916,9 @@
     },
     "cost": [2000],
     "bonus": {
-      "socialLimit": [1]
+      "attribute": {
+        "socialLimit": 1
+      }
     },
     "source": "Cutting Aces",
     "page": 136
@@ -3376,6 +4150,17 @@
       "restriction": ""
     },
     "cost": [3500],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -3395,6 +4180,17 @@
       "restriction": ""
     },
     "cost": [4500],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -3454,6 +4250,17 @@
       "restriction": ""
     },
     "cost": [2400],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Custom Fit"
@@ -3532,6 +4339,17 @@
       "restriction": ""
     },
     "cost": [550],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": -1,
+            "condition": "Except for Urban Brawl Fans and Gangers"
+          }
+        ]
+      }
+    },
     "source": "State Of The Art - ADL",
     "page": 93
   },
@@ -3546,6 +4364,17 @@
       "restriction": ""
     },
     "cost": [800],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": -1,
+            "condition": "Except for Urban Brawl Fans and Gangers"
+          }
+        ]
+      }
+    },
     "source": "State Of The Art - ADL",
     "page": 93
   },
@@ -3560,6 +4389,17 @@
       "restriction": ""
     },
     "cost": [550],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": -1,
+            "condition": "Except for Urban Brawl Fans and Gangers"
+          }
+        ]
+      }
+    },
     "source": "State Of The Art - ADL",
     "page": 93
   },
@@ -3574,6 +4414,17 @@
       "restriction": ""
     },
     "cost": [150],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": -1,
+            "condition": "Except for Urban Brawl Fans and Gangers"
+          }
+        ]
+      }
+    },
     "source": "State Of The Art - ADL",
     "page": 93
   },
@@ -3588,6 +4439,17 @@
       "restriction": ""
     },
     "cost": [1900],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Must be visible"
+          }
+        ]
+      }
+    },
     "source": "The Complete Trog",
     "page": 186
   },
@@ -3602,6 +4464,22 @@
       "restriction": ""
     },
     "cost": [800],
+    "bonus": {
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Etiquette",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          },
+          {
+            "name": "Intimidation",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      }
+    },
     "source": "The Complete Trog",
     "page": 186
   },
@@ -3654,6 +4532,17 @@
         "baseGear": "Holster"
       }
     ],
+    "bonus": {
+      "attribute": {
+        "limitModifier": [
+          {
+            "category": "Social",
+            "value": 1,
+            "condition": "Only for Intimidation, Must be visible."
+          }
+        ]
+      }
+    },
     "includedModList": [
       {
         "baseMod": "Custom Fit"

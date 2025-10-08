@@ -16,10 +16,12 @@ import { type } from "arktype";
 import { MetamagicSchema } from "@neon-codex/common/build/schemas/abilities/talent/metamagicSchemas.js";
 
 const MetamagicXmlSchema = type({
+  "+": "reject",
   id: "string",
   name: "string",
   adept: type.or("'True'", "'False'"),
   magician: type.or("'True'", "'False'"),
+  "limit?": "'False'",
   "bonus?": BonusXmlSchema,
   "required?": RequiredXmlSchema,
   source: type.valueOf(sourceBookXmlEnum),
@@ -41,11 +43,11 @@ export function ParseMetamagics() {
   });
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const jObj: any = parser.parse(xml_string);
-  // console
-  // .log(
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  // jObj.chummer.metamagics.metamagic[41]
-  // jObj.chummer.metamagics.metamagic[41].required.allof.quality
+  // console.dir(
+  //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+  //   jObj.chummer.metamagics.metamagic[5],
+  //   // jObj.chummer.metamagics.metamagic[41].required.allof.quality
+  //   { depth: Infinity }
   // );
 
   const metamagicListParsed = MetamagicListXmlSchema(
@@ -111,8 +113,9 @@ function convertMetamagic(metamagic: MetamagicXmlType) {
     name: metamagic.name,
     description: "",
     category: mentorCategoryEnum.MentorSpirit,
-    adept: metamagic.adept,
-    magician: metamagic.magician,
+    adept: metamagic.adept === "True",
+    magician: metamagic.magician === "True",
+    ...(metamagic.limit === "False" && { repeatable: true }),
     ...(bonus !== undefined && { bonus: bonus }),
     ...(required !== undefined && { requirements: required }),
     source: source,

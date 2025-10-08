@@ -262,7 +262,9 @@
     },
     "bonus": {
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -639,7 +641,9 @@
     },
     "bonus": {
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -780,6 +784,19 @@
           "rating": [5]
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 3
+          }
+        }
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 404
@@ -934,6 +951,19 @@
           "rating": [6]
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 1
+          }
+        }
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 404
@@ -1099,8 +1129,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 8,
+            "aug": 8,
+            "val": 5
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 2
+        "initiative": {
+          "bonusDice": 2
+        }
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -1257,8 +1300,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 5
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -1400,6 +1456,19 @@
           "skillPoints": 8
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 3
+          }
+        }
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 406
@@ -1596,8 +1665,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 3
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -1730,6 +1812,19 @@
           "rating": [7]
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 8,
+            "aug": 8,
+            "val": 5
+          }
+        }
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 404
@@ -1865,6 +1960,19 @@
           "rating": [6]
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 4
+          }
+        }
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 404
@@ -3033,7 +3141,9 @@
     },
     "bonus": {
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -3939,7 +4049,9 @@
     },
     "bonus": {
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -4065,7 +4177,9 @@
     },
     "bonus": {
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -4192,7 +4306,9 @@
     },
     "bonus": {
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -4884,6 +5000,19 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 3
+          }
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 68
   },
@@ -5027,6 +5156,19 @@
           "rating": [4]
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 4
+          }
+        }
+      }
     },
     "source": "Howling Shadows",
     "page": 68
@@ -5248,8 +5390,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 3
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -5472,8 +5627,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 3
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -5610,6 +5778,19 @@
           "rating": [3]
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 4
+          }
+        }
+      }
     },
     "source": "Howling Shadows",
     "page": 62
@@ -5755,6 +5936,19 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 3,
+            "max": 9,
+            "aug": 9,
+            "val": 6
+          }
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 73
   },
@@ -5893,6 +6087,19 @@
           "rating": [6]
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 3
+          }
+        }
+      }
     },
     "source": "Howling Shadows",
     "page": 71
@@ -6036,6 +6243,19 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 7,
+            "aug": 7,
+            "val": 4
+          }
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 71
   },
@@ -6165,6 +6385,19 @@
           "rating": [4]
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 3
+          }
+        }
+      }
     },
     "source": "Howling Shadows",
     "page": 69
@@ -6322,6 +6555,19 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 7,
+            "aug": 7,
+            "val": 4
+          }
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 69
   },
@@ -6441,6 +6687,19 @@
           "rating": [5]
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 4
+          }
+        }
+      }
     },
     "source": "Howling Shadows",
     "page": 59
@@ -6597,6 +6856,19 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 3
+          }
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 56
   },
@@ -6752,6 +7024,19 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 3,
+            "max": 9,
+            "aug": 9,
+            "val": 6
+          }
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 65
   },
@@ -6887,6 +7172,19 @@
           "rating": [5]
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 7,
+            "aug": 7,
+            "val": 4
+          }
+        }
+      }
     },
     "source": "Howling Shadows",
     "page": 70
@@ -7030,6 +7328,19 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 7,
+            "aug": 7,
+            "val": 4
+          }
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 71
   },
@@ -7168,6 +7479,19 @@
           "rating": [5]
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 2,
+            "max": 8,
+            "aug": 8,
+            "val": 5
+          }
+        }
+      }
     },
     "source": "Howling Shadows",
     "page": 76
@@ -7339,6 +7663,19 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 3,
+            "max": 9,
+            "aug": 9,
+            "val": 6
+          }
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 66
   },
@@ -7493,6 +7830,19 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 3
+          }
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 62
   },
@@ -7629,6 +7979,19 @@
           "rating": [3]
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 5,
+            "aug": 5,
+            "val": 2
+          }
+        }
+      }
     },
     "source": "Howling Shadows",
     "page": 75
@@ -7806,8 +8169,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 2,
+            "max": 8,
+            "aug": 8,
+            "val": 5
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 2
+        "initiative": {
+          "bonusDice": 2
+        }
       }
     },
     "source": "Howling Shadows",
@@ -7959,8 +8335,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 7,
+            "aug": 7,
+            "val": 4
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 2
+        "initiative": {
+          "bonusDice": 2
+        }
       }
     },
     "source": "Howling Shadows",
@@ -8089,6 +8478,19 @@
           "rating": [3]
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 9,
+            "aug": 9,
+            "val": 6
+          }
+        }
+      }
     },
     "source": "Howling Shadows",
     "page": 58
@@ -8244,6 +8646,19 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 2,
+            "max": 8,
+            "aug": 8,
+            "val": 5
+          }
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 64
   },
@@ -8387,6 +8802,19 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 3
+          }
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 71
   },
@@ -8526,8 +8954,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 3,
+            "max": 9,
+            "aug": 9,
+            "val": 6
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 2
+        "initiative": {
+          "bonusDice": 2
+        }
       }
     },
     "source": "Howling Shadows",
@@ -8830,8 +9271,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 7,
+            "aug": 7,
+            "val": 4
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -8992,8 +9446,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 7,
+            "aug": 7,
+            "val": 5
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -9151,8 +9618,24 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 2,
+            "max": 8,
+            "aug": 8,
+            "val": 5
+          }
+        }
+      },
+      "skill": {
+        "unlockSkillList": ["Counterspelling"]
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -9441,6 +9924,19 @@
           "rating": [5]
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 2,
+            "max": 8,
+            "aug": 8,
+            "val": 5
+          }
+        }
+      }
     },
     "source": "Howling Shadows",
     "page": 70
@@ -9738,6 +10234,19 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 7,
+            "aug": 7,
+            "val": 4
+          }
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 76
   },
@@ -9875,7 +10384,9 @@
     },
     "bonus": {
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -10180,8 +10691,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 3,
+            "max": 9,
+            "aug": 9,
+            "val": 6
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -10331,8 +10855,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 2,
+            "max": 8,
+            "aug": 8,
+            "val": 5
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -10476,6 +11013,19 @@
           "rating": [8]
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 7,
+            "aug": 7,
+            "val": 4
+          }
+        }
+      }
     },
     "source": "Howling Shadows",
     "page": 53
@@ -11377,6 +11927,19 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 4
+          }
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 95
   },
@@ -12062,6 +12625,19 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 6
+          }
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 102
   },
@@ -12220,6 +12796,19 @@
           "rating": [5]
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 6
+          }
+        }
+      }
     },
     "source": "Howling Shadows",
     "page": 102
@@ -12380,6 +12969,19 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 6
+          }
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 102
   },
@@ -12527,7 +13129,9 @@
     },
     "bonus": {
       "initiative": {
-        "bonusDice": 2
+        "initiative": {
+          "bonusDice": 2
+        }
       }
     },
     "source": "Howling Shadows",
@@ -12993,7 +13597,9 @@
     },
     "bonus": {
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -13149,7 +13755,9 @@
     },
     "bonus": {
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -13319,7 +13927,9 @@
     },
     "bonus": {
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -13461,7 +14071,9 @@
     },
     "bonus": {
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -13902,7 +14514,9 @@
     },
     "bonus": {
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -14179,6 +14793,19 @@
           ]
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      }
     },
     "source": "Street Grimoire",
     "page": 200
@@ -14597,8 +15224,18 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      },
+      "skill": {
+        "unlockSkillList": ["Magician"]
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -14980,8 +15617,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -15407,8 +16057,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -15850,8 +16513,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -16274,8 +16950,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -16672,8 +17361,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -17087,8 +17789,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Street Grimoire",
@@ -17479,8 +18194,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Street Grimoire",
@@ -17872,8 +18600,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Street Grimoire",
@@ -18238,8 +18979,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Street Grimoire",
@@ -18656,8 +19410,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Street Grimoire",
@@ -19046,8 +19813,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Forbidden Arcana",
@@ -19482,8 +20262,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Forbidden Arcana",
@@ -19918,8 +20711,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Street Grimoire",
@@ -20353,8 +21159,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Street Grimoire",
@@ -20804,8 +21623,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Street Grimoire",
@@ -21235,8 +22067,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Street Grimoire",
@@ -21675,8 +22520,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Street Grimoire",
@@ -22126,8 +22984,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Street Grimoire",
@@ -22520,8 +23391,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Forbidden Arcana",
@@ -22947,8 +23831,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Forbidden Arcana",
@@ -23389,8 +24286,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Forbidden Arcana",
@@ -23823,8 +24733,18 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      },
+      "skill": {
+        "unlockSkillList": ["Magician"]
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Forbidden Arcana",
@@ -24247,8 +25167,18 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      },
+      "skill": {
+        "unlockSkillList": ["Magician"]
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Forbidden Arcana",
@@ -24673,8 +25603,18 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      },
+      "skill": {
+        "unlockSkillList": ["Magician"]
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Forbidden Arcana",
@@ -25081,8 +26021,18 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      },
+      "skill": {
+        "unlockSkillList": ["Magician"]
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Forbidden Arcana",
@@ -25477,8 +26427,18 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic"
+        }
+      },
+      "skill": {
+        "unlockSkillList": ["Magician"]
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Forbidden Arcana",
@@ -25866,8 +26826,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Aetherology",
@@ -26300,8 +27273,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Aetherology",
@@ -26673,8 +27659,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Aetherology",
@@ -27059,8 +28058,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Aetherology",
@@ -27439,8 +28451,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Aetherology",
@@ -27815,8 +28840,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Aetherology",
@@ -28195,8 +29233,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Aetherology",
@@ -28617,8 +29668,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Street Grimoire",
@@ -29052,8 +30116,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Street Grimoire",
@@ -29491,8 +30568,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Street Grimoire",
@@ -29951,8 +31041,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Street Grimoire",
@@ -30352,8 +31455,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Street Grimoire",
@@ -30889,8 +32005,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Street Grimoire",
@@ -31317,8 +32446,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Street Grimoire",
@@ -31789,8 +32931,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Dark Terrors",
@@ -32291,8 +33446,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Dark Terrors",
@@ -32805,8 +33973,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Dark Terrors",
@@ -33300,8 +34481,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Dark Terrors",
@@ -33802,8 +34996,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Street Grimoire",
@@ -34260,8 +35467,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Street Grimoire",
@@ -34718,8 +35938,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Street Grimoire",
@@ -35176,8 +36409,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Street Grimoire",
@@ -35637,8 +36883,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Street Grimoire",
@@ -36095,8 +37354,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Street Grimoire",
@@ -36485,8 +37757,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Forbidden Arcana",
@@ -36932,8 +38217,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Forbidden Arcana",
@@ -37379,8 +38677,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Forbidden Arcana",
@@ -37842,8 +39153,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Forbidden Arcana",
@@ -38285,8 +39609,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Forbidden Arcana",
@@ -47051,8 +48388,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": "Force",
+            "max": "Force",
+            "aug": "Force",
+            "val": "Force"
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -49858,8 +51208,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 7,
+            "max": 13,
+            "aug": 13,
+            "val": 10
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -50075,8 +51438,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 7,
+            "max": 13,
+            "aug": 13,
+            "val": 10
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -50292,8 +51668,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 7,
+            "max": 13,
+            "aug": 13,
+            "val": 10
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -50491,8 +51880,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 3
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -50653,6 +52055,19 @@
           "skillPoints": 8
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 3
+          }
+        }
+      }
     },
     "source": "Howling Shadows",
     "page": 87
@@ -50846,8 +52261,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 3
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -50995,8 +52423,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 3
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -51191,8 +52632,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 3
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -51354,6 +52808,19 @@
           "rating": [4]
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 3
+          }
+        }
+      }
     },
     "source": "Howling Shadows",
     "page": 87
@@ -51702,8 +53169,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 3
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -52033,8 +53513,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 3
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -52206,8 +53699,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 6,
+            "aug": 6,
+            "val": 3
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -52438,8 +53944,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 7,
+            "aug": 7,
+            "val": 4
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -52669,8 +54188,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 1,
+            "max": 7,
+            "aug": 7,
+            "val": 4
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -53272,8 +54804,15 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -53448,6 +54987,13 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 145
   },
@@ -53618,8 +55164,15 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -53781,8 +55334,15 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -53945,8 +55505,15 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -54125,6 +55692,13 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 147
   },
@@ -54291,6 +55865,13 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 147
   },
@@ -54455,6 +56036,13 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 148
   },
@@ -54616,6 +56204,13 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 148
   },
@@ -54775,8 +56370,15 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -54952,8 +56554,15 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -55101,6 +56710,13 @@
           "rating": [5]
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      }
     },
     "source": "Howling Shadows",
     "page": 148
@@ -55252,6 +56868,13 @@
           "rating": [5]
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      }
     },
     "source": "Howling Shadows",
     "page": 148
@@ -55439,6 +57062,13 @@
           "rating": [5]
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      }
     },
     "source": "Kill Code",
     "page": 167
@@ -55629,6 +57259,13 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      }
+    },
     "source": "Kill Code",
     "page": 165
   },
@@ -55813,6 +57450,13 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      }
+    },
     "source": "Kill Code",
     "page": 166
   },
@@ -55993,6 +57637,13 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      }
+    },
     "source": "Kill Code",
     "page": 166
   },
@@ -56171,6 +57822,13 @@
           "rating": [2]
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      }
     },
     "source": "Kill Code",
     "page": 169
@@ -56366,6 +58024,13 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      }
+    },
     "source": "Kill Code",
     "page": 170
   },
@@ -56559,6 +58224,13 @@
           "rating": [5]
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      }
     },
     "source": "Kill Code",
     "page": 170
@@ -56754,6 +58426,13 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      }
+    },
     "source": "Kill Code",
     "page": 170
   },
@@ -56948,6 +58627,13 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      }
+    },
     "source": "Kill Code",
     "page": 170
   },
@@ -57130,6 +58816,13 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      }
+    },
     "source": "Kill Code",
     "page": 172
   },
@@ -57308,6 +59001,13 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      }
+    },
     "source": "Kill Code",
     "page": 172
   },
@@ -57484,6 +59184,13 @@
           "rating": [4]
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      }
     },
     "source": "Kill Code",
     "page": 173
@@ -57692,6 +59399,13 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      }
+    },
     "source": "Kill Code",
     "page": 177
   },
@@ -57884,6 +59598,13 @@
           "rating": [5]
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      }
     },
     "source": "Kill Code",
     "page": 176
@@ -58081,6 +59802,13 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      }
+    },
     "source": "Kill Code",
     "page": 175
   },
@@ -58272,6 +60000,13 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      }
+    },
     "source": "Kill Code",
     "page": 175
   },
@@ -58455,6 +60190,13 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      }
+    },
     "source": "Kill Code",
     "page": 169
   },
@@ -58623,6 +60365,13 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      }
+    },
     "source": "Kill Code",
     "page": 174
   },
@@ -58736,6 +60485,13 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Depth"
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 153
   },
@@ -58844,6 +60600,13 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Depth"
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 153
   },
@@ -58948,6 +60711,13 @@
           "rating": [4]
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Depth"
+        }
+      }
     },
     "source": "Howling Shadows",
     "page": 154
@@ -59057,6 +60827,13 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Depth"
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 155
   },
@@ -59161,6 +60938,13 @@
           "rating": [2]
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Resonance"
+        }
+      }
     },
     "source": "Howling Shadows",
     "page": 155
@@ -59275,6 +61059,13 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Depth"
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 153
   },
@@ -59387,6 +61178,13 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Depth"
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 154
   },
@@ -59494,6 +61292,13 @@
           "rating": [3]
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Depth"
+        }
+      }
     },
     "source": "Howling Shadows",
     "page": 156
@@ -61388,8 +63193,21 @@
       ]
     },
     "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 2,
+            "max": 8,
+            "aug": 8,
+            "val": 5
+          }
+        }
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Sprawl Wilds",
@@ -61555,6 +63373,19 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 6,
+            "max": 6,
+            "aug": 10,
+            "val": 6
+          }
+        }
+      }
+    },
     "source": "Schattenhandbuch 3",
     "page": 170
   },
@@ -61688,6 +63519,19 @@
           "rating": [5]
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 3,
+            "max": 3,
+            "aug": 3,
+            "val": 3
+          }
+        }
+      }
     },
     "source": "Schattenhandbuch 3",
     "page": 207
@@ -61839,6 +63683,19 @@
         }
       ]
     },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 2,
+            "max": 2,
+            "aug": 6,
+            "val": 2
+          }
+        }
+      }
+    },
     "source": "Schattenhandbuch 3",
     "page": 208
   },
@@ -61970,6 +63827,19 @@
           "rating": [4]
         }
       ]
+    },
+    "bonus": {
+      "attribute": {
+        "enableAttribute": {
+          "name": "Magic",
+          "override": {
+            "min": 3,
+            "max": 3,
+            "aug": 7,
+            "val": 3
+          }
+        }
+      }
     },
     "source": "Schattenhandbuch 3",
     "page": 209
@@ -62795,7 +64665,9 @@
     },
     "bonus": {
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Better Than Bad",
@@ -62940,7 +64812,9 @@
     },
     "bonus": {
       "initiative": {
-        "bonusDice": 2
+        "initiative": {
+          "bonusDice": 2
+        }
       }
     },
     "source": "Better Than Bad",
@@ -63092,7 +64966,9 @@
     },
     "bonus": {
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Better Than Bad",
@@ -63248,7 +65124,9 @@
     },
     "bonus": {
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Better Than Bad",
@@ -63399,7 +65277,9 @@
     },
     "bonus": {
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Better Than Bad",

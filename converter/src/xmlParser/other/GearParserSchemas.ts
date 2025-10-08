@@ -18,14 +18,12 @@ export type GearXmlRatingType = typeof GearXmlRatingSchema.infer;
 
 const AddWeaponSchema = type.or(
   "string",
-  type({
-    xmltext: "string",
-    _rating: "string",
-  })
+  type({ "+": "reject", xmltext: "string", _rating: "string" })
 );
 export type AddWeaponType = typeof AddWeaponSchema.infer;
 
 const WeaponXmlBonusSchema = type({
+  "+": "reject",
   "ap?": "number",
   "apreplace?": "number",
   "damage?": StringOrNumberSchema,
@@ -41,10 +39,7 @@ export type WeaponXmlBonusType = typeof WeaponXmlBonusSchema.infer;
 
 const AmmoForWeaponTypeXmlSchema = type.or(
   "string",
-  type({
-    _noextra: "'True'",
-    xmltext: "string",
-  })
+  type({ "+": "reject", _noextra: "'True'", xmltext: "string" })
 );
 export type AmmoForWeaponTypeXmlType = typeof AmmoForWeaponTypeXmlSchema.infer;
 
@@ -57,6 +52,7 @@ const DeviceRatingXmlSchema = type.or(
 export type DeviceRatingXmlType = typeof DeviceRatingXmlSchema.infer;
 
 const GearXmlSchema = type({
+  "+": "reject",
   id: "string",
   name: "string",
   // Category of gear
@@ -104,11 +100,10 @@ const GearXmlSchema = type({
   // Not selectable
   "hide?": "''",
   // Gear that can be added to this gear
-  "allowgear?": type({
-    name: StringArrayOrStringSchema,
-  }),
+  "allowgear?": type({ "+": "reject", name: StringArrayOrStringSchema }),
   // Included gear
   "gears?": type({
+    "+": "reject",
     usegear: UseGearXmlSchema,
     // Used if there is a long list of included gear
     "_startcollapsed?": "'True'",
@@ -143,13 +138,13 @@ const GearXmlSchema = type({
   "requireparent?": "''",
   // Forbidden
   "forbidden?": RequiredXmlSchema,
-  //  type({
+  //  type({ "+": "reject",
   //   geardetails: type.or(
-  //     type({
+  //     type({ "+": "reject",
   //       name: "string",
   //     }),
-  //     type({
-  //       OR: type({
+  //     type({ "+": "reject",
+  //       OR: type({ "+": "reject",
   //         name: StringArrayOrStringSchema,
   //       }),
   //     })

@@ -11,12 +11,14 @@ import { AvailabilityRatingSchema } from "../../shared/commonSchemas.js";
 import { type } from "arktype";
 
 const ProgramRatingSchema = type({
+  "+": "reject",
   maxRating: "number",
   minRating: "number",
 });
 export type ProgramRatingType = typeof ProgramRatingSchema.infer;
 
 export const AvailabilityProgramSchema = type({
+  "+": "reject",
   rating: AvailabilityRatingSchema,
   restriction: type.valueOf(restrictionEnum),
 });
@@ -24,10 +26,11 @@ export type AvailabilityProgramType = typeof AvailabilityProgramSchema.infer;
 
 const InnerCostProgramSchema = type.or(
   "number",
+  type({ "+": "reject", option: type.valueOf(costEnum) }),
   type({
-    option: type.valueOf(costEnum),
-  }),
-  { operator: type.valueOf(mathOperatorEnum) }
+    "+": "reject",
+    operator: type.valueOf(mathOperatorEnum),
+  })
 );
 
 const { PartialCostProgramSchema } = type.module({
@@ -43,13 +46,18 @@ const { PartialCostProgramSchema } = type.module({
   ],
 });
 
-export const CostProgramSchema = type.or(PartialCostProgramSchema, {
-  ratingLinked: PartialCostProgramSchema.array(),
-});
+export const CostProgramSchema = type.or(
+  PartialCostProgramSchema,
+  type({
+    "+": "reject",
+    ratingLinked: PartialCostProgramSchema.array(),
+  })
+);
 
 export type CostProgramType = typeof CostProgramSchema.infer;
 
 export const ProgramSchema = type({
+  "+": "reject",
   name: "string",
   description: "string",
   category: type.valueOf(programCategoryEnum),

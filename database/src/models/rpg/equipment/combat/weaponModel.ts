@@ -30,7 +30,7 @@ import type {
   CostWeaponType,
   WeaponType,
 } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
-import { weaponXmlSubtypeEnum } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
+import { weaponSubtypeEnum } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 import { Skills } from "../../abilities/skillModel.js";
 import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
 import { Gears } from "../other/gearModel.js";
@@ -244,8 +244,8 @@ export class FirearmWeapons extends RangedWeapons {
   @Property()
   recoilCompensation!: number;
 
-  @Enum({ items: () => weaponXmlSubtypeEnum, nullable: true })
-  ammoCategory?: weaponXmlSubtypeEnum;
+  @Enum({ items: () => weaponSubtypeEnum, nullable: true })
+  ammoCategory?: weaponSubtypeEnum;
 
   @Property()
   ammoSlots!: number;

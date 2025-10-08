@@ -10,6 +10,7 @@ import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
 import { complexFormTargetEnum } from "@neon-codex/common/build/enums.js";
 
 const ComplexFormXmlSchema = type({
+  "+": "reject",
   id: "string",
   name: "string",
   // Complex form target type

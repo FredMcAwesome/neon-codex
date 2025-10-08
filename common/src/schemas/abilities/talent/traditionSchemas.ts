@@ -8,6 +8,7 @@ import { BonusSchema } from "../../shared/bonusSchemas.js";
 import { RequirementsSchema } from "../../shared/requiredSchemas.js";
 
 export const TraditionSchema = type({
+  "+": "reject",
   name: "string",
   description: "string",
   drain: type.valueOf(traditionDrainAttributeEnum),
@@ -16,13 +17,14 @@ export const TraditionSchema = type({
     "'Select Spirits'",
     // All spirits that have the materialise power can be conjured
     "'All'",
-    {
+    type({
+      "+": "reject",
       spiritCombat: "string",
       spiritDetection: "string",
       spiritHealth: "string",
       spiritIllusion: "string",
       spiritManipulation: "string",
-    }
+    })
   ),
 
   "bonus?": BonusSchema,

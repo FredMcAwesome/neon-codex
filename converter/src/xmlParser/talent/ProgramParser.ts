@@ -29,6 +29,7 @@ const Availability = Programs.Availability;
 const Cost = Programs.Cost;
 
 const ProgramXmlSchema = type({
+  "+": "reject",
   id: "string",
   name: "string",
   category: "string",

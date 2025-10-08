@@ -7,7 +7,7 @@ import {
   weaponAccessoryMountLocationEnum,
   weaponTypeEnum,
 } from "@neon-codex/common/build/enums.js";
-import { weaponXmlSubtypeEnum } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
+import { weaponSubtypeEnum } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 import type {
   RequirementsType,
   WeaponDamageRequirementsType,
@@ -308,93 +308,93 @@ function getWeaponCategories<Type>(
   >
 ) {
   categoryArray.forEach((category) => {
-    let parsedCategory: weaponXmlSubtypeEnum;
+    let parsedCategory: weaponSubtypeEnum;
     if (typeof category === "object" && "xmltext" in category) {
       parsedCategory = category.xmltext;
     } else {
       parsedCategory = category;
     }
     switch (parsedCategory) {
-      case weaponXmlSubtypeEnum.AssaultCannons:
+      case weaponSubtypeEnum.AssaultCannons:
         requiredCategory.push(firearmWeaponTypeEnum.AssaultCannons);
         break;
-      case weaponXmlSubtypeEnum.AssaultRifles:
+      case weaponSubtypeEnum.AssaultRifles:
         requiredCategory.push(firearmWeaponTypeEnum.AssaultRifles);
         break;
-      case weaponXmlSubtypeEnum.GrenadeLaunchers:
+      case weaponSubtypeEnum.GrenadeLaunchers:
         requiredCategory.push(firearmWeaponTypeEnum.GrenadeLaunchers);
         break;
-      case weaponXmlSubtypeEnum.LightMachineguns:
+      case weaponSubtypeEnum.LightMachineguns:
         requiredCategory.push(firearmWeaponTypeEnum.LightMachineguns);
         break;
-      case weaponXmlSubtypeEnum.SniperRifles:
+      case weaponSubtypeEnum.SniperRifles:
         requiredCategory.push(firearmWeaponTypeEnum.SniperRifles);
         break;
-      case weaponXmlSubtypeEnum.ExoticRangedWeapons:
+      case weaponSubtypeEnum.ExoticRangedWeapons:
         requiredCategory.push(firearmWeaponTypeEnum.Exotic);
         break;
-      case weaponXmlSubtypeEnum.Flamethrowers:
+      case weaponSubtypeEnum.Flamethrowers:
         requiredCategory.push(firearmWeaponTypeEnum.Flamethrowers);
         break;
-      case weaponXmlSubtypeEnum.HeavyMachineguns:
+      case weaponSubtypeEnum.HeavyMachineguns:
         requiredCategory.push(firearmWeaponTypeEnum.MediumHeavyMachineguns);
         break;
-      case weaponXmlSubtypeEnum.HeavyPistols:
+      case weaponSubtypeEnum.HeavyPistols:
         requiredCategory.push(firearmWeaponTypeEnum.HeavyPistols);
         break;
-      case weaponXmlSubtypeEnum.Holdouts:
+      case weaponSubtypeEnum.Holdouts:
         requiredCategory.push(firearmWeaponTypeEnum.HoldOuts);
         break;
-      case weaponXmlSubtypeEnum.LaserWeapons:
+      case weaponSubtypeEnum.LaserWeapons:
         requiredCategory.push(firearmWeaponTypeEnum.Lasers);
         break;
-      case weaponXmlSubtypeEnum.LightPistols:
+      case weaponSubtypeEnum.LightPistols:
         requiredCategory.push(firearmWeaponTypeEnum.LightPistols);
         break;
-      case weaponXmlSubtypeEnum.MachinePistols:
+      case weaponSubtypeEnum.MachinePistols:
         requiredCategory.push(firearmWeaponTypeEnum.MachinePistols);
         break;
-      case weaponXmlSubtypeEnum.MediumMachineguns:
+      case weaponSubtypeEnum.MediumMachineguns:
         requiredCategory.push(firearmWeaponTypeEnum.MediumHeavyMachineguns);
         break;
-      case weaponXmlSubtypeEnum.MissileLaunchers:
+      case weaponSubtypeEnum.MissileLaunchers:
         requiredCategory.push(firearmWeaponTypeEnum.MissileLaunchers);
         break;
-      case weaponXmlSubtypeEnum.Shotguns:
+      case weaponSubtypeEnum.Shotguns:
         requiredCategory.push(firearmWeaponTypeEnum.Shotguns);
         break;
-      case weaponXmlSubtypeEnum.SportingRifles:
+      case weaponSubtypeEnum.SportingRifles:
         requiredCategory.push(firearmWeaponTypeEnum.SportingRifles);
         break;
-      case weaponXmlSubtypeEnum.SubmachineGuns:
+      case weaponSubtypeEnum.SubmachineGuns:
         requiredCategory.push(firearmWeaponTypeEnum.SubmachineGuns);
         break;
-      case weaponXmlSubtypeEnum.Tasers:
+      case weaponSubtypeEnum.Tasers:
         requiredCategory.push(firearmWeaponTypeEnum.Tasers);
         break;
-      case weaponXmlSubtypeEnum.UnderbarrelWeapons:
+      case weaponSubtypeEnum.UnderbarrelWeapons:
         requiredCategory.push(firearmWeaponTypeEnum.WeaponAttachments);
         break;
-      case weaponXmlSubtypeEnum.Cyberweapon:
+      case weaponSubtypeEnum.Cyberweapon:
         requiredCategory.push(firearmWeaponTypeEnum.Exotic);
         break;
       // case weaponXmlSubtypeEnum.BioWeapon:
       //   requiredCategory.push(meleeWeaponTypeEnum.BioWeapons);
       //   break;
-      case weaponXmlSubtypeEnum.Carbines:
+      case weaponSubtypeEnum.Carbines:
         requiredCategory.push(firearmWeaponTypeEnum.Carbines);
         break;
-      case weaponXmlSubtypeEnum.Bows:
+      case weaponSubtypeEnum.Bows:
         requiredCategory.push(projectileWeaponTypeEnum.Bows);
         break;
       default:
         if (typeof category === "object") {
-          if (category.xmltext === weaponXmlSubtypeEnum.Rifles) {
+          if (category.xmltext === weaponSubtypeEnum.Rifles) {
             requiredCategory.push(firearmWeaponTypeEnum.SniperRifles);
             requiredCategory.push(firearmWeaponTypeEnum.AssaultRifles);
             requiredCategory.push(firearmWeaponTypeEnum.SportingRifles);
             break;
-          } else if (category.xmltext === weaponXmlSubtypeEnum.Pistol) {
+          } else if (category.xmltext === weaponSubtypeEnum.Pistol) {
             requiredCategory.push(firearmWeaponTypeEnum.HeavyPistols);
             requiredCategory.push(firearmWeaponTypeEnum.LightPistols);
             requiredCategory.push(firearmWeaponTypeEnum.MachinePistols);

@@ -8,11 +8,13 @@ import { BonusSchema } from "../../shared/bonusSchemas.js";
 import { RequirementsSchema } from "../../shared/requiredSchemas.js";
 
 const fadingValueSchema = type.or("number", {
+  "+": "reject",
   option: "'Special'",
 });
 export type fadingValueType = typeof fadingValueSchema.infer;
 
 export const ComplexFormSchema = type({
+  "+": "reject",
   name: "string",
   description: "string",
   target: type.valueOf(complexFormTargetEnum),

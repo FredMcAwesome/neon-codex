@@ -29,6 +29,7 @@ import {
 import { type } from "arktype";
 
 export const InnerAvailabilityAugmentationSchema = type({
+  "+": "reject",
   rating: AvailabilityRatingSchema,
   restriction: type.valueOf(restrictionEnum),
   "modifier?": type.or(
@@ -40,7 +41,10 @@ export type InnerAvailabilityAugmentationType =
   typeof InnerAvailabilityAugmentationSchema.infer;
 
 export const AvailabilityAugmentationSchema = type.or(
-  { ratingLinked: InnerAvailabilityAugmentationSchema.array() },
+  type({
+    "+": "reject",
+    ratingLinked: InnerAvailabilityAugmentationSchema.array(),
+  }),
   InnerAvailabilityAugmentationSchema
 );
 export type AvailabilityAugmentationType =
@@ -48,10 +52,11 @@ export type AvailabilityAugmentationType =
 
 const InnerCostAugmentationSchema = type.or(
   "number",
+  type({ "+": "reject", option: type.valueOf(costEnum) }),
   type({
-    option: type.valueOf(costEnum),
-  }),
-  { operator: type.valueOf(mathOperatorEnum) }
+    "+": "reject",
+    operator: type.valueOf(mathOperatorEnum),
+  })
 );
 
 const { PartialCostAugmentationSchema } = type.module({
@@ -60,6 +65,7 @@ const { PartialCostAugmentationSchema } = type.module({
       InnerCostAugmentationSchema,
       "|",
       {
+        "+": "reject",
         subnumbers: "PartialCostAugmentationSchema",
       },
     ],
@@ -69,23 +75,29 @@ const { PartialCostAugmentationSchema } = type.module({
 
 export const CostAugmentationSchema = type.or(
   PartialCostAugmentationSchema,
-  { ratingLinked: PartialCostAugmentationSchema.array() },
-  {
-    range: {
+  type({
+    "+": "reject",
+    ratingLinked: PartialCostAugmentationSchema.array(),
+  }),
+  type({
+    "+": "reject",
+    range: type({
+      "+": "reject",
       min: InnerCostAugmentationSchema,
       max: InnerCostAugmentationSchema,
-    },
-  }
+    }),
+  })
 );
 
 export type CostAugmentationType = typeof CostAugmentationSchema.infer;
 
 const InnerCapacityAugmentationSchema = type.or(
   "number",
+  type({ "+": "reject", option: type.valueOf(capacityEnum) }),
   type({
-    option: type.valueOf(capacityEnum),
-  }),
-  { operator: type.valueOf(mathOperatorEnum) }
+    "+": "reject",
+    operator: type.valueOf(mathOperatorEnum),
+  })
 );
 
 export type SingleCapacityAugmentationType = Array<
@@ -98,6 +110,7 @@ export const { SingleCapacityAugmentationSchema } = type.module({
       InnerCapacityAugmentationSchema,
       "|",
       {
+        "+": "reject",
         subnumbers: "SingleCapacityAugmentationSchema",
       },
     ],
@@ -107,6 +120,7 @@ export const { SingleCapacityAugmentationSchema } = type.module({
 export const CapacityAugmentationSchema = type.or(
   SingleCapacityAugmentationSchema,
   type({
+    "+": "reject",
     ratingLinked: SingleCapacityAugmentationSchema.array(),
   })
 );
@@ -124,6 +138,7 @@ export const { SubsystemListSchema, AugmentationSubsystemListSchema } =
   type.module({
     SubsystemListSchema: [
       {
+        "+": "reject",
         name: "string",
         "forced?": "string",
         "rating?": "number",
@@ -133,6 +148,7 @@ export const { SubsystemListSchema, AugmentationSubsystemListSchema } =
       "[]",
     ],
     AugmentationSubsystemListSchema: {
+      "+": "reject",
       "cyberwareList?": "SubsystemListSchema",
       "biowareList?": "SubsystemListSchema",
     },
@@ -141,18 +157,17 @@ export const { SubsystemListSchema, AugmentationSubsystemListSchema } =
 export type AugmentationSubsystemListType =
   typeof AugmentationSubsystemListSchema.infer;
 
-const deviceRatingSchema = type({ option: "'Rating'" });
+const deviceRatingSchema = type({ "+": "reject", option: "'Rating'" });
 export type deviceRatingType = typeof deviceRatingSchema.infer;
 
 const AugmentationLimitSchema = type.or(
   "number",
-  type({
-    option: type.valueOf(augmentationLimitEnum),
-  })
+  type({ "+": "reject", option: type.valueOf(augmentationLimitEnum) })
 );
 export type AugmentationLimitType = typeof AugmentationLimitSchema.infer;
 
 export const AugmentationPartialSchema = type({
+  "+": "reject",
   name: "string",
   description: "string",
   "wireless?": "string",
@@ -186,7 +201,7 @@ export const AugmentationPartialSchema = type({
   page: "number",
 });
 
-const CyberwareSchema = AugmentationPartialSchema.and({
+const CyberwareSchema = AugmentationPartialSchema.merge({
   type: type.unit(augmentationTypeEnum.Cyberware),
   subtype: type.valueOf(cyberwareCategoryEnum),
   "programs?": "'Rating'",
@@ -211,7 +226,7 @@ const CyberwareSchema = AugmentationPartialSchema.and({
   "wireless?": "string",
 });
 
-const BiowareSchema = AugmentationPartialSchema.and({
+const BiowareSchema = AugmentationPartialSchema.merge({
   type: type.enumerated(augmentationTypeEnum.Bioware),
   subtype: type.valueOf(biowareCategoryEnum),
   "isGeneware?": "true",
@@ -224,6 +239,7 @@ export const AugmentationListSchema = type(AugmentationSchema.array());
 export type AugmentationListType = typeof AugmentationListSchema.infer;
 
 export const CustomisedAugmentationSchema = type({
+  "+": "reject",
   baseAugmentation: "string",
   // This overrides baseAugmentation included gear
   "gearList?": CustomisedGearListSchema,

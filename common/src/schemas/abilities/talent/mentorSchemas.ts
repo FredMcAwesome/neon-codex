@@ -4,6 +4,7 @@ import { BonusSchema } from "../../shared/bonusSchemas.js";
 import { RequirementsSchema } from "../../shared/requiredSchemas.js";
 
 export const MentorBaseSchema = type({
+  "+": "reject",
   name: "string",
   description: "string",
   advantage: "string",
@@ -15,6 +16,7 @@ export const MentorBaseSchema = type({
 export type MentorBaseType = typeof MentorBaseSchema.infer;
 
 export const MentorChoiceSchema = type({
+  "+": "reject",
   name: "string",
   "bonus?": BonusSchema,
   set: "number",
@@ -22,13 +24,13 @@ export const MentorChoiceSchema = type({
 export type MentorChoiceType = typeof MentorChoiceSchema.infer;
 
 export const MentorSchema = type.or(
-  MentorBaseSchema.and({
+  MentorBaseSchema.merge({
     category: type.unit(mentorCategoryEnum.MentorSpirit),
     choices: MentorChoiceSchema.array(),
     choiceCount: "number",
     "required?": RequirementsSchema,
   }),
-  MentorBaseSchema.and({
+  MentorBaseSchema.merge({
     category: type.unit(mentorCategoryEnum.Paragon),
   })
 );

@@ -12,6 +12,7 @@ import {
 import { type } from "arktype";
 
 const IncludedPowerListSchema = type({
+  "+": "reject",
   name: "string",
   "selectText?": "string",
   "rating?": "number",
@@ -19,6 +20,7 @@ const IncludedPowerListSchema = type({
 export type IncludedPowerListType = typeof IncludedPowerListSchema.infer;
 
 const PartialHeritageSchema = type({
+  "+": "reject",
   // id: "string",
   name: "string",
   description: "string",
@@ -49,23 +51,23 @@ const PartialHeritageSchema = type({
   source: "string",
   page: "number",
 });
-const MetavariantSchema = PartialHeritageSchema.and({
+const MetavariantSchema = PartialHeritageSchema.merge({
   category: type.unit(heritageCategoryEnum.Metavariant),
   baseHeritage: "string",
 });
 // Can't have a union as a key for a discriminated union so
 // need to do this instead
-const PartialBaseHeritageSchema = PartialHeritageSchema.and({
+const PartialBaseHeritageSchema = PartialHeritageSchema.merge({
   "metavariantList?": "string[]",
 });
 export const HeritageSchema = type.or(
-  PartialBaseHeritageSchema.and({
+  PartialBaseHeritageSchema.merge({
     category: type.unit(heritageCategoryEnum.Metahuman),
   }),
-  PartialBaseHeritageSchema.and({
+  PartialBaseHeritageSchema.merge({
     category: type.unit(heritageCategoryEnum.Metasapient),
   }),
-  PartialBaseHeritageSchema.and({
+  PartialBaseHeritageSchema.merge({
     category: type.unit(heritageCategoryEnum.Shapeshifter),
   }),
   MetavariantSchema

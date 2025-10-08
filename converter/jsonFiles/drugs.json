@@ -10,12 +10,38 @@
     "cost": 15,
     "speed": 1,
     "bonus": {
-      "qualityList": [
-        {
-          "name": "High Pain Tolerance",
-          "rating": 3
-        }
-      ]
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Reaction"
+            },
+            "attributeIncrease": 1
+          }
+        ],
+        "limitIncrease": [
+          {
+            "category": "Mental",
+            "value": -1
+          },
+          {
+            "category": "Physical",
+            "value": -1
+          },
+          {
+            "category": "Social",
+            "value": -1
+          }
+        ]
+      },
+      "quality": {
+        "addQualityList": [
+          {
+            "name": "High Pain Tolerance",
+            "rating": 3
+          }
+        ]
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 411
@@ -31,8 +57,20 @@
     "cost": 10,
     "speed": 600,
     "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Reaction"
+            },
+            "attributeIncrease": 1
+          }
+        ]
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -49,8 +87,36 @@
     "cost": 400,
     "speed": 1,
     "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Reaction"
+            },
+            "attributeIncrease": 1
+          },
+          {
+            "linkType": {
+              "linkedAttribute": "Willpower"
+            },
+            "attributeIncrease": 1
+          }
+        ],
+        "limitIncrease": [
+          {
+            "category": "Physical",
+            "value": -1
+          },
+          {
+            "category": "Mental",
+            "value": 1
+          }
+        ]
+      },
       "initiative": {
-        "bonusDice": 1
+        "initiative": {
+          "bonusDice": 1
+        }
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -67,8 +133,26 @@
     "cost": 75,
     "speed": 1,
     "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Reaction"
+            },
+            "attributeIncrease": 1
+          }
+        ],
+        "limitIncrease": [
+          {
+            "category": "Physical",
+            "value": 1
+          }
+        ]
+      },
       "initiative": {
-        "bonusDice": 2
+        "initiative": {
+          "bonusDice": 2
+        }
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -85,15 +169,59 @@
     "cost": 100,
     "speed": 1,
     "bonus": {
-      "initiative": {
-        "bonusDice": 2
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Agility"
+            },
+            "attributeIncrease": 1
+          },
+          {
+            "linkType": {
+              "linkedAttribute": "Body"
+            },
+            "attributeIncrease": 1
+          },
+          {
+            "linkType": {
+              "linkedAttribute": "Reaction"
+            },
+            "attributeIncrease": 1
+          },
+          {
+            "linkType": {
+              "linkedAttribute": "Strength"
+            },
+            "attributeIncrease": 2
+          },
+          {
+            "linkType": {
+              "linkedAttribute": "Willpower"
+            },
+            "attributeIncrease": 1
+          }
+        ],
+        "limitIncrease": [
+          {
+            "category": "Physical",
+            "value": 2
+          }
+        ]
       },
-      "qualityList": [
-        {
-          "name": "High Pain Tolerance",
-          "rating": 3
+      "initiative": {
+        "initiative": {
+          "bonusDice": 2
         }
-      ]
+      },
+      "quality": {
+        "addQualityList": [
+          {
+            "name": "High Pain Tolerance",
+            "rating": 3
+          }
+        ]
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 412
@@ -122,12 +250,45 @@
     "cost": 50,
     "speed": 6,
     "bonus": {
-      "qualityList": [
-        {
-          "name": "High Pain Tolerance",
-          "rating": 6
-        }
-      ]
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Strength"
+            },
+            "attributeIncrease": 2
+          },
+          {
+            "linkType": {
+              "linkedAttribute": "Willpower"
+            },
+            "attributeIncrease": 2
+          }
+        ],
+        "limitIncrease": [
+          {
+            "category": "Physical",
+            "value": 2
+          }
+        ]
+      },
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Perception",
+            "bonus": 2,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      },
+      "quality": {
+        "addQualityList": [
+          {
+            "name": "High Pain Tolerance",
+            "rating": 6
+          }
+        ]
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 412
@@ -143,12 +304,45 @@
     "cost": 10,
     "speed": 6,
     "bonus": {
-      "qualityList": [
-        {
-          "name": "High Pain Tolerance",
-          "rating": 1
-        }
-      ]
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Charisma"
+            },
+            "attributeIncrease": 1
+          },
+          {
+            "linkType": {
+              "linkedAttribute": "Reaction"
+            },
+            "attributeIncrease": 1
+          }
+        ],
+        "limitIncrease": [
+          {
+            "category": "Social",
+            "value": 2
+          }
+        ]
+      },
+      "skill": {
+        "skillIncreaseList": [
+          {
+            "name": "Perception",
+            "bonus": 1,
+            "modifierType": "DicePoolIncrease"
+          }
+        ]
+      },
+      "quality": {
+        "addQualityList": [
+          {
+            "name": "High Pain Tolerance",
+            "rating": 1
+          }
+        ]
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 412
@@ -163,6 +357,30 @@
     },
     "cost": 200,
     "speed": 600,
+    "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Intuition"
+            },
+            "attributeIncrease": 1
+          },
+          {
+            "linkType": {
+              "linkedAttribute": "Logic"
+            },
+            "attributeIncrease": 1
+          }
+        ],
+        "limitIncrease": [
+          {
+            "category": "Mental",
+            "value": 1
+          }
+        ]
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 412
   },
@@ -176,6 +394,24 @@
     },
     "cost": 5,
     "speed": 300,
+    "bonus": {
+      "attribute": {
+        "linkAttributeList": [
+          {
+            "linkType": {
+              "linkedAttribute": "Reaction"
+            },
+            "attributeIncrease": -2
+          },
+          {
+            "linkType": {
+              "linkedAttribute": "Willpower"
+            },
+            "attributeIncrease": 1
+          }
+        ]
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 412
   },

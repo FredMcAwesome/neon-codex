@@ -24,6 +24,7 @@ import { CustomisedWeaponMountListSchema } from "./weaponMountSchemas.js";
 import { type } from "arktype";
 
 export const AvailabilityVehicleSchema = type({
+  "+": "reject",
   rating: AvailabilityRatingSchema,
   restriction: type.valueOf(restrictionEnum),
   "modifier?": type.unit(mathOperatorEnum.Add),
@@ -32,10 +33,14 @@ export type AvailabilityVehicleType = typeof AvailabilityVehicleSchema.infer;
 
 const InnerCostVehicleSchema = type.or(
   "number",
-  {
+  type({
     option: type.valueOf(costEnum),
-  },
-  { operator: type.valueOf(mathOperatorEnum) }
+    "+": "reject",
+  }),
+  type({
+    "+": "reject",
+    operator: type.valueOf(mathOperatorEnum),
+  })
 );
 
 const { PartialCostVehicleSchema } = type.module({
@@ -44,6 +49,7 @@ const { PartialCostVehicleSchema } = type.module({
       InnerCostVehicleSchema,
       "|",
       {
+        "+": "reject",
         subnumbers: "PartialCostVehicleSchema",
       },
     ],
@@ -57,6 +63,7 @@ export const CostVehicleSchema = type.or(
 export type CostVehicleType = typeof CostVehicleSchema.infer;
 
 const WeaponMountSchema = type({
+  "+": "reject",
   control: type.valueOf(weaponMountControlEnum),
   flexibility: type.valueOf(weaponMountFlexibilityEnum),
   size: type.valueOf(weaponMountSizeEnum),
@@ -67,17 +74,29 @@ export type WeaponMountType = typeof WeaponMountSchema.infer;
 export const WeaponMountListSchema = type(WeaponMountSchema.array());
 export type WeaponMountListType = typeof WeaponMountListSchema.infer;
 
-const VehicleOnOffRoadSchema = type.or("number", {
-  onRoad: "number",
-  offRoad: "number",
-});
+const VehicleOnOffRoadSchema = type.or(
+  "number",
+  type({
+    "+": "reject",
+    onRoad: "number",
+    offRoad: "number",
+  })
+);
 
-const VehicleSeatsSchema = type.or("number", { min: "number", max: "number" });
+const VehicleSeatsSchema = type.or(
+  "number",
+  type({
+    "+": "reject",
+    min: "number",
+    max: "number",
+  })
+);
 export type VehicleSeatsType = typeof VehicleSeatsSchema.infer;
 
 export type VehicleOnOffRoadType = typeof VehicleOnOffRoadSchema.infer;
 
 const VehiclePartialSchema = type({
+  "+": "reject",
   name: "string",
   description: "string",
   handling: VehicleOnOffRoadSchema,
@@ -103,26 +122,26 @@ const VehiclePartialSchema = type({
   source: type.valueOf(sourceBookEnum),
   page: "number",
 });
-const MannedVehiclePartialSchema = VehiclePartialSchema.and({
+const MannedVehiclePartialSchema = VehiclePartialSchema.merge({
   seats: VehicleSeatsSchema,
 });
 
-const GroundcraftVehicleSchema = MannedVehiclePartialSchema.and({
+const GroundcraftVehicleSchema = MannedVehiclePartialSchema.merge({
   type: type.unit(vehicleTypeEnum.Groundcraft),
   subtype: type.valueOf(groundcraftSubtypeEnum),
 });
 export type GroundcraftVehicleType = typeof GroundcraftVehicleSchema.infer;
-const WatercraftVehicleSchema = MannedVehiclePartialSchema.and({
+const WatercraftVehicleSchema = MannedVehiclePartialSchema.merge({
   type: type.unit(vehicleTypeEnum.Watercraft),
   subtype: type.valueOf(watercraftSubtypeEnum),
 });
 export type WatercraftVehicleType = typeof WatercraftVehicleSchema.infer;
-const AircraftVehicleSchema = MannedVehiclePartialSchema.and({
+const AircraftVehicleSchema = MannedVehiclePartialSchema.merge({
   type: type.unit(vehicleTypeEnum.Aircraft),
   subtype: type.valueOf(aircraftSubtypeEnum),
 });
 export type AircraftVehicleType = typeof AircraftVehicleSchema.infer;
-const DroneVehicleSchema = VehiclePartialSchema.and({
+const DroneVehicleSchema = VehiclePartialSchema.merge({
   type: type.unit(vehicleTypeEnum.Drone),
   subtype: type.valueOf(droneSubtypeEnum),
 });
@@ -140,6 +159,7 @@ export const VehicleListSchema = type(VehicleSchema.array());
 export type VehicleListType = typeof VehicleListSchema.infer;
 
 export const CustomisedVehicleSchema = type({
+  "+": "reject",
   baseVehicle: "string",
   // This overrides baseVehicle modifications
   "modList?": CustomisedVehicleModListSchema,

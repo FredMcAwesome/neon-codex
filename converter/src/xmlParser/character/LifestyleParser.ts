@@ -22,14 +22,17 @@ import {
 import { type } from "arktype";
 
 const FreeGridXmlSchema = type({
+  "+": "reject",
   _select: type.valueOf(gridCategoryEnum),
   xmltext: "'Grid Subscription'",
 });
 const FreeGridsXmlSchema = type({
+  "+": "reject",
   freegrid: type.or(FreeGridXmlSchema, FreeGridXmlSchema.array()),
 });
 type FreeGridsXmlType = typeof FreeGridsXmlSchema.infer;
 const LifestyleXmlSchema = type({
+  "+": "reject",
   id: "string",
   name: "string",
   cost: "number",
@@ -61,6 +64,7 @@ const LifestyleXmlSchema = type({
 type LifestyleXmlType = typeof LifestyleXmlSchema.infer;
 
 const LifeStyleAdvancedLevelXmlSchema = type({
+  "+": "reject",
   name: "string",
   minimum: "number",
   limit: "number",

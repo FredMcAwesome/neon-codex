@@ -93,6 +93,7 @@ export enum attributeTypeEnum {
   Resonance = "Resonance",
   Depth = "Depth",
   Edge = "Edge",
+  Initiative = "Initiative",
 }
 
 export enum weaponTypeEnum {
@@ -1022,4 +1023,74 @@ export enum equipmentPackCategoryEnum {
   MagicPacks = "Magic Packs",
   CommunityPacks = "Community Packs",
   Custom = "Custom",
+}
+
+export enum elementEnum {
+  Acid = "Acid",
+  Cold = "Cold",
+  Electricity = "Electricity",
+  Fire = "Fire",
+  Pollutant = "Pollutant",
+  Radiation = "Radiation",
+  Water = "Water",
+}
+
+export enum spiritCategoryEnum {
+  Combat = "Combat",
+  Detection = "Detection",
+  Health = "Health",
+  Illusion = "Illusion",
+  Manipulation = "Manipulation",
+}
+
+export enum listTypeEnum {
+  SpiritCategory = "Spirit Category",
+  MatrixAttribute = "Matrix Attribute",
+  Element = "Element",
+  Immunity = "Immunity",
+  Vehicle = "Vehicle",
+  Weapon = "Weapon",
+  Skill = "Skill",
+  SkillGroup = "Skill Group",
+  KnowledgeSkill = "Knowledge Skill",
+  Heritage = "Heritage",
+  Gear = "Gear",
+  Quality = "Quality",
+  Megacorp = "Megacorp",
+  MegacorpDoubleA = "Megacorp (Double A)",
+  Spell = "Spell",
+  Spirit = "Spirit",
+  Program = "Program",
+  Action = "Action",
+}
+
+export enum listTypeModifierEnum {
+  Type = "Type",
+  Category = "Category",
+  Name = "Name",
+  Source = "Source",
+}
+
+export enum bonusSkillModifierTypeEnum {
+  LevelIncrease = "LevelIncrease",
+  ApplyBonusToLevel = "ApplyBonusToLevel",
+  DicePoolIncrease = "DicePoolIncrease",
+  Linked = "Linked",
+  MaximumIncrease = "MaximumIncrease",
+}
+
+export enum bonusCostModifierTypeEnum {
+  KarmaIncrease = "Karma Increase",
+  KarmaMultiplier = "Karma Multiplier",
+  PointMultiplier = "Point Mulitplier",
+}
+
+export enum bonusCostModifierConditionEnum {
+  CareerMode = "Career Mode",
+  CharacterCreation = "Character Creation",
+}
+
+export enum skillTypeEnum {
+  Active = "Active",
+  Knowledge = "Knowledge",
 }

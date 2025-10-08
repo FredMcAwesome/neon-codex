@@ -18,28 +18,28 @@ import { convertSource } from "../common/ParserHelper.js";
 import { type } from "arktype";
 
 const MartialArtXmlSchema = type.or(
-  {
+  type({
+    "+": "reject",
     id: "string",
     name: "string",
     "cost?": "number",
     "bonus?": BonusXmlSchema,
     "required?": RequiredXmlSchema,
     techniques: {
-      technique: type({
-        name: "string",
-      }).array(),
+      technique: type({ "+": "reject", name: "string" }).array(),
     },
     source: type.valueOf(sourceBookXmlEnum),
     page: "number",
-  },
-  {
+  }),
+  type({
+    "+": "reject",
     id: "string",
     name: "string",
     isquality: "'True'",
     alltechniques: "''",
     source: type.valueOf(sourceBookXmlEnum),
     page: "number",
-  }
+  })
 );
 type MartialArtXmlType = typeof MartialArtXmlSchema.infer;
 

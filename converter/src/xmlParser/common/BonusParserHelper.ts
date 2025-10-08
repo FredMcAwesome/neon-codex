@@ -1,38 +1,80 @@
 import {
+  bonusCostModifierConditionEnum,
+  bonusCostModifierTypeEnum,
+  bonusSkillModifierTypeEnum,
+  critterAttributePowerEnum,
   damageTypeEnum,
-  mathOperatorEnum,
+  limitCategoryEnum,
+  listTypeEnum,
+  skillCategoryEnum,
+  skillTypeEnum,
+  specialAttributeTypeEnum,
   spellCategoryEnum,
   weaponTypeEnum,
 } from "@neon-codex/common/build/enums.js";
 import type {
   BonusType,
   BonusGenericListType,
-  SelectSkillType,
+  BonusSelectionType,
+  BonusSelectionOptionModifierType,
+  SpecificAttributeBonusType,
+  WeaponAccuracySkillListSkillSelectionType,
+  BonusAttributeOptionType,
+  BonusSkillOptionType,
+  BonusPowerOptionType,
+  BonusSpellAndMagicOptionType,
+  BonusTechnomancerOptionType,
+  BonusCombatAndWeaponOptionType,
+  BonusConditionAndRecoveryOptionType,
+  BonusMovementAndLifestyleOptionType,
+  BonusTestAndResistanceOptionType,
+  BonusInitiativeOptionType,
+  BonusGearAndVehicleOptionType,
+  BonusEssenceAndAugmentationType,
+  BonusContactAndReputationType,
+  BonusQualityType,
+  BonusSpecificQualityType,
+  BonusMiscellaneousOptionType,
 } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 import assert from "assert";
 import type {
   GenericNameValueListType,
   GenericNameValueType,
   NumberOrAnyRatingType,
-  SkillListType,
+  NumberOrRatingOrAttributeType,
+  SkillXMLListType,
+  SkillXMLType,
 } from "./ParserCommonDefines.js";
-import { attributeXMLEnum } from "./ParserCommonDefines.js";
+import {
+  attributeXMLEnum,
+  EnglishTranslationsXMLSchema,
+  lockedAttributeXmlEnum,
+} from "./ParserCommonDefines.js";
 import Bonus from "../../grammar/bonus.ohm-bundle.js";
 import {
-  initiativeSemantics,
-  skillKarmaCostSemantics,
+  NumberFixedRatingSemantics,
+  bonusRatingCalculationSemantics,
+  bonusSkillKarmaCostSemantics,
+  bonusWeaponDetailsSemantics,
 } from "./ParserSemanticsHelper.js";
 import { convertAttribute, convertLimbSlot } from "./ParserHelper.js";
 import type {
   BonusXmlType,
+  SelectSkillXMLType,
   SpecificPowerXMLType,
   WeaponSkillAccuracyXMLType,
 } from "./BonusParserSchemas.js";
-const Initiative = Bonus.Initiative;
+const NumberFixedRating = Bonus.NumberFixedRating;
 const SkillKarmaCost = Bonus.SkillKarmaCost;
+const WeaponDetails = Bonus.WeaponDetails;
+const RatingCalculation = Bonus.RatingCalculation;
 import Augmentation from "../../grammar/augmentation.ohm-bundle.js";
 import { essenceCostSemantics } from "../bodyModification/augmentationParserHelper.js";
 import { type } from "arktype";
+import * as fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+import { XMLParser } from "fast-xml-parser";
 const EssenceCost = Augmentation.EssenceCost;
 
 // TODO: handle bonus correctly
@@ -41,122 +83,527 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     assert(bonus === "");
     return undefined;
   }
-  const bonusObject: BonusType = {};
-  if ("selecttext" in bonus && bonus.selecttext !== undefined) {
-    const selectText = bonus.selecttext;
-    if (typeof selectText === "string") {
-      assert(selectText === "");
-      bonusObject.enterName = true;
+  const checkedProps = new Set<string>();
+
+  function checkProp(prop: string) {
+    assert(!checkedProps.has(prop), `Property '${prop}' checked twice`);
+    checkedProps.add(prop);
+  }
+  const attributeOption: BonusAttributeOptionType = {};
+  const skillOption: BonusSkillOptionType = {};
+  const powerOption: BonusPowerOptionType = {};
+  const spellAndMagicOption: BonusSpellAndMagicOptionType = {};
+  const technomancerOption: BonusTechnomancerOptionType = {};
+  const combatAndWeaponOption: BonusCombatAndWeaponOptionType = {};
+  const conditionAndRecoveryOption: BonusConditionAndRecoveryOptionType = {};
+  const movementAndLifestyleOption: BonusMovementAndLifestyleOptionType = {};
+  const testAndResistanceOption: BonusTestAndResistanceOptionType = {};
+  const initiativeOption: BonusInitiativeOptionType = {};
+  const gearAndVehicleOption: BonusGearAndVehicleOptionType = {};
+  const essenceAndAugmentationOption: BonusEssenceAndAugmentationType = {};
+  const contactAndReputationOption: BonusContactAndReputationType = {};
+  const qualityOption: BonusQualityType = {};
+  const specificQualityOption: BonusSpecificQualityType = {};
+  const miscellaneousOption: BonusMiscellaneousOptionType = {};
+
+  // Attribute Bonuses and Modifiers
+  // --------------------------------------------------------------------------------------------
+  if ("attribute" in bonus && bonus.attribute !== undefined) {
+    checkProp("attribute");
+    const attributeList = Array.isArray(bonus.attribute)
+      ? bonus.attribute
+      : [bonus.attribute];
+    const convertedAttributeList = attributeList.map((attribute) => {
+      return convertSpecificAttribute(attribute);
+    });
+    if (attributeOption.linkAttributeList === undefined) {
+      attributeOption.linkAttributeList = convertedAttributeList;
     } else {
-      if (selectText._allowedit !== undefined) {
-      }
-      // const optionList = getListFromOtherFile(selectText._xml, selectText._xpath)
+      attributeOption.linkAttributeList =
+        attributeOption.linkAttributeList.concat(convertedAttributeList);
     }
   }
-  if ("selectweapon" in bonus && bonus.selectweapon !== undefined) {
-    const linkWeapon = bonus.selectweapon;
-    if (typeof linkWeapon === "string") {
-      assert(linkWeapon === "");
-      bonusObject.linkWeapon = true;
+  if ("specificattribute" in bonus && bonus.specificattribute !== undefined) {
+    checkProp("specificattribute");
+    const attributeList = Array.isArray(bonus.specificattribute)
+      ? bonus.specificattribute
+      : [bonus.specificattribute];
+    const convertedAttributeList = attributeList.map((attribute) => {
+      return convertSpecificAttribute(attribute);
+    });
+    if (attributeOption.linkAttributeList === undefined) {
+      attributeOption.linkAttributeList = convertedAttributeList;
     } else {
-      // TODO: handle weapondetails... :(
-      linkWeapon._weapondetails;
-      bonusObject.linkWeapon = true;
+      attributeOption.linkAttributeList =
+        attributeOption.linkAttributeList.concat(convertedAttributeList);
     }
   }
-  if ("selectarmor" in bonus && bonus.selectarmor !== undefined) {
-    bonusObject.linkArmour = true;
-  }
-  if ("selectskill" in bonus && bonus.selectskill !== undefined) {
-    const linkSkill = bonus.selectskill;
-    if (typeof linkSkill === "string") {
-      assert(linkSkill === "");
-      bonusObject.linkSkill = true;
+  if ("selectattributes" in bonus && bonus.selectattributes !== undefined) {
+    checkProp("selectattributes");
+    const selectAttribute = Array.isArray(
+      bonus.selectattributes.selectattribute
+    )
+      ? bonus.selectattributes.selectattribute
+      : [bonus.selectattributes.selectattribute];
+    const elementList = selectAttribute.map((selectAttribute) => {
+      return convertSelectAttribute(selectAttribute);
+    });
+
+    if (attributeOption.linkAttributeList === undefined) {
+      attributeOption.linkAttributeList = elementList;
     } else {
-      // TODO: handle
+      attributeOption.linkAttributeList =
+        attributeOption.linkAttributeList.concat(elementList);
     }
   }
   if ("selectattribute" in bonus && bonus.selectattribute !== undefined) {
-    // TODO: handle
-  }
-  if ("selectparagon" in bonus && bonus.selectparagon !== undefined) {
-    const linkParagon = bonus.selectparagon;
-    assert(linkParagon === "");
-    bonusObject.linkParagon = true;
-  }
-  if ("selectpowers" in bonus && bonus.selectpowers !== undefined) {
-    const linkPower = bonus.selectpowers;
-    if (typeof linkPower === "string") {
-      assert(linkPower === "");
-      bonusObject.linkPower = true;
+    checkProp("selectattribute");
+    const selectAttribute = bonus.selectattribute;
+    const element = convertSelectAttribute(selectAttribute);
+
+    if (attributeOption.linkAttributeList === undefined) {
+      attributeOption.linkAttributeList = [element];
     } else {
-      // TODO: handle
+      attributeOption.linkAttributeList.push(element);
     }
   }
-  if ("selectmentorspirit" in bonus && bonus.selectmentorspirit !== undefined) {
-    const linkMentorSpirit = bonus.selectmentorspirit;
-    assert(linkMentorSpirit === "");
-    bonusObject.linkMentorSpirit = true;
+  if ("enableattribute" in bonus && bonus.enableattribute !== undefined) {
+    checkProp("enableattribute");
+    const attribute = bonus.enableattribute;
+    let override;
+    if (
+      attribute.min !== undefined ||
+      attribute.max !== undefined ||
+      attribute.aug !== undefined ||
+      attribute.val !== undefined
+    ) {
+      assert(attribute.min !== undefined);
+      assert(attribute.max !== undefined);
+      assert(attribute.aug !== undefined);
+      assert(attribute.val !== undefined);
+      let min, max, aug, val;
+      if (typeof attribute.min === "number") {
+        min = attribute.min;
+      } else {
+        min = critterAttributePowerEnum.Force as const;
+      }
+
+      if (typeof attribute.max === "number") {
+        max = attribute.max;
+      } else {
+        max = critterAttributePowerEnum.Force as const;
+      }
+
+      if (typeof attribute.aug === "number") {
+        aug = attribute.aug;
+      } else {
+        aug = critterAttributePowerEnum.Force as const;
+      }
+
+      if (typeof attribute.val === "number") {
+        val = attribute.val;
+      } else {
+        val = critterAttributePowerEnum.Force as const;
+      }
+
+      override = {
+        min: min,
+        max: max,
+        aug: aug,
+        val: val,
+      };
+    }
+    let name;
+    switch (attribute.name) {
+      case lockedAttributeXmlEnum.DEP:
+        {
+          name = specialAttributeTypeEnum.Depth;
+        }
+        break;
+      case lockedAttributeXmlEnum.MAG:
+        {
+          name = specialAttributeTypeEnum.Magic;
+        }
+        break;
+      case lockedAttributeXmlEnum.RES:
+        {
+          name = specialAttributeTypeEnum.Resonance;
+        }
+        break;
+    }
+    attributeOption.enableAttribute = {
+      name: name,
+      ...(override !== undefined && { override: override }),
+    };
   }
-  if ("selecttradition" in bonus && bonus.selecttradition !== undefined) {
-    const linkTradition = bonus.selecttradition;
-    if (typeof linkTradition === "string") {
-      assert(linkTradition === "");
-      bonusObject.linkTradition = true;
+  if ("replaceattributes" in bonus && bonus.replaceattributes !== undefined) {
+    checkProp("replaceattributes");
+    assert(attributeOption.replaceAttributeList === undefined);
+    const replaceArray = Array.isArray(bonus.replaceattributes.replaceattribute)
+      ? bonus.replaceattributes.replaceattribute
+      : [bonus.replaceattributes.replaceattribute];
+    attributeOption.replaceAttributeList = replaceArray.map((replace) => {
+      let name;
+      if (replace.name !== undefined) {
+        assert(replace._name === undefined);
+        name = replace.name;
+      } else {
+        assert(replace._name !== undefined, JSON.stringify(replace));
+        name = replace._name;
+      }
+
+      assert(replace.id === undefined);
+      assert(replace.xmltext === undefined);
+      assert(replace._precedence === undefined);
+      if (replace.val !== undefined || replace.value !== undefined) {
+        assert(
+          replace.min === undefined &&
+            replace.max === undefined &&
+            replace.aug === undefined
+        );
+        if (replace.val !== undefined) {
+          assert(replace.value === undefined);
+          assert(typeof replace.val === "number");
+          return { name: name, value: replace.val };
+        } else {
+          return { name: name, value: replace.value };
+        }
+      } else {
+        let min, max, aug;
+        if (replace.min !== undefined) {
+          assert(typeof replace.min === "number");
+          min = { min: replace.min };
+        }
+        if (replace.max !== undefined) {
+          assert(typeof replace.max === "number");
+          max = { max: replace.max };
+        }
+        if (replace.aug !== undefined) {
+          assert(typeof replace.aug === "number");
+          aug = { aug: replace.aug };
+        }
+        return {
+          name: name,
+          ...(min !== undefined && min),
+          ...(max !== undefined && max),
+          ...(aug !== undefined && aug),
+        };
+      }
+    });
+  }
+  if ("attributekarmacost" in bonus && bonus.attributekarmacost !== undefined) {
+    checkProp("attributekarmacost");
+    const karmaCost = Array.isArray(bonus.attributekarmacost)
+      ? bonus.attributekarmacost.map((karmaCost) => {
+          return convertKarmaCost(karmaCost);
+        })
+      : [convertKarmaCost(bonus.attributekarmacost)];
+    attributeOption.modifyAttributeImprovementKarmaCost = karmaCost;
+  }
+  if ("limit" in bonus && bonus.limit !== undefined) {
+    checkProp("limit");
+    const limitList = Array.isArray(bonus.limit) ? bonus.limit : [bonus.limit];
+    attributeOption.limitIncrease = limitList.map((limit) => {
+      assert(limit.name !== undefined);
+      assert(limit.value !== undefined);
+      switch (limit.name) {
+        case limitCategoryEnum.Mental:
+        case limitCategoryEnum.Physical:
+        case limitCategoryEnum.Social:
+          break;
+        default:
+          assert(false, limit.name);
+      }
+      return {
+        category: limit.name,
+        value: limit.value,
+      };
+    });
+  }
+  if ("limitmodifier" in bonus && bonus.limitmodifier !== undefined) {
+    checkProp("limitmodifier");
+    const limitModifierList = Array.isArray(bonus.limitmodifier)
+      ? bonus.limitmodifier
+      : [bonus.limitmodifier];
+    attributeOption.limitModifier = limitModifierList.map((limit) => {
+      let category;
+      switch (limit.limit) {
+        case limitCategoryEnum.Mental:
+          category = limitCategoryEnum.Mental;
+          break;
+        case limitCategoryEnum.Physical:
+          category = limitCategoryEnum.Physical;
+          break;
+        case limitCategoryEnum.Social:
+          category = limitCategoryEnum.Social;
+          break;
+        default:
+          assert(false, limit.limit);
+      }
+      return {
+        category: category,
+        value: convertRatingUnion(limit.value),
+        ...(limit.condition !== undefined && {
+          condition: convertCondition(limit.condition),
+        }),
+      };
+    });
+  }
+  if ("selectlimit" in bonus && bonus.selectlimit !== undefined) {
+    checkProp("selectlimit");
+    assert(attributeOption.increaseLimitIgnoreMaximum === undefined);
+    attributeOption.increaseLimitIgnoreMaximum = bonus.selectlimit.val;
+  }
+  if ("sociallimit" in bonus && bonus.sociallimit !== undefined) {
+    checkProp("sociallimit");
+    attributeOption.socialLimit = convertRatingUnion(bonus.sociallimit);
+  }
+  if ("physicallimit" in bonus && bonus.physicallimit !== undefined) {
+    checkProp("physicallimit");
+    const physicalLimit =
+      typeof bonus.physicallimit === "number"
+        ? bonus.physicallimit
+        : { option: bonus.physicallimit };
+    attributeOption.physicalLimit = physicalLimit;
+  }
+  if ("mentallimit" in bonus && bonus.mentallimit !== undefined) {
+    checkProp("mentallimit");
+    const mentalLimit =
+      typeof bonus.mentallimit === "number"
+        ? bonus.mentallimit
+        : { option: bonus.mentallimit };
+    attributeOption.mentalLimit = mentalLimit;
+  }
+  if (
+    "nativelanguagelimit" in bonus &&
+    bonus.nativelanguagelimit !== undefined
+  ) {
+    checkProp("nativelanguagelimit");
+    attributeOption.increaseNativeLanguageLimit = bonus.nativelanguagelimit;
+  }
+
+  // Skill Bonuses and Modifiers
+  // --------------------------------------------------------------------------------------------
+  if ("selectskill" in bonus && bonus.selectskill !== undefined) {
+    checkProp("selectskill");
+    assert(skillOption.selectSkill === undefined);
+    const linkSkill = bonus.selectskill;
+    if (typeof linkSkill === "string") {
+      assert(linkSkill === "");
+      skillOption.selectSkill = {
+        skill: { restriction: {} },
+        bonus: { modifierType: bonusSkillModifierTypeEnum.Linked },
+      };
     } else {
-      // TODO: handle
+      const selectSkillBase = getSkillSelectionOptions(linkSkill);
+
+      if (linkSkill._prompt !== undefined) {
+        assert(
+          selectSkillBase.restriction.attributeList === undefined &&
+            selectSkillBase.restriction.skillCategoryList === undefined &&
+            selectSkillBase.restriction.skillList === undefined,
+          JSON.stringify(linkSkill)
+        );
+        skillOption.selectSkill = {
+          skill: {
+            enterName: true,
+            restriction: {
+              ...(linkSkill._knowledgeskills !== undefined && {
+                knowledgeSkillRestriction: {
+                  limit:
+                    linkSkill._knowledgeskills === "True"
+                      ? ("Only" as const)
+                      : ("Exclude" as const),
+                },
+              }),
+            },
+          },
+          bonus: {
+            modifierType: bonusSkillModifierTypeEnum.Linked,
+          },
+        };
+      } else {
+        let modifierType;
+        if (linkSkill.applytorating !== undefined) {
+          modifierType =
+            linkSkill.applytorating === "True"
+              ? bonusSkillModifierTypeEnum.ApplyBonusToLevel
+              : bonusSkillModifierTypeEnum.DicePoolIncrease;
+        } else {
+          modifierType =
+            linkSkill.max !== undefined
+              ? bonusSkillModifierTypeEnum.MaximumIncrease
+              : bonusSkillModifierTypeEnum.DicePoolIncrease;
+        }
+        let ratingIncrease;
+        if (linkSkill.val !== undefined) {
+          assert(linkSkill.max === undefined, JSON.stringify(linkSkill));
+          ratingIncrease = convertRatingAttributeUnion(linkSkill.val);
+        } else if (linkSkill.max !== undefined) {
+          ratingIncrease = linkSkill.max;
+        } else {
+          ratingIncrease = { option: "Rating" as const };
+        }
+        skillOption.selectSkill = {
+          skill: selectSkillBase,
+          bonus: {
+            ratingIncreaseCount: ratingIncrease,
+            modifierType: modifierType,
+          },
+          ...(linkSkill.disablespecializationeffects !== undefined && {
+            disableSkillSpecialisation: true,
+          }),
+        };
+      }
     }
   }
-  if ("selectrestricted" in bonus && bonus.selectrestricted !== undefined) {
-    const linkLicense = bonus.selectrestricted;
-    assert(linkLicense === "");
-    bonusObject.linkLicense = true;
+  if ("selectexpertise" in bonus && bonus.selectexpertise !== undefined) {
+    checkProp("selectexpertise");
+    assert(skillOption.selectExpertise === undefined);
+    skillOption.selectExpertise = {
+      availableSkillList: bonus.selectexpertise._limittoskill
+        .split(",")
+        .map((s) => s.trim()),
+    };
   }
-  if ("selectcyberware" in bonus && bonus.selectcyberware !== undefined) {
-    const linkCyberware = bonus.selectcyberware;
-    if (typeof linkCyberware === "string") {
-      assert(linkCyberware === "");
-      bonusObject.linkCyberware = true;
-    } else {
-      // TODO: handle
-    }
+  if ("specificskill" in bonus && bonus.specificskill !== undefined) {
+    checkProp("specificskill");
+    const skillList = Array.isArray(bonus.specificskill)
+      ? bonus.specificskill
+      : [bonus.specificskill];
+    skillOption.skillIncreaseList = skillList.map((skill) => {
+      return convertSkill(skill);
+    });
+  }
+  if ("skillattribute" in bonus && bonus.skillattribute !== undefined) {
+    checkProp("skillattribute");
+    const skillList = Array.isArray(bonus.skillattribute)
+      ? bonus.skillattribute
+      : [bonus.skillattribute];
+    skillOption.skillIncreaseForAttributeList = skillList.map((skill) => {
+      return convertSkill(skill);
+    });
+  }
+  if (
+    "skilllinkedattribute" in bonus &&
+    bonus.skilllinkedattribute !== undefined
+  ) {
+    checkProp("skilllinkedattribute");
+    assert(skillOption.skillIncreaseForAttributeList === undefined);
+    const skillList = Array.isArray(bonus.skilllinkedattribute)
+      ? bonus.skilllinkedattribute
+      : [bonus.skilllinkedattribute];
+    skillOption.skillIncreaseForAttributeList = skillList.map((skill) => {
+      return convertSkill(skill);
+    });
   }
   if ("skillcategory" in bonus && bonus.skillcategory !== undefined) {
+    checkProp("skillcategory");
+    assert(skillOption.skillCategoryList === undefined);
     const skillCategoryList = Array.isArray(bonus.skillcategory)
       ? bonus.skillcategory
       : [bonus.skillcategory];
-    bonusObject.skillCategories = skillCategoryList.map((category) => {
-      // TODO: category.val should be bonus dice not a bonus
-      const bonus =
-        category.bonus !== undefined ? category.bonus : category.val;
-      assert(bonus !== undefined);
-      return {
-        category: category.name,
-        bonus: convertRatingUnion(bonus),
-      };
+    skillOption.skillCategoryList = skillCategoryList.map((category) => {
+      return convertSkill(category);
     });
   }
   if ("skillgroup" in bonus && bonus.skillgroup !== undefined) {
+    checkProp("skillgroup");
+    assert(skillOption.skillGroupList === undefined);
     const skillGroupList = Array.isArray(bonus.skillgroup)
       ? bonus.skillgroup
       : [bonus.skillgroup];
-    bonusObject.skillGroups = skillGroupList.map((group) => {
-      // TODO: group.val should be bonus dice not a bonus
-      const bonus = group.bonus !== undefined ? group.bonus : group.val;
-      assert(bonus !== undefined);
-      return {
-        group: group.name,
-        bonus: convertRatingUnion(bonus),
-      };
+    skillOption.skillGroupList = skillGroupList.map((group) => {
+      return convertSkill(group);
     });
   }
+  if ("skillgrouplevel" in bonus && bonus.skillgrouplevel !== undefined) {
+    checkProp("skillgrouplevel");
+    // const skillGroupLevelList = Array.isArray(bonus.skillgrouplevel) ? bonus.skillgrouplevel : [bonus.skillgrouplevel]
+    const skillGroupLevelList = [bonus.skillgrouplevel];
+    const skillGroupList = skillGroupLevelList.map((group) => {
+      return {
+        name: group.name,
+        bonus: group.val,
+        modifierType: bonusSkillModifierTypeEnum.LevelIncrease as const,
+      };
+    });
+    if (skillOption.skillGroupList !== undefined) {
+      skillOption.skillGroupList =
+        skillOption.skillGroupList.concat(skillGroupList);
+    } else {
+      skillOption.skillGroupList = skillGroupList;
+    }
+  }
+  if (
+    "allowskilldefaulting" in bonus &&
+    bonus.allowskilldefaulting !== undefined
+  ) {
+    checkProp("allowskilldefaulting");
+    assert(skillOption.allowSkillDefaulting === undefined);
+    assert(bonus.allowskilldefaulting === "");
+    skillOption.allowSkillDefaulting = true as const;
+  }
+  if (
+    "addskillspecializationoption" in bonus &&
+    bonus.addskillspecializationoption !== undefined
+  ) {
+    checkProp("addskillspecializationoption");
+    assert(skillOption.addSkillSpecialistion === undefined);
+    const spec = bonus.addskillspecializationoption;
+    let skillList;
+    if ("skills" in spec) {
+      skillList = Array.isArray(spec.skills.skill)
+        ? spec.skills.skill
+        : [spec.skills.skill];
+    } else {
+      skillList = [spec.skill];
+    }
+    skillOption.addSkillSpecialistion = {
+      spec: spec.spec,
+      skillList: skillList,
+    };
+  }
+  if (
+    "knowledgeskillpoints" in bonus &&
+    bonus.knowledgeskillpoints !== undefined
+  ) {
+    checkProp("knowledgeskillpoints");
+    skillOption.bonusSkillPoints = {
+      points: bonus.knowledgeskillpoints.val,
+      knowledgeSkillRestriction: "Only" as const,
+    };
+  }
+  if (
+    "blockskillgroupdefaulting" in bonus &&
+    bonus.blockskillgroupdefaulting !== undefined
+  ) {
+    checkProp("blockskillgroupdefaulting");
+    assert(skillOption.blockSkillGroupAndDefaulting === undefined);
+    skillOption.blockSkillGroupAndDefaulting = bonus.blockskillgroupdefaulting;
+  }
+  if (
+    "blockskillcategorydefaulting" in bonus &&
+    bonus.blockskillcategorydefaulting !== undefined
+  ) {
+    checkProp("blockskillcategorydefaulting");
+    assert(skillOption.blockSkillCategoryListAndDefaulting === undefined);
+    const category = Array.isArray(bonus.blockskillcategorydefaulting)
+      ? bonus.blockskillcategorydefaulting
+      : [bonus.blockskillcategorydefaulting];
+    skillOption.blockSkillCategoryListAndDefaulting = category;
+  }
   if ("activesoft" in bonus && bonus.activesoft !== undefined) {
+    checkProp("activesoft");
+    assert(skillOption.activeSoft === undefined);
     const activeSoft = bonus.activesoft;
-    bonusObject.activeSoft = { option: activeSoft.val };
+    skillOption.activeSoft = { option: activeSoft.val };
   }
   if ("skillsoft" in bonus && bonus.skillsoft !== undefined) {
+    checkProp("skillsoft");
+    assert(skillOption.skillSoft === undefined);
     const skillSoft = bonus.skillsoft;
-    bonusObject.skillSoft = {
+    skillOption.skillSoft = {
       bonus: {
         option: skillSoft.val,
       },
@@ -169,99 +616,705 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     };
   }
   if ("skillsoftaccess" in bonus && bonus.skillsoftaccess !== undefined) {
+    checkProp("skillsoftaccess");
+    assert(skillOption.skillSoftHost === undefined);
     const skillsoftaccess = bonus.skillsoftaccess;
-    bonusObject.skillSoftMaxRating = {
-      bonus: {
+    skillOption.skillSoftHost = {
+      maximumSkillSoftRating: {
         option: skillsoftaccess.xmltext,
+        precedence: skillsoftaccess._precedence,
       },
     };
   }
   if ("skillwire" in bonus && bonus.skillwire !== undefined) {
-    // const skillwire = bonus.skillwire;
-    // let activeSoftMaxRating;
-    // if (typeof skillwire === "string") activeSoftMaxRating = skillwire;
-    // else activeSoftMaxRating = skillwire
-    // bonusObject.activeSoftMaxRating = {
-    //   bonus: skillwire,
-    // };
+    checkProp("skillwire");
+    assert(skillOption.skillwire === undefined);
+    const skillwire = bonus.skillwire;
+    let skillWireMaxRating;
+    if (typeof skillwire === "string") skillWireMaxRating = skillwire;
+    else skillWireMaxRating = skillwire.xmltext;
+    const match = RatingCalculation.match(skillWireMaxRating);
+    if (match.failed()) {
+      assert(false, match.message);
+    }
+
+    skillOption.skillwire = {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-argument
+      maximumSkillSoftRating: bonusRatingCalculationSemantics(match).eval(),
+      ...(typeof bonus.skillwire === "object" && {
+        precedence: bonus.skillwire._precedence,
+      }),
+    };
   }
   if ("hardwires" in bonus && bonus.hardwires !== undefined) {
+    checkProp("hardwires");
     const hardwire = bonus.hardwires;
     if ("_knowledgeskill" in hardwire) {
-      bonusObject.skillSoftMaxRating = {
-        bonus: {
+      skillOption.hardwire = {
+        maximumSkillSoftRating: {
           option: hardwire.xmltext,
         },
+        activeSkills: false,
+        excludeCategoryList: [],
       };
     } else {
-      bonusObject.activeSoftMaxRating = {
-        // TODO: add exclude categories
-        option: hardwire.xmltext,
+      skillOption.hardwire = {
+        maximumSkillSoftRating: {
+          option: hardwire.xmltext,
+        },
+        activeSkills: true,
+        excludeCategoryList: hardwire._excludecategory
+          .split(",")
+          .map((s) => s.trim()),
       };
     }
   }
-  if ("limit" in bonus && bonus.limit !== undefined) {
-    // const limitList = Array.isArray(bonus.limit)
-    //   ? bonus.limit
-    //   : [bonus.limit];
-    // limitList.map((limit) => {
-    //   bonus: {
-    //     option: skillsoftaccess.xmltext,
-    //   },
-    // };
+  if (
+    "skillcategorykarmacost" in bonus &&
+    bonus.skillcategorykarmacost !== undefined
+  ) {
+    checkProp("skillcategorykarmacost");
+    const karmaCostArray = Array.isArray(bonus.skillcategorykarmacost)
+      ? bonus.skillcategorykarmacost
+      : [bonus.skillcategorykarmacost];
+    const skillCategoryKarmaCostModifierList = karmaCostArray.map(
+      (karmaCost) => {
+        assert(karmaCost.name !== "", karmaCost.name);
+        assert(typeof karmaCost.val === "number", `${karmaCost.val}`);
+        let condition;
+        if (karmaCost.condition !== undefined) {
+          if (karmaCost.condition === "career") {
+            condition = bonusCostModifierConditionEnum.CareerMode;
+          } else if (karmaCost.condition === "create") {
+            condition = bonusCostModifierConditionEnum.CharacterCreation;
+          } else {
+            assert(false, karmaCost.condition);
+          }
+        }
+        return {
+          category: karmaCost.name as skillCategoryEnum,
+          value: karmaCost.val,
+          costModifierType: bonusCostModifierTypeEnum.KarmaIncrease,
+          ...(condition !== undefined && {
+            condition: condition,
+          }),
+          ...(karmaCost.min !== undefined && {
+            minimumLevelWhereBonusApplies: karmaCost.min,
+          }),
+          ...(karmaCost.max !== undefined && {
+            maximumLevelBeforeBonusStopsApplying: karmaCost.max,
+          }),
+        };
+      }
+    );
+
+    if (skillOption.skillKarmaCostModifierList === undefined) {
+      skillOption.skillKarmaCostModifierList = {
+        skillCategoryList: skillCategoryKarmaCostModifierList,
+      };
+    } else {
+      if (
+        skillOption.skillKarmaCostModifierList.skillCategoryList === undefined
+      ) {
+        skillOption.skillKarmaCostModifierList.skillCategoryList =
+          skillCategoryKarmaCostModifierList;
+      } else {
+        skillOption.skillKarmaCostModifierList.skillCategoryList =
+          skillOption.skillKarmaCostModifierList.skillCategoryList.concat(
+            skillCategoryKarmaCostModifierList
+          );
+      }
+    }
   }
-  if ("limitmodifier" in bonus && bonus.limitmodifier !== undefined) {
-    // const limitModifierList = Array.isArray(bonus.limitmodifier)
-    //   ? bonus.limitmodifier
-    //   : [bonus.limitmodifier];
-    // limitModifierList.map((limit) => {
-    //   return {
-    //     bonus: {
-    //       option: limit.value,
-    //     },
-    //     limitCategory: limit.limit,
-    //     condition: limit.condition,
-    //   };
-    // });
+  if (
+    "skillcategorykarmacostmultiplier" in bonus &&
+    bonus.skillcategorykarmacostmultiplier !== undefined
+  ) {
+    checkProp("skillcategorykarmacostmultiplier");
+    const karmaCostArray = Array.isArray(bonus.skillcategorykarmacostmultiplier)
+      ? bonus.skillcategorykarmacostmultiplier
+      : [bonus.skillcategorykarmacostmultiplier];
+    const skillCategoryKarmaCostMultiplierList = karmaCostArray.map(
+      (karmaCost) => {
+        assert(karmaCost.name !== "", karmaCost.name);
+        assert(typeof karmaCost.val === "number", `${karmaCost.val}`);
+        let condition;
+        if (karmaCost.condition !== undefined) {
+          if (karmaCost.condition === "career") {
+            condition = bonusCostModifierConditionEnum.CareerMode;
+          } else if (karmaCost.condition === "create") {
+            condition = bonusCostModifierConditionEnum.CharacterCreation;
+          } else {
+            assert(false, karmaCost.condition);
+          }
+        }
+        return {
+          category: karmaCost.name as skillCategoryEnum,
+          value: karmaCost.val,
+          costModifierType: bonusCostModifierTypeEnum.KarmaMultiplier,
+          ...(condition !== undefined && {
+            condition: condition,
+          }),
+          ...(karmaCost.min !== undefined && {
+            minimumLevelWhereBonusApplies: karmaCost.min,
+          }),
+          ...(karmaCost.max !== undefined && {
+            maximumLevelBeforeBonusStopsApplying: karmaCost.max,
+          }),
+        };
+      }
+    );
+
+    if (skillOption.skillKarmaCostModifierList === undefined) {
+      skillOption.skillKarmaCostModifierList = {
+        skillCategoryList: skillCategoryKarmaCostMultiplierList,
+      };
+    } else {
+      if (
+        skillOption.skillKarmaCostModifierList.skillCategoryList === undefined
+      ) {
+        skillOption.skillKarmaCostModifierList.skillCategoryList =
+          skillCategoryKarmaCostMultiplierList;
+      } else {
+        skillOption.skillKarmaCostModifierList.skillCategoryList =
+          skillOption.skillKarmaCostModifierList.skillCategoryList.concat(
+            skillCategoryKarmaCostMultiplierList
+          );
+      }
+    }
   }
-  if ("attribute" in bonus && bonus.attribute !== undefined) {
-    // bonusObject.attribute = bonusAttribute(bonus.attribute);
+  if (
+    "skillcategoryspecializationkarmacostmultiplier" in bonus &&
+    bonus.skillcategoryspecializationkarmacostmultiplier !== undefined
+  ) {
+    checkProp("skillcategoryspecializationkarmacostmultiplier");
+    const karmaCostArray = Array.isArray(
+      bonus.skillcategoryspecializationkarmacostmultiplier
+    )
+      ? bonus.skillcategoryspecializationkarmacostmultiplier
+      : [bonus.skillcategoryspecializationkarmacostmultiplier];
+    const skillCategorySpecialisationKarmaCostMultiplierList =
+      karmaCostArray.map((karmaCost) => {
+        assert(karmaCost.name !== "", karmaCost.name);
+        assert(typeof karmaCost.val === "number", `${karmaCost.val}`);
+        let condition;
+        if (karmaCost.condition !== undefined) {
+          if (karmaCost.condition === "career") {
+            condition = bonusCostModifierConditionEnum.CareerMode;
+          } else if (karmaCost.condition === "create") {
+            condition = bonusCostModifierConditionEnum.CharacterCreation;
+          } else {
+            assert(false, karmaCost.condition);
+          }
+        }
+        return {
+          category: karmaCost.name as skillCategoryEnum,
+          value: karmaCost.val,
+          costModifierType: bonusCostModifierTypeEnum.KarmaMultiplier,
+          ...(condition !== undefined && {
+            condition: condition,
+          }),
+          ...(karmaCost.min !== undefined && {
+            minimumLevelWhereBonusApplies: karmaCost.min,
+          }),
+          ...(karmaCost.max !== undefined && {
+            maximumLevelBeforeBonusStopsApplying: karmaCost.max,
+          }),
+        };
+      });
+
+    if (skillOption.skillKarmaCostModifierList === undefined) {
+      skillOption.skillKarmaCostModifierList = {
+        skillCategorySpecialisationList:
+          skillCategorySpecialisationKarmaCostMultiplierList,
+      };
+    } else {
+      if (
+        skillOption.skillKarmaCostModifierList
+          .skillCategorySpecialisationList === undefined
+      ) {
+        skillOption.skillKarmaCostModifierList.skillCategorySpecialisationList =
+          skillCategorySpecialisationKarmaCostMultiplierList;
+      } else {
+        skillOption.skillKarmaCostModifierList.skillCategorySpecialisationList =
+          skillOption.skillKarmaCostModifierList.skillCategorySpecialisationList.concat(
+            skillCategorySpecialisationKarmaCostMultiplierList
+          );
+      }
+    }
   }
-  if ("specificattribute" in bonus && bonus.specificattribute !== undefined) {
-    // bonusObject.attribute = bonusAttribute(bonus.specificattribute);
+  if (
+    "skillcategorypointcostmultiplier" in bonus &&
+    bonus.skillcategorypointcostmultiplier !== undefined
+  ) {
+    checkProp("skillcategorypointcostmultiplier");
+    const karmaCostArray = Array.isArray(bonus.skillcategorypointcostmultiplier)
+      ? bonus.skillcategorypointcostmultiplier
+      : [bonus.skillcategorypointcostmultiplier];
+    const skillCategoryPointCostMultiplierList = karmaCostArray.map(
+      (karmaCost) => {
+        assert(karmaCost.name !== "", karmaCost.name);
+        assert(typeof karmaCost.val === "number", `${karmaCost.val}`);
+        assert(Object.keys(karmaCost).length == 2);
+        return {
+          category: karmaCost.name as skillCategoryEnum,
+          value: karmaCost.val,
+          costModifierType: bonusCostModifierTypeEnum.PointMultiplier,
+        };
+      }
+    );
+
+    if (skillOption.skillKarmaCostModifierList === undefined) {
+      skillOption.skillKarmaCostModifierList = {
+        skillCategoryList: skillCategoryPointCostMultiplierList,
+      };
+    } else {
+      if (
+        skillOption.skillKarmaCostModifierList.skillCategoryList === undefined
+      ) {
+        skillOption.skillKarmaCostModifierList.skillCategoryList =
+          skillCategoryPointCostMultiplierList;
+      } else {
+        skillOption.skillKarmaCostModifierList.skillCategoryList =
+          skillOption.skillKarmaCostModifierList.skillCategoryList.concat(
+            skillCategoryPointCostMultiplierList
+          );
+      }
+    }
   }
-  if ("specificskill" in bonus && bonus.specificskill !== undefined) {
-    // bonusObject.skill = bonusSkill(bonus.specificskill);
+  if (
+    "skillgroupcategorykarmacostmultiplier" in bonus &&
+    bonus.skillgroupcategorykarmacostmultiplier !== undefined
+  ) {
+    checkProp("skillgroupcategorykarmacostmultiplier");
+    const karmaCostArray = Array.isArray(
+      bonus.skillgroupcategorykarmacostmultiplier
+    )
+      ? bonus.skillgroupcategorykarmacostmultiplier
+      : [bonus.skillgroupcategorykarmacostmultiplier];
+    const skillGroupWithinSkillCategoryList = karmaCostArray.map(
+      (karmaCost) => {
+        assert(karmaCost.name !== "", karmaCost.name);
+        assert(typeof karmaCost.val === "number", `${karmaCost.val}`);
+        assert(Object.keys(karmaCost).length == 2);
+        return {
+          category: karmaCost.name as skillCategoryEnum,
+          value: karmaCost.val,
+          costModifierType: bonusCostModifierTypeEnum.KarmaMultiplier,
+        };
+      }
+    );
+
+    if (skillOption.skillKarmaCostModifierList === undefined) {
+      skillOption.skillKarmaCostModifierList = {
+        skillCategoryList: skillGroupWithinSkillCategoryList,
+      };
+    } else {
+      if (
+        skillOption.skillKarmaCostModifierList
+          .skillGroupWithinSkillCategoryList === undefined
+      ) {
+        skillOption.skillKarmaCostModifierList.skillGroupWithinSkillCategoryList =
+          skillGroupWithinSkillCategoryList;
+      } else {
+        skillOption.skillKarmaCostModifierList.skillGroupWithinSkillCategoryList =
+          skillOption.skillKarmaCostModifierList.skillGroupWithinSkillCategoryList.concat(
+            skillGroupWithinSkillCategoryList
+          );
+      }
+    }
+  }
+  if (
+    "activeskillkarmacost" in bonus &&
+    bonus.activeskillkarmacost !== undefined
+  ) {
+    checkProp("activeskillkarmacost");
+    const karmaCostArray = Array.isArray(bonus.activeskillkarmacost)
+      ? bonus.activeskillkarmacost
+      : [bonus.activeskillkarmacost];
+    const allSkillList = karmaCostArray.map((karmaCost) => {
+      assert(karmaCost.name === "", karmaCost.name);
+      assert(typeof karmaCost.val === "number", `${karmaCost.val}`);
+      let condition;
+      if (karmaCost.condition !== undefined) {
+        if (karmaCost.condition === "career") {
+          condition = bonusCostModifierConditionEnum.CareerMode;
+        } else if (karmaCost.condition === "create") {
+          condition = bonusCostModifierConditionEnum.CharacterCreation;
+        } else {
+          assert(false, karmaCost.condition);
+        }
+      }
+      return {
+        skillType: skillTypeEnum.Active,
+        value: karmaCost.val,
+        costModifierType: bonusCostModifierTypeEnum.KarmaMultiplier,
+        ...(condition !== undefined && {
+          condition: condition,
+        }),
+        ...(karmaCost.min !== undefined && {
+          minimumLevelWhereBonusApplies: karmaCost.min,
+        }),
+        ...(karmaCost.max !== undefined && {
+          maximumLevelBeforeBonusStopsApplying: karmaCost.max,
+        }),
+      };
+    });
+
+    if (skillOption.skillKarmaCostModifierList === undefined) {
+      skillOption.skillKarmaCostModifierList = {
+        allSkillList: allSkillList,
+      };
+    } else {
+      if (skillOption.skillKarmaCostModifierList.allSkillList === undefined) {
+        skillOption.skillKarmaCostModifierList.allSkillList = allSkillList;
+      } else {
+        skillOption.skillKarmaCostModifierList.allSkillList =
+          skillOption.skillKarmaCostModifierList.allSkillList.concat(
+            allSkillList
+          );
+      }
+    }
+  }
+  if (
+    "knowledgeskillkarmacost" in bonus &&
+    bonus.knowledgeskillkarmacost !== undefined
+  ) {
+    checkProp("knowledgeskillkarmacost");
+    const karmaCostArray = Array.isArray(bonus.knowledgeskillkarmacost)
+      ? bonus.knowledgeskillkarmacost
+      : [bonus.knowledgeskillkarmacost];
+    const allSkillKarmaCostModifierList = karmaCostArray.map((karmaCost) => {
+      assert(karmaCost.name === "", karmaCost.name);
+      assert("val" in karmaCost, JSON.stringify(karmaCost));
+      const conditionalBonus = karmaCost.val;
+      assert(conditionalBonus !== undefined);
+      const match = SkillKarmaCost.match(conditionalBonus.toString());
+      if (match.failed()) {
+        assert(false, match.message);
+      }
+      let value;
+      let itemRatingRequired;
+      const temp: unknown = bonusSkillKarmaCostSemantics(match).eval();
+      assert(temp !== null);
+      if (typeof temp === "number") {
+        value = temp;
+      } else {
+        assert(typeof temp === "object");
+        assert("RatingRequired" in temp);
+        assert(Object.keys(temp).length === 1);
+        assert(typeof temp.RatingRequired === "number");
+        value = 1;
+        itemRatingRequired = temp.RatingRequired;
+      }
+      if (karmaCost.condition !== undefined) {
+        assert(karmaCost.condition === "career");
+      }
+      return {
+        value: value,
+        skillType: skillTypeEnum.Knowledge,
+        costModifierType: bonusCostModifierTypeEnum.KarmaIncrease,
+        ...(karmaCost.condition !== undefined && {
+          condition: bonusCostModifierConditionEnum.CareerMode,
+        }),
+        ...(karmaCost.min !== undefined && {
+          minimumLevelWhereBonusApplies: karmaCost.min,
+        }),
+        ...(karmaCost.max !== undefined && {
+          maximumLevelBeforeBonusStopsApplying: karmaCost.max,
+        }),
+        ...(itemRatingRequired !== undefined && {
+          itemRatingRequired: itemRatingRequired,
+        }),
+      };
+    });
+    if (skillOption.skillKarmaCostModifierList === undefined) {
+      skillOption.skillKarmaCostModifierList = {
+        allSkillList: allSkillKarmaCostModifierList,
+      };
+    } else {
+      if (skillOption.skillKarmaCostModifierList.allSkillList === undefined) {
+        skillOption.skillKarmaCostModifierList.allSkillList =
+          allSkillKarmaCostModifierList;
+      } else {
+        skillOption.skillKarmaCostModifierList.allSkillList =
+          skillOption.skillKarmaCostModifierList.allSkillList.concat(
+            allSkillKarmaCostModifierList
+          );
+      }
+    }
+  }
+  if (
+    "knowledgeskillkarmacostmin" in bonus &&
+    bonus.knowledgeskillkarmacostmin !== undefined
+  ) {
+    checkProp("knowledgeskillkarmacostmin");
+    const karmaCostArray = Array.isArray(bonus.knowledgeskillkarmacostmin)
+      ? bonus.knowledgeskillkarmacostmin
+      : [bonus.knowledgeskillkarmacostmin];
+    const allSkillMinimumCostList = karmaCostArray.map((karmaCost) => {
+      assert(karmaCost.name === "", karmaCost.name);
+      assert(karmaCost.max !== undefined);
+      assert(Object.keys(karmaCost).length == 4);
+      assert(typeof karmaCost.val === "number", `${karmaCost.val}`);
+      let condition;
+      if (karmaCost.condition !== undefined) {
+        if (karmaCost.condition === "career") {
+          condition = bonusCostModifierConditionEnum.CareerMode;
+        } else if (karmaCost.condition === "create") {
+          condition = bonusCostModifierConditionEnum.CharacterCreation;
+        } else {
+          assert(false, karmaCost.condition);
+        }
+      }
+      return {
+        skillType: skillTypeEnum.Active,
+        minimumCost: karmaCost.val,
+        maximumLevelBeforeMinimumStopsApplying: karmaCost.max,
+        ...(condition !== undefined && {
+          condition: condition,
+        }),
+      };
+    });
+
+    if (skillOption.skillKarmaCostModifierList === undefined) {
+      skillOption.skillKarmaCostModifierList = {
+        allSkillMinimumCostList: allSkillMinimumCostList,
+      };
+    } else {
+      if (
+        skillOption.skillKarmaCostModifierList.allSkillMinimumCostList ===
+        undefined
+      ) {
+        skillOption.skillKarmaCostModifierList.allSkillMinimumCostList =
+          allSkillMinimumCostList;
+      } else {
+        skillOption.skillKarmaCostModifierList.allSkillMinimumCostList =
+          skillOption.skillKarmaCostModifierList.allSkillMinimumCostList.concat(
+            allSkillMinimumCostList
+          );
+      }
+    }
+  }
+  if (
+    "skillgroupcategorydisable" in bonus &&
+    bonus.skillgroupcategorydisable !== undefined
+  ) {
+    checkProp("skillgroupcategorydisable");
+    // const skillGroupsInCategoryDisable = Array.isArray(
+    //   bonus.skillgroupcategorydisable
+    // )
+    //   ? bonus.skillgroupcategorydisable
+    //   : [bonus.skillgroupcategorydisable];
+    const skillGroupsInCategoryDisable = [bonus.skillgroupcategorydisable];
+    if (skillOption.skillDisableList === undefined) {
+      skillOption.skillDisableList = {
+        skillGroupWithinSkillCategoryList: skillGroupsInCategoryDisable,
+      };
+    } else {
+      skillOption.skillDisableList.skillGroupWithinSkillCategoryList =
+        skillGroupsInCategoryDisable;
+    }
+  }
+  if ("skillgroupdisable" in bonus && bonus.skillgroupdisable !== undefined) {
+    checkProp("skillgroupdisable");
+    const skillGroupDisable = Array.isArray(bonus.skillgroupdisable)
+      ? bonus.skillgroupdisable
+      : [bonus.skillgroupdisable];
+    if (skillOption.skillDisableList === undefined) {
+      skillOption.skillDisableList = {
+        skillGroupList: skillGroupDisable,
+      };
+    } else {
+      skillOption.skillDisableList.skillGroupList = skillGroupDisable;
+    }
+  }
+  if ("skilldisable" in bonus && bonus.skilldisable !== undefined) {
+    checkProp("skilldisable");
+    const skillDisable = Array.isArray(bonus.skilldisable)
+      ? bonus.skilldisable
+      : [bonus.skilldisable];
+    if (skillOption.skillDisableList === undefined) {
+      skillOption.skillDisableList = {
+        skillList: skillDisable,
+      };
+    } else {
+      skillOption.skillDisableList.skillList = skillDisable;
+    }
+  }
+  if ("unlockskills" in bonus && bonus.unlockskills !== undefined) {
+    checkProp("unlockskills");
+    const unlockSkillList = Array.isArray(bonus.unlockskills)
+      ? bonus.unlockskills
+      : [bonus.unlockskills];
+    skillOption.unlockSkillList = unlockSkillList.map((unlockSkill) => {
+      if (typeof unlockSkill === "string") {
+        return unlockSkill;
+      } else {
+        assert(
+          unlockSkill.xmltext === "Name",
+          `Unexpected name: ${unlockSkill._name}`
+        );
+        assert(unlockSkill._name !== "");
+        return unlockSkill._name;
+      }
+    });
+  }
+  if ("swapskillattribute" in bonus && bonus.swapskillattribute !== undefined) {
+    checkProp("swapskillattribute");
+    skillOption.swapSkillAttribute = {
+      skill: bonus.swapskillattribute.limittoskill,
+      newAttribute: convertAttribute(bonus.swapskillattribute.attribute),
+    };
+  }
+  if (
+    "swapskillspecattribute" in bonus &&
+    bonus.swapskillspecattribute !== undefined
+  ) {
+    checkProp("swapskillspecattribute");
+    skillOption.swapSkillSpecialisationAttribute = {
+      skill: bonus.swapskillspecattribute.limittoskill,
+      specialisation: bonus.swapskillspecattribute.spec,
+      newAttribute: convertAttribute(bonus.swapskillspecattribute.attribute),
+    };
+  }
+
+  // Power Related Bonuses
+  // --------------------------------------------------------------------------------------------
+  if ("selectpowers" in bonus && bonus.selectpowers !== undefined) {
+    checkProp("selectpowers");
+    assert(powerOption.selectPower === undefined);
+    const linkPower = bonus.selectpowers.selectpower;
+    let powerPointLimit;
+    if (
+      linkPower.limit !== undefined ||
+      linkPower.pointsperlevel !== undefined
+    ) {
+      assert(
+        linkPower.limit !== undefined && linkPower.pointsperlevel !== undefined,
+        JSON.stringify(linkPower)
+      );
+      powerPointLimit = {
+        limit: convertRatingUnion(linkPower.limit),
+        powerPointsPerLevel: linkPower.pointsperlevel,
+      };
+    }
+    powerOption.selectPower = {
+      ...(linkPower._limittopowers !== undefined && {
+        limitedPowerList: linkPower._limittopowers
+          .split(",")
+          .map((s) => s.trim()),
+      }),
+      ...(linkPower.ignorerating !== undefined && {
+        ignorePowerLimit: true as const,
+      }),
+      powerLevelBonus: convertRatingUnion(linkPower.val),
+      ...(powerPointLimit !== undefined && {
+        powerPointLimit: powerPointLimit,
+      }),
+    };
   }
   if ("specificpower" in bonus && bonus.specificpower !== undefined) {
+    checkProp("specificpower");
     let specificPowerList: Array<SpecificPowerXMLType> = [];
     if (Array.isArray(bonus.specificpower)) {
       specificPowerList = bonus.specificpower;
     } else {
       specificPowerList.push(bonus.specificpower);
     }
-    bonusObject.specificPowerList = specificPowerList.map((power) => {
+    powerOption.specificPowerList = specificPowerList.map((power) => {
+      let selectOption;
+      if (power.bonusoverride !== undefined) {
+        if ("selectskill" in power.bonusoverride) {
+          const linkSkill = power.bonusoverride.selectskill;
+          assert(linkSkill !== "");
+          const selectSkillBase = getSkillSelectionOptions(linkSkill);
+
+          assert(
+            linkSkill.disablespecializationeffects === undefined,
+            linkSkill.disablespecializationeffects
+          );
+          assert(linkSkill._prompt === undefined, linkSkill._prompt);
+          assert(
+            linkSkill.applytorating === undefined,
+            linkSkill.applytorating
+          );
+          assert(linkSkill.max === undefined, `${linkSkill.max}`);
+          assert(linkSkill.val === "Rating", `${linkSkill.val}`);
+          selectOption = { skill: selectSkillBase };
+        } else {
+          const attribute = convertAttribute(
+            power.bonusoverride.selectattribute.attribute
+          );
+          selectOption = { attribute: attribute };
+        }
+      }
+      assert(power.val !== undefined || selectOption === undefined);
+      const bonus =
+        power.val !== undefined
+          ? {
+              value: power.val,
+              ...(selectOption !== undefined && { select: selectOption }),
+            }
+          : undefined;
       return {
         name: power.name,
-        ...(power.val !== undefined && { level: power.val }),
+        ...(bonus !== undefined && { bonus: bonus }),
       };
     });
   }
-  if ("skillattribute" in bonus && bonus.skillattribute !== undefined) {
-    // bonusObject.skill = bonusSkill(bonus.skillattribute);
+  if ("adeptpowerpoints" in bonus && bonus.adeptpowerpoints !== undefined) {
+    checkProp("adeptpowerpoints");
+  }
+  if ("optionalpowers" in bonus && bonus.optionalpowers !== undefined) {
+    checkProp("optionalpowers");
+  }
+  if ("critterpowers" in bonus && bonus.critterpowers !== undefined) {
+    checkProp("critterpowers");
+  }
+  if ("critterpowerlevels" in bonus && bonus.critterpowerlevels !== undefined) {
+    checkProp("critterpowerlevels");
   }
   if (
-    "skilllinkedattribute" in bonus &&
-    bonus.skilllinkedattribute !== undefined
+    "limitcritterpowercategory" in bonus &&
+    bonus.limitcritterpowercategory !== undefined
   ) {
-    // bonusObject.skill = bonusSkill(bonus.skilllinkedattribute);
+    checkProp("limitcritterpowercategory");
+  }
+
+  // Spell and Magic Bonuses
+  // --------------------------------------------------------------------------------------------
+  if ("addspell" in bonus && bonus.addspell !== undefined) {
+    checkProp("addspell");
+  }
+  if ("selectspell" in bonus) {
+    checkProp("selectspell");
+    assert(spellAndMagicOption.linkSpell === undefined);
+    if (typeof bonus.selectspell === "object") {
+      assert(
+        bonus.selectspell._ignorerequirements === "True",
+        bonus.selectspell._ignorerequirements
+      );
+      spellAndMagicOption.linkSpell = {
+        ignoreRequirements: true as const,
+      };
+    } else {
+      assert(bonus.selectspell === "", bonus.selectspell);
+      spellAndMagicOption.linkSpell = {
+        ignoreRequirements: false as const,
+      };
+    }
+  }
+  if ("freespells" in bonus && bonus.freespells !== undefined) {
+    checkProp("freespells");
   }
   if ("spellcategory" in bonus && bonus.spellcategory !== undefined) {
+    checkProp("spellcategory");
     const spellCategoryList = Array.isArray(bonus.spellcategory)
       ? bonus.spellcategory
       : [bonus.spellcategory];
     assert(spellCategoryList.length > 0);
-    bonusObject.spellCategoryList = [];
+    spellAndMagicOption.spellCategoryList = [];
     for (const spellCategory of spellCategoryList) {
       let category, value;
       if (spellCategory.name === undefined) {
@@ -277,32 +1330,188 @@ export function convertXmlBonus(bonus: BonusXmlType) {
           option: "Rating" as const,
         };
       }
-      bonusObject.spellCategoryList.push({
+      spellAndMagicOption.spellCategoryList.push({
         category: category,
         bonus: value,
       });
     }
   }
-  if ("essencepenaltyt100" in bonus && bonus.essencepenaltyt100 !== undefined) {
-    const match = EssenceCost.match(bonus.essencepenaltyt100.toString());
-    if (match.failed()) {
-      assert(false, match.message);
+  if ("allowspellcategory" in bonus && bonus.allowspellcategory !== undefined) {
+    checkProp("allowspellcategory");
+    spellAndMagicOption.allowSpellCategory = spellCategoryConversion(
+      bonus.allowspellcategory
+    );
+  }
+  if ("spelldicepool" in bonus && bonus.spelldicepool !== undefined) {
+    checkProp("spelldicepool");
+  }
+  if (
+    "blockspelldescriptor" in bonus &&
+    bonus.blockspelldescriptor !== undefined
+  ) {
+    checkProp("blockspelldescriptor");
+  }
+  if (
+    "spelldescriptordamage" in bonus &&
+    bonus.spelldescriptordamage !== undefined
+  ) {
+    checkProp("spelldescriptordamage");
+  }
+  if (
+    "spelldescriptordrain" in bonus &&
+    bonus.spelldescriptordrain !== undefined
+  ) {
+    checkProp("spelldescriptordrain");
+  }
+  if (
+    "spellcategorydamage" in bonus &&
+    bonus.spellcategorydamage !== undefined
+  ) {
+    checkProp("spellcategorydamage");
+  }
+  if ("spellcategorydrain" in bonus && bonus.spellcategorydrain !== undefined) {
+    checkProp("spellcategorydrain");
+  }
+  if ("limitspellcategory" in bonus && bonus.limitspellcategory !== undefined) {
+    checkProp("limitspellcategory");
+  }
+  if ("addmetamagic" in bonus && bonus.addmetamagic !== undefined) {
+    checkProp("addmetamagic");
+  }
+  if ("metamagiclimit" in bonus && bonus.metamagiclimit !== undefined) {
+    checkProp("metamagiclimit");
+  }
+  if (
+    "quickeningmetamagic" in bonus &&
+    bonus.quickeningmetamagic !== undefined
+  ) {
+    checkProp("quickeningmetamagic");
+  }
+  if ("penaltyfreesustain" in bonus && bonus.penaltyfreesustain !== undefined) {
+    checkProp("penaltyfreesustain");
+  }
+  if ("allowspellrange" in bonus && bonus.allowspellrange !== undefined) {
+    checkProp("allowspellrange");
+  }
+  if ("newspellkarmacost" in bonus && bonus.newspellkarmacost !== undefined) {
+    checkProp("newspellkarmacost");
+  }
+  if (
+    "focusbindingkarmacost" in bonus &&
+    bonus.focusbindingkarmacost !== undefined
+  ) {
+    checkProp("focusbindingkarmacost");
+  }
+  if ("drainvalue" in bonus && bonus.drainvalue !== undefined) {
+    checkProp("drainvalue");
+  }
+  if ("fadingvalue" in bonus && bonus.fadingvalue !== undefined) {
+    checkProp("fadingvalue");
+  }
+  if ("addspirit" in bonus && bonus.addspirit !== undefined) {
+    checkProp("addspirit");
+    // const addSpirits = Array.isArray(bonus.addspirit)
+    // ? bonus.addspirit
+    // : [bonus.addspirit];
+    //TODO: handle
+  }
+  if (
+    "limitspiritcategory" in bonus &&
+    bonus.limitspiritcategory !== undefined
+  ) {
+    checkProp("limitspiritcategory");
+  }
+  if ("selectmentorspirit" in bonus && bonus.selectmentorspirit !== undefined) {
+    checkProp("selectmentorspirit");
+    assert(spellAndMagicOption.linkMentorSpirit === undefined);
+    const linkMentorSpirit = bonus.selectmentorspirit;
+    assert(linkMentorSpirit === "");
+    spellAndMagicOption.linkMentorSpirit = true;
+  }
+  if ("selecttradition" in bonus && bonus.selecttradition !== undefined) {
+    checkProp("selecttradition");
+    assert(spellAndMagicOption.linkTradition === undefined);
+    const linkTradition = bonus.selecttradition;
+    assert(linkTradition === "");
+    spellAndMagicOption.linkTradition = true;
+  }
+
+  // Technomancer and Matrix
+  // --------------------------------------------------------------------------------------------
+  if (
+    "allowspritefettering" in bonus &&
+    bonus.allowspritefettering !== undefined
+  ) {
+    checkProp("allowspritefettering");
+  }
+  if ("selectsprite" in bonus && bonus.selectsprite !== undefined) {
+    checkProp("selectsprite");
+    assert(bonus.selectsprite === "");
+    assert(technomancerOption.linkSprite === undefined);
+    technomancerOption.linkSprite = true;
+  }
+  if ("selectparagon" in bonus && bonus.selectparagon !== undefined) {
+    checkProp("selectparagon");
+    assert(bonus.selectparagon === "");
+    assert(technomancerOption.linkParagon === undefined);
+    technomancerOption.linkParagon = true;
+  }
+  if ("addecho" in bonus && bonus.addecho !== undefined) {
+    checkProp("addecho");
+  }
+  if ("livingpersona" in bonus && bonus.livingpersona !== undefined) {
+    checkProp("livingpersona");
+  }
+  if (
+    "specialattburnmultiplier" in bonus &&
+    bonus.specialattburnmultiplier !== undefined
+  ) {
+    checkProp("specialattburnmultiplier");
+  }
+
+  // Combat and Weapon Bonuses
+  // --------------------------------------------------------------------------------------------
+  if ("addweapon" in bonus && bonus.addweapon !== undefined) {
+    checkProp("addweapon");
+  }
+  if ("selectweapon" in bonus && bonus.selectweapon !== undefined) {
+    checkProp("selectweapon");
+    assert(combatAndWeaponOption.linkWeapon === undefined);
+    const linkWeapon = bonus.selectweapon;
+    if (typeof linkWeapon === "string") {
+      assert(linkWeapon === "");
+      combatAndWeaponOption.linkWeapon = { restrictions: false };
+    } else {
+      // TODO: handle weapondetails... :(
+
+      const match = WeaponDetails.match(linkWeapon._weapondetails.toString());
+      if (match.failed()) {
+        assert(false, match.message);
+      }
+
+      combatAndWeaponOption.linkWeapon = {
+        restrictions: true,
+        weaponRequirements: bonusWeaponDetailsSemantics(match).eval(),
+      };
     }
-    // TODO: fix this! the schema is wrong
-    bonusObject.essenceCostTimes100 = essenceCostSemantics(match).eval();
+  }
+  if ("naturalweapon" in bonus && bonus.naturalweapon !== undefined) {
+    checkProp("naturalweapon");
   }
   if ("weaponspecificdice" in bonus && bonus.weaponspecificdice !== undefined) {
+    checkProp("weaponspecificdice");
     const specificWeaponBonus =
       bonus.weaponspecificdice.xmltext === "Rating"
         ? { option: bonus.weaponspecificdice.xmltext }
         : bonus.weaponspecificdice.xmltext;
-    bonusObject.specificWeapon = {
+    combatAndWeaponOption.specificWeapon = {
       bonus: specificWeaponBonus,
       weaponType: weaponTypeConversion(bonus.weaponspecificdice._type),
     };
   }
   if ("weaponaccuracy" in bonus && bonus.weaponaccuracy !== undefined) {
-    bonusObject.weaponAccuracy = {
+    checkProp("weaponaccuracy");
+    combatAndWeaponOption.weaponAccuracy = {
       weapon: bonus.weaponaccuracy.name,
       bonus: bonus.weaponaccuracy.value,
     };
@@ -311,45 +1520,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     "weaponskillaccuracy" in bonus &&
     bonus.weaponskillaccuracy !== undefined
   ) {
-    const convertWeaponSkillAccuracy = function (
-      weaponSkillAccuracy: WeaponSkillAccuracyXMLType
-    ) {
-      let skill: SelectSkillType;
-      if (weaponSkillAccuracy.selectskill !== undefined) {
-        const exceptions: Array<string> = [];
-        // if selectskill has no items there are no exceptions
-        if (weaponSkillAccuracy.selectskill !== "") {
-          if (weaponSkillAccuracy.selectskill._knowledgeskills !== undefined) {
-            exceptions.push("Knowledge Skills Disallowed");
-          }
-          const excludedCategory =
-            weaponSkillAccuracy.selectskill._excludecategory;
-          if (excludedCategory !== undefined) {
-            exceptions.push(`No category: ${excludedCategory}`);
-          }
-          const skillCategory = weaponSkillAccuracy.selectskill._skillcategory;
-          if (skillCategory !== undefined) {
-            exceptions.push(`No category: ${skillCategory}`);
-          }
-          const excludeSkill = weaponSkillAccuracy.selectskill._excludeskill;
-          if (excludeSkill !== undefined) {
-            exceptions.push(`No skill: ${excludeSkill}`);
-          }
-        }
-        skill = {
-          selectSkill: true,
-          exceptions: exceptions,
-        };
-      } else {
-        assert(weaponSkillAccuracy.name !== undefined);
-        skill = {
-          selectSkill: false,
-          name: weaponSkillAccuracy.name,
-        };
-      }
-      return skill;
-    };
-
+    checkProp("weaponskillaccuracy");
     const weaponSkillAccuracyXMLList = bonus.weaponskillaccuracy;
     const weaponSkillAccuracyList = [];
     if (Array.isArray(weaponSkillAccuracyXMLList)) {
@@ -365,12 +1536,669 @@ export function convertXmlBonus(bonus: BonusXmlType) {
         bonus: weaponSkillAccuracyXMLList.value,
       });
     }
-    bonusObject.weaponSkillAccuracyList = weaponSkillAccuracyList;
+    combatAndWeaponOption.weaponSkillAccuracyList = weaponSkillAccuracyList;
+  }
+  if ("weaponcategorydv" in bonus && bonus.weaponcategorydv !== undefined) {
+    checkProp("weaponcategorydv");
+    const linkSkill = bonus.weaponcategorydv.selectskill;
+    assert(linkSkill !== "");
+    const selectSkillBase = getSkillSelectionOptions(linkSkill);
+
+    assert(
+      linkSkill.disablespecializationeffects === undefined,
+      linkSkill.disablespecializationeffects
+    );
+    assert(linkSkill._prompt === undefined, linkSkill._prompt);
+    assert(linkSkill.applytorating === undefined, linkSkill.applytorating);
+    assert(linkSkill.max === undefined, `${linkSkill.max}`);
+    assert(linkSkill.val === undefined, `${linkSkill.val}`);
+    combatAndWeaponOption.weaponSkillDamage = {
+      selectionOptions: selectSkillBase,
+      bonus: bonus.weaponcategorydv.bonus,
+    };
+  }
+  if ("weaponcategorydice" in bonus && bonus.weaponcategorydice !== undefined) {
+    checkProp("weaponcategorydice");
+  }
+  if ("throwstr" in bonus && bonus.throwstr !== undefined) {
+    checkProp("throwstr");
+  }
+  if ("throwrangestr" in bonus && bonus.throwrangestr !== undefined) {
+    checkProp("throwrangestr");
   }
   if ("smartlink" in bonus && bonus.smartlink !== undefined) {
-    bonusObject.smartlinkAccuracy = bonus.smartlink;
+    checkProp("smartlink");
+    combatAndWeaponOption.smartlinkAccuracy = bonus.smartlink;
   }
+  if ("selectarmor" in bonus && bonus.selectarmor !== undefined) {
+    checkProp("selectarmor");
+    assert(combatAndWeaponOption.linkArmour === undefined);
+    combatAndWeaponOption.linkArmour = true;
+  }
+  if ("armor" in bonus && bonus.armor !== undefined) {
+    checkProp("armor");
+    const armour =
+      typeof bonus.armor === "number"
+        ? bonus.armor
+        : typeof bonus.armor === "string"
+        ? { option: "Rating" as const }
+        : typeof bonus.armor.xmltext === "number"
+        ? bonus.armor.xmltext
+        : { option: bonus.armor.xmltext };
+
+    combatAndWeaponOption.armour = {
+      bonus: armour,
+      ...(typeof bonus.armor === "object" && { nonStacking: true }),
+    };
+  }
+  if ("firearmor" in bonus && bonus.firearmor !== undefined) {
+    checkProp("firearmor");
+    const fireArmour =
+      typeof bonus.firearmor === "number"
+        ? bonus.firearmor
+        : { option: bonus.firearmor };
+    combatAndWeaponOption.fireArmour = fireArmour;
+  }
+  if ("electricityarmor" in bonus && bonus.electricityarmor !== undefined) {
+    checkProp("electricityarmor");
+    const electricityArmour =
+      typeof bonus.electricityarmor === "number"
+        ? bonus.electricityarmor
+        : { option: bonus.electricityarmor };
+    combatAndWeaponOption.electricityArmour = electricityArmour;
+  }
+  if ("coldarmor" in bonus && bonus.coldarmor !== undefined) {
+    checkProp("coldarmor");
+    const coldArmour =
+      typeof bonus.coldarmor === "number"
+        ? bonus.coldarmor
+        : { option: bonus.coldarmor };
+    combatAndWeaponOption.coldArmour = coldArmour;
+  }
+  if ("defensetest" in bonus && bonus.defensetest !== undefined) {
+    checkProp("defensetest");
+  }
+  if ("dodge" in bonus && bonus.dodge !== undefined) {
+    checkProp("dodge");
+    combatAndWeaponOption.dodge = convertRatingUnion(bonus.dodge);
+  }
+  if ("unarmeddv" in bonus && bonus.unarmeddv !== undefined) {
+    checkProp("unarmeddv");
+  }
+  if ("unarmeddvphysical" in bonus && bonus.unarmeddvphysical !== undefined) {
+    checkProp("unarmeddvphysical");
+    combatAndWeaponOption.unarmedDamageType = damageTypeEnum.Physical;
+  }
+  if ("unarmedap" in bonus && bonus.unarmedap !== undefined) {
+    checkProp("unarmedap");
+  }
+  if ("unarmedreach" in bonus && bonus.unarmedreach !== undefined) {
+    checkProp("unarmedreach");
+    combatAndWeaponOption.unarmedReach = bonus.unarmedreach;
+  }
+  if ("reach" in bonus && bonus.reach !== undefined) {
+    checkProp("reach");
+  }
+  if ("martialart" in bonus && bonus.martialart !== undefined) {
+    checkProp("martialart");
+  }
+  if ("damageresistance" in bonus && bonus.damageresistance !== undefined) {
+    checkProp("damageresistance");
+    const damageResistance =
+      typeof bonus.damageresistance === "number"
+        ? bonus.damageresistance
+        : { option: bonus.damageresistance };
+    combatAndWeaponOption.damageResistance = damageResistance;
+  }
+  if ("radiationresist" in bonus && bonus.radiationresist !== undefined) {
+    checkProp("radiationresist");
+    const radiationResistance =
+      typeof bonus.radiationresist === "number"
+        ? bonus.radiationresist
+        : { option: bonus.radiationresist };
+    combatAndWeaponOption.radiationResistance = radiationResistance;
+  }
+  if ("sonicresist" in bonus && bonus.sonicresist !== undefined) {
+    checkProp("sonicresist");
+    const sonicResistance =
+      typeof bonus.sonicresist === "number"
+        ? bonus.sonicresist
+        : { option: bonus.sonicresist };
+    combatAndWeaponOption.sonicResistance = sonicResistance;
+  }
+  if ("toxincontactresist" in bonus && bonus.toxincontactresist !== undefined) {
+    checkProp("toxincontactresist");
+    const toxinContactResist =
+      typeof bonus.toxincontactresist === "number"
+        ? bonus.toxincontactresist
+        : { option: bonus.toxincontactresist };
+    combatAndWeaponOption.toxinContactResist = toxinContactResist;
+  }
+  if (
+    "pathogencontactresist" in bonus &&
+    bonus.pathogencontactresist !== undefined
+  ) {
+    checkProp("pathogencontactresist");
+    const pathogenContactResist =
+      typeof bonus.pathogencontactresist === "number"
+        ? bonus.pathogencontactresist
+        : { option: bonus.pathogencontactresist };
+    combatAndWeaponOption.pathogenContactResist = pathogenContactResist;
+  }
+  if ("toxincontactimmune" in bonus && bonus.toxincontactimmune !== undefined) {
+    checkProp("toxincontactimmune");
+    combatAndWeaponOption.toxinContactImmune = true;
+  }
+  if (
+    "pathogencontactimmune" in bonus &&
+    bonus.pathogencontactimmune !== undefined
+  ) {
+    checkProp("pathogencontactimmune");
+    combatAndWeaponOption.pathogenContactImmune = true;
+  }
+  if (
+    "toxininhalationresist" in bonus &&
+    bonus.toxininhalationresist !== undefined
+  ) {
+    checkProp("toxininhalationresist");
+    const toxinInhalationResist =
+      typeof bonus.toxininhalationresist === "number"
+        ? bonus.toxininhalationresist
+        : { option: bonus.toxininhalationresist };
+    combatAndWeaponOption.toxinInhalationResist = toxinInhalationResist;
+  }
+  if (
+    "pathogeninhalationresist" in bonus &&
+    bonus.pathogeninhalationresist !== undefined
+  ) {
+    checkProp("pathogeninhalationresist");
+    const pathogenInhalationResist =
+      typeof bonus.pathogeninhalationresist === "number"
+        ? bonus.pathogeninhalationresist
+        : { option: bonus.pathogeninhalationresist };
+    combatAndWeaponOption.pathogenInhalationResist = pathogenInhalationResist;
+  }
+  if (
+    "toxininhalationimmune" in bonus &&
+    bonus.toxininhalationimmune !== undefined
+  ) {
+    checkProp("toxininhalationimmune");
+    combatAndWeaponOption.toxinInhalationImmune = true;
+  }
+  if (
+    "pathogeninhalationimmune" in bonus &&
+    bonus.pathogeninhalationimmune !== undefined
+  ) {
+    checkProp("pathogeninhalationimmune");
+    combatAndWeaponOption.pathogenInhalationImmune = true;
+  }
+  if (
+    "toxiningestionresist" in bonus &&
+    bonus.toxiningestionresist !== undefined
+  ) {
+    checkProp("toxiningestionresist");
+    const toxinIngestionResist =
+      typeof bonus.toxiningestionresist === "number"
+        ? bonus.toxiningestionresist
+        : { option: bonus.toxiningestionresist };
+    combatAndWeaponOption.toxinIngestionResist = toxinIngestionResist;
+  }
+  if (
+    "pathogeningestionresist" in bonus &&
+    bonus.pathogeningestionresist !== undefined
+  ) {
+    checkProp("pathogeningestionresist");
+    const pathogenIngestionResist =
+      typeof bonus.pathogeningestionresist === "number"
+        ? bonus.pathogeningestionresist
+        : { option: bonus.pathogeningestionresist };
+    combatAndWeaponOption.pathogenIngestionResist = pathogenIngestionResist;
+  }
+  if (
+    "toxiningestionimmune" in bonus &&
+    bonus.toxiningestionimmune !== undefined
+  ) {
+    checkProp("toxiningestionimmune");
+    combatAndWeaponOption.toxinIngestionImmune = true;
+  }
+  if (
+    "pathogeningestionimmune" in bonus &&
+    bonus.pathogeningestionimmune !== undefined
+  ) {
+    checkProp("pathogeningestionimmune");
+    combatAndWeaponOption.pathogenIngestionImmune = true;
+  }
+  if (
+    "toxininjectionresist" in bonus &&
+    bonus.toxininjectionresist !== undefined
+  ) {
+    checkProp("toxininjectionresist");
+    const toxinInjectionResist =
+      typeof bonus.toxininjectionresist === "number"
+        ? bonus.toxininjectionresist
+        : { option: bonus.toxininjectionresist };
+    combatAndWeaponOption.toxinInjectionResist = toxinInjectionResist;
+  }
+  if (
+    "pathogeninjectionresist" in bonus &&
+    bonus.pathogeninjectionresist !== undefined
+  ) {
+    checkProp("pathogeninjectionresist");
+    const pathogenInjectionResist =
+      typeof bonus.pathogeninjectionresist === "number"
+        ? bonus.pathogeninjectionresist
+        : { option: bonus.pathogeninjectionresist };
+    combatAndWeaponOption.pathogenInjectionResist = pathogenInjectionResist;
+  }
+  if (
+    "toxininjectionimmune" in bonus &&
+    bonus.toxininjectionimmune !== undefined
+  ) {
+    checkProp("toxininjectionimmune");
+    combatAndWeaponOption.toxinInjectionImmune = true;
+  }
+  if (
+    "pathogeninjectionimmune" in bonus &&
+    bonus.pathogeninjectionimmune !== undefined
+  ) {
+    checkProp("pathogeninjectionimmune");
+    combatAndWeaponOption.pathogenInjectionImmune = true;
+  }
+
+  // Condition and Recovery
+  // --------------------------------------------------------------------------------------------
+  if ("conditionmonitor" in bonus && bonus.conditionmonitor !== undefined) {
+    checkProp("conditionmonitor");
+    const conditionMonitor = bonus.conditionmonitor;
+    if (
+      "sharedthresholdoffset" in conditionMonitor &&
+      conditionMonitor.sharedthresholdoffset !== undefined
+    ) {
+      const ignoreConditionModifierNegativeEffects =
+        typeof conditionMonitor.sharedthresholdoffset === "number"
+          ? conditionMonitor.sharedthresholdoffset
+          : { option: conditionMonitor.sharedthresholdoffset };
+      conditionAndRecoveryOption.ignoreConditionModifierNegativeEffects =
+        ignoreConditionModifierNegativeEffects;
+    }
+    if (
+      "thresholdoffset" in conditionMonitor &&
+      conditionMonitor.thresholdoffset !== undefined
+    ) {
+    }
+    if (
+      "threshold" in conditionMonitor &&
+      conditionMonitor.threshold !== undefined
+    ) {
+    }
+    if (
+      "physical" in conditionMonitor &&
+      conditionMonitor.physical !== undefined
+    ) {
+      if (conditionMonitor.physical === "Rating") {
+        conditionAndRecoveryOption.addPhysicalBoxes = {
+          option: "Rating",
+        };
+      } else if (conditionMonitor.physical === "-Rating") {
+        conditionAndRecoveryOption.addPhysicalBoxes = {
+          option: "-Rating",
+        };
+      } else {
+        conditionAndRecoveryOption.addPhysicalBoxes = conditionMonitor.physical;
+      }
+    }
+    if ("stun" in conditionMonitor && conditionMonitor.stun !== undefined) {
+    }
+  }
+  if ("stuncmrecovery" in bonus && bonus.stuncmrecovery !== undefined) {
+    checkProp("stuncmrecovery");
+    const stunHealing =
+      typeof bonus.stuncmrecovery === "number"
+        ? bonus.stuncmrecovery
+        : { option: bonus.stuncmrecovery };
+    conditionAndRecoveryOption.stunHealing = stunHealing;
+  }
+  if ("physicalcmrecovery" in bonus && bonus.physicalcmrecovery !== undefined) {
+    checkProp("physicalcmrecovery");
+    const physicalHealing =
+      typeof bonus.physicalcmrecovery === "number"
+        ? bonus.physicalcmrecovery
+        : { option: bonus.physicalcmrecovery };
+    conditionAndRecoveryOption.physicalHealing = physicalHealing;
+  }
+  if (
+    "addesstophysicalcmrecovery" in bonus &&
+    bonus.addesstophysicalcmrecovery !== undefined
+  ) {
+    checkProp("addesstophysicalcmrecovery");
+  }
+  if (
+    "addesstostuncmrecovery" in bonus &&
+    bonus.addesstostuncmrecovery !== undefined
+  ) {
+    checkProp("addesstostuncmrecovery");
+  }
+  // Addiction and Psychological Effects
+  // -----------------------------------
+  {
+    // addiction scope
+    let physiologicalInitial, physiologicalProgressing;
+    let psychologicalInitial, psychologicalProgressing;
+
+    if (
+      "physiologicaladdictionfirsttime" in bonus &&
+      bonus.physiologicaladdictionfirsttime !== undefined
+    ) {
+      checkProp("physiologicaladdictionfirsttime");
+      physiologicalInitial = convertRatingUnion(
+        bonus.physiologicaladdictionfirsttime
+      );
+    }
+    if (
+      "physiologicaladdictionalreadyaddicted" in bonus &&
+      bonus.physiologicaladdictionalreadyaddicted !== undefined
+    ) {
+      checkProp("physiologicaladdictionalreadyaddicted");
+      physiologicalProgressing = convertRatingUnion(
+        bonus.physiologicaladdictionalreadyaddicted
+      );
+    }
+    const physiological =
+      physiologicalInitial !== undefined ||
+      physiologicalProgressing !== undefined
+        ? {
+            initialTest:
+              physiologicalInitial !== undefined ? physiologicalInitial : 0,
+            progressingTest:
+              physiologicalProgressing !== undefined
+                ? physiologicalProgressing
+                : 0,
+          }
+        : undefined;
+
+    if (
+      "psychologicaladdictionfirsttime" in bonus &&
+      bonus.psychologicaladdictionfirsttime !== undefined
+    ) {
+      checkProp("psychologicaladdictionfirsttime");
+      psychologicalInitial = convertRatingUnion(
+        bonus.psychologicaladdictionfirsttime
+      );
+    }
+    if (
+      "psychologicaladdictionalreadyaddicted" in bonus &&
+      bonus.psychologicaladdictionalreadyaddicted !== undefined
+    ) {
+      checkProp("psychologicaladdictionalreadyaddicted");
+    }
+    const psychological =
+      psychologicalInitial !== undefined ||
+      psychologicalProgressing !== undefined
+        ? {
+            initialTest:
+              psychologicalInitial !== undefined ? psychologicalInitial : 0,
+            progressingTest:
+              psychologicalProgressing !== undefined
+                ? psychologicalProgressing
+                : 0,
+          }
+        : undefined;
+
+    if (physiological !== undefined || psychological !== undefined) {
+      conditionAndRecoveryOption.addictionResistance = {
+        ...(physiological !== undefined && { physiological: physiological }),
+        ...(psychological !== undefined && { psychological: psychological }),
+      };
+    }
+  }
+
+  // Movement and Lifestyle
+  // --------------------------------------------------------------------------------------------
+  if ("movementreplace" in bonus && bonus.movementreplace !== undefined) {
+    checkProp("movementreplace");
+  }
+  if ("walkmultiplier" in bonus && bonus.walkmultiplier !== undefined) {
+    checkProp("walkmultiplier");
+    if (Array.isArray(bonus.walkmultiplier)) {
+      assert(bonus.walkmultiplier.length === 2);
+
+      let percentage: number;
+      if (bonus.walkmultiplier[0].percent != null) {
+        assert(bonus.walkmultiplier[0].val === undefined);
+        percentage = bonus.walkmultiplier[0].percent;
+      } else {
+        assert(bonus.walkmultiplier[0].val !== undefined);
+        assert(bonus.walkmultiplier[0].percent === undefined);
+        percentage = bonus.walkmultiplier[0].val * 100;
+      }
+      if (bonus.walkmultiplier[0].category === "Swim") {
+        movementAndLifestyleOption.swimSpeedPercentageModifier = percentage;
+      } else {
+        movementAndLifestyleOption.walkSpeedPercentageModifier = percentage;
+      }
+
+      // second multiplier
+      if (bonus.walkmultiplier[1].percent != null) {
+        assert(bonus.walkmultiplier[1].val === undefined);
+        percentage = bonus.walkmultiplier[1].percent;
+      } else {
+        assert(bonus.walkmultiplier[1].val !== undefined);
+        assert(bonus.walkmultiplier[1].percent === undefined);
+        percentage = bonus.walkmultiplier[1].val * 100;
+      }
+      if (bonus.walkmultiplier[1].category === "Swim") {
+        movementAndLifestyleOption.swimSpeedPercentageModifier = percentage;
+      } else {
+        movementAndLifestyleOption.walkSpeedPercentageModifier = percentage;
+      }
+    } else {
+      let percentage: number;
+      if (bonus.walkmultiplier.percent != null) {
+        assert(bonus.walkmultiplier.val === undefined);
+        percentage = bonus.walkmultiplier.percent;
+      } else {
+        assert(bonus.walkmultiplier.val !== undefined);
+        assert(bonus.walkmultiplier.percent === undefined);
+        percentage = bonus.walkmultiplier.val * 100;
+      }
+      if (bonus.walkmultiplier.category === "Swim") {
+        movementAndLifestyleOption.swimSpeedPercentageModifier = percentage;
+      } else {
+        movementAndLifestyleOption.walkSpeedPercentageModifier = percentage;
+      }
+    }
+  }
+  if ("runmultiplier" in bonus && bonus.runmultiplier !== undefined) {
+    checkProp("runmultiplier");
+    let percentage: number;
+    if (bonus.runmultiplier.percent != null) {
+      assert(bonus.runmultiplier.val === undefined);
+      percentage = bonus.runmultiplier.percent;
+    } else {
+      assert(bonus.runmultiplier.val !== undefined);
+      assert(bonus.runmultiplier.percent === undefined);
+      percentage = bonus.runmultiplier.val * 100;
+    }
+    movementAndLifestyleOption.runSpeedPercentageModifier = percentage;
+  }
+  if ("sprintbonus" in bonus && bonus.sprintbonus !== undefined) {
+    checkProp("sprintbonus");
+    let percentage: number;
+    if (bonus.sprintbonus.percent != null) {
+      assert(bonus.sprintbonus.val === undefined);
+      percentage = bonus.sprintbonus.percent;
+    } else {
+      assert(bonus.sprintbonus.val !== undefined);
+      assert(bonus.sprintbonus.percent === undefined);
+      percentage = bonus.sprintbonus.val * 100;
+    }
+    movementAndLifestyleOption.sprintSpeedPercentageModifier = percentage;
+  }
+  if ("lifestylecost" in bonus && bonus.lifestylecost !== undefined) {
+    checkProp("lifestylecost");
+    const lifestyleCostArray = Array.isArray(bonus.lifestylecost)
+      ? bonus.lifestylecost
+      : [bonus.lifestylecost];
+    movementAndLifestyleOption.lifestyleCostModifier = lifestyleCostArray.map(
+      (lifestyleCost) => {
+        if (typeof lifestyleCost === "object") {
+          return {
+            lifestyle: lifestyleCost._lifestyle,
+            cost: lifestyleCost.xmltext,
+          };
+        } else {
+          return { cost: lifestyleCost };
+        }
+      }
+    );
+  }
+  if ("basiclifestylecost" in bonus && bonus.basiclifestylecost !== undefined) {
+    checkProp("basiclifestylecost");
+  }
+
+  // Test and Resistance Bonuses
+  // --------------------------------------------------------------------------------------------
+  if ("composure" in bonus && bonus.composure !== undefined) {
+    checkProp("composure");
+    testAndResistanceOption.composure = bonus.composure;
+  }
+  if (
+    "judgeintentionsdefense" in bonus &&
+    bonus.judgeintentionsdefense !== undefined
+  ) {
+    checkProp("judgeintentionsdefense");
+    testAndResistanceOption.judgeIntentionsDefense = convertRatingUnion(
+      bonus.judgeintentionsdefense
+    );
+  }
+  if (
+    "judgeintentionsoffense" in bonus &&
+    bonus.judgeintentionsoffense !== undefined
+  ) {
+    checkProp("judgeintentionsoffense");
+  }
+  if ("judgeintentions" in bonus && bonus.judgeintentions !== undefined) {
+    checkProp("judgeintentions");
+  }
+  if ("memory" in bonus && bonus.memory !== undefined) {
+    checkProp("memory");
+    testAndResistanceOption.memory = convertRatingUnion(bonus.memory);
+  }
+  if ("drainresist" in bonus && bonus.drainresist !== undefined) {
+    checkProp("drainresist");
+    testAndResistanceOption.drainResist = convertRatingUnion(bonus.drainresist);
+  }
+  if ("fadingresist" in bonus && bonus.fadingresist !== undefined) {
+    checkProp("fadingresist");
+    testAndResistanceOption.fadingResist = convertRatingUnion(
+      bonus.fadingresist
+    );
+  }
+  if ("spellresistance" in bonus && bonus.spellresistance !== undefined) {
+    checkProp("spellresistance");
+  }
+  if (
+    "directmanaspellresist" in bonus &&
+    bonus.directmanaspellresist !== undefined
+  ) {
+    checkProp("directmanaspellresist");
+    testAndResistanceOption.directManaResist = convertRatingUnion(
+      bonus.directmanaspellresist
+    );
+  }
+  if (
+    "detectionspellresist" in bonus &&
+    bonus.detectionspellresist !== undefined
+  ) {
+    checkProp("detectionspellresist");
+    testAndResistanceOption.detectionResist = convertRatingUnion(
+      bonus.detectionspellresist
+    );
+    bonus.detectionspellresist;
+  }
+  if ("manaillusionresist" in bonus && bonus.manaillusionresist !== undefined) {
+    checkProp("manaillusionresist");
+    testAndResistanceOption.manaIllusionResist = convertRatingUnion(
+      bonus.manaillusionresist
+    );
+    bonus.manaillusionresist;
+  }
+  if (
+    "physicalillusionresist" in bonus &&
+    bonus.physicalillusionresist !== undefined
+  ) {
+    checkProp("physicalillusionresist");
+  }
+  if (
+    "mentalmanipulationresist" in bonus &&
+    bonus.mentalmanipulationresist !== undefined
+  ) {
+    checkProp("mentalmanipulationresist");
+    testAndResistanceOption.mentalManipulationResist = convertRatingUnion(
+      bonus.mentalmanipulationresist
+    );
+  }
+  if ("decreasebodresist" in bonus && bonus.decreasebodresist !== undefined) {
+    checkProp("decreasebodresist");
+    testAndResistanceOption.decreaseBodyResist = convertRatingUnion(
+      bonus.decreasebodresist
+    );
+  }
+  if ("decreaseagiresist" in bonus && bonus.decreaseagiresist !== undefined) {
+    checkProp("decreaseagiresist");
+    testAndResistanceOption.decreaseAgilityResist = convertRatingUnion(
+      bonus.decreaseagiresist
+    );
+  }
+  if ("decreaserearesist" in bonus && bonus.decreaserearesist !== undefined) {
+    checkProp("decreaserearesist");
+    testAndResistanceOption.decreaseReasonanceResist = convertRatingUnion(
+      bonus.decreaserearesist
+    );
+  }
+  if ("decreasestrresist" in bonus && bonus.decreasestrresist !== undefined) {
+    checkProp("decreasestrresist");
+    testAndResistanceOption.decreaseStrengthResist = convertRatingUnion(
+      bonus.decreasestrresist
+    );
+  }
+  if ("decreasecharesist" in bonus && bonus.decreasecharesist !== undefined) {
+    checkProp("decreasecharesist");
+    testAndResistanceOption.decreaseCharismaResist = convertRatingUnion(
+      bonus.decreasecharesist
+    );
+  }
+  if ("decreaseintresist" in bonus && bonus.decreaseintresist !== undefined) {
+    checkProp("decreaseintresist");
+    testAndResistanceOption.decreaseIntuitionResist = convertRatingUnion(
+      bonus.decreaseintresist
+    );
+  }
+  if ("decreaselogresist" in bonus && bonus.decreaselogresist !== undefined) {
+    checkProp("decreaselogresist");
+    testAndResistanceOption.decreaseLogicResist = convertRatingUnion(
+      bonus.decreaselogresist
+    );
+  }
+  if ("decreasewilresist" in bonus && bonus.decreasewilresist !== undefined) {
+    checkProp("decreasewilresist");
+    testAndResistanceOption.decreaseWillpowerResist = convertRatingUnion(
+      bonus.decreasewilresist
+    );
+  }
+  if ("fatigueresist" in bonus && bonus.fatigueresist !== undefined) {
+    checkProp("fatigueresist");
+    const fatigueResist =
+      typeof bonus.fatigueresist === "number"
+        ? bonus.fatigueresist
+        : { option: bonus.fatigueresist };
+    testAndResistanceOption.fatigueResist = fatigueResist;
+  }
+
+  // Initiative and Matrix
+  // --------------------------------------------------------------------------------------------
   if ("initiative" in bonus && bonus.initiative !== undefined) {
+    checkProp("initiative");
     let initiative;
     if (typeof bonus.initiative === "number") {
       initiative = bonus.initiative;
@@ -380,193 +2208,261 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       if (typeof initiativeText === "number") {
         initiative = initiativeText;
       } else {
-        const match = Initiative.match(initiativeText);
+        const match = NumberFixedRating.match(initiativeText);
         if (match.failed()) {
           assert(false, match.message);
         }
-        initiative = initiativeSemantics(match).eval();
+        initiative = NumberFixedRatingSemantics(match).eval();
       }
     }
-    bonusObject.initiative = { bonus: initiative };
+    initiativeOption.initiative = { bonus: initiative };
   }
   if ("initiativedice" in bonus && bonus.initiativedice !== undefined) {
-    bonusObject.initiative = {
+    checkProp("initiativedice");
+    initiativeOption.initiative = {
       bonusDice: bonus.initiativedice,
     };
   }
   if ("initiativepass" in bonus && bonus.initiativepass !== undefined) {
+    checkProp("initiativepass");
     let initiative;
     if (typeof bonus.initiativepass === "number") {
       initiative = bonus.initiativepass;
     } else {
       assert(bonus.initiativepass.xmltext !== undefined);
       const initiativeText = bonus.initiativepass.xmltext;
-      const match = Initiative.match(initiativeText.toString());
+      const match = NumberFixedRating.match(initiativeText.toString());
       if (match.failed()) {
         assert(false, match.message);
       }
-      initiative = initiativeSemantics(match).eval();
+      initiative = NumberFixedRatingSemantics(match).eval();
     }
-    bonusObject.initiative = { bonusDice: initiative };
+    initiativeOption.initiative = { bonusDice: initiative };
+  }
+  if ("matrixinitiative" in bonus && bonus.matrixinitiative !== undefined) {
+    checkProp("matrixinitiative");
   }
   if (
     "matrixinitiativedice" in bonus &&
     bonus.matrixinitiativedice !== undefined
   ) {
-    bonusObject.matrixInitiative = {
+    checkProp("matrixinitiativedice");
+    initiativeOption.matrixInitiative = {
       bonusDice: bonus.matrixinitiativedice.xmltext,
     };
   }
-  if ("toxincontactresist" in bonus && bonus.toxincontactresist !== undefined) {
-    const toxinContactResist =
-      typeof bonus.toxincontactresist === "number"
-        ? bonus.toxincontactresist
-        : { option: bonus.toxincontactresist };
-    bonusObject.toxinContactResist = toxinContactResist;
+  if (
+    "matrixinitiativediceadd" in bonus &&
+    bonus.matrixinitiativediceadd !== undefined
+  ) {
+    checkProp("matrixinitiativediceadd");
+    assert(initiativeOption.matrixInitiative === undefined);
+    initiativeOption.matrixInitiative = {
+      bonusDice: bonus.matrixinitiativediceadd,
+    };
+  }
+  if ("surprise" in bonus && bonus.surprise !== undefined) {
+    checkProp("surprise");
+  }
+
+  // Gear and Vehicles
+  // --------------------------------------------------------------------------------------------
+  if ("addgear" in bonus && bonus.addgear !== undefined) {
+    checkProp("addgear");
+  }
+  if ("restrictedgear" in bonus && bonus.restrictedgear !== undefined) {
+    checkProp("restrictedgear");
+  }
+  if ("devicerating" in bonus && bonus.devicerating !== undefined) {
+    checkProp("devicerating");
+  }
+  if ("seats" in bonus && bonus.seats !== undefined) {
+    checkProp("seats");
+  }
+  if ("accel" in bonus && bonus.accel !== undefined) {
+    checkProp("accel");
+  }
+  if ("offroadaccel" in bonus && bonus.offroadaccel !== undefined) {
+    checkProp("offroadaccel");
+  }
+  if ("handling" in bonus && bonus.handling !== undefined) {
+    checkProp("handling");
+  }
+  if ("offroadhandling" in bonus && bonus.offroadhandling !== undefined) {
+    checkProp("offroadhandling");
+  }
+  if ("speed" in bonus && bonus.speed !== undefined) {
+    checkProp("speed");
+  }
+  if ("offroadspeed" in bonus && bonus.offroadspeed !== undefined) {
+    checkProp("offroadspeed");
+  }
+  if ("pilot" in bonus && bonus.pilot !== undefined) {
+    checkProp("pilot");
+  }
+  if ("sensor" in bonus && bonus.sensor !== undefined) {
+    checkProp("sensor");
+  }
+  if ("body" in bonus && bonus.body !== undefined) {
+    checkProp("body");
+  }
+
+  // Essence and Augmentation
+  // --------------------------------------------------------------------------------------------
+  if ("selectcyberware" in bonus && bonus.selectcyberware !== undefined) {
+    checkProp("selectcyberware");
+    assert(essenceAndAugmentationOption.selectCyberware === undefined);
+    const linkCyberware = bonus.selectcyberware;
+    if (typeof linkCyberware === "string") {
+      assert(linkCyberware === "");
+      essenceAndAugmentationOption.selectCyberware = {
+        restrictCategory: false,
+      };
+    } else {
+      essenceAndAugmentationOption.selectCyberware = {
+        restrictCategory: true,
+        category: linkCyberware.category,
+      };
+    }
+  }
+  if ("selectside" in bonus && bonus.selectside !== undefined) {
+    checkProp("selectside");
+    assert(essenceAndAugmentationOption.selectSideOfBody === undefined);
+    assert(bonus.selectside === "");
+    essenceAndAugmentationOption.selectSideOfBody = true;
+  }
+  if ("addware" in bonus && bonus.addware !== undefined) {
+    checkProp("addware");
   }
   if (
-    "pathogencontactresist" in bonus &&
-    bonus.pathogencontactresist !== undefined
+    "specialmodificationlimit" in bonus &&
+    bonus.specialmodificationlimit !== undefined
   ) {
-    const pathogenContactResist =
-      typeof bonus.pathogencontactresist === "number"
-        ? bonus.pathogencontactresist
-        : { option: bonus.pathogencontactresist };
-    bonusObject.pathogenContactResist = pathogenContactResist;
+    checkProp("specialmodificationlimit");
   }
-  if ("toxincontactimmune" in bonus && bonus.toxincontactimmune !== undefined) {
-    bonusObject.toxinContactImmune = true;
+  if ("essencemax" in bonus && bonus.essencemax !== undefined) {
+    checkProp("essencemax");
+  }
+  if ("essencepenalty" in bonus && bonus.essencepenalty !== undefined) {
+    checkProp("essencepenalty");
+  }
+  if ("essencepenaltyt100" in bonus && bonus.essencepenaltyt100 !== undefined) {
+    checkProp("essencepenaltyt100");
+    const match = EssenceCost.match(bonus.essencepenaltyt100.toString());
+    if (match.failed()) {
+      assert(false, match.message);
+    }
+    // TODO: fix this! the schema is wrong
+    essenceAndAugmentationOption.essenceCostTimes100 =
+      essenceCostSemantics(match).eval();
   }
   if (
-    "pathogencontactimmune" in bonus &&
-    bonus.pathogencontactimmune !== undefined
+    "essencepenaltymagonlyt100" in bonus &&
+    bonus.essencepenaltymagonlyt100 !== undefined
   ) {
-    bonusObject.pathogenContactImmune = true;
+    checkProp("essencepenaltymagonlyt100");
   }
   if (
-    "toxininhalationresist" in bonus &&
-    bonus.toxininhalationresist !== undefined
+    "cyberwaretotalessmultiplier" in bonus &&
+    bonus.cyberwaretotalessmultiplier !== undefined
   ) {
-    const toxinInhalationResist =
-      typeof bonus.toxininhalationresist === "number"
-        ? bonus.toxininhalationresist
-        : { option: bonus.toxininhalationresist };
-    bonusObject.toxinInhalationResist = toxinInhalationResist;
+    checkProp("cyberwaretotalessmultiplier");
   }
   if (
-    "pathogeninhalationresist" in bonus &&
-    bonus.pathogeninhalationresist !== undefined
+    "cyberwareessmultiplier" in bonus &&
+    bonus.cyberwareessmultiplier !== undefined
   ) {
-    const pathogenInhalationResist =
-      typeof bonus.pathogeninhalationresist === "number"
-        ? bonus.pathogeninhalationresist
-        : { option: bonus.pathogeninhalationresist };
-    bonusObject.pathogenInhalationResist = pathogenInhalationResist;
+    checkProp("cyberwareessmultiplier");
   }
   if (
-    "toxininhalationimmune" in bonus &&
-    bonus.toxininhalationimmune !== undefined
+    "biowareessmultiplier" in bonus &&
+    bonus.biowareessmultiplier !== undefined
   ) {
-    bonusObject.toxinInhalationImmune = true;
+    checkProp("biowareessmultiplier");
   }
   if (
-    "pathogeninhalationimmune" in bonus &&
-    bonus.pathogeninhalationimmune !== undefined
+    "genetechcostmultiplier" in bonus &&
+    bonus.genetechcostmultiplier !== undefined
   ) {
-    bonusObject.pathogenInhalationImmune = true;
+    checkProp("genetechcostmultiplier");
   }
   if (
-    "toxiningestionresist" in bonus &&
-    bonus.toxiningestionresist !== undefined
+    "genetechessmultiplier" in bonus &&
+    bonus.genetechessmultiplier !== undefined
   ) {
-    const toxinIngestionResist =
-      typeof bonus.toxiningestionresist === "number"
-        ? bonus.toxiningestionresist
-        : { option: bonus.toxiningestionresist };
-    bonusObject.toxinIngestionResist = toxinIngestionResist;
+    checkProp("genetechessmultiplier");
+  }
+  if ("disablebioware" in bonus && bonus.disablebioware !== undefined) {
+    checkProp("disablebioware");
   }
   if (
-    "pathogeningestionresist" in bonus &&
-    bonus.pathogeningestionresist !== undefined
+    "disablebiowaregrade" in bonus &&
+    bonus.disablebiowaregrade !== undefined
   ) {
-    const pathogenIngestionResist =
-      typeof bonus.pathogeningestionresist === "number"
-        ? bonus.pathogeningestionresist
-        : { option: bonus.pathogeningestionresist };
-    bonusObject.pathogenIngestionResist = pathogenIngestionResist;
+    checkProp("disablebiowaregrade");
   }
   if (
-    "toxiningestionimmune" in bonus &&
-    bonus.toxiningestionimmune !== undefined
+    "disablecyberwaregrade" in bonus &&
+    bonus.disablecyberwaregrade !== undefined
   ) {
-    bonusObject.toxinIngestionImmune = true;
+    checkProp("disablecyberwaregrade");
+  }
+
+  // Contact and Reputation
+  // --------------------------------------------------------------------------------------------
+  if ("addcontact" in bonus && bonus.addcontact !== undefined) {
+    checkProp("addcontact");
+    const addContact = bonus.addcontact;
+    if (addContact.loyalty !== undefined) {
+    }
+    if (addContact.connection !== undefined) {
+    }
+    if (addContact.forcedloyalty !== undefined) {
+    }
+    if (addContact.forcegroup !== undefined) {
+    }
+    if (addContact.free !== undefined) {
+    }
+    if (addContact.group !== undefined) {
+    }
+  }
+  if ("selectcontact" in bonus && bonus.selectcontact !== undefined) {
+    checkProp("selectcontact");
+    assert(contactAndReputationOption.linkContact === undefined);
+    contactAndReputationOption.linkContact = true;
+  }
+  if ("notoriety" in bonus && bonus.notoriety !== undefined) {
+    checkProp("notoriety");
+  }
+  if ("astralreputation" in bonus && bonus.astralreputation !== undefined) {
+    checkProp("astralreputation");
+  }
+  if ("publicawareness" in bonus && bonus.publicawareness !== undefined) {
+    checkProp("publicawareness");
   }
   if (
-    "pathogeningestionimmune" in bonus &&
-    bonus.pathogeningestionimmune !== undefined
+    "streetcredmultiplier" in bonus &&
+    bonus.streetcredmultiplier !== undefined
   ) {
-    bonusObject.pathogenIngestionImmune = true;
+    checkProp("streetcredmultiplier");
+  }
+  if ("contactkarma" in bonus && bonus.contactkarma !== undefined) {
+    checkProp("contactkarma");
   }
   if (
-    "toxininjectionresist" in bonus &&
-    bonus.toxininjectionresist !== undefined
+    "contactkarmaminimum" in bonus &&
+    bonus.contactkarmaminimum !== undefined
   ) {
-    const toxinInjectionResist =
-      typeof bonus.toxininjectionresist === "number"
-        ? bonus.toxininjectionresist
-        : { option: bonus.toxininjectionresist };
-    bonusObject.toxinInjectionResist = toxinInjectionResist;
+    checkProp("contactkarmaminimum");
   }
-  if (
-    "pathogeninjectionresist" in bonus &&
-    bonus.pathogeninjectionresist !== undefined
-  ) {
-    const pathogenInjectionResist =
-      typeof bonus.pathogeninjectionresist === "number"
-        ? bonus.pathogeninjectionresist
-        : { option: bonus.pathogeninjectionresist };
-    bonusObject.pathogenInjectionResist = pathogenInjectionResist;
-  }
-  if (
-    "toxininjectionimmune" in bonus &&
-    bonus.toxininjectionimmune !== undefined
-  ) {
-    bonusObject.toxinInjectionImmune = true;
-  }
-  if (
-    "pathogeninjectionimmune" in bonus &&
-    bonus.pathogeninjectionimmune !== undefined
-  ) {
-    bonusObject.pathogenInjectionImmune = true;
-  }
-  if ("fatigueresist" in bonus && bonus.fatigueresist !== undefined) {
-    const fatigueResist =
-      typeof bonus.fatigueresist === "number"
-        ? bonus.fatigueresist
-        : { option: bonus.fatigueresist };
-    bonusObject.fatigueResist = fatigueResist;
-  }
-  if ("sociallimit" in bonus && bonus.sociallimit !== undefined) {
-    bonusObject.socialLimit = convertRatingUnion(bonus.sociallimit);
-  }
-  if ("physicallimit" in bonus && bonus.physicallimit !== undefined) {
-    const physicalLimit =
-      typeof bonus.physicallimit === "number"
-        ? bonus.physicallimit
-        : { option: bonus.physicallimit };
-    bonusObject.physicalLimit = physicalLimit;
-  }
-  if ("mentallimit" in bonus && bonus.mentallimit !== undefined) {
-    const mentalLimit =
-      typeof bonus.mentallimit === "number"
-        ? bonus.mentallimit
-        : { option: bonus.mentallimit };
-    bonusObject.mentalLimit = mentalLimit;
-  }
+
+  // Quality
+  // --------------------------------------------------------------------------------------------
   {
     // qualities scope
     let qualities: BonusGenericListType = [];
     if ("quality" in bonus && bonus.quality !== undefined) {
+      checkProp("quality");
       const rating = Number(bonus.quality._rating);
       assert(!isNaN(rating));
       qualities = qualities.concat([
@@ -574,6 +2470,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       ]);
     }
     if ("addqualities" in bonus && bonus.addqualities !== undefined) {
+      checkProp("addqualities");
       const addQuality = bonus.addqualities.addquality;
       const addQualityArray = Array.isArray(addQuality)
         ? addQuality
@@ -590,443 +2487,265 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       qualities = qualities.concat(qualityArray);
     }
     if (qualities.length > 0) {
-      bonusObject.qualityList = qualities;
+      qualityOption.addQualityList = qualities;
     }
   }
+  if ("selectquality" in bonus && bonus.selectquality !== undefined) {
+    checkProp("selectquality");
+    const selectQualityList = Array.isArray(bonus.selectquality.quality)
+      ? bonus.selectquality.quality
+      : [bonus.selectquality.quality];
+
+    let reducedBonusQualityList;
+    if (
+      "discountqualities" in bonus.selectquality &&
+      bonus.selectquality.discountqualities !== undefined
+    ) {
+      reducedBonusQualityList = Array.isArray(
+        bonus.selectquality.discountqualities.quality
+      )
+        ? bonus.selectquality.discountqualities.quality
+        : [bonus.selectquality.discountqualities.quality];
+      reducedBonusQualityList = reducedBonusQualityList.map((quality) => {
+        const discount = parseInt(quality._discount);
+        return { name: quality.xmltext, karmaReduction: discount };
+      });
+    }
+    assert(qualityOption.selectQualityFromList === undefined);
+    qualityOption.selectQualityFromList = {
+      bonusQualityList: selectQualityList.map((quality) => {
+        const qualityName =
+          typeof quality === "string" ? quality : quality.xmltext;
+        return { name: qualityName };
+      }),
+      ...(reducedBonusQualityList !== undefined && {
+        reducedBonusQualityList: reducedBonusQualityList,
+      }),
+    };
+  }
+  if ("metageniclimit" in bonus && bonus.metageniclimit !== undefined) {
+    checkProp("metageniclimit");
+  }
   if ("disablequality" in bonus && bonus.disablequality !== undefined) {
+    checkProp("disablequality");
     const disableQualities =
       typeof bonus.disablequality === "string"
         ? [{ name: bonus.disablequality }]
         : bonus.disablequality.map((quality) => {
             return { name: quality };
           });
-    bonusObject.disableQualities = disableQualities;
+    qualityOption.disableQualityList = disableQualities;
   }
-  if ("damageresistance" in bonus && bonus.damageresistance !== undefined) {
-    const damageResistance =
-      typeof bonus.damageresistance === "number"
-        ? bonus.damageresistance
-        : { option: bonus.damageresistance };
-    bonusObject.damageResistance = damageResistance;
+
+  // specific qualities
+  // --------------------------------------------------------------------------------------------
+  if ("ambidextrous" in bonus && bonus.ambidextrous !== undefined) {
+    checkProp("ambidextrous");
+    specificQualityOption.ambidextrous = true;
   }
-  if ("radiationresist" in bonus && bonus.radiationresist !== undefined) {
-    const radiationResistance =
-      typeof bonus.radiationresist === "number"
-        ? bonus.radiationresist
-        : { option: bonus.radiationresist };
-    bonusObject.radiationResistance = radiationResistance;
+  if ("freequality" in bonus && bonus.freequality !== undefined) {
+    checkProp("freequality");
   }
-  if ("sonicresist" in bonus && bonus.sonicresist !== undefined) {
-    const sonicResistance =
-      typeof bonus.sonicresist === "number"
-        ? bonus.sonicresist
-        : { option: bonus.sonicresist };
-    bonusObject.sonicResistance = sonicResistance;
-  }
-  if ("unarmeddvphysical" in bonus && bonus.unarmeddvphysical !== undefined) {
-    bonusObject.unarmedDamageType = damageTypeEnum.Physical;
-  }
-  if ("attributekarmacost" in bonus && bonus.attributekarmacost !== undefined) {
-    const karmaCost = Array.isArray(bonus.attributekarmacost)
-      ? bonus.attributekarmacost.map((karmaCost) => {
-          return convertKarmaCost(karmaCost);
-        })
-      : [convertKarmaCost(bonus.attributekarmacost)];
-    bonusObject.modifyAttributeImprovementKarmaCost = karmaCost;
+  if ("burnoutsway" in bonus && bonus.burnoutsway !== undefined) {
+    checkProp("burnoutsway");
   }
   if (
-    "knowledgeskillkarmacost" in bonus &&
-    bonus.knowledgeskillkarmacost !== undefined
+    "friendsinhighplaces" in bonus &&
+    bonus.friendsinhighplaces !== undefined
   ) {
-    const karmaCostArray = Array.isArray(bonus.knowledgeskillkarmacost)
-      ? bonus.knowledgeskillkarmacost
-      : [bonus.knowledgeskillkarmacost];
-    bonusObject.modifySkillImprovementKarmaCost = karmaCostArray.map(
-      (karmaCost) => {
-        assert("val" in karmaCost, JSON.stringify(karmaCost));
-        const conditionalBonus = karmaCost.val;
-        assert(conditionalBonus !== undefined);
-        const match = SkillKarmaCost.match(conditionalBonus.toString());
-        if (match.failed()) {
-          assert(false, match.message);
-        }
-        let skillRating;
-        if ("min" in karmaCost) {
-          assert(typeof karmaCost.min === "number");
-          skillRating = {
-            minimum: karmaCost.min,
-          };
-        } else {
-          assert(typeof karmaCost.max === "number");
-          skillRating = {
-            maximum: karmaCost.max,
-          };
-        }
-        return {
-          skillRating: skillRating,
-          conditionalBonus: skillKarmaCostSemantics(match).eval(),
-        };
-      }
-    );
+    checkProp("friendsinhighplaces");
   }
-  if ("conditionmonitor" in bonus && bonus.conditionmonitor !== undefined) {
-    const conditionMonitor = bonus.conditionmonitor;
-    if (
-      "sharedthresholdoffset" in conditionMonitor &&
-      conditionMonitor.sharedthresholdoffset !== undefined
-    ) {
-      const ignoreConditionModifierNegativeEffects =
-        typeof conditionMonitor.sharedthresholdoffset === "number"
-          ? conditionMonitor.sharedthresholdoffset
-          : { option: conditionMonitor.sharedthresholdoffset };
-      bonusObject.ignoreConditionModifierNegativeEffects =
-        ignoreConditionModifierNegativeEffects;
-    }
-    if (
-      "physical" in conditionMonitor &&
-      conditionMonitor.physical !== undefined
-    ) {
-      if (conditionMonitor.physical === "Rating") {
-        bonusObject.addPhysicalBoxes = {
-          option: "Rating",
-        };
-      } else if (conditionMonitor.physical === "-Rating") {
-        bonusObject.addPhysicalBoxes = {
-          option: "-Rating",
-        };
-      } else {
-        bonusObject.addPhysicalBoxes = conditionMonitor.physical;
-      }
-    }
+  if ("overclocker" in bonus && bonus.overclocker !== undefined) {
+    checkProp("overclocker");
   }
-  if ("walkmultiplier" in bonus && bonus.walkmultiplier !== undefined) {
-    if (Array.isArray(bonus.walkmultiplier)) {
-      assert(bonus.walkmultiplier.length === 2);
+  if ("trustfund" in bonus && bonus.trustfund !== undefined) {
+    checkProp("trustfund");
+  }
+  if (
+    "prototypetranshuman" in bonus &&
+    bonus.prototypetranshuman !== undefined
+  ) {
+    checkProp("prototypetranshuman");
+  }
+  if ("excon" in bonus && bonus.excon !== undefined) {
+    checkProp("excon");
+  }
+  if ("mademan" in bonus && bonus.mademan !== undefined) {
+    checkProp("mademan");
+  }
+  if (
+    "magicianswaydiscount" in bonus &&
+    bonus.magicianswaydiscount !== undefined
+  ) {
+    checkProp("magicianswaydiscount");
+  }
+  if (
+    "blackmarketdiscount" in bonus &&
+    bonus.blackmarketdiscount !== undefined
+  ) {
+    checkProp("blackmarketdiscount");
+  }
+  if ("erased" in bonus && bonus.erased !== undefined) {
+    checkProp("erased");
+  }
+  if ("fame" in bonus && bonus.fame !== undefined) {
+    checkProp("fame");
+  }
+  if (
+    "selectinherentaiprogram" in bonus &&
+    bonus.selectinherentaiprogram !== undefined
+  ) {
+    checkProp("selectinherentaiprogram");
+  }
+  if ("dealerconnection" in bonus && bonus.dealerconnection !== undefined) {
+    checkProp("dealerconnection");
+  }
+  if ("cyberadeptdaemon" in bonus && bonus.cyberadeptdaemon !== undefined) {
+    checkProp("cyberadeptdaemon");
+  }
+  if ("uneducated" in bonus && bonus.uneducated !== undefined) {
+    checkProp("uneducated");
+  }
+  if ("cyberseeker" in bonus && bonus.cyberseeker !== undefined) {
+    checkProp("cyberseeker");
+  }
+  if ("adapsin" in bonus && bonus.adapsin !== undefined) {
+    checkProp("adapsin");
+    specificQualityOption.adapsin = true;
+  }
+  if (
+    "reflexrecorderoptimization" in bonus &&
+    bonus.reflexrecorderoptimization !== undefined
+  ) {
+    checkProp("reflexrecorderoptimization");
+  }
 
-      let percentage: number;
-      if (bonus.walkmultiplier[0].percent) {
-        assert(bonus.walkmultiplier[0].val === undefined);
-        percentage = bonus.walkmultiplier[0].percent;
-      } else {
-        assert(bonus.walkmultiplier[0].val !== undefined);
-        assert(bonus.walkmultiplier[0].percent === undefined);
-        percentage = bonus.walkmultiplier[0].val * 100;
-      }
-      if (bonus.walkmultiplier[0].category === "Swim") {
-        bonusObject.swimSpeedPercentageModifier = percentage;
-      } else {
-        bonusObject.walkSpeedPercentageModifier = percentage;
-      }
-
-      // second multiplier
-      if (bonus.walkmultiplier[1].percent) {
-        assert(bonus.walkmultiplier[1].val === undefined);
-        percentage = bonus.walkmultiplier[1].percent;
-      } else {
-        assert(bonus.walkmultiplier[1].val !== undefined);
-        assert(bonus.walkmultiplier[1].percent === undefined);
-        percentage = bonus.walkmultiplier[1].val * 100;
-      }
-      if (bonus.walkmultiplier[1].category === "Swim") {
-        bonusObject.swimSpeedPercentageModifier = percentage;
-      } else {
-        bonusObject.walkSpeedPercentageModifier = percentage;
-      }
+  // Misc
+  // --------------------------------------------------------------------------------------------
+  if ("_unique" in bonus) {
+    checkProp("_unique");
+    assert(bonus._unique !== "");
+    assert(miscellaneousOption.uniqueBonusCategory === undefined);
+    miscellaneousOption.uniqueBonusCategory = bonus._unique;
+  }
+  if ("_mode" in bonus) {
+    checkProp("_mode");
+    assert(bonus._mode === "replace");
+    assert(miscellaneousOption.replaceNonWireless === undefined);
+    miscellaneousOption.replaceNonWireless = true;
+  }
+  if ("selecttext" in bonus && bonus.selecttext !== undefined) {
+    checkProp("selecttext");
+    const selectText = bonus.selecttext;
+    let selection: BonusSelectionType = {};
+    if (typeof selectText === "string") {
+      assert(selectText === "");
+      selection = { enterName: true };
     } else {
-      let percentage: number;
-      if (bonus.walkmultiplier.percent) {
-        assert(bonus.walkmultiplier.val === undefined);
-        percentage = bonus.walkmultiplier.percent;
-      } else {
-        assert(bonus.walkmultiplier.val !== undefined);
-        assert(bonus.walkmultiplier.percent === undefined);
-        percentage = bonus.walkmultiplier.val * 100;
+      if (selectText._allowedit !== undefined) {
+        selection = { allowEdit: true };
       }
-      if (bonus.walkmultiplier.category === "Swim") {
-        bonusObject.swimSpeedPercentageModifier = percentage;
-      } else {
-        bonusObject.walkSpeedPercentageModifier = percentage;
-      }
-    }
-  }
-  if ("runmultiplier" in bonus && bonus.runmultiplier !== undefined) {
-    let percentage: number;
-    if (bonus.runmultiplier.percent) {
-      assert(bonus.runmultiplier.val === undefined);
-      percentage = bonus.runmultiplier.percent;
-    } else {
-      assert(bonus.runmultiplier.val !== undefined);
-      assert(bonus.runmultiplier.percent === undefined);
-      percentage = bonus.runmultiplier.val * 100;
-    }
-    bonusObject.runSpeedPercentageModifier = percentage;
-  }
-  if ("sprintbonus" in bonus && bonus.sprintbonus !== undefined) {
-    let percentage: number;
-    if (bonus.sprintbonus.percent) {
-      assert(bonus.sprintbonus.val === undefined);
-      percentage = bonus.sprintbonus.percent;
-    } else {
-      assert(bonus.sprintbonus.val !== undefined);
-      assert(bonus.sprintbonus.percent === undefined);
-      percentage = bonus.sprintbonus.val * 100;
-    }
-    bonusObject.sprintSpeedPercentageModifier = percentage;
-  }
-  if ("lifestylecost" in bonus && bonus.lifestylecost !== undefined) {
-    const lifestyleCostArray = Array.isArray(bonus.lifestylecost)
-      ? bonus.lifestylecost
-      : [bonus.lifestylecost];
-    bonusObject.lifestyleCostModifier = lifestyleCostArray.map(
-      (lifestyleCost) => {
-        if (typeof lifestyleCost === "object") {
-          return {
-            lifestyle: lifestyleCost._lifestyle,
-            cost: lifestyleCost.xmltext,
-          };
-        } else {
-          return { cost: lifestyleCost };
-        }
-      }
-    );
-  }
-  if ("stuncmrecovery" in bonus && bonus.stuncmrecovery !== undefined) {
-    const stunHealing =
-      typeof bonus.stuncmrecovery === "number"
-        ? bonus.stuncmrecovery
-        : { option: bonus.stuncmrecovery };
-    bonusObject.stunHealing = stunHealing;
-  }
-  if ("physicalcmrecovery" in bonus && bonus.physicalcmrecovery !== undefined) {
-    const physicalHealing =
-      typeof bonus.physicalcmrecovery === "number"
-        ? bonus.physicalcmrecovery
-        : { option: bonus.physicalcmrecovery };
-    bonusObject.physicalHealing = physicalHealing;
-  }
-  if ("armor" in bonus && bonus.armor !== undefined) {
-    const armour =
-      typeof bonus.armor === "number"
-        ? bonus.armor
-        : typeof bonus.armor === "string"
-        ? { option: "Rating" as const }
-        : typeof bonus.armor.xmltext === "number"
-        ? bonus.armor.xmltext
-        : { option: bonus.armor.xmltext };
-
-    bonusObject.armour = {
-      bonus: armour,
-      ...(typeof bonus.armor === "object" && { nonStacking: true }),
-    };
-  }
-  if ("firearmor" in bonus && bonus.firearmor !== undefined) {
-    const fireArmour =
-      typeof bonus.firearmor === "number"
-        ? bonus.firearmor
-        : { option: bonus.firearmor };
-    bonusObject.fireArmour = fireArmour;
-  }
-  if ("electricityarmor" in bonus && bonus.electricityarmor !== undefined) {
-    const electricityArmour =
-      typeof bonus.electricityarmor === "number"
-        ? bonus.electricityarmor
-        : { option: bonus.electricityarmor };
-    bonusObject.electricityArmour = electricityArmour;
-  }
-  if ("coldarmor" in bonus && bonus.coldarmor !== undefined) {
-    const coldArmour =
-      typeof bonus.coldarmor === "number"
-        ? bonus.coldarmor
-        : { option: bonus.coldarmor };
-    bonusObject.coldArmour = coldArmour;
-  }
-  if ("dodge" in bonus && bonus.dodge !== undefined) {
-    bonusObject.dodge = convertRatingUnion(bonus.dodge);
-  }
-  if ("unarmedreach" in bonus && bonus.unarmedreach !== undefined) {
-    bonusObject.unarmedReach = bonus.unarmedreach;
-  }
-  {
-    // addiction scope
-    let physiologicalInitial, physiologicalProgressing;
-    let psychologicalInitial, psychologicalProgressing;
-
-    if (
-      "physiologicaladdictionfirsttime" in bonus &&
-      bonus.physiologicaladdictionfirsttime !== undefined
-    ) {
-      physiologicalInitial = convertRatingUnion(
-        bonus.physiologicaladdictionfirsttime
+      const optionList = getListFromOtherFile(
+        selectText._xml,
+        selectText._xpath
       );
-    }
-    if (
-      "physiologicaladdictionalreadyaddicted" in bonus &&
-      bonus.physiologicaladdictionalreadyaddicted !== undefined
-    ) {
-      physiologicalProgressing = convertRatingUnion(
-        bonus.physiologicaladdictionalreadyaddicted
-      );
-    }
-    const physiological =
-      physiologicalInitial !== undefined ||
-      physiologicalProgressing !== undefined
-        ? {
-            initialTest:
-              physiologicalInitial !== undefined ? physiologicalInitial : [0],
-            progressingTest:
-              physiologicalProgressing !== undefined
-                ? physiologicalProgressing
-                : [0],
-          }
-        : undefined;
-
-    if (
-      "psychologicaladdictionfirsttime" in bonus &&
-      bonus.psychologicaladdictionfirsttime !== undefined
-    ) {
-      psychologicalInitial = convertRatingUnion(
-        bonus.psychologicaladdictionfirsttime
-      );
-    }
-    if (
-      "psychologicaladdictionalreadyaddicted" in bonus &&
-      bonus.psychologicaladdictionalreadyaddicted !== undefined
-    ) {
-    }
-    const psychological =
-      psychologicalInitial !== undefined ||
-      psychologicalProgressing !== undefined
-        ? {
-            initialTest:
-              psychologicalInitial !== undefined ? psychologicalInitial : [0],
-            progressingTest:
-              psychologicalProgressing !== undefined
-                ? psychologicalProgressing
-                : [0],
-          }
-        : undefined;
-
-    if (physiological !== undefined || psychological !== undefined) {
-      bonusObject.addictionResistance = {
-        ...(physiological !== undefined && { physiological: physiological }),
-        ...(psychological !== undefined && { psychological: psychological }),
+      selection = {
+        optionList: optionList,
       };
     }
-  }
-  if ("composure" in bonus && bonus.composure !== undefined) {
-    bonusObject.composure = bonus.composure;
-  }
-  if (
-    "judgeintentionsdefense" in bonus &&
-    bonus.judgeintentionsdefense !== undefined
-  ) {
-    bonusObject.judgeIntentionsDefense = convertRatingUnion(
-      bonus.judgeintentionsdefense
+    assert(
+      Object.keys(selection).length > 0,
+      `bonus selecttext ${JSON.stringify(selectText)} not converted`
     );
+    assert(miscellaneousOption.selection === undefined);
+    miscellaneousOption.selection = selection;
   }
-  if ("memory" in bonus && bonus.memory !== undefined) {
-    bonusObject.memory = convertRatingUnion(bonus.memory);
+  if ("_useselected" in bonus) {
+    checkProp("_useselected");
+    assert(bonus._useselected == "False");
+    assert(miscellaneousOption.displaySelection === undefined);
+    miscellaneousOption.displaySelection = false;
   }
-  if ("drainresist" in bonus && bonus.drainresist !== undefined) {
-    bonusObject.drainResist = convertRatingUnion(bonus.drainresist);
+  if ("nuyenamt" in bonus && bonus.nuyenamt !== undefined) {
+    checkProp("nuyenamt");
   }
-  if ("fadingresist" in bonus && bonus.fadingresist !== undefined) {
-    bonusObject.fadingResist = convertRatingUnion(bonus.fadingresist);
+  if ("nuyenmaxbp" in bonus && bonus.nuyenmaxbp !== undefined) {
+    checkProp("nuyenmaxbp");
   }
-  if (
-    "directmanaspellresist" in bonus &&
-    bonus.directmanaspellresist !== undefined
-  ) {
-    bonusObject.directManaResist = convertRatingUnion(
-      bonus.directmanaspellresist
-    );
+  if ("selectrestricted" in bonus && bonus.selectrestricted !== undefined) {
+    checkProp("selectrestricted");
+    assert(miscellaneousOption.linkLicense === undefined);
+    const linkLicense = bonus.selectrestricted;
+    assert(linkLicense === "");
+    miscellaneousOption.linkLicense = true;
   }
-  if (
-    "detectionspellresist" in bonus &&
-    bonus.detectionspellresist !== undefined
-  ) {
-    bonusObject.detectionResist = convertRatingUnion(
-      bonus.detectionspellresist
-    );
-    bonus.detectionspellresist;
+  if ("enabletab" in bonus && bonus.enabletab !== undefined) {
+    checkProp("enabletab");
   }
-  if ("manaillusionresist" in bonus && bonus.manaillusionresist !== undefined) {
-    bonusObject.manaIllusionResist = convertRatingUnion(
-      bonus.manaillusionresist
-    );
-    bonus.manaillusionresist;
-  }
-  if (
-    "mentalmanipulationresist" in bonus &&
-    bonus.mentalmanipulationresist !== undefined
-  ) {
-    bonusObject.mentalManipulationResist = convertRatingUnion(
-      bonus.mentalmanipulationresist
-    );
-  }
-  if ("decreasebodresist" in bonus && bonus.decreasebodresist !== undefined) {
-    bonusObject.decreaseBodyResist = convertRatingUnion(
-      bonus.decreasebodresist
-    );
-  }
-  if ("decreaseagiresist" in bonus && bonus.decreaseagiresist !== undefined) {
-    bonusObject.decreaseAgilityResist = convertRatingUnion(
-      bonus.decreaseagiresist
-    );
-  }
-  if ("decreaserearesist" in bonus && bonus.decreaserearesist !== undefined) {
-    bonusObject.decreaseReasonanceResist = convertRatingUnion(
-      bonus.decreaserearesist
-    );
-  }
-  if ("decreasestrresist" in bonus && bonus.decreasestrresist !== undefined) {
-    bonusObject.decreaseStrengthResist = convertRatingUnion(
-      bonus.decreasestrresist
-    );
-  }
-  if ("decreasecharesist" in bonus && bonus.decreasecharesist !== undefined) {
-    bonusObject.decreaseCharismaResist = convertRatingUnion(
-      bonus.decreasecharesist
-    );
-  }
-  if ("decreaseintresist" in bonus && bonus.decreaseintresist !== undefined) {
-    bonusObject.decreaseIntuitionResist = convertRatingUnion(
-      bonus.decreaseintresist
-    );
-  }
-  if ("decreaselogresist" in bonus && bonus.decreaselogresist !== undefined) {
-    bonusObject.decreaseLogicResist = convertRatingUnion(
-      bonus.decreaselogresist
-    );
-  }
-  if ("decreasewilresist" in bonus && bonus.decreasewilresist !== undefined) {
-    bonusObject.decreaseWillpowerResist = convertRatingUnion(
-      bonus.decreasewilresist
-    );
+  if ("actiondicepool" in bonus && bonus.actiondicepool !== undefined) {
+    checkProp("actiondicepool");
   }
   if ("addlimb" in bonus && bonus.addlimb !== undefined) {
+    checkProp("addlimb");
     const limbSlot = convertLimbSlot(bonus.addlimb.limbslot);
-    bonusObject.addLimb = {
+    miscellaneousOption.addLimb = {
       limbSlot: limbSlot,
       numberOfLimbs: bonus.addlimb.val,
     };
   }
-  if ("addspirit" in bonus && bonus.addspirit !== undefined) {
-    // const addSpirits = Array.isArray(bonus.addspirit)
-    // ? bonus.addspirit
-    // : [bonus.addspirit];
-    //TODO: handle
-  }
-  if ("adapsin" in bonus && bonus.adapsin !== undefined) {
-    bonusObject.adapsin = true;
-  }
-  // TODO: Reflex is not defined
-  // if ("reflex" in bonus && bonus.reflex !== undefined) {
-  //   bonusObject.reflex = true;
-  // }
-  if ("ambidextrous" in bonus && bonus.ambidextrous !== undefined) {
-    bonusObject.ambidextrous = true;
-  }
+
+  const bonusObject: BonusType = {
+    ...(Object.keys(attributeOption).length > 0 && {
+      attribute: attributeOption,
+    }),
+    ...(Object.keys(skillOption).length > 0 && { skill: skillOption }),
+    ...(Object.keys(powerOption).length > 0 && { power: powerOption }),
+    ...(Object.keys(spellAndMagicOption).length > 0 && {
+      spellAndMagic: spellAndMagicOption,
+    }),
+    ...(Object.keys(technomancerOption).length > 0 && {
+      technomancer: technomancerOption,
+    }),
+    ...(Object.keys(combatAndWeaponOption).length > 0 && {
+      combatAndWeapon: combatAndWeaponOption,
+    }),
+    ...(Object.keys(conditionAndRecoveryOption).length > 0 && {
+      conditionAndRecovery: conditionAndRecoveryOption,
+    }),
+    ...(Object.keys(movementAndLifestyleOption).length > 0 && {
+      movementAndLifestyle: movementAndLifestyleOption,
+    }),
+    ...(Object.keys(testAndResistanceOption).length > 0 && {
+      testAndResistance: testAndResistanceOption,
+    }),
+    ...(Object.keys(initiativeOption).length > 0 && {
+      initiative: initiativeOption,
+    }),
+    ...(Object.keys(gearAndVehicleOption).length > 0 && {
+      gearAndVehicle: gearAndVehicleOption,
+    }),
+    ...(Object.keys(essenceAndAugmentationOption).length > 0 && {
+      essenceAndAugmentation: essenceAndAugmentationOption,
+    }),
+    ...(Object.keys(contactAndReputationOption).length > 0 && {
+      contactAndReputation: contactAndReputationOption,
+    }),
+    ...(Object.keys(qualityOption).length > 0 && { quality: qualityOption }),
+    ...(Object.keys(specificQualityOption).length > 0 && {
+      specificQuality: specificQualityOption,
+    }),
+    ...(Object.keys(miscellaneousOption).length > 0 && {
+      miscellaneous: miscellaneousOption,
+    }),
+  };
+  // Check to ensure no props were missed
+  const handledProps = Array.from(checkedProps);
+  const inputProps = Object.keys(bonus).filter((k) => k !== "xmltext"); // ignore xmltext if needed
+  const missedProps = inputProps.filter((prop) => !handledProps.includes(prop));
+  assert(
+    missedProps.length === 0,
+    `Unhandled bonus properties: ${missedProps.join(", ")}`
+  );
   if (Object.keys(bonusObject).length === 0) {
     return undefined;
   }
@@ -1048,7 +2767,7 @@ export const bonusAttribute = function (
   });
 };
 
-export const bonusSkill = function (skillInput: SkillListType) {
+export const bonusSkill = function (skillInput: SkillXMLListType) {
   const skillList = Array.isArray(skillInput) ? skillInput : [skillInput];
   return skillList.map((skill) => {
     return {
@@ -1058,6 +2777,9 @@ export const bonusSkill = function (skillInput: SkillListType) {
 };
 
 const spellCategoryConversion = function (category: string) {
+  if (category === "Rituals") {
+    return spellCategoryEnum.Ritual;
+  }
   const spellCategoryEnumSchema = type.valueOf(spellCategoryEnum);
   const categoryEnum = spellCategoryEnumSchema(category);
   assert(
@@ -1078,9 +2800,12 @@ const weaponTypeConversion = function (weaponType: string) {
 };
 
 export const convertKarmaCost = function (karmaCost: GenericNameValueType) {
-  assert(karmaCost.name !== undefined);
+  assert(karmaCost.name !== undefined, karmaCost.name);
   const name = karmaCost.name as attributeXMLEnum;
-  assert(Object.values(attributeXMLEnum).includes(name));
+  assert(
+    Object.values(attributeXMLEnum).includes(name),
+    JSON.stringify(karmaCost)
+  );
 
   assert(typeof karmaCost.val === "number");
 
@@ -1092,44 +2817,495 @@ export const convertKarmaCost = function (karmaCost: GenericNameValueType) {
 
 const convertRatingUnion = function (unionObject: NumberOrAnyRatingType) {
   if (typeof unionObject === "number") {
-    return [unionObject];
+    return unionObject;
   } else {
-    if (unionObject === "-Rating") {
-      return [
-        -1,
-        { operator: mathOperatorEnum.Multiply },
-        { option: "Rating" as const },
-      ];
-    } else {
-      return [{ option: unionObject }];
-    }
+    return { option: unionObject };
   }
 };
 
-// const getListFromOtherFile = function (fileName: string, xmlNodePath: string) {
-//   const currentPath = import.meta.url;
-//   const xml_string = fs.readFileSync(
-//     fileURLToPath(path.dirname(currentPath) + `../../../../xmls/${fileName}`),
-//     "utf8"
-//   );
-//   const parser = new XMLParser({
-//     ignoreAttributes: false,
-//     attributeNamePrefix: "_",
-//     textNodeName: "xmltext",
-//   });
-//   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-//   const jObj: any = parser.parse(xml_string);
-//   // console.log(
-//   //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-//   //   jObj.chummer.armors.armor[193].gears.usegear
-//   // );
-//   const nodePaths = xmlNodePath.split("|")
-//   nodePaths.forEach((nodePath)=>{
-//     nodePath
-//   })
+const convertRatingAttributeUnion = function (
+  unionObject: NumberOrRatingOrAttributeType
+) {
+  if (typeof unionObject === "number") {
+    return unionObject;
+  } else if (unionObject === "Rating" || unionObject === "-Rating") {
+    return { option: unionObject };
+  } else {
+    return { option: convertAttribute(unionObject) };
+  }
+};
 
-//   const armourListParsed = ArmourListXmlSchema(
-//     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-//     jObj.chummer.armors.armor
-//   );
-// };
+const getListFromOtherFile = function (
+  _fileName: string,
+  xmlNodePath: string
+): Array<{
+  base: listTypeEnum;
+  modifier?: Array<BonusSelectionOptionModifierType>;
+}> {
+  // const fileName = `${fileNameInput}.xml`;
+  // console.log(fileName);
+  // const currentPath = import.meta.url;
+  // const xml_string = fs.readFileSync(
+  //   fileURLToPath(path.dirname(currentPath) + `../../../../xmls/${fileName}`),
+  //   "utf8"
+  // );
+  // const parser = new XMLParser({
+  //   ignoreAttributes: false,
+  //   attributeNamePrefix: "_",
+  //   textNodeName: "xmltext",
+  // });
+  // // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // const jObj: any = parser.parse(xml_string);
+  // console.log(
+  //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+  //   jObj.chummer.armors.armor[193].gears.usegear
+  // );
+  const nodePaths = xmlNodePath.split("|");
+  return nodePaths.map((nodePath) => {
+    let modifier;
+    const regexInner = nodePath.match(/.*\[(.*?)\]/);
+    if (regexInner !== null) {
+      // console.log(regexInner[1]);
+      // assert(false);
+    }
+
+    if (nodePath.includes("/chummer/vehicles/vehicle")) {
+      return {
+        base: listTypeEnum.Vehicle,
+        ...(modifier !== undefined && { modifier: modifier }),
+      };
+    } else if (nodePath.includes("/chummer/weapons/weapon")) {
+      return {
+        base: listTypeEnum.Weapon,
+        ...(modifier !== undefined && { modifier: modifier }),
+      };
+    } else if (nodePath.includes("/chummer/matrixattributes")) {
+      return {
+        base: listTypeEnum.MatrixAttribute,
+        ...(modifier !== undefined && { modifier: modifier }),
+      };
+    } else if (nodePath.includes("/chummer/elements")) {
+      return {
+        base: listTypeEnum.Element,
+        ...(modifier !== undefined && { modifier: modifier }),
+      };
+    } else if (nodePath.includes("/chummer/immunities")) {
+      return {
+        base: listTypeEnum.Immunity,
+        ...(modifier !== undefined && { modifier: modifier }),
+      };
+    } else if (nodePath.includes("/chummer/spiritcategories/category")) {
+      return {
+        base: listTypeEnum.SpiritCategory,
+        ...(modifier !== undefined && { modifier: modifier }),
+      };
+    } else if (nodePath.includes("/chummer/skills/skill")) {
+      return {
+        base: listTypeEnum.Skill,
+        ...(modifier !== undefined && { modifier: modifier }),
+      };
+    } else if (nodePath.includes("/chummer/knowledgeskills/skill/")) {
+      return {
+        base: listTypeEnum.KnowledgeSkill,
+        ...(modifier !== undefined && { modifier: modifier }),
+      };
+    } else if (nodePath.includes("/chummer/skillgroups")) {
+      return {
+        base: listTypeEnum.SkillGroup,
+        ...(modifier !== undefined && { modifier: modifier }),
+      };
+    } else if (nodePath.includes("/chummer/metatypes/metatype")) {
+      return {
+        base: listTypeEnum.Heritage,
+        ...(modifier !== undefined && { modifier: modifier }),
+      };
+    } else if (nodePath.includes("/chummer/qualities/quality")) {
+      return {
+        base: listTypeEnum.Quality,
+        ...(modifier !== undefined && { modifier: modifier }),
+      };
+    } else if (nodePath.includes("/chummer/gears/gear")) {
+      return {
+        base: listTypeEnum.Gear,
+        ...(modifier !== undefined && { modifier: modifier }),
+      };
+    } else if (nodePath.includes("/chummer/storybuilder/macros/mega/")) {
+      return {
+        base: listTypeEnum.Megacorp,
+        ...(modifier !== undefined && { modifier: modifier }),
+      };
+    } else if (nodePath.includes("/chummer/storybuilder/macros/megadoublea")) {
+      return {
+        base: listTypeEnum.MegacorpDoubleA,
+        ...(modifier !== undefined && { modifier: modifier }),
+      };
+    } else if (nodePath.includes("/chummer/spells/spell")) {
+      return {
+        base: listTypeEnum.Spell,
+        ...(modifier !== undefined && { modifier: modifier }),
+      };
+    } else if (nodePath.includes("/chummer/spirits/spirit")) {
+      return {
+        base: listTypeEnum.Spirit,
+        ...(modifier !== undefined && { modifier: modifier }),
+      };
+    } else if (nodePath.includes("/chummer/programs/program")) {
+      return {
+        base: listTypeEnum.Program,
+        ...(modifier !== undefined && { modifier: modifier }),
+      };
+    } else if (nodePath.includes("/chummer/actions/action")) {
+      return {
+        base: listTypeEnum.Action,
+        ...(modifier !== undefined && { modifier: modifier }),
+      };
+    } else {
+      assert(false, `Unknown xmlNodePath: ${nodePath}`);
+    }
+  });
+};
+function getSkillSelectionOptions(linkSkill: SelectSkillXMLType) {
+  assert(linkSkill !== "");
+  let skill:
+    | {
+        skillList: string[];
+        limit: "Exclude" | "Only";
+      }
+    | undefined;
+  let skillGroup:
+    | {
+        skillGroupList: string[];
+        limit: "Exclude" | "Only";
+      }
+    | undefined;
+  let skillCategory:
+    | {
+        skillCategoryList: string[];
+        limit: "Exclude" | "Only";
+      }
+    | undefined;
+  let attribute:
+    | {
+        attributeList: string[];
+      }
+    | undefined;
+  let knowledgeSkillRestriction:
+    | {
+        limit: "Exclude" | "Only";
+      }
+    | undefined;
+  if (linkSkill._limittoskill !== undefined) {
+    assert(skill === undefined, JSON.stringify(skill));
+    skill = {
+      skillList: linkSkill._limittoskill.split(",").map((s) => s.trim()),
+      limit: "Only" as const,
+    };
+  }
+  if (linkSkill._excludeskill !== undefined) {
+    assert(skill === undefined, JSON.stringify(skill));
+    skill = {
+      skillList: linkSkill._excludeskill.split(",").map((s) => s.trim()),
+      limit: "Exclude" as const,
+    };
+  }
+  if (linkSkill._skillgroup !== undefined) {
+    assert(skillGroup === undefined, JSON.stringify(skillGroup));
+    skillGroup = {
+      skillGroupList: linkSkill._skillgroup.split(",").map((s) => s.trim()),
+      limit: "Only" as const,
+    };
+  }
+  if (linkSkill._excludecategory !== undefined) {
+    assert(skillCategory === undefined, JSON.stringify(skillCategory));
+    skillCategory = {
+      skillCategoryList: linkSkill._excludecategory
+        .split(",")
+        .map((s) => s.trim()),
+      limit: "Exclude" as const,
+    };
+  }
+  if (linkSkill._skillcategory !== undefined) {
+    if (skillCategory !== undefined) {
+      assert(false, JSON.stringify(skillCategory));
+    }
+    skillCategory = {
+      skillCategoryList: linkSkill._skillcategory
+        .split(",")
+        .map((s) => s.trim()),
+      limit: "Only" as const,
+    };
+  }
+  if (linkSkill.skillcategories !== undefined) {
+    assert(skillCategory === undefined, JSON.stringify(skillCategory));
+    skillCategory = {
+      skillCategoryList: linkSkill.skillcategories.category,
+      limit: "Only" as const,
+    };
+  }
+
+  if (linkSkill._limittoattribute !== undefined) {
+    attribute = {
+      attributeList: linkSkill._limittoattribute
+        .split(",")
+        .map((s) => s.trim()),
+    };
+  }
+  if (linkSkill._knowledgeskills !== undefined) {
+    knowledgeSkillRestriction = {
+      limit:
+        linkSkill._knowledgeskills === "True"
+          ? ("Only" as const)
+          : ("Exclude" as const),
+    };
+  }
+  const selectSkillBase = {
+    restriction: {
+      ...(skill !== undefined && {
+        skillList: skill,
+      }),
+      ...(skillGroup !== undefined && {
+        skillGroupList: skillGroup,
+      }),
+      ...(skillCategory !== undefined && {
+        skillCategoryList: skillCategory,
+      }),
+      ...(attribute !== undefined && {
+        attributeList: attribute,
+      }),
+      ...(knowledgeSkillRestriction !== undefined && {
+        knowledgeSkillRestriction: knowledgeSkillRestriction,
+      }),
+    },
+    ...(linkSkill._maximumrating !== undefined && {
+      maximumRating: parseInt(linkSkill._maximumrating),
+    }),
+    ...(linkSkill._minimumrating !== undefined && {
+      minimumRating: parseInt(linkSkill._minimumrating),
+    }),
+  };
+  return selectSkillBase;
+}
+
+function convertSpecificAttribute(
+  attribute: GenericNameValueType
+): SpecificAttributeBonusType {
+  assert("name" in attribute, JSON.stringify(attribute));
+  let value;
+  if ("val" in attribute) {
+    assert(!("value" in attribute), JSON.stringify(attribute));
+    value = attribute.val;
+  } else {
+    value = attribute.value;
+  }
+
+  const name = attribute.name as attributeXMLEnum;
+  assert(
+    Object.values(attributeXMLEnum).includes(name),
+    JSON.stringify(attribute)
+  );
+
+  let min, max, aug;
+  if (value !== undefined) {
+    const match = NumberFixedRating.match(value.toString());
+    if (match.failed()) {
+      assert(false, match.message);
+    }
+    value = NumberFixedRatingSemantics(match).eval();
+  }
+  if (attribute.min !== undefined) {
+    const match = NumberFixedRating.match(attribute.min.toString());
+    if (match.failed()) {
+      assert(false, match.message);
+    }
+
+    min = NumberFixedRatingSemantics(match).eval();
+  }
+  if (attribute.max !== undefined) {
+    const match = NumberFixedRating.match(attribute.max.toString());
+    if (match.failed()) {
+      assert(false, match.message);
+    }
+
+    max = NumberFixedRatingSemantics(match).eval();
+  }
+  if (attribute.aug !== undefined) {
+    const match = NumberFixedRating.match(attribute.aug.toString());
+    if (match.failed()) {
+      assert(false, match.message);
+    }
+
+    aug = NumberFixedRatingSemantics(match).eval();
+  }
+  // Todo: add other attributes
+  return {
+    linkType: {
+      linkedAttribute: convertAttribute(name),
+    },
+    ...(value !== undefined && {
+      attributeIncrease: value,
+    }),
+    ...(min !== undefined && {
+      minimumIncrease: min,
+    }),
+    ...(max !== undefined && {
+      maximumIncrease: max,
+    }),
+    ...(aug !== undefined && {
+      augmentatedIncrease: aug,
+    }),
+  };
+}
+
+function convertSkill(skill: SkillXMLType) {
+  let bonus;
+  if (skill.bonus !== undefined) {
+    assert(skill.val === undefined);
+    bonus = skill.bonus;
+  } else {
+    assert(skill.val !== undefined);
+    bonus = skill.val;
+  }
+
+  let condition;
+  if (skill.condition !== undefined) {
+    condition = convertCondition(skill.condition);
+  }
+  let modifierType;
+  if (skill.applytorating !== undefined) {
+    modifierType =
+      skill.applytorating === "True"
+        ? (bonusSkillModifierTypeEnum.ApplyBonusToLevel as const)
+        : (bonusSkillModifierTypeEnum.DicePoolIncrease as const);
+  } else {
+    modifierType = bonusSkillModifierTypeEnum.DicePoolIncrease as const;
+  }
+
+  return {
+    name: skill.name,
+    bonus: convertRatingUnion(bonus),
+    ...(skill._precedence !== undefined && { precedence: skill._precedence }),
+    ...(condition !== undefined && { condition: condition }),
+    ...(skill.exclude !== undefined && { exclude: skill.exclude }),
+    modifierType: modifierType,
+  };
+}
+
+function convertCondition(conditionXML: string) {
+  let condition;
+  if (conditionXML.includes("LimitCondition")) {
+    const currentPath = import.meta.url;
+    const xml_string = fs.readFileSync(
+      fileURLToPath(path.dirname(currentPath) + "../../../../xmls/en-us.xml"),
+      "utf8"
+    );
+    const parser = new XMLParser({
+      ignoreAttributes: false,
+      attributeNamePrefix: "_",
+      textNodeName: "xmltext",
+    });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const jObj: any = parser.parse(xml_string);
+    // console.dir(
+    //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    //   jObj.chummer.strings.string[120],
+    //   { depth: Infinity }
+    // );
+    const englishTranslationListParsed = EnglishTranslationsXMLSchema(
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      jObj.chummer.strings
+    );
+
+    if (englishTranslationListParsed instanceof type.errors) {
+      assert(false, englishTranslationListParsed.summary);
+    }
+    condition = englishTranslationListParsed.string.find((item) => {
+      return item.key === conditionXML;
+    });
+
+    assert(condition !== undefined, conditionXML);
+    assert(typeof condition.text === "string", JSON.stringify(condition));
+    condition = condition.text;
+  } else {
+    condition = conditionXML;
+  }
+  return condition;
+}
+
+function convertSelectAttribute(
+  selectAttribute:
+    | { excludeattribute: attributeXMLEnum | attributeXMLEnum[]; max?: number }
+    | {
+        attribute: attributeXMLEnum | attributeXMLEnum[];
+        val?: number | "Rating";
+      }
+) {
+  let element;
+  if ("excludeattribute" in selectAttribute) {
+    const attributeList = Array.isArray(selectAttribute.excludeattribute)
+      ? selectAttribute.excludeattribute
+      : [selectAttribute.excludeattribute];
+
+    const increase = selectAttribute.max;
+    element = {
+      linkType: {
+        exclude: attributeList.map((attribute) => {
+          return convertAttribute(attribute);
+        }),
+      },
+      ...(increase !== undefined && { maximumIncrease: increase }),
+    };
+  }
+  if ("attribute" in selectAttribute) {
+    const attributeList = Array.isArray(selectAttribute.attribute)
+      ? selectAttribute.attribute
+      : [selectAttribute.attribute];
+
+    const increase =
+      selectAttribute.val !== undefined
+        ? typeof selectAttribute.val === "number"
+          ? selectAttribute.val
+          : { option: selectAttribute.val }
+        : undefined;
+    element = {
+      linkType: {
+        include: attributeList.map((attribute) => {
+          return convertAttribute(attribute);
+        }),
+      },
+      ...(increase !== undefined && { attributeIncrease: increase }),
+    };
+  }
+  assert(element !== undefined);
+  return element;
+}
+
+const convertWeaponSkillAccuracy = function (
+  weaponSkillAccuracy: WeaponSkillAccuracyXMLType
+) {
+  let skill: WeaponAccuracySkillListSkillSelectionType;
+  if (weaponSkillAccuracy.selectskill !== undefined) {
+    const linkSkill = weaponSkillAccuracy.selectskill;
+    assert(linkSkill !== "");
+    const selectSkillBase = getSkillSelectionOptions(linkSkill);
+
+    assert(
+      linkSkill.disablespecializationeffects === undefined,
+      linkSkill.disablespecializationeffects
+    );
+    assert(linkSkill._prompt === undefined, linkSkill._prompt);
+    assert(linkSkill.applytorating === undefined, linkSkill.applytorating);
+    assert(linkSkill.max === undefined, `${linkSkill.max}`);
+    assert(linkSkill.val === undefined, `${linkSkill.val}`);
+    skill = {
+      selectSkill: true,
+      selectionOptions: selectSkillBase,
+    };
+  } else {
+    assert(weaponSkillAccuracy.name !== undefined);
+    skill = {
+      selectSkill: false,
+      name: weaponSkillAccuracy.name,
+    };
+  }
+  return skill;
+};

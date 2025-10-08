@@ -413,30 +413,36 @@ export function convertIncludedXmlGears(
   });
 }
 
-export function convertAttribute(attribute: attributeXMLEnum) {
+export function convertAttribute(
+  attribute: attributeXMLEnum
+): attributeTypeEnum {
   switch (attribute) {
     case attributeXMLEnum.BOD:
-      return attributeTypeEnum.Body;
+      return attributeTypeEnum.Body as const;
     case attributeXMLEnum.AGI:
-      return attributeTypeEnum.Agility;
+      return attributeTypeEnum.Agility as const;
     case attributeXMLEnum.REA:
-      return attributeTypeEnum.Reaction;
+      return attributeTypeEnum.Reaction as const;
     case attributeXMLEnum.STR:
-      return attributeTypeEnum.Strength;
+      return attributeTypeEnum.Strength as const;
     case attributeXMLEnum.WIL:
-      return attributeTypeEnum.Willpower;
+      return attributeTypeEnum.Willpower as const;
     case attributeXMLEnum.LOG:
-      return attributeTypeEnum.Logic;
+      return attributeTypeEnum.Logic as const;
     case attributeXMLEnum.INT:
-      return attributeTypeEnum.Intuition;
+      return attributeTypeEnum.Intuition as const;
     case attributeXMLEnum.CHA:
-      return attributeTypeEnum.Charisma;
+      return attributeTypeEnum.Charisma as const;
     case attributeXMLEnum.MAG:
-      return attributeTypeEnum.Magic;
+      return attributeTypeEnum.Magic as const;
     case attributeXMLEnum.RES:
-      return attributeTypeEnum.Resonance;
+      return attributeTypeEnum.Resonance as const;
     case attributeXMLEnum.EDG:
-      return attributeTypeEnum.Edge;
+      return attributeTypeEnum.Edge as const;
+    case attributeXMLEnum.INI:
+      return attributeTypeEnum.Initiative as const;
+    case attributeXMLEnum.DEP:
+      return attributeTypeEnum.Depth as const;
     default:
       assert(false, attribute);
   }
@@ -518,7 +524,6 @@ export const convertXmlCategory = function (
   const categoryInformation = categoryList.find((categoryObject) => {
     return categoryObject.xmltext === category;
   });
-  console.log(categoryList);
   assert(
     categoryInformation !== undefined,
     `Category: ${category} is undefined`

@@ -11,22 +11,22 @@ import {
 import { type } from "arktype";
 
 const attributeValueSchema = type({
+  "+": "reject",
   name: type.valueOf(attributeXMLEnum),
   value: "number",
 });
 const limitCategoryValueSchema = type({
+  "+": "reject",
   name: type.valueOf(limitCategoryEnum),
   value: "number",
 });
 const QualitySchema = type.or(
-  type({
-    xmltext: "string",
-    _rating: "string",
-  }),
+  type({ "+": "reject", xmltext: "string", _rating: "string" }),
   "string"
 );
 
 const DrugEffectSchema = type({
+  "+": "reject",
   // Different levels that can be applied (for Block)
   "level?": "number",
   // List of attribute bonuses/penalties
@@ -48,11 +48,13 @@ const DrugEffectSchema = type({
   "speed?": "number",
 });
 const DrugEffectXmlListSchema = type({
+  "+": "reject",
   effect: type.or(DrugEffectSchema, DrugEffectSchema.array()),
 });
 export type DrugEffectXmlListType = typeof DrugEffectXmlListSchema.infer;
 
 const DrugComponentXmlSchema = type({
+  "+": "reject",
   id: "string",
   name: "string",
   // Drug Component Category

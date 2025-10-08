@@ -23,6 +23,7 @@ enum weaponMountAttributeCategoryXmlEnum {
 // This is never actually used, this information will just be
 // in code, e.g. what size categories there are will be in code
 const WeaponMountSchema = type({
+  "+": "reject",
   id: "string",
   name: "string",
   // Category of weapon mount

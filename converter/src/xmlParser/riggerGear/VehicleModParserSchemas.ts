@@ -24,6 +24,7 @@ export enum vehicleModXmlCategoryEnum {
 }
 
 const SubsystemXmlSchema = type({
+  "+": "reject",
   subsystem: type.or("string", "string[]"),
 });
 export type SubsystemXmlType = typeof SubsystemXmlSchema.infer;
@@ -37,6 +38,7 @@ const VehicleModMaxRatingSchema = type.or(
 export type VehicleModMaxRatingType = typeof VehicleModMaxRatingSchema.infer;
 
 const VehicleModXmlSchema = type({
+  "+": "reject",
   id: "string",
   name: "string",
   // Category of vehicle mod

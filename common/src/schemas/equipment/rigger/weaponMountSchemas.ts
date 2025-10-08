@@ -8,6 +8,7 @@ import {
 import { CustomisedWeaponSchema } from "../combat/weaponSchemas.js";
 
 export const CustomisedWeaponMountSchema = type({
+  "+": "reject",
   control: type.valueOf(weaponMountControlEnum),
   flexibility: type.valueOf(weaponMountFlexibilityEnum),
   size: type.valueOf(weaponMountSizeEnum),

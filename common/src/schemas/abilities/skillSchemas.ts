@@ -1,6 +1,7 @@
 import { type } from "arktype";
 import { attributeTypeEnum, skillCategoryEnum } from "../../enums.js";
 export const SkillSchema = type({
+  "+": "reject",
   // id: "string",
   name: "string",
   isKnowledgeSkill: "boolean",
@@ -18,7 +19,7 @@ export type SkillType = typeof SkillSchema.infer;
 export const SkillListSchema = type(SkillSchema.array());
 export type SkillListType = typeof SkillListSchema.infer;
 
-export const CustomSkillSchema = SkillSchema.and({
+export const CustomSkillSchema = SkillSchema.merge({
   skillPoints: "number",
   karmaPoints: "number",
   "specialisationsSelected?": "string[]",
@@ -28,6 +29,7 @@ export const CustomSkillListSchema = type(CustomSkillSchema.array());
 export type CustomSkillListType = typeof CustomSkillListSchema.infer;
 
 export const CustomSkillGroupSchema = type({
+  "+": "reject",
   name: "string",
   skillGroupPoints: "number",
   karmaPoints: "number",
@@ -37,6 +39,7 @@ export const CustomSkillGroupListSchema = type(CustomSkillGroupSchema.array());
 export type CustomSkillGroupListType = typeof CustomSkillGroupListSchema.infer;
 
 export const CustomKnowledgeSkillSchema = type({
+  "+": "reject",
   name: "string",
   description: "string",
   category: type.valueOf(skillCategoryEnum),

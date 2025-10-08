@@ -25,24 +25,24 @@ import { WeaponBonusSchema } from "../../shared/weaponSharedSchemas.js";
 import { type } from "arktype";
 
 export const PartialAvailabilityGearSchema = type({
+  "+": "reject",
   rating: AvailabilityRatingSchema,
   restriction: type.valueOf(restrictionEnum),
   "modifier?": type.unit(mathOperatorEnum.Add),
 });
 const AvailabilityGearSchema = type.or(
   PartialAvailabilityGearSchema,
-  type({
-    ratingLinked: PartialAvailabilityGearSchema.array(),
-  })
+  type({ "+": "reject", ratingLinked: PartialAvailabilityGearSchema.array() })
 );
 export type AvailabilityGearType = typeof AvailabilityGearSchema.infer;
 
 const InnerCostGearSchema = type.or(
   "number",
+  type({ "+": "reject", option: type.valueOf(costEnum) }),
   type({
-    option: type.valueOf(costEnum),
-  }),
-  { operator: type.valueOf(mathOperatorEnum) }
+    "+": "reject",
+    operator: type.valueOf(mathOperatorEnum),
+  })
 );
 
 export type RecursiveCostGearType = Array<
@@ -54,6 +54,7 @@ export const { RecursiveCostGearSchema } = type.module({
       InnerCostGearSchema,
       "|",
       {
+        "+": "reject",
         subnumbers: "RecursiveCostGearSchema ",
       },
     ],
@@ -64,29 +65,33 @@ export const { RecursiveCostGearSchema } = type.module({
 export const CostGearSchema = type.or(
   RangeCostSchema,
   RecursiveCostGearSchema,
-  { ratingLinked: RecursiveCostGearSchema.array() }
+  type({
+    "+": "reject",
+    ratingLinked: RecursiveCostGearSchema.array(),
+  })
 );
 export type CostGearType = typeof CostGearSchema.infer;
 
 const AmmoForWeaponTypeSchema = type.or(
   type({
+    "+": "reject",
     type: type.unit(weaponTypeEnum.Projectile),
     subtype: type.valueOf(projectileWeaponTypeEnum),
   }),
   type({
+    "+": "reject",
     type: type.unit(weaponTypeEnum.Firearm),
     subtype: type.valueOf(firearmWeaponTypeEnum),
   }),
   type({
+    "+": "reject",
     "extraClassification?": type.valueOf(weaponExtraClassificationEnum),
   })
 );
 export type AmmoForWeaponTypeType = typeof AmmoForWeaponTypeSchema.infer;
 
 const GearDeviceRatingSchema = type.or(
-  type({
-    option: type.valueOf(gearDeviceRatingEnum),
-  }),
+  type({ "+": "reject", option: type.valueOf(gearDeviceRatingEnum) }),
   "number"
 );
 export type GearDeviceRatingType = typeof GearDeviceRatingSchema.infer;
@@ -94,16 +99,18 @@ export type GearDeviceRatingType = typeof GearDeviceRatingSchema.infer;
 const GearProgramSchema = type(
   type.or(
     "number",
+    type({ "+": "reject", option: type.valueOf(parentGearEnum) }),
     type({
-      option: type.valueOf(parentGearEnum),
-    }),
-    { operator: type.valueOf(mathOperatorEnum) }
+      "+": "reject",
+      operator: type.valueOf(mathOperatorEnum),
+    })
   )
 ).array();
 export type GearProgramType = typeof GearProgramSchema.infer;
 
 const GearDeviceAttributeSchema = type.or(
   type({
+    "+": "reject",
     option: type.or(
       type.valueOf(attributeTypeEnum),
       type.valueOf(parentGearEnum)
@@ -115,28 +122,35 @@ export type GearDeviceAttributeType = typeof GearDeviceAttributeSchema.infer;
 
 const GearCapacitySchema = type(
   type.or(
-    type({
-      option: type.valueOf(parentGearEnum),
-    }),
-    type({
-      operator: type.valueOf(mathOperatorEnum),
-    }),
+    type({ "+": "reject", option: type.valueOf(parentGearEnum) }),
+    type({ "+": "reject", operator: type.valueOf(mathOperatorEnum) }),
     "number"
   )
 ).array();
 const GearCapacityInformationSchema = type({
+  "+": "reject",
   "capacity?": GearCapacitySchema,
   "capacityCost?": GearCapacitySchema,
 });
 export type GearCapacityInformationType =
   typeof GearCapacityInformationSchema.infer;
 
-const GearRatingSchema = type.or("number", {
-  option: type.valueOf(gearRatingEnum),
-});
+const GearRatingSchema = type.or(
+  "number",
+  type({
+    "+": "reject",
+    option: type.valueOf(gearRatingEnum),
+  })
+);
 export type GearRatingType = typeof GearRatingSchema.infer;
 
-const WeightSchema = type.or({ option: "'Rating'" }, "number");
+const WeightSchema = type.or(
+  type({
+    "+": "reject",
+    option: "'Rating'",
+  }),
+  "number"
+);
 export type WeightType = typeof WeightSchema.infer;
 
 export const { CustomisedGearSchema, CustomisedGearListSchema } = type.module({
@@ -158,6 +172,7 @@ export type CustomisedGearType = typeof CustomisedGearSchema.infer;
 export type CustomisedGearListType = typeof CustomisedGearListSchema.infer;
 
 export const GearSchema = type({
+  "+": "reject",
   name: "string",
   description: "string",
   category: type.valueOf(gearCategoryEnum),
@@ -165,6 +180,7 @@ export const GearSchema = type({
   "maxRating?": GearRatingSchema,
   "ratingMeaning?": type.valueOf(ratingMeaningEnum),
   "includedWeapon?": type({
+    "+": "reject",
     name: "string",
     "rating?": { option: type.valueOf(gearRatingEnum) },
   }),

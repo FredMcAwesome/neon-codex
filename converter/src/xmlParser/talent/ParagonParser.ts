@@ -14,6 +14,7 @@ import { mentorCategoryEnum } from "@neon-codex/common/build/enums.js";
 import { type } from "arktype";
 
 const ParagonXmlSchema = type({
+  "+": "reject",
   id: "string",
   name: "string",
   category: "'Resonance'",
