@@ -1468,6 +1468,13 @@
             "val": 3
           }
         }
+      },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -2365,6 +2372,15 @@
         }
       ]
     },
+    "bonus": {
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 3
+          }
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 43
   },
@@ -3140,6 +3156,13 @@
       ]
     },
     "bonus": {
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": -1
+          }
+        }
+      },
       "initiative": {
         "initiative": {
           "bonusDice": 1
@@ -3274,6 +3297,15 @@
         }
       ]
     },
+    "bonus": {
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 2
+          }
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 41
   },
@@ -3393,6 +3425,15 @@
           "rating": [2]
         }
       ]
+    },
+    "bonus": {
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 2
+          }
+        }
+      }
     },
     "source": "Howling Shadows",
     "page": 41
@@ -3782,6 +3823,15 @@
         }
       ]
     },
+    "bonus": {
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": -1
+          }
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 46
   },
@@ -3909,6 +3959,15 @@
           "rating": [2]
         }
       ]
+    },
+    "bonus": {
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": -1
+          }
+        }
+      }
     },
     "source": "Howling Shadows",
     "page": 46
@@ -4176,6 +4235,13 @@
       ]
     },
     "bonus": {
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": -1
+          }
+        }
+      },
       "initiative": {
         "initiative": {
           "bonusDice": 1
@@ -4305,6 +4371,13 @@
       ]
     },
     "bonus": {
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": -1
+          }
+        }
+      },
       "initiative": {
         "initiative": {
           "bonusDice": 1
@@ -4429,6 +4502,15 @@
           "rating": [2]
         }
       ]
+    },
+    "bonus": {
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": -1
+          }
+        }
+      }
     },
     "source": "Howling Shadows",
     "page": 45
@@ -7035,6 +7117,13 @@
             "val": 6
           }
         }
+      },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 4
+          }
+        }
       }
     },
     "source": "Howling Shadows",
@@ -7339,6 +7428,13 @@
             "val": 4
           }
         }
+      },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
       }
     },
     "source": "Howling Shadows",
@@ -7489,6 +7585,13 @@
             "max": 8,
             "aug": 8,
             "val": 5
+          }
+        }
+      },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
           }
         }
       }
@@ -8657,6 +8760,13 @@
             "val": 5
           }
         }
+      },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 2
+          }
+        }
       }
     },
     "source": "Howling Shadows",
@@ -9781,6 +9891,15 @@
         }
       ]
     },
+    "bonus": {
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 65
   },
@@ -10089,6 +10208,15 @@
           "rating": [7]
         }
       ]
+    },
+    "bonus": {
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      }
     },
     "source": "Howling Shadows",
     "page": 71
@@ -10699,6 +10827,13 @@
             "max": 9,
             "aug": 9,
             "val": 6
+          }
+        }
+      },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": -1
           }
         }
       },
@@ -11938,6 +12073,13 @@
             "val": 4
           }
         }
+      },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": -1
+          }
+        }
       }
     },
     "source": "Howling Shadows",
@@ -12636,6 +12778,13 @@
             "val": 6
           }
         }
+      },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
       }
     },
     "source": "Howling Shadows",
@@ -13128,6 +13277,13 @@
       ]
     },
     "bonus": {
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": -1
+          }
+        }
+      },
       "initiative": {
         "initiative": {
           "bonusDice": 2
@@ -13443,6 +13599,15 @@
           "rating": [6]
         }
       ]
+    },
+    "bonus": {
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      }
     },
     "source": "Howling Shadows",
     "page": 100
@@ -13926,6 +14091,13 @@
       ]
     },
     "bonus": {
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 2
+          }
+        }
+      },
       "initiative": {
         "initiative": {
           "bonusDice": 1
@@ -14222,6 +14394,15 @@
         }
       ]
     },
+    "bonus": {
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 105
   },
@@ -14365,6 +14546,15 @@
           "rating": [1]
         }
       ]
+    },
+    "bonus": {
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": -2
+          }
+        }
+      }
     },
     "source": "Howling Shadows",
     "page": 106
@@ -14805,6 +14995,21 @@
             "val": "Force"
           }
         }
+      },
+      "power": {
+        "unlockOptionalPowerList": {
+          "optionalPowerList": [
+            {
+              "name": "Inhabitation"
+            },
+            {
+              "name": "Possession"
+            },
+            {
+              "name": "Materialization"
+            }
+          ]
+        }
       }
     },
     "source": "Street Grimoire",
@@ -15232,6 +15437,34 @@
       "skill": {
         "unlockSkillList": ["Magician"]
       },
+      "power": {
+        "unlockOptionalPowerList": {
+          "selectOptionalPowerCount": {
+            "calc": "floor({MAG} div 3)"
+          },
+          "optionalPowerList": [
+            {
+              "name": "Elemental Attack",
+              "select": "Air"
+            },
+            {
+              "name": "Energy Aura"
+            },
+            {
+              "name": "Fear"
+            },
+            {
+              "name": "Guard"
+            },
+            {
+              "name": "Noxious Breath"
+            },
+            {
+              "name": "Psychokinesis"
+            }
+          ]
+        }
+      },
       "initiative": {
         "initiative": {
           "bonusDice": 1
@@ -15626,6 +15859,37 @@
             "aug": "Force",
             "val": "Force"
           }
+        }
+      },
+      "power": {
+        "unlockOptionalPowerList": {
+          "selectOptionalPowerCount": {
+            "calc": "floor({MAG} div 3)"
+          },
+          "optionalPowerList": [
+            {
+              "name": "Concealment"
+            },
+            {
+              "name": "Confusion"
+            },
+            {
+              "name": "Guard"
+            },
+            {
+              "name": "Natural Weapon",
+              "select": "DV ForceP, AP 0"
+            },
+            {
+              "name": "Noxious Breath"
+            },
+            {
+              "name": "Search"
+            },
+            {
+              "name": "Venom"
+            }
+          ]
         }
       },
       "initiative": {
@@ -16066,6 +16330,31 @@
             "aug": "Force",
             "val": "Force"
           }
+        }
+      },
+      "power": {
+        "unlockOptionalPowerList": {
+          "selectOptionalPowerCount": {
+            "calc": "floor({MAG} div 3)"
+          },
+          "optionalPowerList": [
+            {
+              "name": "Concealment"
+            },
+            {
+              "name": "Confusion"
+            },
+            {
+              "name": "Engulf"
+            },
+            {
+              "name": "Elemental Attack",
+              "select": "Earth"
+            },
+            {
+              "name": "Fear"
+            }
+          ]
         }
       },
       "initiative": {
@@ -16524,6 +16813,27 @@
           }
         }
       },
+      "power": {
+        "unlockOptionalPowerList": {
+          "selectOptionalPowerCount": {
+            "calc": "floor({MAG} div 3)"
+          },
+          "optionalPowerList": [
+            {
+              "name": "Fear"
+            },
+            {
+              "name": "Guard"
+            },
+            {
+              "name": "Noxious Breath"
+            },
+            {
+              "name": "Search"
+            }
+          ]
+        }
+      },
       "initiative": {
         "initiative": {
           "bonusDice": 1
@@ -16961,6 +17271,27 @@
           }
         }
       },
+      "power": {
+        "unlockOptionalPowerList": {
+          "selectOptionalPowerCount": {
+            "calc": "floor({MAG} div 3)"
+          },
+          "optionalPowerList": [
+            {
+              "name": "Fear"
+            },
+            {
+              "name": "Innate Spell"
+            },
+            {
+              "name": "Movement"
+            },
+            {
+              "name": "Psychokinesis"
+            }
+          ]
+        }
+      },
       "initiative": {
         "initiative": {
           "bonusDice": 1
@@ -17370,6 +17701,35 @@
             "aug": "Force",
             "val": "Force"
           }
+        }
+      },
+      "power": {
+        "unlockOptionalPowerList": {
+          "selectOptionalPowerCount": {
+            "calc": "floor({MAG} div 3)"
+          },
+          "optionalPowerList": [
+            {
+              "name": "Accident"
+            },
+            {
+              "name": "Binding"
+            },
+            {
+              "name": "Elemental Attack",
+              "select": "Water"
+            },
+            {
+              "name": "Energy Aura"
+            },
+            {
+              "name": "Guard"
+            },
+            {
+              "name": "Weather Control",
+              "select": "Any"
+            }
+          ]
         }
       },
       "initiative": {
@@ -17800,6 +18160,34 @@
           }
         }
       },
+      "power": {
+        "unlockOptionalPowerList": {
+          "selectOptionalPowerCount": {
+            "calc": "floor({MAG} div 3)"
+          },
+          "optionalPowerList": [
+            {
+              "name": "Animal Control"
+            },
+            {
+              "name": "Concealment"
+            },
+            {
+              "name": "Elemental Attack"
+            },
+            {
+              "name": "Natural Weapon",
+              "select": "DV ForceP, AP 0"
+            },
+            {
+              "name": "Psychokinesis"
+            },
+            {
+              "name": "Combat Skill"
+            }
+          ]
+        }
+      },
       "initiative": {
         "initiative": {
           "bonusDice": 1
@@ -18203,6 +18591,40 @@
             "aug": "Force",
             "val": "Force"
           }
+        }
+      },
+      "power": {
+        "unlockOptionalPowerList": {
+          "selectOptionalPowerCount": {
+            "calc": "floor({MAG} div 3)"
+          },
+          "optionalPowerList": [
+            {
+              "name": "Engulf"
+            },
+            {
+              "name": "Enhanced Senses",
+              "select": "Hearing"
+            },
+            {
+              "name": "Enhanced Senses",
+              "select": "Low-Light Vision"
+            },
+            {
+              "name": "Enhanced Senses",
+              "select": "Thermographic Vision"
+            },
+            {
+              "name": "Enhanced Senses",
+              "select": "Smell"
+            },
+            {
+              "name": "Fear"
+            },
+            {
+              "name": "Influence"
+            }
+          ]
         }
       },
       "initiative": {
@@ -18611,6 +19033,30 @@
           }
         }
       },
+      "power": {
+        "unlockOptionalPowerList": {
+          "selectOptionalPowerCount": {
+            "calc": "floor({MAG} div 3)"
+          },
+          "optionalPowerList": [
+            {
+              "name": "Accident"
+            },
+            {
+              "name": "Confusion"
+            },
+            {
+              "name": "Movement"
+            },
+            {
+              "name": "Noxious Breath"
+            },
+            {
+              "name": "Search"
+            }
+          ]
+        }
+      },
       "initiative": {
         "initiative": {
           "bonusDice": 1
@@ -18988,6 +19434,46 @@
             "aug": "Force",
             "val": "Force"
           }
+        }
+      },
+      "power": {
+        "unlockOptionalPowerList": {
+          "selectOptionalPowerCount": {
+            "calc": "floor({MAG} div 3)"
+          },
+          "optionalPowerList": [
+            {
+              "name": "Concealment"
+            },
+            {
+              "name": "Enhanced Senses",
+              "select": "Hearing"
+            },
+            {
+              "name": "Enhanced Senses",
+              "select": "Low-Light Vision"
+            },
+            {
+              "name": "Enhanced Senses",
+              "select": "Thermographic Vision"
+            },
+            {
+              "name": "Enhanced Senses",
+              "select": "Smell"
+            },
+            {
+              "name": "Influence"
+            },
+            {
+              "name": "Psychokinesis"
+            },
+            {
+              "name": "Technical Skill"
+            },
+            {
+              "name": "Physical Skill"
+            }
+          ]
         }
       },
       "initiative": {
@@ -19421,6 +19907,34 @@
           }
         }
       },
+      "power": {
+        "unlockOptionalPowerList": {
+          "selectOptionalPowerCount": {
+            "calc": "floor({MAG} div 3)"
+          },
+          "optionalPowerList": [
+            {
+              "name": "Concealment"
+            },
+            {
+              "name": "Confusion"
+            },
+            {
+              "name": "Guard"
+            },
+            {
+              "name": "Movement"
+            },
+            {
+              "name": "Natural Weapon",
+              "select": "DV (Force)P, AP 0"
+            },
+            {
+              "name": "Noxious Breath"
+            }
+          ]
+        }
+      },
       "initiative": {
         "initiative": {
           "bonusDice": 1
@@ -19822,6 +20336,25 @@
             "aug": "Force",
             "val": "Force"
           }
+        }
+      },
+      "power": {
+        "unlockOptionalPowerList": {
+          "selectOptionalPowerCount": {
+            "calc": "floor({MAG} div 3)"
+          },
+          "optionalPowerList": [
+            {
+              "name": "Enhanced Senses",
+              "select": "Hearing, Low-Light Vision, Thermographic Vision"
+            },
+            {
+              "name": "Guard"
+            },
+            {
+              "name": "Noxious Breath"
+            }
+          ]
         }
       },
       "initiative": {
@@ -20273,6 +20806,30 @@
           }
         }
       },
+      "power": {
+        "unlockOptionalPowerList": {
+          "selectOptionalPowerCount": {
+            "calc": "floor({MAG} div 3)"
+          },
+          "optionalPowerList": [
+            {
+              "name": "Accident"
+            },
+            {
+              "name": "Banishing Resistance"
+            },
+            {
+              "name": "Compulsion"
+            },
+            {
+              "name": "Paralyzing Touch"
+            },
+            {
+              "name": "Search"
+            }
+          ]
+        }
+      },
       "initiative": {
         "initiative": {
           "bonusDice": 1
@@ -20722,6 +21279,36 @@
           }
         }
       },
+      "power": {
+        "unlockOptionalPowerList": {
+          "selectOptionalPowerCount": {
+            "calc": "floor({MAG} div 3)"
+          },
+          "optionalPowerList": [
+            {
+              "name": "Concealment"
+            },
+            {
+              "name": "Corrosive Spit"
+            },
+            {
+              "name": "Guard"
+            },
+            {
+              "name": "Fear"
+            },
+            {
+              "name": "Mimicry"
+            },
+            {
+              "name": "Search"
+            },
+            {
+              "name": "Venom"
+            }
+          ]
+        }
+      },
       "initiative": {
         "initiative": {
           "bonusDice": 1
@@ -21168,6 +21755,30 @@
             "aug": "Force",
             "val": "Force"
           }
+        }
+      },
+      "power": {
+        "unlockOptionalPowerList": {
+          "selectOptionalPowerCount": {
+            "calc": "floor({MAG} div 3)"
+          },
+          "optionalPowerList": [
+            {
+              "name": "Accident"
+            },
+            {
+              "name": "Concealment"
+            },
+            {
+              "name": "Confusion"
+            },
+            {
+              "name": "Fear"
+            },
+            {
+              "name": "Guard"
+            }
+          ]
         }
       },
       "initiative": {
@@ -23402,6 +24013,37 @@
           }
         }
       },
+      "power": {
+        "unlockOptionalPowerList": {
+          "selectOptionalPowerCount": {
+            "calc": "floor({MAG} div 3)"
+          },
+          "optionalPowerList": [
+            {
+              "name": "Accident"
+            },
+            {
+              "name": "Binding"
+            },
+            {
+              "name": "Elemental Attack"
+            },
+            {
+              "name": "Energy Aura"
+            },
+            {
+              "name": "Enhanced Senses",
+              "select": "Enhanced Vision"
+            },
+            {
+              "name": "Guard"
+            },
+            {
+              "name": "Technical Skill"
+            }
+          ]
+        }
+      },
       "initiative": {
         "initiative": {
           "bonusDice": 1
@@ -23840,6 +24482,30 @@
             "aug": "Force",
             "val": "Force"
           }
+        }
+      },
+      "power": {
+        "unlockOptionalPowerList": {
+          "selectOptionalPowerCount": {
+            "calc": "floor({MAG} div 3)"
+          },
+          "optionalPowerList": [
+            {
+              "name": "Concealment"
+            },
+            {
+              "name": "Confusion"
+            },
+            {
+              "name": "Engulf"
+            },
+            {
+              "name": "Elemental Attack"
+            },
+            {
+              "name": "Fear"
+            }
+          ]
         }
       },
       "initiative": {
@@ -24297,6 +24963,27 @@
           }
         }
       },
+      "power": {
+        "unlockOptionalPowerList": {
+          "selectOptionalPowerCount": {
+            "calc": "floor({MAG} div 3)"
+          },
+          "optionalPowerList": [
+            {
+              "name": "Fear"
+            },
+            {
+              "name": "Guard"
+            },
+            {
+              "name": "Noxious Breath"
+            },
+            {
+              "name": "Search"
+            }
+          ]
+        }
+      },
       "initiative": {
         "initiative": {
           "bonusDice": 1
@@ -24741,6 +25428,30 @@
       "skill": {
         "unlockSkillList": ["Magician"]
       },
+      "power": {
+        "unlockOptionalPowerList": {
+          "selectOptionalPowerCount": {
+            "calc": "floor({MAG} div 3)"
+          },
+          "optionalPowerList": [
+            {
+              "name": "Elemental Attack"
+            },
+            {
+              "name": "Energy Aura"
+            },
+            {
+              "name": "Fear"
+            },
+            {
+              "name": "Guard"
+            },
+            {
+              "name": "Psychokinesis"
+            }
+          ]
+        }
+      },
       "initiative": {
         "initiative": {
           "bonusDice": 1
@@ -25174,6 +25885,28 @@
       },
       "skill": {
         "unlockSkillList": ["Magician"]
+      },
+      "power": {
+        "unlockOptionalPowerList": {
+          "selectOptionalPowerCount": {
+            "calc": "floor({MAG} div 3)"
+          },
+          "optionalPowerList": [
+            {
+              "name": "Aura Masking"
+            },
+            {
+              "name": "Haunt"
+            },
+            {
+              "name": "Natural Weapon",
+              "select": "Any Cannon or Launcher"
+            },
+            {
+              "name": "Storm"
+            }
+          ]
+        }
       },
       "initiative": {
         "initiative": {
@@ -25611,6 +26344,28 @@
       "skill": {
         "unlockSkillList": ["Magician"]
       },
+      "power": {
+        "unlockOptionalPowerList": {
+          "selectOptionalPowerCount": {
+            "calc": "floor({MAG} div 3)"
+          },
+          "optionalPowerList": [
+            {
+              "name": "Aura Masking"
+            },
+            {
+              "name": "Haunt"
+            },
+            {
+              "name": "Natural Weapon",
+              "select": "Any Cannon or Launcher"
+            },
+            {
+              "name": "Reinforcement"
+            }
+          ]
+        }
+      },
       "initiative": {
         "initiative": {
           "bonusDice": 1
@@ -26029,6 +26784,25 @@
       "skill": {
         "unlockSkillList": ["Magician"]
       },
+      "power": {
+        "unlockOptionalPowerList": {
+          "selectOptionalPowerCount": {
+            "calc": "floor({MAG} div 3)"
+          },
+          "optionalPowerList": [
+            {
+              "name": "Aura Masking"
+            },
+            {
+              "name": "Haunt"
+            },
+            {
+              "name": "Natural Weapon",
+              "select": "Any Machine Gun; Motorcycles and lighter vehicles can only have LMGs"
+            }
+          ]
+        }
+      },
       "initiative": {
         "initiative": {
           "bonusDice": 1
@@ -26434,6 +27208,31 @@
       },
       "skill": {
         "unlockSkillList": ["Magician"]
+      },
+      "power": {
+        "unlockOptionalPowerList": {
+          "selectOptionalPowerCount": {
+            "calc": "floor({MAG} div 3)"
+          },
+          "optionalPowerList": [
+            {
+              "name": "Aura Masking"
+            },
+            {
+              "name": "Dive Attack"
+            },
+            {
+              "name": "Haunt"
+            },
+            {
+              "name": "Natural Weapon",
+              "select": "Any Cannon or Launcher"
+            },
+            {
+              "name": "Search"
+            }
+          ]
+        }
       },
       "initiative": {
         "initiative": {
@@ -37768,6 +38567,40 @@
           }
         }
       },
+      "power": {
+        "unlockOptionalPowerList": {
+          "selectOptionalPowerCount": {
+            "calc": "floor({MAG} div 3)"
+          },
+          "optionalPowerList": [
+            {
+              "name": "Concealment"
+            },
+            {
+              "name": "Confusion"
+            },
+            {
+              "name": "Noxious Breath"
+            },
+            {
+              "name": "Natural Weapon",
+              "select": "Claw/Bite: DV 0P, AP 0"
+            },
+            {
+              "name": "Guard"
+            },
+            {
+              "name": "Paralyzing Touch"
+            },
+            {
+              "name": "Search"
+            },
+            {
+              "name": "Venom"
+            }
+          ]
+        }
+      },
       "initiative": {
         "initiative": {
           "bonusDice": 1
@@ -38228,6 +39061,42 @@
           }
         }
       },
+      "power": {
+        "unlockOptionalPowerList": {
+          "selectOptionalPowerCount": {
+            "calc": "floor({MAG} div 3)"
+          },
+          "optionalPowerList": [
+            {
+              "name": "Concealment"
+            },
+            {
+              "name": "Confusion"
+            },
+            {
+              "name": "Fear"
+            },
+            {
+              "name": "Guard"
+            },
+            {
+              "name": "Movement"
+            },
+            {
+              "name": "Noxious Breath"
+            },
+            {
+              "name": "Paralyzing Touch"
+            },
+            {
+              "name": "Search"
+            },
+            {
+              "name": "Psychokinesis"
+            }
+          ]
+        }
+      },
       "initiative": {
         "initiative": {
           "bonusDice": 1
@@ -38686,6 +39555,30 @@
             "aug": "Force",
             "val": "Force"
           }
+        }
+      },
+      "power": {
+        "unlockOptionalPowerList": {
+          "selectOptionalPowerCount": {
+            "calc": "floor({MAG} div 3)"
+          },
+          "optionalPowerList": [
+            {
+              "name": "Fear"
+            },
+            {
+              "name": "Guard"
+            },
+            {
+              "name": "Noxious Breath"
+            },
+            {
+              "name": "Paralyzing Touch"
+            },
+            {
+              "name": "Search"
+            }
+          ]
         }
       },
       "initiative": {
@@ -39164,6 +40057,33 @@
           }
         }
       },
+      "power": {
+        "unlockOptionalPowerList": {
+          "selectOptionalPowerCount": {
+            "calc": "floor({MAG} div 3)"
+          },
+          "optionalPowerList": [
+            {
+              "name": "Accident"
+            },
+            {
+              "name": "Confusion"
+            },
+            {
+              "name": "Movement"
+            },
+            {
+              "name": "Noxious Breath"
+            },
+            {
+              "name": "Paralyzing Touch"
+            },
+            {
+              "name": "Search"
+            }
+          ]
+        }
+      },
       "initiative": {
         "initiative": {
           "bonusDice": 1
@@ -39618,6 +40538,30 @@
             "aug": "Force",
             "val": "Force"
           }
+        }
+      },
+      "power": {
+        "unlockOptionalPowerList": {
+          "selectOptionalPowerCount": {
+            "calc": "floor({MAG} div 3)"
+          },
+          "optionalPowerList": [
+            {
+              "name": "Elemental Attack"
+            },
+            {
+              "name": "Engulf"
+            },
+            {
+              "name": "Fear"
+            },
+            {
+              "name": "Paralyzing Touch"
+            },
+            {
+              "name": "Search"
+            }
+          ]
         }
       },
       "initiative": {
@@ -51219,6 +52163,13 @@
           }
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 2
+          }
+        }
+      },
       "initiative": {
         "initiative": {
           "bonusDice": 1
@@ -51449,6 +52400,13 @@
           }
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 2
+          }
+        }
+      },
       "initiative": {
         "initiative": {
           "bonusDice": 1
@@ -51676,6 +52634,13 @@
             "max": 13,
             "aug": 13,
             "val": 10
+          }
+        }
+      },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 2
           }
         }
       },
@@ -52067,6 +53032,13 @@
             "val": 3
           }
         }
+      },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
       }
     },
     "source": "Howling Shadows",
@@ -52434,6 +53406,13 @@
           }
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": -1
+          }
+        }
+      },
       "initiative": {
         "initiative": {
           "bonusDice": 1
@@ -52643,6 +53622,13 @@
           }
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "initiative": {
         "initiative": {
           "bonusDice": 1
@@ -52818,6 +53804,13 @@
             "max": 6,
             "aug": 6,
             "val": 3
+          }
+        }
+      },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
           }
         }
       }
@@ -53348,6 +54341,15 @@
           "rating": [5]
         }
       ]
+    },
+    "bonus": {
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      }
     },
     "source": "Howling Shadows",
     "page": 88
@@ -53955,6 +54957,13 @@
           }
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "initiative": {
         "initiative": {
           "bonusDice": 1
@@ -54350,6 +55359,17 @@
         }
       ]
     },
+    "bonus": {
+      "essenceAndAugmentation": {
+        "augmentationCostModifierPercentage": {
+          "geneTech": 80
+        },
+        "essenceCostOngoingPercentageModifier": {
+          "biowareOnly": [90],
+          "geneTechOnly": [90]
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 176
   },
@@ -54500,6 +55520,17 @@
         }
       ]
     },
+    "bonus": {
+      "essenceAndAugmentation": {
+        "augmentationCostModifierPercentage": {
+          "geneTech": 80
+        },
+        "essenceCostOngoingPercentageModifier": {
+          "biowareOnly": [90],
+          "geneTechOnly": [90]
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 177
   },
@@ -54627,6 +55658,17 @@
           "rating": [1]
         }
       ]
+    },
+    "bonus": {
+      "essenceAndAugmentation": {
+        "augmentationCostModifierPercentage": {
+          "geneTech": 80
+        },
+        "essenceCostOngoingPercentageModifier": {
+          "biowareOnly": [90],
+          "geneTechOnly": [90]
+        }
+      }
     },
     "source": "Howling Shadows",
     "page": 177
@@ -55339,6 +56381,13 @@
           "name": "Resonance"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": -1
+          }
+        }
+      },
       "initiative": {
         "initiative": {
           "bonusDice": 1
@@ -55508,6 +56557,13 @@
       "attribute": {
         "enableAttribute": {
           "name": "Resonance"
+        }
+      },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": -1
+          }
         }
       },
       "initiative": {
@@ -56041,6 +57097,13 @@
         "enableAttribute": {
           "name": "Resonance"
         }
+      },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": -1
+          }
+        }
       }
     },
     "source": "Howling Shadows",
@@ -56559,6 +57622,13 @@
           "name": "Resonance"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": -1
+          }
+        }
+      },
       "initiative": {
         "initiative": {
           "bonusDice": 1
@@ -56715,6 +57785,13 @@
       "attribute": {
         "enableAttribute": {
           "name": "Resonance"
+        }
+      },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": -1
+          }
         }
       }
     },
@@ -57454,6 +58531,13 @@
       "attribute": {
         "enableAttribute": {
           "name": "Resonance"
+        }
+      },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 2
+          }
         }
       }
     },
@@ -63051,6 +64135,36 @@
         }
       ]
     },
+    "bonus": {
+      "power": {
+        "unlockOptionalPowerList": {
+          "selectOptionalPowerCount": 2,
+          "optionalPowerList": [
+            {
+              "name": "Active Analytics"
+            },
+            {
+              "name": "Borrowed IP"
+            },
+            {
+              "name": "Decompiling Resistance"
+            },
+            {
+              "name": "Enhance"
+            },
+            {
+              "name": "Navi"
+            },
+            {
+              "name": "Resilient Code"
+            },
+            {
+              "name": "Resonance Spooling"
+            }
+          ]
+        }
+      }
+    },
     "source": "Kill Code",
     "page": 100
   },
@@ -63692,6 +64806,13 @@
             "max": 2,
             "aug": 6,
             "val": 2
+          }
+        }
+      },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": -1
           }
         }
       }
@@ -64521,6 +65642,15 @@
           "rating": [3]
         }
       ]
+    },
+    "bonus": {
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      }
     },
     "source": "Hard Targets",
     "page": 134

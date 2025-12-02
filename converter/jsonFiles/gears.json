@@ -10880,7 +10880,7 @@
   {
     "name": "Pantheon Industries \"Co-Pilot\" Mk I",
     "description": "",
-    "category": "Pi_TacPrograms",
+    "category": "Pi-Tac Programs",
     "maxRating": 0,
     "cost": [400],
     "availability": {
@@ -10893,7 +10893,7 @@
   {
     "name": "Pantheon Industries \"Co-Pilot\" Mk II",
     "description": "",
-    "category": "Pi_TacPrograms",
+    "category": "Pi-Tac Programs",
     "maxRating": 0,
     "cost": [400],
     "availability": {
@@ -10906,7 +10906,7 @@
   {
     "name": "Pantheon Industries \"Co-Pilot\" Mk III",
     "description": "",
-    "category": "Pi_TacPrograms",
+    "category": "Pi-Tac Programs",
     "maxRating": 0,
     "cost": [400],
     "availability": {
@@ -10919,7 +10919,7 @@
   {
     "name": "Pantheon Industries \"Door Gunner\"",
     "description": "",
-    "category": "Pi_TacPrograms",
+    "category": "Pi-Tac Programs",
     "maxRating": 0,
     "cost": [200],
     "availability": {
@@ -10932,7 +10932,7 @@
   {
     "name": "Pantheon Industries \"ECM-Warrior\"",
     "description": "",
-    "category": "Pi_TacPrograms",
+    "category": "Pi-Tac Programs",
     "maxRating": 0,
     "cost": [200],
     "availability": {
@@ -10945,7 +10945,7 @@
   {
     "name": "Pantheon Industries Mobile CNC",
     "description": "",
-    "category": "Pi_TacPrograms",
+    "category": "Pi-Tac Programs",
     "maxRating": 0,
     "cost": [300],
     "availability": {
@@ -10958,7 +10958,7 @@
   {
     "name": "Pantheon Industries Shield Wall",
     "description": "",
-    "category": "Pi_TacPrograms",
+    "category": "Pi-Tac Programs",
     "maxRating": 0,
     "cost": [200],
     "availability": {
@@ -12070,7 +12070,7 @@
   {
     "name": "PI-Tac Level I (Renraku Taka)",
     "description": "",
-    "category": "PI-Tac",
+    "category": "Pi-Tac",
     "maxRating": 0,
     "deviceRating": 4,
     "cost": [115000],
@@ -12084,7 +12084,7 @@
   {
     "name": "PI-Tac Level II (Novatech Tactician)",
     "description": "",
-    "category": "PI-Tac",
+    "category": "Pi-Tac",
     "maxRating": 0,
     "deviceRating": 5,
     "cost": [325000],
@@ -12098,7 +12098,7 @@
   {
     "name": "PI-Tac Level III (ComPac-Esprit General)",
     "description": "",
-    "category": "PI-Tac",
+    "category": "Pi-Tac",
     "maxRating": 0,
     "deviceRating": 6,
     "cost": [855000],
@@ -13771,7 +13771,9 @@
     "maxRating": 0,
     "bonus": {
       "combatAndWeapon": {
-        "smartlinkAccuracy": 1
+        "attackModifiers": {
+          "smartLinkModifier": 1
+        }
       }
     },
     "capacityInformation": {
@@ -15857,11 +15859,13 @@
     "maxRating": 6,
     "bonus": {
       "combatAndWeapon": {
-        "toxinContactResist": {
-          "option": "Rating"
-        },
-        "pathogenContactResist": {
-          "option": "Rating"
+        "toxinAndPathogen": {
+          "toxinContactResist": {
+            "option": "Rating"
+          },
+          "pathogenContactResist": {
+            "option": "Rating"
+          }
         }
       },
       "miscellaneous": {
@@ -15990,8 +15994,10 @@
     "maxRating": 0,
     "bonus": {
       "combatAndWeapon": {
-        "toxinInhalationImmune": true,
-        "pathogenInhalationImmune": true
+        "toxinAndPathogen": {
+          "toxinInhalationImmune": true,
+          "pathogenInhalationImmune": true
+        }
       }
     },
     "armourCapacityInformation": {
@@ -16025,10 +16031,12 @@
     "maxRating": 0,
     "bonus": {
       "combatAndWeapon": {
-        "toxinContactImmune": true,
-        "pathogenContactImmune": true,
-        "toxinInhalationImmune": true,
-        "pathogenInhalationImmune": true
+        "toxinAndPathogen": {
+          "toxinContactImmune": true,
+          "pathogenContactImmune": true,
+          "toxinInhalationImmune": true,
+          "pathogenInhalationImmune": true
+        }
       }
     },
     "cost": [3000],
@@ -16119,11 +16127,13 @@
     "maxRating": 6,
     "bonus": {
       "combatAndWeapon": {
-        "toxinInhalationResist": {
-          "option": "Rating"
-        },
-        "pathogenInhalationResist": {
-          "option": "Rating"
+        "toxinAndPathogen": {
+          "toxinInhalationResist": {
+            "option": "Rating"
+          },
+          "pathogenInhalationResist": {
+            "option": "Rating"
+          }
         }
       },
       "miscellaneous": {
@@ -16400,8 +16410,10 @@
     "maxRating": 0,
     "bonus": {
       "combatAndWeapon": {
-        "toxinInhalationImmune": true,
-        "pathogenInhalationImmune": true
+        "toxinAndPathogen": {
+          "toxinInhalationImmune": true,
+          "pathogenInhalationImmune": true
+        }
       }
     },
     "capacityInformation": {
@@ -16422,11 +16434,13 @@
     "maxRating": 6,
     "bonus": {
       "combatAndWeapon": {
-        "toxinInhalationResist": {
-          "option": "Rating"
-        },
-        "pathogenInhalationResist": {
-          "option": "Rating"
+        "toxinAndPathogen": {
+          "toxinInhalationResist": {
+            "option": "Rating"
+          },
+          "pathogenInhalationResist": {
+            "option": "Rating"
+          }
         }
       },
       "miscellaneous": {
@@ -17998,14 +18012,20 @@
     "maxRating": 18,
     "bonus": {
       "spellAndMagic": {
-        "spellCategoryList": [
-          {
-            "category": "Combat",
-            "bonus": {
-              "option": "Rating"
+        "spellModifiers": {
+          "spellBonusDice": [
+            {
+              "spellCategoryList": [
+                {
+                  "category": "Combat",
+                  "bonus": {
+                    "option": "Rating"
+                  }
+                }
+              ]
             }
-          }
-        ],
+          ]
+        },
         "linkTradition": true
       }
     },
@@ -18190,14 +18210,20 @@
     "maxRating": 18,
     "bonus": {
       "spellAndMagic": {
-        "spellCategoryList": [
-          {
-            "category": "Detection",
-            "bonus": {
-              "option": "Rating"
+        "spellModifiers": {
+          "spellBonusDice": [
+            {
+              "spellCategoryList": [
+                {
+                  "category": "Detection",
+                  "bonus": {
+                    "option": "Rating"
+                  }
+                }
+              ]
             }
-          }
-        ],
+          ]
+        },
         "linkTradition": true
       }
     },
@@ -18382,14 +18408,20 @@
     "maxRating": 18,
     "bonus": {
       "spellAndMagic": {
-        "spellCategoryList": [
-          {
-            "category": "Health",
-            "bonus": {
-              "option": "Rating"
+        "spellModifiers": {
+          "spellBonusDice": [
+            {
+              "spellCategoryList": [
+                {
+                  "category": "Health",
+                  "bonus": {
+                    "option": "Rating"
+                  }
+                }
+              ]
             }
-          }
-        ],
+          ]
+        },
         "linkTradition": true
       }
     },
@@ -18574,14 +18606,20 @@
     "maxRating": 18,
     "bonus": {
       "spellAndMagic": {
-        "spellCategoryList": [
-          {
-            "category": "Illusion",
-            "bonus": {
-              "option": "Rating"
+        "spellModifiers": {
+          "spellBonusDice": [
+            {
+              "spellCategoryList": [
+                {
+                  "category": "Illusion",
+                  "bonus": {
+                    "option": "Rating"
+                  }
+                }
+              ]
             }
-          }
-        ],
+          ]
+        },
         "linkTradition": true
       }
     },
@@ -18766,14 +18804,20 @@
     "maxRating": 18,
     "bonus": {
       "spellAndMagic": {
-        "spellCategoryList": [
-          {
-            "category": "Manipulation",
-            "bonus": {
-              "option": "Rating"
+        "spellModifiers": {
+          "spellBonusDice": [
+            {
+              "spellCategoryList": [
+                {
+                  "category": "Manipulation",
+                  "bonus": {
+                    "option": "Rating"
+                  }
+                }
+              ]
             }
-          }
-        ],
+          ]
+        },
         "linkTradition": true
       }
     },
@@ -19022,11 +19066,13 @@
     "maxRating": 18,
     "bonus": {
       "combatAndWeapon": {
-        "specificWeapon": {
-          "bonus": {
-            "option": "Rating"
-          },
-          "weaponType": "Melee"
+        "attackModifiers": {
+          "specificWeaponDicePoolModifier": {
+            "modifier": {
+              "option": "Rating"
+            },
+            "weaponType": "Melee"
+          }
         }
       }
     },
@@ -19588,14 +19634,20 @@
     "maxRating": 18,
     "bonus": {
       "spellAndMagic": {
-        "spellCategoryList": [
-          {
-            "category": "Combat",
-            "bonus": {
-              "option": "Rating"
+        "spellModifiers": {
+          "spellBonusDice": [
+            {
+              "spellCategoryList": [
+                {
+                  "category": "Combat",
+                  "bonus": {
+                    "option": "Rating"
+                  }
+                }
+              ]
             }
-          }
-        ],
+          ]
+        },
         "linkTradition": true
       }
     },
@@ -19784,14 +19836,20 @@
     "maxRating": 18,
     "bonus": {
       "spellAndMagic": {
-        "spellCategoryList": [
-          {
-            "category": "Detection",
-            "bonus": {
-              "option": "Rating"
+        "spellModifiers": {
+          "spellBonusDice": [
+            {
+              "spellCategoryList": [
+                {
+                  "category": "Detection",
+                  "bonus": {
+                    "option": "Rating"
+                  }
+                }
+              ]
             }
-          }
-        ],
+          ]
+        },
         "linkTradition": true
       }
     },
@@ -19980,14 +20038,20 @@
     "maxRating": 18,
     "bonus": {
       "spellAndMagic": {
-        "spellCategoryList": [
-          {
-            "category": "Health",
-            "bonus": {
-              "option": "Rating"
+        "spellModifiers": {
+          "spellBonusDice": [
+            {
+              "spellCategoryList": [
+                {
+                  "category": "Health",
+                  "bonus": {
+                    "option": "Rating"
+                  }
+                }
+              ]
             }
-          }
-        ],
+          ]
+        },
         "linkTradition": true
       }
     },
@@ -20176,14 +20240,20 @@
     "maxRating": 18,
     "bonus": {
       "spellAndMagic": {
-        "spellCategoryList": [
-          {
-            "category": "Illusion",
-            "bonus": {
-              "option": "Rating"
+        "spellModifiers": {
+          "spellBonusDice": [
+            {
+              "spellCategoryList": [
+                {
+                  "category": "Illusion",
+                  "bonus": {
+                    "option": "Rating"
+                  }
+                }
+              ]
             }
-          }
-        ],
+          ]
+        },
         "linkTradition": true
       }
     },
@@ -20372,14 +20442,20 @@
     "maxRating": 18,
     "bonus": {
       "spellAndMagic": {
-        "spellCategoryList": [
-          {
-            "category": "Manipulation",
-            "bonus": {
-              "option": "Rating"
+        "spellModifiers": {
+          "spellBonusDice": [
+            {
+              "spellCategoryList": [
+                {
+                  "category": "Manipulation",
+                  "bonus": {
+                    "option": "Rating"
+                  }
+                }
+              ]
             }
-          }
-        ],
+          ]
+        },
         "linkTradition": true
       }
     },
@@ -20633,11 +20709,13 @@
     "maxRating": 18,
     "bonus": {
       "combatAndWeapon": {
-        "specificWeapon": {
-          "bonus": {
-            "option": "Rating"
-          },
-          "weaponType": "Melee"
+        "attackModifiers": {
+          "specificWeaponDicePoolModifier": {
+            "modifier": {
+              "option": "Rating"
+            },
+            "weaponType": "Melee"
+          }
         }
       }
     },
@@ -21200,14 +21278,20 @@
     "maxRating": 18,
     "bonus": {
       "spellAndMagic": {
-        "spellCategoryList": [
-          {
-            "category": "Combat",
-            "bonus": {
-              "option": "Rating"
+        "spellModifiers": {
+          "spellBonusDice": [
+            {
+              "spellCategoryList": [
+                {
+                  "category": "Combat",
+                  "bonus": {
+                    "option": "Rating"
+                  }
+                }
+              ]
             }
-          }
-        ],
+          ]
+        },
         "linkTradition": true
       }
     },
@@ -21396,14 +21480,20 @@
     "maxRating": 18,
     "bonus": {
       "spellAndMagic": {
-        "spellCategoryList": [
-          {
-            "category": "Detection",
-            "bonus": {
-              "option": "Rating"
+        "spellModifiers": {
+          "spellBonusDice": [
+            {
+              "spellCategoryList": [
+                {
+                  "category": "Detection",
+                  "bonus": {
+                    "option": "Rating"
+                  }
+                }
+              ]
             }
-          }
-        ],
+          ]
+        },
         "linkTradition": true
       }
     },
@@ -21592,14 +21682,20 @@
     "maxRating": 18,
     "bonus": {
       "spellAndMagic": {
-        "spellCategoryList": [
-          {
-            "category": "Health",
-            "bonus": {
-              "option": "Rating"
+        "spellModifiers": {
+          "spellBonusDice": [
+            {
+              "spellCategoryList": [
+                {
+                  "category": "Health",
+                  "bonus": {
+                    "option": "Rating"
+                  }
+                }
+              ]
             }
-          }
-        ],
+          ]
+        },
         "linkTradition": true
       }
     },
@@ -21788,14 +21884,20 @@
     "maxRating": 18,
     "bonus": {
       "spellAndMagic": {
-        "spellCategoryList": [
-          {
-            "category": "Illusion",
-            "bonus": {
-              "option": "Rating"
+        "spellModifiers": {
+          "spellBonusDice": [
+            {
+              "spellCategoryList": [
+                {
+                  "category": "Illusion",
+                  "bonus": {
+                    "option": "Rating"
+                  }
+                }
+              ]
             }
-          }
-        ],
+          ]
+        },
         "linkTradition": true
       }
     },
@@ -21984,14 +22086,20 @@
     "maxRating": 18,
     "bonus": {
       "spellAndMagic": {
-        "spellCategoryList": [
-          {
-            "category": "Manipulation",
-            "bonus": {
-              "option": "Rating"
+        "spellModifiers": {
+          "spellBonusDice": [
+            {
+              "spellCategoryList": [
+                {
+                  "category": "Manipulation",
+                  "bonus": {
+                    "option": "Rating"
+                  }
+                }
+              ]
             }
-          }
-        ],
+          ]
+        },
         "linkTradition": true
       }
     },
@@ -22245,11 +22353,13 @@
     "maxRating": 18,
     "bonus": {
       "combatAndWeapon": {
-        "specificWeapon": {
-          "bonus": {
-            "option": "Rating"
-          },
-          "weaponType": "Melee"
+        "attackModifiers": {
+          "specificWeaponDicePoolModifier": {
+            "modifier": {
+              "option": "Rating"
+            },
+            "weaponType": "Melee"
+          }
         }
       }
     },
@@ -31564,8 +31674,10 @@
     "allowCategoryList": ["Nanogear", "Custom"],
     "bonus": {
       "combatAndWeapon": {
-        "toxinContactImmune": true,
-        "pathogenContactImmune": true
+        "toxinAndPathogen": {
+          "toxinContactImmune": true,
+          "pathogenContactImmune": true
+        }
       }
     },
     "cost": [1250],
@@ -33647,7 +33759,9 @@
     "maxRating": 0,
     "bonus": {
       "combatAndWeapon": {
-        "smartlinkAccuracy": 1
+        "attackModifiers": {
+          "smartLinkModifier": 1
+        }
       }
     },
     "capacityInformation": {
@@ -36293,11 +36407,13 @@
     "maxRating": 6,
     "bonus": {
       "combatAndWeapon": {
-        "toxinContactResist": {
-          "option": "Rating"
-        },
-        "pathogenContactResist": {
-          "option": "Rating"
+        "toxinAndPathogen": {
+          "toxinContactResist": {
+            "option": "Rating"
+          },
+          "pathogenContactResist": {
+            "option": "Rating"
+          }
         }
       },
       "miscellaneous": {
@@ -36849,7 +36965,7 @@
   {
     "name": "Pantheon Industries \"Mercury-Alpha\" Battlefield Signal Booster",
     "description": "",
-    "category": "PI-Tac",
+    "category": "Pi-Tac",
     "maxRating": 0,
     "deviceRating": 5,
     "cost": [3500],
@@ -36863,7 +36979,7 @@
   {
     "name": "Pantheon Industries Micro-Dish Transmitter",
     "description": "",
-    "category": "PI-Tac",
+    "category": "Pi-Tac",
     "maxRating": 0,
     "cost": [1200],
     "availability": {
@@ -36880,19 +36996,21 @@
     "maxRating": 3,
     "bonus": {
       "essenceAndAugmentation": {
-        "essenceCostTimes100": [
-          {
-            "subnumbers": [
-              -10,
-              {
-                "operator": "*"
-              },
-              {
-                "option": "Rating"
-              }
-            ]
-          }
-        ]
+        "essenceCostOngoingPercentageModifier": {
+          "base": [
+            {
+              "subnumbers": [
+                -10,
+                {
+                  "operator": "*"
+                },
+                {
+                  "option": "Rating"
+                }
+              ]
+            }
+          ]
+        }
       },
       "miscellaneous": {
         "selection": {

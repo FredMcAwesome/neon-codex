@@ -26,7 +26,6 @@ export const TraditionSchema = type({
       spiritManipulation: "string",
     })
   ),
-
   "bonus?": BonusSchema,
   "requirements?": RequirementsSchema,
   source: type.valueOf(sourceBookEnum),

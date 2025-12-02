@@ -16,10 +16,10 @@ import {
 import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 import type {
   spellDamageType,
-  spellRangeType,
   SpellType,
 } from "@neon-codex/common/build/schemas/abilities/talent/spellSchemas.js";
 import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
+import type { spellRangeType } from "@neon-codex/common/build/schemas/shared/commonSchemas";
 
 @Entity()
 export class Spells {

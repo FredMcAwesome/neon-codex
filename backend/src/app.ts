@@ -12,14 +12,17 @@ import { init } from "./utils/db.js";
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import { createContext, router } from "./trpc.js";
 
-const appRouter = router({
+const appRouter: ReturnType<typeof router> = router({
   character: characterRouter,
   forum: forumRouter,
   authentication: authenticationRouter,
 });
 export type AppRouter = typeof appRouter;
 
-export async function bootstrap() {
+export async function bootstrap(): Promise<{
+  app: express.Application;
+  appRouter: AppRouter;
+}> {
   const db = await init();
 
   const app = express();

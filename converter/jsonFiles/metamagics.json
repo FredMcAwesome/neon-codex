@@ -55,6 +55,11 @@
     "adept": true,
     "magician": false,
     "repeatable": true,
+    "bonus": {
+      "power": {
+        "bonusAdeptPowerPoints": 1
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 326
   },
@@ -64,6 +69,11 @@
     "category": "Mentor Spirit",
     "adept": false,
     "magician": true,
+    "bonus": {
+      "specificQuality": {
+        "quickeningMetamagic": true
+      }
+    },
     "requirements": {},
     "source": "Shadowrun 5 Core Rulebook",
     "page": 326
@@ -421,6 +431,16 @@
     "category": "Mentor Spirit",
     "adept": true,
     "magician": false,
+    "bonus": {
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Movement",
+            "select": "Self-Only × 3"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "source": "Shadowrun 5 Core Rulebook",
     "page": 399
@@ -449,6 +469,42 @@
     "category": "Mentor Spirit",
     "adept": false,
     "magician": true,
+    "bonus": {
+      "spellAndMagic": {
+        "addSpiritOptionList": [
+          {
+            "name": "Guardian Spirit"
+          },
+          {
+            "name": "Guidance Spirit"
+          },
+          {
+            "name": "Spirit of Air"
+          },
+          {
+            "name": "Spirit of Beasts"
+          },
+          {
+            "name": "Spirit of Earth"
+          },
+          {
+            "name": "Spirit of Man"
+          },
+          {
+            "name": "Spirit of Fire"
+          },
+          {
+            "name": "Plant Spirit"
+          },
+          {
+            "name": "Spirit of Water"
+          },
+          {
+            "name": "Task Spirit"
+          }
+        ]
+      }
+    },
     "source": "Forbidden Arcana",
     "page": 44
   },
@@ -458,6 +514,15 @@
     "category": "Mentor Spirit",
     "adept": false,
     "magician": true,
+    "bonus": {
+      "spellAndMagic": {
+        "addSpiritOptionList": [
+          {
+            "name": "Shedim"
+          }
+        ]
+      }
+    },
     "source": "Forbidden Arcana",
     "page": 44
   },
@@ -486,6 +551,11 @@
     "category": "Mentor Spirit",
     "adept": false,
     "magician": true,
+    "bonus": {
+      "spellAndMagic": {
+        "drainModification": -1
+      }
+    },
     "source": "Forbidden Arcana",
     "page": 44
   },

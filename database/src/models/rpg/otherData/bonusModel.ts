@@ -26,8 +26,8 @@ export abstract class Bonuses {
     if (dto.spellAndMagic?.linkMentorSpirit !== undefined) {
       this.linkMentorSpirit = dto.spellAndMagic.linkMentorSpirit;
     }
-    if (dto.technomancer?.linkParagon !== undefined) {
-      this.linkParagon = dto.technomancer.linkParagon;
+    if (dto.spellAndMagic?.linkParagon !== undefined) {
+      this.linkParagon = dto.spellAndMagic.linkParagon;
     }
   }
 }

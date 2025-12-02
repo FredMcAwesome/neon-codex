@@ -220,6 +220,7 @@ export enum limbSlotXmlEnum {
 }
 
 export const StringOrNumberSchema = type.or("number", "string");
+export type StringOrNumberType = typeof StringOrNumberSchema.infer;
 export const StringArrayOrStringSchema = type.or("string[]", "string");
 export const NumberOrRatingSchema = type.or("number", "'Rating'");
 export const NumberOrAnyRatingSchema = type.or(
@@ -344,6 +345,7 @@ export const SpiritSchema = type.or(
   type({
     "+": "reject",
     spirit: StringArrayOrStringSchema,
+    // Unused... So we won't implement it
     "addtoselected?": type.or("'False'", "'True'"),
   }),
   "''"
@@ -542,22 +544,33 @@ export const SpellPowerXmlRangeSchema = type.or(
 
 export type SpellPowerXmlRangeType = typeof SpellPowerXmlRangeSchema.infer;
 
-export const NaturalWeaponSchema = type({
+export const NaturalWeaponXmlSchema = type({
   "+": "reject",
   name: "string",
-  reach: "number",
+  accuracy: "string",
   damage: "string",
   ap: "number",
+  reach: "number",
   useskill: "string",
   "useskillspec?": "string",
-  accuracy: "string",
-  source: "string",
+  source: type.valueOf(sourceBookXmlEnum),
   page: "number",
 });
+export type NaturalWeaponXmlType = typeof NaturalWeaponXmlSchema.infer;
 
 export enum MatrixAttributeXmlSchema {
   Attack = "String_Attack",
   DataProcessing = "String_DataProcessing",
   Firewall = "String_Firewall",
   Sleaze = "String_Sleaze",
+}
+
+export enum spellXmlCategoryEnum {
+  Combat = "Combat",
+  Detection = "Detection",
+  Health = "Health",
+  Illusion = "Illusion",
+  Manipulation = "Manipulation",
+  Enchantments = "Enchantments",
+  Rituals = "Rituals",
 }

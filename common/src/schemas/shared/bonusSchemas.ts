@@ -2,27 +2,49 @@ import { type } from "arktype";
 import {
   ammoSourceEnum,
   attributeTypeEnum,
+  augmentationGradeEnum,
+  augmentationTypeEnum,
   bonusCostModifierConditionEnum,
   bonusCostModifierTypeEnum,
   bonusSkillModifierTypeEnum,
   critterAttributePowerEnum,
+  critterPowerEnum,
+  cyberwareCategoryEnum,
   damageTypeEnum,
+  focusTypeEnum,
+  freeSpellRateEnum,
+  gearCategoryEnum,
   limbSlotEnum,
   limitCategoryEnum,
   listTypeEnum,
   listTypeModifierEnum,
+  magicalFormulaeCategoryEnum,
   mathOperatorEnum,
   skillCategoryEnum,
   skillTypeEnum,
+  sourceBookEnum,
   specialAttributeTypeEnum,
   spellCategoryEnum,
+  spellDescriptorEnum,
+  spellPowerRangeEnum,
+  vehicleTypeEnum,
   weaponTypeEnum,
 } from "../../enums.js";
-import { EssenceCostSchema } from "./commonSchemas.js";
+import {
+  EssenceCostSchema,
+  spellRangeSchema,
+  weaponSubtypeEnum,
+} from "./commonSchemas.js";
+import { NaturalWeaponSchema } from "./weaponSharedSchemas.js";
 
-const RatingCalculationSchema = type(
+const RatingCalculationInnerSchema = type(
   type.or(
     "number",
+    // TODO: should we allow Seats here, or have a separate schema for seatsModifier in bonus?
+    type({
+      "+": "reject",
+      option: "'Seats'",
+    }),
     type({
       "+": "reject",
       option: "'Rating'",
@@ -37,6 +59,20 @@ const RatingCalculationSchema = type(
     })
   )
 );
+const { RatingCalculationSchema } = type.module({
+  RatingCalculationSchema: [
+    [
+      RatingCalculationInnerSchema,
+      "|",
+      {
+        subnumbers: "RatingCalculationSchema",
+      },
+    ],
+    "[]",
+  ],
+});
+export type RatingCalculationType = typeof RatingCalculationSchema.infer;
+
 const RatingBonusSchema = type(
   type.or(
     "number",
@@ -401,7 +437,7 @@ const BonusSkillOptionSchema = type({
   }),
   // Skillsoft host for activesoft
   "skillwire?": type({
-    maximumSkillSoftRating: RatingCalculationSchema.array(),
+    maximumSkillSoftRating: RatingCalculationSchema,
     "precedence?": "'0'",
   }),
   // Skillsoft host that can only hold 1 skillsoft
@@ -474,6 +510,7 @@ const BonusPowerOptionSchema = type({
     "+": "reject",
     name: "string",
     "bonus?": type({
+      "+": "reject",
       value: "number",
       "select?": type.or(
         type({
@@ -487,52 +524,280 @@ const BonusPowerOptionSchema = type({
       ),
     }),
   }).array(),
+  "unlockOptionalPowerList?": type({
+    "+": "reject",
+    "selectOptionalPowerCount?": type.or(
+      "number",
+      type({
+        "+": "reject",
+        calc: "'floor({MAG} div 3)'",
+      })
+    ),
+    optionalPowerList: type({
+      "+": "reject",
+      name: "string",
+      "select?": "string",
+    }).array(),
+  }),
+  "unlockCritterPowerCategory?": type.valueOf(critterPowerEnum),
+  "addCritterPowerList?": type({
+    "+": "reject",
+    name: "string",
+    "select?": "string",
+    "rating?": "number",
+  }).array(),
+  "bonusAdeptPowerPoints?": "number",
 });
 const BonusSpellAndMagicOptionSchema = type({
   "+": "reject",
+  "addSpell?": type({
+    "+": "reject",
+    name: "string",
+    "alchemical?": "true",
+  }),
+  "addMetamagicList?": "string[]",
+  "metamagicChoiceOrderRestriction?": type({
+    "+": "reject",
+    metamagic: "string",
+    initiationOrder: "number",
+  }).array(),
+  // add spells linked to a condition
+  // new spells are continually added as per condition
+  "freeSpellOngoingBonus?": type({
+    "+": "reject",
+    linkType: type.or(
+      type({
+        "+": "reject",
+        attributeLinked: type.valueOf(attributeTypeEnum),
+      }),
+      type({
+        "+": "reject",
+        skillLinked: "string",
+      })
+    ),
+    freeSpellRate: type.valueOf(freeSpellRateEnum),
+    "spellRange?": type.valueOf(spellPowerRangeEnum),
+  }),
   "linkSpell?": type({
     "+": "reject",
     ignoreRequirements: "boolean",
   }),
-  "spellCategoryList?": type({
+  "limitSpellOptionsToCategoryList?": type
+    .or(
+      type({
+        "+": "reject",
+        category: type.valueOf(spellCategoryEnum),
+      }),
+      type({
+        "+": "reject",
+        selectCategory: "true",
+      })
+    )
+    .array(),
+  "limitSpiritOptionsToList?": type
+    .or(
+      type({
+        "+": "reject",
+        category: type.valueOf(spellCategoryEnum),
+      }),
+      type({
+        "+": "reject",
+        selectCategory: "true",
+      }),
+      type({
+        "+": "reject",
+        spirit: "string",
+      })
+    )
+    .array(),
+  "unlockSpellList?": type({
     "+": "reject",
-    category: type.or(
-      type.valueOf(spellCategoryEnum),
-      type({
-        "+": "reject",
-        option: "'SelectCategory'",
-      })
-    ),
-    bonus: type.or(
-      "number",
-      type({
-        "+": "reject",
-        option: "'Rating'",
-      })
-    ),
+    "allowSpellCategory?": type.valueOf(spellCategoryEnum),
+    "allowSpellRangeList?": type(spellRangeSchema).array(),
   }).array(),
-  "allowSpellCategory?": type.valueOf(spellCategoryEnum),
+  "spellModifiers?": type({
+    "+": "reject",
+    "spellBonusDice?": type({
+      "+": "reject",
+      "specificSpell?": type({
+        "+": "reject",
+        name: "string",
+        bonus: "number",
+      }).array(),
+      "spellCategoryList?": type({
+        "+": "reject",
+        category: type.or(
+          type.valueOf(spellCategoryEnum),
+          type({
+            "+": "reject",
+            option: "'SelectCategory'",
+          })
+        ),
+        bonus: type.or(
+          "number",
+          type({
+            "+": "reject",
+            option: "'Rating'",
+          })
+        ),
+      }).array(),
+    }).array(),
+    "spellBonusDamage?": type({
+      "+": "reject",
+      "spellDescriptor?": type({
+        "+": "reject",
+        spellDescriptorListRequired: type.valueOf(spellDescriptorEnum).array(),
+        bonusDamage: "number",
+      }),
+      "spellCategory?": type({
+        "+": "reject",
+        spellCategoryRequired: type.valueOf(spellCategoryEnum),
+        bonusDamage: "number",
+      }),
+    }),
+    "spellExtraDrain?": type({
+      "+": "reject",
+      "spellDescriptor?": type({
+        "+": "reject",
+        spellDescriptorListRequired: type.valueOf(spellDescriptorEnum).array(),
+        extraDrain: "number",
+      }),
+      "spellCategory?": type({
+        "+": "reject",
+        spellCategoryRequired: type.or(
+          type.valueOf(spellCategoryEnum),
+          "'MatchLimitSpellCategory'"
+        ),
+        extraDrain: "number",
+      }),
+    }),
+  }),
+  "blockSpellDescriptorList?": type.valueOf(spellDescriptorEnum).array(),
   "linkMentorSpirit?": "true",
   "linkTradition?": "true",
-});
-const BonusTechnomancerOptionSchema = type({
-  "+": "reject",
+  "penaltyFreeSustainCount?": RatingCalculationSchema,
+  "newSpellKarmaCostModification?": type({
+    "+": "reject",
+    spellType: type.valueOf(magicalFormulaeCategoryEnum),
+    modifier: "number",
+  }),
+  "focusBindingKarmaCostModificationList?": type({
+    "+": "reject",
+    focusType: type.valueOf(focusTypeEnum),
+    modifier: "number",
+    "focusSubtypeText?": "string",
+  }).array(),
+  "drainModification?": "number",
+  "addSpiritOptionList?": type(
+    type.or(
+      {
+        "+": "reject",
+        "selectSpirit?": "true",
+      },
+      type({
+        "+": "reject",
+        name: "string",
+      })
+    )
+  ).array(),
+  // Technomancer specific
   "linkSprite?": "true",
   "linkParagon?": "true",
+  "fadingModificationList?": type({
+    "+": "reject",
+    "specificComplexForm?": "string",
+    modifier: "number",
+  }).array(),
+  "addEcho?": "string",
+  "livingPersonaModification?": type({
+    "+": "reject",
+    "attack?": "number",
+    "dataProcessing?": "number",
+    "firewall?": "number",
+    "sleaze?": "number",
+  }),
+  "resonanceLossDueToAugmentationModificationPercentageIncrease?": "number",
 });
 const BonusCombatAndWeaponOptionSchema = type({
   "+": "reject",
-  "specificWeapon?": {
-    weaponType: type.valueOf(weaponTypeEnum),
-    bonus: type.or("number", type({ "+": "reject", option: "'Rating'" })),
-  },
-  "weaponAccuracy?": {
-    weapon: "string",
-    bonus: type.or("number", type({ "+": "reject", option: "'Rating'" })),
-  },
-  "linkWeapon?": type.or(
-    type({ restrictions: "false" }),
+  "addWeapon?": type.or(
     type({
+      name: "string",
+    }),
+    type({
+      "+": "reject",
+      naturalWeapon: NaturalWeaponSchema,
+    })
+  ),
+  "addMartialArt?": "string",
+  "attackModifiers?": type({
+    "+": "reject",
+    "specificWeaponDicePoolModifier?": type({
+      "+": "reject",
+      weaponType: type.valueOf(weaponTypeEnum),
+      modifier: type.or("number", type({ "+": "reject", option: "'Rating'" })),
+    }),
+    "weaponCategoryDicePoolModifier?": type({
+      "+": "reject",
+      category: type.valueOf(weaponSubtypeEnum),
+      modifier: "number",
+    }),
+    "weaponLimitModifier?": type({
+      "+": "reject",
+      weapon: "string",
+      modifier: type.or("number", type({ "+": "reject", option: "'Rating'" })),
+    }),
+    "smartLinkModifier?": "number",
+    "unarmedModifier?": RatingCalculationSchema,
+    "weaponSkillAccuracyList?": type({
+      "+": "reject",
+      skill: WeaponAccuracySkillListSkillSelectionSchema,
+      bonus: type.or(
+        "number",
+        type({
+          "+": "reject",
+          option: "'Rating'",
+        })
+      ),
+    }).array(),
+  }),
+  "damageValueModifiers?": type({
+    "+": "reject",
+    "thrownWeaponModifier?": "number",
+    "unarmedModifier?": RatingCalculationSchema,
+    "weaponSkillDamage?": type({
+      selectionOptions: SelectSkillSchema,
+      bonus: "number",
+    }),
+    "unarmedDamage?": type(
+      type.or(
+        "number",
+        type({ "+": "reject", option: "'Rating'" }),
+        type({
+          "+": "reject",
+          operator: type.valueOf(mathOperatorEnum),
+        })
+      )
+    ).array(),
+  }),
+  "unarmedDamageType?": type.valueOf(damageTypeEnum),
+  "rangeModifiers?": type({
+    "+": "reject",
+    "thrownWeaponRangeModifier?": RatingCalculationSchema,
+    "reach?": type({
+      "+": "reject",
+      modifier: "number",
+      "weaponName?": "string",
+    }),
+    "unarmedReach?": "number",
+  }),
+  "linkWeapon?": type.or(
+    type({
+      "+": "reject",
+      restrictions: "false",
+    }),
+    type({
+      "+": "reject",
       restrictions: "true",
       weaponRequirements: type({
         "+": "reject",
@@ -541,27 +806,36 @@ const BonusCombatAndWeaponOptionSchema = type({
       }),
     })
   ),
+
+  "defenseTestModifier?": RatingCalculationSchema,
   "linkArmour?": "true",
-  "weaponSkillAccuracyList?": type({
-    "+": "reject",
-    skill: WeaponAccuracySkillListSkillSelectionSchema,
-    bonus: type.or(
+  "armourModifiers?": type({
+    "armour?": type({
+      "+": "reject",
+      "nonStacking?": "true",
+      bonus: type.or(
+        "number",
+        type({
+          "+": "reject",
+          option: "'Rating'",
+        })
+      ),
+    }),
+    "fireArmour?": type.or(
       "number",
       type({
         "+": "reject",
         option: "'Rating'",
       })
     ),
-  }).array(),
-  "weaponSkillDamage?": type({
-    selectionOptions: SelectSkillSchema,
-    bonus: "number",
-  }),
-  "smartlinkAccuracy?": "number",
-  "armour?": type({
-    "+": "reject",
-    "nonStacking?": "true",
-    bonus: type.or(
+    "electricityArmour?": type.or(
+      "number",
+      type({
+        "+": "reject",
+        option: "'Rating'",
+      })
+    ),
+    "coldArmour?": type.or(
       "number",
       type({
         "+": "reject",
@@ -569,151 +843,159 @@ const BonusCombatAndWeaponOptionSchema = type({
       })
     ),
   }),
-  "fireArmour?": type.or(
-    "number",
-    type({
-      "+": "reject",
-      option: "'Rating'",
-    })
-  ),
-  "electricityArmour?": type.or(
-    "number",
-    type({
-      "+": "reject",
-      option: "'Rating'",
-    })
-  ),
-  "coldArmour?": type.or(
-    "number",
-    type({
-      "+": "reject",
-      option: "'Rating'",
-    })
-  ),
-  "dodge?": RatingBonusSchema,
-  "unarmedDamage?": type(
-    type.or(
+
+  "damageResistanceModifiers?": type({
+    "damageResistance?": type.or(
       "number",
-      type({ "+": "reject", option: "'Rating'" }),
+      type({ "+": "reject", option: "'Rating'" })
+    ),
+    "radiationResistance?": type.or(
+      "number",
+      type({ "+": "reject", option: "'Rating'" })
+    ),
+    "sonicResistance?": type.or(
+      "number",
+      type({ "+": "reject", option: "'Rating'" })
+    ),
+  }),
+  "toxinAndPathogen?": type({
+    "toxinContactResist?": type.or(
+      "number",
+      type({
+        option: "'Rating'",
+      })
+    ),
+    "pathogenContactResist?": type.or(
+      "number",
+      type({
+        option: "'Rating'",
+      })
+    ),
+    "toxinContactImmune?": "true",
+    "pathogenContactImmune?": "true",
+    "toxinInhalationResist?": type.or(
+      "number",
       type({
         "+": "reject",
-        operator: type.valueOf(mathOperatorEnum),
+        option: "'Rating'",
       })
-    )
-  ).array(),
-  "unarmedDamageType?": type.valueOf(damageTypeEnum),
-  "unarmedReach?": "number",
-  "damageResistance?": type.or(
-    "number",
-    type({ "+": "reject", option: "'Rating'" })
-  ),
-  "radiationResistance?": type.or(
-    "number",
-    type({ "+": "reject", option: "'Rating'" })
-  ),
-  "sonicResistance?": type.or(
-    "number",
-    type({ "+": "reject", option: "'Rating'" })
-  ),
-  "toxinContactResist?": type.or(
-    "number",
-    type({
-      option: "'Rating'",
-    })
-  ),
-  "pathogenContactResist?": type.or(
-    "number",
-    type({
-      option: "'Rating'",
-    })
-  ),
-  "toxinContactImmune?": "true",
-  "pathogenContactImmune?": "true",
-  "toxinInhalationResist?": type.or(
-    "number",
-    type({
-      "+": "reject",
-      option: "'Rating'",
-    })
-  ),
-  "pathogenInhalationResist?": type.or(
-    "number",
-    type({
-      "+": "reject",
-      option: "'Rating'",
-    })
-  ),
-  "toxinInhalationImmune?": "true",
-  "pathogenInhalationImmune?": "true",
-  "toxinIngestionResist?": type.or(
-    "number",
-    type({
-      "+": "reject",
-      option: "'Rating'",
-    })
-  ),
-  "pathogenIngestionResist?": type.or(
-    "number",
-    type({ "+": "reject", option: "'Rating'" })
-  ),
-  "toxinIngestionImmune?": "true",
-  "pathogenIngestionImmune?": "true",
-  "toxinInjectionResist?": type.or(
-    "number",
-    type({ "+": "reject", option: "'Rating'" })
-  ),
-  "pathogenInjectionResist?": type.or(
-    "number",
-    type({ "+": "reject", option: "'Rating'" })
-  ),
-  "toxinInjectionImmune?": "true",
-  "pathogenInjectionImmune?": "true",
+    ),
+    "pathogenInhalationResist?": type.or(
+      "number",
+      type({
+        "+": "reject",
+        option: "'Rating'",
+      })
+    ),
+    "toxinInhalationImmune?": "true",
+    "pathogenInhalationImmune?": "true",
+    "toxinIngestionResist?": type.or(
+      "number",
+      type({
+        "+": "reject",
+        option: "'Rating'",
+      })
+    ),
+    "pathogenIngestionResist?": type.or(
+      "number",
+      type({ "+": "reject", option: "'Rating'" })
+    ),
+    "toxinIngestionImmune?": "true",
+    "pathogenIngestionImmune?": "true",
+    "toxinInjectionResist?": type.or(
+      "number",
+      type({ "+": "reject", option: "'Rating'" })
+    ),
+    "pathogenInjectionResist?": type.or(
+      "number",
+      type({ "+": "reject", option: "'Rating'" })
+    ),
+    "toxinInjectionImmune?": "true",
+    "pathogenInjectionImmune?": "true",
+  }),
 });
 const BonusConditionAndRecoveryOptionSchema = type({
   "+": "reject",
   "addictionResistance?": AddictionResistanceSchema,
-  "ignoreConditionModifierNegativeEffects?": type.or(
+  "conditionModifierNegativeEffectsOffsetShared?": type.or(
     "number",
     type({
       "+": "reject",
       option: "'Rating'",
     })
   ),
-  "addPhysicalBoxes?": type.or(
+  "conditionModifierNegativeEffectsOffsetPerTrack?": type.or(
+    "number",
+    type({
+      "+": "reject",
+      option: "'Rating'",
+    })
+  ),
+  "conditionModifierBoxesPerLevelModifier?": "number",
+  "addPhysicalTrackBoxes?": type.or(
     "number",
     type({ "+": "reject", option: type.or("'Rating'", "'-Rating'") })
   ),
-  "stunHealing?": type.or(
+  "addStunTrackBoxes?": type.or(
+    "number",
+    type({ "+": "reject", option: type.or("'Rating'", "'-Rating'") })
+  ),
+  "addOverflowBoxes?": "number",
+  "stunConditionModifierHealingDiceModifier?": type.or(
     "number",
     type({ "+": "reject", option: "'Rating'" })
   ),
-  "physicalHealing?": type.or(
+  "physicalConditionModifierHealingDiceModifier?": type.or(
     "number",
     type({ "+": "reject", option: "'Rating'" })
   ),
+  "addEssenceToPhysicalConditionMonitorRecovery?": "true",
+  "addEssenceToStunConditionMonitorRecovery?": "true",
 });
+const MovementReplacementSchema = type({
+  "+": "reject",
+  // All speeds are times Agility
+  "sprint?": "number",
+  "run?": "number",
+  "walk?": "number",
+});
+export type MovementReplacementType = typeof MovementReplacementSchema.infer;
+
 const BonusMovementAndLifestyleOptionSchema = type({
   "+": "reject",
+  "groundBaseMovementReplacement?": MovementReplacementSchema,
+  "flyBaseMovementReplacement?": MovementReplacementSchema,
+  "swimBaseMovementReplacement?": MovementReplacementSchema,
   // Note: percentage speed increases stack so 50% + 50% = 100%
   "swimSpeedPercentageModifier?": "number",
   "walkSpeedPercentageModifier?": "number",
   "runSpeedPercentageModifier?": "number",
   "sprintSpeedPercentageModifier?": "number",
-  "lifestyleCostModifier?": type(
-    type({ "+": "reject", "lifestyle?": "string", cost: "number" })
+  "lifestyleCostModifierList?": type(
+    type({
+      "+": "reject",
+      "basicLifestyle?": "true",
+      "lifestyle?": "string",
+      cost: "number",
+    })
   ).array(),
 });
 
 const BonusTestAndResistanceOptionSchema = type({
   "+": "reject",
   "composure?": "number",
-  "judgeIntentionsDefense?": RatingBonusSchema,
+  "judgeIntentions?": type({
+    "defense?": RatingBonusSchema,
+    "offense?": RatingBonusSchema,
+  }),
   "memory?": RatingBonusSchema,
   "drainResist?": RatingBonusSchema,
   "fadingResist?": RatingBonusSchema,
+  "allSpellResist?": RatingBonusSchema,
   "directManaResist?": RatingBonusSchema,
   "detectionResist?": RatingBonusSchema,
   "manaIllusionResist?": RatingBonusSchema,
+  "physicalIllusionResist?": RatingBonusSchema,
 
   "mentalManipulationResist?": RatingBonusSchema,
   "decreaseBodyResist?": RatingBonusSchema,
@@ -735,11 +1017,41 @@ const BonusInitiativeOptionSchema = type({
   "initiative?": InitiativeSchema,
   "matrixInitiative?": type({
     "+": "reject",
-    bonusDice: "number",
+    "scoreModifier?": "number",
+    "bonusDice?": "number",
   }),
+  "surpriseTest?": RatingCalculationSchema,
 });
 const BonusGearAndVehicleOptionSchema = type({
   "+": "reject",
+  "addGear?": type({
+    "+": "reject",
+    name: "string",
+    category: type.valueOf(gearCategoryEnum),
+    "rating?": "number",
+    "includedGearList?": type({
+      "+": "reject",
+      name: "string",
+      category: type.valueOf(gearCategoryEnum),
+      "rating?": "number",
+    }).array(),
+  }),
+  "addRestrictedGear?": type({
+    "+": "reject",
+    availability: "number",
+    amount: "number",
+  }),
+  "deviceRatingBonus?": "number",
+  "seatsModifier?": RatingCalculationSchema,
+  "speedModifier?": RatingCalculationSchema,
+  "offRoadSpeedModifier?": RatingCalculationSchema,
+  "accelerationModifier?": RatingCalculationSchema,
+  "offRoadAccelerationModifier?": RatingCalculationSchema,
+  "handlingModifier?": RatingCalculationSchema,
+  "offRoadHandlingModifier?": RatingCalculationSchema,
+  "pilotModifier?": RatingCalculationSchema,
+  "sensorModifier?": RatingCalculationSchema,
+  "bodyModifier?": RatingCalculationSchema,
 });
 const BonusEssenceAndAugmentationSchema = type({
   "+": "reject",
@@ -747,17 +1059,60 @@ const BonusEssenceAndAugmentationSchema = type({
     type({
       "+": "reject",
       restrictCategory: "true",
-      category: "string",
+      category: type.valueOf(cyberwareCategoryEnum),
     }),
     type({ "+": "reject", restrictCategory: "false" })
   ),
   "selectSideOfBody?": "true",
-
-  "essenceCostTimes100?": EssenceCostSchema,
+  "addAugmentation?": type({
+    "+": "reject",
+    name: "string",
+    grade: type.valueOf(augmentationGradeEnum),
+    type: type.valueOf(augmentationTypeEnum),
+  }),
+  "augmentationCostModifierPercentage?": type({
+    "+": "reject",
+    "bioware?": "number",
+    "cyberware?": "number",
+    "geneTech?": "number",
+  }),
+  "augmentationDisable?": type({
+    "+": "reject",
+    "disableBioware?": "true",
+    "disableCyberware?": "true",
+    "disableGeneTech?": "true",
+    "disableBiowareGradeList?": type.valueOf(augmentationGradeEnum).array(),
+    "disableCyberwareGradeList?": type.valueOf(augmentationGradeEnum).array(),
+    "disableGeneTechGradeList?": type.valueOf(augmentationGradeEnum).array(),
+  }),
+  "specialModificationLimit?": "number",
+  "essenceModifier?": "number",
+  "essenceMaxModifier?": "number",
+  "essenceCostOngoingPercentageModifier?": type({
+    "+": "reject",
+    "magOnly?": EssenceCostSchema,
+    "cyberwareOnly?": EssenceCostSchema,
+    "biowareOnly?": EssenceCostSchema,
+    "geneTechOnly?": EssenceCostSchema,
+    "base?": EssenceCostSchema,
+  }),
 });
 const BonusContactAndReputationSchema = type({
   "+": "reject",
+  "addContact?": type({
+    "+": "reject",
+    loyalty: "number",
+    connection: "number",
+    "group?": "true",
+  }),
   "linkContact?": "true",
+  "notorietyModifier?": "number",
+  "astralReputationModifier?": "number",
+  "publicAwarenessModifier?": "number",
+  // street cred = 10 + this number to determine street cred instead of the normal 10
+  "streetCredLifetimeKarmaModifier?": "number",
+  "contactKarmaCostModifier?": "number",
+  "contactMinimumKarmaCost?": "number",
 });
 const BonusQualitySchema = type({
   "+": "reject",
@@ -772,13 +1127,36 @@ const BonusQualitySchema = type({
   }),
   // TODO: needs to be linked to a quality
   "addQualityList?": BonusGenericListSchema,
+  "freeQuality?": "string",
   "disableQualityList?": type({ "+": "reject", name: "string" }).array(),
 });
 const BonusSpecificQualitySchema = type({
   "+": "reject",
   "adapsin?": "true",
-  "reflex?": "true",
+  "allowSpriteFettering?": "true",
   "ambidextrous?": "true",
+  "blackmarketDiscount?": "true",
+  "burnoutsWay?": "true",
+  "cyberAdeptDaemon?": "true",
+  "cyberSeeker?": type({
+    "+": "reject",
+    attributeList: type.valueOf(attributeTypeEnum).array(),
+    "loseOnePhysicalBoxInsteadOfGainingTwo?": "true",
+  }),
+  "dealerConnection?": type.valueOf(vehicleTypeEnum).array(),
+  "erased?": "true",
+  "excon?": "true",
+  "fame?": "true",
+  "friendsInHighPlaces?": "true",
+  "magiciansWayDiscount?": "true",
+  "mademan?": "true",
+  "overclocker?": "true",
+  "prototypeTranshuman?": "number",
+  "quickeningMetamagic?": "true",
+  "reflexRecorderOptimisation?": "true",
+  "selectInherentAiProgram?": "true",
+  "trustfund?": "number",
+  "uneducated?": "true",
 });
 const BonusMiscellaneousOptionSchema = type({
   "+": "reject",
@@ -792,6 +1170,25 @@ const BonusMiscellaneousOptionSchema = type({
     limbSlot: type.valueOf(limbSlotEnum),
     numberOfLimbs: "number",
   }),
+  "characterCreator?": type({
+    "+": "reject",
+    "nuyenForGearModifier?": type({
+      nuyen: "number",
+      "gearPurchasedWithNuyenMarkedAsStolen?": "true",
+    }),
+    "maxKarmaThatCanBeConvertedToNuyenModifier?": "number",
+  }),
+  "dicePoolModifier?": type({
+    "+": "reject",
+    type: type({
+      "+": "reject",
+      specificTest: "string",
+    }).or({
+      "+": "reject",
+      selectFromMatrixActions: "true",
+    }),
+    modifier: "number",
+  }),
 });
 
 export type BonusAttributeOptionType = typeof BonusAttributeOptionSchema.infer;
@@ -799,8 +1196,6 @@ export type BonusSkillOptionType = typeof BonusSkillOptionSchema.infer;
 export type BonusPowerOptionType = typeof BonusPowerOptionSchema.infer;
 export type BonusSpellAndMagicOptionType =
   typeof BonusSpellAndMagicOptionSchema.infer;
-export type BonusTechnomancerOptionType =
-  typeof BonusTechnomancerOptionSchema.infer;
 export type BonusCombatAndWeaponOptionType =
   typeof BonusCombatAndWeaponOptionSchema.infer;
 export type BonusConditionAndRecoveryOptionType =
@@ -828,7 +1223,6 @@ export const BonusSchema = type({
   "skill?": BonusSkillOptionSchema,
   "power?": BonusPowerOptionSchema,
   "spellAndMagic?": BonusSpellAndMagicOptionSchema,
-  "technomancer?": BonusTechnomancerOptionSchema,
   "combatAndWeapon?": BonusCombatAndWeaponOptionSchema,
   "conditionAndRecovery?": BonusConditionAndRecoveryOptionSchema,
   "movementAndLifestyle?": BonusMovementAndLifestyleOptionSchema,

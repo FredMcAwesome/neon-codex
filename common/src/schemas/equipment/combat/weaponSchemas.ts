@@ -6,9 +6,7 @@ import {
   ammoSourceEnum,
   weaponTypeEnum,
   explosiveTypeEnum,
-  accuracyEnum,
   mathOperatorEnum,
-  armourPenetrationEnum,
   augmentationTypeEnum,
   sourceBookEnum,
   rangeEnum,
@@ -24,7 +22,9 @@ import {
 import { RequirementsSchema } from "../../shared/requiredSchemas.js";
 import {
   AccessoryMountSchema,
+  AccuracySchema,
   AmmunitionSchema,
+  ArmourPenetrationSchema,
   DamageSchema,
 } from "../../shared/weaponSharedSchemas.js";
 import { CustomisedWeaponAccessoryListSchema } from "./weaponAccessorySchemas.js";
@@ -95,38 +95,6 @@ export type RangeType = typeof RangeSchema.infer;
 export const RangeListSchema = type(RangeSchema.array());
 export type RangeListType = typeof RangeListSchema.infer;
 
-export const AccuracySubnumberSchema = type.or(
-  "number",
-  type({
-    "+": "reject",
-    option: type.valueOf(accuracyEnum),
-  }),
-  type({
-    "+": "reject",
-    operator: type.valueOf(mathOperatorEnum),
-  })
-);
-
-export type AccuracyType = Array<
-  | typeof AccuracySubnumberSchema.infer
-  | {
-      subnumbers: AccuracyType;
-    }
->;
-export const { AccuracySchema } = type.module({
-  AccuracySchema: [
-    [
-      AccuracySubnumberSchema,
-      "|",
-      {
-        "+": "reject",
-        subnumbers: "AccuracySchema",
-      },
-    ],
-    "[]",
-  ],
-});
-
 export const RecoilCompensationSchema = type("number");
 export type RecoilCompensationType = typeof RecoilCompensationSchema.infer;
 
@@ -154,42 +122,6 @@ export type FirearmOptionsType = typeof FirearmOptionsSchema.infer;
 
 export const Mode = type(type.valueOf(firearmModeEnum).array());
 export type ModeType = typeof Mode.infer;
-
-// outer array is different ap values, inner is calculation for one ap value
-export const ArmourPenetrationSubnumberSchema = type.or(
-  type({
-    "+": "reject",
-    option: type.valueOf(armourPenetrationEnum),
-  }),
-  type({
-    "+": "reject",
-    operator: type.valueOf(mathOperatorEnum),
-  }),
-  "number"
-);
-export type SingleArmourPenetrationType = Array<
-  | typeof ArmourPenetrationSubnumberSchema.infer
-  | {
-      subnumbers: SingleArmourPenetrationType;
-    }
->;
-export const { SingleArmourPenetrationSchema } = type.module({
-  SingleArmourPenetrationSchema: [
-    [
-      ArmourPenetrationSubnumberSchema,
-      "|",
-      {
-        subnumbers: "SingleArmourPenetrationSchema",
-      },
-    ],
-    "[]",
-  ],
-});
-export const ArmourPenetrationSchema = type(
-  SingleArmourPenetrationSchema.array()
-);
-export type ArmourPenetrationType = typeof ArmourPenetrationSchema.infer;
-
 const WeaponPartialSchema = type({
   "+": "reject",
   // id: "string",
@@ -213,7 +145,7 @@ const WeaponPartialSchema = type({
     "hostWeaponMountsRequired?": AccessoryMountSchema,
   },
   relatedSkill: "string",
-  "relatedSkillSpecialisations?": "string[]",
+  "relatedSkillSpecialisationList?": "string[]",
   availability: AvailabilityWeaponSchema,
   cost: CostWeaponSchema,
   source: type.valueOf(sourceBookEnum),

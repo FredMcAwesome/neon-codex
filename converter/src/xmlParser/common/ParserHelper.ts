@@ -20,6 +20,7 @@ import type {
   XmlQualityListSingularType,
   XmlDurationType,
   SpellPowerXmlRangeType,
+  NaturalWeaponXmlType,
 } from "./ParserCommonDefines.js";
 import {
   attributeXMLEnum,
@@ -38,6 +39,21 @@ import type { XmlMovementType } from "../character/MetatypeParserSchemas.js";
 import type { BonusGenericListType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 import type { CustomisedGearListType } from "@neon-codex/common/build/schemas/equipment/other/gearSchemas.js";
 import type { CustomisedVehicleModListType } from "@neon-codex/common/build/schemas/equipment/rigger/vehicleModSchemas.js";
+import Weapons from "../../grammar/weapons.ohm-bundle.js";
+import {
+  accuracySemantics,
+  armourPenetrationSemantics,
+  damageSemantics,
+} from "../combat/WeaponParserHelper.js";
+import type {
+  AccuracyType,
+  ArmourPenetrationType,
+  DamageType,
+  NaturalWeaponType,
+} from "@neon-codex/common/build/schemas/shared/weaponSharedSchemas.js";
+const Accuracy = Weapons.Accuracy;
+const Damage = Weapons.Damage;
+const ArmourPenetration = Weapons.ArmourPenetration;
 
 export const convertSource = function (source: sourceBookXmlEnum | 2050) {
   const xmlSource = source === 2050 ? sourceBookXmlEnum.Shadowrun2050 : source;
@@ -398,7 +414,7 @@ export function convertIncludedXmlGears(
       };
     } else {
       let category;
-      if (useGear.category) {
+      if (useGear.category !== undefined) {
         category = convertGearCategory(useGear.category);
       }
       if (typeof useGear.name !== "string") {
@@ -688,7 +704,9 @@ export const convertIncludedQualities = function (
   }
   assert(
     qualityList.length > 0,
-    `Quality list is empty, ${qualities.positive}, ${qualities.negative}`
+    `Quality list is empty, ${JSON.stringify(
+      qualities.positive
+    )}, ${JSON.stringify(qualities.negative)}`
   );
   return qualityList;
 };
@@ -701,7 +719,7 @@ const convertIncludedQuality = function (
     : [qualitySingular.quality];
   assert(
     qualityList.length > 0,
-    `Quality list is empty, ${qualitySingular.quality}`
+    `Quality list is empty, ${JSON.stringify(qualitySingular.quality)}`
   );
   return qualityList.map((quality) => {
     if (typeof quality === "object") {
@@ -775,4 +793,44 @@ export const convertSpellPowerRange = function (range: SpellPowerXmlRangeType) {
         target: spellPowerTargetEnum.Target,
       };
   }
+};
+
+export const convertNaturalWeapon = function (
+  naturalWeapon: NaturalWeaponXmlType
+): NaturalWeaponType {
+  // console.dir(naturalWeapon, { depth: Infinity });
+  let match = Accuracy.match(naturalWeapon.accuracy.toString());
+  if (match.failed()) {
+    assert(false, match.message);
+  }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
+  const accuracy: AccuracyType = accuracySemantics(match).eval();
+  match = Damage.match(naturalWeapon.damage.toString());
+  if (match.failed()) {
+    assert(false, match.message);
+  }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
+  const damage: DamageType = damageSemantics(match).eval();
+  match = ArmourPenetration.match(naturalWeapon.ap.toString());
+  if (match.failed()) {
+    assert(false, match.message);
+  }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  const armourPenetration: ArmourPenetrationType =
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    armourPenetrationSemantics(match).eval();
+
+  return {
+    name: naturalWeapon.name,
+    accuracy: accuracy,
+    damage: damage,
+    armourPenetration: armourPenetration,
+    reach: naturalWeapon.reach,
+    relatedSkill: naturalWeapon.useskill,
+    ...(naturalWeapon.useskillspec !== undefined && {
+      relatedSkillSpecialisationList: [naturalWeapon.useskillspec],
+    }),
+    source: convertSource(naturalWeapon.source),
+    page: naturalWeapon.page,
+  };
 };

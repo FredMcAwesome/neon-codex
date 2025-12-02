@@ -440,9 +440,11 @@
     "category": "Paranormal",
     "bonus": {
       "combatAndWeapon": {
-        "armour": {
-          "bonus": {
-            "option": "Rating"
+        "armourModifiers": {
+          "armour": {
+            "bonus": {
+              "option": "Rating"
+            }
           }
         }
       }
@@ -552,6 +554,13 @@
     },
     "duration": "Always",
     "category": "Mundane",
+    "bonus": {
+      "testAndResistance": {
+        "allSpellResist": {
+          "option": "Rating"
+        }
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 76
   },
@@ -738,6 +747,26 @@
     },
     "duration": "Always",
     "category": "Paranormal",
+    "bonus": {
+      "essenceAndAugmentation": {
+        "augmentationDisable": {
+          "disableBiowareGradeList": [
+            "Standard",
+            "Used",
+            "Alphaware",
+            "Betaware",
+            "Omegaware"
+          ],
+          "disableCyberwareGradeList": [
+            "Standard",
+            "Used",
+            "Alphaware",
+            "Betaware",
+            "Omegaware"
+          ]
+        }
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 400
   },
@@ -1782,7 +1811,7 @@
     "category": "Weakness",
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": {
+        "addPhysicalTrackBoxes": {
           "option": "-Rating"
         }
       }
@@ -1808,6 +1837,11 @@
     "name": "Uneducated",
     "description": "",
     "category": "Weakness",
+    "bonus": {
+      "specificQuality": {
+        "uneducated": true
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 401
   },
@@ -1979,9 +2013,11 @@
     "category": "Mundane",
     "bonus": {
       "combatAndWeapon": {
-        "armour": {
-          "bonus": {
-            "option": "Rating"
+        "armourModifiers": {
+          "armour": {
+            "bonus": {
+              "option": "Rating"
+            }
           }
         }
       }
@@ -2186,7 +2222,8 @@
     "category": "Weakness",
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": -20
+        "addPhysicalTrackBoxes": -20,
+        "addStunTrackBoxes": -20
       }
     },
     "source": "Howling Shadows",
@@ -2320,7 +2357,7 @@
     "category": "Mundane",
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": {
+        "addPhysicalTrackBoxes": {
           "option": "Rating"
         }
       }
@@ -2613,6 +2650,15 @@
     },
     "duration": "Special",
     "category": "Drake",
+    "bonus": {
+      "movementAndLifestyle": {
+        "flyBaseMovementReplacement": {
+          "walk": 2,
+          "run": 4,
+          "sprint": 300
+        }
+      }
+    },
     "requirements": {},
     "forbidden": {},
     "source": "Howling Shadows",
@@ -2700,6 +2746,16 @@
     },
     "duration": "Special",
     "category": "Drake",
+    "bonus": {
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Hardened Armor",
+            "rating": 2
+          }
+        ]
+      }
+    },
     "requirements": {},
     "source": "Howling Shadows",
     "page": 165
@@ -2718,6 +2774,20 @@
     },
     "duration": "Special",
     "category": "Drake",
+    "bonus": {
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Hardened Armor",
+            "rating": 1
+          },
+          {
+            "name": "Hardened Mystic Armor",
+            "rating": 1
+          }
+        ]
+      }
+    },
     "source": "Howling Shadows",
     "page": 165
   },
@@ -2735,6 +2805,15 @@
     },
     "duration": "Special",
     "category": "Drake",
+    "bonus": {
+      "movementAndLifestyle": {
+        "flyBaseMovementReplacement": {
+          "walk": 3,
+          "run": 6,
+          "sprint": 500
+        }
+      }
+    },
     "requirements": {},
     "source": "Howling Shadows",
     "page": 165
@@ -2789,14 +2868,16 @@
     "category": "Drake",
     "bonus": {
       "combatAndWeapon": {
-        "toxinContactResist": 1,
-        "pathogenContactResist": 1,
-        "toxinInhalationResist": 1,
-        "pathogenInhalationResist": 1,
-        "toxinIngestionResist": 1,
-        "pathogenIngestionResist": 1,
-        "toxinInjectionResist": 1,
-        "pathogenInjectionResist": 1
+        "toxinAndPathogen": {
+          "toxinContactResist": 1,
+          "pathogenContactResist": 1,
+          "toxinInhalationResist": 1,
+          "pathogenInhalationResist": 1,
+          "toxinIngestionResist": 1,
+          "pathogenIngestionResist": 1,
+          "toxinInjectionResist": 1,
+          "pathogenInjectionResist": 1
+        }
       }
     },
     "source": "Howling Shadows",
@@ -3188,6 +3269,9 @@
     "category": "Infected",
     "bonus": {
       "combatAndWeapon": {
+        "damageValueModifiers": {
+          "unarmedModifier": [2]
+        },
         "unarmedDamageType": "Physical"
       }
     },
@@ -3265,6 +3349,9 @@
     "category": "Infected",
     "bonus": {
       "movementAndLifestyle": {
+        "groundBaseMovementReplacement": {
+          "run": 6
+        },
         "sprintSpeedPercentageModifier": 10000
       }
     },
@@ -3624,6 +3711,51 @@
     "description": "",
     "karma": 6,
     "category": "Infected",
+    "bonus": {
+      "combatAndWeapon": {
+        "addWeapon": {
+          "naturalWeapon": {
+            "name": "Tunneling Claws",
+            "accuracy": [
+              {
+                "option": "Physical"
+              }
+            ],
+            "damage": [
+              {
+                "damageAmount": [
+                  {
+                    "option": "Strength"
+                  },
+                  {
+                    "operator": "+"
+                  },
+                  1
+                ],
+                "type": "Physical"
+              }
+            ],
+            "armourPenetration": [
+              [
+                {
+                  "subnumbers": [
+                    -1,
+                    {
+                      "operator": "*"
+                    },
+                    1
+                  ]
+                }
+              ]
+            ],
+            "reach": 0,
+            "relatedSkill": "Unarmed Combat",
+            "source": "Dark Terrors",
+            "page": 163
+          }
+        }
+      }
+    },
     "requirements": {},
     "source": "Howling Shadows",
     "page": 172
@@ -4122,6 +4254,48 @@
       }
     },
     "category": "Chimeric Modification",
+    "bonus": {
+      "combatAndWeapon": {
+        "addWeapon": {
+          "naturalWeapon": {
+            "name": "Electrocytes",
+            "accuracy": [
+              {
+                "option": "Physical"
+              }
+            ],
+            "damage": [
+              {
+                "damageAmount": [
+                  {
+                    "option": "Body"
+                  }
+                ],
+                "type": "Stun",
+                "annotation": "Electrical"
+              }
+            ],
+            "armourPenetration": [
+              [
+                {
+                  "subnumbers": [
+                    -1,
+                    {
+                      "operator": "*"
+                    },
+                    6
+                  ]
+                }
+              ]
+            ],
+            "reach": 0,
+            "relatedSkill": "Unarmed Combat",
+            "source": "Howling Shadows",
+            "page": 171
+          }
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 171
   },
@@ -4173,7 +4347,7 @@
         ]
       },
       "conditionAndRecovery": {
-        "addPhysicalBoxes": {
+        "addPhysicalTrackBoxes": {
           "option": "Rating"
         }
       }
@@ -4231,6 +4405,51 @@
     "name": "Natural Weapon (Bite)",
     "description": "",
     "category": "Chimeric Modification",
+    "bonus": {
+      "combatAndWeapon": {
+        "addWeapon": {
+          "naturalWeapon": {
+            "name": "Bite",
+            "accuracy": [
+              {
+                "option": "Physical"
+              }
+            ],
+            "damage": [
+              {
+                "damageAmount": [
+                  {
+                    "option": "Strength"
+                  },
+                  {
+                    "operator": "+"
+                  },
+                  2
+                ],
+                "type": "Physical"
+              }
+            ],
+            "armourPenetration": [
+              [
+                {
+                  "subnumbers": [
+                    -1,
+                    {
+                      "operator": "*"
+                    },
+                    2
+                  ]
+                }
+              ]
+            ],
+            "reach": -1,
+            "relatedSkill": "Unarmed Combat",
+            "source": "Howling Shadows",
+            "page": 172
+          }
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 172
   },
@@ -4238,6 +4457,51 @@
     "name": "Natural Weapon (Claws)",
     "description": "",
     "category": "Chimeric Modification",
+    "bonus": {
+      "combatAndWeapon": {
+        "addWeapon": {
+          "naturalWeapon": {
+            "name": "Claws",
+            "accuracy": [
+              {
+                "option": "Physical"
+              }
+            ],
+            "damage": [
+              {
+                "damageAmount": [
+                  {
+                    "option": "Strength"
+                  },
+                  {
+                    "operator": "+"
+                  },
+                  1
+                ],
+                "type": "Physical"
+              }
+            ],
+            "armourPenetration": [
+              [
+                {
+                  "subnumbers": [
+                    -1,
+                    {
+                      "operator": "*"
+                    },
+                    1
+                  ]
+                }
+              ]
+            ],
+            "reach": 0,
+            "relatedSkill": "Unarmed Combat",
+            "source": "Howling Shadows",
+            "page": 172
+          }
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 172
   },
@@ -4245,6 +4509,51 @@
     "name": "Natural Weapon (Horns)",
     "description": "",
     "category": "Chimeric Modification",
+    "bonus": {
+      "combatAndWeapon": {
+        "addWeapon": {
+          "naturalWeapon": {
+            "name": "Horns",
+            "accuracy": [
+              {
+                "option": "Physical"
+              }
+            ],
+            "damage": [
+              {
+                "damageAmount": [
+                  {
+                    "option": "Strength"
+                  },
+                  {
+                    "operator": "+"
+                  },
+                  2
+                ],
+                "type": "Physical"
+              }
+            ],
+            "armourPenetration": [
+              [
+                {
+                  "subnumbers": [
+                    -1,
+                    {
+                      "operator": "*"
+                    },
+                    1
+                  ]
+                }
+              ]
+            ],
+            "reach": 0,
+            "relatedSkill": "Unarmed Combat",
+            "source": "Howling Shadows",
+            "page": 172
+          }
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 172
   },
@@ -4252,6 +4561,39 @@
     "name": "Natural Weapon (Tail)",
     "description": "",
     "category": "Chimeric Modification",
+    "bonus": {
+      "combatAndWeapon": {
+        "addWeapon": {
+          "naturalWeapon": {
+            "name": "Tail",
+            "accuracy": [
+              {
+                "option": "Physical"
+              }
+            ],
+            "damage": [
+              {
+                "damageAmount": [
+                  {
+                    "option": "Strength"
+                  },
+                  {
+                    "operator": "+"
+                  },
+                  3
+                ],
+                "type": "Physical"
+              }
+            ],
+            "armourPenetration": [[0]],
+            "reach": 1,
+            "relatedSkill": "Unarmed Combat",
+            "source": "Howling Shadows",
+            "page": 172
+          }
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 172
   },
@@ -4259,6 +4601,39 @@
     "name": "Natural Weapon (Tusk)",
     "description": "",
     "category": "Chimeric Modification",
+    "bonus": {
+      "combatAndWeapon": {
+        "addWeapon": {
+          "naturalWeapon": {
+            "name": "Tusk",
+            "accuracy": [
+              {
+                "option": "Physical"
+              }
+            ],
+            "damage": [
+              {
+                "damageAmount": [
+                  {
+                    "option": "Strength"
+                  },
+                  {
+                    "operator": "+"
+                  },
+                  2
+                ],
+                "type": "Physical"
+              }
+            ],
+            "armourPenetration": [[0]],
+            "reach": 0,
+            "relatedSkill": "Unarmed Combat",
+            "source": "Howling Shadows",
+            "page": 172
+          }
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 172
   },
@@ -4266,6 +4641,40 @@
     "name": "Proboscis",
     "description": "",
     "category": "Chimeric Modification",
+    "bonus": {
+      "combatAndWeapon": {
+        "addWeapon": {
+          "naturalWeapon": {
+            "name": "Proboscis",
+            "accuracy": [
+              {
+                "option": "Physical"
+              }
+            ],
+            "damage": [
+              {
+                "damageAmount": [
+                  {
+                    "option": "Strength"
+                  },
+                  {
+                    "operator": "-"
+                  },
+                  1
+                ],
+                "type": "Physical"
+              }
+            ],
+            "armourPenetration": [[1]],
+            "reach": 0,
+            "relatedSkill": "Exotic Melee Weapon",
+            "relatedSkillSpecialisationList": ["Trunk"],
+            "source": "Howling Shadows",
+            "page": 172
+          }
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 172
   },
@@ -4280,6 +4689,40 @@
     "name": "Quills",
     "description": "",
     "category": "Chimeric Modification",
+    "bonus": {
+      "combatAndWeapon": {
+        "addWeapon": {
+          "naturalWeapon": {
+            "name": "Quills",
+            "accuracy": [
+              {
+                "option": "Physical"
+              }
+            ],
+            "damage": [
+              {
+                "damageAmount": [
+                  {
+                    "option": "Strength"
+                  },
+                  {
+                    "operator": "+"
+                  },
+                  1
+                ],
+                "type": "Physical"
+              }
+            ],
+            "armourPenetration": [[1]],
+            "reach": 0,
+            "relatedSkill": "Exotic Melee Weapon",
+            "relatedSkillSpecialisationList": ["Quills"],
+            "source": "Howling Shadows",
+            "page": 172
+          }
+        }
+      }
+    },
     "source": "Howling Shadows",
     "page": 172
   },
@@ -4338,9 +4781,11 @@
     "category": "Chimeric Modification",
     "bonus": {
       "combatAndWeapon": {
-        "armour": {
-          "bonus": {
-            "option": "Rating"
+        "armourModifiers": {
+          "armour": {
+            "bonus": {
+              "option": "Rating"
+            }
           }
         }
       }

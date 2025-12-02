@@ -84,6 +84,11 @@
     "name": "Blandness",
     "category": "Positive",
     "karma": 8,
+    "bonus": {
+      "contactAndReputation": {
+        "notorietyModifier": -1
+      }
+    },
     "forbidden": {},
     "description": "",
     "source": "SR5",
@@ -114,6 +119,16 @@
     "karma": 10,
     "limit": {
       "option": "False"
+    },
+    "bonus": {
+      "miscellaneous": {
+        "dicePoolModifier": {
+          "type": {
+            "selectFromMatrixActions": true
+          },
+          "modifier": 2
+        }
+      }
     },
     "description": "",
     "source": "SR5",
@@ -173,6 +188,9 @@
             "modifierType": "DicePoolIncrease"
           }
         ]
+      },
+      "contactAndReputation": {
+        "notorietyModifier": -1
       }
     },
     "description": "",
@@ -210,6 +228,11 @@
     "category": "Positive",
     "karma": 7,
     "limit": 3,
+    "bonus": {
+      "conditionAndRecovery": {
+        "conditionModifierNegativeEffectsOffsetPerTrack": 1
+      }
+    },
     "forbidden": {},
     "description": "",
     "source": "SR5",
@@ -315,6 +338,9 @@
             "maximumIncrease": 1
           }
         ]
+      },
+      "contactAndReputation": {
+        "notorietyModifier": -1
       }
     },
     "forbidden": {},
@@ -327,6 +353,11 @@
     "category": "Positive",
     "karma": 6,
     "limit": 4,
+    "bonus": {
+      "testAndResistance": {
+        "allSpellResist": 1
+      }
+    },
     "forbidden": {},
     "description": "",
     "source": "SR5",
@@ -434,9 +465,23 @@
     "category": "Positive",
     "karma": 3,
     "bonus": {
+      "spellAndMagic": {
+        "spellModifiers": {
+          "spellBonusDice": [
+            {
+              "specificSpell": [
+                {
+                  "name": "Heal",
+                  "bonus": 2
+                }
+              ]
+            }
+          ]
+        }
+      },
       "conditionAndRecovery": {
-        "stunHealing": 2,
-        "physicalHealing": 2
+        "stunConditionModifierHealingDiceModifier": 2,
+        "physicalConditionModifierHealingDiceModifier": 2
       }
     },
     "forbidden": {},
@@ -450,10 +495,12 @@
     "karma": 4,
     "bonus": {
       "combatAndWeapon": {
-        "pathogenContactResist": 1,
-        "pathogenInhalationResist": 1,
-        "pathogenIngestionResist": 1,
-        "pathogenInjectionResist": 1
+        "toxinAndPathogen": {
+          "pathogenContactResist": 1,
+          "pathogenInhalationResist": 1,
+          "pathogenIngestionResist": 1,
+          "pathogenInjectionResist": 1
+        }
       }
     },
     "forbidden": {},
@@ -467,10 +514,12 @@
     "karma": 4,
     "bonus": {
       "combatAndWeapon": {
-        "toxinContactResist": 1,
-        "toxinInhalationResist": 1,
-        "toxinIngestionResist": 1,
-        "toxinInjectionResist": 1
+        "toxinAndPathogen": {
+          "toxinContactResist": 1,
+          "toxinInhalationResist": 1,
+          "toxinIngestionResist": 1,
+          "toxinInjectionResist": 1
+        }
       }
     },
     "forbidden": {},
@@ -485,14 +534,16 @@
     "userSelectable": false,
     "bonus": {
       "combatAndWeapon": {
-        "toxinContactResist": 2,
-        "pathogenContactResist": 2,
-        "toxinInhalationResist": 2,
-        "pathogenInhalationResist": 2,
-        "toxinIngestionResist": 2,
-        "pathogenIngestionResist": 2,
-        "toxinInjectionResist": 2,
-        "pathogenInjectionResist": 2
+        "toxinAndPathogen": {
+          "toxinContactResist": 2,
+          "pathogenContactResist": 2,
+          "toxinInhalationResist": 2,
+          "pathogenInhalationResist": 2,
+          "toxinIngestionResist": 2,
+          "pathogenIngestionResist": 2,
+          "toxinInjectionResist": 2,
+          "pathogenInjectionResist": 2
+        }
       }
     },
     "description": "",
@@ -505,14 +556,16 @@
     "karma": 8,
     "bonus": {
       "combatAndWeapon": {
-        "toxinContactResist": 1,
-        "pathogenContactResist": 1,
-        "toxinInhalationResist": 1,
-        "pathogenInhalationResist": 1,
-        "toxinIngestionResist": 1,
-        "pathogenIngestionResist": 1,
-        "toxinInjectionResist": 1,
-        "pathogenInjectionResist": 1
+        "toxinAndPathogen": {
+          "toxinContactResist": 1,
+          "pathogenContactResist": 1,
+          "toxinInhalationResist": 1,
+          "pathogenInhalationResist": 1,
+          "toxinIngestionResist": 1,
+          "pathogenIngestionResist": 1,
+          "toxinInjectionResist": 1,
+          "pathogenInjectionResist": 1
+        }
       }
     },
     "forbidden": {},
@@ -549,7 +602,9 @@
     "karma": 9,
     "bonus": {
       "combatAndWeapon": {
-        "damageResistance": 1
+        "damageResistanceModifiers": {
+          "damageResistance": 1
+        }
       }
     },
     "description": "",
@@ -592,6 +647,11 @@
     "name": "Out For Myself",
     "category": "Positive",
     "karma": 4,
+    "bonus": {
+      "initiative": {
+        "surpriseTest": [3]
+      }
+    },
     "description": "",
     "source": "AP",
     "page": 17
@@ -660,6 +720,11 @@
     "name": "One Trick Pony",
     "category": "Positive",
     "karma": 7,
+    "bonus": {
+      "combatAndWeapon": {
+        "addMartialArt": "One Trick Pony"
+      }
+    },
     "description": "",
     "source": "RG",
     "page": 127
@@ -768,6 +833,14 @@
       "skill": {
         "unlockSkillList": ["Adept"]
       },
+      "spellAndMagic": {
+        "blockSpellDescriptorList": ["Spell"],
+        "limitSpellOptionsToCategoryList": [
+          {
+            "category": "Ritual"
+          }
+        ]
+      },
       "miscellaneous": {
         "displaySelection": false
       }
@@ -820,6 +893,12 @@
           }
         ],
         "unlockSkillList": ["Technomancer"]
+      },
+      "gearAndVehicle": {
+        "addGear": {
+          "name": "Living Persona",
+          "category": "Commlinks"
+        }
       }
     },
     "forbidden": {},
@@ -877,6 +956,9 @@
       "option": "False"
     },
     "bonus": {
+      "contactAndReputation": {
+        "notorietyModifier": 1
+      },
       "miscellaneous": {
         "selection": {
           "enterName": true
@@ -895,6 +977,9 @@
       "option": "False"
     },
     "bonus": {
+      "contactAndReputation": {
+        "notorietyModifier": 1
+      },
       "miscellaneous": {
         "selection": {
           "enterName": true
@@ -913,6 +998,9 @@
       "option": "False"
     },
     "bonus": {
+      "contactAndReputation": {
+        "notorietyModifier": 1
+      },
       "miscellaneous": {
         "selection": {
           "enterName": true
@@ -939,6 +1027,9 @@
             "modifierType": "DicePoolIncrease"
           }
         ]
+      },
+      "contactAndReputation": {
+        "notorietyModifier": 1
       },
       "miscellaneous": {
         "selection": {
@@ -1108,6 +1199,11 @@
     "name": "Bad Luck",
     "category": "Negative",
     "karma": -12,
+    "bonus": {
+      "contactAndReputation": {
+        "notorietyModifier": 1
+      }
+    },
     "description": "",
     "source": "SR5",
     "page": 79
@@ -1116,6 +1212,11 @@
     "name": "Bad Rep",
     "category": "Negative",
     "karma": -7,
+    "bonus": {
+      "contactAndReputation": {
+        "notorietyModifier": 3
+      }
+    },
     "description": "",
     "source": "SR5",
     "page": 79
@@ -1160,6 +1261,14 @@
     "name": "Combat Paralysis",
     "category": "Negative",
     "karma": -12,
+    "bonus": {
+      "initiative": {
+        "surpriseTest": [-3]
+      },
+      "contactAndReputation": {
+        "notorietyModifier": 1
+      }
+    },
     "description": "",
     "source": "SR5",
     "page": 80
@@ -1170,7 +1279,7 @@
     "karma": -3,
     "bonus": {
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 10
           }
@@ -1188,7 +1297,7 @@
     "karma": -6,
     "bonus": {
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -1206,7 +1315,7 @@
     "karma": -9,
     "bonus": {
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 30
           }
@@ -1231,6 +1340,11 @@
     "name": "Elf Poser",
     "category": "Negative",
     "karma": -6,
+    "bonus": {
+      "contactAndReputation": {
+        "notorietyModifier": 1
+      }
+    },
     "requirements": {},
     "description": "",
     "source": "SR5",
@@ -1255,6 +1369,9 @@
     "bonus": {
       "skill": {
         "blockSkillGroupAndDefaulting": ""
+      },
+      "contactAndReputation": {
+        "notorietyModifier": 1
       }
     },
     "description": "",
@@ -1309,6 +1426,11 @@
     "name": "Low Pain Tolerance",
     "category": "Negative",
     "karma": -9,
+    "bonus": {
+      "conditionAndRecovery": {
+        "conditionModifierBoxesPerLevelModifier": -1
+      }
+    },
     "description": "",
     "source": "SR5",
     "page": 82
@@ -1317,6 +1439,11 @@
     "name": "Ork Poser",
     "category": "Negative",
     "karma": -6,
+    "bonus": {
+      "contactAndReputation": {
+        "notorietyModifier": 1
+      }
+    },
     "requirements": {},
     "description": "",
     "source": "SR5",
@@ -1435,6 +1562,9 @@
     "category": "Negative",
     "karma": -10,
     "bonus": {
+      "contactAndReputation": {
+        "notorietyModifier": 1
+      },
       "miscellaneous": {
         "selection": {
           "enterName": true
@@ -1449,6 +1579,16 @@
     "name": "Sensitive System",
     "category": "Negative",
     "karma": -12,
+    "bonus": {
+      "essenceAndAugmentation": {
+        "essenceCostOngoingPercentageModifier": {
+          "cyberwareOnly": [200]
+        },
+        "augmentationDisable": {
+          "disableBioware": true
+        }
+      }
+    },
     "description": "",
     "source": "SR5",
     "page": 83
@@ -1528,6 +1668,9 @@
     "category": "Negative",
     "karma": -10,
     "bonus": {
+      "contactAndReputation": {
+        "notorietyModifier": 1
+      },
       "miscellaneous": {
         "selection": {
           "enterName": true
@@ -1565,6 +1708,9 @@
       "option": "False"
     },
     "bonus": {
+      "contactAndReputation": {
+        "notorietyModifier": 1
+      },
       "miscellaneous": {
         "selection": {
           "optionList": [
@@ -1603,6 +1749,9 @@
         "skillDisableList": {
           "skillGroupWithinSkillCategoryList": ["Social Active"]
         }
+      },
+      "contactAndReputation": {
+        "notorietyModifier": 1
       }
     },
     "description": "",
@@ -1613,6 +1762,11 @@
     "name": "Consummate Professional",
     "category": "Negative",
     "karma": -3,
+    "bonus": {
+      "contactAndReputation": {
+        "streetCredLifetimeKarmaModifier": 10
+      }
+    },
     "description": "",
     "source": "AP",
     "page": 17
@@ -1711,6 +1865,9 @@
             }
           ]
         }
+      },
+      "contactAndReputation": {
+        "notorietyModifier": 1
       }
     },
     "description": "",
@@ -1729,6 +1886,11 @@
     "name": "Weak Immune System",
     "category": "Negative",
     "karma": -10,
+    "bonus": {
+      "contactAndReputation": {
+        "notorietyModifier": 1
+      }
+    },
     "forbidden": {},
     "description": "",
     "source": "SR5",
@@ -1757,6 +1919,157 @@
     "category": "Positive",
     "karma": 20,
     "charGenCostInCareer": true,
+    "bonus": {
+      "spellAndMagic": {
+        "focusBindingKarmaCostModificationList": [
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Aeronautics Mechanic)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Animal Handling)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Armorer)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Artisan)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Automotive Mechanic)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Biotechnology)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Chemistry)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Computer)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Cybercombat)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Cybertechnology)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Demolitions)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Electronic Warfare)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (First Aid)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Forgery)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Gunnery)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Hacking)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Hardware)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Industrial Mechanic)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Locksmith)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Medicine)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Nautical Mechanic)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Navigation)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Pilot Exotic Vehicle"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Pilot Aerospace)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Pilot Aircraft)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Pilot Ground Craft)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Pilot Walker)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Pilot Watercraft)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Software)"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "forbidden": {},
     "description": "",
@@ -1768,6 +2081,17 @@
     "category": "Positive",
     "karma": 20,
     "charGenCostInCareer": true,
+    "bonus": {
+      "spellAndMagic": {
+        "focusBindingKarmaCostModificationList": [
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Artisan)"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "forbidden": {},
     "description": "",
@@ -1779,6 +2103,32 @@
     "category": "Positive",
     "karma": 20,
     "charGenCostInCareer": true,
+    "bonus": {
+      "spellAndMagic": {
+        "focusBindingKarmaCostModificationList": [
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Flight)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Gymnastics)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Running)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Swimming)"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "forbidden": {},
     "description": "",
@@ -1803,6 +2153,9 @@
             "modifierType": "DicePoolIncrease"
           }
         ]
+      },
+      "quality": {
+        "freeQuality": "Mentor Spirit"
       }
     },
     "requirements": {},
@@ -1816,6 +2169,11 @@
     "category": "Positive",
     "karma": 15,
     "charGenCostInCareer": true,
+    "bonus": {
+      "specificQuality": {
+        "burnoutsWay": true
+      }
+    },
     "requirements": {},
     "forbidden": {},
     "description": "",
@@ -1827,6 +2185,77 @@
     "category": "Positive",
     "karma": 20,
     "charGenCostInCareer": true,
+    "bonus": {
+      "spellAndMagic": {
+        "focusBindingKarmaCostModificationList": [
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Disguise)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Diving)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Escape Artist)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Flight)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Free-Fall)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Gymnastics)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Palming)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Perception)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Running)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Sneaking)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Survival)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Swimming)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Tracking)"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "forbidden": {},
     "description": "",
@@ -1838,6 +2267,11 @@
     "category": "Positive",
     "karma": 20,
     "charGenCostInCareer": true,
+    "bonus": {
+      "specificQuality": {
+        "magiciansWayDiscount": true
+      }
+    },
     "requirements": {},
     "forbidden": {},
     "description": "",
@@ -1849,6 +2283,52 @@
     "category": "Positive",
     "karma": 20,
     "charGenCostInCareer": true,
+    "bonus": {
+      "spellAndMagic": {
+        "focusBindingKarmaCostModificationList": [
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Con)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Etiquette)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Impersonation)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Instruction)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Intimidation)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Leadership)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Negotiation)"
+          },
+          {
+            "focusType": "Qi",
+            "modifier": -2,
+            "focusSubtypeText": "Improved Ability (skill) (Performance)"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "forbidden": {},
     "description": "",
@@ -1869,6 +2349,9 @@
             "modifierType": "DicePoolIncrease"
           }
         ]
+      },
+      "quality": {
+        "freeQuality": "Mentor Spirit"
       }
     },
     "requirements": {},
@@ -1893,6 +2376,16 @@
     "category": "Positive",
     "karma": 20,
     "charGenCostInCareer": true,
+    "bonus": {
+      "spellAndMagic": {
+        "focusBindingKarmaCostModificationList": [
+          {
+            "focusType": "Weapon",
+            "modifier": -2
+          }
+        ]
+      }
+    },
     "requirements": {},
     "forbidden": {},
     "description": "",
@@ -1912,6 +2405,11 @@
     "category": "Negative",
     "karma": -5,
     "careerOnly": true,
+    "bonus": {
+      "contactAndReputation": {
+        "astralReputationModifier": -1
+      }
+    },
     "description": "",
     "source": "SG",
     "page": 199
@@ -2095,6 +2593,9 @@
     "bonus": {
       "contactAndReputation": {
         "linkContact": true
+      },
+      "specificQuality": {
+        "blackmarketDiscount": true
       }
     },
     "description": "",
@@ -2106,6 +2607,13 @@
     "category": "Positive",
     "karma": 5,
     "charGenOnly": true,
+    "bonus": {
+      "miscellaneous": {
+        "characterCreator": {
+          "maxKarmaThatCanBeConvertedToNuyenModifier": 30
+        }
+      }
+    },
     "description": "",
     "source": "RF",
     "page": 145
@@ -2243,6 +2751,11 @@
     "name": "Erased",
     "category": "Positive",
     "karma": 8,
+    "bonus": {
+      "specificQuality": {
+        "erased": true
+      }
+    },
     "description": "",
     "source": "RF",
     "page": 146
@@ -2269,6 +2782,12 @@
             "modifierType": "DicePoolIncrease"
           }
         ]
+      },
+      "contactAndReputation": {
+        "publicAwarenessModifier": 2
+      },
+      "specificQuality": {
+        "fame": true
       }
     },
     "forbidden": {},
@@ -2298,6 +2817,12 @@
             "modifierType": "DicePoolIncrease"
           }
         ]
+      },
+      "contactAndReputation": {
+        "publicAwarenessModifier": 3
+      },
+      "specificQuality": {
+        "fame": true
       }
     },
     "forbidden": {},
@@ -2327,6 +2852,12 @@
             "modifierType": "DicePoolIncrease"
           }
         ]
+      },
+      "contactAndReputation": {
+        "publicAwarenessModifier": 5
+      },
+      "specificQuality": {
+        "fame": true
       }
     },
     "forbidden": {},
@@ -2355,6 +2886,12 @@
             "modifierType": "DicePoolIncrease"
           }
         ]
+      },
+      "contactAndReputation": {
+        "publicAwarenessModifier": 8
+      },
+      "specificQuality": {
+        "fame": true
       }
     },
     "forbidden": {},
@@ -2366,6 +2903,11 @@
     "name": "Friends in High Places",
     "category": "Positive",
     "karma": 8,
+    "bonus": {
+      "specificQuality": {
+        "friendsInHighPlaces": true
+      }
+    },
     "description": "",
     "source": "RF",
     "page": 147
@@ -2473,7 +3015,7 @@
     "karma": 20,
     "bonus": {
       "combatAndWeapon": {
-        "dodge": 1
+        "defenseTestModifier": [1]
       },
       "initiative": {
         "initiative": {
@@ -2524,6 +3066,11 @@
     "name": "Made Man",
     "category": "Positive",
     "karma": 5,
+    "bonus": {
+      "specificQuality": {
+        "mademan": true
+      }
+    },
     "description": "",
     "source": "RF",
     "page": 148
@@ -2604,6 +3151,11 @@
     "name": "Overclocker",
     "category": "Positive",
     "karma": 5,
+    "bonus": {
+      "specificQuality": {
+        "overclocker": true
+      }
+    },
     "description": "",
     "source": "RF",
     "page": 148
@@ -2755,6 +3307,14 @@
     "charGenLimit": 1,
     "limit": 3,
     "noLevels": true,
+    "bonus": {
+      "gearAndVehicle": {
+        "addRestrictedGear": {
+          "availability": 24,
+          "amount": 1
+        }
+      }
+    },
     "description": "",
     "source": "RF",
     "page": 149
@@ -2942,7 +3502,7 @@
     "sharedLimitQualityList": ["Tough as Nails (Stun)"],
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": 1
+        "addPhysicalTrackBoxes": 1
       }
     },
     "description": "",
@@ -2955,6 +3515,11 @@
     "karma": 5,
     "limit": 3,
     "sharedLimitQualityList": ["Tough as Nails (Physical)"],
+    "bonus": {
+      "conditionAndRecovery": {
+        "addStunTrackBoxes": 1
+      }
+    },
     "description": "",
     "source": "RF",
     "page": 150
@@ -2963,6 +3528,11 @@
     "name": "Trust Fund I",
     "category": "Positive",
     "karma": 5,
+    "bonus": {
+      "specificQuality": {
+        "trustfund": 1
+      }
+    },
     "requirements": {},
     "forbidden": {},
     "description": "",
@@ -2973,6 +3543,11 @@
     "name": "Trust Fund II",
     "category": "Positive",
     "karma": 10,
+    "bonus": {
+      "specificQuality": {
+        "trustfund": 2
+      }
+    },
     "requirements": {},
     "forbidden": {},
     "description": "",
@@ -2983,6 +3558,11 @@
     "name": "Trust Fund III",
     "category": "Positive",
     "karma": 15,
+    "bonus": {
+      "specificQuality": {
+        "trustfund": 3
+      }
+    },
     "requirements": {},
     "forbidden": {},
     "description": "",
@@ -2993,6 +3573,11 @@
     "name": "Trust Fund IV",
     "category": "Positive",
     "karma": 20,
+    "bonus": {
+      "specificQuality": {
+        "trustfund": 4
+      }
+    },
     "requirements": {},
     "forbidden": {},
     "description": "",
@@ -3075,6 +3660,24 @@
     "name": "Witness My Hate",
     "category": "Positive",
     "karma": 7,
+    "bonus": {
+      "spellAndMagic": {
+        "spellModifiers": {
+          "spellBonusDamage": {
+            "spellDescriptor": {
+              "spellDescriptorListRequired": ["Direct", "Single Target"],
+              "bonusDamage": 2
+            }
+          },
+          "spellExtraDrain": {
+            "spellDescriptor": {
+              "spellDescriptorListRequired": ["Direct", "Single Target"],
+              "extraDrain": 2
+            }
+          }
+        }
+      }
+    },
     "requirements": {},
     "description": "",
     "source": "RF",
@@ -3175,6 +3778,11 @@
     "name": "Carrier (HMHVV Strain II)",
     "category": "Negative",
     "karma": -10,
+    "bonus": {
+      "contactAndReputation": {
+        "notorietyModifier": 1
+      }
+    },
     "description": "",
     "source": "RF",
     "page": 141
@@ -3183,6 +3791,11 @@
     "name": "Carrier (HMHVV Strain III)",
     "category": "Negative",
     "karma": -10,
+    "bonus": {
+      "contactAndReputation": {
+        "notorietyModifier": 1
+      }
+    },
     "description": "",
     "source": "RF",
     "page": 141
@@ -3323,9 +3936,11 @@
         ]
       },
       "combatAndWeapon": {
-        "dodge": {
-          "option": "-Rating"
-        }
+        "defenseTestModifier": [
+          {
+            "option": "-Rating"
+          }
+        ]
       },
       "conditionAndRecovery": {
         "addictionResistance": {
@@ -3340,6 +3955,11 @@
         }
       },
       "testAndResistance": {
+        "judgeIntentions": {
+          "offense": {
+            "option": "-Rating"
+          }
+        },
         "memory": {
           "option": "-Rating"
         },
@@ -3347,6 +3967,9 @@
           "option": "-Rating"
         },
         "manaIllusionResist": {
+          "option": "-Rating"
+        },
+        "physicalIllusionResist": {
           "option": "-Rating"
         },
         "mentalManipulationResist": {
@@ -3358,6 +3981,17 @@
         "decreaseLogicResist": {
           "option": "-Rating"
         }
+      },
+      "initiative": {
+        "surpriseTest": [
+          -1,
+          {
+            "operator": "*"
+          },
+          {
+            "option": "Rating"
+          }
+        ]
       }
     },
     "description": "",
@@ -3411,6 +4045,9 @@
             "name": "SINner (Criminal)"
           }
         ]
+      },
+      "specificQuality": {
+        "excon": true
       }
     },
     "description": "",
@@ -3482,6 +4119,16 @@
     "category": "Negative",
     "karma": -1,
     "limit": 15,
+    "bonus": {
+      "miscellaneous": {
+        "characterCreator": {
+          "nuyenForGearModifier": {
+            "nuyen": 5000
+          },
+          "maxKarmaThatCanBeConvertedToNuyenModifier": -1
+        }
+      }
+    },
     "description": "",
     "source": "RF",
     "page": 156
@@ -3634,8 +4281,12 @@
     "karma": -10,
     "bonus": {
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
+            "cost": 10
+          },
+          {
+            "basicLifestyle": true,
             "cost": 10
           }
         ]
@@ -4300,7 +4951,9 @@
     "isMetagenic": true,
     "bonus": {
       "combatAndWeapon": {
-        "coldArmour": 4
+        "armourModifiers": {
+          "coldArmour": 4
+        }
       }
     },
     "requirements": {},
@@ -4326,6 +4979,11 @@
     "karma": 10,
     "limit": 2,
     "isMetagenic": true,
+    "bonus": {
+      "testAndResistance": {
+        "allSpellResist": 2
+      }
+    },
     "requirements": {},
     "forbidden": {},
     "description": "",
@@ -4360,10 +5018,12 @@
     "isMetagenic": true,
     "bonus": {
       "combatAndWeapon": {
-        "toxinIngestionResist": 1
+        "toxinAndPathogen": {
+          "toxinIngestionResist": 1
+        }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": -10
           }
@@ -4383,10 +5043,12 @@
     "isMetagenic": true,
     "bonus": {
       "combatAndWeapon": {
-        "toxinIngestionResist": 1
+        "toxinAndPathogen": {
+          "toxinIngestionResist": 1
+        }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": -10
           }
@@ -4425,6 +5087,9 @@
     "isMetagenic": true,
     "bonus": {
       "combatAndWeapon": {
+        "damageValueModifiers": {
+          "unarmedModifier": [2]
+        },
         "unarmedDamageType": "Physical"
       }
     },
@@ -4480,6 +5145,10 @@
     "isMetagenic": true,
     "bonus": {
       "movementAndLifestyle": {
+        "groundBaseMovementReplacement": {
+          "walk": 3,
+          "run": 6
+        },
         "sprintSpeedPercentageModifier": 10000
       }
     },
@@ -4565,9 +5234,11 @@
     "isMetagenic": true,
     "bonus": {
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 2,
-          "nonStacking": true
+        "armourModifiers": {
+          "armour": {
+            "bonus": 2,
+            "nonStacking": true
+          }
         }
       }
     },
@@ -4584,7 +5255,9 @@
     "isMetagenic": true,
     "bonus": {
       "combatAndWeapon": {
-        "coldArmour": 2
+        "armourModifiers": {
+          "coldArmour": 2
+        }
       }
     },
     "requirements": {},
@@ -4600,7 +5273,9 @@
     "isMetagenic": true,
     "bonus": {
       "combatAndWeapon": {
-        "fireArmour": 2
+        "armourModifiers": {
+          "fireArmour": 2
+        }
       }
     },
     "requirements": {},
@@ -4616,9 +5291,11 @@
     "isMetagenic": true,
     "bonus": {
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 4,
-          "nonStacking": true
+        "armourModifiers": {
+          "armour": {
+            "bonus": 4,
+            "nonStacking": true
+          }
         }
       }
     },
@@ -4635,9 +5312,11 @@
     "isMetagenic": true,
     "bonus": {
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 3,
-          "nonStacking": true
+        "armourModifiers": {
+          "armour": {
+            "bonus": 3,
+            "nonStacking": true
+          }
         }
       }
     },
@@ -4654,8 +5333,10 @@
     "isMetagenic": true,
     "bonus": {
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1
+          }
         }
       }
     },
@@ -4715,6 +5396,15 @@
     "category": "Positive",
     "karma": 4,
     "isMetagenic": true,
+    "bonus": {
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      }
+    },
     "requirements": {},
     "description": "",
     "source": "RF",
@@ -5365,10 +6055,12 @@
     "isMetagenic": true,
     "bonus": {
       "combatAndWeapon": {
-        "toxinIngestionResist": 2
+        "toxinAndPathogen": {
+          "toxinIngestionResist": 2
+        }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": -20
           }
@@ -5387,7 +6079,7 @@
     "isMetagenic": true,
     "bonus": {
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": -10
           }
@@ -5417,6 +6109,9 @@
     "isMetagenic": true,
     "bonus": {
       "movementAndLifestyle": {
+        "groundBaseMovementReplacement": {
+          "run": 6
+        },
         "sprintSpeedPercentageModifier": 10000
       }
     },
@@ -5488,6 +6183,11 @@
             "modifierType": "DicePoolIncrease"
           }
         ]
+      },
+      "combatAndWeapon": {
+        "damageValueModifiers": {
+          "unarmedModifier": [1]
+        }
       }
     },
     "requirements": {},
@@ -5562,6 +6262,13 @@
             "modifierType": "DicePoolIncrease"
           }
         ]
+      },
+      "movementAndLifestyle": {
+        "groundBaseMovementReplacement": {
+          "walk": 1,
+          "run": 2,
+          "sprint": 50
+        }
       }
     },
     "description": "",
@@ -5658,6 +6365,9 @@
             "modifierType": "DicePoolIncrease"
           }
         ]
+      },
+      "combatAndWeapon": {
+        "defenseTestModifier": [-1]
       }
     },
     "forbidden": {},
@@ -5910,10 +6620,10 @@
     "isMetagenic": true,
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": -2
+        "addPhysicalTrackBoxes": -2
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 10
           }
@@ -5980,8 +6690,8 @@
     "isMetagenic": true,
     "bonus": {
       "conditionAndRecovery": {
-        "stunHealing": -2,
-        "physicalHealing": -2
+        "stunConditionModifierHealingDiceModifier": -2,
+        "physicalConditionModifierHealingDiceModifier": -2
       }
     },
     "description": "",
@@ -6002,6 +6712,15 @@
     "category": "Negative",
     "karma": -10,
     "isMetagenic": true,
+    "bonus": {
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": -1
+          }
+        }
+      }
+    },
     "description": "",
     "source": "RF",
     "page": 122
@@ -6133,6 +6852,32 @@
           }
         ]
       },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Adaptive Coloration"
+          },
+          {
+            "name": "Allergy",
+            "select": "Sunlight, Mild"
+          },
+          {
+            "name": "Dietary Requirement",
+            "select": "Metahuman Flesh"
+          }
+        ],
+        "unlockCritterPowerCategory": "Infected"
+      },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
+      "essenceAndAugmentation": {
+        "essenceModifier": -1
+      },
       "miscellaneous": {
         "displaySelection": false
       }
@@ -6230,6 +6975,60 @@
             "aug": 13
           }
         ]
+      },
+      "power": {
+        "unlockOptionalPowerList": {
+          "optionalPowerList": [
+            {
+              "name": "Enhanced Senses",
+              "select": "Hearing"
+            },
+            {
+              "name": "Immunity",
+              "select": "Toxins"
+            },
+            {
+              "name": "Enhanced Senses",
+              "select": "Smell"
+            },
+            {
+              "name": "Immunity",
+              "select": "Pathogens"
+            }
+          ]
+        },
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Essence Drain"
+          },
+          {
+            "name": "Immunity",
+            "select": "Age"
+          },
+          {
+            "name": "Essence Loss"
+          },
+          {
+            "name": "Allergy",
+            "select": "Sunlight, Severe"
+          },
+          {
+            "name": "Dietary Requirement",
+            "select": "Metahuman Blood"
+          },
+          {
+            "name": "Vulnerability",
+            "select": "Silver"
+          },
+          {
+            "name": "Vulnerability",
+            "select": "Wood"
+          }
+        ],
+        "unlockCritterPowerCategory": "Infected"
       },
       "movementAndLifestyle": {
         "walkSpeedPercentageModifier": 100,
@@ -6336,9 +7135,60 @@
           }
         ]
       },
+      "power": {
+        "unlockOptionalPowerList": {
+          "optionalPowerList": [
+            {
+              "name": "Armor"
+            },
+            {
+              "name": "Enhanced Senses",
+              "select": "Hearing"
+            },
+            {
+              "name": "Immunity",
+              "select": "Toxins"
+            }
+          ]
+        },
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Essence Drain"
+          },
+          {
+            "name": "Immunity",
+            "select": "Age"
+          },
+          {
+            "name": "Infection"
+          },
+          {
+            "name": "Essence Loss"
+          },
+          {
+            "name": "Allergy",
+            "select": "Sunlight, Moderate"
+          },
+          {
+            "name": "Dietary Requirement",
+            "select": "Metahuman Flesh"
+          }
+        ],
+        "unlockCritterPowerCategory": "Infected"
+      },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1
+          }
+        },
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
         }
       },
       "movementAndLifestyle": {
@@ -6449,10 +7299,51 @@
           }
         ]
       },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Secretion/Substance Extrusion",
+            "select": "Corrosive"
+          },
+          {
+            "name": "Magical Guard"
+          },
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Allergy",
+            "select": "Air Pollution, Moderate"
+          },
+          {
+            "name": "Allergy",
+            "select": "Sunlight, Moderate"
+          },
+          {
+            "name": "Dietary Requirement",
+            "select": "Metahuman Flesh"
+          },
+          {
+            "name": "Armor",
+            "rating": 1
+          }
+        ],
+        "unlockCritterPowerCategory": "Infected"
+      },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1
+          }
+        },
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
         }
+      },
+      "essenceAndAugmentation": {
+        "essenceModifier": -1
       },
       "miscellaneous": {
         "displaySelection": false
@@ -6564,10 +7455,39 @@
           }
         ]
       },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Hearing"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Allergy",
+            "select": "Sunlight, Moderate"
+          },
+          {
+            "name": "Dietary Requirement",
+            "select": "Metahuman Flesh"
+          }
+        ],
+        "unlockCritterPowerCategory": "Infected"
+      },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1
+          }
         }
+      },
+      "essenceAndAugmentation": {
+        "essenceModifier": -1
       },
       "miscellaneous": {
         "displaySelection": false
@@ -6679,10 +7599,39 @@
           }
         ]
       },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Hearing"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Allergy",
+            "select": "Sunlight, Moderate"
+          },
+          {
+            "name": "Dietary Requirement",
+            "select": "Metahuman Flesh"
+          }
+        ],
+        "unlockCritterPowerCategory": "Infected"
+      },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1
+          }
         }
+      },
+      "essenceAndAugmentation": {
+        "essenceModifier": -1
       },
       "miscellaneous": {
         "displaySelection": false
@@ -6794,10 +7743,39 @@
           }
         ]
       },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Hearing"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Allergy",
+            "select": "Sunlight, Moderate"
+          },
+          {
+            "name": "Dietary Requirement",
+            "select": "Metahuman Flesh"
+          }
+        ],
+        "unlockCritterPowerCategory": "Infected"
+      },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1
+          }
         }
+      },
+      "essenceAndAugmentation": {
+        "essenceModifier": -1
       },
       "miscellaneous": {
         "displaySelection": false
@@ -6909,10 +7887,39 @@
           }
         ]
       },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Hearing"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Allergy",
+            "select": "Sunlight, Moderate"
+          },
+          {
+            "name": "Dietary Requirement",
+            "select": "Metahuman Flesh"
+          }
+        ],
+        "unlockCritterPowerCategory": "Infected"
+      },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1
+          }
         }
+      },
+      "essenceAndAugmentation": {
+        "essenceModifier": -1
       },
       "miscellaneous": {
         "displaySelection": false
@@ -7024,10 +8031,39 @@
           }
         ]
       },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Hearing"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Allergy",
+            "select": "Sunlight, Moderate"
+          },
+          {
+            "name": "Dietary Requirement",
+            "select": "Metahuman Flesh"
+          }
+        ],
+        "unlockCritterPowerCategory": "Infected"
+      },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1
+          }
         }
+      },
+      "essenceAndAugmentation": {
+        "essenceModifier": -1
       },
       "miscellaneous": {
         "displaySelection": false
@@ -7139,10 +8175,39 @@
           }
         ]
       },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Hearing"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Allergy",
+            "select": "Sunlight, Moderate"
+          },
+          {
+            "name": "Dietary Requirement",
+            "select": "Metahuman Flesh"
+          }
+        ],
+        "unlockCritterPowerCategory": "Infected"
+      },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1
+          }
         }
+      },
+      "essenceAndAugmentation": {
+        "essenceModifier": -1
       },
       "miscellaneous": {
         "displaySelection": false
@@ -7242,10 +8307,45 @@
           }
         ]
       },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Animal Control",
+            "select": "Vermin"
+          },
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Immunity",
+            "select": "Toxins"
+          },
+          {
+            "name": "Noxious Breath"
+          },
+          {
+            "name": "Paralyzing Touch"
+          },
+          {
+            "name": "Allergy",
+            "select": "Sunlight, Moderate"
+          },
+          {
+            "name": "Dietary Requirement",
+            "select": "Metahuman Bone"
+          }
+        ],
+        "unlockCritterPowerCategory": "Infected"
+      },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1
+          }
         }
+      },
+      "essenceAndAugmentation": {
+        "essenceModifier": -1
       },
       "miscellaneous": {
         "displaySelection": false
@@ -7357,9 +8457,67 @@
           }
         ]
       },
+      "power": {
+        "unlockOptionalPowerList": {
+          "optionalPowerList": [
+            {
+              "name": "Enhanced Senses",
+              "select": "Smell"
+            },
+            {
+              "name": "Enhanced Senses",
+              "select": "Taste"
+            },
+            {
+              "name": "Immunity",
+              "select": "Fire"
+            },
+            {
+              "name": "Immunity",
+              "select": "Toxins"
+            }
+          ]
+        },
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Essence Drain"
+          },
+          {
+            "name": "Immunity",
+            "select": "Age"
+          },
+          {
+            "name": "Infection"
+          },
+          {
+            "name": "Noxious Breath"
+          },
+          {
+            "name": "Paralyzing Touch"
+          },
+          {
+            "name": "Allergy",
+            "select": "Sunlight, Moderate"
+          },
+          {
+            "name": "Dietary Requirement",
+            "select": "Metahuman Flesh"
+          },
+          {
+            "name": "Vulnerability",
+            "select": "Iron"
+          }
+        ],
+        "unlockCritterPowerCategory": "Infected"
+      },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1
+          }
         }
       },
       "movementAndLifestyle": {
@@ -7482,15 +8640,76 @@
           }
         ]
       },
+      "power": {
+        "unlockOptionalPowerList": {
+          "optionalPowerList": [
+            {
+              "name": "Enhanced Senses",
+              "select": "Hearing"
+            },
+            {
+              "name": "Enhanced Senses",
+              "select": "Taste"
+            },
+            {
+              "name": "Immunity",
+              "select": "Fire"
+            },
+            {
+              "name": "Immunity",
+              "select": "Toxins"
+            }
+          ]
+        },
+        "addCritterPowerList": [
+          {
+            "name": "Animal Control"
+          },
+          {
+            "name": "Concealment"
+          },
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Immunity",
+            "select": "Toxins"
+          },
+          {
+            "name": "Noxious Breath"
+          },
+          {
+            "name": "Paralyzing Touch"
+          },
+          {
+            "name": "Allergy",
+            "select": "Sunlight, Moderate"
+          },
+          {
+            "name": "Dietary Requirement",
+            "select": "Metahuman Flesh"
+          },
+          {
+            "name": "Vulnerability",
+            "select": "Iron"
+          }
+        ],
+        "unlockCritterPowerCategory": "Infected"
+      },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1
+          }
         }
       },
       "initiative": {
         "initiative": {
           "bonus": 1
         }
+      },
+      "essenceAndAugmentation": {
+        "essenceModifier": -1
       },
       "miscellaneous": {
         "displaySelection": false
@@ -7602,9 +8821,38 @@
           }
         ]
       },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Movement"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Thermographic Vision"
+          },
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Allergy",
+            "select": "Silver, Moderate"
+          },
+          {
+            "name": "Allergy",
+            "select": "Sunlight, Moderate"
+          },
+          {
+            "name": "Dietary Requirement",
+            "select": "Metahuman Flesh"
+          }
+        ],
+        "unlockCritterPowerCategory": "Infected"
+      },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 2
+        "armourModifiers": {
+          "armour": {
+            "bonus": 2
+          }
         }
       },
       "movementAndLifestyle": {
@@ -7616,6 +8864,9 @@
         "initiative": {
           "bonusDice": 1
         }
+      },
+      "essenceAndAugmentation": {
+        "essenceModifier": -1
       },
       "miscellaneous": {
         "displaySelection": false
@@ -7727,9 +8978,50 @@
           }
         ]
       },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Movement"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Hearing"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Low-Light Vision"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Thermographic Vision"
+          },
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Allergy",
+            "select": "Aconite a.k.a. Wolf's Bane, Moderate"
+          },
+          {
+            "name": "Allergy",
+            "select": "Sunlight, Severe"
+          },
+          {
+            "name": "Dietary Requirement",
+            "select": "Metahuman Flesh"
+          }
+        ],
+        "unlockCritterPowerCategory": "Infected"
+      },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 2
+        "armourModifiers": {
+          "armour": {
+            "bonus": 2
+          }
         }
       },
       "movementAndLifestyle": {
@@ -7741,6 +9033,9 @@
         "initiative": {
           "bonusDice": 1
         }
+      },
+      "essenceAndAugmentation": {
+        "essenceModifier": -1
       },
       "miscellaneous": {
         "displaySelection": false
@@ -7847,9 +9142,69 @@
       "skill": {
         "unlockSkillList": ["Adept"]
       },
+      "power": {
+        "unlockOptionalPowerList": {
+          "optionalPowerList": [
+            {
+              "name": "Enhanced Senses",
+              "select": "Hearing"
+            },
+            {
+              "name": "Enhanced Senses",
+              "select": "Low-Light Vision"
+            },
+            {
+              "name": "Fear"
+            },
+            {
+              "name": "Immunity",
+              "select": "Toxins"
+            }
+          ]
+        },
+        "addCritterPowerList": [
+          {
+            "name": "Essence Drain"
+          },
+          {
+            "name": "Immunity",
+            "select": "Age"
+          },
+          {
+            "name": "Essence Loss"
+          },
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Vulnerability",
+            "select": "Fire"
+          },
+          {
+            "name": "Allergy",
+            "select": "Wood, Severe"
+          },
+          {
+            "name": "Allergy",
+            "select": "Sunlight, Extreme"
+          },
+          {
+            "name": "Dietary Requirement",
+            "select": "Metahuman Flesh"
+          }
+        ],
+        "unlockCritterPowerCategory": "Infected"
+      },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1
+          }
+        },
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
         }
       },
       "movementAndLifestyle": {
@@ -7967,6 +9322,67 @@
       "skill": {
         "unlockSkillList": ["Magician"]
       },
+      "power": {
+        "unlockOptionalPowerList": {
+          "optionalPowerList": [
+            {
+              "name": "Enhanced Senses",
+              "select": "Hearing"
+            },
+            {
+              "name": "Enhanced Senses",
+              "select": "Lowlight Vision"
+            },
+            {
+              "name": "Enhanced Senses",
+              "select": "Thermographic Vision"
+            },
+            {
+              "name": "Immunity",
+              "select": "Pathogens"
+            },
+            {
+              "name": "Immunity",
+              "select": "Toxins"
+            }
+          ]
+        },
+        "addCritterPowerList": [
+          {
+            "name": "Essence Drain"
+          },
+          {
+            "name": "Infection"
+          },
+          {
+            "name": "Immunity",
+            "select": "Age"
+          },
+          {
+            "name": "Essence Loss"
+          },
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Allergy",
+            "select": "Wood, Severe"
+          },
+          {
+            "name": "Allergy",
+            "select": "Sunlight, Extreme"
+          },
+          {
+            "name": "Dietary Requirement",
+            "select": "Metahuman Blood"
+          },
+          {
+            "name": "Induced Dormancy",
+            "select": "Lack of Air (Essence) Minutes"
+          }
+        ],
+        "unlockCritterPowerCategory": "Infected"
+      },
       "movementAndLifestyle": {
         "walkSpeedPercentageModifier": 100,
         "swimSpeedPercentageModifier": 100,
@@ -8074,6 +9490,67 @@
             "aug": 12
           }
         ]
+      },
+      "power": {
+        "unlockOptionalPowerList": {
+          "optionalPowerList": [
+            {
+              "name": "Enhanced Senses",
+              "select": "Hearing"
+            },
+            {
+              "name": "Enhanced Senses",
+              "select": "Smell"
+            },
+            {
+              "name": "Enhanced Senses",
+              "select": "Thermographic Vision"
+            },
+            {
+              "name": "Immunity",
+              "select": "Pathogens"
+            },
+            {
+              "name": "Immunity",
+              "select": "Toxins"
+            }
+          ]
+        },
+        "addCritterPowerList": [
+          {
+            "name": "Essence Drain"
+          },
+          {
+            "name": "Immunity",
+            "select": "Age"
+          },
+          {
+            "name": "Essence Loss"
+          },
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Infection"
+          },
+          {
+            "name": "Allergy",
+            "select": "Wood, Severe"
+          },
+          {
+            "name": "Allergy",
+            "select": "Sunlight, Severe"
+          },
+          {
+            "name": "Dietary Requirement",
+            "select": "Metahuman Blood"
+          },
+          {
+            "name": "Induced Dormancy",
+            "select": "Lack of Air (Essence) Minutes"
+          }
+        ],
+        "unlockCritterPowerCategory": "Infected"
       },
       "movementAndLifestyle": {
         "walkSpeedPercentageModifier": 100,
@@ -8183,6 +9660,67 @@
           }
         ]
       },
+      "power": {
+        "unlockOptionalPowerList": {
+          "optionalPowerList": [
+            {
+              "name": "Enhanced Senses",
+              "select": "Hearing"
+            },
+            {
+              "name": "Enhanced Senses",
+              "select": "Smell"
+            },
+            {
+              "name": "Enhanced Senses",
+              "select": "Thermographic Vision"
+            },
+            {
+              "name": "Immunity",
+              "select": "Pathogens"
+            },
+            {
+              "name": "Immunity",
+              "select": "Toxins"
+            }
+          ]
+        },
+        "addCritterPowerList": [
+          {
+            "name": "Essence Drain"
+          },
+          {
+            "name": "Infection"
+          },
+          {
+            "name": "Immunity",
+            "select": "Age"
+          },
+          {
+            "name": "Essence Loss"
+          },
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Allergy",
+            "select": "Wood, Severe"
+          },
+          {
+            "name": "Allergy",
+            "select": "Sunlight, Severe"
+          },
+          {
+            "name": "Dietary Requirement",
+            "select": "Metahuman Blood"
+          },
+          {
+            "name": "Induced Dormancy",
+            "select": "Lack of Air (Essence) Minutes"
+          }
+        ],
+        "unlockCritterPowerCategory": "Infected"
+      },
       "movementAndLifestyle": {
         "walkSpeedPercentageModifier": 100,
         "swimSpeedPercentageModifier": 100,
@@ -8289,6 +9827,71 @@
             "aug": 12
           }
         ]
+      },
+      "power": {
+        "unlockOptionalPowerList": {
+          "optionalPowerList": [
+            {
+              "name": "Enhanced Senses",
+              "select": "Hearing"
+            },
+            {
+              "name": "Enhanced Senses",
+              "select": "Smell"
+            },
+            {
+              "name": "Enhanced Senses",
+              "select": "Thermographic Vision"
+            },
+            {
+              "name": "Immunity",
+              "select": "Pathogens"
+            },
+            {
+              "name": "Immunity",
+              "select": "Toxins"
+            }
+          ]
+        },
+        "addCritterPowerList": [
+          {
+            "name": "Essence Drain"
+          },
+          {
+            "name": "Immunity",
+            "select": "Age"
+          },
+          {
+            "name": "Essence Loss"
+          },
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Infection"
+          },
+          {
+            "name": "Allergy",
+            "select": "Wood, Severe"
+          },
+          {
+            "name": "Allergy",
+            "select": "Sunlight, Severe"
+          },
+          {
+            "name": "Dietary Requirement",
+            "select": "Metahuman Blood"
+          },
+          {
+            "name": "Dietary Requirement",
+            "select": "Salt"
+          },
+          {
+            "name": "Vulnerability",
+            "select": "Wood"
+          }
+        ],
+        "unlockCritterPowerCategory": "Infected"
       },
       "movementAndLifestyle": {
         "walkSpeedPercentageModifier": 100,
@@ -8397,6 +10000,71 @@
             "aug": 12
           }
         ]
+      },
+      "power": {
+        "unlockOptionalPowerList": {
+          "optionalPowerList": [
+            {
+              "name": "Enhanced Senses",
+              "select": "Hearing"
+            },
+            {
+              "name": "Enhanced Senses",
+              "select": "Smell"
+            },
+            {
+              "name": "Enhanced Senses",
+              "select": "Thermographic Vision"
+            },
+            {
+              "name": "Immunity",
+              "select": "Pathogens"
+            },
+            {
+              "name": "Immunity",
+              "select": "Toxins"
+            }
+          ]
+        },
+        "addCritterPowerList": [
+          {
+            "name": "Essence Drain"
+          },
+          {
+            "name": "Infection"
+          },
+          {
+            "name": "Immunity",
+            "select": "Age"
+          },
+          {
+            "name": "Essence Loss"
+          },
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Allergy",
+            "select": "Wood, Severe"
+          },
+          {
+            "name": "Allergy",
+            "select": "Sunlight, Severe"
+          },
+          {
+            "name": "Dietary Requirement",
+            "select": "Metahuman Blood"
+          },
+          {
+            "name": "Dietary Requirement",
+            "select": "Salt"
+          },
+          {
+            "name": "Vulnerability",
+            "select": "Wood"
+          }
+        ],
+        "unlockCritterPowerCategory": "Infected"
       },
       "movementAndLifestyle": {
         "walkSpeedPercentageModifier": 100,
@@ -8512,6 +10180,63 @@
       "skill": {
         "unlockSkillList": ["Magician"]
       },
+      "power": {
+        "unlockOptionalPowerList": {
+          "optionalPowerList": [
+            {
+              "name": "Enhanced Senses",
+              "select": "Hearing"
+            },
+            {
+              "name": "Enhanced Senses",
+              "select": "Smell"
+            },
+            {
+              "name": "Enhanced Senses",
+              "select": "Visual Acuity"
+            },
+            {
+              "name": "Immunity",
+              "select": "Pathogens"
+            },
+            {
+              "name": "Immunity",
+              "select": "Toxins"
+            }
+          ]
+        },
+        "addCritterPowerList": [
+          {
+            "name": "Essence Drain"
+          },
+          {
+            "name": "Infection"
+          },
+          {
+            "name": "Immunity",
+            "select": "Age"
+          },
+          {
+            "name": "Essence Loss"
+          },
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Allergy",
+            "select": "Ferrous Metals, Moderate"
+          },
+          {
+            "name": "Allergy",
+            "select": "Sunlight, Severe"
+          },
+          {
+            "name": "Dietary Requirement",
+            "select": "Metahuman Flesh"
+          }
+        ],
+        "unlockCritterPowerCategory": "Infected"
+      },
       "movementAndLifestyle": {
         "walkSpeedPercentageModifier": 100,
         "swimSpeedPercentageModifier": 100,
@@ -8540,6 +10265,16 @@
     "limit": {
       "option": "False"
     },
+    "bonus": {
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Armor",
+            "rating": 1
+          }
+        ]
+      }
+    },
     "requirements": {},
     "description": "",
     "source": "RF",
@@ -8550,6 +10285,15 @@
     "category": "Positive",
     "karma": 9,
     "charGenCostInCareer": true,
+    "bonus": {
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Compulsion"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "forbidden": {},
     "description": "",
@@ -8561,6 +10305,16 @@
     "category": "Positive",
     "karma": 3,
     "charGenCostInCareer": true,
+    "bonus": {
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Enhanced Senses",
+            "select": "Hearing"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "description": "",
     "source": "RF",
@@ -8571,6 +10325,16 @@
     "category": "Positive",
     "karma": 3,
     "charGenCostInCareer": true,
+    "bonus": {
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Enhanced Senses",
+            "select": "Low-Light Vision"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "description": "",
     "source": "RF",
@@ -8581,6 +10345,16 @@
     "category": "Positive",
     "karma": 3,
     "charGenCostInCareer": true,
+    "bonus": {
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "description": "",
     "source": "RF",
@@ -8591,6 +10365,16 @@
     "category": "Positive",
     "karma": 3,
     "charGenCostInCareer": true,
+    "bonus": {
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Enhanced Senses",
+            "select": "Taste"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "description": "",
     "source": "RF",
@@ -8601,6 +10385,16 @@
     "category": "Positive",
     "karma": 3,
     "charGenCostInCareer": true,
+    "bonus": {
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Enhanced Senses",
+            "select": "Thermographic Vision"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "description": "",
     "source": "RF",
@@ -8611,6 +10405,16 @@
     "category": "Positive",
     "karma": 3,
     "charGenCostInCareer": true,
+    "bonus": {
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Enhanced Senses",
+            "select": "Visual Acuity"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "description": "",
     "source": "RF",
@@ -8621,6 +10425,15 @@
     "category": "Positive",
     "karma": 9,
     "charGenCostInCareer": true,
+    "bonus": {
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Fear"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "forbidden": {},
     "description": "",
@@ -8632,6 +10445,16 @@
     "category": "Positive",
     "karma": 6,
     "charGenCostInCareer": true,
+    "bonus": {
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Immunity",
+            "select": "Fire"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "description": "",
     "source": "RF",
@@ -8642,6 +10465,16 @@
     "category": "Positive",
     "karma": 6,
     "charGenCostInCareer": true,
+    "bonus": {
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Immunity",
+            "select": "Pathogens"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "description": "",
     "source": "RF",
@@ -8652,6 +10485,16 @@
     "category": "Positive",
     "karma": 6,
     "charGenCostInCareer": true,
+    "bonus": {
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Immunity",
+            "select": "Toxins"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "description": "",
     "source": "RF",
@@ -8662,6 +10505,15 @@
     "category": "Positive",
     "karma": 9,
     "charGenCostInCareer": true,
+    "bonus": {
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Influence"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "forbidden": {},
     "description": "",
@@ -8673,6 +10525,15 @@
     "category": "Positive",
     "karma": 9,
     "charGenCostInCareer": true,
+    "bonus": {
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Magical Guard"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "forbidden": {},
     "description": "",
@@ -8684,6 +10545,15 @@
     "category": "Positive",
     "karma": 9,
     "charGenCostInCareer": true,
+    "bonus": {
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Mimicry"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "forbidden": {},
     "description": "",
@@ -8695,6 +10565,15 @@
     "category": "Positive",
     "karma": 12,
     "charGenCostInCareer": true,
+    "bonus": {
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Mist Form"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "description": "",
     "source": "RF",
@@ -8705,6 +10584,15 @@
     "category": "Positive",
     "karma": 9,
     "charGenCostInCareer": true,
+    "bonus": {
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Paralyzing Howl"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "forbidden": {},
     "description": "",
@@ -8716,6 +10604,15 @@
     "category": "Positive",
     "karma": 9,
     "charGenCostInCareer": true,
+    "bonus": {
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Psychokinesis"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "forbidden": {},
     "description": "",
@@ -8727,6 +10624,15 @@
     "category": "Positive",
     "karma": 12,
     "charGenCostInCareer": true,
+    "bonus": {
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Regeneration"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "forbidden": {},
     "description": "",
@@ -9199,6 +11105,11 @@
     "name": "Inherent Program",
     "category": "Positive",
     "karma": 7,
+    "bonus": {
+      "specificQuality": {
+        "selectInherentAiProgram": true
+      }
+    },
     "requirements": {},
     "description": "",
     "source": "DT",
@@ -9263,7 +11174,7 @@
     "karma": 12,
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": 2
+        "addPhysicalTrackBoxes": 2
       }
     },
     "requirements": {},
@@ -9329,6 +11240,11 @@
     "name": "Fragmentation",
     "category": "Negative",
     "karma": -18,
+    "bonus": {
+      "essenceAndAugmentation": {
+        "essenceMaxModifier": -1
+      }
+    },
     "requirements": {},
     "description": "",
     "source": "DT",
@@ -9363,6 +11279,13 @@
     "name": "Biocompatibility (Cyberware)",
     "category": "Positive",
     "karma": 5,
+    "bonus": {
+      "essenceAndAugmentation": {
+        "essenceCostOngoingPercentageModifier": {
+          "cyberwareOnly": [90]
+        }
+      }
+    },
     "forbidden": {},
     "description": "",
     "source": "CF",
@@ -9372,6 +11295,13 @@
     "name": "Biocompatibility (Bioware)",
     "category": "Positive",
     "karma": 5,
+    "bonus": {
+      "essenceAndAugmentation": {
+        "essenceCostOngoingPercentageModifier": {
+          "biowareOnly": [90]
+        }
+      }
+    },
     "forbidden": {},
     "description": "",
     "source": "CF",
@@ -9389,6 +11319,13 @@
     "name": "Cyber-Singularity Seeker",
     "category": "Positive",
     "karma": 12,
+    "bonus": {
+      "specificQuality": {
+        "cyberSeeker": {
+          "attributeList": ["Willpower"]
+        }
+      }
+    },
     "description": "",
     "source": "CF",
     "page": 54
@@ -9438,6 +11375,9 @@
             }
           ]
         }
+      },
+      "specificQuality": {
+        "prototypeTranshuman": 1
       }
     },
     "description": "",
@@ -9448,6 +11388,14 @@
     "name": "Redliner",
     "category": "Positive",
     "karma": 10,
+    "bonus": {
+      "specificQuality": {
+        "cyberSeeker": {
+          "attributeList": ["Agility", "Strength"],
+          "loseOnePhysicalBoxInsteadOfGainingTwo": true
+        }
+      }
+    },
     "description": "",
     "source": "CF",
     "page": 55
@@ -9464,6 +11412,12 @@
     "name": "Uncanny Healer",
     "category": "Positive",
     "karma": 12,
+    "bonus": {
+      "conditionAndRecovery": {
+        "addEssenceToPhysicalConditionMonitorRecovery": true,
+        "addEssenceToStunConditionMonitorRecovery": true
+      }
+    },
     "forbidden": {},
     "description": "",
     "source": "CF",
@@ -9765,6 +11719,25 @@
     "name": "Cyber-snob",
     "category": "Negative",
     "karma": -12,
+    "bonus": {
+      "essenceAndAugmentation": {
+        "augmentationDisable": {
+          "disableBiowareGradeList": [
+            "Standard",
+            "Used",
+            "Alphaware",
+            "Omegaware"
+          ],
+          "disableCyberwareGradeList": [
+            "Standard",
+            "Used",
+            "Alphaware",
+            "Omegaware",
+            "Greyware"
+          ]
+        }
+      }
+    },
     "requirements": {},
     "description": "",
     "source": "CF",
@@ -9888,14 +11861,16 @@
     "karma": -5,
     "bonus": {
       "combatAndWeapon": {
-        "toxinContactResist": -2,
-        "pathogenContactResist": -2,
-        "toxinInhalationResist": -2,
-        "pathogenInhalationResist": -2,
-        "toxinIngestionResist": -2,
-        "pathogenIngestionResist": -2,
-        "toxinInjectionResist": -2,
-        "pathogenInjectionResist": -2
+        "toxinAndPathogen": {
+          "toxinContactResist": -2,
+          "pathogenContactResist": -2,
+          "toxinInhalationResist": -2,
+          "pathogenInhalationResist": -2,
+          "toxinIngestionResist": -2,
+          "pathogenIngestionResist": -2,
+          "toxinInjectionResist": -2,
+          "pathogenInjectionResist": -2
+        }
       },
       "conditionAndRecovery": {
         "addictionResistance": {
@@ -10082,22 +12057,24 @@
     "karma": 2,
     "bonus": {
       "combatAndWeapon": {
-        "weaponSkillAccuracyList": [
-          {
-            "skill": {
-              "selectSkill": true,
-              "selectionOptions": {
-                "restriction": {
-                  "skillCategoryList": {
-                    "skillCategoryList": ["Combat Active"],
-                    "limit": "Exclude"
+        "attackModifiers": {
+          "weaponSkillAccuracyList": [
+            {
+              "skill": {
+                "selectSkill": true,
+                "selectionOptions": {
+                  "restriction": {
+                    "skillCategoryList": {
+                      "skillCategoryList": ["Combat Active"],
+                      "limit": "Exclude"
+                    }
                   }
                 }
-              }
-            },
-            "bonus": 1
-          }
-        ]
+              },
+              "bonus": 1
+            }
+          ]
+        }
       }
     },
     "description": "",
@@ -10153,6 +12130,11 @@
     "karma": 3,
     "limit": 4,
     "noLevels": true,
+    "bonus": {
+      "specificQuality": {
+        "dealerConnection": ["Drone", "Groundcraft", "Watercraft", "Aircraft"]
+      }
+    },
     "description": "",
     "source": "R5",
     "page": 33
@@ -10282,6 +12264,32 @@
           "name": "Magic"
         }
       },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Shift (Dracoform)"
+          },
+          {
+            "name": "Vestigial Wings"
+          },
+          {
+            "name": "Hardened Armor",
+            "rating": 2
+          },
+          {
+            "name": "Hardened Mystic Armor",
+            "rating": 2
+          },
+          {
+            "name": "Elemental Attack",
+            "select": "Fire"
+          }
+        ],
+        "unlockCritterPowerCategory": "Drake"
+      },
       "quality": {
         "addQualityList": [
           {
@@ -10326,6 +12334,32 @@
         "enableAttribute": {
           "name": "Magic"
         }
+      },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Shift (Dracoform)"
+          },
+          {
+            "name": "Vestigial Wings"
+          },
+          {
+            "name": "Hardened Armor",
+            "rating": 2
+          },
+          {
+            "name": "Hardened Mystic Armor",
+            "rating": 2
+          },
+          {
+            "name": "Elemental Attack",
+            "select": "Fire"
+          }
+        ],
+        "unlockCritterPowerCategory": "Drake"
       },
       "quality": {
         "addQualityList": [
@@ -10384,6 +12418,32 @@
           "name": "Magic"
         }
       },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Shift (Dracoform)"
+          },
+          {
+            "name": "Vestigial Wings"
+          },
+          {
+            "name": "Hardened Armor",
+            "rating": 2
+          },
+          {
+            "name": "Hardened Mystic Armor",
+            "rating": 2
+          },
+          {
+            "name": "Elemental Attack",
+            "select": "Fire"
+          }
+        ],
+        "unlockCritterPowerCategory": "Drake"
+      },
       "quality": {
         "addQualityList": [
           {
@@ -10434,6 +12494,32 @@
         "enableAttribute": {
           "name": "Magic"
         }
+      },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Shift (Dracoform)"
+          },
+          {
+            "name": "Underwater Adaptation"
+          },
+          {
+            "name": "Hardened Armor",
+            "rating": 2
+          },
+          {
+            "name": "Hardened Mystic Armor",
+            "rating": 2
+          },
+          {
+            "name": "Elemental Attack",
+            "select": "Fire"
+          }
+        ],
+        "unlockCritterPowerCategory": "Drake"
       },
       "quality": {
         "addQualityList": [
@@ -10516,6 +12602,11 @@
     "name": "Good Looking and Knows It",
     "category": "Positive",
     "karma": 10,
+    "bonus": {
+      "contactAndReputation": {
+        "notorietyModifier": 1
+      }
+    },
     "description": "",
     "source": "CA",
     "page": 150
@@ -10534,7 +12625,9 @@
     "karma": 5,
     "bonus": {
       "testAndResistance": {
-        "judgeIntentionsDefense": 2
+        "judgeIntentions": {
+          "defense": 2
+        }
       }
     },
     "description": "",
@@ -10834,6 +12927,35 @@
         "skillDisableList": {
           "skillGroupList": ["Conjuring"]
         }
+      },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Aura Masking"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Thermographic Vision"
+          },
+          {
+            "name": "Immunity",
+            "select": "Normal Weapons"
+          },
+          {
+            "name": "Realistic Form"
+          },
+          {
+            "name": "Allergy",
+            "select": "Insecticides, Mild"
+          }
+        ]
       }
     },
     "requirements": {},
@@ -10857,6 +12979,35 @@
         "skillDisableList": {
           "skillGroupList": ["Conjuring"]
         }
+      },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Aura Masking"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Thermographic Vision"
+          },
+          {
+            "name": "Immunity",
+            "select": "Normal Weapons"
+          },
+          {
+            "name": "Realistic Form"
+          },
+          {
+            "name": "Allergy",
+            "select": "Insecticides, Mild"
+          }
+        ]
       }
     },
     "requirements": {},
@@ -10880,6 +13031,43 @@
         "skillDisableList": {
           "skillGroupList": ["Conjuring"]
         }
+      },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Aura Masking"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Thermographic Vision"
+          },
+          {
+            "name": "Immunity",
+            "select": "Normal Weapons"
+          },
+          {
+            "name": "Realistic Form"
+          },
+          {
+            "name": "Allergy",
+            "select": "Insecticides, Mild"
+          },
+          {
+            "name": "Immunity",
+            "select": "Fire"
+          },
+          {
+            "name": "Vulnerability",
+            "select": "Cold"
+          }
+        ]
       }
     },
     "requirements": {},
@@ -10902,6 +13090,42 @@
       "skill": {
         "skillDisableList": {
           "skillGroupList": ["Conjuring"]
+        }
+      },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Aura Masking"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Thermographic Vision"
+          },
+          {
+            "name": "Immunity",
+            "select": "Normal Weapons"
+          },
+          {
+            "name": "Realistic Form"
+          },
+          {
+            "name": "Allergy",
+            "select": "Insecticides, Mild"
+          }
+        ]
+      },
+      "movementAndLifestyle": {
+        "flyBaseMovementReplacement": {
+          "walk": 3,
+          "run": 6,
+          "sprint": 500
         }
       }
     },
@@ -10927,8 +13151,43 @@
           "skillGroupList": ["Conjuring"]
         }
       },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Aura Masking"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Thermographic Vision"
+          },
+          {
+            "name": "Immunity",
+            "select": "Normal Weapons"
+          },
+          {
+            "name": "Realistic Form"
+          },
+          {
+            "name": "Allergy",
+            "select": "Insecticides, Mild"
+          },
+          {
+            "name": "Reduced Sense",
+            "select": "Blind"
+          }
+        ]
+      },
       "combatAndWeapon": {
-        "damageResistance": 2
+        "damageResistanceModifiers": {
+          "damageResistance": 2
+        }
       }
     },
     "requirements": {},
@@ -10952,6 +13211,35 @@
         "skillDisableList": {
           "skillGroupList": ["Conjuring"]
         }
+      },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Aura Masking"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Thermographic Vision"
+          },
+          {
+            "name": "Immunity",
+            "select": "Normal Weapons"
+          },
+          {
+            "name": "Realistic Form"
+          },
+          {
+            "name": "Allergy",
+            "select": "Insecticides, Mild"
+          }
+        ]
       }
     },
     "requirements": {},
@@ -10975,6 +13263,35 @@
         "skillDisableList": {
           "skillGroupList": ["Conjuring"]
         }
+      },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Aura Masking"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Thermographic Vision"
+          },
+          {
+            "name": "Immunity",
+            "select": "Normal Weapons"
+          },
+          {
+            "name": "Realistic Form"
+          },
+          {
+            "name": "Allergy",
+            "select": "Insecticides, Mild"
+          }
+        ]
       }
     },
     "requirements": {},
@@ -10999,8 +13316,39 @@
           "skillGroupList": ["Conjuring"]
         }
       },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Aura Masking"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Thermographic Vision"
+          },
+          {
+            "name": "Immunity",
+            "select": "Normal Weapons"
+          },
+          {
+            "name": "Realistic Form"
+          },
+          {
+            "name": "Allergy",
+            "select": "Insecticides, Mild"
+          }
+        ]
+      },
       "combatAndWeapon": {
-        "damageResistance": 4
+        "damageResistanceModifiers": {
+          "damageResistance": 4
+        }
       }
     },
     "requirements": {},
@@ -11024,6 +13372,35 @@
         "skillDisableList": {
           "skillGroupList": ["Conjuring"]
         }
+      },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Aura Masking"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Thermographic Vision"
+          },
+          {
+            "name": "Immunity",
+            "select": "Normal Weapons"
+          },
+          {
+            "name": "Realistic Form"
+          },
+          {
+            "name": "Allergy",
+            "select": "Insecticides, Mild"
+          }
+        ]
       }
     },
     "requirements": {},
@@ -11047,6 +13424,39 @@
         "skillDisableList": {
           "skillGroupList": ["Conjuring"]
         }
+      },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Aura Masking"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Thermographic Vision"
+          },
+          {
+            "name": "Immunity",
+            "select": "Normal Weapons"
+          },
+          {
+            "name": "Realistic Form"
+          },
+          {
+            "name": "Movement",
+            "select": "Self Only"
+          },
+          {
+            "name": "Allergy",
+            "select": "Insecticides, Mild"
+          }
+        ]
       }
     },
     "requirements": {},
@@ -11070,6 +13480,42 @@
         "skillDisableList": {
           "skillGroupList": ["Conjuring"]
         }
+      },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Aura Masking"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Thermographic Vision"
+          },
+          {
+            "name": "Immunity",
+            "select": "Normal Weapons"
+          },
+          {
+            "name": "Realistic Form"
+          },
+          {
+            "name": "Movement",
+            "select": "Self Only"
+          },
+          {
+            "name": "Allergy",
+            "select": "Insecticides, Mild"
+          },
+          {
+            "name": "Venom"
+          }
+        ]
       }
     },
     "requirements": {},
@@ -11093,6 +13539,39 @@
         "skillDisableList": {
           "skillGroupList": ["Conjuring"]
         }
+      },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Aura Masking"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Thermographic Vision"
+          },
+          {
+            "name": "Immunity",
+            "select": "Normal Weapons"
+          },
+          {
+            "name": "Realistic Form"
+          },
+          {
+            "name": "Allergy",
+            "select": "Insecticides, Mild"
+          },
+          {
+            "name": "Induced Dormancy",
+            "select": "Queen's Command"
+          }
+        ]
       }
     },
     "requirements": {},
@@ -11116,6 +13595,38 @@
         "skillDisableList": {
           "skillGroupList": ["Conjuring"]
         }
+      },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Aura Masking"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Thermographic Vision"
+          },
+          {
+            "name": "Immunity",
+            "select": "Normal Weapons"
+          },
+          {
+            "name": "Realistic Form"
+          },
+          {
+            "name": "Allergy",
+            "select": "Insecticides, Mild"
+          },
+          {
+            "name": "Binding"
+          }
+        ]
       }
     },
     "requirements": {},
@@ -11139,6 +13650,44 @@
         "skillDisableList": {
           "skillGroupList": ["Conjuring"]
         }
+      },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Aura Masking"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Thermographic Vision"
+          },
+          {
+            "name": "Immunity",
+            "select": "Normal Weapons"
+          },
+          {
+            "name": "Realistic Form"
+          },
+          {
+            "name": "Allergy",
+            "select": "Insecticides, Mild"
+          },
+          {
+            "name": "Binding"
+          },
+          {
+            "name": "Wall Walking"
+          },
+          {
+            "name": "Venom"
+          }
+        ]
       }
     },
     "requirements": {},
@@ -11162,6 +13711,39 @@
         "skillDisableList": {
           "skillGroupList": ["Conjuring"]
         }
+      },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Aura Masking"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Thermographic Vision"
+          },
+          {
+            "name": "Immunity",
+            "select": "Normal Weapons"
+          },
+          {
+            "name": "Realistic Form"
+          },
+          {
+            "name": "Allergy",
+            "select": "Insecticides, Mild"
+          },
+          {
+            "name": "Innate Spell",
+            "select": "Mass Sight Removal"
+          }
+        ]
       }
     },
     "requirements": {},
@@ -11185,6 +13767,35 @@
         "skillDisableList": {
           "skillGroupList": ["Conjuring"]
         }
+      },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Aura Masking"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Thermographic Vision"
+          },
+          {
+            "name": "Immunity",
+            "select": "Normal Weapons"
+          },
+          {
+            "name": "Realistic Form"
+          },
+          {
+            "name": "Allergy",
+            "select": "Insecticides, Mild"
+          }
+        ]
       }
     },
     "requirements": {},
@@ -11208,6 +13819,41 @@
         "skillDisableList": {
           "skillGroupList": ["Conjuring"]
         }
+      },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Aura Masking"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Thermographic Vision"
+          },
+          {
+            "name": "Immunity",
+            "select": "Normal Weapons"
+          },
+          {
+            "name": "Realistic Form"
+          },
+          {
+            "name": "Allergy",
+            "select": "Insecticides, Mild"
+          },
+          {
+            "name": "Movement"
+          },
+          {
+            "name": "Dive Attack"
+          }
+        ]
       }
     },
     "requirements": {},
@@ -11231,6 +13877,35 @@
         "skillDisableList": {
           "skillGroupList": ["Conjuring"]
         }
+      },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Aura Masking"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Thermographic Vision"
+          },
+          {
+            "name": "Immunity",
+            "select": "Normal Weapons"
+          },
+          {
+            "name": "Realistic Form"
+          },
+          {
+            "name": "Allergy",
+            "select": "Insecticides, Mild"
+          }
+        ]
       }
     },
     "requirements": {},
@@ -11254,6 +13929,38 @@
         "skillDisableList": {
           "skillGroupList": ["Conjuring"]
         }
+      },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Aura Masking"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Thermographic Vision"
+          },
+          {
+            "name": "Immunity",
+            "select": "Normal Weapons"
+          },
+          {
+            "name": "Realistic Form"
+          },
+          {
+            "name": "Allergy",
+            "select": "Insecticides, Mild"
+          },
+          {
+            "name": "Empathy"
+          }
+        ]
       }
     },
     "requirements": {},
@@ -11277,6 +13984,38 @@
         "skillDisableList": {
           "skillGroupList": ["Conjuring"]
         }
+      },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Aura Masking"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Thermographic Vision"
+          },
+          {
+            "name": "Immunity",
+            "select": "Normal Weapons"
+          },
+          {
+            "name": "Realistic Form"
+          },
+          {
+            "name": "Allergy",
+            "select": "Insecticides, Mild"
+          },
+          {
+            "name": "Essence Loss"
+          }
+        ]
       }
     },
     "requirements": {},
@@ -11300,6 +14039,41 @@
         "skillDisableList": {
           "skillGroupList": ["Conjuring"]
         }
+      },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Aura Masking"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Thermographic Vision"
+          },
+          {
+            "name": "Immunity",
+            "select": "Normal Weapons"
+          },
+          {
+            "name": "Realistic Form"
+          },
+          {
+            "name": "Allergy",
+            "select": "Insecticides, Mild"
+          },
+          {
+            "name": "Essence Drain"
+          },
+          {
+            "name": "Pestilence"
+          }
+        ]
       }
     },
     "requirements": {},
@@ -11322,6 +14096,42 @@
       "skill": {
         "skillDisableList": {
           "skillGroupList": ["Conjuring"]
+        }
+      },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Aura Masking"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Thermographic Vision"
+          },
+          {
+            "name": "Immunity",
+            "select": "Normal Weapons"
+          },
+          {
+            "name": "Realistic Form"
+          },
+          {
+            "name": "Allergy",
+            "select": "Insecticides, Mild"
+          }
+        ]
+      },
+      "movementAndLifestyle": {
+        "flyBaseMovementReplacement": {
+          "walk": 3,
+          "run": 6,
+          "sprint": 500
         }
       }
     },
@@ -11346,6 +14156,46 @@
         "skillDisableList": {
           "skillGroupList": ["Conjuring"]
         }
+      },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Aura Masking"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Thermographic Vision"
+          },
+          {
+            "name": "Immunity",
+            "select": "Normal Weapons"
+          },
+          {
+            "name": "Realistic Form"
+          },
+          {
+            "name": "Allergy",
+            "select": "Insecticides, Mild"
+          },
+          {
+            "name": "Innate Spell",
+            "select": "Foreboding"
+          }
+        ]
+      },
+      "movementAndLifestyle": {
+        "flyBaseMovementReplacement": {
+          "walk": 3,
+          "run": 6,
+          "sprint": 500
+        }
       }
     },
     "requirements": {},
@@ -11369,6 +14219,39 @@
         "skillDisableList": {
           "skillGroupList": ["Conjuring"]
         }
+      },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Aura Masking"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Thermographic Vision"
+          },
+          {
+            "name": "Immunity",
+            "select": "Normal Weapons"
+          },
+          {
+            "name": "Realistic Form"
+          },
+          {
+            "name": "Allergy",
+            "select": "Insecticides, Mild"
+          },
+          {
+            "name": "Reduced Sense",
+            "select": "Blind"
+          }
+        ]
       }
     },
     "requirements": {},
@@ -11392,6 +14275,39 @@
         "skillDisableList": {
           "skillGroupList": ["Conjuring"]
         }
+      },
+      "power": {
+        "addCritterPowerList": [
+          {
+            "name": "Dual Natured"
+          },
+          {
+            "name": "Aura Masking"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Smell"
+          },
+          {
+            "name": "Enhanced Senses",
+            "select": "Thermographic Vision"
+          },
+          {
+            "name": "Immunity",
+            "select": "Normal Weapons"
+          },
+          {
+            "name": "Realistic Form"
+          },
+          {
+            "name": "Allergy",
+            "select": "Insecticides, Mild"
+          },
+          {
+            "name": "Dietary Requirement",
+            "select": "Sugar"
+          }
+        ]
       }
     },
     "requirements": {},
@@ -11417,6 +14333,14 @@
     "karma": 15,
     "charGenCostInCareer": true,
     "canBuyWithSpellPoints": true,
+    "bonus": {
+      "spellAndMagic": {
+        "addSpell": {
+          "name": "Alter Ballistics",
+          "alchemical": true
+        }
+      }
+    },
     "requirements": {},
     "description": "",
     "source": "FA",
@@ -11517,6 +14441,29 @@
     "charGenCostInCareer": true,
     "canBuyWithSpellPoints": true,
     "bonus": {
+      "spellAndMagic": {
+        "freeSpellOngoingBonus": {
+          "linkType": {
+            "attributeLinked": "Magic"
+          },
+          "freeSpellRate": "Half",
+          "spellRange": "Touch"
+        },
+        "unlockSpellList": [
+          {
+            "allowSpellRangeList": [
+              {
+                "value": "Touch",
+                "target": "Single Target"
+              },
+              {
+                "value": "Touch",
+                "target": "Area"
+              }
+            ]
+          }
+        ]
+      },
       "miscellaneous": {
         "displaySelection": false
       }
@@ -11552,6 +14499,13 @@
         "skillDisableList": {
           "skillList": ["Binding"]
         }
+      },
+      "spellAndMagic": {
+        "addSpiritOptionList": [
+          {
+            "selectSpirit": true
+          }
+        ]
       }
     },
     "requirements": {},
@@ -11618,6 +14572,15 @@
     "karma": 10,
     "charGenCostInCareer": true,
     "canBuyWithSpellPoints": true,
+    "bonus": {
+      "spellAndMagic": {
+        "addSpiritOptionList": [
+          {
+            "selectSpirit": true
+          }
+        ]
+      }
+    },
     "requirements": {},
     "description": "",
     "source": "FA",
@@ -11630,6 +14593,24 @@
     "charGenCostInCareer": true,
     "limit": 3,
     "canBuyWithSpellPoints": true,
+    "bonus": {
+      "spellAndMagic": {
+        "spellModifiers": {
+          "spellBonusDamage": {
+            "spellCategory": {
+              "spellCategoryRequired": "Combat",
+              "bonusDamage": 1
+            }
+          },
+          "spellExtraDrain": {
+            "spellCategory": {
+              "spellCategoryRequired": "Combat",
+              "extraDrain": 1
+            }
+          }
+        }
+      }
+    },
     "requirements": {},
     "forbidden": {},
     "description": "",
@@ -11643,23 +14624,41 @@
     "charGenCostInCareer": true,
     "canBuyWithSpellPoints": true,
     "bonus": {
-      "combatAndWeapon": {
-        "weaponSkillDamage": {
-          "selectionOptions": {
-            "restriction": {
-              "skillList": {
-                "skillList": [
-                  "Astral Combat",
-                  "Blades",
-                  "Clubs",
-                  "Exotic Melee Weapon",
-                  "Unarmed Combat"
-                ],
-                "limit": "Only"
-              }
+      "spellAndMagic": {
+        "spellModifiers": {
+          "spellBonusDamage": {
+            "spellCategory": {
+              "spellCategoryRequired": "Combat",
+              "bonusDamage": 1
             }
           },
-          "bonus": 1
+          "spellExtraDrain": {
+            "spellCategory": {
+              "spellCategoryRequired": "Combat",
+              "extraDrain": 1
+            }
+          }
+        }
+      },
+      "combatAndWeapon": {
+        "damageValueModifiers": {
+          "weaponSkillDamage": {
+            "selectionOptions": {
+              "restriction": {
+                "skillList": {
+                  "skillList": [
+                    "Astral Combat",
+                    "Blades",
+                    "Clubs",
+                    "Exotic Melee Weapon",
+                    "Unarmed Combat"
+                  ],
+                  "limit": "Only"
+                }
+              }
+            },
+            "bonus": 1
+          }
         }
       }
     },
@@ -11704,6 +14703,18 @@
       "skill": {
         "skillDisableList": {
           "skillList": ["Summoning", "Binding"]
+        }
+      },
+      "spellAndMagic": {
+        "freeSpellOngoingBonus": {
+          "linkType": {
+            "skillLinked": "Spellcasting"
+          },
+          "freeSpellRate": "Full"
+        },
+        "newSpellKarmaCostModification": {
+          "spellType": "Spell",
+          "modifier": -1
         }
       }
     },
@@ -12106,16 +15117,22 @@
     "charGenCostInCareer": true,
     "bonus": {
       "combatAndWeapon": {
-        "toxinInhalationResist": 2
+        "toxinAndPathogen": {
+          "toxinInhalationResist": 2
+        }
       },
       "conditionAndRecovery": {
-        "addPhysicalBoxes": -1
+        "addPhysicalTrackBoxes": -1,
+        "addStunTrackBoxes": -1
       },
       "testAndResistance": {
         "fatigueResist": 1
       },
       "essenceAndAugmentation": {
-        "essenceCostTimes100": [-100]
+        "essenceCostOngoingPercentageModifier": {
+          "base": [-100],
+          "magOnly": [100]
+        }
       }
     },
     "requirements": {},
@@ -12134,10 +15151,14 @@
     },
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": -1
+        "addPhysicalTrackBoxes": -1,
+        "addStunTrackBoxes": -1
       },
       "essenceAndAugmentation": {
-        "essenceCostTimes100": [-100]
+        "essenceCostOngoingPercentageModifier": {
+          "base": [-100],
+          "magOnly": [100]
+        }
       }
     },
     "requirements": {},
@@ -12156,10 +15177,14 @@
     },
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": -1
+        "addPhysicalTrackBoxes": -1,
+        "addStunTrackBoxes": -1
       },
       "essenceAndAugmentation": {
-        "essenceCostTimes100": [-100]
+        "essenceCostOngoingPercentageModifier": {
+          "base": [-100],
+          "magOnly": [100]
+        }
       }
     },
     "requirements": {},
@@ -12176,16 +15201,22 @@
     "charGenCostInCareer": true,
     "bonus": {
       "combatAndWeapon": {
-        "toxinIngestionResist": 2
+        "toxinAndPathogen": {
+          "toxinIngestionResist": 2
+        }
       },
       "conditionAndRecovery": {
-        "addPhysicalBoxes": -1
+        "addPhysicalTrackBoxes": -1,
+        "addStunTrackBoxes": -1
       },
       "testAndResistance": {
         "fatigueResist": 1
       },
       "essenceAndAugmentation": {
-        "essenceCostTimes100": [-50]
+        "essenceCostOngoingPercentageModifier": {
+          "base": [-50],
+          "magOnly": [50]
+        }
       }
     },
     "requirements": {},
@@ -12202,16 +15233,22 @@
     "charGenCostInCareer": true,
     "bonus": {
       "combatAndWeapon": {
-        "toxinInjectionResist": 2
+        "toxinAndPathogen": {
+          "toxinInjectionResist": 2
+        }
       },
       "conditionAndRecovery": {
-        "addPhysicalBoxes": -1
+        "addPhysicalTrackBoxes": -1,
+        "addStunTrackBoxes": -1
       },
       "testAndResistance": {
         "fatigueResist": 1
       },
       "essenceAndAugmentation": {
-        "essenceCostTimes100": [-50]
+        "essenceCostOngoingPercentageModifier": {
+          "base": [-50],
+          "magOnly": [50]
+        }
       }
     },
     "requirements": {},
@@ -12228,10 +15265,11 @@
     "charGenCostInCareer": true,
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": -1
+        "addPhysicalTrackBoxes": -1,
+        "addStunTrackBoxes": -1
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": -10
           }
@@ -12241,7 +15279,10 @@
         "fatigueResist": 1
       },
       "essenceAndAugmentation": {
-        "essenceCostTimes100": [-50]
+        "essenceCostOngoingPercentageModifier": {
+          "base": [-50],
+          "magOnly": [50]
+        }
       }
     },
     "requirements": {},
@@ -12258,13 +15299,17 @@
     "charGenCostInCareer": true,
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": -1
+        "addPhysicalTrackBoxes": -1,
+        "addStunTrackBoxes": -1
       },
       "testAndResistance": {
         "fatigueResist": 1
       },
       "essenceAndAugmentation": {
-        "essenceCostTimes100": [-50]
+        "essenceCostOngoingPercentageModifier": {
+          "base": [-50],
+          "magOnly": [50]
+        }
       }
     },
     "requirements": {},
@@ -12281,17 +15326,23 @@
     "charGenCostInCareer": true,
     "bonus": {
       "combatAndWeapon": {
-        "toxinIngestionResist": 2,
-        "toxinInjectionResist": 2
+        "toxinAndPathogen": {
+          "toxinIngestionResist": 2,
+          "toxinInjectionResist": 2
+        }
       },
       "conditionAndRecovery": {
-        "addPhysicalBoxes": -1
+        "addPhysicalTrackBoxes": -1,
+        "addStunTrackBoxes": -1
       },
       "testAndResistance": {
         "fatigueResist": 2
       },
       "essenceAndAugmentation": {
-        "essenceCostTimes100": [-100]
+        "essenceCostOngoingPercentageModifier": {
+          "base": [-100],
+          "magOnly": [100]
+        }
       }
     },
     "requirements": {},
@@ -12308,13 +15359,16 @@
     "charGenCostInCareer": true,
     "bonus": {
       "combatAndWeapon": {
-        "toxinIngestionResist": 2
+        "toxinAndPathogen": {
+          "toxinIngestionResist": 2
+        }
       },
       "conditionAndRecovery": {
-        "addPhysicalBoxes": -1
+        "addPhysicalTrackBoxes": -1,
+        "addStunTrackBoxes": -1
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": -10
           }
@@ -12324,7 +15378,10 @@
         "fatigueResist": 2
       },
       "essenceAndAugmentation": {
-        "essenceCostTimes100": [-100]
+        "essenceCostOngoingPercentageModifier": {
+          "base": [-100],
+          "magOnly": [100]
+        }
       }
     },
     "requirements": {},
@@ -12341,16 +15398,22 @@
     "charGenCostInCareer": true,
     "bonus": {
       "combatAndWeapon": {
-        "toxinIngestionResist": 2
+        "toxinAndPathogen": {
+          "toxinIngestionResist": 2
+        }
       },
       "conditionAndRecovery": {
-        "addPhysicalBoxes": -1
+        "addPhysicalTrackBoxes": -1,
+        "addStunTrackBoxes": -1
       },
       "testAndResistance": {
         "fatigueResist": 2
       },
       "essenceAndAugmentation": {
-        "essenceCostTimes100": [-100]
+        "essenceCostOngoingPercentageModifier": {
+          "base": [-100],
+          "magOnly": [100]
+        }
       }
     },
     "requirements": {},
@@ -12367,13 +15430,16 @@
     "charGenCostInCareer": true,
     "bonus": {
       "combatAndWeapon": {
-        "toxinInjectionResist": 2
+        "toxinAndPathogen": {
+          "toxinInjectionResist": 2
+        }
       },
       "conditionAndRecovery": {
-        "addPhysicalBoxes": -1
+        "addPhysicalTrackBoxes": -1,
+        "addStunTrackBoxes": -1
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": -10
           }
@@ -12383,7 +15449,10 @@
         "fatigueResist": 2
       },
       "essenceAndAugmentation": {
-        "essenceCostTimes100": [-100]
+        "essenceCostOngoingPercentageModifier": {
+          "base": [-100],
+          "magOnly": [100]
+        }
       }
     },
     "requirements": {},
@@ -12400,16 +15469,22 @@
     "charGenCostInCareer": true,
     "bonus": {
       "combatAndWeapon": {
-        "toxinInjectionResist": 2
+        "toxinAndPathogen": {
+          "toxinInjectionResist": 2
+        }
       },
       "conditionAndRecovery": {
-        "addPhysicalBoxes": -1
+        "addPhysicalTrackBoxes": -1,
+        "addStunTrackBoxes": -1
       },
       "testAndResistance": {
         "fatigueResist": 2
       },
       "essenceAndAugmentation": {
-        "essenceCostTimes100": [-100]
+        "essenceCostOngoingPercentageModifier": {
+          "base": [-100],
+          "magOnly": [100]
+        }
       }
     },
     "requirements": {},
@@ -12426,10 +15501,11 @@
     "charGenCostInCareer": true,
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": -1
+        "addPhysicalTrackBoxes": -1,
+        "addStunTrackBoxes": -1
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": -10
           }
@@ -12439,7 +15515,10 @@
         "fatigueResist": 2
       },
       "essenceAndAugmentation": {
-        "essenceCostTimes100": [-100]
+        "essenceCostOngoingPercentageModifier": {
+          "base": [-100],
+          "magOnly": [100]
+        }
       }
     },
     "requirements": {},
@@ -12456,14 +15535,17 @@
     "charGenCostInCareer": true,
     "bonus": {
       "combatAndWeapon": {
-        "toxinIngestionResist": 2,
-        "toxinInjectionResist": 2
+        "toxinAndPathogen": {
+          "toxinIngestionResist": 2,
+          "toxinInjectionResist": 2
+        }
       },
       "conditionAndRecovery": {
-        "addPhysicalBoxes": -1
+        "addPhysicalTrackBoxes": -1,
+        "addStunTrackBoxes": -1
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": -10
           }
@@ -12473,7 +15555,10 @@
         "fatigueResist": 3
       },
       "essenceAndAugmentation": {
-        "essenceCostTimes100": [-150]
+        "essenceCostOngoingPercentageModifier": {
+          "base": [-150],
+          "magOnly": [150]
+        }
       }
     },
     "requirements": {},
@@ -12490,17 +15575,23 @@
     "charGenCostInCareer": true,
     "bonus": {
       "combatAndWeapon": {
-        "toxinIngestionResist": 2,
-        "toxinInjectionResist": 2
+        "toxinAndPathogen": {
+          "toxinIngestionResist": 2,
+          "toxinInjectionResist": 2
+        }
       },
       "conditionAndRecovery": {
-        "addPhysicalBoxes": -1
+        "addPhysicalTrackBoxes": -1,
+        "addStunTrackBoxes": -1
       },
       "testAndResistance": {
         "fatigueResist": 3
       },
       "essenceAndAugmentation": {
-        "essenceCostTimes100": [-150]
+        "essenceCostOngoingPercentageModifier": {
+          "base": [-150],
+          "magOnly": [150]
+        }
       }
     },
     "requirements": {},
@@ -12517,13 +15608,16 @@
     "charGenCostInCareer": true,
     "bonus": {
       "combatAndWeapon": {
-        "toxinIngestionResist": 2
+        "toxinAndPathogen": {
+          "toxinIngestionResist": 2
+        }
       },
       "conditionAndRecovery": {
-        "addPhysicalBoxes": -1
+        "addPhysicalTrackBoxes": -1,
+        "addStunTrackBoxes": -1
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": -10
           }
@@ -12533,7 +15627,10 @@
         "fatigueResist": 3
       },
       "essenceAndAugmentation": {
-        "essenceCostTimes100": [-150]
+        "essenceCostOngoingPercentageModifier": {
+          "base": [-150],
+          "magOnly": [150]
+        }
       }
     },
     "requirements": {},
@@ -12550,13 +15647,16 @@
     "charGenCostInCareer": true,
     "bonus": {
       "combatAndWeapon": {
-        "toxinInjectionResist": 2
+        "toxinAndPathogen": {
+          "toxinInjectionResist": 2
+        }
       },
       "conditionAndRecovery": {
-        "addPhysicalBoxes": -1
+        "addPhysicalTrackBoxes": -1,
+        "addStunTrackBoxes": -1
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": -10
           }
@@ -12566,7 +15666,10 @@
         "fatigueResist": 3
       },
       "essenceAndAugmentation": {
-        "essenceCostTimes100": [-150]
+        "essenceCostOngoingPercentageModifier": {
+          "base": [-150],
+          "magOnly": [150]
+        }
       }
     },
     "requirements": {},
@@ -12583,14 +15686,17 @@
     "charGenCostInCareer": true,
     "bonus": {
       "combatAndWeapon": {
-        "toxinIngestionResist": 2,
-        "toxinInjectionResist": 2
+        "toxinAndPathogen": {
+          "toxinIngestionResist": 2,
+          "toxinInjectionResist": 2
+        }
       },
       "conditionAndRecovery": {
-        "addPhysicalBoxes": -1
+        "addPhysicalTrackBoxes": -1,
+        "addStunTrackBoxes": -1
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": -10
           }
@@ -12600,7 +15706,10 @@
         "fatigueResist": 4
       },
       "essenceAndAugmentation": {
-        "essenceCostTimes100": [-200]
+        "essenceCostOngoingPercentageModifier": {
+          "base": [-200],
+          "magOnly": [200]
+        }
       }
     },
     "requirements": {},
@@ -12618,10 +15727,14 @@
     "addWeapons": ["Crystal Jaw"],
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": -1
+        "addPhysicalTrackBoxes": -1,
+        "addStunTrackBoxes": -1
       },
       "essenceAndAugmentation": {
-        "essenceCostTimes100": [-100]
+        "essenceCostOngoingPercentageModifier": {
+          "base": [-100],
+          "magOnly": [100]
+        }
       }
     },
     "requirements": {},
@@ -12640,16 +15753,22 @@
     },
     "bonus": {
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1
+          }
         }
       },
       "conditionAndRecovery": {
-        "addPhysicalBoxes": -1
+        "addPhysicalTrackBoxes": -1,
+        "addStunTrackBoxes": -1
       },
       "essenceAndAugmentation": {
         "selectSideOfBody": true,
-        "essenceCostTimes100": [-100]
+        "essenceCostOngoingPercentageModifier": {
+          "base": [-100],
+          "magOnly": [100]
+        }
       }
     },
     "requirements": {},
@@ -12668,16 +15787,22 @@
     },
     "bonus": {
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1
+          }
         }
       },
       "conditionAndRecovery": {
-        "addPhysicalBoxes": -1
+        "addPhysicalTrackBoxes": -1,
+        "addStunTrackBoxes": -1
       },
       "essenceAndAugmentation": {
         "selectSideOfBody": true,
-        "essenceCostTimes100": [-100]
+        "essenceCostOngoingPercentageModifier": {
+          "base": [-100],
+          "magOnly": [100]
+        }
       }
     },
     "requirements": {},
@@ -12693,12 +15818,15 @@
     "charGenCostInCareer": true,
     "bonus": {
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1
+          }
         }
       },
       "conditionAndRecovery": {
-        "addPhysicalBoxes": -1
+        "addPhysicalTrackBoxes": -1,
+        "addStunTrackBoxes": -1
       },
       "initiative": {
         "initiative": {
@@ -12706,7 +15834,10 @@
         }
       },
       "essenceAndAugmentation": {
-        "essenceCostTimes100": [-100]
+        "essenceCostOngoingPercentageModifier": {
+          "base": [-100],
+          "magOnly": [100]
+        }
       }
     },
     "requirements": {},
@@ -12768,7 +15899,7 @@
     "charGenCostInCareer": true,
     "bonus": {
       "combatAndWeapon": {
-        "dodge": 2
+        "defenseTestModifier": [2]
       }
     },
     "requirements": {},
@@ -12818,6 +15949,18 @@
       },
       "skill": {
         "unlockSkillList": ["Sorcery", "Conjuring"]
+      },
+      "spellAndMagic": {
+        "limitSpellOptionsToCategoryList": [
+          {
+            "selectCategory": true
+          }
+        ],
+        "limitSpiritOptionsToList": [
+          {
+            "selectCategory": true
+          }
+        ]
       }
     },
     "forbidden": {},
@@ -12877,6 +16020,18 @@
         "skillDisableList": {
           "skillGroupList": ["Enchanting"]
         }
+      },
+      "spellAndMagic": {
+        "limitSpellOptionsToCategoryList": [
+          {
+            "selectCategory": true
+          }
+        ],
+        "limitSpiritOptionsToList": [
+          {
+            "spirit": "Spirit of Air"
+          }
+        ]
       }
     },
     "requirements": {},
@@ -12894,6 +16049,18 @@
         "skillDisableList": {
           "skillGroupList": ["Enchanting"]
         }
+      },
+      "spellAndMagic": {
+        "limitSpellOptionsToCategoryList": [
+          {
+            "selectCategory": true
+          }
+        ],
+        "limitSpiritOptionsToList": [
+          {
+            "spirit": "Spirit of Earth"
+          }
+        ]
       }
     },
     "requirements": {},
@@ -12911,6 +16078,18 @@
         "skillDisableList": {
           "skillGroupList": ["Enchanting"]
         }
+      },
+      "spellAndMagic": {
+        "limitSpellOptionsToCategoryList": [
+          {
+            "selectCategory": true
+          }
+        ],
+        "limitSpiritOptionsToList": [
+          {
+            "spirit": "Spirit of Fire"
+          }
+        ]
       }
     },
     "requirements": {},
@@ -12928,6 +16107,18 @@
         "skillDisableList": {
           "skillGroupList": ["Enchanting"]
         }
+      },
+      "spellAndMagic": {
+        "limitSpellOptionsToCategoryList": [
+          {
+            "selectCategory": true
+          }
+        ],
+        "limitSpiritOptionsToList": [
+          {
+            "spirit": "Spirit of Water"
+          }
+        ]
       }
     },
     "requirements": {},
@@ -12947,7 +16138,27 @@
         }
       },
       "spellAndMagic": {
-        "allowSpellCategory": "Ritual"
+        "unlockSpellList": [
+          {
+            "allowSpellCategory": "Ritual"
+          }
+        ],
+        "spellModifiers": {
+          "spellExtraDrain": {
+            "spellCategory": {
+              "spellCategoryRequired": "MatchLimitSpellCategory",
+              "extraDrain": -2
+            }
+          }
+        },
+        "limitSpellOptionsToCategoryList": [
+          {
+            "selectCategory": true
+          },
+          {
+            "category": "Ritual"
+          }
+        ]
       }
     },
     "requirements": {},
@@ -12965,6 +16176,9 @@
         "skillDisableList": {
           "skillGroupList": ["Sorcery", "Conjuring", "Enchanting"]
         }
+      },
+      "spellAndMagic": {
+        "addMetamagicList": ["Psychometry", "Sensing"]
       }
     },
     "requirements": {},
@@ -12989,6 +16203,9 @@
           ]
         }
       },
+      "spellAndMagic": {
+        "addMetamagicList": ["Reflection"]
+      },
       "quality": {
         "addQualityList": [
           {
@@ -13007,6 +16224,14 @@
     "category": "Positive",
     "karma": 0,
     "charGenDoNotContributeToKarmaLimit": true,
+    "bonus": {
+      "power": {
+        "bonusAdeptPowerPoints": 1
+      },
+      "spellAndMagic": {
+        "drainModification": -1
+      }
+    },
     "requirements": {},
     "description": "",
     "source": "FA",
@@ -13069,7 +16294,7 @@
     "karma": 5,
     "bonus": {
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "lifestyle": "Low",
             "cost": -50
@@ -13173,8 +16398,12 @@
     "karma": -8,
     "bonus": {
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
+            "cost": 10
+          },
+          {
+            "basicLifestyle": true,
             "cost": 10
           }
         ]
@@ -13190,10 +16419,12 @@
     "karma": -8,
     "bonus": {
       "combatAndWeapon": {
-        "toxinContactResist": -1,
-        "toxinInhalationResist": -1,
-        "toxinIngestionResist": -1,
-        "toxinInjectionResist": -1
+        "toxinAndPathogen": {
+          "toxinContactResist": -1,
+          "toxinInhalationResist": -1,
+          "toxinIngestionResist": -1,
+          "toxinInjectionResist": -1
+        }
       },
       "conditionAndRecovery": {
         "addictionResistance": {
@@ -13235,6 +16466,13 @@
     "charGenOnly": true,
     "limit": 11,
     "bonus": {
+      "essenceAndAugmentation": {
+        "addAugmentation": {
+          "name": "Busted Ware",
+          "grade": "None",
+          "type": "Cyberware"
+        }
+      },
       "miscellaneous": {
         "selection": {
           "enterName": true
@@ -13676,6 +16914,13 @@
     "name": "Better on the Net [Attack]",
     "category": "Positive",
     "karma": 9,
+    "bonus": {
+      "spellAndMagic": {
+        "livingPersonaModification": {
+          "attack": 2
+        }
+      }
+    },
     "requirements": {},
     "description": "",
     "source": "KC",
@@ -13685,6 +16930,13 @@
     "name": "Better on the Net [Data Processing]",
     "category": "Positive",
     "karma": 9,
+    "bonus": {
+      "spellAndMagic": {
+        "livingPersonaModification": {
+          "dataProcessing": 2
+        }
+      }
+    },
     "requirements": {},
     "description": "",
     "source": "KC",
@@ -13694,6 +16946,13 @@
     "name": "Better on the Net [Firewall]",
     "category": "Positive",
     "karma": 9,
+    "bonus": {
+      "spellAndMagic": {
+        "livingPersonaModification": {
+          "firewall": 2
+        }
+      }
+    },
     "requirements": {},
     "description": "",
     "source": "KC",
@@ -13703,6 +16962,13 @@
     "name": "Better on the Net [Sleaze]",
     "category": "Positive",
     "karma": 9,
+    "bonus": {
+      "spellAndMagic": {
+        "livingPersonaModification": {
+          "sleaze": 2
+        }
+      }
+    },
     "requirements": {},
     "description": "",
     "source": "KC",
@@ -13821,7 +17087,7 @@
       "option": "False"
     },
     "bonus": {
-      "technomancer": {
+      "spellAndMagic": {
         "linkSprite": true
       }
     },
@@ -13874,7 +17140,7 @@
     "category": "Positive",
     "karma": 0,
     "bonus": {
-      "technomancer": {
+      "spellAndMagic": {
         "linkParagon": true
       }
     },
@@ -13887,6 +17153,13 @@
     "name": "Brittle [Attack]",
     "category": "Negative",
     "karma": -5,
+    "bonus": {
+      "spellAndMagic": {
+        "livingPersonaModification": {
+          "attack": -1
+        }
+      }
+    },
     "requirements": {},
     "description": "",
     "source": "KC",
@@ -13896,6 +17169,13 @@
     "name": "Brittle [Sleaze]",
     "category": "Negative",
     "karma": -5,
+    "bonus": {
+      "spellAndMagic": {
+        "livingPersonaModification": {
+          "sleaze": -1
+        }
+      }
+    },
     "requirements": {},
     "description": "",
     "source": "KC",
@@ -13905,6 +17185,13 @@
     "name": "Brittle [Data Processing]",
     "category": "Negative",
     "karma": -5,
+    "bonus": {
+      "spellAndMagic": {
+        "livingPersonaModification": {
+          "dataProcessing": -1
+        }
+      }
+    },
     "requirements": {},
     "description": "",
     "source": "KC",
@@ -13914,6 +17201,13 @@
     "name": "Brittle [Firewall]",
     "category": "Negative",
     "karma": -5,
+    "bonus": {
+      "spellAndMagic": {
+        "livingPersonaModification": {
+          "firewall": -1
+        }
+      }
+    },
     "requirements": {},
     "description": "",
     "source": "KC",
@@ -13976,6 +17270,11 @@
     "name": "Resonant Burnout",
     "category": "Negative",
     "karma": -15,
+    "bonus": {
+      "spellAndMagic": {
+        "resonanceLossDueToAugmentationModificationPercentageIncrease": 20
+      }
+    },
     "requirements": {},
     "description": "",
     "source": "KC",
@@ -14014,6 +17313,14 @@
     "name": "'Ware Intolerance",
     "category": "Negative",
     "karma": -15,
+    "bonus": {
+      "essenceAndAugmentation": {
+        "essenceCostOngoingPercentageModifier": {
+          "cyberwareOnly": [120],
+          "biowareOnly": [120]
+        }
+      }
+    },
     "description": "",
     "source": "KC",
     "page": 100
@@ -14060,6 +17367,9 @@
             "modifierType": "DicePoolIncrease"
           }
         ]
+      },
+      "specificQuality": {
+        "cyberAdeptDaemon": true
       }
     },
     "requirements": {},
@@ -14101,6 +17411,62 @@
             "modifierType": "DicePoolIncrease"
           }
         ]
+      },
+      "spellAndMagic": {
+        "fadingModificationList": [
+          {
+            "modifier": -2,
+            "specificComplexForm": "Diffusion of [Matrix Attribute]"
+          },
+          {
+            "modifier": -2,
+            "specificComplexForm": "Infusion of [Matrix Attribute]"
+          },
+          {
+            "modifier": -2,
+            "specificComplexForm": "Puppeteer"
+          },
+          {
+            "modifier": -2,
+            "specificComplexForm": "Resonance Channel"
+          },
+          {
+            "modifier": -2,
+            "specificComplexForm": "Resonance Spike"
+          },
+          {
+            "modifier": -2,
+            "specificComplexForm": "Resonance Veil"
+          },
+          {
+            "modifier": -2,
+            "specificComplexForm": "FAQ"
+          },
+          {
+            "modifier": -2,
+            "specificComplexForm": "Redundancy"
+          },
+          {
+            "modifier": -2,
+            "specificComplexForm": "LOTO"
+          },
+          {
+            "modifier": -2,
+            "specificComplexForm": "Causal Nexus"
+          },
+          {
+            "modifier": -2,
+            "specificComplexForm": "Dissonance Spike"
+          },
+          {
+            "modifier": -2,
+            "specificComplexForm": "Bootleg Program"
+          },
+          {
+            "modifier": -2,
+            "specificComplexForm": "Search History"
+          }
+        ]
       }
     },
     "requirements": {},
@@ -14114,6 +17480,16 @@
     "category": "Positive",
     "karma": 20,
     "charGenCostInCareer": true,
+    "bonus": {
+      "spellAndMagic": {
+        "fadingModificationList": [
+          {
+            "modifier": -2
+          }
+        ],
+        "addEcho": "Sourcerer Daemon"
+      }
+    },
     "requirements": {},
     "forbidden": {},
     "description": "",
@@ -14125,6 +17501,11 @@
     "category": "Positive",
     "karma": 20,
     "charGenCostInCareer": true,
+    "bonus": {
+      "specificQuality": {
+        "allowSpriteFettering": true
+      }
+    },
     "requirements": {},
     "forbidden": {},
     "description": "",
@@ -14168,6 +17549,37 @@
     "name": "Dead SIN",
     "category": "Negative",
     "karma": -20,
+    "bonus": {
+      "gearAndVehicle": {
+        "addGear": {
+          "name": "Fake SIN",
+          "category": "ID/Credsticks",
+          "rating": 3,
+          "includedGearList": [
+            {
+              "name": "Fake License",
+              "category": "ID/Credsticks",
+              "rating": 3
+            },
+            {
+              "name": "Fake License",
+              "category": "ID/Credsticks",
+              "rating": 3
+            },
+            {
+              "name": "Fake License",
+              "category": "ID/Credsticks",
+              "rating": 3
+            },
+            {
+              "name": "Fake License",
+              "category": "ID/Credsticks",
+              "rating": 3
+            }
+          ]
+        }
+      }
+    },
     "forbidden": {},
     "description": "",
     "source": "BTB",
@@ -14209,7 +17621,7 @@
         ]
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 30
           }
@@ -14355,6 +17767,11 @@
     "category": "Positive",
     "karma": 5,
     "limit": 2,
+    "bonus": {
+      "essenceAndAugmentation": {
+        "specialModificationLimit": 2
+      }
+    },
     "forbidden": {},
     "description": "",
     "source": "BTB",
@@ -14364,6 +17781,11 @@
     "name": "Special Modifications (Prototype Materials)",
     "category": "Positive",
     "karma": 5,
+    "bonus": {
+      "essenceAndAugmentation": {
+        "specialModificationLimit": 2
+      }
+    },
     "requirements": {},
     "forbidden": {},
     "description": "",
@@ -14394,6 +17816,12 @@
     "name": "Massive Network",
     "category": "Positive",
     "karma": 20,
+    "bonus": {
+      "contactAndReputation": {
+        "contactKarmaCostModifier": -2,
+        "contactMinimumKarmaCost": -2
+      }
+    },
     "forbidden": {},
     "description": "",
     "source": "NF",
@@ -14403,6 +17831,12 @@
     "name": "Networker",
     "category": "Positive",
     "karma": 5,
+    "bonus": {
+      "contactAndReputation": {
+        "contactKarmaCostModifier": -1,
+        "contactMinimumKarmaCost": -1
+      }
+    },
     "forbidden": {},
     "description": "",
     "source": "NF",
@@ -14414,6 +17848,17 @@
     "karma": -1,
     "charGenNoKarma": true,
     "limit": 20,
+    "bonus": {
+      "miscellaneous": {
+        "characterCreator": {
+          "nuyenForGearModifier": {
+            "nuyen": 10000,
+            "gearPurchasedWithNuyenMarkedAsStolen": true
+          },
+          "maxKarmaThatCanBeConvertedToNuyenModifier": -1
+        }
+      }
+    },
     "description": "",
     "source": "NF",
     "page": 177

@@ -143,6 +143,11 @@
     "description": "",
     "type": "Model-Specific",
     "maxRating": [0],
+    "bonus": {
+      "gearAndVehicle": {
+        "deviceRatingBonus": 1
+      }
+    },
     "requirements": {},
     "slotCost": [0],
     "availability": {
@@ -158,6 +163,11 @@
     "description": "",
     "type": "Model-Specific",
     "maxRating": [0],
+    "bonus": {
+      "gearAndVehicle": {
+        "seatsModifier": [16]
+      }
+    },
     "requirements": {},
     "slotCost": [0],
     "availability": {
@@ -218,6 +228,20 @@
     "description": "",
     "type": "Power Train",
     "maxRating": [2],
+    "bonus": {
+      "gearAndVehicle": {
+        "accelerationModifier": [
+          {
+            "option": "Rating"
+          }
+        ],
+        "offRoadAccelerationModifier": [
+          {
+            "option": "Rating"
+          }
+        ]
+      }
+    },
     "slotCost": {
       "ratingLinked": [[4], [8]]
     },
@@ -506,6 +530,20 @@
     "description": "",
     "type": "Power Train",
     "maxRating": [3],
+    "bonus": {
+      "gearAndVehicle": {
+        "handlingModifier": [
+          {
+            "option": "Rating"
+          }
+        ],
+        "offRoadHandlingModifier": [
+          {
+            "option": "Rating"
+          }
+        ]
+      }
+    },
     "slotCost": {
       "ratingLinked": [[4], [10], [18]]
     },
@@ -718,6 +756,12 @@
     "description": "",
     "type": "Power Train",
     "maxRating": [0],
+    "bonus": {
+      "gearAndVehicle": {
+        "handlingModifier": [-1],
+        "offRoadHandlingModifier": [1]
+      }
+    },
     "slotCost": [2],
     "availability": {
       "rating": [4],
@@ -1136,6 +1180,20 @@
     "description": "",
     "type": "Power Train",
     "maxRating": [3],
+    "bonus": {
+      "gearAndVehicle": {
+        "speedModifier": [
+          {
+            "option": "Rating"
+          }
+        ],
+        "offRoadSpeedModifier": [
+          {
+            "option": "Rating"
+          }
+        ]
+      }
+    },
     "slotCost": {
       "ratingLinked": [[5], [14], [20]]
     },
@@ -1312,9 +1370,11 @@
     ],
     "bonus": {
       "combatAndWeapon": {
-        "armour": {
-          "bonus": {
-            "option": "Rating"
+        "armourModifiers": {
+          "armour": {
+            "bonus": {
+              "option": "Rating"
+            }
           }
         }
       }
@@ -1363,9 +1423,11 @@
     ],
     "bonus": {
       "combatAndWeapon": {
-        "armour": {
-          "bonus": {
-            "option": "Rating"
+        "armourModifiers": {
+          "armour": {
+            "bonus": {
+              "option": "Rating"
+            }
           }
         }
       }
@@ -2017,6 +2079,23 @@
     "description": "",
     "type": "Body",
     "maxRating": [0],
+    "bonus": {
+      "gearAndVehicle": {
+        "seatsModifier": [
+          {
+            "subnumbers": [
+              {
+                "option": "Seats"
+              },
+              {
+                "operator": "*"
+              },
+              0.5
+            ]
+          }
+        ]
+      }
+    },
     "slotCost": [2],
     "availability": {
       "rating": [4],
@@ -2546,6 +2625,15 @@
     "description": "",
     "type": "Electromagnetic",
     "maxRating": [6],
+    "bonus": {
+      "gearAndVehicle": {
+        "pilotModifier": [
+          {
+            "option": "Rating"
+          }
+        ]
+      }
+    },
     "slotCost": [
       {
         "option": "Rating"
@@ -2741,6 +2829,15 @@
     "description": "",
     "type": "Electromagnetic",
     "maxRating": [6],
+    "bonus": {
+      "gearAndVehicle": {
+        "sensorModifier": [
+          {
+            "option": "Rating"
+          }
+        ]
+      }
+    },
     "slotCost": [
       {
         "option": "Rating"
@@ -3062,6 +3159,23 @@
     "description": "",
     "type": "Cosmetic",
     "maxRating": [0],
+    "bonus": {
+      "gearAndVehicle": {
+        "seatsModifier": [
+          {
+            "subnumbers": [
+              {
+                "option": "Seats"
+              },
+              {
+                "operator": "*"
+              },
+              0.5
+            ]
+          }
+        ]
+      }
+    },
     "slotCost": [0],
     "availability": {
       "rating": [0],
@@ -4062,6 +4176,14 @@
     "description": "",
     "type": "All",
     "maxRating": [0],
+    "bonus": {
+      "gearAndVehicle": {
+        "speedModifier": [0],
+        "offRoadSpeedModifier": [0],
+        "accelerationModifier": [0],
+        "offRoadAccelerationModifier": [0]
+      }
+    },
     "requiresDroneParent": true,
     "requirements": {},
     "slotCost": [-2],
@@ -4210,6 +4332,15 @@
     "description": "",
     "type": "All",
     "maxRating": [6],
+    "bonus": {
+      "gearAndVehicle": {
+        "pilotModifier": [
+          {
+            "option": "Rating"
+          }
+        ]
+      }
+    },
     "requiresDroneParent": true,
     "requirements": {},
     "slotCost": [0],
@@ -4280,6 +4411,19 @@
     "description": "",
     "type": "All",
     "maxRating": [99],
+    "bonus": {
+      "gearAndVehicle": {
+        "bodyModifier": [
+          -1,
+          {
+            "operator": "*"
+          },
+          {
+            "option": "Rating"
+          }
+        ]
+      }
+    },
     "requiresDroneParent": true,
     "requirements": {},
     "slotCost": [
@@ -4333,6 +4477,15 @@
       },
       1
     ],
+    "bonus": {
+      "gearAndVehicle": {
+        "sensorModifier": [
+          {
+            "option": "Rating"
+          }
+        ]
+      }
+    },
     "requiresDroneParent": true,
     "requirements": {},
     "slotCost": [0],
@@ -4399,6 +4552,16 @@
     "description": "",
     "type": "All",
     "maxRating": [0],
+    "bonus": {
+      "gearAndVehicle": {
+        "seatsModifier": [1],
+        "speedModifier": [-1],
+        "offRoadSpeedModifier": [-1],
+        "accelerationModifier": [-1],
+        "offRoadAccelerationModifier": [-1],
+        "handlingModifier": [-1]
+      }
+    },
     "requirements": {},
     "slotCost": [0],
     "availability": {
@@ -4414,6 +4577,15 @@
     "description": "",
     "type": "All",
     "maxRating": [0],
+    "bonus": {
+      "gearAndVehicle": {
+        "speedModifier": [-1],
+        "offRoadSpeedModifier": [-1],
+        "accelerationModifier": [-1],
+        "offRoadAccelerationModifier": [-1],
+        "handlingModifier": [-1]
+      }
+    },
     "requirements": {},
     "slotCost": [0],
     "availability": {
@@ -4429,6 +4601,15 @@
     "description": "",
     "type": "All",
     "maxRating": [0],
+    "bonus": {
+      "gearAndVehicle": {
+        "speedModifier": [-1],
+        "offRoadSpeedModifier": [-1],
+        "accelerationModifier": [-1],
+        "offRoadAccelerationModifier": [-1],
+        "handlingModifier": [-1]
+      }
+    },
     "requirements": {},
     "slotCost": [0],
     "availability": {
@@ -4444,6 +4625,15 @@
     "description": "",
     "type": "All",
     "maxRating": [0],
+    "bonus": {
+      "gearAndVehicle": {
+        "speedModifier": [-1],
+        "offRoadSpeedModifier": [-1],
+        "accelerationModifier": [-1],
+        "offRoadAccelerationModifier": [-1],
+        "handlingModifier": [-1]
+      }
+    },
     "requirements": {},
     "slotCost": [0],
     "availability": {
@@ -4459,6 +4649,15 @@
     "description": "",
     "type": "All",
     "maxRating": [0],
+    "bonus": {
+      "gearAndVehicle": {
+        "speedModifier": [-1],
+        "offRoadSpeedModifier": [-1],
+        "accelerationModifier": [-1],
+        "offRoadAccelerationModifier": [-1],
+        "handlingModifier": [-1]
+      }
+    },
     "requirements": {},
     "slotCost": [0],
     "availability": {
@@ -4624,6 +4823,12 @@
         "option": "Quantity of Mod"
       }
     ],
+    "bonus": {
+      "gearAndVehicle": {
+        "handlingModifier": [-1],
+        "offRoadHandlingModifier": [1]
+      }
+    },
     "slotCost": [0],
     "availability": {
       "rating": [6],
@@ -4654,6 +4859,12 @@
         "option": "Quantity of Mod"
       }
     ],
+    "bonus": {
+      "gearAndVehicle": {
+        "handlingModifier": [1],
+        "offRoadHandlingModifier": [-1]
+      }
+    },
     "slotCost": [0],
     "availability": {
       "rating": [6],
@@ -5174,6 +5385,20 @@
       1
     ],
     "ratingMeaning": "Rating of parent is upgraded",
+    "bonus": {
+      "gearAndVehicle": {
+        "handlingModifier": [
+          {
+            "option": "Rating"
+          }
+        ],
+        "offRoadHandlingModifier": [
+          {
+            "option": "Rating"
+          }
+        ]
+      }
+    },
     "requiresDroneParent": true,
     "requirements": {},
     "slotCost": [
@@ -5306,6 +5531,20 @@
       1
     ],
     "ratingMeaning": "Rating of parent is upgraded",
+    "bonus": {
+      "gearAndVehicle": {
+        "speedModifier": [
+          {
+            "option": "Rating"
+          }
+        ],
+        "offRoadSpeedModifier": [
+          {
+            "option": "Rating"
+          }
+        ]
+      }
+    },
     "requiresDroneParent": true,
     "requirements": {},
     "slotCost": [
@@ -5438,6 +5677,20 @@
       1
     ],
     "ratingMeaning": "Rating of parent is upgraded",
+    "bonus": {
+      "gearAndVehicle": {
+        "accelerationModifier": [
+          {
+            "option": "Rating"
+          }
+        ],
+        "offRoadAccelerationModifier": [
+          {
+            "option": "Rating"
+          }
+        ]
+      }
+    },
     "requiresDroneParent": true,
     "requirements": {},
     "slotCost": [
@@ -5572,9 +5825,11 @@
     "ratingMeaning": "Rating of parent is upgraded",
     "bonus": {
       "combatAndWeapon": {
-        "armour": {
-          "bonus": {
-            "option": "Rating"
+        "armourModifiers": {
+          "armour": {
+            "bonus": {
+              "option": "Rating"
+            }
           }
         }
       }
@@ -5755,6 +6010,15 @@
       1
     ],
     "ratingMeaning": "Rating of parent is upgraded",
+    "bonus": {
+      "gearAndVehicle": {
+        "sensorModifier": [
+          {
+            "option": "Rating"
+          }
+        ]
+      }
+    },
     "requiresDroneParent": true,
     "requirements": {},
     "slotCost": [
@@ -5841,6 +6105,12 @@
     "description": "",
     "type": "Handling",
     "maxRating": [0],
+    "bonus": {
+      "gearAndVehicle": {
+        "handlingModifier": [-1],
+        "offRoadHandlingModifier": [-1]
+      }
+    },
     "isDowngrade": true,
     "requiresDroneParent": true,
     "requirements": {},
@@ -5858,6 +6128,12 @@
     "description": "",
     "type": "Speed",
     "maxRating": [0],
+    "bonus": {
+      "gearAndVehicle": {
+        "speedModifier": [-1],
+        "offRoadSpeedModifier": [-1]
+      }
+    },
     "isDowngrade": true,
     "requiresDroneParent": true,
     "requirements": {},
@@ -5875,6 +6151,12 @@
     "description": "",
     "type": "Acceleration",
     "maxRating": [0],
+    "bonus": {
+      "gearAndVehicle": {
+        "accelerationModifier": [-1],
+        "offRoadAccelerationModifier": [-1]
+      }
+    },
     "isDowngrade": true,
     "requiresDroneParent": true,
     "requirements": {},
@@ -5892,6 +6174,11 @@
     "description": "",
     "type": "Body",
     "maxRating": [0],
+    "bonus": {
+      "gearAndVehicle": {
+        "bodyModifier": [-1]
+      }
+    },
     "isDowngrade": true,
     "requiresDroneParent": true,
     "requirements": {},
@@ -5911,8 +6198,10 @@
     "maxRating": [0],
     "bonus": {
       "combatAndWeapon": {
-        "armour": {
-          "bonus": -3
+        "armourModifiers": {
+          "armour": {
+            "bonus": -3
+          }
         }
       }
     },
@@ -5933,6 +6222,11 @@
     "description": "",
     "type": "Sensor",
     "maxRating": [0],
+    "bonus": {
+      "gearAndVehicle": {
+        "sensorModifier": [-1]
+      }
+    },
     "isDowngrade": true,
     "requiresDroneParent": true,
     "requirements": {},

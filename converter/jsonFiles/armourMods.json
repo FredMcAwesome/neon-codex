@@ -72,11 +72,13 @@
     ],
     "bonus": {
       "combatAndWeapon": {
-        "toxinContactResist": {
-          "option": "Rating"
-        },
-        "pathogenContactResist": {
-          "option": "Rating"
+        "toxinAndPathogen": {
+          "toxinContactResist": {
+            "option": "Rating"
+          },
+          "pathogenContactResist": {
+            "option": "Rating"
+          }
         }
       },
       "miscellaneous": {
@@ -100,10 +102,12 @@
     "cost": [3000],
     "bonus": {
       "combatAndWeapon": {
-        "toxinContactImmune": true,
-        "pathogenContactImmune": true,
-        "toxinInhalationImmune": true,
-        "pathogenInhalationImmune": true
+        "toxinAndPathogen": {
+          "toxinContactImmune": true,
+          "pathogenContactImmune": true,
+          "toxinInhalationImmune": true,
+          "pathogenInhalationImmune": true
+        }
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -137,8 +141,10 @@
     ],
     "bonus": {
       "combatAndWeapon": {
-        "fireArmour": {
-          "option": "Rating"
+        "armourModifiers": {
+          "fireArmour": {
+            "option": "Rating"
+          }
         }
       },
       "miscellaneous": {
@@ -176,8 +182,10 @@
     ],
     "bonus": {
       "combatAndWeapon": {
-        "coldArmour": {
-          "option": "Rating"
+        "armourModifiers": {
+          "coldArmour": {
+            "option": "Rating"
+          }
         }
       },
       "miscellaneous": {
@@ -215,8 +223,10 @@
     ],
     "bonus": {
       "combatAndWeapon": {
-        "electricityArmour": {
-          "option": "Rating"
+        "armourModifiers": {
+          "electricityArmour": {
+            "option": "Rating"
+          }
         }
       },
       "miscellaneous": {
@@ -303,10 +313,12 @@
     "cost": [6000],
     "bonus": {
       "combatAndWeapon": {
-        "toxinContactImmune": true,
-        "pathogenContactImmune": true,
-        "toxinInhalationImmune": true,
-        "pathogenInhalationImmune": true
+        "toxinAndPathogen": {
+          "toxinContactImmune": true,
+          "pathogenContactImmune": true,
+          "toxinInhalationImmune": true,
+          "pathogenInhalationImmune": true
+        }
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -374,7 +386,9 @@
     "cost": [0],
     "bonus": {
       "combatAndWeapon": {
-        "fireArmour": 4
+        "armourModifiers": {
+          "fireArmour": 4
+        }
       },
       "miscellaneous": {
         "uniqueBonusCategory": "fireresistance"
@@ -397,8 +411,10 @@
     "cost": [0],
     "bonus": {
       "combatAndWeapon": {
-        "toxinContactResist": 4,
-        "pathogenContactResist": 4
+        "toxinAndPathogen": {
+          "toxinContactResist": 4,
+          "pathogenContactResist": 4
+        }
       },
       "miscellaneous": {
         "uniqueBonusCategory": "chemicalprotection"
@@ -421,7 +437,9 @@
     "cost": [0],
     "bonus": {
       "combatAndWeapon": {
-        "coldArmour": 4
+        "armourModifiers": {
+          "coldArmour": 4
+        }
       },
       "miscellaneous": {
         "uniqueBonusCategory": "insulation"
@@ -459,8 +477,10 @@
     "cost": [0],
     "bonus": {
       "combatAndWeapon": {
-        "toxinContactResist": 3,
-        "pathogenContactResist": 3
+        "toxinAndPathogen": {
+          "toxinContactResist": 3,
+          "pathogenContactResist": 3
+        }
       },
       "miscellaneous": {
         "uniqueBonusCategory": "chemicalprotection"
@@ -483,7 +503,9 @@
     "cost": [0],
     "bonus": {
       "combatAndWeapon": {
-        "coldArmour": 3
+        "armourModifiers": {
+          "coldArmour": 3
+        }
       },
       "miscellaneous": {
         "uniqueBonusCategory": "insulation"
@@ -506,7 +528,9 @@
     "cost": [0],
     "bonus": {
       "combatAndWeapon": {
-        "fireArmour": 2
+        "armourModifiers": {
+          "fireArmour": 2
+        }
       },
       "miscellaneous": {
         "uniqueBonusCategory": "fireresistance"
@@ -529,8 +553,10 @@
     "cost": [0],
     "bonus": {
       "combatAndWeapon": {
-        "toxinContactResist": 2,
-        "pathogenContactResist": 2
+        "toxinAndPathogen": {
+          "toxinContactResist": 2,
+          "pathogenContactResist": 2
+        }
       },
       "miscellaneous": {
         "uniqueBonusCategory": "chemicalprotection"
@@ -553,7 +579,9 @@
     "cost": [0],
     "bonus": {
       "combatAndWeapon": {
-        "coldArmour": 2
+        "armourModifiers": {
+          "coldArmour": 2
+        }
       },
       "miscellaneous": {
         "uniqueBonusCategory": "insulation"
@@ -576,7 +604,9 @@
     "cost": [0],
     "bonus": {
       "combatAndWeapon": {
-        "fireArmour": 6
+        "armourModifiers": {
+          "fireArmour": 6
+        }
       },
       "miscellaneous": {
         "uniqueBonusCategory": "fireresistance"
@@ -599,8 +629,10 @@
     "cost": [0],
     "bonus": {
       "combatAndWeapon": {
-        "toxinContactResist": 6,
-        "pathogenContactResist": 6
+        "toxinAndPathogen": {
+          "toxinContactResist": 6,
+          "pathogenContactResist": 6
+        }
       },
       "miscellaneous": {
         "uniqueBonusCategory": "chemicalprotection"
@@ -623,7 +655,9 @@
     "cost": [0],
     "bonus": {
       "combatAndWeapon": {
-        "coldArmour": 6
+        "armourModifiers": {
+          "coldArmour": 6
+        }
       },
       "miscellaneous": {
         "uniqueBonusCategory": "insulation"
@@ -1124,8 +1158,10 @@
     ],
     "bonus": {
       "combatAndWeapon": {
-        "radiationResistance": {
-          "option": "Rating"
+        "damageResistanceModifiers": {
+          "radiationResistance": {
+            "option": "Rating"
+          }
         }
       }
     },

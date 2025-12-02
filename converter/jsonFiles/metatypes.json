@@ -741,7 +741,7 @@
     ],
     "bonus": {
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -843,7 +843,7 @@
     ],
     "bonus": {
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -945,7 +945,7 @@
     ],
     "bonus": {
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -1150,7 +1150,7 @@
     ],
     "bonus": {
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -1718,8 +1718,15 @@
       }
     ],
     "bonus": {
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -1814,8 +1821,15 @@
       }
     ],
     "bonus": {
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -1910,8 +1924,15 @@
       }
     ],
     "bonus": {
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -2006,8 +2027,15 @@
       }
     ],
     "bonus": {
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -2116,13 +2144,20 @@
     ],
     "bonus": {
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1,
-          "nonStacking": true
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1,
+            "nonStacking": true
+          }
+        },
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -2255,7 +2290,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 150
           }
@@ -2397,12 +2432,14 @@
         }
       },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 8
+        "armourModifiers": {
+          "armour": {
+            "bonus": 8
+          }
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 150
           }
@@ -2529,7 +2566,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -2656,7 +2693,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -4536,7 +4573,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -4668,7 +4705,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -4806,7 +4843,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -4944,7 +4981,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -5082,7 +5119,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -5815,13 +5852,20 @@
         }
       },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1,
-          "nonStacking": true
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1,
+            "nonStacking": true
+          }
+        },
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -5949,8 +5993,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -6075,8 +6126,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -6201,8 +6259,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -6327,8 +6392,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -7474,7 +7546,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -7610,7 +7682,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -7752,7 +7824,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -7894,7 +7966,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -8036,7 +8108,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -8166,7 +8238,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -8803,13 +8875,20 @@
         }
       },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1,
-          "nonStacking": true
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1,
+            "nonStacking": true
+          }
+        },
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -8945,13 +9024,20 @@
         }
       },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1,
-          "nonStacking": true
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1,
+            "nonStacking": true
+          }
+        },
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -9084,13 +9170,20 @@
         }
       },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1,
-          "nonStacking": true
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1,
+            "nonStacking": true
+          }
+        },
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -9223,13 +9316,20 @@
         }
       },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1,
-          "nonStacking": true
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1,
+            "nonStacking": true
+          }
+        },
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -9365,13 +9465,20 @@
         }
       },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1,
-          "nonStacking": true
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1,
+            "nonStacking": true
+          }
+        },
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -10500,7 +10607,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -10632,7 +10739,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -10770,7 +10877,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -10903,7 +11010,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -11782,13 +11889,20 @@
         }
       },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1,
-          "nonStacking": true
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1,
+            "nonStacking": true
+          }
+        },
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -11919,8 +12033,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -12048,8 +12169,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -12174,8 +12302,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -12306,8 +12441,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -13444,7 +13586,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -13577,7 +13719,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -13716,7 +13858,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -13855,7 +13997,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           },
@@ -13997,7 +14139,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -14754,13 +14896,20 @@
         }
       },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1,
-          "nonStacking": true
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1,
+            "nonStacking": true
+          }
+        },
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -14892,8 +15041,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -15022,8 +15178,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -15152,8 +15315,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -15285,8 +15455,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -16456,7 +16633,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -16595,7 +16772,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -16740,7 +16917,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -17791,13 +17968,20 @@
         }
       },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1,
-          "nonStacking": true
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1,
+            "nonStacking": true
+          }
+        },
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -17936,13 +18120,20 @@
         }
       },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1,
-          "nonStacking": true
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1,
+            "nonStacking": true
+          }
+        },
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -18077,8 +18268,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -18213,8 +18411,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -18349,8 +18554,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -19520,7 +19732,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -19662,7 +19874,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -19810,7 +20022,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -19955,7 +20167,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -20100,7 +20312,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -20875,13 +21087,20 @@
         }
       },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1,
-          "nonStacking": true
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1,
+            "nonStacking": true
+          }
+        },
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -21020,13 +21239,20 @@
         }
       },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1,
-          "nonStacking": true
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1,
+            "nonStacking": true
+          }
+        },
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -21161,8 +21387,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -21297,8 +21530,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -21433,8 +21673,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -22604,7 +22851,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -22743,7 +22990,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -22888,7 +23135,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -23033,7 +23280,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -23178,7 +23425,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -23953,13 +24200,20 @@
         }
       },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1,
-          "nonStacking": true
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1,
+            "nonStacking": true
+          }
+        },
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -24097,8 +24351,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -24233,8 +24494,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -24369,8 +24637,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -24505,8 +24780,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -25676,7 +25958,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -25815,7 +26097,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -25960,7 +26242,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -26105,7 +26387,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -26247,7 +26529,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -27022,13 +27304,20 @@
         }
       },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1,
-          "nonStacking": true
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1,
+            "nonStacking": true
+          }
+        },
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -27166,8 +27455,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -27302,8 +27598,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -27438,8 +27741,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -27574,8 +27884,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -28766,7 +29083,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -28911,7 +29228,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -29062,7 +29379,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -29210,7 +29527,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -29358,7 +29675,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -30151,13 +30468,20 @@
         }
       },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1,
-          "nonStacking": true
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1,
+            "nonStacking": true
+          }
+        },
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -30298,8 +30622,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -30437,8 +30768,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -30576,8 +30914,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -30715,8 +31060,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -31907,7 +32259,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -32052,7 +32404,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -32203,7 +32555,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -32351,7 +32703,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -32499,7 +32851,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -33292,13 +33644,20 @@
         }
       },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1,
-          "nonStacking": true
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1,
+            "nonStacking": true
+          }
+        },
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -33439,8 +33798,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -33578,8 +33944,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -33717,8 +34090,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -33856,8 +34236,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           }
@@ -35092,7 +35479,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -35240,7 +35627,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -35394,7 +35781,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -35548,7 +35935,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -35696,7 +36083,7 @@
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           }
@@ -36522,13 +36909,20 @@
         }
       },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1,
-          "nonStacking": true
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1,
+            "nonStacking": true
+          }
+        },
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
         }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           },
@@ -36681,8 +37075,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 100
           },
@@ -36832,8 +37233,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           },
@@ -36983,8 +37391,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           },
@@ -37134,8 +37549,15 @@
           "name": "Magic"
         }
       },
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "modifier": 1
+          }
+        }
+      },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 20
           },

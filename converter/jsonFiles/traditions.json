@@ -249,6 +249,30 @@
     "description": "",
     "drain": "Willpower + Select Attribute",
     "spiritTypes": "Select Spirits",
+    "bonus": {
+      "spellAndMagic": {
+        "limitSpiritOptionsToList": [
+          {
+            "spirit": "Abomination"
+          },
+          {
+            "spirit": "Barren"
+          },
+          {
+            "spirit": "Noxious"
+          },
+          {
+            "spirit": "Nuclear"
+          },
+          {
+            "spirit": "Plague"
+          },
+          {
+            "spirit": "Sludge"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "source": "Street Grimoire",
     "page": 84
@@ -477,6 +501,9 @@
           "skillGroupList": ["Enchanting"],
           "skillList": ["Binding"]
         }
+      },
+      "spellAndMagic": {
+        "addMetamagicList": ["Exorcism"]
       }
     },
     "source": "Forbidden Arcana",
@@ -498,6 +525,9 @@
         "skillDisableList": {
           "skillList": ["Binding"]
         }
+      },
+      "spellAndMagic": {
+        "addMetamagicList": ["Exorcism"]
       },
       "quality": {
         "addQualityList": [
@@ -533,6 +563,17 @@
         "skillDisableList": {
           "skillList": ["Alchemy", "Artificing"]
         }
+      },
+      "spellAndMagic": {
+        "limitSpellOptionsToCategoryList": [
+          {
+            "category": "Combat"
+          },
+          {
+            "category": "Health"
+          }
+        ],
+        "addMetamagicList": ["Exorcism"]
       },
       "quality": {
         "addQualityList": [
@@ -623,12 +664,18 @@
     },
     "bonus": {
       "spellAndMagic": {
-        "spellCategoryList": [
-          {
-            "category": "Illusion",
-            "bonus": 3
-          }
-        ]
+        "spellModifiers": {
+          "spellBonusDice": [
+            {
+              "spellCategoryList": [
+                {
+                  "category": "Illusion",
+                  "bonus": 3
+                }
+              ]
+            }
+          ]
+        }
       },
       "testAndResistance": {
         "drainResist": -2
@@ -667,6 +714,26 @@
         "skillDisableList": {
           "skillList": ["Ritual Spellcasting", "Spellcasting"]
         }
+      },
+      "spellAndMagic": {
+        "metamagicChoiceOrderRestriction": [
+          {
+            "metamagic": "Fixation",
+            "initiationOrder": 1
+          },
+          {
+            "metamagic": "Quickening",
+            "initiationOrder": 2
+          },
+          {
+            "metamagic": "Advanced Alchemy",
+            "initiationOrder": 3
+          },
+          {
+            "metamagic": "Anchoring",
+            "initiationOrder": 4
+          }
+        ]
       }
     },
     "source": "Forbidden Arcana",
@@ -682,6 +749,20 @@
       "spiritHealth": "Plant Spirit",
       "spiritIllusion": "Spirit of Air",
       "spiritManipulation": "Spirit of Fire"
+    },
+    "bonus": {
+      "spellAndMagic": {
+        "metamagicChoiceOrderRestriction": [
+          {
+            "metamagic": "Centering",
+            "initiationOrder": 1
+          },
+          {
+            "metamagic": "Structured Spellcasting",
+            "initiationOrder": 2
+          }
+        ]
+      }
     },
     "source": "Forbidden Arcana",
     "page": 69
@@ -699,16 +780,22 @@
     },
     "bonus": {
       "spellAndMagic": {
-        "spellCategoryList": [
-          {
-            "category": "Health",
-            "bonus": 2
-          },
-          {
-            "category": "Combat",
-            "bonus": -2
-          }
-        ]
+        "spellModifiers": {
+          "spellBonusDice": [
+            {
+              "spellCategoryList": [
+                {
+                  "category": "Health",
+                  "bonus": 2
+                },
+                {
+                  "category": "Combat",
+                  "bonus": -2
+                }
+              ]
+            }
+          ]
+        }
       }
     },
     "source": "Forbidden Arcana",
@@ -1070,12 +1157,18 @@
     },
     "bonus": {
       "spellAndMagic": {
-        "spellCategoryList": [
-          {
-            "category": "Illusion",
-            "bonus": 2
-          }
-        ]
+        "spellModifiers": {
+          "spellBonusDice": [
+            {
+              "spellCategoryList": [
+                {
+                  "category": "Illusion",
+                  "bonus": 2
+                }
+              ]
+            }
+          ]
+        }
       }
     },
     "source": "Grimmes Erwachen",

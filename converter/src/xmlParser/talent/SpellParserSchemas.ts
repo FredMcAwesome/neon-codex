@@ -5,19 +5,10 @@ import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
 import {
   SourceXmlSchema,
   SpellPowerXmlRangeSchema,
+  spellXmlCategoryEnum,
   XmlDurationSchema,
 } from "../common/ParserCommonDefines.js";
 import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
-
-export enum spellXmlCategoryEnum {
-  Combat = "Combat",
-  Detection = "Detection",
-  Health = "Health",
-  Illusion = "Illusion",
-  Manipulation = "Manipulation",
-  Enchantments = "Enchantments",
-  Rituals = "Rituals",
-}
 
 const SpellXmlDamageSchema = type.or(
   "'P'", // Physical

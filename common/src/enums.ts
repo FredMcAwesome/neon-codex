@@ -179,6 +179,7 @@ export enum accuracyEnum {
   Physical = "Physical",
   Missile = "Missile",
   Strength = "Strength",
+  Body = "Body",
 }
 
 export enum damageTypeEnum {
@@ -196,6 +197,7 @@ export enum damageAnnotationEnum {
 
 export enum damageCalculationOptionEnum {
   Strength = "Strength",
+  Body = "Body",
   DrugToxin = "Drug/Toxin",
   Grenade = "Grenade",
   Missile = "Missile",
@@ -357,8 +359,8 @@ export enum gearCategoryEnum {
   MusicalInstruments = "Musical Instruments",
   Nanogear = "Nanogear",
   Paydata = "Paydata",
-  PiTac = "PI-Tac",
-  PiTacPrograms = "Pi_TacPrograms",
+  PiTac = "Pi-Tac",
+  PiTacPrograms = "Pi-Tac Programs",
   Printing = "Printing",
   ReporterGear = "Reporter Gear",
   RFIDTags = "RFID Tags",
@@ -429,6 +431,7 @@ export enum matrixWareAccessoryTypeEnum {
 export enum augmentationTypeEnum {
   Cyberware = "Cyberware",
   Bioware = "Bioware",
+  Genetech = "Genetech",
 }
 
 export enum augmentationAccessoryTypeEnum {
@@ -492,6 +495,7 @@ export enum spellDescriptorEnum {
   Indirect = "Indirect",
   Active = "Active",
   Passive = "Passive",
+  SingleTarget = "Single Target",
   Area = "Area",
   ExtendedArea = "Extended Area",
   Directional = "Directional",
@@ -1093,4 +1097,9 @@ export enum bonusCostModifierConditionEnum {
 export enum skillTypeEnum {
   Active = "Active",
   Knowledge = "Knowledge",
+}
+
+export enum freeSpellRateEnum {
+  Half = "Half",
+  Full = "Full",
 }

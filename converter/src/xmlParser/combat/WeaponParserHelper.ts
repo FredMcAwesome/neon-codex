@@ -382,6 +382,9 @@ damageSemantics.addOperation("eval", {
   Strength(_) {
     return { option: damageCalculationOptionEnum.Strength };
   },
+  Body(_) {
+    return { option: damageCalculationOptionEnum.Body };
+  },
   Magic(_) {
     return { option: damageCalculationOptionEnum.Magic };
   },

@@ -104,9 +104,22 @@
     ],
     "bonus": {
       "combatAndWeapon": {
+        "damageValueModifiers": {
+          "unarmedModifier": [
+            {
+              "option": "Rating"
+            },
+            {
+              "operator": "-"
+            },
+            1
+          ]
+        },
         "unarmedDamageType": "Physical",
-        "damageResistance": {
-          "option": "Rating"
+        "damageResistanceModifiers": {
+          "damageResistance": {
+            "option": "Rating"
+          }
         }
       }
     },
@@ -252,7 +265,7 @@
     ],
     "bonus": {
       "conditionAndRecovery": {
-        "ignoreConditionModifierNegativeEffects": {
+        "conditionModifierNegativeEffectsOffsetShared": {
           "option": "Rating"
         }
       }
@@ -604,11 +617,13 @@
     ],
     "bonus": {
       "combatAndWeapon": {
-        "armour": {
-          "bonus": {
-            "option": "Rating"
-          },
-          "nonStacking": true
+        "armourModifiers": {
+          "armour": {
+            "bonus": {
+              "option": "Rating"
+            },
+            "nonStacking": true
+          }
         }
       }
     },
@@ -686,17 +701,19 @@
     ],
     "bonus": {
       "combatAndWeapon": {
-        "pathogenContactResist": {
-          "option": "Rating"
-        },
-        "pathogenInhalationResist": {
-          "option": "Rating"
-        },
-        "pathogenIngestionResist": {
-          "option": "Rating"
-        },
-        "pathogenInjectionResist": {
-          "option": "Rating"
+        "toxinAndPathogen": {
+          "pathogenContactResist": {
+            "option": "Rating"
+          },
+          "pathogenInhalationResist": {
+            "option": "Rating"
+          },
+          "pathogenIngestionResist": {
+            "option": "Rating"
+          },
+          "pathogenInjectionResist": {
+            "option": "Rating"
+          }
         }
       }
     },
@@ -840,7 +857,7 @@
         ]
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 25
           }
@@ -902,10 +919,10 @@
     ],
     "bonus": {
       "conditionAndRecovery": {
-        "stunHealing": {
+        "stunConditionModifierHealingDiceModifier": {
           "option": "Rating"
         },
-        "physicalHealing": {
+        "physicalConditionModifierHealingDiceModifier": {
           "option": "Rating"
         }
       }
@@ -1193,17 +1210,19 @@
     ],
     "bonus": {
       "combatAndWeapon": {
-        "toxinContactResist": {
-          "option": "Rating"
-        },
-        "toxinInhalationResist": {
-          "option": "Rating"
-        },
-        "toxinIngestionResist": {
-          "option": "Rating"
-        },
-        "toxinInjectionResist": {
-          "option": "Rating"
+        "toxinAndPathogen": {
+          "toxinContactResist": {
+            "option": "Rating"
+          },
+          "toxinInhalationResist": {
+            "option": "Rating"
+          },
+          "toxinIngestionResist": {
+            "option": "Rating"
+          },
+          "toxinInjectionResist": {
+            "option": "Rating"
+          }
         }
       }
     },
@@ -1262,8 +1281,10 @@
     ],
     "bonus": {
       "combatAndWeapon": {
-        "toxinInhalationResist": {
-          "option": "Rating"
+        "toxinAndPathogen": {
+          "toxinInhalationResist": {
+            "option": "Rating"
+          }
         }
       }
     },
@@ -1539,7 +1560,9 @@
     "cost": [20000],
     "bonus": {
       "combatAndWeapon": {
-        "toxinContactResist": 2
+        "toxinAndPathogen": {
+          "toxinContactResist": 2
+        }
       },
       "testAndResistance": {
         "fatigueResist": -2
@@ -1565,7 +1588,9 @@
     "cost": [2000],
     "bonus": {
       "combatAndWeapon": {
-        "fireArmour": 2
+        "armourModifiers": {
+          "fireArmour": 2
+        }
       }
     },
     "requirements": {},
@@ -1588,7 +1613,9 @@
     "cost": [8000],
     "bonus": {
       "combatAndWeapon": {
-        "electricityArmour": 2
+        "armourModifiers": {
+          "electricityArmour": 2
+        }
       }
     },
     "requirements": {},
@@ -1612,7 +1639,9 @@
     "cost": [8000],
     "bonus": {
       "combatAndWeapon": {
-        "electricityArmour": -2
+        "armourModifiers": {
+          "electricityArmour": -2
+        }
       }
     },
     "requirements": {},
@@ -1636,7 +1665,9 @@
     "cost": [2000],
     "bonus": {
       "combatAndWeapon": {
-        "coldArmour": 2
+        "armourModifiers": {
+          "coldArmour": 2
+        }
       }
     },
     "requirements": {},
@@ -1677,7 +1708,9 @@
     "cost": [8000],
     "bonus": {
       "combatAndWeapon": {
-        "unarmedReach": 1
+        "rangeModifiers": {
+          "unarmedReach": 1
+        }
       }
     },
     "requirements": {},
@@ -2095,29 +2128,31 @@
     ],
     "bonus": {
       "combatAndWeapon": {
-        "toxinContactResist": {
-          "option": "Rating"
-        },
-        "pathogenContactResist": {
-          "option": "Rating"
-        },
-        "toxinInhalationResist": {
-          "option": "Rating"
-        },
-        "pathogenInhalationResist": {
-          "option": "Rating"
-        },
-        "toxinIngestionResist": {
-          "option": "Rating"
-        },
-        "pathogenIngestionResist": {
-          "option": "Rating"
-        },
-        "toxinInjectionResist": {
-          "option": "Rating"
-        },
-        "pathogenInjectionResist": {
-          "option": "Rating"
+        "toxinAndPathogen": {
+          "toxinContactResist": {
+            "option": "Rating"
+          },
+          "pathogenContactResist": {
+            "option": "Rating"
+          },
+          "toxinInhalationResist": {
+            "option": "Rating"
+          },
+          "pathogenInhalationResist": {
+            "option": "Rating"
+          },
+          "toxinIngestionResist": {
+            "option": "Rating"
+          },
+          "pathogenIngestionResist": {
+            "option": "Rating"
+          },
+          "toxinInjectionResist": {
+            "option": "Rating"
+          },
+          "pathogenInjectionResist": {
+            "option": "Rating"
+          }
         }
       },
       "conditionAndRecovery": {
@@ -2331,17 +2366,19 @@
     ],
     "bonus": {
       "combatAndWeapon": {
-        "pathogenContactResist": {
-          "option": "Rating"
-        },
-        "pathogenInhalationResist": {
-          "option": "Rating"
-        },
-        "pathogenIngestionResist": {
-          "option": "Rating"
-        },
-        "pathogenInjectionResist": {
-          "option": "Rating"
+        "toxinAndPathogen": {
+          "pathogenContactResist": {
+            "option": "Rating"
+          },
+          "pathogenInhalationResist": {
+            "option": "Rating"
+          },
+          "pathogenIngestionResist": {
+            "option": "Rating"
+          },
+          "pathogenInjectionResist": {
+            "option": "Rating"
+          }
         }
       }
     },
@@ -2484,8 +2521,10 @@
         ]
       },
       "combatAndWeapon": {
-        "armour": {
-          "bonus": -1
+        "armourModifiers": {
+          "armour": {
+            "bonus": -1
+          }
         }
       }
     },
@@ -2599,7 +2638,9 @@
     "selectSide": true,
     "pairBonus": {
       "combatAndWeapon": {
-        "unarmedReach": 1
+        "rangeModifiers": {
+          "unarmedReach": 1
+        }
       }
     },
     "source": "Chrome Flesh",
@@ -2625,6 +2666,16 @@
     "addWeapon": "Retractable Claws (Bio-Weapon)",
     "blockedMountList": ["Wrist", "Elbow", "Shoulder"],
     "selectSide": true,
+    "pairBonus": {
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "weaponName": "Retractable Claws (Bio-Weapon)",
+            "modifier": 1
+          }
+        }
+      }
+    },
     "source": "Chrome Flesh",
     "page": 120
   },
@@ -2648,6 +2699,16 @@
     "addWeapon": "Claws (Bio-Weapon)",
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "selectSide": true,
+    "pairBonus": {
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "weaponName": "Claws (Bio-Weapon)",
+            "modifier": 1
+          }
+        }
+      }
+    },
     "source": "Chrome Flesh",
     "page": 120
   },
@@ -2671,6 +2732,16 @@
     "addWeapon": "Retractable Claws (Bio-Weapon)",
     "blockedMountList": ["Ankle", "Knee", "Hip"],
     "selectSide": true,
+    "pairBonus": {
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "reach": {
+            "weaponName": "Retractable Claws (Bio-Weapon)",
+            "modifier": 1
+          }
+        }
+      }
+    },
     "source": "Chrome Flesh",
     "page": 120
   },
@@ -2696,6 +2767,13 @@
     "bonus": {
       "combatAndWeapon": {
         "unarmedDamageType": "Physical"
+      }
+    },
+    "pairBonus": {
+      "combatAndWeapon": {
+        "damageValueModifiers": {
+          "unarmedModifier": [1]
+        }
       }
     },
     "pairIncludeList": ["Striking Callus (Feet)"],
@@ -2724,6 +2802,13 @@
     "bonus": {
       "combatAndWeapon": {
         "unarmedDamageType": "Physical"
+      }
+    },
+    "pairBonus": {
+      "combatAndWeapon": {
+        "damageValueModifiers": {
+          "unarmedModifier": [1]
+        }
       }
     },
     "pairIncludeList": ["Striking Callus (Hands)"],
@@ -2935,9 +3020,11 @@
     "cost": [2000],
     "bonus": {
       "combatAndWeapon": {
-        "weaponAccuracy": {
-          "weapon": "[contains]Fangs",
-          "bonus": 2
+        "attackModifiers": {
+          "weaponLimitModifier": {
+            "weapon": "[contains]Fangs",
+            "modifier": 2
+          }
         }
       }
     },
@@ -3931,7 +4018,9 @@
     "cost": [12000],
     "bonus": {
       "combatAndWeapon": {
-        "electricityArmour": 1
+        "armourModifiers": {
+          "electricityArmour": 1
+        }
       }
     },
     "source": "Chrome Flesh",
@@ -4040,13 +4129,15 @@
     "cost": [8000],
     "bonus": {
       "combatAndWeapon": {
-        "toxinContactResist": 1,
-        "toxinInhalationResist": 1,
-        "toxinIngestionResist": 1,
-        "toxinInjectionResist": 1
+        "toxinAndPathogen": {
+          "toxinContactResist": 1,
+          "toxinInhalationResist": 1,
+          "toxinIngestionResist": 1,
+          "toxinInjectionResist": 1
+        }
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": -10
           }
@@ -4118,7 +4209,9 @@
       },
       "testAndResistance": {
         "composure": 1,
-        "judgeIntentionsDefense": 1,
+        "judgeIntentions": {
+          "defense": 1
+        },
         "drainResist": 1,
         "fadingResist": 1,
         "directManaResist": 1,
@@ -4185,7 +4278,7 @@
     "cost": [8000],
     "bonus": {
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 10
           }
@@ -4253,8 +4346,8 @@
         ]
       },
       "conditionAndRecovery": {
-        "stunHealing": 1,
-        "physicalHealing": 1
+        "stunConditionModifierHealingDiceModifier": 1,
+        "physicalConditionModifierHealingDiceModifier": 1
       },
       "testAndResistance": {
         "fatigueResist": 1
@@ -4338,7 +4431,7 @@
     "cost": [73000],
     "bonus": {
       "combatAndWeapon": {
-        "dodge": 2
+        "defenseTestModifier": [2]
       }
     },
     "source": "Chrome Flesh",
@@ -4390,7 +4483,7 @@
     "cost": [8000],
     "bonus": {
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": -10
           }
@@ -4417,7 +4510,7 @@
     "cost": [78000],
     "bonus": {
       "combatAndWeapon": {
-        "dodge": 1
+        "defenseTestModifier": [1]
       },
       "initiative": {
         "initiative": {
@@ -4552,7 +4645,9 @@
     "cost": [8000],
     "bonus": {
       "combatAndWeapon": {
-        "coldArmour": 2
+        "armourModifiers": {
+          "coldArmour": 2
+        }
       },
       "miscellaneous": {
         "uniqueBonusCategory": "microadaptation"
@@ -4602,7 +4697,9 @@
     "cost": [8000],
     "bonus": {
       "combatAndWeapon": {
-        "fireArmour": 2
+        "armourModifiers": {
+          "fireArmour": 2
+        }
       },
       "miscellaneous": {
         "uniqueBonusCategory": "microadaptation"
@@ -4629,7 +4726,7 @@
     "cost": [8000],
     "bonus": {
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 10
           }
@@ -4682,9 +4779,11 @@
     "cost": [15000],
     "bonus": {
       "combatAndWeapon": {
-        "toxinContactResist": 2,
-        "toxinInhalationResist": 2,
-        "toxinIngestionResist": 2
+        "toxinAndPathogen": {
+          "toxinContactResist": 2,
+          "toxinInhalationResist": 2,
+          "toxinIngestionResist": 2
+        }
       },
       "miscellaneous": {
         "uniqueBonusCategory": "microadaptation"
@@ -4710,7 +4809,9 @@
     "cost": [15000],
     "bonus": {
       "combatAndWeapon": {
-        "radiationResistance": 2
+        "damageResistanceModifiers": {
+          "radiationResistance": 2
+        }
       },
       "miscellaneous": {
         "uniqueBonusCategory": "microadaptation"
@@ -4809,6 +4910,11 @@
       "restriction": ""
     },
     "cost": [3800],
+    "bonus": {
+      "specificQuality": {
+        "reflexRecorderOptimisation": true
+      }
+    },
     "requirements": {},
     "source": "Chrome Flesh",
     "page": 165
@@ -5400,8 +5506,8 @@
     "cost": [100],
     "bonus": {
       "conditionAndRecovery": {
-        "stunHealing": 1,
-        "physicalHealing": 1
+        "stunConditionModifierHealingDiceModifier": 1,
+        "physicalConditionModifierHealingDiceModifier": 1
       }
     },
     "source": "Chrome Flesh",
@@ -5440,7 +5546,7 @@
     "cost": [10000],
     "bonus": {
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": -10
           }
@@ -5560,8 +5666,8 @@
     "cost": [30000],
     "bonus": {
       "conditionAndRecovery": {
-        "stunHealing": 1,
-        "physicalHealing": 2
+        "stunConditionModifierHealingDiceModifier": 1,
+        "physicalConditionModifierHealingDiceModifier": 2
       }
     },
     "source": "Chrome Flesh",
@@ -5583,7 +5689,9 @@
     "cost": [1000],
     "bonus": {
       "combatAndWeapon": {
-        "toxinIngestionResist": 1
+        "toxinAndPathogen": {
+          "toxinIngestionResist": 1
+        }
       }
     },
     "source": "Chrome Flesh",
@@ -5837,7 +5945,7 @@
         ]
       },
       "movementAndLifestyle": {
-        "lifestyleCostModifier": [
+        "lifestyleCostModifierList": [
           {
             "cost": 25
           }
@@ -6223,29 +6331,31 @@
     ],
     "bonus": {
       "combatAndWeapon": {
-        "toxinContactResist": {
-          "option": "Rating"
-        },
-        "pathogenContactResist": {
-          "option": "Rating"
-        },
-        "toxinInhalationResist": {
-          "option": "Rating"
-        },
-        "pathogenInhalationResist": {
-          "option": "Rating"
-        },
-        "toxinIngestionResist": {
-          "option": "Rating"
-        },
-        "pathogenIngestionResist": {
-          "option": "Rating"
-        },
-        "toxinInjectionResist": {
-          "option": "Rating"
-        },
-        "pathogenInjectionResist": {
-          "option": "Rating"
+        "toxinAndPathogen": {
+          "toxinContactResist": {
+            "option": "Rating"
+          },
+          "pathogenContactResist": {
+            "option": "Rating"
+          },
+          "toxinInhalationResist": {
+            "option": "Rating"
+          },
+          "pathogenInhalationResist": {
+            "option": "Rating"
+          },
+          "toxinIngestionResist": {
+            "option": "Rating"
+          },
+          "pathogenIngestionResist": {
+            "option": "Rating"
+          },
+          "toxinInjectionResist": {
+            "option": "Rating"
+          },
+          "pathogenInjectionResist": {
+            "option": "Rating"
+          }
         }
       },
       "conditionAndRecovery": {
@@ -6310,11 +6420,13 @@
     ],
     "bonus": {
       "combatAndWeapon": {
-        "armour": {
-          "bonus": {
-            "option": "Rating"
-          },
-          "nonStacking": true
+        "armourModifiers": {
+          "armour": {
+            "bonus": {
+              "option": "Rating"
+            },
+            "nonStacking": true
+          }
         }
       }
     },
@@ -6362,17 +6474,19 @@
     ],
     "bonus": {
       "combatAndWeapon": {
-        "pathogenContactResist": {
-          "option": "Rating"
-        },
-        "pathogenInhalationResist": {
-          "option": "Rating"
-        },
-        "pathogenIngestionResist": {
-          "option": "Rating"
-        },
-        "pathogenInjectionResist": {
-          "option": "Rating"
+        "toxinAndPathogen": {
+          "pathogenContactResist": {
+            "option": "Rating"
+          },
+          "pathogenInhalationResist": {
+            "option": "Rating"
+          },
+          "pathogenIngestionResist": {
+            "option": "Rating"
+          },
+          "pathogenInjectionResist": {
+            "option": "Rating"
+          }
         }
       }
     },
@@ -6458,7 +6572,7 @@
     ],
     "bonus": {
       "conditionAndRecovery": {
-        "ignoreConditionModifierNegativeEffects": {
+        "conditionModifierNegativeEffectsOffsetShared": {
           "option": "Rating"
         }
       }

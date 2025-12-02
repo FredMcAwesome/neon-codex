@@ -8,7 +8,7 @@ import {
 } from "../../../enums.js";
 import { BonusSchema } from "../../shared/bonusSchemas.js";
 import { RequirementsSchema } from "../../shared/requiredSchemas.js";
-import { spellRangeSchema } from "./spellSchemas.js";
+import { spellRangeSchema } from "../../shared/commonSchemas.js";
 
 const CritterPowerRatingSchema = type.or(
   type({

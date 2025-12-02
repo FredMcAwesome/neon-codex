@@ -54,6 +54,7 @@ Damage {
     | Missile
     | PepperPunch
     | Strength
+    | Body
     | Magic
     | Chemical
     | Rating
@@ -66,6 +67,7 @@ Damage {
   Missile = "Missile"
   PepperPunch = "As Pepper Punch"
   Strength = "{STR}" | "({STR})"
+  Body = "{BOD}"
   Magic = "MAG"
   Chemical = "Chemical"
   Rating = "Rating"
@@ -179,7 +181,7 @@ Availability {
   Exp = Availability
   Availability = Next Restriction -- full
     | Next -- partial
-  Next = AddSub 
+  Next = AddSub
     | "(" AddSub ")" -- parenthesis
   AddSub = AddSub "+" MulDiv -- add
     | AddSub "-" MulDiv -- subtract

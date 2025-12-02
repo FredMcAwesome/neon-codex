@@ -12,7 +12,7 @@ import {
   type RequiredXmlType,
 } from "../common/RequiredParserSchemas.js";
 import {
-  NaturalWeaponSchema,
+  NaturalWeaponXmlSchema,
   StringArrayOrStringSchema,
   StringOrNumberSchema,
 } from "../common/ParserCommonDefines.js";
@@ -89,7 +89,10 @@ const QualitySubBonusXmlSchema = type({
   // Chummer doesn't want them as weapons, I do
   "naturalweapons?": type({
     "+": "reject",
-    naturalweapon: type.or(NaturalWeaponSchema, NaturalWeaponSchema.array()),
+    naturalweapon: type.or(
+      NaturalWeaponXmlSchema,
+      NaturalWeaponXmlSchema.array()
+    ),
   }),
   // Add weapon
   "addweapon?": StringArrayOrStringSchema,

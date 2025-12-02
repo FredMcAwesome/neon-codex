@@ -5,12 +5,11 @@ import {
   sourceBookEnum,
   spellCategoryEnum,
   spellDescriptorEnum,
-  spellPowerRangeEnum,
-  spellPowerTargetEnum,
   spellTypeEnum,
 } from "../../../enums.js";
 import { BonusSchema } from "../../shared/bonusSchemas.js";
 import { RequirementsSchema } from "../../shared/requiredSchemas.js";
+import { spellRangeSchema } from "../../shared/commonSchemas.js";
 
 const spellDamageSchema = type.or(
   "number",
@@ -20,13 +19,6 @@ const spellDamageSchema = type.or(
   })
 );
 export type spellDamageType = typeof spellDamageSchema.infer;
-
-export const spellRangeSchema = type({
-  "+": "reject",
-  value: type.valueOf(spellPowerRangeEnum),
-  target: type.valueOf(spellPowerTargetEnum),
-});
-export type spellRangeType = typeof spellRangeSchema.infer;
 
 export const SpellSchema = type({
   "+": "reject",

@@ -1543,6 +1543,15 @@
       "target": "Single Target"
     },
     "type": "Mana",
+    "bonus": {
+      "spellAndMagic": {
+        "addSpiritOptionList": [
+          {
+            "name": "Watcher"
+          }
+        ]
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 298
   },
@@ -1561,6 +1570,15 @@
       "target": "Single Target"
     },
     "type": "Mana",
+    "bonus": {
+      "spellAndMagic": {
+        "addSpiritOptionList": [
+          {
+            "name": "Homunculus (Hardened Material)"
+          }
+        ]
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 298
   },
@@ -3562,6 +3580,15 @@
       "target": "Single Target"
     },
     "type": "Mana",
+    "bonus": {
+      "spellAndMagic": {
+        "addSpiritOptionList": [
+          {
+            "name": "Ally Spirit"
+          }
+        ]
+      }
+    },
     "requirements": {},
     "source": "Street Grimoire",
     "page": 122
@@ -3799,6 +3826,15 @@
       "target": "Single Target"
     },
     "type": "Mana",
+    "bonus": {
+      "spellAndMagic": {
+        "addSpiritOptionList": [
+          {
+            "name": "Ally Spirit"
+          }
+        ]
+      }
+    },
     "source": "Street Grimoire",
     "page": 127
   },
@@ -5419,6 +5455,15 @@
       "target": "Single Target"
     },
     "type": "Mana",
+    "bonus": {
+      "spellAndMagic": {
+        "addSpiritOptionList": [
+          {
+            "name": "Corpse Cadavre"
+          }
+        ]
+      }
+    },
     "source": "Hard Targets",
     "page": 129
   },
@@ -5778,6 +5823,27 @@
       "target": "Single Target"
     },
     "type": "Physical",
+    "bonus": {
+      "spellAndMagic": {
+        "addSpiritOptionList": [
+          {
+            "name": "Carcass Spirit"
+          },
+          {
+            "name": "Corpse Spirit"
+          },
+          {
+            "name": "Rot Spirit"
+          },
+          {
+            "name": "Palefire Spirit"
+          },
+          {
+            "name": "Detritus Spirit"
+          }
+        ]
+      }
+    },
     "source": "Forbidden Arcana",
     "page": 52
   },

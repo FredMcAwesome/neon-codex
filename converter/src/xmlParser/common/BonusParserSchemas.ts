@@ -1,20 +1,31 @@
-import { skillCategoryEnum } from "@neon-codex/common/build/enums.js";
+import {
+  augmentationGradeEnum,
+  critterPowerEnum,
+  gearCategoryEnum,
+  skillCategoryEnum,
+  spellDescriptorEnum,
+  vehicleTypeEnum,
+} from "@neon-codex/common/build/enums.js";
 import {
   attributeXMLEnum,
+  augmentationXmlGradeEnum,
   GenericNameValueSchema,
   limbSlotXmlEnum,
   LimitModifierSchema,
   lockedAttributeXmlEnum,
-  NaturalWeaponSchema,
+  NaturalWeaponXmlSchema,
   NumberOrAnyRatingSchema,
   NumberOrRatingOrAttributeSchema,
   NumberOrRatingSchema,
   SkillXMLSchema,
+  spellXmlCategoryEnum,
   SpiritSchema,
   StringArrayOrStringSchema,
   StringOrNumberSchema,
 } from "./ParserCommonDefines.js";
 import { type } from "arktype";
+import { weaponSubtypeEnum } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
+import { cyberwareXmlCategoryEnum } from "../bodyModification/CyberwareParserSchemas.js";
 
 const SkillXmlObjectSchema = type({
   "+": "reject",
@@ -95,7 +106,7 @@ const PowersXMLSchema = type.or(
 
 const MovementMultiplierXMLSchema = type({
   "+": "reject",
-  category: "string",
+  category: type.or("'Swim'", "'Ground'"),
   "val?": "number",
   "percent?": "number",
 });
@@ -180,6 +191,16 @@ const AddQualityListXMLSchema = type.or(
     xmltext: "string",
   })
 );
+
+const MovementReplacementXmlSchema = type({
+  "+": "reject",
+  // Swim is not used but included for completeness
+  category: type.or("'Fly'", "'Ground'", "'Swim'"),
+  speed: type.or("'sprint'", "'run'", "'walk'"),
+  val: "number",
+});
+export type MovementReplacementXmlType =
+  typeof MovementReplacementXmlSchema.infer;
 
 // https://github.com/chummer5a/chummer5a/wiki/Improvement-Manager explains bonus properties
 export const BonusXmlSchema = type.or(
@@ -466,6 +487,7 @@ export const BonusXmlSchema = type.or(
     "optionalpowers?": type({
       "+": "reject",
       optionalpower: PowersXMLSchema,
+      // number or format like floor({MAG} div 3)
       "_count?": "string",
     }),
     // Included critter powers
@@ -485,7 +507,8 @@ export const BonusXmlSchema = type.or(
       ),
     }),
     // Can add critter powers, but only from this category
-    "limitcritterpowercategory?": type.or("'Drake'", "'Infected'"),
+    // Only "Drake" and "Infected" by default...
+    "limitcritterpowercategory?": type.valueOf(critterPowerEnum),
 
     // Spell and Magic Bonuses
     // --------------------------------------------------------------------------------------------
@@ -495,14 +518,6 @@ export const BonusXmlSchema = type.or(
       _alchemical: "'True'",
       xmltext: "string",
     }),
-    // Choose a spell to link to
-    "selectspell?": type.or(
-      "''",
-      type({
-        "+": "reject",
-        _ignorerequirements: "'True'",
-      })
-    ),
     // Add free spells
     "freespells?": type.or(
       // free spells equal to attribute modified by limit
@@ -515,6 +530,14 @@ export const BonusXmlSchema = type.or(
       type({
         "+": "reject",
         _skill: "string",
+      })
+    ),
+    // Choose a spell to link to
+    "selectspell?": type.or(
+      "''",
+      type({
+        "+": "reject",
+        _ignorerequirements: "'True'",
       })
     ),
     // bonus to a specific spell category
@@ -540,11 +563,17 @@ export const BonusXmlSchema = type.or(
     ),
     // Cannot cast spells with this spell descriptor
     // TODO: this only applies to adepts is it correct?
-    "blockspelldescriptor?": "string",
+    "blockspelldescriptor?": type.valueOf(spellDescriptorEnum),
     // Bonus to damage of spells using the descriptor
     "spelldescriptordamage?": type({
       "+": "reject",
       descriptor: "string",
+      val: "number",
+    }),
+    // Bonus to damage of spells in the category
+    "spellcategorydamage?": type({
+      "+": "reject",
+      category: type.valueOf(spellXmlCategoryEnum),
       val: "number",
     }),
     // Bonus to drain of spells using the descriptor
@@ -553,27 +582,22 @@ export const BonusXmlSchema = type.or(
       descriptor: "string",
       val: "number",
     }),
-    // Bonus to damage of spells in the category
-    "spellcategorydamage?": type({
-      "+": "reject",
-      category: "string",
-      val: "number",
-    }),
     // Bonus to drain of spells in the category
     "spellcategorydrain?": type({
       "+": "reject",
       // When optional it means pick a spell category
-      "category?": "string",
+      "category?": type.valueOf(spellXmlCategoryEnum),
       val: "number",
     }),
     // Can only use 1 spell category
     "limitspellcategory?": type.or(
       // Empty i.e. "" for select a category
-      "string",
-      "string[]",
+      "''",
+      type.valueOf(spellXmlCategoryEnum),
+      type.valueOf(spellXmlCategoryEnum).array(),
       type({
         "+": "reject",
-        _exclude: "string",
+        _exclude: type.valueOf(spellXmlCategoryEnum),
       })
     ),
     // Learn metamagic
@@ -585,6 +609,8 @@ export const BonusXmlSchema = type.or(
         xmltext: "string",
       })
     ),
+    // When initiating you must take only the metamagic in
+    // this list, in the order given
     "metamagiclimit?": type({
       "+": "reject",
       metamagic: type({
@@ -593,7 +619,8 @@ export const BonusXmlSchema = type.or(
         xmltext: "string",
       }).array(),
     }),
-    "quickeningmetamagic?": "''",
+    // Remove penalty for sustaining spells up to a certain count (round down)
+    // (normally -2 dice pool to all tests while sustaining)
     "penaltyfreesustain?": type({
       "+": "reject",
       count: "string",
@@ -603,7 +630,7 @@ export const BonusXmlSchema = type.or(
     // Modify Karma cost
     "newspellkarmacost?": type({
       "+": "reject",
-      _type: "'Spells'",
+      _type: type.or("'Spells'", "'Alchemical'", "'Rituals'"),
       xmltext: "number",
     }),
     // Karma discount on binding a focus
@@ -612,6 +639,7 @@ export const BonusXmlSchema = type.or(
         "+": "reject",
         name: "string",
         val: "number",
+        // The name/description must contain this text
         "extracontains?": "string",
       }).array(),
       type({
@@ -623,14 +651,9 @@ export const BonusXmlSchema = type.or(
     ),
     // Modify drain value
     "drainvalue?": "number",
-    // Fading modification
-    "fadingvalue?": type.or(
-      type({ "+": "reject", _specific: "string", xmltext: "number" }).array(),
-      "number"
-    ),
     // add spirits?
     "addspirit?": type.or(SpiritSchema, SpiritSchema.array()),
-    // Can only use 1 spirit category
+    // Can only use these spirit categories
     "limitspiritcategory?": type.or(
       type({
         "+": "reject",
@@ -646,8 +669,11 @@ export const BonusXmlSchema = type.or(
 
     // Technomancer and Matrix
     // --------------------------------------------------------------------------------------------
-    // Allows spirit fettering to be used on a sprite
-    "allowspritefettering?": "''",
+    // Fading modification
+    "fadingvalue?": type.or(
+      type({ "+": "reject", _specific: "string", xmltext: "number" }).array(),
+      "number"
+    ),
     // Select a sprite type
     "selectsprite?": "''",
     // Select a paragon (from paragons.xml)
@@ -662,7 +688,7 @@ export const BonusXmlSchema = type.or(
       "firewall?": "number",
       "sleaze?": "number",
     }),
-    // Resonance loss due to augmentation multiplier (times 100)
+    // Resonance loss due to augmentation multiplier (divided by 100)
     "specialattburnmultiplier?": "number",
 
     // Combat and Weapon Bonuses
@@ -679,14 +705,14 @@ export const BonusXmlSchema = type.or(
       }),
       "''"
     ),
-    "naturalweapon?": NaturalWeaponSchema,
-    // bonus to a weapon that needs to be selected
+    "naturalweapon?": NaturalWeaponXmlSchema,
+    // bonus to a weapon attack dice pool that needs to be selected
     "weaponspecificdice?": type({
       "+": "reject",
       xmltext: "'Rating'",
       _type: "'Melee'",
     }),
-    // increases the accuracy of a weapon
+    // increases the accuracy of a weapon, by increasing the physical limit for that weapon
     "weaponaccuracy?": type({
       name: "string",
       value: "number",
@@ -703,11 +729,12 @@ export const BonusXmlSchema = type.or(
       bonus: "number",
       selectskill: SelectSkillXMLSchema,
     }),
+    // bonus dice for all weapons in a category
     "weaponcategorydice?": type({
       "+": "reject",
       category: type({
         "+": "reject",
-        name: "string",
+        name: type.valueOf(weaponSubtypeEnum),
         value: "number",
       }),
     }),
@@ -797,9 +824,9 @@ export const BonusXmlSchema = type.or(
     "stuncmrecovery?": NumberOrRatingSchema,
     // physical condition modifier dice bonus
     "physicalcmrecovery?": NumberOrRatingSchema,
-    // Add essense as dice pool modifier to natural recovery rolls
+    // Add essence as dice pool modifier to natural recovery rolls
     "addesstophysicalcmrecovery?": "''",
-    // Add essense as dice pool modifier to natural recovery rolls
+    // Add essence as dice pool modifier to natural recovery rolls
     "addesstostuncmrecovery?": "''",
     // Addiction and Psychological Effects
     // -----------------------------------
@@ -816,18 +843,8 @@ export const BonusXmlSchema = type.or(
     // --------------------------------------------------------------------------------------------
     // Replace movement
     "movementreplace?": type.or(
-      type({
-        "+": "reject",
-        category: type.or("'Fly'", "'Ground'"),
-        speed: type.or("'sprint'", "'run'", "'walk'"),
-        val: "number",
-      }).array(),
-      type({
-        "+": "reject",
-        category: type.or("'Fly'", "'Ground'"),
-        speed: type.or("'sprint'", "'run'", "'walk'"),
-        val: "number",
-      })
+      MovementReplacementXmlSchema.array(),
+      MovementReplacementXmlSchema
     ),
     // Swim and walk speed modifiers
     "walkmultiplier?": type.or(
@@ -911,7 +928,7 @@ export const BonusXmlSchema = type.or(
     "initiativedice?": "number",
     // additional initiative dice
     "initiativepass?": type.or(GenericNameValueSchema, "number"),
-    // additional initiative (not dice)
+    // additional initiative (not dice, applies directly to final intiative score)
     "matrixinitiative?": "number",
     // additional matrix initiative dice
     "matrixinitiativedice?": type({
@@ -930,14 +947,14 @@ export const BonusXmlSchema = type.or(
     "addgear?": type({
       "+": "reject",
       name: "string",
-      category: "string",
+      category: type.valueOf(gearCategoryEnum),
       "rating?": "number",
       "children?": type({
         "+": "reject",
         child: type({
           "+": "reject",
           name: "string",
-          category: "string",
+          category: type.valueOf(gearCategoryEnum),
           rating: "number",
         }).array(),
       }),
@@ -955,12 +972,12 @@ export const BonusXmlSchema = type.or(
     // Vehicle bonuses
     // ---------------
     "seats?": StringOrNumberSchema,
+    "speed?": StringOrNumberSchema,
+    "offroadspeed?": StringOrNumberSchema,
     "accel?": StringOrNumberSchema,
     "offroadaccel?": StringOrNumberSchema,
     "handling?": StringOrNumberSchema,
     "offroadhandling?": StringOrNumberSchema,
-    "speed?": StringOrNumberSchema,
-    "offroadspeed?": StringOrNumberSchema,
     "pilot?": "string",
     "sensor?": StringOrNumberSchema,
     "body?": StringOrNumberSchema,
@@ -981,9 +998,11 @@ export const BonusXmlSchema = type.or(
     "addware?": type({
       "+": "reject",
       name: "string",
-      grade: "string",
-      type: "string",
+      grade: type.valueOf(augmentationXmlGradeEnum),
+      type: "'Cyberware' | 'Bioware' | 'Genetech'",
     }),
+    // cost multiplier times 100 for genetech installed
+    "genetechcostmultiplier?": "number",
     // Limit of all special modification
     // This is only gained from qualities but doesn't use
     // limitwithinclusions as it is needed in weapons
@@ -1004,7 +1023,6 @@ export const BonusXmlSchema = type.or(
     "cyberwareessmultiplier?": "number",
     // essence cost multiplier times 100 for bioware installed
     "biowareessmultiplier?": "number",
-    "genetechcostmultiplier?": "number",
     "genetechessmultiplier?": "number",
     // Cannot add bioware to this character
     "disablebioware?": "''",
@@ -1018,8 +1036,11 @@ export const BonusXmlSchema = type.or(
     // Add contact
     "addcontact?": type({
       "+": "reject",
+      // contact loyalty
       "loyalty?": "number",
+      // contact connection
       "connection?": "number",
+      // seems to be an override to loyalty unless removed, then gives just loyalty... lets simplify
       "forcedloyalty?": "number",
       "forcegroup?": "''",
       "free?": "''",
@@ -1034,7 +1055,7 @@ export const BonusXmlSchema = type.or(
     "astralreputation?": "number",
     // Increase public awareness
     "publicawareness?": "number",
-    // Badly named, when determining street cred divide the karma gained
+    // Badly named, when determining street cred divide the character's lifetime karma gained
     // by 10 + this number to determine street cred instead of the normal 10
     "streetcredmultiplier?": "number",
     // Modify karma cost of adding a contact by this amount
@@ -1058,6 +1079,9 @@ export const BonusXmlSchema = type.or(
         AddQualityListXMLSchema.array()
       ),
     }),
+    // add a quality (by id), probably also note that if it has been added already
+    // give a karma refund
+    "freequality?": "string",
     // Choose a quality for no cost/bonus
     "selectquality?": type({
       "+": "reject",
@@ -1087,35 +1111,55 @@ export const BonusXmlSchema = type.or(
 
     // specific qualities
     // --------------------------------------------------------------------------------------------
-    // no offhand penalty
-    "ambidextrous?": "''",
-    "freequality?": "string",
-    "burnoutsway?": "''",
-    "friendsinhighplaces?": "''",
-    "overclocker?": "''",
-    "trustfund?": "number",
-    "prototypetranshuman?": "number",
-    "excon?": "''",
-    "mademan?": "''",
-    "magicianswaydiscount?": "''",
-    "blackmarketdiscount?": "''",
-    "erased?": "''",
-    "fame?": "''",
-    "selectinherentaiprogram?": "''",
-    "dealerconnection?": type({
-      "+": "reject",
-      category: StringArrayOrStringSchema,
-    }),
-    "cyberadeptdaemon?": "''",
-    // Uneducated critter power
-    "uneducated?": "''",
-    // +1 to the ability for every 2 limbs replaced
-    "cyberseeker?": StringArrayOrStringSchema,
     // Reduces future cyberware essence cost
     "adapsin?": "''",
+    // one of the resonace streams (like ways for adepts)
+    // Allows spirit fettering to be used on a sprite
+    "allowspritefettering?": "''",
+    // no offhand penalty
+    "ambidextrous?": "''",
+    // contact with discount for a type of gear/vehicle
+    "blackmarketdiscount?": "''",
+    // standard grade augmentations are treated as alphagrade for essence cost
+    "burnoutsway?": "''",
+    // one of the resonace streams (like ways for adepts)
+    // restore resonance lost through cyberware
+    "cyberadeptdaemon?": "''",
+    // +1 to the ability/-3 physical boxes (normally +2, so total is -1) for every 2 limbs replaced
+    "cyberseeker?": StringArrayOrStringSchema,
+    // discount on one type of vehicle
+    "dealerconnection?": type({
+      "+": "reject",
+      category: type.or(type.valueOf(vehicleTypeEnum), "'Drones'").array(),
+    }),
+    // no SIN
+    "erased?": "''",
+    // have a criminal sin and a parole officer
+    "excon?": "''",
+    // multiple levels of fame
+    "fame?": "''",
+    // additional charisma * 4 karma for contacts, no connection lower than 8
+    "friendsinhighplaces?": "''",
+    // discount for any power, mystical adepts also get another bonus
+    "magicianswaydiscount?": "''",
+    // crime syndicate contact and fence for stolen goods
+    "mademan?": "''",
+    // add one to one of the cyberdeck's ASDF attributes, can be reassigned
+    "overclocker?": "''",
+    // one extra essence exclusively for bioware but must pick from a list of
+    // negative qualities (without getting the karma)
+    "prototypetranshuman?": "number",
+    // Quickening metamagic
+    "quickeningmetamagic?": "''",
     // avoid default penalty (-1) on skills without ranks when
     // you have reflex recorder for a skill in its group
     "reflexrecorderoptimization?": "''",
+    // select program that runs at all times and can't be crashed
+    "selectinherentaiprogram?": "''",
+    // karma given to cover a lifestyle + extra, variable depending on karma spent
+    "trustfund?": "number",
+    // Uneducated critter power
+    "uneducated?": "''",
 
     // Misc
     // --------------------------------------------------------------------------------------------

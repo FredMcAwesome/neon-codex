@@ -121,21 +121,61 @@ bonusWeaponDetailsSemantics.addOperation("eval", {
 const bonusRatingCalculationSemantics = RatingCalculation.createSemantics();
 bonusRatingCalculationSemantics.addOperation("eval", {
   Exp(inner) {
-    return inner.eval();
+    const temp = inner.eval();
+    return Array.isArray(temp) ? temp : [temp];
   },
-  Calculation_ratingTimes(Calc, _mult, Num) {
-    return Calc.eval().concat([
-      { operator: mathOperatorEnum.Multiply },
-      Num.eval(),
-    ]);
+  AddSub_add(str, _, range) {
+    return str
+      .eval()
+      .concat([{ operator: mathOperatorEnum.Add }], range.eval());
   },
-  Calculation_timesRating(Num, _mult, Calc) {
-    return [Num.eval()]
-      .concat([{ operator: mathOperatorEnum.Multiply }])
-      .concat(Calc.eval());
+  AddSub_subtract(str, _, range) {
+    return str
+      .eval()
+      .concat([{ operator: mathOperatorEnum.Subtract }], range.eval());
   },
-  Rating(_) {
+  MulDiv_multiply(str, _, range) {
+    return [
+      {
+        subnumbers: str
+          .eval()
+          .concat([{ operator: mathOperatorEnum.Multiply }], range.eval()),
+      },
+    ];
+  },
+  MulDiv_divide(str, _, range) {
+    return [
+      {
+        subnumbers: str
+          .eval()
+          .concat([{ operator: mathOperatorEnum.Divide }], range.eval()),
+      },
+    ];
+  },
+  SubCalculation_parenthesis(_a, inner, _b) {
+    return [{ subnumbers: inner.eval() }];
+  },
+  Rating_base(_) {
     return [{ option: "Rating" as const }];
+  },
+  Rating_positive(_) {
+    return [{ option: "Rating" as const }];
+  },
+  Rating_negative(_) {
+    return [
+      -1,
+      { operator: mathOperatorEnum.Multiply },
+      { option: "Rating" as const },
+    ];
+  },
+  Seats_base(_) {
+    return [{ option: "Seats" as const }];
+  },
+  Seats_positive(_) {
+    return [{ option: "Seats" as const }];
+  },
+  NegativeNumber(_, num) {
+    return -num.eval();
   },
   PositiveNumber_float(rangeInt, _, rangeDecimal) {
     return parseFloat(rangeInt.sourceString + "." + rangeDecimal.sourceString);

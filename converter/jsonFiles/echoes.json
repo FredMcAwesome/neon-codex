@@ -3,6 +3,13 @@
     "name": "Attack Upgrade",
     "description": "",
     "category": "Mentor Spirit",
+    "bonus": {
+      "spellAndMagic": {
+        "livingPersonaModification": {
+          "attack": 1
+        }
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 258
   },
@@ -10,6 +17,13 @@
     "name": "Data Processing Upgrade",
     "description": "",
     "category": "Mentor Spirit",
+    "bonus": {
+      "spellAndMagic": {
+        "livingPersonaModification": {
+          "dataProcessing": 1
+        }
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 258
   },
@@ -17,6 +31,13 @@
     "name": "Firewall Upgrade",
     "description": "",
     "category": "Mentor Spirit",
+    "bonus": {
+      "spellAndMagic": {
+        "livingPersonaModification": {
+          "firewall": 1
+        }
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 258
   },
@@ -78,6 +99,13 @@
     "name": "Sleaze Upgrade",
     "description": "",
     "category": "Mentor Spirit",
+    "bonus": {
+      "spellAndMagic": {
+        "livingPersonaModification": {
+          "sleaze": 1
+        }
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 258
   },
@@ -260,6 +288,31 @@
     "name": "Sourcerer Daemon",
     "description": "",
     "category": "Mentor Spirit",
+    "bonus": {
+      "spellAndMagic": {
+        "penaltyFreeSustainCount": [
+          {
+            "subnumbers": [
+              {
+                "subnumbers": [
+                  {
+                    "option": "Rating"
+                  },
+                  {
+                    "operator": "-"
+                  },
+                  1
+                ]
+              },
+              {
+                "operator": "/"
+              },
+              2
+            ]
+          }
+        ]
+      }
+    },
     "source": "Kill Code",
     "page": 91
   }

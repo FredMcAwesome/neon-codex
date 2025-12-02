@@ -902,7 +902,9 @@
     },
     "bonus": {
       "combatAndWeapon": {
-        "smartlinkAccuracy": 2
+        "attackModifiers": {
+          "smartLinkModifier": 2
+        }
       }
     },
     "availability": {
@@ -1247,7 +1249,9 @@
     },
     "bonus": {
       "combatAndWeapon": {
-        "sonicResistance": 2
+        "damageResistanceModifiers": {
+          "sonicResistance": 2
+        }
       }
     },
     "availability": {
@@ -1380,11 +1384,18 @@
     },
     "bonus": {
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 2
+        "armourModifiers": {
+          "armour": {
+            "bonus": 2
+          }
+        },
+        "damageValueModifiers": {
+          "unarmedModifier": [2]
         },
         "unarmedDamageType": "Physical",
-        "damageResistance": 2
+        "damageResistanceModifiers": {
+          "damageResistance": 2
+        }
       }
     },
     "forbidden": {},
@@ -1409,11 +1420,18 @@
     },
     "bonus": {
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 1
+        "armourModifiers": {
+          "armour": {
+            "bonus": 1
+          }
+        },
+        "damageValueModifiers": {
+          "unarmedModifier": [1]
         },
         "unarmedDamageType": "Physical",
-        "damageResistance": 1
+        "damageResistanceModifiers": {
+          "damageResistance": 1
+        }
       }
     },
     "forbidden": {},
@@ -1438,11 +1456,18 @@
     },
     "bonus": {
       "combatAndWeapon": {
-        "armour": {
-          "bonus": 3
+        "armourModifiers": {
+          "armour": {
+            "bonus": 3
+          }
+        },
+        "damageValueModifiers": {
+          "unarmedModifier": [3]
         },
         "unarmedDamageType": "Physical",
-        "damageResistance": 3
+        "damageResistanceModifiers": {
+          "damageResistance": 3
+        }
       }
     },
     "forbidden": {},
@@ -1479,11 +1504,13 @@
     },
     "bonus": {
       "combatAndWeapon": {
-        "armour": {
-          "bonus": {
-            "option": "Rating"
-          },
-          "nonStacking": true
+        "armourModifiers": {
+          "armour": {
+            "bonus": {
+              "option": "Rating"
+            },
+            "nonStacking": true
+          }
         }
       }
     },
@@ -1580,8 +1607,10 @@
     },
     "bonus": {
       "combatAndWeapon": {
-        "toxinInhalationImmune": true,
-        "pathogenInhalationImmune": true
+        "toxinAndPathogen": {
+          "toxinInhalationImmune": true,
+          "pathogenInhalationImmune": true
+        }
       }
     },
     "availability": {
@@ -2012,7 +2041,7 @@
     "selectSide": true,
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": 1
+        "addPhysicalTrackBoxes": 1
       }
     },
     "forbidden": {},
@@ -2054,7 +2083,7 @@
     "selectSide": true,
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": 1
+        "addPhysicalTrackBoxes": 1
       },
       "quality": {
         "disableQualityList": [
@@ -2183,7 +2212,7 @@
     "selectSide": true,
     "pairBonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": 1
+        "addPhysicalTrackBoxes": 1
       }
     },
     "pairIncludeList": [
@@ -2242,7 +2271,7 @@
     },
     "pairBonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": 1
+        "addPhysicalTrackBoxes": 1
       }
     },
     "pairIncludeList": [
@@ -2291,7 +2320,7 @@
     },
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": 1
+        "addPhysicalTrackBoxes": 1
       }
     },
     "forbidden": {},
@@ -2331,7 +2360,7 @@
     },
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": 1
+        "addPhysicalTrackBoxes": 1
       }
     },
     "forbidden": {},
@@ -2373,7 +2402,7 @@
     "selectSide": true,
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": 1
+        "addPhysicalTrackBoxes": 1
       }
     },
     "forbidden": {},
@@ -2415,7 +2444,7 @@
     "selectSide": true,
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": 1
+        "addPhysicalTrackBoxes": 1
       },
       "quality": {
         "disableQualityList": [
@@ -2544,7 +2573,7 @@
     "selectSide": true,
     "pairBonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": 1
+        "addPhysicalTrackBoxes": 1
       }
     },
     "pairIncludeList": [
@@ -2603,7 +2632,7 @@
     },
     "pairBonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": 1
+        "addPhysicalTrackBoxes": 1
       }
     },
     "pairIncludeList": [
@@ -2652,7 +2681,7 @@
     },
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": 1
+        "addPhysicalTrackBoxes": 1
       }
     },
     "forbidden": {},
@@ -2692,7 +2721,7 @@
     },
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": 1
+        "addPhysicalTrackBoxes": 1
       }
     },
     "forbidden": {},
@@ -2734,9 +2763,11 @@
     },
     "bonus": {
       "combatAndWeapon": {
-        "armour": {
-          "bonus": {
-            "option": "Rating"
+        "armourModifiers": {
+          "armour": {
+            "bonus": {
+              "option": "Rating"
+            }
           }
         }
       }
@@ -3704,9 +3735,11 @@
     "bonus": {
       "skill": {
         "hardwire": {
-          "maximumSkillSoftRating": {
-            "option": "Rating"
-          },
+          "maximumSkillSoftRating": [
+            {
+              "option": "Rating"
+            }
+          ],
           "activeSkills": false,
           "excludeCategoryList": []
         }
@@ -4907,12 +4940,16 @@
         "skillwire": {
           "maximumSkillSoftRating": [
             {
-              "option": "Rating"
-            },
-            {
-              "operator": "*"
-            },
-            2
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                2
+              ]
+            }
           ],
           "precedence": "0"
         }
@@ -4983,9 +5020,11 @@
     "bonus": {
       "skill": {
         "hardwire": {
-          "maximumSkillSoftRating": {
-            "option": "Rating"
-          },
+          "maximumSkillSoftRating": [
+            {
+              "option": "Rating"
+            }
+          ],
           "activeSkills": true,
           "excludeCategoryList": ["Magical Active", "Resonance Active"]
         }
@@ -5834,9 +5873,11 @@
         ]
       },
       "combatAndWeapon": {
-        "weaponAccuracy": {
-          "weapon": "Raptor Foot",
-          "bonus": 1
+        "attackModifiers": {
+          "weaponLimitModifier": {
+            "weapon": "Raptor Foot",
+            "modifier": 1
+          }
         }
       },
       "movementAndLifestyle": {
@@ -6268,7 +6309,7 @@
     "selectSide": true,
     "pairBonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": 1
+        "addPhysicalTrackBoxes": 1
       }
     },
     "pairIncludeList": [
@@ -6318,7 +6359,7 @@
     "selectSide": true,
     "pairBonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": 1
+        "addPhysicalTrackBoxes": 1
       }
     },
     "pairIncludeList": [
@@ -6368,7 +6409,7 @@
     "selectSide": true,
     "pairBonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": 1
+        "addPhysicalTrackBoxes": 1
       }
     },
     "pairIncludeList": [
@@ -6418,7 +6459,7 @@
     "selectSide": true,
     "pairBonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": 1
+        "addPhysicalTrackBoxes": 1
       }
     },
     "pairIncludeList": [
@@ -6468,7 +6509,7 @@
     "selectSide": true,
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": 1
+        "addPhysicalTrackBoxes": 1
       }
     },
     "allowedGearCategories": ["Custom", "Sensors"],
@@ -6508,7 +6549,7 @@
     "selectSide": true,
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": 1
+        "addPhysicalTrackBoxes": 1
       }
     },
     "allowedGearCategories": ["Custom", "Sensors"],
@@ -6548,7 +6589,7 @@
     "selectSide": true,
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": 1
+        "addPhysicalTrackBoxes": 1
       }
     },
     "allowedGearCategories": ["Custom", "Sensors"],
@@ -6588,7 +6629,7 @@
     "selectSide": true,
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": 1
+        "addPhysicalTrackBoxes": 1
       }
     },
     "allowedGearCategories": ["Custom", "Sensors"],
@@ -7219,7 +7260,7 @@
     "selectSide": true,
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": 1
+        "addPhysicalTrackBoxes": 1
       }
     },
     "allowedGearCategories": ["Custom", "Sensors"],
@@ -7256,7 +7297,7 @@
     "selectSide": true,
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": 1
+        "addPhysicalTrackBoxes": 1
       }
     },
     "allowedGearCategories": ["Custom", "Sensors"],
@@ -7381,21 +7422,23 @@
     },
     "bonus": {
       "combatAndWeapon": {
-        "weaponSkillAccuracyList": [
-          {
-            "skill": {
-              "selectSkill": true,
-              "selectionOptions": {
-                "restriction": {
-                  "knowledgeSkillRestriction": {
-                    "limit": "Exclude"
+        "attackModifiers": {
+          "weaponSkillAccuracyList": [
+            {
+              "skill": {
+                "selectSkill": true,
+                "selectionOptions": {
+                  "restriction": {
+                    "knowledgeSkillRestriction": {
+                      "limit": "Exclude"
+                    }
                   }
                 }
-              }
-            },
-            "bonus": 1
-          }
-        ]
+              },
+              "bonus": 1
+            }
+          ]
+        }
       }
     },
     "pairBonus": {
@@ -7878,7 +7921,7 @@
     "addWeapon": "Junkyard Jaw",
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": 1
+        "addPhysicalTrackBoxes": 1
       }
     },
     "requirements": {},
@@ -8272,11 +8315,13 @@
     },
     "bonus": {
       "combatAndWeapon": {
-        "armour": {
-          "bonus": {
-            "option": "Rating"
-          },
-          "nonStacking": true
+        "armourModifiers": {
+          "armour": {
+            "bonus": {
+              "option": "Rating"
+            },
+            "nonStacking": true
+          }
         }
       }
     },
@@ -8686,10 +8731,10 @@
     },
     "bonus": {
       "conditionAndRecovery": {
-        "stunHealing": {
+        "stunConditionModifierHealingDiceModifier": {
           "option": "Rating"
         },
-        "physicalHealing": {
+        "physicalConditionModifierHealingDiceModifier": {
           "option": "Rating"
         }
       }
@@ -10783,12 +10828,16 @@
         "skillwire": {
           "maximumSkillSoftRating": [
             {
-              "option": "Rating"
-            },
-            {
-              "operator": "*"
-            },
-            2
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                2
+              ]
+            }
           ]
         }
       },
@@ -11449,7 +11498,7 @@
     "selectSide": true,
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": 1
+        "addPhysicalTrackBoxes": 1
       }
     },
     "allowedGearCategories": ["Custom", "Sensors"],
@@ -11489,7 +11538,7 @@
     "selectSide": true,
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": 1
+        "addPhysicalTrackBoxes": 1
       }
     },
     "allowedGearCategories": ["Custom", "Sensors"],
@@ -11529,7 +11578,7 @@
     "selectSide": true,
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": 1
+        "addPhysicalTrackBoxes": 1
       }
     },
     "allowedGearCategories": ["Custom", "Sensors"],
@@ -11569,7 +11618,7 @@
     "selectSide": true,
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": 1
+        "addPhysicalTrackBoxes": 1
       }
     },
     "allowedGearCategories": ["Custom", "Sensors"],
@@ -11760,9 +11809,11 @@
     },
     "bonus": {
       "combatAndWeapon": {
-        "armour": {
-          "bonus": {
-            "option": "Rating"
+        "armourModifiers": {
+          "armour": {
+            "bonus": {
+              "option": "Rating"
+            }
           }
         }
       }
@@ -11943,11 +11994,13 @@
     },
     "bonus": {
       "combatAndWeapon": {
-        "armour": {
-          "bonus": {
-            "option": "Rating"
-          },
-          "nonStacking": true
+        "armourModifiers": {
+          "armour": {
+            "bonus": {
+              "option": "Rating"
+            },
+            "nonStacking": true
+          }
         }
       }
     },
@@ -12429,7 +12482,9 @@
     },
     "bonus": {
       "combatAndWeapon": {
-        "smartlinkAccuracy": 2
+        "attackModifiers": {
+          "smartLinkModifier": 2
+        }
       }
     },
     "availability": {

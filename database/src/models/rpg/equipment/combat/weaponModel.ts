@@ -24,8 +24,6 @@ import {
   weaponTypeEnum,
 } from "@neon-codex/common/build/enums.js";
 import type {
-  AccuracyType,
-  ArmourPenetrationType,
   AvailabilityWeaponType,
   CostWeaponType,
   WeaponType,
@@ -38,7 +36,9 @@ import { WeaponRanges } from "./helperTables/weaponRangeModel.js";
 import { IncludedWeaponAccessories } from "../../activeTables/activeWeaponAccessoryModel.js";
 import { ActiveWeapons } from "../../activeTables/activeWeaponModel.js";
 import type {
+  AccuracyType,
   AmmunitionType,
+  ArmourPenetrationType,
   DamageType,
 } from "@neon-codex/common/build/schemas/shared/weaponSharedSchemas.js";
 
@@ -118,7 +118,7 @@ export abstract class Weapons {
   relatedSkill!: Ref<Skills>;
 
   @Property({ type: "string[]", nullable: true })
-  relatedSkillSpecialisations?: Array<string>;
+  relatedSkillSpecialisationList?: Array<string>;
 
   @Property({ type: "json" })
   availability!: AvailabilityWeaponType;
@@ -156,8 +156,8 @@ export abstract class Weapons {
     if (dto.augmentationType !== undefined)
       this.augmentationType = dto.augmentationType;
     this.relatedSkill = relatedSkill;
-    if (dto.relatedSkillSpecialisations !== undefined)
-      this.relatedSkillSpecialisations = dto.relatedSkillSpecialisations;
+    if (dto.relatedSkillSpecialisationList !== undefined)
+      this.relatedSkillSpecialisationList = dto.relatedSkillSpecialisationList;
     this.availability = dto.availability;
     this.cost = dto.cost;
     this.source = dto.source;

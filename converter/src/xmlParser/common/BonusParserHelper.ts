@@ -1,15 +1,23 @@
 import {
+  attributeTypeEnum,
+  augmentationGradeEnum,
+  augmentationTypeEnum,
   bonusCostModifierConditionEnum,
   bonusCostModifierTypeEnum,
   bonusSkillModifierTypeEnum,
   critterAttributePowerEnum,
   damageTypeEnum,
+  focusTypeEnum,
+  freeSpellRateEnum,
   limitCategoryEnum,
   listTypeEnum,
+  magicalFormulaeCategoryEnum,
   skillCategoryEnum,
   skillTypeEnum,
   specialAttributeTypeEnum,
   spellCategoryEnum,
+  spellPowerRangeEnum,
+  vehicleTypeEnum,
   weaponTypeEnum,
 } from "@neon-codex/common/build/enums.js";
 import type {
@@ -23,7 +31,6 @@ import type {
   BonusSkillOptionType,
   BonusPowerOptionType,
   BonusSpellAndMagicOptionType,
-  BonusTechnomancerOptionType,
   BonusCombatAndWeaponOptionType,
   BonusConditionAndRecoveryOptionType,
   BonusMovementAndLifestyleOptionType,
@@ -35,6 +42,8 @@ import type {
   BonusQualityType,
   BonusSpecificQualityType,
   BonusMiscellaneousOptionType,
+  RatingCalculationType,
+  MovementReplacementType,
 } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 import assert from "assert";
 import type {
@@ -44,6 +53,8 @@ import type {
   NumberOrRatingOrAttributeType,
   SkillXMLListType,
   SkillXMLType,
+  SpellPowerXmlRangeType,
+  StringOrNumberType,
 } from "./ParserCommonDefines.js";
 import {
   attributeXMLEnum,
@@ -57,17 +68,21 @@ import {
   bonusSkillKarmaCostSemantics,
   bonusWeaponDetailsSemantics,
 } from "./ParserSemanticsHelper.js";
-import { convertAttribute, convertLimbSlot } from "./ParserHelper.js";
+import {
+  convertAttribute,
+  convertAugmentationGrade,
+  convertLimbSlot,
+  convertNaturalWeapon,
+  convertSpellPowerRange,
+} from "./ParserHelper.js";
 import type {
   BonusXmlType,
+  MovementReplacementXmlType,
   SelectSkillXMLType,
   SpecificPowerXMLType,
   WeaponSkillAccuracyXMLType,
 } from "./BonusParserSchemas.js";
-const NumberFixedRating = Bonus.NumberFixedRating;
-const SkillKarmaCost = Bonus.SkillKarmaCost;
-const WeaponDetails = Bonus.WeaponDetails;
-const RatingCalculation = Bonus.RatingCalculation;
+
 import Augmentation from "../../grammar/augmentation.ohm-bundle.js";
 import { essenceCostSemantics } from "../bodyModification/augmentationParserHelper.js";
 import { type } from "arktype";
@@ -75,9 +90,20 @@ import * as fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { XMLParser } from "fast-xml-parser";
+import { SpellListXmlSchema } from "../talent/SpellParserSchemas.js";
+import {
+  convertSpellCategory,
+  convertSpellDescriptors,
+} from "../talent/SpellParserHelper.js";
+import { QualityListXmlSchema } from "../character/QualityParserSchemas.js";
+import { convertCyberwareCategory } from "../bodyModification/CyberwareParserHelper.js";
+import type { cyberwareXmlCategoryEnum } from "../bodyModification/CyberwareParserSchemas.js";
+const NumberFixedRating = Bonus.NumberFixedRating;
+const SkillKarmaCost = Bonus.SkillKarmaCost;
+const WeaponDetails = Bonus.WeaponDetails;
+const RatingCalculation = Bonus.RatingCalculation;
 const EssenceCost = Augmentation.EssenceCost;
 
-// TODO: handle bonus correctly
 export function convertXmlBonus(bonus: BonusXmlType) {
   if (typeof bonus == "string") {
     assert(bonus === "");
@@ -93,7 +119,6 @@ export function convertXmlBonus(bonus: BonusXmlType) {
   const skillOption: BonusSkillOptionType = {};
   const powerOption: BonusPowerOptionType = {};
   const spellAndMagicOption: BonusSpellAndMagicOptionType = {};
-  const technomancerOption: BonusTechnomancerOptionType = {};
   const combatAndWeaponOption: BonusCombatAndWeaponOptionType = {};
   const conditionAndRecoveryOption: BonusConditionAndRecoveryOptionType = {};
   const movementAndLifestyleOption: BonusMovementAndLifestyleOptionType = {};
@@ -306,7 +331,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     attributeOption.limitIncrease = limitList.map((limit) => {
       assert(limit.name !== undefined);
       assert(limit.value !== undefined);
-      switch (limit.name) {
+      switch (limit.name as limitCategoryEnum) {
         case limitCategoryEnum.Mental:
         case limitCategoryEnum.Physical:
         case limitCategoryEnum.Social:
@@ -315,7 +340,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
           assert(false, limit.name);
       }
       return {
-        category: limit.name,
+        category: limit.name as limitCategoryEnum,
         value: limit.value,
       };
     });
@@ -633,14 +658,9 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     let skillWireMaxRating;
     if (typeof skillwire === "string") skillWireMaxRating = skillwire;
     else skillWireMaxRating = skillwire.xmltext;
-    const match = RatingCalculation.match(skillWireMaxRating);
-    if (match.failed()) {
-      assert(false, match.message);
-    }
 
     skillOption.skillwire = {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-argument
-      maximumSkillSoftRating: bonusRatingCalculationSemantics(match).eval(),
+      maximumSkillSoftRating: convertRatingCalculation(skillWireMaxRating),
       ...(typeof bonus.skillwire === "object" && {
         precedence: bonus.skillwire._precedence,
       }),
@@ -651,17 +671,21 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     const hardwire = bonus.hardwires;
     if ("_knowledgeskill" in hardwire) {
       skillOption.hardwire = {
-        maximumSkillSoftRating: {
-          option: hardwire.xmltext,
-        },
+        maximumSkillSoftRating: [
+          {
+            option: hardwire.xmltext,
+          },
+        ],
         activeSkills: false,
         excludeCategoryList: [],
       };
     } else {
       skillOption.hardwire = {
-        maximumSkillSoftRating: {
-          option: hardwire.xmltext,
-        },
+        maximumSkillSoftRating: [
+          {
+            option: hardwire.xmltext,
+          },
+        ],
         activeSkills: true,
         excludeCategoryList: hardwire._excludecategory
           .split(",")
@@ -995,6 +1019,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       }
       let value;
       let itemRatingRequired;
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       const temp: unknown = bonusSkillKarmaCostSemantics(match).eval();
       assert(temp !== null);
       if (typeof temp === "number") {
@@ -1265,27 +1290,128 @@ export function convertXmlBonus(bonus: BonusXmlType) {
   }
   if ("adeptpowerpoints" in bonus && bonus.adeptpowerpoints !== undefined) {
     checkProp("adeptpowerpoints");
+    powerOption.bonusAdeptPowerPoints = bonus.adeptpowerpoints;
   }
   if ("optionalpowers" in bonus && bonus.optionalpowers !== undefined) {
     checkProp("optionalpowers");
+    const powerList = Array.isArray(bonus.optionalpowers.optionalpower)
+      ? bonus.optionalpowers.optionalpower
+      : [bonus.optionalpowers.optionalpower];
+    const convertedPowerList = powerList.map((power) => {
+      let convertedPower;
+      if (typeof power !== "string") {
+        assert(!("_rating" in power));
+        convertedPower = {
+          name: power.xmltext,
+          select: power._select,
+        };
+      } else {
+        convertedPower = { name: power };
+      }
+      return convertedPower;
+    });
+    let count;
+    if (bonus.optionalpowers._count !== undefined) {
+      count = parseInt(bonus.optionalpowers._count);
+      if (isNaN(count)) {
+        // TODO: make this generic... and actually handle it properly
+        assert(
+          bonus.optionalpowers._count === "floor({MAG} div 3)",
+          bonus.optionalpowers._count
+        );
+        count = { calc: "floor({MAG} div 3)" as const };
+      }
+    }
+
+    powerOption.unlockOptionalPowerList = {
+      ...(count !== undefined && { selectOptionalPowerCount: count }),
+      optionalPowerList: convertedPowerList,
+    };
   }
   if ("critterpowers" in bonus && bonus.critterpowers !== undefined) {
     checkProp("critterpowers");
+    const powerList = Array.isArray(bonus.critterpowers.power)
+      ? bonus.critterpowers.power
+      : [bonus.critterpowers.power];
+    const convertedPowerList = powerList.map((power) => {
+      let convertedPower;
+      if (typeof power !== "string") {
+        let rating;
+        if ("_rating" in power && power._rating !== undefined) {
+          rating = parseInt(power._rating);
+          assert(!isNaN(rating));
+        }
+        convertedPower = {
+          name: power.xmltext,
+          ...("_select" in power &&
+            power._select !== undefined && { select: power._select }),
+          ...(rating !== undefined && { rating: rating }),
+        };
+      } else {
+        convertedPower = { name: power };
+      }
+      return convertedPower;
+    });
+
+    powerOption.addCritterPowerList = convertedPowerList;
   }
   if ("critterpowerlevels" in bonus && bonus.critterpowerlevels !== undefined) {
     checkProp("critterpowerlevels");
+    const critterPowerList = Array.isArray(bonus.critterpowerlevels.power)
+      ? bonus.critterpowerlevels.power
+      : [bonus.critterpowerlevels.power];
+    const convertedPowerList = critterPowerList.map((power) => {
+      return {
+        name: power.name,
+        rating: power.val,
+      };
+    });
+    if (powerOption.addCritterPowerList !== undefined) {
+      powerOption.addCritterPowerList =
+        powerOption.addCritterPowerList.concat(convertedPowerList);
+    } else {
+      powerOption.addCritterPowerList = convertedPowerList;
+    }
   }
   if (
     "limitcritterpowercategory" in bonus &&
     bonus.limitcritterpowercategory !== undefined
   ) {
     checkProp("limitcritterpowercategory");
+    powerOption.unlockCritterPowerCategory = bonus.limitcritterpowercategory;
   }
 
   // Spell and Magic Bonuses
   // --------------------------------------------------------------------------------------------
   if ("addspell" in bonus && bonus.addspell !== undefined) {
     checkProp("addspell");
+    spellAndMagicOption.addSpell = {
+      name: bonus.addspell.xmltext,
+      ...(bonus.addspell._alchemical === "True" && { alchemical: true }),
+    };
+  }
+  if ("freespells" in bonus && bonus.freespells !== undefined) {
+    checkProp("freespells");
+    const freeSpell = bonus.freespells;
+    let freeSpellBonus;
+    if ("_attribute" in freeSpell) {
+      assert(freeSpell._limit === "half,touchonly");
+      freeSpellBonus = {
+        linkType: {
+          attributeLinked: convertAttribute(
+            freeSpell._attribute as attributeXMLEnum
+          ),
+        },
+        freeSpellRate: freeSpellRateEnum.Half,
+        spellRange: spellPowerRangeEnum.Touch,
+      };
+    } else {
+      freeSpellBonus = {
+        linkType: { skillLinked: freeSpell._skill },
+        freeSpellRate: freeSpellRateEnum.Full,
+      };
+    }
+    spellAndMagicOption.freeSpellOngoingBonus = freeSpellBonus;
   }
   if ("selectspell" in bonus) {
     checkProp("selectspell");
@@ -1305,17 +1431,14 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       };
     }
   }
-  if ("freespells" in bonus && bonus.freespells !== undefined) {
-    checkProp("freespells");
-  }
   if ("spellcategory" in bonus && bonus.spellcategory !== undefined) {
     checkProp("spellcategory");
-    const spellCategoryList = Array.isArray(bonus.spellcategory)
+    const spellCategoryXmlList = Array.isArray(bonus.spellcategory)
       ? bonus.spellcategory
       : [bonus.spellcategory];
-    assert(spellCategoryList.length > 0);
-    spellAndMagicOption.spellCategoryList = [];
-    for (const spellCategory of spellCategoryList) {
+    assert(spellCategoryXmlList.length > 0);
+    const spellCategoryList = [];
+    for (const spellCategory of spellCategoryXmlList) {
       let category, value;
       if (spellCategory.name === undefined) {
         // TODO: better way to do this?
@@ -1330,96 +1453,425 @@ export function convertXmlBonus(bonus: BonusXmlType) {
           option: "Rating" as const,
         };
       }
-      spellAndMagicOption.spellCategoryList.push({
+      spellCategoryList.push({
         category: category,
         bonus: value,
       });
     }
+    if (spellAndMagicOption.spellModifiers === undefined) {
+      spellAndMagicOption.spellModifiers = {
+        spellBonusDice: [
+          {
+            spellCategoryList: spellCategoryList,
+          },
+        ],
+      };
+    } else {
+      if (spellAndMagicOption.spellModifiers.spellBonusDice === undefined) {
+        spellAndMagicOption.spellModifiers.spellBonusDice = [
+          {
+            spellCategoryList: spellCategoryList,
+          },
+        ];
+      } else {
+        spellAndMagicOption.spellModifiers.spellBonusDice.push({
+          spellCategoryList: spellCategoryList,
+        });
+      }
+    }
   }
   if ("allowspellcategory" in bonus && bonus.allowspellcategory !== undefined) {
     checkProp("allowspellcategory");
-    spellAndMagicOption.allowSpellCategory = spellCategoryConversion(
+    const allowSpellCategory = spellCategoryConversion(
       bonus.allowspellcategory
     );
+    if (spellAndMagicOption.unlockSpellList === undefined) {
+      spellAndMagicOption.unlockSpellList = [
+        {
+          allowSpellCategory: allowSpellCategory,
+        },
+      ];
+    } else {
+      spellAndMagicOption.unlockSpellList.push({
+        allowSpellCategory: allowSpellCategory,
+      });
+    }
   }
   if ("spelldicepool" in bonus && bonus.spelldicepool !== undefined) {
     checkProp("spelldicepool");
+    const spellDicePoolList = Array.isArray(bonus.spelldicepool)
+      ? bonus.spelldicepool
+      : [bonus.spelldicepool];
+    const additionalDiceForSpellList = spellDicePoolList.map((spell) => {
+      assert(Object.keys(spell).length === 2);
+
+      let name;
+      if ("id" in spell) {
+        const currentPath = import.meta.url;
+        const xml_string = fs.readFileSync(
+          fileURLToPath(
+            path.dirname(currentPath) + "../../../../xmls/spells.xml"
+          ),
+          "utf8"
+        );
+        const parser = new XMLParser({
+          ignoreAttributes: false,
+          attributeNamePrefix: "_",
+          textNodeName: "xmltext",
+        });
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
+        const jObj: any = parser.parse(xml_string);
+        // console.log(
+        //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        //   jObj.chummer.spells.spell[337].required
+        // );
+
+        const spellListParsed = SpellListXmlSchema(
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+          jObj.chummer.spells.spell
+        );
+
+        if (spellListParsed instanceof type.errors) {
+          console.log(spellListParsed.summary);
+          assert(false);
+        }
+        name = spellListParsed.find((fullSpell) => {
+          return spell.id === fullSpell.id;
+        })?.name;
+      } else {
+        name = spell.name;
+      }
+
+      assert(name !== undefined, JSON.stringify(spell));
+      assert(spell.val !== undefined);
+      assert(typeof spell.val === "number");
+      return {
+        name: name,
+        bonus: spell.val,
+      };
+    });
+    if (spellAndMagicOption.spellModifiers === undefined) {
+      spellAndMagicOption.spellModifiers = {
+        spellBonusDice: [{ specificSpell: additionalDiceForSpellList }],
+      };
+    } else {
+      if (spellAndMagicOption.spellModifiers.spellBonusDice === undefined) {
+        spellAndMagicOption.spellModifiers.spellBonusDice = [
+          { specificSpell: additionalDiceForSpellList },
+        ];
+      } else {
+        spellAndMagicOption.spellModifiers.spellBonusDice.push({
+          specificSpell: additionalDiceForSpellList,
+        });
+      }
+    }
   }
   if (
     "blockspelldescriptor" in bonus &&
     bonus.blockspelldescriptor !== undefined
   ) {
     checkProp("blockspelldescriptor");
+    spellAndMagicOption.blockSpellDescriptorList = convertSpellDescriptors(
+      bonus.blockspelldescriptor
+    );
   }
   if (
     "spelldescriptordamage" in bonus &&
     bonus.spelldescriptordamage !== undefined
   ) {
     checkProp("spelldescriptordamage");
-  }
-  if (
-    "spelldescriptordrain" in bonus &&
-    bonus.spelldescriptordrain !== undefined
-  ) {
-    checkProp("spelldescriptordrain");
+    const spellBonusDamage = {
+      spellDescriptor: {
+        spellDescriptorListRequired: convertSpellDescriptors(
+          bonus.spelldescriptordamage.descriptor
+        ),
+        bonusDamage: bonus.spelldescriptordamage.val,
+      },
+    };
+    if (spellAndMagicOption.spellModifiers === undefined) {
+      spellAndMagicOption.spellModifiers = {
+        spellBonusDamage: spellBonusDamage,
+      };
+    } else {
+      if (spellAndMagicOption.spellModifiers.spellBonusDamage === undefined) {
+        spellAndMagicOption.spellModifiers.spellBonusDamage = spellBonusDamage;
+      } else {
+        spellAndMagicOption.spellModifiers.spellBonusDamage.spellDescriptor =
+          spellBonusDamage.spellDescriptor;
+      }
+    }
   }
   if (
     "spellcategorydamage" in bonus &&
     bonus.spellcategorydamage !== undefined
   ) {
     checkProp("spellcategorydamage");
+    const spellBonusDamage = {
+      spellCategory: {
+        spellCategoryRequired: convertSpellCategory(
+          bonus.spellcategorydamage.category
+        ),
+        bonusDamage: bonus.spellcategorydamage.val,
+      },
+    };
+    if (spellAndMagicOption.spellModifiers === undefined) {
+      spellAndMagicOption.spellModifiers = {
+        spellBonusDamage: spellBonusDamage,
+      };
+    } else {
+      if (spellAndMagicOption.spellModifiers.spellBonusDamage === undefined) {
+        spellAndMagicOption.spellModifiers.spellBonusDamage = spellBonusDamage;
+      } else {
+        spellAndMagicOption.spellModifiers.spellBonusDamage.spellCategory =
+          spellBonusDamage.spellCategory;
+      }
+    }
+  }
+  if (
+    "spelldescriptordrain" in bonus &&
+    bonus.spelldescriptordrain !== undefined
+  ) {
+    checkProp("spelldescriptordrain");
+    const spellDescriptorDrain = {
+      spellDescriptorListRequired: convertSpellDescriptors(
+        bonus.spelldescriptordrain.descriptor
+      ),
+      extraDrain: bonus.spelldescriptordrain.val,
+    };
+    if (spellAndMagicOption.spellModifiers === undefined) {
+      spellAndMagicOption.spellModifiers = {
+        spellExtraDrain: { spellDescriptor: spellDescriptorDrain },
+      };
+    } else {
+      if (spellAndMagicOption.spellModifiers.spellExtraDrain === undefined) {
+        spellAndMagicOption.spellModifiers.spellExtraDrain = {
+          spellDescriptor: spellDescriptorDrain,
+        };
+      } else {
+        spellAndMagicOption.spellModifiers.spellExtraDrain.spellDescriptor =
+          spellDescriptorDrain;
+      }
+    }
   }
   if ("spellcategorydrain" in bonus && bonus.spellcategorydrain !== undefined) {
     checkProp("spellcategorydrain");
+    const spellXmlCategory = bonus.spellcategorydrain.category;
+    let spellCategory;
+    if (spellXmlCategory === undefined) {
+      assert(bonus.limitspellcategory !== undefined);
+      spellCategory = "MatchLimitSpellCategory" as const;
+    } else {
+      spellCategory = convertSpellCategory(spellXmlCategory);
+    }
+    const spellCategoryDrain = {
+      spellCategoryRequired: spellCategory,
+      extraDrain: bonus.spellcategorydrain.val,
+    };
+
+    if (spellAndMagicOption.spellModifiers === undefined) {
+      spellAndMagicOption.spellModifiers = {
+        spellExtraDrain: { spellCategory: spellCategoryDrain },
+      };
+    } else {
+      if (spellAndMagicOption.spellModifiers.spellExtraDrain === undefined) {
+        spellAndMagicOption.spellModifiers.spellExtraDrain = {
+          spellCategory: spellCategoryDrain,
+        };
+      } else {
+        spellAndMagicOption.spellModifiers.spellExtraDrain.spellCategory =
+          spellCategoryDrain;
+      }
+    }
   }
   if ("limitspellcategory" in bonus && bonus.limitspellcategory !== undefined) {
     checkProp("limitspellcategory");
+    let limitSpellCategoryFullList;
+    const limitSpellCategory = bonus.limitspellcategory;
+    if (
+      typeof limitSpellCategory === "object" &&
+      !Array.isArray(limitSpellCategory)
+    ) {
+      limitSpellCategoryFullList = [
+        {
+          selectCategory: true as const,
+        },
+        {
+          category: convertSpellCategory(limitSpellCategory._exclude),
+        },
+      ];
+    } else {
+      if (Array.isArray(limitSpellCategory)) {
+        limitSpellCategoryFullList = limitSpellCategory.map((category) => {
+          return {
+            category: convertSpellCategory(category),
+          };
+        });
+      } else {
+        limitSpellCategoryFullList =
+          limitSpellCategory === ""
+            ? [{ selectCategory: true as const }]
+            : [{ category: convertSpellCategory(limitSpellCategory) }];
+      }
+    }
+    spellAndMagicOption.limitSpellOptionsToCategoryList =
+      limitSpellCategoryFullList;
   }
   if ("addmetamagic" in bonus && bonus.addmetamagic !== undefined) {
     checkProp("addmetamagic");
+    const metamagicXmlList = Array.isArray(bonus.addmetamagic)
+      ? bonus.addmetamagic
+      : [bonus.addmetamagic];
+    const metamagicList = metamagicXmlList.map((metamagic) => {
+      return metamagic.xmltext;
+    });
+    if (spellAndMagicOption.addMetamagicList === undefined) {
+      spellAndMagicOption.addMetamagicList = metamagicList;
+    } else {
+      spellAndMagicOption.addMetamagicList =
+        spellAndMagicOption.addMetamagicList.concat(metamagicList);
+    }
   }
   if ("metamagiclimit" in bonus && bonus.metamagiclimit !== undefined) {
     checkProp("metamagiclimit");
-  }
-  if (
-    "quickeningmetamagic" in bonus &&
-    bonus.quickeningmetamagic !== undefined
-  ) {
-    checkProp("quickeningmetamagic");
+    spellAndMagicOption.metamagicChoiceOrderRestriction =
+      bonus.metamagiclimit.metamagic.map((metamagic) => {
+        const grade = parseInt(metamagic._grade);
+        assert(!isNaN(grade));
+        return {
+          metamagic: metamagic.xmltext,
+          initiationOrder: grade,
+        };
+      });
   }
   if ("penaltyfreesustain" in bonus && bonus.penaltyfreesustain !== undefined) {
     checkProp("penaltyfreesustain");
+    spellAndMagicOption.penaltyFreeSustainCount = convertRatingCalculation(
+      bonus.penaltyfreesustain.count
+    );
   }
   if ("allowspellrange" in bonus && bonus.allowspellrange !== undefined) {
     checkProp("allowspellrange");
+    const allowSpellRangeXmlList = Array.isArray(bonus.allowspellrange)
+      ? bonus.allowspellrange
+      : [bonus.allowspellrange];
+    const allowSpellRangeList = allowSpellRangeXmlList.map(
+      (allowSpellRange) => {
+        return convertSpellPowerRange(
+          allowSpellRange as SpellPowerXmlRangeType
+        );
+      }
+    );
+    if (spellAndMagicOption.unlockSpellList === undefined) {
+      spellAndMagicOption.unlockSpellList = [
+        { allowSpellRangeList: allowSpellRangeList },
+      ];
+    } else {
+      spellAndMagicOption.unlockSpellList.push({
+        allowSpellRangeList: allowSpellRangeList,
+      });
+    }
   }
   if ("newspellkarmacost" in bonus && bonus.newspellkarmacost !== undefined) {
     checkProp("newspellkarmacost");
+    let spellType;
+    switch (bonus.newspellkarmacost._type) {
+      case "Spells":
+        spellType = magicalFormulaeCategoryEnum.Spell;
+        break;
+      case "Rituals":
+        spellType = magicalFormulaeCategoryEnum.Ritual;
+        break;
+      case "Alchemical":
+        spellType = magicalFormulaeCategoryEnum.AlchemicalPreparation;
+        break;
+      default:
+        assert(false, bonus.newspellkarmacost._type);
+    }
+    spellAndMagicOption.newSpellKarmaCostModification = {
+      spellType: spellType,
+      modifier: bonus.newspellkarmacost.xmltext,
+    };
   }
   if (
     "focusbindingkarmacost" in bonus &&
     bonus.focusbindingkarmacost !== undefined
   ) {
     checkProp("focusbindingkarmacost");
+    const focusKarmaCostArray = Array.isArray(bonus.focusbindingkarmacost)
+      ? bonus.focusbindingkarmacost
+      : [bonus.focusbindingkarmacost];
+    spellAndMagicOption.focusBindingKarmaCostModificationList =
+      focusKarmaCostArray.map((karmaCost) => {
+        const wordList = karmaCost.name.split(" ");
+        assert(wordList.length >= 2, karmaCost.name);
+        const focusType = wordList[0];
+        assert(
+          Object.values(focusTypeEnum).includes(focusType as focusTypeEnum),
+          focusType
+        );
+        return {
+          focusType: focusType as focusTypeEnum,
+          modifier: karmaCost.val,
+          ...(karmaCost.extracontains !== undefined && {
+            focusSubtypeText: karmaCost.extracontains,
+          }),
+        };
+      });
   }
   if ("drainvalue" in bonus && bonus.drainvalue !== undefined) {
     checkProp("drainvalue");
-  }
-  if ("fadingvalue" in bonus && bonus.fadingvalue !== undefined) {
-    checkProp("fadingvalue");
+    spellAndMagicOption.drainModification = bonus.drainvalue;
   }
   if ("addspirit" in bonus && bonus.addspirit !== undefined) {
     checkProp("addspirit");
-    // const addSpirits = Array.isArray(bonus.addspirit)
-    // ? bonus.addspirit
-    // : [bonus.addspirit];
-    //TODO: handle
+    const addSpirits = Array.isArray(bonus.addspirit)
+      ? bonus.addspirit
+      : [bonus.addspirit];
+    assert(addSpirits.length > 0);
+    spellAndMagicOption.addSpiritOptionList = [];
+    addSpirits.forEach((spirit) => {
+      let newSpiritList;
+      if (typeof spirit === "string") {
+        assert(spirit === "", JSON.stringify(spirit));
+        newSpiritList = [
+          {
+            selectSpirit: true as const,
+          },
+        ];
+      } else if (Array.isArray(spirit.spirit)) {
+        newSpiritList = spirit.spirit.map((spiritName) => {
+          return {
+            name: spiritName,
+          };
+        });
+      } else {
+        newSpiritList = [
+          {
+            name: spirit.spirit,
+          },
+        ];
+      }
+      spellAndMagicOption.addSpiritOptionList = newSpiritList;
+    });
   }
   if (
     "limitspiritcategory" in bonus &&
     bonus.limitspiritcategory !== undefined
   ) {
     checkProp("limitspiritcategory");
+    const limitSpiritCategoryList = Array.isArray(bonus.limitspiritcategory)
+      ? bonus.limitspiritcategory
+      : [bonus.limitspiritcategory];
+
+    spellAndMagicOption.limitSpiritOptionsToList = limitSpiritCategoryList.map(
+      (category) => {
+        return category === ""
+          ? { selectCategory: true as const }
+          : typeof category === "object"
+          ? { spirit: category.spirit }
+          : { category: convertSpellCategory(category) };
+      }
+    );
   }
   if ("selectmentorspirit" in bonus && bonus.selectmentorspirit !== undefined) {
     checkProp("selectmentorspirit");
@@ -1435,44 +1887,72 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     assert(linkTradition === "");
     spellAndMagicOption.linkTradition = true;
   }
-
-  // Technomancer and Matrix
-  // --------------------------------------------------------------------------------------------
-  if (
-    "allowspritefettering" in bonus &&
-    bonus.allowspritefettering !== undefined
-  ) {
-    checkProp("allowspritefettering");
+  if ("fadingvalue" in bonus && bonus.fadingvalue !== undefined) {
+    checkProp("fadingvalue");
+    if (typeof bonus.fadingvalue === "number") {
+      spellAndMagicOption.fadingModificationList = [
+        {
+          modifier: bonus.fadingvalue,
+        },
+      ];
+    } else {
+      spellAndMagicOption.fadingModificationList = bonus.fadingvalue.map(
+        (fading) => {
+          return {
+            modifier: fading.xmltext,
+            specificComplexForm: fading._specific,
+          };
+        }
+      );
+    }
   }
   if ("selectsprite" in bonus && bonus.selectsprite !== undefined) {
     checkProp("selectsprite");
     assert(bonus.selectsprite === "");
-    assert(technomancerOption.linkSprite === undefined);
-    technomancerOption.linkSprite = true;
+    assert(spellAndMagicOption.linkSprite === undefined);
+    spellAndMagicOption.linkSprite = true;
   }
   if ("selectparagon" in bonus && bonus.selectparagon !== undefined) {
     checkProp("selectparagon");
     assert(bonus.selectparagon === "");
-    assert(technomancerOption.linkParagon === undefined);
-    technomancerOption.linkParagon = true;
+    assert(spellAndMagicOption.linkParagon === undefined);
+    spellAndMagicOption.linkParagon = true;
   }
   if ("addecho" in bonus && bonus.addecho !== undefined) {
     checkProp("addecho");
+    spellAndMagicOption.addEcho = bonus.addecho;
   }
   if ("livingpersona" in bonus && bonus.livingpersona !== undefined) {
     checkProp("livingpersona");
+    spellAndMagicOption.livingPersonaModification = {
+      ...(bonus.livingpersona.attack !== undefined && {
+        attack: bonus.livingpersona.attack,
+      }),
+      ...(bonus.livingpersona.dataprocessing !== undefined && {
+        dataProcessing: bonus.livingpersona.dataprocessing,
+      }),
+      ...(bonus.livingpersona.firewall !== undefined && {
+        firewall: bonus.livingpersona.firewall,
+      }),
+      ...(bonus.livingpersona.sleaze !== undefined && {
+        sleaze: bonus.livingpersona.sleaze,
+      }),
+    };
   }
   if (
     "specialattburnmultiplier" in bonus &&
     bonus.specialattburnmultiplier !== undefined
   ) {
     checkProp("specialattburnmultiplier");
+    spellAndMagicOption.resonanceLossDueToAugmentationModificationPercentageIncrease =
+      bonus.specialattburnmultiplier;
   }
 
   // Combat and Weapon Bonuses
   // --------------------------------------------------------------------------------------------
   if ("addweapon" in bonus && bonus.addweapon !== undefined) {
     checkProp("addweapon");
+    combatAndWeaponOption.addWeapon = { name: bonus.addweapon.name };
   }
   if ("selectweapon" in bonus && bonus.selectweapon !== undefined) {
     checkProp("selectweapon");
@@ -1482,7 +1962,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       assert(linkWeapon === "");
       combatAndWeaponOption.linkWeapon = { restrictions: false };
     } else {
-      // TODO: handle weapondetails... :(
+      // TODO: maybe combine with addWeapon??
 
       const match = WeaponDetails.match(linkWeapon._weapondetails.toString());
       if (match.failed()) {
@@ -1491,12 +1971,16 @@ export function convertXmlBonus(bonus: BonusXmlType) {
 
       combatAndWeaponOption.linkWeapon = {
         restrictions: true,
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
         weaponRequirements: bonusWeaponDetailsSemantics(match).eval(),
       };
     }
   }
   if ("naturalweapon" in bonus && bonus.naturalweapon !== undefined) {
     checkProp("naturalweapon");
+    combatAndWeaponOption.addWeapon = {
+      naturalWeapon: convertNaturalWeapon(bonus.naturalweapon),
+    };
   }
   if ("weaponspecificdice" in bonus && bonus.weaponspecificdice !== undefined) {
     checkProp("weaponspecificdice");
@@ -1504,16 +1988,22 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       bonus.weaponspecificdice.xmltext === "Rating"
         ? { option: bonus.weaponspecificdice.xmltext }
         : bonus.weaponspecificdice.xmltext;
-    combatAndWeaponOption.specificWeapon = {
-      bonus: specificWeaponBonus,
+    if (combatAndWeaponOption.attackModifiers === undefined) {
+      combatAndWeaponOption.attackModifiers = {};
+    }
+    combatAndWeaponOption.attackModifiers.specificWeaponDicePoolModifier = {
+      modifier: specificWeaponBonus,
       weaponType: weaponTypeConversion(bonus.weaponspecificdice._type),
     };
   }
   if ("weaponaccuracy" in bonus && bonus.weaponaccuracy !== undefined) {
     checkProp("weaponaccuracy");
-    combatAndWeaponOption.weaponAccuracy = {
+    if (combatAndWeaponOption.attackModifiers === undefined) {
+      combatAndWeaponOption.attackModifiers = {};
+    }
+    combatAndWeaponOption.attackModifiers.weaponLimitModifier = {
       weapon: bonus.weaponaccuracy.name,
-      bonus: bonus.weaponaccuracy.value,
+      modifier: bonus.weaponaccuracy.value,
     };
   }
   if (
@@ -1536,7 +2026,11 @@ export function convertXmlBonus(bonus: BonusXmlType) {
         bonus: weaponSkillAccuracyXMLList.value,
       });
     }
-    combatAndWeaponOption.weaponSkillAccuracyList = weaponSkillAccuracyList;
+    if (combatAndWeaponOption.attackModifiers === undefined) {
+      combatAndWeaponOption.attackModifiers = {};
+    }
+    combatAndWeaponOption.attackModifiers.weaponSkillAccuracyList =
+      weaponSkillAccuracyList;
   }
   if ("weaponcategorydv" in bonus && bonus.weaponcategorydv !== undefined) {
     checkProp("weaponcategorydv");
@@ -1552,23 +2046,46 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     assert(linkSkill.applytorating === undefined, linkSkill.applytorating);
     assert(linkSkill.max === undefined, `${linkSkill.max}`);
     assert(linkSkill.val === undefined, `${linkSkill.val}`);
-    combatAndWeaponOption.weaponSkillDamage = {
+    if (combatAndWeaponOption.damageValueModifiers === undefined) {
+      combatAndWeaponOption.damageValueModifiers = {};
+    }
+    combatAndWeaponOption.damageValueModifiers.weaponSkillDamage = {
       selectionOptions: selectSkillBase,
       bonus: bonus.weaponcategorydv.bonus,
     };
   }
   if ("weaponcategorydice" in bonus && bonus.weaponcategorydice !== undefined) {
     checkProp("weaponcategorydice");
+    if (combatAndWeaponOption.attackModifiers === undefined) {
+      combatAndWeaponOption.attackModifiers = {};
+    }
+    combatAndWeaponOption.attackModifiers.weaponCategoryDicePoolModifier = {
+      category: bonus.weaponcategorydice.category.name,
+      modifier: bonus.weaponcategorydice.category.value,
+    };
   }
   if ("throwstr" in bonus && bonus.throwstr !== undefined) {
     checkProp("throwstr");
+    if (combatAndWeaponOption.damageValueModifiers === undefined) {
+      combatAndWeaponOption.damageValueModifiers = {};
+    }
+    combatAndWeaponOption.damageValueModifiers.thrownWeaponModifier =
+      bonus.throwstr;
   }
   if ("throwrangestr" in bonus && bonus.throwrangestr !== undefined) {
     checkProp("throwrangestr");
+    if (combatAndWeaponOption.rangeModifiers === undefined) {
+      combatAndWeaponOption.rangeModifiers = {};
+    }
+    combatAndWeaponOption.rangeModifiers.thrownWeaponRangeModifier =
+      convertRatingCalculation(bonus.throwrangestr.toString());
   }
   if ("smartlink" in bonus && bonus.smartlink !== undefined) {
     checkProp("smartlink");
-    combatAndWeaponOption.smartlinkAccuracy = bonus.smartlink;
+    if (combatAndWeaponOption.attackModifiers === undefined) {
+      combatAndWeaponOption.attackModifiers = {};
+    }
+    combatAndWeaponOption.attackModifiers.smartLinkModifier = bonus.smartlink;
   }
   if ("selectarmor" in bonus && bonus.selectarmor !== undefined) {
     checkProp("selectarmor");
@@ -1586,7 +2103,10 @@ export function convertXmlBonus(bonus: BonusXmlType) {
         ? bonus.armor.xmltext
         : { option: bonus.armor.xmltext };
 
-    combatAndWeaponOption.armour = {
+    if (combatAndWeaponOption.armourModifiers === undefined) {
+      combatAndWeaponOption.armourModifiers = {};
+    }
+    combatAndWeaponOption.armourModifiers.armour = {
       bonus: armour,
       ...(typeof bonus.armor === "object" && { nonStacking: true }),
     };
@@ -1597,7 +2117,10 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       typeof bonus.firearmor === "number"
         ? bonus.firearmor
         : { option: bonus.firearmor };
-    combatAndWeaponOption.fireArmour = fireArmour;
+    if (combatAndWeaponOption.armourModifiers === undefined) {
+      combatAndWeaponOption.armourModifiers = {};
+    }
+    combatAndWeaponOption.armourModifiers.fireArmour = fireArmour;
   }
   if ("electricityarmor" in bonus && bonus.electricityarmor !== undefined) {
     checkProp("electricityarmor");
@@ -1605,7 +2128,10 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       typeof bonus.electricityarmor === "number"
         ? bonus.electricityarmor
         : { option: bonus.electricityarmor };
-    combatAndWeaponOption.electricityArmour = electricityArmour;
+    if (combatAndWeaponOption.armourModifiers === undefined) {
+      combatAndWeaponOption.armourModifiers = {};
+    }
+    combatAndWeaponOption.armourModifiers.electricityArmour = electricityArmour;
   }
   if ("coldarmor" in bonus && bonus.coldarmor !== undefined) {
     checkProp("coldarmor");
@@ -1613,17 +2139,29 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       typeof bonus.coldarmor === "number"
         ? bonus.coldarmor
         : { option: bonus.coldarmor };
-    combatAndWeaponOption.coldArmour = coldArmour;
+    if (combatAndWeaponOption.armourModifiers === undefined) {
+      combatAndWeaponOption.armourModifiers = {};
+    }
+    combatAndWeaponOption.armourModifiers.coldArmour = coldArmour;
   }
   if ("defensetest" in bonus && bonus.defensetest !== undefined) {
     checkProp("defensetest");
+    combatAndWeaponOption.defenseTestModifier = [bonus.defensetest];
   }
   if ("dodge" in bonus && bonus.dodge !== undefined) {
     checkProp("dodge");
-    combatAndWeaponOption.dodge = convertRatingUnion(bonus.dodge);
+    assert(bonus.defensetest === undefined);
+    combatAndWeaponOption.defenseTestModifier = [
+      convertRatingUnion(bonus.dodge),
+    ];
   }
   if ("unarmeddv" in bonus && bonus.unarmeddv !== undefined) {
     checkProp("unarmeddv");
+    if (combatAndWeaponOption.damageValueModifiers === undefined) {
+      combatAndWeaponOption.damageValueModifiers = {};
+    }
+    combatAndWeaponOption.damageValueModifiers.unarmedModifier =
+      convertRatingCalculation(bonus.unarmeddv);
   }
   if ("unarmeddvphysical" in bonus && bonus.unarmeddvphysical !== undefined) {
     checkProp("unarmeddvphysical");
@@ -1631,16 +2169,42 @@ export function convertXmlBonus(bonus: BonusXmlType) {
   }
   if ("unarmedap" in bonus && bonus.unarmedap !== undefined) {
     checkProp("unarmedap");
+    if (combatAndWeaponOption.attackModifiers === undefined) {
+      combatAndWeaponOption.attackModifiers = {};
+    }
+    combatAndWeaponOption.attackModifiers.unarmedModifier =
+      convertRatingCalculation(bonus.unarmedap);
   }
   if ("unarmedreach" in bonus && bonus.unarmedreach !== undefined) {
     checkProp("unarmedreach");
-    combatAndWeaponOption.unarmedReach = bonus.unarmedreach;
+    if (combatAndWeaponOption.rangeModifiers === undefined) {
+      combatAndWeaponOption.rangeModifiers = {};
+    }
+    combatAndWeaponOption.rangeModifiers.unarmedReach = bonus.unarmedreach;
   }
   if ("reach" in bonus && bonus.reach !== undefined) {
     checkProp("reach");
+    if (combatAndWeaponOption.rangeModifiers === undefined) {
+      combatAndWeaponOption.rangeModifiers = {};
+    }
+    let reach;
+    if (typeof bonus.reach === "number") {
+      reach = { modifier: bonus.reach };
+    } else {
+      assert(
+        Object.keys(bonus.reach).length === 2,
+        JSON.stringify(bonus.reach)
+      );
+      assert("_name" in bonus.reach);
+      assert("xmltext" in bonus.reach);
+      assert(typeof bonus.reach.xmltext === "number");
+      reach = { weaponName: bonus.reach._name, modifier: bonus.reach.xmltext };
+    }
+    combatAndWeaponOption.rangeModifiers.reach = reach;
   }
   if ("martialart" in bonus && bonus.martialart !== undefined) {
     checkProp("martialart");
+    combatAndWeaponOption.addMartialArt = bonus.martialart;
   }
   if ("damageresistance" in bonus && bonus.damageresistance !== undefined) {
     checkProp("damageresistance");
@@ -1648,7 +2212,11 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       typeof bonus.damageresistance === "number"
         ? bonus.damageresistance
         : { option: bonus.damageresistance };
-    combatAndWeaponOption.damageResistance = damageResistance;
+    if (combatAndWeaponOption.damageResistanceModifiers === undefined) {
+      combatAndWeaponOption.damageResistanceModifiers = {};
+    }
+    combatAndWeaponOption.damageResistanceModifiers.damageResistance =
+      damageResistance;
   }
   if ("radiationresist" in bonus && bonus.radiationresist !== undefined) {
     checkProp("radiationresist");
@@ -1656,7 +2224,11 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       typeof bonus.radiationresist === "number"
         ? bonus.radiationresist
         : { option: bonus.radiationresist };
-    combatAndWeaponOption.radiationResistance = radiationResistance;
+    if (combatAndWeaponOption.damageResistanceModifiers === undefined) {
+      combatAndWeaponOption.damageResistanceModifiers = {};
+    }
+    combatAndWeaponOption.damageResistanceModifiers.radiationResistance =
+      radiationResistance;
   }
   if ("sonicresist" in bonus && bonus.sonicresist !== undefined) {
     checkProp("sonicresist");
@@ -1664,7 +2236,11 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       typeof bonus.sonicresist === "number"
         ? bonus.sonicresist
         : { option: bonus.sonicresist };
-    combatAndWeaponOption.sonicResistance = sonicResistance;
+    if (combatAndWeaponOption.damageResistanceModifiers === undefined) {
+      combatAndWeaponOption.damageResistanceModifiers = {};
+    }
+    combatAndWeaponOption.damageResistanceModifiers.sonicResistance =
+      sonicResistance;
   }
   if ("toxincontactresist" in bonus && bonus.toxincontactresist !== undefined) {
     checkProp("toxincontactresist");
@@ -1672,7 +2248,11 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       typeof bonus.toxincontactresist === "number"
         ? bonus.toxincontactresist
         : { option: bonus.toxincontactresist };
-    combatAndWeaponOption.toxinContactResist = toxinContactResist;
+    if (combatAndWeaponOption.toxinAndPathogen === undefined) {
+      combatAndWeaponOption.toxinAndPathogen = {};
+    }
+    combatAndWeaponOption.toxinAndPathogen.toxinContactResist =
+      toxinContactResist;
   }
   if (
     "pathogencontactresist" in bonus &&
@@ -1683,126 +2263,178 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       typeof bonus.pathogencontactresist === "number"
         ? bonus.pathogencontactresist
         : { option: bonus.pathogencontactresist };
-    combatAndWeaponOption.pathogenContactResist = pathogenContactResist;
+    if (combatAndWeaponOption.toxinAndPathogen === undefined) {
+      combatAndWeaponOption.toxinAndPathogen = {};
+    }
+    combatAndWeaponOption.toxinAndPathogen.pathogenContactResist =
+      pathogenContactResist;
   }
   if ("toxincontactimmune" in bonus && bonus.toxincontactimmune !== undefined) {
     checkProp("toxincontactimmune");
-    combatAndWeaponOption.toxinContactImmune = true;
+    if (combatAndWeaponOption.toxinAndPathogen === undefined) {
+      combatAndWeaponOption.toxinAndPathogen = {};
+    }
+    combatAndWeaponOption.toxinAndPathogen.toxinContactImmune = true;
   }
   if (
     "pathogencontactimmune" in bonus &&
     bonus.pathogencontactimmune !== undefined
   ) {
     checkProp("pathogencontactimmune");
-    combatAndWeaponOption.pathogenContactImmune = true;
+    if (combatAndWeaponOption.toxinAndPathogen === undefined) {
+      combatAndWeaponOption.toxinAndPathogen = {};
+    }
+    combatAndWeaponOption.toxinAndPathogen.pathogenContactImmune = true;
   }
   if (
     "toxininhalationresist" in bonus &&
     bonus.toxininhalationresist !== undefined
   ) {
     checkProp("toxininhalationresist");
+    if (combatAndWeaponOption.toxinAndPathogen === undefined) {
+      combatAndWeaponOption.toxinAndPathogen = {};
+    }
     const toxinInhalationResist =
       typeof bonus.toxininhalationresist === "number"
         ? bonus.toxininhalationresist
         : { option: bonus.toxininhalationresist };
-    combatAndWeaponOption.toxinInhalationResist = toxinInhalationResist;
+    combatAndWeaponOption.toxinAndPathogen.toxinInhalationResist =
+      toxinInhalationResist;
   }
   if (
     "pathogeninhalationresist" in bonus &&
     bonus.pathogeninhalationresist !== undefined
   ) {
     checkProp("pathogeninhalationresist");
+    if (combatAndWeaponOption.toxinAndPathogen === undefined) {
+      combatAndWeaponOption.toxinAndPathogen = {};
+    }
     const pathogenInhalationResist =
       typeof bonus.pathogeninhalationresist === "number"
         ? bonus.pathogeninhalationresist
         : { option: bonus.pathogeninhalationresist };
-    combatAndWeaponOption.pathogenInhalationResist = pathogenInhalationResist;
+    combatAndWeaponOption.toxinAndPathogen.pathogenInhalationResist =
+      pathogenInhalationResist;
   }
   if (
     "toxininhalationimmune" in bonus &&
     bonus.toxininhalationimmune !== undefined
   ) {
     checkProp("toxininhalationimmune");
-    combatAndWeaponOption.toxinInhalationImmune = true;
+    if (combatAndWeaponOption.toxinAndPathogen === undefined) {
+      combatAndWeaponOption.toxinAndPathogen = {};
+    }
+    combatAndWeaponOption.toxinAndPathogen.toxinInhalationImmune = true;
   }
   if (
     "pathogeninhalationimmune" in bonus &&
     bonus.pathogeninhalationimmune !== undefined
   ) {
     checkProp("pathogeninhalationimmune");
-    combatAndWeaponOption.pathogenInhalationImmune = true;
+    if (combatAndWeaponOption.toxinAndPathogen === undefined) {
+      combatAndWeaponOption.toxinAndPathogen = {};
+    }
+    combatAndWeaponOption.toxinAndPathogen.pathogenInhalationImmune = true;
   }
   if (
     "toxiningestionresist" in bonus &&
     bonus.toxiningestionresist !== undefined
   ) {
     checkProp("toxiningestionresist");
+    if (combatAndWeaponOption.toxinAndPathogen === undefined) {
+      combatAndWeaponOption.toxinAndPathogen = {};
+    }
     const toxinIngestionResist =
       typeof bonus.toxiningestionresist === "number"
         ? bonus.toxiningestionresist
         : { option: bonus.toxiningestionresist };
-    combatAndWeaponOption.toxinIngestionResist = toxinIngestionResist;
+    combatAndWeaponOption.toxinAndPathogen.toxinIngestionResist =
+      toxinIngestionResist;
   }
   if (
     "pathogeningestionresist" in bonus &&
     bonus.pathogeningestionresist !== undefined
   ) {
     checkProp("pathogeningestionresist");
+    if (combatAndWeaponOption.toxinAndPathogen === undefined) {
+      combatAndWeaponOption.toxinAndPathogen = {};
+    }
     const pathogenIngestionResist =
       typeof bonus.pathogeningestionresist === "number"
         ? bonus.pathogeningestionresist
         : { option: bonus.pathogeningestionresist };
-    combatAndWeaponOption.pathogenIngestionResist = pathogenIngestionResist;
+    combatAndWeaponOption.toxinAndPathogen.pathogenIngestionResist =
+      pathogenIngestionResist;
   }
   if (
     "toxiningestionimmune" in bonus &&
     bonus.toxiningestionimmune !== undefined
   ) {
     checkProp("toxiningestionimmune");
-    combatAndWeaponOption.toxinIngestionImmune = true;
+    if (combatAndWeaponOption.toxinAndPathogen === undefined) {
+      combatAndWeaponOption.toxinAndPathogen = {};
+    }
+    combatAndWeaponOption.toxinAndPathogen.toxinIngestionImmune = true;
   }
   if (
     "pathogeningestionimmune" in bonus &&
     bonus.pathogeningestionimmune !== undefined
   ) {
     checkProp("pathogeningestionimmune");
-    combatAndWeaponOption.pathogenIngestionImmune = true;
+    if (combatAndWeaponOption.toxinAndPathogen === undefined) {
+      combatAndWeaponOption.toxinAndPathogen = {};
+    }
+    combatAndWeaponOption.toxinAndPathogen.pathogenIngestionImmune = true;
   }
   if (
     "toxininjectionresist" in bonus &&
     bonus.toxininjectionresist !== undefined
   ) {
     checkProp("toxininjectionresist");
+    if (combatAndWeaponOption.toxinAndPathogen === undefined) {
+      combatAndWeaponOption.toxinAndPathogen = {};
+    }
     const toxinInjectionResist =
       typeof bonus.toxininjectionresist === "number"
         ? bonus.toxininjectionresist
         : { option: bonus.toxininjectionresist };
-    combatAndWeaponOption.toxinInjectionResist = toxinInjectionResist;
+    combatAndWeaponOption.toxinAndPathogen.toxinInjectionResist =
+      toxinInjectionResist;
   }
   if (
     "pathogeninjectionresist" in bonus &&
     bonus.pathogeninjectionresist !== undefined
   ) {
     checkProp("pathogeninjectionresist");
+    if (combatAndWeaponOption.toxinAndPathogen === undefined) {
+      combatAndWeaponOption.toxinAndPathogen = {};
+    }
     const pathogenInjectionResist =
       typeof bonus.pathogeninjectionresist === "number"
         ? bonus.pathogeninjectionresist
         : { option: bonus.pathogeninjectionresist };
-    combatAndWeaponOption.pathogenInjectionResist = pathogenInjectionResist;
+    combatAndWeaponOption.toxinAndPathogen.pathogenInjectionResist =
+      pathogenInjectionResist;
   }
   if (
     "toxininjectionimmune" in bonus &&
     bonus.toxininjectionimmune !== undefined
   ) {
     checkProp("toxininjectionimmune");
-    combatAndWeaponOption.toxinInjectionImmune = true;
+    if (combatAndWeaponOption.toxinAndPathogen === undefined) {
+      combatAndWeaponOption.toxinAndPathogen = {};
+    }
+    combatAndWeaponOption.toxinAndPathogen.toxinInjectionImmune = true;
   }
   if (
     "pathogeninjectionimmune" in bonus &&
     bonus.pathogeninjectionimmune !== undefined
   ) {
     checkProp("pathogeninjectionimmune");
-    combatAndWeaponOption.pathogenInjectionImmune = true;
+    if (combatAndWeaponOption.toxinAndPathogen === undefined) {
+      combatAndWeaponOption.toxinAndPathogen = {};
+    }
+    combatAndWeaponOption.toxinAndPathogen.pathogenInjectionImmune = true;
   }
 
   // Condition and Recovery
@@ -1818,36 +2450,56 @@ export function convertXmlBonus(bonus: BonusXmlType) {
         typeof conditionMonitor.sharedthresholdoffset === "number"
           ? conditionMonitor.sharedthresholdoffset
           : { option: conditionMonitor.sharedthresholdoffset };
-      conditionAndRecoveryOption.ignoreConditionModifierNegativeEffects =
+      conditionAndRecoveryOption.conditionModifierNegativeEffectsOffsetShared =
         ignoreConditionModifierNegativeEffects;
     }
     if (
       "thresholdoffset" in conditionMonitor &&
       conditionMonitor.thresholdoffset !== undefined
     ) {
+      const ignoreConditionModifierNegativeEffects =
+        typeof conditionMonitor.thresholdoffset === "number"
+          ? conditionMonitor.thresholdoffset
+          : { option: conditionMonitor.thresholdoffset };
+      conditionAndRecoveryOption.conditionModifierNegativeEffectsOffsetPerTrack =
+        ignoreConditionModifierNegativeEffects;
     }
     if (
       "threshold" in conditionMonitor &&
       conditionMonitor.threshold !== undefined
     ) {
+      conditionAndRecoveryOption.conditionModifierBoxesPerLevelModifier =
+        conditionMonitor.threshold;
     }
     if (
       "physical" in conditionMonitor &&
       conditionMonitor.physical !== undefined
     ) {
       if (conditionMonitor.physical === "Rating") {
-        conditionAndRecoveryOption.addPhysicalBoxes = {
+        conditionAndRecoveryOption.addPhysicalTrackBoxes = {
           option: "Rating",
         };
       } else if (conditionMonitor.physical === "-Rating") {
-        conditionAndRecoveryOption.addPhysicalBoxes = {
+        conditionAndRecoveryOption.addPhysicalTrackBoxes = {
           option: "-Rating",
         };
       } else {
-        conditionAndRecoveryOption.addPhysicalBoxes = conditionMonitor.physical;
+        conditionAndRecoveryOption.addPhysicalTrackBoxes =
+          conditionMonitor.physical;
       }
     }
     if ("stun" in conditionMonitor && conditionMonitor.stun !== undefined) {
+      if (conditionMonitor.stun === "Rating") {
+        conditionAndRecoveryOption.addStunTrackBoxes = {
+          option: "Rating",
+        };
+      } else if (conditionMonitor.physical === "-Rating") {
+        conditionAndRecoveryOption.addStunTrackBoxes = {
+          option: "-Rating",
+        };
+      } else {
+        conditionAndRecoveryOption.addStunTrackBoxes = conditionMonitor.stun;
+      }
     }
   }
   if ("stuncmrecovery" in bonus && bonus.stuncmrecovery !== undefined) {
@@ -1856,7 +2508,8 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       typeof bonus.stuncmrecovery === "number"
         ? bonus.stuncmrecovery
         : { option: bonus.stuncmrecovery };
-    conditionAndRecoveryOption.stunHealing = stunHealing;
+    conditionAndRecoveryOption.stunConditionModifierHealingDiceModifier =
+      stunHealing;
   }
   if ("physicalcmrecovery" in bonus && bonus.physicalcmrecovery !== undefined) {
     checkProp("physicalcmrecovery");
@@ -1864,19 +2517,23 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       typeof bonus.physicalcmrecovery === "number"
         ? bonus.physicalcmrecovery
         : { option: bonus.physicalcmrecovery };
-    conditionAndRecoveryOption.physicalHealing = physicalHealing;
+    conditionAndRecoveryOption.physicalConditionModifierHealingDiceModifier =
+      physicalHealing;
   }
   if (
     "addesstophysicalcmrecovery" in bonus &&
     bonus.addesstophysicalcmrecovery !== undefined
   ) {
     checkProp("addesstophysicalcmrecovery");
+    conditionAndRecoveryOption.addEssenceToPhysicalConditionMonitorRecovery =
+      true;
   }
   if (
     "addesstostuncmrecovery" in bonus &&
     bonus.addesstostuncmrecovery !== undefined
   ) {
     checkProp("addesstostuncmrecovery");
+    conditionAndRecoveryOption.addEssenceToStunConditionMonitorRecovery = true;
   }
   // Addiction and Psychological Effects
   // -----------------------------------
@@ -1956,6 +2613,30 @@ export function convertXmlBonus(bonus: BonusXmlType) {
   // --------------------------------------------------------------------------------------------
   if ("movementreplace" in bonus && bonus.movementreplace !== undefined) {
     checkProp("movementreplace");
+    const movementReplaceList = Array.isArray(bonus.movementreplace)
+      ? bonus.movementreplace
+      : [bonus.movementreplace];
+    for (const movement of movementReplaceList) {
+      if (movement.category === "Ground") {
+        movementAndLifestyleOption.groundBaseMovementReplacement =
+          movementReplaceConverter(
+            movement,
+            movementAndLifestyleOption.groundBaseMovementReplacement
+          );
+      } else if (movement.category === "Swim") {
+        movementAndLifestyleOption.swimBaseMovementReplacement =
+          movementReplaceConverter(
+            movement,
+            movementAndLifestyleOption.swimBaseMovementReplacement
+          );
+      } else if (movement.category === "Fly") {
+        movementAndLifestyleOption.flyBaseMovementReplacement =
+          movementReplaceConverter(
+            movement,
+            movementAndLifestyleOption.flyBaseMovementReplacement
+          );
+      }
+    }
   }
   if ("walkmultiplier" in bonus && bonus.walkmultiplier !== undefined) {
     checkProp("walkmultiplier");
@@ -2039,8 +2720,9 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     const lifestyleCostArray = Array.isArray(bonus.lifestylecost)
       ? bonus.lifestylecost
       : [bonus.lifestylecost];
-    movementAndLifestyleOption.lifestyleCostModifier = lifestyleCostArray.map(
-      (lifestyleCost) => {
+    assert(movementAndLifestyleOption.lifestyleCostModifierList == undefined);
+    movementAndLifestyleOption.lifestyleCostModifierList =
+      lifestyleCostArray.map((lifestyleCost) => {
         if (typeof lifestyleCost === "object") {
           return {
             lifestyle: lifestyleCost._lifestyle,
@@ -2049,11 +2731,18 @@ export function convertXmlBonus(bonus: BonusXmlType) {
         } else {
           return { cost: lifestyleCost };
         }
-      }
-    );
+      });
   }
   if ("basiclifestylecost" in bonus && bonus.basiclifestylecost !== undefined) {
     checkProp("basiclifestylecost");
+    if (movementAndLifestyleOption.lifestyleCostModifierList == undefined) {
+      movementAndLifestyleOption.lifestyleCostModifierList = [];
+    } else {
+      movementAndLifestyleOption.lifestyleCostModifierList.push({
+        basicLifestyle: true,
+        cost: bonus.basiclifestylecost,
+      });
+    }
   }
 
   // Test and Resistance Bonuses
@@ -2067,18 +2756,32 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     bonus.judgeintentionsdefense !== undefined
   ) {
     checkProp("judgeintentionsdefense");
-    testAndResistanceOption.judgeIntentionsDefense = convertRatingUnion(
-      bonus.judgeintentionsdefense
-    );
+    const judgeIntentions = convertRatingUnion(bonus.judgeintentionsdefense);
+    if (testAndResistanceOption.judgeIntentions === undefined) {
+      testAndResistanceOption.judgeIntentions = { defense: judgeIntentions };
+    } else {
+      testAndResistanceOption.judgeIntentions.defense = judgeIntentions;
+    }
   }
   if (
     "judgeintentionsoffense" in bonus &&
     bonus.judgeintentionsoffense !== undefined
   ) {
     checkProp("judgeintentionsoffense");
+    const judgeIntentions = convertRatingUnion(bonus.judgeintentionsoffense);
+    if (testAndResistanceOption.judgeIntentions === undefined) {
+      testAndResistanceOption.judgeIntentions = { offense: judgeIntentions };
+    } else {
+      testAndResistanceOption.judgeIntentions.offense = judgeIntentions;
+    }
   }
   if ("judgeintentions" in bonus && bonus.judgeintentions !== undefined) {
     checkProp("judgeintentions");
+    const judgeIntentions = convertRatingUnion(bonus.judgeintentions);
+    testAndResistanceOption.judgeIntentions = {
+      defense: judgeIntentions,
+      offense: judgeIntentions,
+    };
   }
   if ("memory" in bonus && bonus.memory !== undefined) {
     checkProp("memory");
@@ -2096,6 +2799,9 @@ export function convertXmlBonus(bonus: BonusXmlType) {
   }
   if ("spellresistance" in bonus && bonus.spellresistance !== undefined) {
     checkProp("spellresistance");
+    testAndResistanceOption.allSpellResist = convertRatingUnion(
+      bonus.spellresistance
+    );
   }
   if (
     "directmanaspellresist" in bonus &&
@@ -2114,20 +2820,21 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     testAndResistanceOption.detectionResist = convertRatingUnion(
       bonus.detectionspellresist
     );
-    bonus.detectionspellresist;
   }
   if ("manaillusionresist" in bonus && bonus.manaillusionresist !== undefined) {
     checkProp("manaillusionresist");
     testAndResistanceOption.manaIllusionResist = convertRatingUnion(
       bonus.manaillusionresist
     );
-    bonus.manaillusionresist;
   }
   if (
     "physicalillusionresist" in bonus &&
     bonus.physicalillusionresist !== undefined
   ) {
     checkProp("physicalillusionresist");
+    testAndResistanceOption.physicalIllusionResist = convertRatingUnion(
+      bonus.physicalillusionresist
+    );
   }
   if (
     "mentalmanipulationresist" in bonus &&
@@ -2212,9 +2919,11 @@ export function convertXmlBonus(bonus: BonusXmlType) {
         if (match.failed()) {
           assert(false, match.message);
         }
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
         initiative = NumberFixedRatingSemantics(match).eval();
       }
     }
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     initiativeOption.initiative = { bonus: initiative };
   }
   if ("initiativedice" in bonus && bonus.initiativedice !== undefined) {
@@ -2235,76 +2944,122 @@ export function convertXmlBonus(bonus: BonusXmlType) {
       if (match.failed()) {
         assert(false, match.message);
       }
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
       initiative = NumberFixedRatingSemantics(match).eval();
     }
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     initiativeOption.initiative = { bonusDice: initiative };
   }
   if ("matrixinitiative" in bonus && bonus.matrixinitiative !== undefined) {
     checkProp("matrixinitiative");
+    if (initiativeOption.matrixInitiative === undefined) {
+      initiativeOption.matrixInitiative = {};
+    }
+    initiativeOption.matrixInitiative.scoreModifier = bonus.matrixinitiative;
   }
   if (
     "matrixinitiativedice" in bonus &&
     bonus.matrixinitiativedice !== undefined
   ) {
     checkProp("matrixinitiativedice");
-    initiativeOption.matrixInitiative = {
-      bonusDice: bonus.matrixinitiativedice.xmltext,
-    };
+    if (initiativeOption.matrixInitiative === undefined) {
+      initiativeOption.matrixInitiative = {};
+    }
+    initiativeOption.matrixInitiative.bonusDice =
+      bonus.matrixinitiativedice.xmltext;
   }
   if (
     "matrixinitiativediceadd" in bonus &&
     bonus.matrixinitiativediceadd !== undefined
   ) {
     checkProp("matrixinitiativediceadd");
-    assert(initiativeOption.matrixInitiative === undefined);
-    initiativeOption.matrixInitiative = {
-      bonusDice: bonus.matrixinitiativediceadd,
-    };
+    if (initiativeOption.matrixInitiative === undefined) {
+      initiativeOption.matrixInitiative = {};
+    } else {
+      assert(initiativeOption.matrixInitiative.bonusDice === undefined);
+    }
+    initiativeOption.matrixInitiative.bonusDice = bonus.matrixinitiativediceadd;
   }
   if ("surprise" in bonus && bonus.surprise !== undefined) {
     checkProp("surprise");
+    initiativeOption.surpriseTest = convertRatingCalculation(bonus.surprise);
   }
 
   // Gear and Vehicles
   // --------------------------------------------------------------------------------------------
   if ("addgear" in bonus && bonus.addgear !== undefined) {
     checkProp("addgear");
+    const includedGearList = bonus.addgear.children?.child;
+    gearAndVehicleOption.addGear = {
+      name: bonus.addgear.name,
+      category: bonus.addgear.category,
+      ...(bonus.addgear.rating !== undefined && {
+        rating: bonus.addgear.rating,
+      }),
+      ...(includedGearList !== undefined && {
+        includedGearList: includedGearList,
+      }),
+    };
   }
   if ("restrictedgear" in bonus && bonus.restrictedgear !== undefined) {
     checkProp("restrictedgear");
+    gearAndVehicleOption.addRestrictedGear = bonus.restrictedgear;
   }
   if ("devicerating" in bonus && bonus.devicerating !== undefined) {
     checkProp("devicerating");
+    gearAndVehicleOption.deviceRatingBonus = bonus.devicerating;
   }
   if ("seats" in bonus && bonus.seats !== undefined) {
     checkProp("seats");
-  }
-  if ("accel" in bonus && bonus.accel !== undefined) {
-    checkProp("accel");
-  }
-  if ("offroadaccel" in bonus && bonus.offroadaccel !== undefined) {
-    checkProp("offroadaccel");
-  }
-  if ("handling" in bonus && bonus.handling !== undefined) {
-    checkProp("handling");
-  }
-  if ("offroadhandling" in bonus && bonus.offroadhandling !== undefined) {
-    checkProp("offroadhandling");
+    gearAndVehicleOption.seatsModifier = convertRatingCalculation(bonus.seats);
   }
   if ("speed" in bonus && bonus.speed !== undefined) {
     checkProp("speed");
+    gearAndVehicleOption.speedModifier = convertRatingCalculation(bonus.speed);
   }
   if ("offroadspeed" in bonus && bonus.offroadspeed !== undefined) {
     checkProp("offroadspeed");
+    gearAndVehicleOption.offRoadSpeedModifier = convertRatingCalculation(
+      bonus.offroadspeed
+    );
+  }
+  if ("accel" in bonus && bonus.accel !== undefined) {
+    checkProp("accel");
+    gearAndVehicleOption.accelerationModifier = convertRatingCalculation(
+      bonus.accel
+    );
+  }
+  if ("offroadaccel" in bonus && bonus.offroadaccel !== undefined) {
+    checkProp("offroadaccel");
+    gearAndVehicleOption.offRoadAccelerationModifier = convertRatingCalculation(
+      bonus.offroadaccel
+    );
+  }
+  if ("handling" in bonus && bonus.handling !== undefined) {
+    checkProp("handling");
+    gearAndVehicleOption.handlingModifier = convertRatingCalculation(
+      bonus.handling
+    );
+  }
+  if ("offroadhandling" in bonus && bonus.offroadhandling !== undefined) {
+    checkProp("offroadhandling");
+    gearAndVehicleOption.offRoadHandlingModifier = convertRatingCalculation(
+      bonus.offroadhandling
+    );
   }
   if ("pilot" in bonus && bonus.pilot !== undefined) {
     checkProp("pilot");
+    gearAndVehicleOption.pilotModifier = convertRatingCalculation(bonus.pilot);
   }
   if ("sensor" in bonus && bonus.sensor !== undefined) {
     checkProp("sensor");
+    gearAndVehicleOption.sensorModifier = convertRatingCalculation(
+      bonus.sensor
+    );
   }
   if ("body" in bonus && bonus.body !== undefined) {
     checkProp("body");
+    gearAndVehicleOption.bodyModifier = convertRatingCalculation(bonus.body);
   }
 
   // Essence and Augmentation
@@ -2321,7 +3076,9 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     } else {
       essenceAndAugmentationOption.selectCyberware = {
         restrictCategory: true,
-        category: linkCyberware.category,
+        category: convertCyberwareCategory(
+          linkCyberware.category as cyberwareXmlCategoryEnum
+        ),
       };
     }
   }
@@ -2333,18 +3090,64 @@ export function convertXmlBonus(bonus: BonusXmlType) {
   }
   if ("addware" in bonus && bonus.addware !== undefined) {
     checkProp("addware");
+    assert(essenceAndAugmentationOption.addAugmentation === undefined);
+    let augmentationType;
+    switch (bonus.addware.type) {
+      case "Cyberware":
+        augmentationType = augmentationTypeEnum.Cyberware;
+        break;
+      case "Bioware":
+        augmentationType = augmentationTypeEnum.Bioware;
+        break;
+      case "Genetech":
+        augmentationType = augmentationTypeEnum.Genetech;
+        break;
+      default:
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+        assert(false, `Unknown augmentation type: ${bonus.addware.type}`);
+    }
+    essenceAndAugmentationOption.addAugmentation = {
+      name: bonus.addware.name,
+      grade: convertAugmentationGrade(bonus.addware.grade),
+      type: augmentationType,
+    };
+  }
+  if (
+    "genetechcostmultiplier" in bonus &&
+    bonus.genetechcostmultiplier !== undefined
+  ) {
+    checkProp("genetechcostmultiplier");
+    if (
+      essenceAndAugmentationOption.augmentationCostModifierPercentage ===
+      undefined
+    ) {
+      essenceAndAugmentationOption.augmentationCostModifierPercentage = {};
+    }
+    assert(
+      essenceAndAugmentationOption.augmentationCostModifierPercentage
+        .geneTech === undefined
+    );
+    essenceAndAugmentationOption.augmentationCostModifierPercentage.geneTech =
+      bonus.genetechcostmultiplier;
   }
   if (
     "specialmodificationlimit" in bonus &&
     bonus.specialmodificationlimit !== undefined
   ) {
     checkProp("specialmodificationlimit");
+    assert(essenceAndAugmentationOption.specialModificationLimit === undefined);
+    essenceAndAugmentationOption.specialModificationLimit =
+      bonus.specialmodificationlimit;
   }
   if ("essencemax" in bonus && bonus.essencemax !== undefined) {
     checkProp("essencemax");
+    assert(essenceAndAugmentationOption.essenceMaxModifier === undefined);
+    essenceAndAugmentationOption.essenceMaxModifier = bonus.essencemax;
   }
   if ("essencepenalty" in bonus && bonus.essencepenalty !== undefined) {
     checkProp("essencepenalty");
+    assert(essenceAndAugmentationOption.essenceModifier === undefined);
+    essenceAndAugmentationOption.essenceModifier = bonus.essencepenalty;
   }
   if ("essencepenaltyt100" in bonus && bonus.essencepenaltyt100 !== undefined) {
     checkProp("essencepenaltyt100");
@@ -2352,8 +3155,19 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     if (match.failed()) {
       assert(false, match.message);
     }
-    // TODO: fix this! the schema is wrong
-    essenceAndAugmentationOption.essenceCostTimes100 =
+    if (
+      essenceAndAugmentationOption.essenceCostOngoingPercentageModifier ===
+      undefined
+    ) {
+      essenceAndAugmentationOption.essenceCostOngoingPercentageModifier = {};
+    }
+    assert(
+      essenceAndAugmentationOption.essenceCostOngoingPercentageModifier.base ===
+        undefined
+    );
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    essenceAndAugmentationOption.essenceCostOngoingPercentageModifier.base =
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       essenceCostSemantics(match).eval();
   }
   if (
@@ -2361,51 +3175,162 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     bonus.essencepenaltymagonlyt100 !== undefined
   ) {
     checkProp("essencepenaltymagonlyt100");
+    const match = EssenceCost.match(bonus.essencepenaltymagonlyt100.toString());
+    if (match.failed()) {
+      assert(false, match.message);
+    }
+    if (
+      essenceAndAugmentationOption.essenceCostOngoingPercentageModifier ===
+      undefined
+    ) {
+      essenceAndAugmentationOption.essenceCostOngoingPercentageModifier = {};
+    }
+    assert(
+      essenceAndAugmentationOption.essenceCostOngoingPercentageModifier
+        .magOnly === undefined
+    );
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    essenceAndAugmentationOption.essenceCostOngoingPercentageModifier.magOnly =
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+      essenceCostSemantics(match).eval();
   }
   if (
     "cyberwaretotalessmultiplier" in bonus &&
     bonus.cyberwaretotalessmultiplier !== undefined
   ) {
     checkProp("cyberwaretotalessmultiplier");
+    if (
+      essenceAndAugmentationOption.essenceCostOngoingPercentageModifier ===
+      undefined
+    ) {
+      essenceAndAugmentationOption.essenceCostOngoingPercentageModifier = {};
+    }
+    assert(
+      essenceAndAugmentationOption.essenceCostOngoingPercentageModifier
+        .cyberwareOnly === undefined
+    );
+    essenceAndAugmentationOption.essenceCostOngoingPercentageModifier.cyberwareOnly =
+      [bonus.cyberwaretotalessmultiplier];
   }
   if (
     "cyberwareessmultiplier" in bonus &&
     bonus.cyberwareessmultiplier !== undefined
   ) {
     checkProp("cyberwareessmultiplier");
+    if (
+      essenceAndAugmentationOption.essenceCostOngoingPercentageModifier ===
+      undefined
+    ) {
+      essenceAndAugmentationOption.essenceCostOngoingPercentageModifier = {};
+    }
+    assert(
+      essenceAndAugmentationOption.essenceCostOngoingPercentageModifier
+        .cyberwareOnly === undefined
+    );
+    essenceAndAugmentationOption.essenceCostOngoingPercentageModifier.cyberwareOnly =
+      [bonus.cyberwareessmultiplier];
   }
   if (
     "biowareessmultiplier" in bonus &&
     bonus.biowareessmultiplier !== undefined
   ) {
     checkProp("biowareessmultiplier");
-  }
-  if (
-    "genetechcostmultiplier" in bonus &&
-    bonus.genetechcostmultiplier !== undefined
-  ) {
-    checkProp("genetechcostmultiplier");
+    if (
+      essenceAndAugmentationOption.essenceCostOngoingPercentageModifier ===
+      undefined
+    ) {
+      essenceAndAugmentationOption.essenceCostOngoingPercentageModifier = {};
+    }
+    assert(
+      essenceAndAugmentationOption.essenceCostOngoingPercentageModifier
+        .biowareOnly === undefined
+    );
+    essenceAndAugmentationOption.essenceCostOngoingPercentageModifier.biowareOnly =
+      [bonus.biowareessmultiplier];
   }
   if (
     "genetechessmultiplier" in bonus &&
     bonus.genetechessmultiplier !== undefined
   ) {
     checkProp("genetechessmultiplier");
+    if (
+      essenceAndAugmentationOption.essenceCostOngoingPercentageModifier ===
+      undefined
+    ) {
+      essenceAndAugmentationOption.essenceCostOngoingPercentageModifier = {};
+    }
+    assert(
+      essenceAndAugmentationOption.essenceCostOngoingPercentageModifier
+        .geneTechOnly === undefined
+    );
+    essenceAndAugmentationOption.essenceCostOngoingPercentageModifier.geneTechOnly =
+      [bonus.genetechessmultiplier];
   }
   if ("disablebioware" in bonus && bonus.disablebioware !== undefined) {
     checkProp("disablebioware");
+    if (essenceAndAugmentationOption.augmentationDisable === undefined) {
+      essenceAndAugmentationOption.augmentationDisable = {};
+    }
+    assert(
+      essenceAndAugmentationOption.augmentationDisable.disableBioware ===
+        undefined
+    );
+    assert(bonus.disablebioware === "");
+    essenceAndAugmentationOption.augmentationDisable.disableBioware = true;
   }
   if (
     "disablebiowaregrade" in bonus &&
     bonus.disablebiowaregrade !== undefined
   ) {
     checkProp("disablebiowaregrade");
+    if (essenceAndAugmentationOption.augmentationDisable === undefined) {
+      essenceAndAugmentationOption.augmentationDisable = {};
+    }
+    assert(
+      essenceAndAugmentationOption.augmentationDisable
+        .disableBiowareGradeList === undefined
+    );
+    const gradeList = Array.isArray(bonus.disablebiowaregrade)
+      ? bonus.disablebiowaregrade
+      : [bonus.disablebiowaregrade];
+    essenceAndAugmentationOption.augmentationDisable.disableBiowareGradeList =
+      gradeList
+        .filter((grade) =>
+          Object.values(augmentationGradeEnum).includes(
+            grade as augmentationGradeEnum
+          )
+        )
+        .map(
+          (grade) =>
+            augmentationGradeEnum[grade as keyof typeof augmentationGradeEnum]
+        );
   }
   if (
     "disablecyberwaregrade" in bonus &&
     bonus.disablecyberwaregrade !== undefined
   ) {
     checkProp("disablecyberwaregrade");
+    if (essenceAndAugmentationOption.augmentationDisable === undefined) {
+      essenceAndAugmentationOption.augmentationDisable = {};
+    }
+    assert(
+      essenceAndAugmentationOption.augmentationDisable
+        .disableCyberwareGradeList === undefined
+    );
+    const gradeList = Array.isArray(bonus.disablecyberwaregrade)
+      ? bonus.disablecyberwaregrade
+      : [bonus.disablecyberwaregrade];
+    essenceAndAugmentationOption.augmentationDisable.disableCyberwareGradeList =
+      gradeList
+        .filter((grade) =>
+          Object.values(augmentationGradeEnum).includes(
+            grade as augmentationGradeEnum
+          )
+        )
+        .map(
+          (grade) =>
+            augmentationGradeEnum[grade as keyof typeof augmentationGradeEnum]
+        );
   }
 
   // Contact and Reputation
@@ -2413,17 +3338,27 @@ export function convertXmlBonus(bonus: BonusXmlType) {
   if ("addcontact" in bonus && bonus.addcontact !== undefined) {
     checkProp("addcontact");
     const addContact = bonus.addcontact;
+    const contact: { loyalty: number; connection: number; group?: true } = {
+      loyalty: 0,
+      connection: 0,
+    };
     if (addContact.loyalty !== undefined) {
+      contact.loyalty = addContact.loyalty;
     }
     if (addContact.connection !== undefined) {
+      contact.connection = addContact.connection;
     }
     if (addContact.forcedloyalty !== undefined) {
-    }
-    if (addContact.forcegroup !== undefined) {
-    }
-    if (addContact.free !== undefined) {
+      contact.loyalty = addContact.forcedloyalty;
     }
     if (addContact.group !== undefined) {
+      contact.group = true;
+    }
+    if (addContact.forcegroup !== undefined) {
+      contact.group = true;
+    }
+    if (addContact.free !== undefined) {
+      // This is dumb... Lets assume they are always free
     }
   }
   if ("selectcontact" in bonus && bonus.selectcontact !== undefined) {
@@ -2433,27 +3368,44 @@ export function convertXmlBonus(bonus: BonusXmlType) {
   }
   if ("notoriety" in bonus && bonus.notoriety !== undefined) {
     checkProp("notoriety");
+    assert(contactAndReputationOption.notorietyModifier === undefined);
+    contactAndReputationOption.notorietyModifier = bonus.notoriety;
   }
   if ("astralreputation" in bonus && bonus.astralreputation !== undefined) {
     checkProp("astralreputation");
+    assert(contactAndReputationOption.astralReputationModifier === undefined);
+    contactAndReputationOption.astralReputationModifier =
+      bonus.astralreputation;
   }
   if ("publicawareness" in bonus && bonus.publicawareness !== undefined) {
     checkProp("publicawareness");
+    assert(contactAndReputationOption.publicAwarenessModifier === undefined);
+    contactAndReputationOption.publicAwarenessModifier = bonus.publicawareness;
   }
   if (
     "streetcredmultiplier" in bonus &&
     bonus.streetcredmultiplier !== undefined
   ) {
     checkProp("streetcredmultiplier");
+    assert(
+      contactAndReputationOption.streetCredLifetimeKarmaModifier === undefined
+    );
+    contactAndReputationOption.streetCredLifetimeKarmaModifier =
+      bonus.streetcredmultiplier;
   }
   if ("contactkarma" in bonus && bonus.contactkarma !== undefined) {
     checkProp("contactkarma");
+    assert(contactAndReputationOption.contactKarmaCostModifier === undefined);
+    contactAndReputationOption.contactKarmaCostModifier = bonus.contactkarma;
   }
   if (
     "contactkarmaminimum" in bonus &&
     bonus.contactkarmaminimum !== undefined
   ) {
     checkProp("contactkarmaminimum");
+    assert(contactAndReputationOption.contactMinimumKarmaCost === undefined);
+    contactAndReputationOption.contactMinimumKarmaCost =
+      bonus.contactkarmaminimum;
   }
 
   // Quality
@@ -2489,6 +3441,44 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     if (qualities.length > 0) {
       qualityOption.addQualityList = qualities;
     }
+  }
+  if ("freequality" in bonus && bonus.freequality !== undefined) {
+    checkProp("freequality");
+
+    const currentPath = import.meta.url;
+    const xml_string = fs.readFileSync(
+      fileURLToPath(
+        path.dirname(currentPath) + "../../../../xmls/qualities.xml"
+      ),
+      "utf8"
+    );
+    const parser = new XMLParser({
+      ignoreAttributes: false,
+      attributeNamePrefix: "_",
+      textNodeName: "xmltext",
+    });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
+    const jObj: any = parser.parse(xml_string);
+    // console.log(
+    //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    //   jObj.chummer.qualities.quality
+    // );
+
+    const qualityListParsed = QualityListXmlSchema(
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      jObj.chummer.qualities.quality
+    );
+
+    if (qualityListParsed instanceof type.errors) {
+      console.log(qualityListParsed.summary);
+      assert(false);
+    }
+    const name = qualityListParsed.find((fullQuality) => {
+      return bonus.freequality === fullQuality.id;
+    })?.name;
+
+    assert(qualityOption.freeQuality === undefined && name !== undefined);
+    qualityOption.freeQuality = name;
   }
   if ("selectquality" in bonus && bonus.selectquality !== undefined) {
     checkProp("selectquality");
@@ -2541,73 +3531,180 @@ export function convertXmlBonus(bonus: BonusXmlType) {
   // --------------------------------------------------------------------------------------------
   if ("ambidextrous" in bonus && bonus.ambidextrous !== undefined) {
     checkProp("ambidextrous");
-    specificQualityOption.ambidextrous = true;
-  }
-  if ("freequality" in bonus && bonus.freequality !== undefined) {
-    checkProp("freequality");
+    specificQualityOption.ambidextrous = true as const;
   }
   if ("burnoutsway" in bonus && bonus.burnoutsway !== undefined) {
     checkProp("burnoutsway");
+    assert(
+      specificQualityOption.burnoutsWay === undefined &&
+        bonus.burnoutsway === ""
+    );
+    specificQualityOption.burnoutsWay = true as const;
   }
   if (
     "friendsinhighplaces" in bonus &&
     bonus.friendsinhighplaces !== undefined
   ) {
     checkProp("friendsinhighplaces");
+    assert(
+      specificQualityOption.friendsInHighPlaces === undefined &&
+        bonus.friendsinhighplaces === ""
+    );
+    specificQualityOption.friendsInHighPlaces = true as const;
   }
   if ("overclocker" in bonus && bonus.overclocker !== undefined) {
     checkProp("overclocker");
+    assert(
+      specificQualityOption.overclocker === undefined &&
+        bonus.overclocker === ""
+    );
+    specificQualityOption.overclocker = true as const;
   }
   if ("trustfund" in bonus && bonus.trustfund !== undefined) {
     checkProp("trustfund");
+    assert(
+      specificQualityOption.trustfund === undefined &&
+        typeof bonus.trustfund === "number"
+    );
+    specificQualityOption.trustfund = bonus.trustfund;
   }
   if (
     "prototypetranshuman" in bonus &&
     bonus.prototypetranshuman !== undefined
   ) {
     checkProp("prototypetranshuman");
+    assert(
+      specificQualityOption.prototypeTranshuman === undefined &&
+        typeof bonus.prototypetranshuman === "number"
+    );
+    specificQualityOption.prototypeTranshuman = bonus.prototypetranshuman;
   }
   if ("excon" in bonus && bonus.excon !== undefined) {
     checkProp("excon");
+    assert(specificQualityOption.excon === undefined && bonus.excon === "");
+    specificQualityOption.excon = true as const;
   }
   if ("mademan" in bonus && bonus.mademan !== undefined) {
     checkProp("mademan");
+    assert(specificQualityOption.mademan === undefined && bonus.mademan === "");
+    specificQualityOption.mademan = true as const;
   }
   if (
     "magicianswaydiscount" in bonus &&
     bonus.magicianswaydiscount !== undefined
   ) {
     checkProp("magicianswaydiscount");
+    assert(
+      specificQualityOption.magiciansWayDiscount === undefined &&
+        bonus.magicianswaydiscount === ""
+    );
+    specificQualityOption.magiciansWayDiscount = true as const;
   }
   if (
     "blackmarketdiscount" in bonus &&
     bonus.blackmarketdiscount !== undefined
   ) {
     checkProp("blackmarketdiscount");
+    assert(
+      specificQualityOption.blackmarketDiscount === undefined &&
+        bonus.blackmarketdiscount === ""
+    );
+    specificQualityOption.blackmarketDiscount = true as const;
   }
   if ("erased" in bonus && bonus.erased !== undefined) {
     checkProp("erased");
+    assert(specificQualityOption.erased === undefined && bonus.erased === "");
+    specificQualityOption.erased = true as const;
   }
   if ("fame" in bonus && bonus.fame !== undefined) {
     checkProp("fame");
+    assert(specificQualityOption.fame === undefined && bonus.fame === "");
+    specificQualityOption.fame = true as const;
   }
   if (
     "selectinherentaiprogram" in bonus &&
     bonus.selectinherentaiprogram !== undefined
   ) {
     checkProp("selectinherentaiprogram");
+    assert(
+      specificQualityOption.selectInherentAiProgram === undefined &&
+        bonus.selectinherentaiprogram === ""
+    );
+    specificQualityOption.selectInherentAiProgram = true as const;
   }
   if ("dealerconnection" in bonus && bonus.dealerconnection !== undefined) {
     checkProp("dealerconnection");
+    assert(
+      specificQualityOption.dealerConnection === undefined &&
+        typeof bonus.dealerconnection === "object"
+    );
+    specificQualityOption.dealerConnection =
+      bonus.dealerconnection.category.map((category) => {
+        if (category === "Drones") {
+          return vehicleTypeEnum.Drone;
+        }
+        return category;
+      });
   }
   if ("cyberadeptdaemon" in bonus && bonus.cyberadeptdaemon !== undefined) {
     checkProp("cyberadeptdaemon");
+    assert(
+      specificQualityOption.cyberAdeptDaemon === undefined &&
+        bonus.cyberadeptdaemon === ""
+    );
+    specificQualityOption.cyberAdeptDaemon = true as const;
   }
   if ("uneducated" in bonus && bonus.uneducated !== undefined) {
     checkProp("uneducated");
+    assert(
+      specificQualityOption.uneducated === undefined && bonus.uneducated === ""
+    );
+    specificQualityOption.uneducated = true as const;
   }
   if ("cyberseeker" in bonus && bonus.cyberseeker !== undefined) {
     checkProp("cyberseeker");
+    assert(specificQualityOption.cyberSeeker === undefined);
+    const cyberSeekerXmlArray = Array.isArray(bonus.cyberseeker)
+      ? bonus.cyberseeker
+      : [bonus.cyberseeker];
+    const cyberSeeker: {
+      attributeList: Array<attributeTypeEnum>;
+      loseOnePhysicalBoxInsteadOfGainingTwo?: true;
+    } = { attributeList: [] };
+    cyberSeekerXmlArray.forEach((ability: string) => {
+      switch (ability) {
+        case "BOD":
+          cyberSeeker.attributeList.push(attributeTypeEnum.Body);
+          break;
+        case "AGI":
+          cyberSeeker.attributeList.push(attributeTypeEnum.Agility);
+          break;
+        case "REA":
+          cyberSeeker.attributeList.push(attributeTypeEnum.Reaction);
+          break;
+        case "STR":
+          cyberSeeker.attributeList.push(attributeTypeEnum.Strength);
+          break;
+        case "CHA":
+          cyberSeeker.attributeList.push(attributeTypeEnum.Charisma);
+          break;
+        case "INT":
+          cyberSeeker.attributeList.push(attributeTypeEnum.Intuition);
+          break;
+        case "LOG":
+          cyberSeeker.attributeList.push(attributeTypeEnum.Logic);
+          break;
+        case "WIL":
+          cyberSeeker.attributeList.push(attributeTypeEnum.Willpower);
+          break;
+        case "BOX":
+          cyberSeeker.loseOnePhysicalBoxInsteadOfGainingTwo = true as const;
+          break;
+        default:
+          assert(false, `Unknown cyberseeker ability: ${ability}`);
+      }
+    });
+    specificQualityOption.cyberSeeker = cyberSeeker;
   }
   if ("adapsin" in bonus && bonus.adapsin !== undefined) {
     checkProp("adapsin");
@@ -2618,6 +3715,33 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     bonus.reflexrecorderoptimization !== undefined
   ) {
     checkProp("reflexrecorderoptimization");
+    assert(
+      specificQualityOption.reflexRecorderOptimisation === undefined &&
+        bonus.reflexrecorderoptimization === ""
+    );
+    specificQualityOption.reflexRecorderOptimisation = true as const;
+  }
+  if (
+    "quickeningmetamagic" in bonus &&
+    bonus.quickeningmetamagic !== undefined
+  ) {
+    checkProp("quickeningmetamagic");
+    assert(
+      specificQualityOption.quickeningMetamagic === undefined &&
+        bonus.quickeningmetamagic === ""
+    );
+    specificQualityOption.quickeningMetamagic = true as const;
+  }
+  if (
+    "allowspritefettering" in bonus &&
+    bonus.allowspritefettering !== undefined
+  ) {
+    checkProp("allowspritefettering");
+    assert(
+      specificQualityOption.allowSpriteFettering === undefined &&
+        bonus.allowspritefettering === ""
+    );
+    specificQualityOption.allowSpriteFettering = true as const;
   }
 
   // Misc
@@ -2668,9 +3792,33 @@ export function convertXmlBonus(bonus: BonusXmlType) {
   }
   if ("nuyenamt" in bonus && bonus.nuyenamt !== undefined) {
     checkProp("nuyenamt");
+    if (miscellaneousOption.characterCreator === undefined) {
+      miscellaneousOption.characterCreator = {};
+    }
+    assert(
+      miscellaneousOption.characterCreator.nuyenForGearModifier === undefined
+    );
+    const nuyen =
+      typeof bonus.nuyenamt === "number"
+        ? bonus.nuyenamt
+        : bonus.nuyenamt.xmltext;
+    const stolen = typeof bonus.nuyenamt === "object";
+    miscellaneousOption.characterCreator.nuyenForGearModifier = {
+      nuyen: nuyen,
+      ...(stolen && { gearPurchasedWithNuyenMarkedAsStolen: true as const }),
+    };
   }
   if ("nuyenmaxbp" in bonus && bonus.nuyenmaxbp !== undefined) {
     checkProp("nuyenmaxbp");
+    if (miscellaneousOption.characterCreator === undefined) {
+      miscellaneousOption.characterCreator = {};
+    }
+    assert(
+      miscellaneousOption.characterCreator
+        .maxKarmaThatCanBeConvertedToNuyenModifier === undefined
+    );
+    miscellaneousOption.characterCreator.maxKarmaThatCanBeConvertedToNuyenModifier =
+      bonus.nuyenmaxbp;
   }
   if ("selectrestricted" in bonus && bonus.selectrestricted !== undefined) {
     checkProp("selectrestricted");
@@ -2681,9 +3829,23 @@ export function convertXmlBonus(bonus: BonusXmlType) {
   }
   if ("enabletab" in bonus && bonus.enabletab !== undefined) {
     checkProp("enabletab");
+    // Note: This is ignored on purpose since it's only relevant to chummer UI
   }
   if ("actiondicepool" in bonus && bonus.actiondicepool !== undefined) {
     checkProp("actiondicepool");
+    assert(miscellaneousOption.dicePoolModifier === undefined);
+    if ("_category" in bonus.actiondicepool) {
+      miscellaneousOption.dicePoolModifier = {
+        type: { selectFromMatrixActions: true as const },
+        // This is unfortunately hardcoded since the XML doesn't provide any more detail
+        modifier: 2,
+      };
+    } else {
+      miscellaneousOption.dicePoolModifier = {
+        type: { specificTest: bonus.actiondicepool.name },
+        modifier: bonus.actiondicepool.val,
+      };
+    }
   }
   if ("addlimb" in bonus && bonus.addlimb !== undefined) {
     checkProp("addlimb");
@@ -2702,9 +3864,6 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     ...(Object.keys(powerOption).length > 0 && { power: powerOption }),
     ...(Object.keys(spellAndMagicOption).length > 0 && {
       spellAndMagic: spellAndMagicOption,
-    }),
-    ...(Object.keys(technomancerOption).length > 0 && {
-      technomancer: technomancerOption,
     }),
     ...(Object.keys(combatAndWeaponOption).length > 0 && {
       combatAndWeapon: combatAndWeaponOption,
@@ -2776,7 +3935,7 @@ export const bonusSkill = function (skillInput: SkillXMLListType) {
   });
 };
 
-const spellCategoryConversion = function (category: string) {
+function spellCategoryConversion(category: string) {
   if (category === "Rituals") {
     return spellCategoryEnum.Ritual;
   }
@@ -2787,9 +3946,9 @@ const spellCategoryConversion = function (category: string) {
     `spellCategoryEnum not found: ${category}`
   );
   return categoryEnum;
-};
+}
 
-const weaponTypeConversion = function (weaponType: string) {
+function weaponTypeConversion(weaponType: string) {
   const weaponTypeEnumSchema = type.valueOf(weaponTypeEnum);
   const typeEnum = weaponTypeEnumSchema(weaponType);
   assert(
@@ -2797,9 +3956,9 @@ const weaponTypeConversion = function (weaponType: string) {
     `weaponTypeEnum enum not found: ${weaponType}`
   );
   return typeEnum;
-};
+}
 
-export const convertKarmaCost = function (karmaCost: GenericNameValueType) {
+export function convertKarmaCost(karmaCost: GenericNameValueType) {
   assert(karmaCost.name !== undefined, karmaCost.name);
   const name = karmaCost.name as attributeXMLEnum;
   assert(
@@ -2813,17 +3972,17 @@ export const convertKarmaCost = function (karmaCost: GenericNameValueType) {
     name: convertAttribute(name),
     bonus: karmaCost.val,
   };
-};
+}
 
-const convertRatingUnion = function (unionObject: NumberOrAnyRatingType) {
+function convertRatingUnion(unionObject: NumberOrAnyRatingType) {
   if (typeof unionObject === "number") {
     return unionObject;
   } else {
     return { option: unionObject };
   }
-};
+}
 
-const convertRatingAttributeUnion = function (
+function convertRatingAttributeUnion(
   unionObject: NumberOrRatingOrAttributeType
 ) {
   if (typeof unionObject === "number") {
@@ -2833,9 +3992,9 @@ const convertRatingAttributeUnion = function (
   } else {
     return { option: convertAttribute(unionObject) };
   }
-};
+}
 
-const getListFromOtherFile = function (
+function getListFromOtherFile(
   _fileName: string,
   xmlNodePath: string
 ): Array<{
@@ -2861,6 +4020,8 @@ const getListFromOtherFile = function (
   //   jObj.chummer.armors.armor[193].gears.usegear
   // );
   const nodePaths = xmlNodePath.split("|");
+  // disable as eslint doesn't like the assert fail
+  // eslint-disable-next-line array-callback-return
   return nodePaths.map((nodePath) => {
     let modifier;
     const regexInner = nodePath.match(/.*\[(.*?)\]/);
@@ -2963,7 +4124,66 @@ const getListFromOtherFile = function (
       assert(false, `Unknown xmlNodePath: ${nodePath}`);
     }
   });
-};
+}
+function movementReplaceConverter(
+  movement: MovementReplacementXmlType,
+  movementReplacement: MovementReplacementType | undefined
+) {
+  switch (movement.speed) {
+    case "walk":
+      if (movementReplacement === undefined) {
+        movementReplacement = {
+          walk: movement.val,
+        };
+      } else {
+        assert(movementReplacement.walk === undefined);
+        movementReplacement.walk = movement.val;
+      }
+      break;
+    case "run":
+      if (movementReplacement === undefined) {
+        movementReplacement = {
+          run: movement.val,
+        };
+      } else {
+        assert(movementReplacement.run === undefined);
+        movementReplacement.run = movement.val;
+      }
+      break;
+    case "sprint":
+      if (movementReplacement === undefined) {
+        movementReplacement = {
+          sprint: movement.val,
+        };
+      } else {
+        assert(movementReplacement.sprint === undefined);
+        movementReplacement.sprint = movement.val;
+      }
+      break;
+    default:
+      // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+      assert(false, `Unknown speed type: ${movement.speed}`);
+  }
+  return movementReplacement;
+}
+
+function convertRatingCalculation(
+  bonus: StringOrNumberType
+): RatingCalculationType {
+  const match = RatingCalculation.match(bonus.toString());
+  if (match.failed()) {
+    assert(
+      false,
+      `Error RatingCalculation: ${
+        match.message
+      }, original bonus: ${JSON.stringify(bonus)}`
+    );
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-return
+  return bonusRatingCalculationSemantics(match).eval();
+}
+
 function getSkillSelectionOptions(linkSkill: SelectSkillXMLType) {
   assert(linkSkill !== "");
   let skill:
@@ -3110,6 +4330,7 @@ function convertSpecificAttribute(
     if (match.failed()) {
       assert(false, match.message);
     }
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
     value = NumberFixedRatingSemantics(match).eval();
   }
   if (attribute.min !== undefined) {
@@ -3118,6 +4339,7 @@ function convertSpecificAttribute(
       assert(false, match.message);
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
     min = NumberFixedRatingSemantics(match).eval();
   }
   if (attribute.max !== undefined) {
@@ -3126,6 +4348,7 @@ function convertSpecificAttribute(
       assert(false, match.message);
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
     max = NumberFixedRatingSemantics(match).eval();
   }
   if (attribute.aug !== undefined) {
@@ -3134,6 +4357,7 @@ function convertSpecificAttribute(
       assert(false, match.message);
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call
     aug = NumberFixedRatingSemantics(match).eval();
   }
   // Todo: add other attributes
@@ -3142,15 +4366,19 @@ function convertSpecificAttribute(
       linkedAttribute: convertAttribute(name),
     },
     ...(value !== undefined && {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       attributeIncrease: value,
     }),
     ...(min !== undefined && {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       minimumIncrease: min,
     }),
     ...(max !== undefined && {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       maximumIncrease: max,
     }),
     ...(aug !== undefined && {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       augmentatedIncrease: aug,
     }),
   };
@@ -3203,7 +4431,7 @@ function convertCondition(conditionXML: string) {
       attributeNamePrefix: "_",
       textNodeName: "xmltext",
     });
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
     const jObj: any = parser.parse(xml_string);
     // console.dir(
     //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
@@ -3279,7 +4507,7 @@ function convertSelectAttribute(
   return element;
 }
 
-const convertWeaponSkillAccuracy = function (
+function convertWeaponSkillAccuracy(
   weaponSkillAccuracy: WeaponSkillAccuracyXMLType
 ) {
   let skill: WeaponAccuracySkillListSkillSelectionType;
@@ -3308,4 +4536,4 @@ const convertWeaponSkillAccuracy = function (
     };
   }
   return skill;
-};
+}

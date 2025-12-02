@@ -1,4 +1,8 @@
-import { bonusSourceEnum } from "../../enums.js";
+import {
+  bonusSourceEnum,
+  spellPowerRangeEnum,
+  spellPowerTargetEnum,
+} from "../../enums.js";
 import {
   availabilityEnum,
   mathOperatorEnum,
@@ -219,3 +223,10 @@ export const CharacterCreatorBonusListSchema = type(
 ).array();
 export type CharacterCreatorBonusListType =
   typeof CharacterCreatorBonusListSchema.infer;
+
+export const spellRangeSchema = type({
+  "+": "reject",
+  value: type.valueOf(spellPowerRangeEnum),
+  target: type.valueOf(spellPowerTargetEnum),
+});
+export type spellRangeType = typeof spellRangeSchema.infer;

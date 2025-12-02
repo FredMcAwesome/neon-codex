@@ -127,13 +127,25 @@ WeaponDetails {
 }
 
 RatingCalculation {
-  Exp = Calculation
-    | PositiveNumber
-  Calculation = Calculation "*" PositiveNumber -- ratingTimes
-    | PositiveNumber "*" Calculation -- timesRating
+  Exp = AddSub
+  AddSub = AddSub "+" MulDiv -- add
+    | AddSub "-" MulDiv -- subtract
+    | MulDiv -- base
+  MulDiv = MulDiv "*" SubCalculation -- multiply
+    | MulDiv "/" SubCalculation -- divide
+    | SubCalculation
+  SubCalculation = "(" Exp ")" -- parenthesis
     | Rating
-  Rating = "Rating"
+    | Seats
+    | Number
+  Rating = "Rating" -- base
+    | "+Rating" -- positive
+    | "-Rating" -- negative
+  Seats = "Seats" -- base
+    | "+Seats" -- positive
   Number = PositiveNumber
+    | NegativeNumber
+  NegativeNumber = "-" PositiveNumber
   PositiveNumber = digit+ "." digit+ -- float
     | digit+ -- int
 }

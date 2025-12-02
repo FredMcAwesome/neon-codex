@@ -25,6 +25,8 @@ const TraditionSubBonusXmlSchema = type({
   id: "string",
   name: "string",
   // Abilities used to resist drain e.g. {WIL} + {INT}
+  // Traditions that have an empty Drain value will automatically
+  // be permitted to choose their drain attribute.
   drain: type.or(type.valueOf(traditionXmlDrainAttributeEnum), "''"),
   // replace materialisation power with this power instead
   "spiritform?": type.valueOf(traditionSpiritFormEnum),

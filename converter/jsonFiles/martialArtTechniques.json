@@ -225,7 +225,9 @@
     "name": "Kick Attack",
     "bonus": {
       "combatAndWeapon": {
-        "unarmedReach": 1
+        "rangeModifiers": {
+          "unarmedReach": 1
+        }
       }
     },
     "source": "Run And Gun",

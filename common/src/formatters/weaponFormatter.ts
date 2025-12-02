@@ -5,16 +5,16 @@ import {
   firearmModeEnum,
 } from "../enums.js";
 import type {
-  AccuracyType,
-  ArmourPenetrationType,
   AvailabilityWeaponType,
   CostWeaponType,
-  SingleArmourPenetrationType,
 } from "../schemas/equipment/combat/weaponSchemas.js";
 import type {
+  AccuracyType,
   AmmunitionType,
+  ArmourPenetrationType,
   DamageAmountType,
   DamageType,
+  SingleArmourPenetrationType,
 } from "../schemas/shared/weaponSharedSchemas.js";
 import { formatRating } from "./commonFormatter.js";
 

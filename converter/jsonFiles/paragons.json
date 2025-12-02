@@ -89,6 +89,17 @@
       "initiative": {
         "initiative": {
           "bonus": -2
+        },
+        "matrixInitiative": {
+          "scoreModifier": -2
+        }
+      },
+      "miscellaneous": {
+        "dicePoolModifier": {
+          "type": {
+            "specificTest": "Threading"
+          },
+          "modifier": 1
         }
       }
     },
@@ -111,6 +122,11 @@
             "modifierType": "DicePoolIncrease"
           }
         ]
+      },
+      "spellAndMagic": {
+        "livingPersonaModification": {
+          "firewall": 1
+        }
       }
     },
     "source": "Kill Code",
@@ -147,92 +163,94 @@
         ]
       },
       "combatAndWeapon": {
-        "weaponSkillAccuracyList": [
-          {
-            "skill": {
-              "selectSkill": false,
-              "name": "Archery"
+        "attackModifiers": {
+          "weaponSkillAccuracyList": [
+            {
+              "skill": {
+                "selectSkill": false,
+                "name": "Archery"
+              },
+              "bonus": 1
             },
-            "bonus": 1
-          },
-          {
-            "skill": {
-              "selectSkill": false,
-              "name": "Automatics"
+            {
+              "skill": {
+                "selectSkill": false,
+                "name": "Automatics"
+              },
+              "bonus": 1
             },
-            "bonus": 1
-          },
-          {
-            "skill": {
-              "selectSkill": false,
-              "name": "Blades"
+            {
+              "skill": {
+                "selectSkill": false,
+                "name": "Blades"
+              },
+              "bonus": 1
             },
-            "bonus": 1
-          },
-          {
-            "skill": {
-              "selectSkill": false,
-              "name": "Clubs"
+            {
+              "skill": {
+                "selectSkill": false,
+                "name": "Clubs"
+              },
+              "bonus": 1
             },
-            "bonus": 1
-          },
-          {
-            "skill": {
-              "selectSkill": false,
-              "name": "Exotic Melee Weapon"
+            {
+              "skill": {
+                "selectSkill": false,
+                "name": "Exotic Melee Weapon"
+              },
+              "bonus": 1
             },
-            "bonus": 1
-          },
-          {
-            "skill": {
-              "selectSkill": false,
-              "name": "Exotic Ranged Weapon"
+            {
+              "skill": {
+                "selectSkill": false,
+                "name": "Exotic Ranged Weapon"
+              },
+              "bonus": 1
             },
-            "bonus": 1
-          },
-          {
-            "skill": {
-              "selectSkill": false,
-              "name": "Gunnery"
+            {
+              "skill": {
+                "selectSkill": false,
+                "name": "Gunnery"
+              },
+              "bonus": 1
             },
-            "bonus": 1
-          },
-          {
-            "skill": {
-              "selectSkill": false,
-              "name": "Heavy Weapons"
+            {
+              "skill": {
+                "selectSkill": false,
+                "name": "Heavy Weapons"
+              },
+              "bonus": 1
             },
-            "bonus": 1
-          },
-          {
-            "skill": {
-              "selectSkill": false,
-              "name": "Longarms"
+            {
+              "skill": {
+                "selectSkill": false,
+                "name": "Longarms"
+              },
+              "bonus": 1
             },
-            "bonus": 1
-          },
-          {
-            "skill": {
-              "selectSkill": false,
-              "name": "Pistols"
+            {
+              "skill": {
+                "selectSkill": false,
+                "name": "Pistols"
+              },
+              "bonus": 1
             },
-            "bonus": 1
-          },
-          {
-            "skill": {
-              "selectSkill": false,
-              "name": "Throwing Weapons"
+            {
+              "skill": {
+                "selectSkill": false,
+                "name": "Throwing Weapons"
+              },
+              "bonus": 1
             },
-            "bonus": 1
-          },
-          {
-            "skill": {
-              "selectSkill": false,
-              "name": "Unarmed Combat"
-            },
-            "bonus": 1
-          }
-        ]
+            {
+              "skill": {
+                "selectSkill": false,
+                "name": "Unarmed Combat"
+              },
+              "bonus": 1
+            }
+          ]
+        }
       }
     },
     "source": "Kill Code",

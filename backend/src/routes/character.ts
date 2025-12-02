@@ -732,9 +732,10 @@ async function getWeapons(): Promise<WeaponListType> {
           alternativeWeaponForms: alternativeWeaponNameForms,
         }),
         relatedSkill: skill,
-        ...(weapon.relatedSkillSpecialisations !== undefined &&
-          weapon.relatedSkillSpecialisations.length > 0 && {
-            relatedSkillSpecialisations: weapon.relatedSkillSpecialisations,
+        ...(weapon.relatedSkillSpecialisationList !== undefined &&
+          weapon.relatedSkillSpecialisationList.length > 0 && {
+            relatedSkillSpecialisationList:
+              weapon.relatedSkillSpecialisationList,
           }),
         ...(weapon.wireless !== undefined && { wireless: weapon.wireless }),
         source: weapon.source,
@@ -3304,8 +3305,8 @@ const convertWeaponDBToDTO = async function (
       hostWeaponRequirements: hostWeaponRequirements,
     }),
     relatedSkill: relatedSkill.name,
-    ...(weaponDB.relatedSkillSpecialisations !== undefined && {
-      relatedSkillSpecialisations: weaponDB.relatedSkillSpecialisations,
+    ...(weaponDB.relatedSkillSpecialisationList !== undefined && {
+      relatedSkillSpecialisationList: weaponDB.relatedSkillSpecialisationList,
     }),
     availability: weaponDB.availability,
     cost: weaponDB.cost,
@@ -4195,7 +4196,7 @@ const convertActiveLifestyleDBToDTO = async function (
   };
 };
 
-export const characterRouter = router({
+export const characterRouter: ReturnType<typeof router> = router({
   traditions: traditions,
   mentors: mentors,
   critters: critters,

@@ -61,9 +61,11 @@
     },
     "bonus": {
       "combatAndWeapon": {
-        "dodge": {
-          "option": "Rating"
-        }
+        "defenseTestModifier": [
+          {
+            "option": "Rating"
+          }
+        ]
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -81,22 +83,24 @@
     },
     "bonus": {
       "combatAndWeapon": {
-        "weaponSkillDamage": {
-          "selectionOptions": {
-            "restriction": {
-              "skillList": {
-                "skillList": [
-                  "Astral Combat",
-                  "Blades",
-                  "Clubs",
-                  "Exotic Melee Weapon",
-                  "Unarmed Combat"
-                ],
-                "limit": "Only"
+        "damageValueModifiers": {
+          "weaponSkillDamage": {
+            "selectionOptions": {
+              "restriction": {
+                "skillList": {
+                  "skillList": [
+                    "Astral Combat",
+                    "Blades",
+                    "Clubs",
+                    "Exotic Melee Weapon",
+                    "Unarmed Combat"
+                  ],
+                  "limit": "Only"
+                }
               }
-            }
-          },
-          "bonus": 1
+            },
+            "bonus": 1
+          }
         }
       }
     },
@@ -109,6 +113,15 @@
     "pointCost": 0.25,
     "levels": true,
     "limit": 1,
+    "bonus": {
+      "initiative": {
+        "surpriseTest": [
+          {
+            "option": "Rating"
+          }
+        ]
+      }
+    },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 309
   },
@@ -153,26 +166,28 @@
     "limit": 100,
     "bonus": {
       "combatAndWeapon": {
-        "weaponSkillAccuracyList": [
-          {
-            "skill": {
-              "selectSkill": true,
-              "selectionOptions": {
-                "restriction": {
-                  "skillList": {
-                    "skillList": ["Unarmed Combat"],
-                    "limit": "Exclude"
-                  },
-                  "skillCategoryList": {
-                    "skillCategoryList": ["Combat Active"],
-                    "limit": "Only"
+        "attackModifiers": {
+          "weaponSkillAccuracyList": [
+            {
+              "skill": {
+                "selectSkill": true,
+                "selectionOptions": {
+                  "restriction": {
+                    "skillList": {
+                      "skillList": ["Unarmed Combat"],
+                      "limit": "Exclude"
+                    },
+                    "skillCategoryList": {
+                      "skillCategoryList": ["Combat Active"],
+                      "limit": "Only"
+                    }
                   }
                 }
-              }
-            },
-            "bonus": 1
-          }
-        ]
+              },
+              "bonus": 1
+            }
+          ]
+        }
       }
     },
     "source": "Shadowrun 5 Core Rulebook",
@@ -404,8 +419,10 @@
     "limit": 1,
     "bonus": {
       "testAndResistance": {
-        "judgeIntentionsDefense": {
-          "option": "Rating"
+        "judgeIntentions": {
+          "defense": {
+            "option": "Rating"
+          }
         }
       }
     },
@@ -443,9 +460,11 @@
     },
     "bonus": {
       "combatAndWeapon": {
-        "armour": {
-          "bonus": {
-            "option": "Rating"
+        "armourModifiers": {
+          "armour": {
+            "bonus": {
+              "option": "Rating"
+            }
           }
         }
       }
@@ -461,29 +480,31 @@
     "limit": 1,
     "bonus": {
       "combatAndWeapon": {
-        "toxinContactResist": {
-          "option": "Rating"
-        },
-        "pathogenContactResist": {
-          "option": "Rating"
-        },
-        "toxinInhalationResist": {
-          "option": "Rating"
-        },
-        "pathogenInhalationResist": {
-          "option": "Rating"
-        },
-        "toxinIngestionResist": {
-          "option": "Rating"
-        },
-        "pathogenIngestionResist": {
-          "option": "Rating"
-        },
-        "toxinInjectionResist": {
-          "option": "Rating"
-        },
-        "pathogenInjectionResist": {
-          "option": "Rating"
+        "toxinAndPathogen": {
+          "toxinContactResist": {
+            "option": "Rating"
+          },
+          "pathogenContactResist": {
+            "option": "Rating"
+          },
+          "toxinInhalationResist": {
+            "option": "Rating"
+          },
+          "pathogenInhalationResist": {
+            "option": "Rating"
+          },
+          "toxinIngestionResist": {
+            "option": "Rating"
+          },
+          "pathogenIngestionResist": {
+            "option": "Rating"
+          },
+          "toxinInjectionResist": {
+            "option": "Rating"
+          },
+          "pathogenInjectionResist": {
+            "option": "Rating"
+          }
         }
       }
     },
@@ -499,6 +520,13 @@
     "adeptWay": {
       "pointCost": 0.25,
       "requirements": {}
+    },
+    "bonus": {
+      "conditionAndRecovery": {
+        "conditionModifierNegativeEffectsOffsetPerTrack": {
+          "option": "Rating"
+        }
+      }
     },
     "forbidden": {},
     "source": "Shadowrun 5 Core Rulebook",
@@ -516,10 +544,10 @@
     },
     "bonus": {
       "conditionAndRecovery": {
-        "stunHealing": {
+        "stunConditionModifierHealingDiceModifier": {
           "option": "Rating"
         },
-        "physicalHealing": {
+        "physicalConditionModifierHealingDiceModifier": {
           "option": "Rating"
         }
       }
@@ -535,6 +563,13 @@
     "limit": 1,
     "adeptWay": {
       "pointCost": 0.25
+    },
+    "bonus": {
+      "testAndResistance": {
+        "allSpellResist": {
+          "option": "Rating"
+        }
+      }
     },
     "source": "Shadowrun 5 Core Rulebook",
     "page": 311
@@ -802,6 +837,11 @@
       "pointCost": 0.5
     },
     "bonus": {
+      "combatAndWeapon": {
+        "addWeapon": {
+          "name": "Elemental Body"
+        }
+      },
       "miscellaneous": {
         "selection": {
           "optionList": [
@@ -1049,6 +1089,11 @@
             "modifierType": "DicePoolIncrease"
           }
         ]
+      },
+      "combatAndWeapon": {
+        "damageValueModifiers": {
+          "thrownWeaponModifier": 1
+        }
       }
     },
     "source": "Street Grimoire",
@@ -1118,6 +1163,21 @@
     "pointCost": 0.25,
     "levels": true,
     "limit": 1,
+    "bonus": {
+      "combatAndWeapon": {
+        "attackModifiers": {
+          "unarmedModifier": [
+            -1,
+            {
+              "operator": "*"
+            },
+            {
+              "option": "Rating"
+            }
+          ]
+        }
+      }
+    },
     "source": "Street Grimoire",
     "page": 173
   },
@@ -1235,11 +1295,13 @@
     "limit": 1,
     "bonus": {
       "combatAndWeapon": {
-        "fireArmour": {
-          "option": "Rating"
-        },
-        "coldArmour": {
-          "option": "Rating"
+        "armourModifiers": {
+          "fireArmour": {
+            "option": "Rating"
+          },
+          "coldArmour": {
+            "option": "Rating"
+          }
         }
       }
     },
@@ -1462,8 +1524,10 @@
     "limit": 1,
     "bonus": {
       "combatAndWeapon": {
-        "toxinIngestionResist": {
-          "option": "Rating"
+        "toxinAndPathogen": {
+          "toxinIngestionResist": {
+            "option": "Rating"
+          }
         }
       }
     },
@@ -1559,6 +1623,9 @@
       "testAndResistance": {
         "manaIllusionResist": {
           "option": "Rating"
+        },
+        "physicalIllusionResist": {
+          "option": "Rating"
         }
       }
     },
@@ -1626,7 +1693,10 @@
     },
     "bonus": {
       "conditionAndRecovery": {
-        "addPhysicalBoxes": {
+        "addPhysicalTrackBoxes": {
+          "option": "Rating"
+        },
+        "addStunTrackBoxes": {
           "option": "Rating"
         }
       }
@@ -1696,6 +1766,16 @@
     "adeptWay": {
       "pointCost": 0.5
     },
+    "bonus": {
+      "combatAndWeapon": {
+        "attackModifiers": {
+          "weaponCategoryDicePoolModifier": {
+            "category": "Bows",
+            "modifier": 1
+          }
+        }
+      }
+    },
     "source": "Hard Targets",
     "page": 191
   },
@@ -1705,6 +1785,25 @@
     "pointCost": 0.25,
     "levels": true,
     "limit": 1,
+    "bonus": {
+      "combatAndWeapon": {
+        "rangeModifiers": {
+          "thrownWeaponRangeModifier": [
+            {
+              "subnumbers": [
+                {
+                  "option": "Rating"
+                },
+                {
+                  "operator": "*"
+                },
+                2
+              ]
+            }
+          ]
+        }
+      }
+    },
     "source": "Hard Targets",
     "page": 191
   },
@@ -1738,6 +1837,18 @@
     "pointCost": 0.25,
     "levels": true,
     "limit": 1,
+    "bonus": {
+      "testAndResistance": {
+        "judgeIntentions": {
+          "defense": {
+            "option": "Rating"
+          },
+          "offense": {
+            "option": "Rating"
+          }
+        }
+      }
+    },
     "source": "Cutting Aces",
     "page": 153
   },

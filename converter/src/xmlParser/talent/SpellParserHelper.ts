@@ -5,9 +5,9 @@ import {
   spellDescriptorEnum,
   spellTypeEnum,
 } from "@neon-codex/common/build/enums.js";
-import { spellXmlCategoryEnum } from "./SpellParserSchemas.js";
 import type { SpellXmlDamageType } from "./SpellParserSchemas.js";
 import Spells from "../../grammar/spells.ohm-bundle.js";
+import { spellXmlCategoryEnum } from "../common/ParserCommonDefines.js";
 const Damage = Spells.Damage;
 
 export const convertSpellCategory = function (category: spellXmlCategoryEnum) {
@@ -64,6 +64,8 @@ export const convertSpellDescriptors = function (descriptors: string) {
         return spellDescriptorEnum.Active;
       case "Passive":
         return spellDescriptorEnum.Passive;
+      case "NOT(Area)":
+        return spellDescriptorEnum.SingleTarget;
       case "Area":
         return spellDescriptorEnum.Area;
       case "Extended Area":

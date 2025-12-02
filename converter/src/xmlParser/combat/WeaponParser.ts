@@ -18,8 +18,6 @@ import type {
   FirearmOptionsType,
   AvailabilityWeaponType,
   CostWeaponType,
-  AccuracyType,
-  ArmourPenetrationType,
   RecoilCompensationType,
 } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
 import {
@@ -48,6 +46,8 @@ import type {
   DamageType,
   AmmunitionType,
   AccessoryMountType,
+  AccuracyType,
+  ArmourPenetrationType,
 } from "@neon-codex/common/build/schemas/shared/weaponSharedSchemas.js";
 import type { CustomisedWeaponAccessoryListType } from "@neon-codex/common/build/schemas/equipment/combat/weaponAccessorySchemas.js";
 import { type } from "arktype";
@@ -197,24 +197,26 @@ function convertWeapon(weapon: WeaponXmlType): WeaponType {
     convertAccessories(weapon.accessories);
   const accessoryMounts: AccessoryMountType | undefined =
     convertAccessoryMounts(weapon.accessorymounts);
-  const alternativeWeaponForms = weapon.addweapon
-    ? Array.isArray(weapon.addweapon)
-      ? weapon.addweapon
-      : [weapon.addweapon]
-    : undefined;
+  const alternativeWeaponForms =
+    weapon.addweapon !== undefined
+      ? Array.isArray(weapon.addweapon)
+        ? weapon.addweapon
+        : [weapon.addweapon]
+      : undefined;
   const { allowedGearList, allowedGearCategories } = convertAllowGear(
     weapon.allowgear
   );
   const doubleCostAccessoryMounts = convertAccessoryMounts(
     weapon.doubledcostaccessorymounts
   );
-  const unfilteredRanges = weapon.range
-    ? weapon.alternaterange
-      ? [weapon.range, weapon.alternaterange]
-      : [weapon.range]
-    : weapon.alternaterange
-    ? [weapon.category, weapon.alternaterange]
-    : [weapon.category];
+  const unfilteredRanges =
+    weapon.range !== undefined
+      ? weapon.alternaterange !== undefined
+        ? [weapon.range, weapon.alternaterange]
+        : [weapon.range]
+      : weapon.alternaterange !== undefined
+      ? [weapon.category, weapon.alternaterange]
+      : [weapon.category];
   const ranges = unfilteredRanges.map((range) => {
     if (range === "Heavy Machine Guns" || range === "Medium Machine Guns") {
       return "Medium/Heavy Machinegun";
@@ -228,13 +230,14 @@ function convertWeapon(weapon: WeaponXmlType): WeaponType {
   if (weapon.required !== undefined) {
     requirements = convertRequirements(weapon.required);
   }
-  const mountLocationsOnHostWeapon = weapon.mount
-    ? weapon.extramount
-      ? [weapon.mount, weapon.extramount]
-      : [weapon.mount]
-    : weapon.extramount
-    ? [weapon.extramount]
-    : undefined;
+  const mountLocationsOnHostWeapon =
+    weapon.mount !== undefined
+      ? weapon.extramount !== undefined
+        ? [weapon.mount, weapon.extramount]
+        : [weapon.mount]
+      : weapon.extramount !== undefined
+      ? [weapon.extramount]
+      : undefined;
   if (requirements !== undefined || mountLocationsOnHostWeapon !== undefined) {
     assert(
       weapon.category === weaponSubtypeEnum.UnderbarrelWeapons,
@@ -271,13 +274,14 @@ function convertWeapon(weapon: WeaponXmlType): WeaponType {
       weapon.name
     );
   }
-  const initialSpecialisations = weapon.spec
-    ? weapon.spec2
-      ? [weapon.spec, weapon.spec2]
-      : [weapon.spec]
-    : weapon.spec2
-    ? [weapon.spec2]
-    : undefined;
+  const initialSpecialisations =
+    weapon.spec !== undefined
+      ? weapon.spec2 !== undefined
+        ? [weapon.spec, weapon.spec2]
+        : [weapon.spec]
+      : weapon.spec2 !== undefined
+      ? [weapon.spec2]
+      : undefined;
   if (
     initialSpecialisations !== undefined &&
     ((initialSpecialisations.length == 1 &&
@@ -317,7 +321,7 @@ function convertWeapon(weapon: WeaponXmlType): WeaponType {
     ...(weapon.ammocategory !== undefined && {
       ammoCategory: weapon.ammocategory,
     }),
-    ammoSlots: weapon.ammoslots || 1,
+    ammoSlots: weapon.ammoslots !== undefined ? weapon.ammoslots : 1,
     ...(underbarrels !== undefined && { underbarrelWeapons: underbarrels }),
     ...(accessoryMounts !== undefined && { accessoryMounts: accessoryMounts }),
     ...(doubleCostAccessoryMounts !== undefined && {
@@ -366,7 +370,7 @@ function convertWeapon(weapon: WeaponXmlType): WeaponType {
     }),
     relatedSkill: skill,
     ...(specialisations !== undefined && {
-      relatedSkillSpecialisations: specialisations,
+      relatedSkillSpecialisationList: specialisations,
     }),
     source: source,
     page: weapon.page,
