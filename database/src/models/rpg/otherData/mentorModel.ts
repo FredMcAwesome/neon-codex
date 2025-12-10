@@ -13,7 +13,7 @@ import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/r
 
 @Entity({
   abstract: true,
-  discriminatorColumn: "type",
+  discriminatorColumn: "category",
 })
 export abstract class Mentors {
   @PrimaryKey()
@@ -23,7 +23,7 @@ export abstract class Mentors {
   name!: string;
 
   @Enum(() => mentorCategoryEnum)
-  type!: mentorCategoryEnum;
+  category!: mentorCategoryEnum;
 
   @Property({ length: 5000 })
   advantage!: string;

@@ -4,7 +4,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 import {
-  vehicleTypeEnum,
+  vehicleCategoryEnum,
   weaponMountControlEnum,
   weaponMountFlexibilityEnum,
   weaponMountSizeEnum,
@@ -46,17 +46,17 @@ export const getVehicles = function () {
   }
   const stagedVehicles: Array<Vehicles> = [];
   unlinkedVehicles.forEach((vehicle) => {
-    switch (vehicle.type) {
-      case vehicleTypeEnum.Groundcraft:
+    switch (vehicle.category) {
+      case vehicleCategoryEnum.Groundcraft:
         stagedVehicles.push(new Groundcrafts(vehicle));
         break;
-      case vehicleTypeEnum.Watercraft:
+      case vehicleCategoryEnum.Watercraft:
         stagedVehicles.push(new Watercrafts(vehicle));
         break;
-      case vehicleTypeEnum.Aircraft:
+      case vehicleCategoryEnum.Aircraft:
         stagedVehicles.push(new Aircrafts(vehicle));
         break;
-      case vehicleTypeEnum.Drone:
+      case vehicleCategoryEnum.Drone:
         stagedVehicles.push(new Drones(vehicle));
         break;
     }

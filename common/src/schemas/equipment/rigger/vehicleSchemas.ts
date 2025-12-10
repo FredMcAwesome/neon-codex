@@ -6,7 +6,7 @@ import {
   mathOperatorEnum,
   restrictionEnum,
   // vehicleCategoryEnum,
-  vehicleTypeEnum,
+  vehicleCategoryEnum,
   weaponMountControlEnum,
   weaponMountFlexibilityEnum,
   weaponMountSizeEnum,
@@ -18,9 +18,18 @@ import {
   AvailabilityRatingSchema,
   RangeCostSchema,
 } from "../../shared/commonSchemas.js";
-import { CustomisedVehicleModListSchema } from "./vehicleModSchemas.js";
-import { CustomisedGearListSchema } from "../other/gearSchemas.js";
-import { CustomisedWeaponMountListSchema } from "./weaponMountSchemas.js";
+import {
+  CustomisedVehicleModListSchema,
+  CustomisedVehicleModLoadedListSchema,
+} from "./vehicleModSchemas.js";
+import {
+  CustomisedGearListSchema,
+  CustomisedGearLoadedListSchema,
+} from "../other/gearSchemas.js";
+import {
+  CustomisedWeaponMountListSchema,
+  CustomisedWeaponMountLoadedListSchema,
+} from "./weaponMountSchemas.js";
 import { type } from "arktype";
 
 export const AvailabilityVehicleSchema = type({
@@ -127,22 +136,22 @@ const MannedVehiclePartialSchema = VehiclePartialSchema.merge({
 });
 
 const GroundcraftVehicleSchema = MannedVehiclePartialSchema.merge({
-  type: type.unit(vehicleTypeEnum.Groundcraft),
+  category: type.unit(vehicleCategoryEnum.Groundcraft),
   subtype: type.valueOf(groundcraftSubtypeEnum),
 });
 export type GroundcraftVehicleType = typeof GroundcraftVehicleSchema.infer;
 const WatercraftVehicleSchema = MannedVehiclePartialSchema.merge({
-  type: type.unit(vehicleTypeEnum.Watercraft),
+  category: type.unit(vehicleCategoryEnum.Watercraft),
   subtype: type.valueOf(watercraftSubtypeEnum),
 });
 export type WatercraftVehicleType = typeof WatercraftVehicleSchema.infer;
 const AircraftVehicleSchema = MannedVehiclePartialSchema.merge({
-  type: type.unit(vehicleTypeEnum.Aircraft),
+  category: type.unit(vehicleCategoryEnum.Aircraft),
   subtype: type.valueOf(aircraftSubtypeEnum),
 });
 export type AircraftVehicleType = typeof AircraftVehicleSchema.infer;
 const DroneVehicleSchema = VehiclePartialSchema.merge({
-  type: type.unit(vehicleTypeEnum.Drone),
+  category: type.unit(vehicleCategoryEnum.Drone),
   subtype: type.valueOf(droneSubtypeEnum),
 });
 export type DroneVehicleType = typeof DroneVehicleSchema.infer;
@@ -176,3 +185,23 @@ export const CustomisedVehicleListSchema = type(
 );
 export type CustomisedVehicleListType =
   typeof CustomisedVehicleListSchema.infer;
+
+export const CustomisedVehicleLoadedSchema = type({
+  "+": "reject",
+  baseVehicle: VehicleSchema,
+  // This overrides baseVehicle modifications
+  "modList?": CustomisedVehicleModLoadedListSchema,
+  // This overrides baseVehicle included gear
+  "gearList?": CustomisedGearLoadedListSchema,
+  "weaponMountList?": CustomisedWeaponMountLoadedListSchema,
+  // TODO: is rating a thing for vehicles?
+  // rating?":"number",
+  "customName?": "string",
+});
+export type CustomisedVehicleLoadedType =
+  typeof CustomisedVehicleLoadedSchema.infer;
+export const CustomisedVehicleLoadedListSchema = type(
+  CustomisedVehicleLoadedSchema.array()
+);
+export type CustomisedVehicleLoadedListType =
+  typeof CustomisedVehicleLoadedListSchema.infer;

@@ -7,7 +7,7 @@ import {
   Property,
 } from "@mikro-orm/postgresql";
 import {
-  critterTypeEnum,
+  critterCategoryEnum,
   sourceBookEnum,
 } from "@neon-codex/common/build/enums.js";
 import type {
@@ -35,8 +35,8 @@ export class Critters {
   @Property({ length: 255 })
   name!: string;
 
-  @Enum(() => critterTypeEnum)
-  type!: critterTypeEnum;
+  @Enum(() => critterCategoryEnum)
+  category!: critterCategoryEnum;
 
   @Property({ type: "json" })
   bodyAttributeRange!: CritterAttributeRangeType;
@@ -146,7 +146,7 @@ export class Critters {
   constructor(dto: CritterType) {
     this.name = dto.name;
 
-    this.type = dto.category;
+    this.category = dto.category;
     this.bodyAttributeRange = dto.bodyAttributeRange;
     this.agilityAttributeRange = dto.agilityAttributeRange;
     this.reactionAttributeRange = dto.reactionAttributeRange;

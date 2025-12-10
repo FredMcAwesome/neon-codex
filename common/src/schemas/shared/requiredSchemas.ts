@@ -4,7 +4,7 @@ import {
   ammoSourceEnum,
   firearmWeaponTypeEnum,
   projectileWeaponTypeEnum,
-  weaponTypeEnum,
+  weaponCategoryEnum,
   weaponAccessoryMountLocationEnum,
   damageAnnotationEnum,
   damageTypeEnum,
@@ -35,7 +35,7 @@ export const RequirementsSchema = type({
   ).array(),
   "categories?": type(
     type.or(
-      type.unit(weaponTypeEnum.Melee),
+      type.unit(weaponCategoryEnum.Melee),
       type.valueOf(firearmWeaponTypeEnum),
       type.valueOf(projectileWeaponTypeEnum)
     )

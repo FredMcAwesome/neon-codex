@@ -1,6 +1,6 @@
 import type { TalentPriorityType } from "@neon-codex/common/build/schemas/otherData/prioritySchemas.js";
 import {
-  critterTypeEnum,
+  critterCategoryEnum,
   magicalFormulaeCategoryEnum,
   mentorCategoryEnum,
   spellCategoryEnum,
@@ -43,7 +43,7 @@ export const TalentSelect = function (props: IProps) {
   useEffect(() => {
     switch (talent.category) {
       case talentCategoryEnum.Magic:
-        if (props.talentInfo.type !== talentCategoryEnum.Magic) {
+        if (props.talentInfo.category !== talentCategoryEnum.Magic) {
           const formulae: FormulaListSelectedType =
             talent.formulae !== undefined
               ? {
@@ -65,7 +65,7 @@ export const TalentSelect = function (props: IProps) {
                   selectAdeptPowers: false as const,
                 };
           props.setTalentInfo({
-            type: talentCategoryEnum.Magic,
+            category: talentCategoryEnum.Magic,
             selectedTradition: {
               name: "",
               customSpirits: {
@@ -78,25 +78,25 @@ export const TalentSelect = function (props: IProps) {
         }
         break;
       case talentCategoryEnum.Resonance:
-        if (props.talentInfo.type !== talentCategoryEnum.Resonance) {
+        if (props.talentInfo.category !== talentCategoryEnum.Resonance) {
           props.setTalentInfo({
-            type: talentCategoryEnum.Resonance,
+            category: talentCategoryEnum.Resonance,
             complexForms: [],
           });
         }
         break;
       case talentCategoryEnum.Depth:
-        if (props.talentInfo.type !== talentCategoryEnum.Depth) {
+        if (props.talentInfo.category !== talentCategoryEnum.Depth) {
           props.setTalentInfo({
-            type: talentCategoryEnum.Depth,
+            category: talentCategoryEnum.Depth,
             programs: [],
           });
         }
         break;
       case talentCategoryEnum.Mundane:
-        if (props.talentInfo.type !== talentCategoryEnum.Mundane) {
+        if (props.talentInfo.category !== talentCategoryEnum.Mundane) {
           props.setTalentInfo({
-            type: talentCategoryEnum.Mundane,
+            category: talentCategoryEnum.Mundane,
           });
         }
         break;
@@ -108,7 +108,7 @@ export const TalentSelect = function (props: IProps) {
     // ensure we don't submit the entire character
     // without certain fields set e.g. tradition must be set here)
     case talentCategoryEnum.Magic:
-      if (props.talentInfo.type !== talentCategoryEnum.Magic) {
+      if (props.talentInfo.category !== talentCategoryEnum.Magic) {
         return <>Loading Magic Talent Info</>;
       }
       selectTradition = (
@@ -156,7 +156,7 @@ export const TalentSelect = function (props: IProps) {
       }
       break;
     case talentCategoryEnum.Resonance:
-      if (props.talentInfo.type !== talentCategoryEnum.Resonance) {
+      if (props.talentInfo.category !== talentCategoryEnum.Resonance) {
         return <>Loading Resonance Talent Info</>;
       }
       if (talent.complexForms > 0) {
@@ -178,7 +178,7 @@ export const TalentSelect = function (props: IProps) {
       }
       break;
     case talentCategoryEnum.Depth:
-      if (props.talentInfo.type !== talentCategoryEnum.Depth) {
+      if (props.talentInfo.category !== talentCategoryEnum.Depth) {
         return <>Loading Depth Talent Info</>;
       }
       if (talent.depth > 0) {
@@ -302,7 +302,7 @@ const TraditionSelect = function (props: ITraditionSelectProps) {
 };
 
 type CustomSpiritTalentType = TalentInfoType & {
-  type: talentCategoryEnum.Magic;
+  category: talentCategoryEnum.Magic;
   selectedTradition: {
     customSpirits: CustomSpiritsType & {
       customSpirits: true;
@@ -326,7 +326,7 @@ const SpiritSelect = function (props: ISpiritSelectProps) {
     return <></>;
   }
   const spirits = critterList.data.filter(
-    (critter) => critter.category === critterTypeEnum.Spirits
+    (critter) => critter.category === critterCategoryEnum.Spirits
   );
 
   const setSpirit = function (customSpirits: CustomSpiritsType) {
@@ -397,11 +397,11 @@ const SpiritSelect = function (props: ISpiritSelectProps) {
 
 interface IMentorSpiritProps {
   talentInfo: TalentInfoType & {
-    type: talentCategoryEnum.Magic;
+    category: talentCategoryEnum.Magic;
   };
   setTalentInfo: (
     talentInfo: TalentInfoType & {
-      type: talentCategoryEnum.Magic;
+      category: talentCategoryEnum.Magic;
     }
   ) => void;
 }
@@ -507,7 +507,7 @@ const MentorSpiritSelect = function (props: IMentorSpiritProps) {
 };
 
 type FormulaTalentType = TalentInfoType & {
-  type: talentCategoryEnum.Magic;
+  category: talentCategoryEnum.Magic;
   selectedFormulae: {
     selectFormulae: true;
   };
@@ -756,11 +756,11 @@ const ComplexFormSelect = function (props: IComplexFormProps) {
 
 interface IParagonProps {
   talentInfo: TalentInfoType & {
-    type: talentCategoryEnum.Resonance;
+    category: talentCategoryEnum.Resonance;
   };
   setTalentInfo: (
     talentInfo: TalentInfoType & {
-      type: talentCategoryEnum.Resonance;
+      category: talentCategoryEnum.Resonance;
     }
   ) => void;
 }
@@ -806,7 +806,7 @@ const ParagonSelect = function (props: IParagonProps) {
 };
 
 type AdeptTalentType = TalentInfoType & {
-  type: talentCategoryEnum.Magic;
+  category: talentCategoryEnum.Magic;
   selectedAdeptPowers: {
     selectAdeptPowers: true;
   };

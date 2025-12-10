@@ -2,7 +2,7 @@
   {
     "name": "Adrenaline Pump",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [
       {
@@ -55,7 +55,7 @@
   {
     "name": "Bone Density Augmentation",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [
       {
@@ -130,7 +130,7 @@
   {
     "name": "Cat's Eyes",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [0.1],
     "rating": {
@@ -147,7 +147,7 @@
   {
     "name": "Cerebral Booster",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cultured",
     "unavailableGrades": ["Used"],
     "essenceCost": [
@@ -215,7 +215,7 @@
   {
     "name": "Damage Compensators",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cultured",
     "unavailableGrades": ["Used"],
     "essenceCost": [
@@ -277,7 +277,7 @@
   {
     "name": "Enhanced Articulation",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [0.3],
     "rating": {
@@ -309,7 +309,7 @@
   {
     "name": "Mnemonic Enhancer",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cultured",
     "unavailableGrades": ["Used"],
     "essenceCost": [
@@ -414,7 +414,7 @@
   {
     "name": "Muscle Augmentation",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [
       {
@@ -491,7 +491,7 @@
   {
     "name": "Muscle Toner",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [
       {
@@ -568,7 +568,7 @@
   {
     "name": "Orthoskin",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [
       {
@@ -634,7 +634,7 @@
   {
     "name": "Pain Editor",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cultured",
     "unavailableGrades": ["Used"],
     "essenceCost": [0.3],
@@ -652,7 +652,7 @@
   {
     "name": "Pathogenic Defense",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [
       {
@@ -723,7 +723,7 @@
   {
     "name": "Platelet Factories",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [0.2],
     "rating": {
@@ -743,7 +743,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cultured",
     "unavailableGrades": ["Used"],
     "essenceCost": [0.1],
@@ -781,7 +781,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [0.1],
     "rating": {
@@ -798,7 +798,7 @@
   {
     "name": "Sleep Regulator",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cultured",
     "unavailableGrades": ["Used"],
     "essenceCost": [0.1],
@@ -816,7 +816,7 @@
   {
     "name": "Suprathyroid Gland",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [0.7],
     "rating": {
@@ -870,7 +870,7 @@
   {
     "name": "Symbiotes",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [
       {
@@ -933,7 +933,7 @@
   {
     "name": "Synaptic Booster",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cultured",
     "unavailableGrades": ["Used"],
     "essenceCost": [
@@ -1015,7 +1015,7 @@
   {
     "name": "Synthacardium",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [
       {
@@ -1081,7 +1081,7 @@
   {
     "name": "Tailored Pheromones",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [
       {
@@ -1161,7 +1161,7 @@
   {
     "name": "Toxin Extractor",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [
       {
@@ -1232,7 +1232,7 @@
   {
     "name": "Tracheal Filter",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [
       {
@@ -1297,7 +1297,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [0.1],
     "rating": {
@@ -1353,7 +1353,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [0.2],
     "rating": {
@@ -1402,7 +1402,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [0.2],
     "rating": {
@@ -1452,7 +1452,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [0.2],
     "rating": {
@@ -1501,7 +1501,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Chemical Gland Modifications",
     "essenceCost": [0.1],
     "modification": true,
@@ -1547,7 +1547,7 @@
   {
     "name": "Chemical Repulsion",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Orthoskin Upgrades",
     "essenceCost": [0.25],
     "rating": {
@@ -1575,7 +1575,7 @@
   {
     "name": "Dragon Hide",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Orthoskin Upgrades",
     "essenceCost": [0.1],
     "rating": {
@@ -1600,7 +1600,7 @@
   {
     "name": "Insulation",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Orthoskin Upgrades",
     "essenceCost": [0.1],
     "rating": {
@@ -1626,7 +1626,7 @@
   {
     "name": "Electroshock",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Orthoskin Upgrades",
     "essenceCost": [0.25],
     "rating": {
@@ -1652,7 +1652,7 @@
   {
     "name": "Penguin Blubber",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Orthoskin Upgrades",
     "essenceCost": [0.1],
     "rating": {
@@ -1677,7 +1677,7 @@
   {
     "name": "Sealskin",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Orthoskin Upgrades",
     "essenceCost": [0.1],
     "rating": {
@@ -1695,7 +1695,7 @@
   {
     "name": "Sharkskin",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Orthoskin Upgrades",
     "essenceCost": [0.25],
     "rating": {
@@ -1720,7 +1720,7 @@
   {
     "name": "Elastic Joints",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [0.2],
     "rating": {
@@ -1749,7 +1749,7 @@
   {
     "name": "Gills",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [0.2],
     "rating": {
@@ -1774,7 +1774,7 @@
     "augmentationLimit": {
       "option": "Arm"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [0.05],
     "rating": {
@@ -1811,7 +1811,7 @@
     "augmentationLimit": {
       "option": "Leg"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [0.05],
     "rating": {
@@ -1845,7 +1845,7 @@
   {
     "name": "Hearing Enhancement",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [0.1],
     "rating": {
@@ -1862,7 +1862,7 @@
   {
     "name": "Hearing Expansion",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [0.1],
     "rating": {
@@ -1882,7 +1882,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [0.05],
     "rating": {
@@ -1902,7 +1902,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [0.3],
     "rating": {
@@ -1922,7 +1922,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [0.1],
     "rating": {
@@ -1939,7 +1939,7 @@
   {
     "name": "Tactile Sensitivity",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [0.1],
     "rating": {
@@ -1959,7 +1959,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [0.25],
     "rating": {
@@ -1979,7 +1979,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [0.5],
     "rating": {
@@ -1996,7 +1996,7 @@
   {
     "name": "Troll Eyes",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [0.2],
     "rating": {
@@ -2013,7 +2013,7 @@
   {
     "name": "Vocal Range Enhancer",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [0.1],
     "rating": {
@@ -2046,7 +2046,7 @@
   {
     "name": "Vocal Range Expander",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [0.2],
     "rating": {
@@ -2079,7 +2079,7 @@
   {
     "name": "Nephritic screen",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [
       {
@@ -2180,7 +2180,7 @@
   {
     "name": "Nictitating Membranes",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [0.05],
     "rating": {
@@ -2197,7 +2197,7 @@
   {
     "name": "Tailored Critter Pheromones",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [
       {
@@ -2257,7 +2257,7 @@
   {
     "name": "Expanded Volume",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [
       {
@@ -2317,7 +2317,7 @@
   {
     "name": "Amplified Immune System",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [
       {
@@ -2391,7 +2391,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Biosculpting",
     "essenceCost": [0],
     "rating": {
@@ -2423,7 +2423,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Biosculpting",
     "essenceCost": [0.1],
     "rating": {
@@ -2455,7 +2455,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Biosculpting",
     "essenceCost": [0.25],
     "rating": {
@@ -2484,7 +2484,7 @@
   {
     "name": "Troll Reduction",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Biosculpting",
     "essenceCost": {
       "ratingLinked": [[0.2], [0.5]]
@@ -2535,7 +2535,7 @@
   {
     "name": "Troll Reduction (Ork)",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Biosculpting",
     "essenceCost": [0.2],
     "rating": {
@@ -2568,7 +2568,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Biosculpting",
     "essenceCost": [0],
     "rating": {
@@ -2595,7 +2595,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Biosculpting",
     "essenceCost": [0],
     "rating": {
@@ -2622,7 +2622,7 @@
     "augmentationLimit": {
       "option": "Arm"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Bio-Weapons",
     "essenceCost": [0.1],
     "rating": {
@@ -2652,7 +2652,7 @@
     "augmentationLimit": {
       "option": "Arm"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Bio-Weapons",
     "essenceCost": [0.15],
     "rating": {
@@ -2685,7 +2685,7 @@
     "augmentationLimit": {
       "option": "Leg"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Bio-Weapons",
     "essenceCost": [0.1],
     "rating": {
@@ -2718,7 +2718,7 @@
     "augmentationLimit": {
       "option": "Leg"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Bio-Weapons",
     "essenceCost": [0.15],
     "rating": {
@@ -2751,7 +2751,7 @@
     "augmentationLimit": {
       "option": "Arm"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Bio-Weapons",
     "essenceCost": [0.05],
     "rating": {
@@ -2786,7 +2786,7 @@
     "augmentationLimit": {
       "option": "Leg"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Bio-Weapons",
     "essenceCost": [0.05],
     "rating": {
@@ -2821,7 +2821,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Bio-Weapons",
     "essenceCost": [0],
     "rating": {
@@ -2841,7 +2841,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Bio-Weapons",
     "essenceCost": [0.1],
     "rating": {
@@ -2862,7 +2862,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Bio-Weapons",
     "essenceCost": [0.2],
     "rating": {
@@ -2883,7 +2883,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Bio-Weapons",
     "essenceCost": [0],
     "rating": {
@@ -2904,7 +2904,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Bio-Weapons",
     "essenceCost": [0],
     "rating": {
@@ -2926,7 +2926,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Bio-Weapons",
     "essenceCost": [0.3],
     "rating": {
@@ -2947,7 +2947,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Bio-Weapons",
     "essenceCost": [0.1],
     "rating": {
@@ -2968,7 +2968,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Bio-Weapons",
     "essenceCost": [0.15],
     "rating": {
@@ -2989,7 +2989,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Bio-Weapons",
     "essenceCost": [0.1],
     "rating": {
@@ -3007,7 +3007,7 @@
   {
     "name": "Muzzle",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Bio-Weapons",
     "essenceCost": [0.3],
     "rating": {
@@ -3034,7 +3034,7 @@
   {
     "name": "Sprayer",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Bio-Weapons",
     "essenceCost": [0.25],
     "rating": {
@@ -3054,7 +3054,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Bio-Weapons",
     "essenceCost": [0.05],
     "rating": {
@@ -3074,7 +3074,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Bio-Weapons",
     "essenceCost": [0.1],
     "rating": {
@@ -3095,7 +3095,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Bio-Weapons",
     "essenceCost": [0.2],
     "rating": {
@@ -3116,7 +3116,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cosmetic Bioware",
     "essenceCost": {
       "ratingLinked": [[0], [0.01], [0.02]]
@@ -3156,7 +3156,7 @@
   {
     "name": "Chameleon Skin",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cosmetic Bioware",
     "essenceCost": [0.2],
     "rating": {
@@ -3184,7 +3184,7 @@
   {
     "name": "Chameleon Skin (Dynamic)",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cosmetic Bioware",
     "essenceCost": [0.3],
     "rating": {
@@ -3212,7 +3212,7 @@
   {
     "name": "Clean Metabolism",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cosmetic Bioware",
     "essenceCost": [0.1],
     "rating": {
@@ -3229,7 +3229,7 @@
   {
     "name": "Chloroplast Skin",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cosmetic Bioware",
     "essenceCost": [0.2],
     "rating": {
@@ -3246,7 +3246,7 @@
   {
     "name": "Dietware",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cosmetic Bioware",
     "essenceCost": [0.1],
     "rating": {
@@ -3266,7 +3266,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cosmetic Bioware",
     "essenceCost": [0],
     "rating": {
@@ -3293,7 +3293,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cosmetic Bioware",
     "essenceCost": [0],
     "rating": {
@@ -3313,7 +3313,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cosmetic Bioware",
     "essenceCost": [0],
     "rating": {
@@ -3333,7 +3333,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cosmetic Bioware",
     "essenceCost": [0],
     "rating": {
@@ -3372,7 +3372,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cosmetic Bioware",
     "essenceCost": [0],
     "rating": {
@@ -3392,7 +3392,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cosmetic Bioware",
     "essenceCost": [0],
     "rating": {
@@ -3419,7 +3419,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cosmetic Bioware",
     "essenceCost": [0.1],
     "rating": {
@@ -3443,7 +3443,7 @@
   {
     "name": "Cerebellum Booster",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cultured",
     "unavailableGrades": ["Used"],
     "essenceCost": [
@@ -3511,7 +3511,7 @@
   {
     "name": "Boosted Reflexes",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cultured",
     "unavailableGrades": ["Used"],
     "essenceCost": [1],
@@ -3546,7 +3546,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cultured",
     "unavailableGrades": ["Used"],
     "essenceCost": [0.1],
@@ -3585,7 +3585,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cultured",
     "unavailableGrades": ["Used"],
     "essenceCost": [0.02],
@@ -3607,7 +3607,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cultured",
     "unavailableGrades": ["Used"],
     "essenceCost": [0.02],
@@ -3629,7 +3629,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cultured",
     "unavailableGrades": ["Used"],
     "essenceCost": [0.02],
@@ -3651,7 +3651,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cultured",
     "unavailableGrades": ["Used"],
     "essenceCost": [0.02],
@@ -3670,7 +3670,7 @@
   {
     "name": "Neuro Retention Amplification",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cultured",
     "unavailableGrades": ["Used"],
     "essenceCost": [0.1],
@@ -3700,7 +3700,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cultured",
     "unavailableGrades": ["Used"],
     "essenceCost": [0.1],
@@ -3721,7 +3721,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cultured",
     "unavailableGrades": ["Used"],
     "essenceCost": [0.3],
@@ -3739,7 +3739,7 @@
   {
     "name": "Trauma Damper",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cultured",
     "unavailableGrades": ["Used"],
     "essenceCost": [
@@ -3793,7 +3793,7 @@
   {
     "name": "Tremor Reducer",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cultured",
     "unavailableGrades": ["Used"],
     "essenceCost": [
@@ -3847,7 +3847,7 @@
   {
     "name": "Reception Enhancer",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cultured",
     "unavailableGrades": ["Used"],
     "essenceCost": [0.2],
@@ -3865,7 +3865,7 @@
   {
     "name": "Genewipe",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Phenotype Adjustment",
     "isGeneware": true,
     "essenceCost": [0.2],
@@ -3883,7 +3883,7 @@
   {
     "name": "Masque",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Phenotype Adjustment",
     "isGeneware": true,
     "essenceCost": [0.1],
@@ -3904,7 +3904,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Phenotype Adjustment",
     "isGeneware": true,
     "essenceCost": [0.1],
@@ -3922,7 +3922,7 @@
   {
     "name": "Shuffle",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Phenotype Adjustment",
     "isGeneware": true,
     "essenceCost": [0.2],
@@ -3940,7 +3940,7 @@
   {
     "name": "Elastic Stomach",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Exotic Metagenetics",
     "isGeneware": true,
     "essenceCost": [0.1],
@@ -3958,7 +3958,7 @@
   {
     "name": "Hyperthymesia",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Exotic Metagenetics",
     "isGeneware": true,
     "essenceCost": [0.1],
@@ -3981,7 +3981,7 @@
   {
     "name": "Lung Expansion",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Exotic Metagenetics",
     "isGeneware": true,
     "essenceCost": [0.1],
@@ -4004,7 +4004,7 @@
   {
     "name": "Increased Myelination",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Exotic Metagenetics",
     "isGeneware": true,
     "essenceCost": [0.1],
@@ -4029,7 +4029,7 @@
   {
     "name": "Myostatin Inhibitor",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Exotic Metagenetics",
     "isGeneware": true,
     "essenceCost": [0.3],
@@ -4065,7 +4065,7 @@
   {
     "name": "Narco",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Exotic Metagenetics",
     "isGeneware": true,
     "essenceCost": [0.2],
@@ -4097,7 +4097,7 @@
   {
     "name": "Selective Hearing",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Exotic Metagenetics",
     "isGeneware": true,
     "essenceCost": [0.1],
@@ -4115,7 +4115,7 @@
   {
     "name": "Thickened Digestive Tract Lining",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Exotic Metagenetics",
     "isGeneware": true,
     "essenceCost": [0.1],
@@ -4150,7 +4150,7 @@
   {
     "name": "Adapsin",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Transgenics",
     "isGeneware": true,
     "essenceCost": [0.2],
@@ -4173,7 +4173,7 @@
   {
     "name": "Dareadrenaline",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Transgenics",
     "isGeneware": true,
     "essenceCost": [0.1],
@@ -4241,7 +4241,7 @@
   {
     "name": "Double Elastin",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Transgenics",
     "isGeneware": true,
     "essenceCost": [0.2],
@@ -4264,7 +4264,7 @@
   {
     "name": "Hyper-Glucagon",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Transgenics",
     "isGeneware": true,
     "essenceCost": [0.1],
@@ -4291,7 +4291,7 @@
   {
     "name": "Magnesense",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Transgenics",
     "isGeneware": true,
     "essenceCost": [0.1],
@@ -4320,7 +4320,7 @@
   {
     "name": "Neo-EPO",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Transgenics",
     "isGeneware": true,
     "essenceCost": [0.2],
@@ -4359,7 +4359,7 @@
   {
     "name": "PuSHed",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Transgenics",
     "isGeneware": true,
     "essenceCost": [0.1],
@@ -4388,7 +4388,7 @@
   {
     "name": "Qualia",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Transgenics",
     "isGeneware": true,
     "essenceCost": [0.4],
@@ -4417,7 +4417,7 @@
   {
     "name": "Reakt",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Transgenics",
     "isGeneware": true,
     "essenceCost": [0.4],
@@ -4440,7 +4440,7 @@
   {
     "name": "Skeletal Pneumaticity",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Transgenics",
     "isGeneware": true,
     "essenceCost": [0.1],
@@ -4469,7 +4469,7 @@
   {
     "name": "Solus",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Transgenics",
     "isGeneware": true,
     "essenceCost": [0.1],
@@ -4496,7 +4496,7 @@
   {
     "name": "Synaptic Acceleration",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Transgenics",
     "isGeneware": true,
     "essenceCost": [0.4],
@@ -4531,7 +4531,7 @@
   {
     "name": "Synch",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Transgenics",
     "isGeneware": true,
     "essenceCost": [0.1],
@@ -4560,7 +4560,7 @@
   {
     "name": "Tetrachromacy",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Transgenics",
     "isGeneware": true,
     "essenceCost": [0.1],
@@ -4590,7 +4590,7 @@
   {
     "name": "Vasocon",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Transgenics",
     "isGeneware": true,
     "essenceCost": [0.1],
@@ -4608,7 +4608,7 @@
   {
     "name": "Allergen Tolerance",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Environmental Microadaptation",
     "isGeneware": true,
     "essenceCost": [0.1],
@@ -4631,7 +4631,7 @@
   {
     "name": "Cold Adaptation",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Environmental Microadaptation",
     "isGeneware": true,
     "essenceCost": [0.5],
@@ -4660,7 +4660,7 @@
   {
     "name": "Cryo Tolerance",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Environmental Microadaptation",
     "isGeneware": true,
     "essenceCost": [0.5],
@@ -4683,7 +4683,7 @@
   {
     "name": "Heat Adaptation",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Environmental Microadaptation",
     "isGeneware": true,
     "essenceCost": [0.5],
@@ -4712,7 +4712,7 @@
   {
     "name": "Low Oxygen Adaptation",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Environmental Microadaptation",
     "isGeneware": true,
     "essenceCost": [0.5],
@@ -4742,7 +4742,7 @@
   {
     "name": "Microgravity Adaptation",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Environmental Microadaptation",
     "isGeneware": true,
     "essenceCost": [0.5],
@@ -4765,7 +4765,7 @@
   {
     "name": "Pollution Tolerance",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Environmental Microadaptation",
     "isGeneware": true,
     "essenceCost": [0.5],
@@ -4795,7 +4795,7 @@
   {
     "name": "Radiation Tolerance",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Environmental Microadaptation",
     "isGeneware": true,
     "essenceCost": [0.5],
@@ -4823,7 +4823,7 @@
   {
     "name": "Transgenic Alteration",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Transgenic Alteration",
     "isGeneware": true,
     "essenceCost": [0.3],
@@ -4853,7 +4853,7 @@
   {
     "name": "Control Rig Optimization",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Complimentary Genetics",
     "isGeneware": true,
     "essenceCost": [0.1],
@@ -4872,7 +4872,7 @@
   {
     "name": "Reaction Optimization",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Complimentary Genetics",
     "isGeneware": true,
     "essenceCost": [0.1],
@@ -4898,7 +4898,7 @@
   {
     "name": "Reflex Recorder Optimization",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Complimentary Genetics",
     "isGeneware": true,
     "essenceCost": [0.1],
@@ -4922,7 +4922,7 @@
   {
     "name": "Wired Reflex Optimization",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Complimentary Genetics",
     "isGeneware": true,
     "essenceCost": [0.1],
@@ -4941,7 +4941,7 @@
   {
     "name": "Adrenaline Pump Optimization",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Complimentary Genetics",
     "isGeneware": true,
     "essenceCost": [0.1],
@@ -4960,7 +4960,7 @@
   {
     "name": "Enhanced Symbiosis",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Complimentary Genetics",
     "isGeneware": true,
     "essenceCost": [0.1],
@@ -4979,7 +4979,7 @@
   {
     "name": "Genetic Optimization (Body)",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Phenotype Adjustment",
     "isGeneware": true,
     "essenceCost": [0.3],
@@ -5010,7 +5010,7 @@
   {
     "name": "Genetic Optimization (Agility)",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Phenotype Adjustment",
     "isGeneware": true,
     "essenceCost": [0.3],
@@ -5041,7 +5041,7 @@
   {
     "name": "Genetic Optimization (Reaction)",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Phenotype Adjustment",
     "isGeneware": true,
     "essenceCost": [0.3],
@@ -5072,7 +5072,7 @@
   {
     "name": "Genetic Optimization (Strength)",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Phenotype Adjustment",
     "isGeneware": true,
     "essenceCost": [0.3],
@@ -5103,7 +5103,7 @@
   {
     "name": "Genetic Optimization (Charisma)",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Phenotype Adjustment",
     "isGeneware": true,
     "essenceCost": [0.3],
@@ -5134,7 +5134,7 @@
   {
     "name": "Genetic Optimization (Intuition)",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Phenotype Adjustment",
     "isGeneware": true,
     "essenceCost": [0.3],
@@ -5165,7 +5165,7 @@
   {
     "name": "Genetic Optimization (Logic)",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Phenotype Adjustment",
     "isGeneware": true,
     "essenceCost": [0.3],
@@ -5196,7 +5196,7 @@
   {
     "name": "Genetic Optimization (Willpower)",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Phenotype Adjustment",
     "isGeneware": true,
     "essenceCost": [0.3],
@@ -5230,7 +5230,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Phenotype Adjustment",
     "isGeneware": true,
     "essenceCost": [0.1],
@@ -5255,7 +5255,7 @@
   {
     "name": "Print Removal",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Phenotype Adjustment",
     "isGeneware": true,
     "essenceCost": [0.1],
@@ -5276,7 +5276,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Phenotype Adjustment",
     "isGeneware": true,
     "essenceCost": [0.1],
@@ -5311,7 +5311,7 @@
     "augmentationLimit": {
       "option": "Unaugmented Body Score"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Immunisation",
     "isGeneware": true,
     "essenceCost": [0.1],
@@ -5339,7 +5339,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Genetic Restoration",
     "isGeneware": true,
     "essenceCost": [0.2],
@@ -5367,7 +5367,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Genetic Restoration",
     "isGeneware": true,
     "essenceCost": [1],
@@ -5388,7 +5388,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Genetic Restoration",
     "isGeneware": true,
     "essenceCost": [0.5],
@@ -5409,7 +5409,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Genetic Restoration",
     "isGeneware": true,
     "essenceCost": [0.5],
@@ -5430,7 +5430,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Genetic Restoration",
     "isGeneware": true,
     "essenceCost": [0],
@@ -5451,7 +5451,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Genetic Restoration",
     "isGeneware": true,
     "essenceCost": [0],
@@ -5472,7 +5472,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Genetic Restoration",
     "isGeneware": true,
     "essenceCost": [-0.1],
@@ -5493,7 +5493,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Symbionts",
     "essenceCost": [0],
     "rating": {
@@ -5516,7 +5516,7 @@
   {
     "name": "Booster Endosont",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Symbionts",
     "essenceCost": [0.2],
     "rating": {
@@ -5533,7 +5533,7 @@
   {
     "name": "Digester Endosont",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Symbionts",
     "essenceCost": [0.2],
     "rating": {
@@ -5559,7 +5559,7 @@
   {
     "name": "Electroreceptor Endosont",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Symbionts",
     "essenceCost": [0.2],
     "rating": {
@@ -5579,7 +5579,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Symbionts",
     "essenceCost": [0.2],
     "rating": {
@@ -5599,7 +5599,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Symbionts",
     "essenceCost": [0.2],
     "rating": {
@@ -5619,7 +5619,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Symbionts",
     "essenceCost": [0.2],
     "rating": {
@@ -5636,7 +5636,7 @@
   {
     "name": "Lactose Tolerance",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Symbionts",
     "essenceCost": [0],
     "rating": {
@@ -5653,7 +5653,7 @@
   {
     "name": "Mender Endosont",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Symbionts",
     "essenceCost": [0.2],
     "rating": {
@@ -5676,7 +5676,7 @@
   {
     "name": "Slimworm",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Symbionts",
     "essenceCost": [0.2],
     "rating": {
@@ -5700,7 +5700,7 @@
   {
     "name": "Stalwart Endosont",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Symbionts",
     "essenceCost": [0.2],
     "rating": {
@@ -5717,7 +5717,7 @@
   {
     "name": "Bilateral Coordination Co-processor",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [0.2],
     "rating": {
@@ -5742,7 +5742,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Bio-Weapons",
     "essenceCost": [0.2],
     "rating": {
@@ -5764,7 +5764,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Bio-Weapons",
     "essenceCost": [0.2],
     "rating": {
@@ -5786,7 +5786,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Bio-Weapons",
     "essenceCost": [0.2],
     "rating": {
@@ -5808,7 +5808,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cultured",
     "unavailableGrades": ["Used"],
     "essenceCost": [0.1],
@@ -5826,7 +5826,7 @@
   {
     "name": "Adrenaline Pump (2050)",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [
       {
@@ -5867,7 +5867,7 @@
   {
     "name": "Enhanced Articulation (2050)",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [0.3],
     "rating": {
@@ -5904,7 +5904,7 @@
   {
     "name": "Suprathyroid Gland (2050)",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [0.7],
     "rating": {
@@ -5958,7 +5958,7 @@
   {
     "name": "Tracheal Filter (2050)",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [
       {
@@ -5999,7 +5999,7 @@
   {
     "name": "Tailored Pheromones (2050)",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [
       {
@@ -6047,7 +6047,7 @@
   {
     "name": "Mnemonic Enhancer (2050)",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cultured",
     "unavailableGrades": ["Used"],
     "essenceCost": [
@@ -6140,7 +6140,7 @@
   {
     "name": "Muscle Toner (2050)",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [
       {
@@ -6217,7 +6217,7 @@
   {
     "name": "Muscle Augmentation (2050)",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [
       {
@@ -6294,7 +6294,7 @@
   {
     "name": "Nephritic Screen (2050)",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [
       {
@@ -6383,7 +6383,7 @@
   {
     "name": "Orthoskin (2050)",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [
       {
@@ -6437,7 +6437,7 @@
   {
     "name": "Pathogenic Defense (2050)",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [
       {
@@ -6499,7 +6499,7 @@
     "augmentationLimit": {
       "option": "N/A"
     },
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cultured",
     "unavailableGrades": ["Used"],
     "essenceCost": [0.1],
@@ -6534,7 +6534,7 @@
   {
     "name": "Damage Compensators (2050)",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cultured",
     "unavailableGrades": ["Used"],
     "essenceCost": [
@@ -6584,7 +6584,7 @@
   {
     "name": "Pain Editor (2050)",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cultured",
     "unavailableGrades": ["Used"],
     "essenceCost": [0.3],
@@ -6602,7 +6602,7 @@
   {
     "name": "Symbiotes (2050)",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [
       {
@@ -6643,7 +6643,7 @@
   {
     "name": "Synaptic Accelerator (2050)",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cultured",
     "unavailableGrades": ["Used"],
     "essenceCost": [
@@ -6713,7 +6713,7 @@
   {
     "name": "Synthacardium (2050)",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [
       {
@@ -6767,7 +6767,7 @@
   {
     "name": "Platelet Factories (2050)",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [0.2],
     "rating": {
@@ -6784,7 +6784,7 @@
   {
     "name": "Cerebral Booster (2050)",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Cultured",
     "unavailableGrades": ["Used"],
     "essenceCost": [
@@ -6840,7 +6840,7 @@
   {
     "name": "MCT BioLink",
     "description": "",
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [0.5],
     "rating": {
@@ -6858,7 +6858,7 @@
     "name": "Vocal Expansion",
     "description": "",
     "augmentationLimit": 1,
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "unavailableGrades": ["Used", "Standard", "Alphaware", "Omegaware"],
     "essenceCost": [0.1],
@@ -6921,7 +6921,7 @@
     "name": "Adrenaline Filter",
     "description": "",
     "augmentationLimit": 1,
-    "type": "Bioware",
+    "category": "Bioware",
     "subtype": "Basic",
     "essenceCost": [
       {

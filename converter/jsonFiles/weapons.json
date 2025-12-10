@@ -2,7 +2,7 @@
   {
     "name": "Ares Thunderstruck Gauss Rifle",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Cannons",
     "firearmOptions": {
       "mode": ["SA"],
@@ -66,7 +66,7 @@
   {
     "name": "Ares Vigorous Assault Cannon",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Cannons",
     "firearmOptions": {
       "mode": ["SS"],
@@ -115,7 +115,7 @@
   {
     "name": "Krime Bomb",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Cannons",
     "firearmOptions": {
       "mode": ["SS"],
@@ -176,7 +176,7 @@
   {
     "name": "Krime Cannon",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Cannons",
     "firearmOptions": {
       "mode": ["SA"],
@@ -225,7 +225,7 @@
   {
     "name": "Ogre Hammer SWS Assault Cannon",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Cannons",
     "firearmOptions": {
       "mode": ["SA"],
@@ -310,7 +310,7 @@
   {
     "name": "Panther XXL",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Cannons",
     "firearmOptions": {
       "mode": ["SS"],
@@ -366,7 +366,7 @@
   {
     "name": "AK-97",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -415,7 +415,7 @@
   {
     "name": "AK-98",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -465,7 +465,7 @@
   {
     "name": "Ares Alpha",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -522,7 +522,7 @@
   {
     "name": "Ares HVAR",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -571,7 +571,7 @@
   {
     "name": "Colt Inception",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -642,7 +642,7 @@
   {
     "name": "Colt M23",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -691,7 +691,7 @@
   {
     "name": "FN HAR",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -752,7 +752,7 @@
   {
     "name": "HK XM30",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -825,7 +825,7 @@
   {
     "name": "HK XM30 Grenade Launcher",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Grenade Launchers",
     "firearmOptions": {
       "mode": ["SS"],
@@ -886,7 +886,7 @@
   {
     "name": "HK XM30 Carbine",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -954,7 +954,7 @@
   {
     "name": "HK XM30 LMG",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Machineguns",
     "firearmOptions": {
       "mode": ["BF", "FA"],
@@ -1027,7 +1027,7 @@
   {
     "name": "HK XM30 Shotgun",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SA"],
@@ -1095,7 +1095,7 @@
   {
     "name": "HK XM30 Sniper",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sniper Rifles",
     "firearmOptions": {
       "mode": ["SA"],
@@ -1168,7 +1168,7 @@
   {
     "name": "Krupp Arms Kriegfaust",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -1230,7 +1230,7 @@
   {
     "name": "Nissan Optimum II",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -1292,7 +1292,7 @@
   {
     "name": "SBd-44",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -1348,7 +1348,7 @@
   {
     "name": "Shiawase Arms Monsoon",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["SA", "FA"],
@@ -1409,7 +1409,7 @@
   {
     "name": "Ultimax Rain Forest Carbine",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["SA"],
@@ -1483,7 +1483,7 @@
   {
     "name": "Yamaha Raiden",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["BF", "FA"],
@@ -1549,7 +1549,7 @@
   {
     "name": "Ares 'One' Monosword",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 1
@@ -1602,7 +1602,7 @@
   {
     "name": "Combat Axe",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 2
@@ -1655,7 +1655,7 @@
   {
     "name": "Combat Knife",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 0
@@ -1708,7 +1708,7 @@
   {
     "name": "Cougar Fineblade: Long",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 0
@@ -1761,7 +1761,7 @@
   {
     "name": "Cougar Fineblade: Short",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 0
@@ -1814,7 +1814,7 @@
   {
     "name": "Forearm Snap-Blades",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 0
@@ -1867,7 +1867,7 @@
   {
     "name": "Hand Blade",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 0
@@ -1917,7 +1917,7 @@
     "cost": [0],
     "allowAccessories": true,
     "userSelectable": false,
-    "augmentationType": "Cyberware",
+    "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisationList": ["Cyber Implants"],
     "source": "Shadowrun 5 Core Rulebook",
@@ -1926,7 +1926,7 @@
   {
     "name": "Hand Razors",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 0
@@ -1983,7 +1983,7 @@
   {
     "name": "Retractable Climbing Claws",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 0
@@ -2037,7 +2037,7 @@
     "cost": [0],
     "allowAccessories": true,
     "userSelectable": false,
-    "augmentationType": "Cyberware",
+    "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisationList": ["Cyber Implants"],
     "source": "Chrome Flesh",
@@ -2046,7 +2046,7 @@
   {
     "name": "Highland Forge Claymore",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 2
@@ -2099,7 +2099,7 @@
   {
     "name": "Horizon-Flynn Rapier",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 1
@@ -2152,7 +2152,7 @@
   {
     "name": "Katana",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 1
@@ -2205,7 +2205,7 @@
   {
     "name": "Knife",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 0
@@ -2258,7 +2258,7 @@
   {
     "name": "Knife (Survival Kit)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 0
@@ -2312,7 +2312,7 @@
   {
     "name": "Pole Arm",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 3
@@ -2364,7 +2364,7 @@
   {
     "name": "Spurs",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 0
@@ -2414,7 +2414,7 @@
     "cost": [0],
     "allowAccessories": true,
     "userSelectable": false,
-    "augmentationType": "Cyberware",
+    "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisationList": ["Cyber Implants"],
     "source": "Shadowrun 5 Core Rulebook",
@@ -2423,7 +2423,7 @@
   {
     "name": "Survival Knife",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 0
@@ -2488,7 +2488,7 @@
   {
     "name": "Sword",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 1
@@ -2541,7 +2541,7 @@
   {
     "name": "Victorinox Memory Blade: Dagger",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 0
@@ -2594,7 +2594,7 @@
   {
     "name": "Victorinox Memory Blade: Sword",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 1
@@ -2647,7 +2647,7 @@
   {
     "name": "Bow (Rating 1)",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Bows",
     "rangeList": ["Bows"],
     "concealability": 8,
@@ -2691,7 +2691,7 @@
   {
     "name": "Bow (Rating 10)",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Bows",
     "rangeList": ["Bows"],
     "concealability": 8,
@@ -2735,7 +2735,7 @@
   {
     "name": "Bow (Rating 2)",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Bows",
     "rangeList": ["Bows"],
     "concealability": 8,
@@ -2779,7 +2779,7 @@
   {
     "name": "Bow (Rating 3)",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Bows",
     "rangeList": ["Bows"],
     "concealability": 8,
@@ -2823,7 +2823,7 @@
   {
     "name": "Bow (Rating 4)",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Bows",
     "rangeList": ["Bows"],
     "concealability": 8,
@@ -2867,7 +2867,7 @@
   {
     "name": "Bow (Rating 5)",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Bows",
     "rangeList": ["Bows"],
     "concealability": 8,
@@ -2911,7 +2911,7 @@
   {
     "name": "Bow (Rating 6)",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Bows",
     "rangeList": ["Bows"],
     "concealability": 8,
@@ -2955,7 +2955,7 @@
   {
     "name": "Bow (Rating 7)",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Bows",
     "rangeList": ["Bows"],
     "concealability": 8,
@@ -2999,7 +2999,7 @@
   {
     "name": "Bow (Rating 8)",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Bows",
     "rangeList": ["Bows"],
     "concealability": 8,
@@ -3043,7 +3043,7 @@
   {
     "name": "Bow (Rating 9)",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Bows",
     "rangeList": ["Bows"],
     "concealability": 8,
@@ -3087,7 +3087,7 @@
   {
     "name": "Club",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Clubs",
     "meleeOptions": {
       "reach": 1
@@ -3127,7 +3127,7 @@
   {
     "name": "Extendable Baton",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Clubs",
     "meleeOptions": {
       "reach": 1
@@ -3168,7 +3168,7 @@
   {
     "name": "Nemesis Arms Maul Stun Staff",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Clubs",
     "meleeOptions": {
       "reach": 2
@@ -3214,7 +3214,7 @@
   {
     "name": "Sap",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Clubs",
     "meleeOptions": {
       "reach": 0
@@ -3255,7 +3255,7 @@
   {
     "name": "Staff",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Clubs",
     "meleeOptions": {
       "reach": 2
@@ -3296,7 +3296,7 @@
   {
     "name": "Stun Baton",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Clubs",
     "meleeOptions": {
       "reach": 1
@@ -3343,7 +3343,7 @@
   {
     "name": "Telescoping Staff",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Clubs",
     "meleeOptions": {
       "reach": 2
@@ -3384,7 +3384,7 @@
   {
     "name": "Stun Dongle",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Clubs",
     "meleeOptions": {
       "reach": 0
@@ -3431,7 +3431,7 @@
   {
     "name": "Aquadyne Shark-XS Harpoon Gun",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Crossbows",
     "extraClassification": "Harpoongun",
     "rangeList": ["Harpoon Gun", "Harpoon Gun (Underwater)"],
@@ -3476,7 +3476,7 @@
   {
     "name": "Ares Giantslayer Slingshot",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Crossbows",
     "extraClassification": "Slingshot",
     "rangeList": ["Shuriken"],
@@ -3509,7 +3509,7 @@
   {
     "name": "Heavy Crossbow",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Crossbows",
     "rangeList": ["Heavy Crossbows"],
     "concealability": 6,
@@ -3553,7 +3553,7 @@
   {
     "name": "Light Crossbow",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Crossbows",
     "rangeList": ["Light Crossbows"],
     "concealability": 6,
@@ -3597,7 +3597,7 @@
   {
     "name": "Medium Crossbow",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Crossbows",
     "rangeList": ["Medium Crossbows"],
     "concealability": 6,
@@ -3641,7 +3641,7 @@
   {
     "name": "Ranger Sliver Pistol Crossbow",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Crossbows",
     "rangeList": ["Heavy Pistols"],
     "concealability": -4,
@@ -3673,7 +3673,7 @@
   {
     "name": "Standard Harpoon Gun",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Crossbows",
     "extraClassification": "Harpoongun",
     "rangeList": ["Harpoon Gun", "Harpoon Gun (Underwater)"],
@@ -3718,7 +3718,7 @@
   {
     "name": "Ballistic Shield",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 0
@@ -3760,7 +3760,7 @@
   {
     "name": "Battering Ram, Fluid-Motion",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 1
@@ -3813,7 +3813,7 @@
   {
     "name": "Battering Ram, Pneumatic",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 0
@@ -3858,7 +3858,7 @@
   {
     "name": "Battering Ram, Shock",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 1
@@ -3916,7 +3916,7 @@
   {
     "name": "Battering Ram, Standard",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 0
@@ -3969,7 +3969,7 @@
   {
     "name": "Blast Shield",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 0
@@ -4014,7 +4014,7 @@
   {
     "name": "Monofilament Chainsaw",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 1
@@ -4059,7 +4059,7 @@
   {
     "name": "Riot Shield",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 0
@@ -4107,7 +4107,7 @@
   {
     "name": "Ash Arms Combat Chainsaw",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 1
@@ -4151,7 +4151,7 @@
   {
     "name": "Ash Arms Monofilament Chainsaw",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 1
@@ -4195,7 +4195,7 @@
   {
     "name": "Chainsaw",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 1
@@ -4239,7 +4239,7 @@
   {
     "name": "Monofilament Chainsaw (Non-combat)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 1
@@ -4283,7 +4283,7 @@
   {
     "name": "Bullwhip",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 2
@@ -4323,7 +4323,7 @@
   {
     "name": "Garrote",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 0
@@ -4375,7 +4375,7 @@
   {
     "name": "Monofilament Garrote",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 0
@@ -4427,7 +4427,7 @@
   {
     "name": "Monofilament Whip",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 2
@@ -4471,7 +4471,7 @@
   {
     "name": "Chakram (Melee)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 0
@@ -4507,7 +4507,7 @@
   {
     "name": "Stimtouch Hosiery",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 0
@@ -4557,7 +4557,7 @@
   {
     "name": "Grapple Gun",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Exotic",
     "extraClassification": "Grapple Gun",
     "firearmOptions": {
@@ -4608,7 +4608,7 @@
   {
     "name": "Hold-Fast Sprayer",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Exotic",
     "firearmOptions": {
       "mode": ["SS"],
@@ -4662,7 +4662,7 @@
   {
     "name": "Micro Flare Launcher",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Exotic",
     "extraClassification": "Flaregun",
     "firearmOptions": {
@@ -4714,7 +4714,7 @@
   {
     "name": "Shiawase Arms Incinerator",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Flamethrowers",
     "firearmOptions": {
       "mode": ["SS"],
@@ -4771,7 +4771,7 @@
   {
     "name": "Shiawase Blazer",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Flamethrowers",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -4820,7 +4820,7 @@
   {
     "name": "Boomerang",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Throwing Weapons",
     "rangeList": ["Aerodynamic Grenade"],
     "concealability": -2,
@@ -4867,7 +4867,7 @@
   {
     "name": "Horizon BoomerEye",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Throwing Weapons",
     "rangeList": ["Aerodynamic Grenade"],
     "concealability": -2,
@@ -4914,7 +4914,7 @@
   {
     "name": "Urban Tribe Tomahawk",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Throwing Weapons",
     "rangeList": ["Thrown Knife"],
     "concealability": -2,
@@ -4973,7 +4973,7 @@
   {
     "name": "Grenade: Flash-Bang",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Standard Grenade"],
     "concealability": 0,
@@ -5024,7 +5024,7 @@
   {
     "name": "Grenade: Flash-Pak",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Standard Grenade"],
     "concealability": 0,
@@ -5063,7 +5063,7 @@
   {
     "name": "Grenade: Fragmentation",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Standard Grenade"],
     "concealability": 0,
@@ -5103,7 +5103,7 @@
   {
     "name": "Grenade: Gas",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Standard Grenade"],
     "concealability": 0,
@@ -5146,7 +5146,7 @@
   {
     "name": "Grenade: High Explosive",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Standard Grenade"],
     "concealability": 0,
@@ -5197,7 +5197,7 @@
   {
     "name": "Grenade: Paint",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Standard Grenade"],
     "concealability": 0,
@@ -5236,7 +5236,7 @@
   {
     "name": "Grenade: Paint (Radioactive Tracking Dye)",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Standard Grenade"],
     "concealability": 0,
@@ -5275,7 +5275,7 @@
   {
     "name": "Grenade: Smokebomb",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Standard Grenade"],
     "concealability": 0,
@@ -5314,7 +5314,7 @@
   {
     "name": "Grenade: Smoke",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Standard Grenade"],
     "concealability": 0,
@@ -5353,7 +5353,7 @@
   {
     "name": "Grenade: Thermal Smoke",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Standard Grenade"],
     "concealability": 0,
@@ -5392,7 +5392,7 @@
   {
     "name": "Grenade: Flash-Bang, Aerodynamic",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Aerodynamic Grenade"],
     "concealability": 0,
@@ -5443,7 +5443,7 @@
   {
     "name": "Grenade: Flash-Pak, Aerodynamic",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Aerodynamic Grenade"],
     "concealability": 0,
@@ -5482,7 +5482,7 @@
   {
     "name": "Grenade: Fragmentation, Aerodynamic",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Aerodynamic Grenade"],
     "concealability": 0,
@@ -5522,7 +5522,7 @@
   {
     "name": "Grenade: Gas, Aerodynamic",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Aerodynamic Grenade"],
     "concealability": 0,
@@ -5565,7 +5565,7 @@
   {
     "name": "Grenade: High Explosive, Aerodynamic",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Aerodynamic Grenade"],
     "concealability": 0,
@@ -5616,7 +5616,7 @@
   {
     "name": "Grenade: Paint, Aerodynamic",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Aerodynamic Grenade"],
     "concealability": 0,
@@ -5655,7 +5655,7 @@
   {
     "name": "Grenade: Paint (Radioactive Tracking Dye), Aerodynamic",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Aerodynamic Grenade"],
     "concealability": 0,
@@ -5694,7 +5694,7 @@
   {
     "name": "Grenade: Smokebomb, Aerodynamic",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Aerodynamic Grenade"],
     "concealability": 0,
@@ -5733,7 +5733,7 @@
   {
     "name": "Grenade: Smoke, Aerodynamic",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Aerodynamic Grenade"],
     "concealability": 0,
@@ -5772,7 +5772,7 @@
   {
     "name": "Grenade: Thermal Smoke, Aerodynamic",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Aerodynamic Grenade"],
     "concealability": 0,
@@ -5811,7 +5811,7 @@
   {
     "name": "Harpoon",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Throwing Weapons",
     "rangeList": ["Aerodynamic Grenade"],
     "concealability": -2,
@@ -5866,7 +5866,7 @@
   {
     "name": "Javelin",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Throwing Weapons",
     "rangeList": ["Aerodynamic Grenade"],
     "concealability": -2,
@@ -5921,7 +5921,7 @@
   {
     "name": "Minigrenade: Flash-Bang",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Rocket",
     "rangeList": ["Grenade Launchers"],
     "concealability": -2,
@@ -5968,7 +5968,7 @@
   {
     "name": "Minigrenade: Flash-Pak",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Rocket",
     "rangeList": ["Grenade Launchers"],
     "concealability": -2,
@@ -6003,7 +6003,7 @@
   {
     "name": "Minigrenade: Fragmentation",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Rocket",
     "rangeList": ["Grenade Launchers"],
     "concealability": -2,
@@ -6039,7 +6039,7 @@
   {
     "name": "Minigrenade: Gas",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Rocket",
     "rangeList": ["Grenade Launchers"],
     "concealability": -2,
@@ -6078,7 +6078,7 @@
   {
     "name": "Minigrenade: High Explosive",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Rocket",
     "rangeList": ["Grenade Launchers"],
     "concealability": -2,
@@ -6125,7 +6125,7 @@
   {
     "name": "Minigrenade: Smoke",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Rocket",
     "rangeList": ["Grenade Launchers"],
     "concealability": -2,
@@ -6160,7 +6160,7 @@
   {
     "name": "Minigrenade: Thermal Smoke",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Rocket",
     "rangeList": ["Grenade Launchers"],
     "concealability": -2,
@@ -6195,7 +6195,7 @@
   {
     "name": "Missile: Anti-Vehicle",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Rocket",
     "rangeList": ["Grenade Launchers"],
     "concealability": 10,
@@ -6252,7 +6252,7 @@
   {
     "name": "Missile: Fragmentation",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Rocket",
     "rangeList": ["Grenade Launchers"],
     "concealability": 10,
@@ -6287,7 +6287,7 @@
   {
     "name": "Missile: High Explosive",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Rocket",
     "rangeList": ["Grenade Launchers"],
     "concealability": 10,
@@ -6333,7 +6333,7 @@
   {
     "name": "Net",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Throwing Weapons",
     "rangeList": ["Thrown Knife"],
     "concealability": -2,
@@ -6371,7 +6371,7 @@
   {
     "name": "Rocket: Anti-Vehicle",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Rocket",
     "rangeList": ["Grenade Launchers"],
     "concealability": 10,
@@ -6428,7 +6428,7 @@
   {
     "name": "Rocket: Fragmentation",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Rocket",
     "rangeList": ["Grenade Launchers"],
     "concealability": 10,
@@ -6463,7 +6463,7 @@
   {
     "name": "Rocket: High Explosive",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Rocket",
     "rangeList": ["Grenade Launchers"],
     "concealability": 10,
@@ -6509,7 +6509,7 @@
   {
     "name": "Shuriken",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Throwing Weapons",
     "rangeList": ["Shuriken"],
     "concealability": -2,
@@ -6564,7 +6564,7 @@
   {
     "name": "Chakram (Thrown)",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Throwing Weapons",
     "rangeList": ["Shuriken"],
     "concealability": 0,
@@ -6599,7 +6599,7 @@
   {
     "name": "Throwing Knife",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Throwing Weapons",
     "rangeList": ["Thrown Knife"],
     "concealability": -2,
@@ -6654,7 +6654,7 @@
   {
     "name": "Ares Antioch-2",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Grenade Launchers",
     "firearmOptions": {
       "mode": ["SS"],
@@ -6702,7 +6702,7 @@
   {
     "name": "ArmTech MGL-12",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Grenade Launchers",
     "firearmOptions": {
       "mode": ["SA"],
@@ -6743,7 +6743,7 @@
   {
     "name": "Cyber Microgrenade Launcher",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Grenade Launchers",
     "firearmOptions": {
       "mode": ["SS"],
@@ -6794,7 +6794,7 @@
     ],
     "allowAccessories": false,
     "userSelectable": false,
-    "augmentationType": "Cyberware",
+    "augmentationCategory": "Cyberware",
     "relatedSkill": "Heavy Weapons",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 458
@@ -6802,7 +6802,7 @@
   {
     "name": "RPK HMG",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Medium Heavy Machineguns",
     "firearmOptions": {
       "mode": ["FA"],
@@ -6859,7 +6859,7 @@
   {
     "name": "Ruhrmetall SF-20",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Medium Heavy Machineguns",
     "firearmOptions": {
       "mode": ["FA"],
@@ -6926,7 +6926,7 @@
   {
     "name": "Ultamax HMG-2",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Medium Heavy Machineguns",
     "firearmOptions": {
       "mode": ["FA"],
@@ -6988,7 +6988,7 @@
   {
     "name": "Ares Predator V",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -7045,7 +7045,7 @@
   {
     "name": "Ares Viper Slivergun",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -7091,7 +7091,7 @@
   {
     "name": "Browning Ultra-Power",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -7148,7 +7148,7 @@
   {
     "name": "Cavalier Deputy",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -7198,7 +7198,7 @@
   {
     "name": "Colt Future Frontier",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SS"],
@@ -7248,7 +7248,7 @@
   {
     "name": "Colt Government 2066",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -7298,7 +7298,7 @@
   {
     "name": "Heavy Cyber Pistol",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -7351,7 +7351,7 @@
     ],
     "allowAccessories": false,
     "userSelectable": false,
-    "augmentationType": "Cyberware",
+    "augmentationCategory": "Cyberware",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 5 Core Rulebook",
@@ -7360,7 +7360,7 @@
   {
     "name": "Onotari Arms Violator",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -7427,7 +7427,7 @@
   {
     "name": "PSK-3 Collapsible Heavy Pistol",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -7477,7 +7477,7 @@
   {
     "name": "Remington Roomsweeper",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -7527,7 +7527,7 @@
   {
     "name": "Ruger Super Warhawk",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SS"],
@@ -7577,7 +7577,7 @@
   {
     "name": "Savalette Guardian",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -7634,7 +7634,7 @@
   {
     "name": "Cyber Hold-Out",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Hold Outs",
     "firearmOptions": {
       "mode": ["SA"],
@@ -7675,7 +7675,7 @@
     ],
     "allowAccessories": false,
     "userSelectable": false,
-    "augmentationType": "Cyberware",
+    "augmentationCategory": "Cyberware",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 5 Core Rulebook",
@@ -7684,7 +7684,7 @@
   {
     "name": "Fichetti Tiffani Needler",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Hold Outs",
     "firearmOptions": {
       "mode": ["SA"],
@@ -7721,7 +7721,7 @@
   {
     "name": "Fichetti Tiffani Self-Defender",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Hold Outs",
     "firearmOptions": {
       "mode": ["SS"],
@@ -7757,7 +7757,7 @@
   {
     "name": "Streetline Special",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Hold Outs",
     "firearmOptions": {
       "mode": ["SA"],
@@ -7794,7 +7794,7 @@
   {
     "name": "Walther Palm Pistol",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Hold Outs",
     "firearmOptions": {
       "mode": ["SS", "BF"],
@@ -7830,7 +7830,7 @@
   {
     "name": "Bottle (broken, after first hit)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Improvised",
     "meleeOptions": {
       "reach": 0
@@ -7866,7 +7866,7 @@
   {
     "name": "Bottle (unbroken)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Improvised",
     "meleeOptions": {
       "reach": 0
@@ -7906,7 +7906,7 @@
   {
     "name": "Chain",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Improvised",
     "meleeOptions": {
       "reach": 2
@@ -7946,7 +7946,7 @@
   {
     "name": "Chair",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Improvised",
     "meleeOptions": {
       "reach": 1
@@ -7986,7 +7986,7 @@
   {
     "name": "Fork",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Improvised",
     "meleeOptions": {
       "reach": 0
@@ -8026,7 +8026,7 @@
   {
     "name": "Frying Pan",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Improvised",
     "meleeOptions": {
       "reach": 0
@@ -8066,7 +8066,7 @@
   {
     "name": "Hammer",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Improvised",
     "meleeOptions": {
       "reach": 0
@@ -8130,7 +8130,7 @@
   {
     "name": "Pistol",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Improvised",
     "meleeOptions": {
       "reach": 0
@@ -8170,7 +8170,7 @@
   {
     "name": "Pool Cue",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Improvised",
     "meleeOptions": {
       "reach": 0
@@ -8207,7 +8207,7 @@
   {
     "name": "Rifle Butt",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Improvised",
     "meleeOptions": {
       "reach": 0
@@ -8247,7 +8247,7 @@
   {
     "name": "Sledge Hammer",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Improvised",
     "meleeOptions": {
       "reach": 1
@@ -8288,7 +8288,7 @@
   {
     "name": "Ares Archon Heavy MP Laser",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Lasers",
     "firearmOptions": {
       "mode": ["SA"],
@@ -8344,7 +8344,7 @@
   {
     "name": "Ares Lancer MP Laser",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Lasers",
     "firearmOptions": {
       "mode": ["SA"],
@@ -8398,7 +8398,7 @@
   {
     "name": "Ares Redline",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Lasers",
     "firearmOptions": {
       "mode": ["SA"],
@@ -8451,7 +8451,7 @@
   {
     "name": "GE Vindicator Mini-Gun",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Machineguns",
     "firearmOptions": {
       "mode": ["FA"],
@@ -8518,7 +8518,7 @@
   {
     "name": "Ingram Valiant",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Machineguns",
     "firearmOptions": {
       "mode": ["BF", "FA"],
@@ -8585,7 +8585,7 @@
   {
     "name": "Krime Wave",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Machineguns",
     "firearmOptions": {
       "mode": ["FA"],
@@ -8642,7 +8642,7 @@
   {
     "name": "Shiawase Armaments Nemesis",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Machineguns",
     "firearmOptions": {
       "mode": ["BF", "FA"],
@@ -8714,7 +8714,7 @@
   {
     "name": "Ares Light Fire 70",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -8752,7 +8752,7 @@
   {
     "name": "Ares Light Fire 75",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -8802,7 +8802,7 @@
   {
     "name": "Beretta 201T",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Pistols",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -8847,7 +8847,7 @@
   {
     "name": "Colt Agent Special",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -8886,7 +8886,7 @@
   {
     "name": "Colt America L36",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -8924,7 +8924,7 @@
   {
     "name": "Colt New Model Revolver",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Hold Outs",
     "firearmOptions": {
       "mode": ["SA"],
@@ -8961,7 +8961,7 @@
   {
     "name": "Fichetti Executive Action",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Pistols",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -8999,7 +8999,7 @@
   {
     "name": "Fichetti Security 600",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -9049,7 +9049,7 @@
   {
     "name": "Light Cyber Pistol",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -9090,7 +9090,7 @@
     ],
     "allowAccessories": false,
     "userSelectable": false,
-    "augmentationType": "Cyberware",
+    "augmentationCategory": "Cyberware",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 5 Core Rulebook",
@@ -9099,7 +9099,7 @@
   {
     "name": "Nitama Sporter",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -9144,7 +9144,7 @@
   {
     "name": "Shiawase Armaments Puzzler",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -9182,7 +9182,7 @@
   {
     "name": "Taurus Omni-6",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -9227,7 +9227,7 @@
   {
     "name": "Ares Crusader II",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Machine Pistols",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -9277,7 +9277,7 @@
   {
     "name": "Cavalier Evanator",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Machine Pistols",
     "firearmOptions": {
       "mode": ["BF", "FA"],
@@ -9332,7 +9332,7 @@
   {
     "name": "Ceska Black Scorpion",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Machine Pistols",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -9377,7 +9377,7 @@
   {
     "name": "Cyber Machine Pistol",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Machine Pistols",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -9418,7 +9418,7 @@
     ],
     "allowAccessories": false,
     "userSelectable": false,
-    "augmentationType": "Cyberware",
+    "augmentationCategory": "Cyberware",
     "relatedSkill": "Automatics",
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 5 Core Rulebook",
@@ -9427,7 +9427,7 @@
   {
     "name": "Fianchetti Military 100",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Machine Pistols",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -9472,7 +9472,7 @@
   {
     "name": "Onotari Arms Equalizer",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Machine Pistols",
     "firearmOptions": {
       "mode": ["BF", "FA"],
@@ -9522,7 +9522,7 @@
   {
     "name": "PPSK-4 Collapsible Machine Pistol",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Machine Pistols",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -9577,7 +9577,7 @@
   {
     "name": "Remington Suppressor",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Machine Pistols",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -9634,7 +9634,7 @@
   {
     "name": "Steyr TMP",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Machine Pistols",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -9679,7 +9679,7 @@
   {
     "name": "Ultimax 70",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Machine Pistols",
     "firearmOptions": {
       "mode": ["BF", "FA"],
@@ -9729,7 +9729,7 @@
   {
     "name": "FN MAG-5",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Medium Heavy Machineguns",
     "firearmOptions": {
       "mode": ["FA"],
@@ -9796,7 +9796,7 @@
   {
     "name": "Stoner-Ares M202",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Medium Heavy Machineguns",
     "firearmOptions": {
       "mode": ["FA"],
@@ -9846,7 +9846,7 @@
   {
     "name": "Ultamax MMG",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Medium Heavy Machineguns",
     "firearmOptions": {
       "mode": ["FA"],
@@ -9913,7 +9913,7 @@
   {
     "name": "Aztechnology Striker",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Missile Launchers",
     "firearmOptions": {
       "mode": ["SS"],
@@ -9960,7 +9960,7 @@
   {
     "name": "Mitsubishi Yakusoku MRL",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Missile Launchers",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -10012,7 +10012,7 @@
   {
     "name": "Onotari Arms Ballista MML",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Missile Launchers",
     "firearmOptions": {
       "mode": ["SS"],
@@ -10063,7 +10063,7 @@
   {
     "name": "Onotari Interceptor",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Missile Launchers",
     "firearmOptions": {
       "mode": ["SS"],
@@ -10117,7 +10117,7 @@
   {
     "name": "Auto-Assault 16",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -10166,7 +10166,7 @@
   {
     "name": "Cavalier Falchion",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SS"],
@@ -10237,7 +10237,7 @@
   {
     "name": "Cyber Shotgun",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SA"],
@@ -10290,7 +10290,7 @@
     ],
     "allowAccessories": false,
     "userSelectable": false,
-    "augmentationType": "Cyberware",
+    "augmentationCategory": "Cyberware",
     "relatedSkill": "Longarms",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 458
@@ -10298,7 +10298,7 @@
   {
     "name": "Defiance T-250",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SS", "SA"],
@@ -10347,7 +10347,7 @@
   {
     "name": "Defiance T-250, Short-Barrel",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SS", "SA"],
@@ -10396,7 +10396,7 @@
   {
     "name": "Enfield AS-7",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -10452,7 +10452,7 @@
   {
     "name": "Franchi SPAS-24",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -10513,7 +10513,7 @@
   {
     "name": "Krime Boss",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SA"],
@@ -10562,7 +10562,7 @@
   {
     "name": "Mossberg AM-CMDT",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -10618,7 +10618,7 @@
   {
     "name": "PJSS Model 55",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SS"],
@@ -10674,7 +10674,7 @@
   {
     "name": "Remington 990",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SA"],
@@ -10735,7 +10735,7 @@
   {
     "name": "Shiawase Arms Rain",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SA"],
@@ -10791,7 +10791,7 @@
   {
     "name": "Winchester Model 201",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SA"],
@@ -10840,7 +10840,7 @@
   {
     "name": "Winchester Model 2054",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SA"],
@@ -10901,7 +10901,7 @@
   {
     "name": "Winchester Model 2066",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SS"],
@@ -10950,7 +10950,7 @@
   {
     "name": "Ares Desert Strike",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sniper Rifles",
     "firearmOptions": {
       "mode": ["SA"],
@@ -11011,7 +11011,7 @@
   {
     "name": "Barret Model 122",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sniper Rifles",
     "firearmOptions": {
       "mode": ["SA"],
@@ -11077,7 +11077,7 @@
   {
     "name": "Cavalier Arms Crockett EBR",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sniper Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -11138,7 +11138,7 @@
   {
     "name": "Onotari Arms JP-K50",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sniper Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -11194,7 +11194,7 @@
   {
     "name": "Pioneer 60",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sniper Rifles",
     "firearmOptions": {
       "mode": ["SS"],
@@ -11250,7 +11250,7 @@
   {
     "name": "Ranger Arms SM-5",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sniper Rifles",
     "firearmOptions": {
       "mode": ["SA"],
@@ -11316,7 +11316,7 @@
   {
     "name": "Remington 950",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sniper Rifles",
     "firearmOptions": {
       "mode": ["SS"],
@@ -11372,7 +11372,7 @@
   {
     "name": "Ruger 101",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sniper Rifles",
     "firearmOptions": {
       "mode": ["SA"],
@@ -11433,7 +11433,7 @@
   {
     "name": "SVD",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sniper Rifles",
     "firearmOptions": {
       "mode": ["SA"],
@@ -11482,7 +11482,7 @@
   {
     "name": "Terracotta Arms AM-47",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sniper Rifles",
     "firearmOptions": {
       "mode": ["SA"],
@@ -11578,7 +11578,7 @@
   {
     "name": "Ares S-III Super Squirt",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Exotic",
     "extraClassification": "Squirt gun",
     "firearmOptions": {
@@ -11620,7 +11620,7 @@
   {
     "name": "Ares Screech Sonic Rifle",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Exotic",
     "firearmOptions": {
       "mode": ["SS"],
@@ -11657,7 +11657,7 @@
   {
     "name": "Blowgun",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Exotic",
     "extraClassification": "Dart Gun",
     "firearmOptions": {
@@ -11694,7 +11694,7 @@
   {
     "name": "Bola",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Throwing Weapons",
     "rangeList": ["Shuriken"],
     "concealability": -2,
@@ -11737,7 +11737,7 @@
   {
     "name": "FN-AAL Gyrojet Pistol",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Exotic",
     "extraClassification": "Gyrojet",
     "firearmOptions": {
@@ -11787,7 +11787,7 @@
   {
     "name": "Fichetti Pain Inducer",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Exotic",
     "firearmOptions": {
       "mode": ["SS"],
@@ -11828,7 +11828,7 @@
   {
     "name": "Knockoff Gun Cane",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Exotic",
     "firearmOptions": {
       "mode": ["SS"],
@@ -11865,7 +11865,7 @@
   {
     "name": "Monofilament Bola",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Throwing Weapons",
     "rangeList": ["Shuriken"],
     "concealability": -2,
@@ -11925,7 +11925,7 @@
   {
     "name": "Mortimer of London 'Trafalger' Gun Cane",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Exotic",
     "firearmOptions": {
       "mode": ["SS"],
@@ -11962,7 +11962,7 @@
   {
     "name": "Parashield Dart Pistol",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Exotic",
     "extraClassification": "Dart Gun",
     "firearmOptions": {
@@ -12004,7 +12004,7 @@
   {
     "name": "Parashield Dart Rifle",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Exotic",
     "extraClassification": "Dart Gun",
     "firearmOptions": {
@@ -12046,7 +12046,7 @@
   {
     "name": "SA Retarius Net Gun",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Exotic",
     "extraClassification": "Net Gun",
     "firearmOptions": {
@@ -12083,7 +12083,7 @@
   {
     "name": "SA Retarius Net Gun XL",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Exotic",
     "extraClassification": "Net Gun Large",
     "firearmOptions": {
@@ -12120,7 +12120,7 @@
   {
     "name": "Tiffani Elegance Shooting Bracers",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Exotic",
     "firearmOptions": {
       "mode": ["SS"],
@@ -12157,7 +12157,7 @@
   {
     "name": "M1 Garand",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sporting Rifles",
     "firearmOptions": {
       "mode": ["SA"],
@@ -12213,7 +12213,7 @@
   {
     "name": "Marlin 3041 BL",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sporting Rifles",
     "firearmOptions": {
       "mode": ["SA"],
@@ -12269,7 +12269,7 @@
   {
     "name": "Marlin 3468SS",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sporting Rifles",
     "firearmOptions": {
       "mode": ["SS"],
@@ -12318,7 +12318,7 @@
   {
     "name": "Marlin 79S",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sporting Rifles",
     "firearmOptions": {
       "mode": ["SA"],
@@ -12355,7 +12355,7 @@
   {
     "name": "Marlin X71",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sporting Rifles",
     "firearmOptions": {
       "mode": ["SS"],
@@ -12427,7 +12427,7 @@
   {
     "name": "Springfield 2003",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sporting Rifles",
     "firearmOptions": {
       "mode": ["SS"],
@@ -12483,7 +12483,7 @@
   {
     "name": "Springfield M1A",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sporting Rifles",
     "firearmOptions": {
       "mode": ["SA"],
@@ -12549,7 +12549,7 @@
   {
     "name": "Springfield Model 1855 Reproduction",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sporting Rifles",
     "firearmOptions": {
       "mode": ["SS"],
@@ -12593,7 +12593,7 @@
   {
     "name": "Winchester Model 2024",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sporting Rifles",
     "firearmOptions": {
       "mode": ["SA"],
@@ -12637,7 +12637,7 @@
   {
     "name": "Winchester Model 2067",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sporting Rifles",
     "firearmOptions": {
       "mode": ["SA"],
@@ -12693,7 +12693,7 @@
   {
     "name": "Ares Executioner",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -12742,7 +12742,7 @@
   {
     "name": "Ares SIGMA 3",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -12806,7 +12806,7 @@
   {
     "name": "Cavalier Arms Gladius",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["BF", "FA"],
@@ -12855,7 +12855,7 @@
   {
     "name": "Colt Cobra TZ-120",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -12909,7 +12909,7 @@
   {
     "name": "Cyber Submachine Gun",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -12950,7 +12950,7 @@
     ],
     "allowAccessories": false,
     "userSelectable": false,
-    "augmentationType": "Cyberware",
+    "augmentationCategory": "Cyberware",
     "relatedSkill": "Automatics",
     "source": "Shadowrun 5 Core Rulebook",
     "page": 458
@@ -12958,7 +12958,7 @@
   {
     "name": "FN P93 Praetor",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -13007,7 +13007,7 @@
   {
     "name": "HK 227",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -13061,7 +13061,7 @@
   {
     "name": "HK Urban Combat",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -13109,7 +13109,7 @@
   {
     "name": "Ingram Smartgun X",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["BF", "FA"],
@@ -13163,7 +13163,7 @@
   {
     "name": "Krime Spree",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["FA"],
@@ -13200,7 +13200,7 @@
   {
     "name": "SCK Model 100",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -13249,7 +13249,7 @@
   {
     "name": "Uzi IV",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["BF"],
@@ -13298,7 +13298,7 @@
   {
     "name": "Cavalier Safeguard",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Tasers",
     "firearmOptions": {
       "mode": ["SA"],
@@ -13355,7 +13355,7 @@
   {
     "name": "Defiance EX Shocker",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Tasers",
     "firearmOptions": {
       "mode": ["SS"],
@@ -13406,7 +13406,7 @@
   {
     "name": "Defiance EX Shocker (Melee Contacts)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Clubs",
     "meleeOptions": {
       "reach": 0
@@ -13453,7 +13453,7 @@
   {
     "name": "Tiffani-Defiance Protector",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Tasers",
     "firearmOptions": {
       "mode": ["SA"],
@@ -13515,7 +13515,7 @@
   {
     "name": "Yamaha Pulsar",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Tasers",
     "firearmOptions": {
       "mode": ["SA"],
@@ -13565,7 +13565,7 @@
   {
     "name": "Knucks",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Unarmed",
     "meleeOptions": {
       "reach": 0
@@ -13609,7 +13609,7 @@
   {
     "name": "Shock Gloves",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Unarmed",
     "meleeOptions": {
       "reach": 0
@@ -13659,7 +13659,7 @@
   {
     "name": "Shock Hand",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Unarmed",
     "meleeOptions": {
       "reach": 0
@@ -13703,7 +13703,7 @@
     "cost": [0],
     "allowAccessories": true,
     "userSelectable": false,
-    "augmentationType": "Cyberware",
+    "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisationList": ["Cyber Implants"],
     "source": "Shadowrun 5 Core Rulebook",
@@ -13712,7 +13712,7 @@
   {
     "name": "Unarmed Attack",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Unarmed",
     "meleeOptions": {
       "reach": 0
@@ -13753,7 +13753,7 @@
   {
     "name": "AK-98 Grenade Launcher",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Weapon Attachments",
     "firearmOptions": {
       "mode": ["SS"],
@@ -13804,7 +13804,7 @@
   {
     "name": "Ares Alpha Grenade Launcher",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Weapon Attachments",
     "firearmOptions": {
       "mode": ["SS"],
@@ -13855,7 +13855,7 @@
   {
     "name": "Underbarrel Grenade Launcher",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Weapon Attachments",
     "firearmOptions": {
       "mode": ["SS"],
@@ -13910,7 +13910,7 @@
   {
     "name": "Underbarrel Bola Launcher",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Weapon Attachments",
     "extraClassification": "Bola",
     "firearmOptions": {
@@ -13958,7 +13958,7 @@
   {
     "name": "Underbarrel Grapple Gun",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Weapon Attachments",
     "extraClassification": "Grapple Gun",
     "firearmOptions": {
@@ -14014,7 +14014,7 @@
   {
     "name": "Nissan Optimum II Shotgun",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Weapon Attachments",
     "firearmOptions": {
       "mode": ["SA"],
@@ -14080,7 +14080,7 @@
   {
     "name": "Ares Predator III",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -14130,7 +14130,7 @@
   {
     "name": "Vibro Knife",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 0
@@ -14183,7 +14183,7 @@
   {
     "name": "Vibro Sword",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 1
@@ -14236,7 +14236,7 @@
   {
     "name": "Digging Claws",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Mutagenic Quality",
     "meleeOptions": {
       "reach": 0
@@ -14277,7 +14277,7 @@
   {
     "name": "Razor Claws",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Mutagenic Quality",
     "meleeOptions": {
       "reach": 0
@@ -14334,7 +14334,7 @@
   {
     "name": "Retractable Claws",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Mutagenic Quality",
     "meleeOptions": {
       "reach": 0
@@ -14391,7 +14391,7 @@
   {
     "name": "Raptor Beak",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Mutagenic Quality",
     "meleeOptions": {
       "reach": 0
@@ -14448,7 +14448,7 @@
   {
     "name": "Fangs",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Mutagenic Quality",
     "meleeOptions": {
       "reach": -1
@@ -14493,7 +14493,7 @@
   {
     "name": "Functional Tail (Thagomizer)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Mutagenic Quality",
     "meleeOptions": {
       "reach": 1
@@ -14550,7 +14550,7 @@
   {
     "name": "Goring Horns",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Mutagenic Quality",
     "meleeOptions": {
       "reach": 0
@@ -14607,7 +14607,7 @@
   {
     "name": "Larger Tusks",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Mutagenic Quality",
     "meleeOptions": {
       "reach": 0
@@ -14652,7 +14652,7 @@
   {
     "name": "Proboscis",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Mutagenic Quality",
     "meleeOptions": {
       "reach": 0
@@ -14697,7 +14697,7 @@
   {
     "name": "Kick (Centaur)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Mutagenic Quality",
     "meleeOptions": {
       "reach": 1
@@ -14742,7 +14742,7 @@
   {
     "name": "Bite (Infected) +1",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Mutagenic Quality",
     "meleeOptions": {
       "reach": -1
@@ -14799,7 +14799,7 @@
   {
     "name": "Bite (Infected) +2",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Mutagenic Quality",
     "meleeOptions": {
       "reach": -1
@@ -14856,7 +14856,7 @@
   {
     "name": "Claws (Infected) +1",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Mutagenic Quality",
     "meleeOptions": {
       "reach": 0
@@ -14913,7 +14913,7 @@
   {
     "name": "Claws (Infected) +2",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Mutagenic Quality",
     "meleeOptions": {
       "reach": 0
@@ -14970,7 +14970,7 @@
   {
     "name": "Claws (Infected) +3",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Mutagenic Quality",
     "meleeOptions": {
       "reach": 0
@@ -15027,7 +15027,7 @@
   {
     "name": "Bite (Naga)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Mutagenic Quality",
     "meleeOptions": {
       "reach": -1
@@ -15084,7 +15084,7 @@
   {
     "name": "Claws (Sasquatch)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Mutagenic Quality",
     "meleeOptions": {
       "reach": 1
@@ -15129,7 +15129,7 @@
   {
     "name": "Claws +1",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 1
@@ -15186,7 +15186,7 @@
   {
     "name": "Claws +1 (reach)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 1
@@ -15231,7 +15231,7 @@
   {
     "name": "Claws +2",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 0
@@ -15276,7 +15276,7 @@
   {
     "name": "Claws +3 (reach)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 1
@@ -15333,7 +15333,7 @@
   {
     "name": "Talons (Falconine Form)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": -1
@@ -15390,7 +15390,7 @@
   {
     "name": "Bite (Lupine Form)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 0
@@ -15447,7 +15447,7 @@
   {
     "name": "Bite (Pantherine Form)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 0
@@ -15504,7 +15504,7 @@
   {
     "name": "Bite (Tigrine Form)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 0
@@ -15561,7 +15561,7 @@
   {
     "name": "Bite (Ursine Form)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 0
@@ -15618,7 +15618,7 @@
   {
     "name": "Bite (Canine Form)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 0
@@ -15675,7 +15675,7 @@
   {
     "name": "Bite (Falconine Form)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 0
@@ -15732,7 +15732,7 @@
   {
     "name": "Bite (Leonine Form)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 0
@@ -15789,7 +15789,7 @@
   {
     "name": "Bite (Vulpine Form)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 0
@@ -15834,7 +15834,7 @@
   {
     "name": "Bite (Phocine Form)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": -1
@@ -15891,7 +15891,7 @@
   {
     "name": "Bite (Seal Form)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": -1
@@ -15948,7 +15948,7 @@
   {
     "name": "Dracoform Claws",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Mutagenic Quality",
     "meleeOptions": {
       "reach": 0
@@ -16005,7 +16005,7 @@
   {
     "name": "Dracoform Horns",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Mutagenic Quality",
     "meleeOptions": {
       "reach": 0
@@ -16062,7 +16062,7 @@
   {
     "name": "Dracoform Tail",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Mutagenic Quality",
     "meleeOptions": {
       "reach": 1
@@ -16119,7 +16119,7 @@
   {
     "name": "Dracoform Fangs",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Mutagenic Quality",
     "meleeOptions": {
       "reach": 0
@@ -16176,7 +16176,7 @@
   {
     "name": "Crystal Jaw",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Mutagenic Quality",
     "meleeOptions": {
       "reach": -1
@@ -16233,7 +16233,7 @@
   {
     "name": "Crystalline Blade",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Mutagenic Quality",
     "meleeOptions": {
       "reach": 1
@@ -16290,7 +16290,7 @@
   {
     "name": "Crystal Claw",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Mutagenic Quality",
     "meleeOptions": {
       "reach": 0
@@ -16347,7 +16347,7 @@
   {
     "name": "Crystalline Shards",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Mutagenic Quality",
     "meleeOptions": {
       "reach": 0
@@ -16392,7 +16392,7 @@
   {
     "name": "Elemental Body",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Unarmed",
     "meleeOptions": {
       "reach": 0
@@ -16463,7 +16463,7 @@
   {
     "name": "Foot Anchor",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 0
@@ -16513,7 +16513,7 @@
     "cost": [0],
     "allowAccessories": true,
     "userSelectable": false,
-    "augmentationType": "Cyberware",
+    "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisationList": ["Cyber Implants"],
     "source": "Chrome Flesh",
@@ -16522,7 +16522,7 @@
   {
     "name": "Oral Slasher",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 1
@@ -16564,7 +16564,7 @@
     "cost": [0],
     "allowAccessories": false,
     "userSelectable": false,
-    "augmentationType": "Cyberware",
+    "augmentationCategory": "Cyberware",
     "relatedSkill": "Exotic Melee Weapon",
     "source": "Chrome Flesh",
     "page": 92
@@ -16572,7 +16572,7 @@
   {
     "name": "Flametosser",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Flamethrowers",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -16614,7 +16614,7 @@
     "cost": [0],
     "allowAccessories": false,
     "userSelectable": false,
-    "augmentationType": "Cyberware",
+    "augmentationCategory": "Cyberware",
     "relatedSkill": "Exotic Ranged Weapon",
     "source": "Chrome Flesh",
     "page": 91
@@ -16622,7 +16622,7 @@
   {
     "name": "Cyberfangs",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 0
@@ -16660,7 +16660,7 @@
     "cost": [0],
     "allowAccessories": false,
     "userSelectable": false,
-    "augmentationType": "Cyberware",
+    "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
     "source": "Chrome Flesh",
     "page": 90
@@ -16668,7 +16668,7 @@
   {
     "name": "Extreme Cyberimplant",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 0
@@ -16706,7 +16706,7 @@
     "cost": [0],
     "allowAccessories": false,
     "userSelectable": false,
-    "augmentationType": "Cyberware",
+    "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
     "source": "Chrome Flesh",
     "page": 91
@@ -16714,7 +16714,7 @@
   {
     "name": "Junkyard Jaw",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 0
@@ -16764,7 +16764,7 @@
     "cost": [0],
     "allowAccessories": false,
     "userSelectable": false,
-    "augmentationType": "Cyberware",
+    "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
     "source": "Chrome Flesh",
     "page": 91
@@ -16772,7 +16772,7 @@
   {
     "name": "Claws (Bio-Weapon)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Bio-Weapons",
     "meleeOptions": {
       "reach": 0
@@ -16822,7 +16822,7 @@
     "cost": [0],
     "allowAccessories": false,
     "userSelectable": false,
-    "augmentationType": "Bioware",
+    "augmentationCategory": "Bioware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisationList": ["Natural Weapons"],
     "source": "Chrome Flesh",
@@ -16831,7 +16831,7 @@
   {
     "name": "Retractable Claws (Bio-Weapon)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Bio-Weapons",
     "meleeOptions": {
       "reach": 0
@@ -16881,7 +16881,7 @@
     "cost": [0],
     "allowAccessories": false,
     "userSelectable": false,
-    "augmentationType": "Bioware",
+    "augmentationCategory": "Bioware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisationList": ["Natural Weapons"],
     "source": "Chrome Flesh",
@@ -16890,7 +16890,7 @@
   {
     "name": "Electrical Discharge",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Bio-Weapons",
     "meleeOptions": {
       "reach": 0
@@ -16936,7 +16936,7 @@
     "cost": [0],
     "allowAccessories": false,
     "userSelectable": false,
-    "augmentationType": "Bioware",
+    "augmentationCategory": "Bioware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisationList": ["Natural Weapons"],
     "source": "Chrome Flesh",
@@ -16945,7 +16945,7 @@
   {
     "name": "Fangs (Bio-Weapon)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Bio-Weapons",
     "meleeOptions": {
       "reach": 0
@@ -16991,7 +16991,7 @@
     "cost": [0],
     "allowAccessories": false,
     "userSelectable": false,
-    "augmentationType": "Bioware",
+    "augmentationCategory": "Bioware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisationList": ["Natural Weapons"],
     "source": "Chrome Flesh",
@@ -17000,7 +17000,7 @@
   {
     "name": "Retractable Fangs (Bio-Weapon)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Bio-Weapons",
     "meleeOptions": {
       "reach": 0
@@ -17046,7 +17046,7 @@
     "cost": [0],
     "allowAccessories": false,
     "userSelectable": false,
-    "augmentationType": "Bioware",
+    "augmentationCategory": "Bioware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisationList": ["Natural Weapons"],
     "source": "Chrome Flesh",
@@ -17055,7 +17055,7 @@
   {
     "name": "Horns (Bio-Weapon)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Bio-Weapons",
     "meleeOptions": {
       "reach": 0
@@ -17101,7 +17101,7 @@
     "cost": [0],
     "allowAccessories": false,
     "userSelectable": false,
-    "augmentationType": "Bioware",
+    "augmentationCategory": "Bioware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisationList": ["Natural Weapons"],
     "source": "Chrome Flesh",
@@ -17110,7 +17110,7 @@
   {
     "name": "Large Stinger",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Bio-Weapons",
     "meleeOptions": {
       "reach": 1
@@ -17160,7 +17160,7 @@
     "cost": [0],
     "allowAccessories": false,
     "userSelectable": false,
-    "augmentationType": "Bioware",
+    "augmentationCategory": "Bioware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisationList": ["Natural Weapons"],
     "source": "Chrome Flesh",
@@ -17169,7 +17169,7 @@
   {
     "name": "Medium Stinger",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Bio-Weapons",
     "meleeOptions": {
       "reach": 0
@@ -17219,7 +17219,7 @@
     "cost": [0],
     "allowAccessories": false,
     "userSelectable": false,
-    "augmentationType": "Bioware",
+    "augmentationCategory": "Bioware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisationList": ["Natural Weapons"],
     "source": "Chrome Flesh",
@@ -17228,7 +17228,7 @@
   {
     "name": "Medium Tusk(s)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Bio-Weapons",
     "meleeOptions": {
       "reach": 0
@@ -17270,7 +17270,7 @@
     "cost": [0],
     "allowAccessories": false,
     "userSelectable": false,
-    "augmentationType": "Bioware",
+    "augmentationCategory": "Bioware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisationList": ["Natural Weapons"],
     "source": "Chrome Flesh",
@@ -17279,7 +17279,7 @@
   {
     "name": "Large Tusk(s)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Bio-Weapons",
     "meleeOptions": {
       "reach": 0
@@ -17325,7 +17325,7 @@
     "cost": [0],
     "allowAccessories": false,
     "userSelectable": false,
-    "augmentationType": "Bioware",
+    "augmentationCategory": "Bioware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisationList": ["Natural Weapons"],
     "source": "Chrome Flesh",
@@ -17334,7 +17334,7 @@
   {
     "name": "Raptor Foot",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 0
@@ -17395,7 +17395,7 @@
   {
     "name": "Grapple Fist",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Exotic",
     "extraClassification": "Grapple Gun",
     "firearmOptions": {
@@ -17446,7 +17446,7 @@
   {
     "name": "Tactical Grapple Gun",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Exotic",
     "extraClassification": "Grapple Gun",
     "firearmOptions": {
@@ -17504,7 +17504,7 @@
   {
     "name": "Sapphire Knife",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 0
@@ -17557,7 +17557,7 @@
   {
     "name": "Ceramic/Plasteel Knife",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 0
@@ -17610,7 +17610,7 @@
   {
     "name": "Foot Blade",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 0
@@ -17648,7 +17648,7 @@
     "cost": [0],
     "allowAccessories": true,
     "userSelectable": false,
-    "augmentationType": "Cyberware",
+    "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisationList": ["Cyber Implants"],
     "source": "Hard Targets",
@@ -17657,7 +17657,7 @@
   {
     "name": "Bone Spike I",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Bio-Weapons",
     "meleeOptions": {
       "reach": 0
@@ -17695,7 +17695,7 @@
     "cost": [0],
     "allowAccessories": true,
     "userSelectable": false,
-    "augmentationType": "Cyberware",
+    "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisationList": ["Cyber Implants"],
     "source": "Hard Targets",
@@ -17704,7 +17704,7 @@
   {
     "name": "Bone Spike II",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Bio-Weapons",
     "meleeOptions": {
       "reach": 0
@@ -17742,7 +17742,7 @@
     "cost": [0],
     "allowAccessories": true,
     "userSelectable": false,
-    "augmentationType": "Cyberware",
+    "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisationList": ["Cyber Implants"],
     "source": "Hard Targets",
@@ -17751,7 +17751,7 @@
   {
     "name": "Bone Spike III",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Bio-Weapons",
     "meleeOptions": {
       "reach": 0
@@ -17789,7 +17789,7 @@
     "cost": [0],
     "allowAccessories": true,
     "userSelectable": false,
-    "augmentationType": "Cyberware",
+    "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisationList": ["Cyber Implants"],
     "source": "Hard Targets",
@@ -17798,7 +17798,7 @@
   {
     "name": "Cougar Collapsible Spear",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 3
@@ -17851,7 +17851,7 @@
   {
     "name": "Collapsible Scythe",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 2
@@ -17904,7 +17904,7 @@
   {
     "name": "Victorinox Collapsible Hatchet",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 1
@@ -17957,7 +17957,7 @@
   {
     "name": "Throwing Syringe",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Throwing Weapons",
     "rangeList": ["Aerodynamic Grenade"],
     "concealability": -2,
@@ -18012,7 +18012,7 @@
   {
     "name": "Dynamic Tension Bow",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Bows",
     "rangeList": ["Bows"],
     "concealability": 8,
@@ -18078,7 +18078,7 @@
   {
     "name": "Cavalier Arms Adder Slivergun",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -18117,7 +18117,7 @@
   {
     "name": "Flame Bracer",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Exotic",
     "firearmOptions": {
       "mode": ["SS"],
@@ -18166,7 +18166,7 @@
   {
     "name": "Shiawase Arms Simoom",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Exotic",
     "firearmOptions": {
       "mode": ["SA", "FA"],
@@ -18204,7 +18204,7 @@
   {
     "name": "Ares Armatus",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Lasers",
     "firearmOptions": {
       "mode": ["SA"],
@@ -18257,7 +18257,7 @@
   {
     "name": "Plasteel Toe Boots",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Unarmed",
     "meleeOptions": {
       "reach": 0
@@ -18301,7 +18301,7 @@
   {
     "name": "Colt Manhunter A1",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -18358,7 +18358,7 @@
   {
     "name": "Lemat 2072",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SS"],
@@ -18416,7 +18416,7 @@
   {
     "name": "Lemat 2072 (Shotgun Barrel)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SS"],
@@ -18456,7 +18456,7 @@
   {
     "name": "Mounted Crossbow",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Weapon Attachments",
     "firearmOptions": {
       "mode": ["SS"],
@@ -18509,7 +18509,7 @@
   {
     "name": "Underbarrel Shotgun",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Weapon Attachments",
     "firearmOptions": {
       "mode": ["SS"],
@@ -18562,7 +18562,7 @@
   {
     "name": "Underbarrel Laser",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Weapon Attachments",
     "firearmOptions": {
       "mode": ["SA"],
@@ -18618,7 +18618,7 @@
   {
     "name": "Microwave Gun, High Frequency",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Exotic",
     "firearmOptions": {
       "mode": ["SS"],
@@ -18666,7 +18666,7 @@
   {
     "name": "Microwave Gun, Low Frequency",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Exotic",
     "firearmOptions": {
       "mode": ["SS"],
@@ -18702,7 +18702,7 @@
   {
     "name": "Repeating Laser",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Lasers",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -18755,7 +18755,7 @@
   {
     "name": "Colt Manhunter",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -18812,7 +18812,7 @@
   {
     "name": "Mannlicher Marpingen Pro D (Shotgun Barrels)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SS"],
@@ -18863,7 +18863,7 @@
   {
     "name": "Mannlicher Marpingen Pro D",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sporting Rifles",
     "firearmOptions": {
       "mode": ["SA"],
@@ -18921,7 +18921,7 @@
   {
     "name": "HK MP75",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -18989,7 +18989,7 @@
   {
     "name": "Mannlicher Dirmingen SX BD: Shotgun Barrel",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SS"],
@@ -19028,7 +19028,7 @@
   {
     "name": "Mannlicher Dirmingen SX BD",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sporting Rifles",
     "firearmOptions": {
       "mode": ["SS"],
@@ -19081,7 +19081,7 @@
   {
     "name": "Mannlicher Dirmingen SX BD: Small Caliber",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sporting Rifles",
     "firearmOptions": {
       "mode": ["SA"],
@@ -19119,7 +19119,7 @@
   {
     "name": "Walther PP110",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -19169,7 +19169,7 @@
   {
     "name": "Onotari Arms Troublemaker",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -19226,7 +19226,7 @@
   {
     "name": "Altmayr SPX",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SS"],
@@ -19276,7 +19276,7 @@
   {
     "name": "Onotari Arms SIG-6",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -19335,7 +19335,7 @@
   {
     "name": "Mortimer of London 'Belgrave' Sword Cane",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 1
@@ -19388,7 +19388,7 @@
   {
     "name": "Hammerli 620S",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -19438,7 +19438,7 @@
   {
     "name": "Yamaha Sakura Fubuki SX",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Pistols",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -19484,7 +19484,7 @@
   {
     "name": "Nemesis Arms Praetorian",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -19547,7 +19547,7 @@
   {
     "name": "Stinger Pen Gun",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Hold Outs",
     "firearmOptions": {
       "mode": ["SS"],
@@ -19583,7 +19583,7 @@
   {
     "name": "Injector Pen",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 0
@@ -19633,7 +19633,7 @@
   {
     "name": "Pepper Punch Pen",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Exotic",
     "extraClassification": "Pepper Punch",
     "firearmOptions": {
@@ -19675,7 +19675,7 @@
   {
     "name": "Modified Spray Pen",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Exotic",
     "extraClassification": "Spraypen",
     "firearmOptions": {
@@ -19717,7 +19717,7 @@
   {
     "name": "Sap Cap",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Clubs",
     "meleeOptions": {
       "reach": 0
@@ -19758,7 +19758,7 @@
   {
     "name": "Lapel Dagger",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 0
@@ -19811,7 +19811,7 @@
   {
     "name": "Ares Briefcase Shield",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 0
@@ -19853,7 +19853,7 @@
   {
     "name": "Hand Razors, Fixed (2050)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 0
@@ -19903,7 +19903,7 @@
     "cost": [0],
     "allowAccessories": true,
     "userSelectable": false,
-    "augmentationType": "Cyberware",
+    "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisationList": ["Cyber Implants"],
     "source": "Shadowrun 2050",
@@ -19912,7 +19912,7 @@
   {
     "name": "Hand Razors, Retractable (2050)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 0
@@ -19962,7 +19962,7 @@
     "cost": [0],
     "allowAccessories": true,
     "userSelectable": false,
-    "augmentationType": "Cyberware",
+    "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisationList": ["Cyber Implants"],
     "source": "Shadowrun 2050",
@@ -19971,7 +19971,7 @@
   {
     "name": "Spur, Fixed (2050)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 0
@@ -20021,7 +20021,7 @@
     "cost": [0],
     "allowAccessories": true,
     "userSelectable": false,
-    "augmentationType": "Cyberware",
+    "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisationList": ["Cyber Implants"],
     "source": "Shadowrun 2050",
@@ -20030,7 +20030,7 @@
   {
     "name": "Spur, Retractable (2050)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 0
@@ -20080,7 +20080,7 @@
     "cost": [0],
     "allowAccessories": true,
     "userSelectable": false,
-    "augmentationType": "Cyberware",
+    "augmentationCategory": "Cyberware",
     "relatedSkill": "Unarmed Combat",
     "relatedSkillSpecialisationList": ["Cyber Implants"],
     "source": "Shadowrun 2050",
@@ -20089,7 +20089,7 @@
   {
     "name": "Cyber Holdout Pistol (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Hold Outs",
     "firearmOptions": {
       "mode": ["SA"],
@@ -20123,7 +20123,7 @@
     "cost": [0],
     "allowAccessories": false,
     "userSelectable": false,
-    "augmentationType": "Cyberware",
+    "augmentationCategory": "Cyberware",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 2050",
@@ -20132,7 +20132,7 @@
   {
     "name": "Cyber Light Pistol (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -20166,7 +20166,7 @@
     "cost": [0],
     "allowAccessories": false,
     "userSelectable": false,
-    "augmentationType": "Cyberware",
+    "augmentationCategory": "Cyberware",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 2050",
@@ -20175,7 +20175,7 @@
   {
     "name": "Cyber Machine Pistol (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Machine Pistols",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -20209,7 +20209,7 @@
     "cost": [0],
     "allowAccessories": false,
     "userSelectable": false,
-    "augmentationType": "Cyberware",
+    "augmentationCategory": "Cyberware",
     "relatedSkill": "Automatics",
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 2050",
@@ -20218,7 +20218,7 @@
   {
     "name": "Cyber Heavy Pistol (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -20264,7 +20264,7 @@
     "cost": [0],
     "allowAccessories": false,
     "userSelectable": false,
-    "augmentationType": "Cyberware",
+    "augmentationCategory": "Cyberware",
     "relatedSkill": "Pistols",
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 2050",
@@ -20273,7 +20273,7 @@
   {
     "name": "Cyber Submachine Gun (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -20307,7 +20307,7 @@
     "cost": [0],
     "allowAccessories": false,
     "userSelectable": false,
-    "augmentationType": "Cyberware",
+    "augmentationCategory": "Cyberware",
     "relatedSkill": "Automatics",
     "relatedSkillSpecialisationList": ["Semi-Automatics"],
     "source": "Shadowrun 2050",
@@ -20316,7 +20316,7 @@
   {
     "name": "Cyber Shotgun (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SA"],
@@ -20350,7 +20350,7 @@
     "cost": [0],
     "allowAccessories": false,
     "userSelectable": false,
-    "augmentationType": "Cyberware",
+    "augmentationCategory": "Cyberware",
     "relatedSkill": "Longarms",
     "source": "Shadowrun 2050",
     "page": 204
@@ -20358,7 +20358,7 @@
   {
     "name": "Defiance Super Shock (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Tasers",
     "firearmOptions": {
       "mode": ["SA"],
@@ -20415,7 +20415,7 @@
   {
     "name": "Streetline Special (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Hold Outs",
     "firearmOptions": {
       "mode": ["SA"],
@@ -20451,7 +20451,7 @@
   {
     "name": "Tiffani Self-Defender (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Hold Outs",
     "firearmOptions": {
       "mode": ["SS"],
@@ -20487,7 +20487,7 @@
   {
     "name": "Walther Palm Pistol (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Hold Outs",
     "firearmOptions": {
       "mode": ["SS", "BF"],
@@ -20523,7 +20523,7 @@
   {
     "name": "Ares Light Fire 70 (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -20561,7 +20561,7 @@
   {
     "name": "Beretta 200 ST (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Pistols",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -20606,7 +20606,7 @@
   {
     "name": "Beretta Modell 101T (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -20644,7 +20644,7 @@
   {
     "name": "Colt America L36 (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -20682,7 +20682,7 @@
   {
     "name": "Fichetti Security 500 (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -20727,7 +20727,7 @@
   {
     "name": "Fichetti Security 500a (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -20772,7 +20772,7 @@
   {
     "name": "Ares Crusader MP 6 (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Machine Pistols",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -20810,7 +20810,7 @@
   {
     "name": "Ceska Black Scorpion (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Machine Pistols",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -20855,7 +20855,7 @@
   {
     "name": "Ares Predator (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -20905,7 +20905,7 @@
   {
     "name": "Ares Viper Slivergun (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -20951,7 +20951,7 @@
   {
     "name": "Browning Max-Power (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -21001,7 +21001,7 @@
   {
     "name": "Colt Manhunter (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -21058,7 +21058,7 @@
   {
     "name": "Remington Roomsweeper (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -21097,7 +21097,7 @@
   {
     "name": "Ruger Super Warhawk (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SS"],
@@ -21147,7 +21147,7 @@
   {
     "name": "AK-97 Karabiner (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -21191,7 +21191,7 @@
   {
     "name": "Beretta Modell 70 (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["BF", "FA"],
@@ -21240,7 +21240,7 @@
   {
     "name": "HK227 (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -21294,7 +21294,7 @@
   {
     "name": "Ingram Smartgun (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["BF", "FA"],
@@ -21348,7 +21348,7 @@
   {
     "name": "Uzi III (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["BF"],
@@ -21397,7 +21397,7 @@
   {
     "name": "AK-97 (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -21446,7 +21446,7 @@
   {
     "name": "AK-98 (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -21496,7 +21496,7 @@
   {
     "name": "Colt M22A2 (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -21546,7 +21546,7 @@
   {
     "name": "Colt M22A2 Grenade Launcher (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Weapon Attachments",
     "firearmOptions": {
       "mode": ["SS"],
@@ -21598,7 +21598,7 @@
   {
     "name": "FN HAR (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -21664,7 +21664,7 @@
   {
     "name": "Ranger Arms SM-3 (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sniper Rifles",
     "firearmOptions": {
       "mode": ["SA"],
@@ -21725,7 +21725,7 @@
   {
     "name": "Remington 750 (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sniper Rifles",
     "firearmOptions": {
       "mode": ["SS"],
@@ -21781,7 +21781,7 @@
   {
     "name": "Remington 950 (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sniper Rifles",
     "firearmOptions": {
       "mode": ["SS"],
@@ -21837,7 +21837,7 @@
   {
     "name": "Ruger 100 (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sniper Rifles",
     "firearmOptions": {
       "mode": ["SA"],
@@ -21898,7 +21898,7 @@
   {
     "name": "Walther MA-2100 (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sniper Rifles",
     "firearmOptions": {
       "mode": ["SA"],
@@ -21954,7 +21954,7 @@
   {
     "name": "Steyr AUG-CSL (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -22015,7 +22015,7 @@
   {
     "name": "Steyr AUG-CSL SMG (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -22060,7 +22060,7 @@
   {
     "name": "Steyr AUG-CSL Carbine (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sporting Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -22105,7 +22105,7 @@
   {
     "name": "Steyr AUG-CSL LMG (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Machineguns",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -22163,7 +22163,7 @@
   {
     "name": "Grenade: Shock (2050)",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Standard Grenade"],
     "concealability": 0,
@@ -22214,7 +22214,7 @@
   {
     "name": "Grenade: Shock, Aerodynamic (2050)",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Aerodynamic Grenade"],
     "concealability": 0,
@@ -22265,7 +22265,7 @@
   {
     "name": "Minigrenade: Shock (2050)",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Rocket",
     "rangeList": ["Grenade Launchers"],
     "concealability": -2,
@@ -22312,7 +22312,7 @@
   {
     "name": "Grenade: Defensive (2050)",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Standard Grenade"],
     "concealability": 0,
@@ -22363,7 +22363,7 @@
   {
     "name": "Grenade: Defensive, Aerodynamic (2050)",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Aerodynamic Grenade"],
     "concealability": 0,
@@ -22414,7 +22414,7 @@
   {
     "name": "Minigrenade: Defensive (2050)",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Rocket",
     "rangeList": ["Grenade Launchers"],
     "concealability": 0,
@@ -22464,7 +22464,7 @@
   {
     "name": "Grenade: Offensive (2050)",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Standard Grenade"],
     "concealability": 0,
@@ -22504,7 +22504,7 @@
   {
     "name": "Grenade: Offensive, Aerodynamic (2050)",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Aerodynamic Grenade"],
     "concealability": 0,
@@ -22544,7 +22544,7 @@
   {
     "name": "Minigrenade: Offensive (2050)",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Rocket",
     "rangeList": ["Grenade Launchers"],
     "concealability": 0,
@@ -22583,7 +22583,7 @@
   {
     "name": "Grenade: Smoke (2050)",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Standard Grenade"],
     "concealability": 0,
@@ -22622,7 +22622,7 @@
   {
     "name": "Grenade: Smoke, Aerodynamic (2050)",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Aerodynamic Grenade"],
     "concealability": 0,
@@ -22661,7 +22661,7 @@
   {
     "name": "Minigrenade: Smoke (2050)",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Rocket",
     "rangeList": ["Grenade Launchers"],
     "concealability": 0,
@@ -22699,7 +22699,7 @@
   {
     "name": "Rocket: Anti-Personnel (2050)",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Rocket",
     "rangeList": ["Grenade Launchers"],
     "concealability": 10,
@@ -22734,7 +22734,7 @@
   {
     "name": "Rocket: Anti-Vehicle (2050)",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Rocket",
     "rangeList": ["Grenade Launchers"],
     "concealability": 10,
@@ -22791,7 +22791,7 @@
   {
     "name": "Rocket: High Explosive (2050)",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Rocket",
     "rangeList": ["Grenade Launchers"],
     "concealability": 10,
@@ -22837,7 +22837,7 @@
   {
     "name": "Missile: Anti-Personnel (2050)",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Rocket",
     "rangeList": ["Grenade Launchers"],
     "concealability": 10,
@@ -22872,7 +22872,7 @@
   {
     "name": "Missile: Anti-Vehicle (2050)",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Rocket",
     "rangeList": ["Grenade Launchers"],
     "concealability": 10,
@@ -22929,7 +22929,7 @@
   {
     "name": "Missile: High Explosive (2050)",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Rocket",
     "rangeList": ["Grenade Launchers"],
     "concealability": 10,
@@ -22975,7 +22975,7 @@
   {
     "name": "Autocannon (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Cannons",
     "firearmOptions": {
       "mode": ["SS"],
@@ -23023,7 +23023,7 @@
   {
     "name": "Launcher, Vehicle (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Missile Launchers",
     "firearmOptions": {
       "mode": ["SS"],
@@ -23070,7 +23070,7 @@
   {
     "name": "Water Cannon (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Cannons",
     "firearmOptions": {
       "mode": ["SS"],
@@ -23118,7 +23118,7 @@
   {
     "name": "Defiance T-250 (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SA"],
@@ -23167,7 +23167,7 @@
   {
     "name": "Enfield AS-7 (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -23223,7 +23223,7 @@
   {
     "name": "Mossberg CMDT (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -23272,7 +23272,7 @@
   {
     "name": "Mossberg CMDT/SM (2050)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -23328,7 +23328,7 @@
   {
     "name": "Walther Secura Superkompakt",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Hold Outs",
     "firearmOptions": {
       "mode": ["SA"],
@@ -23385,7 +23385,7 @@
   {
     "name": "Altmayr Black Moon",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -23447,7 +23447,7 @@
   {
     "name": "Glock-Swarovski Adlerauge",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -23514,7 +23514,7 @@
   {
     "name": "HK Urban Fighter (ADL)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -23564,7 +23564,7 @@
   {
     "name": "Walther Secura II",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -23626,7 +23626,7 @@
   {
     "name": "Glock 51",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Machine Pistols",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -23676,7 +23676,7 @@
   {
     "name": "Walther P118",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Machine Pistols",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -23751,7 +23751,7 @@
   {
     "name": "Glock MP Custodes (MPK)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -23811,7 +23811,7 @@
   {
     "name": "Glock MP Custodes (MPV)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -23871,7 +23871,7 @@
   {
     "name": "HK 223C",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -23938,7 +23938,7 @@
   {
     "name": "HK Urban Enforcer",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -24003,7 +24003,7 @@
   {
     "name": "HK Urban Enforcer Microgrenade Launcher",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Weapon Attachments",
     "firearmOptions": {
       "mode": ["SS"],
@@ -24055,7 +24055,7 @@
   {
     "name": "Steyr AUG-CSL III (Assault Rifle)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -24126,7 +24126,7 @@
   {
     "name": "Steyr AUG-CSL III (Carbine)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -24194,7 +24194,7 @@
   {
     "name": "Steyr AUG-CSL III (LMG)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["BF", "FA"],
@@ -24262,7 +24262,7 @@
   {
     "name": "Steyr AUG-CSL III (Sniper Rifle)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["SA"],
@@ -24330,7 +24330,7 @@
   {
     "name": "HK G12A4",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -24422,7 +24422,7 @@
   {
     "name": "HK G12A4 Grenade Launcher",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Weapon Attachments",
     "firearmOptions": {
       "mode": ["SS"],
@@ -24474,7 +24474,7 @@
   {
     "name": "Steyr UCR",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -24536,7 +24536,7 @@
   {
     "name": "Steyr UCR Underbarrel Shotgun",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SS"],
@@ -24588,7 +24588,7 @@
   {
     "name": "HK DMR 11D",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sniper Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -24655,7 +24655,7 @@
   {
     "name": "HK Urban Striker",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sniper Rifles",
     "firearmOptions": {
       "mode": ["SA"],
@@ -24746,7 +24746,7 @@
   {
     "name": "Altmayr SPX2",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SS", "SA"],
@@ -24795,7 +24795,7 @@
   {
     "name": "Onotari Arms Pressure KS-X",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -24861,7 +24861,7 @@
   {
     "name": "PJSS Model 75",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SS"],
@@ -24917,7 +24917,7 @@
   {
     "name": "PJSS Model 75-III (Shotgun Barrel)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SS"],
@@ -24974,7 +24974,7 @@
   {
     "name": "PJSS Model 75-III (Rifle Barrel)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SS"],
@@ -25030,7 +25030,7 @@
   {
     "name": "Ruhrmetall SMK 252",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Cannons",
     "firearmOptions": {
       "mode": ["SA"],
@@ -25107,7 +25107,7 @@
   {
     "name": "Osmium Mace",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Clubs",
     "meleeOptions": {
       "reach": 2
@@ -25234,7 +25234,7 @@
   {
     "name": "Halloweener Barbecue Lighter",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Flamethrowers",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -25283,7 +25283,7 @@
   {
     "name": "Grenade: Halloweener Molotov Cocktail",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Standard Grenade"],
     "concealability": 0,
@@ -25334,7 +25334,7 @@
   {
     "name": "Grenade: Halloweener Molotov Cocktail, Aerodynamic",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Aerodynamic Grenade"],
     "concealability": 0,
@@ -25385,7 +25385,7 @@
   {
     "name": "Rocket: Incendiary",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Rocket",
     "rangeList": ["Grenade Launchers"],
     "concealability": 10,
@@ -25431,7 +25431,7 @@
   {
     "name": "Krime Bill",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 1
@@ -25483,7 +25483,7 @@
   {
     "name": "Krime Reaver Axe",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 1
@@ -25537,7 +25537,7 @@
   {
     "name": "Krime Reaver Pick",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 1
@@ -25590,7 +25590,7 @@
   {
     "name": "Krime Reaver Knob",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Clubs",
     "meleeOptions": {
       "reach": 1
@@ -25643,7 +25643,7 @@
   {
     "name": "Krime Shiv",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 1
@@ -25695,7 +25695,7 @@
   {
     "name": "Traditional Macuahuitl",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 1
@@ -25748,7 +25748,7 @@
   {
     "name": "Modern Macuahuitl",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 1
@@ -25801,7 +25801,7 @@
   {
     "name": "Nodachi",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 2
@@ -25854,7 +25854,7 @@
   {
     "name": "Fluid-Motion Mace",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Clubs",
     "meleeOptions": {
       "reach": 1
@@ -25895,7 +25895,7 @@
   {
     "name": "Gunstock War Club",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Clubs",
     "meleeOptions": {
       "reach": 1
@@ -25948,7 +25948,7 @@
   {
     "name": "Gunstock War Club (Thrown)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Clubs",
     "meleeOptions": {
       "reach": 1
@@ -26001,7 +26001,7 @@
   {
     "name": "Nunchaku",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Clubs",
     "meleeOptions": {
       "reach": 1
@@ -26041,7 +26041,7 @@
   {
     "name": "Tonfa",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Clubs",
     "meleeOptions": {
       "reach": 1
@@ -26081,7 +26081,7 @@
   {
     "name": "Krime Gloves",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Unarmed",
     "meleeOptions": {
       "reach": 0
@@ -26122,7 +26122,7 @@
   {
     "name": "Krime Gloves: Stun Pad",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Unarmed",
     "meleeOptions": {
       "reach": 0
@@ -26172,7 +26172,7 @@
   {
     "name": "Krime Stun Lance",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 2
@@ -26217,7 +26217,7 @@
   {
     "name": "Krime Trollbow (Rating 6)",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Bows",
     "rangeList": ["Bows"],
     "concealability": 8,
@@ -26262,7 +26262,7 @@
   {
     "name": "Krime Trollbow (Rating 7)",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Bows",
     "rangeList": ["Bows"],
     "concealability": 8,
@@ -26307,7 +26307,7 @@
   {
     "name": "Krime Trollbow (Rating 8)",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Bows",
     "rangeList": ["Bows"],
     "concealability": 8,
@@ -26352,7 +26352,7 @@
   {
     "name": "Krime Trollbow (Rating 9)",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Bows",
     "rangeList": ["Bows"],
     "concealability": 8,
@@ -26397,7 +26397,7 @@
   {
     "name": "Krime Trollbow (Rating 10)",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Bows",
     "rangeList": ["Bows"],
     "concealability": 8,
@@ -26442,7 +26442,7 @@
   {
     "name": "Krime Trollbow (Rating 11)",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Bows",
     "rangeList": ["Bows"],
     "concealability": 8,
@@ -26487,7 +26487,7 @@
   {
     "name": "Krime Trollbow (Rating 12)",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Bows",
     "rangeList": ["Bows"],
     "concealability": 8,
@@ -26532,7 +26532,7 @@
   {
     "name": "Krime Trollbow Horns",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 1
@@ -26585,7 +26585,7 @@
   {
     "name": "Winchester Airbow",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Crossbows",
     "rangeList": ["Medium Crossbows"],
     "concealability": 4,
@@ -26629,7 +26629,7 @@
   {
     "name": "Krime Tingler",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Tasers",
     "firearmOptions": {
       "mode": ["SS"],
@@ -26679,7 +26679,7 @@
   {
     "name": "Narcoject One",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Pistols",
     "extraClassification": "Dart Gun",
     "firearmOptions": {
@@ -26722,7 +26722,7 @@
   {
     "name": "Raecor Sting",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Hold Outs",
     "firearmOptions": {
       "mode": ["SS"],
@@ -26767,7 +26767,7 @@
   {
     "name": "Terracotta Arms Pup",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Hold Outs",
     "firearmOptions": {
       "mode": ["SA"],
@@ -26810,7 +26810,7 @@
   {
     "name": "Browning Ghost",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -26864,7 +26864,7 @@
   {
     "name": "Colt Coral Snake",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Pistols",
     "firearmOptions": {
       "mode": ["SS"],
@@ -26922,7 +26922,7 @@
   {
     "name": "Ares Striker",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -26979,7 +26979,7 @@
   {
     "name": "Barrens Special",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SS"],
@@ -27030,7 +27030,7 @@
   {
     "name": "Barrens Special: Bayonet",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 0
@@ -27083,7 +27083,7 @@
   {
     "name": "Browning Phantom",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -27148,7 +27148,7 @@
   {
     "name": "Cavalier Champion",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SS"],
@@ -27205,7 +27205,7 @@
   {
     "name": "Cavalier Thunderstruck",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["BF"],
@@ -27266,7 +27266,7 @@
   {
     "name": "Hammerli Gemini",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -27323,7 +27323,7 @@
   {
     "name": "HK Urban Fighter",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -27384,7 +27384,7 @@
   {
     "name": "Morrissey Alta",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -27441,7 +27441,7 @@
   {
     "name": "Morrissey Elite",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -27498,7 +27498,7 @@
   {
     "name": "Nemesis Arms Praetorian (Smartgun)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -27561,7 +27561,7 @@
   {
     "name": "Bayonet",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Weapon Attachments",
     "meleeOptions": {
       "reach": 2
@@ -27617,7 +27617,7 @@
   {
     "name": "Retractable Bayonet",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Weapon Attachments",
     "meleeOptions": {
       "reach": 2
@@ -27673,7 +27673,7 @@
   {
     "name": "Onotari Arms Vagabond",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -27723,7 +27723,7 @@
   {
     "name": "WW Infiltrator",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -27771,7 +27771,7 @@
   {
     "name": "Cavalier Flash",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Machine Pistols",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -27815,7 +27815,7 @@
   {
     "name": "Esprit Tsunami",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["BF", "FA"],
@@ -27864,7 +27864,7 @@
   {
     "name": "Onotari Arms S-3K",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["BF", "FA"],
@@ -27914,7 +27914,7 @@
   {
     "name": "Ares Stalwart",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Carbines",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -27970,7 +27970,7 @@
   {
     "name": "Colt M23A2",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Carbines",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -28041,7 +28041,7 @@
   {
     "name": "Izom Artemis",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Carbines",
     "firearmOptions": {
       "mode": ["BF", "FA"],
@@ -28098,7 +28098,7 @@
   {
     "name": "Cavalier Frontier",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -28160,7 +28160,7 @@
   {
     "name": "Krime Happiness",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["FA"],
@@ -28209,7 +28209,7 @@
   {
     "name": "Onotari HL-13",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -28275,7 +28275,7 @@
   {
     "name": "Onotari HL-13 Personal Defense Weapon",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["FA"],
@@ -28333,7 +28333,7 @@
   {
     "name": "Onotari HL-13 Urban Assault",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Carbines",
     "firearmOptions": {
       "mode": ["FA"],
@@ -28396,7 +28396,7 @@
   {
     "name": "Onotari HL-13 (Sniper Rifle)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sniper Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -28459,7 +28459,7 @@
   {
     "name": "PSG Enforcer",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sniper Rifles",
     "firearmOptions": {
       "mode": ["SA"],
@@ -28520,7 +28520,7 @@
   {
     "name": "Beretta Northstar",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SA"],
@@ -28581,7 +28581,7 @@
   {
     "name": "Krime Boom",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["FA"],
@@ -28630,7 +28630,7 @@
   {
     "name": "Krime Whammy",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SS"],
@@ -28692,7 +28692,7 @@
   {
     "name": "Krime Whammy (Melee)",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Clubs",
     "meleeOptions": {
       "reach": 1
@@ -28733,7 +28733,7 @@
   {
     "name": "Krime Triple-Troll Minigun",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Machineguns",
     "firearmOptions": {
       "mode": ["FA"],
@@ -28795,7 +28795,7 @@
   {
     "name": "Krime Triple-Ork Minigun",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Machineguns",
     "firearmOptions": {
       "mode": ["FA"],
@@ -28857,7 +28857,7 @@
   {
     "name": "Krime Triple-Dwarf Minigun",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Machineguns",
     "firearmOptions": {
       "mode": ["FA"],
@@ -28907,7 +28907,7 @@
   {
     "name": "HK 82A1",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Grenade Launchers",
     "firearmOptions": {
       "mode": ["SS"],
@@ -28956,7 +28956,7 @@
   {
     "name": "M79B1 LAW Rocket",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Missile Launchers",
     "firearmOptions": {
       "mode": ["SS"],
@@ -29003,7 +29003,7 @@
   {
     "name": "Phalanx Systems Vogeljager II",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Missile Launchers",
     "firearmOptions": {
       "mode": ["SS"],
@@ -29057,7 +29057,7 @@
   {
     "name": "Terracotta X-6 MGL",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Grenade Launchers",
     "firearmOptions": {
       "mode": ["SS"],
@@ -29113,7 +29113,7 @@
   {
     "name": "Narcoject Gas Gun",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Exotic",
     "extraClassification": "Gas gun",
     "firearmOptions": {
@@ -29156,7 +29156,7 @@
   {
     "name": "Narcoject PEP",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Exotic",
     "firearmOptions": {
       "mode": ["SS"],
@@ -29200,7 +29200,7 @@
   {
     "name": "Narcoject Trackstopper",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Exotic",
     "extraClassification": "Trackstopper",
     "firearmOptions": {
@@ -29242,7 +29242,7 @@
   {
     "name": "Krime Stun-O-Net",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Clubs",
     "meleeOptions": {
       "reach": 1
@@ -29288,7 +29288,7 @@
   {
     "name": "Grenade: Maker",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Standard Grenade"],
     "concealability": 0,
@@ -29333,7 +29333,7 @@
   {
     "name": "Grenade: Maker, Aerodynamic",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Aerodynamic Grenade"],
     "concealability": 0,
@@ -29378,7 +29378,7 @@
   {
     "name": "Missile: Maker",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Rocket",
     "rangeList": ["Grenade Launchers"],
     "concealability": 10,
@@ -29418,7 +29418,7 @@
   {
     "name": "Stoner-Ares M-22A1",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Medium Heavy Machineguns",
     "firearmOptions": {
       "mode": ["FA"],
@@ -29475,7 +29475,7 @@
   {
     "name": "Aztechnology Blood Drinker Combat Axe",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 0
@@ -29532,7 +29532,7 @@
   {
     "name": "Horizon-Flynn Defense-Com Commlink Holdout",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Hold Outs",
     "firearmOptions": {
       "mode": [""],
@@ -29568,7 +29568,7 @@
   {
     "name": "Horizon-Flynn Defense-Com Commlink Knife",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 0
@@ -29616,7 +29616,7 @@
   {
     "name": "Horizon-Flynn Defense-Com Commlink Taser",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Tasers",
     "firearmOptions": {
       "mode": ["SS"],
@@ -29665,7 +29665,7 @@
   {
     "name": "Lone Star Remington 995 \"Buzzsaw\"",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SA"],
@@ -29731,7 +29731,7 @@
   {
     "name": "Lone Star Bates-Brown Tactical Combat Boots",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Unarmed",
     "meleeOptions": {
       "reach": 0
@@ -29783,7 +29783,7 @@
   {
     "name": "Minigrenade: Winchester-Howe Hornet Direct-Fire",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Rocket",
     "rangeList": ["Grenade Launchers"],
     "concealability": -2,
@@ -29826,7 +29826,7 @@
   {
     "name": "Ingram Supermach 200",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "extraClassification": "Supermach",
     "firearmOptions": {
@@ -29888,7 +29888,7 @@
   {
     "name": "Renraku Red Samurai Katana",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 1
@@ -29941,7 +29941,7 @@
   {
     "name": "Onotari Arms Silent Claw Stiletto",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 0
@@ -29990,7 +29990,7 @@
   {
     "name": "Nemesis Arms Man-Catcher",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Exotic",
     "extraClassification": "Man-Catcher",
     "firearmOptions": {
@@ -30035,7 +30035,7 @@
   {
     "name": "Wuxing-Armtech PTL-02",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Grenade Launchers",
     "extraClassification": "Torpedo Grenade Launcher",
     "firearmOptions": {
@@ -30084,7 +30084,7 @@
   {
     "name": "Torpedo Grenade: HEAP",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Rocket",
     "rangeList": ["Grenade Launchers"],
     "concealability": -2,
@@ -30131,7 +30131,7 @@
   {
     "name": "Torpedo Grenade: Depth Charge",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Rocket",
     "rangeList": ["Grenade Launchers"],
     "concealability": -2,
@@ -30178,7 +30178,7 @@
   {
     "name": "Elektro-Angel",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 2
@@ -30223,7 +30223,7 @@
   {
     "name": "Elektro-Netz",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Exotic",
     "firearmOptions": {
       "mode": [""],
@@ -30279,7 +30279,7 @@
   {
     "name": "Hardened Yo-Yo",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 1
@@ -30319,7 +30319,7 @@
   {
     "name": "Bladed Yo-Yo",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 1
@@ -30371,7 +30371,7 @@
   {
     "name": "Monofilament Yo-Yo",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 2
@@ -30415,7 +30415,7 @@
   {
     "name": "Hardened Skateboard",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 0
@@ -30455,7 +30455,7 @@
   {
     "name": "Bladed Skateboard",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 0
@@ -30507,7 +30507,7 @@
   {
     "name": "Rolling Blades",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Exotic",
     "meleeOptions": {
       "reach": 0
@@ -30559,7 +30559,7 @@
   {
     "name": "Torch",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Clubs",
     "meleeOptions": {
       "reach": 1
@@ -30603,7 +30603,7 @@
   {
     "name": "Pitchfork",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Clubs",
     "meleeOptions": {
       "reach": 3
@@ -30655,7 +30655,7 @@
   {
     "name": "Grenade: Molotov Cocktail",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Standard Grenade"],
     "concealability": 0,
@@ -30706,7 +30706,7 @@
   {
     "name": "Grenade: Molotov Cocktail, Aerodynamic",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Aerodynamic Grenade"],
     "concealability": 0,
@@ -30757,7 +30757,7 @@
   {
     "name": "Abräumer",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 0
@@ -30810,7 +30810,7 @@
   {
     "name": "Katzbalger",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 0
@@ -30863,7 +30863,7 @@
   {
     "name": "Folding Spade",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 1
@@ -30916,7 +30916,7 @@
   {
     "name": "Sabre",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 1
@@ -30969,7 +30969,7 @@
   {
     "name": "Walther Battle Sword",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Blades",
     "meleeOptions": {
       "reach": 1
@@ -31022,7 +31022,7 @@
   {
     "name": "HK Urban Assassin",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -31098,7 +31098,7 @@
   {
     "name": "Kanonenschlag",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Hold Outs",
     "firearmOptions": {
       "mode": ["SS"],
@@ -31150,7 +31150,7 @@
   {
     "name": "Donnerbüchse",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SS"],
@@ -31199,7 +31199,7 @@
   {
     "name": "Blaser R11 Conqueror",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sniper Rifles",
     "firearmOptions": {
       "mode": ["SA"],
@@ -31276,7 +31276,7 @@
   {
     "name": "Krupp Munitions 3E Firefighting Cannon",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Exotic",
     "extraClassification": "Firefighting Cannons",
     "firearmOptions": {
@@ -31313,7 +31313,7 @@
   {
     "name": "Ruhrmetall SFW-30",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Medium Heavy Machineguns",
     "firearmOptions": {
       "mode": ["FA"],
@@ -31376,7 +31376,7 @@
   {
     "name": "Underbarrel Weapon",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Medium Heavy Machineguns",
     "firearmOptions": {
       "mode": ["SA"],
@@ -31426,7 +31426,7 @@
   {
     "name": "Ontario Arms Sling-Shot",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Weapon Attachments",
     "extraClassification": "Slingshot",
     "firearmOptions": {
@@ -31474,7 +31474,7 @@
   {
     "name": "Walther P99",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -31511,7 +31511,7 @@
   {
     "name": "Melee Bite",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Unarmed",
     "meleeOptions": {
       "reach": 0
@@ -31556,7 +31556,7 @@
   {
     "name": "Jaws",
     "description": "",
-    "type": "Melee",
+    "category": "Melee",
     "subtype": "Unarmed",
     "meleeOptions": {
       "reach": 0
@@ -31601,7 +31601,7 @@
   {
     "name": "Micro-Torpedo Launcher",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Missile Launchers",
     "firearmOptions": {
       "mode": ["SS"],
@@ -31642,7 +31642,7 @@
   {
     "name": "Ink Pouch",
     "description": "",
-    "type": "Projectile",
+    "category": "Projectile",
     "subtype": "Throwing Weapons",
     "rangeList": ["Net"],
     "concealability": 0,
@@ -31677,7 +31677,7 @@
   {
     "name": "Micro-Torpedo: Chemical",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Rocket",
     "rangeList": ["Grenade Launchers"],
     "concealability": 10,
@@ -31723,7 +31723,7 @@
   {
     "name": "Micro-Torpedo: Explosive",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Rocket",
     "rangeList": ["Grenade Launchers"],
     "concealability": 10,
@@ -31780,7 +31780,7 @@
   {
     "name": "Grenade: COS",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Standard Grenade"],
     "concealability": 0,
@@ -31819,7 +31819,7 @@
   {
     "name": "Grenade: Douser",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Standard Grenade"],
     "concealability": 0,
@@ -31882,7 +31882,7 @@
   {
     "name": "Grenade: DumDum",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Standard Grenade"],
     "concealability": 0,
@@ -31945,7 +31945,7 @@
   {
     "name": "Grenade: Fuzzy Boom Boom Bunnies",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Standard Grenade"],
     "concealability": 0,
@@ -31996,7 +31996,7 @@
   {
     "name": "Krime Vester",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Hold Outs",
     "firearmOptions": {
       "mode": ["SS"],
@@ -32039,7 +32039,7 @@
   {
     "name": "Krime Heater",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -32096,7 +32096,7 @@
   {
     "name": "Krime Varmint",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SA"],
@@ -32158,7 +32158,7 @@
   {
     "name": "Krime Chatter",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Machine Pistols",
     "firearmOptions": {
       "mode": ["FA"],
@@ -32206,7 +32206,7 @@
   {
     "name": "Krime Tradition",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["SA", "FA"],
@@ -32264,7 +32264,7 @@
   {
     "name": "Krime Saint Nicholas",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Carbines",
     "firearmOptions": {
       "mode": ["SA"],
@@ -32330,7 +32330,7 @@
   {
     "name": "Krime AKM-SU97",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Submachine Guns",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -32391,7 +32391,7 @@
   {
     "name": "Krime AKM-97",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF", "FA"],
@@ -32452,7 +32452,7 @@
   {
     "name": "Krime Ditch (Shotgun)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Shotguns",
     "firearmOptions": {
       "mode": ["SS"],
@@ -32508,7 +32508,7 @@
   {
     "name": "Krime Ditch (Rifle)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sniper Rifles",
     "firearmOptions": {
       "mode": ["SS"],
@@ -32565,7 +32565,7 @@
   {
     "name": "Krime Stopper-II (Homeguard)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SS"],
@@ -32621,7 +32621,7 @@
   {
     "name": "Krime Stopper-II (Shopkeeper)",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SS"],
@@ -32682,7 +32682,7 @@
   {
     "name": "Krime Stopper-II",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Heavy Pistols",
     "firearmOptions": {
       "mode": ["SS"],
@@ -32738,7 +32738,7 @@
   {
     "name": "Krime Junior",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Carbines",
     "firearmOptions": {
       "mode": ["SA"],
@@ -32799,7 +32799,7 @@
   {
     "name": "Krime Soldier",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Sniper Rifles",
     "firearmOptions": {
       "mode": ["SA", "BF"],
@@ -32857,7 +32857,7 @@
   {
     "name": "Krime Soldier GL",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Grenade Launchers",
     "firearmOptions": {
       "mode": ["SS"],
@@ -32905,7 +32905,7 @@
   {
     "name": "Krime KAR-97-H",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Machineguns",
     "firearmOptions": {
       "mode": ["FA"],
@@ -32971,7 +32971,7 @@
   {
     "name": "Krime Monster",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Medium Heavy Machineguns",
     "firearmOptions": {
       "mode": ["BF"],
@@ -33027,7 +33027,7 @@
   {
     "name": "Krime Confederate",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Cannons",
     "firearmOptions": {
       "mode": ["SS"],
@@ -33083,7 +33083,7 @@
   {
     "name": "Krime T-Shirt Cannon",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Assault Cannons",
     "firearmOptions": {
       "mode": ["SS"],
@@ -33127,7 +33127,7 @@
   {
     "name": "Krime Escalation",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Missile Launchers",
     "firearmOptions": {
       "mode": ["SS"],
@@ -33185,7 +33185,7 @@
   {
     "name": "Krime Calliope",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Missile Launchers",
     "firearmOptions": {
       "mode": ["SS", "FA"],
@@ -33233,7 +33233,7 @@
   {
     "name": "Krime Ripper",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Light Machineguns",
     "firearmOptions": {
       "mode": ["FA"],
@@ -33308,7 +33308,7 @@
   {
     "name": "Krime Carpet",
     "description": "",
-    "type": "Firearm",
+    "category": "Firearm",
     "subtype": "Grenade Launchers",
     "firearmOptions": {
       "mode": ["FA"],
@@ -33348,7 +33348,7 @@
   {
     "name": "Grenade: Krime Cleaner",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Standard Grenade"],
     "concealability": 0,
@@ -33387,7 +33387,7 @@
   {
     "name": "Grenade: Krime Party",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Standard Grenade"],
     "concealability": 0,
@@ -33434,7 +33434,7 @@
   {
     "name": "Grenade: Krime Party (Flash-Bang)",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Standard Grenade"],
     "concealability": 0,
@@ -33486,7 +33486,7 @@
   {
     "name": "Grenade: Krime Cocktail",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Standard Grenade"],
     "concealability": 0,
@@ -33538,7 +33538,7 @@
   {
     "name": "Grenade: Krime Stinger",
     "description": "",
-    "type": "Explosive",
+    "category": "Explosive",
     "subtype": "Grenade",
     "rangeList": ["Standard Grenade"],
     "concealability": 0,

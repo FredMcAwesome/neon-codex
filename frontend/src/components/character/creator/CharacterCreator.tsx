@@ -42,8 +42,11 @@ import { MartialArtSelect } from "./MartialArtsSelect.js";
 import { LifestyleSelect } from "./LifestyleSelect.js";
 import type { CharacterCreatorBonusListType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 
+import { useEquipmentSearch } from "../../../hooks/useEquipmentSearch.js";
+
 const characterCreatorPath = "/character_creator";
 const CharacterCreator = function () {
+  useEquipmentSearch(); // Preload equipment data
   const navigate = useNavigate();
   const skills = trpc.character.skills.useQuery();
   const character = trpc.character.createCharacter.useMutation();
@@ -67,7 +70,7 @@ const CharacterCreator = function () {
     charisma: 1,
   });
   const [talentInfo, setTalentInfo] = useState<TalentInfoType>({
-    type: talentCategoryEnum.Mundane,
+    category: talentCategoryEnum.Mundane,
   });
   const [priorityHeritage, setPriorityHeritage] =
     useState<HeritagePrioritySelectedType>({
@@ -89,7 +92,7 @@ const CharacterCreator = function () {
   const [specialAttributeInfo, setSpecialAttributeInfo] =
     useState<SpecialAttributesType>({
       edge: 0,
-      talent: { type: talentCategoryEnum.Mundane },
+      talent: { category: talentCategoryEnum.Mundane },
     });
   const [karmaPoints, setKarmaPoints] = useState(25);
   const [essencePoints, setEssencePoints] = useState(6);
@@ -165,7 +168,7 @@ const CharacterCreator = function () {
   };
   const onPriorityTalentChanged = function (loadingTalent: TalentPriorityType) {
     setPriorityTalent(loadingTalent);
-    if (talentInfo.type !== loadingTalent.category) {
+    if (talentInfo.category !== loadingTalent.category) {
       switch (loadingTalent.category) {
         case talentCategoryEnum.Magic: {
           const formulae: FormulaListSelectedType =
@@ -190,7 +193,7 @@ const CharacterCreator = function () {
                   selectAdeptPowers: false as const,
                 };
           setTalentInfo({
-            type: talentCategoryEnum.Magic,
+            category: talentCategoryEnum.Magic,
             selectedTradition: {
               name: "",
               customSpirits: {
@@ -204,19 +207,19 @@ const CharacterCreator = function () {
         }
         case talentCategoryEnum.Resonance:
           setTalentInfo({
-            type: talentCategoryEnum.Resonance,
+            category: talentCategoryEnum.Resonance,
             complexForms: [],
           });
           break;
         case talentCategoryEnum.Depth:
           setTalentInfo({
-            type: talentCategoryEnum.Depth,
+            category: talentCategoryEnum.Depth,
             programs: [],
           });
           break;
         case talentCategoryEnum.Mundane:
           setTalentInfo({
-            type: talentCategoryEnum.Mundane,
+            category: talentCategoryEnum.Mundane,
           });
           break;
       }

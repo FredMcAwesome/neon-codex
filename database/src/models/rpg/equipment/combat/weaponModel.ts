@@ -11,7 +11,7 @@ import {
 } from "@mikro-orm/postgresql";
 import type { Ref } from "@mikro-orm/postgresql";
 import {
-  augmentationTypeEnum,
+  augmentationCategoryEnum,
   explosiveTypeEnum,
   weaponAccessoryMountLocationEnum,
   firearmModeEnum,
@@ -21,7 +21,7 @@ import {
   projectileWeaponTypeEnum,
   sourceBookEnum,
   weaponExtraClassificationEnum,
-  weaponTypeEnum,
+  weaponCategoryEnum,
 } from "@neon-codex/common/build/enums.js";
 import type {
   AvailabilityWeaponType,
@@ -43,7 +43,7 @@ import type {
 } from "@neon-codex/common/build/schemas/shared/weaponSharedSchemas.js";
 
 @Entity({
-  discriminatorColumn: "type",
+  discriminatorColumn: "category",
   abstract: true,
 })
 export abstract class Weapons {
@@ -54,8 +54,8 @@ export abstract class Weapons {
   @Unique()
   name!: string;
 
-  @Enum(() => weaponTypeEnum)
-  type!: weaponTypeEnum;
+  @Enum(() => weaponCategoryEnum)
+  category!: weaponCategoryEnum;
 
   @Property()
   concealability!: number;
@@ -91,8 +91,8 @@ export abstract class Weapons {
   @Property({ nullable: true })
   userSelectable?: false;
 
-  @Enum({ items: () => augmentationTypeEnum, nullable: true })
-  augmentationType?: augmentationTypeEnum;
+  @Enum({ items: () => augmentationCategoryEnum, nullable: true })
+  augmentationCategory?: augmentationCategoryEnum;
 
   @ManyToOne({ entity: () => Weapons, nullable: true })
   baseWeaponForm?: Weapons;
@@ -141,7 +141,7 @@ export abstract class Weapons {
   constructor(dto: WeaponType, relatedSkill: Ref<Skills>) {
     // this.id = dto.id;
     this.name = dto.name;
-    this.type = dto.type;
+    this.category = dto.category;
     this.concealability = dto.concealability;
     this.accuracy = dto.accuracy;
     this.damage = dto.damage;
@@ -153,8 +153,8 @@ export abstract class Weapons {
     this.allowAccessories = dto.allowAccessories;
     if (dto.userSelectable !== undefined)
       this.userSelectable = dto.userSelectable;
-    if (dto.augmentationType !== undefined)
-      this.augmentationType = dto.augmentationType;
+    if (dto.augmentationCategory !== undefined)
+      this.augmentationCategory = dto.augmentationCategory;
     this.relatedSkill = relatedSkill;
     if (dto.relatedSkillSpecialisationList !== undefined)
       this.relatedSkillSpecialisationList = dto.relatedSkillSpecialisationList;
@@ -173,9 +173,9 @@ export abstract class Weapons {
 }
 
 type MeleeWeaponType = WeaponType & {
-  type: weaponTypeEnum.Melee;
+  category: weaponCategoryEnum.Melee;
 };
-@Entity({ discriminatorValue: weaponTypeEnum.Melee })
+@Entity({ discriminatorValue: weaponCategoryEnum.Melee })
 export class MeleeWeapons extends Weapons {
   @Property()
   subtype!: meleeWeaponTypeEnum;
@@ -217,9 +217,9 @@ export abstract class RangedWeapons extends Weapons {
 }
 
 type ProjectileWeaponType = WeaponType & {
-  type: weaponTypeEnum.Projectile;
+  category: weaponCategoryEnum.Projectile;
 };
-@Entity({ discriminatorValue: weaponTypeEnum.Projectile })
+@Entity({ discriminatorValue: weaponCategoryEnum.Projectile })
 export class ProjectileWeapons extends RangedWeapons {
   @Property()
   subtype!: projectileWeaponTypeEnum;
@@ -231,9 +231,9 @@ export class ProjectileWeapons extends RangedWeapons {
 }
 
 type FirearmWeaponType = WeaponType & {
-  type: weaponTypeEnum.Firearm;
+  category: weaponCategoryEnum.Firearm;
 };
-@Entity({ discriminatorValue: weaponTypeEnum.Firearm })
+@Entity({ discriminatorValue: weaponCategoryEnum.Firearm })
 export class FirearmWeapons extends RangedWeapons {
   @Property()
   subtype!: firearmWeaponTypeEnum;
@@ -288,9 +288,9 @@ export class FirearmWeapons extends RangedWeapons {
 }
 
 type ExplosiveWeaponType = WeaponType & {
-  type: weaponTypeEnum.Explosive;
+  category: weaponCategoryEnum.Explosive;
 };
-@Entity({ discriminatorValue: weaponTypeEnum.Explosive })
+@Entity({ discriminatorValue: weaponCategoryEnum.Explosive })
 export class Explosives extends RangedWeapons {
   @Property()
   subtype!: explosiveTypeEnum;

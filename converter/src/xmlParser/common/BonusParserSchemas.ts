@@ -4,7 +4,7 @@ import {
   gearCategoryEnum,
   skillCategoryEnum,
   spellDescriptorEnum,
-  vehicleTypeEnum,
+  vehicleCategoryEnum,
 } from "@neon-codex/common/build/enums.js";
 import {
   attributeXMLEnum,
@@ -1130,7 +1130,7 @@ export const BonusXmlSchema = type.or(
     // discount on one type of vehicle
     "dealerconnection?": type({
       "+": "reject",
-      category: type.or(type.valueOf(vehicleTypeEnum), "'Drones'").array(),
+      category: type.or(type.valueOf(vehicleCategoryEnum), "'Drones'").array(),
     }),
     // no SIN
     "erased?": "''",

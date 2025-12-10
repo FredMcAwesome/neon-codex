@@ -173,7 +173,7 @@ const CyberwareSubBonusXmlSchema = type({
   // Not selectable
   "hide?": "''",
   // Grade is not applicable to this cyberware i.e. there is only 1 grade
-  "forcegrade?": type.or("'None'", "'Standard'"),
+  "forcegrade?": type.valueOf(augmentationXmlGradeEnum),
   // Only used for Data Lock, this is the device rating in terms of hacking
   "devicerating?": "'{Rating}'",
   // Cyberware is also a drone e.g. remote controlled cyberhand

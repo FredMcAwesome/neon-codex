@@ -108,7 +108,7 @@ const convertVehicle = function (vehicle: VehicleXmlType) {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const speed = speedSemantics(match).eval();
 
-  const { type, subtype } = convertVehicleCategory(vehicle.category);
+  const { category, subtype } = convertVehicleCategory(vehicle.category);
   match = Availability.match(vehicle.avail.toString());
   if (match.failed()) {
     assert(false, match.message);
@@ -178,7 +178,7 @@ const convertVehicle = function (vehicle: VehicleXmlType) {
   const source = convertSource(vehicle.source);
 
   const typeInformation = {
-    type: type,
+    category: category,
     subtype: subtype,
   };
 

@@ -1,7 +1,7 @@
 import { type } from "arktype";
 import {
   sourceBookEnum,
-  critterTypeEnum,
+  critterCategoryEnum,
   skillCategoryEnum,
   mathOperatorEnum,
   critterAttributePowerEnum,
@@ -121,7 +121,7 @@ export const CritterSchema = type({
   "+": "reject",
   name: "string",
   description: "string",
-  category: type.valueOf(critterTypeEnum),
+  category: type.valueOf(critterCategoryEnum),
   bodyAttributeRange: CritterAttributeRangeSchema,
   agilityAttributeRange: CritterAttributeRangeSchema,
   reactionAttributeRange: CritterAttributeRangeSchema,

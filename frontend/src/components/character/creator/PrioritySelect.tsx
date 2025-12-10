@@ -357,25 +357,25 @@ const PrioritySelectLoaded = function ({
       switch (talent.category) {
         case talentCategoryEnum.Magic:
           specialAttribute.talent = {
-            type: talentCategoryEnum.Magic,
+            category: talentCategoryEnum.Magic,
             magic: talent.magic,
           };
           break;
         case talentCategoryEnum.Depth:
           specialAttribute.talent = {
-            type: talentCategoryEnum.Depth,
+            category: talentCategoryEnum.Depth,
             depth: talent.depth,
           };
           break;
         case talentCategoryEnum.Resonance:
           specialAttribute.talent = {
-            type: talentCategoryEnum.Resonance,
+            category: talentCategoryEnum.Resonance,
             resonance: talent.resonance,
           };
           break;
         case talentCategoryEnum.Mundane:
           specialAttribute.talent = {
-            type: talentCategoryEnum.Mundane,
+            category: talentCategoryEnum.Mundane,
           };
           break;
       }
@@ -537,25 +537,25 @@ const PrioritySelectLoaded = function ({
               switch (talent.category) {
                 case talentCategoryEnum.Magic:
                   specialAttribute.talent = {
-                    type: talentCategoryEnum.Magic,
+                    category: talentCategoryEnum.Magic,
                     magic: talent.magic,
                   };
                   break;
                 case talentCategoryEnum.Depth:
                   specialAttribute.talent = {
-                    type: talentCategoryEnum.Depth,
+                    category: talentCategoryEnum.Depth,
                     depth: talent.depth,
                   };
                   break;
                 case talentCategoryEnum.Resonance:
                   specialAttribute.talent = {
-                    type: talentCategoryEnum.Resonance,
+                    category: talentCategoryEnum.Resonance,
                     resonance: talent.resonance,
                   };
                   break;
                 case talentCategoryEnum.Mundane:
                   specialAttribute.talent = {
-                    type: talentCategoryEnum.Mundane,
+                    category: talentCategoryEnum.Mundane,
                   };
                   break;
               }

@@ -25,7 +25,7 @@ export class EquipmentPacks {
   name!: string;
 
   @Enum(() => equipmentPackCategoryEnum)
-  type!: equipmentPackCategoryEnum;
+  category!: equipmentPackCategoryEnum;
 
   @Property()
   nuyen!: number;
@@ -64,7 +64,7 @@ export class EquipmentPacks {
     description: string
   ) {
     this.name = name;
-    this.type = category;
+    this.category = category;
     this.nuyen = nuyen;
     this.description = description;
   }

@@ -1,32 +1,42 @@
 import {
   AugmentationListSchema,
   CustomisedAugmentationListSchema,
+  CustomisedAugmentationLoadedListSchema,
   type AugmentationListType,
   type CustomisedAugmentationListType,
+  type CustomisedAugmentationLoadedListType,
 } from "../bodyModification/augmentationSchemas.js";
 import {
   CustomisedGearListSchema,
+  CustomisedGearLoadedListSchema,
   GearListSchema,
   type CustomisedGearListType,
+  type CustomisedGearLoadedListType,
   type GearListType,
 } from "./gearSchemas.js";
 import {
   CustomisedVehicleListSchema,
+  CustomisedVehicleLoadedListSchema,
   VehicleListSchema,
   type CustomisedVehicleListType,
+  type CustomisedVehicleLoadedListType,
   type VehicleListType,
 } from "../rigger/vehicleSchemas.js";
 import {
   CustomisedWeaponListSchema,
+  CustomisedWeaponLoadedListSchema,
   WeaponListSchema,
   type CustomisedWeaponListType,
+  type CustomisedWeaponLoadedListType,
   type WeaponListType,
 } from "../combat/weaponSchemas.js";
 import {
   ArmourListSchema,
   CustomisedArmourListSchema,
+  CustomisedArmourLoadedListSchema,
   type ArmourListType,
   type CustomisedArmourListType,
+  type CustomisedArmourLoadedListType,
 } from "../combat/armourSchemas.js";
 import {
   EquipmentPackListSchema,
@@ -92,4 +102,22 @@ export const SelectedEquipmentListSchema = type({
   gearList: CustomisedGearListSchema,
   vehicleList: CustomisedVehicleListSchema,
   weaponList: CustomisedWeaponListSchema,
+});
+
+export type SelectedEquipmentLoadedListType = {
+  equipmentPackList: EquipmentPackListType;
+  augmentationList: CustomisedAugmentationLoadedListType;
+  armourList: CustomisedArmourLoadedListType;
+  gearList: CustomisedGearLoadedListType;
+  vehicleList: CustomisedVehicleLoadedListType;
+  weaponList: CustomisedWeaponLoadedListType;
+};
+export const SelectedEquipmentLoadedListSchema = type({
+  "+": "reject",
+  equipmentPackList: EquipmentPackListSchema,
+  augmentationList: CustomisedAugmentationLoadedListSchema,
+  armourList: CustomisedArmourLoadedListSchema,
+  gearList: CustomisedGearLoadedListSchema,
+  vehicleList: CustomisedVehicleLoadedListSchema,
+  weaponList: CustomisedWeaponLoadedListSchema,
 });

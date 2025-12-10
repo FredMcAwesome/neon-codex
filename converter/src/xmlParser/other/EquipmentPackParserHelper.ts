@@ -12,7 +12,7 @@ import type {
   WeaponEquipmentPackXmlType,
 } from "./EquipmentPackParserSchemas.js";
 import {
-  augmentationTypeEnum,
+  augmentationCategoryEnum,
   weaponAccessoryMountLocationEnum,
   weaponMountControlEnum,
   weaponMountFlexibilityEnum,
@@ -65,7 +65,7 @@ export const convertArmorEquipmentPack = function (
 
 export const convertAugmentationEquipmentPack = function (
   augmentation: CyberwareEquipmentPackXmlType | BiowareEquipmentPackXmlType,
-  type: augmentationTypeEnum
+  category: augmentationCategoryEnum
 ) {
   let gearList;
   if ("gears" in augmentation && augmentation.gears !== undefined) {
@@ -82,7 +82,7 @@ export const convertAugmentationEquipmentPack = function (
   }
   if (gearList !== undefined && subsystemList !== undefined) {
     assert(
-      type === augmentationTypeEnum.Cyberware,
+      category === augmentationCategoryEnum.Cyberware,
       `Illegal for ${augmentation.name}`
     );
   }

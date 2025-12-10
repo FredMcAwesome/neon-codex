@@ -3,7 +3,7 @@ import {
   mathOperatorEnum,
   restrictionEnum,
   vehicleModAttributeEnum,
-  vehicleModTypeEnum,
+  vehicleModCategoryEnum,
   vehicleModRatingEnum,
   sourceBookEnum,
 } from "../../../enums.js";
@@ -120,7 +120,7 @@ export const WeaponMountModSchema = type({
   "+": "reject",
   name: "string",
   description: "string",
-  type: type.valueOf(vehicleModTypeEnum),
+  category: type.valueOf(vehicleModCategoryEnum),
   slotCost: WeaponMountSlotCostSchema,
   "additionalAmmo?": "number",
   "percentageAmmoIncrease?": "number",

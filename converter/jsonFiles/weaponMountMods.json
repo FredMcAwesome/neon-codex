@@ -2,7 +2,7 @@
   {
     "name": "Blow-Away Panel Weapon Mount Add-on (Drone)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "requirements": {},
     "slotCost": [0],
     "availability": {
@@ -16,7 +16,7 @@
   {
     "name": "Pop-Out Weapon Mount Add-on (Drone)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "requirements": {},
     "slotCost": [1],
     "availability": {
@@ -42,7 +42,7 @@
   {
     "name": "Expanded Ammunition Bay (Second Bin) Weapon Mount Add-on (Drone)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "requirements": {},
     "slotCost": [1],
     "availability": {
@@ -56,7 +56,7 @@
   {
     "name": "Expanded Ammunition Bay (Belt-Feed) Weapon Mount Add-on (Drone)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "requirements": {},
     "slotCost": [2],
     "replaceAmmo": [
@@ -76,7 +76,7 @@
   {
     "name": "Ammo Bin",
     "description": "",
-    "type": "Weapons",
+    "category": "Weapons",
     "slotCost": [1],
     "additionalAmmo": 250,
     "percentageAmmoIncrease": 250,

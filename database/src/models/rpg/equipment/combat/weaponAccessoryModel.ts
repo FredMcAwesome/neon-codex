@@ -92,7 +92,7 @@ export class WeaponAccessories {
   @Property({ type: "json", nullable: true })
   ammoCapacityCalculation?: AmmoCapacityCalculationType;
 
-  @Property({ nullable: true })
+  @Property({ type: "json", nullable: true })
   newAmmoType?: AmmunitionSingleType;
 
   @Enum({

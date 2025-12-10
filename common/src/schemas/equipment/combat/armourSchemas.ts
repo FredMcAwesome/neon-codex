@@ -14,8 +14,14 @@ import {
 } from "../../shared/commonSchemas.js";
 import { BonusSchema } from "../../shared/bonusSchemas.js";
 import { GenericModListSchema } from "../../shared/modSchemas.js";
-import { CustomisedArmourModListSchema } from "./armourModSchemas.js";
-import { CustomisedGearListSchema } from "../other/gearSchemas.js";
+import {
+  CustomisedArmourModListSchema,
+  CustomisedArmourModLoadedListSchema,
+} from "./armourModSchemas.js";
+import {
+  CustomisedGearListSchema,
+  CustomisedGearLoadedListSchema,
+} from "../other/gearSchemas.js";
 import { type } from "arktype";
 
 export const AvailabilityArmourSchema = type({
@@ -106,3 +112,20 @@ export const CustomisedArmourSchema = type({
 export type CustomisedArmourType = typeof CustomisedArmourSchema.infer;
 export const CustomisedArmourListSchema = type(CustomisedArmourSchema.array());
 export type CustomisedArmourListType = typeof CustomisedArmourListSchema.infer;
+
+export const CustomisedArmourLoadedSchema = type({
+  "+": "reject",
+  baseArmour: ArmourSchema,
+  // This overrides baseArmour modifications
+  "modList?": CustomisedArmourModLoadedListSchema,
+  // This overrides baseArmour gears
+  "gearList?": CustomisedGearLoadedListSchema,
+  "customName?": "string",
+});
+export type CustomisedArmourLoadedType =
+  typeof CustomisedArmourLoadedSchema.infer;
+export const CustomisedArmourLoadedListSchema = type(
+  CustomisedArmourLoadedSchema.array()
+);
+export type CustomisedArmourLoadedListType =
+  typeof CustomisedArmourLoadedListSchema.infer;

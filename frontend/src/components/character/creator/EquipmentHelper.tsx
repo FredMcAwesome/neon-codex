@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from "react";
+import { useState, useCallback, type ReactNode, memo } from "react";
 import { Collapse } from "react-collapse";
 
 interface IProps {
@@ -8,14 +8,20 @@ interface IProps {
   removeItem?: (() => void) | undefined;
 }
 
-export const CollapsibleEquipmentDiv = function (props: IProps) {
+// Memoized component to prevent unnecessary re-renders
+export const CollapsibleEquipmentDiv = memo(function CollapsibleEquipmentDiv(
+  props: IProps
+) {
   const [isOpened, setIsOpened] = useState<boolean>(false);
-  const toggleIsOpened = function () {
-    setIsOpened(!isOpened);
-  };
+
+  // Memoized toggle handler
+  const toggleIsOpened = useCallback(function () {
+    setIsOpened((prev) => !prev);
+  }, []);
+
   return (
     <div>
-      <div onClick={() => toggleIsOpened()}>
+      <div onClick={toggleIsOpened}>
         <div>{props.title}</div>
         <div>
           {props.addItem !== undefined && (
@@ -43,4 +49,4 @@ export const CollapsibleEquipmentDiv = function (props: IProps) {
       <Collapse isOpened={isOpened}>{props.children}</Collapse>
     </div>
   );
-};
+});

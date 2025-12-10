@@ -24,7 +24,9 @@
     "start": "npm run dev -w backend",
     "start-prod": "npm run build -w backend && npm run build -w frontend && npm start -w backend",
     "clean": "npm run clean -w frontend -w common -w backend -w database -w converter",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\"",
+    "setup": "npx cross-env NODE_ENV=development npx tsx backend/src/scripts/generate-equipment-json.ts && npm run pretty"
   },
   "private": true,
   "devDependencies": {

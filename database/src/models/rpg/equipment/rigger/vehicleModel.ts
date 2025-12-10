@@ -12,7 +12,7 @@ import {
   droneSubtypeEnum,
   groundcraftSubtypeEnum,
   sourceBookEnum,
-  vehicleTypeEnum,
+  vehicleCategoryEnum,
   watercraftSubtypeEnum,
 } from "@neon-codex/common/build/enums.js";
 import { VehicleIncludedGears } from "../../activeTables/activeGearModel.js";
@@ -32,7 +32,7 @@ import type {
 import { ActiveVehicles } from "../../activeTables/activeVehicleModel.js";
 
 @Entity({
-  discriminatorColumn: "type",
+  discriminatorColumn: "category",
   abstract: true,
 })
 export abstract class Vehicles {
@@ -46,8 +46,8 @@ export abstract class Vehicles {
   @Property({ length: 5000 })
   description!: string;
 
-  @Enum(() => vehicleTypeEnum)
-  type!: vehicleTypeEnum;
+  @Enum(() => vehicleCategoryEnum)
+  category!: vehicleCategoryEnum;
 
   @Property({ type: "json" })
   handling!: VehicleOnOffRoadType;
@@ -130,7 +130,7 @@ export abstract class Vehicles {
   constructor(dto: VehicleType) {
     this.name = dto.name;
     this.description = dto.description;
-    this.type = dto.type;
+    this.category = dto.category;
     if (dto.handling !== undefined) {
       this.handling = dto.handling;
     }
@@ -187,13 +187,13 @@ export abstract class Vehicles {
 type MannedVehicleType = VehicleType &
   (
     | {
-        type: vehicleTypeEnum.Groundcraft;
+        category: vehicleCategoryEnum.Groundcraft;
       }
     | {
-        type: vehicleTypeEnum.Watercraft;
+        category: vehicleCategoryEnum.Watercraft;
       }
     | {
-        type: vehicleTypeEnum.Aircraft;
+        category: vehicleCategoryEnum.Aircraft;
       }
   );
 
@@ -208,7 +208,7 @@ export abstract class MannedVehicles extends Vehicles {
   }
 }
 
-@Entity({ discriminatorValue: vehicleTypeEnum.Groundcraft })
+@Entity({ discriminatorValue: vehicleCategoryEnum.Groundcraft })
 export class Groundcrafts extends MannedVehicles {
   @Property()
   subtype!: groundcraftSubtypeEnum;
@@ -219,7 +219,7 @@ export class Groundcrafts extends MannedVehicles {
   }
 }
 
-@Entity({ discriminatorValue: vehicleTypeEnum.Watercraft })
+@Entity({ discriminatorValue: vehicleCategoryEnum.Watercraft })
 export class Watercrafts extends MannedVehicles {
   @Property()
   subtype!: watercraftSubtypeEnum;
@@ -230,7 +230,7 @@ export class Watercrafts extends MannedVehicles {
   }
 }
 
-@Entity({ discriminatorValue: vehicleTypeEnum.Aircraft })
+@Entity({ discriminatorValue: vehicleCategoryEnum.Aircraft })
 export class Aircrafts extends MannedVehicles {
   @Property()
   subtype!: aircraftSubtypeEnum;
@@ -241,7 +241,7 @@ export class Aircrafts extends MannedVehicles {
   }
 }
 
-@Entity({ discriminatorValue: vehicleTypeEnum.Drone })
+@Entity({ discriminatorValue: vehicleCategoryEnum.Drone })
 export class Drones extends Vehicles {
   @Property()
   subtype!: droneSubtypeEnum;

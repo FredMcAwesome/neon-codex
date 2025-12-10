@@ -10,7 +10,7 @@ import {
   attributeXMLEnum,
 } from "../common/ParserCommonDefines.js";
 import {
-  critterTypeEnum,
+  critterCategoryEnum,
   matrixAttributeEnum,
   skillCategoryEnum,
 } from "@neon-codex/common/build/enums.js";
@@ -184,7 +184,7 @@ const SubCritterXmlSchema = type({
   page: "number",
 });
 const CritterXmlSchema = SubCritterXmlSchema.merge({
-  category: type.valueOf(critterTypeEnum),
+  category: type.valueOf(critterCategoryEnum),
   // subcritter types (used for insect spirits)
   "metavariants?": type({
     "+": "reject",

@@ -28,7 +28,7 @@ import type {
 } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 
 @Entity({
-  discriminatorColumn: "type",
+  discriminatorColumn: "category",
   abstract: true,
 })
 export abstract class Heritages {
@@ -44,7 +44,7 @@ export abstract class Heritages {
   characters = new Collection<Characters>(this);
 
   @Enum(() => heritageCategoryEnum)
-  type!: heritageCategoryEnum;
+  category!: heritageCategoryEnum;
 
   @Property()
   pointBuyKarmaCost!: number;

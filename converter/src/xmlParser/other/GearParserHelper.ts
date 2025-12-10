@@ -11,7 +11,7 @@ import {
   projectileWeaponTypeEnum,
   restrictionEnum,
   weaponExtraClassificationEnum,
-  weaponTypeEnum,
+  weaponCategoryEnum,
 } from "@neon-codex/common/build/enums.js";
 import type { AmmoForWeaponTypeType } from "@neon-codex/common/build/schemas/equipment/other/gearSchemas.js";
 import type {
@@ -121,114 +121,114 @@ export const convertAmmoForWeaponType = function (
         case weaponTypeXmlEnum.Exotic:
           return [
             {
-              type: weaponTypeEnum.Firearm,
+              category: weaponCategoryEnum.Firearm,
               subtype: firearmWeaponTypeEnum.Exotic,
             },
           ];
         case weaponTypeXmlEnum.Bow:
           return [
             {
-              type: weaponTypeEnum.Projectile,
+              category: weaponCategoryEnum.Projectile,
               subtype: projectileWeaponTypeEnum.Bows,
             },
           ];
         case weaponTypeXmlEnum.Crossbow:
           return [
             {
-              type: weaponTypeEnum.Projectile,
+              category: weaponCategoryEnum.Projectile,
               subtype: projectileWeaponTypeEnum.Crossbows,
             },
           ];
         case weaponTypeXmlEnum.Taser:
           return [
             {
-              type: weaponTypeEnum.Firearm,
+              category: weaponCategoryEnum.Firearm,
               subtype: firearmWeaponTypeEnum.Tasers,
             },
           ];
         case weaponTypeXmlEnum.Gun:
           return [
             {
-              type: weaponTypeEnum.Firearm,
+              category: weaponCategoryEnum.Firearm,
               subtype: firearmWeaponTypeEnum.HoldOuts,
             },
             {
-              type: weaponTypeEnum.Firearm,
+              category: weaponCategoryEnum.Firearm,
               subtype: firearmWeaponTypeEnum.LightPistols,
             },
             {
-              type: weaponTypeEnum.Firearm,
+              category: weaponCategoryEnum.Firearm,
               subtype: firearmWeaponTypeEnum.HeavyPistols,
             },
             {
-              type: weaponTypeEnum.Firearm,
+              category: weaponCategoryEnum.Firearm,
               subtype: firearmWeaponTypeEnum.MachinePistols,
             },
             {
-              type: weaponTypeEnum.Firearm,
+              category: weaponCategoryEnum.Firearm,
               subtype: firearmWeaponTypeEnum.SubmachineGuns,
             },
             {
-              type: weaponTypeEnum.Firearm,
+              category: weaponCategoryEnum.Firearm,
               subtype: firearmWeaponTypeEnum.AssaultRifles,
             },
             {
-              type: weaponTypeEnum.Firearm,
+              category: weaponCategoryEnum.Firearm,
               subtype: firearmWeaponTypeEnum.Carbines,
             },
             {
-              type: weaponTypeEnum.Firearm,
+              category: weaponCategoryEnum.Firearm,
               subtype: firearmWeaponTypeEnum.SportingRifles,
             },
             {
-              type: weaponTypeEnum.Firearm,
+              category: weaponCategoryEnum.Firearm,
               subtype: firearmWeaponTypeEnum.SniperRifles,
             },
             {
-              type: weaponTypeEnum.Firearm,
+              category: weaponCategoryEnum.Firearm,
               subtype: firearmWeaponTypeEnum.Shotguns,
             },
             {
-              type: weaponTypeEnum.Firearm,
+              category: weaponCategoryEnum.Firearm,
               subtype: firearmWeaponTypeEnum.LightMachineguns,
             },
             {
-              type: weaponTypeEnum.Firearm,
+              category: weaponCategoryEnum.Firearm,
               subtype: firearmWeaponTypeEnum.MediumHeavyMachineguns,
             },
           ];
         case weaponTypeXmlEnum.Cannon:
           return [
             {
-              type: weaponTypeEnum.Firearm,
+              category: weaponCategoryEnum.Firearm,
               subtype: firearmWeaponTypeEnum.AssaultCannons,
             },
           ];
         case weaponTypeXmlEnum.Flame:
           return [
             {
-              type: weaponTypeEnum.Firearm,
+              category: weaponCategoryEnum.Firearm,
               subtype: firearmWeaponTypeEnum.Flamethrowers,
             },
           ];
         case weaponTypeXmlEnum.Energy:
           return [
             {
-              type: weaponTypeEnum.Firearm,
+              category: weaponCategoryEnum.Firearm,
               subtype: firearmWeaponTypeEnum.Lasers,
             },
           ];
         case weaponTypeXmlEnum.GLauncher:
           return [
             {
-              type: weaponTypeEnum.Firearm,
+              category: weaponCategoryEnum.Firearm,
               subtype: firearmWeaponTypeEnum.GrenadeLaunchers,
             },
           ];
         case weaponTypeXmlEnum.MLauncher:
           return [
             {
-              type: weaponTypeEnum.Firearm,
+              category: weaponCategoryEnum.Firearm,
               subtype: firearmWeaponTypeEnum.MissileLaunchers,
             },
           ];

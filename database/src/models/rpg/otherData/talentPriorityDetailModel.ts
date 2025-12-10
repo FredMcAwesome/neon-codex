@@ -20,7 +20,7 @@ import {
 import { Priorities } from "./priorityModel.js";
 
 @Entity({
-  discriminatorColumn: "type",
+  discriminatorColumn: "category",
   abstract: true,
 })
 export abstract class TalentPriorityDetails {
@@ -31,7 +31,7 @@ export abstract class TalentPriorityDetails {
   name!: string;
 
   @Enum(() => talentCategoryEnum)
-  type!: talentCategoryEnum;
+  category!: talentCategoryEnum;
 
   @Property()
   @Unique()

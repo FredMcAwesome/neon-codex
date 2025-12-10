@@ -1,7 +1,7 @@
 import {
   augmentationGradeEnum,
   augmentationLimitEnum,
-  augmentationTypeEnum,
+  augmentationCategoryEnum,
   availabilityEnum,
   biowareCategoryEnum,
   capacityEnum,
@@ -24,6 +24,7 @@ import { BonusSchema } from "../../shared/bonusSchemas.js";
 import { RequirementsSchema } from "../../shared/requiredSchemas.js";
 import {
   CustomisedGearListSchema,
+  CustomisedGearLoadedListSchema,
   type CustomisedGearListType,
 } from "../other/gearSchemas.js";
 import { type } from "arktype";
@@ -202,7 +203,7 @@ export const AugmentationPartialSchema = type({
 });
 
 const CyberwareSchema = AugmentationPartialSchema.merge({
-  type: type.unit(augmentationTypeEnum.Cyberware),
+  category: type.unit(augmentationCategoryEnum.Cyberware),
   subtype: type.valueOf(cyberwareCategoryEnum),
   "programs?": "'Rating'",
   "capacity?": CapacityAugmentationSchema,
@@ -227,7 +228,7 @@ const CyberwareSchema = AugmentationPartialSchema.merge({
 });
 
 const BiowareSchema = AugmentationPartialSchema.merge({
-  type: type.enumerated(augmentationTypeEnum.Bioware),
+  category: type.enumerated(augmentationCategoryEnum.Bioware),
   subtype: type.valueOf(biowareCategoryEnum),
   "isGeneware?": "true",
 });
@@ -255,3 +256,21 @@ export const CustomisedAugmentationListSchema = type(
 );
 export type CustomisedAugmentationListType =
   typeof CustomisedAugmentationListSchema.infer;
+
+export const CustomisedAugmentationLoadedSchema = type({
+  "+": "reject",
+  baseAugmentation: AugmentationSchema,
+  // This overrides baseAugmentation included gear
+  "gearList?": CustomisedGearLoadedListSchema,
+  "rating?": "number",
+  "customName?": "string",
+  grade: type.valueOf(augmentationGradeEnum),
+  "subsystemList?": AugmentationSubsystemListSchema,
+});
+export type CustomisedAugmentationLoadedType =
+  typeof CustomisedAugmentationLoadedSchema.infer;
+export const CustomisedAugmentationLoadedListSchema = type(
+  CustomisedAugmentationLoadedSchema.array()
+);
+export type CustomisedAugmentationLoadedListType =
+  typeof CustomisedAugmentationLoadedListSchema.infer;

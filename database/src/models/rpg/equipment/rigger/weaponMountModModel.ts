@@ -7,7 +7,7 @@ import {
 } from "@mikro-orm/postgresql";
 import {
   sourceBookEnum,
-  type vehicleModTypeEnum,
+  type vehicleModCategoryEnum,
 } from "@neon-codex/common/build/enums.js";
 import type { ReplaceAmmoType } from "@neon-codex/common/build/schemas/equipment/rigger/vehicleModSchemas.js";
 import type {
@@ -31,7 +31,7 @@ export class WeaponMountModifications {
   description!: string;
 
   @Property()
-  type!: vehicleModTypeEnum;
+  category!: vehicleModCategoryEnum;
 
   @Property({ type: "json" })
   slotCost!: WeaponMountSlotCostType;
@@ -66,7 +66,7 @@ export class WeaponMountModifications {
   constructor(dto: WeaponMountModType) {
     this.name = dto.name;
     this.description = dto.description;
-    this.type = dto.type;
+    this.category = dto.category;
     this.slotCost = dto.slotCost;
     if (dto.additionalAmmo !== undefined) {
       this.additionalAmmo = dto.additionalAmmo;

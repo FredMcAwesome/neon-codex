@@ -2,7 +2,7 @@
   {
     "name": "Tracked Propulsion",
     "description": "",
-    "type": "Model-Specific",
+    "category": "Model-Specific",
     "maxRating": [0],
     "requirements": {},
     "slotCost": [0],
@@ -17,7 +17,7 @@
   {
     "name": "Signature Dampening",
     "description": "",
-    "type": "Model-Specific",
+    "category": "Model-Specific",
     "maxRating": [0],
     "requirements": {},
     "slotCost": [0],
@@ -32,7 +32,7 @@
   {
     "name": "FlashTech",
     "description": "",
-    "type": "Model-Specific",
+    "category": "Model-Specific",
     "maxRating": [0],
     "requirements": {},
     "slotCost": [0],
@@ -47,7 +47,7 @@
   {
     "name": "Enviroseal",
     "description": "",
-    "type": "Model-Specific",
+    "category": "Model-Specific",
     "maxRating": [0],
     "requirements": {},
     "slotCost": [0],
@@ -62,7 +62,7 @@
   {
     "name": "Drone Rail",
     "description": "",
-    "type": "Model-Specific",
+    "category": "Model-Specific",
     "maxRating": [0],
     "requirements": {},
     "slotCost": [0],
@@ -77,7 +77,7 @@
   {
     "name": "Gyro-Stabilization",
     "description": "",
-    "type": "Model-Specific",
+    "category": "Model-Specific",
     "maxRating": [0],
     "requirements": {},
     "slotCost": [0],
@@ -92,7 +92,7 @@
   {
     "name": "Smart Tires",
     "description": "",
-    "type": "Model-Specific",
+    "category": "Model-Specific",
     "maxRating": [
       {
         "option": "Quantity of Mod"
@@ -111,7 +111,7 @@
   {
     "name": "Dustoff Armored Valkyrie Module",
     "description": "",
-    "type": "Model-Specific",
+    "category": "Model-Specific",
     "maxRating": [0],
     "requirements": {},
     "slotCost": [0],
@@ -126,7 +126,7 @@
   {
     "name": "Reloading Drone Forbidden Weapon Reloading Autosoft",
     "description": "",
-    "type": "Model-Specific",
+    "category": "Model-Specific",
     "maxRating": [0],
     "requirements": {},
     "slotCost": [0],
@@ -141,7 +141,7 @@
   {
     "name": "Avibras-Nissan AN 822 Device Rating Upgrade",
     "description": "",
-    "type": "Model-Specific",
+    "category": "Model-Specific",
     "maxRating": [0],
     "bonus": {
       "gearAndVehicle": {
@@ -161,7 +161,7 @@
   {
     "name": "Ruhrmetall Wolf II Troop Transport Module",
     "description": "",
-    "type": "Model-Specific",
+    "category": "Model-Specific",
     "maxRating": [0],
     "bonus": {
       "gearAndVehicle": {
@@ -181,7 +181,7 @@
   {
     "name": "Maersk Shipyards Wavecutter MPAC Small Craft Bay",
     "description": "",
-    "type": "Model-Specific",
+    "category": "Model-Specific",
     "maxRating": [0],
     "requirements": {},
     "slotCost": [0],
@@ -196,7 +196,7 @@
   {
     "name": "Speakers",
     "description": "",
-    "type": "Cosmetic",
+    "category": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "userSelectable": false,
@@ -211,7 +211,7 @@
   {
     "name": "Strobes",
     "description": "",
-    "type": "Cosmetic",
+    "category": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "userSelectable": false,
@@ -226,7 +226,7 @@
   {
     "name": "Acceleration Enhancement",
     "description": "",
-    "type": "Power Train",
+    "category": "Power Train",
     "maxRating": [2],
     "bonus": {
       "gearAndVehicle": {
@@ -329,7 +329,7 @@
   {
     "name": "Gecko Tips",
     "description": "",
-    "type": "Power Train",
+    "category": "Power Train",
     "maxRating": [0],
     "requirements": {},
     "slotCost": [
@@ -392,7 +392,7 @@
   {
     "name": "Gliding System",
     "description": "",
-    "type": "Power Train",
+    "category": "Power Train",
     "maxRating": [0],
     "slotCost": [
       5,
@@ -528,7 +528,7 @@
   {
     "name": "Handling Enhancement",
     "description": "",
-    "type": "Power Train",
+    "category": "Power Train",
     "maxRating": [3],
     "bonus": {
       "gearAndVehicle": {
@@ -678,7 +678,7 @@
   {
     "name": "Improved Economy",
     "description": "",
-    "type": "Power Train",
+    "category": "Power Train",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -692,7 +692,7 @@
   {
     "name": "Manual Control Override",
     "description": "",
-    "type": "Power Train",
+    "category": "Power Train",
     "maxRating": [0],
     "slotCost": [1],
     "availability": {
@@ -706,7 +706,7 @@
   {
     "name": "Multifuel Engine",
     "description": "",
-    "type": "Power Train",
+    "category": "Power Train",
     "maxRating": [0],
     "slotCost": [4],
     "availability": {
@@ -754,7 +754,7 @@
   {
     "name": "Off-Road Suspension",
     "description": "",
-    "type": "Power Train",
+    "category": "Power Train",
     "maxRating": [0],
     "bonus": {
       "gearAndVehicle": {
@@ -786,7 +786,7 @@
   {
     "name": "Rigger Cocoon",
     "description": "",
-    "type": "Power Train",
+    "category": "Power Train",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -800,7 +800,7 @@
   {
     "name": "Removed Manual Controls",
     "description": "",
-    "type": "Power Train",
+    "category": "Power Train",
     "maxRating": [0],
     "slotCost": [1],
     "availability": {
@@ -814,7 +814,7 @@
   {
     "name": "Rocket Booster",
     "description": "",
-    "type": "Power Train",
+    "category": "Power Train",
     "maxRating": [0],
     "slotCost": [10],
     "availability": {
@@ -862,7 +862,7 @@
   {
     "name": "Manual Controls",
     "description": "",
-    "type": "Power Train",
+    "category": "Power Train",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -876,7 +876,7 @@
   {
     "name": "Secondary Manual Controls",
     "description": "",
-    "type": "Power Train",
+    "category": "Power Train",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -890,7 +890,7 @@
   {
     "name": "Secondary Propulsion (Amphibious, Surface)",
     "description": "",
-    "type": "Power Train",
+    "category": "Power Train",
     "maxRating": [0],
     "slotCost": [4],
     "availability": {
@@ -938,7 +938,7 @@
   {
     "name": "Secondary Propulsion (Amphibious, Submersible)",
     "description": "",
-    "type": "Power Train",
+    "category": "Power Train",
     "maxRating": [0],
     "slotCost": [8],
     "availability": {
@@ -986,7 +986,7 @@
   {
     "name": "Secondary Propulsion (Hovercraft)",
     "description": "",
-    "type": "Power Train",
+    "category": "Power Train",
     "maxRating": [0],
     "slotCost": [8],
     "availability": {
@@ -1034,7 +1034,7 @@
   {
     "name": "Secondary Propulsion (Rotor)",
     "description": "",
-    "type": "Power Train",
+    "category": "Power Train",
     "maxRating": [0],
     "slotCost": [10],
     "availability": {
@@ -1082,7 +1082,7 @@
   {
     "name": "Secondary Propulsion (Tracked)",
     "description": "",
-    "type": "Power Train",
+    "category": "Power Train",
     "maxRating": [0],
     "slotCost": [6],
     "availability": {
@@ -1130,7 +1130,7 @@
   {
     "name": "Secondary Propulsion (Walker)",
     "description": "",
-    "type": "Power Train",
+    "category": "Power Train",
     "maxRating": [0],
     "slotCost": [8],
     "availability": {
@@ -1178,7 +1178,7 @@
   {
     "name": "Speed Enhancement",
     "description": "",
-    "type": "Power Train",
+    "category": "Power Train",
     "maxRating": [3],
     "bonus": {
       "gearAndVehicle": {
@@ -1328,7 +1328,7 @@
   {
     "name": "Anti-Theft System",
     "description": "",
-    "type": "Protection",
+    "category": "Protection",
     "maxRating": [4],
     "slotCost": {
       "ratingLinked": [[1], [2], [4], [6]]
@@ -1362,7 +1362,7 @@
   {
     "name": "Armor (Standard)",
     "description": "",
-    "type": "Protection",
+    "category": "Protection",
     "maxRating": [
       {
         "option": "Body"
@@ -1415,7 +1415,7 @@
   {
     "name": "Armor (Concealed)",
     "description": "",
-    "type": "Protection",
+    "category": "Protection",
     "maxRating": [
       {
         "option": "Body"
@@ -1468,7 +1468,7 @@
   {
     "name": "Passenger Protection System",
     "description": "",
-    "type": "Protection",
+    "category": "Protection",
     "maxRating": [6],
     "slotCost": [2],
     "availability": {
@@ -1494,7 +1494,7 @@
   {
     "name": "Personal Armor",
     "description": "",
-    "type": "Protection",
+    "category": "Protection",
     "maxRating": [10],
     "slotCost": [2],
     "availability": {
@@ -1528,7 +1528,7 @@
   {
     "name": "Special Armor Modification (Chemical)",
     "description": "",
-    "type": "Protection",
+    "category": "Protection",
     "maxRating": [50],
     "slotCost": [2],
     "availability": {
@@ -1554,7 +1554,7 @@
   {
     "name": "Special Armor Modification (Fire)",
     "description": "",
-    "type": "Protection",
+    "category": "Protection",
     "maxRating": [50],
     "slotCost": [2],
     "availability": {
@@ -1580,7 +1580,7 @@
   {
     "name": "Special Armor Modification (Insulation)",
     "description": "",
-    "type": "Protection",
+    "category": "Protection",
     "maxRating": [50],
     "slotCost": [2],
     "availability": {
@@ -1606,7 +1606,7 @@
   {
     "name": "Special Armor Modification (Nonconductivity)",
     "description": "",
-    "type": "Protection",
+    "category": "Protection",
     "maxRating": [50],
     "slotCost": [2],
     "availability": {
@@ -1632,7 +1632,7 @@
   {
     "name": "Special Armor Modification (Radiation)",
     "description": "",
-    "type": "Protection",
+    "category": "Protection",
     "maxRating": [50],
     "slotCost": [2],
     "availability": {
@@ -1674,7 +1674,7 @@
   {
     "name": "Special Armor Modification (Universal Mirror Material)",
     "description": "",
-    "type": "Protection",
+    "category": "Protection",
     "maxRating": [50],
     "slotCost": [2],
     "availability": {
@@ -1700,7 +1700,7 @@
   {
     "name": "Flash-Pak",
     "description": "",
-    "type": "Weapons",
+    "category": "Weapons",
     "maxRating": [0],
     "slotCost": [0],
     "userSelectable": false,
@@ -1715,7 +1715,7 @@
   {
     "name": "Standard Drone Rack (Micro)",
     "description": "",
-    "type": "Weapons",
+    "category": "Weapons",
     "maxRating": [0],
     "slotCost": [1],
     "availability": {
@@ -1729,7 +1729,7 @@
   {
     "name": "Standard Drone Rack (Mini)",
     "description": "",
-    "type": "Weapons",
+    "category": "Weapons",
     "maxRating": [0],
     "slotCost": [1],
     "availability": {
@@ -1743,7 +1743,7 @@
   {
     "name": "Standard Drone Rack (Small)",
     "description": "",
-    "type": "Weapons",
+    "category": "Weapons",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -1757,7 +1757,7 @@
   {
     "name": "Standard Drone Rack (Medium)",
     "description": "",
-    "type": "Weapons",
+    "category": "Weapons",
     "maxRating": [0],
     "slotCost": [3],
     "availability": {
@@ -1771,7 +1771,7 @@
   {
     "name": "Standard Drone Rack (Large)",
     "description": "",
-    "type": "Weapons",
+    "category": "Weapons",
     "maxRating": [0],
     "slotCost": [4],
     "availability": {
@@ -1785,7 +1785,7 @@
   {
     "name": "Landing Drone Rack (Micro)",
     "description": "",
-    "type": "Weapons",
+    "category": "Weapons",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -1799,7 +1799,7 @@
   {
     "name": "Landing Drone Rack (Mini)",
     "description": "",
-    "type": "Weapons",
+    "category": "Weapons",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -1813,7 +1813,7 @@
   {
     "name": "Landing Drone Rack (Small)",
     "description": "",
-    "type": "Weapons",
+    "category": "Weapons",
     "maxRating": [0],
     "slotCost": [3],
     "availability": {
@@ -1827,7 +1827,7 @@
   {
     "name": "Landing Drone Rack (Medium)",
     "description": "",
-    "type": "Weapons",
+    "category": "Weapons",
     "maxRating": [0],
     "slotCost": [4],
     "availability": {
@@ -1841,7 +1841,7 @@
   {
     "name": "Landing Drone Rack (Large)",
     "description": "",
-    "type": "Weapons",
+    "category": "Weapons",
     "maxRating": [0],
     "slotCost": [5],
     "availability": {
@@ -1855,7 +1855,7 @@
   {
     "name": "Gun Port",
     "description": "",
-    "type": "Weapons",
+    "category": "Weapons",
     "maxRating": [0],
     "slotCost": [1],
     "availability": {
@@ -1869,7 +1869,7 @@
   {
     "name": "Missile Defense System",
     "description": "",
-    "type": "Weapons",
+    "category": "Weapons",
     "maxRating": [0],
     "slotCost": [3],
     "availability": {
@@ -1883,7 +1883,7 @@
   {
     "name": "Oil Slick Sprayer",
     "description": "",
-    "type": "Weapons",
+    "category": "Weapons",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -1897,7 +1897,7 @@
   {
     "name": "Ram Plate",
     "description": "",
-    "type": "Weapons",
+    "category": "Weapons",
     "maxRating": [0],
     "slotCost": [1],
     "availability": {
@@ -1945,7 +1945,7 @@
   {
     "name": "Smoke Projector",
     "description": "",
-    "type": "Weapons",
+    "category": "Weapons",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -1959,7 +1959,7 @@
   {
     "name": "Smoke Projector (Thermal)",
     "description": "",
-    "type": "Weapons",
+    "category": "Weapons",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -1973,7 +1973,7 @@
   {
     "name": "Road Strip Ejector",
     "description": "",
-    "type": "Weapons",
+    "category": "Weapons",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -1987,7 +1987,7 @@
   {
     "name": "Assembly/Disassembly",
     "description": "",
-    "type": "Body",
+    "category": "Body",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -2001,7 +2001,7 @@
   {
     "name": "Chameleon Coating",
     "description": "",
-    "type": "Body",
+    "category": "Body",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -2049,7 +2049,7 @@
   {
     "name": "Extra Entry/Exit Points",
     "description": "",
-    "type": "Body",
+    "category": "Body",
     "maxRating": [0],
     "slotCost": [1],
     "availability": {
@@ -2063,7 +2063,7 @@
   {
     "name": "Extreme Environment Modification",
     "description": "",
-    "type": "Body",
+    "category": "Body",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -2077,7 +2077,7 @@
   {
     "name": "Increased Seating",
     "description": "",
-    "type": "Body",
+    "category": "Body",
     "maxRating": [0],
     "bonus": {
       "gearAndVehicle": {
@@ -2108,7 +2108,7 @@
   {
     "name": "Life Support",
     "description": "",
-    "type": "Body",
+    "category": "Body",
     "maxRating": [2],
     "slotCost": [2],
     "availability": {
@@ -2195,7 +2195,7 @@
   {
     "name": "Mechanical Arm (Basic)",
     "description": "",
-    "type": "Body",
+    "category": "Body",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -2209,7 +2209,7 @@
   {
     "name": "Mechanical Arm (Articulated)",
     "description": "",
-    "type": "Body",
+    "category": "Body",
     "maxRating": [0],
     "slotCost": [3],
     "availability": {
@@ -2223,7 +2223,7 @@
   {
     "name": "Nanomaintenance System",
     "description": "",
-    "type": "Body",
+    "category": "Body",
     "maxRating": [4],
     "slotCost": [
       {
@@ -2269,7 +2269,7 @@
   {
     "name": "Realistic Features",
     "description": "",
-    "type": "Body",
+    "category": "Body",
     "maxRating": [4],
     "slotCost": [
       {
@@ -2351,7 +2351,7 @@
   {
     "name": "Smuggling Compartment",
     "description": "",
-    "type": "Body",
+    "category": "Body",
     "maxRating": [0],
     "slotCost": [3],
     "availability": {
@@ -2365,7 +2365,7 @@
   {
     "name": "Special Equipment",
     "description": "",
-    "type": "Body",
+    "category": "Body",
     "maxRating": [0],
     "bonus": {
       "miscellaneous": {
@@ -2386,7 +2386,7 @@
   {
     "name": "Smuggling Compartment Shielding",
     "description": "",
-    "type": "Body",
+    "category": "Body",
     "maxRating": [0],
     "bonus": {
       "miscellaneous": {
@@ -2407,7 +2407,7 @@
   {
     "name": "Valkyrie Module",
     "description": "",
-    "type": "Body",
+    "category": "Body",
     "maxRating": [0],
     "slotCost": [4],
     "availability": {
@@ -2421,7 +2421,7 @@
   {
     "name": "Winch (Basic)",
     "description": "",
-    "type": "Body",
+    "category": "Body",
     "maxRating": [0],
     "slotCost": [1],
     "availability": {
@@ -2435,7 +2435,7 @@
   {
     "name": "Winch (Enhanced)",
     "description": "",
-    "type": "Body",
+    "category": "Body",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -2449,7 +2449,7 @@
   {
     "name": "Workshop",
     "description": "",
-    "type": "Body",
+    "category": "Body",
     "maxRating": [0],
     "bonus": {
       "miscellaneous": {
@@ -2477,7 +2477,7 @@
   {
     "name": "Electromagnetic Shielding",
     "description": "",
-    "type": "Electromagnetic",
+    "category": "Electromagnetic",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -2525,7 +2525,7 @@
   {
     "name": "ECM",
     "description": "",
-    "type": "Electromagnetic",
+    "category": "Electromagnetic",
     "maxRating": [6],
     "slotCost": [2],
     "availability": {
@@ -2567,7 +2567,7 @@
   {
     "name": "GridLink",
     "description": "",
-    "type": "Electromagnetic",
+    "category": "Electromagnetic",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -2581,7 +2581,7 @@
   {
     "name": "GridLink Override",
     "description": "",
-    "type": "Electromagnetic",
+    "category": "Electromagnetic",
     "maxRating": [0],
     "slotCost": [1],
     "availability": {
@@ -2595,7 +2595,7 @@
   {
     "name": "Retrans Unit",
     "description": "",
-    "type": "Electromagnetic",
+    "category": "Electromagnetic",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -2609,7 +2609,7 @@
   {
     "name": "Satellite Link",
     "description": "",
-    "type": "Electromagnetic",
+    "category": "Electromagnetic",
     "maxRating": [0],
     "slotCost": [1],
     "availability": {
@@ -2623,7 +2623,7 @@
   {
     "name": "Pilot Enhancement",
     "description": "",
-    "type": "Electromagnetic",
+    "category": "Electromagnetic",
     "maxRating": [6],
     "bonus": {
       "gearAndVehicle": {
@@ -2827,7 +2827,7 @@
   {
     "name": "Sensor Enhancement",
     "description": "",
-    "type": "Electromagnetic",
+    "category": "Electromagnetic",
     "maxRating": [6],
     "bonus": {
       "gearAndVehicle": {
@@ -3031,7 +3031,7 @@
   {
     "name": "Signature Masking",
     "description": "",
-    "type": "Electromagnetic",
+    "category": "Electromagnetic",
     "maxRating": [6],
     "slotCost": [
       {
@@ -3061,7 +3061,7 @@
   {
     "name": "SunCell",
     "description": "",
-    "type": "Electromagnetic",
+    "category": "Electromagnetic",
     "maxRating": [0],
     "slotCost": [2],
     "availability": {
@@ -3109,7 +3109,7 @@
   {
     "name": "Touch Sensors",
     "description": "",
-    "type": "Electromagnetic",
+    "category": "Electromagnetic",
     "maxRating": [0],
     "slotCost": [3],
     "availability": {
@@ -3157,7 +3157,7 @@
   {
     "name": "Amenities (Squatter)",
     "description": "",
-    "type": "Cosmetic",
+    "category": "Cosmetic",
     "maxRating": [0],
     "bonus": {
       "gearAndVehicle": {
@@ -3188,7 +3188,7 @@
   {
     "name": "Amenities (Street)",
     "description": "",
-    "type": "Cosmetic",
+    "category": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -3202,7 +3202,7 @@
   {
     "name": "Amenities (Low)",
     "description": "",
-    "type": "Cosmetic",
+    "category": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -3216,7 +3216,7 @@
   {
     "name": "Amenities (Middle)",
     "description": "",
-    "type": "Cosmetic",
+    "category": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -3230,7 +3230,7 @@
   {
     "name": "Amenities (High)",
     "description": "",
-    "type": "Cosmetic",
+    "category": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -3244,7 +3244,7 @@
   {
     "name": "Amenities (Luxury)",
     "description": "",
-    "type": "Cosmetic",
+    "category": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -3258,7 +3258,7 @@
   {
     "name": "Enhanced Image Screens",
     "description": "",
-    "type": "Cosmetic",
+    "category": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -3272,7 +3272,7 @@
   {
     "name": "Máquina Conversion",
     "description": "",
-    "type": "Cosmetic",
+    "category": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -3298,7 +3298,7 @@
   {
     "name": "Metahuman Adjustment",
     "description": "",
-    "type": "Cosmetic",
+    "category": "Cosmetic",
     "maxRating": [
       {
         "option": "Seats"
@@ -3329,7 +3329,7 @@
   {
     "name": "Manual Operation",
     "description": "",
-    "type": "Cosmetic",
+    "category": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -3343,7 +3343,7 @@
   {
     "name": "Rigger Interface",
     "description": "",
-    "type": "Cosmetic",
+    "category": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -3357,7 +3357,7 @@
   {
     "name": "Interior Cameras",
     "description": "",
-    "type": "Cosmetic",
+    "category": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -3371,7 +3371,7 @@
   {
     "name": "Searchlight",
     "description": "",
-    "type": "Cosmetic",
+    "category": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -3385,7 +3385,7 @@
   {
     "name": "Vehicle Tag Eraser",
     "description": "",
-    "type": "Cosmetic",
+    "category": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -3399,7 +3399,7 @@
   {
     "name": "Yerz Kit",
     "description": "",
-    "type": "Cosmetic",
+    "category": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -3413,7 +3413,7 @@
   {
     "name": "Yerzed Out",
     "description": "",
-    "type": "Cosmetic",
+    "category": "Cosmetic",
     "maxRating": [4],
     "slotCost": [0],
     "availability": {
@@ -3451,7 +3451,7 @@
   {
     "name": "Rigger Adaptation",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "slotCost": [0],
     "userSelectable": false,
@@ -3466,7 +3466,7 @@
   {
     "name": "Micro Weapon Mount (Drone)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "requirements": {},
@@ -3483,7 +3483,7 @@
   {
     "name": "Mini Weapon Mount (Drone)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "requirements": {},
@@ -3500,7 +3500,7 @@
   {
     "name": "Gecko Grips (Drone)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "requirements": {},
@@ -3550,7 +3550,7 @@
   {
     "name": "Small Weapon Mount (Drone)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "requirements": {},
@@ -3567,7 +3567,7 @@
   {
     "name": "Standard Weapon Mount (Drone)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "requirements": {},
@@ -3584,7 +3584,7 @@
   {
     "name": "Large Weapon Mount (Drone)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "requirements": {},
@@ -3601,7 +3601,7 @@
   {
     "name": "Huge Weapon Mount (Drone)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "requirements": {},
@@ -3618,7 +3618,7 @@
   {
     "name": "Heavy Weapon Mount (Drone)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "requirements": {},
@@ -3635,7 +3635,7 @@
   {
     "name": "Realistic Features (Drone)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [4],
     "requiresDroneParent": true,
     "requirements": {},
@@ -3850,7 +3850,7 @@
   {
     "name": "Amphibious (Drone)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "requirements": {},
@@ -3910,7 +3910,7 @@
   {
     "name": "Submersible (Drone)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "requirements": {},
@@ -3970,7 +3970,7 @@
   {
     "name": "Assembly Time Improvement (Drone)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "requirements": {},
@@ -4020,7 +4020,7 @@
   {
     "name": "Customized (Drone)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "requirements": {},
@@ -4041,7 +4041,7 @@
   {
     "name": "Drone Arm",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "capacity": 15,
     "addPhysicalBoxes": 1,
@@ -4068,7 +4068,7 @@
   {
     "name": "Synthetic Drone Arm",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "capacity": 15,
     "addPhysicalBoxes": 1,
@@ -4095,7 +4095,7 @@
   {
     "name": "Primitive Drone Arm",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "capacity": 15,
     "addPhysicalBoxes": 1,
@@ -4122,7 +4122,7 @@
   {
     "name": "Drone Leg",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "capacity": 20,
     "requiresDroneParent": true,
@@ -4148,7 +4148,7 @@
   {
     "name": "Synthetic Drone Leg",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "capacity": 20,
     "requiresDroneParent": true,
@@ -4174,7 +4174,7 @@
   {
     "name": "Immobile (Drone)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "bonus": {
       "gearAndVehicle": {
@@ -4198,7 +4198,7 @@
   {
     "name": "SkyGuide (Drone)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "requirements": {},
@@ -4214,7 +4214,7 @@
   {
     "name": "Spotlight (Drone)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "requirements": {},
@@ -4230,7 +4230,7 @@
   {
     "name": "Suspension (Drone)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "requirements": {},
@@ -4280,7 +4280,7 @@
   {
     "name": "Tire Mod (Drone)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requiresDroneParent": true,
     "requirements": {},
@@ -4330,7 +4330,7 @@
   {
     "name": "Pilot Program (Drone)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [6],
     "bonus": {
       "gearAndVehicle": {
@@ -4381,7 +4381,7 @@
   {
     "name": "Spoof Chips (Alternative)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -4395,7 +4395,7 @@
   {
     "name": "Spoof Chips",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -4409,7 +4409,7 @@
   {
     "name": "Fragile (Drone)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [99],
     "bonus": {
       "gearAndVehicle": {
@@ -4466,7 +4466,7 @@
   {
     "name": "Single Sensor (Drone)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [99],
     "minRating": [
       {
@@ -4524,7 +4524,7 @@
   {
     "name": "Paraplegic Modification",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -4550,7 +4550,7 @@
   {
     "name": "Daihatsu-Caterpillar Horseman Passenger Pod",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "bonus": {
       "gearAndVehicle": {
@@ -4575,7 +4575,7 @@
   {
     "name": "Daihatsu-Caterpillar Horseman Cargo Pod",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "bonus": {
       "gearAndVehicle": {
@@ -4599,7 +4599,7 @@
   {
     "name": "Daihatsu-Caterpillar Horseman Advanced Cargo Pod",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "bonus": {
       "gearAndVehicle": {
@@ -4623,7 +4623,7 @@
   {
     "name": "Daihatsu-Caterpillar Horseman Drone Pod",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "bonus": {
       "gearAndVehicle": {
@@ -4647,7 +4647,7 @@
   {
     "name": "Daihatsu-Caterpillar Horseman Security Pod",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "bonus": {
       "gearAndVehicle": {
@@ -4671,7 +4671,7 @@
   {
     "name": "Chameleon Coating (Alternative)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -4719,7 +4719,7 @@
   {
     "name": "Dash Light Bar",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -4733,7 +4733,7 @@
   {
     "name": "Emergency Light Bar",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -4747,7 +4747,7 @@
   {
     "name": "Morphing License Plate (Alternative)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -4761,7 +4761,7 @@
   {
     "name": "Morphing License Plate",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -4775,7 +4775,7 @@
   {
     "name": "Spike Strip",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -4789,7 +4789,7 @@
   {
     "name": "Zapper Strip",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -4803,7 +4803,7 @@
   {
     "name": "Tracking Strip",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -4817,7 +4817,7 @@
   {
     "name": "Off-Road Tires",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [
       {
         "option": "Quantity of Mod"
@@ -4853,7 +4853,7 @@
   {
     "name": "Racing Tires",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [
       {
         "option": "Quantity of Mod"
@@ -4889,7 +4889,7 @@
   {
     "name": "Run-Flat Tires",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [
       {
         "option": "Quantity of Mod"
@@ -4919,7 +4919,7 @@
   {
     "name": "Siren",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -4933,7 +4933,7 @@
   {
     "name": "Smuggling Compartment (Dwarf, Human, Elf, or Ork)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -4947,7 +4947,7 @@
   {
     "name": "Smuggling Compartment (Troll)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -4961,7 +4961,7 @@
   {
     "name": "Rigger Services (1 hour)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [1000000],
     "ratingMeaning": "1 Hour per Rating Level",
     "slotCost": [0],
@@ -4976,7 +4976,7 @@
   {
     "name": "Extended Roof",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "slotCost": [0],
     "userSelectable": false,
@@ -4991,7 +4991,7 @@
   {
     "name": "Bathroom",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "slotCost": [0],
     "userSelectable": false,
@@ -5006,7 +5006,7 @@
   {
     "name": "Holding Cell",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "slotCost": [0],
     "userSelectable": false,
@@ -5021,7 +5021,7 @@
   {
     "name": "Sleeping Quarters",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "slotCost": [0],
     "userSelectable": false,
@@ -5036,7 +5036,7 @@
   {
     "name": "Advanced Lightbar",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "slotCost": [0],
     "userSelectable": false,
@@ -5051,7 +5051,7 @@
   {
     "name": "Open Box Storage",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "slotCost": [0],
     "userSelectable": false,
@@ -5066,7 +5066,7 @@
   {
     "name": "Interchangeable Bed: Armory",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requirements": {},
     "slotCost": [0],
@@ -5086,7 +5086,7 @@
   {
     "name": "Interchangeable Bed: Cargo Pod",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requirements": {},
     "slotCost": [0],
@@ -5106,7 +5106,7 @@
   {
     "name": "Interchangeable Bed: Food Truck",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requirements": {},
     "slotCost": [0],
@@ -5126,7 +5126,7 @@
   {
     "name": "Interchangeable Bed: Sleeper Command Cabin",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requirements": {},
     "slotCost": [0],
@@ -5146,7 +5146,7 @@
   {
     "name": "Interchangeable Bed: Transport",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requirements": {},
     "slotCost": [0],
@@ -5166,7 +5166,7 @@
   {
     "name": "Interchangeable Bed: Standard Drone Rack (Micro)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requirements": {},
     "slotCost": [0],
@@ -5181,7 +5181,7 @@
   {
     "name": "Interchangeable Bed: Standard Drone Rack (Mini)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requirements": {},
     "slotCost": [0],
@@ -5196,7 +5196,7 @@
   {
     "name": "Interchangeable Bed: Standard Drone Rack (Small)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requirements": {},
     "slotCost": [0],
@@ -5211,7 +5211,7 @@
   {
     "name": "Interchangeable Bed: Standard Drone Rack (Medium)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requirements": {},
     "slotCost": [0],
@@ -5226,7 +5226,7 @@
   {
     "name": "Interchangeable Bed: Standard Drone Rack (Large)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requirements": {},
     "slotCost": [0],
@@ -5241,7 +5241,7 @@
   {
     "name": "Interchangeable Bed: Landing Drone Rack (Micro)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requirements": {},
     "slotCost": [0],
@@ -5256,7 +5256,7 @@
   {
     "name": "Interchangeable Bed: Landing Drone Rack (Mini)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requirements": {},
     "slotCost": [0],
@@ -5271,7 +5271,7 @@
   {
     "name": "Interchangeable Bed: Landing Drone Rack (Small)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requirements": {},
     "slotCost": [0],
@@ -5286,7 +5286,7 @@
   {
     "name": "Interchangeable Bed: Landing Drone Rack (Medium)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requirements": {},
     "slotCost": [0],
@@ -5301,7 +5301,7 @@
   {
     "name": "Interchangeable Bed: Landing Drone Rack (Large)",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requirements": {},
     "slotCost": [0],
@@ -5316,7 +5316,7 @@
   {
     "name": "Interchangeable Bed: Workshop",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requirements": {},
     "slotCost": [0],
@@ -5331,7 +5331,7 @@
   {
     "name": "Interchangeable Bed: Rigger Cocoon",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "requirements": {},
     "slotCost": [0],
@@ -5346,7 +5346,7 @@
   {
     "name": "Interchangeable Bed: Custom",
     "description": "",
-    "type": "All",
+    "category": "All",
     "maxRating": [0],
     "bonus": {
       "miscellaneous": {
@@ -5373,7 +5373,7 @@
   {
     "name": "Handling (Drone)",
     "description": "",
-    "type": "Handling",
+    "category": "Handling",
     "maxRating": [99],
     "minRating": [
       {
@@ -5519,7 +5519,7 @@
   {
     "name": "Speed (Drone)",
     "description": "",
-    "type": "Speed",
+    "category": "Speed",
     "maxRating": [99],
     "minRating": [
       {
@@ -5665,7 +5665,7 @@
   {
     "name": "Acceleration (Drone)",
     "description": "",
-    "type": "Acceleration",
+    "category": "Acceleration",
     "maxRating": [99],
     "minRating": [
       {
@@ -5811,7 +5811,7 @@
   {
     "name": "Armor (Drone)",
     "description": "",
-    "type": "Armour",
+    "category": "Armour",
     "maxRating": [99],
     "minRating": [
       {
@@ -5998,7 +5998,7 @@
   {
     "name": "Sensor (Drone)",
     "description": "",
-    "type": "Sensor",
+    "category": "Sensor",
     "maxRating": [8],
     "minRating": [
       {
@@ -6103,7 +6103,7 @@
   {
     "name": "Handling Downgrade (Drone)",
     "description": "",
-    "type": "Handling",
+    "category": "Handling",
     "maxRating": [0],
     "bonus": {
       "gearAndVehicle": {
@@ -6126,7 +6126,7 @@
   {
     "name": "Speed Downgrade (Drone)",
     "description": "",
-    "type": "Speed",
+    "category": "Speed",
     "maxRating": [0],
     "bonus": {
       "gearAndVehicle": {
@@ -6149,7 +6149,7 @@
   {
     "name": "Acceleration Downgrade (Drone)",
     "description": "",
-    "type": "Acceleration",
+    "category": "Acceleration",
     "maxRating": [0],
     "bonus": {
       "gearAndVehicle": {
@@ -6172,7 +6172,7 @@
   {
     "name": "Body Downgrade (Drone)",
     "description": "",
-    "type": "Body",
+    "category": "Body",
     "maxRating": [0],
     "bonus": {
       "gearAndVehicle": {
@@ -6194,7 +6194,7 @@
   {
     "name": "Armor Downgrade (Drone)",
     "description": "",
-    "type": "Armour",
+    "category": "Armour",
     "maxRating": [0],
     "bonus": {
       "combatAndWeapon": {
@@ -6220,7 +6220,7 @@
   {
     "name": "Sensor Downgrade (Drone)",
     "description": "",
-    "type": "Sensor",
+    "category": "Sensor",
     "maxRating": [0],
     "bonus": {
       "gearAndVehicle": {
@@ -6242,7 +6242,7 @@
   {
     "name": "Rigger Adaptation (2050)",
     "description": "",
-    "type": "Cosmetic",
+    "category": "Cosmetic",
     "maxRating": [0],
     "slotCost": [0],
     "availability": {
@@ -6256,7 +6256,7 @@
   {
     "name": "Remote Adaptation (2050)",
     "description": "",
-    "type": "Cosmetic",
+    "category": "Cosmetic",
     "maxRating": [0],
     "requirements": {},
     "slotCost": [0],

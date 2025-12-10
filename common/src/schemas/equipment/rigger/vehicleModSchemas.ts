@@ -4,7 +4,7 @@ import {
   ratingMeaningEnum,
   restrictionEnum,
   vehicleModAttributeEnum,
-  vehicleModTypeEnum,
+  vehicleModCategoryEnum,
   vehicleModRatingEnum,
   cyberwareCategoryEnum,
   sourceBookEnum,
@@ -156,7 +156,7 @@ export const VehicleModSchema = type({
   "+": "reject",
   name: "string",
   description: "string",
-  type: type.valueOf(vehicleModTypeEnum),
+  category: type.valueOf(vehicleModCategoryEnum),
   maxRating: VehicleModRatingSchema,
   "minRating?": VehicleModRatingSchema,
   "ratingMeaning?": type.valueOf(ratingMeaningEnum),
@@ -197,3 +197,20 @@ export const CustomisedVehicleModListSchema = type(
 );
 export type CustomisedVehicleModListType =
   typeof CustomisedVehicleModListSchema.infer;
+
+export const CustomisedVehicleModLoadedSchema = type({
+  "+": "reject",
+  baseMod: VehicleModSchema,
+  "rating?": "number",
+  // display this like 'name (specificOption)'
+  "specificOption?": "string",
+  "subsystemList?": "string[]",
+});
+export type CustomisedVehicleModLoadedType =
+  typeof CustomisedVehicleModLoadedSchema.infer;
+
+export const CustomisedVehicleModLoadedListSchema = type(
+  CustomisedVehicleModLoadedSchema.array()
+);
+export type CustomisedVehicleModLoadedListType =
+  typeof CustomisedVehicleModLoadedListSchema.infer;

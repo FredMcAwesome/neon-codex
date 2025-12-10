@@ -86,7 +86,7 @@ export function ParseWeaponMountMods() {
 }
 
 const convertWeaponMountMod = function (vehicleMod: VehicleModXmlType) {
-  const type = convertVehicleModCategory(vehicleMod.category);
+  const category = convertVehicleModCategory(vehicleMod.category);
 
   const additionalAmmo = vehicleMod.ammobonus;
   const percentageAmmoIncrease = vehicleMod.ammobonus;
@@ -140,7 +140,7 @@ const convertWeaponMountMod = function (vehicleMod: VehicleModXmlType) {
   return {
     name: vehicleMod.name,
     description: "",
-    type: type,
+    category: category,
     ...(requirements !== undefined && { requirements: requirements }),
     slotCost: slotCost,
     ...(additionalAmmo !== undefined && { additionalAmmo: additionalAmmo }),

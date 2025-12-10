@@ -27,7 +27,7 @@ import {
 import { convertXmlBonus } from "../common/BonusParserHelper.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
 import {
-  augmentationTypeEnum,
+  augmentationCategoryEnum,
   availabilityEnum,
 } from "@neon-codex/common/build/enums.js";
 import {
@@ -290,9 +290,7 @@ function convertCyberware(cyberware: CyberwareXmlType) {
   const forceGrade =
     cyberware.forcegrade === undefined
       ? undefined
-      : convertAugmentationGrade(
-          cyberware.forcegrade as augmentationXmlGradeEnum
-        );
+      : convertAugmentationGrade(cyberware.forcegrade);
   const deviceRating =
     cyberware.devicerating === undefined
       ? undefined
@@ -300,7 +298,7 @@ function convertCyberware(cyberware: CyberwareXmlType) {
   const source = convertSource(cyberware.source);
 
   const typeInformation = {
-    type: augmentationTypeEnum.Cyberware,
+    category: augmentationCategoryEnum.Cyberware,
     subtype: subtype,
     ...(programs !== undefined && { programs: programs }),
     ...(capacity !== undefined && { capacity: capacity }),

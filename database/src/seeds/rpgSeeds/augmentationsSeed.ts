@@ -9,7 +9,7 @@ import {
   Biowares,
   Cyberwares,
 } from "../../models/rpg/equipment/bodyModification/augmentationModel.js";
-import { augmentationTypeEnum } from "@neon-codex/common/build/enums.js";
+import { augmentationCategoryEnum } from "@neon-codex/common/build/enums.js";
 import { type } from "arktype";
 
 export const getAugmentations = function () {
@@ -35,7 +35,7 @@ export const getAugmentations = function () {
   }
   const stagedAugmentations: Array<Augmentations> = [];
   biowares.forEach((augmentation) => {
-    assert(augmentation.type === augmentationTypeEnum.Bioware);
+    assert(augmentation.category === augmentationCategoryEnum.Bioware);
     stagedAugmentations.push(new Biowares(augmentation));
     // console.log(augmentation.name);
   });
@@ -58,7 +58,7 @@ export const getAugmentations = function () {
   }
 
   cyberwares.forEach((augmentation) => {
-    assert(augmentation.type === augmentationTypeEnum.Cyberware);
+    assert(augmentation.category === augmentationCategoryEnum.Cyberware);
     stagedAugmentations.push(new Cyberwares(augmentation));
     // console.log(augmentation.name);
   });

@@ -175,7 +175,7 @@ export const CreatorSummary = function (props: IProps) {
 };
 
 function Talent(data: TalentInfoType) {
-  switch (data.type) {
+  switch (data.category) {
     case talentCategoryEnum.Magic: {
       let mentorSpirit;
       if (data.selectedMentor) {

@@ -15,7 +15,7 @@ import {
   convertVehicleEquipmentPack,
   convertWeaponEquipmentPack,
 } from "./EquipmentPackParserHelper.js";
-import { augmentationTypeEnum } from "@neon-codex/common/build/enums.js";
+import { augmentationCategoryEnum } from "@neon-codex/common/build/enums.js";
 import { convertIncludedXmlGears } from "../common/ParserHelper.js";
 import type { CustomisedAugmentationListType } from "@neon-codex/common/build/schemas/equipment/bodyModification/augmentationSchemas.js";
 import type { CustomisedArmourListType } from "@neon-codex/common/build/schemas/equipment/combat/armourSchemas.js";
@@ -109,7 +109,7 @@ function convertPack(pack: EquipmentPackXmlType) {
     augmentationList = xmlBiowareList.map((bioware) => {
       return convertAugmentationEquipmentPack(
         bioware,
-        augmentationTypeEnum.Bioware
+        augmentationCategoryEnum.Bioware
       );
     });
   }
@@ -122,7 +122,7 @@ function convertPack(pack: EquipmentPackXmlType) {
         xmlCyberwareList.map((cyberware) => {
           return convertAugmentationEquipmentPack(
             cyberware,
-            augmentationTypeEnum.Cyberware
+            augmentationCategoryEnum.Cyberware
           );
         })
       );
@@ -130,7 +130,7 @@ function convertPack(pack: EquipmentPackXmlType) {
       augmentationList = xmlCyberwareList.map((cyberware) => {
         return convertAugmentationEquipmentPack(
           cyberware,
-          augmentationTypeEnum.Cyberware
+          augmentationCategoryEnum.Cyberware
         );
       });
     }

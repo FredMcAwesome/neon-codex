@@ -8,7 +8,7 @@ import { convertAllowGear, convertSource } from "../common/ParserHelper.js";
 import assert from "assert";
 import {
   ammoSourceEnum,
-  augmentationTypeEnum,
+  augmentationCategoryEnum,
 } from "@neon-codex/common/build/enums.js";
 import { weaponSubtypeEnum } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 import type {
@@ -128,12 +128,13 @@ export function ParseWeapons() {
 function convertWeapon(weapon: WeaponXmlType): WeaponType {
   // console.log(`\n${weapon.name}`);
 
-  const { weaponType, weaponSubtype } = getWeaponTypeInformation(weapon);
-  let augmentationType: augmentationTypeEnum | undefined = undefined;
+  const { weaponCategory: weaponType, weaponSubtype } =
+    getWeaponTypeInformation(weapon);
+  let augmentationCategory: augmentationCategoryEnum | undefined = undefined;
   if (weapon.cyberware !== undefined) {
-    augmentationType = augmentationTypeEnum.Cyberware;
+    augmentationCategory = augmentationCategoryEnum.Cyberware;
   } else if (weapon.category === weaponSubtypeEnum.BioWeapon) {
-    augmentationType = augmentationTypeEnum.Bioware;
+    augmentationCategory = augmentationCategoryEnum.Bioware;
   }
 
   const source = convertSource(weapon.source);
@@ -359,8 +360,8 @@ function convertWeapon(weapon: WeaponXmlType): WeaponType {
     }),
     allowAccessories: weapon.allowaccessory !== "False",
     ...(weapon.hide !== undefined && { userSelectable: false as const }),
-    ...(augmentationType !== undefined && {
-      augmentationType: augmentationType,
+    ...(augmentationCategory !== undefined && {
+      augmentationCategory: augmentationCategory,
     }),
     ...(alternativeWeaponForms !== undefined && {
       alternativeWeaponForms: alternativeWeaponForms,

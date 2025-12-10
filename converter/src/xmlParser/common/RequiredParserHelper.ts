@@ -5,7 +5,7 @@ import {
   firearmWeaponTypeEnum,
   projectileWeaponTypeEnum,
   weaponAccessoryMountLocationEnum,
-  weaponTypeEnum,
+  weaponCategoryEnum,
 } from "@neon-codex/common/build/enums.js";
 import { weaponSubtypeEnum } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 import type {
@@ -121,7 +121,7 @@ const convertWeaponDetailsInner = function (
     ammoSourceEnum | firearmWeaponTypeEnum | projectileWeaponTypeEnum
   > = [];
   let requiredCategory: Array<
-    firearmWeaponTypeEnum | projectileWeaponTypeEnum | weaponTypeEnum.Melee
+    firearmWeaponTypeEnum | projectileWeaponTypeEnum | weaponCategoryEnum.Melee
   > = [];
   const requiredSkills: Array<string> = [];
   const requiredAccessoryMountsArray: Array<weaponAccessoryMountLocationEnum> =
@@ -213,14 +213,14 @@ const convertWeaponDetailsInner = function (
   }
   if (category !== undefined) {
     const categoryArray = Array.isArray(category) ? category : [category];
-    requiredCategory = getWeaponCategories<weaponTypeEnum.Melee>(
+    requiredCategory = getWeaponCategories<weaponCategoryEnum.Melee>(
       categoryArray,
       requiredCategory
     );
   }
   if (type) {
     if (type === "Melee") {
-      requiredCategory.push(weaponTypeEnum.Melee);
+      requiredCategory.push(weaponCategoryEnum.Melee);
     }
   }
   if (conceal) {

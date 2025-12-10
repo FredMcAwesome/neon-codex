@@ -75,22 +75,22 @@ export const SpecialAttributesSchema = type({
   talent: type.or(
     type({
       "+": "reject",
-      type: type.unit(talentCategoryEnum.Magic),
+      category: type.unit(talentCategoryEnum.Magic),
       magic: "number",
     }),
     type({
       "+": "reject",
-      type: type.unit(talentCategoryEnum.Resonance),
+      category: type.unit(talentCategoryEnum.Resonance),
       resonance: "number",
     }),
     type({
       "+": "reject",
-      type: type.unit(talentCategoryEnum.Depth),
+      category: type.unit(talentCategoryEnum.Depth),
       depth: "number",
     }),
     type({
       "+": "reject",
-      type: type.unit(talentCategoryEnum.Mundane),
+      category: type.unit(talentCategoryEnum.Mundane),
     })
   ),
 });
@@ -174,7 +174,7 @@ const ParagonSelectedSchema = MentorBaseSchema.merge({
 export const TalentInfoSchema = type.or(
   type({
     "+": "reject",
-    type: type.unit(talentCategoryEnum.Magic),
+    category: type.unit(talentCategoryEnum.Magic),
     selectedTradition: TraditionSelectedSchema,
     selectedFormulae: FormulaListSelectedSchema,
     selectedAdeptPowers: AdeptPowerListSelectedSchema,
@@ -182,32 +182,32 @@ export const TalentInfoSchema = type.or(
   }),
   type({
     "+": "reject",
-    type: type.unit(talentCategoryEnum.Resonance),
+    category: type.unit(talentCategoryEnum.Resonance),
     complexForms: "string[]",
     "selectedMentor?": ParagonSelectedSchema,
   }),
   type({
     "+": "reject",
-    type: type.unit(talentCategoryEnum.Depth),
+    category: type.unit(talentCategoryEnum.Depth),
     programs: ProgramSelectedListSchema,
   }),
   type({
     "+": "reject",
-    type: type.unit(talentCategoryEnum.Mundane),
+    category: type.unit(talentCategoryEnum.Mundane),
   })
 );
 export type TalentInfoType = typeof TalentInfoSchema.infer;
 export type MagicTalentInfoType = TalentInfoType & {
-  type: talentCategoryEnum.Magic;
+  category: talentCategoryEnum.Magic;
 };
 export type ResonanceTalentInfoType = TalentInfoType & {
-  type: talentCategoryEnum.Resonance;
+  category: talentCategoryEnum.Resonance;
 };
 export type DepthTalentInfoType = TalentInfoType & {
-  type: talentCategoryEnum.Depth;
+  category: talentCategoryEnum.Depth;
 };
 export type MundaneTalentInfoType = TalentInfoType & {
-  type: talentCategoryEnum.Mundane;
+  category: talentCategoryEnum.Mundane;
 };
 
 export const QualitySelectedListSchema = type({

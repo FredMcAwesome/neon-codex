@@ -22,7 +22,7 @@ import type {
 } from "@neon-codex/common/build/schemas/equipment/bodyModification/augmentationSchemas.js";
 import {
   augmentationGradeEnum,
-  augmentationTypeEnum,
+  augmentationCategoryEnum,
   biowareCategoryEnum,
   cyberwareCategoryEnum,
   gearCategoryEnum,
@@ -37,13 +37,14 @@ import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/r
 import { Gears } from "../other/gearModel.js";
 import { Vehicles } from "../rigger/vehicleModel.js";
 import { AugmentationIncludedGears } from "../../activeTables/activeGearModel.js";
+import { ActiveVehicleModifications } from "../../activeTables/activeVehicleModificationModel.js";
 import type {
   EssenceCostType,
   RatingType,
 } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 
 @Entity({
-  discriminatorColumn: "type",
+  discriminatorColumn: "category",
   abstract: true,
 })
 export abstract class Augmentations {
@@ -54,8 +55,8 @@ export abstract class Augmentations {
   @Unique()
   name!: string;
 
-  @Enum(() => augmentationTypeEnum)
-  type!: augmentationTypeEnum;
+  @Enum(() => augmentationCategoryEnum)
+  category!: augmentationCategoryEnum;
 
   @Property({ type: "json", nullable: true })
   augmentationLimit?: AugmentationLimitType;
@@ -184,10 +185,10 @@ export abstract class Augmentations {
 }
 
 type CyberwareAugmentationType = AugmentationType & {
-  type: augmentationTypeEnum.Cyberware;
+  category: augmentationCategoryEnum.Cyberware;
 };
 
-@Entity({ discriminatorValue: augmentationTypeEnum.Cyberware })
+@Entity({ discriminatorValue: augmentationCategoryEnum.Cyberware })
 export class Cyberwares extends Augmentations {
   @Property()
   subtype!: cyberwareCategoryEnum;
@@ -246,6 +247,14 @@ export class Cyberwares extends Augmentations {
   @OneToOne({ entity: () => Vehicles, nullable: true, ref: true })
   linkedVehicle?: Ref<Vehicles>;
 
+  @ManyToMany({
+    entity: () => ActiveVehicleModifications,
+    mappedBy: (mod) => mod.associatedCyberwareList,
+  })
+  associatedVehicleModifications = new Collection<ActiveVehicleModifications>(
+    this
+  );
+
   constructor(dto: CyberwareAugmentationType) {
     super(dto);
     this.subtype = dto.subtype;
@@ -279,9 +288,9 @@ export class Cyberwares extends Augmentations {
 }
 
 type BiowareAugmentationType = AugmentationType & {
-  type: augmentationTypeEnum.Bioware;
+  category: augmentationCategoryEnum.Bioware;
 };
-@Entity({ discriminatorValue: augmentationTypeEnum.Bioware })
+@Entity({ discriminatorValue: augmentationCategoryEnum.Bioware })
 export class Biowares extends Augmentations {
   @Property()
   subtype!: biowareCategoryEnum;

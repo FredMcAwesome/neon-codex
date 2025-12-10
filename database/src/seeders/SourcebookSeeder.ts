@@ -78,11 +78,11 @@ import {
 import { WeaponMounts } from "../models/rpg/equipment/rigger/weaponMountModel.js";
 import {
   augmentationGradeEnum,
-  augmentationTypeEnum,
+  augmentationCategoryEnum,
   heritageCategoryEnum,
   priorityLetterEnum,
   talentCategoryEnum,
-  weaponTypeEnum,
+  weaponCategoryEnum,
 } from "@neon-codex/common/build/enums.js";
 import { Qualities } from "../models/rpg/traits/qualityModel.js";
 import { getQualities } from "../seeds/rpgSeeds/qualitiesSeed.js";
@@ -261,7 +261,7 @@ export class SourcebookSeeder extends Seeder {
       } else if (weapon instanceof Explosives) {
         em.create(Explosives, weapon);
       } else {
-        assert(false, `Unhandled weapon type: ${weapon.type}`);
+        assert(false, `Unhandled weapon category: ${weapon.category}`);
       }
     }
     console.log("Weapons created");
@@ -283,7 +283,10 @@ export class SourcebookSeeder extends Seeder {
       } else if (augmentation instanceof Biowares) {
         em.create(Biowares, augmentation);
       } else {
-        assert(false, `Unhandled augmentation type: ${augmentation.type}`);
+        assert(
+          false,
+          `Unhandled augmentation category: ${augmentation.category}`
+        );
       }
     }
     console.log("Augmentations created");
@@ -309,7 +312,7 @@ export class SourcebookSeeder extends Seeder {
       } else if (vehicle instanceof Drones) {
         em.create(Drones, vehicle);
       } else {
-        assert(false, `Unhandled vehicle type: ${vehicle.type}`);
+        assert(false, `Unhandled vehicle category: ${vehicle.category}`);
       }
     }
     console.log("Vehicles created");
@@ -325,7 +328,7 @@ export class SourcebookSeeder extends Seeder {
       } else {
         assert(
           false,
-          `Unhandled vehicle Modification type: ${vehicleMod.type}`
+          `Unhandled vehicle Modification category: ${vehicleMod.category}`
         );
       }
     }
@@ -851,7 +854,7 @@ export class SourcebookSeeder extends Seeder {
     // Firearms with underbarrel weapons
     for (const weapon of unlinkedWeapons) {
       if (
-        weapon.type === weaponTypeEnum.Firearm &&
+        weapon.category === weaponCategoryEnum.Firearm &&
         weapon.firearmOptions.underbarrelWeapons !== undefined
       ) {
         const relatedWeapon = await em.findOne(FirearmWeapons, {
@@ -1082,7 +1085,7 @@ export class SourcebookSeeder extends Seeder {
     }
     // Augmentations that provide a wireless bonus when linked to another augmentation
     for (const augmentation of unlinkedAugmentations) {
-      if (augmentation.type === augmentationTypeEnum.Cyberware) {
+      if (augmentation.category === augmentationCategoryEnum.Cyberware) {
         if (augmentation.wirelessPairInclude !== undefined) {
           const relatedAugmentation = await em.findOne(Cyberwares, {
             name: augmentation.name,
@@ -1104,7 +1107,7 @@ export class SourcebookSeeder extends Seeder {
     }
     // Augmentations that are a vehicle
     for (const augmentation of unlinkedAugmentations) {
-      if (augmentation.type === augmentationTypeEnum.Cyberware) {
+      if (augmentation.category === augmentationCategoryEnum.Cyberware) {
         if (augmentation.addVehicle !== undefined) {
           const relatedAugmentation = await em.findOne(Cyberwares, {
             name: augmentation.name,
@@ -1773,7 +1776,7 @@ export class SourcebookSeeder extends Seeder {
 
           await em.flush();
           // if (
-          //   augmentation.type === augmentationTypeEnum.Bioware &&
+          //   augmentation.category === augmentationCategoryEnum.Bioware &&
           //   augmentation.subsystemList !== undefined
           // ) {
           //   if (augmentation.subsystemList.biowareList !== undefined) {

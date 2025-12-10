@@ -4,7 +4,10 @@ import {
   StringOrNumberSchema,
 } from "../common/ParserCommonDefines.js";
 import { WeaponSubtypeSchema } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
-import { metamagicArtEnum } from "@neon-codex/common/build/enums.js";
+import {
+  metamagicArtEnum,
+  spellDescriptorEnum,
+} from "@neon-codex/common/build/enums.js";
 import { type } from "arktype";
 
 const SkillSchema = type({
@@ -241,7 +244,7 @@ const RequiredSubSchema = type({
   "spell?": StringArrayOrStringSchema,
   "spellcategory?": type.or(SpellCategorySchema, SpellCategorySchema.array()),
   "spelldescriptor?": {
-    name: "string",
+    name: type.valueOf(spellDescriptorEnum),
     count: "number",
   },
   "bioware?": StringArrayOrStringSchema,

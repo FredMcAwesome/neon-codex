@@ -2,7 +2,7 @@ import assert from "assert";
 import Critters from "../../grammar/critters.ohm-bundle.js";
 import {
   critterAttributePowerEnum,
-  critterTypeEnum,
+  critterCategoryEnum,
   mathOperatorEnum,
 } from "@neon-codex/common/build/enums.js";
 import type {
@@ -100,7 +100,7 @@ type ratingSemanticsOutputType = Array<ratingSemanticsNonArrayOutputType>;
 
 export function convertCritterRating(
   rating: string | number,
-  category: critterTypeEnum
+  category: critterCategoryEnum
 ) {
   const match = Rating.match(rating.toString());
   if (match.failed()) {
@@ -116,7 +116,7 @@ export function convertCritterRating(
 
 function convertRating(
   rating: ratingSemanticsNonArrayOutputType,
-  category: critterTypeEnum
+  category: critterCategoryEnum
 ): CritterRatingNonArrayType {
   if (typeof rating === "object") {
     if ("option" in rating) {
@@ -135,35 +135,35 @@ function convertRating(
   return rating;
 }
 
-function convertCritterPowerSource(category: critterTypeEnum) {
+function convertCritterPowerSource(category: critterCategoryEnum) {
   switch (category) {
-    case critterTypeEnum.Spirits:
-    case critterTypeEnum.InsectSpirits:
-    case critterTypeEnum.ShadowSpirits:
-    case critterTypeEnum.ToxicSpirits:
-    case critterTypeEnum.NecroSpirits:
-    case critterTypeEnum.Shedim:
-    case critterTypeEnum.ExtraplanarTravelers:
-    case critterTypeEnum.Ritual:
+    case critterCategoryEnum.Spirits:
+    case critterCategoryEnum.InsectSpirits:
+    case critterCategoryEnum.ShadowSpirits:
+    case critterCategoryEnum.ToxicSpirits:
+    case critterCategoryEnum.NecroSpirits:
+    case critterCategoryEnum.Shedim:
+    case critterCategoryEnum.ExtraplanarTravelers:
+    case critterCategoryEnum.Ritual:
       return { option: critterAttributePowerEnum.Force as const };
-    case critterTypeEnum.Sprites:
+    case critterCategoryEnum.Sprites:
       return { option: critterAttributePowerEnum.Level as const };
-    case critterTypeEnum.AIs:
-    case critterTypeEnum.Dracoforms:
-    case critterTypeEnum.EntropicSprites:
-    case critterTypeEnum.Fey:
-    case critterTypeEnum.Ghost_Haunt:
-    case critterTypeEnum.Harbingers:
-    case critterTypeEnum.Imps:
-    case critterTypeEnum.Infected:
-    case critterTypeEnum.MundaneCritters:
-    case critterTypeEnum.MutantCritters:
-    case critterTypeEnum.ParanormalCritters:
-    case critterTypeEnum.PrimordialSpirits:
-    case critterTypeEnum.Protosapients:
-    case critterTypeEnum.Technocritters:
-    case critterTypeEnum.ToxicCritters:
-    case critterTypeEnum.Warforms:
+    case critterCategoryEnum.AIs:
+    case critterCategoryEnum.Dracoforms:
+    case critterCategoryEnum.EntropicSprites:
+    case critterCategoryEnum.Fey:
+    case critterCategoryEnum.Ghost_Haunt:
+    case critterCategoryEnum.Harbingers:
+    case critterCategoryEnum.Imps:
+    case critterCategoryEnum.Infected:
+    case critterCategoryEnum.MundaneCritters:
+    case critterCategoryEnum.MutantCritters:
+    case critterCategoryEnum.ParanormalCritters:
+    case critterCategoryEnum.PrimordialSpirits:
+    case critterCategoryEnum.Protosapients:
+    case critterCategoryEnum.Technocritters:
+    case critterCategoryEnum.ToxicCritters:
+    case critterCategoryEnum.Warforms:
       assert(false, `Unexpected Power with category: ${category}`);
   }
 }

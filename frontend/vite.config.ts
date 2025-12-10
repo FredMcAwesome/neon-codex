@@ -6,6 +6,7 @@ import { createHtmlPlugin } from "vite-plugin-html";
 export default defineConfig({
   build: {
     outDir: "build",
+    sourcemap: true,
     rollupOptions: {
       input: {
         app: "index.html",

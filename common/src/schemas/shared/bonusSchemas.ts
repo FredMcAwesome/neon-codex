@@ -3,7 +3,7 @@ import {
   ammoSourceEnum,
   attributeTypeEnum,
   augmentationGradeEnum,
-  augmentationTypeEnum,
+  augmentationCategoryEnum,
   bonusCostModifierConditionEnum,
   bonusCostModifierTypeEnum,
   bonusSkillModifierTypeEnum,
@@ -22,13 +22,12 @@ import {
   mathOperatorEnum,
   skillCategoryEnum,
   skillTypeEnum,
-  sourceBookEnum,
   specialAttributeTypeEnum,
   spellCategoryEnum,
   spellDescriptorEnum,
   spellPowerRangeEnum,
-  vehicleTypeEnum,
-  weaponTypeEnum,
+  vehicleCategoryEnum,
+  weaponCategoryEnum,
 } from "../../enums.js";
 import {
   EssenceCostSchema,
@@ -678,7 +677,7 @@ const BonusSpellAndMagicOptionSchema = type({
   "penaltyFreeSustainCount?": RatingCalculationSchema,
   "newSpellKarmaCostModification?": type({
     "+": "reject",
-    spellType: type.valueOf(magicalFormulaeCategoryEnum),
+    spellCategory: type.valueOf(magicalFormulaeCategoryEnum),
     modifier: "number",
   }),
   "focusBindingKarmaCostModificationList?": type({
@@ -734,7 +733,7 @@ const BonusCombatAndWeaponOptionSchema = type({
     "+": "reject",
     "specificWeaponDicePoolModifier?": type({
       "+": "reject",
-      weaponType: type.valueOf(weaponTypeEnum),
+      weaponCategory: type.valueOf(weaponCategoryEnum),
       modifier: type.or("number", type({ "+": "reject", option: "'Rating'" })),
     }),
     "weaponCategoryDicePoolModifier?": type({
@@ -1068,7 +1067,7 @@ const BonusEssenceAndAugmentationSchema = type({
     "+": "reject",
     name: "string",
     grade: type.valueOf(augmentationGradeEnum),
-    type: type.valueOf(augmentationTypeEnum),
+    category: type.valueOf(augmentationCategoryEnum),
   }),
   "augmentationCostModifierPercentage?": type({
     "+": "reject",
@@ -1143,7 +1142,7 @@ const BonusSpecificQualitySchema = type({
     attributeList: type.valueOf(attributeTypeEnum).array(),
     "loseOnePhysicalBoxInsteadOfGainingTwo?": "true",
   }),
-  "dealerConnection?": type.valueOf(vehicleTypeEnum).array(),
+  "dealerConnection?": type.valueOf(vehicleCategoryEnum).array(),
   "erased?": "true",
   "excon?": "true",
   "fame?": "true",

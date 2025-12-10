@@ -11,7 +11,10 @@ import {
   DamageReductionArmourSchema,
 } from "../../shared/commonSchemas.js";
 import { BonusSchema } from "../../shared/bonusSchemas.js";
-import { CustomisedGearListSchema } from "../other/gearSchemas.js";
+import {
+  CustomisedGearListSchema,
+  CustomisedGearLoadedListSchema,
+} from "../other/gearSchemas.js";
 import { type } from "arktype";
 
 const InnerAvailabilityArmourModSchema = type({
@@ -132,3 +135,18 @@ export const CustomisedArmourModListSchema = type(
 );
 export type CustomisedArmourModListType =
   typeof CustomisedArmourModListSchema.infer;
+
+export const CustomisedArmourModLoadedSchema = type({
+  "+": "reject",
+  baseMod: ArmourModSchema,
+  "gearList?": CustomisedGearLoadedListSchema,
+  "rating?": "number",
+});
+export type CustomisedArmourModLoadedType =
+  typeof CustomisedArmourModLoadedSchema.infer;
+
+export const CustomisedArmourModLoadedListSchema = type(
+  CustomisedArmourModLoadedSchema.array()
+);
+export type CustomisedArmourModLoadedListType =
+  typeof CustomisedArmourModLoadedListSchema.infer;

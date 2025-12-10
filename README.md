@@ -55,7 +55,7 @@ NODE_ENV=development node --loader ts-node/esm ./src/create-schema.ts
 ```
 Fill tables with initial data:
 ```shell
-export MIKRO_ORM_CLI_CONFIG='./src/mikro-orm_seeder.config.ts' && 
+export MIKRO_ORM_CLI_CONFIG='./src/mikro-orm_seeder.config.ts' &&
 export MIKRO_ORM_SEEDER_PATH='./src/seeders/' &&
 export NODE_ENV=test &&
 npx mikro-orm-esm seeder:run &&
@@ -64,7 +64,8 @@ export NODE_ENV=development &&
 npx mikro-orm-esm seeder:run &&
 npx mikro-orm-esm seeder:run --class=DatabaseSeeder &&
 unset NODE_ENV &&
-unset MIKRO_ORM_CLI_CONFIG
+unset MIKRO_ORM_CLI_CONFIG &&
+unset MIKRO_ORM_SEEDER_PATH
 ```
 
 ### Hot reload

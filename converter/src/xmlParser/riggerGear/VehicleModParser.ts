@@ -88,7 +88,7 @@ export function ParseVehicleMods() {
 }
 
 const convertVehicleMod = function (vehicleMod: VehicleModXmlType) {
-  const type = convertVehicleModCategory(vehicleMod.category);
+  const category = convertVehicleModCategory(vehicleMod.category);
   const maxRating = [convertVehicleModMaxRating(vehicleMod.rating)];
   let minRating;
   if (vehicleMod.minrating !== undefined) {
@@ -141,7 +141,7 @@ const convertVehicleMod = function (vehicleMod: VehicleModXmlType) {
   return {
     name: vehicleMod.name,
     description: "",
-    type: type,
+    category: category,
     maxRating: maxRating,
     ...(minRating !== undefined && { minRating: minRating }),
     ...(ratingMeaning !== undefined && { ratingMeaning: ratingMeaning }),

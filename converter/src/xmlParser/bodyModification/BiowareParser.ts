@@ -23,7 +23,7 @@ import {
   essenceCostSemantics,
   mountsAugmentationSemantics,
 } from "./augmentationParserHelper.js";
-import { augmentationTypeEnum } from "@neon-codex/common/build/enums.js";
+import { augmentationCategoryEnum } from "@neon-codex/common/build/enums.js";
 import { type } from "arktype";
 const EssenceCost = Augmentation.EssenceCost;
 const Cost = Augmentation.Cost;
@@ -183,7 +183,7 @@ function convertBioware(bioware: BiowareXmlType) {
   const source = convertSource(bioware.source);
 
   const typeInformation = {
-    type: augmentationTypeEnum.Bioware,
+    category: augmentationCategoryEnum.Bioware,
     subtype: subtype,
     ...(isGeneware !== undefined && { isGeneware: isGeneware }),
   };

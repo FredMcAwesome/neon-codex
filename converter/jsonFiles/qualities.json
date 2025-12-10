@@ -14713,7 +14713,7 @@
           "freeSpellRate": "Full"
         },
         "newSpellKarmaCostModification": {
-          "spellType": "Spell",
+          "spellCategory": "Spell",
           "modifier": -1
         }
       }
@@ -16470,7 +16470,7 @@
         "addAugmentation": {
           "name": "Busted Ware",
           "grade": "None",
-          "type": "Cyberware"
+          "category": "Cyberware"
         }
       },
       "miscellaneous": {

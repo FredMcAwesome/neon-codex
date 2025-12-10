@@ -22,7 +22,7 @@ import { Critters } from "../creatures/critterModel.js";
 import { ActiveMagicTalents } from "../activeTables/activeTalentModel.js";
 
 @Entity({
-  discriminatorColumn: "type",
+  discriminatorColumn: "category",
   abstract: true,
 })
 export abstract class Traditions {
@@ -34,7 +34,7 @@ export abstract class Traditions {
   name!: string;
 
   @Enum(() => traditionSpiritEnum)
-  type!: traditionSpiritEnum;
+  category!: traditionSpiritEnum;
 
   @Enum(() => traditionDrainAttributeEnum)
   drain!: traditionDrainAttributeEnum;

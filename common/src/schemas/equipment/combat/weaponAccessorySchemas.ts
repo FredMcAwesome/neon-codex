@@ -10,7 +10,10 @@ import {
 } from "../../../enums.js";
 import { AvailabilityRatingSchema } from "../../shared/commonSchemas.js";
 import { RequirementsSchema } from "../../shared/requiredSchemas.js";
-import { CustomisedGearListSchema } from "../other/gearSchemas.js";
+import {
+  CustomisedGearListSchema,
+  CustomisedGearLoadedListSchema,
+} from "../other/gearSchemas.js";
 import {
   AccessoryMountSchema,
   AmmunitionSingleSchema,
@@ -146,3 +149,19 @@ export const CustomisedWeaponAccessoryListSchema = type(
 );
 export type CustomisedWeaponAccessoryListType =
   typeof CustomisedWeaponAccessoryListSchema.infer;
+
+export const CustomisedWeaponAccessoryLoadedSchema = type({
+  "+": "reject",
+  baseAccessory: WeaponAccessorySchema,
+  gearList: CustomisedGearLoadedListSchema,
+  mountList: AccessoryMountSchema,
+  "rating?": "number",
+});
+export type CustomisedWeaponAccessoryLoadedType =
+  typeof CustomisedWeaponAccessoryLoadedSchema.infer;
+
+export const CustomisedWeaponAccessoryLoadedListSchema = type(
+  CustomisedWeaponAccessoryLoadedSchema.array()
+);
+export type CustomisedWeaponAccessoryLoadedListType =
+  typeof CustomisedWeaponAccessoryLoadedListSchema.infer;

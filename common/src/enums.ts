@@ -96,7 +96,7 @@ export enum attributeTypeEnum {
   Initiative = "Initiative",
 }
 
-export enum weaponTypeEnum {
+export enum weaponCategoryEnum {
   Melee = "Melee",
   Projectile = "Projectile",
   Firearm = "Firearm",
@@ -428,7 +428,7 @@ export enum matrixWareAccessoryTypeEnum {
   BreakingAndEnteringDevice = "Breaking And Entering Device",
 }
 
-export enum augmentationTypeEnum {
+export enum augmentationCategoryEnum {
   Cyberware = "Cyberware",
   Bioware = "Bioware",
   Genetech = "Genetech",
@@ -554,7 +554,7 @@ export enum durationEnum {
   Special = "Special",
 }
 
-export enum vehicleTypeEnum {
+export enum vehicleCategoryEnum {
   Groundcraft = "Groundcraft",
   Watercraft = "Watercraft",
   Aircraft = "Aircraft",
@@ -801,7 +801,7 @@ export enum weaponMountControlEnum {
   ArmoredManual = "Armored Manual",
 }
 
-export enum vehicleModTypeEnum {
+export enum vehicleModCategoryEnum {
   Body = "Body",
   Cosmetic = "Cosmetic",
   Electromagnetic = "Electromagnetic",
@@ -898,7 +898,7 @@ export enum traditionSpiritFormEnum {
   Inhabitation = "Inhabitation",
 }
 
-export enum critterTypeEnum {
+export enum critterCategoryEnum {
   AIs = "A.I.s",
   Dracoforms = "Dracoforms",
   EntropicSprites = "Entropic Sprites",
@@ -1102,4 +1102,17 @@ export enum skillTypeEnum {
 export enum freeSpellRateEnum {
   Half = "Half",
   Full = "Full",
+}
+
+export enum equipmentTypeEnum {
+  Weapon = "Weapon",
+  Armour = "Armour",
+  Gear = "Gear",
+  Vehicle = "Vehicle",
+  Augmentation = "Augmentation",
+  EquipmentPack = "EquipmentPack",
+  WeaponAccessory = "WeaponAccessory",
+  ArmourMod = "ArmourMod",
+  VehicleMod = "VehicleMod",
+  WeaponMountMod = "WeaponMountMod",
 }

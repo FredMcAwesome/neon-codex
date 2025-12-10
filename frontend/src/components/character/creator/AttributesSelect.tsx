@@ -41,22 +41,22 @@ const SpecialAttributeOptionsSchema = type({
   talent: type.or(
     type({
       "+": "reject",
-      type: type.unit(talentCategoryEnum.Magic),
+      category: type.unit(talentCategoryEnum.Magic),
       magic: "string[]",
     }),
     type({
       "+": "reject",
-      type: type.unit(talentCategoryEnum.Resonance),
+      category: type.unit(talentCategoryEnum.Resonance),
       resonance: "string[]",
     }),
     type({
       "+": "reject",
-      type: type.unit(talentCategoryEnum.Depth),
+      category: type.unit(talentCategoryEnum.Depth),
       depth: "string[]",
     }),
     type({
       "+": "reject",
-      type: type.unit(talentCategoryEnum.Mundane),
+      category: type.unit(talentCategoryEnum.Mundane),
     })
   ),
 });
@@ -196,7 +196,7 @@ const AttributesSelectLoaded = function (
   function getSpecialAttributeListOptions() {
     const newOptions: SpecialAttributeOptionsType = {
       edge: [],
-      talent: { type: talentCategoryEnum.Mundane },
+      talent: { category: talentCategoryEnum.Mundane },
     };
 
     newOptions.edge = getAttributeOptions(attributeRanges.edge);
@@ -204,19 +204,19 @@ const AttributesSelectLoaded = function (
     switch (props.talentInfo.category) {
       case talentCategoryEnum.Magic:
         newOptions.talent = {
-          type: talentCategoryEnum.Magic,
+          category: talentCategoryEnum.Magic,
           magic: getAttributeOptions(attributeRanges.magic),
         };
         break;
       case talentCategoryEnum.Resonance:
         newOptions.talent = {
-          type: talentCategoryEnum.Resonance,
+          category: talentCategoryEnum.Resonance,
           resonance: getAttributeOptions(attributeRanges.resonance),
         };
         break;
       case talentCategoryEnum.Depth:
         newOptions.talent = {
-          type: talentCategoryEnum.Depth,
+          category: talentCategoryEnum.Depth,
           depth: getAttributeOptions(attributeRanges.depth),
         };
         break;
@@ -295,21 +295,21 @@ const AttributesSelectLoaded = function (
         newAttributes.edge = attributeValue;
         break;
       case specialAttributeTypeEnum.Magic:
-        if (newAttributes.talent.type !== talentCategoryEnum.Magic) {
+        if (newAttributes.talent.category !== talentCategoryEnum.Magic) {
           throw Error("Invalid special attribute type");
         }
         difference = newAttributes.talent.magic - attributeValue;
         newAttributes.talent.magic = attributeValue;
         break;
       case specialAttributeTypeEnum.Depth:
-        if (newAttributes.talent.type !== talentCategoryEnum.Depth) {
+        if (newAttributes.talent.category !== talentCategoryEnum.Depth) {
           throw Error("Invalid special attribute type");
         }
         difference = newAttributes.talent.depth - attributeValue;
         newAttributes.talent.depth = attributeValue;
         break;
       case specialAttributeTypeEnum.Resonance:
-        if (newAttributes.talent.type !== talentCategoryEnum.Resonance) {
+        if (newAttributes.talent.category !== talentCategoryEnum.Resonance) {
           throw Error("Invalid special attribute type");
         }
         difference = newAttributes.talent.resonance - attributeValue;
@@ -548,10 +548,10 @@ const SpecialAttributeSelect = function (props: ISpecialAttributeProps) {
 
   switch (props.talentInfo.category) {
     case talentCategoryEnum.Magic:
-      if (talentOptions.type !== talentCategoryEnum.Magic) {
+      if (talentOptions.category !== talentCategoryEnum.Magic) {
         throw Error("talentCategoryEnum is wrong");
       }
-      if (talentAttributePoints.type !== talentCategoryEnum.Magic) {
+      if (talentAttributePoints.category !== talentCategoryEnum.Magic) {
         throw Error("talentCategoryEnum is wrong");
       }
       frag = (
@@ -578,10 +578,10 @@ const SpecialAttributeSelect = function (props: ISpecialAttributeProps) {
       );
       break;
     case talentCategoryEnum.Resonance:
-      if (talentOptions.type !== talentCategoryEnum.Resonance) {
+      if (talentOptions.category !== talentCategoryEnum.Resonance) {
         throw Error("talentCategoryEnum is wrong");
       }
-      if (talentAttributePoints.type !== talentCategoryEnum.Resonance) {
+      if (talentAttributePoints.category !== talentCategoryEnum.Resonance) {
         throw Error("talentCategoryEnum is wrong");
       }
       frag = (
@@ -608,10 +608,10 @@ const SpecialAttributeSelect = function (props: ISpecialAttributeProps) {
       );
       break;
     case talentCategoryEnum.Depth:
-      if (talentOptions.type !== talentCategoryEnum.Depth) {
+      if (talentOptions.category !== talentCategoryEnum.Depth) {
         throw Error("talentCategoryEnum is wrong");
       }
-      if (talentAttributePoints.type !== talentCategoryEnum.Depth) {
+      if (talentAttributePoints.category !== talentCategoryEnum.Depth) {
         throw Error("talentCategoryEnum is wrong");
       }
       frag = (

@@ -43,7 +43,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Projectile",
+        "category": "Projectile",
         "subtype": "Bows"
       }
     ],
@@ -88,51 +88,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -155,51 +155,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -228,51 +228,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -292,51 +292,51 @@
     "purchaseQuantity": 10,
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -364,51 +364,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -478,51 +478,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -542,7 +542,7 @@
     "purchaseQuantity": 10,
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Cannons"
       }
     ],
@@ -571,51 +571,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -649,51 +649,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -727,51 +727,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -795,51 +795,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -868,51 +868,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -957,51 +957,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -1020,7 +1020,7 @@
     "maxRating": 0,
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Lasers"
       }
     ],
@@ -1040,51 +1040,51 @@
     "purchaseQuantity": 10,
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -1114,51 +1114,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -1178,51 +1178,51 @@
     "purchaseQuantity": 10,
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -1242,7 +1242,7 @@
     "purchaseQuantity": 10,
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Tasers"
       }
     ],
@@ -1271,51 +1271,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -1344,51 +1344,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -1417,51 +1417,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -1481,51 +1481,51 @@
     "purchaseQuantity": 10,
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -1545,51 +1545,51 @@
     "purchaseQuantity": 10,
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -1620,51 +1620,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -1742,7 +1742,7 @@
     "maxRating": 12,
     "ammoForWeaponType": [
       {
-        "type": "Projectile",
+        "category": "Projectile",
         "subtype": "Bows"
       }
     ],
@@ -1777,7 +1777,7 @@
     "maxRating": 12,
     "ammoForWeaponType": [
       {
-        "type": "Projectile",
+        "category": "Projectile",
         "subtype": "Bows"
       }
     ],
@@ -1820,7 +1820,7 @@
     "maxRating": 0,
     "ammoForWeaponType": [
       {
-        "type": "Projectile",
+        "category": "Projectile",
         "subtype": "Crossbows"
       }
     ],
@@ -1839,7 +1839,7 @@
     "maxRating": 0,
     "ammoForWeaponType": [
       {
-        "type": "Projectile",
+        "category": "Projectile",
         "subtype": "Crossbows"
       }
     ],
@@ -1914,7 +1914,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Projectile",
+        "category": "Projectile",
         "subtype": "Bows"
       }
     ],
@@ -1971,7 +1971,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Projectile",
+        "category": "Projectile",
         "subtype": "Bows"
       }
     ],
@@ -2029,7 +2029,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Projectile",
+        "category": "Projectile",
         "subtype": "Bows"
       }
     ],
@@ -2077,7 +2077,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Projectile",
+        "category": "Projectile",
         "subtype": "Bows"
       }
     ],
@@ -2127,7 +2127,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Projectile",
+        "category": "Projectile",
         "subtype": "Bows"
       }
     ],
@@ -2175,7 +2175,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Projectile",
+        "category": "Projectile",
         "subtype": "Bows"
       }
     ],
@@ -2227,7 +2227,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Projectile",
+        "category": "Projectile",
         "subtype": "Bows"
       }
     ],
@@ -2274,7 +2274,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Projectile",
+        "category": "Projectile",
         "subtype": "Crossbows"
       }
     ],
@@ -2303,7 +2303,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Projectile",
+        "category": "Projectile",
         "subtype": "Crossbows"
       }
     ],
@@ -2332,7 +2332,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Projectile",
+        "category": "Projectile",
         "subtype": "Crossbows"
       }
     ],
@@ -2354,7 +2354,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Projectile",
+        "category": "Projectile",
         "subtype": "Crossbows"
       }
     ],
@@ -2383,7 +2383,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Projectile",
+        "category": "Projectile",
         "subtype": "Crossbows"
       }
     ],
@@ -2406,7 +2406,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Projectile",
+        "category": "Projectile",
         "subtype": "Crossbows"
       }
     ],
@@ -2429,7 +2429,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Projectile",
+        "category": "Projectile",
         "subtype": "Crossbows"
       }
     ],
@@ -2580,7 +2580,7 @@
     "purchaseQuantity": 4,
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Flamethrowers"
       }
     ],
@@ -2603,51 +2603,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -2696,7 +2696,7 @@
     "purchaseQuantity": 10,
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Cannons"
       }
     ],
@@ -2927,7 +2927,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Grenade Launchers"
       }
     ],
@@ -2949,7 +2949,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Grenade Launchers"
       }
     ],
@@ -2971,7 +2971,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Grenade Launchers"
       }
     ],
@@ -2993,7 +2993,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Grenade Launchers"
       }
     ],
@@ -3016,7 +3016,7 @@
     "allowCategoryList": ["Drugs", "Toxins", "Custom"],
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Grenade Launchers"
       }
     ],
@@ -3038,7 +3038,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Grenade Launchers"
       }
     ],
@@ -3060,7 +3060,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Grenade Launchers"
       }
     ],
@@ -3291,7 +3291,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Missile Launchers"
       }
     ],
@@ -3313,7 +3313,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Missile Launchers"
       }
     ],
@@ -3335,7 +3335,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Missile Launchers"
       }
     ],
@@ -3357,7 +3357,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Missile Launchers"
       }
     ],
@@ -3379,7 +3379,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Missile Launchers"
       }
     ],
@@ -3401,7 +3401,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Missile Launchers"
       }
     ],
@@ -3423,7 +3423,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Missile Launchers"
       }
     ],
@@ -3631,7 +3631,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Missile Launchers"
       }
     ],
@@ -3675,51 +3675,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -3757,51 +3757,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -3885,51 +3885,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -3952,51 +3952,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -4045,51 +4045,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -4123,51 +4123,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -4198,51 +4198,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -4277,51 +4277,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -4345,51 +4345,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -4420,51 +4420,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -4506,51 +4506,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -4569,7 +4569,7 @@
     "maxRating": 0,
     "ammoForWeaponType": [
       {
-        "type": "Projectile",
+        "category": "Projectile",
         "subtype": "Bows"
       }
     ],
@@ -4588,7 +4588,7 @@
     "maxRating": 0,
     "ammoForWeaponType": [
       {
-        "type": "Projectile",
+        "category": "Projectile",
         "subtype": "Bows"
       }
     ],
@@ -4607,7 +4607,7 @@
     "maxRating": 0,
     "ammoForWeaponType": [
       {
-        "type": "Projectile",
+        "category": "Projectile",
         "subtype": "Bows"
       }
     ],
@@ -4626,7 +4626,7 @@
     "maxRating": 0,
     "ammoForWeaponType": [
       {
-        "type": "Projectile",
+        "category": "Projectile",
         "subtype": "Bows"
       }
     ],
@@ -4779,51 +4779,51 @@
     "purchaseQuantity": 10,
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -4846,51 +4846,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -4919,51 +4919,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -4983,51 +4983,51 @@
     "purchaseQuantity": 10,
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -5056,7 +5056,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Cannons"
       }
     ],
@@ -5080,51 +5080,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -19071,7 +19071,7 @@
             "modifier": {
               "option": "Rating"
             },
-            "weaponType": "Melee"
+            "weaponCategory": "Melee"
           }
         }
       }
@@ -20714,7 +20714,7 @@
             "modifier": {
               "option": "Rating"
             },
-            "weaponType": "Melee"
+            "weaponCategory": "Melee"
           }
         }
       }
@@ -22358,7 +22358,7 @@
             "modifier": {
               "option": "Rating"
             },
-            "weaponType": "Melee"
+            "weaponCategory": "Melee"
           }
         }
       }
@@ -32962,7 +32962,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Missile Launchers"
       }
     ],
@@ -33004,7 +33004,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Missile Launchers"
       }
     ],
@@ -33046,7 +33046,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Missile Launchers"
       }
     ],
@@ -33088,7 +33088,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Missile Launchers"
       }
     ],
@@ -33110,7 +33110,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Missile Launchers"
       }
     ],
@@ -33132,7 +33132,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Missile Launchers"
       }
     ],
@@ -33186,7 +33186,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Grenade Launchers"
       }
     ],
@@ -33240,7 +33240,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Grenade Launchers"
       }
     ],
@@ -33294,7 +33294,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Grenade Launchers"
       }
     ],
@@ -33348,7 +33348,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Grenade Launchers"
       }
     ],
@@ -33400,7 +33400,7 @@
     "purchaseQuantity": 10,
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Tasers"
       }
     ],
@@ -33420,7 +33420,7 @@
     "purchaseQuantity": 10,
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Cannons"
       }
     ],
@@ -33464,51 +33464,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -33538,51 +33538,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -33611,51 +33611,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -33678,51 +33678,51 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Hold Outs"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Heavy Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Machine Pistols"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Submachine Guns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Assault Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Carbines"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sporting Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Sniper Rifles"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Shotguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Light Machineguns"
       },
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Medium Heavy Machineguns"
       }
     ],
@@ -36950,7 +36950,7 @@
     },
     "ammoForWeaponType": [
       {
-        "type": "Firearm",
+        "category": "Firearm",
         "subtype": "Grenade Launchers"
       }
     ],

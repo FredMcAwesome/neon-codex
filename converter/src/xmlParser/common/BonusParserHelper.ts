@@ -1,7 +1,7 @@
 import {
   attributeTypeEnum,
   augmentationGradeEnum,
-  augmentationTypeEnum,
+  augmentationCategoryEnum,
   bonusCostModifierConditionEnum,
   bonusCostModifierTypeEnum,
   bonusSkillModifierTypeEnum,
@@ -17,8 +17,8 @@ import {
   specialAttributeTypeEnum,
   spellCategoryEnum,
   spellPowerRangeEnum,
-  vehicleTypeEnum,
-  weaponTypeEnum,
+  vehicleCategoryEnum,
+  weaponCategoryEnum,
 } from "@neon-codex/common/build/enums.js";
 import type {
   BonusType,
@@ -1773,22 +1773,22 @@ export function convertXmlBonus(bonus: BonusXmlType) {
   }
   if ("newspellkarmacost" in bonus && bonus.newspellkarmacost !== undefined) {
     checkProp("newspellkarmacost");
-    let spellType;
+    let spellCategory;
     switch (bonus.newspellkarmacost._type) {
       case "Spells":
-        spellType = magicalFormulaeCategoryEnum.Spell;
+        spellCategory = magicalFormulaeCategoryEnum.Spell;
         break;
       case "Rituals":
-        spellType = magicalFormulaeCategoryEnum.Ritual;
+        spellCategory = magicalFormulaeCategoryEnum.Ritual;
         break;
       case "Alchemical":
-        spellType = magicalFormulaeCategoryEnum.AlchemicalPreparation;
+        spellCategory = magicalFormulaeCategoryEnum.AlchemicalPreparation;
         break;
       default:
         assert(false, bonus.newspellkarmacost._type);
     }
     spellAndMagicOption.newSpellKarmaCostModification = {
-      spellType: spellType,
+      spellCategory: spellCategory,
       modifier: bonus.newspellkarmacost.xmltext,
     };
   }
@@ -1993,7 +1993,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     }
     combatAndWeaponOption.attackModifiers.specificWeaponDicePoolModifier = {
       modifier: specificWeaponBonus,
-      weaponType: weaponTypeConversion(bonus.weaponspecificdice._type),
+      weaponCategory: weaponTypeConversion(bonus.weaponspecificdice._type),
     };
   }
   if ("weaponaccuracy" in bonus && bonus.weaponaccuracy !== undefined) {
@@ -3091,16 +3091,16 @@ export function convertXmlBonus(bonus: BonusXmlType) {
   if ("addware" in bonus && bonus.addware !== undefined) {
     checkProp("addware");
     assert(essenceAndAugmentationOption.addAugmentation === undefined);
-    let augmentationType;
+    let augmentationCategory;
     switch (bonus.addware.type) {
       case "Cyberware":
-        augmentationType = augmentationTypeEnum.Cyberware;
+        augmentationCategory = augmentationCategoryEnum.Cyberware;
         break;
       case "Bioware":
-        augmentationType = augmentationTypeEnum.Bioware;
+        augmentationCategory = augmentationCategoryEnum.Bioware;
         break;
       case "Genetech":
-        augmentationType = augmentationTypeEnum.Genetech;
+        augmentationCategory = augmentationCategoryEnum.Genetech;
         break;
       default:
         // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
@@ -3109,7 +3109,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     essenceAndAugmentationOption.addAugmentation = {
       name: bonus.addware.name,
       grade: convertAugmentationGrade(bonus.addware.grade),
-      type: augmentationType,
+      category: augmentationCategory,
     };
   }
   if (
@@ -3641,7 +3641,7 @@ export function convertXmlBonus(bonus: BonusXmlType) {
     specificQualityOption.dealerConnection =
       bonus.dealerconnection.category.map((category) => {
         if (category === "Drones") {
-          return vehicleTypeEnum.Drone;
+          return vehicleCategoryEnum.Drone;
         }
         return category;
       });
@@ -3949,7 +3949,7 @@ function spellCategoryConversion(category: string) {
 }
 
 function weaponTypeConversion(weaponType: string) {
-  const weaponTypeEnumSchema = type.valueOf(weaponTypeEnum);
+  const weaponTypeEnumSchema = type.valueOf(weaponCategoryEnum);
   const typeEnum = weaponTypeEnumSchema(weaponType);
   assert(
     !(typeEnum instanceof type.errors),

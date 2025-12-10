@@ -10,7 +10,7 @@ import {
   WeaponListSchema,
 } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
 import type { WeaponListType } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
-import { weaponTypeEnum } from "@neon-codex/common/build/enums.js";
+import { weaponCategoryEnum } from "@neon-codex/common/build/enums.js";
 import { ref } from "@mikro-orm/postgresql";
 import { Skills } from "../../models/rpg/abilities/skillModel.js";
 import { WeaponRanges } from "../../models/rpg/equipment/combat/helperTables/weaponRangeModel.js";
@@ -79,12 +79,12 @@ export const getWeapons = function (
 
     let stagedWeapon: Weapons;
 
-    switch (weapon.type) {
-      case weaponTypeEnum.Melee:
+    switch (weapon.category) {
+      case weaponCategoryEnum.Melee:
         stagedWeapon = new MeleeWeapons(weapon, referencedSkill);
         stagedWeapons.push(stagedWeapon);
         break;
-      case weaponTypeEnum.Firearm:
+      case weaponCategoryEnum.Firearm:
         stagedWeapon = new FirearmWeapons(weapon, referencedSkill);
         assert(weapon.rangeList.length > 0);
         for (const range of weapon.rangeList) {
@@ -95,7 +95,7 @@ export const getWeapons = function (
         }
         stagedWeapons.push(stagedWeapon);
         break;
-      case weaponTypeEnum.Projectile:
+      case weaponCategoryEnum.Projectile:
         stagedWeapon = new ProjectileWeapons(weapon, referencedSkill);
         assert(weapon.rangeList.length > 0);
         for (const range of weapon.rangeList) {
@@ -106,7 +106,7 @@ export const getWeapons = function (
         }
         stagedWeapons.push(stagedWeapon);
         break;
-      case weaponTypeEnum.Explosive:
+      case weaponCategoryEnum.Explosive:
         stagedWeapon = new Explosives(weapon, referencedSkill);
         stagedWeapons.push(stagedWeapon);
         break;

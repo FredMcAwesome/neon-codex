@@ -223,10 +223,11 @@ function QualityDropdownComponent({
             const bonusParsed = {
               sourceType: bonusSourceEnum.Quality,
               source: newQuality.name,
-              ...(newQuality.bonus.linkMentorSpirit !== undefined && {
+              ...(newQuality.bonus.spellAndMagic?.linkMentorSpirit !==
+                undefined && {
                 linkMentorSpirit: true as const,
               }),
-              ...(newQuality.bonus.linkParagon !== undefined && {
+              ...(newQuality.bonus.spellAndMagic?.linkParagon !== undefined && {
                 linkParagon: true as const,
               }),
             };

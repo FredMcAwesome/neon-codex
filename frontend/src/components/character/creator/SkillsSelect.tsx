@@ -73,7 +73,7 @@ export const SkillListSelect = function (props: IProps) {
         <SkillList
           skillSelections={props.skillSelections}
           setSkill={setSkill}
-          skillType={skillCategoryEnum.Combat}
+          skillCategory={skillCategoryEnum.Combat}
           skillPointItems={props.skillPointItems}
         />
       </CollapsibleDiv>
@@ -81,7 +81,7 @@ export const SkillListSelect = function (props: IProps) {
         <SkillList
           skillSelections={props.skillSelections}
           setSkill={setSkill}
-          skillType={skillCategoryEnum.Physical}
+          skillCategory={skillCategoryEnum.Physical}
           skillPointItems={props.skillPointItems}
         />
       </CollapsibleDiv>
@@ -89,7 +89,7 @@ export const SkillListSelect = function (props: IProps) {
         <SkillList
           skillSelections={props.skillSelections}
           setSkill={setSkill}
-          skillType={skillCategoryEnum.Social}
+          skillCategory={skillCategoryEnum.Social}
           skillPointItems={props.skillPointItems}
         />
       </CollapsibleDiv>
@@ -97,7 +97,7 @@ export const SkillListSelect = function (props: IProps) {
         <SkillList
           skillSelections={props.skillSelections}
           setSkill={setSkill}
-          skillType={skillCategoryEnum.Magical}
+          skillCategory={skillCategoryEnum.Magical}
           skillPointItems={props.skillPointItems}
         />
       </CollapsibleDiv>
@@ -105,7 +105,7 @@ export const SkillListSelect = function (props: IProps) {
         <SkillList
           skillSelections={props.skillSelections}
           setSkill={setSkill}
-          skillType={skillCategoryEnum.Resonance}
+          skillCategory={skillCategoryEnum.Resonance}
           skillPointItems={props.skillPointItems}
         />
       </CollapsibleDiv>
@@ -113,7 +113,7 @@ export const SkillListSelect = function (props: IProps) {
         <SkillList
           skillSelections={props.skillSelections}
           setSkill={setSkill}
-          skillType={skillCategoryEnum.Technical}
+          skillCategory={skillCategoryEnum.Technical}
           skillPointItems={props.skillPointItems}
         />
       </CollapsibleDiv>
@@ -121,7 +121,7 @@ export const SkillListSelect = function (props: IProps) {
         <SkillList
           skillSelections={props.skillSelections}
           setSkill={setSkill}
-          skillType={skillCategoryEnum.Vehicle}
+          skillCategory={skillCategoryEnum.Vehicle}
           skillPointItems={props.skillPointItems}
         />
       </CollapsibleDiv>
@@ -191,14 +191,14 @@ interface ISkillListProp {
     skillPoints: number,
     skillGroupPoints: number
   ) => void;
-  skillType: skillCategoryEnum;
+  skillCategory: skillCategoryEnum;
   skillPointItems: SkillPointInfoType;
 }
 
 const SkillList = function ({
   skillSelections: skillSelections,
   setSkill: setSkill,
-  skillType: skillCategory,
+  skillCategory: skillCategory,
   skillPointItems: skillPointItems,
 }: ISkillListProp) {
   const getSkillOptions = function (

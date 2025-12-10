@@ -10,7 +10,7 @@ import {
   firearmWeaponTypeEnum,
   ratingMeaningEnum,
   sourceBookEnum,
-  vehicleModTypeEnum,
+  vehicleModCategoryEnum,
 } from "@neon-codex/common/build/enums.js";
 import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
 import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
@@ -23,7 +23,7 @@ import type {
 } from "@neon-codex/common/build/schemas/equipment/rigger/vehicleModSchemas.js";
 
 @Entity({
-  discriminatorColumn: "type",
+  discriminatorColumn: "category",
   abstract: true,
 })
 export abstract class VehicleModifications {
@@ -38,7 +38,7 @@ export abstract class VehicleModifications {
   description!: string;
 
   @Property()
-  type!: vehicleModTypeEnum;
+  category!: vehicleModCategoryEnum;
 
   @Property({ type: "json" })
   maxRating!: VehicleModRatingType;
@@ -91,8 +91,8 @@ export abstract class VehicleModifications {
   constructor(dto: VehicleModType) {
     this.name = dto.name;
     this.description = dto.description;
-    this.type = dto.type;
-    this.type = dto.type;
+    this.category = dto.category;
+    this.category = dto.category;
     this.maxRating = dto.maxRating;
     if (dto.minRating !== undefined) {
       this.minRating = dto.minRating;

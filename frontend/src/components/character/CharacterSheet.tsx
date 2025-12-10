@@ -81,7 +81,7 @@ function Attributes(data: AttributesType) {
 
 function SpecialAttributes(data: SpecialAttributesType) {
   let talentDiv;
-  switch (data.talent.type) {
+  switch (data.talent.category) {
     case talentCategoryEnum.Magic:
       talentDiv = <div>Magic: {data.talent.magic}</div>;
       break;
@@ -144,7 +144,8 @@ function Skills(
               break;
             case attributeTypeEnum.Depth: {
               const depth =
-                specialAttributeList.talent.type === talentCategoryEnum.Depth
+                specialAttributeList.talent.category ===
+                talentCategoryEnum.Depth
                   ? specialAttributeList.talent.depth
                   : 0;
               attributeLevel = depth;
@@ -155,12 +156,17 @@ function Skills(
               break;
             case attributeTypeEnum.Magic: {
               const magic =
-                specialAttributeList.talent.type === talentCategoryEnum.Magic
+                specialAttributeList.talent.category ===
+                talentCategoryEnum.Magic
                   ? specialAttributeList.talent.magic
                   : 0;
               attributeLevel = magic;
 
               break;
+            }
+            case attributeTypeEnum.Initiative: {
+              // todo: this should never occur
+              attributeLevel = attributeList.agility;
             }
           }
           const skillTotal = attributeLevel + skill.skillPoints;
@@ -172,7 +178,7 @@ function Skills(
 }
 
 function Talent(data: TalentInfoType) {
-  switch (data.type) {
+  switch (data.category) {
     case talentCategoryEnum.Magic: {
       let mentorSpirit;
       if (data.selectedMentor) {

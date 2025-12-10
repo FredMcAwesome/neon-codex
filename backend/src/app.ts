@@ -12,11 +12,17 @@ import { init } from "./utils/db.js";
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import { createContext, router } from "./trpc.js";
 
-const appRouter: ReturnType<typeof router> = router({
+type appRouterType = {
+  character: typeof characterRouter;
+  forum: typeof forumRouter;
+  authentication: typeof authenticationRouter;
+};
+const routes: appRouterType = {
   character: characterRouter,
   forum: forumRouter,
   authentication: authenticationRouter,
-});
+};
+const appRouter = router(routes);
 export type AppRouter = typeof appRouter;
 
 export async function bootstrap(): Promise<{
