@@ -1,5 +1,6 @@
 import { Fragment } from "react";
-import Dropdown from "react-dropdown";
+import { ArwesSelect } from "../../common/ArwesSelect.js";
+import { ArwesButton } from "../../common/ArwesButton.js";
 import { trpc } from "../../../utils/trpc.js";
 import {
   bonusSourceEnum,
@@ -48,7 +49,7 @@ export const QualityListSelect = function (props: IProps) {
           Karma Remaining: <span id="karma_points">{props.karmaPoints}</span>
         </p>
       </div>
-      <div>
+      <div className="quality-section">
         <h2>Positive Qualities</h2>
         <QualitySelectionComponent
           positive={true}
@@ -62,7 +63,7 @@ export const QualityListSelect = function (props: IProps) {
           setBonusInfo={props.setBonusInfo}
         />
       </div>
-      <div>
+      <div className="quality-section">
         <h2>Negative Qualities</h2>
         <QualitySelectionComponent
           positive={false}
@@ -156,12 +157,10 @@ function QualityDropdownComponent({
   setBonusInfo,
 }: IQualityDropdownProps) {
   return (
-    <Dropdown
-      options={qualityList.map((quality) => {
-        return quality.name;
-      })}
+    <ArwesSelect
       value={currentValue}
-      onChange={(arg) => {
+      onChange={(event) => {
+        const arg = { value: event.target.value };
         const newQuality = qualityList.find((quality) => {
           return quality.name === arg.value;
         });
@@ -245,7 +244,18 @@ function QualityDropdownComponent({
             : "newNegativeQuality"
           : currentValue
       }
-    />
+    >
+      {currentValue === QualityDefault && (
+        <option value={QualityDefault} disabled>
+          {QualityDefault}
+        </option>
+      )}
+      {qualityList.map((quality) => (
+        <option key={quality.name} value={quality.name}>
+          {quality.name}
+        </option>
+      ))}
+    </ArwesSelect>
   );
 }
 
@@ -270,105 +280,93 @@ const QualitySelectionComponent = function ({
 }: IQualitySelectionProps) {
   return (
     <div>
-      {selectedQualityList.map((quality, index) => {
-        const fullQuality = qualityList.find((qual) => {
-          return qual.name === quality.name;
-        });
-        if (fullQuality === undefined) {
-          throw new Error(`Quality ${quality.name} doesn't exist`);
-        }
-        return (
-          <div key={index}>
-            <QualityDropdownComponent
-              currentValue={fullQuality.name}
-              positive={positive}
-              selectedQualityList={selectedQualityList}
-              qualityList={qualityList.filter((localQuality) => {
-                return (
-                  !selectedQualityList.find((selectedQuality) => {
-                    return selectedQuality.name === localQuality.name;
-                  }) || fullQuality.name === localQuality.name
-                );
-              })}
-              setQualities={setQualities}
-              setKarma={setKarma}
-              index={index}
-              bonusInfo={bonusInfo}
-              setBonusInfo={setBonusInfo}
-            />
-            <p>{fullQuality.description}</p>
-            {/* {quality.subqualities && (
-              <SubqualitiesComponent
-                quality={quality}
-                qualityList={qualityList}
-                index={index}
-                setKarma={setKarma}
-                setQualities={setQualities}
-              />
-            )} */}
-            <h4>Karma cost: {fullQuality.karma} </h4>
-            {/* {quality.maxRating && (
-              <RatingComponent
-                quality={quality}
-                qualityList={qualityList}
-                index={index}
-                setKarma={setKarma}
-                setQualities={setQualities}
-              />
-            )} */}
-            <button
-              onClick={() => {
-                let difference = 0;
-                const removedQuality = selectedQualityList[index];
-
-                const fullQuality = qualityList.find(
-                  (qual) => qual.name === removedQuality.name
-                );
-                if (fullQuality === undefined) {
-                  throw new Error(
-                    `Quality ${removedQuality.name} is not found`
+      <div className="quality-list">
+        {selectedQualityList.map((quality, index) => {
+          const fullQuality = qualityList.find((qual) => {
+            return qual.name === quality.name;
+          });
+          if (fullQuality === undefined) {
+            throw new Error(`Quality ${quality.name} doesn't exist`);
+          }
+          return (
+            <div key={index} className="quality-card">
+              <QualityDropdownComponent
+                currentValue={fullQuality.name}
+                positive={positive}
+                selectedQualityList={selectedQualityList}
+                qualityList={qualityList.filter((localQuality) => {
+                  return (
+                    !selectedQualityList.find((selectedQuality) => {
+                      return selectedQuality.name === localQuality.name;
+                    }) || fullQuality.name === localQuality.name
                   );
-                }
-                difference = fullQuality.karma;
+                })}
+                setQualities={setQualities}
+                setKarma={setKarma}
+                index={index}
+                bonusInfo={bonusInfo}
+                setBonusInfo={setBonusInfo}
+              />
+              <p>{fullQuality.description}</p>
+              <h4>Karma cost: {fullQuality.karma} </h4>
+              <div className="quality-actions">
+                <ArwesButton
+                  onClick={() => {
+                    let difference = 0;
+                    const removedQuality = selectedQualityList[index];
 
-                // difference *= removedQuality. || 1;
-                setKarma(
-                  fullQuality.category === qualityCategoryEnum.Negative,
-                  difference
-                );
-                if (selectedQualityList.length - 1 === index) {
-                  setQualities([...selectedQualityList.slice(0, index)]);
-                } else {
-                  setQualities([
-                    ...selectedQualityList.slice(0, index),
-                    ...selectedQualityList.slice(index + 1),
-                  ]);
-                }
-              }}
-            >
-              Remove
-            </button>
-          </div>
-        );
-      })}
-      <h3>Add Quality:</h3>
-      {
-        <QualityDropdownComponent
-          currentValue={QualityDefault}
-          positive={positive}
-          qualityList={qualityList.filter((quality) => {
-            return !selectedQualityList.find((selectedQuality) => {
-              return quality.name === selectedQuality.name;
-            });
-          })}
-          selectedQualityList={selectedQualityList}
-          setQualities={setQualities}
-          setKarma={setKarma}
-          index={-1}
-          bonusInfo={bonusInfo}
-          setBonusInfo={setBonusInfo}
-        />
-      }
+                    const fullQuality = qualityList.find(
+                      (qual) => qual.name === removedQuality.name
+                    );
+                    if (fullQuality === undefined) {
+                      throw new Error(
+                        `Quality ${removedQuality.name} is not found`
+                      );
+                    }
+                    difference = fullQuality.karma;
+
+                    setKarma(
+                      fullQuality.category === qualityCategoryEnum.Negative,
+                      difference
+                    );
+                    if (selectedQualityList.length - 1 === index) {
+                      setQualities([...selectedQualityList.slice(0, index)]);
+                    } else {
+                      setQualities([
+                        ...selectedQualityList.slice(0, index),
+                        ...selectedQualityList.slice(index + 1),
+                      ]);
+                    }
+                  }}
+                  palette="error"
+                >
+                  Remove
+                </ArwesButton>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <div className="add-quality-container">
+        <h3>Add Quality:</h3>
+        {
+          <QualityDropdownComponent
+            currentValue={QualityDefault}
+            positive={positive}
+            qualityList={qualityList.filter((quality) => {
+              return !selectedQualityList.find((selectedQuality) => {
+                return quality.name === selectedQuality.name;
+              });
+            })}
+            selectedQualityList={selectedQualityList}
+            setQualities={setQualities}
+            setKarma={setKarma}
+            index={-1}
+            bonusInfo={bonusInfo}
+            setBonusInfo={setBonusInfo}
+          />
+        }
+      </div>
     </div>
   );
 };

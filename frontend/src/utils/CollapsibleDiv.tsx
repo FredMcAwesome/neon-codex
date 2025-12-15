@@ -1,5 +1,6 @@
 import { useState, type ReactNode } from "react";
 import { Collapse } from "react-collapse";
+import { ArwesButton } from "../components/common/ArwesButton.js";
 
 interface IProps {
   title: string;
@@ -12,9 +13,24 @@ export const CollapsibleDiv = function (props: IProps) {
     setIsOpened(!isOpened);
   };
   return (
-    <div>
-      <div onClick={() => toggleIsOpened()}>{props.title}</div>
-      <Collapse isOpened={isOpened}>{props.children}</Collapse>
+    <div style={{ marginBottom: "10px" }}>
+      <ArwesButton
+        onClick={() => toggleIsOpened()}
+        style={{ width: "100%", textAlign: "left" }}
+      >
+        {props.title} {isOpened ? "▲" : "▼"}
+      </ArwesButton>
+      <Collapse isOpened={isOpened}>
+        <div
+          style={{
+            padding: "10px",
+            border: "1px solid var(--arwes-palette-primary-dark-2)",
+            borderTop: "none",
+          }}
+        >
+          {props.children}
+        </div>
+      </Collapse>
     </div>
   );
 };

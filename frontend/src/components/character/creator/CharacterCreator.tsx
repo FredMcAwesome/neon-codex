@@ -11,10 +11,7 @@ import type {
   CustomSkillGroupListType,
   CustomSkillListType,
 } from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
-import type {
-  EquipmentListType,
-  SelectedEquipmentListType,
-} from "@neon-codex/common/build/schemas/equipment/other/equipmentSchemas.js";
+import type { SelectedEquipmentListType } from "@neon-codex/common/build/schemas/equipment/other/equipmentSchemas.js";
 import type {
   AttributesType,
   SpecialAttributesType,
@@ -43,6 +40,7 @@ import { LifestyleSelect } from "./LifestyleSelect.js";
 import type { CharacterCreatorBonusListType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
 
 import { useEquipmentSearch } from "../../../hooks/useEquipmentSearch.js";
+import { ArwesButton } from "../../common/ArwesButton.js";
 
 const characterCreatorPath = "/character_creator";
 const CharacterCreator = function () {
@@ -473,16 +471,30 @@ const CharacterCreator = function () {
       currentStage = <>Error</>;
   }
   const lastPage = PageActiveList.length - 1;
+  const hiddenNext = page === PageActiveList[lastPage];
+  const hiddenSubmit = page !== PageActiveList[lastPage];
   return (
     <Fragment>
-      <nav>
-        {PageActiveList.map((page) => {
-          return <li key={page}>{page}</li>;
-        })}
-      </nav>
+      <div style={{ overflowX: "auto", marginBottom: "20px" }}>
+        <nav className="character-creator-nav">
+          {PageActiveList.map((pageItem) => {
+            const isActive = page === pageItem;
+            return (
+              <div
+                key={pageItem}
+                className={`character-creator-nav-item ${
+                  isActive ? "active" : ""
+                }`}
+              >
+                {pageItem.replace(/([A-Z])/g, " $1").trim()}
+              </div>
+            );
+          })}
+        </nav>
+      </div>
       <div>Karma Remaining: {karmaPoints}</div>
       <div>Essence Remaining: {essencePoints}</div>
-      <button
+      <ArwesButton
         onClick={() => {
           setPage(
             page !== CharacterPageEnum.PriorityListSelect
@@ -495,57 +507,59 @@ const CharacterCreator = function () {
         disabled={page == CharacterPageEnum.PriorityListSelect}
       >
         Previous
-      </button>
-      <button
-        onClick={() => {
-          setPage(
-            page !== PageActiveList[lastPage]
-              ? PageActiveList[
-                  PageActiveList.findIndex((element) => element === page) + 1
-                ]
-              : PageActiveList[lastPage]
-          );
-        }}
-        hidden={page === PageActiveList[lastPage]}
-      >
-        Next
-      </button>
+      </ArwesButton>
+      {!hiddenNext && (
+        <ArwesButton
+          onClick={() => {
+            setPage(
+              page !== PageActiveList[lastPage]
+                ? PageActiveList[
+                    PageActiveList.findIndex((element) => element === page) + 1
+                  ]
+                : PageActiveList[lastPage]
+            );
+          }}
+        >
+          Next
+        </ArwesButton>
+      )}
       {}
       {currentStage}
-      <button
-        onClick={() => {
-          character
-            .mutateAsync({
-              priorityInfo: priorityInfo,
-              heritageInfo: priorityHeritage,
-              attributeInfo: attributeInfo,
-              specialAttributeInfo: specialAttributeInfo,
-              talentInfo: talentInfo,
-              positiveQualityListSelected: positiveQualityListSelected,
-              negativeQualityListSelected: negativeQualityListSelected,
-              skillSelections: skillSelections,
-              skillGroupSelections: skillGroupSelections,
-              ...(martialArtSelected !== undefined && {
-                martialArtSelected: martialArtSelected,
-              }),
-              equipmentSelections: equipmentSelections,
-              lifestyleSelections: lifestyleSelections,
-              karmaPoints: karmaPoints,
-              nuyen: nuyen,
-              bonusInfo: bonusInfo,
-            })
-            .then((characterId) => {
-              navigate(`/characters/${characterId}`);
-            })
-            .catch((err) => {
-              // TODO: handle this
-              console.log(err);
-            });
-        }}
-        hidden={page !== PageActiveList[lastPage]}
-      >
-        Submit
-      </button>
+      {!hiddenSubmit && (
+        <ArwesButton
+          onClick={() => {
+            character
+              .mutateAsync({
+                priorityInfo: priorityInfo,
+                heritageInfo: priorityHeritage,
+                attributeInfo: attributeInfo,
+                specialAttributeInfo: specialAttributeInfo,
+                talentInfo: talentInfo,
+                positiveQualityListSelected: positiveQualityListSelected,
+                negativeQualityListSelected: negativeQualityListSelected,
+                skillSelections: skillSelections,
+                skillGroupSelections: skillGroupSelections,
+                ...(martialArtSelected !== undefined && {
+                  martialArtSelected: martialArtSelected,
+                }),
+                equipmentSelections: equipmentSelections,
+                lifestyleSelections: lifestyleSelections,
+                karmaPoints: karmaPoints,
+                nuyen: nuyen,
+                bonusInfo: bonusInfo,
+              })
+              .then((characterId) => {
+                navigate(`/characters/${characterId}`);
+              })
+              .catch((err) => {
+                // TODO: handle this
+                console.log(err);
+              });
+          }}
+        >
+          Submit
+        </ArwesButton>
+      )}
     </Fragment>
   );
 };

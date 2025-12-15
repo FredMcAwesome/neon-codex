@@ -1,4 +1,4 @@
-import React from "react";
+import type { FC } from "react";
 
 interface PaginationProps {
   currentPage: number;
@@ -7,7 +7,7 @@ interface PaginationProps {
   maxVisiblePages?: number;
 }
 
-export const Pagination: React.FC<PaginationProps> = ({
+export const Pagination: FC<PaginationProps> = ({
   currentPage,
   totalPages,
   onPageChange,
@@ -20,7 +20,7 @@ export const Pagination: React.FC<PaginationProps> = ({
     const halfVisible = Math.floor(maxVisiblePages / 2);
 
     let start = Math.max(1, currentPage - halfVisible);
-    let end = Math.min(totalPages, start + maxVisiblePages - 1);
+    const end = Math.min(totalPages, start + maxVisiblePages - 1);
 
     // Adjust start if we're near the end
     if (end - start + 1 < maxVisiblePages) {

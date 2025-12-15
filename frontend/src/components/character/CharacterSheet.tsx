@@ -19,6 +19,7 @@ import type { CustomisedGearListType } from "@neon-codex/common/build/schemas/eq
 import type { CustomisedAugmentationListType } from "@neon-codex/common/build/schemas/equipment/bodyModification/augmentationSchemas.js";
 import type { CustomisedVehicleListType } from "@neon-codex/common/build/schemas/equipment/rigger/vehicleSchemas.js";
 import { CollapsibleDiv } from "../../utils/CollapsibleDiv.js";
+import { ArwesCard } from "../common/ArwesCard.js";
 
 const characterSheetPath = "/characters/:id";
 const CharacterSheet = function () {
@@ -40,23 +41,41 @@ const CharacterSheet = function () {
   }
 
   return (
-    <div>
-      <div>Name: {data.name}</div>
-      <div>Heritage: {data.heritage.name}</div>
-      {Attributes(data.attributes)}
-      {SpecialAttributes(data.specialAttributes)}
-      {Skills(data.skillList, data.attributes, data.specialAttributes)}
-      {Talent(data.talentInfo)}
-      {Qualities(data.qualityList)}
-      {Weapons(data.weaponList)}
-      {Armours(data.armourList)}
-      {Gears(data.gearList)}
-      {Augmentations(data.augmentationList)}
-      {Vehicles(data.vehicleList)}
-      {MartialArts(data.martialArtList)}
-      {Lifestyles(data.lifestyleList)}
-      <div>Nuyen: {data.nuyen}</div>
-      <div>Karma: {data.karmaPoints}</div>
+    <div style={{ padding: "20px", maxWidth: "800px", margin: "0 auto" }}>
+      <ArwesCard title={data.name} className="character-sheet-card">
+        <div style={{ marginBottom: "20px" }}>
+          <div>
+            <strong>Heritage:</strong> {data.heritage.name}
+          </div>
+          <div>
+            <strong>Nuyen:</strong> {data.nuyen}
+          </div>
+          <div>
+            <strong>Karma:</strong> {data.karmaPoints}
+          </div>
+        </div>
+
+        <div style={{ display: "grid", gap: "20px" }}>
+          <ArwesCard title="Attributes" palette="secondary">
+            {Attributes(data.attributes)}
+          </ArwesCard>
+
+          <ArwesCard title="Special Attributes" palette="secondary">
+            {SpecialAttributes(data.specialAttributes)}
+          </ArwesCard>
+
+          {Skills(data.skillList, data.attributes, data.specialAttributes)}
+          {Talent(data.talentInfo)}
+          {Qualities(data.qualityList)}
+          {Weapons(data.weaponList)}
+          {Armours(data.armourList)}
+          {Gears(data.gearList)}
+          {Augmentations(data.augmentationList)}
+          {Vehicles(data.vehicleList)}
+          {MartialArts(data.martialArtList)}
+          {Lifestyles(data.lifestyleList)}
+        </div>
+      </ArwesCard>
     </div>
   );
 };
@@ -65,16 +84,37 @@ export default CharacterSheet;
 
 function Attributes(data: AttributesType) {
   return (
-    <div>
-      Attributes:
-      <div>Body: {data.body}</div>
-      <div>Agility: {data.agility}</div>
-      <div>Charisma: {data.charisma}</div>
-      <div>Intuition: {data.intuition}</div>
-      <div>Logic: {data.logic}</div>
-      <div>Reaction: {data.reaction}</div>
-      <div>Strength: {data.strength}</div>
-      <div>Willpower: {data.willpower}</div>
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fill, minmax(120px, 1fr))",
+        gap: "10px",
+      }}
+    >
+      <div>
+        <strong>Body:</strong> {data.body}
+      </div>
+      <div>
+        <strong>Agility:</strong> {data.agility}
+      </div>
+      <div>
+        <strong>Charisma:</strong> {data.charisma}
+      </div>
+      <div>
+        <strong>Intuition:</strong> {data.intuition}
+      </div>
+      <div>
+        <strong>Logic:</strong> {data.logic}
+      </div>
+      <div>
+        <strong>Reaction:</strong> {data.reaction}
+      </div>
+      <div>
+        <strong>Strength:</strong> {data.strength}
+      </div>
+      <div>
+        <strong>Willpower:</strong> {data.willpower}
+      </div>
     </div>
   );
 }
@@ -96,9 +136,16 @@ function SpecialAttributes(data: SpecialAttributesType) {
       break;
   }
   return (
-    <div>
-      Special Attributes:
-      <div>Edge: {data.edge}</div>
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fill, minmax(120px, 1fr))",
+        gap: "10px",
+      }}
+    >
+      <div>
+        <strong>Edge:</strong> {data.edge}
+      </div>
       {talentDiv}
     </div>
   );
@@ -397,12 +444,18 @@ function Lifestyles(data: LifestyleSelectedListType) {
   return data.map((lifestyle) => {
     return (
       <CollapsibleDiv title="Lifestyle">
-        <div>Name: {`${lifestyle.lifestyle.name}`}</div>
+        <div key={lifestyle.lifestyle.name}>
+          Name: {`${lifestyle.lifestyle.name}`}
+        </div>
         <div>
           Lifestyle Qualities:{" "}
           <ul>
             {lifestyle.lifestyleQualityList.map((quality) => {
-              return <li>{quality.name}</li>;
+              return (
+                <li key={lifestyle.lifestyle.name + quality.name}>
+                  {quality.name}
+                </li>
+              );
             })}
           </ul>
         </div>

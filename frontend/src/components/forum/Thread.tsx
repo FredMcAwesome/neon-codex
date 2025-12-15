@@ -1,10 +1,11 @@
 import { useParams } from "react-router-dom";
 import { trpc } from "../../utils/trpc.js";
+import { ArwesCard } from "../common/ArwesCard.js";
 const threadPath = "/forum/:id";
 const Thread = function () {
   const { id } = useParams();
   const { data, error, isError, isPending } = trpc.forum.getThread.useQuery(
-    id || ""
+    id === undefined ? "" : id
   );
   if (isPending) {
     return <div>Loading thread...</div>;
@@ -19,17 +20,25 @@ const Thread = function () {
     }
   }
   return (
-    <div>
-      <div>Thread Title: {data.title}</div>
-      <div>Submitted by: {data.username}</div>
-      {data.comments.map((comment) => {
-        return (
-          <div>
-            <div>{comment.content}</div>
-            <div>Submitted by: {comment.username}</div>
-          </div>
-        );
-      })}
+    <div style={{ padding: "20px" }}>
+      <ArwesCard title={data.title} className="thread-card">
+        <div style={{ marginBottom: "20px", opacity: 0.8 }}>
+          Submitted by: {data.username}
+        </div>
+        <div style={{ display: "grid", gap: "10px" }}>
+          {data.comments.map((comment, index) => {
+            return (
+              <ArwesCard
+                key={index}
+                palette="secondary"
+                title={`Comment by ${comment.username}`}
+              >
+                <div>{comment.content}</div>
+              </ArwesCard>
+            );
+          })}
+        </div>
+      </ArwesCard>
     </div>
   );
 };

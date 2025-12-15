@@ -1,6 +1,7 @@
 import type { LifestyleSelectedListType } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
 import { trpc } from "../../../utils/trpc.js";
-import Dropdown from "react-dropdown";
+import { ArwesSelect } from "../../common/ArwesSelect.js";
+import { ArwesButton } from "../../common/ArwesButton.js";
 
 interface IProps {
   lifestyleSelections: LifestyleSelectedListType;
@@ -37,30 +38,41 @@ export const LifestyleSelect = function ({
   }
 
   return (
-    <div>
+    <div className="lifestyle-container">
       <h1>Lifestyle Selection</h1>
-      <h3>Add Lifestyle</h3>
-      <Dropdown
-        options={lifestyleList.data.map((lifestyle) => {
-          return lifestyle.name;
-        })}
-        value={""}
-        onChange={(arg) => {
-          const sourceLifestyle = lifestyleList.data.find((lifestyle) => {
-            return lifestyle.name === arg.value;
-          });
-          if (sourceLifestyle === undefined) {
-            throw new Error(`Lifestyle: ${arg.value} not found`);
-          }
-          const newLifestyleSelections = lifestyleSelections;
-          newLifestyleSelections.push({
-            lifestyle: sourceLifestyle,
-            lifestyleQualityList: [],
-            purchasedDuration: 0,
-          });
-          setLifestyleSelections(newLifestyleSelections);
-        }}
-      />
+      <div className="talent-item">
+        <label>Add Lifestyle</label>
+        <ArwesSelect
+          value={""}
+          onChange={(event) => {
+            const arg = { value: event.target.value };
+            if (!lifestyleList.data) return;
+            const sourceLifestyle = lifestyleList.data.find((lifestyle) => {
+              return lifestyle.name === arg.value;
+            });
+            if (sourceLifestyle === undefined) {
+              throw new Error(`Lifestyle: ${arg.value} not found`);
+            }
+            const newLifestyleSelections = [...lifestyleSelections];
+            newLifestyleSelections.push({
+              lifestyle: sourceLifestyle,
+              lifestyleQualityList: [],
+              purchasedDuration: 0,
+            });
+            setLifestyleSelections(newLifestyleSelections);
+          }}
+        >
+          <option value="" disabled>
+            Select Lifestyle
+          </option>
+          {lifestyleList.data!.map((lifestyle) => (
+            <option key={lifestyle.name} value={lifestyle.name}>
+              {lifestyle.name}
+            </option>
+          ))}
+        </ArwesSelect>
+      </div>
+
       {lifestyleSelections !== undefined &&
         lifestyleSelections.map((lifestyle, index) => {
           const cost =
@@ -75,65 +87,85 @@ export const LifestyleSelect = function ({
             }, 0);
 
           return (
-            <div>
-              <div>Lifestyle: {lifestyle.lifestyle.name}</div>
-              <div>
-                Description:
-                <div>{cost}</div>
+            <div key={index} className="lifestyle-item">
+              <div className="lifestyle-header">
+                Lifestyle: {lifestyle.lifestyle.name}
               </div>
-              <div>Lifestyle Qualities:</div>{" "}
-              <Dropdown
-                options={lifestyleQualityList.data.map((quality) => {
-                  return quality.name;
-                })}
-                value={""}
-                onChange={(arg) => {
-                  const sourceLifestyleQuality = lifestyleQualityList.data.find(
-                    (quality) => {
-                      return quality.name === arg.value;
+              <div className="lifestyle-details">Description: {cost}</div>
+
+              <div className="talent-item">
+                <label>Add Lifestyle Quality</label>
+                <ArwesSelect
+                  value={""}
+                  onChange={(event) => {
+                    const arg = { value: event.target.value };
+                    if (!lifestyleQualityList.data) return;
+                    const sourceLifestyleQuality =
+                      lifestyleQualityList.data.find((quality) => {
+                        return quality.name === arg.value;
+                      });
+                    if (sourceLifestyleQuality === undefined) {
+                      throw new Error(
+                        `Lifestyle Quality: ${arg.value} not found`
+                      );
                     }
-                  );
-                  if (sourceLifestyleQuality === undefined) {
-                    throw new Error(
-                      `Lifestyle Quality: ${arg.value} not found`
+                    const qualityList = lifestyle.lifestyleQualityList.concat(
+                      sourceLifestyleQuality
                     );
-                  }
-                  const qualityList = lifestyle.lifestyleQualityList.concat(
-                    sourceLifestyleQuality
-                  );
-                  const newLifestyleSelections = lifestyleSelections;
-                  newLifestyleSelections[index] = {
-                    lifestyle: lifestyle.lifestyle,
-                    lifestyleQualityList: qualityList,
-                    purchasedDuration: lifestyle.purchasedDuration,
-                  };
-                  setLifestyleSelections(newLifestyleSelections);
-                }}
-              />
+                    const newLifestyleSelections = [...lifestyleSelections];
+                    newLifestyleSelections[index] = {
+                      lifestyle: lifestyle.lifestyle,
+                      lifestyleQualityList: qualityList,
+                      purchasedDuration: lifestyle.purchasedDuration,
+                    };
+                    setLifestyleSelections(newLifestyleSelections);
+                  }}
+                >
+                  <option value="" disabled>
+                    Select Quality
+                  </option>
+                  {lifestyleQualityList.data!.map((quality) => (
+                    <option key={quality.name} value={quality.name}>
+                      {quality.name}
+                    </option>
+                  ))}
+                </ArwesSelect>
+              </div>
+
               <div>
-                Selected Lifestyle Qualities: Count:{" "}
-                {lifestyle.lifestyleQualityList.length}
-                <div>
+                <p>
+                  Selected Lifestyle Qualities: Count:{" "}
+                  {lifestyle.lifestyleQualityList.length}
+                </p>
+                <p>
                   Points: {lifestylePoints}/
                   {lifestyle.lifestyle.lifestylePoints}
-                </div>
-                <ul>
-                  {lifestyle.lifestyleQualityList.map((quality) => {
+                </p>
+                <ul className="lifestyle-qualities-list">
+                  {lifestyle.lifestyleQualityList.map((quality, qIndex) => {
                     return (
-                      <li key={quality.name + lifestyle.lifestyle.name}>
-                        <div>Name: {quality.name}</div>
+                      <li
+                        key={quality.name + lifestyle.lifestyle.name + qIndex}
+                        className="lifestyle-quality-item"
+                      >
                         <div>
-                          Lifestyle Point Cost: {quality.lifestylePointCost}
+                          <div>Name: {quality.name}</div>
+                          <div style={{ fontSize: "0.8em", opacity: 0.8 }}>
+                            Lifestyle Point Cost: {quality.lifestylePointCost}
+                          </div>
                         </div>
-                        <button
+                        <ArwesButton
+                          palette="error"
                           onClick={() => {
                             const newQualityList =
                               lifestyle.lifestyleQualityList.filter(
-                                (sourceQuality) => {
-                                  return sourceQuality.name !== quality.name;
+                                (_sourceQuality, i) => {
+                                  return i !== qIndex; // Remove by index to handle duplicates correctly if allowed
                                 }
                               );
-                            const newLifestyleSelections = lifestyleSelections;
+                            const newLifestyleSelections = [
+                              ...lifestyleSelections,
+                            ];
                             newLifestyleSelections[index] = {
                               lifestyle: lifestyle.lifestyle,
                               lifestyleQualityList: newQualityList,
@@ -143,7 +175,7 @@ export const LifestyleSelect = function ({
                           }}
                         >
                           Remove
-                        </button>
+                        </ArwesButton>
                       </li>
                     );
                   })}

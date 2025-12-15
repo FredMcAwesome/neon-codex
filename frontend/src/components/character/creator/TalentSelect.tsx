@@ -8,7 +8,7 @@ import {
 } from "@neon-codex/common/build/enums.js";
 import { Fragment, useEffect, type ReactElement } from "react";
 import { trpc } from "../../../utils/trpc.js";
-import Dropdown from "react-dropdown";
+import { ArwesSelect } from "../../common/ArwesSelect.js";
 import {
   type CustomSpiritsType,
   type DepthTalentInfoType,
@@ -258,16 +258,14 @@ const TraditionSelect = function (props: ITraditionSelectProps) {
   }
 
   return (
-    <Fragment>
-      <div>
-        Tradition:
-        {/* TODO: if all or custom enable some selectors */}
-        <Dropdown
-          options={traditionList.data.map((tradition) => {
-            return tradition.name;
-          })}
+    <div className="talent-section">
+      <div className="talent-section-header">Tradition</div>
+      <div className="talent-item">
+        <label>Select Tradition</label>
+        <ArwesSelect
           value={props.talentInfo.selectedTradition.name}
-          onChange={(arg) => {
+          onChange={(event) => {
+            const arg = { value: event.target.value };
             const newTraditionLoaded = traditionList.data.find((tradition) => {
               return tradition.name === arg.value;
             });
@@ -294,10 +292,19 @@ const TraditionSelect = function (props: ITraditionSelectProps) {
               },
             });
           }}
-        />
-        {spiritSelect}
+        >
+          <option value="" disabled>
+            Select Tradition
+          </option>
+          {traditionList.data.map((tradition) => (
+            <option key={tradition.name} value={tradition.name}>
+              {tradition.name}
+            </option>
+          ))}
+        </ArwesSelect>
       </div>
-    </Fragment>
+      {spiritSelect}
+    </div>
   );
 };
 
@@ -340,58 +347,113 @@ const SpiritSelect = function (props: ISpiritSelectProps) {
   };
 
   return (
-    <Fragment>
-      <div>Combat</div>
-      <Dropdown
-        options={spirits.map((spirit) => spirit.name)}
-        value={customSpirits.selectedSpiritTypes.combat}
-        onChange={(arg) => {
-          const newSpirit = customSpirits;
-          newSpirit.selectedSpiritTypes.combat = arg.value;
-          setSpirit(newSpirit);
-        }}
-      />
-      <div>Detection</div>
-      <Dropdown
-        options={spirits.map((spirit) => spirit.name)}
-        value={customSpirits.selectedSpiritTypes.detection}
-        onChange={(arg) => {
-          const newSpirit = customSpirits;
-          newSpirit.selectedSpiritTypes.detection = arg.value;
-          setSpirit(newSpirit);
-        }}
-      />
-      <div>Health</div>
-      <Dropdown
-        options={spirits.map((spirit) => spirit.name)}
-        value={customSpirits.selectedSpiritTypes.health}
-        onChange={(arg) => {
-          const newSpirit = customSpirits;
-          newSpirit.selectedSpiritTypes.health = arg.value;
-          setSpirit(newSpirit);
-        }}
-      />
-      <div>Illusion</div>
-      <Dropdown
-        options={spirits.map((spirit) => spirit.name)}
-        value={customSpirits.selectedSpiritTypes.illusion}
-        onChange={(arg) => {
-          const newSpirit = customSpirits;
-          newSpirit.selectedSpiritTypes.illusion = arg.value;
-          setSpirit(newSpirit);
-        }}
-      />
-      <div>Manipulation</div>
-      <Dropdown
-        options={spirits.map((spirit) => spirit.name)}
-        value={customSpirits.selectedSpiritTypes.manipulation}
-        onChange={(arg) => {
-          const newSpirit = customSpirits;
-          newSpirit.selectedSpiritTypes.manipulation = arg.value;
-          setSpirit(newSpirit);
-        }}
-      />
-    </Fragment>
+    <div className="talent-grid" style={{ marginTop: "15px" }}>
+      <div className="talent-item">
+        <label>Combat</label>
+        <ArwesSelect
+          value={customSpirits.selectedSpiritTypes.combat}
+          onChange={(event) => {
+            const arg = { value: event.target.value };
+            const newSpirit = customSpirits;
+            newSpirit.selectedSpiritTypes.combat = arg.value;
+            setSpirit(newSpirit);
+          }}
+        >
+          <option value="" disabled>
+            Select Spirit
+          </option>
+          {spirits.map((spirit) => (
+            <option key={spirit.name} value={spirit.name}>
+              {spirit.name}
+            </option>
+          ))}
+        </ArwesSelect>
+      </div>
+      <div className="talent-item">
+        <label>Detection</label>
+        <ArwesSelect
+          value={customSpirits.selectedSpiritTypes.detection}
+          onChange={(event) => {
+            const arg = { value: event.target.value };
+            const newSpirit = customSpirits;
+            newSpirit.selectedSpiritTypes.detection = arg.value;
+            setSpirit(newSpirit);
+          }}
+        >
+          <option value="" disabled>
+            Select Spirit
+          </option>
+          {spirits.map((spirit) => (
+            <option key={spirit.name} value={spirit.name}>
+              {spirit.name}
+            </option>
+          ))}
+        </ArwesSelect>
+      </div>
+      <div className="talent-item">
+        <label>Health</label>
+        <ArwesSelect
+          value={customSpirits.selectedSpiritTypes.health}
+          onChange={(event) => {
+            const arg = { value: event.target.value };
+            const newSpirit = customSpirits;
+            newSpirit.selectedSpiritTypes.health = arg.value;
+            setSpirit(newSpirit);
+          }}
+        >
+          <option value="" disabled>
+            Select Spirit
+          </option>
+          {spirits.map((spirit) => (
+            <option key={spirit.name} value={spirit.name}>
+              {spirit.name}
+            </option>
+          ))}
+        </ArwesSelect>
+      </div>
+      <div className="talent-item">
+        <label>Illusion</label>
+        <ArwesSelect
+          value={customSpirits.selectedSpiritTypes.illusion}
+          onChange={(event) => {
+            const arg = { value: event.target.value };
+            const newSpirit = customSpirits;
+            newSpirit.selectedSpiritTypes.illusion = arg.value;
+            setSpirit(newSpirit);
+          }}
+        >
+          <option value="" disabled>
+            Select Spirit
+          </option>
+          {spirits.map((spirit) => (
+            <option key={spirit.name} value={spirit.name}>
+              {spirit.name}
+            </option>
+          ))}
+        </ArwesSelect>
+      </div>
+      <div className="talent-item">
+        <label>Manipulation</label>
+        <ArwesSelect
+          value={customSpirits.selectedSpiritTypes.manipulation}
+          onChange={(event) => {
+            const arg = { value: event.target.value };
+            const newSpirit = customSpirits;
+            newSpirit.selectedSpiritTypes.manipulation = arg.value;
+            setSpirit(newSpirit);
+          }}
+        >
+          <option value="" disabled>
+            Select Spirit
+          </option>
+          {spirits.map((spirit) => (
+            <option key={spirit.name} value={spirit.name}>
+              {spirit.name}
+            </option>
+          ))}
+        </ArwesSelect>
+      </div>
+    </div>
   );
 };
 
@@ -433,76 +495,99 @@ const MentorSpiritSelect = function (props: IMentorSpiritProps) {
           ? selectedMentorSpirit.choices[i].name
           : "Select a bonus";
       choiceSelections.push(
-        <Dropdown
-          options={selectedSourceMentorSpirit.choices
-            .filter((element) => {
-              return element.set === i + 1;
-            })
-            .map((element) => element.name)}
-          value={displayValue}
-          onChange={(arg) => {
-            if (selectedSourceMentorSpirit === undefined) {
-              // TODO: better way to handle?
-              return;
-            }
-            const newChoice = selectedSourceMentorSpirit.choices.find(
-              (element) => element.name === arg.value
-            );
-            if (newChoice === undefined) {
-              throw new Error(`New Choice ${arg.value} doesn't exist`);
-            }
-            if (selectedMentorSpirit.choices[i] === undefined) {
-              selectedMentorSpirit.choices.push(newChoice);
-            } else {
-              selectedMentorSpirit.choices[i] = newChoice;
-            }
+        <div key={i} className="talent-item" style={{ marginTop: "10px" }}>
+          <label>Choice {i + 1}</label>
+          <ArwesSelect
+            value={displayValue}
+            onChange={(event) => {
+              const arg = { value: event.target.value };
+              if (selectedSourceMentorSpirit === undefined) {
+                // TODO: better way to handle?
+                return;
+              }
+              const newChoice = selectedSourceMentorSpirit.choices.find(
+                (element) => element.name === arg.value
+              );
+              if (newChoice === undefined) {
+                throw new Error(`New Choice ${arg.value} doesn't exist`);
+              }
+              if (selectedMentorSpirit.choices[i] === undefined) {
+                selectedMentorSpirit.choices.push(newChoice);
+              } else {
+                selectedMentorSpirit.choices[i] = newChoice;
+              }
 
-            props.setTalentInfo({
-              ...props.talentInfo,
-              selectedMentor: selectedMentorSpirit,
-            });
-          }}
-        />
+              props.setTalentInfo({
+                ...props.talentInfo,
+                selectedMentor: selectedMentorSpirit,
+              });
+            }}
+          >
+            <option value="Select a bonus" disabled>
+              Select a bonus
+            </option>
+            {selectedSourceMentorSpirit.choices
+              .filter((element) => {
+                return element.set === i + 1;
+              })
+              .map((element) => (
+                <option key={element.name} value={element.name}>
+                  {element.name}
+                </option>
+              ))}
+          </ArwesSelect>
+        </div>
       );
     }
   }
 
   return (
-    <Fragment>
-      <div>Mentor Spirit:</div>
-      <Dropdown
-        options={mentorList.data
-          .filter(
-            (element) => element.category === mentorCategoryEnum.MentorSpirit
-          )
-          .map((mentor) => {
-            return mentor.name;
-          })}
-        value={selectedMentorSpirit?.name || "Select Mentor"}
-        onChange={(arg) => {
-          const mentorSpirit = mentorList.data
+    <div className="talent-section">
+      <div className="talent-section-header">Mentor Spirit</div>
+      <div className="talent-item">
+        <label>Select Mentor Spirit</label>
+        <ArwesSelect
+          value={selectedMentorSpirit?.name || "Select Mentor"}
+          onChange={(event) => {
+            const arg = { value: event.target.value };
+            const mentorSpirit = mentorList.data
+              .filter(
+                (element) =>
+                  element.category === mentorCategoryEnum.MentorSpirit
+              )
+              .find((element) => element.name === arg.value);
+            if (mentorSpirit === undefined) {
+              throw new Error(`Mentor Spirit ${arg.value} doesn't exist`);
+            }
+            const newMentorSpirit = {
+              ...mentorSpirit,
+              choices: [],
+            };
+            if (selectedMentorSpirit !== undefined) {
+              console.log(`TODO: remove ${selectedMentorSpirit?.name} bonus`);
+            }
+            props.setTalentInfo({
+              ...props.talentInfo,
+              selectedMentor: newMentorSpirit,
+            });
+          }}
+        >
+          <option value="Select Mentor" disabled>
+            Select Mentor
+          </option>
+          {mentorList.data
             .filter(
               (element) => element.category === mentorCategoryEnum.MentorSpirit
             )
-            .find((element) => element.name === arg.value);
-          if (mentorSpirit === undefined) {
-            throw new Error(`Mentor Spirit ${arg.value} doesn't exist`);
-          }
-          const newMentorSpirit = {
-            ...mentorSpirit,
-            choices: [],
-          };
-          if (selectedMentorSpirit !== undefined) {
-            console.log(`TODO: remove ${selectedMentorSpirit?.name} bonus`);
-          }
-          props.setTalentInfo({
-            ...props.talentInfo,
-            selectedMentor: newMentorSpirit,
-          });
-        }}
-      />
+            .map((mentor) => (
+              <option key={mentor.name} value={mentor.name}>
+                {mentor.name}
+              </option>
+            ))}
+        </ArwesSelect>
+      </div>
       {choiceSelections}
-    </Fragment>
+    </div>
   );
 };
 
@@ -571,126 +656,177 @@ const FormulaSelect = function (props: IFormulaProps) {
   const alchemicalPreparationDropdowns: Array<ReactElement> = [];
   selectedSpellList.forEach((selectedSpell, index) => {
     spellDropdowns.push(
-      <Dropdown
-        options={spellList.data
-          .filter((spell) => {
-            return spell.category !== spellCategoryEnum.Ritual;
-          })
-          .map((spell) => {
-            return spell.name;
-          })}
-        value={selectedSpell}
-        onChange={(arg) => {
-          selectedSpellList[index] = arg.value;
-          setFormulae(selectedSpellList, magicalFormulaeCategoryEnum.Spell);
-        }}
-      />
+      <div key={index} style={{ marginTop: "5px" }}>
+        <ArwesSelect
+          value={selectedSpell}
+          onChange={(event) => {
+            const arg = { value: event.target.value };
+            selectedSpellList[index] = arg.value;
+            setFormulae(selectedSpellList, magicalFormulaeCategoryEnum.Spell);
+          }}
+        >
+          {spellList.data
+            .filter((spell) => {
+              return spell.category !== spellCategoryEnum.Ritual;
+            })
+            .map((spell) => (
+              <option key={spell.name} value={spell.name}>
+                {spell.name}
+              </option>
+            ))}
+        </ArwesSelect>
+      </div>
     );
   });
   selectedRitualList.forEach((selectedRitual, index) => {
     ritualDropdowns.push(
-      <Dropdown
-        options={spellList.data
-          .filter((spell) => {
-            return spell.category === spellCategoryEnum.Ritual;
-          })
-          .map((spell) => {
-            return spell.name;
-          })}
-        value={selectedRitual}
-        onChange={(arg) => {
-          selectedRitualList[index] = arg.value;
-          setFormulae(selectedRitualList, magicalFormulaeCategoryEnum.Ritual);
-        }}
-      />
+      <div key={index} style={{ marginTop: "5px" }}>
+        <ArwesSelect
+          value={selectedRitual}
+          onChange={(event) => {
+            const arg = { value: event.target.value };
+            selectedRitualList[index] = arg.value;
+            setFormulae(selectedRitualList, magicalFormulaeCategoryEnum.Ritual);
+          }}
+        >
+          {spellList.data
+            .filter((spell) => {
+              return spell.category === spellCategoryEnum.Ritual;
+            })
+            .map((spell) => (
+              <option key={spell.name} value={spell.name}>
+                {spell.name}
+              </option>
+            ))}
+        </ArwesSelect>
+      </div>
     );
   });
   selectedAlchemicalPreparationList.forEach(
     (selectedAlchemicalPreparation, index) => {
       alchemicalPreparationDropdowns.push(
-        <Dropdown
-          options={spellList.data
-            .filter((spell) => {
-              return spell.category !== spellCategoryEnum.Ritual;
-            })
-            .map((spell) => {
-              return spell.name;
-            })}
-          value={selectedAlchemicalPreparation}
-          onChange={(arg) => {
-            selectedAlchemicalPreparationList[index] = arg.value;
-            setFormulae(
-              selectedAlchemicalPreparationList,
-              magicalFormulaeCategoryEnum.AlchemicalPreparation
-            );
-          }}
-        />
+        <div key={index} style={{ marginTop: "5px" }}>
+          <ArwesSelect
+            value={selectedAlchemicalPreparation}
+            onChange={(event) => {
+              const arg = { value: event.target.value };
+              selectedAlchemicalPreparationList[index] = arg.value;
+              setFormulae(
+                selectedAlchemicalPreparationList,
+                magicalFormulaeCategoryEnum.AlchemicalPreparation
+              );
+            }}
+          >
+            {spellList.data
+              .filter((spell) => {
+                return spell.category !== spellCategoryEnum.Ritual;
+              })
+              .map((spell) => (
+                <option key={spell.name} value={spell.name}>
+                  {spell.name}
+                </option>
+              ))}
+          </ArwesSelect>
+        </div>
       );
     }
   );
 
   return (
-    <Fragment>
-      <div>
+    <div className="talent-section">
+      <div className="talent-section-header">
         Selection Count: {props.formulaCount}
-        (each category can separately select this number of items)
+        <span style={{ fontSize: "0.8em", marginLeft: "10px", opacity: 0.8 }}>
+          (each category can separately select this number of items)
+        </span>
       </div>
-      <div>Spells:</div>
-      <Dropdown
-        options={spellList.data
-          .filter((spell) => {
-            return spell.category !== spellCategoryEnum.Ritual;
-          })
-          .map((spell) => {
-            return spell.name;
-          })}
-        value={""}
-        onChange={(arg) => {
-          selectedSpellList.push(arg.value);
-          setFormulae(selectedSpellList, magicalFormulaeCategoryEnum.Spell);
-        }}
-      />
-      {spellDropdowns}
-      <div>
-        Rituals:
-        <Dropdown
-          options={spellList.data
-            .filter((spell) => {
-              return spell.category === spellCategoryEnum.Ritual;
-            })
-            .map((spell) => {
-              return spell.name;
-            })}
-          value={""}
-          onChange={(arg) => {
-            selectedRitualList.push(arg.value);
-            setFormulae(selectedRitualList, magicalFormulaeCategoryEnum.Ritual);
-          }}
-        />
-        {ritualDropdowns}
+
+      <div className="talent-grid">
+        <div className="talent-item">
+          <label>Spells</label>
+          <ArwesSelect
+            value={""}
+            onChange={(event) => {
+              const arg = { value: event.target.value };
+              selectedSpellList.push(arg.value);
+              setFormulae(selectedSpellList, magicalFormulaeCategoryEnum.Spell);
+            }}
+          >
+            <option value="" disabled>
+              Add Spell
+            </option>
+            {spellList.data
+              .filter((spell) => {
+                return spell.category !== spellCategoryEnum.Ritual;
+              })
+              .map((spell) => (
+                <option key={spell.name} value={spell.name}>
+                  {spell.name}
+                </option>
+              ))}
+          </ArwesSelect>
+          {spellDropdowns}
+        </div>
+
+        <div className="talent-item">
+          <label>Rituals</label>
+          <ArwesSelect
+            value={""}
+            onChange={(event) => {
+              const arg = { value: event.target.value };
+              selectedRitualList.push(arg.value);
+              setFormulae(
+                selectedRitualList,
+                magicalFormulaeCategoryEnum.Ritual
+              );
+            }}
+          >
+            <option value="" disabled>
+              Add Ritual
+            </option>
+            {spellList.data
+              .filter((spell) => {
+                return spell.category === spellCategoryEnum.Ritual;
+              })
+              .map((spell) => (
+                <option key={spell.name} value={spell.name}>
+                  {spell.name}
+                </option>
+              ))}
+          </ArwesSelect>
+          {ritualDropdowns}
+        </div>
+
+        <div className="talent-item">
+          <label>Alchemical formulas</label>
+          <ArwesSelect
+            value={""}
+            onChange={(event) => {
+              const arg = { value: event.target.value };
+              selectedAlchemicalPreparationList.push(arg.value);
+              setFormulae(
+                selectedAlchemicalPreparationList,
+                magicalFormulaeCategoryEnum.AlchemicalPreparation
+              );
+            }}
+          >
+            <option value="" disabled>
+              Add Alchemical Formula
+            </option>
+            {spellList.data
+              .filter((spell) => {
+                return spell.category !== spellCategoryEnum.Ritual;
+              })
+              .map((spell) => (
+                <option key={spell.name} value={spell.name}>
+                  {spell.name}
+                </option>
+              ))}
+          </ArwesSelect>
+          {alchemicalPreparationDropdowns}
+        </div>
       </div>
-      <div>
-        Alchemical formulas:
-        <Dropdown
-          options={spellList.data
-            .filter((spell) => {
-              return spell.category !== spellCategoryEnum.Ritual;
-            })
-            .map((spell) => {
-              return spell.name;
-            })}
-          value={""}
-          onChange={(arg) => {
-            selectedAlchemicalPreparationList.push(arg.value);
-            setFormulae(
-              selectedAlchemicalPreparationList,
-              magicalFormulaeCategoryEnum.AlchemicalPreparation
-            );
-          }}
-        />
-        {alchemicalPreparationDropdowns}
-      </div>
-    </Fragment>
+    </div>
   );
 };
 
@@ -715,42 +851,66 @@ const ComplexFormSelect = function (props: IComplexFormProps) {
   const complexFormDropdowns: Array<ReactElement> = [];
   selectedComplexFormList.forEach((selectedComplexForm, index) => {
     complexFormDropdowns.push(
-      <Dropdown
-        options={complexFormList.data.map((complexForm) => {
-          return complexForm.name;
-        })}
-        value={selectedComplexForm}
-        onChange={(arg) => {
-          selectedComplexFormList[index] = arg.value;
-          props.setTalentInfo({
-            ...props.talentInfo,
-            complexForms: selectedComplexFormList,
-          });
-        }}
-      />
+      <div key={index} style={{ marginTop: "5px" }}>
+        <ArwesSelect
+          value={selectedComplexForm}
+          onChange={(event) => {
+            const arg = { value: event.target.value };
+            selectedComplexFormList[index] = arg.value;
+            props.setTalentInfo({
+              ...props.talentInfo,
+              complexForms: selectedComplexFormList,
+            });
+          }}
+        >
+          {complexFormList.data.map((complexForm) => (
+            <option key={complexForm.name} value={complexForm.name}>
+              {complexForm.name}
+            </option>
+          ))}
+        </ArwesSelect>
+      </div>
     );
   });
 
   return (
-    <Fragment>
-      <div>Selection Count: {props.complexFormCount}</div>
-      <div>
-        Complex Forms:
-        <Dropdown
-          options={complexFormList.data.map((complexForm) => {
-            return complexForm.name;
-          })}
-          onChange={(arg) => {
+    <div className="talent-section">
+      <div className="talent-section-header">
+        Complex Forms (Count: {props.complexFormCount})
+      </div>
+      <div className="talent-item">
+        <label>Add Complex Form</label>
+        <ArwesSelect
+          onChange={(event) => {
+            const arg = { value: event.target.value };
             selectedComplexFormList.push(arg.value);
             props.setTalentInfo({
               ...props.talentInfo,
               complexForms: selectedComplexFormList,
             });
           }}
-        />
-        {complexFormDropdowns}
+        >
+          <option value="" disabled selected>
+            Select Complex Form
+          </option>
+          {complexFormList.data.map((complexForm) => (
+            <option key={complexForm.name} value={complexForm.name}>
+              {complexForm.name}
+            </option>
+          ))}
+        </ArwesSelect>
+        <div
+          style={{
+            marginTop: "10px",
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px",
+          }}
+        >
+          {complexFormDropdowns}
+        </div>
       </div>
-    </Fragment>
+    </div>
   );
 };
 
@@ -777,31 +937,43 @@ const ParagonSelect = function (props: IParagonProps) {
   const selectedParagon = props.talentInfo.selectedMentor;
 
   return (
-    <Fragment>
-      <div>Paragon:</div>
-      <Dropdown
-        options={mentorList.data
-          .filter((element) => element.category === mentorCategoryEnum.Paragon)
-          .map((mentor) => {
-            return mentor.name;
-          })}
-        value={selectedParagon?.name || "Select Mentor"}
-        onChange={(arg) => {
-          const paragon = mentorList.data
+    <div className="talent-section">
+      <div className="talent-section-header">Paragon</div>
+      <div className="talent-item">
+        <label>Select Paragon</label>
+        <ArwesSelect
+          value={selectedParagon?.name || "Select Mentor"}
+          onChange={(event) => {
+            const arg = { value: event.target.value };
+            const paragon = mentorList.data
+              .filter(
+                (element) => element.category === mentorCategoryEnum.Paragon
+              )
+              .find((element) => element.name === arg.value);
+            if (paragon === undefined) {
+              throw new Error(`Paragon ${arg.value} doesn't exist`);
+            }
+            props.setTalentInfo({
+              ...props.talentInfo,
+              selectedMentor: paragon,
+            });
+          }}
+        >
+          <option value="Select Mentor" disabled>
+            Select Paragon
+          </option>
+          {mentorList.data
             .filter(
               (element) => element.category === mentorCategoryEnum.Paragon
             )
-            .find((element) => element.name === arg.value);
-          if (paragon === undefined) {
-            throw new Error(`Paragon ${arg.value} doesn't exist`);
-          }
-          props.setTalentInfo({
-            ...props.talentInfo,
-            selectedMentor: paragon,
-          });
-        }}
-      />
-    </Fragment>
+            .map((mentor) => (
+              <option key={mentor.name} value={mentor.name}>
+                {mentor.name}
+              </option>
+            ))}
+        </ArwesSelect>
+      </div>
+    </div>
   );
 };
 
@@ -839,42 +1011,60 @@ const AdeptPowerSelect = function (props: IAdeptPowerProps) {
   const adeptPowerDropdowns: Array<ReactElement> = [];
   selectedAdeptPowerList.forEach((selectedAdeptPower, index) => {
     adeptPowerDropdowns.push(
-      <Dropdown
-        options={adeptPowerList.data.map((adeptPower) => {
-          return adeptPower.name;
-        })}
-        value={selectedAdeptPower}
-        onChange={(arg) => {
-          selectedAdeptPowerList[index] = arg.value;
-          props.setTalentInfo({
-            ...props.talentInfo,
-            selectedAdeptPowers: {
-              selectAdeptPowers: true as const,
-              adeptPowers: selectedAdeptPowerList,
-            },
-          });
-        }}
-      />
+      <div key={index} style={{ marginTop: "5px" }}>
+        <ArwesSelect
+          value={selectedAdeptPower}
+          onChange={(event) => {
+            const arg = { value: event.target.value };
+            selectedAdeptPowerList[index] = arg.value;
+            props.setTalentInfo({
+              ...props.talentInfo,
+              selectedAdeptPowers: {
+                selectAdeptPowers: true as const,
+                adeptPowers: selectedAdeptPowerList,
+              },
+            });
+          }}
+        >
+          {adeptPowerList.data.map((adeptPower) => (
+            <option key={adeptPower.name} value={adeptPower.name}>
+              {adeptPower.name}
+            </option>
+          ))}
+        </ArwesSelect>
+      </div>
     );
   });
   return (
-    <Fragment>
-      {props.isMysticAdept ? (
-        <div>
-          Power Points
-          <Dropdown options={powerPoints} />
-        </div>
-      ) : (
-        <div>Power Points: {props.magicRating}</div>
-      )}
+    <div className="talent-section">
+      <div className="talent-section-header">
+        {props.isMysticAdept ? (
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            <span>Power Points</span>
+            <div style={{ width: "100px" }}>
+              <ArwesSelect
+                onChange={() => {
+                  // Handle power points change if needed, though logic seems missing in original
+                }}
+              >
+                {powerPoints.map((point) => (
+                  <option key={point} value={point}>
+                    {point}
+                  </option>
+                ))}
+              </ArwesSelect>
+            </div>
+          </div>
+        ) : (
+          <div>Power Points: {props.magicRating}</div>
+        )}
+      </div>
 
-      <div>
-        Adept Powers:
-        <Dropdown
-          options={adeptPowerList.data.map((adeptPower) => {
-            return adeptPower.name;
-          })}
-          onChange={(arg) => {
+      <div className="talent-item">
+        <label>Adept Powers</label>
+        <ArwesSelect
+          onChange={(event) => {
+            const arg = { value: event.target.value };
             selectedAdeptPowerList.push(arg.value);
             props.setTalentInfo({
               ...props.talentInfo,
@@ -884,10 +1074,28 @@ const AdeptPowerSelect = function (props: IAdeptPowerProps) {
               },
             });
           }}
-        />
-        {adeptPowerDropdowns}
+        >
+          <option value="" disabled selected>
+            Add Adept Power
+          </option>
+          {adeptPowerList.data.map((adeptPower) => (
+            <option key={adeptPower.name} value={adeptPower.name}>
+              {adeptPower.name}
+            </option>
+          ))}
+        </ArwesSelect>
+        <div
+          style={{
+            marginTop: "10px",
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px",
+          }}
+        >
+          {adeptPowerDropdowns}
+        </div>
       </div>
-    </Fragment>
+    </div>
   );
 };
 
@@ -912,41 +1120,65 @@ const ProgramSelect = function (props: IProgramProps) {
   const programDropdowns: Array<ReactElement> = [];
   selectedProgramList.forEach((selectedProgram, index) => {
     programDropdowns.push(
-      <Dropdown
-        options={programList.data.map((program) => {
-          return program.name;
-        })}
-        value={selectedProgram.name}
-        onChange={(arg) => {
-          selectedProgramList[index] = { name: arg.value };
-          props.setTalentInfo({
-            ...props.talentInfo,
-            programs: selectedProgramList,
-          });
-        }}
-      />
+      <div key={index} style={{ marginTop: "5px" }}>
+        <ArwesSelect
+          value={selectedProgram.name}
+          onChange={(event) => {
+            const arg = { value: event.target.value };
+            selectedProgramList[index] = { name: arg.value };
+            props.setTalentInfo({
+              ...props.talentInfo,
+              programs: selectedProgramList,
+            });
+          }}
+        >
+          {programList.data.map((program) => (
+            <option key={program.name} value={program.name}>
+              {program.name}
+            </option>
+          ))}
+        </ArwesSelect>
+      </div>
     );
   });
   return (
-    <Fragment>
-      <div>Programs: {props.essencePoints + props.depth}</div>
+    <div className="talent-section">
+      <div className="talent-section-header">
+        Programs (Max: {props.essencePoints + props.depth})
+      </div>
 
-      <div>
-        Programs:
-        <Dropdown
-          options={programList.data.map((program) => {
-            return program.name;
-          })}
-          onChange={(arg) => {
+      <div className="talent-item">
+        <label>Add Program</label>
+        <ArwesSelect
+          onChange={(event) => {
+            const arg = { value: event.target.value };
             selectedProgramList.push({ name: arg.value });
             props.setTalentInfo({
               ...props.talentInfo,
               programs: selectedProgramList,
             });
           }}
-        />
-        {programDropdowns}
+        >
+          <option value="" disabled selected>
+            Select Program
+          </option>
+          {programList.data.map((program) => (
+            <option key={program.name} value={program.name}>
+              {program.name}
+            </option>
+          ))}
+        </ArwesSelect>
+        <div
+          style={{
+            marginTop: "10px",
+            display: "flex",
+            flexDirection: "column",
+            gap: "10px",
+          }}
+        >
+          {programDropdowns}
+        </div>
       </div>
-    </Fragment>
+    </div>
   );
 };

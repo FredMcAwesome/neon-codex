@@ -1,6 +1,6 @@
-import { Fragment } from "react";
 import { trpc } from "../../../utils/trpc.js";
-import Dropdown from "react-dropdown";
+import { ArwesSelect } from "../../common/ArwesSelect.js";
+import { ArwesButton } from "../../common/ArwesButton.js";
 import type { MartialArtSelectedType } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
 
 interface IProps {
@@ -35,11 +35,53 @@ export const MartialArtSelect = function ({
       : martialArtSelected.martialArt.techniqueList;
 
   return (
-    <Fragment>
+    <div className="martial-arts-container">
       <h1>Martial Arts Selection</h1>
-      <div>
+      <div className="martial-art-header">
+        <div style={{ flex: 1 }}>
+          <ArwesSelect
+            value={
+              martialArtSelected?.martialArt.name != null
+                ? martialArtSelected.martialArt.name
+                : ""
+            }
+            onChange={(event) => {
+              const arg = { value: event.target.value };
+              const sourceMartialArt = martialArtList.data.find(
+                (martialArt) => {
+                  return martialArt.name === arg.value;
+                }
+              );
+              if (sourceMartialArt === undefined) {
+                throw new Error(`Martial art: ${arg.value} not found`);
+              }
+
+              if (martialArtSelected !== undefined) {
+                const karmaRefund = martialArtSelected.techniqueList.length * 5;
+                setKarmaPoints(karmaRefund + karmaPoints);
+              } else {
+                setKarmaPoints(karmaPoints - 7);
+              }
+
+              setMartialArtSelected({
+                martialArt: sourceMartialArt,
+                techniqueList: [],
+              });
+            }}
+          >
+            <option value="" disabled>
+              Select Martial Art
+            </option>
+            {martialArtList.data.map((martialArt) => (
+              <option key={martialArt.name} value={martialArt.name}>
+                {martialArt.name}
+              </option>
+            ))}
+          </ArwesSelect>
+        </div>
         {martialArtSelected !== undefined && (
-          <button
+          <ArwesButton
+            palette="error"
             onClick={() => {
               if (martialArtSelected === undefined) {
                 throw new Error("Martial Arts is undefined");
@@ -52,49 +94,21 @@ export const MartialArtSelect = function ({
             }}
           >
             Remove
-          </button>
+          </ArwesButton>
         )}
-        <Dropdown
-          options={martialArtList.data.map((martialArt) => {
-            return martialArt.name;
-          })}
-          value={martialArtSelected?.martialArt.name || ""}
-          onChange={(arg) => {
-            const sourceMartialArt = martialArtList.data.find((martialArt) => {
-              return martialArt.name === arg.value;
-            });
-            if (sourceMartialArt === undefined) {
-              throw new Error(`Martial art: ${arg.value} not found`);
-            }
+      </div>
 
-            if (martialArtSelected !== undefined) {
-              const karmaRefund = martialArtSelected.techniqueList.length * 5;
-              setKarmaPoints(karmaRefund + karmaPoints);
-            } else {
-              setKarmaPoints(karmaPoints - 7);
-            }
-
-            setMartialArtSelected({
-              martialArt: sourceMartialArt,
-              techniqueList: [],
-            });
-          }}
-        />
-        {martialArtSelected !== undefined && (
-          <div>
-            Techniques:
-            {/* Maximum of 5 techniques at character creation */}
-            {martialArtSelected.techniqueList.length < 5 && (
-              <Dropdown
-                options={techniqueOptionList.filter((technique) => {
-                  return !martialArtSelected.techniqueList.find(
-                    (selectedTechnique) => {
-                      return selectedTechnique.name === technique;
-                    }
-                  );
-                })}
+      {martialArtSelected !== undefined && (
+        <div className="martial-art-techniques">
+          <h3>Techniques</h3>
+          {/* Maximum of 5 techniques at character creation */}
+          {martialArtSelected.techniqueList.length < 5 && (
+            <div className="technique-item">
+              <label>Add Technique:</label>
+              <ArwesSelect
                 value={""}
-                onChange={(arg) => {
+                onChange={(event) => {
+                  const arg = { value: event.target.value };
                   const sourceTechnique = techniqueList.data.find(
                     (technique) => {
                       return technique.name === arg.value;
@@ -120,31 +134,45 @@ export const MartialArtSelect = function ({
                     techniqueList: newTechniqueList,
                   });
                 }}
-              />
-            )}
-            {martialArtSelected.techniqueList.length > 0 && (
-              <div>
-                Selected Techniques: Count:{" "}
-                {martialArtSelected.techniqueList.length} (maximum 5)
-                {martialArtSelected.techniqueList.map((technique) => {
-                  return (
-                    <div key={technique.name}>
-                      <Dropdown
-                        options={techniqueOptionList.filter(
-                          (localTechnique) => {
-                            return (
-                              !martialArtSelected.techniqueList.find(
-                                (selectedTechnique) => {
-                                  return (
-                                    selectedTechnique.name === localTechnique
-                                  );
-                                }
-                              ) || technique.name === localTechnique
-                            );
-                          }
-                        )}
+              >
+                <option value="" disabled>
+                  Select Technique
+                </option>
+                {techniqueOptionList
+                  .filter((technique) => {
+                    return !martialArtSelected.techniqueList.find(
+                      (selectedTechnique) => {
+                        return selectedTechnique.name === technique;
+                      }
+                    );
+                  })
+                  .map((technique) => (
+                    <option key={technique} value={technique}>
+                      {technique}
+                    </option>
+                  ))}
+              </ArwesSelect>
+            </div>
+          )}
+
+          {martialArtSelected.techniqueList.length > 0 && (
+            <div>
+              <p>
+                Selected Techniques: {martialArtSelected.techniqueList.length}{" "}
+                (maximum 5)
+              </p>
+              {martialArtSelected.techniqueList.map((technique) => {
+                return (
+                  <div
+                    key={technique.name}
+                    className="technique-item"
+                    style={{ marginTop: "10px" }}
+                  >
+                    <div style={{ flex: 1 }}>
+                      <ArwesSelect
                         value={technique.name}
-                        onChange={(arg) => {
+                        onChange={(event) => {
+                          const arg = { value: event.target.value };
                           const sourceTechnique = techniqueList.data.find(
                             (sourceTechnique) => {
                               return sourceTechnique.name === arg.value;
@@ -170,34 +198,53 @@ export const MartialArtSelect = function ({
                             techniqueList: newTechniqueList,
                           });
                         }}
-                      />
-                      <button
-                        onClick={() => {
-                          if (martialArtSelected.techniqueList.length > 1) {
-                            setKarmaPoints(karmaPoints + 5);
-                          }
-                          const newTechniqueList =
-                            martialArtSelected.techniqueList.filter(
-                              (sourceTechnique) => {
-                                return sourceTechnique.name !== technique.name;
-                              }
-                            );
-                          setMartialArtSelected({
-                            martialArt: martialArtSelected.martialArt,
-                            techniqueList: newTechniqueList,
-                          });
-                        }}
                       >
-                        Remove
-                      </button>
+                        {techniqueOptionList
+                          .filter((localTechnique) => {
+                            return (
+                              !martialArtSelected.techniqueList.find(
+                                (selectedTechnique) => {
+                                  return (
+                                    selectedTechnique.name === localTechnique
+                                  );
+                                }
+                              ) || technique.name === localTechnique
+                            );
+                          })
+                          .map((tech) => (
+                            <option key={tech} value={tech}>
+                              {tech}
+                            </option>
+                          ))}
+                      </ArwesSelect>
                     </div>
-                  );
-                })}
-              </div>
-            )}
-          </div>
-        )}
-      </div>
-    </Fragment>
+                    <ArwesButton
+                      palette="error"
+                      onClick={() => {
+                        if (martialArtSelected.techniqueList.length > 1) {
+                          setKarmaPoints(karmaPoints + 5);
+                        }
+                        const newTechniqueList =
+                          martialArtSelected.techniqueList.filter(
+                            (sourceTechnique) => {
+                              return sourceTechnique.name !== technique.name;
+                            }
+                          );
+                        setMartialArtSelected({
+                          martialArt: martialArtSelected.martialArt,
+                          techniqueList: newTechniqueList,
+                        });
+                      }}
+                    >
+                      Remove
+                    </ArwesButton>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </div>
+      )}
+    </div>
   );
 };

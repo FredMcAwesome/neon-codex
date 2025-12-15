@@ -1,3 +1,32 @@
 body {
-  color: darkblue;
+  margin: 0;
+  font-family: var(--arwes-font-family-body);
+  background-color: #000909;
+  color: var(--arwes-palette-primary-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+select option {
+  background-color: #000909;
+  color: var(--arwes-palette-primary-main);
+}
+
+:root {
+  --arwes-palette-primary-main: #00f8f8;
+  --arwes-palette-primary-main-rgb: 0, 248, 248;
+  --arwes-palette-primary-dark-1: #00bbbb;
+  --arwes-palette-primary-dark-2: #007c7c;
+  --arwes-palette-primary-dark-3: #003e3e;
+  --arwes-palette-primary-light-1: #7efcf6;
+
+  --arwes-palette-secondary-main: #7efcf6;
+  --arwes-palette-secondary-main-rgb: 126, 252, 246;
+  --arwes-palette-secondary-dark-1: #5ecbc6;
+  --arwes-palette-secondary-dark-2: #3ea9a6;
+  --arwes-palette-secondary-dark-3: #1e8786;
+  --arwes-palette-secondary-light-1: #aefffa;
+
+  --arwes-palette-error-main: #ce3c3c;
+  --arwes-palette-success-main: #00ff00;
 }

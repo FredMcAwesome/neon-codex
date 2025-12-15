@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import Dropdown from "react-dropdown";
+import { ArwesSelect } from "../../common/ArwesSelect.js";
 import { CollapsibleDiv } from "../../../utils/CollapsibleDiv.js";
 import { skillCategoryEnum } from "@neon-codex/common/build/enums.js";
 import type {
@@ -152,34 +152,58 @@ const SkillSelect = function ({
   // TODO: fix
   // const groupPointsInvested = skill.skillGroupPoints;
   return (
-    <div>
+    <div className="skill-item">
       <label htmlFor={escapedName}>{escapedName}</label>
-      {/* <Dropdown
-        options={skillOptions.skillPointOptions}
-        value={pointsInvested === 0 ? "" : pointsInvested.toString()}
-        className={escapedName}
-        placeholder={""}
-        onChange={(arg) => {
-          if (arg.value === "") {
-            onChange(skill, 0, groupPointsInvested);
-          } else {
-            onChange(skill, parseInt(arg.value), groupPointsInvested);
-          }
-        }}
-      /> */}
-      <Dropdown
-        options={skillOptions.skillGroupPointOptions}
-        // value={groupPointsInvested === 0 ? "" : groupPointsInvested.toString()}
-        className={escapedName}
-        placeholder={""}
-        onChange={(arg) => {
-          if (arg.value === "") {
-            onChange(skill, pointsInvested, 0);
-          } else {
-            onChange(skill, pointsInvested, parseInt(arg.value));
-          }
-        }}
-      />
+      <div className="skill-controls">
+        <div className="skill-control-group">
+          <span>Points:</span>
+          <ArwesSelect
+            value={pointsInvested === 0 ? "" : pointsInvested.toString()}
+            className={escapedName}
+            onChange={(event) => {
+              const arg = { value: event.target.value };
+              if (arg.value === "") {
+                onChange(skill, 0, 0); // Assuming groupPointsInvested is 0 for now as it was commented out
+              } else {
+                onChange(skill, parseInt(arg.value), 0);
+              }
+            }}
+          >
+            <option value="" disabled>
+              0
+            </option>
+            {skillOptions.skillPointOptions.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </ArwesSelect>
+        </div>
+        <div className="skill-control-group">
+          <span>Group:</span>
+          <ArwesSelect
+            value={""} // groupPointsInvested is commented out/0
+            className={escapedName}
+            onChange={(event) => {
+              const arg = { value: event.target.value };
+              if (arg.value === "") {
+                onChange(skill, pointsInvested, 0);
+              } else {
+                onChange(skill, pointsInvested, parseInt(arg.value));
+              }
+            }}
+          >
+            <option value="" disabled>
+              0
+            </option>
+            {skillOptions.skillGroupPointOptions.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </ArwesSelect>
+        </div>
+      </div>
     </div>
   );
 };
@@ -263,7 +287,7 @@ const SkillList = function ({
   };
 
   return (
-    <Fragment>
+    <div className="skill-list-container">
       {skillSelections
         .filter((skill) => skill.category === skillCategory)
         .map((skill) => {
@@ -282,6 +306,6 @@ const SkillList = function ({
             />
           );
         })}
-    </Fragment>
+    </div>
   );
 };

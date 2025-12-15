@@ -5,8 +5,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { Fragment, useEffect, useState } from "react";
-import Dropdown from "react-dropdown";
-import "react-dropdown/style.css";
+import { ArwesSelect } from "../../common/ArwesSelect.js";
 import {
   PrioritiesEnum,
   type PriorityLevelsType,
@@ -120,36 +119,38 @@ const PrioritiesTable = function (props: PriorityTableProps) {
     getCoreRowModel: getCoreRowModel(),
   });
   return (
-    <table>
-      <thead>
-        {table.getHeaderGroups().map((headerGroup) => (
-          <tr key={headerGroup.id}>
-            {headerGroup.headers.map((header) => (
-              <th key={header.id}>
-                {header.isPlaceholder
-                  ? null
-                  : flexRender(
-                      header.column.columnDef.header,
-                      header.getContext()
-                    )}
-              </th>
-            ))}
-          </tr>
-        ))}
-      </thead>
-      {/* https://github.com/TanStack/table/issues/4580 */}
-      <tbody>
-        {table.getRowModel().rows.map((row) => (
-          <tr key={row.id}>
-            {row.getVisibleCells().map((cell) => (
-              <td key={cell.id}>
-                {flexRender(cell.column.columnDef.cell, cell.getContext())}
-              </td>
-            ))}
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <div className="priority-table-container">
+      <table id="priority_table">
+        <thead>
+          {table.getHeaderGroups().map((headerGroup) => (
+            <tr key={headerGroup.id}>
+              {headerGroup.headers.map((header) => (
+                <th key={header.id}>
+                  {header.isPlaceholder
+                    ? null
+                    : flexRender(
+                        header.column.columnDef.header,
+                        header.getContext()
+                      )}
+                </th>
+              ))}
+            </tr>
+          ))}
+        </thead>
+        {/* https://github.com/TanStack/table/issues/4580 */}
+        <tbody>
+          {table.getRowModel().rows.map((row) => (
+            <tr key={row.id}>
+              {row.getVisibleCells().map((cell) => (
+                <td key={cell.id}>
+                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 };
 
@@ -401,96 +402,117 @@ const PrioritySelectLoaded = function ({
         priorityTable={priorityTable}
         runnerLevel={priorityTableRunnerLevelEnum.StreetLevel}
       />
-      <div>
-        <div>
+      <div className="priority-selection-container">
+        <div className="priority-selection-row">
           <label htmlFor="heritage">Heritage:</label>
-          <Dropdown
-            options={PriorityLetterOptions}
+          <ArwesSelect
             value={priorityInfo.heritage}
-            onChange={(arg) => {
+            onChange={(e) => {
               changePriorities(
                 PrioritiesEnum.Heritage,
-                priorityLetterEnum[arg.value as keyof typeof priorityLetterEnum]
+                priorityLetterEnum[
+                  e.target.value as keyof typeof priorityLetterEnum
+                ]
               );
             }}
             className="heritagePriority"
-          />
-          <Dropdown
-            options={heritageOptions}
-            value={priorityHeritage.heritage}
-            onChange={(arg) => {
-              const heritages = convertererer(
-                priorityTable,
-                priorityInfo.heritage,
-                priorityCategoryEnum.Heritage
-              );
-              const baseHeritage = heritages.heritageList.find((heritage) => {
-                return heritage.name === arg.value;
-              });
-              if (baseHeritage === undefined) {
-                throw Error("baseHeritage is not defined");
-              }
-              const newHeritage = priorityHeritage;
-              newHeritage.heritage = baseHeritage.name;
-              newHeritage.specialAttributePoints =
-                baseHeritage.specialAttributePoints;
-              delete newHeritage.metavariant;
-              setPriorityHeritage(newHeritage);
-            }}
-            placeholder={"Select an option"}
-            className="heritageOptions"
-          />
-          {metavariantOptions.length > 0 && (
-            <Dropdown
-              options={metavariantOptions}
-              value={
-                typeof priorityHeritage.metavariant === "string"
-                  ? priorityHeritage.metavariant
-                  : ""
-              }
-              onChange={(arg) => {
+          >
+            {PriorityLetterOptions.map((opt) => (
+              <option key={opt} value={opt}>
+                {opt}
+              </option>
+            ))}
+          </ArwesSelect>
+          <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+            <ArwesSelect
+              value={priorityHeritage.heritage}
+              onChange={(e) => {
                 const heritages = convertererer(
                   priorityTable,
                   priorityInfo.heritage,
                   priorityCategoryEnum.Heritage
                 );
                 const baseHeritage = heritages.heritageList.find((heritage) => {
-                  return heritage.name === priorityHeritage.heritage;
+                  return heritage.name === e.target.value;
                 });
                 if (baseHeritage === undefined) {
                   throw Error("baseHeritage is not defined");
                 }
-                if (baseHeritage.metavariantList === undefined) {
-                  throw Error("baseHeritage metavariant list is not defined");
-                }
-                const metavariant = baseHeritage.metavariantList.find(
-                  (metavariant) => {
-                    return metavariant.name === arg.value;
-                  }
-                );
-                if (metavariant === undefined) {
-                  throw Error("metavariant is not defined");
-                }
                 const newHeritage = priorityHeritage;
-                newHeritage.metavariant = metavariant.name;
+                newHeritage.heritage = baseHeritage.name;
                 newHeritage.specialAttributePoints =
-                  metavariant.specialAttributePoints;
+                  baseHeritage.specialAttributePoints;
+                delete newHeritage.metavariant;
                 setPriorityHeritage(newHeritage);
               }}
-              placeholder={"Select an option"}
-              className="metavariantOptions"
-            />
-          )}
+              className="heritageOptions"
+            >
+              {heritageOptions.map((opt) => (
+                <option key={opt} value={opt}>
+                  {opt}
+                </option>
+              ))}
+            </ArwesSelect>
+            {metavariantOptions.length > 0 && (
+              <ArwesSelect
+                value={
+                  typeof priorityHeritage.metavariant === "string"
+                    ? priorityHeritage.metavariant
+                    : ""
+                }
+                onChange={(e) => {
+                  const heritages = convertererer(
+                    priorityTable,
+                    priorityInfo.heritage,
+                    priorityCategoryEnum.Heritage
+                  );
+                  const baseHeritage = heritages.heritageList.find(
+                    (heritage) => {
+                      return heritage.name === priorityHeritage.heritage;
+                    }
+                  );
+                  if (baseHeritage === undefined) {
+                    throw Error("baseHeritage is not defined");
+                  }
+                  if (baseHeritage.metavariantList === undefined) {
+                    throw Error("baseHeritage metavariant list is not defined");
+                  }
+                  const metavariant = baseHeritage.metavariantList.find(
+                    (metavariant) => {
+                      return metavariant.name === e.target.value;
+                    }
+                  );
+                  if (metavariant === undefined) {
+                    throw Error("metavariant is not defined");
+                  }
+                  const newHeritage = priorityHeritage;
+                  newHeritage.metavariant = metavariant.name;
+                  newHeritage.specialAttributePoints =
+                    metavariant.specialAttributePoints;
+                  setPriorityHeritage(newHeritage);
+                }}
+                className="metavariantOptions"
+              >
+                {metavariantOptions.map((opt) => (
+                  <option key={opt} value={opt}>
+                    {opt}
+                  </option>
+                ))}
+              </ArwesSelect>
+            )}
+          </div>
         </div>
-        <div>
+
+        <div className="priority-selection-row">
           <label htmlFor="attributes">Attributes:</label>
-          <Dropdown
-            options={PriorityLetterOptions}
+          <ArwesSelect
             value={priorityInfo.attributes}
-            onChange={(arg) => {
+            onChange={(e) => {
               changePriorities(
                 PrioritiesEnum.Attributes,
-                priorityLetterEnum[arg.value as keyof typeof priorityLetterEnum]
+                priorityLetterEnum[
+                  e.target.value as keyof typeof priorityLetterEnum
+                ]
               );
               const attributePoints = convertererer(
                 priorityTable,
@@ -500,34 +522,47 @@ const PrioritySelectLoaded = function ({
               setPriorityAttributes(attributePoints.attributes);
             }}
             className="attributePriority"
-          />
+          >
+            {PriorityLetterOptions.map((opt) => (
+              <option key={opt} value={opt}>
+                {opt}
+              </option>
+            ))}
+          </ArwesSelect>
+          <div></div> {/* Spacer for grid */}
         </div>
 
-        <div>
+        <div className="priority-selection-row">
           <label htmlFor="talent">Talent:</label>
-          <Dropdown
-            options={PriorityLetterOptions}
+          <ArwesSelect
             value={priorityInfo.talent}
-            onChange={(arg) => {
+            onChange={(e) => {
               changePriorities(
                 PrioritiesEnum.Talents,
-                priorityLetterEnum[arg.value as keyof typeof priorityLetterEnum]
+                priorityLetterEnum[
+                  e.target.value as keyof typeof priorityLetterEnum
+                ]
               );
             }}
             className="talentPriority"
-          />
+          >
+            {PriorityLetterOptions.map((opt) => (
+              <option key={opt} value={opt}>
+                {opt}
+              </option>
+            ))}
+          </ArwesSelect>
 
-          <Dropdown
-            options={talentOptions}
+          <ArwesSelect
             value={priorityTalent.name}
-            onChange={(arg) => {
+            onChange={(e) => {
               const talents = convertererer(
                 priorityTable,
                 priorityInfo.talent,
                 priorityCategoryEnum.Talent
               );
               const talent = talents.talentList.find((talent) => {
-                return talent.name === arg.value;
+                return talent.name === e.target.value;
               });
               if (talent === undefined) {
                 throw Error("talent is not defined");
@@ -561,17 +596,22 @@ const PrioritySelectLoaded = function ({
               }
               setSpecialAttributeInfo(specialAttribute);
             }}
-            placeholder={"Select an option"}
             className="talentOptions"
-          />
+          >
+            {talentOptions.map((opt) => (
+              <option key={opt} value={opt}>
+                {opt}
+              </option>
+            ))}
+          </ArwesSelect>
         </div>
-        <div>
+
+        <div className="priority-selection-row">
           <label htmlFor="skills">Skills:</label>
-          <Dropdown
-            options={PriorityLetterOptions}
+          <ArwesSelect
             value={priorityInfo.skills}
-            onChange={(arg) => {
-              const newPriority = arg.value as priorityLetterEnum;
+            onChange={(e) => {
+              const newPriority = e.target.value as priorityLetterEnum;
               changePriorities(
                 PrioritiesEnum.Skills,
                 priorityLetterEnum[newPriority]
@@ -584,17 +624,26 @@ const PrioritySelectLoaded = function ({
               setPrioritySkills(skills);
             }}
             className="skillPriority"
-          />
+          >
+            {PriorityLetterOptions.map((opt) => (
+              <option key={opt} value={opt}>
+                {opt}
+              </option>
+            ))}
+          </ArwesSelect>
+          <div></div> {/* Spacer for grid */}
         </div>
-        <div>
+
+        <div className="priority-selection-row">
           <label htmlFor="resources">Resources:</label>
-          <Dropdown
-            options={PriorityLetterOptions}
+          <ArwesSelect
             value={priorityInfo.resources}
-            onChange={(arg) => {
+            onChange={(e) => {
               changePriorities(
                 PrioritiesEnum.Resources,
-                priorityLetterEnum[arg.value as keyof typeof priorityLetterEnum]
+                priorityLetterEnum[
+                  e.target.value as keyof typeof priorityLetterEnum
+                ]
               );
               const resources = convertererer(
                 priorityTable,
@@ -604,7 +653,14 @@ const PrioritySelectLoaded = function ({
               setPriorityResources(resources.standard.resources);
             }}
             className="resourcePriority"
-          />
+          >
+            {PriorityLetterOptions.map((opt) => (
+              <option key={opt} value={opt}>
+                {opt}
+              </option>
+            ))}
+          </ArwesSelect>
+          <div></div> {/* Spacer for grid */}
         </div>
       </div>
     </Fragment>

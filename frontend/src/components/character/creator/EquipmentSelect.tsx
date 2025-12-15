@@ -2,7 +2,8 @@ import { CollapsibleDiv } from "../../../utils/CollapsibleDiv.js";
 import { CollapsibleEquipmentDiv } from "./EquipmentHelper.js";
 import { costCalculation } from "../../../utils/calculations.js";
 import { Pagination } from "../../shared/Pagination.js";
-import Dropdown from "react-dropdown";
+import { ArwesSelect } from "../../common/ArwesSelect.js";
+import { ArwesButton } from "../../common/ArwesButton.js";
 import type {
   CostWeaponType,
   CustomisedWeaponLoadedType,
@@ -638,7 +639,7 @@ const EquipmentSelectLoaded = function (props: ILoadedProps) {
         return (items as WeaponListSearchItemList).map((weapon, index) => (
           <div
             key={weapon.item.name + index}
-            style={{ padding: "8px", borderBottom: "1px solid #333" }}
+            style={{ padding: "2px", borderBottom: "1px solid #333" }}
           >
             <div
               style={{
@@ -654,13 +655,13 @@ const EquipmentSelectLoaded = function (props: ILoadedProps) {
                   {formatWeaponCost(weapon.item.cost)}
                 </div>
               </div>
-              <button
+              <ArwesButton
                 onClick={() => {
                   addWeapon(weapon.item);
                 }}
               >
                 Add
-              </button>
+              </ArwesButton>
             </div>
           </div>
         ));
@@ -685,13 +686,13 @@ const EquipmentSelectLoaded = function (props: ILoadedProps) {
                   {formatArmourCost(armour.item.cost)}
                 </div>
               </div>
-              <button
+              <ArwesButton
                 onClick={() => {
                   addArmour(armour.item);
                 }}
               >
                 Add
-              </button>
+              </ArwesButton>
             </div>
           </div>
         ));
@@ -715,13 +716,13 @@ const EquipmentSelectLoaded = function (props: ILoadedProps) {
                   {gear.item.category} | Cost: {formatGearCost(gear.item.cost)}
                 </div>
               </div>
-              <button
+              <ArwesButton
                 onClick={() => {
                   addGear(gear.item);
                 }}
               >
                 Add
-              </button>
+              </ArwesButton>
             </div>
           </div>
         ));
@@ -746,13 +747,13 @@ const EquipmentSelectLoaded = function (props: ILoadedProps) {
                   {formatVehicleCost(vehicle.item.cost)}
                 </div>
               </div>
-              <button
+              <ArwesButton
                 onClick={() => {
                   addVehicle(vehicle.item);
                 }}
               >
                 Add
-              </button>
+              </ArwesButton>
             </div>
           </div>
         ));
@@ -777,13 +778,13 @@ const EquipmentSelectLoaded = function (props: ILoadedProps) {
                   {formatAugmentationCost(aug.item.cost)}
                 </div>
               </div>
-              <button
+              <ArwesButton
                 onClick={() => {
                   addAugmentation(aug.item);
                 }}
               >
                 Add
-              </button>
+              </ArwesButton>
             </div>
           </div>
         ));
@@ -807,7 +808,9 @@ const EquipmentSelectLoaded = function (props: ILoadedProps) {
                   Cost: {pack.item.nuyen}¥
                 </div>
               </div>
-              <button onClick={() => addEquipmentPack(pack.item)}>Add</button>
+              <ArwesButton onClick={() => addEquipmentPack(pack.item)}>
+                Add
+              </ArwesButton>
             </div>
           </div>
         ));
@@ -847,23 +850,21 @@ const EquipmentSelectLoaded = function (props: ILoadedProps) {
               <label style={{ display: "block", marginBottom: "4px" }}>
                 Category:
               </label>
-              <Dropdown
-                options={Object.entries(categoryDisplayNames).map(
-                  ([value, label]) => ({ value, label })
-                )}
-                value={{
-                  value: props.selectedEquipmentDetails.category,
-                  label:
-                    categoryDisplayNames[
-                      props.selectedEquipmentDetails.category
-                    ],
-                }}
-                onChange={(option) =>
+              <ArwesSelect
+                value={props.selectedEquipmentDetails.category}
+                onChange={(event) => {
+                  const option = { value: event.target.value };
                   props.setSelectedEquipmentDetails({
                     category: option.value,
-                  } as SearchResultEquipmentType)
-                }
-              />
+                  } as SearchResultEquipmentType);
+                }}
+              >
+                {Object.entries(categoryDisplayNames).map(([value, label]) => (
+                  <option key={value} value={value}>
+                    {label}
+                  </option>
+                ))}
+              </ArwesSelect>
             </div>
 
             {currentSubtypeOptions.length > 0 && (
@@ -871,25 +872,14 @@ const EquipmentSelectLoaded = function (props: ILoadedProps) {
                 <label style={{ display: "block", marginBottom: "4px" }}>
                   Subtype:
                 </label>
-                <Dropdown
-                  options={[
-                    { value: "", label: "All" },
-                    ...currentSubtypeOptions.map((s) => ({
-                      value: s,
-                      label: s,
-                    })),
-                  ]}
-                  value={{
-                    value:
-                      props.selectedEquipmentDetails.subtype != undefined
-                        ? props.selectedEquipmentDetails.subtype
-                        : "",
-                    label:
-                      props.selectedEquipmentDetails.subtype != undefined
-                        ? props.selectedEquipmentDetails.subtype
-                        : "All",
-                  }}
-                  onChange={(option) => {
+                <ArwesSelect
+                  value={
+                    props.selectedEquipmentDetails.subtype != undefined
+                      ? props.selectedEquipmentDetails.subtype
+                      : ""
+                  }
+                  onChange={(event) => {
+                    const option = { value: event.target.value };
                     if (option.value === "All" || option.value === "") {
                       props.setSelectedEquipmentDetails({
                         category: props.selectedEquipmentDetails.category,
@@ -901,7 +891,14 @@ const EquipmentSelectLoaded = function (props: ILoadedProps) {
                       } as SearchResultEquipmentType);
                     }
                   }}
-                />
+                >
+                  <option value="">All</option>
+                  {currentSubtypeOptions.map((s) => (
+                    <option key={s} value={s}>
+                      {s}
+                    </option>
+                  ))}
+                </ArwesSelect>
               </div>
             )}
 
@@ -1171,14 +1168,14 @@ const FormattedEquipmentPackDiv = function ({
       removeItem={removeEquipmentPack}
     >
       {breakEquipmentPack !== undefined && (
-        <button
-          onClick={(event) => {
+        <ArwesButton
+          onClick={(event: React.MouseEvent) => {
             event.stopPropagation();
             breakEquipmentPack();
           }}
         >
           Break Pack
-        </button>
+        </ArwesButton>
       )}
       {equipment.augmentationList.length > 0 && (
         <CollapsibleDiv title="Augmentations">

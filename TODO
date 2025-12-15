@@ -1,0 +1,23 @@
+Complete:
+
+- Update UI to Arwes
+
+Future work:
+
+- Testing
+- Add accessories, mods
+- Save character as you go with character creation - support partially complete character as _fine_
+- Convert requirements/forbidden
+- Store Bonus and Requirements in DB properly
+- Implement Bonus system
+- Implement Requirements system
+- Add tooltips e.g. show the final weapon damage with an asterisk and on hover a tooltip showing the breakdown from the weapon and then the accessories
+- Error handling/inline validation
+- Update imports to only come from the index file and reexport from there @neon_codex/common for example
+- Implement proper character sheet, especially with linking equipment/spells/programs, a critter section etc.
+- Performance improvements
+- Implement other character creation options
+- Campaign management with combat initiative tracker (this is the only thing that needs to be realtime...)
+- Description import
+- Tanstack db + electric sql for real time updates and data management (or potentially just electricsql)
+- Chummer compatibility (import + export)

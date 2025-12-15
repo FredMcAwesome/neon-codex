@@ -18,6 +18,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@arwes/core": "^1.0.0-next.24051001",
+    "@arwes/react": "^1.0.0-next.25020502",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
     "@neon-codex/common": "*",
     "@tanstack/react-query": "^5.80.0",
     "@tanstack/react-table": "^8.21.3",

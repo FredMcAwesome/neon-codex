@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { trpc } from "../../utils/trpc.js";
+import { ArwesCard } from "../common/ArwesCard.js";
 
 const forumPath = "/forum/";
 const Forum = function () {
@@ -20,20 +21,27 @@ const Forum = function () {
   }
 
   return (
-    <table>
-      <tbody>
+    <div style={{ padding: "20px" }}>
+      <h2 style={{ marginBottom: "20px" }}>Forum Threads</h2>
+      <div style={{ display: "grid", gap: "20px" }}>
         {data.map((thread) => {
           return (
-            <tr key={thread.id}>
-              <Link to={forumPath + thread.id}>
-                <td>Thread: {thread.title}</td>
-                <td>Created By: {thread.user}</td>
-              </Link>
-            </tr>
+            <Link
+              to={forumPath + thread.id}
+              key={thread.id}
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <ArwesCard title={thread.title}>
+                <div>
+                  <span style={{ opacity: 0.7 }}>Created By: </span>
+                  {thread.user}
+                </div>
+              </ArwesCard>
+            </Link>
           );
         })}
-      </tbody>
-    </table>
+      </div>
+    </div>
   );
 };
 

@@ -1,5 +1,5 @@
 import { Fragment, useState } from "react";
-import Dropdown from "react-dropdown";
+import { ArwesSelect } from "../../common/ArwesSelect.js";
 import {
   type AttributesType,
   type SpecialAttributesType,
@@ -323,200 +323,281 @@ const AttributesSelectLoaded = function (
   return (
     <div>
       <h1>Attribute Selection</h1>
-      <div>
+      <div className="attribute-header-info">
         <p>
           Heritage: <span id="heritage">{props.heritageInfo.heritage}</span>
           {props.heritageInfo.metavariant !== undefined && (
             <span id="metavariant">({props.heritageInfo.metavariant})</span>
           )}
         </p>
-      </div>
-      <div>
         <p>
           Attribute Points Remaining:{" "}
           <span id="attribute_points">{attributePoints}</span>
         </p>
-        <p>Only one normal Attribute can be at max</p>
-        <div>
-          <label htmlFor="body">Body - Resisting physical damage</label>
-          <div>
+        <p style={{ width: "100%", fontSize: "0.9em", opacity: 0.8 }}>
+          Only one normal Attribute can be at max
+        </p>
+      </div>
+
+      <div className="attribute-selection-container">
+        <div className="attribute-card">
+          <label htmlFor="body">Body</label>
+          <div className="range-info">Resisting physical damage</div>
+          <div className="range-info">
             {"Min/Max: " +
               attributeRanges.body.min +
               "/" +
               attributeRanges.body.max}
           </div>
-          <Dropdown
-            options={attributeOptions.body}
+          <ArwesSelect
             value={props.attributeInfo.body.toString()}
             onChange={(event) => {
-              changeAttribute(baseAttributeTypeEnum.Body, event.value);
+              changeAttribute(baseAttributeTypeEnum.Body, event.target.value);
             }}
-            placeholder={"Select an option"}
             className="body"
-          />
+          >
+            {attributeOptions.body.map((opt) => (
+              <option key={opt} value={opt}>
+                {opt}
+              </option>
+            ))}
+          </ArwesSelect>
         </div>
-        <div>
-          <label htmlFor="agility">Agility - Attack accuracy</label>
-          <div>
+
+        <div className="attribute-card">
+          <label htmlFor="agility">Agility</label>
+          <div className="range-info">Attack accuracy</div>
+          <div className="range-info">
             {"Min/Max: " +
               attributeRanges.agility.min +
               "/" +
               attributeRanges.agility.max}
           </div>
-          <Dropdown
-            options={attributeOptions.agility}
+          <ArwesSelect
             value={props.attributeInfo.agility.toString()}
             onChange={(event) => {
-              changeAttribute(baseAttributeTypeEnum.Agility, event.value);
+              changeAttribute(
+                baseAttributeTypeEnum.Agility,
+                event.target.value
+              );
             }}
-            placeholder={"Select an option"}
             className="agility"
-          />
+          >
+            {attributeOptions.agility.map((opt) => (
+              <option key={opt} value={opt}>
+                {opt}
+              </option>
+            ))}
+          </ArwesSelect>
         </div>
-        <div>
-          <label htmlFor="reaction">Reaction - Initiative, Dodging</label>
-          <div>
+
+        <div className="attribute-card">
+          <label htmlFor="reaction">Reaction</label>
+          <div className="range-info">Initiative, Dodging</div>
+          <div className="range-info">
             {"Min/Max: " +
               attributeRanges.reaction.min +
               "/" +
               attributeRanges.reaction.max}
           </div>
-          <Dropdown
-            options={attributeOptions.reaction}
+          <ArwesSelect
             value={props.attributeInfo.reaction.toString()}
             onChange={(event) => {
-              changeAttribute(baseAttributeTypeEnum.Reaction, event.value);
+              changeAttribute(
+                baseAttributeTypeEnum.Reaction,
+                event.target.value
+              );
             }}
-            placeholder={"Select an option"}
             className="reaction"
-          />
+          >
+            {attributeOptions.reaction.map((opt) => (
+              <option key={opt} value={opt}>
+                {opt}
+              </option>
+            ))}
+          </ArwesSelect>
         </div>
-        <div>
-          <label htmlFor="strength">Strength - Melee damage</label>
-          <div>
+
+        <div className="attribute-card">
+          <label htmlFor="strength">Strength</label>
+          <div className="range-info">Melee damage</div>
+          <div className="range-info">
             {"Min/Max: " +
               attributeRanges.strength.min +
               "/" +
               attributeRanges.strength.max}
           </div>
-          <Dropdown
-            options={attributeOptions.strength}
+          <ArwesSelect
             value={props.attributeInfo.strength.toString()}
             onChange={(event) => {
-              changeAttribute(baseAttributeTypeEnum.Strength, event.value);
+              changeAttribute(
+                baseAttributeTypeEnum.Strength,
+                event.target.value
+              );
             }}
-            placeholder={"Select an option"}
             className="strength"
-          />
+          >
+            {attributeOptions.strength.map((opt) => (
+              <option key={opt} value={opt}>
+                {opt}
+              </option>
+            ))}
+          </ArwesSelect>
         </div>
-        <div>
-          <label htmlFor="willpower">
-            Willpower - Spell drain, Avoiding stun
-          </label>
-          <div>
+
+        <div className="attribute-card">
+          <label htmlFor="willpower">Willpower</label>
+          <div className="range-info">Spell drain, Avoiding stun</div>
+          <div className="range-info">
             {"Min/Max: " +
               attributeRanges.willpower.min +
               "/" +
               attributeRanges.willpower.max}
           </div>
-          <Dropdown
-            options={attributeOptions.willpower}
+          <ArwesSelect
             value={props.attributeInfo.willpower.toString()}
             onChange={(event) => {
-              changeAttribute(baseAttributeTypeEnum.Willpower, event.value);
+              changeAttribute(
+                baseAttributeTypeEnum.Willpower,
+                event.target.value
+              );
             }}
-            placeholder={"Select an option"}
             className="willpower"
-          />
+          >
+            {attributeOptions.willpower.map((opt) => (
+              <option key={opt} value={opt}>
+                {opt}
+              </option>
+            ))}
+          </ArwesSelect>
         </div>
-        <div>
-          <label htmlFor="logic">Logic - Hermetic spell drain</label>
-          <div>
+
+        <div className="attribute-card">
+          <label htmlFor="logic">Logic</label>
+          <div className="range-info">Hermetic spell drain</div>
+          <div className="range-info">
             {"Min/Max: " +
               attributeRanges.logic.min +
               "/" +
               attributeRanges.logic.max}
           </div>
-          <Dropdown
-            options={attributeOptions.logic}
+          <ArwesSelect
             value={props.attributeInfo.logic.toString()}
             onChange={(event) => {
-              changeAttribute(baseAttributeTypeEnum.Logic, event.value);
+              changeAttribute(baseAttributeTypeEnum.Logic, event.target.value);
             }}
-            placeholder={"Select an option"}
             className="logic"
-          />
+          >
+            {attributeOptions.logic.map((opt) => (
+              <option key={opt} value={opt}>
+                {opt}
+              </option>
+            ))}
+          </ArwesSelect>
         </div>
-        <div>
-          <label htmlFor="intuition">Intuition - Initiative, Dodging</label>
-          <div>
+
+        <div className="attribute-card">
+          <label htmlFor="intuition">Intuition</label>
+          <div className="range-info">Initiative, Dodging</div>
+          <div className="range-info">
             {"Min/Max: " +
               attributeRanges.intuition.min +
               "/" +
               attributeRanges.intuition.max}
           </div>
-          <Dropdown
-            options={attributeOptions.intuition}
+          <ArwesSelect
             value={props.attributeInfo.intuition.toString()}
             onChange={(event) => {
-              changeAttribute(baseAttributeTypeEnum.Intuition, event.value);
+              changeAttribute(
+                baseAttributeTypeEnum.Intuition,
+                event.target.value
+              );
             }}
-            placeholder={"Select an option"}
             className="intuition"
-          />
+          >
+            {attributeOptions.intuition.map((opt) => (
+              <option key={opt} value={opt}>
+                {opt}
+              </option>
+            ))}
+          </ArwesSelect>
         </div>
-        <div>
-          <label htmlFor="charisma">Charisma - Shaman spell drain</label>
-          <div>
+
+        <div className="attribute-card">
+          <label htmlFor="charisma">Charisma</label>
+          <div className="range-info">Shaman spell drain</div>
+          <div className="range-info">
             {"Min/Max: " +
               attributeRanges.charisma.min +
               "/" +
               attributeRanges.charisma.max}
           </div>
-          <Dropdown
-            options={attributeOptions.charisma}
+          <ArwesSelect
             value={props.attributeInfo.charisma.toString()}
             onChange={(event) => {
-              changeAttribute(baseAttributeTypeEnum.Charisma, event.value);
+              changeAttribute(
+                baseAttributeTypeEnum.Charisma,
+                event.target.value
+              );
             }}
-            placeholder={"Select an option"}
             className="charisma"
-          />
+          >
+            {attributeOptions.charisma.map((opt) => (
+              <option key={opt} value={opt}>
+                {opt}
+              </option>
+            ))}
+          </ArwesSelect>
         </div>
-        <div>
-          <label htmlFor="initiative">
-            Initiative - (Reaction + Intuition)
-          </label>
-          <p id="initiative">
+
+        <div className="attribute-card">
+          <label htmlFor="initiative">Initiative</label>
+          <div className="range-info">(Reaction + Intuition)</div>
+          <div
+            style={{
+              fontSize: "1.5em",
+              fontWeight: "bold",
+              color: "var(--arwes-paltte-primary-main)",
+            }}
+          >
             {props.attributeInfo.reaction + props.attributeInfo.intuition}
-          </p>
+          </div>
         </div>
       </div>
-      <div>
+
+      <div className="attribute-header-info" style={{ marginTop: "20px" }}>
         <p>
           Special Attribute Points Remaining:{" "}
           <span id="special_attribute_points">{specialAttributePoints}</span>
         </p>
-        <div id="edge_div">
-          <label htmlFor="edge">Edge - Luck</label>
-          <div>
+      </div>
+
+      <div className="attribute-selection-container">
+        <div className="attribute-card" id="edge_div">
+          <label htmlFor="edge">Edge</label>
+          <div className="range-info">Luck</div>
+          <div className="range-info">
             {"Min/Max: " +
               attributeRanges.edge.min +
               "/" +
               attributeRanges.edge.max}
           </div>
-          <Dropdown
-            options={specialAttributeOptions.edge}
+          <ArwesSelect
             value={props.specialAttributeInfo.edge.toString()}
             onChange={(event) => {
               changeSpecialAttribute(
                 specialAttributeTypeEnum.Edge,
-                event.value
+                event.target.value
               );
             }}
-            placeholder={"Select an option"}
             className="edge"
-          />
+          >
+            {specialAttributeOptions.edge.map((opt) => (
+              <option key={opt} value={opt}>
+                {opt}
+              </option>
+            ))}
+          </ArwesSelect>
         </div>
         <SpecialAttributeSelect
           attributeRanges={attributeRanges}
@@ -556,24 +637,28 @@ const SpecialAttributeSelect = function (props: ISpecialAttributeProps) {
       }
       frag = (
         <Fragment>
-          <div>
+          <div className="range-info">
             {"Min/Max: " +
               props.attributeRanges.magic.min +
               "/" +
               props.attributeRanges.magic.max}
           </div>
-          <Dropdown
-            options={talentOptions.magic}
+          <ArwesSelect
             value={talentAttributePoints.magic.toString()}
             onChange={(event) => {
               props.changeSpecialAttribute(
                 specialAttributeTypeEnum.Magic,
-                event.value
+                event.target.value
               );
             }}
-            placeholder={"Select an option"}
             className="magic"
-          />
+          >
+            {talentOptions.magic.map((opt) => (
+              <option key={opt} value={opt}>
+                {opt}
+              </option>
+            ))}
+          </ArwesSelect>
         </Fragment>
       );
       break;
@@ -586,24 +671,28 @@ const SpecialAttributeSelect = function (props: ISpecialAttributeProps) {
       }
       frag = (
         <Fragment>
-          <div>
+          <div className="range-info">
             {"Min/Max: " +
               props.attributeRanges.resonance.min +
               "/" +
               props.attributeRanges.resonance.max}
           </div>
-          <Dropdown
-            options={talentOptions.resonance}
+          <ArwesSelect
             value={talentAttributePoints.resonance.toString()}
             onChange={(event) => {
               props.changeSpecialAttribute(
                 specialAttributeTypeEnum.Resonance,
-                event.value
+                event.target.value
               );
             }}
-            placeholder={"Select an option"}
             className="resonance"
-          />
+          >
+            {talentOptions.resonance.map((opt) => (
+              <option key={opt} value={opt}>
+                {opt}
+              </option>
+            ))}
+          </ArwesSelect>
         </Fragment>
       );
       break;
@@ -616,24 +705,28 @@ const SpecialAttributeSelect = function (props: ISpecialAttributeProps) {
       }
       frag = (
         <Fragment>
-          <div>
+          <div className="range-info">
             {"Min/Max: " +
               props.attributeRanges.depth.min +
               "/" +
               props.attributeRanges.depth.max}
           </div>
-          <Dropdown
-            options={talentOptions.depth}
+          <ArwesSelect
             value={talentAttributePoints.depth.toString()}
             onChange={(event) => {
               props.changeSpecialAttribute(
                 specialAttributeTypeEnum.Depth,
-                event.value
+                event.target.value
               );
             }}
-            placeholder={"Select an option"}
             className="depth"
-          />
+          >
+            {talentOptions.depth.map((opt) => (
+              <option key={opt} value={opt}>
+                {opt}
+              </option>
+            ))}
+          </ArwesSelect>
         </Fragment>
       );
       break;
@@ -643,8 +736,8 @@ const SpecialAttributeSelect = function (props: ISpecialAttributeProps) {
   }
 
   return (
-    <div id="magic_div">
-      <label htmlFor="magic">Magic or Resonance - </label>
+    <div className="attribute-card" id="magic_div">
+      <label htmlFor="magic">Magic or Resonance</label>
       {frag}
     </div>
   );

@@ -1,7 +1,4 @@
-import type {
-  EquipmentListType,
-  SelectedEquipmentListType,
-} from "@neon-codex/common/build/schemas/equipment/other/equipmentSchemas.js";
+import type { SelectedEquipmentListType } from "@neon-codex/common/build/schemas/equipment/other/equipmentSchemas.js";
 import type {
   CustomSkillGroupListType,
   CustomSkillListType,
@@ -300,13 +297,17 @@ function Lifestyles(data: LifestyleSelectedListType | undefined) {
     <CollapsibleDiv title="Lifestyle">
       {data.map((lifestyle) => {
         return (
-          <div>
+          <div key={lifestyle.lifestyle.name}>
             <div>Name: {`${lifestyle.lifestyle.name}`}</div>
             <div>
               Lifestyle Qualities:{" "}
               <ul>
                 {lifestyle.lifestyleQualityList.map((quality) => {
-                  return <li>{quality.name}</li>;
+                  return (
+                    <li key={lifestyle.lifestyle.name + quality.name}>
+                      {quality.name}
+                    </li>
+                  );
                 })}
               </ul>
             </div>

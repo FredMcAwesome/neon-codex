@@ -1,4 +1,3 @@
-import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import {
@@ -14,6 +13,7 @@ import { trpc } from "./utils/trpc.js";
 import { getAuthHeader } from "./utils/authFetch.js";
 import { SERVER } from "./utils/config.js";
 import { clearUserSession } from "./components/login/loginHelper.js";
+import { ThemeContextProvider } from "./context/ThemeContext.js";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -46,13 +46,13 @@ const trpcClient = trpc.createClient({
 });
 
 root.render(
-  <StrictMode>
-    <trpc.Provider client={trpcClient} queryClient={queryClient}>
-      <QueryClientProvider client={queryClient}>
-        <BrowserRouter>
+  <trpc.Provider client={trpcClient} queryClient={queryClient}>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <ThemeContextProvider>
           <App />
-        </BrowserRouter>
-      </QueryClientProvider>
-    </trpc.Provider>
-  </StrictMode>
+        </ThemeContextProvider>
+      </BrowserRouter>
+    </QueryClientProvider>
+  </trpc.Provider>
 );

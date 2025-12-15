@@ -1,5 +1,6 @@
 import { useState, useCallback, type ReactNode, memo } from "react";
 import { Collapse } from "react-collapse";
+import { ArwesButton } from "../../common/ArwesButton.js";
 
 interface IProps {
   title: string;
@@ -20,33 +21,59 @@ export const CollapsibleEquipmentDiv = memo(function CollapsibleEquipmentDiv(
   }, []);
 
   return (
-    <div>
-      <div onClick={toggleIsOpened}>
-        <div>{props.title}</div>
-        <div>
+    <div
+      style={{
+        marginBottom: "10px",
+        border: "1px solid var(--arwes-palette-primary-dark-3)",
+        background: "rgba(0,0,0,0.2)",
+      }}
+    >
+      <div
+        onClick={toggleIsOpened}
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: "10px",
+          cursor: "pointer",
+          background: "rgba(var(--arwes-palette-primary-main-rgb), 0.1)",
+        }}
+      >
+        <div
+          style={{
+            fontWeight: "bold",
+            color: "var(--arwes-palette-secondary-main)",
+          }}
+        >
+          {props.title} {isOpened ? "▲" : "▼"}
+        </div>
+        <div style={{ display: "flex", gap: "10px" }}>
           {props.addItem !== undefined && (
-            <button
-              onClick={(event) => {
+            <ArwesButton
+              onClick={(event: React.MouseEvent) => {
                 event.stopPropagation();
                 props.addItem!();
               }}
             >
               Add
-            </button>
+            </ArwesButton>
           )}
           {props.removeItem !== undefined && (
-            <button
-              onClick={(event) => {
+            <ArwesButton
+              palette="error"
+              onClick={(event: React.MouseEvent) => {
                 event.stopPropagation();
                 props.removeItem!();
               }}
             >
               Remove
-            </button>
+            </ArwesButton>
           )}
         </div>
       </div>
-      <Collapse isOpened={isOpened}>{props.children}</Collapse>
+      <Collapse isOpened={isOpened}>
+        <div style={{ padding: "10px" }}>{props.children}</div>
+      </Collapse>
     </div>
   );
 });

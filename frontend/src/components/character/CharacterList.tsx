@@ -2,6 +2,8 @@ import type { CharacterSummaryType } from "@neon-codex/common/build/schemas/char
 import { trpc } from "../../utils/trpc.js";
 import { heritageCategoryEnum } from "@neon-codex/common/build/enums.js";
 import { Link } from "react-router-dom";
+import { ArwesCard } from "../common/ArwesCard.js";
+import { ArwesButton } from "../common/ArwesButton.js";
 const characterListPath = "/characters/";
 
 const CharacterList = function () {
@@ -22,12 +24,21 @@ const CharacterList = function () {
   }
 
   return (
-    <div>
-      {data.length > 0
-        ? data.map((character) => (
-            <CharacterCard data={character} key={character.id} />
-          ))
-        : "No characters created"}
+    <div style={{ padding: "20px" }}>
+      <h2 style={{ marginBottom: "20px" }}>My Characters</h2>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+          gap: "20px",
+        }}
+      >
+        {data.length > 0
+          ? data.map((character) => (
+              <CharacterCard data={character} key={character.id} />
+            ))
+          : "No characters created"}
+      </div>
     </div>
   );
 };
@@ -36,18 +47,21 @@ export default CharacterList;
 
 function CharacterCard({ data }: { data: CharacterSummaryType }) {
   return (
-    <Link to={characterListPath + data.id}>
-      <div>
-        <div>Name: {data.name}</div>
+    <Link
+      to={characterListPath + data.id}
+      style={{ textDecoration: "none", color: "inherit" }}
+    >
+      <ArwesCard title={data.name}>
         <div>
-          Heritage:
-          <div>
+          <div style={{ marginBottom: "10px" }}>
+            <span style={{ opacity: 0.7 }}>Heritage: </span>
             {data.heritage.category === heritageCategoryEnum.Metavariant
               ? data.heritage.baseHeritage + "/" + data.heritage.name
               : data.heritage.name}
           </div>
+          <ArwesButton>View Sheet</ArwesButton>
         </div>
-      </div>
+      </ArwesCard>
     </Link>
   );
 }
