@@ -2,17 +2,14 @@ import assert from "assert";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import {
-  HeritageListSchema,
-  type HeritageListType,
-} from "@neon-codex/common/build/schemas/abilities/heritageSchemas.js";
+import { HeritageListSchema, type HeritageListType } from "@neon-codex/common";
 import {
   Metahumans,
   Metasapients,
   Heritages,
   Shapeshifters,
 } from "../../models/rpg/traits/heritageModel.js";
-import { heritageCategoryEnum } from "@neon-codex/common/build/enums.js";
+import { heritageCategoryEnum } from "@neon-codex/common";
 import { type } from "arktype";
 
 export const getHeritages = function () {

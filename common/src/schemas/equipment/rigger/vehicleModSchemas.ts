@@ -29,7 +29,7 @@ const VehicleModRatingSchema = type
   .array();
 export type VehicleModRatingType = typeof VehicleModRatingSchema.infer;
 
-const ReplaceAmmoSchema = type({
+export const ReplaceAmmoSchema = type({
   "+": "reject",
   reloadMethod: type.valueOf(ammoSourceEnum),
   "capacity?": "number",
@@ -49,7 +49,7 @@ const InnerSlotCostSchema = type.or(
 export type PartialSlotCostType = Array<
   typeof InnerSlotCostSchema.infer | { subnumbers: PartialSlotCostType }
 >;
-const { PartialSlotCostSchema } = type.module({
+export const { PartialSlotCostSchema } = type.module({
   PartialSlotCostSchema: [
     [
       InnerSlotCostSchema,

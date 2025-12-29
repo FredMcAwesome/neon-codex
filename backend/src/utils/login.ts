@@ -1,9 +1,9 @@
 import * as trpcExpress from "@trpc/server/adapters/express";
 import jwt from "jsonwebtoken";
-import { TOKEN_SECRET } from "@neon-codex/database/build/utils/databaseConfig.js";
+import { TOKEN_SECRET } from "@neon-codex/database";
 import * as logger from "../utils/logger.js";
 import { init } from "./db.js";
-import Users from "@neon-codex/database/build/models/accounts/userModel.js";
+import { Users } from "@neon-codex/database";
 import { type } from "arktype";
 export interface jwtUsername extends jwt.JwtPayload {
   username: string;

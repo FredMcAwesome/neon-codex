@@ -8,7 +8,7 @@ import {
   vehicleModRatingEnum,
   vehicleModAttributeEnum,
   projectileWeaponTypeEnum,
-} from "@neon-codex/common/build/enums.js";
+} from "@neon-codex/common";
 import type {
   SubsystemXmlType,
   VehicleModMaxRatingType,

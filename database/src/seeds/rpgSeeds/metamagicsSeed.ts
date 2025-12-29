@@ -2,8 +2,8 @@ import assert from "assert";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { MetamagicListSchema } from "@neon-codex/common/build/schemas/abilities/talent/metamagicSchemas.js";
-import type { MetamagicListType } from "@neon-codex/common/build/schemas/abilities/talent/metamagicSchemas.js";
+import { MetamagicListSchema } from "@neon-codex/common";
+import type { MetamagicListType } from "@neon-codex/common";
 import { Metamagics } from "../../models/rpg/otherData/metamagicModel.js";
 import { type } from "arktype";
 

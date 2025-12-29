@@ -2,7 +2,7 @@ import { Entity, ManyToOne, PrimaryKey, Property } from "@mikro-orm/postgresql";
 import type { Ref } from "@mikro-orm/postgresql";
 import { CritterPowers } from "../abilities/critterPowerModel.js";
 import { Critters } from "../creatures/critterModel.js";
-import type { IncludedCritterPowerRatingType } from "@neon-codex/common/build/schemas/creatures/critterSchemas.js";
+import type { IncludedCritterPowerRatingType } from "@neon-codex/common";
 import { CustomisedCritters } from "./customisedCritterModel.js";
 
 // Links to either a custom critter, or a critter in the table.

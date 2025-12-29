@@ -9,13 +9,10 @@ import {
   OneToMany,
   type Ref,
 } from "@mikro-orm/postgresql";
-import { heritageCategoryEnum } from "@neon-codex/common/build/enums.js";
-import type { HeritageType } from "@neon-codex/common/build/schemas/abilities/heritageSchemas.js";
+import { heritageCategoryEnum } from "@neon-codex/common";
+import type { HeritageType } from "@neon-codex/common";
 import { Weapons } from "../equipment/combat/weaponModel.js";
-import type {
-  BonusType,
-  InitiativeType,
-} from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
+import type { BonusType, InitiativeType } from "@neon-codex/common";
 import { Qualities } from "./qualityModel.js";
 import {
   ActiveQualities,
@@ -25,7 +22,7 @@ import { Characters } from "../characters/characterModel.js";
 import type {
   AttributeRangeType,
   MovementStrideType,
-} from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
+} from "@neon-codex/common";
 
 @Entity({
   discriminatorColumn: "category",

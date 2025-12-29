@@ -1,11 +1,11 @@
-import type { TalentPriorityType } from "@neon-codex/common/build/schemas/otherData/prioritySchemas.js";
+import type { TalentPriorityType } from "@neon-codex/common";
 import {
   critterCategoryEnum,
   magicalFormulaeCategoryEnum,
   mentorCategoryEnum,
   spellCategoryEnum,
   talentCategoryEnum,
-} from "@neon-codex/common/build/enums.js";
+} from "@neon-codex/common";
 import { Fragment, useEffect, type ReactElement } from "react";
 import { trpc } from "../../../utils/trpc.js";
 import { ArwesSelect } from "../../common/ArwesSelect.js";
@@ -16,9 +16,9 @@ import {
   type MagicTalentInfoType,
   type ResonanceTalentInfoType,
   type TalentInfoType,
-} from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
-import type { MentorType } from "@neon-codex/common/build/schemas/abilities/talent/mentorSchemas.js";
-import type { CharacterCreatorBonusListType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
+} from "@neon-codex/common";
+import type { MentorType } from "@neon-codex/common";
+import type { CharacterCreatorBonusListType } from "@neon-codex/common";
 
 interface IProps {
   talent: TalentPriorityType;

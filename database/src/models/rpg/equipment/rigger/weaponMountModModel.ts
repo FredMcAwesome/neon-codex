@@ -8,15 +8,15 @@ import {
 import {
   sourceBookEnum,
   type vehicleModCategoryEnum,
-} from "@neon-codex/common/build/enums.js";
-import type { ReplaceAmmoType } from "@neon-codex/common/build/schemas/equipment/rigger/vehicleModSchemas.js";
+} from "@neon-codex/common";
+import type { ReplaceAmmoType } from "@neon-codex/common";
 import type {
   AvailabilityWeaponMountModType,
   CostWeaponMountModType,
   WeaponMountModType,
   WeaponMountSlotCostType,
-} from "@neon-codex/common/build/schemas/equipment/rigger/weaponMountModSchemas.js";
-import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
+} from "@neon-codex/common";
+import type { RequirementsType } from "@neon-codex/common";
 
 @Entity()
 export class WeaponMountModifications {

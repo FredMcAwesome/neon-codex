@@ -7,10 +7,10 @@ import {
   Property,
   Unique,
 } from "@mikro-orm/postgresql";
-import { actionEnum, sourceBookEnum } from "@neon-codex/common/build/enums.js";
-import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
-import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
-import type { AdeptPowerType } from "@neon-codex/common/build/schemas/abilities/talent/adeptPowerSchemas.js";
+import { actionEnum, sourceBookEnum } from "@neon-codex/common";
+import type { BonusType } from "@neon-codex/common";
+import type { RequirementsType } from "@neon-codex/common";
+import type { AdeptPowerType } from "@neon-codex/common";
 
 @Entity()
 export class AdeptPowers {

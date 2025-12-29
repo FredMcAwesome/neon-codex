@@ -6,12 +6,9 @@ import { fileURLToPath } from "url";
 
 import { StringOrNumberSchema } from "../common/ParserCommonDefines.js";
 import Range from "../../grammar/range.ohm-bundle.js";
-import type { RangeIncrementType } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
-import {
-  RangeListSchema,
-  RangeSchema,
-} from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
-import { mathOperatorEnum, rangeEnum } from "@neon-codex/common/build/enums.js";
+import type { RangeIncrementType } from "@neon-codex/common";
+import { RangeListSchema, RangeSchema } from "@neon-codex/common";
+import { mathOperatorEnum, rangeEnum } from "@neon-codex/common";
 import { type } from "arktype";
 
 const RangeXmlSchema = type({

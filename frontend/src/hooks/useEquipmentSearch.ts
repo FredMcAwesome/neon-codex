@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { EquipmentListType } from "@neon-codex/common/build/schemas/equipment/other/equipmentSchemas";
+import type { EquipmentListType } from "@neon-codex/common";
 import {
   workerRequestEnum,
   workerResponseEnum,

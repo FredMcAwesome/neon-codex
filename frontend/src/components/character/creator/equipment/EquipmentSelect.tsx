@@ -8,53 +8,50 @@ import { costCalculation } from "../../../../utils/calculations.js";
 import { Pagination } from "../../../shared/Pagination.js";
 import { ArwesSelect } from "../../../common/ArwesSelect.js";
 import { ArwesButton } from "../../../common/ArwesButton.js";
-import type {
-  CostWeaponType,
-  CustomisedWeaponLoadedType,
-  WeaponType,
-} from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
-import { formatWeaponCost } from "@neon-codex/common/build/formatters/weaponFormatter.js";
-import { formatArmourCost } from "@neon-codex/common/build/formatters/armourFormatter.js";
-import { formatGearCost } from "@neon-codex/common/build/formatters/gearFormatter.js";
-import {
-  formatVehicleCost,
-  formatVehicleModCost,
-} from "@neon-codex/common/build/formatters/vehicleFormatter.js";
-import { formatAugmentationCost } from "@neon-codex/common/build/formatters/augmentationFormatter.js";
-
 import {
   armourCategoryEnum,
   armourModCategoryEnum,
-  augmentationGradeEnum,
   augmentationCategoryEnum,
+  augmentationGradeEnum,
   equipmentTypeEnum,
+  formatArmourCost,
+  formatAugmentationCost,
+  formatGearCost,
+  formatVehicleCost,
+  formatVehicleModCost,
+  formatWeaponCost,
   gearCategoryEnum,
   vehicleCategoryEnum,
   vehicleModCategoryEnum,
   weaponCategoryEnum,
-} from "@neon-codex/common/build/enums.js";
-import type {
-  SelectedEquipmentListType,
-  SelectedEquipmentLoadedListType,
-} from "@neon-codex/common/build/schemas/equipment/other/equipmentSchemas.js";
-import type {
-  CostGearType,
-  CustomisedGearLoadedType,
-  GearType,
-} from "@neon-codex/common/build/schemas/equipment/other/gearSchemas.js";
-import type {
-  AugmentationType,
-  CustomisedAugmentationLoadedType,
-  CostAugmentationType,
-} from "@neon-codex/common/build/schemas/equipment/bodyModification/augmentationSchemas.js";
-import type {
-  CustomisedVehicleLoadedType,
-  VehicleType,
-} from "@neon-codex/common/build/schemas/equipment/rigger/vehicleSchemas.js";
-import type {
-  ArmourType,
-  CustomisedArmourLoadedType,
-} from "@neon-codex/common/build/schemas/equipment/combat/armourSchemas.js";
+  type ArmourModType,
+  type ArmourType,
+  type AugmentationType,
+  type CharacterCreatorBonusListType,
+  type CostAugmentationType,
+  type CostGearType,
+  type CostVehicleModType,
+  type CostWeaponMountModType,
+  type CostWeaponType,
+  type CustomisedArmourLoadedType,
+  type CustomisedArmourModLoadedType,
+  type CustomisedAugmentationLoadedType,
+  type CustomisedGearLoadedType,
+  type CustomisedVehicleLoadedType,
+  type CustomisedVehicleModLoadedType,
+  type CustomisedWeaponAccessoryLoadedType,
+  type CustomisedWeaponLoadedType,
+  type CustomisedWeaponMountType,
+  type EquipmentPackType,
+  type GearType,
+  type SelectedEquipmentListType,
+  type SelectedEquipmentLoadedListType,
+  type VehicleModType,
+  type VehicleType,
+  type WeaponAccessoryType,
+  type WeaponMountModType,
+  type WeaponType,
+} from "@neon-codex/common";
 import {
   useCallback,
   useEffect,
@@ -65,23 +62,6 @@ import {
   type SetStateAction,
   type ReactNode,
 } from "react";
-import type { CharacterCreatorBonusListType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
-import type { EquipmentPackType } from "@neon-codex/common/build/schemas/equipment/equipmentPackSchemas.js";
-import type { CustomisedArmourModLoadedType } from "@neon-codex/common/build/schemas/equipment/combat/armourModSchemas.js";
-import type {
-  CustomisedWeaponAccessoryLoadedType,
-  WeaponAccessoryType,
-} from "@neon-codex/common/build/schemas/equipment/combat/weaponAccessorySchemas.js";
-import type { ArmourModType } from "@neon-codex/common/build/schemas/equipment/combat/armourModSchemas.js";
-import type {
-  CostWeaponMountModType,
-  WeaponMountModType,
-} from "@neon-codex/common/build/schemas/equipment/rigger/weaponMountModSchemas.js";
-import type {
-  CostVehicleModType,
-  CustomisedVehicleModLoadedType,
-  VehicleModType,
-} from "@neon-codex/common/build/schemas/equipment/rigger/vehicleModSchemas.js";
 import {
   hydrateEquipmentList,
   dehydrateEquipmentList,
@@ -104,7 +84,6 @@ import type {
   WeaponAccessoryListSearchItemList,
   WeaponMountModListSearchItemList,
 } from "../../../../workers/types.js";
-import type { CustomisedWeaponMountType } from "@neon-codex/common/src/schemas/equipment/rigger/weaponMountSchemas.js";
 
 // Cost calculation helper functions that take data as a parameter
 // These enable memoization with useCallback

@@ -3,7 +3,7 @@ import {
   weaponMountFlexibilityEnum,
   weaponMountSizeEnum,
   weaponMountVisibilityEnum,
-} from "@neon-codex/common/build/enums.js";
+} from "@neon-codex/common";
 
 import {
   ModRecursiveXmlSchema,

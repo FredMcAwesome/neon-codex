@@ -17,20 +17,17 @@ import {
   meleeWeaponTypeEnum,
   projectileWeaponTypeEnum,
   weaponCategoryEnum,
-} from "@neon-codex/common/build/enums.js";
+} from "@neon-codex/common";
 import assert from "assert";
 import type { AccessoryXmlType, WeaponXmlType } from "./WeaponParserSchemas.js";
 import { weaponTypeXmlEnum } from "./WeaponParserSchemas.js";
-import type {
-  FirearmOptionsType,
-  MeleeOptionsType,
-} from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
-import { weaponSubtypeEnum } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
-import type { WeaponSubtypeType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
+import type { FirearmOptionsType, MeleeOptionsType } from "@neon-codex/common";
+import { weaponSubtypeEnum } from "@neon-codex/common";
+import type { WeaponSubtypeType } from "@neon-codex/common";
 import Weapons from "../../grammar/weapons.ohm-bundle.js";
 import { convertIncludedXmlGears } from "../common/ParserHelper.js";
-import type { CustomisedWeaponAccessoryType } from "@neon-codex/common/build/schemas/equipment/combat/weaponAccessorySchemas.js";
-import type { MountType } from "@neon-codex/common/build/schemas/shared/weaponSharedSchemas.js";
+import type { CustomisedWeaponAccessoryType } from "@neon-codex/common";
+import type { MountType } from "@neon-codex/common";
 const Accuracy = Weapons.Accuracy;
 const Damage = Weapons.Damage;
 const ArmourPenetration = Weapons.ArmourPenetration;

@@ -11,7 +11,7 @@ import {
   type PriorityLevelsType,
   type SpecialAttributesType,
   type HeritagePrioritySelectedType,
-} from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
+} from "@neon-codex/common";
 import { trpc } from "../../../utils/trpc.js";
 import {
   PriorityLetterOptions,
@@ -24,13 +24,13 @@ import {
   type SkillPriorityType,
   type TalentOptionsPriorityType,
   type TalentPriorityType,
-} from "@neon-codex/common/build/schemas/otherData/prioritySchemas.js";
+} from "@neon-codex/common";
 import {
   priorityCategoryEnum,
   priorityLetterEnum,
   priorityTableRunnerLevelEnum,
   talentCategoryEnum,
-} from "@neon-codex/common/build/enums.js";
+} from "@neon-codex/common";
 
 const columnHelper = createColumnHelper<
   PriorityRowType & { resources: { runnerLevel: priorityTableRunnerLevelEnum } }

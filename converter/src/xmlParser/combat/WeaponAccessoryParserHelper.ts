@@ -6,10 +6,10 @@ import {
   mathOperatorEnum,
   restrictionEnum,
   weaponAccessoryMountLocationEnum,
-} from "@neon-codex/common/build/enums.js";
+} from "@neon-codex/common";
 import assert from "assert";
 import WeaponAccessories from "../../grammar/weaponAccessories.ohm-bundle.js";
-import type { AccessoryMountType } from "@neon-codex/common/build/schemas/shared/weaponSharedSchemas.js";
+import type { AccessoryMountType } from "@neon-codex/common";
 const ModifyAmmoCapacity = WeaponAccessories.ModifyAmmoCapacity;
 // const Accuracy = WeaponAccessories.Accuracy;
 // const Damage = WeaponAccessories.Damage;

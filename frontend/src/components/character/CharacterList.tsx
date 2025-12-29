@@ -1,6 +1,6 @@
-import type { CharacterSummaryType } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
+import type { CharacterSummaryType } from "@neon-codex/common";
 import { trpc } from "../../utils/trpc.js";
-import { heritageCategoryEnum } from "@neon-codex/common/build/enums.js";
+import { heritageCategoryEnum } from "@neon-codex/common";
 import { Link } from "react-router-dom";
 import { ArwesCard } from "../common/ArwesCard.js";
 import { ArwesButton } from "../common/ArwesButton.js";

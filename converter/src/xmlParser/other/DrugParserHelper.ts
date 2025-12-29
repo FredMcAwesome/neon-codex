@@ -1,4 +1,4 @@
-import { restrictionEnum } from "@neon-codex/common/build/enums.js";
+import { restrictionEnum } from "@neon-codex/common";
 import Drug from "../../grammar/drug.ohm-bundle.js";
 import type { DrugEffectXmlListType } from "./DrugComponentParserSchemas.js";
 const Availability = Drug;

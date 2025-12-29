@@ -19,7 +19,7 @@ import {
   spellPowerRangeEnum,
   vehicleCategoryEnum,
   weaponCategoryEnum,
-} from "@neon-codex/common/build/enums.js";
+} from "@neon-codex/common";
 import type {
   BonusType,
   BonusGenericListType,
@@ -44,7 +44,7 @@ import type {
   BonusMiscellaneousOptionType,
   RatingCalculationType,
   MovementReplacementType,
-} from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
+} from "@neon-codex/common";
 import assert from "assert";
 import type {
   GenericNameValueListType,

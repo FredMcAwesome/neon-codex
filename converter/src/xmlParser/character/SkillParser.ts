@@ -4,12 +4,9 @@ import {
   skillCategoryEnum,
   sourceBookEnum,
   standardCalculationEnum,
-} from "@neon-codex/common/build/enums.js";
-import {
-  SkillListSchema,
-  SkillSchema,
-} from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
-import type { SkillType } from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
+} from "@neon-codex/common";
+import { SkillListSchema, SkillSchema } from "@neon-codex/common";
+import type { SkillType } from "@neon-codex/common";
 import assert from "assert";
 import { XMLParser } from "fast-xml-parser";
 import fs from "fs";

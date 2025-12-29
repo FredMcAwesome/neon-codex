@@ -21,7 +21,7 @@ import {
 import { convertXmlBonus } from "../common/BonusParserHelper.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { convertRatingMeaning, convertSource } from "../common/ParserHelper.js";
-import { VehicleModSchema } from "@neon-codex/common/build/schemas/equipment/rigger/vehicleModSchemas.js";
+import { VehicleModSchema } from "@neon-codex/common";
 import VehicleModifications from "../../grammar/vehicleModifications.ohm-bundle.js";
 import { type } from "arktype";
 const Rating = VehicleModifications.Rating;

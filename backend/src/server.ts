@@ -1,5 +1,5 @@
 import { bootstrap } from "./app.js";
-import { PORT } from "@neon-codex/database/build/utils/databaseConfig.js";
+import { PORT } from "@neon-codex/database";
 import * as logger from "./utils/logger.js";
 
 const { app, appRouter } = await bootstrap();

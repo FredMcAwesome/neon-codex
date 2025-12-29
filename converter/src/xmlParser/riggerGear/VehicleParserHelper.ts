@@ -10,7 +10,7 @@ import {
   restrictionEnum,
   vehicleCategoryEnum,
   watercraftSubtypeEnum,
-} from "@neon-codex/common/build/enums.js";
+} from "@neon-codex/common";
 import Vehicles from "../../grammar/vehicles.ohm-bundle.js";
 const Acceleration = Vehicles.Acceleration;
 const Speed = Vehicles.Speed;

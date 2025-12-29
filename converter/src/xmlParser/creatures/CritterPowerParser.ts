@@ -15,16 +15,13 @@ import {
   type CritterPowerXmlType,
 } from "./CritterPowerParserSchemas.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
-import {
-  CritterPowerSchema,
-  type CritterPowerType,
-} from "@neon-codex/common/build/schemas/abilities/talent/critterPowerSchemas.js";
+import { CritterPowerSchema, type CritterPowerType } from "@neon-codex/common";
 import { convertSpellType } from "../talent/SpellParserHelper.js";
 import {
   SpellPowerXmlRangeSchema,
   XmlDurationSchema,
 } from "../common/ParserCommonDefines.js";
-import { actionEnum } from "@neon-codex/common/build/enums.js";
+import { actionEnum } from "@neon-codex/common";
 import { type } from "arktype";
 
 export function ParseCritterPowers() {

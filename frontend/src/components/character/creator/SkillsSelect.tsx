@@ -1,13 +1,10 @@
 import { Fragment } from "react";
 import { ArwesSelect } from "../../common/ArwesSelect.js";
 import { CollapsibleDiv } from "../../../utils/CollapsibleDiv.js";
-import { skillCategoryEnum } from "@neon-codex/common/build/enums.js";
-import type {
-  CustomSkillListType,
-  CustomSkillType,
-} from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
+import { skillCategoryEnum } from "@neon-codex/common";
+import type { CustomSkillListType, CustomSkillType } from "@neon-codex/common";
 import type { SkillPointInfoType } from "../commonSchemas.js";
-import type { CharacterCreatorBonusListType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
+import type { CharacterCreatorBonusListType } from "@neon-codex/common";
 
 // first rating empty for no points in skill
 const skillRating = [

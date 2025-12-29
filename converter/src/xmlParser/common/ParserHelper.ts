@@ -9,8 +9,8 @@ import {
   sourceBookEnum,
   spellPowerRangeEnum,
   spellPowerTargetEnum,
-} from "@neon-codex/common/build/enums.js";
-import type { GenericModListType } from "@neon-codex/common/build/schemas/shared/modSchemas.js";
+} from "@neon-codex/common";
+import type { GenericModListType } from "@neon-codex/common";
 import assert from "assert";
 import type {
   CategoryXmlListType,
@@ -36,9 +36,9 @@ import type {
 } from "./ParserCommonDefines.js";
 import { sourceBookXmlEnum } from "./ParserCommonDefines.js";
 import type { XmlMovementType } from "../character/MetatypeParserSchemas.js";
-import type { BonusGenericListType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
-import type { CustomisedGearListType } from "@neon-codex/common/build/schemas/equipment/other/gearSchemas.js";
-import type { CustomisedVehicleModListType } from "@neon-codex/common/build/schemas/equipment/rigger/vehicleModSchemas.js";
+import type { BonusGenericListType } from "@neon-codex/common";
+import type { CustomisedGearListType } from "@neon-codex/common";
+import type { CustomisedVehicleModListType } from "@neon-codex/common";
 import Weapons from "../../grammar/weapons.ohm-bundle.js";
 import {
   accuracySemantics,
@@ -50,7 +50,7 @@ import type {
   ArmourPenetrationType,
   DamageType,
   NaturalWeaponType,
-} from "@neon-codex/common/build/schemas/shared/weaponSharedSchemas.js";
+} from "@neon-codex/common";
 const Accuracy = Weapons.Accuracy;
 const Damage = Weapons.Damage;
 const ArmourPenetration = Weapons.ArmourPenetration;

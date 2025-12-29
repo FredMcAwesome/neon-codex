@@ -1,7 +1,7 @@
 import {
   EquipmentPackListSchema,
   type EquipmentPackListType,
-} from "@neon-codex/common/build/schemas/equipment/equipmentPackSchemas.js";
+} from "@neon-codex/common";
 import assert from "assert";
 import fs from "fs";
 import path from "path";

@@ -1,15 +1,15 @@
-import type { EquipmentListType } from "@neon-codex/common/build/schemas/equipment/other/equipmentSchemas";
-import { equipmentTypeEnum } from "@neon-codex/common/build/enums";
-import type {
-  armourCategoryEnum,
-  armourModCategoryEnum,
-  augmentationCategoryEnum,
-  gearCategoryEnum,
-  vehicleModCategoryEnum,
-  vehicleCategoryEnum,
-  weaponCategoryEnum,
-  equipmentPackCategoryEnum,
-} from "@neon-codex/common/build/enums";
+import {
+  equipmentTypeEnum,
+  type EquipmentListType,
+  type armourCategoryEnum,
+  type armourModCategoryEnum,
+  type augmentationCategoryEnum,
+  type equipmentPackCategoryEnum,
+  type gearCategoryEnum,
+  type vehicleCategoryEnum,
+  type vehicleModCategoryEnum,
+  type weaponCategoryEnum,
+} from "@neon-codex/common";
 
 type ArrayElement<ArrayType extends readonly unknown[]> =
   ArrayType extends readonly (infer ElementType)[] ? ElementType : never;

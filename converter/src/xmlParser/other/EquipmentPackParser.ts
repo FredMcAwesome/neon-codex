@@ -4,7 +4,7 @@ import { XMLParser } from "fast-xml-parser";
 import path from "path";
 import { fileURLToPath } from "url";
 import * as fs from "fs";
-import { EquipmentPackSchema } from "@neon-codex/common/build/schemas/equipment/equipmentPackSchemas.js";
+import { EquipmentPackSchema } from "@neon-codex/common";
 import {
   EquipmentListXmlSchema,
   type EquipmentPackXmlType,
@@ -15,14 +15,14 @@ import {
   convertVehicleEquipmentPack,
   convertWeaponEquipmentPack,
 } from "./EquipmentPackParserHelper.js";
-import { augmentationCategoryEnum } from "@neon-codex/common/build/enums.js";
+import { augmentationCategoryEnum } from "@neon-codex/common";
 import { convertIncludedXmlGears } from "../common/ParserHelper.js";
-import type { CustomisedAugmentationListType } from "@neon-codex/common/build/schemas/equipment/bodyModification/augmentationSchemas.js";
-import type { CustomisedArmourListType } from "@neon-codex/common/build/schemas/equipment/combat/armourSchemas.js";
-import type { CustomisedVehicleListType } from "@neon-codex/common/build/schemas/equipment/rigger/vehicleSchemas.js";
-import type { CustomisedGearListType } from "@neon-codex/common/build/schemas/equipment/other/gearSchemas.js";
-import type { CustomisedWeaponListType } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
-import type { CustomisedLifestyleListType } from "@neon-codex/common/build/schemas/otherData/lifestyleSchemas.js";
+import type { CustomisedAugmentationListType } from "@neon-codex/common";
+import type { CustomisedArmourListType } from "@neon-codex/common";
+import type { CustomisedVehicleListType } from "@neon-codex/common";
+import type { CustomisedGearListType } from "@neon-codex/common";
+import type { CustomisedWeaponListType } from "@neon-codex/common";
+import type { CustomisedLifestyleListType } from "@neon-codex/common";
 import { type } from "arktype";
 
 export function ParseEquipmentPacks() {

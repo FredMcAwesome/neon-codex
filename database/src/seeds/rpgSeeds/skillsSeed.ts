@@ -3,8 +3,8 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { Skills } from "../../models/rpg/abilities/skillModel.js";
-import { SkillListSchema } from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
-import type { SkillListType } from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
+import { SkillListSchema } from "@neon-codex/common";
+import type { SkillListType } from "@neon-codex/common";
 import { SkillGroups } from "../../models/rpg/abilities/skillGroupModel.js";
 import { type } from "arktype";
 

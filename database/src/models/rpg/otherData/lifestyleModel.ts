@@ -1,16 +1,13 @@
 import { Entity, Enum, PrimaryKey, Property } from "@mikro-orm/postgresql";
-import {
-  gridCategoryEnum,
-  sourceBookEnum,
-} from "@neon-codex/common/build/enums.js";
-import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
+import { gridCategoryEnum, sourceBookEnum } from "@neon-codex/common";
+import type { BonusType } from "@neon-codex/common";
 import type {
   LifestyleCategoryIncreaseCostType,
   LifestyleCategoryType,
   LifestyleCostType,
   LifestyleType,
-} from "@neon-codex/common/build/schemas/otherData/lifestyleSchemas.js";
-import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
+} from "@neon-codex/common";
+import type { RequirementsType } from "@neon-codex/common";
 
 @Entity()
 export class Lifestyles {

@@ -8,7 +8,7 @@ import {
 } from "@mikro-orm/postgresql";
 import { MentorSpirits } from "../otherData/mentorModel.js";
 import { ActiveMagicTalents } from "./activeTalentModel.js";
-import type { MentorChoiceType } from "@neon-codex/common/build/schemas/abilities/talent/mentorSchemas.js";
+import type { MentorChoiceType } from "@neon-codex/common";
 
 @Entity()
 export class ActiveMentorSpirits {

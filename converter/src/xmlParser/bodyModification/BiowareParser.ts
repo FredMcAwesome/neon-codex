@@ -15,7 +15,7 @@ import {
   convertAugmentationLimit,
   convertSource,
 } from "../common/ParserHelper.js";
-import { AugmentationSchema } from "@neon-codex/common/build/schemas/equipment/bodyModification/augmentationSchemas.js";
+import { AugmentationSchema } from "@neon-codex/common";
 import Augmentation from "../../grammar/augmentation.ohm-bundle.js";
 import {
   availabilityAugmentationSemantics,
@@ -23,7 +23,7 @@ import {
   essenceCostSemantics,
   mountsAugmentationSemantics,
 } from "./augmentationParserHelper.js";
-import { augmentationCategoryEnum } from "@neon-codex/common/build/enums.js";
+import { augmentationCategoryEnum } from "@neon-codex/common";
 import { type } from "arktype";
 const EssenceCost = Augmentation.EssenceCost;
 const Cost = Augmentation.Cost;

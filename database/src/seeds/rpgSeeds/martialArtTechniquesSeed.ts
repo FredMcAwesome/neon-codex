@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 import {
   MartialArtTechniqueListSchema,
   type MartialArtTechniqueListType,
-} from "@neon-codex/common/build/schemas/abilities/martialArtSchemas.js";
+} from "@neon-codex/common";
 import { MartialArtTechniques } from "../../models/rpg/abilities/martialArtTechniqueModel.js";
 import { type } from "arktype";
 

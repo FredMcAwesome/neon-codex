@@ -1,7 +1,7 @@
 import { trpc } from "../../../utils/trpc.js";
 import { ArwesSelect } from "../../common/ArwesSelect.js";
 import { ArwesButton } from "../../common/ArwesButton.js";
-import type { MartialArtSelectedType } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
+import type { MartialArtSelectedType } from "@neon-codex/common";
 
 interface IProps {
   karmaPoints: number;

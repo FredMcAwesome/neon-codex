@@ -18,7 +18,7 @@ import {
   ProgramSchema,
   type AvailabilityProgramType,
   type CostProgramType,
-} from "@neon-codex/common/build/schemas/abilities/talent/programSchemas.js";
+} from "@neon-codex/common";
 import Programs from "../../grammar/programs.ohm-bundle.js";
 import {
   availabilityProgramSemantics,

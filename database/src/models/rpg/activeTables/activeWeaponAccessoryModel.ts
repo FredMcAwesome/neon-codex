@@ -9,11 +9,11 @@ import {
 } from "@mikro-orm/postgresql";
 import type { Ref } from "@mikro-orm/postgresql";
 import { ActiveWeaponAccessoryGears } from "./activeGearModel.js";
-import { weaponAccessoryMountLocationEnum } from "@neon-codex/common/build/enums.js";
+import { weaponAccessoryMountLocationEnum } from "@neon-codex/common";
 import { WeaponAccessories } from "../equipment/combat/weaponAccessoryModel.js";
 import { Weapons } from "../equipment/combat/weaponModel.js";
 import { ActiveWeapons } from "./activeWeaponModel.js";
-import type { AccessoryMountType } from "@neon-codex/common/build/schemas/shared/weaponSharedSchemas.js";
+import type { AccessoryMountType } from "@neon-codex/common";
 
 // Links to either a custom weapon, or a weapon in the table.
 // When we create a custom weapon that already has an accessory

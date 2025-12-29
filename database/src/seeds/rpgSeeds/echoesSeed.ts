@@ -2,8 +2,8 @@ import assert from "assert";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { EchoListSchema } from "@neon-codex/common/build/schemas/abilities/talent/echoSchemas.js";
-import type { EchoListType } from "@neon-codex/common/build/schemas/abilities/talent/echoSchemas.js";
+import { EchoListSchema } from "@neon-codex/common";
+import type { EchoListType } from "@neon-codex/common";
 import { Echoes } from "../../models/rpg/otherData/echoModel.js";
 import { type } from "arktype";
 

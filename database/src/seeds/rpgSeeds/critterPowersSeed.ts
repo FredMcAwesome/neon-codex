@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 import {
   CritterPowerListSchema,
   type CritterPowerListType,
-} from "@neon-codex/common/build/schemas/abilities/talent/critterPowerSchemas.js";
+} from "@neon-codex/common";
 import { CritterPowers } from "../../models/rpg/abilities/critterPowerModel.js";
 import { type } from "arktype";
 

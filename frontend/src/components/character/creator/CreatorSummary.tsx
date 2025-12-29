@@ -1,8 +1,8 @@
-import type { SelectedEquipmentListType } from "@neon-codex/common/build/schemas/equipment/other/equipmentSchemas.js";
+import type { SelectedEquipmentListType } from "@neon-codex/common";
 import type {
   CustomSkillGroupListType,
   CustomSkillListType,
-} from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
+} from "@neon-codex/common";
 import type {
   PriorityLevelsType,
   AttributesType,
@@ -12,10 +12,10 @@ import type {
   MartialArtSelectedType,
   HeritagePrioritySelectedType,
   TalentInfoType,
-} from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
+} from "@neon-codex/common";
 import type { SkillPointInfoType } from "../commonSchemas.js";
-import type { CharacterCreatorBonusListType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
-import { talentCategoryEnum } from "@neon-codex/common/build/enums.js";
+import type { CharacterCreatorBonusListType } from "@neon-codex/common";
+import { talentCategoryEnum } from "@neon-codex/common";
 import { CollapsibleDiv } from "../../../utils/CollapsibleDiv.js";
 
 interface IProps {

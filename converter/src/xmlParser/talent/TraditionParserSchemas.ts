@@ -1,4 +1,4 @@
-// import { standardCalculationEnum } from "@neon-codex/common/build/enums.js";
+// import { standardCalculationEnum } from "@neon-codex/common";
 
 import { type } from "arktype";
 import {
@@ -10,7 +10,7 @@ import {
   RequiredXmlSchema,
   type RequiredXmlType,
 } from "../common/RequiredParserSchemas.js";
-import { traditionSpiritFormEnum } from "@neon-codex/common/build/enums.js";
+import { traditionSpiritFormEnum } from "@neon-codex/common";
 
 export enum traditionXmlDrainAttributeEnum {
   WilCha = "{WIL} + {CHA}",

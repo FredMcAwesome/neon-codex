@@ -7,11 +7,8 @@ import {
   Unique,
   type Ref,
 } from "@mikro-orm/postgresql";
-import type { SkillType } from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
-import {
-  attributeTypeEnum,
-  skillCategoryEnum,
-} from "@neon-codex/common/build/enums.js";
+import type { SkillType } from "@neon-codex/common";
+import { attributeTypeEnum, skillCategoryEnum } from "@neon-codex/common";
 import { SkillGroups } from "./skillGroupModel.js";
 
 @Entity()

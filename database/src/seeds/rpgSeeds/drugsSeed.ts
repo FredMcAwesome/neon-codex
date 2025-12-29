@@ -1,11 +1,5 @@
-import {
-  DrugComponentListSchema,
-  DrugListSchema,
-} from "@neon-codex/common/build/schemas/equipment/other/drugSchemas.js";
-import type {
-  DrugComponentListType,
-  DrugListType,
-} from "@neon-codex/common/build/schemas/equipment/other/drugSchemas.js";
+import { DrugComponentListSchema, DrugListSchema } from "@neon-codex/common";
+import type { DrugComponentListType, DrugListType } from "@neon-codex/common";
 import assert from "assert";
 import fs from "fs";
 import path from "path";

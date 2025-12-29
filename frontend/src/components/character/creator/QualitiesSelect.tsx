@@ -2,13 +2,10 @@ import { Fragment } from "react";
 import { ArwesSelect } from "../../common/ArwesSelect.js";
 import { ArwesButton } from "../../common/ArwesButton.js";
 import { trpc } from "../../../utils/trpc.js";
-import {
-  bonusSourceEnum,
-  qualityCategoryEnum,
-} from "@neon-codex/common/build/enums.js";
-import type { QualitySelectedListType } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
-import type { QualityListType } from "@neon-codex/common/build/schemas/abilities/qualitySchemas.js";
-import type { CharacterCreatorBonusListType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
+import { bonusSourceEnum, qualityCategoryEnum } from "@neon-codex/common";
+import type { QualitySelectedListType } from "@neon-codex/common";
+import type { QualityListType } from "@neon-codex/common";
+import type { CharacterCreatorBonusListType } from "@neon-codex/common";
 
 const QualityDefault = "Select a quality";
 

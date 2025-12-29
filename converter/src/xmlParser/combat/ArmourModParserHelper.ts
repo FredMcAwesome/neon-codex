@@ -5,7 +5,7 @@ import {
   costEnum,
   mathOperatorEnum,
   restrictionEnum,
-} from "@neon-codex/common/build/enums.js";
+} from "@neon-codex/common";
 import { armourModXmlCategoryEnum } from "./ArmourModParserSchemas.js";
 import ArmourModifications from "../../grammar/armourModifications.ohm-bundle.js";
 const Availability = ArmourModifications.Availability;

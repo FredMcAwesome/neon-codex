@@ -14,10 +14,10 @@ import {
   traditionDrainAttributeEnum,
   traditionSpiritEnum,
   traditionSpiritFormEnum,
-} from "@neon-codex/common/build/enums.js";
-import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
-import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
-import type { TraditionType } from "@neon-codex/common/build/schemas/abilities/talent/traditionSchemas.js";
+} from "@neon-codex/common";
+import type { BonusType } from "@neon-codex/common";
+import type { RequirementsType } from "@neon-codex/common";
+import type { TraditionType } from "@neon-codex/common";
 import { Critters } from "../creatures/critterModel.js";
 import { ActiveMagicTalents } from "../activeTables/activeTalentModel.js";
 

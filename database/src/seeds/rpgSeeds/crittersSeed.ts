@@ -2,10 +2,7 @@ import assert from "assert";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import {
-  CritterListSchema,
-  type CritterListType,
-} from "@neon-codex/common/build/schemas/creatures/critterSchemas.js";
+import { CritterListSchema, type CritterListType } from "@neon-codex/common";
 import { Critters } from "../../models/rpg/creatures/critterModel.js";
 import { type } from "arktype";
 

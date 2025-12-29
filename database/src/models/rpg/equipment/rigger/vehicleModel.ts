@@ -14,7 +14,7 @@ import {
   sourceBookEnum,
   vehicleCategoryEnum,
   watercraftSubtypeEnum,
-} from "@neon-codex/common/build/enums.js";
+} from "@neon-codex/common";
 import { VehicleIncludedGears } from "../../activeTables/activeGearModel.js";
 import { IncludedVehicleModifications } from "../../activeTables/activeVehicleModificationModel.js";
 import { IncludedWeaponMounts } from "../../activeTables/activeWeaponMountModel.js";
@@ -28,7 +28,7 @@ import type {
   WatercraftVehicleType,
   AircraftVehicleType,
   DroneVehicleType,
-} from "@neon-codex/common/build/schemas/equipment/rigger/vehicleSchemas.js";
+} from "@neon-codex/common";
 import { ActiveVehicles } from "../../activeTables/activeVehicleModel.js";
 
 @Entity({

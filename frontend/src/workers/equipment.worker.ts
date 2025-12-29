@@ -2,8 +2,19 @@ import MiniSearch from "minisearch";
 import { get, set } from "idb-keyval";
 import {
   EquipmentListSchema,
+  equipmentTypeEnum,
+  type ArmourModType,
+  type ArmourType,
+  type AugmentationType,
   type EquipmentListType,
-} from "@neon-codex/common/build/schemas/equipment/other/equipmentSchemas";
+  type EquipmentPackType,
+  type GearType,
+  type VehicleModType,
+  type VehicleType,
+  type WeaponAccessoryType,
+  type WeaponMountModType,
+  type WeaponType,
+} from "@neon-codex/common";
 import {
   workerRequestEnum,
   workerResponseEnum,
@@ -12,17 +23,6 @@ import {
   type WorkerRequestType,
   type WorkerResponseType,
 } from "./types";
-import { equipmentTypeEnum } from "@neon-codex/common/src/enums";
-import type { AugmentationType } from "@neon-codex/common/src/schemas/equipment/bodyModification/augmentationSchemas";
-import type { ArmourType } from "@neon-codex/common/src/schemas/equipment/combat/armourSchemas";
-import type { WeaponAccessoryType } from "@neon-codex/common/src/schemas/equipment/combat/weaponAccessorySchemas";
-import type { WeaponType } from "@neon-codex/common/src/schemas/equipment/combat/weaponSchemas";
-import type { EquipmentPackType } from "@neon-codex/common/src/schemas/equipment/equipmentPackSchemas";
-import type { GearType } from "@neon-codex/common/src/schemas/equipment/other/gearSchemas";
-import type { VehicleType } from "@neon-codex/common/src/schemas/equipment/rigger/vehicleSchemas";
-import type { ArmourModType } from "@neon-codex/common/src/schemas/equipment/combat/armourModSchemas";
-import type { VehicleModType } from "@neon-codex/common/src/schemas/equipment/rigger/vehicleModSchemas";
-import type { WeaponMountModType } from "@neon-codex/common/src/schemas/equipment/rigger/weaponMountModSchemas";
 import { type } from "arktype";
 
 let miniSearch: MiniSearch;

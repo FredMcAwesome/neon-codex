@@ -3,7 +3,7 @@ import {
   mathOperatorEnum,
   availabilityEnum,
   costEnum,
-} from "@neon-codex/common/build/enums.js";
+} from "@neon-codex/common";
 import Programs from "../../grammar/programs.ohm-bundle.js";
 const Availability = Programs.Availability;
 const Cost = Programs.Cost;

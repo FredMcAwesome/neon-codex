@@ -7,10 +7,7 @@ import * as fs from "fs";
 import { convertXmlBonus } from "../common/BonusParserHelper.js";
 import { convertSource } from "../common/ParserHelper.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
-import {
-  AdeptPowerSchema,
-  type AdeptPowerType,
-} from "@neon-codex/common/build/schemas/abilities/talent/adeptPowerSchemas.js";
+import { AdeptPowerSchema, type AdeptPowerType } from "@neon-codex/common";
 import {
   AdeptPowerListXmlSchema,
   type AdeptPowerXmlType,

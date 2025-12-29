@@ -1,23 +1,21 @@
 import { useParams } from "react-router-dom";
 import { trpc } from "../../utils/trpc.js";
-import type {
-  AttributesType,
-  LifestyleSelectedListType,
-  MartialArtSelectedListType,
-  SpecialAttributesType,
-  TalentInfoType,
-} from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
 import {
   attributeTypeEnum,
   talentCategoryEnum,
-} from "@neon-codex/common/build/enums.js";
-import type { CustomSkillListType } from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
-import type { CustomQualityListType } from "@neon-codex/common/build/schemas/abilities/qualitySchemas.js";
-import type { CustomisedWeaponListType } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
-import type { CustomisedArmourListType } from "@neon-codex/common/build/schemas/equipment/combat/armourSchemas.js";
-import type { CustomisedGearListType } from "@neon-codex/common/build/schemas/equipment/other/gearSchemas.js";
-import type { CustomisedAugmentationListType } from "@neon-codex/common/build/schemas/equipment/bodyModification/augmentationSchemas.js";
-import type { CustomisedVehicleListType } from "@neon-codex/common/build/schemas/equipment/rigger/vehicleSchemas.js";
+  type AttributesType,
+  type CustomQualityListType,
+  type CustomSkillListType,
+  type CustomisedArmourListType,
+  type CustomisedAugmentationListType,
+  type CustomisedGearListType,
+  type CustomisedVehicleListType,
+  type CustomisedWeaponListType,
+  type LifestyleSelectedListType,
+  type MartialArtSelectedListType,
+  type SpecialAttributesType,
+  type TalentInfoType,
+} from "@neon-codex/common";
 import { CollapsibleDiv } from "../../utils/CollapsibleDiv.js";
 import { ArwesCard } from "../common/ArwesCard.js";
 

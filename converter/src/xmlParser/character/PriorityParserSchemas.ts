@@ -3,7 +3,7 @@ import {
   priorityCategoryEnum,
   heritageCategoryEnum,
   priorityTableRunnerLevelEnum,
-} from "@neon-codex/common/build/enums.js";
+} from "@neon-codex/common";
 
 import { StringArrayOrStringSchema } from "../common/ParserCommonDefines.js";
 import {
@@ -12,7 +12,7 @@ import {
   ResourcePrioritySchema,
   SkillPrioritySchema,
   TalentOptionsPrioritySchema,
-} from "@neon-codex/common/build/schemas/otherData/prioritySchemas.js";
+} from "@neon-codex/common";
 import { type } from "arktype";
 
 const PriorityBaseXmlSchema = type({

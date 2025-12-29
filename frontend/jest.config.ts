@@ -23,7 +23,7 @@ const config: Config.InitialOptions = {
   setupFilesAfterEnv: ["<rootDir>/src/tests/setupTests.ts"],
   moduleNameMapper: {
     "@neon-codex/common":
-      "<rootDir>/../node_modules/@neon-codex/common/src/index.js",
+      "<rootDir>/../node_modules/@neon-codex/commonsrc/index.js",
     "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
       "<rootDir>/src/tests/mocks/fileMock.ts",
     "\\.(css|less)$": "<rootDir>/src/tests/mocks/styleMock.ts",

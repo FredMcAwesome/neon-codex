@@ -16,8 +16,8 @@ import type {
   WeaponAccessoryType,
   AvailabilityWeaponAccessoryType,
   CostWeaponAccessoryType,
-} from "@neon-codex/common/build/schemas/equipment/combat/weaponAccessorySchemas.js";
-import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
+} from "@neon-codex/common";
+import type { RequirementsType } from "@neon-codex/common";
 import { Weapons } from "./weaponModel.js";
 import { Gears } from "../other/gearModel.js";
 import {
@@ -25,9 +25,9 @@ import {
   gearCategoryEnum,
   sourceBookEnum,
   weaponAccessoryMountLocationEnum,
-} from "@neon-codex/common/build/enums.js";
+} from "@neon-codex/common";
 import { WeaponAccessoryIncludedGears } from "../../activeTables/activeGearModel.js";
-import type { AmmunitionSingleType } from "@neon-codex/common/build/schemas/shared/weaponSharedSchemas.js";
+import type { AmmunitionSingleType } from "@neon-codex/common";
 
 @Entity()
 export class WeaponAccessories {

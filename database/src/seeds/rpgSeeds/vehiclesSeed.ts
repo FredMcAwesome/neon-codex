@@ -9,7 +9,7 @@ import {
   weaponMountFlexibilityEnum,
   weaponMountSizeEnum,
   weaponMountVisibilityEnum,
-} from "@neon-codex/common/build/enums.js";
+} from "@neon-codex/common";
 import {
   Vehicles,
   Groundcrafts,
@@ -18,10 +18,7 @@ import {
   Drones,
 } from "../../models/rpg/equipment/rigger/vehicleModel.js";
 import { WeaponMounts } from "../../models/rpg/equipment/rigger/weaponMountModel.js";
-import {
-  type VehicleListType,
-  VehicleListSchema,
-} from "@neon-codex/common/build/schemas/equipment/rigger/vehicleSchemas.js";
+import { type VehicleListType, VehicleListSchema } from "@neon-codex/common";
 import { type } from "arktype";
 
 export const getVehicles = function () {

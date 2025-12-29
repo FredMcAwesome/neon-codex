@@ -26,14 +26,11 @@ import {
 } from "./CyberwareParserHelper.js";
 import { convertXmlBonus } from "../common/BonusParserHelper.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
-import {
-  augmentationCategoryEnum,
-  availabilityEnum,
-} from "@neon-codex/common/build/enums.js";
+import { augmentationCategoryEnum, availabilityEnum } from "@neon-codex/common";
 import {
   AugmentationSchema,
   type CapacityAugmentationType,
-} from "@neon-codex/common/build/schemas/equipment/bodyModification/augmentationSchemas.js";
+} from "@neon-codex/common";
 import Augmentation from "../../grammar/augmentation.ohm-bundle.js";
 import {
   availabilityAugmentationSemantics,

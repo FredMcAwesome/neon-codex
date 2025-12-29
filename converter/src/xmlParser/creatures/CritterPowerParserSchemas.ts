@@ -1,14 +1,11 @@
-// import { standardCalculationEnum } from "@neon-codex/common/build/enums.js";
+// import { standardCalculationEnum } from "@neon-codex/common";
 
 import {
   SourceXmlSchema,
   SpellPowerXmlRangeSchema,
   XmlDurationSchema,
 } from "../common/ParserCommonDefines.js";
-import {
-  actionEnum,
-  critterPowerEnum,
-} from "@neon-codex/common/build/enums.js";
+import { actionEnum, critterPowerEnum } from "@neon-codex/common";
 import {
   RequiredXmlSchema,
   type RequiredXmlType,

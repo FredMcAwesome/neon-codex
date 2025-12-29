@@ -1,255 +1,185 @@
 import * as logger from "../utils/logger.js";
 import { router, privateProcedure } from "../trpc.js";
-import { Skills } from "@neon-codex/database/build/models/rpg/abilities/skillModel.js";
-import { SkillGroups } from "@neon-codex/database/build/models/rpg/abilities/skillGroupModel.js";
-import { init } from "../utils/db.js";
-import { ref } from "@mikro-orm/postgresql";
 import {
-  CustomSkillListSchema,
-  type CustomSkillType,
-  type SkillListType,
-  CustomSkillGroupListSchema,
-} from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
-import type {
-  CustomisedVehicleListType,
-  VehicleListType,
-  VehicleType,
-} from "@neon-codex/common/build/schemas/equipment/rigger/vehicleSchemas.js";
-import {
-  weaponCategoryEnum,
-  augmentationCategoryEnum,
-  vehicleCategoryEnum,
-  priorityLetterEnum,
-  talentCategoryEnum,
-  heritageCategoryEnum,
-  mentorCategoryEnum,
-} from "@neon-codex/common/build/enums.js";
-import type {
-  AugmentationListType,
-  AugmentationType,
-  CustomisedAugmentationListType,
-  CustomisedAugmentationType,
-} from "@neon-codex/common/build/schemas/equipment/bodyModification/augmentationSchemas.js";
-import type {
-  CustomisedGearType,
-  GearListType,
-  GearType,
-} from "@neon-codex/common/build/schemas/equipment/other/gearSchemas.js";
-import type {
-  CustomisedWeaponType,
-  WeaponListType,
-  WeaponType,
-} from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
-import {
-  SelectedEquipmentListSchema,
-  type EquipmentListType,
-} from "@neon-codex/common/build/schemas/equipment/other/equipmentSchemas.js";
-import {
-  Augmentations,
-  Cyberwares,
-  Biowares,
-} from "@neon-codex/database/build/models/rpg/equipment/bodyModification/augmentationModel.js";
-import {
-  Weapons,
-  MeleeWeapons,
-  RangedWeapons,
-  ProjectileWeapons,
-  FirearmWeapons,
-  Explosives,
-} from "@neon-codex/database/build/models/rpg/equipment/combat/weaponModel.js";
-import {
-  Vehicles,
-  MannedVehicles,
-  Groundcrafts,
-  Watercrafts,
+  ActiveArmourModifications,
+  ActiveArmours,
+  ActiveAugmentationGears,
+  ActiveDepthTalents,
+  ActiveGears,
+  ActiveLifestyles,
+  ActiveMagicTalents,
+  ActiveMartialArts,
+  ActiveMentorSpirits,
+  ActiveParagons,
+  ActivePrograms,
+  ActiveQualities,
+  ActiveResonanceTalents,
+  ActiveTalents,
+  ActiveVehicleModifications,
+  ActiveVehicles,
+  ActiveWeaponAccessories,
+  ActiveWeaponMounts,
+  ActiveWeapons,
+  AdeptPowers,
   Aircrafts,
-  Drones,
-} from "@neon-codex/database/build/models/rpg/equipment/rigger/vehicleModel.js";
-import { Gears } from "@neon-codex/database/build/models/rpg/equipment/other/gearModel.js";
-import type {
-  ArmourListType,
-  ArmourType,
-  CustomisedArmourListType,
-  CustomisedArmourType,
-} from "@neon-codex/common/build/schemas/equipment/combat/armourSchemas.js";
-import type { CustomisedVehicleType } from "@neon-codex/common/build/schemas/equipment/rigger/vehicleSchemas.js";
-import {
-  AttributesSchema,
-  SpecialAttributesSchema,
-  HeritagePrioritySelectedSchema,
-  PriorityLevelsSchema,
-  QualitySelectedListSchema,
-  type CharacterType,
-  type CharacterSummaryListType,
-  type CharacterSummaryType,
-  TalentInfoSchema,
-  type CustomSpiritsType,
-  type FormulaListSelectedType,
-  type AdeptPowerListSelectedType,
-  type ProgramSelectedListType,
-  MartialArtSelectedSchema,
-  type MartialArtSelectedType,
-  type LifestyleSelectedType,
-  LifestyleSelectedListSchema,
-} from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
-import { Armours } from "@neon-codex/database/build/models/rpg/equipment/combat/armourModel.js";
-import { Characters } from "@neon-codex/database/build/models/rpg/characters/characterModel.js";
-import {
-  type CustomQualityType,
-  type QualityListType,
-  type QualityType,
-} from "@neon-codex/common/build/schemas/abilities/qualitySchemas.js";
-import { Qualities } from "@neon-codex/database/build/models/rpg/traits/qualityModel.js";
-import {
+  AllSpiritsTraditions,
+  ArmourModifications,
+  Armours,
+  Augmentations,
   BaseHeritages,
+  Biowares,
+  Bonuses,
+  Characters,
+  ChildGears,
+  ComplexForms,
+  Critters,
+  CustomisedArmourModifications,
+  CustomisedArmours,
+  CustomisedAugmentations,
+  CustomisedGears,
+  CustomisedLifestyles,
+  CustomisedQualities,
+  CustomisedSkillGroups,
+  CustomisedSkills,
+  CustomisedVehicleModifications,
+  CustomisedVehicles,
+  CustomisedWeaponAccessories,
+  CustomisedWeapons,
+  Cyberwares,
+  DepthTalentPriorityDetails,
+  Drones,
+  EquipmentPacks,
+  Explosives,
+  FirearmWeapons,
+  Gears,
+  Groundcrafts,
   Heritages,
+  LifestyleQualities,
+  Lifestyles,
+  LinkedSpiritsTraditions,
+  MagicTalentPriorityDetails,
+  MannedVehicles,
+  MartialArtTechniques,
+  MartialArts,
+  MeleeWeapons,
+  MentorSpirits,
+  Mentors,
   Metahumans,
   Metasapients,
   Metavariants,
-  Shapeshifters,
-} from "@neon-codex/database/build/models/rpg/traits/heritageModel.js";
-import { Priorities } from "@neon-codex/database/build/models/rpg/otherData/priorityModel.js";
-import type {
-  PriorityRowType,
-  PriorityTableType,
-} from "@neon-codex/common/build/schemas/otherData/prioritySchemas.js";
-import type { Loaded } from "@mikro-orm/postgresql";
-import {
-  MagicTalentPriorityDetails,
-  ResonanceTalentPriorityDetails,
-  DepthTalentPriorityDetails,
   MundaneTalentPriorityDetails,
-} from "@neon-codex/database/build/models/rpg/otherData/talentPriorityDetailModel.js";
-import type {
-  HeritageListType,
-  HeritageType,
-} from "@neon-codex/common/build/schemas/abilities/heritageSchemas.js";
-import {
-  ActiveQualities,
-  CustomisedQualities,
-} from "@neon-codex/database/build/models/rpg/activeTables/activeQualityModel.js";
-import { CustomisedSkills } from "@neon-codex/database/build/models/rpg/activeTables/activeSkillModel.js";
-import {
-  ActiveWeapons,
-  CustomisedWeapons,
-  WeaponMountWeapons,
-} from "@neon-codex/database/build/models/rpg/activeTables/activeWeaponModel.js";
-import {
-  ActiveArmours,
-  CustomisedArmours,
-} from "@neon-codex/database/build/models/rpg/activeTables/activeArmourModel.js";
-import { WeaponAccessories } from "@neon-codex/database/build/models/rpg/equipment/combat/weaponAccessoryModel.js";
-import {
-  ActiveAugmentationGears,
-  ActiveGears,
-  ChildGears,
-  CustomisedGears,
-} from "@neon-codex/database/build/models/rpg/activeTables/activeGearModel.js";
-import {
-  CustomisedWeaponAccessories,
-  type ActiveWeaponAccessories,
-} from "@neon-codex/database/build/models/rpg/activeTables/activeWeaponAccessoryModel.js";
-import {
-  ActiveArmourModifications,
-  CustomisedArmourModifications,
-} from "@neon-codex/database/build/models/rpg/activeTables/activeArmourModificationModel.js";
-import { ArmourModifications } from "@neon-codex/database/build/models/rpg/equipment/combat/armourModificationModel.js";
-import { CustomisedAugmentations } from "@neon-codex/database/build/models/rpg/activeTables/activeAugmentationModel.js";
-import { VehicleModifications } from "@neon-codex/database/build/models/rpg/equipment/rigger/vehicleModificationModel.js";
-import {
-  ActiveVehicleModifications,
-  CustomisedVehicleModifications,
-} from "@neon-codex/database/build/models/rpg/activeTables/activeVehicleModificationModel.js";
-import {
-  ActiveVehicles,
-  CustomisedVehicles,
-} from "@neon-codex/database/build/models/rpg/activeTables/activeVehicleModel.js";
-import { CustomisedSkillGroups } from "@neon-codex/database/build/models/rpg/activeTables/activeSkillGroupModel.js";
-import Users from "@neon-codex/database/build/models/accounts/userModel.js";
-import type { SpellListType } from "@neon-codex/common/build/schemas/abilities/talent/spellSchemas.js";
-import { Spells } from "@neon-codex/database/build/models/rpg/abilities/spellModel.js";
-import type { ComplexFormListType } from "@neon-codex/common/build/schemas/abilities/talent/complexFormSchemas.js";
-import { ComplexForms } from "@neon-codex/database/build/models/rpg/abilities/complexFormModel.js";
-import type { AdeptPowerListType } from "@neon-codex/common/build/schemas/abilities/talent/adeptPowerSchemas.js";
-import { AdeptPowers } from "@neon-codex/database/build/models/rpg/abilities/adeptPowerModel.js";
-import type { ProgramListType } from "@neon-codex/common/build/schemas/abilities/talent/programSchemas.js";
-import { Programs } from "@neon-codex/database/build/models/rpg/abilities/programModel.js";
-import type { TraditionListType } from "@neon-codex/common/build/schemas/abilities/talent/traditionSchemas.js";
-import {
-  AllSpiritsTraditions,
-  LinkedSpiritsTraditions,
+  Paragons,
+  Priorities,
+  Programs,
+  ProjectileWeapons,
+  Qualities,
+  RangedWeapons,
+  ResonanceTalentPriorityDetails,
+  Shapeshifters,
+  SkillGroups,
+  Skills,
+  Spells,
   Traditions,
   UnlinkedSpiritsTraditions,
-} from "@neon-codex/database/build/models/rpg/traits/traditionModel.js";
-import type { CritterListType } from "@neon-codex/common/build/schemas/creatures/critterSchemas.js";
-import { Critters } from "@neon-codex/database/build/models/rpg/creatures/critterModel.js";
-import { ActivePrograms } from "@neon-codex/database/build/models/rpg/activeTables/activeProgramModel.js";
+  Users,
+  VehicleModifications,
+  Vehicles,
+  Watercrafts,
+  WeaponAccessories,
+  WeaponMountModifications,
+  WeaponMountWeapons,
+  WeaponMounts,
+  Weapons,
+} from "@neon-codex/database";
+import { init } from "../utils/db.js";
+import { ref } from "@mikro-orm/postgresql";
 import {
-  ActiveDepthTalents,
-  ActiveMagicTalents,
-  ActiveResonanceTalents,
-  ActiveTalents,
-} from "@neon-codex/database/build/models/rpg/activeTables/activeTalentModel.js";
+  AttributesSchema,
+  CharacterCreatorBonusListSchema,
+  CustomSkillGroupListSchema,
+  CustomSkillListSchema,
+  HeritagePrioritySelectedSchema,
+  LifestyleSelectedListSchema,
+  MartialArtSelectedSchema,
+  PriorityLevelsSchema,
+  QualitySelectedListSchema,
+  SelectedEquipmentListSchema,
+  SpecialAttributesSchema,
+  TalentInfoSchema,
+  augmentationCategoryEnum,
+  heritageCategoryEnum,
+  mentorCategoryEnum,
+  priorityLetterEnum,
+  talentCategoryEnum,
+  type AdeptPowerListSelectedType,
+  type AdeptPowerListType,
+  type ArmourListType,
+  type ArmourModListType,
+  type ArmourModType,
+  type ArmourType,
+  type AugmentationListType,
+  type AugmentationType,
+  type BonusType,
+  type CharacterSummaryListType,
+  type CharacterSummaryType,
+  type CharacterType,
+  type ComplexFormListType,
+  type CritterListType,
+  type CustomQualityType,
+  type CustomSkillType,
+  type CustomSpiritsType,
+  type CustomisedArmourListType,
+  type CustomisedArmourModType,
+  type CustomisedArmourType,
+  type CustomisedAugmentationListType,
+  type CustomisedAugmentationType,
+  type CustomisedGearType,
+  type CustomisedVehicleListType,
+  type CustomisedVehicleModType,
+  type CustomisedVehicleType,
+  type CustomisedWeaponAccessoryType,
+  type CustomisedWeaponMountListType,
+  type CustomisedWeaponMountType,
+  type CustomisedWeaponType,
+  type EquipmentListType,
+  type EquipmentPackListType,
+  type FormulaListSelectedType,
+  type GearListType,
+  type GearType,
+  type HeritageListType,
+  type HeritageType,
+  type LifestyleListType,
+  type LifestyleQualityListType,
+  type LifestyleSelectedType,
+  type MartialArtListType,
+  type MartialArtSelectedType,
+  type MartialArtTechniqueListType,
+  type MentorBaseType,
+  type MentorListType,
+  type PriorityRowType,
+  type PriorityTableType,
+  type ProgramListType,
+  type ProgramSelectedListType,
+  type QualityListType,
+  type QualityType,
+  type SkillListType,
+  type SpellListType,
+  type TraditionListType,
+  type VehicleListType,
+  type VehicleModListType,
+  type VehicleModType,
+  type VehicleType,
+  type WeaponAccessoryListType,
+  type WeaponAccessoryType,
+  type WeaponListType,
+  type WeaponMountModListType,
+  type WeaponMountModType,
+  type WeaponType,
+  vehicleCategoryEnum,
+  weaponCategoryEnum,
+} from "@neon-codex/common";
+import type { Loaded } from "@mikro-orm/postgresql";
 import assert from "assert";
-import type { Bonuses } from "@neon-codex/database/build/models/rpg/otherData/bonusModel.js";
-import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
-import type {
-  MentorBaseType,
-  MentorListType,
-} from "@neon-codex/common/build/schemas/abilities/talent/mentorSchemas.js";
-import { CharacterCreatorBonusListSchema } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
-import {
-  Mentors,
-  MentorSpirits,
-  Paragons,
-} from "@neon-codex/database/build/models/rpg/otherData/mentorModel.js";
-import { ActiveMentorSpirits } from "@neon-codex/database/build/models/rpg/activeTables/activeMentorModel.js";
-import { ActiveParagons } from "@neon-codex/database/build/models/rpg/activeTables/activeParagonModel.js";
-import type {
-  MartialArtListType,
-  MartialArtTechniqueListType,
-} from "@neon-codex/common/build/schemas/abilities/martialArtSchemas.js";
-import { MartialArts } from "@neon-codex/database/build/models/rpg/abilities/martialArtModel.js";
-import { MartialArtTechniques } from "@neon-codex/database/build/models/rpg/abilities/martialArtTechniqueModel.js";
-import { ActiveMartialArts } from "@neon-codex/database/build/models/rpg/activeTables/activeMartialArtModel.js";
-import type {
-  LifestyleListType,
-  LifestyleQualityListType,
-} from "@neon-codex/common/build/schemas/otherData/lifestyleSchemas.js";
-import { Lifestyles } from "@neon-codex/database/build/models/rpg/otherData/lifestyleModel.js";
-import { LifestyleQualities } from "@neon-codex/database/build/models/rpg/otherData/lifestyleQualityModel.js";
-import {
-  ActiveLifestyles,
-  CustomisedLifestyles,
-} from "@neon-codex/database/build/models/rpg/activeTables/activeLIfestyleModel.js";
-import type { EquipmentPackListType } from "@neon-codex/common/build/schemas/equipment/equipmentPackSchemas.js";
-import { EquipmentPacks } from "@neon-codex/database/build/models/rpg/equipment/equipmentPackModel.js";
-import type {
-  CustomisedWeaponAccessoryType,
-  WeaponAccessoryListType,
-  WeaponAccessoryType,
-} from "@neon-codex/common/build/schemas/equipment/combat/weaponAccessorySchemas.js";
-import type {
-  ArmourModListType,
-  ArmourModType,
-  CustomisedArmourModType,
-} from "@neon-codex/common/build/schemas/equipment/combat/armourModSchemas.js";
-import type {
-  CustomisedVehicleModType,
-  VehicleModListType,
-  VehicleModType,
-} from "@neon-codex/common/build/schemas/equipment/rigger/vehicleModSchemas.js";
-import { type ActiveWeaponMounts } from "@neon-codex/database/build/models/rpg/activeTables/activeWeaponMountModel.js";
-import type {
-  CustomisedWeaponMountListType,
-  CustomisedWeaponMountType,
-} from "@neon-codex/common/build/schemas/equipment/rigger/weaponMountSchemas.js";
-import { WeaponMounts } from "@neon-codex/database/build/models/rpg/equipment/rigger/weaponMountModel.js";
-import type {
-  WeaponMountModListType,
-  WeaponMountModType,
-} from "@neon-codex/common/build/schemas/equipment/rigger/weaponMountModSchemas.js";
-import { WeaponMountModifications } from "@neon-codex/database/build/models/rpg/equipment/rigger/weaponMountModModel.js";
 import { type } from "arktype";
 
 function isEmpty(obj: object) {
@@ -4355,16 +4285,18 @@ function parsePriority(
     let includedSkills;
     if (talent.includedSkills !== undefined) {
       includedSkills = {
-        points: talent.includedSkills.points,
+        skillCount: talent.includedSkills.points,
         rating: talent.includedSkills.rating,
-        skillList: talent.includedSkills.skillList.$.map((skill) => {
-          return skill.name;
-        }),
+        skillOptionList: talent.includedSkills.skillOptionList.$.map(
+          (skill) => {
+            return skill.name;
+          }
+        ),
       };
       // TODO: these are all empty, take a look...
     } else if (talent.includedSkillSource !== undefined) {
       includedSkills = {
-        points: talent.includedSkillSource.points,
+        skillCount: talent.includedSkillSource.points,
         rating: talent.includedSkillSource.rating,
         source: talent.includedSkillSource.source,
       };
@@ -4372,7 +4304,7 @@ function parsePriority(
     let includedSkillGroups;
     if (talent.includedSkillGroups !== undefined) {
       includedSkillGroups = {
-        points: talent.includedSkillGroups.points,
+        skillCount: talent.includedSkillGroups.points,
         rating: talent.includedSkillGroups.rating,
         groupList: talent.includedSkillGroups.skillGroupList.$.map((group) => {
           return group.name;

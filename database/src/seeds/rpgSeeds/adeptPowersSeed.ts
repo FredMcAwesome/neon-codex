@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 import {
   AdeptPowerListSchema,
   type AdeptPowerListType,
-} from "@neon-codex/common/build/schemas/abilities/talent/adeptPowerSchemas.js";
+} from "@neon-codex/common";
 import { AdeptPowers } from "../../models/rpg/abilities/adeptPowerModel.js";
 import { type } from "arktype";
 

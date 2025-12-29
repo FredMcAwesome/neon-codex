@@ -5,7 +5,7 @@ import {
   Property,
   type Ref,
 } from "@mikro-orm/postgresql";
-import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
+import type { BonusType } from "@neon-codex/common";
 import { Qualities } from "../traits/qualityModel.js";
 
 @Entity({

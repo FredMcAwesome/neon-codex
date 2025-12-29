@@ -1,7 +1,4 @@
-import {
-  mathOperatorEnum,
-  standardCalculationEnum,
-} from "@neon-codex/common/build/enums.js";
+import { mathOperatorEnum, standardCalculationEnum } from "@neon-codex/common";
 
 import { BonusXmlWrappedSchema } from "../common/BonusParserSchemas.js";
 import {

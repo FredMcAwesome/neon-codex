@@ -6,16 +6,13 @@ import {
   PrimaryKey,
   Property,
 } from "@mikro-orm/postgresql";
-import {
-  critterCategoryEnum,
-  sourceBookEnum,
-} from "@neon-codex/common/build/enums.js";
+import { critterCategoryEnum, sourceBookEnum } from "@neon-codex/common";
 import type {
   CritterAttributeRangeType,
   CritterType,
-} from "@neon-codex/common/build/schemas/creatures/critterSchemas.js";
-import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
-import type { MovementStrideType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
+} from "@neon-codex/common";
+import type { BonusType } from "@neon-codex/common";
+import type { MovementStrideType } from "@neon-codex/common";
 import { CritterIncludedQualities } from "../activeTables/activeQualityModel.js";
 import { CritterIncludedAugmentations } from "../activeTables/activeAugmentationModel.js";
 import { IncludedCritterPowers } from "../activeTables/activeCritterPowerModel.js";

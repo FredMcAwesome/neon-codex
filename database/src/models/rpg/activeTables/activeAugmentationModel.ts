@@ -13,7 +13,7 @@ import { Augmentations } from "../equipment/bodyModification/augmentationModel.j
 import { ActiveAugmentationGears } from "./activeGearModel.js";
 import { Critters } from "../creatures/critterModel.js";
 import { EquipmentPacks } from "../equipment/equipmentPackModel.js";
-import { augmentationGradeEnum } from "@neon-codex/common/build/enums.js";
+import { augmentationGradeEnum } from "@neon-codex/common";
 
 @Entity({
   discriminatorColumn: "discr",

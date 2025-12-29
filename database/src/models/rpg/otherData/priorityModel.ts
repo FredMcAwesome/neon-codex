@@ -7,13 +7,13 @@ import {
   Property,
   Unique,
 } from "@mikro-orm/postgresql";
-import { priorityLetterEnum } from "@neon-codex/common/build/enums.js";
+import { priorityLetterEnum } from "@neon-codex/common";
 import type {
   PriorityRowType,
   AttributePriorityType,
   SkillPriorityType,
   ResourceOptionsPriorityType,
-} from "@neon-codex/common/build/schemas/otherData/prioritySchemas.js";
+} from "@neon-codex/common";
 import { HeritagePriorityDetails } from "./heritagePriorityDetailModel.js";
 import { TalentPriorityDetails } from "./talentPriorityDetailModel.js";
 

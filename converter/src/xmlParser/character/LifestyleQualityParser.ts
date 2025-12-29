@@ -14,11 +14,11 @@ import {
 import {
   LifestyleQualitySchema,
   LifestyleQualityListSchema,
-} from "@neon-codex/common/build/schemas/otherData/lifestyleSchemas.js";
+} from "@neon-codex/common";
 import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { convertSource } from "../common/ParserHelper.js";
-import { lifestyleQualityCategoryEnum } from "@neon-codex/common/build/enums.js";
+import { lifestyleQualityCategoryEnum } from "@neon-codex/common";
 import { type } from "arktype";
 
 const LifestyleQualityXmlSchema = type({

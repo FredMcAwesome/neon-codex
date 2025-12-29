@@ -10,7 +10,7 @@ import {
   getWeaponMountModifications,
   getEquipmentPacks,
 } from "../routes/character.js";
-import type { EquipmentListType } from "@neon-codex/common/build/schemas/equipment/other/equipmentSchemas.js";
+import type { EquipmentListType } from "@neon-codex/common";
 import fs from "fs/promises";
 import path from "path";
 import { fileURLToPath } from "url";

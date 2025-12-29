@@ -7,16 +7,13 @@ import * as fs from "fs";
 import { convertXmlBonus } from "../common/BonusParserHelper.js";
 import { convertSource } from "../common/ParserHelper.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
-import {
-  TraditionSchema,
-  type TraditionType,
-} from "@neon-codex/common/build/schemas/abilities/talent/traditionSchemas.js";
+import { TraditionSchema, type TraditionType } from "@neon-codex/common";
 import {
   TraditionListXmlSchema,
   traditionXmlDrainAttributeEnum,
   type TraditionXmlType,
 } from "./TraditionParserSchemas.js";
-import { traditionDrainAttributeEnum } from "@neon-codex/common/build/enums.js";
+import { traditionDrainAttributeEnum } from "@neon-codex/common";
 import { type } from "arktype";
 
 export function ParseTraditions() {

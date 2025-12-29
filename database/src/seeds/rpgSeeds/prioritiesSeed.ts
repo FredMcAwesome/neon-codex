@@ -5,9 +5,9 @@ import { fileURLToPath } from "url";
 import {
   PriorityTableSchema,
   type PriorityTableType,
-} from "@neon-codex/common/build/schemas/otherData/prioritySchemas.js";
+} from "@neon-codex/common";
 import { Priorities } from "../../models/rpg/otherData/priorityModel.js";
-import { priorityLetterEnum } from "@neon-codex/common/build/enums.js";
+import { priorityLetterEnum } from "@neon-codex/common";
 import { type } from "arktype";
 
 export const getPriorities = function () {

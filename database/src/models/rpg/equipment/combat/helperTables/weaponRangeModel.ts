@@ -1,8 +1,5 @@
 import { Entity, PrimaryKey, Property, Unique } from "@mikro-orm/postgresql";
-import type {
-  RangeIncrementType,
-  RangeType,
-} from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
+import type { RangeIncrementType, RangeType } from "@neon-codex/common";
 
 @Entity()
 export class WeaponRanges {

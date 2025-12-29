@@ -1,4 +1,4 @@
-import { costEnum, gearCategoryEnum } from "@neon-codex/common/build/enums.js";
+import { costEnum, gearCategoryEnum } from "@neon-codex/common";
 
 import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
 import {

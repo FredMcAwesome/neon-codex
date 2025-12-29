@@ -1,6 +1,6 @@
 import { ArwesButton } from "../../../common/ArwesButton.js";
 import styles from "./EquipmentSelect.module.css";
-import type { CustomisedGearLoadedType } from "@neon-codex/common/build/schemas/equipment/other/gearSchemas.js";
+import type { CustomisedGearLoadedType } from "@neon-codex/common";
 
 interface GearSubListProps {
   gearList: CustomisedGearLoadedType[];

@@ -2,16 +2,13 @@ import assert from "assert";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import {
-  MentorListSchema,
-  type MentorListType,
-} from "@neon-codex/common/build/schemas/abilities/talent/mentorSchemas.js";
+import { MentorListSchema, type MentorListType } from "@neon-codex/common";
 import {
   Mentors,
   MentorSpirits,
   Paragons,
 } from "../../models/rpg/otherData/mentorModel.js";
-import { mentorCategoryEnum } from "@neon-codex/common/build/enums.js";
+import { mentorCategoryEnum } from "@neon-codex/common";
 import { type } from "arktype";
 
 export const getMentors = function () {

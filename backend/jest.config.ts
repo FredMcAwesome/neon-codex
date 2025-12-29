@@ -15,15 +15,14 @@ const config: Config.InitialOptions = {
     ],
   },
   transformIgnorePatterns: [
-    "node_modules/(?!@neon-codex/common/build/).+(js|jsx|mjs|ts)$",
+    "node_modules/(?!@neon-codex/common/).+(js|jsx|mjs|ts)$",
   ],
   testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.(js?|ts?)$",
   moduleFileExtensions: ["ts", "js", "json", "node"],
   extensionsToTreatAsEsm: [".ts"],
   setupFilesAfterEnv: ["<rootDir>/src/tests/setupTests.ts"],
   moduleNameMapper: {
-    "@neon-codex/common":
-      "<rootDir>/../node_modules/@neon-codex/common/src/index.js",
+    "@neon-codex/common": "<rootDir>/../common/src/index.ts",
   },
 };
 export default config;

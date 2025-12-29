@@ -6,20 +6,20 @@ import {
   type PriorityLevelsType,
   type HeritagePrioritySelectedType,
   type AttributeRangesType,
-} from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
+} from "@neon-codex/common";
 import { trpc } from "../../../utils/trpc.js";
 import {
   baseAttributeTypeEnum,
   heritageCategoryEnum,
   specialAttributeTypeEnum,
   talentCategoryEnum,
-} from "@neon-codex/common/build/enums.js";
-import type { HeritageListType } from "@neon-codex/common/build/schemas/abilities/heritageSchemas.js";
-import type { TalentPriorityType } from "@neon-codex/common/build/schemas/otherData/prioritySchemas.js";
+} from "@neon-codex/common";
+import type { HeritageListType } from "@neon-codex/common";
+import type { TalentPriorityType } from "@neon-codex/common";
 import type {
   AttributeRangeType,
   CharacterCreatorBonusListType,
-} from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
+} from "@neon-codex/common";
 import { type } from "arktype";
 
 const AttributeOptionsSchema = type({

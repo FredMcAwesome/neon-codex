@@ -1,7 +1,4 @@
-import {
-  ammoSourceEnum,
-  mathOperatorEnum,
-} from "@neon-codex/common/build/enums.js";
+import { ammoSourceEnum, mathOperatorEnum } from "@neon-codex/common";
 import Bonus from "../../grammar/bonus.ohm-bundle.js";
 const NumberFixedRating = Bonus.NumberFixedRating;
 const SkillKarmaCost = Bonus.SkillKarmaCost;

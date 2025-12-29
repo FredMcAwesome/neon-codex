@@ -1,7 +1,4 @@
-import {
-  ProgramListSchema,
-  type ProgramListType,
-} from "@neon-codex/common/build/schemas/abilities/talent/programSchemas.js";
+import { ProgramListSchema, type ProgramListType } from "@neon-codex/common";
 import assert from "assert";
 import fs from "fs";
 import path from "path";

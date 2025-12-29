@@ -4,7 +4,7 @@ import {
   spellCategoryEnum,
   spellDescriptorEnum,
   spellTypeEnum,
-} from "@neon-codex/common/build/enums.js";
+} from "@neon-codex/common";
 import type { SpellXmlDamageType } from "./SpellParserSchemas.js";
 import Spells from "../../grammar/spells.ohm-bundle.js";
 import { spellXmlCategoryEnum } from "../common/ParserCommonDefines.js";

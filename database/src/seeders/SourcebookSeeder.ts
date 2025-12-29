@@ -83,7 +83,7 @@ import {
   priorityLetterEnum,
   talentCategoryEnum,
   weaponCategoryEnum,
-} from "@neon-codex/common/build/enums.js";
+} from "@neon-codex/common";
 import { Qualities } from "../models/rpg/traits/qualityModel.js";
 import { getQualities } from "../seeds/rpgSeeds/qualitiesSeed.js";
 import { getHeritages } from "../seeds/rpgSeeds/heritagesSeed.js";
@@ -111,7 +111,7 @@ import { SkillGroups } from "../models/rpg/abilities/skillGroupModel.js";
 import type {
   HeritageOptionsPriorityType,
   TalentOptionsPriorityType,
-} from "@neon-codex/common/build/schemas/otherData/prioritySchemas.js";
+} from "@neon-codex/common";
 import {
   CritterIncludedQualities,
   HeritageIncludedQualities,
@@ -2203,12 +2203,12 @@ export class SourcebookSeeder extends Seeder {
             const includedSkills = new SkillPriorityDetails(
               talent.includedSkills
             );
-            for (const skill of talent.includedSkills.skillList) {
+            for (const skill of talent.includedSkills.skillOptionList) {
               const linkedSkill = await em.findOne(Skills, {
                 name: skill,
               });
               assert(linkedSkill !== null, `undefined Skill: ${skill}`);
-              includedSkills.skillList.add(linkedSkill);
+              includedSkills.skillOptionList.add(linkedSkill);
             }
             // TODO: check if this creation cascades properly
             includedSkills.talentPriorityDetails = ref(stagedTalent);

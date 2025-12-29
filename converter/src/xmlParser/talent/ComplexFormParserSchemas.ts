@@ -1,4 +1,4 @@
-// import { standardCalculationEnum } from "@neon-codex/common/build/enums.js";
+// import { standardCalculationEnum } from "@neon-codex/common";
 
 import { type } from "arktype";
 import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
@@ -7,7 +7,7 @@ import {
   XmlDurationSchema,
 } from "../common/ParserCommonDefines.js";
 import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
-import { complexFormTargetEnum } from "@neon-codex/common/build/enums.js";
+import { complexFormTargetEnum } from "@neon-codex/common";
 
 const ComplexFormXmlSchema = type({
   "+": "reject",

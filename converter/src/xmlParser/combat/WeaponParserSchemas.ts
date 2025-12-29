@@ -1,7 +1,4 @@
-import {
-  weaponSubtypeEnum,
-  WeaponSubtypeSchema,
-} from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
+import { weaponSubtypeEnum, WeaponSubtypeSchema } from "@neon-codex/common";
 
 import {
   xmlAllowGearSchema,
@@ -11,7 +8,7 @@ import {
   StringOrNumberSchema,
 } from "../common/ParserCommonDefines.js";
 import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
-import { MountSchema } from "@neon-codex/common/build/schemas/shared/weaponSharedSchemas.js";
+import { MountSchema } from "@neon-codex/common";
 import { type } from "arktype";
 
 export enum weaponTypeXmlEnum {

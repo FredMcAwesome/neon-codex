@@ -1,10 +1,7 @@
 import { Entity, Enum, PrimaryKey, Property } from "@mikro-orm/postgresql";
-import {
-  critterPowerEnum,
-  sourceBookEnum,
-} from "@neon-codex/common/build/enums.js";
-import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
-import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
+import { critterPowerEnum, sourceBookEnum } from "@neon-codex/common";
+import type { BonusType } from "@neon-codex/common";
+import type { RequirementsType } from "@neon-codex/common";
 import type {
   CritterActionType,
   CritterPowerDurationType,
@@ -12,7 +9,7 @@ import type {
   CritterPowerRatingType,
   CritterPowerType,
   CritterPowerTypeType,
-} from "@neon-codex/common/build/schemas/abilities/talent/critterPowerSchemas.js";
+} from "@neon-codex/common";
 
 @Entity()
 export class CritterPowers {

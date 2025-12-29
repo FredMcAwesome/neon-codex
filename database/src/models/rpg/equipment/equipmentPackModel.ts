@@ -7,7 +7,7 @@ import {
   Property,
   Unique,
 } from "@mikro-orm/postgresql";
-import { equipmentPackCategoryEnum } from "@neon-codex/common/build/enums.js";
+import { equipmentPackCategoryEnum } from "@neon-codex/common";
 import { PackArmours } from "../activeTables/activeArmourModel.js";
 import { PackAugmentations } from "../activeTables/activeAugmentationModel.js";
 import { PackVehicles } from "../activeTables/activeVehicleModel.js";

@@ -6,12 +6,12 @@ import {
   projectileWeaponTypeEnum,
   weaponAccessoryMountLocationEnum,
   weaponCategoryEnum,
-} from "@neon-codex/common/build/enums.js";
-import { weaponSubtypeEnum } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
+} from "@neon-codex/common";
+import { weaponSubtypeEnum } from "@neon-codex/common";
 import type {
   RequirementsType,
   WeaponDamageRequirementsType,
-} from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
+} from "@neon-codex/common";
 import assert from "assert";
 import type {
   containsType,

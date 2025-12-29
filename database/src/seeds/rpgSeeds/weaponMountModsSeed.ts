@@ -6,7 +6,7 @@ import { WeaponMountModifications } from "../../models/rpg/equipment/rigger/weap
 import {
   WeaponMountModListSchema,
   type WeaponMountModListType,
-} from "@neon-codex/common/build/schemas/equipment/rigger/weaponMountModSchemas.js";
+} from "@neon-codex/common";
 import { type } from "arktype";
 
 export const getWeaponMountModifications = function () {

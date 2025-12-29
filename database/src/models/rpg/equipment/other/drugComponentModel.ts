@@ -5,14 +5,11 @@ import {
   Enum,
   Unique,
 } from "@mikro-orm/postgresql";
-import {
-  drugComponentCategoryEnum,
-  sourceBookEnum,
-} from "@neon-codex/common/build/enums.js";
+import { drugComponentCategoryEnum, sourceBookEnum } from "@neon-codex/common";
 import type {
   DrugComponentType,
   AvailabilityDrugType,
-} from "@neon-codex/common/build/schemas/equipment/other/drugSchemas.js";
+} from "@neon-codex/common";
 
 @Entity()
 export class DrugComponents {

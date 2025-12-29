@@ -2,7 +2,7 @@ import { Entity, Enum, ManyToOne, PrimaryKey } from "@mikro-orm/postgresql";
 import type { Ref } from "@mikro-orm/postgresql";
 import { Characters } from "../characters/characterModel.js";
 import { ComplexForms } from "../abilities/complexFormModel.js";
-import { matrixAttributeEnum } from "@neon-codex/common/build/enums.js";
+import { matrixAttributeEnum } from "@neon-codex/common";
 import { Critters } from "../creatures/critterModel.js";
 
 @Entity({

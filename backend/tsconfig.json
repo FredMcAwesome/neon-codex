@@ -17,5 +17,8 @@
     {
       "path": "../database"
     }
-  ]
+  ],
+  "dependencies": {
+    "@neon-codex/database": "workspace:^"
+  }
 }

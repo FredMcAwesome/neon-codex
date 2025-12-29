@@ -15,7 +15,7 @@ import type {
   MundaneTalentInfoType,
   ResonanceTalentInfoType,
   TalentInfoType,
-} from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
+} from "@neon-codex/common";
 import { Characters } from "../characters/characterModel.js";
 import { Traditions } from "../traits/traditionModel.js";
 import { Critters } from "../creatures/critterModel.js";

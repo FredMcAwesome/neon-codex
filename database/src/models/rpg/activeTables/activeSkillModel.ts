@@ -3,7 +3,7 @@ import type { Ref } from "@mikro-orm/postgresql";
 import { Skills } from "../abilities/skillModel.js";
 import { Characters } from "../characters/characterModel.js";
 import { Critters } from "../creatures/critterModel.js";
-import type { CritterRatingType } from "@neon-codex/common/build/schemas/creatures/critterSchemas.js";
+import type { CritterRatingType } from "@neon-codex/common";
 
 @Entity({
   discriminatorColumn: "discr",

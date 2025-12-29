@@ -14,8 +14,8 @@ import {
   personaFormEnum,
   ratingMeaningEnum,
   sourceBookEnum,
-} from "@neon-codex/common/build/enums.js";
-import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
+} from "@neon-codex/common";
+import type { BonusType } from "@neon-codex/common";
 import type {
   AmmoForWeaponTypeType,
   AvailabilityGearType,
@@ -27,11 +27,11 @@ import type {
   GearRatingType,
   GearType,
   WeightType,
-} from "@neon-codex/common/build/schemas/equipment/other/gearSchemas.js";
-import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
+} from "@neon-codex/common";
+import type { RequirementsType } from "@neon-codex/common";
 import { CustomisedWeapons } from "../../activeTables/activeWeaponModel.js";
 import { GearIncludedGears } from "../../activeTables/activeGearModel.js";
-import type { WeaponBonusType } from "@neon-codex/common/build/schemas/shared/weaponSharedSchemas.js";
+import type { WeaponBonusType } from "@neon-codex/common";
 
 @Entity()
 export class Gears {

@@ -6,14 +6,11 @@ import {
   Property,
   type Ref,
 } from "@mikro-orm/postgresql";
-import type { CustomKnowledgeSkillType } from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
-import {
-  attributeTypeEnum,
-  skillCategoryEnum,
-} from "@neon-codex/common/build/enums.js";
+import type { CustomKnowledgeSkillType } from "@neon-codex/common";
+import { attributeTypeEnum, skillCategoryEnum } from "@neon-codex/common";
 import { Critters } from "../creatures/critterModel.js";
 import { Characters } from "../characters/characterModel.js";
-import type { CritterIncludedKnowledgeSkillType } from "@neon-codex/common/build/schemas/creatures/critterSchemas.js";
+import type { CritterIncludedKnowledgeSkillType } from "@neon-codex/common";
 
 @Entity({
   discriminatorColumn: "discr",

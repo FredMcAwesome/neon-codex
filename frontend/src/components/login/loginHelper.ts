@@ -1,9 +1,6 @@
 // Session details are only read and written on app startup and login/logout
-import type { LoginType } from "@neon-codex/common/build/clientRequest.js";
-import {
-  type JwtTokenType,
-  JwtTokenSchema,
-} from "@neon-codex/common/build/serverResponse.js";
+import type { LoginType } from "@neon-codex/common";
+import { type JwtTokenType, JwtTokenSchema } from "@neon-codex/common";
 import { postLogin } from "../../utils/api.js";
 import { type } from "arktype";
 

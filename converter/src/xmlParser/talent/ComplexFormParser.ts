@@ -11,7 +11,7 @@ import {
   ComplexFormListXmlSchema,
   type ComplexFormXmlType,
 } from "./ComplexFormParserSchemas.js";
-import { ComplexFormSchema } from "@neon-codex/common/build/schemas/abilities/talent/complexFormSchemas.js";
+import { ComplexFormSchema } from "@neon-codex/common";
 import ComplexForms from "../../grammar/complexForms.ohm-bundle.js";
 import { type } from "arktype";
 const FadingValue = ComplexForms.FadingValue;

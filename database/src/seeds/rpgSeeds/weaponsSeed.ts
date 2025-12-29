@@ -8,9 +8,9 @@ import {
   MeleeWeaponSchema,
   ProjectileWeaponSchema,
   WeaponListSchema,
-} from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
-import type { WeaponListType } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
-import { weaponCategoryEnum } from "@neon-codex/common/build/enums.js";
+} from "@neon-codex/common";
+import type { WeaponListType } from "@neon-codex/common";
+import { weaponCategoryEnum } from "@neon-codex/common";
 import { ref } from "@mikro-orm/postgresql";
 import { Skills } from "../../models/rpg/abilities/skillModel.js";
 import { WeaponRanges } from "../../models/rpg/equipment/combat/helperTables/weaponRangeModel.js";

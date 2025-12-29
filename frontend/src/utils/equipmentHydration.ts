@@ -1,50 +1,32 @@
-import type {
-  SelectedEquipmentListType,
-  SelectedEquipmentLoadedListType,
-  EquipmentListType,
-} from "@neon-codex/common/build/schemas/equipment/other/equipmentSchemas";
+import {
+  type CustomisedArmourLoadedType,
+  type CustomisedArmourModLoadedType,
+  type CustomisedArmourModType,
+  type CustomisedArmourType,
+  type CustomisedAugmentationLoadedType,
+  type CustomisedAugmentationType,
+  type CustomisedGearLoadedType,
+  type CustomisedGearType,
+  type CustomisedVehicleLoadedType,
+  type CustomisedVehicleModLoadedType,
+  type CustomisedVehicleModType,
+  type CustomisedVehicleType,
+  type CustomisedWeaponAccessoryLoadedType,
+  type CustomisedWeaponAccessoryType,
+  type CustomisedWeaponLoadedType,
+  type CustomisedWeaponMountLoadedType,
+  type CustomisedWeaponMountType,
+  type CustomisedWeaponType,
+  type EquipmentListType,
+  type SelectedEquipmentListType,
+  type SelectedEquipmentLoadedListType,
+} from "@neon-codex/common";
 import {
   workerRequestEnum,
   workerResponseEnum,
   type WorkerRequestType,
   type WorkerResponseType,
 } from "../workers/types";
-import type {
-  CustomisedWeaponType,
-  CustomisedWeaponLoadedType,
-} from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas";
-import type {
-  CustomisedWeaponAccessoryType,
-  CustomisedWeaponAccessoryLoadedType,
-} from "@neon-codex/common/build/schemas/equipment/combat/weaponAccessorySchemas";
-import type {
-  CustomisedGearType,
-  CustomisedGearLoadedType,
-} from "@neon-codex/common/build/schemas/equipment/other/gearSchemas";
-import type {
-  CustomisedArmourType,
-  CustomisedArmourLoadedType,
-} from "@neon-codex/common/build/schemas/equipment/combat/armourSchemas";
-import type {
-  CustomisedArmourModType,
-  CustomisedArmourModLoadedType,
-} from "@neon-codex/common/build/schemas/equipment/combat/armourModSchemas";
-import type {
-  CustomisedAugmentationType,
-  CustomisedAugmentationLoadedType,
-} from "@neon-codex/common/build/schemas/equipment/bodyModification/augmentationSchemas";
-import type {
-  CustomisedVehicleType,
-  CustomisedVehicleLoadedType,
-} from "@neon-codex/common/build/schemas/equipment/rigger/vehicleSchemas";
-import type {
-  CustomisedVehicleModType,
-  CustomisedVehicleModLoadedType,
-} from "@neon-codex/common/build/schemas/equipment/rigger/vehicleModSchemas";
-import type {
-  CustomisedWeaponMountType,
-  CustomisedWeaponMountLoadedType,
-} from "@neon-codex/common/build/schemas/equipment/rigger/weaponMountSchemas";
 
 function generateRequestId() {
   return Math.random().toString(36).substring(2, 15);

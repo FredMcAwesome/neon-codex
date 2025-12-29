@@ -13,7 +13,7 @@
 //   saveUserSession,
 // } from "../components/login/loginHelper.js";
 // import { server } from "./mocks/server.js";
-// import type { JwtTokenType } from "@neon-codex/common/build/serverResponse.js";
+// import type { JwtTokenType } from "@neon-codex/common";
 
 // const token: JwtTokenType = {
 //   token: "tokenValue",

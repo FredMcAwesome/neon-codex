@@ -9,13 +9,10 @@ import {
   complexFormTargetEnum,
   durationEnum,
   sourceBookEnum,
-} from "@neon-codex/common/build/enums.js";
-import type {
-  ComplexFormType,
-  fadingValueType,
-} from "@neon-codex/common/build/schemas/abilities/talent/complexFormSchemas.js";
-import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
-import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
+} from "@neon-codex/common";
+import type { ComplexFormType, fadingValueType } from "@neon-codex/common";
+import type { BonusType } from "@neon-codex/common";
+import type { RequirementsType } from "@neon-codex/common";
 
 @Entity()
 export class ComplexForms {

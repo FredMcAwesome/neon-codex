@@ -8,10 +8,7 @@ import { convertXmlBonus } from "../common/BonusParserHelper.js";
 
 import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
 import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
-import {
-  MartialArtListSchema,
-  MartialArtSchema,
-} from "@neon-codex/common/build/schemas/abilities/martialArtSchemas.js";
+import { MartialArtListSchema, MartialArtSchema } from "@neon-codex/common";
 import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { convertSource } from "../common/ParserHelper.js";

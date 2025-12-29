@@ -7,10 +7,10 @@ import {
   Property,
   Unique,
 } from "@mikro-orm/postgresql";
-import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
-import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
-import { sourceBookEnum } from "@neon-codex/common/build/enums.js";
-import type { MartialArtType } from "@neon-codex/common/build/schemas/abilities/martialArtSchemas.js";
+import type { BonusType } from "@neon-codex/common";
+import type { RequirementsType } from "@neon-codex/common";
+import { sourceBookEnum } from "@neon-codex/common";
+import type { MartialArtType } from "@neon-codex/common";
 import { MartialArtTechniques } from "./martialArtTechniqueModel.js";
 
 @Entity()

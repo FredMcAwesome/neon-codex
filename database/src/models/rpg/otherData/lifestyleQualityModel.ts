@@ -9,10 +9,10 @@ import {
 import {
   lifestyleQualityCategoryEnum,
   sourceBookEnum,
-} from "@neon-codex/common/build/enums.js";
-import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
-import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
-import type { LifestyleQualityType } from "@neon-codex/common/build/schemas/otherData/lifestyleSchemas.js";
+} from "@neon-codex/common";
+import type { BonusType } from "@neon-codex/common";
+import type { RequirementsType } from "@neon-codex/common";
+import type { LifestyleQualityType } from "@neon-codex/common";
 import { Lifestyles } from "./lifestyleModel.js";
 
 @Entity()

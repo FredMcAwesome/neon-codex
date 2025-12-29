@@ -1,15 +1,12 @@
 import { Entity, Enum, PrimaryKey, Property } from "@mikro-orm/postgresql";
-import {
-  mentorCategoryEnum,
-  sourceBookEnum,
-} from "@neon-codex/common/build/enums.js";
-import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
+import { mentorCategoryEnum, sourceBookEnum } from "@neon-codex/common";
+import type { BonusType } from "@neon-codex/common";
 import type {
   MentorBaseType,
   MentorChoiceType,
   MentorType,
-} from "@neon-codex/common/build/schemas/abilities/talent/mentorSchemas.js";
-import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
+} from "@neon-codex/common";
+import type { RequirementsType } from "@neon-codex/common";
 
 @Entity({
   abstract: true,

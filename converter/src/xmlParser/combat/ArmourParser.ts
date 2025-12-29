@@ -12,14 +12,11 @@ import {
   convertArmourCategory,
   costArmourSemantics,
 } from "./ArmourParserHelper.js";
-import {
-  ArmourListSchema,
-  ArmourSchema,
-} from "@neon-codex/common/build/schemas/equipment/combat/armourSchemas.js";
+import { ArmourListSchema, ArmourSchema } from "@neon-codex/common";
 import type {
   AvailabilityArmourType,
   CostArmourType,
-} from "@neon-codex/common/build/schemas/equipment/combat/armourSchemas.js";
+} from "@neon-codex/common";
 import Armours from "../../grammar/armours.ohm-bundle.js";
 import {
   convertSource,

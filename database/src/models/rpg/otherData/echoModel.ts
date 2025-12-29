@@ -1,7 +1,7 @@
 import { Entity, PrimaryKey, Property, Unique } from "@mikro-orm/postgresql";
 
-import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
-import type { EchoType } from "@neon-codex/common/build/schemas/abilities/talent/echoSchemas.js";
+import type { BonusType } from "@neon-codex/common";
+import type { EchoType } from "@neon-codex/common";
 
 @Entity()
 export class Echoes {

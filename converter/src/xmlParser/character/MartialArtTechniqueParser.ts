@@ -10,7 +10,7 @@ import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
 import {
   MartialArtTechniqueListSchema,
   MartialArtTechniqueSchema,
-} from "@neon-codex/common/build/schemas/abilities/martialArtSchemas.js";
+} from "@neon-codex/common";
 import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
 import { convertSource } from "../common/ParserHelper.js";
 import { type } from "arktype";

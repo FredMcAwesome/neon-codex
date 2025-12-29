@@ -1465,7 +1465,7 @@
           "category": "Magic",
           "includedQuality": "Magician",
           "includedSkills": {
-            "points": 2,
+            "skillCount": 2,
             "rating": 5,
             "source": "Magic"
           },
@@ -1479,7 +1479,7 @@
           "category": "Magic",
           "includedQuality": "Mystic Adept",
           "includedSkills": {
-            "points": 2,
+            "skillCount": 2,
             "rating": 5,
             "source": "Magic"
           },
@@ -1493,7 +1493,7 @@
           "category": "Resonance",
           "includedQuality": "Technomancer",
           "includedSkills": {
-            "points": 3,
+            "skillCount": 3,
             "rating": 5,
             "source": "Resonance"
           },
@@ -1505,7 +1505,7 @@
           "depth": 6,
           "category": "Depth",
           "includedSkills": {
-            "points": 2,
+            "skillCount": 2,
             "rating": 5,
             "source": "Matrix"
           },
@@ -3002,7 +3002,7 @@
           "category": "Magic",
           "includedQuality": "Adept",
           "includedSkills": {
-            "points": 1,
+            "skillCount": 1,
             "rating": 4,
             "source": "Adept"
           },
@@ -3016,7 +3016,7 @@
           "category": "Magic",
           "includedQuality": "Magician",
           "includedSkills": {
-            "points": 2,
+            "skillCount": 2,
             "rating": 4,
             "source": "Magic"
           },
@@ -3030,7 +3030,7 @@
           "category": "Magic",
           "includedQuality": "Mystic Adept",
           "includedSkills": {
-            "points": 2,
+            "skillCount": 2,
             "rating": 4,
             "source": "Magic"
           },
@@ -3043,7 +3043,7 @@
           "category": "Magic",
           "includedQuality": "Aspected Magician",
           "includedSkillGroups": {
-            "points": 1,
+            "skillCount": 1,
             "rating": 4,
             "groupList": ["Conjuring", "Enchanting", "Sorcery"]
           },
@@ -3056,7 +3056,7 @@
           "category": "Magic",
           "includedQuality": "Apprentice",
           "includedSkillGroups": {
-            "points": 1,
+            "skillCount": 1,
             "rating": 4,
             "groupList": ["Conjuring", "Sorcery"]
           },
@@ -3070,7 +3070,7 @@
           "category": "Resonance",
           "includedQuality": "Technomancer",
           "includedSkills": {
-            "points": 3,
+            "skillCount": 3,
             "rating": 4,
             "source": "Resonance"
           },
@@ -3082,7 +3082,7 @@
           "depth": 4,
           "category": "Depth",
           "includedSkills": {
-            "points": 2,
+            "skillCount": 2,
             "rating": 4,
             "source": "Matrix"
           },
@@ -4552,7 +4552,7 @@
           "category": "Magic",
           "includedQuality": "Adept",
           "includedSkills": {
-            "points": 1,
+            "skillCount": 1,
             "rating": 2,
             "source": "Adept"
           },
@@ -4583,7 +4583,7 @@
           "category": "Magic",
           "includedQuality": "Aspected Magician",
           "includedSkillGroups": {
-            "points": 1,
+            "skillCount": 1,
             "rating": 2,
             "groupList": ["Conjuring", "Enchanting", "Sorcery"]
           },
@@ -4596,9 +4596,9 @@
           "category": "Magic",
           "includedQuality": "Explorer",
           "includedSkills": {
-            "points": 2,
+            "skillCount": 2,
             "rating": 6,
-            "skillList": ["Arcana", "Assensing", "Astral Combat"]
+            "skillOptionList": ["Arcana", "Assensing", "Astral Combat"]
           },
           "forbidden": {}
         },
@@ -4609,7 +4609,7 @@
           "category": "Magic",
           "includedQuality": "Enchanter",
           "includedSkillGroups": {
-            "points": 1,
+            "skillCount": 1,
             "rating": 4,
             "groupList": ["Enchanting"]
           },
@@ -4622,7 +4622,7 @@
           "category": "Magic",
           "includedQuality": "Apprentice",
           "includedSkillGroups": {
-            "points": 1,
+            "skillCount": 1,
             "rating": 2,
             "groupList": ["Conjuring", "Sorcery"]
           },
@@ -4636,7 +4636,7 @@
           "category": "Resonance",
           "includedQuality": "Technomancer",
           "includedSkills": {
-            "points": 3,
+            "skillCount": 3,
             "rating": 2,
             "source": "Resonance"
           },
@@ -4648,7 +4648,7 @@
           "depth": 3,
           "category": "Depth",
           "includedSkills": {
-            "points": 1,
+            "skillCount": 1,
             "rating": 2,
             "source": "Matrix"
           },
@@ -4751,9 +4751,9 @@
           "category": "Magic",
           "includedQuality": "Aware",
           "includedSkills": {
-            "points": 1,
+            "skillCount": 1,
             "rating": 4,
-            "skillList": ["Arcana", "Assensing", "Astral Combat"]
+            "skillOptionList": ["Arcana", "Assensing", "Astral Combat"]
           },
           "forbidden": {}
         },

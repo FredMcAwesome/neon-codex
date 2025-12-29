@@ -1,7 +1,7 @@
 import assert from "assert";
-import { heritageCategoryEnum } from "@neon-codex/common/build/enums.js";
+import { heritageCategoryEnum } from "@neon-codex/common";
 import type { XmlPowerListType } from "../common/ParserCommonDefines.js";
-import type { IncludedPowerListType } from "@neon-codex/common/build/schemas/abilities/heritageSchemas.js";
+import type { IncludedPowerListType } from "@neon-codex/common";
 
 export const convertMetatypeCategory = function (category: string | undefined) {
   switch (category) {

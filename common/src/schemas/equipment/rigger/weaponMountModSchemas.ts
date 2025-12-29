@@ -11,6 +11,10 @@ import {
 import { RequirementsSchema } from "../../shared/requiredSchemas.js";
 import { RangeCostSchema } from "../../shared/commonSchemas.js";
 import { type } from "arktype";
+import {
+  PartialSlotCostSchema,
+  ReplaceAmmoSchema,
+} from "./vehicleModSchemas.js";
 
 const WeaponMountModRatingSchema = type(
   type.or(
@@ -26,43 +30,6 @@ const WeaponMountModRatingSchema = type(
   )
 ).array();
 export type WeaponMountModRatingType = typeof WeaponMountModRatingSchema.infer;
-
-const ReplaceAmmoSchema = type({
-  "+": "reject",
-  reloadMethod: type.valueOf(ammoSourceEnum),
-  "capacity?": "number",
-  "numberOfAmmunitionHolders?": "number",
-}).array();
-export type ReplaceAmmoType = typeof ReplaceAmmoSchema.infer;
-
-const InnerSlotCostSchema = type.or(
-  type({
-    "+": "reject",
-    option: type.valueOf(vehicleModAttributeEnum),
-  }),
-  type({
-    "+": "reject",
-    operator: type.valueOf(mathOperatorEnum),
-  }),
-  "number"
-);
-
-export type PartialSlotCostType = Array<
-  typeof InnerSlotCostSchema.infer | { subnumbers: PartialSlotCostType }
->;
-const { PartialSlotCostSchema } = type.module({
-  PartialSlotCostSchema: [
-    [
-      InnerSlotCostSchema,
-      "|",
-      {
-        "+": "reject",
-        subnumbers: "PartialSlotCostSchema",
-      },
-    ],
-    "[]",
-  ],
-});
 
 const WeaponMountSlotCostSchema = type.or(
   PartialSlotCostSchema,

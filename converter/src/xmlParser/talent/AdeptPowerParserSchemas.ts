@@ -8,7 +8,7 @@ import {
   type RequiredXmlType,
 } from "../common/RequiredParserSchemas.js";
 import { StringArrayOrStringSchema } from "../common/ParserCommonDefines.js";
-import { actionEnum } from "@neon-codex/common/build/enums.js";
+import { actionEnum } from "@neon-codex/common";
 import { type } from "arktype";
 
 const AdeptPowerSubBonusXmlSchema = type({

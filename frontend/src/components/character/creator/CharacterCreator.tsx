@@ -10,8 +10,8 @@ import { trpc } from "../../../utils/trpc.js";
 import type {
   CustomSkillGroupListType,
   CustomSkillListType,
-} from "@neon-codex/common/build/schemas/abilities/skillSchemas.js";
-import type { SelectedEquipmentListType } from "@neon-codex/common/build/schemas/equipment/other/equipmentSchemas.js";
+} from "@neon-codex/common";
+import type { SelectedEquipmentListType } from "@neon-codex/common";
 import type {
   AttributesType,
   SpecialAttributesType,
@@ -22,22 +22,16 @@ import type {
   FormulaListSelectedType,
   MartialArtSelectedType,
   LifestyleSelectedListType,
-} from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
+} from "@neon-codex/common";
 import { CreatorSummary } from "./CreatorSummary.js";
 import { useNavigate } from "react-router-dom";
-import {
-  priorityLetterEnum,
-  talentCategoryEnum,
-} from "@neon-codex/common/build/enums.js";
-import type {
-  SkillPriorityType,
-  TalentPriorityType,
-} from "@neon-codex/common/build/schemas/otherData/prioritySchemas.js";
+import { priorityLetterEnum, talentCategoryEnum } from "@neon-codex/common";
+import type { SkillPriorityType, TalentPriorityType } from "@neon-codex/common";
 import type { SkillPointInfoType } from "../commonSchemas.js";
 import { TalentSelect } from "./TalentSelect.js";
 import { MartialArtSelect } from "./MartialArtsSelect.js";
 import { LifestyleSelect } from "./LifestyleSelect.js";
-import type { CharacterCreatorBonusListType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
+import type { CharacterCreatorBonusListType } from "@neon-codex/common";
 
 import { useEquipmentSearch } from "../../../hooks/useEquipmentSearch.js";
 import { ArwesButton } from "../../common/ArwesButton.js";

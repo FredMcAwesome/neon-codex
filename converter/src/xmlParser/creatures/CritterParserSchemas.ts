@@ -1,4 +1,4 @@
-// import { standardCalculationEnum } from "@neon-codex/common/build/enums.js";
+// import { standardCalculationEnum } from "@neon-codex/common";
 
 import { type } from "arktype";
 import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
@@ -13,7 +13,7 @@ import {
   critterCategoryEnum,
   matrixAttributeEnum,
   skillCategoryEnum,
-} from "@neon-codex/common/build/enums.js";
+} from "@neon-codex/common";
 
 const SkillSchema = type({
   "+": "reject",

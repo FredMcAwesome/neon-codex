@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 import {
   LifestyleQualityListSchema,
   type LifestyleQualityListType,
-} from "@neon-codex/common/build/schemas/otherData/lifestyleSchemas.js";
+} from "@neon-codex/common";
 import { LifestyleQualities } from "../../models/rpg/otherData/lifestyleQualityModel.js";
 import { type } from "arktype";
 

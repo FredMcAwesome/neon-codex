@@ -3,8 +3,8 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { ArmourModifications } from "../../models/rpg/equipment/combat/armourModificationModel.js";
-import { ArmourModListSchema } from "@neon-codex/common/build/schemas/equipment/combat/armourModSchemas.js";
-import type { ArmourModListType } from "@neon-codex/common/build/schemas/equipment/combat/armourModSchemas.js";
+import { ArmourModListSchema } from "@neon-codex/common";
+import type { ArmourModListType } from "@neon-codex/common";
 import { type } from "arktype";
 
 export const getArmourModifications = function () {

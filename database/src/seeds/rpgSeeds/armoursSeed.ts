@@ -2,8 +2,8 @@ import assert from "assert";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { ArmourListSchema } from "@neon-codex/common/build/schemas/equipment/combat/armourSchemas.js";
-import type { ArmourListType } from "@neon-codex/common/build/schemas/equipment/combat/armourSchemas.js";
+import { ArmourListSchema } from "@neon-codex/common";
+import type { ArmourListType } from "@neon-codex/common";
 import { Armours } from "../../models/rpg/equipment/combat/armourModel.js";
 import { type } from "arktype";
 

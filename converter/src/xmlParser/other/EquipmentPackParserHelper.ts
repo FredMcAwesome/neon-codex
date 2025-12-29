@@ -1,5 +1,5 @@
 import assert from "assert";
-import type { GenericModListType } from "@neon-codex/common/build/schemas/shared/modSchemas.js";
+import type { GenericModListType } from "@neon-codex/common";
 import {
   convertIncludedXmlGears,
   convertXmlModObject,
@@ -18,12 +18,12 @@ import {
   weaponMountFlexibilityEnum,
   weaponMountSizeEnum,
   weaponMountVisibilityEnum,
-} from "@neon-codex/common/build/enums.js";
-import type { AugmentationSubsystemListType } from "@neon-codex/common/build/schemas/equipment/bodyModification/augmentationSchemas.js";
-import type { CustomisedWeaponType } from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
+} from "@neon-codex/common";
+import type { AugmentationSubsystemListType } from "@neon-codex/common";
+import type { CustomisedWeaponType } from "@neon-codex/common";
 import { getWeaponMounts } from "../combat/WeaponAccessoryParserHelper.js";
-import type { CustomisedVehicleType } from "@neon-codex/common/build/schemas/equipment/rigger/vehicleSchemas.js";
-import type { CustomisedArmourType } from "@neon-codex/common/build/schemas/equipment/combat/armourSchemas.js";
+import type { CustomisedVehicleType } from "@neon-codex/common";
+import type { CustomisedArmourType } from "@neon-codex/common";
 
 export const convertArmorEquipmentPack = function (
   pack: ArmorEquipmentPackXmlType

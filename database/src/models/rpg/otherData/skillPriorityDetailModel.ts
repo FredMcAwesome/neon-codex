@@ -12,11 +12,11 @@ import { Skills } from "../abilities/skillModel.js";
 import type {
   SkillBaseType,
   SkillGroupType,
-  SkillSourceType,
-  SkillType,
-} from "@neon-codex/common/build/schemas/otherData/prioritySchemas.js";
+  IncludedSkillSourceType,
+  IncludedSkillOptionsType,
+} from "@neon-codex/common";
 import { SkillGroups } from "../abilities/skillGroupModel.js";
-import { skillTalentSourceEnum } from "@neon-codex/common/build/enums.js";
+import { skillTalentSourceEnum } from "@neon-codex/common";
 import { TalentPriorityDetails } from "./talentPriorityDetailModel.js";
 
 @Entity({
@@ -37,7 +37,7 @@ export abstract class SkillBasePriorityDetails {
   talentPriorityDetails!: Ref<TalentPriorityDetails>;
 
   constructor(dto: SkillBaseType) {
-    this.points = dto.points;
+    this.points = dto.skillCount;
     this.rating = dto.rating;
   }
 }
@@ -47,9 +47,9 @@ export abstract class SkillBasePriorityDetails {
 })
 export class SkillPriorityDetails extends SkillBasePriorityDetails {
   @ManyToMany({ entity: () => Skills, owner: true, joinColumn: "join_id" })
-  skillList: Collection<Skills> = new Collection<Skills>(this);
+  skillOptionList: Collection<Skills> = new Collection<Skills>(this);
 
-  constructor(dto: SkillType) {
+  constructor(dto: IncludedSkillOptionsType) {
     super(dto);
   }
 }
@@ -61,7 +61,7 @@ export class SkillSourcePriorityDetails extends SkillBasePriorityDetails {
   @Enum(() => skillTalentSourceEnum)
   source!: skillTalentSourceEnum;
 
-  constructor(dto: SkillSourceType) {
+  constructor(dto: IncludedSkillSourceType) {
     super(dto);
     this.source = dto.source;
   }

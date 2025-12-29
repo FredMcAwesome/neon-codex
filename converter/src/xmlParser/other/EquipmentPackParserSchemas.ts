@@ -1,9 +1,9 @@
 import {
   augmentationGradeEnum,
   equipmentPackCategoryEnum,
-} from "@neon-codex/common/build/enums.js";
+} from "@neon-codex/common";
 import { UseGearXmlSchema } from "../common/ParserCommonDefines.js";
-import { MountSchema } from "@neon-codex/common/build/schemas/shared/weaponSharedSchemas.js";
+import { MountSchema } from "@neon-codex/common";
 import { type } from "arktype";
 
 const ArmorModEquipmentPackXmlSchema = type({

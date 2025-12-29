@@ -2,6 +2,7 @@ Complete:
 
 - Update UI to Arwes
 - Add accessories, mods
+- Update imports to only come from the index file and reexport from there @neon_codex/common for example
 
 Future work:
 
@@ -13,7 +14,6 @@ Future work:
 - Implement Requirements system
 - Add tooltips e.g. show the final weapon damage with an asterisk and on hover a tooltip showing the breakdown from the weapon and then the accessories
 - Error handling/inline validation
-- Update imports to only come from the index file and reexport from there @neon_codex/common for example
 - Implement proper character sheet, especially with linking equipment/spells/programs, a critter section etc.
 - Performance improvements
 - Implement other character creation options

@@ -5,7 +5,7 @@ import {
   skillCategoryEnum,
   spellDescriptorEnum,
   vehicleCategoryEnum,
-} from "@neon-codex/common/build/enums.js";
+} from "@neon-codex/common";
 import {
   attributeXMLEnum,
   augmentationXmlGradeEnum,
@@ -24,7 +24,7 @@ import {
   StringOrNumberSchema,
 } from "./ParserCommonDefines.js";
 import { type } from "arktype";
-import { weaponSubtypeEnum } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
+import { weaponSubtypeEnum } from "@neon-codex/common";
 import { cyberwareXmlCategoryEnum } from "../bodyModification/CyberwareParserSchemas.js";
 
 const SkillXmlObjectSchema = type({

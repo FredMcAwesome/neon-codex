@@ -1,7 +1,7 @@
 import {
   drugComponentCategoryEnum,
   limitCategoryEnum,
-} from "@neon-codex/common/build/enums.js";
+} from "@neon-codex/common";
 
 import {
   attributeXMLEnum,

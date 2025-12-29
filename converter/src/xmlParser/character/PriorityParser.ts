@@ -20,14 +20,14 @@ import {
   type PriorityType,
   type ResourcePriorityType,
   type PriorityTableType,
-} from "@neon-codex/common/build/schemas/otherData/prioritySchemas.js";
+} from "@neon-codex/common";
 import {
   priorityCategoryEnum,
   priorityLetterEnum,
   priorityTableRunnerLevelEnum,
   skillTalentSourceEnum,
   talentCategoryEnum,
-} from "@neon-codex/common/build/enums.js";
+} from "@neon-codex/common";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { type } from "arktype";
 
@@ -264,7 +264,7 @@ const convertTalent = function (xmlTalent: TalentXmlType): PriorityUnionType {
             talent.skillchoices !== undefined,
             "talent.skillchoices is undefined"
           );
-          skillType = { skillList: talent.skillchoices.skill };
+          skillType = { skillOptionList: talent.skillchoices.skill };
           break;
         case "magic":
           skillType = { source: skillTalentSourceEnum.Magic };
@@ -281,7 +281,7 @@ const convertTalent = function (xmlTalent: TalentXmlType): PriorityUnionType {
           skillType = { source: skillTalentSourceEnum.Adept };
       }
       includedSkills = {
-        points: talent.skillqty,
+        skillCount: talent.skillqty,
         rating: talent.skillval,
         ...skillType,
       };
@@ -310,7 +310,7 @@ const convertTalent = function (xmlTalent: TalentXmlType): PriorityUnionType {
         ? talent.skillgroupchoices.skillgroup
         : [talent.skillgroupchoices.skillgroup];
       includedSkillGroups = {
-        points: talent.skillgroupqty,
+        skillCount: talent.skillgroupqty,
         rating: talent.skillgroupval,
         groupList: skillGroupList,
       };

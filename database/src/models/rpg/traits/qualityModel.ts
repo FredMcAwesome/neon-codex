@@ -9,15 +9,15 @@ import {
   Unique,
   type Ref,
 } from "@mikro-orm/postgresql";
-import { qualityCategoryEnum } from "@neon-codex/common/build/enums.js";
+import { qualityCategoryEnum } from "@neon-codex/common";
 import type {
   QualityFirstLevelBonusType,
   QualityKarmaDiscountType,
   QualityLimitType,
   QualityType,
-} from "@neon-codex/common/build/schemas/abilities/qualitySchemas.js";
+} from "@neon-codex/common";
 import { Weapons } from "../equipment/combat/weaponModel.js";
-import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
+import type { RequirementsType } from "@neon-codex/common";
 import { QualityBonuses } from "../otherData/bonusModel.js";
 
 @Entity()

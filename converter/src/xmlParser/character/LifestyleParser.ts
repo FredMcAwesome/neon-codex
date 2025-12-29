@@ -8,17 +8,14 @@ import { convertXmlBonus } from "../common/BonusParserHelper.js";
 
 import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
 import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
-import {
-  LifestyleListSchema,
-  LifestyleSchema,
-} from "@neon-codex/common/build/schemas/otherData/lifestyleSchemas.js";
+import { LifestyleListSchema, LifestyleSchema } from "@neon-codex/common";
 import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { convertSource } from "../common/ParserHelper.js";
 import {
   gridCategoryEnum,
   lifestyleCostIncrementEnum,
-} from "@neon-codex/common/build/enums.js";
+} from "@neon-codex/common";
 import { type } from "arktype";
 
 const FreeGridXmlSchema = type({

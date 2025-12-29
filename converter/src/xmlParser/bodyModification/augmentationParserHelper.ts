@@ -5,7 +5,7 @@ import {
   mathOperatorEnum,
   augmentationMountSlotEnum,
   restrictionEnum,
-} from "@neon-codex/common/build/enums.js";
+} from "@neon-codex/common";
 import assert from "assert";
 import { mountLocationXmlEnum } from "./CyberwareParserSchemas.js";
 import Augmentation from "../../grammar/augmentation.ohm-bundle.js";

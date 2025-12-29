@@ -7,11 +7,11 @@ import { WeaponAccessoryListXmlSchema } from "./WeaponAccessoryParserSchemas.js"
 import type {
   AmmoCapacityCalculationType,
   WeaponAccessoryType,
-} from "@neon-codex/common/build/schemas/equipment/combat/weaponAccessorySchemas.js";
+} from "@neon-codex/common";
 import {
   WeaponAccessoryListSchema,
   WeaponAccessorySchema,
-} from "@neon-codex/common/build/schemas/equipment/combat/weaponAccessorySchemas.js";
+} from "@neon-codex/common";
 import * as fs from "fs";
 import assert from "assert";
 import { WeaponListXmlSchema } from "./WeaponParserSchemas.js";
@@ -19,10 +19,7 @@ import {
   convertAllowGear,
   convertIncludedXmlGears,
 } from "../common/ParserHelper.js";
-import {
-  damageTypeEnum,
-  standardCalculationEnum,
-} from "@neon-codex/common/build/enums.js";
+import { damageTypeEnum, standardCalculationEnum } from "@neon-codex/common";
 import {
   getWeaponMounts,
   availabilityWeaponAccessorySemantics,
@@ -36,7 +33,7 @@ import type { MatchResult } from "ohm-js";
 import type {
   AvailabilityWeaponAccessoryType,
   CostWeaponAccessoryType,
-} from "@neon-codex/common/build/schemas/equipment/combat/weaponAccessorySchemas.js";
+} from "@neon-codex/common";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { type } from "arktype";
 const Availability = WeaponAccessories.Availability;

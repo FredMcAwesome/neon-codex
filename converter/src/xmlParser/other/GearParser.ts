@@ -29,7 +29,7 @@ import {
 import { convertXmlBonus } from "../common/BonusParserHelper.js";
 import Gears from "../../grammar/gears.ohm-bundle.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
-import { GearSchema } from "@neon-codex/common/build/schemas/equipment/other/gearSchemas.js";
+import { GearSchema } from "@neon-codex/common";
 import { type } from "arktype";
 const Program = Gears.Program;
 const Capacity = Gears.Capacity;

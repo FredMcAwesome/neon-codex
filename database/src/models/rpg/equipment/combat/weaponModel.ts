@@ -22,15 +22,15 @@ import {
   sourceBookEnum,
   weaponExtraClassificationEnum,
   weaponCategoryEnum,
-} from "@neon-codex/common/build/enums.js";
+} from "@neon-codex/common";
 import type {
   AvailabilityWeaponType,
   CostWeaponType,
   WeaponType,
-} from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
-import { weaponSubtypeEnum } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
+} from "@neon-codex/common";
+import { weaponSubtypeEnum } from "@neon-codex/common";
 import { Skills } from "../../abilities/skillModel.js";
-import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
+import type { RequirementsType } from "@neon-codex/common";
 import { Gears } from "../other/gearModel.js";
 import { WeaponRanges } from "./helperTables/weaponRangeModel.js";
 import { IncludedWeaponAccessories } from "../../activeTables/activeWeaponAccessoryModel.js";
@@ -40,7 +40,7 @@ import type {
   AmmunitionType,
   ArmourPenetrationType,
   DamageType,
-} from "@neon-codex/common/build/schemas/shared/weaponSharedSchemas.js";
+} from "@neon-codex/common";
 
 @Entity({
   discriminatorColumn: "category",

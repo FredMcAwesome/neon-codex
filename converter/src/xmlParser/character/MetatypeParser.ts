@@ -3,7 +3,7 @@ import {
   HeritageListSchema,
   type HeritageListType,
   type HeritageType,
-} from "@neon-codex/common/build/schemas/abilities/heritageSchemas.js";
+} from "@neon-codex/common";
 import assert from "assert";
 import { XMLParser } from "fast-xml-parser";
 import fs from "fs";
@@ -19,13 +19,13 @@ import {
   convertIncludedPowers,
   convertMetatypeCategory,
 } from "./MetatypeParserHelper.js";
-import { ForbiddenQualityListSchema } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
-import { heritageCategoryEnum } from "@neon-codex/common/build/enums.js";
+import { ForbiddenQualityListSchema } from "@neon-codex/common";
+import { heritageCategoryEnum } from "@neon-codex/common";
 import {
   convertMovement,
   convertIncludedQualities,
 } from "../common/ParserHelper.js";
-import type { MovementStrideType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
+import type { MovementStrideType } from "@neon-codex/common";
 import { type } from "arktype";
 
 export function ParseMetatypes() {

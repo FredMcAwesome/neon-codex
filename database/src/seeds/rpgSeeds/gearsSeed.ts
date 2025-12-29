@@ -2,8 +2,8 @@ import assert from "assert";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { GearListSchema } from "@neon-codex/common/build/schemas/equipment/other/gearSchemas.js";
-import type { GearListType } from "@neon-codex/common/build/schemas/equipment/other/gearSchemas.js";
+import { GearListSchema } from "@neon-codex/common";
+import type { GearListType } from "@neon-codex/common";
 import { Gears } from "../../models/rpg/equipment/other/gearModel.js";
 import { type } from "arktype";
 

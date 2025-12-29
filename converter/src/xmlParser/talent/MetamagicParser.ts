@@ -9,11 +9,11 @@ import { convertXmlBonus } from "../common/BonusParserHelper.js";
 import { convertSource } from "../common/ParserHelper.js";
 import { sourceBookXmlEnum } from "../common/ParserCommonDefines.js";
 import { BonusXmlSchema } from "../common/BonusParserSchemas.js";
-import { mentorCategoryEnum } from "@neon-codex/common/build/enums.js";
+import { mentorCategoryEnum } from "@neon-codex/common";
 import { RequiredXmlSchema } from "../common/RequiredParserSchemas.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { type } from "arktype";
-import { MetamagicSchema } from "@neon-codex/common/build/schemas/abilities/talent/metamagicSchemas.js";
+import { MetamagicSchema } from "@neon-codex/common";
 
 const MetamagicXmlSchema = type({
   "+": "reject",

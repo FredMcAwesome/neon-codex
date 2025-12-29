@@ -1,4 +1,4 @@
-import type { LifestyleSelectedListType } from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
+import type { LifestyleSelectedListType } from "@neon-codex/common";
 import { trpc } from "../../../utils/trpc.js";
 import { ArwesSelect } from "../../common/ArwesSelect.js";
 import { ArwesButton } from "../../common/ArwesButton.js";

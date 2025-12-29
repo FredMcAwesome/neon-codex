@@ -4,18 +4,18 @@ import {
   critterAttributePowerEnum,
   critterCategoryEnum,
   mathOperatorEnum,
-} from "@neon-codex/common/build/enums.js";
+} from "@neon-codex/common";
 import type {
   CritterRatingNonArrayType,
   IncludedComplexFormListType,
   IncludedCritterPowerListType,
-} from "@neon-codex/common/build/schemas/creatures/critterSchemas.js";
+} from "@neon-codex/common";
 import type { XmlPowerListType } from "../common/ParserCommonDefines.js";
 import type {
   CritterIncludedBiowareListType,
   CritterIncludedComplexFormType,
 } from "./CritterParserSchemas.js";
-import type { BonusGenericListType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
+import type { BonusGenericListType } from "@neon-codex/common";
 const Rating = Critters;
 
 const ratingSemantics = Rating.createSemantics();

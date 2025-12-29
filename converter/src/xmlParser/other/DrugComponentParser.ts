@@ -9,7 +9,7 @@ import type { DrugComponentXmlType } from "./DrugComponentParserSchemas.js";
 import { availabilityDrugSemantics } from "./DrugParserHelper.js";
 import Drug from "../../grammar/drug.ohm-bundle.js";
 import { convertSource } from "../common/ParserHelper.js";
-import { DrugComponentSchema } from "@neon-codex/common/build/schemas/equipment/other/drugSchemas.js";
+import { DrugComponentSchema } from "@neon-codex/common";
 import { type } from "arktype";
 const Availability = Drug;
 

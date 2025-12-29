@@ -5,7 +5,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import * as fs from "fs";
 import { VehicleListXmlSchema } from "./VehicleParserSchemas.js";
-import { VehicleSchema } from "@neon-codex/common/build/schemas/equipment/rigger/vehicleSchemas.js";
+import { VehicleSchema } from "@neon-codex/common";
 import type { VehicleXmlType } from "./VehicleParserSchemas.js";
 import {
   convertSource,

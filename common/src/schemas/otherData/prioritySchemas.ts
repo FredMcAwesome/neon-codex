@@ -20,20 +20,20 @@ export type HeritagePriorityType = typeof HeritagePrioritySchema.infer;
 
 const SkillBaseSchema = type({
   "+": "reject",
-  points: "number",
+  skillCount: "number",
   rating: "number",
 });
 export type SkillBaseType = typeof SkillBaseSchema.infer;
 
-const SkillSourceSchema = SkillBaseSchema.merge({
+const IncludedSkillSourceSchema = SkillBaseSchema.merge({
   source: type.valueOf(skillTalentSourceEnum),
 });
-export type SkillSourceType = typeof SkillSourceSchema.infer;
+export type IncludedSkillSourceType = typeof IncludedSkillSourceSchema.infer;
 
-const SkillSchema = SkillBaseSchema.merge({
-  skillList: "string[]",
+const IncludedSkillOptionsSchema = SkillBaseSchema.merge({
+  skillOptionList: "string[]",
 });
-export type SkillType = typeof SkillSchema.infer;
+export type IncludedSkillOptionsType = typeof IncludedSkillOptionsSchema.infer;
 
 const SkillGroupSchema = SkillBaseSchema.merge({
   groupList: "string[]",
@@ -46,7 +46,10 @@ const TalentBaseSchema = type({
   name: "string",
   label: "string",
   "includedQuality?": "string",
-  "includedSkills?": type.or(SkillSchema, SkillSourceSchema),
+  "includedSkills?": type.or(
+    IncludedSkillOptionsSchema,
+    IncludedSkillSourceSchema
+  ),
   "includedSkillGroups?": SkillGroupSchema,
   "required?": RequirementsSchema,
   "forbidden?": RequirementsSchema,

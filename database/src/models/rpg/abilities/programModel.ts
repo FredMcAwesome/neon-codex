@@ -7,18 +7,15 @@ import {
   Property,
   Unique,
 } from "@mikro-orm/postgresql";
-import {
-  sourceBookEnum,
-  programCategoryEnum,
-} from "@neon-codex/common/build/enums.js";
-import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
+import { sourceBookEnum, programCategoryEnum } from "@neon-codex/common";
+import type { BonusType } from "@neon-codex/common";
 import type {
   AvailabilityProgramType,
   CostProgramType,
   ProgramRatingType,
   ProgramType,
-} from "@neon-codex/common/build/schemas/abilities/talent/programSchemas.js";
-import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
+} from "@neon-codex/common";
+import type { RequirementsType } from "@neon-codex/common";
 import { ActivePrograms } from "../activeTables/activeProgramModel.js";
 
 @Entity()

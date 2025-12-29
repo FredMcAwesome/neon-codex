@@ -16,12 +16,12 @@ import {
   type CritterAttributeRangeType,
   type CritterSkillListType,
   type CritterType,
-} from "@neon-codex/common/build/schemas/creatures/critterSchemas.js";
+} from "@neon-codex/common";
 import {
   CritterListXmlSchema,
   type CritterXmlType,
 } from "./CritterParserSchemas.js";
-import type { MovementStrideType } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
+import type { MovementStrideType } from "@neon-codex/common";
 import {
   convertCritterRating,
   convertIncludedBiowareList,

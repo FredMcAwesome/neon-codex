@@ -7,23 +7,19 @@ import { WeaponListXmlSchema } from "./WeaponParserSchemas.js";
 import { convertAllowGear, convertSource } from "../common/ParserHelper.js";
 import assert from "assert";
 import {
-  ammoSourceEnum,
-  augmentationCategoryEnum,
-} from "@neon-codex/common/build/enums.js";
-import { weaponSubtypeEnum } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
-import type {
-  WeaponListType,
-  WeaponType,
-  ModeType,
-  FirearmOptionsType,
-  AvailabilityWeaponType,
-  CostWeaponType,
-  RecoilCompensationType,
-} from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
-import {
   WeaponListSchema,
   WeaponSchema,
-} from "@neon-codex/common/build/schemas/equipment/combat/weaponSchemas.js";
+  ammoSourceEnum,
+  augmentationCategoryEnum,
+  weaponSubtypeEnum,
+  type AvailabilityWeaponType,
+  type CostWeaponType,
+  type FirearmOptionsType,
+  type ModeType,
+  type RecoilCompensationType,
+  type WeaponListType,
+  type WeaponType,
+} from "@neon-codex/common";
 import {
   getWeaponTypeInformation,
   accuracySemantics,
@@ -48,8 +44,8 @@ import type {
   AccessoryMountType,
   AccuracyType,
   ArmourPenetrationType,
-} from "@neon-codex/common/build/schemas/shared/weaponSharedSchemas.js";
-import type { CustomisedWeaponAccessoryListType } from "@neon-codex/common/build/schemas/equipment/combat/weaponAccessorySchemas.js";
+} from "@neon-codex/common";
+import type { CustomisedWeaponAccessoryListType } from "@neon-codex/common";
 import { type } from "arktype";
 const Accuracy = Weapons.Accuracy;
 const Damage = Weapons.Damage;

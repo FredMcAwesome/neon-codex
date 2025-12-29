@@ -3,7 +3,7 @@ import {
   QualityListSchema,
   QualitySchema,
   type QualityType,
-} from "@neon-codex/common/build/schemas/abilities/qualitySchemas.js";
+} from "@neon-codex/common";
 import assert from "assert";
 import { XMLParser } from "fast-xml-parser";
 import fs from "fs";
@@ -15,7 +15,7 @@ import {
 } from "./QualityParserSchemas.js";
 import { convertRequirements } from "../common/RequiredParserHelper.js";
 import { convertXmlBonus } from "../common/BonusParserHelper.js";
-import { qualityLimitEnum } from "@neon-codex/common/build/enums.js";
+import { qualityLimitEnum } from "@neon-codex/common";
 import { type } from "arktype";
 
 export function ParseQualities() {

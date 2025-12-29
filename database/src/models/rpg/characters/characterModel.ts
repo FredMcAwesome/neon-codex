@@ -13,7 +13,7 @@ import type {
   AttributesType,
   PriorityLevelsType,
   SpecialAttributesType,
-} from "@neon-codex/common/build/schemas/characters/characterSchemas.js";
+} from "@neon-codex/common";
 import { CustomisedSkills } from "../activeTables/activeSkillModel.js";
 import { Heritages } from "../traits/heritageModel.js";
 import { CustomisedQualities } from "../activeTables/activeQualityModel.js";

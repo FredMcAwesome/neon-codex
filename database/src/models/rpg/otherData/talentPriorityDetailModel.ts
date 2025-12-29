@@ -8,9 +8,9 @@ import {
   type Ref,
   OneToOne,
 } from "@mikro-orm/postgresql";
-import { talentCategoryEnum } from "@neon-codex/common/build/enums.js";
-import type { TalentPriorityType } from "@neon-codex/common/build/schemas/otherData/prioritySchemas.js";
-import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
+import { talentCategoryEnum } from "@neon-codex/common";
+import type { TalentPriorityType } from "@neon-codex/common";
+import type { RequirementsType } from "@neon-codex/common";
 import { Qualities } from "../traits/qualityModel.js";
 import {
   SkillGroupPriorityDetails,

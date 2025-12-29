@@ -5,15 +5,9 @@ import {
   Enum,
   Unique,
 } from "@mikro-orm/postgresql";
-import {
-  gearCategoryEnum,
-  sourceBookEnum,
-} from "@neon-codex/common/build/enums.js";
-import type {
-  DrugType,
-  AvailabilityDrugType,
-} from "@neon-codex/common/build/schemas/equipment/other/drugSchemas.js";
-import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
+import { gearCategoryEnum, sourceBookEnum } from "@neon-codex/common";
+import type { DrugType, AvailabilityDrugType } from "@neon-codex/common";
+import type { BonusType } from "@neon-codex/common";
 
 @Entity()
 export class Drugs {

@@ -3,11 +3,8 @@ import {
   StringArrayOrStringSchema,
   StringOrNumberSchema,
 } from "../common/ParserCommonDefines.js";
-import { WeaponSubtypeSchema } from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
-import {
-  metamagicArtEnum,
-  spellDescriptorEnum,
-} from "@neon-codex/common/build/enums.js";
+import { WeaponSubtypeSchema } from "@neon-codex/common";
+import { metamagicArtEnum, spellDescriptorEnum } from "@neon-codex/common";
 import { type } from "arktype";
 
 const SkillSchema = type({

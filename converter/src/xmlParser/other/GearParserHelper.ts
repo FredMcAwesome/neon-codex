@@ -12,8 +12,8 @@ import {
   restrictionEnum,
   weaponExtraClassificationEnum,
   weaponCategoryEnum,
-} from "@neon-codex/common/build/enums.js";
-import type { AmmoForWeaponTypeType } from "@neon-codex/common/build/schemas/equipment/other/gearSchemas.js";
+} from "@neon-codex/common";
+import type { AmmoForWeaponTypeType } from "@neon-codex/common";
 import type {
   AddWeaponType,
   AmmoForWeaponTypeXmlType,
@@ -26,7 +26,7 @@ import { damageSemantics } from "../combat/WeaponParserHelper.js";
 import { weaponTypeXmlEnum } from "../combat/WeaponParserSchemas.js";
 const Damage = Weapons.Damage;
 import Gears from "../../grammar/gears.ohm-bundle.js";
-import type { WeaponBonusType } from "@neon-codex/common/build/schemas/shared/weaponSharedSchemas.js";
+import type { WeaponBonusType } from "@neon-codex/common";
 const Program = Gears.Program;
 const Capacity = Gears.Capacity;
 const Availability = Gears.Availability;

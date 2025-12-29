@@ -19,7 +19,7 @@ import type {
   CapacityAugmentationType,
   AugmentationSubsystemListType,
   deviceRatingType,
-} from "@neon-codex/common/build/schemas/equipment/bodyModification/augmentationSchemas.js";
+} from "@neon-codex/common";
 import {
   augmentationGradeEnum,
   augmentationCategoryEnum,
@@ -30,18 +30,15 @@ import {
   augmentationMountSlotEnum,
   ratingMeaningEnum,
   sourceBookEnum,
-} from "@neon-codex/common/build/enums.js";
+} from "@neon-codex/common";
 import { Weapons } from "../combat/weaponModel.js";
-import type { BonusType } from "@neon-codex/common/build/schemas/shared/bonusSchemas.js";
-import type { RequirementsType } from "@neon-codex/common/build/schemas/shared/requiredSchemas.js";
+import type { BonusType } from "@neon-codex/common";
+import type { RequirementsType } from "@neon-codex/common";
 import { Gears } from "../other/gearModel.js";
 import { Vehicles } from "../rigger/vehicleModel.js";
 import { AugmentationIncludedGears } from "../../activeTables/activeGearModel.js";
 import { ActiveVehicleModifications } from "../../activeTables/activeVehicleModificationModel.js";
-import type {
-  EssenceCostType,
-  RatingType,
-} from "@neon-codex/common/build/schemas/shared/commonSchemas.js";
+import type { EssenceCostType, RatingType } from "@neon-codex/common";
 
 @Entity({
   discriminatorColumn: "category",
