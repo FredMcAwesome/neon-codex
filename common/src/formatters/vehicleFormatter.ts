@@ -1,7 +1,9 @@
 import type {
+  CostVehicleModType,
   PartialSlotCostType,
   SlotCostType,
 } from "../schemas/equipment/rigger/vehicleModSchemas.js";
+import type { CostWeaponMountModType } from "../schemas/equipment/rigger/weaponMountModSchemas.js";
 import type {
   AvailabilityVehicleType,
   CostVehicleType,
@@ -47,6 +49,34 @@ export function formatVehicleCost(unformattedCost: CostVehicleType): string {
       costFormatted += costValue.operator;
     } else {
       costFormatted += formatVehicleCost(costValue.subnumbers);
+    }
+  }
+  return costFormatted;
+}
+
+export function formatVehicleModCost(
+  unformattedCost: CostVehicleModType | CostWeaponMountModType
+): string {
+  let costFormatted = "";
+  if ("range" in unformattedCost) {
+    const range = unformattedCost.range;
+    return `${range.min}-${range.max}`;
+  } else if ("ratingLinked" in unformattedCost) {
+    return unformattedCost.ratingLinked
+      .map((singleCost) => {
+        return formatVehicleModCost(singleCost);
+      })
+      .join(", ");
+  }
+  for (const costValue of unformattedCost) {
+    if (typeof costValue === "number") {
+      costFormatted += costValue.toString();
+    } else if ("option" in costValue) {
+      costFormatted += costValue.option;
+    } else if ("operator" in costValue) {
+      costFormatted += costValue.operator;
+    } else if ("subnumbers" in costValue) {
+      costFormatted += formatVehicleModCost(costValue.subnumbers);
     }
   }
   return costFormatted;

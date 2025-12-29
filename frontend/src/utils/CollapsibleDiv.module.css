@@ -1,0 +1,14 @@
+.container {
+  margin-bottom: 10px;
+}
+
+.button {
+  width: 100%;
+  text-align: left;
+}
+
+.content {
+  padding: 10px;
+  border: 1px solid var(--arwes-palette-primary-dark-2);
+  border-top: none;
+}

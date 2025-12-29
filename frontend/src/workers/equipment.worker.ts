@@ -73,6 +73,9 @@ self.onmessage = async (event: MessageEvent<WorkerRequestType>) => {
         }
       }
 
+      // Sort results alphabetically by item name
+      results.sort((a, b) => a.item.name.localeCompare(b.item.name));
+
       message = { type: workerResponseEnum.SEARCH_RESULTS, results };
       postMessage(message);
     } else if (type === workerRequestEnum.GET_DETAILS) {

@@ -86,7 +86,14 @@ export const ThemeContextProvider: FC<ThemeContextProviderProps> = ({
 
     // Helper to set color variables
     const setPalette = (
-      name: "primary" | "secondary" | "error" | "success" | "warning",
+      name:
+        | "primary"
+        | "secondary"
+        | "highlight"
+        | "info"
+        | "success"
+        | "warning"
+        | "error",
       hue: number
     ) => {
       // These lightness/saturation values are approximations based on the default Arwes theme
@@ -121,6 +128,11 @@ export const ThemeContextProvider: FC<ThemeContextProviderProps> = ({
 
     setPalette("primary", hues.primary);
     setPalette("secondary", hues.secondary);
+    if (hues.highlight !== undefined) setPalette("highlight", hues.highlight);
+    if (hues.info !== undefined) setPalette("info", hues.info);
+    if (hues.success !== undefined) setPalette("success", hues.success);
+    if (hues.warning !== undefined) setPalette("warning", hues.warning);
+    if (hues.error !== undefined) setPalette("error", hues.error);
 
     // Set Font Families
     root.style.setProperty("--arwes-font-family-body", fontFamilies.body);

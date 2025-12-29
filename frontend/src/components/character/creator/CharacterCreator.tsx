@@ -5,7 +5,7 @@ import "./CharacterCreator.css";
 import { Fragment } from "react";
 import { QualityListSelect } from "./QualitiesSelect.js";
 import { SkillListSelect } from "./SkillsSelect.js";
-import { EquipmentSelect } from "./EquipmentSelect.js";
+import { EquipmentSelect } from "./equipment/EquipmentSelect.js";
 import { trpc } from "../../../utils/trpc.js";
 import type {
   CustomSkillGroupListType,

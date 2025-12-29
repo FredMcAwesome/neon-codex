@@ -1,0 +1,28 @@
+.collapsibleContainer {
+  margin-bottom: 10px;
+  border: 1px solid var(--arwes-palette-primary-dark-3);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  background: rgba(var(--arwes-palette-primary-main-rgb), 0.1);
+}
+
+.headerTitle {
+  font-weight: bold;
+  color: var(--arwes-palette-secondary-main);
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 10px;
+}
+
+.content {
+  padding: 10px;
+}

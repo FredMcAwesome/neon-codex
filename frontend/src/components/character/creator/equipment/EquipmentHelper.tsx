@@ -1,12 +1,15 @@
 import { useState, useCallback, type ReactNode, memo } from "react";
 import { Collapse } from "react-collapse";
-import { ArwesButton } from "../../common/ArwesButton.js";
+import { ArwesButton } from "../../../common/ArwesButton.js";
+import styles from "./EquipmentHelper.module.css";
 
 interface IProps {
   title: string;
   children: ReactNode;
   addItem?: (() => void) | undefined;
   removeItem?: (() => void) | undefined;
+  style?: React.CSSProperties;
+  className?: string;
 }
 
 // Memoized component to prevent unnecessary re-renders
@@ -22,32 +25,14 @@ export const CollapsibleEquipmentDiv = memo(function CollapsibleEquipmentDiv(
 
   return (
     <div
-      style={{
-        marginBottom: "10px",
-        border: "1px solid var(--arwes-palette-primary-dark-3)",
-        background: "rgba(0,0,0,0.2)",
-      }}
+      className={`${styles.collapsibleContainer} ${props.className || ""}`}
+      style={props.style}
     >
-      <div
-        onClick={toggleIsOpened}
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: "10px",
-          cursor: "pointer",
-          background: "rgba(var(--arwes-palette-primary-main-rgb), 0.1)",
-        }}
-      >
-        <div
-          style={{
-            fontWeight: "bold",
-            color: "var(--arwes-palette-secondary-main)",
-          }}
-        >
+      <div className={styles.header} onClick={toggleIsOpened}>
+        <div className={styles.headerTitle}>
           {props.title} {isOpened ? "▲" : "▼"}
         </div>
-        <div style={{ display: "flex", gap: "10px" }}>
+        <div className={styles.buttonGroup}>
           {props.addItem !== undefined && (
             <ArwesButton
               onClick={(event: React.MouseEvent) => {
@@ -72,7 +57,7 @@ export const CollapsibleEquipmentDiv = memo(function CollapsibleEquipmentDiv(
         </div>
       </div>
       <Collapse isOpened={isOpened}>
-        <div style={{ padding: "10px" }}>{props.children}</div>
+        <div className={styles.content}>{props.children}</div>
       </Collapse>
     </div>
   );

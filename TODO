@@ -1,11 +1,11 @@
 Complete:
 
 - Update UI to Arwes
+- Add accessories, mods
 
 Future work:
 
 - Testing
-- Add accessories, mods
 - Save character as you go with character creation - support partially complete character as _fine_
 - Convert requirements/forbidden
 - Store Bonus and Requirements in DB properly

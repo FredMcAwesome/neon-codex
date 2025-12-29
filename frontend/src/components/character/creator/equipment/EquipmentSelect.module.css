@@ -1,0 +1,214 @@
+.itemContainer {
+  padding: 8px;
+  border-bottom: 1px solid var(--arwes-palette-neutral-elevated-3, #333);
+}
+
+.itemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.itemName {
+  font-weight: bold;
+}
+
+.itemDetails {
+  font-size: 0.9em;
+  color: var(--arwes-palette-text-secondary, #aaa);
+}
+
+.itemIncludes {
+  font-size: 0.8em;
+  color: var(--arwes-palette-text-secondary, #888);
+  margin-top: 4px;
+}
+
+.actionButton {
+  font-size: 0.8em;
+  padding: 0 8px;
+}
+
+.removeButton {
+  padding: 0 8px;
+  font-size: 0.7em;
+  margin-left: 8px;
+}
+
+.subListContainer {
+  margin-left: 10px;
+  margin-top: 4px;
+}
+
+.subListHeader {
+  font-size: 0.9em;
+  color: var(--arwes-palette-text-secondary, #888);
+}
+
+.subList {
+  list-style: none;
+  padding: 0;
+}
+
+.subListItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85em;
+  color: var(--arwes-palette-text-secondary, #aaa);
+  padding: 2px 0;
+  border-bottom: 1px solid var(--arwes-palette-neutral-elevated-1, #222);
+}
+
+.subListItemColumn {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 2px 0;
+  border-bottom: 1px solid var(--arwes-palette-neutral-elevated-1, #222);
+  width: 100%;
+}
+
+.configuring {
+  border: 1px solid var(--arwes-palette-primary-main);
+  box-shadow: 0 0 10px rgba(var(--arwes-palette-primary-main-rgb), 0.5);
+}
+
+.weaponMountItem {
+  padding: 4px;
+  border: 1px solid var(--arwes-palette-neutral-elevated-1, #222);
+  margin-bottom: 4px;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.weaponMountConfiguring {
+  border: 1px solid var(--arwes-palette-primary-main);
+  background-color: rgba(var(--arwes-palette-primary-main-rgb), 0.1);
+}
+
+.searchContainer {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--arwes-palette-primary-dark-2, #333);
+  color: var(--arwes-palette-text-primary, #fff);
+  font-family: inherit;
+}
+
+.searchInput:focus {
+  border-color: var(--arwes-palette-primary-main);
+  outline: none;
+}
+
+.headerActions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
+.smallText {
+  font-size: 0.9em;
+}
+
+.flexRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 4px;
+}
+
+.builtIn {
+  opacity: 0.8;
+  font-style: italic;
+}
+
+.configBanner {
+  padding: 16px;
+  border: 1px solid var(--arwes-palette-primary-main);
+  background-color: rgba(var(--arwes-palette-primary-main-rgb), 0.1);
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.configHeader {
+  color: var(--arwes-palette-primary-main);
+  font-weight: bold;
+}
+
+.resultsList {
+  background-color: #1a1a2e;
+  border-radius: 8px;
+  padding: 8px;
+  min-height: 400px;
+  position: relative;
+}
+
+.resultsHeader {
+  margin-bottom: 8px;
+  color: var(--arwes-palette-text-secondary, #888);
+  display: flex;
+  justify-content: space-between;
+}
+
+.fieldLabel {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.xsText {
+  font-size: 0.7em;
+}
+
+.paddedContainer {
+  padding: 16px;
+}
+
+.configSubtypeList {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.searchField {
+  flex: 1;
+  min-width: 200px;
+}
+
+.compactButton {
+  padding: 0 8px;
+  font-size: 0.7em;
+}
+
+.filtersContainer {
+  margin-bottom: 16px;
+  padding: 16px;
+  background-color: #1a1a2e;
+  border-radius: 8px;
+}
+
+.filtersRow {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.tabInactive {
+  opacity: 0.7;
+}

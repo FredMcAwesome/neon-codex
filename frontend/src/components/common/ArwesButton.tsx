@@ -3,13 +3,17 @@ import { Animator } from "@arwes/react";
 import { FrameCorners } from "@arwes/react";
 import { Text } from "@arwes/react";
 
-interface ArwesButtonProps {
+interface ArwesButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  disabled?: boolean;
-  className?: string;
-  palette?: "primary" | "secondary" | "error" | "success" | "warning";
-  style?: React.CSSProperties;
+  palette?:
+    | "primary"
+    | "secondary"
+    | "error"
+    | "success"
+    | "warning"
+    | "highlight"
+    | "info";
 }
 
 export const ArwesButton: FC<
@@ -22,6 +26,7 @@ export const ArwesButton: FC<
   palette = "primary",
   type = "button",
   style,
+  ...rest
 }) => {
   return (
     <Animator disabled={disabled}>
@@ -29,6 +34,7 @@ export const ArwesButton: FC<
         className={className}
         onClick={onClick}
         type={type}
+        {...rest}
         style={{
           position: "relative",
           display: "inline-block",
