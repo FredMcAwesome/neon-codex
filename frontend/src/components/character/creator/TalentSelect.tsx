@@ -6,7 +6,13 @@ import {
   spellCategoryEnum,
   talentCategoryEnum,
 } from "@neon-codex/common";
-import { Fragment, useEffect, type ReactElement } from "react";
+import {
+  Fragment,
+  useEffect,
+  useRef,
+  useState,
+  type ReactElement,
+} from "react";
 import { trpc } from "../../../utils/trpc.js";
 import { ArwesSelect } from "../../common/ArwesSelect.js";
 import {
@@ -40,67 +46,80 @@ export const TalentSelect = function (props: IProps) {
   let selectAdeptPowers;
   let selectPrograms;
 
-  useEffect(() => {
-    switch (talent.category) {
-      case talentCategoryEnum.Magic:
-        if (props.talentInfo.category !== talentCategoryEnum.Magic) {
-          const formulae: FormulaListSelectedType =
-            talent.formulae !== undefined
-              ? {
-                  selectFormulae: true as const,
-                  spells: [],
-                  rituals: [],
-                  alchemicalPreparations: [],
-                }
-              : {
-                  selectFormulae: false as const,
-                };
-          const powers =
-            talent.name === "Adept" || talent.name === "Mystic Adept"
-              ? {
-                  selectAdeptPowers: true as const,
-                  adeptPowers: [],
-                }
-              : {
-                  selectAdeptPowers: false as const,
-                };
-          props.setTalentInfo({
-            category: talentCategoryEnum.Magic,
-            selectedTradition: {
-              name: "",
-              customSpirits: {
-                customSpirits: false,
-              },
-            },
-            selectedFormulae: formulae,
-            selectedAdeptPowers: powers,
-          });
-        }
-        break;
-      case talentCategoryEnum.Resonance:
-        if (props.talentInfo.category !== talentCategoryEnum.Resonance) {
-          props.setTalentInfo({
-            category: talentCategoryEnum.Resonance,
-            complexForms: [],
-          });
-        }
-        break;
-      case talentCategoryEnum.Depth:
-        if (props.talentInfo.category !== talentCategoryEnum.Depth) {
-          props.setTalentInfo({
-            category: talentCategoryEnum.Depth,
-            programs: [],
-          });
-        }
-        break;
-      case talentCategoryEnum.Mundane:
-        if (props.talentInfo.category !== talentCategoryEnum.Mundane) {
-          props.setTalentInfo({
-            category: talentCategoryEnum.Mundane,
-          });
-        }
-        break;
+  // Helper for initializing talent info ensuring category matches
+  function getInitialTalentInfo(): TalentInfoType {
+    if (props.talentInfo.category === talent.category) {
+      return props.talentInfo;
     }
+    // Mismatch - return default structure
+    switch (talent.category) {
+      case talentCategoryEnum.Magic: {
+        const formulae: FormulaListSelectedType =
+          talent.formulae !== undefined
+            ? {
+                selectFormulae: true as const,
+                spells: [],
+                rituals: [],
+                alchemicalPreparations: [],
+              }
+            : {
+                selectFormulae: false as const,
+              };
+        const powers =
+          talent.name === "Adept" || talent.name === "Mystic Adept"
+            ? {
+                selectAdeptPowers: true as const,
+                adeptPowers: [],
+              }
+            : {
+                selectAdeptPowers: false as const,
+              };
+        return {
+          category: talentCategoryEnum.Magic,
+          selectedTradition: {
+            name: "",
+            customSpirits: {
+              customSpirits: false,
+            },
+          },
+          selectedFormulae: formulae,
+          selectedAdeptPowers: powers,
+        };
+      }
+      case talentCategoryEnum.Resonance:
+        return {
+          category: talentCategoryEnum.Resonance,
+          complexForms: [],
+        };
+      case talentCategoryEnum.Depth:
+        return {
+          category: talentCategoryEnum.Depth,
+          programs: [],
+        };
+      case talentCategoryEnum.Mundane:
+        return {
+          category: talentCategoryEnum.Mundane,
+        };
+    }
+  }
+
+  // Local state
+  const [localTalentInfo, setLocalTalentInfo] =
+    useState<TalentInfoType>(getInitialTalentInfo);
+
+  // Refs for cleanup
+  const talentInfoRef = useRef(localTalentInfo);
+
+  useEffect(() => {
+    talentInfoRef.current = localTalentInfo;
+  }, [localTalentInfo]);
+
+  // Sync to parent on unmount
+  useEffect(() => {
+    return () => {
+      props.setTalentInfo(talentInfoRef.current);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   switch (talent.category) {
@@ -108,13 +127,13 @@ export const TalentSelect = function (props: IProps) {
     // ensure we don't submit the entire character
     // without certain fields set e.g. tradition must be set here)
     case talentCategoryEnum.Magic:
-      if (props.talentInfo.category !== talentCategoryEnum.Magic) {
+      if (localTalentInfo.category !== talentCategoryEnum.Magic) {
         return <>Loading Magic Talent Info</>;
       }
       selectTradition = (
         <TraditionSelect
-          setTalentInfo={props.setTalentInfo}
-          talentInfo={props.talentInfo}
+          setTalentInfo={setLocalTalentInfo}
+          talentInfo={localTalentInfo}
         />
       );
 
@@ -123,62 +142,64 @@ export const TalentSelect = function (props: IProps) {
       ) {
         selectMentorSpirit = (
           <MentorSpiritSelect
-            talentInfo={props.talentInfo}
-            setTalentInfo={props.setTalentInfo}
+            talentInfo={localTalentInfo}
+            setTalentInfo={setLocalTalentInfo}
           />
         );
       }
 
       if (
-        isFormulaTalentType(props.talentInfo) &&
+        isFormulaTalentType(localTalentInfo) &&
         talent.formulae !== undefined &&
         talent.formulae > 0
       ) {
         selectSpells = (
           <FormulaSelect
             formulaCount={talent.formulae}
-            talentInfo={props.talentInfo}
-            setTalentInfo={props.setTalentInfo}
+            talentInfo={localTalentInfo}
+            setTalentInfo={setLocalTalentInfo}
           />
         );
       }
       if (talent.name === "Adept" || talent.name === "Mystic Adept") {
-        const talentInfo = props.talentInfo as AdeptTalentType;
+        const talentInfo = localTalentInfo as AdeptTalentType;
         selectAdeptPowers = (
           <AdeptPowerSelect
             magicRating={talent.magic}
             isMysticAdept={talent.name === "Mystic Adept"}
             karmaRemaining={props.karmaPoints}
             talentInfo={talentInfo}
-            setTalentInfo={props.setTalentInfo}
+            setTalentInfo={setLocalTalentInfo}
           />
         );
       }
       break;
     case talentCategoryEnum.Resonance:
-      if (props.talentInfo.category !== talentCategoryEnum.Resonance) {
+      if (localTalentInfo.category !== talentCategoryEnum.Resonance) {
         return <>Loading Resonance Talent Info</>;
       }
+      const resonanceTalentInfo = localTalentInfo as ResonanceTalentInfoType;
+
       if (talent.complexForms > 0) {
         selectComplexForms = (
           <ComplexFormSelect
             complexFormCount={talent.complexForms}
-            talentInfo={props.talentInfo}
-            setTalentInfo={props.setTalentInfo}
+            talentInfo={resonanceTalentInfo}
+            setTalentInfo={setLocalTalentInfo}
           />
         );
       }
       if (props.bonusInfo.findIndex((element) => element.linkParagon) > -1) {
         selectParagon = (
           <ParagonSelect
-            talentInfo={props.talentInfo}
-            setTalentInfo={props.setTalentInfo}
+            talentInfo={resonanceTalentInfo}
+            setTalentInfo={setLocalTalentInfo}
           />
         );
       }
       break;
     case talentCategoryEnum.Depth:
-      if (props.talentInfo.category !== talentCategoryEnum.Depth) {
+      if (localTalentInfo.category !== talentCategoryEnum.Depth) {
         return <>Loading Depth Talent Info</>;
       }
       if (talent.depth > 0) {
@@ -186,8 +207,8 @@ export const TalentSelect = function (props: IProps) {
           <ProgramSelect
             depth={talent.depth}
             essencePoints={props.essencePoints}
-            talentInfo={props.talentInfo}
-            setTalentInfo={props.setTalentInfo}
+            talentInfo={localTalentInfo}
+            setTalentInfo={setLocalTalentInfo}
           />
         );
       }
@@ -239,7 +260,6 @@ const TraditionSelect = function (props: ITraditionSelectProps) {
     traditionLoaded !== undefined &&
     traditionLoaded.spiritTypes == "Select Spirits"
   ) {
-    console.log(props.talentInfo.selectedTradition.customSpirits.customSpirits);
     if (
       props.talentInfo.selectedTradition.customSpirits.customSpirits === true
     ) {

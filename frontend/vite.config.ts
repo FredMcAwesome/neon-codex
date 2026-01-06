@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig } from "vitest/config";
 import react from "@vitejs/plugin-react";
 import htmlPurge from "vite-plugin-html-purgecss";
 import { createHtmlPlugin } from "vite-plugin-html";
@@ -27,4 +27,9 @@ export default defineConfig({
       },
     }),
   ],
+  test: {
+    globals: true,
+    environment: "jsdom",
+    setupFiles: "./src/tests/setup.ts",
+  },
 });

@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { ArwesSelect } from "../../common/ArwesSelect.js";
 import { CollapsibleDiv } from "../../../utils/CollapsibleDiv.js";
 import { skillCategoryEnum } from "@neon-codex/common";
@@ -33,25 +33,59 @@ interface IProps {
 }
 
 export const SkillListSelect = function (props: IProps) {
+  // Local state
+  const [localSkillSelections, setLocalSkillSelections] = useState(
+    props.skillSelections
+  );
+  const [localSkillPointItems, setLocalSkillPointItems] = useState(
+    props.skillPointItems
+  );
+
+  // Refs for cleanup
+  const skillSelectionsRef = useRef(localSkillSelections);
+  const skillPointItemsRef = useRef(localSkillPointItems);
+
+  useEffect(() => {
+    skillSelectionsRef.current = localSkillSelections;
+  }, [localSkillSelections]);
+  useEffect(() => {
+    skillPointItemsRef.current = localSkillPointItems;
+  }, [localSkillPointItems]);
+
+  // Sync to parent on unmount
+  useEffect(() => {
+    return () => {
+      props.setSkillSelections(skillSelectionsRef.current);
+      props.setSkillPoints(skillPointItemsRef.current);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const setSkill = function (
     skill: CustomSkillType,
     skillPoints: number,
     // TODO: implement skill group points
     _skillGroupPoints: number
   ) {
-    const newSkillSelections = [...props.skillSelections];
-    const skillPointItems = props.skillPointItems;
+    const newSkillSelections = [...localSkillSelections];
     const foundSkillIndex = newSkillSelections.findIndex(
       (listSkill) => listSkill.name == skill.name
     );
     const foundSkill = newSkillSelections[foundSkillIndex];
-    skillPointItems.skillPoints -= skillPoints - foundSkill.skillPoints;
-    // skillPointItems.skillGroupPoints -=
-    //   skillGroupPoints - foundSkill.skillGroupPoints;
-    newSkillSelections[foundSkillIndex].skillPoints = skillPoints;
+    const pointDelta = skillPoints - foundSkill.skillPoints;
+
+    newSkillSelections[foundSkillIndex] = {
+      ...foundSkill,
+      skillPoints: skillPoints,
+    };
     // newSkillSelections[foundSkillIndex].skillGroupPoints = skillGroupPoints;
-    props.setSkillPoints(skillPointItems);
-    props.setSkillSelections(newSkillSelections);
+
+    setLocalSkillPointItems((prev) => ({
+      ...prev,
+      skillPoints: prev.skillPoints - pointDelta,
+      // skillGroupPoints: prev.skillGroupPoints - groupPointDelta
+    }));
+    setLocalSkillSelections(newSkillSelections);
   };
 
   return (
@@ -59,67 +93,65 @@ export const SkillListSelect = function (props: IProps) {
       <h1>Skills Selection</h1>
       <div>
         Skill Points Remaining:
-        <p id="skillPoints">
-          Skill Points: {props.skillPointItems.skillPoints}
-        </p>
+        <p id="skillPoints">Skill Points: {localSkillPointItems.skillPoints}</p>
         <p id="skillGroupPoints">
-          Skill Group Points: {props.skillPointItems.skillGroupPoints}
+          Skill Group Points: {localSkillPointItems.skillGroupPoints}
         </p>
       </div>
       <CollapsibleDiv title="Combat Skills">
         <SkillList
-          skillSelections={props.skillSelections}
+          skillSelections={localSkillSelections}
           setSkill={setSkill}
           skillCategory={skillCategoryEnum.Combat}
-          skillPointItems={props.skillPointItems}
+          skillPointItems={localSkillPointItems}
         />
       </CollapsibleDiv>
       <CollapsibleDiv title="Physical Skills">
         <SkillList
-          skillSelections={props.skillSelections}
+          skillSelections={localSkillSelections}
           setSkill={setSkill}
           skillCategory={skillCategoryEnum.Physical}
-          skillPointItems={props.skillPointItems}
+          skillPointItems={localSkillPointItems}
         />
       </CollapsibleDiv>
       <CollapsibleDiv title="Social Skills">
         <SkillList
-          skillSelections={props.skillSelections}
+          skillSelections={localSkillSelections}
           setSkill={setSkill}
           skillCategory={skillCategoryEnum.Social}
-          skillPointItems={props.skillPointItems}
+          skillPointItems={localSkillPointItems}
         />
       </CollapsibleDiv>
       <CollapsibleDiv title="Magical Skills">
         <SkillList
-          skillSelections={props.skillSelections}
+          skillSelections={localSkillSelections}
           setSkill={setSkill}
           skillCategory={skillCategoryEnum.Magical}
-          skillPointItems={props.skillPointItems}
+          skillPointItems={localSkillPointItems}
         />
       </CollapsibleDiv>
       <CollapsibleDiv title="Resonance Skills">
         <SkillList
-          skillSelections={props.skillSelections}
+          skillSelections={localSkillSelections}
           setSkill={setSkill}
           skillCategory={skillCategoryEnum.Resonance}
-          skillPointItems={props.skillPointItems}
+          skillPointItems={localSkillPointItems}
         />
       </CollapsibleDiv>
       <CollapsibleDiv title="Technical Skills">
         <SkillList
-          skillSelections={props.skillSelections}
+          skillSelections={localSkillSelections}
           setSkill={setSkill}
           skillCategory={skillCategoryEnum.Technical}
-          skillPointItems={props.skillPointItems}
+          skillPointItems={localSkillPointItems}
         />
       </CollapsibleDiv>
       <CollapsibleDiv title="Vehicle/Drone Skills">
         <SkillList
-          skillSelections={props.skillSelections}
+          skillSelections={localSkillSelections}
           setSkill={setSkill}
           skillCategory={skillCategoryEnum.Vehicle}
-          skillPointItems={props.skillPointItems}
+          skillPointItems={localSkillPointItems}
         />
       </CollapsibleDiv>
     </Fragment>

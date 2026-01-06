@@ -4,13 +4,14 @@ import {
   getCoreRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { ArwesSelect } from "../../common/ArwesSelect.js";
 import {
   PrioritiesEnum,
   type PriorityLevelsType,
   type SpecialAttributesType,
   type HeritagePrioritySelectedType,
+  type TalentInfoType,
 } from "@neon-codex/common";
 import { trpc } from "../../../utils/trpc.js";
 import {
@@ -31,6 +32,7 @@ import {
   priorityTableRunnerLevelEnum,
   talentCategoryEnum,
 } from "@neon-codex/common";
+import { getPriorityData } from "../../../utils/priority.js";
 
 const columnHelper = createColumnHelper<
   PriorityRowType & { resources: { runnerLevel: priorityTableRunnerLevelEnum } }
@@ -168,21 +170,10 @@ interface IProps {
     loadingSpecialAttributes: SpecialAttributesType
   ) => void;
   priorityTalent: TalentPriorityType;
+  setTalentInfo: (loadingTalentInfo: TalentInfoType) => void;
 }
 
-const PriorityListSelect = function ({
-  priorityInfo,
-  setPriorityInfo,
-  priorityHeritage,
-  setPriorityHeritage,
-  setPriorityAttributes,
-  setPriorityTalent,
-  setPrioritySkills,
-  setPriorityResources,
-  specialAttributeInfo,
-  setSpecialAttributeInfo,
-  priorityTalent,
-}: IProps) {
+const PriorityListSelect = function (props: IProps) {
   const priorityTable = trpc.character.priorities.useQuery();
 
   if (priorityTable.isError) {
@@ -196,43 +187,249 @@ const PriorityListSelect = function ({
   return (
     <PrioritySelectLoaded
       priorityTable={priorityTable.data}
-      priorityInfo={priorityInfo}
-      setPriorityInfo={setPriorityInfo}
-      priorityHeritage={priorityHeritage}
-      setPriorityHeritage={setPriorityHeritage}
-      setPriorityAttributes={setPriorityAttributes}
-      setPriorityTalent={setPriorityTalent}
-      setPrioritySkills={setPrioritySkills}
-      setPriorityResources={setPriorityResources}
-      specialAttributeInfo={specialAttributeInfo}
-      setSpecialAttributeInfo={setSpecialAttributeInfo}
-      priorityTalent={priorityTalent}
+      priorityInfo={props.priorityInfo}
+      setPriorityInfo={props.setPriorityInfo}
+      priorityHeritage={props.priorityHeritage}
+      setPriorityHeritage={props.setPriorityHeritage}
+      setPriorityAttributes={props.setPriorityAttributes}
+      setPriorityTalent={props.setPriorityTalent}
+      setPrioritySkills={props.setPrioritySkills}
+      setPriorityResources={props.setPriorityResources}
+      specialAttributeInfo={props.specialAttributeInfo}
+      setSpecialAttributeInfo={props.setSpecialAttributeInfo}
+      priorityTalent={props.priorityTalent}
+      setTalentInfo={props.setTalentInfo}
     />
   );
 };
 
 export default PriorityListSelect;
 
-const PrioritySelectLoaded = function ({
-  priorityTable,
-  priorityInfo,
-  setPriorityInfo,
-  priorityHeritage,
-  setPriorityHeritage,
-  setPriorityAttributes,
-  setPriorityTalent,
-  setPrioritySkills,
-  setPriorityResources,
-  specialAttributeInfo,
-  setSpecialAttributeInfo,
-  priorityTalent,
-}: IProps & { priorityTable: PriorityTableType }) {
+type PrioritySelectLoadedProps = IProps & { priorityTable: PriorityTableType };
+
+const PrioritySelectLoaded = function (props: PrioritySelectLoadedProps) {
+  // Local state - initialized from props, synced to parent on unmount
+  const [localPriorityInfo, setLocalPriorityInfo] = useState(
+    props.priorityInfo
+  );
+
+  const [localHeritage, setLocalHeritage] = useState(() => {
+    if (props.priorityHeritage.heritage !== "") {
+      return props.priorityHeritage;
+    }
+    const heritages = getPriorityData(
+      props.priorityTable,
+      props.priorityInfo.heritage,
+      priorityCategoryEnum.Heritage
+    );
+    // Default to first option
+    const defaultHeritage = heritages.heritageList[0];
+    return {
+      heritage: defaultHeritage.name,
+      specialAttributePoints: defaultHeritage.specialAttributePoints,
+    };
+  });
+
+  const [localTalent, setLocalTalent] = useState(() => {
+    if (props.priorityTalent.name !== "") {
+      return props.priorityTalent;
+    }
+    const talents = getPriorityData(
+      props.priorityTable,
+      props.priorityInfo.talent,
+      priorityCategoryEnum.Talent
+    );
+    // Default to first option
+    return talents.talentList[0];
+  });
+
+  const [localSpecialAttributeInfo, setLocalSpecialAttributeInfo] = useState(
+    () => {
+      const params = props.specialAttributeInfo;
+      // Check if the passed special attributes match the talent category (which might be defaulted locally)
+      if (params.talent.category === localTalent.category) {
+        return params;
+      }
+
+      const newAttr = { ...params };
+      switch (localTalent.category) {
+        case talentCategoryEnum.Magic:
+          newAttr.talent = {
+            category: talentCategoryEnum.Magic,
+            magic: localTalent.magic,
+          };
+          break;
+        case talentCategoryEnum.Depth:
+          newAttr.talent = {
+            category: talentCategoryEnum.Depth,
+            depth: localTalent.depth,
+          };
+          break;
+        case talentCategoryEnum.Resonance:
+          newAttr.talent = {
+            category: talentCategoryEnum.Resonance,
+            resonance: localTalent.resonance,
+          };
+          break;
+        case talentCategoryEnum.Mundane:
+          newAttr.talent = {
+            category: talentCategoryEnum.Mundane,
+          };
+          break;
+      }
+      return newAttr;
+    }
+  );
+
+  // Refs to track current values for cleanup (avoids stale closure)
+  const priorityInfoRef = useRef(localPriorityInfo);
+  const heritageRef = useRef(localHeritage);
+  const talentRef = useRef(localTalent);
+  const specialAttrRef = useRef(localSpecialAttributeInfo);
+
+  useEffect(() => {
+    priorityInfoRef.current = localPriorityInfo;
+  }, [localPriorityInfo]);
+  useEffect(() => {
+    heritageRef.current = localHeritage;
+  }, [localHeritage]);
+  useEffect(() => {
+    talentRef.current = localTalent;
+  }, [localTalent]);
+  useEffect(() => {
+    specialAttrRef.current = localSpecialAttributeInfo;
+  }, [localSpecialAttributeInfo]);
+
+  // Sync to parent on unmount (page navigation)
+  useEffect(() => {
+    return () => {
+      props.setPriorityInfo(priorityInfoRef.current);
+      props.setPriorityHeritage(heritageRef.current);
+      props.setPriorityTalent(talentRef.current);
+      // Update TalentInfo based on category
+      const talentCategory = talentRef.current.category;
+
+      let specialAttribute = specialAttrRef.current;
+      // Safety check: ensure special attribute matches talent category
+      if (specialAttribute.talent.category !== talentCategory) {
+        specialAttribute = { ...specialAttribute };
+        switch (talentCategory) {
+          case talentCategoryEnum.Magic:
+            specialAttribute.talent = {
+              category: talentCategoryEnum.Magic,
+              magic: talentRef.current.magic,
+            };
+            break;
+          case talentCategoryEnum.Depth:
+            specialAttribute.talent = {
+              category: talentCategoryEnum.Depth,
+              depth: talentRef.current.depth,
+            };
+            break;
+          case talentCategoryEnum.Resonance:
+            specialAttribute.talent = {
+              category: talentCategoryEnum.Resonance,
+              resonance: talentRef.current.resonance,
+            };
+            break;
+          case talentCategoryEnum.Mundane:
+            specialAttribute.talent = {
+              category: talentCategoryEnum.Mundane,
+            };
+            break;
+        }
+      }
+      props.setSpecialAttributeInfo(specialAttribute);
+
+      // Calculate and sync derived priority details
+      const priorities = priorityInfoRef.current;
+
+      const attributePoints = getPriorityData(
+        props.priorityTable,
+        priorities.attributes,
+        priorityCategoryEnum.Attributes
+      );
+      props.setPriorityAttributes(attributePoints.attributes);
+
+      const skillPriorities = getPriorityData(
+        props.priorityTable,
+        priorities.skills,
+        priorityCategoryEnum.Skills
+      );
+      props.setPrioritySkills(skillPriorities);
+
+      const resourceOptions = getPriorityData(
+        props.priorityTable,
+        priorities.resources,
+        priorityCategoryEnum.Resources
+      );
+      props.setPriorityResources(resourceOptions.standard.resources);
+
+      switch (talentCategory) {
+        case talentCategoryEnum.Magic: {
+          const formulae =
+            talentRef.current.formulae !== undefined
+              ? {
+                  selectFormulae: true as const,
+                  spells: [],
+                  rituals: [],
+                  alchemicalPreparations: [],
+                }
+              : {
+                  selectFormulae: false as const,
+                  alchemicalPreparations: [],
+                };
+          const powers =
+            talentRef.current.name === "Adept" ||
+            talentRef.current.name === "Mystic Adept"
+              ? {
+                  selectAdeptPowers: true as const,
+                  adeptPowers: [],
+                }
+              : {
+                  selectAdeptPowers: false as const,
+                };
+          props.setTalentInfo({
+            category: talentCategoryEnum.Magic,
+            selectedTradition: {
+              name: "",
+              customSpirits: {
+                customSpirits: false,
+              },
+            },
+            selectedFormulae: formulae,
+            selectedAdeptPowers: powers,
+          });
+          break;
+        }
+        case talentCategoryEnum.Resonance:
+          props.setTalentInfo({
+            category: talentCategoryEnum.Resonance,
+            complexForms: [],
+          });
+          break;
+        case talentCategoryEnum.Depth:
+          props.setTalentInfo({
+            category: talentCategoryEnum.Depth,
+            programs: [],
+          });
+          break;
+        case talentCategoryEnum.Mundane:
+          props.setTalentInfo({
+            category: talentCategoryEnum.Mundane,
+          });
+          break;
+      }
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   // Todo: add css effect when another option changes so it is obvious which other column was affected
   function changePriorities(
     column: PrioritiesEnum,
     newPriority: priorityLetterEnum
   ) {
-    const newPriorities = { ...priorityInfo };
+    const newPriorities = { ...localPriorityInfo };
     let changedPriority;
     switch (column) {
       case PrioritiesEnum.Heritage:
@@ -258,26 +455,26 @@ const PrioritySelectLoaded = function ({
     }
 
     // TODO: only do this if not using sum to ten
-    if (priorityInfo.heritage === newPriority) {
+    if (localPriorityInfo.heritage === newPriority) {
       newPriorities.heritage = changedPriority;
-    } else if (priorityInfo.attributes === newPriority) {
+    } else if (localPriorityInfo.attributes === newPriority) {
       newPriorities.attributes = changedPriority;
-    } else if (priorityInfo.talent === newPriority) {
+    } else if (localPriorityInfo.talent === newPriority) {
       newPriorities.talent = changedPriority;
-    } else if (priorityInfo.skills === newPriority) {
+    } else if (localPriorityInfo.skills === newPriority) {
       newPriorities.skills = changedPriority;
-    } else if (priorityInfo.resources === newPriority) {
+    } else if (localPriorityInfo.resources === newPriority) {
       newPriorities.resources = changedPriority;
     }
 
-    setPriorityInfo(newPriorities);
+    setLocalPriorityInfo(newPriorities);
   }
 
   let metavariantOptions: Array<string> = [];
 
-  const heritages = convertererer(
-    priorityTable,
-    priorityInfo.heritage,
+  const heritages = getPriorityData(
+    props.priorityTable,
+    localPriorityInfo.heritage,
     priorityCategoryEnum.Heritage
   );
   const heritageOptions = heritages.heritageList.map((heritage) => {
@@ -285,9 +482,9 @@ const PrioritySelectLoaded = function ({
   });
   const heritage = heritages.heritageList.find((heritageLocal) => {
     return (
-      heritageLocal.name === priorityHeritage.heritage &&
+      heritageLocal.name === localHeritage.heritage &&
       heritageLocal.specialAttributePoints ===
-        priorityHeritage.specialAttributePoints
+        localHeritage.specialAttributePoints
     );
   });
   if (heritage !== undefined && heritage.metavariantList !== undefined) {
@@ -298,115 +495,27 @@ const PrioritySelectLoaded = function ({
     metavariantOptions = [];
   }
 
-  const talents = convertererer(
-    priorityTable,
-    priorityInfo.talent,
+  const talents = getPriorityData(
+    props.priorityTable,
+    localPriorityInfo.talent,
     priorityCategoryEnum.Talent
   );
   const talentOptions = talents.talentList.map((talentLocal) => {
     return talentLocal.name;
   });
 
-  useEffect(() => {
-    const heritages = convertererer(
-      priorityTable,
-      priorityInfo.heritage,
-      priorityCategoryEnum.Heritage
-    );
-    let heritage = heritages.heritageList.find((heritageLocal) => {
-      return (
-        heritageLocal.name === priorityHeritage.heritage &&
-        heritageLocal.specialAttributePoints ===
-          priorityHeritage.specialAttributePoints
-      );
-    });
-    // On first load or on heritage priority change need to set
-    // a default heritage
-    if (heritage === undefined) {
-      heritage = heritages.heritageList.find((heritageLocal) => {
-        return heritageLocal.name === heritageOptions[0];
-      });
-      if (heritage === undefined) {
-        throw Error("Heritage is undefined");
-      }
-      const newHeritage = {
-        heritage: heritage.name,
-        specialAttributePoints: heritage.specialAttributePoints,
-      };
-      setPriorityHeritage(newHeritage);
-    }
-
-    const talents = convertererer(
-      priorityTable,
-      priorityInfo.talent,
-      priorityCategoryEnum.Talent
-    );
-    let talent = talents.talentList.find((talentLocal) => {
-      return talentLocal.label === priorityTalent.label;
-    });
-    // On first load or on talent priority change need to set
-    // a default talent
-    if (talent === undefined) {
-      talent = talents.talentList.find((talentLocal) => {
-        return talentLocal.name === talentOptions[0];
-      });
-      if (talent === undefined) {
-        throw Error("Talent is undefined");
-      }
-      setPriorityTalent(talent);
-      const specialAttribute = specialAttributeInfo;
-      switch (talent.category) {
-        case talentCategoryEnum.Magic:
-          specialAttribute.talent = {
-            category: talentCategoryEnum.Magic,
-            magic: talent.magic,
-          };
-          break;
-        case talentCategoryEnum.Depth:
-          specialAttribute.talent = {
-            category: talentCategoryEnum.Depth,
-            depth: talent.depth,
-          };
-          break;
-        case talentCategoryEnum.Resonance:
-          specialAttribute.talent = {
-            category: talentCategoryEnum.Resonance,
-            resonance: talent.resonance,
-          };
-          break;
-        case talentCategoryEnum.Mundane:
-          specialAttribute.talent = {
-            category: talentCategoryEnum.Mundane,
-          };
-          break;
-      }
-      setSpecialAttributeInfo(specialAttribute);
-    }
-  }, [
-    priorityTable,
-    priorityInfo,
-    setPriorityHeritage,
-    priorityHeritage,
-    setPriorityTalent,
-    priorityTalent,
-    heritageOptions,
-    talentOptions,
-    setSpecialAttributeInfo,
-    specialAttributeInfo,
-  ]);
-
   return (
     <Fragment>
       <h1>Priority Selection</h1>
       <PrioritiesTable
-        priorityTable={priorityTable}
+        priorityTable={props.priorityTable}
         runnerLevel={priorityTableRunnerLevelEnum.StreetLevel}
       />
       <div className="priority-selection-container">
         <div className="priority-selection-row">
           <label htmlFor="heritage">Heritage:</label>
           <ArwesSelect
-            value={priorityInfo.heritage}
+            value={localPriorityInfo.heritage}
             onChange={(e) => {
               changePriorities(
                 PrioritiesEnum.Heritage,
@@ -425,11 +534,11 @@ const PrioritySelectLoaded = function ({
           </ArwesSelect>
           <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
             <ArwesSelect
-              value={priorityHeritage.heritage}
+              value={localHeritage.heritage}
               onChange={(e) => {
-                const heritages = convertererer(
-                  priorityTable,
-                  priorityInfo.heritage,
+                const heritages = getPriorityData(
+                  props.priorityTable,
+                  localPriorityInfo.heritage,
                   priorityCategoryEnum.Heritage
                 );
                 const baseHeritage = heritages.heritageList.find((heritage) => {
@@ -438,12 +547,12 @@ const PrioritySelectLoaded = function ({
                 if (baseHeritage === undefined) {
                   throw Error("baseHeritage is not defined");
                 }
-                const newHeritage = priorityHeritage;
+                const newHeritage = { ...localHeritage };
                 newHeritage.heritage = baseHeritage.name;
                 newHeritage.specialAttributePoints =
                   baseHeritage.specialAttributePoints;
                 delete newHeritage.metavariant;
-                setPriorityHeritage(newHeritage);
+                setLocalHeritage(newHeritage);
               }}
               className="heritageOptions"
             >
@@ -456,19 +565,19 @@ const PrioritySelectLoaded = function ({
             {metavariantOptions.length > 0 && (
               <ArwesSelect
                 value={
-                  typeof priorityHeritage.metavariant === "string"
-                    ? priorityHeritage.metavariant
+                  typeof localHeritage.metavariant === "string"
+                    ? localHeritage.metavariant
                     : ""
                 }
                 onChange={(e) => {
-                  const heritages = convertererer(
-                    priorityTable,
-                    priorityInfo.heritage,
+                  const heritages = getPriorityData(
+                    props.priorityTable,
+                    localPriorityInfo.heritage,
                     priorityCategoryEnum.Heritage
                   );
                   const baseHeritage = heritages.heritageList.find(
                     (heritage) => {
-                      return heritage.name === priorityHeritage.heritage;
+                      return heritage.name === localHeritage.heritage;
                     }
                   );
                   if (baseHeritage === undefined) {
@@ -485,11 +594,11 @@ const PrioritySelectLoaded = function ({
                   if (metavariant === undefined) {
                     throw Error("metavariant is not defined");
                   }
-                  const newHeritage = priorityHeritage;
+                  const newHeritage = { ...localHeritage };
                   newHeritage.metavariant = metavariant.name;
                   newHeritage.specialAttributePoints =
                     metavariant.specialAttributePoints;
-                  setPriorityHeritage(newHeritage);
+                  setLocalHeritage(newHeritage);
                 }}
                 className="metavariantOptions"
               >
@@ -506,7 +615,7 @@ const PrioritySelectLoaded = function ({
         <div className="priority-selection-row">
           <label htmlFor="attributes">Attributes:</label>
           <ArwesSelect
-            value={priorityInfo.attributes}
+            value={localPriorityInfo.attributes}
             onChange={(e) => {
               changePriorities(
                 PrioritiesEnum.Attributes,
@@ -514,12 +623,6 @@ const PrioritySelectLoaded = function ({
                   e.target.value as keyof typeof priorityLetterEnum
                 ]
               );
-              const attributePoints = convertererer(
-                priorityTable,
-                priorityInfo.attributes,
-                priorityCategoryEnum.Attributes
-              );
-              setPriorityAttributes(attributePoints.attributes);
             }}
             className="attributePriority"
           >
@@ -535,7 +638,7 @@ const PrioritySelectLoaded = function ({
         <div className="priority-selection-row">
           <label htmlFor="talent">Talent:</label>
           <ArwesSelect
-            value={priorityInfo.talent}
+            value={localPriorityInfo.talent}
             onChange={(e) => {
               changePriorities(
                 PrioritiesEnum.Talents,
@@ -554,11 +657,11 @@ const PrioritySelectLoaded = function ({
           </ArwesSelect>
 
           <ArwesSelect
-            value={priorityTalent.name}
+            value={localTalent.name}
             onChange={(e) => {
-              const talents = convertererer(
-                priorityTable,
-                priorityInfo.talent,
+              const talents = getPriorityData(
+                props.priorityTable,
+                localPriorityInfo.talent,
                 priorityCategoryEnum.Talent
               );
               const talent = talents.talentList.find((talent) => {
@@ -567,8 +670,8 @@ const PrioritySelectLoaded = function ({
               if (talent === undefined) {
                 throw Error("talent is not defined");
               }
-              setPriorityTalent(talent);
-              const specialAttribute = specialAttributeInfo;
+              setLocalTalent(talent);
+              const specialAttribute = { ...localSpecialAttributeInfo };
               switch (talent.category) {
                 case talentCategoryEnum.Magic:
                   specialAttribute.talent = {
@@ -594,7 +697,7 @@ const PrioritySelectLoaded = function ({
                   };
                   break;
               }
-              setSpecialAttributeInfo(specialAttribute);
+              setLocalSpecialAttributeInfo(specialAttribute);
             }}
             className="talentOptions"
           >
@@ -609,19 +712,13 @@ const PrioritySelectLoaded = function ({
         <div className="priority-selection-row">
           <label htmlFor="skills">Skills:</label>
           <ArwesSelect
-            value={priorityInfo.skills}
+            value={localPriorityInfo.skills}
             onChange={(e) => {
               const newPriority = e.target.value as priorityLetterEnum;
               changePriorities(
                 PrioritiesEnum.Skills,
                 priorityLetterEnum[newPriority]
               );
-              const skills = convertererer(
-                priorityTable,
-                newPriority,
-                priorityCategoryEnum.Skills
-              );
-              setPrioritySkills(skills);
             }}
             className="skillPriority"
           >
@@ -637,7 +734,7 @@ const PrioritySelectLoaded = function ({
         <div className="priority-selection-row">
           <label htmlFor="resources">Resources:</label>
           <ArwesSelect
-            value={priorityInfo.resources}
+            value={localPriorityInfo.resources}
             onChange={(e) => {
               changePriorities(
                 PrioritiesEnum.Resources,
@@ -645,12 +742,6 @@ const PrioritySelectLoaded = function ({
                   e.target.value as keyof typeof priorityLetterEnum
                 ]
               );
-              const resources = convertererer(
-                priorityTable,
-                priorityInfo.resources,
-                priorityCategoryEnum.Resources
-              );
-              setPriorityResources(resources.standard.resources);
             }}
             className="resourcePriority"
           >
@@ -667,55 +758,6 @@ const PrioritySelectLoaded = function ({
   );
 };
 
-type SettingsKeyReturnType = {
-  [priorityCategoryEnum.Heritage]: HeritageOptionsPriorityType;
-  [priorityCategoryEnum.Attributes]: AttributePriorityType;
-  [priorityCategoryEnum.Talent]: TalentOptionsPriorityType;
-  [priorityCategoryEnum.Skills]: SkillPriorityType;
-  [priorityCategoryEnum.Resources]: ResourceOptionsPriorityType;
-};
-
-function convertererer<T extends priorityCategoryEnum>(
-  priorityTable: PriorityTableType,
-  check: priorityLetterEnum,
-  category: T
-): SettingsKeyReturnType[T] {
-  switch (check) {
-    case priorityLetterEnum.A:
-      return getPriority(priorityTable.A, category);
-    case priorityLetterEnum.B:
-      return getPriority(priorityTable.B, category);
-    case priorityLetterEnum.C:
-      return getPriority(priorityTable.C, category);
-    case priorityLetterEnum.D:
-      return getPriority(priorityTable.D, category);
-    case priorityLetterEnum.E:
-      return getPriority(priorityTable.E, category);
-  }
-}
-
-function getPriority<T extends priorityCategoryEnum>(
-  priority: PriorityType,
-  category: T
-): SettingsKeyReturnType[T] {
-  // "as" casting is needed here due to typescript limitation
-  switch (category) {
-    case priorityCategoryEnum.Heritage:
-      return priority.heritages as SettingsKeyReturnType[T];
-    case priorityCategoryEnum.Attributes:
-      return priority.attributes as SettingsKeyReturnType[T];
-    case priorityCategoryEnum.Talent:
-      return priority.talents as SettingsKeyReturnType[T];
-    case priorityCategoryEnum.Skills:
-      return priority.skills as SettingsKeyReturnType[T];
-    case priorityCategoryEnum.Resources:
-      return priority.resources as SettingsKeyReturnType[T];
-    default:
-      // eslint-disable-next-line no-case-declarations
-      const _: never = category;
-      return _;
-  }
-}
 // function formatMagic(line: IMagicInfo) {
 //   let magicResonance = "Magic";
 //   let spellsForms = "Spells, rituals, and/or alchemical preparations";

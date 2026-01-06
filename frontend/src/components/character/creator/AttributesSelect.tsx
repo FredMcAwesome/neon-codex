@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { ArwesSelect } from "../../common/ArwesSelect.js";
 import {
   type AttributesType,
@@ -80,6 +80,34 @@ interface IProps {
 const AttributeListSelect = function (props: IProps) {
   const heritages = trpc.character.heritages.useQuery();
 
+  // Local state - initialized from props, synced to parent on unmount
+  const [localAttributeInfo, setLocalAttributeInfo] = useState(
+    props.attributeInfo
+  );
+  const [localSpecialAttributeInfo, setLocalSpecialAttributeInfo] = useState(
+    props.specialAttributeInfo
+  );
+
+  // Refs to track current values for cleanup (avoids stale closure)
+  const attributeInfoRef = useRef(localAttributeInfo);
+  const specialAttributeInfoRef = useRef(localSpecialAttributeInfo);
+
+  useEffect(() => {
+    attributeInfoRef.current = localAttributeInfo;
+  }, [localAttributeInfo]);
+  useEffect(() => {
+    specialAttributeInfoRef.current = localSpecialAttributeInfo;
+  }, [localSpecialAttributeInfo]);
+
+  // Sync to parent on unmount (page navigation)
+  useEffect(() => {
+    return () => {
+      props.setAttributeInfo(attributeInfoRef.current);
+      props.setSpecialAttributeInfo(specialAttributeInfoRef.current);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   if (heritages.isError) {
     return <>{heritages.error}</>;
   }
@@ -93,10 +121,10 @@ const AttributeListSelect = function (props: IProps) {
       heritages={heritages.data}
       priorityInfo={props.priorityInfo}
       heritageInfo={props.heritageInfo}
-      attributeInfo={props.attributeInfo}
-      setAttributeInfo={props.setAttributeInfo}
-      specialAttributeInfo={props.specialAttributeInfo}
-      setSpecialAttributeInfo={props.setSpecialAttributeInfo}
+      attributeInfo={localAttributeInfo}
+      setAttributeInfo={setLocalAttributeInfo}
+      specialAttributeInfo={localSpecialAttributeInfo}
+      setSpecialAttributeInfo={setLocalSpecialAttributeInfo}
       maxAttributePoints={props.maxAttributePoints}
       talentInfo={props.talentInfo}
       bonusInfo={props.bonusInfo}
@@ -150,12 +178,49 @@ const AttributesSelectLoaded = function (
     depth: foundHeritage.depthAttributeRange,
   };
 
-  const [attributePoints, setAttributePoints] = useState(
-    props.maxAttributePoints
-  );
-  const [specialAttributePoints, setSpecialAttributePoints] = useState(
-    props.heritageInfo.specialAttributePoints
-  );
+  const spentAttributePoints =
+    props.attributeInfo.body -
+    attributeRanges.body.min +
+    (props.attributeInfo.agility - attributeRanges.agility.min) +
+    (props.attributeInfo.reaction - attributeRanges.reaction.min) +
+    (props.attributeInfo.strength - attributeRanges.strength.min) +
+    (props.attributeInfo.willpower - attributeRanges.willpower.min) +
+    (props.attributeInfo.logic - attributeRanges.logic.min) +
+    (props.attributeInfo.intuition - attributeRanges.intuition.min) +
+    (props.attributeInfo.charisma - attributeRanges.charisma.min);
+
+  const attributePoints = props.maxAttributePoints - spentAttributePoints;
+
+  const spentSpecialAttributePointsValue =
+    props.specialAttributeInfo.edge - attributeRanges.edge.min;
+
+  let spentSpecialTalentPointsValue = 0;
+  if (
+    props.specialAttributeInfo.talent.category === talentCategoryEnum.Magic &&
+    props.specialAttributeInfo.talent.magic !== undefined
+  ) {
+    spentSpecialTalentPointsValue =
+      props.specialAttributeInfo.talent.magic - attributeRanges.magic.min;
+  } else if (
+    props.specialAttributeInfo.talent.category ===
+      talentCategoryEnum.Resonance &&
+    props.specialAttributeInfo.talent.resonance !== undefined
+  ) {
+    spentSpecialTalentPointsValue =
+      props.specialAttributeInfo.talent.resonance -
+      attributeRanges.resonance.min;
+  } else if (
+    props.specialAttributeInfo.talent.category === talentCategoryEnum.Depth &&
+    props.specialAttributeInfo.talent.depth !== undefined
+  ) {
+    spentSpecialTalentPointsValue =
+      props.specialAttributeInfo.talent.depth - attributeRanges.depth.min;
+  }
+
+  const specialAttributePoints =
+    props.heritageInfo.specialAttributePoints -
+    (spentSpecialAttributePointsValue + spentSpecialTalentPointsValue);
+
   const attributeOptions: AttributesOptionsType = getAttributeListOptions();
 
   const specialAttributeOptions: SpecialAttributeOptionsType =
@@ -237,44 +302,34 @@ const AttributesSelectLoaded = function (
     if (isNaN(attributeValue)) {
       throw Error("attributeValue is NaN");
     }
-    const newAttributes = props.attributeInfo;
-    let difference = 0;
+    const newAttributes = { ...props.attributeInfo };
     switch (attributeType) {
       case baseAttributeTypeEnum.Body:
-        difference = newAttributes.body - attributeValue;
         newAttributes.body = attributeValue;
         break;
       case baseAttributeTypeEnum.Agility:
-        difference = newAttributes.agility - attributeValue;
         newAttributes.agility = attributeValue;
         break;
       case baseAttributeTypeEnum.Reaction:
-        difference = newAttributes.reaction - attributeValue;
         newAttributes.reaction = attributeValue;
         break;
       case baseAttributeTypeEnum.Strength:
-        difference = newAttributes.strength - attributeValue;
         newAttributes.strength = attributeValue;
         break;
       case baseAttributeTypeEnum.Willpower:
-        difference = newAttributes.willpower - attributeValue;
         newAttributes.willpower = attributeValue;
         break;
       case baseAttributeTypeEnum.Logic:
-        difference = newAttributes.logic - attributeValue;
         newAttributes.logic = attributeValue;
         break;
       case baseAttributeTypeEnum.Intuition:
-        difference = newAttributes.intuition - attributeValue;
         newAttributes.intuition = attributeValue;
         break;
       case baseAttributeTypeEnum.Charisma:
-        difference = newAttributes.charisma - attributeValue;
         newAttributes.charisma = attributeValue;
         break;
     }
     props.setAttributeInfo(newAttributes);
-    setAttributePoints(attributePoints + difference);
   }
 
   function changeSpecialAttribute(
@@ -287,37 +342,40 @@ const AttributesSelectLoaded = function (
     if (isNaN(attributeValue)) {
       throw Error("attributeValue is NaN");
     }
-    const newAttributes = props.specialAttributeInfo;
-    let difference = 0;
+    const newAttributes = { ...props.specialAttributeInfo };
     switch (attributeType) {
       case specialAttributeTypeEnum.Edge:
-        difference = newAttributes.edge - attributeValue;
         newAttributes.edge = attributeValue;
         break;
       case specialAttributeTypeEnum.Magic:
         if (newAttributes.talent.category !== talentCategoryEnum.Magic) {
           throw Error("Invalid special attribute type");
         }
-        difference = newAttributes.talent.magic - attributeValue;
-        newAttributes.talent.magic = attributeValue;
+        newAttributes.talent = {
+          ...newAttributes.talent,
+          magic: attributeValue,
+        };
         break;
       case specialAttributeTypeEnum.Depth:
         if (newAttributes.talent.category !== talentCategoryEnum.Depth) {
           throw Error("Invalid special attribute type");
         }
-        difference = newAttributes.talent.depth - attributeValue;
-        newAttributes.talent.depth = attributeValue;
+        newAttributes.talent = {
+          ...newAttributes.talent,
+          depth: attributeValue,
+        };
         break;
       case specialAttributeTypeEnum.Resonance:
         if (newAttributes.talent.category !== talentCategoryEnum.Resonance) {
           throw Error("Invalid special attribute type");
         }
-        difference = newAttributes.talent.resonance - attributeValue;
-        newAttributes.talent.resonance = attributeValue;
+        newAttributes.talent = {
+          ...newAttributes.talent,
+          resonance: attributeValue,
+        };
         break;
     }
     props.setSpecialAttributeInfo(newAttributes);
-    setSpecialAttributePoints(specialAttributePoints + difference);
   }
 
   return (
@@ -630,10 +688,12 @@ const SpecialAttributeSelect = function (props: ISpecialAttributeProps) {
   switch (props.talentInfo.category) {
     case talentCategoryEnum.Magic:
       if (talentOptions.category !== talentCategoryEnum.Magic) {
-        throw Error("talentCategoryEnum is wrong");
+        throw Error(`talentCategoryEnum is wrong: ${talentOptions.category}`);
       }
       if (talentAttributePoints.category !== talentCategoryEnum.Magic) {
-        throw Error("talentCategoryEnum is wrong");
+        throw Error(
+          `talentCategoryEnum is wrong: ${talentAttributePoints.category}`
+        );
       }
       frag = (
         <Fragment>

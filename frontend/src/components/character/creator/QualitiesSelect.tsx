@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { ArwesSelect } from "../../common/ArwesSelect.js";
 import { ArwesButton } from "../../common/ArwesButton.js";
 import { trpc } from "../../../utils/trpc.js";
@@ -26,11 +26,51 @@ interface IProps {
 
 export const QualityListSelect = function (props: IProps) {
   const qualities = trpc.character.qualities.useQuery();
+
+  // Local state
+  const [localKarma, setLocalKarma] = useState(props.karmaPoints);
+  const [localPositive, setLocalPositive] = useState(
+    props.positiveQualitiesSelected
+  );
+  const [localNegative, setLocalNegative] = useState(
+    props.negativeQualitiesSelected
+  );
+  const [localBonus, setLocalBonus] = useState(props.bonusInfo);
+
+  // Refs for cleanup
+  const karmaRef = useRef(localKarma);
+  const positiveRef = useRef(localPositive);
+  const negativeRef = useRef(localNegative);
+  const bonusRef = useRef(localBonus);
+
+  useEffect(() => {
+    karmaRef.current = localKarma;
+  }, [localKarma]);
+  useEffect(() => {
+    positiveRef.current = localPositive;
+  }, [localPositive]);
+  useEffect(() => {
+    negativeRef.current = localNegative;
+  }, [localNegative]);
+  useEffect(() => {
+    bonusRef.current = localBonus;
+  }, [localBonus]);
+
+  // Sync to parent on unmount
+  useEffect(() => {
+    return () => {
+      props.setKarmaPoints(karmaRef.current);
+      props.setPositiveQualitiesSelected(positiveRef.current);
+      props.setNegativeQualitiesSelected(negativeRef.current);
+      props.setBonusInfo(bonusRef.current);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   function setKarma(removeKarma: boolean, difference: number) {
-    props.setKarmaPoints(
-      props.karmaPoints + (removeKarma ? -1 : 1) * difference
-    );
+    setLocalKarma((prev) => prev + (removeKarma ? -1 : 1) * difference);
   }
+
   if (qualities.isPending) {
     return <span>Loading...</span>;
   }
@@ -43,7 +83,7 @@ export const QualityListSelect = function (props: IProps) {
       <h1>Qualities Selection</h1>
       <div>
         <p>
-          Karma Remaining: <span id="karma_points">{props.karmaPoints}</span>
+          Karma Remaining: <span id="karma_points">{localKarma}</span>
         </p>
       </div>
       <div className="quality-section">
@@ -53,11 +93,11 @@ export const QualityListSelect = function (props: IProps) {
           qualityList={qualities.data.filter(
             (quality) => quality.category === qualityCategoryEnum.Positive
           )}
-          selectedQualityList={props.positiveQualitiesSelected}
-          setQualities={props.setPositiveQualitiesSelected}
+          selectedQualityList={localPositive}
+          setQualities={setLocalPositive}
           setKarma={setKarma}
-          bonusInfo={props.bonusInfo}
-          setBonusInfo={props.setBonusInfo}
+          bonusInfo={localBonus}
+          setBonusInfo={setLocalBonus}
         />
       </div>
       <div className="quality-section">
@@ -67,11 +107,11 @@ export const QualityListSelect = function (props: IProps) {
           qualityList={qualities.data.filter(
             (quality) => quality.category === qualityCategoryEnum.Negative
           )}
-          selectedQualityList={props.negativeQualitiesSelected}
-          setQualities={props.setNegativeQualitiesSelected}
+          selectedQualityList={localNegative}
+          setQualities={setLocalNegative}
           setKarma={setKarma}
-          bonusInfo={props.bonusInfo}
-          setBonusInfo={props.setBonusInfo}
+          bonusInfo={localBonus}
+          setBonusInfo={setLocalBonus}
         />
       </div>
     </Fragment>
@@ -169,7 +209,7 @@ function QualityDropdownComponent({
           newQuality !== undefined &&
           (oldQuality !== undefined || currentValue === QualityDefault)
         ) {
-          let newBonusInfo = bonusInfo;
+          let newBonusInfo = [...bonusInfo];
           if (oldQuality === undefined) {
             setQualities([...selectedQualityList, { name: newQuality.name }]);
             if (
@@ -210,7 +250,7 @@ function QualityDropdownComponent({
               (element) => element.source === oldQuality.name
             );
             if (bonusIndex > -1) {
-              newBonusInfo = newBonusInfo.splice(bonusIndex, 1);
+              newBonusInfo.splice(bonusIndex, 1);
             } else {
               console.log(`Quality: ${oldQuality.name} has no bonus to remove`);
             }

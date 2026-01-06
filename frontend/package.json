@@ -10,8 +10,8 @@
     "serve": "vite serve --port 3001",
     "build": "cross-env NODE_ENV=production tsc -b && vite build",
     "build-dev": "cross-env NODE_ENV=development tsc -b && vite build",
-    "test": "jest --silent",
-    "test-logs": "jest",
+    "test": "vitest run",
+    "test-watch": "vitest",
     "clean": "rm -r build/"
   },
   "keywords": [],
@@ -39,9 +39,9 @@
     "react-router-dom": "^6.4.4"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^14.4.3",
+    "@testing-library/user-event": "^14.6.1",
     "@types/react": "^18.0.18",
     "@types/react-collapse": "^5.0.1",
     "@types/react-dom": "^18.0.6",
@@ -50,13 +50,17 @@
     "css-loader": "^6.7.1",
     "eslint-plugin-react": "^7.31.4",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "jsdom": "^27.0.1",
     "mini-css-extract-plugin": "^2.6.1",
+    "msw": "^2.12.7",
+    "msw-trpc": "^2.0.1",
     "ts-loader": "^9.3.1",
     "ts-node": "^10.9.1",
     "tsc-watch": "^5.0.3",
     "typescript": "^5.8.3",
     "vite": "^6.3.5",
     "vite-plugin-html": "^3.2.2",
-    "vite-plugin-html-purgecss": "^0.1.1"
+    "vite-plugin-html-purgecss": "^0.1.1",
+    "vitest": "^3.2.4"
   }
 }

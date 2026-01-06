@@ -1,4 +1,5 @@
 import type { LifestyleSelectedListType } from "@neon-codex/common";
+import { useEffect, useRef, useState } from "react";
 import { trpc } from "../../../utils/trpc.js";
 import { ArwesSelect } from "../../common/ArwesSelect.js";
 import { ArwesButton } from "../../common/ArwesButton.js";
@@ -10,10 +11,26 @@ interface IProps {
   ) => void;
 }
 
-export const LifestyleSelect = function ({
-  lifestyleSelections,
-  setLifestyleSelections,
-}: IProps) {
+export const LifestyleSelect = function (props: IProps) {
+  // Local state
+  const [localLifestyleSelections, setLocalLifestyleSelections] = useState(
+    props.lifestyleSelections
+  );
+
+  // Refs for cleanup
+  const lifestyleSelectionsRef = useRef(localLifestyleSelections);
+
+  useEffect(() => {
+    lifestyleSelectionsRef.current = localLifestyleSelections;
+  }, [localLifestyleSelections]);
+
+  // Sync to parent on unmount
+  useEffect(() => {
+    return () => {
+      props.setLifestyleSelections(lifestyleSelectionsRef.current);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const lifestyleList = trpc.character.lifestyles.useQuery();
   const lifestyleQualityList = trpc.character.lifestyleQualities.useQuery();
 
@@ -53,13 +70,13 @@ export const LifestyleSelect = function ({
             if (sourceLifestyle === undefined) {
               throw new Error(`Lifestyle: ${arg.value} not found`);
             }
-            const newLifestyleSelections = [...lifestyleSelections];
+            const newLifestyleSelections = [...localLifestyleSelections];
             newLifestyleSelections.push({
               lifestyle: sourceLifestyle,
               lifestyleQualityList: [],
               purchasedDuration: 0,
             });
-            setLifestyleSelections(newLifestyleSelections);
+            setLocalLifestyleSelections(newLifestyleSelections);
           }}
         >
           <option value="" disabled>
@@ -73,8 +90,8 @@ export const LifestyleSelect = function ({
         </ArwesSelect>
       </div>
 
-      {lifestyleSelections !== undefined &&
-        lifestyleSelections.map((lifestyle, index) => {
+      {localLifestyleSelections !== undefined &&
+        localLifestyleSelections.map((lifestyle, index) => {
           const cost =
             lifestyle.lifestyle.cost.increment +
             " Cost: " +
@@ -112,13 +129,15 @@ export const LifestyleSelect = function ({
                     const qualityList = lifestyle.lifestyleQualityList.concat(
                       sourceLifestyleQuality
                     );
-                    const newLifestyleSelections = [...lifestyleSelections];
+                    const newLifestyleSelections = [
+                      ...localLifestyleSelections,
+                    ];
                     newLifestyleSelections[index] = {
                       lifestyle: lifestyle.lifestyle,
                       lifestyleQualityList: qualityList,
                       purchasedDuration: lifestyle.purchasedDuration,
                     };
-                    setLifestyleSelections(newLifestyleSelections);
+                    setLocalLifestyleSelections(newLifestyleSelections);
                   }}
                 >
                   <option value="" disabled>
@@ -164,14 +183,14 @@ export const LifestyleSelect = function ({
                                 }
                               );
                             const newLifestyleSelections = [
-                              ...lifestyleSelections,
+                              ...localLifestyleSelections,
                             ];
                             newLifestyleSelections[index] = {
                               lifestyle: lifestyle.lifestyle,
                               lifestyleQualityList: newQualityList,
                               purchasedDuration: lifestyle.purchasedDuration,
                             };
-                            setLifestyleSelections(newLifestyleSelections);
+                            setLocalLifestyleSelections(newLifestyleSelections);
                           }}
                         >
                           Remove

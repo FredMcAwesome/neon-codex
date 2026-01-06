@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import AttributeListSelect from "./AttributesSelect.js";
 import PriorityListSelect from "./PrioritySelect.js";
 import "./CharacterCreator.css";
@@ -19,7 +19,6 @@ import type {
   HeritagePrioritySelectedType,
   QualitySelectedListType,
   TalentInfoType,
-  FormulaListSelectedType,
   MartialArtSelectedType,
   LifestyleSelectedListType,
 } from "@neon-codex/common";
@@ -40,10 +39,8 @@ const characterCreatorPath = "/character_creator";
 const CharacterCreator = function () {
   useEquipmentSearch(); // Preload equipment data
   const navigate = useNavigate();
-  const skills = trpc.character.skills.useQuery();
   const character = trpc.character.createCharacter.useMutation();
   const [bonusInfo, setBonusInfo] = useState<CharacterCreatorBonusListType>([]);
-  // Character creator holds values of all sub components
   const [priorityInfo, setPriorityInfo] = useState<PriorityLevelsType>({
     heritage: priorityLetterEnum.A,
     attributes: priorityLetterEnum.B,
@@ -97,29 +94,9 @@ const CharacterCreator = function () {
     skillGroupPoints: 0,
   });
 
-  useEffect(() => {
-    setSkillPoints(prioritySkills);
-  }, [prioritySkills]);
-
-  useEffect(() => {
-    setNuyen(priorityResources);
-  }, [priorityResources]);
-
   const [skillSelections, setSkillSelections] = useState<CustomSkillListType>(
     []
   );
-  useEffect(() => {
-    if (skills.data === undefined) return;
-    setSkillSelections(
-      skills.data.map((skill) => {
-        return {
-          ...skill,
-          skillPoints: 0,
-          karmaPoints: 0,
-        };
-      })
-    );
-  }, [skills.data]);
   // TODO: set skill group selections
   const [skillGroupSelections, _setSkillGroupSelections] =
     useState<CustomSkillGroupListType>([]);
@@ -145,10 +122,8 @@ const CharacterCreator = function () {
     setBonusInfo(loadingBonusInfo);
   };
 
-  const onPriorityInfoChanged = function (
-    loadingPriorities: PriorityLevelsType
-  ) {
-    setPriorityInfo(loadingPriorities);
+  const onPriorityInfoChanged = function (newPriorities: PriorityLevelsType) {
+    setPriorityInfo(newPriorities);
   };
   const onHeritageInfoChanged = function (
     heritageInfo: HeritagePrioritySelectedType
@@ -160,68 +135,15 @@ const CharacterCreator = function () {
   };
   const onPriorityTalentChanged = function (loadingTalent: TalentPriorityType) {
     setPriorityTalent(loadingTalent);
-    if (talentInfo.category !== loadingTalent.category) {
-      switch (loadingTalent.category) {
-        case talentCategoryEnum.Magic: {
-          const formulae: FormulaListSelectedType =
-            loadingTalent.formulae !== undefined
-              ? {
-                  selectFormulae: true as const,
-                  spells: [],
-                  rituals: [],
-                  alchemicalPreparations: [],
-                }
-              : {
-                  selectFormulae: false as const,
-                };
-          const powers =
-            loadingTalent.name === "Adept" ||
-            loadingTalent.name === "Mystic Adept"
-              ? {
-                  selectAdeptPowers: true as const,
-                  adeptPowers: [],
-                }
-              : {
-                  selectAdeptPowers: false as const,
-                };
-          setTalentInfo({
-            category: talentCategoryEnum.Magic,
-            selectedTradition: {
-              name: "",
-              customSpirits: {
-                customSpirits: false,
-              },
-            },
-            selectedFormulae: formulae,
-            selectedAdeptPowers: powers,
-          });
-          break;
-        }
-        case talentCategoryEnum.Resonance:
-          setTalentInfo({
-            category: talentCategoryEnum.Resonance,
-            complexForms: [],
-          });
-          break;
-        case talentCategoryEnum.Depth:
-          setTalentInfo({
-            category: talentCategoryEnum.Depth,
-            programs: [],
-          });
-          break;
-        case talentCategoryEnum.Mundane:
-          setTalentInfo({
-            category: talentCategoryEnum.Mundane,
-          });
-          break;
-      }
-    }
   };
+
   const onPrioritySkillsChanged = function (loadingSkills: SkillPriorityType) {
     setPrioritySkills(loadingSkills);
+    setSkillPoints(loadingSkills);
   };
   const onPriorityResources = function (loadingResources: number) {
     setPriorityResources(loadingResources);
+    setNuyen(loadingResources);
   };
   const onAttributeInfoChanged = function (loadingAttributes: AttributesType) {
     setAttributeInfo(loadingAttributes);
@@ -318,158 +240,168 @@ const CharacterCreator = function () {
         ];
 
   const [page, setPage] = useState(CharacterPageEnum.PriorityListSelect);
+  const [isSwitching, setIsSwitching] = useState(false);
 
-  if (skills.isPending) {
-    return <div>Loading...</div>;
-  }
+  let currentStage = <></>;
+  if (!isSwitching) {
+    switch (page) {
+      case CharacterPageEnum.PriorityListSelect:
+        currentStage = (
+          <PriorityListSelect
+            priorityInfo={priorityInfo}
+            setPriorityInfo={onPriorityInfoChanged}
+            priorityHeritage={priorityHeritage}
+            setPriorityHeritage={onHeritageInfoChanged}
+            setPriorityAttributes={onPriorityAttributesChanged}
+            setPriorityTalent={onPriorityTalentChanged}
+            setPrioritySkills={onPrioritySkillsChanged}
+            setPriorityResources={onPriorityResources}
+            specialAttributeInfo={specialAttributeInfo}
+            setSpecialAttributeInfo={onSpecialAttributeInfoChanged}
+            priorityTalent={priorityTalent}
+            setTalentInfo={onTalentInfoChanged}
+          />
+        );
+        break;
+      case CharacterPageEnum.AttributeListSelect:
+        currentStage = (
+          <AttributeListSelect
+            priorityInfo={priorityInfo}
+            heritageInfo={priorityHeritage}
+            attributeInfo={attributeInfo}
+            setAttributeInfo={onAttributeInfoChanged}
+            specialAttributeInfo={specialAttributeInfo}
+            setSpecialAttributeInfo={onSpecialAttributeInfoChanged}
+            maxAttributePoints={priorityAttributes}
+            talentInfo={priorityTalent}
+            bonusInfo={bonusInfo}
+            setBonusInfo={onBonusInfoChanged}
+          />
+        );
+        break;
+      case CharacterPageEnum.QualityListSelect:
+        currentStage = (
+          <QualityListSelect
+            karmaPoints={karmaPoints}
+            setKarmaPoints={onKarmaPointsChanged}
+            positiveQualitiesSelected={positiveQualityListSelected}
+            setPositiveQualitiesSelected={onPositiveQualitiesSelectedChanged}
+            negativeQualitiesSelected={negativeQualityListSelected}
+            setNegativeQualitiesSelected={onNegativeQualitiesSelectedChanged}
+            bonusInfo={bonusInfo}
+            setBonusInfo={onBonusInfoChanged}
+          />
+        );
+        break;
+      case CharacterPageEnum.TalentListSelect:
+        currentStage = (
+          <TalentSelect
+            talent={priorityTalent}
+            talentInfo={talentInfo}
+            setTalentInfo={onTalentInfoChanged}
+            karmaPoints={karmaPoints}
+            essencePoints={essencePoints}
+            bonusInfo={bonusInfo}
+            setBonusInfo={onBonusInfoChanged}
+          />
+        );
+        break;
+      case CharacterPageEnum.SkillListSelect:
+        currentStage = (
+          <SkillListSelect
+            skillPointItems={skillPoints}
+            setSkillPoints={onSkillPointChanged}
+            skillSelections={skillSelections}
+            setSkillSelections={onSkillSelectionsChanged}
+            bonusInfo={bonusInfo}
+            setBonusInfo={onBonusInfoChanged}
+          />
+        );
+        break;
+      case CharacterPageEnum.MartialArtSelect:
+        currentStage = (
+          <MartialArtSelect
+            karmaPoints={karmaPoints}
+            setKarmaPoints={onKarmaPointsChanged}
+            martialArtSelected={martialArtSelected}
+            setMartialArtSelected={onMartialArtSelectionsChanged}
+          />
+        );
+        break;
+      case CharacterPageEnum.EquipmentListSelect:
+        currentStage = (
+          <EquipmentSelect
+            equipmentSelections={equipmentSelections}
+            setEquipmentSelections={onEquipmentSelectionsChanged}
+            nuyen={nuyen}
+            setNuyen={onNuyenChanged}
+            essencePoints={essencePoints}
+            setEssencePoints={onEssencePointsChanged}
+            bonusInfo={bonusInfo}
+            setBonusInfo={onBonusInfoChanged}
+          />
+        );
+        break;
+      case CharacterPageEnum.LifestyleSelect:
+        currentStage = (
+          <LifestyleSelect
+            lifestyleSelections={lifestyleSelections}
+            setLifestyleSelections={onLifestyleSelectedChanged}
+          />
+        );
+        break;
+      case CharacterPageEnum.CreatorSummary:
+        currentStage = (
+          <CreatorSummary
+            priorityInfo={priorityInfo}
+            heritageInfo={priorityHeritage}
+            attributeInfo={attributeInfo}
+            specialAttributeInfo={specialAttributeInfo}
+            talentInfo={talentInfo}
+            positiveQualitiesSelected={positiveQualityListSelected}
+            negativeQualitiesSelected={negativeQualityListSelected}
+            skillPoints={skillPoints}
+            skillSelections={skillSelections}
+            skillGroupSelections={skillGroupSelections}
+            martialArtSelected={martialArtSelected}
+            equipmentSelections={equipmentSelections}
+            lifestyleSelections={lifestyleSelections}
+            karmaPoints={karmaPoints}
+            nuyen={nuyen}
+            bonusInfo={bonusInfo}
+          />
+        );
+        break;
 
-  if (skills.isError) {
-    // https://tanstack.com/query/v4/docs/typescript#typing-the-error-field
-    if (skills.error instanceof Error) {
-      return <div>Error! {skills.error.message}</div>;
-    } else {
-      return <div>Error!</div>;
+      default:
+        currentStage = <>Error</>;
     }
   }
 
-  let currentStage;
-  switch (page) {
-    case CharacterPageEnum.PriorityListSelect:
-      currentStage = (
-        <PriorityListSelect
-          priorityInfo={priorityInfo}
-          setPriorityInfo={onPriorityInfoChanged}
-          priorityHeritage={priorityHeritage}
-          setPriorityHeritage={onHeritageInfoChanged}
-          setPriorityAttributes={onPriorityAttributesChanged}
-          setPriorityTalent={onPriorityTalentChanged}
-          setPrioritySkills={onPrioritySkillsChanged}
-          setPriorityResources={onPriorityResources}
-          specialAttributeInfo={specialAttributeInfo}
-          setSpecialAttributeInfo={onSpecialAttributeInfoChanged}
-          priorityTalent={priorityTalent}
-        />
-      );
-      break;
-    case CharacterPageEnum.AttributeListSelect:
-      currentStage = (
-        <AttributeListSelect
-          priorityInfo={priorityInfo}
-          heritageInfo={priorityHeritage}
-          attributeInfo={attributeInfo}
-          setAttributeInfo={onAttributeInfoChanged}
-          specialAttributeInfo={specialAttributeInfo}
-          setSpecialAttributeInfo={onSpecialAttributeInfoChanged}
-          maxAttributePoints={priorityAttributes}
-          talentInfo={priorityTalent}
-          bonusInfo={bonusInfo}
-          setBonusInfo={onBonusInfoChanged}
-        />
-      );
-      break;
-    case CharacterPageEnum.QualityListSelect:
-      currentStage = (
-        <QualityListSelect
-          karmaPoints={karmaPoints}
-          setKarmaPoints={onKarmaPointsChanged}
-          positiveQualitiesSelected={positiveQualityListSelected}
-          setPositiveQualitiesSelected={onPositiveQualitiesSelectedChanged}
-          negativeQualitiesSelected={negativeQualityListSelected}
-          setNegativeQualitiesSelected={onNegativeQualitiesSelectedChanged}
-          bonusInfo={bonusInfo}
-          setBonusInfo={onBonusInfoChanged}
-        />
-      );
-      break;
-    case CharacterPageEnum.TalentListSelect:
-      currentStage = (
-        <TalentSelect
-          talent={priorityTalent}
-          talentInfo={talentInfo}
-          setTalentInfo={onTalentInfoChanged}
-          karmaPoints={karmaPoints}
-          essencePoints={essencePoints}
-          bonusInfo={bonusInfo}
-          setBonusInfo={onBonusInfoChanged}
-        />
-      );
-      break;
-    case CharacterPageEnum.SkillListSelect:
-      currentStage = (
-        <SkillListSelect
-          skillPointItems={skillPoints}
-          setSkillPoints={onSkillPointChanged}
-          skillSelections={skillSelections}
-          setSkillSelections={onSkillSelectionsChanged}
-          bonusInfo={bonusInfo}
-          setBonusInfo={onBonusInfoChanged}
-        />
-      );
-      break;
-    case CharacterPageEnum.MartialArtSelect:
-      currentStage = (
-        <MartialArtSelect
-          karmaPoints={karmaPoints}
-          setKarmaPoints={onKarmaPointsChanged}
-          martialArtSelected={martialArtSelected}
-          setMartialArtSelected={onMartialArtSelectionsChanged}
-        />
-      );
-      break;
-    case CharacterPageEnum.EquipmentListSelect:
-      currentStage = (
-        <EquipmentSelect
-          equipmentSelections={equipmentSelections}
-          setEquipmentSelections={onEquipmentSelectionsChanged}
-          nuyen={nuyen}
-          setNuyen={onNuyenChanged}
-          essencePoints={essencePoints}
-          setEssencePoints={onEssencePointsChanged}
-          bonusInfo={bonusInfo}
-          setBonusInfo={onBonusInfoChanged}
-        />
-      );
-      break;
-    case CharacterPageEnum.LifestyleSelect:
-      currentStage = (
-        <LifestyleSelect
-          lifestyleSelections={lifestyleSelections}
-          setLifestyleSelections={onLifestyleSelectedChanged}
-        />
-      );
-      break;
-    case CharacterPageEnum.CreatorSummary:
-      currentStage = (
-        <CreatorSummary
-          priorityInfo={priorityInfo}
-          heritageInfo={priorityHeritage}
-          attributeInfo={attributeInfo}
-          specialAttributeInfo={specialAttributeInfo}
-          talentInfo={talentInfo}
-          positiveQualitiesSelected={positiveQualityListSelected}
-          negativeQualitiesSelected={negativeQualityListSelected}
-          skillPoints={skillPoints}
-          skillSelections={skillSelections}
-          skillGroupSelections={skillGroupSelections}
-          martialArtSelected={martialArtSelected}
-          equipmentSelections={equipmentSelections}
-          lifestyleSelections={lifestyleSelections}
-          karmaPoints={karmaPoints}
-          nuyen={nuyen}
-          bonusInfo={bonusInfo}
-        />
-      );
-      break;
-
-    default:
-      currentStage = <>Error</>;
-  }
   const lastPage = PageActiveList.length - 1;
   const hiddenNext = page === PageActiveList[lastPage];
   const hiddenSubmit = page !== PageActiveList[lastPage];
+
+  function changePage(newPage: CharacterPageEnum) {
+    // Set switching state to force unmount of current page
+    setIsSwitching(true);
+    // Use setTimeout(0) to defer mounting of new page until after
+    // React has finished processing the current render cycle,
+    // including all cleanup effects from the unmounting component.
+    // This ensures the parent state is fully updated before the
+    // new page mounts and reads from it.
+    setTimeout(() => {
+      setPage(newPage);
+      setIsSwitching(false);
+    }, 0);
+  }
+
   return (
     <Fragment>
-      <div style={{ overflowX: "auto", marginBottom: "20px" }}>
+      <div
+        data-testid="ready"
+        style={{ overflowX: "auto", marginBottom: "20px" }}
+      >
         <nav className="character-creator-nav">
           {PageActiveList.map((pageItem) => {
             const isActive = page === pageItem;
@@ -490,7 +422,7 @@ const CharacterCreator = function () {
       <div>Essence Remaining: {essencePoints}</div>
       <ArwesButton
         onClick={() => {
-          setPage(
+          changePage(
             page !== CharacterPageEnum.PriorityListSelect
               ? PageActiveList[
                   PageActiveList.findIndex((element) => element === page) - 1
@@ -505,7 +437,7 @@ const CharacterCreator = function () {
       {!hiddenNext && (
         <ArwesButton
           onClick={() => {
-            setPage(
+            changePage(
               page !== PageActiveList[lastPage]
                 ? PageActiveList[
                     PageActiveList.findIndex((element) => element === page) + 1

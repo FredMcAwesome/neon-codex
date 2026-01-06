@@ -1,4 +1,5 @@
 import { trpc } from "../../../utils/trpc.js";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { ArwesSelect } from "../../common/ArwesSelect.js";
 import { ArwesButton } from "../../common/ArwesButton.js";
 import type { MartialArtSelectedType } from "@neon-codex/common";
@@ -12,27 +13,48 @@ interface IProps {
   ) => void;
 }
 
-export const MartialArtSelect = function ({
-  karmaPoints,
-  setKarmaPoints,
-  martialArtSelected,
-  setMartialArtSelected,
-}: IProps) {
+export const MartialArtSelect = function (props: IProps) {
   const martialArtList = trpc.character.martialArts.useQuery();
   const techniqueList = trpc.character.martialArtTechniques.useQuery();
+
+  // Local state
+  const [localMartialArtSelected, setLocalMartialArtSelected] = useState(
+    props.martialArtSelected
+  );
+  const [localKarmaPoints, setLocalKarmaPoints] = useState(props.karmaPoints);
+
+  // Refs for cleanup
+  const martialArtSelectedRef = useRef(localMartialArtSelected);
+  const karmaPointsRef = useRef(localKarmaPoints);
+
+  useEffect(() => {
+    martialArtSelectedRef.current = localMartialArtSelected;
+  }, [localMartialArtSelected]);
+  useEffect(() => {
+    karmaPointsRef.current = localKarmaPoints;
+  }, [localKarmaPoints]);
+
+  // Sync to parent on unmount
+  useEffect(() => {
+    return () => {
+      props.setMartialArtSelected(martialArtSelectedRef.current);
+      props.setKarmaPoints(karmaPointsRef.current);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   if (martialArtList.data === undefined || techniqueList.data === undefined) {
     return <></>;
   }
 
   const techniqueOptionList =
-    martialArtSelected === undefined
+    localMartialArtSelected === undefined
       ? []
-      : "allTechniques" in martialArtSelected.martialArt.techniqueList
+      : "allTechniques" in localMartialArtSelected.martialArt.techniqueList
       ? techniqueList.data.map((technique) => {
           return technique.name;
         })
-      : martialArtSelected.martialArt.techniqueList;
+      : localMartialArtSelected.martialArt.techniqueList;
 
   return (
     <div className="martial-arts-container">
@@ -41,8 +63,8 @@ export const MartialArtSelect = function ({
         <div style={{ flex: 1 }}>
           <ArwesSelect
             value={
-              martialArtSelected?.martialArt.name != null
-                ? martialArtSelected.martialArt.name
+              localMartialArtSelected?.martialArt.name != null
+                ? localMartialArtSelected.martialArt.name
                 : ""
             }
             onChange={(event) => {
@@ -56,14 +78,15 @@ export const MartialArtSelect = function ({
                 throw new Error(`Martial art: ${arg.value} not found`);
               }
 
-              if (martialArtSelected !== undefined) {
-                const karmaRefund = martialArtSelected.techniqueList.length * 5;
-                setKarmaPoints(karmaRefund + karmaPoints);
+              if (localMartialArtSelected !== undefined) {
+                const karmaRefund =
+                  localMartialArtSelected.techniqueList.length * 5;
+                setLocalKarmaPoints((prev) => prev + karmaRefund);
               } else {
-                setKarmaPoints(karmaPoints - 7);
+                setLocalKarmaPoints((prev) => prev - 7);
               }
 
-              setMartialArtSelected({
+              setLocalMartialArtSelected({
                 martialArt: sourceMartialArt,
                 techniqueList: [],
               });
@@ -79,18 +102,19 @@ export const MartialArtSelect = function ({
             ))}
           </ArwesSelect>
         </div>
-        {martialArtSelected !== undefined && (
+        {localMartialArtSelected !== undefined && (
           <ArwesButton
             palette="error"
             onClick={() => {
-              if (martialArtSelected === undefined) {
+              if (localMartialArtSelected === undefined) {
                 throw new Error("Martial Arts is undefined");
               }
-              const techniqueLength = martialArtSelected.techniqueList.length;
+              const techniqueLength =
+                localMartialArtSelected.techniqueList.length;
               const karmaRefuned =
                 techniqueLength > 0 ? 2 + techniqueLength * 5 : 7;
-              setKarmaPoints(karmaRefuned + karmaPoints);
-              setMartialArtSelected(undefined);
+              setLocalKarmaPoints((prev) => prev + karmaRefuned);
+              setLocalMartialArtSelected(undefined);
             }}
           >
             Remove
@@ -98,11 +122,11 @@ export const MartialArtSelect = function ({
         )}
       </div>
 
-      {martialArtSelected !== undefined && (
+      {localMartialArtSelected !== undefined && (
         <div className="martial-art-techniques">
           <h3>Techniques</h3>
           {/* Maximum of 5 techniques at character creation */}
-          {martialArtSelected.techniqueList.length < 5 && (
+          {localMartialArtSelected.techniqueList.length < 5 && (
             <div className="technique-item">
               <label>Add Technique:</label>
               <ArwesSelect
@@ -119,18 +143,20 @@ export const MartialArtSelect = function ({
                       `Martial art technique: ${arg.value} not found`
                     );
                   }
-                  if (martialArtSelected === undefined) {
+                  if (localMartialArtSelected === undefined) {
                     throw new Error(`Martial art not found`);
                   }
 
-                  if (martialArtSelected.techniqueList.length > 0) {
-                    setKarmaPoints(karmaPoints - 5);
+                  if (localMartialArtSelected.techniqueList.length > 0) {
+                    setLocalKarmaPoints((prev) => prev - 5);
                   }
 
-                  const newTechniqueList = martialArtSelected.techniqueList;
+                  const newTechniqueList = [
+                    ...localMartialArtSelected.techniqueList,
+                  ];
                   newTechniqueList.push(sourceTechnique);
-                  setMartialArtSelected({
-                    martialArt: martialArtSelected.martialArt,
+                  setLocalMartialArtSelected({
+                    martialArt: localMartialArtSelected.martialArt,
                     techniqueList: newTechniqueList,
                   });
                 }}
@@ -140,7 +166,7 @@ export const MartialArtSelect = function ({
                 </option>
                 {techniqueOptionList
                   .filter((technique) => {
-                    return !martialArtSelected.techniqueList.find(
+                    return !localMartialArtSelected.techniqueList.find(
                       (selectedTechnique) => {
                         return selectedTechnique.name === technique;
                       }
@@ -155,13 +181,13 @@ export const MartialArtSelect = function ({
             </div>
           )}
 
-          {martialArtSelected.techniqueList.length > 0 && (
+          {localMartialArtSelected.techniqueList.length > 0 && (
             <div>
               <p>
-                Selected Techniques: {martialArtSelected.techniqueList.length}{" "}
-                (maximum 5)
+                Selected Techniques:{" "}
+                {localMartialArtSelected.techniqueList.length} (maximum 5)
               </p>
-              {martialArtSelected.techniqueList.map((technique) => {
+              {localMartialArtSelected.techniqueList.map((technique) => {
                 return (
                   <div
                     key={technique.name}
@@ -183,18 +209,18 @@ export const MartialArtSelect = function ({
                               `Martial art technique: ${arg.value} not found`
                             );
                           }
-                          if (martialArtSelected === undefined) {
+                          if (localMartialArtSelected === undefined) {
                             throw new Error(`Martial art not found`);
                           }
                           const newTechniqueList =
-                            martialArtSelected.techniqueList.filter(
+                            localMartialArtSelected.techniqueList.filter(
                               (sourceTechnique) => {
                                 return sourceTechnique.name !== technique.name;
                               }
                             );
                           newTechniqueList.push(sourceTechnique);
-                          setMartialArtSelected({
-                            martialArt: martialArtSelected.martialArt,
+                          setLocalMartialArtSelected({
+                            martialArt: localMartialArtSelected.martialArt,
                             techniqueList: newTechniqueList,
                           });
                         }}
@@ -202,7 +228,7 @@ export const MartialArtSelect = function ({
                         {techniqueOptionList
                           .filter((localTechnique) => {
                             return (
-                              !martialArtSelected.techniqueList.find(
+                              !localMartialArtSelected.techniqueList.find(
                                 (selectedTechnique) => {
                                   return (
                                     selectedTechnique.name === localTechnique
@@ -221,17 +247,17 @@ export const MartialArtSelect = function ({
                     <ArwesButton
                       palette="error"
                       onClick={() => {
-                        if (martialArtSelected.techniqueList.length > 1) {
-                          setKarmaPoints(karmaPoints + 5);
+                        if (localMartialArtSelected.techniqueList.length > 1) {
+                          setLocalKarmaPoints((prev) => prev + 5);
                         }
                         const newTechniqueList =
-                          martialArtSelected.techniqueList.filter(
+                          localMartialArtSelected.techniqueList.filter(
                             (sourceTechnique) => {
                               return sourceTechnique.name !== technique.name;
                             }
                           );
-                        setMartialArtSelected({
-                          martialArt: martialArtSelected.martialArt,
+                        setLocalMartialArtSelected({
+                          martialArt: localMartialArtSelected.martialArt,
                           techniqueList: newTechniqueList,
                         });
                       }}

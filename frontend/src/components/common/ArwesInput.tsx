@@ -1,12 +1,12 @@
-import React from "react";
 import { Animator } from "@arwes/react";
 import { FrameLines } from "@arwes/react";
+import type { FC, InputHTMLAttributes } from "react";
 
-interface ArwesInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface ArwesInputProps extends InputHTMLAttributes<HTMLInputElement> {
   palette?: string;
 }
 
-export const ArwesInput: React.FC<ArwesInputProps> = ({
+export const ArwesInput: FC<ArwesInputProps> = ({
   palette = "secondary",
   style,
   ...props
