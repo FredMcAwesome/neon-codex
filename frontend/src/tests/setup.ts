@@ -29,6 +29,7 @@ vi.mock("@arwes/react", () => ({
   FrameLines: () => null,
   FrameHexagon: () => null,
   FrameUnderline: () => null,
+  FrameOctagon: () => null,
   Text: ({ children }: { children: any }) => children,
 }));
 

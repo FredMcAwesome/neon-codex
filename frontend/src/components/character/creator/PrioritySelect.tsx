@@ -377,7 +377,6 @@ const PrioritySelectLoaded = function (props: PrioritySelectLoadedProps) {
                 }
               : {
                   selectFormulae: false as const,
-                  alchemicalPreparations: [],
                 };
           const powers =
             talentRef.current.name === "Adept" ||

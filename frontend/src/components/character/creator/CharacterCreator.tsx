@@ -1,18 +1,25 @@
-import { useState } from "react";
+import { useState, Fragment } from "react";
+import { useNavigate } from "react-router-dom";
 import AttributeListSelect from "./AttributesSelect.js";
 import PriorityListSelect from "./PrioritySelect.js";
 import "./CharacterCreator.css";
-import { Fragment } from "react";
 import { QualityListSelect } from "./QualitiesSelect.js";
 import { SkillListSelect } from "./SkillsSelect.js";
 import { EquipmentSelect } from "./equipment/EquipmentSelect.js";
 import { trpc } from "../../../utils/trpc.js";
+import { CreatorSummary } from "./CreatorSummary.js";
+import { TalentSelect } from "./TalentSelect.js";
+import { MartialArtSelect } from "./MartialArtsSelect.js";
+import { LifestyleSelect } from "./LifestyleSelect.js";
+import { ArwesButton } from "../../common/ArwesButton.js";
+import { useEquipmentSearch } from "../../../hooks/useEquipmentSearch.js";
+import { useCharacterDraft } from "../../../hooks/useCharacterDraft.js";
+
+// Types
 import type {
   CustomSkillGroupListType,
   CustomSkillListType,
-} from "@neon-codex/common";
-import type { SelectedEquipmentListType } from "@neon-codex/common";
-import type {
+  SelectedEquipmentListType,
   AttributesType,
   SpecialAttributesType,
   PriorityLevelsType,
@@ -21,231 +28,228 @@ import type {
   TalentInfoType,
   MartialArtSelectedType,
   LifestyleSelectedListType,
+  SkillPriorityType,
+  TalentPriorityType,
+  CharacterCreatorBonusListType,
 } from "@neon-codex/common";
-import { CreatorSummary } from "./CreatorSummary.js";
-import { useNavigate } from "react-router-dom";
-import { priorityLetterEnum, talentCategoryEnum } from "@neon-codex/common";
-import type { SkillPriorityType, TalentPriorityType } from "@neon-codex/common";
+import {
+  priorityLetterEnum,
+  talentCategoryEnum,
+  characterCreatorStepEnum,
+} from "@neon-codex/common";
 import type { SkillPointInfoType } from "../commonSchemas.js";
-import { TalentSelect } from "./TalentSelect.js";
-import { MartialArtSelect } from "./MartialArtsSelect.js";
-import { LifestyleSelect } from "./LifestyleSelect.js";
-import type { CharacterCreatorBonusListType } from "@neon-codex/common";
-
-import { useEquipmentSearch } from "../../../hooks/useEquipmentSearch.js";
-import { ArwesButton } from "../../common/ArwesButton.js";
 
 const characterCreatorPath = "/character_creator";
+const characterCreatorWithIdPath = "/character_creator/:id";
+
 const CharacterCreator = function () {
   useEquipmentSearch(); // Preload equipment data
   const navigate = useNavigate();
   const character = trpc.character.createCharacter.useMutation();
-  const [bonusInfo, setBonusInfo] = useState<CharacterCreatorBonusListType>([]);
-  const [priorityInfo, setPriorityInfo] = useState<PriorityLevelsType>({
-    heritage: priorityLetterEnum.A,
-    attributes: priorityLetterEnum.B,
-    talent: priorityLetterEnum.C,
-    skills: priorityLetterEnum.D,
-    resources: priorityLetterEnum.E,
-  });
-  const [attributeInfo, setAttributeInfo] = useState<AttributesType>({
-    body: 1,
-    agility: 1,
-    reaction: 1,
-    strength: 1,
-    willpower: 1,
-    logic: 1,
-    intuition: 1,
-    charisma: 1,
-  });
-  const [talentInfo, setTalentInfo] = useState<TalentInfoType>({
-    category: talentCategoryEnum.Mundane,
-  });
-  const [priorityHeritage, setPriorityHeritage] =
-    useState<HeritagePrioritySelectedType>({
-      heritage: "",
-      specialAttributePoints: 0,
-    });
-  const [priorityAttributes, setPriorityAttributes] = useState(0);
-  const [priorityTalent, setPriorityTalent] = useState<TalentPriorityType>({
-    name: "",
-    label: "",
-    category: talentCategoryEnum.Mundane,
-  });
-  const [prioritySkills, setPrioritySkills] = useState<SkillPriorityType>({
-    name: "",
-    skillPoints: 0,
-    skillGroupPoints: 0,
-  });
-  const [priorityResources, setPriorityResources] = useState(0);
-  const [specialAttributeInfo, setSpecialAttributeInfo] =
-    useState<SpecialAttributesType>({
-      edge: 0,
-      talent: { category: talentCategoryEnum.Mundane },
-    });
-  const [karmaPoints, setKarmaPoints] = useState(25);
-  const [essencePoints, setEssencePoints] = useState(6);
-  const [positiveQualityListSelected, setPositiveQualitiesSelected] =
-    useState<QualitySelectedListType>([]);
-  const [negativeQualityListSelected, setNegativeQualitiesSelected] =
-    useState<QualitySelectedListType>([]);
-  const [skillPoints, setSkillPoints] = useState<SkillPointInfoType>({
-    skillPoints: 0,
-    skillGroupPoints: 0,
-  });
 
-  const [skillSelections, setSkillSelections] = useState<CustomSkillListType>(
-    []
-  );
-  // TODO: set skill group selections
-  const [skillGroupSelections, _setSkillGroupSelections] =
-    useState<CustomSkillGroupListType>([]);
-  const [martialArtSelected, setMartialArtSelected] = useState<
-    MartialArtSelectedType | undefined
-  >(undefined);
-  const [equipmentSelections, setEquipmentSelections] =
-    useState<SelectedEquipmentListType>({
-      equipmentPackList: [],
-      weaponList: [],
-      gearList: [],
-      armourList: [],
-      augmentationList: [],
-      vehicleList: [],
-    });
-  const [lifestyleSelections, setLifestyleSelections] =
-    useState<LifestyleSelectedListType>([]);
-  const [nuyen, setNuyen] = useState(0);
+  // Use the draft hook for all state management
+  const {
+    state,
+    setState,
+    isLoading,
+    isSaving,
+    error,
+    version,
+    conflict,
+    resolveConflict,
+    deleteDraft,
+  } = useCharacterDraft();
 
-  const onBonusInfoChanged = function (
+  // Destructure state for easier access (read-only)
+  const {
+    bonusInfo,
+    priorityInfo,
+    attributeInfo,
+    talentInfo,
+    priorityHeritage,
+    priorityAttributes,
+    priorityTalent,
+    prioritySkills,
+    priorityResources,
+    specialAttributeInfo,
+    karmaPoints,
+    essencePoints,
+    positiveQualityListSelected,
+    negativeQualityListSelected,
+    skillPoints,
+    skillSelections,
+    skillGroupSelections,
+    martialArtSelected,
+    equipmentSelections,
+    lifestyleSelections,
+    nuyen,
+    currentStep,
+  } = state;
+
+  // Change handlers using setState
+  const onBonusInfoChanged = (
     loadingBonusInfo: CharacterCreatorBonusListType
-  ) {
-    setBonusInfo(loadingBonusInfo);
+  ) => setState({ bonusInfo: loadingBonusInfo });
+
+  const onPriorityInfoChanged = (newPriorities: PriorityLevelsType) =>
+    setState({ priorityInfo: newPriorities });
+
+  const onHeritageInfoChanged = (heritageInfo: HeritagePrioritySelectedType) =>
+    setState({ priorityHeritage: heritageInfo });
+
+  const onPriorityAttributesChanged = (loadingAttributes: number) =>
+    setState({ priorityAttributes: loadingAttributes });
+
+  const onPriorityTalentChanged = (loadingTalent: TalentPriorityType) =>
+    setState({ priorityTalent: loadingTalent });
+
+  const onPrioritySkillsChanged = (loadingSkills: SkillPriorityType) => {
+    setState({
+      prioritySkills: loadingSkills,
+      skillPoints: loadingSkills,
+    });
   };
 
-  const onPriorityInfoChanged = function (newPriorities: PriorityLevelsType) {
-    setPriorityInfo(newPriorities);
-  };
-  const onHeritageInfoChanged = function (
-    heritageInfo: HeritagePrioritySelectedType
-  ) {
-    setPriorityHeritage(heritageInfo);
-  };
-  const onPriorityAttributesChanged = function (loadingAttributes: number) {
-    setPriorityAttributes(loadingAttributes);
-  };
-  const onPriorityTalentChanged = function (loadingTalent: TalentPriorityType) {
-    setPriorityTalent(loadingTalent);
+  const onPriorityResources = (loadingResources: number) => {
+    setState({
+      priorityResources: loadingResources,
+      nuyen: loadingResources,
+    });
   };
 
-  const onPrioritySkillsChanged = function (loadingSkills: SkillPriorityType) {
-    setPrioritySkills(loadingSkills);
-    setSkillPoints(loadingSkills);
-  };
-  const onPriorityResources = function (loadingResources: number) {
-    setPriorityResources(loadingResources);
-    setNuyen(loadingResources);
-  };
-  const onAttributeInfoChanged = function (loadingAttributes: AttributesType) {
-    setAttributeInfo(loadingAttributes);
-  };
-  const onSpecialAttributeInfoChanged = function (
+  const onAttributeInfoChanged = (loadingAttributes: AttributesType) =>
+    setState({ attributeInfo: loadingAttributes });
+
+  const onSpecialAttributeInfoChanged = (
     loadingSpecialAttributes: SpecialAttributesType
-  ) {
-    setSpecialAttributeInfo(loadingSpecialAttributes);
-  };
-  const onTalentInfoChanged = function (loadingTalentInfo: TalentInfoType) {
-    setTalentInfo(loadingTalentInfo);
-  };
-  const onKarmaPointsChanged = function (loadingKarma: number) {
-    setKarmaPoints(loadingKarma);
-  };
-  const onEssencePointsChanged = function (loadingEssence: number) {
-    setEssencePoints(loadingEssence);
-  };
-  const onPositiveQualitiesSelectedChanged = function (
+  ) => setState({ specialAttributeInfo: loadingSpecialAttributes });
+
+  const onTalentInfoChanged = (loadingTalentInfo: TalentInfoType) =>
+    setState({ talentInfo: loadingTalentInfo });
+
+  const onKarmaPointsChanged = (loadingKarma: number) =>
+    setState({ karmaPoints: loadingKarma });
+
+  const onEssencePointsChanged = (loadingEssence: number) =>
+    setState({ essencePoints: loadingEssence });
+
+  const onPositiveQualitiesSelectedChanged = (
     loadingPositiveQualities: QualitySelectedListType
-  ) {
-    setPositiveQualitiesSelected(loadingPositiveQualities);
-  };
-  const onNegativeQualitiesSelectedChanged = function (
+  ) => setState({ positiveQualityListSelected: loadingPositiveQualities });
+
+  const onNegativeQualitiesSelectedChanged = (
     loadingNegativeQualities: QualitySelectedListType
-  ) {
-    setNegativeQualitiesSelected(loadingNegativeQualities);
-  };
-  const onSkillPointChanged = function (
-    loadingSkillPoints: SkillPointInfoType
-  ) {
-    setSkillPoints(loadingSkillPoints);
-  };
-  const onSkillSelectionsChanged = function (
+  ) => setState({ negativeQualityListSelected: loadingNegativeQualities });
+
+  const onSkillPointChanged = (loadingSkillPoints: SkillPointInfoType) =>
+    setState({ skillPoints: loadingSkillPoints });
+
+  const onSkillSelectionsChanged = (
     loadingSkillSelection: CustomSkillListType
-  ) {
-    setSkillSelections(loadingSkillSelection);
-  };
-  const onEquipmentSelectionsChanged = function (
+  ) => setState({ skillSelections: loadingSkillSelection });
+
+  const onEquipmentSelectionsChanged = (
     equipmentSelections: SelectedEquipmentListType
-  ) {
-    setEquipmentSelections(equipmentSelections);
-  };
-  const onNuyenChanged = function (nuyen: number) {
-    setNuyen(nuyen);
-  };
-  const onMartialArtSelectionsChanged = function (
+  ) => setState({ equipmentSelections });
+
+  const onNuyenChanged = (nuyen: number) => setState({ nuyen });
+
+  const onMartialArtSelectionsChanged = (
     martialArtSelected: MartialArtSelectedType | undefined
-  ) {
-    setMartialArtSelected(martialArtSelected);
-  };
-  const onLifestyleSelectedChanged = function (
+  ) => setState({ martialArtSelected });
+
+  const onLifestyleSelectedChanged = (
     lifestyleSelections: LifestyleSelectedListType
-  ) {
-    setLifestyleSelections(lifestyleSelections);
-  };
+  ) => setState({ lifestyleSelections });
 
-  // TODO: make the page selection vary depending on talent choice
-  // and add a header at the top
-  enum CharacterPageEnum {
-    PriorityListSelect = "PriorityListSelect",
-    AttributeListSelect = "AttributeListSelect",
-    QualityListSelect = "QualityListSelect",
-    TalentListSelect = "TalentListSelect",
-    SkillListSelect = "SkillListSelect",
-    MartialArtSelect = "MartialArtSelect",
-    EquipmentListSelect = "EquipmentListSelect",
-    LifestyleSelect = "LifestyleSelect",
-    CreatorSummary = "CreatorSummary",
-  }
-
+  // Navigation and Step Logic
   const PageActiveList =
     priorityInfo.talent === priorityLetterEnum.E
       ? [
-          CharacterPageEnum.PriorityListSelect,
-          CharacterPageEnum.AttributeListSelect,
-          CharacterPageEnum.QualityListSelect,
-          CharacterPageEnum.SkillListSelect,
-          CharacterPageEnum.MartialArtSelect,
-          CharacterPageEnum.EquipmentListSelect,
-          CharacterPageEnum.LifestyleSelect,
-          CharacterPageEnum.CreatorSummary,
+          characterCreatorStepEnum.PriorityListSelect,
+          characterCreatorStepEnum.AttributeListSelect,
+          characterCreatorStepEnum.QualityListSelect,
+          characterCreatorStepEnum.SkillListSelect,
+          characterCreatorStepEnum.MartialArtSelect,
+          characterCreatorStepEnum.EquipmentListSelect,
+          characterCreatorStepEnum.LifestyleSelect,
+          characterCreatorStepEnum.CreatorSummary,
         ]
       : [
-          CharacterPageEnum.PriorityListSelect,
-          CharacterPageEnum.AttributeListSelect,
-          CharacterPageEnum.QualityListSelect,
-          CharacterPageEnum.TalentListSelect,
-          CharacterPageEnum.SkillListSelect,
-          CharacterPageEnum.MartialArtSelect,
-          CharacterPageEnum.EquipmentListSelect,
-          CharacterPageEnum.LifestyleSelect,
-          CharacterPageEnum.CreatorSummary,
+          characterCreatorStepEnum.PriorityListSelect,
+          characterCreatorStepEnum.AttributeListSelect,
+          characterCreatorStepEnum.QualityListSelect,
+          characterCreatorStepEnum.TalentListSelect,
+          characterCreatorStepEnum.SkillListSelect,
+          characterCreatorStepEnum.MartialArtSelect,
+          characterCreatorStepEnum.EquipmentListSelect,
+          characterCreatorStepEnum.LifestyleSelect,
+          characterCreatorStepEnum.CreatorSummary,
         ];
 
-  const [page, setPage] = useState(CharacterPageEnum.PriorityListSelect);
   const [isSwitching, setIsSwitching] = useState(false);
+
+  // Use currentStep directly instead of page state
+  const page = currentStep;
+
+  function changePage(newPage: typeof currentStep) {
+    setIsSwitching(true);
+    // Zero second timeout to allow the unmount hook to fire before mounting the new page
+    setTimeout(() => {
+      setState({ currentStep: newPage });
+      setIsSwitching(false);
+    }, 0);
+  }
+
+  if (isLoading) {
+    return <div>Loading draft...</div>;
+  }
+
+  // Conflict Modal
+  const conflictModal = conflict.hasConflict ? (
+    <div
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        background: "rgba(0,0,0,0.8)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        zIndex: 9999,
+      }}
+    >
+      <div
+        style={{
+          background: "#111",
+          border: "1px solid #0ff",
+          padding: "20px",
+          maxWidth: "500px",
+        }}
+      >
+        <h3 style={{ color: "#0ff" }}>Sync Conflict Detected</h3>
+        <p>This draft was updated in another session.</p>
+        <p>
+          Server version: {conflict.serverVersion} (Your version: {version})
+        </p>
+        <div style={{ display: "flex", gap: "10px", marginTop: "20px" }}>
+          <ArwesButton onClick={() => resolveConflict("loadServer")}>
+            Load Latest (Discard Local)
+          </ArwesButton>
+          <ArwesButton onClick={() => resolveConflict("overwrite")}>
+            Overwrite Server (Keep Local)
+          </ArwesButton>
+        </div>
+      </div>
+    </div>
+  ) : null;
 
   let currentStage = <></>;
   if (!isSwitching) {
     switch (page) {
-      case CharacterPageEnum.PriorityListSelect:
+      case characterCreatorStepEnum.PriorityListSelect:
         currentStage = (
           <PriorityListSelect
             priorityInfo={priorityInfo}
@@ -263,7 +267,7 @@ const CharacterCreator = function () {
           />
         );
         break;
-      case CharacterPageEnum.AttributeListSelect:
+      case characterCreatorStepEnum.AttributeListSelect:
         currentStage = (
           <AttributeListSelect
             priorityInfo={priorityInfo}
@@ -279,7 +283,7 @@ const CharacterCreator = function () {
           />
         );
         break;
-      case CharacterPageEnum.QualityListSelect:
+      case characterCreatorStepEnum.QualityListSelect:
         currentStage = (
           <QualityListSelect
             karmaPoints={karmaPoints}
@@ -293,7 +297,7 @@ const CharacterCreator = function () {
           />
         );
         break;
-      case CharacterPageEnum.TalentListSelect:
+      case characterCreatorStepEnum.TalentListSelect:
         currentStage = (
           <TalentSelect
             talent={priorityTalent}
@@ -306,7 +310,7 @@ const CharacterCreator = function () {
           />
         );
         break;
-      case CharacterPageEnum.SkillListSelect:
+      case characterCreatorStepEnum.SkillListSelect:
         currentStage = (
           <SkillListSelect
             skillPointItems={skillPoints}
@@ -318,7 +322,7 @@ const CharacterCreator = function () {
           />
         );
         break;
-      case CharacterPageEnum.MartialArtSelect:
+      case characterCreatorStepEnum.MartialArtSelect:
         currentStage = (
           <MartialArtSelect
             karmaPoints={karmaPoints}
@@ -328,7 +332,7 @@ const CharacterCreator = function () {
           />
         );
         break;
-      case CharacterPageEnum.EquipmentListSelect:
+      case characterCreatorStepEnum.EquipmentListSelect:
         currentStage = (
           <EquipmentSelect
             equipmentSelections={equipmentSelections}
@@ -342,7 +346,7 @@ const CharacterCreator = function () {
           />
         );
         break;
-      case CharacterPageEnum.LifestyleSelect:
+      case characterCreatorStepEnum.LifestyleSelect:
         currentStage = (
           <LifestyleSelect
             lifestyleSelections={lifestyleSelections}
@@ -350,7 +354,7 @@ const CharacterCreator = function () {
           />
         );
         break;
-      case CharacterPageEnum.CreatorSummary:
+      case characterCreatorStepEnum.CreatorSummary:
         currentStage = (
           <CreatorSummary
             priorityInfo={priorityInfo}
@@ -382,22 +386,37 @@ const CharacterCreator = function () {
   const hiddenNext = page === PageActiveList[lastPage];
   const hiddenSubmit = page !== PageActiveList[lastPage];
 
-  function changePage(newPage: CharacterPageEnum) {
-    // Set switching state to force unmount of current page
-    setIsSwitching(true);
-    // Use setTimeout(0) to defer mounting of new page until after
-    // React has finished processing the current render cycle,
-    // including all cleanup effects from the unmounting component.
-    // This ensures the parent state is fully updated before the
-    // new page mounts and reads from it.
-    setTimeout(() => {
-      setPage(newPage);
-      setIsSwitching(false);
-    }, 0);
-  }
-
   return (
     <Fragment>
+      {conflictModal}
+      {error && (
+        <div
+          style={{
+            background: "rgba(255, 0, 0, 0.2)",
+            color: "#ff9999",
+            padding: "10px",
+            border: "1px solid red",
+            marginBottom: "20px",
+          }}
+        >
+          {error}
+        </div>
+      )}
+      {isSaving && (
+        <div
+          style={{
+            position: "fixed",
+            bottom: "20px",
+            right: "20px",
+            color: "#0ff",
+            textShadow: "0 0 5px #0ff",
+            zIndex: 1000,
+          }}
+        >
+          Saving...
+        </div>
+      )}
+
       <div
         data-testid="ready"
         style={{ overflowX: "auto", marginBottom: "20px" }}
@@ -423,14 +442,14 @@ const CharacterCreator = function () {
       <ArwesButton
         onClick={() => {
           changePage(
-            page !== CharacterPageEnum.PriorityListSelect
+            page !== characterCreatorStepEnum.PriorityListSelect
               ? PageActiveList[
                   PageActiveList.findIndex((element) => element === page) - 1
                 ]
-              : CharacterPageEnum.PriorityListSelect
+              : characterCreatorStepEnum.PriorityListSelect
           );
         }}
-        disabled={page == CharacterPageEnum.PriorityListSelect}
+        disabled={page === characterCreatorStepEnum.PriorityListSelect}
       >
         Previous
       </ArwesButton>
@@ -474,7 +493,8 @@ const CharacterCreator = function () {
                 nuyen: nuyen,
                 bonusInfo: bonusInfo,
               })
-              .then((characterId) => {
+              .then(async (characterId) => {
+                await deleteDraft(); // Clean up draft on successful creation
                 navigate(`/characters/${characterId}`);
               })
               .catch((err) => {
@@ -490,5 +510,5 @@ const CharacterCreator = function () {
   );
 };
 
-export { characterCreatorPath };
+export { characterCreatorPath, characterCreatorWithIdPath };
 export default CharacterCreator;

@@ -39,6 +39,7 @@ export * from "./models/rpg/activeTables/activeWeaponMountModel.js";
 export * from "./models/rpg/activeTables/customisedCritterModel.js";
 
 export * from "./models/rpg/characters/characterModel.js";
+export * from "./models/rpg/characters/draftCharacterModel.js";
 
 export * from "./models/rpg/creatures/critterModel.js";
 

@@ -202,6 +202,7 @@ import { EquipmentPacks } from "./models/rpg/equipment/equipmentPackModel.js";
 import { WeaponMountModifications } from "./models/rpg/equipment/rigger/weaponMountModModel.js";
 import { Echoes } from "./models/rpg/otherData/echoModel.js";
 import { Metamagics } from "./models/rpg/otherData/metamagicModel.js";
+import { DraftCharacters } from "./models/rpg/characters/draftCharacterModel.js";
 
 const dbOptions: Options = {
   entities: [
@@ -381,6 +382,7 @@ const dbOptions: Options = {
     EquipmentPacks,
 
     Characters,
+    DraftCharacters,
   ],
   host: HOST,
   port: DATABASE_PORT,

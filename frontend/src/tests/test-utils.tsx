@@ -7,6 +7,7 @@ import { MemoryRouter } from "react-router-dom";
 import { type ReactElement } from "react";
 import userEvent from "@testing-library/user-event";
 import { SERVER } from "../utils/config";
+import { ThemeContextProvider } from "../context/ThemeContext";
 
 // Create a new QueryClient for each test
 export const createTestQueryClient = () =>
@@ -32,7 +33,14 @@ export const createTestTrpcClient = () =>
     ],
   });
 
-export function renderWithProviders(ui: ReactElement): RenderResult & {
+export function renderWithProviders(
+  ui: ReactElement,
+  {
+    initialEntries = ["/"],
+  }: {
+    initialEntries?: string[];
+  } = {}
+): RenderResult & {
   user: ReturnType<typeof userEvent.setup>;
   queryClient: QueryClient;
 } {
@@ -43,7 +51,9 @@ export function renderWithProviders(ui: ReactElement): RenderResult & {
     ...render(
       <trpc.Provider client={trpcClient} queryClient={queryClient}>
         <QueryClientProvider client={queryClient}>
-          <MemoryRouter>{ui}</MemoryRouter>
+          <MemoryRouter initialEntries={initialEntries}>
+            <ThemeContextProvider>{ui}</ThemeContextProvider>
+          </MemoryRouter>
         </QueryClientProvider>
       </trpc.Provider>
     ),

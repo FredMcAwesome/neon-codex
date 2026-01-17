@@ -158,8 +158,20 @@ const AttributesSelectLoaded = function (
     }
   });
   if (foundHeritage === undefined) {
-    throw Error(
-      `foundHeritage: ${selectedHeritage.base} ${selectedHeritage.metavariant} is undefined`
+    return (
+      <div style={{ padding: "20px", color: "red", border: "1px solid red" }}>
+        <h3>Error: Heritage Not Found</h3>
+        <p>
+          Could not find heritage data for: &quot;{selectedHeritage.base}&quot;
+          {selectedHeritage.metavariant
+            ? ` (${selectedHeritage.metavariant})`
+            : ""}
+        </p>
+        <p>
+          Please return to the Priority Selection step and re-select a valid
+          heritage.
+        </p>
+      </div>
     );
   }
 

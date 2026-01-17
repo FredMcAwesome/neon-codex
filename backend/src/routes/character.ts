@@ -30,6 +30,7 @@ import {
   Biowares,
   Bonuses,
   Characters,
+  DraftCharacters,
   ChildGears,
   ComplexForms,
   Critters,
@@ -112,6 +113,10 @@ import {
   priorityLetterEnum,
   talentCategoryEnum,
   type AdeptPowerListSelectedType,
+  CreateDraftCharacterSchema,
+  UpdateDraftCharacterSchema,
+  type DraftCharacterResponseType,
+  type DraftCharacterSummaryListType,
   type AdeptPowerListType,
   type ArmourListType,
   type ArmourModListType,
@@ -4159,6 +4164,145 @@ const convertActiveLifestyleDBToDTO = async function (
   };
 };
 
+const createDraftCharacter = privateProcedure
+  .input(CreateDraftCharacterSchema)
+  .mutation(async (opts) => {
+    try {
+      const db = await init();
+      const draft = new DraftCharacters({
+        user: ref(Users, opts.ctx.id),
+        currentStep: opts.input.currentStep,
+        characterData: opts.input.characterData as Record<string, unknown>,
+        ...(opts.input.name !== undefined && { name: opts.input.name }),
+      });
+      await db.em.persistAndFlush(draft);
+      return {
+        id: draft.id,
+        version: draft.version,
+      };
+    } catch (error) {
+      logger.error("Failed to create draft character:", error);
+      throw new Error("Failed to create draft character");
+    }
+  });
+
+const getDraftCharacter = privateProcedure
+  .input(type("number"))
+  .query(async (opts) => {
+    try {
+      const db = await init();
+      const draft = await db.em.findOne(
+        DraftCharacters,
+        { id: opts.input, user: { id: opts.ctx.id } },
+        { populate: ["user"] }
+      );
+      if (draft === null) {
+        throw new Error("Draft character not found");
+      }
+      const response: DraftCharacterResponseType = {
+        id: draft.id,
+        name: draft.name,
+        currentStep: draft.currentStep,
+        characterData: draft.characterData,
+        version: draft.version,
+        createdAt: draft.createdAt.toISOString(),
+        updatedAt: draft.updatedAt.toISOString(),
+      };
+      return response;
+    } catch (error) {
+      logger.error("Failed to get draft character:", error);
+      throw new Error("Failed to get draft character");
+    }
+  });
+
+const updateDraftCharacter = privateProcedure
+  .input(UpdateDraftCharacterSchema)
+  .mutation(async (opts) => {
+    try {
+      const db = await init();
+      const draft = await db.em.findOne(DraftCharacters, {
+        id: opts.input.draftId,
+        user: { id: opts.ctx.id },
+      });
+      if (draft === null) {
+        throw new Error("Draft character not found");
+      }
+      // Check version for conflict detection
+      if (!opts.input.forceOverwrite && draft.version !== opts.input.version) {
+        // Return conflict response with current server data
+        return {
+          conflict: true as const,
+          serverVersion: draft.version,
+          serverData: {
+            id: draft.id,
+            name: draft.name,
+            currentStep: draft.currentStep,
+            characterData: draft.characterData,
+            version: draft.version,
+            createdAt: draft.createdAt.toISOString(),
+            updatedAt: draft.updatedAt.toISOString(),
+          },
+        };
+      }
+      // Update the draft
+      draft.currentStep = opts.input.currentStep;
+      draft.characterData = opts.input.characterData as Record<string, unknown>;
+      if (opts.input.name !== undefined) {
+        draft.name = opts.input.name;
+      }
+      draft.version = draft.version + 1;
+      await db.em.flush();
+      return {
+        conflict: false as const,
+        id: draft.id,
+        version: draft.version,
+      };
+    } catch (error) {
+      logger.error("Failed to update draft character:", error);
+      throw new Error("Failed to update draft character");
+    }
+  });
+
+const deleteDraftCharacter = privateProcedure
+  .input(type("number"))
+  .mutation(async (opts) => {
+    try {
+      const db = await init();
+      const draft = await db.em.findOne(DraftCharacters, {
+        id: opts.input,
+        user: { id: opts.ctx.id },
+      });
+      if (draft === null) {
+        throw new Error("Draft character not found");
+      }
+      await db.em.removeAndFlush(draft);
+      return { success: true };
+    } catch (error) {
+      logger.error("Failed to delete draft character:", error);
+      throw new Error("Failed to delete draft character");
+    }
+  });
+
+const getDraftCharacterList = privateProcedure.query(async (opts) => {
+  try {
+    const db = await init();
+    const drafts = await db.em.findAll(DraftCharacters, {
+      where: { user: { id: opts.ctx.id } },
+      orderBy: { updatedAt: "DESC" },
+    });
+    const response: DraftCharacterSummaryListType = drafts.map((draft) => ({
+      id: draft.id,
+      name: draft.name,
+      currentStep: draft.currentStep,
+      updatedAt: draft.updatedAt.toISOString(),
+    }));
+    return response;
+  } catch (error) {
+    logger.error("Failed to get draft character list:", error);
+    throw new Error("Failed to get draft character list");
+  }
+});
+
 type routesType = {
   traditions: typeof traditions;
   mentors: typeof mentors;
@@ -4185,6 +4329,11 @@ type routesType = {
   createCharacter: typeof createCharacter;
   getCharacter: typeof getCharacter;
   getCharacterList: typeof getCharacterList;
+  createDraftCharacter: typeof createDraftCharacter;
+  getDraftCharacter: typeof getDraftCharacter;
+  updateDraftCharacter: typeof updateDraftCharacter;
+  deleteDraftCharacter: typeof deleteDraftCharacter;
+  getDraftCharacterList: typeof getDraftCharacterList;
 };
 
 const routes: routesType = {
@@ -4213,6 +4362,11 @@ const routes: routesType = {
   createCharacter: createCharacter,
   getCharacter: getCharacter,
   getCharacterList: getCharacterList,
+  createDraftCharacter: createDraftCharacter,
+  getDraftCharacter: getDraftCharacter,
+  updateDraftCharacter: updateDraftCharacter,
+  deleteDraftCharacter: deleteDraftCharacter,
+  getDraftCharacterList: getDraftCharacterList,
 };
 
 export const characterRouter: ReturnType<typeof router<routesType>> =

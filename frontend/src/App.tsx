@@ -8,6 +8,7 @@ import { isAuthenticated } from "./components/login/loginHelper.js";
 import NavigationBar from "./components/navigation/NavigationBar.js";
 import CharacterCreator, {
   characterCreatorPath,
+  characterCreatorWithIdPath,
 } from "./components/character/creator/CharacterCreator.js";
 import CharacterSheet, {
   characterSheetPath,
@@ -61,6 +62,10 @@ function App() {
           />
           <Route
             path={characterCreatorPath}
+            element={<PrivateRoute outlet={<CharacterCreator />} />}
+          />
+          <Route
+            path={characterCreatorWithIdPath}
             element={<PrivateRoute outlet={<CharacterCreator />} />}
           />
 

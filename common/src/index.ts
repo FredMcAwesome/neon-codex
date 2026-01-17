@@ -27,6 +27,7 @@ export * from "./schemas/abilities/talent/spellSchemas.js";
 export * from "./schemas/abilities/talent/traditionSchemas.js";
 
 export * from "./schemas/characters/characterSchemas.js";
+export * from "./schemas/characters/draftCharacterSchemas.js";
 
 export * from "./schemas/creatures/critterSchemas.js";
 

@@ -11,7 +11,7 @@ import {
   type PriorityType,
 } from "@neon-codex/common";
 
-const trpcMock = createTRPCMsw<AppRouter>({
+export const trpcMock = createTRPCMsw<AppRouter>({
   links: [
     httpLink({
       url: SERVER + "/trpc",
@@ -40,6 +40,11 @@ export const handlers: RequestHandler[] = [
         name: "Talent A",
         talentList: [
           {
+            name: "Mundane",
+            label: "Mundane",
+            category: talentCategoryEnum.Mundane,
+          },
+          {
             name: "Magician",
             label: "Magician",
             category: talentCategoryEnum.Magic as const,
@@ -63,6 +68,41 @@ export const handlers: RequestHandler[] = [
     };
 
     return priorityTable;
+  }),
+
+  // Mock TRPC mutation: character.createDraftCharacter
+  trpcMock.character.createDraftCharacter.mutation(() => {
+    return {
+      id: 123,
+      version: 1,
+    };
+  }),
+
+  // Mock TRPC mutation: character.updateDraftCharacter
+  trpcMock.character.updateDraftCharacter.mutation(() => {
+    return {
+      conflict: false,
+      id: 123,
+      version: 2,
+    };
+  }),
+
+  // Mock TRPC query: character.getDraftCharacter
+  trpcMock.character.getDraftCharacter.query(() => {
+    return {
+      id: 123,
+      name: "Draft 1",
+      currentStep: "PriorityListSelect",
+      characterData: {},
+      version: 1,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    };
+  }),
+
+  // Mock TRPC mutation: character.deleteDraftCharacter
+  trpcMock.character.deleteDraftCharacter.mutation(() => {
+    return { success: true };
   }),
 
   // Mock TRPC query: character.heritages

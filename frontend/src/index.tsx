@@ -19,6 +19,19 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: (failureCount, error) => {
+        if (
+          error instanceof TRPCClientError &&
+          error.data?.code === "UNAUTHORIZED"
+        ) {
+          return false;
+        }
+        return failureCount < 3;
+      },
+    },
+  },
   queryCache: new QueryCache({
     // this occurs on any query error (but error is still passed on)
     onError: (error) => {
@@ -27,8 +40,8 @@ const queryClient = new QueryClient({
         if (error.data.code == "UNAUTHORIZED") {
           console.log("User JWT cleared");
           clearUserSession();
-          // it was difficult to redirect from here so just refresh page
-          window.location.reload();
+          // Force app to re-evaluate authentication status -> redirects via PrivateRoute
+          queryClient.invalidateQueries({ queryKey: ["authenticationStatus"] });
         }
       }
     },

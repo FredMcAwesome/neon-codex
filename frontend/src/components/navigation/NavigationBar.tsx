@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./NavigationBar.css";
 import { Animator, FrameUnderline } from "@arwes/react";
 import { ArwesButton } from "../common/ArwesButton.js";
@@ -7,7 +7,21 @@ import { forumPath } from "../forum/Forum.js";
 import { dashboardPath } from "../dashboard/Dashboard.js";
 import { characterListPath } from "../character/CharacterList.js";
 
+import { useQueryClient } from "@tanstack/react-query";
+import { clearUserSession } from "../login/loginHelper.js";
+import { loginPath } from "../login/Login.js";
+
 const NavigationBar = function () {
+  const queryClient = useQueryClient();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    console.log("User JWT cleared");
+    clearUserSession();
+    queryClient.invalidateQueries({ queryKey: ["authenticationStatus"] });
+    navigate(loginPath);
+  };
+
   return (
     <Animator>
       <header
@@ -34,6 +48,9 @@ const NavigationBar = function () {
           <Link to={characterListPath}>
             <ArwesButton>My Characters</ArwesButton>
           </Link>
+          <div style={{ marginLeft: "auto" }}>
+            <ArwesButton onClick={handleLogout}>Logout</ArwesButton>
+          </div>
         </nav>
       </header>
     </Animator>
